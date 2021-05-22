@@ -1,4 +1,4 @@
-# Tag: 
+# Tag: MIDI
 # Type: Plugin, LV2
 # Category: Audio, Synthetizer
 
