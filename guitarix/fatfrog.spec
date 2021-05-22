@@ -1,3 +1,7 @@
+# Tag: Guitar, Emulator, Amp Simul
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 Name:    fatfrog
 Version: 1.0.0
 Release: 1%{?dist}
@@ -17,9 +21,6 @@ BuildRequires: libX11-devel
 BuildRequires: cairo-devel
 BuildRequires: liblo-devel
 BuildRequires: libsigc++20-devel
-
-%description
-A LV2 High Gain Amplifier
 
 %prep
 %autosetup -n FatFrog.lv2

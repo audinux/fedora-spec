@@ -1,3 +1,7 @@
+# Tag: Guitar, Jack
+# Type: Standalone
+# Category: Audio, Tool
+
 # Global variables for github repository
 %global commit0 792d453da0f3a599408008f0f1107823939d730d
 %global gittag0 master
@@ -19,8 +23,6 @@ BuildRequires: libX11-devel
 BuildRequires: fftw-devel
 BuildRequires: zita-resampler-devel
 
-%description
-A tuner for jack, with full jack session managment support
 
 %prep
 %autosetup -n %{name}-%{commit0}

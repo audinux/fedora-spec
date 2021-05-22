@@ -1,3 +1,7 @@
+# Tag: 
+# Type: Plugin, LV2
+# Category: Audio, Synthetizer
+
 Name:    xpolymonk
 Version: 0.6.0
 Release: 1%{?dist}
@@ -18,8 +22,6 @@ BuildRequires: cairo-devel
 BuildRequires: liblo-devel
 BuildRequires: libsigc++20-devel
 
-%description
-A LV2 simple polyphonic sound generator to have some fun with
 
 %prep
 %autosetup -n XPolyMonk.lv2

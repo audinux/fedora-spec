@@ -1,3 +1,7 @@
+# Tag: Guitar, Jack, Overdrive, Amp Simul, Cabinet, Gate, Octaver
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 # Global variables for github repository
 %global commit0 828dcf7ede9260da6d65ab6896d99d694f7f12af
 %global gittag0 master
@@ -6,7 +10,7 @@
 Name:    kpp
 Version: 1.2.1
 Release: 2%{?dist}
-Summary: A set of plugins for guitar sound processing
+Summary: Kapitonov Plugins Pack for guitar
 URL:     https://github.com/olegkapitonov/Kapitonov-Plugins-Pack
 Group:   Applications/Multimedia
 License: GPLv2+

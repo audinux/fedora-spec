@@ -1,7 +1,11 @@
+# Tag: Guitar, Emulator, Overdrive, Amp Simul, Cabinet
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 Name:    GxPlugins
 Version: 0.9
 Release: 1%{?dist}
-Summary: LV2 Analogue simulation of a tube preamp
+Summary: Guitarix LV2 plugins collection
 License: GPLv2+
 URL:     https://github.com/brummer10/GxPlugins.lv2
 
@@ -19,7 +23,13 @@ BuildRequires: glib2-devel
 BuildRequires: vim-common
 
 %description
-Guitarix LV2 plugins
+Collection of guitar effects and simulations.
+- Analogue tube preamp
+- Overdrive/distortion pedal
+- tube preamp with overdrive
+- Hyperion Fuzz Pedal
+- Envelope controlled wah pedal
+- ...
 
 %package -n lv2-GxBottleRocket-plugin
 Summary: LV2 Analogue simulation of a tube preamp

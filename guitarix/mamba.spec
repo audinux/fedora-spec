@@ -1,3 +1,7 @@
+# Tag: Sequencer, MIDI
+# Type: Standalone
+# Category: Audio, Sequencer
+
 Name:    mamba
 Version: 2.2
 Release: 4%{?dist}

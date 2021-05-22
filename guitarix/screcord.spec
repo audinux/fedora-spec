@@ -1,3 +1,7 @@
+# Tag: Sequencer, MIDI
+# Type: Plugin, LV2
+# Category: Audio, Sequencer
+
 # Global variables for github repository
 %global commit0 b20d67550864df05c8969ad689f4ec465e6efbcc
 %global gittag0 master
@@ -22,8 +26,6 @@ BuildRequires: libsndfile-devel
 BuildRequires: cairo-devel
 BuildRequires: libffi-devel
 
-%description
-A simple Lv2 capture plugin
 
 %prep
 %autosetup -n screcord.lv2

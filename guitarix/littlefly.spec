@@ -1,3 +1,7 @@
+# Tag: Guitar, Overdrive
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 Name:    littlefly
 Version: 1.0.0
 Release: 1%{?dist}
@@ -18,8 +22,6 @@ BuildRequires: cairo-devel
 BuildRequires: liblo-devel
 BuildRequires: libsigc++20-devel
 
-%description
-A LV2 Overdrive/Distortion pedal simulation
 
 %prep
 %autosetup -n LittleFly.lv2

@@ -1,3 +1,7 @@
+# Tag: Equalizer
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 # Global variables for github repository
 %global commit0 f1c3f4b94ea04a991c201bbe6a19336471b5f37e
 %global gittag0 v0.1
@@ -18,8 +22,6 @@ BuildRequires: python
 BuildRequires: gtk2-devel
 BuildRequires: glib2-devel
 
-%description
-Matching Equalizer to apply EQ curve from on source to a other source.
 
 %prep
 %autosetup -n GxMatchEQ.lv2-%{commit0}

@@ -1,3 +1,7 @@
+# Tag: SF2
+# Type: Plugin, LV2
+# Category: Audio, Synthetizer
+
 Name:    fluida
 Version: 0.7
 Release: 1%{?dist}
@@ -17,8 +21,6 @@ BuildRequires: libsigc++20-devel
 BuildRequires: fluidsynth-devel
 BuildRequires: vim-common
 
-%description
-Fluidsynth as LV2 plugin.
 
 %prep
 %autosetup -n Fluida_%{version}

@@ -1,3 +1,7 @@
+# Tag: Session, OSC, Jack
+# Type: Standalone
+# Category: Session Mngmt
+
 %global __python %{__python3}
 
 Name:    raysession

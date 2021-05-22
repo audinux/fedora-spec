@@ -1,3 +1,7 @@
+# Tag: Guitar, Jack
+# Type: Standalone
+# Category: Audio, Tool
+
 Name:    xtuner
 Version: 0.0.1
 Release: 1%{?dist}
@@ -27,8 +31,6 @@ BuildRequires: libsigc++20-devel
 BuildRequires: zita-resampler-devel
 BuildRequires: desktop-file-utils
 
-%description
-Tuner for Jack Audio Connection Kit
 
 %prep
 %autosetup -n XTuner

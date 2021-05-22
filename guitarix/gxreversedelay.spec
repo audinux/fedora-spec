@@ -1,3 +1,7 @@
+# Tag: Delay
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 # Global variables for github repository
 %global commit0 b34579b58726257bdbc05bd885b4dc308eefa5d8
 %global gittag0 master
@@ -19,8 +23,6 @@ BuildRequires: python
 BuildRequires: gtk2-devel
 BuildRequires: glib2-devel
 
-%description
-Digital reverse delay LV2 plugin.
 
 %prep
 %autosetup -p1 -n GxReverseDelay.lv2-%{commit0}

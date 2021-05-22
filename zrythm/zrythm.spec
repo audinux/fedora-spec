@@ -1,7 +1,11 @@
+# Tag: Jack, MIDI
+# Type: Standalone
+# Category: Audio, DAW
+
 Name:    zrythm
 Version: 1.0.0.a1611
 Release: 5%{?dist}
-Summary: Zrythm is a highly automated Digital Audio Workstation (DAW) designed to be featureful and intuitive to use.
+Summary: Highly automated Digital Audio Workstation (DAW) featureful and intuitive to use
 License: GPLv2+
 URL:     https://git.zrythm.org/git/zrythm
 
