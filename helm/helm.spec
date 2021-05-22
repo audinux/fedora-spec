@@ -1,5 +1,5 @@
 # Tag: Jack, Alsa
-# Type: Plugin, Application, LV2
+# Type: Plugin, Standalone, LV2
 # Category: Audio, Synthetizer
 
 %global commit0 abdedd527e6e1cf86636f0f1e8a3e75b06ed166a

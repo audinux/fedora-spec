@@ -1,5 +1,5 @@
 # Tag: Modular
-# Type: Application
+# Type: Standalone
 # Category: Audio, Synthetizer
 
 # Global variables for github repository

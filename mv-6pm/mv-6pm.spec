@@ -1,5 +1,5 @@
 # Tag: Jack, Qt5, PM
-# Type: Application
+# Type: Standalone
 # Category: Audio, Synthetizer
 
 Name:    6PM

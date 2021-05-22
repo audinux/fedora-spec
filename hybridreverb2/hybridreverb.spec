@@ -1,5 +1,5 @@
 # Tag: Reverb, Convolution
-# Type: Plugin, LV2, Application
+# Type: Plugin, LV2, Standalone
 # Category: Audio, Effect
 
 Name:    hybridreverb2

@@ -1,5 +1,5 @@
 # Tag: Modular, Jack, Alsa
-# Type: Application
+# Type: Standalone
 # Category: Audio, Synthetizer
 
 Summary: Alsa Modular Synth, a realtime modular synthesizer

@@ -1,5 +1,5 @@
-# Tag: editor
-# Type: application
+# Tag: Editor
+# Type: Standalone
 # Category: Audio
 
 Name:    opl3bankeditor

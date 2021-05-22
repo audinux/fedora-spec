@@ -1,5 +1,5 @@
 # Tag: Jack, Alsa
-# Type: Application
+# Type: Standalone
 # Category: Audio, Synthetizer
 
 Summary: DIN is a synth of a 3rd kind

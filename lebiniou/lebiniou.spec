@@ -1,5 +1,5 @@
 # Tag: Live
-# Type: Application
+# Type: Standalone
 # Category: Graphic
 
 Name:    lebiniou
