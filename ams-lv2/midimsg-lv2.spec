@@ -1,6 +1,6 @@
 # Tag: MIDI
 # Type: Plugin, LV2
-# Category: MIDI
+# Category: Tool
 
 Name:    midimsg-lv2
 Version: 0.0.5
