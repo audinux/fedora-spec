@@ -8,14 +8,16 @@
 
 Name:    helm
 Version: 1.0.0.%{shortcommit0}
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: A LV2 / Standalone polyphonic synth with lots of modulation
 License: GPLv2+
 URL:     https://github.com/mtytel/helm
 
 Source0: https://github.com/mtytel/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: helm.appdata.xml
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: liblo-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: pulseaudio-libs-devel
@@ -26,7 +28,25 @@ BuildRequires: libXrandr-devel
 BuildRequires: libXinerama-devel
 BuildRequires: libXcursor-devel
 BuildRequires: libcurl-devel
+BuildRequires: libappstream-glib
 
+%description
+A free polyphonic synth with lots of modulation.
+Features:
+* 32 voice polyphony
+* Interactive visual interface
+* Powerful modulation system with live visual feedback
+* Dual oscillators with cross modulation and up to 15 unison oscillators each
+* Sub oscillator with shuffle waveshaping
+* Oscillator feedback and saturation for waveshaping
+* 12 different waveforms
+* Blending between 12 or 24dB low/band/high pass filter
+* Low/Band/High Shelf filters
+* 2 monophonic and 1 polyphonic LFO
+* Step sequencer
+* Lots of modulation sources including polyphonic aftertouch
+* Simple arpeggiator
+* Effects: Formant filter, stutter, delay, distortion, reverb
 
 %prep
 %autosetup -n %{name}-%{commit0}
@@ -47,6 +67,12 @@ sed -i "s/\/lib\//\/lib64\//g" Makefile
 
 %make_install STRIP=true standalone lv2
 
+# install appdata file
+install -Dp -m 644 %{SOURCE1} %{buildroot}%{_metainfodir}/%{name}.appdata.xml
+
+%check
+appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/*.appdata.xml
+
 %files
 %doc changelog README.md
 %license COPYING
@@ -58,8 +84,12 @@ sed -i "s/\/lib\//\/lib64\//g" Makefile
 %{_mandir}/man1/helm.1.gz
 %{_datadir}/applications/helm.desktop
 %{_datadir}/icons/hicolor/*
+%{_metainfodir}/%{name}.appdata.xml
 
 %changelog
+* Sat May 22 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0beta-5
+- update spec
+
 * Fri Oct 23 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.0beta-4
 - fix debug build
 

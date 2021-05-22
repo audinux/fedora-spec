@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 Patrice Ferlet --> 
+<component type="desktop-application">
+  <id>helm.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3</project_license>
+  <name>Helm</name>
+  <summary>Helm - a free polyphonic synth with lots of modulation</summary>
+  <summary xml:lang="fr">Helm - synthétiseur polyphonique avec plusieurs modulations</summary>
+  <description>
+    <p>
+      Helm is a free, cross-platform, polyphonic synthesizer that runs on GNU/Linux, 
+      Mac, and Windows as a standalone program and as a LV2/VST/AU/AAX plugin.
+    </p>
+    <p xml:lang="fr">
+      Helm est un synthétiseur polyphonique, libre et fonctionnant sur GNU/Linux, Mac et
+      Windows mais aussi comme plugin LV2/VSR/AU/AAX.
+    </p>
+  </description>
+  <categories>
+    <category>Audio</category>
+    <category>Music</category>
+    <category>Midi</category>
+  </categories>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://tytel.org/static/images/helm_screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://tytel.org/helm/</url>
+  <update_contact>metal3d_at_gmail.com</update_contact>
+</component>
