@@ -1,11 +1,15 @@
+# Tag: DAW, Jack, Alsa, MIDI
+# Type: Standalone
+# Category: Audio, DAW, MIDI
+
 Name:    helio-workstation
-Version: 3.4.0
+Version: 3.6.0
 Release: 1%{?dist}
 Summary: An audio sequencer
 URL:     https://github.com/helio-fm/helio-workstation
 License: GPLv2+
 
-# ./helioworkstation-source.sh 3.4
+# ./helioworkstation-source.sh 3.6
 
 Source0: helio-workstation.tar.gz
 Source1: helioworkstation-source.sh
@@ -59,6 +63,10 @@ desktop-file-install --vendor '' \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/%{name}.desktop
 
+%check
+
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+
 %files
 %doc README.md CHANGELOG.md
 %license LICENSE
@@ -68,6 +76,9 @@ desktop-file-install --vendor '' \
 %{_datadir}/doc/%{name}/*
 
 %changelog
+* Sun May 23 2021 Yann Collette <ycollette.nospam@free.fr> - 3.6.0-1
+- update to 3.6.0-1
+
 * Sun Feb 28 2021 Yann Collette <ycollette.nospam@free.fr> - 3.4.0-1
 - update to 3.4.0-1
 

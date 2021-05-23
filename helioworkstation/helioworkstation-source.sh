@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ./source.sh tag -> ./source.sh 3.1
+# ./source.sh tag -> ./source.sh 3.6
 
 git clone https://github.com/helio-fm/helio-workstation
 cd helio-workstation
