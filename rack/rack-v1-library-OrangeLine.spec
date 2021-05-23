@@ -1,13 +1,13 @@
 # Global variables for github repository
 %global commit0 1cb432f2069685e0373e13d816a6fed0c47d37dc
-%global gittag0 1.3.3
+%global gittag0 1.3.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-OrangeLine
-Version: 1.3.3
+Version: 1.3.4
 Release: 3%{?dist}
 Summary: OrangeLine plugin for Rack
 License: GPLv2+
@@ -91,5 +91,5 @@ cp -r OrangeLine_plugin/dist/OrangeLine/* %{buildroot}%{_libexecdir}/Rack1/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.3.3-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.3.4-3
 - initial specfile
