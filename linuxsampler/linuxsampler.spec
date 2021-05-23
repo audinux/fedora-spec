@@ -1,6 +1,6 @@
 Summary:      Linux Sampler
 Name:         linuxsampler
-Version:      2.1.1
+Version:      2.2.0
 Release:      2%{?dist}
 License:      GPL
 URL:          http://www.linuxsampler.org/
@@ -49,7 +49,7 @@ if [ -f Makefile.cvs ]; then make -f Makefile.cvs; fi
 
 %build
 
-%configure CXXFLAGS="-std=c++11 $CXXFLAGS"
+%configure CXXFLAGS="-std=c++14 $CXXFLAGS"
 %make_build
 
 %install
@@ -89,6 +89,9 @@ echo "%{_libdir}/linuxsampler" > %{buildroot}%{_sysconfdir}/ld.so.conf.d/linuxsa
 %exclude %{_libdir}/lv2/linuxsampler.lv2/linuxsampler.la
 
 %changelog
+* Sun May 23 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-2
+- update to 2.2.0-2
+
 * Sat Mar 27 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-2
 - update to 2.1.1-2 - fixes for Fedora 34
 
