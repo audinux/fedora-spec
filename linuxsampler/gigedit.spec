@@ -1,6 +1,10 @@
+# Tag: Sampler, Gig
+# Type: Standalone
+# Category: Audio, Sampler
+
 Summary:      Instrument editor for gig files
 Name:         gigedit
-Version:      1.1.1
+Version:      1.2.0
 Release:      2%{?dist}
 License:      GPL2
 URL:          http://www.linuxsampler.org/
@@ -9,9 +13,16 @@ Vendor:       Planet CCRMA
 
 Source0: http://download.linuxsampler.org/packages/gigedit-%{version}.tar.bz2
 
-BuildRequires: intltool gtkmm30-devel libgig-devel libsndfile-devel
-BuildRequires: linuxsampler-devel libxslt-devel docbook-style-xsl
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc
+BuildRequires: gcc-c++
+BuildRequires: make
+BuildRequires: intltool
+BuildRequires: gtkmm30-devel
+BuildRequires: libgig-devel
+BuildRequires: libsndfile-devel
+BuildRequires: linuxsampler-devel
+BuildRequires: libxslt-devel
+BuildRequires: docbook-style-xsl
 BuildRequires: jack-audio-connection-kit-devel
 
 Requires: hicolor-icon-theme
