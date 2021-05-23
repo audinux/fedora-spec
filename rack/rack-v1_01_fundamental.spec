@@ -1,3 +1,7 @@
+# Tag: Modular, Rack
+# Type: Rack
+# Category: Audio, Synthetizer
+
 %global debug_package %{nil}
 
 # Global variables for github repository
