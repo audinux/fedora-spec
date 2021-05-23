@@ -1,6 +1,10 @@
+# Tag: Sample, Gig
+# Type: Standalone
+# Category: Audio, Sampler
+
 Summary:      LinuxSampler GUI front-end
 Name:         qsampler
-Version:      0.6.3
+Version:      0.9.3
 Release:      2%{?dist}
 License:      GPL
 URL:          http://qsampler.sourceforge.net/qsampler-index.html
@@ -9,10 +13,17 @@ Vendor:       Planet CCRMA
 
 Source0: https://download.sf.net/qsampler/qsampler-%{version}.tar.gz
 
-BuildRequires: qt5-qtbase-devel qt5-linguist qt5-qtx11extras-devel
-BuildRequires: libgig-devel liblscp-devel desktop-file-utils
-BuildRequires: libtool automake autoconf
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc
+BuildRequires: gcc-c++
+BuildRequires: libtool
+BuildRequires: automake
+BuildRequires: autoconf
+BuildRequires: qt5-qtbase-devel
+BuildRequires: qt5-qtx11extras-devel
+BuildRequires: libgig-devel
+BuildRequires: liblscp-devel
+BuildRequires: qt5-linguist
+BuildRequires: desktop-file-utils
 
 Requires: linuxsampler
 Requires: hicolor-icon-theme
@@ -51,6 +62,10 @@ desktop-file-install                         \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
+%check
+
+desktop-file-validate %{buildroot}%{_datadir}/applications/qsampler.desktop
+
 %files
 %doc AUTHORS ChangeLog README README.cmake TRANSLATORS
 %license COPYING
@@ -63,7 +78,7 @@ desktop-file-install                         \
 %{_datadir}/applications/qsampler.desktop
 %{_datadir}/metainfo/qsampler.appdata.xml
 %{_mandir}/man1/qsampler.1.gz
-%{_mandir}/man1/qsampler.fr.1.gz
+%{_mandir}/fr/man1/qsampler.1.gz
 %{_datadir}/qsampler/translations/qsampler_cs.qm
 %{_datadir}/qsampler/translations/qsampler_ru.qm
 %{_datadir}/qsampler/translations/qsampler_fr.qm
