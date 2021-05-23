@@ -1,25 +1,22 @@
-# svn co https://svn.linuxsampler.org/svn/libgig/trunk libgig
-# define svn 3425
+# Tag: Library, Gig
+# Type: Devel
+# Category: Audio
 
 Summary:      C++ library for loading Gigasampler files and DLS Level 1/2 files.
 Name:         libgig
-Version:      4.2.0
+Version:      4.3.0
 Release:      1%{dist}
 License:      GPL
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA
-URL:          http://www.linuxsampler.org/libgig/
+URL:          https://www.linuxsampler.org
 
 Source0: http://download.linuxsampler.org/packages/libgig-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
 BuildRequires: automake autoconf libtool pkgconfig
 BuildRequires: libsndfile-devel audiofile-devel doxygen
-%if 0%{?fedora} >= 12
 BuildRequires: libuuid-devel
-%else
-BuildRequires: e2fsprogs-devel
-%endif
 
 %description
 C++ library for loading Gigasampler files and DLS Level 1/2 files.
@@ -66,6 +63,9 @@ rmdir %{buildroot}%{_libdir}/libgig
 %{_includedir}/*
 
 %changelog
+* Sun May 23 2021 Yann Collette <ycollette dot nospam at free dot fr> 4.3.0-1
+- update to 4.3.0-1
+
 * Thu Nov 05 2020 Yann Collette <ycollette dot nospam at free dot fr> 4.2.0-1
 - update to 4.2.0-1
 
