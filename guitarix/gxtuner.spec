@@ -23,6 +23,8 @@ BuildRequires: libX11-devel
 BuildRequires: fftw-devel
 BuildRequires: zita-resampler-devel
 
+%description
+A tuner for jack, with full jack session managment support
 
 %prep
 %autosetup -n %{name}-%{commit0}

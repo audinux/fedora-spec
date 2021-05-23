@@ -29,6 +29,8 @@ BuildRequires: cairo-devel
 BuildRequires: liblo-devel
 BuildRequires: libsigc++20-devel
 
+%description
+Valve amplifier simulation
 
 %prep
 %autosetup -n XDarkTerror.lv2

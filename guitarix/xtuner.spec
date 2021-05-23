@@ -31,6 +31,8 @@ BuildRequires: libsigc++20-devel
 BuildRequires: zita-resampler-devel
 BuildRequires: desktop-file-utils
 
+%description
+Tuner for Jack Audio Connection Kit
 
 %prep
 %autosetup -n XTuner

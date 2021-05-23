@@ -23,6 +23,8 @@ BuildRequires: python
 BuildRequires: gtk2-devel
 BuildRequires: glib2-devel
 
+%description
+Digital reverse delay LV2 plugin.
 
 %prep
 %autosetup -p1 -n GxReverseDelay.lv2-%{commit0}

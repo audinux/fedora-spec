@@ -26,6 +26,8 @@ BuildRequires: libsndfile-devel
 BuildRequires: cairo-devel
 BuildRequires: libffi-devel
 
+%description
+A simple Lv2 capture plugin
 
 %prep
 %autosetup -n screcord.lv2

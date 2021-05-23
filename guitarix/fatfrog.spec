@@ -22,6 +22,9 @@ BuildRequires: cairo-devel
 BuildRequires: liblo-devel
 BuildRequires: libsigc++20-devel
 
+%description
+A LV2 High Gain Amplifier
+
 %prep
 %autosetup -n FatFrog.lv2
 
