@@ -1,3 +1,7 @@
+# Tag: Modular, Rack
+# Type: Rack
+# Category: Audio, Synthetizer
+
 %define use_static_glfw 0
 %define use_static_rtaudio 1
 
