@@ -1,21 +1,33 @@
+# Tag: Tracker, Jack, Alsa
+# Type: Standalone
+# Category: Audio, Tracker
+
 Name:    fasttracker2
-Version: 1.46
+Version: 1.47
 Release: 3%{?dist}
 Summary: Module tracker software for creating music
 License: GPLv3+
 URL:     https://16-bits.org/ft2.php
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/8bitbubsy/ft2-clone/archive/v%{version}.tar.gz#/ft2-clone-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: SDL2-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: cmake
+BuildRequires: desktop-file-utils
 
 %description
-FastTracker 2 is a music tracker created by Fredrik "Mr. H" Huss and Magnus "Vogue" Högdahl, two members of the demogroup Triton
-(who later founded Starbreeze Studios) which set about releasing their own tracker after breaking into the scene in 1992 and winning several demo competitions.
-The source code of FastTracker 2 is written in Pascal using Borland Pascal 7 and TASM. The program works natively under MS-DOS.
+FastTracker 2 is a music tracker created by Fredrik "Mr. H" Huss
+and Magnus "Vogue" Högdahl, two members of the demogroup Triton
+(who later founded Starbreeze Studios) which set about releasing
+their own tracker after breaking into the scene in 1992 and winning
+several demo competitions.
+The source code of FastTracker 2 is written in Pascal using Borland
+Pascal 7 and TASM. The program works natively under MS-DOS.
 
 %prep
 %autosetup -n ft2-clone-%{version}
@@ -31,6 +43,8 @@ The source code of FastTracker 2 is written in Pascal using Borland Pascal 7 and
 %cmake_install
 
 mv %{buildroot}/%{_bindir}/ft2-clone %{buildroot}/%{_bindir}/fasttracker2
+
+# Write bash script to select audio driver
 
 cat > %{buildroot}/%{_bindir}/%{name}-jack <<EOF
 #!/bin/bash
@@ -53,12 +67,81 @@ SDL_AUDIODRIVER=alsa fasttracker2
 EOF
 chmod a+x %{buildroot}/%{_bindir}/%{name}-alsa
 
+# Install icon
+install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
+cp src/gfxdata/icon/ft2-clone.ico %{buildroot}/%{_datadir}/pixmaps/
+
+# Write desktop files
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+
+cat > %{buildroot}%{_datadir}/applications/%{name}-jack.desktop <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=%name-jack
+Exec=%{name}-jack
+Icon=/usr/share/pixmaps/ft2-clone.ico
+Comment=FastTrack2 tracker
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+EOF
+
+cat > %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=%name-alsa
+Exec=%{name}-alsa
+Icon=/usr/share/pixmaps/ft2-clone.ico
+Comment=FastTrack2 tracker
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+EOF
+
+cat > %{buildroot}%{_datadir}/applications/%{name}-pulse.desktop <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=%name-pulse
+Exec=%{name}-pulse
+Icon=/usr/share/pixmaps/ft2-clone.ico
+Comment=FastTrack2 tracker
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+EOF
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}-jack.desktop
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}-pulse.desktop
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}-alsa.desktop
+
+%check
+
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-jack.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-pulse.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
+
 %files
 %doc README.md
 %license LICENSE LICENSES.txt
 %{_bindir}/*
+%{_datadir}/pixmaps/*
+%{_datadir}/applications/*
 
 %changelog
+* Sun May 23 2021 Yann Collette <ycollette.nospam@free.fr> - 1.47-3
+- update to 1.47-3
+
 * Fri Apr 02 2021 Yann Collette <ycollette.nospam@free.fr> - 1.46-3
 - update to 1.46-3
 
