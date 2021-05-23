@@ -1,3 +1,7 @@
+# Tag: Modular, Rack
+# Type: Rack
+# Category: Audio, Synthetizer
+
 # Global variables for github repository
 %global commit0 e203a51480ad423517c521b2cd7c3c1407023852
 %global gittag0 1.1.1
