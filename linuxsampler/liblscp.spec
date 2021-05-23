@@ -1,9 +1,13 @@
+# Tag: Library, Linuxsampler
+# Type: Devel
+# Category: Audio
+
 Summary:      LinuxSampler Control Protocol library
 Name:         liblscp
-Version:      0.6.0
+Version:      0.9.3
 Release:      1%{?dist}
 License:      GPL
-URL:          http://qsampler.sourceforge.net/qsampler-index.html
+URL:          https://www.linuxsampler.org
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA
 
@@ -45,6 +49,9 @@ if [ -f Makefile.cvs ]; then make -f Makefile.cvs; fi
 %{_libdir}/pkgconfig/lscp.pc
 
 %changelog
+* Sun May 23 2021 Yann Collette <ycollette.nospam@free.fr> 0.9.3-1
+- update to 0.9.3-1
+
 * Thu Nov 5 2020 Yann Collette <ycollette.nospam@free.fr> 0.6.8-1
 - update to 0.6.0-1
 
