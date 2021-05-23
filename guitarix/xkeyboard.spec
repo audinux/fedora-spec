@@ -51,7 +51,6 @@ export CXXFLAGS="-std=c++11 -fPIC -I/usr/include/cairo $CXXFLAGS"
 
 %files
 %doc README.md
-%license LICENSE
 %{_libdir}/lv2/*
 
 %changelog
