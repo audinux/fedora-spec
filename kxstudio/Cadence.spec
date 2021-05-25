@@ -1,3 +1,8 @@
+
+# Tag: Jack
+# Type: Standalone
+# Category: Audio, Tool
+
 Name:    Cadence
 Version: 0.9.1
 Release: 5%{?dist}
@@ -30,7 +35,9 @@ Requires: jack_capture
 Requires: a2jmidid
 
 %description
-A JACK control center
+Set of tools useful for audio production.
+- System checks, manages JACK, calls other tools and make system tweaks.
+...
 
 %prep
 %autosetup -p1 -n %{name}-%{version}

@@ -1,5 +1,9 @@
 %global debug_package %{nil}
 
+# Tag: Jack, MIDI, Sfz, Sf2, Sf3, OSC,
+# Type: Standalone
+# Category: Audio, Tool
+
 Name:    Carla
 Version: 2.2.0
 Release: 6%{?dist}
@@ -33,7 +37,15 @@ BuildRequires: linuxsampler-devel
 Requires(pre): python3-qt5
 
 %description
-A rack manager for JACK
+A fully-featured audio plugin host, with support for many audio drivers and plugin formats.
+- LADSPA, DSSI, LV2 and VST2, VST3 and AU plugin formats
+- SF2/3 and SFZ sound banks
+- Internal audio and midi file player
+- Automation of plugin parameters via MIDI CC
+- Remote control over OSC
+- Rack and Patchbay processing modes, plus Single and Multi-Client if using JACK
+- Native audio drivers (ALSA, DirectSound, CoreAudio, etc) and JACK
+
 
 %prep
 %autosetup -n %{name}-%{version}

@@ -1,5 +1,9 @@
 %global gittag0 2021-03-15
 
+# Tag: Guitar, Equalizer, Convolution, Amp Simul, Overdrive
+# Type: Plugin, LV2
+# Category: Audio, Synthetizer, Effect
+
 Name:    DISTRHO-Ports
 Version: 1.1.0
 Release: 4%{?dist}
@@ -26,6 +30,12 @@ BuildRequires: meson
 
 %description
 A set of LV2 plugins
+- SwankyAmp: tube amplifier simulation
+- Vitalium: Synthetizer
+- Chow: digital distortion effect. Useful for mixing guitars, drums, even vocals when a heavily degraded sound is desired
+- TAL Dub-3, Filter, NoiseMaker, Reverb and Vocoder.
+- KlangFalter: convolution audio plugin, e.g. for usage as convolution reverb.
+- ...
 
 %prep
 %autosetup -n %{name}-%{gittag0}

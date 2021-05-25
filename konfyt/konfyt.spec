@@ -1,3 +1,8 @@
+
+# Tag: MIDI, Sfz, Sf2, Keyboard, Live
+# Type: Standalone
+# Category: Audio
+
 Name:    konfyt
 Version: 1.1.4
 Release: 3%{?dist}

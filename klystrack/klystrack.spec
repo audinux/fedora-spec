@@ -3,7 +3,12 @@
 %global gittag0 v1.7.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Summary: Klystrack is a chiptune tracker for making chiptune-like music on a modern computer.
+# Tag: MIDI, FM
+# Type: Standalone
+# Category: Audio, Synthetizer, Sequencer
+
+
+Summary: Chiptune tracker for making chiptune-like music on a modern computer.
 Name:    klystrack
 Version: 1.7.6
 Release: 3%{?dist}
@@ -25,7 +30,22 @@ BuildRequires: SDL2_image-devel
 BuildRequires: desktop-file-utils
 
 %description
-Klystrack is a chiptune tracker for making chiptune-like music on a modern computer.
+Tracker for making C64/NES/Amiga-style chiptunes on a modern platform. 
+- Sound
+  - Additive synthesis with filters (think SID, Atari, NES etc.)
+  - Hard sync and ring modulation (like SID)
+  - FM synthesis (think Adlib, MSX, OPL2 etc.)
+  - Wavetable for samples or custom waveforms to be used in synthesis (think Amiga, SNES)
+  - Built-in wave generator and editor
+  - Programmable instruments not limited to simple arpeggios
+- Sequencer
+  - Tracker with free positioning of patterns
+  - Pattern transpose
+  - Pattern length is not fixed
+- Effects: Stereo chorus ; SNES-style multitap echo ; Bit crusher/decimator
+- Export: custom format ; Wav ...
+- Import: Wav ; ProTracker, FT2 ; C64 SID files ...
+
 
 %prep
 %autosetup -n %{name}

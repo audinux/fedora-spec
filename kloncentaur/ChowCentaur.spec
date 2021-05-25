@@ -11,6 +11,11 @@
 # license that conforms to the Open Source Definition (Version 1.9)
 # published by the Open Source Initiative.
 
+# Tag: Guitar, Overdrive
+# Type: Plugin, LV2, VST
+# Category: Audio, Effect
+
+
 Name:    ChowCentaur
 Version: 1.3.6
 Release: 1%{?dist}
@@ -39,7 +44,8 @@ BuildRequires: JUCE
 BuildRequires: cmake
 
 %description
-Digital emulation of the Klon Centaur guitar pedal using RNNs, Wave Digital Filters, and more
+The model is constructed using a variety of circuit modelling techniques, 
+including nodal analysis, wave digital filters, and recurrent neural networks.
 
 %package -n vst3-%{name}
 Summary: Digital emulation of the Klon Centaur guitar pedal (VST3)

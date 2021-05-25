@@ -1,11 +1,15 @@
 %define	desktop_vendor planetccrma
 
+# Tag: MIDI, Alsa, Qt
+# Type: Standalone
+# Category: MIDI, Tool
+
 Summary: ALSA MIDI monitor
 Name:    kmidimon
 Version: 0.7.5
 Release: 1%{?dist}
 License: GPL
-URL:     http://kmetronome.sourceforge.net/kmidimon/
+URL:     https://kmetronome.sourceforge.net/kmidimon/
 
 Source0: https://sourceforge.net/projects/kmidimon/files/%{version}/kmidimon-%{version}.tar.bz2
 Source1: kmidimon.desktop
