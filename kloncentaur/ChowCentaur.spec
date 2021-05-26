@@ -17,11 +17,15 @@
 
 
 Name:    ChowCentaur
-Version: 1.3.6
+Version: 1.4.0
 Release: 1%{?dist}
 Summary: Digital emulation of the Klon Centaur guitar pedal
 License: BSD-3-Clause
 URL:     https://github.com/jatinchowdhury18/KlonCentaur
+
+# to generater code archive:
+# ./source_chowcentaur.sh <tag>
+# ./source_chowcentaur.sh 1.4.0
 
 Source0: KlonCentaur.tar.gz
 Source1: source_chowcentaur.sh
@@ -33,6 +37,8 @@ BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xinerama)
 BuildRequires: pkgconfig(xext)
 BuildRequires: pkgconfig(freetype2)
+BuildRequires: pkgconfig(webkit2gtk-4.0)
+BuildRequires: pkgconfig(gtk+-x11-3.0)
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libcurl-devel
 BuildRequires: mesa-libGL-devel
@@ -64,7 +70,8 @@ Digital emulation of the Klon Centaur guitar pedal using RNNs, Wave Digital Filt
 
 %build
 %set_build_flags
-cmake -B cmake-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/usr/lib64/juce -DLV2_TTL_GENERATOR=/usr/bin/lv2_ttl_generator
+
+%cmake -B cmake-build -DCMAKE_BUILD_TYPE=Release -DRTNEURAL_XSIMD=ON -DCMAKE_PREFIX_PATH=/usr/lib64/juce
 touch cmake-build/ChowCentaur/ChowCentaur_artefacts/JuceLibraryCode/AppConfig.h
 cmake --build cmake-build %{?_smp_mflags}
 
@@ -92,6 +99,9 @@ cp -r cmake-build/ChowCentaur/ChowCentaur_artefacts/Release/LV2/*.lv2 %{buildroo
 %{_libdir}/lv2/
 
 %changelog
+* Wed May 26 2021 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-1
+- update to 1.4.0
+
 * Sun Mar 14 2021 Yann Collette <ycollette.nospam@free.fr> - 1.3.6-1
 - update to 1.3.6
 

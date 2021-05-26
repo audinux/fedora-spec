@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Usage: ./source-chowcentaur.sh <tag>
-#        ./source-chowcentaur.sh 1.3.0
+# Usage: ./source_chowcentaur.sh <tag>
+#        ./source_chowcentaur.sh 1.4.0
 
-git clone https://github.com/jatinchowdhury18/KlonCentaur
+git clone --recursive https://github.com/jatinchowdhury18/KlonCentaur
 cd KlonCentaur
 git checkout $1
 git submodule init
