@@ -1,3 +1,8 @@
+# Tag: Guitar, Amp Simul
+# Type: Plugin, VST
+# Category: Audio, Effect
+# LastSourceUpdate: 2010
+
 Summary: Guitar Amplifier emulator
 Name:    rakarrack
 Version: 0.6.3

@@ -1,3 +1,8 @@
+# Tag: Gate
+# Type: Plugin, LV2
+# Category: Audio, Effect
+# LastSourceUpdate: 2020
+
 # Global variables for github repository
 %global commit0 87b4380eae2b69b09bba8a8b181f24153079100d
 %global gittag0 master
@@ -18,8 +23,6 @@ BuildRequires: fftw-devel
 BuildRequires: meson
 
 %description
-A lv2 plug-in for broadband noise reduction.
-
 Features
 * Spectral gating and spectral subtraction suppression rule
 * Adaptive and manual noise thresholds estimation

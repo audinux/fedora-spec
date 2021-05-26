@@ -1,8 +1,13 @@
-Summary: padthv1 is an old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.
+# Tag: MIDI
+# Type: Plugin, LV2
+# Category: Audio, Synthetizer
+# LastSourceUpdate: 2021
+
+Summary: Old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.
 Name:    padthv1
 Version: 0.9.17
 Release: 1%{?dist}
-URL:     http://sourceforge.net/projects/%{name}
+URL:     https://sourceforge.net/projects/%{name}
 License: GPLv2+
 
 Source0: https://download.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
@@ -23,7 +28,8 @@ BuildRequires: liblo-devel
 BuildRequires: libappstream-glib
 
 %description
-%{name} is an old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.
+Based on the PADsynth algorithm, by Paul Nasca (ZynAddSubFX), 
+as a special variant of additive synthesis.
 
 %package -n lv2-%{name}
 Summary:  An LV2 port of synthv1

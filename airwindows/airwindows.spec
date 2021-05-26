@@ -1,6 +1,6 @@
-# Tag: plugin
-# Type: VST
-# Category: Audio
+# Tag: Reverb, Compressor, Equalizer
+# Type: Plugin, VST
+# Category: Audio, Effect
 
 # Global variables for github repository
 %global commit0 9da0890fa3a7ee521e17197cc2ece276fba8396b
@@ -10,7 +10,7 @@
 Name:    airwindows
 Version: 0.0.1
 Release: 29%{?dist}
-Summary: A set of VST2 plugins
+Summary: A huge set of VST2 plugins
 License: MIT
 URL:     https://github.com/airwindows/airwindows
 
@@ -27,7 +27,7 @@ BuildRequires: unzip
 BuildRequires: cmake
 
 %description
-A set of VST plugins
+Airwindows plugins are modular, graphic-less, stripped-down, VST plugins
 
 %prep
 %autosetup -n %{name}-%{commit0}
