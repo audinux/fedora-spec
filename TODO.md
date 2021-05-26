@@ -29,7 +29,6 @@
 | tangamp             | https://github.com/sadko4u/tamgamp.lv2 |
 | tascar              | https://github.com/HoerTech-gGmbH/tascar/ |
 | midieditor          | https://github.com/markusschwenk/midieditor/ |
-| RTNeural            | https://github.com/jatinchowdhury18/RTNeural |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
