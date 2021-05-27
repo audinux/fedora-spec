@@ -1,20 +1,16 @@
 # Global variables for github repository
-%global commit0 c3f4125949004fe34e4eefa9242d49d65dd568f8
-%global gittag0 20200412
+%global commit0 c0a2d206fb1a08695fea686656a51c150a20b688
+%global gittag0 20210525
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    schismtracker
 Version: %{gittag0}
 Release: 1%{?dist}
 Summary: Module tracker software for creating music
-
-Group:   Applications/Multimedia
 License: GPLv3+
-
 URL:     https://github.com/schismtracker/schismtracker
-Source0: https://github.com/schismtracker/schismtracker/archive/%{commit0}.tar.gz#/schismtracker-%{shortcommit0}.tar.gz
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Source0: https://github.com/schismtracker/schismtracker/archive/%{commit0}.tar.gz#/schismtracker-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: autoconf
@@ -32,24 +28,19 @@ version of the [Modplug](https://openmpt.org/legacy_software) engine, with a
 number of bugfixes and changes to [improve IT].
 
 %prep
-%setup -qn %{name}-%{commit0}
+%autosetup -n %{name}-%{commit0}
 
 %build
 
 autoreconf --force --install
 mkdir auto
 %configure
-make DESTDIR=%{buildroot} %{?_smp_mflags}
+%make_build
 
 %install
-rm -rf %{buildroot}
-make install DESTDIR=%{buildroot}
-
-%clean
-rm -rf %{buildroot}
+%make_install
 
 %files
-%defattr(-,root,root,-)
 %doc AUTHORS NEWS INSTALL README.md
 %license COPYING
 %{_bindir}/schismtracker
@@ -57,8 +48,10 @@ rm -rf %{buildroot}
 %{_datadir}/man/*
 %{_datadir}/applications/*
 
-
 %changelog
+* Thu May 27 2021 Yann Collette <ycollette dot nospam at free dot fr> - 20210525-1
+- update to 20210525
+
 * Tue May 12 2020 Yann Collette <ycollette dot nospam at free dot fr> - 20200412-1
 - update to 20200412
 
