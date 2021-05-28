@@ -3,10 +3,14 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
+# Tag: Drum
+# Type: Plugin, LV2
+# Category: Audio, Synthetizer
+
 Name:    lv2-avldrums-x42-plugin
 Version: 0.4.2.%{shortcommit0}
 Release: 2%{?dist}
-Summary: LV2 Analogue simulation of a tube preamp
+Summary: Simple Drum Sample Player LV2 Plugin
 License: GPLv2+
 URL:     https://github.com/x42/avldrums.lv2.git
 
@@ -24,7 +28,8 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 
 %description
-avldrums.lv2 is a simple Drum Sample Player Plugin, dedicated to the http://www.bandshed.net/avldrumkits/
+avldrums.lv2 is a simple Drum Sample Player Plugin, 
+dedicated to the https://www.bandshed.net/avldrumkits/
 
 %prep
 %autosetup -n avldrums.lv2

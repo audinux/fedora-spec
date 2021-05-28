@@ -1,5 +1,10 @@
 %global debug_package %{nil}
 
+# Tag: Session, Jack, Live
+# Type: Standalone
+# Category: Session Mngmt
+# GUIToolkit: Qt5
+
 Name:    performer
 Version: 1.0.2
 Release: 3%{?dist}

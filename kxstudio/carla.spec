@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 
-# Tag: Jack, MIDI, Sfz, Sf2, Sf3, OSC,
+# Tag: Jack, MIDI, Sfz, Sf2, Sf3, OSC
 # Type: Standalone
 # Category: Audio, Tool
 

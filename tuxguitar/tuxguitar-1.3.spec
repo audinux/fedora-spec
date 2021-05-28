@@ -1,6 +1,11 @@
 # Disable production of debug package. Problem with fedora 23
 %global debug_package %{nil}
 
+# Tag: Guitar, MIDI, Jack, Tablature
+# Type: Standalone
+# Category: Audio
+# GUIToolkit: SWT
+
 Summary: A multitrack tablature editor and player written in Java-SWT
 Name:    tuxguitar3
 Version: 1.3.1
@@ -10,7 +15,7 @@ Release: 1%{?dist}
 # following commands to generate the tarball:
 #  svn export -r 1462 http://svn.code.sf.net/p/tuxguitar/code/trunk tuxguitar-1.3-1462
 #  tar -czvf tuxguitar-1.3-1462.tar.gz tuxguitar-1.3-1462
-URL:     http://tuxguitar.sourceforge.com
+URL:     https://tuxguitar.sourceforge.com
 Source0: tuxguitar-1.3-1462.tar.gz
 Source1: tuxguitar-1.3.sh
 Source2: tuxguitar3.desktop

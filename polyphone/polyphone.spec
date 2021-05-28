@@ -3,6 +3,11 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
+# Tag: SF2, Sample
+# Type: Standalone
+# Category: Audio, Tool
+# GUIToolkit: Qt5
+
 Name:    polyphone
 Version: 2.2.0
 Release: 3%{?dist}

@@ -5,6 +5,11 @@
 %global pname   carla 
 %global commitdate 20200201
 
+
+# Tag: Jack, MIDI, Sfz, Sf2, Sf3, OSC
+# Type: Standalone
+# Category: Audio, Tool
+
 Name:           Carla
 Version:        2.1
 #Release:        0.11.%%{commitdate}git%%{shortcommit0}%%{?dist}
