@@ -10,12 +10,18 @@
 %global _smp_build_ncpus 1
 %global debug_package %{nil}
 
+
+# Tag: Editor, Live
+# Type: Standalone, Language
+# Category: Audio, Programming
+# GUIToolkit: Qt5
+
 Name:    sonic-pi
 Version: 3.3.1
 Release: 10%{?dist}
 Summary: A musical programming environment 
 License: MIT
-URL:     http://sonic-pi.net/
+URL:     https://sonic-pi.net/
 
 Source0: https://github.com/samaaron/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 

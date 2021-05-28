@@ -1,13 +1,14 @@
 # Tag: Sample, Gig
 # Type: Standalone
 # Category: Audio, Sampler
+# GUIToolkit: Qt5
 
 Summary:      LinuxSampler GUI front-end
 Name:         qsampler
 Version:      0.9.3
 Release:      2%{?dist}
 License:      GPL
-URL:          http://qsampler.sourceforge.net/qsampler-index.html
+URL:          https://qsampler.sourceforge.net/qsampler-index.html
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA
 

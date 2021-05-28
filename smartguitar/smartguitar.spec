@@ -1,7 +1,12 @@
+# Tag: Guitar, Amp Simul
+# Type: Plugin, VST
+# Category: Audio, Effect
+# GUIToolkit: GTK3
+
 Name:    smartamp
 Version: 1.2
 Release: 1%{?dist}
-Summary: Guitar plugin made with JUCE that uses neural network models to emulate real world hardware.
+Summary: Guitar plugin emulating real hardware with Neural Network
 License: GPLv2+
 URL:     https://github.com/GuitarML/SmartGuitarAmp
 
@@ -31,7 +36,7 @@ BuildRequires: gtk3-devel
 BuildRequires: webkit2gtk3-devel
 
 %description
-Guitar plugin made with JUCE that uses neural network models to emulate real world hardware.
+SmartGuitarAmp is a guitar plugin (VST3) made with JUCE that uses neural network models to emulate real world hardware.
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}

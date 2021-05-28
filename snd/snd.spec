@@ -7,6 +7,10 @@
 # configuration options (note: check later --with-rt)
 %define config_options --prefix=%{_prefix} --with-alsa --with-jack --with-ladspa --with-doc-dir=%{_datadir}/doc/snd-%{pkgver}
 
+# Tag: Editor, Legacy
+# Type: Standalone
+# Category: Audio, Tool
+
 Summary: A sound editor (%{pkgver}, %{snd_date})
 Name:    snd
 Version: %{pkgver}

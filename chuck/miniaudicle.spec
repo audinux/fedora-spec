@@ -1,17 +1,18 @@
-# Tag: Qt4
+# Tag: Jack
 # Type: IDE
 # Category: Programming
+# GUIToolkit: Qt4
 
 Summary: Light weight ChucK development environment
 Name:    miniaudicle
 Version: 1.3.5.2
 Release: 2%{?dist}
 License: LGPL
-URL:     http://audicle.cs.princeton.edu/mini/
+URL:     https://audicle.cs.princeton.edu/mini/
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
-Source0: http://audicle.cs.princeton.edu/mini/release/files/miniAudicle-%{version}%{?beta:-%{?beta}}.tgz
+Source0: https://audicle.cs.princeton.edu/mini/release/files/miniAudicle-%{version}%{?beta:-%{?beta}}.tgz
 Patch0:  miniaudicle-0001-fix-nullptr-check.patch
 
 BuildRequires: gcc gcc-c++ perl

@@ -1,12 +1,13 @@
-# Tag: Jack, Qt5, PM
+# Tag: Jack, PM
 # Type: Standalone
 # Category: Audio, Synthetizer
+# GUIToolkit: Qt5
 
 Name:    6PM
 Version: 0.9
 Release: 2%{?dist}
 Summary: Phase Modulation synthetizer made of 6 oscillators
-URL:     http://sourceforge.net/projects/mv-6pm/
+URL:     https://sourceforge.net/projects/mv-6pm/
 License: GPLv2+
 
 Source0: https://sourceforge.net/projects/mv-6pm/files/6PM_v0.9.tgz

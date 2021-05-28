@@ -1,9 +1,14 @@
+# Tag: Jack, Alsa
+# Type: Plugin, LV2
+# Category: Audio, Synthesizer
+# GUIToolkit: Fltk
+
 Name:    minicomputer
-Summary: Minicomputer is a standalone Linux software synthesizer
+Summary: Standalone Linux software synthesizer
 Version: 1.4
 Release: 2%{?dist}
 License: GPL
-URL:     http://minicomputer.sourceforge.net/
+URL:     https://minicomputer.sourceforge.net/
 
 Source0: https://sourceforge.net/projects/minicomputer/files/minicomputer/version%20%{version}/MinicomputerV%{version}.tar.gz
 Source1: minicomputer-SConstruct
@@ -19,7 +24,7 @@ BuildRequires: scons
 BuildRequires: unzip
 
 %description
-Minicomputer is a standalone Linux softwaresynthesizer for creating experimental electronic sounds as its often
+Minicomputer is a standalone Linux software synthesizer for creating experimental electronic sounds as its often
 used in but not limited to Industrial music, IDM, EBM, Glitch, sound design and minimal electronic.
 It is monophonic but can produce up to 8 different sounds at the same time.
 It uses Jack as realtime audio infrastructure and can be controlled via Midi.

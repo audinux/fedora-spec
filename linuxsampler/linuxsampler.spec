@@ -1,13 +1,17 @@
+# Tag: Jack, SFZ, Alsa
+# Type: Plugin, DSSI, LV2
+# Category: Audio, Sampler
+
 Summary:      Linux Sampler
 Name:         linuxsampler
 Version:      2.2.0
 Release:      2%{?dist}
 License:      GPL
-URL:          http://www.linuxsampler.org/
+URL:          https://www.LinuxSampler.org/
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA
 
-Source0: http://download.linuxsampler.org/packages/linuxsampler-%{version}.tar.bz2
+Source0: https://download.linuxsampler.org/packages/linuxsampler-%{version}.tar.bz2
 
 BuildRequires: automake autoconf libtool pkgconfig
 BuildRequires: libgig-devel alsa-lib-devel sqlite-devel

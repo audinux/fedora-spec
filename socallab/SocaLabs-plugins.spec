@@ -20,6 +20,10 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
+# Tag: Compressor, Emulator, Delay, Analyzer
+# Type: Plugin, VST, LV2
+# Category: Audio, Effect, Synthetizer
+
 Name:    SocaLabs-plugins
 Version: 20200512
 Release: 5%{?dist}
@@ -52,12 +56,18 @@ BuildRequires: python-unversioned-command
 Requires: alsa
 
 %description
-https://socalabs.com/
+SocaLabs Audio Plugins: https://SocaLabs.com/
 
-SocaLabs Audio Plugins
+- Synth: Commodore 64 SID, Nintendo Entertainment System RP2A03, Gameboy PAPU,
+Sega Master System SN76489, SFX8, Voc Vocal Synth
+- Effect: Compressor, Delay, Mverb 2020, Sample Delay
+- Analyzer: Oscilloscope, Spectrum Analyzer
+- Developer tool: AB Tester, Add & Invert, Channel Mute, Compensated Delay, Huge Gain
+- Math:  Tone Generator
+
 
 %package -n lv2-%{name}
-Summary: Various VST/LV2 Plugins from SocaLabs.com (LV2)
+Summary: Various LV2 Plugins from SocaLabs.com (LV2)
 
 %description -n lv2-%{name}
 https://socalabs.com/
@@ -65,7 +75,7 @@ https://socalabs.com/
 SocaLabs Audio Plugins
 
 %package -n vst-%{name}
-Summary: Various VST/LV2 Plugins from SocaLabs.com (VST)
+Summary: Various VST Plugins from SocaLabs.com (VST)
 
 %description -n vst-%{name}
 https://socalabs.com/

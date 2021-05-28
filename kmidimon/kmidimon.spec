@@ -1,8 +1,9 @@
 %define	desktop_vendor planetccrma
 
-# Tag: MIDI, Alsa, Qt
+# Tag: MIDI, Alsa
 # Type: Standalone
 # Category: MIDI, Tool
+# GUIToolkit: Qt
 
 Summary: ALSA MIDI monitor
 Name:    kmidimon
