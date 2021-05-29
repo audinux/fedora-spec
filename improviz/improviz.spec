@@ -45,9 +45,9 @@ unzip %{SOURCE2}
 
 %set_build_flags
 
-export CFLAGS="-fPIC $CFLAGS"
-export CXXFLAGS="-fPIC $CXXFLAGS"
-export LDFLAGS="-fPIC $LDFLAGS"
+export CFLAGS="-fPIC"
+export CXXFLAGS="-fPIC"
+export LDFLAGS="-fPIC"
 
 stack build
 
