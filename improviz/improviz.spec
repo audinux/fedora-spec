@@ -2,7 +2,7 @@
 
 Name:    improviz
 Summary: A live-coded visual performance tool
-Version: 0.9.2
+Version: 0.9.3
 Release: 3%{?dist}
 License: BSD
 URL:     https://github.com/rumblesan/improviz
@@ -45,9 +45,9 @@ unzip %{SOURCE2}
 
 %set_build_flags
 
-export CFLAGS="-fPIC"
-export CXXFLAGS="-fPIC"
-export LDFLAGS="-fPIC"
+export CFLAGS="-fPIC $CFLAGS"
+export CXXFLAGS="-fPIC $CXXFLAGS"
+export LDFLAGS="-fPIC $LDFLAGS"
 
 stack build
 
@@ -81,6 +81,9 @@ cp -ra improviz-performance-main/* %{buildroot}/%{_datadir}/%{name}/examples/
 %{_datadir}/%{name}/*
 
 %changelog
+* Sat May 29 2021 Yann Collette <ycollette dot nospam at free.fr> 0.9.3-3
+- update to 0.9.3-3
+
 * Wed Apr 28 2021 Yann Collette <ycollette dot nospam at free.fr> 0.9.2-3
 - update to 0.9.2-3
 
