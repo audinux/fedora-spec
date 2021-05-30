@@ -22,7 +22,7 @@
 
 # Tag: Compressor, Emulator, Delay, Analyzer
 # Type: Plugin, VST, LV2
-# Category: Audio, Effect, Synthetizer
+# Category: Audio, Effect, Synthesizer
 
 Name:    SocaLabs-plugins
 Version: 20200512

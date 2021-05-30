@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=mv-6pm
-Comment=Jack synthetizer
+Comment=Jack Synthesizer
 Comment[fr]=Synthétiseur Jack
 Exec=mv-6pm
 Icon=mv-6pm

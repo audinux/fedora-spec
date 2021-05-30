@@ -1,6 +1,6 @@
 # Tag: SF2
 # Type: Plugin, LV2
-# Category: Audio, Synthetizer
+# Category: Audio, Synthesizer
 
 Name:    fluida
 Version: 0.7

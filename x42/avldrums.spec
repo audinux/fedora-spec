@@ -5,7 +5,7 @@
 
 # Tag: Drum
 # Type: Plugin, LV2
-# Category: Audio, Synthetizer
+# Category: Audio, Synthesizer
 
 Name:    lv2-avldrums-x42-plugin
 Version: 0.4.2.%{shortcommit0}

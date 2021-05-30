@@ -1,6 +1,6 @@
 # Tag: Jack, Alsa
 # Type: Plugin, Standalone, VST
-# Category: Audio, Synthetizer
+# Category: Audio, Synthesizer
 
 # Global variables for github repository
 %global commit0 bd94faa32539ba4228ad8ccfa00dcc35ab17c4fb
@@ -10,7 +10,7 @@
 Name:    odin2
 Version: 2.2.4
 Release: 3%{?dist}
-Summary: A VST3 synthetizer
+Summary: A VST3 Synthesizer
 License: GPLv2+
 URL:     https://github.com/TheWaveWarden/odin2
 

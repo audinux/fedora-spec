@@ -1,6 +1,6 @@
 # Tag: MIDI
 # Type: Plugin, LV2
-# Category: Audio, Synthetizer
+# Category: Audio, Synthesizer
 # LastSourceUpdate: 2021
 
 Summary: Old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.

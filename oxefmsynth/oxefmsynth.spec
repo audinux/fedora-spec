@@ -20,7 +20,7 @@ BuildRequires: wget
 BuildRequires: unzip
 
 %description
-A FM synthetizer
+A FM Synthesizer
 
 %prep
 %autosetup -p1 -n %{name}-%{commit0}

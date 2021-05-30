@@ -1,6 +1,6 @@
 # Tag: MIDI
 # Type: Plugin, LV2
-# Category: Audio, Synthetizer
+# Category: Audio, Synthesizer
 
 Name:    xpolymonk
 Version: 0.6.0

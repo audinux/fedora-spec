@@ -1,6 +1,6 @@
 # Tag: MIDI, FM, Emulator
 # Type: Plugin, VST, LV2
-# Category: Audio, Synthetizer
+# Category: Audio, Synthesizer
 
 Name:    adlplug
 Version: 1.0.2

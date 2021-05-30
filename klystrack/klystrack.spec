@@ -5,7 +5,7 @@
 
 # Tag: MIDI, FM
 # Type: Standalone
-# Category: Audio, Synthetizer, Sequencer
+# Category: Audio, Synthesizer, Sequencer
 
 
 Summary: Chiptune tracker for making chiptune-like music on a modern computer.

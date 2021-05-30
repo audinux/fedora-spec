@@ -1,7 +1,7 @@
 Name:    surge
 Version: 1.9.0
 Release: 7%{?dist}
-Summary: A VST3 / LV2 synthetizer
+Summary: A VST3 / LV2 Synthesizer
 License: GPLv2+
 
 # To get the sources, use:
@@ -25,7 +25,7 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
 
 %description
-A VST3 / LV2 synthetizer
+A VST3 / LV2 Synthesizer
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}

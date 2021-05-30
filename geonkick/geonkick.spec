@@ -1,6 +1,6 @@
 # Tag:  Drum, Jack, Alsa
 # Type: Plugin, LV2
-# Category: Audio, Synthetizer
+# Category: Audio, Synthesizer
 
 Name:    geonkick
 Version: 2.8.0

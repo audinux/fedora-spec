@@ -1,6 +1,6 @@
 # Tag: Modular, Rack
 # Type: Rack
-# Category: Audio, Synthetizer
+# Category: Audio, Synthesizer
 
 %define use_static_glfw 0
 %define use_static_rtaudio 1
@@ -8,7 +8,7 @@
 Name:    Rack-v1
 Version: 1.1.6
 Release: 13%{?dist}
-Summary: A modular synthetizer
+Summary: A modular Synthesizer
 License: GPLv2+
 URL:     https://github.com/VCVRack/Rack
 
@@ -49,7 +49,7 @@ BuildRequires: python3-sphinx_rtd_theme
 Requires: rack-v1-Fundamental
 
 %description
-A modular synthetizer
+A modular Synthesizer
 
 %package doc
 Summary:   Documentation files for Rack
@@ -167,7 +167,7 @@ cp cacert.pem Core.json template.vcv %{buildroot}%{_libexecdir}/Rack1/
 cat > %{buildroot}%{_datadir}/applications/Rack.desktop << EOF
 [Desktop Entry]
 Name=Rack
-Comment=A modular synthetizer.
+Comment=A modular Synthesizer.
 Exec=/usr/bin/Rack
 Type=Application
 Terminal=0

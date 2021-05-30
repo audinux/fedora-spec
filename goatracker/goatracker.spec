@@ -48,7 +48,7 @@ install -m 755 -d %{buildroot}/%{_datadir}/applications/
 cat > %{buildroot}%{_datadir}/applications/goatracker.desktop << EOF
 [Desktop Entry]
 Name=goatracker
-Comment=A tracker synthetizer.
+Comment=A tracker Synthesizer.
 Exec=/usr/bin/gt2stereo
 Type=Application
 Terminal=0

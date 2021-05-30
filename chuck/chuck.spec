@@ -1,6 +1,6 @@
 # Tag: Jack, Alsa
 # Type: Language
-# Category: Audio, Synthetizer, Graphic, Programming
+# Category: Audio, Synthesizer, Graphic, Programming
 
 Name:    chuck
 Summary: Real-time audio synthesis and graphics/multimedia language

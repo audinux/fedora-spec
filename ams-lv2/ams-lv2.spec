@@ -1,6 +1,6 @@
 # Tag: Modular, Jack, Alsa
 # Type: Plugin, LV2
-# Category: Audio, Synthetizer
+# Category: Audio, Synthesizer
 
 Name:    ams-lv2
 Version: 1.2.2

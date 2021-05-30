@@ -1,6 +1,6 @@
 # Tag: Organ
 # Type: Plugin
-# Category: Audio, Synthetizer
+# Category: Audio, Synthesizer
 
 %define aeolus_ver 0.9.9
 %define stops_ver  0.3.0

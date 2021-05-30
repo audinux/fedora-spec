@@ -6,7 +6,7 @@
 Name:    jalv_select
 Version: 1.3.0.%{shortcommit0}
 Release: 4%{?dist}
-Summary: A LV2 synthetizer launcher for Jack audio
+Summary: A LV2 Synthesizer launcher for Jack audio
 URL:     https://github.com/brummer10/jalv_select
 
 License: GPLv2+
