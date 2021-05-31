@@ -21,7 +21,7 @@ URL:     SOURCEURL
 # ./rack-source.sh v1.1.6
 
 Source0: Rack.tar.gz
-Source1: SOURCEURL/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: SOURCE1
 Source2: JSONFILE
 
 BuildRequires: gcc gcc-c++
@@ -56,7 +56,7 @@ sed -i -e "s/-march=nocona//g" compile.mk
 sed -i -e "s/-O3/-O2/g" compile.mk
 
 # %{build_cxxflags}
-echo "CXXFLAGS += -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I$CURRENT_PATH/dep/nanosvg/src -I/usr/include/rtmidi -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/jpommier-pffft-29e4f76ac53b -I$CURRENT_PATH/dep/include  -I$CURRENT_PATH/dep/rtaudio" >> compile.mk
+echo "CXXFLAGS += VCVRACKCXXFLAGS-I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I$CURRENT_PATH/dep/nanosvg/src -I/usr/include/rtmidi -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/jpommier-pffft-29e4f76ac53b -I$CURRENT_PATH/dep/include  -I$CURRENT_PATH/dep/rtaudio" >> compile.mk
 
 sed -i -e "s/-Wl,-Bstatic//g" Makefile
 sed -i -e "s/-lglfw3/dep\/lib\/libglfw3.a/g" Makefile
