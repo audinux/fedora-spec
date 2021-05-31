@@ -11,6 +11,7 @@ import os
 path_to_library_git = 'library'
 path_to_spec_files = 'spec'
 
+# Static data which overrides the ones found in VCV Rack library files
 static_values = {
     "ArableInstruments": {
         "sourceUrl": r"https://github.com/adbrant/ArableInstruments",
