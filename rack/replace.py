@@ -78,7 +78,8 @@ def proceed(json_file):
         # copy json file into spec dire
         shutil.copyfile(json_file, path_to_spec_files + os.sep + slug_name + '_plugin.json')
         
-        with fileinput.FileInput(path_to_spec_files + os.sep + spec_filename, inplace=True, backup='.bak') as file:
+        #with fileinput.FileInput(path_to_spec_files + os.sep + spec_filename, inplace=True, backup='.bak') as file:
+        with fileinput.FileInput(path_to_spec_files + os.sep + spec_filename, inplace=True) as file:
             for line in file:
                 if 'SLUGNAME' in line:
                     print(line.replace('SLUGNAME',  slug_name), end='')
@@ -89,7 +90,8 @@ def proceed(json_file):
                 elif 'SOURCEURL' in line:
                     print(line.replace('SOURCEURL', sourceurl), end='')
                 elif 'DESCRIPTION' in line:
-                    print(line.replace('DESCRIPTION', description), end='')
+                    if description:
+                        print(line.replace('DESCRIPTION', description), end='')
                 elif 'JSONFILE' in line:
                     print(line.replace('JSONFILE', slug_name + '_plugin.json'), end='')
                 else:
