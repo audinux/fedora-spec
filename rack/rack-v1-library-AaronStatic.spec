@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 1431f355334a299088feb9bb69e27ce9523edcc5
-%global gittag0 1.0.0
+%global commit0 27d0c9bf62bf2165e238051f8699e1ea0b60f09b
+%global gittag0 1.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-AaronStatic
-Version: 1.0.0
+Version: 1.0.1
 Release: 3%{?dist}
 Summary: AaronStatic plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r AaronStatic_plugin/dist/AaronStatic/* %{buildroot}%{_libexecdir}/Rack1/plu
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-3
 - initial specfile
