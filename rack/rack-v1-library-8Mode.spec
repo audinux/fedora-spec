@@ -46,7 +46,6 @@ BuildRequires: jq
 %description
 8Mode plugin for Rack.
 
-
 %prep
 %autosetup -n Rack
 

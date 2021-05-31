@@ -46,7 +46,6 @@ BuildRequires: jq
 %description
 MSM plugin for Rack.
 
-
 %prep
 %autosetup -n Rack
 

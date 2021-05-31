@@ -51,7 +51,6 @@ BuildRequires: jq
 %description
 ErraticInstruments plugin for Rack.
 
-
 %prep
 %autosetup -n Rack
 

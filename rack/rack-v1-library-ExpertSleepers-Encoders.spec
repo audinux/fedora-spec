@@ -46,7 +46,6 @@ BuildRequires: jq
 %description
 ExpertSleepers-Encoders plugin for Rack.
 
-
 %prep
 %autosetup -n Rack
 

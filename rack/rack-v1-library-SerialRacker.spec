@@ -46,7 +46,6 @@ BuildRequires: jq
 %description
 SerialRacker plugin for Rack.
 
-
 %prep
 %autosetup -n Rack
 

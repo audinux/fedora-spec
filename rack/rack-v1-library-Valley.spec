@@ -46,7 +46,6 @@ BuildRequires: jq
 %description
 Valley plugin for Rack.
 
-
 %prep
 %autosetup -n Rack
 

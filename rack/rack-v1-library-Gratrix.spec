@@ -46,7 +46,6 @@ BuildRequires: jq
 %description
 Gratrix plugin for Rack.
 
-
 %prep
 %autosetup -n Rack
 

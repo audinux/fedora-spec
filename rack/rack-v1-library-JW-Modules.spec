@@ -46,7 +46,6 @@ BuildRequires: jq
 %description
 JW-Modules plugin for Rack.
 
-
 %prep
 %autosetup -n Rack
 

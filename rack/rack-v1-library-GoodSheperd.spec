@@ -46,7 +46,6 @@ BuildRequires: jq
 %description
 GoodSheperd plugin for Rack.
 
-
 %prep
 %autosetup -n Rack
 

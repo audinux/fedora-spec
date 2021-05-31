@@ -51,7 +51,6 @@ BuildRequires: jq
 %description
 ArableInstruments plugin for Rack.
 
-
 %prep
 %autosetup -n Rack
 
