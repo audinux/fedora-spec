@@ -1,6 +1,6 @@
 Name:    JUCE5
 Version: 5.4.7
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: JUCE Framework version 5
 URL:     https://github.com/juce-framework/JUCE
 License: GPLv2+
@@ -36,8 +36,10 @@ live-coding engine which can be used for rapid prototyping.
 
 %set_build_flags
 
-export CXXFLAGS="$CXXFLAGS -DJUCER_ENABLE_GPL_MODE -O0"
-export CFLAGS="$CFLAGS -DJUCER_ENABLE_GPL_MODE -O0"
+#export CXXFLAGS="$CXXFLAGS -DJUCER_ENABLE_GPL_MODE -O0"
+#export CFLAGS="$CFLAGS -DJUCER_ENABLE_GPL_MODE -O0"
+export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g"
+export CFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g"
 
 cd doxygen
 sed -i -e "s/python/python2/g" Makefile
@@ -87,5 +89,8 @@ cp -ra doxygen/doc/* %{buildroot}/%{_datadir}/JUCE5/doc/
 %{_usrsrc}/*
 
 %changelog
+* Tue Jun 01 2021 Yann Collette <ycollette.nospam@free.fr> - 5.4.7-2
+- fix crash at startup
+
 * Sun Mar 21 2021 Yann Collette <ycollette.nospam@free.fr> - 5.4.7-1
 - initial spec - update to 5.4.7
