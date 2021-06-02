@@ -1,0 +1,13 @@
+diff --git a/Source/PluginProcessor.cpp b/Source/PluginProcessor.cpp
+index 4547608..246f145 100755
+--- a/Source/PluginProcessor.cpp
++++ b/Source/PluginProcessor.cpp
+@@ -767,7 +767,7 @@ File ObxdAudioProcessor::getCurrentBankFile() const
+ //==============================================================================
+ File ObxdAudioProcessor::getDocumentFolder() const
+ {
+-	File folder = File::getSpecialLocation(File::userDocumentsDirectory).getChildFile("discoDSP").getChildFile("OB-Xd");
++       File folder("/usr/share/discoDSP/OB-Xd");
+ /*
+     if (! folder.exists())
+     {
