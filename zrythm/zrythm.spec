@@ -3,16 +3,17 @@
 # Category: Audio, DAW
 
 Name:    zrythm
-Version: 1.0.0.a1611
+Version: 1.0.0.a1713
 Release: 5%{?dist}
 Summary: Highly automated Digital Audio Workstation (DAW) featureful and intuitive to use
 License: GPLv2+
-URL:     https://git.zrythm.org/git/zrythm
+URL:     https://git.zrythm.org/zrythm/zrythm
 
-Source0: https://git.zrythm.org/cgit/zrythm/snapshot/zrythm-1.0.0-alpha.16.1.1.tar.gz
+Source0: https://git.zrythm.org/zrythm/zrythm/archive/v1.0.0-alpha.17.1.3.tar.gz#/zrythm-1.0.0-alpha.17.1.3.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: git
+BuildRequires: flex
 BuildRequires: lv2-devel
 BuildRequires: lilv-devel
 BuildRequires: suil-devel
@@ -35,6 +36,9 @@ BuildRequires: libzstd-devel
 BuildRequires: libchromaprint-devel
 BuildRequires: libreproc-devel
 BuildRequires: libbacktrace-devel
+BuildRequires: xxhash-devel
+BuildRequires: rtmidi-devel
+BuildRequires: rtaudio-devel
 BuildRequires: meson
 BuildRequires: help2man
 BuildRequires: pandoc
@@ -86,7 +90,7 @@ It is written in C and uses the GTK+3 toolkit, with bits and pieces taken from o
 More info at https://www.zrythm.org
 
 %prep
-%autosetup -n zrythm-1.0.0-alpha.16.1.1
+%autosetup -n zrythm
 
 # Compile using -O0 because of jack xruns
 sed -i -e "/cc = meson.get_compiler ('c')/a add_global_arguments('-O0'\, language : 'c')" meson.build
@@ -147,9 +151,10 @@ desktop-file-install --vendor '' \
 %{_datadir}/locale/*
 %{_datadir}/mime/*
 %{_datadir}/zrythm/*
-%{_sysconfdir}/bash_completion.d/zrythm
+%{_datadir}/bash-completion/completions/zrythm
 %{_mandir}/*
 %exclude %{_libdir}/*.a
+%exclude %{_datadir}/fish/vendor_completions.d/zrythm.fish
 %if 0%{?fedora} < 34
 %exclude %{_bindir}/gapplication
 %exclude %{_bindir}/gdbus
@@ -172,6 +177,9 @@ desktop-file-install --vendor '' \
 %endif
 
 %changelog
+* Wed Jun 02 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.17.1.3-5
+- update to 1.0.0-alpha.17.1.3-5
+
 * Sat May 22 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.16.1.1-5
 - update to 1.0.0-alpha.16.1.1-5 - fix exclude of glib files for Fedora 32 and 33
 
