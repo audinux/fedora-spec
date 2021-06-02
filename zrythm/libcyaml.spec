@@ -1,16 +1,12 @@
-%global commit0 47075327890518596e5a6fe1bd8a759ac8dc8669
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 Name:     libcyaml
-Version:  1.1.0
+Version:  1.2.0
 Release:  2%{?dist}
 Summary:  C library for reading and writing YAML
 License:  ISC
 Packager: Alexandros Theodotou
 
-URL:     https://git.zrythm.org/cgit/zrythm-cyaml/
-Source0: https://git.zrythm.org/cgit/zrythm-cyaml/snapshot/zrythm-cyaml-%{commit0}.tar.bz2
+URL:     https://github.com/tlsa/libcyaml/
+Source0: https://github.com/tlsa/libcyaml/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: libyaml-devel
 BuildRequires: gcc
@@ -28,7 +24,7 @@ Requires: %{name} = %{version}-%{release}
 The %{name}-devel package contains header files for %{name}.
 
 %prep
-%autosetup -n zrythm-cyaml-%{commit0}
+%autosetup -n %{name}-%{version}
 
 %build
 
@@ -48,6 +44,9 @@ mkdir -p %{buildroot}%{_libdir}/pkgconfig %{buildroot}%{_includedir}
 %{_includedir}/*
 
 %changelog
+* Wed Jun 02 2021 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
+- update to 1.2.0-1
+
 * Sat Jun 27 2020 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
 - update to 1.1.0-1
 
