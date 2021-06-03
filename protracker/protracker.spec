@@ -1,3 +1,7 @@
+# Tag: Tracker, Alsa
+# Type: Standalone
+# Category: Audio, Sequencer
+
 Summary: Chiptune tracker for making chiptune-like music on a modern computer.
 Name:    protracker2
 Version: 1.30

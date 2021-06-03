@@ -3,6 +3,10 @@
 %global gittag0 20210525
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
+# Tag: Tracker, Alsa
+# Type: Standalone
+# Category: Audio, Sequencer
+
 Name:    schismtracker
 Version: %{gittag0}
 Release: 1%{?dist}

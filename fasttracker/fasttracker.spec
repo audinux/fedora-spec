@@ -1,6 +1,6 @@
 # Tag: Tracker, Jack, Alsa
 # Type: Standalone
-# Category: Audio, Tracker
+# Category: Audio, Sequencer
 
 Name:    fasttracker2
 Version: 1.47

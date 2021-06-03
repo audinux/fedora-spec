@@ -3,7 +3,11 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Summary: PLEBtracker is a chiptune tracker for making chiptune-like music on a modern computer.
+# Tag: Tracker, Jack, Alsa
+# Type: Standalone
+# Category: Audio, Sequencer
+
+Summary: Chiptune tracker for making chiptune-like music on a modern computer.
 Name:    plebtracker
 Version: 0.1
 Release: 2%{?dist}
@@ -22,7 +26,7 @@ Requires: alsa-utils
 Requires: inotify-tools
 
 %description
-PLEBTracker is a chiptune tracker for making chiptune-like music on a modern computer.
+Chiptune tracker for making chiptune-like music on a modern computer.
 
 %prep
 %autosetup -n PLEBTracker-%{commit0}
