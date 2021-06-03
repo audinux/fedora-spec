@@ -1,3 +1,7 @@
+# Tag: Jack
+# Type: Standalone
+# Category: Audio, Tool
+
 Summary: MU1 is a simple Jack app used to organise stereo monitoring.
 Name:    zita-mu1
 Version: 0.3.3
@@ -17,8 +21,7 @@ BuildRequires: cairo-devel libpng-devel libsndfile-devel
 BuildRequires: libX11-devel libXft-devel
 
 %description
-MU1 is a simple Jack app used to organise stereo monitoring. It was
-written originally for use with Ardour2, but still useful with Ardour3
+Written originally for use with Ardour2, but still useful with Ardour3
 as it provides some extra functions.
 Main features:
 * Four stereo inputs.

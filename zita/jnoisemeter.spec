@@ -1,4 +1,8 @@
-Summary: jnoisemeter is a small app designed to measure audio test signals and in particular noise signals.
+# Tag: Jack, Analyzer
+# Type: Standalone
+# Category: Audio, Tool
+
+Summary: Small app designed to measure audio test signals and in particular noise signals.
 Name:    jnoisemeter
 Version: 0.2.2
 Release: 1%{?dist}
@@ -17,9 +21,6 @@ BuildRequires: libX11-devel libXft-devel
 BuildRequires: libpng-devel freetype-devel
 
 %description
-jnoisemeter is a small app designed to measure audio
-test signals and in particular noise signals.
-
 The simplest use is to measure the S/N ratio of your
 sound card. If you can calibrate the input levels of
 your soundcard it can also be used (with some external

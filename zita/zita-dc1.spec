@@ -1,3 +1,7 @@
+# Tag: Jack, Compressor
+# Type: Standalone
+# Category: Audio, Effect
+
 Summary: Dynamics Compressor. 
 Name:    zita-dc1
 Version: 0.3.3

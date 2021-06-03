@@ -1,5 +1,5 @@
-# Tag: Organ
-# Type: Plugin
+# Tag: Organ, Jack, Alsa
+# Type: Standalone
 # Category: Audio, Synthesizer
 
 %define aeolus_ver 0.9.9

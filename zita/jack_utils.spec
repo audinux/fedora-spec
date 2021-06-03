@@ -1,4 +1,8 @@
-Summary: Jack_utils contains three small command line programs: jack_fpmon, jack_check, jack_proxy
+# Tag:  Jack
+# Type: Standalone
+# Category: Audio, Tool
+
+Summary: Three small command line programs: jack_fpmon, jack_check, jack_proxy
 Name:    jack_utils
 Version: 0.0.1
 Release: 1%{?dist}
@@ -13,8 +17,6 @@ BuildRequires: gcc gcc-c++
 BuildRequires: jack-audio-connection-kit-devel
 
 %description
-jack_utils contains three small command line programs.
-
 jack_fpmon: watch an audio signal for denormals, Nan and Inf samples.
 
 jack_check: watch for discontinuities in Jack's timing info (frametime

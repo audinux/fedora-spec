@@ -1,4 +1,8 @@
-Summary: Jack_delay can be used to measure the round-trip latency of a soundcard.
+# Tag:  Jack
+# Type: Standalone
+# Category: Audio, Tool
+
+Summary: Measure the round-trip latency of a soundcard.
 Name:    jack_delay
 Version: 0.4.2
 Release: 1%{?dist}
@@ -14,7 +18,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: jack-audio-connection-kit-devel
 
 %description
-Jack_delay can be used to measure the round-trip latency of a soundcard.
+Measure the round-trip latency of a soundcard.
 
 %prep
 %setup -q

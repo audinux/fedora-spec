@@ -1,4 +1,8 @@
-Summary: zita-dpl1 is a look-ahead digital peak level limiter using some special algorithms to allow fast response without excessive LF distortion.
+# Tag: Jack, Compressor
+# Type: Standalone
+# Category: Audio, Effect
+
+Summary: Look-ahead digital peak level limiter
 Name:    zita-dpl1
 Version: 0.3.3
 Release: 1%{?dist}
@@ -18,7 +22,7 @@ BuildRequires: freetype-devel
 BuildRequires: libX11-devel libXft-devel
 
 %description
-Zita-dpl1 is a look-ahead digital peak level limiter using some special algorithms to allow fast response without excessive LF distortion.
+Use special algorithms to allow fast response without excessive LF distortion.
 
 %prep
 %setup -q

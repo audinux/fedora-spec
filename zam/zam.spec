@@ -1,7 +1,11 @@
+# Tag: Jack, Compressor, Overdrive, Equalizer, Delay, Gate
+# Type: Plugin, LV2, VST
+# Category: Audio, Effect
+
 Name:    zam-plugins
 Version: 3.14
 Release: 3%{?dist}
-Summary: Zam LV2 set of plugins
+Summary: Set of LV2 plugins
 License: GPLv2+
 URL:     https://github.com/zamaudio/zam-plugins
 
@@ -19,6 +23,8 @@ BuildRequires: libsamplerate-devel
 
 %description
 Zam LV2 set of plugins
+Compressors, Limiters, Saturation, Tube emulation, 
+Equalizers, Delay, Gates
 
 %package -n ladspa-zam
 Summary: Zam LADSPA plugin

@@ -1,3 +1,7 @@
+# Tag:  Jack, Analyzer
+# Type: Standalone
+# Category: Audio, Tool
+
 Summary: Loudness measurement according to EBU-R128.
 Name:    ebumeter
 Version: 0.4.2

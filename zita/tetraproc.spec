@@ -1,3 +1,7 @@
+# Tag: Jack
+# Type: Standalone
+# Category: Audio, Tool
+
 Summary: An A/B convertor and the metering and monitoring. 
 Name:    tetraproc
 Version: 0.8.6

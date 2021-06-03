@@ -1,4 +1,8 @@
-Summary: The 'octofile' program provides A/B processing with file input and output. 
+# Tag: Jack
+# Type: Standalone
+# Category: Audio, Tool
+
+Summary: Provides A/B processing with file input and output. 
 Name:    octofile
 Version: 0.3.2
 Release: 1%{?dist}
@@ -14,10 +18,8 @@ BuildRequires: gcc gcc-c++
 BuildRequires: libsndfile-devel fftw-devel
 
 %description
-The 'octofile' program provides A/B processing with file input and
-output. The DSP part is completely separated from the file I/O, and
-can be used safely in a real-time context such as an ASIO or VST
-callback.
+The DSP part is completely separated from the file I/O, and can 
+be used safely in a real-time context such as an ASIO or VST callback.
 
 %prep
 %setup -q

@@ -1,4 +1,8 @@
-Summary: aliki is used to measure Impulse Responses using a sine sweep and deconvolution.
+# Tag:  Jack, Alsa, Convolution
+# Type: Standalone
+# Category: Audio, Tool
+
+Summary: Measure Impulse Responses using a sine sweep and deconvolution
 Name:    aliki
 Version: 0.3.0
 Release: 1%{?dist}
@@ -20,7 +24,7 @@ BuildRequires: libsndfile-devel
 BuildRequires: zita-alsa-pcmi-devel
 
 %description
-aliki is used to measure Impulse Responses using a sine sweep and deconvolution.
+Measure Impulse Responses using a sine sweep and deconvolution
 
 %prep
 %setup -q

@@ -1,4 +1,8 @@
-Summary: zita-bls1 is a digital implementation of the 'Blumlein Shuffler', used to convert binaural signals into a form suitable for reproduction on a conventional stereo speaker pair. 
+# Tag: Jack
+# Type: Standalone
+# Category: Audio, Tool
+
+Summary: Convert binaural signals for reproduction on conventional stereo speakers
 Name:    zita-bls1
 Version: 0.3.3
 Release: 1%{?dist}
@@ -18,7 +22,8 @@ BuildRequires: zita-convolver-devel
 BuildRequires: fftw-devel
 
 %description
-zita-bls1 is a digital implementation of the 'Blumlein Shuffler', used to convert binaural signals into a form suitable for reproduction on a conventional stereo speaker pair.
+Digital implementation of the 'Blumlein Shuffler', 
+used to convert binaural signals into a form suitable for reproduction on a conventional stereo speaker pair.
 
 %prep
 %setup -q

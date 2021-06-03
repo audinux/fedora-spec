@@ -3,6 +3,10 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
+# Tag: 
+# Type: Presets
+# Category: Audio
+
 Name:    zynthian-data
 Version: 1.0.0
 Release: 5%{?dist}
