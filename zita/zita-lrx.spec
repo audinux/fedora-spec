@@ -1,3 +1,7 @@
+# Tag: Jack, Equalizer
+# Type: Standalone
+# Category: Audio, Effect
+
 Summary: 4th order crossover filters
 Name:    zita-lrx
 Version: 0.1.2

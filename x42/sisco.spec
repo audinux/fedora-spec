@@ -1,3 +1,7 @@
+# Tag: Analyzer
+# Type: Plugin, LV2
+# Category: Audio, Tool
+
 Name:    sisco.lv2
 Version: 0.9.2
 Release: 1%{?dist}
@@ -22,7 +26,7 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 
 %description
-A LV2 oscilloscope
+A LV2 oscilloscope by x42
 
 %prep
 %autosetup -n %{name}

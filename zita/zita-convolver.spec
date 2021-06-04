@@ -1,3 +1,7 @@
+# Tag: Jack, Convolution
+# Type: Standalone
+# Category: Audio, Tool
+
 Summary: convolver function
 Name:    zita-convolver
 Version: 4.0.3

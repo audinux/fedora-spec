@@ -3,6 +3,10 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
+# Tag: Mixer, Alsa, Jack
+# Type: Plugin, LV2
+# Category: Audio, Tool
+
 Name:    scarlett-mixer
 Version: 0.1.0
 Release: 1%{?dist}
@@ -34,7 +38,7 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 
 %description
-A mixer matrix for Scarlett sound card
+A mixer matrix for Scarlett sound card by x42
 
 %prep
 %setup -qn %{name}

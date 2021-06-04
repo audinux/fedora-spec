@@ -1,3 +1,7 @@
+# Tag:  Jack, Convolution, Reverb
+# Type: Presets
+# Category: Audio
+
 Summary: Impulse Responses for Jconvolver
 Name:    jconvolver-reverbs
 Version: 0.8.7

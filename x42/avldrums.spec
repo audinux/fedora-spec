@@ -28,7 +28,7 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 
 %description
-avldrums.lv2 is a simple Drum Sample Player Plugin, 
+avldrums.lv2 is a simple Drum Sample Player Plugin by x42, 
 dedicated to the https://www.bandshed.net/avldrumkits/
 
 %prep

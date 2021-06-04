@@ -1,3 +1,7 @@
+# Tag:  Jack
+# Type: Standalone
+# Category: Audio, Tool
+
 Summary: An Ambisonic decoder for first and second order. 
 Name:    ambdec
 Version: 0.7.1
@@ -16,7 +20,6 @@ BuildRequires: clthreads-devel clxclient-devel
 BuildRequires: libsndfile-devel libpng-devel libXft-devel libX11-devel
 
 %description
-An Ambisonic decoder for first and second order.
 Main features:
 * 1st, 2nd and 3rd order 2-D or 3-D decoding.
 * Up to 36 speakers (could be extended).

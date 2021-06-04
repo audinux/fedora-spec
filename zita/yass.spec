@@ -1,4 +1,8 @@
-Summary: Yet Another Scrolling Scope. Main features: up to 32 channels, variable scrolling speed, automatic gain control, and very light on CPU usage. Beta release available.
+# Tag: Jack, Analyzer
+# Type: Standalone
+# Category: Audio, Tool
+
+Summary: Yet Another Scrolling Scope. Oscilloscope
 Name:    yass
 Version: 0.1.0
 Release: 1%{?dist}
@@ -15,7 +19,7 @@ BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libX11-devel libXft-devel
 
 %description
-Yet Another Scrolling Scope. Main features: up to 32 channels, variable scrolling speed, automatic gain control, and very light on CPU usage. Beta release available.
+Main features: up to 32 channels, variable scrolling speed, automatic gain control, and very light on CPU usage. Beta release available.
 
 %prep
 %setup -q

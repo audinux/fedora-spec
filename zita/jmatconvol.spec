@@ -1,4 +1,8 @@
-Summary: Jmatconvol is a real-time convolution engine.
+# Tag: Jack, Convolution
+# Type: Standalone
+# Category: Audio, Effect
+
+Summary: Real-time convolution engine.
 Name:    jmatconvol
 Version: 0.3.3
 Release: 1%{?dist}
@@ -18,8 +22,7 @@ BuildRequires: clthreads-devel
 BuildRequires: fftw-devel
 
 %description
-Jmatconvol is a real-time convolution engine. In
-contrast to jconvolver it uses a single partition
+In contrast to jconvolver, jmatconvol uses a single partition
 size equal to the Jack period, and is optimised
 for dense matrices of short convolutions, e.g.
 for processing signals from spherical microphones

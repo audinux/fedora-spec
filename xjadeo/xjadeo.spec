@@ -1,3 +1,7 @@
+# Tag: Jack, Monitoring, Video
+# Type: Standalone
+# Category: Graphic, Tool
+
 Summary: Jack Video Monitor
 Name:    xjadeo
 Version: 0.8.10
@@ -28,7 +32,7 @@ BuildRequires: SDL2-devel
 BuildRequires: libXpm-devel
 
 %description
-xjadeo is a simple video player that gets sync from jack.
+xjadeo is a simple video player that gets sync from jack by x42.
 Please refer to the documentation in the doc folder for any details,
 or visit http://xjadeo.sf.net/
 

@@ -1,4 +1,8 @@
-Summary: BambooTracker is a music tracker for the Yamaha YM2608 sound chip
+# Tag: Tracker, Jack, Alsa
+# Type: Standalone
+# Category: Audio, Sequencer
+
+Summary: Music tracker for the Yamaha YM2608 sound chip
 Name:    BambooTracker
 Version: 0.4.6
 Release: 1%{?dist}
@@ -22,7 +26,7 @@ BuildRequires: qt5-linguist
 BuildRequires: qtchooser
 
 %description
-BambooTracker is a music tracker for the Yamaha YM2608 (OPNA) sound chip which was used in NEC PC-8801/9801 series computers.
+Music tracker for the Yamaha YM2608 (OPNA) sound chip which was used in NEC PC-8801/9801 series computers.
 
 %prep
 %autosetup -n %{name}

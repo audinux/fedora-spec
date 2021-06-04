@@ -3,10 +3,14 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
+# Tag: Jack, Alsa, Tracker
+# Type: Standalone
+# Category: Audio, Sequencer
+
 Name:    zytrax
 Version: 0.9.0.%{shortcommit0}
 Release: 2%{?dist}
-Summary: ZyTrax is an easy to use music sequencer with an interface heavily inspired by 90's tracker software 
+Summary: Easy to use sequencer with an interface heavily inspired by 90's tracker software 
 URL:     https://github.com/reduz/zytrax.git
 License: GPLv2+
 
@@ -24,9 +28,6 @@ BuildRequires: rtmidi-devel
 BuildRequires: pulseaudio-libs-devel
 
 %description
-ZyTrax is an easy to use music sequencer with an interface heavily
-inspired by 90's "tracker" software.
-
 While contemporary software that uses this approach exists, it
 usually has a high entry barrier because it maintains compatibility
 with old formats.

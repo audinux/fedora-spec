@@ -1,5 +1,5 @@
 # Tag: Jack, Alsa
-# Type: Plugin, Standalone, VST
+# Type: Plugin, Standalone, VST3
 # Category: Audio, Synthesizer
 
 # Global variables for github repository

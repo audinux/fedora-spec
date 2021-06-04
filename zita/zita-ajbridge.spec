@@ -1,3 +1,7 @@
+# Tag: Jack
+# Type: Standalone
+# Category: Audio, Tool
+
 Summary: Full quality multichannel audio over a local IP network
 Name:    zita-ajbridge
 Version: 0.8.4

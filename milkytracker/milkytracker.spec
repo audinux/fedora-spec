@@ -1,3 +1,7 @@
+# Tag: Tracker, Jack, Alsa
+# Type: Standalone
+# Category: Audio, Sequencer
+
 Name:          milkytracker
 Version:       1.03.00
 Release:       2%{?dist}

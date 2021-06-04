@@ -1,3 +1,7 @@
+# Tag: Jack, Convolution
+# Type: Standalone
+# Category: Audio, Effect
+
 Summary: Convolution Engine for JACK, based on FFT convolution and using non-uniform partition sizes
 Name:    jconvolver
 Version: 1.0.2
@@ -18,14 +22,11 @@ BuildRequires: clthreads-devel
 BuildRequires: fftw-devel
 
 %description
-Jconvolver is a real-time convolution engine. It
-can execute up to a 64 by 64 convolution matrix
-(i.e. 4096 simultaneous convolutions) as long as
-your CPU(s) can handle the load. It is designed
-to be efficient also for sparse (e.g. diagonal)
-matrices, and for sparse impulse responses.
-Unused matrix elements and unused partitions
-do not take any CPU time..
+Real-time convolution engine. It can execute up to a 64 by 64 convolution matrix
+(i.e. 4096 simultaneous convolutions) as long as your CPU(s) can handle the load. 
+It is designed to be efficient also for sparse (e.g. diagonal) matrices, 
+and for sparse impulse responses. 
+Unused matrix elements and unused partitions do not take any CPU time.
 
 %prep
 %setup -q

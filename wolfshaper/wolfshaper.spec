@@ -1,3 +1,7 @@
+# Tag: Jack, Alsa, Overdrive
+# Type: Plugin, Standalone, VST, LV2, DSSI
+# Category: Audio, Effect
+
 Name:    wolf-shaper
 Version: 0.1.8
 Release: 2%{?dist}

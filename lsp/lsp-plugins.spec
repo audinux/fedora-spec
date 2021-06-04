@@ -1,4 +1,4 @@
-# Tag: Jack, Limiter, Equalizer, Compressor, Convolution, Gate, Analyzer, Reverb, Delay, MIDI
+# Tag: Jack, Equalizer, Compressor, Convolution, Gate, Analyzer, Reverb, Delay, MIDI
 # Type: Plugin, LV2
 # Category: Audio, Effect
 

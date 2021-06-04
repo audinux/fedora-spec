@@ -1,3 +1,8 @@
+
+# Tag: Mixer, Alsa, Jack
+# Type: Plugin, LV2
+# Category: Audio, Tool
+
 Name:    matrixmixer.lv2
 Version: 0.3.2
 Release: 2%{?dist}
@@ -18,7 +23,7 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 
 %description
-A LV2 matrix mixer
+A NxM LV2 matrix mixer by x42
 
 %prep
 %autosetup -n %{name}
