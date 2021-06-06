@@ -1,11 +1,11 @@
 Summary: A radio automation system
 Name:    rivendell
-Version: 3.6.0
+Version: 3.6.1
 Release: 1%{?dist}
 License: LGPL
 URL:     https://github.com/ElvishArtisan/rivendell
 
-Source0: https://github.com/ElvishArtisan/rivendell/releases/download/v%{version}/rivendell-%{version}.tar.gz
+Source0: https://github.com/ElvishArtisan/rivendell/archive/refs/tags/v%{version}.tar.gz#/rivendell-%{version}.tar.gz
 Patch0: rivendell-0001-use-nullptr.patch
 Patch1: rivendell-0001-use-nullptr-2.patch
 Patch2: rivendell-0001-use-nullptr-3.patch
@@ -163,6 +163,9 @@ fi
 %{_unitdir}/*
 
 %changelog
+* Sat Jun 06 2021 Yann Collette <ycollette.nospam@free.fr> - 3.6.1-1
+- update to 3.6.1-1
+
 * Sat May 15 2021 Yann Collette <ycollette.nospam@free.fr> - 3.6.0-1
 - update to 3.6.0
 
