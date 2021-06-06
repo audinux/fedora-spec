@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Usage: ./source-stochas.sh <tag>
-#        ./source-stochas.sh 1.6.6
+#        ./source-stochas.sh v1.3.5
 
 git clone https://github.com/surge-synthesizer/stochas
 cd stochas

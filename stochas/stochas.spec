@@ -1,13 +1,11 @@
-%global debug_package %{nil}
-
 Name:    stochas
-Version: 1.3.4
+Version: 1.3.5
 Release: 4%{?dist}
 Summary: A VST3 MIDI sequencer
 License: GPLv3
 
 # Use ./source-stochas.sh to get the sources (latest master for now)
-# ./source-stochas.sh v1.3.4
+# ./source-stochas.sh v1.3.5
 
 URL:     https://github.com/surge-synthesizer/stochas
 Source0: stochas.tar.gz
@@ -70,6 +68,9 @@ install -m 644 -p %{_host}/stochas_artefacts/Standalone/Stochas %{buildroot}/%{_
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Jun 06 2021 Yann Collette <ycollette.nospam@free.fr> - 1.3.5-3
+- update to 1.3.5-3
+
 * Sun Dec 13 2020 Yann Collette <ycollette.nospam@free.fr> - 1.3.4-3
 - update to 1.3.4-3 - fix install
 
