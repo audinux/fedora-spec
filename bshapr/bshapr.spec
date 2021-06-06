@@ -1,8 +1,6 @@
-%define _lto_cflags %{nil}
-
 Summary: Beat / envelope shaper LV2 plugin
 Name:    lv2-BShapr
-Version: 0.12
+Version: 0.13
 Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BShapr
@@ -35,6 +33,9 @@ Beat / envelope shaper LV2 plugin
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Jun 06 2021 Yann Collette <ycollette dot nospam at free.fr> 0.13.0-1
+- update to 0.13.0-1
+
 * Wed Mar 17 2021 Yann Collette <ycollette dot nospam at free.fr> 0.12.0-1
 - update to 0.12.0-1
 
