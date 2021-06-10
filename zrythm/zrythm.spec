@@ -3,13 +3,13 @@
 # Category: Audio, DAW
 
 Name:    zrythm
-Version: 1.0.0.a1811
+Version: 1.0.0.a18.2.1
 Release: 5%{?dist}
 Summary: Highly automated Digital Audio Workstation (DAW) featureful and intuitive to use
 License: GPLv2+
 URL:     https://git.zrythm.org/zrythm/zrythm
 
-Source0: https://git.zrythm.org/zrythm/zrythm/archive/v1.0.0-alpha.18.1.1.tar.gz#/zrythm-1.0.0-alpha.18.1.1.tar.gz
+Source0: https://git.zrythm.org/zrythm/zrythm/archive/v1.0.0-alpha.18.2.1.tar.gz#/zrythm-1.0.0-alpha.18.2.1.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: git
@@ -94,6 +94,8 @@ More info at https://www.zrythm.org
 
 # Compile using -O0 because of jack xruns
 sed -i -e "/cc = meson.get_compiler ('c')/a add_global_arguments('-O0'\, language : 'c')" meson.build
+sed -i -e "s/-O3/-O0/g" src/utils/meson.build
+sed -i -e "s/-O3/-O0/g" src/audio/meson.build
 
 # Search for libpulse.pc instead of pulseaudio.pc
 sed -i -e "s/'pulseaudio'/'libpulse'/g" meson.build
@@ -137,7 +139,7 @@ desktop-file-install --vendor '' \
         --add-category=Sequencer \
         --add-category=X-Jack \
         --dir %{buildroot}%{_datadir}/applications \
-        %{buildroot}%{_datadir}/applications/zrythm.desktop
+        %{buildroot}%{_datadir}/applications/org.zrythm.Zrythm.desktop
 
 %files
 %doc AUTHORS THANKS CHANGELOG.md CONTRIBUTING.md
@@ -177,8 +179,11 @@ desktop-file-install --vendor '' \
 %endif
 
 %changelog
+* Thu Jun 10 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.18.2.1-5
+- update to 1.0.0-alpha.18.2.1-5
+
 * Sun Jun 06 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.18.1.1-5
-- update to 1.0.0-alpha.17.1.1-5
+- update to 1.0.0-alpha.18.1.1-5
 
 * Fri Jun 04 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.17.1.22-5
 - update to 1.0.0-alpha.17.1.22-5
