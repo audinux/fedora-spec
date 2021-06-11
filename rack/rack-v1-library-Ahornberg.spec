@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 cba9ea4b259633f2c09a63a26fcad2557fe3c49c
+%global commit0 7fb2d0a6ef13d16c18286ee7184e7b961dd675eb
 %global gittag0 1.6.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
