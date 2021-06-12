@@ -1,3 +1,7 @@
+# Tag: Jack, Delay
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 Summary: Pattern-controlled audio stream / sample re-sequencer LV2 plugin
 Name:    lv2-BJumblr
 Version: 1.6.6
@@ -15,7 +19,8 @@ BuildRequires: cairo-devel
 BuildRequires: libsndfile-devel
 
 %description
-BJumblr is a pattern-controlled audio stream / sample re-sequencer LV2 plugin
+B.Jumblr is neither a sample slicer nor a step sequencer. 
+From the technical POV B.Jumblr is a sequencer pattern-controlled audio delay effect.
 
 %prep
 %autosetup -n BJumblr-%{version}

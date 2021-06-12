@@ -1,11 +1,15 @@
+# Tag: Tracker
+# Type: Standalone
+# Category: Audio, Sequencer
+
 Name:           buzztrax
 Version:        0.10.2
 Release:        6%{?dist}
-Summary:        Buzztrax is a music composer similar to tracker applications.
+Summary:        Music composer similar to tracker applications.
 
 License:        LGPL2.1
-URL:            http://www.buzztrax.org 
-Source0:        http://files.buzztrax.org/releases/%{name}-%{version}.tar.gz
+URL:            https://www.buzztrax.org 
+Source0:        https://files.buzztrax.org/releases/%{name}-%{version}.tar.gz
 Patch0:         buzztrax-0001-fix-build.patch
 Patch1:         buzztrax-0002-support-fluidsynth-2.patch
 
@@ -17,6 +21,11 @@ BuildRequires:  alsa-lib-devel libgudev-devel fluidsynth-devel goffice-devel
 BuildRequires:  chrpath
 
 %description
+A song consists of a sequence with tracks and in each track one uses patterns with events 
+(musical notes and control changes). In contrast to other Tracker programs, 
+tracks are not simply sample players: a user can make a song using an arrangment 
+of virtual audio plugins that are linked together to create different effects. 
+Each of these machines can be controlled realtime or via patterns in the sequencer.
 
 %package        devel
 Summary:        Development files for %{name}

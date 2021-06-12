@@ -1,4 +1,8 @@
-Summary: LV2 audio effect plugin for sequenced slicing of stereo audio input signals. Each slice can be levelled up or down to get a step sequencer-like effect.
+# Tag: Jack
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
+Summary: Sequenced audio slicing effect LV2 plugin (Step sequencer effect).
 Name:    lv2-BSlizr
 Version: 1.2.12
 Release: 2%{?dist}
@@ -14,7 +18,8 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: cairo-devel
 
 %description
-LV2 audio effect plugin for sequenced slicing of stereo audio input signals. Each slice can be levelled up or down to get a step sequencer-like effect.
+LV2 audio effect plugin for chopping stereo audio input signals. 
+Each chop can be levelled up or down to get a step sequencer-like effect.
 
 %prep
 %autosetup -n BSlizr-%{version}

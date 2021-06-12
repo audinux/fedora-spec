@@ -1,3 +1,7 @@
+# Tag: Jack, Alsa
+# Type: Standalone, IDE
+# Category: Audio, Programming
+
 Name:    bipscript-ide
 Version: 0.12
 Release: 1%{?dist}

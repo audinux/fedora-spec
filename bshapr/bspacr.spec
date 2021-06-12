@@ -1,5 +1,9 @@
 %define _lto_cflags %{nil}
 
+# Tag: Jack
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 Summary: No loss LV2 sound effect plugin
 Name:    lv2-BSpacr
 Version: 1.2.0

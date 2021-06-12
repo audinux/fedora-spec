@@ -3,7 +3,11 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Summary: B.Harvestr is an experimental granular synthesizer LV2 plugin
+# Tag: Jack
+# Type: Plugin, LV2
+# Category: Audio, Synthesizer
+
+Summary: Experimental granular synthesizer LV2 plugin
 Name:    lv2-BHarvestr
 Version: 0.1.0
 Release: 3%{?dist}
@@ -20,8 +24,6 @@ BuildRequires: cairo-devel
 BuildRequires: libsndfile-devel
 
 %description
-B.Harvestr is an experimental granular synthesizer LV2 plugin.
-
 Warning: B.Harvestr is in an early stage of development.
 Not for production use! No guarantees! Some essential features are not (fully) implemented yet.
 Major changes in the plugin definition need to be expected.

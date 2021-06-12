@@ -1,3 +1,7 @@
+# Tag: Jack, Sequencer
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 Summary: Audio glitch effect sequencer LV2 plugin
 Name:    lv2-BOops
 Version: 1.6.2
@@ -16,7 +20,14 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: cairo-devel
 
 %description
-Audio glitch effect sequencer LV2 plugin
+Key features:
+- Multi-effect plugin controlled by step sequencer patterns
+- Apply glitch effects in live or on a sample track
+- 30 effects
+- Up to 12 effect slots, freely select effects and effect order
+- Random effects: 3 different ways of randomization
+- Autoplay, host controlled, or MIDI controlled playback
+- Up to 16 patterns, MIDI controlled pattern change
 
 %prep
 %autosetup -n BOops-%{version}

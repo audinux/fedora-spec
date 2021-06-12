@@ -1,4 +1,4 @@
-# Tag: Library, Gig
+# Tag: Library
 # Type: Devel
 # Category: Audio
 

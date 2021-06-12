@@ -1,3 +1,7 @@
+# Tag: Jack
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 Summary: Beat / envelope shaper LV2 plugin
 Name:    lv2-BShapr
 Version: 0.13
@@ -14,7 +18,10 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: cairo-devel
 
 %description
-Beat / envelope shaper LV2 plugin
+B.Shapr is an envelope plugin for time or beat position-dependent effects. 
+The user can define up to four different envelope shapes by drawing Bezier curves. 
+Each of these envelope shapes can be connected to different target effects, such as amplification, balance, 
+stereo width, filters, pitch shift, delay, and distortion effects and can be combined together.
 
 %prep
 %autosetup -n BShapr-%{version}

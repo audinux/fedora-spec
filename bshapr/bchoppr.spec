@@ -1,3 +1,7 @@
+# Tag: Jack
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 Summary: An audio stream chopping LV2 plugin
 Name:    lv2-BChoppr
 Version: 1.10.8

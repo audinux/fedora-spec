@@ -1,4 +1,4 @@
-# Tag: Sampler, Gig
+# Tag: Editor
 # Type: Standalone
 # Category: Audio, Sampler
 

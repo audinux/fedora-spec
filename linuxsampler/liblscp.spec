@@ -1,4 +1,4 @@
-# Tag: Library, Linuxsampler
+# Tag: Library
 # Type: Devel
 # Category: Audio
 

@@ -1,6 +1,6 @@
-# Tag: DAW, Jack, Alsa, MIDI
+# Tag: Jack, Alsa, MIDI
 # Type: Standalone
-# Category: Audio, DAW, MIDI
+# Category: Audio, Sequencer
 
 Name:    helio-workstation
 Version: 3.6.0

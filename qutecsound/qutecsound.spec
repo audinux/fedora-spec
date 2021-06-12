@@ -1,3 +1,7 @@
+# Tag: Jack, Editor
+# Type: Standalone
+# Category: Audio
+
 Name:    qutecsound
 Version: 0.9.8.1
 Release: 3%{?dist}

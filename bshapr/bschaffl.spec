@@ -1,3 +1,7 @@
+# Tag: Jack, MIDI
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 Summary: Pattern-controlled MIDI amp & time stretch LV2 plugin to produce shuffle / swing effects
 Name:    lv2-BSchaffl
 Version: 1.4.6
@@ -16,7 +20,18 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: cairo-devel
 
 %description
-Pattern-controlled MIDI amp & time stretch LV2 plugin to produce shuffle / swing effects
+Groove quantizer LV2 MIDI plugin.  B.Schaffl is a slider / shape-controlled MIDI amp & time stretch plugin 
+to vitalize sequencer-controlled MIDI instruments and to produce shuffle / swing effects.
+
+Key features:
+- MIDI velocity amplification and timing manipulation plugin
+- Swing and shuffle rhythms
+- Pre-generator dynamics
+- Tempo rubato
+- Pattern (sliders) or shape-controlled
+- MIDI filters
+- Smart quantization
+- Group / link individual instances of B.Schaffl
 
 %prep
 %autosetup -n BSchaffl-%{version}

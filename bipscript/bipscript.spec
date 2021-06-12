@@ -1,8 +1,12 @@
+# Tag: Jack, Alsa
+# Type: Standalone, Language
+# Category: Audio, Programming
+
 Name:    bipscript
 Version: 0.12
 Release: 1%{?dist}
 Summary: Audio language
-URL:     http://www.bipscript.org/
+URL:     https://www.bipscript.org/
 License: GPLv2+
 
 # original tarfile can be found here:

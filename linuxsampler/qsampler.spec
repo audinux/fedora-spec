@@ -1,4 +1,4 @@
-# Tag: Sample, Gig
+# Tag: Editor
 # Type: Standalone
 # Category: Audio, Sampler
 # GUIToolkit: Qt5
