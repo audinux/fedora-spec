@@ -29,7 +29,7 @@ BuildRequires: cmake
 Airwindows plugins are modular, graphic-less, stripped-down, VST plugins
 
 %prep
-%autosetup -n %{name}-%{commit0}
+%autosetup -n %{name}
 
 unzip %{SOURCE1}
 
@@ -44,12 +44,6 @@ cp VST_SDK/VST2_SDK/public.sdk/source/vst2.x/* plugins/LinuxVST/include/vstsdk/
 
 sed -i -e "s/add_subdirectory/include_directories/g"     plugins/LinuxVST/CMakeLists.txt
 sed -i -e "s/add_compile_options/#add_compile_options/g" plugins/LinuxVST/CMakeLists.txt
-
-# sources cleanup
-rm -rf plugins/MacAU
-rm -rf plugins/MacVST
-rm -rf plugins/WinVST
-rm -rf plugins/*.zip
 
 %build
 
