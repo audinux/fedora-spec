@@ -2,14 +2,9 @@
 # Type: Plugin, VST
 # Category: Audio, Effect
 
-# Global variables for github repository
-%global commit0 08af05d938414f220b684230523a70174a5161a2
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 Name:    airwindows
 Version: 0.0.1
-Release: 31%{?dist}
+Release: 32%{?dist}
 Summary: A huge set of VST2 plugins
 License: MIT
 URL:     https://github.com/airwindows/airwindows
@@ -17,9 +12,13 @@ URL:     https://github.com/airwindows/airwindows
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/airwindows/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+# Usage: ./airwindows-source.sh <TAG>
+# ./airwindows-source.sh master
+
+Source0: airwindows.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
+Source2: airwindows-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: wget
@@ -73,6 +72,9 @@ install -m 755 %{__cmake_builddir}/*.so %{buildroot}/%{_libdir}/vst/
 %{_libdir}/*
 
 %changelog
+* Tue Jun 15 2021 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-32
+- update to 3aac179465a5dc5585c4925fc16399865ac47ffa
+
 * Sun Jun 13 2021 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-31
 - update to 08af05d938414f220b684230523a70174a5161a2
 
