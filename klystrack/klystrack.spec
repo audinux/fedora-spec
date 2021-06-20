@@ -11,14 +11,15 @@
 Summary: Chiptune tracker for making chiptune-like music on a modern computer.
 Name:    klystrack
 Version: 1.7.6
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: GPL
 URL:     https://kometbomb.github.io/klystrack/
 
 # To get the source archive:
-# ./source/sh 1.7.6
+# ./klystrack-source.sh v1.7.6
 
 Source0: klystrack.tar.gz
+Source1: klystrack-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -91,8 +92,15 @@ install -m 755 -d %{buildroot}/%{_datadir}/applications/
 install -m 644 -p linux/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}-jack.desktop
 install -m 644 -p linux/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}-pulse.desktop
 
+# Adjust the desktop file
 sed -i -e "s/Exec=klystrack/Exec=klystrack-jack/g"  %{buildroot}%{_datadir}/applications/%{name}-jack.desktop
 sed -i -e "s/Exec=klystrack/Exec=klystrack-pulse/g" %{buildroot}%{_datadir}/applications/%{name}-pulse.desktop
+
+sed -i -e "s/Name=Klystrack/Name=klystrack-jack/g"  %{buildroot}%{_datadir}/applications/%{name}-jack.desktop
+sed -i -e "s/Name=klystrack/Name=klystrack-pulse/g" %{buildroot}%{_datadir}/applications/%{name}-pulse.desktop
+
+sed -i -e "s/klystrack.png/klystrack/g" %{buildroot}%{_datadir}/applications/%{name}-jack.desktop
+sed -i -e "s/klystrack.png/klystrack/g" %{buildroot}%{_datadir}/applications/%{name}-pulse.desktop
 
 install -m 755 -d %{buildroot}%{_datadir}/%{name}/res
 cp -r res/* %{buildroot}%{_datadir}/%{name}/res/
@@ -108,16 +116,19 @@ install -m 755 -d %{buildroot}%{_datadir}/%{name}/key
 cp -r key/* %{buildroot}%{_datadir}/%{name}/key/
 
 desktop-file-install                         \
-  --add-category="Audio"                     \
+  --add-category="Audio;AudioVideo"	     \
   --delete-original                          \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/%{name}-jack.desktop
 
 desktop-file-install                         \
-  --add-category="Audio"                     \
+  --add-category="Audio;AudioVideo"          \
   --delete-original                          \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/%{name}-pulse.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
 %doc README.md
@@ -128,7 +139,10 @@ desktop-file-install                         \
 %{_datadir}/icons/*
 
 %changelog
-* Thu Jun 30 2020 Yann Collette <ycollette dot nospam at free.fr> 1.7.6-3
+* Sun Jun 20 2021 Yann Collette <ycollette dot nospam at free.fr> 1.7.6-4
+- update to 1.7.6-4 - fix desktop file
+
+* Tue Jun 30 2020 Yann Collette <ycollette dot nospam at free.fr> 1.7.6-3
 - update to 1.7.6-3 - fix spec file
 
 * Thu Apr 23 2020 Yann Collette <ycollette dot nospam at free.fr> 1.7.6-2

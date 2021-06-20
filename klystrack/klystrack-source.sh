@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Usage: ./source <TAG>
-# ./source 1.7.6
+# Usage:
+# ./klystrack-source <TAG>
+# ./klystrack-source 1.7.6
 
 git clone https://github.com/kometbomb/klystrack.git
 cd klystrack
