@@ -4,7 +4,7 @@
 
 Name:    helio-workstation
 Version: 3.6.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: An audio sequencer
 URL:     https://github.com/helio-fm/helio-workstation
 License: GPLv2+
@@ -44,7 +44,7 @@ cd Projects/LinuxMakefile/
 %install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
-cp -a Projects/LinuxMakefile/build/Helio %{buildroot}/%{_bindir}/
+cp -a Projects/LinuxMakefile/build/Helio %{buildroot}/%{_bindir}/helio
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
 cp -a Projects/Deployment/Linux/Debian/x64/usr/share/applications/Helio.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
@@ -76,6 +76,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/doc/%{name}/*
 
 %changelog
+* Sun Jun 20 2021 Yann Collette <ycollette.nospam@free.fr> - 3.6.0-2
+- update to 3.6.0-2 - fix binary name
+
 * Sun May 23 2021 Yann Collette <ycollette.nospam@free.fr> - 3.6.0-1
 - update to 3.6.0-1
 
