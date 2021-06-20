@@ -4,7 +4,7 @@
 
 Summary: Chiptune tracker for making chiptune-like music on a modern computer.
 Name:    protracker2
-Version: 1.30
+Version: 1.31
 Release: 4%{?dist}
 License: BSD
 URL:     https://16-bits.org/pt.php
@@ -59,11 +59,11 @@ SDL_AUDIODRIVER=alsa protracker2
 EOF
 chmod a+x %{buildroot}/%{_bindir}/%{name}-alsa
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/icons/%{name}/
-%__install -m 644 -p src/gfx/pt2-clone.ico %{buildroot}/%{_datadir}/icons/%{name}/%{name}.ico
+install -m 755 -d %{buildroot}/%{_datadir}/icons/%{name}/
+install -m 644 -p src/gfx/pt2-clone.ico %{buildroot}/%{_datadir}/icons/%{name}/%{name}.ico
 
-%__install -m 755 -d %{buildroot}%{_datadir}/%{name}
-%__cp release/effects.txt release/help.txt release/keybindings.txt release/LICENSES.txt release/other/protracker.ini %{buildroot}%{_datadir}/%{name}
+install -m 755 -d %{buildroot}%{_datadir}/%{name}
+cp release/effects.txt release/help.txt release/keybindings.txt release/LICENSES.txt release/other/protracker.ini %{buildroot}%{_datadir}/%{name}
 
 %files
 %doc README.md
@@ -76,6 +76,9 @@ chmod a+x %{buildroot}/%{_bindir}/%{name}-alsa
 %{_datadir}/icons/*
 
 %changelog
+* Sun Jun 20 2021 Yann Collette <ycollette.nospam@free.fr> - 1.31.0-4
+- update to 1.31.0-4
+
 * Fri Apr 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.30.0-4
 - update to 1.30.0-4
 
