@@ -2,18 +2,18 @@
 # Type: Standalone
 # Category: Graphic
 
-%define	uname	OpenBoard
+%define	uname OpenBoard
 
-Name:		openboard
-Version:	1.6.1
-Release:	1%{?dist}
-Summary:	Interactive whiteboard for schools and universities
-License:	GPLv3+
-Group:		Education
-Url:		http://openboard.ch
+Name:    openboard
+Version: 1.6.1
+Release: 2%{?dist}
+Summary: Interactive whiteboard for schools and universities
+License: GPLv3+
+Group:   Education
+Url:     http://openboard.ch
 
-Source0:	https://github.com/OpenBoard-org/OpenBoard/archive/v%{version}/%{uname}-%{version}.tar.gz
-Source1:	%{name}.desktop
+Source0: https://github.com/OpenBoard-org/OpenBoard/archive/v%{version}/%{uname}-%{version}.tar.gz
+Source1: %{name}.desktop
 
 BuildRequires: bison
 BuildRequires: flex
@@ -73,8 +73,11 @@ sed -i -e 's,std=c++11,std=c++14,g' src/podcast/podcast.pri
 # fix libraries
 sed -i -e 's|-lquazip5|-lquazip|' OpenBoard.pro
 
+# fix run.sh
+sed -i -e "s|\$DIR/OpenBoard|/usr/libexec/OpenBoard|g" resources/linux/run.sh
+
 %build
-%{_qt5_bindir}/lrelease -removeidentical %{uname}.pro
+lrelease-qt5 -removeidentical %{uname}.pro
 
 %qmake_qt5 INCLUDEPATH+=/usr/include/ffmpeg
 
@@ -103,6 +106,9 @@ cp -R resources/customizations %{buildroot}%{_libdir}/%{name}/
 mkdir -p %{buildroot}%{_bindir}/
 install -m 755 resources/linux/run.sh %{buildroot}%{_bindir}/%{name}
 
+mkdir -p %{buildroot}%{_libexecdir}/
+install -m 755 build/linux/release/product/OpenBoard %{buildroot}%{_libexecdir}/
+
 # clean some exe bits
 find %{buildroot} -executable -type f -name *.js -exec chmod -x '{}' \+
 find %{buildroot} -executable -type f -name *.svg -exec chmod -x '{}' \+
@@ -113,12 +119,16 @@ find %{buildroot} -executable -type f -name *.html -exec chmod -x '{}' \+
 %files
 %doc README.md
 %license COPYRIGHT LICENSE
-%{_bindir}/%{name}
+%{_bindir}/%{name} 
 %{_libdir}/%{name}/
+%{_libexecdir}/OpenBoard
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Tue Jun 22 2021 Yann Collette <ycollette.nospam@free.fr> - 1.6.1-2
+- Fix binary installation
+
 * Mon Jun 21 2021 Yann Collette <ycollette.nospam@free.fr> - 1.6.1-1
 - update for 1.6.1 and Fedora
 
