@@ -1,12 +1,12 @@
 # Tag: Guitar, Amp Simul
-# Type: Plugin, VST
+# Type: Plugin, LV2, Standalone
 # Category: Audio, Effect
 # LastSourceUpdate: 2021
 
 Summary: Guitar Amplifier emulator
 Name:    rakarrack-plus
 Version: 1.1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPL
 URL:     https://github.com/Stazed/rakarrack-plus
 
@@ -54,6 +54,12 @@ The state of rack can be saved as 'presets'. Sets of presets can be stored as 'b
 The rack also has an integrated tuner and can receive MIDI control orders and can send MIDI
 notes to MIDI devices like synthesizers.
 
+%package -n lv2-%{name}
+Summary: LV2 plugins for %{name}
+
+%description -n lv2-%{name}
+LV2 plugins for %{name}
+
 %prep
 %autosetup -n %{name}-%{version}
 
@@ -78,7 +84,6 @@ rm %{buildroot}/%{_datadir}/doc/rakarrack-plus/COPYING
 %doc AUTHORS ChangeLog NEWS README PACKAGERS.README
 %license COPYING
 %{_bindir}/*
-%{_libdir}/lv2/RakarrackPlus.lv2/*
 %{_datadir}/applications/*
 %{_datadir}/man/*
 %{_datadir}/pixmaps/*
@@ -86,6 +91,12 @@ rm %{buildroot}/%{_datadir}/doc/rakarrack-plus/COPYING
 %{_datadir}/RakarrackPlus.lv2/*
 %{_datadir}/doc/rakarrack-plus/html/*
 
+%files -n lv2-%{name}
+%{_libdir}/lv2/*
+
 %changelog
+* Wed Jun 23 2021 Yann Collette <ycollette dot nospam at free.fr> 1.1.0-2
+- put lv2 plugins in a separate package 
+
 * Sat Jun 12 2021 Yann Collette <ycollette dot nospam at free.fr> 1.1.0-1
 - initial release 
