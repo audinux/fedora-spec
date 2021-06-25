@@ -1,0 +1,56 @@
+From 85931b4d89786f104aba165fc4d5ead61450885e Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Fri, 25 Jun 2021 22:15:36 +0200
+Subject: [PATCH] add data paths
+
+---
+ gui.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/gui.c b/gui.c
+index 431d189..dd5fb99 100755
+--- a/gui.c
++++ b/gui.c
+@@ -3338,7 +3338,7 @@ void gui_loadskinsettings( void )
+         // If font cannot be opened/found, load default
+         if ( access(prpfontname, F_OK ) == -1 )
+         {
+-            strcpy( prpfontname, "ttf/DejaVuSans.ttf" );
++            strcpy( prpfontname, "/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf" );
+         }
+       #endif
+       continue;
+@@ -3353,7 +3353,7 @@ void gui_loadskinsettings( void )
+         
+         if ( access(fixfontname, F_OK ) == -1 )
+         {
+-            strcpy( fixfontname, "ttf/DejaVuSansMono.ttf" );
++            strcpy( fixfontname, "/usr/share/fonts/dejavu-sans-mono-fonts/DejaVuSansMono.ttf" );
+         }
+       #endif
+       continue;
+@@ -3368,7 +3368,7 @@ void gui_loadskinsettings( void )
+         
+         if ( access(sfxfontname, F_OK ) == -1 )
+         {
+-            strcpy( sfxfontname, "ttf/DejaVuSansMono.ttf" );
++            strcpy( sfxfontname, "/usr/share/fonts/dejavu-sans-mono-fonts/DejaVuSansMono.ttf" );
+         }
+       #endif
+       continue;
+@@ -3544,9 +3544,9 @@ void gui_pre_init( void )
+   for( i=0; i<TB_END; i++ ) tbx[i].bm.srf = NULL;
+ #endif
+ 
+-  strcpy( songdir, "Songs" );
+-  strcpy( instdir, "Instruments" );
+-  strcpy( skindir, "Skins/SIDMonster-Light" );
++  strcpy( songdir, "/usr/share/hivelytracker/Songs" );
++  strcpy( instdir, "/usr/share/hivelytracker/Instruments" );
++  strcpy( skindir, "/usr/share/hivelytracker/Skins/SIDMonster-Light" );
+ 
+   gui_load_prefs();
+ 
+-- 
+2.31.1
+

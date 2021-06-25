@@ -1,0 +1,29 @@
+From 7b7729f65dc47537375ba57aaa9661a5086736ca Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Fri, 25 Jun 2021 22:04:42 +0200
+Subject: [PATCH] fix fonts path
+
+---
+ gui.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/gui.c b/gui.c
+index dc49f3f..431d189 100755
+--- a/gui.c
++++ b/gui.c
+@@ -3947,9 +3947,9 @@ BOOL gui_init( void )
+   strcpy( sfxfontname, "/boot/system/data/fonts/ttfonts/DejaVuSansMono.ttf" );
+   strcpy( prpfontname, "/boot/system/data/fonts/ttfonts/DejaVuSans.ttf" );
+ #else
+-  strcpy( fixfontname, "ttf/DejaVuSansMono.ttf" );
+-  strcpy( sfxfontname, "ttf/DejaVuSansMono.ttf" );
+-  strcpy( prpfontname, "ttf/DejaVuSans.ttf" );
++  strcpy( fixfontname, "/usr/share/fonts/dejavu-sans-mono-fonts/DejaVuSansMono.ttf" );
++  strcpy( sfxfontname, "/usr/share/fonts/dejavu-sans-mono-fonts/DejaVuSansMono.ttf" );
++  strcpy( prpfontname, "/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf" );
+ #endif  
+ #endif  
+ 
+-- 
+2.31.1
+
