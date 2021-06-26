@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 b0aa078b67abf28495e4059246a88b9ff6e7b14b
-%global gittag0 1.3.7
+%global commit0 068b8efb617ce13687f9d9ae2240ebbc67904e79
+%global gittag0 1.3.8
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-OrangeLine
-Version: 1.3.7
+Version: 1.3.8
 Release: 3%{?dist}
 Summary: OrangeLine plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r OrangeLine_plugin/dist/OrangeLine/* %{buildroot}%{_libexecdir}/Rack1/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.3.7-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.3.8-3
 - initial specfile
