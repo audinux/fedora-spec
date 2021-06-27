@@ -4,7 +4,7 @@
 
 Summary: Audio glitch effect sequencer LV2 plugin
 Name:    lv2-BOops
-Version: 1.6.2
+Version: 1.6.4
 Release: 2%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BOops
@@ -46,8 +46,11 @@ Key features:
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Jun 26 2021 Yann Collette <ycollette dot nospam at free.fr> 1.6.4-2
+- update to 1.6.4-2fix spec 
+
 * Sat Jun 26 2021 Yann Collette <ycollette dot nospam at free.fr> 1.6.2-2
-- update to 1.6.2-2 - fix spec 
+- fix spec 
 
 * Sat Jun 12 2021 Yann Collette <ycollette dot nospam at free.fr> 1.6.2-1
 - update to 1.6.2-1 
