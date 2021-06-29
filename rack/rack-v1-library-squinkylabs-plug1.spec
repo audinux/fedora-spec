@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 6f6076436bdeec41c086212752f1dee5dd618712
-%global gittag0 1.0.19
+%global commit0 079663dc0fde09aafca3a6adb820e9edc390b2e6
+%global gittag0 1.0.20
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-squinkylabs-plug1
-Version: 1.0.19
+Version: 1.0.20
 Release: 3%{?dist}
 Summary: squinkylabs-plug1 plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r squinkylabs-plug1_plugin/dist/squinkylabs-plug1/* %{buildroot}%{_libexecdi
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.19-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.20-3
 - initial specfile

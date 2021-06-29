@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 c28aa5d502ba4d9675ec7b85099fb0e9f8b3f04a
-%global gittag0 1.0.0
+%global commit0 40caa52f2c801dd3712bb77005d70ee358ae6e3e
+%global gittag0 1.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-ODDSound_MTS_ESP
-Version: 1.0.0
+Version: 1.0.1
 Release: 3%{?dist}
 Summary: ODDSound_MTS_ESP plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r ODDSound_MTS_ESP_plugin/dist/ODDSound_MTS_ESP/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-3
 - initial specfile

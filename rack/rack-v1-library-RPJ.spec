@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 e66a3b1180f398726949e50c79fbc47c74ca00b2
-%global gittag0 1.0.0
+%global commit0 abed64d422827d85b319ff0a1641ff005f7e0633
+%global gittag0 1.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-RPJ
-Version: 1.0.0
+Version: 1.0.1
 Release: 3%{?dist}
 Summary: RPJ plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r RPJ_plugin/dist/RPJ/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/RPJ/
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-3
 - initial specfile
