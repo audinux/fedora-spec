@@ -1,12 +1,11 @@
 Name:    midimonster
-Version: 0.5
+Version: 0.6
 Release: 2%{?dist}
 Summary: Multi-protocol translation software (ArtNet, MIDI, OSC, JACK MIDI/CV ...)
 License: BSD
 URL:     https://github.com/cbdevnet/midimonster
 
 Source0: https://github.com/cbdevnet/midimonster/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0:  midimonster-0001-fix-for-lua-54.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: alsa-lib-devel
@@ -41,6 +40,9 @@ sed -i -e "s/lua53/lua/g" backends/Makefile
 %{_datadir}/%{name}/*
 
 %changelog
+* Wed Jun 30 2021 Yann Collette <ycollette.nospam@free.fr> - 0.6.0-1
+- update to version 0.1.0-2
+
 * Thu Oct 1 2020 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-2
 - update to version 0.5.0-2 - fix for fedora 33
 
