@@ -4,7 +4,7 @@
 
 Summary: Multi-dimensional dynamically distorted staggered multi-bandpass LV2 plugin
 Name:    BAngr
-Version: 1.2.0
+Version: 1.4.0
 Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BAngr/
@@ -44,5 +44,8 @@ Key features:
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Jul 04 2021 Yann Collette <ycollette dot nospam at free.fr> 1.4.0-1
+- update to 1.4.0-1
+
 * Sun Jun 27 2021 Yann Collette <ycollette dot nospam at free.fr> 1.2.0-1
 - initial release 
