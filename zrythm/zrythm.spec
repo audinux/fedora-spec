@@ -3,13 +3,13 @@
 # Category: Audio, DAW
 
 Name:    zrythm
-Version: 1.0.0.a18.2.1
+Version: 1.0.0.a19.0.1
 Release: 5%{?dist}
 Summary: Highly automated Digital Audio Workstation (DAW) featureful and intuitive to use
 License: GPLv2+
 URL:     https://git.zrythm.org/zrythm/zrythm
 
-Source0: https://git.zrythm.org/zrythm/zrythm/archive/v1.0.0-alpha.18.2.1.tar.gz#/zrythm-1.0.0-alpha.18.2.1.tar.gz
+Source0: https://git.zrythm.org/zrythm/zrythm/archive/v1.0.0-alpha.19.0.1.tar.gz#/zrythm-1.0.0-alpha.19.0.1.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: git
@@ -179,6 +179,9 @@ desktop-file-install --vendor '' \
 %endif
 
 %changelog
+* Wed Jul 07 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.19.0.1-5
+- update to 1.0.0-alpha.19.0.1-5
+
 * Thu Jun 10 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.18.2.1-5
 - update to 1.0.0-alpha.18.2.1-5
 
