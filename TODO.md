@@ -29,6 +29,9 @@
 | tangamp             | https://github.com/sadko4u/tamgamp.lv2 |
 | tascar              | https://github.com/HoerTech-gGmbH/tascar/ |
 | midieditor          | https://github.com/markusschwenk/midieditor/ |
+| seq66               | https://github.com/ahlstromcj/seq66 |
+| drops               | https://github.com/clearly-broken-software/drops |
+| Mellite             | https://github.com/Sciss/Mellite |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
