@@ -32,6 +32,7 @@
 | seq66               | https://github.com/ahlstromcj/seq66 |
 | drops               | https://github.com/clearly-broken-software/drops |
 | Mellite             | https://github.com/Sciss/Mellite |
+| alsacap             | https://github.com/bubbapizza/alsacap |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
