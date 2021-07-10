@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 1467acb4b4ba3257ffc93941b2bae61b42c0c6f5
+%global commit0 3b80c5cdd34d98d6448bbed5c5dd441220f28bd5
 %global gittag0 v0.6.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
@@ -12,7 +12,7 @@
 
 Name:    rack-v1-Befaco
 Version: 0.6.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: A plugin for Rack
 License: GPLv2+
 URL:     https://github.com/VCVRack/Befaco
@@ -93,6 +93,9 @@ cp -r befaco_plugin/dist/Befaco/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Be
 %{_libexecdir}/*
 
 %changelog
+* Sat Jul 10 2021 Yann Collette <ycollette.nospam@free.fr> - 0.6.0-4
+- update to 3b80c5cdd34d98d6448bbed5c5dd441220f28bd5
+
 * Thu Jan 30 2020 Yann Collette <ycollette.nospam@free.fr> - 0.6.0-3
 - update to 1467acb4b4ba3257ffc93941b2bae61b42c0c6f5 to get plugin.json
 
