@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 3b80c5cdd34d98d6448bbed5c5dd441220f28bd5
-%global gittag0 v0.6.0
+%global commit0 dafb8da64e92ae3216627f75865281c9b74ae2d2
+%global gittag0 v1.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-Befaco
-Version: 0.6.0
+Version: 1.1.0
 Release: 4%{?dist}
 Summary: A plugin for Rack
 License: GPLv2+
@@ -93,6 +93,9 @@ cp -r befaco_plugin/dist/Befaco/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Be
 %{_libexecdir}/*
 
 %changelog
+* Sat Jul 10 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-4
+- update to dafb8da64e92ae3216627f75865281c9b74ae2d2
+
 * Sat Jul 10 2021 Yann Collette <ycollette.nospam@free.fr> - 0.6.0-4
 - update to 3b80c5cdd34d98d6448bbed5c5dd441220f28bd5
 
