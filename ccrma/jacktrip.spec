@@ -1,6 +1,10 @@
+# Tag: Jack
+# Type: Standalone
+# Category: Audio, Sampler, Tool
+
 Summary: Multimachine jam sessions over the internet
 Name:    jacktrip
-Version: 1.2.2
+Version: 1.3.0
 Release: 2%{?dist}
 License: STK
 URL:     https://ccrma.stanford.edu/software/jacktrip/
@@ -45,6 +49,9 @@ SoundWIRE group.
 %{_bindir}/jacktrip
 
 %changelog
+* Wed Jul 14 2021 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-2
+- update to 1.3.0-1
+
 * Tue Dec 29 2020 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-2
 - update to 1.2.2-1
 
