@@ -94,7 +94,7 @@ Keyboard, Library, Live, OSC, Mixer, Modular, Rack, Sampler, Session
 
 Type:
 
-Devel,  IDE,  Language, DSSI, LV2, Standalone, VST, VST3,  Presets,  Rack, Language
+Devel, IDE, Language, DSSI, LV2, Standalone, VST, VST3, Presets, Rack, Language
 
 Category:
 
