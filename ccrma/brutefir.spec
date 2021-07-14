@@ -1,18 +1,20 @@
+# Tag: Convolution
+# Type: Standalone
+# Category: Tool
+
 Summary: Generic FIR filter (convolution) engine
 Name:    brutefir
-Version: 1.0k
+Version: 1.0o
 Release: 1%{?dist}
 License: GPL
 Group:   Applications/Multimedia
-URL:     http://www.ludd.luth.se/~torger/brutefir.html
-Source0: http://www.ludd.luth.se/~torger/files/brutefir-%{version}.tar.gz
-
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+URL:     https://torger.se/anders/brutefir.html
+Source0: https://torger.se/anders/files/brutefir-%{version}.tar.gz
 
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
-BuildRequires: gcc gcc-c++ perl
+BuildRequires: gcc gcc-c++ perl make
 BuildRequires: fftw-devel flex alsa-lib-devel jack-audio-connection-kit-devel
 
 %description
@@ -23,36 +25,35 @@ file, and filters, attenuation and delay can be changed in runtime
 through a simple command line interface.
 
 %prep
-%setup -q
+%autosetup
 
 %build
-%if 0%{?fedora} >= 8
+
 # add linker --build-id
-%{__perl} -p -i -e "s|= ld|= ld --build-id |g" Makefile
-%endif
+perl -p -i -e "s|= ld|= ld --build-id |g" Makefile
 %ifarch x86_64
-%{__perl} -p -i -e "s|/lib/brutefir|/lib64/brutefir|g" Makefile
+perl -p -i -e "s|/lib/brutefir|/lib64/brutefir|g" Makefile
 %endif
 
-%{__make} INSTALL_PREFIX=%{_prefix} LIBPATHS= INCLUDE= \
+%make_build INSTALL_PREFIX=%{_prefix} LIBPATHS= INCLUDE= \
           DEFINE="${RPM_OPT_FLAGS}"
 
 %install
-%{__rm} -rf %{buildroot}
-%{__mkdir} -p %{buildroot}%{_bindir}
-%{__mkdir} -p %{buildroot}%{_libdir}/brutefir
-%{__make} INSTALL_PREFIX=%{buildroot}%{_prefix} LIBPATHS= INCLUDE= install
-
-%clean
-%{__rm} -rf %{buildroot}
+rm -rf %{buildroot}
+mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{_libdir}/brutefir
+%make_install INSTALL_PREFIX=%{buildroot}%{_prefix} LIBPATHS= INCLUDE= install
 
 %files
-%defattr(-,root,root,-)
-%doc CHANGES GPL-2.0 LICENSE README 
+%doc CHANGES GPL-2.0 README
+%license LICENSE
 %{_libdir}/brutefir
 %{_bindir}/*
 
 %changelog
+* Wed Jul 14 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0o-1 -
+- update to 1.0o-1
+
 * Mon Oct 15 2018 Yann Collette <ycollette.nospam@free.fr> -
 - update for Fedora 29
 
