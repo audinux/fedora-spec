@@ -31,8 +31,6 @@
 | midieditor          | https://github.com/markusschwenk/midieditor/ |
 | seq66               | https://github.com/ahlstromcj/seq66 |
 | drops               | https://github.com/clearly-broken-software/drops |
-| Mellite             | https://github.com/Sciss/Mellite |
-| alsacap             | https://github.com/bubbapizza/alsacap |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
@@ -82,3 +80,23 @@ fix pkgconfig file installation
 
 ## Fedora 33 - To be fixed:
 performer -> cmake + ui_setlist.h missing - pb cmake 3.18 ...
+
+Tag list:
+
+Tag:
+
+Alsa, Analyzer, Compressor, Emulator, Delay, Analyzer, Drum, Jack, Alsa
+Editor, Legacy, Live, Effect, Gate, Graphic, Guitar, Amp Simul
+Delay, Overdrive, Cabinet, Equalizer, Convolution, Octaver
+MIDI, Tablature, Phaser, Tape, Tracker, Analyzer, Reverb, Editor
+Sfz, Sf2, Sf3, , Monitoring, Video, Organ, PM, Sequencer
+Keyboard, Library, Live, OSC, Mixer, Modular, Rack, Sampler, Session
+
+Type:
+
+Devel,  IDE,  Language, DSSI, LV2, Standalone, VST, VST3,  Presets,  Rack, Language
+
+Category:
+
+Audio, DAW, Effect, Synthesizer, MIDI, Programming, Sampler, Sequencer
+Graphic, Tool, Session Mngmt
