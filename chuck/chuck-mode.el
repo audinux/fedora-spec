@@ -311,3 +311,4 @@
 (provide 'chuck-mode)
 
 ; (setq foo (regexp-opt '("dac" "adc" "blackhole" "gain" "noise" "impulse" "step" "halfrect" "fullrect" "zerox" "delayp" "sndbuf" "phasor" "sinosc" "pulseosc" "sqrosc" "triosc" "sawosc" "netout" "netin" "BandedWG" "BlowBotl" "BlowHole" "Bowed" "Brass" "Clarinet" "Flute" "Mandolin" "ModalBar" "Moog" "Saxofony" "Shakers" "Sitar" "StifKarp" "VoicForm" "FM" "BeeThree" "FMVoices" "HevyMetl" "PercFlut" "Rhodey" "TubeBell" "Wurley" "Delay" "DelayA" "DelayL" "Echo" "Envelope" "ADSR" "BiQuad" "Filter" "OnePole" "TwoPole" "OneZero" "TwoZero" "PoleZero" "JCRev" "NRev" "PRCRev" "Chorus" "Modulate" "PitShift" "SubNoise" "WvIn" "WaveLoop" "WvOut")))
+

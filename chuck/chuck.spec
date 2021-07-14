@@ -4,19 +4,19 @@
 
 Name:    chuck
 Summary: Real-time audio synthesis and graphics/multimedia language
-Version: 1.4.0.1
+Version: 1.4.1.0
 Release: 2%{?dist}
 License: GPL
-URL:     http://chuck.cs.princeton.edu/
+URL:     https://chuck.cs.princeton.edu/
 
-Source0: http://chuck.cs.princeton.edu/release/files/chuck-%{version}.tgz
+Source0: https://chuck.cs.princeton.edu/release/files/chuck-%{version}.tgz
 # emacs mode from: http://wiki.cs.princeton.edu/index.php/Recent_chuck-mode.el
 Source1: chuck-mode.el
 
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA
 
-BuildRequires: gcc gcc-c++ perl
+BuildRequires: gcc gcc-c++ perl make
 BuildRequires: bison flex jack-audio-connection-kit-devel, 
 BuildRequires: alsa-lib-devel libsndfile-devel pulseaudio-libs-devel
 
@@ -83,6 +83,9 @@ cp -a %{SOURCE1} %{buildroot}%{_libdir}/xemacs/site-packages/lisp/chuck/chuck.el
 %{_libdir}/xemacs/site-packages/lisp/chuck/*
 
 %changelog
+* Wed Jul 14 2021 Yann Collette <ycollette.nospam@free.fr> - 1.4.1.0-2
+- update to 1.4.1.0-2
+
 * Thu Nov 05 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0.1-2
 - update to 1.4.0.1
 
