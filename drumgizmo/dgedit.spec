@@ -1,14 +1,14 @@
 Summary: Software Synthesizer
 Name:    dgedit
-Version: 0.1
+Version: 0.10.0
 Release: 2%{?dist}
 License: GPL
 Group:   Applications/Multimedia
 URL:     http://git.drumgizmo.org/dgedit.git
 
-Source0: dgedit-0.1.tar.gz
-
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+# To get dgedit source code: ./dgedit-source.sh v0.10.0
+Source0: dgedit.tar.gz
+Source1: dgedit-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: autoconf
@@ -24,41 +24,42 @@ BuildRequires: libsndfile-devel
 BuildRequires: libao-devel
 
 %description
-The DrumGizmo drumkit editor DGEdit is currently in a functioning, but very early phase of development. All of the essentials for importing, editing and exporting the raw drumkit recordings are there - but it is not exactly user friendly. 
+The DrumGizmo drumkit editor DGEdit is currently in a functioning,
+but very early phase of development. All of the essentials for
+importing, editing and exporting the raw drumkit recordings are
+there - but it is not exactly user friendly. 
 
 %prep
-%setup -qn %{name}-%version
+%autosetup -n %{name}
 
 %build
 
-sed -ie "s/lupdate/lupdate-qt5/g" src/Makefile.am
-sed -ie "s/lrelease/lrelease-qt5/g" src/Makefile.am
+sed -i -e "s/lupdate/lupdate-qt5/g" src/Makefile.am
+sed -i -e "s/lrelease/lrelease-qt5/g" src/Makefile.am
 
 ./autogen.sh
 %configure
-%{__make} %{_smp_mflags}
+%make_build
 
 %install
 
-%{__rm} -rf %{buildroot}
-%{__make} DESTDIR=%{buildroot} install
+%make_install
 
 # desktop file categories
 BASE="Application AudioVideo"
 XTRA="X-Synthesis X-MIDI X-Jack"
-%{__mkdir} -p %{buildroot}%{_datadir}/applications
-
-%clean
-%{__rm} -rf %{buildroot}
+mkdir -p %{buildroot}%{_datadir}/applications
 
 %files
-%defattr(-,root,root,-)
 %doc AUTHORS ChangeLog INSTALL NEWS README
 %license COPYING
 %{_bindir}/dgedit
 %{_datadir}/locale/*
 
 %changelog
+* Wed Jul 14 2021 Yann Collette <ycollette dot nospam at free.fr> 0.10.0-2
+- update to 0.10.0-2
+
 * Mon Oct 15 2018 Yann Collette <ycollette dot nospam at free.fr> 0.1-2
 - update for Fedora 29
 
