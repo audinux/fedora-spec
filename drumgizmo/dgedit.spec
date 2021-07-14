@@ -17,6 +17,7 @@ BuildRequires: libtool
 BuildRequires: pkgconfig
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-linguist
+BuildRequires: qtchooser
 BuildRequires: alsa-lib-devel
 BuildRequires: desktop-file-utils
 BuildRequires: jack-audio-connection-kit-devel
@@ -36,6 +37,8 @@ there - but it is not exactly user friendly.
 
 sed -i -e "s/lupdate/lupdate-qt5/g" src/Makefile.am
 sed -i -e "s/lrelease/lrelease-qt5/g" src/Makefile.am
+
+export QT_SELECT=5
 
 ./autogen.sh
 %configure
