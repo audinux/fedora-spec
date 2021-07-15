@@ -1,14 +1,16 @@
-
 # Tag: MIDI, Sfz, Sf2, Keyboard, Live
 # Type: Standalone
 # Category: Audio
 
 Name:    konfyt
-Version: 1.1.4
+Version: 1.1.5
 Release: 3%{?dist}
 Summary: A patch manager
 URL:     https://github.com/noedigcode/konfyt
 License: GPLv2+
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/noedigcode/konfyt/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
@@ -48,21 +50,21 @@ sed -i -e "s/\/home\/gideon\/bin\///g" desktopentry/konfyt.desktop
 
 %install
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/applications/
-%__install -m 644 desktopentry/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+install -m 644 desktopentry/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
 
-%__install -m 755 -d %{buildroot}/%{_bindir}/
-%__install -m 755 %{name} %{buildroot}%{_bindir}/
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 %{name} %{buildroot}%{_bindir}/
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/16x16/apps/
-%__install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/
-%__install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/64x64/apps/
-%__install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/16x16/apps/
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/64x64/apps/
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/
 
-%__install -m 644 icons/konfyt\ 16.png  %{buildroot}/%{_datadir}/icons/hicolor/16x16/apps/%{name}.png
-%__install -m 644 icons/konfyt\ 32.png  %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/%{name}.png
-%__install -m 644 icons/konfyt\ 64.png  %{buildroot}/%{_datadir}/icons/hicolor/64x64/apps/%{name}.png
-%__install -m 644 icons/konfyt\ 128.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/%{name}.png
+install -m 644 icons/konfyt\ 16.png  %{buildroot}/%{_datadir}/icons/hicolor/16x16/apps/%{name}.png
+install -m 644 icons/konfyt\ 32.png  %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/%{name}.png
+install -m 644 icons/konfyt\ 64.png  %{buildroot}/%{_datadir}/icons/hicolor/64x64/apps/%{name}.png
+install -m 644 icons/konfyt\ 128.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/%{name}.png
 
 # install konfyt.desktop properly.
 desktop-file-install --vendor '' \
@@ -72,6 +74,9 @@ desktop-file-install --vendor '' \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/%{name}.desktop
 
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+
 %files
 %doc README.md
 %license COPYING
@@ -80,6 +85,9 @@ desktop-file-install --vendor '' \
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Thu Jul 15 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.5-3
+- update to 1.1.5-3 
+
 * Fri Apr 16 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.4-3
 - update to 1.1.4-3 
 
