@@ -55,6 +55,10 @@ BuildRequires: libappstream-glib
 appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/*%{name}.*.xml
 ```
 
+## Add distribution information
+Vendor:       Audinux
+Distribution: Audinux
+
 ## Check before packaging:
 remove -march=native from Makefiles if it's present
 
