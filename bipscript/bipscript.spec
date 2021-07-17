@@ -3,15 +3,19 @@
 # Category: Audio, Programming
 
 Name:    bipscript
-Version: 0.12
+Version: 0.13
 Release: 1%{?dist}
 Summary: Audio language
 URL:     https://www.bipscript.org/
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # original tarfile can be found here:
 Source0: https://gitlab.domainepublic.net/bipscript/bipscript/-/archive/v%{version}/bipscript-v%{version}.tar.gz
-Source1: bipscrip-example.bip
+Source1: https://gitlab.domainepublic.net/bipscript/examples/-/archive/v%{version}/examples-%{version}.tar.gz
+Source2: https://gitlab.domainepublic.net/bipscript/apidocs/-/archive/v%{version}/apidocs-v%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lilv-devel
@@ -27,28 +31,57 @@ BuildRequires: cmake
 %description
 Bipscript is a scripting language for creating music.
 
+%package doc
+Summary: Documentation for %{name}
+License: GPLv2+
+Requires: %{name}
+
+%description doc
+Documentation for %{name}
+
+%package examples
+Summary: Examples for %{name}
+License: GPLv2+
+Requires: %{name}
+
+%description examples
+Examples for %{name}
+
 %prep
-%autosetup -p1 -n %{name}-v%{version}
+%autosetup -n %{name}-v%{version}
+
+mkdir examples && tar xvfz %{SOURCE1} -C examples --strip-components 1
+mkdir apidocs && tar xvfz %{SOURCE2} -C apidocs --strip-components 1
 
 %build
 
 %cmake
-
 %cmake_build
 
 %install
 
 %cmake_install
 
-install -m 755 -d %{buildroot}/%{_datadir}/bipscript/example/
-install -m 755 %{SOURCE1} %{buildroot}/%{_datadir}/bipscript/example/example.bip
+install -m 755 -d %{buildroot}/%{_datadir}/bipscript/examples/
+cp -ra examples/src/* %{buildroot}/%{_datadir}/bipscript/examples/
+
+install -m 755 -d %{buildroot}/%{_datadir}/bipscript/apidocs/
+cp -ra apidocs/en %{buildroot}/%{_datadir}/bipscript/apidocs/
 
 %files
 %doc README.md
 %license LICENSE
 %{_bindir}/*
-%{_datadir}/*
+
+%files doc
+%{_datadir}/bipscript/apidocs/*
+
+%files examples
+%{_datadir}/bipscript/examples/*
 
 %changelog
+* Sat Jul 17 2021 Yann Collette <ycollette.nospam@free.fr> - 0.13-1
+- update to 0.13-1
+
 * Sat Apr 17 2021 Yann Collette <ycollette.nospam@free.fr> - 0.12-1
 - Initial build

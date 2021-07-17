@@ -3,11 +3,14 @@
 # Category: Audio, Programming
 
 Name:    bipscript-ide
-Version: 0.12
+Version: 0.13
 Release: 1%{?dist}
 Summary: An IDEA for bipscript
 URL:     https://gitlab.domainepublic.net/bipscript/ide/
 License: GPLv2+
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://gitlab.domainepublic.net/bipscript/ide/-/archive/v%{version}/ide-v%{version}.tar.gz
 Source1: bipscript-version.h
@@ -26,7 +29,7 @@ Requires: bipscript
 An IDE for bipscript
 
 %prep
-%autosetup -p1 -n ide-v%{version}
+%autosetup -n ide-v%{version}
 
 cp %{SOURCE1} version.h
 
@@ -65,6 +68,9 @@ desktop-file-install --vendor '' \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/bipscript-ide.desktop
 
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/bipscript-ide.desktop
+
 %files
 %doc README.md
 %license LICENSE
@@ -73,5 +79,8 @@ desktop-file-install --vendor '' \
 %{_datadir}/icons/*
 
 %changelog
+* Sat Jul 17 2021 Yann Collette <ycollette.nospam@free.fr> - 0.13-1
+- update to 0.13-1
+
 * Sat Apr 17 2021 Yann Collette <ycollette.nospam@free.fr> - 0.12-1
 - Initial spec file
