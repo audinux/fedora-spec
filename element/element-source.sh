@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ./element-source.sh <tag>
-# ./element-source.sh 0.44.0
+# ./element-source.sh 0.46.2
 
 git clone https://github.com/kushview/Element
 cd Element

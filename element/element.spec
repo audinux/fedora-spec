@@ -1,13 +1,14 @@
-%define _lto_cflags %{nil}
-
 Name:    element
-Version: 0.46.0
+Version: 0.46.2
 Release: 1%{?dist}
 Summary: This is the community version of Element, a modular AU/LV2/VST/VST3 audio plugin host.
 URL:     https://github.com/kushview/Element
 License: GPL3
 
-# ./element-source.sh 0.46.0
+Vendor:       Audinux
+Distribution: Audinux
+
+# ./element-source.sh 0.46.2
 
 Source0: Element.tar.gz
 Source1: GitVersion.h
@@ -34,6 +35,9 @@ BuildRequires: libcurl-devel
 BuildRequires: gtk2-devel
 BuildRequires: readline-devel
 BuildRequires: python3
+BuildRequires: lua-ldoc
+BuildRequires: JUCE
+BuildRequires: ImageMagick
 
 %description
 This is the community version of Element, a modular AU/LV2/VST/VST3 audio plugin host.
@@ -52,7 +56,7 @@ sed -i -e "s|/usr/bin/env python|/usr/bin/env python3|g" waf
 %build
 
 %set_build_flags
-export CXXFLAGS="-include limits $CXXFLAGS"
+#export CXXFLAGS="-include limits $CXXFLAGS"
 
 ./waf configure --debug --prefix=%{_prefix} --libdir=%{_libdir} 
 ./waf %{?__smp_mflags}
@@ -69,6 +73,13 @@ desktop-file-install --vendor '' \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/net.kushview.element.desktop
 
+# Cleanup desktop file
+sed -i -e "/Encoding/d" %{buildroot}%{_datadir}/applications/net.kushview.element.desktop
+sed -i -e "s/Application;//g" %{buildroot}%{_datadir}/applications/net.kushview.element.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/net.kushview.element.desktop
+
 %files
 %doc README.md AUTHORS.md CODE_OF_CONDUCT.md  CONTRIBUTING.md 
 %license LICENSE
@@ -78,6 +89,9 @@ desktop-file-install --vendor '' \
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Tue Jul 20 2021 Yann Collette <ycollette.nospam@free.fr> - 0.46.2-1
+- update to 0.46.2-1
+
 * Fri Apr 02 2021 Yann Collette <ycollette.nospam@free.fr> - 0.46.0-1
 - update to 0.46.0
 
