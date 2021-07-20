@@ -92,8 +92,8 @@ Tag:
 Alsa, Analyzer, Compressor, Emulator, Delay, Analyzer, Drum, Jack, Alsa
 Editor, Legacy, Live, Effect, Gate, Graphic, Guitar, Amp Simul
 Delay, Overdrive, Cabinet, Equalizer, Convolution, Octaver
-MIDI, Tablature, Phaser, Tape, Tracker, Analyzer, Reverb, Editor
-Sfz, Sf2, Sf3, , Monitoring, Video, Organ, PM, Sequencer
+MIDI, Tablature, Phaser, Tape, Tracker, Analyzer, Reverb
+Sfz, Sf2, Sf3, Monitoring, Video, Organ, PM, Sequencer
 Keyboard, Library, Live, OSC, Mixer, Modular, Rack, Sampler, Session
 
 Type:
