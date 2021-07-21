@@ -3,19 +3,22 @@
 # Category: Audio, Tool
 
 Name:    sisco.lv2
-Version: 0.9.2
+Version: 0.9.3
 Release: 1%{?dist}
 Summary: A LV2 oscilloscope
 License: GPLv2+
 URL:     https://github.com/x42/sisco.lv2
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./sisco-source.sh <tag>
-# ./sisco-source.sh v0.9.2
+# ./sisco-source.sh v0.9.3
 
 Source0: sisco.lv2.tar.gz
 Source1: sisco-source.sh
 
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc gcc-c++ make
 BuildRequires: git
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
@@ -49,6 +52,9 @@ A LV2 oscilloscope by x42
 %{_datadir}/*
 
 %changelog
+* Wed Jul 21 2021 Yann Collette <ycollette.nospam@free.fr> - 0.9.3-1
+- update to 0.9.3-1
+
 * Wed Apr 07 2021 Yann Collette <ycollette.nospam@free.fr> - 0.9.2-1
 - update to 0.9.2-1
 
