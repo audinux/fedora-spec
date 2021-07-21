@@ -1,18 +1,16 @@
-# Global variables for github repository
-%global commit0 c1e168df0830a6b84295ebdd30cd48726a791103
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 # Tag: Drum
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer
 
 Name:    lv2-avldrums-x42-plugin
-Version: 0.4.2.%{shortcommit0}
-Release: 2%{?dist}
+Version: 0.4.2
+Release: 3%{?dist}
 Summary: Simple Drum Sample Player LV2 Plugin
 License: GPLv2+
-URL:     https://github.com/x42/avldrums.lv2.git
+URL:     https://github.com/x42/avldrums.lv2
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # ./avldrums-source.sh <tag>
 # ./avldrums-source.sh v0.4.2
@@ -20,7 +18,7 @@ URL:     https://github.com/x42/avldrums.lv2.git
 Source0: avldrums.lv2.tar.gz
 Source1: avldrums-source.sh
 
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc gcc-c++ make
 BuildRequires: lv2-devel
 BuildRequires: cairo-devel
 BuildRequires: pango-devel
@@ -45,6 +43,8 @@ dedicated to the https://www.bandshed.net/avldrumkits/
 %make_install PREFIX=/usr LV2DIR=%{_libdir}/lv2 STRIP=true
 
 %files
+%doc README.md
+%license COPYING
 %{_libdir}/lv2/avldrums.lv2/*
 
 %changelog

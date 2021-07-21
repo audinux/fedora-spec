@@ -11,10 +11,12 @@ Name:    scarlett-mixer
 Version: 0.1.0
 Release: 1%{?dist}
 Summary: A mixer matrix for Scarlett sound card
-
-Group:   Applications/Multimedia
 License: GPLv2+
 URL:     https://github.com/x42/scarlett-mixer
+
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: scarlett-mixer.tar.gz
 
 # git clone git://github.com/x42/scarlett-mixer
@@ -26,9 +28,7 @@ Source0: scarlett-mixer.tar.gz
 # tar cvfz scarlett-mixer.tar.gz scarlett-mixer/*
 # rm -rf scarlett-mixer
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc gcc-c++ make
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: lv2-devel
@@ -41,20 +41,22 @@ BuildRequires: mesa-libGLU-devel
 A mixer matrix for Scarlett sound card by x42
 
 %prep
-%setup -qn %{name}
+%autosetup -n %{name}
 
 %build
 
-make DESTDIR=%{buildroot} PREFIX=/usr LIBDIR=%{_lib} %{?_smp_mflags}
+%make_build PREFIX=/usr LIBDIR=%{_lib}
 
 %install 
 
-make DESTDIR=%{buildroot} PREFIX=/usr LIBDIR=%{_lib} %{?_smp_mflags} install
+%make_install PREFIX=/usr LIBDIR=%{_lib}
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/icons/scarlett/
+install -m 755 -d %{buildroot}/%{_datadir}/icons/scarlett/
 cp scarlett-mixer-gui.png %{buildroot}/%{_datadir}/icons/scarlett/
 
 %files
+%docs README.md
+%license COPYING
 %{_bindir}/*
 %{_datadir}/*
 
