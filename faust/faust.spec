@@ -1,5 +1,9 @@
+# Tag: Jack, Alsa
+# Type: Standalone, Language
+# Category: Audio, Programming
+
 Name:	 faust
-Version: 2.30.5
+Version: 2.33.1
 Release: 23%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
@@ -7,7 +11,10 @@ Summary: Compiled language for real-time audio signal processing
 License: GPLv2+ and BSD
 URL:     http://faust.grame.fr
 
-# To get source from 2.30.5 tag: ./faust-source.sh 2.30.5
+Vendor:       Audinux
+Distribution: Audinux
+
+# To get source from 2.33.1 tag: ./faust-source.sh 2.33.1
 
 Source0: faust.tar.gz
 Source1: faust-source.sh
@@ -151,7 +158,6 @@ done
 # install lib in the good directory
 sed -i -e "s/\$(BUILDLOCATION)\/lib/\$(BUILDLOCATION)\/%{_lib}/g" Makefile
 
-
 %build
 
 %set_build_flags
@@ -160,7 +166,6 @@ sed -i -e "s/\$(BUILDLOCATION)\/lib/\$(BUILDLOCATION)\/%{_lib}/g" Makefile
 %make_build PREFIX=%{_prefix} LIBDIR=%{_libdir} MODE=SHARED
 cd architecture/osclib/oscpack
 %make_build PREFIX=%{_prefix} LIBDIR=%{_libdir} MODE=SHARED lib
-
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
@@ -209,6 +214,16 @@ cp doc/library.pdf %{buildroot}/%{_datadir}/faust/doc/
 
 mv README.md README-stdlib.md
 
+# remove some wasm files (not yet correctly managed by rpm):
+rm %{buildroot}%{_datadir}/faust/webaudio/audioinput.wasm
+rm %{buildroot}%{_datadir}/faust/webaudio/libfaust-glue.wasm
+rm %{buildroot}%{_datadir}/faust/webaudio/libfaust-wasm.wasm
+rm %{buildroot}%{_datadir}/faust/webaudio/mixer32.wasm
+rm %{buildroot}%{_datadir}/faust/webaudio/mixer64.wasm
+rm %{buildroot}%{_datadir}/faust/webaudio/noise.wasm
+rm %{buildroot}%{_datadir}/faust/webaudio/organ.wasm
+rm %{buildroot}%{_datadir}/faust/webaudio/osc.wasm
+
 rm %{buildroot}/%{_libdir}/ios-libsndfile.a
 
 mv %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
@@ -242,6 +257,7 @@ mv %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
 %{_bindir}/faustpath
 %{_bindir}/sound2reader
 %{_bindir}/filename2ident
+%{_bindir}/faustremote
 
 %files kate
 %doc syntax-highlighting/README.md
@@ -253,6 +269,9 @@ mv %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
 %{_datadir}/faust/*.lib
 
 %changelog
+* Wed Jul 21 2021 Yann Collette <ycollette.nospam@free.fr> - 2.33.1-23
+- update to 2.33.1-23
+
 * Sat Jan 23 2021 Yann Collette <ycollette.nospam@free.fr> - 2.30.5-23
 - update to 2.30.5-23
 
