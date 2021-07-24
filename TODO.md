@@ -5,11 +5,9 @@
 | osmid               | https://github.com/llloret/osmid |
 | Squeezer            | https://github.com/mzuther/Squeezer |
 | DAFx19-Gamelanizer  | https://github.com/lukemcraig/DAFx19-Gamelanizer |
-| ladspa-t5-plugins   | https://gitlab.com/t-5/ladspa-t5-plugins |
 | OwlSim              | https://github.com/pingdynasty/OwlSim |
 | DeLooper            | https://github.com/sonejostudios/DeLooper |
 | morphex             | https://github.com/MarcSM/morphex |
-| freqtweak           | https://github.com/essej/freqtweak |
 | mephisto            | https://open-music-kontrollers.ch/lv2/mephisto/ |
 | zrythm - lsp-dsp    | add a devel package for zrythm |
 | emissioncontrol2    | https://github.com/EmissionControl2/EmissionControl2 |
@@ -36,7 +34,6 @@
 Remove mv-6pm or 6pm. Both are normally the same package
 
 ## Todo for 34
-- add gamin from src.fedoraproject.org (if required)
 - Socalab -> /usr/bin/ld: /usr/lib64/libglib-2.0.so.0: error adding symbols: DSO missing from command line
 - error: 'numeric_limits' is not a member of 'std'
 - kmidimon: needs drumstick-devel
@@ -89,7 +86,7 @@ Tag list:
 
 Tag:
 
-Alsa, Analyzer, Compressor, Emulator, Delay, Analyzer, Drum, Jack, Alsa
+Analyzer, Compressor, Emulator, Delay, Analyzer, Drum, Jack, Alsa
 Editor, Legacy, Live, Effect, Gate, Graphic, Guitar, Amp Simul
 Delay, Overdrive, Cabinet, Equalizer, Convolution, Octaver
 MIDI, Tablature, Phaser, Tape, Tracker, Analyzer, Reverb
@@ -98,7 +95,7 @@ Keyboard, Library, Live, OSC, Mixer, Modular, Rack, Sampler, Session
 
 Type:
 
-Devel, IDE, Language, DSSI, LV2, Standalone, VST, VST3, Presets, Rack, Language
+Devel, IDE, Language, DSSI, LV2, LADSPA, Standalone, VST, VST3, Presets, Rack, Language
 
 Category:
 
