@@ -1,4 +1,7 @@
-#
+# Tag: Effect, Equalizer
+# Type: LADSPA
+# Category: Audio, Effect
+
 # spec file for package ladspa-vocoder
 #
 # Copyright (c) 2014 SUSE LINUX Products GmbH, Nuernberg, Germany.
@@ -13,8 +16,6 @@
 # published by the Open Source Initiative.
 
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
-#
-
 
 Name:           ladspa-vocoder
 Version:        0.4
@@ -22,6 +23,7 @@ Release:        1%{?dist}
 Summary:        LADSPA vocoder plugin
 License:        GPL-2.0+
 Url:            https://www.sirlab.de/linux/download
+
 Source:         https://www.sirlab.de/linux/download/vocoder-ladspa-%{version}.tgz
 Patch1:         ladspa-vocoder-0001-add-attributes.patch
 BuildRequires:  gcc
