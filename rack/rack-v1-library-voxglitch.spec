@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 3a46fcd35afe5e3b557c9ad5ba6be8293166f95d
-%global gittag0 1.32.0
+%global commit0 4bd91fcbed41ff3f8523a1c9a4877f57fb88a004
+%global gittag0 1.33.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-voxglitch
-Version: 1.32.0
+Version: 1.33.0
 Release: 3%{?dist}
 Summary: voxglitch plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r voxglitch_plugin/dist/voxglitch/* %{buildroot}%{_libexecdir}/Rack1/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.32.0-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.33.0-3
 - initial specfile
