@@ -5,10 +5,13 @@
 
 Summary: Guitar Amplifier emulator
 Name:    rakarrack-plus
-Version: 1.1.0
+Version: 1.1.1
 Release: 2%{?dist}
 License: GPL
 URL:     https://github.com/Stazed/rakarrack-plus
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/Stazed/rakarrack-plus/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
@@ -80,8 +83,11 @@ desktop-file-install --vendor '' \
 
 rm %{buildroot}/%{_datadir}/doc/rakarrack-plus/COPYING
 
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/rakarrack-plus.desktop
+
 %files
-%doc AUTHORS ChangeLog NEWS README PACKAGERS.README
+%doc AUTHORS ChangeLog NEWS README.md PACKAGERS.README README
 %license COPYING
 %{_bindir}/*
 %{_datadir}/applications/*
@@ -95,6 +101,9 @@ rm %{buildroot}/%{_datadir}/doc/rakarrack-plus/COPYING
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Jul 26 2021 Yann Collette <ycollette dot nospam at free.fr> 1.1.1-2
+- update to 1.1.1-2 
+
 * Wed Jun 23 2021 Yann Collette <ycollette dot nospam at free.fr> 1.1.0-2
 - put lv2 plugins in a separate package 
 
