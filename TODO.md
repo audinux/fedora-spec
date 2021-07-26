@@ -101,3 +101,13 @@ Category:
 
 Audio, DAW, Effect, Synthesizer, MIDI, Programming, Sampler, Sequencer
 Graphic, Tool, Session Mngmt
+
+ZITA:
+
+zita-avc1-0.1.0.tar.bz2
+zita-jclient-0.4.2.tar.bz2
+zita-audiotools-1.0.0.tar.bz2
+zita-jacktools-1.5.3.tar.bz2        Requires zita-jclient, zita-convolver and zita-audiotools
+g2reverb-0.7.1.tar.bz2
+hoafilt.tar.bz2
+
