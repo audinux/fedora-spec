@@ -7,14 +7,14 @@ Name:    jnoisemeter
 Version: 0.2.2
 Release: 1%{?dist}
 License: GPL
-Group:   Applications/Multimedia
-
 URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc gcc-c++ make
 BuildRequires: clthreads-devel clxclient-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libX11-devel libXft-devel
@@ -32,16 +32,15 @@ There are various 'standard' ways to measure noise
 particular weighting filter and a particular detector.
 
 %prep
-%setup -q
-
-%build
-rm -rf $RPM_BUILD_ROOT
+%autosetup
 
 # Force Fedora's optflags
 sed -i 's|-O2|%{optflags}|' source/Makefile
 
+%build
+
 pushd source
-make PREFIX=%{_prefix}
+%make_build PREFIX=%{_prefix}
 popd
 
 %install
@@ -49,19 +48,19 @@ mkdir -p $RPM_BUILD_ROOT%{_bindir}/
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/doc/
 
 pushd source
-make PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT install
+%make_install PREFIX=%{_prefix}
 popd
 
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root,-)
 %doc AUTHORS README
 %license COPYING
 %{_bindir}/*
 
 %changelog
+* Mon Jul 26 2021 Yann Collette <ycollette.nospam@free.fr> - 0.2.2-1
+- update to 0.2.2-1
+
 * Mon Oct 15 2018 Yann Collette <ycollette.nospam@free.fr> - 0.2.2-1
 - update for Fedora 29
 
