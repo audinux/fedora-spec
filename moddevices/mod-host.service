@@ -1,0 +1,8 @@
+[Unit]
+Description=MOD Host Daemon
+
+[Service]
+ExecStart=/usr/bin/mod-host -v
+
+[Install]
+WantedBy=multi-user.target
