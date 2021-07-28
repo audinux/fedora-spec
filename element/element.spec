@@ -1,5 +1,5 @@
 Name:    element
-Version: 0.46.2
+Version: 0.46.3
 Release: 1%{?dist}
 Summary: This is the community version of Element, a modular AU/LV2/VST/VST3 audio plugin host.
 URL:     https://github.com/kushview/Element
@@ -8,7 +8,7 @@ License: GPL3
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./element-source.sh 0.46.2
+# ./element-source.sh 0.46.3
 
 Source0: Element.tar.gz
 Source1: GitVersion.h
@@ -56,7 +56,6 @@ sed -i -e "s|/usr/bin/env python|/usr/bin/env python3|g" waf
 %build
 
 %set_build_flags
-#export CXXFLAGS="-include limits $CXXFLAGS"
 
 ./waf configure --debug --prefix=%{_prefix} --libdir=%{_libdir} 
 ./waf %{?__smp_mflags}
@@ -89,6 +88,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/net.kushview.element.
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Wed Jul 28 2021 Yann Collette <ycollette.nospam@free.fr> - 0.46.3-1
+- update to 0.46.3-1
+
 * Tue Jul 20 2021 Yann Collette <ycollette.nospam@free.fr> - 0.46.2-1
 - update to 0.46.2-1
 
