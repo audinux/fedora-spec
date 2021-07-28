@@ -1,23 +1,22 @@
 Name:           lv2-triceratops
-Version:        0.3.2
+Version:        0.4.0
 Release:        13%{?dist}
 Summary:        An LV2 polyphonic synthesizer
 # license specified in headers and in plugin manifest (triceratops.ttl) is ISC
 # http://opensource.org/licenses/isc
 License:        ISC
 URL:            https://sourceforge.net/projects/triceratops/
-Source0:        https://sourceforge.net/projects/triceratops/files/triceratops_%{version}.tar.gz
 
-BuildRequires:  gcc-c++
-BuildRequires:  make
-BuildRequires:  jack-audio-connection-kit-devel
-BuildRequires:  libsamplerate-devel
-BuildRequires:  libsndfile-devel
-BuildRequires:  lv2-devel
-BuildRequires:  gtkmm24-devel
-BuildRequires:  python2
+Source0:        https://sourceforge.net/projects/triceratops/files/triceratops-lv2-v0.0.4.tar.gz
 
-Requires:       lv2
+BuildRequires: gcc-c++
+BuildRequires: make
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: libsamplerate-devel
+BuildRequires: libsndfile-devel
+BuildRequires: lv2-devel
+BuildRequires: gtkmm24-devel
+BuildRequires: python2
 
 %description
 Triceratops a polyphonic subtractive synthesizer plugin for use with the LV2 
@@ -25,35 +24,50 @@ architecture, there is no standalone version and LV2 is required along
 with a suitable host (e.g. Jalv, Zynjacku, Ardour, Qtractor). 
 
 %prep
-%autosetup -c -n triceratops-lv2-v%{version}
+%autosetup -c -n triceratops-lv2-v0.0.4
 # this is a bug in the installer script - however -finline-functions is necessary here
 # https://sourceforge.net/p/triceratops/featurerequests/3/
-sed -i -e "s|-lX11'],'-finline-functions'|-lX11','-finline-functions']|" wscript
-sed -i -e "s|\['-O3','-std=c++0x'\]|'-std=c++0x %{optflags}'.split(' ')|" wscript
+sed -i -e "s|-lX11'],'-finline-functions'|-lX11','-finline-functions']|" triceratops/wscript
+sed -i -e "s|\['-O3','-std=c++0x'\]|'-std=c++0x %{optflags}'.split(' ')|" triceratops/wscript
 # Force use of python2
-sed -i -e "s|env python|env python2|g" waf
-sed -i -e "s|env python|env python2|g" wscript
+sed -i -e "s|env python|env python2|g" triceratops/waf
+sed -i -e "s|env python|env python2|g" triceratops/wscript
+# set LV2PATH
+sed -i -e "/conf.env.LV2DIR/d" triceratops/wscript
 
 %build
-export CXXFLAGS="%{optflags} -fPIC"
 
-./waf configure -vv --prefix=%{_prefix} \
-    --libdir=%{_libdir} --lv2dir=%{_libdir}/lv2
+cd triceratops
+
+export CXXFLAGS="%{optflags} -fPIC"
+export LV2_PATH=:%{_libdir}/lv2
+
+./waf configure -vv --prefix=%{_prefix} --libdir=%{_libdir}
 ./waf -vv %{?_smp_mflags}
 
 %install
+
+cd triceratops
+
 ./waf install --destdir=%{buildroot}
+
+mkdir -p %{buildroot}%{_libdir}/lv2/
+mv %{buildroot}/triceratops.lv2 %{buildroot}%{_libdir}/lv2/
+mv %{buildroot}/triceratops-presets.lv2 %{buildroot}%{_libdir}/lv2/
 rm  -rf %{buildroot}%{_libdir}/lv2/triceratops-presets.lv2/.directory
 
 %files
 # do not include COPYING - it is GPLV3 where the project is clearly ISC
 # https://sourceforge.net/p/triceratops/featurerequests/4/
-%doc README AUTHORS
-%license COPYING
+%doc triceratops/README triceratops/AUTHORS
+%license triceratops/COPYING
 %{_libdir}/lv2/triceratops.lv2
 %{_libdir}/lv2/triceratops-presets.lv2
 
 %changelog
+* Wed Jul 28 2021 Yann Collette <ycollette.nospam@free.fr> - 0.4.0.19
+- update to 0.4.0-19
+
 * Thu Dec 31 2020 Yann Collette <ycollette.nospam@free.fr> - 0.3.2.19
 - update to 0.3.2
 
