@@ -5,7 +5,7 @@
 %global debug_package %{nil}
 
 Name:    yabridge
-Version: 3.5.0
+Version: 3.5.1
 Release: 1%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPLv2+
@@ -80,6 +80,9 @@ install build/libyabridge-vst3.so %{buildroot}%{_libdir}/vst3
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Aug 01 2021 Yann Collette <ycollette.nospam@free.fr> - 3.5.1-1
+- update to 3.5.1-1
+
 * Fri Jul 23 2021 Yann Collette <ycollette.nospam@free.fr> - 3.5.0-1
 - update to 3.5.0-1
 
