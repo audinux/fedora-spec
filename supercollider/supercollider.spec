@@ -7,7 +7,7 @@
 
 Summary: Object oriented programming environment for real-time audio and video processing
 Name:    supercollider
-Version: 3.11.2
+Version: 3.12.0
 Release: 5%{?dist}
 License: GPL
 URL:     http://supercollider.sourceforge.net/
@@ -163,6 +163,9 @@ install -m0644 SCVersion.txt $RPM_BUILD_ROOT%{_includedir}/SuperCollider/
 %{_datadir}/mime/packages/supercollider.xml
 
 %changelog
+* Tue Aug 03 2021 Yann Collette <ycollette.nospam@free.fr> 3.12.0-5
+- update to 3.12.0-5
+
 * Mon May 10 2021 Yann Collette <ycollette.nospam@free.fr> 3.11.2-5
 - update to 3.11.5 - fixes for pipewire
 
