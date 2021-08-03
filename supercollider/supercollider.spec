@@ -41,6 +41,7 @@ BuildRequires: chkconfig
 BuildRequires: systemd-devel
 BuildRequires: libatomic
 BuildRequires: boost-devel
+BuildRequires: chrpath
 
 %description
 SuperCollider is an object oriented programming environment for
@@ -116,6 +117,9 @@ cd ..
 # install the version file
 install -m0644 SCVersion.txt $RPM_BUILD_ROOT%{_includedir}/SuperCollider/
 
+# remove a rpath
+chrpath --delete %{buildroot}%{_bindir}/scide
+
 %files
 %doc README*
 %license COPYING
@@ -130,7 +134,7 @@ install -m0644 SCVersion.txt $RPM_BUILD_ROOT%{_includedir}/SuperCollider/
 %{_datadir}/SuperCollider/SCClassLibrary
 %{_datadir}/SuperCollider/sounds
 %{_datadir}/SuperCollider/translations
-%{_datadir}/pixmaps/supercollider*
+%{_datadir}/icons/*
 # scsynth
 %{_bindir}/scsynth
 %{_libdir}/SuperCollider/plugins
@@ -140,12 +144,10 @@ install -m0644 SCVersion.txt $RPM_BUILD_ROOT%{_includedir}/SuperCollider/
 %endif
 # examples
 %{_datadir}/SuperCollider/examples
-%exclude %{_datadir}/doc/SuperCollider/
 %{_datadir}/SuperCollider/HID_Support
 # ide
 %{_bindir}/scide
 %{_datadir}/applications/SuperColliderIDE.desktop
-%{_datadir}/pixmaps/sc_ide.svg
 
 %files devel
 %{_includedir}/SuperCollider
