@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 65f8094e12e3ca916189e06ef85f0506968c652f
-%global gittag0 1.2.4
+%global commit0 7839dbc04e324bbd971aac9cd074689dc50c80dd
+%global gittag0 1.9.15
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-KRTPluginA
-Version: 1.2.4
+Version: 1.9.15
 Release: 3%{?dist}
 Summary: KRTPluginA plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r KRTPluginA_plugin/dist/KRTPluginA/* %{buildroot}%{_libexecdir}/Rack1/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.2.4-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.9.15-3
 - initial specfile
