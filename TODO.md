@@ -29,6 +29,7 @@
 | midieditor          | https://github.com/markusschwenk/midieditor/ |
 | seq66               | https://github.com/ahlstromcj/seq66 |
 | drops               | https://github.com/clearly-broken-software/drops |
+| audiveris           | https://github.com/Audiveris/audiveris.git |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
@@ -45,10 +46,11 @@ Source1: source.sh
 
 ## Add check section:
 ```
-%check
 BuildRequires: desktop-file-utils
-desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 BuildRequires: libappstream-glib
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/*%{name}.*.xml
 ```
 
