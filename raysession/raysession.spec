@@ -5,12 +5,15 @@
 %global __python %{__python3}
 
 Name:    raysession
-Version: 0.10.1
+Version: 0.11.0
 Release: 1%{?dist}
 Summary: A JACK session manager
 
 License: GPLv2+
 URL:     https://github.com/Houston4444/RaySession
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/Houston4444/RaySession/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
@@ -64,28 +67,35 @@ ln -s /usr/share/raysession/src/bin/ray-jack_config_script  %{buildroot}/usr/bin
 ln -s /usr/share/raysession/src/bin/ray-pulse2jack          %{buildroot}/usr/bin/ray-pulse2jack
 
 desktop-file-install                         \
-  --add-category="Audio"                     \
+  --add-category="Audio;AudioVideo;Qt"	     \
   --delete-original                          \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 desktop-file-install                         \
-  --add-category="Audio"                     \
+  --add-category="System"                    \
   --delete-original                          \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/ray-jack_checker.desktop
 
 desktop-file-install                         \
-  --add-category="Audio"                     \
+  --add-category="System"                    \
   --delete-original                          \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/ray-jackpatch.desktop
 
 desktop-file-install                         \
-  --add-category="Audio"                     \
+  --add-category="System"                    \
   --delete-original                          \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/ray-network.desktop
+
+%check
+
+desktop-file-validate  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-jack_checker.desktop
+desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-jackpatch.desktop
+desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-network.desktop
 
 %files
 %doc README.md
@@ -97,6 +107,9 @@ desktop-file-install                         \
 %{_sysconfdir}/xdg/raysession/client_templates/*
 
 %changelog
+* Thu Aug 05 2021 Yann Collette <ycollette.nospam@free.fr> - 0.11.0-1
+- update to 0.11.0-1
+
 * Thu Feb 4 2021 Yann Collette <ycollette.nospam@free.fr> - 0.10.1-1
 - update to 0.10.1-1
 
