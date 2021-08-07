@@ -3,7 +3,7 @@
 # Category: Audio, DAW
 
 Name:    zrythm
-Version: 1.0.0.a22.0.1
+Version: 1.0.0.a22.1.11
 Release: 5%{?dist}
 Summary: Highly automated Digital Audio Workstation (DAW) featureful and intuitive to use
 License: GPLv2+
@@ -12,7 +12,7 @@ URL:     https://git.zrythm.org/zrythm/zrythm
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://git.zrythm.org/zrythm/zrythm/archive/v1.0.0-alpha.22.0.1.tar.gz#/zrythm-v1.0.0-alpha.22.0.1.tar.gz
+Source0: https://git.zrythm.org/zrythm/zrythm/archive/v1.0.0-alpha.22.1.11.tar.gz#/zrythm-v1.0.0-alpha.22.1.11.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: git
@@ -56,6 +56,8 @@ BuildRequires: gtk-update-icon-cache
 BuildRequires: xdg-utils
 BuildRequires: rubygem-sass
 BuildRequires: vamp-plugin-sdk-devel
+BuildRequires: json-glib-devel
+BuildRequires: libcurl-devel
 %if 0%{?fedora} < 34
 BuildRequires: coreutils
 BuildRequires: libtool
@@ -186,6 +188,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.zrythm.Zrythm.des
 %endif
 
 %changelog
+* Sat Aug 07 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.22.1.11-5
+- update to 1.0.0-alpha.22.1.11-5
+
 * Tue Aug 03 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.22.0.1-5
 - update to 1.0.0-alpha.22.0.1-5
 
