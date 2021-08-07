@@ -2,10 +2,13 @@
 
 Name:    improviz
 Summary: A live-coded visual performance tool
-Version: 0.9.3
+Version: 0.9.5
 Release: 3%{?dist}
 License: BSD
 URL:     https://github.com/rumblesan/improviz
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/rumblesan/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: improviz.yaml
@@ -14,6 +17,7 @@ Source2: https://github.com/rumblesan/improviz-performance/archive/main.zip#/imp
 BuildRequires: ghc
 BuildRequires: ghc-network-devel
 BuildRequires: stack
+BuildRequires: make
 BuildRequires: gmp-devel
 BuildRequires: libXrandr-devel
 BuildRequires: libXi-devel
@@ -81,6 +85,9 @@ cp -ra improviz-performance-main/* %{buildroot}/%{_datadir}/%{name}/examples/
 %{_datadir}/%{name}/*
 
 %changelog
+* Sat Aug 07 2021 Yann Collette <ycollette dot nospam at free.fr> 0.9.5-3
+- update to 0.9.5-3
+
 * Sat May 29 2021 Yann Collette <ycollette dot nospam at free.fr> 0.9.3-3
 - update to 0.9.3-3
 
