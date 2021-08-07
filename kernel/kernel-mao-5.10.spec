@@ -3,9 +3,9 @@
 # Kernel minor version
 %define kmin  10
 # Kernel patch version
-%define kpat  52
+%define kpat  56
 # RT patch version
-%define krt   47
+%define krt   48
 # package version
 %define krel  11
 
@@ -18,8 +18,10 @@ Version: %{kver}.rt%{krt}
 Release: %{krel}%{?dist}
 License: GPL
 Group:   System Environment/Kernel
-Vendor:  The Linux Community
 URL:     http://www.kernel.org
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://cdn.kernel.org/pub/linux/kernel/v%{kmaj}.x/linux-%{kver}.tar.gz
 Source1: kernel-config-%{kmaj}.%{kmin}
@@ -206,6 +208,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
 %changelog
+* Sat Aug 07 2021 Yann Collette <ycollette.nospam@free.fr> - 5.10.56-rt48-11
+- update to 5.10.56-rt48-11 - vanilla RT kernel
+
 * Fri Jul 23 2021 Yann Collette <ycollette.nospam@free.fr> - 5.10.52-rt47-11
 - update to 5.10.52-rt47-11 - vanilla RT kernel
 
