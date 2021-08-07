@@ -3,13 +3,16 @@
 # Category: Audio, Sequencer
 
 Name:    helio-workstation
-Version: 3.6.0
+Version: 3.7.0
 Release: 2%{?dist}
 Summary: An audio sequencer
 URL:     https://github.com/helio-fm/helio-workstation
 License: GPLv2+
 
-# ./helioworkstation-source.sh 3.6
+Vendor:       Audinux
+Distribution: Audinux
+
+# ./helioworkstation-source.sh 3.7
 
 Source0: helio-workstation.tar.gz
 Source1: helioworkstation-source.sh
@@ -21,11 +24,7 @@ BuildRequires: make
 BuildRequires: desktop-file-utils
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
-%if 0%{?fedora} > 31
 BuildRequires: libglvnd-devel
-%else
-BuildRequires: mesa-libGL-devel
-%endif
 BuildRequires: libX11-devel libXft-devel libXrandr-devel libXinerama-devel libXcursor-devel
 
 %description
@@ -64,7 +63,6 @@ desktop-file-install --vendor '' \
         %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %check
-
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
@@ -76,6 +74,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/doc/%{name}/*
 
 %changelog
+* Sat Aug 07 2021 Yann Collette <ycollette.nospam@free.fr> - 3.7.0-2
+- update to 3.7.0-2
+
 * Sun Jun 20 2021 Yann Collette <ycollette.nospam@free.fr> - 3.6.0-2
 - update to 3.6.0-2 - fix binary name
 
