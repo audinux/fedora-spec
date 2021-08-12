@@ -4,10 +4,13 @@
 
 Summary: Chiptune tracker for making chiptune-like music on a modern computer.
 Name:    protracker2
-Version: 1.31
+Version: 1.32
 Release: 4%{?dist}
 License: BSD
 URL:     https://16-bits.org/pt.php
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/8bitbubsy/pt2-clone/archive/v%{version}.tar.gz#/pt2-clone-%{version}.tar.gz
 
@@ -76,6 +79,9 @@ cp release/effects.txt release/help.txt release/keybindings.txt release/LICENSES
 %{_datadir}/icons/*
 
 %changelog
+* Thu Aug 12 2021 Yann Collette <ycollette.nospam@free.fr> - 1.32.0-4
+- update to 1.32.0-4
+
 * Sun Jun 20 2021 Yann Collette <ycollette.nospam@free.fr> - 1.31.0-4
 - update to 1.31.0-4
 
