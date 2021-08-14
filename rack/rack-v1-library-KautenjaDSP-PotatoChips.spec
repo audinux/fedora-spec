@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 4a6c45adbbcf658dd5e4b39cc77b87b9008430a3
-%global gittag0 1.9.0
+%global commit0 fc5eaebf1b8a363abca8019b68f489238026e154
+%global gittag0 1.11.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-KautenjaDSP-PotatoChips
-Version: 1.9.0
+Version: 1.11.0
 Release: 3%{?dist}
 Summary: KautenjaDSP-PotatoChips plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r KautenjaDSP-PotatoChips_plugin/dist/KautenjaDSP-PotatoChips/* %{buildroot}
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.9.0-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.11.0-3
 - initial specfile
