@@ -4,7 +4,7 @@
 
 Name:    airwindows
 Version: 0.0.1
-Release: 39%{?dist}
+Release: 40%{?dist}
 Summary: A huge set of VST2 plugins
 License: MIT
 URL:     https://github.com/airwindows/airwindows
@@ -66,6 +66,9 @@ install -m 755 %{__cmake_builddir}/*.so %{buildroot}/%{_libdir}/vst/
 %{_libdir}/*
 
 %changelog
+* Sat Aug 14 2021 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-40
+- update to 785689e3ad41aa58dc78043e75e230224f532221
+
 * Tue Aug 03 2021 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-39
 - update to 875b05321408ed8f772f80f54feddc9e89aef5fd
 
