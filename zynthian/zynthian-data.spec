@@ -3,7 +3,6 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-# Tag: 
 # Type: Presets
 # Category: Audio
 
