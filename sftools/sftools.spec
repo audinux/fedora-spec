@@ -1,4 +1,4 @@
-# Tag: Sf2, Sf3;
+# Tag: Sf2, Sf3
 # Type: Standalone
 # Category: Tool
 
