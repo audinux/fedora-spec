@@ -4,7 +4,6 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 
-# Tag: 
 # Type: Standalone, IDE
 # Category: Programming, Audio
 
