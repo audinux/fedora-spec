@@ -3,11 +3,16 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
+
+# Tag: 
+# Type: Standalone, IDE
+# Category: Programming, Audio
+
 Name:      FoxDot
 Version:   0.8.11
 Release:   1%{?dist}
 Epoch:     1
-Summary:   FoxDot is a Python programming environment that provides a fast and user-friendly abstraction to SuperCollider.
+Summary:   Python3 programming environment providing a fast and user-friendly abstraction to SuperCollider.
 License:   Creative Commons Attribution-ShareAlike 4.0 International Public License
 URL:       https://github.com/Qirky/FoxDot
 
@@ -20,10 +25,10 @@ BuildRequires: supercollider-devel
 BuildRequires: python3-setuptools
 
 %description
-FoxDot is a Python3 programming environment that provides a fast and user-friendly
-abstraction to SuperCollider. It also comes with its own IDE, which means it can
-be used straight out of the box; all you need is Python and SuperCollider and
-you're ready to go!
+Python3 programming environment providing a fast and user-friendly abstraction to SuperCollider.
+It also comes with its own IDE, which means it can be used straight out of the box; 
+all you need is Python and SuperCollider and you're ready to go!
+Note: no longer actively developed.
 
 %prep
 %autosetup -n %{name}-%{commit0}

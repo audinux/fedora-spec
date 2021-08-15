@@ -5,6 +5,12 @@ Summary: Fugio is an open visual programming system for building digital art and
 URL:     https://www.bigfug.com/software/fugio/
 License: LGPL-3.0
 
+# Tag: MIDI
+# Type: Standalone, IDE
+# Category: Programming, Audio, Graphic
+# GUIToolkit: Qt5
+# LastSourceUpdate: 2020
+
 # git clone https://github.com/bigfug/Fugio
 # cd Fugio
 # git checkout v3.0.0

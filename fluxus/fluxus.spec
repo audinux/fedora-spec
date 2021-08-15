@@ -3,11 +3,16 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
+
+# Tag: Live
+# Type: Standalone, IDE
+# Category: Programming, Audio, Graphic
+
 Name:    fluxus
 Version: 0.17rc5.%{shortcommit0}
 Release: 4%{?dist}
 Summary: A 3D game engine for livecoding worlds into existence
-URL:     http://pawfal.org/fluxus/
+URL:     https://pawfal.org/fluxus/
 License: GPLv2+
 
 Source0: https://gitlab.com/nebogeo/%{name}/-/archive/%{commit0}/fluxus-%{commit0}.tar.gz
@@ -67,7 +72,7 @@ Requires: emacs w3m-el
 A rapid prototyping, livecoding and playing/learning environment for 3D
 graphics, sound and games. Extends Racket with graphical commands
 and can be used within it’s own livecoding environment or from within
-the DrRacket IDE. Web Page: http://www.pawfal.org/fluxus/
+the DrRacket IDE.
 
 %package emacs
 Summary:  Fluxus support for Emacs
