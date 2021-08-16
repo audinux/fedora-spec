@@ -5,7 +5,7 @@
 # Kernel patch version
 %define kpat  56
 # RT patch version
-%define krt   48
+%define krt   49
 # package version
 %define krel  11
 
@@ -208,6 +208,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
 %changelog
+* Mon Aug 16 2021 Yann Collette <ycollette.nospam@free.fr> - 5.10.56-rt49-11
+- update to 5.10.56-rt49-11 - vanilla RT kernel
+
 * Sat Aug 07 2021 Yann Collette <ycollette.nospam@free.fr> - 5.10.56-rt48-11
 - update to 5.10.56-rt48-11 - vanilla RT kernel
 
