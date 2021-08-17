@@ -3,6 +3,11 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
+# Tag: Equalizer
+# Type: VST
+# Category: Audio, Effect
+# LastSourceUpdate: 2021
+
 Name:    frequalizer
 Version: 1.0.0
 Release: 1%{?dist}

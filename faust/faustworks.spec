@@ -3,6 +3,11 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
+# Tag: Jack, Alsa
+# Type: Standalone, IDE
+# Category: Audio, Programming
+# GUIToolkit: Qt5
+
 Name:    faustworks
 Version: 0.0.1
 Release: 1%{?dist}

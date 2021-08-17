@@ -3,6 +3,12 @@ Version: 1.3.0
 Release: 2%{?dist}
 Summary: A Faust emulation on a Yamaha YC20 Combo organ
 
+# Tag: Jack, Emulator
+# Type: Standalone, LV2
+# Category: Audio, Programming
+# GUIToolkit: Gtk2
+# LastSourceUpdate: 2018
+
 License: MIT
 URL:     https://github.com/sampov2/foo-yc20
 Source0: https://github.com/sampov2/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
