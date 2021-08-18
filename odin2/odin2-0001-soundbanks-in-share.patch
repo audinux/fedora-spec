@@ -1,46 +1,28 @@
-From f4dc157765d87ce5df8babcaf7ff023d5e9c4063 Mon Sep 17 00:00:00 2001
+From 1ef41527899a7fafe9dbf8f91bb8ca4f40ed50f5 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Sat, 24 Oct 2020 18:03:13 +0200
-Subject: [PATCH] soundbanks in share
+Date: Wed, 18 Aug 2021 06:36:01 +0200
+Subject: [PATCH] soundbank in share
 
 ---
- Source/GlobalIncludes.h | 11 +++++------
- 1 file changed, 5 insertions(+), 6 deletions(-)
+ Source/GlobalIncludes.h | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
 
 diff --git a/Source/GlobalIncludes.h b/Source/GlobalIncludes.h
-index 3303e99f..826b9155 100644
+index a7b0bd6..91b0aa5 100644
 --- a/Source/GlobalIncludes.h
 +++ b/Source/GlobalIncludes.h
-@@ -71,10 +71,9 @@
+@@ -75,10 +75,7 @@
+ #define MATRIX_SECTION_INDEX_MATRIX 0
  
- 
- 
--//#ifdef ODIN_LINUXXXX
--//#define ODIN_STORAGE_PATH File::getSpecialLocation(File::SpecialLocationType::commonApplicationDataDirectory).getFullPathName() +                    \
--// 	    File::getSeparatorString() + "odin2"
--//#else 
-+#ifdef ODIN_LINUX
+ #ifdef ODIN_LINUX
+-#define ODIN_STORAGE_PATH                                                                                              \
+-	File::getSpecialLocation(File::SpecialLocationType::userHomeDirectory).getFullPathName() +                         \
+-	    File::getSeparatorString() + ".local" + File::getSeparatorString() + "share" + File::getSeparatorString() +    \
+-	    "odin2"
 +#define ODIN_STORAGE_PATH "/usr/share/odin2"
-+#else 
- #ifdef ODIN_MAC
- #define ODIN_STORAGE_PATH File::getSpecialLocation(File::SpecialLocationType::commonApplicationDataDirectory).getFullPathName() +                    \
-  	    File::getSeparatorString()  + "Audio" + File::getSeparatorString() + "Presets" + File::getSeparatorString() + "odin2"
-@@ -82,7 +81,7 @@
- #define ODIN_STORAGE_PATH File::getSpecialLocation(File::SpecialLocationType::commonApplicationDataDirectory).getFullPathName() +                    \
-  	    File::getSeparatorString()  + "odin2"
  #endif
--//#endif
-+#endif
- #define CONFIG_FILE_PATH ODIN_STORAGE_PATH + File::getSeparatorString() + "odin2.conf"
- 
- 
-@@ -548,4 +547,4 @@ public:
- 	static int compareElements(const File &first, const File &second) {
- 		return first.getFileName().compareIgnoreCase(second.getFileName());
- 	}
--};
-\ No newline at end of file
-+};
+ #ifdef ODIN_MAC
+ #define ODIN_STORAGE_PATH                                                                                              \
 -- 
-2.26.2
+2.31.1
 
