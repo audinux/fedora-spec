@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 5a98acd5d05cf5a0f18a8779d2c2228d56af4218
-%global gittag0 1.12.18
+%global commit0 74e58887194f3a1738d4f41e0b0dada051fe9561
+%global gittag0 1.15.20
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-KRTPluginA
-Version: 1.12.18
+Version: 1.15.20
 Release: 3%{?dist}
 Summary: KRTPluginA plugin for Rack
 License: GPLv2+
@@ -45,7 +45,7 @@ BuildRequires: jq
 
 %description
 KRTPluginA plugin for Rack.
-Plate 18 dB filter. (Band pass phased ring mod.)
+Plate 18 dB filter. (Band pass phased ring mod).
 
 %prep
 %autosetup -n Rack
@@ -95,5 +95,5 @@ cp -r KRTPluginA_plugin/dist/KRTPluginA/* %{buildroot}%{_libexecdir}/Rack1/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.12.18-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.15.20-3
 - initial specfile
