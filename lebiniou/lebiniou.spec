@@ -3,12 +3,14 @@
 # Category: Graphic
 
 Name:    lebiniou
-Version: 3.60.1
+Version: 3.61.0
 Release: 3%{?dist}
 Summary: Audio spectrum visualizer
 URL:     https://biniou.net/
-
 License: GPLv2+
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://gitlab.com/lebiniou/lebiniou/-/archive/version-%{version}/lebiniou-version-%{version}.tar.gz
 
@@ -79,6 +81,9 @@ desktop-file-install                         \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/net.biniou.LeBiniou.desktop
 
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/net.biniou.LeBiniou.desktop
+
 %files
 %doc README.md AUTHORS ChangeLog THANKS
 %license COPYING
@@ -87,6 +92,9 @@ desktop-file-install                         \
 %{_datadir}/*
 
 %changelog
+* Wed Aug 18 2021 Yann Collette <ycollette.nospam@free.fr> - 3.61.0-3
+- update to 3.61.0-3
+
 * Sat Jul 03 2021 Yann Collette <ycollette.nospam@free.fr> - 3.60.1-3
 - update to 3.60.1-3
 

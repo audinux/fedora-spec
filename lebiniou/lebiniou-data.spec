@@ -1,9 +1,12 @@
 Name:    lebiniou-data
-Version: 3.60.0
+Version: 3.61.0
 Release: 5%{?dist}
 Summary: Lebiniou is an audio spectrum visualizer - data package
 URL:     https://biniou.net/
 License: GPLv2+
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # original tarfile can be found here:
 Source0: https://gitlab.com/lebiniou/lebiniou-data/-/archive/version-%{version}/lebiniou-data-version-%{version}.tar.gz
@@ -42,6 +45,9 @@ LDFLAGS="${LDFLAGS:-%{build_ldflags}} -z muldefs" ; export LDFLAGS
 %{_datadir}/lebiniou/*
 
 %changelog
+* Wed Aug 18 2021 Yann Collette <ycollette.nospam@free.fr> - 3.61.0-5
+- update to 3.61.0-5
+
 * Sat Jul 03 2021 Yann Collette <ycollette.nospam@free.fr> - 3.60.0-5
 - update to 3.60.0-5
 
