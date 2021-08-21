@@ -82,6 +82,8 @@ Projucer --resave Odin.jucer
 cd Builds/LinuxMakefile
 %make_build CONFIG=Release STRIP=true
 
+mv build build_vst3
+
 cd ../..
 
 # LV2 part
@@ -98,21 +100,23 @@ echo -e "include ../../LV2.mak" >> Builds/LinuxMakefile/Makefile
 cd Builds/LinuxMakefile
 %make_build CONFIG=Release STRIP=true
 
+mv build build_lv2
+
 %install 
 
-install -m 755 -d %{buildroot}%{_libdir}/vst3/Odin2_.vst3/
-install -m 755 -d %{buildroot}%{_libdir}/lv2/Odin2.lv2/
+install -m 755 -d %{buildroot}%{_libdir}/vst3/Odin2.vst3/
+install -m 755 -d %{buildroot}%{_libdir}/lv2/Odin2_.lv2/
 install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 -d %{buildroot}%{_datadir}/odin2/Soundbanks/
 
 cp -r Soundbanks/* %{buildroot}%{_datadir}/odin2/Soundbanks/
 rm %{buildroot}%{_datadir}/odin2/Soundbanks/User\ Patches/.gitignore 
 
-install -m 755 -p Builds/LinuxMakefile/build/Odin2 %{buildroot}/%{_bindir}/
-cp -ra Builds/LinuxMakefile/build/Odin2.vst3/* %{buildroot}/%{_libdir}/vst3/Odin2.vst3/
+install -m 755 -p Builds/LinuxMakefile/build_vst3/Odin2 %{buildroot}/%{_bindir}/
+cp -ra Builds/LinuxMakefile/build_vst3/Odin2.vst3/* %{buildroot}/%{_libdir}/vst3/Odin2.vst3/
 chmod a+x %{buildroot}/%{_libdir}/vst3/Odin2.vst3/Contents/x86_64-linux/Odin2.so
 
-cp -ra Builds/LinuxMakefile/build/Odin2_.lv2/* %{buildroot}/%{_libdir}/lv2/Odin2_.lv2/
+cp -ra Builds/LinuxMakefile/build_lv2/Odin2_.lv2/* %{buildroot}/%{_libdir}/lv2/Odin2_.lv2/
 
 %files
 %doc README.md change_log.md
