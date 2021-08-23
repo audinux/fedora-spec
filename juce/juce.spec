@@ -1,5 +1,5 @@
 Name:    JUCE
-Version: 6.0.8
+Version: 6.1.0
 Release: 5%{?dist}
 Summary: JUCE Framework
 URL:     https://github.com/juce-framework/JUCE
@@ -89,6 +89,9 @@ cp -ra docs/doxygen/doc/* %{buildroot}/%{_datadir}/JUCE/doc/
 %{_usrsrc}/*
 
 %changelog
+* Mon Aug 23 2021 Yann Collette <ycollette.nospam@free.fr> - 6.1.0-5
+- update to 6.1.0-5
+
 * Tue Jun 01 2021 Yann Collette <ycollette.nospam@free.fr> - 6.0.8-5
 - fix crash at startup
 
