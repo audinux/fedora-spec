@@ -1,0 +1,30 @@
+From 03a054fe66213dc4def2ba128d7212b0256020d4 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 25 Oct 2020 20:34:22 +0100
+Subject: [PATCH] set default path
+
+---
+ extras/Projucer/Source/Settings/jucer_StoredSettings.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/extras/Projucer/Source/Settings/jucer_StoredSettings.cpp b/extras/Projucer/Source/Settings/jucer_StoredSettings.cpp
+index 196039e..0705f20 100644
+--- a/extras/Projucer/Source/Settings/jucer_StoredSettings.cpp
++++ b/extras/Projucer/Source/Settings/jucer_StoredSettings.cpp
+@@ -366,11 +366,11 @@ static String getFallbackPathForOS (const Identifier& key, DependencyPathOS os)
+ {
+     if (key == Ids::jucePath)
+     {
+-        return (os == TargetOS::windows ? "C:\\JUCE" : "~/JUCE");
++        return (os == TargetOS::windows ? "C:\\JUCE" : "/usr/src/JUCE60");
+     }
+     else if (key == Ids::defaultJuceModulePath)
+     {
+-        return (os == TargetOS::windows ? "C:\\JUCE\\modules" : "~/JUCE/modules");
++        return (os == TargetOS::windows ? "C:\\JUCE\\modules" : "/usr/src/JUCE60/modules");
+     }
+     else if (key == Ids::defaultUserModulePath)
+     {
+-- 
+2.26.2
+
