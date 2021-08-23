@@ -7,7 +7,7 @@ License: GPLv2+
 
 # original tarfile can be found here:
 Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0:  juce-0001-set-default-path.patch
+Patch0:  juce5-0001-set-default-path.patch
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: lv2-devel
