@@ -5,6 +5,13 @@ Summary: Advanced drum machine for GNU/Linux
 URL:     http://www.hydrogen-music.org/
 License: GPLv2+
 
+# Tag:  Drum, Jack, Alsa, MIDI
+# Type: Standalone
+# Category: Audio, Sequencer
+# GUIToolkit: Qt5
+# LastSourceUpdate: 2021
+
+
 Source0: https://github.com/hydrogen-music/hydrogen/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0:  hydrogen-0001-fix-flags-override.patch
 
@@ -31,7 +38,7 @@ BuildRequires: desktop-file-utils
 BuildRequires: filesystem
 
 %description
-Hydrogen is an advanced drum machine for GNU/Linux. The main goal is to bring 
+Advanced drum machine for GNU/Linux. The main goal is to bring 
 professional yet simple and intuitive pattern-based drum programming.
 
 %prep

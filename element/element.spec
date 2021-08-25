@@ -5,6 +5,10 @@ Summary: This is the community version of Element, a modular AU/LV2/VST/VST3 aud
 URL:     https://github.com/kushview/Element
 License: GPL3
 
+# Tag: Jack, MIDI, OSC
+# Type: Standalone
+# Category: Audio, Tool
+
 Vendor:       Audinux
 Distribution: Audinux
 

@@ -3,6 +3,11 @@ Version: 1.8
 Release: 1%{?dist}
 Summary: Chip music tracker based on AHX 
 
+# Tag: Tracker
+# Type: Standalone
+# Category: Audio, Sequencer
+# LastSourceUpdate: 2020
+
 License: BSD3
 URL:     https://github.com/pete-gordon/hivelytracker
 
@@ -23,7 +28,14 @@ Requires: dejavu-sans-fonts
 Requires: dejavu-serif-fonts
 
 %description
-Chip music tracker based on AHX
+Chip music tracker based on AHX format created in the mid '90s.
+(AHX was designed to create a very SID-like sound on the Amiga. "Sound Interface Device" (SID) was a chip used in Commodore 64 ...)
+HivelyTracker offers the following features over AHX:
+- Multichannel (4 to 16 channels)
+- Per-channel stereo panning
+- Two commands per note instead of one
+- Ring modulation
+- A more feature rich editor
 
 %prep
 %autosetup -p1 -n %{name}

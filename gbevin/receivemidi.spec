@@ -5,6 +5,11 @@ Summary: A command line tool to receive MIDI event
 License: GPLv3
 URL:     https://github.com/gbevin/ReceiveMIDI
 
+# Tag: Alsa, MIDI
+# Type: Standalone
+# Category: MIDI, Tool
+
+
 Source0: %{url}/archive/%{version}.tar.gz#/ReceiveMIDI-%{version}.tar.gz
 
 BuildRequires: gcc
@@ -22,7 +27,7 @@ BuildRequires: libcurl-devel
 BuildRequires: alsa-lib-devel
 
 %description
-ReceiveMIDI is a multi-platform command-line tool makes it very easy to quickly
+Multi-platform command-line tool making it very easy to quickly
 receive and monitor MIDI messages from MIDI devices on your computer.
 
 %prep

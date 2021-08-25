@@ -5,6 +5,11 @@ Summary: harvid -- HTTP Ardour Video Daemon
 URL:     https://github.com/x42/harvid.git
 Group:   Applications/Multimedia
 
+# Tag: Video
+# Type: Standalone
+# Category: Graphic, Tool
+
+
 License: GPLv2+
 
 # original tarfile can be found here:
@@ -24,7 +29,7 @@ Requires: xjadeo
 %description
 Harvid decodes still images from movie files and serves them via HTTP.
 Its intended use-case is to efficiently provide frame-accurate data and
-act as second level cache for rendering the video-timeline in Ardour - http://ardour.org.
+act as second level cache for rendering the video-timeline in Ardour - https://ardour.org.
 
 %prep
 %autosetup -n %{name}-%{version}
