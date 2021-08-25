@@ -28,8 +28,8 @@ Requires: dejavu-sans-fonts
 Requires: dejavu-serif-fonts
 
 %description
-Chip music tracker based on AHX format created in the mid '90s.
-(AHX was designed to create a very SID-like sound on the Amiga. "Sound Interface Device" (SID) was a chip used in Commodore 64 ...)
+Format created in the mid '90s, AHX was designed to create a very SID-like sound on the Amiga. 
+("Sound Interface Device" (SID) was a chip used in Commodore 64 ...)
 HivelyTracker offers the following features over AHX:
 - Multichannel (4 to 16 channels)
 - Per-channel stereo panning
