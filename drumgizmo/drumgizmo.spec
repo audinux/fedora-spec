@@ -1,3 +1,7 @@
+# Tag: Jack, Alsa, Drum
+# Type: Plugin, Standalone, LV2
+# Category: Audio, Sampler
+
 Summary: Software Synthesizer
 Name:    drumgizmo
 Version: 0.9.19
@@ -5,7 +9,7 @@ Release: 2%{?dist}
 License: GPL
 URL:     https://www.drumgizmo.org/wiki/doku.php
 
-Source0: http://www.drumgizmo.org/releases/drumgizmo-%version/drumgizmo-%version.tar.gz
+Source0: https://www.drumgizmo.org/releases/drumgizmo-%version/drumgizmo-%version.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: autoconf
@@ -29,7 +33,9 @@ BuildRequires: libsmf-devel
 BuildRequires: alsa-lib-devel
 
 %description
-DrumGizmo is an open source, multichannel, multilayered, cross-platform drum plugin and stand-alone application. It enables you to compose drums in midi and mix them with a multichannel approach. It is comparable to that of mixing a real drumkit that has been recorded with a multimic setup.
+Open source, multichannel, multilayered, cross-platform drum plugin and stand-alone application.
+It enables you to compose drums in midi and mix them with a multichannel approach.
+It is comparable to that of mixing a real drumkit that has been recorded with a multimic setup.
 
 %prep
 %autosetup -n %{name}-%{version}

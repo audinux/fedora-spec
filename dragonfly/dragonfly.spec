@@ -1,5 +1,9 @@
 %define _lto_cflags %{nil}
 
+# Tag: Reverb
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 Name:    dragonfly-reverb
 Version: 3.2.5
 Release: 3%{?dist}

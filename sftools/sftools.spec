@@ -1,6 +1,7 @@
-# Tag: Sf2, Sf3;
+# Tag: Sf2, Sf3
 # Type: Standalone
-# Category: Tool
+# Category: Tool, Audio
+# GUIToolkit: Qt5
 
 Name:    sftools
 Version: 1.0.0

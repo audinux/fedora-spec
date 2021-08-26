@@ -3,7 +3,7 @@
 %global gittag0 v1.7.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-# Tag: MIDI, FM
+# Tag: MIDI, FM, Tracker
 # Type: Standalone
 # Category: Audio, Synthesizer, Sequencer
 

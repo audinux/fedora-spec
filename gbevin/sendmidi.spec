@@ -5,6 +5,10 @@ Summary: A command line tool to send MIDI event
 License: GPLv3
 URL:     https://github.com/gbevin/SendMIDI
 
+# Tag: Alsa, MIDI
+# Type: Standalone
+# Category: MIDI, Tool
+
 Source0: %{url}/archive/%{version}.tar.gz#/SendMIDI-%{version}.tar.gz
 
 BuildRequires: gcc
@@ -22,7 +26,7 @@ BuildRequires: libcurl-devel
 BuildRequires: alsa-lib-devel
 
 %description
-SendMIDI is a multi-platform command-line tool makes it very easy to quickly
+Multi-platform command-line tool making it very easy to quickly
 send MIDI messages to MIDI devices from your computer.
 
 %prep

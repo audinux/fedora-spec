@@ -3,6 +3,10 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
+# Tag: Analyzer
+# Type: Standalone
+# Category: Audio, Tool, Graphic
+
 Name:    glava
 Version: 1.6.3
 Release: 2%{?dist}
@@ -22,7 +26,8 @@ BuildRequires: libXcomposite-devel
 BuildRequires: libXext-devel
 
 %description
-GLava is an OpenGL audio spectrum visualizer. Its primary use case is for desktop windows or backgrounds. Displayed to the left is the radial shader module. Development is active, and reporting issues is encouranged.
+GLava is an OpenGL audio spectrum visualizer. Its primary use case is for desktop windows or backgrounds.
+Displayed to the left is the radial shader module. Development is active, and reporting issues is encouranged.
 
 %prep
 %autosetup -n %{name}-%{commit0}

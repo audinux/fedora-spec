@@ -1,6 +1,7 @@
-# Tag: Graphic
+
 # Type: Standalone
 # Category: Graphic
+# GUIToolkit: Qt5
 
 %define	uname OpenBoard
 
@@ -10,7 +11,7 @@ Release: 2%{?dist}
 Summary: Interactive whiteboard for schools and universities
 License: GPLv3+
 Group:   Education
-Url:     http://openboard.ch
+Url:     https://openboard.ch
 
 Source0: https://github.com/OpenBoard-org/OpenBoard/archive/v%{version}/%{uname}-%{version}.tar.gz
 Source1: %{name}.desktop
@@ -52,7 +53,7 @@ BuildRequires: lame-devel
 %description
 OpenBoard is an open source cross-platform interactive white board
 application designed primarily for use in schools. It was originally
-forked from Open-SankorÃ©, which was itself based on Uniboard.
+forked from Open-Sankor, which was itself based on Uniboard.
 
 %prep
 %autosetup -n %{uname}-%{version}
