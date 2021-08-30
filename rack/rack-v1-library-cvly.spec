@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 75992bbe811d57964fef25b7737d89675ca9debf
-%global gittag0 1.0.3
+%global commit0 581d4b3cd618a7334e285e99ccdab8bfa96678ae
+%global gittag0 1.0.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-cvly
-Version: 1.0.3
+Version: 1.0.4
 Release: 3%{?dist}
 Summary: cvly plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r cvly_plugin/dist/cvly/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/cvly/
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.3-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.4-3
 - initial specfile
