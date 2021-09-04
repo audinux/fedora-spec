@@ -2,8 +2,9 @@
 # Type: Standalone
 # Category: Audio, DAW
 
+%global zrythm_version 25.0.1
 Name:    zrythm
-Version: 1.0.0.a24.0.1
+Version: 1.0.0.a%{zrythm_version}
 Release: 5%{?dist}
 Summary: Highly automated Digital Audio Workstation (DAW) featureful and intuitive to use
 License: GPLv2+
@@ -12,7 +13,7 @@ URL:     https://git.zrythm.org/zrythm/zrythm
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://git.zrythm.org/zrythm/zrythm/archive/v1.0.0-alpha.24.0.1.tar.gz#/zrythm-v1.0.0-alpha.24.0.1.tar.gz
+Source0: https://git.zrythm.org/zrythm/zrythm/archive/v1.0.0-alpha.%{zrythm_version}.tar.gz#/zrythm-v1.0.0-alpha.%{zrythm_version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: git
@@ -172,10 +173,16 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.zrythm.Zrythm.des
 %exclude %{_bindir}/gio
 %exclude %{_bindir}/glib-compile-schemas
 %exclude %{_bindir}/gsettings
+%exclude %{_bindir}/glib-compile-resources
+%exclude %{_bindir}/glib-genmarshal
+%exclude %{_bindir}/glib-gettextize
+%exclude %{_bindir}/glib-mkenums
+%exclude %{_bindir}/gobject-query
+%exclude %{_bindir}/gresource
+%exclude %{_bindir}/gtester
+%exclude %{_bindir}/gtester-report
 %exclude %{_includedir}/glib-2.0/*
 %exclude %{_includedir}/gio-unix-2.0/*
-%exclude %{_libdir}/glib-2.0/include/*
-%exclude %{_libdir}/pkgconfig/*
 %exclude %{_datadir}/aclocal/*
 %exclude %{_datadir}/bash-completion/completions/gio
 %exclude %{_datadir}/bash-completion/completions/gapplication
@@ -184,10 +191,21 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.zrythm.Zrythm.des
 %exclude %{_datadir}/bash-completion/completions/gsettings
 %exclude %{_datadir}/gdb/auto-load/usr/lib64/*
 %exclude %{_datadir}/gettext/*
+%exclude %{_datadir}/glib-2.0/*
 %exclude %{_datadir}/locale/*/LC_MESSAGES/glib20.mo
+%exclude %{_libdir}/glib-2.0/include/*
+%exclude %{_libdir}/pkgconfig/*
+%exclude %{_libdir}/libgio-2.0.so*
+%exclude %{_libdir}/libglib-2.0.so*
+%exclude %{_libdir}/libgmodule-2.0.so*
+%exclude %{_libdir}/libgobject-2.0.so*
+%exclude %{_libdir}/libgthread-2.0.so*
 %endif
 
 %changelog
+* Sat Sep 04 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.25.0.1-5
+- update to 1.0.0-alpha.25.0.1-5
+
 * Sat Aug 28 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.24.0.1-5
 - update to 1.0.0-alpha.24.0.1-5
 
