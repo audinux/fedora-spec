@@ -1,19 +1,20 @@
-Name:    hydrogen
-Version: 1.0.2
-Release: 12%{?dist}
-Summary: Advanced drum machine for GNU/Linux
-URL:     http://www.hydrogen-music.org/
-License: GPLv2+
-
 # Tag:  Drum, Jack, Alsa, MIDI
 # Type: Standalone
 # Category: Audio, Sequencer
 # GUIToolkit: Qt5
 # LastSourceUpdate: 2021
 
+Name:    hydrogen
+Version: 1.1.0
+Release: 12%{?dist}
+Summary: Advanced drum machine for GNU/Linux
+URL:     http://www.hydrogen-music.org/
+License: GPLv2+
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/hydrogen-music/hydrogen/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0:  hydrogen-0001-fix-flags-override.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: alsa-lib-devel
@@ -82,6 +83,9 @@ desktop-file-install --vendor '' \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/org.hydrogenmusic.Hydrogen.desktop
 
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/org.hydrogenmusic.Hydrogen.desktop
+
 %files
 %doc AUTHORS ChangeLog README.txt
 %license COPYING*
@@ -97,6 +101,9 @@ desktop-file-install --vendor '' \
 %exclude %{_includedir}/%{name}
 
 %changelog
+* Sun Sep 05 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-12
+- update to 1.1.0-12
+
 * Sun Apr 11 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-12
 - update to 1.0.2-12
 
