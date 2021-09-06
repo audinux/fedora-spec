@@ -2,7 +2,7 @@
 # Type: Standalone
 # Category: Audio, DAW
 
-%global zrythm_version 25.0.1
+%global zrythm_version 25.1.1
 Name:    zrythm
 Version: 1.0.0.a%{zrythm_version}
 Release: 5%{?dist}
@@ -127,6 +127,7 @@ mkdir build
 %if 0%{?fedora} < 34
        --wrap-mode=nofallback \
        --force-fallback-for glib \
+       --default-library static \
 %endif
        -Dmanpage=true \
        -Duser_manual=true \
@@ -203,6 +204,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.zrythm.Zrythm.des
 %endif
 
 %changelog
+* Mon Sep 06 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.25.1.1-5
+- update to 1.0.0-alpha.25.1.1-5
+
 * Sat Sep 04 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.25.0.1-5
 - update to 1.0.0-alpha.25.0.1-5
 
