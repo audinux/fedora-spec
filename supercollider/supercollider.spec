@@ -1,13 +1,6 @@
-# build options
-%ifarch %{arm}
-%define cmakearch -DSUPERNOVA=OFF -DSSE=OFF -DSSE2=OFF -DNOVA_SIMD=ON -DSC_WII=OFF
-%else
-%define cmakearch -DSUPERNOVA=ON
-%endif
-
 Summary: Object oriented programming environment for real-time audio and video processing
 Name:    supercollider
-Version: 3.12.0
+Version: 3.12.1
 Release: 5%{?dist}
 License: GPL
 URL:     http://supercollider.sourceforge.net/
@@ -18,12 +11,6 @@ Requires: emacs w3m-el
 
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
-
-# move back sub-packages into main sc package
-Obsoletes: supercollider-libscsynth <= 3.4.5
-Provides:  supercollider-libscsynth <= 3.4.5
-Obsoletes: supercollider-sclang <= 3.4.5
-Provides:  supercollider-sclang <= 3.4.5
 
 BuildRequires: cmake gcc gcc-c++ autoconf automake libtool pkgconfig
 BuildRequires: jack-audio-connection-kit-devel libsndfile-devel alsa-lib-devel
@@ -95,11 +82,14 @@ sed -i -e "280,281d" CMakeLists.txt
 find . -type d -name .git -printf "\"%h/%f\"\n" | xargs rm -rf 
 
 # -DSYSTEM_BOOST=ON 
-%ifarch x86_64
-%cmake -DCMAKE_C_FLAGS="%{optflags}" -DCMAKE_CXX_FLAGS="-std=c++11 %{optflags}" -DCMAKE_BUILD_TYPE=RELEASE -DLIB_SUFFIX="64" -DSUPERNOVA=ON -DCMAKE_INSTALL_PREFIX=%{_prefix}
-%else
-%cmake -DCMAKE_C_FLAGS="%{optflags}" -DCMAKE_CXX_FLAGS="-std=c++11 %{optflags}" -DCMAKE_BUILD_TYPE=RELEASE -DSUPERNOVA=ON -DCMAKE_INSTALL_PREFIX=%{_prefix}
+%cmake -DCMAKE_C_FLAGS="%{optflags}" \
+       -DCMAKE_CXX_FLAGS="-std=c++11 %{optflags}" \
+       -DCMAKE_BUILD_TYPE=RELEASE \
+%ifarch x86_64       
+       -DLIB_SUFFIX="64" \
 %endif
+       -DSUPERNOVA=ON \
+       -DCMAKE_INSTALL_PREFIX=%{_prefix}
 
 %cmake_build
 
@@ -165,6 +155,9 @@ chrpath --delete %{buildroot}%{_bindir}/scide
 %{_datadir}/mime/packages/supercollider.xml
 
 %changelog
+* Mon Sep 06 2021 Yann Collette <ycollette.nospam@free.fr> 3.12.1-5
+- update to 3.12.1-5
+
 * Tue Aug 03 2021 Yann Collette <ycollette.nospam@free.fr> 3.12.0-5
 - update to 3.12.0-5
 
