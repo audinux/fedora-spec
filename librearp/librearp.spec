@@ -68,7 +68,7 @@ tar xvfz %{SOURCE1}
 %cmake
 %cmake_build
 
-cd LibreArpVST3
+cd ../LibreArpVST3
 %cmake
 %cmake_build
 
@@ -77,7 +77,7 @@ cd LibreArpVST3
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
 cp -ra %{_host}/LibreArp_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
 
-cd LibreArpVST3
+cd ../LibreArpVST3
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 cp -ra %{_host}/LibreArp_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 
