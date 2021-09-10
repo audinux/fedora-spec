@@ -34,6 +34,7 @@ There are many ways to manages GitHub Actions, but the plan is to:
     - specify directory to scan
     - specify file to export
   - Push file to Web site https://github.com/audinux/audinux.github.io
+  -  use https://github.com/marketplace/actions/push-a-file-to-another-repository
 
 
 ## Where
@@ -43,7 +44,7 @@ In this repo, there is a `.github/workflows/search-refresh.yml` file.
 
 ## Project planning
 
-- Nothing is done yet. 
+- Work is in progress ... 
 - The work is in branch `gh_action`
 - It will be tested
 - Then merged

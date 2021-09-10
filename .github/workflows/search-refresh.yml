@@ -10,14 +10,12 @@ jobs:
 
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
 
       - name: Check out RPM SPEC files repository
         uses: actions/checkout@v2
         with:
           path: fedora-spec
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
 
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -29,9 +27,7 @@ jobs:
         with:
           repository: audinux/parse-spec
           path: parse-spec
-      - run: echo "💡 The Python Scan script repository has been cloned to the runner."
 
-      - run: echo "🖥️ The workflow is now ready to scan your RPM SPEC files on the runner."
       - name: Scan SPEC files and generate metadata
         run: python parse-spec/main.py fedora-spec
 
