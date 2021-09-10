@@ -2,8 +2,8 @@ name: Refresh search data
 on: 
   push:
     branches: [ "gh_action" ]
-      paths:
-        - '**.spec'
+    paths:
+      - '**.spec'
 
 jobs:
   Refresh-Search-Data:
