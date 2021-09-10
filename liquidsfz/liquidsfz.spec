@@ -5,6 +5,11 @@ License: BSD-2-Clause
 Summary: Sampler plugin and library for SFZ and Hydrogen instruments
 Url:     https://github.com/swesterfeld/liquidsfz
 
+# Tag: Sfz, Jack
+# Type: Plugin, LV2
+# Category: Audio, Sampler
+
+
 Source0: %{url}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
