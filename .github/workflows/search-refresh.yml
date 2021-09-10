@@ -1,7 +1,7 @@
 name: Refresh search data
 on: 
   push:
-    branches: [ "gh_action" ]
+    branches: [ $default-branch ]
     paths:
       - '**.spec'
 
@@ -45,8 +45,6 @@ jobs:
           destination_folder: 'packages'
           user_email: 'brunovern.a@gmail.com'
           user_name: 'BrunoVernay'
-          commit_message: 'Metadata update via GH Actions.'
-
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+          commit_message: 'Search metadata update via GH Actions.'
 
       
