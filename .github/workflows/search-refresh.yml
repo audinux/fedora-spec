@@ -2,6 +2,8 @@ name: Refresh search data
 on: 
   push:
     branches: [ "gh_action" ]
+      paths:
+        - '**.spec'
 
 jobs:
   Refresh-Search-Data:
@@ -32,7 +34,18 @@ jobs:
         run: python parse-spec/main.py fedora-spec
 
       - run: echo "TODO Test the ouput non-empty, valid json ..."
-      - run: echo "TODO Push the ouput to web site repo"
+
+      - name: Push the ouput to web site repo
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: 'parse-spec/search-data.json'
+          destination_repo: 'audinux/audinux.github.io'
+          destination_folder: 'packages'
+          user_email: 'brunovern.a@gmail.com'
+          user_name: 'BrunoVernay'
+          commit_message: 'Metadata update via GH Actions.'
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
