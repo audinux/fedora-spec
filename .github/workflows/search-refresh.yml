@@ -40,7 +40,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: 'parse-spec/search-data.json'
+          source_file: 'search-data.json'
           destination_repo: 'audinux/audinux.github.io'
           destination_folder: 'packages'
           user_email: 'brunovern.a@gmail.com'
