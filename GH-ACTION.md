@@ -23,16 +23,23 @@ On git push:
 There are many ways to manages GitHub Actions, but the plan is to:
 - create a workflow in this repo
 - trigger on push
-  - ideally filter on main branch, filter on spec file changes only
-- create a machine
-  - install Python (see https://github.community/t/how-to-setup-github-actions-to-run-my-python-script-on-schedule/18335/2)
+  - can filter on main branch `[ $default-branch ]` , but currently only on `gh_action` branch
+  - filter on spec file changes only
+- create a machine (https://github.community/t/how-to-setup-github-actions-to-run-my-python-script-on-schedule/18335/2)
+  - install Python (see https://github.com/marketplace/actions/setup-python )
   - checkout this repo
-  - checkout the Python Script
+  - checkout the Python Script (https://github.com/marketplace/actions/checkout)
     - or use a Composite Action?  See https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
   - run the script
     - specify directory to scan
     - specify file to export
   - Push file to Web site https://github.com/audinux/audinux.github.io
+
+
+## Where
+
+In this repo, there is a `.github/workflows/search-refresh.yml` file.
+
 
 ## Project planning
 

@@ -1,0 +1,40 @@
+name: Refresh search data
+on: 
+  push:
+    branches: [ "gh_action" ]
+
+jobs:
+  Refresh-Search-Data:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
+      - name: Check out RPM SPEC files repository
+        uses: actions/checkout@v2
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 
+
+      - name: Check out Python Scan script repository
+        uses: actions/checkout@v2
+        with:
+          repository: audinux/parse-spec
+      - run: echo "💡 The Python Scan script repository has been cloned to the runner."
+
+      - run: echo "🖥️ The workflow is now ready to scan your RPM SPEC files on the runner."
+      - name: Scan SPEC files and generate metadata
+        run: python parse-spec/main.py fedora-spec
+
+      - run: echo "TODO: Test the ouput (non-empty, valid json ...)"
+      - run: echo "TODO: Push the ouput to web site repo"
+
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+
+      
