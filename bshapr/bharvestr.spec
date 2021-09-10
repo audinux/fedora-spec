@@ -10,13 +10,14 @@
 Summary: Experimental granular synthesizer LV2 plugin
 Name:    lv2-BHarvestr
 Version: 0.1.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BHarvestr
 
 Source0: https://github.com/sjaehn/BHarvestr/archive/%{commit0}.tar.gz#/BHarvestr-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
@@ -34,11 +35,21 @@ Therefore, future versions of this plugin may be completely incompatible to this
 
 %build
 
-%make_build PREFIX=%{_prefix}r LV2DIR=%{_libdir}/lv2 DESTDIR=%{buildroot} CXXFLAGS="%{build_cxxflags} -std=c++11 -fvisibility=hidden -fPIC"
+%set_build_flags
+
+%make_build PREFIX=%{_prefix} \
+	    LV2DIR=%{_libdir}/lv2 \
+	    DESTDIR=%{buildroot} \
+	    STRIP=true \
+	    CXXFLAGS="$CXXFLAGS -std=c++11 -fvisibility=hidden -fPIC"
 
 %install
 
-%make_install PREFIX=%{_prefix}r LV2DIR=%{_libdir}/lv2 DESTDIR=%{buildroot} CXXFLAGS="%{build_cxxflags} -std=c++11 -fvisibility=hidden -fPIC"
+%make_install PREFIX=%{_prefix} \
+	      LV2DIR=%{_libdir}/lv2 \
+	      DESTDIR=%{buildroot} \
+	      STRIP=true \
+	      CXXFLAGS="$CXXFLAGS -std=c++11 -fvisibility=hidden -fPIC"
 
 %files
 %doc README.md
@@ -46,11 +57,14 @@ Therefore, future versions of this plugin may be completely incompatible to this
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Sep 10 2021 Yann Collette <ycollette dot nospam at free.fr> 0.1.0-4
+- update to 0.1.0-4 - fix install
+
 * Mon Mar 15 2021 Yann Collette <ycollette dot nospam at free.fr> 0.1.0-3
-- updata to 0.1.0-3 - last master version
+- update to 0.1.0-3 - last master version
 
 * Fri Jun 26 2020 Yann Collette <ycollette dot nospam at free.fr> 0.1.0-2
-- updata to 0.1.0-2 - last master version
+- update to 0.1.0-2 - last master version
 
 * Wed May 13 2020 Yann Collette <ycollette dot nospam at free.fr> 0.1.0-1
 - initial release of the spec file

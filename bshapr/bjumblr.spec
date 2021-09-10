@@ -5,13 +5,17 @@
 Summary: Pattern-controlled audio stream / sample re-sequencer LV2 plugin
 Name:    lv2-BJumblr
 Version: 1.6.6
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BJumblr
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/sjaehn/BJumblr/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
@@ -27,11 +31,21 @@ From the technical POV B.Jumblr is a sequencer pattern-controlled audio delay ef
 
 %build
 
-%make_build PREFIX=%{_prefix}r LV2DIR=%{_libdir}/lv2 DESTDIR=%{buildroot} CXXFLAGS="%{build_cxxflags} -include stdexcept -std=c++11 -fvisibility=hidden -fPIC"
+%set_build_flags
+
+%make_build PREFIX=%{_prefix} \
+	    LV2DIR=%{_libdir}/lv2 \
+	    DESTDIR=%{buildroot} \
+	    STRIP=true \
+	    CXXFLAGS="$CXXFLAGS -include stdexcept -std=c++11 -fvisibility=hidden -fPIC"
 
 %install
 
-%make_install PREFIX=%{_prefix}r LV2DIR=%{_libdir}/lv2 DESTDIR=%{buildroot} CXXFLAGS="%{build_cxxflags} -include stdexcept -std=c++11 -fvisibility=hidden -fPIC"
+%make_install PREFIX=%{_prefix} \
+	      LV2DIR=%{_libdir}/lv2 \
+	      DESTDIR=%{buildroot} \
+	      STRIP=true \
+	      CXXFLAGS="$CXXFLAGS -include stdexcept -std=c++11 -fvisibility=hidden -fPIC"
 
 %files
 %doc README.md
@@ -39,6 +53,9 @@ From the technical POV B.Jumblr is a sequencer pattern-controlled audio delay ef
 %{_libdir}/lv2/*
 
 %changelog
+* Fr Sep 10 2021 Yann Collette <ycollette dot nospam at free.fr> 1.6.6-3
+- update to 1.6.6-3
+
 * Sun Apr 18 2021 Yann Collette <ycollette dot nospam at free.fr> 1.6.6-2
 - update to 1.6.6-2
 

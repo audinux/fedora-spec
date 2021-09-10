@@ -5,14 +5,16 @@
 Summary: Pattern-controlled MIDI amp & time stretch LV2 plugin to produce shuffle / swing effects
 Name:    lv2-BSchaffl
 Version: 1.4.6
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BSchaffl
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/sjaehn/BSchaffl/archive/%{version}.tar.gz#/BSchaffl-%{version}.tar.gz
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: libX11-devel
@@ -38,11 +40,21 @@ Key features:
 
 %build
 
-%make_build PREFIX=%{_prefix}r LV2DIR=%{_libdir}/lv2 DESTDIR=%{buildroot} CXXFLAGS="%{build_cxxflags} -std=c++11 -fvisibility=hidden -fPIC"
+%set_build_flags
+
+%make_build PREFIX=%{_prefix} \
+	    LV2DIR=%{_libdir}/lv2 \
+	    DESTDIR=%{buildroot} \
+	    STRIP=true \
+	    CXXFLAGS="$CXXFLAGS -std=c++11 -fvisibility=hidden -fPIC"
 
 %install
 
-%make_install PREFIX=%{_prefix}r LV2DIR=%{_libdir}/lv2 DESTDIR=%{buildroot} CXXFLAGS="%{build_cxxflags} -std=c++11 -fvisibility=hidden -fPIC"
+%make_install PREFIX=%{_prefix} \
+	      LV2DIR=%{_libdir}/lv2 \
+	      DESTDIR=%{buildroot} \
+	      STRIP=true \
+	      CXXFLAGS="$CXXFLAGS -std=c++11 -fvisibility=hidden -fPIC"
 
 %files
 %doc README.md
@@ -50,6 +62,9 @@ Key features:
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Sep 10 2021 Yann Collette <ycollette dot nospam at free.fr> 1.4.6-2
+- update to 1.4.6-2 - fix install
+
 * Mon Mar 15 2021 Yann Collette <ycollette dot nospam at free.fr> 1.4.6-1
 - update to 1.4.6-1
 

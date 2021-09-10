@@ -5,13 +5,17 @@
 Summary: Beat / envelope shaper LV2 plugin
 Name:    lv2-BShapr
 Version: 0.13
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BShapr
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/sjaehn/BShapr/archive/v%{version}.tar.gz#/BShapr-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
@@ -28,11 +32,21 @@ stereo width, filters, pitch shift, delay, and distortion effects and can be com
 
 %build
 
-%make_build PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 DESTDIR=%{buildroot} CXXFLAGS="%{build_cxxflags} -std=c++11 -fvisibility=hidden -fPIC"
+%set_build_flags
+
+%make_build PREFIX=%{_prefix} \
+	    LV2DIR=%{_libdir}/lv2 \
+	    DESTDIR=%{buildroot} \
+	    STRIP=true \
+	    CXXFLAGS="$CXXFLAGS -std=c++11 -fvisibility=hidden -fPIC"
 
 %install
 
-%make_install PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 DESTDIR=%{buildroot} CXXFLAGS="%{build_cxxflags} -std=c++11 -fvisibility=hidden -fPIC"
+%make_install PREFIX=%{_prefix} \
+	      LV2DIR=%{_libdir}/lv2 \
+	      DESTDIR=%{buildroot} \
+	      STRIP=true \
+	      CXXFLAGS="$CXXFLAGS -std=c++11 -fvisibility=hidden -fPIC"
 
 %files
 %doc README.md
@@ -40,6 +54,9 @@ stereo width, filters, pitch shift, delay, and distortion effects and can be com
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Sep 10 2021 Yann Collette <ycollette dot nospam at free.fr> 0.13.0-2
+- update to 0.13.0-2 - fix install
+
 * Sun Jun 06 2021 Yann Collette <ycollette dot nospam at free.fr> 0.13.0-1
 - update to 0.13.0-1
 

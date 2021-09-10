@@ -5,9 +5,12 @@
 Summary: Audio glitch effect sequencer LV2 plugin
 Name:    lv2-BOops
 Version: 1.8.2
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BOops
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/sjaehn/BOops/archive/%{version}.tar.gz#/BOops-%{version}.tar.gz
 
@@ -34,11 +37,21 @@ Key features:
 
 %build
 
-%make_build PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 DESTDIR=%{buildroot} CXXFLAGS="%{build_cxxflags} -std=c++11 -fvisibility=hidden -fPIC"
+%set_build_flags
+
+%make_build PREFIX=%{_prefix} \
+	    LV2DIR=%{_libdir}/lv2 \
+	    DESTDIR=%{buildroot} \
+	    STRIP=true \
+	    CXXFLAGS="$CXXFLAGS -std=c++11 -fvisibility=hidden -fPIC"
 
 %install
 
-%make_install PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 DESTDIR=%{buildroot} CXXFLAGS="%{build_cxxflags} -std=c++11 -fvisibility=hidden -fPIC"
+%make_install PREFIX=%{_prefix} \
+	      LV2DIR=%{_libdir}/lv2 \
+	      DESTDIR=%{buildroot} \
+	      STRIP=true \
+	      CXXFLAGS="$CXXFLAGS -std=c++11 -fvisibility=hidden -fPIC"
 
 %files
 %doc README.md
@@ -46,8 +59,8 @@ Key features:
 %{_libdir}/lv2/*
 
 %changelog
-* Fri Sep 03 2021 Yann Collette <ycollette dot nospam at free.fr> 1.8.2-2
-- update to 1.8.2-2 
+* Fri Sep 03 2021 Yann Collette <ycollette dot nospam at free.fr> 1.8.2-3
+- update to 1.8.2-3 
 
 * Mon Aug 30 2021 Yann Collette <ycollette dot nospam at free.fr> 1.8.0-2
 - update to 1.8.0-2 

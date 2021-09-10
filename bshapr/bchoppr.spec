@@ -4,10 +4,13 @@
 
 Summary: An audio stream chopping LV2 plugin
 Name:    lv2-BChoppr
-Version: 1.10.8
-Release: 2%{?dist}
+Version: 1.10.10
+Release: 3%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BChoppr
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/sjaehn/BChoppr/archive/%{version}.tar.gz#/BChoppr-%{version}.tar.gz
 
@@ -26,11 +29,21 @@ Each chop can be leveled up or down (gating). BChoppr is the successor of BSlizr
 
 %build
 
-%make_build PREFIX=%{_prefix}r LV2DIR=%{_libdir}/lv2 DESTDIR=%{buildroot} CXXFLAGS="%{build_cxxflags} -include stdexcept -std=c++11 -fvisibility=hidden -fPIC"
+%set_build_flags
+
+%make_build PREFIX=%{_prefix} \
+	    LV2DIR=%{_libdir}/lv2 \
+	    DESTDIR=%{buildroot} \
+	    STRIP=true \
+	    CXXFLAGS="$CXXFLAGS -include stdexcept -std=c++11 -fvisibility=hidden -fPIC"
 
 %install
 
-%make_install PREFIX=%{_prefix}r LV2DIR=%{_libdir}/lv2 DESTDIR=%{buildroot} CXXFLAGS="%{build_cxxflags} -include stdexcept -std=c++11 -fvisibility=hidden -fPIC"
+%make_install PREFIX=%{_prefix} \
+	      LV2DIR=%{_libdir}/lv2 \
+	      DESTDIR=%{buildroot} \
+	      STRIP=true \
+	      CXXFLAGS="$CXXFLAGS -include stdexcept -std=c++11 -fvisibility=hidden -fPIC"
 
 %files
 %doc README.md
@@ -38,6 +51,9 @@ Each chop can be leveled up or down (gating). BChoppr is the successor of BSlizr
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Sep 10 2021 Yann Collette <ycollette dot nospam at free.fr> 1.10.10-3
+- updata to 1.10.10-3
+
 * Sun Jun 06 2021 Yann Collette <ycollette dot nospam at free.fr> 1.10.8-2
 - updata to 1.10.8-2
 
