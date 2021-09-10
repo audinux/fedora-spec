@@ -32,8 +32,8 @@ jobs:
       - name: Scan SPEC files and generate metadata
         run: python parse-spec/main.py fedora-spec
 
-      - run: echo "TODO: Test the ouput (non-empty, valid json ...)"
-      - run: echo "TODO: Push the ouput to web site repo"
+      - run: echo "TODO Test the ouput non-empty, valid json ..."
+      - run: echo "TODO Push the ouput to web site repo"
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
