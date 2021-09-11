@@ -2,7 +2,7 @@
 # Type: Standalone
 # Category: Audio, DAW
 
-%global zrythm_version 25.1.1
+%global zrythm_version 25.1.11
 Name:    zrythm
 Version: 1.0.0.a%{zrythm_version}
 Release: 5%{?dist}
@@ -204,6 +204,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.zrythm.Zrythm.des
 %endif
 
 %changelog
+* Sat Sep 11 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.25.1.11-5
+- update to 1.0.0-alpha.25.1.11-5
+
 * Mon Sep 06 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.25.1.1-5
 - update to 1.0.0-alpha.25.1.1-5
 
