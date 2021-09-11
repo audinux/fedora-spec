@@ -3,6 +3,11 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
+# Tag: Emulator
+# Type: Plugin, LV2
+# Category: Audio, Synthesizer
+
+
 Name:    raffosynth
 Version: 0.1.0
 Release: 1%{?dist}

@@ -1,0 +1,50 @@
+name: Refresh search data
+on: 
+  push:
+    branches: [ $default-branch ]
+    paths:
+      - '**.spec'
+
+jobs:
+  Refresh-Search-Data:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
+      - name: Check out RPM SPEC files repository
+        uses: actions/checkout@v2
+        with:
+          path: fedora-spec
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9 
+
+      - name: Check out Python Scan script repository
+        uses: actions/checkout@v2
+        with:
+          repository: audinux/parse-spec
+          path: parse-spec
+
+      - name: Scan SPEC files and generate metadata
+        run: python parse-spec/main.py fedora-spec
+
+      - run: echo "TODO Test the ouput non-empty, valid json ..."
+
+      - name: Push the ouput to web site repo
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: 'search-data.json'
+          destination_repo: 'audinux/audinux.github.io'
+          destination_folder: 'packages'
+          user_email: 'brunovern.a@gmail.com'
+          user_name: 'BrunoVernay'
+          commit_message: 'Search metadata update via GH Actions.'
+
+      
