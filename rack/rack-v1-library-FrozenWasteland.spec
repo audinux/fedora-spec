@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 d23d2d659d209caf9d31760a7cc3dfd7e7b5b6cf
-%global gittag0 1.21.1
+%global commit0 d834cfcb24ffc1c11ddf72695418abd7639d6e0b
+%global gittag0 1.21.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-FrozenWasteland
-Version: 1.21.1
+Version: 1.21.2
 Release: 3%{?dist}
 Summary: FrozenWasteland plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r FrozenWasteland_plugin/dist/FrozenWasteland/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.21.1-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.21.2-3
 - initial specfile

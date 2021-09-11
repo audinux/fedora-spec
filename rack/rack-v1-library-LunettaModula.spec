@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 5cb0df9052c049282d5c716568bb87741f161902
-%global gittag0 1.1.1
+%global commit0 50176ae6550dfc54a39db2ac636c3fd243ceb10f
+%global gittag0 1.2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-LunettaModula
-Version: 1.1.1
+Version: 1.2.0
 Release: 3%{?dist}
 Summary: LunettaModula plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r LunettaModula_plugin/dist/LunettaModula/* %{buildroot}%{_libexecdir}/Rack1
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-3
 - initial specfile
