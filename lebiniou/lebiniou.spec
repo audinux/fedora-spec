@@ -3,7 +3,7 @@
 # Category: Graphic
 
 Name:    lebiniou
-Version: 3.61.2
+Version: 3.62.0
 Release: 3%{?dist}
 Summary: Audio spectrum visualizer
 URL:     https://biniou.net/
@@ -92,6 +92,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/net.biniou.LeBiniou.d
 %{_datadir}/*
 
 %changelog
+* Sun Sep 12 2021 Yann Collette <ycollette.nospam@free.fr> - 3.62.0-3
+- update to 3.62.0-3
+
 * Mon Aug 30 2021 Yann Collette <ycollette.nospam@free.fr> - 3.61.2-3
 - update to 3.61.2-3
 
