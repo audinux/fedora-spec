@@ -21,7 +21,7 @@ BuildRequires: pulseaudio-libs-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: JUCE5
-BuildRequires: python2-devel
+BuildRequires: python3-devel
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
 BuildRequires: libX11-devel
