@@ -72,7 +72,6 @@ cd Builds/LinuxMakefile
 cd Builds/LinuxMakefile
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 build/BespokeSynth %{buildroot}/%{_bindir}/
-chmod a+x %{buildroot}/%{_bindir}/Bespoke-GLSLfix
 
 cd ../..
 install -m 755 -d %{buildroot}/%{_datadir}/BespokeSynth/resource
