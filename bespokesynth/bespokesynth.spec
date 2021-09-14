@@ -2,21 +2,17 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-# Global variables for github repository
-%global commit0 6c817399560a4558ff3e9825a7ae0fe7db08507c
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
+%define _lto_cflags %{nil}
 
 Name:    BespokeSynth
-Version: 0.0.1
+Version: 1.0.0
 Release: 5%{?dist}
 Summary: A software modular synth
 License: GPLv2+
 URL:     https://github.com/awwbees/BespokeSynth
 
-Source0: https://github.com/awwbees/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: https://github.com/awwbees/BespokeSynth/archive/refs/tags/v1.0.0.tar.gz#/%{name}-%{version}.tar.gz
 Source1: http://ycollette.free.fr/LMMS/vst.tar.bz2
-Source2: Bespoke-GLSLfix.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -40,9 +36,11 @@ BuildRequires: libusbx-devel
 BuildRequires: libpng-devel
 BuildRequires: xorg-x11-server-Xvfb
 
+%description
+A Software modular synth 
 
 %prep
-%autosetup -n %{name}-%{commit0}
+%autosetup -n %{name}-%{version}
 
 tar xvfj %{SOURCE1}
 
@@ -65,23 +63,20 @@ sed -i -e "s/python-config/python2-config/g" Builds/LinuxMakefile/Makefile
 
 %build
 
-%define _lto_cflags %{nil}
-
 export CURRENTDIR=`pwd`
 cd Builds/LinuxMakefile
-%{make_build} PREFIX=/usr LIBDIR=%{_libdir} CONFIG=Release CPPFLAGS="%{build_cxxflags}" CXXFLAGS="-std=c++11 -I$CURRENTDIR/vst/vstsdk2.4/ -I/usr/include/freetype2" LDFLAGS="-lpython%{python3_version} $LDFLAGS"
+%{make_build} PREFIX=/usr LIBDIR=%{_libdir} CONFIG=Release CPPFLAGS="%{build_cxxflags}" CXXFLAGS="-std=c++14 -I$CURRENTDIR/vst/vstsdk2.4/ -I/usr/include/freetype2" LDFLAGS="-lpython%{python3_version} $LDFLAGS"
 
 %install 
 
 cd Builds/LinuxMakefile
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 build/BespokeSynth %{buildroot}/%{_bindir}/
-install -m 755 %{SOURCE2} %{buildroot}/%{_bindir}/Bespoke-GLSLfix
 chmod a+x %{buildroot}/%{_bindir}/Bespoke-GLSLfix
 
 cd ../..
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/data
-cp -r Builds/MacOSX/build/Release/data/* %{buildroot}/%{_datadir}/%{name}/data
+install -m 755 -d %{buildroot}/%{_datadir}/BespokeSynth/resource
+cp -r Builds/MacOSX/build/Release/resource/* %{buildroot}/%{_datadir}/BespokeSynth/resource
 
 %files
 %doc README.md
@@ -90,6 +85,9 @@ cp -r Builds/MacOSX/build/Release/data/* %{buildroot}/%{_datadir}/%{name}/data
 %{_datadir}/*
 
 %changelog
+* Tue Sep 14 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-5
+- update to 1.0.0-5
+
 * Fri Oct 2 2020 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-5
 - update for fedora 33
 
