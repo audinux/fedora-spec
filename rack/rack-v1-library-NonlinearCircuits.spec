@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 5656819223d3b379742789390e30db60098d493d
-%global gittag0 1.3.0
+%global commit0 57eb090f233c21b2edee541ea17d800f22045d91
+%global gittag0 1.4.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-NonlinearCircuits
-Version: 1.3.0
+Version: 1.4.1
 Release: 3%{?dist}
 Summary: NonlinearCircuits plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r NonlinearCircuits_plugin/dist/NonlinearCircuits/* %{buildroot}%{_libexecdi
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.1-3
 - initial specfile
