@@ -2,6 +2,8 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
+%define _lto_cflags %{nil}
+
 Name:    BespokeSynth
 Version: 1.0.0
 Release: 6%{?dist}
@@ -78,6 +80,9 @@ cp -r Builds/MacOSX/build/Release/resource/* %{buildroot}/%{_datadir}/BespokeSyn
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications
 cp BespokeSynth.desktop %{buildroot}/%{_datadir}/applications
+
+install -m 755 -d %{buildroot}/%{_datadir}/icons
+cp bespoke_icon.png %{buildroot}/%{_datadir}/icons
 
 desktop-file-install                         \
   --add-category="Audio"                     \
