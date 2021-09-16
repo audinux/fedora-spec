@@ -2,11 +2,9 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-%define _lto_cflags %{nil}
-
 Name:    BespokeSynth
 Version: 1.0.0
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: A software modular synth
 License: GPLv2+
 URL:     https://github.com/awwbees/BespokeSynth
@@ -35,6 +33,7 @@ BuildRequires: libglvnd-devel
 BuildRequires: libusbx-devel
 BuildRequires: libpng-devel
 BuildRequires: xorg-x11-server-Xvfb
+BuildRequires: desktop-file-utils
 
 %description
 A Software modular synth 
@@ -77,6 +76,18 @@ cd ../..
 install -m 755 -d %{buildroot}/%{_datadir}/BespokeSynth/resource
 cp -r Builds/MacOSX/build/Release/resource/* %{buildroot}/%{_datadir}/BespokeSynth/resource
 
+install -m 755 -d %{buildroot}/%{_datadir}/applications
+cp BespokeSynth.desktop %{buildroot}/%{_datadir}/applications
+
+desktop-file-install                         \
+  --add-category="Audio"                     \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/BespokeSynth.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/BespokeSynth.desktop
+
 %files
 %doc README.md
 %license LICENSE
@@ -84,6 +95,9 @@ cp -r Builds/MacOSX/build/Release/resource/* %{buildroot}/%{_datadir}/BespokeSyn
 %{_datadir}/*
 
 %changelog
+* Thu Sep 16 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-6
+- update to 1.0.0-6 - fix install
+
 * Tue Sep 14 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-5
 - update to 1.0.0-5
 
