@@ -6,7 +6,7 @@
 
 Name:    BespokeSynth
 Version: 1.0.0
-Release: 6%{?dist}
+Release: 7%{?dist}
 Summary: A software modular synth
 License: GPLv2+
 URL:     https://github.com/awwbees/BespokeSynth
@@ -81,8 +81,8 @@ cp -r Builds/MacOSX/build/Release/resource/* %{buildroot}/%{_datadir}/BespokeSyn
 install -m 755 -d %{buildroot}/%{_datadir}/applications
 cp BespokeSynth.desktop %{buildroot}/%{_datadir}/applications
 
-install -m 755 -d %{buildroot}/%{_datadir}/icons
-cp bespoke_icon.png %{buildroot}/%{_datadir}/icons
+install -m 755 -d %{buildroot}/%{_datadir}/pixmaps
+cp bespoke_icon.png %{buildroot}/%{_datadir}/pixmaps/
 
 desktop-file-install                         \
   --add-category="Audio"                     \
@@ -100,6 +100,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/BespokeSynth.desktop
 %{_datadir}/*
 
 %changelog
+* Thu Sep 16 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-7
+- update to 1.0.0-7 - fix install
+
 * Thu Sep 16 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-6
 - update to 1.0.0-6 - fix install
 
