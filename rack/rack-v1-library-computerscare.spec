@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 f8e7b10e8b37a7f329f355d454e7aebed4b5cb5b
-%global gittag0 1.4.2
+%global commit0 46de839256bab5ff44505b0a8ebbb15364aaa514
+%global gittag0 1.4.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-computerscare
-Version: 1.4.2
+Version: 1.4.3
 Release: 3%{?dist}
 Summary: computerscare plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r computerscare_plugin/dist/computerscare/* %{buildroot}%{_libexecdir}/Rack1
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.2-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.3-3
 - initial specfile
