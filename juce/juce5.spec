@@ -5,6 +5,9 @@ Summary: JUCE Framework version 5
 URL:     https://github.com/juce-framework/JUCE
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # original tarfile can be found here:
 Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0:  juce5-0001-set-default-path.patch
