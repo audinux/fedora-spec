@@ -1,9 +1,12 @@
 Name:    JUCE
-Version: 6.1.1
+Version: 6.1.2
 Release: 5%{?dist}
 Summary: JUCE Framework
 URL:     https://github.com/juce-framework/JUCE
 License: GPLv2+
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # original tarfile can be found here:
 Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
@@ -89,6 +92,9 @@ cp -ra docs/doxygen/doc/* %{buildroot}/%{_datadir}/JUCE/doc/
 %{_usrsrc}/*
 
 %changelog
+* Mon Sep 20 2021 Yann Collette <ycollette.nospam@free.fr> - 6.1.2-5
+- update to 6.1.2-5
+
 * Fri Sep 10 2021 Yann Collette <ycollette.nospam@free.fr> - 6.1.1-5
 - update to 6.1.1-5
 
