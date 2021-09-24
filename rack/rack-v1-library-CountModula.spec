@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 f86d8aa91b581ca841aa37bbcadba46d8462fa51
-%global gittag0 1.15.1
+%global commit0 dd03920f3d386baffa0b0a3e637b7cc088d0c032
+%global gittag0 1.16.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-CountModula
-Version: 1.15.1
+Version: 1.16.0
 Release: 3%{?dist}
 Summary: CountModula plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r CountModula_plugin/dist/CountModula/* %{buildroot}%{_libexecdir}/Rack1/plu
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.15.1-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.16.0-3
 - initial specfile
