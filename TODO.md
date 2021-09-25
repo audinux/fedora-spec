@@ -30,6 +30,14 @@
 | seq66               | https://github.com/ahlstromcj/seq66 |
 | drops               | https://github.com/clearly-broken-software/drops |
 | audiveris           | https://github.com/Audiveris/audiveris.git |
+| Teragon audio       | http://teragonaudio.com/software.html |
+|                     | - Kickmaker: http://static.teragonaudio.com/downloads/KickMaker/KickMaker.zip
+|                     | - BeatCounter: http://static.teragonaudio.com/downloads/BeatCounter/BeatCounter.zip
+|                     | - ExtraNotes: http://static.teragonaudio.com/downloads/ExtraNotes/ExtraNotes.zip
+|                     | - HiLoFilter: http://static.teragonaudio.com/downloads/HiLoFilter/HiLoFilter.zip
+|                     | - NotNotchFilter: http://static.teragonaudio.com/downloads/NotNotchFilter/NotNotchFilter.zip
+|                     | - ChaosChimp: http://static.teragonaudio.com/downloads/ChaosChimp/ChaosChimp.zip
+|                     | - MrsWatson: http://static.teragonaudio.com/downloads/MrsWatson/MrsWatson.zip
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
