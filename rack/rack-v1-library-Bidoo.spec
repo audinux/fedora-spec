@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 351aa0aaf8642e01e1dcefc207aa7ad98737fd12
-%global gittag0 1.1.36
+%global commit0 932a3987598ce470674adb4024da512647729249
+%global gittag0 1.1.39
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-Bidoo
-Version: 1.1.36
+Version: 1.1.39
 Release: 3%{?dist}
 Summary: Bidoo plugin for Rack
 License: GPLv2+
@@ -101,5 +101,5 @@ cp -r Bidoo_plugin/dist/Bidoo/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Bido
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.1.36-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.1.39-3
 - initial specfile
