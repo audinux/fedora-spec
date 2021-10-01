@@ -4,7 +4,7 @@
 
 Name:    obxd
 Version: 2.4
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A VST3 Synthesizer
 License: GPLv3
 URL:     https://github.com/reales/OB-Xd
@@ -15,6 +15,7 @@ Source1: obxd-makefiles.tar.gz
 Source2: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
 # ./vst3-source.sh master
 Source3: vst3sdk.tar.gz
+Source4: vst3-source.sh
 Patch0:  obxd_file_install_resources.patch
 
 BuildRequires: gcc gcc-c++
@@ -24,7 +25,7 @@ BuildRequires: freetype-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: JUCE
+BuildRequires: JUCE5
 BuildRequires: libXrandr-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
@@ -55,10 +56,13 @@ tar xvfz %{SOURCE3}
 
 sed -i -e "s|RPMVST2|`pwd`/VST_SDK/VST2_SDK|g" Builds/LinuxMakefile/Makefile
 sed -i -e "s|RPMVST3|`pwd`/vst3sdk|g" Builds/LinuxMakefile/Makefile
+sed -i -e "s|/usr/src/JUCE|/usr/src/JUCE5|g" Builds/LinuxMakefile/Makefile
 
 %build
 
 %set_build_flags
+
+export LDFLAGS="$LDFLAGS -lX11 -lXext"
 
 cd Builds/LinuxMakefile
 # %make_build CONFIG=Release STRIP=true
@@ -86,5 +90,8 @@ chmod a+x %{buildroot}/%{_libdir}/vst3/OB-Xd.vst3/Contents/x86_64-linux/OB-Xd.so
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Oct 01 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4-2
+- Fix for Fedora 35
+
 * Wed Jun 02 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4-1
 - Initial spec file
