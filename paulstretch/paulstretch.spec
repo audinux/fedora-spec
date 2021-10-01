@@ -2,7 +2,7 @@
 
 Name:    paulstretch
 Version: 1.2.4
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A Paulstretch VST2/VST3/Standalone plugin
 License: MIT
 URL:     https://bitbucket.org/xenakios/paulstretchplugin
@@ -10,11 +10,12 @@ URL:     https://bitbucket.org/xenakios/paulstretchplugin
 Source0: https://bitbucket.org/xenakios/paulstretchplugin/get/%{commit0}.zip
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
+Patch0: paulstretch-0001-juce-compatibility.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: unzip
 BuildRequires: make
-BuildRequires: JUCE
+BuildRequires: JUCE60
 BuildRequires: fftw-devel
 BuildRequires: libXrandr-devel
 BuildRequires: xcb-util-cursor-devel
@@ -54,15 +55,16 @@ Requires: %{name}
 VST2 version of %{name}
 
 %prep
-%autosetup -n xenakios-paulstretchplugin-%{commit0}
+%autosetup -p1 -n xenakios-paulstretchplugin-%{commit0}
 
 unzip %{SOURCE1}
 
-Projucer --resave paulstretchplugin.jucer
+Projucer60 --resave paulstretchplugin.jucer
 
 CURRENTDIR=`pwd`
 sed -i -e "s|-pthread|-pthread -I$CURRENTDIR/VST_SDK/VST2_SDK|g" Builds/LinuxMakefile/Makefile
 sed -i -e "s|libcurl|libcurl fftw3 fftw3f|g" Builds/LinuxMakefile/Makefile
+#sed -i -e "s|/usr/src/JUCE|/usr/src/JUCE5|g" Builds/LinuxMakefile/Makefile
 
 %build
 
@@ -91,6 +93,9 @@ cp -ra  Builds/LinuxMakefile/build/PaulXStretch.vst3 %{buildroot}/%{_libdir}/vst
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Oct 01 2021 Yann Collette <ycollette.nospam@free.fr> - 1.2.4-3
+- fix for Fedora 35
+
 * Sun May 16 2021 Yann Collette <ycollette.nospam@free.fr> - 1.2.4-2
 - fix version
 

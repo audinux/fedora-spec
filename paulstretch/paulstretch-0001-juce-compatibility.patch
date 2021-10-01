@@ -1,0 +1,34 @@
+From 149c1c8edf2fe74b0203d9b4cc11e19a605781df Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Fri, 1 Oct 2021 22:17:39 +0200
+Subject: [PATCH] juce compatibility
+
+---
+ Source/PluginProcessor.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Source/PluginProcessor.cpp b/Source/PluginProcessor.cpp
+index 178ebb5..69a7476 100644
+--- a/Source/PluginProcessor.cpp
++++ b/Source/PluginProcessor.cpp
+@@ -522,7 +522,7 @@ void PaulstretchpluginAudioProcessor::saveCaptureBuffer()
+ 		{
+ 			m_capture_save_state = 1;
+ 			auto outstream = outfile.createOutputStream();
+-			auto writer = unique_from_raw(wavformat.createWriterFor(outstream.get(), getSampleRateChecked(),
++			auto writer = unique_from_raw(wavformat.createWriterFor(outstream, getSampleRateChecked(),
+ 				inchans, 32, {}, 0));
+ 			if (writer != nullptr)
+ 			{
+@@ -590,7 +590,7 @@ String PaulstretchpluginAudioProcessor::offlineRender(OfflineRenderParams render
+ 			oformattouse = 32;
+ 			clipoutput = true;
+ 		}
+-		auto writer{ unique_from_raw(wavformat.createWriterFor(outstream.get(), outsr, numoutchans,
++		auto writer{ unique_from_raw(wavformat.createWriterFor(outstream, outsr, numoutchans,
+ 			oformattouse, StringPairArray(), 0)) };
+ 		if (writer == nullptr)
+ 		{
+-- 
+2.31.1
+
