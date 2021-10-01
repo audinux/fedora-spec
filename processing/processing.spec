@@ -15,22 +15,22 @@
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
 
-%global gversion  3.5.4
-%global grevision 270
-
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:           processing
-Version:        %{gversion}.%{grevision}
-Release:        1
+Version:        3.5.4
+Release:        2%{?dist}
 Summary:        Processing Development Environment (PDE)
 # Core is LGPL, others are GPL
 License:        GPL-2.0+ and LGPL-2.0+
 Group:          Development/Tools/IDE
 Url:            https://processing.org/
-# Source0 https://github.com/processing/processing/archive/processing-%{grevision}-%{gversion}.tar.gz
-Source0:        https://download.processing.org/%{name}-%{gversion}-linux64.tgz
+
+Vendor:       Audinux
+Distribution: Audinux
+
+Source0:        https://download.processing.org/%{name}-%{version}-linux64.tgz
 Source1:        %{name}.desktop
 
 # Compiled, do not need JDK and ant
@@ -41,7 +41,6 @@ Source1:        %{name}.desktop
 # Avoid .so files being added to dependency list
 
 AutoReqProv:    no
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      x86_64
 
 %description
@@ -55,7 +54,7 @@ Processing is a flexible software sketchbook and a language for learning how to 
 - Well documented, with many books available
 
 %prep
-%setup -qn processing-%{gversion}
+%autosetup -n processing-%{version}
 
 %build
 
@@ -76,6 +75,9 @@ install -m 0644 %{SOURCE1} %{buildroot}/%{_datadir}/applications/
 %{_datadir}/applications/%{name}.desktop
 
 %changelog
+* Fri Oct 01 2021 Yann Collette <ycollette.nospam@free.fr> - 3.5.4-2
+- fix for Fedora 35 + update to 3.5.4-2
+
 * Sat Mar 14 2020 Yann Collette <ycollette.nospam@free.fr> - 3.5.4-1
 - adjustement for Fedora 29 / 30 + update to 3.5.4-1
 
