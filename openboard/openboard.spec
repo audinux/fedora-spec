@@ -7,7 +7,7 @@
 
 Name:    openboard
 Version: 1.6.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Interactive whiteboard for schools and universities
 License: GPLv3+
 Group:   Education
@@ -23,6 +23,7 @@ BuildRequires: libpaper-devel
 BuildRequires: qtsingleapplication-qt5-devel
 BuildRequires: quazip-devel
 BuildRequires: t1lib-devel
+BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Help)
@@ -127,6 +128,9 @@ find %{buildroot} -executable -type f -name *.html -exec chmod -x '{}' \+
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Fri Oct 01 2021 Yann Collette <ycollette.nospam@free.fr> - 1.6.1-3
+- Fix for Fedora 35
+
 * Tue Jun 22 2021 Yann Collette <ycollette.nospam@free.fr> - 1.6.1-2
 - Fix binary installation
 
