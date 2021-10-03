@@ -5,7 +5,7 @@
 
 # The first packages to be built:
 # premake*
-# jmatcontrol
+# jmatconvol
 # jnoisemeter
 # libgig
 # linuxsampler
@@ -29,6 +29,7 @@
 # nanomsg
 # ulfius
 # ztoolkit
+# JUCE*
 
 # libgig before linuxsampler before liblscp
 # non-ntk before ensemble-chorus
@@ -47,24 +48,11 @@
 # End of Package List #
 #######################
 
-# HS
-
-# faust
-# sonic-pi a problem due to ruby 3.0
-# SocaLabs-plugins pb with projucer resave project
-# BespokeSynth doesn't build anymore ...
-# abNinjam pb with template ...
-# kpp faust required
-# rivendell - pb with null ptr comparison
-# infamous-plugins pb with lv2-1.18.0
-# psi-plugin       pb with lv2-1.18.0
-
 # Reorder srpm file in FILELIST: dependencies first
 
 FILELIST=""
 
 for Files in $FILELIST
 do
-    copr-cli build --chroot fedora-34-x86_64 linuxmao $Files
+    copr-cli build --chroot fedora-35-x86_64 audinux $Files
 done
-
