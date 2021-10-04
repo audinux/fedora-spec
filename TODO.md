@@ -32,12 +32,13 @@
 | audiveris           | https://github.com/Audiveris/audiveris.git |
 | Teragon audio       | http://teragonaudio.com/software.html |
 |                     | - Kickmaker: http://static.teragonaudio.com/downloads/KickMaker/KickMaker.zip
-|                     | - BeatCounter: http://static.teragonaudio.com/downloads/BeatCounter/BeatCounter.zip
+|                     | - BeatCounter: https://github.com/teragonaudio/BeatCounter/archive/refs/tags/2.1.tar.gz
 |                     | - ExtraNotes: http://static.teragonaudio.com/downloads/ExtraNotes/ExtraNotes.zip
 |                     | - HiLoFilter: http://static.teragonaudio.com/downloads/HiLoFilter/HiLoFilter.zip
 |                     | - NotNotchFilter: http://static.teragonaudio.com/downloads/NotNotchFilter/NotNotchFilter.zip
 |                     | - ChaosChimp: http://static.teragonaudio.com/downloads/ChaosChimp/ChaosChimp.zip
 |                     | - MrsWatson: http://static.teragonaudio.com/downloads/MrsWatson/MrsWatson.zip
+|                     | - all: https://launchpad.net/~kxstudio-debian/+archive/ubuntu/plugins/+sourcefiles/teragonaudio-plugins/5:20140325.3/teragonaudio-plugins_20140325.3.tar.gz
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
@@ -120,4 +121,43 @@ zita-audiotools-1.0.0.tar.bz2
 zita-jacktools-1.5.3.tar.bz2        Requires zita-jclient, zita-convolver and zita-audiotools
 g2reverb-0.7.1.tar.bz2
 hoafilt.tar.bz2
+
+# Fedora 35
+
+OpenFrameworks: RPATH
+ERROR   0004: file '/usr/bin/projectGenerator' contains an insecure  './libs' in [./libs:./bin/libs]
+ERROR   0004: file '/usr/bin/projectGenerator' contains an insecure  './bin/libs' in [./libs:./bin/libs]
+
+PaulStretch:
+../../Source/RenderSettingsComponent.cpp:189:31: error: 'class juce::FileChooser' has no member named 'browseForFileToSave'
+  189 |                 if (myChooser.browseForFileToSave(true))
+
+Processing:
+/usr/bin/strip: Unable to recognise the format of the input file `/builddir/build/BUILDROOT/processing-3.5.4-2.fc35.x86_64/opt/processing/modes/java/libraries/io/library/linux-arm64/libprocessing-io.so'
+/usr/bin/strip: Unable to recognise the format of the input file `/builddir/build/BUILDROOT/processing-3.5.4-2.fc35.x86_64/opt/processing/modes/java/libraries/io/library/linux-armv6hf/libprocessing-io.so'
+/usr/bin/strip: Unable to recognise the format of the input file `/builddir/build/BUILDROOT/processing-3.5.4-2.fc35.x86_64/opt/processing/modes/java/libraries/serial/library/linux-arm64/libjSSC-2.8.so'
+/usr/bin/strip: Unable to recognise the format of the input file `/builddir/build/BUILDROOT/processing-3.5.4-2.fc35.x86_64/opt/processing/modes/java/libraries/serial/library/linux-armv6hf/libjSSC-2.8.so'
+
+rack-v1-VCV-Prototype:
+No matching package to install: 'libefsw-devel'
+
+Schismtracker:
+/usr/bin/ld: cannot find -lXext
+
+Shortcircuit:
+/builddir/build/BUILD/shortcircuit3/libs/catch2/include/catch2/catch2.hpp:11745:41: error: size of array 'altStackMem' is not an integral constant-expression
+11745 | char FatalConditionHandler::altStackMem[sigStackSize] = {};
+
+Smartamp:
+JUCE version error
+
+Smartamppro:
+JUCE version error
+
+Stochas:
+cp: cannot stat 'x86_64-redhat-linux-gnu/stochas_artefacts/VST3/Stochas.vst3/*': No such file or directory
+
+Surge:
+/builddir/build/BUILD/surge/libs/catch2/include/catch2/catch2.hpp:10514:45: error: size of array 'altStackMem' is not an integral constant-expression
+10514 |     char FatalConditionHandler::altStackMem[sigStackSize] = {};
 
