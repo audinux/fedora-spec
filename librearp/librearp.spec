@@ -4,7 +4,7 @@
 
 Name:    librearp
 Version: 2.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A pattern-based arpeggio generator plugin
 License: GPLv3
 URL:     https://gitlab.com/LibreArp/LibreArp
@@ -75,11 +75,11 @@ cd ../LibreArpVST3
 %install 
 
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
-cp -ra %{_host}/LibreArp_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/LibreArp_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
 
 cd ../LibreArpVST3
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
-cp -ra %{_host}/LibreArp_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/LibreArp_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 
 %files -n lv2-%{name}
 %doc README.md CHANGELOG.md
@@ -92,6 +92,9 @@ cp -ra %{_host}/LibreArp_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Oct 03 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2-2
+- update to 2.2-2 - fix for Fedora 35
+
 * Tue Sep 07 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2-1
 - update to 2.2-1
 
