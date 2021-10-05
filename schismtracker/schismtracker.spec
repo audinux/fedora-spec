@@ -9,7 +9,7 @@
 
 Name:    schismtracker
 Version: %{gittag0}
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Module tracker software for creating music
 License: GPLv3+
 URL:     https://github.com/schismtracker/schismtracker
@@ -17,9 +17,11 @@ URL:     https://github.com/schismtracker/schismtracker
 Source0: https://github.com/schismtracker/schismtracker/archive/%{commit0}.tar.gz#/schismtracker-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: SDL-devel
+BuildRequires: libXext-devel
 BuildRequires: python
 
 %description
@@ -35,6 +37,9 @@ number of bugfixes and changes to [improve IT].
 %autosetup -n %{name}-%{commit0}
 
 %build
+
+%set_build_flags
+export LDFLAGS="$LDFLAGS -lXext"
 
 autoreconf --force --install
 mkdir auto
