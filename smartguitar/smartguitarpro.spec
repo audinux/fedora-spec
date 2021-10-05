@@ -10,8 +10,7 @@ Summary: Guitar plugin emulating real hardware with Neural Network
 License: GPLv2+
 URL:     https://github.com/GuitarML/SmartAmpPro
 
-# Source0: https://github.com/GuitarML/SmartAmpPro/archive/v{version}.tar.gz#/{name}-{version}.tar.gz
-Source0: SmartAmpPro.tar.gz
+Source0: https://github.com/GuitarML/SmartAmpPro/archive/v%{version}.tar.gz#/SmarAmpPro-%{version}.tar.gz
 Source1: smartguitarpro_build.tar.gz
 
 BuildRequires: gcc gcc-c++
@@ -23,7 +22,7 @@ BuildRequires: freetype-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: JUCE
+BuildRequires: JUCE5
 BuildRequires: libXrandr-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
@@ -51,10 +50,11 @@ Requires: %{name}
 VST3 version of %{name}
 
 %prep
-# autosetup -n SmartAmpPro-{version}
-%autosetup -n SmartAmpPro
+%autosetup -n SmartAmpPro-%{version}
 
 tar xvfz %{SOURCE1}
+
+sed -i -e "s|/usr/src/JUCE|/usr/src/JUCE5|g" Builds/LinuxMakefile/Makefile
 
 %build
 
@@ -64,7 +64,7 @@ export HOME=`pwd`
 mkdir -p .vst3
 
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true CXXFLAGS="-I/usr/include/eigen3 -I/usr/include/freetype2"
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-I/usr/include/eigen3 -I/usr/include/freetype2" LDFLAGS="$LDFLAGS -lX11 -lXext `pkg-config --libs webkit2gtk-4.0`"
 
 %install 
 

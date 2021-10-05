@@ -22,7 +22,7 @@ BuildRequires: freetype-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: JUCE
+BuildRequires: JUCE5
 BuildRequires: libXrandr-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
@@ -51,6 +51,8 @@ VST3 version of %{name}
 
 tar xvfz %{SOURCE1}
 
+sed -i -e "s|/usr/src/JUCE|/usr/src/JUCE5|g" plugins/SmartAmp/Builds/LinuxMakefile/Makefile
+
 %build
 
 %set_build_flags
@@ -59,7 +61,7 @@ export HOME=`pwd`
 mkdir -p .vst3
 
 cd plugins/SmartAmp/Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true CXXFLAGS="-I/usr/include/eigen3 -I/usr/include/freetype2"
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-I/usr/include/eigen3 -I/usr/include/freetype2" LDFLAGS="$LDFLAGS -lX11 -lXext `pkg-config --libs webkit2gtk-4.0`"
 
 %install 
 
