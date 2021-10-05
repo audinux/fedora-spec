@@ -49,14 +49,14 @@ install -m 755 -d %{buildroot}%{_libdir}/vst3/Stochas.vst3/
 %if 0%{?fedora} < 33
 cp -r stochas_artefacts/VST3/Stochas.vst3/* %{buildroot}/%{_libdir}/vst3/Stochas.vst3/	
 %else
-cp -r %{_host}/stochas_artefacts/VST3/Stochas.vst3/* %{buildroot}/%{_libdir}/vst3/Stochas.vst3/	
+cp -r %{__cmake_builddir}/stochas_artefacts/VST3/Stochas.vst3/* %{buildroot}/%{_libdir}/vst3/Stochas.vst3/	
 %endif
 
 install -m 755 -d %{buildroot}%{_bindir}/
 %if 0%{?fedora} < 33
 install -m 644 -p stochas_artefacts/Standalone/Stochas %{buildroot}/%{_bindir}/
 %else
-install -m 644 -p %{_host}/stochas_artefacts/Standalone/Stochas %{buildroot}/%{_bindir}/
+install -m 644 -p %{__cmake_builddir}/stochas_artefacts/Standalone/Stochas %{buildroot}/%{_bindir}/
 %endif
 
 %files
@@ -68,6 +68,9 @@ install -m 644 -p %{_host}/stochas_artefacts/Standalone/Stochas %{buildroot}/%{_
 %{_libdir}/vst3/*
 
 %changelog
+* Thu Oct 05 2021 Yann Collette <ycollette.nospam@free.fr> - 1.3.5-4
+- update to 1.3.5-4 - update for Fedora 35
+
 * Sun Jun 06 2021 Yann Collette <ycollette.nospam@free.fr> - 1.3.5-3
 - update to 1.3.5-3
 
