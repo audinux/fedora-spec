@@ -141,21 +141,12 @@ Processing:
 rack-v1-VCV-Prototype:
 No matching package to install: 'libefsw-devel'
 
-Schismtracker:
-/usr/bin/ld: cannot find -lXext
-
 Shortcircuit:
 /builddir/build/BUILD/shortcircuit3/libs/catch2/include/catch2/catch2.hpp:11745:41: error: size of array 'altStackMem' is not an integral constant-expression
 11745 | char FatalConditionHandler::altStackMem[sigStackSize] = {};
 
-Smartamp:
-JUCE version error
-
 Smartamppro:
 JUCE version error
-
-Stochas:
-cp: cannot stat 'x86_64-redhat-linux-gnu/stochas_artefacts/VST3/Stochas.vst3/*': No such file or directory
 
 Surge:
 /builddir/build/BUILD/surge/libs/catch2/include/catch2/catch2.hpp:10514:45: error: size of array 'altStackMem' is not an integral constant-expression
