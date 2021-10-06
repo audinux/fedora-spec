@@ -46,6 +46,7 @@ BuildRequires: mpg123-devel
 BuildRequires: libXcursor-devel
 BuildRequires: libXxf86vm-devel
 BuildRequires: libXrandr-devel
+BuildRequires: chrpath
 #BuildRequires: python2-lxml
 #BuildRequires: assimp-devel
 
@@ -106,6 +107,9 @@ rm -rf %{buildroot}/opt/openFrameworks/.gitattributes
 rm -rf %{buildroot}/opt/openFrameworks/.gitignore
 rm -rf %{buildroot}/opt/openFrameworks/.gitmodules
 rm -rf %{buildroot}/opt/openFrameworks/.travis.yml
+
+chrpath --delete %{buildroot}%{_bindir}/projectGenerator
+chrpath --delete %{buildroot}/opt/openFrameworks/apps/projectGenerator/commandLine/bin/projectGenerator
 
 %files
 %doc README.md
