@@ -10,8 +10,11 @@ Summary: Guitar plugin emulating real hardware with Neural Network
 License: GPLv2+
 URL:     https://github.com/GuitarML/SmartAmpPro
 
-Source0: https://github.com/GuitarML/SmartAmpPro/archive/v%{version}.tar.gz#/SmarAmpPro-%{version}.tar.gz
+# ./source-smartguitarpro.sh master
+
+Source0: SmartAmpPro.tar.gz
 Source1: smartguitarpro_build.tar.gz
+Source2: source-smartguitarpro.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -22,7 +25,7 @@ BuildRequires: freetype-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: JUCE5
+BuildRequires: JUCE60
 BuildRequires: libXrandr-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
@@ -50,11 +53,11 @@ Requires: %{name}
 VST3 version of %{name}
 
 %prep
-%autosetup -n SmartAmpPro-%{version}
+%autosetup -n SmartAmpPro
 
 tar xvfz %{SOURCE1}
 
-sed -i -e "s|/usr/src/JUCE|/usr/src/JUCE5|g" Builds/LinuxMakefile/Makefile
+sed -i -e "s|/usr/src/JUCE|/usr/src/JUCE60|g" Builds/LinuxMakefile/Makefile
 
 %build
 
