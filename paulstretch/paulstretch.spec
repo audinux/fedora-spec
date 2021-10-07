@@ -1,4 +1,4 @@
-%global commit0 7d9ed352a13b
+%global commit0 371355b375d9
 
 Name:    paulstretch
 Version: 1.2.4
@@ -10,7 +10,8 @@ URL:     https://bitbucket.org/xenakios/paulstretchplugin
 Source0: https://bitbucket.org/xenakios/paulstretchplugin/get/%{commit0}.zip
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
-Patch0: paulstretch-0001-juce-compatibility.patch
+Patch0: paulstretch-0001-fix-move-operator.patch
+Patch1: paulstretch-0001-juce-compatibility.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: unzip
@@ -64,7 +65,6 @@ Projucer60 --resave paulstretchplugin.jucer
 CURRENTDIR=`pwd`
 sed -i -e "s|-pthread|-pthread -I$CURRENTDIR/VST_SDK/VST2_SDK|g" Builds/LinuxMakefile/Makefile
 sed -i -e "s|libcurl|libcurl fftw3 fftw3f|g" Builds/LinuxMakefile/Makefile
-#sed -i -e "s|/usr/src/JUCE|/usr/src/JUCE5|g" Builds/LinuxMakefile/Makefile
 
 %build
 
