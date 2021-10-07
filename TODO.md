@@ -43,12 +43,6 @@
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
 
-## Todo for 34
-- Socalab -> /usr/bin/ld: /usr/lib64/libglib-2.0.so.0: error adding symbols: DSO missing from command line
-- error: 'numeric_limits' is not a member of 'std'
-- kmidimon: needs drumstick-devel
-- ecasound: python3 missing
-
 ## Add source.sh file in spec file:
 Source1: source.sh
 
@@ -89,12 +83,9 @@ fix pkgconfig file installation
 | zrythm/ztoolkit                | it's a static library ... |
 | ossia/ossia-score.spec         | don't build anymore. Wait for next release |
 
-## Fedora 33 - To be fixed:
-performer -> cmake + ui_setlist.h missing - pb cmake 3.18 ...
+## Tag list:
 
-Tag list:
-
-Tag:
+### Tag:
 
 Analyzer, Compressor, Emulator, Delay, Analyzer, Drum, Jack, Alsa
 Editor, Legacy, Live, Effect, Gate, Graphic, Guitar, Amp Simul
@@ -103,16 +94,16 @@ MIDI, Tablature, Phaser, Tape, Tracker, Analyzer, Reverb
 Sfz, Sf2, Sf3, Monitoring, Video, Organ, PM, Sequencer
 Keyboard, Library, Live, OSC, Mixer, Modular, Rack, Sampler, Session
 
-Type:
+### Type:
 
 Devel, IDE, Language, DSSI, LV2, LADSPA, Standalone, VST, VST3, Presets, Rack, Language
 
-Category:
+### Category:
 
 Audio, DAW, Effect, Synthesizer, MIDI, Programming, Sampler, Sequencer
 Graphic, Tool, Session Mngmt
 
-ZITA:
+## ZITA:
 
 zita-avc1-0.1.0.tar.bz2
 zita-jclient-0.4.2.tar.bz2
@@ -121,6 +112,18 @@ zita-jacktools-1.5.3.tar.bz2        Requires zita-jclient, zita-convolver and zi
 g2reverb-0.7.1.tar.bz2
 hoafilt.tar.bz2
 
-## Fedora 34 - To be fixed:
+## Fedora 33 - To be fixed:
+
+performer -> cmake + ui_setlist.h missing - pb cmake 3.18 ...
+
+## Todo for 34
+
+- Socalab -> /usr/bin/ld: /usr/lib64/libglib-2.0.so.0: error adding symbols: DSO missing from command line
+- error: 'numeric_limits' is not a member of 'std'
+- kmidimon: needs drumstick-devel
+- ecasound: python3 missing
+- SonicPi ... Ruby-3 instead of Ruby-2.7
+
+## Fedora 35 - To be fixed:
 
 PaulStretch
