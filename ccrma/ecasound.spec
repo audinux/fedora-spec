@@ -18,19 +18,35 @@ License: GPL
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
-Source:  http://ecasound.seul.org/download/ecasound-%{version}.tar.gz
+Source0: http://ecasound.seul.org/download/ecasound-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++
-BuildRequires: ruby ruby-devel python2 python2-devel python3 
-BuildRequires: ncurses-devel readline-devel
-BuildRequires: alsa-lib-devel audiofile-devel
+BuildRequires: gcc
+BuildRequires: gcc-c++
+BuildRequires: make
+BuildRequires: ruby
+BuildRequires: ruby-devel
+BuildRequires: python2
+BuildRequires: python2-devel
+BuildRequires: python3
+BuildRequires: python2-devel 
+BuildRequires: ncurses-devel
+BuildRequires: readline-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: audiofile-devel
 BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: libsamplerate-devel libsndfile-devel
-BuildRequires: hevea python3-docutils
+BuildRequires: libsamplerate-devel
+BuildRequires: libsndfile-devel
+BuildRequires: hevea
+BuildRequires: python3-docutils
 BuildRequires: liboil-devel
-BuildRequires: texlive texlive-latex-bin-bin texlive-texlive-scripts-extra 
-BuildRequires: texlive-metafont-bin texlive-comment
-BuildRequires: ladspa lilv-devel liblo-devel
+BuildRequires: texlive
+BuildRequires: texlive-latex-bin-bin
+BuildRequires: texlive-texlive-scripts-extra 
+BuildRequires: texlive-metafont-bin
+BuildRequires: texlive-comment
+BuildRequires: ladspa
+BuildRequires: lilv-devel
+BuildRequires: liblo-devel
 
 %description
 Ecasound is a software package designed for multitrack audio
@@ -165,6 +181,9 @@ sed -i -e "s/env python$/env python2/g" $RPM_BUILD_ROOT%{_bindir}/ecamonitor
 %{_datadir}/ruby/vendor_ruby/ecasound.rb
 
 %changelog
+* Thu Oct 06 2021 Yann Collette <ycollette.nospam@free.fr> - 2.9.3-2
+- Fix for Fedora 35
+
 * Thu Apr 01 2021 Yann Collette <ycollette.nospam@free.fr> - 2.9.3-2
 - Fix for Fedora 34
 
