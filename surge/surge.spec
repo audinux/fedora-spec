@@ -1,6 +1,6 @@
 Name:    surge
 Version: 1.9.0
-Release: 7%{?dist}
+Release: 8%{?dist}
 Summary: A VST3 / LV2 Synthesizer
 License: GPLv2+
 
@@ -63,6 +63,9 @@ do
   sed -i -e "s/env python$/env python3/g" $Files
 done
 
+# Fix a compilation problem on Fedora 35 (variable size list)
+sed -i -e "s| >= MINSIGSTKSZ ? 32768 : MINSIGSTKSZ||g" libs/catch2/include/catch2/catch2.hpp
+
 %build
 
 %set_build_flags
@@ -70,7 +73,7 @@ done
 ./build-linux.sh cmake
 
 cd buildlin
-cmake -DCMAKE_C_FLAGS="-Wno-error -O2 -g -fPIC" -DCMAKE_CXX_FLAGS="-include limits -std=c++11 -Wno-error -O2 -g -fPIC" .
+cmake -DCMAKE_C_FLAGS="-Wno-error -O2 -g -fPIC" -DCMAKE_CXX_FLAGS="-include limits -std=c++14 -Wno-error -O2 -g -fPIC" .
 cd ..
 
 ./build-linux.sh build
@@ -103,6 +106,9 @@ rsync -rav .local/share/surge/* %{buildroot}/%{_datadir}/Surge/
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Oct 03 2021 Yann Collette <ycollette.nospam@free.fr> - 1.9.0-8
+- update to 1.9.0-8 - fixes for Fedora 35
+
 * Wed Apr 21 2021 Yann Collette <ycollette.nospam@free.fr> - 1.9.0-7
 - update to 1.9.0-7
 

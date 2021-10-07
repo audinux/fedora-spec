@@ -7,6 +7,9 @@ Summary: A VST3 / LV2 Synthesizer
 License: GPLv2+
 URL:     https://github.com/surge-synthesizer/shortcircuit3
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # To get the sources, use:
 # $ ./source-shortcircuit.sh main
 
@@ -55,6 +58,9 @@ VST3 version of %{name}
 %prep
 %autosetup -n shortcircuit3
 
+# Fix a compilation problem on Fedora 35 (variable size list)
+sed -i -e "s| >= MINSIGSTKSZ ? 32768 : MINSIGSTKSZ||g" libs/catch2/include/catch2/catch2.hpp
+
 %build
 
 mkdir -p build
@@ -65,11 +71,11 @@ cmake -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DCMAKE_INSTALL_PREFIX:PATH=/usr -DINCLUD
 
 %install 
 
-install -m 755 -d %{buildroot}%{_libdir}/vst3/ShortCircuit3.vst3/
-cp -r build/ShortCircuit3_artefacts/RELEASE/VST3/ShortCircuit3.vst3/* %{buildroot}/%{_libdir}/vst3/ShortCircuit3.vst3/
+install -m 755 -d %{buildroot}%{_libdir}/vst3/ShortcircuitXT.vst3/
+cp -r build/ShortcircuitXT_artefacts/RELEASE/VST3/Shortcircuit\ XT.vst3/* %{buildroot}/%{_libdir}/vst3/ShortcircuitXT.vst3/
 
 install -m 755 -d %{buildroot}%{_bindir}/
-cp -r build/ShortCircuit3_artefacts/RELEASE/Standalone/* %{buildroot}/%{_bindir}/
+cp -r build/ShortcircuitXT_artefacts/RELEASE/Standalone/* %{buildroot}/%{_bindir}/
 
 %files
 %doc README.md
@@ -80,5 +86,8 @@ cp -r build/ShortCircuit3_artefacts/RELEASE/Standalone/* %{buildroot}/%{_bindir}
 %{_libdir}/vst3/*
 
 %changelog
-* Sun Feb 7 2021 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
+* Thu Oct 07 2021 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- Fix for Fedora 35
+
+* Sun Feb 07 2021 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
