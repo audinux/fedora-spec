@@ -114,16 +114,14 @@ hoafilt.tar.bz2
 
 ## Fedora 33 - To be fixed:
 
-performer -> cmake + ui_setlist.h missing - pb cmake 3.18 ...
+- performer -> cmake + ui_setlist.h missing - pb cmake 3.18 ...
 
 ## Todo for 34
 
 - Socalab -> /usr/bin/ld: /usr/lib64/libglib-2.0.so.0: error adding symbols: DSO missing from command line
-- error: 'numeric_limits' is not a member of 'std'
 - kmidimon: needs drumstick-devel
-- ecasound: python3 missing
 - SonicPi ... Ruby-3 instead of Ruby-2.7
 
 ## Fedora 35 - To be fixed:
 
-PaulStretch
+- PaulStretch
