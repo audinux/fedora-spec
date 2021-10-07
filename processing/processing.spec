@@ -18,33 +18,31 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:           processing
-Version:        3.5.4
-Release:        2%{?dist}
-Summary:        Processing Development Environment (PDE)
+Name:    processing
+Version: 3.5.4
+Release: 2%{?dist}
+Summary: Processing Development Environment (PDE)
 # Core is LGPL, others are GPL
-License:        GPL-2.0+ and LGPL-2.0+
-Group:          Development/Tools/IDE
-Url:            https://processing.org/
+License: GPL-2.0+ and LGPL-2.0+
+Group:   Development/Tools/IDE
+Url:     https://processing.org/
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0:        https://download.processing.org/%{name}-%{version}-linux64.tgz
-Source1:        %{name}.desktop
-
-# Compiled, do not need JDK and ant
-#BuildRequires:  ant
-#BuildRequires:  java-devel >= 1.7.0
-# Built-in JRE
-#Requires:       java >= 1.7.0
-# Avoid .so files being added to dependency list
+Source0: https://download.processing.org/%{name}-%{version}-linux64.tgz
+Source1: %{name}.desktop
 
 AutoReqProv:    no
 BuildArch:      x86_64
 
 %description
-Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. Since 2001, Processing has promoted software literacy within the visual arts and visual literacy within technology. There are tens of thousands of students, artists, designers, researchers, and hobbyists who use Processing for learning and prototyping.
+Processing is a flexible software sketchbook and a language for learning
+how to code within the context of the visual arts.
+Since 2001, Processing has promoted software literacy within the visual
+arts and visual literacy within technology. There are tens of thousands
+of students, artists, designers, researchers, and hobbyists who use
+Processing for learning and prototyping.
 
 - Free to download and open source
 - Interactive programs with 2D, 3D or PDF output
@@ -67,6 +65,12 @@ install -m 0644 lib/icons/pde-256.png %{buildroot}/%{_datadir}/pixmaps/%{name}.p
 
 install -dm 0755 %{buildroot}/%{_datadir}/applications
 install -m 0644 %{SOURCE1} %{buildroot}/%{_datadir}/applications/
+
+# Remove some non x86_64-linux files
+rm -rf %{buildroot}/opt/processing/modes/java/libraries/io/library/linux-arm64/
+rm -rf %{buildroot}/opt/processing/modes/java/libraries/io/library/linux-armv6hf/
+rm -rf %{buildroot}/opt/processing/modes/java/libraries/serial/library/linux-arm64/
+rm -rf %{buildroot}/opt/processing/modes/java/libraries/serial/library/linux-armv6hf/
 
 %files
 %defattr(-,root,root)
