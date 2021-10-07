@@ -47,7 +47,7 @@ BuildRequires: pkgconfig(gtk+-x11-3.0)
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libcurl-devel
 BuildRequires: ladspa-devel
-BuildRequires: JUCE
+BuildRequires: JUCE5
 BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: lv2-devel
 BuildRequires: python3-devel
@@ -106,7 +106,7 @@ mkdir -p $CURRENT_PATH/bin/standalone/
 mkdir -p $CURRENT_PATH/bin/vst/
 mkdir -p $CURRENT_PATH/bin/lv2/
 
-Projucer --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE/modules
+#Projucer5 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE5/modules
 
 cat ci/pluginlist.txt | while read PLUGIN; do
   PLUGIN=$(echo $PLUGIN|tr -d '\n\r ')
@@ -124,7 +124,7 @@ cat ci/pluginlist.txt | while read PLUGIN; do
   sed -i -e 's/buildStandalone="0"/buildStandalone="0"/' plugins/$PLUGIN/$PLUGIN.jucer
   sed -i -e 's/JUCEOPTIONS/JUCEOPTIONS JUCE_JACK="1"/'   plugins/$PLUGIN/$PLUGIN.jucer
   
-  Projucer --resave plugins/$PLUGIN/$PLUGIN.jucer
+  Projucer5 --resave plugins/$PLUGIN/$PLUGIN.jucer
   
   echo "include ../../LV2.mak" >> plugins/$PLUGIN/Builds/LinuxMakefile/Makefile
   
