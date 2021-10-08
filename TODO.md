@@ -112,16 +112,13 @@ zita-jacktools-1.5.3.tar.bz2        Requires zita-jclient, zita-convolver and zi
 g2reverb-0.7.1.tar.bz2
 hoafilt.tar.bz2
 
-## Fedora 33 - To be fixed:
+## To be fixed:
+
+### Fedora 33:
 
 - performer -> cmake + ui_setlist.h missing - pb cmake 3.18 ...
 
-## Todo for 34
+### Fedora 34:
 
 - Socalab -> /usr/bin/ld: /usr/lib64/libglib-2.0.so.0: error adding symbols: DSO missing from command line
-- kmidimon: needs drumstick-devel
 - SonicPi ... Ruby-3 instead of Ruby-2.7
-
-## Fedora 35 - To be fixed:
-
-- PaulStretch
