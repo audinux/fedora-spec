@@ -10,8 +10,6 @@ URL:     https://bitbucket.org/xenakios/paulstretchplugin
 Source0: https://bitbucket.org/xenakios/paulstretchplugin/get/%{commit0}.zip
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
-Patch0: paulstretch-0001-fix-move-operator.patch
-Patch1: paulstretch-0001-juce-compatibility.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: unzip
