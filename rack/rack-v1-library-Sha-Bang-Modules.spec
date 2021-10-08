@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 262c39378ef85649e5737cd9f446b3410a5e94e0
-%global gittag0 1.3.4
+%global commit0 56c33001209cd5a7ae8d99e00383544c5fc288b7
+%global gittag0 1.3.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-Sha-Bang-Modules
-Version: 1.3.4
+Version: 1.3.6
 Release: 3%{?dist}
 Summary: Sha-Bang-Modules plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r Sha-Bang-Modules_plugin/dist/Sha-Bang-Modules/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.3.4-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.3.6-3
 - initial specfile

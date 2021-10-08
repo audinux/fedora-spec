@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 1448a841a4f02bf77a4921380243a9a121f324de
-%global gittag0 1.1.2.1
+%global commit0 26f94e247ef9718615e8c9c9eddae51fb2382c4b
+%global gittag0 1.1.2.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-ChortlingHamsterModules
-Version: 1.1.2.1
+Version: 1.1.2.2
 Release: 3%{?dist}
 Summary: ChortlingHamsterModules plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r ChortlingHamsterModules_plugin/dist/ChortlingHamsterModules/* %{buildroot}
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.1.2.1-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.1.2.2-3
 - initial specfile
