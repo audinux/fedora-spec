@@ -1,10 +1,14 @@
+
+# Type: LV2
+# Category: Programming
+
 Name:    lv2lint
-Version: 0.2.0
-Release: 4%{?dist}
+Version: 0.14.0
+Release: 1%{?dist}
 Summary: Check whether a given LV2 plugin is up to the specification
 
 License: Artistic 2.0
-URL:     https://gitlab.com/drobilla/lv2lint
+URL:     https://github.com/OpenMusicKontrollers/lv2lint
 
 Source0: %{url}/-/archive/%{version}/lv2lint-%{version}.tar.gz
 Patch0:  lv2lint-0001-fix-multiple-symbol.patch
