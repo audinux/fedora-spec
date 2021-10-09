@@ -3,7 +3,7 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-# Tag: SF2
+# Tag: Sf2
 # Type: Standalone
 # Category: Audio, Tool
 # GUIToolkit: Qt5

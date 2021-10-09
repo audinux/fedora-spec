@@ -1,4 +1,4 @@
-# Tag: SF2
+# Tag: Sf2
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer
 
