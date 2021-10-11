@@ -60,6 +60,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/*%{name}.*
 Vendor:       Audinux
 Distribution: Audinux
 
+## Add missing desktop files
+- protracker
+
 ## Check before packaging:
 remove -march=native from Makefiles if it's present
 
