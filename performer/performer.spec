@@ -48,6 +48,22 @@ sed -i -e "s/AudioVideo/X-AudioVideo/g" performer.desktop
        -DCMAKE_EXE_LINKER_FLAGS:STRING=-fPIC \
        -DCMAKE_INSTALL_LIBDIR=%{_lib}
 
+%cmake -DWITH_KF5=0 \
+       -DCMAKE_C_FLAGS:STRING=-fPIC \
+       -DCMAKE_CXX_FLAGS:STRING=-fPIC \
+       -DCMAKE_EXE_LINKER_FLAGS:STRING=-fPIC \
+       -DCMAKE_INSTALL_LIBDIR=%{_lib}
+
+make -C %{__cmake_builddir} performer_autogen
+
+%cmake -DWITH_KF5=1 \
+       -DCMAKE_C_FLAGS:STRING=-fPIC \
+       -DCMAKE_CXX_FLAGS:STRING=-fPIC \
+       -DCMAKE_EXE_LINKER_FLAGS:STRING=-fPIC \
+       -DCMAKE_INSTALL_LIBDIR=%{_lib}
+
+make -C %{__cmake_builddir} performer_autogen
+
 %cmake_build
 
 %install
