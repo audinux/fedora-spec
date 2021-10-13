@@ -98,10 +98,11 @@ cat ci/pluginlist.txt | while read PLUGIN; do
   sed -i -e 's/buildStandalone="0"/buildStandalone="1"/g'           plugins/$PLUGIN/$PLUGIN.jucer
   sed -i -e 's/buildVST3="0"/buildVST3="1"/g'                       plugins/$PLUGIN/$PLUGIN.jucer
   sed -i -e 's/JUCEOPTIONS/JUCEOPTIONS JUCE_JACK="1"/g'             plugins/$PLUGIN/$PLUGIN.jucer
-  
+
   Projucer --resave plugins/$PLUGIN/$PLUGIN.jucer
   
   cd plugins/$PLUGIN/Builds/LinuxMakefile
+  sed -i -e 's/-Wl,--strip-all//g' Makefile
   
   %make_build CONFIG=Release STRIP=true
   
