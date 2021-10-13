@@ -117,11 +117,6 @@ hoafilt.tar.bz2
 
 ## To be fixed:
 
-### Fedora 33:
-
-- performer -> cmake + ui_setlist.h missing - pb cmake 3.18 ...
-
 ### Fedora 34:
 
-- Socalab -> /usr/bin/ld: /usr/lib64/libglib-2.0.so.0: error adding symbols: DSO missing from command line
 - SonicPi ... Ruby-3 instead of Ruby-2.7
