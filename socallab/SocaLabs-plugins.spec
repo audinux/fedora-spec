@@ -41,6 +41,7 @@ BuildRequires: pkgconfig(gtk+-x11-3.0)
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libcurl-devel
 BuildRequires: ladspa-devel
+# This build uses JUCE-6.1.*
 BuildRequires: JUCE
 BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: python3-devel
@@ -92,9 +93,11 @@ Projucer --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE/modu
 cat ci/pluginlist.txt | while read PLUGIN; do
   PLUGIN=$(echo $PLUGIN|tr -d '\n\r ')
 
-  sed -i -e 's/pluginFormats="buildVST,buildAU"/pluginFormats="buildStandalone,buildVST3,buildVST"/' plugins/$PLUGIN/$PLUGIN.jucer
-  sed -i -e 's/buildStandalone="0"/buildStandalone="1"/' plugins/$PLUGIN/$PLUGIN.jucer
-  sed -i -e 's/JUCEOPTIONS/JUCEOPTIONS JUCE_JACK="1"/'   plugins/$PLUGIN/$PLUGIN.jucer
+  sed -i -e "s/pluginFormats=\"/pluginFormats=\"buildVST3,/g"       plugins/$PLUGIN/$PLUGIN.jucer
+  sed -i -e "s/pluginFormats=\"/pluginFormats=\"buildStandalone,/g" plugins/$PLUGIN/$PLUGIN.jucer
+  sed -i -e 's/buildStandalone="0"/buildStandalone="1"/g'           plugins/$PLUGIN/$PLUGIN.jucer
+  sed -i -e 's/buildVST3="0"/buildVST3="1"/g'                       plugins/$PLUGIN/$PLUGIN.jucer
+  sed -i -e 's/JUCEOPTIONS/JUCEOPTIONS JUCE_JACK="1"/g'             plugins/$PLUGIN/$PLUGIN.jucer
   
   Projucer --resave plugins/$PLUGIN/$PLUGIN.jucer
   
@@ -102,9 +105,9 @@ cat ci/pluginlist.txt | while read PLUGIN; do
   
   %make_build CONFIG=Release STRIP=true
   
-  cp ./build/$PLUGIN                                       $CURRENT_PATH/bin/standalone/
-  cp ./build/$PLUGIN.so                                    $CURRENT_PATH/bin/vst/
-  cp ./build/$PLUGIN.vst3/Contents/x86_64-linux/$PLUGIN.so $CURRENT_PATH/bin/vst3/
+  cp ./build/$PLUGIN                                     $CURRENT_PATH/bin/standalone/
+  cp ./build/$PLUGIN.so                                  $CURRENT_PATH/bin/vst/
+  cp ./build/$PLUGIN.vst3/Contents/%{_target}/$PLUGIN.so $CURRENT_PATH/bin/vst3/
   cd ../../../..
 done
 
