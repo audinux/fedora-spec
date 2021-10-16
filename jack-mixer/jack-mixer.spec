@@ -1,17 +1,18 @@
 Name:    jack_mixer
-Version: 16
+Version: 17
 Release: 1%{?dist}
 Summary: jack_mixer is GTK (2.x) JACK audio mixer with look similar to it`s hardware counterparts
 URL:     https://github.com/jack-mixer/jack_mixer
-
 License: GPLv2+
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/jack-mixer/jack_mixer/archive/release-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc
 BuildRequires: meson
 BuildRequires: alsa-lib-devel
-BuildRequires: desktop-file-utils
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: glib2-devel
 BuildRequires: gettext
@@ -21,6 +22,7 @@ BuildRequires: python3-gobject-base
 BuildRequires: python3-pyxdg
 BuildRequires: python3-Cython
 BuildRequires: python3-docutils
+BuildRequires: desktop-file-utils
 
 Requires: python3-cairo
 Requires: python3-gobject-base
@@ -53,6 +55,9 @@ desktop-file-install --vendor '' \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/jack_mixer.desktop
 
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/jack_mixer.desktop
+
 %files
 %doc CHANGELOG.md AUTHORS README.md
 %license COPYING
@@ -63,16 +68,20 @@ desktop-file-install --vendor '' \
 %{_datadir}/icons/*
 %{_datadir}/man/*
 %{_datadir}/locale/*
+%{_sysconfdir}/xdg/raysession/client_templates/*
 
 %changelog
+* Sat Oct 16 2021 Yann Collette <ycollette.nospam@free.fr> - 17-1
+- update to 17-1
+
 * Thu Apr 15 2021 Yann Collette <ycollette.nospam@free.fr> - 16-1
-- update to 16
+- update to 16-1
 
 * Thu Mar 18 2021 Yann Collette <ycollette.nospam@free.fr> - 15.1-1
-- update to 15.1
+- update to 15.1-1
 
 * Fri Feb 26 2021 Yann Collette <ycollette.nospam@free.fr> - 15-1
-- update to 15
+- update to 15-1
 
 * Fri Jul 17 2020 Yann Collette <ycollette.nospam@free.fr> - 13-1
 - Initial spec file
