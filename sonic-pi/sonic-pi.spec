@@ -23,6 +23,9 @@ Summary: A musical programming environment
 License: MIT
 URL:     https://sonic-pi.net/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/samaaron/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
@@ -43,6 +46,9 @@ BuildRequires: ruby
 BuildRequires: rubygem-rake
 BuildRequires: rubygem-bundler
 BuildRequires: rubygem-racc
+%if 0%{?fedora} >= 34
+BuildRequires: rubygem-rexml
+%endif
 BuildRequires: zlib-devel
 
 Requires(pre): pulseaudio-module-jack 
