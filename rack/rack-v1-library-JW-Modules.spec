@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 d22d5e1c5e95838269a211f921b5fe6ca752a719
-%global gittag0 1.0.29
+%global commit0 27b5f83c75d50ffc173119615a0e850216bbcb3c
+%global gittag0 1.0.30
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-JW-Modules
-Version: 1.0.29
+Version: 1.0.30
 Release: 3%{?dist}
 Summary: JW-Modules plugin for Rack
 License: GPLv2+
@@ -94,5 +94,5 @@ cp -r JW-Modules_plugin/dist/JW-Modules/* %{buildroot}%{_libexecdir}/Rack1/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.29-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.30-3
 - initial specfile
