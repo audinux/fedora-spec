@@ -11,6 +11,9 @@ Summary: A software modular synth
 License: GPLv2+
 URL:     https://github.com/awwbees/BespokeSynth
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/awwbees/BespokeSynth/archive/refs/tags/v1.0.0.tar.gz#/%{name}-%{version}.tar.gz
 Source1: http://ycollette.free.fr/LMMS/vst.tar.bz2
 
