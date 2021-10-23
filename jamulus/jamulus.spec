@@ -1,9 +1,12 @@
 Name:    jamulus
-Version: 3.8.0
+Version: 3.8.1
 Release: 7%{?dist}
 Summary: Internet jam session software
 URL:     https://github.com/corrados/jamulus/
 License: GPLv2
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # original tarfile can be found here:
 Source0: https://github.com/corrados/jamulus/archive/r3_8_0.tar.gz#/%{name}-%{version}.tar.gz
@@ -69,6 +72,9 @@ desktop-file-install                         \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
+
 %files
 %doc README.md ChangeLog
 %license COPYING
@@ -77,6 +83,9 @@ desktop-file-install                         \
 %{_datadir}/pixmaps/%{name}.png
 
 %changelog
+* Sat Oct 23 2021 Yann Collette <ycollette.nospam@free.fr> - 3.8.1-7
+- update to 3.8.1-7
+
 * Thu Jun 03 2021 Yann Collette <ycollette.nospam@free.fr> - 3.8.0-7
 - update to 3.8.0-7
 
