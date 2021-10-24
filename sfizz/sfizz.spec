@@ -1,15 +1,14 @@
 Name:    sfizz
-Version: 1.0.0
+Version: 1.1.0
 Release: 4%{?dist}
 License: BSD-2-Clause
 Summary: Sampler plugin and library for SFZ instruments
 Url:     https://github.com/sfztools/sfizz
 
-Source0: sfizz-%{version}.tar.gz
-Source1: sfizz_source.sh
+Vendor:       Audinux
+Distribution: Audinux
 
-# ./sfizz_source.sh <tag>
-# ./sfizz_source.sh 1.0.0
+Source0: https://github.com/sfztools/sfizz/releases/download/1.1.0/sfizz-1.1.0.tar.gz
 
 Requires: libsndfile
 
@@ -58,16 +57,19 @@ Header files for the Sfizz library.
 
 %cmake_install
 
+mv %{buildroot}/%{_libdir}/vst %{buildroot}/%{_libdir}/vst3
+
 %files
 %doc README.md GOVERNANCE.md CONTRIBUTING.md AUTHORS.md
-%license LICENSE.md
+%license LICENSE
 %{_bindir}/sfizz_jack
 %{_bindir}/sfizz_render
 %{_libdir}/libsfizz.so.*
 %dir %{_libdir}/lv2
 %dir %{_libdir}/lv2/sfizz.lv2
 %{_libdir}/lv2/sfizz.lv2/*
-%{_libdir}/vst/sfizz.vst3/*
+%{_libdir}/vst3/sfizz.vst3/*
+%{_mandir}/*
 
 %files devel
 %{_libdir}/libsfizz.so
@@ -76,9 +78,11 @@ Header files for the Sfizz library.
 %{_includedir}/sfizz_message.h
 %dir %{_libdir}/pkgconfig
 %{_libdir}/pkgconfig/sfizz.pc
-%exclude %{_libdir}/libsfizz.a
 
 %changelog
+* Sun Oct 24 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-4
+- update to 1.1.0-4
+
 * Mon May 10 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-4
 - update to 1.0.0-4 - try to fix dep wrt to pipewire
 
