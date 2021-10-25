@@ -1,13 +1,16 @@
-Name:           lv2-triceratops
-Version:        0.4.0
-Release:        13%{?dist}
-Summary:        An LV2 polyphonic synthesizer
+Name:    lv2-triceratops
+Version: 0.5.0
+Release: 13%{?dist}
+Summary: An LV2 polyphonic synthesizer
 # license specified in headers and in plugin manifest (triceratops.ttl) is ISC
 # http://opensource.org/licenses/isc
-License:        ISC
-URL:            https://sourceforge.net/projects/triceratops/
+License: ISC
+URL:     https://sourceforge.net/projects/triceratops/
 
-Source0:        https://sourceforge.net/projects/triceratops/files/triceratops-lv2-v0.0.4.tar.gz
+Vendor:       Audinux
+Distribution: Audinux
+
+Source0: https://sourceforge.net/projects/triceratops/files/triceratops_v0.5.0_Oct_2022.tar.gz
 
 BuildRequires: gcc-c++
 BuildRequires: make
@@ -65,6 +68,9 @@ rm  -rf %{buildroot}%{_libdir}/lv2/triceratops-presets.lv2/.directory
 %{_libdir}/lv2/triceratops-presets.lv2
 
 %changelog
+* Mon Oct 25 2021 Yann Collette <ycollette.nospam@free.fr> - 0.5.0.19
+- update to 0.5.0-19
+
 * Wed Jul 28 2021 Yann Collette <ycollette.nospam@free.fr> - 0.4.0.19
 - update to 0.4.0-19
 
