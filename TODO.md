@@ -39,6 +39,8 @@
 |                     | - ChaosChimp: http://static.teragonaudio.com/downloads/ChaosChimp/ChaosChimp.zip
 |                     | - MrsWatson: http://static.teragonaudio.com/downloads/MrsWatson/MrsWatson.zip
 |                     | - all: https://launchpad.net/~kxstudio-debian/+archive/ubuntu/plugins/+sourcefiles/teragonaudio-plugins/5:20140325.3/teragonaudio-plugins_20140325.3.tar.gz
+| ProM                | https://github.com/DISTRHO/ProM
+| Cardinal            | https://github.com/DISTRHO/Cardinal
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
@@ -115,8 +117,10 @@ zita-jacktools-1.5.3.tar.bz2        Requires zita-jclient, zita-convolver and zi
 g2reverb-0.7.1.tar.bz2
 hoafilt.tar.bz2
 
+## Add desktop files
+
+- protracker2
+
 ## To be fixed:
 
-### Fedora 34:
-
-- SonicPi ... Ruby-3 instead of Ruby-2.7
+None
