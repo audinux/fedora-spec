@@ -22,8 +22,10 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 BuildRequires: libX11-devel
 BuildRequires: libXext-devel
+BuildRequires: glew-devel
 BuildRequires: flex
 BuildRequires: meson
+BuildRequires: cmake
 
 %description
 An investigative LV2 plugin bundle
