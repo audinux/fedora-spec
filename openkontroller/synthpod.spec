@@ -10,6 +10,9 @@ Summary: Lightweight Nonlinear LV2 Plugin Container
 URL:     https://github.com/OpenMusicKontrollers/synthpod
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/OpenMusicKontrollers/synthpod/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++ sed
@@ -43,14 +46,12 @@ Lightweight Nonlinear LV2 Plugin Container
 
 %set_build_flags
 
-VERBOSE=1 meson --prefix=/usr -Dlv2libdir=%{_lib}/lv2 build
-cd build
-VERBOSE=1 %ninja_build 
+%meson -Dlv2libdir=%{_lib}/lv2
+%meson_build 
 
 %install 
 
-cd build
-VERBOSE=1 %ninja_install
+%meson_install
 
 %files
 %doc README.md API.md

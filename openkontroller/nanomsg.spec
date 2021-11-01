@@ -5,6 +5,9 @@ Summary: The nanomsg library is a simple high-performance implementation of seve
 URL:     https://github.com/nanomsg/nanomsg
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/nanomsg/nanomsg/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++

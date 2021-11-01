@@ -5,6 +5,9 @@ Summary: A simple tracker for LV2 events
 URL:     https://git.open-music-kontrollers.ch/lv2/tracker.lv2
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # current commit: e411749572737236d24f7e27f8e6245de8a79891
 # git clone --recursive https://git.open-music-kontrollers.ch/lv2/tracker.lv2
 # cd tracker.lv2
@@ -35,11 +38,11 @@ A simple tracker for LV2 events
 
 %set_build_flags
 
-VERBOSE=1 %meson --prefix=/usr -Dlv2libdir=%{_lib}/lv2
-VERBOSE=1 %meson_build 
+%meson -Dlv2libdir=%{_lib}/lv2
+%meson_build 
 
 %install
-VERBOSE=1 %meson_install
+%meson_install
 
 %files
 %doc README.md

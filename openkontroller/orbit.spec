@@ -10,6 +10,9 @@ Summary: LV2 Event Looper
 URL:     https://github.com/OpenMusicKontrollers/orbit.lv2
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/OpenMusicKontrollers/orbit.lv2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
@@ -28,15 +31,12 @@ LV2 Event Looper
 %set_build_flags
 export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
 
-VERBOSE=1 meson --prefix=/usr build
-cd build
-
-DESTDIR=%{buildroot} VERBOSE=1 ninja
+%meson
+%meson_build
 
 %install
 
-cd build
-DESTDIR=%{buildroot} ninja install
+%meson_install
 
 %files
 %doc README.md
