@@ -1,14 +1,17 @@
 # Global variables for github repository
-%global commit0 4f5c779b961c7a4898a642002fe81cbe8115f50e
+%global commit0 6a00bcc5276936d04a97ea5e5228eadf3c595979
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    sherlock.lv2
-Version: 0.26.0
+Version: 0.28.0
 Release: 3%{?dist}
 Summary: An investigative LV2 plugin bundle
 URL:     https://github.com/OpenMusicKontrollers/sherlock.lv2
 License: GPLv2+
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/OpenMusicKontrollers/sherlock.lv2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
@@ -32,13 +35,12 @@ An investigative LV2 plugin bundle
 
 %set_build_flags
 
-VERBOSE=1 meson --prefix=/usr -Dlv2libdir=%{_lib}/lv2 build
-cd build
-VERBOSE=1 %ninja_build 
+%meson -Dlv2libdir=%{_lib}/lv2
+%meson_build 
 
 %install
-cd build
-VERBOSE=1 %ninja_install
+
+%meson_install
 
 %files
 %doc README.md ChangeLog
@@ -46,6 +48,9 @@ VERBOSE=1 %ninja_install
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Nov 01 2021 Yann Collette <ycollette.nospam@free.fr> - 0.28.0-3
+- update to 0.28.0-3
+
 * Sat Jan 16 2021 Yann Collette <ycollette.nospam@free.fr> - 0.26.0-3
 - update to 0.26.0-3
 
