@@ -1,14 +1,17 @@
 # Global variables for github repository
-%global commit0 dd41ddc749b2082f75b06ff8cd8b82a75dcf8c60
+%global commit0 ab1209eded5184aab28726d627efc66dfbdba37f
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    midi_matrix.lv2
-Version: 0.28.0
+Version: 0.30.0
 Release: 4%{?dist}
 Summary: A LV2 Plugin Bundle
 License: GPLv2+
 URL:     https://github.com/OpenMusicKontrollers/midi_matrix.lv2
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/OpenMusicKontrollers/midi_matrix.lv2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
@@ -31,15 +34,12 @@ A LV2 Plugin Bundle
 %set_build_flags
 
 LDFLAGS="${LDFLAGS:-%{build_ldflags}} -z muldefs" ; export LDFLAGS
-VERBOSE=1 meson --prefix=/usr -Dlv2libdir=%{_lib}/lv2 build
-cd build
-
-VERBOSE=1 %ninja_build
+%meson -Dlv2libdir=%{_lib}/lv2
+%meson_build
 
 %install
 
-cd build
-VERBOSE=1 %ninja_install
+%meson_install
 
 %files
 %doc README.md
@@ -47,6 +47,9 @@ VERBOSE=1 %ninja_install
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Nov 01 2021 Yann Collette <ycollette.nospam@free.fr> - 0.30.0-4
+- update to 0.30.0-4 
+
 * Sat Jan 16 2021 Yann Collette <ycollette.nospam@free.fr> - 0.28.0-4
 - update to 0.28.0-4 
 
