@@ -3,7 +3,7 @@
 # Category: Audio, Programming
 
 Name:	 faust
-Version: 2.33.1
+Version: 2.37.3
 Release: 23%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
@@ -14,10 +14,7 @@ URL:     http://faust.grame.fr
 Vendor:       Audinux
 Distribution: Audinux
 
-# To get source from 2.33.1 tag: ./faust-source.sh 2.33.1
-
-Source0: faust.tar.gz
-Source1: faust-source.sh
+Source0: https://github.com/grame-cncm/faust/releases/download/%{version}/faust-%{version}.tar.gz
 
 BuildRequires: gcc-c++
 BuildRequires: doxygen
@@ -112,7 +109,7 @@ Faust AUdio STreams is a functional programming language for real-time audio
 signal processing. These libraries are part of the standard Faust libraries.
 
 %prep
-%autosetup -n faust
+%autosetup -n faust-%{version}
 
 # For installation in the correct location and for preserving timestamps:
 # The Makefile normally puts noarch files in $prefix/lib. We change
@@ -181,10 +178,6 @@ cd %{buildroot}/%{_libdir}
 ln -s liboscpack.so.1.1.0 liboscpack.so.1
 ln -s liboscpack.so.1 liboscpack.so
 popd
-
-# Sort out the documentation
-mv documentation/faust-quick-reference-src/illustrations/ documentation
-rm -fr documentation/faust-quick-reference-src
 
 # Install tools
 cp -a tools/%{name}2sc-*/%{name}2sc %{buildroot}/%{_bindir}
@@ -269,6 +262,9 @@ mv %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
 %{_datadir}/faust/*.lib
 
 %changelog
+* Mon Nov 01 2021 Yann Collette <ycollette.nospam@free.fr> - 2.37.3-23
+- update to 2.37.3-23
+
 * Wed Jul 21 2021 Yann Collette <ycollette.nospam@free.fr> - 2.33.1-23
 - update to 2.33.1-23
 
