@@ -1,14 +1,17 @@
 # Global variables for github repository
-%global commit0 85ad5c0a760d4df07271afa7b9b7b75973bdca1f
+%global commit0 eaa81041f81195d2020d1190fa6b1d0fc7da6505
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    patchmatrix
-Version: 0.22.0
+Version: 0.26.0
 Release: 3%{?dist}
 Summary: A JACK patchbay in flow matrix style
 URL:     https://github.com/OpenMusicKontrollers/patchmatrix
 License: GPLv2+
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/OpenMusicKontrollers/patchmatrix/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
@@ -31,15 +34,12 @@ A JACK patchbay in flow matrix style
 
 %set_build_flags
 
-VERBOSE=1 meson --prefix=/usr build
-cd build
-
-VERBOSE=1 %ninja_build 
+%meson
+%meson_build 
 
 %install
 
-cd build
-VERBOSE=1 %ninja_install
+%meson_install
 
 %files
 %doc README.md ChangeLog
@@ -48,6 +48,9 @@ VERBOSE=1 %ninja_install
 %{_datadir}/*
 
 %changelog
+* Mon Nov 01 2021 Yann Collette <ycollette.nospam@free.fr> - 0.26.0-3
+- update to 0.26.0-2
+
 * Sat Jan 16 2021 Yann Collette <ycollette.nospam@free.fr> - 0.22.0-3
 - update to 0.22.0-2
 
