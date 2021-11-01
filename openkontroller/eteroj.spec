@@ -1,14 +1,17 @@
 # Global variables for github repository
-%global commit0 edb38c603f4c3896d37c5b2368911df6155fd8d3
+%global commit0 5c048f5c06ddef052bf1ffd2c151e5ff5248fca2
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    eteroj.lv2
-Version: 0.8.0
+Version: 0.10.0
 Release: 3%{?dist}
 Summary: OSC injection/ejection from/to UDP/TCP/Serial for LV2
 URL:     https://github.com/OpenMusicKontrollers/eteroj.lv2
 License: GPLv2+
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/OpenMusicKontrollers/eteroj.lv2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
@@ -28,15 +31,12 @@ OSC injection/ejection from/to UDP/TCP/Serial for LV2
 
 %set_build_flags
 
-VERBOSE=1 meson --prefix=/usr build
-cd build
-
-DESTDIR=%{buildroot} VERBOSE=1 ninja
+%meson
+%meson_build
 
 %install
 
-cd build
-DESTDIR=%{buildroot} ninja install
+%meson_install
 
 %files
 %doc README.md ChangeLog
@@ -44,6 +44,9 @@ DESTDIR=%{buildroot} ninja install
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Nov 01 2021 Yann Collette <ycollette.nospam@free.fr> - 0.10.0-3
+- update to 0.10.0-3
+
 * Sat Jan 16 2021 Yann Collette <ycollette.nospam@free.fr> - 0.8.0-3
 - update to 0.8.0-3
 
