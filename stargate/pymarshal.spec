@@ -1,5 +1,4 @@
 %{?!python3_pkgversion:%global python3_pkgversion 3}
-%global debug_package %{nil}
 
 Name:    pymarshal
 Version: 2.2.0	
@@ -10,9 +9,12 @@ URL:     https://github.com/stargateaudio/pymarshal
 
 Source0: https://files.pythonhosted.org/packages/62/ef/e04a84361e82c8f0b750a63691404ed47dcfa3c7463eab16ec7607be0efc/pymarshal-2.2.0.tar.gz	
 
+BuildArch: noarch
+
 BuildRequires: python%{python3_pkgversion}-devel
 BuildRequires: python%{python3_pkgversion}-setuptools
 BuildRequires: python%{python3_pkgversion}-wheel
+BuildRequires: python%{python3_pkgversion}-pip
 
 %{?python_enable_dependency_generator}
 

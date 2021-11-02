@@ -1,5 +1,4 @@
 %{?!python3_pkgversion:%global python3_pkgversion 3}
-%global debug_package %{nil}
 
 Name:    wavefile
 Version: 1.5
@@ -10,8 +9,11 @@ URL:     https://github.com/vokimon/python-wavefile
 
 Source0: https://github.com/vokimon/python-wavefile/archive/refs/tags/python-wavefile-%{version}.tar.gz
 
+BuildArch: noarch
+
 BuildRequires: python%{python3_pkgversion}-devel
 BuildRequires: python%{python3_pkgversion}-setuptools
+BuildRequires: python%{python3_pkgversion}-pip
 
 %{?python_enable_dependency_generator}
 

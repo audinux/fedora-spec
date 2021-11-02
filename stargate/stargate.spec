@@ -11,20 +11,19 @@ URL:     http://github.com/stargateaudio/stargate/
 Vendor:       Audinux
 Distribution: Audinux
 
-# Add package for:
-# - https://github.com/stargateaudio/pymarshal
-# - https://github.com/vokimon/python-wavefile
-
 Source0: https://github.com/stargateaudio/stargate/archive/stargate-%{version}.tar.gz
 
 BuildRequires: alsa-lib-devel
 BuildRequires: fftw-devel
 BuildRequires: gcc
 BuildRequires: gcc-c++
+BuildRequires: git
+BuildRequires: jq
 BuildRequires: libsndfile-devel
 BuildRequires: portaudio-devel
 BuildRequires: portmidi-devel
 BuildRequires: python3-devel 
+BuildRequires: desktop-file-utils
 Requires: alsa-lib
 Requires: fftw
 Requires: lame
@@ -38,10 +37,12 @@ Requires: python3-mutagen
 Requires: python3-numpy
 Requires: python3-psutil
 Requires: python3-pyyaml
+Requires: python3-pymarshal
+Requires: python3-wavefile
 Requires: (python3-qt6 or python3-qt5)
 Requires: rubberband
 Requires: vorbis-tools 
-Recommends:     ffmpeg 
+Recommends: ffmpeg 
 
 %description
 Stargate is digital audio workstations (DAWs), instrument and effect plugins
@@ -49,14 +50,34 @@ Stargate is digital audio workstations (DAWs), instrument and effect plugins
 %prep
 %autosetup
 
-%build
+# Deactivate automatic installation of wavefile and pymarshal
+sed -i -e "s/ py_vendor commit_hash/ commit_hash/g" Makefile
+sed -i -e "/cp -r sg_py_vendor/d" Makefile
+# Relocate lib dir into lib64 on 64 bits architecture
+%ifarch x86_64 amd64
+sed -i -e "s/'lib'/'%{_lib}'/g" sglib/lib/path/linux.py
+%endif
 
+%build
 %make_build
 
 %install
-
 export DONT_STRIP=1
 %make_install
+	
+%ifarch x86_64 amd64
+mv %{buildroot}/usr/lib %{buildroot}/%{_libdir}
+%endif
+
+desktop-file-install --vendor '' \
+        --add-category=Midi \
+        --add-category=Audio \
+        --add-category=AudioVideo \
+        --dir %{buildroot}%{_datadir}/applications \
+        %{buildroot}%{_datadir}/applications/stargate.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 
 %files
 %doc README.md
@@ -65,7 +86,7 @@ export DONT_STRIP=1
 %{_bindir}/stargate-engine-dbg
 %{_bindir}/stargate-paulstretch
 %{_bindir}/stargate-sbsms
-%{_datadir}/share/
+%{_datadir}/
 %{_libdir}/stargate
 
 %changelog
