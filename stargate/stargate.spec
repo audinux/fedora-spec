@@ -64,10 +64,6 @@ sed -i -e "s/'lib'/'%{_lib}'/g" sglib/lib/path/linux.py
 %install
 export DONT_STRIP=1
 %make_install
-	
-%ifarch x86_64 amd64
-mv %{buildroot}/usr/lib %{buildroot}/%{_libdir}
-%endif
 
 desktop-file-install --vendor '' \
         --add-category=Midi \
@@ -87,7 +83,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 %{_bindir}/stargate-paulstretch
 %{_bindir}/stargate-sbsms
 %{_datadir}/
-%{_libdir}/stargate
+%{_usr}/lib/stargate
 
 %changelog
 * Tue Nov 02 2021 Yann Collette <ycollette.nospam@free.fr> - 21.11.1-1
