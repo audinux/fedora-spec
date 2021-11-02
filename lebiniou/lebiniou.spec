@@ -12,8 +12,7 @@ License: GPLv2+
 Vendor:       Audinux
 Distribution: Audinux
 
-# Source0: https://gitlab.com/lebiniou/lebiniou/-/archive/version-%{version}/lebiniou-version-%{version}.tar.gz
-Source0: https://gitlab.com/lebiniou/lebiniou/-/archive/version-3.63/lebiniou-version-3.63.tar.gz
+Source0: https://gitlab.com/lebiniou/lebiniou/-/archive/version-%{version}/lebiniou-version-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++ make sed
 BuildRequires: autoconf automake libtool
@@ -47,8 +46,7 @@ As a listener, lebiniou allows you to watch an everlasting and
 totally unseen creation reacting to the music.
 
 %prep
-# autosetup -n {name}-version-{version}
-%autosetup -n %{name}-version-3.63
+%autosetup -n %{name}-version-%{version}
 
 sed -i -e "s/LEBINIOU_LIBDIR=\"\$prefix\/lib\"/LEBINIOU_LIBDIR=\"\$prefix\/%{_lib}\"/g" configure.ac
 
