@@ -1,3 +1,7 @@
+# Tag: MIDI, Sequencer
+# Type: Standalone
+# Catagory: DAW, Audio, Sequencer
+
 %define __provides_exclude_from ^%{_usr}/lib/stargate/.*$
 %global __python %{__python3}
 
@@ -52,10 +56,10 @@ Stargate is digital audio workstations (DAWs), instrument and effect plugins
 
 # Deactivate automatic installation of wavefile and pymarshal
 sed -i -e "s/ py_vendor commit_hash/ commit_hash/g" Makefile
-sed -i -e "/cp -r sg_py_vendor/d" Makefile
+sed -i -e "s/cp -r sg_py_vendor/cp -r /g" Makefile
 # Relocate lib dir into lib64 on 64 bits architecture
 %ifarch x86_64 amd64
-sed -i -e "s/'lib'/'%{_lib}'/g" sglib/lib/path/linux.py
+# sed -i -e "s/'lib'/'%{_lib}'/g" sglib/lib/path/linux.py
 %endif
 
 %build
