@@ -68,6 +68,66 @@ install -m 644 -p src/gfx/pt2-clone.ico %{buildroot}/%{_datadir}/icons/%{name}/%
 install -m 755 -d %{buildroot}%{_datadir}/%{name}
 cp release/effects.txt release/help.txt release/keybindings.txt release/LICENSES.txt release/other/protracker.ini %{buildroot}%{_datadir}/%{name}
 
+# Create some desktop files
+cat > %{buildroot}/%{_datadir}/applications/%{name}-jack.desktop <<EOF
+[Desktop Entry]
+Version=1.0
+Name=ProTracker Jack
+Comment=Audio tracker
+Exec=protracker-jack
+Icon=protracker
+Terminal=false
+Type=Application
+Categories=Audio;
+EOF
+
+desktop-file-install                         \
+  --add-category="Audio;AudioVideo"	     \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}-jack.desktop
+
+cat > %{buildroot}/%{_datadir}/applications/%{name}-pulse.desktop <<EOF
+[Desktop Entry]
+Version=1.0
+Name=ProTracker PulseAudio
+Comment=Audio tracker
+Exec=protracker-pulse
+Icon=protracker
+Terminal=false
+Type=Application
+Categories=Audio;
+EOF
+
+desktop-file-install                         \
+  --add-category="Audio;AudioVideo"	     \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}-pulse.desktop
+
+cat > %{buildroot}/%{_datadir}/applications/%{name}-alsa.desktop <<EOF
+[Desktop Entry]
+Version=1.0
+Name=ProTracker Alsa
+Comment=Audio tracker
+Exec=protracker-alsa
+Icon=protracker
+Terminal=false
+Type=Application
+Categories=Audio;
+EOF
+
+desktop-file-install                         \
+  --add-category="Audio;AudioVideo"	     \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}-alsa.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-jack.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-pulse.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
+
 %files
 %doc README.md
 %license LICENSE LICENSES.txt
@@ -77,6 +137,7 @@ cp release/effects.txt release/help.txt release/keybindings.txt release/LICENSES
 %{_bindir}/protracker2-alsa
 %{_datadir}/%{name}/*
 %{_datadir}/icons/*
+%{_datadir}/applications/*
 
 %changelog
 * Thu Oct 28 2021 Yann Collette <ycollette.nospam@free.fr> - 1.37.0-4
