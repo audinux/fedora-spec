@@ -12,7 +12,6 @@
 | zrythm - lsp-dsp    | add a devel package for zrythm |
 | emissioncontrol2    | https://github.com/EmissionControl2/EmissionControl2 |
 | regrader            | https://github.com/igorski/regrader |
-| mapmap              | https://github.com/mapmapteam/mapmap |
 | openshow            | https://github.com/mapmapteam/openshow |
 | supercollider-study | https://github.com/rumblesan/super-collider-study |
 | marsyas             | http://marsyas.info/ |
@@ -24,7 +23,6 @@
 | frequanalizer       | https://github.com/ffAudio/Frequalizer |
 | NoiseTorch          | https://github.com/lawl/NoiseTorch |
 | CadMus              | https://github.com/josh-richardson/cadmus |
-| tangamp             | https://github.com/sadko4u/tamgamp.lv2 |
 | tascar              | https://github.com/HoerTech-gGmbH/tascar/ |
 | midieditor          | https://github.com/markusschwenk/midieditor/ |
 | seq66               | https://github.com/ahlstromcj/seq66 |
