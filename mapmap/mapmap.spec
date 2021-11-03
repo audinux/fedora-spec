@@ -5,6 +5,9 @@ Summary: Open source video mapping software
 URL:     https://mapmapteam.github.io
 License: GPLv3
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/mapmapteam/mapmap/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
@@ -64,6 +67,9 @@ install -m 644 resources/texts/%{name}.xml %{buildroot}/%{_datadir}/mime/package
 desktop-file-install --vendor '' \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
 %doc HACKING OSC README.md CONTRIBUTING.md
