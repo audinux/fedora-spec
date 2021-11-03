@@ -1,3 +1,7 @@
+# Tag: Amp Simul, Cabinet
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 # Global variables for github repository
 %global commit0 426da74142fcb6b7687a35b2b1dda3392e171b92
 %global gittag0 master
