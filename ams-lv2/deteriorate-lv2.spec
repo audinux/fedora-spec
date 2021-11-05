@@ -9,6 +9,9 @@ Summary: Set of plugins to destroy and deteriorate the sound quality of a live i
 License: GPLv2+
 URL:     https://github.com/blablack/deteriorate-lv2
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/blablack/deteriorate-lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
@@ -28,7 +31,7 @@ The set contains:
  * Granulator
 
 %prep
-%setup -qn %{name}-%{version}
+%autosetup -n %{name}-%{version}
 
 %build
 

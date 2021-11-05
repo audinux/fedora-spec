@@ -118,8 +118,10 @@ hoafilt.tar.bz2
 
 ## Add desktop files
 
-- protracker2
-
 ## To be fixed:
 
 None
+
+## regular update
+
+Stopped at azr3

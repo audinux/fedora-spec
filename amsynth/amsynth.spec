@@ -1,9 +1,12 @@
 Summary: Software Synthesizer
 Name:    amsynth
 Version: 1.12.2
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: GPL
 URL:     https://github.com/amsynth/amsynth
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/amsynth/amsynth/archive/release-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
@@ -63,6 +66,16 @@ export CXXFLAGS="-fPIC -std=c++11"
 
 %make_install
 
+desktop-file-install                         \
+  --add-category="Audio;AudioVideo"	     \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/%{name}.appdata.xml
+
 %files
 %doc AUTHORS ChangeLog INSTALL NEWS README
 %license COPYING
@@ -86,6 +99,9 @@ export CXXFLAGS="-fPIC -std=c++11"
 %{_libdir}/vst/*
 
 %changelog
+* Fri Nov 05 2021 Yann Collette <ycollette dot nospam at free.fr> 1.12.2-3
+- update to 1.12.2-3 - install desktop file
+
 * Sat Nov 21 2020 Yann Collette <ycollette dot nospam at free.fr> 1.12.2-2
 - update to 1.12.2-2
 

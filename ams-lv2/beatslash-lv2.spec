@@ -9,6 +9,9 @@ Summary: Set of LV2 plugins to mangle, slash, repeat and do much more with your 
 License: GPLv2+
 URL:     https://github.com/blablack/beatslash-lv2
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/blablack/beatslash-lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++

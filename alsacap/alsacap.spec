@@ -6,9 +6,12 @@ Name:    alsacap
 Version: 1.0
 Release: 1%{?dist}
 Summary: Command line tool for showing capabilities of alsa devices
-
 License: Public Domain	
 URL:     https://github.com/bubbapizza/alsacap
+
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/bubbapizza/alsacap/archive/refs/heads/master.zip#/%{name}-%{version}.zip
 
 BuildRequires: gcc

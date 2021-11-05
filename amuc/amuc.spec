@@ -10,12 +10,16 @@ Summary: Amuc - the Amsterdam Music Composer
 License: GPLv2+
 URL:     https://github.com/pjz/amuc.git
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/pjz/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Patch0:  amuc-0001-fix-build-with-gcc-7.patch
 Patch1:  amuc-0002-add-missing-library.patch
 Patch2:  amuc-0003-fix-makefiles.patch
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: libX11-devel
 BuildRequires: libXft-devel

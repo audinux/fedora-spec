@@ -9,6 +9,9 @@ Summary: Set of Modular Synth plugins (from Alsa Modular Synth)
 License: GPLv2+
 URL:     https://github.com/blablack/ams-lv2
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/blablack/ams-lv2/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
@@ -19,7 +22,6 @@ BuildRequires: gtk2-devel
 BuildRequires: cairo-devel
 BuildRequires: lvtk
 BuildRequires: fftw-devel
-
 
 %prep
 %autosetup -n %{name}-%{version}
