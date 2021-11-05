@@ -2,23 +2,41 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
-Name:           buzztrax
-Version:        0.10.2
-Release:        6%{?dist}
-Summary:        Music composer similar to tracker applications.
+Name:    buzztrax
+Version: 0.10.2
+Release: 6%{?dist}
+Summary: Music composer similar to tracker applications.
+License: LGPL2.1
+URL:     https://www.buzztrax.org 
 
-License:        LGPL2.1
-URL:            https://www.buzztrax.org 
-Source0:        https://files.buzztrax.org/releases/%{name}-%{version}.tar.gz
-Patch0:         buzztrax-0001-fix-build.patch
-Patch1:         buzztrax-0002-support-fluidsynth-2.patch
+Vendor:       Audinux
+Distribution: Audinux
 
-BuildRequires:  gcc gcc-c++ autoconf automake libtool pkgconfig
-BuildRequires:  gstreamer1-devel gstreamer1-plugins-base-devel libxml2-devel
-BuildRequires:  clutter-gtk-devel gtk+-devel gettext-devel gtk-doc
-BuildRequires:  intltool libtool gstreamer1-plugins-good desktop-file-utils orc-compiler
-BuildRequires:  alsa-lib-devel libgudev-devel fluidsynth-devel goffice-devel
-BuildRequires:  chrpath
+Source0: https://files.buzztrax.org/releases/%{name}-%{version}.tar.gz
+Patch0:  buzztrax-0001-fix-build.patch
+Patch1:  buzztrax-0002-support-fluidsynth-2.patch
+
+BuildRequires: gcc gcc-c++
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: libtool
+BuildRequires: pkgconfig
+BuildRequires: intltool
+BuildRequires: gstreamer1-devel
+BuildRequires: gstreamer1-plugins-base-devel
+BuildRequires: libxml2-devel
+BuildRequires: clutter-gtk-devel
+BuildRequires: gtk+-devel
+BuildRequires: gettext-devel
+BuildRequires: gtk-doc
+BuildRequires: gstreamer1-plugins-good
+BuildRequires: orc-compiler
+BuildRequires: alsa-lib-devel
+BuildRequires: libgudev-devel
+BuildRequires: fluidsynth-devel
+BuildRequires: goffice-devel
+BuildRequires: chrpath
+BuildRequires: desktop-file-utils
 
 %description
 A song consists of a sequence with tracks and in each track one uses patterns with events 
@@ -27,18 +45,17 @@ tracks are not simply sample players: a user can make a song using an arrangment
 of virtual audio plugins that are linked together to create different effects. 
 Each of these machines can be controlled realtime or via patterns in the sequencer.
 
-%package        devel
-Summary:        Development files for %{name}
-Requires:       %{name}%{?_isa} = %{version}-%{release}
+%package  devel
+Summary:  Development files for %{name}
+Requires: %{name}%{?_isa} = %{version}-%{release}
 
-%description	devel
+%description devel
 The %{name}-devel package contains libraries and header files for
 
 %prep
 
 %autosetup -p1 -n %{name}-%{version}
 
-#sed -i -e "7/#include \$(top_srcdir)\/Makefile.tests.am/d" Makefile.am
 sed -i -e "71d" Makefile.am
 
 %build
@@ -55,6 +72,7 @@ autoreconf
 %ifarch x86_64
 mv $RPM_BUILD_ROOT/usr/lib/buzztrax-songio $RPM_BUILD_ROOT/usr/lib64/
 %endif
+
 chrpath --delete $RPM_BUILD_ROOT%{_libdir}/libbuzztrax-core.so.1.1.0
 chrpath --delete $RPM_BUILD_ROOT%{_libdir}/buzztrax-songio/libbtbsl.so
 chrpath --delete $RPM_BUILD_ROOT%{_bindir}/buzztrax-cmd
@@ -65,6 +83,7 @@ chrpath --delete $RPM_BUILD_ROOT%{_libdir}/gstreamer-1.0/libbuzztraxdec.so
 chrpath --delete $RPM_BUILD_ROOT%{_libdir}/gstreamer-1.0/libgstbml.so
 chrpath --delete $RPM_BUILD_ROOT%{_libdir}/gstreamer-1.0/libgstsidsyn.so
 
+%check
 desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}-edit.desktop
 desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}-songio-buzz.desktop
 

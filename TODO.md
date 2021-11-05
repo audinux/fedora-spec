@@ -124,4 +124,4 @@ None
 
 ## regular update
 
-Stopped at azr3
+Stopped at buzztrax

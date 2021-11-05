@@ -9,6 +9,9 @@ Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/rerrahkr/BambooTracker
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # To get the sources: ./bambootracker_source.sh v0.5.0
 Source0: BambooTracker.tar.gz
 Source1: bambootracker_source.sh
@@ -46,6 +49,9 @@ desktop-file-install --vendor '' \
         --add-category=Sequencer \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
 %doc CHANGELOG.md IMPORTANT.md LICENSE README.md README_ja.md
