@@ -29,16 +29,17 @@
 | drops               | https://github.com/clearly-broken-software/drops |
 | audiveris           | https://github.com/Audiveris/audiveris.git |
 | Teragon audio       | http://teragonaudio.com/software.html |
-|                     | - Kickmaker: http://static.teragonaudio.com/downloads/KickMaker/KickMaker.zip
-|                     | - BeatCounter: https://github.com/teragonaudio/BeatCounter/archive/refs/tags/2.1.tar.gz
-|                     | - ExtraNotes: http://static.teragonaudio.com/downloads/ExtraNotes/ExtraNotes.zip
-|                     | - HiLoFilter: http://static.teragonaudio.com/downloads/HiLoFilter/HiLoFilter.zip
-|                     | - NotNotchFilter: http://static.teragonaudio.com/downloads/NotNotchFilter/NotNotchFilter.zip
-|                     | - ChaosChimp: http://static.teragonaudio.com/downloads/ChaosChimp/ChaosChimp.zip
-|                     | - MrsWatson: http://static.teragonaudio.com/downloads/MrsWatson/MrsWatson.zip
-|                     | - all: https://launchpad.net/~kxstudio-debian/+archive/ubuntu/plugins/+sourcefiles/teragonaudio-plugins/5:20140325.3/teragonaudio-plugins_20140325.3.tar.gz
-| ProM                | https://github.com/DISTRHO/ProM
-| Cardinal            | https://github.com/DISTRHO/Cardinal
+|                     | - Kickmaker: http://static.teragonaudio.com/downloads/KickMaker/KickMaker.zip |
+|                     | - BeatCounter: https://github.com/teragonaudio/BeatCounter/archive/refs/tags/2.1.tar.gz |
+|                     | - ExtraNotes: http://static.teragonaudio.com/downloads/ExtraNotes/ExtraNotes.zip |
+|                     | - HiLoFilter: http://static.teragonaudio.com/downloads/HiLoFilter/HiLoFilter.zip |
+|                     | - NotNotchFilter: http://static.teragonaudio.com/downloads/NotNotchFilter/NotNotchFilter.zip |
+|                     | - ChaosChimp: http://static.teragonaudio.com/downloads/ChaosChimp/ChaosChimp.zip |
+|                     | - MrsWatson: http://static.teragonaudio.com/downloads/MrsWatson/MrsWatson.zip |
+|                     | - all: https://launchpad.net/~kxstudio-debian/+archive/ubuntu/plugins/+sourcefiles/teragonaudio-plugins/5:20140325.3/teragonaudio-plugins_20140325.3.tar.gz |
+| ProM                | https://github.com/DISTRHO/ProM |
+| Cardinal            | https://github.com/DISTRHO/Cardinal |
+| zynayumi            | https://github.com/zynayumi/zynayumi |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
