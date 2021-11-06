@@ -43,7 +43,7 @@ cd Projects/LinuxMakefile/
 %install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
-cp -a Projects/LinuxMakefile/build/Helio %{buildroot}/%{_bindir}/helio
+cp -a Projects/LinuxMakefile/build/helio %{buildroot}/%{_bindir}/helio
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
 cp -a Projects/Deployment/Linux/Debian/x64/usr/share/applications/Helio.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
