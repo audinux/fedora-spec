@@ -4,10 +4,11 @@
 
 Summary: Multimachine jam sessions over the internet
 Name:    jacktrip
-Version: 1.3.0
+Version: 1.4.0
 Release: 2%{?dist}
 License: STK
 URL:     https://ccrma.stanford.edu/software/jacktrip/
+
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
@@ -19,6 +20,9 @@ BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: rtaudio-devel
 BuildRequires: meson
+BuildRequires: help2man
+BuildRequires: desktop-file-utils
+BuildRequires: libappstream-glib
 
 %description
 JackTrip is a Linux and Mac OS X-based system used for multi-machine
@@ -43,23 +47,40 @@ SoundWIRE group.
 
 %meson_install
 
+desktop-file-install                         \
+  --add-category="Audio;AudioVideo"	     \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/org.jacktrip.JackTrip.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/org.jacktrip.JackTrip.desktop
+appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/org.jacktrip.JackTrip.metainfo.xml
+
 %files
-%doc CHANGESLOG.txt TODO.txt INSTALL.txt INSTALL_meson.md README.md
-%license LICENSE
+%doc README.md
+%license LICENSE.md
 %{_bindir}/jacktrip
+%{_datadir}/icons/hicolor/*
+%{_datadir}/applications/*
+%{_datadir}/metainfo/*
+%{_mandir}/man1/*
 
 %changelog
+* Sat Nov 06 2021 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-2
+- update to 1.4.0-2
+
 * Wed Jul 14 2021 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-2
-- update to 1.3.0-1
+- update to 1.3.0-2
 
 * Tue Dec 29 2020 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-2
-- update to 1.2.2-1
+- update to 1.2.2-2
 
 * Thu Nov 05 2020 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-2
-- update to 1.2.1
+- update to 1.2.1-2
 
 * Fri May 1 2020 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-2
-- update to 1.1.0
+- update to 1.1.0-2
 
 * Mon Oct 15 2018 Yann Collette <ycollette.nospam@free.fr> -
 - update for Fedora 29
