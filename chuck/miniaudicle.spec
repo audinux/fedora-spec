@@ -9,6 +9,7 @@ Version: 1.3.5.2
 Release: 2%{?dist}
 License: LGPL
 URL:     https://audicle.cs.princeton.edu/mini/
+
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 

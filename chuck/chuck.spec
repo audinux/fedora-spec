@@ -9,12 +9,12 @@ Release: 2%{?dist}
 License: GPL
 URL:     https://chuck.cs.princeton.edu/
 
+Distribution: Planet CCRMA
+Vendor:       Planet CCRMA
+
 Source0: https://chuck.cs.princeton.edu/release/files/chuck-%{version}.tgz
 # emacs mode from: http://wiki.cs.princeton.edu/index.php/Recent_chuck-mode.el
 Source1: chuck-mode.el
-
-Distribution: Planet CCRMA
-Vendor:       Planet CCRMA
 
 BuildRequires: gcc gcc-c++ perl make
 BuildRequires: bison flex jack-audio-connection-kit-devel, 
