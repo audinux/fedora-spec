@@ -14,6 +14,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: alsa-lib-devel
 BuildRequires: gtkmm24-devel
 BuildRequires: desktop-file-utils
+BuildRequires: libappstream-glib
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsndfile-devel
 BuildRequires: dssi-devel
