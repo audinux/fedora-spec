@@ -5,6 +5,9 @@ Release: 1%{?dist}
 License: GPL
 URL:     http://www.coppercloudmusic.com/enscribe/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: http://coppercloudmusic.com/enscribe/enscribe-%{version}.tgz
 Patch0: enscribe_01-makefile.patch
 Patch1: enscribe_02-FFTblocksizenorm.patch

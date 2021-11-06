@@ -1,9 +1,16 @@
+# Tag: Effect
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 Name:    ensemble-chorus
 Version: 0.0.1
 Release: 2%{?dist}
 Summary: Effect plugin for ensemble-chorus (VST/LV2)
 URL:     https://github.com/jpcima/ensemble-chorus
 License: BSL-1.0
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # ./ensemble-chorus-source.sh master
 
@@ -47,6 +54,9 @@ sed -i -e "s/AudioMidi;//g" resources/desktop/ensemble_chorus.desktop
 desktop-file-install --vendor '' \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/ensemble_chorus.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/ensemble_chorus.desktop
 
 %files
 %doc README.md

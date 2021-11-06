@@ -1,11 +1,10 @@
+# Type: Standalone, IDE
+# Category: Programming, Audio
+
 # Global variables for github repository
 %global commit0 5d9de9547ab87f175fabeb94c96ffcc07f7c3d6f
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
-
-# Type: Standalone, IDE
-# Category: Programming, Audio
 
 Name:      FoxDot
 Version:   0.8.11
@@ -15,6 +14,9 @@ Summary:   Python3 programming environment providing a fast and user-friendly ab
 License:   Creative Commons Attribution-ShareAlike 4.0 International Public License
 URL:       https://github.com/Qirky/FoxDot
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0:   https://github.com/Qirky/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildArch: noarch
@@ -22,6 +24,8 @@ BuildArch: noarch
 BuildRequires: python3-devel
 BuildRequires: supercollider-devel 
 BuildRequires: python3-setuptools
+
+Requires: supercollider
 
 %description
 Python3 programming environment providing a fast and user-friendly abstraction to SuperCollider.

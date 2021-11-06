@@ -1,12 +1,12 @@
-# Global variables for github repository
-%global commit0 b8f00a788bdc3205c6b39c743df93339cd261899
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 # Tag: Equalizer
 # Type: VST
 # Category: Audio, Effect
 # LastSourceUpdate: 2021
+
+# Global variables for github repository
+%global commit0 b8f00a788bdc3205c6b39c743df93339cd261899
+%global gittag0 master
+%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    frequalizer
 Version: 1.0.0
@@ -14,6 +14,9 @@ Release: 1%{?dist}
 Summary: Equalizer using JUCE new dsp module
 License: GPLv3
 URL:     https://github.com/ffAudio/Frequalizer
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 

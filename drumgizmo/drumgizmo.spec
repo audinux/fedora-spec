@@ -9,6 +9,9 @@ Release: 2%{?dist}
 License: GPL
 URL:     https://www.drumgizmo.org/wiki/doku.php
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://www.drumgizmo.org/releases/drumgizmo-%version/drumgizmo-%version.tar.gz
 
 BuildRequires: gcc gcc-c++

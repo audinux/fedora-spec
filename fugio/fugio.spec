@@ -1,3 +1,9 @@
+# Tag: MIDI
+# Type: Standalone, IDE
+# Category: Programming, Audio, Graphic
+# GUIToolkit: Qt5
+# LastSourceUpdate: 2020
+
 Name:    fugio
 Version: 3.1.0
 Release: 3%{?dist}
@@ -5,11 +11,8 @@ Summary: Fugio is an open visual programming system for building digital art and
 URL:     https://www.bigfug.com/software/fugio/
 License: LGPL-3.0
 
-# Tag: MIDI
-# Type: Standalone, IDE
-# Category: Programming, Audio, Graphic
-# GUIToolkit: Qt5
-# LastSourceUpdate: 2020
+Vendor:       Audinux
+Distribution: Audinux
 
 # git clone https://github.com/bigfug/Fugio
 # cd Fugio
@@ -78,6 +81,9 @@ desktop-file-install --vendor '' \
         --add-category=Audio \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/fugio.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/fugio.desktop
 
 %files
 %doc README.md

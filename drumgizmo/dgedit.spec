@@ -6,6 +6,9 @@ License: GPL
 Group:   Applications/Multimedia
 URL:     http://git.drumgizmo.org/dgedit.git
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # To get dgedit source code: ./dgedit-source.sh v0.10.0
 Source0: dgedit.tar.gz
 Source1: dgedit-source.sh
@@ -47,11 +50,6 @@ export QT_SELECT=5
 %install
 
 %make_install
-
-# desktop file categories
-BASE="Application AudioVideo"
-XTRA="X-Synthesis X-MIDI X-Jack"
-mkdir -p %{buildroot}%{_datadir}/applications
 
 %files
 %doc AUTHORS ChangeLog INSTALL NEWS README

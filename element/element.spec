@@ -1,13 +1,13 @@
+# Tag: Jack, MIDI, OSC
+# Type: Standalone
+# Category: Audio, Tool
+
 Name:    element
 Version: 0.46.3
 Release: 1%{?dist}
 Summary: This is the community version of Element, a modular AU/LV2/VST/VST3 audio plugin host.
 URL:     https://github.com/kushview/Element
 License: GPL3
-
-# Tag: Jack, MIDI, OSC
-# Type: Standalone
-# Category: Audio, Tool
 
 Vendor:       Audinux
 Distribution: Audinux

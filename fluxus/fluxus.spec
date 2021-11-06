@@ -1,12 +1,11 @@
+# Tag: Live
+# Type: Standalone, IDE
+# Category: Programming, Audio, Graphic
+
 # Global variables for github repository
 %global commit0 ba9aee218dd4a9cfab914ad78bdb6d59e9a37400
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
-
-# Tag: Live
-# Type: Standalone, IDE
-# Category: Programming, Audio, Graphic
 
 Name:    fluxus
 Version: 0.17rc5.%{shortcommit0}
@@ -14,6 +13,9 @@ Release: 4%{?dist}
 Summary: A 3D game engine for livecoding worlds into existence
 URL:     https://pawfal.org/fluxus/
 License: GPLv2+
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://gitlab.com/nebogeo/%{name}/-/archive/%{commit0}/fluxus-%{commit0}.tar.gz
 Source1: https://github.com/defaultxr/fluxus-mode/raw/master/fluxus-mode.el
@@ -121,6 +123,9 @@ desktop-file-install --vendor '' \
         --add-category=X-Jack \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/fluxus.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/fluxus.desktop
 
 %files
 %{_bindir}/fluxus

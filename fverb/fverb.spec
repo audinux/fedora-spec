@@ -1,3 +1,7 @@
+# Tag: Reverb
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 # Global variables for github repository
 %global commit0 1b9e021b63a73a4bf86a6e4fb73200511391c691
 %global gittag0 master
@@ -10,6 +14,9 @@ Summary: Reverberation plugin
 URL:     https://github.com/jpcima/fverb
 Group:   Applications/Multimedia
 License: BSL-1.0
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # git clone https://github.com/jpcima/fverb
 # # git checkout bells
