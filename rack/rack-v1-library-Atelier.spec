@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 71b323bbde3c16e41a817584aa3c2746b263413e
-%global gittag0 1.0.4
+%global commit0 2d670e2aa66f2d1228fdc180d6ca8b7a23888e9d
+%global gittag0 1.0.5
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-Atelier
-Version: 1.0.4
+Version: 1.0.5
 Release: 3%{?dist}
 Summary: Atelier plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r Atelier_plugin/dist/Atelier/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.4-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.5-3
 - initial specfile

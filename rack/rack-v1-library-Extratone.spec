@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 22d6101aef0cc5217cff45689b4f7449570e9f97
-%global gittag0 1.3.1
+%global commit0 623e25da7f64c7228f03387c31fde2a5fcc7abb5
+%global gittag0 1.3.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-Extratone
-Version: 1.3.1
+Version: 1.3.2
 Release: 3%{?dist}
 Summary: Extratone plugin for Rack
 License: GPLv2+
@@ -95,5 +95,5 @@ cp -r Extratone_plugin/dist/Extratone/* %{buildroot}%{_libexecdir}/Rack1/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.3.1-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.3.2-3
 - initial specfile
