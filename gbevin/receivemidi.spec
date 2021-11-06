@@ -1,3 +1,7 @@
+# Tag: Alsa, MIDI
+# Type: Standalone
+# Category: MIDI, Tool
+
 Name:    receivemidi
 Version: 1.1.0
 Release: 3%{?dist}
@@ -5,10 +9,8 @@ Summary: A command line tool to receive MIDI event
 License: GPLv3
 URL:     https://github.com/gbevin/ReceiveMIDI
 
-# Tag: Alsa, MIDI
-# Type: Standalone
-# Category: MIDI, Tool
-
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: %{url}/archive/%{version}.tar.gz#/ReceiveMIDI-%{version}.tar.gz
 

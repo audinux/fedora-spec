@@ -9,6 +9,9 @@ Summary: A LV2 simple sound generator to have some fun with
 License: GPLv2+
 URL:     https://github.com/brummer10/Xmonk.lv2
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./xmonk-source.sh <tag>
 # ./xmonk-source.sh 0.4
 

@@ -7,8 +7,10 @@ Version: 0.7
 Release: 1%{?dist}
 Summary: Fluidsynth as LV2 plugin 
 License: BSD
-
 URL: https://github.com/brummer10/Fluida.lv2
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/brummer10/Fluida.lv2/files/6329806/Fluida_%{version}.tar.gz
 

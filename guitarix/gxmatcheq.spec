@@ -10,6 +10,9 @@ Summary: Matching Equalizer to apply EQ curve from on source to a other source
 License: GPLv2+
 URL:     https://github.com/brummer10/GxMatchEQ.lv2
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/brummer10/GxMatchEQ.lv2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++

@@ -1,3 +1,7 @@
+# Tag: Alsa, MIDI
+# Type: Standalone
+# Category: MIDI, Tool
+
 Name:    sendmidi
 Version: 1.0.15
 Release: 3%{?dist}
@@ -5,9 +9,8 @@ Summary: A command line tool to send MIDI event
 License: GPLv3
 URL:     https://github.com/gbevin/SendMIDI
 
-# Tag: Alsa, MIDI
-# Type: Standalone
-# Category: MIDI, Tool
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: %{url}/archive/%{version}.tar.gz#/SendMIDI-%{version}.tar.gz
 

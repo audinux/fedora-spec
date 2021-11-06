@@ -9,6 +9,9 @@ Summary: A LV2 simple polyphonic sound generator to have some fun with
 License: GPLv2+
 URL:     https://github.com/brummer10/XPolyMonk.lv2
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./xpolymonk-source.sh <tag>
 # ./xpolymonk-source.sh 0.6
 

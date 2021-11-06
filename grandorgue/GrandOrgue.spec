@@ -11,6 +11,9 @@ Summary: A sample based pipe organ simulator.
 License: GPLv2+
 URL:     https://sourceforge.net/projects/ourorgan
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./GrandOrgue-source.sh <rev>
 # ./GrandOrgue-source.sh 2330
 
@@ -27,6 +30,8 @@ BuildRequires: systemd-devel
 BuildRequires: wavpack-devel
 BuildRequires: fftw-devel
 
+%description
+GrandOrgue is a sample based pipe organ simulator.
 
 %prep
 %autosetup -n ourorgan-%{revision}
@@ -49,6 +54,9 @@ desktop-file-install --vendor '' \
         --add-category=Audio \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
 %doc README AUTHORS

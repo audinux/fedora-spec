@@ -9,6 +9,9 @@ Summary: A LV2 High Gain Amplifier
 License: GPLv2+
 URL:     https://github.com/brummer10/FatFrog.lv2
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./fatfrog-source.sh <tag>
 # ./fatfrog-source.sh v1.0
 

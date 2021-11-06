@@ -7,8 +7,10 @@ Version: 0.0.1
 Release: 1%{?dist}
 Summary: Valve amplifier simulation
 License: GPLv2+
-
 URL:     https://github.com/brummer10/XTinyTerror.lv2
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # git clone https://github.com/brummer10/XTinyTerror.lv2
 # cd XTinyTerror.lv2

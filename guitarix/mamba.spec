@@ -7,8 +7,10 @@ Version: 2.2
 Release: 4%{?dist}
 Summary: Virtual Midi Keyboard for Jack Audio Connection Kit
 License: BSD
-
 URL: https://github.com/brummer10/Mamba
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/brummer10/Mamba/files/6329780/Mamba_%{version}.tar.gz
 
@@ -69,6 +71,9 @@ desktop-file-install --vendor '' \
         --add-category=X-Jack \
         --dir %{buildroot}/%{_datadir}/applications \
         %{buildroot}/%{_datadir}/applications/Mamba.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/Mamba.desktop
 
 %files
 %doc README.md

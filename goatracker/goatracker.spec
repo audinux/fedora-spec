@@ -1,9 +1,16 @@
+# Tag: Tracker, Jack, Alsa
+# Type: Standalone
+# Category: Audio, Sequencer
+
 Summary: A crossplatform music editor for creating Commodore 64 music. Uses reSID library by Dag Lem and supports alternatively HardSID & CatWeasel devices.
 Name:    goatracker
 Version: 2.76
 Release: 2%{?dist}
 License: GPL
 URL:     https://sourceforge.net/projects/goattracker2/
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://sourceforge.net/projects/goattracker2/files/GoatTracker 2 Stereo/%{version}/GoatTracker_%{version}_Stereo.zip
 
@@ -68,6 +75,9 @@ desktop-file-install --vendor '' \
         --add-category=Sequencer \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/goatracker.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/goatracker.desktop
 
 %files
 %doc trunk/authors trunk/readme_resid.txt trunk/readme_sdl.txt trunk/readme.txt

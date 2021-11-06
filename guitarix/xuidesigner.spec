@@ -9,7 +9,6 @@ Version: 0.2
 Release: 1%{?dist}
 Summary: X11 LV2 GUI design tool for libxputty
 License: GPLv2+
-
 URL:     https://github.com/brummer10/XUiDesigner
 
 Vendor:       Audinux
@@ -54,6 +53,10 @@ install -m 644 -p XUiDesigner/XUiDesigner.desktop %{buildroot}%{_datadir}/applic
 desktop-file-install --vendor '' \
         --dir %{buildroot}/%{_datadir}/applications \
         %{buildroot}/%{_datadir}/applications/XUiDesigner.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/XUiDesigner.desktop
+
 
 %files
 %doc README.md

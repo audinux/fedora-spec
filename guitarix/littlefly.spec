@@ -9,6 +9,9 @@ Summary: A LV2 Overdrive/Distortion pedal simulation
 License: GPLv2+
 URL:     https://github.com/brummer10/LittleFly.lv2
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./littlefly-source.sh <tag>
 # ./littlefly-source.sh v1.0
 

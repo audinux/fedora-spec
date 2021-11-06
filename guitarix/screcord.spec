@@ -14,6 +14,9 @@ Summary: A simple Lv2 capture plugin
 License: GPLv2+
 URL:     https://github.com/brummer10/screcord.lv2
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: screcord.lv2.tar.gz
 Source1: screcord-source.sh
 

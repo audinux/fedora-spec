@@ -7,8 +7,10 @@ Version: 0.0.1
 Release: 1%{?dist}
 Summary: A simple 4 in 1 Mixer 
 License: GPLv2+
-
 URL:     https://github.com/brummer10/XMixer.lv2
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # git clone https://github.com/brummer10/XMixer.lv2
 # cd XMixer.lv2

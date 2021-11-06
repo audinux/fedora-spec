@@ -14,6 +14,9 @@ Summary: Digital reverse delay LV2 plugin
 License: GPLv2+
 URL:     https://github.com/brummer10/GxReverseDelay.lv2
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/brummer10/GxReverseDelay.lv2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Patch0:  gxreversedelay-0001-cleanup-flags.patch
 
