@@ -9,6 +9,9 @@ Release: 1%{?dist}
 License: GPL
 URL:     https://dinisnoise.org/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://archive.org/download/dinisnoise_source_code/din-51.1.1.tar.gz
 
 BuildRequires: gcc

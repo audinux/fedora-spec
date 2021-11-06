@@ -5,6 +5,9 @@ Summary: Common Music (CM) is a real-time music composition system implemented i
 URL:     https://sourceforge.net/projects/commonmusic
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # original tarfile can be found here:
 Source0: https://sourceforge.net/projects/commonmusic/files/cm/%{version}/cm-%{version}.zip
 

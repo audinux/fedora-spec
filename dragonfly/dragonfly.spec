@@ -8,9 +8,11 @@ Name:    dragonfly-reverb
 Version: 3.2.5
 Release: 3%{?dist}
 Summary: DragonFly reverberation plugin
-
 License: GPLv2+
 URL:     https://github.com/michaelwillis/dragonfly-reverb/
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # To get the sources:
 # ./dragonfly-source.sh 3.2.5
@@ -38,13 +40,13 @@ A free hall-style reverb based on freeverb3 algorithms
 
 %install
 
-%__install -m 755 -d %{buildroot}/%{_bindir}/
-%__install -m 755 -d %{buildroot}/%{_libdir}/lv2/DragonflyHallReverb.lv2
-%__install -m 755 -d %{buildroot}/%{_libdir}/lv2/DragonflyRoomReverb.lv2
-%__install -m 755 -d %{buildroot}/%{_libdir}/lv2/DragonflyEarlyReflections.lv2
-%__install -m 755 -d %{buildroot}/%{_libdir}/lv2/DragonflyPlateReverb.lv2
-%__install -m 755 -d %{buildroot}/%{_libdir}/vst
-%__install -m 755 -d %{buildroot}/%{_datadir}/pixmaps
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 -d %{buildroot}/%{_libdir}/lv2/DragonflyHallReverb.lv2
+install -m 755 -d %{buildroot}/%{_libdir}/lv2/DragonflyRoomReverb.lv2
+install -m 755 -d %{buildroot}/%{_libdir}/lv2/DragonflyEarlyReflections.lv2
+install -m 755 -d %{buildroot}/%{_libdir}/lv2/DragonflyPlateReverb.lv2
+install -m 755 -d %{buildroot}/%{_libdir}/vst
+install -m 755 -d %{buildroot}/%{_datadir}/pixmaps
 
 cp bin/DragonflyHallReverb       %{buildroot}/%{_bindir}/
 cp bin/DragonflyRoomReverb       %{buildroot}/%{_bindir}/

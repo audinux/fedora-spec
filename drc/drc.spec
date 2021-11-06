@@ -5,6 +5,9 @@ Summary: Digital Room Correction
 License: LGPLv2+
 URL:     https://sourceforge.net/projects/drc-fir/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://sourceforge.net/projects/drc-fir/files/drc-fir/%{version}/drc-%{version}.tar.gz
 
 BuildRequires: gsl-devel gcc gcc-c++ make
