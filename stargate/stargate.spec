@@ -6,7 +6,7 @@
 %global __python %{__python3}
 
 Name:    stargate
-Version: 21.11.1
+Version: 21.11.2
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
 License: GPLv3
@@ -15,7 +15,7 @@ URL:     http://github.com/stargateaudio/stargate/
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/stargateaudio/stargate/archive/stargate-%{version}.tar.gz
+Source0: https://github.com/stargateaudio/stargate/archive/refs/tags/release-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: alsa-lib-devel
 BuildRequires: fftw-devel
@@ -52,22 +52,16 @@ Recommends: ffmpeg
 Stargate is digital audio workstations (DAWs), instrument and effect plugins
 
 %prep
-%autosetup
-
-# Deactivate automatic installation of wavefile and pymarshal
-sed -i -e "s/ py_vendor commit_hash/ commit_hash/g" Makefile
-sed -i -e "s/cp -r sg_py_vendor/cp -r /g" Makefile
-# Relocate lib dir into lib64 on 64 bits architecture
-%ifarch x86_64 amd64
-# sed -i -e "s/'lib'/'%{_lib}'/g" sglib/lib/path/linux.py
-%endif
+%autosetup -n %{name}-release-%{version}
 
 %build
-%make_build
+cd src
+%make_build PIP=true
 
 %install
+cd src
 export DONT_STRIP=1
-%make_install
+%make_install PIP=true
 
 desktop-file-install --vendor '' \
         --add-category=Midi \
@@ -81,15 +75,22 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 
 %files
 %doc README.md
+%license LICENSE
 %{_bindir}/stargate
 %{_bindir}/stargate-engine
 %{_bindir}/stargate-engine-dbg
 %{_bindir}/stargate-paulstretch
 %{_bindir}/stargate-sbsms
-%{_datadir}/
-%{_usr}/lib/stargate
+%{_datadir}/doc/stargate/copyright
+%{_datadir}/applications/*
+%{_datadir}/mime/*
+%{_datadir}/pixmaps/*
+%{_datadir}/stargate/*
 
 %changelog
+* Sun Nov 07 2021 Yann Collette <ycollette.nospam@free.fr> - 21.11.2-1
+- update to 21.11.2-1
+
 * Tue Nov 02 2021 Yann Collette <ycollette.nospam@free.fr> - 21.11.1-1
 - initial spec
 
