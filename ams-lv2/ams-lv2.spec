@@ -23,6 +23,9 @@ BuildRequires: cairo-devel
 BuildRequires: lvtk
 BuildRequires: fftw-devel
 
+%description
+AMS LV2 set of plugins synth (from Alsa Modular Synth)
+
 %prep
 %autosetup -n %{name}-%{version}
 

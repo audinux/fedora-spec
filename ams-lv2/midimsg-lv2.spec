@@ -18,6 +18,8 @@ BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel
 BuildRequires: python2
 
+%description
+A collection of basic LV2 plugins to translate midi messages to usable values
 
 %prep
 %autosetup -n %{name}-%{version}
