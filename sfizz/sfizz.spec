@@ -1,5 +1,5 @@
 Name:    sfizz
-Version: 1.1.0
+Version: 1.1.1
 Release: 4%{?dist}
 License: BSD-2-Clause
 Summary: Sampler plugin and library for SFZ instruments
@@ -8,7 +8,7 @@ Url:     https://github.com/sfztools/sfizz
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/sfztools/sfizz/releases/download/1.1.0/sfizz-1.1.0.tar.gz
+Source0: https://github.com/sfztools/sfizz/releases/download/%{version}/sfizz-%{version}.tar.gz
 
 Requires: libsndfile
 
@@ -80,6 +80,9 @@ mv %{buildroot}/%{_libdir}/vst %{buildroot}/%{_libdir}/vst3
 %{_libdir}/pkgconfig/sfizz.pc
 
 %changelog
+* Mon Nov 08 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-4
+- update to 1.1.1-4
+
 * Sun Oct 24 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-4
 - update to 1.1.0-4
 
