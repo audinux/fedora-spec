@@ -40,6 +40,7 @@
 | ProM                | https://github.com/DISTRHO/ProM |
 | Cardinal            | https://github.com/DISTRHO/Cardinal |
 | zynayumi            | https://github.com/zynayumi/zynayumi |
+| loop192             | https://github.com/jean-emmanuel/loop192 |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
@@ -118,10 +119,16 @@ hoafilt.tar.bz2
 
 ## Add desktop files
 
+dgedit
+drumgizmo
+sfizz
+
+## Add *.sh files
+
 ## To be fixed:
 
 None
 
 ## regular update
 
-Stopped at buzztrax
+Stopped at harvid
