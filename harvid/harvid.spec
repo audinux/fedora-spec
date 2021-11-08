@@ -1,18 +1,17 @@
-Name:    harvid
-Version: 0.8.3
-Release: 2%{?dist}
-Summary: harvid -- HTTP Ardour Video Daemon
-URL:     https://github.com/x42/harvid.git
-Group:   Applications/Multimedia
-
 # Tag: Video
 # Type: Standalone
 # Category: Graphic, Tool
 
-
+Name:    harvid
+Version: 0.8.3
+Release: 2%{?dist}
+Summary: harvid -- HTTP Ardour Video Daemon
 License: GPLv2+
 
-# original tarfile can be found here:
+Vendor:       Audinux
+Distribution: Audinux
+
+URL:     https://github.com/x42/harvid
 Source0: https://github.com/x42/harvid/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++ make

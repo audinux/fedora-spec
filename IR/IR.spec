@@ -3,7 +3,6 @@ Name:    impulse-response
 Version: 1.0.1
 Release: 2%{?dist}
 License: GPLv2+ and GPLv3
-Group:   Applications/Multimedia
 URL:     https://musical-artifacts.com/artifacts/252
 
 Vendor:       Audinux

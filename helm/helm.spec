@@ -13,6 +13,9 @@ Summary: A LV2 / Standalone polyphonic synth with lots of modulation
 License: GPLv2+
 URL:     https://github.com/mtytel/helm
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/mtytel/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1: helm.appdata.xml
 
@@ -51,10 +54,7 @@ Features:
 %prep
 %autosetup -n %{name}-%{commit0}
 
-# For Fedora 29
-%if 0%{?fedora} >= 29
-  sed -i -e "114,125d" JUCE/modules/juce_graphics/colour/juce_PixelFormats.h
-%endif
+sed -i -e "114,125d" JUCE/modules/juce_graphics/colour/juce_PixelFormats.h
 
 sed -i "s/\/lib\//\/lib64\//g" Makefile
 

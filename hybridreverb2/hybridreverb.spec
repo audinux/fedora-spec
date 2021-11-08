@@ -9,6 +9,9 @@ Summary: Reverb effect using hybrid impulse convolution
 URL:     https://github.com/jpcima/HybridReverb2
 License: BSL-1.0
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/jpcima/HybridReverb2/releases/download/v%{version}/HybridReverb2-%{version}.tar.gz
 Source1: https://github.com/jpcima/HybridReverb2-impulse-response-database/archive/v1.0.0.zip#/impulse-response-database.zip
 Patch0:  hybridreverb-0001-fix-JUCE-compilation.patch
@@ -89,6 +92,9 @@ desktop-file-install --vendor '' \
 unzip %{SOURCE1}
 install -m 755 -d %{buildroot}/%{_datadir}/HybridReverb2/
 cp -ra HybridReverb2-impulse-response-database-1.0.0/* %{buildroot}/%{_datadir}/HybridReverb2/
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/hybridreverb2.desktop
 
 %files
 %doc README.md

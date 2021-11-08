@@ -4,6 +4,9 @@ Release: 4%{?dist}
 Summary: A VST3 MIDI sequencer
 License: GPLv3
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # Use ./source-stochas.sh to get the sources (latest master for now)
 # ./source-stochas.sh v1.3.5
 

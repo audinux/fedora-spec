@@ -8,12 +8,12 @@ Name:    horgand
 Version: 1.15.0
 Release: 1%{?dist}
 License: GPL
-Group:   Applications/Multimedia
-
 URL:     https://github.com/ycollet/horgand
-Source0: https://github.com/ycollet/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Vendor:       Audinux
+Distribution: Audinux
+
+Source0: https://github.com/ycollet/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: autoconf
@@ -37,34 +37,52 @@ good reason for use a fast computer, there are many others programs who emulate 
 their sound is better, but i program what i need, and just for fun.
 
 %prep
-%setup -qn %{name}-%{commit0}
+%autosetup -n %{name}-%{commit0}
 
 %build
 
 ./autogen.sh
 %configure --libdir=%{_libdir}
 
-%{__make} DESTDIR=%{buildroot} %{_smp_mflags} CFLAGS="-fPIC %{__global_cflags}" CXXFLAGS="-fPIC %{__global_cflags}"
+%make_build CFLAGS="-fPIC %{__global_cflags}" CXXFLAGS="-fPIC %{__global_cflags}"
 
 %install
 
-%{__rm} -rf %{buildroot}
-%{__make} DESTDIR=%{buildroot} %{_smp_mflags} install
+%make_install
+mkdir -p %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/
+cp src/horgand128.xpm %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/horgand.xpm
 
-# desktop file categories
-BASE="X-Fedora Application AudioVideo"
-XTRA="X-Synthesis X-MIDI X-Jack"
+mkdir -p %{buildroot}/%{_datadir}/applications/
 
-%clean
-%{__rm} -rf %{buildroot}
+cat > %{buildroot}/%{_datadir}/applications/%{name}.desktop <<EOF
+[Desktop Entry]
+Version=1.0
+Name=Horgand
+Comment=Organ
+Exec=horgand
+Icon=horgand
+Terminal=false
+Type=Application
+Categories=Audio;
+EOF
+
+desktop-file-install                         \
+  --add-category="Audio;AudioVideo"	     \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%defattr(-,root,root,-)
 %doc AUTHORS ChangeLog INSTALL NEWS README
 %license COPYING
 %{_bindir}/%{name}
 %{_datadir}/man/*
 %{_datadir}/horgand/*
+%{_datadir}/applications/*
+%{_datadir}/icons/*
 
 %changelog
 * Mon Oct 15 2018 Yann Collette <ycollette dot nospam at free.fr> 1.15.0-1

@@ -7,11 +7,14 @@
 
 Name:    lvtk
 Version: 2.0.0.%{shortcommit0}
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: LV2 Toolkit
 License: GPLv2+
-URL:     https://github.com/lvtk/lvtk
 
+Vendor:       Audinux
+Distribution: Audinux
+
+URL:     https://github.com/lvtk/lvtk
 Source0: https://github.com/lvtk/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
@@ -27,12 +30,9 @@ was mostly done by Lars Luthman in lv2-c++-tools.
 %prep
 %autosetup -n %{name}-%{commit0}
 
-%build
+find . -type f -exec sed -i -e "s/env python/env python2/g" {} \;
 
-# For Fedora 29
-%if 0%{?fedora} >= 29
-  find . -type f -exec sed -i -e "s/env python/env python2/g" {} \;
-%endif
+%build
 
 %set_build_flags
 

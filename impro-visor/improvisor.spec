@@ -12,18 +12,19 @@
 
 Name:     Impro-Visor
 Version:  %{maj}.%{min}
-Release:  1
+Release:  2%{?dist}
 Summary:  Impro-Visor is a music notation program for jazz musicians
 License:  GPL
 
-URL:      http://www.cs.hmc.edu/~keller/jazz/improvisor/
-Source0:  https://sourceforge.net/projects/impro-visor/files/Impro-Visor%2010.2%20Release/Impro-Visor_unix_%{maj}_%{min}.tar.gz
-Source1:  %{name}.sh
-Source2:  %{name}.png
+Vendor:       Audinux
+Distribution: Audinux
+
+URL:     http://www.cs.hmc.edu/~keller/jazz/improvisor/
+Source0: https://sourceforge.net/projects/impro-visor/files/Impro-Visor%2010.2%20Release/Impro-Visor_unix_%{maj}_%{min}.tar.gz
+Source1: %{name}.sh
+Source2: %{name}.png
 
 BuildArch: noarch
-
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires: unzip
 BuildRequires: desktop-file-utils
@@ -36,8 +37,6 @@ Requires(postun): jpackage-utils
 %endif
 Requires: ant
 Requires: java >= 1.5
-
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Impro-Visor (short for Improvisation Advisor) is a music notation
@@ -87,19 +86,14 @@ Imaginary Book, a large set (over 1600) of chords-only lead
 sheets for standard and jazz tunes.
 
 %prep
-%setup -q -c %{name}
-
-rm -rf %{name}%{maj}.%{min}/sc
+%autosetup -n %{name}%{version}
 
 %build
 
 %install
 
-# jars
-cd %{name}%{maj}.%{min}
-
-%__install -dm 755 %{buildroot}%{_javadir}
-%__install -m 644 improvisor.jar %{buildroot}%{_javadir}/%{name}-%{version}.jar
+install -dm 755 %{buildroot}%{_javadir}
+install -m 644 improvisor.jar %{buildroot}%{_javadir}/%{name}-%{version}.jar
 
 pushd %{buildroot}%{_javadir}
 for jar in *-%{version}*; do
@@ -107,43 +101,43 @@ for jar in *-%{version}*; do
 done
 popd
 
-%__install -dm 755 %{buildroot}%{_datadir}/%{name}
+install -dm 755 %{buildroot}%{_datadir}/%{name}
 for i in grammars styleExtract styles; do
-    %__install -dm 755 %{buildroot}%{_datadir}/%{name}/$i
-    %__install -m 644 $i/* %{buildroot}%{_datadir}/%{name}/$i
+    install -dm 755 %{buildroot}%{_datadir}/%{name}/$i
+    install -m 644 $i/* %{buildroot}%{_datadir}/%{name}/$i
 done
-%__install -dm 755 %{buildroot}%{_datadir}/%{name}/vocab
-%__cp -a vocab/* %{buildroot}%{_datadir}/%{name}/vocab
+install -dm 755 %{buildroot}%{_datadir}/%{name}/vocab
+cp -a vocab/* %{buildroot}%{_datadir}/%{name}/vocab
 
-%__install -dm 755 %{buildroot}%{_datadir}/%{name}/leadsheets
-%__cp -a leadsheets/* %{buildroot}%{_datadir}/%{name}/leadsheets
+install -dm 755 %{buildroot}%{_datadir}/%{name}/leadsheets
+cp -a leadsheets/* %{buildroot}%{_datadir}/%{name}/leadsheets
 
-%__install -dm 755 %{buildroot}%{_datadir}/%{name}/connectomes
-%__cp -a connectomes/* %{buildroot}%{_datadir}/%{name}/connectomes
+install -dm 755 %{buildroot}%{_datadir}/%{name}/connectomes
+cp -a connectomes/* %{buildroot}%{_datadir}/%{name}/connectomes
 
-%__install -dm 755 %{buildroot}%{_datadir}/%{name}/midi
-%__cp -a midi/* %{buildroot}%{_datadir}/%{name}/midi
+install -dm 755 %{buildroot}%{_datadir}/%{name}/midi
+cp -a midi/* %{buildroot}%{_datadir}/%{name}/midi
 
-%__install -dm 755 %{buildroot}%{_datadir}/%{name}/voicings
-%__cp -a voicings/* %{buildroot}%{_datadir}/%{name}/voicings
+install -dm 755 %{buildroot}%{_datadir}/%{name}/voicings
+cp -a voicings/* %{buildroot}%{_datadir}/%{name}/voicings
 
-%__install -dm 755 %{buildroot}%{_datadir}/%{name}/transforms
-%__cp -a transforms/* %{buildroot}%{_datadir}/%{name}/transforms
+install -dm 755 %{buildroot}%{_datadir}/%{name}/transforms
+cp -a transforms/* %{buildroot}%{_datadir}/%{name}/transforms
 
-%__install -dm 755 %{buildroot}%{_datadir}/%{name}/fractals
-%__cp -a fractals/* %{buildroot}%{_datadir}/%{name}/fractals
+install -dm 755 %{buildroot}%{_datadir}/%{name}/fractals
+cp -a fractals/* %{buildroot}%{_datadir}/%{name}/fractals
 
-%__install -dm 755 %{buildroot}%{_datadir}/%{name}/counts
-%__cp -a counts/* %{buildroot}%{_datadir}/%{name}/counts
+install -dm 755 %{buildroot}%{_datadir}/%{name}/counts
+cp -a counts/* %{buildroot}%{_datadir}/%{name}/counts
 
 # startscript
-%__install -dm 755 %{buildroot}%{_bindir}
-%__install -m 755 %{SOURCE1} %{buildroot}%{_bindir}
+install -dm 755 %{buildroot}%{_bindir}
+install -m 755 %{SOURCE1} %{buildroot}%{_bindir}
 
 # icon and menu-entry
-%__install -dm 755 %{buildroot}%{_datadir}/pixmaps
-%__install -m 644 %{SOURCE2} %{buildroot}%{_datadir}/pixmaps
-%__install -dm 755 %{buildroot}%{_datadir}/applications
+install -dm 755 %{buildroot}%{_datadir}/pixmaps
+install -m 644 %{SOURCE2} %{buildroot}%{_datadir}/pixmaps
+install -dm 755 %{buildroot}%{_datadir}/applications
 
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
@@ -159,43 +153,40 @@ MimeType=application/x-%{name};
 Categories=Audio;X-Sound
 EOF
 
-%clean
-rm -rf %{buildroot}
+desktop-file-install                         \
+  --add-category="Audio;AudioVideo"	     \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%defattr(-,root,root,-)
-%doc Impro-Visor%{maj}.%{min}/*.txt
+%doc README.txt
+%license LICENSE.txt
 %{_bindir}/%{name}.sh
 %{_javadir}/*.jar
-%dir %{_datadir}/%{name}
-%dir %{_datadir}/%{name}/grammars
 %{_datadir}/%{name}/grammars/*
-%dir %{_datadir}/%{name}/leadsheets
 %{_datadir}/%{name}/leadsheets/*
-%dir %{_datadir}/%{name}/styles
 %{_datadir}/%{name}/styles/*
-%dir %{_datadir}/%{name}/styleExtract
 %{_datadir}/%{name}/styleExtract/*
-%dir %{_datadir}/%{name}/vocab
 %{_datadir}/%{name}/vocab/*
-%dir %{_datadir}/%{name}/connectomes
 %{_datadir}/%{name}/connectomes/*
-%dir %{_datadir}/%{name}/midi
 %{_datadir}/%{name}/midi/*
-%dir %{_datadir}/%{name}/voicings
 %{_datadir}/%{name}/voicings/*
-%dir %{_datadir}/%{name}/transforms
 %{_datadir}/%{name}/transforms/*
-%dir %{_datadir}/%{name}/fractals
 %{_datadir}/%{name}/fractals/*
-%dir %{_datadir}/%{name}/counts
 %{_datadir}/%{name}/counts/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png
 
 %changelog
-* Wed Nov 13 2019 Yann Collette <ycollette.nospam@free.fr> - 10.2
-- update to 10.2
+* Mon Nov 08 2021 Yann Collette <ycollette.nospam@free.fr> - 10.2-2
+- update to 10.2-2
+
+* Wed Nov 13 2019 Yann Collette <ycollette.nospam@free.fr> - 10.2-1
+- update to 10.2-1
 
 * Wed Jan 23 2019 Yann Collette <ycollette dot nospam at free.fr> 10.1
 - upgrade to 10.1

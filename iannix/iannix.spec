@@ -10,12 +10,16 @@ Summary: A graphic / MIDI / OSC player
 URL:     https://github.com/iannix/Iannix
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/iannix/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1: iannix.xml
 Patch0:  iannix-0001-fix-missing-glew.patch
 Patch1:  iannix-0002-add-missing-header.patch
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtscript-devel
 BuildRequires: glew-devel
@@ -60,6 +64,9 @@ desktop-file-install --vendor '' \
         --add-category=X-Jack \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
 %doc Readme.md

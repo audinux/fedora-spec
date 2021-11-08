@@ -1,3 +1,7 @@
+# Tag: Modular, Jack, Alsa
+# Type: Plugin, LV2
+# Category: Audio, Synthesizer
+
 # Global variables for github repository
 %global commit0 83f318d3c43892af7627e25ef12dc656d6f478a0
 %global gittag0 master
