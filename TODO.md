@@ -39,7 +39,6 @@
 |                     | - all: https://launchpad.net/~kxstudio-debian/+archive/ubuntu/plugins/+sourcefiles/teragonaudio-plugins/5:20140325.3/teragonaudio-plugins_20140325.3.tar.gz |
 | ProM                | https://github.com/DISTRHO/ProM |
 | Cardinal            | https://github.com/DISTRHO/Cardinal |
-| zynayumi            | https://github.com/zynayumi/zynayumi |
 | loop192             | https://github.com/jean-emmanuel/loop192 |
 
 ## Cleanup
@@ -62,14 +61,8 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/*%{name}.*
 Vendor:       Audinux
 Distribution: Audinux
 
-## Add missing desktop files
-- protracker
-
 ## Check before packaging:
 remove -march=native from Makefiles if it's present
-
-## lvtk
-fix pkgconfig file installation
 
 ## Fix debug generation:
 
@@ -79,13 +72,10 @@ fix pkgconfig file installation
 | improviz/improviz.spec         | (Cabal ...) |
 | processing/processing.spec     | precompiled java package -> noarch ... |
 | ams-lv2/lvtk.spec              | static library |
-| psi-plugins                    | error with fedora 33 + lv2-devel |
 | picoloop/picoloop.spec         | complex ... |
 | orca/orca.spec                 | really special build system |
-| performer/performer.spec       | ui_setlist.h missing - cmake 3.18 pb probably |
-| socallab/SocaLabs-plugins.spec | build fails because of a default juce path / maybe use juce 5.4 ... |
-| surge/stochas.spec             | jucaid compilation pb - maybe due tu %set_build_flags ... |
 | zrythm/ztoolkit                | it's a static library ... |
+| zrythm/zrythm                  | embedded glibc problem |
 | ossia/ossia-score.spec         | don't build anymore. Wait for next release |
 
 ## Tag list:
@@ -122,6 +112,8 @@ hoafilt.tar.bz2
 dgedit
 drumgizmo
 sfizz
+horgand
+improviz
 
 ## Add *.sh files
 
@@ -131,4 +123,4 @@ None
 
 ## regular update
 
-Stopped at harvid
+Stopped at jack-mixer
