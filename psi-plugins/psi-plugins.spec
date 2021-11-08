@@ -11,6 +11,7 @@ License: GPL
 URL:     https://github.com/ycollet/psi-plugins
 
 Source0: https://github.com/ycollet/psi-plugins/archive/%{commit0}.tar.gz#/psi-plugins-%{shortcommit0}.tar.gz
+Patch0:  psi-plugins-lv2ui-descriptor.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel
@@ -28,11 +29,13 @@ electronic music.
 
 %package -n lv2-midi_gate-psi
 Summary: PSI Plugins / Midi Gate LV2 plugin
+
 %description -n lv2-midi_gate-psi
 This is a stereo gate MIDI based on the example LV2 midi gate plugin by Dave Robillard
 
 %package -n lv2-midi_rnd-psi
 Summary: PSI Plugins / Midi Rnd LV2 plugin
+
 %description -n lv2-midi_rnd-psi
 midi_rnd is a simple MIDI random note generator for the inspirationally bereft.
 
@@ -46,18 +49,20 @@ NoteOn messages may be left hanging.
 
 %package -n lv2-sidechain_gate-psi
 Summary: PSI Plugins / Sidechain Gate LV2 plugin
+
 %description -n lv2-sidechain_gate-psi
 This is a stereo gate with optional sidechain input based on the Gate plugin by Steve Harris. 
 
 %package -n lv2-super_welle
 Summary: PSI Plugins / Super Welle LV2 plugin
+
 %description -n lv2-super_welle
 super_welle is a 2x16 oscillator virtual analog synthesizer. Originally it 
 started out as an experiment in simulating the super saw of the 
 Roland JP8000/JP8080 but has since widened is scope. 
 
 %prep
-%autosetup -n psi-plugins-%{commit0}
+%autosetup -p1 -n psi-plugins-%{commit0}
 
 %build
 
