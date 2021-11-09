@@ -114,6 +114,9 @@ drumgizmo
 sfizz
 horgand
 improviz
+juce
+cadence
+carla
 
 ## Add *.sh files
 
@@ -123,4 +126,4 @@ None
 
 ## regular update
 
-Stopped at jack-mixer
+Stopped at mammut
