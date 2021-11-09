@@ -15,13 +15,15 @@
 # Type: Plugin, LV2, VST
 # Category: Audio, Effect
 
-
 Name:    ChowCentaur
 Version: 1.4.0
 Release: 1%{?dist}
 Summary: Digital emulation of the Klon Centaur guitar pedal
 License: BSD-3-Clause
 URL:     https://github.com/jatinchowdhury18/KlonCentaur
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # to generater code archive:
 # ./source_chowcentaur.sh <tag>

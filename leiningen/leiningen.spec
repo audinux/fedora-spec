@@ -1,12 +1,19 @@
+# Tag: Editor
+# Type: Standalone, Language
+# Category: Audio, Programming
+
 Name:    leiningen
-Version: 2.9.4
+Version: 2.9.7
 Release: 1%{?dist}
 Summary: Clojure project automation tool
 License: EPL
 URL:     https://github.com/technomancy/leiningen
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/technomancy/leiningen/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Source1: https://github.com/technomancy/leiningen/releases/download/%{version}/leiningen-%{version}-standalone.zip
+Source1: https://github.com/technomancy/leiningen/releases/download/%{version}/leiningen-%{version}-standalone.jar
 Source2: https://github.com/technomancy/leiningen/raw/%{version}/bin/lein
 
 BuildArch: noarch
@@ -63,6 +70,9 @@ sed -i -e "/export LEIN_VERSION/i LEIN_JAR=/usr/share/java/leiningen-%{version}-
 %{_datadir}/pixmaps/%{name}.png
 
 %changelog
+* Tue Nov 09 2021 Yann Collette <ycollette.nospam@free.fr> - 2.9.7-1
+- update to 2.9.7-1
+
 * Wed Oct 28 2020 Yann Collette <ycollette.nospam@free.fr> - 2.9.4-1
 - update to 2.9.4-1
 

@@ -3,12 +3,13 @@
 # Category: Audio, Sampler
 # GUIToolkit: Qt5
 
-Summary:      LinuxSampler GUI front-end
-Name:         qsampler
-Version:      0.9.3
-Release:      2%{?dist}
-License:      GPL
-URL:          https://qsampler.sourceforge.net/qsampler-index.html
+Summary: LinuxSampler GUI front-end
+Name:    qsampler
+Version: 0.9.3
+Release: 2%{?dist}
+License: GPL
+URL:     https://qsampler.sourceforge.net/qsampler-index.html
+
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA
 
@@ -19,6 +20,7 @@ BuildRequires: gcc-c++
 BuildRequires: libtool
 BuildRequires: automake
 BuildRequires: autoconf
+BuildRequires: make
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtx11extras-devel
 BuildRequires: libgig-devel

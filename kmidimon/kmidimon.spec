@@ -58,13 +58,17 @@ rm %{buildroot}%{_datadir}/doc/HTML/ja/kmidimon/common
 BASE="Application AudioVideo Audio"
 XTRA="X-MIDI Midi"
 
-%{__mkdir} -p %{buildroot}%{_datadir}/applications
+mkdir -p %{buildroot}%{_datadir}/applications
+
 desktop-file-install --vendor %{desktop_vendor} \
   --dir %{buildroot}%{_datadir}/applications    \
   `for c in ${BASE} ${XTRA} ; do echo "--add-category $c " ; done` \
   %{SOURCE1}
 
 %{find_lang} kmidimon
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 %files -f kmidimon.lang
 %defattr(-,root,root,-)

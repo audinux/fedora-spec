@@ -12,7 +12,6 @@
 
 %global __provides_exclude ^(%{privlibs})\\.so
 %global __requires_exclude ^(%{privlibs})\\.so
-#
 
 # Note from upstream:
 # the SDL playback plugin is now deprecated in favour of the openGL playback plugin.

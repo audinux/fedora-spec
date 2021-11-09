@@ -5,6 +5,9 @@ Release: 8%{?dist}
 License: BSD
 URL:     https://github.com/stump/%{name}
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: %{url}/archive/%{name}-%{version}.tar.gz
 Patch0: libsmf-0001-Fix-buffer-overflow-on-tempo-change-event.patch
 Patch1: libsmf-0002-Fix-validity-checks-of-escaped-data.patch

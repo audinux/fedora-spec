@@ -1,4 +1,3 @@
-
 # Tag: Jack
 # Type: Standalone
 # Category: Audio, Tool
@@ -10,12 +9,16 @@ Summary: JACK control center
 License: GPLv2+
 URL:     https://github.com/falkTX/Cadence
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/falkTX/Cadence/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0:  cadence_001_fedora_support.patch
 Patch1:  cadence_002_add_missing_include.patch
 
 BuildRequires: gcc
 BuildRequires: gcc-c++
+BuildRequires: make
 BuildRequires: python3-qt4-devel
 BuildRequires: python3-qt5-devel
 BuildRequires: qt-devel

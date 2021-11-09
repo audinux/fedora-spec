@@ -17,7 +17,7 @@ Distribution: Audinux
 URL:     https://github.com/lvtk/lvtk
 Source0: https://github.com/lvtk/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc gcc-c++ make
 BuildRequires: lv2-devel
 BuildRequires: python2
 BuildRequires: gtkmm24-devel

@@ -2,9 +2,11 @@ Name:    linux-show-player
 Version: 0.5.2
 Release: 1%{?dist}
 Summary: A Cue player designed for stage productions
-
 License: GPLv2+
 URL:     https://github.com/FrancescoCeruti/linux-show-player
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/FrancescoCeruti/linux-show-player/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
@@ -52,6 +54,9 @@ desktop-file-install                         \
   --delete-original                          \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}%{_datadir}/applications/linuxshowplayer.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/linuxshowplayer.desktop
 
 %files
 %doc README.md

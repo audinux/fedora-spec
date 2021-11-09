@@ -2,18 +2,19 @@
 # Type: Devel
 # Category: Audio
 
-Summary:      C++ library for loading Gigasampler files and DLS Level 1/2 files.
-Name:         libgig
-Version:      4.3.0
-Release:      1%{dist}
-License:      GPL
+Summary: C++ library for loading Gigasampler files and DLS Level 1/2 files.
+Name:    libgig
+Version: 4.3.0
+Release: 1%{dist}
+License: GPL
+URL:     https://www.linuxsampler.org
+
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA
-URL:          https://www.linuxsampler.org
 
 Source0: http://download.linuxsampler.org/packages/libgig-%{version}.tar.bz2
 
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc gcc-c++ make
 BuildRequires: automake autoconf libtool pkgconfig
 BuildRequires: libsndfile-devel audiofile-devel doxygen
 BuildRequires: libuuid-devel

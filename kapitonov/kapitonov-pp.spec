@@ -12,12 +12,11 @@ Version: 1.2.1
 Release: 2%{?dist}
 Summary: Kapitonov Plugins Pack for guitar
 URL:     https://github.com/olegkapitonov/Kapitonov-Plugins-Pack
-Group:   Applications/Multimedia
 License: GPLv2+
 
 Source0: https://github.com/olegkapitonov/Kapitonov-Plugins-Pack/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
-BuildRequires: gcc gcc-c++ sed
+BuildRequires: gcc gcc-c++ make sed
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: lv2-devel
 BuildRequires: ladspa-devel
@@ -58,15 +57,12 @@ A set of plugins for guitar sound processing - LADSPA version
 %build
 
 %set_build_flags
-VERBOSE=1 meson --prefix=/usr -Dlv2dir=%{_lib}/lv2 -Dladspadir=%{_lib}/ladspa build
-cd build
-
-%ninja_build
+%meson -Dlv2dir=%{_lib}/lv2 -Dladspadir=%{_lib}/ladspa
+%meson_build
 
 %install
 
-cd build
-%ninja_install
+%meson_install
 
 %files -n ladspa-kpp-plugins
 %{_libdir}/ladspa/*

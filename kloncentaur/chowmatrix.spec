@@ -9,6 +9,9 @@ Summary: Matrix delay effect
 License: BSD-3-Clause
 URL:     https://github.com/Chowdhury-DSP/ChowMatrix
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # to generater code archive:
 # ./source_chowmatrix.sh <tag>
 # ./source_chowmatrix.sh 1.2.0

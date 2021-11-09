@@ -11,6 +11,9 @@ Summary: A set of LV2 plugins
 License: GPLv2+
 URL:     https://github.com/DISTRHO/DISTRHO-Ports
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/DISTRHO/DISTRHO-Ports/archive/%{gittag0}.tar.gz#/%{name}-%{gittag0}.tar.gz
 
 BuildRequires: gcc gcc-c++

@@ -9,6 +9,9 @@ Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/sadko4u/lsp-plugins
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./lsp-sources.sh 1.1.30
 
 Source0: lsp-plugins.tar.gz

@@ -11,11 +11,14 @@ Summary: A rack manager JACK
 License: GPLv2+
 URL:     https://github.com/falkTX/Carla
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/falkTX/Carla/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: carla-change-lib.sh
 Source2: carla-change-py.sh
 
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc gcc-c++ make
 BuildRequires: python-qt5-devel
 BuildRequires: liblo-devel
 BuildRequires: alsa-lib-devel

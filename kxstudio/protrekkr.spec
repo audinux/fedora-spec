@@ -1,3 +1,7 @@
+# Tag: MIDI, FM, Tracker
+# Type: Standalone
+# Category: Audio, Synthesizer, Sequencer
+
 # Global variables for github repository
 %global commit0 0b96ba56379eb179423e9dcbec31a08bf0326c9f
 %global gittag0 master
@@ -10,10 +14,13 @@ Summary: A jack tracker
 License: GPLv2+
 URL:     https://github.com/falkTX/protrekkr
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/falkTX/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1: protrekkr-makefile.linux
 
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc gcc-c++ make
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: SDL-devel
@@ -73,6 +80,15 @@ install -m 644 release/distrib/skins/* %{buildroot}%{_datadir}/%{name}/skins/
 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/
 install -m 644 protrekkr.jpg %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/%{name}.jpg
+
+desktop-file-install                         \
+  --add-category="Audio;AudioVideo"	     \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
 %doc README

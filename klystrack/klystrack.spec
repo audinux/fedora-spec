@@ -1,12 +1,11 @@
-# Global variables for github repository
-%global commit0 1a0c8afc1187a0e7aa98074a63a6a360eec04b87
-%global gittag0 v1.7.6
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 # Tag: MIDI, FM, Tracker
 # Type: Standalone
 # Category: Audio, Synthesizer, Sequencer
 
+# Global variables for github repository
+%global commit0 1a0c8afc1187a0e7aa98074a63a6a360eec04b87
+%global gittag0 v1.7.6
+%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Summary: Chiptune tracker for making chiptune-like music on a modern computer.
 Name:    klystrack
@@ -14,6 +13,9 @@ Version: 1.7.6
 Release: 4%{?dist}
 License: GPL
 URL:     https://kometbomb.github.io/klystrack/
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # To get the source archive:
 # ./klystrack-source.sh v1.7.6
@@ -46,7 +48,6 @@ Tracker for making C64/NES/Amiga-style chiptunes on a modern platform.
 - Effects: Stereo chorus ; SNES-style multitap echo ; Bit crusher/decimator
 - Export: custom format ; Wav ...
 - Import: Wav ; ProTracker, FT2 ; C64 SID files ...
-
 
 %prep
 %autosetup -n %{name}

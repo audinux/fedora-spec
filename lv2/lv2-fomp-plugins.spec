@@ -2,12 +2,15 @@ Name:    lv2-fomp-plugins
 Version: 1.2.0
 Release: 14%{?dist}
 Summary: A collection of LV2 plugins
-
 License: GPLv2+
 URL:     http://drobilla.net/
+
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: http://deb.debian.org/debian/pool/main/f/fomp/fomp_1.2.0.orig.tar.bz2
 
-BuildRequires: gcc-c++
+BuildRequires: gcc-c++ make
 BuildRequires: lv2-devel
 BuildRequires: python2
 

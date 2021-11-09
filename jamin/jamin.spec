@@ -1,21 +1,23 @@
-Name:          jamin
-Summary:       JACK Audio Connection Kit (JACK) Audio Mastering interface
-Version:       0.97.16
-Release:       21.20201014cvs%{?dist}
-License:       GPLv2+
-URL:           http://jamin.sourceforge.net
-Source0:       %{name}-%{version}-20201014cvs.tar.bz2
+Name:    jamin
+Summary: JACK Audio Connection Kit (JACK) Audio Mastering interface
+Version: 0.97.16
+Release: 21.20201014cvs%{?dist}
+License: GPLv2+
+URL:     http://jamin.sourceforge.net
+
+Source0: %{name}-%{version}-20201014cvs.tar.bz2
 # To fetch the sources:
-Source1:       %{name}-snapshot.sh
+Source1: %{name}-snapshot.sh
 # Fix DSO-linking failure
 # http://sourceforge.net/tracker/?func=detail&aid=2948900&group_id=78441&atid=553292
-Patch0:        %{name}-linking.patch
+Patch0:  %{name}-linking.patch
 # Spectrum views enhancement & small eq fixes
 # http://sourceforge.net/tracker/?func=detail&aid=1902205&group_id=78441&atid=553292
-Patch1:        %{name}-spectrum.patch
+Patch1:  %{name}-spectrum.patch
 # Fix FTBFS with GCC 10
-Patch2:        %{name}-gcc10.patch
+Patch2:  %{name}-gcc10.patch
 
+BuildRequires: gcc make
 BuildRequires: desktop-file-utils
 BuildRequires: fftw-devel
 BuildRequires: gettext
@@ -73,6 +75,9 @@ desktop-file-install                            \
 rm -f %{buildroot}%{_libdir}/ladspa/*.la
 
 %find_lang %{name}
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files -f %{name}.lang
 %doc AUTHORS ChangeLog TODO

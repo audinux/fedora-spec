@@ -5,6 +5,9 @@ Summary: A reverb effect in which the reflections can be frozen, filtered, pitch
 URL:     https://github.com/linuxmao-org/fogpad-port
 License: MIT
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # To get the sources:
 # ./fogpad-port-source.sh v1.0.0
 

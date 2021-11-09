@@ -3,15 +3,15 @@ Name:    dexed-extra-presets
 Version: 1.0.1
 Release: 3%{?dist}
 License: GPLv2+ and GPLv3 and Green OpenMusic
-Group:   Applications/Multimedia
 URL:     https://asb2m10.github.io/dexed/
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: http://ycollette.free.fr/Milkdrop/DX7_AllTheWeb.zip
 Source1: http://ycollette.free.fr/Milkdrop/3221-Dexed_cart_1.0.zip
 Source2: http://ycollette.free.fr/Milkdrop/SynLib_DX_TX_Marc_Bareille.zip
 Source3: http://ycollette.free.fr/Milkdrop/dx7patch.zip
-
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildArch: noarch
 
@@ -52,9 +52,6 @@ mv README README-dx7patch
 cd $RPM_BUILD_ROOT%{_datadir}/dexed/presets/
 find . -name "*.syx" -exec chmod a+rw {} \;
 find . -type d -exec chmod u+rwx,g+rx-w,o+rx-w {} \;
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %{_datadir}/dexed/presets/alltheweb/*

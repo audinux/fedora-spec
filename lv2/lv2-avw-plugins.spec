@@ -10,6 +10,9 @@ Summary: A port of the AMS internal modules to LV2 plugins
 License: GPLv2
 URL:     https://github.com/harryhaaren/avw.lv2
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/harryhaaren/avw.lv2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc-c++

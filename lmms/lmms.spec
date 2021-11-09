@@ -33,6 +33,9 @@ AutoReqProv: no
 #       system's fltk)
 License: GPLv2+ and GPLv2 and (GPLv2+ or MIT) and GPLv3+ and MIT and LGPLv2+ and (LGPLv2+ with exceptions) and Copyright only
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./lmms-source.sh <tag>
 # ./lmms-source.sh v1.2.2
 
@@ -138,6 +141,9 @@ desktop-file-install --vendor '' \
         --add-category=X-Jack \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/lmms.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/lmms.desktop
 
 %files
 %doc doc/AUTHORS README.md INSTALL.txt

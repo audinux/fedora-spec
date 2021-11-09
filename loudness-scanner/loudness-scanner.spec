@@ -5,6 +5,9 @@ Summary: A loudness scanner (according to the EBU R128 standard)
 URL:     https://github.com/jiixyj/loudness-scanner
 License: MIT
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./loudness-scanner-source.sh <tag>
 # ./loudness-scanner-source.sh v0.5.1
 

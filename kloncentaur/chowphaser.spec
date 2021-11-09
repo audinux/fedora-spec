@@ -9,6 +9,9 @@ Summary: Phaser effect based loosely on the Schulte Compact Phasing 'A'
 License: BSD-3-Clause
 URL:     https://github.com/jatinchowdhury18/ChowPhaser
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # to generater code archive:
 # ./source_chowphaser.sh <tag>
 # ./source_chowphaser.sh 1.1.1

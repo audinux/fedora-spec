@@ -9,8 +9,10 @@ Release: 13%{?dist}
 # The rest is GPLv2+
 # The author claims GPLv2 for the software
 License: LGPLv2+ and GPLv2 and GPLv2+
-Group:   Applications/Multimedia
 URL:     http://nedko.arnaudov.name/soft/lv2fil/
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source:  https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/lv2fil/2.0+20100312.git18130f5a+dfsg0-2/lv2fil_2.0+20100312.git18130f5a+dfsg0.orig.tar.gz#/lv2fil-2.0.tar.gz
 
@@ -75,7 +77,6 @@ chmod 755 %{buildroot}%{_libdir}/lv2/filter.lv2/ui
 %doc AUTHORS README NEWS
 %license COPYING
 %{_libdir}/lv2/filter.lv2/
-
 
 %changelog
 * Wed Nov 6 2019 Yann Collette <ycollette.nospam@free.fr> - 2.0-13

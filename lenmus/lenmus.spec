@@ -5,6 +5,9 @@ Summary: An app to study music theory and train you ear
 License: GPLv2+
 URL:     https://github.com/lenmus/lenmus
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/lenmus/lenmus/archive/Release_%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: FindPortMidi.cmake
 
@@ -67,6 +70,9 @@ desktop-file-install --vendor '' \
         --add-category=Audio \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
 %doc AUTHORS CHANGELOG.md INSTALL README.md NEWS THANKS

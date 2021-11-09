@@ -7,14 +7,14 @@ Name:    lomse
 Version: 0.20.0.%{shortcommit0}
 Release: 1%{?dist}
 Summary: A free open source library for rendering music scores
-Group:   Applications/Multimedia
 License: GPLv2+
-
 URL:     https://github.com/lenmus/lomse
+
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/lenmus/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Patch0:  lomse_0001-fix-install.patch
-
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires: gcc gcc-c++
 BuildRequires: boost-devel
@@ -35,8 +35,7 @@ Requires:       %{name} = %{version}-%{release}
 The %{name}-devel package contains header files for %{name}.
 
 %prep
-%setup -qn %{name}-%{commit0}
-%patch0 -p1
+%autosetup -p1 -n %{name}-%{commit0}
 
 %build
 
@@ -47,14 +46,15 @@ The %{name}-devel package contains header files for %{name}.
        -DLIBDIR=%{_lib} \
        .
 
-make VERBOSE=1 %{?_smp_mflags}
+%cmake_build
 
 %install
 
-make DESTDIR=%{buildroot} install
+%cmake_install
 
 %files
-%doc AUTHORS.md CHANGELOG.md README.md NEWS THANKS LICENSE CONTRIBUTING.md
+%doc AUTHORS.md CHANGELOG.md README.md NEWS THANKS CONTRIBUTING.md
+%license LICENSE
 %{_libdir}/*
 %{_datadir}/%{name}/fonts/*
 

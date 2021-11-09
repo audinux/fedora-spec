@@ -8,8 +8,10 @@ Version: 1.3.0.%{shortcommit0}
 Release: 4%{?dist}
 Summary: A LV2 Synthesizer launcher for Jack audio
 URL:     https://github.com/brummer10/jalv_select
-
 License: GPLv2+
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/brummer10/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
@@ -46,6 +48,9 @@ desktop-file-install --vendor '' \
         --add-category=X-Jack \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/jalv.select.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/jalv.select.desktop
 
 %files
 %doc README.md

@@ -8,6 +8,7 @@ Version:      1.2.0
 Release:      2%{?dist}
 License:      GPL2
 URL:          http://www.linuxsampler.org/
+
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA
 

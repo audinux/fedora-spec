@@ -2,18 +2,19 @@
 # Type: Devel
 # Category: Audio
 
-Summary:      LinuxSampler Control Protocol library
-Name:         liblscp
-Version:      0.9.3
-Release:      1%{?dist}
-License:      GPL
-URL:          https://www.linuxsampler.org
+Summary: LinuxSampler Control Protocol library
+Name:    liblscp
+Version: 0.9.3
+Release: 1%{?dist}
+License: GPL
+URL:     https://www.linuxsampler.org
+
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA
 
 Source0: http://download.linuxsampler.org/packages/liblscp-%{version}.tar.gz
 
-BuildRequires: automake, autoconf, libtool
+BuildRequires: automake autoconf libtool make
 BuildRequires: linuxsampler-devel
 BuildRequires: gcc gcc-c++
 
