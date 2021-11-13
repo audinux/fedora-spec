@@ -3,7 +3,7 @@
 # Usage: ./lives-source.sh <TAG>
 # ./lives-source.sh master
 
-git clone https://github.com/salsaman/LiVES
+git clone --recursive https://github.com/salsaman/LiVES
 cd LiVES
 git checkout $1
 git submodule init

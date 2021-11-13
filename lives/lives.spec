@@ -31,7 +31,7 @@ Distribution: Audinux
 
 Source0: LiVES.tar.gz
 Source1: LiVES.appdata.xml
-Source2: lives-source.sh
+Source2: lives-sources.sh
 
 BuildRequires: pkgconfig(jack)
 BuildRequires: pkgconfig(libpulse)
@@ -128,20 +128,19 @@ find . -type f -name "*.c" -exec chmod 0644 '{}' \;
 
 %install
 %make_install
-%find_lang %{name}
 
 # Remove libtools archives and static libraries
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
 find %{buildroot} -name '*.a' -exec rm -f {} ';'
 
 # Move icon
-mkdir -p %{buildroot}%{_datadir}/icons/%{name}
-mv %{buildroot}%{_datadir}/app-install/icons/%{name}.png %{buildroot}%{_datadir}/icons/%{name}/
+mkdir -p %{buildroot}%{_datadir}/icons/lives
+mv %{buildroot}%{_datadir}/app-install/icons/lives.png %{buildroot}%{_datadir}/icons/lives/
 rm -rf %{buildroot}%{_datadir}/app-install
 
 # We want that these libraries are private
-mv %{buildroot}%{_libdir}/libOSC* %{buildroot}%{_libdir}/%{name}/
-mv %{buildroot}%{_libdir}/libweed* %{buildroot}%{_libdir}/%{name}/
+mv %{buildroot}%{_libdir}/libOSC* %{buildroot}%{_libdir}/lives/
+mv %{buildroot}%{_libdir}/libweed* %{buildroot}%{_libdir}/lives/
 
 # Weed's devel files removed
 rm -rf %{buildroot}%{_libdir}/pkgconfig
@@ -151,7 +150,7 @@ rm -rf %{buildroot}%{_includedir}/weed
 rm -rf %{buildroot}%{_docdir}
 
 # Remove rpath
-chrpath -d %{buildroot}%{_bindir}/%{name}-exe
+chrpath -d %{buildroot}%{_bindir}/lives-exe
 
 # Remove Python2 script
 find %{buildroot} -name 'multi_encoder' -exec rm -f {} ';'
@@ -161,19 +160,19 @@ find %{buildroot}%{_bindir} -name '*_encoder' -exec rm -f {} ';'
 find %{buildroot} -name '*multi_encoder3' | xargs pathfix.py -pn -i "%{__python3}"
 find %{buildroot}%{_bindir} -name '*_encoder3' | xargs pathfix.py -pn -i "%{__python3}"
 
-rm -f %{buildroot}%{_bindir}/%{name}
-cat > %{buildroot}%{_bindir}/%{name} <<EOF
+rm -f %{buildroot}%{_bindir}/lives
+cat > %{buildroot}%{_bindir}/lives <<EOF
 #!/bin/sh
 echo "Setting private libraries path"
-export LD_LIBRARY_PATH=%{_libdir}/%{name}
+export LD_LIBRARY_PATH=%{_libdir}/lives
 echo "Setting frei0r library path"
 export FREI0R_PATH=%{_libdir}/frei0r-1
 echo "Setting ladspa library path"
 export LADSPA_PATH=%{_libdir}/ladspa
 echo "Running LiVES"
-%{_bindir}/%{name}-exe "\$@"
+%{_bindir}/lives-exe "\$@"
 EOF
-chmod a+x %{buildroot}%{_bindir}/%{name}
+chmod a+x %{buildroot}%{_bindir}/lives
 
 # Set Exec key
 desktop-file-edit --set-key=Exec \
@@ -187,20 +186,21 @@ install -Dp -m 644 %{SOURCE1} %{buildroot}%{_metainfodir}/LiVES.appdata.xml
 appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/*.appdata.xml
 desktop-file-validate %{buildroot}%{_datadir}/applications/LiVES.desktop
 
-%files -f %{name}.lang
+%files
 %doc README AUTHORS ChangeLog FEATURES
 %doc GETTING.STARTED NEWS OMC/*.txt RFX/*
 %license COPYING
-%{_bindir}/*%{name}*
+%{_bindir}/*lives*
 %{_bindir}/sendOSC
 %{_bindir}/smogrify
-%{_libdir}/%{name}/
+%{_libdir}/lives/
 %{_datadir}/applications/LiVES.desktop
-%{_datadir}/%{name}/
-%{_datadir}/icons/%{name}/
-%{_datadir}/pixmaps/%{name}.png
-%{_datadir}/pixmaps/%{name}.xpm
-%{_datadir}/icons/hicolor/*/apps/%{name}.png
+%{_datadir}/lives/
+%{_datadir}/icons/lives/
+%{_datadir}/pixmaps/lives.png
+%{_datadir}/pixmaps/lives.xpm
+%{_datadir}/icons/hicolor/*/apps/lives.png
+%{_datadir}/locale/*
 %{_metainfodir}/LiVES.appdata.xml
 
 %changelog
