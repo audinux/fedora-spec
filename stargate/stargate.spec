@@ -5,7 +5,7 @@
 %global __python %{__python3}
 
 Name:    stargate
-Version: 21.11.3
+Version: 21.11.4
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
 License: GPLv3
@@ -78,7 +78,6 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 %{_bindir}/stargate
 %{_bindir}/stargate-engine
 %{_bindir}/stargate-engine-dbg
-%{_bindir}/stargate-paulstretch
 %{_bindir}/stargate-sbsms
 %{_datadir}/doc/stargate/copyright
 %{_datadir}/applications/*
@@ -87,6 +86,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 %{_datadir}/stargate/*
 
 %changelog
+* Sat Nov 13 2021 Yann Collette <ycollette.nospam@free.fr> - 21.11.4-1
+- update to 21.11.4-1
+
 * Mon Nov 08 2021 Yann Collette <ycollette.nospam@free.fr> - 21.11.3-1
 - update to 21.11.3-1
 
