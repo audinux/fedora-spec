@@ -5,20 +5,24 @@
 %define _lto_cflags %{nil}
 
 Name:    BespokeSynth
-Version: 1.0.0
+Version: 1.0.999
 Release: 7%{?dist}
 Summary: A software modular synth
 License: GPLv2+
-URL:     https://github.com/awwbees/BespokeSynth
+URL:     https://github.com/BespokeSynth/BespokeSynth
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/awwbees/BespokeSynth/archive/refs/tags/v1.0.0.tar.gz#/%{name}-%{version}.tar.gz
+# ./bespokesynth-sources.sh <tag>
+# ./bespokesynth-sources.sh v1.0.999
+
+Source0: BespokeSynth.tar.gz
 Source1: http://ycollette.free.fr/LMMS/vst.tar.bz2
+Source2: bespokesynth-sources.sh
 
 BuildRequires: gcc gcc-c++
-BuildRequires: make
+BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: mesa-libGL-devel
@@ -44,48 +48,24 @@ BuildRequires: desktop-file-utils
 A Software modular synth 
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n %{name}
 
 tar xvfj %{SOURCE1}
 
 sed -i -e "s/\.\.\/\.\.\/MacOSX\/build\/Release\/data/\/usr\/share\/BespokeSynth\/data/g" Source/OpenFrameworksPort.cpp
 
-# For JUCE >= 6, no need to start an X server
-%define X_display ":98"
-#############################################
-### Launch a virtual framebuffer X server ###
-#############################################
-export DISPLAY=%{X_display}
-Xvfb %{X_display} >& Xvfb.log &
-trap "kill $! || true" EXIT
-sleep 10
-
-Projucer5 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE5/modules/
-Projucer5 --resave BespokeSynth.jucer
-
-sed -i -e "s/python-config/python2-config/g" Builds/LinuxMakefile/Makefile
-
 %build
 
-export CURRENTDIR=`pwd`
-cd Builds/LinuxMakefile
-%{make_build} PREFIX=/usr LIBDIR=%{_libdir} CONFIG=Release CPPFLAGS="%{build_cxxflags}" CXXFLAGS="-std=c++14 -I$CURRENTDIR/vst/vstsdk2.4/ -I/usr/include/freetype2" LDFLAGS="-lpython%{python3_version} $LDFLAGS"
+%set_build_flags
+export CXXFLAGS="-std=c++14 -I$CURRENTDIR/vst/vstsdk2.4/ -I/usr/include/freetype2 $CXXFLAGS"
+export LDFLAGS="-lpython%{python3_version} $LDFLAGS"
+
+%cmake
+%cmake_build 
 
 %install 
 
-cd Builds/LinuxMakefile
-install -m 755 -d %{buildroot}/%{_bindir}/
-install -m 755 build/BespokeSynth %{buildroot}/%{_bindir}/
-
-cd ../..
-install -m 755 -d %{buildroot}/%{_datadir}/BespokeSynth/resource
-cp -r Builds/MacOSX/build/Release/resource/* %{buildroot}/%{_datadir}/BespokeSynth/resource
-
-install -m 755 -d %{buildroot}/%{_datadir}/applications
-cp BespokeSynth.desktop %{buildroot}/%{_datadir}/applications
-
-install -m 755 -d %{buildroot}/%{_datadir}/pixmaps
-cp bespoke_icon.png %{buildroot}/%{_datadir}/pixmaps/
+%cmake_install
 
 desktop-file-install                         \
   --add-category="Audio"                     \
@@ -103,6 +83,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/BespokeSynth.desktop
 %{_datadir}/*
 
 %changelog
+* Sun Nov 14 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.999-7
+- update to 1.0.999-7 - test beta version
+
 * Thu Sep 16 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-7
 - update to 1.0.0-7 - fix install
 
