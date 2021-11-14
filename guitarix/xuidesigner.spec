@@ -5,7 +5,7 @@
 %global debug_package %{nil}
 
 Name:    xuidesigner
-Version: 0.2
+Version: 0.3
 Release: 1%{?dist}
 Summary: X11 LV2 GUI design tool for libxputty
 License: GPLv2+
@@ -13,6 +13,9 @@ URL:     https://github.com/brummer10/XUiDesigner
 
 Vendor:       Audinux
 Distribution: Audinux
+
+# To get the source archive: ./xuidesigner-source.sh <tag>
+# ./xuidesigner-source.sh v0.3
 
 Source0: XUiDesigner.tar.gz
 Source1: xuidesigner-source.sh
@@ -57,7 +60,6 @@ desktop-file-install --vendor '' \
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/XUiDesigner.desktop
 
-
 %files
 %doc README.md
 %{_bindir}/*
@@ -66,5 +68,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/XUiDesigner.desktop
 %{_libdir}/*
 
 %changelog
+* Sun Nov 14 2021 Yann Collette <ycollette.nospam@free.fr> - 0.3-1
+- update to 0.3-1
+
 * Fri 15 Oct 2021 Yann Collette <ycollette.nospam@free.fr> - 0.2-1
 - Initial spec file
