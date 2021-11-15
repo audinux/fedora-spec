@@ -3,9 +3,9 @@
 # Kernel minor version
 %define kmin  10
 # Kernel patch version
-%define kpat  73
+%define kpat  78
 # RT patch version
-%define krt   54
+%define krt   55
 # package version
 %define krel  11
 
