@@ -2,10 +2,8 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-%define _lto_cflags %{nil}
-
 Name:    BespokeSynth
-Version: 1.0.999
+Version: 1.1.0
 Release: 7%{?dist}
 Summary: A software modular synth
 License: GPLv2+
@@ -15,19 +13,21 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./bespokesynth-sources.sh <tag>
-# ./bespokesynth-sources.sh v1.0.999
+# ./bespokesynth-sources.sh v1.1.0
 
 Source0: BespokeSynth.tar.gz
-Source1: http://ycollette.free.fr/LMMS/vst.tar.bz2
-Source2: bespokesynth-sources.sh
+# Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
+Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
+Source2: juce_VSTInterface.h
+Source3: bespokesynth-sources.sh
 
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc
+BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: JUCE5
 BuildRequires: python3-devel
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
@@ -41,31 +41,49 @@ BuildRequires: webkit2gtk3-devel
 BuildRequires: libglvnd-devel
 BuildRequires: libusbx-devel
 BuildRequires: libpng-devel
-BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: desktop-file-utils
 
+Requires: youtube-dl
+Requires: ffmpeg
+
 %description
-A Software modular synth 
+https://www.bespokesynth.com/
+https://www.bespokesynth.com/docs/index.html
+
+Bespoke is a software modular synthesizer. It contains a bunch of modules,
+which you can connect together to create sounds.
+Bespoke is like a DAW in some ways, but with less of a focus on a global timeline.
+Instead, it has a design more optimized for jamming and exploration.
 
 %prep
-%autosetup -n %{name}
-
-tar xvfj %{SOURCE1}
+%autosetup -p1 -n %{name}
 
 sed -i -e "s/\.\.\/\.\.\/MacOSX\/build\/Release\/data/\/usr\/share\/BespokeSynth\/data/g" Source/OpenFrameworksPort.cpp
+
+unzip %{SOURCE1}
+
+cp %{SOURCE2} libs/JUCE/modules/juce_audio_processors/format_types/
 
 %build
 
 %set_build_flags
-export CXXFLAGS="-std=c++14 -I$CURRENTDIR/vst/vstsdk2.4/ -I/usr/include/freetype2 $CXXFLAGS"
-export LDFLAGS="-lpython%{python3_version} $LDFLAGS"
 
-%cmake
+%cmake -DBESPOKE_VST2_SDK_LOCATION=`pwd`/VST_SDK/VST2_SDK
 %cmake_build 
 
 %install 
 
 %cmake_install
+
+# Install manually some thirdparty libraries
+mkdir -p %{buildroot}/%{_libdir}
+cp %{__cmake_builddir}/libs/push2/libpush2.so               %{buildroot}/%{_libdir}
+cp %{__cmake_builddir}/libs/json/libjson.so                 %{buildroot}/%{_libdir}
+cp %{__cmake_builddir}/libs/psmove/libpsmove.so             %{buildroot}/%{_libdir}
+cp %{__cmake_builddir}/libs/freeverb/libfreeverb.so         %{buildroot}/%{_libdir}
+cp %{__cmake_builddir}/libs/oddsound-mts/liboddsound-mts.so %{buildroot}/%{_libdir}
+cp %{__cmake_builddir}/libs/xwax/libxwax.so                 %{buildroot}/%{_libdir}
+cp %{__cmake_builddir}/libs/nanovg/libnanovg.so             %{buildroot}/%{_libdir}
 
 desktop-file-install                         \
   --add-category="Audio"                     \
@@ -80,11 +98,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/BespokeSynth.desktop
 %doc README.md
 %license LICENSE
 %{_bindir}/*
+%{_libdir}/*
 %{_datadir}/*
 
 %changelog
-* Sun Nov 14 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.999-7
-- update to 1.0.999-7 - test beta version
+* Tue Nov 16 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-7
+- update to 1.1.0-7
 
 * Thu Sep 16 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-7
 - update to 1.0.0-7 - fix install
