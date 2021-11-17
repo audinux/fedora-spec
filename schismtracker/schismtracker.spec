@@ -1,20 +1,18 @@
-# Global variables for github repository
-%global commit0 c0a2d206fb1a08695fea686656a51c150a20b688
-%global gittag0 20210525
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 # Tag: Tracker, Alsa
 # Type: Standalone
 # Category: Audio, Sequencer
 
 Name:    schismtracker
-Version: %{gittag0}
+Version: 20211116
 Release: 2%{?dist}
 Summary: Module tracker software for creating music
 License: GPLv3+
 URL:     https://github.com/schismtracker/schismtracker
 
-Source0: https://github.com/schismtracker/schismtracker/archive/%{commit0}.tar.gz#/schismtracker-%{shortcommit0}.tar.gz
+Vendor:       Audinux
+Distribution: Audinux
+
+Source0: https://github.com/schismtracker/schismtracker/archive/refs/tags/%{version}.tar.gz#/schismtracker-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -23,6 +21,7 @@ BuildRequires: automake
 BuildRequires: SDL-devel
 BuildRequires: libXext-devel
 BuildRequires: python
+BuildRequires: desktop-file-utils
 
 %description
 Schism Tracker is a free and open-source reimplementation of [Impulse
@@ -34,7 +33,7 @@ version of the [Modplug](https://openmpt.org/legacy_software) engine, with a
 number of bugfixes and changes to [improve IT].
 
 %prep
-%autosetup -n %{name}-%{commit0}
+%autosetup -n %{name}-%{version}
 
 %build
 
@@ -49,6 +48,20 @@ mkdir auto
 %install
 %make_install
 
+# Remove last action entry
+head -n-3 %{buildroot}/%{_datadir}/applications/schism.desktop > %{buildroot}/%{_datadir}/applications/schism.desktop.tmp
+rm %{buildroot}/%{_datadir}/applications/schism.desktop
+mv %{buildroot}/%{_datadir}/applications/schism.desktop.tmp %{buildroot}/%{_datadir}/applications/schism.desktop
+
+desktop-file-install                         \
+  --add-category="Audio;AudioVideo"	     \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/*.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
+
 %files
 %doc AUTHORS NEWS INSTALL README.md
 %license COPYING
@@ -58,6 +71,9 @@ mkdir auto
 %{_datadir}/applications/*
 
 %changelog
+* Wed Nov 17 2021 Yann Collette <ycollette dot nospam at free dot fr> - 20211116-1
+- update to 20211116
+
 * Thu May 27 2021 Yann Collette <ycollette dot nospam at free dot fr> - 20210525-1
 - update to 20210525
 
