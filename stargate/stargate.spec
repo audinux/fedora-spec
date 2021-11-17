@@ -2,10 +2,8 @@
 # Type: Standalone
 # Catagory: DAW, Audio, Sequencer
 
-%global __python %{__python3}
-
 Name:    stargate
-Version: 21.11.5
+Version: 21.11.6
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
 License: GPLv3
@@ -86,6 +84,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 %{_datadir}/stargate/*
 
 %changelog
+* Wed Nov 17 2021 Yann Collette <ycollette.nospam@free.fr> - 21.11.6-1
+- update to 21.11.6-1
+
 * Sun Nov 14 2021 Yann Collette <ycollette.nospam@free.fr> - 21.11.5-1
 - update to 21.11.5-1
 
