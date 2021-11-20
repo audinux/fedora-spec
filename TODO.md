@@ -40,6 +40,11 @@
 | ProM                | https://github.com/DISTRHO/ProM |
 | Cardinal            | https://github.com/DISTRHO/Cardinal |
 | loop192             | https://github.com/jean-emmanuel/loop192 |
+| fat1.lv2            | https://github.com/x42/fat1.lv2 |
+| loopor              | https://github.com/stevie67/loopor |
+| flute.lv2           | https://github.com/timowest/flute-lv2 |
+| lv2file             | https://github.com/jeremysalwen/lv2file |
+| harmonizer.lv2      | https://github.com/dsheeler/harmonizer.lv2 |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
