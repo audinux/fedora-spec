@@ -17,13 +17,13 @@ Summary: The Linux Real Time Kernel
 Version: %{kver}.rt%{krt}
 Release: %{krel}%{?dist}
 License: GPL
-Group:   System Environment/Kernel
-Vendor:  The Linux Community
 URL:     http://www.kernel.org
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://cdn.kernel.org/pub/linux/kernel/v%{kmaj}.x/linux-%{kver}.tar.gz
 Source1: kernel-config-%{kmaj}.%{kmin}
-
 Patch0: https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/%{kmaj}.%{kmin}/older/patch-%{kver}-rt%{krt}.patch.gz
 
 BuildRequires: openssl-devel
@@ -109,78 +109,75 @@ make clean && make %{?_smp_mflags}
 KBUILD_IMAGE=$(make image_name)
 
 %ifarch ia64
-  mkdir -p $RPM_BUILD_ROOT/boot/efi $RPM_BUILD_ROOT/lib/modules
+  mkdir -p ${buildroot}/boot/efi ${buildroot}/lib/modules
 %else
-  mkdir -p $RPM_BUILD_ROOT/boot     $RPM_BUILD_ROOT/lib/modules
+  mkdir -p ${buildroot}/boot     ${buildroot}/lib/modules
 %endif
 
-make %{?_smp_mflags} INSTALL_MOD_PATH=$RPM_BUILD_ROOT KBUILD_SRC= mod-fw= INSTALL_MOD_STRIP=1 CONFIG_MODULE_COMPRESS=1 CONFIG_MODULE_COMPRESS_XZ=1 modules_install
+make %{?_smp_mflags} INSTALL_MOD_PATH=${buildroot} KBUILD_SRC= mod-fw= INSTALL_MOD_STRIP=1 CONFIG_MODULE_COMPRESS=1 CONFIG_MODULE_COMPRESS_XZ=1 modules_install
 
 # We estimate the size of the initramfs because rpm needs to take this size
 # into consideration when performing disk space calculations. (See bz #530778)
-dd if=/dev/zero of=$RPM_BUILD_ROOT/boot/initramfs-%{kver}-rt%{krt}%{fcver}.img bs=1M count=20
+dd if=/dev/zero of=${buildroot}/boot/initramfs-%{kver}-rt%{krt}%{fcver}.img bs=1M count=20
 
 %ifarch ia64
-  cp $KBUILD_IMAGE $RPM_BUILD_ROOT/boot/efi/vmlinuz-%{kver}-rt%{krt}%{fcver}
-  chmod a+x $RPM_BUILD_ROOT/boot/efi/vmlinuz-%{kver}-rt%{krt}%{fcver}
-  ln -s efi/vmlinuz-%{kver}-%{krt}%{fcver} $RPM_BUILD_ROOT/boot/
+  cp $KBUILD_IMAGE ${buildroot}/boot/efi/vmlinuz-%{kver}-rt%{krt}%{fcver}
+  chmod a+x ${buildroot}/boot/efi/vmlinuz-%{kver}-rt%{krt}%{fcver}
+  ln -s efi/vmlinuz-%{kver}-%{krt}%{fcver} ${buildroot}/boot/
 %else
-  cp $KBUILD_IMAGE $RPM_BUILD_ROOT/boot/vmlinuz-%{kver}-rt%{krt}%{fcver}
-  chmod a+x $RPM_BUILD_ROOT/boot/vmlinuz-%{kver}-rt%{krt}%{fcver}
+  cp $KBUILD_IMAGE ${buildroot}/boot/vmlinuz-%{kver}-rt%{krt}%{fcver}
+  chmod a+x ${buildroot}/boot/vmlinuz-%{kver}-rt%{krt}%{fcver}
 %endif
 
-make %{?_smp_mflags} INSTALL_HDR_PATH=$RPM_BUILD_ROOT/usr KBUILD_SRC= headers_install
-cp System.map $RPM_BUILD_ROOT/boot/System.map-%{kver}-rt%{krt}%{fcver}
-cp .config    $RPM_BUILD_ROOT/boot/config-%{kver}-rt%{krt}%{fcver}
+make %{?_smp_mflags} INSTALL_HDR_PATH=${buildroot}/usr KBUILD_SRC= headers_install
+cp System.map ${buildroot}/boot/System.map-%{kver}-rt%{krt}%{fcver}
+cp .config    ${buildroot}/boot/config-%{kver}-rt%{krt}%{fcver}
 
-cp $RPM_BUILD_ROOT/boot/vmlinuz-%{kver}-rt%{krt}%{fcver} $RPM_BUILD_ROOT/lib/modules/%{kver}-rt%{krt}%{fcver}/vmlinuz
+cp ${buildroot}/boot/vmlinuz-%{kver}-rt%{krt}%{fcver} ${buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/vmlinuz
 
-rm -f $RPM_BUILD_ROOT/lib/modules/%{kver}-rt%{krt}%{fcver}/build
-rm -f $RPM_BUILD_ROOT/lib/modules/%{kver}-rt%{krt}%{fcver}/source
+rm -f ${buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build
+rm -f ${buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/source
 
-mkdir -p $RPM_BUILD_ROOT/lib/modules/%{kver}-rt%{krt}%{fcver}/build
-(cd $RPM_BUILD_ROOT/lib/modules/%{kver}-rt%{krt}%{fcver} ; ln -s build source)
+mkdir -p ${buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build
+(cd ${buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver} ; ln -s build source)
 
 # dirs for additional modules per module-init-tools, kbuild/modules.txt
-mkdir -p $RPM_BUILD_ROOT/lib/modules/%{kver}-rt%{krt}%{fcver}/extra
-mkdir -p $RPM_BUILD_ROOT/lib/modules/%{kver}-rt%{krt}%{fcver}/internal
-mkdir -p $RPM_BUILD_ROOT/lib/modules/%{kver}-rt%{krt}%{fcver}/updates
+mkdir -p ${buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/extra
+mkdir -p ${buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/internal
+mkdir -p ${buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/updates
 
 # CONFIG_KERNEL_HEADER_TEST generates some extra files in the process of
 # testing so just delete
 find . -name *.h.s -delete
 
 # first copy everything
-cp --parents `find  -type f -name "Makefile*" -o -name "Kconfig*"` $RPM_BUILD_ROOT/lib/modules/%{kver}-rt%{krt}%{fcver}/build
-cp Module.symvers $RPM_BUILD_ROOT/lib/modules/%{kver}-rt%{krt}%{fcver}/build
-cp System.map $RPM_BUILD_ROOT/lib/modules/%{kver}-rt%{krt}%{fcver}/build
+cp --parents `find  -type f -name "Makefile*" -o -name "Kconfig*"` ${buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build
+cp Module.symvers ${buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build
+cp System.map ${buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build
 if [ -s Module.markers ]; then
-  cp Module.markers $RPM_BUILD_ROOT/lib/modules/%{kver}-rt%{krt}%{fcver}/build
+  cp Module.markers ${buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build
 fi
 
 # Move the devel headers out of the root file system
 
 DevelDir=/usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
-mkdir -p $RPM_BUILD_ROOT/usr/src/kernels/%{kver}-rt%{krt}%{fcver}
-mv $RPM_BUILD_ROOT/lib/modules/%{kver}-rt%{krt}%{fcver}/build $RPM_BUILD_ROOT/$DevelDir
+mkdir -p ${buildroot}/usr/src/kernels/%{kver}-rt%{krt}%{fcver}
+mv ${buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build ${buildroot}/$DevelDir
 
 # This is going to create a broken link during the build, but we don't use
 # it after this point.  We need the link to actually point to something
 # when kernel-devel is installed, and a relative link doesn't work across
 # the F17 UsrMove feature.
 
-ln -sf $DevelDir $RPM_BUILD_ROOT/lib/modules/%{kver}-rt%{krt}%{fcver}/build
+ln -sf $DevelDir ${buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build
 
 # prune junk from kernel-devel
 
-find $RPM_BUILD_ROOT/usr/src/kernels -name ".*.cmd" -delete
+find ${buildroot}/usr/src/kernels -name ".*.cmd" -delete
 
 EXCLUDES="--exclude SCCS --exclude BitKeeper --exclude .svn --exclude CVS --exclude .pc --exclude .hg --exclude .git --exclude .tmp_versions --exclude=*vmlinux* --exclude=*.o --exclude=*.ko --exclude=*.ko.xz --exclude=*.cmd --exclude=Documentation --exclude=firmware --exclude .config.old --exclude .missing-syscalls.d"
-tar $EXCLUDES -cf- . | (cd $RPM_BUILD_ROOT/usr/src/kernels/%{kver}-rt%{krt}%{fcver}; tar xvf -)
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+tar $EXCLUDES -cf- . | (cd ${buildroot}/usr/src/kernels/%{kver}-rt%{krt}%{fcver}; tar xvf -)
 
 %post
 # Create the initramfs file
