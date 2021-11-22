@@ -17,6 +17,9 @@ Summary: AuntyLangtonsFree plugin for Rack
 License: GPLv2+
 URL:     https://github.com/64MM4-KN1F3/AuntyLangtons-FREE
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./rack-source.sh <tag>
 # ./rack-source.sh v1.1.6
 

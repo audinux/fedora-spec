@@ -3,19 +3,22 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 089307bcb8748c31745f7bc67545cae9ef4c8e0f
-%global gittag0 1.0.2
+%global commit0 7cbb78c9ba4daa235c729adfeec0fb55f82d2353
+%global gittag0 1.0.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-LilacLoop
-Version: 1.0.2
+Version: 1.0.3
 Release: 3%{?dist}
 Summary: LilacLoop plugin for Rack
 License: GPLv2+
 URL:     https://github.com/grough/lilac-loop-vcv
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # ./rack-source.sh <tag>
 # ./rack-source.sh v1.1.6
@@ -95,5 +98,5 @@ cp -r LilacLoop_plugin/dist/LilacLoop/* %{buildroot}%{_libexecdir}/Rack1/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.3-3
 - initial specfile

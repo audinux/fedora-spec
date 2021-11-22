@@ -17,6 +17,9 @@ Summary: HolonicSystems-Free plugin for Rack
 License: GPLv2+
 URL:     https://github.com/hdavid/VCVRack-Holon.ist
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./rack-source.sh <tag>
 # ./rack-source.sh v1.1.6
 

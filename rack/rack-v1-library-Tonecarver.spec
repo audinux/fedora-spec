@@ -3,19 +3,19 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 f7cec64c67ffb29381221c0c1c2e32d56f22aef2
-%global gittag0 1.0.0
+%global commit0 cf05802dae8681e380778ca528f76a1291247fb7
+%global gittag0 1.0.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-Agave
-Version: 1.0.0
+Name:    rack-v1-Tonecarver
+Version: 1.0.4
 Release: 3%{?dist}
-Summary: Agave plugin for Rack
+Summary: Tonecarver plugin for Rack
 License: GPLv2+
-URL:     https://github.com/jatinchowdhury18/Agave
+URL:     https://github.com/Tonecarver/tcRackModules
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -24,8 +24,8 @@ Distribution: Audinux
 # ./rack-source.sh v1.1.6
 
 Source0: Rack.tar.gz
-Source1: https://github.com/jatinchowdhury18/Agave/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: Agave_plugin.json
+Source1: https://github.com/Tonecarver/tcRackModules/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: Tonecarver_plugin.json
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -47,8 +47,8 @@ BuildRequires: speexdsp-devel
 BuildRequires: jq
 
 %description
-Agave plugin for Rack.
-Bank of RC lowpass filters
+Tonecarver plugin for Rack.
+Spectral Blur
 
 %prep
 %autosetup -n Rack
@@ -79,24 +79,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 # We use provided RtAudio library because Rack hangs when using jack and fedora rtaudio
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
-mkdir Agave_plugin
-tar xvfz %{SOURCE1} --directory=Agave_plugin --strip-components=1 
+mkdir Tonecarver_plugin
+tar xvfz %{SOURCE1} --directory=Tonecarver_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Agave_plugin/plugin.json
+cp -n %{SOURCE2} Tonecarver_plugin/plugin.json
 
 %build
 
-cd Agave_plugin
+cd Tonecarver_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Agave/
-cp -r Agave_plugin/dist/Agave/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Agave/
+mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Tonecarver/
+cp -r Tonecarver_plugin/dist/Tonecarver/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Tonecarver/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.4-3
 - initial specfile

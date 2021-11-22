@@ -17,6 +17,9 @@ Summary: unless_modules plugin for Rack
 License: GPLv2+
 URL:     http://gitlab.com/unlessgames/unless_modules
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./rack-source.sh <tag>
 # ./rack-source.sh v1.1.6
 

@@ -17,6 +17,9 @@ Summary: mmmodules plugin for Rack
 License: GPLv2+
 URL:     https://github.com/Myst-Mach/mmmodules
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./rack-source.sh <tag>
 # ./rack-source.sh v1.1.6
 

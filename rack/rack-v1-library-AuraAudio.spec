@@ -17,6 +17,9 @@ Summary: AuraAudio plugin for Rack
 License: GPLv2+
 URL:     https://github.com/emurray2/auraaudio-vcv-rack
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./rack-source.sh <tag>
 # ./rack-source.sh v1.1.6
 

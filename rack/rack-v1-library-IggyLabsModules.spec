@@ -17,6 +17,9 @@ Summary: IggyLabsModules plugin for Rack
 License: GPLv2+
 URL:     https://github.com/IggyLabs/IggyLabsModules
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./rack-source.sh <tag>
 # ./rack-source.sh v1.1.6
 

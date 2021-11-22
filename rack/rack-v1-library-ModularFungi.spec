@@ -17,6 +17,9 @@ Summary: ModularFungi plugin for Rack
 License: GPLv2+
 URL:     https://github.com/david-c14/ModularFungi
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./rack-source.sh <tag>
 # ./rack-source.sh v1.1.6
 

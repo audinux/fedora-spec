@@ -17,6 +17,9 @@ Summary: modular80 plugin for Rack
 License: GPLv2+
 URL:     https://github.com/cschol/modular80
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./rack-source.sh <tag>
 # ./rack-source.sh v1.1.6
 

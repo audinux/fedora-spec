@@ -17,6 +17,9 @@ Summary: CountModula plugin for Rack
 License: GPLv2+
 URL:     https://github.com/countmodula/VCVRackPlugins
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./rack-source.sh <tag>
 # ./rack-source.sh v1.1.6
 

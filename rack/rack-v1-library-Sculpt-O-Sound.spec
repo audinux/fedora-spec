@@ -17,6 +17,9 @@ Summary: Sculpt-O-Sound plugin for Rack
 License: GPLv2+
 URL:     https://github.com/josbouten/Sculpt-O-Sound
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./rack-source.sh <tag>
 # ./rack-source.sh v1.1.6
 

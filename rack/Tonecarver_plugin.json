@@ -1,0 +1,42 @@
+{
+  "slug": "Tonecarver",
+  "name": "Tonecarver",
+  "version": "1.0.4",
+  "license": "GPL-3.0-only",
+  "brand": "Tonecarver",
+  "author": "Bill Davies",
+  "authorEmail": "bdavies00@yahoo.com",
+  "authorUrl": "",
+  "pluginUrl": "",
+  "manualUrl": "https://github.com/Tonecarver/tcRackModules#readme",
+  "sourceUrl": "https://github.com/Tonecarver/tcRackModules",
+  "donateUrl": "",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "Blur",
+      "name": "Blur",
+      "description": "Spectral Blur",
+      "tags": [
+        "Effect"
+      ]
+    },
+    {
+      "slug": "Morse",
+      "name": "Morse",
+      "description": "Generate Morse Code gate sequence",
+      "tags": [
+        "Sequencer"
+      ]
+    },
+    {
+      "slug": "Traveler",
+      "name": "Traveler",
+      "description": "Generative sequencer using rovers and obstacles to create evolving patterns",
+      "tags": [
+        "Sequencer",
+        "Random"
+      ]
+    }
+  ]
+}

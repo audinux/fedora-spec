@@ -17,6 +17,9 @@ Summary: ODDSound_MTS_ESP plugin for Rack
 License: GPLv2+
 URL:     https://oddsound.com
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./rack-source.sh <tag>
 # ./rack-source.sh v1.1.6
 

@@ -17,6 +17,9 @@ Summary: RJModules plugin for Rack
 License: GPLv2+
 URL:     http://github.com/Miserlou/RJModules
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./rack-source.sh <tag>
 # ./rack-source.sh v1.1.6
 

@@ -17,6 +17,9 @@ Summary: Koralfx-Modules plugin for Rack
 License: GPLv2+
 URL:     https://github.com/koralfx/Koralfx-Modules
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./rack-source.sh <tag>
 # ./rack-source.sh v1.1.6
 
