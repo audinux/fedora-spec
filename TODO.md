@@ -45,6 +45,13 @@
 | flute.lv2           | https://github.com/timowest/flute-lv2 |
 | lv2file             | https://github.com/jeremysalwen/lv2file |
 | harmonizer.lv2      | https://github.com/dsheeler/harmonizer.lv2 |
+| inscore             | https://inscore.grame.fr |
+| Gwion               | https://github.com/Gwion |
+| Amati               | https://github.com/glocq/Amati |
+| Pure language       | https://agraef.github.io/pure-lang |
+| Freeze              | https://github.com/taylordotfish/freeze |
+| Aether              | https://github.com/Dougal-s/Aethe |
+| Delay Architect     | https://github.com/jpcima/DelayArchitect |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
