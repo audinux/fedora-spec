@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 c9c26bdca5c9a5a86ddb34653d856132be5d1e17
-%global gittag0 1.1.3
+%global commit0 c1c2bda0f19bab251ea48c4697ca71e2c7629995
+%global gittag0 1.1.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-ML_modules
-Version: 1.1.3
+Version: 1.1.4
 Release: 3%{?dist}
 Summary: ML_modules plugin for Rack
 License: GPLv2+
@@ -98,5 +98,5 @@ cp -r ML_modules_plugin/dist/ML_modules/* %{buildroot}%{_libexecdir}/Rack1/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.1.3-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.1.4-3
 - initial specfile

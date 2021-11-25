@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 cfe918ce6edecc456bc14f916785a04ca92cdc53
-%global gittag0 1.1.1
+%global commit0 cd1d9c298804c9475406ab62fd4f97d09f5b2aca
+%global gittag0 1.2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-Plurm
-Version: 1.1.1
+Version: 1.2.0
 Release: 3%{?dist}
 Summary: Plurm plugin for Rack
 License: GPLv2+
@@ -98,5 +98,5 @@ cp -r Plurm_plugin/dist/Plurm/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Plur
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-3
 - initial specfile
