@@ -11,7 +11,7 @@
 
 Name:    mpk-m2-editor
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Alternative to the official AKAI MPKMini MkII Editor
 URL:     https://github.com/PiOverFour/MPK-M2-editor
 License: GPLv3
@@ -35,13 +35,18 @@ A Linux editor for the Akai LPD8 pad controller.
 %prep
 %autosetup -n MPK-M2-editor-%{commit0}
 
+sed -i -e "s/'ui'/'mpk_m2_editor_ui'/g" setup.py
+rm -f mpk_m2_editor_ui
+ln -s ui mpk_m2_editor_ui
+sed -i -e "s/from ui/from mpk_m2_editor_ui/g" mpk-m2-editor
+
 %build
 
-%{__python3} setup.py build
+%{py3_build}
 
 %install
 
-%{__python3} setup.py install --root %{buildroot}
+%{py3_install}
 
 install -m 755 -d %{buildroot}%{_datadir}/applications/
 cp ressources/%{name}.desktop %{buildroot}%{_datadir}/applications/
@@ -67,7 +72,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/*
 %{_datadir}/%{name}/*
-%{python3_sitelib}/ui/*
+%{python3_sitelib}/mpk_m2_editor_ui/*
 %{python3_sitelib}/%{libname}-*.egg-info/
 
 %changelog
