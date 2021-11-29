@@ -3,15 +3,15 @@
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
-%global commit0 5c578de54a8073778db299200a0d6745fd3b6c7a
-%global gittag0 1.0.2
+%global commit0 da4c3891dc4d04326bf93321717ee6598c8f48cb
+%global gittag0 1.0.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v1-DelexanderVol1
-Version: 1.0.2
+Version: 1.0.3
 Release: 3%{?dist}
 Summary: DelexanderVol1 plugin for Rack
 License: GPLv2+
@@ -98,5 +98,5 @@ cp -r DelexanderVol1_plugin/dist/DelexanderVol1/* %{buildroot}%{_libexecdir}/Rac
 %{_libexecdir}/*
 
 %changelog
-* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-3
+* Tue Feb 11 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.3-3
 - initial specfile
