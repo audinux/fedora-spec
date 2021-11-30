@@ -10,6 +10,7 @@ import os
 
 path_to_library_git = 'library'
 path_to_spec_files = 'spec'
+template_filename = 'template.spec'
 
 # Static data which overrides the ones found in VCV Rack library files
 static_values = {
@@ -150,7 +151,7 @@ def proceed(json_file):
         if 'modules' in conf_rack and 'description' in conf_rack['modules'][0]:
             description = conf_rack['modules'][0]['description']
 
-        if not os.path.exists(path_to_spec_files + os.sep + 'template.spec'):
+        if not os.path.exists(path_to_spec_files + os.sep + template_filename):
             print('template file not found in %s\n' % path_to_spec_files + os.sep)
             sys.exit(-1)
         
@@ -170,7 +171,7 @@ def proceed(json_file):
         spec_filename = 'rack-v1-library-' + slug_name + '.spec'
         
         # copy template into spec file
-        shutil.copyfile(path_to_spec_files + os.sep + 'template.spec', path_to_spec_files + os.sep + spec_filename)
+        shutil.copyfile(path_to_spec_files + os.sep + template_filename, path_to_spec_files + os.sep + spec_filename)
         # copy json file into spec dire
         shutil.copyfile(json_file, path_to_spec_files + os.sep + slug_name + '_plugin.json')
         
