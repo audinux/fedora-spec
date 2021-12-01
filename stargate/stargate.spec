@@ -3,7 +3,7 @@
 # Catagory: DAW, Audio, Sequencer
 
 Name:    stargate
-Version: 21.11.7
+Version: 21.12.1
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
 License: GPLv3
@@ -14,8 +14,6 @@ Distribution: Audinux
 
 Source0: https://github.com/stargateaudio/stargate/archive/refs/tags/release-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: alsa-lib-devel
-BuildRequires: fftw-devel
 BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: git
@@ -24,7 +22,10 @@ BuildRequires: libsndfile-devel
 BuildRequires: portaudio-devel
 BuildRequires: portmidi-devel
 BuildRequires: python3-devel 
+BuildRequires: alsa-lib-devel
+BuildRequires: fftw-devel
 BuildRequires: desktop-file-utils
+
 Requires: alsa-lib
 Requires: fftw
 Requires: lame
@@ -84,6 +85,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 %{_datadir}/stargate/*
 
 %changelog
+* Wed Dec 01 2021 Yann Collette <ycollette.nospam@free.fr> - 21.12.1-1
+- update to 21.12.1-1
+
 * Fri Nov 26 2021 Yann Collette <ycollette.nospam@free.fr> - 21.11.7-1
 - update to 21.11.7-1
 
