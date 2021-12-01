@@ -7,10 +7,17 @@ import shutil
 import subprocess
 import glob
 import os
+import argparse
 
-path_to_library_git = 'library'
-path_to_spec_files = 'spec'
-template_filename = 'template.spec'
+rack_version = '2'
+
+parser = argparse.ArgumentParser(description='Personal information')
+
+parser.add_argument('--spec-template', dest='spec_template', type=str, default='template.spec', help='Path to the template file')
+parser.add_argument('--spec-dir', dest='spec_dir', type=str, default='spec', help='Path to the directory where to write specs')
+parser.add_argument('--library', dest='library_dir', type=str, default='library', help='Path to the community git repository')
+
+args = parser.parse_args()
 
 # Static data which overrides the ones found in VCV Rack library files
 static_values = {
@@ -115,17 +122,11 @@ def proceed(json_file):
     if 'settings.json' in json_file:
         return
     
-    print('Reading %s json library file\n' % json_file)
+    print(f'Reading {json_file} json library file\n')
     
     with open(json_file, 'r') as fjson:
         conf_rack = json.load(fjson)
-        if 'license' in conf_rack and conf_rack['license'] == 'proprietary':
-            print('Proprietary license\n')
-            return
-        if 'license' in conf_rack and conf_rack['license'] == 'Proprietary':
-            print('Proprietary license\n')
-            return
-        if 'license' in conf_rack and conf_rack['license'] == 'PROPRIETARY':
+        if 'license' in conf_rack and conf_rack['license'] in ('proprietary', 'Proprietary', 'PROPRIETARY'):
             print('Proprietary license\n')
             return
 
@@ -151,32 +152,32 @@ def proceed(json_file):
         if 'modules' in conf_rack and 'description' in conf_rack['modules'][0]:
             description = conf_rack['modules'][0]['description']
 
-        if not os.path.exists(path_to_spec_files + os.sep + template_filename):
-            print('template file not found in %s\n' % path_to_spec_files + os.sep)
+        if not os.path.exists(args.spec_dir + os.sep + args.spec_template):
+            print('template file not found in {}\n'.format(args.spec_dir + os.sep))
             sys.exit(-1)
         
-        if not os.path.exists(path_to_library_git + os.sep + 'repos' + os.sep + slug_name):
+        if not os.path.exists(args.library_dir + os.sep + 'repos' + os.sep + slug_name):
             print('repos slug_name doesn\'t exists\n')
             return
         
-        commit_id = get_git_revision_hash(path_to_library_git + os.sep + 'repos' + os.sep + slug_name)
+        commit_id = get_git_revision_hash(args.library_dir + os.sep + 'repos' + os.sep + slug_name)
 
-        print('SLUGNAME    -> %s\n' % slug_name)
-        print('VERSION     -> %s\n' % version)
-        print('SOURCEURL   -> %s\n' % sourceurl)
-        print('SOURCE1     -> %s\n' % source1)
-        print('COMMITID    -> %s\n' % commit_id)
-        print('DESCRIPTION -> %s\n' % description)
+        print(f'SLUGNAME    -> {slug_name}\n')
+        print(f'VERSION     -> {version}\n')
+        print(f'SOURCEURL   -> {sourceurl}\n')
+        print(f'SOURCE1     -> {source1}\n')
+        print(f'COMMITID    -> {commit_id}\n')
+        print(f'DESCRIPTION -> {description}\n')
         
-        spec_filename = 'rack-v1-library-' + slug_name + '.spec'
+        spec_filename = f'rack-v{rack_version}-library-{slug_name}.spec'
         
         # copy template into spec file
-        shutil.copyfile(path_to_spec_files + os.sep + template_filename, path_to_spec_files + os.sep + spec_filename)
+        shutil.copyfile(args.spec_dir + os.sep + args.spec_template, args.spec_dir + os.sep + spec_filename)
         # copy json file into spec dire
-        shutil.copyfile(json_file, path_to_spec_files + os.sep + slug_name + '_plugin.json')
+        shutil.copyfile(json_file, args.spec_dir + os.sep + slug_name + '_plugin.json')
         
-        #with fileinput.FileInput(path_to_spec_files + os.sep + spec_filename, inplace=True, backup='.bak') as file:
-        with fileinput.FileInput(path_to_spec_files + os.sep + spec_filename, inplace=True) as file:
+        #with fileinput.FileInput(args.spec_dir + os.sep + spec_filename, inplace=True, backup='.bak') as file:
+        with fileinput.FileInput(args.spec_dir + os.sep + spec_filename, inplace=True) as file:
             for line in file:
                 if 'SLUGNAME' in line:
                     print(line.replace('SLUGNAME',  slug_name), end='')
@@ -200,8 +201,8 @@ def proceed(json_file):
     
 if __name__ == "__main__":
     if len(sys.argv) != 1:
-        proceed(path_to_library_git + os.sep + 'manifests' + os.sep + sys.argv[1] + '.json')
+        proceed(args.library_dir + os.sep + 'manifests' + os.sep + sys.argv[1] + '.json')
     else:
         # we iterate through library/manifests/*.json and we generate spec/*.spec
-        for json_file in glob.glob(path_to_library_git + os.sep + 'manifests' + os.sep + '*.json'):
+        for json_file in glob.glob(args.library_dir + os.sep + 'manifests' + os.sep + '*.json'):
             proceed(json_file)
