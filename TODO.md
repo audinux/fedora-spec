@@ -54,6 +54,7 @@
 | Delay Architect     | https://github.com/jpcima/DelayArchitect |
 | HISE                | https://github.com/christophhart/HISE.git |
 | ORCHESTOOLS-PIANO-S | https://github.com/ilirbajri/ORCHESTOOLS-PIANO-S |
+| CollisionDrive      | https://github.com/brummer10/CollisionDrive |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
