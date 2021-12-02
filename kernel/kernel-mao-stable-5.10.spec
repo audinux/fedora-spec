@@ -3,9 +3,9 @@
 # Kernel minor version
 %define kmin  10
 # Kernel patch version
-%define kpat  78
+%define kpat  83
 # RT patch version
-%define krt   56
+%define krt   58
 # package version
 %define krel  11
 
@@ -24,7 +24,7 @@ Distribution: Audinux
 
 Source0: https://cdn.kernel.org/pub/linux/kernel/v%{kmaj}.x/linux-%{kver}.tar.gz
 Source1: kernel-config-%{kmaj}.%{kmin}
-Patch0: https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/%{kmaj}.%{kmin}/older/patch-%{kver}-rt%{krt}.patch.gz
+Patch0:  https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/%{kmaj}.%{kmin}/older/patch-%{kver}-rt%{krt}.patch.gz
 
 BuildRequires: openssl-devel
 BuildRequires: openssl
@@ -203,6 +203,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt-stable%{krt}%{fcver}
 
 %changelog
+* Thu Dec 02 2021 Yann Collette <ycollette.nospam@free.fr> - 5.10.83-rt58-11
+- update to 5.10.83-rt58-11 - vanilla RT kernel
+
 * Mon Nov 29 2021 Yann Collette <ycollette.nospam@free.fr> - 5.10.78-rt56-11
 - update to 5.10.78-rt56-11 - vanilla RT kernel
 
