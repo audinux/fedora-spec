@@ -6,14 +6,14 @@
 %define use_static_rtaudio 1
 
 Name:    Rack-v2
-Version: 2.0.0
-Release: 13%{?dist}
+Version: 2.0.1
+Release: 1%{?dist}
 Summary: A modular Synthesizer
 License: GPLv2+
 URL:     https://github.com/VCVRack/Rack
 
 # ./rack-source.sh <tag>
-# ./rack-source.sh v2.0.0
+# ./rack-source.sh v2.0.1
 
 Source0: Rack.tar.gz
 Source1: Rack-manual.tar.gz
@@ -45,12 +45,9 @@ BuildRequires: speexdsp-devel
 BuildRequires: gulrak-filesystem-devel
 BuildRequires: libarchive-devel
 BuildRequires: libzstd-devel
-BuildRequires: chrpath
 BuildRequires: python3-sphinx
 BuildRequires: python3-recommonmark
 BuildRequires: python3-sphinx_rtd_theme
-
-Requires: rack-v2-Fundamental
 
 %description
 A modular Synthesizer
@@ -124,13 +121,17 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio -lpulse-simple -lpulse/g" Makefile
 %else
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 %endif
-sed -i -e "s/systemDir = \".\";/systemDir = \"\/usr\/libexec\/Rack2\";/g" src/asset.cpp
+sed -i -e "s/systemDir = system::getWorkingDirectory();/systemDir = \"\/usr\/libexec\/Rack2\";/g" src/asset.cpp
 sed -i -e "s/pluginsPath = userDir + \"\/plugins-v\"/pluginsPath = systemDir + \"\/plugins-v\"/g" src/asset.cpp
 
 tar xvfz %{SOURCE1}
 
 # Disable an assert triggered with pipewire
 sed -i -e "s/assert(!err);/\/\/assert(!err);/g" src/system.cpp
+
+# Remove rpath
+sed -i -e "/-rpath/d" Makefile
+sed -i -e "/-rpath/d" plugin.mk
 
 %build
 
@@ -166,13 +167,12 @@ mkdir -p %{buildroot}%{_datadir}/man/man1/
 mkdir -p %{buildroot}%{_datadir}/applications/
 mkdir -p %{buildroot}%{_datadir}/Rack/doc/
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/
+mkdir -p %{buildroot}%{_libdir}/
 
 install -m 755 Rack         %{buildroot}%{_bindir}/Rack2
 install -m 644 res/icon.png %{buildroot}%{_datadir}/pixmaps/rack.png
 cp -r res                   %{buildroot}%{_libexecdir}/Rack2/
-
-# remove rpath
-chrpath --delete %{buildroot}/usr/bin/Rack2
+install -m 755 libRack.so   %{buildroot}%{_libdir}/
 
 cp -r manual/* %{buildroot}%{_datadir}/Rack/doc/
 
@@ -195,13 +195,14 @@ EOF
 %{_bindir}/*
 %{_datadir}/*
 %{_libexecdir}/*
+%{_libdir}/*
 
 %files doc
 %{_datadir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-13
-- update to v2.0.0-13
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+- update to v2.0.1-1
 
 * Tue Apr 06 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.6-13
 - fix for wayland ...

@@ -9,13 +9,7 @@ git checkout $1
 git submodule init
 git submodule update
 find . -name ".git" -exec rm -rf {} \;
-cd dep
-wget https://vcvrack.com/downloads/dep/pffft.zip
-unzip pffft.zip
-mkdir include
-cp pffft/*.h include/
-rm  pffft.zip
-cd ../..
+cd ..
 tar cvfz Rack.tar.gz Rack/*
 rm -rf Rack
 
