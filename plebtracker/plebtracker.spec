@@ -10,9 +10,12 @@
 Summary: Chiptune tracker for making chiptune-like music on a modern computer.
 Name:    plebtracker
 Version: 0.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: GPL
 URL:     https://github.com/danfrz/PLEBTracker
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/danfrz/PLEBTracker/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
@@ -47,41 +50,40 @@ cd Tracker/src
 
 %install
 
-%__install -m 755 -d %{buildroot}/%{_bindir}/
-%__install -m 755 -d %{buildroot}/%{_datadir}/man/man1
-%__install -m 755 -d %{buildroot}/%{_datadir}/plebtracker/docs/
-%__install -m 755 -d %{buildroot}/%{_datadir}/plebtracker/examples/
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 -d %{buildroot}/%{_datadir}/man/man1
+install -m 755 -d %{buildroot}/%{_datadir}/plebtracker/docs/
+install -m 755 -d %{buildroot}/%{_datadir}/plebtracker/examples/
 
 ## INTERPRETER
 
 cd Interpreter/src
-%__install -m 755 plebplay   %{buildroot}/%{_bindir}/
-%__install -m 755 plebitp    %{buildroot}/%{_bindir}/
-%__install -m 755 plebrender %{buildroot}/%{_bindir}/
+install -m 755 plebplay   %{buildroot}/%{_bindir}/
+install -m 755 plebitp    %{buildroot}/%{_bindir}/
+install -m 755 plebrender %{buildroot}/%{_bindir}/
 
-%__install -m 644 ../doc/plebitp.1    %{buildroot}/%{_datadir}/man/man1/
-%__install -m 644 ../doc/plebplay.1   %{buildroot}/%{_datadir}/man/man1/
-%__install -m 644 ../doc/plebrender.1 %{buildroot}/%{_datadir}/man/man1/
+install -m 644 ../doc/plebitp.1    %{buildroot}/%{_datadir}/man/man1/
+install -m 644 ../doc/plebplay.1   %{buildroot}/%{_datadir}/man/man1/
+install -m 644 ../doc/plebrender.1 %{buildroot}/%{_datadir}/man/man1/
 cd ../..
 
 ## TRACKER
 
 cd Tracker/src
-%__install -m 755 plebtrk       %{buildroot}/%{_bindir}/
-%__install -m 755 plebtrkdaemon %{buildroot}/%{_bindir}/
-%__install -m 755 plebtrkraw    %{buildroot}/%{_bindir}/
+install -m 755 plebtrk       %{buildroot}/%{_bindir}/
+install -m 755 plebtrkdaemon %{buildroot}/%{_bindir}/
+install -m 755 plebtrkraw    %{buildroot}/%{_bindir}/
 
-%__install -m 644 ../doc/plebtrk.1       %{buildroot}/%{_datadir}/man/man1/
-%__install -m 644 ../doc/plebtrkdaemon.1 %{buildroot}/%{_datadir}/man/man1/
-%__install -m 644 ../doc/plebtrkraw.1    %{buildroot}/%{_datadir}/man/man1/
+install -m 644 ../doc/plebtrk.1       %{buildroot}/%{_datadir}/man/man1/
+install -m 644 ../doc/plebtrkdaemon.1 %{buildroot}/%{_datadir}/man/man1/
+install -m 644 ../doc/plebtrkraw.1    %{buildroot}/%{_datadir}/man/man1/
 cd ../..
 
 ## DIVERS
 
-%__install -m 644 docs/*.txt %{buildroot}/%{_datadir}/plebtracker/docs/
-%__install -m 644 docs/*.pdf %{buildroot}/%{_datadir}/plebtracker/docs/
-
-%__install -m 644 examples/*.plb %{buildroot}/%{_datadir}/plebtracker/examples/
+install -m 644 docs/*.txt %{buildroot}/%{_datadir}/plebtracker/docs/
+install -m 644 docs/*.pdf %{buildroot}/%{_datadir}/plebtracker/docs/
+install -m 644 examples/*.plb %{buildroot}/%{_datadir}/plebtracker/examples/
 
 %files
 %doc README.md
@@ -90,6 +92,9 @@ cd ../..
 %{_datadir}/*
 
 %changelog
+* Sun Dec 05 2021 Yann Collette <ycollette dot nospam at free.fr> 0.1-3
+- fix permissions
+
 * Mon Oct 19 2020 Yann Collette <ycollette dot nospam at free.fr> 0.1-2
 - fix debug build
 
