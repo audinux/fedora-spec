@@ -1,10 +1,14 @@
 CXX = g++
 
 LIBS = src/extralibs/sdl_draw/draw_hline.o \
-  src/extralibs/sdl_draw/draw_line.o \
-  src/extralibs/sdl_draw/draw_pixel.o \
-  src/extralibs/sdl_draw/draw_vline.o \
-  -ltinyxml -lasound -lSDL -lz -ljack -lpthread $(LDFLAGS)
+       src/extralibs/sdl_draw/draw_line.o \
+       src/extralibs/sdl_draw/draw_pixel.o \
+       src/extralibs/sdl_draw/draw_vline.o \
+       src/extralibs/tinyxml/tinyxml.o \
+       src/extralibs/tinyxml/tinyxmlparser.o \
+       src/extralibs/tinyxml/tinystr.o \
+       src/extralibs/tinyxml/tinyxmlerror.o \
+       -lasound -lSDL -lz -ljack -lpthread $(LDFLAGS)
 
 FLAGS = $(CXXFLAGS) -Lsrc/extralibs/sdl_draw \
         -D __LINUX__ -D __GCC__ -D __LINUX_ALSASEQ__ -D __MOT_SWAP__
@@ -31,6 +35,7 @@ RemObj:
 	-rm -f $(EXEOBJS)
 
 protrekkr: $(EXEOBJS)
+	(cd src/extralibs/tinyxml; make)
 	$(CXX) -o ./release/distrib/ptk_linux -L./ $(FLAGS) $(EXEOBJS) $(LIBS)
 	
 ptk.o: src/ptk.cpp

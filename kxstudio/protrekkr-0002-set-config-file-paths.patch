@@ -1,0 +1,196 @@
+From e1de9ea8d9bee5e62961bf11cd5cb52d25411e0f Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 5 Dec 2021 23:43:42 +0100
+Subject: [PATCH] set config file paths
+
+---
+ src/files/config.cpp    |  8 ----
+ src/include/variables.h |  2 -
+ src/support/main.cpp    | 91 +----------------------------------------
+ 3 files changed, 2 insertions(+), 99 deletions(-)
+
+diff --git a/src/files/config.cpp b/src/files/config.cpp
+index 59be7ad..337c38a 100644
+--- a/src/files/config.cpp
++++ b/src/files/config.cpp
+@@ -67,11 +67,7 @@ void SaveConfig(void)
+     sprintf(extension, "PROTCFGF");
+     Status_Box("Saving 'ptk.cfg'...");
+ 
+-#ifdef __linux__
+     sprintf(FileName, "%s/.ptk.cfg", getenv("HOME"));
+-#else
+-    sprintf(FileName, "%s"SLASH"ptk.cfg", ExePath);
+-#endif
+ 
+     memset(KeyboardName, 0, sizeof(KeyboardName));
+     sprintf(KeyboardName, "%s", Keyboard_Name);
+@@ -174,11 +170,7 @@ void LoadConfig(void)
+     char Win_Coords[64];
+     SDL_Surface *Desktop = NULL;
+ 
+-#ifdef __linux__
+     sprintf(FileName, "%s/.ptk.cfg", getenv("HOME"));
+-#else
+-    sprintf(FileName, "%s"SLASH"ptk.cfg", ExePath);
+-#endif
+ 
+     memset(KeyboardName, 0, sizeof(KeyboardName));
+ 
+diff --git a/src/include/variables.h b/src/include/variables.h
+index dcac2fd..639eca2 100644
+--- a/src/include/variables.h
++++ b/src/include/variables.h
+@@ -428,8 +428,6 @@ extern int LastProgram[MAX_TRACKS];
+ 
+ extern Uint32 Alloc_midi_Channels[MAX_TRACKS][MAX_POLYPHONY];
+ 
+-extern char *ExePath;
+-
+ extern int allow_save;
+ 
+ extern char Channels_Polyphony[MAX_TRACKS];
+diff --git a/src/support/main.cpp b/src/support/main.cpp
+index 680eb6e..1cce7f8 100644
+--- a/src/support/main.cpp
++++ b/src/support/main.cpp
+@@ -124,8 +124,6 @@ float delay_refresh2;
+ extern int Nbr_Update_Rects;
+ extern SDL_Rect Update_Stack[2048];
+ 
+-char *ExePath;
+-
+ SDL_Event Events[MAX_EVENTS];
+ 
+ int Nbr_Keyboards;
+@@ -318,14 +316,7 @@ void Load_Keyboard_Def(char *FileName)
+     char KbFileName[MAX_PATH];
+     char Keyboard_Label[256];
+ 
+-#if defined(__WIN32__)
+-    strcpy(KbFileName, ExePath);
+-    strcat(KbFileName, "\\skins\\");
+-#else
+-    strcpy(KbFileName, ExePath);
+-    strcat(KbFileName, "/../share/protrekkr/skins/");
+-#endif
+-
++    strcpy(KbFileName, "/usr/share/protrekkr/skins/");
+     strcat(KbFileName, FileName);
+ 
+     // Current keyboard filename (saved in ptk.cfg)
+@@ -383,7 +374,6 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
+     FILE *KbFile;
+     int in_note;
+     char Win_Coords[64];
+-    Uint32 ExePath_Size = MAX_PATH;
+ 
+ #if defined(__MACOSX__)
+     Uint32 Path_Length;
+@@ -413,78 +403,10 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
+     }
+     SDL_WM_SetCaption(Window_Title, NULL);
+ 
+-    ExePath = (char *) malloc(ExePath_Size + 1);
+-    if(ExePath == NULL)
+-    {
+-        Message_Error("Can't open alloc memory.");
+-        exit(0);
+-    }
+-    memset(ExePath, 0, ExePath_Size + 1);
+-
+     Screen_Info = SDL_GetVideoInfo();
+     Startup_Width = Screen_Info->current_w;
+     Startup_Height = Screen_Info->current_h;
+ 
+-#if defined(__LINUX__)
+-    // Note:
+-    // it looks like some distros don't have /proc/self
+-    // Maybe a better (?) solution would be to use:
+-    // sprintf(ExeProc, "/proc/$d/exe", getpid());
+-    // readlink(ExeProc, ExePath, sizeof(ExePath));
+-    readlink("/proc/self/exe", ExePath, ExePath_Size);
+-    int exename_len = strlen(ExePath);
+-    while(exename_len--)
+-    {
+-        if(ExePath[exename_len] == '/')
+-        {
+-            ExePath[exename_len] = 0;
+-            exename_len++;
+-            break;
+-        }
+-    }
+-    CHDIR(ExePath);
+-
+-#elif defined(__AMIGAOS4__) || defined(__AROS__)
+-    CHDIR("/PROGDIR/");
+-    GETCWD(ExePath, MAX_PATH);
+-#else
+-
+-    #if defined(__MACOSX__)
+-        Path_Length = ExePath_Size;
+-        _NSGetExecutablePath(ExePath, &Path_Length);
+-        while(Path_Length--)
+-        {
+-            if(ExePath[Path_Length] == '/')
+-            {
+-                ExePath[Path_Length] = 0;
+-                Path_Length++;
+-                break;
+-            }
+-        }
+-
+-        // There's a probably a better way to do that but
+-        // it works fine and i want the app to be able 
+-        // to run from a console too.
+-        int Found_File = FALSE;
+-        strcat(ExePath, "/../");
+-        while(!Found_File)
+-        {
+-            CHDIR(ExePath);
+-            FILE *Test_File = fopen("skins/skin.xml", "rb");
+-            if(Test_File)
+-            {
+-                Found_File = TRUE;
+-                fclose(Test_File);
+-                ExePath[strlen(ExePath) - 1] = 0;
+-                break;
+-            }
+-            strcat(ExePath, "../");
+-        }
+-    #else
+-        GETCWD(ExePath, MAX_PATH);
+-    #endif
+-#endif
+-
+     // Default values
+     sprintf(Keyboard_Name, "%s", "kben.txt");
+     sprintf(Keyboard_FileNames[0], "%s", "kben.txt");
+@@ -519,14 +441,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
+ 
+             // Load the keyboard file
+ 
+-#if defined(__WIN32__)
+-            strcpy(KbFileNameToLoad, ExePath);
+-            strcat(KbFileNameToLoad, "\\skins\\");
+-#else
+-            strcpy(KbFileNameToLoad, ExePath);
+-            strcat(KbFileNameToLoad, "/../share/protrekkr/skins/");
+-#endif
+-
++            strcpy(KbFileNameToLoad, "/usr/share/protrekkr/skins/");
+             strcat(KbFileNameToLoad, KbFileName);
+ 
+             // Store it
+@@ -906,8 +821,6 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
+     }
+     SaveConfig();
+ 
+-	if(ExePath) free(ExePath);
+-
+     exit(0);
+ }
+ 
+-- 
+2.31.1
+

@@ -19,23 +19,24 @@ Distribution: Audinux
 
 Source0: https://github.com/falkTX/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1: protrekkr-makefile.linux
+Patch0:  protrekkr-0002-set-config-file-paths.patch
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: SDL-devel
 BuildRequires: zlib-devel
-BuildRequires: tinyxml-devel
 
 %description
 A jack tracker
 
 %prep
-%autosetup -n %{name}-%{commit0}
+%autosetup -p1 -n %{name}-%{commit0}
 
 cp %SOURCE1 makefile.linux
 sed -i -e "12,14d" src/extralibs/sdl_draw/makefile.linux
 sed -i -e "s/FLAGS = -O2/FLAGS = \$(CXXFLAGS)/g" src/extralibs/sdl_draw/makefile.linux
+sed -i -e "s/-Wno-format -O3/-Wno-format -O3 -fPIC/g" src/extralibs/tinyxml/Makefile
 
 %build
 
@@ -46,7 +47,8 @@ cd src/extralibs/sdl_draw
 cd ../../..
 	
 # -Werror=format-security -Wall
-export CXXFLAGS="-O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection"
+export CFLAGS="-fPIC $CFLAGS"
+export CXXFLAGS="-fPIC -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection"
 %make_build -f makefile.linux
 
 %install
