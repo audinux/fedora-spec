@@ -9,13 +9,15 @@
 
 Name:    zytrax
 Version: 0.9.0.%{shortcommit0}
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Easy to use sequencer with an interface heavily inspired by 90's tracker software 
 URL:     https://github.com/reduz/zytrax.git
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/reduz/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source1: SConstruct-zytrax
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make scons
@@ -40,8 +42,6 @@ simple pattern/orderlist layout).
 %prep
 %autosetup -n %{name}-%{commit0}
 
-cp %{SOURCE1} SConstruct
-
 %build
 
 export XDG_CURRENT_DESKTOP="kde"
@@ -60,7 +60,7 @@ Exec=/usr/bin/zytrax
 Type=Application
 Terminal=0
 Icon=/usr/share/pixmaps/zytrax.png
-Categories=Audio;
+Categories=Audio;AudioVideo;
 EOF
 
 %install
@@ -80,6 +80,9 @@ desktop-file-install --vendor '' \
         --dir %{buildroot}/%{_datadir}/applications \
         %{buildroot}/%{_datadir}/applications/zytrax.desktop
 
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/zytrax.desktop
+
 %files
 %doc README.md
 %license LICENSE
@@ -88,6 +91,9 @@ desktop-file-install --vendor '' \
 %{_datadir}/pixmaps/zytrax.png
 
 %changelog
+* Sun Dec 05 2021 Yann Collette <ycollette.nospam@free.fr> - 0.9.0-3
+- rebuild
+
 * Tue Oct 20 2020 Yann Collette <ycollette.nospam@free.fr> - 0.9.0-2
 - fix debug build
 
