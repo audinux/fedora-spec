@@ -5,10 +5,13 @@
 
 Name:    mammut
 Version: 0.61.%{shortcommit0}
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A sound editor with a non-intuitive sound transformation approach using one single gigantic analysis (no windows)
 License: GPLv3
 URL:     https://github.com/kmatheussen/mammut/
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/kmatheussen/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1: mammut_globals.c
@@ -37,6 +40,8 @@ single gigantic analysis (no windows).
 %autosetup -p1 -n %{name}-%{commit0}
 
 cp %{SOURCE1} src/globals.c
+
+sed -i -e "s/-march=native//g" juce_5_3_2/Builds/Linux/Makefile
 
 %build
 
@@ -81,5 +86,8 @@ desktop-file-install                         \
 %{_datadir}/*
 
 %changelog
+* Sun Dec 05 2021 Yann Collette <ycollette.nospam@free.fr> - 4.61-71986a48-2
+- Fix build with native flags
+
 * Sun Dec 20 2020 Yann Collette <ycollette.nospam@free.fr> - 4.61-71986a48-1
 - Initial spec file
