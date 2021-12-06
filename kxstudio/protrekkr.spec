@@ -26,6 +26,7 @@ BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: SDL-devel
 BuildRequires: zlib-devel
+BuildRequires: desktop-file-utils
 
 %description
 A jack tracker
