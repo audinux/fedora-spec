@@ -55,6 +55,16 @@
 | HISE                | https://github.com/christophhart/HISE.git |
 | ORCHESTOOLS-PIANO-S | https://github.com/ilirbajri/ORCHESTOOLS-PIANO-S |
 | CollisionDrive      | https://github.com/brummer10/CollisionDrive |
+| QuatumVerb          | https://github.com/QVbDev/quantumVerb |
+| Gammou              | https://github.com/aliefhooghe/Gammou |
+| Livecode-This       | https://github.com/gilfuser/livecode-this |
+| SpleeterRT          | https://github.com/james34602/SpleeterRT |
+| Spek                | https://github.com/alexkay/spek |
+| sndpeek             | https://www.gewang.com/software/sndpeek |
+| fmit                | https://github.com/gillesdegottex/fmit |
+| Mousai              | https://github.com/SeaDve/Mousai |
+| audioprism          | https://github.com/vsergeev/audioprism |
+| friture             | https://github.com/tlecomte/friture |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
