@@ -1,13 +1,14 @@
-From e1de9ea8d9bee5e62961bf11cd5cb52d25411e0f Mon Sep 17 00:00:00 2001
+From 8d8bc63c3ffe591a0bb1f74b9c2bce81ab2b8f3c Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Sun, 5 Dec 2021 23:43:42 +0100
-Subject: [PATCH] set config file paths
+Date: Mon, 6 Dec 2021 15:37:14 +0100
+Subject: [PATCH] remove exepath
 
 ---
  src/files/config.cpp    |  8 ----
  src/include/variables.h |  2 -
  src/support/main.cpp    | 91 +----------------------------------------
- 3 files changed, 2 insertions(+), 99 deletions(-)
+ src/ui/xml.cpp          |  2 +-
+ 4 files changed, 3 insertions(+), 100 deletions(-)
 
 diff --git a/src/files/config.cpp b/src/files/config.cpp
 index 59be7ad..337c38a 100644
@@ -51,7 +52,7 @@ index dcac2fd..639eca2 100644
  
  extern char Channels_Polyphony[MAX_TRACKS];
 diff --git a/src/support/main.cpp b/src/support/main.cpp
-index 680eb6e..1cce7f8 100644
+index 4bc3e47..1cce7f8 100644
 --- a/src/support/main.cpp
 +++ b/src/support/main.cpp
 @@ -124,8 +124,6 @@ float delay_refresh2;
@@ -72,7 +73,7 @@ index 680eb6e..1cce7f8 100644
 -    strcat(KbFileName, "\\skins\\");
 -#else
 -    strcpy(KbFileName, ExePath);
--    strcat(KbFileName, "/../share/protrekkr/skins/");
+-    strcat(KbFileName, "/skins/");
 -#endif
 -
 +    strcpy(KbFileName, "/usr/share/protrekkr/skins/");
@@ -175,7 +176,7 @@ index 680eb6e..1cce7f8 100644
 -            strcat(KbFileNameToLoad, "\\skins\\");
 -#else
 -            strcpy(KbFileNameToLoad, ExePath);
--            strcat(KbFileNameToLoad, "/../share/protrekkr/skins/");
+-            strcat(KbFileNameToLoad, "/skins/");
 -#endif
 -
 +            strcpy(KbFileNameToLoad, "/usr/share/protrekkr/skins/");
@@ -191,6 +192,19 @@ index 680eb6e..1cce7f8 100644
      exit(0);
  }
  
+diff --git a/src/ui/xml.cpp b/src/ui/xml.cpp
+index 2fb7295..0346dc6 100644
+--- a/src/ui/xml.cpp
++++ b/src/ui/xml.cpp
+@@ -54,7 +54,7 @@ list <skin_file> skin_files;
+ // - Spin (2 arrows with a number).
+ // - Picture.
+ 
+-TiXmlDocument doc("skins/skin.xml");
++TiXmlDocument doc("/usr/share/protrekkr/skins/skin.xml");
+ char xml_error[256];
+ 
+ extern char Window_Title[256];
 -- 
-2.31.1
+2.33.1
 

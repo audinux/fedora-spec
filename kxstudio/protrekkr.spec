@@ -9,7 +9,7 @@
 
 Name:    protrekkr
 Version: 1.0.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: A jack tracker
 License: GPLv2+
 URL:     https://github.com/falkTX/protrekkr
@@ -19,7 +19,7 @@ Distribution: Audinux
 
 Source0: https://github.com/falkTX/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1: protrekkr-makefile.linux
-Patch0:  protrekkr-0002-set-config-file-paths.patch
+Patch0:  protrekkr-0001-set-config-file-paths.patch
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: alsa-lib-devel
@@ -99,6 +99,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/*
 
 %changelog
+* Mon Dec 06 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-4
+- fix hangs due to tinyxml
+
 * Fri Oct 23 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-3
 - fix debug build
 
