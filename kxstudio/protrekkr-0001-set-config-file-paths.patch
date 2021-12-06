@@ -1,14 +1,15 @@
-From 8d8bc63c3ffe591a0bb1f74b9c2bce81ab2b8f3c Mon Sep 17 00:00:00 2001
+From 747f9eaf7466253e5f5811bd39beabde0e3158b6 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Mon, 6 Dec 2021 15:37:14 +0100
-Subject: [PATCH] remove exepath
+Date: Mon, 6 Dec 2021 21:45:21 +0100
+Subject: [PATCH] set config path
 
 ---
  src/files/config.cpp    |  8 ----
  src/include/variables.h |  2 -
+ src/ptk.cpp             | 12 +-----
  src/support/main.cpp    | 91 +----------------------------------------
  src/ui/xml.cpp          |  2 +-
- 4 files changed, 3 insertions(+), 100 deletions(-)
+ 5 files changed, 5 insertions(+), 110 deletions(-)
 
 diff --git a/src/files/config.cpp b/src/files/config.cpp
 index 59be7ad..337c38a 100644
@@ -51,6 +52,36 @@ index dcac2fd..639eca2 100644
  extern int allow_save;
  
  extern char Channels_Polyphony[MAX_TRACKS];
+diff --git a/src/ptk.cpp b/src/ptk.cpp
+index 1b36d57..f55f216 100644
+--- a/src/ptk.cpp
++++ b/src/ptk.cpp
+@@ -428,11 +428,7 @@ SDL_Surface *Load_Skin_Picture(char *name)
+         return(NULL);
+     }
+ 
+-#if defined(__WIN32__)
+-    sprintf(filepath, "skins\\%s", pic_filename);
+-#else
+-    sprintf(filepath, "skins/%s", pic_filename);
+-#endif
++    sprintf(filepath, "/usr/share/protrekkr/skins/%s", pic_filename);
+ 
+     surface = Load_Picture(filepath);
+     if(surface == NULL)
+@@ -460,11 +456,7 @@ int Load_Font_Datas(char *name)
+         return(FALSE);
+     }
+ 
+-#if defined(__WIN32__)
+-    sprintf(filepath, "skins\\%s", pic_filename);
+-#else
+-    sprintf(filepath, "skins/%s", pic_filename);
+-#endif
++    sprintf(filepath, "/usr/share/protrekkr/skins/%s", pic_filename);
+     if(!Create_Font_Datas(filepath))
+     {
+         sprintf(error, "Can't load %s file.", pic_filename);
 diff --git a/src/support/main.cpp b/src/support/main.cpp
 index 4bc3e47..1cce7f8 100644
 --- a/src/support/main.cpp
@@ -206,5 +237,5 @@ index 2fb7295..0346dc6 100644
  
  extern char Window_Title[256];
 -- 
-2.33.1
+2.31.1
 
