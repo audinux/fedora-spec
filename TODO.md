@@ -65,6 +65,9 @@
 | Mousai              | https://github.com/SeaDve/Mousai |
 | audioprism          | https://github.com/vsergeev/audioprism |
 | friture             | https://github.com/tlecomte/friture |
+| Tutka               | https://www.nongnu.org/tutka |
+| littlegptracker     | http://www.littlegptracker.com |
+| chibitracker        | https://sourceforge.net/projects/chibitracker.berlios/files |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
