@@ -1,5 +1,5 @@
 Name:    JUCE
-Version: 6.1.2
+Version: 6.1.3
 Release: 5%{?dist}
 Summary: JUCE Framework
 URL:     https://github.com/juce-framework/JUCE
@@ -18,7 +18,7 @@ BuildRequires: dssi-devel
 BuildRequires: ladspa-devel
 BuildRequires: doxygen
 BuildRequires: graphviz
-BuildRequires: python2
+BuildRequires: python3
 BuildRequires: webkit2gtk3-devel
 BuildRequires: sed
 BuildRequires: libcurl-devel
@@ -45,7 +45,6 @@ export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g"
 export CFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g"
 
 cd docs/doxygen
-sed -i -e "s/python/python2/g" Makefile
 
 mkdir build
 %make_build CONFIG=Release STRIP=true 
@@ -92,6 +91,9 @@ cp -ra docs/doxygen/doc/* %{buildroot}/%{_datadir}/JUCE/doc/
 %{_usrsrc}/*
 
 %changelog
+* Wed Dec 08 2021 Yann Collette <ycollette.nospam@free.fr> - 6.1.3-5
+- update to 6.1.3-5
+
 * Mon Sep 20 2021 Yann Collette <ycollette.nospam@free.fr> - 6.1.2-5
 - update to 6.1.2-5
 
