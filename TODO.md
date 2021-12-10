@@ -68,6 +68,7 @@
 | Tutka               | https://www.nongnu.org/tutka |
 | littlegptracker     | http://www.littlegptracker.com |
 | chibitracker        | https://sourceforge.net/projects/chibitracker.berlios/files |
+| PSindustrializer    | https://git.code.sf.net/p/industrializer/code |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
