@@ -2,6 +2,9 @@
 # Type: Rack
 # Category: Audio, Synthesizer
 
+%define use_static_glfw 0
+%define use_static_rtaudio 1
+
 # Global variables for github repository
 %global commit0 COMMITID
 %global gittag0 VERSION
@@ -45,6 +48,7 @@ BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
 BuildRequires: speexdsp-devel
 BuildRequires: jq
+BuildRequires: chrpath
 
 %description
 SLUGNAME plugin for Rack.
@@ -115,8 +119,6 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "s/systemDir = \".\";/systemDir = \"\/usr\/libexec\/Rack2\";/g" src/asset.cpp
 sed -i -e "s/pluginsPath = userDir + \"\/plugins-v\"/pluginsPath = systemDir + \"\/plugins-v\"/g" src/asset.cpp
 
-tar xvfz %{SOURCE1}
-
 # Disable an assert triggered with pipewire
 sed -i -e "s/assert(!err);/\/\/assert(!err);/g" src/system.cpp
 CURRENT_PATH=`pwd`
@@ -138,6 +140,10 @@ sed -i -e "s/dep\/lib\/librtmidi.a/-lrtmidi/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 # We use provided RtAudio library because Rack hangs when using jack and fedora rtaudio
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
+
+# Remove rpath
+sed -i -e "/-rpath/d" Makefile
+sed -i -e "/-rpath/d" plugin.mk
 
 mkdir SLUGNAME_plugin
 tar xvfz %{SOURCE1} --directory=SLUGNAME_plugin --strip-components=1 
