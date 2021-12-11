@@ -41,6 +41,9 @@ BuildRequires: openssl-devel
 BuildRequires: jansson-devel
 BuildRequires: gtk3-devel
 BuildRequires: rtmidi-devel
+%if !%{use_static_rtaudio}
+BuildRequires: rtaudio-devel
+%endif
 BuildRequires: speex-devel
 BuildRequires: speexdsp-devel
 BuildRequires: gulrak-filesystem-devel

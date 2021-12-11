@@ -41,8 +41,14 @@ BuildRequires: openssl-devel
 BuildRequires: jansson-devel
 BuildRequires: gtk3-devel
 BuildRequires: rtmidi-devel
+%if !%{use_static_rtaudio}
+BuildRequires: rtaudio-devel
+%endif
 BuildRequires: speex-devel
 BuildRequires: speexdsp-devel
+BuildRequires: gulrak-filesystem-devel
+BuildRequires: libarchive-devel
+BuildRequires: libzstd-devel
 BuildRequires: jq
 
 %description
@@ -163,7 +169,7 @@ cp -r fundamental_plugin/dist/Fundamental/* %{buildroot}%{_libexecdir}/Rack2/plu
 * Sun Nov 29 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-6
 - fix rtaudio + debug build
 
-* Fri OCt 29 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-5
+* Fri Oct 30 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-5
 - update to 1.4.0-5
 
 * Tue Sep 8 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-4
