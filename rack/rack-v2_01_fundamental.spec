@@ -2,6 +2,9 @@
 # Type: Rack
 # Category: Audio, Synthesizer
 
+%define use_static_glfw 0
+%define use_static_rtaudio 0
+
 %global debug_package %{nil}
 
 # Global variables for github repository
@@ -17,10 +20,11 @@ License: GPLv2+
 URL:     https://github.com/VCVRack/Fundamental
 
 # ./rack-source.sh <tag>
-# ./rack-source.sh v2.0.0
+# ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
 Source1: https://github.com/VCVRack/Fundamental/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Patch0:  rack-v2-0001-initialize-system-path.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -35,12 +39,11 @@ BuildRequires: portaudio-devel
 BuildRequires: libcurl-devel
 BuildRequires: openssl-devel
 BuildRequires: jansson-devel
-BuildRequires: gtk2-devel
+BuildRequires: gtk3-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
 BuildRequires: speexdsp-devel
 BuildRequires: jq
-BuildRequires: Rack-v2
 
 %description
 The Fundamental plugin pack gives you a basic foundation to create simple synthesizers,
@@ -49,7 +52,7 @@ and build some not-so-simple patches using brute force (lots of modules).
 They are also a great reference for creating your own plugins in C++.
 
 %prep
-%autosetup -n Rack
+%autosetup -p1 -n Rack
 
 CURRENT_PATH=`pwd`
 
@@ -65,12 +68,34 @@ sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk
 sed -i -e "s/-static-libstdc++ -static-libgcc//g" Makefile
 sed -i -e "s/-static-libstdc++ -static-libgcc//g" plugin.mk
 
-echo "CXXFLAGS += $NEW_FLAGS -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
+%if !%{use_static_glfw}
+NEW_FLAGS="-I/usr/include/GLFW"
+%endif
+%if !%{use_static_rtaudio}
+NEW_FLAGS="$NEW_FLAGS -I/usr/include/rtaudio"
+%endif
+
+echo "CXXFLAGS += $NEW_FLAGS `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
+
+%if %{use_static_glfw}
+echo "Use Static GLFW"
+%else
+echo "Do not use static GLFW"
+%endif
+%if %{use_static_rtaudio}
+echo "Use Static RTAUDIO"
+%else
+echo "Do not use static RTAUDIO"
+%endif
 
 sed -i -e "s/-Wl,-Bstatic//g" Makefile
 
 sed -i -e "s/dep\/lib\/libGLEW.a/-lGLEW/g" Makefile
+%if !%{use_static_glfw}
 sed -i -e "s/dep\/lib\/libglfw3.a/-lglfw/g" Makefile
+%else
+sed -i -e "s/dep\/lib\/libglfw3.a/dep\/%{_lib}\/libglfw3.a/g" Makefile
+%endif
 sed -i -e "s/dep\/lib\/libjansson.a/-ljansson/g" Makefile
 sed -i -e "s/dep\/lib\/libcurl.a/-lcurl/g" Makefile
 sed -i -e "s/dep\/lib\/libssl.a/-lssl/g" Makefile
@@ -83,11 +108,11 @@ sed -i -e "s/dep\/lib\/librtmidi.a/-lrtmidi/g" Makefile
 sed -i -e "s/dep\/lib\/libarchive.a/-larchive/g" Makefile
 sed -i -e "s/dep\/lib\/libzstd.a/-lzstd/g" Makefile
 # We use provided RtAudio library because Rack hangs when using jack and fedora rtaudio
+%if !%{use_static_rtaudio}
+sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio -lpulse-simple -lpulse/g" Makefile
+%else
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
-sed -i -e "s/systemDir = \".\";/systemDir = \"\/usr\/libexec\/Rack2\";/g" src/asset.cpp
-
-# Disable an assert triggered with pipewire
-sed -i -e "s/assert(!err);/\/\/assert(!err);/g" src/system.cpp
+%endif
 
 # Remove rpath
 sed -i -e "/-rpath/d" Makefile
@@ -98,13 +123,29 @@ tar xvfz %{SOURCE1} --directory=fundamental_plugin --strip-components=1
 
 %build
 
+CURRENT_PATH=`pwd`
+export CFLAGS="`pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src"
+export CXXFLAGS=
+export LDFLAGS=
+
 cd dep
+%if %{use_static_glfw}
+cd glfw
+cmake -DCMAKE_INSTALL_PREFIX=.. -DGLFW_COCOA_CHDIR_RESOURCES=OFF -DGLFW_COCOA_MENUBAR=ON -DGLFW_COCOA_RETINA_FRAMEBUFFER=ON -DCMAKE_BUILD_TYPE=DEBUG .
+make
+make install
+cd ..
+%endif
+%if %{use_static_rtaudio}
 cd rtaudio
 cmake -DCMAKE_INSTALL_PREFIX=.. -DBUILD_SHARED_LIBS=FALSE -DCMAKE_BUILD_TYPE=DEBUG .
 make
 make install
 cd ..
+%endif
 cd ..
+
+%make_build PREFIX=/usr LIBDIR=%{_lib}
 
 cd fundamental_plugin
 

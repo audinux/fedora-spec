@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 %define use_static_glfw 0
-%define use_static_rtaudio 1
+%define use_static_rtaudio 0
 
 Name:    Rack-v2
 Version: 2.0.3
@@ -39,7 +39,7 @@ BuildRequires: pulseaudio-libs-devel
 BuildRequires: libcurl-devel
 BuildRequires: openssl-devel
 BuildRequires: jansson-devel
-BuildRequires: gtk2-devel
+BuildRequires: gtk3-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
 BuildRequires: speexdsp-devel
@@ -54,7 +54,7 @@ BuildRequires: python3-sphinx_rtd_theme
 A modular Synthesizer
 
 %package doc
-Summary:   Documentation files for Rack
+Summary: Documentation files for Rack
 BuildArch: noarch
 
 %description doc
@@ -84,7 +84,7 @@ NEW_FLAGS="-I/usr/include/GLFW"
 NEW_FLAGS="$NEW_FLAGS -I/usr/include/rtaudio"
 %endif
 
-echo "CXXFLAGS += $NEW_FLAGS -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
+echo "CXXFLAGS += $NEW_FLAGS `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
 
 %if %{use_static_glfw}
 echo "Use Static GLFW"
@@ -117,7 +117,7 @@ sed -i -e "s/dep\/lib\/librtmidi.a/-lrtmidi/g" Makefile
 sed -i -e "s/dep\/lib\/libarchive.a/-larchive/g" Makefile
 sed -i -e "s/dep\/lib\/libzstd.a/-lzstd/g" Makefile
 # We use provided RtAudio library because Rack hangs when using jack and fedora rtaudio
-%if !%{use_static_glfw}
+%if !%{use_static_rtaudio}
 sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio -lpulse-simple -lpulse/g" Makefile
 %else
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
@@ -132,7 +132,7 @@ sed -i -e "/-rpath/d" plugin.mk
 %build
 
 CURRENT_PATH=`pwd`
-export CFLAGS="-I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src"
+export CFLAGS="`pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src"
 export CXXFLAGS=
 export LDFLAGS=
 

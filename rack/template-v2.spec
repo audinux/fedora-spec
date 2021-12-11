@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 %define use_static_glfw 0
-%define use_static_rtaudio 1
+%define use_static_rtaudio 0
 
 # Global variables for github repository
 %global commit0 COMMITID
@@ -24,7 +24,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./rack-source.sh <tag>
-# ./rack-source.sh v2.0.0
+# ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
 Source1: SOURCE1
@@ -43,12 +43,12 @@ BuildRequires: portaudio-devel
 BuildRequires: libcurl-devel
 BuildRequires: openssl-devel
 BuildRequires: jansson-devel
-BuildRequires: gtk2-devel
+BuildRequires: gtk3-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
 BuildRequires: speexdsp-devel
+BuildRequires: Rack-v2
 BuildRequires: jq
-BuildRequires: chrpath
 
 %description
 SLUGNAME plugin for Rack.
@@ -78,7 +78,7 @@ NEW_FLAGS="-I/usr/include/GLFW"
 NEW_FLAGS="$NEW_FLAGS -I/usr/include/rtaudio"
 %endif
 
-echo "CXXFLAGS += $NEW_FLAGS -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
+echo "CXXFLAGS += $NEW_FLAGS `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
 
 %if %{use_static_glfw}
 echo "Use Static GLFW"
@@ -111,35 +111,11 @@ sed -i -e "s/dep\/lib\/librtmidi.a/-lrtmidi/g" Makefile
 sed -i -e "s/dep\/lib\/libarchive.a/-larchive/g" Makefile
 sed -i -e "s/dep\/lib\/libzstd.a/-lzstd/g" Makefile
 # We use provided RtAudio library because Rack hangs when using jack and fedora rtaudio
-%if !%{use_static_glfw}
+%if !%{use_static_rtaudio}
 sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio -lpulse-simple -lpulse/g" Makefile
 %else
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 %endif
-sed -i -e "s/systemDir = \".\";/systemDir = \"\/usr\/libexec\/Rack2\";/g" src/asset.cpp
-sed -i -e "s/pluginsPath = userDir + \"\/plugins-v\"/pluginsPath = systemDir + \"\/plugins-v\"/g" src/asset.cpp
-
-# Disable an assert triggered with pipewire
-sed -i -e "s/assert(!err);/\/\/assert(!err);/g" src/system.cpp
-CURRENT_PATH=`pwd`
-
-sed -i -e "s/-Wl,-Bstatic//g" Makefile
-sed -i -e "s/-lglfw3/dep\/lib\/libglfw3.a/g" Makefile
-
-sed -i -e "s/dep\/lib\/libGLEW.a/-lGLEW/g" Makefile
-sed -i -e "s/dep\/lib\/libglfw3.a/dep\/%{_lib}\/libglfw3.a/g" Makefile
-sed -i -e "s/dep\/lib\/libjansson.a/-ljansson/g" Makefile
-sed -i -e "s/dep\/lib\/libcurl.a/-lcurl/g" Makefile
-sed -i -e "s/dep\/lib\/libssl.a/-lssl/g" Makefile
-sed -i -e "s/dep\/lib\/libcrypto.a/-lcrypto/g" Makefile
-sed -i -e "s/dep\/lib\/libzip.a/-lzip/g" Makefile
-sed -i -e "s/dep\/lib\/libz.a/-lz/g" Makefile
-sed -i -e "s/dep\/lib\/libspeexdsp.a/-lspeexdsp/g" Makefile
-sed -i -e "s/dep\/lib\/libsamplerate.a/-lsamplerate/g" Makefile
-sed -i -e "s/dep\/lib\/librtmidi.a/-lrtmidi/g" Makefile
-sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
-# We use provided RtAudio library because Rack hangs when using jack and fedora rtaudio
-sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 # Remove rpath
 sed -i -e "/-rpath/d" Makefile
@@ -157,8 +133,8 @@ cd SLUGNAME_plugin
 
 %install 
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins-v2/SLUGNAME/
-cp -r SLUGNAME_plugin/dist/SLUGNAME/* %{buildroot}%{_libexecdir}/Rack2/plugins-v2/SLUGNAME/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/SLUGNAME/
+cp -r SLUGNAME_plugin/dist/SLUGNAME/* %{buildroot}%{_libexecdir}/Rack2/plugins/SLUGNAME/
 
 %files
 %{_libexecdir}/*
