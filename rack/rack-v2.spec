@@ -6,18 +6,19 @@
 %define use_static_rtaudio 1
 
 Name:    Rack-v2
-Version: 2.0.1
+Version: 2.0.3
 Release: 1%{?dist}
 Summary: A modular Synthesizer
 License: GPLv2+
 URL:     https://github.com/VCVRack/Rack
 
 # ./rack-source.sh <tag>
-# ./rack-source.sh v2.0.1
+# ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
 Source1: Rack-manual.tar.gz
 Source2: rack-source.sh
+Patch0:  rack-v2-0001-initialize-system-path.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -60,7 +61,7 @@ BuildArch: noarch
 Documentation files for Rack
 
 %prep
-%autosetup -n Rack
+%autosetup -p1 -n Rack
 
 CURRENT_PATH=`pwd`
 
@@ -121,13 +122,8 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio -lpulse-simple -lpulse/g" Makefile
 %else
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 %endif
-sed -i -e "s/systemDir = system::getWorkingDirectory();/systemDir = \"\/usr\/libexec\/Rack2\";/g" src/asset.cpp
-sed -i -e "s/pluginsPath = userDir + \"\/plugins-v\"/pluginsPath = systemDir + \"\/plugins-v\"/g" src/asset.cpp
 
 tar xvfz %{SOURCE1}
-
-# Disable an assert triggered with pipewire
-sed -i -e "s/assert(!err);/\/\/assert(!err);/g" src/system.cpp
 
 # Remove rpath
 sed -i -e "/-rpath/d" Makefile
@@ -201,8 +197,8 @@ EOF
 %{_datadir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
-- update to v2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
+- update to v2.0.3-1
 
 * Tue Apr 06 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.6-13
 - fix for wayland ...

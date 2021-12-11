@@ -1,0 +1,40 @@
+From a0d4c7668d74b3af184886d9578a90a04dbee3de Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sat, 11 Dec 2021 13:16:29 +0100
+Subject: [PATCH] initialize system path
+
+---
+ src/asset.cpp  | 2 +-
+ src/plugin.cpp | 3 +++
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/src/asset.cpp b/src/asset.cpp
+index 33bf261..321515e 100644
+--- a/src/asset.cpp
++++ b/src/asset.cpp
+@@ -78,7 +78,7 @@ static void initSystemDir() {
+ #endif
+ #if defined ARCH_LIN
+ 	// Use the current working directory as the default path on Linux.
+-	systemDir = system::getWorkingDirectory();
++	systemDir = "/usr/libexec/Rack2";
+ #endif
+ }
+ 
+diff --git a/src/plugin.cpp b/src/plugin.cpp
+index cc59caa..c46c8d2 100644
+--- a/src/plugin.cpp
++++ b/src/plugin.cpp
+@@ -230,6 +230,9 @@ void init() {
+ 	// Load Core
+ 	loadPlugin("");
+ 
++	// Load plugins from System path
++	loadPlugins("/usr/libexec/Rack2/plugins/");
++
+ 	pluginsPath = asset::user("plugins");
+ 
+ 	// Get user plugins directory
+-- 
+2.31.1
+

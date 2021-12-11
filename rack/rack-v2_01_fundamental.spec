@@ -86,8 +86,6 @@ sed -i -e "s/dep\/lib\/libzstd.a/-lzstd/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 sed -i -e "s/systemDir = \".\";/systemDir = \"\/usr\/libexec\/Rack2\";/g" src/asset.cpp
 
-tar xvfz %{SOURCE1}
-
 # Disable an assert triggered with pipewire
 sed -i -e "s/assert(!err);/\/\/assert(!err);/g" src/system.cpp
 
