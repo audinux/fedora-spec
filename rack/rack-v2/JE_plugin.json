@@ -1,0 +1,33 @@
+{
+  "slug": "JE",
+  "name": "JE",
+  "version": "1.0.0",
+  "license": "GPL-3.0-or-later",
+  "brand": "JE",
+  "author": "Julien Eres",
+  "authorEmail": "",
+  "authorUrl": "http://audio.julieneres.com/",
+  "pluginUrl": "https://github.com/eres-j/VCVRack-plugin-JE",
+  "manualUrl": "https://github.com/eres-j/VCVRack-plugin-JE",
+  "sourceUrl": "https://github.com/eres-j/VCVRack-plugin-JE",
+  "donateUrl": "https://www.paypal.me/JulienEres",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "RM",
+      "name": "RM",
+      "description": "Ring Modulator",
+      "tags": [
+        "Ring modulator"
+      ]
+    },
+    {
+      "slug": "WF",
+      "name": "WF",
+      "description": "Wave Folder",
+      "tags": [
+        "Waveshaper"
+      ]
+    }
+  ]
+}

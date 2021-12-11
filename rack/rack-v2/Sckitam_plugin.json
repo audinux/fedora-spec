@@ -1,0 +1,75 @@
+{
+  "slug": "Sckitam",
+  "name": "Sckitam",
+  "version": "2.0.1",
+  "license": "GPL-3.0-only",
+  "brand": "Sckitam",
+  "author": "Philippe Salembier",
+  "authorEmail": "philippe.salembier@me.com",
+  "authorUrl": "",
+  "pluginUrl": "",
+  "manualUrl": "https://github.com/philippesalembier/SckitamVCV",
+  "sourceUrl": "https://github.com/philippesalembier/SckitamVCV",
+  "donateUrl": "https://PayPal.Me/Sckitam",
+  "changelogUrl": "https://github.com/philippesalembier/SckitamVCV/blob/master/CHANGELOG.md",
+  "modules": [
+    {
+      "slug": "2DRotation",
+      "name": "2DRotation",
+      "description": "2D Rotation of 2 input signals",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "2DAffine",
+      "name": "2DAffine",
+      "description": "2D Affine transform of 2 input signals",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "FIFOQueue",
+      "name": "FIFOQueue",
+      "description": "First-in First-out Queue",
+      "tags": [
+        "Sample and hold",
+        "Sequencer"
+      ]
+    },
+    {
+      "slug": "MarkovSeq",
+      "name": "MarkovSeq",
+      "description": "Sequencer/Switch based on Markov chain",
+      "tags": [
+        "Sequencer",
+        "Switch",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "PolygonalVCO",
+      "name": "PolygonalVCO",
+      "description": "Polygonal VCO",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "WDelay",
+      "name": "WaveguideDelay",
+      "description": "High precision delay. Building block for waveguide, Karplus-Strong synthesis, Flanger and Chorus",
+      "tags": [
+        "Delay",
+        "VCO",
+        "Physical modeling",
+        "Flanger",
+        "Chorus"
+      ]
+    }
+  ]
+}

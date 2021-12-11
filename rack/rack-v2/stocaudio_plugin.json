@@ -1,0 +1,47 @@
+{
+  "slug": "stocaudio",
+  "name": "stocaudio",
+  "version": "2.0.0",
+  "license": "GPL-3.0-or-later",
+  "author": "Alessandro Petrone",
+  "authorEmail": "contact@stocaudio.com",
+  "pluginUrl": "https://github.com/aptrn/stocaudio-modules",
+  "manualUrl": "https://github.com/aptrn/stocaudio-modules",
+  "sourceUrl": "https://github.com/aptrn/stocaudio-modules",
+  "donateUrl": "https://paypal.me/aptrn",
+  "modules": [
+    {
+      "slug": "Polyturing",
+      "name": "Polyturing",
+      "description": "Turing Machine inspired polyphonic sampler/sequencer",
+      "tags": [
+        "Random",
+        "Sequencer",
+        "Sampler",
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Polydelay",
+      "name": "Polydelay",
+      "description": "Polyphonic Delay with channel spread",
+      "tags": [
+        "Delay",
+        "Effect",
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Spread",
+      "name": "Spread",
+      "description": "Polyphonic stereo spreader and summer",
+      "tags": [
+        "VCA",
+        "Utility",
+        "Polyphonic"
+      ]
+    }
+  ]
+}

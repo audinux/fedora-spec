@@ -1,0 +1,131 @@
+{
+  "slug": "BaconMusic",
+  "name": "Bacon Music",
+  "version": "2.0.0",
+  "license": "GPL-3.0-or-later",
+  "author": "@baconpaul",
+  "authorEmail": "",
+  "authorUrl": "https://baconpaul.org/",
+  "pluginUrl": "https://github.com/baconpaul/BaconPlugs/",
+  "manualUrl": "https://github.com/baconpaul/BaconPlugs#readme",
+  "sourceUrl": "https://github.com/baconpaul/BaconPlugs/",
+  "donateUrl": "",
+  "modules": [
+    {
+      "slug": "HarMoNee",
+      "name": "HarMoNee",
+      "description": "Apply musical (major third, fifth, etc...) offsets to CV 1v/oct signals",
+      "tags": [
+        "Quantizer",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Glissinator",
+      "name": "Glissinator",
+      "description": "Do a constant time gliss over a changing input signal",
+      "tags": [
+        "Slew limiter",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "PolyGnome",
+      "name": "PolyGnome",
+      "description": "A poly-rhythmic clock generator",
+      "tags": [
+        "Clock generator"
+      ]
+    },
+    {
+      "slug": "QuantEyes",
+      "name": "QuantEyes",
+      "description": "Quantize your signals to notes on a 12 tone scale",
+      "tags": [
+        "Quantizer",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "SampleDelay",
+      "name": "SampleDelay",
+      "description": "A tiny number of sample delay",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "ChipNoise",
+      "name": "ChipNoise",
+      "description": "A recreation of the NES Noise Generator",
+      "tags": [
+        "Noise"
+      ]
+    },
+    {
+      "slug": "ChipWaves",
+      "name": "ChipWaves",
+      "description": "A recreation of the NES oscillators",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "ChipYourWave",
+      "name": "ChipYourWave",
+      "description": "An 8 bit oscillator where you draw the waveform",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Open303",
+      "name": "Open303",
+      "description": "A rack wrapper around Robin Schmidt's open-303 codebase",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "KarplusStrongPoly",
+      "name": "KarplusStrongPoly",
+      "description": "An implementation of KS in a module",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "ALingADing",
+      "name": "ALingADing",
+      "description": "A sub-par ring modulator",
+      "tags": [
+        "Ring modulator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Bitulator",
+      "name": "Bitulator",
+      "description": "A sub-par distortion and bit cruncher",
+      "tags": [
+        "Distortion",
+        "Waveshaper",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "PolyGenerator",
+      "name": "PolyGenerator",
+      "description": "Generate test polyphonic midi-like sequences",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    }
+  ]
+}

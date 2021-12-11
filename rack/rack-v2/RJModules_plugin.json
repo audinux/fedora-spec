@@ -1,0 +1,491 @@
+{
+  "slug": "RJModules",
+  "name": "RJModules",
+  "version": "1.7.2",
+  "license": "MIT",
+  "brand": "RJModules",
+  "author": "Rich Jones",
+  "authorEmail": "miserlou@gmail.com",
+  "authorUrl": "http://github.com/Miserlou/RJModules",
+  "pluginUrl": "http://github.com/Miserlou/RJModules",
+  "manualUrl": "http://github.com/Miserlou/RJModules",
+  "sourceUrl": "http://github.com/Miserlou/RJModules",
+  "donateUrl": "https://www.patreon.com/zappa",
+  "modules": [
+    {
+      "slug": "Acid",
+      "name": "Acid",
+      "description": "Rich's take on the TB-303, with two VCOs, a powerful filter, an envelope generator and a pluck!",
+      "tags": [
+        "VCO",
+        "Multiple",
+        "Synth voice",
+        "Envelope generator"
+      ]
+    },
+    {
+      "slug": "BPF",
+      "name": "BPF",
+      "description": "Band Pass Filter",
+      "tags": [
+        "VCF"
+      ]
+    },
+    {
+      "slug": "Buttons",
+      "name": "Buttons",
+      "description": "Buttons",
+      "tags": [
+        "Utility",
+        "Controller"
+      ]
+    },
+    {
+      "slug": "Filters",
+      "name": "Filters",
+      "description": "A collection of filters",
+      "tags": [
+        "VCF"
+      ]
+    },
+    {
+      "slug": "Notch",
+      "name": "Notch",
+      "description": "A Notch filter",
+      "tags": [
+        "VCF"
+      ]
+    },
+    {
+      "slug": "Sidechain",
+      "name": "Sidechain",
+      "description": "A sidechain compressor, used to duck a signal and make pumping sounds.",
+      "tags": [
+        "Effect"
+      ]
+    },
+    {
+      "slug": "Chord",
+      "name": "Chord",
+      "description": "Generates chords in various positions",
+      "tags": [
+        "MIDI",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "Noise",
+      "name": "Noise",
+      "description": "Filtered Noise Generator",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "PlayableChord",
+      "name": "Playable Chord",
+      "description": "Generates chords in various positions, and accepts input via V/OCT with octave control.",
+      "tags": [
+        "MIDI",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "Floats",
+      "name": "Floats",
+      "description": "",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "Octaves",
+      "name": "Octaves",
+      "description": "",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "Splitter",
+      "name": "Splitter",
+      "description": "",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "ChordSeq",
+      "name": "ChordSeq",
+      "description": "Chord Sequencer",
+      "tags": [
+        "Utility",
+        "Sequencer"
+      ]
+    },
+    {
+      "slug": "Glides",
+      "name": "Glides",
+      "description": "Glide inbetween values with an adustable time",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "RandomFilter",
+      "name": "RandomFilter",
+      "description": "Hit the button, change the filter.",
+      "tags": [
+        "VCF",
+        "Effect"
+      ]
+    },
+    {
+      "slug": "Splitters",
+      "name": "Splitters",
+      "description": "",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "Volumes",
+      "name": "Volumes",
+      "description": "",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "Displays",
+      "name": "Displays",
+      "description": "Display values digitally",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "Integers",
+      "name": "Integers",
+      "description": "",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "Randoms",
+      "name": "Randoms",
+      "description": "",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "Stutter",
+      "name": "Stutter",
+      "description": "A stuttering effect",
+      "tags": [
+        "Effect"
+      ]
+    },
+    {
+      "slug": "Widener",
+      "name": "Widener",
+      "description": "Widens a mono signal into a stereo one",
+      "tags": [
+        "Effect"
+      ]
+    },
+    {
+      "slug": "BPM",
+      "name": "BPM",
+      "description": "A beats-per-minute signal clock",
+      "tags": [
+        "Clock generator"
+      ]
+    },
+    {
+      "slug": "EssEff",
+      "name": "EssEff",
+      "description": "EssEff is a SoundFont (.sf2) file player.",
+      "tags": [
+        "Synth voice"
+      ]
+    },
+    {
+      "slug": "LRMixer",
+      "name": "LRMixer",
+      "description": "",
+      "tags": [
+        "Mixer"
+      ]
+    },
+    {
+      "slug": "Range",
+      "name": "Range",
+      "description": "Map a signal to a range",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "Supersaw",
+      "name": "Supersaw",
+      "description": "Two detuned saws going rawr.",
+      "tags": [
+        "VCO"
+      ]
+    },
+    {
+      "slug": "uQuant",
+      "name": "uQuant",
+      "description": "A tiny, useful quantizer.",
+      "tags": [
+        "Quantizer"
+      ]
+    },
+    {
+      "slug": "Button",
+      "name": "Button",
+      "description": "It's a big button.",
+      "tags": [
+        "Controller"
+      ]
+    },
+    {
+      "slug": "MetaKnob",
+      "name": "MetaKnob",
+      "description": "It's a big knob.",
+      "tags": [
+        "Controller"
+      ]
+    },
+    {
+      "slug": "Panner",
+      "name": "Panner",
+      "description": "It pans.",
+      "tags": [
+        "Effect"
+      ]
+    },
+    {
+      "slug": "RangeLFO",
+      "name": "RangeLFO",
+      "description": "An LFO which can be mapped to a specific range.",
+      "tags": [
+        "LFO"
+      ]
+    },
+    {
+      "slug": "TwinLFO",
+      "name": "TwinLFO",
+      "description": "An LFO controlled by another LFO.",
+      "tags": [
+        "LFO"
+      ]
+    },
+    {
+      "slug": "BitCrush",
+      "name": "BitCrush",
+      "description": "It's a bit crusher.",
+      "tags": [
+        "Effect"
+      ]
+    },
+    {
+      "slug": "Filter",
+      "name": "Filter",
+      "description": "A very crude filter.",
+      "tags": [
+        "VCF"
+      ]
+    },
+    {
+      "slug": "Mono",
+      "name": "Mono",
+      "description": "Take a stereo signal and make it mono.",
+      "tags": [
+        "Effect"
+      ]
+    },
+    {
+      "slug": "Panners",
+      "name": "Panners",
+      "description": "Mono to stereo.",
+      "tags": [
+        "Effect"
+      ]
+    },
+    {
+      "slug": "ReplayKnob",
+      "name": "ReplayKnob",
+      "description": "A knob which can be recorded and replayed.",
+      "tags": [
+        "Controller",
+        "Delay",
+        "Effect"
+      ]
+    },
+    {
+      "slug": "Buffers",
+      "name": "Buffers",
+      "description": "Delay signals slightly.",
+      "tags": [
+        "Effect"
+      ]
+    },
+    {
+      "slug": "FilterDelay",
+      "name": "FilterDelay",
+      "description": "Delay with integrated filter effect.",
+      "tags": [
+        "Effect",
+        "Delay",
+        "VCF"
+      ]
+    },
+    {
+      "slug": "Pluck",
+      "name": "Pluck",
+      "description": "Integrated ADSR/VCA. Makes a pluck noise.",
+      "tags": [
+        "Effect",
+        "VCA",
+        "Envelope generator"
+      ]
+    },
+    {
+      "slug": "KTF",
+      "name": "KTF - Key Tracking Filter",
+      "description": "A 1v/oct key tracking filter.",
+      "tags": [
+        "VCF"
+      ]
+    },
+    {
+      "slug": "TriggerSwitch",
+      "name": "TriggerSwitch - Trigger Activated Gate Switch With Button",
+      "description": "Trigger Activated Gate Switch With Button.",
+      "tags": [
+        "Controller",
+        "Effect"
+      ]
+    },
+    {
+      "slug": "DryWet",
+      "name": "DryWet - Voltage Controlled Dry Wet Knob",
+      "description": "Voltage Controlled Dry Wet Knob",
+      "tags": [
+        "Controller",
+        "Effect"
+      ]
+    },
+    {
+      "slug": "MutateSeq",
+      "name": "MutateSeq - MutateSeq - Mutating Sequencer",
+      "description": "MutateSeq - Mutating Sequencer",
+      "tags": [
+        "Utility",
+        "Sequencer"
+      ]
+    },
+    {
+      "slug": "Notes",
+      "name": "Notes",
+      "description": "Static Notes - Polyphonic",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Sequential",
+      "name": "Sequential Switch - 8 to 1",
+      "description": "Gate-triggered Sequential Switch",
+      "tags": [
+        "Utility",
+        "Sequencer"
+      ]
+    },
+    {
+      "slug": "Succulent",
+      "name": "Succulent",
+      "description": "r/synthesizercirclejerk",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "PingPong",
+      "name": "Clock Synced Ping Pong Delay",
+      "description": "Clock Synced Ping Pong Delay",
+      "tags": [
+        "Effect"
+      ]
+    },
+    {
+      "slug": "Brickwall",
+      "name": "Brick Wall Limiter",
+      "description": "Brick Wall Limiter",
+      "tags": [
+        "Effect"
+      ]
+    },
+    {
+      "slug": "Slapback",
+      "name": "Dual Slap Back Delay",
+      "description": "An opinionated dual slapback delay",
+      "tags": [
+        "Effect"
+      ]
+    },
+    {
+      "slug": "LeftHandRightHand",
+      "name": "Split Keyboard MIDI-CV",
+      "description": "MIDI to CV for Splitting a Keyboard into Left and Right Hands",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "Euclidian",
+      "name": "Euclidian - Euclidian Rhythm Generator",
+      "description": "Euclidian - Euclidian Rhythm Generator in E(m, k) + i format, with presets.",
+      "tags": [
+        "Sequencer"
+      ]
+    },
+    {
+      "slug": "Octo",
+      "name": "Octo - 8 Bespokely Phased Triangles",
+      "description": "Octo - 8 Bespokely Phased Triangles",
+      "tags": [
+        "LFO"
+      ]
+    },
+    {
+      "slug": "RJChorus",
+      "name": "Chorus - It's a Chorus",
+      "description": "Chorus",
+      "tags": [
+        "Effect"
+      ]
+    },
+    {
+      "slug": "Instro",
+      "name": "Instro - Various Voices",
+      "description": "Instro - Various Voices",
+      "tags": [
+        "VCO"
+      ]
+    },
+    {
+      "slug": "Gaussian",
+      "name": "Gaussian - Normal Distribution Gate Generator",
+      "description": "Gaussian - Normal Distribution Gate Generator",
+      "tags": [
+        "Sequencer"
+      ]
+    }
+  ]
+}

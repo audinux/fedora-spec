@@ -1,0 +1,392 @@
+{
+  "slug": "MockbaModular",
+  "name": "Mockba Modular",
+  "version": "2.0.0",
+  "license": "MIT",
+  "brand": "Mockba Modular",
+  "author": "Mockba the Borg",
+  "authorEmail": "mockba.the.borg@gmail.com",
+  "authorUrl": "http://mockbatheb.org/",
+  "pluginUrl": "https://github.com/MockbaTheBorg/MockbaModular",
+  "manualUrl": "https://github.com/MockbaTheBorg/MockbaModular/blob/master/README.md",
+  "sourceUrl": "https://github.com/MockbaTheBorg/MockbaModular",
+  "donateUrl": "http://paypal.me/MockbaTheBorg",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "Blank",
+      "name": "Blank",
+      "description": "Simple blank",
+      "tags": [
+        "Blank"
+      ]
+    },
+    {
+      "slug": "Feidah",
+      "name": "Feidah",
+      "description": "Simple signal fader with VCA",
+      "tags": [
+        "Attenuator",
+        "VCA",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "FeidahS",
+      "name": "FeidahS",
+      "description": "Simple stereo signal fader with VCA",
+      "tags": [
+        "Attenuator",
+        "VCA",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Filtah",
+      "name": "Filtah",
+      "description": "Simple Moog style filter",
+      "tags": [
+        "Filter",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Mixah",
+      "name": "Mixah",
+      "description": "Simple two signal mixer with VCA",
+      "tags": [
+        "Mixer",
+        "VCA",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Mixah3",
+      "name": "Mixah3",
+      "description": "Simple three signal mixer",
+      "tags": [
+        "Mixer",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Dividah",
+      "name": "Dividah",
+      "description": "Simple clock divider",
+      "tags": [
+        "Clock modulator"
+      ]
+    },
+    {
+      "slug": "Countah",
+      "name": "Countah",
+      "description": "Simple clock counter",
+      "tags": [
+        "Clock modulator"
+      ]
+    },
+    {
+      "slug": "Selectah",
+      "name": "Selectah",
+      "description": "Simple 4 to 1 selector",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Shapah",
+      "name": "Shapah",
+      "description": "Simple ADSR envelope shaper",
+      "tags": [
+        "Envelope generator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Holdah",
+      "name": "Holdah",
+      "description": "Simple Sample & Hold",
+      "tags": [
+        "Sample and hold"
+      ]
+    },
+    {
+      "slug": "Pannah",
+      "name": "Pannah",
+      "description": "Simple stereo panner with modulation",
+      "tags": [
+        "Panning",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "ReVoltah",
+      "name": "ReVoltah",
+      "description": "Simple voltage range adapter",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "CZSaw",
+      "name": "CZSaw",
+      "description": "Simple CZ style SAW oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "CZSquare",
+      "name": "CZSquare",
+      "description": "Simple CZ style SQUARE oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "CZPulse",
+      "name": "CZPulse",
+      "description": "Simple CZ style PULSE oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "CZDblSine",
+      "name": "CZDblSine",
+      "description": "Simple CZ style DBLSINE oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "CZSawPulse",
+      "name": "CZSawPulse",
+      "description": "Simple CZ style SAWPULSE oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "CZReso1",
+      "name": "CZReso1",
+      "description": "Simple CZ style RESO1 oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "CZReso2",
+      "name": "CZReso2",
+      "description": "Simple CZ style RESO2 oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "CZReso3",
+      "name": "CZReso3",
+      "description": "Simple CZ style RESO3 oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "CZOsc",
+      "name": "CZOsc",
+      "description": "Simple CZ style oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "MaugTriangle",
+      "name": "MaugTriangle",
+      "description": "Simple Moog style TRIANGLE oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "MaugShark",
+      "name": "MaugShark",
+      "description": "Simple Moog style SHARK oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "MaugSaw",
+      "name": "MaugSaw",
+      "description": "Simple Moog style SAW oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "MaugSaw2",
+      "name": "MaugSaw2",
+      "description": "Simple Moog style INVSAW oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "MaugSquare",
+      "name": "MaugSquare",
+      "description": "Simple Moog style SQUARE .48 oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "MaugSquare2",
+      "name": "MaugSquare2",
+      "description": "Simple Moog style SQUARE .29 oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "MaugSquare3",
+      "name": "MaugSquare3",
+      "description": "Simple Moog style SQUARE .17 oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "MaugOsc",
+      "name": "MaugOsc",
+      "description": "Simple Moog style oscillator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Comparator",
+      "name": "Comparator",
+      "description": "Simple voltage comparator",
+      "tags": [
+        "Logic",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "DualBUFFER",
+      "name": "DualBUFFER",
+      "description": "Simple BUFFER gates (3 actually)",
+      "tags": [
+        "Logic",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "DualNOT",
+      "name": "DualNOT",
+      "description": "Simple NOT gates (3 actually)",
+      "tags": [
+        "Logic",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "DualOR",
+      "name": "DualOR",
+      "description": "Simple OR gates",
+      "tags": [
+        "Logic",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "DualNOR",
+      "name": "DualNOR",
+      "description": "Simple NOR gates",
+      "tags": [
+        "Logic",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "DualAND",
+      "name": "DualAND",
+      "description": "Simple AND gates",
+      "tags": [
+        "Logic",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "DualNAND",
+      "name": "DualNAND",
+      "description": "Simple NAND gates",
+      "tags": [
+        "Logic",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "DualXOR",
+      "name": "DualXOR",
+      "description": "Simple XOR gates",
+      "tags": [
+        "Logic",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "DualXNOR",
+      "name": "DualXNOR",
+      "description": "Simple XNOR gates",
+      "tags": [
+        "Logic",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "PSelectah",
+      "name": "PSelectah",
+      "description": "Simple Priority Selector (AND->OR MUX)",
+      "tags": [
+        "Logic",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "UDPClockMaster",
+      "name": "Mastah",
+      "description": "UDP Clock Synchronizer (Master)",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "UDPClockSlave",
+      "name": "Slavah",
+      "description": "UDP Clock Synchronizer (Slave)",
+      "tags": [
+        "Utility"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "slug": "OrangeLine",
+  "name": "OrangeLine",
+  "version": "2.3.10",
+  "license": "GPL-3.0-only",
+  "brand": "",
+  "author": "Dieter Stubler",
+  "authorEmail": "dieter.stubler@googlemail.com",
+  "authorUrl": "https://github.com/Stubs42/OrangeLine",
+  "pluginUrl": "https://github.com/Stubs42/OrangeLine",
+  "manualUrl": "https://github.com/Stubs42/OrangeLine/blob/2.0/README.md",
+  "sourceUrl": "https://github.com/Stubs42/OrangeLine",
+  "donateUrl": "https://paypal.me/DieterStubler?locale.x=de_DE",
+  "modules": [
+    {
+      "slug": "Fence",
+      "name": "Fence",
+      "description": "Keep CVs in a defined pitch range",
+      "tags": [
+        "Quantizer",
+        "Tuner",
+        "Utility",
+        "Distortion",
+        "WaveShaper",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Swing",
+      "name": "Swing",
+      "description": "Micro Timing Sequencer",
+      "tags": [
+        "Sequencer",
+        "Clock",
+        "Clock modulator"
+      ]
+    },
+    {
+      "slug": "Mother",
+      "name": "Mother",
+      "description": "Mode aware probability driven quantizer",
+      "tags": [
+        "Quantizer",
+        "Sequencer",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Phrase",
+      "name": "Phrase",
+      "description": "Utility to sequence phrases by sequencing a sequencer",
+      "tags": [
+        "Sequencer",
+        "Utility",
+        "Clock modulator"
+      ]
+    },
+    {
+      "slug": "Dejavu",
+      "name": "Dejavu",
+      "description": "Random Cv and Trigger generator with nested repeat functionality",
+      "tags": [
+        "Utility",
+        "Polyphonic",
+        "Random",
+        "Sequencer",
+        "Visual"
+      ]
+    },
+    {
+      "slug": "Gator",
+      "name": "Gator",
+      "description": "Phased Based Microtiming, Ratcheting and Strumming",
+      "tags": [
+        "Utility",
+        "Polyphonic",
+        "Clock Modulator"
+      ]
+    }
+  ]
+}

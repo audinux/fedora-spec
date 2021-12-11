@@ -1,0 +1,79 @@
+{
+  "slug": "AlgoritmArte",
+  "name": "AlgoritmArte",
+  "version": "2.0.0",
+  "license": "GPL-3.0-or-later",
+  "brand": "AlgoritmArte",
+  "author": "AlgoritmArte",
+  "authorEmail": "development@algoritmarte.com",
+  "authorUrl": "https://www.algoritmarte.com",
+  "pluginUrl": "https://github.com/algoritmarte/AlgoritmarteVCVPlugin",
+  "manualUrl": "https://github.com/algoritmarte/AlgoritmarteVCVPlugin/blob/master/README.md",
+  "sourceUrl": "https://github.com/algoritmarte/AlgoritmarteVCVPlugin",
+  "donateUrl": "https://www.algoritmarte.com/support-algoritmarte/",
+  "changelogUrl": "https://github.com/algoritmarte/AlgoritmarteVCVPlugin/releases",
+  "modules": [
+    {
+      "slug": "Clockkky",
+      "name": "Clockkky",
+      "description": "A simple clock and gate sequencer",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ]
+    },
+    {
+      "slug": "Planetz",
+      "name": "Planetz",
+      "description": "The music produced by rotating planets",
+      "tags": [
+        "Sequencer",
+        "Random"
+      ]
+    },
+    {
+      "slug": "MusiFrog",
+      "name": "MusiFrog",
+      "description": "A musical frog jumping around an harmonic lake",
+      "tags": [
+        "Sequencer",
+        "Random"
+      ]
+    },
+    {
+      "slug": "Zefiro",
+      "name": "Zefiro",
+      "description": "A full synthesizer inspired by the iconic Buchla Music Easel",
+      "tags": [
+        "Synth voice"
+      ]
+    },
+    {
+      "slug": "HoldMeTight",
+      "name": "HoldMeTight",
+      "description": "Triple sample and hold with an integrated quantizer",
+      "tags": [
+        "Sample and hold",
+        "Quantizer"
+      ]
+    },
+    {
+      "slug": "CyclicCA",
+      "name": "CyclicCA",
+      "description": "Cyclic Cellular Automata visualizer and sequencer",
+      "tags": [
+        "Visual",
+        "Sequencer"
+      ]
+    },
+    {
+      "slug": "MusiMath",
+      "name": "MusiMath",
+      "description": "Music meets math, an arithmetic driven sequencer",
+      "tags": [
+        "Sequencer",
+        "Random"
+      ]
+    }
+  ]
+}

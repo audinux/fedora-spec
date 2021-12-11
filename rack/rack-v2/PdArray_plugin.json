@@ -1,0 +1,49 @@
+{
+  "slug": "PdArray",
+  "name": "PdArray",
+  "version": "1.0.6",
+  "license": "MIT",
+  "brand": "",
+  "author": "M\u00e1rton Gunyh\u00f3",
+  "authorEmail": "",
+  "authorUrl": "https://github.com/mgunyho",
+  "pluginUrl": "https://github.com/mgunyho/PdArray",
+  "manualUrl": "https://github.com/mgunyho/PdArray",
+  "sourceUrl": "https://github.com/mgunyho/PdArray",
+  "changelogUrl": "https://github.com/mgunyho/PdArray/blob/master/CHANGELOG.md",
+  "donateUrl": "",
+  "modules": [
+    {
+      "slug": "Array",
+      "name": "Array",
+      "description": "Draw or record sequences, envelopes or audio",
+      "tags": [
+        "envelope generator",
+        "function generator",
+        "sampler",
+        "visual",
+        "waveshaper",
+        "polyphonic"
+      ]
+    },
+    {
+      "slug": "Miniramp",
+      "name": "Miniramp",
+      "description": "Generate a ramp from 0V to 10V with a given duration",
+      "tags": [
+        "envelope generator",
+        "utility",
+        "polyphonic"
+      ]
+    },
+    {
+      "slug": "Ministep",
+      "name": "Ministep",
+      "description": "Use triggers to step voltages from 0V to 10V in a given number of steps",
+      "tags": [
+        "utility",
+        "polyphonic"
+      ]
+    }
+  ]
+}

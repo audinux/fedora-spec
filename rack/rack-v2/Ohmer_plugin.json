@@ -1,0 +1,110 @@
+{
+  "slug": "Ohmer",
+  "name": "Ohmer",
+  "version": "2.0.0-beta 4",
+  "license": "BSD-3-Clause",
+  "author": "Dominique Camus",
+  "brand": "Ohmer Modules",
+  "authorEmail": "docam@free.fr",
+  "authorUrl": "https://github.com/DomiKamu",
+  "pluginUrl": "https://github.com/DomiKamu/Ohmer",
+  "manualUrl": "https://github.com/DomiKamu/Ohmer/blob/v2/README.md",
+  "sourceUrl": "https://github.com/DomiKamu/Ohmer.git",
+  "donateUrl": "",
+  "modules": [
+    {
+      "slug": "KlokSpid",
+      "name": "KlokSpid",
+      "description": "CPU-controlled clock generator/modulator",
+      "tags": [
+        "Clock generator",
+        "Clock modulator"
+      ]
+    },
+    {
+      "slug": "RKD",
+      "name": "RKD (Rotate Klok Divider)",
+      "description": "Rotate Klok Divider (RKD) module (inspired from 4ms RCD hardware)",
+      "manualUrl": "https://github.com/DomiKamu/Ohmer/blob/v2/res/Manuals/RKD%20%26%20BRK%20User's%20Manual.pdf",
+      "tags": [
+        "Clock modulator"
+      ]
+    },
+    {
+      "slug": "BRK",
+      "name": "BRK (\"Break\") expander for RKD",
+      "description": "BRK (\"Break\") expander to setup RKD jumpers (inspired from 4ms BO hardware)",
+      "manualUrl": "https://github.com/DomiKamu/Ohmer/blob/v2/res/Manuals/RKD%20%26%20BRK%20User's%20Manual.pdf",
+      "tags": [
+        "Clock modulator",
+        "Expander"
+      ]
+    },
+    {
+      "slug": "Metriks",
+      "name": "Metriks",
+      "description": "Voltmeter and CV tuner",
+      "tags": [
+        "Visual"
+      ]
+    },
+    {
+      "slug": "SplitterModule",
+      "name": "Splitter 1x9",
+      "description": "Spread incoming mono-/polyphonic signal upto 9 outputs",
+      "tags": [
+        "Multiple",
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "OhmerBlank1",
+      "name": "Blank 1 HP",
+      "description": "1 HP blank (themed) plate (uses 2 screws)",
+      "tags": [
+        "Blank"
+      ]
+    },
+    {
+      "slug": "OhmerBlank2",
+      "name": "Blank 2 HP",
+      "description": "2 HP blank (themed) plate (customizable screws disposal)",
+      "tags": [
+        "Blank"
+      ]
+    },
+    {
+      "slug": "OhmerBlank4",
+      "name": "Blank 4 HP",
+      "description": "4 HP blank (themed) plate",
+      "tags": [
+        "Blank"
+      ]
+    },
+    {
+      "slug": "OhmerBlank8",
+      "name": "Blank 8 HP",
+      "description": "8 HP blank (themed) plate",
+      "tags": [
+        "Blank"
+      ]
+    },
+    {
+      "slug": "OhmerBlank16",
+      "name": "Blank 16 HP",
+      "description": "16 HP blank (themed) plate",
+      "tags": [
+        "Blank"
+      ]
+    },
+    {
+      "slug": "OhmerBlank32",
+      "name": "Blank 32 HP",
+      "description": "32 HP blank (themed) plate",
+      "tags": [
+        "Blank"
+      ]
+    }
+  ]
+}

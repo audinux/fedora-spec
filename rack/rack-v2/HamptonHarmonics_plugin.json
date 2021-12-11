@@ -1,0 +1,35 @@
+{
+  "slug": "HamptonHarmonics",
+  "name": "Hampton Harmonics",
+  "version": "2.0.0",
+  "license": "MIT",
+  "brand": "Hampton Harmonics",
+  "author": "Scott Hampton",
+  "authorEmail": "",
+  "authorUrl": "https://gitlab.com/shampton",
+  "pluginUrl": "https://gitlab.com/hampton-harmonics/hampton-harmonics-modules",
+  "manualUrl": "https://gitlab.com/hampton-harmonics/hampton-harmonics-modules/-/blob/master/README.md",
+  "sourceUrl": "https://gitlab.com/hampton-harmonics/hampton-harmonics-modules",
+  "donateUrl": "",
+  "changelogUrl": "https://gitlab.com/hampton-harmonics/hampton-harmonics-modules/-/commits/master",
+  "modules": [
+    {
+      "slug": "Progress",
+      "name": "Progress",
+      "description": "Polyphonic Chord Sequencer",
+      "tags": [
+        "sequencer",
+        "poly"
+      ]
+    },
+    {
+      "slug": "Arp",
+      "name": "Arp",
+      "description": "Polyphonic Input Arpeggiator",
+      "tags": [
+        "arpeggiator",
+        "poly"
+      ]
+    }
+  ]
+}

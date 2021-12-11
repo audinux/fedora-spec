@@ -1,0 +1,150 @@
+{
+  "slug": "GrandeModular",
+  "name": "Grande",
+  "version": "2.0.0",
+  "license": "GPL-3.0-or-later",
+  "author": "David Grande",
+  "authorEmail": "dbgrande246@gmail.com",
+  "authorUrl": "",
+  "pluginUrl": "",
+  "manualUrl": "https://github.com/dbgrande/GrandeModular",
+  "sourceUrl": "https://github.com/dbgrande/GrandeModular",
+  "donateUrl": "",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "Clip",
+      "name": "Clip",
+      "description": "Polyphonic hard clipper and visual clip monitor.",
+      "manualUrl": "https://github.com/dbgrande/GrandeModular/#clip",
+      "tags": [
+        "Limiter",
+        "Visual",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "MergeSplit4",
+      "name": "MergeSplit4",
+      "description": "4-channel polyphonic merge and split.",
+      "manualUrl": "https://github.com/dbgrande/GrandeModular/#mergesplit4-ms4",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "MicrotonalChords",
+      "name": "Microtonal Chords",
+      "description": "Microtonal quad chord generator.",
+      "manualUrl": "https://github.com/dbgrande/GrandeModular/#microtonalchords",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "MicrotonalNotes",
+      "name": "Microtonal Notes",
+      "description": "Microtonal octal note generator.",
+      "manualUrl": "https://github.com/dbgrande/GrandeModular/#microtonalnotes",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "NoteMT",
+      "name": "NoteMT",
+      "description": "Microtonal note utility.",
+      "manualUrl": "https://github.com/dbgrande/GrandeModular/#notemt",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "PolyMergeResplit",
+      "name": "PolyMergeResplit",
+      "description": "Poly-to-poly Merge and Resplit back to the same channel widths.",
+      "manualUrl": "https://github.com/dbgrande/GrandeModular/#polymergeresplit-pmr",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Quant",
+      "name": "Quant",
+      "description": "Quantizer with equi-likely notes mode.",
+      "manualUrl": "https://github.com/dbgrande/GrandeModular/#quant",
+      "tags": [
+        "Quantizer",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "QuantIntervals",
+      "name": "Quant Intervals",
+      "description": "Microtonal quantizer based on pitch intervals.",
+      "manualUrl": "https://github.com/dbgrande/GrandeModular/#quantintervals",
+      "tags": [
+        "Quantizer",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "QuantMT",
+      "name": "QuantMT",
+      "description": "Microtonal quantizer.",
+      "manualUrl": "https://github.com/dbgrande/GrandeModular/#quantmt",
+      "tags": [
+        "Quantizer",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "SampleDelays",
+      "name": "SampleDelays",
+      "description": "Provides multiple sample delay options.",
+      "manualUrl": "https://github.com/dbgrande/GrandeModular/#sampledelays-sd",
+      "tags": [
+        "Delay",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Scale",
+      "name": "Scale",
+      "description": "Additional scales for Quant.",
+      "manualUrl": "https://github.com/dbgrande/GrandeModular/#scale",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Tails",
+      "name": "Tails",
+      "description": "Mono to poly sequential note splitter\u2014helps preserve envelope tails.",
+      "manualUrl": "https://github.com/dbgrande/GrandeModular/#tails",
+      "tags": [
+        "Utility",
+        "Polyphonic",
+        "Attenuator",
+        "Voltage-controlled amplifier"
+      ]
+    },
+    {
+      "slug": "VarSampleDelays",
+      "name": "VarSampleDelays",
+      "description": "Quad independent variable sample-delay buffers.",
+      "manualUrl": "https://github.com/dbgrande/GrandeModular/#varsampledelays-vsd",
+      "tags": [
+        "Delay",
+        "Polyphonic",
+        "Quad"
+      ]
+    }
+  ]
+}

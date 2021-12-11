@@ -1,0 +1,35 @@
+{
+  "slug": "OSCelot",
+  "version": "2.0.0",
+  "license": "GPL-3.0-only",
+  "author": "TheModularMind",
+  "name": "OSCelot",
+  "brand": "TheModularMind",
+  "authorEmail": "",
+  "pluginUrl": "https://github.com/The-Modular-Mind/oscelot",
+  "authorUrl": "https://github.com/The-Modular-Mind",
+  "sourceUrl": "https://github.com/The-Modular-Mind/oscelot.git",
+  "manualUrl": "https://github.com/The-Modular-Mind/oscelot/blob/master/docs/Oscelot.md",
+  "changelogUrl": "https://github.com/The-Modular-Mind/oscelot/blob/master/CHANGELOG.md",
+  "donateUrl": "https://paypal.me/themodularmind",
+  "modules": [
+    {
+      "slug": "OSCelot",
+      "name": "OSCelot",
+      "description": "OSC mapping module for parameters of any module",
+      "tags": [
+        "Utility"
+      ],
+      "manualUrl": "https://github.com/The-Modular-Mind/oscelot/blob/master/docs/Oscelot.md"
+    },
+    {
+      "slug": "OSCelotExpander",
+      "name": "OSCelotExpander",
+      "description": "Expander for OSC'elot outputting a trigger and CV for each controller",
+      "tags": [
+        "Expander"
+      ],
+      "manualUrl": "https://github.com/The-Modular-Mind/oscelot/blob/master/docs/Oscelot.md#expander"
+    }
+  ]
+}

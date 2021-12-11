@@ -1,0 +1,46 @@
+{
+  "slug": "21kHz",
+  "name": "21kHz",
+  "version": "2.0.1",
+  "license": "MIT",
+  "brand": "21kHz",
+  "author": "21kHz, Netboy3",
+  "authorEmail": "",
+  "authorUrl": "",
+  "pluginUrl": "https://github.com/netboy3/21kHz-rack-plugins",
+  "manualUrl": "https://github.com/netboy3/21kHz-rack-plugins#readme",
+  "sourceUrl": "https://github.com/netboy3/21kHz-rack-plugins.git",
+  "donateUrl": "",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "kHzPalmLoop",
+      "name": "PalmLoop",
+      "description": "CPU friendly voltage controlled oscillator with polyBLEP/BLAMP anti-aliasing",
+      "manualURL": "https://github.com/netboy3/21kHz-rack-plugins#PalmLoop",
+      "tags": [
+        "Oscillator"
+      ]
+    },
+    {
+      "slug": "kHzTachyonEntangler",
+      "name": "TachyonEntangler",
+      "description": "Anti-aliased chaotic sync voltage controlled oscillator",
+      "manualURL": "https://github.com/netboy3/21kHz-rack-plugins#TachyonEntangler",
+      "tags": [
+        "Oscillator"
+      ]
+    },
+    {
+      "slug": "kHzD_Inf",
+      "name": "D\u221e",
+      "description": "Polyphonic module for modifying V/OCT signals by transposition and inversion",
+      "manualURL": "https://github.com/netboy3/21kHz-rack-plugins#DInf",
+      "tags": [
+        "Tuner",
+        "Utility",
+        "Polyphonic"
+      ]
+    }
+  ]
+}

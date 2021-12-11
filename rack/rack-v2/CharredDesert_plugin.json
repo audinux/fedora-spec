@@ -1,0 +1,176 @@
+{
+  "slug": "CharredDesert",
+  "name": "CharredDesert",
+  "version": "1.3.1",
+  "license": "CC0-1.0",
+  "author": "Jerry Sievert",
+  "authorEmail": "contact@svmodular.com",
+  "authorUrl": "https://svmodular.com/index.html",
+  "pluginUrl": "https://svmodular.com/plugin/vcv/charred-desert.html",
+  "manualUrl": "https://svmodular.com/plugin/vcv/charred-desert.html",
+  "sourceUrl": "https://github.com/SVModular/CharredDesert",
+  "brand": "SV Modular",
+  "modules": [
+    {
+      "slug": "DTMF",
+      "name": "DTMF",
+      "description": "DTMF Tone Generator",
+      "tags": [
+        "Envelope generator"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/DTMF.pdf"
+    },
+    {
+      "slug": "Noise",
+      "name": "Noise",
+      "description": "White and Pink Noise Generator",
+      "tags": [
+        "Envelope generator",
+        "Noise"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/Noise.pdf"
+    },
+    {
+      "slug": "CVSequencer",
+      "name": "CV Sequencer",
+      "description": "CV Sequencer",
+      "tags": [
+        "Logic",
+        "Sequencer"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/CVSeq.pdf"
+    },
+    {
+      "slug": "Not",
+      "name": "Not",
+      "description": "CV and Voltage Inverter",
+      "tags": [
+        "Logic"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/Not.pdf"
+    },
+    {
+      "slug": "Pan",
+      "name": "Pan",
+      "description": "Stereo Panner",
+      "tags": [
+        "Panning"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/Pan.pdf"
+    },
+    {
+      "slug": "Shift",
+      "name": "Shift",
+      "description": "CV and Waveform Shifter/Attenuator",
+      "tags": [
+        "Logic",
+        "Attenuator"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/Shift.pdf"
+    },
+    {
+      "slug": "Oscar2",
+      "name": "Oscar^2",
+      "description": "Oscillator Madness",
+      "tags": [
+        "VCO",
+        "Waveshaper"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/Oscar2.pdf"
+    },
+    {
+      "slug": "Eq",
+      "name": "Eq",
+      "description": "CV Controlled Equalizer",
+      "tags": [
+        "Equalizer"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/Eq.pdf"
+    },
+    {
+      "slug": "Carbon",
+      "name": "Carbon",
+      "description": "Moog-like Filter",
+      "tags": [
+        "VCF"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/Carbon.pdf"
+    },
+    {
+      "slug": "Mixer",
+      "name": "Mixer",
+      "description": "8 Channel Stereo Mixer",
+      "tags": [
+        "Mixer"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/Mixer.pdf"
+    },
+    {
+      "slug": "MixerCV",
+      "name": "Mixer CV",
+      "description": "CV Controlled 8 Channel Mixer",
+      "tags": [
+        "Mixer"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/MixerCV.pdf"
+    },
+    {
+      "slug": "CV",
+      "name": "CV",
+      "description": "Simple CV Manipulator",
+      "tags": [
+        "Logic"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/CV.pdf"
+    },
+    {
+      "slug": "M",
+      "name": "M",
+      "description": "Mini 2 Channel Mixer",
+      "tags": [
+        "Mixer"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/M.pdf"
+    },
+    {
+      "slug": "Tine",
+      "name": "Tine",
+      "description": "Voltage Based Splitter",
+      "tags": [
+        "Attenuator",
+        "Mixer"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/Tine.pdf"
+    },
+    {
+      "slug": "K",
+      "name": "K",
+      "description": "K is for Compressor",
+      "tags": [
+        "Attenuator",
+        "Compressor"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/K.pdf"
+    },
+    {
+      "slug": "X",
+      "name": "X",
+      "description": "Audio Exciter",
+      "tags": [
+        "Effect"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/X.pdf"
+    },
+    {
+      "slug": "Tsunami",
+      "name": "Tsunami",
+      "description": "Tsunami Wave Multiplier",
+      "tags": [
+        "Effect",
+        "Delay",
+        "Waveshaper"
+      ],
+      "manualUrl": "https://svmodular.s3-us-west-2.amazonaws.com/manual/charred-desert/Tsunami.pdf"
+    }
+  ]
+}

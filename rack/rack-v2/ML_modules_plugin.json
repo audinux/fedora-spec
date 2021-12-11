@@ -1,0 +1,309 @@
+{
+  "slug": "ML_modules",
+  "name": "ML Modules",
+  "version": "2.0.0",
+  "license": "BSD-3-Clause",
+  "author": "Martin Lueders",
+  "brand": "ML Modules",
+  "authorEmail": "mlmodules@gmail.com",
+  "authorUrl": "https://github.com/martin-lueders",
+  "pluginUrl": "https://github.com/martin-lueders/ML_modules/wiki",
+  "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki",
+  "sourceUrl": "https://github.com/martin-lueders/ML_modules",
+  "donateUrl": "https://paypal.me/MartinLueders",
+  "modules": [
+    {
+      "slug": "BPMdetect",
+      "name": "BPM Tools",
+      "description": "detect incoming clock and output voltages for Fundamental LFO and Delay",
+      "tags": [
+        "Clock generator",
+        "Clock modulator"
+      ]
+    },
+    {
+      "slug": "Constants",
+      "name": "Constants",
+      "description": "Output constant voltages corresponding to common intervals",
+      "tags": [
+        "Utility"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Constants"
+    },
+    {
+      "slug": "Counter",
+      "name": "Counter",
+      "description": "Create Trigger pulses after a certain number of clock ticks",
+      "tags": [
+        "Clock modulator"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Counter"
+    },
+    {
+      "slug": "FreeVerb",
+      "name": "FreeVerb",
+      "description": "VCV Rack implementation of the good old Freeverb",
+      "tags": [
+        "Effect",
+        "Reverb"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/FreeVerb"
+    },
+    {
+      "slug": "OctaFlop",
+      "name": "OctaFlop",
+      "description": "8 Flip Flops, pre-wired as binary counter",
+      "tags": [
+        "Utility",
+        "Clock modulator"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/OctaFlop"
+    },
+    {
+      "slug": "OctaPlus",
+      "name": "OctaPlus",
+      "description": "8 fold Adder.",
+      "tags": [
+        "Utility",
+        "Mixer",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/OctaPlus-and-OctaTimes#octaplus"
+    },
+    {
+      "slug": "OctaSwitch",
+      "name": "OctaSwitch",
+      "description": "8 fold switch with CV controllable switching point",
+      "tags": [
+        "Switch",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/OctaSwitch"
+    },
+    {
+      "slug": "OctaTimes",
+      "name": "OctaTimes",
+      "description": "8 fold multiplier",
+      "tags": [
+        "Utility",
+        "Ring modulator",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/OctaPlus-and-OctaTimes#octatimes"
+    },
+    {
+      "slug": "OctaTrig",
+      "name": "OctaTrig",
+      "description": "Gate tp Trigger converter",
+      "tags": [
+        "Clock modulator",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/OctaTrig"
+    },
+    {
+      "slug": "Quantizer",
+      "name": "Quantizer (h-bar)",
+      "description": "Semitone quantizer",
+      "tags": [
+        "Quantizer",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Quantizers#h-bar"
+    },
+    {
+      "slug": "Quantum",
+      "name": "Quantum",
+      "description": "Quantizer with selectable notes",
+      "tags": [
+        "Quantizer",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Quantizers#quantum"
+    },
+    {
+      "slug": "SH8",
+      "name": "S&H 8",
+      "description": "8 fold Sample and Hold",
+      "tags": [
+        "Sample and hold",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/S&H-8"
+    },
+    {
+      "slug": "SeqSwitch",
+      "name": "Sequential Switch 8->1",
+      "description": "",
+      "tags": [
+        "Switch",
+        "Sequencer",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Sequential-Switches"
+    },
+    {
+      "slug": "SeqSwitch2",
+      "name": "Sequential Switch 1->8",
+      "description": "",
+      "tags": [
+        "Switch",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Sequential-Switches"
+    },
+    {
+      "slug": "ShiftRegister",
+      "name": "Shift Register",
+      "description": "Analogue shift register",
+      "tags": [
+        "Sample and hold",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/ShiftRegister"
+    },
+    {
+      "slug": "Evolution",
+      "name": "Evolution",
+      "description": "Shift register based random sequencer",
+      "tags": [
+        "Sequencer",
+        "Sample and hold",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Evolution"
+    },
+    {
+      "slug": "Sum8mk2",
+      "name": "Sum8 MkII",
+      "description": "Summer with selectable sign",
+      "tags": [
+        "Mixer",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Mixer#sum"
+    },
+    {
+      "slug": "Sum8mk3",
+      "name": "Sum8 MkIII",
+      "description": "Summer with selectable sign",
+      "tags": [
+        "Mixer",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Mixer#sum"
+    },
+    {
+      "slug": "Sum8",
+      "name": "Sum8",
+      "description": "simple summer",
+      "tags": [
+        "Mixer",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Mixer#sum-mk-ii"
+    },
+    {
+      "slug": "TrigBuf",
+      "name": "Trigger Buffer",
+      "description": "A trigger can be buffered, so that the next incoming clock will create an pulse.",
+      "tags": [
+        "Utility",
+        "Logic",
+        "Dual",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Trigger-Buffer"
+    },
+    {
+      "slug": "TrigDelay",
+      "name": "Trigger Delay",
+      "description": "Trigger delay and gate length modulator",
+      "tags": [
+        "Utility",
+        "Delay",
+        "Dual"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Trigger-Delay"
+    },
+    {
+      "slug": "TrigSwitch",
+      "name": "TrigSwitch 8->1",
+      "description": "",
+      "tags": [
+        "Switch",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Triggered-Switches"
+    },
+    {
+      "slug": "TrigSwitch2",
+      "name": "TrigSwitch 1->8",
+      "description": "",
+      "tags": [
+        "Switch",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Triggered-Switches"
+    },
+    {
+      "slug": "TrigSwitch3",
+      "name": "TrigSwitch3 8->1",
+      "description": "",
+      "tags": [
+        "Switch",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Triggered-Switches"
+    },
+    {
+      "slug": "TrigSwitch3_2",
+      "name": "TrigSwitch3 1->8",
+      "description": "",
+      "tags": [
+        "Switch",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Triggered-Switches"
+    },
+    {
+      "slug": "VoltMeter",
+      "name": "Volt Meter",
+      "description": "",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "Cloner",
+      "name": "Cloner",
+      "description": "Clone a signal to polyphonic channels",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Cloner"
+    },
+    {
+      "slug": "PolySplitter",
+      "name": "Poly Splitter",
+      "description": "split polyphonic inputs into two outputs",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/Poly-Splitter"
+    },
+    {
+      "slug": "Arpeggiator",
+      "name": "Arpeggiator",
+      "description": "multi-channel arpeggiator",
+      "tags": [
+        "Sequencer",
+        "Polyphonic",
+        "Arpeggiator"
+      ],
+      "manualUrl": "https://github.com/martin-lueders/ML_modules/wiki/PolyArp"
+    }
+  ]
+}

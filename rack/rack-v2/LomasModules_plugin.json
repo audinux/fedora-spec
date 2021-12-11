@@ -1,0 +1,34 @@
+{
+  "slug": "LomasModules",
+  "name": "Lomas Modules",
+  "version": "1.0.9",
+  "license": "BSD-3-Clause",
+  "brand": "Lomas",
+  "author": "Guillermo Moreno",
+  "authorEmail": "LomasModules@gmail.com",
+  "authorUrl": "https://github.com/LomasModules",
+  "pluginUrl": "https://github.com/LomasModules/LomasModules",
+  "manualUrl": "https://github.com/LomasModules/LomasModules",
+  "sourceUrl": "https://github.com/LomasModules/LomasModules.git",
+  "donateUrl": "",
+  "modules": [
+    {
+      "slug": "AdvancedSampler",
+      "name": "Advanced Sampler",
+      "description": "Monophonic sampler.",
+      "tags": [
+        "Sampler",
+        "Drums"
+      ]
+    },
+    {
+      "slug": "GateSequencer",
+      "name": "Gate Sequencer",
+      "description": "Gate sequencer with 4 patterns and up to 64 steps. Pattern length",
+      "tags": [
+        "Sequencer",
+        "Expander"
+      ]
+    }
+  ]
+}

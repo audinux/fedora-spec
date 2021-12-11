@@ -1,0 +1,42 @@
+{
+  "slug": "Prism",
+  "name": "Prism",
+  "author": "John Hoar / Pyer / Steve Russell",
+  "license": "BSD-3-Clause",
+  "authorEmail": "amalgamatedharmonics@outlook.com",
+  "manualUrl": "https://github.com/SteveRussell33/Prism/blob/master/doc/PrismUM.pdf",
+  "pluginUrl": "https://github.com/SteveRussell33/Prism",
+  "sourceUrl": "https://github.com/SteveRussell33/Prism",
+  "changelogUrl": "https://github.com/SteveRussell33/Prism/blob/Rack2/CHANGELOG.md",
+  "version": "2.3.3",
+  "modules": [
+    {
+      "slug": "Rainbow",
+      "name": "Rainbow",
+      "description": "A multiband band-pass resonant filter, a port of the 4ms SMR",
+      "tags": [
+        "Physical modeling",
+        "VCF",
+        "Hardware clone"
+      ]
+    },
+    {
+      "slug": "RainbowScaleExpander",
+      "name": "Spectrum",
+      "description": "Expander for Rainbow for programming of user-defined scales",
+      "tags": [
+        "Expander"
+      ]
+    },
+    {
+      "slug": "Droplet",
+      "name": "Droplet",
+      "description": "A band-pass resonant filter, a port of the 4ms SMR MaxQ filter",
+      "tags": [
+        "Physical modeling",
+        "VCF",
+        "Hardware clone"
+      ]
+    }
+  ]
+}

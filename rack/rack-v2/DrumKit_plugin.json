@@ -1,0 +1,111 @@
+{
+  "slug": "DrumKit",
+  "name": "DrumKit",
+  "version": "1.1.4",
+  "license": "CC0-1.0",
+  "author": "SV Modular",
+  "authorEmail": "contact@svmodular.com",
+  "authorUrl": "https://svmodular.com/",
+  "pluginUrl": "https://svmodular.com/plugin/vcv/drumkit.html",
+  "manualUrl": "https://svmodular.com/plugin/vcv/drumkit.html",
+  "sourceUrl": "https://github.com/SVModular/DrumKit",
+  "brand": "SV Modular",
+  "modules": [
+    {
+      "slug": "BassDrum9",
+      "name": "Bass Drum 9",
+      "description": "Bass Drum Kit based on 909",
+      "tags": [
+        "Drum"
+      ]
+    },
+    {
+      "slug": "ClosedHiHat",
+      "name": "Closed HiHat",
+      "description": "HiHat Module",
+      "tags": [
+        "DRUM"
+      ]
+    },
+    {
+      "slug": "CR78",
+      "name": "CR78",
+      "description": "CompuRhythm 78 Kit",
+      "tags": [
+        "DRUM"
+      ]
+    },
+    {
+      "slug": "DMX",
+      "name": "DMX",
+      "description": "DMX Drum Kit",
+      "tags": [
+        "Drum"
+      ]
+    },
+    {
+      "slug": "OpenHiHat",
+      "name": "Open HiHat",
+      "description": "HiHat Module",
+      "tags": [
+        "Drum"
+      ]
+    },
+    {
+      "slug": "SyntheticBassDrum",
+      "name": "Synthetic Bass Drum",
+      "description": "Synthetic Bass Drum",
+      "tags": [
+        "Drum"
+      ]
+    },
+    {
+      "slug": "SnareDrumN",
+      "name": "Snare Drum N",
+      "description": "Snare Drum Kit based on Novation Drumstation",
+      "tags": [
+        "Drum"
+      ]
+    },
+    {
+      "slug": "Tomi",
+      "name": "Tomi",
+      "description": "Tom Drum Kit Module",
+      "tags": [
+        "Drum"
+      ]
+    },
+    {
+      "slug": "Gnome",
+      "name": "Gnome",
+      "description": "Gnome Clock Module",
+      "tags": [
+        "Clock generator"
+      ]
+    },
+    {
+      "slug": "Sequencer",
+      "name": "Sequencer",
+      "description": "Drum Focused Step Sequencer",
+      "tags": [
+        "Sequencer"
+      ]
+    },
+    {
+      "slug": "Baronial",
+      "name": "Baronial",
+      "description": "Drum Focused Envelope Generator",
+      "tags": [
+        "Envelope generator"
+      ]
+    },
+    {
+      "slug": "MarionetteBass",
+      "name": "Marionette Bass",
+      "description": "Hybrid Bass Drum",
+      "tags": [
+        "Drum"
+      ]
+    }
+  ]
+}

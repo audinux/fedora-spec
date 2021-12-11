@@ -1,0 +1,416 @@
+{
+  "slug": "FrozenWasteland",
+  "name": "Frozen Wasteland",
+  "version": "2.0.2",
+  "author": "almostEric",
+  "license": "GPL-3.0-only",
+  "authorEmail": "almostEric@frozenwastelandmodules.com",
+  "pluginUrl": "https://github.com/almostEric/FrozenWasteland/blob/master/README.md",
+  "authorUrl": "https://vcvrack.com/",
+  "manualUrl": "https://github.com/almostEric/FrozenWasteland/blob/master/README.md",
+  "sourceUrl": "https://github.com/almostEric/FrozenWasteland",
+  "donateUrl": "https://paypal.me/FrozenWasteland",
+  "changelogUrl": "https://github.com/almostEric/FrozenWasteland/blob/master/CHANGELOG.md",
+  "modules": [
+    {
+      "slug": "BPMLFO",
+      "name": "BPM LFO",
+      "description": "Beat Synchronized LFO",
+      "tags": [
+        "Low-frequency oscillator"
+      ]
+    },
+    {
+      "slug": "BPMLFO2",
+      "name": "BPM LFO 2",
+      "description": "Beat Synchronized LFO with CV Waveshape",
+      "tags": [
+        "Low-frequency oscillator"
+      ]
+    },
+    {
+      "slug": "BPMLFOPhaseExpander",
+      "name": "BPM LFO Phase Expander",
+      "description": "Add multiple phased outputs to BMPLFO and BPMLFO 2",
+      "tags": [
+        "Expander"
+      ]
+    },
+    {
+      "slug": "CDCSeriouslySlowLFO",
+      "name": "CDC Seriously Slow LFO",
+      "description": "Slow LFO taken to absurdity",
+      "tags": [
+        "Low-frequency oscillator"
+      ]
+    },
+    {
+      "slug": "DamianLillard",
+      "name": "Damian Lillard",
+      "description": "4-channel CV crossover/mixer",
+      "tags": [
+        "Voltage-controlled amplifier"
+      ]
+    },
+    {
+      "slug": "DrunkenRampage",
+      "name": "Drunken Rampage",
+      "description": "Probalistic Dual ramp generator. Inspired by Befaco Rampage.",
+      "tags": [
+        "Function Generator",
+        "Logic",
+        "Slew Limiter",
+        "Envelope Follower",
+        "Dual",
+        "Random"
+      ]
+    },
+    {
+      "slug": "FillingStation",
+      "name": "Filling Station",
+      "description": "Multi-Output Sequencer",
+      "tags": [
+        "Sequencer"
+      ]
+    },
+    {
+      "slug": "EverlastingGlottalStopper",
+      "name": "Everlasting Glottal Stopper",
+      "description": "Vocal Tract simulating VCO",
+      "tags": [
+        "Oscillator"
+      ]
+    },
+    {
+      "slug": "TheGardener",
+      "name": "The Gardener",
+      "description": "Sequencer Controller",
+      "tags": [
+        "Clock Modulator"
+      ]
+    },
+    {
+      "slug": "HairPick",
+      "name": "Hair Pick",
+      "description": "64 Tap Rhythmic Comb Filter",
+      "tags": [
+        "Filter"
+      ]
+    },
+    {
+      "slug": "JustAPhaser",
+      "name": "Just A Phaser",
+      "description": "Advanced Phaser",
+      "tags": [
+        "Phaser"
+      ]
+    },
+    {
+      "slug": "LissajousLFO",
+      "name": "Lissajous LFO",
+      "description": "LFO based on interactions of 4 sine waves",
+      "tags": [
+        "Low-frequency oscillator"
+      ]
+    },
+    {
+      "slug": "ManicCompression",
+      "name": "Manic Compression",
+      "description": "Fun Compressor",
+      "tags": [
+        "Compressor",
+        "Dynamics"
+      ]
+    },
+    {
+      "slug": "ManicCompressionMB",
+      "name": "Megalomanic Compression",
+      "description": "Fun Multi-Band Compressor",
+      "tags": [
+        "Compressor",
+        "Dynamics"
+      ]
+    },
+    {
+      "slug": "Midichlorian",
+      "name": "Midichlorian",
+      "description": "Microtonal CV-MIDI",
+      "tags": [
+        "MIDI",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "MidiRecorder",
+      "name": "MIDI Recorder",
+      "description": "MIDI Gate Recorder",
+      "tags": [
+        "MIDI",
+        "Polyphonic",
+        "Recording",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "MrBlueSky",
+      "name": "Mr. Blue Sky",
+      "description": "16 band vocoder",
+      "tags": [
+        "Vocoder"
+      ]
+    },
+    {
+      "slug": "TheOneRingModulator",
+      "name": "The One Ring Modulator",
+      "description": "Ring Modulator with CV controlable response",
+      "tags": [
+        "Ring Modulator"
+      ]
+    },
+    {
+      "slug": "PhasedLockedLoop",
+      "name": "Phased Locked Loop",
+      "description": "PLL attempts to follow input signals freqency",
+      "tags": [
+        "Oscillator"
+      ]
+    },
+    {
+      "slug": "PortlandWeather",
+      "name": "Portland Weather",
+      "description": "16 tap rhythmic delay with per tap pitch shifting and filtering",
+      "tags": [
+        "Delay",
+        "Granular",
+        "Filter"
+      ]
+    },
+    {
+      "slug": "ProbablyNote",
+      "name": "Probably Note",
+      "description": "Probabilistic Quantizer",
+      "tags": [
+        "Quantizer",
+        "Random",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "ProbablyNoteArabic",
+      "name": "Probably Note - Arabic",
+      "description": "Probabilistic Quantizer using Arabic maqams, ajnas and sayrs",
+      "tags": [
+        "Quantizer",
+        "Random"
+      ]
+    },
+    {
+      "slug": "ProbablyNoteBP",
+      "name": "Probably Note - Bohlen Pierce",
+      "description": "Probabilistic Quantizer using Bohlen Pierce scales and tuning",
+      "tags": [
+        "Quantizer",
+        "Random",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "ProbablyNoteMN",
+      "name": "Probably Note - Math Nerd",
+      "description": "Probabilistic Quantizer using prime number based generative scales",
+      "tags": [
+        "Quantizer",
+        "Random",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "PNChordExpander",
+      "name": "Probably Note - Chord Expander",
+      "description": "Adds Chord Generation to Probably Not(e)",
+      "tags": [
+        "Expander"
+      ]
+    },
+    {
+      "slug": "PNOctaveProbabilityExpander",
+      "name": "Probably Note - Octave Probability Expander",
+      "description": "Adds Multi-Octave Note Range to Probably Not(e)",
+      "tags": [
+        "Expander"
+      ]
+    },
+    {
+      "slug": "PWAlgorithmicExpander",
+      "name": "Portland Weather - Algorithmic Expander",
+      "description": "Allows Portland Weather to create Euclidean rhythms",
+      "tags": [
+        "Expander"
+      ]
+    },
+    {
+      "slug": "PWGridControlExpander",
+      "name": "Portland Weather - Grid Control Expander",
+      "description": "Allows Portland Weather be modulated in a grid fashion",
+      "tags": [
+        "Expander"
+      ]
+    },
+    {
+      "slug": "PWTapBreakoutExpander",
+      "name": "Portland Weather - Tap Breakoout Expander",
+      "description": "Individual Send/Returns for each PW Tap",
+      "tags": [
+        "Expander"
+      ]
+    },
+    {
+      "slug": "QuadAlgorithmicRhythm",
+      "name": "Quad Algorithmic Rhythm Generator",
+      "description": "4 track Euclidean and Golumb Ruler Sequencer",
+      "tags": [
+        "Sequencer"
+      ]
+    },
+    {
+      "slug": "QARConditionalExpander",
+      "name": "QAR - Conditional",
+      "description": "Clock Divide individual beats in QAR Rhythms",
+      "tags": [
+        "Expander",
+        "Random"
+      ]
+    },
+    {
+      "slug": "QARGrooveExpander",
+      "name": "QAR - Groove",
+      "description": "Add Grooves and Microrhythms to QAR",
+      "tags": [
+        "Expander"
+      ]
+    },
+    {
+      "slug": "QARIrrationalityExpander",
+      "name": "QAR - Irrational",
+      "description": "Add Irrational Rhythms to QAR",
+      "tags": [
+        "Expander"
+      ]
+    },
+    {
+      "slug": "QARProbabilityExpander",
+      "name": "QAR - Probability",
+      "description": "Add Randomness to QAR Rhythms",
+      "tags": [
+        "Expander",
+        "Random"
+      ]
+    },
+    {
+      "slug": "QARWarpedSpaceExpander",
+      "name": "QAR - Warped Space",
+      "description": "Make your QAR Rhythms explore non-linear space",
+      "tags": [
+        "Expander"
+      ]
+    },
+    {
+      "slug": "QARWellFormedRhythmExpander",
+      "name": "QAR - Well Formed Rhythms",
+      "description": "Extra Parameters for Well Formed Algorithm",
+      "tags": [
+        "Expander"
+      ]
+    },
+    {
+      "slug": "QuantussyCell",
+      "name": "Quantussy Cell",
+      "description": "Chainable semi-chatotic CV generator",
+      "tags": [
+        "Logic"
+      ]
+    },
+    {
+      "slug": "RouletteLFO",
+      "name": "Roulette LFO",
+      "description": "LFO Based on based on rolling curves",
+      "tags": [
+        "Low-frequency oscillator"
+      ]
+    },
+    {
+      "slug": "SeedsOfChange",
+      "name": "Seeds Of Change",
+      "description": "Repeatable Random Number Generator",
+      "tags": [
+        "Random"
+      ]
+    },
+    {
+      "slug": "SeedsOfChangeCVExpander",
+      "name": "Seeds Of Change - CV Expander",
+      "description": "Additional CV Outs for SoC",
+      "tags": [
+        "Expander",
+        "Random"
+      ]
+    },
+    {
+      "slug": "SeedsOfChangeGateExpander",
+      "name": "Seeds Of Change - Gate Expander",
+      "description": "Additional Gates for SoC",
+      "tags": [
+        "Expander",
+        "Random"
+      ]
+    },
+    {
+      "slug": "SliceOfLife",
+      "name": "Slice Of Life",
+      "description": "Wave Slicing VCO",
+      "tags": [
+        "Oscillator"
+      ]
+    },
+    {
+      "slug": "StringTheory",
+      "name": "String Theory",
+      "description": "Karpus-Strong String Synthesis",
+      "tags": [
+        "Oscillator"
+      ]
+    },
+    {
+      "slug": "SeriouslySlowEG",
+      "name": "Seriously Slow EG",
+      "description": "Envelope Generator for modulating CV over *very* long time periods",
+      "tags": [
+        "Envelope generator"
+      ]
+    },
+    {
+      "slug": "SeriouslySlowLFO",
+      "name": "Seriously Slow LFO",
+      "description": "LFO for modulating CV over *very* long time periods",
+      "tags": [
+        "Low-frequency oscillator"
+      ]
+    },
+    {
+      "slug": "VoxInhumana",
+      "name": "Vox Inhumana",
+      "description": "Formant/Vowel Filter",
+      "tags": [
+        "Filter"
+      ]
+    },
+    {
+      "slug": "VoxInhumanaExpander",
+      "name": "Vox Inhumana Expander",
+      "description": "Resonance and Slope Control",
+      "tags": [
+        "Expander"
+      ]
+    }
+  ]
+}

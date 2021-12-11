@@ -1,0 +1,105 @@
+{
+  "slug": "GlueTheGiant",
+  "name": "Glue the Giant",
+  "version": "2.0.1",
+  "license": "GPL-3.0-or-later",
+  "brand": "Glue the Giant",
+  "author": "Paul Merchant",
+  "authorEmail": "prmerchant@gmail.com",
+  "authorUrl": "https://github.com/gluethegiant",
+  "pluginUrl": "https://github.com/gluethegiant/gtg-rack/blob/master/README.md",
+  "manualUrl": "https://github.com/gluethegiant/gtg-rack/wiki",
+  "sourceUrl": "https://github.com/gluethegiant/gtg-rack",
+  "donateUrl": "",
+  "changelogUrl": "https://github.com/gluethegiant/gtg-rack/#release-notes",
+  "modules": [
+    {
+      "slug": "GigBus",
+      "name": "Gig Bus Mixer",
+      "description": "Stereo mixer to three stereo buses",
+      "tags": [
+        "Mixer",
+        "Panning",
+        "Visual",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "MiniBus",
+      "name": "Mini Bus Mixer",
+      "description": "Mono mixer to three stereo buses",
+      "tags": [
+        "Mixer",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "SchoolBus",
+      "name": "School Bus Mixer",
+      "description": "Pan and levels with CVs to three stereo buses",
+      "tags": [
+        "Mixer",
+        "Panning",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "MetroCityBus",
+      "name": "Metro City Bus Mixer",
+      "description": "Polyphonic stereo spread (and pan follow) to three stereo buses",
+      "tags": [
+        "Mixer",
+        "Panning",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "BusDepot",
+      "name": "Bus Depot",
+      "description": "Master fader, vu meters, or mix output for three stereo buses",
+      "tags": [
+        "Mixer",
+        "Visual",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "BusRoute",
+      "name": "Bus Route",
+      "description": "Three stereo sends and returns with optional sample delays",
+      "tags": [
+        "Mixer",
+        "Delay",
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Road",
+      "name": "Road",
+      "description": "Merge stereo buses from mixers or mix groups",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "EnterBus",
+      "name": "Enter Mixer Bus",
+      "description": "Three stereo inputs to three stereo buses",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "ExitBus",
+      "name": "Exit Mixer Bus",
+      "description": "Three stereo outputs from three stereo buses",
+      "tags": [
+        "Utility",
+        "Polyphonic"
+      ]
+    }
+  ]
+}

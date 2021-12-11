@@ -1,0 +1,33 @@
+{
+  "slug": "ChortlingHamsterModules",
+  "name": "Chortling Hamster Modules",
+  "version": "2.0.0",
+  "license": "GPL-3.0-only",
+  "brand": "Chortling Hamster Modules",
+  "author": "Alan Holding",
+  "authorEmail": "alanholding@me.com",
+  "authorUrl": "https://github.com/chortlinghamster",
+  "pluginUrl": "https://github.com/chortlinghamster/modules",
+  "manualUrl": "https://github.com/chortlinghamster/modules/blob/master/README.md",
+  "sourceUrl": "https://github.com/chortlinghamster/modules",
+  "changelogUrl": "https://github.com/chortlinghamster/modules/blob/master/CHANGELOG.md",
+  "modules": [
+    {
+      "slug": "Pop",
+      "name": "Pop",
+      "description": "Pop is a small sample and hold module. One input, one trigger and one output. But it has a chortling hamster on it!",
+      "tags": [
+        "Sample and hold"
+      ]
+    },
+    {
+      "slug": "Bitwise",
+      "name": "Bitwise",
+      "description": "Bitwise is four sample and hold circuits whose triggers can be affected by CV controlled patterns.",
+      "tags": [
+        "Polyphonic",
+        "Sample and hold"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "slug": "KRTPluginA",
+  "name": "KRTPluginA",
+  "version": "1.25.25",
+  "license": "MIT",
+  "brand": "KRT",
+  "author": "Jacko",
+  "authorEmail": "jackokring@gmail.com",
+  "authorUrl": "https://kring.co.uk",
+  "pluginUrl": "https://jackokring.github.io/KRTPluginADemo/",
+  "manualUrl": "https://github.com/jackokring/KRTPluginA/blob/master/README.md",
+  "sourceUrl": "https://github.com/jackokring/KRTPluginA",
+  "donateUrl": "https://github.com/jackokring",
+  "changelogUrl": "https://github.com/jackokring/KRTPluginA/blob/master/README.md",
+  "modules": [
+    {
+      "slug": "A",
+      "name": "A",
+      "description": "Plate 18 dB filter. (Band pass phased ring mod).",
+      "tags": [
+        "Effect",
+        "Filter",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Mu",
+      "name": "\u03bc",
+      "description": "Time dependant caclulus on a summing junction. (Precise Distortion)",
+      "tags": [
+        "Effect",
+        "Waveshaper",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "T",
+      "name": "T",
+      "description": "Pitched time stretch and matched trigger sync delay.",
+      "tags": [
+        "Effect",
+        "Tuner",
+        "Delay",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "L",
+      "name": "L",
+      "description": "Synchronized delay with shortening.",
+      "tags": [
+        "Utility",
+        "Clock modulator",
+        "Delay",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "D",
+      "name": ";D",
+      "description": "VCA/future estimator with error?",
+      "tags": [
+        "Utility",
+        "Attenuator",
+        "Voltage-controlled amplifier",
+        "Dynamics",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "R",
+      "name": "R",
+      "description": "Simple mixer split.",
+      "tags": [
+        "Attenuator",
+        "Mixer",
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Om",
+      "name": "\u03a9",
+      "description": "Clock distribution randomizer.",
+      "tags": [
+        "Clock modulator",
+        "Polyphonic",
+        "Random",
+        "Switch"
+      ]
+    },
+    {
+      "slug": "V",
+      "name": "V",
+      "description": "Envelope VCA and CV producer.",
+      "tags": [
+        "Envelope generator",
+        "Voltage-controlled amplifier",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "F",
+      "name": "F",
+      "description": "24 dB morph filter.",
+      "tags": [
+        "Filter",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "W",
+      "name": "W",
+      "description": "Gate transposer.",
+      "tags": [
+        "Attenuator",
+        "Mixer",
+        "Tuner",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Y",
+      "name": "Y",
+      "description": "Triple sequencer.",
+      "tags": [
+        "Clock generator",
+        "Sequencer"
+      ]
+    },
+    {
+      "slug": "O",
+      "name": "O",
+      "description": "Triple parabolic skew feedback oscillator.",
+      "tags": [
+        "Polyphonic",
+        "Oscillator"
+      ]
+    },
+    {
+      "slug": "S",
+      "name": "S",
+      "description": "Clock to CV generator. (Needs MIDI clk, cont, stop, start).",
+      "tags": [
+        "MIDI",
+        "Clock modulator",
+        "Low-frequency oscillator"
+      ]
+    },
+    {
+      "slug": "E",
+      "name": "E",
+      "description": "Simple AR envelope with VCA.",
+      "tags": [
+        "Envelope generator",
+        "Voltage-controlled amplifier",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "X",
+      "name": "X",
+      "description": "Oversampled wave-folder.",
+      "tags": [
+        "Waveshaper",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "M",
+      "name": "M",
+      "description": "Emphisis and de-emphisis filter. (Default RIAA and inverse).",
+      "tags": [
+        "Polyphonic",
+        "Filter",
+        "Effect",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "Q",
+      "name": "Q",
+      "description": "Quantum gravimitator. Imitates a coupled gravity quantum idea.",
+      "tags": [
+        "Polyphonic",
+        "Effect",
+        "Physical modeling",
+        "Oscillator"
+      ]
+    },
+    {
+      "slug": "C",
+      "name": "C",
+      "description": "A set of three attenuverters with mixing.",
+      "tags": [
+        "Attenuator",
+        "Mixer",
+        "Utility",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "U",
+      "name": "U",
+      "description": "Sample and hold quantizer.",
+      "tags": [
+        "Quantizer",
+        "Polyphonic",
+        "Sample and hold",
+        "Noise"
+      ]
+    },
+    {
+      "slug": "B",
+      "name": "B",
+      "description": "Crossbar performance switch.",
+      "tags": [
+        "Switch",
+        "Controller",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "J",
+      "name": "J",
+      "description": "All-pass filter. (Phaser).",
+      "tags": [
+        "Filter",
+        "Polyphonic",
+        "Utility",
+        "Phaser",
+        "Low-frequency oscillator"
+      ]
+    },
+    {
+      "slug": "K",
+      "name": "K",
+      "description": "Phase modulation oscillator.",
+      "tags": [
+        "Polyphonic",
+        "Oscillator"
+      ]
+    },
+    {
+      "slug": "H",
+      "name": "H",
+      "description": "Base gimpathizer. (Organ with phase modulation).",
+      "tags": [
+        "Polyphonic",
+        "Oscillator"
+      ]
+    },
+    {
+      "slug": "I",
+      "name": "I",
+      "description": "Clock divider with downbeat extract.",
+      "tags": [
+        "Clock modulator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "G",
+      "name": "G",
+      "description": "Compressor with control outs.",
+      "tags": [
+        "Polyphonic",
+        "Compressor",
+        "Limiter",
+        "Dynamics"
+      ]
+    }
+  ]
+}

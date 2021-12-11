@@ -1,0 +1,56 @@
+{
+  "slug": "SignalFlux",
+  "name": "Signal Flux",
+  "version": "1.1.0",
+  "license": "GPL-3.0-or-later",
+  "brand": "Signal Flux",
+  "author": "Sam Wolk and Signal Flux",
+  "authorEmail": "info@signalflux.org",
+  "authorUrl": "https://signalflux.org",
+  "pluginUrl": "https://github.com/signal-flux/Signal-Flux-VCV-Rack-Modules",
+  "manualUrl": "https://github.com/signal-flux/Signal-Flux-VCV-Rack-Modules/blob/master/README.md",
+  "sourceUrl": "https://github.com/signal-flux/Signal-Flux-VCV-Rack-Modules",
+  "donateUrl": "https://signalflux.org/about/",
+  "modules": [
+    {
+      "slug": "SimpleKnob",
+      "name": "Unipolar Offset",
+      "description": "Generates a voltage offset based on the knob position.",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "BipolarKnob",
+      "name": "Bipolar Offset",
+      "description": "Outputs positive and negative voltage proprtional to knob position.",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "Attenuate",
+      "name": "Attenuate",
+      "description": "A single attenuator.",
+      "tags": [
+        "utility"
+      ]
+    },
+    {
+      "slug": "Attenuvert",
+      "name": "Attenuvert",
+      "description": "A single attenuverter.",
+      "tags": [
+        "utility"
+      ]
+    },
+    {
+      "slug": "Invert",
+      "name": "Invert",
+      "description": "A single inverter.",
+      "tags": [
+        "utility"
+      ]
+    }
+  ]
+}

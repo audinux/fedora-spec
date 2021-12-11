@@ -1,0 +1,93 @@
+{
+  "slug": "cvly",
+  "name": "cvly",
+  "version": "1.0.4",
+  "license": "GPL-3.0-or-later",
+  "brand": "cvly",
+  "author": "Benja Appel",
+  "authorEmail": "beno.appel@gmail.com",
+  "authorUrl": "",
+  "pluginUrl": "",
+  "manualUrl": "https://github.com/Lyqst/cvly-modules#modules",
+  "sourceUrl": "https://github.com/Lyqst/cvly-modules",
+  "donateUrl": "https://www.buymeacoffee.com/cvly",
+  "changelogUrl": "https://github.com/Lyqst/cvly-modules/releases",
+  "modules": [
+    {
+      "slug": "bss",
+      "name": "bss",
+      "description": "Generates a bass note for the incoming poly input, using one of three modes",
+      "tags": [
+        "poly",
+        "quantizer",
+        "sample and hold",
+        "utility"
+      ]
+    },
+    {
+      "slug": "crcl",
+      "name": "crcl",
+      "description": "Quantizer/sequencer based on the circle of fifths",
+      "tags": [
+        "quantizer",
+        "poly",
+        "sample and hold",
+        "sequencer"
+      ]
+    },
+    {
+      "slug": "ntrvlc",
+      "name": "ntrvlc",
+      "description": "4x8 sequencer with incorporated quantizer",
+      "tags": [
+        "quantizer",
+        "poly",
+        "sequencer"
+      ]
+    },
+    {
+      "slug": "ntrvlx",
+      "name": "ntrvlx",
+      "description": "ntrvlc expander with output triggers and stacking configuration",
+      "tags": [
+        "expander"
+      ]
+    },
+    {
+      "slug": "spc",
+      "name": "spc",
+      "description": "Spreads the notes for incoming poly input, with a settable minimum interval distance",
+      "tags": [
+        "quantizer",
+        "poly",
+        "utility"
+      ]
+    },
+    {
+      "slug": "stpr",
+      "name": "stpr",
+      "description": "Sequencer with switches for each step",
+      "tags": [
+        "sequencer",
+        "switch"
+      ]
+    },
+    {
+      "slug": "txt",
+      "name": "txt",
+      "description": "Informative expander for all cvly modules",
+      "tags": [
+        "expander",
+        "utility"
+      ]
+    },
+    {
+      "slug": "whl",
+      "name": "whl",
+      "description": "3hp blank panel with cvly whale logo",
+      "tags": [
+        "blank"
+      ]
+    }
+  ]
+}

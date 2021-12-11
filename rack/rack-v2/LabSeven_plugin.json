@@ -1,0 +1,25 @@
+{
+  "slug": "LabSeven",
+  "name": "LabSeven",
+  "version": "1.0.0",
+  "license": "CC-BY-NC-SA-4.0",
+  "brand": "LabSeven",
+  "author": "Gernot Wurst",
+  "authorEmail": "highcarbschwabe@prospectum.com",
+  "authorUrl": "",
+  "pluginUrl": "http://labseven.prospectum.com/",
+  "manualUrl": "http://labseven.prospectum.com/",
+  "sourceUrl": "https://github.com/LabSevenDevVCVRack/LabSeven_VCVRack_modules.git",
+  "donateUrl": "https://paypal.me/labseven",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "LS3340VCO",
+      "name": "LS3340-VCO",
+      "description": "",
+      "tags": [
+        "Oscillator"
+      ]
+    }
+  ]
+}

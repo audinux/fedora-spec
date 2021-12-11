@@ -1,0 +1,125 @@
+{
+  "slug": "Dintree-Virtual",
+  "name": "Dintree",
+  "version": "2.0.15",
+  "license": "GPL-3.0-or-later",
+  "brand": "Dintree",
+  "author": "Andrew Kilpatrick",
+  "authorEmail": "dintree-mail@andrewkilpatrick.org",
+  "authorUrl": "http://www.dintree.com",
+  "pluginUrl": "https://github.com/hires/Dintree-Virtual",
+  "manualUrl": "https://github.com/hires/Dintree-Virtual/blob/master/README.md",
+  "sourceUrl": "https://github.com/hires/Dintree-Virtual",
+  "donateUrl": "https://paypal.me/elmood",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "V100-Scanner",
+      "name": "V100 Scanner",
+      "description": "CV and voltage-control source sequencer / scanner",
+      "manualUrl": "https://github.com/hires/Dintree-Virtual#V100-scanner",
+      "tags": [
+        "Random",
+        "Sequencer",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "V101-Dual_Envelope",
+      "name": "V101 Dual Envelope",
+      "description": "Dual ADSR, AR and LFO Generator",
+      "manualUrl": "https://github.com/hires/Dintree-Virtual#V101-dual-envelope",
+      "tags": [
+        "Dual",
+        "Envelope generator",
+        "LFO",
+        "Hardware"
+      ]
+    },
+    {
+      "slug": "V102-Output_Mixer",
+      "name": "V102 Output Mixer",
+      "description": "Four Input Mixer with Pan Pots and Output Level Meter",
+      "manualUrl": "https://github.com/hires/Dintree-Virtual#V102-output-mixer",
+      "tags": [
+        "Mixer",
+        "Pan",
+        "Quad",
+        "Utility",
+        "Hardware"
+      ]
+    },
+    {
+      "slug": "V103-Reverb_Delay",
+      "name": "V103 Reverb Delay",
+      "description": "Stereo Reverb and Delay Digital Effects Processor",
+      "manualUrl": "https://github.com/hires/Dintree-Virtual#V103-reverb-delay",
+      "tags": [
+        "Delay",
+        "Digital",
+        "Effect",
+        "Hardware",
+        "Reverb"
+      ]
+    },
+    {
+      "slug": "V104-Four_Vs",
+      "name": "V104 Four Vs",
+      "description": "Four Channel Voltage Source",
+      "manualUrl": "https://github.com/hires/Dintree-Virtual#V104-four_vs",
+      "tags": [
+        "Controller",
+        "Hardware",
+        "Quad",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "V105-Quad_CV_Proc",
+      "name": "V105 Quad CV Proc",
+      "description": "Quad Control Voltage Processor",
+      "manualUrl": "https://github.com/hires/Dintree-Virtual#V105-quad-cv-proc",
+      "tags": [
+        "Attenuator",
+        "Mixer",
+        "Quad",
+        "Hardware"
+      ]
+    },
+    {
+      "slug": "V107-Dual_Slew",
+      "name": "V107 Dual Slew",
+      "description": "Dual Slew Rate Limiter",
+      "manualUrl": "https://github.com/hires/Dintree-Virtual#V107-dual-slew",
+      "tags": [
+        "Dual",
+        "Hardware",
+        "Slew limiter"
+      ]
+    },
+    {
+      "slug": "V201-Tri_Comparator",
+      "name": "V201 Tri Comparator",
+      "description": "Analog Comparator Functions",
+      "manualUrl": "https://github.com/hires/Dintree-Virtual#V201-tri-comparator",
+      "tags": [
+        "Logic",
+        "Utility"
+      ]
+    },
+    {
+      "slug": "V218-SH-Clock-Noise",
+      "name": "V218 SH Clock Noise",
+      "description": "Sample and Hold, Clock and Noise Generator",
+      "manualUrl": "https://github.com/hires/Dintree-Virtual#V219-sh-clock-noise",
+      "tags": [
+        "Clock",
+        "Function generator",
+        "Noise",
+        "Random",
+        "S&H",
+        "Utility"
+      ]
+    }
+  ]
+}

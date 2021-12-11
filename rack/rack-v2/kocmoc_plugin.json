@@ -1,0 +1,85 @@
+{
+  "slug": "kocmoc",
+  "name": "kocmoc",
+  "version": "2.0.2",
+  "license": "GPL-3.0-or-later",
+  "brand": "kocmoc",
+  "author": "janne808",
+  "authorEmail": "janne808@radiofreerobotron.net",
+  "authorUrl": "https://radiofreerobotron.net/blog/",
+  "pluginUrl": "",
+  "manualUrl": "",
+  "sourceUrl": "https://github.com/janne808/kocmoc-rack-modules/",
+  "donateUrl": "https://ko-fi.com/janne808",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "SVF-1",
+      "name": "SVF",
+      "description": "State Variable Filter",
+      "tags": [
+        "Filter",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "TRG",
+      "name": "TRG",
+      "description": "Trigger Sequencer",
+      "tags": [
+        "Sequencer"
+      ]
+    },
+    {
+      "slug": "LADR",
+      "name": "LADR",
+      "description": "4-pole Ladder Filter",
+      "tags": [
+        "Filter",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "OP",
+      "name": "OP",
+      "description": "Phase-modulation operator",
+      "tags": [
+        "Oscillator",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "PHASR",
+      "name": "PHASR",
+      "description": "Phasor oscillator",
+      "tags": [
+        "Oscillator"
+      ]
+    },
+    {
+      "slug": "MUL",
+      "name": "MUL",
+      "description": "Multiplier",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "SKF",
+      "name": "SKF",
+      "description": "Sallen-Key filter",
+      "tags": [
+        "Filter",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "DDLY",
+      "name": "DDLY",
+      "description": "Digital Delay",
+      "tags": [
+        "Delay"
+      ]
+    }
+  ]
+}

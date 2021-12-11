@@ -1,0 +1,136 @@
+{
+  "slug": "StudioSixPlusOne",
+  "name": "Studio Six Plus One",
+  "version": "1.3",
+  "license": "GPL-3.0-or-later",
+  "brand": "Studio Six Plus One",
+  "author": "Studio Six Plus One",
+  "authorEmail": "dave.french3@googlemail.com",
+  "authorUrl": "https://github.com/StudioSixPlusOne",
+  "pluginUrl": "https://github.com/StudioSixPlusOne/rack-modules",
+  "manualUrl": "https://github.com/StudioSixPlusOne/rack-modules/blob/master/README.md",
+  "sourceUrl": "https://github.com/StudioSixPlusOne/rack-modules.git",
+  "donateUrl": "",
+  "changelogUrl": "https://github.com/StudioSixPlusOne/rack-modules/blob/master/CHANGELOG.md",
+  "modules": [
+    {
+      "slug": "KSDelay",
+      "name": "Wallenda",
+      "description": "Karplus\u2013Strong Delay with unison",
+      "manualUrl": "https://github.com/StudioSixPlusOne/rack-modules/blob/master/README.md#wallenda",
+      "tags": [
+        "Polyphonic",
+        "Delay",
+        "Effect",
+        "Physical modeling"
+      ]
+    },
+    {
+      "slug": "Maccomo",
+      "name": "Maccomo",
+      "description": "Ladder Filter self oscillating vcf",
+      "manualUrl": "https://github.com/StudioSixPlusOne/rack-modules/blob/master/README.md#maccomo",
+      "tags": [
+        "Polyphonic",
+        "Filter"
+      ]
+    },
+    {
+      "slug": "PolyShiftRegister",
+      "name": "Tyrant",
+      "description": "Polyphonic Shift Register",
+      "manualUrl": "https://github.com/StudioSixPlusOne/rack-modules/blob/master/README.md#tyrant",
+      "tags": [
+        "Polyphonic",
+        "Sample and Hold",
+        "Random"
+      ]
+    },
+    {
+      "slug": "Te",
+      "name": "Te",
+      "description": "Tyrant Expander",
+      "manualUrl": "https://github.com/StudioSixPlusOne/rack-modules/blob/master/README.md#te",
+      "tags": [
+        "Expander"
+      ]
+    },
+    {
+      "slug": "CombFilter",
+      "name": "Massarti",
+      "description": "Comb Filter",
+      "manualUrl": "https://github.com/StudioSixPlusOne/rack-modules/blob/master/README.md#massarti",
+      "tags": [
+        "Polyphonic",
+        "Filter",
+        "Effect"
+      ]
+    },
+    {
+      "slug": "LaLa",
+      "name": "LaLa",
+      "description": "Two way cross over",
+      "manualUrl": "https://github.com/StudioSixPlusOne/rack-modules/blob/master/README.md#lala",
+      "tags": [
+        "Filter",
+        "Polyphonic",
+        "Utility",
+        "Voltage-controlled amplifier"
+      ]
+    },
+    {
+      "slug": "Eva",
+      "name": "Eva",
+      "description": "Mixer",
+      "manualUrl": "https://github.com/StudioSixPlusOne/rack-modules/blob/master/README.md#eva",
+      "tags": [
+        "Mixer",
+        "Voltage-controlled amplifier",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "Zazel",
+      "name": "Zazel",
+      "description": "Parameter Controller for fades and LFO",
+      "manualUrl": "https://github.com/StudioSixPlusOne/rack-modules/blob/master/README.md#zazel",
+      "tags": [
+        "Clock modulator",
+        "Function generator",
+        "Low-frequency oscillator",
+        "Envelope generator",
+        "Controller"
+      ]
+    },
+    {
+      "slug": "Iverson",
+      "name": "Iverson",
+      "description": "Trigger Sequencer for use with midi controller",
+      "manualUrl": "https://github.com/StudioSixPlusOne/rack-modules/blob/master/README.md#iverson",
+      "tags": [
+        "Controller",
+        "Sequencer"
+      ]
+    },
+    {
+      "slug": "IversonJr",
+      "name": "IversonJr",
+      "description": "Trigger Sequencer for use with midi controller",
+      "manualUrl": "https://github.com/StudioSixPlusOne/rack-modules/blob/master/README.md#iverson",
+      "tags": [
+        "Controller",
+        "Sequencer"
+      ]
+    },
+    {
+      "slug": "Zilah",
+      "name": "Zilah",
+      "description": "14 bit Midi-CC input",
+      "manualUrl": "https://github.com/StudioSixPlusOne/rack-modules/blob/master/README.md#zilah",
+      "tags": [
+        "MIDI",
+        "external"
+      ]
+    }
+  ]
+}
