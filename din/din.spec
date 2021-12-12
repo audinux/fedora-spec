@@ -4,7 +4,7 @@
 
 Summary: DIN is a synth of a 3rd kind
 Name:    din
-Version: 51.1.1
+Version: 52.0.0
 Release: 1%{?dist}
 License: GPL
 URL:     https://dinisnoise.org/
@@ -12,7 +12,7 @@ URL:     https://dinisnoise.org/
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://archive.org/download/dinisnoise_source_code/din-51.1.1.tar.gz
+Source0: https://archive.org/download/dinisnoise_source_code/din-52.tar.gz
 
 BuildRequires: gcc
 BuildRequires: gcc-c++
@@ -47,7 +47,7 @@ Requires: din
 Jack version of the Din synthesizer
 
 %prep
-%autosetup -n %{name}-51.1.1
+%autosetup -n %{name}-52
 
 # __line conflict with std c++ headers
 sed -i -e "s/__line/__dinline/g" src/line.h
@@ -120,6 +120,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/din-jack.desktop
 %{_datadir}/applications/din-jack.desktop
 
 %changelog
+* Sun Dec 12 2021 Yann Collette <ycollette dot nospam at free.fr> 52.0.0-1
+- update to 52.0.0-1
+
 * Wed Jul 14 2021 Yann Collette <ycollette dot nospam at free.fr> 51.1.1-1
 - update to 51.1.1-1
 
