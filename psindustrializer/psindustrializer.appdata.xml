@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<application>
+  <id type="desktop">psindustrializer.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>Power Station Industrializer</name>
+  <summary>Synthesize sounds using physical modelling</summary>
+  <description>
+    <p>
+      This program generates synthesized percussion sounds using physical modelling.
+      The range of sounds possible include but is not limited to cymbal sounds,
+      metallic noises, bubbly sounds, and chimes. After a sound is rendered, it
+      can be played and then saved to a .WAV file.
+    </p>
+  </description>
+  <url type="homepage">https://sourceforge.net/projects/industrializer</url>
+</application>

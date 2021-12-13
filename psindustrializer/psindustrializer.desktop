@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Power Station Industrializer
+
+Comment=Hit Scanning Sound Synthesizer
+
+Exec=psindustrializer
+Icon=psindustrializer
+Terminal=false
+Type=Application
+Categories=Audio;Music;X-Jack;AudioVideo;
