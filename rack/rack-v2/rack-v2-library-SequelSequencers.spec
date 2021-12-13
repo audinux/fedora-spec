@@ -6,7 +6,7 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 51ad95402e39e74b02b832d10e8cfeabbe954ad3
+%global commit0 ddc455925000f0768bb811b73e839c953966b14c
 %global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 

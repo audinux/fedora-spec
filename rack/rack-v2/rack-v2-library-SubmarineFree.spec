@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 d5f1c10a069bfa52e5552b615fd7e1ca9d465dee
-%global gittag0 2.0.1
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SubmarineFree
-Version: 2.0.1
+Version: 2.0.2
 Release: 1%{?dist}
 Summary: SubmarineFree plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r SubmarineFree_plugin/dist/SubmarineFree/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile
