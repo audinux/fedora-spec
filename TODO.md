@@ -66,8 +66,6 @@
 | audioprism          | https://github.com/vsergeev/audioprism |
 | friture             | https://github.com/tlecomte/friture |
 | Tutka               | https://www.nongnu.org/tutka |
-| littlegptracker     | http://www.littlegptracker.com |
-| chibitracker        | https://sourceforge.net/projects/chibitracker.berlios/files |
 | PSindustrializer    | https://git.code.sf.net/p/industrializer/code |
 
 ## Cleanup
@@ -111,10 +109,10 @@ remove -march=native from Makefiles if it's present
 
 ### Tag:
 
-Analyzer, Compressor, Emulator, Delay, Analyzer, Drum, Jack, Alsa
+Analyzer, Compressor, Emulator, Delay, Drum, Jack, Alsa
 Editor, Legacy, Live, Effect, Gate, Graphic, Guitar, Amp Simul
 Delay, Overdrive, Cabinet, Equalizer, Convolution, Octaver
-MIDI, Tablature, Phaser, Tape, Tracker, Analyzer, Reverb
+MIDI, Tablature, Phaser, Tape, Tracker, Reverb
 Sfz, Sf2, Sf3, Monitoring, Video, Organ, PM, Sequencer
 Keyboard, Library, Live, OSC, Mixer, Modular, Rack, Sampler, Session
 
