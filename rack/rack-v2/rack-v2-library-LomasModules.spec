@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 1def9f3ee461e7736452ee9e06fa1a25c191b558
-%global gittag0 1.0.9
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-LomasModules
-Version: 1.0.9
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: LomasModules plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r LomasModules_plugin/dist/LomasModules/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.9-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

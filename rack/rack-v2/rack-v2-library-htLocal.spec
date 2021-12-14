@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 ddc455925000f0768bb811b73e839c953966b14c
-%global gittag0 2.0.1
+%global commit0 9e4257b731e52f4c30e62be85ae29d40825ff7cb
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-SequelSequencers
-Version: 2.0.1
+Name:    rack-v2-htLocal
+Version: 2.0.0
 Release: 1%{?dist}
-Summary: SequelSequencers plugin for Rack
+Summary: htLocal plugin for Rack
 License: GPLv2+
-URL:     https://github.com/danieldavies99/sequel
+URL:     https://github.com/HTlocal/VCV-Modules-HTLocal
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,8 +27,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/danieldavies99/sequel/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: SequelSequencers_plugin.json
+Source1: https://github.com/HTlocal/VCV-Modules-HTLocal/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: htLocal_plugin.json
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -57,8 +57,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-SequelSequencers plugin for Rack.
-3 row / 8 step sequencer with built-in clock divider
+htLocal plugin for Rack.
+Fades signals in and out
 
 %prep
 %autosetup -n Rack
@@ -127,24 +127,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir SequelSequencers_plugin
-tar xvfz %{SOURCE1} --directory=SequelSequencers_plugin --strip-components=1 
+mkdir htLocal_plugin
+tar xvfz %{SOURCE1} --directory=htLocal_plugin --strip-components=1 
 
-cp -n %{SOURCE2} SequelSequencers_plugin/plugin.json
+cp -n %{SOURCE2} htLocal_plugin/plugin.json
 
 %build
 
-cd SequelSequencers_plugin
+cd htLocal_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/SequelSequencers/
-cp -r SequelSequencers_plugin/dist/SequelSequencers/* %{buildroot}%{_libexecdir}/Rack2/plugins/SequelSequencers/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/htLocal/
+cp -r htLocal_plugin/dist/htLocal/* %{buildroot}%{_libexecdir}/Rack2/plugins/htLocal/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

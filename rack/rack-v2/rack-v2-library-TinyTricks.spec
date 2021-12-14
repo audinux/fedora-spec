@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 21220ec37d32537e6cd68c090c2433fe58917085
-%global gittag0 1.5.0
+%global gittag0 2.5.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-TinyTricks
-Version: 1.5.0
+Version: 2.5.0
 Release: 1%{?dist}
 Summary: TinyTricks plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r TinyTricks_plugin/dist/TinyTricks/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.5.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.0-1
 - initial specfile

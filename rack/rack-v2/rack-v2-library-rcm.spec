@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 f77e233c8b6612f5f2ece514b2252dc294bd20e5
-%global gittag0 1.1.0
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-rcm
-Version: 1.1.0
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: rcm plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r rcm_plugin/dist/rcm/* %{buildroot}%{_libexecdir}/Rack2/plugins/rcm/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile
