@@ -65,8 +65,8 @@
 | Mousai              | https://github.com/SeaDve/Mousai |
 | audioprism          | https://github.com/vsergeev/audioprism |
 | friture             | https://github.com/tlecomte/friture |
-| Tutka               | https://www.nongnu.org/tutka |
-| PSindustrializer    | https://git.code.sf.net/p/industrializer/code |
+| reMID.lv2           | https://github.com/ssj71/reMID.lv2 |
+| MiniGBS             | https://github.com/baines/MiniGBS |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
