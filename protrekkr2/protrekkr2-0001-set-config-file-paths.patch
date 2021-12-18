@@ -1,0 +1,269 @@
+From fe69ca4c128bcd2295aec0e46954346f372b6ee3 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sat, 18 Dec 2021 21:10:02 +0100
+Subject: [PATCH] set file path
+
+---
+ src/files/config.cpp | 57 ++++--------------------------
+ src/ptk.cpp          | 12 ++-----
+ src/support/main.cpp | 84 ++------------------------------------------
+ src/ui/xml.cpp       |  2 +-
+ 4 files changed, 12 insertions(+), 143 deletions(-)
+
+diff --git a/src/files/config.cpp b/src/files/config.cpp
+index 07e2cfb..92f7443 100644
+--- a/src/files/config.cpp
++++ b/src/files/config.cpp
+@@ -296,83 +296,40 @@ void Load_Config(void)
+     // Set default dirs if nothing
+     if(!strlen(Dir_Mods))
+     {
+-        GETCWD(Dir_Mods, MAX_PATH);
+-
+-#if defined(__WIN32__)
+-        strcat(Dir_Mods, "\\modules");
+-#else
+-        strcat(Dir_Mods, "/modules");
+-#endif
+-
++        strcpy(Dir_Mods, "/usr/share/protrekkr2/modules");
+     }
+     if(!strlen(Dir_Instrs))
+     {
+-        GETCWD(Dir_Instrs, MAX_PATH);
+-
+-#if defined(__WIN32__)
+-        strcat(Dir_Instrs, "\\instruments");
+-#else
+-        strcat(Dir_Instrs, "/instruments");
+-#endif
++        strcpy(Dir_Instrs, "/usr/share/protrekkr2/instruments");
+ 
+     }
+     if(!strlen(Dir_Presets))
+     {
+-        GETCWD(Dir_Presets, MAX_PATH);
+-
+-#if defined(__WIN32__)
+-        strcat(Dir_Presets, "\\presets");
+-#else
+-        strcat(Dir_Presets, "/presets");
+-#endif
++        strcpy(Dir_Presets, "/usr/share/protrekkr2/presets");
+ 
+     }
+ 
+     if(!strlen(Dir_Reverbs))
+     {
+-        GETCWD(Dir_Reverbs, MAX_PATH);
+-
+-#if defined(__WIN32__)
+-        strcat(Dir_Reverbs, "\\reverbs");
+-#else
+-        strcat(Dir_Reverbs, "/reverbs");
+-#endif
++        strcpy(Dir_Reverbs, "/usr/share/protrekkr2/reverbs");
+ 
+     }
+ 
+     if(!strlen(Dir_MidiCfg))
+     {
+-        GETCWD(Dir_MidiCfg, MAX_PATH);
+-
+-#if defined(__WIN32__)
+-        strcat(Dir_MidiCfg, "\\midicfgs");
+-#else
+-        strcat(Dir_MidiCfg, "/midicfgs");
+-#endif
++        strcpy(Dir_MidiCfg, "/usr/share/protrekkr2/midicfgs");
+ 
+     }
+ 
+     if(!strlen(Dir_Patterns))
+     {
+-        GETCWD(Dir_Patterns, MAX_PATH);
+-
+-#if defined(__WIN32__)
+-        strcat(Dir_Patterns, "\\patterns");
+-#else
+-        strcat(Dir_Patterns, "/patterns");
+-#endif
++        strcpy(Dir_Patterns, "/usr/share/protrekkr2/patterns");
+ 
+     }
+ 
+     if(!strlen(Dir_Samples))
+     {
+-        GETCWD(Dir_Samples, MAX_PATH);
+-
+-#if defined(__WIN32__)
+-        strcat(Dir_Samples, "\\samples");
+-#else
+-        strcat(Dir_Samples, "/samples");
+-#endif
++        strcat(Dir_Samples, "/usr/share/protrekkr2/samples");
+ 
+     }
+ 
+diff --git a/src/ptk.cpp b/src/ptk.cpp
+index a249571..81e88eb 100644
+--- a/src/ptk.cpp
++++ b/src/ptk.cpp
+@@ -453,11 +453,7 @@ SDL_Surface *Load_Skin_Picture(char *name)
+         return(NULL);
+     }
+ 
+-#if defined(__WIN32__)
+-    sprintf(filepath, "skins\\%s", pic_filename);
+-#else
+-    sprintf(filepath, "skins/%s", pic_filename);
+-#endif
++    sprintf(filepath, "/usr/share/protrekkr2/skins/%s", pic_filename);
+ 
+     surface = Load_Picture(filepath);
+     if(surface == NULL)
+@@ -485,11 +481,7 @@ int Load_Font_Datas(char *name)
+         return(FALSE);
+     }
+ 
+-#if defined(__WIN32__)
+-    sprintf(filepath, "skins\\%s", pic_filename);
+-#else
+-    sprintf(filepath, "skins/%s", pic_filename);
+-#endif
++    sprintf(filepath, "/usr/share/protrekkr2/skins/%s", pic_filename);
+     if(!Create_Font_Datas(filepath))
+     {
+         sprintf(error, "Can't load %s file.", pic_filename);
+diff --git a/src/support/main.cpp b/src/support/main.cpp
+index 127949b..566975c 100644
+--- a/src/support/main.cpp
++++ b/src/support/main.cpp
+@@ -322,14 +322,7 @@ void Load_Keyboard_Def(char *FileName)
+     char KbFileName[MAX_PATH];
+     char Keyboard_Label[256];
+ 
+-#if defined(__WIN32__)
+-    strcpy(KbFileName, ExePath);
+-    strcat(KbFileName, "\\skins\\");
+-#else
+-    strcpy(KbFileName, ExePath);
+-    strcat(KbFileName, "/skins/");
+-#endif
+-
++    strcpy(KbFileName, "/usr/share/protrekkr2/skins/");
+     strcat(KbFileName, FileName);
+ 
+     // Current keyboard filename (saved in ptk.cfg)
+@@ -429,70 +422,6 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
+     Startup_Width = Screen_Info->current_w;
+     Startup_Height = Screen_Info->current_h;
+ 
+-#if defined(__LINUX__)
+-    // Note:
+-    // it looks like some distros don't have /proc/self
+-    // Maybe a better (?) solution would be to use:
+-    // sprintf(ExeProc, "/proc/$d/exe", getpid());
+-    // readlink(ExeProc, ExePath, sizeof(ExePath));
+-    readlink("/proc/self/exe", ExePath, ExePath_Size);
+-    int exename_len = strlen(ExePath);
+-    while(exename_len--)
+-    {
+-        if(ExePath[exename_len] == '/')
+-        {
+-            ExePath[exename_len] = 0;
+-            exename_len++;
+-            break;
+-        }
+-    }
+-    CHDIR(ExePath);
+-
+-#elif defined(__HAIKU__)
+-	chdir(dirname(argv[0]));
+-	GETCWD(ExePath, MAX_PATH);
+-
+-#elif defined(__AMIGAOS4__) || defined(__AROS__)
+-    CHDIR("/PROGDIR/");
+-    GETCWD(ExePath, MAX_PATH);
+-
+-#else
+-    #if defined(__MACOSX__)
+-        Path_Length = ExePath_Size;
+-        _NSGetExecutablePath(ExePath, &Path_Length);
+-        while(Path_Length--)
+-        {
+-            if(ExePath[Path_Length] == '/')
+-            {
+-                ExePath[Path_Length] = 0;
+-                Path_Length++;
+-                break;
+-            }
+-        }
+-
+-        // There's a probably a better way to do that but
+-        // it works fine and i want the app to be able 
+-        // to run from a console too.
+-        int Found_File = FALSE;
+-        strcat(ExePath, "/../");
+-        while(!Found_File)
+-        {
+-            CHDIR(ExePath);
+-            FILE *Test_File = fopen("skins/skin.xml", "rb");
+-            if(Test_File)
+-            {
+-                Found_File = TRUE;
+-                fclose(Test_File);
+-                ExePath[strlen(ExePath) - 1] = 0;
+-                break;
+-            }
+-            strcat(ExePath, "../");
+-        }
+-    #else
+-        GETCWD(ExePath, MAX_PATH);
+-    #endif
+-#endif
+-
+     // Default values
+     sprintf(Keyboard_Name, "%s", "kben.txt");
+     sprintf(Keyboard_FileNames[0], "%s", "kben.txt");
+@@ -527,14 +456,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
+ 
+             // Load the keyboard file
+ 
+-#if defined(__WIN32__)
+-            strcpy(KbFileNameToLoad, ExePath);
+-            strcat(KbFileNameToLoad, "\\skins\\");
+-#else
+-            strcpy(KbFileNameToLoad, ExePath);
+-            strcat(KbFileNameToLoad, "/skins/");
+-#endif
+-
++            strcpy(KbFileNameToLoad, "/usr/share/protrekkr2/skins/");
+             strcat(KbFileNameToLoad, KbFileName);
+ 
+             // Store it
+@@ -914,8 +836,6 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
+     }
+     Save_Config();
+ 
+-	if(ExePath) free(ExePath);
+-
+     exit(0);
+ }
+ 
+diff --git a/src/ui/xml.cpp b/src/ui/xml.cpp
+index c1c66e4..cc19300 100644
+--- a/src/ui/xml.cpp
++++ b/src/ui/xml.cpp
+@@ -54,7 +54,7 @@ list <skin_file> skin_files;
+ // - Spin (2 arrows with a number).
+ // - Picture.
+ 
+-TiXmlDocument doc("skins/skin.xml");
++TiXmlDocument doc("/usr/share/protrekkr2/skins/skin.xml");
+ char xml_error[256];
+ 
+ extern char Window_Title[256];
+-- 
+2.31.1
+
