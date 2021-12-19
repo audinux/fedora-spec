@@ -18,7 +18,7 @@ Version: 2.0.0
 Release: 1%{?dist}
 Summary: Mojo plugin for Rack
 License: GPLv2+
-URL:     https://github.com/tomdasilva
+URL:     https://github.com/tomdasilva/Mojo
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,7 +27,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/tomdasilva/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/tomdasilva/Mojo/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: Mojo_plugin.json
 
 BuildRequires: gcc gcc-c++

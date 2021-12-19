@@ -18,7 +18,7 @@ Version: 1.0.0
 Release: 1%{?dist}
 Summary: s-ol plugin for Rack
 License: GPLv2+
-URL:     https://git.s-ol.nu/vcvmods
+URL:     https://github.com/s-ol/vcvmods
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,7 +27,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://git.s-ol.nu/vcvmods/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/s-ol/vcvmods/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: s-ol_plugin.json
 
 BuildRequires: gcc gcc-c++

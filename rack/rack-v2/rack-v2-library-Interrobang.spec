@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 611c4ea2bf8ea27b4426ab55b4cf131ed375876c
-%global gittag0 1.0.2
+%global commit0 4a148ffea5ab569f28df876661e0bd529160858e
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Interrobang
-Version: 1.0.2
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: Interrobang plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r Interrobang_plugin/dist/Interrobang/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

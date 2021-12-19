@@ -27,7 +27,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://gitlab.com/jeremy_mitchell/sunsetsignals/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://gitlab.com/jeremy_mitchell/sunsetsignals/-/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: SunsetSignals_plugin.json
 
 BuildRequires: gcc gcc-c++

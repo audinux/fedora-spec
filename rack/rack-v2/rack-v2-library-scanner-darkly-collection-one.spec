@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 327a5fceba30e55962ef4649e476695ae4770102
-%global gittag0 1.0.1
+%global commit0 8616545d2ca507634c75239f280c7ee4415a1607
+%global gittag0 2.0.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-scanner-darkly-collection-one
-Version: 1.0.1
+Version: 2.0.3
 Release: 1%{?dist}
 Summary: scanner-darkly-collection-one plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r scanner-darkly-collection-one_plugin/dist/scanner-darkly-collection-one/* 
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
 - initial specfile
