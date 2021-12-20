@@ -3,7 +3,7 @@
 # Catagory: DAW, Audio, Sequencer
 
 Name:    stargate
-Version: 21.12.2
+Version: 21.12.3
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
 License: GPLv3
@@ -85,6 +85,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 %{_datadir}/stargate/*
 
 %changelog
+* Mon Dec 20 2021 Yann Collette <ycollette.nospam@free.fr> - 21.12.3-1
+- update to 21.12.3-1
+
 * Sun Dec 12 2021 Yann Collette <ycollette.nospam@free.fr> - 21.12.2-1
 - update to 21.12.2-1
 
