@@ -1,5 +1,9 @@
+# Tag: Library, Editor
+# Type: Standalone, IDE; Language
+# Category: Audio, Programming, Graphic
+
 Name:    JUCE
-Version: 6.1.3
+Version: 6.1.4
 Release: 5%{?dist}
 Summary: JUCE Framework
 URL:     https://github.com/juce-framework/JUCE
@@ -91,6 +95,9 @@ cp -ra docs/doxygen/doc/* %{buildroot}/%{_datadir}/JUCE/doc/
 %{_usrsrc}/*
 
 %changelog
+* Mon Dec 20 2021 Yann Collette <ycollette.nospam@free.fr> - 6.1.4-5
+- update to 6.1.4-5
+
 * Wed Dec 08 2021 Yann Collette <ycollette.nospam@free.fr> - 6.1.3-5
 - update to 6.1.3-5
 
