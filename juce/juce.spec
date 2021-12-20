@@ -22,7 +22,7 @@ BuildRequires: dssi-devel
 BuildRequires: ladspa-devel
 BuildRequires: doxygen
 BuildRequires: graphviz
-BuildRequires: python3
+BuildRequires: python-unversioned-command
 BuildRequires: webkit2gtk3-devel
 BuildRequires: sed
 BuildRequires: libcurl-devel
