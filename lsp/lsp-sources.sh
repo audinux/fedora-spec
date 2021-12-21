@@ -4,7 +4,7 @@ VERSION="$1"
 
 git clone https://github.com/sadko4u/lsp-plugins
 cd lsp-plugins
-git checkout lsp-plugins-$VERSION
+git checkout $VERSION
 git submodule init
 git submodule update
 find . -name .git --exec rm -rf {} \;

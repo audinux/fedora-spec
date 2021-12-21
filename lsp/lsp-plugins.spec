@@ -4,7 +4,7 @@
 
 Name:    lsp-plugins
 Summary: Linux Studio Plugins collection
-Version: 1.1.30
+Version: 1.1.31
 Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/sadko4u/lsp-plugins
@@ -12,11 +12,12 @@ URL:     https://github.com/sadko4u/lsp-plugins
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./lsp-sources.sh 1.1.30
+# ./lsp-sources.sh 1.1.31
 
 Source0: lsp-plugins.tar.gz
+Source1: lsp-sources.sh
 
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc gcc-c++ make
 BuildRequires: lv2-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsndfile-devel
@@ -41,11 +42,11 @@ sed -i -e "/MAKE_OPTS/d" scripts/make/tools.mk
 
 %build
 
-%make_build DESTDIR=%{buildroot} PREFIX=/usr BUILD_PROFILE=%{_arch} CC_FLAGS="%{optflags} -DLSP_NO_EXPERIMENTAL" BIN_PATH=%{_bindir} LIB_PATH=%{_libdir} DOC_PATH=%{_docdir}
+%make_build BUILD_PROFILE=%{_arch} CC_FLAGS="%{optflags} -DLSP_NO_EXPERIMENTAL" BIN_PATH=%{_bindir} LIB_PATH=%{_libdir} DOC_PATH=%{_docdir}
 
 %install
 
-%make_install DESTDIR=%{buildroot} PREFIX=/usr BUILD_PROFILE=%{_arch} CC_FLAGS="%{optflags} -DLSP_NO_EXPERIMENTAL" BIN_PATH=/usr/bin LIB_PATH=/usr/lib64 DOC_PATH=/usr/share/doc install
+%make_install BUILD_PROFILE=%{_arch} CC_FLAGS="%{optflags} -DLSP_NO_EXPERIMENTAL" BIN_PATH=/usr/bin LIB_PATH=/usr/lib64 DOC_PATH=/usr/share/doc install
 
 chrpath --delete $RPM_BUILD_ROOT/usr/bin/*
 chrpath --delete $RPM_BUILD_ROOT/usr/%{_lib}/ladspa/*.so
@@ -61,6 +62,9 @@ chrpath --delete $RPM_BUILD_ROOT/usr/%{_lib}/vst/lsp-plugins-lxvst-%{version}/*.
 %{_datadir}/*
 
 %changelog
+* Thu Dec 21 2021 Yann Collette <ycollette dot nospam at free.fr> 1.1.31-1
+- update to 1.1.31-1
+
 * Thu Apr 01 2021 Yann Collette <ycollette dot nospam at free.fr> 1.1.30-1
 - update to 1.1.30-1
 
