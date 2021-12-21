@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    ChowMatrix
-Version: 1.2.0
+Version: 1.3.0
 Release: 1%{?dist}
 Summary: Matrix delay effect
 License: BSD-3-Clause
@@ -14,7 +14,7 @@ Distribution: Audinux
 
 # to generater code archive:
 # ./source_chowmatrix.sh <tag>
-# ./source_chowmatrix.sh 1.2.0
+# ./source_chowmatrix.sh 1.3.0
 
 Source0: ChowMatrix.tar.gz
 Source1: source_chowmatrix.sh
@@ -93,5 +93,8 @@ cp -r cmake-build/ChowMatrix_artefacts/Release/LV2/*.lv2 %{buildroot}%{_libdir}/
 %{_libdir}/lv2/
 
 %changelog
+* Tue Dec 21 2021 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-1
+- update to 1.3.0-1
+
 * Mon Jun 07 2021 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
 - Initial spec file
