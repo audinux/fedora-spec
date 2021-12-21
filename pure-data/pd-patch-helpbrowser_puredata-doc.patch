@@ -11,11 +11,9 @@ Forwarded: not-needed
  tcl/pd_menucommands.tcl | 15 ++++++++++++++-
  1 file changed, 14 insertions(+), 1 deletion(-)
 
-diff --git a/tcl/pd_menucommands.tcl b/tcl/pd_menucommands.tcl
-index 2ce76e6..d15facd 100644
---- a/tcl/pd_menucommands.tcl
-+++ b/tcl/pd_menucommands.tcl
-@@ -218,10 +218,22 @@ proc ::pd_menucommands::set_filenewdir {mytoplevel} {
+--- puredata.orig/tcl/pd_menucommands.tcl
++++ puredata/tcl/pd_menucommands.tcl
+@@ -228,10 +228,22 @@
      }
  }
  
@@ -39,7 +37,7 @@ index 2ce76e6..d15facd 100644
      if {[winfo exists .aboutpd]} {
          wm deiconify .aboutpd
          raise .aboutpd
-@@ -270,6 +282,7 @@ proc ::pd_menucommands::menu_doc_open {dir basename} {
+@@ -280,6 +292,7 @@
  
  # open HTML docs from the menu using the OS-default HTML viewer
  proc ::pd_menucommands::menu_openfile {filename} {

@@ -6,10 +6,8 @@ Subject: fix URIs in manpage to point to some meaningful place
  man/pd.1 | 26 ++++++++++++++++----------
  1 file changed, 16 insertions(+), 10 deletions(-)
 
-diff --git a/man/pd.1 b/man/pd.1
-index f469dec..579ac38 100644
---- a/man/pd.1
-+++ b/man/pd.1
+--- puredata.orig/man/pd.1
++++ puredata/man/pd.1
 @@ -1,6 +1,12 @@
  .TH pd 1 "1996 Mar 20" GNU
  .SH NAME
@@ -23,7 +21,7 @@ index f469dec..579ac38 100644
  .SH DESCRIPTION
  Pd is a graphical programming environment for real-time audio synthesis
  and related applications.  It sports a rich set of real-time control
-@@ -9,17 +15,17 @@ and I/O features.
+@@ -9,17 +15,17 @@
  To get a list of allowable arguments to pd, type
  .IP
  .B pd -help

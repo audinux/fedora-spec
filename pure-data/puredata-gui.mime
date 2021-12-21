@@ -1,0 +1,2 @@
+text/x-puredata; pd-gui %s; edit=pd-gui %s; test=test "$DISPLAY" != ""; priority=2
+text/x-maxmsp; pd-gui %s; edit=pd-gui %s; test=test "$DISPLAY" != ""; priority=2

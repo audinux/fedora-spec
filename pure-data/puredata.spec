@@ -2,8 +2,8 @@
 # Pure Data vanilla build
 #
 
-%define pdver 0.51-4
-%define pkgver 0.51.4
+%define pdver 0.52-1
+%define pkgver 0.52.1
 
 Summary: Pure Data
 Name:    puredata
@@ -40,10 +40,6 @@ Patch3: pd-patch-helpbrowser_puredata-doc.patch
 Patch4: pd-patch-etc-gui-plugins.patch
 Patch5: pd-patch-fixmanpage.patch
 Patch6: pd-patch-privacy.patch
-Patch7: bugfix-when-undoing-object-move-while-zooming-x-2.patch
-Patch8: fixed-vertical-offset-issue-in-triggerize_line-fn.patch
-Patch9: make-sure-object-is-visible-for-drawing-cords-and-gatom-l.patch
-Patch10: start-jack-port-numbers-at-1-rather-than-0-like-all-other.patch
 
 BuildRequires: gcc gcc-c++ perl
 BuildRequires: autoconf automake libtool
@@ -153,45 +149,45 @@ perl -p -i -e "s|/usr/local/lib|%{_libdir}|g" src/s_path.c
 
 # add additional stuff needed by the gui package
 # create plugins enabled directory
-mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/pd/plugins-enabled
+mkdir -p %{buildroot}%{_sysconfdir}/pd/plugins-enabled
 # add desktop file
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-desktop-file-install  --dir $RPM_BUILD_ROOT%{_datadir}/applications %{SOURCE10}
-perl -p -i -e "s|/lib/|/%{_lib}/|g" $RPM_BUILD_ROOT%{_datadir}/applications/puredata.desktop
+mkdir -p %{buildroot}%{_datadir}/applications
+desktop-file-install  --dir %{buildroot}%{_datadir}/applications %{SOURCE10}
+perl -p -i -e "s|/lib/|/%{_lib}/|g" %{buildroot}%{_datadir}/applications/puredata.desktop
 
 # add desktop icon
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/pixmaps/
-install -m 644 %{SOURCE11} $RPM_BUILD_ROOT%{_datadir}/pixmaps/
+mkdir -p %{buildroot}%{_datadir}/pixmaps/
+install -m 644 %{SOURCE11} %{buildroot}%{_datadir}/pixmaps/
 # pd-gui script and plugin
-install -m 755 %{SOURCE12} $RPM_BUILD_ROOT%{_bindir}/pd-gui
-perl -p -i -e "s|/lib/|/%{_lib}/|g" $RPM_BUILD_ROOT%{_bindir}/pd-gui
-install -m 755 %{SOURCE14} $RPM_BUILD_ROOT%{_bindir}/pd-gui-plugin
+install -m 755 %{SOURCE12} %{buildroot}%{_bindir}/pd-gui
+perl -p -i -e "s|/lib/|/%{_lib}/|g" %{buildroot}%{_bindir}/pd-gui
+install -m 755 %{SOURCE14} %{buildroot}%{_bindir}/pd-gui-plugin
 # pd-gui man page
-install -m 644 %{SOURCE13} $RPM_BUILD_ROOT%{_mandir}/man1/pd-gui.1
+install -m 644 %{SOURCE13} %{buildroot}%{_mandir}/man1/pd-gui.1
 # REAMDE for plugins
-install -m 644 %{SOURCE15} $RPM_BUILD_ROOT%{_sysconfdir}/pd/plugins-enabled/README
+install -m 644 %{SOURCE15} %{buildroot}%{_sysconfdir}/pd/plugins-enabled/README
 # documentation, intro
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/puredata-gui
-install -m 644 doc/1.manual/1.introduction.txt $RPM_BUILD_ROOT%{_datadir}/puredata-gui
+mkdir -p %{buildroot}%{_datadir}/puredata-gui
+install -m 644 doc/1.manual/1.introduction.txt %{buildroot}%{_datadir}/puredata-gui
 # mime stuff
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/mime/packages/
-install -m 644 %{SOURCE16} $RPM_BUILD_ROOT%{_datadir}/mime/packages/puredata.xml
+mkdir -p %{buildroot}%{_datadir}/mime/packages/
+install -m 644 %{SOURCE16} %{buildroot}%{_datadir}/mime/packages/puredata.xml
 
 # hardlink pd-* binaries
-rm -f $RPM_BUILD_ROOT%{_bindir}/pd
-rm -f $RPM_BUILD_ROOT%{_bindir}/pd-watchdog
-rm -r $RPM_BUILD_ROOT%{_libdir}/puredata/bin/pd
-rm -f $RPM_BUILD_ROOT%{_libdir}/puredata/bin/pd-watchdog
+rm -f %{buildroot}%{_bindir}/pd
+rm -f %{buildroot}%{_bindir}/pd-watchdog
+rm -r %{buildroot}%{_libdir}/puredata/bin/pd
+rm -f %{buildroot}%{_libdir}/puredata/bin/pd-watchdog
 
-cp src/pd-watchdog $RPM_BUILD_ROOT%{_libdir}/puredata/bin/pd-watchdog
-cp src/pd          $RPM_BUILD_ROOT%{_libdir}/puredata/bin/pd
-ln -s %{_libdir}/puredata/bin/pd          $RPM_BUILD_ROOT%{_bindir}/pd
-ln -s %{_libdir}/puredata/bin/pd-watchdog $RPM_BUILD_ROOT%{_bindir}/pd-watchdog
+cp src/pd-watchdog %{buildroot}%{_libdir}/puredata/bin/pd-watchdog
+cp src/pd          %{buildroot}%{_libdir}/puredata/bin/pd
+ln -s %{_libdir}/puredata/bin/pd          %{buildroot}%{_bindir}/pd
+ln -s %{_libdir}/puredata/bin/pd-watchdog %{buildroot}%{_bindir}/pd-watchdog
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/puredata/doc/Makefile.am
+rm -f %{buildroot}%{_libdir}/puredata/doc/Makefile.am
 
 %ifarch x86_64
-sed -i -e "s/lib/lib64/g" $RPM_BUILD_ROOT%{_bindir}/pd-gui
+sed -i -e "s/lib/lib64/g" %{buildroot}%{_bindir}/pd-gui
 %endif
 
 %files
@@ -244,6 +240,9 @@ sed -i -e "s/lib/lib64/g" $RPM_BUILD_ROOT%{_bindir}/pd-gui
 %{_mandir}/man1/pdsend.1.gz
 
 %changelog
+* Tue Dec 21 2021 Yann Collette <ycollette.nospam@free.fr> - 0.52.1-2
+- update to 0.52.1-2
+
 * Sun Jan 3 2021 Yann Collette <ycollette.nospam@free.fr> - 0.51.4-2
 - update to 0.51.4
 
