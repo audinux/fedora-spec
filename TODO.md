@@ -68,6 +68,8 @@
 | reMID.lv2           | https://github.com/ssj71/reMID.lv2 |
 | MiniGBS             | https://github.com/baines/MiniGBS |
 | protrekkr           | https://github.com/hitchhikr/protrekkr |
+| monique-monosynth   | https://github.com/surge-synthesizer/monique-monosynth |
+| midi-monitor        | https://github.com/surge-synthesizer/midi-monitor |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
