@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b84dea414c3a2bac231d1c5b837c3003d60a6446
-%global gittag0 2.0.1
+%global commit0 3409eadde21ba15750a7b5a607f960f892074adc
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Atelier
-Version: 2.0.1
+Version: 2.0.2
 Release: 1%{?dist}
 Summary: Atelier plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r Atelier_plugin/dist/Atelier/* %{buildroot}%{_libexecdir}/Rack2/plugins/Ate
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile

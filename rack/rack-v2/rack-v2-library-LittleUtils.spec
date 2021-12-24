@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 daa601d1631d6a052d805a1f55f1ab64a842e904
-%global gittag0 1.0.3
+%global commit0 b7ce2244835fa376201b21b2274937152dcd1121
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-LittleUtils
-Version: 1.0.3
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: LittleUtils plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r LittleUtils_plugin/dist/LittleUtils/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

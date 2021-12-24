@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 e05ede491eb99914371e0b0c42664c460b35527d
-%global gittag0 1.1
+%global commit0 d1673014007bab2a17c74e1b061905bdc780f09d
+%global gittag0 2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-LifeFormModular
-Version: 1.1
+Version: 2.0
 Release: 1%{?dist}
 Summary: LifeFormModular plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r LifeFormModular_plugin/dist/LifeFormModular/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0-1
 - initial specfile

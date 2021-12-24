@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 d45f28b6621ef49e27ad4a59d77933ced3360f4f
-%global gittag0 2.3.10
+%global commit0 4556a5e567c9e0a37f0688afdaccf4ce70278b53
+%global gittag0 2.3.11
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-OrangeLine
-Version: 2.3.10
+Version: 2.3.11
 Release: 1%{?dist}
 Summary: OrangeLine plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r OrangeLine_plugin/dist/OrangeLine/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.10-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.11-1
 - initial specfile
