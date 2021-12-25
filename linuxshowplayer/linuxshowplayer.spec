@@ -1,5 +1,5 @@
 Name:    linux-show-player
-Version: 0.5.2
+Version: 0.5.3
 Release: 1%{?dist}
 Summary: A Cue player designed for stage productions
 License: GPLv2+
@@ -66,5 +66,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/linuxshowplayer.deskt
 %{python3_sitelib}/*
 
 %changelog
+* Sat Dec 25 2021 Yann Collette <ycollette.nospam@free.fr> - 0.5.3-1
+- update to version 0.5.3-1
+
 * Fri Mar 12 2021 Yann Collette <ycollette.nospam@free.fr> - 0.5.2-1
 - Initial spec file
