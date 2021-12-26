@@ -23,6 +23,7 @@ BuildRequires: chrpath
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
+BuildRequires: libcurl-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
 BuildRequires: alsa-lib-devel
