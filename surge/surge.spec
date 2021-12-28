@@ -9,6 +9,7 @@ License: GPLv2+
 
 URL:     https://github.com/surge-synthesizer/surge
 Source0: surge.tar.gz
+Source1: source-surge.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: libX11-devel
