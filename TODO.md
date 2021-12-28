@@ -69,7 +69,7 @@
 | MiniGBS             | https://github.com/baines/MiniGBS |
 | protrekkr           | https://github.com/hitchhikr/protrekkr |
 | monique-monosynth   | https://github.com/surge-synthesizer/monique-monosynth |
-| midi-monitor        | https://github.com/surge-synthesizer/midi-monitor |
+| mclk.lv2            | https://github.com/x42/mclk.lv2 |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
