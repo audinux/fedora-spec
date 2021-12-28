@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 3bc8a88494f413f1665fe28fbac821280ec507f6
-%global gittag0 2.0.0
+%global commit0 bd45fc5e9b472182bcc74da264f865d1424a76be
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-AnimatedCircuits
-Version: 2.0.0
+Version: 2.1.0
 Release: 1%{?dist}
 Summary: AnimatedCircuits plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r AnimatedCircuits_plugin/dist/AnimatedCircuits/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile

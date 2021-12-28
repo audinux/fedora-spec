@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 69fa9a43705bad3332d3d41f7733879849f81e55
-%global gittag0 2.0.2
+%global commit0 a239b823cea2bbde28ae2a9299f51f01c95b7b93
+%global gittag0 2.0.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-LyraeModules
-Version: 2.0.2
+Version: 2.0.3
 Release: 1%{?dist}
 Summary: LyraeModules plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r LyraeModules_plugin/dist/LyraeModules/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
 - initial specfile

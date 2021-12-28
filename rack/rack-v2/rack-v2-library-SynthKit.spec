@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 066d0c8fe9aeecb1907dc84209243eeb9ba1aa4e
-%global gittag0 1.0.1
+%global commit0 0d4aba35a9a3b0988c3e66172ddfa964ada3dbbe
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SynthKit
-Version: 1.0.1
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: SynthKit plugin for Rack
 License: GPLv2+
@@ -26,8 +26,18 @@ Distribution: Audinux
 # ./rack-source.sh <tag>
 # ./rack-source.sh v2.0.3
 
+# git clone https://github.com/jerrysievert/synthkit
+# cd synthkit
+# git switch 0d4aba35a9a3b0988c3e66172ddfa964ada3dbbe
+# git submodule init
+# git submodule update --recursive
+# find . -name ".git" -exec rm -rf {} \; -print
+# cd ..
+# tar cvfz synthkit.tar.gz synthkit/*
+# rm -rf synthkit
+
 Source0: Rack.tar.gz
-Source1: https://github.com/jerrysievert/synthkit//archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: synthkit.tar.gz
 Source2: SynthKit_plugin.json
 
 BuildRequires: gcc gcc-c++
@@ -146,5 +156,5 @@ cp -r SynthKit_plugin/dist/SynthKit/* %{buildroot}%{_libexecdir}/Rack2/plugins/S
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

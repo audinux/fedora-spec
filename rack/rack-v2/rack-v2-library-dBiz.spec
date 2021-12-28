@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 3580d3297aed519a58cfec5c8c95dac1a4d886a6
-%global gittag0 2.0.1
+%global commit0 6a125b7838b622654456172e2649c7e19bdfa32a
+%global gittag0 2.0.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-dBiz
-Version: 2.0.1
+Version: 2.0.3
 Release: 1%{?dist}
 Summary: dBiz plugin for Rack
 License: GPLv2+
@@ -145,5 +145,5 @@ cp -r dBiz_plugin/dist/dBiz/* %{buildroot}%{_libexecdir}/Rack2/plugins/dBiz/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
 - initial specfile
