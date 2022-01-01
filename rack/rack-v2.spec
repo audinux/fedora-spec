@@ -6,14 +6,14 @@
 %define use_static_rtaudio 0
 
 Name:    Rack-v2
-Version: 2.0.4
+Version: 2.0.5
 Release: 1%{?dist}
 Summary: A modular Synthesizer
 License: GPLv2+
 URL:     https://github.com/VCVRack/Rack
 
 # ./rack-source.sh <tag>
-# ./rack-source.sh v2.0.4
+# ./rack-source.sh v2.0.5
 
 Source0: Rack.tar.gz
 Source1: Rack-manual.tar.gz
@@ -200,6 +200,9 @@ EOF
 %{_datadir}/*
 
 %changelog
+* Sat Jan 01 2022 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
+- update to v2.0.5-1
+
 * Sun Dec 19 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-1
 - update to v2.0.4-1
 
