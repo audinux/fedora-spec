@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b49d704ccf8a447e313fead81dd43eee51ad6de9
-%global gittag0 1.1.18
+%global commit0 54dbe9b22fbc956cbc7b00426e3fce3c757c236c
+%global gittag0 2.0.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-ZetaCarinae
-Version: 1.1.18
+Version: 2.0.4
 Release: 1%{?dist}
 Summary: ZetaCarinae plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r ZetaCarinae_plugin/dist/ZetaCarinae/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.18-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-1
 - initial specfile

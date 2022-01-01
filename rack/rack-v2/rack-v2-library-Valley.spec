@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 85289bb52d9dd3ef5fa165215b20b45d701152ef
-%global gittag0 2.0.1
+%global commit0 b25037f3de702eccae621ccf570bb61928c6afb1
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Valley
-Version: 2.0.1
+Version: 2.0.2
 Release: 1%{?dist}
 Summary: Valley plugin for Rack
 License: GPLv2+
@@ -145,5 +145,5 @@ cp -r Valley_plugin/dist/Valley/* %{buildroot}%{_libexecdir}/Rack2/plugins/Valle
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile
