@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 4d5e99f4adece7c5f15c7bfd7989bd1556cd95a7
-%global gittag0 2.1.0
+%global commit0 63acf65cf2fc9e7d8fb0e638cceceb8d73f91acc
+%global gittag0 2.1.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-GrandeModular
-Version: 2.1.0
+Version: 2.1.1
 Release: 1%{?dist}
 Summary: GrandeModular plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r GrandeModular_plugin/dist/GrandeModular/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
 - initial specfile

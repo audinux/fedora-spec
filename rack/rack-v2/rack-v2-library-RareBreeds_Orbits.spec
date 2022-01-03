@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 27efa0f644ff6598be82aba7dbc94ff6645e26de
-%global gittag0 2.0.0
+%global commit0 ab940b03c841b192c28802c9fb985958fa381fb4
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-RareBreeds_Orbits
-Version: 2.0.0
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: RareBreeds_Orbits plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r RareBreeds_Orbits_plugin/dist/RareBreeds_Orbits/* %{buildroot}%{_libexecdi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

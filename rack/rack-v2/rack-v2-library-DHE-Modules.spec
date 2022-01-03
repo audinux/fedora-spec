@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b43e0278dbbaa48915a820870f4dee4f1818aa56
-%global gittag0 2.0.1
+%global commit0 08b7fc1115391f54fa68b245c2d11f35bc034150
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-DHE-Modules
-Version: 2.0.1
+Version: 2.0.2
 Release: 1%{?dist}
 Summary: DHE-Modules plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r DHE-Modules_plugin/dist/DHE-Modules/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile

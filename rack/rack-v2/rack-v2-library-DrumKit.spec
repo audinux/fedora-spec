@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 58755a32837522a64b6b886b764dbefc9a2b8fd3
-%global gittag0 1.1.4
+%global commit0 8d78f221927f5aa75d99e4fb8a6b8750141e0933
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-DrumKit
-Version: 1.1.4
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: DrumKit plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r DrumKit_plugin/dist/DrumKit/* %{buildroot}%{_libexecdir}/Rack2/plugins/Dru
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.4-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

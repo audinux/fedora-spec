@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 adeccca71a69feda2f62623b25909c15d61dde20
-%global gittag0 1.1.2
+%global commit0 7b9d19db16e00e88864e1da976245122958c11ab
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-FehlerFabrik-Suite
-Version: 1.1.2
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: FehlerFabrik-Suite plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r FehlerFabrik-Suite_plugin/dist/FehlerFabrik-Suite/* %{buildroot}%{_libexec
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

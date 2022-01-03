@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c8d43f7ef698b5c847764c07a446be65337c7d2e
-%global gittag0 1.3.1
+%global commit0 b1b8319bdf1d7ed591666e493f61b7d72841d839
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-CharredDesert
-Version: 1.3.1
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: CharredDesert plugin for Rack
 License: GPLv2+
@@ -25,6 +25,16 @@ Distribution: Audinux
 
 # ./rack-source.sh <tag>
 # ./rack-source.sh v2.0.3
+
+# git clone https://github.com/SVModular/CharredDesert
+# cd CharredDesert
+# git switch 2.0.0
+# git submodule init
+# git submodule update --recursive
+# find . -name .git -exec rm -rf {} \;
+# cd ..
+# tar cvfz CharredDesert.tar.gz CharredDesert/*
+# rm -rf CharredDesert
 
 Source0: Rack.tar.gz
 Source1: CharredDesert.tar.gz
@@ -146,5 +156,5 @@ cp -r CharredDesert_plugin/dist/CharredDesert/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.3.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

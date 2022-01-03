@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 096865d509b9401906efc8421e1196194c6766ad
-%global gittag0 2.0.0
+%global commit0 a0509693b1cfd814f9cbde43a0809539685ad839
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-az
-Version: 2.0.0
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: az plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r az_plugin/dist/az/* %{buildroot}%{_libexecdir}/Rack2/plugins/az/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

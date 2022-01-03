@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 37eaa7d6e4321955b334f71405415c004e49c9c9
-%global gittag0 1.0.5
+%global commit0 53c958c71b2f814f38174f153056190160adb84b
+%global gittag0 2.0.5
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-EH_modules
-Version: 1.0.5
+Version: 2.0.5
 Release: 1%{?dist}
 Summary: EH_modules plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r EH_modules_plugin/dist/EH_modules/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
 - initial specfile
