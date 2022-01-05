@@ -71,6 +71,7 @@
 | monique-monosynth   | https://github.com/surge-synthesizer/monique-monosynth |
 | mclk.lv2            | https://github.com/x42/mclk.lv2 |
 | Schrammel_OJD       | https://github.com/JanosGit/Schrammel_OJD |
+| EasySSP             | https://github.com/automatl/audio-dsp-multi-visualize/ |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
