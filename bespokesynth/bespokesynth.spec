@@ -4,7 +4,7 @@
 
 Name:    BespokeSynth
 Version: 1.1.0
-Release: 7%{?dist}
+Release: 8%{?dist}
 Summary: A software modular synth
 License: GPLv2+
 URL:     https://github.com/BespokeSynth/BespokeSynth
@@ -64,6 +64,11 @@ unzip %{SOURCE1}
 
 cp %{SOURCE2} libs/JUCE/modules/juce_audio_processors/format_types/
 
+# Manage VST path
+sed -i -e "s/lib\/vst/%{_lib}\/vst/g" libs/JUCE/modules/juce_audio_processors/format_types/juce_VSTPluginFormat.cpp
+sed -i -e "s/lib\/vst3/%{_lib}\/vst3/g" libs/JUCE/modules/juce_audio_processors/format_types/juce_VST3PluginFormat.cpp
+sed -i -e "s/lib\/vst3/%{_lib}\/vst3/g" VST_SDK/VST3_SDK/public.sdk/source/vst/hosting/module_linux.cpp
+
 %build
 
 %set_build_flags
@@ -102,6 +107,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/BespokeSynth.desktop
 %{_datadir}/*
 
 %changelog
+* Wed Jan 05 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-8
+- fix default vst search paths
+
 * Tue Nov 16 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-7
 - update to 1.1.0-7
 
