@@ -29,14 +29,13 @@ BuildRequires: fltk-fluid
 BuildRequires: fltk-devel
 BuildRequires: libsigc++20-devel
 BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: desktop-file-utils
 BuildRequires: libXpm-devel
 BuildRequires: ladspa-devel
 BuildRequires: liblrdf-devel
 BuildRequires: lilv-devel
 BuildRequires: lv2-devel
-BuildRequires: python2
-BuildRequires: sed
+BuildRequires: python-unversioned-command
+BuildRequires: desktop-file-utils
 
 %description
 Non-daw-lv2 is a digital audio workstation for JACK.
