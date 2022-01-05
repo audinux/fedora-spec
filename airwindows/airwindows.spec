@@ -4,7 +4,7 @@
 
 Name:    airwindows
 Version: 0.0.1
-Release: 59%{?dist}
+Release: 60%{?dist}
 Summary: A huge set of VST2 plugins
 License: MIT
 URL:     https://github.com/airwindows/airwindows
@@ -45,6 +45,8 @@ cp VST_SDK/VST2_SDK/public.sdk/source/vst2.x/* plugins/LinuxVST/include/vstsdk/
 sed -i -e "s/add_subdirectory/include_directories/g"     plugins/LinuxVST/CMakeLists.txt
 sed -i -e "s/add_compile_options/#add_compile_options/g" plugins/LinuxVST/CMakeLists.txt
 
+sed -i -e "/include_directories/a file(GLOB VSTSDK_SOURCES include/vstsdk/*.h include/vstsdk/*.cpp)" plugins/LinuxVST/CMakeLists.txt
+
 %build
 
 cd plugins/LinuxVST
@@ -66,6 +68,9 @@ install -m 755 %{__cmake_builddir}/*.so %{buildroot}/%{_libdir}/vst/
 %{_libdir}/*
 
 %changelog
+* Fri Jan 05 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-60
+- fix linking
+
 * Thu Dec 21 2021 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-59
 - update to 9c5182552324c56cfe04883a8e791f601d08de0e
 
