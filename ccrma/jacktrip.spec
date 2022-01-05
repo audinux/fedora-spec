@@ -20,6 +20,8 @@ BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: rtaudio-devel
 BuildRequires: meson
+BuildRequires: python3-pyyaml
+BuildRequires: python3-jinja2
 BuildRequires: help2man
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
