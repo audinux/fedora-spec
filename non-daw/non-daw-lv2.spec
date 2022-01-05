@@ -1,25 +1,26 @@
+# Tag: Jack, Alsa, MIDI
+# Type: Standalone
+# Category: Audio, Sequencer
+
 # Version: d958df0486c7397c243f5ac36bf4acbc461a1e50
 
 Name:    non-daw-lv2
 Version: 1.2.0
-Release: 10.gitd958df04%{?dist}
+Release: 11.gitd958df04%{?dist}
 Summary: A digital audio workstation for JACK with LV2 plugins
-
-Group:   Applications/Multimedia
 License: GPLv2+
 URL:     https://github.com/falkTX/non
+
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: non-daw-lv2.tar.gz
-# git clone https://github.com/falkTX/non non-daw-lv2
-# cd non-daw-lv2
-# git submodule init
-# git submodule update
-# find . -name .git -exec rm -rf {} \;
-# cd ..
-# tar cvfz non-daw-lv2.tar.gz non-daw-lv2/*
+Source1: non-daw-lv2-sources.sh
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+# To get the source package:
+# ./non-daw-lv2-sources.sh
 
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc gcc-c++ make
 BuildRequires: non-ntk-devel
 BuildRequires: non-ntk-fluid
 BuildRequires: liblo-devel
@@ -50,21 +51,17 @@ Requires: non-daw
 non-mixer is a powerful, reliable and fast modular Digital Audio Mixer
 
 %prep
-%setup -q -n non-daw-lv2
-
-# For Fedora 29
-%if 0%{?fedora} >= 19
-  for Files in `grep -lr "/usr/bin/env.*python"`; do sed -ie "s/env python/python2/g" $Files; done
-%endif
+%autosetup -n non-daw-lv2
 
 sed -i -e "s/#define USER_CONFIG_DIR \".non-mixer\/\"/#define USER_CONFIG_DIR \".non-mixer-lv2\/\"/g" mixer/src/main.C
 sed -i -e "s/if ( ! strcmp( n, \"non-mixer-noui\" ) )/if ( ! strcmp( n, \"non-mixer-noui\" ) )/g"     mixer/src/main.C
 sed -i -e "s/DOCUMENT_PATH \"\/non-mixer\/MANUAL\"/DOCUMENT_PATH \"\/non-mixer-lv2\/MANUAL\"/g"       mixer/src/Mixer.C
-#sed -i -e "s/#define __MODULE__ \"non-mixer\"/#define __MODULE__ \"non-mixer\"/g"                     mixer/src/const.h
+
+sed -i -e "/MIDI\/midievent.C/{x;//!d;x}" nonlib/wscript
 
 %build
 CFLAGS="%{optflags}" CXXFLAGS="%{optflags} -std=c++11" ./waf configure --prefix=%{_prefix} --libdir=%{_libdir} --enable-debug
-./waf -j4 -v 
+./waf %{?_smp_mflags} -v 
 
 %install 
 ./waf install --destdir=%{buildroot} --docdir=%{buildroot}/%{_docdir}/
@@ -128,19 +125,8 @@ rm %{buildroot}/%{_prefix}/share/pixmaps/non-sequencer/icon-256x256.png
 rm %{buildroot}/%{_prefix}/share/pixmaps/non-session-manager/icon-256x256.png
 rm %{buildroot}/%{_prefix}/share/pixmaps/non-timeline/icon-256x256.png
 
-%post 
-update-desktop-database -q
-touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
-
-%postun
-update-desktop-database -q
-if [ $1 -eq 0 ]; then
-  touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
-  gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
-fi
-
-%posttrans 
-/usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
+%check
+desktop-file-validate %{buildroot}/%{_datadir}/applications/non-mixer-lv2.desktop
 
 %files -n non-mixer-lv2
 %license COPYING
@@ -152,5 +138,8 @@ fi
 %{_datadir}/pixmaps/non-mixer-lv2
 
 %changelog
+* Wed Jan 05 2022 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-11.gitd958df04
+- update desktop
+
 * Thu Mar 19 2020 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-10.gitd958df04
 - initial spec file

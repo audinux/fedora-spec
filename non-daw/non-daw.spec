@@ -1,13 +1,20 @@
+# Tag: Jack, Alsa, MIDI
+# Type: Standalone
+# Category: Audio, Sequencer
+
 Name:    non-daw
 Version: 1.3.0
-Release: 10%{?dist}
+Release: 11%{?dist}
 Summary: A digital audio workstation for JACK
 License: GPLv2+
 URL:     http://non.tuxfamily.org/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://git.tuxfamily.org/non/non.git/snapshot/non-daw-v%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc gcc-c++ make
 BuildRequires: non-ntk-devel
 BuildRequires: non-ntk-fluid
 BuildRequires: liblo-devel
@@ -49,15 +56,10 @@ sequencer
 %prep
 %autosetup -n non-daw-v%{version}
 
-# For Fedora 29
-%if 0%{?fedora} >= 19
-  for Files in `grep -lr "/usr/bin/env.*python"`; do sed -ie "s/env python/python2/g" $Files; done
-%endif
-
 %build
 %set_build_flags
 CXXFLAGS="$CXXFLAGS -std=c++11" ./waf configure --prefix=%{_prefix} --libdir=%{_libdir} --enable-debug
-./waf -j4 -v 
+./waf %{?_smp_mflags} -v 
 
 %install 
 ./waf install --destdir=%{buildroot} --docdir=%{buildroot}/%{_docdir}/
@@ -68,6 +70,9 @@ done
 
 # correct permissions
 chmod 755 %{buildroot}%{_bindir}/*
+
+%check
+# desktop-file-validate %{_datadir}/applications/*.desktop
 
 %files
 %license COPYING
@@ -107,6 +112,9 @@ chmod 755 %{buildroot}%{_bindir}/*
 %{_datadir}/pixmaps/non-sequencer
 
 %changelog
+* Wed Jan 05 2022 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-11
+- update desktop
+
 * Fri Jan 29 2021 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-10
 - update to 1.3.0-10
 
