@@ -73,6 +73,40 @@
 | Schrammel_OJD       | https://github.com/JanosGit/Schrammel_OJD |
 | EasySSP             | https://github.com/automatl/audio-dsp-multi-visualize/ |
 
+## Package VAMP plugins
+
+Add these spec files in the vamp-plugins directory.
+
+| Name | URL |
+|------|-----|
+| BBC Vamp Plugins                     | https://github.com/bbcrd/bbc-vamp-plugins/blob/master/README.md |
+| BeatRoot                             | http://code.soundsoftware.ac.uk/projects/beatroot-vamp |
+| Cepstral Pitch Tracker               | http://code.soundsoftware.ac.uk/projects/cepstral-pitchtracker |
+| Constant-Q                           | http://code.soundsoftware.ac.uk/projects/constant-q-cpp |
+| Fan Chirp F0gram                     | http://iie.fing.edu.uy/investigacion/grupos/gpa/vamp-plugin.html |
+| HPCP - Harmonic Pitch Class Profile  | http://mtg.upf.edu/technologies/hpcp |
+| INESC Porto Beat Tracker             | http://smc.inescporto.pt/technologies/ibt/ |
+| libxtract Vamp plugins               | http://code.soundsoftware.ac.uk/projects/vamp-libxtract-plugins |
+| MARSYAS Vamp plugins                 | http://marsyas.info/downloads/vamp-plugins.html |
+| MATCH Vamp Plugin                    | http://code.soundsoftware.ac.uk/projects/match-vamp |
+| Mazurka Plugins                      | http://www.mazurka.org.uk/software/sv/plugin/ |
+| MELODIA - Melody Extraction          | http://mtg.upf.edu/technologies/melodia |
+| MIR.EDU                              | http://github.com/MTG/miredu |
+| OFA Vamp Plugin                      | http://code.soundsoftware.ac.uk/projects/ofa-vamp-plugin |
+| OnsetsDS plugin                      | http://code.soundsoftware.ac.uk/projects/vamp-onsetsds-plugin |
+| pYIN                                 | http://code.soundsoftware.ac.uk/projects/pyin |
+| Queen Mary plugin set                | https://vamp-plugins.org/plugin-doc/qm-vamp-plugins.html |
+| RGU Mel-Frequency Spectrum           | http://sourceforge.net/projects/rgumfs/ |
+| Segmentino                           | http://code.soundsoftware.ac.uk/projects/segmenter-vamp-plugin |
+| Silvet Note Transcription            | http://code.soundsoftware.ac.uk/projects/silvet |
+| Simple Cepstrum                      | http://code.soundsoftware.ac.uk/projects/vamp-simple-cepstrum |
+| Stereo Plan                          | http://code.soundsoftware.ac.uk/projects/azi |
+| Tempogram                            | https://code.soundsoftware.ac.uk/projects/vamp-tempogram |
+| Tipic - Tibre-Invariant Pitch Chroma | http://code.soundsoftware.ac.uk/projects/tipic |
+| Tuning Difference                    | http://code.soundsoftware.ac.uk/projects/tuning-difference |
+| University of Alicante Vamp Plugins  | http://grfia.dlsi.ua.es/cm/projects/drims/softwareVAMP.php |
+| Vamp Aubio plugins                   | http://aubio.org/vamp-aubio-plugins/ |
+
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
 
@@ -123,7 +157,7 @@ Keyboard, Library, Live, OSC, Mixer, Modular, Rack, Sampler, Session
 
 ### Type:
 
-Devel, IDE, Language, DSSI, LV2, LADSPA, Standalone, VST, VST3, Presets, Rack, Language
+Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, Presets, Rack, Language
 
 ### Category:
 
