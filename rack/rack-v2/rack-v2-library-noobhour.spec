@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c5bac4207e3fff4a2cff761523d2d7ad95de75bb
-%global gittag0 1.0.3
+%global commit0 fd172d0cd62ee6ca5612950ba22de0cca622d1ef
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-noobhour
-Version: 1.0.3
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: noobhour plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r noobhour_plugin/dist/noobhour/* %{buildroot}%{_libexecdir}/Rack2/plugins/n
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

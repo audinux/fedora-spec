@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 e9a5b103b202deb402238978e48d395af5ed0128
-%global gittag0 2.0.0
+%global commit0 6020017f6df74d61bb0ccfa7c814257dccf4d853
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-modular80
-Version: 2.0.0
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: modular80 plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r modular80_plugin/dist/modular80/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

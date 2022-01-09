@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 6ead2d8feb37ab5b75b417fa2f86dd663e606a75
-%global gittag0 1.1.0
+%global commit0 5074123c6296ad239a0f31739ad7dd959455878a
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-FrankBuss
-Version: 1.1.0
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: FrankBuss plugin for Rack
 License: GPLv2+
-URL:     https://github.com/FrankBuss/FrankBussRackPlugin
+URL:     https://github.com/Ahornberg/FrankBussRackPlugin
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,7 +27,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/FrankBuss/FrankBussRackPlugin/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/Ahornberg/FrankBussRackPlugin/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: FrankBuss_plugin.json
 
 BuildRequires: gcc gcc-c++
@@ -146,5 +146,5 @@ cp -r FrankBuss_plugin/dist/FrankBuss/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

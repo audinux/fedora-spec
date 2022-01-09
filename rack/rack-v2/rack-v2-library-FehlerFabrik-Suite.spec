@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 7b9d19db16e00e88864e1da976245122958c11ab
-%global gittag0 2.0.1
+%global commit0 9b5897828dc1b757f42cb707b5979488acb67401
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-FehlerFabrik-Suite
-Version: 2.0.1
+Version: 2.0.2
 Release: 1%{?dist}
 Summary: FehlerFabrik-Suite plugin for Rack
 License: GPLv2+
@@ -71,7 +71,7 @@ sed -i -e "s/-march=nehalem//g" dep.mk
 # For -O2 usage
 sed -i -e "s/-O3/-O2/g" compile.mk
 sed -i -e "s/-O3/-O2/g" dep.mk
-sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk 
+sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(SPECCFLAGS)/g" dep.mk 
 
 # Remove static gcc lib
 sed -i -e "s/-static-libstdc++ -static-libgcc//g" Makefile
@@ -146,5 +146,5 @@ cp -r FehlerFabrik-Suite_plugin/dist/FehlerFabrik-Suite/* %{buildroot}%{_libexec
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile
