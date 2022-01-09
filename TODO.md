@@ -107,6 +107,10 @@ Add these spec files in the vamp-plugins directory.
 | University of Alicante Vamp Plugins  | http://grfia.dlsi.ua.es/cm/projects/drims/softwareVAMP.php |
 | Vamp Aubio plugins                   | http://aubio.org/vamp-aubio-plugins/ |
 
+## Update
+
+OB-Xd to update to 2.6
+
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
 
