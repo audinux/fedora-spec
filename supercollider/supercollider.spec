@@ -1,9 +1,9 @@
 Summary: Object oriented programming environment for real-time audio and video processing
 Name:    supercollider
-Version: 3.12.1
+Version: 3.12.2
 Release: 5%{?dist}
 License: GPL
-URL:     http://supercollider.sourceforge.net/
+URL:     https://supercollider.github.io/
 
 Source0: https://github.com/supercollider/supercollider/releases/download/Version-%{version}/SuperCollider-%{version}-Source.tar.bz2
 
@@ -155,6 +155,9 @@ chrpath --delete %{buildroot}%{_bindir}/scide
 %{_datadir}/mime/packages/supercollider.xml
 
 %changelog
+* Sun Jan 09 2022 Yann Collette <ycollette.nospam@free.fr> 3.12.2-5
+- update to 3.12.2-5
+
 * Mon Sep 06 2021 Yann Collette <ycollette.nospam@free.fr> 3.12.1-5
 - update to 3.12.1-5
 
