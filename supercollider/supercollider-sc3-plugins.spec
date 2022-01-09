@@ -3,7 +3,7 @@ Name:    supercollider-sc3-plugins
 Version: 3.11.1
 Release: 4%{?dist}
 License: GPL
-URL:     http://sc3-plugins.sourceforge.net/
+URL:     https://github.com/supercollider/sc3-plugins/
 
 # ./supercollider-sc3-source.sh <tag>
 # ./supercollider-sc3-source.sh Version-3.11.1
