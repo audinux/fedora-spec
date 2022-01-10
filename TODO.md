@@ -79,8 +79,6 @@ Add these spec files in the vamp-plugins directory.
 
 | Name | URL |
 |------|-----|
-| BBC Vamp Plugins                     | https://github.com/bbcrd/bbc-vamp-plugins/blob/master/README.md |
-| BeatRoot                             | http://code.soundsoftware.ac.uk/projects/beatroot-vamp |
 | Cepstral Pitch Tracker               | http://code.soundsoftware.ac.uk/projects/cepstral-pitchtracker |
 | Constant-Q                           | http://code.soundsoftware.ac.uk/projects/constant-q-cpp |
 | Fan Chirp F0gram                     | http://iie.fing.edu.uy/investigacion/grupos/gpa/vamp-plugin.html |
