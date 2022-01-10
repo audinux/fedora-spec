@@ -79,8 +79,6 @@ Add these spec files in the vamp-plugins directory.
 
 | Name | URL |
 |------|-----|
-| Cepstral Pitch Tracker               | http://code.soundsoftware.ac.uk/projects/cepstral-pitchtracker |
-| Constant-Q                           | http://code.soundsoftware.ac.uk/projects/constant-q-cpp |
 | Fan Chirp F0gram                     | http://iie.fing.edu.uy/investigacion/grupos/gpa/vamp-plugin.html |
 | HPCP - Harmonic Pitch Class Profile  | http://mtg.upf.edu/technologies/hpcp |
 | INESC Porto Beat Tracker             | http://smc.inescporto.pt/technologies/ibt/ |
