@@ -17,9 +17,9 @@
 | marsyas             | http://marsyas.info/ |
 | vapoursynth         | http://www.vapoursynth.com/ |
 |                     | https://github.com/dubhater/vapoursynth-fluxsmooth |
-|			          | https://github.com/HolyWu/L-SMASH-Works |
-|			 	      | https://github.com/dubhater/vapoursynth-mvtools |
-|					  | https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Deblock |
+|                     | - https://github.com/HolyWu/L-SMASH-Works |
+|                     | - https://github.com/dubhater/vapoursynth-mvtools |
+|                     | - https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Deblock |
 | frequanalizer       | https://github.com/ffAudio/Frequalizer |
 | NoiseTorch          | https://github.com/lawl/NoiseTorch |
 | CadMus              | https://github.com/josh-richardson/cadmus |
@@ -74,19 +74,15 @@
 | EasySSP             | https://github.com/automatl/audio-dsp-multi-visualize/ |
 
 ## Package VAMP plugins
-
 Add these spec files in the vamp-plugins directory.
 
 | Name | URL |
 |------|-----|
-| Mazurka Plugins                      | http://www.mazurka.org.uk/software/sv/plugin/ |
-| MELODIA - Melody Extraction          | http://mtg.upf.edu/technologies/melodia |
 | MIR.EDU                              | http://github.com/MTG/miredu |
 | OFA Vamp Plugin                      | http://code.soundsoftware.ac.uk/projects/ofa-vamp-plugin |
 | OnsetsDS plugin                      | http://code.soundsoftware.ac.uk/projects/vamp-onsetsds-plugin |
 | pYIN                                 | http://code.soundsoftware.ac.uk/projects/pyin |
 | Queen Mary plugin set                | https://vamp-plugins.org/plugin-doc/qm-vamp-plugins.html |
-| RGU Mel-Frequency Spectrum           | http://sourceforge.net/projects/rgumfs/ |
 | Segmentino                           | http://code.soundsoftware.ac.uk/projects/segmenter-vamp-plugin |
 | Silvet Note Transcription            | http://code.soundsoftware.ac.uk/projects/silvet |
 | Simple Cepstrum                      | http://code.soundsoftware.ac.uk/projects/vamp-simple-cepstrum |
@@ -98,7 +94,6 @@ Add these spec files in the vamp-plugins directory.
 | Vamp Aubio plugins                   | http://aubio.org/vamp-aubio-plugins/ |
 
 ## Update
-
 OB-Xd to update to 2.6
 
 ## Cleanup
@@ -116,6 +111,12 @@ BuildRequires: libappstream-glib
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/*%{name}.*.xml
 ```
+
+Install appdata.xml files:
+
+install -Dp -m 644 %{SOURCE1} %{buildroot}%{_metainfodir}/LiVES.appdata.xml
+And normalize other installation:
+install -m 755 -d %{buildroot}/%{_datadir}/appdata/
 
 ## Add distribution information
 Vendor:       Audinux
