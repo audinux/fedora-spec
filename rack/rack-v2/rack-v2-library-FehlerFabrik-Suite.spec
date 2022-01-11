@@ -131,6 +131,7 @@ mkdir FehlerFabrik-Suite_plugin
 tar xvfz %{SOURCE1} --directory=FehlerFabrik-Suite_plugin --strip-components=1 
 
 cp -n %{SOURCE2} FehlerFabrik-Suite_plugin/plugin.json
+sed -i -e "s/dep\/lib\/libsamplerate.a/-lsamplerate/g" FehlerFabrik-Suite_plugin/Makefile
 
 %build
 
