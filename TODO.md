@@ -79,12 +79,6 @@ Add these spec files in the vamp-plugins directory.
 
 | Name | URL |
 |------|-----|
-| Fan Chirp F0gram                     | http://iie.fing.edu.uy/investigacion/grupos/gpa/vamp-plugin.html |
-| HPCP - Harmonic Pitch Class Profile  | http://mtg.upf.edu/technologies/hpcp |
-| INESC Porto Beat Tracker             | http://smc.inescporto.pt/technologies/ibt/ |
-| libxtract Vamp plugins               | http://code.soundsoftware.ac.uk/projects/vamp-libxtract-plugins |
-| MARSYAS Vamp plugins                 | http://marsyas.info/downloads/vamp-plugins.html |
-| MATCH Vamp Plugin                    | http://code.soundsoftware.ac.uk/projects/match-vamp |
 | Mazurka Plugins                      | http://www.mazurka.org.uk/software/sv/plugin/ |
 | MELODIA - Melody Extraction          | http://mtg.upf.edu/technologies/melodia |
 | MIR.EDU                              | http://github.com/MTG/miredu |
