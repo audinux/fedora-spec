@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 270891d7b257405e22ddf1ee1e9e96f56aa413ca
-%global gittag0 2.3.0
+%global commit0 ee3db2842c714ad8e21c51bda4b768f46df98020
+%global gittag0 2.3.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Bark
-Version: 2.3.0
+Version: 2.3.1
 Release: 1%{?dist}
 Summary: Bark plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r Bark_plugin/dist/Bark/* %{buildroot}%{_libexecdir}/Rack2/plugins/Bark/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-1
 - initial specfile

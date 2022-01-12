@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 632f41623d83e36790e0cef3dfda90ea4b308f6b
-%global gittag0 1.1.0
+%global commit0 3e7e01e6a449dc1e6c523bd4487c0a3200b322cb
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Axioma
-Version: 1.1.0
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: Axioma plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r Axioma_plugin/dist/Axioma/* %{buildroot}%{_libexecdir}/Rack2/plugins/Axiom
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

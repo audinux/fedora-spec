@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 cc4875472e60a3e3097d23a8a605f0e240dd0463
-%global gittag0 2.0.5
+%global commit0 5145244816022594bb49bb45394d6dc78d16a64c
+%global gittag0 2.0.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-FrozenWasteland
-Version: 2.0.5
+Version: 2.0.6
 Release: 1%{?dist}
 Summary: FrozenWasteland plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r FrozenWasteland_plugin/dist/FrozenWasteland/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.6-1
 - initial specfile
