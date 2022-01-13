@@ -1,9 +1,12 @@
 Name:    sonobus
-Version: 1.4.6
+Version: 1.4.8
 Release: 3%{?dist}
 Summary: A peer to peer audio application
 License: GPLv2+
 URL:     https://github.com/essej/sonobus
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/essej/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
@@ -88,6 +91,9 @@ cp deps/juce/LICENSE.md LICENSE-juce.md
 %{_libdir}/vst3/*
 
 %changelog
+* Thu Jan 13 2022 Yann Collette <ycollette.nospam@free.fr> - 1.4.8-3
+- update to 1.4.8-3
+
 * Sat Jun 05 2021 Yann Collette <ycollette.nospam@free.fr> - 1.4.6-3
 - update to 1.4.6-3
 
