@@ -78,10 +78,6 @@ Add these spec files in the vamp-plugins directory.
 
 | Name | URL |
 |------|-----|
-| MIR.EDU                              | http://github.com/MTG/miredu |
-| OFA Vamp Plugin                      | http://code.soundsoftware.ac.uk/projects/ofa-vamp-plugin |
-| OnsetsDS plugin                      | http://code.soundsoftware.ac.uk/projects/vamp-onsetsds-plugin |
-| pYIN                                 | http://code.soundsoftware.ac.uk/projects/pyin |
 | Queen Mary plugin set                | https://vamp-plugins.org/plugin-doc/qm-vamp-plugins.html |
 | Segmentino                           | http://code.soundsoftware.ac.uk/projects/segmenter-vamp-plugin |
 | Silvet Note Transcription            | http://code.soundsoftware.ac.uk/projects/silvet |
