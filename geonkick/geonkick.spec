@@ -3,11 +3,14 @@
 # Category: Audio, Synthesizer
 
 Name:    geonkick
-Version: 2.8.0
+Version: 2.8.1
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
 URL:     https://gitlab.com/iurie-sw/geonkick
 License: GPLv3
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://gitlab.com/iurie-sw/%{name}/-/archive/v%{version}/%{name}-v%{version}.tar.gz
 
@@ -53,6 +56,9 @@ sed -i -e "s|\${CMAKE_INSTALL_PREFIX}/lib|\${CMAKE_INSTALL_PREFIX}/%{_lib}|g" pl
 %{_datadir}/*
 
 %changelog
+* Sun Jan 16 2022 Yann Collette <ycollette.nospam@free.fr> - 2.8.1-2
+- Update to 2.8.1-2
+
 * Sat Apr 03 2021 Yann Collette <ycollette.nospam@free.fr> - 2.8.0-2
 - Update to 2.8.0-2
 
