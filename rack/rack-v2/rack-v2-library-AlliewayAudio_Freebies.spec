@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 6d3057c905e1459facde515ba8a291702beb6715
-%global gittag0 1.0.2
+%global commit0 c4c206fb3e8475179e8fac14e2648130cae40016
+%global gittag0 2.0.5
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-AlliewayAudio_Freebies
-Version: 1.0.2
+Version: 2.0.5
 Release: 1%{?dist}
 Summary: AlliewayAudio_Freebies plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r AlliewayAudio_Freebies_plugin/dist/AlliewayAudio_Freebies/* %{buildroot}%{
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
 - initial specfile

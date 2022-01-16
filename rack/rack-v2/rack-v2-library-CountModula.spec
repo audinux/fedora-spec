@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 9167e477808d892f05a59304d67e28e8e62164fb
-%global gittag0 2.0.2
+%global commit0 1827a5e85b3e6fc7242d764f9196a12b326a3e7c
+%global gittag0 2.0.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-CountModula
-Version: 2.0.2
+Version: 2.0.3
 Release: 1%{?dist}
 Summary: CountModula plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r CountModula_plugin/dist/CountModula/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
 - initial specfile

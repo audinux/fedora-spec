@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 ff5df10e5046aeac5ec03ac41875cb7bc3de73a9
-%global gittag0 2.0.3
+%global commit0 f5fee3ac13051e4484198fe0bfffbb04da2667f9
+%global gittag0 2.0.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-dbRackModules
-Version: 2.0.3
+Version: 2.0.4
 Release: 1%{?dist}
 Summary: dbRackModules plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r dbRackModules_plugin/dist/dbRackModules/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-1
 - initial specfile
