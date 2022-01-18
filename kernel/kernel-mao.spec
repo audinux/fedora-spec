@@ -7,7 +7,7 @@
 # RT patch version
 %define krt   27
 # package version
-%define krel  11
+%define krel  12
 
 %define kver  %{kmaj}.%{kmin}.%{kpat}
 %define fcver %{dist}.%{_arch}
@@ -203,6 +203,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
 %changelog
+* Thu Jan 18 2022 Yann Collette <ycollette.nospam@free.fr> - 5.15.14-rt27-12
+- disable CONFIG_HAVE_PREEMPT_DYNAMIC in config file.
+
 * Thu Jan 13 2022 Yann Collette <ycollette.nospam@free.fr> - 5.15.14-rt27-11
 - update to 5.15.14-rt27-11 - vanilla RT kernel
 

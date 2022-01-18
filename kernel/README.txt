@@ -30,3 +30,7 @@ Copy back .config file into kernel-config-5.10.
 To clean-up the boot menu:
 
 $ grub2-mkconfig -o /boot/grub2/grub.cfg
+
+Since 5.15.*:
+
+Search for "CONFIG_HAVE_PREEMPT_DYNAMIC=y" in kernel-config* and replaces it by "CONFIG_HAVE_PREEMPT_DYNAMIC=n".
