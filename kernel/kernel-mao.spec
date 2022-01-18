@@ -203,7 +203,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
 %changelog
-* Thu Jan 18 2022 Yann Collette <ycollette.nospam@free.fr> - 5.15.14-rt27-12
+* Tue Jan 18 2022 Yann Collette <ycollette.nospam@free.fr> - 5.15.14-rt27-12
 - disable CONFIG_HAVE_PREEMPT_DYNAMIC in config file.
 
 * Thu Jan 13 2022 Yann Collette <ycollette.nospam@free.fr> - 5.15.14-rt27-11
