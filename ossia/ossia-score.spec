@@ -4,14 +4,17 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    ossia-score
-Version: 2.5.2
+Version: 3.0.1
 Release: 1%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL:     https://github.com/OSSIA/score
 License: CeCILL License v2
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./ossia-source.sh <tag>
-# ./ossia-source.sh v2.5.2
+# ./ossia-source.sh v3.0.1
 
 Source0: https://gitlab.com/OSSIA/score/-/archive/v%{version}/score-v%{version}.tar.gz
 Source1: ossia-source.sh
@@ -63,14 +66,6 @@ sed -i -e "s/BOOST_MINOR 70/BOOST_MINOR 69/g" 3rdparty/libossia/cmake/OssiaDeps.
 
 %cmake_install
 
-install -m 755 -d %{buildroot}/%{_datadir}/Ossia/
-mv %{buildroot}/%{_usr}/Ossia %{buildroot}/%{_datadir}/Ossia/Qml
-
-# remove lib, it contains only static libs
-rm -rf %{buildroot}/%{_usr}/lib
-
-rm -f %{buildroot}/%{_usr}/include/.gitignore
-
 %files
 %doc INSTALL.md README.md AUTHORS
 %license LICENSE.txt
@@ -79,6 +74,9 @@ rm -f %{buildroot}/%{_usr}/include/.gitignore
 %{_datadir}/*
 
 %changelog
+* Sun Jan 16 2022 Yann Collette <ycollette.nospam@free.fr> - 3.0.1-2
+- update to version 3.0.1
+
 * Sun Oct 25 2020 Yann Collette <ycollette.nospam@free.fr> - 2.5.2-2
 - fix debug build
 
