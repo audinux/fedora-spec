@@ -29,7 +29,29 @@ do
     git submodule update --recursive
     cd ..
 done
-cd ../../..
+cd ../..
+
+cd snappy
+LIBS=`ls -d */`
+for Lib in $LIBS
+do
+    cd $Lib
+    git submodule init
+    git submodule update --recursive
+    cd ..
+done
+cd ..
+
+cd libpd
+LIBS=`ls -d */`
+for Lib in $LIBS
+do
+    cd $Lib
+    git submodule init
+    git submodule update --recursive
+    cd ..
+done
+cd ../..
 
 find . -name .git -exec rm -rf {} \;
 cd ..
