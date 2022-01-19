@@ -27,6 +27,7 @@ BuildRequires: desktop-file-utils
 BuildRequires: boost-devel
 BuildRequires: zlib-devel
 BuildRequires: qt5-qtbase-devel
+BuildRequires: qt5-qtbase-private-devel
 BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-qtwebsockets-devel
 BuildRequires: qt5-qtdeclarative-devel
@@ -66,12 +67,17 @@ sed -i -e "s/BOOST_MINOR 70/BOOST_MINOR 69/g" 3rdparty/libossia/cmake/OssiaDeps.
 
 %cmake_install
 
+# Cleanup
+rm -rf %{buildroot}/usr/lib/*.a
+rm -rf %{buildroot}/usr/lib/cmake/
+rm -rf %{buildroot}/%{_libdir}/*.a
+rm -rf %{buildroot}/%{_includedir}/
+rm -rf %{buildroot}/%{_datadir}/
+
 %files
 %doc INSTALL.md README.md AUTHORS
 %license LICENSE.txt
 %{_bindir}/*
-%{_includedir}/*
-%{_datadir}/*
 
 %changelog
 * Sun Jan 16 2022 Yann Collette <ycollette.nospam@free.fr> - 3.0.1-2
