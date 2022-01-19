@@ -43,6 +43,7 @@ BuildRequires: suil-devel
 BuildRequires: avahi-compat-libdns_sd-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
+BuildRequires: fftw-devel
 BuildRequires: unzip
 
 %description
