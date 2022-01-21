@@ -78,14 +78,9 @@ Add these spec files in the vamp-plugins directory.
 
 | Name | URL |
 |------|-----|
-| Queen Mary plugin set                | https://vamp-plugins.org/plugin-doc/qm-vamp-plugins.html |
-| Segmentino                           | http://code.soundsoftware.ac.uk/projects/segmenter-vamp-plugin |
-| Silvet Note Transcription            | http://code.soundsoftware.ac.uk/projects/silvet |
-| Simple Cepstrum                      | http://code.soundsoftware.ac.uk/projects/vamp-simple-cepstrum |
-| Stereo Plan                          | http://code.soundsoftware.ac.uk/projects/azi |
 | Tempogram                            | https://code.soundsoftware.ac.uk/projects/vamp-tempogram |
-| Tipic - Tibre-Invariant Pitch Chroma | http://code.soundsoftware.ac.uk/projects/tipic |
-| Tuning Difference                    | http://code.soundsoftware.ac.uk/projects/tuning-difference |
+| Tipic - Tibre-Invariant Pitch Chroma | https://code.soundsoftware.ac.uk/projects/tipic |
+| Tuning Difference                    | https://code.soundsoftware.ac.uk/projects/tuning-difference |
 | University of Alicante Vamp Plugins  | http://grfia.dlsi.ua.es/cm/projects/drims/softwareVAMP.php |
 | Vamp Aubio plugins                   | http://aubio.org/vamp-aubio-plugins/ |
 
