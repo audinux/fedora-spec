@@ -1,11 +1,11 @@
 # Kernel major version
 %define kmaj  5
 # Kernel minor version
-%define kmin  15
+%define kmin  16
 # Kernel patch version
-%define kpat  14
+%define kpat  2
 # RT patch version
-%define krt   27
+%define krt   19
 # package version
 %define krel  12
 
@@ -203,6 +203,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
 %changelog
+* Fri Jan 21 2022 Yann Collette <ycollette.nospam@free.fr> - 5.16.2-rt19-12
+- update to 5.16.2-rt19-11 - vanilla RT kernel
+
 * Tue Jan 18 2022 Yann Collette <ycollette.nospam@free.fr> - 5.15.14-rt27-12
 - disable CONFIG_HAVE_PREEMPT_DYNAMIC in config file.
 
