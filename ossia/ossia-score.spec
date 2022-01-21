@@ -44,6 +44,7 @@ BuildRequires: avahi-compat-libdns_sd-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 BuildRequires: fftw-devel
+BuildRequires: libsndfile-devel
 BuildRequires: unzip
 
 %description
