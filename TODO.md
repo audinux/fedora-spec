@@ -78,11 +78,7 @@ Add these spec files in the vamp-plugins directory.
 
 | Name | URL |
 |------|-----|
-| Tempogram                            | https://code.soundsoftware.ac.uk/projects/vamp-tempogram |
-| Tipic - Tibre-Invariant Pitch Chroma | https://code.soundsoftware.ac.uk/projects/tipic |
-| Tuning Difference                    | https://code.soundsoftware.ac.uk/projects/tuning-difference |
-| University of Alicante Vamp Plugins  | http://grfia.dlsi.ua.es/cm/projects/drims/softwareVAMP.php |
-| Vamp Aubio plugins                   | http://aubio.org/vamp-aubio-plugins/ |
+| Vamp Aubio plugins | http://aubio.org/vamp-aubio-plugins/ |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
