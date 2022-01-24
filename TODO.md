@@ -73,13 +73,6 @@
 | Schrammel_OJD       | https://github.com/JanosGit/Schrammel_OJD |
 | EasySSP             | https://github.com/automatl/audio-dsp-multi-visualize/ |
 
-## Package VAMP plugins
-Add these spec files in the vamp-plugins directory.
-
-| Name | URL |
-|------|-----|
-| Vamp Aubio plugins | http://aubio.org/vamp-aubio-plugins/ |
-
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
 
@@ -96,17 +89,21 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/*%{name}.*.xml
 ```
 
-Install appdata.xml files:
+## Install appdata.xml files:
 
+```
 install -Dp -m 644 %{SOURCE1} %{buildroot}%{_metainfodir}/LiVES.appdata.xml
 And normalize other installation:
 install -m 755 -d %{buildroot}/%{_datadir}/appdata/
+```
 
 ## Add distribution information
+
 Vendor:       Audinux
 Distribution: Audinux
 
 ## Check before packaging:
+
 remove -march=native from Makefiles if it's present
 
 ## Fix debug generation:
