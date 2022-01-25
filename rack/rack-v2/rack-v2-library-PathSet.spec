@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 dc38acf30a8a45f0c2be8e8b6688af1a97599b6a
-%global gittag0 2.0.5
+%global commit0 68c9782207c4afd179a6c832748ea5d4e7be4484
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-dbRackModules
-Version: 2.0.5
+Name:    rack-v2-PathSet
+Version: 2.0.0
 Release: 1%{?dist}
-Summary: dbRackModules plugin for Rack
+Summary: PathSet plugin for Rack
 License: GPLv2+
-URL:     https://github.com/docb/dbRackModules
+URL:     https://github.com/patheros/PathSetModules
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,8 +27,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/docb/dbRackModules/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: dbRackModules_plugin.json
+Source1: https://github.com/patheros/PathSetModules/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: PathSet_plugin.json
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -57,8 +57,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-dbRackModules plugin for Rack.
-Genetic Waveterrain Sysnthesis
+PathSet plugin for Rack.
+Gate shift register with controllable delays. Create generative gate sequences from a single clock.
 
 %prep
 %autosetup -n Rack
@@ -127,24 +127,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir dbRackModules_plugin
-tar xvfz %{SOURCE1} --directory=dbRackModules_plugin --strip-components=1 
+mkdir PathSet_plugin
+tar xvfz %{SOURCE1} --directory=PathSet_plugin --strip-components=1 
 
-cp -n %{SOURCE2} dbRackModules_plugin/plugin.json
+cp -n %{SOURCE2} PathSet_plugin/plugin.json
 
 %build
 
-cd dbRackModules_plugin
+cd PathSet_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/dbRackModules/
-cp -r dbRackModules_plugin/dist/dbRackModules/* %{buildroot}%{_libexecdir}/Rack2/plugins/dbRackModules/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/PathSet/
+cp -r PathSet_plugin/dist/PathSet/* %{buildroot}%{_libexecdir}/Rack2/plugins/PathSet/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

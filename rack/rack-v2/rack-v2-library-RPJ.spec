@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 42adaee63ceadb406c565f360cfe361cbad67758
-%global gittag0 2.1.0
+%global gittag0 2.1.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-RPJ
-Version: 2.1.0
+Version: 2.1.1
 Release: 1%{?dist}
 Summary: RPJ plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r RPJ_plugin/dist/RPJ/* %{buildroot}%{_libexecdir}/Rack2/plugins/RPJ/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
 - initial specfile
