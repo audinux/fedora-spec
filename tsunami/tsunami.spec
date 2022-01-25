@@ -9,7 +9,7 @@
 
 Name:    tsunami
 Version: 0.7.90.%{shortcommit0}
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A simple but powerful audio editor
 URL:     https://github.com/momentarylapse/tsunami
 License: GPLv3
@@ -37,6 +37,9 @@ It is designed for ease of use and not-looking-crappy™.
 %prep
 %autosetup -n %{name}-%{commit0}
 
+sed -i -e "s/usr\/local/usr/g" static/michisoft-tsunami.desktop
+sed -i -e "s|/usr/local/share|/usr/share|g" src/lib/hui/Application.cpp
+
 %build
 
 %meson
@@ -62,5 +65,5 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/michisoft-tsunami.de
 %{_datadir}/tsunami/*
 
 %changelog
-* Tue Jan 25 2022 Yann Collette <ycollette.nospam@free.fr> - 0.7.90-1
-- Initial spec file
+* Tue Jan 25 2022 Yann Collette <ycollette.nospam@free.fr> - 0.7.90-2
+- Initial spec file + fix installation
