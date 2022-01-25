@@ -35,6 +35,8 @@ number of bugfixes and changes to [improve IT].
 %prep
 %autosetup -n %{name}-%{version}
 
+sed -i -e "/-qv 1.2.1/,+2d" configure.ac
+
 %build
 
 %set_build_flags
