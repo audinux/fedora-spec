@@ -68,10 +68,16 @@
 | reMID.lv2           | https://github.com/ssj71/reMID.lv2 |
 | MiniGBS             | https://github.com/baines/MiniGBS |
 | protrekkr           | https://github.com/hitchhikr/protrekkr |
-| monique-monosynth   | https://github.com/surge-synthesizer/monique-monosynth |
 | mclk.lv2            | https://github.com/x42/mclk.lv2 |
 | Schrammel_OJD       | https://github.com/JanosGit/Schrammel_OJD |
 | EasySSP             | https://github.com/automatl/audio-dsp-multi-visualize/ |
+| midi2voice          | https://github.com/mathigatti/midi2voice |
+| demucs              | https://github.com/facebookresearch/demucs |
+| Audio-Effects       | https://github.com/juandagilc/Audio-Effects |
+| pedalevite          | https://github.com/EleonoreMizo/pedalevite -> code for vst2 ... |
+|                     | http://ldesoras.free.fr/doc/articles/pedale-vite/pedale-vite.html |
+| SynthDefs           | https://github.com/everythingwillbetakenaway/Synthdefs |
+| imogen              | https://github.com/benthevining/imogen |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
