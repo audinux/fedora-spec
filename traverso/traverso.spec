@@ -1,9 +1,16 @@
+# Tag: MIDI, Sequencer
+# Type: Standalone
+# Catagory: DAW, Audio, Sequencer
+
 Name:    traverso
 Version: 0.49.6
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Traverso: A Multitrack Audio Recorder and Editor
 URL:     https://savannah.nongnu.org/projects/traverso/
 License: GPLv2+
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # ./traverso-source.sh <tag>
 # ./traverso-source.sh master
@@ -12,12 +19,10 @@ Source0: traverso.tar.gz
 Source1: traverso-source.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: qt5-qtbase-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: desktop-file-utils
 BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: cmake
-BuildRequires: desktop-file-utils
 BuildRequires: filesystem
 BuildRequires: libsndfile-devel
 BuildRequires: wavpack-devel
@@ -28,6 +33,7 @@ BuildRequires: fftw-devel
 BuildRequires: libmad-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: lilv-devel
+BuildRequires: desktop-file-utils
 
 %description
 Traverso: A Multitrack Audio Recorder and Editor
@@ -38,7 +44,6 @@ Traverso: A Multitrack Audio Recorder and Editor
 %build
 
 %cmake
-
 %cmake_build
 
 %install
@@ -49,6 +54,9 @@ Traverso: A Multitrack Audio Recorder and Editor
 %{_bindir}/*
 
 %changelog
+* Wed Jan 26 2022 Yann Collette <ycollette.nospam@free.fr> - 0.49.6-4
+- update to last master
+
 * Tue Oct 20 2020 Yann Collette <ycollette.nospam@free.fr> - 0.49.6-3
 - fix debug build
 
