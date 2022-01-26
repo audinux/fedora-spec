@@ -146,6 +146,180 @@ Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, Presets, R
 Audio, DAW, Effect, Synthesizer, MIDI, Programming, Sampler, Sequencer
 Graphic, Tool, Session Mngmt
 
+### Specs to update:
+
+amsynth/amsynth.spec
+amuc/amuc.spec
+bespokesynth/bespokesynth-examples.spec
+ccrma/ecasound.spec
+cm/cm.spec
+cwiid/cwiid.spec
+drc/drc.spec
+drmr/drmr.spec
+drumgizmo/dgedit.spec
+enscribe/enscribe.spec
+foxdot/BatLib.spec
+foxdot/FoxDotQuark.spec
+foxdot/foxdot.spec
+geonkick/redkite.spec
+guitarix/gxmatcheq.spec
+horgand/horgand.spec
+hydrogen/hydrogen-drumkits2.spec
+hydrogen/hydrogen-drumkits.spec
+iannix/iannix.spec
+impro-visor/improvisor.spec
+improviz/context-free.spec
+improviz/improviz.spec
+IR/IR.spec
+jack-mixer/jack-mixer.spec
+jalv-select/jalv-select.spec
+jamin/jamin.spec
+jamulus/jamulus.spec
+juce/juce5.spec
+juce/juce60.spec
+kernel/kernel-mao-5.10.spec
+kernel/kernel-mao.spec
+kernel/kernel-mao-stable-5.10.spec
+kxstudio/dexed-presets.spec
+lebiniou/lebiniou-data.spec
+lebiniou/ulfius.spec
+lenmus/lenmus.spec
+lenmus/lomse.spec
+libsmf/libsmf.spec
+linuxmao/fogpad-port.spec
+linuxshowplayer/linuxshowplayer.spec
+livecd-tools/livecd-tools.spec
+lives/lives.spec
+loudness-scanner/loudness-scanner.spec
+lv2-fil-plugins/lv2-fil-plugins.spec
+lv2lint/lv2lint.spec
+lv2/lv2-avw-plugins.spec
+lv2/lv2-fomp-plugins.spec
+lv2/lv2-kn0ck0ut.spec
+lv2/lv2-triceratops.spec
+lvtk/lvtk.spec
+mammut/mammut.spec
+mapmap/mapmap.spec
+meson/meson.spec
+midimonster/midimonster.spec
+midizap/midizap.spec
+milkdrop/milkdrop-presets.spec
+moddevices/caps-lv2.spec
+moddevices/mda-lv2.spec
+moddevices/mod-distortion.spec
+moddevices/mod-gxpitchshifter.spec
+moddevices/mod-host.spec
+moddevices/mod-pitchshifter.spec
+moddevices/mod-ui.spec
+moddevices/swh-lv2.spec
+moddevices/tap-lv2.spec
+mrfreeze/gxmrfreeze.spec
+mrfreeze/mrfreeze.spec
+musikernel/musikernel.spec
+mx44/mx44.spec
+nanoinvaders/nanoinvaders.spec
+ninjam/abninjam.spec
+ninjam/ninjam-client.spec
+ninjam/ninjam-server.spec
+ninjas2/ninja2.spec
+noise-suppression/noise-suppression.spec
+non-daw/jm2cv.spec
+non-daw/non-ntk.spec
+openboard/openboard.spec
+openframeworks/libtess2.spec
+openframeworks/openframeworks.spec
+openkontroller/eteroj.spec
+openkontroller/mephisto.spec
+openkontroller/midi_matrix.spec
+openkontroller/moony.spec
+openkontroller/nanomsg.spec
+openkontroller/orbit.spec
+openkontroller/patchmatrix.spec
+openkontroller/sherlock.spec
+openkontroller/synthpod.spec
+openkontroller/tracker.spec
+osc2midi/osc2midi.spec
+ossia/ossia-score.spec
+oxefmsynth/oxefmsynth.spec
+paulstretch/paulstretch.spec
+pianobooster/pianobooster.spec
+picoloop/picoloop.spec
+plujain-ramp/plujain-ramp.spec
+polylv2/polylv2.spec
+portsmf/portsmf.spec
+postfish/postfish.spec
+premake/premake3.spec
+premake/premake4.spec
+premake/premake5.spec
+processing/processing.spec
+projectm/projectM.spec
+pure-data/puredata.spec
+purr-data/purr-data.spec
+qscintilla/qscintilla.spec
+r128gain/r128gain.spec
+rack/libefsw.spec
+rack/quickjs.spec
+radium/radium.spec
+resources/impulse_response.spec
+rivendell/libcoverart.spec
+rivendell/rivendell.spec
+rkrlv2/rkrlv2.spec
+ryukau/ryukau.spec
+samplehive/samplehive.spec
+seq24/seq24.spec
+seq42/seq42.spec
+sequencer64/sequencer64.spec
+sfark/libsfark.spec
+sfark/sfark.spec
+sfizz/prelude.spec
+sfizz/sfizz.spec
+sfizz/toccata.spec
+shiro/shiro.spec
+showq/showq.spec
+shuriken/shuriken.spec
+smartguitar/numcpp.spec
+sonic-pi/osmid.spec
+sonobus/sonobus.spec
+spectacle/spectacle.spec
+spectmorph/spectmorph.spec
+ssr/ssr.spec
+stargate/pymarshal.spec
+stargate/wavefile.spec
+stochas/stochas.spec
+stone-phaser/stone-phaser.spec
+stretchplayer/stretchplayer.spec
+string-machine/string-machine.spec
+structuresynth/structuresynth.spec
+supercollider/supercollider-sc3-plugins.spec
+supercollider/supercollider.spec
+supercollider/yaml-cpp03.spec
+surge/midi-monitor.spec
+surge/monique-monosynth.spec
+surge/shortcircuit.spec
+surge/surge.spec
+surge/surge-xt.spec
+timemachine/timemachine.spec
+traverso/traverso.spec
+tunefish/tunefish.spec
+tutka/tutka.spec
+ultranova4linux/ultranova4linux.spec
+veejay/veejay-core.spec
+veejay/veejay-gui.spec
+veejay/veejay-server.spec
+vitalium/vitalium.spec
+vl1/vl1.spec
+vopa/vopa.spec
+vsxu/vsxu.spec
+zita/planetccrma-rt-permissions.spec
+zrythm/libaudec.spec
+zrythm/libbacktrace.spec
+zrythm/libcyaml.spec
+zrythm/reproc.spec
+zrythm/zlfo.spec
+zrythm/zplugins.spec
+zrythm/ztoolkit.spec
+zynthian/zynthian-data.spec
+
 ## ZITA:
 
 zita-avc1-0.1.0.tar.bz2
@@ -174,10 +348,21 @@ None
 
 ## regular update
 
-Stopped at openkontroller
-
 OB-Xd to update to 2.6
 mod-host
 mda-lv2
 ninjam -> there is a github repo now ...
-
+polylv2
+premake -> moved on github: https://github.com/premake
+protrekkr2 -> to be fixed
+psi-plugins -> another active github repository: https://github.com/psi-im/plugins
+r128gain -> 1.0.4
+resources -> try to find other IR
+padthv1 -> check if on fedora main repo otherwise: 0.9.24
+ryukau -> update to last master
+snd -> 22.0
+socalab -> update to last master
+spectmorph -> 0.5.2
+ssr -> 0.4.3
+traverso -> update to last master
+zynthian -> update to last master
