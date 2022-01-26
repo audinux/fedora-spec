@@ -5,10 +5,13 @@
 
 Summary: Old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.
 Name:    padthv1
-Version: 0.9.17
+Version: 0.9.24
 Release: 1%{?dist}
 URL:     https://sourceforge.net/projects/%{name}
 License: GPLv2+
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://download.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Patch0:  padthv1-0001-disable-strip.patch
@@ -16,6 +19,7 @@ Patch0:  padthv1-0001-disable-strip.patch
 Requires: hicolor-icon-theme
 
 BuildRequires: gcc-c++
+BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: qt5-qtbase-devel
@@ -42,41 +46,37 @@ An LV2 plugin of the padthv1 synthesizer
 %prep
 %autosetup -p1
 
-# Remove cruft from appdata file
-pushd src/appdata
-iconv -f utf-8 -t ascii//IGNORE -o tmpfile %{name}.appdata.xml 2>/dev/null || :
-mv -f tmpfile %{name}.appdata.xml
-popd
-
 %build
 
-%configure
-%make_build
+%cmake
+%cmake_build
 
 %install
 
-%make_install
-chmod +x %{buildroot}%{_libdir}/lv2/%{name}.lv2/%{name}.so
-install -m 0644 src/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
+%cmake_install
 
 %check
-desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
-appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.appdata.xml
+desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.desktop
+#appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/org.rncbc.padthv1.xml
 
 %files
-%doc AUTHORS README
-%license COPYING
-%{_datadir}/applications/%{name}.desktop
+%doc README
+%license LICENSE
+%{_datadir}/applications/org.rncbc.padthv1.desktop
 %{_datadir}/icons/hicolor/*/*/*
 %{_bindir}/%{name}_jack
 %{_datadir}/mime/packages/%{name}.xml
 %{_datadir}/man/man1/%{name}*
-%{_datadir}/metainfo/%{name}.appdata.xml
+%{_datadir}/man/*/man1/%{name}*
+%{_datadir}/metainfo/org.rncbc.padthv1.xml
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/%{name}.lv2/
 
 %changelog
+* Wed Jan 26 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9.24-1
+- update to 0.9.24-1
+
 * Fri Oct 23 2020 Yann Collette <ycollette.nospam@free.fr> - 0.9.17-1
 - update to 0.9.17-1 + fix debug build
 
