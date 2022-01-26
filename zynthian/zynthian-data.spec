@@ -1,17 +1,21 @@
 # Global variables for github repository
-%global commit0 194fd59ebd5d6a8494dbdd64011d9d9e209a25d3
+%global commit0 076a23dd0084519e05981588f886c5d7d8a47e5e
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
+# Tag: Presets
 # Type: Presets
 # Category: Audio
 
 Name:    zynthian-data
 Version: 1.0.0
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: A set of LV2 presets for DISTRHO
 License: GPLv2+
-URL:     https://github.com/zynthian/zynthian-data.git
+URL:     https://github.com/zynthian/zynthian-data
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/zynthian/zynthian-data/archive/%{commit0}.tar.gz#/zynthian-data-%{shortcommit0}.tar.gz
 
@@ -125,6 +129,9 @@ cp -r presets/lv2/Raffo_Synth*  %{buildroot}/usr/%{_lib}/lv2/
 %{_libdir}/lv2/Raffo_Synth*
 
 %changelog
+* Wed Jan 26 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-6
+- update to 1.0.0-6
+
 * Mon Mar 22 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-5
 - update to 1.0.0-5
 
