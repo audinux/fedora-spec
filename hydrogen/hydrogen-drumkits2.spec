@@ -1,3 +1,6 @@
+# Type: Drum
+# Category: Presets
+
 Summary: Additional DrumKits for Hydrogen
 Name:    hydrogen-drumkits-2
 Version: 0.9.6

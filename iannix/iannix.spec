@@ -1,3 +1,7 @@
+# Tag: Sequencer, OSC
+# Type: Standalone
+# Category: Sequencer
+
 # Global variables for github repository
 %global commit0 1294f84ba809ebf5262a1c7071a18ac5ff4109b0
 %global gittag0 master

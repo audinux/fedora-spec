@@ -1,3 +1,7 @@
+# Tag: Analyzer, Amp Simul
+# Type: Standalone
+# Caterory: Effect, Tool
+
 # Global variables for github repository
 %global commit0 f1c3f4b94ea04a991c201bbe6a19336471b5f37e
 %global gittag0 v0.1
@@ -16,6 +20,7 @@ Distribution: Audinux
 Source0: https://github.com/brummer10/GxMatchEQ.lv2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: python
 BuildRequires: gtk2-devel

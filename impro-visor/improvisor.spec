@@ -1,3 +1,7 @@
+# Tag: Sequencer, MIDI
+# TYpe: IDE, Standalone
+# Category: Tool, MIDI, Sequencer
+
 # Copyright (c) 2007-2008 oc2pus
 # This file and all modifications and additions to the pristine
 # package are under the same license as the package itself.

@@ -1,3 +1,7 @@
+# Tag: MIDI, Jack
+# Type: Standalone
+# Category: Synthesizer
+
 # Global variables for github repository
 %global commit0 0f4ef66ad46d3a1e542ea160487b1a3fe3b76031
 %global gittag0 master

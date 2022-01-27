@@ -148,12 +148,6 @@ Graphic, Tool, Session Mngmt
 
 ### Specs to update:
 
-guitarix/gxmatcheq.spec
-horgand/horgand.spec
-hydrogen/hydrogen-drumkits2.spec
-hydrogen/hydrogen-drumkits.spec
-iannix/iannix.spec
-impro-visor/improvisor.spec
 improviz/context-free.spec
 improviz/improviz.spec
 IR/IR.spec
