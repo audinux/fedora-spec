@@ -1,3 +1,7 @@
+# Tag: Mixer, Editor
+# Type: IDE, Standalone
+# Category: DAW
+
 # find out stuff about python
 %define pythonbin %(if [ -x /usr/bin/python2 ] ; then echo "python2" ; else echo "python3" ; fi)
 %define python_pkgsdir %(echo `%{pythonbin} -c "import sys; print (sys.prefix + '/%{_lib}/python' + sys.version[:3])"`)

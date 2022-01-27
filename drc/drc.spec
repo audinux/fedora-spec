@@ -1,3 +1,7 @@
+# Tag: Analyzer, Effect
+# Type: Standalone
+# Category: Tool
+
 Name:    drc
 Version: 3.2.3
 Release: 1%{?dist}

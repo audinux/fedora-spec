@@ -1,3 +1,7 @@
+# Tag: Library
+# Type: Devel
+# Category: Programming
+
 Name:    redkite
 Version: 1.3.0
 Release: 3%{?dist}
@@ -9,7 +13,7 @@ Source0: https://gitlab.com/iurie-sw/%{name}/-/archive/v%{version}/%{name}-v%{ve
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cairo-devel
-BuildRequires: cmake make
+BuildRequires: cmake
 
 %description
 Redkite is a small free software and cross-platform GUI toolkit.

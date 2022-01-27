@@ -1,3 +1,7 @@
+# Tag: Library
+# Type: Presets
+# Category: Programming
+
 # Global variables for github repository
 %global commit0 520198049b36c7d42efbea17000b91f151c88c5f
 %global gittag0 master

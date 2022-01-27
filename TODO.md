@@ -135,7 +135,7 @@ Editor, Legacy, Live, Effect, Gate, Graphic, Guitar, Amp Simul
 Delay, Overdrive, Cabinet, Equalizer, Convolution, Octaver
 MIDI, Tablature, Phaser, Tape, Tracker, Reverb, Presets
 Sfz, Sf2, Sf3, Monitoring, Video, Organ, PM, Sequencer
-Keyboard, Library, Live, OSC, Mixer, Modular, Rack, Sampler, Session
+Keyboard, Library, OSC, Mixer, Modular, Rack, Sampler, Session
 
 ### Type:
 
@@ -148,20 +148,6 @@ Graphic, Tool, Session Mngmt
 
 ### Specs to update:
 
-amsynth/amsynth.spec
-amuc/amuc.spec
-bespokesynth/bespokesynth-examples.spec
-ccrma/ecasound.spec
-cm/cm.spec
-cwiid/cwiid.spec
-drc/drc.spec
-drmr/drmr.spec
-drumgizmo/dgedit.spec
-enscribe/enscribe.spec
-foxdot/BatLib.spec
-foxdot/FoxDotQuark.spec
-foxdot/foxdot.spec
-geonkick/redkite.spec
 guitarix/gxmatcheq.spec
 horgand/horgand.spec
 hydrogen/hydrogen-drumkits2.spec

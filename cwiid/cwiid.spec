@@ -1,70 +1,73 @@
+# Tag: Library
+# Type: Devel
+# Category: Tool, Programming
+
 # The git_commit define will have the complement given by git-hub to the source downloaded
 %define git_commit fadf11e
-Name:           cwiid
-Version:        0.6.00
-Release:        36.20100505git%{git_commit}%{?dist}
-Summary:        Wiimote interface library
 
-License:        GPLv2+
-URL:            https://github.com/abstrakraft/cwiid
+Name: cwiid
+Version: 0.6.00
+Release: 36.20100505git%{git_commit}%{?dist}
+Summary: Wiimote interface library
+License: GPLv2+
+URL: https://github.com/abstrakraft/cwiid
 
 %{!?_pkgdocdir: %global _pkgdocdir %{_docdir}/%{name}-%{version}}
 
 # source URL : https://github.com/abstrakraft/cwiid/tarball/%%{git_commit} 
-Source0:        abstrakraft-cwiid-%{git_commit}.tar.gz
-Source1:        wmgui.desktop
+Source0: abstrakraft-cwiid-%{git_commit}.tar.gz
+Source1: wmgui.desktop
 
 # this patch is in my git-hub fork git://github.com/bogado/cwiid.git
 # there is an upstream bug filed by me at http://abstrakraft.org/cwiid/ticket/105
-Patch0:         0001-Fix-missing-library-from-wmdemo.patch
+Patch0: 0001-Fix-missing-library-from-wmdemo.patch
 
-BuildRequires:  gcc-c++
-BuildRequires:  bluez-libs-devel, gawk, bison, flex, gtk2-devel, python2-devel >= 2.4, desktop-file-utils, sed
-BuildRequires:  autoconf automake
+BuildRequires: gcc-c++
+BuildRequires: bluez-libs-devel, gawk, bison, flex, gtk2-devel, python2-devel >= 2.4, desktop-file-utils, sed
+BuildRequires: autoconf automake
 
 %description
 Cwiid is a library that enables your application to communicate with
 a wiimote using a bluetooth connection.
 
-%package        devel
-Summary:        Development files for %{name}
-Requires:       %{name} = %{version}-%{release}, bluez-libs-devel
+%package devel
+Summary: Development files for %{name}
+Requires: %{name} = %{version}-%{release}, bluez-libs-devel
 
-%description    devel
+%description devel
 The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
-%package        python2
-Summary:        Python binding for %{name}
-Requires:       %{name} = %{version}-%{release}
+%package python2
+Summary: Python binding for %{name}
+Requires: %{name} = %{version}-%{release}
 
-%description    python2
+%description python2
 Python2 binding for %{name}
 
-%package        utils
-Summary:        Wiimote connection test application
-Requires:       %{name} = %{version}-%{release}
-Provides:       %{name}-wmgui = %{version}-%{release}
-Obsoletes:      %{name}-wmgui < 0.6.00-7
+%package utils
+Summary: Wiimote connection test application
+Requires: %{name} = %{version}-%{release}
+Provides: %{name}-wmgui = %{version}-%{release}
+Obsoletes: %{name}-wmgui < 0.6.00-7
 
-%description    utils
+%description utils
 Applications to test the wiimote connection
 
-%package        wminput
-Summary:        Enables using the wiimote as an input source
+%package wminput
+Summary: Enables using the wiimote as an input source
 # The licence must be GPLv2 instead of GPLv2+ for this package
 # since the file wminput/action_enum.txt is GPLv2 as stated
 # in the file.
-License:        GPLv2
-Requires:       %{name} = %{version}-%{release}, %{name}-python2
+License: GPLv2
+Requires: %{name} = %{version}-%{release}, %{name}-python2
 
-%description    wminput
+%description wminput
 This program allows the user to use the wiimote to emulate normal system
 input sources like the mouse and keyboard.
 
 %prep
-%setup -q -n abstrakraft-cwiid-%{git_commit}
-%patch0 -p1
+%autosetup -p1 -n abstrakraft-cwiid-%{git_commit}
 
 sed -i -e "s/CFLAGS =/CFLAGS=-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=\/usr\/lib\/rpm\/redhat\/redhat-hardened-cc1 -specs=\/usr\/lib\/rpm\/redhat\/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -I\/usr\/include\/python2.7 -I. /" defs.mak.in
 
@@ -75,8 +78,8 @@ sed -i -e "s/CFLAGS =/CFLAGS=-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_G
 aclocal
 autoconf
 
-./configure --prefix=%{_prefix} --sysconfdir=%{_sysconfdir} --libdir=%{_libdir} --disable-static --docdir="%{_pkgdocdir}" --with-python=python2
-make
+%configure --disable-static --docdir="%{_pkgdocdir}" --with-python=python2
+%make_build
 
 %install
 %make_install LDCONFIG=/bin/true

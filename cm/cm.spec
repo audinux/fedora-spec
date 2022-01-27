@@ -1,3 +1,7 @@
+# Tag: Live, MIDI, Editor
+# Type: IDE, Language
+# Category: Audio, Programming
+
 Name:    common-music
 Version: 3.10.2
 Release: 3%{?dist}
