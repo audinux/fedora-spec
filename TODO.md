@@ -133,7 +133,7 @@ remove -march=native from Makefiles if it's present
 Analyzer, Compressor, Emulator, Delay, Drum, Jack, Alsa
 Editor, Legacy, Live, Effect, Gate, Graphic, Guitar, Amp Simul
 Delay, Overdrive, Cabinet, Equalizer, Convolution, Octaver
-MIDI, Tablature, Phaser, Tape, Tracker, Reverb
+MIDI, Tablature, Phaser, Tape, Tracker, Reverb, Presets
 Sfz, Sf2, Sf3, Monitoring, Video, Organ, PM, Sequencer
 Keyboard, Library, OSC, Mixer, Modular, Rack, Sampler, Session
 
@@ -261,7 +261,6 @@ smartguitar/numcpp.spec
 sonic-pi/osmid.spec
 sonobus/sonobus.spec
 spectacle/spectacle.spec
-spectmorph/spectmorph.spec
 ssr/ssr.spec
 stargate/pymarshal.spec
 stargate/wavefile.spec
@@ -279,7 +278,6 @@ surge/shortcircuit.spec
 surge/surge.spec
 surge/surge-xt.spec
 timemachine/timemachine.spec
-traverso/traverso.spec
 tunefish/tunefish.spec
 tutka/tutka.spec
 ultranova4linux/ultranova4linux.spec
@@ -298,7 +296,6 @@ zrythm/reproc.spec
 zrythm/zlfo.spec
 zrythm/zplugins.spec
 zrythm/ztoolkit.spec
-zynthian/zynthian-data.spec
 
 ## ZITA:
 
@@ -337,12 +334,8 @@ premake -> moved on github: https://github.com/premake
 protrekkr2 -> to be fixed
 psi-plugins -> another active github repository: https://github.com/psi-im/plugins
 r128gain -> 1.0.4
-resources -> try to find other IR
-padthv1 -> check if on fedora main repo otherwise: 0.9.24
+resources -> try to find other IR (https://github.com/jpcima/HybridReverb2-impulse-response-database)
 ryukau -> update to last master
 snd -> 22.0
 socalab -> update to last master
-spectmorph -> 0.5.2
 ssr -> 0.4.3
-traverso -> update to last master
-zynthian -> update to last master
