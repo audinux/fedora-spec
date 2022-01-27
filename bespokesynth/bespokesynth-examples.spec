@@ -1,3 +1,7 @@
+# Tag:
+# Type:
+# Caterogy: Presets
+
 Name:    BespokeSynth-examples
 Version: 1.0.0
 Release: 7%{?dist}

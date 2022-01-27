@@ -1,3 +1,7 @@
+# Tag: MIDI, Jack
+# Type: LV2, Standalone
+# Category: Synthesizer
+
 Summary: Software Synthesizer
 Name:    amsynth
 Version: 1.12.4

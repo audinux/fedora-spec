@@ -1,9 +1,12 @@
+# Tag: Editor
+# Type: Standalone
+# Category: Tool
+
 Summary: Software Synthesizer
 Name:    dgedit
 Version: 0.10.0
 Release: 2%{?dist}
 License: GPL
-Group:   Applications/Multimedia
 URL:     http://git.drumgizmo.org/dgedit.git
 
 Vendor:       Audinux

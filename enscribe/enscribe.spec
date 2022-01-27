@@ -1,3 +1,7 @@
+# Tag: Graphic
+# Type: Standalone
+# Category: Synthesizer, Audio
+
 Summary: Enscribe creates digital audio watermark images from photgraphic images.
 Name:    enscribe
 Version: 0.1.0
