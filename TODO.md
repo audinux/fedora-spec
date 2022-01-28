@@ -78,6 +78,8 @@
 |                     | http://ldesoras.free.fr/doc/articles/pedale-vite/pedale-vite.html |
 | SynthDefs           | https://github.com/everythingwillbetakenaway/Synthdefs |
 | imogen              | https://github.com/benthevining/imogen |
+| tap192              | https://github.com/PlagiatBros/tap192 |
+| genDrumKit          | https://github.com/peter-zenk/genDrumkit |
 
 ## Cleanup
 Remove mv-6pm or 6pm. Both are normally the same package
