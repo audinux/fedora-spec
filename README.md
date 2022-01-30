@@ -1,8 +1,12 @@
 The repo related to these packages can be found here:
 
+Before Fedora 35:
 https://copr.fedorainfracloud.org/coprs/ycollet/linuxmao/
 
-This repo has old packages for Fedora 25, 26, 27, 28 and 29 and up to date packages for Fedora 30, 31 and 32.
+After (including) Fedora 35:
+https://copr.fedorainfracloud.org/coprs/ycollet/audinux/
+
+This repo has old packages for Fedora 25 to 33 and up to date packages for Fedora 34 and 35.
 
 To build the spec file:
 - copy it into your rpmbuild/SPEC directory
@@ -31,21 +35,28 @@ $ dnf install filename.rpm
 ```
 
 To mirror the COPR repository:
-$ mkdir -p rpm-copr/33
-$ cd rpm-copr/33
-$ dnf reposync --release=33 --repoid=copr:copr.fedorainfracloud.org:ycollet:linuxmao --destdir .  --downloadcomp
+```
+$ mkdir -p rpm-copr/34
+$ cd rpm-copr/34
+$ dnf reposync --release=34 --repoid=copr:copr.fedorainfracloud.org:ycollet:linuxmao --destdir .  --downloadcomp
+```
+```
+$ mkdir -p rpm-copr/35
+$ cd rpm-copr/35
+$ dnf reposync --release=35 --repoid=copr:copr.fedorainfracloud.org:ycollet:audinux --destdir .  --downloadcomp
+```
 
 To test the rebuild of the package using mock:
 ```
-$ mock -r /etc/mock/fedora-32-x86_64.cfg --rebuild polyphone-2.0.1-1.fc32.src.rpm
+$ mock -r /etc/mock/fedora-35-x86_64.cfg --rebuild polyphone-2.0.1-1.fc34.src.rpm
 ```
 
-To enable a thirdparty repository, you must add it to /etc/mock/templates/fedora-32.tpl for example and then, enable it via the command line. For example:
+To enable a thirdparty repository, you must add it to /etc/mock/templates/fedora-35.tpl for example and then, enable it via the command line. For example:
 ```
-$ mock -r /etc/mock/fedora-32-x86_64.cfg --enablerepo=ycollet-linuxmao --rebuild dgedit-0.1-2.fc32.src.rpm
+$ mock -r /etc/mock/fedora-35-x86_64.cfg --enablerepo=ycollet-linuxmao --rebuild dgedit-0.1-2.fc34.src.rpm
 ```
 
-The portion added to /etc/mock/templates/fedora-{30,31,32}.tpl is:
+The portion added to /etc/mock/templates/fedora-{34,35}.tpl is:
 
 ```
 [ycollet-linuxmao]
@@ -95,45 +106,45 @@ This script will download a zip a put everything in /tmp/prepare/ directory.
 
 As a root user:
 ```
-$ livecd-creator --verbose --config=fedora-32-live-jam-xfce.ks --fslabel=Audinux --releasever 32
+$ livecd-creator --verbose --config=fedora-34-live-jam-xfce.ks --fslabel=Audinux --releasever 34
 ```
 
 ```
 # To build using the EPEL 7 version of livecd-tools:
 
 $ mock -r /etc/mock/epel-7-x86_64.cfg --isolation=simple --init --install wget unzip livecd-tools
-$ mock -r /etc/mock/epel-7-x86_64.cfg --copyin fedora-32-live-jam-xfce.ks --copyin prepare.sh /builddir
+$ mock -r /etc/mock/epel-7-x86_64.cfg --copyin fedora-34-live-jam-xfce.ks --copyin prepare.sh /builddir
 $ mock -r /etc/mock/epel-7-x86_64.cfg --enable-network --shell
 
-# To build using the Fedora 32 version of livecd-tools:
+# To build using the Fedora 34 version of livecd-tools:
 
-$ mock -r /etc/mock/fedora-32-x86_64.cfg --isolation=simple --init --install wget unzip livecd-tools
-$ mock -r /etc/mock/fedora-32-x86_64.cfg --copyin fedora-32-live-jam-xfce.ks --copyin prepare.sh /builddir
-$ mock -r /etc/mock/fedora-32-x86_64.cfg --enable-network --shell
+$ mock -r /etc/mock/fedora-34-x86_64.cfg --isolation=simple --init --install wget unzip livecd-tools
+$ mock -r /etc/mock/fedora-34-x86_64.cfg --copyin fedora-34-live-jam-xfce.ks --copyin prepare.sh /builddir
+$ mock -r /etc/mock/fedora-34-x86_64.cfg --enable-network --shell
 
 # Then: preinstall the required files and start livecd-creator
 
 $ cd /builddir
 $ ./prepare.sh
-$ livecd-creator --verbose --config=fedora-32-live-jam-xfce.ks --fslabel=Audinux --releasever 32
+$ livecd-creator --verbose --config=fedora-34-live-jam-xfce.ks --fslabel=Audinux --releasever 34
 ```
 
 To create the LiceCD using livemedia-creator:
 
 As a root user:
 ```
-$ mock -r /etc/mock/fedora-32-x86_64.cfg --isolation=simple --init --install lorax-lmc-novirt wget unzip libblockdev-lvm libblockdev-btrfs libblockdev-swap libblockdev-loop libblockdev-crypto libblockdev-mpath libblockdev-dm libblockdev-mdraid libblockdev-nvdimm
-$ mock -r /etc/mock/fedora-32-x86_64.cfg --copyin fedora-32-live-jam-xfce.ks --copyin prepare.sh /builddir
-$ mock -r /etc/mock/fedora-32-x86_64.cfg --enable-network --shell
+$ mock -r /etc/mock/fedora-34-x86_64.cfg --isolation=simple --init --install lorax-lmc-novirt wget unzip libblockdev-lvm libblockdev-btrfs libblockdev-swap libblockdev-loop libblockdev-crypto libblockdev-mpath libblockdev-dm libblockdev-mdraid libblockdev-nvdimm
+$ mock -r /etc/mock/fedora-34-x86_64.cfg --copyin fedora-34-live-jam-xfce.ks --copyin prepare.sh /builddir
+$ mock -r /etc/mock/fedora-34-x86_64.cfg --enable-network --shell
 $ cd /builddir
 $ ./prepare.sh
-$ livemedia-creator --make-iso --ks fedora-32-live-jam-xfce.ks --project Audinux --iso-name livecd-fedora-32-mao.iso --iso-only --releasever 32 --volid Audinux --image-name Audinux --resultdir /var/lmc --no-virt --tmp /var/tmp
+$ livemedia-creator --make-iso --ks fedora-34-live-jam-xfce.ks --project Audinux --iso-name livecd-fedora-34-mao.iso --iso-only --releasever 34 --volid Audinux --image-name Audinux --resultdir /var/lmc --no-virt --tmp /var/tmp
 ```
 
 To check the potential changes from the kickstart file:
 $ dnf install pykickstart.noarch rpmfusion-free-remix-kickstarts.noarch spin-kickstarts.noarch
 $ ksflatten -c /usr/share/spin-kickstarts/fedora-live-xfce.ks -o xfce.ks
-$ meld fedora-32-live-jam-xfce.ks xfce.ks &
+$ meld fedora-34-live-jam-xfce.ks xfce.ks &
 
 To test the ISO file:
 
@@ -146,20 +157,20 @@ $ dnf install qemu-ui-sdl qemu-audio-sdl
 
 Without audio:
 ```
-$ qemu-kvm -m 2048 -vga qxl -sdl -cdrom fedora-32-Audinux.iso
+$ qemu-kvm -m 2048 -vga qxl -sdl -cdrom fedora-34-Audinux.iso
 ```
 With audio and usb:
 ```
-$ qemu-kvm -m 2048 -vga qxl -usb -soundhw hda -sdl -cdrom fedora-32-Audinux.iso
+$ qemu-kvm -m 2048 -vga qxl -usb -soundhw hda -sdl -cdrom fedora-34-Audinux.iso
 ```
 With audio, usb and with 2 cpus:
 ```
-$ qemu-kvm -m 2048 -vga qxl -usb -soundhw hda -smp cpus=2 -sdl -cdrom fedora-32-Audinux.iso
+$ qemu-kvm -m 2048 -vga qxl -usb -soundhw hda -smp cpus=2 -sdl -cdrom fedora-34-Audinux.iso
 ```
 
 To test the USB bootable file:
 ```
-$ qemu-kvm -m 2048 -vga qxl -sdl -smp cpus=2 -usb -soundhw hda -drive file=fedora-32-Audinux.iso -boot menu=on
+$ qemu-kvm -m 2048 -vga qxl -sdl -smp cpus=2 -usb -soundhw hda -drive file=fedora-34-Audinux.iso -boot menu=on
 ```
 
 To mount a usb device:
@@ -173,7 +184,7 @@ Bus 002 Device 003: ID 18d1:4e11 Google Inc. Nexus One
 Manually, using qemu-kvm command line
 
 ```
-$ qemu-kvm -m 2048 -name Audinux -sdl -cdrom fedora-32-Audinux.iso -usb -device usb-host,hostbus=2,hostaddr=3
+$ qemu-kvm -m 2048 -name Audinux -sdl -cdrom fedora-34-Audinux.iso -usb -device usb-host,hostbus=2,hostaddr=3
 ```
 
 Write ISO to USB:
@@ -308,7 +319,7 @@ index bd03075..2023050 100644
 ```
 Bug in livecd-creator:
 ```
- Exécution du scriptlet: kernel-core-5.8.11-200.fc32.x86_64                                                                                                 1803/1803 
+ Exécution du scriptlet: kernel-core-5.8.11-200.fc34.x86_64                                                                                                 1803/1803 
 /etc/dracut.conf.d/99-liveos.conf:filesystems+="vfat msdos isofs ext4 xfs btrfs squashfs "
 /etc/dracut.conf.d/99-liveos.conf:add_drivers+="sr_mod sd_mod ide-cd cdrom =ata sym53c8xx aic7xxx ehci_hcd uhci_hcd ohci_hcd usb_storage usbhid uas firewire-sbp2 firewire-ohci sbp2 ohci1394 ieee1394 mmc_block sdhci sdhci-pci pata_pcmcia mptsas virtio_blk virtio_pci virtio_scsi virtio_net virtio_mmio virtio_balloon virtio-rng  "
 
@@ -317,9 +328,9 @@ dracut: WARNING: This will lead to unwanted side effects! Please fix the configu
 
 dracut: No '/dev/log' or 'logger' included for syslog logging
 dracut-install: ERROR: installing 'sr_mod'
-dracut: FAILED:  /usr/lib/dracut/dracut-install -D /var/tmp/dracut.P90ngs/initramfs --kerneldir /lib/modules/5.8.11-200.fc32.x86_64/ -m sr_mod sd_mod ide_cd cdrom =ata sym53c8xx aic7xxx ehci_hcd uhci_hcd ohci_hcd usb_storage usbhid uas firewire-sbp2 firewire-ohci sbp2 ohci1394 ieee1394 mmc_block sdhci sdhci-pci pata_pcmcia mptsas virtio_blk virtio_pci virtio_scsi virtio_net virtio_mmio virtio_balloon virtio-rng
+dracut: FAILED:  /usr/lib/dracut/dracut-install -D /var/tmp/dracut.P90ngs/initramfs --kerneldir /lib/modules/5.8.11-200.fc34.x86_64/ -m sr_mod sd_mod ide_cd cdrom =ata sym53c8xx aic7xxx ehci_hcd uhci_hcd ohci_hcd usb_storage usbhid uas firewire-sbp2 firewire-ohci sbp2 ohci1394 ieee1394 mmc_block sdhci sdhci-pci pata_pcmcia mptsas virtio_blk virtio_pci virtio_scsi virtio_net virtio_mmio virtio_balloon virtio-rng
 dracut-install: ERROR: installing 'ext4'
-dracut: FAILED:  /usr/lib/dracut/dracut-install -D /var/tmp/dracut.P90ngs/initramfs --kerneldir /lib/modules/5.8.11-200.fc32.x86_64/ -m vfat msdos isofs ext4 xfs btrfs squashfs
+dracut: FAILED:  /usr/lib/dracut/dracut-install -D /var/tmp/dracut.P90ngs/initramfs --kerneldir /lib/modules/5.8.11-200.fc34.x86_64/ -m vfat msdos isofs ext4 xfs btrfs squashfs
 ```
 
 After installing grub2-efi-x64-cdboot in the ks file:
@@ -400,7 +411,7 @@ $ git cherry-pick 487f1d24030c30897485365a399500b631dd36c4
 $ export PYTHONPATH=<livecd-tools-dir>:$PYTHONPATH
 $ export PATH=<livecd-tools-dir>/tools:PATH
 
-$ livecd-creator --verbose --config=fedora-32-live-jam-xfce.ks --fslabel=Audinux --releasever 32
+$ livecd-creator --verbose --config=fedora-34-live-jam-xfce.ks --fslabel=Audinux --releasever 34
 ```
 
 Manage kernel-rt-mao in livecd-creator:
