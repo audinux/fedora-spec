@@ -3,7 +3,7 @@
 # Catagory: DAW, Audio, Sequencer
 
 Name:    stargate
-Version: 22.01.1
+Version: 22.02.1
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
 License: GPLv3
@@ -18,6 +18,7 @@ BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: git
 BuildRequires: jq
+BuildRequires: make
 BuildRequires: libsndfile-devel
 BuildRequires: portaudio-devel
 BuildRequires: portmidi-devel
@@ -85,6 +86,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 %{_datadir}/stargate/*
 
 %changelog
+* Mon Jan 31 2022 Yann Collette <ycollette.nospam@free.fr> - 22.02.1-1
+- update to 22.02.1-1
+
 * Thu Jan 06 2022 Yann Collette <ycollette.nospam@free.fr> - 22.01.1-1
 - update to 22.01.1-1
 
