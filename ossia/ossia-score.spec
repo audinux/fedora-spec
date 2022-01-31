@@ -1,3 +1,5 @@
+%define _lto_cflags %{nil}
+
 # Global variables for github repository
 %global commit0 f7e34e37d376e18ec097fa42957c9ecb42d50b9f
 %global gittag0 master
@@ -13,11 +15,7 @@ License: CeCILL License v2
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./ossia-source.sh <tag>
-# ./ossia-source.sh v3.0.1
-
-Source0: https://gitlab.com/OSSIA/score/-/archive/v%{version}/score-v%{version}.tar.gz
-Source1: ossia-source.sh
+Source0: https://github.com/ossia/score/releases/download/v%{version}/ossia.score-%{version}-src.tar.xz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: alsa-lib-devel
@@ -32,9 +30,7 @@ BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-qtwebsockets-devel
 BuildRequires: qt5-qtdeclarative-devel
 BuildRequires: qt5-qttools
-BuildRequires: qt5-qtsvg-devel
 BuildRequires: qt5-qtserialport-devel
-BuildRequires: qt5-qtquickcontrols2-devel
 BuildRequires: ffmpeg-devel
 BuildRequires: portmidi-devel
 BuildRequires: portaudio-devel
@@ -51,18 +47,14 @@ BuildRequires: unzip
 ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 
 %prep
-%setup -qn score-v%{version}
+%autosetup -cn score-v%{version}
 
-sed -i -e "s/BOOST_MINOR 70/BOOST_MINOR 69/g" 3rdparty/libossia/cmake/OssiaDeps.cmake
+sed -i -e "s/BOOST_MINOR 70/BOOST_MINOR 76/g" 3rdparty/libossia/cmake/OssiaDeps.cmake
 
 %build
 
 %cmake -DCMAKE_BUILD_TYPE=RELEASE \
-       -DSCORE_CONFIGURATION=static-release \
-       -DCMAKE_AR=/usr/bin/gcc-ar \
-       -DCMAKE_RANLIB=/usr/bin/gcc-ranlib \
-       -DPORTAUDIO_ONLY_DYNAMIC=1
-
+       -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold"
 %cmake_build
 
 %install
