@@ -53,8 +53,7 @@ sed -i -e "s/BOOST_MINOR 70/BOOST_MINOR 76/g" 3rdparty/libossia/cmake/OssiaDeps.
 
 %build
 
-%cmake -DCMAKE_BUILD_TYPE=RELEASE \
-       -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=gold"
+%cmake -DCMAKE_BUILD_TYPE=RELEASE
 %cmake_build
 
 %install
