@@ -19,21 +19,31 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: Frequalizer.jucer
 
 BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: make
-BuildRequires: libX11-devel
-BuildRequires: xcb-util-cursor-devel
-BuildRequires: libxkbcommon-x11-devel
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
+BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
+BuildRequires: xcb-util-cursor-devel
 BuildRequires: xcb-util-devel
+BuildRequires: libxkbcommon-x11-devel
+BuildRequires: libXcursor-devel
 BuildRequires: libcurl-devel
+BuildRequires: gtk3-devel
+BuildRequires: webkit2gtk3-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: JUCE == 5.4.2
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: mesa-libGL-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libxkbcommon-x11-devel
+BuildRequires: libXinerama-devel
+BuildRequires: JUCE5
+BuildRequires: xorg-x11-server-Xvfb
 
 %description
 This is a JUCE project using the new dsp module for an Equalizer. It features:
@@ -45,27 +55,44 @@ This is a JUCE project using the new dsp module for an Equalizer. It features:
 %prep
 %autosetup -n Frequalizer-%{commit0}
 
+cp %SOURCE1 .
+sed -i -e "s|../../juce|/usr/src/JUCE5/modules|g" Frequalizer.jucer
+sed -i -e "s|Frequalizer Free|Frequalizer|g" Frequalizer.jucer
+
 %build
 
-%set_build_flags
+%define X_display ":98"
+#############################################
+### Launch a virtual framebuffer X server ###
+#############################################
+export DISPLAY=%{X_display}
+Xvfb %{X_display} >& Xvfb.log &
+trap "kill $! || true" EXIT
+sleep 10
 
-Projucer --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE/modules/
-Projucer --resave Frequalizer.jucer
+%set_build_flags
+export CFLAGS="-I/usr/include/freetype2 $CFLAGS"
+export CXXFLAGS="-I/usr/include/freetype2 $CXXFLAGS"
+
+Projucer5 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE5/modules/
+Projucer5 --resave Frequalizer.jucer
 
 cd Builds/LinuxMakefile
 
-%make_build STRIP=true CPPFLAGS="%{optflags}"
+sed -i -e "s|JucePlugin_Build_VST3=0|JucePlugin_Build_VST3=1|g" Makefile
+
+%make_build CONFIG=Release STRIP=true
 
 %install 
 
 cd Builds/LinuxMakefile
 
 install -m 755 -d %{buildroot}%{_bindir}/
-install -m 755 -p build/receivemidi %{buildroot}/%{_bindir}/
+install -m 755 -p build/Frequalizer %{buildroot}/%{_bindir}/
 
 %files
 %doc README.md
-%license COPYING.md
+%license LICENSE.md
 %{_bindir}/*
 
 %changelog
