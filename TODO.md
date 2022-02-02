@@ -3,24 +3,20 @@
 | Package             | URL|
 |---------------------|----|
 | osmid               | https://github.com/llloret/osmid |
-| Squeezer            | https://github.com/mzuther/Squeezer |
-| DAFx19-Gamelanizer  | https://github.com/lukemcraig/DAFx19-Gamelanizer |
-| OwlSim              | https://github.com/pingdynasty/OwlSim |
 | DeLooper            | https://github.com/sonejostudios/DeLooper |
 | morphex             | https://github.com/MarcSM/morphex |
 | mephisto            | https://open-music-kontrollers.ch/lv2/mephisto/ |
 | zrythm - lsp-dsp    | add a devel package for zrythm |
 | emissioncontrol2    | https://github.com/EmissionControl2/EmissionControl2 |
-| regrader            | https://github.com/igorski/regrader |
 | openshow            | https://github.com/mapmapteam/openshow |
 | supercollider-study | https://github.com/rumblesan/super-collider-study |
+| SynthDefs           | https://github.com/everythingwillbetakenaway/Synthdefs |
 | marsyas             | http://marsyas.info/ |
 | vapoursynth         | http://www.vapoursynth.com/ |
 |                     | https://github.com/dubhater/vapoursynth-fluxsmooth |
 |                     | - https://github.com/HolyWu/L-SMASH-Works |
 |                     | - https://github.com/dubhater/vapoursynth-mvtools |
 |                     | - https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Deblock |
-| frequanalizer       | https://github.com/ffAudio/Frequalizer |
 | NoiseTorch          | https://github.com/lawl/NoiseTorch |
 | CadMus              | https://github.com/josh-richardson/cadmus |
 | tascar              | https://github.com/HoerTech-gGmbH/tascar/ |
@@ -40,11 +36,9 @@
 | ProM                | https://github.com/DISTRHO/ProM |
 | Cardinal            | https://github.com/DISTRHO/Cardinal |
 | loop192             | https://github.com/jean-emmanuel/loop192 |
-| fat1.lv2            | https://github.com/x42/fat1.lv2 |
 | loopor              | https://github.com/stevie67/loopor |
 | flute.lv2           | https://github.com/timowest/flute-lv2 |
 | lv2file             | https://github.com/jeremysalwen/lv2file |
-| harmonizer.lv2      | https://github.com/dsheeler/harmonizer.lv2 |
 | inscore             | https://inscore.grame.fr |
 | Gwion               | https://github.com/Gwion |
 | Amati               | https://github.com/glocq/Amati |
@@ -68,7 +62,6 @@
 | reMID.lv2           | https://github.com/ssj71/reMID.lv2 |
 | MiniGBS             | https://github.com/baines/MiniGBS |
 | protrekkr           | https://github.com/hitchhikr/protrekkr |
-| mclk.lv2            | https://github.com/x42/mclk.lv2 |
 | Schrammel_OJD       | https://github.com/JanosGit/Schrammel_OJD |
 | EasySSP             | https://github.com/automatl/audio-dsp-multi-visualize/ |
 | midi2voice          | https://github.com/mathigatti/midi2voice |
@@ -76,7 +69,6 @@
 | Audio-Effects       | https://github.com/juandagilc/Audio-Effects |
 | pedalevite          | https://github.com/EleonoreMizo/pedalevite -> code for vst2 ... |
 |                     | http://ldesoras.free.fr/doc/articles/pedale-vite/pedale-vite.html |
-| SynthDefs           | https://github.com/everythingwillbetakenaway/Synthdefs |
 | imogen              | https://github.com/benthevining/imogen |
 | tap192              | https://github.com/PlagiatBros/tap192 |
 | genDrumKit          | https://github.com/peter-zenk/genDrumkit |
