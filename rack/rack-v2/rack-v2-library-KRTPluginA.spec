@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 f8e23f5bc834e864b36212764bf2a5ea34527545
-%global gittag0 2.25.25
+%global commit0 61db59a02231ce77892bddd9834324b03ae64268
+%global gittag0 2.25.27
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-KRTPluginA
-Version: 2.25.25
+Version: 2.25.27
 Release: 1%{?dist}
 Summary: KRTPluginA plugin for Rack
 License: GPLv2+
@@ -58,7 +58,10 @@ BuildRequires: jq
 
 %description
 KRTPluginA plugin for Rack.
-Plate 18 dB filter. (Band pass phased ring mod).
+Plate 18 dB filter. Band pass phased ring mod. Other ins
+and outs with different order are available. The ring
+modulation is between a low and high pass for a band pass
+with harmonics effect.
 
 %prep
 %autosetup -n Rack
@@ -146,5 +149,5 @@ cp -r KRTPluginA_plugin/dist/KRTPluginA/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.25.25-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.25.27-1
 - initial specfile

@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c35811af3180eb472e31103d9623c12379553389
-%global gittag0 2.0.7
+%global commit0 3ac226b6d2ca19a0533a8bce4dd38d0341f6adc6
+%global gittag0 2.0.8
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Bidoo
-Version: 2.0.7
+Version: 2.0.8
 Release: 1%{?dist}
 Summary: Bidoo plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r Bidoo_plugin/dist/Bidoo/* %{buildroot}%{_libexecdir}/Rack2/plugins/Bidoo/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.7-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.8-1
 - initial specfile

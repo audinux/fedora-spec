@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 df096a635fe8d3ea86a1e6451a55e45ccee5b83d
-%global gittag0 2.0.0
+%global commit0 95496e8a955407889bbab94cf404cf356802bb76
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-ExpertSleepers-Encoders
-Version: 2.0.0
+Version: 2.1.0
 Release: 1%{?dist}
 Summary: ExpertSleepers-Encoders plugin for Rack
 License: GPLv2+
@@ -145,5 +145,5 @@ cp -r ExpertSleepers-Encoders_plugin/dist/ExpertSleepers-Encoders/* %{buildroot}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile

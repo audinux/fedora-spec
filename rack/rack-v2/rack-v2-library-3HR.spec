@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b9330cd52a286e9d7b1241d63a817e945594e465
-%global gittag0 2.0.0
+%global commit0 6432d86c8b794e7621f527b1ae877a3e04d8f5d1
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-3HR
-Version: 2.0.0
+Version: 2.1.0
 Release: 1%{?dist}
 Summary: 3HR plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r 3HR_plugin/dist/3HR/* %{buildroot}%{_libexecdir}/Rack2/plugins/3HR/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
