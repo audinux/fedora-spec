@@ -34,7 +34,7 @@ rm -rf $RPM_BUILD_ROOT
 sed -i 's|-O2|%{optflags}|' source/Makefile
 
 pushd source
-make PREFIX=%{_prefix}
+%make_build
 popd
 
 %install
@@ -43,7 +43,7 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/zita-dpl1/
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/doc/
 
 pushd source
-make PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT install
+%make_install
 popd
 
 %files

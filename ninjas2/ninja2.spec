@@ -6,7 +6,7 @@
 Summary: A sample slicer audio plugin
 Name:    ninjas2
 Version: 0.2.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: GPL
 URL:     https://github.com/clearly-broken-software/ninjas2
 
@@ -41,13 +41,13 @@ A sample slicer audio plugin
 
 %build
 
-make PREFIX=%{_prefix}r LV2DIR=%{_libdir}/lv2 DESTDIR=%{buildroot} SKIP_STRIPPING=true CXXFLAGS="%{build_cxxflags} -std=c++11 -fvisibility=hidden -fPIC"
+%make_build LV2DIR=%{_libdir}/lv2 SKIP_STRIPPING=true CXXFLAGS="%{build_cxxflags} -std=c++11 -fvisibility=hidden -fPIC"
 
 %install
 
-%__install -m 755 -d %{buildroot}/%{_bindir}/
-%__install -m 755 -d %{buildroot}/%{_libdir}/lv2/ninjas2.lv2
-%__install -m 755 -d %{buildroot}/%{_libdir}/vst
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 -d %{buildroot}/%{_libdir}/lv2/ninjas2.lv2
+install -m 755 -d %{buildroot}/%{_libdir}/vst
 
 cp bin/ninjas2 %{buildroot}/%{_bindir}/
 cp -r bin/ninjas2.lv2/* %{buildroot}/%{_libdir}/lv2/ninjas2.lv2/

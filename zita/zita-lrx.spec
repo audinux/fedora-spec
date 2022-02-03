@@ -37,12 +37,12 @@ rm -rf $RPM_BUILD_ROOT
 sed -i 's|-march=native|%{optflags}|' source/Makefile
 
 pushd source
-make PREFIX=%{_prefix}
+%make_build
 popd
 
 %install
 pushd source
-make PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT install
+%make_install
 popd
 
 %files

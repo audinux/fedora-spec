@@ -15,12 +15,12 @@
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
 
-Name:           vsxu
-Version:        0.6.3
-Release:        2%{?dist}
-Summary:        Visual programming language animation tool
-License:        GPL-3.0 and LGPL-3.0
-Url:            http://www.vsxu.com/
+Name: vsxu
+Version: 0.6.3
+Release: 2%{?dist}
+Summary: Visual programming language animation tool
+License: GPL-3.0 and LGPL-3.0
+Url: http://www.vsxu.com/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -141,13 +141,12 @@ if [ %{_lib} = lib64 ]; then
   EXTRA_FLAGS="$EXTRA_FLAGS -DLIB_SUFFIX=64"
 fi
 pushd build
-cmake -DCMAKE_INSTALL_PREFIX=%{_prefix} $EXTRA_FLAGS ..
-#make %{?_smp_mflags}
-make DESTDIR=%{buildroot}
+%cmake $EXTRA_FLAGS ..
+%make_build
 
 %install
 pushd build
-make DESTDIR=%{buildroot} install
+%make_install
 
 desktop-file-install --vendor '' \
         --add-category=Video \

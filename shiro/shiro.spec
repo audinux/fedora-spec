@@ -63,10 +63,10 @@ sed -i -e "s/-Wl,--strip-all//g" Makefile.mk
 
 %install
 
-%__install -m 755 -d %{buildroot}/%{_bindir}/
-%__install -m 755 -d %{buildroot}/%{_libdir}/lv2/
-%__install -m 755 -d %{buildroot}/%{_libdir}/vst/
-%__install -m 755 -d %{buildroot}/%{_libdir}/ladspa/
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 -d %{buildroot}/%{_libdir}/lv2/
+install -m 755 -d %{buildroot}/%{_libdir}/vst/
+install -m 755 -d %{buildroot}/%{_libdir}/ladspa/
 
 cd bin
 cp -a Harmless Larynx Modulay Shiroverb %{buildroot}/%{_bindir}/

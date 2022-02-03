@@ -81,7 +81,7 @@ export LDFLAGS
 
 %make_install
 
-%__install -m 755 -d %{buildroot}/usr/lib/systemd/system/
+install -m 755 -d %{buildroot}/usr/lib/systemd/system/
 mv %{buildroot}/lib/systemd/system/rivendell.service %{buildroot}/usr/lib/systemd/system/rivendell.service
 
 for Files in %{buildroot}/%{_libdir}/rivendell/pypad/*.py

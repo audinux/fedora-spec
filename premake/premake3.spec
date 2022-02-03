@@ -23,7 +23,8 @@ Describe your software project with a full-featured scripting language and let P
 %make_build
 
 %install
-%__install -m 755 -d %{buildroot}/%{_bindir}/
+
+install -m 755 -d %{buildroot}/%{_bindir}/
 cp bin/premake %{buildroot}/%{_bindir}/premake3
 
 %files

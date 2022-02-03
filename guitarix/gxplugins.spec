@@ -318,7 +318,7 @@ Vintage Fuzz Pedal simulation from Guitarix
 
 %install 
 
-make INSTALL_DIR=%{buildroot}%{_libdir}/lv2 SSE_CFLAGS="%{optflags}" STRIP=true install
+%make_install INSTALL_DIR=%{buildroot}%{_libdir}/lv2 SSE_CFLAGS="%{optflags}" STRIP=true
 
 %files -n lv2-AxisFace-plugin
 %{_libdir}/lv2/gx_AxisFace.lv2/*

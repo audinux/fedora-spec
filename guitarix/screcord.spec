@@ -46,7 +46,7 @@ cd ..
 
 %install 
 
-make INSTALL_DIR=%{buildroot}%{_libdir}/lv2 STRIP=true install
+%make_install INSTALL_DIR=%{buildroot}%{_libdir}/lv2 STRIP=true
 
 %files
 %doc README.md

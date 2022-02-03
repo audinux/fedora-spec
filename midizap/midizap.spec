@@ -38,12 +38,12 @@ sed -i -e "/CFLAGS=/d" Makefile
 
 %build
 
-%{__make} DESTDIR=%{buildroot} CFLAGS="%{build_cflags}"
+%%make_build CFLAGS="%{build_cflags}"
 
 %install
 
 rm -rf %{buildroot}
-make DESTDIR=%{buildroot} install
+%make_install
 
 %files
 %defattr(-,root,root,-)

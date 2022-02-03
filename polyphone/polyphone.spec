@@ -71,17 +71,17 @@ cd sources
 
 cd sources
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/applications/
-%__install -m 644 contrib/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+install -m 644 contrib/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
 
-%__install -m 755 -d %{buildroot}/%{_bindir}/
-%__install -m 755 bin/polyphone %{buildroot}%{_bindir}/
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 bin/polyphone %{buildroot}%{_bindir}/
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/mime/packages/
-%__install -m 644 contrib/%{name}.xml %{buildroot}%{_datadir}/mime/packages/%{name}.xml
+install -m 755 -d %{buildroot}/%{_datadir}/mime/packages/
+install -m 644 contrib/%{name}.xml %{buildroot}%{_datadir}/mime/packages/%{name}.xml
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/
-%__install -m 644 resources/logo.svg %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/%{name}.svg
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/
+install -m 644 resources/logo.svg %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/%{name}.svg
 
 # TODO: install man pages
 

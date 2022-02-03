@@ -44,14 +44,14 @@ sed -i -e "s/lrelease/lrelease-qt5/g" FaustWorks.pro
 
 %install
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/applications/
-%__install -m 644 %{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+install -m 644 %{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
 
-%__install -m 755 -d %{buildroot}/%{_bindir}/
-%__install -m 755 FaustWorks %{buildroot}%{_bindir}/
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 FaustWorks %{buildroot}%{_bindir}/
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/
-%__install -m 644 Resources/faustworks.png %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/%{name}.svg
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/
+install -m 644 Resources/faustworks.png %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/%{name}.svg
 
 # install polyphon.desktop properly.
 desktop-file-install --vendor '' \

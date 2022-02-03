@@ -147,12 +147,12 @@ rm -rf build
 export CFLAGS=""
 export CXXFLAGS=""
 
-make DESTDIR=%{buildroot} prefix=/opt/purr-data all
+%make_build prefix=/opt/purr-data all
 
 %install
 
 cd packages/linux_make
-make DESTDIR=%{buildroot} prefix=/opt/purr-data install
+%make_installprefix=/opt/purr-data
 cd ../..
 
 # Create a link to the executable.

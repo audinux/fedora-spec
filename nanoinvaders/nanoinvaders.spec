@@ -41,9 +41,9 @@ Play space invaders in an audio plugin
 
 %install 
 
-%__install -m 755 -d %{buildroot}/%{_bindir}/
-%__install -m 755 -d %{buildroot}/%{_libdir}/lv2/
-%__install -m 755 -d %{buildroot}/%{_libdir}/vst/
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 -d %{buildroot}/%{_libdir}/lv2/
+install -m 755 -d %{buildroot}/%{_libdir}/vst/
 
 cp bin/%{name} %{buildroot}/%{_bindir}/
 cp bin/%{name}-vst.so %{buildroot}/%{_libdir}/vst/

@@ -25,10 +25,10 @@ mod-distortion LV2 set of plugins from portalmod
 %autosetup -n %{name}-%{commit0}
 
 %build
-make INSTALL_PATH=%{buildroot}%{_libdir}/lv2 %{?_smp_mflags}
+%make_build INSTALL_PATH=%{buildroot}%{_libdir}/lv2
 
 %install 
-make INSTALL_PATH=%{buildroot}%{_libdir}/lv2 %{?_smp_mflags} install
+%make_install INSTALL_PATH=%{buildroot}%{_libdir}/lv2
 
 %files
 %{_libdir}/lv2/*

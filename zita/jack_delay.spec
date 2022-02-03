@@ -31,14 +31,14 @@ sed -i 's|-O2|%{optflags}|' source/Makefile
 sed -i 's|-lasound||' source/Makefile
 
 pushd source
-make PREFIX=%{_prefix}
+%make_build
 popd
 
 %install
 mkdir -p $RPM_BUILD_ROOT%{_bindir}/
 
 pushd source
-make PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT install
+%make_install
 popd
 
 %files

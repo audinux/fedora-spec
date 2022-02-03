@@ -110,61 +110,61 @@ SentUpstream: 2014-09-22
 </application>
 EOF
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/applications/
-#%__install -m 644 misc/tuxguitar.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
-%__install -m 644 %{SOURCE2} %{buildroot}%{_datadir}/applications/%{name}.desktop
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+#install -m 644 misc/tuxguitar.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
+install -m 644 %{SOURCE2} %{buildroot}%{_datadir}/applications/%{name}.desktop
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/mime/packages/
-%__install -m 644 misc/tuxguitar.xml %{buildroot}%{_datadir}/mime/packages/%{name}.xml
+install -m 755 -d %{buildroot}/%{_datadir}/mime/packages/
+install -m 644 misc/tuxguitar.xml %{buildroot}%{_datadir}/mime/packages/%{name}.xml
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/
-%__install -m 644 misc/tuxguitar.xpm %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/%{name}.xpm
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/
+install -m 644 misc/tuxguitar.xpm %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/%{name}.xpm
 
-%__install -m 755 -d %{buildroot}/%{_bindir}/
-%__install -m 755 %{SOURCE1} %{buildroot}/%{_bindir}/
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 %{SOURCE1} %{buildroot}/%{_bindir}/
 mv %{buildroot}/%{_bindir}/tuxguitar-1.3.sh %{buildroot}/%{_bindir}/%{name}
 
 cd build-scripts/tuxguitar-linux-x86_64/target/tuxguitar-SNAPSHOT-linux-x86_64/
 
-%__install -m 755 -d %{buildroot}%{_datadir}/%{name}/dist/
-%__install -m 755 -d %{buildroot}%{_datadir}/%{name}/doc/
-%__install -m 755 -d %{buildroot}%{_libdir}/
-%__install -m 755 -d %{buildroot}%{_javadir}/%{name}/
+install -m 755 -d %{buildroot}%{_datadir}/%{name}/dist/
+install -m 755 -d %{buildroot}%{_datadir}/%{name}/doc/
+install -m 755 -d %{buildroot}%{_libdir}/
+install -m 755 -d %{buildroot}%{_javadir}/%{name}/
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/dist/
-%__install -m 644 dist/* %{buildroot}/%{_datadir}/%{name}/dist/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/dist/
+install -m 644 dist/* %{buildroot}/%{_datadir}/%{name}/dist/
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/doc/
-%__install -m 644 doc/* %{buildroot}/%{_datadir}/%{name}/doc/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/doc/
+install -m 644 doc/* %{buildroot}/%{_datadir}/%{name}/doc/
 
-%__install -m 644 lib/*.so  %{buildroot}/%{_libdir}/
-%__install -m 644 lib/*.jar %{buildroot}/%{_javadir}/%{name}/
+install -m 644 lib/*.so  %{buildroot}/%{_libdir}/
+install -m 644 lib/*.jar %{buildroot}/%{_javadir}/%{name}/
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/help/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/help/css/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/help/images/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/help/images/edit
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/help/images/start
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/help/images/tools
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/lang/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/plugins/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/scales/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/skins/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/skins/blue_serious/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/skins/ersplus/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/skins/Lavender
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/skins/Oxygen/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/templates/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/help/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/help/css/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/help/images/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/help/images/edit
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/help/images/start
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/help/images/tools
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/lang/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/plugins/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/scales/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/skins/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/skins/blue_serious/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/skins/ersplus/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/skins/Lavender
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/skins/Oxygen/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/templates/
 
 # Under FC22, the java sound plugin make tuxguitar freezes.
-%__rm share/plugins/tuxguitar-jsa.jar
+rm share/plugins/tuxguitar-jsa.jar
 
-%__cp -r share/help/*      %{buildroot}/%{_datadir}/%{name}/help/
-%__cp -r share/lang/*      %{buildroot}/%{_datadir}/%{name}/lang/
-%__cp -r share/plugins/*   %{buildroot}/%{_datadir}/%{name}/plugins/
-%__cp -r share/scales/*    %{buildroot}/%{_datadir}/%{name}/scales/
-%__cp -r share/skins/*     %{buildroot}/%{_datadir}/%{name}/skins/
-%__cp -r share/templates/* %{buildroot}/%{_datadir}/%{name}/templates/
+cp -r share/help/*      %{buildroot}/%{_datadir}/%{name}/help/
+cp -r share/lang/*      %{buildroot}/%{_datadir}/%{name}/lang/
+cp -r share/plugins/*   %{buildroot}/%{_datadir}/%{name}/plugins/
+cp -r share/scales/*    %{buildroot}/%{_datadir}/%{name}/scales/
+cp -r share/skins/*     %{buildroot}/%{_datadir}/%{name}/skins/
+cp -r share/templates/* %{buildroot}/%{_datadir}/%{name}/templates/
 
 cd ../..
 

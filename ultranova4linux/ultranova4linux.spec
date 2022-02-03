@@ -27,7 +27,7 @@ Userspace driver for the Novation Ultranova and Mininova synthesizers
 
 %build
 
-make %{?_smp_mflags}
+%make_build
 
 %install
 rm -rf $RPM_BUILD_ROOT

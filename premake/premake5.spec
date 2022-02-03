@@ -35,8 +35,9 @@ sed -i "s|^\s*ALL_LDFLAGS\s*+= \$(LDFLAGS) -s|ALL_LDFLAGS += \$(LDFLAGS)|" Prema
 %make_build
 
 %install
-%__install -m 755 -d %{buildroot}/%{_bindir}/
-%__install -m 755 -d %{buildroot}/%{_mandir}/man1/
+
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 -d %{buildroot}/%{_mandir}/man1/
 
 cp bin/release/premake5 %{buildroot}/%{_bindir}/premake5
 cp packages/debian/premake.1 %{buildroot}/%{_mandir}/man1/premake5.1
