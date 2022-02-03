@@ -5,13 +5,14 @@ Name:    planetccrma-rt-permissions
 Version: 2012.09.19
 Release: 1%{?dist}
 License: GPL3
-Group:   Applications/Multimedia
+URL:     http://ccrma.stanford.edu/planetccrma/software/
+
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: 99-rt-permissions-all.conf
 Source1: 99-rt-permissions.conf
 Source2: rt-permissions.ck
-URL:     http://ccrma.stanford.edu/planetccrma/software/
-
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires: perl
 
@@ -41,6 +42,7 @@ Summary: Grant rt permissions to active sessions
 Grant active sessions to run processes with realtime scheduling (up to priority %{MAX_PRIORITY})
 and to lock memory (up to %{MAX_MEMORY_LOCK} bytes).
 
+%autosetup
 %prep
 
 %build
@@ -63,9 +65,6 @@ cp %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/ConsoleKit/run-session.d/rt-permissi
 perl -p -i -e "s|\@\@MAX_PRIORITY\@\@|%{MAX_PRIORITY}|g" $RPM_BUILD_ROOT%{_sysconfdir}/ConsoleKit/run-session.d/rt-permissions.ck
 perl -p -i -e "s|\@\@MAX_MEMORY_LOCK\@\@|%{MAX_MEMORY_LOCK}|g" $RPM_BUILD_ROOT%{_sysconfdir}/ConsoleKit/run-session.d/rt-permissions.ck
 %endif
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files 
 %defattr(-,root,root,-)

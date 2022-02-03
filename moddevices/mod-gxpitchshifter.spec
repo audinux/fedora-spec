@@ -5,6 +5,9 @@ Summary: Guitarix compatible mod-pitchshifter LV2 set of plugins from portalmod
 License: GPLv2+
 URL:     https://github.com/ycollet/mod-pitchshifter
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/ycollet/mod-pitchshifter/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++

@@ -33,7 +33,7 @@ A small cross-platform editor of the OPN2 FM banks of different formats
 
 %prep
 
-%setup -qn OPN2BankEditor
+%autosetup -n OPN2BankEditor
 
 sed -i -e "/Categories/d" src/resources/opn2_bank_editor.desktop
 

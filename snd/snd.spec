@@ -86,7 +86,6 @@ Command line utilities included with the snd sound editor (%{pkgver} of
 
 %package -n sndlib
 Summary: Soundfile and audio handler collection
-Group: Applications/Multimedia
 
 %description -n sndlib
 The sound library is a collection of sound file and audio hardware

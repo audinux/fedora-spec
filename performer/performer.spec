@@ -12,6 +12,9 @@ Summary: Live performance audio session manager using Carla
 URL:     https://github.com/progwolff/performer
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/progwolff/performer/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++

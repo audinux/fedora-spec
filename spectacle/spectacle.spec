@@ -3,8 +3,10 @@ Version: 2.0
 Release: 1%{?dist}
 Summary: Realtime graphical spectrum analyzer
 URL:     https://github.com/jpcima/spectacle
-Group:   Applications/Multimedia
 License: GPL
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/jpcima/spectacle/releases/download/v2.0/spectacle-analyzer-v%{version}.tar.gz
 Source1: spectacle.png
@@ -34,7 +36,6 @@ transform, available as VST / LV2 audio plugin and JACK client.
 
 %package -n vst-spectacle
 Summary: VST Realtime graphical spectrum analyzer
-Group:   Applications/Multimedia
 
 %description -n vst-spectacle
 Spectacle is a real-time spectral analyzer using the short-time Fourier
@@ -47,7 +48,6 @@ transform.
 
 %package -n lv2-spectacle
 Summary: LV2 Realtime graphical spectrum analyzer
-Group:   Applications/Multimedia
 
 %description -n lv2-spectacle
 Spectacle is a real-time spectral analyzer using the short-time Fourier

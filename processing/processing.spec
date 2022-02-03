@@ -24,7 +24,6 @@ Release: 2%{?dist}
 Summary: Processing Development Environment (PDE)
 # Core is LGPL, others are GPL
 License: GPL-2.0+ and LGPL-2.0+
-Group:   Development/Tools/IDE
 Url:     https://processing.org/
 
 Vendor:       Audinux

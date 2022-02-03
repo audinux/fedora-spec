@@ -5,6 +5,9 @@ Summary: The libraries for the projectM music visualization plugin
 License: LGPLv2+
 URL:     https://github.com/projectM-visualizer/projectm
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/projectM-visualizer/projectm/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: milkdrop-script.txt
 Source2: projectm-configure.ac

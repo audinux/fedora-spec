@@ -7,12 +7,12 @@ Name:    zita-convolver
 Version: 4.0.3
 Release: 2%{?dist}
 License: GPL
-Group:   Applications/Multimedia
-
 URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
-Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Vendor:       Audinux
+Distribution: Audinux
+
+Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
 BuildRequires: fftw-devel
@@ -25,15 +25,13 @@ existing partitions can be modified this way.
 
 %package devel
 Summary:  Development files for %{name}
-Group:    Development/Libraries
 Requires: %{name} = %{version}-%{release}
-
 
 %description devel
 The %{name}-devel package contains header files for %{name}.
 
 %prep
-%setup -q
+%autosetup
 
 %build
 rm -rf $RPM_BUILD_ROOT
@@ -52,9 +50,6 @@ mkdir -p $RPM_BUILD_ROOT%{_libdir}
 mkdir -p $RPM_BUILD_ROOT%{_includedir}
 make PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT install
 popd
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %doc AUTHORS README*

@@ -2,9 +2,11 @@ Name:    shiro
 Version: 0.1
 Release: 1%{?dist}
 Summary: SHIRO LV2 plugin collection
-
 License: GPLv2+
 URL:     https://github.com/ninodewit/SHIRO-Plugins
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # To get the sources:
 # ./shiro-source.sh <tag>

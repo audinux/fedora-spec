@@ -10,6 +10,9 @@ Release: 2%{?dist}
 License: GPL
 URL:     https://github.com/raboof/sfArkLib
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/raboof/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Patch0:  libsfark-0001-fix-install-path.patch
 

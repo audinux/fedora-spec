@@ -15,6 +15,9 @@ Summary: A SF2 sound font editor
 URL:     https://polyphone-soundfonts.com/
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/davy7125/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Patch0:  polyphone-0001-add-missing-header.patch
 

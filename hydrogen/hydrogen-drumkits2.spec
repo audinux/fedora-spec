@@ -8,6 +8,9 @@ Release: 1%{?dist}
 License: GPLv2+ and GPLv3 and Green OpenMusic
 URL:     http://www.hydrogen-music.org
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://www.skyehaven.net/blog/wp-content/plugins/eht-downloads/multimediaSprint_v2/99_hydrogenDrumkits/99kits/Ace-Tone_Rhythm_Ace.h2drumkit
 Source1: https://www.skyehaven.net/blog/wp-content/plugins/eht-downloads/multimediaSprint_v2/99_hydrogenDrumkits/99kits/Ace-Tone_Rhythm_Plus.h2drumkit
 Source2: https://www.skyehaven.net/blog/wp-content/plugins/eht-downloads/multimediaSprint_v2/99_hydrogenDrumkits/99kits/Akai_MPC-X.h2drumkit

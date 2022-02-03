@@ -9,6 +9,9 @@ Summary: Physical modelling signal processing for analog tape recording
 License: BSD-3-Clause
 URL:     https://github.com/jatinchowdhury18/AnalogTapeModel
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # to generater code archive:
 # ./source_analogtapemodel.sh <tag>
 # ./source_analogtapemodel.sh 2.10.0

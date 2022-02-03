@@ -10,6 +10,9 @@ Release: 3%{?dist}
 License: LGPL
 URL:     https://github.com/metabrainz/libcoverart
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/metabrainz/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++

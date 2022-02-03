@@ -15,9 +15,12 @@ Summary: A Scintilla port to Qt
 Name:    qscintilla
 Version: 2.11.5
 Release: 10%{?dist}
-
 License: GPLv3
 Url:     http://www.riverbankcomputing.com/software/qscintilla/
+
+Vendor:       Audinux
+Distribution: Audinux
+
 %if 0%{?snap:1}
 Source0: https://www.riverbankcomputing.com/static/Downloads/QScintilla/%{version}/QScintilla-%{version}-snapshot-%{snap}.tar.gz
 %else
@@ -163,7 +166,7 @@ BuildArch: noarch
 %endif
 
 %prep
-%setup -q -n QScintilla-%{version}%{?snap:-snapshot-%{snap}}
+%autosetup -n QScintilla-%{version}%{?snap:-snapshot-%{snap}}
 
 %patch100 -p1 -b .sip_check
 %patch101 -p1 -b .qurl

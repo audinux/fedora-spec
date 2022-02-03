@@ -7,12 +7,12 @@ Name:    zita-dc1
 Version: 0.3.3
 Release: 1%{?dist}
 License: GPL
-Group:   Applications/Multimedia
-
 URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
-Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Vendor:       Audinux
+Distribution: Audinux
+
+Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
 BuildRequires: jack-audio-connection-kit-devel
@@ -25,7 +25,7 @@ DC1 provides a dynamics compressor for use with JACK Audio Connection Kit.
 It can be used as master effect or as an effect on individual instrument tracks as well.
 
 %prep
-%setup -q
+%autosetup
 
 %build
 rm -rf $RPM_BUILD_ROOT
@@ -42,9 +42,6 @@ mkdir -p $RPM_BUILD_ROOT%{_mandir}/man1
 pushd source
 make PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT install
 popd
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)

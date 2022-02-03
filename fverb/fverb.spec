@@ -12,7 +12,6 @@ Version: 0.0.1
 Release: 1%{?dist}
 Summary: Reverberation plugin
 URL:     https://github.com/jpcima/fverb
-Group:   Applications/Multimedia
 License: BSL-1.0
 
 Vendor:       Audinux
@@ -43,28 +42,25 @@ Reverberation plugin
 
 %package -n ladspa-fverb
 Summary: LADSPA reverberation plugin
-Group:   Applications/Multimedia
 
 %description -n ladspa-fverb
 A LADSPA reverberation plugin
 
 %package -n vst-fverb
 Summary: VST reverberation plugin
-Group:   Applications/Multimedia
 
 %description -n vst-fverb
 A VST reverberation plugin
 
 %package -n lv2-fverb
 Summary: LV2 reverberation plugin
-Group:   Applications/Multimedia
 
 %description -n lv2-fverb
 A LV2 reverberation plugin
 
 %prep
 
-%setup -qn fverb
+%autosetup -n fverb
 
 %build
 

@@ -10,6 +10,9 @@ Release: 2%{?dist}
 License: GPL
 URL:     http://rakarrack.sourceforge.net/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/ycollet/rakarrack/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++

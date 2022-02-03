@@ -7,14 +7,13 @@ Name:    radium
 Version: 3.3.2
 Release: 1%{?dist}
 Summary: A tracker / sequencer
-
-Group:   Applications/Multimedia
 License: GPLv2+
-
 URL:     https://github.com/kmatheussen/radium
-Source0: https://github.com/kmatheussen/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Vendor:       Audinux
+Distribution: Audinux
+
+Source0: https://github.com/kmatheussen/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: qt4-devel
@@ -45,7 +44,7 @@ BuildRequires: cmake
 A tracker / sequencer
 
 %prep
-%setup -qn %{name}-%{commit0}
+%autosetup -n %{name}-%{commit0}
 
 %build
 
@@ -54,32 +53,18 @@ BUILDTYPE=RELEASE ./build_linux.sh -j2
 
 %install 
 
-%__install -m 755 -d %{buildroot}%{_datadir}/%{name}/samples/
-%__install -m 644 *.rad %{buildroot}/%{_datadir}/%{name}/samples/
+install -m 755 -d %{buildroot}%{_datadir}/%{name}/samples/
+install -m 644 *.rad %{buildroot}/%{_datadir}/%{name}/samples/
 
-%__install -m 755 -d %{buildroot}%{_datadir}/%{name}/doc/
-%__install -m 644 README %{buildroot}/%{_datadir}/%{name}/doc/
-%__install -m 644 COPYING %{buildroot}/%{_datadir}/%{name}/doc/
+install -m 755 -d %{buildroot}%{_datadir}/%{name}/doc/
+install -m 644 README %{buildroot}/%{_datadir}/%{name}/doc/
+install -m 644 COPYING %{buildroot}/%{_datadir}/%{name}/doc/
 
-%__install -m 755 -d %{buildroot}/%{_bindir}/
-%__install -m 755 bin/radium %{buildroot}/%{_bindir}/
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 bin/radium %{buildroot}/%{_bindir}/
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/256x256/apps/
-%__install -m 644 bin/radium_256x256x32.png %{buildroot}/%{_datadir}/icons/hicolor/256x256/apps/
-
-%post 
-update-desktop-database -q
-touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
-
-%postun
-update-desktop-database -q
-if [ $1 -eq 0 ]; then
-  touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
-  gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
-fi
-
-%posttrans 
-/usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/256x256/apps/
+install -m 644 bin/radium_256x256x32.png %{buildroot}/%{_datadir}/icons/hicolor/256x256/apps/
 
 %files
 %{_bindir}/

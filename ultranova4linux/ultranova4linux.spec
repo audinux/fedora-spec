@@ -7,8 +7,11 @@ Name:           ultranova4linux
 Version:        0.0.%{shortcommit0}
 Release:        4%{?dist}
 Summary:        userspace Novation Synthesizer driver
-
 License:        GPLv3
+
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0:        https://github.com/hansfbaier/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1:	92-novation.rules
 
@@ -20,7 +23,7 @@ Requires:       bash
 Userspace driver for the Novation Ultranova and Mininova synthesizers
 
 %prep
-%setup -qn %{name}-%{commit0}
+%autosetup -n %{name}-%{commit0}
 
 %build
 

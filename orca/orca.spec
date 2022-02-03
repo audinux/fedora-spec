@@ -16,6 +16,9 @@ Summary: An esoteric programming language
 License: GPLv2+
 URL:     https://git.sr.ht/~rabbits/orca
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/hundredrabbits/Orca-c/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 # From https://github.com/hundredrabbits/Orca
 Source1: https://github.com/hundredrabbits/Orca/archive/master.zip#/%{name}-doc.zip

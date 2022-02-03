@@ -5,6 +5,9 @@ Release: 1%{?dist}
 License: GPLv3+
 URL:     http://sourceforge.net/projects/premake/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://sourceforge.net/projects/premake/files/Premake/4.4/premake-4.4-beta5-src.zip
 
 BuildRequires: gcc gcc-c++

@@ -10,6 +10,9 @@ Summary: MIDI controlable audio player
 License: GPL
 URL:     https://github.com/evandelisle/showq
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc

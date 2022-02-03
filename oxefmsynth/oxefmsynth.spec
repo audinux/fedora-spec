@@ -10,6 +10,9 @@ Summary: A FM synthetized
 License: GPLv2+
 URL:     https://github.com/oxesoft/oxefmsynth
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/oxesoft/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1: http://ycollette.free.fr/LMMS/vst.tar.bz2
 Patch0:  oxefmsynth-fix-cxxflags-override.patch

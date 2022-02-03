@@ -8,12 +8,12 @@ Name:    ssr
 Version: 0.3.8.%{shortcommit0}
 Release: 1%{?dist}
 License: GPL
-Group:   Applications/Multimedia
 URL:     https://github.com/MaartenBaert/ssr
 
-Source0: https://github.com/MaartenBaert/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Vendor:       Audinux
+Distribution: Audinux
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Source0: https://github.com/MaartenBaert/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: autoconf
@@ -31,7 +31,7 @@ BuildRequires: pulseaudio-libs-devel
 SimpleScreenRecorder is a Linux program created to record programs and games. 
 
 %prep
-%setup -qn %{name}-%{commit0}
+%autosetup -n %{name}-%{commit0}
 
 %build
 
@@ -50,26 +50,6 @@ desktop-file-install --vendor '' \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/simplescreenrecorder.desktop
 
-
-%post
-touch --no-create %{_datadir}/mime/packages &>/dev/null || :
-update-desktop-database &> /dev/null || :
-
-
-%postun
-update-desktop-database &> /dev/null || :
-if [ $1 -eq 0 ] ; then
-  update-mime-database %{_datadir}/mime &> /dev/null || :
-fi
-
-
-%posttrans
-/usr/bin/update-mime-database %{?fedora:-n} %{_datadir}/mime &> /dev/null || :
-
-%clean
-%{__rm} -rf %{buildroot}
-
-
 %files
 %defattr(-,root,root,-)
 %doc AUTHORS.md CHANGELOG.md README.md
@@ -77,7 +57,6 @@ fi
 %{_bindir}/*
 %{_libdir}/*
 %{_datadir}/*
-
 
 %changelog
 * Mon Oct 15 2018 Yann Collette <ycollette dot nospam at free.fr> 0.3.6-1

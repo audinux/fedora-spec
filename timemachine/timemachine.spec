@@ -10,6 +10,9 @@ Release: 5%{?dist}
 License: GPL
 URL:     https://github.com/swh/timemachine
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/swh/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++

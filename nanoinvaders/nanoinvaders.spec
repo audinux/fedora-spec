@@ -5,6 +5,9 @@ Summary: Play space invaders in an audio plugin
 License: GPLv2+
 URL:     https://github.com/clearly-broken-software/nanoinvaders
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # git clone https://github.com/clearly-broken-software/nanoinvaders
 # git submodule init
 # git submodule update

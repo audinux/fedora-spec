@@ -7,6 +7,9 @@ Summary:        A YAML parser and emitter for C++
 License:        MIT 
 URL:            http://code.google.com/p/yaml-cpp/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0:        http://yaml-cpp.googlecode.com/files/%{realname}-%{version}.tar.gz
 Patch0:         yaml-cpp03-pkgconf.patch
 

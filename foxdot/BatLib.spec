@@ -15,6 +15,9 @@ Summary:  Various helper classes I use, and external methods my other Quarks use
 License:  Creative Commons Attribution-ShareAlike 4.0 International Public License
 URL:      https://github.com/supercollider-quarks/%{name}
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0:  https://github.com/supercollider-quarks/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildArch: noarch

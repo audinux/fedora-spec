@@ -24,6 +24,9 @@ Summary: Various VST/VST3 Plugins from SocaLabs.com
 License: BSD-3-Clause
 URL:     https://github.com/FigBug/slPlugins
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./socalab-source.sh <tag>
 # ./socalab-source.sh 8479da129a8bb955870ad3059a22e8f8802630ca
 

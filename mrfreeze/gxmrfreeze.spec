@@ -5,6 +5,9 @@ Summary: An audio, Guitarix compatible, freeze LV2 plugin
 License: GPLv2+
 URL:     https://github.com/ycollet/MrFreezehttps://github.com/romi1502/MrFreeze
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/ycollet/MrFreeze/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++

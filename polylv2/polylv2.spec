@@ -8,8 +8,10 @@ Version: 0.0.1
 Release: 1%{?dist}
 Summary: a collection of LV2 plugins designed for modular / eurorack style use.
 License: GPLv3+
-
 URL:     https://github.com/polyeffects/PolyLV2
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/polyeffects/PolyLV2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 

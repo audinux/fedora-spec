@@ -5,6 +5,9 @@ Summary: Fully featured LFO for CV-based automation
 License: GPLv2+
 URL:     https://git.zrythm.org/cgit/ZLFO/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://git.zrythm.org/cgit/ZLFO/snapshot/ZLFO-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++

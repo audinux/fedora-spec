@@ -5,6 +5,9 @@ Summary: Digital model of electronic string ensemble instrument
 URL:     https://github.com/jpcima/string-machine
 License: BSL-1.0
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./string-machine-source.sh <tag>
 # ./string-machine-source.sh master
 

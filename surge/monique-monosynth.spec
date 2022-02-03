@@ -3,11 +3,14 @@ Version: 01122021
 Release: 1%{?dist}
 Summary: Monique is a monophonic synth from Thomas Arndt
 License: GPLv3+
+URL:     https://github.com/surge-synthesizer/monique-mpnosynth
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # To get the sources, use:
 # $ ./source-monique-monosynth.sh main
 
-URL:     https://github.com/surge-synthesizer/monique-mpnosynth
 Source0: monique-monosynth.tar.gz
 Source1: source-monique-monosynth.sh
 

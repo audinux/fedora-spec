@@ -14,9 +14,11 @@ Name:    rack-v1-mental
 Version: 0.6.3
 Release: 3%{?dist}
 Summary: mental plugin for Rack
-Group:   Applications/Multimedia
 License: GPLv2+
 URL:     https://github.com/Strum/Strums_Mental_VCV_Modules
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # ./rack-source.sh <tag>
 # ./rack-source.sh v1.1.6
@@ -24,8 +26,6 @@ URL:     https://github.com/Strum/Strums_Mental_VCV_Modules
 Source0: Rack.tar.gz
 Source1: https://github.com/Strum/Strums_Mental_VCV_Modules/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: mental_plugin.json
-
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed

@@ -1,14 +1,18 @@
-Summary:	Port Standard MIDI File - portable library for reading/writing Standard MIDI Files
-Name:		portsmf
-Version:	0.1
-Release:	1%{?dist}
-License:	MIT-like
+Summary: Port Standard MIDI File - portable library for reading/writing Standard MIDI Files
+Name: portsmf
+Version: 0.1
+Release: 1%{?dist}
+License: MIT-like
+URL: http://sourceforge.net/p/portmedia/wiki/portsmf/
+
+Vendor:       Audinux
+Distribution: Audinux
+
 # svn co https://portmedia.svn.sourceforge.net/svnroot/portmedia/portsmf/trunk portsmf
-Source0:	%{name}.tar.xz
+Source0: %{name}.tar.xz
 # Source0-md5:	654893b608c70230e0838725c563b86f
-Patch0:		%{name}-shared.patch
-Patch1:		%{name}-includes.patch
-URL:		http://sourceforge.net/p/portmedia/wiki/portsmf/
+Patch0: %{name}-shared.patch
+Patch1: %{name}-includes.patch
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: autoconf

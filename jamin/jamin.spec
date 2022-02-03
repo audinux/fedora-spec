@@ -5,6 +5,9 @@ Release: 21.20201014cvs%{?dist}
 License: GPLv2+
 URL:     http://jamin.sourceforge.net
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: %{name}-%{version}-20201014cvs.tar.bz2
 # To fetch the sources:
 Source1: %{name}-snapshot.sh

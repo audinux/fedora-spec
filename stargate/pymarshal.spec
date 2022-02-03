@@ -7,6 +7,9 @@ Summary: Python data serialization library
 License: BSD-2	
 URL:     https://github.com/stargateaudio/pymarshal
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://files.pythonhosted.org/packages/62/ef/e04a84361e82c8f0b750a63691404ed47dcfa3c7463eab16ec7607be0efc/pymarshal-2.2.0.tar.gz	
 
 BuildArch: noarch

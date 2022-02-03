@@ -7,12 +7,12 @@ Name:    zita-ajbridge
 Version: 0.8.4
 Release: 1%{?dist}
 License: GPL
-Group:   Applications/Multimedia
-
 URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
-Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Vendor:       Audinux
+Distribution: Audinux
+
+Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
 BuildRequires: jack-audio-connection-kit-devel alsa-lib-devel
@@ -29,7 +29,7 @@ will be stable as well even under worst case conditions, e.g. the Jack
 client running near the end of the cycle.
 
 %prep
-%setup -q
+%autosetup
 
 %build
 rm -rf $RPM_BUILD_ROOT
@@ -47,9 +47,6 @@ mkdir -p $RPM_BUILD_ROOT%{_bindir}
 mkdir -p $RPM_BUILD_ROOT%{_mandir}/man1
 make PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT install
 popd
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)

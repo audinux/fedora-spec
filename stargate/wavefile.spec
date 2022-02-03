@@ -7,6 +7,9 @@ Summary: Pythonic access to audio files
 License: GPL3	
 URL:     https://github.com/vokimon/python-wavefile
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/vokimon/python-wavefile/archive/refs/tags/python-wavefile-%{version}.tar.gz
 
 BuildArch: noarch

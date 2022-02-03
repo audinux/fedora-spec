@@ -19,6 +19,9 @@ Summary: A plugin for Rack
 License: GPLv2+
 URL:     https://github.com/VCVRack/Fundamental
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./rack-source.sh <tag>
 # ./rack-source.sh v2.0.3
 

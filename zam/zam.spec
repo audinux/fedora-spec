@@ -9,6 +9,9 @@ Summary: Set of LV2 plugins
 License: GPLv2+
 URL:     https://github.com/zamaudio/zam-plugins
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./zam-source.sh 3.14
 Source0: zam-plugins-%{version}.tar.xz
 

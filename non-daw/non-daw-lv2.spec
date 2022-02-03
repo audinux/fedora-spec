@@ -43,7 +43,6 @@ It suppors LV2 plugins.
 
 %package -n non-mixer-lv2
 Summary:  A digital audio mixer for JACK
-Group:    Applications/Multimedia
 Requires: non-daw
 
 %description -n non-mixer-lv2

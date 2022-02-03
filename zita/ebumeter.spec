@@ -7,12 +7,12 @@ Name:    ebumeter
 Version: 0.4.2
 Release: 1%{?dist}
 License: GPL
-Group:   Applications/Multimedia
-
 URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
-Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Vendor:       Audinux
+Distribution: Audinux
+
+Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
 BuildRequires: jack-audio-connection-kit-devel
@@ -28,7 +28,7 @@ The only documentation available ATM are the paper, the presentation
 slides and the video of the LAC 2011 session.
 
 %prep
-%setup -q
+%autosetup
 
 %build
 rm -rf $RPM_BUILD_ROOT
@@ -45,9 +45,6 @@ mkdir -p $RPM_BUILD_ROOT%{_mandir}/man1
 pushd source
 make PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT install
 popd
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)

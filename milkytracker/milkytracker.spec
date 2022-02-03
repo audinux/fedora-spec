@@ -9,6 +9,9 @@ Summary:       Module tracker software for creating music
 License:       GPLv3+
 URL:           https://github.com/milkytracker/MilkyTracker
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0:       https://github.com/milkytracker/MilkyTracker/archive/v%{version}.tar.gz#/MilkyTracker-%{version}.tar.gz
 Source1:       %{name}.desktop
 

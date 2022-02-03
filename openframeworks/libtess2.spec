@@ -7,6 +7,9 @@ Release: 1%{?dist}
 License: BSD
 URL:     https://github.com/memononen/libtess2
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/memononen/libtess2/archive/refs/tags/v%{version}.tar.gz#/libtess2-%{version}.tar.gz
 
 BuildRequires: gcc

@@ -27,6 +27,9 @@ License: GPL-3.0
 Summary: LV2 host for Jack controllable via socket or command line
 Url:     https://github.com/moddevices/mod-host
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/moddevices/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: %{name}.service
 

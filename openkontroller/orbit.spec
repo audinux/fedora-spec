@@ -24,7 +24,7 @@ BuildRequires: zlib-devel
 LV2 Event Looper
 
 %prep
-%setup -qn %{name}-%{commit0}
+%autosetup -n %{name}-%{commit0}
 
 %build
 

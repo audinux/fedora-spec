@@ -5,6 +5,9 @@ Summary: A cross-platform (C99/C++11) process library
 License: GPLv2+
 URL:     https://github.com/DaanDeMeyer/reproc/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/DaanDeMeyer/reproc/archive/v14.2.0.tar.gz#/reproc-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++

@@ -11,9 +11,12 @@ Name:    tamgamp
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Tamgamp is a LV2 guitar amp simulator 
-
 License: LGPL3
 URL:     https://github.com/sadko4u/tamgamp.lv2
+
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/sadko4u/tamgamp.lv2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc

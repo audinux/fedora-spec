@@ -7,11 +7,12 @@ Name:    yass
 Version: 0.1.0
 Release: 1%{?dist}
 License: GPL
-Group:   Applications/Multimedia
 URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
-Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Vendor:       Audinux
+Distribution: Audinux
+
+Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
 BuildRequires: clthreads-devel clxclient-devel
@@ -22,7 +23,7 @@ BuildRequires: libX11-devel libXft-devel
 Main features: up to 32 channels, variable scrolling speed, automatic gain control, and very light on CPU usage. Beta release available.
 
 %prep
-%setup -q
+%autosetup
 
 %build
 rm -rf $RPM_BUILD_ROOT
@@ -42,9 +43,6 @@ cp .yassrc $RPM_BUILD_ROOT%{_datadir}/doc/yassrc.sample
 pushd source
 make PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT install
 popd
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)

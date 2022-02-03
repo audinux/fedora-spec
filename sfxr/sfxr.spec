@@ -6,9 +6,12 @@ Name: sfxr
 Version: 1.2.1
 Release: 1%{?dist}
 Summary: Create sound effects	
-
 License: GPLv2
 URL: http://www.drpetter.se/project_sfxr.html	
+
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: sfxr-sdl-1.2.1.tar.gz	
 Source1: sfxr-share.tar.gz
 

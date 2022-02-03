@@ -9,6 +9,9 @@ Summary: Wolf-shaper is a waveshaper plugin with a graph editor.
 License: GPLv2+
 URL:     https://github.com/pdesaulniers/wolf-shaper
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./wolfshapper-source.sh <tag>
 # ./wolfshapper-source.sh v0.1.8
 

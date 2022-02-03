@@ -5,6 +5,9 @@ Summary: A JACK patchbay in flow matrix style
 URL:     http://web.comhem.se/luna/
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/ycollet/Mx44/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++

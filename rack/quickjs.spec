@@ -10,6 +10,9 @@ Release: 1%{?dist}
 License: MIT
 URL:     https://github.com/bellard/quickjs
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/bellard/quickjs/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc

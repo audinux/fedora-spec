@@ -10,6 +10,9 @@ Summary: A 'visual' instrument and realtime video sampler (for live video improv
 URL:     https://github.com/c0ntrol/veejay
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/c0ntrol/veejay/archive/%{commit0}.tar.gz#/veejay-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++ sed make

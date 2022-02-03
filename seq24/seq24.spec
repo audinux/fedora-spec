@@ -4,6 +4,10 @@ Version:      0.9.3
 Release:      8%{?dist}
 License:      GPLv2+
 URL:          http://launchpad.net/%{name}
+
+Vendor:       Audinux
+Distribution: Audinux
+
 Source:       http://launchpad.net/%{name}/trunk/%{version}/+download/seq24-%{version}.tar.bz2
 Source1:      %{name}.png
 Source2:      %{name}.desktop

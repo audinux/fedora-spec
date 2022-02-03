@@ -73,7 +73,6 @@ The Linux Real Time Kernel, the operating system core itself
 
 %package headers
 Summary: Header files for the Linux real time kernel for use by glibc
-Group: Development/System
 
 %description headers
 Kernel-headers includes the C header files that specify the interface
@@ -84,7 +83,6 @@ glibc package.
 
 %package devel
 Summary: Development package for building real time kernel modules to match the %{version} kernel
-Group: System Environment/Kernel
 AutoReqProv: no
 
 %description devel

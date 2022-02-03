@@ -28,7 +28,6 @@ Lomse objective is provide software developers with a library to add capabilitie
 
 %package devel
 Summary:        Development files for %{name}
-Group:          Development/Libraries
 Requires:       %{name} = %{version}-%{release}
 
 %description devel

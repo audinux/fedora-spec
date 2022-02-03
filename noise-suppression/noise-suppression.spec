@@ -8,8 +8,11 @@ Version: 0.9
 Release: 3%{?dist}
 Summary: Real-time Noise Suppression LADSPA / LV2 Plugin
 License: GPLv2+
-
 URL:     https://github.com/werman/noise-suppression-for-voice
+
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/werman/noise-suppression-for-voice/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0:  noise-0001-add-missing-header.patch
 
@@ -25,15 +28,12 @@ More info about the base library - https://people.xiph.org/~jm/demo/rnnoise/.
 
 %package -n ladspa-%{name}
 Summary: Real-time Noise Suppression LADSPA Plugin
-Group:   Applications/Multimedia
 
 %package -n lv2-%{name}
 Summary: Real-time Noise Suppression LV2 Plugin
-Group:   Applications/Multimedia
 
 %package -n %{name}-doc
 Summary: Real-time Noise Suppression LADSPA / LV2 Plugin documentation
-Group:   Applications/Multimedia
 
 %description -n ladspa-%{name}
 A real-time noise suppression LADSPA plugin for voice based on Xiph's RNNoise - https://github.com/xiph/rnnoise.

@@ -5,6 +5,9 @@ Summary: Ninjam LV2 / VST plugin
 URL:     https://github.com/antanasbruzas/abNinjam
 License: MIT
 
+Vendor:       Audinux
+Distribution: Audinux
+
 #./abninjam-source.sh <tag>
 #./abninjam-source.sh v0.0.8
 

@@ -5,6 +5,9 @@ Summary: A realtime network sound client
 License: GPLv2+
 URL:     http://www.cockos.com/ninjam/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: http://www.cockos.com/ninjam/downloads/src/cclient_src_v0.01a.tar.gz
 
 BuildRequires: gcc gcc-c++

@@ -7,13 +7,13 @@ Name:    midizap
 Version: 1.0.0.%{shortcommit0}
 Release: 1%{?dist}
 Summary: Control your multimedia applications with MIDI
-
-Group:   Applications/Multimedia
 License: GPLv2+
 URL:     https://github.com/agraef/midizap
-Source0: https://github.com/agraef/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Vendor:       Audinux
+Distribution: Audinux
+
+Source0: https://github.com/agraef/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: jack-audio-connection-kit-devel alsa-lib-devel
@@ -25,14 +25,13 @@ midizap lets you control your multimedia applications using MIDI, the venerable 
 
 %package emacs
 Summary: Midizap support for Emacs
-Group: Applications/Multimedia
 Requires: midizap = %{version}-%{release}
 
 %description emacs
 Midizap support for the Emacs text editor.
 
 %prep
-%setup -qn %{name}-%{commit0}
+%autosetup -n %{name}-%{commit0}
 
 sed -i -e "s/prefix=\/usr\/local/prefix=\/usr/g" Makefile
 sed -i -e "/CFLAGS=/d" Makefile
@@ -43,13 +42,8 @@ sed -i -e "/CFLAGS=/d" Makefile
 
 %install
 
-%{__rm} -rf %{buildroot}
-
-%{__make} DESTDIR=%{buildroot} install
-
-%clean
-
-%{__rm} -rf %{buildroot}
+rm -rf %{buildroot}
+make DESTDIR=%{buildroot} install
 
 %files
 %defattr(-,root,root,-)

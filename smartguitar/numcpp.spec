@@ -5,6 +5,9 @@ Release: 1%{?dist}
 License: MIT
 URL:     https://github.com/dpilger26/NumCpp
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/dpilger26/NumCpp/archive/refs/tags/Version_%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: cmake

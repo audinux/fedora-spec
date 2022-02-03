@@ -10,6 +10,9 @@ Summary: Guitar plugin emulating real hardware with Neural Network
 License: GPLv2+
 URL:     https://github.com/GuitarML/SmartAmpPro
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./source-smartguitarpro.sh master
 
 Source0: SmartAmpPro.tar.gz

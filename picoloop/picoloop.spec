@@ -10,15 +10,15 @@ Name:    picoloop
 Version: 0.77e.%{shortcommit0}
 Release: 3%{?dist}
 Summary: An audio sequencer
-
-Group:   Applications/Multimedia
 License: GPLv2+
 URL:     https://github.com/yoyz/audio
+
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/yoyz/audio/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1: picoloop-SYSTEMLINUX.cpp
 Source2: https://github.com/farvardin/picoloop-manual/files/500912/picoloop_manual_pc.pdf
-
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires: gcc gcc-c++
 BuildRequires: alsa-lib-devel
@@ -39,7 +39,7 @@ All parameters are set step-wise, so you can make huge variation of sound on the
 There are four channels, playing simultaneously.
 
 %prep
-%setup -qn %{name}-%{commit0}
+%autosetup -n %{name}-%{commit0}
 
 sed -i -e "s/\"font.ttf\"/\"\/usr\/share\/picoloop\/font\/font.ttf\"/g" picoloop/SDL_GUI.cpp
 sed -i -e "s/\"font.bmp\"/\"\/usr\/share\/picoloop\/bmp\/font.bmp\"/g" picoloop/SDL_GUI.cpp
@@ -150,95 +150,81 @@ Type=Application
 Categories=Audio;
 EOF
 
-%__install -m 755 -d %{buildroot}/%{_bindir}/
-%__install -m 755 picoloop/picoloop-pulse %{buildroot}%{_bindir}/
-%__install -m 755 picoloop/picoloop-alsa  %{buildroot}%{_bindir}/
-%__install -m 755 picoloop/picoloop-jack  %{buildroot}%{_bindir}/
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 picoloop/picoloop-pulse %{buildroot}%{_bindir}/
+install -m 755 picoloop/picoloop-alsa  %{buildroot}%{_bindir}/
+install -m 755 picoloop/picoloop-jack  %{buildroot}%{_bindir}/
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/
-%__install -m 644 picoloop/patch/MDADrum/create_patchlist.sh %{buildroot}%{_datadir}/%{name}/patch/MDADrum/
-%__install -m 644 picoloop/patch/MDADrum/patchlist.cfg %{buildroot}%{_datadir}/%{name}/patch/MDADrum/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/
+install -m 644 picoloop/patch/MDADrum/create_patchlist.sh %{buildroot}%{_datadir}/%{name}/patch/MDADrum/
+install -m 644 picoloop/patch/MDADrum/patchlist.cfg %{buildroot}%{_datadir}/%{name}/patch/MDADrum/
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc_claps/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc_synth/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc_electro/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc_fx/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc_bass/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc_perc/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc_hats/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/Acoustic/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/Electro/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/Latin/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/tr808/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/cr78/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/Farfisa/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/Linn/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/tr909/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/cr8000/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/Ferraro/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/magnetboy/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/R_B/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/instrmnt/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/tr606/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/Effects/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/JergenSohn/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/tr77/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc_claps/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc_synth/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc_electro/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc_fx/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc_bass/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc_perc/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/misc_hats/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/Acoustic/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/Electro/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/Latin/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/tr808/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/cr78/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/Farfisa/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/Linn/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/tr909/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/cr8000/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/Ferraro/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/magnetboy/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/R_B/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/instrmnt/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/tr606/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/Effects/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/JergenSohn/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/patch/MDADrum/tr77/
 
-%__install -m 644 picoloop/patch/MDADrum/Acoustic/*     %{buildroot}%{_datadir}/%{name}/patch/MDADrum/Acoustic/
-%__install -m 644 picoloop/patch/MDADrum/Electro/*      %{buildroot}%{_datadir}/%{name}/patch/MDADrum/Electro/
-%__install -m 644 picoloop/patch/MDADrum/Latin/*        %{buildroot}%{_datadir}/%{name}/patch/MDADrum/Latin/
-%__install -m 644 picoloop/patch/MDADrum/misc_claps/*   %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc_claps/
-%__install -m 644 picoloop/patch/MDADrum/misc_synth/*   %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc_synth/
-%__install -m 644 picoloop/patch/MDADrum/tr808/*        %{buildroot}%{_datadir}/%{name}/patch/MDADrum/tr808/
-%__install -m 644 picoloop/patch/MDADrum/cr78/*         %{buildroot}%{_datadir}/%{name}/patch/MDADrum/cr78/
-%__install -m 644 picoloop/patch/MDADrum/Farfisa/*      %{buildroot}%{_datadir}/%{name}/patch/MDADrum/Farfisa/
-%__install -m 644 picoloop/patch/MDADrum/Linn/*         %{buildroot}%{_datadir}/%{name}/patch/MDADrum/Linn/
-%__install -m 644 picoloop/patch/MDADrum/misc_electro/* %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc_electro/
-%__install -m 644 picoloop/patch/MDADrum/tr909/*        %{buildroot}%{_datadir}/%{name}/patch/MDADrum/tr909/
-%__install -m 644 picoloop/patch/MDADrum/cr8000/*       %{buildroot}%{_datadir}/%{name}/patch/MDADrum/cr8000/
-%__install -m 644 picoloop/patch/MDADrum/Ferraro/*      %{buildroot}%{_datadir}/%{name}/patch/MDADrum/Ferraro/
-%__install -m 644 picoloop/patch/MDADrum/magnetboy/*    %{buildroot}%{_datadir}/%{name}/patch/MDADrum/magnetboy/
-%__install -m 644 picoloop/patch/MDADrum/misc_fx/*      %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc_fx/
-%__install -m 644 picoloop/patch/MDADrum/R_B/*          %{buildroot}%{_datadir}/%{name}/patch/MDADrum/R_B/
-%__install -m 644 picoloop/patch/MDADrum/instrmnt/*     %{buildroot}%{_datadir}/%{name}/patch/MDADrum/instrmnt/
-%__install -m 644 picoloop/patch/MDADrum/misc/*         %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc/
-%__install -m 644 picoloop/patch/MDADrum/misc_hats/*    %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc_hats/
-%__install -m 644 picoloop/patch/MDADrum/tr606/*        %{buildroot}%{_datadir}/%{name}/patch/MDADrum/tr606/
-%__install -m 644 picoloop/patch/MDADrum/Effects/*      %{buildroot}%{_datadir}/%{name}/patch/MDADrum/Effects/
-%__install -m 644 picoloop/patch/MDADrum/JergenSohn/*   %{buildroot}%{_datadir}/%{name}/patch/MDADrum/JergenSohn/
-%__install -m 644 picoloop/patch/MDADrum/misc_bass/*    %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc_bass/
-%__install -m 644 picoloop/patch/MDADrum/misc_perc/*    %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc_perc/
-%__install -m 644 picoloop/patch/MDADrum/tr77/*         %{buildroot}%{_datadir}/%{name}/patch/MDADrum/tr77/
+install -m 644 picoloop/patch/MDADrum/Acoustic/*     %{buildroot}%{_datadir}/%{name}/patch/MDADrum/Acoustic/
+install -m 644 picoloop/patch/MDADrum/Electro/*      %{buildroot}%{_datadir}/%{name}/patch/MDADrum/Electro/
+install -m 644 picoloop/patch/MDADrum/Latin/*        %{buildroot}%{_datadir}/%{name}/patch/MDADrum/Latin/
+install -m 644 picoloop/patch/MDADrum/misc_claps/*   %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc_claps/
+install -m 644 picoloop/patch/MDADrum/misc_synth/*   %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc_synth/
+install -m 644 picoloop/patch/MDADrum/tr808/*        %{buildroot}%{_datadir}/%{name}/patch/MDADrum/tr808/
+install -m 644 picoloop/patch/MDADrum/cr78/*         %{buildroot}%{_datadir}/%{name}/patch/MDADrum/cr78/
+install -m 644 picoloop/patch/MDADrum/Farfisa/*      %{buildroot}%{_datadir}/%{name}/patch/MDADrum/Farfisa/
+install -m 644 picoloop/patch/MDADrum/Linn/*         %{buildroot}%{_datadir}/%{name}/patch/MDADrum/Linn/
+install -m 644 picoloop/patch/MDADrum/misc_electro/* %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc_electro/
+install -m 644 picoloop/patch/MDADrum/tr909/*        %{buildroot}%{_datadir}/%{name}/patch/MDADrum/tr909/
+install -m 644 picoloop/patch/MDADrum/cr8000/*       %{buildroot}%{_datadir}/%{name}/patch/MDADrum/cr8000/
+install -m 644 picoloop/patch/MDADrum/Ferraro/*      %{buildroot}%{_datadir}/%{name}/patch/MDADrum/Ferraro/
+install -m 644 picoloop/patch/MDADrum/magnetboy/*    %{buildroot}%{_datadir}/%{name}/patch/MDADrum/magnetboy/
+install -m 644 picoloop/patch/MDADrum/misc_fx/*      %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc_fx/
+install -m 644 picoloop/patch/MDADrum/R_B/*          %{buildroot}%{_datadir}/%{name}/patch/MDADrum/R_B/
+install -m 644 picoloop/patch/MDADrum/instrmnt/*     %{buildroot}%{_datadir}/%{name}/patch/MDADrum/instrmnt/
+install -m 644 picoloop/patch/MDADrum/misc/*         %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc/
+install -m 644 picoloop/patch/MDADrum/misc_hats/*    %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc_hats/
+install -m 644 picoloop/patch/MDADrum/tr606/*        %{buildroot}%{_datadir}/%{name}/patch/MDADrum/tr606/
+install -m 644 picoloop/patch/MDADrum/Effects/*      %{buildroot}%{_datadir}/%{name}/patch/MDADrum/Effects/
+install -m 644 picoloop/patch/MDADrum/JergenSohn/*   %{buildroot}%{_datadir}/%{name}/patch/MDADrum/JergenSohn/
+install -m 644 picoloop/patch/MDADrum/misc_bass/*    %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc_bass/
+install -m 644 picoloop/patch/MDADrum/misc_perc/*    %{buildroot}%{_datadir}/%{name}/patch/MDADrum/misc_perc/
+install -m 644 picoloop/patch/MDADrum/tr77/*         %{buildroot}%{_datadir}/%{name}/patch/MDADrum/tr77/
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/documentation/filter/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/documentation/gp2x/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/documentation/filter/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/documentation/gp2x/
 
-%__install -m 644 picoloop/documentation/filter/* %{buildroot}%{_datadir}/%{name}/documentation/filter/
-%__install -m 644 picoloop/documentation/gp2x/*   %{buildroot}%{_datadir}/%{name}/documentation/gp2x/
-%__install -m 644 %{SOURCE2}                      %{buildroot}%{_datadir}/%{name}/documentation/
+install -m 644 picoloop/documentation/filter/* %{buildroot}%{_datadir}/%{name}/documentation/filter/
+install -m 644 picoloop/documentation/gp2x/*   %{buildroot}%{_datadir}/%{name}/documentation/gp2x/
+install -m 644 %{SOURCE2}                      %{buildroot}%{_datadir}/%{name}/documentation/
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/font/
-%__install -m 644 picoloop/font.ttf %{buildroot}%{_datadir}/%{name}/font/
-%__install -m 755 -d %{buildroot}/%{_datadir}/%{name}/bmp/
-%__install -m 644 picoloop/font.bmp %{buildroot}%{_datadir}/%{name}/bmp/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/font/
+install -m 644 picoloop/font.ttf %{buildroot}%{_datadir}/%{name}/font/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/bmp/
+install -m 644 picoloop/font.bmp %{buildroot}%{_datadir}/%{name}/bmp/
 
-%__install -m 755 -d %{buildroot}/%{_datadir}/icons/
-%__install -m 644 picoloop/picoloop-logo.png %{buildroot}%{_datadir}/icons/picoloop.png
-
-%post 
-update-desktop-database -q
-touch --no-create %{_datadir}/icons/%{name} >&/dev/null || :
-
-%postun
-update-desktop-database -q
-if [ $1 -eq 0 ]; then
-  touch --no-create %{_datadir}/icons/%{name} >&/dev/null || :
-  gtk-update-icon-cache %{_datadir}/icons/%{name} >&/dev/null || :
-fi
-
-%posttrans 
-/usr/bin/gtk-update-icon-cache %{_datadir}/icons/%{name} &>/dev/null || :
+install -m 755 -d %{buildroot}/%{_datadir}/icons/
+install -m 644 picoloop/picoloop-logo.png %{buildroot}%{_datadir}/icons/picoloop.png
 
 %files
 %{_bindir}/*

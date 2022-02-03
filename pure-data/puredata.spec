@@ -11,6 +11,10 @@ Version: %{pkgver}
 Release: 2%{?dist}
 License: BSD
 URL:     https://puredata.info/
+
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: http://msp.ucsd.edu/Software/pd-%{pdver}.src.tar.gz
 
 # additional files for the gui package

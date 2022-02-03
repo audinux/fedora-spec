@@ -5,6 +5,9 @@ Summary: A simple, modern audio sample browser/manager
 License: GPLv2+
 URL:     https://gitlab.com/samplehive/sample-hive
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://gitlab.com/samplehive/sample-hive/-/archive/v%{version}-alpha.1/sample-hive-v%{version}-alpha.1.tar.gz
 
 BuildRequires: gcc gcc-c++

@@ -7,6 +7,9 @@ Summary: GUI toolkit for LV2 plugins
 License: GPLv2+
 URL:     https://git.zrythm.org/cgit/ztoolkit
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://git.zrythm.org/cgit/ztoolkit/snapshot/ztoolkit-0.1.1.tar.gz
 
 BuildRequires: gcc gcc-c++

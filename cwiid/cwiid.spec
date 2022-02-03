@@ -12,6 +12,9 @@ Summary: Wiimote interface library
 License: GPLv2+
 URL: https://github.com/abstrakraft/cwiid
 
+Vendor:       Audinux
+Distribution: Audinux
+
 %{!?_pkgdocdir: %global _pkgdocdir %{_docdir}/%{name}-%{version}}
 
 # source URL : https://github.com/abstrakraft/cwiid/tarball/%%{git_commit} 

@@ -8,6 +8,9 @@ Release: 6%{?dist}
 License: GPLv2+ and GPLv3 and Green OpenMusic
 URL:     http://www.hydrogen-music.org
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0:  https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/ForzeeStereo.h2drumkit
 Source1:  https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/BJA_Pacific.h2drumkit
 Source2:  https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/DeathMetal.h2drumkit

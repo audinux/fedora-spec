@@ -5,6 +5,9 @@ Release: 1%{?dist}
 License: LGPL-2.1
 URL:     https://github.com/babelouest/%{name}
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: %{url}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc

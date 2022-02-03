@@ -6,6 +6,9 @@ Summary: r128gain is a multi platform command line tool to scan your audio files
 License: GPLv2+
 URL:     https://github.com/desbma/r128gain.git
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/desbma/r128gain/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildArch: noarch

@@ -14,6 +14,9 @@ Release: 4%{?dist}
 License: GPL
 URL:     https://github.com/ycollet/psi-plugins
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/ycollet/psi-plugins/archive/%{commit0}.tar.gz#/psi-plugins-%{shortcommit0}.tar.gz
 Patch0:  psi-plugins-lv2ui-descriptor.patch
 

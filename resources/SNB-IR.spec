@@ -3,12 +3,12 @@ Name:    SNB-IR
 Version: 1.0.0
 Release: 2%{?dist}
 License: GPLv2+ and GPLv3
-Group:   Applications/Multimedia
 URL:     http://www.grgr.de/IR/
 
-Source0: IR.zip
+Vendor:       Audinux
+Distribution: Audinux
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Source0: IR.zip
 
 BuildArch: noarch
 
@@ -30,10 +30,6 @@ install -dm 0755 $RPM_BUILD_ROOT%{_datadir}/IR/SNB
 
 cd $RPM_BUILD_ROOT%{_datadir}/IR/SNB
 unzip %{SOURCE0}
-
-%clean
-
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %{_datadir}/IR/SNB/

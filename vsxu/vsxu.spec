@@ -20,8 +20,10 @@ Version:        0.6.3
 Release:        2%{?dist}
 Summary:        Visual programming language animation tool
 License:        GPL-3.0 and LGPL-3.0
-Group:          Productivity/Multimedia/Sound/Visualization
 Url:            http://www.vsxu.com/
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # git clone https://github.com/vovoid/vsxu
 # cd vsxu
@@ -64,7 +66,6 @@ in real-time.
 
 %package	devel
 Summary:        Development files for vsxu
-Group:          Development/Libraries/C and C++
 Requires:       %{name}-libs = %{version}
 
 %description	devel
@@ -72,14 +73,12 @@ Those development headers are required if you plan on coding against VSXu.
 
 %package	libs
 Summary:        Visual programming language animation library
-Group:          System/Libraries
 
 %description	libs
 Shared VSXu libraries. To be installed by system dependencies.
 
 %package	data
 Summary:        VSXu artwork and other data
-Group:          Productivity/Multimedia/Sound/Visualization
 BuildArch:      noarch
 
 %description	data
@@ -88,7 +87,6 @@ VSXu components.
 
 %package	artiste
 Summary:        VSXu graphic effects creator
-Group:          Productivity/Multimedia/Sound/Visualization
 Requires:       %{name}-data = %{version}
 Requires:       %{name}-libs = %{version}
 
@@ -97,7 +95,6 @@ VSXu VPL environment used to create visuals.
 
 %package	player
 Summary:        VSXu graphic effects player
-Group:          Productivity/Multimedia/Sound/Visualization
 Requires:       %{name}-data = %{version}
 Requires:       %{name}-libs = %{version}
 
@@ -106,7 +103,6 @@ VSXu player used to load and run the visuals created in VSXu artiste.
 
 %package	server
 Summary:        VSXu remote viewer
-Group:          Productivity/Multimedia/Sound/Visualization
 Requires:       %{name}-data = %{version}
 Requires:       %{name}-libs = %{version}
 
@@ -115,14 +111,13 @@ The server is used as a remote screen to VSXu artiste. Mainly intended for live 
 
 %package	tools
 Summary:        VSXu support tools
-Group:          Productivity/Multimedia/Sound/Visualization
 Requires:       %{name}-libs = %{version}
 
 %description	tools
 This package contains a few support tools for VSXu.
 
 %prep
-%setup -q
+%autosetup
 
 mkdir build
 sed -e 's/\${CMAKE_INSTALL_PREFIX}\/share\/pixmaps/\${CMAKE_INSTALL_PREFIX}\/share\/icons/' \
@@ -205,10 +200,6 @@ desktop-file-install --vendor '' \
 # this is apparently superfluous
 rm %{buildroot}/%{_bindir}/vsxu_launcher
 %fdupes %{buildroot}%{_datadir}/%{name}
-
-%post libs -p /sbin/ldconfig
-
-%postun libs -p /sbin/ldconfig
 
 %files devel
 %defattr(-,root,root)

@@ -11,6 +11,9 @@ Summary: A LV2 / VST3 / standalone wavetable synth
 License: GPLv2+
 URL:     https://vital.audio
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/mtytel/vital/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip

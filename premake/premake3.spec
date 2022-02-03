@@ -5,6 +5,9 @@ Release: 2%{?dist}
 License: GPLv3+
 URL:     http://sourceforge.net/projects/premake/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: http://downloads.sourceforge.net/premake/premake-src-3.7.zip
 
 BuildRequires: gcc gcc-c++

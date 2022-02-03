@@ -10,6 +10,9 @@ Release: 2%{?dist}
 License: GPL
 URL:     https://github.com/clearly-broken-software/ninjas2
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # git clone https://github.com/clearly-broken-software/ninjas2
 # cd ninjas2
 # git checkout v0.2.0

@@ -9,6 +9,9 @@ Release: 4%{?dist}
 License: GPL
 URL:     http://xjadeo.sourceforge.net/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/x42/xjadeo/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: xjadeo.desktop
 

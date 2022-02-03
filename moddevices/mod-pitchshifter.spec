@@ -10,6 +10,9 @@ Summary: mod-pitchshifter LV2 set of plugins from portalmod
 License: GPLv2+
 URL:     https://github.com/portalmod/mod-pitchshifter
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/portalmod/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++

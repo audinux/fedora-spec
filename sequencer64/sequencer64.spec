@@ -5,6 +5,9 @@ Summary: MIDI sequencer
 License: GPL
 URL:     https://github.com/ahlstromcj/sequencer64
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/ahlstromcj/sequencer64/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: https://github.com/ahlstromcj/sequencer64-doc/archive/0.95.2.tar.gz#/%{name}-doc-0.95.2.tar.gz
 

@@ -14,6 +14,9 @@ Release: 4%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BHarvestr
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/sjaehn/BHarvestr/archive/%{commit0}.tar.gz#/BHarvestr-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++

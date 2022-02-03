@@ -38,6 +38,9 @@ Summary: Interactive multimedia programming environment (nw.js variant)
 URL:     https://agraef.github.io/purr-data/
 License: GPL
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./purr-data-source.sh <tag>
 # ./purr-data-source.sh 2.17.0
 

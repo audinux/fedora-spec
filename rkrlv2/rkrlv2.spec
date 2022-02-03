@@ -10,6 +10,9 @@ Summary: Rakarrack LV2 plugins
 URL:     https://github.com/ssj71/rkrlv2
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # original tarfile can be found here:
 Source0: https://github.com/ssj71/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Patch0:  rkrlv2-0001-custom-install-path.patch

@@ -5,6 +5,9 @@ Release: 1%{?dist}
 License: MIT
 URL:     https://github.com/SpartanJ/efsw
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/SpartanJ/efsw/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc

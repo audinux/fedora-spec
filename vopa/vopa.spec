@@ -10,6 +10,9 @@ Summary: A LV2 amplifier controlled via MIDI messages
 URL:     https://github.com/ycollet/vopa
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/ycollet/vopa/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++

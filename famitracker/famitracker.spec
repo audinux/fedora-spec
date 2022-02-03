@@ -9,6 +9,9 @@ Summary: FamiTracker is a tracker for producing music for the NES/Famicom-system
 URL:     https://github.com/Prichman/famitracker-qt
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/Prichman/famitracker-qt/archive/refs/heads/master.zip#/%{name}-%{version}.zip
 
 BuildRequires: gcc gcc-c++

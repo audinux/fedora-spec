@@ -5,6 +5,9 @@ Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/MtnViewJohn/context-free
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/MtnViewJohn/context-free/archive/Version%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0:  context-free-01_enable_ffmpeg.patch
 

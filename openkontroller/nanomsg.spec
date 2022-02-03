@@ -25,7 +25,7 @@ Requires: %{name} = %{version}-%{release}
 The %{name}-devel package contains header files for %{name}.
 
 %prep
-%setup -qn %{name}-%{version}
+%autosetup -n %{name}-%{version}
 
 %build
 

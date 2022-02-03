@@ -7,11 +7,12 @@ Name:    aliki
 Version: 0.3.0
 Release: 1%{?dist}
 License: GPL
-Group:   Applications/Multimedia
 URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
-Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Vendor:       Audinux
+Distribution: Audinux
+
+Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cairo-devel
@@ -27,7 +28,7 @@ BuildRequires: zita-alsa-pcmi-devel
 Measure Impulse Responses using a sine sweep and deconvolution
 
 %prep
-%setup -q
+%autosetup
 
 # Force Fedora's optflags
 sed -i 's|-O2|%{optflags}|' source/Makefile
@@ -46,9 +47,6 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/doc/
 pushd source
 make PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT install
 popd
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)

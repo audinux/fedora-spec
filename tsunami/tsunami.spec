@@ -14,6 +14,9 @@ Summary: A simple but powerful audio editor
 URL:     https://github.com/momentarylapse/tsunami
 License: GPLv3
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/momentarylapse/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++

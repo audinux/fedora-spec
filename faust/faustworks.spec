@@ -15,6 +15,9 @@ Summary: A Faust IDE
 URL:     https://github.com/grame-cncm/faustworks
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/grame-cncm/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++ sed

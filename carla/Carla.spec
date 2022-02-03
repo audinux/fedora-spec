@@ -15,6 +15,11 @@ Version:        2.1
 #Release:        0.11.%%{commitdate}git%%{shortcommit0}%%{?dist}
 Release:        5.rc1%{?shortcommit0}%{?dist}
 Summary:        Audio plugin host
+License:        GPLv2+ and BSD and Boost and ISC and MIT and zlib
+URL:            https://github.com/falkTX/Carla
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # The entire source code is GPLv2+ except
 # - BSD
@@ -58,8 +63,6 @@ Summary:        Audio plugin host
 # source/modules/dgl/src/nanovg/nanovg_gl.h
 # source/modules/dgl/src/nanovg/nanovg_gl_utils.h
 
-License:        GPLv2+ and BSD and Boost and ISC and MIT and zlib
-URL:            https://github.com/falkTX/Carla
 Source0:        https://github.com/falkTX/%{name}/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
 Patch0:         %{name}-gcc10-include.patch
 

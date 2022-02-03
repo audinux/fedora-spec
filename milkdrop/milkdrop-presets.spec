@@ -5,6 +5,9 @@ Release: 3%{?dist}
 License: GPLv2+ and GPLv3 and Green OpenMusic
 URL:     http://projectm.sourceforge.net
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://sourceforge.net/projects/projectm/files/presets-samples/presets-2.0.0-Source.tar.gz
 Source1: https://sourceforge.net/projects/projectm/files/presets-samples/presets-projectm-2.0.0-Source.tar.gz
 Source2: https://sourceforge.net/projects/projectm/files/presets-samples/presets-milkdrop_200-2.0.0-Source.tar.gz
@@ -24,42 +27,36 @@ A collection of additional preset for projectM.
 
 %package md
 Summary: Extra presets for projectM (md presets)
-Group:   Applications/Multimedia
 
 %description md
 Extra presets for projectM (md presets)
 
 %package megapack
 Summary: Extra presets for projectM (megapack presets)
-Group:   Applications/Multimedia
 
 %description megapack
 Extra presets for projectM (megapack presets)
 
 %package bltc201
 Summary: Extra presets for projectM (bltc201 presets)
-Group:   Applications/Multimedia
 
 %description bltc201
 Extra presets for projectM (bltc201 presets)
 
 %package tryptonaut
 Summary: Extra presets for projectM (tryptonaut presets)
-Group:   Applications/Multimedia
 
 %description tryptonaut
 Extra presets for projectM (tryptonaut presets)
 
 %package yin
 Summary: Extra presets for projectM (yin presets)
-Group:   Applications/Multimedia
 
 %description yin
 Extra presets for projectM (yin presets)
 
 %package creamofthecrop
 Summary: Extra presets for projectM (Cream Of The Crop presets)
-Group:   Applications/Multimedia
 
 %description creamofthecrop
 Extra presets for projectM (yin presets)

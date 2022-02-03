@@ -3,19 +3,21 @@
 # Category: Audio, Synthesizer
 
 Name:    obxd
-Version: 2.4
+Version: 2.6
 Release: 2%{?dist}
 Summary: A VST3 Synthesizer
 License: GPLv3
 URL:     https://github.com/reales/OB-Xd
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/reales/OB-Xd/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Source1: obxd-makefiles.tar.gz
-# Source2: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
-Source2: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
+# Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
+Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
 # ./vst3-source.sh master
-Source3: vst3sdk.tar.gz
-Source4: vst3-source.sh
+Source2: vst3sdk.tar.gz
+Source3: vst3-source.sh
 Patch0:  obxd_file_install_resources.patch
 
 BuildRequires: gcc gcc-c++
@@ -90,6 +92,9 @@ chmod a+x %{buildroot}/%{_libdir}/vst3/OB-Xd.vst3/Contents/x86_64-linux/OB-Xd.so
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Jan 09 2022 Yann Collette <ycollette.nospam@free.fr> - 2.6-2
+- update to 2.6-2
+
 * Fri Oct 01 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4-2
 - Fix for Fedora 35
 

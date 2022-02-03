@@ -15,6 +15,9 @@ Summary: A lv2 plug-in for broadband noise reduction.
 License: GPLv2+
 URL:     https://github.com/lucianodato/noise-repellent	
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/lucianodato/noise-repellent/archive/%{commit0}.tar.gz#/noise-repellent-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++

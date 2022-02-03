@@ -5,11 +5,14 @@ Version: 1.0.0
 Release: 1%{?dist}
 Summary: A VST3 Synthesizer
 License: GPLv2+
+URL:     https://github.com/surge-synthesizer/surge
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # To get the sources, use:
 # $ ./source-surge.sh release_xt_1.0.0
 
-URL:     https://github.com/surge-synthesizer/surge
 Source0: surge.tar.gz
 Source1: source-surge.sh
 

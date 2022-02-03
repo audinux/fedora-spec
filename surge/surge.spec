@@ -3,11 +3,14 @@ Version: 1.9.0
 Release: 8%{?dist}
 Summary: A VST3 / LV2 Synthesizer
 License: GPLv2+
+URL:     https://github.com/surge-synthesizer/surge
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # To get the sources, use:
 # $ ./source-surge.sh 1.9.0
 
-URL:     https://github.com/surge-synthesizer/surge
 Source0: surge.tar.gz
 Source1: source-surge.sh
 

@@ -2,9 +2,11 @@ Name:    structure-synth
 Version: 1.5.0
 Release: 2%{?dist}
 Summary: Structure Synth generates 3D structures by specifying a design grammar
-
 License: GPLv2
 URL:     https://sourceforge.net/projects/structuresynth/
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # svn checkout https://svn.code.sf.net/p/structuresynth/code/trunk structuresynth
 # cd structuresythn
@@ -33,13 +35,7 @@ Even simple systems may generate surprising and complex structures.
 Structure Synth offers a graphical environment with multiple tabs, syntax highlighting, and OpenGL preview.
 
 %prep
-%setup -qn structuresynth
-
-%patch0 -p0
-%patch1 -p0
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
+%autosetup -p1 -n structuresynth
 
 %build
 

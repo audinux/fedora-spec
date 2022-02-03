@@ -5,6 +5,9 @@ Summary: openFrameworks library / code
 URL:     https://github.com/openframeworks/openFrameworks
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # to get the sources:
 # ./source_openframeworks.sh 0.11.2
 # ./source_openframeworks.sh patch-release

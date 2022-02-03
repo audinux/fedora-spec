@@ -9,6 +9,9 @@ Summary: A csound file editor
 URL:     https://github.com/CsoundQt/CsoundQt
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/CsoundQt/CsoundQt/archive/v%{version}.tar.gz#/CsoundQt-%{version}.tar.gz
 Source1: qutecsound.desktop
 Source2: qutecsound.xml

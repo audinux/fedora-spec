@@ -5,6 +5,9 @@ Release: 1%{?dist}
 License: GPLv3+
 URL:     https://github/premake/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/premake/premake-core/archive/v5.0.0-alpha15.tar.gz#/premake5-5.0.0-alpha15.tar.gz
 
 BuildRequires: gcc gcc-c++

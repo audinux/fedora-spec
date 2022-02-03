@@ -10,6 +10,9 @@ Summary: A classic analog phaser effect
 URL:     https://github.com/jpcima/stone-phaser
 License: BSL-1.0
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./stone-phaser-source.sh <tag>
 # ./stone-phaser-source.sh v0.1.2
 

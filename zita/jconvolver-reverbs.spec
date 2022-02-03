@@ -7,14 +7,13 @@ Name:    jconvolver-reverbs
 Version: 0.8.7
 Release: 1%{?dist}
 License: Unknown
-Group:   Applications/Multimedia
 URL:     http://kokkinizita.linuxaudio.org/
-Source:  http://kokkinizita.linuxaudio.org/linuxaudio/downloads/jconvolver-reverbs.tar.bz2
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Source:  http://kokkinizita.linuxaudio.org/linuxaudio/downloads/jconvolver-reverbs.tar.bz2
 
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
+
 BuildArch:    noarch
 
 Requires: jconvolver
@@ -24,15 +23,12 @@ Inpulse responses for jconvolver, they match the configuration files
 distributed with jconvolver. 
 
 %prep
-%setup -q -n reverbs
+%autosetup -n reverbs
 
 %install
-%{__rm} -rf %{buildroot}
-%{__mkdir} -p %{buildroot}%{_datadir}/jconvolver/reverbs
-%{__cp} -pr * %{buildroot}%{_datadir}/jconvolver/reverbs
-
-%clean
-%{__rm} -rf %{buildroot}
+rm -rf %{buildroot}
+mkdir -p %{buildroot}%{_datadir}/jconvolver/reverbs
+cp -pr * %{buildroot}%{_datadir}/jconvolver/reverbs
 
 %files
 %defattr(-,root,root,-)

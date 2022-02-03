@@ -10,6 +10,9 @@ Release: 2%{?dist}
 License: GPL
 URL:     https://minicomputer.sourceforge.net/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://sourceforge.net/projects/minicomputer/files/minicomputer/version%20%{version}/MinicomputerV%{version}.tar.gz
 Source1: minicomputer-SConstruct
 Source2: https://github.com/jeremysalwen/Minicomputer-LV2/archive/master.zip#/minicomputer-lv2.zip

@@ -5,6 +5,9 @@ Summary: MIDI sequencer
 License: GPL
 URL:     https://github.com/Stazed/seq42
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/Stazed/seq42/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++ make

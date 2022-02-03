@@ -3,11 +3,14 @@ Version: 30072020
 Release: 1%{?dist}
 Summary: A JUCE-based midi monitor
 License: GPLv2+
+URL:     https://github.com/surge-synthesizer/midi-monitor
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # To get the sources, use:
 # $ ./source-midi-monitor.sh main
 
-URL:     https://github.com/surge-synthesizer/midi-monitor
 Source0: midi-monitor.tar.gz
 Source1: source-midi-monitor.sh
 

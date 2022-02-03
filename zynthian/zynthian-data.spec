@@ -33,7 +33,6 @@ A set of LV2 presets for various plugins:
 
 %package distrho
 Summary:  Presets for DISTRHO plugins
-Group:    Applications/Multimedia
 Requires: DISTRHO-Ports
 
 %description distrho
@@ -41,7 +40,6 @@ Presets for DISTRHO plugins
 
 %package synthv1
 Summary:  Presets for synthv1 plugin
-Group:    Applications/Multimedia
 Requires: lv2-synthv1
 
 %description synthv1
@@ -49,7 +47,6 @@ Presets for synthv1 LV2 plugin
 
 %package padthv1
 Summary:  Presets for padthv1 plugin
-Group:    Applications/Multimedia
 Requires: lv2-padthv1
 
 %description padthv1
@@ -57,7 +54,6 @@ Presets for padthv1 LV2 plugin
 
 %package surge
 Summary:  Presets for Surge plugin
-Group:    Applications/Multimedia
 Requires: lv2-surge
 
 %description surge
@@ -65,7 +61,6 @@ Presets for Surge LV2 plugin
 
 %package vitalium
 Summary:  Presets for Vitalium plugin
-Group:    Applications/Multimedia
 Requires: DISTRHO-Ports
 
 %description vitalium
@@ -73,7 +68,6 @@ Presets for Vitalium LV2 plugin
 
 %package wolpertinger
 Summary:  Presets for Wolpertinger plugin
-Group:    Applications/Multimedia
 Requires: DISTRHO-Ports
 
 %description wolpertinger
@@ -81,7 +75,6 @@ Presets for Wolpertinger LV2 plugin
 
 %package raffosynth
 Summary:  Presets for RaffoSynth plugin
-Group:    Applications/Multimedia
 Requires: lv2-raffosynth
 
 %description raffosynth

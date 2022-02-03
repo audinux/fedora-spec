@@ -5,6 +5,9 @@ Summary: A collection of audio DSP LV2 plugins
 License: GPLv2+
 URL:     https://github.com/zrythm/ZPlugins
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/zrythm/ZPlugins/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++

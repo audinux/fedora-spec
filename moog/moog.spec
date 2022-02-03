@@ -15,6 +15,9 @@ Summary: This is a digital emulator of a minimoog synthesizer, built as an LV2 a
 License: GPLv3+
 URL:     https://github.com/nicoroulet/moog
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/nicoroulet/moog/archive/%{commit0}.tar.gz#/moog-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++

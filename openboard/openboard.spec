@@ -10,8 +10,10 @@ Version: 1.6.1
 Release: 3%{?dist}
 Summary: Interactive whiteboard for schools and universities
 License: GPLv3+
-Group:   Education
 Url:     https://openboard.ch
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://github.com/OpenBoard-org/OpenBoard/archive/v%{version}/%{uname}-%{version}.tar.gz
 Source1: %{name}.desktop

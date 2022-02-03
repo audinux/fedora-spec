@@ -6,7 +6,6 @@ Name:    azr3-jack
 Version: 1.2.3
 Release: 2%{?dist}
 Summary: This JACK program is a port of the free VST plugin AZR-3
-Group:   Applications/Multimedia
 URL:     http://ll-plugins.nongnu.org/azr3/
 License: GPL
 

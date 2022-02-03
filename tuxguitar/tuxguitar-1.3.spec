@@ -10,19 +10,19 @@ Summary: A multitrack tablature editor and player written in Java-SWT
 Name:    tuxguitar3
 Version: 1.3.1
 Release: 1%{?dist}
+URL:     https://tuxguitar.sourceforge.com
+License: LGPLv2+
+
+Vendor:       Audinux
+Distribution: Audinux
 
 # The source for this package was pulled from upstream's vcs.  Use the
 # following commands to generate the tarball:
 #  svn export -r 1462 http://svn.code.sf.net/p/tuxguitar/code/trunk tuxguitar-1.3-1462
 #  tar -czvf tuxguitar-1.3-1462.tar.gz tuxguitar-1.3-1462
-URL:     https://tuxguitar.sourceforge.com
 Source0: tuxguitar-1.3-1462.tar.gz
 Source1: tuxguitar-1.3.sh
 Source2: tuxguitar3.desktop
-License: LGPLv2+
-Group:   Applications/Multimedia
-
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 Requires:      itext-core
 Requires:      java >= 1.7
@@ -49,7 +49,7 @@ hammer-on/pull-off effects, support for tuplets, time signature management,
 tempo management, gp3/gp4/gp5/gp6 import and export.
 
 %prep
-%setup -q -n tuxguitar-1.3-1462
+%autosetup -n tuxguitar-1.3-1462
 
 %build
 
@@ -170,25 +170,6 @@ cd ../..
 
 %check
 desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
-
-
-%post
-touch --no-create %{_datadir}/icons/hicolor &>/dev/null
-touch --no-create %{_datadir}/mime/packages &> /dev/null || :
-update-desktop-database &> /dev/null
-
-%postun
-if [ $1 -eq 0 ] ; then
-   touch --no-create     %{_datadir}/icons/hicolor &>/dev/null
-   gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null
-   update-mime-database  %{_datadir}/mime >& /dev/null ||:
-fi
-update-desktop-database &> /dev/null
-
-%posttrans
-gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
-update-mime-database %{?fedora:-n} %{_datadir}/mime &> /dev/null || :
-
 
 %files
 %{_libdir}/*

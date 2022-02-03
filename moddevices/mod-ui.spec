@@ -29,6 +29,9 @@ License: GPL-3.0
 Summary: Web-based interface for the MOD
 Url:     https://github.com/moddevices/mod-ui
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/moddevices/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc-c++

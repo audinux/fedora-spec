@@ -9,6 +9,9 @@ Summary: A cross-platform GUI toolkit in C++.
 URL:     https://gitlab.com/iurie-sw/redkite
 License: GPLv3
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://gitlab.com/iurie-sw/%{name}/-/archive/v%{version}/%{name}-v%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++

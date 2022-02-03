@@ -5,6 +5,9 @@ Summary: osmid is a tool to bridge MIDI and OSC
 URL:     https://github.com/llloret/osmid
 License: GPLv2+
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/llloret/osmid/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++

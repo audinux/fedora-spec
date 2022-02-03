@@ -10,6 +10,9 @@ Summary: Some audio plugins (LV2 and VST) from ruykau
 License: GPLv2+
 URL:     https://github.com/ryukau/LV2Plugins/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./ryukau-source.sh <tag>
 # ./ryukau-source.sh fae2ad4b8b8cb0f16256d797060e5559258897f6
 

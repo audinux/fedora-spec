@@ -5,6 +5,9 @@ Summary: A realtime network sound server
 License: GPLv2+
 URL:     http://www.cockos.com/ninjam/
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: http://www.cockos.com/ninjam/downloads/src/ninjam_server_0.06.tar.gz
 
 BuildRequires: gcc gcc-c++

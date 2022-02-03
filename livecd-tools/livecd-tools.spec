@@ -7,6 +7,9 @@ Release: 3%{?dist}
 License: GPLv2
 URL: https://github.com/livecd-tools/livecd-tools
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://releases.pagure.org/%{name}/%{name}-%{version}.tar.gz
 Patch1: 0001-switch-from-authconfig-to-authselect.patch
 

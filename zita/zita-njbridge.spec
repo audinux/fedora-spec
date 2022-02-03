@@ -7,7 +7,6 @@ Name:    zita-njbridge
 Version: 0.4.8
 Release: 1%{?dist}
 License: GPL
-Group:   Applications/Multimedia
 URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux

@@ -5,6 +5,9 @@ Release: 1%{?dist}
 License: LGPL
 URL:     https://github.com/ElvishArtisan/rivendell
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/ElvishArtisan/rivendell/archive/refs/tags/v%{version}.tar.gz#/rivendell-%{version}.tar.gz
 Patch0: rivendell-0001-use-nullptr.patch
 Patch1: rivendell-0001-use-nullptr-2.patch

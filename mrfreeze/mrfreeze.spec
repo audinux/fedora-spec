@@ -5,6 +5,9 @@ Summary: An audio freeze LV2 plugin
 License: GPLv2+
 URL:     https://github.com/romi1502/MrFreeze
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/romi1502/MrFreeze/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++

@@ -7,7 +7,6 @@ Name:    brutefir
 Version: 1.0o
 Release: 1%{?dist}
 License: GPL
-Group:   Applications/Multimedia
 URL:     https://torger.se/anders/brutefir.html
 Source0: https://torger.se/anders/files/brutefir-%{version}.tar.gz
 

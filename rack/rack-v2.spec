@@ -12,6 +12,9 @@ Summary: A modular Synthesizer
 License: GPLv2+
 URL:     https://github.com/VCVRack/Rack
 
+Vendor:       Audinux
+Distribution: Audinux
+
 # ./rack-source-v2.sh <tag>
 # ./rack-source-v2.sh v2.0.6
 
