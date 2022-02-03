@@ -72,11 +72,14 @@
 | imogen              | https://github.com/benthevining/imogen |
 | tap192              | https://github.com/PlagiatBros/tap192 |
 | genDrumKit          | https://github.com/peter-zenk/genDrumkit |
+| PlugData            | https://github.com/timothyschoen/PlugData |
 
 ## Cleanup
-Remove mv-6pm or 6pm. Both are normally the same package
+
+none
 
 ## Add source.sh file in spec file:
+
 Source1: source.sh
 
 ## Add check section:
