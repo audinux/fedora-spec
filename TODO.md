@@ -89,6 +89,10 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/*%{name}.*.xml
 ```
 
+polyphone
+faustworks
+vsxu
+
 ## Install appdata.xml files:
 
 ```
