@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 ee61c4728030a2471cf24797cda0945ba1a45ebb
-%global gittag0 2.0.0
+%global commit0 ed5c85b0d9391c37f4ec4d9de4ef8aa30d94bcd6
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-stocaudio
-Version: 2.0.0
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: stocaudio plugin for Rack
 License: GPLv2+
@@ -84,6 +84,8 @@ NEW_FLAGS="-I/usr/include/GLFW"
 NEW_FLAGS="$NEW_FLAGS -I/usr/include/rtaudio"
 %endif
 
+NEW_FLAGS="$NEW_FLAGS -fPIC"
+
 echo "CXXFLAGS += $NEW_FLAGS `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
 
 %if %{use_static_glfw}
@@ -132,6 +134,10 @@ tar xvfz %{SOURCE1} --directory=stocaudio_plugin --strip-components=1
 
 cp -n %{SOURCE2} stocaudio_plugin/plugin.json
 
+# Remove samplerate compilation
+sed -i -e "/DEPS/d" stocaudio_plugin/Makefile
+sed -i -e "/OBJECTS/d" stocaudio_plugin/Makefile
+
 %build
 
 cd stocaudio_plugin
@@ -146,5 +152,5 @@ cp -r stocaudio_plugin/dist/stocaudio/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile
