@@ -1,5 +1,5 @@
 Name:    lenmus
-Version: 5.6.2
+Version: 6.0.0
 Release: 2%{?dist}
 Summary: An app to study music theory and train you ear
 License: GPLv2+
@@ -85,6 +85,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/metainfo/%{name}.appdata.xml
 
 %changelog
+* Sun Feb 13 2022 Yann Collette <ycollette.nospam@free.fr> - 6.0.0-2
+- update 6.0.0-2
+
 * Thu Oct 1 2020 Yann Collette <ycollette.nospam@free.fr> - 5.6.2-2
 - update 5.6.2-2 - fix for fedora 33
 
