@@ -73,6 +73,11 @@
 | tap192              | https://github.com/PlagiatBros/tap192 |
 | genDrumKit          | https://github.com/peter-zenk/genDrumkit |
 | PlugData            | https://github.com/timothyschoen/PlugData |
+| rezound             | https://github.com/ddurham2/rezound |
+| vocproc             | https://hyperglitch.com/dev/VocProc |
+| komposter           | http://komposter.haxor.fi/ |
+| cheesecutter        | https://github.com/theyamo/CheeseCutter |
+| tiatracker          | https://bitbucket.org/kylearan/tiatracker/src/master | 
 
 ## Cleanup
 
