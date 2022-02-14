@@ -1,3 +1,7 @@
+# Tag: Synthesizer, Effect
+# Type: LV2
+# Category: Synthesizer, Effect
+
 # Global variables for github repository
 %global commit0 7edcb4e29a358623bfd57fa2c27e5da60adfcec3
 %global gittag0 master

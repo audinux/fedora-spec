@@ -1,3 +1,7 @@
+# Tag: Effect
+# Type: LV2
+# Category: Effect
+
 # Global variables for github repository
 %global commit0 1bc1fed211e140c7330d6035122234afe78e5257
 %global gittag0 master

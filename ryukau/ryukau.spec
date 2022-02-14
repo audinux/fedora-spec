@@ -1,3 +1,7 @@
+# Tag: Synthesizer
+# Type: LV2
+# Category: Synthesizer
+
 # Global variables for github repository
 %global commit0 fae2ad4b8b8cb0f16256d797060e5559258897f6
 %global gittag0 master

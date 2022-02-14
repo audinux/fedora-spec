@@ -1,3 +1,7 @@
+# Tag: Effect
+# Type: LV2
+# Category: Effect
+
 Name:    shiro
 Version: 0.1
 Release: 1%{?dist}
