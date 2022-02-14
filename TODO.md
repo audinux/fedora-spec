@@ -74,9 +74,6 @@
 | genDrumKit          | https://github.com/peter-zenk/genDrumkit |
 | PlugData            | https://github.com/timothyschoen/PlugData |
 | rezound             | https://github.com/ddurham2/rezound |
-| vocproc             | https://hyperglitch.com/dev/VocProc |
-| cheesecutter        | https://github.com/theyamo/CheeseCutter |
-| tiatracker          | https://bitbucket.org/kylearan/tiatracker/src/master | 
 
 ## Cleanup
 
@@ -141,6 +138,7 @@ Delay, Overdrive, Cabinet, Equalizer, Convolution, Octaver
 MIDI, Tablature, Phaser, Tape, Tracker, Reverb, Presets
 Sfz, Sf2, Sf3, Monitoring, Video, Organ, PM, Sequencer
 Keyboard, Library, OSC, Mixer, Modular, Rack, Sampler, Session
+Synthesizer
 
 ### Type:
 
@@ -229,7 +227,6 @@ oxefmsynth/oxefmsynth.spec
 paulstretch/paulstretch.spec
 pianobooster/pianobooster.spec
 picoloop/picoloop.spec
-plujain-ramp/plujain-ramp.spec
 polylv2/polylv2.spec
 portsmf/portsmf.spec
 postfish/postfish.spec
@@ -248,8 +245,6 @@ radium/radium.spec
 resources/impulse_response.spec
 rivendell/libcoverart.spec
 rivendell/rivendell.spec
-rkrlv2/rkrlv2.spec
-ryukau/ryukau.spec
 samplehive/samplehive.spec
 seq24/seq24.spec
 seq42/seq42.spec
@@ -259,7 +254,6 @@ sfark/sfark.spec
 sfizz/prelude.spec
 sfizz/sfizz.spec
 sfizz/toccata.spec
-shiro/shiro.spec
 showq/showq.spec
 shuriken/shuriken.spec
 smartguitar/numcpp.spec
