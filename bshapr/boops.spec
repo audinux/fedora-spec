@@ -1,6 +1,6 @@
-# Tag: Jack, Sequencer
+# Tag: Jack
 # Type: Plugin, LV2
-# Category: Audio, Effect
+# Category: Audio, Effect, Sequencer
 
 Summary: Audio glitch effect sequencer LV2 plugin
 Name:    lv2-BOops

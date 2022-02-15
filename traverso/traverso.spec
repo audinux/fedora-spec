@@ -1,6 +1,6 @@
-# Tag: MIDI, Sequencer
+# Tag: MIDI
 # Type: Standalone
-# Catagory: DAW, Audio, Sequencer
+# Category: DAW, Audio, Sequencer
 
 Name:    traverso
 Version: 0.49.6

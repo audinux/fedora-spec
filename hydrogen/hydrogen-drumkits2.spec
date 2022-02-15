@@ -1,5 +1,6 @@
-# Type: Drum
-# Category: Presets
+# Tag: Drum
+# Type: Presets
+# Category: Sequencer
 
 Summary: Additional DrumKits for Hydrogen
 Name:    hydrogen-drumkits-2

@@ -1,4 +1,4 @@
-# Tag: Sequencer, MIDI
+# Tag: MIDI
 # Type: Plugin, LV2
 # Category: Audio, Sequencer
 
