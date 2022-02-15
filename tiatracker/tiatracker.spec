@@ -1,3 +1,7 @@
+# Tag: Tracker, MIDI, Alsa
+# Type: Standalone
+# Category: Audio, Sequencer
+
 Name:    tiatracker
 Version: 0.1
 Release: 1%{?dist}
