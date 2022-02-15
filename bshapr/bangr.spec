@@ -1,4 +1,4 @@
-# Tag: Jack, Sequencer
+# Tag: Jack
 # Type: Plugin, LV2
 # Category: Audio, Effect
 
@@ -23,7 +23,7 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: cairo-devel
 
 %description
-A multi-dimensional dynamicly distorted staggered multi-bandpass LV2 plugin, for extreme soundmangling. Based on Airwindows XRegion.
+A multi-dimensional dynamically distorted staggered multi-bandpass LV2 plugin, for extreme soundmangling. Based on Airwindows XRegion.
 
 Key features:
 - Multi-bandpass / distortion

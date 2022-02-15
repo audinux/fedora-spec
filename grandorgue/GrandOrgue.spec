@@ -1,6 +1,6 @@
-# Tag: Organ, Sampler
+# Tag: Organ
 # Type: Standalone
-# Category: Audio, Synthesizer
+# Category: Audio, Sampler
 
 %define revision 2330
 

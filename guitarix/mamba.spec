@@ -1,4 +1,4 @@
-# Tag: Sequencer, MIDI
+# Tag: MIDI
 # Type: Standalone
 # Category: Audio, Sequencer
 

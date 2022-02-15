@@ -1,6 +1,6 @@
-# Tag: MIDI, Sequencer
+# Tag: MIDI
 # Type: Standalone
-# Catagory: DAW, Audio, Sequencer
+# Category: DAW, Audio
 
 Name:    stargate
 Version: 22.02.1

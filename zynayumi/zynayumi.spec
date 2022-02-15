@@ -1,6 +1,6 @@
-# Tag: Synth
-# Type: Plugin, LV2
-# Category: Audio, Synth
+# Tag: Emulator
+# Type: Plugin, LV2, VST
+# Category: Audio, Synthesizer
 
 # Global variables for github repository
 %global commit0 6b9c8a8bf2cac3833d2b0639cfcfef9aeea673e0

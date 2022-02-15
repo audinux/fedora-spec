@@ -1,9 +1,13 @@
 %define _lto_cflags %{nil}
 
+# Tag: Reverb, Compressor, Equalizer, Overdrive
+# Type: Plugin, VST3, Standalone
+# Category: Audio, Effect, Synthesizer
+
 Name:    surge-xt
 Version: 1.0.0
 Release: 1%{?dist}
-Summary: A VST3 Synthesizer
+Summary: A VST3 Synthesizer and Effects, including Airwindows
 License: GPLv2+
 URL:     https://github.com/surge-synthesizer/surge
 
@@ -37,7 +41,7 @@ BuildRequires: gtk3-devel
 BuildRequires: jack-audio-connection-kit-devel
 
 %description
-A VST3 Synthesizer
+A VST3 Synthesizer and Effects, including Airwindows
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}

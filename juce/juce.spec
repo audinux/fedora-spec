@@ -1,5 +1,5 @@
 # Tag: Library, Editor
-# Type: Standalone, IDE; Language
+# Type: Standalone, IDE, Language
 # Category: Audio, Programming, Graphic
 
 Name:    JUCE

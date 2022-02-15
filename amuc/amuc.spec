@@ -1,6 +1,6 @@
 # Tag: Editor
 # Type: Language
-# Category: Audio, PRogramming
+# Category: Audio, Programming
 
 # Global variables for github repository
 %global commit0 355f0243480dde6c691e783489793eb445a88967

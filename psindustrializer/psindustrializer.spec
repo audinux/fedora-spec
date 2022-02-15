@@ -1,5 +1,5 @@
-# Tag: Standalone
-# Type: Synthesizer, Tool
+# Tag: Drum
+# Type: Standalone
 # Category: Audio, Synthesizer
 
 Name:    psindustrializer

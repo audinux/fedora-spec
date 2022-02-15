@@ -1,4 +1,4 @@
-# Tag: Sequencer, OSC
+# Tag: OSC
 # Type: Standalone
 # Category: Sequencer
 

@@ -1,4 +1,4 @@
-# Tag: Sequencer, MIDI
+# Tag: MIDI
 # TYpe: IDE, Standalone
 # Category: Tool, MIDI, Sequencer
 
