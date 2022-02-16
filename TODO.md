@@ -74,6 +74,10 @@
 | genDrumKit          | https://github.com/peter-zenk/genDrumkit |
 | PlugData            | https://github.com/timothyschoen/PlugData |
 | rezound             | https://github.com/ddurham2/rezound |
+| Jammernetz          | https://github.com/christofmuc/JammerNetz/ |
+| ghostsyn            | https://github.com/Juippi/ghostsyn |
+| WaveSabre           | https://github.com/logicomacorp/WaveSabre |
+| axiom               | https://github.com/monadgroup/axiom |
 
 ## Cleanup
 
@@ -126,7 +130,6 @@ remove -march=native from Makefiles if it's present
 | orca/orca.spec                 | really special build system |
 | zrythm/ztoolkit                | it's a static library ... |
 | zrythm/zrythm                  | embedded glibc problem |
-| ossia/ossia-score.spec         | don't build anymore. Wait for next release |
 
 ## Tag list:
 
