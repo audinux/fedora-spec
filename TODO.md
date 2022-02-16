@@ -37,7 +37,6 @@
 | Cardinal            | https://github.com/DISTRHO/Cardinal |
 | loop192             | https://github.com/jean-emmanuel/loop192 |
 | loopor              | https://github.com/stevie67/loopor |
-| flute.lv2           | https://github.com/timowest/flute-lv2 |
 | lv2file             | https://github.com/jeremysalwen/lv2file |
 | inscore             | https://inscore.grame.fr |
 | Gwion               | https://github.com/Gwion |
@@ -75,9 +74,7 @@
 | PlugData            | https://github.com/timothyschoen/PlugData |
 | rezound             | https://github.com/ddurham2/rezound |
 | Jammernetz          | https://github.com/christofmuc/JammerNetz/ |
-| ghostsyn            | https://github.com/Juippi/ghostsyn |
-| WaveSabre           | https://github.com/logicomacorp/WaveSabre |
-| axiom               | https://github.com/monadgroup/axiom |
+| axiom               | https://github.com/monadgroup/axiom - not llvm 11 - try 9 10 |
 
 ## Cleanup
 
