@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b7dbc69e047346c1d8d286c77313f2f894bd6480
-%global gittag0 1.0.0
+%global commit0 fcd92f3cd05354f4375ff3954fead967d6db795d
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-MicMusic
-Version: 1.0.0
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: MicMusic plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r MicMusic_plugin/dist/MicMusic/* %{buildroot}%{_libexecdir}/Rack2/plugins/M
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

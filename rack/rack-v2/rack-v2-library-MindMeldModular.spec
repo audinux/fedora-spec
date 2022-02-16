@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c5b234f0fa2e479421d1ff897249ff87be03fb80
-%global gittag0 2.0.8
+%global commit0 aefa73e04a30a282ee7c63e64c1b3ddc048d5585
+%global gittag0 2.0.9
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-MindMeldModular
-Version: 2.0.8
+Version: 2.0.9
 Release: 1%{?dist}
 Summary: MindMeldModular plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r MindMeldModular_plugin/dist/MindMeldModular/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.8-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.9-1
 - initial specfile
