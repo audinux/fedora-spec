@@ -75,6 +75,8 @@
 | rezound             | https://github.com/ddurham2/rezound |
 | Jammernetz          | https://github.com/christofmuc/JammerNetz/ |
 | axiom               | https://github.com/monadgroup/axiom - not llvm 11 - try 9 10 |
+| ykchorus            | https://github.com/SpotlightKid/ykchorus |
+| EEL_VM              | https://github.com/james34602/EEL_VM |
 
 ## Cleanup
 
