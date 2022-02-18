@@ -3,7 +3,7 @@
 # Category: Graphic, Tool
 
 Name:    mandelbulber2
-Version: 2.26
+Version: 2.27
 Release: 1%{?dist}
 License: GPL-3.0
 Summary: 3D Mandelbrot renderer
@@ -73,6 +73,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/mandelbulber.png
 
 %changelog
+* Fri Feb 18 2022 Yann Collette <ycollette.nospam@free.fr> - 2.27-1
+- update to 2.27-1
+
 * Fri Nov 5 2021 Yann Collette <ycollette.nospam@free.fr> - 2.26-1
 - update to 2.26-1
 
