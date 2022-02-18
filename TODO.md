@@ -44,7 +44,6 @@
 | Pure language       | https://agraef.github.io/pure-lang |
 | Freeze              | https://github.com/taylordotfish/freeze |
 | Aether              | https://github.com/Dougal-s/Aethe |
-| Delay Architect     | https://github.com/jpcima/DelayArchitect |
 | HISE                | https://github.com/christophhart/HISE.git |
 | ORCHESTOOLS-PIANO-S | https://github.com/ilirbajri/ORCHESTOOLS-PIANO-S |
 | CollisionDrive      | https://github.com/brummer10/CollisionDrive |
@@ -68,15 +67,15 @@
 | Audio-Effects       | https://github.com/juandagilc/Audio-Effects |
 | pedalevite          | https://github.com/EleonoreMizo/pedalevite -> code for vst2 ... |
 |                     | http://ldesoras.free.fr/doc/articles/pedale-vite/pedale-vite.html |
-| imogen              | https://github.com/benthevining/imogen |
+| imogen              | https://github.com/benthevining/imogen - cmake version pb (requires cmake 22) |
 | tap192              | https://github.com/PlagiatBros/tap192 |
 | genDrumKit          | https://github.com/peter-zenk/genDrumkit |
 | PlugData            | https://github.com/timothyschoen/PlugData |
-| rezound             | https://github.com/ddurham2/rezound |
 | Jammernetz          | https://github.com/christofmuc/JammerNetz/ |
 | axiom               | https://github.com/monadgroup/axiom - not llvm 11 - try 9 10 |
 | ykchorus            | https://github.com/SpotlightKid/ykchorus |
 | EEL_VM              | https://github.com/james34602/EEL_VM |
+| AutoEq              | https://github.com/jaakkopasanen/AutoEq |
 
 ## Cleanup
 
