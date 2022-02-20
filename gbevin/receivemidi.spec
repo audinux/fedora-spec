@@ -27,6 +27,7 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
 BuildRequires: libcurl-devel
 BuildRequires: alsa-lib-devel
+BuildRequires: libatomic
 
 %description
 Multi-platform command-line tool making it very easy to quickly
