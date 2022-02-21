@@ -1,3 +1,7 @@
+# Tag: Jack
+# Type: Standalone
+# Category: Audio
+
 Name:    sonobus
 Version: 1.4.9
 Release: 3%{?dist}
