@@ -4,7 +4,6 @@
 |---------------------|----|
 | osmid               | https://github.com/llloret/osmid |
 | DeLooper            | https://github.com/sonejostudios/DeLooper |
-| morphex             | https://github.com/MarcSM/morphex |
 | mephisto            | https://open-music-kontrollers.ch/lv2/mephisto/ |
 | zrythm - lsp-dsp    | add a devel package for zrythm |
 | emissioncontrol2    | https://github.com/EmissionControl2/EmissionControl2 |
@@ -156,7 +155,6 @@ IR/IR.spec
 jack-mixer/jack-mixer.spec
 jalv-select/jalv-select.spec
 jamin/jamin.spec
-jamulus/jamulus.spec
 juce/juce5.spec
 juce/juce60.spec
 kernel/kernel-mao-5.10.spec
@@ -257,7 +255,6 @@ showq/showq.spec
 shuriken/shuriken.spec
 smartguitar/numcpp.spec
 sonic-pi/osmid.spec
-sonobus/sonobus.spec
 spectacle/spectacle.spec
 ssr/ssr.spec
 stargate/pymarshal.spec
