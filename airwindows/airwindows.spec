@@ -4,7 +4,7 @@
 
 Name:    airwindows
 Version: 0.0.1
-Release: 63%{?dist}
+Release: 64%{?dist}
 Summary: A huge set of VST2 plugins
 License: MIT
 URL:     https://github.com/airwindows/airwindows
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./airwindows-source.sh <TAG>
-# ./airwindows-source.sh master
+#        ./airwindows-source.sh master
 
 Source0: airwindows.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
@@ -68,6 +68,9 @@ install -m 755 %{__cmake_builddir}/*.so %{buildroot}/%{_libdir}/vst/
 %{_libdir}/*
 
 %changelog
+* Tue Feb 22 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-64
+- update to 47e16fec36b86140cee81f79cfa81cc30de250f4
+
 * Mon Feb 21 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-63
 - update to a0c7153bacbaec6abc19d8a8ef20909c36f9d35a
 
