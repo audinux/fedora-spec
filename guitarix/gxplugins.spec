@@ -4,7 +4,7 @@
 
 Name:    GxPlugins
 Version: 0.9
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Guitarix LV2 plugins collection
 License: GPLv2+
 URL:     https://github.com/brummer10/GxPlugins.lv2
@@ -314,11 +314,11 @@ Vintage Fuzz Pedal simulation from Guitarix
 
 %build
 
-%make_build INSTALL_DIR=%{buildroot}%{_libdir}/lv2 SSE_CFLAGS="%{optflags}" STRIP=true
+%make_build INSTALL_DIR=%{_libdir}/lv2 SSE_CFLAGS="%{optflags}" STRIP=true
 
 %install 
 
-%make_install INSTALL_DIR=%{buildroot}%{_libdir}/lv2 SSE_CFLAGS="%{optflags}" STRIP=true
+%make_install INSTALL_DIR=%{_libdir}/lv2 SSE_CFLAGS="%{optflags}" STRIP=true
 
 %files -n lv2-AxisFace-plugin
 %{_libdir}/lv2/gx_AxisFace.lv2/*
@@ -459,8 +459,11 @@ Vintage Fuzz Pedal simulation from Guitarix
 %{_libdir}/lv2/gx_maestro_fz1s.lv2/*
 
 %changelog
-* Sat Apr 18 2021 Yann Collette <ycollette.nospam@free.fr> - 0.9
-- Update to v0.9
+* Wed Feb 23 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9-2
+- Update to v0.9-2
+
+* Sun Apr 18 2021 Yann Collette <ycollette.nospam@free.fr> - 0.9-1
+- Update to v0.9-1
 
 * Tue Jun 02 2020 Yann Collette <ycollette.nospam@free.fr> - 0.8
 - Update to v0.8
