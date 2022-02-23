@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b75e094829dce6d66c8692a3518a0f1d1163ec73
-%global gittag0 1.1.0
+%global commit0 ab493b8823b889f5e1998c1ccc07dcb5317557dd
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Sculpt-O-Sound
-Version: 1.1.0
+Version: 2.1.0
 Release: 1%{?dist}
 Summary: Sculpt-O-Sound plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r Sculpt-O-Sound_plugin/dist/Sculpt-O-Sound/* %{buildroot}%{_libexecdir}/Rac
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
