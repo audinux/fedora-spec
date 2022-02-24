@@ -73,6 +73,11 @@
 | ykchorus            | https://github.com/SpotlightKid/ykchorus |
 | EEL_VM              | https://github.com/james34602/EEL_VM |
 | AutoEq              | https://github.com/jaakkopasanen/AutoEq |
+| SynthLab            | https://github.com/mpue/Synthlab |
+| HexoSynth           | https://github.com/WeirdConstructor/HexoSynth |
+| AlgAudio            | https://github.com/rafalcieslak/AlgAudio |
+| psychosynth         | https://github.com/arximboldi/psychosynth |
+| shortcircuit-xt     | https://github.com/surge-synthesizer/shortcircuit-xt |
 
 ## Cleanup
 
