@@ -1,12 +1,7 @@
 %define _lto_cflags %{nil}
 
-# Global variables for github repository
-%global commit0 f7e34e37d376e18ec097fa42957c9ecb42d50b9f
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 Name:    ossia-score
-Version: 3.0.1
+Version: 3.0.4
 Release: 1%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL:     https://github.com/OSSIA/score
@@ -73,8 +68,11 @@ rm -rf %{buildroot}/%{_datadir}/
 %{_bindir}/*
 
 %changelog
+* Thu Feb 24 2022 Yann Collette <ycollette.nospam@free.fr> - 3.0.4-2
+- update to version 3.0.4-2
+
 * Sun Jan 16 2022 Yann Collette <ycollette.nospam@free.fr> - 3.0.1-2
-- update to version 3.0.1
+- update to version 3.0.1-2
 
 * Sun Oct 25 2020 Yann Collette <ycollette.nospam@free.fr> - 2.5.2-2
 - fix debug build
