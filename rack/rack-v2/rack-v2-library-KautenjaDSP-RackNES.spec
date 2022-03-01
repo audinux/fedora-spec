@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 d91cc8653eaefbfce656f5800c7c4fcf14712b30
-%global gittag0 1.4.2
+%global commit0 f4271500cadbcb1258bd9e47ac2a7a822e0fde90
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-KautenjaDSP-RackNES
-Version: 1.4.2
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: KautenjaDSP-RackNES plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r KautenjaDSP-RackNES_plugin/dist/KautenjaDSP-RackNES/* %{buildroot}%{_libex
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.4.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

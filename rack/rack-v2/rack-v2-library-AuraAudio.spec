@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 9b1f7e4525266ee5c62f25460727fa5a729a96a9
-%global gittag0 1.0.2
+%global commit0 06a4fff774ecf797395e839798e1e141e94feb72
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-AuraAudio
-Version: 1.0.2
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: AuraAudio plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r AuraAudio_plugin/dist/AuraAudio/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile
