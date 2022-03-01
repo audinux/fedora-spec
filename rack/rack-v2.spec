@@ -3,10 +3,10 @@
 # Category: Audio, Synthesizer
 
 %define use_static_glfw 0
-%define use_static_rtaudio 0
+%define use_static_rtaudio 1
 
 Name:    Rack-v2
-Version: 2.0.6
+Version: 2.1.0
 Release: 1%{?dist}
 Summary: A modular Synthesizer
 License: GPLv2+
@@ -16,7 +16,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./rack-source-v2.sh <tag>
-# ./rack-source-v2.sh v2.0.6
+# ./rack-source-v2.sh v2.1.0
 
 Source0: Rack.tar.gz
 Source1: Rack-manual.tar.gz
@@ -152,7 +152,7 @@ cd ..
 %endif
 %if %{use_static_rtaudio}
 cd rtaudio
-cmake -DCMAKE_INSTALL_PREFIX=.. -DBUILD_SHARED_LIBS=FALSE -DCMAKE_BUILD_TYPE=DEBUG .
+cmake -DCMAKE_INSTALL_PREFIX=.. -DCMAKE_CXX_FLAGS=-fPIC -DBUILD_SHARED_LIBS=FALSE -DCMAKE_BUILD_TYPE=DEBUG .
 make
 make install
 cd ..
@@ -203,6 +203,9 @@ EOF
 %{_datadir}/*
 
 %changelog
+* Sun Feb 27 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+- update to v2.1.0-1
+
 * Sat Jan 16 2022 Yann Collette <ycollette.nospam@free.fr> - 2.0.6-1
 - update to v2.0.6-1
 
