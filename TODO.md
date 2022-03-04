@@ -78,6 +78,7 @@
 | AlgAudio            | https://github.com/rafalcieslak/AlgAudio |
 | psychosynth         | https://github.com/arximboldi/psychosynth |
 | shortcircuit-xt     | https://github.com/surge-synthesizer/shortcircuit-xt |
+| tidal               | https://github.com/archlinux/svntogit-community/blob/packages/haskell-tidal/trunk/PKGBUILD |
 
 ## Cleanup
 
