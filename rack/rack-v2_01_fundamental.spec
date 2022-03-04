@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 %define use_static_glfw 0
-%define use_static_rtaudio 0
+%define use_static_rtaudio 1
 
 %global debug_package %{nil}
 
@@ -13,7 +13,7 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    rack-v2-Fundamental
-Version: 2.0.0
+Version: 2.1.0
 Release: 1%{?dist}
 Summary: A plugin for Rack
 License: GPLv2+
@@ -52,6 +52,7 @@ BuildRequires: speexdsp-devel
 BuildRequires: gulrak-filesystem-devel
 BuildRequires: libarchive-devel
 BuildRequires: libzstd-devel
+BuildRequires: pulseaudio-libs-devel
 BuildRequires: jq
 
 %description
@@ -147,7 +148,7 @@ cd ..
 %endif
 %if %{use_static_rtaudio}
 cd rtaudio
-cmake -DCMAKE_INSTALL_PREFIX=.. -DBUILD_SHARED_LIBS=FALSE -DCMAKE_BUILD_TYPE=DEBUG .
+cmake -DCMAKE_INSTALL_PREFIX=.. -DCMAKE_CXX_FLAGS=-fPIC -DBUILD_SHARED_LIBS=FALSE -DCMAKE_BUILD_TYPE=DEBUG .
 make
 make install
 cd ..
@@ -169,6 +170,9 @@ cp -r fundamental_plugin/dist/Fundamental/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
+* Fri Mar 04 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-6
+- update to 2.1.0-6
+
 * Sun Nov 29 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-6
 - fix rtaudio + debug build
 
