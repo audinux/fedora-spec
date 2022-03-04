@@ -3,9 +3,9 @@
 # Kernel minor version
 %define kmin  15
 # Kernel patch version
-%define kpat  25
+%define kpat  26
 # RT patch version
-%define krt   33
+%define krt   34
 # package version
 %define krel  12
 
@@ -201,6 +201,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
 %changelog
+* Fri Mar 04 2022 Yann Collette <ycollette.nospam@free.fr> - 5.15.26-rt34-12
+- update to 5.15.26-rt34-12 - vanilla RT kernel
+
 * Thu Mar 03 2022 Yann Collette <ycollette.nospam@free.fr> - 5.15.25-rt33-12
 - update to 5.15.25-rt33-12 - vanilla RT kernel
 
