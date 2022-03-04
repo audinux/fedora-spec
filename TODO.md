@@ -21,8 +21,11 @@
 | tascar              | https://github.com/HoerTech-gGmbH/tascar/ |
 | midieditor          | https://github.com/markusschwenk/midieditor/ |
 | seq66               | https://github.com/ahlstromcj/seq66 |
-| drops               | https://github.com/clearly-broken-software/drops |
-| audiveris           | https://github.com/Audiveris/audiveris.git |
+| Stretcher           | https://github.com/clearly-broken-software/Stretcher |
+| Uprising            | https://github.com/clearly-broken-software/Uprising |
+| Punch               | https://github.com/clearly-broken-software/Punch |
+| Boomer              | https://github.com/clearly-broken-software/boomer |
+| audiveris           | https://github.com/Audiveris/audiveris |
 | Teragon audio       | http://teragonaudio.com/software.html |
 |                     | - Kickmaker: http://static.teragonaudio.com/downloads/KickMaker/KickMaker.zip |
 |                     | - BeatCounter: https://github.com/teragonaudio/BeatCounter/archive/refs/tags/2.1.tar.gz |
@@ -41,7 +44,7 @@
 | Amati               | https://github.com/glocq/Amati |
 | Pure language       | https://agraef.github.io/pure-lang |
 | Freeze              | https://github.com/taylordotfish/freeze |
-| HISE                | https://github.com/christophhart/HISE.git |
+| HISE                | https://github.com/christophhart/HISE |
 | ORCHESTOOLS-PIANO-S | https://github.com/ilirbajri/ORCHESTOOLS-PIANO-S |
 | CollisionDrive      | https://github.com/brummer10/CollisionDrive |
 | QuatumVerb          | https://github.com/QVbDev/quantumVerb |
