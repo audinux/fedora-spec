@@ -20,7 +20,7 @@
 # Use 'SDL2' and 'projectM' together.
 
 Name:    lives-mao
-Version: 2022.01.01
+Version: 2022.03.08
 Release: 1%{?dist}
 Summary: Video editor and VJ tool
 License: GPLv3+ and LGPLv3+
@@ -204,6 +204,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/LiVES.desktop
 %{_metainfodir}/LiVES.appdata.xml
 
 %changelog
+* Tue Mar 08 2022 Yann Collette <ycollette.nospam@free.fr> - 2022.03.08-23
+- create version 2022.03.08-23
+
 * Sat Jan 01 2022 Yann Collette <ycollette.nospam@free.fr> - 2022.01.01-23
 - create version 2022.01.01-23
 
