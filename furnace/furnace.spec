@@ -1,6 +1,10 @@
+# Tag: Tracker, MIDI, Alsa
+# Type: Standalone
+# Category: Audio, Sequencer
+
 Name:    furnace
 Version: 0.5.8
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A multi-system chiptune tracker compatible with DefleMask modules
 License: GPLv2
 URL:     https://github.com/tildearrow/furnace
@@ -41,6 +45,7 @@ BuildRequires: mesa-libgbm-devel
 BuildRequires: libglvnd-devel
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
+BuildRequires: patchelf
 
 %description
 A multi-system chiptune tracker compatible with DefleMask modules
@@ -59,6 +64,13 @@ sed -i -e "s/DEPENDENCIES_LIBRARIES SDL2-static/DEPENDENCIES_LIBRARIES SDL2/" CM
 
 %cmake_install
 
+install -m 755 -d %{buildroot}/%{_libdir}/%{name}/
+[ -d %{__cmake_builddir}/extern/fmt ] && cp %{__cmake_builddir}/extern/fmt/libfmt.so.? %{buildroot}/%{_libdir}/%{name}/
+[ -d %{__cmake_builddir}/extern/libsndfile ] && cp %{__cmake_builddir}/extern/libsndfile/libsndfile.so.? %{buildroot}/%{_libdir}/%{name}/
+[ -d %{__cmake_builddir}/extern/SDL ] && cp %{__cmake_builddir}/extern/SDL/libSDL2-2.0.so.? %{buildroot}/%{_libdir}/%{name}/
+
+patchelf --set-rpath '$ORIGIN/../%{_lib}/%{name}/' %{buildroot}/%{_bindir}/%{name}
+
 desktop-file-install                         \
   --add-category="Audio;AudioVideo"	     \
   --dir=%{buildroot}%{_datadir}/applications \
@@ -72,6 +84,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/%{name}.a
 %license LICENSE
 %doc README.md
 %{_bindir}/*
+%{_libdir}/furnace/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/doc/furnace/papers/*
 %{_datadir}/furnace/demos/*
