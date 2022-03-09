@@ -5,7 +5,7 @@
 %global debug_package %{nil}
 
 Name:    yabridge
-Version: 3.8.0
+Version: 3.8.1
 Release: 1%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPLv2+
@@ -80,10 +80,13 @@ install build/libyabridge-vst3.so %{buildroot}%{_libdir}/vst3
 %{_libdir}/vst3/*
 
 %changelog
+* Wed Mar 09 2022 Yann Collette <ycollette.nospam@free.fr> - 3.8.1-1
+- update to 3.8.1-1
+
 * Sat Jan 15 2022 Yann Collette <ycollette.nospam@free.fr> - 3.8.0-1
 - update to 3.8.0-1
 
-* Sun Oct 21 2021 Yann Collette <ycollette.nospam@free.fr> - 3.7.0-1
+* Thu Oct 21 2021 Yann Collette <ycollette.nospam@free.fr> - 3.7.0-1
 - update to 3.7.0-1
 
 * Fri Oct 15 2021 Yann Collette <ycollette.nospam@free.fr> - 3.6.0-1
