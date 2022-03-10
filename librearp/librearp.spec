@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name:    librearp
-Version: 2.2
+Version: 2.3
 Release: 2%{?dist}
 Summary: A pattern-based arpeggio generator plugin
 License: GPLv3
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./librearp-source.sh <TAG>
-# ./librearp-source.sh 2.2
+# ./librearp-source.sh 2.3
 
 Source0: LibreArpLV2.tar.gz
 Source1: LibreArpVST3.tar.gz
@@ -92,6 +92,9 @@ cp -ra %{__cmake_builddir}/LibreArp_artefacts/VST3/* %{buildroot}/%{_libdir}/vst
 %{_libdir}/vst3/*
 
 %changelog
+* Thu Mar 10 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3-2
+- update to 2.3-2 - fix for Fedora 35
+
 * Sun Oct 03 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2-2
 - update to 2.2-2 - fix for Fedora 35
 
