@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 e61fc1cc3ae01418dc031cfd81f9fa5d4fc400e6
-%global gittag0 1.0.1
+%global commit0 ac8096c6f68476e160326438eccd550d3889e025
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-aridacity
-Version: 1.0.1
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: aridacity plugin for Rack
 License: GPLv2+
-URL:     https://github.com/aridacity/aridacityVCV
+URL:     https://github.com/cubeleco/aridacityVCV
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,7 +27,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/aridacity/aridacityVCV/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/cubeleco/aridacityVCV/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: aridacity_plugin.json
 
 BuildRequires: gcc gcc-c++
@@ -146,5 +146,5 @@ cp -r aridacity_plugin/dist/aridacity/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

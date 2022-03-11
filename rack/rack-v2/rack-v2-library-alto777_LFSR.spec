@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c9b0feef18e7f79c444cdd62f9b0628afb354fa6
-%global gittag0 1.0.0
+%global commit0 7b977dbc81a76b1c00e86e943a7a2af8ecc8bf51
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-alto777_LFSR
-Version: 1.0.0
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: alto777_LFSR plugin for Rack
 License: GPLv2+
@@ -145,5 +145,5 @@ cp -r alto777_LFSR_plugin/dist/alto777_LFSR/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile
