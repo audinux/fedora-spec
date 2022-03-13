@@ -1,15 +1,10 @@
-# Global variables for github repository
-%global commit0 5f5953d6205c8bba820e8693b380952933574359
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 # Tag: Sf2
 # Type: Standalone
 # Category: Audio, Tool
 # GUIToolkit: Qt5
 
 Name:    polyphone
-Version: 2.2.0
+Version: 2.3.0
 Release: 3%{?dist}
 Summary: A SF2 sound font editor
 URL:     https://polyphone-soundfonts.com/
@@ -18,13 +13,13 @@ License: GPLv2+
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/davy7125/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Patch0:  polyphone-0001-add-missing-header.patch
+Source0: https://github.com/davy7125/polyphone/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++ sed
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-qtsvg-devel
+BuildRequires: qt5-linguist
 BuildRequires: alsa-lib-devel
 BuildRequires: desktop-file-utils
 BuildRequires: jack-audio-connection-kit-devel
@@ -56,7 +51,7 @@ The goal of Polyphone is to provide:
   in the development of the program.
 
 %prep
-%autosetup -p1 -n %{name}-%{commit0}
+%autosetup -n %{name}-%{version}
 
 sed -i -e "s/usr\/local/usr\//g" sources/polyphone.pro
 
@@ -72,7 +67,7 @@ cd sources
 cd sources
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
-install -m 644 contrib/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
+install -m 644 contrib/com.polyphone_soundfonts.polyphone.desktop %{buildroot}%{_datadir}/applications/
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 bin/polyphone %{buildroot}%{_bindir}/
@@ -93,17 +88,25 @@ desktop-file-install --vendor '' \
         --add-category=Sequencer \
         --add-category=X-Jack \
         --dir %{buildroot}%{_datadir}/applications \
-        %{buildroot}%{_datadir}/applications/%{name}.desktop
+        %{buildroot}%{_datadir}/applications/*.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
+# appstream-util validate-relax --nonet %{buildroot}%{_datadir}/mime/packages/%{name}.xml
+# polyphone-2.3.0-3.fc33.x86_64/usr/share/mime/packages/polyphone.xml: No valid root node specified
 
 %files
 %doc sources/changelog README.md sources/README
 %license LICENSE.txt
 %{_bindir}/polyphone
-%{_datadir}/applications/polyphone.desktop
-%{_datadir}/mime/packages/polyphone.xml
+%{_datadir}/applications/*.desktop
+%{_datadir}/mime/packages/%{name}.xml
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Sun Mar 13 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-3
+- update to 2.3.0-3
+
 * Tue Oct 13 2020 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-3
 - fix debug build
 
