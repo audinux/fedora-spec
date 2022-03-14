@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 7264486735e1a856b605656f7d29145acebd6a70
-%global gittag0 1.0.4
+%global commit0 cc50e849ff14636ab164919c270627ce9c17e106
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-AmalgamatedHarmonics
-Version: 1.0.4
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: AmalgamatedHarmonics plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r AmalgamatedHarmonics_plugin/dist/AmalgamatedHarmonics/* %{buildroot}%{_lib
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.4-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

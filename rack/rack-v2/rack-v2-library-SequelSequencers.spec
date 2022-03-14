@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 12dddd08f037c0e3ab71a5c7f955938f45a6f42f
-%global gittag0 2.1.0
+%global commit0 55c50dcfd5a4e426dc42efaa6afb8f754f51c7a2
+%global gittag0 2.2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SequelSequencers
-Version: 2.1.0
+Version: 2.2.0
 Release: 1%{?dist}
 Summary: SequelSequencers plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r SequelSequencers_plugin/dist/SequelSequencers/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
 - initial specfile
