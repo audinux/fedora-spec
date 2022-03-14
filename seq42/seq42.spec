@@ -1,5 +1,5 @@
 Name:    seq42
-Version: 1.1.4
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -13,7 +13,7 @@ Source0: https://github.com/Stazed/seq42/archive/refs/tags/%{version}.tar.gz#/%{
 BuildRequires: gcc gcc-c++ make
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: gtkmm24-devel
+BuildRequires: gtkmm30-devel
 BuildRequires: lash-devel
 BuildRequires: liblo-devel
 BuildRequires: autoconf
@@ -47,10 +47,12 @@ autoreconf -i
 %files
 %doc ChangeLog INSTALL NEWS README.md TODO
 %license COPYING
-
 %{_bindir}/*
 %{_datadir}/*
 
 %changelog
+* Mon Mar 14 2022 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+- udate to 2.0.0-1
+
 * Mon May 03 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.4-1
 - initial version
