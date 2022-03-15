@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    element
-Version: 0.46.3
+Version: 0.46.4
 Release: 1%{?dist}
 Summary: This is the community version of Element, a modular AU/LV2/VST/VST3 audio plugin host.
 URL:     https://github.com/kushview/Element
@@ -12,11 +12,8 @@ License: GPL3
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./element-source.sh 0.46.3
-
-Source0: Element.tar.gz
+Source0: https://github.com/kushview/Element/releases/download/%{version}/element-%{version}.tar.gz
 Source1: GitVersion.h
-Source2: element-source.sh
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: jack-audio-connection-kit-devel
@@ -50,7 +47,7 @@ Integrates with your existing hardware via standard protocols such as MIDI.
 
 %prep
 
-%autosetup -n Element
+%autosetup -n %{name}-%{version}
 
 mkdir -p build/include/
 cp %{SOURCE1} build/include/
@@ -92,6 +89,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/net.kushview.element.
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Tue Mar 15 2022 Yann Collette <ycollette.nospam@free.fr> - 0.46.4-1
+- update to 0.46.4-1
+
 * Wed Jul 28 2021 Yann Collette <ycollette.nospam@free.fr> - 0.46.3-1
 - update to 0.46.3-1
 
