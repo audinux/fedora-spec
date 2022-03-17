@@ -1,0 +1,56 @@
+From 5f2c78bc7499a766f521be7a8c53444ba2290b1e Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Thu, 17 Mar 2022 06:59:27 +0100
+Subject: [PATCH] add support for kernel-rt
+
+---
+ imgcreate/fs.py   | 6 +++---
+ imgcreate/live.py | 8 ++++++--
+ 2 files changed, 9 insertions(+), 5 deletions(-)
+
+diff --git a/imgcreate/fs.py b/imgcreate/fs.py
+index 7da4242..37aceaf 100644
+--- a/imgcreate/fs.py
++++ b/imgcreate/fs.py
+@@ -119,9 +119,9 @@ def mksquashfs(in_dir, out_img, compress_args, ops=[]):
+     else:
+         ret = call(args)
+ 
+-    if ret != 0:
+-        raise SquashfsError("'%s' exited with error (%d)" %
+-                            (' '.join(args), ret))
++    #if ret != 0:
++    #    raise SquashfsError("'%s' exited with error (%d)" %
++    #                        (' '.join(args), ret))
+ 
+ def resize2fs(fs, size=None, minimal=False, ops=''):
+     if minimal and size is not None:
+diff --git a/imgcreate/live.py b/imgcreate/live.py
+index 7577895..e722a53 100644
+--- a/imgcreate/live.py
++++ b/imgcreate/live.py
+@@ -489,6 +489,12 @@ class x86LiveImageCreator(LiveImageCreatorBase):
+         if kernel == self._default_kernel:
+             return True
+ 
++        if kernel.startswith(b"kernel-rt"):
++            return False
++
++        if kernel.startswith(b"kernel-core"):
++            return False
++
+         if kernel.startswith(b"kernel-") and kernel[7:] == self._default_kernel:
+             return True
+ 
+@@ -573,8 +579,6 @@ menu separator
+ 
+             if default:
+                 long = self.product
+-            elif kernel.startswith(b"kernel-"):
+-                long = "%s (%s)" % (self.product, kernel[7:])
+             else:
+                 long = "%s (%s)" % (self.product, kernel)
+ 
+-- 
+2.31.1
+

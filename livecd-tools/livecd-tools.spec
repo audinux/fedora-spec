@@ -10,17 +10,15 @@ URL: https://github.com/livecd-tools/livecd-tools
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://releases.pagure.org/%{name}/%{name}-%{version}.tar.gz
+Source0: https://github.com/livecd-tools/livecd-tools/archive/refs/tags/livecd-tools-%{version}.tar.gz
 Patch1: 0001-switch-from-authconfig-to-authselect.patch
+Patch2: 0002-add-support-for-kernel-rt.patch
 
 BuildRequires: make
 BuildRequires: python3-devel
 BuildRequires: /usr/bin/pod2man
 
 Requires: python3-imgcreate-mao = %{?epoch:%{epoch}:}%{version}-%{release}
-
-# For splitting out livecd-iso-to-disk to separate subpackage
-Conflicts: livecd-tools < 25.0
 Requires: livecd-iso-to-mediums-mao = %{?epoch:%{epoch}:}%{version}-%{release}
 
 %description
@@ -82,7 +80,7 @@ Tools for installing Live CD ISOs to different mediums
 (e.g. USB sticks, hard drives, PXE boot, etc.)
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n livecd-tools-livecd-tools-%{version}
 
 %build
 # Nothing to do
@@ -113,6 +111,7 @@ rm -rfv %{buildroot}%{_mandir}/man8/livecd-iso-to-*
 %{_bindir}/liveimage-mount
 %{_bindir}/editliveos
 %{_bindir}/mkbiarch
+%{_datadir}/doc/livecd-tools/*
 
 %files -n python-imgcreate-sysdeps-mao
 # No files because empty metapackage
@@ -122,7 +121,7 @@ rm -rfv %{buildroot}%{_mandir}/man8/livecd-iso-to-*
 %doc API
 %{python3_sitelib}/imgcreate
 
-%files -n livecd-iso-to-mediums
+%files -n livecd-iso-to-mediums-mao
 %license COPYING
 %{_bindir}/livecd-iso-to-disk
 %{_bindir}/livecd-iso-to-pxeboot
