@@ -1,6 +1,6 @@
 Summary: A radio automation system
 Name:    rivendell
-Version: 3.6.4
+Version: 3.6.5
 Release: 1%{?dist}
 License: LGPL
 URL:     https://github.com/ElvishArtisan/rivendell
@@ -146,13 +146,6 @@ if test "$1" = "0" ; then
 fi
 exit 0
 
-%postun
-update-desktop-database -q
-if [ $1 -eq 0 ]; then
-  touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
-  gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
-fi
-
 %files
 %doc AUTHORS INSTALL NEWS README ChangeLog UPGRADING
 %license COPYING
@@ -166,6 +159,9 @@ fi
 %{_unitdir}/*
 
 %changelog
+* Sun Mar 20 2022 Yann Collette <ycollette.nospam@free.fr> - 3.6.5-1
+- update to 3.6.5-1
+
 * Tue Feb 22 2022 Yann Collette <ycollette.nospam@free.fr> - 3.6.4-1
 - update to 3.6.4-1
 
