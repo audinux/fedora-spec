@@ -1,5 +1,5 @@
 Name:    lebiniou-data
-Version: 3.65.0
+Version: 3.66.0
 Release: 5%{?dist}
 Summary: Lebiniou is an audio spectrum visualizer - data package
 URL:     https://biniou.net/
@@ -45,6 +45,9 @@ LDFLAGS="${LDFLAGS:-%{build_ldflags}} -z muldefs" ; export LDFLAGS
 %{_datadir}/lebiniou/*
 
 %changelog
+* Sun Mar 20 2022 Yann Collette <ycollette.nospam@free.fr> - 3.66.0-5
+- update to 3.66.0-5
+
 * Sat Feb 05 2022 Yann Collette <ycollette.nospam@free.fr> - 3.65.0-5
 - update to 3.65.0-5
 
