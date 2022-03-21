@@ -1,5 +1,5 @@
 Name:    cardinal
-Version: 22.02
+Version: 22.03
 Release: 1%{?dist}
 Summary:  Virtual modular synthesizer plugin
 License: GPLv2+
@@ -93,5 +93,8 @@ mv %buildroot/usr/lib %buildroot/usr/lib64
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Mar 21 2022 Yann Collette <ycollette.nospam@free.fr> - 22.03-1
+- update to 22.03-1
+
 * Fri Feb 18 2022 Yann Collette <ycollette.nospam@free.fr> - 22.02-1
 - Initial build
