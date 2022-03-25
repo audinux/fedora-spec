@@ -2,9 +2,9 @@
 # Type: Standalone
 # Category: Audio, DAW
 
-%global zrythm_version 25.1.22
+%global zrythm_version 1.1.11
 Name:    zrythm
-Version: 1.0.0.a%{zrythm_version}
+Version: 1.0.0.b%{zrythm_version}
 Release: 5%{?dist}
 Summary: Highly automated Digital Audio Workstation (DAW) featureful and intuitive to use
 License: GPLv2+
@@ -13,7 +13,7 @@ URL:     https://git.zrythm.org/zrythm/zrythm
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://git.zrythm.org/zrythm/zrythm/archive/v1.0.0-alpha.%{zrythm_version}.tar.gz#/zrythm-v1.0.0-alpha.%{zrythm_version}.tar.gz
+Source0: https://git.zrythm.org/zrythm/zrythm/archive/v1.0.0-beta.%{zrythm_version}.tar.gz#/zrythm-v1.0.0-beta.%{zrythm_version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: git
@@ -43,6 +43,7 @@ BuildRequires: libbacktrace-devel
 BuildRequires: xxhash-devel
 BuildRequires: rtmidi-devel
 BuildRequires: rtaudio-devel
+BuildRequires: libadwaita-devel
 BuildRequires: meson
 BuildRequires: help2man
 BuildRequires: pandoc
@@ -124,14 +125,19 @@ pip install --user furo
 
 mkdir build
 %meson \
-%if 0%{?fedora} < 34
        --wrap-mode=nofallback \
-       --force-fallback-for glib \
+       --force-fallback-for "pangoft2, gtk4, wayland-client, wayland-protocols, gtksourceview-5" \
        --default-library static \
-%endif
        -Dmanpage=true \
        -Duser_manual=true \
        -Dlsp_dsp=disabled \
+       -Dcheck_updates=false \
+       -Dportaudio=enabled \
+       -Drtmidi=enabled \
+       -Drtaudio=enabled \
+       -Dsdl=enabled \
+       -Doptimization=3 \
+       -Ddebug=true \
        --buildtype release \
        --prefix=/usr
 
@@ -204,6 +210,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.zrythm.Zrythm.des
 %endif
 
 %changelog
+* Fri Mar 25 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-beta.1.1.11-5
+- update to 1.0.0-beta.1.1.11-5
+
 * Sat Sep 11 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-alpha.25.1.22-5
 - update to 1.0.0-alpha.25.1.22-5
 
