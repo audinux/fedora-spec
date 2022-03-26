@@ -4,7 +4,7 @@
 
 Name:    lsp-plugins
 Summary: Linux Studio Plugins collection
-Version: 1.1.31
+Version: 1.2.0
 Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/sadko4u/lsp-plugins
@@ -12,7 +12,7 @@ URL:     https://github.com/sadko4u/lsp-plugins
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./lsp-sources.sh 1.1.31
+# ./lsp-sources.sh 1.2.0
 
 Source0: lsp-plugins.tar.gz
 Source1: lsp-sources.sh
@@ -37,32 +37,38 @@ currently compatible with LADSPA, LV2 and LinuxVST formats.
 %autosetup -n lsp-plugins
 
 # Disable strip for debug package
-sed -i -e "s/+= -s/+=/g" Makefile
-sed -i -e "/MAKE_OPTS/d" scripts/make/tools.mk
+# sed -i -e "s/+= -s/+=/g" Makefile
+# sed -i -e "/MAKE_OPTS/d" make/tools.mk
 
 %build
+%set_build_flags
 
-%make_build BUILD_PROFILE=%{_arch} CC_FLAGS="%{optflags} -DLSP_NO_EXPERIMENTAL" BIN_PATH=%{_bindir} LIB_PATH=%{_libdir} DOC_PATH=%{_docdir}
+%make_build PREFIX=%{_usr} LIBDIR=%{_libdir} config
+%make_build PREFIX=%{_usr} LIBDIR=%{_libdir} fetch
+%make_build PREFIX=%{_usr} LIBDIR=%{_libdir}
 
 %install
 
-%make_install BUILD_PROFILE=%{_arch} CC_FLAGS="%{optflags} -DLSP_NO_EXPERIMENTAL" BIN_PATH=/usr/bin LIB_PATH=/usr/lib64 DOC_PATH=/usr/share/doc install
+%make_install PREFIX=%{_usr} LIBDIR=%{_libdir}
 
 chrpath --delete $RPM_BUILD_ROOT/usr/bin/*
 chrpath --delete $RPM_BUILD_ROOT/usr/%{_lib}/ladspa/*.so
 chrpath --delete $RPM_BUILD_ROOT/usr/%{_lib}/lsp-plugins/*.so
 chrpath --delete $RPM_BUILD_ROOT/usr/%{_lib}/lv2/lsp-plugins.lv2/*.so
-chrpath --delete $RPM_BUILD_ROOT/usr/%{_lib}/vst/lsp-plugins-lxvst-%{version}/*.so
+chrpath --delete $RPM_BUILD_ROOT/usr/%{_lib}/vst/lsp-plugins/*.so
 
 %files
-%doc CHANGELOG.txt README.txt
-%license LICENSE.txt
+%doc CHANGELOG README.md
+%license COPYING
 %{_bindir}/*
 %{_libdir}/*
 %{_datadir}/*
 
 %changelog
-* Thu Dec 21 2021 Yann Collette <ycollette dot nospam at free.fr> 1.1.31-1
+* Sat Mar 26 2022 Yann Collette <ycollette dot nospam at free.fr> 1.2.0-1
+- update to 1.2.0-1
+
+* Tue Dec 21 2021 Yann Collette <ycollette dot nospam at free.fr> 1.1.31-1
 - update to 1.1.31-1
 
 * Thu Apr 01 2021 Yann Collette <ycollette dot nospam at free.fr> 1.1.30-1
