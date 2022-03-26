@@ -6,7 +6,7 @@
 
 Name:    yabridge
 Version: 3.8.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPLv2+
 URL:     https://github.com/robbert-vdh/yabridge
@@ -26,6 +26,8 @@ BuildRequires: boost-devel
 BuildRequires: libxcb-devel
 BuildRequires: meson
 BuildRequires: git
+BuildRequires: rust
+BuildRequires: cargo
 
 %description
 Yet Another way to use Windows VST plugins on Linux.
@@ -59,27 +61,35 @@ meson setup build \
 
 ninja -C build
 
+pushd tools/yabridgectl
+cargo build --release
+popd
+
 %install
 
 install -dm755 %{buildroot}%{_bindir}
 install build/yabridge-{host,group}.exe %{buildroot}%{_bindir}
-install -dm755 %{buildroot}%{_libdir}
-install build/yabridge-{host,group}.exe.so %{buildroot}%{_libdir}
+install build/yabridge-{host,group}.exe.so %{buildroot}%{_bindir}
 
 install -dm755 %{buildroot}%{_libdir}/vst
 install build/libyabridge-vst2.so %{buildroot}%{_libdir}/vst
-install -dm755 %{buildroot}%{_libdir}/vst3
-install build/libyabridge-vst3.so %{buildroot}%{_libdir}/vst3
-  
+install build/libyabridge-vst3.so %{buildroot}%{_libdir}/vst
+
+# install tool
+install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}
+
 %files
 %doc CHANGELOG.md README.md
 %license COPYING
 %{_bindir}/*
-%{_libdir}/*.so
 %{_libdir}/vst/*
-%{_libdir}/vst3/*
 
 %changelog
+* Wed Mar 26 2022 Vincent Tassy <timetre@free.fr> - 3.8.1-2
+- ship yabridgectl
+- yabridgectl expects both vst and vst3 libs in the same folder. moving libyabridge-vst3.so to vst folder
+- Moved yabridge-{host,group}.exe.so to bin folder, where they are expected by yabridge-{host,group}.exe
+
 * Wed Mar 09 2022 Yann Collette <ycollette.nospam@free.fr> - 3.8.1-1
 - update to 3.8.1-1
 
