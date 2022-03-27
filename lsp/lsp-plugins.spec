@@ -2,6 +2,8 @@
 # Type: Plugin, LV2
 # Category: Audio, Effect
 
+%global debug_package %{nil}
+
 Name:    lsp-plugins
 Summary: Linux Studio Plugins collection
 Version: 1.2.0
@@ -36,16 +38,11 @@ currently compatible with LADSPA, LV2 and LinuxVST formats.
 %prep
 %autosetup -n lsp-plugins
 
-# Disable strip for debug package
-# sed -i -e "s/+= -s/+=/g" Makefile
-# sed -i -e "/MAKE_OPTS/d" make/tools.mk
-
 %build
 %set_build_flags
 
 %make_build PREFIX=%{_usr} LIBDIR=%{_libdir} config
-%make_build PREFIX=%{_usr} LIBDIR=%{_libdir} fetch
-%make_build PREFIX=%{_usr} LIBDIR=%{_libdir}
+%make_build PREFIX=%{_usr} LIBDIR=%{_libdir} VERBOSE=1
 
 %install
 
@@ -56,6 +53,10 @@ chrpath --delete $RPM_BUILD_ROOT/usr/%{_lib}/ladspa/*.so
 chrpath --delete $RPM_BUILD_ROOT/usr/%{_lib}/lsp-plugins/*.so
 chrpath --delete $RPM_BUILD_ROOT/usr/%{_lib}/lv2/lsp-plugins.lv2/*.so
 chrpath --delete $RPM_BUILD_ROOT/usr/%{_lib}/vst/lsp-plugins/*.so
+
+mkdir -p $RPM_BUILD_ROOT/usr/share/lsp-plugins/
+mv $RPM_BUILD_ROOT/usr/share/doc/lsp-plugins $RPM_BUILD_ROOT/usr/share/lsp-plugins/doc
+
 
 %files
 %doc CHANGELOG README.md
