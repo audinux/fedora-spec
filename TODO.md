@@ -86,6 +86,7 @@
 | Chameleon           | https://github.com/GuitarML/Chameleon |
 | BYOD                | https://github.com/Chowdhury-DSP/BYOD |
 | juced               | https://github.com/kunitoki/juced |
+| ykchorus            | https://github.com/SpotlightKid/ykchorus |
 
 ## WIP
 
