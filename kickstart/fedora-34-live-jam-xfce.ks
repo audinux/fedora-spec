@@ -489,6 +489,7 @@ alsa-plugins-samplerate
 alsa-plugins-upmix
 alsa-plugins-vdownmix
 a2jmidid
+libsndfile
 
 # jack 
 jack-audio-connection-kit
