@@ -161,16 +161,16 @@ $ qemu-kvm -m 2048 -vga qxl -sdl -cdrom fedora-34-Audinux.iso
 ```
 With audio and usb:
 ```
-$ qemu-kvm -m 2048 -vga qxl -usb -soundhw hda -sdl -cdrom fedora-34-Audinux.iso
+$ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -sdl -cdrom fedora-34-Audinux.iso
 ```
 With audio, usb and with 2 cpus:
 ```
-$ qemu-kvm -m 2048 -vga qxl -usb -soundhw hda -smp cpus=2 -sdl -cdrom fedora-34-Audinux.iso
+$ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -smp cpus=2 -sdl -cdrom fedora-34-Audinux.iso
 ```
 
 To test the USB bootable file:
 ```
-$ qemu-kvm -m 2048 -vga qxl -sdl -smp cpus=2 -usb -soundhw hda -drive file=fedora-34-Audinux.iso -boot menu=on
+$ qemu-kvm -m 2048 -vga qxl -sdl -smp cpus=2 -usb -device intel-hda -device hda-duplex -drive file=fedora-34-Audinux.iso -boot menu=on
 ```
 
 To mount a usb device:
