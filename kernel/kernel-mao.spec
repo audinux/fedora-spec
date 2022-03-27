@@ -7,7 +7,7 @@
 # RT patch version
 %define krt   38
 # package version
-%define krel  12
+%define krel  13
 
 %define kver  %{kmaj}.%{kmin}.%{kpat}
 %define fcver %{dist}.%{_arch}
@@ -201,6 +201,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
 %changelog
+* Sat Mar 26 2022 Yann Collette <ycollette.nospam@free.fr> - 5.15.31-rt38-13
+- Fix kernel config
+
 * Sat Mar 26 2022 Yann Collette <ycollette.nospam@free.fr> - 5.15.31-rt38-12
 - update to 5.15.31-rt38-12 - vanilla RT kernel
 
