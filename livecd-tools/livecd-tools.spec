@@ -3,7 +3,7 @@
 Summary: Tools for building live CDs
 Name: livecd-tools-mao
 Version: 28.3
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: GPLv2
 URL: https://github.com/livecd-tools/livecd-tools
 
@@ -59,7 +59,7 @@ python-imgcreate.
 %package -n python3-imgcreate-mao
 Summary: Python 3 modules for building system images
 %{?python_provide:%python_provide python3-imgcreate}
-Requires: python-imgcreate-sysdeps-mai%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
+Requires: python-imgcreate-sysdeps-mao%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 Requires: python3-pyparted
 Requires: python3-dnf >= 1.1.0
 Requires: python3-kickstart
@@ -128,6 +128,9 @@ rm -rfv %{buildroot}%{_mandir}/man8/livecd-iso-to-*
 %{_mandir}/man8/livecd-iso-to-disk.8*
 
 %changelog
+* Sun Mar 27 2022 Pavel Březina <pbrezina@redhat.com> - 1:28.3-4
+- Fix management of kernel-rt-mao kernels, fix an iso check failure
+
 * Mon Aug 23 2021 Pavel Březina <pbrezina@redhat.com> - 1:28.3-3
 - Switch from authconfig to authselect (rhbz#1982159)
 

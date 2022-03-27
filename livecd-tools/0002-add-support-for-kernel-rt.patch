@@ -33,10 +33,10 @@ index 7577895..e722a53 100644
          if kernel == self._default_kernel:
              return True
  
-+        if kernel.startswith(b"kernel-rt"):
++        if kernel.startswith("kernel-rt"):
 +            return False
 +
-+        if kernel.startswith(b"kernel-core"):
++        if kernel.startswith("kernel-core"):
 +            return False
 +
          if kernel.startswith(b"kernel-") and kernel[7:] == self._default_kernel:
