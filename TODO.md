@@ -87,6 +87,7 @@
 | BYOD                | https://github.com/Chowdhury-DSP/BYOD |
 | juced               | https://github.com/kunitoki/juced |
 | ykchorus            | https://github.com/SpotlightKid/ykchorus |
+| solfege             | https://src.fedoraproject.org/rpms/solfege |
 
 ## WIP
 
