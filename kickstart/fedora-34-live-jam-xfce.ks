@@ -13,9 +13,9 @@ timezone Europe/Paris
 
 auth --useshadow --passalgo=sha512
 # SELinux configuration
-#YC: pb when relabeling ...
-#selinux --disabled
-selinux --permissive
+#YC: some warnings when relabeling ...
+selinux --disabled
+#selinux --permissive
 #selinux --enforcing
 firewall --enabled --service=mdns
 xconfig --startxonboot
@@ -409,7 +409,7 @@ kernel
 kernel-modules
 kernel-modules-extra
 kernel-tools
-kernel-rt-mao
+kernel-rt-stable-mao
 
 # This was added a while ago, I think it falls into the category of
 # "Diagnosis/recovery tool useful from a Live OS image".  Leaving this untouched
@@ -518,7 +518,7 @@ mamba
 
 # synthesis
 hydrogen
-#YC hydrogen-drumkit-AVL-BlackPearl
+# YC hydrogen-drumkit-AVL-BlackPearl-4A
 bristol
 yoshimi
 zynaddsubfx
