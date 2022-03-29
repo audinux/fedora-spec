@@ -19,6 +19,7 @@ BuildRequires: qt5-qtbase-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: rtaudio-devel
+BuildRequires: libsndfile-devel
 BuildRequires: meson
 BuildRequires: python3-pyyaml
 BuildRequires: python3-jinja2
