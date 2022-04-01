@@ -52,6 +52,7 @@ BuildRequires: speexdsp-devel
 BuildRequires: gulrak-filesystem-devel
 BuildRequires: libarchive-devel
 BuildRequires: libzstd-devel
+BuildRequires: libsndfile-devel
 BuildRequires: python3-sphinx
 BuildRequires: python3-recommonmark
 BuildRequires: python3-sphinx_rtd_theme
@@ -206,7 +207,7 @@ EOF
 * Sun Feb 27 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - update to v2.1.0-1
 
-* Sat Jan 16 2022 Yann Collette <ycollette.nospam@free.fr> - 2.0.6-1
+* Sun Jan 16 2022 Yann Collette <ycollette.nospam@free.fr> - 2.0.6-1
 - update to v2.0.6-1
 
 * Sat Jan 01 2022 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1

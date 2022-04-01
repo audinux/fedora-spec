@@ -53,6 +53,7 @@ BuildRequires: gulrak-filesystem-devel
 BuildRequires: libarchive-devel
 BuildRequires: libzstd-devel
 BuildRequires: pulseaudio-libs-devel
+BuildRequires: libsndfile-devel
 BuildRequires: jq
 
 %description
