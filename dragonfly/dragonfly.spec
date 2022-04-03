@@ -5,7 +5,7 @@
 %define _lto_cflags %{nil}
 
 Name:    dragonfly-reverb
-Version: 3.2.5
+Version: 3.2.6
 Release: 3%{?dist}
 Summary: DragonFly reverberation plugin
 License: GPLv2+
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources:
-# ./dragonfly-source.sh 3.2.5
+# ./dragonfly-source.sh 3.2.6
 
 Source0: dragonfly-reverb.tar.gz
 Source1: dragonfly-source.sh
@@ -77,13 +77,16 @@ cp dragonfly-room-screenshot.png  %{buildroot}/%{_datadir}/pixmaps/
 %{_datadir}/pixmaps/*
 
 %changelog
+* Sun Apr 3 2022 Yann Collette <ycollette.nospam@free.fr> - 3.2.6-3
+- update to 3.2.6-3
+
 * Fri Mar 5 2021 Yann Collette <ycollette.nospam@free.fr> - 3.2.5-3
 - update to 3.2.5-3
 
 * Thu Mar 4 2021 Yann Collette <ycollette.nospam@free.fr> - 3.2.4-3
 - update to 3.2.4-3
 
-* Thu Dec 8 2020 Yann Collette <ycollette.nospam@free.fr> - 3.2.3-3
+* Tue Dec 8 2020 Yann Collette <ycollette.nospam@free.fr> - 3.2.3-3
 - update to 3.2.3-3
 
 * Sat Oct 3 2020 Yann Collette <ycollette.nospam@free.fr> - 3.2.1-3
