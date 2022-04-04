@@ -1,5 +1,5 @@
 Name:    cardinal
-Version: 22.03
+Version: 22.04
 Release: 1%{?dist}
 Summary:  Virtual modular synthesizer plugin
 License: GPLv2+
@@ -8,7 +8,7 @@ URL:     https://github.com/DISTRHO/Cardinal
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/DISTRHO/Cardinal/releases/download/%{version}/%{name}-%{version}.tar.xz
+Source0: https://github.com/DISTRHO/Cardinal/releases/download/%{version}/cardinal-%{version}.tar.xz
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: python-qt5-devel
@@ -93,6 +93,9 @@ mv %buildroot/usr/lib %buildroot/usr/lib64
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Apr 04 2022 Yann Collette <ycollette.nospam@free.fr> - 22.04-1
+- update to 22.04-1
+
 * Mon Mar 21 2022 Yann Collette <ycollette.nospam@free.fr> - 22.03-1
 - update to 22.03-1
 
