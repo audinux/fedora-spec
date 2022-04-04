@@ -36,6 +36,7 @@ BuildRequires: bzip2
 BuildRequires: xz
 BuildRequires: findutils
 BuildRequires: gzip
+BuildRequires: zlib-devel
 BuildRequires: m4
 BuildRequires: perl-interpreter
 BuildRequires: perl-Carp
