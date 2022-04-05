@@ -337,69 +337,71 @@ carla
 
 ## To be fixed:
 
-Bambootracker -> pulseaudio pb
-azr3 -> gtkmm / glibmm detection
-sonobus -> exchange not a member of std
-
-AnalogTapeModel 	
-rack-v2-SubmarineFree 	
-kernel-rt-stable-mao 	
-rack-v2-Ahornberg 	
-zytrax 	
-yabridge 	
-xjadeo 	
-vsxu 	
-veejay-gui 	
-veejay-serve 	
-veejay-core 	
-tsunami 	
-timemachine 	
-stargate 	
-sonic-pi 	
-SocaLabs-plugins 	
-snd 	
-smartamp 	
-rack-v2-ZetaCarinae 	
-shortcircuit 	
-sequencer64 	
-seq42 	
-ryukau 
-rezound 	
-rack-v1-VCV-Recorder 	
-rack-v1-VCV-Prototype 	
-rack-v1-trowaSoft 	
-rack-v1-rcm 	
-rack-v1-Fundamental 	
-rack-v1-ChowDSP 	
-rack-v1-AudibleInstruments 	
-Rack-v1 	
-qutecsound 	
-purr-data 	
-psindustrializer 	
-prelude 	
-picoloop 	
-ossia-score 	
-openFrameworks 	
-openboard 	
-odin2 	
-obxd 	
-monique-monosynth 	
-midi-monitor 	
-mapmap 	
-mandelbulber2 	
-lives-mao 	
-hydrogen 
-helio-workstation 	
-glava 	
-frequalizer 	
-element 	
-ChowMatrix 	
-bipscript 	
-BespokeSynth 	
-AnalogTapeModel 	
-aether 	
-kernel-rt-stable-mao 	
-JUCE5 
+Bambootracker         -> pulseaudio pb
+azr3                  -> gtkmm / glibmm detection
+sonobus               -> exchange not a member of std
+rack-v2-SubmarineFree -> remove -Werror=format-security	
+rack-v2-Ahornberg 	  -> warnings treated as errors
+zytrax 	              -> libsndfile linking
+yabridge 	          -> various link problems
+xjadeo 	              -> incompatibe ffmpeg ?
+vsxu 	              -> nullptr comparison
+veejay-gui 	          -> veejay-server missing
+veejay-serve 	      -> veejay-core missing
+veejay-core 	      -> duplicated AC_CONFIG_MACRO_DIR
+tsunami 	          -> libsndfile linking
+timemachine 	      -> lash-devel problem
+stargate 	          -> recompile a part with -fPIE
+sonobus               -> to check again
+sonic-pi 	          -> ruby version
+SocaLabs-plugins      -> JUCE
+snd 	              -> internal compiler error - check if new version of snd
+smartamp 	          -> JUCE5
+rack-v2-ZetaCarinae   -> to check again
+shortcircuit 	      -> remove -Werror=format-security
+sequencer64 	      -> lash-devel problem
+seq42 	              -> lash-devel problem
+ryukau                -> undefined reference to `DGL::Rectangle<int>::_draw(bool)'
+rezound 	          -> libsndfile linking problem
+rack-v1-VCV-Recorder  -> ffmpeg incompatibility	
+rack-v1-VCV-Prototype -> vult file not available
+rack-v1-trowaSoft 	  -> 'ostream_iterator' is not a member of 'std'
+rack-v1-rcm 	      -> remove -Werror=format-security
+rack-v1-Fundamental   -> libsndfile linking problem	
+rack-v1-ChowDSP 	  -> libsndfile linking problem
+rack-v1-AudibleInstruments 	-> check again
+Rack-v1 	          -> libsndfile linking problem
+qutecsound 	          -> libsndfile linking problem
+purr-data 	          -> a config.h is missing
+psindustrializer 	  -> libsndfile linking problem
+prelude 	          -> sfizz-devel was missing
+picoloop 	          -> libsndfile linking problem
+ossia-score 	      -> memory problem ? retry without lto
+openFrameworks 	      -> remove /opt/openFrameworks/.package_note-openFrameworks-0.11.2-2.fc36.x86_64.ld
+openboard 	          -> optional not in std -> missing header
+odin2 	              -> JUCE
+obxd 	              -> JUCE5
+monique-monosynth 	  -> exchange not in std -> missing header
+midi-monitor 	      -> exchange not in std -> missing header
+mapmap 	              -> libsndfile linking problem
+mandelbulber2 	      -> libsndfile linking problem
+lives-mao 	          -> calloc problem -> check upstream
+hydrogen              -> lash-devel problem
+helio-workstation 	  -> exchange not in std -> missing header
+glava 	              -> libsndfile linking problem
+frequalizer 	      -> JUCE5
+element 	          -> JUCE
+ChowMatrix 	          -> JUCE
+bipscript 	          -> portsmf-devel was missing
+BespokeSynth 	      -> unique_ptr not is std -> missing header
+AnalogTapeModel 	  -> JUCE + exchange not in std -> missing header
+aether 	              -> -Werror=stringop-overflow= problem
+kernel-rt-stable-mao  -> Auto-detecting system features:
+...                        libelf: [ on  ]
+...                          zlib: [ OFF ]
+...                           bpf: [ on  ]
+No zlib found
+JUCE5                 -> aggregate 'std::array<long unsigned int, 4> sizes' has incomplete type and cannot be defined -> array header missing ?
 
 ## regular update
 
