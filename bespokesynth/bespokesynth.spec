@@ -73,6 +73,8 @@ sed -i -e "s/lib\/vst3/%{_lib}\/vst3/g" VST_SDK/VST3_SDK/public.sdk/source/vst/h
 
 %set_build_flags
 
+export CXXFLAGS="$CXXFLAGS -include memory"
+
 %cmake -DBESPOKE_VST2_SDK_LOCATION=`pwd`/VST_SDK/VST2_SDK
 %cmake_build 
 
