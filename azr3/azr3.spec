@@ -51,6 +51,10 @@ frequencies.
 %autosetup -p1 -n azr3-jack-%{version}
 
 %build
+%set_build_flags
+
+export CXXFLAGS="$CXXFLAGS -I/usr/include/gtkmm-2.4 -I/usr/include/glibmm-2.4/ -I/usr/lib64/glibmm-2.4/include"
+
 %configure
 %make_build
 
