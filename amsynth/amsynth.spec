@@ -23,7 +23,6 @@ BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsndfile-devel
 BuildRequires: dssi-devel
 BuildRequires: liblo-devel
-BuildRequires: lash-devel
 BuildRequires: lv2-devel
 BuildRequires: pandoc
 BuildRequires: autoconf
