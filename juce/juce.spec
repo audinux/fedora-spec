@@ -4,7 +4,7 @@
 
 Name:    JUCE
 Version: 6.1.6
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: JUCE Framework
 URL:     https://github.com/juce-framework/JUCE
 License: GPLv2+
@@ -45,7 +45,7 @@ live-coding engine which can be used for rapid prototyping.
 
 #export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE $CXXFLAGS"
 #export CFLAGS="-DJUCER_ENABLE_GPL_MODE $CFLAGS"
-export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g"
+export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g -std=c++14 -include utility"
 export CFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g"
 
 cd docs/doxygen
@@ -95,6 +95,9 @@ cp -ra docs/doxygen/doc/* %{buildroot}/%{_datadir}/JUCE/doc/
 %{_usrsrc}/*
 
 %changelog
+* Tue Apr 05 2022 Yann Collette <ycollette.nospam@free.fr> - 6.1.6-6
+- update to 6.1.6-6 - fix for Fedora 36
+
 * Mon Feb 28 2022 Yann Collette <ycollette.nospam@free.fr> - 6.1.6-5
 - update to 6.1.6-5
 
