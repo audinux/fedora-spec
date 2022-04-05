@@ -86,7 +86,6 @@
 | Chameleon           | https://github.com/GuitarML/Chameleon |
 | BYOD                | https://github.com/Chowdhury-DSP/BYOD |
 | juced               | https://github.com/kunitoki/juced |
-| ykchorus            | https://github.com/SpotlightKid/ykchorus |
 | solfege             | https://src.fedoraproject.org/rpms/solfege |
 
 ## WIP
@@ -338,7 +337,69 @@ carla
 
 ## To be fixed:
 
-None
+Bambootracker -> pulseaudio pb
+azr3 -> gtkmm / glibmm detection
+sonobus -> exchange not a member of std
+
+AnalogTapeModel 	
+rack-v2-SubmarineFree 	
+kernel-rt-stable-mao 	
+rack-v2-Ahornberg 	
+zytrax 	
+yabridge 	
+xjadeo 	
+vsxu 	
+veejay-gui 	
+veejay-serve 	
+veejay-core 	
+tsunami 	
+timemachine 	
+stargate 	
+sonic-pi 	
+SocaLabs-plugins 	
+snd 	
+smartamp 	
+rack-v2-ZetaCarinae 	
+shortcircuit 	
+sequencer64 	
+seq42 	
+ryukau 
+rezound 	
+rack-v1-VCV-Recorder 	
+rack-v1-VCV-Prototype 	
+rack-v1-trowaSoft 	
+rack-v1-rcm 	
+rack-v1-Fundamental 	
+rack-v1-ChowDSP 	
+rack-v1-AudibleInstruments 	
+Rack-v1 	
+qutecsound 	
+purr-data 	
+psindustrializer 	
+prelude 	
+picoloop 	
+ossia-score 	
+openFrameworks 	
+openboard 	
+odin2 	
+obxd 	
+monique-monosynth 	
+midi-monitor 	
+mapmap 	
+mandelbulber2 	
+lives-mao 	
+hydrogen 
+helio-workstation 	
+glava 	
+frequalizer 	
+element 	
+ChowMatrix 	
+bipscript 	
+BespokeSynth 	
+AnalogTapeModel 	
+aether 	
+kernel-rt-stable-mao 	
+JUCE5 
 
 ## regular update
 
