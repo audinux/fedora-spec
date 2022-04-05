@@ -42,6 +42,7 @@ BuildRequires: gtk2-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
 BuildRequires: speexdsp-devel
+BuildRequires: libsndfile-devel
 BuildRequires: jq
 
 %description

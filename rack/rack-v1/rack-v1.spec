@@ -45,6 +45,7 @@ BuildRequires: gtk2-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
 BuildRequires: speexdsp-devel
+BuildRequires: libsndfile-devel
 BuildRequires: python3-sphinx
 BuildRequires: python3-recommonmark
 BuildRequires: python3-sphinx_rtd_theme
@@ -107,7 +108,7 @@ sed -i -e "s/dep\/lib\/libspeexdsp.a/-lspeexdsp/g" Makefile
 sed -i -e "s/dep\/lib\/libsamplerate.a/-lsamplerate/g" Makefile
 sed -i -e "s/dep\/lib\/librtmidi.a/-lrtmidi/g" Makefile
 # We use provided RtAudio library because Rack hangs when using jack and fedora rtaudio
-%if !%{use_static_glfw}
+%if !%{use_static_rtaudio}
 sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio -lpulse-simple -lpulse/g" Makefile
 %else
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
@@ -117,7 +118,7 @@ sed -i -e "s/pluginsPath = userDir + \"\/plugins-v\"/pluginsPath = systemDir + \
 
 tar xvfz %{SOURCE1}
 
-sed -i -e "s/sphinx-build/sphinx-build-3/g" manual/Makefile
+#sed -i -e "s/sphinx-build/sphinx-build-3/g" manual/Makefile
 
 # Disable an assert triggered with pipewire
 sed -i -e "s/assert(!err);/\/\/assert(!err);/g" src/system.cpp
@@ -147,8 +148,8 @@ cd ..
 
 %make_build PREFIX=/usr LIBDIR=%{_lib}
 
-cd manual
-%make_build html
+# cd manual
+# %make_build html
 
 %install 
 
@@ -156,14 +157,14 @@ mkdir -p %{buildroot}%{_bindir}/
 mkdir -p %{buildroot}%{_datadir}/pixmaps/
 mkdir -p %{buildroot}%{_datadir}/man/man1/
 mkdir -p %{buildroot}%{_datadir}/applications/
-mkdir -p %{buildroot}%{_datadir}/Rack/html/
+# mkdir -p %{buildroot}%{_datadir}/Rack/html/
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins/
 
 install -m 755 Rack         %{buildroot}%{_bindir}/
 install -m 644 res/icon.png %{buildroot}%{_datadir}/pixmaps/rack.png
 cp -r res                   %{buildroot}%{_libexecdir}/Rack1/
 
-cp -r manual/_build/html/* %{buildroot}%{_datadir}/Rack/html/
+# cp -r manual/_build/html/* %{buildroot}%{_datadir}/Rack/html/
 
 cp cacert.pem Core.json template.vcv %{buildroot}%{_libexecdir}/Rack1/
 
