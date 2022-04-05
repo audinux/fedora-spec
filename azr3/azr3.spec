@@ -25,7 +25,6 @@ BuildRequires: cairo-devel
 BuildRequires: cairomm-devel
 BuildRequires: glibmm24-devel
 BuildRequires: gtkmm24-devel
-BuildRequires: lash-devel
 BuildRequires: pango-devel
 BuildRequires: desktop-file-utils
 
