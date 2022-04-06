@@ -337,74 +337,64 @@ carla
 
 ## To be fixed:
 
-SocaLabs-plugins      -> JUCE
-odin2 	              -> JUCE
-element 	      -> JUCE
-ChowMatrix 	      -> JUCE
-AnalogTapeModel       -> JUCE + exchange not in std -> missing header
+smartamp    -> JUCE5
+obxd        -> JUCE5
+frequalizer -> JUCE5
 
-JUCE5                 -> aggregate 'std::array<long unsigned int, 4> sizes' has incomplete type and cannot be defined -> array header missing ?
-smartamp 	      -> JUCE5
-obxd 	              -> JUCE5
-frequalizer 	      -> JUCE5
+qutecsound       -> libsndfile linking problem
+psindustrializer -> libsndfile linking problem
+picoloop         -> libsndfile linking problem
+mapmap           -> libsndfile linking problem
+mandelbulber2    -> libsndfile linking problem
+glava            -> libsndfile linking problem
 
-zytrax 	              -> libsndfile linking problem
-tsunami               -> libsndfile linking problem
-rezound               -> libsndfile linking problem
-rack-v1-Fundamental   -> libsndfile linking problem	
-rack-v1-ChowDSP       -> libsndfile linking problem
-Rack-v1               -> libsndfile linking problem
-qutecsound            -> libsndfile linking problem
-psindustrializer      -> libsndfile linking problem
-picoloop              -> libsndfile linking problem
-mapmap 	              -> libsndfile linking problem
-mandelbulber2 	      -> libsndfile linking problem
-glava 	              -> libsndfile linking problem
+timemachine -> lash-devel problem
+sequencer64 -> lash-devel problem
+seq42       -> lash-devel problem
+hydrogen    -> lash-devel problem
 
-timemachine 	      -> lash-devel problem
-sequencer64 	      -> lash-devel problem
-seq42 	              -> lash-devel problem
-hydrogen              -> lash-devel problem
+bipscript -> portsmf-devel was missing
+prelude   -> sfizz-devel was missing
 
-bipscript             -> portsmf-devel was missing
-prelude               -> sfizz-devel was missing
+SocaLabs-plugins  -> exchange not a member of std
+odin2             -> exchange not a member of std
+sonobus           -> exchange not a member of std
+rack-v1-trowaSoft -> 'ostream_iterator' is not a member of 'std'
+openboard         -> optional not in std -> missing header
+monique-monosynth -> exchange not in std -> missing header
+midi-monitor      -> exchange not in std -> missing header
+helio-workstation -> exchange not in std -> missing header
+BespokeSynth      -> unique_ptr not is std -> missing header
 
-sonobus               -> exchange not a member of std
-rack-v1-trowaSoft     -> 'ostream_iterator' is not a member of 'std'
-openboard             -> optional not in std -> missing header
-monique-monosynth     -> exchange not in std -> missing header
-midi-monitor 	      -> exchange not in std -> missing header
-helio-workstation     -> exchange not in std -> missing header
-BespokeSynth 	      -> unique_ptr not is std -> missing header
-
-rack-v2-SubmarineFree -> remove -Werror=format-security	
+rack-v2-SubmarineFree -> remove -Werror=format-security
 rack-v2-Ahornberg     -> warnings treated as errors
-shortcircuit 	      -> remove -Werror=format-security
-rack-v1-rcm 	      -> remove -Werror=format-security
-aether 	              -> -Werror=stringop-overflow= problem
+shortcircuit          -> remove -Werror=format-security
+rack-v1-rcm           -> remove -Werror=format-security
+aether                -> -Werror=stringop-overflow= problem
+rack-v1-ChowDSP       -> format not a string literal
 
-veejay-gui 	      -> veejay-server missing
-veejay-serve 	      -> veejay-core missing
-veejay-core 	      -> duplicated AC_CONFIG_MACRO_DIR
+veejay-gui   -> veejay-server missing
+veejay-serve -> veejay-core missing
+veejay-core  -> duplicated AC_CONFIG_MACRO_DIR
 
-Bambootracker         -> pulseaudio pb
-azr3                  -> gtkmm / glibmm detection
-yabridge              -> various link problems
-xjadeo 	              -> incompatibe ffmpeg ?
-vsxu 	              -> nullptr comparison
-stargate              -> recompile a part with -fPIE
-sonic-pi              -> ruby version
-snd 	              -> internal compiler error - check if new version of snd
-rack-v2-ZetaCarinae   -> to check again
-ryukau                -> undefined reference to `DGL::Rectangle<int>::_draw(bool)'
-rack-v1-VCV-Recorder  -> ffmpeg incompatibility	
-rack-v1-VCV-Prototype -> vult file not available
+Bambootracker              -> pulseaudio pb
+azr3                       -> gtkmm / glibmm detection
+yabridge                   -> various link problems
+xjadeo                     -> incompatibe ffmpeg ?
+vsxu                       -> nullptr comparison
+stargate                   -> recompile a part with -fPIE
+sonic-pi                   -> ruby version
+snd                        -> internal compiler error - check if new version of snd
+rack-v2-ZetaCarinae        -> to check again
+ryukau                     -> undefined reference to `DGL::Rectangle<int>::_draw(bool)'
+rack-v1-VCV-Recorder       -> ffmpeg incompatibility
+rack-v1-VCV-Prototype      -> vult file not available
 rack-v1-AudibleInstruments -> check again
 purr-data                  -> a config.h is missing
-ossia-score           -> memory problem ? retry without lto
-openFrameworks 	      -> remove /opt/openFrameworks/.package_note-openFrameworks-0.11.2-2.fc36.x86_64.ld
-lives-mao             -> calloc problem -> check upstream
-kernel-rt-stable-mao  -> Auto-detecting system features:
+ossia-score                -> memory problem ? retry without lto
+openFrameworks             -> remove /opt/openFrameworks/.package_note-openFrameworks-0.11.2-2.fc36.x86_64.ld
+lives-mao                  -> calloc problem -> check upstream
+kernel-rt-stable-mao       -> Auto-detecting system features:
 ...                        libelf: [ on  ]
 ...                          zlib: [ OFF ]
 ...                           bpf: [ on  ]
@@ -426,3 +416,4 @@ ryukau -> update to last master
 snd -> 22.0
 socalab -> update to last master
 ssr -> 0.4.3
+harvid -> 0.9.0
