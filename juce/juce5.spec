@@ -18,7 +18,7 @@ BuildRequires: dssi-devel
 BuildRequires: ladspa-devel
 BuildRequires: doxygen
 BuildRequires: graphviz
-BuildRequires: python-unversioned-command
+BuildRequires: python2
 BuildRequires: webkit2gtk3-devel
 BuildRequires: sed
 BuildRequires: libcurl-devel
@@ -41,7 +41,7 @@ live-coding engine which can be used for rapid prototyping.
 
 #export CXXFLAGS="$CXXFLAGS -DJUCER_ENABLE_GPL_MODE -O0"
 #export CFLAGS="$CFLAGS -DJUCER_ENABLE_GPL_MODE -O0"
-export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g"
+export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g -include array"
 export CFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g"
 
 cd doxygen
