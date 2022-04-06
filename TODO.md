@@ -337,71 +337,78 @@ carla
 
 ## To be fixed:
 
-Bambootracker         -> pulseaudio pb
-azr3                  -> gtkmm / glibmm detection
-sonobus               -> exchange not a member of std
-rack-v2-SubmarineFree -> remove -Werror=format-security	
-rack-v2-Ahornberg 	  -> warnings treated as errors
-zytrax 	              -> libsndfile linking
-yabridge 	          -> various link problems
-xjadeo 	              -> incompatibe ffmpeg ?
-vsxu 	              -> nullptr comparison
-veejay-gui 	          -> veejay-server missing
-veejay-serve 	      -> veejay-core missing
-veejay-core 	      -> duplicated AC_CONFIG_MACRO_DIR
-tsunami 	          -> libsndfile linking
-timemachine 	      -> lash-devel problem
-stargate 	          -> recompile a part with -fPIE
-sonobus               -> to check again
-sonic-pi 	          -> ruby version
 SocaLabs-plugins      -> JUCE
-snd 	              -> internal compiler error - check if new version of snd
-smartamp 	          -> JUCE5
-rack-v2-ZetaCarinae   -> to check again
-shortcircuit 	      -> remove -Werror=format-security
-sequencer64 	      -> lash-devel problem
-seq42 	              -> lash-devel problem
-ryukau                -> undefined reference to `DGL::Rectangle<int>::_draw(bool)'
-rezound 	          -> libsndfile linking problem
-rack-v1-VCV-Recorder  -> ffmpeg incompatibility	
-rack-v1-VCV-Prototype -> vult file not available
-rack-v1-trowaSoft 	  -> 'ostream_iterator' is not a member of 'std'
-rack-v1-rcm 	      -> remove -Werror=format-security
-rack-v1-Fundamental   -> libsndfile linking problem	
-rack-v1-ChowDSP 	  -> libsndfile linking problem
-rack-v1-AudibleInstruments 	-> check again
-Rack-v1 	          -> libsndfile linking problem
-qutecsound 	          -> libsndfile linking problem
-purr-data 	          -> a config.h is missing
-psindustrializer 	  -> libsndfile linking problem
-prelude 	          -> sfizz-devel was missing
-picoloop 	          -> libsndfile linking problem
-ossia-score 	      -> memory problem ? retry without lto
-openFrameworks 	      -> remove /opt/openFrameworks/.package_note-openFrameworks-0.11.2-2.fc36.x86_64.ld
-openboard 	          -> optional not in std -> missing header
 odin2 	              -> JUCE
+element 	      -> JUCE
+ChowMatrix 	      -> JUCE
+AnalogTapeModel       -> JUCE + exchange not in std -> missing header
+
+JUCE5                 -> aggregate 'std::array<long unsigned int, 4> sizes' has incomplete type and cannot be defined -> array header missing ?
+smartamp 	      -> JUCE5
 obxd 	              -> JUCE5
-monique-monosynth 	  -> exchange not in std -> missing header
-midi-monitor 	      -> exchange not in std -> missing header
+frequalizer 	      -> JUCE5
+
+zytrax 	              -> libsndfile linking problem
+tsunami               -> libsndfile linking problem
+rezound               -> libsndfile linking problem
+rack-v1-Fundamental   -> libsndfile linking problem	
+rack-v1-ChowDSP       -> libsndfile linking problem
+Rack-v1               -> libsndfile linking problem
+qutecsound            -> libsndfile linking problem
+psindustrializer      -> libsndfile linking problem
+picoloop              -> libsndfile linking problem
 mapmap 	              -> libsndfile linking problem
 mandelbulber2 	      -> libsndfile linking problem
-lives-mao 	          -> calloc problem -> check upstream
-hydrogen              -> lash-devel problem
-helio-workstation 	  -> exchange not in std -> missing header
 glava 	              -> libsndfile linking problem
-frequalizer 	      -> JUCE5
-element 	          -> JUCE
-ChowMatrix 	          -> JUCE
-bipscript 	          -> portsmf-devel was missing
+
+timemachine 	      -> lash-devel problem
+sequencer64 	      -> lash-devel problem
+seq42 	              -> lash-devel problem
+hydrogen              -> lash-devel problem
+
+bipscript             -> portsmf-devel was missing
+prelude               -> sfizz-devel was missing
+
+sonobus               -> exchange not a member of std
+rack-v1-trowaSoft     -> 'ostream_iterator' is not a member of 'std'
+openboard             -> optional not in std -> missing header
+monique-monosynth     -> exchange not in std -> missing header
+midi-monitor 	      -> exchange not in std -> missing header
+helio-workstation     -> exchange not in std -> missing header
 BespokeSynth 	      -> unique_ptr not is std -> missing header
-AnalogTapeModel 	  -> JUCE + exchange not in std -> missing header
+
+rack-v2-SubmarineFree -> remove -Werror=format-security	
+rack-v2-Ahornberg     -> warnings treated as errors
+shortcircuit 	      -> remove -Werror=format-security
+rack-v1-rcm 	      -> remove -Werror=format-security
 aether 	              -> -Werror=stringop-overflow= problem
+
+veejay-gui 	      -> veejay-server missing
+veejay-serve 	      -> veejay-core missing
+veejay-core 	      -> duplicated AC_CONFIG_MACRO_DIR
+
+Bambootracker         -> pulseaudio pb
+azr3                  -> gtkmm / glibmm detection
+yabridge              -> various link problems
+xjadeo 	              -> incompatibe ffmpeg ?
+vsxu 	              -> nullptr comparison
+stargate              -> recompile a part with -fPIE
+sonic-pi              -> ruby version
+snd 	              -> internal compiler error - check if new version of snd
+rack-v2-ZetaCarinae   -> to check again
+ryukau                -> undefined reference to `DGL::Rectangle<int>::_draw(bool)'
+rack-v1-VCV-Recorder  -> ffmpeg incompatibility	
+rack-v1-VCV-Prototype -> vult file not available
+rack-v1-AudibleInstruments -> check again
+purr-data                  -> a config.h is missing
+ossia-score           -> memory problem ? retry without lto
+openFrameworks 	      -> remove /opt/openFrameworks/.package_note-openFrameworks-0.11.2-2.fc36.x86_64.ld
+lives-mao             -> calloc problem -> check upstream
 kernel-rt-stable-mao  -> Auto-detecting system features:
 ...                        libelf: [ on  ]
 ...                          zlib: [ OFF ]
 ...                           bpf: [ on  ]
 No zlib found
-JUCE5                 -> aggregate 'std::array<long unsigned int, 4> sizes' has incomplete type and cannot be defined -> array header missing ?
 
 ## regular update
 
