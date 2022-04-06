@@ -30,6 +30,7 @@ BuildRequires: libogg-devel
 BuildRequires: flac-devel
 BuildRequires: fftw-devel
 BuildRequires: libunwind-devel
+BuildRequires: libsndfile-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: desktop-file-utils
 

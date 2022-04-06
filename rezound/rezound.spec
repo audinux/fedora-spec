@@ -43,6 +43,7 @@ BuildRequires: libXft-devel
 BuildRequires: libXi-devel
 BuildRequires: libjpeg-devel
 BuildRequires: libtiff-devel
+BuildRequires: libsndfile-devel
 BuildRequires: fox-utils
 BuildRequires: bison
 BuildRequires: flex

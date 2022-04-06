@@ -28,6 +28,7 @@ BuildRequires: gtkmm30-devel
 BuildRequires: freetype-devel
 BuildRequires: rtmidi-devel
 BuildRequires: pulseaudio-libs-devel
+BuildRequires: libsndfile-devel
 
 %description
 While contemporary software that uses this approach exists, it
