@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 5dbe30b6af94662dd60597f679567a8dc11cd585
-%global gittag0 2.3.14
+%global gittag0 2.3.15
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-OrangeLine
-Version: 2.3.14
+Version: 2.3.15
 Release: 1%{?dist}
 Summary: OrangeLine plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r OrangeLine_plugin/dist/OrangeLine/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.14-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.15-1
 - initial specfile

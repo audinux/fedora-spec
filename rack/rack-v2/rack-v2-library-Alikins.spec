@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 c403f2c04e10dbb1513c9632c77801de6f8e9af2
-%global gittag0 1.0.1
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Alikins
-Version: 1.0.1
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: Alikins plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r Alikins_plugin/dist/Alikins/* %{buildroot}%{_libexecdir}/Rack2/plugins/Ali
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

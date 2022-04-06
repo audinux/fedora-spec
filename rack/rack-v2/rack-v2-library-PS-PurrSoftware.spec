@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 e35fed7a167ef59e58bc0e0025963a5a14378f1c
-%global gittag0 2.0.14
+%global gittag0 2.0.15
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-PS-PurrSoftware
-Version: 2.0.14
+Version: 2.0.15
 Release: 1%{?dist}
 Summary: PS-PurrSoftware plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r PS-PurrSoftware_plugin/dist/PS-PurrSoftware/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.14-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.15-1
 - initial specfile

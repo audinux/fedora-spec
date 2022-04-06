@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 833fe33ed00d50d9408a7b798f4bc66ef6f0c6d0
-%global gittag0 2.1.0
+%global commit0 3fbe771440ef4ab822cc6c78bdc883ca7f783d98
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-MindMeldModular
-Version: 2.1.0
+Name:    rack-v2-DivergentWaves
+Version: 2.0.0
 Release: 1%{?dist}
-Summary: MindMeldModular plugin for Rack
+Summary: DivergentWaves plugin for Rack
 License: GPLv2+
-URL:     https://github.com/MarcBoule/MindMeldModular
+URL:     
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,8 +27,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/MarcBoule/MindMeldModular/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: MindMeldModular_plugin.json
+Source1: /archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: DivergentWaves_plugin.json
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -57,8 +57,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-MindMeldModular plugin for Rack.
-8-track stereo mixer with 2 group busses
+DivergentWaves plugin for Rack.
+Fixed-function Logic Processor
 
 %prep
 %autosetup -n Rack
@@ -127,24 +127,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir MindMeldModular_plugin
-tar xvfz %{SOURCE1} --directory=MindMeldModular_plugin --strip-components=1 
+mkdir DivergentWaves_plugin
+tar xvfz %{SOURCE1} --directory=DivergentWaves_plugin --strip-components=1 
 
-cp -n %{SOURCE2} MindMeldModular_plugin/plugin.json
+cp -n %{SOURCE2} DivergentWaves_plugin/plugin.json
 
 %build
 
-cd MindMeldModular_plugin
+cd DivergentWaves_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/MindMeldModular/
-cp -r MindMeldModular_plugin/dist/MindMeldModular/* %{buildroot}%{_libexecdir}/Rack2/plugins/MindMeldModular/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/DivergentWaves/
+cp -r DivergentWaves_plugin/dist/DivergentWaves/* %{buildroot}%{_libexecdir}/Rack2/plugins/DivergentWaves/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

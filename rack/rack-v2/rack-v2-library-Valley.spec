@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 80e8976eebbea1e1177beba4de5645eb0ca680e3
-%global gittag0 2.0.3
+%global gittag0 2.0.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Valley
-Version: 2.0.3
+Version: 2.0.4
 Release: 1%{?dist}
 Summary: Valley plugin for Rack
 License: GPLv2+
@@ -58,6 +58,9 @@ BuildRequires: jq
 
 %description
 Valley plugin for Rack.
+Topographic drum machine. This module is based on the original
+Mutable Instruments (TM) Grids sequencer module. The Map and Density
+controls explore and control the denisty of many pre-baked drum patterns.
 
 %prep
 %autosetup -n Rack
@@ -145,5 +148,5 @@ cp -r Valley_plugin/dist/Valley/* %{buildroot}%{_libexecdir}/Rack2/plugins/Valle
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-1
 - initial specfile
