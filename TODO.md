@@ -337,12 +337,9 @@ carla
 
 ## To be fixed:
 
-smartamp    -> JUCE5
-obxd        -> JUCE5
-frequalizer -> JUCE5
-
-bipscript -> portsmf-devel was missing
-prelude   -> sfizz-devel was missing
+smartamp    -> missing array header
+obxd        -> missing array header
+frequalizer -> missing array header
 
 timemachine -> lash-devel problem
 sequencer64 -> lash-devel problem
