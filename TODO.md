@@ -344,8 +344,6 @@ frequalizer -> JUCE5
 bipscript -> portsmf-devel was missing
 prelude   -> sfizz-devel was missing
 
-#mandelbulber2    -> libsndfile linking problem
-
 timemachine -> lash-devel problem
 sequencer64 -> lash-devel problem
 seq42       -> lash-devel problem
