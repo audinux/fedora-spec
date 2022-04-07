@@ -341,20 +341,15 @@ smartamp    -> JUCE5
 obxd        -> JUCE5
 frequalizer -> JUCE5
 
-qutecsound       -> libsndfile linking problem
-psindustrializer -> libsndfile linking problem
-picoloop         -> libsndfile linking problem
-mapmap           -> libsndfile linking problem
-mandelbulber2    -> libsndfile linking problem
-glava            -> libsndfile linking problem
+bipscript -> portsmf-devel was missing
+prelude   -> sfizz-devel was missing
+
+#mandelbulber2    -> libsndfile linking problem
 
 timemachine -> lash-devel problem
 sequencer64 -> lash-devel problem
 seq42       -> lash-devel problem
 hydrogen    -> lash-devel problem
-
-bipscript -> portsmf-devel was missing
-prelude   -> sfizz-devel was missing
 
 SocaLabs-plugins  -> exchange not a member of std
 odin2             -> exchange not a member of std
