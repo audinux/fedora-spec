@@ -28,6 +28,7 @@ BuildRequires: SDL2_image-devel
 BuildRequires: SDL2_gfx-devel
 BuildRequires: SDL2_ttf-devel
 BuildRequires: pulseaudio-libs-devel
+BuildRequires: libsndfile-devel
 BuildRequires: desktop-file-utils
 
 Requires: SDL2_ttf

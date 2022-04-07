@@ -27,6 +27,7 @@ BuildRequires: pulseaudio-libs-devel
 BuildRequires: glfw-devel
 BuildRequires: libXcomposite-devel
 BuildRequires: libXext-devel
+BuildRequires: libsndfile-devel
 
 %description
 GLava is an OpenGL audio spectrum visualizer. Its primary use case is for desktop windows or backgrounds.

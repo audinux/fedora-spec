@@ -20,9 +20,11 @@ BuildRequires: gcc gcc-c++
 BuildRequires: desktop-file-utils
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: csound-devel
-BuildRequires: csound-manual
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtquickcontrols2-devel
+BuildRequires: libsndfile-devel
+
+Requires: csound-manual
 
 %description
 CsoundQt is a frontend for Csound featuring a highlighting editor with autocomplete,

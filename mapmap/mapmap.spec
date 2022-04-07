@@ -17,12 +17,13 @@ BuildRequires: qt5-qtsvg-devel
 BuildRequires: qt5-qtmultimedia-devel
 BuildRequires: qt5-linguist
 BuildRequires: alsa-lib-devel
-BuildRequires: desktop-file-utils
 BuildRequires: zlib-devel
 BuildRequires: glib2-devel
 BuildRequires: liblo-devel
 BuildRequires: gstreamer1-devel
 BuildRequires: gstreamer1-plugins-base-devel
+BuildRequires: libsndfile-devel
+BuildRequires: desktop-file-utils
 
 %description
 MapMap is a free video mapping software.

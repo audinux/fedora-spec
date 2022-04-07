@@ -25,6 +25,7 @@ BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: audiofile-devel
 BuildRequires: gtk2-devel
+BuildRequires: libsndfile-devel
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 
