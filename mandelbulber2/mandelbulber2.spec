@@ -23,6 +23,7 @@ BuildRequires: pkgconfig(Qt5Multimedia)
 BuildRequires: pkgconfig(gsl)
 BuildRequires: pkgconfig(libpng)
 BuildRequires: lzo-devel
+BuildRequires: libsndfile-devel
 BuildRequires: desktop-file-utils
 
 %description
