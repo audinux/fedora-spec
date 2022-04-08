@@ -337,15 +337,9 @@ carla
 
 ## To be fixed:
 
-smartamp    -> missing array header
-obxd        -> missing array header
-frequalizer -> missing array header
-
-timemachine -> lash-devel problem
-sequencer64 -> lash-devel problem
-seq42       -> lash-devel problem
-hydrogen    -> lash-devel problem
-
+smartamp          -> missing array header
+obxd              -> missing array header
+frequalizer       -> missing array header
 SocaLabs-plugins  -> exchange not a member of std
 odin2             -> exchange not a member of std
 sonobus           -> exchange not a member of std
@@ -354,7 +348,6 @@ openboard         -> optional not in std -> missing header
 monique-monosynth -> exchange not in std -> missing header
 midi-monitor      -> exchange not in std -> missing header
 helio-workstation -> exchange not in std -> missing header
-BespokeSynth      -> unique_ptr not is std -> missing header
 
 rack-v2-SubmarineFree -> remove -Werror=format-security
 rack-v2-Ahornberg     -> warnings treated as errors
