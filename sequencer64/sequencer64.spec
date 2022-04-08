@@ -15,7 +15,6 @@ BuildRequires: gcc gcc-c++
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: gtkmm24-devel
-BuildRequires: lash-devel
 BuildRequires: rtmidi-devel
 BuildRequires: git
 BuildRequires: autoconf

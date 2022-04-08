@@ -14,7 +14,6 @@ BuildRequires: gcc gcc-c++ make
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: gtkmm30-devel
-BuildRequires: lash-devel
 BuildRequires: liblo-devel
 BuildRequires: autoconf
 BuildRequires: automake

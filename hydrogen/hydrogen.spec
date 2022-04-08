@@ -22,7 +22,6 @@ BuildRequires: desktop-file-utils
 BuildRequires: flac-devel 
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: ladspa-devel
-BuildRequires: lash-devel 
 BuildRequires: liblrdf-devel
 BuildRequires: libsndfile-devel
 BuildRequires: libtar-devel

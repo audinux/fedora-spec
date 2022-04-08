@@ -22,7 +22,6 @@ BuildRequires: desktop-file-utils
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsndfile-devel
 BuildRequires: liblo-devel
-BuildRequires: lash-devel
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool
