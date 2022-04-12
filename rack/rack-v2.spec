@@ -7,7 +7,7 @@
 
 Name:    Rack-v2
 Version: 2.1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A modular Synthesizer
 License: GPLv2+
 URL:     https://github.com/VCVRack/Rack
@@ -173,7 +173,7 @@ mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/
 mkdir -p %{buildroot}%{_libdir}/
 
 install -m 755 Rack         %{buildroot}%{_bindir}/Rack2
-install -m 644 res/icon.png %{buildroot}%{_datadir}/pixmaps/rack.png
+install -m 644 res/icon.png %{buildroot}%{_datadir}/pixmaps/rack2.png
 cp -r res                   %{buildroot}%{_libexecdir}/Rack2/
 install -m 755 libRack.so   %{buildroot}%{_libdir}/
 
@@ -188,7 +188,7 @@ Comment=A modular Synthesizer.
 Exec=/usr/bin/Rack2
 Type=Application
 Terminal=0
-Icon=/usr/share/pixmaps/rack.png
+Icon=/usr/share/pixmaps/rack2.png
 Categories=AudioVideo;
 EOF
 
@@ -204,6 +204,9 @@ EOF
 %{_datadir}/*
 
 %changelog
+* Tue Apr 12 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-2
+- update to v2.1.0-2 - change icon name to avoid conflict with Rack-v1
+
 * Sun Feb 27 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - update to v2.1.0-1
 
