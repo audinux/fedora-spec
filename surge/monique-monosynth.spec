@@ -55,7 +55,7 @@ sed -i -e "/Werror/d" CMakeLists.txt
 
 %build
 
-%cmake
+%cmake -DCMAKE_CXX_FLAGS="-include utility"
 %cmake_build
 
 %install 

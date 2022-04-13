@@ -64,7 +64,7 @@ export HOME=`pwd`
 mkdir -p .vst3
 
 cd plugins/SmartAmp/Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true CXXFLAGS="-I/usr/include/eigen3 -I/usr/include/freetype2" LDFLAGS="$LDFLAGS -lX11 -lXext `pkg-config --libs webkit2gtk-4.0`"
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-I/usr/include/eigen3 -I/usr/include/freetype2 -include array" LDFLAGS="$LDFLAGS -lX11 -lXext `pkg-config --libs webkit2gtk-4.0`"
 
 %install 
 

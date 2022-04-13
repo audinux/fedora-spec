@@ -64,6 +64,7 @@ sed -i -e "s|/usr/src/JUCE|/usr/src/JUCE5|g" Builds/LinuxMakefile/Makefile
 
 %set_build_flags
 
+export CXXFLAGS="$CXXFLAGS -include array"
 export LDFLAGS="$LDFLAGS -lX11 -lXext"
 
 cd Builds/LinuxMakefile

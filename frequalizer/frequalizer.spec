@@ -72,7 +72,7 @@ sleep 10
 
 %set_build_flags
 export CFLAGS="-I/usr/include/freetype2 $CFLAGS"
-export CXXFLAGS="-I/usr/include/freetype2 $CXXFLAGS"
+export CXXFLAGS="-I/usr/include/freetype2 -include array $CXXFLAGS"
 
 Projucer5 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE5/modules/
 Projucer5 --resave Frequalizer.jucer

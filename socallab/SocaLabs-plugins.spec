@@ -85,6 +85,7 @@ SocaLabs Audio Plugins - VST3 format
 
 %set_build_flags
 
+export CXXFLAGS="-include utility $CXXFLAGS"
 export CURRENT_PATH=`pwd`
 
 mkdir -p $CURRENT_PATH/bin/standalone/

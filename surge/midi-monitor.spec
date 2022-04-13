@@ -48,7 +48,7 @@ VST3 version of %{name}
 
 %build
 
-%cmake
+%cmake -DCMAKE_CXX_FLAGS="-include utility"
 %cmake_build
 
 %install 

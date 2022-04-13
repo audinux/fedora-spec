@@ -83,8 +83,7 @@ sed -i -e "s|\$DIR/OpenBoard|/usr/libexec/OpenBoard|g" resources/linux/run.sh
 %build
 lrelease-qt5 -removeidentical %{uname}.pro
 
-%qmake_qt5 INCLUDEPATH+=/usr/include/ffmpeg
-
+%qmake_qt5 INCLUDEPATH+=/usr/include/ffmpeg QMAKE_CXXFLAGS+="-include utility -include optional"
 %make_build
 
 %install

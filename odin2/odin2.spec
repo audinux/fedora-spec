@@ -12,8 +12,8 @@ URL:     https://github.com/TheWaveWarden/odin2
 Vendor:       Audinux
 Distribution: Audinux
 
-# Usage: ./odin-source.sh <TAG>
-# ./odin-source.sh v2.3.1
+# Usage: ./odin-sources.sh <TAG>
+# ./odin-sources.sh v2.3.1
 
 Source0: odin2.tar.gz
 Source1: JUCELV2.tar.gz
@@ -29,7 +29,7 @@ BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
 #BuildRequires: JUCE == 6.0.1
-BuildRequires: JUCE
+BuildRequires: JUCE60
 BuildRequires: libXrandr-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
@@ -69,6 +69,7 @@ tar xvfz %{SOURCE1}
 
 %set_build_flags
 
+export CXXFLAGS="-include utility $CXXFLAGS"
 export HOME=`pwd`
 mkdir -p .vst3
 mkdir -p .lv2
@@ -76,8 +77,8 @@ mkdir -p .local/share/Odin2
 
 # VST3 part
 
-Projucer --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE/modules/
-Projucer --resave Odin.jucer
+Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
+Projucer60 --resave Odin.jucer
 
 cd Builds/LinuxMakefile
 %make_build CONFIG=Release STRIP=true
@@ -88,8 +89,8 @@ cd ../..
 
 # LV2 part
 
-Projucer --set-global-search-path linux defaultJuceModulePath $PWD/JUCELV2/modules/
-Projucer --resave Odin.jucer
+Projucer60 --set-global-search-path linux defaultJuceModulePath $PWD/JUCELV2/modules/
+Projucer60 --resave Odin.jucer
 
 echo "#define JucePlugin_Build_LV2 1" >> JuceLibraryCode/AppConfig.h
 echo "#define JucePlugin_LV2URI \"https://www.thewavewarden.com/odin2\"" >> JuceLibraryCode/AppConfig.h
