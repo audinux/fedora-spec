@@ -89,6 +89,13 @@
 | solfege             | https://src.fedoraproject.org/rpms/solfege |
 | wineasio            | https://github.com/wineasio/wineasio |
 | GuitarMidi-LV2      | https://github.com/geraldmwangi/GuitarMidi-LV2 |
+| hpsjam              | https://github.com/hselasky/hpsjam |
+| gyroflow            | https://github.com/gyroflow/gyroflow |
+| studio-controls     | https://github.com/ovenwerks/studio-controls |
+| seq66               | https://github.com/ahlstromcj/seq66 |
+| DawDreamer          | https://github.com/DBraun/DawDreamer |
+| vmpc-juce           | https://github.com/izzyreal/vmpc-juce |
+| powertabeditor      | https://github.com/powertab/powertabeditor |
 
 ## WIP
 
@@ -400,17 +407,12 @@ nekobee-dssi
 whysynth-dssi
 xsynth-dssi
 hexter-dssi
-jamin
-realTimeConfigQuickScan
-radium-compressor
 solfege
 GrandOrgue
-jm2cv
 chuck
 sonic-pi
 faust
 faust-tools
-faustworks
 
 ## regular update
 
