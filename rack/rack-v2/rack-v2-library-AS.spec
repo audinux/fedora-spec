@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 771e499a71e57c22760f80c7a787642e71f8c195
-%global gittag0 2.0.2
+%global commit0 9ad1350871e574ff52aca0f02a01bbcc4f56e5a5
+%global gittag0 2.0.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-AS
-Version: 2.0.2
+Version: 2.0.3
 Release: 1%{?dist}
 Summary: AS plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r AS_plugin/dist/AS/* %{buildroot}%{_libexecdir}/Rack2/plugins/AS/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
 - initial specfile

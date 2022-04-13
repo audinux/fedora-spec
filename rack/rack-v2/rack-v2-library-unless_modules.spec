@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 4bbf174ab1f39db0536ad1aa5e0c94dd473f2b23
-%global gittag0 2.2.3
+%global commit0 040a0648bd77c109739afd8970868ec5e780265b
+%global gittag0 2.2.5
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-unless_modules
-Version: 2.2.3
+Version: 2.2.5
 Release: 1%{?dist}
 Summary: unless_modules plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r unless_modules_plugin/dist/unless_modules/* %{buildroot}%{_libexecdir}/Rac
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.5-1
 - initial specfile
