@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=QuickScan
+GenericName=Realtime audio diagnostic
+Comment=Realtime audio configuration check
+Exec=QuickScan
+Terminal=false
+Type=Application
+Categories=AudioVideo;X-AudioTools;

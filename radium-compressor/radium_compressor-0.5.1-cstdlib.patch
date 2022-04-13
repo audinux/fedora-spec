@@ -1,0 +1,11 @@
+diff -Nurp radium_compressor-0.5.1/myjack-dsp.h radium_compressor-0.5.1.mod/myjack-dsp.h
+--- radium_compressor-0.5.1/myjack-dsp.h	2013-01-26 12:55:27.000000000 +0100
++++ radium_compressor-0.5.1.mod/myjack-dsp.h	2013-01-26 22:02:03.887986906 +0100
+@@ -3,6 +3,7 @@
+ #define __jack_dsp__
+ 
+ #include <stdio.h>
++#include <cstdlib>
+ #include <jack/jack.h>
+ #include "faust/audio/audio.h"
+ #include "faust/audio/dsp.h"

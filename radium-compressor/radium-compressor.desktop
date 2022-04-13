@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Radium Compressor
+GenericName=An audio compressor
+Icon=
+Type=Application
+Exec=radium_compressor
+Terminal=false
+Categories=AudioVideo;Audio;X-Digital_Processing;X-Jack;
