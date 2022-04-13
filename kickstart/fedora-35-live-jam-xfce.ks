@@ -497,7 +497,7 @@ libsndfile
 jack-audio-connection-kit
 jack-audio-connection-kit-example-clients
 qjackctl
-#YC: jackctlmmc
+jackctlmmc
 Carla
 Cadence
 
@@ -512,7 +512,6 @@ pavucontrol
 qsynth
 fluidsynth
 fluid-soundfont-gm
-#YC: fluidsynth-dssi
 timidity++
 qmidiarp
 vmpk
@@ -604,7 +603,7 @@ lv2-newtonator
 lv2-x42-plugins
 lv2-sorcer
 lv2-fabla
-#YC: lv2-artyfx-plugins
+lv2-artyfx-plugins
 #YC: lv2-EQ10Q-plugins
 lv2-linuxsampler-plugins
 lv2-mdaEPiano
@@ -632,6 +631,7 @@ lv2-fomp-plugins
 #YC: whysynth-dssi
 #YC: xsynth-dssi
 #YC: hexter-dssi
+#YC: fluidsynth-dssi
 
 # VST3
 vst3-surge
@@ -653,17 +653,17 @@ mscore
 lilypond
 
 # audio utilities
-#YC: jamin
+jamin
 lash
 jack_capture
 jaaa
 jmeters
 qastools
 arpage
-#YC: realTimeConfigQuickScan
+realTimeConfigQuickScan
 rtirq
 japa
-#YC: radium-compressor
+radium-compressor
 #YC: solfege
 linuxsampler
 libgig
@@ -678,11 +678,11 @@ sfarkxtc
 lenmus
 #YC: GrandOrgue
 picoloop
-#YC: jm2cv
+jm2cv
 rakarrack
 
 #language
-#YC: chuck
+chuck
 miniaudicle
 supercollider
 supercollider-sc3-plugins
@@ -691,7 +691,7 @@ supercollider-vim
 lmms-mao
 #YC: faust
 #YC: faust-tools
-#YC: faustworks
+faustworks
 
 # fedora jam theming (to be customized)
 fedora-jam-backgrounds
