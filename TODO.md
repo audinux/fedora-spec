@@ -87,6 +87,8 @@
 | BYOD                | https://github.com/Chowdhury-DSP/BYOD |
 | juced               | https://github.com/kunitoki/juced |
 | solfege             | https://src.fedoraproject.org/rpms/solfege |
+| wineasio            | https://github.com/wineasio/wineasio |
+| GuitarMidi-LV2      | https://github.com/geraldmwangi/GuitarMidi-LV2 |
 
 ## WIP
 
@@ -337,16 +339,14 @@ carla
 
 ## To be fixed:
 
-smartamp          -> missing array header
 obxd              -> missing array header
-frequalizer       -> missing array header
 SocaLabs-plugins  -> exchange not a member of std
-odin2             -> exchange not a member of std
-sonobus           -> exchange not a member of std
+odin2             -> exchange not a member of std / juceaide
+#sonobus           -> exchange not a member of std / juceaide
 rack-v1-trowaSoft -> 'ostream_iterator' is not a member of 'std'
-openboard         -> optional not in std -> missing header
-monique-monosynth -> exchange not in std -> missing header
-midi-monitor      -> exchange not in std -> missing header
+openboard         -> optional not in std -> missing header / still a problem after the tentative fix
+monique-monosynth -> exchange not in std -> missing header / juceaide
+midi-monitor      -> exchange not in std -> missing header / juceaide
 helio-workstation -> exchange not in std -> missing header
 
 rack-v2-SubmarineFree -> remove -Werror=format-security
@@ -355,6 +355,7 @@ shortcircuit          -> remove -Werror=format-security
 rack-v1-rcm           -> remove -Werror=format-security
 aether                -> -Werror=stringop-overflow= problem
 rack-v1-ChowDSP       -> format not a string literal
+-> export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
 
 veejay-gui   -> veejay-server missing
 veejay-serve -> veejay-core missing
@@ -382,6 +383,34 @@ kernel-rt-stable-mao       -> Auto-detecting system features:
 ...                          zlib: [ OFF ]
 ...                           bpf: [ on  ]
 No zlib found
+
+## To be added back to repo
+
+jackctlmmc
+pulseaudio-module-jack
+fluidsynth-dssi
+hydrogen-drumkit-AVL-BlackPearl-4A
+swami
+ladspa-vocoder-plugins
+ladspa-wasp-plugins
+lv2-artyfx-plugins
+lv2-EQ10Q-plugins
+pyliblo missing lv2-fil-plugins
+nekobee-dssi
+whysynth-dssi
+xsynth-dssi
+hexter-dssi
+jamin
+realTimeConfigQuickScan
+radium-compressor
+solfege
+GrandOrgue
+jm2cv
+chuck
+sonic-pi
+faust
+faust-tools
+faustworks
 
 ## regular update
 
