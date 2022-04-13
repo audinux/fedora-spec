@@ -29,6 +29,7 @@ BuildRequires: alsa-lib-devel
 BuildRequires: systemd-devel
 BuildRequires: wavpack-devel
 BuildRequires: fftw-devel
+BuildRequires: SDL2-devel
 
 %description
 GrandOrgue is a sample based pipe organ simulator.
