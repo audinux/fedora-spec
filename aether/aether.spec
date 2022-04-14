@@ -10,8 +10,8 @@ License: MIT
 URL: https://dougal-s.github.io/Aether/
 
 # Usage:
-# ./aether-source <TAG>
-# ./aether-source v1.2.1
+# ./aether-source.sh <TAG>
+# ./aether-source.sh v1.2.1
 
 Source0: Aether.tar.gz	
 Source1: aether-source.sh
@@ -31,6 +31,9 @@ Aether is an algorithmic reverb LV2 plugin based on Cloudseed.
 %autosetup -n Aether
 
 %build
+
+%set_build_flags
+export CXXFLAGS="$CXXFLAGS -Wno-error=stringop-overflow"
 
 %cmake
 %cmake_build

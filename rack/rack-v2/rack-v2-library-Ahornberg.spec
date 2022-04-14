@@ -130,6 +130,8 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Ahornberg_plugin
 tar xvfz %{SOURCE1} --directory=Ahornberg_plugin --strip-components=1 
 
+sed -i -e "s/-fno-gnu-unique/-fno-gnu-unique -Wno-error=format-security/g" plugin.mk
+
 cp -n %{SOURCE2} Ahornberg_plugin/plugin.json
 
 %build

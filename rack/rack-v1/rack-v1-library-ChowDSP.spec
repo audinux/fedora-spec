@@ -83,6 +83,8 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir ChowDSP_plugin
 tar xvfz %{SOURCE1} --directory=ChowDSP_plugin --strip-components=1 
 
+sed -i -e "s/-DARCH_LIN/-DARCH_LIN -Wno-error=format-security/g" compile.mk
+
 cp -n %{SOURCE2} ChowDSP_plugin/plugin.json
 
 %build
