@@ -356,12 +356,7 @@ monique-monosynth -> exchange not in std -> missing header / juceaide
 midi-monitor      -> exchange not in std -> missing header / juceaide
 helio-workstation -> exchange not in std -> missing header
 
-rack-v2-SubmarineFree -> remove -Werror=format-security
-rack-v2-Ahornberg     -> warnings treated as errors
-shortcircuit          -> remove -Werror=format-security
-rack-v1-rcm           -> remove -Werror=format-security
-aether                -> -Werror=stringop-overflow= problem
-rack-v1-ChowDSP       -> format not a string literal
+shortcircuit      -> remove -Werror=format-security (to fix on f33 / f35 - cmake version pb).
 -> export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
 
 veejay-gui   -> veejay-server missing
