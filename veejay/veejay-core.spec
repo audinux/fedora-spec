@@ -42,13 +42,21 @@ Veejay is a Visual Instrument
 
 A 'visual' instrument and realtime video sampler (for live video improvisation)
 It allows you to "play" the video like you would play a piano.
-While playing, you can record the resulting video directly to disk (video sampling), all effects are realtime and optimized for use on modern processors.
-Veejay likes the sound of your video's as much as their images: sound is kept in sync ( pitched when needed - trickplay) and delivered to [JACK](http://www.jackaudio.org/) for possible further processing.
-You can cluster to allow a number of machines to work together over the network (uncompressed streaming, veejay chaining) And much more...
-The engine is historically based upon mjpegtools's lavplay and processes all video in YUV planar It performs at its best, currently with MJPEG AVI (through ffmpeg/libav) or one of veejay's internal formats. Veejay is built upon a servent architecture.
+While playing, you can record the resulting video directly to disk (video sampling),
+all effects are realtime and optimized for use on modern processors.
+Veejay likes the sound of your video's as much as their images: sound is kept in sync
+(pitched when needed - trickplay) and delivered to [JACK](http://www.jackaudio.org/)
+for possible further processing.
+You can cluster to allow a number of machines to work together over the network
+(uncompressed streaming, veejay chaining) And much more...
+The engine is historically based upon mjpegtools's lavplay and processes all video
+in YUV planar It performs at its best, currently with MJPEG AVI (through ffmpeg/libav)
+or one of veejay's internal formats. Veejay is built upon a servent architecture.
 
 %prep
 %autosetup -n veejay-%{commit0}
+
+sed -i -e "0,/AC_CONFIG_MACRO_DIR/{/AC_CONFIG_MACRO_DIR/d;}" veejay-current/veejay-core/configure.ac
 
 %build
 
