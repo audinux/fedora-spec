@@ -349,7 +349,7 @@ carla
 obxd              -> missing array header
 SocaLabs-plugins  -> exchange not a member of std
 odin2             -> exchange not a member of std / juceaide
-#sonobus           -> exchange not a member of std / juceaide
+sonobus           -> exchange not a member of std / juceaide
 rack-v1-trowaSoft -> 'ostream_iterator' is not a member of 'std'
 openboard         -> optional not in std -> missing header / still a problem after the tentative fix
 monique-monosynth -> exchange not in std -> missing header / juceaide
@@ -359,17 +359,12 @@ helio-workstation -> exchange not in std -> missing header
 shortcircuit      -> remove -Werror=format-security (to fix on f33 / f35 - cmake version pb).
 -> export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
 
-veejay-gui   -> veejay-server missing
-veejay-serve -> veejay-core missing
-veejay-core  -> duplicated AC_CONFIG_MACRO_DIR
-
 Bambootracker              -> pulseaudio pb
 azr3                       -> gtkmm / glibmm detection
 yabridge                   -> various link problems
 xjadeo                     -> incompatibe ffmpeg ?
 vsxu                       -> nullptr comparison
 stargate                   -> recompile a part with -fPIE
-sonic-pi                   -> ruby version
 snd                        -> internal compiler error - check if new version of snd
 rack-v2-ZetaCarinae        -> to check again
 ryukau                     -> undefined reference to `DGL::Rectangle<int>::_draw(bool)'
