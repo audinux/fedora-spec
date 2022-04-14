@@ -55,6 +55,8 @@ The engine is historically based upon mjpegtools's lavplay and processes all vid
 find . -name "*.c" ! -name vj-vloopback.c ! -name v4l2utils.c -exec sed -i -e "s/PIX_FMT/AV_PIX_FMT/g" {} \;
 
 sed -i -e "0,/AC_CONFIG_MACRO_DIR/{/AC_CONFIG_MACRO_DIR/d;}" veejay-current/veejay-client/configure.ac
+sed -i -e "0,/AC_CONFIG_MACRO_DIR/{/AC_CONFIG_MACRO_DIR/d;}" veejay-current/veejay-utils/configure.ac
+sed -i -e "0,/AC_CONFIG_MACRO_DIR/{/AC_CONFIG_MACRO_DIR/d;}" veejay-current/plugin-packs/lvdgmic/configure.ac
 
 %build
 
