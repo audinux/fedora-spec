@@ -1,0 +1,22 @@
+From: =?utf-8?b?SmFyb23DrXIgTWlrZcWh?= <mira.mikes@seznam.cz>
+Date: Sat, 16 May 2020 15:37:49 +0200
+Subject: Fix prefix.
+
+Forwarded: no
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 857897d..2307b71 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -12,7 +12,7 @@ set(CMAKE_CXX_FLAGS "-Wall -fPIC -std=c++11")
+ ##ADD_DEFINITIONS(-Wall -O0 -g -fPIC -DPIC) ###USED FOR DEBUG
+ 
+ #Set Install prefix
+-set (CMAKE_INSTALL_PREFIX  "/usr/local/lib/lv2") #Install prefix
++set (CMAKE_INSTALL_PREFIX  "/usr/lib/lv2") #Install prefix
+ #set (CMAKE_INSTALL_PREFIX  "$ENV{HOME}/.lv2") #Install prefix
+ set (LV2_BUNDLE "sapistaEQv2.lv2") #LV2 Bundel dir
+ set(EXECUTABLE_OUTPUT_PATH "${PROJECT_SOURCE_DIR}/bin")

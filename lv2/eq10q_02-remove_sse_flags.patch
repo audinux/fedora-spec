@@ -1,0 +1,22 @@
+From: =?utf-8?b?SmFyb23DrXIgTWlrZcWh?= <mira.mikes@seznam.cz>
+Date: Sat, 16 May 2020 15:37:49 +0200
+Subject: Remove sse optimization.
+
+Forwarded: no
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 2307b71..6a991f2 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8)
+ PROJECT(eq10q)
+ 
+ ##ADD_DEFINITIONS(-Wall -O3 -fPIC -finline-functions -finline-functions-called-once  -msse -mfpmath=sse -std=c99)
+-set(CMAKE_C_FLAGS "-Wall -O3 -fPIC -finline-functions -finline-functions-called-once  -msse -mfpmath=sse -std=c99")
++set(CMAKE_C_FLAGS "-Wall -O3 -fPIC -finline-functions -finline-functions-called-once -std=c99")
+ #set(CMAKE_C_FLAGS "-Wall -O0 -g -fPIC -finline-functions -finline-functions-called-once  -msse -mfpmath=sse -std=c99")
+ 
+ set(CMAKE_CXX_FLAGS "-Wall -fPIC -std=c++11")

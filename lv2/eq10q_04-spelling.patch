@@ -1,0 +1,31 @@
+From: =?utf-8?b?SmFyb23DrXIgTWlrZcWh?= <mira.mikes@seznam.cz>
+Date: Sat, 16 May 2020 15:37:49 +0200
+Subject: Fix spelling.
+
+Forwarded: Pere Rafols <sapista2@gmail.com>
+---
+ gui/widgets/eqwindow.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/gui/widgets/eqwindow.cpp b/gui/widgets/eqwindow.cpp
+index 2bf1439..61862f0 100644
+--- a/gui/widgets/eqwindow.cpp
++++ b/gui/widgets/eqwindow.cpp
+@@ -218,7 +218,7 @@ EqMainWindow::EqMainWindow(int iAudioChannels, int iNumBands, const char *uri, c
+   m_MainWidgetAlign.show();
+   
+   //Add some tooltips
+-  m_AButton.set_tooltip_text("A/B eq comparation");
++  m_AButton.set_tooltip_text("A/B eq comparison");
+   m_BypassButton.set_tooltip_text("Enable/Disable the equalizer");
+   m_FlatButton.set_tooltip_text("Reset all values to default");
+   m_GainFaderIn->set_tooltip_text("Adjust the input gain");
+@@ -577,7 +577,7 @@ void EqMainWindow::onBandCtlMidSideChanged(int band)
+   float fValue = (float)ival;
+   write_function(controller, band + PORT_OFFSET + 2*m_iNumOfChannels + 4*m_iNumOfBands, sizeof(float), 0, &fValue);
+   
+-  //TODO maybe I want to use AB comparation with MID-SIDE????
++  //TODO maybe I want to use AB comparison with MID-SIDE????
+   //m_CurParams->setBandEnabled(iBand, (fValue > 0.5)); 
+ }
+ 
