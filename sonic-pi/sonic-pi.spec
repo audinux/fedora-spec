@@ -10,7 +10,6 @@
 %global _smp_build_ncpus 1
 %global debug_package %{nil}
 
-
 # Tag: Editor, Live
 # Type: Standalone, Language
 # Category: Audio, Programming
@@ -18,7 +17,7 @@
 
 Name:    sonic-pi
 Version: 3.3.1
-Release: 10%{?dist}
+Release: 11%{?dist}
 Summary: A musical programming environment 
 License: MIT
 URL:     https://sonic-pi.net/
@@ -29,11 +28,11 @@ Distribution: Audinux
 Source0: https://github.com/samaaron/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
+BuildRequires: qt5-linguist
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qwt-qt5-devel
-BuildRequires: qt5-linguist
 BuildRequires: supercollider-devel
-BuildRequires: cmake
 BuildRequires: libffi-devel
 BuildRequires: ruby-devel
 BuildRequires: aubio-devel
@@ -147,6 +146,9 @@ cp -ra  app/server/ruby/bin/* %{buildroot}%{_datadir}/%{name}/app/server/ruby/bi
 %if 0%{?fedora} >= 34
 %define rb_version "3.0.0"
 %endif
+%if 0%{?fedora} >= 36
+%define rb_version "3.1.0"
+%endif
 
 mkdir -p %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/
 
@@ -215,6 +217,9 @@ desktop-file-install --vendor '' \
         --dir %{buildroot}/%{_datadir}/applications \
         %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+
 %files
 %doc CHANGELOG.md  COMMUNITY.md FAQ.md CONTRIBUTORS.md HOW-TO-CONTRIBUTE.md README.md SYNTH_DESIGN.md TESTING.md TRANSLATION.md TRANSLATION-WORKFLOW.md
 %license LICENSE.md
@@ -222,6 +227,9 @@ desktop-file-install --vendor '' \
 %{_datadir}
 
 %changelog
+* Thu Apr 14 2022 Yann Collette <ycollette.nospam@free.fr> 3.3.1-11
+- update to 3.3.1-11 - fixed for Fedora 36
+
 * Mon Mar 29 2021 Yann Collette <ycollette.nospam@free.fr> 3.3.1-10
 - update to 3.3.1-10 - fixed for Fedora 34
 

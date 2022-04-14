@@ -1,6 +1,6 @@
 Name:    osmid
 Version: 0.8.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: osmid is a tool to bridge MIDI and OSC
 URL:     https://github.com/llloret/osmid
 License: GPLv2+
@@ -15,6 +15,7 @@ BuildRequires: cmake
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: libX11-devel
+BuildRequires: patchelf
 
 %description
 osmid aims to provide a lightweight, portable, easy to use tool to
@@ -42,11 +43,21 @@ want to use just one direction for the conversion, it makes sense to keep this s
 
 %cmake_install
 
+install -m 755 -d %{buildroot}/%{_libdir}/%{name}/
+cp %{__cmake_builddir}/external_libs/oscpack_1_1_0/liboscpack.so %{buildroot}/%{_libdir}/%{name}/
+
+patchelf --set-rpath '$ORIGIN/../%{_lib}/%{name}/' %{buildroot}/%{_bindir}/m2o
+patchelf --set-rpath '$ORIGIN/../%{_lib}/%{name}/' %{buildroot}/%{_bindir}/o2m
+
 %files
 %doc README.md
 %license LICENSE.md
 %{_bindir}/*
+%{_libdir}/%{name}/*
 
 %changelog
+* Thu Apr 14 2022 Yann Collette <ycollette.nospam@free.fr> - 0.7.0-2
+- Fix - set rpath to liboscpack.
+
 * Fri Nov 06 2020 Yann Collette <ycollette.nospam@free.fr> - 0.7.0-1
 - Initial spec file
