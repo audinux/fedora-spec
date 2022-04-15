@@ -103,6 +103,7 @@ drops
 chataigne
 tascar
 protrekkr2
+mephito (needs faust library)
 
 ## Cleanup
 
