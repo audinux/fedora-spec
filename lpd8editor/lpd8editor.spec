@@ -3,7 +3,7 @@
 # Category: Audio
 
 Name:    lpd8editor
-Version: 0.0.14
+Version: 0.0.16
 Release: 1%{?dist}
 Summary: A linux editor for the Akai LPD8
 URL:     https://github.com/charlesfleche/lpd8editor
@@ -15,10 +15,13 @@ Distribution: Audinux
 Source0: https://github.com/charlesfleche/lpd8editor/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: desktop-file-utils
+BuildRequires: cmake
+BuildRequires: git
+BuildRequires: qt5-linguist
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtsvg-devel
 BuildRequires: alsa-lib-devel
+BuildRequires: desktop-file-utils
 
 %description
 A Linux editor for the Akai LPD8 pad controller.
@@ -28,24 +31,33 @@ A Linux editor for the Akai LPD8 pad controller.
 
 %build
 
-%set_build_flags
-
-%qmake_qt5 CONFIG+=nostrip lpd8editor.pro
-%make_build
+%cmake
+%cmake_build
 
 %install
+
+%cmake_install
 
 install -m 755 -d %{buildroot}/%{_datadir}/%{name}/doc/
 cp -r doc/* %{buildroot}/%{_datadir}/%{name}/doc/
 
-install -m 755 -d %{buildroot}%{_datadir}/applications/
-cp debian/%{name}.desktop %{buildroot}%{_datadir}/applications/
-
-install -m 755 -d %{buildroot}/%{_bindir}/
-install -m 755 src/%{name} %{buildroot}%{_bindir}/%{name}
-
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
 install -m 644 %{name}.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
+
+# Write desktop files
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=%name
+Exec=%{name}
+Icon=%{name}
+Comment=LPD8Editor
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;
+EOF
 
 desktop-file-install --vendor '' \
         --add-category=Midi \
@@ -56,13 +68,16 @@ desktop-file-install --vendor '' \
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%doc NOTES.md README.md
+%doc README.md
 %license LICENSE.md
 %{_bindir}/%{name}
 %{_datadir}/applications/*
-%{_datadir}/icons/hicolor/*
+%{_datadir}/icons/hicolor/scalable/apps
 %{_datadir}/%{name}/*
 
 %changelog
+* Sun Apr 17 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.16-1
+- Update to 0.0.16-1
+
 * Sun Nov 21 2021 Yann Collette <ycollette.nospam@free.fr> - 0.0.14-1
 - Initial spec file
