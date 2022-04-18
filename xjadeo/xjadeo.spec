@@ -4,7 +4,7 @@
 
 Summary: Jack Video Monitor
 Name:    xjadeo
-Version: 0.8.10
+Version: 0.8.11
 Release: 4%{?dist}
 License: GPL
 URL:     http://xjadeo.sourceforge.net/
@@ -20,7 +20,6 @@ BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool
 BuildRequires: alsa-lib-devel
-BuildRequires: desktop-file-utils
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: gettext-devel
 BuildRequires: libxcb-devel
@@ -33,6 +32,7 @@ BuildRequires: ffmpeg-devel
 BuildRequires: libXv-devel
 BuildRequires: SDL2-devel
 BuildRequires: libXpm-devel
+BuildRequires: desktop-file-utils
 
 %description
 xjadeo is a simple video player that gets sync from jack by x42.
@@ -73,6 +73,9 @@ desktop-file-install                         \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+
 %files
 %doc AUTHORS ChangeLog INSTALL NEWS README xjadeo.lsm
 %license COPYING
@@ -83,6 +86,9 @@ desktop-file-install                         \
 %{_datadir}/icons/*
 
 %changelog
+* Mon Apr 18 2022 Yann Collette <ycollette dot nospam at free.fr> 0.8.11-4
+- update to 0.8.11-4
+
 * Wed Jan 6 2021 Yann Collette <ycollette dot nospam at free.fr> 0.8.10-4
 - update to 0.8.10
 
