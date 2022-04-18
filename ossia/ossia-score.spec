@@ -1,7 +1,7 @@
 %define _lto_cflags %{nil}
 
 Name:    ossia-score
-Version: 3.0.6
+Version: 3.0.7
 Release: 1%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL:     https://github.com/OSSIA/score
@@ -13,10 +13,9 @@ Distribution: Audinux
 Source0: https://github.com/ossia/score/releases/download/v%{version}/ossia.score-%{version}-src.tar.xz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: cmake
-BuildRequires: desktop-file-utils
 BuildRequires: boost-devel
 BuildRequires: zlib-devel
 BuildRequires: qt5-qtbase-devel
@@ -37,6 +36,7 @@ BuildRequires: mesa-libGLU-devel
 BuildRequires: fftw-devel
 BuildRequires: libsndfile-devel
 BuildRequires: unzip
+BuildRequires: desktop-file-utils
 
 %description
 ossia score is a sequencer for audio-visual artists, designed to create interactive shows
@@ -68,6 +68,9 @@ rm -rf %{buildroot}/%{_datadir}/
 %{_bindir}/*
 
 %changelog
+* Mon Apr 18 2022 Yann Collette <ycollette.nospam@free.fr> - 3.0.7-2
+- update to version 3.0.7-2
+
 * Thu Mar 24 2022 Yann Collette <ycollette.nospam@free.fr> - 3.0.6-2
 - update to version 3.0.6-2
 
