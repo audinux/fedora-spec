@@ -1,6 +1,6 @@
-%define pkgver 21.2
+%define pkgver 22.2
 %define tarname snd-%{pkgver}
-%define snd_date "11/01/2017"
+%define snd_date "11/03/2022"
 
 %define	desktop_vendor planetccrma
 
@@ -16,12 +16,12 @@ Name:    snd
 Version: %{pkgver}
 Release: 1%{?dist}
 License: LGPL
+URL:     https://ccrma.stanford.edu/software/snd/
 
 Source:	 https://ccrma.stanford.edu/software/snd/snd-%{pkgver}.tar.gz
 Source1: snd.png
 Source2: snd.desktop
 Patch0:  snd-13-docdir.patch
-URL:     https://ccrma.stanford.edu/software/snd/
 
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
@@ -42,7 +42,6 @@ BuildRequires: ladspa-devel
 BuildRequires: liblrdf-devel
 # BuildRequires: gamin-devel
 BuildRequires: gettext-devel
-BuildRequires: desktop-file-utils
 BuildRequires: libXpm-devel
 BuildRequires: libtimidity-devel
 BuildRequires: timidity++
@@ -52,6 +51,7 @@ BuildRequires: mpg123
 BuildRequires: mpg123-devel
 BuildRequires: gtk3-devel
 BuildRequires: gtkglext-devel
+BuildRequires: desktop-file-utils
 
 Requires: mpg123
 Requires: flac
@@ -98,8 +98,6 @@ features of the audio hardware.
 %prep
 %autosetup -p1 -n snd-%{pkgver}
 
-%build
-
 # change all html href tags to point to the absolute location of
 # the html documentation
 for i in *.html ; do
@@ -112,15 +110,17 @@ done
 # by default
 %{__perl} -p -i -e "s|/usr/share/doc/snd-10/snd.html|/usr/share/doc/snd-%{pkgver}/snd.html|g" index.scm
 
+%build
+
 # build Gtk version
-./configure %{config_options} --with-gtk=yes
+%configure %{config_options} --with-gtk=yes
 %make_build
 mv snd snd-gtk
 make clean
 rm -f config.cache
 
 # build snd utilities
-./configure --with-no-gui %{config_options}
+%configure --with-no-gui %{config_options}
 # removed sndsine for now
 # audinfo is not happy (9/26/2005)
 perl -p -i -e 's|LIBS = -ldl |LIBS = -lpthread -ldl |' makefile
@@ -166,8 +166,10 @@ EOF
 # rename it snd-info
 mv %{buildroot}%{_bindir}/sndinfo %{buildroot}%{_bindir}/snd-info
 
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
+
 %files
-%defattr(-, root, root)
 %doc README.Snd HISTORY.Snd *.html
 %doc pix
 %license COPYING
@@ -178,22 +180,23 @@ mv %{buildroot}%{_bindir}/sndinfo %{buildroot}%{_bindir}/snd-info
 %config(noreplace) /etc/snd.conf
 
 %files gtk
-%defattr(-, root, root)
 %{_bindir}/snd-gtk
 
 %files utils
-%defattr(-, root, root)
 %{_bindir}/sndplay
 %{_bindir}/snd-info
 
 %changelog
-* Mon Mar 29 2021 Yann Collette <ycollette.nospam@free.fr> -
+* Mon Apr 18 2022 Yann Collette <ycollette.nospam@free.fr> - 22.2-1
+- update to 22.2
+
+* Mon Mar 29 2021 Yann Collette <ycollette.nospam@free.fr> - 21.2-1
 - update to 21.2
 
-* Fri May 1 2020 Yann Collette <ycollette.nospam@free.fr> -
+* Fri May 1 2020 Yann Collette <ycollette.nospam@free.fr> - 20.3-1
 - update to 20.3
 
-* Mon Oct 15 2018 Yann Collette <ycollette.nospam@free.fr> -
+* Mon Oct 15 2018 Yann Collette <ycollette.nospam@free.fr> - 17.8-1
 - update for Fedora 29
 
 * Fri Nov  3 2017 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 17.8-1
