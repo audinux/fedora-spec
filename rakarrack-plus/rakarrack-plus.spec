@@ -5,7 +5,7 @@
 
 Summary: Guitar Amplifier emulator
 Name:    rakarrack-plus
-Version: 1.1.2
+Version: 1.2.0
 Release: 2%{?dist}
 License: GPL
 URL:     https://github.com/Stazed/rakarrack-plus
@@ -16,6 +16,7 @@ Distribution: Audinux
 Source0: https://github.com/Stazed/rakarrack-plus/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: alsa-utils
 BuildRequires: fltk-devel
@@ -28,7 +29,6 @@ BuildRequires: fftw-devel
 BuildRequires: lv2-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: desktop-file-utils
-BuildRequires: cmake
 
 %description
 This app was born after an informal conversation about effects for guitar using GNU/linux.
@@ -101,6 +101,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/rakarrack-plus.deskto
 %{_libdir}/lv2/*
 
 %changelog
+* Tue Apr 19 2022 Yann Collette <ycollette dot nospam at free.fr> 1.2.0-2
+- update to 1.2.0-2 
+
 * Sun Dec 12 2021 Yann Collette <ycollette dot nospam at free.fr> 1.1.2-2
 - update to 1.1.2-2 
 
