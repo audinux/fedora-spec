@@ -3,7 +3,7 @@
 # Category: Audio, Sequencer
 
 Name:    mamba
-Version: 2.2
+Version: 2.3
 Release: 4%{?dist}
 Summary: Virtual Midi Keyboard for Jack Audio Connection Kit
 License: BSD
@@ -12,7 +12,7 @@ URL: https://github.com/brummer10/Mamba
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/brummer10/Mamba/files/6329780/Mamba_%{version}.tar.gz
+Source0: https://github.com/brummer10/Mamba/releases/download/v%{version}/Mamba_%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: jack-audio-connection-kit-devel
@@ -83,6 +83,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Mamba.desktop
 %{_datadir}/pixmaps/Mamba.svg
 
 %changelog
+* Tue Apr 19 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3-4
+- update to 2.3-4
+
 * Sat Apr 17 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2-4
 - update to 2.2-4
 
