@@ -110,7 +110,7 @@ rm -rf %{buildroot}/opt/openFrameworks/.gitattributes
 rm -rf %{buildroot}/opt/openFrameworks/.gitignore
 rm -rf %{buildroot}/opt/openFrameworks/.gitmodules
 rm -rf %{buildroot}/opt/openFrameworks/.travis.yml
-rm -rf %{buildroot}/opt/openFrameworks/..package*
+rm -rf %{buildroot}/opt/openFrameworks/.package*
 chrpath --delete %{buildroot}%{_bindir}/projectGenerator
 chrpath --delete %{buildroot}/opt/openFrameworks/apps/projectGenerator/commandLine/bin/projectGenerator
 
