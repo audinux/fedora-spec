@@ -23,6 +23,7 @@ BuildRequires: libsigc++20-devel
 BuildRequires: libsmf-devel
 BuildRequires: fluidsynth-devel
 BuildRequires: alsa-lib-devel
+BuildRequires: libsndfile-devel
 BuildRequires: vim-common
 BuildRequires: desktop-file-utils
 
