@@ -1,5 +1,5 @@
 Name:    seq42
-Version: 2.1.0
+Version: 2.1.1
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -11,14 +11,14 @@ Distribution: Audinux
 Source0: https://github.com/Stazed/seq42/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++ make
-BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: alsa-lib-devel
-BuildRequires: gtkmm30-devel
-BuildRequires: liblo-devel
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool
 BuildRequires: pkgconfig
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: gtkmm30-devel
+BuildRequires: liblo-devel
 
 %description
 It's a fork of seq24 (which is a fork of the original seq24),
@@ -50,6 +50,9 @@ autoreconf -i
 %{_datadir}/*
 
 %changelog
+* Tue Apr 19 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
+- udate to 2.1.1-1
+
 * Mon Mar 21 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - udate to 2.1.0-1
 
