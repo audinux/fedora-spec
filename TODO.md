@@ -363,10 +363,8 @@ shortcircuit      -> remove -Werror=format-security (to fix on f33 / f35 - cmake
 Bambootracker              -> pulseaudio pb
 azr3                       -> gtkmm / glibmm detection
 yabridge                   -> various link problems
-xjadeo                     -> incompatibe ffmpeg ?
 vsxu                       -> nullptr comparison
 stargate                   -> recompile a part with -fPIE
-snd                        -> internal compiler error - check if new version of snd
 rack-v2-ZetaCarinae        -> to check again
 ryukau                     -> undefined reference to `DGL::Rectangle<int>::_draw(bool)'
 rack-v1-VCV-Recorder       -> ffmpeg incompatibility
