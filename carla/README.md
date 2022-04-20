@@ -1,3 +1,0 @@
-# Carla
-
-The Carla package
