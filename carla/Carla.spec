@@ -1,62 +1,18 @@
 %global pname   carla
 
-Name:           Carla
-Version:        2.4.3
-Release:        1%{?dist}
-Summary:        Audio plugin host
+Name: Carla-mao
+Version: 2.4.3
+Release: 1%{?dist}
+Summary: Audio plugin host
 
-# The entire source code is GPLv2+ except
-# - BSD
-# source/modules/lilv/lilv-0.24.0/waf
-# source/modules/lilv/serd-0.24.0/waf
-# source/modules/lilv/sord-0.16.0/waf
-# source/modules/lilv/sratom-0.6.0/waf
-# source/modules/audio_decoder/ffcompat.h
-# source/modules/rtaudio/include/soundcard.h
-# - Boost
-# source/modules/hylia/link/asio/*
-# - ISC
-# source/jackbridge/*
-# source/modules/dgl/*
-# source/modules/distrho/*
-# source/modules/lilv/*
-# source/modules/water/buffers/AudioSampleBuffer.h
-# source/modules/water/containers
-# source/modules/water/files/*
-# source/modules/water/maths/*
-# source/modules/water/memory/*
-# source/modules/water/midi/*
-# source/modules/water/misc/*
-# source/modules/water/streams/OutputStream.h
-# source/modules/water/synthesisers/*
-# source/modules/water/text/*
-# source/modules/water/threads/*
-# source/modules/water/xml/*
-# source/utils/CarlaJuceUtils.hpp
-# - MIT/Expat
-# source/modules/rtaudio/RtAudio.cpp
-# source/modules/rtaudio/RtAudio.h
-# source/modules/rtmidi/RtMidi.cpp
-# source/modules/rtmidi/RtMidi.h
-# source/modules/sfzero/LICENSE
-# - zlib
-# source/modules/dgl/src/nanovg/LICENSE.txt
-# source/modules/dgl/src/nanovg/fontstash.h
-# source/modules/dgl/src/nanovg/nanovg.c
-# source/modules/dgl/src/nanovg/nanovg.h
-# source/modules/dgl/src/nanovg/nanovg_gl.h
-# source/modules/dgl/src/nanovg/nanovg_gl_utils.h
+Epoch: 1
+License: GPLv2+ and BSD and Boost and ISC and MIT and zlib
+URL: https://github.com/falkTX/Carla
 
-Epoch:   1
-License:        GPLv2+ and BSD and Boost and ISC and MIT and zlib
-URL:            https://github.com/falkTX/Carla
-Source0:        https://github.com/falkTX/%{name}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-# https://github.com/falkTX/Carla/issues/1444
-Patch0:         %{name}-libdir.patch
-Patch1:         %{name}-expression-error.patch
-Patch2:         %{name}-single-libs-path.patch
-
-#ExcludeArch:    ppc64le
+Source0: https://github.com/falkTX/%{name}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Patch0: %{name}-libdir.patch
+Patch1: %{name}-expression-error.patch
+Patch2: %{name}-single-libs-path.patch
 
 BuildRequires:  gcc gcc-c++
 BuildRequires:  pkgconfig(alsa)
@@ -78,11 +34,15 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  make
 BuildRequires:  /usr/bin/appstream-util
 BuildRequires:  /usr/bin/desktop-file-validate
-Requires:       python3-qt5
-Requires:       python3-pyliblo
-Requires:       hicolor-icon-theme
-Requires:       shared-mime-info
+BuildRequires: mingw32-gcc-c++
+BuildRequires: mingw64-gcc-c++
+BuildRequires: mingw32-winpthreads-static
+BuildRequires: mingw64-winpthreads-static
 
+Requires: python3-qt5
+Requires: python3-pyliblo
+Requires: hicolor-icon-theme
+Requires: shared-mime-info
 
 # Dont provide or require internal libs. Using new rpm builtin filtering,
 # see https://fedoraproject.org/wiki/Packaging:AutoProvidesAndRequiresFiltering#Private_Libraries
@@ -118,25 +78,25 @@ In experimental phase / work in progress:
 Carla is also available as an LV2 plugin for MacOS and Linux, and VST plugin for
 Linux.
 
-%package        devel
-Summary:        Header files to access Carla's API
-Requires:       %{name}%{?_isa} = %{epoch}:%{version}-%{release}
+%package devel
+Summary: Header files to access Carla's API
+Requires: %{name}%{?_isa} = %{epoch}:%{version}-%{release}
 
 %description devel
 This package contains header files needed when writing software using
 Carla's several APIs.
 
-%package        vst
-Summary:        CarlaRack and CarlaPatchbay VST plugins
-Requires:       %{name}%{?_isa} = %{epoch}:%{version}-%{release}
+%package vst
+Summary: CarlaRack and CarlaPatchbay VST plugins
+Requires: %{name}%{?_isa} = %{epoch}:%{version}-%{release}
 
-%description    vst
+%description vst
 This package contains Carla VST plugins, including CarlaPatchbayFX,
 CarlaPatchbay, CarlaRackFX, and CarlaRack.
 
-%package     -n lv2-%{pname}
-Summary:        LV2 plugin
-Requires:       %{name}%{?_isa} = %{epoch}:%{version}-%{release}
+%package -n lv2-%{pname}
+Summary: LV2 plugin
+Requires: %{name}%{?_isa} = %{epoch}:%{version}-%{release}
 
 %description -n lv2-%{pname}
 This package contains the Carla LV2 plugin.
@@ -164,6 +124,12 @@ sed -i -e 's|$(DESTDIR)$(PREFIX)/share/appdata|$(DESTDIR)$(PREFIX)/share/metainf
 # list build configuration, no need for optflags or -j
 make features
 %make_build SKIP_STRIPPING=true NOOPT=true V=1
+
+%make_build win32 SKIP_STRIPPING=true NOOPT=true V=1 CC=i686-w64-mingw32-gcc CXX=i686-w64-mingw32-g++
+%make_build win64 SKIP_STRIPPING=true NOOPT=true V=1 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++
+
+%make_build wine32 SKIP_STRIPPING=true NOOPT=true V=1 
+%make_build wine64 SKIP_STRIPPING=true NOOPT=true V=1 
 
 %install 
 %make_install PREFIX=%{_prefix} LIBDIR=%{_libdir}
