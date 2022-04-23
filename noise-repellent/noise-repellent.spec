@@ -3,13 +3,8 @@
 # Category: Audio, Effect
 # LastSourceUpdate: 2020
 
-# Global variables for github repository
-%global commit0 87b4380eae2b69b09bba8a8b181f24153079100d
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
-Name:    noise-repellent-lv2
-Version: 0.1.5.%{shortcommit0}
+Name:    lv2-noise-repellent
+Version: 0.2.0
 Release: 3%{?dist}
 Summary: A lv2 plug-in for broadband noise reduction.
 License: GPLv2+
@@ -18,12 +13,13 @@ URL:     https://github.com/lucianodato/noise-repellent
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/lucianodato/noise-repellent/archive/%{commit0}.tar.gz#/noise-repellent-%{shortcommit0}.tar.gz
+Source0: https://github.com/lucianodato/noise-repellent/archive/refs/tags/v%{version}.tar.gz#/noise-repellent-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: meson
+BuildRequires: git
 BuildRequires: lv2-devel
 BuildRequires: fftw-devel
-BuildRequires: meson
 
 %description
 Features
@@ -43,27 +39,23 @@ Limitations
 * It was developed to be used with Ardour however it is known to work with other hosts
 
 %prep
-%autosetup -n noise-repellent-%{commit0}
+%autosetup -n noise-repellent-%{version}
 
 %build
 
-%ifarch x86_64
-	VERBOSE=1 meson --prefix=/usr/lib64/lv2 build
-%else
-	VERBOSE=1 meson --prefix=/usr/lib/lv2 build
-%endif
-
-cd build
-DESTDIR=%{buildroot} VERBOSE=1 ninja 
+%meson --buildtype=release --libdir=%{_lib} --wrap-mode forcefallback
+%meson_build 
 
 %install 
-cd build
-DESTDIR=%{buildroot} ninja install
+%meson_install
 
 %files
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Apr 23 2022 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-3
+- update to 0.2.0-3
+
 * Mon Oct 19 2020 Yann Collette <ycollette.nospam@free.fr> - 0.1.5-3
 - update to 0.1.5-3 - fix debug build
 
