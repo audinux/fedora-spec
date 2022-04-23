@@ -3,7 +3,7 @@
 # Category: Graphic, Tool
 
 Name:    harvid
-Version: 0.8.3
+Version: 0.9.0
 Release: 2%{?dist}
 Summary: harvid -- HTTP Ardour Video Daemon
 License: GPLv2+
@@ -37,6 +37,8 @@ sed -i -e "19,21d" src/Makefile
 
 %build
 
+%set_build_flags
+
 %make_build PREFIX=/usr -j1
 
 %install
@@ -55,6 +57,9 @@ ln -s /usr/bin/ffprobe%{buildroot}/usr/bin/ffprobe_harvid
 %{_datadir}/*
 
 %changelog
+* Sat Apr 23 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9.0-2
+- update to 0.9.0-2
+
 * Thu Oct 1 2020 Yann Collette <ycollette.nospam@free.fr> - 0.8.3-2
 - fix for Fedora 33
 
