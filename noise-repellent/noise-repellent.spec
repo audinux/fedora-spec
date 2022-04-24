@@ -5,7 +5,7 @@
 
 Name:    lv2-noise-repellent
 Version: 0.2.1
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: A lv2 plug-in for broadband noise reduction.
 License: GPLv2+
 URL:     https://github.com/lucianodato/noise-repellent	
@@ -20,6 +20,8 @@ BuildRequires: meson
 BuildRequires: git
 BuildRequires: lv2-devel
 BuildRequires: fftw-devel
+
+Obsoletes: noise-repellent
 
 %description
 Features
@@ -57,6 +59,9 @@ Limitations
 %exclude %{_libdir}/*
 
 %changelog
+* Sun Apr 24 2022 Yann Collette <ycollette.nospam@free.fr> - 0.2.1-4
+- update to 0.2.1-4  - obsoletes noie-repellent in favor of lv2-noise-repellent
+
 * Sun Apr 24 2022 Yann Collette <ycollette.nospam@free.fr> - 0.2.1-3
 - update to 0.2.1-3
 
