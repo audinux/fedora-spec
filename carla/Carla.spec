@@ -1,3 +1,5 @@
+%define _lto_cflags %{nil}
+
 %global pname   carla
 
 Name: Carla-mao
@@ -9,40 +11,41 @@ Epoch: 1
 License: GPLv2+ and BSD and Boost and ISC and MIT and zlib
 URL: https://github.com/falkTX/Carla
 
-Source0: https://github.com/falkTX/%{name}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0: %{name}-libdir.patch
-Patch1: %{name}-expression-error.patch
-Patch2: %{name}-single-libs-path.patch
+Source0: https://github.com/falkTX/Carla/archive/v%{version}.tar.gz#/Carla-%{version}.tar.gz
+Patch0: Carla-libdir.patch
+Patch1: Carla-expression-error.patch
+Patch2: Carla-single-libs-path.patch
 
-BuildRequires:  gcc gcc-c++
-BuildRequires:  pkgconfig(alsa)
-BuildRequires:  pkgconfig(libpulse)
-BuildRequires:  pkgconfig(jack)
-BuildRequires:  pkgconfig(sndfile)
-BuildRequires:  pkgconfig(gtk+-2.0)
-BuildRequires:  pkgconfig(gtk+-3.0)
-BuildRequires:  pkgconfig(fluidsynth)
-BuildRequires:  pkgconfig(fftw3)
-BuildRequires:  pkgconfig(mxml)
-BuildRequires:  pkgconfig(gl)
-BuildRequires:  pkgconfig(Qt5Core)
-BuildRequires:  python3-qt5-base
-BuildRequires:  python3-magic
-BuildRequires:  pkgconfig(liblo)
-BuildRequires:  pkgconfig(zlib)
-BuildRequires:  desktop-file-utils
-BuildRequires:  make
-BuildRequires:  /usr/bin/appstream-util
-BuildRequires:  /usr/bin/desktop-file-validate
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: mingw32-gcc-c++
 BuildRequires: mingw64-gcc-c++
 BuildRequires: mingw32-winpthreads-static
 BuildRequires: mingw64-winpthreads-static
+BuildRequires: pkgconfig(alsa)
+BuildRequires: pkgconfig(libpulse)
+BuildRequires: pkgconfig(jack)
+BuildRequires: pkgconfig(sndfile)
+BuildRequires: pkgconfig(gtk+-2.0)
+BuildRequires: pkgconfig(gtk+-3.0)
+BuildRequires: pkgconfig(fluidsynth)
+BuildRequires: pkgconfig(fftw3)
+BuildRequires: pkgconfig(mxml)
+BuildRequires: pkgconfig(gl)
+BuildRequires: pkgconfig(Qt5Core)
+BuildRequires: python3-qt5-base
+BuildRequires: python3-magic
+BuildRequires: pkgconfig(liblo)
+BuildRequires: pkgconfig(zlib)
+BuildRequires: wine-devel
+BuildRequires: libappstream-glib
+BuildRequires: desktop-file-utils
 
 Requires: python3-qt5
 Requires: python3-pyliblo
 Requires: hicolor-icon-theme
 Requires: shared-mime-info
+Requires: wine
 
 # Dont provide or require internal libs. Using new rpm builtin filtering,
 # see https://fedoraproject.org/wiki/Packaging:AutoProvidesAndRequiresFiltering#Private_Libraries
@@ -50,59 +53,54 @@ Requires: shared-mime-info
 %global __provides_exclude ^(%{_privatelibs})$
 %global __requires_exclude ^(%{_privatelibs})$
 
-
 %description
 Carla is a fully-featured audio plugin host, with support for many audio drivers
 and plugin formats.
 It's open source and licensed under the GNU General Public License, version 2 or
 later.
-Features
-
-    LADSPA, DSSI, LV2 and VST plugin formats
-    SF2/3 and SFZ sound banks
-    Internal audio and midi file player
-    Automation of plugin parameters via MIDI CC
-    Remote control over OSC
-    Rack and Patchbay processing modes, plus Single and Multi-Client if using
-    JACK
-    Native audio drivers (ALSA, DirectSound, CoreAudio, etc) and JACK
-
-In experimental phase / work in progress:
-
-    Export any Carla loadable plugin or sound bank as an LV2 plugin
-    Plugin bridge support (such as running 32bit plugins on a 64bit Carla, or
-    Windows plugins on Linux)
-    Run JACK applications as audio plugins
-    Transport controls, sync with JACK Transport or Ableton Link
+Features:
+* LADSPA, DSSI, LV2 and VST plugin formats
+* SF2/3 and SFZ sound banks
+* Internal audio and midi file player
+* Automation of plugin parameters via MIDI CC
+* Remote control over OSC
+* Rack and Patchbay processing modes, plus Single and Multi-Client if using
+  JACK
+* Native audio drivers (ALSA, DirectSound, CoreAudio, etc) and JACK
+* Export any Carla loadable plugin or sound bank as an LV2 plugin
+* Plugin bridge support (such as running 32bit plugins on a 64bit Carla, or
+  Windows plugins on Linux)
+* Run JACK applications as audio plugins
+* Transport controls, sync with JACK Transport or Ableton Link
 
 Carla is also available as an LV2 plugin for MacOS and Linux, and VST plugin for
 Linux.
 
 %package devel
 Summary: Header files to access Carla's API
-Requires: %{name}%{?_isa} = %{epoch}:%{version}-%{release}
+Requires: Carla%{?_isa} = %{epoch}:%{version}-%{release}
 
 %description devel
 This package contains header files needed when writing software using
 Carla's several APIs.
 
-%package vst
+%package -n vst-Carla
 Summary: CarlaRack and CarlaPatchbay VST plugins
-Requires: %{name}%{?_isa} = %{epoch}:%{version}-%{release}
+Requires: Carla%{?_isa} = %{epoch}:%{version}-%{release}
 
-%description vst
+%description -n vst-Carla
 This package contains Carla VST plugins, including CarlaPatchbayFX,
 CarlaPatchbay, CarlaRackFX, and CarlaRack.
 
-%package -n lv2-%{pname}
+%package -n lv2-Carla
 Summary: LV2 plugin
-Requires: %{name}%{?_isa} = %{epoch}:%{version}-%{release}
+Requires: Carla%{?_isa} = %{epoch}:%{version}-%{release}
 
-%description -n lv2-%{pname}
+%description -n lv2-Carla
 This package contains the Carla LV2 plugin.
 
 %prep
-%autosetup -p0 -n %{name}-%{version}
+%autosetup -p0 -n Carla-%{version}
 
 # remove windows stuff
 rm -rf data/{macos,windows}
@@ -120,16 +118,18 @@ sed -i -e 's|$(DESTDIR)$(PREFIX)/share/appdata/studio.kx.carla.appdata.xml|$(DES
 sed -i -e 's|$(DESTDIR)$(PREFIX)/share/appdata|$(DESTDIR)$(PREFIX)/share/metainfo|g' Makefile
 
 %build
-%{set_build_flags}
+%set_build_flags
+
 # list build configuration, no need for optflags or -j
 make features
+
 %make_build SKIP_STRIPPING=true NOOPT=true V=1
 
-%make_build win32 SKIP_STRIPPING=true NOOPT=true V=1 CC=i686-w64-mingw32-gcc CXX=i686-w64-mingw32-g++
-%make_build win64 SKIP_STRIPPING=true NOOPT=true V=1 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++
+make win32 CC=i686-w64-mingw32-gcc CXX=i686-w64-mingw32-g++
+make win64 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++
 
-%make_build wine32 SKIP_STRIPPING=true NOOPT=true V=1 
-%make_build wine64 SKIP_STRIPPING=true NOOPT=true V=1 
+make wine32 
+make wine64 
 
 %install 
 %make_install PREFIX=%{_prefix} LIBDIR=%{_libdir}
@@ -168,7 +168,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 %{_datadir}/applications/%{pname}-control.desktop
 %{_datadir}/applications/%{pname}.desktop
 %{_datadir}/applications/%{pname}-jack-multi.desktop
-%{_datadir}/applications/%{pname}-jack-single.desktop
+	%{_datadir}/applications/%{pname}-jack-single.desktop
 %{_datadir}/applications/%{pname}-patchbay.desktop
 %{_datadir}/applications/%{pname}-rack.desktop
 %{_datadir}/%{pname}/
@@ -177,10 +177,10 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 %{_datadir}/mime/packages/%{pname}.xml
 %{_datadir}/metainfo/studio.kx.carla.appdata.xml
 
-%files vst
+%files -n vst-Carla
 %{_libdir}/vst/
 
-%files -n lv2-%{pname}
+%files -n lv2-Carla
 %dir %{_libdir}/lv2
 %{_libdir}/lv2/carla.lv2/
 
