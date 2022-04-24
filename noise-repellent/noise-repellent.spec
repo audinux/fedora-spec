@@ -4,7 +4,7 @@
 # LastSourceUpdate: 2020
 
 Name:    lv2-noise-repellent
-Version: 0.2.0
+Version: 0.2.1
 Release: 3%{?dist}
 Summary: A lv2 plug-in for broadband noise reduction.
 License: GPLv2+
@@ -50,9 +50,16 @@ Limitations
 %meson_install
 
 %files
+%doc README.md
+%license LICENSE
 %{_libdir}/lv2/*
+%exclude %{_includedir}/*
+%exclude %{_libdir}/*
 
 %changelog
+* Sun Apr 24 2022 Yann Collette <ycollette.nospam@free.fr> - 0.2.1-3
+- update to 0.2.1-3
+
 * Sat Apr 23 2022 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-3
 - update to 0.2.0-3
 
