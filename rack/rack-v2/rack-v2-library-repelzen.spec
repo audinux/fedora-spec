@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 5ef6052ad79973c75d2083123ee64c90da9e2807
-%global gittag0 1.1.0
+%global commit0 78b1765eb9ccb9e4e2a1967ee02f4126b1846806
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-repelzen
-Version: 1.1.0
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: repelzen plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r repelzen_plugin/dist/repelzen/* %{buildroot}%{_libexecdir}/Rack2/plugins/r
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile
