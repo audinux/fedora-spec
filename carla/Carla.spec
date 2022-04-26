@@ -1,6 +1,6 @@
 %define _lto_cflags %{nil}
 
-%global pname   carla
+%global pname carla
 
 Name: Carla-mao
 Version: 2.4.3
@@ -84,19 +84,19 @@ Requires: Carla%{?_isa} = %{epoch}:%{version}-%{release}
 This package contains header files needed when writing software using
 Carla's several APIs.
 
-%package -n vst-Carla
+%package -n vst-%{name}
 Summary: CarlaRack and CarlaPatchbay VST plugins
-Requires: Carla%{?_isa} = %{epoch}:%{version}-%{release}
+Requires: %{name}%{?_isa} = %{epoch}:%{version}-%{release}
 
-%description -n vst-Carla
+%description -n vst-%{name}
 This package contains Carla VST plugins, including CarlaPatchbayFX,
 CarlaPatchbay, CarlaRackFX, and CarlaRack.
 
-%package -n lv2-Carla
+%package -n lv2-%{name}
 Summary: LV2 plugin
-Requires: Carla%{?_isa} = %{epoch}:%{version}-%{release}
+Requires: %{name}%{?_isa} = %{epoch}:%{version}-%{release}
 
-%description -n lv2-Carla
+%description -n lv2-%{name}
 This package contains the Carla LV2 plugin.
 
 %prep
@@ -125,6 +125,9 @@ make features
 
 %make_build SKIP_STRIPPING=true NOOPT=true V=1
 
+export CFLAGS=
+export CXXFLAGS=
+export LDFLAGS=
 make win32 CC=i686-w64-mingw32-gcc CXX=i686-w64-mingw32-g++
 make win64 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++
 
@@ -177,10 +180,10 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 %{_datadir}/mime/packages/%{pname}.xml
 %{_datadir}/metainfo/studio.kx.carla.appdata.xml
 
-%files -n vst-Carla
+%files -n vst-%{name}
 %{_libdir}/vst/
 
-%files -n lv2-Carla
+%files -n lv2-%{name}
 %dir %{_libdir}/lv2
 %{_libdir}/lv2/carla.lv2/
 
@@ -193,7 +196,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 
 %changelog
 * Sat Apr 16 2022 Martin Gansser <martinkg@fedoraproject.org> - 1:2.4.3-1
-- Update to 2.4.3
+- Update to 2.4.3 + add wine bridge
 
 * Sat Mar 19 2022 Martin Gansser <martinkg@fedoraproject.org> - 1:2.4.2-2
 - Add Carla-refresh-plugin-crash.patch
