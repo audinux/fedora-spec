@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:    monique-monosynth
 Version: 01122021
 Release: 1%{?dist}
@@ -52,6 +54,11 @@ VST3 version of %{name}
 
 sed -i -e "s/find_package/#find_package/g" cmake/versiontools.cmake
 sed -i -e "/Werror/d" CMakeLists.txt
+
+# Fix build of juceaide on f36
+sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"/g" libs/JUCE/extras/Build/juceaide/CMakeLists.txt
+#sed -i -e "/OUTPUT_VARIABLE/d" libs/JUCE/extras/Build/juceaide/CMakeLists.txt
+#sed -i -e "s/--config Debug/--config Debug --verbose/g" libs/JUCE/extras/Build/juceaide/CMakeLists.txt
 
 %build
 

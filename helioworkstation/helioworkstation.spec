@@ -37,6 +37,8 @@ Helio Workstation is free and open-source music sequencer, designed to be used o
 
 %set_build_flags
 
+export CXXFLAGS="-include utility $CXXFLAGS"
+
 cd Projects/LinuxMakefile/
 %make_build STRIP=true
 

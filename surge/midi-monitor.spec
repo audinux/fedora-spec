@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:    midi-monitor
 Version: 30072020
 Release: 1%{?dist}
@@ -45,6 +47,11 @@ VST3 version of %{name}
 
 %prep
 %autosetup -n %{name}
+
+# Fix build of juceaide on f36
+sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"/g" lib/JUCE/extras/Build/juceaide/CMakeLists.txt
+#sed -i -e "/OUTPUT_VARIABLE/d" lib/JUCE/extras/Build/juceaide/CMakeLists.txt
+#sed -i -e "s/--config Debug/--config Debug --verbose/g" lib/JUCE/extras/Build/juceaide/CMakeLists.txt
 
 %build
 

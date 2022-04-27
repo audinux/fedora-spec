@@ -108,7 +108,7 @@ cat ci/pluginlist.txt | while read PLUGIN; do
   cd plugins/$PLUGIN/Builds/LinuxMakefile
   sed -i -e 's/-Wl,--strip-all//g' Makefile
   
-  %make_build CONFIG=Release STRIP=true
+  %make_build CONFIG=Release STRIP=true 
   
   cp ./build/$PLUGIN                                     $CURRENT_PATH/bin/standalone/
   cp ./build/$PLUGIN.so                                  $CURRENT_PATH/bin/vst/
