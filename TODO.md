@@ -349,13 +349,10 @@ carla
 
 obxd              -> missing array header
 SocaLabs-plugins  -> exchange not a member of std
-odin2             -> exchange not a member of std / juceaide
-sonobus           -> exchange not a member of std / juceaide
 rack-v1-trowaSoft -> 'ostream_iterator' is not a member of 'std'
 openboard         -> optional not in std -> missing header / still a problem after the tentative fix
-monique-monosynth -> exchange not in std -> missing header / juceaide
-midi-monitor      -> exchange not in std -> missing header / juceaide
 helio-workstation -> exchange not in std -> missing header
+odin2             -> exchange not a member of std / juceaide
 
 shortcircuit      -> remove -Werror=format-security (to fix on f33 / f35 - cmake version pb).
 -> export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
@@ -382,24 +379,17 @@ No zlib found
 
 ## To be added back to repo
 
-jackctlmmc
 pulseaudio-module-jack
 fluidsynth-dssi
 hydrogen-drumkit-AVL-BlackPearl-4A
 swami
-ladspa-vocoder-plugins
 ladspa-wasp-plugins
-lv2-artyfx-plugins
-lv2-EQ10Q-plugins
 pyliblo missing lv2-fil-plugins
 nekobee-dssi
 whysynth-dssi
 xsynth-dssi
 hexter-dssi
 solfege
-GrandOrgue
-chuck
-sonic-pi
 faust
 faust-tools
 
