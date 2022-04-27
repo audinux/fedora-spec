@@ -60,7 +60,7 @@ mkdir -p .vst3
 mkdir -p .lv2
 mkdir -p .local/share/PlugData
 
-%cmake -DCMAKE_INSTALL_LIBDIR=%{_lib}
+%cmake -DCMAKE_INSTALL_LIBDIR=%{_lib} -DCMAKE_CXX_FLAGS="-include utility -fPIC"
 %cmake_build
 
 %install
