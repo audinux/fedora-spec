@@ -16,7 +16,8 @@ Patch0: Carla-libdir.patch
 Patch1: Carla-expression-error.patch
 Patch2: Carla-single-libs-path.patch
 
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc
+BuildRequires: gcc-c++
 BuildRequires: make
 BuildRequires: mingw32-gcc-c++
 BuildRequires: mingw64-gcc-c++
@@ -38,7 +39,10 @@ BuildRequires: python3-magic
 BuildRequires: pkgconfig(liblo)
 BuildRequires: pkgconfig(zlib)
 BuildRequires: wine-devel
-BuildRequires: libappstream-glib
+BuildRequires: glibc-devel(x86-32)
+BuildRequires: wine-devel(x86-32)
+BuildRequires: libstdc++-devel(x86-32)
+Buildrequires: libappstream-glib
 BuildRequires: desktop-file-utils
 
 Requires: python3-qt5
