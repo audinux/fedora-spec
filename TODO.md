@@ -369,13 +369,34 @@ rack-v1-VCV-Prototype      -> vult file not available
 rack-v1-AudibleInstruments -> check again
 purr-data                  -> a config.h is missing
 ossia-score                -> memory problem ? retry without lto
-openFrameworks             -> remove /opt/openFrameworks/.package_note-openFrameworks-0.11.2-2.fc36.x86_64.ld
 lives-mao                  -> calloc problem -> check upstream
 kernel-rt-stable-mao       -> Auto-detecting system features:
 ...                        libelf: [ on  ]
 ...                          zlib: [ OFF ]
 ...                           bpf: [ on  ]
 No zlib found
+
+- update on 01052022
+
+wineasio
+yabridge
+ossia-score
+openboard
+BambooTracker
+vsxu
+stargate
+SocaLabs-plugins
+shortcircuit
+ryukau
+rack-v1-VCV-Recorder
+rack-v1-VCV-Prototype
+rack-v1-trowaSoft
+rack-v1-AudibleInstruments
+purr-data
+obxd
+lives-mao
+azr3-jack
+kernel-rt-stable-mao
 
 ## To be added back to repo
 
