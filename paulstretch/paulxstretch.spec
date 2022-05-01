@@ -28,13 +28,6 @@ BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: desktop-file-utils
 
-#BuildRequires: xcb-util-cursor-devel
-#BuildRequires: libxkbcommon-x11-devel
-#BuildRequires: cairo-devel
-#BuildRequires: fontconfig-devel
-#BuildRequires: xcb-util-keysyms-devel
-#BuildRequires: xcb-util-devel
-
 %description
 A PaulStretch VST3Standalone plugin
 
@@ -48,6 +41,10 @@ VST3 version of %{name}
 
 %prep
 %autosetup -n %{name}-%{version}
+
+#sed -i -e "s/--config Debug/--config Debug --verbose/g" deps/juce/extras/Build/juceaide/CMakeLists.txt
+#sed -i -e "/OUTPUT_VARIABLE/d" deps/juce/extras/Build/juceaide/CMakeLists.txt
+sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"/g" deps/juce/extras/Build/juceaide/CMakeLists.txt
 
 %build
 
