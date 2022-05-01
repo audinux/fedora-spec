@@ -3,13 +3,13 @@
 # Category: Synthesizer
 
 # Global variables for github repository
-%global commit0 fae2ad4b8b8cb0f16256d797060e5559258897f6
+%global commit0 df67460fc344f94db4306d4ee21e4207e657bbee
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    ryukau
 Version: 0.0.1.%{shortcommit0}
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Some audio plugins (LV2 and VST) from ruykau
 License: GPLv2+
 URL:     https://github.com/ryukau/LV2Plugins/
@@ -18,7 +18,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./ryukau-source.sh <tag>
-# ./ryukau-source.sh fae2ad4b8b8cb0f16256d797060e5559258897f6
+# ./ryukau-source.sh df67460fc344f94db4306d4ee21e4207e657bbee
 
 Source0: ryukau.tar.gz
 
@@ -37,9 +37,22 @@ Some audio plugins (LV2 and VST) from ruykau
 %autosetup -n %{name}
 
 # Too expensive to compile
-sed -i -e "/CubicPadSynth/d" Makefile
-sed -i -e "/LightPadSynth/d" Makefile
-sed -i -e "/L4Reverb/d" Makefile
+#sed -i -e "/CubicPadSynth/d" Makefile
+#sed -i -e "/LightPadSynth/d" Makefile
+##ed -i -e "/L4Reverb/d" Makefile
+
+# Remove some non generic flags
+#for Flags in mavx512f mfma mavx512vl mavx512bw mavx512dq mavx512f mavx2 mfma msse4.1 msse2
+#do
+#  for Files in `find . -name Makefile -exec grep -l $Flags {} \;`
+#  do
+#    sed -i -e "s/-$Flags//g" $Files
+#  done
+#done
+#for Files in `find . -name Makefile -exec grep -l "std=c++17" {} \;`
+#do
+#  sed -i -e "s/-std=c++17/-O2 -std=c++17/g" $Files
+#done
 
 %build
 
@@ -94,6 +107,9 @@ cp bin/WaveCymbal-vst.so          %{buildroot}/%{_libdir}/vst/
 %{_libdir}/vst/*
 
 %changelog
+* Sun May 01 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-df67460f-3
+- update to df67460f
+
 * Fri Oct 23 2020 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-fae2ad4b-2
 - fix debug build and update to fae2ad4b
 
