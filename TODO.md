@@ -96,6 +96,7 @@
 | DawDreamer          | https://github.com/DBraun/DawDreamer |
 | vmpc-juce           | https://github.com/izzyreal/vmpc-juce |
 | powertabeditor      | https://github.com/powertab/powertabeditor |
+| rtcqs               | https://codeberg.org/rtcqs/rtcqs |
 
 ## WIP
 
@@ -349,9 +350,7 @@ carla
 
 obxd              -> missing array header
 SocaLabs-plugins  -> exchange not a member of std
-rack-v1-trowaSoft -> 'ostream_iterator' is not a member of 'std'
 openboard         -> optional not in std -> missing header / still a problem after the tentative fix
-helio-workstation -> exchange not in std -> missing header
 odin2             -> exchange not a member of std / juceaide
 
 shortcircuit      -> remove -Werror=format-security (to fix on f33 / f35 - cmake version pb).
@@ -361,12 +360,8 @@ Bambootracker              -> pulseaudio pb
 azr3                       -> gtkmm / glibmm detection
 yabridge                   -> various link problems
 vsxu                       -> nullptr comparison
-stargate                   -> recompile a part with -fPIE
-rack-v2-ZetaCarinae        -> to check again
-ryukau                     -> undefined reference to `DGL::Rectangle<int>::_draw(bool)'
 rack-v1-VCV-Recorder       -> ffmpeg incompatibility
 rack-v1-VCV-Prototype      -> vult file not available
-rack-v1-AudibleInstruments -> check again
 purr-data                  -> a config.h is missing
 ossia-score                -> memory problem ? retry without lto
 lives-mao                  -> calloc problem -> check upstream
@@ -384,19 +379,16 @@ ossia-score
 openboard
 BambooTracker
 vsxu
-stargate
 SocaLabs-plugins
 shortcircuit
-ryukau
 rack-v1-VCV-Recorder
 rack-v1-VCV-Prototype
-rack-v1-trowaSoft
-rack-v1-AudibleInstruments
 purr-data
 obxd
 lives-mao
 azr3-jack
 kernel-rt-stable-mao
+odin2
 
 ## To be added back to repo
 
