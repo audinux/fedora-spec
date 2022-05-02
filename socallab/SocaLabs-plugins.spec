@@ -18,7 +18,7 @@
 # Category: Audio, Effect, Synthesizer
 
 Name:    SocaLabs-plugins
-Version: 20200512
+Version: 20220502
 Release: 5%{?dist}
 Summary: Various VST/VST3 Plugins from SocaLabs.com
 License: BSD-3-Clause
@@ -28,7 +28,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./socalab-source.sh <tag>
-# ./socalab-source.sh 8479da129a8bb955870ad3059a22e8f8802630ca
+# ./socalab-source.sh 77b4a8d6bf8da4407fc6de7b9074f68985d33ef8
 
 Source0: slPlugins.tar.gz
 Source4: socalab-source.sh
@@ -56,7 +56,7 @@ Requires: alsa
 SocaLabs Audio Plugins: https://SocaLabs.com/
 
 - Synth: Commodore 64 SID, Nintendo Entertainment System RP2A03, Gameboy PAPU,
-Sega Master System SN76489, SFX8, Voc Vocal Synth
+         Sega Master System SN76489, SFX8, Voc Vocal Synth
 - Effect: Compressor, Delay, Mverb 2020, Sample Delay
 - Analyzer: Oscilloscope, Spectrum Analyzer
 - Developer tool: AB Tester, Add & Invert, Channel Mute, Compensated Delay, Huge Gain
@@ -92,7 +92,7 @@ mkdir -p $CURRENT_PATH/bin/standalone/
 mkdir -p $CURRENT_PATH/bin/vst/
 mkdir -p $CURRENT_PATH/bin/vst3/
 
-Projucer --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE/modules
+#Projucer --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE/modules
 
 cat ci/pluginlist.txt | while read PLUGIN; do
   PLUGIN=$(echo $PLUGIN|tr -d '\n\r ')
@@ -139,6 +139,9 @@ cp bin/vst3/*.so %{buildroot}%{_libdir}/vst3/
 %{_libdir}/vst3/
 
 %changelog
+* Mon May 20 2022 Yann Collette <ycollette.nospam@free.fr> -
+- update to 77b4a8d6bf8da4407fc6de7b9074f68985d33ef8
+
 * Fri Oct 23 2020 Yann Collette <ycollette.nospam@free.fr> - 20200512-5
 - fix debug build
 
