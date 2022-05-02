@@ -54,6 +54,9 @@ Stargate is digital audio workstations (DAWs), instrument and effect plugins
 %autosetup -n %{name}-release-%{version}
 
 %build
+
+export PLAT_FLAGS=-fPIC
+
 cd src
 %make_build PIP=true
 
