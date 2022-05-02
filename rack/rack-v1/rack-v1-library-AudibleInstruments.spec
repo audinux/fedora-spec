@@ -20,7 +20,7 @@ Distribution: Audinux
 
 # ./audible-instruments-source.sh <tag>
 # ./audible-instruments-source.sh v1.5.0
-# ./audible-instruments-source.sh master # 1.5.0 not tagged yet
+# ./audible-instruments-source.sh v1 # 1.5.0 not tagged yet
 
 Source0: Rack.tar.gz
 Source1: AudibleInstruments.tar.gz
