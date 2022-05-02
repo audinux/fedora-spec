@@ -58,7 +58,8 @@ Some audio plugins (LV2 and VST) from ruykau
 
 %set_build_flags
 
-%make_build PREFIX=/usr LIBDIR=%{_lib} VERBOSE=1 SKIP_STRIPPING=true CFLAGS="%{build_cflags}" CXXFLAGS="%{build_cxxflags}" LDFLAGS="%{build_ldflags} -ldl" -j1
+export CXXFLAGS="$CXXFLAGS -include array"
+%make_build PREFIX=/usr LIBDIR=%{_lib} VERBOSE=1 SKIP_STRIPPING=true LDFLAGS="%{build_ldflags} -ldl" -j1
 
 %install
 
