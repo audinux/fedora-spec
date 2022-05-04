@@ -2,8 +2,8 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-%define aeolus_ver 0.9.9
-%define stops_ver  0.3.0
+%define aeolus_ver 0.10.1
+%define stops_ver  0.4.0
 
 %define desktop_vendor planetccrma
 
@@ -21,15 +21,21 @@ Source2: aeolus.desktop
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
-Obsoletes: aeolus-stops <= 0.3.1-1
-Provides:  aeolus-stops = 0.3.0-1
+Obsoletes: aeolus-stops <= 0.4.0-1
+Provides:  aeolus-stops = 0.4.0-1
 
 BuildRequires: gcc gcc-c++
-BuildRequires: desktop-file-utils zita-alsa-pcmi-devel clthreads-devel clxclient-devel
-BuildRequires: alsa-lib-devel jack-audio-connection-kit-devel desktop-file-utils
-BuildRequires: readline-devel
-BuildRequires: libX11-devel libXft-devel
+BuildRequires: make
 BuildRequires: perl
+BuildRequires: zita-alsa-pcmi-devel
+BuildRequires: clthreads-devel
+BuildRequires: clxclient-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: readline-devel
+BuildRequires: libX11-devel
+BuildRequires: libXft-devel
+BuildRequires: desktop-file-utils
 
 %description
 Aeolus is a synthesised (i.e. not sampled) pipe organ emulator that
@@ -110,6 +116,9 @@ desktop-file-install --vendor %{desktop_vendor} \
 %{_datadir}/applications/%{desktop_vendor}-aeolus.desktop
 
 %changelog
+* Wed May 04 2022 Yann Collette <ycollette.nospam@free.fr> - 0.10.1-2
+- update to 0.10.1-2
+
 * Tue Oct 20 2020 Yann Collette <ycollette.nospam@free.fr> - 0.9.8-2
 - fix debug build
 
