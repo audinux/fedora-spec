@@ -3,4 +3,4 @@
 RELEASE=35
 REPOSITORY=audinux
 
-dnf repoquery --repoid=copr:copr.fedorainfracloud.org:ycollet:$REPOSITORY --queryformat "%45{name} %{evr} %{buildtime}" | sort -r -k3 > packages-$RELEASE.txt
+dnf repoquery --release=$RELEASE --repoid=copr:copr.fedorainfracloud.org:ycollet:$REPOSITORY | grep src | sed -e "s/\.fc$RELEASE.src//g" | sort | uniq > packages-$RELEASE.txt
