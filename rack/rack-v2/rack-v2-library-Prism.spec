@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 6b2510c601db8bd3b57cd5eef8c2924cb8badfc7
-%global gittag0 2.3.3
+%global commit0 12db31e801907bf60f70d27fa133e72903415304
+%global gittag0 2.3.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Prism
-Version: 2.3.3
+Version: 2.3.4
 Release: 1%{?dist}
 Summary: Prism plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r Prism_plugin/dist/Prism/* %{buildroot}%{_libexecdir}/Rack2/plugins/Prism/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.4-1
 - initial specfile

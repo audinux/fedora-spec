@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 e56f1f6aa0b0388f196981259326c9304445019a
-%global gittag0 2.0.1
+%global commit0 11930962317416cda079d16bd56482316964fd81
+%global gittag0 2.0.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-WhatTheRack
-Version: 2.0.1
+Version: 2.0.3
 Release: 1%{?dist}
 Summary: WhatTheRack plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r WhatTheRack_plugin/dist/WhatTheRack/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
 - initial specfile
