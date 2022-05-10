@@ -375,11 +375,12 @@ No zlib found
 
 wineasio
 yabridge
+kernel-rt-stable-mao
+
 ossia-score
 openboard
 BambooTracker
 vsxu
-SocaLabs-plugins
 shortcircuit
 rack-v1-VCV-Recorder
 rack-v1-VCV-Prototype
@@ -387,7 +388,6 @@ purr-data
 obxd
 lives-mao
 azr3-jack
-kernel-rt-stable-mao
 odin2
 
 ## To be added back to repo
