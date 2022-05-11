@@ -127,6 +127,9 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
+# Fix format security pb
+sed -i -e "s/-fno-gnu-unique/-fno-gnu-unique -Wno-error=format-security/g" plugin.mk
+
 mkdir voxglitch_plugin
 tar xvfz %{SOURCE1} --directory=voxglitch_plugin --strip-components=1 
 
