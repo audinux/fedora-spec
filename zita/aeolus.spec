@@ -2,7 +2,7 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-%define aeolus_ver 0.10.1
+%define aeolus_ver 0.10.4
 %define stops_ver  0.4.0
 
 %define desktop_vendor planetccrma
@@ -116,6 +116,9 @@ desktop-file-install --vendor %{desktop_vendor} \
 %{_datadir}/applications/%{desktop_vendor}-aeolus.desktop
 
 %changelog
+* Wed May 11 2022 Yann Collette <ycollette.nospam@free.fr> - 0.10.3-2
+- update to 0.10.3-2
+
 * Wed May 04 2022 Yann Collette <ycollette.nospam@free.fr> - 0.10.1-2
 - update to 0.10.1-2
 
