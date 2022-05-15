@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    LinVst
-Version: 4.76
+Version: 4.77
 Release: 1%{?dist}
 Summary: Linux Windows vst wrapper/bridge
 License: GPLv3
@@ -61,6 +61,9 @@ cp -ra Realtime-Audio-Config %{buildroot}/usr/share/%{name}/doc
 %{_datadir}/%{name}/doc/*
 
 %changelog
+* Sun May 15 2022 Yann Collette <ycollette.nospam@free.fr> - 4.77-1
+- update to version 4.77-1
+
 * Tue Aug 03 2021 Yann Collette <ycollette.nospam@free.fr> - 4.76-1
 - update to version 4.76-1
 
