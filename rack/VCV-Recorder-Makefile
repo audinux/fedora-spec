@@ -1,0 +1,14 @@
+RACK_DIR ?= ../..
+
+include $(RACK_DIR)/arch.mk
+
+FLAGS += -Idep/include
+CFLAGS +=
+CXXFLAGS +=
+
+SOURCES += $(wildcard src/*.cpp)
+
+DISTRIBUTABLES += res
+DISTRIBUTABLES += $(wildcard LICENSE*)
+
+include $(RACK_DIR)/plugin.mk
