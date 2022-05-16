@@ -207,7 +207,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 * Mon May 02 2022 Yann Collette <ycollette.nospam@free.fr> - 5.15.36-rt41-13
 - update to 5.15.36-rt41-13 - vanilla RT kernel
 
-* Thu Apr 26 2022 Yann Collette <ycollette.nospam@free.fr> - 5.17.1-rt17-13
+* Tue Apr 26 2022 Yann Collette <ycollette.nospam@free.fr> - 5.17.1-rt17-13
 - update to 5.17.1-rt17-13 - vanilla RT kernel
 
 * Thu Apr 07 2022 Yann Collette <ycollette.nospam@free.fr> - 5.15.32-rt39-13
