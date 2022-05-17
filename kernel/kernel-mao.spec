@@ -3,9 +3,9 @@
 # Kernel minor version
 %define kmin  15
 # Kernel patch version
-%define kpat  39
+%define kpat  40
 # RT patch version
-%define krt   42
+%define krt   43
 # package version
 %define krel  13
 
@@ -201,6 +201,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
 %changelog
+* Mon May 16 2022 Yann Collette <ycollette.nospam@free.fr> - 5.15.40-rt43-13
+- update to 5.15.40-rt43-13 - vanilla RT kernel
+
 * Mon May 16 2022 Yann Collette <ycollette.nospam@free.fr> - 5.15.39-rt42-13
 - update to 5.15.39-rt42-13 - vanilla RT kernel
 
