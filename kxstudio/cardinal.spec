@@ -1,5 +1,7 @@
+%define _lto_cflags %{nil}
+
 Name:    cardinal
-Version: 22.04
+Version: 22.05
 Release: 1%{?dist}
 Summary:  Virtual modular synthesizer plugin
 License: GPLv2+
@@ -69,6 +71,11 @@ VST2 version of %{name}
 %autosetup -n %{name}-%{version}
 
 %build
+
+%set_build_flags
+export CFLAGS="$CFLAGS -Wno-error=format-security"
+export CXXFLAGS="$CXXFLAGS -Wno-error=format-security"
+
 %make_build PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true
 
 %install 
@@ -93,6 +100,9 @@ mv %buildroot/usr/lib %buildroot/usr/lib64
 %{_libdir}/vst3/*
 
 %changelog
+* Sun May 15 2022 Yann Collette <ycollette.nospam@free.fr> - 22.05-1
+- update to 22.05-1
+
 * Mon Apr 04 2022 Yann Collette <ycollette.nospam@free.fr> - 22.04-1
 - update to 22.04-1
 
