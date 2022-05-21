@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 fa1191e2c9b43e2860897e4114b66617b59cb1fc
-%global gittag0 2.0.0
+%global commit0 d2057606470755f99a05f32661ff889efa9d8945
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Coffee
-Version: 2.0.0
+Version: 2.1.0
 Release: 1%{?dist}
 Summary: Coffee plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r Coffee_plugin/dist/Coffee/* %{buildroot}%{_libexecdir}/Rack2/plugins/Coffe
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
