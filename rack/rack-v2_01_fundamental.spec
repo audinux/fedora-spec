@@ -8,13 +8,13 @@
 %global debug_package %{nil}
 
 # Global variables for github repository
-%global commit0 9693f7fc7f404f19b04cd1fa6bfa84375f781045
+%global commit0 4484ad68ab5f51a1225ac3cd7d3dc1ea689a52e9
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    rack-v2-Fundamental
 Version: 2.1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A plugin for Rack
 License: GPLv2+
 URL:     https://github.com/VCVRack/Fundamental
@@ -23,7 +23,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./rack-source.sh <tag>
-# ./rack-source.sh v2.0.3
+# ./rack-source.sh v2.1.1
 
 Source0: Rack.tar.gz
 Source1: https://github.com/VCVRack/Fundamental/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
@@ -171,8 +171,11 @@ cp -r fundamental_plugin/dist/Fundamental/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
-* Fri Mar 04 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-6
-- update to 2.1.0-6
+* Fri Mar 04 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-2
+- update to last master - 4484ad68ab5f51a1225ac3cd7d3dc1ea689a52e9 - 2.1.0-2
+
+* Fri Mar 04 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+- update to 2.1.0-1
 
 * Sun Nov 29 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-6
 - fix rtaudio + debug build
