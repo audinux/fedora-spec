@@ -80,7 +80,6 @@
 | HexoSynth           | https://github.com/WeirdConstructor/HexoSynth |
 | AlgAudio            | https://github.com/rafalcieslak/AlgAudio |
 | psychosynth         | https://github.com/arximboldi/psychosynth |
-| shortcircuit-xt     | https://github.com/surge-synthesizer/shortcircuit-xt |
 | tidal               | https://github.com/archlinux/svntogit-community/blob/packages/haskell-tidal/trunk/PKGBUILD |
 | TS-M1N3             | https://github.com/GuitarML/TS-M1N3 |
 | Chameleon           | https://github.com/GuitarML/Chameleon |
@@ -353,17 +352,12 @@ SocaLabs-plugins  -> exchange not a member of std
 openboard         -> optional not in std -> missing header / still a problem after the tentative fix
 odin2             -> exchange not a member of std / juceaide
 
-shortcircuit      -> remove -Werror=format-security (to fix on f33 / f35 - cmake version pb).
--> export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
-
 Bambootracker              -> pulseaudio pb
 azr3                       -> gtkmm / glibmm detection
 yabridge                   -> various link problems
 vsxu                       -> nullptr comparison
-rack-v1-VCV-Recorder       -> ffmpeg incompatibility
 rack-v1-VCV-Prototype      -> vult file not available
 purr-data                  -> a config.h is missing
-ossia-score                -> memory problem ? retry without lto
 lives-mao                  -> calloc problem -> check upstream
 kernel-rt-stable-mao       -> Auto-detecting system features:
 ...                        libelf: [ on  ]
@@ -376,13 +370,9 @@ No zlib found
 wineasio
 yabridge
 kernel-rt-stable-mao
-
-ossia-score
 openboard
 BambooTracker
 vsxu
-shortcircuit
-rack-v1-VCV-Recorder
 rack-v1-VCV-Prototype
 purr-data
 obxd

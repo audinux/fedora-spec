@@ -6,8 +6,7 @@
 git clone https://github.com/surge-synthesizer/shortcircuit3
 cd shortcircuit3
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz shortcircuit.tar.gz shortcircuit3/*

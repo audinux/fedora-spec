@@ -61,9 +61,13 @@ VST3 version of %{name}
 # Fix a compilation problem on Fedora 35 (variable size list)
 sed -i -e "s| >= MINSIGSTKSZ ? 32768 : MINSIGSTKSZ||g" libs/catch2/include/catch2/catch2.hpp
 
+sed -i -e "s|\"-DCMAKE_BUILD_TYPE=Debug\"|\"-DCMAKE_BUILD_TYPE=Debug\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"|g" libs/JUCE/extras/Build/juceaide/CMakeLists.txt
+
+sed -i -e "s|Shortcircuit XT|Shortcircuit_XT|g" wrappers/juce/CMakeLists.txt
+
 %build
 
-export CXXFLAGS="-Wno-error=format-security"
+export CXXFLAGS="-Wno-error=format-security -include utility"
 
 mkdir -p build
 cd build
@@ -74,10 +78,11 @@ cmake -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DCMAKE_INSTALL_PREFIX:PATH=/usr -DINCLUD
 %install 
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/ShortcircuitXT.vst3/
-cp -r build/ShortcircuitXT_artefacts/RELEASE/VST3/Shortcircuit\ XT.vst3/* %{buildroot}/%{_libdir}/vst3/ShortcircuitXT.vst3/
+cp -r build/shortcircuit-products/Shortcircuit_XT.vst3/* %{buildroot}/%{_libdir}/vst3/ShortcircuitXT.vst3/
 
 install -m 755 -d %{buildroot}%{_bindir}/
-cp -r build/ShortcircuitXT_artefacts/RELEASE/Standalone/* %{buildroot}/%{_bindir}/
+cp -r build/shortcircuit-products/Shortcircuit_XT %{buildroot}/%{_bindir}/ShortcitcuitXT
+cp -r build/shortcircuit-products/Shortcircuit_XT.clap %{buildroot}/%{_bindir}/ShortcitcuitXT.clap
 
 %files
 %doc README.md
@@ -88,6 +93,9 @@ cp -r build/ShortcircuitXT_artefacts/RELEASE/Standalone/* %{buildroot}/%{_bindir
 %{_libdir}/vst3/*
 
 %changelog
+* Mon May 23 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
+- Fix for Fedora 36    
+
 * Thu Oct 07 2021 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
 - Fix for Fedora 35
 
