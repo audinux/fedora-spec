@@ -347,19 +347,17 @@ carla
 
 ## To be fixed:
 
-obxd              -> missing array header
-SocaLabs-plugins  -> exchange not a member of std
-openboard         -> optional not in std -> missing header / still a problem after the tentative fix
-odin2             -> exchange not a member of std / juceaide
+obxd      -> missing array header
+openboard -> optional not in std -> missing header / still a problem after the tentative fix
 
-Bambootracker              -> pulseaudio pb
-azr3                       -> gtkmm / glibmm detection
-yabridge                   -> various link problems
-vsxu                       -> nullptr comparison
-rack-v1-VCV-Prototype      -> vult file not available
-purr-data                  -> a config.h is missing
-lives-mao                  -> calloc problem -> check upstream
-kernel-rt-stable-mao       -> Auto-detecting system features:
+Bambootracker         -> pulseaudio pb
+azr3                  -> gtkmm / glibmm detection
+yabridge              -> various link problems
+vsxu                  -> nullptr comparison
+rack-v1-VCV-Prototype -> vult file not available
+purr-data             -> a config.h is missing
+lives-mao             -> calloc problem -> check upstream
+kernel-rt-stable-mao  -> Auto-detecting system features:
 ...                        libelf: [ on  ]
 ...                          zlib: [ OFF ]
 ...                           bpf: [ on  ]
@@ -378,7 +376,6 @@ purr-data
 obxd
 lives-mao
 azr3-jack
-odin2
 
 ## To be added back to repo
 

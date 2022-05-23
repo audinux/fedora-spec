@@ -16,8 +16,7 @@ Distribution: Audinux
 # ./odin-sources.sh v2.3.1
 
 Source0: odin2.tar.gz
-Source1: JUCELV2.tar.gz
-Source2: odin-sources.sh
+Source1: odin-sources.sh
 Patch0:  odin2-0001-soundbanks-in-share.patch
 
 BuildRequires: gcc gcc-c++
@@ -39,7 +38,6 @@ BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
-BuildRequires: lv2-devel
 
 %description
 Odin 2 Synthesizer Plugin
@@ -52,18 +50,8 @@ Requires: %{name}
 %description -n vst3-%{name}
 VST3 version of %{name}
 
-%package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPLv2+
-Requires: %{name}
-
-%description -n lv2-%{name}
-LV2 version of %{name}
-
 %prep
 %autosetup -p1 -n %{name}
-
-tar xvfz %{SOURCE1}
 
 %build
 
@@ -72,7 +60,6 @@ tar xvfz %{SOURCE1}
 export CXXFLAGS="-include utility $CXXFLAGS"
 export HOME=`pwd`
 mkdir -p .vst3
-mkdir -p .lv2
 mkdir -p .local/share/Odin2
 
 # VST3 part
@@ -84,24 +71,6 @@ cd Builds/LinuxMakefile
 %make_build CONFIG=Release STRIP=true
 
 mv build build_vst3
-
-cd ../..
-
-# LV2 part
-
-Projucer60 --set-global-search-path linux defaultJuceModulePath $PWD/JUCELV2/modules/
-Projucer60 --resave Odin.jucer
-
-echo "#define JucePlugin_Build_LV2 1" >> JuceLibraryCode/AppConfig.h
-echo "#define JucePlugin_LV2URI \"https://www.thewavewarden.com/odin2\"" >> JuceLibraryCode/AppConfig.h
-echo "#define JucePlugin_MaxNumOutputChannels 2" >> JuceLibraryCode/AppConfig.h
-
-echo -e "include ../../LV2.mak" >> Builds/LinuxMakefile/Makefile
-
-cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
-
-mv build build_lv2
 
 %install 
 
@@ -117,8 +86,6 @@ install -m 755 -p Builds/LinuxMakefile/build_vst3/Odin2 %{buildroot}/%{_bindir}/
 cp -ra Builds/LinuxMakefile/build_vst3/Odin2.vst3/* %{buildroot}/%{_libdir}/vst3/Odin2.vst3/
 chmod a+x %{buildroot}/%{_libdir}/vst3/Odin2.vst3/Contents/x86_64-linux/Odin2.so
 
-cp -ra Builds/LinuxMakefile/build_lv2/Odin2_.lv2/* %{buildroot}/%{_libdir}/lv2/Odin2_.lv2/
-
 %files
 %doc README.md change_log.md
 %license LICENSE
@@ -127,9 +94,6 @@ cp -ra Builds/LinuxMakefile/build_lv2/Odin2_.lv2/* %{buildroot}/%{_libdir}/lv2/O
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
-
-%files -n lv2-%{name}
-%{_libdir}/lv2/*
 
 %changelog
 * Fri Aug 20 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-4
