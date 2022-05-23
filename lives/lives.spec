@@ -29,6 +29,9 @@ URL:     http://lives-video.com
 Vendor:       Audinux
 Distribution: Audinux
 
+# Usage: ./lives-sources.sh <TAG>
+# ./lives-sources.sh master
+
 Source0: LiVES.tar.gz
 Source1: LiVES.appdata.xml
 Source2: lives-sources.sh
@@ -53,7 +56,6 @@ BuildRequires: pkgconfig(fftw3)
 
 # 'tirpc' is required by 'musl-libc'
 BuildRequires: pkgconfig(libtirpc)
-BuildRequires: pkgconfig(sdl)
 BuildRequires: pkgconfig(libmatroska)
 BuildRequires: pkgconfig(mjpegtools)
 BuildRequires: ladspa-devel

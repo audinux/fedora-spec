@@ -1,13 +1,12 @@
 #!/bin/bash
 
-# Usage: ./lives-source.sh <TAG>
-# ./lives-source.sh master
+# Usage: ./lives-sources.sh <TAG>
+# ./lives-sources.sh master
 
 git clone --recursive https://github.com/salsaman/LiVES
 cd LiVES
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz LiVES.tar.gz LiVES/*
