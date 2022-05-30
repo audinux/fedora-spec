@@ -4,7 +4,7 @@
 
 Name:    harvid
 Version: 0.9.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: harvid -- HTTP Ardour Video Daemon
 License: GPLv2+
 
@@ -46,8 +46,8 @@ sed -i -e "19,21d" src/Makefile
 %make_install PREFIX=/usr
 
 mkdir -p %{buildroot}/usr/bin
-ln -s /usr/bin/ffmpeg %{buildroot}/usr/bin/ffmpeg_harvid 
-ln -s /usr/bin/ffprobe%{buildroot}/usr/bin/ffprobe_harvid
+ln -s /usr/bin/ffmpeg  %{buildroot}/usr/bin/ffmpeg_harvid 
+ln -s /usr/bin/ffprobe %{buildroot}/usr/bin/ffprobe_harvid
 
 %files
 %doc README.md ChangeLog
@@ -57,6 +57,9 @@ ln -s /usr/bin/ffprobe%{buildroot}/usr/bin/ffprobe_harvid
 %{_datadir}/*
 
 %changelog
+* Mon May 30 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9.0-3
+- update to 0.9.0-3 - fix symbolic links
+
 * Sat Apr 23 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9.0-2
 - update to 0.9.0-2
 
