@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    element
-Version: 0.46.4
+Version: 0.46.6
 Release: 1%{?dist}
 Summary: This is the community version of Element, a modular AU/LV2/VST/VST3 audio plugin host.
 URL:     https://github.com/kushview/Element
@@ -89,6 +89,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/net.kushview.element.
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Tue May 31 2022 Yann Collette <ycollette.nospam@free.fr> - 0.46.6-1
+- update to 0.46.6-1
+
 * Tue Mar 15 2022 Yann Collette <ycollette.nospam@free.fr> - 0.46.4-1
 - update to 0.46.4-1
 

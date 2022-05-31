@@ -1,3 +1,3 @@
 // Generated file
 #pragma once
-#define EL_GIT_VERSION "b'89ace20e'"
+#define EL_GIT_VERSION "b'05ef0e9f'"
