@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 3497a26f7023378be59b75e9d7ebc154e7b1509c
-%global gittag0 2.1.0
+%global commit0 6588b673fdaf1514d8d6bfbc1a20d05d2fa37e13
+%global gittag0 2.1.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-h4n4-modules
-Version: 2.1.0
+Version: 2.1.1
 Release: 1%{?dist}
 Summary: h4n4-modules plugin for Rack
 License: GPLv2+
@@ -58,7 +58,7 @@ BuildRequires: jq
 
 %description
 h4n4-modules plugin for Rack.
-Polyphonic Scala Quantizer
+Polyphonic CV-controllable Scala Quantizer
 
 %prep
 %autosetup -n Rack
@@ -146,5 +146,5 @@ cp -r h4n4-modules_plugin/dist/h4n4-modules/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
 - initial specfile

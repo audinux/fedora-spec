@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 ea6ab0c6887102ebbf6e3534e0e891b867b130cc
-%global gittag0 2.0.0
+%global commit0 d0a6e206c92b93ffeaa933fc98c0dfd9e78771da
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-PinkTrombone
-Version: 2.0.0
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: PinkTrombone plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r PinkTrombone_plugin/dist/PinkTrombone/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

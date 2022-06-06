@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 101e0c0f61b0a734f793ebfb6437b98ecd656ebd
-%global gittag0 2.2.0
+%global commit0 5fcc3d3afe23f93337545342827bc3aad793f6dd
+%global gittag0 2.3.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-PathSet
-Version: 2.2.0
+Version: 2.3.0
 Release: 1%{?dist}
 Summary: PathSet plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r PathSet_plugin/dist/PathSet/* %{buildroot}%{_libexecdir}/Rack2/plugins/Pat
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-1
 - initial specfile
