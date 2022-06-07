@@ -5,7 +5,7 @@
 
 Summary: Old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.
 Name:    padthv1
-Version: 0.9.24
+Version: 0.9.26
 Release: 1%{?dist}
 URL:     https://sourceforge.net/projects/%{name}
 License: GPLv2+
@@ -15,8 +15,6 @@ Distribution: Audinux
 
 Source0: https://download.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Patch0:  padthv1-0001-disable-strip.patch
-
-Requires: hicolor-icon-theme
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -29,7 +27,10 @@ BuildRequires: desktop-file-utils
 BuildRequires: libsndfile-devel
 BuildRequires: fftw-devel
 BuildRequires: liblo-devel
+BuildRequires: qt5-qtsvg-devel
 BuildRequires: libappstream-glib
+
+Requires: hicolor-icon-theme
 
 %description
 Based on the PADsynth algorithm, by Paul Nasca (ZynAddSubFX), 
@@ -48,12 +49,18 @@ An LV2 plugin of the padthv1 synthesizer
 
 %build
 
-%cmake
+%cmake -DCONFIG_QT6=OFF
 %cmake_build
 
 %install
 
 %cmake_install
+
+install -m 755 -d %{buildroot}/%{_datadir}/mime/packages/
+install -m 755 -d %{buildroot}/%{_datadir}/metainfo/
+
+install -m 644 src/mimetypes/org.rncbc.padthv1.xml %{buildroot}%{_datadir}/mime/packages/padthv1.xml
+install -m 644 src/appdata/org.rncbc.padthv1.metainfo.xml %{buildroot}%{_datadir}//metainfo/org.rncbc.padthv1.xml
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.desktop
@@ -65,15 +72,18 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.des
 %{_datadir}/applications/org.rncbc.padthv1.desktop
 %{_datadir}/icons/hicolor/*/*/*
 %{_bindir}/%{name}_jack
-%{_datadir}/mime/packages/%{name}.xml
 %{_datadir}/man/man1/%{name}*
 %{_datadir}/man/*/man1/%{name}*
-%{_datadir}/metainfo/org.rncbc.padthv1.xml
+%{_datadir}/mime/packages/*.xml
+%{_datadir}/metainfo/*.xml
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/%{name}.lv2/
 
 %changelog
+* Tue Jun 07 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9.26-1
+- update to 0.9.26-1
+
 * Wed Jan 26 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9.24-1
 - update to 0.9.24-1
 
