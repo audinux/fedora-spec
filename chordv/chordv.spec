@@ -25,6 +25,7 @@ BuildRequires: fontconfig-devel
 BuildRequires: libtiff-devel
 BuildRequires: libpng-devel
 BuildRequires: libjpeg-devel
+BuildRequires: libsndfile-devel
 BuildRequires: desktop-file-utils	
 
 %description
