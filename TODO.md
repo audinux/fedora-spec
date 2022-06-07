@@ -96,7 +96,6 @@
 | vmpc-juce           | https://github.com/izzyreal/vmpc-juce |
 | powertabeditor      | https://github.com/powertab/powertabeditor |
 | rtcqs               | https://codeberg.org/rtcqs/rtcqs |
-| ChordV              | https://sourceforge.net/projects/chordv/ |
 
 ## WIP
 
