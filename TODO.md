@@ -96,6 +96,7 @@
 | vmpc-juce           | https://github.com/izzyreal/vmpc-juce |
 | powertabeditor      | https://github.com/powertab/powertabeditor |
 | rtcqs               | https://codeberg.org/rtcqs/rtcqs |
+| soundgrain          | https://github.com/belangeo/soundgrain |
 
 ## WIP
 
@@ -357,17 +358,11 @@ vsxu                  -> nullptr comparison
 rack-v1-VCV-Prototype -> vult file not available
 purr-data             -> a config.h is missing
 lives-mao             -> calloc problem -> check upstream
-kernel-rt-stable-mao  -> Auto-detecting system features:
-...                        libelf: [ on  ]
-...                          zlib: [ OFF ]
-...                           bpf: [ on  ]
-No zlib found
 
 - update on 01052022
 
 wineasio
 yabridge
-kernel-rt-stable-mao
 openboard
 BambooTracker
 vsxu
