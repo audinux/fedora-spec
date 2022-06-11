@@ -3,9 +3,9 @@
 # Kernel minor version
 %define kmin  10
 # Kernel patch version
-%define kpat  115
+%define kpat  120
 # RT patch version
-%define krt   67
+%define krt   70
 # package version
 %define krel  11
 
@@ -25,6 +25,7 @@ Distribution: Audinux
 Source0: https://cdn.kernel.org/pub/linux/kernel/v%{kmaj}.x/linux-%{kver}.tar.gz
 Source1: kernel-config-%{kmaj}.%{kmin}
 Patch0:  https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/%{kmaj}.%{kmin}/older/patch-%{kver}-rt%{krt}.patch.gz
+Patch1:  kernel-5.10-remove-bpf-feature-detect.patch
 
 BuildRequires: openssl-devel
 BuildRequires: openssl
@@ -202,6 +203,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt-stable%{krt}%{fcver}
 
 %changelog
+* Sat Jun 11 2022 Yann Collette <ycollette.nospam@free.fr> - 5.10.120-rt70-11
+- update to 5.10.120-rt70-11 - vanilla RT kernel
+
 * Sun May 15 2022 Yann Collette <ycollette.nospam@free.fr> - 5.10.115-rt67-11
 - update to 5.10.115-rt67-11 - vanilla RT kernel
 
