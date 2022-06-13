@@ -1,4 +1,3 @@
-
 # Type: Standalone
 # Category: Graphic
 # GUIToolkit: Qt5
@@ -6,7 +5,7 @@
 %define	uname OpenBoard
 
 Name:    openboard
-Version: 1.6.1
+Version: 1.6.3
 Release: 3%{?dist}
 Summary: Interactive whiteboard for schools and universities
 License: GPLv3+
@@ -43,15 +42,17 @@ BuildRequires: pkgconfig(Qt5XmlPatterns)
 BuildRequires: pkgconfig(hunspell)
 BuildRequires: pkgconfig(freetype2)
 BuildRequires: pkgconfig(openssl)
-BuildRequires: pkgconfig(sdl)
 BuildRequires: poppler-devel
 BuildRequires: poppler-cpp-devel
 BuildRequires: ffmpeg-devel
+BuildRequires: compat-ffmpeg4-devel
+BuildRequires: sdl12-compat-devel
 BuildRequires: libvorbis-devel
 BuildRequires: libogg-devel
 BuildRequires: libtheora-devel
 BuildRequires: opus-devel
 BuildRequires: lame-devel
+BuildRequires: quazip-devel
 
 %description
 OpenBoard is an open source cross-platform interactive white board
@@ -83,7 +84,11 @@ sed -i -e "s|\$DIR/OpenBoard|/usr/libexec/OpenBoard|g" resources/linux/run.sh
 %build
 lrelease-qt5 -removeidentical %{uname}.pro
 
-%qmake_qt5 INCLUDEPATH+=/usr/include/ffmpeg QMAKE_CXXFLAGS+="-include utility -include optional"
+export LDFLAGS="-L/usr/lib64/compat-ffmpeg4 $LDFLAGS"
+export CFLAGS="-I/usr/include/compat-ffmpeg4 $CFLAGS"
+export CXXFLAGS="-I/usr/include/compat-ffmpeg4 $CXXFLAGS"
+
+%qmake_qt5 INCLUDEPATH+="/usr/include/quazip"  QMAKE_CXXFLAGS+="-include utility -include optional"
 %make_build
 
 %install
@@ -129,6 +134,9 @@ find %{buildroot} -executable -type f -name *.html -exec chmod -x '{}' \+
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Mon Jun 13 2022 Yann Collette <ycollette.nospam@free.fr> - 1.6.3-3
+- update to 1.6.3-3
+
 * Fri Oct 01 2021 Yann Collette <ycollette.nospam@free.fr> - 1.6.1-3
 - Fix for Fedora 35
 
