@@ -5,7 +5,7 @@
 %global debug_package %{nil}
 
 Name:    yabridge
-Version: 3.8.1
+Version: 4.0.1
 Release: 2%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPLv2+
@@ -68,8 +68,8 @@ popd
 %install
 
 install -dm755 %{buildroot}%{_bindir}
-install build/yabridge-{host,group}.exe %{buildroot}%{_bindir}
-install build/yabridge-{host,group}.exe.so %{buildroot}%{_bindir}
+install build/yabridge-host.exe %{buildroot}%{_bindir}
+install build/yabridge-host.exe.so %{buildroot}%{_bindir}
 
 install -dm755 %{buildroot}%{_libdir}/vst
 install build/libyabridge-vst2.so %{buildroot}%{_libdir}/vst
@@ -85,7 +85,13 @@ install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}
 %{_libdir}/vst/*
 
 %changelog
-* Wed Mar 26 2022 Vincent Tassy <timetre@free.fr> - 3.8.1-2
+* Sun Jun 12 2022 Yann Collette <ycollette.nospam@free.fr> - 4.0.1-2
+- update to 4.0.1-2
+
+* Sun Jun 12 2022 Yann Collette <ycollette.nospam@free.fr> - 4.0.0-2
+- update to 4.0.0-2
+
+* Sat Mar 26 2022 Vincent Tassy <timetre@free.fr> - 3.8.1-2
 - ship yabridgectl
 - yabridgectl expects both vst and vst3 libs in the same folder. moving libyabridge-vst3.so to vst folder
 - Moved yabridge-{host,group}.exe.so to bin folder, where they are expected by yabridge-{host,group}.exe
