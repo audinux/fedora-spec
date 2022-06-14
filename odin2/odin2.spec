@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name:    odin2
-Version: 2.3.2
+Version: 2.3.3
 Release: 4%{?dist}
 Summary: A VST3 Synthesizer
 License: GPLv2+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./odin-sources.sh <TAG>
-# ./odin-sources.sh v2.3.2
+# ./odin-sources.sh v2.3.3
 
 Source0: odin2.tar.gz
 Source1: odin-sources.sh
@@ -96,6 +96,9 @@ chmod a+x %{buildroot}/%{_libdir}/vst3/Odin2.vst3/Contents/x86_64-linux/Odin2.so
 %{_libdir}/vst3/*
 
 %changelog
+* Tue Jun 14 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3.3-4
+- update to 2.3.3-4
+
 * Sat Jun 11 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3.2-4
 - update to 2.3.2-4
 

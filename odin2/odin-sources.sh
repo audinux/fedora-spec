@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Usage: ./odin-sources.sh <TAG>
-# ./odin-sources.sh v2.3.2
+# ./odin-sources.sh v2.3.3
 
 git clone https://github.com/TheWaveWarden/odin2
 cd odin2
