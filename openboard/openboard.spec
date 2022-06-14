@@ -2,6 +2,8 @@
 # Category: Graphic
 # GUIToolkit: Qt5
 
+%global debug_package %{nil}
+
 %define	uname OpenBoard
 
 Name:    openboard
@@ -45,14 +47,21 @@ BuildRequires: pkgconfig(openssl)
 BuildRequires: poppler-devel
 BuildRequires: poppler-cpp-devel
 BuildRequires: ffmpeg-devel
+%if 0%{?fedora} >= 36
 BuildRequires: compat-ffmpeg4-devel
+%endif
+%if 0%{?fedora} >= 36
 BuildRequires: sdl12-compat-devel
+%else
+BuildRequires: SDL-devel
+%endif
 BuildRequires: libvorbis-devel
 BuildRequires: libogg-devel
 BuildRequires: libtheora-devel
 BuildRequires: opus-devel
 BuildRequires: lame-devel
 BuildRequires: quazip-devel
+BuildRequires: libsndfile-devel
 
 %description
 OpenBoard is an open source cross-platform interactive white board
@@ -84,9 +93,15 @@ sed -i -e "s|\$DIR/OpenBoard|/usr/libexec/OpenBoard|g" resources/linux/run.sh
 %build
 lrelease-qt5 -removeidentical %{uname}.pro
 
+%if 0%{?fedora} >= 36
 export LDFLAGS="-L/usr/lib64/compat-ffmpeg4 $LDFLAGS"
 export CFLAGS="-I/usr/include/compat-ffmpeg4 $CFLAGS"
 export CXXFLAGS="-I/usr/include/compat-ffmpeg4 $CXXFLAGS"
+%else
+export LDFLAGS="-L/usr/lib64/ffmpeg $LDFLAGS"
+export CFLAGS="-I/usr/include/ffmpeg $CFLAGS"
+export CXXFLAGS="-I/usr/include/ffmpeg $CXXFLAGS"
+%endif
 
 %qmake_qt5 INCLUDEPATH+="/usr/include/quazip"  QMAKE_CXXFLAGS+="-include utility -include optional"
 %make_build
