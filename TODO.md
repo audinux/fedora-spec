@@ -349,7 +349,6 @@ carla
 ## To be fixed:
 
 obxd      -> missing array header
-openboard -> optional not in std -> missing header / still a problem after the tentative fix
 
 Bambootracker         -> pulseaudio pb
 azr3                  -> gtkmm / glibmm detection
@@ -363,7 +362,6 @@ lives-mao             -> calloc problem -> check upstream
 
 wineasio
 yabridge
-openboard
 BambooTracker
 vsxu
 rack-v1-VCV-Prototype
