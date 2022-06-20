@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b39a56d11cb4e36b21274940f0f22e7873eec51d
-%global gittag0 2.0.1
+%global commit0 96f186fafb0f66cf2e0a066fd781d44964a52ef5
+%global gittag0 2.0.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Kilpatrick-Toolbox
-Version: 2.0.1
+Version: 2.0.3
 Release: 1%{?dist}
 Summary: Kilpatrick-Toolbox plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r Kilpatrick-Toolbox_plugin/dist/Kilpatrick-Toolbox/* %{buildroot}%{_libexec
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
 - initial specfile

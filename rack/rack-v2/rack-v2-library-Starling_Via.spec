@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 1058b0ce6ac5a6d36fb1d58b4f3fac0d390ab2cf
-%global gittag0 1.0.1
+%global commit0 7ceab8f69b5e95c41d0859b64857686fc96915fc
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Starling_Via
-Version: 1.0.1
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: Starling_Via plugin for Rack
 License: GPLv2+
@@ -27,8 +27,12 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/starlingcode/Via-for-Rack/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: Via-for-Rack.tar.gz
 Source2: Starling_Via_plugin.json
+Source3: starling-via-source.sh
+
+# ./starling-via-source.sh <tag>
+# ./starling-via-source.sh 7ceab8f69b5e95c41d0859b64857686fc96915fc
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -146,5 +150,5 @@ cp -r Starling_Via_plugin/dist/Starling_Via/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

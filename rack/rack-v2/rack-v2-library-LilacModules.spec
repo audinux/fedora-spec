@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 eb725638833f32bb1fed21358c22e5e36ef1c37f
-%global gittag0 2.0.0
+%global commit0 6114f5fc2ebce2fbbed9ea58f2b9ad4849f24261
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-LilacModules
-Version: 2.0.0
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: LilacModules plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r LilacModules_plugin/dist/LilacModules/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile
