@@ -2,8 +2,8 @@
 # Type: Standalone, IDE, Language
 # Category: Audio, Programming, Graphic
 
-Name:    JUCE
-Version: 7.0.0
+Name:    JUCE61
+Version: 6.1.6
 Release: 6%{?dist}
 Summary: JUCE Framework
 URL:     https://github.com/juce-framework/JUCE
@@ -14,7 +14,7 @@ Distribution: Audinux
 
 # original tarfile can be found here:
 Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0:  juce-0001-set-default-path.patch
+Patch0:  juce61-0001-set-default-path.patch
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: lv2-devel
@@ -37,7 +37,7 @@ Code::Blocks, CLion and Linux Makefiles as well as containing a source code edit
 live-coding engine which can be used for rapid prototyping.
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -p1 -n JUCE-%{version}
 
 %build
 
@@ -73,19 +73,19 @@ cd ../../..
 %install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
-install -m 755 extras/AudioPluginHost/Builds/LinuxMakefile/build/AudioPluginHost %{buildroot}%{_bindir}/
-install -m 755 extras/BinaryBuilder/Builds/LinuxMakefile/build/BinaryBuilder     %{buildroot}%{_bindir}/
-install -m 755 extras/Projucer/Builds/LinuxMakefile/build/Projucer               %{buildroot}%{_bindir}/
-install -m 755 extras/UnitTestRunner/Builds/LinuxMakefile/build/UnitTestRunner   %{buildroot}%{_bindir}/
+install -m 755 extras/AudioPluginHost/Builds/LinuxMakefile/build/AudioPluginHost %{buildroot}%{_bindir}/AudioPluginHost61
+install -m 755 extras/BinaryBuilder/Builds/LinuxMakefile/build/BinaryBuilder     %{buildroot}%{_bindir}/BinaryBuilder61
+install -m 755 extras/Projucer/Builds/LinuxMakefile/build/Projucer               %{buildroot}%{_bindir}/Projucer61
+install -m 755 extras/UnitTestRunner/Builds/LinuxMakefile/build/UnitTestRunner   %{buildroot}%{_bindir}/UnitTestRunner61
 
-install -m 755 -d %{buildroot}/%{_usrsrc}/JUCE/
-install -m 755 -d %{buildroot}/%{_usrsrc}/JUCE/examples/
-cp -ra examples/* %{buildroot}/%{_usrsrc}/JUCE/examples/
-install -m 755 -d %{buildroot}/%{_usrsrc}/JUCE/modules/
-cp -ra modules/*  %{buildroot}/%{_usrsrc}/JUCE/modules/
+install -m 755 -d %{buildroot}/%{_usrsrc}/JUCE61/
+install -m 755 -d %{buildroot}/%{_usrsrc}/JUCE61/examples/
+cp -ra examples/* %{buildroot}/%{_usrsrc}/JUCE61/examples/
+install -m 755 -d %{buildroot}/%{_usrsrc}/JUCE61/modules/
+cp -ra modules/*  %{buildroot}/%{_usrsrc}/JUCE61/modules/
 
-install -m 755 -d         %{buildroot}/%{_datadir}/JUCE/doc/
-cp -ra docs/doxygen/doc/* %{buildroot}/%{_datadir}/JUCE/doc/
+install -m 755 -d         %{buildroot}/%{_datadir}/JUCE61/doc/
+cp -ra docs/doxygen/doc/* %{buildroot}/%{_datadir}/JUCE61/doc/
 
 %files
 %doc README.md
@@ -95,9 +95,6 @@ cp -ra docs/doxygen/doc/* %{buildroot}/%{_datadir}/JUCE/doc/
 %{_usrsrc}/*
 
 %changelog
-* Thu Jun 23 2022 Yann Collette <ycollette.nospam@free.fr> - 7.0.0-6
-- update to 7.0.0-6
-
 * Tue Apr 05 2022 Yann Collette <ycollette.nospam@free.fr> - 6.1.6-6
 - update to 6.1.6-6 - fix for Fedora 36
 
