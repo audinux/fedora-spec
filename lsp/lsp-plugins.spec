@@ -25,10 +25,10 @@ BuildRequires: ladspa-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsndfile-devel
 BuildRequires: cairo-devel
-BuildRequires: ladspa-devel
 BuildRequires: expat-devel
 BuildRequires: mesa-libGLU-devel
 BuildRequires: mesa-libGL-devel
+BuildRequires: libXrandr-devel
 BuildRequires: php-cli
 BuildRequires: chrpath
 
