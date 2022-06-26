@@ -157,20 +157,20 @@ $ dnf install qemu-ui-sdl qemu-audio-sdl
 
 Without audio:
 ```
-$ qemu-kvm -m 2048 -vga qxl -sdl -cdrom fedora-34-Audinux.iso
+$ qemu-kvm -m 2048 -vga qxl -display sdl -cdrom fedora-34-Audinux.iso
 ```
 With audio and usb:
 ```
-$ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -sdl -cdrom fedora-34-Audinux.iso
+$ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -display sdl -cdrom fedora-34-Audinux.iso
 ```
 With audio, usb and with 2 cpus:
 ```
-$ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -smp cpus=2 -sdl -cdrom fedora-34-Audinux.iso
+$ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -smp cpus=2 -display sdl -cdrom fedora-34-Audinux.iso
 ```
 
 To test the USB bootable file:
 ```
-$ qemu-kvm -m 2048 -vga qxl -sdl -smp cpus=2 -usb -device intel-hda -device hda-duplex -drive file=fedora-34-Audinux.iso -boot menu=on
+$ qemu-kvm -m 2048 -vga qxl -display sdl -smp cpus=2 -usb -device intel-hda -device hda-duplex -drive file=fedora-34-Audinux.iso -boot menu=on
 ```
 
 To mount a usb device:
@@ -184,7 +184,7 @@ Bus 002 Device 003: ID 18d1:4e11 Google Inc. Nexus One
 Manually, using qemu-kvm command line
 
 ```
-$ qemu-kvm -m 2048 -name Audinux -sdl -cdrom fedora-34-Audinux.iso -usb -device usb-host,hostbus=2,hostaddr=3
+$ qemu-kvm -m 2048 -name Audinux -display sdl -cdrom fedora-34-Audinux.iso -usb -device usb-host,hostbus=2,hostaddr=3
 ```
 
 Write ISO to USB:
