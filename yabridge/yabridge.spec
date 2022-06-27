@@ -5,7 +5,7 @@
 %global debug_package %{nil}
 
 Name:    yabridge
-Version: 4.0.1
+Version: 4.0.2
 Release: 2%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPLv2+
@@ -24,6 +24,7 @@ BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: wine-devel
 BuildRequires: boost-devel
 BuildRequires: libxcb-devel
+BuildRequires: asio-devel
 BuildRequires: meson
 BuildRequires: git
 BuildRequires: rust
@@ -50,16 +51,11 @@ also staying easy to debug and maintain.
 # -Dwith-bitbridge=true
 #    --unity=on --unity-size=1000
 
-meson setup build \
-    --cross-file=cross-wine.conf \
+%meson --cross-file=cross-wine.conf \
     --buildtype=release \
-    --libdir=%{_libdir} \
-    --bindir=%{_bindir} \
-    --datadir=%{_datadir} \
-    --mandir=%{_mandir} \
-    --prefix=%{_prefix}
+    --wrap-mode=default
 
-ninja -C build
+%meson_build
 
 pushd tools/yabridgectl
 cargo build --release
@@ -85,6 +81,9 @@ install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}
 %{_libdir}/vst/*
 
 %changelog
+* Mon Jun 27 2022 Yann Collette <ycollette.nospam@free.fr> - 4.0.2-2
+- update to 4.0.2-2
+
 * Sun Jun 12 2022 Yann Collette <ycollette.nospam@free.fr> - 4.0.1-2
 - update to 4.0.1-2
 
