@@ -1,12 +1,15 @@
 Name:    plugdata
-Version: 0.5
+Version: 0.5.3
 Release: 1%{?dist}
-Summary:  Pure Data as a plugin, with a new GUI
+Summary: Pure Data as a plugin, with a new GUI
 URL:     https://github.com/timothyschoen/PlugData
 License: GPLv2+
 
 Vendor:       Audinux
 Distribution: Audinux
+
+# ./plugdata-source.sh <TAG>
+# ./plugdata-source.sh v0.5.3
 
 Source0: PlugData.tar.gz
 Source1: plugdata-source.sh
@@ -66,21 +69,23 @@ mkdir -p .local/share/PlugData
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/PlugData.vst3/
-install -m 755 -d %{buildroot}%{_libdir}/vst3/PlugDataFX.vst3/
+install -m 755 -d %{buildroot}%{_libdir}/vst3/PlugDataFx.vst3/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/PlugData.lv2/
+install -m 755 -d %{buildroot}%{_libdir}/lv2/PlugDataFx.lv2/
 install -m 755 -d %{buildroot}%{_bindir}/
+install -m 755 -d %{buildroot}%{_fontbasedir}/PlugData/
 
-./Plugins/LV2/lv2_file_generator ./Plugins/LV2/PlugData_LV2.so ./Plugins/LV2/PlugData
-cp -ra Plugins/LV2/PlugData_LV2.so %{buildroot}%{_libdir}/lv2/PlugData.lv2/
-cp -ra Plugins/LV2/*.ttl %{buildroot}%{_libdir}/lv2/PlugData.lv2/
+cp -ra Plugins/LV2/PlugData.lv2/* %{buildroot}%{_libdir}/lv2/PlugData.lv2/
+cp -ra Plugins/LV2/PlugDataFx.lv2/* %{buildroot}%{_libdir}/lv2/PlugDataFx.lv2/
 
-cp -ra Plugins/VST3/PlugDataFx.vst3/* %{buildroot}%{_libdir}/vst3/PlugData.vst3/
-cp -ra Plugins/VST3/PlugData.vst3/* %{buildroot}%{_libdir}/vst3/PlugDataFX.vst3/
+cp -ra Plugins/VST3/PlugData.vst3/* %{buildroot}%{_libdir}/vst3/PlugData.vst3/
+cp -ra Plugins/VST3/PlugDataFx.vst3/* %{buildroot}%{_libdir}/vst3/PlugDataFx.vst3/
 
 cp Plugins/Standalone/* %{buildroot}%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/%{name}/
 install -m 644 -p Resources/plugd_logo.png %{buildroot}/%{_datadir}/icons/%{name}/%{name}.png
+install -m 644 -p Resources/PlugDataFont.ttf %{buildroot}/%{_fontbasedir}/PlugData/
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
 cat > %{buildroot}/%{_datadir}/applications/PlugData.desktop <<EOF
@@ -108,6 +113,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/PlugData.desktop
 %{_bindir}/*
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/*
+%{_fontbasedir}/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
@@ -116,5 +122,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/PlugData.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Jun 29 2022 Yann Collette <ycollette.nospam@free.fr> - 0.5.3-1
+- update to 0.5.3-1
+
 * Sun Apr 24 2022 Yann Collette <ycollette.nospam@free.fr> - 0.5-1
 - Initial spec file
