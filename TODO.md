@@ -97,6 +97,8 @@
 | powertabeditor      | https://github.com/powertab/powertabeditor |
 | rtcqs               | https://codeberg.org/rtcqs/rtcqs |
 | soundgrain          | https://github.com/belangeo/soundgrain |
+| Fire                | https://github.com/jerryuhoo/Fire |
+| organ               | https://github.com/figbug/organ |
 
 ## WIP
 
