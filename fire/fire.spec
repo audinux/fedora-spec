@@ -39,6 +39,8 @@ BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
+BuildRequires: gtk3-devel
+BuildRequires: webkit2gtk3-devel
 
 %description
 This is a multi-band distortion plugin 『Fire』.
@@ -66,7 +68,7 @@ tar xvfz %{SOURCE2}
 # VST3 part
 
 CWD=`pwd`
-export CPPFLAGS="-I$CWD/JUCE/modules -I$CWD/vst3sdk -include utility $CPPFLAGS"
+export CPPFLAGS="-I$CWD/JUCE/modules -I$CWD/vst3sdk `pkg-config --cflags gtk+-3.0` -include utility $CPPFLAGS"
 
 cd Builds/LinuxMakefile
 %make_build CONFIG=Release STRIP=true
@@ -83,5 +85,5 @@ cp -ra Builds/LinuxMakefile/build/Fire.vst3/* %{buildroot}/%{_libdir}/vst3/Fire.
 %{_libdir}/vst3/*
 
 %changelog
-* Mon Jul 04 Jul 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9.8-1
+* Mon Jul 04 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9.8-1
 - Initial spec file
