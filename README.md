@@ -53,18 +53,18 @@ $ mock -r /etc/mock/fedora-35-x86_64.cfg --rebuild polyphone-2.0.1-1.fc34.src.rp
 
 To enable a thirdparty repository, you must add it to /etc/mock/templates/fedora-35.tpl for example and then, enable it via the command line. For example:
 ```
-$ mock -r /etc/mock/fedora-35-x86_64.cfg --enablerepo=ycollet-linuxmao --rebuild dgedit-0.1-2.fc34.src.rpm
+$ mock -r /etc/mock/fedora-35-x86_64.cfg --enablerepo=ycollet-audinux --rebuild dgedit-0.1-2.fc34.src.rpm
 ```
 
 The portion added to /etc/mock/templates/fedora-{34,35}.tpl is:
 
 ```
-[ycollet-linuxmao]
-name=Copr repo for linuxmao owned by ycollet
-baseurl=https://copr-be.cloud.fedoraproject.org/results/ycollet/linuxmao/fedora-$releasever-$basearch/
+[ycollet-audinux]
+name=Copr repo for audinux owned by ycollet
+baseurl=https://copr-be.cloud.fedoraproject.org/results/ycollet/audinux/fedora-$releasever-$basearch/
 skip_if_unavailable=True
 gpgcheck=1
-gpgkey=https://copr-be.cloud.fedoraproject.org/results/ycollet/linuxmao/pubkey.gpg
+gpgkey=https://copr-be.cloud.fedoraproject.org/results/ycollet/audinux/pubkey.gpg
 enabled=1
 enabled_metadata=1
 
