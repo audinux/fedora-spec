@@ -6,7 +6,7 @@
 %define use_static_rtaudio 1
 
 Name:    Rack-v2
-Version: 2.1.1
+Version: 2.1.2
 Release: 2%{?dist}
 Summary: A modular Synthesizer
 License: GPLv2+
@@ -16,7 +16,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./rack-source-v2.sh <tag>
-# ./rack-source-v2.sh v2.1.1
+# ./rack-source-v2.sh v2.1.2
 
 Source0: Rack.tar.gz
 Source1: Rack-manual.tar.gz
@@ -204,6 +204,9 @@ EOF
 %{_datadir}/*
 
 %changelog
+* Tue Jum 05 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-2
+- update to v2.1.2-2
+
 * Sun May 22 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-2
 - update to v2.1.1-2
 
