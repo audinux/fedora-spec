@@ -44,7 +44,6 @@
 | Amati               | https://github.com/glocq/Amati |
 | Pure language       | https://agraef.github.io/pure-lang |
 | Freeze              | https://github.com/taylordotfish/freeze |
-| HISE                | https://github.com/christophhart/HISE |
 | ORCHESTOOLS-PIANO-S | https://github.com/ilirbajri/ORCHESTOOLS-PIANO-S |
 | CollisionDrive      | https://github.com/brummer10/CollisionDrive |
 | QuatumVerb          | https://github.com/QVbDev/quantumVerb |
@@ -97,7 +96,6 @@
 | powertabeditor      | https://github.com/powertab/powertabeditor |
 | rtcqs               | https://codeberg.org/rtcqs/rtcqs |
 | soundgrain          | https://github.com/belangeo/soundgrain |
-| Fire                | https://github.com/jerryuhoo/Fire |
 | organ               | https://github.com/figbug/organ |
 
 ## WIP
