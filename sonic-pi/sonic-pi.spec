@@ -10,13 +10,23 @@
 %global _smp_build_ncpus 1
 %global debug_package %{nil}
 
+# vcpkg is installing
+#    gl3w[core]:x64-linux -> 2018-05-31#4
+#    catch2[core]:x64-linux -> 2.13.9
+#    concurrentqueue[core]:x64-linux -> 1.0.3
+#  * egl-registry[core]:x64-linux -> 2021-11-23
+#    kissfft[core]:x64-linux -> 2021-11-14
+#  * opengl-registry[core]:x64-linux -> 2021-11-17
+#    platform-folders[core]:x64-linux -> 4.1.0
+# Required: libx11-dev libxft-dev libxext-dev
+
 # Tag: Editor, Live
 # Type: Standalone, Language
 # Category: Audio, Programming
 # GUIToolkit: Qt5
 
 Name:    sonic-pi
-Version: 3.3.1
+Version: 4.0.0
 Release: 11%{?dist}
 Summary: A musical programming environment 
 License: MIT
@@ -29,9 +39,10 @@ Source0: https://github.com/samaaron/%{name}/archive/v%{version}/%{name}-%{versi
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
-BuildRequires: qt5-linguist
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qwt-qt5-devel
+BuildRequires: qt6-linguist
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qttools-devel
+BuildRequires: qt6-qtsvg-devel
 BuildRequires: supercollider-devel
 BuildRequires: libffi-devel
 BuildRequires: ruby-devel
@@ -40,6 +51,9 @@ BuildRequires: boost-devel
 BuildRequires: libcurl-devel
 BuildRequires: openssl-devel
 BuildRequires: rtmidi-devel
+BuildRequires: fmt-devel
+BuildRequires: aubio-devel
+BuildRequires: glew-devel
 BuildRequires: erlang-erts
 BuildRequires: ruby
 BuildRequires: rubygem-rake
@@ -49,6 +63,16 @@ BuildRequires: rubygem-racc
 BuildRequires: rubygem-rexml
 %endif
 BuildRequires: zlib-devel
+BuildRequires: crossguid2-devel
+BuildRequires: gsl-lite-devel
+BuildRequires: libuuid-devel
+BuildRequires: reproc-devel
+BuildRequires: SDL2-devel
+BuildRequires: libsndfile-devel
+BuildRequires: libogg-devel
+BuildRequires: libvorbis-devel
+BuildRequires: vcpkg
+BuildRequires: elixir
 
 Requires(pre): pulseaudio-module-jack 
 Requires(pre): jack-audio-connection-kit-example-clients
@@ -227,6 +251,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}
 
 %changelog
+* Thu Jul 07 2022 Yann Collette <ycollette.nospam@free.fr> 4.0.0-11
+- update to 4.0.0-11
+
 * Thu Apr 14 2022 Yann Collette <ycollette.nospam@free.fr> 3.3.1-11
 - update to 3.3.1-11 - fixed for Fedora 36
 
