@@ -22,6 +22,7 @@ BuildRequires: json-devel
 BuildRequires: pugixml-devel
 BuildRequires: rtmidi-devel
 BuildRequires: desktop-file-utils
+BuildRequires: libappstream-glib
 
 %description
 Power Tab Editor is an easy to use cross-platform guitar tablature editor and viewer.
