@@ -93,7 +93,6 @@
 | seq66               | https://github.com/ahlstromcj/seq66 |
 | DawDreamer          | https://github.com/DBraun/DawDreamer |
 | vmpc-juce           | https://github.com/izzyreal/vmpc-juce |
-| powertabeditor      | https://github.com/powertab/powertabeditor |
 | rtcqs               | https://codeberg.org/rtcqs/rtcqs |
 | soundgrain          | https://github.com/belangeo/soundgrain |
 | organ               | https://github.com/figbug/organ |
