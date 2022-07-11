@@ -85,8 +85,6 @@
 | BYOD                | https://github.com/Chowdhury-DSP/BYOD |
 | juced               | https://github.com/kunitoki/juced |
 | solfege             | https://src.fedoraproject.org/rpms/solfege |
-| wineasio            | https://github.com/wineasio/wineasio |
-| GuitarMidi-LV2      | https://github.com/geraldmwangi/GuitarMidi-LV2 |
 | hpsjam              | https://github.com/hselasky/hpsjam |
 | gyroflow            | https://github.com/gyroflow/gyroflow |
 | studio-controls     | https://github.com/ovenwerks/studio-controls |
