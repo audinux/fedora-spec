@@ -26,7 +26,7 @@
 # GUIToolkit: Qt5
 
 Name:    sonic-pi
-Version: 4.0.0
+Version: 4.0.1
 Release: 11%{?dist}
 Summary: A musical programming environment 
 License: MIT
@@ -92,11 +92,12 @@ sonic ideas into reality.
 %prep
 %autosetup -n %{name}-%{version} 
 
-cd app/gui/qt
+echo "target_link_libraries(\${APP_NAME} PRIVATE GLEW)" >> app/gui/imgui/CMakeLists.txt
 
-sed -i -e "s/return QCoreApplication::applicationDirPath() + \"\/..\/..\/..\/..\";/return QString(\"\/usr\/share\/sonic-pi\");/g" mainwindow.cpp
+sed -i -e "s|#!/usr/bin/env python|#!/usr/bin/env python3|g" app/server/ruby/vendor/rugged-1.3.0/vendor/libgit2/script/release.py
+sed -i -e "s|#!/usr/bin/env python|#!/usr/bin/env python3|g" app/server/ruby/vendor/rugged-1.3.0/vendor/libgit2/tests/generate.py
 
-cd ../../..
+sed -i -e "s/return QCoreApplication::applicationDirPath() + \"\/..\/..\/..\/..\";/return QString(\"\/usr\/share\/sonic-pi\");/g" app/gui/qt/mainwindow.cpp
 
 sed -i -e "s/env python/env python3/g" app/server/ruby/vendor/ffi-1.11.3/ext/ffi_c/libffi/generate-darwin-source-and-headers.py
 
@@ -124,6 +125,9 @@ rm -rf app/server/ruby/vendor/metaclass-0.0.4
 rm -rf app/server/ruby/vendor/mocha-1.1.0
 rm -rf app/server/ruby/vendor/rake-compiler-1.1.0
 rm -rf app/server/ruby/vendor/rouge
+
+# remove object files
+find . -name "*.o" -exec rm {} \;
 
 %build
 
@@ -245,12 +249,15 @@ desktop-file-install --vendor '' \
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%doc CHANGELOG.md  COMMUNITY.md FAQ.md CONTRIBUTORS.md HOW-TO-CONTRIBUTE.md README.md SYNTH_DESIGN.md TESTING.md TRANSLATION.md TRANSLATION-WORKFLOW.md
+%doc CHANGELOG.md COMMUNITY.md CONTRIBUTING.md CONTRIBUTORS.md FAQ.md README.md SYNTH_DESIGN.md TYPES-OF-CONTRIBUTIONS.md
 %license LICENSE.md
 %{_bindir}/sonic-pi
 %{_datadir}
 
 %changelog
+* Wed Jul 13 2022 Yann Collette <ycollette.nospam@free.fr> 4.0.1-11
+- update to 4.0.1-11
+
 * Thu Jul 07 2022 Yann Collette <ycollette.nospam@free.fr> 4.0.0-11
 - update to 4.0.0-11
 
