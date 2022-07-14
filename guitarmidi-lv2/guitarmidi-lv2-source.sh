@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Usage: ./guitarmidi-lv2-sources.sh <TAG>
-# ./guitarmidi-lv2-sources.sh 1.1
+# Usage: ./guitarmidi-lv2-source.sh <TAG>
+# ./guitarmidi-lv2-source.sh 1.1
 
 git clone https://github.com/geraldmwangi/GuitarMidi-LV2
 cd GuitarMidi-LV2
