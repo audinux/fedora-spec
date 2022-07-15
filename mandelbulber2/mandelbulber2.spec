@@ -3,7 +3,7 @@
 # Category: Graphic, Tool
 
 Name:    mandelbulber2
-Version: 2.27
+Version: 2.28
 Release: 1%{?dist}
 License: GPL-3.0
 Summary: 3D Mandelbrot renderer
@@ -20,8 +20,8 @@ BuildRequires: pkgconfig(Qt5Network)
 BuildRequires: pkgconfig(Qt5UiTools)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5Multimedia)
-BuildRequires: pkgconfig(gsl)
-BuildRequires: pkgconfig(libpng)
+BuildRequires: gsl-devel
+BuildRequires: libpng-devel
 BuildRequires: lzo-devel
 BuildRequires: libsndfile-devel
 BuildRequires: desktop-file-utils
@@ -74,6 +74,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/mandelbulber.png
 
 %changelog
+* Fri Jul 15 2022 Yann Collette <ycollette.nospam@free.fr> - 2.28-1
+- update to 2.28-1
+
 * Fri Feb 18 2022 Yann Collette <ycollette.nospam@free.fr> - 2.27-1
 - update to 2.27-1
 
