@@ -3,7 +3,7 @@
 %global pname carla
 
 Name: Carla-mao
-Version: 2.4.3
+Version: 2.4.4
 Release: 1%{?dist}
 Summary: Audio plugin host
 
@@ -199,6 +199,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 %{_libdir}/pkgconfig/%{pname}-host-plugin.pc
 
 %changelog
+* Sun Jul 17 2022 Yann Collette <ycollette.nospam@free.fr> - 1:2.4.4-1
+- Update to 2.4.4-1
+
 * Sat Apr 16 2022 Martin Gansser <martinkg@fedoraproject.org> - 1:2.4.3-1
 - Update to 2.4.3 + add wine bridge
 
