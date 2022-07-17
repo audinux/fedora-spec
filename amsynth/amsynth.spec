@@ -4,7 +4,7 @@
 
 Summary: Software Synthesizer
 Name:    amsynth
-Version: 1.12.4
+Version: 1.13.0
 Release: 3%{?dist}
 License: GPL
 URL:     https://github.com/amsynth/amsynth
@@ -15,21 +15,22 @@ Distribution: Audinux
 Source0: https://github.com/amsynth/amsynth/archive/release-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: autoconf-archive
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: libtool
+BuildRequires: pandoc
+BuildRequires: intltool
 BuildRequires: alsa-lib-devel
 BuildRequires: gtkmm24-devel
-BuildRequires: desktop-file-utils
-BuildRequires: libappstream-glib
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsndfile-devel
 BuildRequires: dssi-devel
 BuildRequires: liblo-devel
 BuildRequires: lv2-devel
-BuildRequires: pandoc
-BuildRequires: autoconf
-BuildRequires: automake
-BuildRequires: libtool
 BuildRequires: gettext-devel
-BuildRequires: intltool
+BuildRequires: desktop-file-utils
+BuildRequires: libappstream-glib
 
 %description
 amSynth is a software synthesizer, taking inspiration from the
@@ -57,12 +58,11 @@ Amsynth DSSI plugin
 %prep
 %autosetup -n %{name}-release-%{version}
 
-sed -i -e "s/AX_CXX_COMPILE_STDCXX_11/#AX_CXX_COMPILE_STDCXX_11/g" configure.ac
-
 %build
 
-./autogen.sh
-export CXXFLAGS="-fPIC -std=c++11"
+autoreconf --install --force
+intltoolize
+
 %configure
 %make_build
 
@@ -81,7 +81,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/%{name}.appdata.xml
 
 %files
-%doc AUTHORS ChangeLog INSTALL NEWS README
+%doc AUTHORS ChangeLog NEWS README
 %license COPYING
 %{_bindir}/amsynth
 %{_datadir}/amsynth/*
@@ -103,6 +103,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/%{name}.ap
 %{_libdir}/vst/*
 
 %changelog
+* Sun Jul 17 2022 Yann Collette <ycollette dot nospam at free.fr> 1.13.0-3
+- update to 1.13.0-3
+
 * Sat Jan 08 2022 Yann Collette <ycollette dot nospam at free.fr> 1.12.4-3
 - update to 1.12.4-3
 
