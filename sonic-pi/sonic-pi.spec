@@ -26,7 +26,7 @@
 # GUIToolkit: Qt5
 
 Name:    sonic-pi
-Version: 4.0.1
+Version: 4.0.2
 Release: 11%{?dist}
 Summary: A musical programming environment 
 License: MIT
@@ -126,16 +126,13 @@ rm -rf app/server/ruby/vendor/mocha-1.1.0
 rm -rf app/server/ruby/vendor/rake-compiler-1.1.0
 rm -rf app/server/ruby/vendor/rouge
 
-# remove object files
-find . -name "*.o" -exec rm {} \;
-
 %build
 
 cd app
 
 %set_build_flags
 
-./linux-prebuild.sh
+./linux-pre-vcpkg.sh
 ./linux-config.sh
 
 cd build
@@ -230,11 +227,11 @@ find %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor -name "*.o" \
 							     -o -name "\.?*" -o -name "*.md" -exec rm -rf {} \;
 
 # Remove source for compiled rubygem
-rm -rf app/server/ruby/vendor/rugged-0.28.4.1/
-rm -rf app/server/ruby/vendor/ffi-1.11.3/
-rm -rf app/server/ruby/vendor/atomic/
-rm -rf app/server/ruby/vendor/ruby-prof-0.15.8
-rm -rf app/server/ruby/vendor/interception
+rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/rugged-0.28.4.1/
+rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/ffi-1.11.3/
+rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/atomic/
+rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/ruby-prof-0.15.8/
+rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/interception/
 
 # Install desktop file
 desktop-file-install --vendor '' \
@@ -255,6 +252,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}
 
 %changelog
+* Sun Jul 17 2022 Yann Collette <ycollette.nospam@free.fr> 4.0.2-11
+- update to 4.0.2-11
+
 * Wed Jul 13 2022 Yann Collette <ycollette.nospam@free.fr> 4.0.1-11
 - update to 4.0.1-11
 
