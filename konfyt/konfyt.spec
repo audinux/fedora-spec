@@ -3,7 +3,7 @@
 # Category: Audio
 
 Name:    konfyt
-Version: 1.1.7
+Version: 1.2.0
 Release: 3%{?dist}
 Summary: A patch manager
 URL:     https://github.com/noedigcode/konfyt
@@ -85,6 +85,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Sun Jul 17 2022 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-3
+- update to 1.2.0-3 
+
 * Tue Jan 18 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1.7-3
 - update to 1.1.7-3 
 
