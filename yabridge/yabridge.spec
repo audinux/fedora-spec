@@ -3,6 +3,7 @@
 # Category: Audio, DAW
 
 %global debug_package %{nil}
+%define _lto_cflags %{nil}
 
 Name:    yabridge
 Version: 4.0.2
@@ -64,12 +65,12 @@ popd
 %install
 
 install -dm755 %{buildroot}%{_bindir}
-install build/yabridge-host.exe %{buildroot}%{_bindir}
-install build/yabridge-host.exe.so %{buildroot}%{_bindir}
+install %{__cmake_builddir}/yabridge-host.exe %{buildroot}%{_bindir}
+install %{__cmake_builddir}/yabridge-host.exe.so %{buildroot}%{_bindir}
 
 install -dm755 %{buildroot}%{_libdir}/vst
-install build/libyabridge-vst2.so %{buildroot}%{_libdir}/vst
-install build/libyabridge-vst3.so %{buildroot}%{_libdir}/vst
+install %{__cmake_builddir}/libyabridge-vst2.so %{buildroot}%{_libdir}/vst
+install %{__cmake_builddir}/libyabridge-vst3.so %{buildroot}%{_libdir}/vst
 
 # install tool
 install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}
