@@ -47,11 +47,6 @@ also staying easy to debug and maintain.
 
 %build
 
-# set_build_flags
-
-# -Dwith-bitbridge=true
-#    --unity=on --unity-size=1000
-
 %meson --cross-file=cross-wine.conf \
     --buildtype=release \
     --wrap-mode=default
@@ -65,12 +60,12 @@ popd
 %install
 
 install -dm755 %{buildroot}%{_bindir}
-install %{__cmake_builddir}/yabridge-host.exe %{buildroot}%{_bindir}
-install %{__cmake_builddir}/yabridge-host.exe.so %{buildroot}%{_bindir}
+install %{_vpath_builddir}/yabridge-host.exe %{buildroot}%{_bindir}
+install %{_vpath_builddir}/yabridge-host.exe.so %{buildroot}%{_bindir}
 
 install -dm755 %{buildroot}%{_libdir}/vst
-install %{__cmake_builddir}/libyabridge-vst2.so %{buildroot}%{_libdir}/vst
-install %{__cmake_builddir}/libyabridge-vst3.so %{buildroot}%{_libdir}/vst
+install %{_vpath_builddir}/libyabridge-vst2.so %{buildroot}%{_libdir}/vst
+install %{_vpath_builddir}/libyabridge-vst3.so %{buildroot}%{_libdir}/vst
 
 # install tool
 install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}
