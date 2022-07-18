@@ -1,4 +1,5 @@
 %global debug_package %{nil}
+%define _lto_cflags %{nil}
 
 %global with_32bit  1
 

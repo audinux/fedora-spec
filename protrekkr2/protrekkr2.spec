@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer, Sequencer
 
 Name:    protrekkr2
-Version: 2.6.2
+Version: 2.6.3
 Release: 1%{?dist}
 Summary: A jack tracker
 License: GPLv2+
@@ -66,7 +66,7 @@ install -m 755 release/distrib/ptk_linux %{buildroot}%{_bindir}/protrekkr2
 install -m 755 -d %{buildroot}/%{_datadir}/protrekkr2/instruments/
 install -m 644 release/distrib/instruments/* %{buildroot}%{_datadir}/protrekkr2/instruments/
 install -m 755 -d %{buildroot}/%{_datadir}/protrekkr2/modules/
-install -m 644 release/distrib/modules/* %{buildroot}%{_datadir}/protrekkr2/modules/
+cp -ra release/distrib/modules/* %{buildroot}%{_datadir}/protrekkr2/modules/
 install -m 755 -d %{buildroot}/%{_datadir}/protrekkr2/presets/
 install -m 644 release/distrib/presets/* %{buildroot}%{_datadir}/protrekkr2/presets/
 install -m 755 -d %{buildroot}/%{_datadir}/protrekkr2/reverbs/
@@ -93,5 +93,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/protrekkr2.desktop
 %{_datadir}/*
 
 %changelog
+* Mon Jan 27 2022 Yann Collette <ycollette.nospam@free.fr> - 2.6.3-1
+- Update to 2.6.3-1
+
 * Thu Dec 16 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.2-1
 - Initial build

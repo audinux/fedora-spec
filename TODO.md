@@ -44,7 +44,6 @@
 | Amati               | https://github.com/glocq/Amati |
 | Pure language       | https://agraef.github.io/pure-lang |
 | Freeze              | https://github.com/taylordotfish/freeze |
-| HISE                | https://github.com/christophhart/HISE |
 | ORCHESTOOLS-PIANO-S | https://github.com/ilirbajri/ORCHESTOOLS-PIANO-S |
 | CollisionDrive      | https://github.com/brummer10/CollisionDrive |
 | QuatumVerb          | https://github.com/QVbDev/quantumVerb |
@@ -86,24 +85,22 @@
 | BYOD                | https://github.com/Chowdhury-DSP/BYOD |
 | juced               | https://github.com/kunitoki/juced |
 | solfege             | https://src.fedoraproject.org/rpms/solfege |
-| wineasio            | https://github.com/wineasio/wineasio |
-| GuitarMidi-LV2      | https://github.com/geraldmwangi/GuitarMidi-LV2 |
 | hpsjam              | https://github.com/hselasky/hpsjam |
 | gyroflow            | https://github.com/gyroflow/gyroflow |
 | studio-controls     | https://github.com/ovenwerks/studio-controls |
 | seq66               | https://github.com/ahlstromcj/seq66 |
 | DawDreamer          | https://github.com/DBraun/DawDreamer |
 | vmpc-juce           | https://github.com/izzyreal/vmpc-juce |
-| powertabeditor      | https://github.com/powertab/powertabeditor |
 | rtcqs               | https://codeberg.org/rtcqs/rtcqs |
 | soundgrain          | https://github.com/belangeo/soundgrain |
+| organ               | https://github.com/figbug/organ |
 
 ## WIP
 
 drops
 chataigne
 tascar
-protrekkr2
+protrekkr2 (update to 2.6.3)
 mephito (needs faust library)
 
 ## Cleanup
@@ -348,27 +345,13 @@ carla
 
 ## To be fixed:
 
-obxd      -> missing array header
-
 Bambootracker         -> pulseaudio pb
 azr3                  -> gtkmm / glibmm detection
-yabridge              -> various link problems
 vsxu                  -> nullptr comparison
 rack-v1-VCV-Prototype -> vult file not available
 purr-data             -> a config.h is missing
 lives-mao             -> calloc problem -> check upstream
 
-- update on 01052022
-
-wineasio
-yabridge
-BambooTracker
-vsxu
-rack-v1-VCV-Prototype
-purr-data
-obxd
-lives-mao
-azr3-jack
 
 ## To be added back to repo
 
@@ -386,7 +369,6 @@ solfege
 
 ## regular update
 
-OB-Xd to update to 2.6
 mod-host
 mda-lv2
 ninjam -> there is a github repo now ...

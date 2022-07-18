@@ -3,7 +3,7 @@
 # Category: DAW, Audio
 
 Name:    stargate
-Version: 22.03.1
+Version: 22.07.1
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
 License: GPLv3
@@ -45,6 +45,7 @@ Requires: python3-wavefile
 Requires: (python3-qt6 or python3-qt5)
 Requires: rubberband
 Requires: vorbis-tools 
+
 Recommends: ffmpeg 
 
 %description
@@ -89,6 +90,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 %{_datadir}/stargate/*
 
 %changelog
+* Sun Jul 17 2022 Yann Collette <ycollette.nospam@free.fr> - 22.07.1-1
+- update to 22.07.1-1
+
 * Thu Mar 03 2022 Yann Collette <ycollette.nospam@free.fr> - 22.03.1-1
 - update to 22.03.1-1
 

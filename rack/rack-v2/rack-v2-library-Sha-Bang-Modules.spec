@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 a410298b5ebc856dd60e1acb6f6e3613233bf8d2
-%global gittag0 2.1.1
+%global commit0 f2cea419bb299fedc4683b7195027e5749006f6b
+%global gittag0 2.2.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Sha-Bang-Modules
-Version: 2.1.1
+Version: 2.2.1
 Release: 1%{?dist}
 Summary: Sha-Bang-Modules plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r Sha-Bang-Modules_plugin/dist/Sha-Bang-Modules/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.1-1
 - initial specfile

@@ -3,7 +3,7 @@
 # Category: Audio, Programming
 
 Name:	 faust
-Version: 2.37.3
+Version: 2.41.1
 Release: 23%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
@@ -219,6 +219,8 @@ rm %{buildroot}%{_datadir}/faust/webaudio/osc.wasm
 
 rm %{buildroot}/%{_libdir}/ios-libsndfile.a
 
+rm %{buildroot}%{_datadir}/faust/android/app/lib/libsndfile/lib/*/libsndfile.so
+
 mv %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
 
 %ldconfig_scriptlets osclib
@@ -251,6 +253,7 @@ mv %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
 %{_bindir}/sound2reader
 %{_bindir}/filename2ident
 %{_bindir}/faustremote
+%{_bindir}/faust-config
 
 %files kate
 %doc syntax-highlighting/README.md
@@ -262,6 +265,9 @@ mv %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
 %{_datadir}/faust/*.lib
 
 %changelog
+* Thu Jun 30 2022 Yann Collette <ycollette.nospam@free.fr> - 2.41.1-23
+- update to 2.41.1-23
+
 * Mon Nov 01 2021 Yann Collette <ycollette.nospam@free.fr> - 2.37.3-23
 - update to 2.37.3-23
 

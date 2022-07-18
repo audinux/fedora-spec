@@ -10,13 +10,23 @@
 %global _smp_build_ncpus 1
 %global debug_package %{nil}
 
+# vcpkg is installing
+#    gl3w[core]:x64-linux -> 2018-05-31#4
+#    catch2[core]:x64-linux -> 2.13.9
+#    concurrentqueue[core]:x64-linux -> 1.0.3
+#  * egl-registry[core]:x64-linux -> 2021-11-23
+#    kissfft[core]:x64-linux -> 2021-11-14
+#  * opengl-registry[core]:x64-linux -> 2021-11-17
+#    platform-folders[core]:x64-linux -> 4.1.0
+# Required: libx11-dev libxft-dev libxext-dev
+
 # Tag: Editor, Live
 # Type: Standalone, Language
 # Category: Audio, Programming
 # GUIToolkit: Qt5
 
 Name:    sonic-pi
-Version: 3.3.1
+Version: 4.0.2
 Release: 11%{?dist}
 Summary: A musical programming environment 
 License: MIT
@@ -29,9 +39,10 @@ Source0: https://github.com/samaaron/%{name}/archive/v%{version}/%{name}-%{versi
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
-BuildRequires: qt5-linguist
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qwt-qt5-devel
+BuildRequires: qt6-linguist
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qttools-devel
+BuildRequires: qt6-qtsvg-devel
 BuildRequires: supercollider-devel
 BuildRequires: libffi-devel
 BuildRequires: ruby-devel
@@ -40,6 +51,9 @@ BuildRequires: boost-devel
 BuildRequires: libcurl-devel
 BuildRequires: openssl-devel
 BuildRequires: rtmidi-devel
+BuildRequires: fmt-devel
+BuildRequires: aubio-devel
+BuildRequires: glew-devel
 BuildRequires: erlang-erts
 BuildRequires: ruby
 BuildRequires: rubygem-rake
@@ -49,6 +63,16 @@ BuildRequires: rubygem-racc
 BuildRequires: rubygem-rexml
 %endif
 BuildRequires: zlib-devel
+BuildRequires: crossguid2-devel
+BuildRequires: gsl-lite-devel
+BuildRequires: libuuid-devel
+BuildRequires: reproc-devel
+BuildRequires: SDL2-devel
+BuildRequires: libsndfile-devel
+BuildRequires: libogg-devel
+BuildRequires: libvorbis-devel
+BuildRequires: vcpkg
+BuildRequires: elixir
 
 Requires(pre): pulseaudio-module-jack 
 Requires(pre): jack-audio-connection-kit-example-clients
@@ -68,11 +92,12 @@ sonic ideas into reality.
 %prep
 %autosetup -n %{name}-%{version} 
 
-cd app/gui/qt
+echo "target_link_libraries(\${APP_NAME} PRIVATE GLEW)" >> app/gui/imgui/CMakeLists.txt
 
-sed -i -e "s/return QCoreApplication::applicationDirPath() + \"\/..\/..\/..\/..\";/return QString(\"\/usr\/share\/sonic-pi\");/g" mainwindow.cpp
+sed -i -e "s|#!/usr/bin/env python|#!/usr/bin/env python3|g" app/server/ruby/vendor/rugged-1.3.0/vendor/libgit2/script/release.py
+sed -i -e "s|#!/usr/bin/env python|#!/usr/bin/env python3|g" app/server/ruby/vendor/rugged-1.3.0/vendor/libgit2/tests/generate.py
 
-cd ../../..
+sed -i -e "s/return QCoreApplication::applicationDirPath() + \"\/..\/..\/..\/..\";/return QString(\"\/usr\/share\/sonic-pi\");/g" app/gui/qt/mainwindow.cpp
 
 sed -i -e "s/env python/env python3/g" app/server/ruby/vendor/ffi-1.11.3/ext/ffi_c/libffi/generate-darwin-source-and-headers.py
 
@@ -107,7 +132,7 @@ cd app
 
 %set_build_flags
 
-./linux-prebuild.sh
+./linux-pre-vcpkg.sh
 ./linux-config.sh
 
 cd build
@@ -202,11 +227,11 @@ find %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor -name "*.o" \
 							     -o -name "\.?*" -o -name "*.md" -exec rm -rf {} \;
 
 # Remove source for compiled rubygem
-rm -rf app/server/ruby/vendor/rugged-0.28.4.1/
-rm -rf app/server/ruby/vendor/ffi-1.11.3/
-rm -rf app/server/ruby/vendor/atomic/
-rm -rf app/server/ruby/vendor/ruby-prof-0.15.8
-rm -rf app/server/ruby/vendor/interception
+rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/rugged-0.28.4.1/
+rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/ffi-1.11.3/
+rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/atomic/
+rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/ruby-prof-0.15.8/
+rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/interception/
 
 # Install desktop file
 desktop-file-install --vendor '' \
@@ -221,12 +246,21 @@ desktop-file-install --vendor '' \
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%doc CHANGELOG.md  COMMUNITY.md FAQ.md CONTRIBUTORS.md HOW-TO-CONTRIBUTE.md README.md SYNTH_DESIGN.md TESTING.md TRANSLATION.md TRANSLATION-WORKFLOW.md
+%doc CHANGELOG.md COMMUNITY.md CONTRIBUTING.md CONTRIBUTORS.md FAQ.md README.md SYNTH_DESIGN.md TYPES-OF-CONTRIBUTIONS.md
 %license LICENSE.md
 %{_bindir}/sonic-pi
 %{_datadir}
 
 %changelog
+* Sun Jul 17 2022 Yann Collette <ycollette.nospam@free.fr> 4.0.2-11
+- update to 4.0.2-11
+
+* Wed Jul 13 2022 Yann Collette <ycollette.nospam@free.fr> 4.0.1-11
+- update to 4.0.1-11
+
+* Thu Jul 07 2022 Yann Collette <ycollette.nospam@free.fr> 4.0.0-11
+- update to 4.0.0-11
+
 * Thu Apr 14 2022 Yann Collette <ycollette.nospam@free.fr> 3.3.1-11
 - update to 3.3.1-11 - fixed for Fedora 36
 

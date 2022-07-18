@@ -5,7 +5,7 @@
 %global debug_package %{nil}
 
 Name:    xuidesigner
-Version: 0.3
+Version: 0.4
 Release: 1%{?dist}
 Summary: X11 LV2 GUI design tool for libxputty
 License: GPLv2+
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the source archive: ./xuidesigner-source.sh <tag>
-# ./xuidesigner-source.sh v0.3
+# ./xuidesigner-source.sh v0.4
 
 Source0: XUiDesigner.tar.gz
 Source1: xuidesigner-source.sh
@@ -34,12 +34,17 @@ X11 LV2 GUI design tool for libxputty
 %prep
 %autosetup -n XUiDesigner
 
+sed -i -e "s|#! /usr/bin/python|#! /usr/bin/python3|g" tools/dsp2cc
+
 %build
 
 %set_build_flags
 export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
 export LDFLAGS=`echo $LDFLAGS | sed -e "s/-Werror=format-security//g"`
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
+export CFLAGS="-fPIC $CFLAGS"
+export CXXFLAGS="-fPIC $CXXFLAGS"
+export LDFLAGS="-fPIC $LDFLAGS"
 
 %make_build STRIP=true
 
@@ -68,6 +73,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/XUiDesigner.desktop
 %{_libdir}/*
 
 %changelog
+* Thu Jul 97 2022 Yann Collette <ycollette.nospam@free.fr> - 0.4-1
+- update to 0.4-1
+
 * Sun Nov 14 2021 Yann Collette <ycollette.nospam@free.fr> - 0.3-1
 - update to 0.3-1
 

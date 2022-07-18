@@ -53,18 +53,18 @@ $ mock -r /etc/mock/fedora-35-x86_64.cfg --rebuild polyphone-2.0.1-1.fc34.src.rp
 
 To enable a thirdparty repository, you must add it to /etc/mock/templates/fedora-35.tpl for example and then, enable it via the command line. For example:
 ```
-$ mock -r /etc/mock/fedora-35-x86_64.cfg --enablerepo=ycollet-linuxmao --rebuild dgedit-0.1-2.fc34.src.rpm
+$ mock -r /etc/mock/fedora-35-x86_64.cfg --enablerepo=ycollet-audinux --rebuild dgedit-0.1-2.fc34.src.rpm
 ```
 
 The portion added to /etc/mock/templates/fedora-{34,35}.tpl is:
 
 ```
-[ycollet-linuxmao]
-name=Copr repo for linuxmao owned by ycollet
-baseurl=https://copr-be.cloud.fedoraproject.org/results/ycollet/linuxmao/fedora-$releasever-$basearch/
+[ycollet-audinux]
+name=Copr repo for audinux owned by ycollet
+baseurl=https://copr-be.cloud.fedoraproject.org/results/ycollet/audinux/fedora-$releasever-$basearch/
 skip_if_unavailable=True
 gpgcheck=1
-gpgkey=https://copr-be.cloud.fedoraproject.org/results/ycollet/linuxmao/pubkey.gpg
+gpgkey=https://copr-be.cloud.fedoraproject.org/results/ycollet/audinux/pubkey.gpg
 enabled=1
 enabled_metadata=1
 
@@ -157,20 +157,20 @@ $ dnf install qemu-ui-sdl qemu-audio-sdl
 
 Without audio:
 ```
-$ qemu-kvm -m 2048 -vga qxl -sdl -cdrom fedora-34-Audinux.iso
+$ qemu-kvm -m 2048 -vga qxl -display sdl -cdrom fedora-34-Audinux.iso
 ```
 With audio and usb:
 ```
-$ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -sdl -cdrom fedora-34-Audinux.iso
+$ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -display sdl -cdrom fedora-34-Audinux.iso
 ```
 With audio, usb and with 2 cpus:
 ```
-$ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -smp cpus=2 -sdl -cdrom fedora-34-Audinux.iso
+$ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -smp cpus=2 -display sdl -cdrom fedora-34-Audinux.iso
 ```
 
 To test the USB bootable file:
 ```
-$ qemu-kvm -m 2048 -vga qxl -sdl -smp cpus=2 -usb -device intel-hda -device hda-duplex -drive file=fedora-34-Audinux.iso -boot menu=on
+$ qemu-kvm -m 2048 -vga qxl -display sdl -smp cpus=2 -usb -device intel-hda -device hda-duplex -drive file=fedora-34-Audinux.iso -boot menu=on
 ```
 
 To mount a usb device:
@@ -184,7 +184,7 @@ Bus 002 Device 003: ID 18d1:4e11 Google Inc. Nexus One
 Manually, using qemu-kvm command line
 
 ```
-$ qemu-kvm -m 2048 -name Audinux -sdl -cdrom fedora-34-Audinux.iso -usb -device usb-host,hostbus=2,hostaddr=3
+$ qemu-kvm -m 2048 -name Audinux -display sdl -cdrom fedora-34-Audinux.iso -usb -device usb-host,hostbus=2,hostaddr=3
 ```
 
 Write ISO to USB:

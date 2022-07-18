@@ -3,18 +3,15 @@
 %global pname carla
 
 Name: Carla-mao
-Version: 2.4.3
+Version: 2.5.0
 Release: 1%{?dist}
 Summary: Audio plugin host
-
-Epoch: 1
 License: GPLv2+ and BSD and Boost and ISC and MIT and zlib
 URL: https://github.com/falkTX/Carla
 
 Source0: https://github.com/falkTX/Carla/archive/v%{version}.tar.gz#/Carla-%{version}.tar.gz
 Patch0: Carla-libdir.patch
-Patch1: Carla-expression-error.patch
-Patch2: Carla-single-libs-path.patch
+Patch1: Carla-single-libs-path.patch
 
 BuildRequires: gcc
 BuildRequires: gcc-c++
@@ -82,7 +79,7 @@ Linux.
 
 %package devel
 Summary: Header files to access Carla's API
-Requires: Carla%{?_isa} = %{epoch}:%{version}-%{release}
+Requires: Carla%{?_isa} = %{version}-%{release}
 
 %description devel
 This package contains header files needed when writing software using
@@ -90,7 +87,7 @@ Carla's several APIs.
 
 %package -n vst-%{name}
 Summary: CarlaRack and CarlaPatchbay VST plugins
-Requires: %{name}%{?_isa} = %{epoch}:%{version}-%{release}
+Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n vst-%{name}
 This package contains Carla VST plugins, including CarlaPatchbayFX,
@@ -98,7 +95,7 @@ CarlaPatchbay, CarlaRackFX, and CarlaRack.
 
 %package -n lv2-%{name}
 Summary: LV2 plugin
-Requires: %{name}%{?_isa} = %{epoch}:%{version}-%{release}
+Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n lv2-%{name}
 This package contains the Carla LV2 plugin.
@@ -199,6 +196,12 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 %{_libdir}/pkgconfig/%{pname}-host-plugin.pc
 
 %changelog
+* Sun Jul 17 2022 Yann Collette <ycollette.nospam@free.fr> - 1:2.5.0-1
+- Update to 2.5.0-1
+
+* Sun Jul 17 2022 Yann Collette <ycollette.nospam@free.fr> - 1:2.4.4-1
+- Update to 2.4.4-1
+
 * Sat Apr 16 2022 Martin Gansser <martinkg@fedoraproject.org> - 1:2.4.3-1
 - Update to 2.4.3 + add wine bridge
 
