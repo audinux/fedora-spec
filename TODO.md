@@ -345,27 +345,13 @@ carla
 
 ## To be fixed:
 
-obxd      -> missing array header
-
 Bambootracker         -> pulseaudio pb
 azr3                  -> gtkmm / glibmm detection
-yabridge              -> various link problems
 vsxu                  -> nullptr comparison
 rack-v1-VCV-Prototype -> vult file not available
 purr-data             -> a config.h is missing
 lives-mao             -> calloc problem -> check upstream
 
-- update on 01052022
-
-wineasio
-yabridge
-BambooTracker
-vsxu
-rack-v1-VCV-Prototype
-purr-data
-obxd
-lives-mao
-azr3-jack
 
 ## To be added back to repo
 
@@ -383,7 +369,6 @@ solfege
 
 ## regular update
 
-OB-Xd to update to 2.6
 mod-host
 mda-lv2
 ninjam -> there is a github repo now ...
