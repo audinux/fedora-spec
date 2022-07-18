@@ -66,6 +66,8 @@ install %{_vpath_builddir}/yabridge-host.exe.so %{buildroot}%{_bindir}
 install -dm755 %{buildroot}%{_libdir}/vst
 install %{_vpath_builddir}/libyabridge-vst2.so %{buildroot}%{_libdir}/vst
 install %{_vpath_builddir}/libyabridge-vst3.so %{buildroot}%{_libdir}/vst
+install %{_vpath_builddir}/libyabridge-chainloader-vst2.so %{buildroot}%{_libdir}/vst
+install %{_vpath_builddir}/libyabridge-chainloader-vst3.so %{buildroot}%{_libdir}/vst
 
 # install tool
 install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}
