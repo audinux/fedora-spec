@@ -219,6 +219,8 @@ rm %{buildroot}%{_datadir}/faust/webaudio/osc.wasm
 
 rm %{buildroot}/%{_libdir}/ios-libsndfile.a
 
+rm %{buildroot}%{_datadir}/faust/android/app/lib/libsndfile/lib/*/libsndfile.so
+
 mv %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
 
 %ldconfig_scriptlets osclib
