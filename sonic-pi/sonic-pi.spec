@@ -26,7 +26,7 @@
 # GUIToolkit: Qt5
 
 Name:    sonic-pi
-Version: 4.0.2
+Version: 4.0.3
 Release: 11%{?dist}
 Summary: A musical programming environment 
 License: MIT
@@ -110,7 +110,6 @@ sed -i -e "/interception/d" app/server/ruby/bin/compile-extensions.rb
 
 # remove aubio for prebuild
 sed -i -e "/aubio/d" app/linux-prebuild.sh
-sed -i -e "/aubio/d" app/external/linux_build_externals.sh
 
 # remove osx rubygem
 rm -rf app/server/ruby/vendor/narray-0.6.1.1/
@@ -132,11 +131,7 @@ cd app
 
 %set_build_flags
 
-./linux-pre-vcpkg.sh
-./linux-config.sh
-
-cd build
-cmake --build . --config Release
+./linux-build-all.sh
 
 %install
 mkdir -p %{buildroot}%{_bindir}/
@@ -252,8 +247,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}
 
 %changelog
-* Sun Jul 17 2022 Yann Collette <ycollette.nospam@free.fr> 4.0.2-11
-- update to 4.0.2-11
+* Sun Jul 17 2022 Yann Collette <ycollette.nospam@free.fr> 4.0.3-11
+- update to 4.0.3-11
 
 * Wed Jul 13 2022 Yann Collette <ycollette.nospam@free.fr> 4.0.1-11
 - update to 4.0.1-11
