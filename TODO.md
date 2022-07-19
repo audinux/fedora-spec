@@ -56,9 +56,7 @@
 | Mousai              | https://github.com/SeaDve/Mousai |
 | audioprism          | https://github.com/vsergeev/audioprism |
 | friture             | https://github.com/tlecomte/friture |
-| reMID.lv2           | https://github.com/ssj71/reMID.lv2 |
 | MiniGBS             | https://github.com/baines/MiniGBS |
-| protrekkr           | https://github.com/hitchhikr/protrekkr |
 | Schrammel_OJD       | https://github.com/JanosGit/Schrammel_OJD |
 | EasySSP             | https://github.com/automatl/audio-dsp-multi-visualize/ |
 | midi2voice          | https://github.com/mathigatti/midi2voice |
