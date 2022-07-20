@@ -47,7 +47,6 @@
 | ORCHESTOOLS-PIANO-S | https://github.com/ilirbajri/ORCHESTOOLS-PIANO-S |
 | CollisionDrive      | https://github.com/brummer10/CollisionDrive |
 | QuatumVerb          | https://github.com/QVbDev/quantumVerb |
-| Gammou              | https://github.com/aliefhooghe/Gammou |
 | Livecode-This       | https://github.com/gilfuser/livecode-this |
 | SpleeterRT          | https://github.com/james34602/SpleeterRT |
 | Spek                | https://github.com/alexkay/spek |
@@ -59,7 +58,6 @@
 | MiniGBS             | https://github.com/baines/MiniGBS |
 | Schrammel_OJD       | https://github.com/JanosGit/Schrammel_OJD |
 | EasySSP             | https://github.com/automatl/audio-dsp-multi-visualize/ |
-| midi2voice          | https://github.com/mathigatti/midi2voice |
 | demucs              | https://github.com/facebookresearch/demucs |
 | Audio-Effects       | https://github.com/juandagilc/Audio-Effects |
 | pedalevite          | https://github.com/EleonoreMizo/pedalevite -> code for vst2 ... |
@@ -100,6 +98,8 @@ chataigne
 tascar
 protrekkr2 (update to 2.6.3)
 mephito (needs faust library)
+midi2voice (code doesn't install correctly)
+gammou (a submodule doesn't clone)
 
 ## Cleanup
 
