@@ -4,7 +4,7 @@
 
 Name: segmentino
 Version: 1.1	
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Segmentino is a Vamp plugin for automatic music structural segmentation
 License: GLPv2	
 URL: https://code.soundsoftware.ac.uk/projects/segmenter-vamp-plugin	
@@ -12,7 +12,8 @@ URL: https://code.soundsoftware.ac.uk/projects/segmenter-vamp-plugin
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://code.soundsoftware.ac.uk/attachments/download/2458/segmentino-v%{version}.tar.gz
+Source0: segmentino-v1.1.tar.gz
+Source1: segmentino-source.sh
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: polyml
@@ -57,6 +58,9 @@ install -m 644 segmentino.n3  %{buildroot}/%{_libdir}/vamp/
 %{_libdir}/vamp/segmentino.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1-3
+- update to 1.1-3 - change sources
+
 * Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1-2
 - update to 1.1-2
 
