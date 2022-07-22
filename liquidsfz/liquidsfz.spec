@@ -36,6 +36,13 @@ Requires: %{name} = %{version}-%{release}
 %description devel
 Header files for the %{name} library.
 
+%package static
+Summary:  Static libraries for %{name}
+Requires: %{name} = %{version}-%{release}
+
+%description static
+Static version of the %{name} library.
+
 %prep
 %autosetup -n %{name}-%{version}
 
@@ -54,6 +61,7 @@ sh autogen.sh
 %make_install
 
 chrpath --delete %{buildroot}/%{_libdir}/lv2/liquidsfz.lv2/liquidsfz_lv2.so
+rm -f %{buildroot}/%{_libdir}/libliquidsfz.la
 
 %files
 %doc README.md NEWS OPCODES.md
@@ -61,8 +69,10 @@ chrpath --delete %{buildroot}/%{_libdir}/lv2/liquidsfz.lv2/liquidsfz_lv2.so
 %{_bindir}/*
 %{_libdir}/lv2/*
 
-%files devel
+%files static
 %{_libdir}/libliquidsfz.a
+
+%files devel
 %{_includedir}/liquidsfz.hh
 %dir %{_libdir}/pkgconfig
 %{_libdir}/pkgconfig/liquidsfz.pc
