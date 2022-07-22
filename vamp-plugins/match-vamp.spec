@@ -4,7 +4,7 @@
 
 Name: match-vamp
 Version: 1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A Vamp plugin implementation of the MATCH audio alignment algorithm
 License: GLPv2	
 URL: https://code.soundsoftware.ac.uk/projects/match-vamp	
@@ -24,7 +24,7 @@ A Vamp plugin implementation of the MATCH audio alignment algorithm.
 Summary: %{name} VAMP plugin
 
 %description -n vamp-%{name}
-%{description}
+A Vamp plugin implementation of the MATCH audio alignment algorithm.
 
 %prep
 %autosetup
@@ -50,6 +50,9 @@ install -m 644 match-vamp-plugin.n3  %{buildroot}/%{_libdir}/vamp/
 %{_libdir}/vamp/match-vamp-plugin.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-2
+- update to 1.0-2
+
 * Tue Jan 11 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
 - Initial spec file
 

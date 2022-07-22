@@ -4,7 +4,7 @@
 
 Name: tipic
 Version: 1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Tipic - Tibre-Invariant Pitch Chroma
 License: GLPv2	
 URL: https://code.soundsoftware.ac.uk/projects/tipic	
@@ -35,7 +35,17 @@ Provided under the GNU General Public License. Uses the QM DSP library.
 Summary: %{name} VAMP plugin
 
 %description -n vamp-%{name}
-%{description}
+A C++ Vamp plugin providing an efficient causal implementation of
+pitch-chroma audio features approaching timbre invariance, after
+the paper "Towards timbre-invariant audio features for harmony-based music"
+by Meinard Müller and Sebastian Ewert.
+
+This plugin is intended to provide features extracted from a music audio
+signal, containing a reduction of the pitch and harmonic content of the
+audio which is relatively stable in the presence of timbral differences
+and local variations such as vibrato.
+
+Provided under the GNU General Public License. Uses the QM DSP library.
 
 %prep
 %autosetup -n %{name}-src-v%{version}
@@ -66,6 +76,9 @@ install -m 644 tipic.n3  %{buildroot}/%{_libdir}/vamp/
 %{_libdir}/vamp/tipic.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-2
+- update to 1.0-2
+
 * Sat Jan 08 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
 - Initial spec file
 

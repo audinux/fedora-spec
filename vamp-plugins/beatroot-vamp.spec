@@ -4,7 +4,7 @@
 
 Name: beatroot-vamp
 Version: 1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A Vamp Plugin implementation of the BeatRoot beat tracking system
 License: GLPv2	
 URL: https://code.soundsoftware.ac.uk/projects/beatroot-vamp	
@@ -24,7 +24,7 @@ A Vamp Plugin implementation of the BeatRoot beat tracking system
 Summary: %{name} VAMP plugin
 
 %description -n vamp-%{name}
-%{description}
+A Vamp Plugin implementation of the BeatRoot beat tracking system
 
 %prep
 %autosetup -n %{name}-v%{version}
@@ -53,6 +53,9 @@ install -m 644 beatroot-vamp.n3  %{buildroot}/%{_libdir}/vamp/
 %{_libdir}/vamp/beatroot-vamp.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-2
+- update to 1.0-2
+
 * Sat Jan 08 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
 - Initial spec file
 

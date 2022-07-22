@@ -4,7 +4,7 @@
 
 Name: segmentino
 Version: 1.1	
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Segmentino is a Vamp plugin for automatic music structural segmentation
 License: GLPv2	
 URL: https://code.soundsoftware.ac.uk/projects/segmenter-vamp-plugin	
@@ -27,7 +27,7 @@ Segmentino is a Vamp plugin for automatic music structural segmentation.
 Summary: %{name} VAMP plugin
 
 %description -n vamp-%{name}
-%{description}
+Segmentino is a Vamp plugin for automatic music structural segmentation.
 
 %prep
 %autosetup -n %{name}-v%{version}
@@ -57,6 +57,9 @@ install -m 644 segmentino.n3  %{buildroot}/%{_libdir}/vamp/
 %{_libdir}/vamp/segmentino.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1-2
+- update to 1.1-2
+
 * Sat Jan 08 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1-1
 - Initial spec file
 

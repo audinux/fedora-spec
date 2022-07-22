@@ -4,7 +4,7 @@
 
 Name: pyin
 Version: 1.2	
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: pYIN (Probabilistic YIN) is a modification of the well-loved YIN algorithm for fundamental frequency (F0) estimation in monophonic audio
 License: GLPv2	
 URL: https://code.soundsoftware.ac.uk/projects/pyin	
@@ -26,7 +26,8 @@ algorithm for fundamental frequency (F0) estimation in monophonic audio
 Summary: %{name} VAMP plugin
 
 %description -n vamp-%{name}
-%{description}
+pYIN (Probabilistic YIN) is a modification of the well-loved YIN
+algorithm for fundamental frequency (F0) estimation in monophonic audio
 
 %prep
 %autosetup -n %{name}-v%{version}
@@ -52,6 +53,9 @@ install -m 644 pyin.n3  %{buildroot}/%{_libdir}/vamp/
 %{_libdir}/vamp/pyin.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.2-2
+- update to 1.2-2
+
 * Wed Jan 12 2022 Yann Collette <ycollette.nospam@free.fr> - 1.2-1
 - Initial spec file
 

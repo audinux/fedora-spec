@@ -4,7 +4,7 @@
 
 Name: vamp-tempogram
 Version: 1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A Vamp plugin implementation of the tempogram and cyclic tempogram features
 License: GLPv2	
 URL: https://code.soundsoftware.ac.uk/projects/vamp-tempogram	
@@ -21,12 +21,6 @@ BuildRequires: vamp-plugin-sdk-devel
 A Vamp plugin implementation of the tempogram and cyclic tempogram features
 described in Grosche, Müller, and Kurth 2010, providing a robust mid-level
 representation that encodes local tempo information.
-
-%package -n vamp-%{name}
-Summary: %{name} VAMP plugin
-
-%description -n vamp-%{name}
-%{description}
 
 %prep
 %autosetup -n %{name}-v%{version}
@@ -49,12 +43,15 @@ install -m 755 tempogram.so  %{buildroot}/%{_libdir}/vamp/
 install -m 644 tempogram.cat %{buildroot}/%{_libdir}/vamp/
 install -m 644 tempogram.n3  %{buildroot}/%{_libdir}/vamp/
 
-%files -n vamp-%{name}
+%files
 %license COPYING
 %doc README CITATION
 %{_libdir}/vamp/tempogram.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-2
+- update to 1.0-2
+
 * Sat Jan 08 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
 - Initial spec file
 

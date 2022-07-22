@@ -4,7 +4,7 @@
 
 Name: silvet
 Version: 1.1	
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Silvet, or Shift-Invariant Latent Variable Transcription, is a Vamp plugin for polyphonic music transcription
 License: GLPv2	
 URL: https://code.soundsoftware.ac.uk/projects/silvet	
@@ -27,7 +27,9 @@ audio to note times and pitches).
 Summary: %{name} VAMP plugin
 
 %description -n vamp-%{name}
-%{description}
+Silvet, or Shift-Invariant Latent Variable Transcription,
+is a Vamp plugin for polyphonic music transcription (from
+audio to note times and pitches).
 
 %prep
 %autosetup -n %{name}-v%{version}
@@ -57,6 +59,9 @@ install -m 644 silvet.n3  %{buildroot}/%{_libdir}/vamp/
 %{_libdir}/vamp/silvet.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1-2
+- update to 1.1-2
+
 * Sat Jan 08 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1-1
 - Initial spec file
 

@@ -4,7 +4,7 @@
 
 Name: cepstral-pitchtracker
 Version: 1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A straightforward cepstral pitch- and note-tracker Vamp plugin, probably most suited to tracking singing pitch
 License: GLPv2	
 URL: https://code.soundsoftware.ac.uk/projects/cepstral-pitchtracker	
@@ -26,7 +26,8 @@ probably most suited to tracking singing pitch
 Summary: %{name} VAMP plugin
 
 %description -n vamp-%{name}
-%{description}
+A straightforward cepstral pitch- and note-tracker Vamp plugin,
+probably most suited to tracking singing pitch
 
 %prep
 %autosetup -n %{name}-%{version}
@@ -56,6 +57,9 @@ install -m 644 cepstral-pitchtracker.n3  %{buildroot}/%{_libdir}/vamp/
 %{_libdir}/vamp/cepstral-pitchtracker.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-2
+- update to 1.0-2
+
 * Mon Jan 10 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
 - Initial spec file
 

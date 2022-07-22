@@ -4,7 +4,7 @@
 
 Name: azi
 Version: 1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Experimental azimuth-based stereo plan plugin
 License: GLPv2	
 URL: https://code.soundsoftware.ac.uk/projects/azi	
@@ -24,7 +24,7 @@ Experimental azimuth-based stereo plan plugin
 Summary: %{name} VAMP plugin
 
 %description -n vamp-%{name}
-%{description}
+Experimental azimuth-based stereo plan plugin
 
 %prep
 %autosetup -n %{name}-299df1b44eff
@@ -53,6 +53,9 @@ install -m 644 azi.n3  %{buildroot}/%{_libdir}/vamp/
 %{_libdir}/vamp/azi.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-2
+- update to 1.0-2
+
 * Sat Jan 08 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
 - Initial spec file
 

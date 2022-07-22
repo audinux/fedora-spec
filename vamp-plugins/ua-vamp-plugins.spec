@@ -4,7 +4,7 @@
 
 Name: ua-vamp-plugins
 Version: 2.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: UAPlugins are a set of VAMP plugins developed by the Computer Music Laboratory team
 License: GLPv2	
 URL: https://github.com/pertusa/UAVampPlugins	
@@ -33,7 +33,14 @@ of Excellence, IST-2007-216886.
 Summary: %{name} VAMP plugin
 
 %description -n vamp-%{name}
-%{description}
+UAPlugins are a set of VAMP plugins developed by the Computer Music
+Laboratory team from the GRFIA group at the University of Alicante.
+
+The methods used in this library were developed by Antonio Pertusa
+and José Manuel Iñesta, supported by the project DRIMS
+(code TIN2009-14247-C02), the Consolider Ingenio 2010 research
+program (project MIPRCV, CSD2007-00018), and the PASCAL2 Network
+of Excellence, IST-2007-216886.
 
 %prep
 %autosetup -n UAVampPlugins-master
@@ -61,6 +68,9 @@ install -m 644 ua-vamp-plugins.cat %{buildroot}/%{_libdir}/vamp/
 %{_libdir}/vamp/ua-vamp-plugins.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 2.0-2
+- update to 2.0-2
+
 * Sat Jan 08 2022 Yann Collette <ycollette.nospam@free.fr> - 2.0-1
 - Initial spec file
 

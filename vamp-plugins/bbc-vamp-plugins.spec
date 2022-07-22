@@ -4,7 +4,7 @@
 
 Name: bbc-vamp-plugins
 Version: 1.1	
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A BBC collection of audio feature extraction algorithms	
 License: Apache-2.0	
 URL: https://github.com/bbc/bbc-vamp-plugins	
@@ -25,7 +25,8 @@ in the Vamp plugin format by BBC Research and Development.
 Summary: %{name} VAMP plugin
 
 %description -n vamp-%{name}
-%{description}
+This is a collection of audio feature extraction algorithms written
+in the Vamp plugin format by BBC Research and Development.
 
 %prep
 %autosetup -n %{name}-%{version}
@@ -52,6 +53,9 @@ install -m 644 bbc-vamp-plugins.n3  %{buildroot}/%{_libdir}/vamp/
 %{_libdir}/vamp/bbc-vamp-plugins.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1-2
+- update to 1.1-2
+
 * Mon Jan 10 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1-1
 - Initial spec file
 

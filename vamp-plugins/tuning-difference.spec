@@ -4,7 +4,7 @@
 
 Name: tuning-difference
 Version: 1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Vamp plugin that estimates the tuning frequency of a recording
 License: GLPv2	
 URL: https://code.soundsoftware.ac.uk/projects/tuning-difference	
@@ -25,7 +25,8 @@ it to another recording of the same music whose tuning frequency is known.
 Summary: %{name} VAMP plugin
 
 %description -n vamp-%{name}
-%{description}
+Vamp plugin that estimates the tuning frequency of a recording, by comparing
+it to another recording of the same music whose tuning frequency is known.
 
 %prep
 %autosetup -n %{name}-c0b78dcc08e6
@@ -56,6 +57,9 @@ install -m 644 tuning-difference.n3  %{buildroot}/%{_libdir}/vamp/
 %{_libdir}/vamp/tuning-difference.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-2
+- update to 1.0-2
+
 * Sat Jan 08 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
 - Initial spec file
 

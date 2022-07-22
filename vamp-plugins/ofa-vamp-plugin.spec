@@ -4,7 +4,7 @@
 
 Name: ofa-vamp-plugin
 Version: 1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Plugin that performed audio fingerprinting and track identification using the MusicIP OFA library
 License: GLPv2	
 URL: http://code.soundsoftware.ac.uk/projects/ofa-vamp-plugin	
@@ -27,7 +27,7 @@ Plugin that performed audio fingerprinting and track identification using the Mu
 Summary: %{name} VAMP plugin
 
 %description -n vamp-%{name}
-%{description}
+Plugin that performed audio fingerprinting and track identification using the MusicIP OFA library
 
 %prep
 %autosetup -n ofa-vamp-plugin-1aa804db4773
@@ -53,6 +53,9 @@ install -m 644 ofa-vamp-plugin.n3  %{buildroot}/%{_libdir}/vamp/
 %{_libdir}/vamp/ofa-vamp-plugin.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-2
+- update to 1.0-2
+
 * Wed Jan 12 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
 - Initial spec file
 

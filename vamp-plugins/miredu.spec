@@ -4,7 +4,7 @@
 
 Name: miredu
 Version: 1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A Vamp plugin implementing basic audio descriptors for educational purposes
 License: GLPv2	
 URL: https://github.com/MTG/miredu	
@@ -27,7 +27,10 @@ descriptors (RMS, log attack-time, spectral flux, etc.).
 Summary: %{name} VAMP plugin
 
 %description -n vamp-%{name}
-%{description}
+MIR.EDU is an open source vamp plug-in library written in C++ which implements
+a basic set of descriptors useful for teaching MIR. The idea is to provide a
+simple library with clear and well documented code for learning about audio
+descriptors (RMS, log attack-time, spectral flux, etc.).
 
 %prep
 %autosetup -n %{name}-master
@@ -54,6 +57,9 @@ install -m 644 mir-edu.n3  %{buildroot}/%{_libdir}/vamp/
 %{_libdir}/vamp/mir-edu.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-2
+- update to 1.0-2
+
 * Wed Jan 12 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
 - Initial spec file
 

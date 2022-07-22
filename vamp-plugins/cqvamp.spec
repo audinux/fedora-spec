@@ -4,7 +4,7 @@
 
 Name: cqvamp
 Version: 1.1	
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A Vamp plugin implementing the Constant-Q transform of a time-domain signal
 License: GLPv2	
 URL: https://code.soundsoftware.ac.uk/projects/constant-q-cpp	
@@ -26,7 +26,7 @@ A Vamp plugin implementing the Constant-Q transform of a time-domain signal
 Summary: %{name} VAMP plugin
 
 %description -n vamp-%{name}
-%{description}
+A Vamp plugin implementing the Constant-Q transform of a time-domain signal
 
 %prep
 %autosetup -n cq-v%{version}
@@ -54,6 +54,9 @@ install -m 644 cqvamp.n3  %{buildroot}/%{_libdir}/vamp/
 %{_libdir}/vamp/cqvamp.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1-2
+- update to 1.1-2
+
 * Mon Jan 10 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1-1
 - Initial spec file
 

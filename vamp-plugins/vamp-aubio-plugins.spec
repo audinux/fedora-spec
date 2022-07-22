@@ -4,7 +4,7 @@
 
 Name: vamp-aubio-plugins
 Version: 0.5.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary:  aubio plugins for Vamp 	
 License: GLPv2	
 URL: https://github.com/aubio/vamp-aubio-plugins	
@@ -48,12 +48,6 @@ This set includes the following plugins:
     Low Level Features
     Computes spectral descriptor.
 
-%package -n vamp-%{name}
-Summary: %{name} VAMP plugin
-
-%description -n vamp-%{name}
-%{description}
-
 %prep
 %autosetup
 
@@ -73,12 +67,15 @@ install -m 755 vamp-aubio.so  %{buildroot}/%{_libdir}/vamp/
 install -m 644 vamp-aubio.cat %{buildroot}/%{_libdir}/vamp/
 install -m 644 vamp-aubio.n3  %{buildroot}/%{_libdir}/vamp/
 
-%files -n vamp-%{name}
+%files
 %license COPYING
 %doc README.md
 %{_libdir}/vamp/vamp-aubio.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 0.5.1-2
+- update to 0.5.1-2
+
 * Sat Jan 08 2022 Yann Collette <ycollette.nospam@free.fr> - 0.5.1-1
 - Initial spec file
 

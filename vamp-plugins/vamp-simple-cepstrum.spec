@@ -4,7 +4,7 @@
 
 Name: vamp-simple-cepstrum
 Version: 1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A simple Vamp plugin to calculate and return cepstrum values from DFT bins
 License: GLPv2	
 URL: https://code.soundsoftware.ac.uk/projects/vamp-simple-cepstrum	
@@ -21,12 +21,6 @@ BuildRequires: vamp-plugin-sdk-devel
 A simple Vamp plugin to calculate and return cepstrum values from DFT bins.
 Useful as a preliminary tool for looking at cepstral data for simple pitch
 or envelope methods.
-
-%package -n vamp-%{name}
-Summary: %{name} VAMP plugin
-
-%description -n vamp-%{name}
-%{description}
 
 %prep
 %autosetup -n %{name}-a17bca16933a
@@ -49,12 +43,15 @@ install -m 755 simple-cepstrum.so  %{buildroot}/%{_libdir}/vamp/
 install -m 644 simple-cepstrum.cat %{buildroot}/%{_libdir}/vamp/
 install -m 644 simple-cepstrum.n3  %{buildroot}/%{_libdir}/vamp/
 
-%files -n vamp-%{name}
+%files
 %license COPYING
 %doc README
 %{_libdir}/vamp/simple-cepstrum.*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1-2
+- update to 1.1-2
+
 * Sat Jan 08 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1-1
 - Initial spec file
 
