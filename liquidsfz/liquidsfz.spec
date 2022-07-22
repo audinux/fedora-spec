@@ -3,7 +3,7 @@
 # Category: Audio, Sampler
 
 Name:    liquidsfz
-Version: 0.2.3
+Version: 0.3.1
 Release: 2%{?dist}
 License: BSD-2-Clause
 Summary: Sampler plugin and library for SFZ and Hydrogen instruments
@@ -62,13 +62,15 @@ chrpath --delete %{buildroot}/%{_libdir}/lv2/liquidsfz.lv2/liquidsfz_lv2.so
 %{_libdir}/lv2/*
 
 %files devel
-%{_libdir}/libliquidsfz.la
 %{_libdir}/libliquidsfz.a
 %{_includedir}/liquidsfz.hh
 %dir %{_libdir}/pkgconfig
 %{_libdir}/pkgconfig/liquidsfz.pc
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 0.3.1-2
+- update to 0.3.1-2
+
 * Mon May 10 2021 Yann Collette <ycollette.nospam@free.fr> - 0.2.3-2
 - update to 0.2.3-2 - try to fix jack dep wrt pipewire
 
