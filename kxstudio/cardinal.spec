@@ -2,7 +2,7 @@
 
 Name:    cardinal
 Version: 22.07
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Virtual modular synthesizer plugin
 License: GPLv2+
 URL:     https://github.com/DISTRHO/Cardinal
@@ -46,7 +46,6 @@ self-contained plugin version.
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
 License:  GPLv2+
-Requires: %{name}-common
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -54,7 +53,6 @@ LV2 version of %{name}
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPLv2+
-Requires: %{name}-common
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -62,7 +60,6 @@ VST3 version of %{name}
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
 License:  GPLv2+
-Requires: %{name}-common
 
 %description -n vst-%{name}
 VST2 version of %{name}
@@ -100,6 +97,9 @@ mv %buildroot/usr/lib %buildroot/usr/lib64
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 22.07-2
+- update to 22.07-2 - fix packaging
+
 * Thu Jun 30 2022 Yann Collette <ycollette.nospam@free.fr> - 22.07-1
 - update to 22.07-1
 
