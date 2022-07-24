@@ -90,6 +90,7 @@
 | rtcqs               | https://codeberg.org/rtcqs/rtcqs |
 | soundgrain          | https://github.com/belangeo/soundgrain |
 | organ               | https://github.com/figbug/organ |
+| Neothesia           | https://github.com/PolyMeilex/Neothesia |
 
 ## WIP
 
