@@ -4,7 +4,7 @@
 
 Summary: Music tracker for the Yamaha YM2608 sound chip
 Name:    BambooTracker
-Version: 0.5.0
+Version: 0.5.1
 Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/rerrahkr/BambooTracker
@@ -12,7 +12,7 @@ URL:     https://github.com/rerrahkr/BambooTracker
 Vendor:       Audinux
 Distribution: Audinux
 
-# To get the sources: ./bambootracker_source.sh v0.5.0
+# To get the sources: ./bambootracker_source.sh v0.5.1
 Source0: BambooTracker.tar.gz
 Source1: bambootracker_source.sh
 
@@ -21,12 +21,15 @@ BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: desktop-file-utils
+BuildRequires: libsndfile-devel
+BuildRequires: rtaudio-devel
+BuildRequires: rtmidi-devel
 BuildRequires: qt5-qtmultimedia-devel
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-linguist
 BuildRequires: qtchooser
+BuildRequires: desktop-file-utils
 
 %description
 Music tracker for the Yamaha YM2608 (OPNA) sound chip which was used in NEC PC-8801/9801 series computers.
@@ -44,6 +47,10 @@ make qmake_all
 
 %make_install INSTALL_ROOT=%{buildroot} PREFIX=/usr
 
+# cleanup
+
+rm -rf %{buildroot}/%{_datadir}/doc/BambooTracker
+
 desktop-file-install --vendor '' \
         --add-category=Midi \
         --add-category=Sequencer \
@@ -60,6 +67,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/*
 
 %changelog
+* Sun Jul 24 2022 Yann Collette <ycollette.nospam@free.fr> - 0.5.1-1
+- update to version 0.5.1-1
+
 * Tue Aug 03 2021 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-1
 - update to version 0.5.0-1
 
