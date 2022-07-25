@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name:    obxd
-Version: 2.8
+Version: 2.9
 Release: 2%{?dist}
 Summary: A VST3 Synthesizer
 License: GPLv3
@@ -13,8 +13,9 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/reales/OB-Xd/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
-Source2: obxd-makefiles.tar.gz
+Source1: obxd-makefiles.tar.gz
+Source2: vst3sdk.tar.gz
+Source3: vst3-source.sh
 Patch0:  obxd_file_install_resources.patch
 
 BuildRequires: gcc gcc-c++
@@ -58,7 +59,7 @@ VST3 version of %{name}
 %prep
 %autosetup -p1 -n OB-Xd-%{version}
 
-unzip %{SOURCE1}
+tar xvfz %{SOURCE1}
 tar xvfz %{SOURCE2}
 
 sed -i -e "s|-DJucePlugin_Build_Standalone=0|-DJucePlugin_Build_Standalone=1|g" Builds/LinuxMakefile/Makefile
@@ -101,6 +102,9 @@ install -m 755 -p Builds/LinuxMakefile/build/OB-Xd.so %{buildroot}/%{_libdir}/vs
 %{_libdir}/vst/*
 
 %changelog
+* Mon Jul 25 2022 Yann Collette <ycollette.nospam@free.fr> - 2.9-2
+- update to 2.9-2
+
 * Sun Jun 26 2022 Yann Collette <ycollette.nospam@free.fr> - 2.8-2
 - update to 2.8-2
 
