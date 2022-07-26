@@ -78,7 +78,6 @@
 | tidal               | https://github.com/archlinux/svntogit-community/blob/packages/haskell-tidal/trunk/PKGBUILD |
 | TS-M1N3             | https://github.com/GuitarML/TS-M1N3 |
 | Chameleon           | https://github.com/GuitarML/Chameleon |
-| BYOD                | https://github.com/Chowdhury-DSP/BYOD |
 | juced               | https://github.com/kunitoki/juced |
 | solfege             | https://src.fedoraproject.org/rpms/solfege |
 | hpsjam              | https://github.com/hselasky/hpsjam |
@@ -90,7 +89,8 @@
 | rtcqs               | https://codeberg.org/rtcqs/rtcqs |
 | soundgrain          | https://github.com/belangeo/soundgrain |
 | organ               | https://github.com/figbug/organ |
-| Neothesia           | https://github.com/PolyMeilex/Neothesia |
+| stepseq.lv2         | https://github.com/x42/stepseq.lv2 |
+| anklang             | https://github.com/tim-janik/anklang |
 
 ## WIP
 
@@ -382,3 +382,5 @@ snd -> 22.0
 socalab -> update to last master
 ssr -> 0.4.3
 harvid -> 0.9.0
+
+Check https://github.com/Chowdhury-DSP
