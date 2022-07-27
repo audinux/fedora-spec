@@ -7,7 +7,7 @@
 
 Name:    yabridge
 Version: 4.0.2
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPLv2+
 URL:     https://github.com/robbert-vdh/yabridge
@@ -64,10 +64,10 @@ install %{_vpath_builddir}/yabridge-host.exe %{buildroot}%{_bindir}
 install %{_vpath_builddir}/yabridge-host.exe.so %{buildroot}%{_bindir}
 
 install -dm755 %{buildroot}%{_libdir}/vst
-install %{_vpath_builddir}/libyabridge-vst2.so %{buildroot}%{_libdir}/vst
-install %{_vpath_builddir}/libyabridge-vst3.so %{buildroot}%{_libdir}/vst
-install %{_vpath_builddir}/libyabridge-chainloader-vst2.so %{buildroot}%{_libdir}/vst
-install %{_vpath_builddir}/libyabridge-chainloader-vst3.so %{buildroot}%{_libdir}/vst
+install %{_vpath_builddir}/libyabridge-vst2.so %{buildroot}%{_libdir}/
+install %{_vpath_builddir}/libyabridge-vst3.so %{buildroot}%{_libdir}/
+install %{_vpath_builddir}/libyabridge-chainloader-vst2.so %{buildroot}%{_libdir}/
+install %{_vpath_builddir}/libyabridge-chainloader-vst3.so %{buildroot}%{_libdir}/
 
 # install tool
 install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}
@@ -76,9 +76,12 @@ install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}
 %doc CHANGELOG.md README.md
 %license COPYING
 %{_bindir}/*
-%{_libdir}/vst/*
+%{_libdir}/*
 
 %changelog
+* Wed Jul 27 2022 Yann Collette <ycollette.nospam@free.fr> - 4.0.2-4
+- update to 4.0.2-4 - fix installation
+
 * Mon Jun 27 2022 Yann Collette <ycollette.nospam@free.fr> - 4.0.2-3
 - update to 4.0.2-3
 
