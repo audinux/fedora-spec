@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ./rack-source.sh <tag>
-# ./rack-source.sh v1.1.6
+# ./rack-source.sh v2.1.2
 
 git clone https://github.com/VCVRack/Rack.git Rack
 cd Rack
@@ -12,10 +12,3 @@ find . -name ".git" -exec rm -rf {} \;
 cd ..
 tar cvfz Rack.tar.gz Rack/*
 rm -rf Rack
-
-git clone https://github.com/VCVRack/manual.git
-cd manual
-find . -name ".git" -exec rm -rf {} \;
-cd ..
-tar cvfz Rack-manual.tar.gz manual/*
-rm -rf manual

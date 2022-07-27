@@ -7,7 +7,7 @@
 
 Name:    Rack-v2
 Version: 2.1.2
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A modular Synthesizer
 License: GPLv2+
 URL:     https://github.com/VCVRack/Rack
@@ -19,8 +19,7 @@ Distribution: Audinux
 # ./rack-source-v2.sh v2.1.2
 
 Source0: Rack.tar.gz
-Source1: Rack-manual.tar.gz
-Source2: rack-source-v2.sh
+Source1: rack-source-v2.sh
 Patch0:  rack-v2-0001-initialize-system-path.patch
 
 BuildRequires: gcc gcc-c++
@@ -59,13 +58,6 @@ BuildRequires: python3-sphinx_rtd_theme
 
 %description
 A modular Synthesizer
-
-%package doc
-Summary: Documentation files for Rack
-BuildArch: noarch
-
-%description doc
-Documentation files for Rack
 
 %prep
 %autosetup -p1 -n Rack
@@ -130,8 +122,6 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio -lpulse-simple -lpulse/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 %endif
 
-tar xvfz %{SOURCE1}
-
 # Remove rpath
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
@@ -168,7 +158,6 @@ mkdir -p %{buildroot}%{_bindir}/
 mkdir -p %{buildroot}%{_datadir}/pixmaps/
 mkdir -p %{buildroot}%{_datadir}/man/man1/
 mkdir -p %{buildroot}%{_datadir}/applications/
-mkdir -p %{buildroot}%{_datadir}/Rack/doc/
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/
 mkdir -p %{buildroot}%{_libdir}/
 
@@ -176,8 +165,6 @@ install -m 755 Rack         %{buildroot}%{_bindir}/Rack2
 install -m 644 res/icon.png %{buildroot}%{_datadir}/pixmaps/rack2.png
 cp -r res                   %{buildroot}%{_libexecdir}/Rack2/
 install -m 755 libRack.so   %{buildroot}%{_libdir}/
-
-cp -r manual/* %{buildroot}%{_datadir}/Rack/doc/
 
 cp cacert.pem Core.json template.vcv %{buildroot}%{_libexecdir}/Rack2/
 
@@ -199,11 +186,12 @@ EOF
 %{_datadir}/*
 %{_libexecdir}/*
 %{_libdir}/*
-
-%files doc
 %{_datadir}/*
 
 %changelog
+* Wed Jul 27 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-3
+- update to v2.1.2-3 - remove manual
+
 * Tue Jum 05 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-2
 - update to v2.1.2-2
 
