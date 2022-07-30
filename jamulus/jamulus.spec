@@ -2,8 +2,12 @@
 # Type: Standalone
 # Category: Audio
 
+%global v_major 3
+%global v_minor 9
+%global v_patch 0
+
 Name:    jamulus
-Version: 3.8.2
+Version: %{v_major}.%{v_minor}.%{v_patch}
 Release: 8%{?dist}
 Summary: Internet jam session software
 URL:     https://github.com/corrados/jamulus/
@@ -13,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # original tarfile can be found here:
-Source0: https://github.com/corrados/jamulus/archive/r3_8_2.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/corrados/jamulus/archive/r%{v_major}_%{v_minor}_%{v_patch}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: jack-audio-connection-kit-devel
@@ -21,6 +25,8 @@ BuildRequires: alsa-lib-devel
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-linguist
+BuildRequires: qt5-qtmultimedia-devel
+BuildRequires: libsndfile-devel
 BuildRequires: opus-devel
 BuildRequires: desktop-file-utils
 
@@ -30,33 +36,14 @@ real-time rehearsal over the internet. It uses Jack Audio Connection Kit
 and Opus audio codec to manage the audio session. 
 
 %prep
-%autosetup -n %{name}-r3_8_2
+%autosetup -n %{name}-r%{v_major}_%{v_minor}_%{v_patch}
 
 # Remove Opus source code, we use Opus library from Fedora
 #rm -rf libs/opus
 
 %build
 
-pushd .
-cd src/res/translation
-lrelease-qt5 *.ts
-popd
-
-# On fedora, opus is compiled with enable-hardening and this makes jamulus hangs
-# add 'opus_shared_lib' to CONFIG to reenable compilation of jamulus without include opus lib
-%if 0%{?fedora} >= 32
-  # On fedora, opus is compiled with enable-hardening and this makes jamulus hangs
-  %qmake_qt5 Jamulus.pro CONFIG+="noupcasename"
-%else
-  # -fcf-protection produce an error in an object generatoin ...
-  qmake-qt5 Jamulus.pro \
-            QMAKE_CFLAGS_DEBUG="%{__global_compiler_flags} -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection" \
-            QMAKE_CFLAGS_RELEASE="%{__global_compiler_flags} -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection" \
-            QMAKE_CXXFLAGS_DEBUG="%{__global_compiler_flags} -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection" \
-            QMAKE_CXXFLAGS_RELEASE="%{__global_compiler_flags} -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection" \
-            CONFIG+="noupcasename" 
-%endif
-
+%qmake_qt5 Jamulus.pro CONFIG+="noupcasename"
 %make_build VERBOSE=1
 
 %install
@@ -87,10 +74,13 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/%{name}.png
 
 %changelog
-* Mon Feb 22 2022 Yann Collette <ycollette.nospam@free.fr> - 3.8.2-8
+* Sat Jul 30 2022 Yann Collette <ycollette.nospam@free.fr> - 3.9.0-8
+- update to 3.9.0-8
+
+* Tue Feb 22 2022 Yann Collette <ycollette.nospam@free.fr> - 3.8.2-8
 - update to 3.8.2-8
 
-* Mon Feb 22 2022 Yann Collette <ycollette.nospam@free.fr> - 3.8.1-8
+* Tue Feb 22 2022 Yann Collette <ycollette.nospam@free.fr> - 3.8.1-8
 - update to 3.8.1-8 - fix source
 
 * Sat Oct 23 2021 Yann Collette <ycollette.nospam@free.fr> - 3.8.1-7
