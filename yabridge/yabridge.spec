@@ -7,7 +7,7 @@
 
 Name:    yabridge
 Version: 4.0.2
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPLv2+
 URL:     https://github.com/robbert-vdh/yabridge
@@ -25,6 +25,10 @@ BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: wine-devel
 BuildRequires: boost-devel
 BuildRequires: libxcb-devel
+BuildRequires: libxcb-devel(x86-32)
+BuildRequires: glibc-devel(x86-32)
+BuildRequires: wine-devel(x86-32)
+BuildRequires: libstdc++-devel(x86-32)
 BuildRequires: asio-devel
 BuildRequires: meson
 BuildRequires: git
@@ -49,7 +53,8 @@ also staying easy to debug and maintain.
 
 %meson --cross-file=cross-wine.conf \
     --buildtype=release \
-    --wrap-mode=default
+    --wrap-mode=default \
+    -Dbitbridge=true
 
 %meson_build
 
@@ -62,6 +67,8 @@ popd
 install -dm755 %{buildroot}%{_bindir}
 install %{_vpath_builddir}/yabridge-host.exe %{buildroot}%{_bindir}
 install %{_vpath_builddir}/yabridge-host.exe.so %{buildroot}%{_bindir}
+install %{_vpath_builddir}/yabridge-host-32.exe %{buildroot}%{_bindir}
+install %{_vpath_builddir}/yabridge-host-32.exe.so %{buildroot}%{_bindir}
 
 install -dm755 %{buildroot}%{_libdir}/vst
 install %{_vpath_builddir}/libyabridge-vst2.so %{buildroot}%{_libdir}/
@@ -79,6 +86,9 @@ install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}
 %{_libdir}/*
 
 %changelog
+* Sat Jul 30 2022 Yann Collette <ycollette.nospam@free.fr> - 4.0.2-5
+- update to 4.0.2-5 - add 32 bridge
+
 * Wed Jul 27 2022 Yann Collette <ycollette.nospam@free.fr> - 4.0.2-4
 - update to 4.0.2-4 - fix installation
 
