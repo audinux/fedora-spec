@@ -186,13 +186,12 @@ EOF
 %{_datadir}/*
 %{_libexecdir}/*
 %{_libdir}/*
-%{_datadir}/*
 
 %changelog
 * Wed Jul 27 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-3
 - update to v2.1.2-3 - remove manual
 
-* Tue Jum 05 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-2
+* Tue Jul 05 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-2
 - update to v2.1.2-2
 
 * Sun May 22 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-2
