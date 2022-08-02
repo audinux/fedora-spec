@@ -20,11 +20,6 @@
 | CadMus              | https://github.com/josh-richardson/cadmus |
 | tascar              | https://github.com/HoerTech-gGmbH/tascar/ |
 | midieditor          | https://github.com/markusschwenk/midieditor/ |
-| seq66               | https://github.com/ahlstromcj/seq66 |
-| Stretcher           | https://github.com/clearly-broken-software/Stretcher |
-| Uprising            | https://github.com/clearly-broken-software/Uprising |
-| Punch               | https://github.com/clearly-broken-software/Punch |
-| Boomer              | https://github.com/clearly-broken-software/boomer |
 | audiveris           | https://github.com/Audiveris/audiveris |
 | Teragon audio       | http://teragonaudio.com/software.html |
 |                     | - Kickmaker: http://static.teragonaudio.com/downloads/KickMaker/KickMaker.zip |
