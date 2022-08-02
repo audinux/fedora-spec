@@ -1,5 +1,5 @@
 Name:    r128gain
-Version: 1.0.3
+Version: 1.0.6
 Release: 1%{?dist}
 Epoch:   1
 Summary: r128gain is a multi platform command line tool to scan your audio files and tag them.
@@ -43,6 +43,9 @@ from other Python projects to scan and/or tag audio files.
 %{python3_sitelib}/%{name}-*.egg-info
 
 %changelog
+* Tue Aug 02 2022 Yann Collette <ycollette dot nospam at free.fr> 1.0.6-1
+- update to 1.0.6-1
+
 * Fri Oct 23 2020 Yann Collette <ycollette dot nospam at free.fr> 1.0.3-1
 - update to 1.0.3 - fix debug build
 
