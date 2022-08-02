@@ -363,19 +363,11 @@ solfege
 
 ## regular update
 
-mod-host
 mda-lv2
 ninjam -> there is a github repo now ...
-polylv2
 premake -> moved on github: https://github.com/premake
-protrekkr2 -> to be fixed
 psi-plugins -> another active github repository: https://github.com/psi-im/plugins
-r128gain -> 1.0.4
 resources -> try to find other IR (https://github.com/jpcima/HybridReverb2-impulse-response-database)
 ryukau -> update to last master
-snd -> 22.0
-socalab -> update to last master
-ssr -> 0.4.3
-harvid -> 0.9.0
 
 Check https://github.com/Chowdhury-DSP
