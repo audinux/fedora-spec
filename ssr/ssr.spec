@@ -1,11 +1,6 @@
-# Global variables for github repository
-%global commit0 c20e56a8eabb2677b0c538d0d056ff48d4cfc971
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 Summary: Simple Screen Recorder
 Name:    ssr
-Version: 0.3.8.%{shortcommit0}
+Version: 0.4.4
 Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/MaartenBaert/ssr
@@ -13,7 +8,7 @@ URL:     https://github.com/MaartenBaert/ssr
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/MaartenBaert/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: https://github.com/MaartenBaert/ssr/archive/refs/tags/0.4.4.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: autoconf
@@ -21,11 +16,11 @@ BuildRequires: automake
 BuildRequires: libtool
 BuildRequires: pkgconfig
 BuildRequires: alsa-lib-devel
-BuildRequires: desktop-file-utils
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: qt4-devel
 BuildRequires: ffmpeg-devel
 BuildRequires: pulseaudio-libs-devel
+BuildRequires: desktop-file-utils
 
 %description
 SimpleScreenRecorder is a Linux program created to record programs and games. 
@@ -36,12 +31,11 @@ SimpleScreenRecorder is a Linux program created to record programs and games.
 %build
 
 %configure
-%{__make} %{_smp_mflags}
+%make_build
 
 %install
 
-%{__rm} -rf %{buildroot}
-%{__make} DESTDIR=%{buildroot} install
+%make_install
 
 # install polyphon.desktop properly.
 desktop-file-install --vendor '' \
@@ -50,8 +44,10 @@ desktop-file-install --vendor '' \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/simplescreenrecorder.desktop
 
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/simplescreenrecorder.desktop
+
 %files
-%defattr(-,root,root,-)
 %doc AUTHORS.md CHANGELOG.md README.md
 %license COPYING
 %{_bindir}/*
