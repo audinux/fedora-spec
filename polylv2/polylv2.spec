@@ -1,11 +1,11 @@
 # Global variables for github repository
-%global commit0 3fd1dd43375d8d2ff806da8a8ce929e338d12478
+%global commit0 acdcb00e81148872930795cddd376afddf208fe1
 %global gittag0 main
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    lv2-polylv2
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: a collection of LV2 plugins designed for modular / eurorack style use.
 License: GPLv3+
 URL:     https://github.com/polyeffects/PolyLV2
@@ -65,5 +65,8 @@ cd poly_vibrato_ext   && %make_install LV2DIR=/usr/%{_lib}/lv2 STRIP=true && cd 
 %{_libdir}/lv2/*
 
 %changelog
+* Tue Aug 02 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to acdcb00e81148872930795cddd376afddf208fe1
+
 * Fri Dec 25 2020 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file - main / 3fd1dd43375d8d2ff806da8a8ce929e338d12478
