@@ -1,6 +1,6 @@
-%define pkgver 22.2
+%define pkgver 22.5
 %define tarname snd-%{pkgver}
-%define snd_date "11/03/2022"
+%define snd_date "03/07/2022"
 
 %define	desktop_vendor planetccrma
 
@@ -187,6 +187,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_bindir}/snd-info
 
 %changelog
+* Tue Aug 02 2022 Yann Collette <ycollette.nospam@free.fr> - 22.5-1
+- update to 22.5-1
+
 * Mon Apr 18 2022 Yann Collette <ycollette.nospam@free.fr> - 22.2-1
 - update to 22.2
 
