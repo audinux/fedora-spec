@@ -18,6 +18,15 @@ Source1: gammou-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
+BuildRequires: catch-devel
+BuildRequires: mesa-libGL-devel
+BuildRequires: glew-devel
+BuildRequires: llvm-devel
+BuildRequires: cxxopts-devel
+BuildRequires: python3
+BuildRequires: rtmidi-devel
+BuildRequires: rtaudio-devel
+BuildRequires: clang
 
 %description
 Gammou is a polyphonic modular sound synthesizer that be run as VST or standalone.
