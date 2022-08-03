@@ -57,7 +57,6 @@
 | Audio-Effects       | https://github.com/juandagilc/Audio-Effects |
 | pedalevite          | https://github.com/EleonoreMizo/pedalevite -> code for vst2 ... |
 |                     | http://ldesoras.free.fr/doc/articles/pedale-vite/pedale-vite.html |
-| imogen              | https://github.com/benthevining/imogen - cmake version pb (requires cmake 22) |
 | tap192              | https://github.com/PlagiatBros/tap192 |
 | genDrumKit          | https://github.com/peter-zenk/genDrumkit |
 | PlugData            | https://github.com/timothyschoen/PlugData |
@@ -95,7 +94,8 @@ tascar
 protrekkr2 (update to 2.6.3)
 mephito (needs faust library)
 midi2voice (code doesn't install correctly)
-gammou (a submodule doesn't clone)
+gammou (no the good version of rtaudio))
+imogen (needs juce cmake file)
 
 ## Cleanup
 
