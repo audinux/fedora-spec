@@ -7,8 +7,7 @@
 git clone https://github.com/surge-synthesizer/surge
 cd surge
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz surge.tar.gz surge/*
