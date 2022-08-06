@@ -99,7 +99,7 @@ cp -r audibleinstruments_plugin/dist/AudibleInstruments/* %{buildroot}%{_libexec
 %{_libexecdir}/*
 
 %changelog
-* Thu Now 03 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-3
+* Thu Nov 03 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-3
 - update to 1.4.0-3
 
 * Thu Jan 30 2020 Yann Collette <ycollette.nospam@free.fr> - 0.6.0-3

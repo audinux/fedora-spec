@@ -50,5 +50,5 @@ install -m 644 external_methods/osx/scide_scapp/image_from_sound.sc %{buildroot}
 * Fri Oct 23 2020 Yann Collette <ycollette dot nospam at free.fr> 0.1.0-1
 - initial release of the spec file
 
-* Wed Jun 6 2019 Yann Collette <ycollette dot nospam at free.fr> 0.1.0-1
+* Wed Jun 06 2019 Yann Collette <ycollette dot nospam at free.fr> 0.1.0-1
 - initial release of the spec file

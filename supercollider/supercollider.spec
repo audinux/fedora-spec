@@ -14,7 +14,7 @@ Distribution: Planet CCRMA
 
 BuildRequires: cmake gcc gcc-c++ autoconf automake libtool pkgconfig
 BuildRequires: jack-audio-connection-kit-devel libsndfile-devel alsa-lib-devel
-Buildrequires: fftw3-devel libcurl-devel emacs w3m ruby
+BuildRequires: fftw3-devel libcurl-devel emacs w3m ruby
 BuildRequires: avahi-devel libX11-devel libXt-devel
 BuildRequires: libicu-devel readline-devel
 BuildRequires: qt5-qtbase-devel qt5-qtsensors-devel qt5-qttools-devel qt5-qtsvg-devel

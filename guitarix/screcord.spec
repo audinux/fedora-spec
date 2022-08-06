@@ -54,7 +54,7 @@ cd ..
 %{_libdir}/lv2/sc_record.lv2/*
 
 %changelog
-* Tue OCt 20 2020 Yann Collette <ycollette.nospam@free.fr> - 0.2-3
+* Tue Oct 20 2020 Yann Collette <ycollette.nospam@free.fr> - 0.2-3
 - fix debug build
 
 * Mon Dec 16 2019 Yann Collette <ycollette.nospam@free.fr> - 0.2-2

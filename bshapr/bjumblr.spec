@@ -53,7 +53,7 @@ From the technical POV B.Jumblr is a sequencer pattern-controlled audio delay ef
 %{_libdir}/lv2/*
 
 %changelog
-* Fr Sep 10 2021 Yann Collette <ycollette dot nospam at free.fr> 1.6.6-3
+* Fri Sep 10 2021 Yann Collette <ycollette dot nospam at free.fr> 1.6.6-3
 - update to 1.6.6-3
 
 * Sun Apr 18 2021 Yann Collette <ycollette dot nospam at free.fr> 1.6.6-2

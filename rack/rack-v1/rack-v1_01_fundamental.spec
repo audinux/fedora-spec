@@ -108,7 +108,7 @@ cp -r fundamental_plugin/dist/Fundamental/* %{buildroot}%{_libexecdir}/Rack1/plu
 * Sun Nov 29 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-6
 - fix rtaudio + debug build
 
-* Fri OCt 29 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-5
+* Fri Oct 29 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-5
 - update to 1.4.0-5
 
 * Tue Sep 8 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-4
