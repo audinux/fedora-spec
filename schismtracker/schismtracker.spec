@@ -3,7 +3,7 @@
 # Category: Audio, Sequencer
 
 Name:    schismtracker
-Version: 20220125
+Version: 20220807
 Release: 2%{?dist}
 Summary: Module tracker software for creating music
 License: GPLv3+
@@ -18,7 +18,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: autoconf
 BuildRequires: automake
-BuildRequires: SDL-devel
+BuildRequires: SDL2-devel
 BuildRequires: libXext-devel
 BuildRequires: python
 BuildRequires: desktop-file-utils
@@ -73,6 +73,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Sun Aug 07 2022 Yann Collette <ycollette dot nospam at free dot fr> - 20220807-1
+- update to 20220807
+
 * Tue Jan 25 2022 Yann Collette <ycollette dot nospam at free dot fr> - 20220125-1
 - update to 20220125
 
