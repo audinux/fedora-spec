@@ -11,7 +11,7 @@
 
 Name:    rack-v2-skjack
 Version: 0.6.8
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A plugin for Rack
 License: GPLv2+
 URL:     https://github.com/nielszweistein/skjack-vcv2
@@ -23,7 +23,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 # wget https://github.com/nielszweistein/skjack-vcv2/archive/486e3bdb3488dcab1ef776b92896a67c2b714883.zip
-# Unzip 486e3bdb3488dcab1ef776b92896a67c2b714883.zip
+# unzip 486e3bdb3488dcab1ef776b92896a67c2b714883.zip
 # tar cvfz rack-v2-skjack.tar.gz skjack-vcv2-486e3bdb3488dcab1ef776b92896a67c2b714883
 # rm -rf skjack-vcv2-486e3bdb3488dcab1ef776b92896a67c2b714883
 
@@ -134,7 +134,7 @@ cp %{SOURCE2} skjack_plugin
 %build
 
 %set_build_flags
-export CXXFLAGS="-fpermissive -include libavutil/channel_layout.h $CXXFLAGS"
+export CXXFLAGS="-O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic -fpermissive -include libavutil/channel_layout.h $CXXFLAGS"
 
 cd skjack_plugin
 %make_build RACK_DIR=.. PREFIX=/usr LIBDIR=%{_lib} dist

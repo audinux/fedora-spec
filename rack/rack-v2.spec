@@ -4,10 +4,11 @@
 
 %define use_static_glfw 0
 %define use_static_rtaudio 1
+%define use_embedded_samplerate 1
 
 Name:    Rack-v2
 Version: 2.1.2
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: A modular Synthesizer
 License: GPLv2+
 URL:     https://github.com/VCVRack/Rack
@@ -26,7 +27,9 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
+%if !%{use_embedded_samplerate}
 BuildRequires: libsamplerate-devel
+%endif
 BuildRequires: libzip-devel
 BuildRequires: glew-devel
 %if !%{use_static_glfw}
@@ -95,6 +98,11 @@ echo "Use Static RTAUDIO"
 %else
 echo "Do not use static RTAUDIO"
 %endif
+%if %{use_embedded_samplerate}
+echo "Use embedded libsamplerate"
+%else
+echo "Do not use embedded libsamplerate"
+%endif
 
 sed -i -e "s/-Wl,-Bstatic//g" Makefile
 
@@ -111,7 +119,9 @@ sed -i -e "s/dep\/lib\/libcrypto.a/-lcrypto/g" Makefile
 sed -i -e "s/dep\/lib\/libzip.a/-lzip/g" Makefile
 sed -i -e "s/dep\/lib\/libz.a/-lz/g" Makefile
 sed -i -e "s/dep\/lib\/libspeexdsp.a/-lspeexdsp/g" Makefile
+%if !%{use_embedded_samplerate}
 sed -i -e "s/dep\/lib\/libsamplerate.a/-lsamplerate/g" Makefile
+%endif
 sed -i -e "s/dep\/lib\/librtmidi.a/-lrtmidi/g" Makefile
 sed -i -e "s/dep\/lib\/libarchive.a/-larchive/g" Makefile
 sed -i -e "s/dep\/lib\/libzstd.a/-lzstd/g" Makefile
@@ -129,24 +139,28 @@ sed -i -e "/-rpath/d" plugin.mk
 %build
 
 CURRENT_PATH=`pwd`
-export CFLAGS="`pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src"
-export CXXFLAGS=
-export LDFLAGS=
+export CFLAGS="-O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src"
+export CXXFLAGS="-O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic"
+export LDFLAGS="-O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic"
 
 cd dep
 %if %{use_static_glfw}
 cd glfw
-cmake -DCMAKE_INSTALL_PREFIX=.. -DGLFW_COCOA_CHDIR_RESOURCES=OFF -DGLFW_COCOA_MENUBAR=ON -DGLFW_COCOA_RETINA_FRAMEBUFFER=ON -DCMAKE_BUILD_TYPE=DEBUG .
+cmake -DCMAKE_INSTALL_PREFIX=.. -DCMAKE_CXX_FLAGS="-O2 -fPIC"  -DGLFW_COCOA_CHDIR_RESOURCES=OFF -DGLFW_COCOA_MENUBAR=ON -DGLFW_COCOA_RETINA_FRAMEBUFFER=ON -DCMAKE_BUILD_TYPE=DEBUG .
 make
 make install
 cd ..
 %endif
 %if %{use_static_rtaudio}
 cd rtaudio
-cmake -DCMAKE_INSTALL_PREFIX=.. -DCMAKE_CXX_FLAGS=-fPIC -DBUILD_SHARED_LIBS=FALSE -DCMAKE_BUILD_TYPE=DEBUG .
+cmake -DCMAKE_INSTALL_PREFIX=.. -DCMAKE_CXX_FLAGS="-O2 -fPIC" -DBUILD_SHARED_LIBS=FALSE -DCMAKE_BUILD_TYPE=DEBUG .
 make
 make install
 cd ..
+%endif
+%if %{use_static_rtaudio}
+make libsamplerate-0.1.9 CFLAGS="-O2 -fPIC"
+make lib/libsamplerate.a CFLAGS="-O2 -fPIC"
 %endif
 cd ..
 
