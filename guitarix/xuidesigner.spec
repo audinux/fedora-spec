@@ -79,5 +79,5 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/XUiDesigner.desktop
 * Sun Nov 14 2021 Yann Collette <ycollette.nospam@free.fr> - 0.3-1
 - update to 0.3-1
 
-* Fri 15 Oct 2021 Yann Collette <ycollette.nospam@free.fr> - 0.2-1
+* Fri Oct 15 2021 Yann Collette <ycollette.nospam@free.fr> - 0.2-1
 - Initial spec file

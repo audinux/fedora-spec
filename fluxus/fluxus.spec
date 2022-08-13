@@ -47,7 +47,7 @@ BuildRequires: libunicap-devel >= 0.9.12
 BuildRequires: ffmpeg-devel >= 0.7
 BuildRequires: openssl-devel
 BuildRequires: desktop-file-utils
-Buildrequires: emacs w3m
+BuildRequires: emacs w3m
 
 Requires: racket >= 5.1.1
 Requires: fftw >= 3.2.2

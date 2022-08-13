@@ -39,7 +39,7 @@ BuildRequires: wine-devel
 BuildRequires: glibc-devel(x86-32)
 BuildRequires: wine-devel(x86-32)
 BuildRequires: libstdc++-devel(x86-32)
-Buildrequires: libappstream-glib
+BuildRequires: libappstream-glib
 BuildRequires: desktop-file-utils
 
 Requires: python3-qt5

@@ -70,7 +70,7 @@ desktop-file-install --vendor '' \
 %exclude %{_datadir}/%{name}/%{name}.desktop
 
 %changelog
-* Fri OCt 2 2020 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+* Fri Oct 2 2020 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
 - update for Fedora 33
 
 * Mon Oct 15 2018 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1

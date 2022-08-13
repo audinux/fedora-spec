@@ -45,7 +45,7 @@ BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
 BuildRequires: speexdsp-devel
 BuildRequires: libsndfile-devel
-Buildrequires: jq
+BuildRequires: jq
 
 %description
 ChowDSP plugin for Rack.
