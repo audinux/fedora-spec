@@ -8,12 +8,12 @@
 %global debug_package %{nil}
 
 # Global variables for github repository
-%global commit0 4484ad68ab5f51a1225ac3cd7d3dc1ea689a52e9
+%global commit0 03bd00b96ad19e0575939bb7a0b8b08eff22f076
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    rack-v2-Fundamental
-Version: 2.1.0
+Version: 2.3.0
 Release: 2%{?dist}
 Summary: A plugin for Rack
 License: GPLv2+
@@ -171,6 +171,9 @@ cp -r fundamental_plugin/dist/Fundamental/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
+* Tue Aug 09 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-2
+- update to 2.3.0-2
+
 * Fri Mar 04 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-2
 - update to last master - 4484ad68ab5f51a1225ac3cd7d3dc1ea689a52e9 - 2.1.0-2
 

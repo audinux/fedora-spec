@@ -10,7 +10,6 @@
 | openshow            | https://github.com/mapmapteam/openshow |
 | supercollider-study | https://github.com/rumblesan/super-collider-study |
 | SynthDefs           | https://github.com/everythingwillbetakenaway/Synthdefs |
-| marsyas             | http://marsyas.info/ |
 | vapoursynth         | http://www.vapoursynth.com/ |
 |                     | https://github.com/dubhater/vapoursynth-fluxsmooth |
 |                     | - https://github.com/HolyWu/L-SMASH-Works |
@@ -33,7 +32,6 @@
 | ProM                | https://github.com/DISTRHO/ProM |
 | loop192             | https://github.com/jean-emmanuel/loop192 |
 | loopor              | https://github.com/stevie67/loopor |
-| lv2file             | https://github.com/jeremysalwen/lv2file |
 | inscore             | https://inscore.grame.fr |
 | Gwion               | https://github.com/Gwion |
 | Amati               | https://github.com/glocq/Amati |
@@ -44,9 +42,7 @@
 | QuatumVerb          | https://github.com/QVbDev/quantumVerb |
 | Livecode-This       | https://github.com/gilfuser/livecode-this |
 | SpleeterRT          | https://github.com/james34602/SpleeterRT |
-| Spek                | https://github.com/alexkay/spek |
 | sndpeek             | https://www.gewang.com/software/sndpeek |
-| fmit                | https://github.com/gillesdegottex/fmit |
 | Mousai              | https://github.com/SeaDve/Mousai |
 | audioprism          | https://github.com/vsergeev/audioprism |
 | friture             | https://github.com/tlecomte/friture |

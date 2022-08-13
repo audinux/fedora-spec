@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name:    odin2
-Version: 2.3.3
+Version: 2.3.4
 Release: 4%{?dist}
 Summary: A VST3 Synthesizer
 License: GPLv2+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./odin-sources.sh <TAG>
-# ./odin-sources.sh v2.3.3
+# ./odin-sources.sh v2.3.4
 
 Source0: odin2.tar.gz
 Source1: odin-sources.sh
@@ -38,6 +38,7 @@ BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
+BuildRequires: desktop-file-utils
 
 %description
 Odin 2 Synthesizer Plugin
@@ -86,6 +87,30 @@ install -m 755 -p Builds/LinuxMakefile/build_vst3/Odin2 %{buildroot}/%{_bindir}/
 cp -ra Builds/LinuxMakefile/build_vst3/Odin2.vst3/* %{buildroot}/%{_libdir}/vst3/Odin2.vst3/
 chmod a+x %{buildroot}/%{_libdir}/vst3/Odin2.vst3/Contents/x86_64-linux/Odin2.so
 
+install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
+cp screenshot.png %{buildroot}/%{_datadir}/pixmaps/%{name}.png
+
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=%name
+Exec=%{name}
+Icon=/usr/share/pixmaps/%{name}
+Comment=Odin 2
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+EOF
+
+desktop-file-install                         \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+
 %files
 %doc README.md change_log.md
 %license LICENSE
@@ -96,6 +121,9 @@ chmod a+x %{buildroot}/%{_libdir}/vst3/Odin2.vst3/Contents/x86_64-linux/Odin2.so
 %{_libdir}/vst3/*
 
 %changelog
+* Tue Aug 09 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3.4-4
+- update to 2.3.4-4
+
 * Tue Jun 14 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3.3-4
 - update to 2.3.3-4
 
