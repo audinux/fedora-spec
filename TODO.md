@@ -43,7 +43,6 @@
 | Livecode-This       | https://github.com/gilfuser/livecode-this |
 | SpleeterRT          | https://github.com/james34602/SpleeterRT |
 | sndpeek             | https://www.gewang.com/software/sndpeek |
-| fmit                | https://github.com/gillesdegottex/fmit |
 | Mousai              | https://github.com/SeaDve/Mousai |
 | audioprism          | https://github.com/vsergeev/audioprism |
 | friture             | https://github.com/tlecomte/friture |
