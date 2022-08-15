@@ -3,7 +3,7 @@
 # Category: Audio, Programming, Graphic
 
 Name:    JUCE
-Version: 7.0.1
+Version: 7.0.2
 Release: 6%{?dist}
 Summary: JUCE Framework
 URL:     https://github.com/juce-framework/JUCE
@@ -95,6 +95,9 @@ cp -ra docs/doxygen/doc/* %{buildroot}/%{_datadir}/JUCE/doc/
 %{_usrsrc}/*
 
 %changelog
+* Mon Aug 15 2022 Yann Collette <ycollette.nospam@free.fr> - 7.0.2-6
+- update to 7.0.2-6
+
 * Mon Jul 04 2022 Yann Collette <ycollette.nospam@free.fr> - 7.0.1-6
 - update to 7.0.1-6
 
