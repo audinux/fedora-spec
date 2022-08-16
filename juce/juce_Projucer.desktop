@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=Projucer
+GenericName=JUCE project management tool
+GenericName[fr]=Outil de gestion de projet JUCE
+Comment=IDE for working with JUCE based projects
+Comment[fr]=IDE pour travailler avec des projets basés sur JUCE
+Exec=/usr/bin/Projucer %f
+Icon=juce.png
+Categories=Development
+MimeType=application/x-juce;
+Terminal=false
+Type=Application
+Keywords=Development;IDE;C++

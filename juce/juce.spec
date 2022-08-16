@@ -4,7 +4,7 @@
 
 Name:    JUCE
 Version: 7.0.2
-Release: 6%{?dist}
+Release: 7%{?dist}
 Summary: JUCE Framework
 URL:     https://github.com/juce-framework/JUCE
 License: GPLv2+
@@ -14,18 +14,23 @@ Distribution: Audinux
 
 # original tarfile can be found here:
 Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source1: juce_Projucer.desktop
+Source2: juce_Projucer.1
 Patch0:  juce-0001-set-default-path.patch
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: cmake
+BuildRequires: doxygen
+BuildRequires: graphviz
 BuildRequires: lv2-devel
 BuildRequires: dssi-devel
 BuildRequires: ladspa-devel
-BuildRequires: doxygen
-BuildRequires: graphviz
-BuildRequires: python-unversioned-command
+BuildRequires: alsa-lib-devel
 BuildRequires: webkit2gtk3-devel
-BuildRequires: sed
 BuildRequires: libcurl-devel
+BuildRequires: freetype-devel
+BuildRequires: python-unversioned-command
+BuildRequires: desktop-file-utils
 
 %description
 JUCE is an open-source cross-platform C++ application framework used for rapidly
@@ -41,60 +46,55 @@ live-coding engine which can be used for rapid prototyping.
 
 %build
 
-%set_build_flags
-
-#export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE $CXXFLAGS"
-#export CFLAGS="-DJUCER_ENABLE_GPL_MODE $CFLAGS"
-export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g -std=c++14 -include utility"
-export CFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g"
-
 cd docs/doxygen
+make
+cd ../..
 
-mkdir build
-%make_build CONFIG=Release STRIP=true 
-cd ../../extras
-
-cd AudioPluginHost/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
-cd ../../..
-
-cd BinaryBuilder/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
-cd ../../..
-
-cd Projucer/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
-cd ../../..
-
-cd UnitTestRunner/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
-cd ../../..
+%cmake -DJUCE_BUILD_EXTRAS=ON -DJUCE_BUILD_EXAMPLES=OFF -DJUCE_INSTALL_DESTINATION="%{_lib}/cmake/JUCE-%{version}"
+%cmake_build
 
 %install
 
-install -m 755 -d %{buildroot}/%{_bindir}/
-install -m 755 extras/AudioPluginHost/Builds/LinuxMakefile/build/AudioPluginHost %{buildroot}%{_bindir}/
-install -m 755 extras/BinaryBuilder/Builds/LinuxMakefile/build/BinaryBuilder     %{buildroot}%{_bindir}/
-install -m 755 extras/Projucer/Builds/LinuxMakefile/build/Projucer               %{buildroot}%{_bindir}/
-install -m 755 extras/UnitTestRunner/Builds/LinuxMakefile/build/UnitTestRunner   %{buildroot}%{_bindir}/
+%cmake_install
 
-install -m 755 -d %{buildroot}/%{_usrsrc}/JUCE/
-install -m 755 -d %{buildroot}/%{_usrsrc}/JUCE/examples/
-cp -ra examples/* %{buildroot}/%{_usrsrc}/JUCE/examples/
-install -m 755 -d %{buildroot}/%{_usrsrc}/JUCE/modules/
-cp -ra modules/*  %{buildroot}/%{_usrsrc}/JUCE/modules/
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/512x512/
+install -m 644 examples/Assets/juce_icon.png %{buildroot}/%{_datadir}/icons/hicolor/512x512/
 
-install -m 755 -d         %{buildroot}/%{_datadir}/JUCE/doc/
-cp -ra docs/doxygen/doc/* %{buildroot}/%{_datadir}/JUCE/doc/
+install -m 755 -d %{buildroot}/%{_mandir}/man1/
+install -m 644 %{SOURCE2} %{buildroot}/%{_mandir}/man1/
+
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/applications/
+
+install -m 755 %{__cmake_builddir}/extras/AudioPluginHost/AudioPluginHost_artefacts/AudioPluginHost %{buildroot}/%{_bindir}
+install -m 755 %{__cmake_builddir}/extras/NetworkGraphicsDemo/NetworkGraphicsDemo_artefacts/NetworkGraphicsDemo %{buildroot}/%{_bindir}
+install -m 755 %{__cmake_builddir}/extras/BinaryBuilder/BinaryBuilder_artefacts/BinaryBuilder %{buildroot}/%{_bindir}
+install -m 755 %{__cmake_builddir}/extras/Projucer/Projucer_artefacts/Projucer %{buildroot}/%{_bindir}
+install -m 755 %{__cmake_builddir}/extras/AudioPerformanceTest/AudioPerformanceTest_artefacts/AudioPerformanceTest %{buildroot}/%{_bindir}
+install -m 755 %{__cmake_builddir}/extras/UnitTestRunner/UnitTestRunner_artefacts/UnitTestRunner %{buildroot}/%{_bindir}
+
+install -m 755 -d %{buildroot}/%{_datadir}/JUCE-%{version}/doc/
+cp -ra docs/doxygen/doc/ %{buildroot}/%{_datadir}/JUCE-%{version}/doc/
+
+desktop-file-install --vendor '' \
+        --dir %{buildroot}%{_datadir}/applications \
+        %{buildroot}%{_datadir}/applications/*.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
 %doc README.md
 %license LICENSE.md 
 %{_bindir}/*
 %{_datadir}/*
-%{_usrsrc}/*
+%{_libdir}/cmake/*
+%{_includedir}/*
 
 %changelog
+* Tue Aug 16 2022 Yann Collette <ycollette.nospam@free.fr> - 7.0.2-7
+- use cmake to build juce
+
 * Mon Aug 15 2022 Yann Collette <ycollette.nospam@free.fr> - 7.0.2-6
 - update to 7.0.2-6
 
