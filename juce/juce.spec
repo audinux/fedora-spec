@@ -4,7 +4,7 @@
 
 Name:    JUCE
 Version: 7.0.2
-Release: 7%{?dist}
+Release: 8%{?dist}
 Summary: JUCE Framework
 URL:     https://github.com/juce-framework/JUCE
 License: GPLv2+
@@ -16,7 +16,6 @@ Distribution: Audinux
 Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: juce_Projucer.desktop
 Source2: juce_Projucer.1
-Patch0:  juce-0001-set-default-path.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -42,7 +41,7 @@ Code::Blocks, CLion and Linux Makefiles as well as containing a source code edit
 live-coding engine which can be used for rapid prototyping.
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -n %{name}-%{version}
 
 %build
 
@@ -92,6 +91,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_includedir}/*
 
 %changelog
+* Tue Aug 16 2022 Yann Collette <ycollette.nospam@free.fr> - 7.0.2-8
+- remove patch
+
 * Tue Aug 16 2022 Yann Collette <ycollette.nospam@free.fr> - 7.0.2-7
 - use cmake to build juce
 
