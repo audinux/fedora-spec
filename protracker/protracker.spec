@@ -4,7 +4,7 @@
 
 Summary: Chiptune tracker for making chiptune-like music on a modern computer.
 Name:    protracker2
-Version: 1.50
+Version: 1.51
 Release: 4%{?dist}
 License: BSD
 URL:     https://16-bits.org/pt.php
@@ -15,11 +15,10 @@ Distribution: Audinux
 Source0: https://github.com/8bitbubsy/pt2-clone/archive/v%{version}.tar.gz#/pt2-clone-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: make
 BuildRequires: cmake
 BuildRequires: alsa-lib-devel
-BuildRequires: desktop-file-utils
 BuildRequires: SDL2-devel
+BuildRequires: desktop-file-utils
 
 %description
 ProTracker2 is a chiptune tracker for making chiptune-like music on a modern computer.
@@ -31,8 +30,7 @@ Obsoletes: protracker
 
 %build
 
-%cmake -DCMAKE_BUILD_TYPE=RELEASE
-
+%cmake
 %cmake_build
 
 %install
@@ -142,6 +140,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Thu Aug 18 2022 Yann Collette <ycollette.nospam@free.fr> - 1.51.0-4
+- update to 1.51.0-4
+
 * Tue Jul 12 2022 Yann Collette <ycollette.nospam@free.fr> - 1.50.0-4
 - update to 1.50.0-4
 
