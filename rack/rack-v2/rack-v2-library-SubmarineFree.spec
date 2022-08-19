@@ -130,14 +130,11 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir SubmarineFree_plugin
 tar xvfz %{SOURCE1} --directory=SubmarineFree_plugin --strip-components=1 
 
-sed -i -e "s/-fno-gnu-unique/-fno-gnu-unique -Wno-error=format-security/g" plugin.mk
-
 cp -n %{SOURCE2} SubmarineFree_plugin/plugin.json
 
 %build
 
 cd SubmarineFree_plugin
-export CXX_FLAGS="-Wno-error=format-security $CXX_FLAGS"
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 

@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 886c0f07f76398ceb4e217b65767714fee91ea8f
-%global gittag0 1.0.0
+%global commit0 20360eaf8badf87bac61599d3ecae04cf4e55269
+%global gittag0 2.0.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-mmmodules
-Version: 1.0.0
+Version: 2.0.6
 Release: 1%{?dist}
 Summary: mmmodules plugin for Rack
 License: GPLv2+
-URL:     
+URL:     https://github.com/Myst-Mach/mmmodules/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,7 +27,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: /archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/Myst-Mach/mmmodules//archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: mmmodules_plugin.json
 
 BuildRequires: gcc gcc-c++
@@ -146,5 +146,5 @@ cp -r mmmodules_plugin/dist/mmmodules/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.6-1
 - initial specfile
