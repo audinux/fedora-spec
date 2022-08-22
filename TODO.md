@@ -62,7 +62,6 @@
 | EEL_VM              | https://github.com/james34602/EEL_VM |
 | AutoEq              | https://github.com/jaakkopasanen/AutoEq |
 | SynthLab            | https://github.com/mpue/Synthlab |
-| HexoSynth           | https://github.com/WeirdConstructor/HexoSynth |
 | AlgAudio            | https://github.com/rafalcieslak/AlgAudio |
 | psychosynth         | https://github.com/arximboldi/psychosynth |
 | tidal               | https://github.com/archlinux/svntogit-community/blob/packages/haskell-tidal/trunk/PKGBUILD |
