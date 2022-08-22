@@ -4,7 +4,7 @@
 
 Summary: Multimachine jam sessions over the internet
 Name:    jacktrip
-Version: 1.5.3
+Version: 1.6.1
 Release: 2%{?dist}
 License: STK
 URL:     https://ccrma.stanford.edu/software/jacktrip/
@@ -16,6 +16,9 @@ Source0: https://github.com/jacktrip/jacktrip/archive/v%{version}.tar.gz#/%{name
 
 BuildRequires: gcc gcc-c++
 BuildRequires: qt5-qtbase-devel
+BuildRequires: qt5-qtnetworkauth-devel
+BuildRequires: qt5-qtquickcontrols2-devel
+BuildRequires: qt5-qtsvg-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: rtaudio-devel
@@ -70,6 +73,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/org.jackt
 %{_mandir}/man1/*
 
 %changelog
+* Sat Aug 13 2022 Yann Collette <ycollette.nospam@free.fr> - 1.6.1-2
+- update to 1.6.1-2
+
 * Tue Mar 29 2022 Yann Collette <ycollette.nospam@free.fr> - 1.5.3-2
 - update to 1.5.3-2
 
