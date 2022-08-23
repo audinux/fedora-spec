@@ -1,0 +1,124 @@
+diff -ru surge.orig/libs/sst/sst-plugininfra/src/paths_linux.cpp surge/libs/sst/sst-plugininfra/src/paths_linux.cpp
+--- surge.orig/libs/sst/sst-plugininfra/src/paths_linux.cpp	2022-08-20 00:40:55.000000000 +0200
++++ surge/libs/sst/sst-plugininfra/src/paths_linux.cpp	2022-08-23 02:27:08.013029569 +0200
+@@ -7,7 +7,9 @@
+ #include "filesystem/import.h"
+ #include "sst/plugininfra/paths.h"
+ #include <stdexcept>
++#include <fstream>
+ #include <stdlib.h>
++#include <string.h>
+ #include <dlfcn.h>
+ 
+ namespace sst
+@@ -36,6 +38,97 @@
+ }
+ 
+ /*
++ * Extract a custom user path defined in the file `user-dirs.dirs`.
++ * The reference parser is found in Glib as `load_user_special_dirs`
++ * (cf. `glib/gutils.c`).
++ */
++fs::path lookupXdgUserPath(const char *xdgDirId)
++{
++    fs::path home = homePath();
++    fs::path userDirsPath;
++
++    if (const char *xdgConfigPath = getenv("XDG_CONFIG_HOME"))
++    {
++        userDirsPath = fs::path{xdgConfigPath} / "user-dirs.dirs";
++    }
++    else
++    {
++        userDirsPath = home  / ".config" / "user-dirs.dirs";
++    }
++
++    fs::ifstream stream(userDirsPath);
++
++    if (stream)
++    {
++        std::string acc;
++        acc.reserve(256);
++
++        constexpr auto eof = std::char_traits<char>::eof();
++
++        for (auto c = stream.get(); c != eof; c = stream.get())
++        {
++            // Skip leading space
++            for (; c == ' ' || c == '\t'; c = stream.get());
++
++            // Extract the variable name
++            acc.clear();
++            for (; c != eof && c != '=' && c != ' ' && c != '\t'; c = stream.get())
++                acc.push_back(static_cast<unsigned char>(c));
++
++            // Check it's our desired variable, otherwise discard
++            if (acc != xdgDirId)
++            {
++                for (; c != eof && c != '\n'; c = stream.get());
++                continue;
++            }
++
++            // Skip space preceding '='
++            for (; c == ' ' || c == '\t'; c = stream.get());
++
++            // Expect '=' here, otherwise discard
++            if (c != '=')
++            {
++                for (; c != eof && c != '\n'; c = stream.get());
++                continue;
++            }
++            c = stream.get();
++
++            // Skip space following '='
++            for (; c == ' ' || c == '\t'; c = stream.get());
++
++            // Expect '"'
++            if (c != '"')
++            {
++                for (; c != eof && c != '\n'; c = stream.get());
++                continue;
++            }
++            c = stream.get();
++
++            // Extract the value
++            acc.clear();
++            for (; c != eof && c != '"' && c != '\n'; c = stream.get())
++            {
++                acc.push_back(static_cast<unsigned char>(c));
++                if (acc.size() == 5 && !memcmp("$HOME", acc.data(), 5))
++                    acc.assign(home.native());
++            }
++
++            // Expect '"'
++            if (c != '"')
++            {
++                for (; c != eof && c != '\n'; c = stream.get());
++                continue;
++            }
++
++            // Found
++            return fs::path{acc};
++        }
++    }
++
++    return fs::path{};
++}
++
++/*
+  * The waterfall we use here is as follows
+  *
+  * 1. Is XDG_DOCUMENTS_DIR set - if so use that with productName
+@@ -44,9 +137,10 @@
+  */
+ fs::path bestDocumentsFolderPathFor(const std::string &productName)
+ {
+-    if (auto xdgdd = getenv("XDG_DOCUMENTS_DIR"))
++    fs::path xdgdd = lookupXdgUserPath("XDG_DOCUMENTS_DIR");
++    if (!xdgdd.empty())
+     {
+-        auto xdgpath = fs::path{xdgdd} / productName;
++        auto xdgpath = xdgdd / productName;
+         return xdgpath;
+     }
+ 

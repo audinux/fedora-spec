@@ -19,6 +19,7 @@ Distribution: Audinux
 
 Source0: surge.tar.gz
 Source1: source-surge.sh
+Patch0: surge-xt-1.1.0-xdg-user-dirs.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -52,7 +53,7 @@ Requires: %{name}
 VST3 version of %{name}
 
 %prep
-%autosetup -n surge
+%autosetup -p1 -n surge
 
 sed -i -e "/Werror=/d" CMakeLists.txt
 sed -i -e "/:-Werror/d" CMakeLists.txt
