@@ -5,7 +5,7 @@
 # Category: Audio, Effect, Synthesizer
 
 Name:    surge-xt
-Version: 1.1.0
+Version: 1.1.1
 Release: 1%{?dist}
 Summary: A VST3 Synthesizer and Effects, including Airwindows
 License: GPLv2+
@@ -15,11 +15,10 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./source-surge.sh release_xt_1.1.0
+# $ ./source-surge.sh release_xt_1.1.1
 
 Source0: surge.tar.gz
 Source1: source-surge.sh
-Patch0: surge-xt-1.1.0-xdg-user-dirs.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -52,6 +51,14 @@ Requires: %{name}
 %description -n vst3-%{name}
 VST3 version of %{name}
 
+%package -n clap-%{name}
+Summary:  CLAP version of %{name}
+License:  GPLv2+
+Requires: %{name}
+
+%description -n clap-%{name}
+CLAP version of %{name}
+
 %prep
 %autosetup -p1 -n surge
 
@@ -82,7 +89,13 @@ sed -i -e "s/Surge_XT Effects/Surge_XT_Effects/g" src/surge-fx/CMakeLists.txt
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
+%files -n clap-%{name}
+%{_libdir}/clap/*
+
 %changelog
+* Fri Aug 26 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
+- update to 1.1.1-1
+
 * Thu Aug 04 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
 - update to 1.1.0-1
 
