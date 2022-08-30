@@ -26,7 +26,7 @@
 # GUIToolkit: Qt5
 
 Name:    sonic-pi
-Version: 4.0.3
+Version: 4.1.0
 Release: 11%{?dist}
 Summary: A musical programming environment 
 License: MIT
@@ -247,6 +247,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}
 
 %changelog
+* Tue Aug 30 2022 Yann Collette <ycollette.nospam@free.fr> 4.1.0-11
+- update to 4.1.0-11
+
 * Sun Jul 17 2022 Yann Collette <ycollette.nospam@free.fr> 4.0.3-11
 - update to 4.0.3-11
 
