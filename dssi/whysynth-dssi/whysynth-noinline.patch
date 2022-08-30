@@ -1,0 +1,19 @@
+diff -rupN whysynth-20120903.org/src/dssp_synth.c whysynth-20120903/src/dssp_synth.c
+--- whysynth-20120903.org/src/dssp_synth.c	2010-06-30 14:21:42.000000000 -0400
++++ whysynth-20120903/src/dssp_synth.c	2016-02-14 16:22:55.711040255 -0500
+@@ -79,13 +79,13 @@ dssp_voicelist_mutex_trylock(y_synth_t *
+     return 0;
+ }
+ 
+-inline int
++int
+ dssp_voicelist_mutex_lock(y_synth_t *synth)
+ {
+     return pthread_mutex_lock(&synth->voicelist_mutex);
+ }
+ 
+-inline int
++int
+ dssp_voicelist_mutex_unlock(y_synth_t *synth)
+ {
+     return pthread_mutex_unlock(&synth->voicelist_mutex);

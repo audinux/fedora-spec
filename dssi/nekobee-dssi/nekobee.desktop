@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=nekobee
+GenericName=Software Synthesizer
+Comment=Acid sounds synthesizer
+Icon=nekobee
+Type=Application
+Exec=/usr/bin/nekobee
+Terminal=false
+Categories=Audio;AudioVideo;Midi;X-Synthesis;X-Jack;

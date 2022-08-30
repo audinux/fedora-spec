@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=WhySynth
+GenericName=Software synthesizer
+Comment=Real-time software synthesizer
+Icon=whysynth
+Type=Application
+Exec=/usr/bin/whysynth
+Terminal=false
+Categories=Audio;AudioVideo;Midi;X-Synthesis;X-Jack;

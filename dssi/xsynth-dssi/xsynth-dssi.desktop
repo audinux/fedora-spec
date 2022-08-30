@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Xsynth-DSSI
+GenericName=Software Synthesizer
+Comment=A classic-analog (VCOs-VCF-VCA) style software synthesizer
+Icon=xsynth-dssi
+Type=Application
+Exec=/usr/bin/xsynth-dssi
+Terminal=false
+Categories=Audio;AudioVideo;Midi;X-Synthesis;X-Jack;

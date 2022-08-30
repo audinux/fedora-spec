@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Hexter DSSI
+GenericName=Software Synthesizer
+Comment=Real-time software synthesizer DX7 emulator
+Icon=hexter
+Type=Application
+Exec=/usr/bin/hexter
+Terminal=false
+Categories=Audio;AudioVideo;Midi;X-Synthesis;X-Jack;X-Fedora;
+X-Desktop-File-Install-Version=0.15
+

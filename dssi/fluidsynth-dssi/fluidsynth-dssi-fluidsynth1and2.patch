@@ -1,0 +1,46 @@
+diff --git a/src/fluidsynth-dssi.c b/src/fluidsynth-dssi.c
+index 99436c3..428f5bd 100644
+--- a/src/fluidsynth-dssi.c
++++ b/src/fluidsynth-dssi.c
+@@ -167,7 +167,11 @@ fsd_get_soundfont(const char *path)
+     fsd_sfont_t *sfont;
+     int palloc;
+     fluid_sfont_t *fluid_sfont;
++#ifdef FLUIDSYNTH_VERSION_MAJOR >= 2
++    fluid_preset_t *preset;
++#else
+     fluid_preset_t preset;
++#endif
+ 
+     /* soundfont already loaded? */
+     sfont = fsd_find_loaded_soundfont(path);
+@@ -206,8 +210,13 @@ fsd_get_soundfont(const char *path)
+         return NULL;
+     }
+     fluid_sfont = fluid_synth_get_sfont_by_id(fsd_synth.fluid_synth, sfont->sfont_id);
++#ifdef FLUIDSYNTH_VERSION_MAJOR >= 2
++    fluid_sfont_iteration_start(fluid_sfont);
++    while ((preset = fluid_sfont_iteration_next(fluid_sfont)) != NULL) {
++#else
+     fluid_sfont->iteration_start(fluid_sfont);
+     while (fluid_sfont->iteration_next(fluid_sfont, &preset)) {
++#endif
+         if (sfont->preset_count == palloc) {
+             palloc *= 2;
+             sfont->presets = (DSSI_Program_Descriptor *)realloc(sfont->presets,
+@@ -219,9 +228,15 @@ fsd_get_soundfont(const char *path)
+                 return NULL;
+             }
+         }
++#ifdef FLUIDSYNTH_VERSION_MAJOR >= 2
++        sfont->presets[sfont->preset_count].Bank = fluid_preset_get_banknum(preset);
++        sfont->presets[sfont->preset_count].Program = fluid_preset_get_num(preset);
++        sfont->presets[sfont->preset_count].Name = fluid_preset_get_name(preset);
++#else
+         sfont->presets[sfont->preset_count].Bank = preset.get_banknum(&preset);
+         sfont->presets[sfont->preset_count].Program = preset.get_num(&preset);
+         sfont->presets[sfont->preset_count].Name = preset.get_name(&preset);
++#endif
+         sfont->preset_count++;
+     }
+ 

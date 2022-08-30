@@ -1,0 +1,60 @@
+diff -rupN dssi-vst-0.8.old/Makefile dssi-vst-0.8/Makefile
+--- dssi-vst-0.8.old/Makefile	2008-12-12 07:34:31.000000000 -0500
++++ dssi-vst-0.8/Makefile	2009-04-30 04:49:04.000000000 -0400
+@@ -43,7 +43,7 @@ install:	all
+ 		mkdir -p $(BINDIR)
+ 		install dssi-vst.so $(DSSIDIR)
+ 		install dssi-vst.so $(LADSPADIR)
+-		install dssi-vst-server.exe.so dssi-vst-server dssi-vst-scanner.exe.so dssi-vst-scanner dssi-vst_gui $(DSSIDIR)/dssi-vst
++		install dssi-vst-server.exe.so dssi-vst-server.exe dssi-vst-scanner.exe.so dssi-vst-scanner.exe dssi-vst_gui $(DSSIDIR)/dssi-vst
+ 		install vsthost $(BINDIR)
+ 
+ clean:
+diff -rupN dssi-vst-0.8.old/remotevstclient.cpp dssi-vst-0.8/remotevstclient.cpp
+--- dssi-vst-0.8.old/remotevstclient.cpp	2008-12-12 07:34:31.000000000 -0500
++++ dssi-vst-0.8/remotevstclient.cpp	2009-06-02 22:37:21.000000000 -0400
+@@ -31,7 +31,7 @@ RemoteVSTClient::RemoteVSTClient(std::st
+ 
+     const char *argStr = arg.c_str();
+ 
+-    // We want to run the dssi-vst-server script, which runs wine
++    // We want to run the dssi-vst-server.exe script, which runs wine
+     // dssi-vst-server.exe.so.  We expect to find this script in the
+     // same subdirectory of a directory in the DSSI_PATH as a host
+     // would look for the GUI for this plugin: one called dssi-vst.
+@@ -53,7 +53,7 @@ RemoteVSTClient::RemoteVSTClient(std::st
+ 	closedir(directory);
+ 
+ 	struct stat st;
+-	std::string fileName = subDir + "/dssi-vst-server";
++	std::string fileName = subDir + "/dssi-vst-server.exe";
+ 
+ 	if (stat(fileName.c_str(), &st)) {
+ 	    continue;
+@@ -293,7 +293,7 @@ RemoteVSTClient::queryPlugins(std::vecto
+ 	throw((std::string)"Failed to open FIFO");
+     }
+ 
+-    // We want to run the dssi-vst-scanner script, which runs wine
++    // We want to run the dssi-vst-scanner.exe script, which runs wine
+     // dssi-vst-scanner.exe.so.  We expect to find this script in the
+     // same subdirectory of a directory in the DSSI_PATH as a host
+     // would look for the GUI for this plugin: one called dssi-vst.
+@@ -316,7 +316,7 @@ RemoteVSTClient::queryPlugins(std::vecto
+ 	closedir(directory);
+ 
+ 	struct stat st;
+-	std::string fileName = subDir + "/dssi-vst-scanner";
++	std::string fileName = subDir + "/dssi-vst-scanner.exe";
+ 
+ 	if (stat(fileName.c_str(), &st)) {
+ 	    continue;
+@@ -351,7 +351,7 @@ RemoteVSTClient::queryPlugins(std::vecto
+ 
+     if (!found) {
+ 	unlink(fifoFile);
+-	throw((std::string)"Failed to find dssi-vst-scanner executable");
++	throw((std::string)"Failed to find dssi-vst-scanner.exe executable");
+     }
+ 
+     struct pollfd pfd;
