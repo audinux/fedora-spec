@@ -1,0 +1,68 @@
+rack-v2-library-23volts.spec		=> FAIL (v1)
+rack-v2-library-aP-Modules.spec		=> FAIL (v1)
+rack-v2-library-ArableInstruments.spec	=> manual package
+rack-v2-library-AriaSalvatrice.spec	=> FAIL (v1)
+rack-v2-library-arjo_modules.spec	=> FAIL (v1)
+rack-v2-library-AuntyLangtonsFree.spec	=> FAIL (v1)
+rack-v2-library-BaconMusic.spec		=> manual package (missing header) ?
+rack-v2-library-BeckstromResearch.spec	=> FAIL (v1)
+rack-v2-library-BOKONTEPByteBeatMachine.spec	=> FAIL (v1)
+rack-v2-library-CaptainsSounds.spec		=> manual package (mussing header) ?
+rack-v2-library-CharredDesert.spec		=> manual package
+rack-v2-library-Chiptuner.spec			=> error marked 'override', but does not override
+rack-v2-library-ChowDSP.spec			=> manual package (missing header) ?
+rack-v2-library-com-soundchasing-stochasm.spec	=> FAIL (v1)
+rack-v2-library-DelexanderVol1.spec		=> FAIL (v1)
+rack-v2-library-DivergentWaves.spec		=> FAIL URL empty
+rack-v2-library-DrumKit.spec			=> manual package
+rack-v2-library-EH_modules.spec			=> FAIL Wrong URL
+rack-v2-library-ErraticInstruments.spec		=> manual package
+rack-v2-library-forsitan.spec			=> ERROR Windows.h header ...
+rack-v2-library-FrankBuss.spec			=> FAIL Wrong URL
+rack-v2-library-FreeSurface.spec		=> FAIL try to download samplerate
+rack-v2-library-Gratrix.spec			=> FAIL (v1)
+rack-v2-library-HetrickCV.spec			=> manual package (missing header) ?
+rack-v2-library-ILovePerlin.spec		=> ERROR Windows.h header ...
+rack-v2-library-JE.spec				=> manual package
+rack-v2-library-Koralfx-Modules.spec		=> manual package (missing header) ?
+rack-v2-library-luckyxxl.spec			=> FAIL (v1)
+rack-v2-library-modular80.spec			=> manual package
+rack-v2-library-ModularFungi.spec		=> FAIL (v1)
+rack-v2-library-Mog.spec			=> FAIL (v1)
+rack-v2-library-MpSeries.spec			=> FAIL (v1)
+rack-v2-library-mscHack.spec			=> FAIL (v1)
+rack-v2-library-mtsch-plugins.spec		=> FAIL (v1)
+rack-v2-library-MyLittleTools.spec		=> ERROR Windows.h header ...
+rack-v2-library-NauModular.spec			=> FAIL (v1)
+rack-v2-library-NocturnalEncoder.spec		=> FAIL (v1)
+rack-v2-library-ParableInstruments.spec		=> manual package
+rack-v2-library-PG-Instruments.spec		=> FAIL (v1)
+rack-v2-library-PvC.spec			=> FAIL (v1)
+rack-v2-library-RacketScience.spec		=> FAIL (v1)
+rack-v2-library-RebelTech.spec			=> FAIL (v1)
+rack-v2-library-ReTunesFree.spec		=> FAIL (v1)
+rack-v2-library-RJModules.spec			=> FAIL (v1)
+rack-v2-library-RODENTMODULES.spec		=> FAIL (v1)
+rack-v2-library-SerialRacker.spec		=> FAIL (v1)
+rack-v2-library-SkJack.spec			=> FAIL must use another spec ...
+rack-v2-library-Southpole-parasites.spec	=> manual package (missing header) ?
+rack-v2-library-Southpole.spec			=> manual package
+rack-v2-library-Stoermelder-P1.spec		=> manual package (missing header) ?
+rack-v2-library-StudioSixPlusOne.spec		=> manual package (missing header) ?
+rack-v2-library-SubmarineFree.spec		=> Error: Werror=format-security
+rack-v2-library-SubmarineUtility.spec		=> ERROR Windows.h header ...
+rack-v2-library-SunsetSignals.spec		=> FAIL: Wrong URL
+rack-v2-library-SurgeRack.spec			=> manual package
+rack-v2-library-SynthKit.spec			=> manual package
+rack-v2-library-TheXOR.spec			=> FAIL: Wrong URL
+rack-v2-library-trowaSoft.spec			=> ERROR Windows.h header ...
+rack-v2-library-UnforgettableLuncheon.spec	=> FAIL (v1)
+rack-v2-library-VO.spec				=> FAIL (v1)
+rack-v2-library-WrongPeople.spec		=> FAIL CFLAG recurse pb
+
+rack-v2_01_fundamental.spec
+rack-v2_02_VCV-recorder.spec
+rack-v2_03_VCV-Prototypes.spec
+rack-v2_04_AudibleInstruments.spec
+rack-v2_05_skjack.spec
+rack-v2.spec
