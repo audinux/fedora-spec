@@ -2,10 +2,8 @@
 # Type: Plugin, LV2
 # Category: Audio, Effect
 
-%global debug_package %{nil}
-
 Name:    xuidesigner
-Version: 0.5
+Version: 0.6
 Release: 1%{?dist}
 Summary: X11 LV2 GUI design tool for libxputty
 License: GPLv2+
@@ -15,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the source archive: ./xuidesigner-source.sh <tag>
-# ./xuidesigner-source.sh v0.5
+# ./xuidesigner-source.sh v0.6
 
 Source0: XUiDesigner.tar.gz
 Source1: xuidesigner-source.sh
@@ -35,6 +33,10 @@ X11 LV2 GUI design tool for libxputty
 %autosetup -n XUiDesigner
 
 sed -i -e "s|#! /usr/bin/python|#! /usr/bin/python3|g" tools/dsp2cc
+
+# Don't strip
+sed -i -e "s| -s | |g" Makefile
+sed -i -e "s| -s | |g" XUiDesigner/Makefile
 
 %build
 
@@ -70,6 +72,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/XUiDesigner.desktop
 %{_libdir}/*
 
 %changelog
+* Sun Sep 04 2022 Yann Collette <ycollette.nospam@free.fr> - 0.6-1
+- update to 0.6-1
+
 * Mon Aug 08 2022 Yann Collette <ycollette.nospam@free.fr> - 0.5-1
 - update to 0.5-1
 
