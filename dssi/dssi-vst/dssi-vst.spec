@@ -1,12 +1,14 @@
-Summary:       VST plug-ins host
-Name:          dssi-vst
-Version:       0.9.2
-Release:       26%{?dist}
-License:       GPLv2
-URL:           http://breakfastquay.com/dssi-vst/
-Source0:       http://code.breakfastquay.com/attachments/download/10/%{name}-%{version}.tar.bz2
+Summary: VST plug-ins host
+Name: dssi-vst
+Version: 0.9.2
+Release: 26%{?dist}
+License: GPLv2
+URL: http://breakfastquay.com/dssi-vst/
+
+Source0: http://code.breakfastquay.com/attachments/download/10/%{name}-%{version}.tar.bz2
 # wine-g++ on wine-devel-1.1.18 (Fedora 11) creates executables with .exe suffix:
 Patch1:        %{name}-wine1118.patch
+
 ExclusiveArch: %{ix86} x86_64
 
 BuildRequires: dssi-devel
@@ -20,11 +22,11 @@ BuildRequires: wine-devel
 %endif
 BuildRequires: make
 
-Requires:      dssi
-Requires:      ladspa
+Requires: dssi
+Requires: ladspa
 
 # Both packages depend on each other
-Requires:      %{name}-wine = %{version}-%{release}
+Requires: %{name}-wine = %{version}-%{release}
 
 %description
 dssi-vst is an adapter that allows users of Linux audio software to take VST
@@ -37,8 +39,8 @@ This package contains the DSSI host for the plug-ins.
 
 %ifarch %{ix86}
 %package wine
-Summary:       VST plug-ins wrapper
-Requires:      %{name} = %{version}-%{release}
+Summary: VST plug-ins wrapper
+Requires: %{name} = %{version}-%{release}
 
 %description wine
 dssi-vst is an adapter that allows users of Linux audio software to take VST
@@ -51,11 +53,7 @@ This package contains the plug-in wrapper that works through wine.
 %endif
 
 %prep
-%setup -q
-%if 0%{fedora} >= 11
-%patch1 -p1 -b .wine1118
-%endif
-
+%autosetup
 
 %build
 # This package calls binutils components directly and would need to pass
