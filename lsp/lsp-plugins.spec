@@ -6,7 +6,7 @@
 
 Name:    lsp-plugins
 Summary: Linux Studio Plugins collection
-Version: 1.2.2
+Version: 1.2.3
 Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/sadko4u/lsp-plugins
@@ -14,7 +14,7 @@ URL:     https://github.com/sadko4u/lsp-plugins
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./lsp-sources.sh 1.2.2
+# ./lsp-sources.sh 1.2.3
 
 Source0: lsp-plugins.tar.gz
 Source1: lsp-sources.sh
@@ -59,7 +59,6 @@ LV2 version of %{name} plugins
 
 %build
 %set_build_flags
-export CXXFLAGS="-std=c++98 $CXXFLAGS"
 
 %make_build PREFIX=%{_usr} LIBDIR=%{_libdir} config
 %make_build PREFIX=%{_usr} LIBDIR=%{_libdir} VERBOSE=1
@@ -86,6 +85,7 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %{_libdir}/*.so
 %{_libdir}/lsp-plugins/*.so
 %exclude %{_libdir}/*.a
+%exclude %{_includedir}/lsp-plug.in/r3d/glx/*
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/* 
@@ -96,8 +96,10 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %files -n vst-%{name}
 %{_libdir}/vst/* 
 
-
 %changelog
+* Wed Sep 07 2022 Yann Collette <ycollette dot nospam at free.fr> 1.2.3-1
+- update to 1.2.3-1
+
 * Thu Jun 23 2022 Yann Collette <ycollette dot nospam at free.fr> 1.2.2-1
 - update to 1.2.2-1
 
