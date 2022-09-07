@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 d90eed32afe6745454ef6ac6e391e0d5dc90ec4b
-%global gittag0 2.0.5
+%global gittag0 2.0.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-AS
-Version: 2.0.5
+Version: 2.0.6
 Release: 1%{?dist}
 Summary: AS plugin for Rack
 License: GPLv2+
@@ -146,5 +146,5 @@ cp -r AS_plugin/dist/AS/* %{buildroot}%{_libexecdir}/Rack2/plugins/AS/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.6-1
 - initial specfile

@@ -58,7 +58,7 @@ BuildRequires: jq
 
 %description
 StochasticTelegraph plugin for Rack.
-Varying linear function generator
+Varying linear function generator. Makes sequences that change in small (or large) ways. A line defined by X/Y points, each doing a random walk.
 
 %prep
 %autosetup -n Rack
