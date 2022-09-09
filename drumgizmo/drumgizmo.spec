@@ -4,7 +4,7 @@
 
 Summary: Software Synthesizer
 Name:    drumgizmo
-Version: 0.9.19
+Version: 0.9.20
 Release: 2%{?dist}
 License: GPL
 URL:     https://www.drumgizmo.org/wiki/doku.php
@@ -47,7 +47,7 @@ It is comparable to that of mixing a real drumkit that has been recorded with a 
 
 %set_build_flags
 
-export CXXFLAGS="-std=c++11 -include cstdint $CXXFLAGS"
+#export CXXFLAGS="-std=c++11 -include cstdint $CXXFLAGS"
 
 %configure --enable-lv2 --libdir=%{_libdir} 
 # --disable-cli --with-lv2dir=
@@ -68,6 +68,9 @@ chrpath --delete $RPM_BUILD_ROOT%{_bindir}/drumgizmo
 %{_datadir}/man/*
 
 %changelog
+* Fri Sep 09 2022 Yann Collette <ycollette dot nospam at free.fr> 0.9.20-2
+- update to 0.9.20-2
+
 * Sun Nov 22 2020 Yann Collette <ycollette dot nospam at free.fr> 0.9.19-2
 - update to 0.9.19-2
 
