@@ -80,6 +80,7 @@
 | organ               | https://github.com/figbug/organ |
 | stepseq.lv2         | https://github.com/x42/stepseq.lv2 |
 | anklang             | https://github.com/tim-janik/anklang |
+| Sound2Light         ||https://github.com/ETCLabs/Sound2Light |
 
 ## WIP
 
