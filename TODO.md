@@ -79,6 +79,7 @@
 | organ               | https://github.com/figbug/organ |
 | stepseq.lv2         | https://github.com/x42/stepseq.lv2 |
 | anklang             | https://github.com/tim-janik/anklang |
+| Dexed               | https://github.com/asb2m10/dexed |
 
 ## WIP
 
