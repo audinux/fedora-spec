@@ -368,3 +368,21 @@ resources -> try to find other IR (https://github.com/jpcima/HybridReverb2-impul
 ryukau -> update to last master
 
 Check https://github.com/Chowdhury-DSP
+
+## Kernel
+
+Add support for aarch64 built.
+Fix these warning:
+Duplicate build-ids /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/lib/modules/5.15.70-rt50.fc35.x86_64/vmlinuz and
+                    /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/boot/vmlinuz-5.15.70-rt50.fc35.x86_64
+absolute symlink: /lib/modules/5.15.70-rt50.fc35.x86_64/build -> /usr/src/kernels/5.15.70-rt50.fc35.x86_64
+Missing build-id in /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/realmode/rm/realmode.elf
+Missing build-id in /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/purgatory/purgatory.chk
+Missing build-id in /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/boot/setup.elf
+
+Duplicate build-ids /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/entry/vdso/vdso64.so and
+                    /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/entry/vdso/vdso64.so.dbg
+Duplicate build-ids /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/entry/vdso/vdso32.so.dbg and
+                    /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/entry/vdso/vdso32.so
+Duplicate build-ids /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/tools/objtool/fixdep and
+                    /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/tools/bpf/resolve_btfids/fixdep
