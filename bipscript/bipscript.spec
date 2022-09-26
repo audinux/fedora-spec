@@ -57,7 +57,10 @@ mkdir apidocs && tar xvfz %{SOURCE2} -C apidocs --strip-components 1
 
 %build
 
-export CXXFLAGS="$CXXFLAGS -include map"
+%set_build_flags
+export CFLAGS="$CFLAGS -fPIC"
+export CXXFLAGS="$CXXFLAGS -include map -fPIC"
+
 %cmake
 %cmake_build
 
