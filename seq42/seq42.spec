@@ -1,5 +1,5 @@
 Name:    seq42
-Version: 2.1.1
+Version: 2.1.2
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -50,6 +50,9 @@ autoreconf -i
 %{_datadir}/*
 
 %changelog
+* Mon Sep 26 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-1
+- udate to 2.1.2-1
+
 * Tue Apr 19 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
 - udate to 2.1.1-1
 
