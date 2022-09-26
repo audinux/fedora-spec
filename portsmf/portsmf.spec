@@ -1,7 +1,7 @@
 Summary: Port Standard MIDI File - portable library for reading/writing Standard MIDI Files
 Name: portsmf
 Version: 0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: MIT-like
 URL: http://sourceforge.net/p/portmedia/wiki/portsmf/
 
@@ -54,6 +54,8 @@ chmod a+x configure
 
 %make_install
 
+rm -f %{buildroot}/%{_libdir}/libportSMF.la
+
 %files
 %doc README.txt changelog.txt
 %license license.txt
@@ -63,13 +65,15 @@ chmod a+x configure
 
 %files devel
 %{_libdir}/libportSMF.so
-%{_libdir}/libportSMF.la
 %{_includedir}/portSMF
 
 %files static
 %{_libdir}/libportSMF.a
 
 %changelog
+* Mon Sep 26 2022 Yann Collette <ycollette.nospam@free.fr> - 0.1-2
+- Fix for Fedora 37
+
 * Fri Apr 16 2021 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
 - initial package for Fedora
 
