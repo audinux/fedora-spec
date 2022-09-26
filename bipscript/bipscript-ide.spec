@@ -3,7 +3,7 @@
 # Category: Audio, Programming
 
 Name:    bipscript-ide
-Version: 0.13
+Version: 0.17
 Release: 1%{?dist}
 Summary: An IDEA for bipscript
 URL:     https://gitlab.domainepublic.net/bipscript/ide/
@@ -20,8 +20,10 @@ BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-qtsvg-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: desktop-file-utils
 BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: liblo-devel
+BuildRequires: libatomic
+BuildRequires: desktop-file-utils
 
 Requires: bipscript
 
@@ -79,6 +81,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/bipscript-ide.desktop
 %{_datadir}/icons/*
 
 %changelog
+* Mon Sep 26 2022 Yann Collette <ycollette.nospam@free.fr> - 0.17-1
+- update to 0.17-1
+
 * Sat Jul 17 2021 Yann Collette <ycollette.nospam@free.fr> - 0.13-1
 - update to 0.13-1
 

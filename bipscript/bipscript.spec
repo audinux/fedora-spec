@@ -3,7 +3,7 @@
 # Category: Audio, Programming
 
 Name:    bipscript
-Version: 0.16
+Version: 0.17
 Release: 1%{?dist}
 Summary: Audio language
 URL:     https://www.bipscript.org/
@@ -18,6 +18,7 @@ Source1: https://gitlab.domainepublic.net/bipscript/examples/-/archive/v%{versio
 Source2: https://gitlab.domainepublic.net/bipscript/apidocs/-/archive/v%{version}/apidocs-v%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: lilv-devel
 BuildRequires: lv2-devel
 BuildRequires: fftw-devel
@@ -26,7 +27,8 @@ BuildRequires: portsmf-devel
 BuildRequires: libsndfile-devel
 BuildRequires: boost-devel
 BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: cmake
+BuildRequires: liblo-devel
+BuildRequires: libatomic
 
 %description
 Bipscript is a scripting language for creating music.
@@ -55,6 +57,7 @@ mkdir apidocs && tar xvfz %{SOURCE2} -C apidocs --strip-components 1
 
 %build
 
+export CXXFLAGS="$CXXFLAGS -include map"
 %cmake
 %cmake_build
 
