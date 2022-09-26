@@ -5,7 +5,7 @@
 
 Summary: Guitar Amplifier emulator
 Name:    rakarrack-plus
-Version: 1.2.2
+Version: 1.2.3
 Release: 2%{?dist}
 License: GPL
 URL:     https://github.com/Stazed/rakarrack-plus
@@ -101,6 +101,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/rakarrack-plus.deskto
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Sep 26 2022 Yann Collette <ycollette dot nospam at free.fr> 1.2.3-2
+- update to 1.2.3-2 
+
 * Sun Jun 19 2022 Yann Collette <ycollette dot nospam at free.fr> 1.2.2-2
 - update to 1.2.2-2 
 
