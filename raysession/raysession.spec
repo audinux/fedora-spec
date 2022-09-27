@@ -5,7 +5,7 @@
 %global __python %{__python3}
 
 Name:    raysession
-Version: 0.12.2
+Version: 0.13.0
 Release: 2%{?dist}
 Summary: A JACK session manager
 
@@ -15,7 +15,8 @@ URL:     https://github.com/Houston4444/RaySession
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/Houston4444/RaySession/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: RaySession.tar.gz
+Source1: source-raysession.sh
 
 BuildArch: noarch
 
@@ -41,7 +42,7 @@ As Non Session Manager, the principle is to load together audio programs, then
 be able to save or close all documents together.
 
 %prep
-%autosetup -n RaySession-%{version}
+%autosetup -n RaySession
 
 # Fix desktop categories
 sed -i -e "s/AudioVideo;//g" data/share/applications/raysession.desktop
@@ -108,6 +109,9 @@ desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-network.desktop
 %{_sysconfdir}/xdg/raysession/client_templates/*
 
 %changelog
+* Tue Sep 27 2022 Yann Collette <ycollette.nospam@free.fr> - 0.13.0-2
+- update to 0.13.0-2
+
 * Sat Jan 15 2022 Yann Collette <ycollette.nospam@free.fr> - 0.12.2-2
 - update to 0.12.2-2
 
