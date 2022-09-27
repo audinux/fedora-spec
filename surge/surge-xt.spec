@@ -6,7 +6,7 @@
 
 Name:    surge-xt
 Version: 1.1.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A VST3 Synthesizer and Effects, including Airwindows
 License: GPLv2+
 URL:     https://github.com/surge-synthesizer/surge
@@ -19,6 +19,8 @@ Distribution: Audinux
 
 Source0: surge.tar.gz
 Source1: source-surge.sh
+
+Patch0: surge-pr6608.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -93,6 +95,9 @@ sed -i -e "s/Surge_XT Effects/Surge_XT_Effects/g" src/surge-fx/CMakeLists.txt
 %{_libdir}/clap/*
 
 %changelog
+* Fri Sep 23 2022 Jean Pierre Cimalando <jp-dev@gmx.com> - 1.1.1-2
+- add patch to fix an out-of-bounds array access
+
 * Fri Aug 26 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
 - update to 1.1.1-1
 
