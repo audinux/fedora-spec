@@ -19,7 +19,6 @@ Distribution: Audinux
 
 Source0: surge.tar.gz
 Source1: source-surge.sh
-
 Patch0: surge-pr6608.patch
 
 BuildRequires: gcc gcc-c++
