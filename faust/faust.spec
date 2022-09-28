@@ -220,6 +220,7 @@ rm -f %{buildroot}%{_datadir}/faust/webaudio/osc.wasm
 rm -rf %{buildroot}%{_datadir}/faust/max-msp/sndfile
 
 rm -f %{buildroot}/%{_libdir}/ios-libsndfile.a
+rm -f %{buildroot}/usr/lib/ios-libsndfile.a
 
 rm -f %{buildroot}%{_datadir}/faust/android/app/lib/libsndfile/lib/*/libsndfile.so
 
@@ -242,7 +243,12 @@ mv -f %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
 %files osclib-devel
 %{_includedir}/*
 %{_libdir}/*.so
+%ifarch x86_64 amd64
 %{_libdir}/*.a
+%endif
+%ifarch aarch64
+%{_usr}/lib/*.a
+%endif
 
 %files doc
 %doc documentation/* 
