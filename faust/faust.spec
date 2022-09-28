@@ -4,7 +4,7 @@
 
 Name:	 faust
 Version: 2.41.1
-Release: 24%{?dist}
+Release: 35%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
 # The rest is GPLv2+
@@ -208,20 +208,23 @@ cp doc/library.pdf %{buildroot}/%{_datadir}/faust/doc/
 mv README.md README-stdlib.md
 
 # remove some wasm files (not yet correctly managed by rpm):
-rm %{buildroot}%{_datadir}/faust/webaudio/audioinput.wasm
-rm %{buildroot}%{_datadir}/faust/webaudio/libfaust-glue.wasm
-rm %{buildroot}%{_datadir}/faust/webaudio/libfaust-wasm.wasm
-rm %{buildroot}%{_datadir}/faust/webaudio/mixer32.wasm
-rm %{buildroot}%{_datadir}/faust/webaudio/mixer64.wasm
-rm %{buildroot}%{_datadir}/faust/webaudio/noise.wasm
-rm %{buildroot}%{_datadir}/faust/webaudio/organ.wasm
-rm %{buildroot}%{_datadir}/faust/webaudio/osc.wasm
+rm -f %{buildroot}%{_datadir}/faust/webaudio/audioinput.wasm
+rm -f %{buildroot}%{_datadir}/faust/webaudio/libfaust-glue.wasm
+rm -f %{buildroot}%{_datadir}/faust/webaudio/libfaust-wasm.wasm
+rm -f %{buildroot}%{_datadir}/faust/webaudio/mixer32.wasm
+rm -f %{buildroot}%{_datadir}/faust/webaudio/mixer64.wasm
+rm -f %{buildroot}%{_datadir}/faust/webaudio/noise.wasm
+rm -f %{buildroot}%{_datadir}/faust/webaudio/organ.wasm
+rm -f %{buildroot}%{_datadir}/faust/webaudio/osc.wasm
 
-rm %{buildroot}/%{_libdir}/ios-libsndfile.a
+rm -rf %{buildroot}%{_datadir}/faust/max-msp/sndfile
 
-rm %{buildroot}%{_datadir}/faust/android/app/lib/libsndfile/lib/*/libsndfile.so
+rm -f %{buildroot}/%{_libdir}/ios-libsndfile.a
 
-mv %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
+rm -f %{buildroot}%{_datadir}/faust/android/app/lib/libsndfile/lib/*/libsndfile.so
+
+mv -f %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
+
 
 %ldconfig_scriptlets osclib
 
@@ -265,6 +268,9 @@ mv %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
 %{_datadir}/faust/*.lib
 
 %changelog
+* Wed Sep 28 2022 Yann Collette <ycollette.nospam@free.fr> - 2.41.1-25
+- update to 2.41.1-25 - fixes for f37
+
 * Mon Jul 18 2022 Yann Collette <ycollette.nospam@free.fr> - 2.41.1-24
 - update to 2.41.1-24
 
