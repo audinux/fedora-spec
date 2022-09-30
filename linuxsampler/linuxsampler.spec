@@ -13,13 +13,24 @@ Distribution: Planet CCRMA
 Vendor:       Planet CCRMA
 
 Source0: https://download.linuxsampler.org/packages/linuxsampler-%{version}.tar.bz2
+Patch0: linuxsampler-0001-aarch64-fix.patch
 
-BuildRequires: automake autoconf make libtool pkgconfig
-BuildRequires: libgig-devel alsa-lib-devel sqlite-devel
-BuildRequires: jack-audio-connection-kit-devel libsndfile-devel
-BuildRequires: dssi-devel slv2-devel
 BuildRequires: gcc gcc-c++
-BuildRequires: perl-XML-Parser flex bison
+BuildRequires: automake
+BuildRequires: autoconf
+BuildRequires: make
+BuildRequires: perl-XML-Parser
+BuildRequires: flex
+BuildRequires: bison
+BuildRequires: libtool
+BuildRequires: pkgconfig
+BuildRequires: libgig-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: sqlite-devel
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: libsndfile-devel
+BuildRequires: dssi-devel
+BuildRequires: slv2-devel
 
 %description
 LinuxSampler is a work in progress. The goal is to produce a free,
@@ -49,12 +60,13 @@ Requires: %{name} = %{version}-%{release}
 Linuxsampler plugin for the LV2 plugin standard.
 
 %prep
-%autosetup -n linuxsampler%{!?svn:-%{version}}
-if [ -f Makefile.cvs ]; then make -f Makefile.cvs; fi
+%autosetup -p1 -n linuxsampler%{!?svn:-%{version}}
+
+if [ -f Makefile.svn ]; then make -f Makefile.svn; fi
 
 %build
 
-%configure CXXFLAGS="-std=c++14 $CXXFLAGS"
+%configure
 %make_build
 
 %install
@@ -62,6 +74,10 @@ if [ -f Makefile.cvs ]; then make -f Makefile.cvs; fi
 # add path to linuxsampler libraries
 mkdir -p %{buildroot}%{_sysconfdir}/ld.so.conf.d/
 echo "%{_libdir}/linuxsampler" > %{buildroot}%{_sysconfdir}/ld.so.conf.d/linuxsampler.conf
+
+rm -f %{buildroot}/%{_libdir}/linuxsampler/*.la
+rm -f %{buildroot}/%{_libdir}/dssi/linuxsampler.la
+rm -f %{buildroot}/%{_libdir}/lv2/linuxsampler.lv2/linuxsampler.la
 
 %files
 %doc AUTHORS ChangeLog NEWS README
@@ -77,26 +93,20 @@ echo "%{_libdir}/linuxsampler" > %{buildroot}%{_sysconfdir}/ld.so.conf.d/linuxsa
 %files devel
 %{_libdir}/linuxsampler/*.so
 %{_libdir}/linuxsampler/*.a
-%exclude %{_libdir}/linuxsampler/*.la
 %{_libdir}/pkgconfig/*
 %{_includedir}/linuxsampler
 
 %files dssi
 %{_libdir}/dssi/linuxsampler.so
 %exclude %{_libdir}/dssi/linuxsampler.a
-%exclude %{_libdir}/dssi/linuxsampler.la
 
 %files -n lv2-linuxsampler-plugins
 %{_libdir}/lv2/linuxsampler.lv2/linuxsampler.so
 %{_libdir}/lv2/linuxsampler.lv2/linuxsampler.ttl
 %{_libdir}/lv2/linuxsampler.lv2/manifest.ttl
 %exclude %{_libdir}/lv2/linuxsampler.lv2/linuxsampler.a
-%exclude %{_libdir}/lv2/linuxsampler.lv2/linuxsampler.la
 
 %changelog
-* Sun May 23 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-2
-- update to 2.2.0-2
-
 * Sat Mar 27 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-2
 - update to 2.1.1-2 - fixes for Fedora 34
 

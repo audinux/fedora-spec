@@ -1,0 +1,27 @@
+From 1b26a3ff82527644e864de83b3c454b2fd008a47 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Wed, 28 Sep 2022 22:56:39 +0200
+Subject: [PATCH] aarch64 fix
+
+---
+ src/common/RTMath.cpp | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/common/RTMath.cpp b/src/common/RTMath.cpp
+index 7e5877b..7eb4f4b 100644
+--- a/src/common/RTMath.cpp
++++ b/src/common/RTMath.cpp
+@@ -73,6 +73,10 @@ RTMathBase::time_stamp_t RTMathBase::CreateTimeStamp() {
+     return t;
+     #elif defined(__APPLE__)
+     return (time_stamp_t) mach_absolute_time();
++    #elif defined(__arm__) || defined(__aarch64__)
++    timespec tp;
++    clock_gettime(CLOCK_MONOTONIC, &tp);
++    return tp.tv_nsec;
+     #else // we don't want to use a slow generic solution
+     #  error "Sorry, LinuxSampler lacks time stamp code for your system."
+     #  error "Please report this error and the CPU you are using to the LinuxSampler developers mailing list!"
+-- 
+2.37.3
+

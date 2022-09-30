@@ -14,9 +14,12 @@ Vendor:       Planet CCRMA
 
 Source0: http://download.linuxsampler.org/packages/liblscp-%{version}.tar.gz
 
-BuildRequires: automake autoconf libtool make
-BuildRequires: linuxsampler-devel
 BuildRequires: gcc gcc-c++
+BuildRequires: automake
+BuildRequires: autoconf
+BuildRequires: libtool
+BuildRequires: make
+BuildRequires: linuxsampler-devel
 
 %description
 LinuxSampler Control Protocol library
@@ -30,14 +33,19 @@ LinuxSampler Control Protocol library developer resources
 
 %prep
 %autosetup
-if [ -f Makefile.cvs ]; then make -f Makefile.cvs; fi
+
+if [ -f Makefile.svn ]; then make -f Makefile.svn; fi
 
 %build
+
 %configure
 %make_build
 
 %install
+
 %make_install
+
+rm -f %{buildroot}/%{_libdir}/liblscp.la
 
 %files
 %{_libdir}/liblscp.so.*
@@ -46,7 +54,6 @@ if [ -f Makefile.cvs ]; then make -f Makefile.cvs; fi
 %{_includedir}/lscp
 %{_libdir}/liblscp.so
 %{_libdir}/liblscp.a
-%exclude %{_libdir}/liblscp.la
 %{_libdir}/pkgconfig/lscp.pc
 
 %changelog
