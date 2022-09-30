@@ -4,7 +4,7 @@
 
 Name:    furnace
 Version: 0.5.8
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A multi-system chiptune tracker compatible with DefleMask modules
 License: GPLv2
 URL:     https://github.com/tildearrow/furnace
@@ -43,6 +43,8 @@ BuildRequires: rtmidi-devel
 BuildRequires: zlib-devel
 BuildRequires: mesa-libgbm-devel
 BuildRequires: libglvnd-devel
+BuildRequires: fmt-devel
+BuildRequires: SDL2-devel
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 BuildRequires: patchelf
@@ -53,23 +55,14 @@ A multi-system chiptune tracker compatible with DefleMask modules
 %prep
 %autosetup -n %{name}
 
-sed -i -e "s/DEPENDENCIES_LIBRARIES SDL2-static/DEPENDENCIES_LIBRARIES SDL2/" CMakeLists.txt
-
 %build
 
-%cmake
+%cmake -DSYSTEM_FMT=ON -DSYSTEM_LIBSNDFILE=ON -DSYSTEM_RTMIDI=ON -DSYSTEM_ZLIB=ON -DSYSTEM_SDL2=ON
 %cmake_build
 
 %install 
 
 %cmake_install
-
-install -m 755 -d %{buildroot}/%{_libdir}/%{name}/
-[ -d %{__cmake_builddir}/extern/fmt ] && cp %{__cmake_builddir}/extern/fmt/libfmt.so.? %{buildroot}/%{_libdir}/%{name}/
-[ -d %{__cmake_builddir}/extern/libsndfile ] && cp %{__cmake_builddir}/extern/libsndfile/libsndfile.so.? %{buildroot}/%{_libdir}/%{name}/
-[ -d %{__cmake_builddir}/extern/SDL ] && cp %{__cmake_builddir}/extern/SDL/libSDL2-2.0.so.? %{buildroot}/%{_libdir}/%{name}/
-
-patchelf --set-rpath '$ORIGIN/../%{_lib}/%{name}/' %{buildroot}/%{_bindir}/%{name}
 
 desktop-file-install                         \
   --add-category="Audio;AudioVideo"	     \
@@ -84,7 +77,6 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/%{name}.a
 %license LICENSE
 %doc README.md
 %{_bindir}/*
-%{_libdir}/furnace/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/doc/furnace/papers/*
 %{_datadir}/furnace/demos/*
@@ -92,5 +84,8 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/%{name}.a
 %{_datadir}/metainfo/%{name}.appdata.xml
 
 %changelog
+* Fri Sep 30 2022 Yann Collette <ycollette.nospam@free.fr> - 0.5.8-3
+- use system libs
+
 * Tue Mar 08 2022 Yann Collette <ycollette.nospam@free.fr> - 0.5.8-1
 - Initial spec file
