@@ -5,7 +5,7 @@
 
 Summary: LinuxSampler GUI front-end
 Name:    qsampler
-Version: 0.9.3
+Version: 0.9.6
 Release: 2%{?dist}
 License: GPL
 URL:     https://qsampler.sourceforge.net/qsampler-index.html
@@ -14,13 +14,11 @@ Distribution: Planet CCRMA
 Vendor:       Planet CCRMA
 
 Source0: https://download.sf.net/qsampler/qsampler-%{version}.tar.gz
+Source1: qsampler.desktop
 
 BuildRequires: gcc
 BuildRequires: gcc-c++
-BuildRequires: libtool
-BuildRequires: automake
-BuildRequires: autoconf
-BuildRequires: make
+BuildRequires: cmake
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtx11extras-devel
 BuildRequires: libgig-devel
@@ -40,24 +38,25 @@ as a client reference interface for the LinuxSampler Control Protocol
 %prep
 %autosetup
 
-if [ -f Makefile.svn ]; then make -f Makefile.svn; fi
-
 %build
 
-./autogen.sh
-%configure --enable-debug
-
-# fix location of include file
-find . -type f -exec grep '<gig.h>' {} \; \
-               -exec perl -p -i -e "s|<gig.h>|<libgig/gig.h>|g" {} \;
-find . -type f -exec grep '\"gig.h\"' {} \; \
-               -exec perl -p -i -e "s|\"gig.h\"|\"libgig/gig.h\"|g" {} \;
-
-%make_build
+%cmake
+%cmake_build
 
 %install
 
-%make_install
+%cmake_install
+
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
+install -m 644 src/images/qsampler.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
+
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/
+install -m 644 src/images/qsampler.png %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/%{name}.svg
+
+install -m 755 -d %{buildroot}/%{_datadir}/metainfo/
+install -m 644 src/appdata/org.rncbc.qsampler.metainfo.xml %{buildroot}%{_datadir}/metainfo/
+
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
 
 desktop-file-install                         \
   --add-category="Audio"                     \
@@ -67,24 +66,19 @@ desktop-file-install                         \
 
 %check
 
-desktop-file-validate %{buildroot}%{_datadir}/applications/qsampler.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
-%doc AUTHORS ChangeLog README README.cmake TRANSLATORS
-%license COPYING
+%doc ChangeLog README TRANSLATORS
+%license LICENSE
 %{_bindir}/qsampler
 %{_datadir}/icons/hicolor/32x32/apps/qsampler.png
 %{_datadir}/icons/hicolor/scalable/apps/qsampler.svg
-%{_datadir}/icons/hicolor/32x32/mimetypes/application-x-qsampler-session.png
-%{_datadir}/icons/hicolor/scalable/mimetypes/application-x-qsampler-session.svg
-%{_datadir}/mime/packages/qsampler.xml
-%{_datadir}/applications/qsampler.desktop
+%{_datadir}/mime/packages/*
+%{_datadir}/applications/*
 %{_datadir}/metainfo/qsampler.appdata.xml
-%{_mandir}/man1/qsampler.1.gz
-%{_mandir}/fr/man1/qsampler.1.gz
-%{_datadir}/qsampler/translations/qsampler_cs.qm
-%{_datadir}/qsampler/translations/qsampler_ru.qm
-%{_datadir}/qsampler/translations/qsampler_fr.qm
+%{_mandir}/*
+%{_datadir}/qsampler/translations/*
 
 %changelog
 * Wed Dec 02 2020 Yann Collette <ycollette.nospam@free.fr> 0.6.3-2

@@ -14,9 +14,15 @@ Vendor:       Planet CCRMA
 
 Source0: http://download.linuxsampler.org/packages/libgig-%{version}.tar.bz2
 
-BuildRequires: gcc gcc-c++ make
-BuildRequires: automake autoconf libtool pkgconfig
-BuildRequires: libsndfile-devel audiofile-devel doxygen
+BuildRequires: gcc gcc-c++
+BuildRequires: make
+BuildRequires: automake
+BuildRequires: autoconf
+BuildRequires: libtool
+BuildRequires: pkgconfig
+BuildRequires: doxygen
+BuildRequires: libsndfile-devel
+BuildRequires: audiofile-devel
 BuildRequires: libuuid-devel
 
 %description
@@ -31,19 +37,24 @@ C++ library for loading Gigasampler files and DLS Level 1/2 files.
 
 %prep
 %autosetup -n libgig-%{version}
-if [ -f Makefile.cvs ]; then make -f Makefile.cvs; fi
+
+if [ -f Makefile.svn ]; then make -f Makefile.svn; fi
 
 %build
+
 %configure
 %make_build
 make docs
 
 %install
+
 %make_install
 
 # move libgig.* to /usr/_libdir/
 mv %{buildroot}%{_libdir}/libgig/lib* %{buildroot}%{_libdir}/
 rmdir %{buildroot}%{_libdir}/libgig
+
+rm -f %{buildroot}/%{_libdir}/libakai.la
 
 %files
 %doc AUTHORS ChangeLog NEWS README TODO doc/html
@@ -57,8 +68,6 @@ rmdir %{buildroot}%{_libdir}/libgig
 %doc doc/html/*
 %{_libdir}/libgig.a
 %{_libdir}/libakai.a
-%exclude %{_libdir}/libgig.la
-%exclude %{_libdir}/libakai.la
 %{_libdir}/pkgconfig/gig.pc
 %{_libdir}/pkgconfig/akai.pc
 %{_includedir}/*

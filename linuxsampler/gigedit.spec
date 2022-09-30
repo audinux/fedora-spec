@@ -2,12 +2,12 @@
 # Type: Standalone
 # Category: Audio, Sampler
 
-Summary:      Instrument editor for gig files
-Name:         gigedit
-Version:      1.2.0
-Release:      2%{?dist}
-License:      GPL2
-URL:          http://www.linuxsampler.org/
+Summary: Instrument editor for gig files
+Name:    gigedit
+Version: 1.2.0
+Release: 2%{?dist}
+License: GPL2
+URL:     http://www.linuxsampler.org/
 
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA
@@ -47,24 +47,22 @@ before editing them in gigedit.
 %build
 
 %set_build_flags
-
-export CXXFLAGS="-std=c++11 $CXXFLAGS"
-
 %configure 
-
 %make_build
 
 %install
+
 %make_install
+
+rm -f %{buildroot}/%{_libdir}/linuxsampler/plugins/libgigeditlinuxsamplerplugin.la
+rm -f %{buildroot}/%{_libdir}/gigedit/libgigedit.la
 
 %files
 %doc doc/quickstart/*html doc/quickstart/*png doc/quickstart/*css
 %{_bindir}/gigedit
 %exclude %{_libdir}/gigedit/libgigedit.a
-%exclude %{_libdir}/gigedit/libgigedit.la
 %{_libdir}/gigedit/libgigedit.so*
 %exclude %{_libdir}/linuxsampler/plugins/libgigeditlinuxsamplerplugin.a
-%exclude %{_libdir}/linuxsampler/plugins/libgigeditlinuxsamplerplugin.la
 %{_libdir}/linuxsampler/plugins/libgigeditlinuxsamplerplugin.so
 %exclude %{_datadir}/doc/gigedit
 %{_datadir}/gigedit
