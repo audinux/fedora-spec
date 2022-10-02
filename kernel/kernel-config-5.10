@@ -1,10 +1,10 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.10.140 Kernel Configuration
+# Linux/x86 5.10.145 Kernel Configuration
 #
-CONFIG_CC_VERSION_TEXT="gcc (GCC) 12.2.1 20220819 (Red Hat 12.2.1-1)"
+CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.3.1 20220421 (Red Hat 11.3.1-2)"
 CONFIG_CC_IS_GCC=y
-CONFIG_GCC_VERSION=120201
+CONFIG_GCC_VERSION=110301
 CONFIG_LD_VERSION=237000000
 CONFIG_CLANG_VERSION=0
 CONFIG_LLD_VERSION=0
@@ -8898,11 +8898,7 @@ CONFIG_LSM="lockdown,yama,integrity,selinux,bpf,landlock"
 #
 # Memory initialization
 #
-CONFIG_CC_HAS_AUTO_VAR_INIT_PATTERN=y
-CONFIG_CC_HAS_AUTO_VAR_INIT_ZERO=y
 CONFIG_INIT_STACK_NONE=y
-# CONFIG_INIT_STACK_ALL_PATTERN is not set
-# CONFIG_INIT_STACK_ALL_ZERO is not set
 # CONFIG_INIT_ON_ALLOC_DEFAULT_ON is not set
 # CONFIG_INIT_ON_FREE_DEFAULT_ON is not set
 # end of Memory initialization
