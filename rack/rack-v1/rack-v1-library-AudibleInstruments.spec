@@ -25,6 +25,7 @@ Distribution: Audinux
 Source0: Rack.tar.gz
 Source1: AudibleInstruments.tar.gz
 Source2: AudibleInstruments_plugin.json
+Patch0: rack-v1-aarch64.patch
 Source3: audible-instruments-source.sh
 
 BuildRequires: gcc gcc-c++
@@ -43,6 +44,7 @@ BuildRequires: jansson-devel
 BuildRequires: gtk2-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: jq
 
@@ -51,7 +53,11 @@ AudibleInstruments plugin for Rack.
 Based on Mutable Instruments Braids
 
 %prep
-%autosetup -n Rack
+%setup -n Rack
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 

@@ -26,6 +26,7 @@ Distribution: Audinux
 Source0: Rack.tar.gz
 Source1: https://github.com/VCVRack/VCV-Prototype/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: VCV-Prototype.json
+Patch0: rack-v1-aarch64.patch
 Source3: VCV-Prototype-Makefile
 
 BuildRequires: gcc gcc-c++
@@ -45,6 +46,7 @@ BuildRequires: gtk2-devel
 BuildRequires: rtaudio-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: jq
 BuildRequires: libefsw-devel
@@ -55,7 +57,11 @@ BuildRequires: wget
 VCV Rack plugin dedicated to scripting in various languages
 
 %prep
-%autosetup -n Rack
+%setup -n Rack
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 

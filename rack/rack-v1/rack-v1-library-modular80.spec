@@ -30,6 +30,7 @@ Distribution: Audinux
 Source0: Rack.tar.gz
 Source1: modular80.tar.gz
 Source2: modular80_plugin.json
+Patch0: rack-v1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -47,6 +48,7 @@ BuildRequires: jansson-devel
 BuildRequires: gtk2-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: jq
 
@@ -55,7 +57,11 @@ modular80 plugin for Rack.
 Chaotic CV generator based on Logistics equation
 
 %prep
-%autosetup -n Rack
+%setup -n Rack
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 

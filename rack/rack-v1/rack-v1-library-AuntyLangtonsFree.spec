@@ -26,6 +26,7 @@ Distribution: Audinux
 Source0: Rack.tar.gz
 Source1: https://github.com/64MM4-KN1F3/AuntyLangtons-FREE/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: AuntyLangtonsFree_plugin.json
+Patch0: rack-v1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -43,6 +44,7 @@ BuildRequires: jansson-devel
 BuildRequires: gtk2-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: jq
 
@@ -51,7 +53,11 @@ AuntyLangtonsFree plugin for Rack.
 A Langton's Ant implementation in Rack
 
 %prep
-%autosetup -n Rack
+%setup -n Rack
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 

@@ -46,6 +46,7 @@ Distribution: Audinux
 Source0: Rack.tar.gz
 Source1: surge-rack.tar.gz
 Source2: SurgeRack_plugin.json
+Patch0: rack-v1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -63,6 +64,7 @@ BuildRequires: jansson-devel
 BuildRequires: gtk2-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: jq
 
@@ -71,7 +73,11 @@ SurgeRack plugin for Rack.
 The Surge stereo delay effect
 
 %prep
-%autosetup -n Rack
+%setup -n Rack
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 

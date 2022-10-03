@@ -19,8 +19,8 @@ Distribution: Audinux
 # ./rack-source.sh v1.1.6
 
 Source0: Rack.tar.gz
-Source1: Rack-manual.tar.gz
-Source2: rack-source.sh
+Source1: rack-source.sh
+Patch0: rack-v1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -44,6 +44,7 @@ BuildRequires: jansson-devel
 BuildRequires: gtk2-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: libsndfile-devel
 BuildRequires: python3-sphinx
@@ -63,7 +64,11 @@ BuildArch: noarch
 Documentation files for Rack
 
 %prep
-%autosetup -n Rack
+%setup -n Rack
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 
@@ -116,10 +121,6 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "s/systemDir = \".\";/systemDir = \"\/usr\/libexec\/Rack1\";/g" src/asset.cpp
 sed -i -e "s/pluginsPath = userDir + \"\/plugins-v\"/pluginsPath = systemDir + \"\/plugins-v\"/g" src/asset.cpp
 
-tar xvfz %{SOURCE1}
-
-#sed -i -e "s/sphinx-build/sphinx-build-3/g" manual/Makefile
-
 # Disable an assert triggered with pipewire
 sed -i -e "s/assert(!err);/\/\/assert(!err);/g" src/system.cpp
 
@@ -148,9 +149,6 @@ cd ..
 
 %make_build PREFIX=/usr LIBDIR=%{_lib}
 
-# cd manual
-# %make_build html
-
 %install 
 
 mkdir -p %{buildroot}%{_bindir}/
@@ -163,8 +161,6 @@ mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins/
 install -m 755 Rack         %{buildroot}%{_bindir}/
 install -m 644 res/icon.png %{buildroot}%{_datadir}/pixmaps/rack.png
 cp -r res                   %{buildroot}%{_libexecdir}/Rack1/
-
-# cp -r manual/_build/html/* %{buildroot}%{_datadir}/Rack/html/
 
 cp cacert.pem Core.json template.vcv %{buildroot}%{_libexecdir}/Rack1/
 

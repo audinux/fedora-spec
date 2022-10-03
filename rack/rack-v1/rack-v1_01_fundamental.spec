@@ -24,6 +24,7 @@ Distribution: Audinux
 
 Source0: Rack.tar.gz
 Source1: https://github.com/VCVRack/Fundamental/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Patch0: rack-v1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -41,6 +42,7 @@ BuildRequires: jansson-devel
 BuildRequires: gtk2-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: libsndfile-devel
 BuildRequires: jq
@@ -50,7 +52,11 @@ The Fundamental plugin pack gives you a basic foundation to create simple synthe
 They are also a great reference for creating your own plugins in C++.
 
 %prep
-%autosetup -n Rack
+%setup -n Rack
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 
@@ -108,7 +114,7 @@ cp -r fundamental_plugin/dist/Fundamental/* %{buildroot}%{_libexecdir}/Rack1/plu
 * Sun Nov 29 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-6
 - fix rtaudio + debug build
 
-* Fri Oct 29 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-5
+* Thu Oct 29 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-5
 - update to 1.4.0-5
 
 * Tue Sep 8 2020 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-4

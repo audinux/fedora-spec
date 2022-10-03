@@ -36,6 +36,7 @@ Distribution: Audinux
 Source0: Rack.tar.gz
 Source1: BaconPlugs.tar.gz
 Source2: BaconMusic_plugin.json
+Patch0: rack-v1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -53,6 +54,7 @@ BuildRequires: jansson-devel
 BuildRequires: gtk2-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: jq
 
@@ -61,7 +63,11 @@ BaconMusic plugin for Rack.
 Apply musical (major third, fifth, etc...) offsets to CV 1v/oct signals
 
 %prep
-%autosetup -n Rack
+%setup -n Rack
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 

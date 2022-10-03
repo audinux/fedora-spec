@@ -25,6 +25,7 @@ Distribution: Audinux
 
 Source0: Rack.tar.gz
 Source1: https://github.com/VCVRack/Befaco/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Patch0: rack-v1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -43,6 +44,7 @@ BuildRequires: gtk2-devel
 BuildRequires: rtaudio-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: jq
 
@@ -50,7 +52,11 @@ BuildRequires: jq
 Based on Befaco - https://www.befaco.org/en/ Eurorack modules.
 
 %prep
-%autosetup -n Rack
+%setup -n Rack
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 

@@ -19,10 +19,3 @@ rm  pffft.zip
 cd ../..
 tar cvfz Rack.tar.gz Rack/*
 rm -rf Rack
-
-git clone https://github.com/VCVRack/manual.git
-cd manual
-find . -name ".git" -exec rm -rf {} \;
-cd ..
-tar cvfz Rack-manual.tar.gz manual/*
-rm -rf manual
