@@ -1,6 +1,6 @@
 Summary: A radio automation system
 Name:    rivendell
-Version: 3.6.5
+Version: 3.6.6
 Release: 1%{?dist}
 License: LGPL
 URL:     https://github.com/ElvishArtisan/rivendell
@@ -41,7 +41,6 @@ BuildRequires: libdiscid-devel
 BuildRequires: libcoverart-devel
 BuildRequires: libmp4v2-devel
 BuildRequires: twolame-devel
-#BuildRequires: faad2-devel
 
 Requires: madplay, autofs
 Requires: python3, python3-pycurl, python3-requests, python3-pyserial, python3-mysql
@@ -159,6 +158,9 @@ exit 0
 %{_unitdir}/*
 
 %changelog
+* Mon Oct 03 2022 Yann Collette <ycollette.nospam@free.fr> - 3.6.6-1
+- update to 3.6.6-1
+
 * Sun Mar 20 2022 Yann Collette <ycollette.nospam@free.fr> - 3.6.5-1
 - update to 3.6.5-1
 
