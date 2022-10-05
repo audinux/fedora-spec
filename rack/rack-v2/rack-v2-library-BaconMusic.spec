@@ -27,7 +27,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/baconpaul/BaconPlugs/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: BaconPlugs.tar.gz
 Source2: BaconMusic_plugin.json
 Patch0: rack-v2-aarch64.patch
 

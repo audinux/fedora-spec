@@ -139,10 +139,6 @@ tar xvfz %{SOURCE1} --directory=FehlerFabrik-Suite_plugin --strip-components=1
 
 cp -n %{SOURCE2} FehlerFabrik-Suite_plugin/plugin.json
 
-# Remove samplerate compilation
-sed -i -e "/DEPS/d" FehlerFabrik-Suite_plugin/Makefile
-sed -i -e "/OBJECTS/d" FehlerFabrik-Suite_plugin/Makefile
-
 %build
 
 cd FehlerFabrik-Suite_plugin

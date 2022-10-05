@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 9a29fa1684a8b17f8f897afa11986d64653a8a38
-%global gittag0 2.21.4
+%global commit0 4f8fb23cfaeb67e3b41b012ec2c7eaf41b2f8e09
+%global gittag0 2.1.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-voxglitch
-Version: 2.21.4
+Name:    rack-v2-Sparkette
+Version: 2.1.1
 Release: 1%{?dist}
-Summary: voxglitch plugin for Rack
+Summary: Sparkette plugin for Rack
 License: GPLv2+
-URL:     https://github.com/clone45/voxglitch
+URL:     https://github.com/flarn2006/SparketteVCV
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,8 +27,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/clone45/voxglitch/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: voxglitch_plugin.json
+Source1: https://github.com/flarn2006/SparketteVCV/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: Sparkette_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -60,8 +60,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-voxglitch plugin for Rack.
-Automatic breakbeat sample chopper
+Sparkette plugin for Rack.
+Ellie is hiding on your rack as a blank panel!
 
 %prep
 %setup -n Rack
@@ -134,26 +134,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir voxglitch_plugin
-tar xvfz %{SOURCE1} --directory=voxglitch_plugin --strip-components=1 
+mkdir Sparkette_plugin
+tar xvfz %{SOURCE1} --directory=Sparkette_plugin --strip-components=1 
 
-cp -n %{SOURCE2} voxglitch_plugin/plugin.json
+cp -n %{SOURCE2} Sparkette_plugin/plugin.json
 
 %build
 
-export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
-
-cd voxglitch_plugin
+cd Sparkette_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/voxglitch/
-cp -r voxglitch_plugin/dist/voxglitch/* %{buildroot}%{_libexecdir}/Rack2/plugins/voxglitch/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/Sparkette/
+cp -r Sparkette_plugin/dist/Sparkette/* %{buildroot}%{_libexecdir}/Rack2/plugins/Sparkette/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.21.4-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
 - initial specfile

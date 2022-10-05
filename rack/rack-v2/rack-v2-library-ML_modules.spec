@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 557a308b2cd467d977312b1e67e9e79949833226
-%global gittag0 2.0.1
+%global commit0 311042275900650c0b0cc57fcd2b57333820adde
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-ML_modules
-Version: 2.0.1
+Version: 2.0.2
 Release: 1%{?dist}
 Summary: ML_modules plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r ML_modules_plugin/dist/ML_modules/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile

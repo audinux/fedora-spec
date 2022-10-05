@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 f31aa021ed71663b0b130af30761851f0e30e4c1
-%global gittag0 2.0.0
+%global commit0 b57a8fba6d091bdc6ffc78dc54e92ebeaed07a53
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-AetrionModular
-Version: 2.0.0
+Version: 2.1.0
 Release: 1%{?dist}
 Summary: AetrionModular plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r AetrionModular_plugin/dist/AetrionModular/* %{buildroot}%{_libexecdir}/Rac
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
