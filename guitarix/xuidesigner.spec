@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    xuidesigner
-Version: 0.7
+Version: 0.8
 Release: 1%{?dist}
 Summary: X11 LV2 GUI design tool for libxputty
 License: GPLv2+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the source archive: ./xuidesigner-source.sh <tag>
-# ./xuidesigner-source.sh v0.7
+# ./xuidesigner-source.sh v0.8
 
 Source0: XUiDesigner.tar.gz
 Source1: xuidesigner-source.sh
@@ -72,6 +72,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/XUiDesigner.desktop
 %{_libdir}/*
 
 %changelog
+* Wed Oct 05 2022 Yann Collette <ycollette.nospam@free.fr> - 0.8-1
+- update to 0.8-1
+
 * Mon Sep 12 2022 Yann Collette <ycollette.nospam@free.fr> - 0.7-1
 - update to 0.7-1
 
