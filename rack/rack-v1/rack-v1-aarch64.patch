@@ -42,7 +42,7 @@ index 96ea4b8..0ea186a 100644
 @@ -79,7 +79,7 @@ build/%.m.o: %.m
  build/%.bin.o: %
  	@mkdir -p $(@D)
- ifdef ARCH_LIN
+ ifdef ARCH_aarch64
 -	$(OBJCOPY) -I binary -O elf64-x86-64 -B i386:x86-64 --rename-section .data=.rodata,alloc,load,readonly,data,contents $< $@
 +	$(OBJCOPY) -I binary -O elf64-littleaarch64 -B aarch64 --rename-section .data=.rodata,alloc,load,readonly,data,contents $< $@
  endif
