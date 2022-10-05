@@ -3,7 +3,7 @@
 # Category: Audio, Programming
 
 Name:	 faust
-Version: 2.41.1
+Version: 2.50.6
 Release: 35%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
@@ -274,6 +274,9 @@ mv -f %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
 %{_datadir}/faust/*.lib
 
 %changelog
+* Tue Oct 04 2022 Yann Collette <ycollette.nospam@free.fr> - 2.50.6-25
+- update to 2.50.6-25
+
 * Wed Sep 28 2022 Yann Collette <ycollette.nospam@free.fr> - 2.41.1-25
 - update to 2.41.1-25 - fixes for f37
 
