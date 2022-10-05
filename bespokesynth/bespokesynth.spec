@@ -29,6 +29,8 @@ BuildRequires: pulseaudio-libs-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: python3-devel
+BuildRequires: pybind11-devel
+BuildRequires: python3-pybind11
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
 BuildRequires: libX11-devel
@@ -68,6 +70,12 @@ cp %{SOURCE2} libs/JUCE/modules/juce_audio_processors/format_types/
 sed -i -e "s/lib\/vst/%{_lib}\/vst/g" libs/JUCE/modules/juce_audio_processors/format_types/juce_VSTPluginFormat.cpp
 sed -i -e "s/lib\/vst3/%{_lib}\/vst3/g" libs/JUCE/modules/juce_audio_processors/format_types/juce_VST3PluginFormat.cpp
 sed -i -e "s/lib\/vst3/%{_lib}\/vst3/g" VST_SDK/VST3_SDK/public.sdk/source/vst/hosting/module_linux.cpp
+
+# Work around with an incompatibility with pybind11
+%if 0%{?fedora} >= 37
+rm -rf libs/pybind11/include/pybind11/
+ln -s /usr/include/pybind11 libs/pybind11/include/pybind11
+%endif
 
 %build
 
