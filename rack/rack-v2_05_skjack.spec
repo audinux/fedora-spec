@@ -30,6 +30,7 @@ Distribution: Audinux
 Source0: Rack.tar.gz
 Source1: rack-v2-skjack.tar.gz
 Source2: https://raw.githubusercontent.com/nielszweistein/skjack-vcv2/master/plugin.json
+Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: sed
@@ -48,6 +49,8 @@ BuildRequires: gtk2-devel
 BuildRequires: rtaudio-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
+BuildRequires: wget
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: jq
 BuildRequires: ffmpeg-devel
@@ -59,7 +62,11 @@ BuildRequires: Rack-v2
 VCV Rack plugin dedicated to recording
 
 %prep
-%autosetup -n Rack
+%setup -n Rack
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 

@@ -27,7 +27,8 @@ Distribution: Audinux
 
 Source0: Rack.tar.gz
 Source1: https://github.com/VCVRack/Fundamental/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Patch0:  rack-v2-0001-initialize-system-path.patch
+Patch0: rack-v2-0001-initialize-system-path.patch
+Patch1: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -48,6 +49,8 @@ BuildRequires: rtmidi-devel
 BuildRequires: rtaudio-devel
 %endif
 BuildRequires: speex-devel
+BuildRequires: simde-devel
+BuildRequires: wget
 BuildRequires: speexdsp-devel
 BuildRequires: gulrak-filesystem-devel
 BuildRequires: libarchive-devel
@@ -63,7 +66,12 @@ and build some not-so-simple patches using brute force (lots of modules).
 They are also a great reference for creating your own plugins in C++.
 
 %prep
-%autosetup -p1 -n Rack
+%setup -n Rack
+
+%patch0 -p1
+%ifarch aarch64
+%patch1 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 

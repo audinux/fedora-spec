@@ -29,6 +29,7 @@ Distribution: Audinux
 Source0: Rack.tar.gz
 Source1: https://github.com/j4s0n-c/trowaSoft-VCV/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: trowaSoft_plugin.json
+Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -49,6 +50,8 @@ BuildRequires: rtmidi-devel
 BuildRequires: rtaudio-devel
 %endif
 BuildRequires: speex-devel
+BuildRequires: wget
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: gulrak-filesystem-devel
 BuildRequires: libarchive-devel
@@ -61,7 +64,11 @@ trowaSoft plugin for Rack.
 16-step pad sequencer with a built-in Open Sound Control (OSC) interface.
 
 %prep
-%autosetup -n Rack
+%setup -n Rack
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 

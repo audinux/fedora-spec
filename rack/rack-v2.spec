@@ -4,7 +4,7 @@
 
 %define use_static_glfw 0
 %define use_static_rtaudio 1
-%define use_embedded_samplerate 1
+%define use_embedded_samplerate 0
 
 Name:    Rack-v2
 Version: 2.1.2
@@ -21,7 +21,8 @@ Distribution: Audinux
 
 Source0: Rack.tar.gz
 Source1: rack-source-v2.sh
-Patch0:  rack-v2-0001-initialize-system-path.patch
+Patch0: rack-v2-0001-initialize-system-path.patch
+Patch1: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -50,6 +51,8 @@ BuildRequires: rtmidi-devel
 BuildRequires: rtaudio-devel
 %endif
 BuildRequires: speex-devel
+BuildRequires: wget
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: gulrak-filesystem-devel
 BuildRequires: libarchive-devel
@@ -63,7 +66,12 @@ BuildRequires: python3-sphinx_rtd_theme
 A modular Synthesizer
 
 %prep
-%autosetup -p1 -n Rack
+%setup -n Rack
+
+%patch0 -p1
+%ifarch aarch64
+%patch1 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 
@@ -158,7 +166,7 @@ make
 make install
 cd ..
 %endif
-%if %{use_static_rtaudio}
+%if %{use_embedded_samplerate}
 make libsamplerate-0.1.9 CFLAGS="-O2 -fPIC"
 make lib/libsamplerate.a CFLAGS="-O2 -fPIC"
 %endif

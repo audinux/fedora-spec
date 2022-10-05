@@ -29,6 +29,7 @@ Distribution: Audinux
 Source0: Rack.tar.gz
 Source1: SOURCE1
 Source2: JSONFILE
+Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -49,6 +50,8 @@ BuildRequires: rtmidi-devel
 BuildRequires: rtaudio-devel
 %endif
 BuildRequires: speex-devel
+BuildRequires: wget
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: gulrak-filesystem-devel
 BuildRequires: libarchive-devel
@@ -61,7 +64,11 @@ SLUGNAME plugin for Rack.
 DESCRIPTION
 
 %prep
-%autosetup -n Rack
+%setup -n Rack
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 

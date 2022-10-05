@@ -27,6 +27,7 @@ Source0: Rack.tar.gz
 Source1: https://github.com/VCVRack/VCV-Prototype/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: VCV-Prototype.json
 Source3: VCV-Prototype-Makefile
+Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: sed
@@ -45,6 +46,8 @@ BuildRequires: gtk2-devel
 BuildRequires: rtaudio-devel
 BuildRequires: rtmidi-devel
 BuildRequires: speex-devel
+BuildRequires: wget
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: jq
 BuildRequires: libefsw-devel
@@ -55,7 +58,11 @@ BuildRequires: wget
 VCV Rack plugin dedicated to scripting in various languages
 
 %prep
-%autosetup -n Rack
+%setup -n Rack
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 

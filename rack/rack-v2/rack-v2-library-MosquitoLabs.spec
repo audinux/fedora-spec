@@ -29,6 +29,7 @@ Distribution: Audinux
 Source0: Rack.tar.gz
 Source1: https://github.com/rmosquito/vcv-mosquito//archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: MosquitoLabs_plugin.json
+Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -49,6 +50,8 @@ BuildRequires: rtmidi-devel
 BuildRequires: rtaudio-devel
 %endif
 BuildRequires: speex-devel
+BuildRequires: wget
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: gulrak-filesystem-devel
 BuildRequires: libarchive-devel
@@ -61,7 +64,11 @@ MosquitoLabs plugin for Rack.
 8-bit wavetable oscillator based on C. Roads' Pulsar Synthesis model.
 
 %prep
-%autosetup -n Rack
+%setup -n Rack
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 CURRENT_PATH=`pwd`
 
