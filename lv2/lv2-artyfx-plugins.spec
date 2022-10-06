@@ -31,6 +31,12 @@ sed -i -e 's|/artyfx.lv2|%{_libdir}/lv2/artyfx.lv2|g' CMakeLists.txt
 sed -i -e 's|\-Wall|%{optflags}|g' -e 's|lib/lv2||g' CMakeLists.txt
 sed -i -e 's|-msse2 -mfpmath=sse||g' CMakeLists.txt
 
+%ifarch aarch64
+sed -i -e "s|-msse2||g" src/avtk/CMakeLists.txt
+sed -i -e "s|-msse||g" src/avtk/CMakeLists.txt
+sed -i -e "s|-mfpmath=sse||g" src/avtk/CMakeLists.txt
+%endif
+
 %build
 %cmake
 %cmake_build

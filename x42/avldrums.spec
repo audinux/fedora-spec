@@ -32,6 +32,12 @@ dedicated to the https://www.bandshed.net/avldrumkits/
 %prep
 %autosetup -n avldrums.lv2
 
+%ifarch aarch64
+sed -i -e "s|-msse2||g" Makefile
+sed -i -e "s|-msse||g" Makefile
+sed -i -e "s|-mfpmath=sse||g" Makefile
+%endif
+
 %build
 
 %set_build_flags
@@ -48,7 +54,7 @@ dedicated to the https://www.bandshed.net/avldrumkits/
 %{_libdir}/lv2/avldrums.lv2/*
 
 %changelog
-* Sun Jul 03 2021 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-2
+* Sat Jul 03 2021 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-2
 - update to 0.5.0-2
 
 * Thu Jan 14 2021 Yann Collette <ycollette.nospam@free.fr> - 0.4.2-2

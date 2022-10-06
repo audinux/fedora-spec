@@ -43,6 +43,14 @@ cp %{SOURCE1} src/globals.c
 
 sed -i -e "s/-march=native//g" juce_5_3_2/Builds/Linux/Makefile
 
+%ifarch aarch64
+sed -i -e "s|-msse2||g" juce_5_3_2/Builds/Linux/Makefile
+sed -i -e "s|-mfpmath=sse||g" juce_5_3_2/Builds/Linux/Makefile
+
+sed -i -e "s|-msse2||g" src/Makefile.common
+sed -i -e "s|-mfpmath=sse||g" src/Makefile.common
+%endif
+
 %build
 
 %set_build_flags

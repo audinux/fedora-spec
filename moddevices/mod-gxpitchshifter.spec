@@ -23,7 +23,7 @@ BuildRequires: SuperLU-devel
 Guitarix compatible mod-pitchshifter LV2 set of plugins from portalmod
 
 %prep
-%autosetup -n mod-pitchshifter-%{version}
+%autosetup -n %{name}-%{version}
 
 sed -i -e "s/-Wl,--strip-all//" Makefile.mk
 
@@ -31,7 +31,11 @@ sed -i -e "s/-Wl,--strip-all//" Makefile.mk
 
 %set_build_flags
 
+%ifarch aarch64
+%make_build INSTALL_PATH=%{_libdir}/lv2 NOOPT=true
+%else
 %make_build INSTALL_PATH=%{_libdir}/lv2
+%endif
 
 %install
 

@@ -36,7 +36,11 @@ sed -i -e "s/-Wl,--strip-all//" Makefile.mk
 
 %set_build_flags
 
+%ifarch aarch64
+%make_build INSTALL_PATH=%{_libdir}/lv2 NOOPT=true
+%else
 %make_build INSTALL_PATH=%{_libdir}/lv2
+%endif
 
 %install
 

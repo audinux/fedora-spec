@@ -43,13 +43,13 @@ sed -i -e "s/-Wno-format -O3/-Wno-format -O3 -fPIC/g" src/extralibs/tinyxml/Make
 
 %set_build_flags
 
+export CFLAGS=`echo -fPIC $CFLAGS | sed -e "s/-Werror=format-security//g"`
+export CXXFLAGS=`echo -fPIC $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
+
 cd src/extralibs/sdl_draw
 %make_build -f makefile.linux
 cd ../../..
-	
-# -Werror=format-security -Wall
-export CFLAGS="-fPIC $CFLAGS"
-export CXXFLAGS="-fPIC -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection"
+
 %make_build -f makefile.linux
 
 %install

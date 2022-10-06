@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    sisco.lv2
-Version: 0.9.3
+Version: 0.9.7
 Release: 1%{?dist}
 Summary: A LV2 oscilloscope
 License: GPLv2+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./sisco-source.sh <tag>
-# ./sisco-source.sh v0.9.3
+# ./sisco-source.sh v0.9.7
 
 Source0: sisco.lv2.tar.gz
 Source1: sisco-source.sh
@@ -52,6 +52,9 @@ A LV2 oscilloscope by x42
 %{_datadir}/*
 
 %changelog
+* Thu Oct 06 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9.7-1
+- update to 0.9.7-1
+
 * Wed Jul 21 2021 Yann Collette <ycollette.nospam@free.fr> - 0.9.3-1
 - update to 0.9.3-1
 

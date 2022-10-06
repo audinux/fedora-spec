@@ -93,7 +93,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/protrekkr2.desktop
 %{_datadir}/*
 
 %changelog
-* Mon Jan 27 2022 Yann Collette <ycollette.nospam@free.fr> - 2.6.3-1
+* Thu Jan 27 2022 Yann Collette <ycollette.nospam@free.fr> - 2.6.3-1
 - Update to 2.6.3-1
 
 * Thu Dec 16 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.2-1

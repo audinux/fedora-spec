@@ -6,8 +6,7 @@
 git clone https://github.com/ninodewit/SHIRO-Plugins
 cd SHIRO-Plugins
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz SHIRO-Plugins.tar.gz SHIRO-Plugins/*

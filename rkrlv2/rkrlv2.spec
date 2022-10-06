@@ -35,6 +35,10 @@ an active maintainer these will get merged into the original
 %prep
 %autosetup -p1 -n %{name}-%{commit0}
 
+%ifarch aarch64
+sed -i -e "s/-msse -msse2 -mfpmath=sse//g" lv2/CMakeLists.txt
+%endif
+
 %build
 
 %cmake -DLV2_INSTALL_DIR:PATH=%{_libdir}/lv2/rkr.lv2

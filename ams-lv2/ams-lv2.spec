@@ -41,6 +41,11 @@ for Files in src/*.hpp ; do sed -i -e "s/lvtk-1/lvtk-2/g" $Files; done
   find . -type f -exec sed -i -e "s/env python/env python2/g" {} \;
 %endif
 
+%ifarch aarch64
+sed -i -e "s|'-msse',||g" wscript
+sed -i -e "s|'-mfpmath=sse',||g" wscript
+%endif
+
 %build
 
 %set_build_flags

@@ -1,4 +1,4 @@
-# Tag: Effect
+ss# Tag: Effect
 # Type: LV2
 # Category: Effect
 
@@ -14,7 +14,7 @@ Distribution: Audinux
 
 # To get the sources:
 # ./shiro-source.sh <tag>
-# ./shiro-source.sh master
+# ./shiro-source.sh 3e0a1d35f6ddfe3430e5921e0d55cf60574f8bc3
 
 Source0: SHIRO-Plugins.tar.gz
 Source1: shiro-source.sh
