@@ -4,7 +4,7 @@
 
 Summary: Linux Sampler
 Name:    linuxsampler
-Version: 2.2.0
+Version: 2.1.1
 Release: 2%{?dist}
 License: GPL
 URL:     https://www.LinuxSampler.org/
@@ -60,13 +60,19 @@ Requires: %{name} = %{version}-%{release}
 Linuxsampler plugin for the LV2 plugin standard.
 
 %prep
-%autosetup -p1 -n linuxsampler%{!?svn:-%{version}}
+%setup -n linuxsampler%{!?svn:-%{version}}
 
+%ifarch aarch64
+%patch0 -p1
+%endif
+
+%set_build_flags
+export CXXFLAGS="CXXFLAGS -std=c++14"
 if [ -f Makefile.svn ]; then make -f Makefile.svn; fi
 
 %build
 
-%configure
+%configure CXXFLAGS="$CXXFLAGS -std=c++14"
 %make_build
 
 %install

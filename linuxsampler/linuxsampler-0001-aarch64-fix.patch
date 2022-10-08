@@ -1,17 +1,28 @@
-From 1b26a3ff82527644e864de83b3c454b2fd008a47 Mon Sep 17 00:00:00 2001
+From 91b0db65e3c8a0cf051ffbbb608d36ddaeccd117 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Wed, 28 Sep 2022 22:56:39 +0200
-Subject: [PATCH] aarch64 fix
+Date: Sat, 8 Oct 2022 15:57:25 +0200
+Subject: [PATCH] aarch64
 
 ---
- src/common/RTMath.cpp | 4 ++++
- 1 file changed, 4 insertions(+)
+ src/common/RTMath.cpp |  7 +++++++
+ src/common/atomic.h   | 18 ++++++++++++++++++
+ 2 files changed, 25 insertions(+)
 
 diff --git a/src/common/RTMath.cpp b/src/common/RTMath.cpp
-index 7e5877b..7eb4f4b 100644
+index f228c08..bf596e4 100644
 --- a/src/common/RTMath.cpp
 +++ b/src/common/RTMath.cpp
-@@ -73,6 +73,10 @@ RTMathBase::time_stamp_t RTMathBase::CreateTimeStamp() {
+@@ -22,6 +22,9 @@
+  ***************************************************************************/
+ 
+ #include "RTMath.h"
++#if defined(__aarch64__)
++#include <time.h>
++#endif
+ 
+ // for unsafeMicroSeconds() implementation
+ #if !defined(WIN32) && !defined(__APPLE__)
+@@ -73,6 +76,10 @@ RTMathBase::time_stamp_t RTMathBase::CreateTimeStamp() {
      return t;
      #elif defined(__APPLE__)
      return (time_stamp_t) mach_absolute_time();
@@ -22,6 +33,35 @@ index 7e5877b..7eb4f4b 100644
      #else // we don't want to use a slow generic solution
      #  error "Sorry, LinuxSampler lacks time stamp code for your system."
      #  error "Please report this error and the CPU you are using to the LinuxSampler developers mailing list!"
+diff --git a/src/common/atomic.h b/src/common/atomic.h
+index b1f5c43..4781b89 100644
+--- a/src/common/atomic.h
++++ b/src/common/atomic.h
+@@ -1214,6 +1214,24 @@ static __inline__ void atomic_dec(atomic_t *v)
+ 	v->counter--;
+ }
+ 
++static __inline__ void atomic_add(int i, atomic_t *v)
++{
++	int count;
++	for(count = 1; count <= i; ++count)
++    	{
++		v->counter++;
++    	}
++}
++
++static __inline__ void atomic_sub(int i, atomic_t *v)
++{
++	int count;
++	for(count = 1; count <= i; ++count)
++    	{
++		v->counter--;
++    	}
++}
++
+ static __inline__ int atomic_dec_and_test(atomic_t *v)
+ {
+ 	int res;
 -- 
 2.37.3
 
