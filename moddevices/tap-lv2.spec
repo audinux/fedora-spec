@@ -26,6 +26,10 @@ TAP LV2 set of plugins from portalmod
 
 sed -i -e "s/-Wl,--strip-all//g" Makefile.mk
 
+%ifarch aarch64
+sed -i -e "s/-msse -msse2 -mfpmath=sse//g" Makefile.mk
+%endif
+
 %build
 
 %set_build_flags

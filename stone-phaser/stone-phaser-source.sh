@@ -5,9 +5,10 @@
 
 git clone https://github.com/jpcima/stone-phaser
 cd stone-phaser
+# git protocol has been cancelled ...
+git submodule set-url -- dpf https://github.com/DISTRHO/DPF
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz stone-phaser.tar.gz stone-phaser/*

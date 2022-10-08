@@ -35,6 +35,10 @@ sed -i -e "s/-Wall -Wextra.*/\$(VAMPCFLAGS)/g" Makefile.linux
 sed -i -e "s/-std=c++11.*/\$(VAMPCCCFLAGS)/g" Makefile.linux
 sed -i -e "s/-Wl,-Bstatic //g" Makefile.linux
 
+%ifarch aarch64
+sed -i -e "s/-msse -msse2 -mfpmath=sse//g" constant-q-cpp/Makefile.linux
+%endif
+
 %build
 
 %set_build_flags

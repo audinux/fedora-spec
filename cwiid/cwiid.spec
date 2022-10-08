@@ -3,11 +3,12 @@
 # Category: Tool, Programming
 
 # The git_commit define will have the complement given by git-hub to the source downloaded
-%define git_commit fadf11e
+%define git_commit8 fadf11
+%define git_commit fadf11e89b579bcc0336a0692ac15c93785f3f82
 
 Name: cwiid
 Version: 0.6.00
-Release: 36.20100505git%{git_commit}%{?dist}
+Release: 36.20100505git%{git_commit8}%{?dist}
 Summary: Wiimote interface library
 License: GPLv2+
 URL: https://github.com/abstrakraft/cwiid
@@ -17,8 +18,7 @@ Distribution: Audinux
 
 %{!?_pkgdocdir: %global _pkgdocdir %{_docdir}/%{name}-%{version}}
 
-# source URL : https://github.com/abstrakraft/cwiid/tarball/%%{git_commit} 
-Source0: abstrakraft-cwiid-%{git_commit}.tar.gz
+Source0: https://github.com/abstrakraft/cwiid/archive/%{git_commit}.zip#/%{name}-%{version}.zip
 Source1: wmgui.desktop
 
 # this patch is in my git-hub fork git://github.com/bogado/cwiid.git
@@ -70,14 +70,17 @@ This program allows the user to use the wiimote to emulate normal system
 input sources like the mouse and keyboard.
 
 %prep
-%autosetup -p1 -n abstrakraft-cwiid-%{git_commit}
+%autosetup -p1 -n cwiid-%{git_commit}
 
 sed -i -e "s/CFLAGS =/CFLAGS=-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=\/usr\/lib\/rpm\/redhat\/redhat-hardened-cc1 -specs=\/usr\/lib\/rpm\/redhat\/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -I\/usr\/include\/python2.7 -I. /" defs.mak.in
 
-#find . -name Makefile.in -exec sed -i -e "s/@PYTHON_VERSION@/2.7/g" {} \;
-#sed -i -e "s/\$(PYTHON)/python2/g" ./python/Makefile.in
+%ifarch aarch64
+sed -i -e "s/-m64//g" defs.mak.in
+sed -i -e "s/-fcf-protection//g" defs.mak.in
+%endif
 
 %build
+
 aclocal
 autoconf
 

@@ -1,4 +1,4 @@
-ss# Tag: Effect
+# Tag: Effect
 # Type: LV2
 # Category: Effect
 
@@ -58,6 +58,13 @@ LV2 version of %{name}
 %autosetup -n SHIRO-Plugins
 
 sed -i -e "s/-Wl,--strip-all//g" Makefile.mk
+
+%ifarch aarch64
+sed -i -e "s|-msse -msse2||g" dpf/dgl/Makefile.mk
+sed -i -e "s|-msse -msse2||g" Makefile.mk
+sed -i -e "s|-mfpmath=sse||g" dpf/dgl/Makefile.mk
+sed -i -e "s|-mfpmath=sse||g" Makefile.mk
+%endif
 
 %build
 

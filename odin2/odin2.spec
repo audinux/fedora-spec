@@ -54,6 +54,10 @@ VST3 version of %{name}
 %prep
 %autosetup -p1 -n %{name}
 
+%ifarch aarch64
+sed -i -e "s/-msse2//g" Odin.jucer
+%endif
+
 %build
 
 %set_build_flags

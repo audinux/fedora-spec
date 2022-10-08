@@ -28,6 +28,10 @@ A FM Synthesizer
 %prep
 %autosetup -p1 -n %{name}-%{commit0}
 
+%ifarch aarch64
+sed -i -e "s/-m64//g" Makefile.vstlinux
+%endif
+
 %build
 
 tar xvfj %{SOURCE1}
@@ -41,11 +45,6 @@ export CXXFLAGS="-fPIC $CXXFLAGS"
 %install 
 
 export VSTSDK_PATH=vst/vstsdk2.4/
-
-%set_build_flags
-export CXXFLAGS="-fPIC $CXXFLAGS"
-
-%make_build 
 
 install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 oxeconverter %{buildroot}/%{_bindir}/
