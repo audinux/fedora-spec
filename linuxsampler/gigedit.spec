@@ -47,7 +47,7 @@ before editing them in gigedit.
 %build
 
 %set_build_flags
-%configure 
+%configure CXXFLAGS="-DHAS_PANGOMM_CPP11_ENUMS=0 $CXXFLAGS"
 %make_build
 
 %install
@@ -70,6 +70,9 @@ rm -f %{buildroot}/%{_libdir}/gigedit/libgigedit.la
 %{_datadir}/locale/sv/LC_MESSAGES/gigedit.mo
 
 %changelog
+* Sun Oct 09 2022 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-2
+- update to 1.2.0-2
+
 * Thu Nov 05 2020 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-2
 - update to 1.1.1-2
 

@@ -4,7 +4,7 @@
 
 Summary: LinuxSampler Control Protocol library
 Name:    liblscp
-Version: 0.9.3
+Version: 0.9.4
 Release: 1%{?dist}
 License: GPL
 URL:     https://www.linuxsampler.org
@@ -57,6 +57,9 @@ rm -f %{buildroot}/%{_libdir}/liblscp.la
 %{_libdir}/pkgconfig/lscp.pc
 
 %changelog
+* Sun Oct 09 2022 Yann Collette <ycollette.nospam@free.fr> 0.9.4-1
+- update to 0.9.4-1
+
 * Sun May 23 2021 Yann Collette <ycollette.nospam@free.fr> 0.9.3-1
 - update to 0.9.3-1
 

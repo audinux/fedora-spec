@@ -55,6 +55,7 @@ mv %{buildroot}%{_libdir}/libgig/lib* %{buildroot}%{_libdir}/
 rmdir %{buildroot}%{_libdir}/libgig
 
 rm -f %{buildroot}/%{_libdir}/libakai.la
+rm -f %{buildroot}/%{_libdir}/libgig.la
 
 %files
 %doc AUTHORS ChangeLog NEWS README TODO doc/html

@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Qsampler
-Comment=Linux Sampler graphical front end
-Icon=qsampler.png
-Type=Application
-Exec=qsampler
-Terminal=false
-Encoding=UTF-8
-

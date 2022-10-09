@@ -14,7 +14,6 @@ Distribution: Planet CCRMA
 Vendor:       Planet CCRMA
 
 Source0: https://download.sf.net/qsampler/qsampler-%{version}.tar.gz
-Source1: qsampler.desktop
 
 BuildRequires: gcc
 BuildRequires: gcc-c++
@@ -47,40 +46,33 @@ as a client reference interface for the LinuxSampler Control Protocol
 
 %cmake_install
 
-install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
-install -m 644 src/images/qsampler.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
-
-install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/
-install -m 644 src/images/qsampler.png %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/%{name}.svg
-
-install -m 755 -d %{buildroot}/%{_datadir}/metainfo/
-install -m 644 src/appdata/org.rncbc.qsampler.metainfo.xml %{buildroot}%{_datadir}/metainfo/
-
-install -m 755 -d %{buildroot}/%{_datadir}/applications/
-
 desktop-file-install                         \
   --add-category="Audio"                     \
   --delete-original                          \
   --dir=%{buildroot}%{_datadir}/applications \
-  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+  %{buildroot}/%{_datadir}/applications/*.desktop
 
 %check
-
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
 %doc ChangeLog README TRANSLATORS
 %license LICENSE
 %{_bindir}/qsampler
-%{_datadir}/icons/hicolor/32x32/apps/qsampler.png
-%{_datadir}/icons/hicolor/scalable/apps/qsampler.svg
+%{_datadir}/icons/hicolor/32x32/apps/*
+%{_datadir}/icons/hicolor/scalable/apps/*
+%{_datadir}/icons/hicolor/32x32/mimetypes/*
+%{_datadir}/icons/hicolor/scalable/mimetypes/*
 %{_datadir}/mime/packages/*
 %{_datadir}/applications/*
-%{_datadir}/metainfo/qsampler.appdata.xml
-%{_mandir}/*
+%{_datadir}/metainfo/*
 %{_datadir}/qsampler/translations/*
+%{_mandir}/*
 
 %changelog
+* Sun Oct 09 2022 Yann Collette <ycollette.nospam@free.fr> 0.6.6-2
+- update to 0.9.6-2
+
 * Wed Dec 02 2020 Yann Collette <ycollette.nospam@free.fr> 0.6.3-2
 - override fedora version
 
