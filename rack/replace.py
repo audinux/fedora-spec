@@ -16,6 +16,7 @@ parser = argparse.ArgumentParser(description='Personal information')
 parser.add_argument('--spec-template', dest='spec_template', type=str, default='template.spec', help='Path to the template file')
 parser.add_argument('--spec-dir', dest='spec_dir', type=str, default='spec', help='Path to the directory where to write specs')
 parser.add_argument('--library', dest='library_dir', type=str, default='library', help='Path to the community git repository')
+parser.add_argument('--plugin', dest='plugin_name', type=str, default=None, help='A name of plugin to process')
 
 args = parser.parse_args()
 
@@ -201,7 +202,7 @@ def proceed(json_file):
     
 if __name__ == "__main__":
     if len(sys.argv) != 1:
-        proceed(args.library_dir + os.sep + 'manifests' + os.sep + sys.argv[1] + '.json')
+        proceed(args.library_dir + os.sep + 'manifests' + os.sep + args.plugin_name + '.json')
     else:
         # we iterate through library/manifests/*.json and we generate spec/*.spec
         for json_file in glob.glob(args.library_dir + os.sep + 'manifests' + os.sep + '*.json'):
