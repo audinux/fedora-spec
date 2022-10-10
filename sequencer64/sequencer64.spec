@@ -45,12 +45,17 @@ The %{name}-doc package contains documentation for %{name}.
 
 tar xvfz %{SOURCE1}
 
+sed -i -e "1i #include <sched.h>" libseq64/src/daemonize.cpp
+
 %build
 
+%set_build_flags
+
+export CXXFLAGS="$CXXFLAGS -include string"
 sh autogen.sh
 
-%configure
-%make_build CXXFLAGS="-include string %{build_cxxflags}" 
+%configure CXXFLAGS="$CXXFLAGS -include string"
+%make_build 
 
 %install
 

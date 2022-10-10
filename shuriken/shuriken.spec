@@ -31,12 +31,17 @@ The JUCE library takes care of handling audio and MIDI behind the scenes.
 %prep
 %autosetup 
 
+%ifarch aarch64
+sed -i -e "/-msse2/d" Shuriken.pro
+sed -i -e s"/-msse//g" Shuriken.pro
+%endif
+
 %build
 
 mkdir -p lib
 cd src/SndLibShuriken
-./configure --without-audio --without-s7
-make -w
+%configure --without-audio --without-s7
+%make_build
 mv -v libsndlib_shuriken.a ../../lib/
 
 cd ../../

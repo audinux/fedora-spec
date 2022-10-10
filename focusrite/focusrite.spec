@@ -1,16 +1,17 @@
-Summary:      ALSA Scarlett Gen 2/3 Control Panel
-Name:         alsa-scarlett-gui
-Version:      0.2
-Release:      1%{?dist}
-License:      GPLv2+
-URL:          https://github.com/geoffreybennett/alsa-scarlett-gui
+Summary:ALSA Scarlett Gen 2/3 Control Panel
+Name: alsa-scarlett-gui
+Version: 0.2
+Release: 1%{?dist}
+License: GPLv2+
+URL: https://github.com/geoffreybennett/alsa-scarlett-gui
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source:       https://github.com/geoffreybennett/alsa-scarlett-gui/archive/refs/tags/0.2.tar.gz#/%{name}-%{version}.tar.gz
+Source: https://github.com/geoffreybennett/alsa-scarlett-gui/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: gtk4-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: desktop-file-utils
@@ -33,14 +34,20 @@ sed -i -e "/Value=1.5/d" src/vu.b4.alsa-scarlett-gui.desktop.template
 
 %set_build_flags
 
-export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
-export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
-export LDFLAGS=`echo $LDFLAGS | sed -e "s/-Werror=format-security//g"`
+export CFLAGS=`echo $CFLAGS | sed -e "s|-Werror=format-security||g"`
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Werror=format-security||g"`
+export LDFLAGS=`echo $LDFLAGS | sed -e "s|-Werror=format-security||g"`
 
 cd src
 %make_build PREFIX=/usr
 
 %install
+
+%set_build_flags
+
+export CFLAGS=`echo $CFLAGS | sed -e "s|-Werror=format-security||g"`
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Werror=format-security||g"`
+export LDFLAGS=`echo $LDFLAGS | sed -e "s|-Werror=format-security||g"`
 
 cd src
 %make_install PREFIX=/usr

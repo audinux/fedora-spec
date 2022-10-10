@@ -35,6 +35,7 @@ BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
+BuildRequires: pybind11-devel
 
 %description
 A VST3 / LV2 Synthesizer
@@ -64,6 +65,11 @@ sed -i -e "s| >= MINSIGSTKSZ ? 32768 : MINSIGSTKSZ||g" libs/catch2/include/catch
 sed -i -e "s|\"-DCMAKE_BUILD_TYPE=Debug\"|\"-DCMAKE_BUILD_TYPE=Debug\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"|g" libs/JUCE/extras/Build/juceaide/CMakeLists.txt
 
 sed -i -e "s|Shortcircuit XT|Shortcircuit_XT|g" wrappers/juce/CMakeLists.txt
+
+%if 0%{?fedora} >= 37
+rm -rf libs/pybind11/include/pybind11
+ln -s /usr/include/pybind11 libs/pybind11/include/pybind11
+%endif
 
 %build
 

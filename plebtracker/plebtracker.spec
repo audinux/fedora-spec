@@ -1,11 +1,11 @@
+# Tag: Tracker, Jack, Alsa
+# Type: Standalone
+# Category: Audio, Sequencer
+
 # Global variables for github repository
 %global commit0 f6aa7078c3f39e9c8b025e70e7dbeab19119e213
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
-# Tag: Tracker, Jack, Alsa
-# Type: Standalone
-# Category: Audio, Sequencer
 
 Summary: Chiptune tracker for making chiptune-like music on a modern computer.
 Name:    plebtracker
@@ -35,12 +35,14 @@ Chiptune tracker for making chiptune-like music on a modern computer.
 %autosetup -n PLEBTracker-%{commit0}
 
 sed -i -e "s|-lncurses|-lncurses -lncursesw|g"  Tracker/src/Makefile
-sed -i -e "s|CFLAGS=|CFLAGS=%{build_cflags} |g" Tracker/src/Makefile
-sed -i -e "s|CFLAGS=|CFLAGS=%{build_cflags} |g" Interpreter/src/Makefile
+sed -i -e "s|CFLAGS=|CFLAGS=\$(DEPFLAGS) |g" Tracker/src/Makefile
+sed -i -e "s|CFLAGS=|CFLAGS=\$(DEPFLAGS) |g" Interpreter/src/Makefile
 
 %build
 
 %set_build_flags
+
+export DEPFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
 
 cd Interpreter/src
 %make_build PREFIX=/usr

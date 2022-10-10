@@ -16,7 +16,7 @@ Name:    ecasound
 Version: 2.9.3
 Release: 1%{?dist}
 Epoch:   1
-URL:     http://www.eca.cx/ecasound
+URL:     https://ecasound.seul.org/ecasound/
 License: GPL
 
 Vendor:       Planet CCRMA
@@ -100,11 +100,19 @@ Ruby bindings to Ecasound Control Interface (ECI).
 %autosetup -n ecasound-%{version}
 
 %build
-# add redhat/fedora optimizations, do not build with -g
-export AM_CFLAGS=" `echo %{optflags}|sed 's/-O2 -g//g'`" 
-export AM_CXXFLAGS=" `echo %{optflags}|sed 's/-O2 -g//g'`"
 
-%configure --with-largefile --enable-shared --with-python-modules=%{_libdir}/python%{python_version}
+%set_build_flags
+
+# add redhat/fedora optimizations, do not build with -g
+export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
+
+%configure --with-largefile \
+	   --enable-shared \
+	   --with-python-modules=%{_libdir}/python%{python_version} \
+	   CFLAGS="$CFLAGS" \
+	   CXXFLAGS="$CXXFLAGS"
+
 %make_build
 
 # build the documentation
@@ -131,6 +139,10 @@ rm -rf $RPM_BUILD_ROOT%{_usr}/local/share/ruby/
 
 # Fix python / python2
 sed -i -e "s/env python$/env python2/g" $RPM_BUILD_ROOT%{_bindir}/ecamonitor
+
+# Cleanup
+rm -f %{buildroot}/%{_libdir}/libecasound.la
+rm -f %{buildroot}/%{_libdir}/libkvutils.la
 
 %files
 %doc NEWS README INSTALL AUTHORS BUGS TODO examples
@@ -163,15 +175,12 @@ sed -i -e "s/env python$/env python2/g" $RPM_BUILD_ROOT%{_bindir}/ecamonitor
 %{_bindir}/libecasound-config
 %{_includedir}/kvutils
 %{_includedir}/libecasound
-%{_libdir}/libecasound.la
 %{_libdir}/libecasound.a
-%{_libdir}/libkvutils.la
 %{_libdir}/libkvutils.a
 
 %files -n libecasoundc
 %{_bindir}/libecasoundc-config
 %{_includedir}/libecasoundc
-%{_libdir}/libecasoundc.la
 %{_libdir}/libecasoundc.a
 
 %files -n pyecasound
@@ -185,7 +194,7 @@ sed -i -e "s/env python$/env python2/g" $RPM_BUILD_ROOT%{_bindir}/ecamonitor
 %{_datadir}/ruby/vendor_ruby/ecasound.rb
 
 %changelog
-* Thu Oct 06 2021 Yann Collette <ycollette.nospam@free.fr> - 2.9.3-2
+* Wed Oct 06 2021 Yann Collette <ycollette.nospam@free.fr> - 2.9.3-2
 - Fix for Fedora 35
 
 * Thu Apr 01 2021 Yann Collette <ycollette.nospam@free.fr> - 2.9.3-2

@@ -5,13 +5,13 @@
 %global debug_package %{nil}
 
 # Global variables for github repository
-%global commit0 774d78635745d02f42440e701ae1210ca4197840
+%global commit0 d027a414d5ff257b52c613284673933077a53cfa
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    orca
 Version: 0.1.0.%{shortcommit0}
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: An esoteric programming language
 License: GPLv2+
 URL:     https://git.sr.ht/~rabbits/orca
@@ -24,6 +24,7 @@ Source0: https://github.com/hundredrabbits/Orca-c/archive/%{commit0}.tar.gz#/%{n
 Source1: https://github.com/hundredrabbits/Orca/archive/master.zip#/%{name}-doc.zip
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: ncurses-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: portmidi-devel
@@ -46,6 +47,9 @@ sed -i -e 's/add cc_flags -std=c99/add cc_flags -g $CFLAGS -std=c99/g' tool
 
 %set_build_flags
 
+export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
+
 %make_build
 
 %install
@@ -54,7 +58,7 @@ install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 build/orca %{buildroot}%{_bindir}/
 install -m 755 -d %{buildroot}/%{_datadir}/%{name}/
 cp -r examples  %{buildroot}/%{_datadir}/%{name}/examples
-cp -r Orca-master/resources %{buildroot}/%{_datadir}/%{name}/documentation
+cp -r Orca-main/resources %{buildroot}/%{_datadir}/%{name}/documentation
 
 %files
 %doc README.md
@@ -63,6 +67,9 @@ cp -r Orca-master/resources %{buildroot}/%{_datadir}/%{name}/documentation
 %{_datadir}/%{name}/*
 
 %changelog
+* Sun Oct 09 2022 Yann Collette <ycollette.nospam@free.fr> - 0.1.0.d027a414-3
+- update to d027a414d5ff257b52c613284673933077a53cfa
+
 * Fri Oct 23 2020 Yann Collette <ycollette.nospam@free.fr> - 0.1.0.774d7863-2
 - fix debug buid + update to 774d78635745d02f42440e701ae1210ca4197840
 
