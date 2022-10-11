@@ -3,7 +3,7 @@
 # Category: Audio
 
 Name:    konfyt
-Version: 1.2.0
+Version: 1.2.1
 Release: 3%{?dist}
 Summary: A patch manager
 URL:     https://github.com/noedigcode/konfyt
@@ -14,16 +14,16 @@ Distribution: Audinux
 
 Source0: https://github.com/noedigcode/konfyt/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ sed make
+BuildRequires: gcc gcc-c++ make
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-qtsvg-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: desktop-file-utils
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: Carla-devel 
 BuildRequires: liblscp-devel 
 BuildRequires: fluidsynth-devel
+BuildRequires: desktop-file-utils
 
 %description
 Konfyt is a digital keyboard workstation for Linux which allows you to set up
@@ -85,6 +85,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Tue Oct 11 2022 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-3
+- update to 1.2.1-3 
+
 * Sun Jul 17 2022 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-3
 - update to 1.2.0-3 
 
