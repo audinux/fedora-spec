@@ -3,7 +3,7 @@
 # Category: Audio, Sequencer
 
 Name:    fasttracker2
-Version: 1.59
+Version: 1.60
 Release: 3%{?dist}
 Summary: Module tracker software for creating music
 License: GPLv3+
@@ -35,7 +35,6 @@ Pascal 7 and TASM. The program works natively under MS-DOS.
 %build
 
 %cmake -DCMAKE_BUILD_TYPE=RELEASE
-
 %cmake_build
 
 %install
@@ -139,6 +138,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Tue Oct 11 2022 Yann Collette <ycollette.nospam@free.fr> - 1.60-3
+- update to 1.60-3
+
 * Mon Oct 03 2022 Yann Collette <ycollette.nospam@free.fr> - 1.59-3
 - update to 1.59-3
 
