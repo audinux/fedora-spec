@@ -13,7 +13,7 @@ URL:     https://github.com/GuitarML/SmartAmpPro
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./source-smartguitarpro.sh master
+# ./source-smartguitarpro.sh 13bdf299b5aca3de92b73163c7d74f28c77f1d96
 
 Source0: SmartAmpPro.tar.gz
 Source1: smartguitarpro_build.tar.gz
@@ -74,12 +74,11 @@ cd Builds/LinuxMakefile
 
 %install 
 
-install -m 755 -d %{buildroot}/%{_libdir}/vst3/SmartAmpPro.vst3/Contents/x86_64-linux/
+install -m 755 -d %{buildroot}/%{_libdir}/vst3/
 install -m 755 -d %{buildroot}/%{_bindir}/
 
 install -m 755 -p Builds/LinuxMakefile/build/SmartAmpPro %{buildroot}/%{_bindir}/
-cp -ra Builds/LinuxMakefile/build/SmartAmpPro.vst3/Contents/x86_64-linux/* %{buildroot}/%{_libdir}/vst3/SmartAmpPro.vst3//Contents/x86_64-linux/
-chmod a+x %{buildroot}/%{_libdir}/vst3/SmartAmpPro.vst3/Contents/x86_64-linux/SmartAmpPro.so
+cp -ra Builds/LinuxMakefile/build/SmartAmpPro.vst3 %{buildroot}/%{_libdir}/vst3/
 
 mkdir -p %{buildroot}/%{_datadir}/smartamppro/models
 cp  models/* %{buildroot}/%{_datadir}/smartamppro/models/

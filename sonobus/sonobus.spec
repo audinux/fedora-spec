@@ -34,6 +34,7 @@ BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
+BuildRequires: desktop-file-utils
 
 %description
 SonoBus is an easy to use application for streaming high-quality,
@@ -70,13 +71,11 @@ mkdir -p .vst3
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 -p %__cmake_builddir/SonoBus_artefacts/Standalone/sonobus %{buildroot}/%{_bindir}/
 
-install -m 755 -d %{buildroot}/%{_libdir}/vst3/SonoBus.vst3/
-cp -ra %__cmake_builddir/SonoBus_artefacts/VST3/SonoBus.vst3/* %{buildroot}/%{_libdir}/vst3/SonoBus.vst3/
-chmod a+x %{buildroot}/%{_libdir}/vst3/SonoBus.vst3/Contents/x86_64-linux/SonoBus.so
+install -m 755 -d %{buildroot}/%{_libdir}/vst3/
+cp -ra %__cmake_builddir/SonoBus_artefacts/VST3/SonoBus.vst3 %{buildroot}/%{_libdir}/vst3/
 
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/SonoBusInstrument.vst3/
-cp -ra %__cmake_builddir/SonoBusInst_artefacts/VST3/SonoBusInstrument.vst3/* %{buildroot}/%{_libdir}/vst3/SonoBusInstrument.vst3/
-chmod a+x %{buildroot}/%{_libdir}/vst3/SonoBusInstrument.vst3/Contents/x86_64-linux/SonoBusInstrument.so
+cp -ra %__cmake_builddir/SonoBusInst_artefacts/VST3/SonoBusInstrument.vst3 %{buildroot}/%{_libdir}/vst3/
 
 mkdir -p %{buildroot}/%{_datadir}/applications
 cp  linux/sonobus.desktop %{buildroot}/%{_datadir}/applications/sonobus.desktop
@@ -88,6 +87,15 @@ cp  images/sonobus_logo@2x.png %{buildroot}/%{_datadir}/pixmaps/sonobus.png
 cp deps/aoo/LICENSE LICENSE-aoo
 cp deps/ff_meters/LICENSE.md LICENSE-ff_meters.md
 cp deps/juce/LICENSE.md LICENSE-juce.md
+
+desktop-file-install                         \
+  --add-category="Audio;AudioVideo"	     \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/sonobus.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/sonobus.desktop
 
 %files
 %doc README.md

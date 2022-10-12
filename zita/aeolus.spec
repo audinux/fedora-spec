@@ -26,7 +26,6 @@ Provides:  aeolus-stops = 0.4.0-1
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
-BuildRequires: perl
 BuildRequires: zita-alsa-pcmi-devel
 BuildRequires: clthreads-devel
 BuildRequires: clxclient-devel
@@ -52,25 +51,19 @@ controls including a large church reverb.
 
 cd source
 # change the default stops directory to point to the installed stops
-%{__perl} -p -i -e "s|\".stops\", \"stops\"|\".stops\", \"%{_datadir}/aeolus/stops\"|g" mainwin.cc
+sed -i -e "s|\".stops\", \"stops\"|\".stops\", \"%{_datadir}/aeolus/stops\"|g" mainwin.cc
 # don't ldconfig during build
-%{__perl} -p -i -e "s|ldconfig|# ldconfig|g" Makefile
+sed -i -e "s|ldconfig|# ldconfig|g" Makefile
 # tweak build flags
-%{__perl} -p -i -e "s|-O3|%{optflags}|g" Makefile
-%ifarch i386
-%{__perl} -p -i -e "s|-march=native|-march=i686|" Makefile
-%endif
-%ifarch x86_64
-%{__perl} -p -i -e "s|-march=native||" Makefile
-%endif
+sed -i -e "s|-O3|%{optflags}|g" Makefile
+sed -i -e "s|-march=native||" Makefile
 
 %build
 
 cd source
 
 %set_build_flags
-
-%make_build PREFIX=/usr
+%make_build PREFIX=/usr LIBDI=%{_libdir}
 
 %install
 
@@ -79,7 +72,7 @@ mkdir -p %{buildroot}%{_libdir}
 mkdir -p %{buildroot}%{_datadir}/aeolus
 
 cd source
-%make_install PREFIX=/usr
+%make_install PREFIX=/usr LIBDIR=%{_libdir}
 
 # install the stops
 (cd %{buildroot}%{_datadir}/aeolus; %{__tar} xjf %{SOURCE1}; %{__mv} stops-* stops)
