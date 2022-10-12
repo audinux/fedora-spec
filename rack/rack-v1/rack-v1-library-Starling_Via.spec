@@ -33,7 +33,7 @@ Distribution: Audinux
 # tar cvfz Via-for-Rack.tar.gz Via-for-Rack/*
 
 Source0: Rack.tar.gz
-Source1: https://github.com/starlingcode/Via-for-Rack/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: Via-for-Rack.tar.gz
 Source2: Starling_Via_plugin.json
 Patch0: rack-v1-aarch64.patch
 

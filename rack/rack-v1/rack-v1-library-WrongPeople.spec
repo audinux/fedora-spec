@@ -24,7 +24,8 @@ Distribution: Audinux
 # ./rack-source.sh v1.1.6
 
 Source0: Rack.tar.gz
-Source1: https://github.com/WrongPeople/WrongPeopleVCV/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+# Source1: https://github.com/WrongPeople/WrongPeopleVCV/archive/ {commit0}.tar.gz#/ {name}- {shortcommit0}.tar.gz
+Source1: WrongPeopleVCV.tar.gz
 Source2: WrongPeople_plugin.json
 Patch0: rack-v1-aarch64.patch
 

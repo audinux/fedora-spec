@@ -101,7 +101,7 @@ cd Southpole_plugin
 %install 
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Southpole/
-cp -r Southpole_plugin/dist/Southpole/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Southpole/
+cp -r Southpole_plugin/dist/southpole/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Southpole/
 
 %files
 %{_libexecdir}/*

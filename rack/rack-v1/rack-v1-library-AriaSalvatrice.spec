@@ -93,6 +93,9 @@ cp -n %{SOURCE2} AriaSalvatrice_plugin/plugin.json
 %build
 
 cd AriaSalvatrice_plugin
+
+make RACK_DIR=.. dep/lib/quickjs/libquickjs.a
+
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 

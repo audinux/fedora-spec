@@ -24,7 +24,8 @@ Distribution: Audinux
 # ./rack-source.sh v1.1.6
 
 Source0: Rack.tar.gz
-Source1: https://github.com/jerrysievert/synthkit//archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+# Source1: https://github.com/jerrysievert/synthkit//archive/ {commit0}.tar.gz#/ {name}- {shortcommit0}.tar.gz
+Source1: synthkit.tar.gz
 Source2: SynthKit_plugin.json
 Patch0: rack-v1-aarch64.patch
 
