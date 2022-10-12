@@ -29,7 +29,8 @@ Source2: AriaSalvatrice_plugin.json
 Patch0: rack-v1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
-BuildRequires: cmake sed
+BuildRequires: cmake 
+BuildRequires: git
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsamplerate-devel
