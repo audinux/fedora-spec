@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 e5f0e3d6cc6b13ffc0bd9dc1e712b2a338eda3f8
-%global gittag0 2.2.0
+%global commit0 36bf491bde6b9001ee114a7bd0d80aa26bec0203
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-BlushAudio
-Version: 2.2.0
+Name:    rack-v2-InfrasonicAudio
+Version: 2.0.0
 Release: 1%{?dist}
-Summary: BlushAudio plugin for Rack
+Summary: InfrasonicAudio plugin for Rack
 License: GPLv2+
-URL:     https://github.com/BlushAudioLab/BlushAudioVCVFreeModules
+URL:     https://github.com/infrasonicaudio/Infrasonic-VCV
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,8 +27,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/BlushAudioLab/BlushAudioVCVFreeModules/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: BlushAudio_plugin.json
+Source1: https://github.com/infrasonicaudio/Infrasonic-VCV/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: InfrasonicAudio_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -60,8 +60,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-BlushAudio plugin for Rack.
-A Mult
+InfrasonicAudio plugin for Rack.
+Dual-algorithm phase distortion and phase modulation oscillator
 
 %prep
 %setup -n Rack
@@ -134,24 +134,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir BlushAudio_plugin
-tar xvfz %{SOURCE1} --directory=BlushAudio_plugin --strip-components=1 
+mkdir InfrasonicAudio_plugin
+tar xvfz %{SOURCE1} --directory=InfrasonicAudio_plugin --strip-components=1 
 
-cp -n %{SOURCE2} BlushAudio_plugin/plugin.json
+cp -n %{SOURCE2} InfrasonicAudio_plugin/plugin.json
 
 %build
 
-cd BlushAudio_plugin
+cd InfrasonicAudio_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/BlushAudio/
-cp -r BlushAudio_plugin/dist/BlushAudio/* %{buildroot}%{_libexecdir}/Rack2/plugins/BlushAudio/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/InfrasonicAudio/
+cp -r InfrasonicAudio_plugin/dist/InfrasonicAudio/* %{buildroot}%{_libexecdir}/Rack2/plugins/InfrasonicAudio/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile
