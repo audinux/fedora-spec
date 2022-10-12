@@ -57,7 +57,7 @@ LV2 version of %{name}
 %set_build_flags
 
 export CXXFLAGS="$CXXFLAGS -include array"
-%make_build PREFIX=/usr LIBDIR=%{_lib} VERBOSE=1 SKIP_STRIPPING=true LDFLAGS="%{build_ldflags} -ldl" -j1
+%make_build PREFIX=/usr LIBDIR=%{_lib} VERBOSE=1 SKIP_STRIPPING=true LDFLAGS="$LDFLAGS -ldl"
 
 %install
 
