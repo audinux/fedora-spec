@@ -137,6 +137,8 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir FreeSurface_plugin
 tar xvfz %{SOURCE1} --directory=FreeSurface_plugin --strip-components=1 
 
+sed -i -e "/samplerate/d" FreeSurface_plugin/Makefile
+
 cp -n %{SOURCE2} FreeSurface_plugin/plugin.json
 
 %build

@@ -141,6 +141,7 @@ cp -n %{SOURCE2} trowaSoft_plugin/plugin.json
 
 %build
 
+CXXFLAGS="$CXXFLAGS -include iterator -std=c++17"
 cd trowaSoft_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
