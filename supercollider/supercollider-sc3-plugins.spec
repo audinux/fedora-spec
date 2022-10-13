@@ -32,20 +32,11 @@ Collection of SuperCollider plugins
 %prep
 %autosetup -n sc3-plugins
 
-%ifarch x86_64
-sed -i -e "s/lib\/SuperCollider/lib64\/SuperCollider/g" source/CMakeLists.txt
-%endif
-
-# sed -i -e "1i\#include <cstdio>" source/NHUGens/NHHall.cpp
+sed -i -e "s/lib\/SuperCollider/%{_lib}\/SuperCollider/g" source/CMakeLists.txt
 
 %build
-# remove all git directories
-find . -type d -name .git -printf "\"%h/%f\"\n" | xargs rm -rf 
 
-%cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_VERBOSE_MAKEFILE=TRUE \
-       -DSC_PATH=/usr/include/SuperCollider \
-       -DCMAKE_INSTALL_PREFIX=%{_prefix} \
-       -DCMAKE_C_FLAGS="%{optflags}" -DCMAKE_CXX_FLAGS="%{optflags}" -DSUPERNOVA=ON
+%cmake -DSC_PATH=/usr/include/SuperCollider -DSUPERNOVA=ON
 
 %cmake_build
 

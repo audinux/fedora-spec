@@ -77,6 +77,8 @@ sed -i -e "/add_library(boost_test_exec_monitor_lib SHARED IMPORTED)/d" CMakeLis
 sed -i -e "s/test_exec_monitor//g" CMakeLists.txt
 sed -i -e "280,281d" CMakeLists.txt
 
+sed -i -e "s/typedef struct SNDFILE_tag SNDFILE/typedef struct sf_private_tag SNDFILE/g" include/plugin_interface/SC_SndBuf.h
+
 %build
 # remove all git directories
 find . -type d -name .git -printf "\"%h/%f\"\n" | xargs rm -rf 
