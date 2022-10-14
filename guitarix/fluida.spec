@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name:    fluida
-Version: 0.7
+Version: 0.8
 Release: 1%{?dist}
 Summary: Fluidsynth as LV2 plugin 
 License: BSD
@@ -12,7 +12,7 @@ URL: https://github.com/brummer10/Fluida.lv2
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/brummer10/Fluida.lv2/files/6329806/Fluida_%{version}.tar.gz
+Source0: https://github.com/brummer10/Fluida.lv2/releases/download/v%{version}/Fluida_%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel
@@ -33,7 +33,7 @@ Fluidsynth as LV2 plugin.
 
 %set_build_flags
 
-%make_build STRIP=true CXXFLAGS="%build_cxxflags -fPIC -I/usr/include/cairo -I/usr/include/sigc++-2.0/ -I/usr/%{_lib}/sigc++-2.0/include" 
+%make_build STRIP=true CXXFLAGS="$CXXFLAGS -fPIC -I/usr/include/cairo -I/usr/include/sigc++-2.0/ -I/usr/%{_lib}/sigc++-2.0/include" 
 
 %install 
 
@@ -45,6 +45,9 @@ Fluidsynth as LV2 plugin.
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Oct 14 2022 Yann Collette <ycollette.nospam@free.fr> - 0.8-1
+- update to 0.8-1
+
 * Sun Apr 18 2021 Yann Collette <ycollette.nospam@free.fr> - 0.7-1
 - update to 0.7-1
 
