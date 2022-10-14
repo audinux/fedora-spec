@@ -4,7 +4,7 @@
 # GUIToolkit: Qt5
 
 Name:    samplebrain
-Version: 0.18
+Version: 0.18.4
 Release: 1%{?dist}
 Summary: A custom sample mashing app designed by Aphex Twin
 URL:     https://gitlab.com/then-try-this/samplebrain
@@ -79,5 +79,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/samplebrain/docs/*
 
 %changelog
+* Fri Oct 14 2022 Yann Collette <ycollette.nospam@free.fr> - 0.18.4-1
+- update to 0.18.4-1
+
 * Wed Sep 28 2022 Yann Collette <ycollette.nospam@free.fr> - 0.18-1
 - Initial spec file
