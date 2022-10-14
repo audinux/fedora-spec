@@ -7,7 +7,7 @@
 %define	uname OpenBoard
 
 Name:    openboard
-Version: 1.6.3
+Version: 1.6.4
 Release: 3%{?dist}
 Summary: Interactive whiteboard for schools and universities
 License: GPLv3+
@@ -19,9 +19,14 @@ Distribution: Audinux
 Source0: https://github.com/OpenBoard-org/OpenBoard/archive/v%{version}/%{uname}-%{version}.tar.gz
 Source1: %{name}.desktop
 
+BuildRequires: gcc gcc-c++
 BuildRequires: bison
 BuildRequires: flex
+%if 0%{?fedora} >= 37
+Buildrequires: compat-ffmpeg4-devel
+%else
 BuildRequires: ffmpeg-devel
+%endif
 BuildRequires: libpaper-devel
 BuildRequires: qtsingleapplication-qt5-devel
 BuildRequires: quazip-devel
@@ -46,10 +51,6 @@ BuildRequires: pkgconfig(freetype2)
 BuildRequires: pkgconfig(openssl)
 BuildRequires: poppler-devel
 BuildRequires: poppler-cpp-devel
-BuildRequires: ffmpeg-devel
-%if 0%{?fedora} >= 36
-BuildRequires: compat-ffmpeg4-devel
-%endif
 %if 0%{?fedora} >= 36
 BuildRequires: sdl12-compat-devel
 %else
@@ -110,7 +111,9 @@ export CXXFLAGS="-I/usr/include/ffmpeg $CXXFLAGS"
 %make_install
 
 mkdir -p %{buildroot}%{_libdir}/%{name}/
-cp -pr build/linux/release/product/* %{buildroot}%{_libdir}/%{name}/
+cp -pr build/linux/release/product/etc %{buildroot}%{_libdir}/%{name}/
+cp -pr build/linux/release/product/i18n %{buildroot}%{_libdir}/%{name}/
+cp -pr build/linux/release/product/library %{buildroot}%{_libdir}/%{name}/
 
 # icons
 install -D -m 0644 resources/images/%{uname}.png %{buildroot}%{_datadir}/icons/hicolor/64x64/apps/%{name}.png
@@ -129,9 +132,6 @@ cp -R resources/customizations %{buildroot}%{_libdir}/%{name}/
 mkdir -p %{buildroot}%{_bindir}/
 install -m 755 resources/linux/run.sh %{buildroot}%{_bindir}/%{name}
 
-mkdir -p %{buildroot}%{_libexecdir}/
-install -m 755 build/linux/release/product/OpenBoard %{buildroot}%{_libexecdir}/
-
 # clean some exe bits
 find %{buildroot} -executable -type f -name *.js -exec chmod -x '{}' \+
 find %{buildroot} -executable -type f -name *.svg -exec chmod -x '{}' \+
@@ -144,11 +144,13 @@ find %{buildroot} -executable -type f -name *.html -exec chmod -x '{}' \+
 %license COPYRIGHT LICENSE
 %{_bindir}/%{name} 
 %{_libdir}/%{name}/
-%{_libexecdir}/OpenBoard
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Fri Oct 14 2022 Yann Collette <ycollette.nospam@free.fr> - 1.6.4-3
+- update to 1.6.4-3
+
 * Mon Jun 13 2022 Yann Collette <ycollette.nospam@free.fr> - 1.6.3-3
 - update to 1.6.3-3
 
