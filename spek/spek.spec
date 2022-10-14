@@ -14,8 +14,9 @@ BuildRequires: gcc-c++ gcc
 BuildRequires: autoconf automake
 %if 0%{?fedora} >= 36
 Buildrequires: compat-ffmpeg4-devel
-%endif
+%else
 BuildRequires: ffmpeg-devel
+%endif
 BuildRequires: wxGTK3-devel
 BuildRequires: SDL2-devel
 BuildRequires: desktop-file-utils

@@ -7,17 +7,21 @@ Version: 0.9.0
 Release: 3%{?dist}
 Summary: harvid -- HTTP Ardour Video Daemon
 License: GPLv2+
+URL:     https://github.com/x42/harvid
 
 Vendor:       Audinux
 Distribution: Audinux
 
-URL:     https://github.com/x42/harvid
 Source0: https://github.com/x42/harvid/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: libXrender-devel
 BuildRequires: libX11-devel
+%if 0%{?fedora} >= 37
+BuildRequires: compat-ffmpeg4-devel
+%else
 BuildRequires: ffmpeg-devel
+%endif
 BuildRequires: libjpeg-turbo-devel
 BuildRequires: vim-common
 BuildRequires: libpng-devel
@@ -54,7 +58,6 @@ ln -s /usr/bin/ffprobe %{buildroot}/usr/bin/ffprobe_harvid
 %license COPYING
 %{_bindir}/*
 %{_mandir}/*
-%{_datadir}/*
 
 %changelog
 * Mon May 30 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9.0-3

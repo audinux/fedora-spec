@@ -28,7 +28,11 @@ BuildRequires: mesa-libGLU-devel
 BuildRequires: libltc-devel
 BuildRequires: liblo-devel
 BuildRequires: freetype-devel
+%if 0%{?fedora} >= 37
+BuildRequires: compat-ffmpeg4-devel
+%else
 BuildRequires: ffmpeg-devel
+%endif
 BuildRequires: libXv-devel
 BuildRequires: SDL2-devel
 BuildRequires: libXpm-devel

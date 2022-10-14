@@ -1,5 +1,5 @@
 # Global variables for github repository
-%global commit0 330a3e25b1134b6ab1d92ccdf34f3ede659f17e6
+%global commit0 8a6e66ed4ac1fce43725e66afc4aaf5b649c73ce
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
@@ -15,16 +15,19 @@ Distribution: Audinux
 
 Source0: https://github.com/c0ntrol/veejay/archive/%{commit0}.tar.gz#/veejay-%{shortcommit0}.tar.gz
 
-BuildRequires: gcc gcc-c++ sed make
-BuildRequires: alsa-lib-devel
-BuildRequires: desktop-file-utils
-BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: gtk2-devel
+BuildRequires: gcc gcc-c++
 BuildRequires: automake
 BuildRequires: autoconf
 BuildRequires: libtool
+BuildRequires: alsa-lib-devel
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: gtk2-devel
 BuildRequires: libjpeg-devel
+%if 0%{?fedora} >= 37
+Buildrequires: compat-ffmpeg4-devel
+%else
 BuildRequires: ffmpeg-devel
+%endif
 BuildRequires: libX11-devel
 BuildRequires: libxml2-devel
 BuildRequires: qrencode-devel
@@ -33,9 +36,10 @@ BuildRequires: freetype-devel
 BuildRequires: liblo-devel
 BuildRequires: libv4l-devel
 BuildRequires: libglade2-devel
-BuildRequires: compat-ffmpeg28-devel
+BuildRequires: compat-ffmpeg4-devel
 BuildRequires: gmic-devel
 BuildRequires: chrpath
+BuildRequires: desktop-file-utils
 
 %description
 Veejay is a Visual Instrument
@@ -56,16 +60,25 @@ or one of veejay's internal formats. Veejay is built upon a servent architecture
 %prep
 %autosetup -n veejay-%{commit0}
 
-sed -i -e "0,/AC_CONFIG_MACRO_DIR/{/AC_CONFIG_MACRO_DIR/d;}" veejay-current/veejay-core/configure.ac
+%ifarch aarch64
+sed -i -e "/Architecture/d" veejay-current/plugin-packs/lvdcrop/configure.ac
+sed -i -e "/Architecture/d" veejay-current/plugin-packs/lvdshared/configure.ac
+sed -i -e "/Architecture/d" veejay-current/plugin-packs/lvdasciiart/configure.ac
+sed -i -e "/Architecture/d" veejay-current/plugin-packs/lvdgmic/configure.ac
+sed -i -e "/Architecture/d" veejay-current/veejay-client/configure.ac
+sed -i -e "/Architecture/d" veejay-current/veejay-server/configure.ac
+sed -i -e "/Architecture/d" veejay-current/veejay-utils/configure.ac
+sed -i -e "/Architecture/d" veejay-current/veejay-core/configure.ac
+%endif
 
 %build
 
 %set_build_flags
 
-export LIBAVUTIL_CFLAGS=-I/usr/include/compat-ffmpeg28
-export LIBAVCODEC_CFLAGS=-I/usr/include/compat-ffmpeg28
-export LIBAVFORMAT_CFLAGS=-I/usr/include/compat-ffmpeg28
-export LIBSWSCALE_CFLAGS=-I/usr/include/compat-ffmpeg28
+export LIBAVUTIL_CFLAGS=-I/usr/include/compat-ffmpeg4
+export LIBAVCODEC_CFLAGS=-I/usr/include/compat-ffmpeg4
+export LIBAVFORMAT_CFLAGS=-I/usr/include/compat-ffmpeg4
+export LIBSWSCALE_CFLAGS=-I/usr/include/compat-ffmpeg4
 export PKG_CONFIG_PATH=%{buildroot}%{_libdir}/pkgconfig
 
 cd veejay-current
@@ -86,13 +99,13 @@ find . -name "Makefile" -exec sed -i -e "s/-msse//g" {} \; -print
 find . -name "Makefile" -exec sed -i -e "s/-mfpmath=sse//g" {} \; -print
 find . -name "Makefile" -exec sed -i -e "s/-m64//g" {} \; -print
 
-%make_build CFLAGS="$CFLAGS -I/usr/include/compat-ffmpeg28" LDFLAGS="$LDFLAGS -L/usr/lib64/compat-ffmpeg28"
+%make_build CFLAGS="$CFLAGS -I/usr/include/compat-ffmpeg4" LDFLAGS="$LDFLAGS -L/usr/lib64/compat-ffmpeg4"
 
 %install
 
 cd veejay-current
 cd veejay-core
-%make_install CFLAGS="$CFLAGS -I/usr/include/compat-ffmpeg28 -I%{buildroot}%{_includedir}" LDFLAGS="$LDFLAGS -L/usr/lib64/compat-ffmpeg28/ -L%{buildroot}%{_libdir}"
+%make_install CFLAGS="$CFLAGS -I/usr/include/compat-ffmpeg4 -I%{buildroot}%{_includedir}" LDFLAGS="$LDFLAGS -L/usr/lib64/compat-ffmpeg4/ -L%{buildroot}%{_libdir}"
 
 %files
 %doc veejay-current/veejay-core/README veejay-current/veejay-core/AUTHORS veejay-current/veejay-core/ChangeLog
