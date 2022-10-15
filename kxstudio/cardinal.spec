@@ -1,7 +1,7 @@
 %define _lto_cflags %{nil}
 
 Name:    cardinal
-Version: 22.07
+Version: 22.10
 Release: 2%{?dist}
 Summary: Virtual modular synthesizer plugin
 License: GPLv2+
@@ -97,6 +97,9 @@ mv %buildroot/usr/lib %buildroot/usr/lib64
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Oct 15 2022 Yann Collette <ycollette.nospam@free.fr> - 22.10-2
+- update to 22.10-2
+
 * Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 22.07-2
 - update to 22.07-2 - fix packaging
 
