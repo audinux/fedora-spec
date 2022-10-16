@@ -90,6 +90,8 @@ tar xvfz %{SOURCE1} --directory=stocaudio_plugin --strip-components=1
 
 cp -n %{SOURCE2} stocaudio_plugin/plugin.json
 
+sed -i -e "/samplerate/d" stocaudio_plugin/Makefile
+
 %build
 
 cd stocaudio_plugin

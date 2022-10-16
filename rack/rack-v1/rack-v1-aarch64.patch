@@ -1,33 +1,33 @@
-From 4ae86bcd549ead0e49b31cabddee51fcca5e945a Mon Sep 17 00:00:00 2001
+From aadee7d321f47306988cc1424c784a5e1389e54a Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Wed, 12 Oct 2022 07:59:05 +0200
+Date: Sun, 16 Oct 2022 22:53:26 +0200
 Subject: [PATCH] aarch64
 
 ---
  arch.mk                    |  3 +++
- compile.mk                 |  5 ++++-
+ compile.mk                 |  9 +++++----
  dep.mk                     |  2 +-
  include/simd/sse_mathfun.h |  3 ++-
  include/simd/vector.hpp    |  3 ++-
  src/engine/Engine.cpp      | 10 +++++-----
- 6 files changed, 17 insertions(+), 9 deletions(-)
+ 6 files changed, 18 insertions(+), 12 deletions(-)
 
 diff --git a/arch.mk b/arch.mk
-index 5a86caa..892f556 100644
+index 5a86caa..e0f7d45 100644
 --- a/arch.mk
 +++ b/arch.mk
 @@ -15,6 +15,9 @@ else ifneq (, $(findstring mingw, $(MACHINE)))
  else ifneq (, $(findstring linux, $(MACHINE)))
  	ARCH_LIN := 1
  	ARCH := lin
-+else ifneq (,$(findstring aarch64-,$(MACHINE)))
++else ifneq (,$(findstring aarch64,$(MACHINE)))
 +	ARCH_AARCH64 := 1
 +	ARCH_NAME := aarch64
  else
  $(error Could not determine architecture of $(MACHINE). Try hacking around in arch.mk)
  endif
 diff --git a/compile.mk b/compile.mk
-index 96ea4b8..f799fcf 100644
+index 96ea4b8..b3a4ca2 100644
 --- a/compile.mk
 +++ b/compile.mk
 @@ -12,7 +12,7 @@ FLAGS += -MMD -MP
@@ -39,16 +39,23 @@ index 96ea4b8..f799fcf 100644
  # Warnings
  FLAGS += -Wall -Wextra -Wno-unused-parameter
  # C++ standard
-@@ -78,6 +78,9 @@ build/%.m.o: %.m
+@@ -78,12 +78,13 @@ build/%.m.o: %.m
  
  build/%.bin.o: %
  	@mkdir -p $(@D)
+-ifdef ARCH_LIN
+-	$(OBJCOPY) -I binary -O elf64-x86-64 -B i386:x86-64 --rename-section .data=.rodata,alloc,load,readonly,data,contents $< $@
+-endif
+ ifdef ARCH_WIN
 +ifdef ARCH_AARCH64
 +	$(OBJCOPY) -I binary -O elf64-littleaarch64 -B aarch64 --rename-section .data=.rodata,alloc,load,readonly,data,contents $< $@
-+endif
- ifdef ARCH_LIN
- 	$(OBJCOPY) -I binary -O elf64-x86-64 -B i386:x86-64 --rename-section .data=.rodata,alloc,load,readonly,data,contents $< $@
++else
+ 	$(OBJCOPY) -I binary -O pe-x86-64 -B i386:x86-64 --rename-section .data=.rodata,alloc,load,readonly,data,contents $< $@
  endif
++endif
+ ifdef ARCH_MAC
+ 	@# Apple makes this needlessly complicated, so just generate a C file with an array.
+ 	xxd -i $< | $(CC) $(MAC_SDK_FLAGS) -c -o $@ -xc -
 diff --git a/dep.mk b/dep.mk
 index bad90ec..5f18ce6 100644
 --- a/dep.mk

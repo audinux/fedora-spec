@@ -1,0 +1,26 @@
+From 26edeb7800dafe1e38be8dc2f2d809604d5b38e6 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 16 Oct 2022 22:00:14 +0200
+Subject: [PATCH] aarch64
+
+---
+ dbRackModules_plugin/src/SIMDUtilities.hpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/dbRackModules_plugin/src/SIMDUtilities.hpp b/dbRackModules_plugin/src/SIMDUtilities.hpp
+index 914891e..e779430 100644
+--- a/dbRackModules_plugin/src/SIMDUtilities.hpp
++++ b/dbRackModules_plugin/src/SIMDUtilities.hpp
+@@ -8,7 +8,8 @@ ValleyRackFree Copyright (C) 2020, Valley Audio Soft, Dale Johnson
+ Licenced under the terms of the GNU General Public License v3 or later
+  */
+ #pragma once
+-#include <pmmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse3.h>
+ #include <iostream>
+ #include "plugin.hpp"
+ #define VALLEY_1F2 0.5
+-- 
+2.37.3
+

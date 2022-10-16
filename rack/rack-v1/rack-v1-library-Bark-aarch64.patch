@@ -1,0 +1,28 @@
+From f87d54bc7937075c0a949bc7e8aea861709aa4bb Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 16 Oct 2022 22:12:36 +0200
+Subject: [PATCH] aarch64
+
+---
+ Bark_plugin/src/dependancies/utility/fasttrigo.h | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/Bark_plugin/src/dependancies/utility/fasttrigo.h b/Bark_plugin/src/dependancies/utility/fasttrigo.h
+index 136be52..7e153b0 100644
+--- a/Bark_plugin/src/dependancies/utility/fasttrigo.h
++++ b/Bark_plugin/src/dependancies/utility/fasttrigo.h
+@@ -43,8 +43,9 @@
+ #include <QtGui>
+ #endif
+ //#include <intrin.h>
+-#include <xmmintrin.h>
+-#include <pmmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse.h>
++#include <simde/x86/sse3.h>
+ 
+ //Default accuracy
+ namespace FT {
+-- 
+2.37.3
+
