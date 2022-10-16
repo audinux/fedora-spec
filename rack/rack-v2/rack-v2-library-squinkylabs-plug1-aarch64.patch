@@ -1,0 +1,127 @@
+From cbb95238323642dad24d93ddad394276fd9e0ce6 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 16 Oct 2022 21:44:01 +0200
+Subject: [PATCH] aarch64
+
+---
+ squinkylabs-plug1_plugin/composites/MixM.h                 | 3 ++-
+ squinkylabs-plug1_plugin/dsp/filters/MultiLag.h            | 5 +++--
+ .../dsp/third-party/kiss_fft130/kiss_fft.h                 | 3 ++-
+ squinkylabs-plug1_plugin/dsp/third-party/src/SqMath.h      | 3 ++-
+ squinkylabs-plug1_plugin/dsp/utils/LookupTable.h           | 3 ++-
+ squinkylabs-plug1_plugin/dsp/utils/fVec.h                  | 5 +++--
+ squinkylabs-plug1_plugin/ssehack/x86intrin.h               | 7 ++++---
+ 7 files changed, 18 insertions(+), 11 deletions(-)
+
+diff --git a/squinkylabs-plug1_plugin/composites/MixM.h b/squinkylabs-plug1_plugin/composites/MixM.h
+index 30fbe5a..04b3aad 100644
+--- a/squinkylabs-plug1_plugin/composites/MixM.h
++++ b/squinkylabs-plug1_plugin/composites/MixM.h
+@@ -2,7 +2,8 @@
+ #pragma once
+ 
+ #include <assert.h>
+-#include <immintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/avx.h>
+ 
+ #include <memory>
+ 
+diff --git a/squinkylabs-plug1_plugin/dsp/filters/MultiLag.h b/squinkylabs-plug1_plugin/dsp/filters/MultiLag.h
+index 5494ea4..f423035 100644
+--- a/squinkylabs-plug1_plugin/dsp/filters/MultiLag.h
++++ b/squinkylabs-plug1_plugin/dsp/filters/MultiLag.h
+@@ -6,8 +6,9 @@
+ 
+ #include <assert.h>
+ #include <cmath>
+-#include <xmmintrin.h>
+-#include <mmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse.h>
++#include <simde/x86/mmx.h>
+ 
+ #define _LLOOK
+ #define _LPSSE
+diff --git a/squinkylabs-plug1_plugin/dsp/third-party/kiss_fft130/kiss_fft.h b/squinkylabs-plug1_plugin/dsp/third-party/kiss_fft130/kiss_fft.h
+index 64c50f4..d575428 100644
+--- a/squinkylabs-plug1_plugin/dsp/third-party/kiss_fft130/kiss_fft.h
++++ b/squinkylabs-plug1_plugin/dsp/third-party/kiss_fft130/kiss_fft.h
+@@ -24,7 +24,8 @@ extern "C" {
+ */
+ 
+ #ifdef USE_SIMD
+-# include <xmmintrin.h>
++#  define SIMDE_ENABLE_NATIVE_ALIASES
++#  include <simde/x86/sse.h>
+ # define kiss_fft_scalar __m128
+ #define KISS_FFT_MALLOC(nbytes) _mm_malloc(nbytes,16)
+ #define KISS_FFT_FREE _mm_free
+diff --git a/squinkylabs-plug1_plugin/dsp/third-party/src/SqMath.h b/squinkylabs-plug1_plugin/dsp/third-party/src/SqMath.h
+index 3bc23d3..09b623a 100644
+--- a/squinkylabs-plug1_plugin/dsp/third-party/src/SqMath.h
++++ b/squinkylabs-plug1_plugin/dsp/third-party/src/SqMath.h
+@@ -1,7 +1,8 @@
+ #pragma once
+ 
+ #include "rack.hpp"
+-#include <immintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/avx.h>
+ #include <random>
+ #if !defined(M_PI)
+ #define M_PI float(3.14159265358979323846264338327950288)
+diff --git a/squinkylabs-plug1_plugin/dsp/utils/LookupTable.h b/squinkylabs-plug1_plugin/dsp/utils/LookupTable.h
+index 5afcaa0..3b9ac9f 100644
+--- a/squinkylabs-plug1_plugin/dsp/utils/LookupTable.h
++++ b/squinkylabs-plug1_plugin/dsp/utils/LookupTable.h
+@@ -7,7 +7,8 @@
+ #include <assert.h>
+ #include <cmath>
+ #include <memory>
+-#include <emmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse2.h>
+ #include <functional>
+ 
+ template <typename T> class LookupTableParams;
+diff --git a/squinkylabs-plug1_plugin/dsp/utils/fVec.h b/squinkylabs-plug1_plugin/dsp/utils/fVec.h
+index f2ad3c1..9b5c25f 100644
+--- a/squinkylabs-plug1_plugin/dsp/utils/fVec.h
++++ b/squinkylabs-plug1_plugin/dsp/utils/fVec.h
+@@ -1,7 +1,8 @@
+ #pragma once
+ 
+ #include <cstdlib>
+-#include <xmmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse.h>
+ 
+ template <int N>
+ class fVec
+@@ -56,4 +57,4 @@ inline void fVec<N>::mul_i(const fVec<N>& other)
+     for (int i = 0; i < N; ++i) {
+         data[i] = _mm_mul_ps(data[i], other.data[i]);
+     }
+-}
+\ No newline at end of file
++}
+diff --git a/squinkylabs-plug1_plugin/ssehack/x86intrin.h b/squinkylabs-plug1_plugin/ssehack/x86intrin.h
+index 8d1e681..7bed478 100644
+--- a/squinkylabs-plug1_plugin/ssehack/x86intrin.h
++++ b/squinkylabs-plug1_plugin/ssehack/x86intrin.h
+@@ -5,6 +5,7 @@
+  * This file is only in the search path for MS builds.
+  */
+ 
+-#include <xmmintrin.h>
+-#include <mmintrin.h>
+-#include <immintrin.h>
+\ No newline at end of file
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/mmx.h>
++#include <simde/x86/sse.h>
++#include <simde/x86/avx.h>
+-- 
+2.37.3
+

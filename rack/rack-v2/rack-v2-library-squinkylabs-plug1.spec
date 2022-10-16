@@ -30,6 +30,7 @@ Source0: Rack.tar.gz
 Source1: https://github.com/kockie69/SquinkyVCV-main/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: squinkylabs-plug1_plugin.json
 Patch0: rack-v2-aarch64.patch
+Patch1: rack-v2-library-squinkylabs-plug1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -138,6 +139,10 @@ mkdir squinkylabs-plug1_plugin
 tar xvfz %{SOURCE1} --directory=squinkylabs-plug1_plugin --strip-components=1 
 
 cp -n %{SOURCE2} squinkylabs-plug1_plugin/plugin.json
+
+%ifarch aarch64
+%patch1 -p1
+%endif
 
 %build
 

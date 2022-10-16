@@ -141,6 +141,9 @@ cp -n %{SOURCE2} RebelTech_plugin/plugin.json
 
 %build
 
+%ifarch x86_64 amd64
+CXXFLAGS=-msse4
+%endif
 cd RebelTech_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 

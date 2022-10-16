@@ -80,13 +80,15 @@ diff --git a/include/simd/sse_mathfun.h b/include/simd/sse_mathfun.h
 index 8f703f9..f9cdecd 100644
 --- a/include/simd/sse_mathfun.h
 +++ b/include/simd/sse_mathfun.h
-@@ -43,7 +43,8 @@ This derived source file is released under the zlib license.
+@@ -43,7 +43,10 @@ This derived source file is released under the zlib license.
    (this is the zlib license)
  */
  #pragma once
 -#include <pmmintrin.h>
 +#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse3.h>
 +#include <simde/x86/sse2.h>
++#include <simde/x86/sse.h>
  
  
  /** Generate 1.f without accessing memory */

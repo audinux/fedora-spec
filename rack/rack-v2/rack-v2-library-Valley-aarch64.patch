@@ -1,0 +1,103 @@
+From 033322a82fd09398417909fad9c39b3ab017debd Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 16 Oct 2022 19:41:59 +0200
+Subject: [PATCH] aarch64
+
+---
+ Valley_plugin/src/Common/DSP/InterpDelay.hpp    | 4 +++-
+ Valley_plugin/src/Common/SIMD/QuadOsc.hpp       | 4 +++-
+ Valley_plugin/src/Common/SIMD/SIMDUtilities.hpp | 4 +++-
+ Valley_plugin/src/Interzone/Interzone.hpp       | 4 +++-
+ Valley_plugin/src/Terrorform/Enhancer.hpp       | 4 +++-
+ Valley_plugin/src/Terrorform/TFormSubOsc.hpp    | 4 +++-
+ 6 files changed, 18 insertions(+), 6 deletions(-)
+
+diff --git a/Valley_plugin/src/Common/DSP/InterpDelay.hpp b/Valley_plugin/src/Common/DSP/InterpDelay.hpp
+index 29eec9f..a4a0764 100755
+--- a/Valley_plugin/src/Common/DSP/InterpDelay.hpp
++++ b/Valley_plugin/src/Common/DSP/InterpDelay.hpp
+@@ -1,7 +1,9 @@
+ #pragma once
+ #include <vector>
+ #include <cmath>
+-#include <pmmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse3.h>
++
+ #define MAX_DELAY_TAP_GROUPS 512
+ #define MAX_DELAY_LENGTH 65536
+ 
+diff --git a/Valley_plugin/src/Common/SIMD/QuadOsc.hpp b/Valley_plugin/src/Common/SIMD/QuadOsc.hpp
+index 0e373eb..c4c8a3e 100755
+--- a/Valley_plugin/src/Common/SIMD/QuadOsc.hpp
++++ b/Valley_plugin/src/Common/SIMD/QuadOsc.hpp
+@@ -9,7 +9,9 @@
+ #ifndef QuadOsc_hpp
+ #define QuadOsc_hpp
+ 
+-#include <pmmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse3.h>
++
+ #include <cmath>
+ #include <cstdint>
+ #include <ctime>
+diff --git a/Valley_plugin/src/Common/SIMD/SIMDUtilities.hpp b/Valley_plugin/src/Common/SIMD/SIMDUtilities.hpp
+index 318e1e7..54c3c18 100755
+--- a/Valley_plugin/src/Common/SIMD/SIMDUtilities.hpp
++++ b/Valley_plugin/src/Common/SIMD/SIMDUtilities.hpp
+@@ -7,7 +7,9 @@
+ //
+ 
+ #pragma once
+-#include <pmmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse3.h>
++
+ #include <iostream>
+ #include <simd/sse_mathfun_extension.h>
+ #define VALLEY_1F2 0.5
+diff --git a/Valley_plugin/src/Interzone/Interzone.hpp b/Valley_plugin/src/Interzone/Interzone.hpp
+index 5347add..12fd982 100755
+--- a/Valley_plugin/src/Interzone/Interzone.hpp
++++ b/Valley_plugin/src/Interzone/Interzone.hpp
+@@ -25,7 +25,9 @@
+ #ifndef DSJ_INTERZONE_HPP
+ #define DSJ_INTERZONE_HPP
+ 
+-#include <pmmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse3.h>
++
+ #include <iostream>
+ #include "../Valley.hpp"
+ #include "../ValleyComponents.hpp"
+diff --git a/Valley_plugin/src/Terrorform/Enhancer.hpp b/Valley_plugin/src/Terrorform/Enhancer.hpp
+index cc89d4a..971abcb 100644
+--- a/Valley_plugin/src/Terrorform/Enhancer.hpp
++++ b/Valley_plugin/src/Terrorform/Enhancer.hpp
+@@ -1,5 +1,7 @@
+ #pragma once
+-#include <pmmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse3.h>
++
+ #include <cmath>
+ #include <cstdint>
+ #include "../Common/SIMD/VecOnePoleFilters.hpp"
+diff --git a/Valley_plugin/src/Terrorform/TFormSubOsc.hpp b/Valley_plugin/src/Terrorform/TFormSubOsc.hpp
+index e2c4da3..dc7f152 100644
+--- a/Valley_plugin/src/Terrorform/TFormSubOsc.hpp
++++ b/Valley_plugin/src/Terrorform/TFormSubOsc.hpp
+@@ -1,5 +1,7 @@
+ #pragma once
+-#include <pmmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse3.h>
++
+ #include <cmath>
+ #include <cstdint>
+ #include "../Common/SIMD/SIMDUtilities.hpp"
+-- 
+2.37.3
+
