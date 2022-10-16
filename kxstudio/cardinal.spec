@@ -11,6 +11,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/DISTRHO/Cardinal/releases/download/%{version}/cardinal-%{version}.tar.xz
+Source1: Cardinal.png
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: python-qt5-devel
@@ -30,7 +31,17 @@ BuildRequires: non-ntk-fluid
 BuildRequires: non-ntk-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: linuxsampler-devel
+BuildRequires: jansson-devel
+BuildRequires: libarchive-devel
+BuildRequires: libsamplerate-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libXext-devel
+BuildRequires: libXcursor-devel
+BuildRequires: libX11-devel
+BuildRequires: mesa-libGL-devel
+BuildRequires: speexdsp-devel
 BuildRequires: wget
+BuildRequires: desktop-file-utils
 
 Requires(pre): python3-qt5
 
@@ -64,6 +75,13 @@ License:  GPLv2+
 %description -n vst-%{name}
 VST2 version of %{name}
 
+%package -n clap-%{name}
+Summary:  CLAP version of %{name}
+License:  GPLv2+
+
+%description -n clap-%{name}
+CLAP version of %{name}
+
 %prep
 %autosetup -n %{name}-%{version}
 
@@ -73,19 +91,46 @@ VST2 version of %{name}
 export CFLAGS="$CFLAGS -Wno-error=format-security"
 export CXXFLAGS="$CXXFLAGS -Wno-error=format-security"
 
-%make_build PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true
+%make_build PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true SYSDEPS=true
 
 %install 
-%make_install PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true
-%ifarch x86_64 amd64
+%make_install PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true SYSDEPS=true
+%ifarch x86_64 amd64 aarch64
 mv %buildroot/usr/lib %buildroot/usr/lib64
 %endif
+
+# Install Cardinal clap
+install -m 755 -d %{buildroot}/%{_libdir}/clap/
+cp -ra bin/Cardinal.clap/CardinalSynth.clap %{buildroot}/%{_libdir}/clap/
+cp -ra bin/Cardinal.clap/CardinalFX.clap %{buildroot}/%{_libdir}/clap/
+
+# Write desktop files
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
+[Desktop Entry]
+Name=Cardinal
+Exec=Cardinal
+Icon=Cardinal
+Comment=Cardinal Modular Synthesizer
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+EOF
+
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
+install -m 644 %{SOURCE1} %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
 %license LICENSE
 %{_bindir}/*
 %{_datadir}/%{name}/*
 %{_datadir}/doc/%{name}/*
+%{_datadir}/applications/*
+%{_datadir}/icons/hicolor/scalable/apps/*
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
@@ -95,6 +140,9 @@ mv %buildroot/usr/lib %buildroot/usr/lib64
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
+
+%files -n clap-%{name}
+%{_libdir}/clap/*
 
 %changelog
 * Sat Oct 15 2022 Yann Collette <ycollette.nospam@free.fr> - 22.10-2
