@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 81bb04ae4d6e8c25874adfbdde207fa45b4ddf40
-%global gittag0 2.1.3
+%global commit0 3902d9cddb6376533122808b568f21a74ae72ec3
+%global gittag0 2.0.7
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-dbRackModules
-Version: 2.1.3
+Name:    rack-v2-EnigmaCurry
+Version: 2.0.7
 Release: 1%{?dist}
-Summary: dbRackModules plugin for Rack
+Summary: EnigmaCurry plugin for Rack
 License: GPLv2+
-URL:     https://github.com/docb/dbRackModules
+URL:     https://github.com/EnigmaCurry/EnigmaCurry-vcv-pack
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,8 +27,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/docb/dbRackModules/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: dbRackModules_plugin.json
+Source1: https://github.com/EnigmaCurry/EnigmaCurry-vcv-pack/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: EnigmaCurry_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -60,8 +60,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-dbRackModules plugin for Rack.
-Genetic Waveterrain Sysnthesis
+EnigmaCurry plugin for Rack.
+A DAW-like transport for play/stop/record
 
 %prep
 %setup -n Rack
@@ -134,24 +134,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir dbRackModules_plugin
-tar xvfz %{SOURCE1} --directory=dbRackModules_plugin --strip-components=1 
+mkdir EnigmaCurry_plugin
+tar xvfz %{SOURCE1} --directory=EnigmaCurry_plugin --strip-components=1 
 
-cp -n %{SOURCE2} dbRackModules_plugin/plugin.json
+cp -n %{SOURCE2} EnigmaCurry_plugin/plugin.json
 
 %build
 
-cd dbRackModules_plugin
+cd EnigmaCurry_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/dbRackModules/
-cp -r dbRackModules_plugin/dist/dbRackModules/* %{buildroot}%{_libexecdir}/Rack2/plugins/dbRackModules/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/EnigmaCurry/
+cp -r EnigmaCurry_plugin/dist/EnigmaCurry/* %{buildroot}%{_libexecdir}/Rack2/plugins/EnigmaCurry/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.7-1
 - initial specfile
