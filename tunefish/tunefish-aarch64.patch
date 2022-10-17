@@ -1,0 +1,45 @@
+From 78f0a11f7ce8ae37fc2d0962212678d31a872d1b Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Mon, 17 Oct 2022 13:30:43 +0200
+Subject: [PATCH] aarch64
+
+---
+ src/tunefish4/Source/runtime/runtime.hpp | 3 ++-
+ src/tunefish4/Source/runtime/simd.hpp    | 7 ++++---
+ 2 files changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/src/tunefish4/Source/runtime/runtime.hpp b/src/tunefish4/Source/runtime/runtime.hpp
+index 6cff31c..274f514 100644
+--- a/src/tunefish4/Source/runtime/runtime.hpp
++++ b/src/tunefish4/Source/runtime/runtime.hpp
+@@ -22,7 +22,8 @@
+ #ifndef RUNTIME_HPP
+ #define RUNTIME_HPP
+ 
+-#include <xmmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse.h>
+ 
+ // global constants (don't change into
+ // constants, it's a size thing!)
+diff --git a/src/tunefish4/Source/runtime/simd.hpp b/src/tunefish4/Source/runtime/simd.hpp
+index a2bd488..6e49ab3 100644
+--- a/src/tunefish4/Source/runtime/simd.hpp
++++ b/src/tunefish4/Source/runtime/simd.hpp
+@@ -22,9 +22,10 @@
+ #ifndef SIMD_HPP
+ #define SIMD_HPP
+ 
+-#include <xmmintrin.h>
+-#include <emmintrin.h>
+-#include <smmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse.h>
++#include <simde/x86/sse2.h>
++#include <simde/x86/sse4.1.h>
+ 
+ #define eSimdSelect(v, i0, i1, i2, i3)              _mm_shuffle_ps(v, v, _MM_SHUFFLE(i0, i1, i2, i3))
+ #define eSimdShuffle(v0, v1, i00, i01, i10, i11)    _mm_shuffle_ps(v0, v1, _MM_SHUFFLE(i00, i01, i10, i11))
+-- 
+2.37.3
+

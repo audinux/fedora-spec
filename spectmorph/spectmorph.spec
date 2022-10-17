@@ -13,6 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: http://www.spectmorph.org/files/releases/spectmorph-%{version}.tar.bz2
+Patch0: spectmorph-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -44,7 +45,11 @@ Requires: %{name} = %{version}-%{release}
 The %{name}-devel package contains header files for %{name}.
 
 %prep
-%autosetup -n %{name}-%{version}
+%setup -n %{name}-%{version}
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 # Fix desktop file
 sed -i -e "s/Icon=smjack.png/Icon=smjack/g" data/smjack.desktop

@@ -13,8 +13,11 @@ Source0: https://torger.se/anders/files/brutefir-%{version}.tar.gz
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
-BuildRequires: gcc gcc-c++ perl make
-BuildRequires: fftw-devel flex alsa-lib-devel jack-audio-connection-kit-devel
+BuildRequires: gcc gcc-c++ make
+BuildRequires: flex
+BuildRequires: fftw-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: jack-audio-connection-kit-devel
 
 %description
 BruteFIR is a software convolution engine, a program for applying long
@@ -29,9 +32,9 @@ through a simple command line interface.
 %build
 
 # add linker --build-id
-perl -p -i -e "s|= ld|= ld --build-id |g" Makefile
-%ifarch x86_64
-perl -p -i -e "s|/lib/brutefir|/lib64/brutefir|g" Makefile
+sed -i -e "s|= ld|= ld --build-id |g" Makefile
+%ifarch x86_64 amd64 aarch64
+sed -i -e "s|/lib/brutefir|/%{_lib}/brutefir|g" Makefile
 %endif
 
 %make_build INSTALL_PREFIX=%{_prefix} LIBPATHS= INCLUDE= \

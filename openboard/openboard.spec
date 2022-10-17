@@ -22,7 +22,7 @@ Source1: %{name}.desktop
 BuildRequires: gcc gcc-c++
 BuildRequires: bison
 BuildRequires: flex
-%if 0%{?fedora} >= 37
+%if 0%{?fedora} >= 36
 Buildrequires: compat-ffmpeg4-devel
 %else
 BuildRequires: ffmpeg-devel

@@ -1,0 +1,26 @@
+From 1a4421ab5f14526cbf5df5aae307a23d4e6c600f Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Mon, 17 Oct 2022 13:18:39 +0200
+Subject: [PATCH] aarch64
+
+---
+ lib/smmath.hh | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/lib/smmath.hh b/lib/smmath.hh
+index ffaabd3..876e083 100644
+--- a/lib/smmath.hh
++++ b/lib/smmath.hh
+@@ -9,7 +9,8 @@
+ #include <stdlib.h>
+ #include <stdint.h>
+ #ifdef __SSE__
+-#include <xmmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse.h>
+ #endif
+ 
+ #include <algorithm>
+-- 
+2.37.3
+

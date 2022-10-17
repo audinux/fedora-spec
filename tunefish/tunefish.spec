@@ -15,7 +15,8 @@ Distribution: Audinux
 
 Source0: https://github.com/paynebc/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1: Makefile-tunefish
-Patch0:  tunefish_juce-pixel.patch
+Patch0: tunefish_juce-pixel.patch
+Patch1: tunefish-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: libX11-devel
@@ -29,10 +30,17 @@ BuildRequires: gtk3-devel
 
 %description
 Tunefish is a very tiny virtual analog synthesizer.
-It is developed to fit into about 10kb of compressed machine code while still producing an audio quality that can compete with commercial synthesizers. 
+It is developed to fit into about 10kb of compressed machine code
+while still producing an audio quality that can compete with
+commercial synthesizers. 
 
 %prep
-%autosetup -p1 -n %{name}-%{commit0}
+%setup -n %{name}-%{commit0}
+
+%patch0 -p1
+%ifarch aarch64
+%patch1 -p1
+%endif
 
 cp %{SOURCE1} src/tunefish4/Builds/LinuxMakefile/Makefile
 

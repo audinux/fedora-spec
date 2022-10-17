@@ -68,11 +68,11 @@ sed -i -e "s/\$(PREFIX)\/lib/\$(PREFIX)\/lib64/g" Makefile
 
 %set_build_flags
 
-%make_build PREFIX=/usr SKIP_STRIPPING=true
+%make_build PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true
 
 %install
 
-%make_install PREFIX=/usr SKIP_STRIPPING=true
+%make_install PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true
 
 desktop-file-install                         \
   --add-category="Audio;AudioVideo"	     \
