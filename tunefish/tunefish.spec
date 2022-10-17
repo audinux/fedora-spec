@@ -19,6 +19,7 @@ Patch0: tunefish_juce-pixel.patch
 Patch1: tunefish-aarch64.patch
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: libX11-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: alsa-lib-devel
@@ -27,6 +28,7 @@ BuildRequires: libcurl-devel
 BuildRequires: libXinerama-devel
 BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
+BuildRequires: simde-devel
 
 %description
 Tunefish is a very tiny virtual analog synthesizer.
