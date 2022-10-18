@@ -4,7 +4,7 @@
 
 %global v_major 3
 %global v_minor 9
-%global v_patch 0
+%global v_patch 1
 
 Name:    jamulus
 Version: %{v_major}.%{v_minor}.%{v_patch}
@@ -16,7 +16,6 @@ License: GPLv2
 Vendor:       Audinux
 Distribution: Audinux
 
-# original tarfile can be found here:
 Source0: https://github.com/corrados/jamulus/archive/r%{v_major}_%{v_minor}_%{v_patch}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
@@ -52,10 +51,18 @@ install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 -p %{name} %{buildroot}%{_bindir}/%{name}
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
-install -m 644 -p distributions/%{name}.desktop %{buildroot}%{_datadir}/applications/
+install -m 644 -p linux/%{name}.desktop %{buildroot}%{_datadir}/applications/
+install -m 644 -p linux/%{name}-server.desktop %{buildroot}%{_datadir}/applications/
 
-install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
-install -m 644 -p distributions/%{name}.png %{buildroot}%{_datadir}/pixmaps/
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/apps/512x512/
+install -m 644 -p src/res/io.jamulus.jamulus.png %{buildroot}/%{_datadir}/icons/hicolor/apps/512x512
+
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
+install -m 644 -p src/res/io.jamulus.jamulusserver.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
+install -m 644 -p src/res/io.jamulus.jamulus.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
+
+install -m 755 -d %{buildroot}/%{_mandir}/man1
+install -m 644 -p linux/Jamulus.1 %{buildroot}/%{_mandir}/man1
 
 desktop-file-install                         \
   --add-category="Audio"                     \
@@ -63,17 +70,30 @@ desktop-file-install                         \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
+desktop-file-install                         \
+  --add-category="Audio"                     \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}-server.desktop
+
 %check
-desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-server.desktop
 
 %files
 %doc README.md ChangeLog
 %license COPYING
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/pixmaps/%{name}.png
+%{_datadir}/applications/%{name}-server.desktop
+%{_datadir}/icons/hicolor/apps/512x512/*.png
+%{_datadir}/icons/hicolor/scalable/apps/*.svg
+%{_mandir}/man1/*
 
 %changelog
+* Tue Oct 18 2022 Yann Collette <ycollette.nospam@free.fr> - 3.9.1-8
+- update to 3.9.1-8
+
 * Sat Jul 30 2022 Yann Collette <ycollette.nospam@free.fr> - 3.9.0-8
 - update to 3.9.0-8
 
