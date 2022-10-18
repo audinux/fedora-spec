@@ -1,26 +1,44 @@
-From 1a4421ab5f14526cbf5df5aae307a23d4e6c600f Mon Sep 17 00:00:00 2001
+From 88754e93c10d01d50b111c2cfe4d6a4bd1a96394 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Mon, 17 Oct 2022 13:18:39 +0200
+Date: Tue, 18 Oct 2022 08:19:50 +0200
 Subject: [PATCH] aarch64
 
 ---
- lib/smmath.hh | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ lib/smmath.hh         | 6 +++---
+ lib/smnoisedecoder.cc | 4 ++++
+ 2 files changed, 7 insertions(+), 3 deletions(-)
 
 diff --git a/lib/smmath.hh b/lib/smmath.hh
-index ffaabd3..876e083 100644
+index ffaabd3..7facc51 100644
 --- a/lib/smmath.hh
 +++ b/lib/smmath.hh
-@@ -9,7 +9,8 @@
+@@ -8,9 +8,9 @@
+ #include <string.h>
  #include <stdlib.h>
  #include <stdint.h>
- #ifdef __SSE__
+-#ifdef __SSE__
 -#include <xmmintrin.h>
+-#endif
++
 +#define SIMDE_ENABLE_NATIVE_ALIASES
 +#include <simde/x86/sse.h>
- #endif
  
  #include <algorithm>
+ #include <cmath>
+diff --git a/lib/smnoisedecoder.cc b/lib/smnoisedecoder.cc
+index 47f4b06..c69db03 100644
+--- a/lib/smnoisedecoder.cc
++++ b/lib/smnoisedecoder.cc
+@@ -10,6 +10,9 @@
+ #include <assert.h>
+ #include <map>
+ 
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse.h>
++
+ using std::vector;
+ using SpectMorph::NoiseDecoder;
+ using std::map;
 -- 
 2.37.3
 

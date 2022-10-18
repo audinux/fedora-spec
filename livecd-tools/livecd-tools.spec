@@ -93,7 +93,7 @@ Tools for installing Live CD ISOs to different mediums
 # Delete docs, we'll grab them later
 rm -rf %{buildroot}%{_datadir}/doc/%{name}
 
-%ifnarch %{ix86} x86_64
+%ifnarch %{ix86} x86_64 aarch64
 # livecd-iso-to-mediums-mao doesn't work without syslinux
 rm -rfv %{buildroot}%{_bindir}/livecd-iso-to-*
 rm -rfv %{buildroot}%{_mandir}/man8/livecd-iso-to-*

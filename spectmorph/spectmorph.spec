@@ -26,6 +26,7 @@ BuildRequires: libao-devel
 BuildRequires: cairo-devel
 BuildRequires: libsndfile-devel
 BuildRequires: fftw-devel
+BuildRequires: simde-devel
 BuildRequires: desktop-file-utils
 
 %description
