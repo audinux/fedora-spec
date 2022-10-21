@@ -1,18 +1,19 @@
 Summary: VST plug-ins host
 Name: dssi-vst
 Version: 0.9.2
-Release: 26%{?dist}
+Release: 27%{?dist}
 License: GPLv2
 URL: http://breakfastquay.com/dssi-vst/
 
 Source0: http://code.breakfastquay.com/attachments/download/10/%{name}-%{version}.tar.bz2
 # wine-g++ on wine-devel-1.1.18 (Fedora 11) creates executables with .exe suffix:
-Patch1:        %{name}-wine1118.patch
+Patch1: %{name}-wine1118.patch
 
 ExclusiveArch: %{ix86} x86_64
 
-BuildRequires: dssi-devel
 BuildRequires: gcc-c++
+BuildRequires: make
+BuildRequires: dssi-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: ladspa-devel
 BuildRequires: liblo-devel
@@ -20,7 +21,6 @@ BuildRequires: liblo-devel
 %ifarch %{ix86}
 BuildRequires: wine-devel
 %endif
-BuildRequires: make
 
 Requires: dssi
 Requires: ladspa
@@ -56,6 +56,7 @@ This package contains the plug-in wrapper that works through wine.
 %autosetup
 
 %build
+
 # This package calls binutils components directly and would need to pass
 # in flags to enable the LTO plugins
 # Disable LTO
@@ -69,8 +70,8 @@ make CXXFLAGS="%{optflags} -fno-omit-frame-pointer -Ivestige -fPIC -I/usr/includ
 make dssi-vst.so vsthost dssi-vst_gui CXXFLAGS="%{optflags} -Ivestige -fPIC"
 %endif
 
-
 %install
+
 %ifarch %{ix86}
 make  DSSIDIR=%{buildroot}%{_libdir}/dssi   \
     LADSPADIR=%{buildroot}%{_libdir}/ladspa \
@@ -106,6 +107,9 @@ ln -s ../dssi/%{name}.so %{buildroot}%{_libdir}/ladspa
 %endif
 
 %changelog
+* Wed Oct 19 2022 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.2-27
+- Rebuit
+
 * Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.2-26
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
@@ -113,7 +117,7 @@ ln -s ../dssi/%{name}.so %{buildroot}%{_libdir}/ladspa
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
 * Tue Jun 30 2020 Jeff Law <law@redhat.com> - 0.9.2-24
-Disable LTO
+- Disable LTO
 
 * Tue Jan 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.2-23
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild

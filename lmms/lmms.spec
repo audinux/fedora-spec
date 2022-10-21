@@ -4,9 +4,9 @@
 
 Name:    lmms-mao
 Version: 1.2.2
-Release: 11%{?dist}
+Release: 12%{?dist}
 Summary: Linux MultiMedia Studio
-URL:     http://lmms.sourceforge.net/
+URL:     https://lmms.io
 
 # Because dnf does not find a carla so file
 AutoReqProv: no
@@ -43,6 +43,8 @@ Source0: lmms.tar.gz
 Source1: lmms-source.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
+BuildRequires: git
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: pulseaudio-libs-devel
@@ -56,18 +58,23 @@ BuildRequires: libgig-devel
 BuildRequires: ladspa-devel
 BuildRequires: stk-devel
 BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-linguist
 BuildRequires: fltk-devel
-BuildRequires: cmake
-BuildRequires: sed
-BuildRequires: git
-BuildRequires: desktop-file-utils
-BuildRequires: fltk-fluid
 BuildRequires: fltk-devel
+%ifarch aarch64
 BuildRequires: Carla-devel
+%else
+BuildRequires: Carla-mao-devel
+%endif
 BuildRequires: bash-completion
+BuildRequires: qt5-linguist
+BuildRequires: fltk-fluid
+BuildRequires: desktop-file-utils
 
+%ifarch aarch64
 Requires: Carla
+%else
+Requires: Carla-mao
+%endif
 Requires: stk
 Requires: libgig
 
@@ -106,6 +113,7 @@ developing addons for lmms.
 %autosetup -n lmms
 
 sed -i -e "s/-std=c11/-std=c11 -fPIC -DPIC/g" src/3rdparty/rpmalloc/CMakeLists.txt
+sed -i -e "s/CARLA_EXPORT/CARLA_API_EXPORT/g" plugins/carlabase/carla.h
 
 %build
 
@@ -161,6 +169,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/lmms.desktop
 %{_includedir}/lmms
 
 %changelog
+* Thu Oct 20 2022 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-12
+- update to 1.2.2-12 - use carla-mao on intel platforms
+
 * Wed Dec 30 2020 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-11
 - update to 1.2.2-11 - activate calf, tap, caps ladspa plugins ... Seems to be missing now
 

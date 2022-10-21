@@ -6,7 +6,7 @@
 Summary: LinuxSampler GUI front-end
 Name:    qsampler
 Version: 0.9.6
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: GPL
 URL:     https://qsampler.sourceforge.net/qsampler-index.html
 
@@ -70,6 +70,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/*
 
 %changelog
+* Wed Oct 19 2022 Yann Collette <ycollette.nospam@free.fr> 0.6.6-3
+- rebuild
+
 * Sun Oct 09 2022 Yann Collette <ycollette.nospam@free.fr> 0.6.6-2
 - update to 0.9.6-2
 

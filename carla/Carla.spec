@@ -4,8 +4,9 @@
 
 Name: Carla-mao
 Version: 2.5.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Audio plugin host
+Epoch:   1
 License: GPLv2+ and BSD and Boost and ISC and MIT and zlib
 URL: https://github.com/falkTX/Carla
 
@@ -49,6 +50,8 @@ Requires: hicolor-icon-theme
 Requires: shared-mime-info
 Requires: wine
 
+Provides: Carla-mao = %{version}
+
 # Dont provide or require internal libs. Using new rpm builtin filtering,
 # see https://fedoraproject.org/wiki/Packaging:AutoProvidesAndRequiresFiltering#Private_Libraries
 %global _privatelibs libjack[.]so.*
@@ -80,7 +83,8 @@ Linux.
 
 %package devel
 Summary: Header files to access Carla's API
-Requires: Carla-mao%{?_isa} = %{version}-%{release}
+Requires: %{name} = %{version}-%{release}
+Provides: Carla-mao-devel = %{version}
 
 %description devel
 This package contains header files needed when writing software using
@@ -88,7 +92,8 @@ Carla's several APIs.
 
 %package -n vst-%{name}
 Summary: CarlaRack and CarlaPatchbay VST plugins
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: %{name} = %{version}-%{release}
+Provides: vst-Carla-mao-devel = %{version}
 
 %description -n vst-%{name}
 This package contains Carla VST plugins, including CarlaPatchbayFX,
@@ -96,7 +101,8 @@ CarlaPatchbay, CarlaRackFX, and CarlaRack.
 
 %package -n lv2-%{name}
 Summary: LV2 plugin
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: %{name} = %{version}-%{release}
+Provides: lv2-Carla-mao-devel = %{version}
 
 %description -n lv2-%{name}
 This package contains the Carla LV2 plugin.
@@ -175,7 +181,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 %{_datadir}/applications/%{pname}-control.desktop
 %{_datadir}/applications/%{pname}.desktop
 %{_datadir}/applications/%{pname}-jack-multi.desktop
-	%{_datadir}/applications/%{pname}-jack-single.desktop
+%{_datadir}/applications/%{pname}-jack-single.desktop
 %{_datadir}/applications/%{pname}-patchbay.desktop
 %{_datadir}/applications/%{pname}-rack.desktop
 %{_datadir}/%{pname}/
@@ -343,7 +349,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 * Wed Dec 19 2018 Martin Gansser <martinkg@fedoraproject.org> - 2.0.0-0.2.20181212git51f2073
 - Add subpkg vst
 - Remove group tag
-- Remove old BR qt-devel
+- Remove old BR qt-devel	
 - New git release use correct desktop files
 - Use macro %%{_lib} libdir fix
 - Use %%{__python3} macro
