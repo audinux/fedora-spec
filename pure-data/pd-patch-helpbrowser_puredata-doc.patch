@@ -13,13 +13,13 @@ Forwarded: not-needed
 
 --- puredata.orig/tcl/pd_menucommands.tcl
 +++ puredata/tcl/pd_menucommands.tcl
-@@ -228,10 +228,22 @@
+@@ -228,10 +228,23 @@
      }
  }
  
 +proc ::pd_menucommands::check_puredatadoc {file} {
 +  if { [string compare "absolute" [file pathtype $file]] != 0 } {return true}
-+  if {[file exists $file]} {
++  if { [file exists $file] } {
 +	return true
 +  } {
 +    tk_messageBox -type ok -message "Unable to find '$file'.\nMaybe you need to install the 'puredata-doc' package"
@@ -31,13 +31,13 @@ Forwarded: not-needed
  # parse the textfile for the About Pd page
  proc ::pd_menucommands::menu_aboutpd {} {
      set versionstring "Pd $::PD_MAJOR_VERSION.$::PD_MINOR_VERSION.$::PD_BUGFIX_VERSION$::PD_TEST_VERSION"
--    set filename "$::sys_libdir/doc/1.manual/1.introduction.txt"
+     set filename "$::sys_libdir/doc/1.manual/1.introduction.txt"
 +    set filename "/usr/share/puredata-gui/1.introduction.txt"
 +    if {![check_puredatadoc $filename]} return
-     if {[winfo exists .aboutpd]} {
-         wm deiconify .aboutpd
-         raise .aboutpd
-@@ -280,6 +292,7 @@
+     if {![file exists $filename]} {
+         ::pdwindow::error [format [_ "ignoring '%s': doesn't exist"] $filename]
+         ::pdwindow::error "\n"
+@@ -291,6 +304,7 @@
  
  # open HTML docs from the menu using the OS-default HTML viewer
  proc ::pd_menucommands::menu_openfile {filename} {

@@ -9,9 +9,23 @@ Instead we should set the version to be displayed to the Debian
 package version (use PD_TEST_VERSION) for this.
 Last-Update: 2015-05-20
 ---
- src/s_main.c | 12 ++++++++----
- 1 file changed, 8 insertions(+), 4 deletions(-)
+ src/Makefile.am |  4 ++++
+ src/s_main.c    | 12 ++++++++----
+ 2 files changed, 12 insertions(+), 4 deletions(-)
 
+--- puredata.orig/src/Makefile.am
++++ puredata/src/Makefile.am
+@@ -11,6 +11,10 @@
+ AM_CFLAGS = @PD_CFLAGS@
+ AM_LDFLAGS = @PD_LDFLAGS@
+ 
++## set timestamp for reproducible builds
++PD_TIMESTAMP_STRING="compiled for Debian ($(DEB_VERSION)) on $(BUILD_DATE)"
++AM_CPPFLAGS += -DPD_TIMESTAMP_STRING='$(PD_TIMESTAMP_STRING)'
++
+ pd_CFLAGS = -DPD -DPD_INTERNAL -DINSTALL_PREFIX=\"$(prefix)\" @PD_CFLAGS@
+ pd_LDFLAGS = @PD_LDFLAGS@
+ pd_LDADD =
 --- puredata.orig/src/s_main.c
 +++ puredata/src/s_main.c
 @@ -32,8 +32,12 @@

@@ -14,8 +14,8 @@ Last-Update: 2016-02-17
 
 --- puredata.orig/tcl/pd-gui.tcl
 +++ puredata/tcl/pd-gui.tcl
-@@ -782,7 +782,7 @@
-     load_plugin_script [file join $::sys_guidir pd_docsdir.tcl]
+@@ -787,7 +787,7 @@
+     }
  
      # load other installed plugins
 -    foreach pathdir [concat $::sys_temppath $::sys_searchpath $::sys_staticpath] {

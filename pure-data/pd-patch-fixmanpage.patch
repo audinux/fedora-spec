@@ -1,6 +1,7 @@
 From: =?utf-8?q?IOhannes_m_zm=C3=B6lnig?= <umlaeute@debian.org>
 Date: Tue, 29 Jan 2019 11:31:36 +0100
 Subject: fix URIs in manpage to point to some meaningful place
+Forwarded: not-needed
 
 ---
  man/pd.1 | 26 ++++++++++++++++----------

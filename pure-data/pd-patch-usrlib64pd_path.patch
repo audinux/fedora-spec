@@ -17,7 +17,7 @@ add it manually
      STUFF->st_staticpath = namelist_append(STUFF->st_staticpath, p, 0);
 +    /* DEBIAN: add common path for all pd-flavours very last, so puredata
 +     * specific externals get higher priority */
-+    STUFF->st_staticpath = namelist_append(STUFF->st_staticpath, "/usr/lib64/pd/extra", 0);
++    STUFF->st_staticpath = namelist_append(STUFF->st_staticpath, "/usr/lib/pd/extra", 0);
 +
  }
  

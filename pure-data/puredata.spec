@@ -2,8 +2,8 @@
 # Pure Data vanilla build
 #
 
-%define pdver 0.52-1
-%define pkgver 0.52.1
+%define pdver 0.52-2
+%define pkgver 0.52.2
 
 Summary: Pure Data
 Name:    puredata
@@ -24,35 +24,40 @@ Source10: puredata.desktop
 Source11: puredata.xpm
 # /usr/bin/pd-gui
 Source12: pd-gui
-# pd-gui man page
 Source13: pd-gui.1
 # pd-gui plugin (needs python3)
 Source14: pd-gui-plugin
+Source15: pd-gui-plugin.1
 # pd gui plugins readme
-Source15: pd-README
+Source16: pd-README
 # mime stuff
-Source16: puredata-gui.sharedmimeinfo
+Source17: puredata-gui.sharedmimeinfo
 
 # add relevant debian patches
 Patch1: pd-patch-pd2puredata.patch
-%ifarch x86_64
 Patch2: pd-patch-usrlib64pd_path.patch
-%else
-Patch2: pd-patch-usrlibpd_path.patch
-%endif
-Patch3: pd-patch-helpbrowser_puredata-doc.patch
-Patch4: pd-patch-etc-gui-plugins.patch
-Patch5: pd-patch-fixmanpage.patch
-Patch6: pd-patch-privacy.patch
+Patch3: pd-patch-usrlibpd_path.patch
+Patch4: pd-patch-helpbrowser_puredata-doc.patch
+Patch5: pd-patch-etc-gui-plugins.patch
+Patch6: pd-patch-fixmanpage.patch
+Patch7: pd-patch-privacy.patch
 
-BuildRequires: gcc gcc-c++ perl
-BuildRequires: autoconf automake libtool
-BuildRequires: alsa-lib-devel jack-audio-connection-kit-devel portaudio-devel
-BuildRequires: gettext-devel desktop-file-utils
+BuildRequires: gcc gcc-c++
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: libtool
+BuildRequires: alsa-lib-devel
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: portaudio-devel
+BuildRequires: gettext-devel
+BuildRequires: desktop-file-utils
 
 # the main package requires everything else by default (except -devel)
-Requires: puredata-core puredata-doc puredata-extra 
-Requires: puredata-gui puredata-utils
+Requires: puredata-core
+Requires: puredata-doc
+Requires: puredata-extra 
+Requires: puredata-gui
+Requires: puredata-utils
 # for the gui plugin
 Requires: python3
 
@@ -130,12 +135,30 @@ This package provides utility applications for puredata, namely pdsend
 and pdreceive, for sending and receiving FUDI over the net.
 
 %prep
-%autosetup -p1 -n pd-%{pdver}
+%setup -n pd-%{pdver}
+
+# pd-patch-pd2puredata.patch
+%patch1 -p1
+%ifarch x86_64 amd64
+# pd-patch-usrlib64pd_path.patch
+%patch2 -p1
+%else
+# pd-patch-usrlibpd_path.patch
+%patch3 -p1
+%endif
+# pd-patch-helpbrowser_puredata-doc.patch
+%patch4 -p1
+# pd-patch-etc-gui-plugins.patch
+%patch5 -p1
+# pd-patch-fixmanpage.patch
+%patch6 -p1
+# pd-patch-privacy.patch
+%patch7 -p1
 
 # fix hardwired lib dir in startup file (why the heck is this hardwired?)
-perl -p -i -e "s|\"/lib|\"/%{_lib}|g" src/s_main.c
+sed -i -e "s|\"/lib|\"/%{_lib}|g" src/s_main.c
 # fix path of pd-externals
-perl -p -i -e "s|/usr/local/lib|%{_libdir}|g" src/s_path.c
+sed -i -e "s|/usr/local/lib|%{_libdir}|g" src/s_path.c
 
 %build
 
@@ -157,19 +180,21 @@ mkdir -p %{buildroot}%{_sysconfdir}/pd/plugins-enabled
 # add desktop file
 mkdir -p %{buildroot}%{_datadir}/applications
 desktop-file-install  --dir %{buildroot}%{_datadir}/applications %{SOURCE10}
-perl -p -i -e "s|/lib/|/%{_lib}/|g" %{buildroot}%{_datadir}/applications/puredata.desktop
+sed -i -e "s|/lib/|/%{_lib}/|g" %{buildroot}%{_datadir}/applications/puredata.desktop
 
 # add desktop icon
 mkdir -p %{buildroot}%{_datadir}/pixmaps/
 install -m 644 %{SOURCE11} %{buildroot}%{_datadir}/pixmaps/
 # pd-gui script and plugin
 install -m 755 %{SOURCE12} %{buildroot}%{_bindir}/pd-gui
-perl -p -i -e "s|/lib/|/%{_lib}/|g" %{buildroot}%{_bindir}/pd-gui
+sed -i -e "s|/lib/|/%{_lib}/|g" %{buildroot}%{_bindir}/pd-gui
 install -m 755 %{SOURCE14} %{buildroot}%{_bindir}/pd-gui-plugin
 # pd-gui man page
 install -m 644 %{SOURCE13} %{buildroot}%{_mandir}/man1/pd-gui.1
+# pd-gui-plugin man page
+install -m 644 %{SOURCE15} %{buildroot}%{_mandir}/man1/pd-gui-plugin.1
 # REAMDE for plugins
-install -m 644 %{SOURCE15} %{buildroot}%{_sysconfdir}/pd/plugins-enabled/README
+install -m 644 %{SOURCE16} %{buildroot}%{_sysconfdir}/pd/plugins-enabled/README
 # documentation, intro
 mkdir -p %{buildroot}%{_datadir}/puredata-gui
 install -m 644 doc/1.manual/1.introduction.txt %{buildroot}%{_datadir}/puredata-gui
@@ -190,9 +215,13 @@ ln -s %{_libdir}/puredata/bin/pd-watchdog %{buildroot}%{_bindir}/pd-watchdog
 
 rm -f %{buildroot}%{_libdir}/puredata/doc/Makefile.am
 
-%ifarch x86_64
+%ifarch x86_64 amd64
 sed -i -e "s/lib/lib64/g" %{buildroot}%{_bindir}/pd-gui
 %endif
+
+# Install mime info
+install -m 755 -d %{buildroot}%{_datadir}/mime/packages
+install -m 644 %{SOURCE17} %{buildroot}%{_datadir}/mime/packages
 
 %files
 %doc README.txt INSTALL.txt
@@ -208,6 +237,7 @@ sed -i -e "s/lib/lib64/g" %{buildroot}%{_bindir}/pd-gui
 %{_libdir}/puredata/doc/7.stuff
 %{_mandir}/man1/pd.1*
 %{_datadir}/pixmaps/puredata.xpm
+%{_datadir}/mime/packages/puredata-gui.sharedmimeinfo
 
 %files doc
 %{_libdir}/puredata/doc/1.manual/
