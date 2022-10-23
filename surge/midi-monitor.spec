@@ -11,7 +11,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./source-midi-monitor.sh main
+# $ ./source-midi-monitor.sh 32b80228ccd73f5633dd42a0df958a8c3e1b4e05
 
 Source0: midi-monitor.tar.gz
 Source1: source-midi-monitor.sh

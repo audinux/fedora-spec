@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 
 Name:    monique-monosynth
-Version: 01122021
+Version: 23102022
 Release: 1%{?dist}
 Summary: Monique is a monophonic synth from Thomas Arndt
 License: GPLv3+
-URL:     https://github.com/surge-synthesizer/monique-mpnosynth
+URL:     https://github.com/surge-synthesizer/monique-monosynth
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -34,6 +34,7 @@ BuildRequires: xcb-util-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: pkgconfig(webkit2gtk-4.0)
+BuildRequires: patchelf
 
 %description
 Monique is a monophonic synth from Thomas Arndt which,
@@ -49,6 +50,14 @@ Requires: %{name}
 %description -n vst3-%{name}
 VST3 version of %{name}
 
+%package -n clap-%{name}
+Summary:  CLAP version of %{name}
+License:  GPLv3+
+Requires: %{name}
+
+%description -n clap-%{name}
+CLAP version of %{name}
+
 %prep
 %autosetup -n %{name}
 
@@ -57,12 +66,12 @@ sed -i -e "/Werror/d" CMakeLists.txt
 
 # Fix build of juceaide on f36
 sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"/g" libs/JUCE/extras/Build/juceaide/CMakeLists.txt
-#sed -i -e "/OUTPUT_VARIABLE/d" libs/JUCE/extras/Build/juceaide/CMakeLists.txt
-#sed -i -e "s/--config Debug/--config Debug --verbose/g" libs/JUCE/extras/Build/juceaide/CMakeLists.txt
 
 %build
 
-%cmake -DCMAKE_CXX_FLAGS="-include utility"
+%set_build_flags
+
+%cmake -DCMAKE_CXX_FLAGS="-include utility -fPIC $CXXFLAGS"
 %cmake_build
 
 %install 
@@ -71,25 +80,35 @@ export HOME=`pwd`
 mkdir .vst3
 mkdir -p .local/share/Surge
 
-install -m 755 -d %{buildroot}%{_libdir}/
-cp -r %{__cmake_builddir}/libs/oddsound-mts/liboddsound-mts.so %{buildroot}/%{_libdir}/
+install -m 755 -d %{buildroot}%{_libdir}/moniquemonosynth
+cp -ra %{__cmake_builddir}/libs/oddsound-mts/liboddsound-mts.so %{buildroot}/%{_libdir}/moniquemonosynth/
 
 install -m 755 -d %{buildroot}%{_bindir}/
-cp -r %{__cmake_builddir}/MoniqueMonosynth_artefacts/Standalone/* %{buildroot}/%{_bindir}/
+cp -ra %{__cmake_builddir}/MoniqueMonosynth_artefacts/Standalone/* %{buildroot}/%{_bindir}/
 chrpath --delete %{buildroot}/%{_bindir}/MoniqueMonosynth
+patchelf --set-rpath '$ORIGIN/../%{_lib}/moniquemonosynth/ %{buildroot}/%{_bindir}/MoniqueMonosynth
 
-install -m 755 -d %{buildroot}%{_libdir}/vst3/MoniqueMonosynth.vst3/
-cp -r %{__cmake_builddir}/MoniqueMonosynth_artefacts/VST3/MoniqueMonosynth.vst3/* %{buildroot}/%{_libdir}/vst3/MoniqueMonosynth.vst3/
+install -m 755 -d %{buildroot}%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/MoniqueMonosynth_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 chrpath --delete %{buildroot}/%{_libdir}/vst3/MoniqueMonosynth.vst3/Contents/%{_target}/MoniqueMonosynth.so
+patchelf --set-rpath '$ORIGIN/../../../../../%{_lib}/moniquemonosynth/ %{buildroot}/%{_libdir}/vst3/MoniqueMonosynth.vst3/Contents/%{_target}/MoniqueMonosynth.so
+
+install -m 755 -d %{buildroot}%{_libdir}/clap/
+cp -ra %{__cmake_builddir}/MoniqueMonosynth_artefacts/clap/* %{buildroot}/%{_libdir}/clap/
+chrpath --delete %{buildroot}/%{_libdir}/clap/MoniqueMonosynth.clap
+patchelf --set-rpath '$ORIGIN/../../../%{_lib}/moniquemonosynth/ %{buildroot}/%{_libdir}/clap/MoniqueMonosynth.clap
 
 %files
 %doc README.md
 %license LICENSE LICENSE-gpl3
 %{_bindir}/*
-%{_libdir}/*
+%{_libdir}/monosynth/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
+
+%files -n clap-%{name}
+%{_libdir}/clap/*
 
 %changelog
 * Sun Dec 26 2021 Yann Collette <ycollette.nospam@free.fr> - 01122021-1
