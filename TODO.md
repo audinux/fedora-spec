@@ -79,6 +79,7 @@
 | stepseq.lv2         | https://github.com/x42/stepseq.lv2 |
 | anklang             | https://github.com/tim-janik/anklang |
 | Dexed               | https://github.com/asb2m10/dexed |
+| slowmo              | https://github.com/brummer10/slowmo.lv2 |
 
 ## WIP
 
@@ -365,6 +366,8 @@ resources -> try to find other IR (https://github.com/jpcima/HybridReverb2-impul
 ryukau -> update to last master
 
 Check https://github.com/Chowdhury-DSP
+
+Check chpath usage and use patchelf if required (it's required in bespokesynth)
 
 ## Kernel
 
