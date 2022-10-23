@@ -3,14 +3,9 @@
 # Category: Audio, Effect
 # LastSourceUpdate: 2021
 
-# Global variables for github repository
-%global commit0 b8f00a788bdc3205c6b39c743df93339cd261899
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 Name:    frequalizer
 Version: 1.0.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Equalizer using JUCE new dsp module
 License: GPLv3
 URL:     https://github.com/ffAudio/Frequalizer
@@ -18,12 +13,16 @@ URL:     https://github.com/ffAudio/Frequalizer
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+# Usage: ./frequalizer-source.sh <TAG>
+# ./frequalizer-source.sh c4b1b611c8d818107639c79f974bca6a414d672d
+
+Source0: Frequalizer.tar.gz
 Source1: Frequalizer.jucer
+Source2: frequalizer-source.sh
 
 BuildRequires: gcc
 BuildRequires: gcc-c++
-BuildRequires: make
+BuildRequires: cmake
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
@@ -42,7 +41,7 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: libXrandr-devel
 BuildRequires: libxkbcommon-x11-devel
 BuildRequires: libXinerama-devel
-BuildRequires: JUCE5
+BuildRequires: JUCE61
 BuildRequires: xorg-x11-server-Xvfb
 
 %description
@@ -52,49 +51,37 @@ This is a JUCE project using the new dsp module for an Equalizer. It features:
  - solo each band
  - drag frequency and gain directly in the graph
 
-%prep
-%autosetup -n Frequalizer-%{commit0}
+%package -n vst3-%{name}
+Summary:  VST3 version of %{name}
+License:  GPLv2+
+Requires: %{name}
 
-cp %SOURCE1 .
-sed -i -e "s|../../juce|/usr/src/JUCE5/modules|g" Frequalizer.jucer
-sed -i -e "s|Frequalizer Free|Frequalizer|g" Frequalizer.jucer
+%description -n vst3-%{name}
+VST3 version of %{name}
+
+%prep
+%autosetup -n Frequalizer
 
 %build
 
-%define X_display ":98"
-#############################################
-### Launch a virtual framebuffer X server ###
-#############################################
-export DISPLAY=%{X_display}
-Xvfb %{X_display} >& Xvfb.log &
-trap "kill $! || true" EXIT
-sleep 10
-
-%set_build_flags
-export CFLAGS="-I/usr/include/freetype2 $CFLAGS"
-export CXXFLAGS="-I/usr/include/freetype2 -include array $CXXFLAGS"
-
-Projucer5 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE5/modules/
-Projucer5 --resave Frequalizer.jucer
-
-cd Builds/LinuxMakefile
-
-sed -i -e "s|JucePlugin_Build_VST3=0|JucePlugin_Build_VST3=1|g" Makefile
-
-%make_build CONFIG=Release STRIP=true
+%cmake -DCOPY_FOLDER=copy_folder
+%cmake_build
 
 %install 
 
-cd Builds/LinuxMakefile
-
-install -m 755 -d %{buildroot}%{_bindir}/
-install -m 755 -p build/Frequalizer %{buildroot}/%{_bindir}/
+install -m 755 -d %{buildroot}%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/frequalizer_artefacts/VST3/* %{buildroot}%{_libdir}/vst3
 
 %files
 %doc README.md
 %license LICENSE.md
-%{_bindir}/*
+
+%files -n vst3-%{name}
+%{_libdir}/vst3/*
 
 %changelog
-* Sat Jan 2 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-3
+* Sun Oct 23 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-2
+- 1.0.0-2
+
+* Sat Jan 2 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial spec file

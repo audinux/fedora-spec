@@ -25,7 +25,6 @@ BuildRequires: fftw-devel
 BuildRequires: gtkmm24-devel
 BuildRequires: plotmm-devel
 BuildRequires: lv2-c++-tools-static
-BuildRequires: pstreams-devel
 BuildRequires: lv2-devel
 
 Requires: lv2
