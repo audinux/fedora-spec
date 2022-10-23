@@ -4,7 +4,7 @@
 
 Summary: Instrument editor for gig files
 Name:    gigedit
-Version: 1.2.0
+Version: 1.1.1
 Release: 2%{?dist}
 License: GPL2
 URL:     http://www.linuxsampler.org/
@@ -16,7 +16,8 @@ Source0: http://download.linuxsampler.org/packages/gigedit-%{version}.tar.bz2
 
 BuildRequires: gcc
 BuildRequires: gcc-c++
-BuildRequires: make
+BuildRequires: autoconf
+BuildRequires: automake
 BuildRequires: intltool
 BuildRequires: gtkmm30-devel
 BuildRequires: libgig-devel
@@ -47,7 +48,7 @@ before editing them in gigedit.
 %build
 
 %set_build_flags
-%configure CXXFLAGS="-DHAS_PANGOMM_CPP11_ENUMS=0 $CXXFLAGS"
+%configure CXXFLAGS="-std=c++11 -DHAS_PANGOMM_CPP11_ENUMS=0 $CXXFLAGS"
 %make_build
 
 %install

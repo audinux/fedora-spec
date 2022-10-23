@@ -100,7 +100,7 @@ rm -f %{buildroot}/%{_libdir}/lv2/linuxsampler.lv2/linuxsampler.la
 %{_libdir}/linuxsampler/*.so
 %{_libdir}/linuxsampler/*.a
 %{_libdir}/pkgconfig/*
-%{_includedir}/linuxsampler
+%{_includedir}/linuxsampler/*
 
 %files dssi
 %{_libdir}/dssi/linuxsampler.so
