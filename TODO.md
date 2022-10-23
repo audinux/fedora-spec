@@ -28,7 +28,6 @@
 |                     | - ChaosChimp: http://static.teragonaudio.com/downloads/ChaosChimp/ChaosChimp.zip |
 |                     | - MrsWatson: http://static.teragonaudio.com/downloads/MrsWatson/MrsWatson.zip |
 |                     | - all: https://launchpad.net/~kxstudio-debian/+archive/ubuntu/plugins/+sourcefiles/teragonaudio-plugins/5:20140325.3/teragonaudio-plugins_20140325.3.tar.gz |
-| ProM                | https://github.com/DISTRHO/ProM |
 | loop192             | https://github.com/jean-emmanuel/loop192 |
 | loopor              | https://github.com/stevie67/loopor |
 | inscore             | https://inscore.grame.fr |
