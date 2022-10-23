@@ -3,21 +3,31 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:           ultranova4linux
-Version:        0.0.%{shortcommit0}
-Release:        4%{?dist}
-Summary:        userspace Novation Synthesizer driver
-License:        GPLv3
+Name: ultranova4linux
+Version: 0.0.%{shortcommit0}
+Release: 4%{?dist}
+Summary: userspace Novation Synthesizer driver
+URL: https://github.com/hansfbaier/ultranova4linux
+License: GPLv3
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0:        https://github.com/hansfbaier/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source1:	92-novation.rules
+Source0: https://github.com/hansfbaier/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: 92-novation.rules
 
-BuildRequires:  jack-audio-connection-kit-devel libusb-devel
-BuildRequires:	liblo-devel boost-devel gcc-c++
-Requires:       bash
+BuildRequires: gcc-c++
+BuildRequires: make
+BuildRequires: jack-audio-connection-kit-devel
+%if 0%{?fedora} < 37
+BuildRequires: libusb-devel
+%else
+BuildRequires: libusb1-devel
+%endif
+BuildRequires: liblo-devel
+BuildRequires: boost-devel
+
+Requires:bash
 
 %description
 Userspace driver for the Novation Ultranova and Mininova synthesizers
@@ -25,22 +35,27 @@ Userspace driver for the Novation Ultranova and Mininova synthesizers
 %prep
 %autosetup -n %{name}-%{commit0}
 
+sed -i -e "s/-g /-g $\(CXXFLAGS\) /g" Makefile
+
 %build
+
+%set_build_flags
+
+export CXXFLAGS="-std=c++11 -include map $CXXFLAGS"
 
 %make_build
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/%{_bindir}
-mkdir -p $RPM_BUILD_ROOT/etc/udev/rules.d/
-cp ultranova4linux $RPM_BUILD_ROOT/%{_bindir}/
-cp %SOURCE1 $RPM_BUILD_ROOT/etc/udev/rules.d/
+
+mkdir -p %{buildroot}/%{_bindir}
+mkdir -p %{buildroot}/etc/udev/rules.d/
+cp ultranova4linux %{buildroot}/%{_bindir}/
+cp %SOURCE1 %{buildroot}/etc/udev/rules.d/
 
 %files
 %doc 
 %{_bindir}/ultranova4linux
-/etc/udev/rules.d/92-novation.rules
-
+%{_sysconfdir}/udev/rules.d/92-novation.rules
 
 %changelog
 * Thu Apr 30 2020 Yann Collette <ycollette.nospam@free.fr> - 0.0.25b76aa0-4
