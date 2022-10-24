@@ -80,29 +80,29 @@ export HOME=`pwd`
 mkdir .vst3
 mkdir -p .local/share/Surge
 
-install -m 755 -d %{buildroot}%{_libdir}/moniquemonosynth
-cp -ra %{__cmake_builddir}/libs/oddsound-mts/liboddsound-mts.so %{buildroot}/%{_libdir}/moniquemonosynth/
+install -m 755 -d %{buildroot}/%{_libdir}/moniquemonosynth
+cp -rav %{__cmake_builddir}/libs/oddsound-mts/liboddsound-mts.so %{buildroot}/%{_libdir}/moniquemonosynth/
 
-install -m 755 -d %{buildroot}%{_bindir}/
-cp -ra %{__cmake_builddir}/MoniqueMonosynth_artefacts/Standalone/* %{buildroot}/%{_bindir}/
+install -m 755 -d %{buildroot}/%{_bindir}/
+cp -rav %{__cmake_builddir}/MoniqueMonosynth_artefacts/Standalone/MoniqueMonosynth %{buildroot}/%{_bindir}/
 chrpath --delete %{buildroot}/%{_bindir}/MoniqueMonosynth
-patchelf --set-rpath '$ORIGIN/../%{_lib}/moniquemonosynth/ %{buildroot}/%{_bindir}/MoniqueMonosynth
+patchelf --set-rpath '$ORIGIN/../%{_lib}/moniquemonosynth/' %{buildroot}/%{_bindir}/MoniqueMonosynth
 
-install -m 755 -d %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/MoniqueMonosynth_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
+install -m 755 -d %{buildroot}/%{_libdir}/vst3/
+cp -rav %{__cmake_builddir}/MoniqueMonosynth_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 chrpath --delete %{buildroot}/%{_libdir}/vst3/MoniqueMonosynth.vst3/Contents/%{_target}/MoniqueMonosynth.so
-patchelf --set-rpath '$ORIGIN/../../../../../%{_lib}/moniquemonosynth/ %{buildroot}/%{_libdir}/vst3/MoniqueMonosynth.vst3/Contents/%{_target}/MoniqueMonosynth.so
+patchelf --set-rpath '$ORIGIN/../../../../../%{_lib}/moniquemonosynth/' %{buildroot}/%{_libdir}/vst3/MoniqueMonosynth.vst3/Contents/%{_target}/MoniqueMonosynth.so
 
 install -m 755 -d %{buildroot}%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/MoniqueMonosynth_artefacts/clap/* %{buildroot}/%{_libdir}/clap/
+cp -ra %{__cmake_builddir}/MoniqueMonosynth_artefacts/CLAP/* %{buildroot}/%{_libdir}/clap/
 chrpath --delete %{buildroot}/%{_libdir}/clap/MoniqueMonosynth.clap
-patchelf --set-rpath '$ORIGIN/../../../%{_lib}/moniquemonosynth/ %{buildroot}/%{_libdir}/clap/MoniqueMonosynth.clap
+patchelf --set-rpath '$ORIGIN/../../../%{_lib}/moniquemonosynth/' %{buildroot}/%{_libdir}/clap/MoniqueMonosynth.clap
 
 %files
 %doc README.md
 %license LICENSE LICENSE-gpl3
 %{_bindir}/*
-%{_libdir}/monosynth/*
+%{_libdir}/moniquemonosynth/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
