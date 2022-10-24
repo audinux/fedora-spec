@@ -34,6 +34,13 @@ James DSP for Linux
 
 %build
 
+%set_build_flags
+
+%ifarch aarch64
+export CFLAGS="$CFLAGS -D__arm__"
+export CXXFLAGS="$CXXFLAGS -D__arm__"
+%endif
+
 %qmake_qt5 JDSP4Linux.pro
 %make_build
 
