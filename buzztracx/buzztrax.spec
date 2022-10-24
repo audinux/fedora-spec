@@ -2,6 +2,8 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
+%global debug_package %{nil}
+
 Name:    buzztrax
 Version: 0.10.2
 Release: 6%{?dist}
@@ -12,7 +14,7 @@ URL:     https://www.buzztrax.org
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://files.buzztrax.org/releases/%{name}-%{version}.tar.gz
+Source0: https://github.com/Buzztrax/buzztrax/releases/download/RELEASE_0_10_2/%{name}-%{version}.tar.gz
 Patch0:  buzztrax-0001-fix-build.patch
 Patch1:  buzztrax-0002-support-fluidsynth-2.patch
 
@@ -60,28 +62,30 @@ sed -i -e "71d" Makefile.am
 
 %build
 
+%set_build_flags
+
 autoreconf
 
-%configure --prefix=%{_prefix} --libdir=%{_libdir} --enable-dllwrapper=no --disable-rpath
+%configure --enable-dllwrapper=no --disable-rpath
 
-%make_build CFLAGS="%{optflags} -Wno-error"
+%make_build CFLAGS="$CFLAGS -Wno-error"
 
 %install
 
 %make_install
-%ifarch x86_64
-mv $RPM_BUILD_ROOT/usr/lib/buzztrax-songio $RPM_BUILD_ROOT/usr/lib64/
+%ifarch x86_64 amd64
+mv %{buildroot}/usr/lib/buzztrax-songio %{buildroot}/%{_libdir}/
 %endif
 
-chrpath --delete $RPM_BUILD_ROOT%{_libdir}/libbuzztrax-core.so.1.1.0
-chrpath --delete $RPM_BUILD_ROOT%{_libdir}/buzztrax-songio/libbtbsl.so
-chrpath --delete $RPM_BUILD_ROOT%{_bindir}/buzztrax-cmd
-chrpath --delete $RPM_BUILD_ROOT%{_bindir}/buzztrax-edit
-chrpath --delete $RPM_BUILD_ROOT%{_libdir}/gstreamer-1.0/libbuzztraxaudio.so
-chrpath --delete $RPM_BUILD_ROOT%{_libdir}/gstreamer-1.0/libgstfluidsynth.so
-chrpath --delete $RPM_BUILD_ROOT%{_libdir}/gstreamer-1.0/libbuzztraxdec.so
-chrpath --delete $RPM_BUILD_ROOT%{_libdir}/gstreamer-1.0/libgstbml.so
-chrpath --delete $RPM_BUILD_ROOT%{_libdir}/gstreamer-1.0/libgstsidsyn.so
+chrpath --delete %{buildroot}/%{_libdir}/libbuzztrax-core.so.1.1.0
+chrpath --delete %{buildroot}/%{_libdir}/buzztrax-songio/libbtbsl.so
+chrpath --delete %{buildroot}/%{_bindir}/buzztrax-cmd
+chrpath --delete %{buildroot}/%{_bindir}/buzztrax-edit
+chrpath --delete %{buildroot}/%{_libdir}/gstreamer-1.0/libbuzztraxaudio.so
+chrpath --delete %{buildroot}/%{_libdir}/gstreamer-1.0/libgstfluidsynth.so
+chrpath --delete %{buildroot}/%{_libdir}/gstreamer-1.0/libbuzztraxdec.so
+chrpath --delete %{buildroot}/%{_libdir}/gstreamer-1.0/libgstbml.so
+chrpath --delete %{buildroot}/%{_libdir}/gstreamer-1.0/libgstsidsyn.so
 
 %check
 desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}-edit.desktop
