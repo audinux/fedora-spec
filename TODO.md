@@ -80,6 +80,7 @@
 | anklang             | https://github.com/tim-janik/anklang |
 | Dexed               | https://github.com/asb2m10/dexed |
 | slowmo              | https://github.com/brummer10/slowmo.lv2 |
+| buzzmachines        | https://github.com/Buzztrax/buzzmachines |
 
 ## WIP
 
