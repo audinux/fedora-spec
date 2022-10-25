@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 e71389c74b1d76ba9273825a6d9092028c0d8cde
-%global gittag0 2.0.3
+%global commit0 351d3714d82d1b12d40ca443115b7598450cb853
+%global gittag0 2.0.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-LoudNumbers
-Version: 2.0.3
+Version: 2.0.4
 Release: 1%{?dist}
 Summary: LoudNumbers plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r LoudNumbers_plugin/dist/LoudNumbers/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-1
 - initial specfile

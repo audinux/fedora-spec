@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 d48286896730f1767cd0e1d4edb1f0e5a5e642c2
-%global gittag0 2.1.7
+%global commit0 853af138c76e87b985d91ed720df89d321aaf61a
+%global gittag0 2.1.8
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-squinkylabs-plug1
-Version: 2.1.7
+Version: 2.1.8
 Release: 1%{?dist}
 Summary: squinkylabs-plug1 plugin for Rack
 License: GPLv2+
@@ -158,5 +158,5 @@ cp -r squinkylabs-plug1_plugin/dist/squinkylabs-plug1/* %{buildroot}%{_libexecdi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.7-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.8-1
 - initial specfile
