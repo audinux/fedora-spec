@@ -130,23 +130,23 @@ sed -i -e "s/disis earplug ekext/earplug ekext/g" externals/Makefile
 
 %build
 
-AUTOGEN_LIST="./pd/src/ ./Gem/ ./externals/moocow/gfsm/gfsm/ ./externals/moocow/gfsm/ ./externals/moocow/pdstring/ ./externals/moocow/locale/ ./externals/moocow/deque/ ./externals/moocow/weightmap/ ./externals/moocow/readdir/ ./externals/moocow/sprinkler/ ./externals/moocow/hello/ ./externals/io/hidio/ ./externals/hardware/wiimote/ ./externals/iem/iemmatrix/src/ ./Gem/extra/pix_artoolkit/"
-# ./externals/zexy/ has no configure script
+%set_build_flags
 
-for Files in $AUTOGEN_LIST
-do
-  pushd .
-  cd $Files
-  ./autogen.sh
-  popd
-done
+AUTOGEN_LIST="`find externals -name autogen.sh`"
+
+#for Files in $AUTOGEN_LIST
+#do
+#  pushd .
+#  cd `dirname $Files`
+#  ./autogen.sh
+#  popd
+#done
 
 cd packages/linux_make
 rm -rf build
 
-export CFLAGS=""
-export CXXFLAGS=""
-
+#export CFLAGS=""
+#export CXXFLAGS=""
 %make_build prefix=/opt/purr-data all
 
 %install

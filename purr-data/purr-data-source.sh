@@ -6,8 +6,7 @@
 git clone https://github.com/agraef/purr-data
 cd purr-data
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive
 cd ..
 tar cvfz purr-data.tar.gz purr-data
 rm -rf purr-data
