@@ -3,7 +3,7 @@
 # Category: Audio, Editor
 
 Name:    HISE
-Version: 2.0.0
+Version: 3.0.0
 Release: 1%{?dist}
 Summary: The open source framework for sample based instrument
 License: GPLv2+
@@ -11,18 +11,19 @@ URL:     https://github.com/christophhart/HISE
 
 Vendor:       Audinux
 Distribution: Audinux
+
 Source0: https://github.com/christophhart/HISE/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0: hise-0001-juce-patch.patch
-Patch1: hise-0002-ceilf.patch
+Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
+BuildRequires: JUCE61
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: JUCE61
 BuildRequires: libXrandr-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
@@ -41,17 +42,35 @@ HISE is a cross-platform open source audio application for building virtual inst
 It emphasizes on sampling, but includes some basic synthesis features for making hybrid
 instruments as well as audio effects.
 
+%package -n vst-%{name}
+Summary:  VST2 version of %{name}
+License:  GPLv2+
+
+%description -n vst-%{name}
+VST2 version of %{name}
+
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -n %{name}-%{version}
+
+unzip %{SOURCE1}
 
 %build
 
 %set_build_flags
-
+CWD=`pwd`
 export LDFLAGS="`pkg-config --libs glib-2.0 gtk+-3.0 webkit2gtk-4.0` $LDFLAGS"
+export CPPFLAGS="-I$CWD/VST_SDK/VST2_SDK"
 
 cd projects/standalone/
 Projucer61 --resave HISE\ Standalone.jucer
+
+cd Builds/LinuxMakefile/
+%make_build CONFIG=Release STRIP=true
+
+cd ../../../..
+
+cd projects/plugin/
+Projucer61 --resave HISE.jucer
 
 cd Builds/LinuxMakefile/
 %make_build CONFIG=Release STRIP=true
@@ -66,6 +85,9 @@ install -m 755 -d %{buildroot}/%{_datadir}/icons/%{name}/
 cp projects/standalone/Builds/LinuxMakefile/build//HISE\ Standalone %{buildroot}/%{_bindir}/hise
 cp -ra extras/* %{buildroot}/%{_datadir}/%{name}/demos/
 install -m 644 -p ./hi_core/hi_images/logo_mini.png %{buildroot}/%{_datadir}/icons/%{name}/%{name}.png
+
+install -m 755 -d %{buildroot}%{_libdir}/vst/
+install -m 755 -p projects/plugin/Builds/LinuxMakefile/build/HISE.so %{buildroot}%{_libdir}/vst/
 
 cat > %{buildroot}/%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
@@ -95,6 +117,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/*
 %{_datadir}/%{name}/demos/*
 
+%files -n vst-%{name}
+%{_libdir}/vst/*
+
 %changelog
+* Wed Oct 26 2022 Yann Collette <ycollette.nospam@free.fr> - 3.0.0-1
+- update to 3.0.0-1
+
 * Tue Jul 05 2022 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - Initial spec file
