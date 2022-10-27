@@ -81,6 +81,11 @@
 | Dexed               | https://github.com/asb2m10/dexed |
 | slowmo              | https://github.com/brummer10/slowmo.lv2 |
 | buzzmachines        | https://github.com/Buzztrax/buzzmachines |
+| fogpad              | https://github.com/igorski/fogpad |
+| speclet             | https://github.com/JohT/speclet |
+| FroYo               | https://github.com/mmcdermott1/FroYo |
+| PeakEater           | https://github.com/vvvar/PeakEater |
+| aeolus_plugin       | https://github.com/Archie3d/aeolus_plugin |
 
 ## WIP
 
