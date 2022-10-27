@@ -48,7 +48,11 @@ BuildRequires: speex-devel
 BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: jq
+%if 0%{?fedora} >= 36
+BuildRequires: compat-ffmpeg4-devel
+%else
 BuildRequires: ffmpeg-devel
+%endif
 BuildRequires: opus-devel
 BuildRequires: lame-devel
 
@@ -96,6 +100,7 @@ cp %{SOURCE2} vcv_recorder_plugin/Makefile
 
 %build
 
+export CXXFLAGS=-I/usr/include/compat-ffmpeg4
 cd vcv_recorder_plugin
 %make_build RACK_DIR=.. PREFIX=/usr LIBDIR=%{_lib} dist
 
