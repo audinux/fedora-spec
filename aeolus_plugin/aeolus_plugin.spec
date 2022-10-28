@@ -13,6 +13,7 @@ Distribution: Audinux
 
 Source0: aeolus_plugin.tar.gz
 Source1: source_aeolus_plugin.sh
+Patch0: aeolus_plugin-0001-aarch64.patch
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -22,6 +23,7 @@ BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
 BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
+BuildRequires: simde-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -57,7 +59,11 @@ Requires: %{name}
 VST3 version of %{name}
 
 %prep
-%autosetup -n %{name}
+%setup -n %{name}
+
+%ifarch aarch64
+%patch0 -p1
+%endif
 
 %build
 

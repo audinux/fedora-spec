@@ -1,0 +1,30 @@
+From 5c5f06c3a7513304cbee36d84fd4998abf1cac8f Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Thu, 27 Oct 2022 13:04:01 +0200
+Subject: [PATCH] aarch64
+
+---
+ Source/aeolus/simd.cpp | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/Source/aeolus/simd.cpp b/Source/aeolus/simd.cpp
+index 0143458..72a227c 100644
+--- a/Source/aeolus/simd.cpp
++++ b/Source/aeolus/simd.cpp
+@@ -35,6 +35,13 @@
+ #   define SIMD
+ #endif
+ 
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse3.h>
++#include <simde/x86/avx.h>
++#include <simde/x86/avx2.h>
++#include <simde/x86/avx512.h>
++#define SIMD
++
+ AEOLUS_NAMESPACE_BEGIN
+ 
+ // perform cpuid function
+-- 
+2.37.3
+
