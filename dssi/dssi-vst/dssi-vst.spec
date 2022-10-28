@@ -1,7 +1,7 @@
 Summary: VST plug-ins host
 Name: dssi-vst
 Version: 0.9.2
-Release: 27%{?dist}
+Release: 28%{?dist}
 License: GPLv2
 URL: http://breakfastquay.com/dssi-vst/
 
@@ -9,7 +9,7 @@ Source0: http://code.breakfastquay.com/attachments/download/10/%{name}-%{version
 # wine-g++ on wine-devel-1.1.18 (Fedora 11) creates executables with .exe suffix:
 Patch1: %{name}-wine1118.patch
 
-ExclusiveArch: %{ix86} x86_64
+ExclusiveArch: %{ix86} x86_64 arm64
 
 BuildRequires: gcc-c++
 BuildRequires: make
@@ -27,6 +27,7 @@ Requires: ladspa
 
 # Both packages depend on each other
 Requires: %{name}-wine = %{version}-%{release}
+Provides: %{name} = %{version}-%{release}
 
 %description
 dssi-vst is an adapter that allows users of Linux audio software to take VST
@@ -41,6 +42,7 @@ This package contains the DSSI host for the plug-ins.
 %package wine
 Summary: VST plug-ins wrapper
 Requires: %{name} = %{version}-%{release}
+Provides: %{name}-wine = %{version}-%{release}
 
 %description wine
 dssi-vst is an adapter that allows users of Linux audio software to take VST
@@ -107,8 +109,11 @@ ln -s ../dssi/%{name}.so %{buildroot}%{_libdir}/ladspa
 %endif
 
 %changelog
+* Fri Oct 28 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9.2-28
+- Add provides
+
 * Wed Oct 19 2022 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.2-27
-- Rebuit
+- Rebuild
 
 * Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.2-26
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
