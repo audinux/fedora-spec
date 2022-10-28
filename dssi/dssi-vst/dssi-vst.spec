@@ -9,7 +9,7 @@ Source0: http://code.breakfastquay.com/attachments/download/10/%{name}-%{version
 # wine-g++ on wine-devel-1.1.18 (Fedora 11) creates executables with .exe suffix:
 Patch1: %{name}-wine1118.patch
 
-ExclusiveArch: %{ix86} x86_64 arm64
+ExclusiveArch: x86_64 arm64
 
 BuildRequires: gcc-c++
 BuildRequires: make
@@ -17,8 +17,8 @@ BuildRequires: dssi-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: ladspa-devel
 BuildRequires: liblo-devel
-# The -wine subpackage will only be built on ix86
-%ifarch %{ix86}
+# The -wine subpackage will only be built on x86_64 and amd64
+%ifarch x86_64 amd64
 BuildRequires: wine-devel
 %endif
 
@@ -38,7 +38,7 @@ Windows emulation.
 
 This package contains the DSSI host for the plug-ins.
 
-%ifarch %{ix86}
+%ifarch x86_64 amd64
 %package wine
 Summary: VST plug-ins wrapper
 Requires: %{name} = %{version}-%{release}
@@ -65,7 +65,7 @@ This package contains the plug-in wrapper that works through wine.
 %define _lto_cflags %{nil}
 
 # Parallel build fails sometimes:
-%ifarch %{ix86}
+%ifarch x86_64 amd64
 make CXXFLAGS="%{optflags} -fno-omit-frame-pointer -Ivestige -fPIC -I/usr/include/wine/wine/windows"
 %else
 # Build non-wine parts only on x86_64:
@@ -74,7 +74,7 @@ make dssi-vst.so vsthost dssi-vst_gui CXXFLAGS="%{optflags} -Ivestige -fPIC"
 
 %install
 
-%ifarch %{ix86}
+%ifarch x86_64 amd64
 make  DSSIDIR=%{buildroot}%{_libdir}/dssi   \
     LADSPADIR=%{buildroot}%{_libdir}/ladspa \
        BINDIR=%{buildroot}%{_bindir}        \
@@ -100,7 +100,7 @@ ln -s ../dssi/%{name}.so %{buildroot}%{_libdir}/ladspa
 %{_libdir}/dssi/%{name}/%{name}_gui
 %{_libdir}/ladspa/*
 
-%ifarch %{ix86}
+%ifarch x86_64 amd64
 %files wine
 %dir %{_libdir}/dssi/
 %dir %{_libdir}/dssi/%{name}/
