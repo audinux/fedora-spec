@@ -1,0 +1,59 @@
+From a4d3d719d0e94f913df4468858cf958bf7dd14a6 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 30 Oct 2022 16:06:57 +0100
+Subject: [PATCH] fix build
+
+---
+ src/makefile.alsa | 5 +++--
+ src/makefile.jack | 5 +++--
+ 2 files changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/src/makefile.alsa b/src/makefile.alsa
+index 809caf6..d57d576 100755
+--- a/src/makefile.alsa
++++ b/src/makefile.alsa
+@@ -4,7 +4,8 @@ OBJS=lpc.o rt_lpc.o RtAudio.o Thread.o Stk.o chuck_fft.o midiio_alsa.o
+ CC=gcc
+ CPP=g++
+ INCLUDES=
+-CFLAGS=-D__LINUX_ALSA__ $(INCLUDES) -O3 -c
++CFLAGS=-D__LINUX_ALSA__ $(FED_CFLAGS) $(INCLUDES) -O3 -c
++CXXFLAGS=-D__LINUX_ALSA__ $(FED_CXXFLAGS) $(INCLUDES) -O3 -c
+ LIBS=-lasound -L/usr/X11R6/lib -lGL -lGLU -lglut -lX11 -lXi -lXext -lXmu -lm
+ 
+ rt_lpc: $(OBJS)
+@@ -16,7 +17,7 @@ rt_lpc: $(OBJS)
+ 	$(CC) $(CFLAGS) $*.c
+ 
+ .cpp.o: $*.h $*.cpp
+-	$(CC) $(CFLAGS) $*.cpp
++	$(CPP) $(CXXFLAGS) $*.cpp
+ 
+ clean: 
+ 	rm -f rt_lpc *~ *.o
+diff --git a/src/makefile.jack b/src/makefile.jack
+index 191c63f..230ff08 100755
+--- a/src/makefile.jack
++++ b/src/makefile.jack
+@@ -4,7 +4,8 @@ OBJS=lpc.o rt_lpc.o RtAudio.o Thread.o Stk.o chuck_fft.o midiio_alsa.o
+ CC=gcc
+ CPP=g++
+ INCLUDES=
+-CFLAGS=-D__LINUX_JACK__ $(INCLUDES) -O3 -c
++CFLAGS=-D__LINUX_JACK__ $(INCLUDES) $(FED_CFLAGS) -O3 -c
++CXXFLAGS=-D__LINUX_JACK__ $(INCLUDES) $(FED_CXXFLAGS) -O3 -c
+ LIBS=-ljack -lasound -L/usr/X11R6/lib -lGL -lGLU -lglut -lX11 -lXi -lXext -lXmu -lm
+ 
+ rt_lpc: $(OBJS)
+@@ -16,7 +17,7 @@ rt_lpc: $(OBJS)
+ 	$(CC) $(CFLAGS) $*.c
+ 
+ .cpp.o: $*.h $*.cpp
+-	$(CC) $(CFLAGS) $*.cpp
++	$(CPP) $(CXXFLAGS) $*.cpp
+ 
+ clean: 
+ 	rm -f rt_lpc *~ *.o
+-- 
+2.37.3
+
