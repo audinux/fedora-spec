@@ -1,0 +1,66 @@
+From bac2665b7c9d58faa7197d21745c80100a23c709 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 30 Oct 2022 16:18:18 +0100
+Subject: [PATCH] fix build
+
+---
+ makefile.alsa |  5 +++--
+ makefile.jack | 23 +++++++++++++++++++++++
+ 2 files changed, 26 insertions(+), 2 deletions(-)
+ create mode 100755 makefile.jack
+
+diff --git a/makefile.alsa b/makefile.alsa
+index 8dde390..b4ed6c1 100755
+--- a/makefile.alsa
++++ b/makefile.alsa
+@@ -4,7 +4,8 @@ OBJS=pvc.o rt_pvc.o RtAudio.o Thread.o Stk.o chuck_fft.o
+ CC=gcc
+ CPP=g++
+ INCLUDES=
+-CFLAGS=-D__LINUX_ALSA__ $(INCLUDES) -O3 -g -c
++CFLAGS=-D__LINUX_ALSA__ $(INCLUDES) $(FED_CFLAGS) -O3 -g -c
++CXXFLAGS=-D__LINUX_ALSA__ $(INCLUDES) $(FED_CXXFLAGS) -O3 -g -c
+ LIBS=-lasound -L/usr/X11R6/lib -lGL -lGLU -lglut -lX11 -lXi -lXext -lXmu -lm
+ 
+ rt_pvc: $(OBJS)
+@@ -16,7 +17,7 @@ rt_pvc: $(OBJS)
+ 	$(CC) $(CFLAGS) $*.c
+ 
+ .cpp.o: $*.h $*.cpp
+-	$(CC) $(CFLAGS) $*.cpp
++	$(CPP) $(CXXFLAGS) $*.cpp
+ 
+ clean: 
+ 	rm -f rt_pvc *~ *.o
+diff --git a/makefile.jack b/makefile.jack
+new file mode 100755
+index 0000000..b5e229a
+--- /dev/null
++++ b/makefile.jack
+@@ -0,0 +1,23 @@
++TARGET=rt_pvc
++OBJS=pvc.o rt_pvc.o RtAudio.o Thread.o Stk.o chuck_fft.o
++
++CC=gcc
++CPP=g++
++INCLUDES=
++CFLAGS=-D__LINUX_JACK__ $(INCLUDES) $(FED_CFLAGS) -O3 -g -c
++CXXFLAGS=-D__LINUX_JACK__ $(INCLUDES) $(FED_CXXFLAGS) -O3 -g -c
++LIBS=-lasound -ljack -L/usr/X11R6/lib -lGL -lGLU -lglut -lX11 -lXi -lXext -lXmu -lm
++
++rt_pvc: $(OBJS)
++	$(CPP) -o $@ $(OBJS) $(LIBS)
++
++.o: $*.h
++
++.c.o: $*.h $*.c
++	$(CC) $(CFLAGS) $*.c
++
++.cpp.o: $*.h $*.cpp
++	$(CPP) $(CXXFLAGS) $*.cpp
++
++clean: 
++	rm -f rt_pvc *~ *.o
+-- 
+2.37.3
+
