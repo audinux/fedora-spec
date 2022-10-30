@@ -28,7 +28,6 @@
 |                     | - ChaosChimp: http://static.teragonaudio.com/downloads/ChaosChimp/ChaosChimp.zip |
 |                     | - MrsWatson: http://static.teragonaudio.com/downloads/MrsWatson/MrsWatson.zip |
 |                     | - all: https://launchpad.net/~kxstudio-debian/+archive/ubuntu/plugins/+sourcefiles/teragonaudio-plugins/5:20140325.3/teragonaudio-plugins_20140325.3.tar.gz |
-| loop192             | https://github.com/jean-emmanuel/loop192 |
 | inscore             | https://inscore.grame.fr |
 | Gwion               | https://github.com/Gwion |
 | Amati               | https://github.com/glocq/Amati |
@@ -38,7 +37,6 @@
 | QuatumVerb          | https://github.com/QVbDev/quantumVerb |
 | Livecode-This       | https://github.com/gilfuser/livecode-this |
 | SpleeterRT          | https://github.com/james34602/SpleeterRT |
-| sndpeek             | https://www.gewang.com/software/sndpeek |
 | Mousai              | https://github.com/SeaDve/Mousai |
 | audioprism          | https://github.com/vsergeev/audioprism |
 | friture             | https://github.com/tlecomte/friture |
