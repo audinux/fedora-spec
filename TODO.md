@@ -29,12 +29,10 @@
 |                     | - MrsWatson: http://static.teragonaudio.com/downloads/MrsWatson/MrsWatson.zip |
 |                     | - all: https://launchpad.net/~kxstudio-debian/+archive/ubuntu/plugins/+sourcefiles/teragonaudio-plugins/5:20140325.3/teragonaudio-plugins_20140325.3.tar.gz |
 | loop192             | https://github.com/jean-emmanuel/loop192 |
-| loopor              | https://github.com/stevie67/loopor |
 | inscore             | https://inscore.grame.fr |
 | Gwion               | https://github.com/Gwion |
 | Amati               | https://github.com/glocq/Amati |
 | Pure language       | https://agraef.github.io/pure-lang |
-| Freeze              | https://github.com/taylordotfish/freeze |
 | ORCHESTOOLS-PIANO-S | https://github.com/ilirbajri/ORCHESTOOLS-PIANO-S |
 | CollisionDrive      | https://github.com/brummer10/CollisionDrive |
 | QuatumVerb          | https://github.com/QVbDev/quantumVerb |
