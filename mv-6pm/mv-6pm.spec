@@ -23,10 +23,9 @@ BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Multimedia)
 BuildRequires: pkgconfig(Qt5Location)
 BuildRequires: pkgconfig(Qt5OpenGL)
-
 BuildRequires: alsa-lib-devel
-BuildRequires: desktop-file-utils
 BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: desktop-file-utils
 
 %description
 6PM is a phase modulation (PM) synthesizer made of six oscillators.
@@ -77,6 +76,9 @@ desktop-file-install --vendor '' \
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Tue Oct 01 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9.0-2
+- update for f37
+
 * Wed Oct 21 2020 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-2
 - fix debug build
 
