@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Bristol
+Exec=startBristol -b3
+Comment=Synthesizer emulator
+Icon=bristol
+Terminal=false
+Categories=Audio;AudioVideo;
+StartupNotify=false

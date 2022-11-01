@@ -1,0 +1,10 @@
+--- bristol-0.60.11/libbristolaudio/audioEngineJack.c.FIX_BUILD	2016-09-02 21:07:25.740985012 +0300
++++ bristol-0.60.11/libbristolaudio/audioEngineJack.c	2016-09-02 21:07:29.714950492 +0300
+@@ -39,7 +39,6 @@
+ 
+ #ifdef _BRISTOL_JACK
+ #if (BRISTOL_HAS_ALSA == 1)
+-#include <alsa/iatomic.h>
+ #endif
+ 
+ /*
