@@ -412,8 +412,8 @@ kernel
 kernel-modules
 kernel-modules-extra
 kernel-tools
-kernel-rt-mao
-#YC: kernel-rt-stable-mao
+#YC: kernel-rt-mao
+kernel-rt-stable-mao
 
 # This was added a while ago, I think it falls into the category of
 # "Diagnosis/recovery tool useful from a Live OS image".  Leaving this untouched
@@ -503,14 +503,14 @@ jack-audio-connection-kit
 jack-audio-connection-kit-example-clients
 qjackctl
 jackctlmmc
-Carla
+Carla-mao
 Cadence
 
 # ffado
 ffado
 
 # pulse
-#YC: pulseaudio-module-jack
+pulseaudio-module-jack
 pavucontrol
 
 # midi
@@ -539,7 +539,7 @@ phasex
 Rack-v1
 rack-v1-Befaco
 rack-v1-ESeries
-#YC: rack-v1-AudibleInstruments
+rack-v1-AudibleInstruments
 rack-v1-Fundamental
 BespokeSynth
 
@@ -720,10 +720,6 @@ thunderbird
 -kernel-debug                ## Dont need the debug kernel upon install
 -aspell-*                    ## Dictionaries are big and take up space
 -man-pages-*                 ## Dictionaries
-#YC -words                       ## Dictionaries
-#YC: -krb5-auth-dialog            ## Legacy and cmdline things we don't want
-#YC: -krb5-workstation            ## Legacy
-#YC: -pam_krb5                    ## Legacy
 -quota                       ## Legacy
 -minicom                     ## Legacy
 -dos2unix                    ## Legacy
