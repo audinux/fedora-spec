@@ -5,7 +5,7 @@
 # Category: Audio, Effect, Synthesizer
 
 Name:    surge-xt
-Version: 1.1.1
+Version: 1.1.2
 Release: 2%{?dist}
 Summary: A VST3 Synthesizer and Effects, including Airwindows
 License: GPLv2+
@@ -15,11 +15,10 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./source-surge.sh release_xt_1.1.1
+# $ ./source-surge.sh release_xt_1.1.2
 
 Source0: surge.tar.gz
 Source1: source-surge.sh
-Patch0: surge-pr6608.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -40,6 +39,7 @@ BuildRequires: xcb-util-devel
 BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: desktop-file-utils
 
 %description
 A VST3 Synthesizer and Effects, including Airwindows
@@ -83,9 +83,76 @@ sed -i -e "s/Surge_XT Effects/Surge_XT_Effects/g" src/surge-fx/CMakeLists.txt
 
 %cmake_install
 
+# Write desktop files
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+
+cat > %{buildroot}%{_datadir}/applications/Surge-XT.desktop <<EOF
+[Desktop Entry]
+Categories=AudioVideo;Audio;
+Comment=Free Open Source Hybrid Synthesizer
+Exec="/usr/bin/Surge_XT"
+GenericName=Surge XT
+Icon=surge-xt
+MimeType=
+Name=Surge XT
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+EOF
+
+cat > %{buildroot}%{_datadir}/applications/Surge-XT-FX.desktop <<EOF
+[Desktop Entry]
+Categories=AudioVideo;Audio;
+Comment=Surge XT Effects
+Exec="/usr/bin/Surge_XT_Effects"
+GenericName=Surge XT Effects
+Icon=surge-xt-fx
+MimeType=
+Name=Surge XT Effects
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+EOF
+
+# Write icons files
+install -m 755 -d %{buildroot}/%{_datadir}/icons/
+cp -rav scripts/installer_linux/assets/icons/* %{buildroot}/%{_datadir}/icons/
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/Surge-XT-FX.desktop
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/Surge-XT.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/Surge-XT.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/Surge-XT-FX.desktop
+
 %files
+%doc README.md
+%license LICENSE
 %{_bindir}/*
-%{_datadir}/*
+%{_datadir}/applications/*
+%{_datadir}/icons/*
+%{_datadir}/surge-xt/fx_presets/*
+%{_datadir}/surge-xt/modulator_presets/*
+%{_datadir}/surge-xt/patches_3rdparty/*
+%{_datadir}/surge-xt/patches_factory/*
+%{_datadir}/surge-xt/skins/*
+%{_datadir}/surge-xt/tuning_library/*
+%{_datadir}/surge-xt/wavetables/*
+%{_datadir}/surge-xt/wavetables_3rdparty/*
+%{_datadir}/surge-xt/*.txt
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
@@ -94,6 +161,9 @@ sed -i -e "s/Surge_XT Effects/Surge_XT_Effects/g" src/surge-fx/CMakeLists.txt
 %{_libdir}/clap/*
 
 %changelog
+* Tue Nov 01 2022 Jean Pierre Cimalando <jp-dev@gmx.com> - 1.1.2-2
+- update to 1.1.2-2
+
 * Fri Sep 23 2022 Jean Pierre Cimalando <jp-dev@gmx.com> - 1.1.1-2
 - add patch to fix an out-of-bounds array access
 
