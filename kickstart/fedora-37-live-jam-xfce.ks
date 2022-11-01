@@ -11,7 +11,7 @@ lang fr_FR.UTF-8
 keyboard fr-latin9
 timezone Europe/Paris
 
-auth --useshadow --passalgo=sha512
+#YC: removed auth --useshadow --passalgo=sha512
 # SELinux configuration
 #YC: some warnings when relabeling ...
 selinux --disabled
@@ -476,6 +476,9 @@ chkconfig
 -ibus-typing-booster
 -xfce4-sensors-plugin
 
+samba-dc # for wine ...
+wine(x86-32)
+
 # drop some system-config things
 -system-config-rootpassword
 -policycoreutils-gui
@@ -522,7 +525,7 @@ mamba
 # synthesis
 hydrogen
 #YC: hydrogen-drumkit-AVL-BlackPearl-4A
-bristol
+#YC: bristol
 yoshimi
 zynaddsubfx
 #YC: swami
@@ -548,10 +551,6 @@ sooperlooper
 # recodring and DAW
 audacity
 ardour6
-ardour6-backend-alsa
-ardour6-backend-dummy
-ardour6-backend-jack
-ardour6-backend-pulseaudio 
 seq24
 qtractor
 non-daw
@@ -569,7 +568,7 @@ dssi
 ladspa
 helm
 DISTRHO-Ports
-6PM
+#YC: 6PM
 synthpod
 
 # ladpsa plugins
@@ -636,7 +635,7 @@ lv2-fomp-plugins
 #YC: fluidsynth-dssi
 
 # VST3
-vst3-surge
+vst3-surge-xt
 
 # Zita tools
 zita-at1
@@ -721,10 +720,10 @@ thunderbird
 -kernel-debug                ## Dont need the debug kernel upon install
 -aspell-*                    ## Dictionaries are big and take up space
 -man-pages-*                 ## Dictionaries
--words                       ## Dictionaries
--krb5-auth-dialog            ## Legacy and cmdline things we don't want
--krb5-workstation            ## Legacy
--pam_krb5                    ## Legacy
+#YC -words                       ## Dictionaries
+#YC: -krb5-auth-dialog            ## Legacy and cmdline things we don't want
+#YC: -krb5-workstation            ## Legacy
+#YC: -pam_krb5                    ## Legacy
 -quota                       ## Legacy
 -minicom                     ## Legacy
 -dos2unix                    ## Legacy
@@ -907,7 +906,7 @@ cp /usr/share/applications/tuxguitar.desktop      /home/audinux/Desktop
 cp /usr/share/applications/xfce4-terminal.desktop /home/audinux/Desktop
 cp /usr/share/applications/carla.desktop          /home/audinux/Desktop
 cp /usr/share/applications/cadence.desktop        /home/audinux/Desktop
-cp /usr/share/applications/ardour4.desktop        /home/audinux/Desktop
+cp /usr/share/applications/ardour6.desktop        /home/audinux/Desktop
 
 chmod +x /home/audinux/Desktop/*.desktop
 
