@@ -17,6 +17,7 @@
 # libbacktrace-devel
 # libcoverart
 # lvtk
+# portsmf
 # redkit
 # midimsg
 # qscintilla
@@ -50,9 +51,10 @@
 
 # Reorder srpm file in FILELIST: dependencies first
 
+
 FILELIST=""
 
 for Files in $FILELIST
 do
-    copr-cli build --chroot fedora-35-x86_64 audinux $Files
+    copr-cli build --chroot fedora-37-x86_64 --chroot fedora-37-aarch64 audinux $Files
 done
