@@ -82,6 +82,10 @@
 | FroYo               | https://github.com/mmcdermott1/FroYo |
 | PeakEater           | https://github.com/vvvar/PeakEater |
 | aeolus_plugin       | https://github.com/Archie3d/aeolus_plugin |
+| phaserotate         | https://github.com/x42/phaserotate.lv2 |
+| tuna                | https://github.com/x42/tuna.lv2 |
+| stepseq             | https://github.com/x42/stepseq.lv2 |
+| spectra             | https://github.com/x42/spectra.lv2 |
 
 ## WIP
 
