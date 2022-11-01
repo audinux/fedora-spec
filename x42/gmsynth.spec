@@ -1,0 +1,44 @@
+# Tag: Alsa, Jack
+# Type: Plugin, LV2
+# Category: Audio, Tool
+
+Name:    gmsynth.lv2
+Version: 0.5.1
+Release: 1%{?dist}
+Summary: General MIDI LV2 Synth
+License: GPLv2+
+URL:     https://github.com/x42/gmsynth.lv2
+
+Vendor:       Audinux
+Distribution: Audinuxgm
+
+Source0: https://github.com/x42/gmsynth.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+
+BuildRequires: gcc gcc-c++ make
+BuildRequires: lv2-devel
+BuildRequires: glib2-devel
+
+%description
+gmsynth.lv2 is a General MIDI Sample Player Plugin
+
+%prep
+%autosetup -n %{name}-%{version}
+
+%build
+
+%set_build_flags
+export OPTIMIZATIONS="$CFLAGS"
+%make_build PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 STRIP=true
+
+%install 
+
+%make_install PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 STRIP=true
+
+%files
+%doc README.md
+%license COPYING
+%{_libdir}/lv2/*
+
+%changelog
+* Tue Nov 01 2022 Yann Collette <ycollette.nospam@free.fr> - 0.2.2-1
+- Initial spec file
