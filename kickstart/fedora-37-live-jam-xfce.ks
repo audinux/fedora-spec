@@ -11,7 +11,6 @@ lang fr_FR.UTF-8
 keyboard fr-latin9
 timezone Europe/Paris
 
-#YC: removed auth --useshadow --passalgo=sha512
 # SELinux configuration
 #YC: some warnings when relabeling ...
 selinux --disabled
@@ -525,10 +524,10 @@ mamba
 # synthesis
 hydrogen
 #YC: hydrogen-drumkit-AVL-BlackPearl-4A
-#YC: bristol
+bristol
 yoshimi
 zynaddsubfx
-#YC: swami
+swami
 synthv1
 samplv1
 drumkv1
@@ -568,7 +567,7 @@ dssi
 ladspa
 helm
 DISTRHO-Ports
-#YC: 6PM
+6PM
 synthpod
 
 # ladpsa plugins
@@ -584,7 +583,7 @@ ladspa-rev-plugins
 ladspa-swh-plugins
 ladspa-tap-plugins
 ladspa-vco-plugins
-#YC: ladspa-vocoder-plugins
+ladspa-vocoder
 #YC: ladspa-wasp-plugins
 
 # lv2 plugins
@@ -605,7 +604,7 @@ lv2-x42-plugins
 lv2-sorcer
 lv2-fabla
 lv2-artyfx-plugins
-#YC: lv2-EQ10Q-plugins
+lv2-EQ10Q-plugins
 lv2-linuxsampler-plugins
 lv2-mdaEPiano
 lv2-mdala-plugins
@@ -628,11 +627,11 @@ lv2-triceratops
 lv2-fomp-plugins
 
 # dssi
-#YC: nekobee-dssi
-#YC: whysynth-dssi
-#YC: xsynth-dssi
-#YC: hexter-dssi
-#YC: fluidsynth-dssi
+nekobee-dssi
+whysynth-dssi
+xsynth-dssi
+hexter-dssi
+fluidsynth-dssi
 
 # VST3
 vst3-surge-xt
@@ -665,7 +664,7 @@ realTimeConfigQuickScan
 rtirq
 japa
 radium-compressor
-#YC: solfege
+solfege
 linuxsampler
 libgig
 qsampler
@@ -677,7 +676,7 @@ oxefmsynth
 stretchplayer
 sfarkxtc
 lenmus
-#YC: GrandOrgue
+GrandOrgue
 picoloop
 jm2cv
 rakarrack
@@ -690,8 +689,8 @@ supercollider-sc3-plugins
 supercollider-vim
 #YC: sonic-pi
 lmms-mao
-#YC: faust
-#YC: faust-tools
+faust
+faust-tools
 faustworks
 
 # fedora jam theming (to be customized)
