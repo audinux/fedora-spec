@@ -23,6 +23,7 @@ BuildRequires: swig
 BuildRequires: gettext
 BuildRequires: docbook-style-xsl
 BuildRequires: pygtk2-devel >= 2.12
+BuildRequires: python3-gobject-base
 BuildRequires: libxslt
 BuildRequires: txt2man
 BuildRequires: desktop-file-utils
