@@ -1,0 +1,13 @@
+Index: solfege-3.20.7/topdocs/FAQ.texi
+===================================================================
+--- solfege-3.20.7.orig/topdocs/FAQ.texi
++++ solfege-3.20.7/topdocs/FAQ.texi
+@@ -4,6 +4,8 @@
+ @node Top, , , (dir)
+ @top
+ 
++@chapter FAQ
++
+ See also @url{http://www.solfege.org/Solfege/FrequentlyAskedQuestions}
+ 
+ @section The window title does not display non-ascii characters

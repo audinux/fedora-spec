@@ -1,0 +1,12 @@
+diff -uNr solfege-3.20.6.old/run-solfege.py.in solfege-3.20.6/run-solfege.py.in
+--- solfege-3.20.6.old/run-solfege.py.in	2012-06-13 20:45:14.000000000 +0200
++++ solfege-3.20.6/run-solfege.py.in	2012-09-03 01:34:43.308277957 +0200
+@@ -27,7 +27,7 @@
+ import traceback
+ import textwrap
+ 
+-prefix =  os.path.split(os.path.dirname(os.path.abspath(sys.argv[0])))[0]
++prefix =  os.path.split(os.path.dirname(os.path.realpath(sys.argv[0])))[0]
+ if sys.platform == 'win32':
+     s = os.path.normpath(prefix)
+     os.environ['PATH']=r"%s;%s\bin;%s\lib" % (s, s, s)
