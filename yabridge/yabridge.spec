@@ -6,7 +6,7 @@
 %define _lto_cflags %{nil}
 
 Name:    yabridge
-Version: 4.0.2
+Version: 5.0.0
 Release: 5%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPLv2+
@@ -18,6 +18,12 @@ Distribution: Audinux
 Source0: https://github.com/robbert-vdh/yabridge/archive/refs/tags/%{version}.tar.gz#/yabridge-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: meson
+BuildRequires: git
+BuildRequires: rust
+BuildRequires: cargo
+BuildRequires: cmake
+BuildRequires: boost-devel
 BuildRequires: lv2-devel
 BuildRequires: lilv-devel
 BuildRequires: suil-devel
@@ -29,11 +35,8 @@ BuildRequires: libxcb-devel(x86-32)
 BuildRequires: glibc-devel(x86-32)
 BuildRequires: wine-devel(x86-32)
 BuildRequires: libstdc++-devel(x86-32)
-BuildRequires: asio-devel
-BuildRequires: meson
-BuildRequires: git
-BuildRequires: rust
-BuildRequires: cargo
+BuildRequires: dbus-devel
+BuildRequires: gulrak-filesystem-devel
 
 %description
 Yet Another way to use Windows VST plugins on Linux.
@@ -86,6 +89,9 @@ install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}
 %{_libdir}/*
 
 %changelog
+* Wed Nov 02 2022 Yann Collette <ycollette.nospam@free.fr> - 5.0.0-5
+- update to 5.0.0-5
+
 * Sat Jul 30 2022 Yann Collette <ycollette.nospam@free.fr> - 4.0.2-5
 - update to 4.0.2-5 - add 32 bridge
 
