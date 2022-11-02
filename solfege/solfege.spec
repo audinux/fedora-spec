@@ -62,7 +62,7 @@ for f in AUTHORS README ; do
 		rm -f ${f}.tmp
 done
 
-sed -i -e "s/usr\/bin\/python/usr\/bin\/python3/g" %buildroot/%{_bindir}/solfege
+sed -i -e "s/usr\/bin\/python$/usr\/bin\/python3/g" %buildroot/%{_bindir}/solfege
 
 %find_lang %{name}
 
