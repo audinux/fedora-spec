@@ -72,7 +72,6 @@
 | rtcqs               | https://codeberg.org/rtcqs/rtcqs |
 | soundgrain          | https://github.com/belangeo/soundgrain |
 | organ               | https://github.com/figbug/organ |
-| stepseq.lv2         | https://github.com/x42/stepseq.lv2 |
 | anklang             | https://github.com/tim-janik/anklang |
 | Dexed               | https://github.com/asb2m10/dexed |
 | slowmo              | https://github.com/brummer10/slowmo.lv2 |
@@ -81,11 +80,6 @@
 | speclet             | https://github.com/JohT/speclet |
 | FroYo               | https://github.com/mmcdermott1/FroYo |
 | PeakEater           | https://github.com/vvvar/PeakEater |
-| aeolus_plugin       | https://github.com/Archie3d/aeolus_plugin |
-| phaserotate         | https://github.com/x42/phaserotate.lv2 |
-| tuna                | https://github.com/x42/tuna.lv2 |
-| stepseq             | https://github.com/x42/stepseq.lv2 |
-| spectra             | https://github.com/x42/spectra.lv2 |
 
 ## WIP
 
