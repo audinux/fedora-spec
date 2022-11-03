@@ -12,11 +12,11 @@ URL:     https://github.com/x42/sisco.lv2
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./sisco-source.sh <tag>
-# ./sisco-source.sh v0.9.7
+# ./x42-source.sh <project> <tag>
+# ./x42-source.sh sisco.lv2 v0.9.7
 
 Source0: sisco.lv2.tar.gz
-Source1: sisco-source.sh
+Source1: x42-source.sh
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: git

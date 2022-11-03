@@ -13,11 +13,11 @@ URL:     https://github.com/x42/matrixmixer.lv2
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./matrixmixer-source.sh <tag>
-# ./matrixmixer-source.sh v0.4.2
+# ./x42-source.sh <project> <tag>
+# ./x42-source.sh matrixmixer.lv2 v0.4.2
 
 Source0: matrixmixer.lv2.tar.gz
-Source1: matrixmixer-source.sh
+Source1: x42-source.sh
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: alsa-lib-devel

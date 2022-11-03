@@ -12,11 +12,11 @@ URL:     https://github.com/x42/fil4.lv2
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./fil4-source.sh <tag>
-# ./fil4-source.sh v0.4.4
+# ./x42-source.sh <project> <tag>
+# ./x42-source.sh fil4.lv2 v0.4.4
 
 Source0: fil4.lv2.tar.gz
-Source1: fil4-source.sh
+Source1: x42-source.sh
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: alsa-lib-devel

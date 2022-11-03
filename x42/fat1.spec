@@ -12,11 +12,11 @@ URL:     https://github.com/x42/fat1.lv2
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./fat1-source.sh <tag>
-# ./fat1-source.sh v0.8.1
+# ./x42-source.sh <project> <tag>
+# ./x42-source.sh fat1.lv2 v0.8.1
 
 Source0: fat1.lv2.tar.gz
-Source1: fat1-source.sh
+Source1: x42-source.sh
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: alsa-lib-devel

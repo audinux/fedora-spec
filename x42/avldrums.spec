@@ -12,11 +12,11 @@ URL:     https://github.com/x42/avldrums.lv2
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./avldrums-source.sh <tag>
-# ./avldrums-source.sh v0.5.1
+# ./x42-source.sh <project> <tag>
+# ./x42-source.sh avldrums.lv2 v0.5.1
 
 Source0: avldrums.lv2.tar.gz
-Source1: avldrums-source.sh
+Source1: x42-source.sh
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: lv2-devel
@@ -37,6 +37,7 @@ sed -i -e "s|-msse2||g" Makefile
 sed -i -e "s|-msse||g" Makefile
 sed -i -e "s|-mfpmath=sse||g" Makefile
 %endif
+#TODO: use OPTIMIZATION flags instead. Check Makefile
 
 %build
 
