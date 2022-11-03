@@ -7,7 +7,7 @@
 
 Name:    yabridge
 Version: 5.0.0
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPLv2+
 URL:     https://github.com/robbert-vdh/yabridge
@@ -67,20 +67,25 @@ popd
 
 %install
 
-install -dm755 %{buildroot}%{_bindir}
-install %{_vpath_builddir}/yabridge-host.exe %{buildroot}%{_bindir}
-install %{_vpath_builddir}/yabridge-host.exe.so %{buildroot}%{_bindir}
-install %{_vpath_builddir}/yabridge-host-32.exe %{buildroot}%{_bindir}
-install %{_vpath_builddir}/yabridge-host-32.exe.so %{buildroot}%{_bindir}
+install -dm755 %{buildroot}%{_bindir}/
+install -dm755 %{buildroot}%{_libdir}/
 
-install -dm755 %{buildroot}%{_libdir}/vst
+install %{_vpath_builddir}/yabridge-host.exe %{buildroot}%{_bindir}/
+install %{_vpath_builddir}/yabridge-host.exe.so %{buildroot}%{_bindir}/
+install %{_vpath_builddir}/yabridge-host-32.exe %{buildroot}%{_bindir}/
+install %{_vpath_builddir}/yabridge-host-32.exe.so %{buildroot}%{_bindir}/
+
 install %{_vpath_builddir}/libyabridge-vst2.so %{buildroot}%{_libdir}/
-install %{_vpath_builddir}/libyabridge-vst3.so %{buildroot}%{_libdir}/
 install %{_vpath_builddir}/libyabridge-chainloader-vst2.so %{buildroot}%{_libdir}/
+
+install %{_vpath_builddir}/libyabridge-vst3.so %{buildroot}%{_libdir}/
 install %{_vpath_builddir}/libyabridge-chainloader-vst3.so %{buildroot}%{_libdir}/
 
+install %{_vpath_builddir}/libyabridge-clap.so  %{buildroot}%{_libdir}/
+install %{_vpath_builddir}/libyabridge-chainloader-clap.so %{buildroot}%{_libdir}/
+
 # install tool
-install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}
+install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}/
 
 %files
 %doc CHANGELOG.md README.md
@@ -89,6 +94,9 @@ install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}
 %{_libdir}/*
 
 %changelog
+* Thu Nov 03 2022 Yann Collette <ycollette.nospam@free.fr> - 5.0.0-6
+- update to 5.0.0-6 - add clap
+
 * Wed Nov 02 2022 Yann Collette <ycollette.nospam@free.fr> - 5.0.0-5
 - update to 5.0.0-5
 
