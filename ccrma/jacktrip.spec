@@ -4,7 +4,7 @@
 
 Summary: Multimachine jam sessions over the internet
 Name:    jacktrip
-Version: 1.6.5
+Version: 1.6.6
 Release: 2%{?dist}
 License: STK
 URL:     https://ccrma.stanford.edu/software/jacktrip/
@@ -74,6 +74,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/org.jackt
 %{_mandir}/man1/*
 
 %changelog
+* Thu Nov 03 2022 Yann Collette <ycollette.nospam@free.fr> - 1.6.6-2
+- update to 1.6.6-2
+
 * Fri Oct 28 2022 Yann Collette <ycollette.nospam@free.fr> - 1.6.5-2
 - update to 1.6.5-2
 
