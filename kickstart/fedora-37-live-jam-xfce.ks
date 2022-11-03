@@ -509,7 +509,7 @@ Cadence
 ffado
 
 # pulse
-pulseaudio-module-jack
+#YC: pulseaudio-module-jack 
 pavucontrol
 
 # midi
@@ -583,7 +583,7 @@ ladspa-rev-plugins
 ladspa-swh-plugins
 ladspa-tap-plugins
 ladspa-vco-plugins
-ladspa-vocoder
+#YC: ladspa-vocoder
 #YC: ladspa-wasp-plugins
 
 # lv2 plugins
@@ -664,7 +664,7 @@ realTimeConfigQuickScan
 rtirq
 japa
 radium-compressor
-solfege
+#YC: solfege
 linuxsampler
 libgig
 qsampler
