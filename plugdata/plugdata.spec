@@ -1,5 +1,5 @@
 Name:    plugdata
-Version: 0.5.3
+Version: 0.6.2
 Release: 1%{?dist}
 Summary: Pure Data as a plugin, with a new GUI
 URL:     https://github.com/timothyschoen/PlugData
@@ -9,7 +9,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./plugdata-source.sh <TAG>
-# ./plugdata-source.sh v0.5.3
+# ./plugdata-source.sh v0.6.2
 
 Source0: PlugData.tar.gz
 Source1: plugdata-source.sh
@@ -31,7 +31,8 @@ BuildRequires: libXrandr-devel
 BuildRequires: libXcursor-devel
 BuildRequires: xsimd-devel
 BuildRequires: lv2-devel
-BuildRequires: JUCE
+BuildRequires: mpg123-devel
+BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: desktop-file-utils
 
 %description
@@ -57,6 +58,15 @@ LV2 version of %{name}
 %autosetup -n PlugData
 
 %build
+
+%define X_display ":98"
+#############################################
+### Launch a virtual framebuffer X server ###
+#############################################
+export DISPLAY=%{X_display}
+Xvfb %{X_display} >& Xvfb.log &
+trap "kill $! || true" EXIT
+sleep 10
 
 export HOME=`pwd`
 mkdir -p .vst3
@@ -85,7 +95,8 @@ cp Plugins/Standalone/* %{buildroot}%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/%{name}/
 install -m 644 -p Resources/plugd_logo.png %{buildroot}/%{_datadir}/icons/%{name}/%{name}.png
-install -m 644 -p Resources/PlugDataFont.ttf %{buildroot}/%{_fontbasedir}/PlugData/
+install -m 644 -p Resources/*.ttf %{buildroot}/%{_fontbasedir}/PlugData/
+install -m 644 -p Inter-V.ttf %{buildroot}/%{_fontbasedir}/PlugData/
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
 cat > %{buildroot}/%{_datadir}/applications/PlugData.desktop <<EOF
@@ -122,6 +133,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/PlugData.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Thu Nov 03 2022 Yann Collette <ycollette.nospam@free.fr> - 0.6.2-1
+- update to 0.6.2-1
+
 * Wed Jun 29 2022 Yann Collette <ycollette.nospam@free.fr> - 0.5.3-1
 - update to 0.5.3-1
 
