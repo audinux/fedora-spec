@@ -386,3 +386,14 @@ Duplicate build-ids /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50
                     /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/entry/vdso/vdso32.so
 Duplicate build-ids /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/tools/objtool/fixdep and
                     /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/tools/bpf/resolve_btfids/fixdep
+
+# Check on src.fedora
+
+zynjack
+mhwaveedit
+check leiningen
+jackctlmmc
+jack-rack
+hydrogen-drumkits
+gwave
+gtick
