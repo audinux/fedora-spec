@@ -3,9 +3,9 @@
 # Kernel minor version
 %define kmin  10
 # Kernel patch version
-%define kpat  152
+%define kpat  153
 # RT patch version
-%define krt   75
+%define krt   76
 # package version
 %define krel  11
 
@@ -203,6 +203,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt-stable%{krt}%{fcver}
 
 %changelog
+* Fri Nov 04 2022 Yann Collette <ycollette.nospam@free.fr> - 5.10.153-rt76-11
+- update to 5.10.153-rt76-11 - vanilla RT kernel
+
 * Mon Oct 31 2022 Yann Collette <ycollette.nospam@free.fr> - 5.10.152-rt75-11
 - update to 5.10.152-rt75-11 - vanilla RT kernel
 
