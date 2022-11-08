@@ -80,6 +80,7 @@
 | speclet             | https://github.com/JohT/speclet |
 | FroYo               | https://github.com/mmcdermott1/FroYo |
 | PeakEater           | https://github.com/vvvar/PeakEater |
+| ysfx                | https://github.com/jpcima/ysfx |
 
 ## WIP
 
