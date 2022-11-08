@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 ad370c85fb6d32c73b1e81724c43ea6155cd25d4
-%global gittag0 2.0.0
+%global commit0 44d1920ce3fa0862653ad5b4ce179aba44b1c3aa
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Plurm
-Version: 2.0.0
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: Plurm plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r Plurm_plugin/dist/Plurm/* %{buildroot}%{_libexecdir}/Rack2/plugins/Plurm/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

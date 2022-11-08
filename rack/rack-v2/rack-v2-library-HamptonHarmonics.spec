@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 e5cf81f1c356fdc98fd08584146cda8af7e16b1f
-%global gittag0 2.0.1
+%global commit0 7db5ef91d611d3da1e1552ee0d329d803db3b1fe
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-HamptonHarmonics
-Version: 2.0.1
+Version: 2.0.2
 Release: 1%{?dist}
 Summary: HamptonHarmonics plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r HamptonHarmonics_plugin/dist/HamptonHarmonics/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile
