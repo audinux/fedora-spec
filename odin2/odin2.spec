@@ -56,6 +56,7 @@ VST3 version of %{name}
 
 %ifarch aarch64
 sed -i -e "s/-msse2//g" Odin.jucer
+sed -i -e "s/-m64//g" Odin.jucer
 %endif
 
 %build
@@ -89,7 +90,6 @@ rm %{buildroot}%{_datadir}/odin2/Soundbanks/User\ Patches/.gitignore
 
 install -m 755 -p Builds/LinuxMakefile/build_vst3/Odin2 %{buildroot}/%{_bindir}/
 cp -ra Builds/LinuxMakefile/build_vst3/Odin2.vst3/* %{buildroot}/%{_libdir}/vst3/Odin2.vst3/
-chmod a+x %{buildroot}/%{_libdir}/vst3/Odin2.vst3/Contents/x86_64-linux/Odin2.so
 
 install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
 cp screenshot.png %{buildroot}/%{_datadir}/pixmaps/%{name}.png
