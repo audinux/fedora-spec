@@ -7,7 +7,7 @@
 # RT patch version
 %define krt   1
 # package version
-%define krel  11
+%define krel  12
 
 %define kver  %{kmaj}.%{kmin}.%{kpat}
 %define fcver %{dist}.%{_arch}
@@ -17,13 +17,13 @@ Summary: The Linux Liquorix Real Time Kernel
 Version: %{kver}.lqx%{krt}
 Release: %{krel}%{?dist}
 License: GPL
-URL:     http://www.kernel.org
+URL:     https://liquorix.net/
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://cdn.kernel.org/pub/linux/kernel/v%{kmaj}.x/linux-%{kmaj}.%{kmin}.tar.gz
-Source1: kernel-lqx-config-%{kmaj}.%{kmin}
+Source1: https://github.com/damentz/liquorix-package/raw/%{kmaj}.%{kmin}/master/linux-liquorix/debian/config/kernelarch-x86/config-arch-64
 Patch0:  https://github.com/zen-kernel/zen-kernel/releases/download/v%{kmaj}.%{kmin}.%{kpat}-lqx%{krt}/v%{kmaj}.%{kmin}.%{kpat}-lqx%{krt}.patch.xz
 
 BuildRequires: openssl-devel
@@ -202,5 +202,8 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-lqx%{krt}%{fcver}
 
 %changelog
-* Wed Nov 09 2022 Yann Collette <ycollette.nospam@free.fr> - 6.0.7-lqx1-1
-- update to  6.0.7-lqx1-1 - vanilla Liquorix kernel
+* Thu Nov 10 2022 Yann Collette <ycollette.nospam@free.fr> - 6.0.7-lqx1-12
+- update to 6.0.7-lqx1-12 - vanilla Liquorix kernel
+
+* Wed Nov 09 2022 Yann Collette <ycollette.nospam@free.fr> - 6.0.7-lqx1-11
+- update to 6.0.7-lqx1-11 - vanilla Liquorix kernel

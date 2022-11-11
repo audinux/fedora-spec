@@ -94,6 +94,9 @@ against the %{version} kernel package.
 %autosetup -p1 -n linux-%{kmaj}.%{kmin}
 
 cp %{SOURCE1} .config
+echo "" > localversion-rt
+echo "" > localversion-xanmod
+
 make oldconfig
 
 sed -i -e "s/EXTRAVERSION =.*/EXTRAVERSION = -xan%{krt}%{fcver}/g" Makefile
