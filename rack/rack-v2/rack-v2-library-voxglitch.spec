@@ -141,8 +141,6 @@ cp -n %{SOURCE2} voxglitch_plugin/plugin.json
 
 %build
 
-export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
-
 cd voxglitch_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 

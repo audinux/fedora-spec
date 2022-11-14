@@ -27,7 +27,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/knchaffin/Meander/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/knchaffin/Meander/tree/master-V2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: PS-PurrSoftware_plugin.json
 Patch0: rack-v2-aarch64.patch
 

@@ -18,7 +18,7 @@ Version: 2.4.1
 Release: 1%{?dist}
 Summary: Coffee plugin for Rack
 License: GPLv2+
-URL:     https://github.com/CoffeeVCV/CoffeeVCV/
+URL:     https://github.com/CoffeeVCV/CoffeeVCV/blob/master/README.md
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,7 +27,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/CoffeeVCV/CoffeeVCV/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/CoffeeVCV/CoffeeVCV/blob/master/README.md/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: Coffee_plugin.json
 Patch0: rack-v2-aarch64.patch
 
