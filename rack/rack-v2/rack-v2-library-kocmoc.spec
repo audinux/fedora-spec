@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 2572622ab2557778f956a9072b6b895b9af63a87
-%global gittag0 2.0.2
+%global commit0 e2c4f7b964b90ec2cc83de5b35268cbaad31ae5d
+%global gittag0 2.0.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-kocmoc
-Version: 2.0.2
+Version: 2.0.3
 Release: 1%{?dist}
 Summary: kocmoc plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r kocmoc_plugin/dist/kocmoc/* %{buildroot}%{_libexecdir}/Rack2/plugins/kocmo
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
 - initial specfile
