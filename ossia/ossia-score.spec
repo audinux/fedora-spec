@@ -1,7 +1,7 @@
 %define _lto_cflags %{nil}
 
 Name:    ossia-score
-Version: 3.0.12
+Version: 3.1.4
 Release: 1%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL:     https://github.com/OSSIA/score
@@ -48,6 +48,9 @@ sed -i -e "s/BOOST_MINOR 70/BOOST_MINOR 76/g" 3rdparty/libossia/cmake/OssiaDeps.
 
 %build
 
+%set_build_flags
+export CXXFLAGS="-include optional $CXXFLAGS"
+
 %cmake -DCMAKE_BUILD_TYPE=RELEASE
 %cmake_build
 
@@ -59,6 +62,8 @@ sed -i -e "s/BOOST_MINOR 70/BOOST_MINOR 76/g" 3rdparty/libossia/cmake/OssiaDeps.
 rm -rf %{buildroot}/usr/lib/*.a
 rm -rf %{buildroot}/usr/lib/cmake/
 rm -rf %{buildroot}/%{_libdir}/*.a
+rm -rf %{buildroot}/%{_libdir}/cmake/mimalloc-2.0/
+rm -rf %{buildroot}/%{_libdir}/mimalloc-2.0/
 rm -rf %{buildroot}/%{_includedir}/
 rm -rf %{buildroot}/%{_datadir}/
 
@@ -68,6 +73,9 @@ rm -rf %{buildroot}/%{_datadir}/
 %{_bindir}/*
 
 %changelog
+* Thu Nov 17 2022 Yann Collette <ycollette.nospam@free.fr> - 3.1.4-2
+- update to version 3.1.4-2
+
 * Sun Jul 24 2022 Yann Collette <ycollette.nospam@free.fr> - 3.0.12-2
 - update to version 3.0.12-2
 
