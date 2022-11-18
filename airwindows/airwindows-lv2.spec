@@ -1,0 +1,43 @@
+Name:    lv2-airwindows
+Version: 12.0
+Release: 1%{?dist}
+Summary: Airwindows plugins (ported to LV2)
+License: GPLv3+
+URL:     https://github.com/hannesbraun/airwindows-lv2
+
+Vendor:       Audinux
+Distribution: Audinux
+
+Source0: https://github.com/hannesbraun/airwindows-lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+
+BuildRequires: gcc
+BuildRequires: gcc-c++
+BuildRequires: meson
+BuildRequires: lv2-devel
+BuildRequires: boost-devel
+
+%description
+This is an LV2 port of the Airwindows plugins made by Chris Johnson.
+Have a look at https://www.airwindows.com for a detailed description of all the plugins.
+Find the original source code at https://github.com/airwindows/airwindows.
+
+%prep
+%autosetup -n airwindows-lv2-%{version}
+
+%build
+
+%meson
+%meson_build
+
+%install 
+
+%meson_install
+
+%files
+%doc README.md NOTES.md CONTRIBUTING.md
+%license LICENSE
+%{_libdir}/lv2/*
+
+%changelog
+* Fri Nov 18 2022 Yann Collette <ycollette.nospam@free.fr> - 12.0-1
+- Initial spec file
