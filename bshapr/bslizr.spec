@@ -4,7 +4,7 @@
 
 Summary: Sequenced audio slicing effect LV2 plugin (Step sequencer effect).
 Name:    lv2-BSlizr
-Version: 1.2.12
+Version: 1.2.16
 Release: 3%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BSlizr
@@ -52,6 +52,9 @@ Each chop can be levelled up or down to get a step sequencer-like effect.
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Nov 19 2022 Yann Collette <ycollette dot nospam at free.fr> 1.2.16-3
+- update to 1.2.16-3
+
 * Fri Sep 10 2021 Yann Collette <ycollette dot nospam at free.fr> 1.2.12-3
 - update to 1.2.12-3 - fix install
 
