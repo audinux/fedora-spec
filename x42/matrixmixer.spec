@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name:    matrixmixer.lv2
-Version: 0.4.2
+Version: 0.4.3
 Release: 2%{?dist}
 Summary: A LV2 matrix mixer
 License: GPLv2+
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./x42-source.sh <project> <tag>
-# ./x42-source.sh matrixmixer.lv2 v0.4.2
+# ./x42-source.sh matrixmixer.lv2 v0.4.3
 
 Source0: matrixmixer.lv2.tar.gz
 Source1: x42-source.sh
@@ -50,6 +50,9 @@ A NxM LV2 matrix mixer by x42
 %{_datadir}/*
 
 %changelog
+* Sun Nov 20 2022 Yann Collette <ycollette.nospam@free.fr> - 0.4.3-1
+- update to 0.4.3-1
+
 * Thu Oct 06 2022 Yann Collette <ycollette.nospam@free.fr> - 0.4.2-2
 - update to 0.4.2-1
 

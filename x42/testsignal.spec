@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    testsignal.lv2
-Version: 0.6.2
+Version: 0.6.3
 Release: 1%{?dist}
 Summary: LV2 Test Signal Generator
 License: GPLv2+
@@ -58,5 +58,8 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Nov 20 2022 Yann Collette <ycollette.nospam@free.fr> - 0.6.3-1
+- update to 0.6.3-1
+
 * Tue Nov 01 2022 Yann Collette <ycollette.nospam@free.fr> - 0.6.2-1
 - Initial spec file

@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    mixtri.lv2
-Version: 0.4.7
+Version: 0.4.8
 Release: 1%{?dist}
 Summary: Matrix Mixer & Trigger (Pre-Processor for Oscilloscope)
 License: GPLv2+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./x42-source.sh <project> <tag>
-# ./x42-source.sh mixtri.lv2 v0.4.7
+# ./x42-source.sh mixtri.lv2 v0.4.8
 
 Source0: mixtri.lv2.tar.gz
 Source1: x42-source.sh
@@ -56,5 +56,8 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_datadir}/*
 
 %changelog
+* Sun Nov 20 2022 Yann Collette <ycollette.nospam@free.fr> - 0.4.8-1
+- update to 0.4.8-1
+
 * Thu Nov 03 2022 Yann Collette <ycollette.nospam@free.fr> - 0.4.7-1
 - Initial spec file

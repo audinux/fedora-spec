@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    repitch.lv2
-Version: 0.2.1
+Version: 0.2.2
 Release: 1%{?dist}
 Summary: Counterbalance pitch when vari-speeding
 License: GPLv2+
@@ -42,5 +42,8 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Nov 20 2022 Yann Collette <ycollette.nospam@free.fr> - 0.2.2-1
+- update to 0.2.2-1
+
 * Tue Nov 01 2022 Yann Collette <ycollette.nospam@free.fr> - 0.2.1-1
 - Initial spec file
