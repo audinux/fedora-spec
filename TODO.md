@@ -81,6 +81,8 @@
 | FroYo               | https://github.com/mmcdermott1/FroYo |
 | PeakEater           | https://github.com/vvvar/PeakEater |
 | ysfx                | https://github.com/jpcima/ysfx |
+| nodelay.lv2         | https://github.com/x42/nodelay.lv2 |
+| controlfilter.lv2   | https://github.com/x42/controlfilter.lv2 |
 
 ## WIP
 
