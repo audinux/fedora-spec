@@ -67,22 +67,16 @@
 | gyroflow            | https://github.com/gyroflow/gyroflow |
 | studio-controls     | https://github.com/ovenwerks/studio-controls |
 | seq66               | https://github.com/ahlstromcj/seq66 |
-| DawDreamer          | https://github.com/DBraun/DawDreamer |
 | vmpc-juce           | https://github.com/izzyreal/vmpc-juce |
 | rtcqs               | https://codeberg.org/rtcqs/rtcqs |
 | soundgrain          | https://github.com/belangeo/soundgrain |
-| organ               | https://github.com/figbug/organ |
 | anklang             | https://github.com/tim-janik/anklang |
 | Dexed               | https://github.com/asb2m10/dexed |
 | slowmo              | https://github.com/brummer10/slowmo.lv2 |
 | buzzmachines        | https://github.com/Buzztrax/buzzmachines |
 | fogpad              | https://github.com/igorski/fogpad |
 | speclet             | https://github.com/JohT/speclet |
-| FroYo               | https://github.com/mmcdermott1/FroYo |
-| PeakEater           | https://github.com/vvvar/PeakEater |
 | ysfx                | https://github.com/jpcima/ysfx |
-| nodelay.lv2         | https://github.com/x42/nodelay.lv2 |
-| controlfilter.lv2   | https://github.com/x42/controlfilter.lv2 |
 
 ## WIP
 
