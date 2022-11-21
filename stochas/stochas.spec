@@ -1,5 +1,5 @@
 Name:    stochas
-Version: 1.3.5
+Version: 1.3.8
 Release: 4%{?dist}
 Summary: A VST3 MIDI sequencer
 License: GPLv3
@@ -8,7 +8,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Use ./source-stochas.sh to get the sources (latest master for now)
-# ./source-stochas.sh v1.3.5
+# ./source-stochas.sh v1.3.8
 
 URL:     https://github.com/surge-synthesizer/stochas
 Source0: stochas.tar.gz
@@ -42,7 +42,8 @@ sed -i -e "s/find_package/#find_package/g" cmake/versiontools.cmake
 
 %build
 
-%cmake  
+%set_build_flags
+%cmake -DCMAKE_CXX_FLAGS="-include utility $CXXFLAGS"
 
 %cmake_build
 
@@ -71,7 +72,10 @@ install -m 644 -p %{__cmake_builddir}/stochas_artefacts/Standalone/Stochas %{bui
 %{_libdir}/vst3/*
 
 %changelog
-* Thu Oct 05 2021 Yann Collette <ycollette.nospam@free.fr> - 1.3.5-4
+* Mon Nov 21 2022 Yann Collette <ycollette.nospam@free.fr> - 1.3.8-4
+- update to 1.3.8-4
+
+* Mon Oct 25 2021 Yann Collette <ycollette.nospam@free.fr> - 1.3.5-4
 - update to 1.3.5-4 - update for Fedora 35
 
 * Sun Jun 06 2021 Yann Collette <ycollette.nospam@free.fr> - 1.3.5-3
