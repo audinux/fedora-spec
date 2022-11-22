@@ -77,6 +77,7 @@
 | fogpad              | https://github.com/igorski/fogpad |
 | speclet             | https://github.com/JohT/speclet |
 | ysfx                | https://github.com/jpcima/ysfx |
+| rosegarden-fork     | https://github.com/thanks4opensource/rosegarden-fork |
 
 ## WIP
 
