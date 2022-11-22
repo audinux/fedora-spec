@@ -3,9 +3,9 @@
 # Kernel minor version
 %define kmin  0
 # Kernel patch version
-%define kpat  7
-# RT patch version
-%define krt   14
+%define kpat  9
+# Xan version
+%define kxan  1
 # package version
 %define krel  12
 
@@ -14,7 +14,7 @@
 
 Name:    kernel-xan-mao
 Summary: The Linux XanMod Real Time Kernel
-Version: %{kver}.xan%{krt}
+Version: %{kver}.xan%{kxan}
 Release: %{krel}%{?dist}
 License: GPL
 URL:     http://www.xanmod.org
@@ -24,7 +24,7 @@ Distribution: Audinux
 
 Source0: https://cdn.kernel.org/pub/linux/kernel/v%{kmaj}.x/linux-%{kmaj}.%{kmin}.tar.gz
 Source1: kernel-xanmod-config-%{kmaj}.%{kmin}
-Patch0:  https://github.com/xanmod/linux/releases/download/%{kver}-rt%{krt}-xanmod1/patch-%{kver}-rt%{krt}-xanmod1.xz
+Patch0:  https://github.com/xanmod/linux/releases/download/%{kver}-xanmod%{kxan}/patch-%{kver}-xanmod%{kxan}.xz
 
 BuildRequires: openssl-devel
 BuildRequires: openssl
@@ -94,12 +94,13 @@ against the %{version} kernel package.
 %autosetup -p1 -n linux-%{kmaj}.%{kmin}
 
 cp %{SOURCE1} .config
+echo "" > localversion
 echo "" > localversion-rt
 echo "" > localversion-xanmod
 
 make oldconfig
 
-sed -i -e "s/EXTRAVERSION =.*/EXTRAVERSION = -xan%{krt}%{fcver}/g" Makefile
+sed -i -e "s/EXTRAVERSION =.*/EXTRAVERSION = -xan%{kxan}%{fcver}/g" Makefile
 sed -i -e "s/SUBLEVEL = 0/SUBLEVEL = %{kpat}/g" Makefile
 
 %build
@@ -120,81 +121,81 @@ make %{?_smp_mflags} INSTALL_MOD_PATH=%{buildroot} KBUILD_SRC= mod-fw= INSTALL_M
 
 # We estimate the size of the initramfs because rpm needs to take this size
 # into consideration when performing disk space calculations. (See bz #530778)
-dd if=/dev/zero of=%{buildroot}/boot/initramfs-%{kver}-xan%{krt}%{fcver}.img bs=1M count=20
+dd if=/dev/zero of=%{buildroot}/boot/initramfs-%{kver}-xan%{kxan}%{fcver}.img bs=1M count=20
 
 %ifarch ia64
-  cp $KBUILD_IMAGE %{buildroot}/boot/efi/vmlinuz-%{kver}-xan%{krt}%{fcver}
-  chmod a+x %{buildroot}/boot/efi/vmlinuz-%{kver}-xan%{krt}%{fcver}
-  ln -s efi/vmlinuz-%{kver}-%{krt}%{fcver} %{buildroot}/boot/
+  cp $KBUILD_IMAGE %{buildroot}/boot/efi/vmlinuz-%{kver}-xan%{kxan}%{fcver}
+  chmod a+x %{buildroot}/boot/efi/vmlinuz-%{kver}-xan%{kxan}%{fcver}
+  ln -s efi/vmlinuz-%{kver}-%{fcver} %{buildroot}/boot/
 %else
-  cp $KBUILD_IMAGE %{buildroot}/boot/vmlinuz-%{kver}-xan%{krt}%{fcver}
-  chmod a+x %{buildroot}/boot/vmlinuz-%{kver}-xan%{krt}%{fcver}
+  cp $KBUILD_IMAGE %{buildroot}/boot/vmlinuz-%{kver}-xan%{kxan}%{fcver}
+  chmod a+x %{buildroot}/boot/vmlinuz-%{kver}-xan%{kxan}%{fcver}
 %endif
 
 make %{?_smp_mflags} INSTALL_HDR_PATH=%{buildroot}/usr KBUILD_SRC= headers_install
-cp System.map %{buildroot}/boot/System.map-%{kver}-xan%{krt}%{fcver}
-cp .config    %{buildroot}/boot/config-%{kver}-xan%{krt}%{fcver}
+cp System.map %{buildroot}/boot/System.map-%{kver}-xan%{kxan}%{fcver}
+cp .config    %{buildroot}/boot/config-%{kver}-xan%{kxan}%{fcver}
 
-cp %{buildroot}/boot/vmlinuz-%{kver}-xan%{krt}%{fcver} %{buildroot}/lib/modules/%{kver}-xan%{krt}%{fcver}/vmlinuz
+cp %{buildroot}/boot/vmlinuz-%{kver}-xan%{kxan}%{fcver} %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/vmlinuz
 
-rm -f %{buildroot}/lib/modules/%{kver}-xan%{krt}%{fcver}/build
-rm -f %{buildroot}/lib/modules/%{kver}-xan%{krt}%{fcver}/source
+rm -f %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
+rm -f %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/source
 
-mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{krt}%{fcver}/build
-(cd %{buildroot}/lib/modules/%{kver}-xan%{krt}%{fcver} ; ln -s build source)
+mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
+(cd %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver} ; ln -s build source)
 
 # dirs for additional modules per module-init-tools, kbuild/modules.txt
-mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{krt}%{fcver}/extra
-mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{krt}%{fcver}/internal
-mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{krt}%{fcver}/updates
+mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/extra
+mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/internal
+mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/updates
 
 # CONFIG_KERNEL_HEADER_TEST generates some extra files in the process of
 # testing so just delete
 find . -name *.h.s -delete
 
 # first copy everything
-cp --parents `find  -type f -name "Makefile*" -o -name "Kconfig*"` %{buildroot}/lib/modules/%{kver}-xan%{krt}%{fcver}/build
-cp Module.symvers %{buildroot}/lib/modules/%{kver}-xan%{krt}%{fcver}/build
-cp System.map %{buildroot}/lib/modules/%{kver}-xan%{krt}%{fcver}/build
+cp --parents `find  -type f -name "Makefile*" -o -name "Kconfig*"` %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
+cp Module.symvers %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
+cp System.map %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
 if [ -s Module.markers ]; then
-  cp Module.markers %{buildroot}/lib/modules/%{kver}-xan%{krt}%{fcver}/build
+  cp Module.markers %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
 fi
 
 # Move the devel headers out of the root file system
 
-DevelDir=/usr/src/kernels/%{kver}-xan%{krt}%{fcver}
+DevelDir=/usr/src/kernels/%{kver}-xan%{kxan}%{fcver}
 
-mkdir -p %{buildroot}/usr/src/kernels/%{kver}-xan%{krt}%{fcver}
-mv %{buildroot}/lib/modules/%{kver}-xan%{krt}%{fcver}/build %{buildroot}/$DevelDir
+mkdir -p %{buildroot}/usr/src/kernels/%{kver}-xan%{kxan}%{fcver}
+mv %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build %{buildroot}/$DevelDir
 
 # This is going to create a broken link during the build, but we don't use
 # it after this point.  We need the link to actually point to something
 # when kernel-devel is installed, and a relative link doesn't work across
 # the F17 UsrMove feature.
 
-ln -sf $DevelDir %{buildroot}/lib/modules/%{kver}-xan%{krt}%{fcver}/build
+ln -sf $DevelDir %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
 
 # prune junk from kernel-devel
 
 find %{buildroot}/usr/src/kernels -name ".*.cmd" -delete
 
 EXCLUDES="--exclude SCCS --exclude BitKeeper --exclude .svn --exclude CVS --exclude .pc --exclude .hg --exclude .git --exclude .tmp_versions --exclude=*vmlinux* --exclude=*.o --exclude=*.ko --exclude=*.ko.xz --exclude=*.cmd --exclude=Documentation --exclude=firmware --exclude .config.old --exclude .missing-syscalls.d"
-tar $EXCLUDES -cf- . | (cd %{buildroot}/usr/src/kernels/%{kver}-xan%{krt}%{fcver}; tar xvf -)
+tar $EXCLUDES -cf- . | (cd %{buildroot}/usr/src/kernels/%{kver}-xan%{kxan}%{fcver}; tar xvf -)
 
 %post
 # Create the initramfs file
-/bin/kernel-install add %{kver}-xan%{krt}%{fcver} /lib/modules/%{kver}-xan%{krt}%{fcver}/vmlinuz
+/bin/kernel-install add %{kver}-xan%{kxan}%{fcver} /lib/modules/%{kver}-xan%{kxan}%{fcver}/vmlinuz
 grub2-mkconfig -o /boot/grub2/grub.cfg
 
 %postun
-/bin/kernel-install remove %{kver}-xan%{krt}%{fcver} /lib/modules/%{kver}-xan%{krt}%{fcver}/vmlinuz
+/bin/kernel-install remove %{kver}-xan%{kxan}%{fcver} /lib/modules/%{kver}-xan%{kxan}%{fcver}/vmlinuz
 grub2-mkconfig -o /boot/grub2/grub.cfg
 
 %files
 %defattr (-, root, root)
-/lib/modules/%{kver}-xan%{krt}%{fcver}
+/lib/modules/%{kver}-xan%{kxan}%{fcver}
 /boot/*
-%ghost /boot/initramfs-%{kver}-xan%{krt}%{fcver}
+%ghost /boot/initramfs-%{kver}-xan%{kxan}%{fcver}
 
 %files headers
 %defattr (-, root, root)
@@ -202,8 +203,11 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 %files devel
 %defattr (-, root, root)
-/usr/src/kernels/%{kver}-xan%{krt}%{fcver}
+/usr/src/kernels/%{kver}-xan%{kxan}%{fcver}
 
 %changelog
-* Thu Nov 10 2022 Yann Collette <ycollette.nospam@free.fr> - 6.0.7-xan14-12
-- update to 6.0.7-xan14-12 - vanilla XanMod kernel
+* Tue Nov 22 2022 Yann Collette <ycollette.nospam@free.fr> - 6.0.9-xan1-12
+- update to 6.0.9-xan1-12 - vanilla XanMod kernel
+
+* Thu Nov 10 2022 Yann Collette <ycollette.nospam@free.fr> - 6.0.7-xan1-12
+- update to 6.0.7-xan1-12 - vanilla XanMod kernel
