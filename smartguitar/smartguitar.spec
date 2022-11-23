@@ -14,10 +14,10 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources:
-# ./source-smartguitarpro.sh v1.3
+# ./source-guitarml.sh SmartGuitarAmp v1.3
 
 Source0: SmartGuitarAmp.tar.gz
-Source1: source-smartguitar.sh
+Source1: source-guitarml.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake

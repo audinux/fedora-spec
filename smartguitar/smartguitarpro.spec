@@ -13,11 +13,11 @@ URL:     https://github.com/GuitarML/SmartAmpPro
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./source-smartguitarpro.sh 13bdf299b5aca3de92b73163c7d74f28c77f1d96
+# ./source-guitarml.sh SmartAmpPro 13bdf299b5aca3de92b73163c7d74f28c77f1d96
 
 Source0: SmartAmpPro.tar.gz
 Source1: smartguitarpro_build.tar.gz
-Source2: source-smartguitarpro.sh
+Source2: source-guitarml.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
