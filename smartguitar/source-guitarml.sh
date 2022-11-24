@@ -5,7 +5,7 @@
 
 git clone https://github.com/GuitarML/$1
 cd $1
-git checkout origin/release/$2
+git checkout $2
 git submodule init
 git submodule update
 find . -name .git -exec rm -rf {} \;
