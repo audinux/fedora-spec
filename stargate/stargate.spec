@@ -3,7 +3,7 @@
 # Category: DAW, Audio
 
 Name:    stargate
-Version: 22.11.5
+Version: 22.11.6
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
 License: GPLv3
@@ -90,6 +90,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 %{_datadir}/stargate/*
 
 %changelog
+* Thu Nov 24 2022 Yann Collette <ycollette.nospam@free.fr> - 22.11.6-1
+- update to 22.11.6-1
+
 * Sun Nov 20 2022 Yann Collette <ycollette.nospam@free.fr> - 22.11.5-1
 - update to 22.11.5-1
 
