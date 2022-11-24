@@ -1,11 +1,11 @@
 # Global variables for github repository
-%global commit0 d404edc4d79fb59ee77bb9e87ce51de050e70a88
+%global commit0 efd26e6b02ddf9683ffae00a59ad72b5ab59d585
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    mod-pitchshifter
 Version: 0.9.%{shortcommit0}
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: mod-pitchshifter LV2 set of plugins from portalmod
 License: GPLv2+
 URL:     https://github.com/portalmod/mod-pitchshifter
@@ -51,6 +51,9 @@ sed -i -e "s/-Wl,--strip-all//" Makefile.mk
 %{_libdir}/lv2/*
 
 %changelog
+* Thu Nov 24 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9-3
+- update to last master
+
 * Mon Oct 15 2018 Yann Collette <ycollette.nospam@free.fr> - 0.9
 - update for Fedora 29
 
