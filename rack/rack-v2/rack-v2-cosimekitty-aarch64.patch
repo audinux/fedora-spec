@@ -1,0 +1,28 @@
+From 6d0dcb2866f63f485986ce2f501a36a0014ebd54 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Fri, 25 Nov 2022 08:14:06 +0100
+Subject: [PATCH] aarch54
+
+---
+ CosineKitty-Sapphire_plugin/src/sapphire_engine.hpp | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/CosineKitty-Sapphire_plugin/src/sapphire_engine.hpp b/CosineKitty-Sapphire_plugin/src/sapphire_engine.hpp
+index 1abb47d..4ca45ac 100644
+--- a/CosineKitty-Sapphire_plugin/src/sapphire_engine.hpp
++++ b/CosineKitty-Sapphire_plugin/src/sapphire_engine.hpp
+@@ -6,7 +6,10 @@
+ #include <algorithm>
+ #include <vector>
+ #include <stdexcept>
+-#include <pmmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse3.h>
++#include <simde/x86/sse2.h>
++#include <simde/x86/sse.h> 
+ 
+ namespace Sapphire
+ {
+-- 
+2.38.1
+

@@ -30,6 +30,7 @@ Source0: Rack.tar.gz
 Source1: https://github.com/cosinekitty/sapphire/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: CosineKitty-Sapphire_plugin.json
 Patch0: rack-v2-aarch64.patch
+Patch1: rack-v2-cosimekitty-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -138,6 +139,8 @@ mkdir CosineKitty-Sapphire_plugin
 tar xvfz %{SOURCE1} --directory=CosineKitty-Sapphire_plugin --strip-components=1 
 
 cp -n %{SOURCE2} CosineKitty-Sapphire_plugin/plugin.json
+
+%patch1 -p1
 
 %build
 
