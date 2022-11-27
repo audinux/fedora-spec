@@ -1,7 +1,7 @@
 %define _lto_cflags %{nil}
 
 Name:    cardinal
-Version: 22.10
+Version: 22.11
 Release: 2%{?dist}
 Summary: Virtual modular synthesizer plugin
 License: GPLv2+
@@ -145,6 +145,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Sun Nov 27 2022 Yann Collette <ycollette.nospam@free.fr> - 22.11-2
+- update to 22.11-2
+
 * Sat Oct 15 2022 Yann Collette <ycollette.nospam@free.fr> - 22.10-2
 - update to 22.10-2
 
