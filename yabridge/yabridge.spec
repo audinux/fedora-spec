@@ -6,7 +6,7 @@
 %define _lto_cflags %{nil}
 
 Name:    yabridge
-Version: 5.0.1
+Version: 5.0.2
 Release: 6%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPLv2+
@@ -94,6 +94,9 @@ install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}/
 %{_libdir}/*
 
 %changelog
+* Mon Nov 28 2022 Yann Collette <ycollette.nospam@free.fr> - 5.0.2-6
+- update to 5.0.2-6
+
 * Mon Nov 14 2022 Yann Collette <ycollette.nospam@free.fr> - 5.0.1-6
 - update to 5.0.1-6
 
