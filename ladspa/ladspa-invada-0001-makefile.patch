@@ -1,0 +1,27 @@
+From a24413fbf00f6b62efa909de050707120f2e8972 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Mon, 28 Nov 2022 08:13:27 +0100
+Subject: [PATCH] makefile
+
+---
+ Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 4e27c61..73ae045 100644
+--- a/Makefile
++++ b/Makefile
+@@ -35,8 +35,8 @@ INSTALL_LRDF_DIR	=	/usr/local/share/ladspa/rdf/
+ 
+ CC		=	gcc
+ LD		=	ld
+-CFLAGS		=	-I. -O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -c -fPIC -DPIC
+-LDFLAGS		=	-shared -lc -lm -L. -linv_common
++CFLAGS		+=	-I. -ffast-math -c -fPIC -DPIC
++LDFLAGS		+=	-shared -lc -lm -L. -linv_common
+ 
+ PLUGINS		=	libinv_common.a \
+                         inv_compressor.so \
+-- 
+2.38.1
+
