@@ -142,6 +142,7 @@ cp -n %{SOURCE2} SurgeXTRack_plugin/plugin.json
 %build
 
 cd SurgeXTRack_plugin
+%make_build RACK_DIR=.. PREFIX=/usr CFLAGS=-O2 STRIP=true LIBDIR=%{_lib} dep/surge-build/src/common/libsurge-common.a
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
