@@ -3,7 +3,7 @@
 # Category: Audio, Programming, Graphic
 
 Name:    JUCE
-Version: 7.0.2
+Version: 7.0.3
 Release: 9%{?dist}
 Summary: JUCE Framework
 URL:     https://github.com/juce-framework/JUCE
@@ -16,7 +16,6 @@ Distribution: Audinux
 Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: juce_Projucer.desktop
 Source2: juce_Projucer.1
-Patch0: JUCE-7.0.2-linux-font-default.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -91,6 +90,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_includedir}/*
 
 %changelog
+* Tue Nov 29 2022 Yann Collette <ycollette.nospam@free.fr> - 7.0.3-9
+- update to 7.0.3-9
+
 * Tue Aug 23 2022 Yann Collette <ycollette.nospam@free.fr> - 7.0.2-9
 - add patch for default font selection (thanks to jpcima).
 
