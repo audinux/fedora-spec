@@ -19,7 +19,7 @@
 %global debug_package %{nil}
 
 Name:    processing
-Version: 3.5.4
+Version: 4.1.1
 Release: 2%{?dist}
 Summary: Processing Development Environment (PDE)
 # Core is LGPL, others are GPL
@@ -29,11 +29,11 @@ Url:     https://processing.org/
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://download.processing.org/%{name}-%{version}-linux64.tgz
+Source0: https://github.com/processing/processing4/releases/download/processing-1289-%{version}/processing-%{version}-linux-x64.tgz
 Source1: %{name}.desktop
 
-AutoReqProv:    no
-BuildArch:      x86_64
+AutoReqProv: no
+BuildArch:   x86_64
 
 %description
 Processing is a flexible software sketchbook and a language for learning
@@ -65,6 +65,10 @@ install -m 0644 lib/icons/pde-256.png %{buildroot}/%{_datadir}/pixmaps/%{name}.p
 install -dm 0755 %{buildroot}/%{_datadir}/applications
 install -m 0644 %{SOURCE1} %{buildroot}/%{_datadir}/applications/
 
+# Create a symlink
+install -dm 0755 %{buildroot}/%{_bindir}
+ln -s /opt/processing/processing %{buildroot}/%{_bindir}/processing
+
 # Remove some non x86_64-linux files
 rm -rf %{buildroot}/opt/processing/modes/java/libraries/io/library/linux-arm64/
 rm -rf %{buildroot}/opt/processing/modes/java/libraries/io/library/linux-armv6hf/
@@ -72,12 +76,15 @@ rm -rf %{buildroot}/opt/processing/modes/java/libraries/serial/library/linux-arm
 rm -rf %{buildroot}/opt/processing/modes/java/libraries/serial/library/linux-armv6hf/
 
 %files
-%defattr(-,root,root)
+%{_bindir}/%{name}
 /opt/%{name}
 %{_datadir}/pixmaps/%{name}.png
 %{_datadir}/applications/%{name}.desktop
 
 %changelog
+* Thu Dec 01 2022 Yann Collette <ycollette.nospam@free.fr> - 4.1.1-2
+- update to 4.1.1-2
+
 * Fri Oct 01 2021 Yann Collette <ycollette.nospam@free.fr> - 3.5.4-2
 - fix for Fedora 35 + update to 3.5.4-2
 
