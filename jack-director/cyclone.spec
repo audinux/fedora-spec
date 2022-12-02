@@ -22,6 +22,8 @@ BuildRequires: libsndfile-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: desktop-file-utils
 
+Requires: sooperlooper
+
 %description
 Cyclone Loop Giant is a music application for GNU/Linux that
 allows users to manipulate loops in various ways.
