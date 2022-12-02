@@ -78,6 +78,7 @@
 | speclet             | https://github.com/JohT/speclet |
 | ysfx                | https://github.com/jpcima/ysfx |
 | rosegarden-fork     | https://github.com/thanks4opensource/rosegarden-fork |
+| annulus             | https://github.com/chronopoulos/annulus |
 
 ## WIP
 
