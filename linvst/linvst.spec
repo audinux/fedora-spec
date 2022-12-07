@@ -2,7 +2,7 @@
 
 Name:    LinVst
 Version: 4.78
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Linux Windows vst wrapper/bridge
 License: GPLv3
 URL:     https://github.com/osxmidi/linvst
@@ -20,6 +20,7 @@ BuildRequires: wine-devel
 BuildRequires: wine-devel(x86-32)
 
 Requires: wine
+Requires: python3
 
 %description
 LinVst adds support for Windows vst's to be used in Linux vst capable DAW's.
@@ -42,16 +43,22 @@ make -f Makefile-convert
 %make_install
 %make_install -f Makefile-convert
 
-mkdir -p %{buildroot}/usr/share/%{name}/64bit-32bit
-install -m 755 linvst.so %{buildroot}/usr/share/%{name}/64bit-32bit
+mkdir -p %{buildroot}/%{_datadir}/%{name}/64bit-32bit
+install -m 755 linvst.so %{buildroot}/%{_datadir}/%{name}/64bit-32bit
 
-mkdir -p %{buildroot}/usr/share/%{name}/doc
-cp -ra Detailed-Guide %{buildroot}/usr/share/%{name}/doc
-cp -ra Realtime-Audio-Config %{buildroot}/usr/share/%{name}/doc
+mkdir -p %{buildroot}/%{_datadir}/%{name}/doc
+cp -ra Detailed-Guide %{buildroot}/%{_datadir}/%{name}/doc
+cp -ra Realtime-Audio-Config %{buildroot}/%{_datadir}/%{name}/doc
+
+mkdir -p %{buildroot}/%{_datadir}/%{name}/manage/
+cp manage/linvstmanage-cli %{buildroot}/%{_bindir}/
+cp manage/linvstmanage.ini %{buildroot}/%{_datadir}/%{name}/manage/
+cp manage/README.md %{buildroot}/%{_datadir}/%{name}/manage/
 
 %files
 %license COPYING
 %doc README.md
+%{_bindir}/linvstmanage-cli
 %{_bindir}/lin-vst-servertrack.exe
 %{_bindir}/lin-vst-servertrack.exe.so
 %{_bindir}/lin-vst-servertrack32.exe
@@ -59,6 +66,7 @@ cp -ra Realtime-Audio-Config %{buildroot}/usr/share/%{name}/doc
 %{_bindir}/linvstconvert
 %{_datadir}/%{name}/64bit-32bit/linvst.so
 %{_datadir}/%{name}/doc/*
+%{_datadir}/%{name}/manage/*
 
 %changelog
 * Tue Dec 06 2022 Yann Collette <ycollette.nospam@free.fr> - 4.78-1
