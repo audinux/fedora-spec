@@ -1,34 +1,19 @@
-From 5074f938d0fc8290d91b033765fd64bc0a8da22d Mon Sep 17 00:00:00 2001
+From e070edb8cda25cd54a22acb849e6ca8ff84f8084 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Fri, 25 Nov 2022 08:10:35 +0100
+Date: Wed, 7 Dec 2022 21:12:09 +0100
 Subject: [PATCH] aarch64
 
 ---
- arch.mk               | 3 +++
  compile.mk            | 6 ++++++
  dep.mk                | 3 +++
- src/engine/Engine.cpp | 8 ++++----
- 4 files changed, 16 insertions(+), 4 deletions(-)
+ src/engine/Engine.cpp | 7 ++++---
+ 3 files changed, 13 insertions(+), 3 deletions(-)
 
-diff --git a/arch.mk b/arch.mk
-index 88b5081..db20b4a 100644
---- a/arch.mk
-+++ b/arch.mk
-@@ -6,6 +6,9 @@ ifneq (,$(findstring x86_64-,$(MACHINE)))
- else ifneq (,$(findstring arm64-,$(MACHINE)))
- 	ARCH_ARM64 := 1
- 	ARCH_CPU := arm64
-+else ifneq (,$(findstring aarch64-,$(MACHINE)))
-+	ARCH_aarch64 := 1
-+	ARCH_NAME := aarch64
- else
- $(error Could not determine CPU architecture of $(MACHINE))
- endif
 diff --git a/compile.mk b/compile.mk
-index b72fd68..4513d7d 100644
+index 011b436..453a847 100644
 --- a/compile.mk
 +++ b/compile.mk
-@@ -29,6 +29,9 @@ ifdef ARCH_ARM64
+@@ -35,6 +35,9 @@ ifdef ARCH_ARM64
  	FLAGS += -DARCH_ARM64
  	FLAGS += -march=armv8-a+fp+simd
  endif
@@ -38,7 +23,7 @@ index b72fd68..4513d7d 100644
  
  ifdef ARCH_LIN
  	FLAGS += -DARCH_LIN
-@@ -100,6 +103,9 @@ ifdef ARCH_MAC
+@@ -106,6 +109,9 @@ ifdef ARCH_MAC
  	@# Apple makes this needlessly complicated, so just generate a C file with an array.
  	xxd -i $< | $(CC) $(MAC_SDK_FLAGS) -c -o $@ -xc -
  endif
@@ -49,10 +34,10 @@ index b72fd68..4513d7d 100644
  build/%.html: %.md
  	markdown $< > $@
 diff --git a/dep.mk b/dep.mk
-index 7db35fb..c3f23a3 100644
+index 41fe589..22b2305 100644
 --- a/dep.mk
 +++ b/dep.mk
-@@ -16,6 +16,9 @@ endif
+@@ -22,6 +22,9 @@ endif
  ifdef ARCH_ARM64
  	DEP_FLAGS += -march=armv8-a+fp+simd
  endif
@@ -63,24 +48,23 @@ index 7db35fb..c3f23a3 100644
  ifdef ARCH_MAC
  	DEP_MAC_SDK_FLAGS := -mmacosx-version-min=10.9
 diff --git a/src/engine/Engine.cpp b/src/engine/Engine.cpp
-index 453a4a0..66537ef 100644
+index 453a4a0..cc8bd1d 100644
 --- a/src/engine/Engine.cpp
 +++ b/src/engine/Engine.cpp
-@@ -5,10 +5,10 @@
+@@ -5,9 +5,10 @@
  #include <mutex>
  #include <atomic>
  #include <tuple>
 -#if defined ARCH_X64
 -	#include <pmmintrin.h>
 -#endif
--
 +#define SIMDE_ENABLE_NATIVE_ALIASES
 +#include <simde/x86/sse3.h>
 +#include <simde/x86/sse2.h>
 +#include <simde/x86/sse.h> 
+ 
  #include <engine/Engine.hpp>
  #include <settings.hpp>
- #include <system.hpp>
 -- 
 2.38.1
 
