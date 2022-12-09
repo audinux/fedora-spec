@@ -33,7 +33,6 @@
 | Amati               | https://github.com/glocq/Amati |
 | Pure language       | https://agraef.github.io/pure-lang |
 | ORCHESTOOLS-PIANO-S | https://github.com/ilirbajri/ORCHESTOOLS-PIANO-S |
-| CollisionDrive      | https://github.com/brummer10/CollisionDrive |
 | QuatumVerb          | https://github.com/QVbDev/quantumVerb |
 | Livecode-This       | https://github.com/gilfuser/livecode-this |
 | SpleeterRT          | https://github.com/james34602/SpleeterRT |
