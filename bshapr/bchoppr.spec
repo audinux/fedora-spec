@@ -4,7 +4,7 @@
 
 Summary: An audio stream chopping LV2 plugin
 Name:    lv2-BChoppr
-Version: 1.12.4
+Version: 1.12.6
 Release: 3%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BChoppr
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./sjaehn-source.sh <project> <tag>
-# ./sjaehn-source.sh BChoppr 1.12.4
+# ./sjaehn-source.sh BChoppr 1.12.6
 
 Source0: BChoppr.tar.gz
 Source1: sjaehn-source.sh
@@ -39,7 +39,7 @@ Each chop can be leveled up or down (gating). BChoppr is the successor of BSlizr
 	    LV2DIR=%{_libdir}/lv2 \
 	    DESTDIR=%{buildroot} \
 	    STRIP=true \
-	    CXXFLAGS="$CXXFLAGS -include stdexcept -include array -std=c++11 -fvisibility=hidden -fPIC"
+	    CXXFLAGS="$CXXFLAGS -include stdexcept -std=c++11 -fvisibility=hidden -fPIC"
 
 %install
 
@@ -47,7 +47,7 @@ Each chop can be leveled up or down (gating). BChoppr is the successor of BSlizr
 	      LV2DIR=%{_libdir}/lv2 \
 	      DESTDIR=%{buildroot} \
 	      STRIP=true \
-	      CXXFLAGS="$CXXFLAGS -include stdexcept -include array -std=c++11 -fvisibility=hidden -fPIC"
+	      CXXFLAGS="$CXXFLAGS -include stdexcept -std=c++11 -fvisibility=hidden -fPIC"
 
 %files
 %doc README.md
@@ -55,6 +55,9 @@ Each chop can be leveled up or down (gating). BChoppr is the successor of BSlizr
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Dec 09 2022 Yann Collette <ycollette dot nospam at free.fr> 1.12.6-3
+- updata to 1.12.6-3
+
 * Thu Dec 08 2022 Yann Collette <ycollette dot nospam at free.fr> 1.12.4-3
 - updata to 1.12.4-3
 
