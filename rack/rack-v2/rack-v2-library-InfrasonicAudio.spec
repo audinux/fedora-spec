@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 36bf491bde6b9001ee114a7bd0d80aa26bec0203
-%global gittag0 2.0.0
+%global commit0 1b0b2a81ffa2bf27b91c3e6763c599b5827c7c17
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-InfrasonicAudio
-Version: 2.0.0
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: InfrasonicAudio plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r InfrasonicAudio_plugin/dist/InfrasonicAudio/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile
