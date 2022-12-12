@@ -3,7 +3,7 @@
 # Kernel minor version
 %define kmin  0
 # Kernel patch version
-%define kpat  9
+%define kpat  12
 # RT patch version
 %define krt   1
 # package version
@@ -202,6 +202,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-lqx%{krt}%{fcver}
 
 %changelog
+* Sat Dec 10 2022 Yann Collette <ycollette.nospam@free.fr> - 6.0.12-lqx1-12
+- update to 6.0.12-lqx1-12 - vanilla Liquorix kernel
+
 * Tue Nov 22 2022 Yann Collette <ycollette.nospam@free.fr> - 6.0.9-lqx1-12
 - update to 6.0.9-lqx1-12 - vanilla Liquorix kernel
 
