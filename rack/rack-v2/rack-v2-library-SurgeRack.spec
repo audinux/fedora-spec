@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 fb9c9a2f58e3a4c3c35c7339cb6116efa72347fa
-%global gittag0 2.1.7.0
+%global commit0 ceea602d2a788ea4b9d54b1ee292cd4bfbe6cae0
+%global gittag0 2.1.7.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SurgeRack
-Version: 2.1.7.0
+Version: 2.1.7.1
 Release: 1%{?dist}
 Summary: SurgeRack plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r SurgeRack_plugin/dist/SurgeRack/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.7.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.7.1-1
 - initial specfile
