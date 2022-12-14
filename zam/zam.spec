@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    zam-plugins
-Version: 3.14
+Version: 4.0
 Release: 3%{?dist}
 Summary: Set of LV2 plugins
 License: GPLv2+
@@ -12,7 +12,7 @@ URL:     https://github.com/zamaudio/zam-plugins
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./zam-source.sh 3.14
+# ./zam-source.sh 4.0
 Source0: zam-plugins-%{version}.tar.xz
 
 BuildRequires: gcc gcc-c++
@@ -67,6 +67,9 @@ Zam VST plugin
 %{_libdir}/vst/* 
 
 %changelog
+* Wed Dec 14 2022 Yann Collette <ycollette.nospam@free.fr> - 4.0-3
+- update to 4.0-3
+
 * Sun Dec 20 2020 Yann Collette <ycollette.nospam@free.fr> - 3.14-3
 - update to 3.14
 
