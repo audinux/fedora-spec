@@ -2,12 +2,12 @@
 # Type: Plugin, LV2, VST
 # Category: Audio, Effect
 
-Name:    zam-plugins
+Name:    zam-mao-plugins
 Version: 4.0
-Release: 3%{?dist}
-Summary: Set of LV2 plugins
-License: GPLv2+
-URL:     https://github.com/zamaudio/zam-plugins
+Release: 4%{?dist}
+Summary: Set of LV2 / VST / VST3 / CLAPS plugins
+License: GPLv2+ and ISC
+URL:     http://www.zamaudio.com/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -16,6 +16,7 @@ Distribution: Audinux
 Source0: zam-plugins-%{version}.tar.xz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: fftw-devel
@@ -23,50 +24,95 @@ BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: liblo-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libsamplerate-devel
+BuildRequires: zita-convolver-devel
+
+Obsoletes: zam-plugins
+Obsoletes: zam < 4.0-4
 
 %description
 Zam LV2 set of plugins
 Compressors, Limiters, Saturation, Tube emulation, 
 Equalizers, Delay, Gates
 
-%package -n ladspa-zam
+%package -n ladspa-%{name}
 Summary: Zam LADSPA plugin
+Obsoletes: ladspa-zam-plugins
+Obsoletes: ladspa-zam < 4.0-4
 
-%description -n ladspa-zam
+%description -n ladspa-%{name}
 Zam LADSPA plugin
 
-%package -n vst-zam
+%package -n vst-%{name}
 Summary: Zam VST plugin
 
-%description -n vst-zam
+%description -n vst-%{name}
 Zam VST plugin
+
+%package -n vst3-%{name}
+Summary: Zam VST3 plugin
+
+%description -n vst3-%{name}
+Zam VST3 plugin
+
+%package -n lv2-%{name}
+Summary: Zam LV2 plugin
+Obsoletes: lv2-zam-plugins
+Obsoletes: lv2-zam < 4.0-4
+
+%description -n lv2-%{name}
+Zam LV2 plugin
+
+%package -n clap-%{name}
+Summary: Zam CLAP plugin
+
+%description -n clap-%{name}
+Zam CLAP plugin
 
 %prep
 %autosetup -n zam-plugins-%{version}
 
 %build
 
-%define _lto_cflags %{nil}
-
-%make_build PREFIX=/usr LIBDIR=%{_lib} SKIP_STRIPPING=true CFLAGS="%optflags" CXXFLAGS="%optflags" all
+%set_build_flags
+%make_build PREFIX=/usr LIBDIR=%{_lib} SKIP_STRIPPING=true USE_SYSTEM_LIBS=1 all
 
 %install 
 
-%make_install PREFIX=/usr LIBDIR=%{_lib} SKIP_STRIPPING=true CFLAGS="%optflags" CXXFLAGS="%optflags" install
+%make_install PREFIX=/usr LIBDIR=%{_lib} SKIP_STRIPPING=true USE_SYSTEM_LIBS=1 install
+
+install -m 755 -d %{buildroot}/%{_libdir}/clap/
+cp -a bin/*.clap %{buildroot}/%{_libdir}/clap/
+
+install -m 755 -d %{buildroot}/%{_libdir}/vst3/
+for Files in bin/*.vst3
+do
+  cp -ra $Files %{buildroot}/%{_libdir}/vst3/
+done
 
 %files
-%doc changelog NOTICE.DPF NOTICE.SFZero README.md
+%doc changelog README.md
 %license COPYING
 %{_bindir}/*
-%{_libdir}/lv2/*
 
-%files -n ladspa-zam
+%files -n lv2-%{name}
+%{_libdir}/lv2/* 
+
+%files -n ladspa-%{name}
 %{_libdir}/ladspa/* 
 
-%files -n vst-zam
+%files -n vst-%{name}
 %{_libdir}/vst/* 
 
+%files -n clap-%{name}
+%{_libdir}/clap/* 
+
+%files -n vst3-%{name}
+%{_libdir}/vst3/* 
+
 %changelog
+* Wed Dec 14 2022 Yann Collette <ycollette.nospam@free.fr> - 4.0-4
+- update to 4.0-4 - add lv2 sub-package
+
 * Wed Dec 14 2022 Yann Collette <ycollette.nospam@free.fr> - 4.0-3
 - update to 4.0-3
 
