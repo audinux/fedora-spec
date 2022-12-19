@@ -3,7 +3,7 @@
 # Category: Audio, Programming
 
 Name:	 faust
-Version: 2.50.6
+Version: 2.54.9
 Release: 35%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
@@ -14,7 +14,11 @@ URL:     http://faust.grame.fr
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/grame-cncm/faust/releases/download/%{version}/faust-%{version}.tar.gz
+# to get source:
+# ./faust-source.sh 2.54.9
+
+Source0: faust.tar.gz
+Source1: faust-source.sh
 
 BuildRequires: gcc-c++
 BuildRequires: doxygen
@@ -109,7 +113,7 @@ Faust AUdio STreams is a functional programming language for real-time audio
 signal processing. These libraries are part of the standard Faust libraries.
 
 %prep
-%autosetup -n faust-%{version}
+%autosetup -n faust
 
 # For installation in the correct location and for preserving timestamps:
 # The Makefile normally puts noarch files in $prefix/lib. We change
