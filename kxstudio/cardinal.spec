@@ -99,11 +99,6 @@ export CXXFLAGS="$CXXFLAGS -Wno-error=format-security"
 mv %buildroot/usr/lib %buildroot/usr/lib64
 %endif
 
-# Install Cardinal clap
-install -m 755 -d %{buildroot}/%{_libdir}/clap/
-cp -ra bin/Cardinal.clap/CardinalSynth.clap %{buildroot}/%{_libdir}/clap/
-cp -ra bin/Cardinal.clap/CardinalFX.clap %{buildroot}/%{_libdir}/clap/
-
 # Write desktop files
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
 
