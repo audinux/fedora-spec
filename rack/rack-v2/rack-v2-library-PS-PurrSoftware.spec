@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 a7d12b914c57b55bce1597503ef810fbf8d5afc0
-%global gittag0 2.0.24
+%global commit0 f346750a889a429c2b5ee7bf74c0983dd5450022
+%global gittag0 2.0.25
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-PS-PurrSoftware
-Version: 2.0.24
+Version: 2.0.25
 Release: 1%{?dist}
 Summary: PS-PurrSoftware plugin for Rack
 License: GPLv2+
-URL:     https://github.com/knchaffin/Meander/tree/master-V2
+URL:     https://github.com/knchaffin/Meander/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,7 +27,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/knchaffin/Meander/tree/master-V2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/knchaffin/Meander/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: PS-PurrSoftware_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -153,5 +153,5 @@ cp -r PS-PurrSoftware_plugin/dist/PS-PurrSoftware/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.24-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.25-1
 - initial specfile
