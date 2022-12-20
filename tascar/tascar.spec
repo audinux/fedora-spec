@@ -33,7 +33,6 @@ BuildRequires: portaudio-devel
 BuildRequires: matio-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libcurl-devel
-#BuildRequires: libxml++-devel
 BuildRequires: libxml++30-devel
 
 %description
@@ -68,7 +67,7 @@ The %{name}-static package contains static libraries for %{name}.
 install -d 755 %buildroot/%{_datadir}/%{name}/examples/
 cp -r examples/* %buildroot/%{_datadir}/%{name}/examples/
 
-%ifarch x86_64 amd64
+%ifarch x86_64 amd64 aarch64
 mv %buildroot/usr/lib/* %buildroot/%{_libdir}/
 %endif
 
