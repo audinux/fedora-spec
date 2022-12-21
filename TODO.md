@@ -17,7 +17,6 @@
 |                     | - https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Deblock |
 | NoiseTorch          | https://github.com/lawl/NoiseTorch |
 | CadMus              | https://github.com/josh-richardson/cadmus |
-| tascar              | https://github.com/HoerTech-gGmbH/tascar/ |
 | audiveris           | https://github.com/Audiveris/audiveris |
 | Teragon audio       | http://teragonaudio.com/software.html |
 |                     | - Kickmaker: http://static.teragonaudio.com/downloads/KickMaker/KickMaker.zip |
@@ -87,7 +86,6 @@
 
 drops
 chataigne
-tascar
 protrekkr2 (update to 2.6.3)
 mephito (needs faust library)
 midi2voice (code doesn't install correctly)
