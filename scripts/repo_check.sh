@@ -39,7 +39,7 @@ https://github.com/sjaehn/BSpacr
 https://github.com/Buzztrax/buzztrax
 https://github.com/rorywalsh/cabbage
 https://github.com/falkTX/Cadence.git
-git@github.com:calf-studio-gear/calf.git
+https://github.com/calf-studio-gear/calf.git
 https://github.com/pierreguillot/Camomile
 https://github.com/DISTRHO/Cardinal
 https://github.com/falkTX/Carla.git
@@ -74,7 +74,7 @@ https://github.com/rncbc/drumkv1
 https://github.com/falkTX/dssi-vst
 https://github.com/Sciss/Eisenkraut
 https://github.com/kushview/Element
-git@github.com:bill-brown/emap.git
+https://github.com/bill-brown/emap.git
 https://github.com/EmissionControl2/EmissionControl2
 https://github.com/jpcima/ensemble-chorus.git
 https://github.com/digego/extempore.git
@@ -131,7 +131,7 @@ https://github.com/ssj71/infamousPlugins.git
 git://git.code.sf.net/p/isse/code
 https://github.com/jackaudio/jack1
 https://github.com/jackaudio/jack2
-git@github.com:ycollet/jackmidilogger.git
+https://github.com/ycollet/jackmidilogger.git
 https://github.com/jack-mixer/jack_mixer
 https://github.com/spark404/jalmus.git
 https://github.com/brummer10/jalv_select
@@ -211,7 +211,7 @@ https://github.com/PiOverFour/MPK-M2-editor
 https://github.com/musescore/MuseScore.git
 https://github.com/munt/munt.git
 git://git.code.sf.net/p/mv-6pm/code
-git@github.com:linuxmao-org/Mx44.git
+https://github.com/linuxmao-org/Mx44.git
 https://github.com/napframework/nap
 https://github.com/MrKepzie/Natron.git
 https://github.com/linuxaudio/new-session-manager
@@ -220,10 +220,10 @@ https://github.com/tialaramex/njl-plugins.git
 https://github.com/nodebox/nodebox
 https://github.com/nodebox/nodebox-pyobjc
 https://github.com/lucianodato/noise-repellent
-git@github.com:ycollet/non.git
+https://github.com/ycollet/non.git
 git://git.tuxfamily.org/gitroot/non/non.git
 https://github.com/falkTX/non
-git@github.com:ycollet/ntk.git
+https://github.com/ycollet/ntk.git
 git://git.tuxfamily.org/gitroot/non/fltk.git
 https://github.com/reales/OB-Xd
 https://github.com/TheWaveWarden/odin2
@@ -326,7 +326,7 @@ https://github.com/surge-synthesizer/stochas
 https://github.com/smbolton/stretchplayer.git
 https://invent.kde.org/multimedia/subtitlecomposer.git
 https://github.com/sonejostudios/SuperBeatRepeater
-git@github.com:Vampouille/superboucle.git
+https://ithub.com/Vampouille/superboucle.git
 https://github.com/supercollider/supercollider.git
 https://github.com/augustofilocamo/superOrgan
 https://github.com/surge-synthesizer/surge
