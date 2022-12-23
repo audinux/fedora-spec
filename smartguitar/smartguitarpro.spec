@@ -7,7 +7,7 @@
 
 Name:    smartamppro
 Version: 1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Guitar plugin emulating real hardware with Neural Network
 License: GPLv2+
 URL:     https://github.com/GuitarML/SmartAmpPro
