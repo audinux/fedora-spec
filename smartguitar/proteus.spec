@@ -3,9 +3,11 @@
 # Category: Audio, Effect
 # GUIToolkit: GTK3
 
+%define toneversion 1.0
+
 Name:    proteus
 Version: 0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Guitar amp and pedal capture plugin using neural networks.
 License: GPLv2+
 URL:     https://github.com/GuitarML/Proteus
@@ -17,7 +19,8 @@ Distribution: Audinux
 # ./source-guitarml.sh Proteus d663c5783b3abc581ee3ab1d65d1552d4c9a9cf9
 
 Source0: Proteus.tar.gz
-Source1: source-guitarml.sh
+Source1: https://github.com/GuitarML/ToneLibrary/archive/refs/tags/v%{toneversion}.zip#/tonelib-%{toneversion}.zip
+Source2: source-guitarml.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -42,6 +45,7 @@ BuildRequires: webkit2gtk3-devel
 BuildRequires: xsimd-devel
 BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: chrpath
+BuildRequires: unzip
 
 %description
 Capture your own amps/pedals/plugins with Proteus.
@@ -101,9 +105,14 @@ cp -ra %{__cmake_builddir}/Proteus_artefacts/VST3/Proteus.vst3/* %{buildroot}%{_
 chrpath --delete %{buildroot}%{_libdir}/lv2/Proteus.lv2/libProteus.so
 chrpath --delete `find %{buildroot}%{_libdir}/vst3/Proteus.vst3 -name Proteus.so`
 
+install -m 755 -d %{buildroot}%{_datadir}/proteus/tones/
+unzip %{SOURCE1}
+mv ToneLibrary-%{toneversion}/Proteus/* %{buildroot}%{_datadir}/proteus/tones/
+
 %files
 %doc README.md
 %license LICENSE.txt
+%{_datadir}/proteus/tones/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
@@ -112,5 +121,8 @@ chrpath --delete `find %{buildroot}%{_libdir}/vst3/Proteus.vst3 -name Proteus.so
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Dec 23 2022 Yann Collette <ycollette.nospam@free.fr> - 0.1-2
+- update to 0.1-2 - add presets
+
 * Wed Nov 23 2022 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
 - Initial spec file

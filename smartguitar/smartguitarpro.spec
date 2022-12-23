@@ -3,6 +3,8 @@
 # Category: Audio, Effect
 # GUIToolkit: GTK3
 
+%define toneversion 1.0
+
 Name:    smartamppro
 Version: 1.0
 Release: 1%{?dist}
@@ -17,7 +19,8 @@ Distribution: Audinux
 
 Source0: SmartAmpPro.tar.gz
 Source1: smartguitarpro_build.tar.gz
-Source2: source-guitarml.sh
+Source2: https://github.com/GuitarML/ToneLibrary/archive/refs/tags/v%{toneversion}.zip#/tonelib-%{toneversion}.zip
+Source3: source-guitarml.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -43,6 +46,7 @@ BuildRequires: webkit2gtk3-devel
 BuildRequires: json-devel
 BuildRequires: numcpp
 BuildRequires: boost-devel
+BuildRequires: unzip
 
 %description
 SmartGuitarAmpPro is a guitar plugin (VST3) made with JUCE that uses neural network models to emulate real world hardware.
@@ -83,15 +87,23 @@ cp -ra Builds/LinuxMakefile/build/SmartAmpPro.vst3 %{buildroot}/%{_libdir}/vst3/
 mkdir -p %{buildroot}/%{_datadir}/smartamppro/models
 cp  models/* %{buildroot}/%{_datadir}/smartamppro/models/
 
+install -m 755 -d %{buildroot}%{_datadir}/smartamppro/tones/
+unzip %{SOURCE2}
+mv ToneLibrary-%{toneversion}/SmartAmpPro/* %{buildroot}%{_datadir}/smartamppro/tones/
+
 %files
 %doc README.md
 %license LICENSE.txt
 %{_bindir}/*
 %{_datadir}/smartamppro/models/*
+%{_datadir}/smartamppro/tones/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
 %changelog
-* Mon Jun 14 2021 Yann Collette <ycollette.nospam@free.fr> - 1.°-1
+* Fri Dec 23 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-2
+- update to 1.0-2 - add presets
+
+* Mon Jun 14 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
 - Initial spec file
