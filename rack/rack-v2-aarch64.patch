@@ -1,14 +1,15 @@
-From 8ba8e79171856acc49cc835455e99fb29da6d67a Mon Sep 17 00:00:00 2001
+From 2c1d64c2b12bb083945583077c16d61bfecb652a Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Mon, 12 Dec 2022 22:11:06 +0100
+Date: Wed, 28 Dec 2022 22:40:00 +0100
 Subject: [PATCH] aarch64
 
 ---
  arch.mk               | 2 +-
  compile.mk            | 5 ++++-
  dep.mk                | 3 +++
+ src/common.cpp        | 3 +++
  src/engine/Engine.cpp | 7 ++++---
- 4 files changed, 12 insertions(+), 5 deletions(-)
+ 5 files changed, 15 insertions(+), 5 deletions(-)
 
 diff --git a/arch.mk b/arch.mk
 index a2a75a3..348a9b2 100644
@@ -60,6 +61,20 @@ index 41fe589..21d3c25 100644
  
  ifdef ARCH_MAC
  	DEP_MAC_SDK_FLAGS := -mmacosx-version-min=10.9
+diff --git a/src/common.cpp b/src/common.cpp
+index 4f2869c..1d865a1 100644
+--- a/src/common.cpp
++++ b/src/common.cpp
+@@ -36,6 +36,9 @@ const std::string APP_VERSION = TOSTRING(_APP_VERSION);
+ #elif defined ARCH_ARM64
+ 	const std::string APP_CPU = "arm64";
+ 	const std::string APP_CPU_NAME = "ARM64";
++#elif defined ARCH_AARCH64
++	const std::string APP_CPU = "aarch64";
++	const std::string APP_CPU_NAME = "AARCH64";
+ #endif
+ const std::string API_URL = "https://api.vcvrack.com";
+ 
 diff --git a/src/engine/Engine.cpp b/src/engine/Engine.cpp
 index 453a4a0..cc8bd1d 100644
 --- a/src/engine/Engine.cpp
