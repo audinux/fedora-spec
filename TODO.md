@@ -81,15 +81,16 @@
 | lenticular          | https://github.com/polyeffects/lenticular_lv2 |
 | gula                | https://github.com/steveb/gula-plugins |
 | sushi               | https://github.com/elk-audio/sushi |
+| guitarix vst        | https://github.com/brummer10/guitarix.vst |
 
 ## WIP
 
 drops
 chataigne
 protrekkr2 (update to 2.6.3)
-mephito (needs faust library)
+mephisto (needs faust library)
 midi2voice (code doesn't install correctly)
-gammou (no the good version of rtaudio))
+gammou (not the good version of rtaudio))
 imogen (needs juce cmake file)
 
 ## Cleanup
