@@ -12,11 +12,11 @@ URL:     https://github.com/brummer10/MetalTone
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./metaltone-source.sh <TAG>
-# ./metaltone-source.sh v0.1
+# To get the sources:
+# ./brummer10-source.sh MetalTone v0.1
 
 Source0: MetalTone.tar.gz
-Source1: metaltone-source.sh
+Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make

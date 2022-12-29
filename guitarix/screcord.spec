@@ -2,11 +2,6 @@
 # Type: Plugin, LV2
 # Category: Audio, Sequencer
 
-# Global variables for github repository
-%global commit0 b20d67550864df05c8969ad689f4ec465e6efbcc
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 Name:    lv2-screcord-plugin
 Version: 0.2
 Release: 3%{?dist}
@@ -18,10 +13,10 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: screcord.lv2.tar.gz
-Source1: screcord-source.sh
+Source1: brummer10-source.sh
 
-# ./screcord-source.sh <tag>
-# ./screcord-source.sh v0.2
+# To get the sources:
+# ./brummer10-source.sh screcord.lv2 v0.2
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel

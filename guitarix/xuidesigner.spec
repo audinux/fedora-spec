@@ -12,11 +12,11 @@ URL:     https://github.com/brummer10/XUiDesigner
 Vendor:       Audinux
 Distribution: Audinux
 
-# To get the source archive: ./xuidesigner-source.sh <tag>
-# ./xuidesigner-source.sh v0.9
+# To get the sources:
+# ./brummer10-source.sh XUiDesigner v0.9
 
 Source0: XUiDesigner.tar.gz
-Source1: xuidesigner-source.sh
+Source1: brummer10-source.sh
 
 BuildRequires: gcc
 BuildRequires: make

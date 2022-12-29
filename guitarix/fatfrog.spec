@@ -12,11 +12,11 @@ URL:     https://github.com/brummer10/FatFrog.lv2
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./fatfrog-source.sh <tag>
-# ./fatfrog-source.sh v1.0
+# To get the sources:
+# ./brummer10-source.sh FatFrog.lv2 v1.0
 
 Source0: FatFrog.lv2.tar.gz
-Source1: fatfrog-source.sh
+Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel

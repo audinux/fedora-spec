@@ -12,11 +12,11 @@ URL:     https://github.com/brummer10/Xmonk.lv2
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./xmonk-source.sh <tag>
-# ./xmonk-source.sh 0.4
+# To get the sources:
+# ./brummer10-source.sh Xmonk.lv2 0.4
 
 Source0: Xmonk.lv2.tar.gz
-Source1: xmonk-source.sh
+Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel

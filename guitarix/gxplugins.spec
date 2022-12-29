@@ -12,11 +12,11 @@ URL:     https://github.com/brummer10/GxPlugins.lv2
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./gxplugins-source.sh <tag>
-# ./gxplugins-source.sh v0.9
+# To get the sources:
+# ./brummer10-source.sh GxPlugins.lv2 v0.9
 
 Source0: GxPlugins.lv2.tar.gz
-Source1: gxplugins-source.sh
+Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel

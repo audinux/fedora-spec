@@ -12,8 +12,11 @@ URL:     https://github.com/brummer10/XTuner
 Vendor:       Audinux
 Distribution: Audinux
 
+# To get the sources:
+# ./brummer10-source.sh xtuner v1.0
+
 Source0: XTuner.tar.gz
-Source1: xtuner-source.sh
+Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: jack-audio-connection-kit-devel

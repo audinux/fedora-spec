@@ -12,11 +12,11 @@ URL:     https://github.com/brummer10/XPolyMonk.lv2
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./xpolymonk-source.sh <tag>
-# ./xpolymonk-source.sh 0.6
+# To get the sources:
+# ./brummer10-source.sh XPolyMonk.lv2 0.6
 
 Source0: XPolyMonk.lv2.tar.gz
-Source1: xpolymonk-source.sh
+Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel

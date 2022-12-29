@@ -12,11 +12,11 @@ URL:     https://github.com/brummer10/CollisionDrive
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./collisiondrive-source.sh <TAG>
-# ./collisiondrive-source.sh v0.1
+# To get the sources
+# ./brummer10-source.sh CollisionDrive v0.1
 
 Source0: CollisionDrive.tar.gz
-Source1: collisiondrive-source.sh
+Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make

@@ -12,11 +12,11 @@ URL:     https://github.com/brummer10/LittleFly.lv2
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./littlefly-source.sh <tag>
-# ./littlefly-source.sh v1.0
+# To get the sources:
+# ./brummer10-source.sh LittleFly.lv2 v1.0
 
 Source0: LittleFly.lv2.tar.gz
-Source1: littlefly-source.sh
+Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel
