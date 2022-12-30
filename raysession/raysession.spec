@@ -15,6 +15,9 @@ URL:     https://github.com/Houston4444/RaySession
 Vendor:       Audinux
 Distribution: Audinux
 
+# Usage: ./source-raysession.sh <tag>
+#        ./source-raysession.sh v0.13.0
+
 Source0: RaySession.tar.gz
 Source1: source-raysession.sh
 
