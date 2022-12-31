@@ -13,8 +13,10 @@ Last-Update: 2020-02-24
  doc/8.topics/slop-tilde.htm        | 2 +-
  2 files changed, 2 insertions(+), 2 deletions(-)
 
---- puredata.orig/doc/8.topics/compander-limiter.htm
-+++ puredata/doc/8.topics/compander-limiter.htm
+diff --git a/doc/8.topics/compander-limiter.htm b/doc/8.topics/compander-limiter.htm
+index d50f36e..6d25a2f 100644
+--- a/doc/8.topics/compander-limiter.htm
++++ b/doc/8.topics/compander-limiter.htm
 @@ -12,7 +12,7 @@
        div.column{display: inline-block; vertical-align: top; width: 50%;}
    </style>
@@ -24,8 +26,10 @@ Last-Update: 2020-02-24
    <![endif]-->
  </head>
  <body>
---- puredata.orig/doc/8.topics/slop-tilde.htm
-+++ puredata/doc/8.topics/slop-tilde.htm
+diff --git a/doc/8.topics/slop-tilde.htm b/doc/8.topics/slop-tilde.htm
+index db9ba91..26c18aa 100644
+--- a/doc/8.topics/slop-tilde.htm
++++ b/doc/8.topics/slop-tilde.htm
 @@ -12,7 +12,7 @@
        div.column{display: inline-block; vertical-align: top; width: 50%;}
    </style>

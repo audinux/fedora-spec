@@ -2,8 +2,8 @@
 # Pure Data vanilla build
 #
 
-%define pdver 0.52-2
-%define pkgver 0.52.2
+%define pdver 0.53-1
+%define pkgver 0.53.1
 
 Summary: Pure Data
 Name:    puredata
@@ -200,7 +200,7 @@ mkdir -p %{buildroot}%{_datadir}/puredata-gui
 install -m 644 doc/1.manual/1.introduction.txt %{buildroot}%{_datadir}/puredata-gui
 # mime stuff
 mkdir -p %{buildroot}%{_datadir}/mime/packages/
-install -m 644 %{SOURCE16} %{buildroot}%{_datadir}/mime/packages/puredata.xml
+install -m 644 %{SOURCE17} %{buildroot}%{_datadir}/mime/packages/puredata.xml
 
 # hardlink pd-* binaries
 rm -f %{buildroot}%{_bindir}/pd
@@ -238,6 +238,11 @@ install -m 644 %{SOURCE17} %{buildroot}%{_datadir}/mime/packages
 %{_mandir}/man1/pd.1*
 %{_datadir}/pixmaps/puredata.xpm
 %{_datadir}/mime/packages/puredata-gui.sharedmimeinfo
+%{_datadir}/applications/org.puredata.pd-gui.desktop
+%{_datadir}/icons/hicolor/48x48/apps/puredata.png
+%{_datadir}/icons/hicolor/512x512/apps/puredata.png
+%{_datadir}/icons/hicolor/scalable/apps/puredata.svg
+%{_metainfodir}/org.puredata.pd-gui.metainfo.xml
 
 %files doc
 %{_libdir}/puredata/doc/1.manual/
@@ -274,6 +279,9 @@ install -m 644 %{SOURCE17} %{buildroot}%{_datadir}/mime/packages
 %{_mandir}/man1/pdsend.1.gz
 
 %changelog
+* Sat Dec 31 2022 Yann Collette <ycollette.nospam@free.fr> - 0.53.1-2
+- update to 0.53.1-2
+
 * Tue Dec 21 2021 Yann Collette <ycollette.nospam@free.fr> - 0.52.1-2
 - update to 0.52.1-2
 
