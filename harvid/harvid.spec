@@ -3,7 +3,7 @@
 # Category: Graphic, Tool
 
 Name:    harvid
-Version: 0.9.0
+Version: 0.9.1
 Release: 3%{?dist}
 Summary: harvid -- HTTP Ardour Video Daemon
 License: GPLv2+
@@ -60,6 +60,9 @@ ln -s /usr/bin/ffprobe %{buildroot}/usr/bin/ffprobe_harvid
 %{_mandir}/*
 
 %changelog
+* Sun Jan 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.1-3
+- update to 0.9.1-3
+
 * Mon May 30 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9.0-3
 - update to 0.9.0-3 - fix symbolic links
 
