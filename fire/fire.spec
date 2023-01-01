@@ -3,7 +3,7 @@
 # Category: Audio, Distortion
 
 Name:    fire
-Version: 0.9.8
+Version: 0.9.9
 Release: 1%{?dist}
 Summary: This is a distortion plugin developed by Wings
 License: GPLv2+
@@ -12,24 +12,22 @@ URL:     https://github.com/jerryuhoo/Fire
 Vendor:       Audinux
 Distribution: Audinux
 
-# Usage: ./fire-sources.sh <TAG>
-# ./fire-sources.sh v0.9.8
-# ./vst3-source.sh
+# Usage: ./fire-source.sh <TAG>
+# ./fire-source.sh v0.9.9
 
 Source0: Fire.tar.gz
-Source1: Fire-makefile.tar.gz
-Source2: vst3sdk.tar.gz
-Source3: fire-source.sh
-Source4: vst3-source.sh
+Source1: vst3sdk.tar.gz
+Source2: fire-source.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
+BuildRequires: git
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: JUCE61
 BuildRequires: libXrandr-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
@@ -59,25 +57,16 @@ VST3 version of %{name}
 %autosetup -n Fire
 
 tar xvfz %{SOURCE1}
-tar xvfz %{SOURCE2}
 
 %build
 
-%set_build_flags
-
-# VST3 part
-
-CWD=`pwd`
-export CPPFLAGS="-I$CWD/JUCE/modules -I$CWD/vst3sdk `pkg-config --cflags gtk+-3.0` -include utility $CPPFLAGS"
-
-cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%cmake
+%cmake_build
 
 %install 
 
-install -m 755 -d %{buildroot}%{_libdir}/vst3/Fire.vst3/
-
-cp -ra Builds/LinuxMakefile/build/Fire.vst3/* %{buildroot}/%{_libdir}/vst3/Fire.vst3/
+install -m 755 -d %{buildroot}%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/Fire_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
 
 %files -n vst3-%{name}
 %doc README.md
@@ -85,5 +74,8 @@ cp -ra Builds/LinuxMakefile/build/Fire.vst3/* %{buildroot}/%{_libdir}/vst3/Fire.
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Jan 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.9-1
+- update to 0.9.9-1
+
 * Mon Jul 04 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9.8-1
 - Initial spec file
