@@ -8,12 +8,14 @@ This patch checks whether the files are there, and if not, a dialog is raised
 asking the user to install puredata-doc
 Forwarded: not-needed
 ---
- tcl/pd_menucommands.tcl | 15 ++++++++++++++-
- 1 file changed, 14 insertions(+), 1 deletion(-)
+ tcl/pd_menucommands.tcl | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
---- puredata.orig/tcl/pd_menucommands.tcl
-+++ puredata/tcl/pd_menucommands.tcl
-@@ -228,10 +228,23 @@
+diff --git a/tcl/pd_menucommands.tcl b/tcl/pd_menucommands.tcl
+index b4a0ae6..cc84ed6 100644
+--- a/tcl/pd_menucommands.tcl
++++ b/tcl/pd_menucommands.tcl
+@@ -228,10 +228,23 @@ proc ::pd_menucommands::set_filenewdir {mytoplevel} {
      }
  }
  
@@ -37,7 +39,7 @@ Forwarded: not-needed
      if {![file exists $filename]} {
          ::pdwindow::error [format [_ "ignoring '%s': doesn't exist"] $filename]
          ::pdwindow::error "\n"
-@@ -291,6 +304,7 @@
+@@ -291,6 +304,7 @@ proc ::pd_menucommands::menu_doc_open {dir basename} {
  
  # open HTML docs from the menu using the OS-default HTML viewer
  proc ::pd_menucommands::menu_openfile {filename} {

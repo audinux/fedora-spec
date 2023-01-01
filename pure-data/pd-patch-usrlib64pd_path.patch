@@ -9,15 +9,17 @@ add it manually
  src/s_path.c | 4 ++++
  1 file changed, 4 insertions(+)
 
---- puredata.orig/src/s_path.c
-+++ puredata/src/s_path.c
-@@ -264,6 +264,10 @@
+diff --git a/src/s_path.c b/src/s_path.c
+index 2d6f456..db54b67 100644
+--- a/src/s_path.c
++++ b/src/s_path.c
+@@ -263,6 +263,10 @@ void sys_setextrapath(const char *p)
  #endif
      /* add built-in "extra" path last so its checked last */
      STUFF->st_staticpath = namelist_append(STUFF->st_staticpath, p, 0);
 +    /* DEBIAN: add common path for all pd-flavours very last, so puredata
 +     * specific externals get higher priority */
-+    STUFF->st_staticpath = namelist_append(STUFF->st_staticpath, "/usr/lib/pd/extra", 0);
++    STUFF->st_staticpath = namelist_append(STUFF->st_staticpath, "/usr/lib64/pd/extra", 0);
 +
  }
  

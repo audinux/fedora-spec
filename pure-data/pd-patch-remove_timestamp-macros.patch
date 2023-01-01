@@ -13,9 +13,11 @@ Last-Update: 2015-05-20
  src/s_main.c    | 12 ++++++++----
  2 files changed, 12 insertions(+), 4 deletions(-)
 
---- puredata.orig/src/Makefile.am
-+++ puredata/src/Makefile.am
-@@ -11,6 +11,10 @@
+diff --git a/src/Makefile.am b/src/Makefile.am
+index 45c5d8b..fef341d 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -11,6 +11,10 @@ AM_CPPFLAGS = @PD_CPPFLAGS@
  AM_CFLAGS = @PD_CFLAGS@
  AM_LDFLAGS = @PD_LDFLAGS@
  
@@ -26,9 +28,11 @@ Last-Update: 2015-05-20
  pd_CFLAGS = -DPD -DPD_INTERNAL -DINSTALL_PREFIX=\"$(prefix)\" @PD_CFLAGS@
  pd_LDFLAGS = @PD_LDFLAGS@
  pd_LDADD =
---- puredata.orig/src/s_main.c
-+++ puredata/src/s_main.c
-@@ -32,8 +32,12 @@
+diff --git a/src/s_main.c b/src/s_main.c
+index b9c527a..56fd633 100644
+--- a/src/s_main.c
++++ b/src/s_main.c
+@@ -32,8 +32,12 @@ char *pd_version = "Pd-" stringify(PD_MAJOR_VERSION) "." \
  stringify(PD_MINOR_VERSION) "." stringify(PD_BUGFIX_VERSION) "\
   (" stringify(PD_TEST_VERSION) ")";
  
@@ -43,7 +47,7 @@ Last-Update: 2015-05-20
  
  void pd_init(void);
  int sys_argparse(int argc, const char **argv);
-@@ -360,8 +364,8 @@
+@@ -360,8 +364,8 @@ int sys_main(int argc, const char **argv)
          sys_loadpreferences(prefsfile, 1);  /* args to override prefs */
      if (sys_argparse(argc-1, argv+1))           /* parse cmd line args */
          return (1);

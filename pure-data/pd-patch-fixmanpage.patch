@@ -1,14 +1,16 @@
 From: =?utf-8?q?IOhannes_m_zm=C3=B6lnig?= <umlaeute@debian.org>
 Date: Tue, 29 Jan 2019 11:31:36 +0100
 Subject: fix URIs in manpage to point to some meaningful place
-Forwarded: not-needed
 
+Forwarded: not-needed
 ---
  man/pd.1 | 26 ++++++++++++++++----------
  1 file changed, 16 insertions(+), 10 deletions(-)
 
---- puredata.orig/man/pd.1
-+++ puredata/man/pd.1
+diff --git a/man/pd.1 b/man/pd.1
+index f469dec..579ac38 100644
+--- a/man/pd.1
++++ b/man/pd.1
 @@ -1,6 +1,12 @@
  .TH pd 1 "1996 Mar 20" GNU
  .SH NAME
@@ -22,7 +24,7 @@ Forwarded: not-needed
  .SH DESCRIPTION
  Pd is a graphical programming environment for real-time audio synthesis
  and related applications.  It sports a rich set of real-time control
-@@ -9,17 +15,17 @@
+@@ -9,17 +15,17 @@ and I/O features.
  To get a list of allowable arguments to pd, type
  .IP
  .B pd -help
