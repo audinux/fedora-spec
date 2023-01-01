@@ -4,7 +4,7 @@
 
 Summary: Jack Video Monitor
 Name:    xjadeo
-Version: 0.8.11
+Version: 0.8.12
 Release: 4%{?dist}
 License: GPL
 URL:     http://xjadeo.sourceforge.net/
@@ -90,6 +90,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/*
 
 %changelog
+* Sun Jan 01 2023 Yann Collette <ycollette dot nospam at free.fr> 0.8.12-4
+- update to 0.8.12-4
+
 * Mon Apr 18 2022 Yann Collette <ycollette dot nospam at free.fr> 0.8.11-4
 - update to 0.8.11-4
 
