@@ -215,10 +215,6 @@ ln -s %{_libdir}/puredata/bin/pd-watchdog %{buildroot}%{_bindir}/pd-watchdog
 
 rm -f %{buildroot}%{_libdir}/puredata/doc/Makefile.am
 
-%ifarch x86_64 amd64
-sed -i -e "s/lib/lib64/g" %{buildroot}%{_bindir}/pd-gui
-%endif
-
 # Install mime info
 install -m 755 -d %{buildroot}%{_datadir}/mime/packages
 install -m 644 %{SOURCE17} %{buildroot}%{_datadir}/mime/packages
