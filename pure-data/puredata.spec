@@ -18,10 +18,6 @@ Distribution: Audinux
 Source0: http://msp.ucsd.edu/Software/pd-%{pdver}.src.tar.gz
 
 # additional files for the gui package
-# desktop file
-Source10: puredata.desktop
-# icon
-Source11: puredata.xpm
 # /usr/bin/pd-gui
 Source12: pd-gui
 Source13: pd-gui.1
@@ -177,14 +173,8 @@ sed -i -e "s|/usr/local/lib|%{_libdir}|g" src/s_path.c
 # add additional stuff needed by the gui package
 # create plugins enabled directory
 mkdir -p %{buildroot}%{_sysconfdir}/pd/plugins-enabled
-# add desktop file
-mkdir -p %{buildroot}%{_datadir}/applications
-desktop-file-install  --dir %{buildroot}%{_datadir}/applications %{SOURCE10}
-sed -i -e "s|/lib/|/%{_lib}/|g" %{buildroot}%{_datadir}/applications/puredata.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/org.puredata.pd-gui.desktop
 
-# add desktop icon
-mkdir -p %{buildroot}%{_datadir}/pixmaps/
-install -m 644 %{SOURCE11} %{buildroot}%{_datadir}/pixmaps/
 # pd-gui script and plugin
 install -m 755 %{SOURCE12} %{buildroot}%{_bindir}/pd-gui
 sed -i -e "s|/lib/|/%{_lib}/|g" %{buildroot}%{_bindir}/pd-gui
@@ -215,14 +205,6 @@ ln -s %{_libdir}/puredata/bin/pd-watchdog %{buildroot}%{_bindir}/pd-watchdog
 
 rm -f %{buildroot}%{_libdir}/puredata/doc/Makefile.am
 
-%ifarch x86_64 amd64
-sed -i -e "s/lib/lib64/g" %{buildroot}%{_bindir}/pd-gui
-%endif
-
-# Install mime info
-install -m 755 -d %{buildroot}%{_datadir}/mime/packages
-install -m 644 %{SOURCE17} %{buildroot}%{_datadir}/mime/packages
-
 %files
 %doc README.txt INSTALL.txt
 %license LICENSE.txt
@@ -236,13 +218,6 @@ install -m 644 %{SOURCE17} %{buildroot}%{_datadir}/mime/packages
 %{_libdir}/puredata/doc/5.reference
 %{_libdir}/puredata/doc/7.stuff
 %{_mandir}/man1/pd.1*
-%{_datadir}/pixmaps/puredata.xpm
-%{_datadir}/mime/packages/puredata-gui.sharedmimeinfo
-%{_datadir}/applications/org.puredata.pd-gui.desktop
-%{_datadir}/icons/hicolor/48x48/apps/puredata.png
-%{_datadir}/icons/hicolor/512x512/apps/puredata.png
-%{_datadir}/icons/hicolor/scalable/apps/puredata.svg
-%{_metainfodir}/org.puredata.pd-gui.metainfo.xml
 
 %files doc
 %{_libdir}/puredata/doc/1.manual/
@@ -266,11 +241,16 @@ install -m 644 %{SOURCE17} %{buildroot}%{_datadir}/mime/packages
 %{_bindir}/pd-gui-plugin
 %{_libdir}/puredata/tcl/
 %{_libdir}/puredata/po
-%{_datadir}/applications/puredata.desktop
+%{_datadir}/applications/org.puredata.pd-gui.desktop
+%{_datadir}/pixmaps/puredata.xpm
+%{_datadir}/icons/hicolor/48x48/apps/puredata.png
+%{_datadir}/icons/hicolor/512x512/apps/puredata.png
+%{_datadir}/icons/hicolor/scalable/apps/puredata.svg
 %{_mandir}/man1/pd-gui*
 %{_sysconfdir}/pd/plugins-enabled
 %{_datadir}/puredata-gui
 %{_datadir}/mime/packages/puredata.xml
+%{_metainfodir}/org.puredata.pd-gui.metainfo.xml
 
 %files utils
 %{_bindir}/pdreceive
