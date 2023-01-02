@@ -7,7 +7,7 @@
 %endif
 
 Name:    stargate
-Version: 22.12.5
+Version: 23.01.1
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
 License: GPLv3
@@ -93,6 +93,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 %{_datadir}/stargate/*
 
 %changelog
+* Mon Jan 02 2023 Yann Collette <ycollette.nospam@free.fr> - 23.01.1-1
+- update to 23.01.1-1
+
 * Thu Dec 29 2022 Yann Collette <ycollette.nospam@free.fr> - 22.12.5-1
 - update to 22.12.5-1
 
