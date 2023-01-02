@@ -217,11 +217,6 @@ rm -f %{buildroot}%{_libdir}/puredata/doc/Makefile.am
 %{_libdir}/puredata/doc/5.reference
 %{_libdir}/puredata/doc/7.stuff
 %{_mandir}/man1/pd.1*
-%{_datadir}/applications/org.puredata.pd-gui.desktop
-%{_datadir}/icons/hicolor/48x48/apps/puredata.png
-%{_datadir}/icons/hicolor/512x512/apps/puredata.png
-%{_datadir}/icons/hicolor/scalable/apps/puredata.svg
-%{_metainfodir}/org.puredata.pd-gui.metainfo.xml
 
 %files doc
 %{_libdir}/puredata/doc/1.manual/
@@ -245,10 +240,15 @@ rm -f %{buildroot}%{_libdir}/puredata/doc/Makefile.am
 %{_bindir}/pd-gui-plugin
 %{_libdir}/puredata/tcl/
 %{_libdir}/puredata/po
+%{_datadir}/applications/org.puredata.pd-gui.desktop
+%{_datadir}/icons/hicolor/48x48/apps/puredata.png
+%{_datadir}/icons/hicolor/512x512/apps/puredata.png
+%{_datadir}/icons/hicolor/scalable/apps/puredata.svg
 %{_mandir}/man1/pd-gui*
 %{_sysconfdir}/pd/plugins-enabled
 %{_datadir}/puredata-gui
 %{_datadir}/mime/packages/puredata.xml
+%{_metainfodir}/org.puredata.pd-gui.metainfo.xml
 
 %files utils
 %{_bindir}/pdreceive
