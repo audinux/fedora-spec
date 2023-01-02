@@ -215,10 +215,6 @@ ln -s %{_libdir}/puredata/bin/pd-watchdog %{buildroot}%{_bindir}/pd-watchdog
 
 rm -f %{buildroot}%{_libdir}/puredata/doc/Makefile.am
 
-# Install mime info
-install -m 755 -d %{buildroot}%{_datadir}/mime/packages
-install -m 644 %{SOURCE17} %{buildroot}%{_datadir}/mime/packages
-
 %files
 %doc README.txt INSTALL.txt
 %license LICENSE.txt
@@ -233,7 +229,6 @@ install -m 644 %{SOURCE17} %{buildroot}%{_datadir}/mime/packages
 %{_libdir}/puredata/doc/7.stuff
 %{_mandir}/man1/pd.1*
 %{_datadir}/pixmaps/puredata.xpm
-%{_datadir}/mime/packages/puredata-gui.sharedmimeinfo
 %{_datadir}/applications/org.puredata.pd-gui.desktop
 %{_datadir}/icons/hicolor/48x48/apps/puredata.png
 %{_datadir}/icons/hicolor/512x512/apps/puredata.png
