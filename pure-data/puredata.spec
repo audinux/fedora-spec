@@ -242,6 +242,7 @@ rm -f %{buildroot}%{_libdir}/puredata/doc/Makefile.am
 %{_libdir}/puredata/tcl/
 %{_libdir}/puredata/po
 %{_datadir}/applications/org.puredata.pd-gui.desktop
+%{_datadir}/pixmaps/puredata.xpm
 %{_datadir}/icons/hicolor/48x48/apps/puredata.png
 %{_datadir}/icons/hicolor/512x512/apps/puredata.png
 %{_datadir}/icons/hicolor/scalable/apps/puredata.svg
