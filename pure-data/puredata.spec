@@ -8,7 +8,7 @@
 Summary: Pure Data
 Name:    puredata
 Version: %{pkgver}
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: BSD
 URL:     https://puredata.info/
 
@@ -259,6 +259,9 @@ rm -f %{buildroot}%{_libdir}/puredata/doc/Makefile.am
 %{_mandir}/man1/pdsend.1.gz
 
 %changelog
+* Mon Jan 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.53.1-3
+- update to 0.53.1-3 - fix package
+
 * Sat Dec 31 2022 Yann Collette <ycollette.nospam@free.fr> - 0.53.1-2
 - update to 0.53.1-2
 
