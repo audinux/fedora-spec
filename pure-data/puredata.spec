@@ -173,6 +173,7 @@ sed -i -e "s|/usr/local/lib|%{_libdir}|g" src/s_path.c
 # add additional stuff needed by the gui package
 # create plugins enabled directory
 mkdir -p %{buildroot}%{_sysconfdir}/pd/plugins-enabled
+desktop-file-validate %{buildroot}%{_datadir}/applications/org.puredata.pd-gui.desktop
 
 # pd-gui script and plugin
 install -m 755 %{SOURCE12} %{buildroot}%{_bindir}/pd-gui
