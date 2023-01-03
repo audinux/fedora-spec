@@ -1,7 +1,7 @@
 %define _lto_cflags %{nil}
 
 Name:    ossia-score
-Version: 3.1.4
+Version: 3.1.5
 Release: 1%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL:     https://github.com/OSSIA/score
@@ -25,7 +25,7 @@ BuildRequires: qt5-qtwebsockets-devel
 BuildRequires: qt5-qtdeclarative-devel
 BuildRequires: qt5-qttools
 BuildRequires: qt5-qtserialport-devel
-BuildRequires: ffmpeg-devel
+BuildRequires: compat-ffmpeg4-devel
 BuildRequires: portmidi-devel
 BuildRequires: portaudio-devel
 BuildRequires: lilv-devel
@@ -73,6 +73,9 @@ rm -rf %{buildroot}/%{_datadir}/
 %{_bindir}/*
 
 %changelog
+* Tue Jan 03 2023 Yann Collette <ycollette.nospam@free.fr> - 3.1.5-2
+- update to version 3.1.5-2
+
 * Thu Nov 17 2022 Yann Collette <ycollette.nospam@free.fr> - 3.1.4-2
 - update to version 3.1.4-2
 
