@@ -1,6 +1,6 @@
 Summary: GUI tool to split WAV, MP2 and MP3 files
 Name:    wavbreaker
-Version: 0.15
+Version: 0.16
 Release: 1%{?dist}
 License: GPLv2+
 URL:     https://github.com/thp/wavbreaker
@@ -66,5 +66,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/net.sourceforge.wavbr
 %{_metainfodir}/net.sourceforge.wavbreaker.appdata.xml
 
 %changelog
+* Tue Jan 03 2023 Yann Collette <ycollette.nospam@free.fr> - 0.16-1
+- update to 0.16-1
+
 * Mon Apr 11 2022 Yann Collette <ycollette.nospam@free.fr> - 0.14-1
 - initial build
