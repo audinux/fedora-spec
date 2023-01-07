@@ -3,7 +3,7 @@
 # Category: Audio
 
 Name:    sonobus
-Version: 1.5.1
+Version: 1.6.0
 Release: 3%{?dist}
 Summary: A peer to peer audio application
 License: GPLv2+
@@ -34,6 +34,7 @@ BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
+BuildRequires: webkit2gtk3-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -52,7 +53,7 @@ VST3 version of %{name}
 %autosetup -n %{name}-%{version}
 
 # Fix build of juceaide on f36
-sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"/g" deps/juce/extras/Build/juceaide/CMakeLists.txt
+#sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"/g" deps/juce/extras/Build/juceaide/CMakeLists.txt
 #sed -i -e "/OUTPUT_VARIABLE/d" deps/juce/extras/Build/juceaide/CMakeLists.txt
 #sed -i -e "s/--config Debug/--config Debug --verbose/g" deps/juce/extras/Build/juceaide/CMakeLists.txt
 
@@ -63,7 +64,7 @@ sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \
 export HOME=`pwd`
 mkdir -p .vst3
 
-%cmake -DCMAKE_CXX_FLAGS="-include utility"
+%cmake -DCMAKE_CXX_FLAGS="-include utility -fPIC"
 %cmake_build 
 
 %install 
@@ -108,6 +109,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/sonobus.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Jan 07 2023 Yann Collette <ycollette.nospam@free.fr> - 1.6.0-3
+- update to 1.6.0-3
+
 * Mon Apr 04 2022 Yann Collette <ycollette.nospam@free.fr> - 1.5.2-3
 - update to 1.5.2-3
 
