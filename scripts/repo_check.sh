@@ -804,7 +804,7 @@ https://github.com/supercollider/supercollider
 https://github.com/supercollider/sc3-plugins
 http://xwax.org/devel/xwax"
 
-if [ -f git_tqgs_new.txt ];
+if [ -f git_tags_new.txt ];
 then
     mv git_tags_new.txt git_tags_old.txt
 fi
