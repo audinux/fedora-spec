@@ -90,6 +90,7 @@
 | Songbird formant filter | https://github.com/jd-13/Songbird-Formant-Filter |
 | Carve Distortion        | https://github.com/jd-13/Carve-Distortion |
 | Monstr Stereo Imaging   | https://github.com/jd-13/MONSTR-Stereo-Imaging |
+| Chataigne               | https://github.com/benkuper/Chataigne |
 
 ## WIP
 
