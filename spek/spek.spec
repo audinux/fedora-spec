@@ -1,5 +1,5 @@
 Name:    spek
-Version: 0.8.4
+Version: 0.8.5
 Release: 1%{?dist}
 Summary: Acoustic spectrum analyser
 License: GPLv3+
@@ -71,5 +71,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_mandir}//man1/spek.1.gz
 
 %changelog
-* Tue Aug 09 2022 Yann Collette <ycollette.nospam@free.fr> - 0.8.5-1
+* Tue Jan 10 2023 Yann Collette <ycollette.nospam@free.fr> - 0.8.5-1
+- update to 0.8.5-1
+
+* Tue Aug 09 2022 Yann Collette <ycollette.nospam@free.fr> - 0.8.4-1
 - Initial development
