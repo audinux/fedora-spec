@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 2f6d7953b776f71fc5c804102883a01cf3ec6e37
-%global gittag0 2.0.0
+%global commit0 78e1b1c9ff889bc5bfec85550b0a382ae8cfb845
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-LunettaModula
-Version: 2.0.0
+Version: 2.1.0
 Release: 1%{?dist}
 Summary: LunettaModula plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r LunettaModula_plugin/dist/LunettaModula/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile

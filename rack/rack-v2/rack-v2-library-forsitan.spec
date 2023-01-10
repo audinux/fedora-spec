@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 196d6a66eec7ccaa36835f321195886edf81d846
-%global gittag0 1.4.1
+%global commit0 0df02929e5c367f5795adba7ce796a62c658ab35
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-forsitan
-Version: 1.4.1
+Version: 2.0.2
 Release: 1%{?dist}
 Summary: forsitan plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r forsitan_plugin/dist/forsitan/* %{buildroot}%{_libexecdir}/Rack2/plugins/f
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.4.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile

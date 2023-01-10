@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 d952d8404cea280b49ec6f66e0bdd13dcb643383
-%global gittag0 2.1.0
+%global commit0 c28d31d0943c86b0b5716c775b0be6761e08a13a
+%global gittag0 2.1.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-questionablemodules
-Version: 2.1.0
+Version: 2.1.4
 Release: 1%{?dist}
 Summary: questionablemodules plugin for Rack
 License: GPLv2+
@@ -27,7 +27,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/isivisi/questionablemodules/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: questionablemodules.tar.gz
 Source2: questionablemodules_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -153,5 +153,5 @@ cp -r questionablemodules_plugin/dist/questionablemodules/* %{buildroot}%{_libex
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.4-1
 - initial specfile

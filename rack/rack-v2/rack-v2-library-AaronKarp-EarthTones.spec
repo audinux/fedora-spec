@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 6896dddc106155d8c7c19655f0348b1be8b7ab41
-%global gittag0 2.0.0
+%global commit0 6b34e199d95417527671755e02af5dbe3b226333
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-AaronKarp-EarthTones
-Version: 2.0.0
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: AaronKarp-EarthTones plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r AaronKarp-EarthTones_plugin/dist/AaronKarp-EarthTones/* %{buildroot}%{_lib
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile
