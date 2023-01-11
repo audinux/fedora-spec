@@ -802,7 +802,8 @@ https://pagure.io/fedora-misc-package-utilities
 https://salsa.debian.org/multimedia-team/portsmf
 https://github.com/supercollider/supercollider
 https://github.com/supercollider/sc3-plugins
-http://xwax.org/devel/xwax"
+http://xwax.org/devel/xwax
+https://github.com/FigBug/Voc"
 
 if [ -f git_tags_new.txt ];
 then

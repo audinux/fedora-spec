@@ -91,6 +91,14 @@
 | Carve Distortion        | https://github.com/jd-13/Carve-Distortion |
 | Monstr Stereo Imaging   | https://github.com/jd-13/MONSTR-Stereo-Imaging |
 | Chataigne               | https://github.com/benkuper/Chataigne |
+| Organ                   | https://github.com/FigBug/Organ |
+| VirtualAnalog           | https://github.com/FigBug/VirtualAnalog |
+| Piano                   | https://github.com/FigBug/Piano |
+| BlackBird               | https://github.com/khrykin/BlackBird |
+| Manta                   | https://github.com/Mrugalla/Manta |
+| OS-251                  | https://github.com/utokusa/OS-251 |
+| PeakEater               | https://github.com/vvvar/PeakEater |
+| rotor                   | https://github.com/blackboxdsp/rotor |
 
 ## WIP
 
