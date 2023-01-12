@@ -1,4 +1,4 @@
-Name:    sound2ligh
+Name:    sound2light
 Version: 0.0.3.1.0.2
 Release: 1%{?dist}
 Summary: A tool converting sound input to OSC trigger signals
