@@ -45,8 +45,8 @@ cd src
 install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 s2l %{buildroot}%{_bindir}/
 
-install -m 755 -d %{buildroot}%{_datadir}/icons/hicolor/16x16/apps/
-install -m 644 images/icons/etcicon.ico %{buildroot}%{_datadir}/icons/hicolor/16x16/apps/%{name}.ico
+install -m 755 -d %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/
+install -m 644 images/icons/etclogo.png %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/%{name}.png
 
 # Write desktop files
 install -m 755 -d %{buildroot}%{_datadir}/applications/
@@ -73,7 +73,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %license src/LICENSE.txt
 %{_bindir}/*
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/icons/hicolor/16x16/apps/%{name}.ico
+%{_datadir}/icons/hicolor/256x256/apps/%{name}.png
 
 %changelog
 * Mon Sep 12 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.3.1.0.2
