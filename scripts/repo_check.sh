@@ -618,7 +618,6 @@ https://github.com/ssj71/OSC2MIDI
 https://github.com/ssj71/reMID.lv2
 https://github.com/ssj71/rkrlv2
 https://github.com/stargateaudio/pymarshal
-https://github.com/stargateaudio/stargate
 https://github.com/starlingcode/Via-for-Rack
 https://github.com/stavrosdidakis/Motion-Tracking
 https://github.com/Stazed/rakarrack-plus
@@ -803,7 +802,9 @@ https://salsa.debian.org/multimedia-team/portsmf
 https://github.com/supercollider/supercollider
 https://github.com/supercollider/sc3-plugins
 http://xwax.org/devel/xwax
-https://github.com/FigBug/Voc"
+https://github.com/FigBug/Voc
+https://github.com/FigBug/Organ
+https://github.com/FigBug/Piano"
 
 if [ -f git_tags_new.txt ];
 then
