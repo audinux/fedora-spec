@@ -42,14 +42,14 @@ cd src
 
 cd src
 
-install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 s2l %{buildroot}%{_bindir}/
 
-install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/16x16/apps/
-install -m 644 images/icons/etcicon.ico %{buildroot}/%{_datadir}/icons/hicolor/16x16/apps/%{name}.ico
+install -m 755 -d %{buildroot}%{_datadir}/icons/hicolor/16x16/apps/
+install -m 644 images/icons/etcicon.ico %{buildroot}%{_datadir}/icons/hicolor/16x16/apps/%{name}.ico
 
 # Write desktop files
-install -m 755 -d %{buildroot}/%{_datadir}/applications/
+install -m 755 -d %{buildroot}%{_datadir}/applications/
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
 Name=Sound2Light
