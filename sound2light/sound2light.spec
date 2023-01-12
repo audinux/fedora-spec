@@ -52,16 +52,15 @@ install -m 644 images/icons/etcicon.ico %{buildroot}/%{_datadir}/icons/hicolor/1
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
-Name=%name
-Exec=S2l
+Name=Sound2Light
+Exec=s2l
 Icon=%{name}
-Comment=Sound 2 light
+Comment=A tool converting sound input to OSC trigger signals
 Terminal=false
 Type=Application
 Categories=AudioVideo;Audio;Music;
 EOF
 
-# install polyphon.desktop properly.
 desktop-file-install --vendor '' \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/%{name}.desktop
