@@ -804,7 +804,8 @@ https://github.com/supercollider/sc3-plugins
 http://xwax.org/devel/xwax
 https://github.com/FigBug/Voc
 https://github.com/FigBug/Organ
-https://github.com/FigBug/Piano"
+https://github.com/FigBug/Piano
+https://github.com/Soundux/Soundux"
 
 if [ -f git_tags_new.txt ];
 then
