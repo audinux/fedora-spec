@@ -97,6 +97,8 @@
 | OS-251                  | https://github.com/utokusa/OS-251 |
 | PeakEater               | https://github.com/vvvar/PeakEater |
 | rotor                   | https://github.com/blackboxdsp/rotor |
+| the synister            | https://github.com/the-synister/the-source/ |
+| Soundux                 | https://github.com/Soundux/Soundux |
 
 ## WIP
 
