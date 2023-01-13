@@ -1,4 +1,4 @@
-Name:    sound2ligh
+Name:    sound2light
 Version: 0.0.3.1.0.2
 Release: 1%{?dist}
 Summary: A tool converting sound input to OSC trigger signals
@@ -42,26 +42,25 @@ cd src
 
 cd src
 
-install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 s2l %{buildroot}%{_bindir}/
 
-install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/16x16/apps/
-install -m 644 images/icons/etcicon.ico %{buildroot}/%{_datadir}/icons/hicolor/16x16/apps/%{name}.ico
+install -m 755 -d %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/
+install -m 644 images/icons/etclogo.png %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/%{name}.png
 
 # Write desktop files
-install -m 755 -d %{buildroot}/%{_datadir}/applications/
+install -m 755 -d %{buildroot}%{_datadir}/applications/
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
-Name=%name
-Exec=S2l
+Name=Sound2Light
+Exec=s2l
 Icon=%{name}
-Comment=Sound 2 light
+Comment=A tool converting sound input to OSC trigger signals
 Terminal=false
 Type=Application
 Categories=AudioVideo;Audio;Music;
 EOF
 
-# install polyphon.desktop properly.
 desktop-file-install --vendor '' \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/%{name}.desktop
@@ -74,7 +73,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %license src/LICENSE.txt
 %{_bindir}/*
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/icons/hicolor/16x16/apps/%{name}.ico
+%{_datadir}/icons/hicolor/256x256/apps/%{name}.png
 
 %changelog
 * Mon Sep 12 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.3.1.0.2
