@@ -1,6 +1,6 @@
 Name:    sound2light
 Version: 0.0.3.1.0.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A tool converting sound input to OSC trigger signals
 URL:     https://github.com/ETCLabs/Sound2Light
 License: GPLv2+
@@ -76,5 +76,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/256x256/apps/%{name}.png
 
 %changelog
-* Mon Sep 12 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.3.1.0.2
+* Fri Jan 13 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.3.1.0.2-2
+- update to 0.0.3.1.0.2-2
+
+* Mon Sep 12 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.3.1.0.2-1
 - Initial spec file
