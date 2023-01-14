@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    BYOD
-Version: 1.0.1
+Version: 1.1.3
 Release: 1%{?dist}
 Summary: Build-your-own guitar distortion !
 License: GPLv3+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source_byod.sh <tag>
-#        ./source_byod.sh v1.0.1
+#        ./source_byod.sh v1.1.3
 
 Source0: BYOD.tar.gz
 Source1: source_byod.sh
@@ -122,5 +122,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Jan 14 2023 Yann Collette <ycollette.nospam@free.fr> - 1.1.3-1
+- update to 1.1.3-1
+
 * Tue Jul 26 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
 - Initial spec file
