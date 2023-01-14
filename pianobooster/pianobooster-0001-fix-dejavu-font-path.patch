@@ -1,0 +1,26 @@
+From e431e12124df37deeadc921a0bbad5dbf5baa0dc Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sat, 14 Jan 2023 09:59:21 +0100
+Subject: [PATCH] fix dejavu font path
+
+---
+ src/Draw.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/Draw.cpp b/src/Draw.cpp
+index 09fc2a2..c898d7a 100644
+--- a/src/Draw.cpp
++++ b/src/Draw.cpp
+@@ -54,7 +54,8 @@ CDraw::CDraw(CSettings* settings)
+     listPathFonts.append("/usr/share/fonts/TTF/DejaVuSans.ttf");
+     listPathFonts.append("/usr/share/fonts/truetype/DejaVuSans.ttf");
+     listPathFonts.append("/usr/local/share/fonts/dejavu/DejaVuSans.ttf");
+-
++    listPathFonts.append("/usr/share/fonts/dejavu-sans-fonts/DejaVuSans.ttf");
++   
+     for (int i=0;i<listPathFonts.size();i++){
+         QFile file(listPathFonts.at(i));
+         if (file.exists()){
+-- 
+2.39.0
+

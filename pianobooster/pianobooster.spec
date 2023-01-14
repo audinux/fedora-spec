@@ -1,39 +1,40 @@
-Name:           pianobooster
-Version:        1.0.0
-Release:        7%{?dist}
-Summary:        A MIDI file player that teaches you how to play the piano
-License:        GPL-3.0-or-later
-Url:            https://github.com/captnfab/PianoBooster
+Name: pianobooster
+Version: 1.0.0
+Release: 8%{?dist}
+Summary: A MIDI file player that teaches you how to play the piano
+License: GPL-3.0-or-later
+Url: https://github.com/captnfab/PianoBooster
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0:        https://github.com/captnfab/PianoBooster/archive/v%{version}.tar.gz#/PianoBooster-%{version}.tar.gz
+Source0: https://github.com/captnfab/PianoBooster/archive/v%{version}.tar.gz#/PianoBooster-%{version}.tar.gz
+Patch0: pianobooster-0001-fix-dejavu-font-path.patch
 
-BuildRequires:  cmake
-BuildRequires:  jack-audio-connection-kit-devel
-BuildRequires:  pkgconfig(alsa)
-BuildRequires:  pkgconfig(freetype2)
-BuildRequires:  pkgconfig(ftgl)
-BuildRequires:  pkgconfig(gl)
-BuildRequires:  pkgconfig(glu)
-BuildRequires:  pkgconfig(Qt5Core)
-BuildRequires:  pkgconfig(Qt5Gui)
-BuildRequires:  pkgconfig(Qt5Help)
-BuildRequires:  pkgconfig(Qt5OpenGL)
-BuildRequires:  pkgconfig(Qt5Widgets)
-BuildRequires:  pkgconfig(Qt5Xml)
-BuildRequires:  pkgconfig(rtmidi)
-BuildRequires:  pkgconfig(fluidsynth)
-BuildRequires:  hicolor-icon-theme
+BuildRequires: cmake
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(alsa)
+BuildRequires: pkgconfig(freetype2)
+BuildRequires: pkgconfig(ftgl)
+BuildRequires: pkgconfig(gl)
+BuildRequires: pkgconfig(glu)
+BuildRequires: pkgconfig(Qt5Core)
+BuildRequires: pkgconfig(Qt5Gui)
+BuildRequires: pkgconfig(Qt5Help)
+BuildRequires: pkgconfig(Qt5OpenGL)
+BuildRequires: pkgconfig(Qt5Widgets)
+BuildRequires: pkgconfig(Qt5Xml)
+BuildRequires: pkgconfig(rtmidi)
+BuildRequires: pkgconfig(fluidsynth)
+BuildRequires: hicolor-icon-theme
 
-Requires:       dejavu-sans-fonts
-Requires:       unzip
-Requires:       hicolor-icon-theme
-Requires:       %{name} = %{version}-%{release}
-Requires:       libnotify
+Requires: dejavu-sans-fonts
+Requires: unzip
+Requires: hicolor-icon-theme
+Requires: %{name} = %{version}-%{release}
+Requires: libnotify
 
-Recommends:     qt5-qttranslations
+Recommends: qt5-qttranslations
 
 %description
 A MIDI file player/game that displays the musical notes AND teaches you how
@@ -51,13 +52,14 @@ PianoBooster, using the PC keyboard ('x' is middle C), but a MIDI piano
 is really recommended.
 
 %prep
-%autosetup -n PianoBooster-%{version}
+%autosetup -p1 -n PianoBooster-%{version}
 
 %build
 
 %cmake -DUSE_SYSTEM_FONT=ON \
        -DUSE_JACK=ON \
-       -DWITH_MAN=ON
+       -DWITH_MAN=ON \
+       -DWITH_INTERNAL_FLUIDSYNTH=OFF
 
 %cmake_build
 
@@ -80,8 +82,11 @@ is really recommended.
 %{_mandir}/man6/%{name}.6*
 
 %changelog
+* Sat Jan 14 2023 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-8
+- update to 1.0.0-8 - fix font path - use system fluidsynth
+
 * Sun Dec 13 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-2
-- update to 1.0.0
+- update to 1.0.0-2
 
 * Thu Oct 1 2020 Yann Collette <ycollette.nospam@free.fr> - 0.7.2b-2
 - fix for Fedora 33
