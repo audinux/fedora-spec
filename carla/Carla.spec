@@ -3,7 +3,7 @@
 %global pname carla
 
 Name: Carla-mao
-Version: 2.5.2
+Version: 2.5.3
 Release: 2%{?dist}
 Summary: Audio plugin host
 Epoch:   1
@@ -11,7 +11,6 @@ License: GPLv2+ and BSD and Boost and ISC and MIT and zlib
 URL: https://github.com/falkTX/Carla
 
 Source0: https://github.com/falkTX/Carla/archive/v%{version}.tar.gz#/Carla-%{version}.tar.gz
-Source1: carla.tar.gz
 Patch0: Carla-libdir.patch
 Patch1: Carla-single-libs-path.patch
 
@@ -110,8 +109,6 @@ This package contains the Carla LV2 plugin.
 %prep
 %autosetup -p0 -n Carla-%{version}
 
-tar xvfz %{SOURCE1}
-
 # remove windows stuff
 rm -rf data/{macos,windows}
 
@@ -205,6 +202,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 %{_libdir}/pkgconfig/%{pname}-host-plugin.pc
 
 %changelog
+* Sun Jan 15 2023 Yann Collette <ycollette.nospam@free.fr> - 1:2.5.3-1
+- Update to 2.5.3-1
+
 * Mon Oct 17 2022 Yann Collette <ycollette.nospam@free.fr> - 1:2.5.2-1
 - Update to 2.5.2-1
 
