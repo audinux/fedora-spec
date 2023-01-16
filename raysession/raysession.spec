@@ -15,11 +15,11 @@ URL:     https://github.com/Houston4444/RaySession
 Vendor:       Audinux
 Distribution: Audinux
 
-# Usage: ./source-raysession.sh <tag>
-#        ./source-raysession.sh v0.13.0
+# Usage: ./source-houston4444.sh <project> <tag>
+#        ./source-houston4444.sh RaySession v0.13.0
 
 Source0: RaySession.tar.gz
-Source1: source-raysession.sh
+Source1: source-houston4444.sh
 
 BuildArch: noarch
 
