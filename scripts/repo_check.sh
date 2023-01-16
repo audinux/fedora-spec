@@ -805,7 +805,9 @@ http://xwax.org/devel/xwax
 https://github.com/FigBug/Voc
 https://github.com/FigBug/Organ
 https://github.com/FigBug/Piano
-https://github.com/Soundux/Soundux"
+https://github.com/Soundux/Soundux
+https://github.com/Houston4444/Patchance
+https://github.com/jwagner/playitslowly/"
 
 if [ -f git_tags_new.txt ];
 then
