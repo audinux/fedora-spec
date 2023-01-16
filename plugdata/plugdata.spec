@@ -1,5 +1,5 @@
 Name:    plugdata
-Version: 0.6.3
+Version: 0.6.4
 Release: 1%{?dist}
 Summary: Pure Data as a plugin, with a new GUI
 URL:     https://github.com/timothyschoen/PlugData
@@ -9,7 +9,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./plugdata-source.sh <TAG>
-# ./plugdata-source.sh v0.6.3
+# ./plugdata-source.sh v0.6.4
 
 Source0: PlugData.tar.gz
 Source1: plugdata-source.sh
@@ -102,7 +102,7 @@ cp Plugins/Standalone/* %{buildroot}%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/%{name}/
 install -m 755 -d %{buildroot}/%{_datadir}/icons/%{name}/
-install -m 644 -p Resources/plugd_logo.png %{buildroot}/%{_datadir}/icons/%{name}/plugdata.png
+install -m 644 -p Resources/Icons/plugdata_logo.png %{buildroot}/%{_datadir}/icons/%{name}/plugdata.png
 install -m 644 -p Resources/Fonts/*.ttf %{buildroot}/%{_fontbasedir}/plugdata/
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
@@ -140,6 +140,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/plugdata.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Jan 16 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.4-1
+- update to 0.6.4-1
+
 * Tue Jan 10 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.3-1
 - update to 0.6.3-1
 
