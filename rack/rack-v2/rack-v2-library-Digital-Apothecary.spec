@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 6bc8ed7faf62afa74d10a87110768d7c1f891808
-%global gittag0 2.0.2
+%global commit0 24d2eb90d3ca20f2c6cff9f79dd580a0f1a292cf
+%global gittag0 2.0.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Digital-Apothecary
-Version: 2.0.2
+Version: 2.0.4
 Release: 1%{?dist}
 Summary: Digital-Apothecary plugin for Rack
 License: GPLv2+
@@ -61,7 +61,7 @@ BuildRequires: jq
 
 %description
 Digital-Apothecary plugin for Rack.
-An additive harmonic oscillator
+An oscillator that adds harmonically related sine waves.
 
 %prep
 %setup -n Rack
@@ -153,5 +153,5 @@ cp -r Digital-Apothecary_plugin/dist/Digital-Apothecary/* %{buildroot}%{_libexec
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-1
 - initial specfile
