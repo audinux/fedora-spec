@@ -42,12 +42,10 @@
 | Schrammel_OJD           | https://github.com/JanosGit/Schrammel_OJD |
 | EasySSP                 | https://github.com/automatl/audio-dsp-multi-visualize/ |
 | demucs                  | https://github.com/facebookresearch/demucs |
-| Audio-Effects           | https://github.com/juandagilc/Audio-Effects |
 | pedalevite              | https://github.com/EleonoreMizo/pedalevite -> code for vst2 ... |
 |                         | http://ldesoras.free.fr/doc/articles/pedale-vite/pedale-vite.html |
 | tap192                  | https://github.com/PlagiatBros/tap192 |
 | genDrumKit              | https://github.com/peter-zenk/genDrumkit |
-| PlugData                | https://github.com/timothyschoen/PlugData |
 | Jammernetz              | https://github.com/christofmuc/JammerNetz/ |
 | axiom                   | https://github.com/monadgroup/axiom - not llvm 11 - try 9 10 |
 | ykchorus                | https://github.com/SpotlightKid/ykchorus |
