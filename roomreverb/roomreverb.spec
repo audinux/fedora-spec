@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    roomreverb
-Version: 0.6.1
+Version: 1.0.0
 Release: 1%{?dist}
 Summary: Room Reverb is a mono/stereo to stereo algorithmic reverb audio plugin
 License: GPLv3+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./roomreverb-source.sh <tag>
-# ./roomreverb-source.sh v0.6.1
+# ./roomreverb-source.sh v1.0.0
 
 Source0: RoomReverb.tar.gz
 Source1: roomreverb-source.sh
@@ -76,9 +76,9 @@ install -d 755 %{buildroot}/%{_libdir}/vst3/
 install -d 755 %{buildroot}/%{_libdir}/lv2/
 install -d 755 %{buildroot}/%{_libdir}/clap/
 
-cp -ra %{__cmake_builddir}/RoomReverb_artefacts/CLAP/* %{buildroot}/%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/RoomReverb_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/RoomReverb_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/RoomReverb_artefacts/Release/CLAP/* %{buildroot}/%{_libdir}/clap/
+cp -ra %{__cmake_builddir}/RoomReverb_artefacts/Release/LV2/* %{buildroot}/%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/RoomReverb_artefacts/Release/VST3/* %{buildroot}/%{_libdir}/vst3/
 
 %files
 %doc README.md
@@ -94,5 +94,8 @@ cp -ra %{__cmake_builddir}/RoomReverb_artefacts/VST3/* %{buildroot}/%{_libdir}/v
 %{_libdir}/clap/*
 
 %changelog
+* Tue Jan 17 2023 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
+- update to 1.0.0-1
+
 * Sun Jul 17 2022 Yann Collette <ycollette.nospam@free.fr> - 0.6.1-1
 - Initial build
