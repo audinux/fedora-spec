@@ -4,7 +4,7 @@
 
 Summary: Multi-dimensional dynamically distorted staggered multi-bandpass LV2 plugin
 Name:    BAngr
-Version: 1.6.0
+Version: 1.6.2
 Release: 2%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BAngr/
@@ -12,7 +12,7 @@ URL:     https://github.com/sjaehn/BAngr/
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/sjaehn/BAngr/archive/%{version}.tar.gz#/BAngr-%{version}.tar.gz
+Source0: https://github.com/sjaehn/BAngr/releases/download/%{version}/BAngr-%{version}-source-code.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -57,6 +57,9 @@ Key features:
 %{_libdir}/lv2/*
 
 %changelog
+* Tue Jan 17 2023 Yann Collette <ycollette dot nospam at free.fr> 1.6.2-2
+- update to 1.6.2-2
+
 * Fri Sep 10 2021 Yann Collette <ycollette dot nospam at free.fr> 1.6.0-2
 - update to 1.6.0-2
 
