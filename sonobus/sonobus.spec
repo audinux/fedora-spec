@@ -3,7 +3,7 @@
 # Category: Audio
 
 Name:    sonobus
-Version: 1.6.0
+Version: 1.6.1
 Release: 3%{?dist}
 Summary: A peer to peer audio application
 License: GPLv2+
@@ -109,6 +109,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/sonobus.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Wed Jan 18 2023 Yann Collette <ycollette.nospam@free.fr> - 1.6.1-3
+- update to 1.6.1-3
+
 * Sat Jan 07 2023 Yann Collette <ycollette.nospam@free.fr> - 1.6.0-3
 - update to 1.6.0-3
 
