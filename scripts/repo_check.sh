@@ -807,7 +807,8 @@ https://github.com/FigBug/Organ
 https://github.com/FigBug/Piano
 https://github.com/Soundux/Soundux
 https://github.com/Houston4444/Patchance
-https://github.com/jwagner/playitslowly/"
+https://github.com/jwagner/playitslowly
+https://github.com/paulnasca/paulstretch_cpp"
 
 if [ -f git_tags_new.txt ];
 then
