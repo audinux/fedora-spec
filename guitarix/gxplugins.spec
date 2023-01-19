@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    GxPlugins
-Version: 0.9
+Version: 1.0
 Release: 2%{?dist}
 Summary: Guitarix LV2 plugins collection
 License: GPLv2+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources:
-# ./brummer10-source.sh GxPlugins.lv2 v0.9
+# ./brummer10-source.sh GxPlugins.lv2 v1.0
 
 Source0: GxPlugins.lv2.tar.gz
 Source1: brummer10-source.sh
@@ -459,6 +459,9 @@ Vintage Fuzz Pedal simulation from Guitarix
 %{_libdir}/lv2/gx_maestro_fz1s.lv2/*
 
 %changelog
+* Thu Jan 19 2023 Yann Collette <ycollette.nospam@free.fr> - 1.0-2
+- Update to 1.0-2
+
 * Wed Feb 23 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9-2
 - Update to v0.9-2
 
