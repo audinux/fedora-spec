@@ -817,7 +817,8 @@ fi
 
 for File in $REPO_LIST
 do
-    LINE="$File `git ls-remote --tags $File 2>&1 | grep -v redirect | tail --lines=1`"
+    #LINE="$File `git ls-remote --tags $File 2>&1 | grep -v redirect | tail --lines=1`"
+    LINE="$File `git ls-remote --tags $File 2>&1 | grep -v redirect | grep -Po "refs/tags/(\d+\.)+\d+" | tail --lines=1`"
     TAGS=`echo "$LINE" | grep "refs/tags"`
     if [ ! -z "$TAGS" ];
     then
