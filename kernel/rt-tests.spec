@@ -1,5 +1,5 @@
 Name: rt-tests
-Version: 2.4
+Version: 2.5
 Release: 1%{?dist}
 Summary: Various programs that test various rt-linux features
 License: GPL2
@@ -38,6 +38,9 @@ mv %buildroot/%{python3_sitelib}/*.py %buildroot/%{python3_sitelib}/%{name}/
 %{python3_sitelib}/%{name}/*
 
 %changelog
+* Fri Jan 20 2023 Yann Collette <ycollette.nospam@free.fr> - 2.5-1
+- update to 2.5-1
+
 * Sun Jul 10 2022 Yann Collette <ycollette.nospam@free.fr> - 2.4-1
 - update to 2.4-1
 
