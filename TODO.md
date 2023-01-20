@@ -48,21 +48,16 @@
 | genDrumKit              | https://github.com/peter-zenk/genDrumkit |
 | Jammernetz              | https://github.com/christofmuc/JammerNetz/ |
 | axiom                   | https://github.com/monadgroup/axiom - not llvm 11 - try 9 10 |
-| ykchorus                | https://github.com/SpotlightKid/ykchorus |
 | EEL_VM                  | https://github.com/james34602/EEL_VM |
 | AutoEq                  | https://github.com/jaakkopasanen/AutoEq |
 | SynthLab                | https://github.com/mpue/Synthlab |
 | AlgAudio                | https://github.com/rafalcieslak/AlgAudio |
 | psychosynth             | https://github.com/arximboldi/psychosynth |
 | tidal                   | https://github.com/archlinux/svntogit-community/blob/packages/haskell-tidal/trunk/PKGBUILD |
-| TS-M1N3                 | https://github.com/GuitarML/TS-M1N3 |
-| Chameleon               | https://github.com/GuitarML/Chameleon |
 | juced                   | https://github.com/kunitoki/juced |
-| solfege                 | https://src.fedoraproject.org/rpms/solfege |
 | hpsjam                  | https://github.com/hselasky/hpsjam |
 | gyroflow                | https://github.com/gyroflow/gyroflow |
 | studio-controls         | https://github.com/ovenwerks/studio-controls |
-| seq66                   | https://github.com/ahlstromcj/seq66 |
 | vmpc-juce               | https://github.com/izzyreal/vmpc-juce |
 | rtcqs                   | https://codeberg.org/rtcqs/rtcqs |
 | soundgrain              | https://github.com/belangeo/soundgrain |
@@ -96,6 +91,7 @@
 | PeakEater               | https://github.com/vvvar/PeakEater |
 | rotor                   | https://github.com/blackboxdsp/rotor |
 | the synister            | https://github.com/the-synister/the-source/ |
+| Various plugins         | https://github.com/mzuther?tab=repositories |
 
 ## WIP
 
