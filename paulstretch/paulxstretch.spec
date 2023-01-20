@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    paulxstretch
-Version: 1.5.3
+Version: 1.6.0
 Release: 1%{?dist}
 Summary: A Paulstretch VST3/Standalone plugin
 License: MIT
@@ -96,5 +96,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst3/*
 
 %changelog
-* Sun May 01 2022 Yann Collette <ycollette.nospam@free.fr> - 1.5.3-3
+* Wed Jan 18 2023 Yann Collette <ycollette.nospam@free.fr> - 1.6.0-1
+- update to 1.6.0-1
+
+* Sun May 01 2022 Yann Collette <ycollette.nospam@free.fr> - 1.5.3-1
 - Initial spec file
