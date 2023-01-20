@@ -68,11 +68,9 @@
 | speclet                 | https://github.com/JohT/speclet |
 | ysfx                    | https://github.com/jpcima/ysfx |
 | rosegarden-fork         | https://github.com/thanks4opensource/rosegarden-fork |
-| annulus                 | https://github.com/chronopoulos/annulus |
 | intersect               | https://github.com/sboukortt/intersect-lv2 |
 | russolo                 | https://sourceforge.net/p/intonarumori/code/HEAD/tree/ |
 | lenticular              | https://github.com/polyeffects/lenticular_lv2 |
-| gula                    | https://github.com/steveb/gula-plugins |
 | sushi                   | https://github.com/elk-audio/sushi |
 | guitarix vst            | https://github.com/brummer10/guitarix.vst |
 | ComplexNonlinearities   | https://github.com/jatinchowdhury18/ComplexNonlinearities |
