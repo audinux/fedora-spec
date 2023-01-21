@@ -808,7 +808,8 @@ https://github.com/FigBug/Piano
 https://github.com/Soundux/Soundux
 https://github.com/Houston4444/Patchance
 https://github.com/jwagner/playitslowly
-https://github.com/paulnasca/paulstretch_cpp"
+https://github.com/paulnasca/paulstretch_cpp
+https://github.com/brummer10/GxPlugins.lv2"
 
 if [ -f git_tags_new.txt ];
 then
@@ -817,8 +818,8 @@ fi
 
 for File in $REPO_LIST
 do
-    #LINE="$File `git ls-remote --tags $File 2>&1 | grep -v redirect | tail --lines=1`"
-    LINE="$File `git ls-remote --tags $File 2>&1 | grep -v redirect | grep -Po "refs/tags/(\d+\.)+\d+" | tail --lines=1`"
+    echo "Processing $File"
+    LINE="$File `git ls-remote --tags $File 2>&1 | grep -v redirect | grep -Po "refs/tags/[v]?(\d+\.)+\d+" | tail --lines=1`"
     TAGS=`echo "$LINE" | grep "refs/tags"`
     if [ ! -z "$TAGS" ];
     then
