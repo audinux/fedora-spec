@@ -63,18 +63,15 @@
 | soundgrain              | https://github.com/belangeo/soundgrain |
 | anklang                 | https://github.com/tim-janik/anklang |
 | Dexed                   | https://github.com/asb2m10/dexed |
-| slowmo                  | https://github.com/brummer10/slowmo.lv2 |
 | buzzmachines            | https://github.com/Buzztrax/buzzmachines |
 | speclet                 | https://github.com/JohT/speclet |
 | ysfx                    | https://github.com/jpcima/ysfx |
 | rosegarden-fork         | https://github.com/thanks4opensource/rosegarden-fork |
 | intersect               | https://github.com/sboukortt/intersect-lv2 |
-| russolo                 | https://sourceforge.net/p/intonarumori/code/HEAD/tree/ |
 | lenticular              | https://github.com/polyeffects/lenticular_lv2 |
 | sushi                   | https://github.com/elk-audio/sushi |
 | guitarix vst            | https://github.com/brummer10/guitarix.vst |
 | ComplexNonlinearities   | https://github.com/jatinchowdhury18/ComplexNonlinearities |
-| RoomReverb              | https://github.com/cvde/RoomReverb |
 | repitch                 | https://github.com/maxwellpollack/repitch |
 | Melodrumatic            | https://github.com/usdivad/Melodrumatic |
 | Richter Tremolo         | https://github.com/jd-13/Richter-Tremolo |
