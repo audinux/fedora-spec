@@ -3,7 +3,7 @@
 # Category: Audio
 
 Name:    konfyt
-Version: 1.2.1
+Version: 1.2.3
 Release: 3%{?dist}
 Summary: A patch manager
 URL:     https://github.com/noedigcode/konfyt
@@ -20,7 +20,11 @@ BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-qtsvg-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: Carla-devel 
+%ifarch aarch64
+BuildRequires: Carla-devel
+%else
+BuildRequires: Carla-mao-devel
+%endif
 BuildRequires: liblscp-devel 
 BuildRequires: fluidsynth-devel
 BuildRequires: desktop-file-utils
@@ -85,6 +89,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Sun Jan 22 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-3
+- update to 1.2.3-3 
+
 * Tue Oct 11 2022 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-3
 - update to 1.2.1-3 
 
