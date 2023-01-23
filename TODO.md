@@ -87,6 +87,7 @@
 | rotor                   | https://github.com/blackboxdsp/rotor |
 | the synister            | https://github.com/the-synister/the-source/ |
 | Various plugins         | https://github.com/mzuther?tab=repositories |
+| hvcc                    | https://github.com/Wasted-Audio/hvcc |
 
 ## WIP
 
