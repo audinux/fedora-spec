@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 658be91f8b2f314a2d49b8a9065d45f875b0f4f8
-%global gittag0 2.4.1
+%global commit0 4f7c04f98a152201e929f9730df4fdf7c5eac873
+%global gittag0 2.5.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SickoCV
-Version: 2.4.1
+Version: 2.5.1
 Release: 1%{?dist}
 Summary: SickoCV plugin for Rack
 License: GPLv2+
@@ -61,7 +61,7 @@ BuildRequires: jq
 
 %description
 SickoCV plugin for Rack.
-8 buffered toggle switches (flip flop) with gate output and signal routing
+Stereo crossfade mixer with double modulation
 
 %prep
 %setup -n Rack
@@ -153,5 +153,5 @@ cp -r SickoCV_plugin/dist/SickoCV/* %{buildroot}%{_libexecdir}/Rack2/plugins/Sic
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.1-1
 - initial specfile

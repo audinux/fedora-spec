@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 5fe6a59e182da3402aa9e7dba0538dcd3c2399a0
-%global gittag0 2.1.0
+%global commit0 7a038e02ba175a524a16ac5e2f9e3d2baac2066f
+%global gittag0 2.1.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-moDllz
-Version: 2.1.0
+Version: 2.1.2
 Release: 1%{?dist}
 Summary: moDllz plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r moDllz_plugin/dist/moDllz/* %{buildroot}%{_libexecdir}/Rack2/plugins/moDll
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-1
 - initial specfile
