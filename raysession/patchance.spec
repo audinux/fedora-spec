@@ -5,7 +5,7 @@
 %global __python %{__python3}
 
 Name:    patchance
-Version: 0.2.0
+Version: 1.0.0
 Release: 1%{?dist}
 Summary: Jack Patchbay GUI
 
@@ -16,7 +16,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source-houston4444.sh <project> <tag>
-#        ./source-houston4444.sh Patchance v0.2.0
+#        ./source-houston4444.sh Patchance v1.0.0
 
 Source0: Patchance.tar.gz
 Source1: source-houston4444.sh
@@ -77,5 +77,8 @@ desktop-file-validate  %{buildroot}/%{_datadir}/applications/%{name}.desktop
 %{_datadir}/patchance/src/*
 
 %changelog
+* Sun Jan 22 2023 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
+- update to 1.0.0
+
 * Mon Jan 16 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
 - Initial spec file
