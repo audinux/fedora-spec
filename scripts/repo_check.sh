@@ -809,7 +809,9 @@ https://github.com/Soundux/Soundux
 https://github.com/Houston4444/Patchance
 https://github.com/jwagner/playitslowly
 https://github.com/paulnasca/paulstretch_cpp
-https://github.com/brummer10/GxPlugins.lv2"
+https://github.com/brummer10/GxPlugins.lv2
+https://github.com/Wasted-Audio/hvcc
+https://github.com/GModal/ChaffVerb"
 
 if [ -f git_tags_new.txt ];
 then
