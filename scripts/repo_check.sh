@@ -817,7 +817,8 @@ https://invent.kde.org/multimedia/subtitlecomposer
 https://ithub.com/Vampouille/superboucle
 https://pagure.io/fedora-kickstarts
 https://pagure.io/fedora-misc-package-utilities
-https://salsa.debian.org/multimedia-team/portsmf"
+https://salsa.debian.org/multimedia-team/portsmf
+https://github.com/rncbc/jack_link"
 
 # https://github.com/ycollet/Mx44
 # https://github.com/j3ffhubb/musikernel
