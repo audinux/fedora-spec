@@ -208,8 +208,8 @@ https://github.com/digego/extempore
 https://github.com/digitalhappens/ILovePerlin
 https://github.com/digitalhappens/MyLittleTools
 https://github.com/DISTRHO/Cardinal
-https://github.com/DISTRHO/DISTRHO-Ports-Extra
 https://github.com/DISTRHO/DISTRHO-Ports
+https://github.com/DISTRHO/DISTRHO-Ports-Extra
 https://github.com/DISTRHO/DPF
 https://github.com/DISTRHO/gl-examples
 https://github.com/DISTRHO/plugin-examples
@@ -254,7 +254,10 @@ https://github.com/falkTX/dssi-vst
 https://github.com/falkTX/non
 https://github.com/falkTX/protrekkr
 https://github.com/ffAudio/Frequalizer
+https://github.com/FigBug/Organ
+https://github.com/FigBug/Piano
 https://github.com/FigBug/slPlugins
+https://github.com/FigBug/Voc
 https://github.com/flarn2006/SparketteVCV
 https://github.com/FluidSynth/fluidsynth
 https://github.com/foolswood/Physyn
@@ -274,6 +277,7 @@ https://github.com/gesellkammer/pyliblo3
 https://github.com/gillesdegottex/fmit
 https://github.com/giogramegna/mantra-master
 https://github.com/gluethegiant/gtg-rack
+https://github.com/GModal/ChaffVerb
 https://github.com/gosub/forsitan-modulare
 https://github.com/grame-cncm/faust
 https://github.com/grame-cncm/faustworks
@@ -299,10 +303,12 @@ https://github.com/hemmer/rebel-tech-vcv
 https://github.com/hires/Dintree-Virtual
 https://github.com/hitchhikr/protrekkr
 https://github.com/HoerTech-gGmbH/tascar
+https://github.com/Houston4444/Patchance
 https://github.com/Houston4444/plujain-ramp
 https://github.com/Houston4444/RaySession
 https://github.com/HTlocal/VCV-Modules-HTLocal
 https://github.com/hundredrabbits/Orca
+https://github.com/hundredrabbits/Orca-c
 https://github.com/hydrogen-music/hydrogen
 https://github.com/ianlancetaylor/libbacktrace
 https://github.com/iannix/Iannix
@@ -319,6 +325,7 @@ https://github.com/jackaudio/jack1
 https://github.com/jackaudio/jack2
 https://github.com/jack-mixer/jack_mixer
 https://github.com/jackokring/KRTPluginA
+https://github.com/jacktrip/jacktrip
 https://github.com/janne808/kocmoc-rack-modules
 https://github.com/jatinchowdhury18/Agave
 https://github.com/jatinchowdhury18/AnalogTapeModel
@@ -372,7 +379,6 @@ https://github.com/kellydimmick/TheEyeHarp
 https://github.com/kenrestivo/Linux-synth-patches
 https://github.com/kilpatrickaudio/Kilpatrick-Toolbox
 https://github.com/kmatheussen/mammut
-https://github.com/kmatheussen/radium
 https://github.com/kmatheussen/radium
 https://github.com/knchaffin/Meander
 https://github.com/kockie69/RPJ
@@ -483,6 +489,7 @@ https://github.com/NonLinearInstruments/NLNRI_VCVRackPlugins
 https://github.com/NoraCodes/fives
 https://github.com/olegkapitonov/Kapitonov-Plugins-Pack
 https://github.com/oli-kester/kepler34
+https://github.com/openAVproductions/openAV-ArtyFX
 https://github.com/OpenBoard-org/OpenBoard
 https://github.com/openframeworks/openFrameworks
 https://github.com/OpenMusicKontrollers/eteroj.lv2
@@ -493,6 +500,7 @@ https://github.com/OpenMusicKontrollers/orbit.lv2
 https://github.com/OpenMusicKontrollers/patchmatrix
 https://github.com/OpenMusicKontrollers/sherlock.lv2
 https://github.com/OpenMusicKontrollers/synthpod
+https://github.com/ossia/score
 https://github.com/OSSIA/score
 https://github.com/oswald2/DGPatchMaker
 https://github.com/osxmidi/linvst
@@ -502,6 +510,7 @@ https://github.com/patheros/PathSetModules
 https://github.com/PaulBatchelor/lmms-reverbsc
 https://github.com/PaulBatchelor/LMMS-Signal
 https://github.com/PaulBatchelor/LMMS-Sporth
+https://github.com/paulnasca/paulstretch_cpp
 https://github.com/paulpacifico/shutter-encoder
 https://github.com/pawal/ask-vcv-modules
 https://github.com/paynebc/tunefish
@@ -525,11 +534,14 @@ https://github.com/portalmod/mod-distortion
 https://github.com/portalmod/mod-pitchshifter
 https://github.com/portalmod/swh-lv2
 https://github.com/portalmod/tap-lv2
+https://github.com/portaloffreedom/pipecontrol
 https://github.com/powertab/powertabeditor
 https://github.com/praxis-live/examples
 https://github.com/praxis-live/praxis
 https://github.com/praxis-live/praxis-live
+https://github.com/premake/premake-core
 https://github.com/Prichman/famitracker-qt
+https://github.com/processing/processing4
 https://github.com/progwolff/performer
 https://github.com/projectM-visualizer/projectm
 https://github.com/PySimpleGUI/PySimpleGUI
@@ -580,6 +592,7 @@ https://github.com/scanner-darkly/vcv-collection-one
 https://github.com/schismtracker/schismtracker
 https://github.com/Sciss/Eisenkraut
 https://github.com/sebastien-bouffier/Bidoo
+https://github.com/sfztools/sfizz
 https://github.com/sgossner/VSCO-2-CE
 https://github.com/sickozell/SickoCV
 https://github.com/signal-flux/Signal-Flux-VCV-Rack-Modules
@@ -592,7 +605,6 @@ https://github.com/sjaehn/BOops
 https://github.com/sjaehn/BSchaffl
 https://github.com/sjaehn/Bsequencer
 https://github.com/sjaehn/BSEQuencer
-https://github.com/sjaehn/BShapr
 https://github.com/sjaehn/BShapr
 https://github.com/sjaehn/BSlizr
 https://github.com/sjaehn/BSpacr
@@ -607,17 +619,18 @@ https://github.com/sonejostudios/DeLooper
 https://github.com/sonejostudios/SuperBeatRepeater
 https://github.com/soul-lang/SOUL
 https://github.com/SoundScapeRenderer/ssr
+https://github.com/Soundux/Soundux
 https://github.com/sourcefabric/airtime
 https://github.com/spark404/jalmus
 https://github.com/SpartanJ/efsw
 https://github.com/SpektroAudio/Seasons
 https://github.com/SpotlightKid/ykchorus
 https://github.com/ssj71/infamousPlugins
-https://github.com/ssj71/infamousPlugins
 https://github.com/ssj71/OSC2MIDI
 https://github.com/ssj71/reMID.lv2
 https://github.com/ssj71/rkrlv2
 https://github.com/stargateaudio/pymarshal
+https://github.com/stargateaudio/stargate
 https://github.com/starlingcode/Via-for-Rack
 https://github.com/stavrosdidakis/Motion-Tracking
 https://github.com/Stazed/rakarrack-plus
@@ -632,6 +645,7 @@ https://github.com/Stubs42/OrangeLine
 https://github.com/StudioSixPlusOne/rack-modules
 https://github.com/stump/libsmf
 https://github.com/sumpygump/quantal-audio
+https://github.com/supercollider/sc3-plugins
 https://github.com/supercollider/supercollider
 https://github.com/supergilbert/midilooper
 https://github.com/surfacepatterns/synthclone
@@ -645,6 +659,7 @@ https://github.com/surge-synthesizer/surge-rack
 https://github.com/surge-synthesizer/tuning-workbench-synth
 https://github.com/SVModular/CharredDesert
 https://github.com/SVModular/DrumKit
+https://github.com/swami/swami
 https://github.com/swesterfeld/spectmorph
 https://github.com/swh/lv2
 https://github.com/swh/timemachine
@@ -665,6 +680,7 @@ https://github.com/tildearrow/furnace
 https://github.com/TimeControlledOrganism/LifeFormModular
 https://github.com/tim-janik/beast
 https://github.com/timothyschoen/PlugData
+https://github.com/tlsa/libcyaml
 https://github.com/tlsa/libcyaml/
 https://github.com/tomdasilva/Mojo
 https://github.com/Tonecarver/tcRackModules
@@ -699,6 +715,7 @@ https://github.com/wiqid/anomalies
 https://github.com/wiqid/repelzen
 https://github.com/Wohlstand/OPL3BankEditor
 https://github.com/Wohlstand/OPN2BankEditor
+https://github.com/wolf-plugins/wolf-shaper
 https://github.com/WrongPeople/WrongPeopleVCV
 https://github.com/wschweer/sftools
 https://github.com/x42/avldrums.lv2
@@ -731,15 +748,17 @@ https://github.com/x42/xjadeo
 https://github.com/x42/zconvo.lv2
 https://github.com/xaviershay/vitamin-vcv-modules
 https://github.com/Xenakios/Atelier
+https://github.com/ycollet/ams
 https://github.com/ycollet/horgand
 https://github.com/ycollet/jackmidilogger
 https://github.com/ycollet/mod-pitchshifter
+https://github.com/ycollet/MrFreeze
 https://github.com/ycollet/MrFreezehttps://github.com/romi1502/MrFreeze
 https://github.com/ycollet/non
 https://github.com/ycollet/ntk
 https://github.com/ycollet/psi-plugins
+https://github.com/ycollet/rakarrack
 https://github.com/ycollet/vopa
-https://github.com/yoyz/audio
 https://github.com/yoyz/audio
 https://github.com/YruamaLairba/yru-simple-LV2-C
 https://github.com/zamaudio/zam-plugins
@@ -750,7 +769,7 @@ https://github.com/zynaddsubfx/zynaddsubfx
 https://github.com/zynaddsubfx/zyn-fusion-build
 https://github.com/zynayumi/zynayumi
 https://github.com/zynthian/zynthian-data
-https://github.com/zynthian/zynthian-data
+https://git.kernel.org/pub/scm
 https://git.kernel.org/pub/scm/utils/rt-tests/rt-tests
 https://gitlab.com/ayrsd/audiostellar
 https://gitlab.com/davethecomposer/platonic-music-engine
@@ -761,8 +780,8 @@ https://gitlab.com/hampton-harmonics/hampton-harmonics-modules
 https://gitlab.com/iurie-sw/geonkick
 https://gitlab.com/iurie-sw/redkite
 https://gitlab.com/jeremy_mitchell/sunsetsignals
-https://gitlab.com/lebiniou/lebiniou-data
 https://gitlab.com/lebiniou/lebiniou
+https://gitlab.com/lebiniou/lebiniou-data
 https://gitlab.com/LibreArp/LibreArp
 https://gitlab.com/NaN9/geohead
 https://gitlab.com/samplehive/sample-hive
@@ -786,7 +805,9 @@ https://git.savannah.nongnu.org/git/getfem
 https://git.s-ol.nu/vcvmods
 https://git.sr.ht/~alextee/zrythm-libcyaml
 https://git.sr.ht/~rabbits/orca
+https://git.tuxfamily.org/non/non.git
 https://git.zrythm.org/cgit/libaudec
+https://git.zrythm.org/cgit/ZLFO
 https://git.zrythm.org/cgit/ZLFO/
 https://git.zrythm.org/cgit/ztoolkit
 https://git.zrythm.org/zrythm/zrythm
@@ -794,24 +815,12 @@ https://git.zrythm.org/zrythm/zrythm-media
 https://invent.kde.org/graphics/kxstitch
 https://invent.kde.org/multimedia/subtitlecomposer
 https://ithub.com/Vampouille/superboucle
-https://github.com/kometbomb/klystrack
-https://github.com/mapmapteam/mapmap
 https://pagure.io/fedora-kickstarts
 https://pagure.io/fedora-misc-package-utilities
-https://salsa.debian.org/multimedia-team/portsmf
-https://github.com/supercollider/supercollider
-https://github.com/supercollider/sc3-plugins
-http://xwax.org/devel/xwax
-https://github.com/FigBug/Voc
-https://github.com/FigBug/Organ
-https://github.com/FigBug/Piano
-https://github.com/Soundux/Soundux
-https://github.com/Houston4444/Patchance
-https://github.com/jwagner/playitslowly
-https://github.com/paulnasca/paulstretch_cpp
-https://github.com/brummer10/GxPlugins.lv2
-https://github.com/Wasted-Audio/hvcc
-https://github.com/GModal/ChaffVerb"
+https://salsa.debian.org/multimedia-team/portsmf"
+
+# https://github.com/ycollet/Mx44
+# https://github.com/j3ffhubb/musikernel
 
 if [ -f git_tags_new.txt ];
 then
