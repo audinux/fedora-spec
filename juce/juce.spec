@@ -3,7 +3,7 @@
 # Category: Audio, Programming, Graphic
 
 Name:    JUCE
-Version: 7.0.4
+Version: 7.0.5
 Release: 9%{?dist}
 Summary: JUCE Framework
 URL:     https://github.com/juce-framework/JUCE
@@ -12,7 +12,6 @@ License: GPLv2+
 Vendor:       Audinux
 Distribution: Audinux
 
-# original tarfile can be found here:
 Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: juce_Projucer.desktop
 Source2: juce_Projucer.1
@@ -90,6 +89,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_includedir}/*
 
 %changelog
+* Thu Jan 26 2023 Yann Collette <ycollette.nospam@free.fr> - 7.0.5-9
+- update to 7.0.5-9
+
 * Fri Jan 06 2023 Yann Collette <ycollette.nospam@free.fr> - 7.0.4-9
 - update to 7.0.4-9
 
