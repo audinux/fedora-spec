@@ -6,7 +6,7 @@
 Summary: Old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.
 Name:    padthv1
 Version: 0.9.29
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL:     https://sourceforge.net/projects/%{name}
 License: GPLv2+
 
@@ -14,6 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://download.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source1: http://www.linuxsynths.com/Padthv1PatchesDemos/67Padthv1Patches.tar.gz
 Patch0:  padthv1-0001-disable-strip.patch
 
 BuildRequires: gcc-c++
@@ -58,9 +59,13 @@ An LV2 plugin of the padthv1 synthesizer
 
 install -m 755 -d %{buildroot}/%{_datadir}/mime/packages/
 install -m 755 -d %{buildroot}/%{_datadir}/metainfo/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/presets/
 
 install -m 644 src/mimetypes/org.rncbc.padthv1.xml %{buildroot}%{_datadir}/mime/packages/padthv1.xml
 install -m 644 src/appdata/org.rncbc.padthv1.metainfo.xml %{buildroot}%{_datadir}//metainfo/org.rncbc.padthv1.xml
+
+cd %{buildroot}/%{_datadir}/%{name}/presets
+tar xvfz %{SOURCE1}
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.desktop
@@ -76,11 +81,15 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.des
 %{_datadir}/man/*/man1/%{name}*
 %{_datadir}/mime/packages/*.xml
 %{_datadir}/metainfo/*.xml
+%{_datadir}/%{name}/presets/*
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/%{name}.lv2/
 
 %changelog
+* Thu Jan 26 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.29-2
+- update to 0.9.29-2 - add some presets
+
 * Wed Jan 25 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.29-1
 - update to 0.9.29-1
 
