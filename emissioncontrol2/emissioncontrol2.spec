@@ -37,6 +37,16 @@ application for granular synthesis and sound file granulation.
 %prep
 %autosetup -p1 -n EmissionControl2
 
+%ifarch aarch64
+cd ecSource/external/nativefiledialog/build/gmake_linux/
+sed -i -e "s/-m64//g" nfd.make
+sed -i -e "s/-m64//g" test_opendialog.make
+sed -i -e "s/-m64//g" test_opendialogmultiple.make
+sed -i -e "s/-m64//g" test_pickfolder.make
+sed -i -e "s/-m64//g" test_savedialog.make
+# Still fail to build!: rror: narrowing conversion of '-1' from 'int' to 'char' [-Wnarrowing]
+%endif
+
 %build
 
 cd ecSource/external/nativefiledialog/build/gmake_linux
