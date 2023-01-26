@@ -86,6 +86,8 @@
 | the synister            | https://github.com/the-synister/the-source/ |
 | Various plugins         | https://github.com/mzuther?tab=repositories |
 | libDaisy   (for hvcc)   | https://github.com/electro-smith/libDaisy |
+| mellite                 | https://www.sciss.de/mellite/ |
+| arch realtime privilege | https://github.com/archlinux/svntogit-community/tree/packages/realtime-privileges/trunk |
 
 ## WIP
 
