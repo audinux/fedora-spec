@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    chaffverb
-Version: 0.2.2
+Version: 0.2.3
 Release: 1%{?dist}
 Summary: An audio plugin utilizing pitch shifting, echo and reverb, for creating sounds from shimmers to whale songs.
 License: MIT
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./chaffverb-source.sh <tag>
-# ./chaffverb-source.sh v0.2.2
+# ./chaffverb-source.sh v0.2.3
 
 Source0: ChaffVerb.tar.gz
 Source1: chaffverb-source.sh
@@ -106,5 +106,8 @@ cp ChaffVerb.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Thu Jan 26 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2.3-1
+- update to 0.2.3-1
+
 * Tue Jan 24 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2.2-1
 - Initial version of the spec file
