@@ -2,11 +2,9 @@
 
 | Package                 | URL|
 |-------------------------|----|
-| osmid                   | https://github.com/llloret/osmid |
 | DeLooper                | https://github.com/sonejostudios/DeLooper |
 | mephisto                | https://open-music-kontrollers.ch/lv2/mephisto/ |
 | zrythm - lsp-dsp        | add a devel package for zrythm |
-| emissioncontrol2        | https://github.com/EmissionControl2/EmissionControl2 |
 | openshow                | https://github.com/mapmapteam/openshow |
 | supercollider-study     | https://github.com/rumblesan/super-collider-study |
 | SynthDefs               | https://github.com/everythingwillbetakenaway/Synthdefs |

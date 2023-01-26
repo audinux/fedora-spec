@@ -1,0 +1,24 @@
+From bfb5db52dec9e0f0ec6e528ff0d932c13c5e7895 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Thu, 26 Jan 2023 07:26:46 +0100
+Subject: [PATCH] add missing header
+
+---
+ ecSource/external/allolib/src/ui/al_Parameter.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/ecSource/external/allolib/src/ui/al_Parameter.cpp b/ecSource/external/allolib/src/ui/al_Parameter.cpp
+index 813d457..33694f1 100644
+--- a/ecSource/external/allolib/src/ui/al_Parameter.cpp
++++ b/ecSource/external/allolib/src/ui/al_Parameter.cpp
+@@ -5,6 +5,7 @@
+ #include <iostream>
+ #include <regex>
+ #include <sstream>
++#include <cstring>
+ 
+ #include "al/io/al_File.hpp"
+ 
+-- 
+2.39.1
+
