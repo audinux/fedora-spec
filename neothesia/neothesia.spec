@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    neothesia
-Version: 0.0.13
+Version: 0.0.15
 Release: 1%{?dist}
 Summary: Flashy Synthesia Like Software
 License: GPLv3+
@@ -15,7 +15,7 @@ Distribution: Audinux
 Source0: https://github.com/PolyMeilex/Neothesia/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: make
+BuildRequires: cmake make
 BuildRequires: rust cargo
 # BuildRequires: ffmpeg-deve
 BuildRequires: alsa-lib-devel
@@ -36,6 +36,8 @@ Flashy Synthesia Like Software
 
 %set_build_flags
 export RUSTFLAGS="-g -O"
+export RUST_BACKTRACE=1
+
 %make_build build-app
 # %make_build build-recorder
 
@@ -79,5 +81,8 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/com.githu
 %{_datadir}/metainfo/com.github.polymeilex.neothesia.metainfo.xml
 
 %changelog
+* Fri Jan 27 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.15-1
+- update to 0.0.15-1
+
 * Mon Jul 25 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.13-1
 - Initial spec file
