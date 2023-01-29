@@ -6,7 +6,7 @@
 
 Name:    lsp-plugins
 Summary: Linux Studio Plugins collection
-Version: 1.2.4
+Version: 1.2.5
 Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/sadko4u/lsp-plugins
@@ -14,7 +14,7 @@ URL:     https://github.com/sadko4u/lsp-plugins
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./lsp-sources.sh 1.2.4
+# ./lsp-sources.sh 1.2.5
 
 Source0: lsp-plugins.tar.gz
 Source1: lsp-sources.sh
@@ -54,6 +54,12 @@ Summary: LV2 version of %{name} plugins
 %description -n lv2-%{name}
 LV2 version of %{name} plugins
 
+%package -n clap-%{name}
+Summary: CLAP version of %{name} plugins
+
+%description -n clap-%{name}
+CLAP version of %{name} plugins
+
 %prep
 %autosetup -n lsp-plugins
 
@@ -72,6 +78,7 @@ chrpath --delete %{buildroot}/usr/%{_lib}/ladspa/*.so
 chrpath --delete %{buildroot}/usr/%{_lib}/lsp-plugins/*.so
 chrpath --delete %{buildroot}/usr/%{_lib}/lv2/lsp-plugins.lv2/*.so
 chrpath --delete %{buildroot}/usr/%{_lib}/vst/lsp-plugins/*.so
+chrpath --delete %{buildroot}/usr/%{_lib}/clap/*.clap
 
 mkdir -p %{buildroot}/usr/share/lsp-plugins/
 mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
@@ -85,7 +92,6 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %{_libdir}/*.so
 %{_libdir}/lsp-plugins/*.so
 %exclude %{_libdir}/*.a
-%exclude %{_includedir}/lsp-plug.in/r3d/glx/*
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/* 
@@ -96,7 +102,13 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %files -n vst-%{name}
 %{_libdir}/vst/* 
 
+%files -n clap-%{name}
+%{_libdir}/clap/* 
+
 %changelog
+* Sun Jan 29 2023 Yann Collette <ycollette dot nospam at free.fr> 1.2.5-1
+- update to 1.2.5-1
+
 * Wed Dec 21 2022 Yann Collette <ycollette dot nospam at free.fr> 1.2.4-1
 - update to 1.2.4-1
 
