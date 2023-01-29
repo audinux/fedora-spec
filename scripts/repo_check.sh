@@ -818,7 +818,9 @@ https://ithub.com/Vampouille/superboucle
 https://pagure.io/fedora-kickstarts
 https://pagure.io/fedora-misc-package-utilities
 https://salsa.debian.org/multimedia-team/portsmf
-https://github.com/rncbc/jack_link"
+https://github.com/rncbc/jack_link
+https://github.com/HoerTech-gGmbH/tascar
+https://github.com/saugns/saugns"
 
 # https://github.com/ycollet/Mx44
 # https://github.com/j3ffhubb/musikernel

@@ -1,0 +1,65 @@
+From 8ad08ba4230c5e7dfd7f82f2b31a231360b7895b Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 29 Jan 2023 13:41:53 +0100
+Subject: [PATCH] fix makefiles
+
+---
+ Makefile     | 16 ++++++++--------
+ sau/Makefile | 12 ++++++------
+ 2 files changed, 14 insertions(+), 14 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 51a1f67..df56fba 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,16 +1,16 @@
+ .POSIX:
+ CC=cc
+-CFLAGS_COMMON=-std=c99 -W -Wall -I.
+-CFLAGS=$(CFLAGS_COMMON) -O2
+-CFLAGS_FAST=$(CFLAGS_COMMON) -O3
+-CFLAGS_FASTF=$(CFLAGS_COMMON) -O3 -ffast-math
+-CFLAGS_SIZE=$(CFLAGS_COMMON) -Os
+-LFLAGS=-s -Lsau -lsau -lm
++CFLAGS_COMMON=-I. $(DEPCFLAGS)
++CFLAGS=$(CFLAGS_COMMON)
++CFLAGS_FAST=$(CFLAGS_COMMON) 
++CFLAGS_FASTF=$(CFLAGS_COMMON) -ffast-math
++CFLAGS_SIZE=$(CFLAGS_COMMON)
++LFLAGS=-Lsau -lsau -lm
+ LFLAGS_LINUX=$(LFLAGS) -lasound
+ LFLAGS_SNDIO=$(LFLAGS) -lsndio
+ LFLAGS_OSSAUDIO=$(LFLAGS) -lossaudio
+-LFLAGS_TESTS=-s -Lsau -lsau-tests -lm
+-PREFIX=/usr/local
++LFLAGS_TESTS=-Lsau -lsau-tests -lm
++PREFIX=/usr
+ BIN=saugns
+ MAN1=saugns.1
+ README=README.md
+diff --git a/sau/Makefile b/sau/Makefile
+index e072e5b..ae33ce3 100644
+--- a/sau/Makefile
++++ b/sau/Makefile
+@@ -1,12 +1,12 @@
+ .POSIX:
+ AR=ar
+ CC=cc
+-CFLAGS_COMMON=-std=c99 -W -Wall -I..
+-CFLAGS=$(CFLAGS_COMMON) -O2
+-CFLAGS_FAST=$(CFLAGS_COMMON) -O3
+-CFLAGS_FASTF=$(CFLAGS_COMMON) -O3 -ffast-math
+-CFLAGS_SIZE=$(CFLAGS_COMMON) -Os
+-PREFIX=/usr/local
++CFLAGS_COMMON=-I.. $(DEPCFLAGS)
++CFLAGS=$(CFLAGS_COMMON)
++CFLAGS_FAST=$(CFLAGS_COMMON)
++CFLAGS_FASTF=$(CFLAGS_COMMON) -ffast-math
++CFLAGS_SIZE=$(CFLAGS_COMMON)
++PREFIX=/usr
+ LIB=libsau.a
+ LIB_TESTS=libsau-tests.a
+ OBJ=\
+-- 
+2.39.1
+
