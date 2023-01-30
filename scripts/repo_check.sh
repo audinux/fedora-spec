@@ -833,16 +833,24 @@ fi
 for File in $REPO_LIST
 do
     echo "Processing $File"
-    LINE="$File `git ls-remote --tags $File 2>&1 | grep -v redirect | grep -Po "refs/tags/[v]?(\d+\.)+\d+" | tail --lines=1`"
-    TAGS=`echo "$LINE" | grep "refs/tags"`
-    if [ ! -z "$TAGS" ];
+    ALL_TAGS="`git ls-remote --tags $File 2>&1 | grep -v redirect | grep -Po "refs/tags/[v]?(\d+\.)+\d+" | sort | uniq`"
+    if [ ! -z "$ALL_TAGS" ];
     then
-	echo "$LINE"
-	echo "$LINE" >> git_tags_new.txt
+	for Tag in $ALL_TAGS
+	do
+	    echo "$File $Tag"
+	    echo "$File $Tag" >> git_tags_new.txt
+	done
     fi
 done
 
 if [ -f git_tags_old.txt ];
 then
+    echo -e "\n\n\n"
+    echo "==================="
+    echo "= Changes in tags ="
+    echo "===================" 
+    echo -e "\n\n\n"
+
     diff git_tags_new.txt git_tags_old.txt
 fi
