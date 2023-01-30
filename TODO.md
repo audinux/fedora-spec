@@ -71,7 +71,6 @@
 | guitarix vst            | https://github.com/brummer10/guitarix.vst |
 | ComplexNonlinearities   | https://github.com/jatinchowdhury18/ComplexNonlinearities |
 | repitch                 | https://github.com/maxwellpollack/repitch |
-| Melodrumatic            | https://github.com/usdivad/Melodrumatic |
 | Richter Tremolo         | https://github.com/jd-13/Richter-Tremolo |
 | Songbird formant filter | https://github.com/jd-13/Songbird-Formant-Filter |
 | Carve Distortion        | https://github.com/jd-13/Carve-Distortion |
