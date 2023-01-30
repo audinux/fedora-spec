@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 8e5aff81cc2253f86ad0fa3b57a63593cefa6364
-%global gittag0 2.2.2
+%global commit0 5c5e2b562acccbf338342f2704ff818ca411cd6b
+%global gittag0 2.2.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Ohmer
-Version: 2.2.2
+Version: 2.2.4
 Release: 1%{?dist}
 Summary: Ohmer plugin for Rack
 License: GPLv2+
@@ -61,7 +61,7 @@ BuildRequires: jq
 
 %description
 Ohmer plugin for Rack.
-CPU-controlled clock generator/modulator
+CPU-controlled clock generator or clock modulator
 
 %prep
 %setup -n Rack
@@ -153,5 +153,5 @@ cp -r Ohmer_plugin/dist/Ohmer/* %{buildroot}%{_libexecdir}/Rack2/plugins/Ohmer/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.4-1
 - initial specfile

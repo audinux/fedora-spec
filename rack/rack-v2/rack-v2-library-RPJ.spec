@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 f4a3a079a53aea813457f3aafeaca7bc5ec8cf1f
-%global gittag0 2.2.2
+%global commit0 0f5e1e3c724f3d887a2a368355243a0afdf83d1f
+%global gittag0 2.2.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-RPJ
-Version: 2.2.2
+Version: 2.2.3
 Release: 1%{?dist}
 Summary: RPJ plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r RPJ_plugin/dist/RPJ/* %{buildroot}%{_libexecdir}/Rack2/plugins/RPJ/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.3-1
 - initial specfile

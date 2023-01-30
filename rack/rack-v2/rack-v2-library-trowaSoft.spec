@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 1850526aa4ef5ce98c632e45de47e8223dab7370
-%global gittag0 2.0.5
+%global commit0 609c61b89b8f4190c14047f4e3b678b79c0f6eb2
+%global gittag0 2.0.7
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-trowaSoft
-Version: 2.0.5
+Version: 2.0.7
 Release: 1%{?dist}
 Summary: trowaSoft plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r trowaSoft_plugin/dist/trowaSoft/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.7-1
 - initial specfile

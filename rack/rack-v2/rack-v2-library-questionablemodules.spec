@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 e0d8f86e78b9a7b346ca9d7f2b288ebe62527cbc
-%global gittag0 2.1.5
+%global commit0 bcd7a7254def2f926a419a179c8a42bc2e39e7e7
+%global gittag0 2.1.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-questionablemodules
-Version: 2.1.5
+Version: 2.1.6
 Release: 1%{?dist}
 Summary: questionablemodules plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r questionablemodules_plugin/dist/questionablemodules/* %{buildroot}%{_libex
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.6-1
 - initial specfile
