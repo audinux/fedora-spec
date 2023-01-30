@@ -2,7 +2,7 @@
 
 Name:    improviz
 Summary: A live-coded visual performance tool
-Version: 1.0.2
+Version: 1.1
 Release: 3%{?dist}
 License: BSD
 URL:     https://github.com/rumblesan/improviz
@@ -85,6 +85,9 @@ cp -ra improviz-performance-main/* %{buildroot}/%{_datadir}/%{name}/examples/
 %{_datadir}/%{name}/*
 
 %changelog
+* Mon Jan 30 2023 Yann Collette <ycollette dot nospam at free.fr> 1.1-3
+- update to 1.1-3
+
 * Wed Dec 29 2021 Yann Collette <ycollette dot nospam at free.fr> 1.0.2-3
 - update to 1.0.2-3
 
