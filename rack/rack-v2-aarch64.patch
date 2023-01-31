@@ -1,15 +1,20 @@
-From 2c1d64c2b12bb083945583077c16d61bfecb652a Mon Sep 17 00:00:00 2001
+From fe4067f829f14578c4ff63d0d16f901b8eaba739 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Wed, 28 Dec 2022 22:40:00 +0100
+Date: Tue, 31 Jan 2023 08:48:17 +0100
 Subject: [PATCH] aarch64
 
 ---
- arch.mk               | 2 +-
- compile.mk            | 5 ++++-
- dep.mk                | 3 +++
- src/common.cpp        | 3 +++
- src/engine/Engine.cpp | 7 ++++---
- 5 files changed, 15 insertions(+), 5 deletions(-)
+ arch.mk                                 | 2 +-
+ compile.mk                              | 5 ++++-
+ dep.mk                                  | 3 +++
+ dep/nanovg/src/stb_image.h              | 3 ++-
+ dep/pffft/pffft.c                       | 3 ++-
+ dep/speexdsp/libspeexdsp/kiss_fft.h     | 3 ++-
+ dep/speexdsp/libspeexdsp/resample_sse.h | 6 ++++--
+ include/simd/common.hpp                 | 3 ++-
+ src/common.cpp                          | 3 +++
+ src/engine/Engine.cpp                   | 7 ++++---
+ 10 files changed, 27 insertions(+), 11 deletions(-)
 
 diff --git a/arch.mk b/arch.mk
 index a2a75a3..348a9b2 100644
@@ -61,6 +66,86 @@ index 41fe589..21d3c25 100644
  
  ifdef ARCH_MAC
  	DEP_MAC_SDK_FLAGS := -mmacosx-version-min=10.9
+diff --git a/dep/nanovg/src/stb_image.h b/dep/nanovg/src/stb_image.h
+index e06f7a1..c36f8ef 100644
+--- a/dep/nanovg/src/stb_image.h
++++ b/dep/nanovg/src/stb_image.h
+@@ -674,7 +674,8 @@ typedef unsigned char validate_uint32[sizeof(stbi__uint32)==4 ? 1 : -1];
+ 
+ #if !defined(STBI_NO_SIMD) && defined(STBI__X86_TARGET)
+ #define STBI_SSE2
+-#include <emmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse2.h>
+ 
+ #ifdef _MSC_VER
+ 
+diff --git a/dep/pffft/pffft.c b/dep/pffft/pffft.c
+index 1686e15..c76b964 100644
+--- a/dep/pffft/pffft.c
++++ b/dep/pffft/pffft.c
+@@ -130,7 +130,8 @@ inline v4sf ld_ps1(const float *p) { v4sf v=vec_lde(0,p); return vec_splat(vec_p
+ */
+ #elif !defined(PFFFT_SIMD_DISABLE) && (defined(__x86_64__) || defined(_M_X64) || defined(i386) || defined(_M_IX86))
+ 
+-#include <xmmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse.h>
+ typedef __m128 v4sf;
+ #  define SIMD_SZ 4 // 4 floats by simd vector -- this is pretty much hardcoded in the preprocess/finalize functions anyway so you will have to work if you want to enable AVX with its 256-bit vectors.
+ #  define VZERO() _mm_setzero_ps()
+diff --git a/dep/speexdsp/libspeexdsp/kiss_fft.h b/dep/speexdsp/libspeexdsp/kiss_fft.h
+index bb19ead..a73dfa8 100644
+--- a/dep/speexdsp/libspeexdsp/kiss_fft.h
++++ b/dep/speexdsp/libspeexdsp/kiss_fft.h
+@@ -23,7 +23,8 @@ extern "C" {
+ */
+ 
+ #ifdef USE_SIMD
+-# include <xmmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse.h>
+ # define kiss_fft_scalar __m128
+ #define KISS_FFT_MALLOC(nbytes) memalign(16,nbytes)
+ #else
+diff --git a/dep/speexdsp/libspeexdsp/resample_sse.h b/dep/speexdsp/libspeexdsp/resample_sse.h
+index 00dc294..f69a06c 100644
+--- a/dep/speexdsp/libspeexdsp/resample_sse.h
++++ b/dep/speexdsp/libspeexdsp/resample_sse.h
+@@ -34,7 +34,8 @@
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+ 
+-#include <xmmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse.h>
+ 
+ #define OVERRIDE_INNER_PRODUCT_SINGLE
+ static inline float inner_product_single(const float *a, const float *b, unsigned int len)
+@@ -72,7 +73,8 @@ static inline float interpolate_product_single(const float *a, const float *b, u
+ }
+ 
+ #ifdef USE_SSE2
+-#include <emmintrin.h>
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse2.h>
+ #define OVERRIDE_INNER_PRODUCT_DOUBLE
+ 
+ static inline double inner_product_double(const float *a, const float *b, unsigned int len)
+diff --git a/include/simd/common.hpp b/include/simd/common.hpp
+index 2a78268..5ffa7b6 100644
+--- a/include/simd/common.hpp
++++ b/include/simd/common.hpp
+@@ -1,7 +1,8 @@
+ #pragma once
+ 
+ #ifdef __SSE4_2__
+-	#include <nmmintrin.h>
++	#define SIMDE_ENABLE_NATIVE_ALIASES
++	#include <simde/x86/sse4.2.h>
+ #else
+ 	#define SIMDE_ENABLE_NATIVE_ALIASES
+ 	#include <simde/x86/sse4.2.h>
 diff --git a/src/common.cpp b/src/common.cpp
 index 4f2869c..1d865a1 100644
 --- a/src/common.cpp
@@ -76,7 +161,7 @@ index 4f2869c..1d865a1 100644
  const std::string API_URL = "https://api.vcvrack.com";
  
 diff --git a/src/engine/Engine.cpp b/src/engine/Engine.cpp
-index 453a4a0..cc8bd1d 100644
+index 4790f26..0347faa 100644
 --- a/src/engine/Engine.cpp
 +++ b/src/engine/Engine.cpp
 @@ -5,9 +5,10 @@
@@ -94,5 +179,5 @@ index 453a4a0..cc8bd1d 100644
  #include <engine/Engine.hpp>
  #include <settings.hpp>
 -- 
-2.38.1
+2.39.1
 

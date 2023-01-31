@@ -154,7 +154,7 @@ cd Airwin2Rack_plugin
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/Airwin2Rack/
 cp -r Airwin2Rack_plugin/dist/Airwin2Rack/* %{buildroot}%{_libexecdir}/Rack2/plugins/Airwin2Rack/
 
-chrpath --delete  %{buildroot}%{_libexecdir}/Rack2/plugins/Airwin2Rack/plugin.so
+chrpath --delete  %{buildroot}%{_libexecdir}/Rack2/plugins/Airwin2Rack/plugin*.so
 
 %files
 %{_libexecdir}/*
