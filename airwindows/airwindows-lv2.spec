@@ -1,5 +1,5 @@
 Name:    lv2-airwindows
-Version: 12.0
+Version: 16.0
 Release: 1%{?dist}
 Summary: Airwindows plugins (ported to LV2)
 License: GPLv3+
@@ -39,5 +39,8 @@ Find the original source code at https://github.com/airwindows/airwindows.
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Feb 01 2023 Yann Collette <ycollette.nospam@free.fr> - 16.0-1
+- update to 16.0-1
+
 * Fri Nov 18 2022 Yann Collette <ycollette.nospam@free.fr> - 12.0-1
 - Initial spec file
