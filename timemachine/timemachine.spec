@@ -1,12 +1,12 @@
 # Global variables for github repository
-%global commit0 5b663fb12afeb7e28d8c6e9aeafce73f4328c6ca
+%global commit0 6053ab0499859fce09117901ccb486c6d5de2d9f
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Summary: Audio recorder
 Name:    timemachine
 Version: 0.3.4
-Release: 5%{?dist}
+Release: 6%{?dist}
 License: GPL
 URL:     https://github.com/swh/timemachine
 
@@ -16,17 +16,18 @@ Distribution: Audinux
 Source0: https://github.com/swh/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: alsa-lib-devel
-BuildRequires: gtk2-devel
-BuildRequires: desktop-file-utils
-BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: libsndfile-devel
-BuildRequires: liblo-devel
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool
-BuildRequires: gettext-devel
 BuildRequires: intltool
+BuildRequires: make
+BuildRequires: alsa-lib-devel
+BuildRequires: gtk2-devel
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: libsndfile-devel
+BuildRequires: liblo-devel
+BuildRequires: gettext-devel
+BuildRequires: desktop-file-utils
 
 %description
 I used to always keep a minidisc recorder in my studio running in a mode where
@@ -45,7 +46,7 @@ sed -i -e "s/w64/wav/g" src/main.h
 %build
 
 ./autogen.sh
-./configure --prefix=%{_prefix}
+%configure
 %make_build
 
 %install
@@ -65,13 +66,16 @@ Categories=AudioVideo;
 EOF
 
 %files
-%doc AUTHORS ChangeLog INSTALL NEWS README
+%doc AUTHORS ChangeLog INSTALL NEWS README.md
 %license COPYING
 %{_bindir}/%{name}
 %{_datadir}/%{name}/*
 %{_datadir}/applications/*
 
 %changelog
+* Sun Feb 05 2023 Yann Collette <ycollette dot nospam at free.fr> 0.3.4-6
+- update to 0.3.4-6 - fix hangs
+
 * Sat Jul 11 2020 Yann Collette <ycollette dot nospam at free.fr> 0.3.4-5
 - remove fedora flags which make tm hangs. Still hangs under F32 
 
