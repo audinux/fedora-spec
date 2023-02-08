@@ -87,10 +87,8 @@
 | libDaisy   (for hvcc)   | https://github.com/electro-smith/libDaisy |
 | mellite                 | https://www.sciss.de/mellite/ |
 | arch realtime privilege | https://github.com/archlinux/svntogit-community/tree/packages/realtime-privileges/trunk |
-| Xenos                   | https://github.com/raphaelradna/xenos |
 | MXTune                  | https://github.com/liuanlin-mx/MXTune |
 | MXComp                  | https://github.com/liuanlin-mx/MXComp |
-| ddsp-vst                | https://github.com/tank-trax/ddsp-vst/tree/linux |
 
 ## WIP
 
