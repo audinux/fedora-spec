@@ -2,7 +2,7 @@
 
 Name:    LinVst
 Version: 4.78
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Linux Windows vst wrapper/bridge
 License: GPLv3
 URL:     https://github.com/osxmidi/linvst
@@ -69,7 +69,10 @@ cp manage/README.md %{buildroot}/%{_datadir}/%{name}/manage/
 %{_datadir}/%{name}/manage/*
 
 %changelog
-* Tue Dec 06 2022 Yann Collette <ycollette.nospam@free.fr> - 4.78-1
+* Thu Feb 09 2023 Yann Collette <ycollette.nospam@free.fr> - 4.78-3
+- update to version 4.78-3 - rebuild with wine 8.
+
+* Tue Dec 06 2022 Yann Collette <ycollette.nospam@free.fr> - 4.78-2
 - update to version 4.78-1
 
 * Sun May 15 2022 Yann Collette <ycollette.nospam@free.fr> - 4.77-1
