@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 f843b063f4e1eaf0f3856f0f3d6b5ef935219c04
-%global gittag0 2.0.3.0
+%global commit0 61a2343b4e2228427fe497b92bf610897ea251bc
+%global gittag0 2.1.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SurgeXTRack
-Version: 2.0.3.0
+Version: 2.1.1.0
 Release: 1%{?dist}
 Summary: SurgeXTRack plugin for Rack
 License: GPLv2+
@@ -32,7 +32,8 @@ Source2: SurgeXTRack_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
-BuildRequires: cmake sed
+BuildRequires: cmake
+BuildRequires: git
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsamplerate-devel
@@ -58,6 +59,7 @@ BuildRequires: libarchive-devel
 BuildRequires: libzstd-devel
 BuildRequires: Rack-v2
 BuildRequires: jq
+BuildRequires: chrpath
 
 %description
 SurgeXTRack plugin for Rack.
@@ -66,9 +68,7 @@ The Surge Filter VCFs
 %prep
 %setup -n Rack
 
-%ifarch aarch64
 %patch0 -p1
-%endif
 
 CURRENT_PATH=`pwd`
 
@@ -78,7 +78,6 @@ sed -i -e "s/-march=nehalem//g" dep.mk
 # For -O2 usage
 sed -i -e "s/-O3/-O2/g" compile.mk
 sed -i -e "s/-O3/-O2/g" dep.mk
-sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk 
 
 # Remove static gcc lib
 sed -i -e "s/-static-libstdc++ -static-libgcc//g" Makefile
@@ -139,10 +138,21 @@ tar xvfz %{SOURCE1} --directory=SurgeXTRack_plugin --strip-components=1
 
 cp -n %{SOURCE2} SurgeXTRack_plugin/plugin.json
 
+sed -i -e "s/\$(EXTRA_CMAKE)/\$(EXTRA_CMAKE) -DCMAKE_CXX_FLAGS='\$(MYCXXFLAGS)'/g" SurgeXTRack_plugin/Makefile
+sed -i -e "s/SURGE_LIBS surge-common/SURGE_LIBS surge-common jansson/g" SurgeXTRack_plugin/CMakeLists.txt
+
+sed -i -e "/,-march=nehalem/d" SurgeXTRack_plugin/RackSDK.cmake
+
 %build
 
+CURRENT_PATH=`pwd`
+MYCXXFLAGS="`pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src -Wno-error"
+%ifarch x86_64 arm64
+MYCXXFLAGS="$MYCXXFLAGS -DSIMDE_X86_AVX_NATIVE -DSIMDE_X86_SSE4_2_NATIVE -DSIMDE_X86_SSE4_1_NATIVE -DSIMDE_X86_SSSE3_NATIVE -DSIMDE_X86_SSE3_NATIVE -DSIMDE_X86_SSE2_NATIVE -DSIMDE_X86_SSE_NATIVE -DSIMDE_X86_MMX_NATIVE"
+%endif
+export MYCXXFLAGS="$MYCXXFLAGS"
+
 cd SurgeXTRack_plugin
-%make_build RACK_DIR=.. PREFIX=/usr CFLAGS=-O2 STRIP=true LIBDIR=%{_lib} dep/surge-build/src/common/libsurge-common.a
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
@@ -150,9 +160,11 @@ cd SurgeXTRack_plugin
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/SurgeXTRack/
 cp -r SurgeXTRack_plugin/dist/SurgeXTRack/* %{buildroot}%{_libexecdir}/Rack2/plugins/SurgeXTRack/
 
+chrpath --delete %{buildroot}%{_libexecdir}/Rack2/plugins/SurgeXTRack/plugin.so
+
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1.0-1
 - initial specfile

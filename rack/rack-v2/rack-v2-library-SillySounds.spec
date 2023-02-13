@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 a77645ea80473967ac6b4416629f8cb909a8577a
-%global gittag0 2.5.2
+%global commit0 51d5dee77a1a9c61be7b8c165d38cb43aec85ff4
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-alefsbits
-Version: 2.5.2
+Name:    rack-v2-SillySounds
+Version: 2.0.0
 Release: 1%{?dist}
-Summary: alefsbits plugin for Rack
+Summary: SillySounds plugin for Rack
 License: GPLv2+
-URL:     https://github.com/alefnull/alefsbits
+URL:     https://github.com/loparcog/SillySounds
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,8 +27,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/alefnull/alefsbits/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: alefsbits_plugin.json
+Source1: https://github.com/loparcog/SillySounds/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: SillySounds_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -60,8 +60,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-alefsbits plugin for Rack.
-sample & hold module using internal simplex noise source
+SillySounds plugin for Rack.
+A clock modulator for adding repeat and swing to a regular clock signal
 
 %prep
 %setup -n Rack
@@ -134,24 +134,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir alefsbits_plugin
-tar xvfz %{SOURCE1} --directory=alefsbits_plugin --strip-components=1 
+mkdir SillySounds_plugin
+tar xvfz %{SOURCE1} --directory=SillySounds_plugin --strip-components=1 
 
-cp -n %{SOURCE2} alefsbits_plugin/plugin.json
+cp -n %{SOURCE2} SillySounds_plugin/plugin.json
 
 %build
 
-cd alefsbits_plugin
+cd SillySounds_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/alefsbits/
-cp -r alefsbits_plugin/dist/alefsbits/* %{buildroot}%{_libexecdir}/Rack2/plugins/alefsbits/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/SillySounds/
+cp -r SillySounds_plugin/dist/SillySounds/* %{buildroot}%{_libexecdir}/Rack2/plugins/SillySounds/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

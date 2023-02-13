@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 f94d92b88fb95920e78893aae22ad76a0036efeb
-%global gittag0 2.0.5
+%global commit0 81c0d41e4ec43969dd0dce964d8c80978dd0f585
+%global gittag0 2.0.7
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-StochasticTelegraph
-Version: 2.0.5
+Version: 2.0.7
 Release: 1%{?dist}
 Summary: StochasticTelegraph plugin for Rack
 License: GPLv2+
@@ -61,7 +61,7 @@ BuildRequires: jq
 
 %description
 StochasticTelegraph plugin for Rack.
-Varying linear function generator. Makes sequences that change in small (or large) ways. A line defined by X/Y points, each doing a random walk.
+Generate sequences or perform math on inputs with a simple BASIC-like language.
 
 %prep
 %setup -n Rack
@@ -153,5 +153,5 @@ cp -r StochasticTelegraph_plugin/dist/StochasticTelegraph/* %{buildroot}%{_libex
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.7-1
 - initial specfile
