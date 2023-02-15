@@ -824,7 +824,8 @@ https://github.com/saugns/saugns
 https://github.com/tank-trax/ddsp-vst
 https://github.com/mikerodd/june-21
 https://github.com/zen-kernel/zen-kernel
-https://github.com/xanmod/linux"
+https://github.com/xanmod/linux
+https://github.com/GModal/vSwell"
 
 # https://github.com/ycollet/Mx44
 # https://github.com/j3ffhubb/musikernel
