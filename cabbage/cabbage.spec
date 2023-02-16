@@ -151,7 +151,6 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Cabbage.desktop
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
-
 %changelog
 * Tue Feb 14 2023 Yann Collette <ycollette.nospam@free.fr> - 2.9.0-1
 - Initial spec file
