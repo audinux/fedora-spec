@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 64f5af2e7e46045b90475090bd7735531d183c34
-%global gittag0 2.0.5
+%global commit0 20f5579b3e5123f646295f97a4c3d8419a7ee1a7
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-fruitsofkarma
-Version: 2.0.5
+Name:    rack-v2-Noise86
+Version: 2.0.0
 Release: 1%{?dist}
-Summary: fruitsofkarma plugin for Rack
+Summary: Noise86 plugin for Rack
 License: GPLv2+
-URL:     https://github.com/alexey-komarov/fruitsofkarma-vcvrack
+URL:     https://github.com/spacejoey86/Noise86
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,8 +27,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/alexey-komarov/fruitsofkarma-vcvrack/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: fruitsofkarma_plugin.json
+Source1: https://github.com/spacejoey86/Noise86/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: Noise86_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -60,8 +60,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-fruitsofkarma plugin for Rack.
-Quadro mixer with 8 inputs/4 outputs with rotation control
+Noise86 plugin for Rack.
+Probablistic trigger sequencer based of Markov chains
 
 %prep
 %setup -n Rack
@@ -134,24 +134,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir fruitsofkarma_plugin
-tar xvfz %{SOURCE1} --directory=fruitsofkarma_plugin --strip-components=1 
+mkdir Noise86_plugin
+tar xvfz %{SOURCE1} --directory=Noise86_plugin --strip-components=1 
 
-cp -n %{SOURCE2} fruitsofkarma_plugin/plugin.json
+cp -n %{SOURCE2} Noise86_plugin/plugin.json
 
 %build
 
-cd fruitsofkarma_plugin
+cd Noise86_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/fruitsofkarma/
-cp -r fruitsofkarma_plugin/dist/fruitsofkarma/* %{buildroot}%{_libexecdir}/Rack2/plugins/fruitsofkarma/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/Noise86/
+cp -r Noise86_plugin/dist/Noise86/* %{buildroot}%{_libexecdir}/Rack2/plugins/Noise86/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

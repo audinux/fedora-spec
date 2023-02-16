@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 1c610105ec8797c910d642c94dffaa2a73d75138
-%global gittag0 2.0.0
+%global commit0 b560c3f442e99c25e238dfa09e30b025089ed885
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-TyrannosaurusRu
-Version: 2.0.0
+Version: 2.1.0
 Release: 1%{?dist}
 Summary: TyrannosaurusRu plugin for Rack
 License: GPLv2+
@@ -61,7 +61,7 @@ BuildRequires: jq
 
 %description
 TyrannosaurusRu plugin for Rack.
-Recording sampler for the very short (16384 samples max) loops
+Recording sampler for the very short (65536 samples max) loops
 
 %prep
 %setup -n Rack
@@ -153,5 +153,5 @@ cp -r TyrannosaurusRu_plugin/dist/TyrannosaurusRu/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
