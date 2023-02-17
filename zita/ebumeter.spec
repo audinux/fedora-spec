@@ -4,7 +4,7 @@
 
 Summary: Loudness measurement according to EBU-R128.
 Name:    ebumeter
-Version: 0.4.2
+Version: 0.5.1
 Release: 1%{?dist}
 License: GPL
 URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
@@ -12,7 +12,7 @@ URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
+Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.xz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: jack-audio-connection-kit-devel
@@ -37,13 +37,13 @@ rm -rf $RPM_BUILD_ROOT
 sed -i 's|-O2|%{optflags}|' source/Makefile
 
 pushd source
-%make_build
+%make_build PREFIX=%{_usr}
 popd
 
 %install
 mkdir -p $RPM_BUILD_ROOT%{_mandir}/man1
 pushd source
-%make_install
+%make_install PREFIX=%{_usr}
 popd
 
 %files
@@ -53,6 +53,9 @@ popd
 %{_datadir}/ebumeter/*
 
 %changelog
+* Fri Feb 17 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.1-1
+- update to 0.5.1-1
+
 * Tue May 12 2020 Yann Collette <ycollette.nospam@free.fr> - 0.4.2-1
 - update to 0.4.2
 
