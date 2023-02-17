@@ -850,6 +850,10 @@ do
     fi
 done
 
+# Get Zita updates
+wget http://kokkinizita.linuxaudio.org/linuxaudio/downloads/index.html -O /tmp/index.html
+cat /tmp/index.html | grep -oP "(HREF|href)=\"\K.+?(?=\")" | grep tar| sort >> git_tags_new.txt
+
 if [ -f git_tags_old.txt ];
 then
     echo -e "\n\n\n"
@@ -860,3 +864,4 @@ then
 
     diff git_tags_new.txt git_tags_old.txt
 fi
+
