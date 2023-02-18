@@ -14,19 +14,20 @@
 %define maj 10
 %define min 2
 
-Name:     Impro-Visor
-Version:  %{maj}.%{min}
-Release:  2%{?dist}
-Summary:  Impro-Visor is a music notation program for jazz musicians
-License:  GPL
+Name:    Impro-Visor
+Version: %{maj}.%{min}
+Release: 3%{?dist}
+Summary: Impro-Visor is a music notation program for jazz musicians
+URL:     http://www.cs.hmc.edu/~keller/jazz/improvisor/
+License: GPL
 
 Vendor:       Audinux
 Distribution: Audinux
 
-URL:     http://www.cs.hmc.edu/~keller/jazz/improvisor/
 Source0: https://sourceforge.net/projects/impro-visor/files/Impro-Visor%2010.2%20Release/Impro-Visor_unix_%{maj}_%{min}.tar.gz
-Source1: %{name}.sh
-Source2: %{name}.png
+Source1: %{name}.png
+Source2: imaginary.zip
+Source3: impro-visor
 
 BuildArch: noarch
 
@@ -92,12 +93,18 @@ sheets for standard and jazz tunes.
 %prep
 %autosetup -n %{name}%{version}
 
+unzip %{SOURCE2}
+
 %build
 
 %install
 
 install -dm 755 %{buildroot}%{_javadir}
+install -dm 755 %{buildroot}%{_datadir}/%{name}
+
 install -m 644 improvisor.jar %{buildroot}%{_javadir}/%{name}-%{version}.jar
+
+cp -ra .install4j %{buildroot}%{_datadir}/%{name}/
 
 pushd %{buildroot}%{_javadir}
 for jar in *-%{version}*; do
@@ -105,7 +112,6 @@ for jar in *-%{version}*; do
 done
 popd
 
-install -dm 755 %{buildroot}%{_datadir}/%{name}
 for i in grammars styleExtract styles; do
     install -dm 755 %{buildroot}%{_datadir}/%{name}/$i
     install -m 644 $i/* %{buildroot}%{_datadir}/%{name}/$i
@@ -134,21 +140,23 @@ cp -a fractals/* %{buildroot}%{_datadir}/%{name}/fractals
 install -dm 755 %{buildroot}%{_datadir}/%{name}/counts
 cp -a counts/* %{buildroot}%{_datadir}/%{name}/counts
 
+install -dm 755 %{buildroot}%{_datadir}/%{name}/imaginary
+cp -a imaginary/* %{buildroot}%{_datadir}/%{name}/imaginary
+
 # startscript
 install -dm 755 %{buildroot}%{_bindir}
-install -m 755 %{SOURCE1} %{buildroot}%{_bindir}
+install -m 755 %{SOURCE3} %{buildroot}%{_bindir}
 
 # icon and menu-entry
 install -dm 755 %{buildroot}%{_datadir}/pixmaps
-install -m 644 %{SOURCE2} %{buildroot}%{_datadir}/pixmaps
+install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/pixmaps
 install -dm 755 %{buildroot}%{_datadir}/applications
 
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=Impro-Visor
 Comment=%{summary}
-Exec=improvisor.sh
+Exec=impro-visor
 Icon=%{name}
 Terminal=false
 Type=Application
@@ -169,8 +177,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %files
 %doc README.txt
 %license LICENSE.txt
-%{_bindir}/%{name}.sh
+%{_bindir}/*
 %{_javadir}/*.jar
+%{_datadir}/%{name}/.install4j/*
 %{_datadir}/%{name}/grammars/*
 %{_datadir}/%{name}/leadsheets/*
 %{_datadir}/%{name}/styles/*
@@ -182,10 +191,14 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/transforms/*
 %{_datadir}/%{name}/fractals/*
 %{_datadir}/%{name}/counts/*
+%{_datadir}/%{name}/imaginary/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png
 
 %changelog
+* Sat Feb 18 2023 Yann Collette <ycollette.nospam@free.fr> - 10.2-3
+- update to 10.2-3 - rebuild
+
 * Mon Nov 08 2021 Yann Collette <ycollette.nospam@free.fr> - 10.2-2
 - update to 10.2-2
 
