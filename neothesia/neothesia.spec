@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    neothesia
-Version: 0.0.15
+Version: 0.0.16
 Release: 1%{?dist}
 Summary: Flashy Synthesia Like Software
 License: GPLv3+
@@ -81,6 +81,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/com.githu
 %{_datadir}/metainfo/com.github.polymeilex.neothesia.metainfo.xml
 
 %changelog
+* Fri Feb 17 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.16-1
+- update to 0.0.16-1
+
 * Fri Jan 27 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.15-1
 - update to 0.0.15-1
 
