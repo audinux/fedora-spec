@@ -1,6 +1,6 @@
 Name:    sequencer64
 Version: 0.97.1
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: MIDI sequencer
 License: GPL
 URL:     https://github.com/ahlstromcj/sequencer64
@@ -20,6 +20,7 @@ BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: gtkmm24-devel
 BuildRequires: rtmidi-devel
+BuildRequires: libappstream-glib
 BuildRequires: desktop-file-utils
 
 %description
@@ -65,7 +66,10 @@ install -m 755 -d %{buildroot}/%{_datadir}/applications/
 cp debian/sequencer64.desktop %{buildroot}/%{_datadir}/applications/
 
 install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
-cp debian/sequencer64.xpm %{buildroot}/%{_datadir}/pixmaps/
+cp desktop/seq64.xpm %{buildroot}/%{_datadir}/pixmaps/sequencer64.xpm
+
+install -m 755 -d %{buildroot}%{_metainfodir}
+cp desktop/metainfo/seq64.appdata.xml %{buildroot}%{_metainfodir}/sequencer64.appdata.xml
 
 desktop-file-install                         \
   --delete-original                          \
@@ -74,6 +78,7 @@ desktop-file-install                         \
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/sequencer64.desktop
+appstream-util validate-relax --nonet %{buildroot}/%{_metainfodir}/*.appdata.xml
 
 %files
 %doc ChangeLog INSTALL NEWS README.md README.jack VERSION TODO
@@ -89,6 +94,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/sequencer64.desktop
 %{_datadir}/%{name}/doc/**
 
 %changelog
+* Sun Feb 19 2023 Yann Collette <ycollette.nospam@free.fr> - 0.97.1-4
+- update to 0.97.1-4 - add metainfo
+
 * Sun Feb 19 2023 Yann Collette <ycollette.nospam@free.fr> - 0.97.1-3
 - update to 0.97.1-3
 
