@@ -1,5 +1,5 @@
 Name:    sequencer64
-Version: 0.97.0
+Version: 0.97.1
 Release: 3%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -12,15 +12,15 @@ Source0: https://github.com/ahlstromcj/sequencer64/archive/refs/tags/%{version}.
 Source1: https://github.com/ahlstromcj/sequencer64-doc/archive/0.95.2.tar.gz#/%{name}-doc-0.95.2.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: alsa-lib-devel
-BuildRequires: gtkmm24-devel
-BuildRequires: rtmidi-devel
 BuildRequires: git
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool
-BuildRequires: pkgconfig
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: gtkmm24-devel
+BuildRequires: rtmidi-devel
+BuildRequires: desktop-file-utils
 
 %description
 Sequencer64 is a reboot of seq24, extending it with many new features.
@@ -45,16 +45,13 @@ The %{name}-doc package contains documentation for %{name}.
 
 tar xvfz %{SOURCE1}
 
-sed -i -e "1i #include <sched.h>" libseq64/src/daemonize.cpp
-
 %build
 
 %set_build_flags
 
-export CXXFLAGS="$CXXFLAGS -include string"
 sh autogen.sh
 
-%configure CXXFLAGS="$CXXFLAGS -include string"
+%configure --enable-rtmidi
 %make_build 
 
 %install
@@ -63,6 +60,20 @@ sh autogen.sh
 
 install -m 755 -d %{buildroot}/%{_datadir}/%{name}/doc/
 install -m 644 %{name}-doc-0.95.2/pdf/sequencer64-user-manual.pdf %{buildroot}%{_datadir}/%{name}/doc/
+
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+cp debian/sequencer64.desktop %{buildroot}/%{_datadir}/applications/
+
+install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
+cp debian/sequencer64.xpm %{buildroot}/%{_datadir}/pixmaps/
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/sequencer64.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/sequencer64.desktop
 
 %files
 %doc ChangeLog INSTALL NEWS README.md README.jack VERSION TODO
@@ -78,6 +89,9 @@ install -m 644 %{name}-doc-0.95.2/pdf/sequencer64-user-manual.pdf %{buildroot}%{
 %{_datadir}/%{name}/doc/**
 
 %changelog
+* Sun Feb 19 2023 Yann Collette <ycollette.nospam@free.fr> - 0.97.1-3
+- update to 0.97.1-3
+
 * Fri May 14 2021 Yann Collette <ycollette.nospam@free.fr> - 0.97.0-3
 - update to 0.97.0
 
