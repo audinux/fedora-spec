@@ -19,7 +19,7 @@
 %global debug_package %{nil}
 
 Name:    processing
-Version: 4.1.3
+Version: 4.2
 Release: 2%{?dist}
 Summary: Processing Development Environment (PDE)
 # Core is LGPL, others are GPL
@@ -29,7 +29,7 @@ Url:     https://processing.org/
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/processing/processing4/releases/download/processing-1291-%{version}/processing-%{version}-linux-x64.tgz
+Source0: https://github.com/processing/processing4/releases/download/processing-1292-%{version}/processing-%{version}-linux-x64.tgz
 Source1: %{name}.desktop
 
 AutoReqProv: no
@@ -82,6 +82,9 @@ rm -rf %{buildroot}/opt/processing/modes/java/libraries/serial/library/linux-arm
 %{_datadir}/applications/%{name}.desktop
 
 %changelog
+* Mon Feb 20 2023 Yann Collette <ycollette.nospam@free.fr> - 4.2-2
+- update to 4.2-2
+
 * Mon Feb 20 2023 Yann Collette <ycollette.nospam@free.fr> - 4.1.3-2
 - update to 4.1.3-2
 
