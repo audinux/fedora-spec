@@ -1,5 +1,5 @@
 Name:    chataigne
-Version: 1.9.5b11
+Version: 1.9.14b8
 Release: 1%{?dist}
 Summary: Artist-friendly Modular Machine for Art and Technology
 License: GPLv3
@@ -9,10 +9,11 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./chataigne-source.sh 1.9.5b11
+# $ ./source-chataigne.sh 1.9.14b8
 
 Source0: Chataigne.tar.gz
-Source1: chataigne-source.sh
+Source1: JUCE.tar.gz
+Source2: source-chataigne.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cairo-devel
@@ -21,7 +22,6 @@ BuildRequires: freetype-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: JUCE
 BuildRequires: libXrandr-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
@@ -32,6 +32,12 @@ BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: lv2-devel
+BuildRequires: openssl-devel
+BuildRequires: hidapi-devel
+BuildRequires: webkit2gtk3-devel
+BuildRequires: gtk3-devel
+BuildRequires: chrpath
+BuildRequires: desktop-file-utils
 
 %description
 Artist-friendly Modular Machine for Art and Technology
@@ -39,24 +45,49 @@ Artist-friendly Modular Machine for Art and Technology
 %prep
 %autosetup -n Chataigne
 
-Projucer5 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE/modules/
-Projucer5 --resave Chataigne.jucer
+tar xvfz %{SOURCE1}
+
+rm -rf Modules/juce_simpleweb/openssl/
+ln -s /usr/include/openssl Modules/juce_simpleweb/openssl
 
 %build
 
-# %set_build_flags
-cd Builds/LinuxMakefile
+cd JUCE/extras/Projucer/Builds/LinuxMakefile
 %make_build
+
+cd ../../../../..
+
+JUCE/extras/Projucer/Builds/LinuxMakefile/build/Projucer --resave Chataigne.jucer
+
+cd Builds/LinuxMakefile
+%make_build CPPFLAGS=-I../../../JUCE/modules
 
 %install 
 
-cd Builds/LinuxMakefile
-%make_install
+install -m 755 -d %{buildroot}%{_bindir}/
+cp -a Builds/LinuxMakefile/build/Chataigne %{buildroot}%{_bindir}/
+
+# Write desktop files
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+cp Builds/LinuxMakefile/Chataigne.AppDir/chataigne.desktop %{buildroot}/%{_datadir}/applications/
+
+install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
+cp Builds/LinuxMakefile/Chataigne.AppDir/chataigne.png %{buildroot}/%{_datadir}/pixmaps/
+
+# Install some libs
+install -m 755 -d %{buildroot}%{_libdir}/
+cp -rav Builds/LinuxMakefile/Chataigne.AppDir/usr/lib/libartnet.so* %{buildroot}%{_libdir}/
+cp -rac Builds/LinuxMakefile/Chataigne.AppDir/usr/lib/libServus.so* %{buildroot}%{_libdir}/
+
+chrpath --delete %{buildroot}%{_bindir}/Chataigne
 
 %files
 %license LICENSE
 %doc README.md
 %{_bindir}/*
+%{_libdir}/*
+%{_datadir}/pixmaps/*
+%{_datadir}/applications/*
 
 %changelog
 * Tue Mar 08 2022 Yann Collette <ycollette.nospam@free.fr> - 1.9.5b11-1
