@@ -839,7 +839,7 @@ fi
 for File in $REPO_LIST
 do
     echo "Processing $File"
-    ALL_TAGS="`git ls-remote --tags $File 2>&1 | grep -v redirect | grep -Po "refs/tags/[v]?(\d+\.)+\d+" | sort | uniq`"
+    ALL_TAGS="`git ls-remote --tags $File 2>&1 | grep -v redirect | sed -e "s/\^{}//g" | sort | uniq`"
     if [ ! -z "$ALL_TAGS" ];
     then
 	for Tag in $ALL_TAGS
