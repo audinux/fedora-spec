@@ -89,7 +89,6 @@
 | arch realtime privilege | https://github.com/archlinux/svntogit-community/tree/packages/realtime-privileges/trunk |
 | MXTune                  | https://github.com/liuanlin-mx/MXTune |
 | MXComp                  | https://github.com/liuanlin-mx/MXComp 
-| euclidean-rhythms       | https://github.com/bruno-unna/euclidean-rhythms |
 
 ## WIP
 
