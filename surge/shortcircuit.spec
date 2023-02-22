@@ -34,6 +34,7 @@ BuildRequires: freetype-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
 BuildRequires: pybind11-devel
+BuildRequires: desktop-file-utils
 
 %description
 A VST3 / CLAP Synthesizer
