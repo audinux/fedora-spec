@@ -16,6 +16,7 @@ Source1: JUCE.tar.gz
 Source2: source-chataigne.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: boost-devel
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
@@ -36,6 +37,10 @@ BuildRequires: openssl-devel
 BuildRequires: hidapi-devel
 BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
+BuildRequires: libglvnd-devel
+BuildRequires: bluez-libs-devel
+BuildRequires: SDL2-devel
+BuildRequires: libusb1-devel
 BuildRequires: chrpath
 BuildRequires: desktop-file-utils
 
@@ -52,6 +57,8 @@ ln -s /usr/include/openssl Modules/juce_simpleweb/openssl
 
 %build
 
+CURRENT_DIR=`pwd`
+
 cd JUCE/extras/Projucer/Builds/LinuxMakefile
 %make_build
 
@@ -60,7 +67,11 @@ cd ../../../../..
 JUCE/extras/Projucer/Builds/LinuxMakefile/build/Projucer --resave Chataigne.jucer
 
 cd Builds/LinuxMakefile
-%make_build CPPFLAGS=-I../../../JUCE/modules
+%ifarch aarch64
+sed -i -e "s/-m64//g" Makefile
+%endif
+
+%make_build CPPFLAGS="-I$CURRENT_DIR/JUCE/modules -I$CURRENT_DIR/External/asio/asio/"
 
 %install 
 
