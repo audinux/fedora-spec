@@ -89,6 +89,8 @@
 | arch realtime privilege | https://github.com/archlinux/svntogit-community/tree/packages/realtime-privileges/trunk |
 | MXTune                  | https://github.com/liuanlin-mx/MXTune |
 | MXComp                  | https://github.com/liuanlin-mx/MXComp 
+| aidadsp-lv2             | https://github.com/moddevices/aidadsp-lv2 |
+| dm-GrainDelay           | https://github.com/moddevices/dm-GrainDelay |
 
 ## WIP
 
