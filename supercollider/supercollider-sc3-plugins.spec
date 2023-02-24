@@ -1,12 +1,12 @@
 Summary: Collection of SuperCollider plugins
 Name:    supercollider-sc3-plugins
-Version: 3.11.1
+Version: 3.13.0
 Release: 4%{?dist}
 License: GPL
 URL:     https://github.com/supercollider/sc3-plugins/
 
 # ./supercollider-sc3-source.sh <tag>
-# ./supercollider-sc3-source.sh Version-3.11.1
+# ./supercollider-sc3-source.sh Version-3.13.0
 
 Source0: sc3-plugins.tar.gz
 Source1: supercollider-sc3-source.sh
@@ -51,6 +51,9 @@ sed -i -e "s/lib\/SuperCollider/%{_lib}\/SuperCollider/g" source/CMakeLists.txt
 %{_libdir}/SuperCollider/plugins/*
 
 %changelog
+* Fri Feb 24 2023 Yann Collette <ycollette.nospam@free.fr> 3.13.0-4
+- update to 3.13.0
+
 * Tue Nov 17 2020 Yann Collette <ycollette.nospam@free.fr> 3.11.1-4
 - update to 3.11.1
 
