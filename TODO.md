@@ -91,6 +91,8 @@
 | MXComp                  | https://github.com/liuanlin-mx/MXComp 
 | aidadsp-lv2             | https://github.com/moddevices/aidadsp-lv2 |
 | dm-GrainDelay           | https://github.com/moddevices/dm-GrainDelay |
+| Carve-Distortion        | https://github.com/jd-13/Carve-Distortion |
+| Oi-Grandad              | https://github.com/publicsamples/Oi-Grandad |
 
 ## WIP
 
