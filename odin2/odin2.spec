@@ -4,7 +4,7 @@
 
 Name:    odin2
 Version: 2.3.4
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: A VST3 Synthesizer
 License: GPLv2+
 URL:     https://github.com/TheWaveWarden/odin2
@@ -51,8 +51,28 @@ Requires: %{name}
 %description -n vst3-%{name}
 VST3 version of %{name}
 
+%package -n clap-%{name}
+Summary:  CLAP version of %{name}
+License:  GPLv2+
+Requires: %{name}
+
+%description -n clap-%{name}
+CLAP version of %{name}
+
+%package -n lv2-%{name}
+Summary:  LV2 version of %{name}
+License:  GPLv2+
+Requires: %{name}
+
+%description -n lv2-%{name}
+LV2 version of %{name}
+
 %prep
 %autosetup -p1 -n %{name}
+
+sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"/g" libs/JUCE/extras/Build/juceaide/CMakeLists.txt
+
+sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"/g" libs/JUCELV2/extras/Build/juceaide/CMakeLists.txt
 
 %ifarch aarch64
 sed -i -e "s/-msse2//g" Odin.jucer
@@ -62,34 +82,24 @@ sed -i -e "s/-m64//g" Odin.jucer
 %build
 
 %set_build_flags
-
-export CXXFLAGS="-include utility $CXXFLAGS"
-export HOME=`pwd`
-mkdir -p .vst3
-mkdir -p .local/share/Odin2
-
-# VST3 part
-
-Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
-Projucer60 --resave Odin.jucer
-
-cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
-
-mv build build_vst3
+%cmake -DCMAKE_CXX_FLAGS="-include utility -fPIC $CXXFLAGS"
+%cmake_build
 
 %install 
 
-install -m 755 -d %{buildroot}%{_libdir}/vst3/Odin2.vst3/
-install -m 755 -d %{buildroot}%{_libdir}/lv2/Odin2_.lv2/
+install -m 755 -d %{buildroot}%{_libdir}/vst3/
+install -m 755 -d %{buildroot}%{_libdir}/lv2/
+install -m 755 -d %{buildroot}%{_libdir}/clap/
 install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 -d %{buildroot}%{_datadir}/odin2/Soundbanks/
 
 cp -r Soundbanks/* %{buildroot}%{_datadir}/odin2/Soundbanks/
 rm %{buildroot}%{_datadir}/odin2/Soundbanks/User\ Patches/.gitignore 
 
-install -m 755 -p Builds/LinuxMakefile/build_vst3/Odin2 %{buildroot}/%{_bindir}/
-cp -ra Builds/LinuxMakefile/build_vst3/Odin2.vst3/* %{buildroot}/%{_libdir}/vst3/Odin2.vst3/
+install -m 755 -p %{__cmake_builddir}/Odin2_artefacts/Standalone/Odin2 %{buildroot}/%{_bindir}/
+cp -ra %{__cmake_builddir}/Odin2_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/Odin2_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/Odin2_artefacts/CLAP/* %{buildroot}/%{_libdir}/clap/
 
 install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
 cp screenshot.png %{buildroot}/%{_datadir}/pixmaps/%{name}.png
@@ -100,9 +110,9 @@ cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
 Encoding=UTF-8
 Name=%name
-Exec=%{name}
+Exec=Odin2
 Icon=/usr/share/pixmaps/%{name}
-Comment=Odin 2
+Comment=Odin 2 Synthesizer
 Terminal=false
 Type=Application
 Categories=AudioVideo;Audio;Music;
@@ -124,7 +134,16 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
+%files -n lv2-%{name}
+%{_libdir}/lv2/*
+
+%files -n clap-%{name}
+%{_libdir}/clap/*
+
 %changelog
+* Sat Feb 25 2023 Yann Collette <ycollette.nospam@free.fr> - 2.3.4-5
+- update to 2.3.4-5 - fix desktop file - use cmake
+
 * Tue Aug 09 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3.4-4
 - update to 2.3.4-4
 
