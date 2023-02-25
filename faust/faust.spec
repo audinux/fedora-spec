@@ -4,7 +4,7 @@
 
 Name:	 faust
 Version: 2.54.9
-Release: 35%{?dist}
+Release: 26%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
 # The rest is GPLv2+
@@ -115,123 +115,24 @@ signal processing. These libraries are part of the standard Faust libraries.
 %prep
 %autosetup -n faust
 
-# For installation in the correct location and for preserving timestamps:
-# The Makefile normally puts noarch files in $prefix/lib. We change
-# this to $prefix/share
-# Also don't build the osclib until upstream supports shared libs
-#	-e '/osclib/d'				\
-sed -i	-e 's|/lib/|/share/|g'			\
-	-e 's| -r | -pr |'			\
-	-e 's| -m | -pm |'			\
-	Makefile
-sed -i 's|/lib|/share|g' compiler/parser/enrobage.cpp
-
-# Fix optflags
-sed -i 's|-O3|%{optflags} -fPIC	|' compiler/parser/Makefile \
-			architecture/osclib/oscpack/Makefile
-
-# Fix permissions
-chmod -x compiler/draw/device/SVGDev.* architecture/VST/PkgInfo
-chmod +x tools/faust2appls/faust2*
-chmod -x tools/faust2pd/faust2*
-
-# fix usage.sh
-for Files in `grep -l usage.sh tools/faust2appls/*`
-do
-  sed -i -e "s/usage.sh/\/usr\/share\/faust\/usage.sh/g" $Files
-done
-
-# Fix encoding
-for i in examples syntax-highlighting; do
-    iconv -f iso8859-1 -t utf8 $i/README.md -o tmpfile
-    touch -r $i/README.md tmpfile
-    mv -f tmpfile $i/README.md
-done
-
-# To distinguish doc files
-mv architecture/osclib/faust/changelog.txt architecture/osclib/faust/changelog.faustOSC.txt
-mv architecture/osclib/faust/license.txt   architecture/osclib/faust/license.faustOSC.txt
-
-for i in CHANGES LICENSE README TODO; do
-    mv architecture/osclib/oscpack/$i architecture/osclib/oscpack/$i.osscpack.txt
-done
-
-# install lib in the good directory
-sed -i -e "s/\$(BUILDLOCATION)\/lib/\$(BUILDLOCATION)\/%{_lib}/g" Makefile
-
 %build
 
-%set_build_flags
-
-# Build the main executable
-%make_build PREFIX=%{_prefix} LIBDIR=%{_libdir} MODE=SHARED
-cd architecture/osclib/oscpack
-%make_build PREFIX=%{_prefix} LIBDIR=%{_libdir} MODE=SHARED lib
+cd build
+%cmake -DINCLUDE_DYNAMIC=ON -DLIBSDIR=%{_lib}
+%cmake_build
 
 %install
-mkdir -p %{buildroot}/%{_bindir}
-mkdir -p %{buildroot}/%{_datadir}/%{name}
-mkdir -p %{buildroot}/%{_libdir}
-%make_install PREFIX=%{_prefix} LIBDIR=%{_libdir} INCLUDEDIR=%{_includedir}
-
-# install liboscpack manually
-pushd .
-cd architecture/osclib/oscpack
-cp liboscpack.so.1.1.0 %{buildroot}/%{_libdir}
-cd %{buildroot}/%{_libdir}
-ln -s liboscpack.so.1.1.0 liboscpack.so.1
-ln -s liboscpack.so.1 liboscpack.so
-popd
-
-# Install tools
-cp -a tools/%{name}2sc-*/%{name}2sc %{buildroot}/%{_bindir}
-mv tools/%{name}2sc-*/README README.supercollider
-
-cp -a tools/%{name}2appls/%{name}2* %{buildroot}/%{_bindir}
-
-# Install the kate plugin
-mkdir -p %{buildroot}/%{_datadir}/kde4/apps/katepart/syntax/
-cp -a syntax-highlighting/%{name}.xml %{buildroot}/%{_datadir}/kde4/apps/katepart/syntax/
-
-# move the .a library
-%ifarch x86_64 amd64
-  mkdir -p %{buildroot}/%{_libdir}/
-  mv %{buildroot}/usr/lib/*.a %{buildroot}/%{_libdir}/
-%endif
-
-# install library
-cd libraries
-export PATH=../tools/faust2appls/:$PATH
-
-mkdir -p %{buildroot}/%{_datadir}/faust/
-cp *.lib old/*.lib %{buildroot}/%{_datadir}/faust/
-
-mkdir -p %{buildroot}/%{_datadir}/faust/doc/
-cp doc/library.pdf %{buildroot}/%{_datadir}/faust/doc/
-
-mv README.md README-stdlib.md
-
-# remove some wasm files (not yet correctly managed by rpm):
-rm -f %{buildroot}%{_datadir}/faust/webaudio/audioinput.wasm
-rm -f %{buildroot}%{_datadir}/faust/webaudio/libfaust-glue.wasm
-rm -f %{buildroot}%{_datadir}/faust/webaudio/libfaust-wasm.wasm
-rm -f %{buildroot}%{_datadir}/faust/webaudio/mixer32.wasm
-rm -f %{buildroot}%{_datadir}/faust/webaudio/mixer64.wasm
-rm -f %{buildroot}%{_datadir}/faust/webaudio/noise.wasm
-rm -f %{buildroot}%{_datadir}/faust/webaudio/organ.wasm
-rm -f %{buildroot}%{_datadir}/faust/webaudio/osc.wasm
-
-rm -rf %{buildroot}%{_datadir}/faust/max-msp/sndfile
+cd build
+%cmake_install
 
 rm -f %{buildroot}/%{_libdir}/ios-libsndfile.a
-rm -f %{buildroot}/usr/lib/ios-libsndfile.a
 
-rm -f %{buildroot}%{_datadir}/faust/android/app/lib/libsndfile/lib/*/libsndfile.so
-
-mv -f %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
-
-
-%ldconfig_scriptlets osclib
+# Fix usage.sh
+mv %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/%{name}/
+for Files in `grep -l usage.sh %{buildroot}/%{_bindir}/`
+do
+  sed -i -e "s/usage.sh/%{_datadir}/%{name}/usage.sh/g" $Files
+done
 
 %files
 %doc README.md examples
@@ -258,7 +159,7 @@ mv -f %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
 %doc documentation/* 
 
 %files tools
-%doc tools/README.md README.supercollider tools/%{name}2pd
+%doc tools/README.md tools/%{name}2pd
 %{_bindir}/%{name}2*
 %{_bindir}/encoderunitypackage
 %{_bindir}/faustoptflags
@@ -268,16 +169,13 @@ mv -f %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/faust/
 %{_bindir}/faustremote
 %{_bindir}/faust-config
 
-%files kate
-%doc syntax-highlighting/README.md
-%{_datadir}/kde4/apps/katepart/syntax/%{name}.xml
-
 %files stdlib
-%doc libraries/README-stdlib.md
-%{_datadir}/faust/doc/library.pdf
 %{_datadir}/faust/*.lib
 
 %changelog
+* Fri Feb 23 2023 Yann Collette <ycollette.nospam@free.fr> - 2.50.6-26
+- update to 2.50.6-26 - use cmake to build
+
 * Tue Oct 04 2022 Yann Collette <ycollette.nospam@free.fr> - 2.50.6-25
 - update to 2.50.6-25
 
