@@ -3,7 +3,7 @@
 # Category: Audio
 
 Name:    sonobus
-Version: 1.6.1
+Version: 1.6.2
 Release: 3%{?dist}
 Summary: A peer to peer audio application
 License: GPLv2+
@@ -51,11 +51,6 @@ VST3 version of %{name}
 
 %prep
 %autosetup -n %{name}-%{version}
-
-# Fix build of juceaide on f36
-#sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"/g" deps/juce/extras/Build/juceaide/CMakeLists.txt
-#sed -i -e "/OUTPUT_VARIABLE/d" deps/juce/extras/Build/juceaide/CMakeLists.txt
-#sed -i -e "s/--config Debug/--config Debug --verbose/g" deps/juce/extras/Build/juceaide/CMakeLists.txt
 
 %build
 
@@ -109,6 +104,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/sonobus.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Feb 26 2023 Yann Collette <ycollette.nospam@free.fr> - 1.6.2-3
+- update to 1.6.2-3
+
 * Wed Jan 18 2023 Yann Collette <ycollette.nospam@free.fr> - 1.6.1-3
 - update to 1.6.1-3
 
