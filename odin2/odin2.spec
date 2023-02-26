@@ -20,15 +20,13 @@ Source1: odin-sources.sh
 Patch0:  odin2-0001-soundbanks-in-share.patch
 
 BuildRequires: gcc gcc-c++
-BuildRequires: python2
+BuildRequires: cmake
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-#BuildRequires: JUCE == 6.0.1
-BuildRequires: JUCE60
 BuildRequires: libXrandr-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
@@ -73,11 +71,6 @@ LV2 version of %{name}
 sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"/g" libs/JUCE/extras/Build/juceaide/CMakeLists.txt
 
 sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"/g" libs/JUCELV2/extras/Build/juceaide/CMakeLists.txt
-
-%ifarch aarch64
-sed -i -e "s/-msse2//g" Odin.jucer
-sed -i -e "s/-m64//g" Odin.jucer
-%endif
 
 %build
 
