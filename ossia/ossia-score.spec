@@ -25,7 +25,11 @@ BuildRequires: qt5-qtwebsockets-devel
 BuildRequires: qt5-qtdeclarative-devel
 BuildRequires: qt5-qttools
 BuildRequires: qt5-qtserialport-devel
-BuildRequires: compat-ffmpeg4-devel
+%if 0%{?fedora} >= 36
+Buildrequires: compat-ffmpeg4-devel
+%else
+BuildRequires: ffmpeg-devel
+%endif
 BuildRequires: portmidi-devel
 BuildRequires: portaudio-devel
 BuildRequires: lilv-devel
