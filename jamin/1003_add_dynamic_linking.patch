@@ -1,0 +1,18 @@
+Description: Link with -ldl to prevent FTBFS with binutils-gold.
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=554928
+Author: Jonas Smedegaard <dr@jones.dk>
+---
+ configure.in |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- jamin.orig/configure.in
++++ jamin/configure.in
+@@ -112,7 +112,7 @@
+   libdir='${exec_prefix}/'${libnn}
+ fi
+ 
+-JAMIN_LIBS="$FFTW_LIBS $XML_LIBS $JACK_LIBS $OSC_LIBS"
++JAMIN_LIBS="$FFTW_LIBS $XML_LIBS $JACK_LIBS $OSC_LIBS -ldl"
+ AC_SUBST(JAMIN_LIBS)
+ JAMIN_CFLAGS="-g $FFTW_CFLAGS $JACK_CFAGS $XML_CFLAGS $OSC_CFLAGS"
+ AC_SUBST(JAMIN_CFLAGS)

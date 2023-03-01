@@ -1,0 +1,9 @@
+Description: Add a copule of files to potfiles skip
+Author: Nilesh Patra <nilesh@debian.org>
+Last-Update: 2022-12-18
+--- /dev/null
++++ b/po/POTFILES.skip
+@@ -0,0 +1,3 @@
++controller/jamincont_1912.c
++jam-ui.glade
++src/limiter-ui.c

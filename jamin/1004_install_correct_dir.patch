@@ -1,0 +1,24 @@
+Description: Install files into /usr/lib instead of /usr/lib64.
+Author: Alexander Reichle-Schmehl <tolimar@debian.org>
+Bug-Debian: http://bugs.debian.org/588554
+Forwarded: no
+---
+ configure.in |    7 -------
+ 1 file changed, 7 deletions(-)
+
+--- jamin.orig/configure.in
++++ jamin/configure.in
+@@ -100,13 +100,6 @@
+ AM_GLIB_GNU_GETTEXT
+ 
+ libnn=lib
+-case "${host_os}" in
+-  linux*)
+-  case "${host_cpu}" in
+-    x86_64|mips64|ppc64|sparc64|s390x)
+-    libnn=lib64
+-  esac
+-esac
+ 
+ if test "${libdir}" = '${exec_prefix}/lib'; then
+   libdir='${exec_prefix}/'${libnn}

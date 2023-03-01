@@ -1,39 +1,39 @@
 Name:    jamin
 Summary: JACK Audio Connection Kit (JACK) Audio Mastering interface
-Version: 0.97.16
-Release: 21.20201014cvs%{?dist}
+Version: 0.98.9
+Release: 1%{?dist}
 License: GPLv2+
 URL:     http://jamin.sourceforge.net
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: %{name}-%{version}-20201014cvs.tar.bz2
-# To fetch the sources:
-Source1: %{name}-snapshot.sh
-# Fix DSO-linking failure
-# http://sourceforge.net/tracker/?func=detail&aid=2948900&group_id=78441&atid=553292
-Patch0:  %{name}-linking.patch
-# Spectrum views enhancement & small eq fixes
-# http://sourceforge.net/tracker/?func=detail&aid=1902205&group_id=78441&atid=553292
-Patch1:  %{name}-spectrum.patch
-# Fix FTBFS with GCC 10
-Patch2:  %{name}-gcc10.patch
+Source0: https://salsa.debian.org/multimedia-team/jamin/-/archive/upstream/0.98.9_git20170111_199091_repack1/jamin-upstream-0.98.9_git20170111_199091_repack1.tar.gz#/%{name}-%{version}.tar.gz
+Patch0: 1003_add_dynamic_linking.patch
+Patch1: 1004_install_correct_dir.patch
+Patch2: 1005_desktop_file.patch
+Patch3: add-potfiles.patch
+Patch4: fix_typos.patch
+Patch5: jamin-gcc10.patch
+Patch6: jamin-spectrum.patch
+Patch7: NEWS.patch
 
 BuildRequires: gcc make
-BuildRequires: desktop-file-utils
-BuildRequires: fftw-devel
+BuildRequires: autoconf
 BuildRequires: gettext
-BuildRequires: gtk2-devel
 BuildRequires: intltool
+BuildRequires: libtool
+BuildRequires: fftw-devel
+BuildRequires: gtk3-devel
 BuildRequires: jack-audio-connection-kit-devel 
 BuildRequires: ladspa-devel
 BuildRequires: liblo-devel
-BuildRequires: libtool
 BuildRequires: libxml2-devel 
 BuildRequires: perl-XML-Parser 
+BuildRequires: desktop-file-utils
 
 Requires:      ladspa-swh-plugins
+# Add ladspa-foo (not packaged anymore) as a Requires
 
 %description
 JAMin is the JACK Audio Connection Kit (JACK) Audio Mastering interface. JAMin
@@ -41,7 +41,7 @@ is designed to perform professional audio mastering of any number of input
 streams. It uses LADSPA for its backend DSP work, specifically the swh plugins.
 
 %prep
-%autosetup -p 1
+%autosetup -p1 -n jamin-upstream-0.98.9_git20170111_199091_repack1
 
 # .desktop file fixes:
 # Add GenericName
@@ -94,6 +94,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/mime/packages/%{name}.xml
 
 %changelog
+* Wed Mar 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.98.9-1
+- update to last debian package + patches
+
 * Wed Oct 14 2020 Yann Collette <ycollette.nospam@free.fr> - 0.97.16-21.20201014cvs
 - update for fedora 33
 

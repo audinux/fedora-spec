@@ -1,0 +1,11 @@
+Description: patch in required NEWS file
+ it was accidentally stripped from upstream during repack
+Author: IOhannes m zmölnig
+Forwarded: not-needed
+Last-Update: 2017-01-11
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- /dev/null
++++ jamin/NEWS
+@@ -0,0 +1 @@
++Switched from GTK2 to GTK3/clutter
