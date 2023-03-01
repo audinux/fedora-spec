@@ -1,6 +1,6 @@
 Name:    cabbage
 Version: 2.9.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Framework for developing audio plugins with the Csound programming language.
 URL:     https://github.com/rorywalsh/cabbage
 License: GPLv3+
@@ -100,6 +100,10 @@ cp -rav build_CabbagePluginEffect/CabbagePluginEffect_artefacts/Debug/VST3/* %{b
 cp build_CabbagePluginMidiEffect/CabbagePluginMidiEffect_artefacts/Debug/Standalone/* %{buildroot}/%{_bindir}/
 cp build_CabbagePluginMidiEffect/CabbagePluginMidiEffect_artefacts/Debug/VST/* %{buildroot}/%{_libdir}/vst/
 cp -rav build_CabbagePluginMidiEffect/CabbagePluginMidiEffect_artefacts/Debug/VST3/* %{buildroot}/%{_libdir}/vst3/
+
+# Cabbage install of VST / VST3 files in the binary directory (required)
+cp build_CabbagePluginSynth/CabbagePluginSynth_artefacts/Debug/VST/libCabbagePluginSynth.so %{buildroot}/%{_bindir}/CabbagePluginSynth.so
+cp build_CabbagePluginEffect/CabbagePluginEffect_artefacts/Debug/VST/libCabbagePluginEffect.so %{buildroot}/%{_bindir}/CabbagePluginEffect.so
 
 #cp build_CLIConverter/CLIConverter_artefacts/Debug/* %{buildroot}/%{_bindir}/
 
