@@ -21,6 +21,7 @@ Patch0:  odin2-0001-soundbanks-in-share.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
+BuildRequires: lv2-devel
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
