@@ -13,6 +13,12 @@ BuildRequires: gcc gcc-c++ gcc-objc
 BuildRequires: cmake
 BuildRequires: libsamplerate-devel
 BuildRequires: fftw-devel
+BuildRequires: libcurl
+BuildRequires: freetype-devel
+BuildRequires: webkit2gtk3-devel
+BuildRequires: gtk3-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: JUCE
 
 %description
 Imogen is a low-latency pitch shifter designed to function as an instrument
@@ -24,10 +30,15 @@ suite of built-in mixing effects.
 %autosetup -n %{name}-%{commit0}
 
 %build
+
+# AllLemonsModules missing
+# BVBrandFlags missing
+
 %cmake
 %cmake_build
 
 %install
+
 %cmake_install
 
 %files
