@@ -1,7 +1,7 @@
 Name:    jamin
 Summary: JACK Audio Connection Kit (JACK) Audio Mastering interface
 Version: 0.98.9
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPLv2+
 URL:     http://jamin.sourceforge.net
 
@@ -43,13 +43,6 @@ streams. It uses LADSPA for its backend DSP work, specifically the swh plugins.
 %prep
 %autosetup -p1 -n jamin-upstream-0.98.9_git20170111_199091_repack1
 
-# .desktop file fixes:
-# Add GenericName
-sed -i 's|\(GenericName=\)|\1Jack Audio Mastering|' data/%{name}.desktop.in
-
-# Remove extension from the icon (as required by freedesktop.org)
-sed -i 's|\.svg||' data/%{name}.desktop.in
-
 %build
 
 NOCONFIGURE=indeed ./autogen.sh
@@ -61,18 +54,37 @@ NOCONFIGURE=indeed ./autogen.sh
 %make_install
 
 # move icon to the proper freedesktop location
-mkdir -p %{buildroot}%{_datadir}/icons/hicolor/scalable/apps
+install -m 755 -d %{buildroot}%{_datadir}/icons/hicolor/scalable/apps
 mv %{buildroot}%{_datadir}/icons/%{name}.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
 
-# desktop file categories
-BASE="Audio"
-XTRA="X-Multitrack X-DigitalProcessing X-Jack"
+# Write desktop files
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
 
-%{__mkdir} -p %{buildroot}%{_datadir}/applications
-desktop-file-install                            \
-  --dir %{buildroot}%{_datadir}/applications    \
-  `for c in ${BASE} ${XTRA} ; do echo "--add-category $c " ; done` \
-  %{buildroot}%{_datadir}/applications/%{name}.desktop
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
+[Desktop Entry]
+Name=JAMin
+Name[cz]=JAMin
+Name[fr]=JAMin
+Name[ru]=JAMin
+GenericName=Jack Audio Mastering
+Comment=JACK Audio Mastering interface
+Comment[cz]=JACK Audio Mastering interface
+Comment[fr]=Interface de masterisation JACK Audio
+Comment[ru]=JAMin -- приложение для мастеринга звука
+Keywords=audio;sound;mastering;ladspa
+Exec=jamin
+Icon=jamin
+MimeType=application/x-jamin;
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+EOF
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 # Kill .la file(s)
 rm -f %{buildroot}%{_libdir}/ladspa/*.la
@@ -94,6 +106,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/mime/packages/%{name}.xml
 
 %changelog
+* Thu Mar 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.98.9-2
+- fix desktop file
+
 * Wed Mar 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.98.9-1
 - update to last debian package + patches
 
