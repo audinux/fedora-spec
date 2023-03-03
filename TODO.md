@@ -96,6 +96,7 @@
 
 ## WIP
 
+```
 protrekkr2 (update to 2.6.3)
 mephisto (needs faust library)
 midi2voice (code doesn't install correctly)
@@ -103,6 +104,7 @@ gammou (not the good version of rtaudio))
 imogen (needs juce cmake file)
 rack-v2-RPJ  -> needs a specific aarch64 patch for intrin.h
 june-21 -> package cabbage and use it to build a shipped binary
+```
 
 ## Check Sourceforge
 
@@ -174,9 +176,11 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/*%{name}.*.xml
 ```
 
+```
 polyphone
 faustworks
 vsxu
+```
 
 ## Install appdata.xml files:
 
@@ -188,8 +192,10 @@ install -m 755 -d %{buildroot}/%{_datadir}/appdata/
 
 ## Add distribution information
 
+```
 Vendor:       Audinux
 Distribution: Audinux
+```
 
 ## Check before packaging:
 
@@ -212,6 +218,7 @@ remove -march=native from Makefiles if it's present
 
 ### Tag:
 
+```
 Analyzer, Compressor, Effect, Emulator, Delay, Drum, Jack, Alsa
 Editor, Legacy, Live, Effect, Gate, Graphic, Guitar, Amp Simul
 Delay, Overdrive, Cabinet, Equalizer, Convolution, Octaver
@@ -219,15 +226,20 @@ MIDI, Tablature, Phaser, Tape, Tracker, Reverb, Presets
 Sfz, Sf2, Sf3, Monitoring, Video, Organ, PM, Sequencer
 Keyboard, Library, OSC, Mixer, Modular, Rack, Sampler, Session
 Synthesizer, Loop
+```
 
 ### Type:
 
+```
 Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, Pipewire, Presets, Rack, Language
+```
 
 ### Category:
 
+```
 Audio, DAW, Effect, Synthesizer, MIDI, Programming, Sampler, Sequencer
 Graphic, Tool, Session Mngmt
+```
 
 ### Specs to update:
 
