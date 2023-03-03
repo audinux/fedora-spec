@@ -2,9 +2,11 @@
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer
 
+%global commit0 609a19e6aa4b097138a68ca0631801266d005258
+
 Name: spectmorph
 Version: 0.5.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: SpectMorph is a free software project which allows to analyze samples of musical instruments, and to combine them (morphing)
 URL: http://www.spectmorph.org
 License: GPLv2+
@@ -12,11 +14,17 @@ License: GPLv2+
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: http://www.spectmorph.org/files/releases/spectmorph-%{version}.tar.bz2
+Source0: https://github.com/swesterfeld/spectmorph/archive/%{commit0}.zip#/%{name}-%{commit0}.zip
 Patch0: spectmorph-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
+BuildRequires: gettext
+BuildRequires: autoconf
+BuildRequires: autoconf-archive
+BuildRequires: automake
+BuildRequires: libtool
+BuildRequires: glibc-common
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: glib2-devel
@@ -27,6 +35,7 @@ BuildRequires: cairo-devel
 BuildRequires: libsndfile-devel
 BuildRequires: fftw-devel
 BuildRequires: simde-devel
+BuildRequires: chrpath
 BuildRequires: desktop-file-utils
 
 %description
@@ -45,8 +54,32 @@ Requires: %{name} = %{version}-%{release}
 %description devel
 The %{name}-devel package contains header files for %{name}.
 
+%package -n vst-%{name}
+Summary:  VST2 version of %{name}
+License:  GPLv2+
+Requires: %{name}
+
+%description -n vst-%{name}
+VST2 version of %{name}
+
+%package -n lv2-%{name}
+Summary:  LV2 version of %{name}
+License:  GPLv2+
+Requires: %{name}
+
+%description -n lv2-%{name}
+VST3 version of %{name}
+
+%package -n clap-%{name}
+Summary:  CLAP version of %{name}
+License:  GPLv2+
+Requires: %{name}
+
+%description -n clap-%{name}
+CLAP version of %{name}
+
 %prep
-%setup -n %{name}-%{version}
+%setup -n spectmorph-%{commit0}
 
 %ifarch aarch64
 %patch0 -p1
@@ -55,23 +88,32 @@ The %{name}-devel package contains header files for %{name}.
 # Fix desktop file
 sed -i -e "s/Icon=smjack.png/Icon=smjack/g" data/smjack.desktop
 sed -i -e "s/Midi//g" data/smjack.desktop
+sed -i -e "/AM_ICONV/d" configure.ac
 
+%ifarch aarch64
 # Disable some compilation flags
 sed -i -e "s/-msse -msse2 -msse3 -mmmx//g" configure
 sed -i -e "s/-O3/-O2/g" configure
+%endif
 
 %build
 
-%configure --prefix=%{_prefix} --with-lv2 --with-jack --with-qt --libdir=%{_libdir}
+autoreconf --install
+# ./autogen.sh
+
+./configure --prefix=%{_prefix} --with-lv2 --with-jack --with-qt --libdir=%{_libdir}
 
 sed -i 's|^hardcode_libdir_flag_spec=.*|hardcode_libdir_flag_spec=""|g' libtool
 sed -i 's|^runpath_var=LD_RUN_PATH|runpath_var=DIE_RPATH_DIE|g' libtool
 
-%make_build VERBOSE=1
+# %make_build VERBOSE=1
+make VERBOSE=1
 
 %install
 
 %make_install
+
+chrpath --delete %{buildroot}/%{_libdir}/clap/SpectMorph.clap
 
 # install smjack.desktop properly.
 desktop-file-install --vendor '' \
@@ -96,8 +138,20 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %files devel
 %{_includedir}/%{name}/*
 
+%files -n lv2-%{name}
+%{_libdir}/lv2/*
+
+%files -n vst-%{name}
+%{_libdir}/vst/*
+
+%files -n clap-%{name}
+%{_libdir}/clap/*
+
 %changelog
-* Wed  Jan 26 2022 Yann Collette <ycollette.nospam@free.fr> - 0.5.2-1
+* Wed Mar 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.2-2
+- update to 0.5.2-2 - update to 609a19e6aa4b097138a68ca0631801266d005258
+
+* Wed Jan 26 2022 Yann Collette <ycollette.nospam@free.fr> - 0.5.2-1
 - update to 0.5.2-1
 
 * Thu Feb 13 2020 Yann Collette <ycollette.nospam@free.fr> - 0.5.1-1
