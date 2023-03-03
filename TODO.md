@@ -225,20 +225,20 @@ Delay, Overdrive, Cabinet, Equalizer, Convolution, Octaver
 MIDI, Tablature, Phaser, Tape, Tracker, Reverb, Presets
 Sfz, Sf2, Sf3, Monitoring, Video, Organ, PM, Sequencer
 Keyboard, Library, OSC, Mixer, Modular, Rack, Sampler, Session
-Synthesizer, Loop
+Synthesizer, Loop, Tool
 ```
 
 ### Type:
 
 ```
-Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, Pipewire, Presets, Rack, Language
+Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, CLAP, Pipewire, Presets, Rack, Language
 ```
 
 ### Category:
 
 ```
 Audio, DAW, Effect, Synthesizer, MIDI, Programming, Sampler, Sequencer
-Graphic, Tool, Session Mngmt
+Graphic, Tool, Session Mngmt, Plugin
 ```
 
 ### Specs to update:
