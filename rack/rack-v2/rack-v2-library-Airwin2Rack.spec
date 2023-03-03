@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 045b7dd9f6837097b5c2001cd5e7cf44edbeac50
-%global gittag0 2.1.0
+%global commit0 87a2bd679d5bedfb00a151862ef1e5161effddb9
+%global gittag0 2.2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Airwin2Rack
-Version: 2.1.0
+Version: 2.2.0
 Release: 1%{?dist}
 Summary: Airwin2Rack plugin for Rack
 License: GPLv2+
@@ -58,7 +58,6 @@ BuildRequires: libarchive-devel
 BuildRequires: libzstd-devel
 BuildRequires: Rack-v2
 BuildRequires: jq
-BuildRequires: chrpath
 
 %description
 Airwin2Rack plugin for Rack.
@@ -160,5 +159,5 @@ chrpath --delete  %{buildroot}%{_libexecdir}/Rack2/plugins/Airwin2Rack/plugin*.s
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
 - initial specfile

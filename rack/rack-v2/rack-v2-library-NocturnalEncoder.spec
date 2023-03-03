@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 5421ff57c0170705440b3b8f542e2f676ff60dfe
-%global gittag0 1.0.0
+%global commit0 7008233b9990fa8bc2749857cdb76260313fe7c8
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-NocturnalEncoder
-Version: 1.0.0
+Version: 2.0.0
 Release: 1%{?dist}
 Summary: NocturnalEncoder plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r NocturnalEncoder_plugin/dist/NocturnalEncoder/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile
