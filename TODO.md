@@ -96,7 +96,6 @@
 
 ## WIP
 
-drops
 protrekkr2 (update to 2.6.3)
 mephisto (needs faust library)
 midi2voice (code doesn't install correctly)

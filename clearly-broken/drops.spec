@@ -24,11 +24,14 @@ BuildRequires: alsa-lib-devel
 BuildRequires: ladspa-devel
 BuildRequires: lv2-devel
 BuildRequires: freetype-devel
+BuildRequires: cairo-devel
+BuildRequires: libglvnd-devel
 BuildRequires: libX11-devel
 BuildRequires: libXft-devel
 BuildRequires: libXrandr-devel
 BuildRequires: libXinerama-devel
 BuildRequires: libXcursor-devel
+BuildRequires: xorg-x11-proto-devel
 BuildRequires: libsndfile-devel
 BuildRequires: desktop-file-utils
 
@@ -70,8 +73,10 @@ cp -ra bin/drops.lv2/* %{buildroot}/%{_libdir}/lv2/drops.lv2/
 %doc README.md
 %license LICENSE
 %{_bindir}/%{name}
+
 %files -n lv2-drops
 %{_libdir}/lv2/*
+
 %files -n vst3-drops
 %{_libdir}/vst3/*
 
