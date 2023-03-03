@@ -829,7 +829,8 @@ https://github.com/GModal/vSwell
 https://github.com/pierreguillot/Camomile
 https://github.com/GuitarML/PrincePedal
 https://github.com/bsutherland/JuceOPLVSTi
-https://github.com/FigBug/SN76489"
+https://github.com/FigBug/SN76489
+https://github.com/GrandOrgue/grandorgue"
 
 # https://github.com/ycollet/Mx44
 # https://github.com/j3ffhubb/musikernel

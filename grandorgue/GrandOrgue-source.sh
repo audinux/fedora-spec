@@ -1,8 +1,13 @@
 #!/bin/bash
 
-# ./GrandOrgue-source.sh <rev>
-# ./GrandOrgue-source.sh 2330
+# Usage: ./grandorgue-sources.sh <TAG>
+# ./grandorgue-sources.sh v2.3.4
 
-svn export -r $1 http://svn.code.sf.net/p/ourorgan/svn/trunk ourorgan-$1
-tar cvfz ourorgan-$1.tar.gz ourorgan-$1
-rm -rf ourorgan-$1
+git clone https://github.com/GrandOrgue/grandorgue
+cd grandorgue
+git checkout $1
+git submodule update --init --recursive
+find . -name .git -exec rm -rf {} \;
+cd ..
+tar cvfz grandorgue.tar.gz grandorgue/*
+rm -rf grandorgue
