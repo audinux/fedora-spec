@@ -231,6 +231,7 @@ Graphic, Tool, Session Mngmt
 
 ### Specs to update:
 
+```
 improviz/context-free.spec
 improviz/improviz.spec
 IR/IR.spec
@@ -373,18 +374,11 @@ zrythm/reproc.spec
 zrythm/zlfo.spec
 zrythm/zplugins.spec
 zrythm/ztoolkit.spec
-
-## ZITA:
-
-zita-avc1-0.1.0.tar.bz2
-zita-jclient-0.4.2.tar.bz2
-zita-audiotools-1.0.0.tar.bz2
-zita-jacktools-1.5.3.tar.bz2        Requires zita-jclient, zita-convolver and zita-audiotools
-g2reverb-0.7.1.tar.bz2
-hoafilt.tar.bz2
+```
 
 ## Add desktop files
 
+```
 dgedit
 drumgizmo
 sfizz
@@ -393,41 +387,43 @@ improviz
 juce
 cadence
 carla
+```
 
 ## Add *.sh files
 
 ## To be fixed:
 
+```
 Bambootracker         -> pulseaudio pb
 azr3                  -> gtkmm / glibmm detection
 vsxu                  -> nullptr comparison
 rack-v1-VCV-Prototype -> vult file not available
 purr-data             -> a config.h is missing
 lives-mao             -> calloc problem -> check upstream
-
+```
 
 ## To be added back to repo
 
+```
 pulseaudio-module-jack
 fluidsynth-dssi
 hydrogen-drumkit-AVL-BlackPearl-4A
 swami
 ladspa-wasp-plugins
 pyliblo missing lv2-fil-plugins
-nekobee-dssi
-whysynth-dssi
-xsynth-dssi
-hexter-dssi
 solfege
+```
 
 ## regular update
 
+```
 mda-lv2
 ninjam -> there is a github repo now ...
 premake -> moved on github: https://github.com/premake
 psi-plugins -> another active github repository: https://github.com/psi-im/plugins
 resources -> try to find other IR (https://github.com/jpcima/HybridReverb2-impulse-response-database)
 ryukau -> update to last master
+```
 
 Check https://github.com/Chowdhury-DSP
 
@@ -436,7 +432,9 @@ Check chpath usage and use patchelf if required (it's required in bespokesynth)
 ## Kernel
 
 Add support for aarch64 built.
+
 Fix these warning:
+```
 Duplicate build-ids /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/lib/modules/5.15.70-rt50.fc35.x86_64/vmlinuz and
                     /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/boot/vmlinuz-5.15.70-rt50.fc35.x86_64
 absolute symlink: /lib/modules/5.15.70-rt50.fc35.x86_64/build -> /usr/src/kernels/5.15.70-rt50.fc35.x86_64
@@ -450,9 +448,11 @@ Duplicate build-ids /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50
                     /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/entry/vdso/vdso32.so
 Duplicate build-ids /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/tools/objtool/fixdep and
                     /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/tools/bpf/resolve_btfids/fixdep
+```
 
 # Check on src.fedora
 
+```
 zynjack
 mhwaveedit
 check leiningen
@@ -461,3 +461,4 @@ jack-rack
 hydrogen-drumkits
 gwave
 gtick
+```
