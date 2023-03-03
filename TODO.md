@@ -89,10 +89,11 @@
 | arch realtime privilege | https://github.com/archlinux/svntogit-community/tree/packages/realtime-privileges/trunk |
 | MXTune                  | https://github.com/liuanlin-mx/MXTune |
 | MXComp                  | https://github.com/liuanlin-mx/MXComp 
-| aidadsp-lv2             | https://github.com/moddevices/aidadsp-lv2 |
 | dm-GrainDelay           | https://github.com/moddevices/dm-GrainDelay |
 | Carve-Distortion        | https://github.com/jd-13/Carve-Distortion |
 | Oi-Grandad              | https://github.com/publicsamples/Oi-Grandad |
+| ultimatevocalremovergui | https://github.com/Anjok07/ultimatevocalremovergui |
+| SickBeatBetty           | https://github.com/jthwho/SickBeatBetty |
 
 ## WIP
 
@@ -104,6 +105,58 @@ gammou (not the good version of rtaudio))
 imogen (needs juce cmake file)
 rack-v2-RPJ  -> needs a specific aarch64 patch for intrin.h
 june-21 -> package cabbage and use it to build a shipped binary
+
+## Check Sourceforge
+
+Check if these projects have been moved to github or not:
+
+```
+wavbreaker/wavbreaker.spec
+bristol/bristol.spec
+linuxsampler/libgig.spec
+linuxsampler/qsampler.spec
+rack/rack-v1/VCVRecorder-Makefile
+portsmf/portsmf.spec
+mammut/mammut_0001-fix-juce-encoding.patch
+russolo/russolo.spec
+dssi/fluidsynth-dssi/fluidsynth-dssi.spec
+dssi/xsynth-dssi/xsynth-dssi.spec
+tuxguitar/tuxguitar-1.3.spec
+jack-director/cyclone.spec
+jack-director/jack-director.spec
+minicomputer/minicomputer.spec
+goatracker/goatracker.spec
+chordv/chordv.spec
+hydrogen/hydrogen-drumkits.spec
+kmidimon/kmidimon.spec
+rezound/rezound.spec
+rakarrack/rakarrack.spec
+milkdrop/milkdrop-presets.spec
+lives/LiVES.appdata.xml
+web/list.js
+scripts/git_tags_new.txt
+scripts/repo_check.sh
+scripts/git_tags_old.txt
+mv-6pm/mv-6pm.spec
+mandelbulber2/mandelbulber2.spec
+lv2/lv2-triceratops.spec
+lv2/plotmm.spec
+lv2/lv2-EQ10Q-plugins.spec
+lv2/eq10q_0006-Fix-lv2-types.patch
+jackctlmmc/jackctlmmc.spec
+padthv1/padthv1.spec
+structuresynth/structuresynth.spec
+structuresynth/structure-synth.1
+psindustrializer/psindustrializer.appdata.xml
+psindustrializer/psindustrializer.spec
+ams/ams.spec
+impro-visor/improvisor.spec
+premake/premake4.spec
+premake/premake3.spec
+xjadeo/xjadeo.spec
+drc/drc.spec
+cm/cm.spec
+```
 
 ## Cleanup
 
