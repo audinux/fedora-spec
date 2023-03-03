@@ -93,7 +93,6 @@
 | Carve-Distortion        | https://github.com/jd-13/Carve-Distortion |
 | Oi-Grandad              | https://github.com/publicsamples/Oi-Grandad |
 | ultimatevocalremovergui | https://github.com/Anjok07/ultimatevocalremovergui |
-| SickBeatBetty           | https://github.com/jthwho/SickBeatBetty |
 
 ## WIP
 
