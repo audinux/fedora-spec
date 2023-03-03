@@ -100,7 +100,6 @@
 protrekkr2 (update to 2.6.3)
 mephisto (needs faust library)
 midi2voice (code doesn't install correctly)
-gammou (not the good version of rtaudio))
 imogen (needs juce cmake file)
 rack-v2-RPJ  -> needs a specific aarch64 patch for intrin.h
 june-21 -> package cabbage and use it to build a shipped binary
