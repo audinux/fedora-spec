@@ -1,3 +1,7 @@
+# Tag: Tool, Rack
+# Type: Plugin, VST3, LV2, Standalone
+# Category: Audio, Effect, Synthesizer, Tool
+
 %define _lto_cflags %{nil}
 
 %global pname carla

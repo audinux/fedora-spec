@@ -1,3 +1,7 @@
+# Tag: Jack, Alsa, Modular
+# Type: Standalone
+# Category: Audio, DAW, Sequencer
+
 Name:    chataigne
 Version: 1.9.14b8
 Release: 1%{?dist}

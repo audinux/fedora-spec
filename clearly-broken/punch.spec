@@ -1,3 +1,7 @@
+# Tag: Compressor
+# Type: Plugin, LV2, VST3
+# Category: Audio, Effect
+
 %global commit0 3969dc2fda5afe856a2a515de5c14b345f6891d1
 
 Name: punch

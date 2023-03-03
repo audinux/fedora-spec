@@ -1,3 +1,7 @@
+# Tag: Tool
+# Type: Plugin, LV2, VST
+# Category: Audio, Tool, Programming
+
 Name:    cabbage
 Version: 2.9.0
 Release: 2%{?dist}

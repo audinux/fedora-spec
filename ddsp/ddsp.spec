@@ -1,3 +1,7 @@
+# Tag: Synthesizer, Effect
+# Type: Standalone, VST3
+# Category: Synthesizer, Effect
+
 Name:    ddsp
 Version: 1.1.0
 Release: 1%{?dist}

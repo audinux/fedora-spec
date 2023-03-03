@@ -1,3 +1,7 @@
+# Tag: Jack, Alsa, Editor
+# Type: Standalone
+# Category: Audio, Sequencer
+
 Name:    chordv
 Version: 1.2
 Release: 1%{?dist}

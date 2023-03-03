@@ -1,3 +1,7 @@
+# Tag: Tool
+# Type: Plugin, VST3, Standalone
+# Category: Audio, Tool, Programming
+
 Name:    camomile
 Version: 1.0.7
 Release: 1%{?dist}

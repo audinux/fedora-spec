@@ -1,3 +1,7 @@
+# Tag: Effect, Delay
+# Type: VST3
+# Category: Effect
+
 Name:    delay-architect
 Version: 0.1
 Release: 1%{?dist}

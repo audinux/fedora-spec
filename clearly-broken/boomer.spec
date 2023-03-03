@@ -1,3 +1,7 @@
+# Tag: Drum, Synthesizer
+# Type: Plugin, LV2, VST3
+# Category: Plugin
+
 %global commit0 1916d46a2823d0f091edf545666058456c93b004
 
 Name: boomer
