@@ -1,3 +1,7 @@
+# Tag: MIDI, Synthesizer
+# Type: Standalone, VST3
+# Category: Audio, Synthesizer
+
 Name:    aeolus_plugin
 Version: 0.1.12.1
 Release: 2%{?dist}

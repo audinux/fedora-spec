@@ -1,3 +1,7 @@
+# Tag: Jack, Alsa, Synthesizer
+# Type: Standalone
+# Category: Synthesizer
+
 Name:       bristol
 Version:    0.60.11
 Release:    20%{dist}

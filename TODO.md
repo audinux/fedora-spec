@@ -212,17 +212,17 @@ remove -march=native from Makefiles if it's present
 
 ### Tag:
 
-Analyzer, Compressor, Emulator, Delay, Drum, Jack, Alsa
+Analyzer, Compressor, Effect, Emulator, Delay, Drum, Jack, Alsa
 Editor, Legacy, Live, Effect, Gate, Graphic, Guitar, Amp Simul
 Delay, Overdrive, Cabinet, Equalizer, Convolution, Octaver
 MIDI, Tablature, Phaser, Tape, Tracker, Reverb, Presets
 Sfz, Sf2, Sf3, Monitoring, Video, Organ, PM, Sequencer
 Keyboard, Library, OSC, Mixer, Modular, Rack, Sampler, Session
-Synthesizer
+Synthesizer, Loop
 
 ### Type:
 
-Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, Presets, Rack, Language
+Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, Pipewire, Presets, Rack, Language
 
 ### Category:
 

@@ -1,4 +1,4 @@
-# Tag: Reverb, Compressor, Equalizer
+# Tag: Effect
 # Type: Plugin, VST
 # Category: Audio, Effect
 

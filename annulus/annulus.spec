@@ -1,3 +1,7 @@
+# Tag: Loop, Jack
+# Type: Standalone
+# Category: Audio, Sampler
+
 %define commit0 e5bc560f957c7897c22b10171d4e57738bb17cf9
 
 Name:    annulus

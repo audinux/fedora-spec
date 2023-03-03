@@ -1,3 +1,7 @@
+# Tag: Effect
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 Name:    lv2-airwindows
 Version: 16.0
 Release: 1%{?dist}

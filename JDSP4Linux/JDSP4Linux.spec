@@ -1,3 +1,7 @@
+# Tag: Effect
+# Type: Pipewire
+# Category: Effect
+
 Name: jamesdsp
 Version: 2.3
 Release: 2%{?dist}
