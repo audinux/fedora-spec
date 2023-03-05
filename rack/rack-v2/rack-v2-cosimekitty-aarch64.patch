@@ -1,28 +1,28 @@
-From 6d0dcb2866f63f485986ce2f501a36a0014ebd54 Mon Sep 17 00:00:00 2001
+From 4d4445daba2b6a553d889aa28471619a2df7d653 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Fri, 25 Nov 2022 08:14:06 +0100
-Subject: [PATCH] aarch54
+Date: Sun, 5 Mar 2023 18:04:32 +0100
+Subject: [PATCH] cosimetry
 
 ---
  CosineKitty-Sapphire_plugin/src/sapphire_engine.hpp | 5 ++++-
  1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/CosineKitty-Sapphire_plugin/src/sapphire_engine.hpp b/CosineKitty-Sapphire_plugin/src/sapphire_engine.hpp
-index 1abb47d..4ca45ac 100644
+index 5bb7bfa..a477a65 100644
 --- a/CosineKitty-Sapphire_plugin/src/sapphire_engine.hpp
 +++ b/CosineKitty-Sapphire_plugin/src/sapphire_engine.hpp
-@@ -6,7 +6,10 @@
- #include <algorithm>
- #include <vector>
- #include <stdexcept>
+@@ -17,7 +17,10 @@
+ #define SIMDE_ENABLE_NATIVE_ALIASES
+ #include "simde/x86/sse4.2.h"
+ #else
 -#include <pmmintrin.h>
 +#define SIMDE_ENABLE_NATIVE_ALIASES
 +#include <simde/x86/sse3.h>
 +#include <simde/x86/sse2.h>
 +#include <simde/x86/sse.h> 
+ #endif
  
- namespace Sapphire
- {
+ #else
 -- 
-2.38.1
+2.39.2
 

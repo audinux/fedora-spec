@@ -58,6 +58,7 @@ BuildRequires: libarchive-devel
 BuildRequires: libzstd-devel
 BuildRequires: Rack-v2
 BuildRequires: jq
+BuildRequires: chrpath
 
 %description
 Airwin2Rack plugin for Rack.
