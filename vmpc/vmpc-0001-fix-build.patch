@@ -1,0 +1,77 @@
+From 8a3d1729558dfc9ec2faf2907b2cf88055818059 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Tue, 31 Jan 2023 22:54:51 +0100
+Subject: [PATCH] fix build
+
+---
+ editables/akaifat/CMakeLists.txt          | 1 -
+ editables/ctoot/CMakeLists.txt            | 1 -
+ editables/ctoot/src/main/mpc/MpcVoice.hpp | 2 ++
+ editables/moduru/CMakeLists.txt           | 1 -
+ editables/mpc/CMakeLists.txt              | 1 -
+ 5 files changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/editables/akaifat/CMakeLists.txt b/editables/akaifat/CMakeLists.txt
+index 4885966..5705290 100644
+--- a/editables/akaifat/CMakeLists.txt
++++ b/editables/akaifat/CMakeLists.txt
+@@ -15,7 +15,6 @@ FetchContent_MakeAvailable(Catch2)
+ project(akaifat)
+ 
+ set(CMAKE_CXX_STANDARD 17)
+-set(CMAKE_CXX_FLAGS "-fPIC")
+ 
+ if(APPLE)
+   set(CMAKE_OSX_DEPLOYMENT_TARGET "10.11" CACHE INTERNAL "Minimum OS X deployment version")
+diff --git a/editables/ctoot/CMakeLists.txt b/editables/ctoot/CMakeLists.txt
+index efc4c0e..e62051b 100644
+--- a/editables/ctoot/CMakeLists.txt
++++ b/editables/ctoot/CMakeLists.txt
+@@ -21,7 +21,6 @@ FetchContent_MakeAvailable(moduru Catch2)
+ project(ctoot)
+ 
+ set(CMAKE_CXX_STANDARD 17)
+-set(CMAKE_CXX_FLAGS "-fPIC")
+ 
+ if(APPLE)
+   set(CMAKE_OSX_DEPLOYMENT_TARGET "10.11" CACHE INTERNAL "Minimum OS X deployment version")
+diff --git a/editables/ctoot/src/main/mpc/MpcVoice.hpp b/editables/ctoot/src/main/mpc/MpcVoice.hpp
+index e83dd4c..0facb71 100644
+--- a/editables/ctoot/src/main/mpc/MpcVoice.hpp
++++ b/editables/ctoot/src/main/mpc/MpcVoice.hpp
+@@ -3,6 +3,8 @@
+ #include <audio/core/AudioProcess.hpp>
+ #include "MpcMuteInfo.hpp"
+ 
++#include <atomic>
++
+ namespace ctoot::control {
+ class FloatControl;
+ class BooleanControl;
+diff --git a/editables/moduru/CMakeLists.txt b/editables/moduru/CMakeLists.txt
+index ed36c0c..fdbfd5e 100644
+--- a/editables/moduru/CMakeLists.txt
++++ b/editables/moduru/CMakeLists.txt
+@@ -13,7 +13,6 @@ FetchContent_Declare(rapidjson
+ project(moduru)
+ 
+ set(CMAKE_CXX_STANDARD 17)
+-set(CMAKE_CXX_FLAGS "-fPIC")
+ 
+ if(APPLE)
+   set(CMAKE_OSX_DEPLOYMENT_TARGET "10.11" CACHE INTERNAL "Minimum OS X deployment version")
+diff --git a/editables/mpc/CMakeLists.txt b/editables/mpc/CMakeLists.txt
+index a4a0667..574a0f2 100644
+--- a/editables/mpc/CMakeLists.txt
++++ b/editables/mpc/CMakeLists.txt
+@@ -77,7 +77,6 @@ endif()
+ project(mpc)
+ 
+ set(CMAKE_CXX_STANDARD 17)
+-set(CMAKE_CXX_FLAGS "-fPIC")
+ 
+ if(APPLE)
+   set(CMAKE_OSX_DEPLOYMENT_TARGET "10.11" CACHE INTERNAL "Minimum OS X deployment version")
+-- 
+2.39.1
+
