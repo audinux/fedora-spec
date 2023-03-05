@@ -6,7 +6,7 @@
 Name:    solfege
 Version: 3.23.5~pre2
 Release: 11%{?dist}
-Summary: Music education software
+Summary: Ear training program for music students
 
 License: GPLv3
 URL:     https://www.gnu.org/software/solfege/
@@ -23,7 +23,7 @@ BuildRequires: texinfo
 BuildRequires: swig
 BuildRequires: gettext
 BuildRequires: docbook-style-xsl
-BuildRequires: python3-gobject-base
+BuildRequires: python3-gobject-devel
 BuildRequires: libxslt
 BuildRequires: itstool
 BuildRequires: txt2man
@@ -33,6 +33,8 @@ BuildRequires: git
 Requires: timidity++
 Requires: python3
 Requires: bash
+Requires: python3-gobject
+Requires: gtk3
 
 %description
 Solfege is free music education software. Use it to train your rhythm,
@@ -52,6 +54,9 @@ autoreconf -if
 %configure --enable-docbook-stylesheet=`ls %{_datadir}/sgml/docbook/xsl-stylesheets-1.*/html/chunk.xsl` --disable-oss-sound
 %make_build
 
+# build html docs
+%{__make} update-manual
+
 %install
 
 %make_install
@@ -59,6 +64,9 @@ autoreconf -if
 #permissions
 chmod 0755 %{buildroot}%{_datadir}/solfege/solfege/parsetree.py
 chmod 0755 %{buildroot}%{_datadir}/solfege/solfege/presetup.py
+
+# Delete backup files with trailing ~
+find %{buildroot}%{_datadir}/solfege -name '*~' -delete
 
 #Change encoding to UTF-8
 for f in AUTHORS README ; do
