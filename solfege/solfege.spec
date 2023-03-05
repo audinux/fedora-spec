@@ -4,16 +4,17 @@
 %global debug_package %{nil}
 
 Name:    solfege
-Version: 3.23.5~pre2
+Version: 3.23.5pre2
 Release: 11%{?dist}
 Summary: Ear training program for music students
-
 License: GPLv3
 URL:     https://www.gnu.org/software/solfege/
-Source0: https://git.savannah.gnu.org/cgit/solfege.git/snapshot/solfege-3.23.5pre2.tar.gz
+
+Source0: https://git.savannah.gnu.org/cgit/solfege.git/snapshot/solfege-%{version}.tar.gz
 # Fix startup issue on F17+ (BZ 832764):
 # Correctly determine the PREFIX even if solfege is executed as /bin/solfege
 Patch0: solfege-3.20.6-prefix.patch
+Patch1: solfege-update-python-shebang.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -41,11 +42,7 @@ Solfege is free music education software. Use it to train your rhythm,
 interval, scale and chord skills. Solfege - Smarten your ears!
 
 %prep
-%setup -q -n solfege-3.23.5pre2
-%patch0 -F 2 -p1 -b .prefix
-
-# Change shebangs with unversioned python to python3
-find . -name '*.py' -exec sed -i -e '1s|^#!/usr/bin/python$|#!/usr/bin/python3|' '{}' \;
+%autosetup -p1 -n solfege-%{version}
 
 %build
 autoreconf -if
@@ -74,6 +71,9 @@ for f in AUTHORS README ; do
 		mv -f ${f}.tmp ${f} || \
 		rm -f ${f}.tmp
 done
+
+# Fix shebang
+sed -i -e "1s|^#!/usr/bin/python$|#!/usr/bin/python3|" %{buildroot}/%{_bindir}/solfege
 
 %find_lang %{name}
 

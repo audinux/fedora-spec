@@ -1,0 +1,198 @@
+From 9f847efe054a61f6be4512beb305cf4b874ceb47 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 5 Mar 2023 15:05:27 +0100
+Subject: [PATCH] update python shebang
+
+---
+ lessonfile_editor.py           | 2 +-
+ solfege/parsetree.py           | 2 +-
+ solfege/presetup.py            | 2 +-
+ test/seq.py                    | 2 +-
+ test/soundbug.py               | 2 +-
+ test/soundcard-test.py         | 2 +-
+ tools/create_depgraph.py       | 2 +-
+ tools/depgraph2dot.py          | 2 +-
+ tools/find_prefixed_strings.py | 2 +-
+ tools/fix_eps.py               | 2 +-
+ tools/fix_feta.py              | 2 +-
+ tools/get-gtk-files.py         | 2 +-
+ tools/lf2lb.py                 | 2 +-
+ tools/missing-screenshots.py   | 2 +-
+ tools/mk-classhier-graph.py    | 2 +-
+ tools/mypydoc.py               | 2 +-
+ tools/screenshot.py            | 2 +-
+ 17 files changed, 17 insertions(+), 17 deletions(-)
+
+diff --git a/lessonfile_editor.py b/lessonfile_editor.py
+index 68634a9..afdba99 100755
+--- a/lessonfile_editor.py
++++ b/lessonfile_editor.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ # GNU Solfege - free ear training software
+ # Copyright (C) 2004, 2005, 2006, 2011, 2016  Tom Cato Amundsen
+ #
+diff --git a/solfege/parsetree.py b/solfege/parsetree.py
+index f228370..dbd398c 100644
+--- a/solfege/parsetree.py
++++ b/solfege/parsetree.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ 
+ """
+ literal ::=  stringliteral | integer | floatnumber
+diff --git a/solfege/presetup.py b/solfege/presetup.py
+index 27d7dc5..6eb898f 100644
+--- a/solfege/presetup.py
++++ b/solfege/presetup.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ # GNU Solfege - free ear training software
+ # Copyright (C) 2007, 2008, 2011, 2016  Tom Cato Amundsen
+ #
+diff --git a/test/seq.py b/test/seq.py
+index f4db2e0..23a0ada 100755
+--- a/test/seq.py
++++ b/test/seq.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python2.3
++#!/usr/bin/python3
+ 
+ import sys, os
+ if os.getcwdu()[-4:] == "test":
+diff --git a/test/soundbug.py b/test/soundbug.py
+index d1f0cd6..fb7e88e 100755
+--- a/test/soundbug.py
++++ b/test/soundbug.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ """
+ This script demonstrates a bug or something I don't understand about
+ the old OSS (not 4.1). 
+diff --git a/test/soundcard-test.py b/test/soundcard-test.py
+index d25c09e..858616e 100755
+--- a/test/soundcard-test.py
++++ b/test/soundcard-test.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ import sys
+ sys.path.insert(0, ".")
+ from solfege import i18n
+diff --git a/tools/create_depgraph.py b/tools/create_depgraph.py
+index c077867..b74f902 100755
+--- a/tools/create_depgraph.py
++++ b/tools/create_depgraph.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ 
+ import pprint
+ import sys
+diff --git a/tools/depgraph2dot.py b/tools/depgraph2dot.py
+index 7b76f90..d594bc9 100755
+--- a/tools/depgraph2dot.py
++++ b/tools/depgraph2dot.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ # Copyright 2004 Toby Dickenson
+ #
+ # Permission is hereby granted, free of charge, to any person obtaining
+diff --git a/tools/find_prefixed_strings.py b/tools/find_prefixed_strings.py
+index d9b0584..e1c0604 100755
+--- a/tools/find_prefixed_strings.py
++++ b/tools/find_prefixed_strings.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ """
+ Used to sanity check prefixes used in lesson files.
+ """
+diff --git a/tools/fix_eps.py b/tools/fix_eps.py
+index 7228da6..7cd69fd 100644
+--- a/tools/fix_eps.py
++++ b/tools/fix_eps.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python2.4
++#!/usr/bin/python3
+ 
+ import sys
+ 
+diff --git a/tools/fix_feta.py b/tools/fix_feta.py
+index 7430b93..b7a2f76 100755
+--- a/tools/fix_feta.py
++++ b/tools/fix_feta.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ 
+ # This program is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License as published by
+diff --git a/tools/get-gtk-files.py b/tools/get-gtk-files.py
+index 522884f..15dea11 100644
+--- a/tools/get-gtk-files.py
++++ b/tools/get-gtk-files.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ import sys
+ import urllib
+ import os
+diff --git a/tools/lf2lb.py b/tools/lf2lb.py
+index 6aa9b6c..7729f23 100755
+--- a/tools/lf2lb.py
++++ b/tools/lf2lb.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ 
+ # This program is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License as published by
+diff --git a/tools/missing-screenshots.py b/tools/missing-screenshots.py
+index e898053..d0fe3bc 100644
+--- a/tools/missing-screenshots.py
++++ b/tools/missing-screenshots.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ 
+ import os
+ import glob
+diff --git a/tools/mk-classhier-graph.py b/tools/mk-classhier-graph.py
+index e5df6f5..e3313df 100755
+--- a/tools/mk-classhier-graph.py
++++ b/tools/mk-classhier-graph.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ 
+ import re
+ import sys
+diff --git a/tools/mypydoc.py b/tools/mypydoc.py
+index e3c5e3c..d1fde69 100755
+--- a/tools/mypydoc.py
++++ b/tools/mypydoc.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ 
+ """
+ This is a wrapper around the pydoc script. It is necessary to use this on
+diff --git a/tools/screenshot.py b/tools/screenshot.py
+index 30225ad..9190bb4 100755
+--- a/tools/screenshot.py
++++ b/tools/screenshot.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ 
+ import os
+ import sys
+-- 
+2.39.2
+

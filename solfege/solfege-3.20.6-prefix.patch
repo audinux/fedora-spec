@@ -1,12 +1,25 @@
-diff -uNr solfege-3.20.6.old/run-solfege.py.in solfege-3.20.6/run-solfege.py.in
---- solfege-3.20.6.old/run-solfege.py.in	2012-06-13 20:45:14.000000000 +0200
-+++ solfege-3.20.6/run-solfege.py.in	2012-09-03 01:34:43.308277957 +0200
-@@ -27,7 +27,7 @@
- import traceback
- import textwrap
+From 8567fa5df35c2dc7c3932b45a32f2f6e878ea68d Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 5 Mar 2023 14:52:53 +0100
+Subject: [PATCH] change abspath
+
+---
+ run-solfege.py.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/run-solfege.py.in b/run-solfege.py.in
+index d7fbb4c..8cfd17b 100644
+--- a/run-solfege.py.in
++++ b/run-solfege.py.in
+@@ -26,7 +26,7 @@ builtins.__dict__['start_time'] = time.time()
+ import sys
+ import os
  
 -prefix =  os.path.split(os.path.dirname(os.path.abspath(sys.argv[0])))[0]
 +prefix =  os.path.split(os.path.dirname(os.path.realpath(sys.argv[0])))[0]
  if sys.platform == 'win32':
      s = os.path.normpath(prefix)
-     os.environ['PATH']=r"%s;%s\bin;%s\lib" % (s, s, s)
+ os.chdir(os.path.join(prefix, "share", "solfege"))
+-- 
+2.39.2
+
