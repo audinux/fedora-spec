@@ -4,13 +4,13 @@
 %global debug_package %{nil}
 
 Name:    solfege
-Version: 3.23.4
+Version: 3.23.5~pre2
 Release: 11%{?dist}
 Summary: Music education software
 
 License: GPLv3
 URL:     https://www.gnu.org/software/solfege/
-Source0: https://alpha.gnu.org/gnu/solfege/solfege-%{version}.tar.gz
+Source0: https://git.savannah.gnu.org/cgit/solfege.git/snapshot/solfege-3.23.5pre2.tar.gz
 # Fix startup issue on F17+ (BZ 832764):
 # Correctly determine the PREFIX even if solfege is executed as /bin/solfege
 Patch0: solfege-3.20.6-prefix.patch
@@ -38,7 +38,7 @@ Solfege is free music education software. Use it to train your rhythm,
 interval, scale and chord skills. Solfege - Smarten your ears!
 
 %prep
-%setup -q
+%setup -q -n solfege-3.23.5pre2
 %patch0 -F 2 -p1 -b .prefix
 
 %build
@@ -84,6 +84,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_mandir}/man?/*
 
 %changelog
+* Sun Mar 05 2023 Justin Koh <j@ustink.org> - 3.23.5~pre2-11
+- update to 3.23.5~pre2-11
+
 * Wed Nov 02 2022 Yann Collette <ycollette.nospam@free.fr> - 3.23.4-11
 - update to 3.23.4-11
 
