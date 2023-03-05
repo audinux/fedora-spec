@@ -1,59 +1,72 @@
 # This package depends on automagic byte compilation
 # https://fedoraproject.org/wiki/Changes/No_more_automagic_Python_bytecompilation_phase_2
-%global  py_byte_compile 1
+%global py_byte_compile 1
 %global debug_package %{nil}
 
 Name:    solfege
-Version: 3.23.4
+Version: 3.23.5~pre2
 Release: 11%{?dist}
-Summary: Music education software
+Summary: Ear training program for music students
 
 License: GPLv3
 URL:     https://www.gnu.org/software/solfege/
-Source0: https://alpha.gnu.org/gnu/solfege/solfege-%{version}.tar.gz
+Source0: https://git.savannah.gnu.org/cgit/solfege.git/snapshot/solfege-3.23.5pre2.tar.gz
 # Fix startup issue on F17+ (BZ 832764):
 # Correctly determine the PREFIX even if solfege is executed as /bin/solfege
 Patch0: solfege-3.20.6-prefix.patch
 
 BuildRequires: gcc
 BuildRequires: make
+BuildRequires: automake
 BuildRequires: python3-devel
 BuildRequires: texinfo
 BuildRequires: swig
 BuildRequires: gettext
 BuildRequires: docbook-style-xsl
-BuildRequires: pygtk2-devel >= 2.12
-BuildRequires: python3-gobject-base
+BuildRequires: python3-gobject-devel
 BuildRequires: libxslt
+BuildRequires: itstool
 BuildRequires: txt2man
 BuildRequires: desktop-file-utils
+BuildRequires: git
 
 Requires: timidity++
-Requires: pygtk2 >= 2.12
 Requires: python3
 Requires: bash
+Requires: python3-gobject
+Requires: gtk3
 
 %description
 Solfege is free music education software. Use it to train your rhythm,
 interval, scale and chord skills. Solfege - Smarten your ears!
 
 %prep
-%setup -q
+%setup -q -n solfege-3.23.5pre2
 %patch0 -F 2 -p1 -b .prefix
 
-%build
+# Change shebangs with unversioned python to python3
+find . -name '*.py' -exec sed -i -e '1s|^#!/usr/bin/python$|#!/usr/bin/python3|' '{}' \;
 
-export INSTALL="%{__install} -c -p"
-#override hardocded path
+%build
+autoreconf -if
+
+#override hardcoded path
 %configure --enable-docbook-stylesheet=`ls %{_datadir}/sgml/docbook/xsl-stylesheets-1.*/html/chunk.xsl` --disable-oss-sound
 %make_build
+
+# build html docs
+%{__make} update-manual
 
 %install
 
 %make_install
 
 #permissions
-chmod 755 $RPM_BUILD_ROOT/%{_datadir}/solfege/solfege/_version.py
+chmod 0755 %{buildroot}%{_datadir}/solfege/solfege/parsetree.py
+chmod 0755 %{buildroot}%{_datadir}/solfege/solfege/presetup.py
+
+# Delete backup files with trailing ~
+find %{buildroot}%{_datadir}/solfege -name '*~' -delete
 
 #Change encoding to UTF-8
 for f in AUTHORS README ; do
@@ -62,14 +75,12 @@ for f in AUTHORS README ; do
 		rm -f ${f}.tmp
 done
 
-sed -i -e "s/usr\/bin\/python$/usr\/bin\/python3/g" %buildroot/%{_bindir}/solfege
-
 %find_lang %{name}
 
 desktop-file-install --delete-original \
-	--dir $RPM_BUILD_ROOT%{_datadir}/applications \
+	--dir %{buildroot}%{_datadir}/applications \
 	--remove-category Application \
-	$RPM_BUILD_ROOT%{_datadir}/applications/%{name}.desktop
+	%{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
@@ -84,6 +95,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_mandir}/man?/*
 
 %changelog
+* Sun Mar 05 2023 Justin Koh <j@ustink.org> - 3.23.5~pre2-11
+- update to 3.23.5~pre2-11
+
 * Wed Nov 02 2022 Yann Collette <ycollette.nospam@free.fr> - 3.23.4-11
 - update to 3.23.4-11
 
