@@ -1,6 +1,6 @@
 # This package depends on automagic byte compilation
 # https://fedoraproject.org/wiki/Changes/No_more_automagic_Python_bytecompilation_phase_2
-%global  py_byte_compile 1
+%global py_byte_compile 1
 %global debug_package %{nil}
 
 Name:    solfege
@@ -17,19 +17,20 @@ Patch0: solfege-3.20.6-prefix.patch
 
 BuildRequires: gcc
 BuildRequires: make
+BuildRequires: automake
 BuildRequires: python3-devel
 BuildRequires: texinfo
 BuildRequires: swig
 BuildRequires: gettext
 BuildRequires: docbook-style-xsl
-BuildRequires: pygtk2-devel >= 2.12
 BuildRequires: python3-gobject-base
 BuildRequires: libxslt
+BuildRequires: itstool
 BuildRequires: txt2man
 BuildRequires: desktop-file-utils
+BuildRequires: git
 
 Requires: timidity++
-Requires: pygtk2 >= 2.12
 Requires: python3
 Requires: bash
 
@@ -41,10 +42,13 @@ interval, scale and chord skills. Solfege - Smarten your ears!
 %setup -q -n solfege-3.23.5pre2
 %patch0 -F 2 -p1 -b .prefix
 
-%build
+# Change shebangs with unversioned python to python3
+find . -name '*.py' -exec sed -i -e '1s|^#!/usr/bin/python$|#!/usr/bin/python3|' '{}' \;
 
-export INSTALL="%{__install} -c -p"
-#override hardocded path
+%build
+autoreconf -if
+
+#override hardcoded path
 %configure --enable-docbook-stylesheet=`ls %{_datadir}/sgml/docbook/xsl-stylesheets-1.*/html/chunk.xsl` --disable-oss-sound
 %make_build
 
@@ -53,7 +57,8 @@ export INSTALL="%{__install} -c -p"
 %make_install
 
 #permissions
-chmod 755 $RPM_BUILD_ROOT/%{_datadir}/solfege/solfege/_version.py
+chmod 0755 %{buildroot}%{_datadir}/solfege/solfege/parsetree.py
+chmod 0755 %{buildroot}%{_datadir}/solfege/solfege/presetup.py
 
 #Change encoding to UTF-8
 for f in AUTHORS README ; do
@@ -62,14 +67,12 @@ for f in AUTHORS README ; do
 		rm -f ${f}.tmp
 done
 
-sed -i -e "s/usr\/bin\/python$/usr\/bin\/python3/g" %buildroot/%{_bindir}/solfege
-
 %find_lang %{name}
 
 desktop-file-install --delete-original \
-	--dir $RPM_BUILD_ROOT%{_datadir}/applications \
+	--dir %{buildroot}%{_datadir}/applications \
 	--remove-category Application \
-	$RPM_BUILD_ROOT%{_datadir}/applications/%{name}.desktop
+	%{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
