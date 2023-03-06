@@ -1,7 +1,7 @@
 %define _lto_cflags %{nil}
 
 Name:    ossia-score
-Version: 3.1.7
+Version: 3.1.8
 Release: 1%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL:     https://github.com/OSSIA/score
@@ -77,6 +77,9 @@ rm -rf %{buildroot}/%{_datadir}/
 %{_bindir}/*
 
 %changelog
+* Sun Mar 05 2023 Yann Collette <ycollette.nospam@free.fr> - 3.1.8-2
+- update to version 3.1.8-2
+
 * Sat Feb 25 2023 Yann Collette <ycollette.nospam@free.fr> - 3.1.7-2
 - update to version 3.1.7-2
 
