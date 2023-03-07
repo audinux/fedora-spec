@@ -1,5 +1,5 @@
 Name:    plugdata
-Version: 0.6.4
+Version: 0.7.0
 Release: 1%{?dist}
 Summary: Pure Data as a plugin, with a new GUI
 URL:     https://github.com/timothyschoen/PlugData
@@ -9,7 +9,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./plugdata-source.sh <TAG>
-# ./plugdata-source.sh v0.6.4
+# ./plugdata-source.sh v0.7.0
 
 Source0: PlugData.tar.gz
 Source1: plugdata-source.sh
@@ -41,7 +41,6 @@ BuildRequires: fluidsynth-devel
 BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: desktop-file-utils
 
-
 %description
 Plugin wrapper around PureData to allow patching in a wide selection of DAWs.
 
@@ -60,6 +59,14 @@ Requires: %{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
+
+%package -n clap-%{name}
+Summary:  CLAP version of %{name}
+License:  GPLv2+
+Requires: %{name}
+
+%description -n clap-%{name}
+CLAP version of %{name}
 
 %prep
 %autosetup -n PlugData
@@ -85,18 +92,15 @@ mkdir -p .local/share/plugdata
 
 %install
 
-install -m 755 -d %{buildroot}%{_libdir}/vst3/plugdata.vst3/
-install -m 755 -d %{buildroot}%{_libdir}/vst3/plugdata-fx.vst3/
-install -m 755 -d %{buildroot}%{_libdir}/lv2/plugdata.lv2/
-install -m 755 -d %{buildroot}%{_libdir}/lv2/plugdata-fx.lv2/
+install -m 755 -d %{buildroot}%{_libdir}/vst3/
+install -m 755 -d %{buildroot}%{_libdir}/lv2/
+install -m 755 -d %{buildroot}%{_libdir}/clap/
 install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 -d %{buildroot}%{_fontbasedir}/plugdata/
 
-cp -ra Plugins/LV2/plugdata.lv2/* %{buildroot}%{_libdir}/lv2/plugdata.lv2/
-cp -ra Plugins/LV2/plugdata-fx.lv2/* %{buildroot}%{_libdir}/lv2/plugdata-fx.lv2/
-
-cp -ra Plugins/VST3/plugdata.vst3/* %{buildroot}%{_libdir}/vst3/plugdata.vst3/
-cp -ra Plugins/VST3/plugdata-fx.vst3/* %{buildroot}%{_libdir}/vst3/plugdata-fx.vst3/
+cp -ra Plugins/LV2/* %{buildroot}%{_libdir}/lv2/
+cp -ra Plugins/VST3/* %{buildroot}%{_libdir}/vst3/
+cp -ra Plugins/CLAP/* %{buildroot}%{_libdir}/clap/
 
 cp Plugins/Standalone/* %{buildroot}%{_bindir}/
 
@@ -139,7 +143,13 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/plugdata.desktop
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
 
+%files -n clap-%{name}
+%{_libdir}/clap/*
+
 %changelog
+* Tue Mar 07 2023 Yann Collette <ycollette.nospam@free.fr> - 0.7.0-1
+- update to 0.7.0-1
+
 * Mon Jan 16 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.4-1
 - update to 0.6.4-1
 
