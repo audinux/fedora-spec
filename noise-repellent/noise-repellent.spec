@@ -5,7 +5,7 @@
 
 Name:    lv2-noise-repellent
 Version: 0.2.3
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: A lv2 plug-in for broadband noise reduction.
 License: GPLv2+
 URL:     https://github.com/lucianodato/noise-repellent	
@@ -20,8 +20,6 @@ BuildRequires: meson
 BuildRequires: git
 BuildRequires: lv2-devel
 BuildRequires: fftw-devel
-
-Obsoletes: noise-repellent
 
 %description
 Features
@@ -51,14 +49,20 @@ Limitations
 %install 
 %meson_install
 
+# Cleanup
+rm -f %{buildroot}/%{_libdir}/libspecbleach.a
+rm -rf %{buildroot}/%{_libdir}/pkgconfig/libspecbleach.pc
+
 %files
 %doc README.md
 %license LICENSE
 %{_libdir}/lv2/*
-%exclude %{_includedir}/*
-%exclude %{_libdir}/*
+%exclude %{_includedir}/
 
 %changelog
+* Tue Mar 07 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2.3-5
+- update to 0.2.3-5 - fixes
+
 * Fri May 20 2022 Yann Collette <ycollette.nospam@free.fr> - 0.2.3-4
 - update to 0.2.3-4
 
