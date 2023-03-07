@@ -4,7 +4,7 @@
 
 Name:	 faust
 Version: 2.54.9
-Release: 26%{?dist}
+Release: 36%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
 # The rest is GPLv2+
@@ -51,10 +51,10 @@ processor block-diagram : a piece of code that produces output signals
 according to its input signals (and maybe some user interface parameters)
 
 %package doc
-Summary:   Documentation for %{name}
-License:   GPLv2+
+Summary: Documentation for %{name}
+License: GPLv2+
 BuildArch: noarch
-Requires:  %{name} = %{version}-%{release}
+Requires: %{name} = %{version}-%{release}
 
 %description doc
 Faust AUdio STreams is a functional programming language for real-time audio
@@ -62,8 +62,8 @@ signal processing. This package provides documentation files to help with
 writing programs with faust.
 
 %package osclib
-Summary:  OSCLib Library
-License:  GPLv2+ and MIT
+Summary: OSCLib Library
+License: GPLv2+ and MIT
 Requires: %{name} = %{version}-%{release}
 
 %description osclib
@@ -71,8 +71,8 @@ Faust AUdio STreams is a functional programming language for real-time audio
 signal processing. This package provides osclib.
 
 %package osclib-devel
-Summary:  Headers for the OSCLib Library
-License:  GPLv2+ and MIT
+Summary: Headers for the OSCLib Library
+License: GPLv2+ and MIT
 Requires: %{name}-osclib = %{version}-%{release}
 
 %description osclib-devel
@@ -80,11 +80,11 @@ Faust AUdio STreams is a functional programming language for real-time audio
 signal processing. This package provides the development files for osclib.
 
 %package tools
-Summary:   3rd party tools written for %{name}
-License:   GPLv2+
+Summary: 3rd party tools written for %{name}
+License: GPLv2+
 BuildArch: noarch
-Requires:  %{name}-osclib-devel = %{version}-%{release}
-Requires:  python2
+Requires: %{name}-osclib-devel = %{version}-%{release}
+Requires: python3
 
 %description tools
 Faust AUdio STreams is a functional programming language for real-time audio
@@ -92,10 +92,10 @@ signal processing. These additional tools are provided by various contributors
 to help the building process of applications and plugins with Faust.
 
 %package kate
-Summary:   Kate/Kwrite plugin for %{name}
-License:   GPLv2+
+Summary: Kate/Kwrite plugin for %{name}
+License: GPLv2+
 BuildArch: noarch
-Requires:  %{name} = %{version}-%{release}
+Requires: %{name} = %{version}-%{release}
 
 %description kate
 Faust AUdio STreams is a functional programming language for real-time audio
@@ -103,10 +103,10 @@ signal processing. This package provides Faust code syntax highlighting support
 for KDE's Kate/Kwrite.
 
 %package stdlib
-Summary:   standard libraries for %{name}
-License:   GPLv2+
+Summary: standard libraries for %{name}
+License: GPLv2+
 BuildArch: noarch
-Requires:  %{name} = %{version}-%{release}
+Requires: %{name} = %{version}-%{release}
 
 %description stdlib
 Faust AUdio STreams is a functional programming language for real-time audio
@@ -122,9 +122,11 @@ cd build
 %cmake_build
 
 %install
+
 cd build
 %cmake_install
 
+# cleanup
 rm -f %{buildroot}/%{_libdir}/ios-libsndfile.a
 
 # Fix usage.sh
@@ -148,12 +150,7 @@ done
 %files osclib-devel
 %{_includedir}/*
 %{_libdir}/*.so
-%ifarch x86_64 amd64
 %{_libdir}/*.a
-%endif
-%ifarch aarch64
-%{_usr}/lib/*.a
-%endif
 
 %files doc
 %doc documentation/* 
@@ -173,8 +170,8 @@ done
 %{_datadir}/faust/*.lib
 
 %changelog
-* Fri Feb 23 2023 Yann Collette <ycollette.nospam@free.fr> - 2.50.6-26
-- update to 2.50.6-26 - use cmake to build
+* Tue Mar 07 2023 Yann Collette <ycollette.nospam@free.fr> - 2.54.9-36
+- update to 2.54.9-36 - use cmake to build
 
 * Tue Oct 04 2022 Yann Collette <ycollette.nospam@free.fr> - 2.50.6-25
 - update to 2.50.6-25
