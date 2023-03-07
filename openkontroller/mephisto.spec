@@ -1,5 +1,5 @@
 Name:    mephisto
-Version: 0.18.0
+Version: 0.18.2
 Release: 1%{?dist}
 Summary: A JACK patchbay in flow matrix style
 URL:     https://github.com/OpenMusicKontrollers/mephisto.lv2
@@ -20,6 +20,7 @@ BuildRequires: mesa-libGLU-devel
 BuildRequires: libX11-devel
 BuildRequires: libXext-devel
 BuildRequires: glew-devel
+BuildRequires: libvterm-devel
 
 %description
 A Just-in-time FAUST embedded in an LV2 plugin
@@ -45,6 +46,9 @@ A Just-in-time FAUST embedded in an LV2 plugin
 %{_datadir}/*
 
 %changelog
+* Tue Mar 07 2023 Yann Collette <ycollette.nospam@free.fr> - 0.18.2-1
+- update to 0.18.2-1
+
 * Fri Apr 15 2022 Yann Collette <ycollette.nospam@free.fr> - 0.18.0-1
 - update to 0.18.0-1
 
