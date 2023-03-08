@@ -3,7 +3,6 @@
 | Package                 | URL|
 |-------------------------|----|
 | DeLooper                | https://github.com/sonejostudios/DeLooper |
-| mephisto                | https://open-music-kontrollers.ch/lv2/mephisto/ |
 | zrythm - lsp-dsp        | add a devel package for zrythm |
 | openshow                | https://github.com/mapmapteam/openshow |
 | supercollider-study     | https://github.com/rumblesan/super-collider-study |
@@ -56,7 +55,6 @@
 | hpsjam                  | https://github.com/hselasky/hpsjam |
 | gyroflow                | https://github.com/gyroflow/gyroflow |
 | studio-controls         | https://github.com/ovenwerks/studio-controls |
-| vmpc-juce               | https://github.com/izzyreal/vmpc-juce |
 | rtcqs                   | https://codeberg.org/rtcqs/rtcqs |
 | soundgrain              | https://github.com/belangeo/soundgrain |
 | anklang                 | https://github.com/tim-janik/anklang |
@@ -75,7 +73,6 @@
 | Songbird formant filter | https://github.com/jd-13/Songbird-Formant-Filter |
 | Carve Distortion        | https://github.com/jd-13/Carve-Distortion |
 | Monstr Stereo Imaging   | https://github.com/jd-13/MONSTR-Stereo-Imaging |
-| Chataigne               | https://github.com/benkuper/Chataigne |
 | VirtualAnalog           | https://github.com/FigBug/VirtualAnalog |
 | BlackBird               | https://github.com/khrykin/BlackBird |
 | Manta                   | https://github.com/Mrugalla/Manta |
@@ -98,7 +95,6 @@
 
 ```
 protrekkr2 (update to 2.6.3)
-mephisto (needs faust library)
 midi2voice (code doesn't install correctly)
 imogen (needs juce cmake file)
 rack-v2-RPJ  -> needs a specific aarch64 patch for intrin.h
