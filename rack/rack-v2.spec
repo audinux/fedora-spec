@@ -7,7 +7,7 @@
 %define use_embedded_samplerate 0
 
 Name:    Rack-v2
-Version: 2.2.3
+Version: 2.3.0
 Release: 4%{?dist}
 Summary: A modular Synthesizer
 License: GPLv2+
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./rack-source-v2.sh <tag>
-# ./rack-source-v2.sh v2.2.3
+# ./rack-source-v2.sh v2.3.0
 
 Source0: Rack.tar.gz
 Source1: rack-source-v2.sh
@@ -144,6 +144,11 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
+# Not in simde yet
+%ifarch aarch64
+sed -i -e "/_MM_SET_DENORMALS_ZERO_MODE/d" src/engine/Engine.cpp
+%endif
+
 %build
 
 CURRENT_PATH=`pwd`
@@ -210,6 +215,9 @@ EOF
 %{_libdir}/*
 
 %changelog
+* Wed Mar 08 2023 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-4
+- update to v2.3.0-4
+
 * Thu Jan 26 2023 Yann Collette <ycollette.nospam@free.fr> - 2.2.3-4
 - update to v2.2.3-4
 
