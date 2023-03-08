@@ -18,6 +18,7 @@ Distribution: Audinux
 Source0: Fire.tar.gz
 Source1: vst3sdk.tar.gz
 Source2: fire-source.sh
+Source3: vst3-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
