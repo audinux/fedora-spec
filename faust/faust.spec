@@ -85,6 +85,7 @@ License: GPLv2+
 BuildArch: noarch
 Requires: %{name}-osclib-devel = %{version}-%{release}
 Requires: python3
+Requires: ruby
 
 %description tools
 Faust AUdio STreams is a functional programming language for real-time audio
@@ -128,12 +129,16 @@ cd build
 
 # cleanup
 rm -f %{buildroot}/%{_libdir}/ios-libsndfile.a
+rm -f %{buildroot}/%{_datadir}/%{name}/android/app/lib/libsndfile/lib/arm64-v8a/libsndfile.so
+rm -f %{buildroot}/%{_datadir}/%{name}/android/app/lib/libsndfile/lib/armeabi-v7a/libsndfile.so
+rm -f %{buildroot}/%{_datadir}/%{name}/max-msp/sndfile/arm/libsndfile.a
+rm -f %{buildroot}/%{_datadir}/%{name}/max-msp/sndfile/intel/libsndfile.a
 
 # Fix usage.sh
 mv %{buildroot}/%{_bindir}/usage.sh %{buildroot}/%{_datadir}/%{name}/
-for Files in `grep -l usage.sh %{buildroot}/%{_bindir}/`
+for Files in `grep -lr usage.sh %{buildroot}/%{_bindir}/`
 do
-  sed -i -e "s/usage.sh/%{_datadir}/%{name}/usage.sh/g" $Files
+  sed -i -e "s|usage.sh|%{_datadir}/%{name}/usage.sh|g" $Files
 done
 
 %files
