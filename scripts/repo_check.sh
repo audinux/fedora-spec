@@ -831,7 +831,8 @@ https://github.com/GuitarML/PrincePedal
 https://github.com/bsutherland/JuceOPLVSTi
 https://github.com/FigBug/SN76489
 https://github.com/GrandOrgue/grandorgue
-https://github.com/izzyreal/vmpc-juce"
+https://github.com/izzyreal/vmpc-juce
+https://github.com/ryukau/VSTPlugins"
 
 # https://github.com/ycollet/Mx44
 
