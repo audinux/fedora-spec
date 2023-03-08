@@ -1,4 +1,4 @@
-Name:    mephisto
+Name:    lv2-mephisto
 Version: 0.18.2
 Release: 1%{?dist}
 Summary: A JACK patchbay in flow matrix style
@@ -15,6 +15,8 @@ BuildRequires: meson
 BuildRequires: cmake
 BuildRequires: lv2-devel
 BuildRequires: faust-osclib-devel
+BuildRequires: fontconfig
+BuildRequires: fontconfig-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 BuildRequires: libX11-devel
@@ -32,7 +34,7 @@ A Just-in-time FAUST embedded in an LV2 plugin
 
 %set_build_flags
 
-%meson
+%meson -Dlv2libdir=%{_libdir}/lv2/
 %meson_build 
 
 %install
@@ -41,9 +43,8 @@ A Just-in-time FAUST embedded in an LV2 plugin
 
 %files
 %doc README.md ChangeLog
-%license COPYING
-%{_bindir}/*
-%{_datadir}/*
+%license LICENSES/*
+%{_libdir}/lv2/*
 
 %changelog
 * Tue Mar 07 2023 Yann Collette <ycollette.nospam@free.fr> - 0.18.2-1
