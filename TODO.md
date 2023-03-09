@@ -75,8 +75,6 @@
 | Monstr Stereo Imaging   | https://github.com/jd-13/MONSTR-Stereo-Imaging |
 | VirtualAnalog           | https://github.com/FigBug/VirtualAnalog |
 | BlackBird               | https://github.com/khrykin/BlackBird |
-| Manta                   | https://github.com/Mrugalla/Manta |
-| OS-251                  | https://github.com/utokusa/OS-251 |
 | PeakEater               | https://github.com/vvvar/PeakEater |
 | rotor                   | https://github.com/blackboxdsp/rotor |
 | the synister            | https://github.com/the-synister/the-source/ |
