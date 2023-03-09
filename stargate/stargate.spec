@@ -2,12 +2,8 @@
 # Type: Standalone
 # Category: DAW, Audio
 
-%if 0%{?fedora} <= 35
-%global debug_package %{nil}
-%endif
-
 Name:    stargate
-Version: 23.01.2
+Version: 23.03.1
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
 License: GPLv3
@@ -16,7 +12,11 @@ URL:     http://github.com/stargateaudio/stargate/
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/stargateaudio/stargate/archive/refs/tags/release-%{version}.tar.gz#/%{name}-%{version}.tar.gz
+# Usage: ./stargate-source.sh <TAG>
+# ./stargate-source.sh release-23.03.1
+
+Source0: stargate.tar.gz
+Source1: stargate-source.sh
 
 BuildRequires: gcc
 BuildRequires: gcc-c++
@@ -56,7 +56,7 @@ Recommends: ffmpeg
 Stargate is digital audio workstations (DAWs), instrument and effect plugins
 
 %prep
-%autosetup -n %{name}-release-%{version}
+%autosetup -n %{name}
 
 %build
 
@@ -86,6 +86,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 %{_bindir}/stargate
 %{_bindir}/stargate-engine
 %{_bindir}/stargate-sbsms
+%{_bindir}/stargate-soundstretch
 %{_datadir}/doc/stargate/copyright
 %{_datadir}/applications/*
 %{_datadir}/mime/*
@@ -93,6 +94,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 %{_datadir}/stargate/*
 
 %changelog
+* Thu Mar 09 2023 Yann Collette <ycollette.nospam@free.fr> - 23.03.1-1
+- update to 23.03.1-1
+
 * Thu Jan 12 2023 Yann Collette <ycollette.nospam@free.fr> - 23.01.2-1
 - update to 23.01.2-1
 
