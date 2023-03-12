@@ -4,7 +4,7 @@
 
 Name:    chuck
 Summary: Real-time audio synthesis and graphics/multimedia language
-Version: 1.4.1.0
+Version: 1.4.2.0
 Release: 2%{?dist}
 License: GPL
 URL:     https://chuck.cs.princeton.edu/
@@ -16,9 +16,15 @@ Source0: https://chuck.cs.princeton.edu/release/files/chuck-%{version}.tgz
 # emacs mode from: http://wiki.cs.princeton.edu/index.php/Recent_chuck-mode.el
 Source1: chuck-mode.el
 
-BuildRequires: gcc gcc-c++ perl make
-BuildRequires: bison flex jack-audio-connection-kit-devel, 
-BuildRequires: alsa-lib-devel libsndfile-devel pulseaudio-libs-devel
+BuildRequires: gcc
+BuildRequires: gcc-c++
+BuildRequires: make
+BuildRequires: bison
+BuildRequires: flex
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: libsndfile-devel
+BuildRequires: pulseaudio-libs-devel
 
 %description
 ChucK is a general-purpose programming language, intended for
@@ -37,10 +43,8 @@ the ability to write/change programs on-the-fly.
 cd src
 
 # insert rpm optflags in makefiles
-perl -p -i -e "s|-O3|-O3 %{optflags}|g" makefile.alsa
-perl -p -i -e "s|-O3|-O3 %{optflags}|g" makefile.jack
-perl -p -i -e "s|-O3|-O3 %{optflags}|g" makefile.pulse
-
+sed -i -e "s|-O3|-O3 %{optflags}|g" makefile
+    
 # build alsa version
 %make_build linux-alsa
 mv chuck chuck-alsa
@@ -83,6 +87,9 @@ cp -a %{SOURCE1} %{buildroot}%{_libdir}/xemacs/site-packages/lisp/chuck/chuck.el
 %{_libdir}/xemacs/site-packages/lisp/chuck/*
 
 %changelog
+* Sun Mar 12 2023 Yann Collette <ycollette.nospam@free.fr> - 1.4.2.0-2
+- update to 1.4.2.0-2
+
 * Wed Jul 14 2021 Yann Collette <ycollette.nospam@free.fr> - 1.4.1.0-2
 - update to 1.4.1.0-2
 
