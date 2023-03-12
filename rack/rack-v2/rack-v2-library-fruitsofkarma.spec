@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 646696bd511ffee22d66292cd342023eb3bac5d8
-%global gittag0 2.0.7
+%global commit0 083f6a12d09e6b3764c83f2b62fcfa3379460475
+%global gittag0 2.0.8
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-fruitsofkarma
-Version: 2.0.7
+Version: 2.0.8
 Release: 1%{?dist}
 Summary: fruitsofkarma plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r fruitsofkarma_plugin/dist/fruitsofkarma/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.7-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.8-1
 - initial specfile

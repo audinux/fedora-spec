@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 9b832ef95b229bd083fee5262c2a64caf51383e5
-%global gittag0 2.0.1
+%global commit0 da35d3128bb77fb5a8c9255c4f14b028c45131dd
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-NOI
-Version: 2.0.1
+Version: 2.0.2
 Release: 1%{?dist}
 Summary: NOI plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r NOI_plugin/dist/NOI/* %{buildroot}%{_libexecdir}/Rack2/plugins/NOI/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile
