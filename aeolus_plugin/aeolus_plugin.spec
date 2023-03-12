@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name:    aeolus_plugin
-Version: 0.1.12.1
+Version: 0.2.0
 Release: 2%{?dist}
 Summary: Pipe organ synthesizer
 License: GPLv3+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source_aeolus_plugin.sh <tag>
-#        ./source_aeolus_plugin.sh c43f7d2143ed30be7217dc7d46b1c1c16036c2fa
+#        ./source_aeolus_plugin.sh v0.2.0
 
 Source0: aeolus_plugin.tar.gz
 Source1: source_aeolus_plugin.sh
@@ -127,6 +127,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Aeolus.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Mar 12 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
+- update to 0.2.0-1
+
 * Fri Oct 28 2022 Yann Collette <ycollette.nospam@free.fr> - 0.1.12-1
 - update to last master
 
