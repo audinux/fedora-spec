@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    AnalogTapeModel
-Version: 2.10.0
+Version: 2.11.1
 Release: 1%{?dist}
 Summary: Physical modelling signal processing for analog tape recording
 License: BSD-3-Clause
@@ -14,7 +14,7 @@ Distribution: Audinux
 
 # to generater code archive:
 # ./source_analogtapemodel.sh <tag>
-# ./source_analogtapemodel.sh 2.10.0
+# ./source_analogtapemodel.sh 2.11.1
 
 Source0: AnalogTapeModel.tar.gz
 Source1: source_analogtapemodel.sh
@@ -63,7 +63,12 @@ implemented as an audio plugin.
 %set_build_flags
 
 cd Plugin
-%cmake -B cmake-build -DCMAKE_BUILD_TYPE=Release -DRTNEURAL_XSIMD=ON -DCMAKE_PREFIX_PATH=/usr/lib64/juce
+%cmake -B cmake-build \
+       -DCMAKE_BUILD_TYPE=Release \
+       -DRTNEURAL_XSIMD=ON \
+       -DCMAKE_PREFIX_PATH=/usr/lib64/juce \
+       -DCMAKE_CXX_FLAGS="-include utility -fPIC $CXXFLAGS"
+
 touch cmake-build/CHOWTapeModel_artefacts/JuceLibraryCode/AppConfig.h
 cmake --build cmake-build %{?_smp_mflags}
 
@@ -92,6 +97,9 @@ cp -r cmake-build/CHOWTapeModel_artefacts/Release/LV2/*.lv2 %{buildroot}%{_libdi
 %{_libdir}/lv2/
 
 %changelog
+* Sun Mar 12 2023 Yann Collette <ycollette.nospam@free.fr> - 2.11.1-1
+- update to 2.11.1-1
+
 * Tue Dec 21 2021 Yann Collette <ycollette.nospam@free.fr> - 2.10.0-1
 - update to 2.10.0-1
 
