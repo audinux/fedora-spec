@@ -89,7 +89,6 @@
 | Oi-Grandad              | https://github.com/publicsamples/Oi-Grandad |
 | ultimatevocalremovergui | https://github.com/Anjok07/ultimatevocalremovergui |
 | bintracker              | https://github.com/bintracker/bintracker |
-| MIDIVisualizer          | https://github.com/kosua20/MIDIVisualizer |
 
 ## WIP
 

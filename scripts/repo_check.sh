@@ -833,7 +833,8 @@ https://github.com/FigBug/SN76489
 https://github.com/GrandOrgue/grandorgue
 https://github.com/izzyreal/vmpc-juce
 https://github.com/ryukau/VSTPlugins
-https://github.com/pd3v/line"
+https://github.com/pd3v/line
+https://github.com/kosua20/MIDIVisualizer"
 
 # https://github.com/ycollet/Mx44
 
