@@ -21,6 +21,7 @@ BuildRequires: csound-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: texlive-pdftex
 BuildRequires: texinfo
+BuildRequires: Cabbage
 
 %description
 Roland Juno-1 / Juno-2 / MKS-50 emulator using CSound & Cabbage
