@@ -1,7 +1,7 @@
 %define _lto_cflags %{nil}
 
 Name:    vmpc
-Version: 0.5.0.2
+Version: 0.5.0.3
 Release: 1%{?dist}
 Summary: JUCE implementation of VMPC2000XL
 License: GPLv3
@@ -10,7 +10,7 @@ URL:     https://github.com/izzyreal/vmpc-juce
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/izzyreal/vmpc-juce/archive/refs/tags/v0.5.0.2.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/izzyreal/vmpc-juce/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0: vmpc-0001-fix-build.patch
 
 BuildRequires: gcc gcc-c++
@@ -63,5 +63,8 @@ cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/Standalone/* %{bu
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Mar 12 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.0.3-1
+- update to 0.5.0.3-1
+
 * Tue Jan 31 2023 Yann Collette <ycollette.nospam@free.fr> - 0.4.4-1
 - Initial spec file
