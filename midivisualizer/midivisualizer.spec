@@ -45,7 +45,7 @@ install -m 755 -d %{buildroot}/%{_bindir}/
 cp  %{__cmake_builddir}/MIDIVisualizer %{buildroot}/%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_libdir}/midivisualizer/
-cp  %{__cmake_builddir}/libs/libremidi/liblibremidi.so %{buildroot}/%{_libdir}/midivisualizer/libremidi.so
+cp  %{__cmake_builddir}/libs/libremidi/liblibremidi.so %{buildroot}/%{_libdir}/midivisualizer/
 
 # chrpath --delete %{buildroot}/%{_bindir}/MIDIVisualizer
 chrpath --replace %{_libdir}/midivisualizer %{buildroot}/%{_bindir}/MIDIVisualizer
@@ -77,7 +77,7 @@ desktop-file-install                         \
 %doc README.md
 %license LICENSE
 %{_bindir}/*
-%{_libdir}/midivisualizer/libremidi.so
+%{_libdir}/midivisualizer/liblibremidi.so
 %{_datadir}/icons/hicolor/256x256/apps/*
 %{_datadir}/applications/*
 
