@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    fil4.lv2
-Version: 0.8.5
+Version: 0.8.6
 Release: 1%{?dist}
 Summary: 4 Band Parametric EQ
 License: GPLv2+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./x42-source.sh <project> <tag>
-# ./x42-source.sh fil4.lv2 v0.8.5
+# ./x42-source.sh fil4.lv2 v0.8.6
 
 Source0: fil4.lv2.tar.gz
 Source1: x42-source.sh
@@ -54,6 +54,9 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_datadir}/*
 
 %changelog
+* Wed Mar 15 2023 Yann Collette <ycollette.nospam@free.fr> - 0.8.6-1
+- update to 0.8.6-1
+
 * Sun Nov 20 2022 Yann Collette <ycollette.nospam@free.fr> - 0.8.5-1
 - update to 0.8.5-1
 

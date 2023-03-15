@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    spectra.lv2
-Version: 0.6.3
+Version: 0.6.4
 Release: 1%{?dist}
 Summary: Spectrum Analyzer
 License: GPLv2+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./x42-source.sh <project> <tag>
-# ./x42-source.sh spectra.lv2 v0.6.3
+# ./x42-source.sh spectra.lv2 v0.6.4
 
 Source0: spectra.lv2.tar.gz
 Source1: x42-source.sh
@@ -52,6 +52,9 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_datadir}/*
 
 %changelog
+* Wed Mar 15 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.4-1
+- update to 0.6.4-1
+
 * Sun Nov 20 2022 Yann Collette <ycollette.nospam@free.fr> - 0.6.3-1
 - update to 0.6.3-1
 

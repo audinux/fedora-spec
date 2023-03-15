@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    phaserotate.lv2
-Version: 0.6.2
+Version: 0.6.3
 Release: 1%{?dist}
 Summary: Phase Rotation LV2 plugin
 License: GPLv2+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./x42-source.sh <project> <tag>
-# ./x42-source.sh phaserotate.lv2 v0.6.2
+# ./x42-source.sh phaserotate.lv2 v0.6.3
 
 Source0: phaserotate.lv2.tar.gz
 Source1: x42-source.sh
@@ -52,6 +52,9 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_datadir}/*
 
 %changelog
+* Wed Mar 15 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.3-1
+- update to 0.6.3-1
+
 * Sun Nov 20 2022 Yann Collette <ycollette.nospam@free.fr> - 0.6.2-1
 - update to 0.6.2-1
 
