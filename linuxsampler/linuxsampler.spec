@@ -30,7 +30,7 @@ BuildRequires: sqlite-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsndfile-devel
 BuildRequires: dssi-devel
-BuildRequires: slv2-devel
+BuildRequires: lv2-devel
 
 %description
 LinuxSampler is a work in progress. The goal is to produce a free,

@@ -118,8 +118,13 @@ signal processing. These libraries are part of the standard Faust libraries.
 
 %build
 
+%set_build_flags
 cd build
-%cmake -DINCLUDE_DYNAMIC=ON -DLIBSDIR=%{_lib}
+%cmake -DINCLUDE_DYNAMIC=ON \
+       -DLIBSDIR=%{_lib} \
+%if 0%{?fedora} >= 38
+    -DCMAKE_CXX_FLAGS="-include cstdint -fPIC $CXXFLAGS"
+%endif
 %cmake_build
 
 %install

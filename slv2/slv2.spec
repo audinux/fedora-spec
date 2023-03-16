@@ -65,11 +65,6 @@ sed -i 's|/usr/bin/.*python$|/usr/bin/python2|' autowaf.py swig/python/*.py wscr
 # Quick hack. lv2core seemingly permanently renamed to lv2 at version 1.16
 sed -i 's|lv2core|lv2|g' wscript
 
-for Files in `grep -rl '\-G'`
-do
-  sed -i -e "s/-G//g" $Files
-done
-
 %build
 export CFLAGS="%{optflags}"
 export CXXFLAGS="%{optflags}"
