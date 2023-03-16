@@ -1,24 +1,26 @@
 %{!?_pkgdocdir: %global _pkgdocdir %{_docdir}/%{name}-%{version}}
 
-Name:			slv2
-Summary:		LV2 host library
-Version:		0.6.6
-Release:		35%{?dist}
-License:		GPLv2+
-Source0:		http://download.drobilla.net/%{name}-%{version}.tar.bz2
-# Remove dates from html doc files RHBZ#566345
-Patch0:			%{name}-no-date-on-docs.patch
-URL:			http://drobilla.net/software/slv2/
+Name: slv2
+Summary: LV2 host library
+Version: 0.6.6
+Release: 35%{?dist}
+License: GPLv2+
+URL: http://drobilla.net/software/slv2/
 
-BuildRequires:		doxygen
-BuildRequires:		gcc
-BuildRequires:		lv2-devel
-BuildRequires:		python2
-BuildRequires:		redland-devel
-BuildRequires:		jack-audio-connection-kit-devel
+Source0: http://download.drobilla.net/%{name}-%{version}.tar.bz2
+# Remove dates from html doc files RHBZ#566345
+Patch0: %{name}-no-date-on-docs.patch
+
+BuildRequires: doxygen
+BuildRequires: gcc
+BuildRequires: lv2-devel
+BuildRequires: python2
+BuildRequires: redland-devel
+BuildRequires: jack-audio-connection-kit-devel
+
 # To provide a clean upgrade path from PlanetCCRMA:
-Obsoletes:		%{name}-examples < 0.6
-Provides:		%{name}-examples = %{version}-%{release}
+Obsoletes: %{name}-examples < 0.6
+Provides: %{name}-examples = %{version}-%{release}
 
 %description
 SLV2 is a library to make the use of LV2 plugins as simple as possible for 
@@ -29,11 +31,11 @@ to discover/investigate plugins and related data without loading any shared
 libraries, avoiding the associated risks).
 
 %package devel
-Summary:	Development libraries and headers for %{name}
-Requires:	lv2-devel 
-Requires:	redland-devel
-Requires:	pkgconfig
-Requires:	%{name}%{?_isa} = %{version}-%{release}
+Summary: Development libraries and headers for %{name}
+Requires: lv2-devel 
+Requires: redland-devel
+Requires: pkgconfig
+Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
 SLV2 is a library to make the use of LV2 plugins as simple as possible for
@@ -46,8 +48,7 @@ libraries, avoiding the associated risks).
 This package contains the headers and development libraries for SLV2.
 
 %prep
-%setup -q 
-%patch0 -p1 -b .nodates
+%autosetup -p1 
 
 # Fix possible multilib issues
 sed -i 's|/lib/|/%{_lib}/|g' src/world.c
@@ -63,6 +64,11 @@ sed -i 's|/usr/bin/.*python$|/usr/bin/python2|' autowaf.py swig/python/*.py wscr
 
 # Quick hack. lv2core seemingly permanently renamed to lv2 at version 1.16
 sed -i 's|lv2core|lv2|g' wscript
+
+for Files in `grep -rl '\-G'`
+do
+  sed -i -e "s/-G//g" $Files
+done
 
 %build
 export CFLAGS="%{optflags}"
