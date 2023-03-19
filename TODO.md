@@ -90,6 +90,96 @@
 | ultimatevocalremovergui | https://github.com/Anjok07/ultimatevocalremovergui |
 | bintracker              | https://github.com/bintracker/bintracker |
 
+## Fedora 38 to be fixed
+
+Cstdint missing:
+```
+biscript - cstdint
+cardinal - cstdint
+ddsp-vst - cstdint
+drumgizmo - cstdint
+EmissionControl2 - cstdint
+grandorgue - cstdint
+jamesdsp  - cstdint + error: bad date in %changelog: Mon OCt 24 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3-2
+ossia-score - cstdint
+rack-v1-trowaSoft  - cstdint
+rack-v2-SurgeXTRack - cstdint
+rack-v2-trowaSoft  - cstdint
+seq66  - cstdint
+sequencer64- cstdint
+sfizz  - (Git Build ID) Error: could not find Git / cstdint
+shortcircuit  - cstdint
+soundux  - cstdint
+spectmorph  - cstdint
+stone-phaser  - cstdint
+string-machine  - cstdint
+surge-xt  - cstdint
+tipic  - cstdint
+uhhyouplugins  - cstdint
+vmpc - cstdint
+yabridge  - cstdint
+zynayumi  - cstdint
+zytrax  - cstdint
+tsunami  - error: 'printf' was not declared in this scope
+```
+Resubmitted:
+```
+chaffverb  - puredata - resubmitted
+Gammou - resubmitted
+HISE - resubmitted
+LinVst  - resubmitted
+mammut  - error: #error "AVOIDDENORMALS is not defined"- resubmitted
+mx44 - resubmitted
+processing - resubmitted
+protrekkr - resubmitted
+protrekkr2 - resubmitted
+veejay-core  - resubmitted
+wineasio - resubmitted
+```
+SIMD:
+```
+Chameleon - error: xsimd/stl/algorithms.hpp: No such file or directory
+princepedal - fatal error: xsimd/stl/algorithms.hpp: No such file or directory
+proteus  - fatal error: xsimd/stl/algorithms.hpp: No such file or directory
+ts-m1n3  - fatal error: xsimd/stl/algorithms.hpp: No such file or directory
+rack-v1-BaconMusic  - fatal error: pmmintrin.h: No such file or directory
+rack-v1-JE  -fatal error: pmmintrin.h: No such file or directory
+rack-v1-ParableInstruments  - fatal error: pmmintrin.h: No such file or directory
+rack-v1-squinkylabs-plug1  - fatal error: pmmintrin.h: No such file or directory
+rack-v1-SurgeRack  - fatal error: xmmintrin.h: No such file or directory
+```
+Missing packages:
+```
+lv2-avw-plugins  - No matching package to install: 'slv2-devel'
+miniaudicle  - No matching package to install: 'qscintilla-devel'
+opl3bankeditor  - No matching package to install: 'qwt-devel'
+opn2bankeditor  -No matching package to install: 'qwt-devel'
+polyphone  - No matching package to install: 'qcustomplot-devel'
+prelude  - No matching package to install: 'sfizz-devel' - rebusmitted
+toccata  - No matching package to install: 'sfizz-devel'
+rack-v2-RPJ  - fatal error: emmintrin.h: No such file or directory
+```
+Various:
+```
+aether  - error: 'memset' offset [0, 3] is out of the bounds [0, 0] [-Werror=array-bounds=]
+improviz - ??
+inconcert  - error: #error C++ versions less than C++14 are not supported.
+loudness-scanner  -  Problem: package libchromaprint-1.5.1-8.fc38.x86_64 requires libavutil.so.58()(64bit), but none of the providers can be 
+mamba  - error: no matching function for call to 'std::vector<std::__cxx11::basic_string<char> >::push_back(char [256])'
+master_me  - ERROR : -lang cpp not supported since CPP backend is not built
+mpk-m2-editor  - Error: The version in the Python package metadata 0.0.0 normalizes to zero.
+obxd  -  unrecognized command-line option '-m64'
+rack-v2-EH_modules  - ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
+rack-v2-FrankBuss - ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
+rack-v2-SynthKit  - ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
+rivendell  - error: File must begin with "/": %{_unitdir}/*
+ryukau  - g++: error: unrecognized command-line option '-mavx512f'
+          g++: error: unrecognized command-line option '-mfma'
+          g++: error: unrecognized command-line option '-mavx512vl'
+          g++: error: unrecognized command-line option '-mavx512bw'
+          g++: error: unrecognized command-line option '-mavx512dq'
+```
+
 ## WIP
 
 ```
