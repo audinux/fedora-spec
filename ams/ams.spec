@@ -4,11 +4,12 @@
 
 Summary: Alsa Modular Synth, a realtime modular synthesizer
 Name:    ams
-Version: 2.2.0
+Version: 2.2.1
 Release: 5%{?dist}
-URL:     http://alsamodular.sourceforge.net
-Source0: https://github.com/ycollet/ams/archive/Release-220.tar.gz#/%{name}-%{version}.tar.gz
+URL:     https://alsamodular.sourceforge.net
 License: GPLv2+
+
+Source0: https://sourceforge.net/projects/alsamodular/files/alsamodular/%{version}/ams-%{version}.tar.gz/download#/%{name}-%{version}.tar.gz
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -43,33 +44,37 @@ capability and JACK Support.
 NOTE: Example files are in /usr/share/ams
 
 %prep
-%autosetup -n %{name}-Release-220
+%autosetup -n %{name}-%{version}
 
 autoreconf -i
 
 %build
+
 %configure --with-ladspa-path=%{_libdir}/ladspa
 find . -name Makefile -exec sed -i -e "s/qt=qt5/qt=5/g" {} \;
 %make_build
 
 %install
+
 %make_install
 chmod 755 %{buildroot}%{_bindir}/%{name}
 
-# desktop categories
-BASE="AudioVideo Audio"
-XTRA="X-MIDI X-Jack X-Synthesis Midi"
+# Write desktop files
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
 
-mkdir -p %{buildroot}%{_datadir}/applications
-desktop-file-install \
-        --dir %{buildroot}%{_datadir}/applications \
-	--remove-key=Encoding \
-        `for c in ${BASE} ${XTRA} ; do echo "--add-category $c " ; done` \
-        src/ams.desktop
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
+[Desktop Entry]
+Name=Alsa Modular Synth
+Exec=%{name}-jack
+Icon=ams_32
+Comment=Alsa Modular Synthesizer
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;
+EOF
 
 %check
-
-desktop-file-validate %{buildroot}%{_datadir}/applications/ams.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
 %doc AUTHORS NEWS README THANKS ChangeLog demos instruments tutorial
@@ -78,9 +83,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/ams.desktop
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_mandir}/man1/%{name}*
-%{_datadir}/pixmaps/%{name}*
+%{_datadir}/pixmaps/*
 
 %changelog
+* Sun Mar 19 2023 Yann Collette <ycollette.nospam@free.fr> - 2.2.1-5
+- update to 2.2.1-5
+
 * Mon Dec 14 2020 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-5
 - update to 2.2.0
 
