@@ -5,11 +5,12 @@
 Summary: Alsa Modular Synth, a realtime modular synthesizer
 Name:    ams
 Version: 2.2.1
-Release: 5%{?dist}
+Release: 6%{?dist}
 URL:     https://alsamodular.sourceforge.net
 License: GPLv2+
 
 Source0: https://sourceforge.net/projects/alsamodular/files/alsamodular/%{version}/ams-%{version}.tar.gz/download#/%{name}-%{version}.tar.gz
+Patch0: ams-0001-fix-bugs.patch
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -44,7 +45,7 @@ capability and JACK Support.
 NOTE: Example files are in /usr/share/ams
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{version}
 
 autoreconf -i
 
@@ -86,6 +87,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/*
 
 %changelog
+* Sun Mar 19 2023 Yann Collette <ycollette.nospam@free.fr> - 2.2.1-6
+- update to 2.2.1-6 - add patch
+
 * Sun Mar 19 2023 Yann Collette <ycollette.nospam@free.fr> - 2.2.1-5
 - update to 2.2.1-5
 

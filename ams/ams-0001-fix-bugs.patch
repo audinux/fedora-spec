@@ -1,0 +1,44 @@
+From eb54a39870555d43151134e6dedb6bfab6c0a8f8 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 19 Mar 2023 10:37:42 +0100
+Subject: [PATCH] fix bugs
+
+---
+ src/m_v8sequencer.cpp | 2 +-
+ src/synthdata.cpp     | 5 +++--
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/src/m_v8sequencer.cpp b/src/m_v8sequencer.cpp
+index e8dbb92..57a567c 100644
+--- a/src/m_v8sequencer.cpp
++++ b/src/m_v8sequencer.cpp
+@@ -468,7 +468,7 @@ void M_v8sequencer::generateCycle() {
+ 	data[7][l1][l2] = aux1lcl;   // aux1
+ 
+ 	//    Gate out - did we take a step?
+-	data[8][l1][l2] = m_step[1l][l2]
++	data[8][l1][l2] = m_step[l1][l2]
+ 	  + m_forward[l1][l2]
+ 	  + m_backward[l1][l2];
+ 
+diff --git a/src/synthdata.cpp b/src/synthdata.cpp
+index 73865ba..a9d4364 100644
+--- a/src/synthdata.cpp
++++ b/src/synthdata.cpp
+@@ -435,10 +435,11 @@ int SynthData::initAlsa(const QString& cname, const QString& pname,
+ int SynthData::closeAlsa ()
+ {
+     qWarning("%s", QObject::tr("Closing ALSA...").toUtf8().constData());
+-    withAlsa = false;
+     //TODO: check pthread_join(alsa_thread, &thr_result);
+     sleep (1);
+-    delete alsa_handle;
++    if (withAlsa)
++      delete alsa_handle;
++    withAlsa = false;
+     return 0;
+ }
+ 
+-- 
+2.39.2
+
