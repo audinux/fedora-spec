@@ -44,6 +44,9 @@ James DSP for Linux
 export CFLAGS="$CFLAGS -D__arm__"
 export CXXFLAGS="$CXXFLAGS -D__arm__"
 %endif
+%if 0%{?fedora} >= 38
+export CXXFLAGS="-include cstdint $CXXFLAGS"
+%endif
 
 %qmake_qt5 JDSP4Linux.pro
 %make_build

@@ -1,5 +1,5 @@
 Name:    seq66
-Version: 0.98.9.1
+Version: 0.99.2
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -48,8 +48,6 @@ it with Qt Creator. Provides a comprehensive PDF user-manual.
 %prep
 %autosetup -n %{name}-%{version}
 
-%build
-
 mkdir -p .local/bin
 ln -s /usr/bin/qmake-qt5 .local/bin/qmake
 ln -s /usr/bin/moc-qt5 .local/bin/moc
@@ -57,6 +55,15 @@ ln -s /usr/bin/uic-qt5 .local/bin/uic
 ln -s /usr/bin/rcc-qt5 .local/bin/rcc
 ln -s /usr/bin/lupdate-qt5 .local/bin/lupdate
 ln -s /usr/bin/lrelease-qt5 .local/bin/lrelease
+
+%build
+
+%set_build_flags
+
+%if 0%{?fedora} >= 38
+export CXXFLAGS="-std=c++11 -include cstdint $CXXFLAGS"
+%endif
+
 export PATH=.local/bin:$PATH
 
 ./bootstrap
@@ -90,5 +97,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libdir}/*
 
 %changelog
+* Mon Mar 20 2023 Yann Collette <ycollette.nospam@free.fr> - 0.99.2-1
+- update 0.99.2-1
+
 * Mon Jul 11 2022 Yann Collette <ycollette.nospam@free.fr> - 0.98.9.1-1
 - initial version

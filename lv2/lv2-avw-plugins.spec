@@ -19,7 +19,6 @@ BuildRequires: gcc-c++
 BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: lv2-c++-tools-devel >= 1.0.4
-BuildRequires: slv2-devel
 BuildRequires: gtk2-devel
 BuildRequires: lvtk
 BuildRequires: jack-audio-connection-kit-devel

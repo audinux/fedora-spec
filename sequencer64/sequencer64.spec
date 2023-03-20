@@ -52,7 +52,11 @@ tar xvfz %{SOURCE1}
 
 sh autogen.sh
 
+%if 0%{?fedora} >= 38
+CXXFLAGS="-std=c++11 -include cstdint $CXXFLAGS" %configure --enable-rtmidi
+%else
 %configure --enable-rtmidi
+%endif
 %make_build 
 
 %install

@@ -4,10 +4,10 @@
 
 # Global variables for github repository
 
-%global commit0 8be271c
+%global commit0 UhhyouPlugins0.54.1
 
 Name:    uhhyouplugins
-Version: 0.53.0
+Version: 0.54.1
 Release: 1%{?dist}
 Summary: Uhhyou Plugins VST 3
 License: GPLv2+
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./uhhyouplugins-source.sh <tag>
-# ./uhhyouplugins-source.sh 8be271c
+# ./uhhyouplugins-source.sh UhhyouPlugins0.54.1
 
 Source0: VSTPlugins.tar.gz
 Source1: vst3sdk.tar.gz
@@ -58,6 +58,8 @@ mkdir .vst3
 %set_build_flags
 
 export CXXFLAGS="-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -mtune=generic -fasynchronous-unwind-tables"
+
+export CXXFLAGS="-include cstdint $CXXFLAGS"
 
 mkdir vst3sdk/build
 cd vst3sdk/build

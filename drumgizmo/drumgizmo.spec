@@ -47,7 +47,9 @@ It is comparable to that of mixing a real drumkit that has been recorded with a 
 
 %set_build_flags
 
-#export CXXFLAGS="-std=c++11 -include cstdint $CXXFLAGS"
+%if 0%{?fedora} >= 38
+export CXXFLAGS="-std=c++11 -include cstdint $CXXFLAGS"
+%endif
 
 %configure --enable-lv2 --libdir=%{_libdir} 
 # --disable-cli --with-lv2dir=

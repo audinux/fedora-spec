@@ -48,7 +48,7 @@ Header files for the Sfizz library.
        -DSFIZZ_LV2=ON \
        -DSFIZZ_VST=ON \
        -DENABLE_LTO=OFF \
-       -DCMAKE_CXX_FLAGS="-include cstdio -include limits -include exception -std=c++11" \
+       -DCMAKE_CXX_FLAGS="-include cstdio -include cstdint -include limits -include exception -std=c++11" \
        -DBUILD_SHARED_LIBS=OFF
 
 %cmake_build

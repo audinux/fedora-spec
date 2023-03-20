@@ -69,9 +69,12 @@ This package contains resource files for GrandOrgue.
 
 %build
 
+%set_build_flags
 %cmake -DwxWidgets_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/wx-config-3.0 \
+%if 0%{?fedora} >= 38
+       -DCMAKE_CXX_FLAGS="-include cstdint -fPIC $CXXFLAGS" \
+%endif
        -DLIBINSTDIR=%{_lib}
-
 %cmake_build
 
 %install

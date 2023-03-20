@@ -54,7 +54,8 @@ sed -i -e "s/DDSP Synth/DDSP_Synth/g" CMakeLists.txt
 %build
 
 %set_build_flags
-%cmake -DCMAKE_CXX_FLAGS="-include utility -fPIC $CXXFLAGS" -DCMAKE_C_FLAGS="-fPIC $CFLAGS"
+%cmake -DCMAKE_CXX_FLAGS="-include cstdint -include utility -fPIC $CXXFLAGS" \
+       -DCMAKE_C_FLAGS="-fPIC $CFLAGS"
 
 # Remove -Werror from content downloaded by cmake
 sed -i -e "s/-Werror / /g" %{__cmake_builddir}/flatbuffers/CMakeLists.txt

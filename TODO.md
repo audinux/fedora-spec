@@ -89,25 +89,17 @@
 | Oi-Grandad              | https://github.com/publicsamples/Oi-Grandad |
 | ultimatevocalremovergui | https://github.com/Anjok07/ultimatevocalremovergui |
 | bintracker              | https://github.com/bintracker/bintracker |
+| glicol-cli              | https://github.com/glicol/glicol-cli |
 
 ## Fedora 38 to be fixed
-
 Cstdint missing:
 ```
-biscript - cstdint
-cardinal - cstdint
-ddsp-vst - cstdint
-drumgizmo - cstdint
-EmissionControl2 - cstdint
-grandorgue - cstdint
-jamesdsp  - cstdint + error: bad date in %changelog: Mon OCt 24 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3-2
 ossia-score - cstdint
 rack-v1-trowaSoft  - cstdint
 rack-v2-SurgeXTRack - cstdint
 rack-v2-trowaSoft  - cstdint
 seq66  - cstdint
 sequencer64- cstdint
-sfizz  - (Git Build ID) Error: could not find Git / cstdint
 shortcircuit  - cstdint
 soundux  - cstdint
 spectmorph  - cstdint
@@ -115,28 +107,14 @@ stone-phaser  - cstdint
 string-machine  - cstdint
 surge-xt  - cstdint
 tipic  - cstdint
-uhhyouplugins  - cstdint
 vmpc - cstdint
 yabridge  - cstdint
 zynayumi  - cstdint
 zytrax  - cstdint
 tsunami  - error: 'printf' was not declared in this scope
 ```
-Resubmitted:
-```
-chaffverb  - puredata - resubmitted
-Gammou - resubmitted
-HISE - resubmitted
-LinVst  - resubmitted
-mammut  - error: #error "AVOIDDENORMALS is not defined"- resubmitted
-mx44 - resubmitted
-processing - resubmitted
-protrekkr - resubmitted
-protrekkr2 - resubmitted
-veejay-core  - resubmitted
-wineasio - resubmitted
-```
 SIMD:
+Add BuildRequires: xsimd-devel
 ```
 Chameleon - error: xsimd/stl/algorithms.hpp: No such file or directory
 princepedal - fatal error: xsimd/stl/algorithms.hpp: No such file or directory
@@ -150,13 +128,10 @@ rack-v1-SurgeRack  - fatal error: xmmintrin.h: No such file or directory
 ```
 Missing packages:
 ```
-lv2-avw-plugins  - No matching package to install: 'slv2-devel'
 miniaudicle  - No matching package to install: 'qscintilla-devel'
 opl3bankeditor  - No matching package to install: 'qwt-devel'
 opn2bankeditor  -No matching package to install: 'qwt-devel'
 polyphone  - No matching package to install: 'qcustomplot-devel'
-prelude  - No matching package to install: 'sfizz-devel' - rebusmitted
-toccata  - No matching package to install: 'sfizz-devel'
 rack-v2-RPJ  - fatal error: emmintrin.h: No such file or directory
 ```
 Various:

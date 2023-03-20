@@ -89,7 +89,7 @@ CLAP version of %{name}
 
 %set_build_flags
 export CFLAGS="$CFLAGS -Wno-error=format-security"
-export CXXFLAGS="$CXXFLAGS -Wno-error=format-security"
+export CXXFLAGS="$CXXFLAGS -include cstdint -Wno-error=format-security"
 
 %make_build PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true SYSDEPS=true
 

@@ -49,12 +49,21 @@ sed -i -e "s/-m64//g" test_savedialog.make
 
 %build
 
+%set_build_flags
+%if 0%{?fedora} >= 38
+export CXXFLAGS="-include cstdint $CXXFLAGS"
+%endif
+
 cd ecSource/external/nativefiledialog/build/gmake_linux
 %make_build
 cd ../../../../..
 
 cd ecSource
+%if 0%{?fedora} >= 38
+%cmake -DCMAKE_CXX_FLAGS="-include cstdint -fPIC $CXXFLAGS"
+%else
 %cmake
+%endif
 %cmake_build
 
 %install
