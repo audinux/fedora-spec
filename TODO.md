@@ -94,17 +94,18 @@
 ## Fedora 38 to be fixed
 Cstdint missing:
 ```
+sequencer64- cstdint
+
+stone-phaser  - cstdint
+string-machine  - cstdint
+
 ossia-score - cstdint
 rack-v1-trowaSoft  - cstdint
 rack-v2-SurgeXTRack - cstdint
 rack-v2-trowaSoft  - cstdint
-seq66  - cstdint
-sequencer64- cstdint
 shortcircuit  - cstdint
 soundux  - cstdint
 spectmorph  - cstdint
-stone-phaser  - cstdint
-string-machine  - cstdint
 surge-xt  - cstdint
 tipic  - cstdint
 vmpc - cstdint
