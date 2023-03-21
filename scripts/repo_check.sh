@@ -492,14 +492,6 @@ https://github.com/oli-kester/kepler34
 https://github.com/openAVproductions/openAV-ArtyFX
 https://github.com/OpenBoard-org/OpenBoard
 https://github.com/openframeworks/openFrameworks
-https://github.com/OpenMusicKontrollers/eteroj.lv2
-https://github.com/OpenMusicKontrollers/mephisto.lv2
-https://github.com/OpenMusicKontrollers/midi_matrix.lv2
-https://github.com/OpenMusicKontrollers/moony.lv2
-https://github.com/OpenMusicKontrollers/orbit.lv2
-https://github.com/OpenMusicKontrollers/patchmatrix
-https://github.com/OpenMusicKontrollers/sherlock.lv2
-https://github.com/OpenMusicKontrollers/synthpod
 https://github.com/ossia/score
 https://github.com/OSSIA/score
 https://github.com/oswald2/DGPatchMaker
@@ -836,6 +828,16 @@ https://github.com/ryukau/VSTPlugins
 https://github.com/pd3v/line
 https://github.com/kosua20/MIDIVisualizer
 https://github.com/mikeoliphant/neural-amp-modeler-lv2"
+
+# These ones have disappeared
+# https://github.com/OpenMusicKontrollers/eteroj.lv2
+# https://github.com/OpenMusicKontrollers/mephisto.lv2
+# https://github.com/OpenMusicKontrollers/midi_matrix.lv2
+# https://github.com/OpenMusicKontrollers/moony.lv2
+# https://github.com/OpenMusicKontrollers/orbit.lv2
+# https://github.com/OpenMusicKontrollers/patchmatrix
+# https://github.com/OpenMusicKontrollers/sherlock.lv2
+# https://github.com/OpenMusicKontrollers/synthpod
 
 # https://github.com/ycollet/Mx44
 

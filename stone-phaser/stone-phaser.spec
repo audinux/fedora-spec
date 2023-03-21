@@ -37,7 +37,9 @@ Summary: stone-phaser LADSPA plugin
 
 %description -n ladspa-stone-phaser
 A classic analog phaser effect
-This is an analog phaser with similarity to the Small Stone. It has a color switch, which makes the phasing stronger when on, and adds some feedback controls. A stereo variant of the phaser is included.
+This is an analog phaser with similarity to the Small Stone.
+It has a color switch, which makes the phasing stronger when on,
+and adds some feedback controls. A stereo variant of the phaser is included.
 This effect is supported on MOD devices.
 stone-phaser LADSPA plugin
 
@@ -46,7 +48,9 @@ Summary: stone-phaser VST plugin
 
 %description -n vst-stone-phaser
 A classic analog phaser effect
-This is an analog phaser with similarity to the Small Stone. It has a color switch, which makes the phasing stronger when on, and adds some feedback controls. A stereo variant of the phaser is included.
+This is an analog phaser with similarity to the Small Stone.
+It has a color switch, which makes the phasing stronger when on,
+and adds some feedback controls. A stereo variant of the phaser is included.
 This effect is supported on MOD devices.
 stone-phaser VST plugin
 
@@ -55,7 +59,9 @@ Summary: stone-phaser LV2 plugin
 
 %description -n lv2-stone-phaser
 A classic analog phaser effect
-This is an analog phaser with similarity to the Small Stone. It has a color switch, which makes the phasing stronger when on, and adds some feedback controls. A stereo variant of the phaser is included.
+This is an analog phaser with similarity to the Small Stone.
+It has a color switch, which makes the phasing stronger when on,
+and adds some feedback controls. A stereo variant of the phaser is included.
 This effect is supported on MOD devices.
 stone-phaser LV2 plugin
 
@@ -63,9 +69,18 @@ stone-phaser LV2 plugin
 
 %autosetup -n stone-phaser
 
+%ifarch aarch64
+sed -i -e "s/-msse2//g" dpf/Makefile.base.mk
+sed -i -e "s/-msse//g" dpf/Makefile.base.mk
+%endif
+
 %build
 
 %set_build_flags
+
+%if 0%{?fedora} >= 38
+export CXXFLAGS="-include cstdint $CXXFLAGS"
+%endif
 
 %make_build PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true
 

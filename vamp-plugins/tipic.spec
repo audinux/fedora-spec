@@ -13,6 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://code.soundsoftware.ac.uk/attachments/download/2272/tipic-src-v%{version}.tar.gz
+Patch0: tipic-0001-add-cstdint.patch
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: vamp-plugin-sdk-devel
@@ -48,7 +49,7 @@ and local variations such as vibrato.
 Provided under the GNU General Public License. Uses the QM DSP library.
 
 %prep
-%autosetup -n %{name}-src-v%{version}
+%autosetup -p1 -n %{name}-src-v%{version}
 
 sed -i -e "s/-Wall -Werror -O3.*/\$(VAMPCFLAGS)/g" Makefile.linux
 sed -i -e "s/\$(CFLAGS)/\$(VAMPCXXFLAGS)/g" Makefile.linux

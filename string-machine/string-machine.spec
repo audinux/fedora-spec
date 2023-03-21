@@ -51,6 +51,10 @@ LV2 version of %{name}
 
 %set_build_flags
 
+%if 0%{?fedora} >= 38
+export CXXFLAGS="-include cstdint $CXXFLAGS"
+%endif
+
 %make_build PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true
 
 %install

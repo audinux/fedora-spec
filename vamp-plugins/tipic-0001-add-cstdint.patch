@@ -1,0 +1,25 @@
+From 317afac45892590ddc3516b58be7502f7aa806b6 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Tue, 21 Mar 2023 08:03:40 +0100
+Subject: [PATCH] add cstdint
+
+---
+ src/PitchFilterbank.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/PitchFilterbank.cpp b/src/PitchFilterbank.cpp
+index 73f2092..f1175f9 100644
+--- a/src/PitchFilterbank.cpp
++++ b/src/PitchFilterbank.cpp
+@@ -25,7 +25,7 @@
+ #include <map>
+ #include <stdexcept>
+ #include <iostream>
+-
++#include <cstdint>
+ #include <cmath>
+ 
+ using namespace std;
+-- 
+2.39.2
+

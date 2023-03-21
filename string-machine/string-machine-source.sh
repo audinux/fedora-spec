@@ -6,8 +6,7 @@
 git clone https://github.com/jpcima/string-machine
 cd string-machine
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz string-machine.tar.gz string-machine/*
