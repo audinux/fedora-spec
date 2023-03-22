@@ -1,0 +1,9 @@
+- hosts: localhost
+  roles:
+  - role: standard-test-basic
+    tags:
+      - classic
+    required_packages:
+      - pythran
+    tests:
+      - pythran-compat

@@ -1,0 +1,22 @@
+From 20bfc0d2b8f70995877e7606a9fd8f7c839ccc3b Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Miro=20Hron=C4=8Dok?= <miro@hroncok.cz>
+Date: Thu, 18 Feb 2021 10:58:08 +0100
+Subject: [PATCH] Fix missing include for gcc-11
+
+Required for std::numeric_limits
+---
+ include/xsimd/types/xsimd_complex_base.hpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/include/xsimd/types/xsimd_complex_base.hpp b/include/xsimd/types/xsimd_complex_base.hpp
+index 80beda37..e3545047 100644
+--- a/include/xsimd/types/xsimd_complex_base.hpp
++++ b/include/xsimd/types/xsimd_complex_base.hpp
+@@ -13,6 +13,7 @@
+ 
+ #include <complex>
+ #include <cstddef>
++#include <limits>
+ #include <ostream>
+ 
+ #ifdef XSIMD_ENABLE_XTL_COMPLEX
