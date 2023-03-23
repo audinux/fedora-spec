@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 37ecc9d624176e97f584a5d9cbcec90ab53d215c
-%global gittag0 2.0.2
+%global commit0 a3df1db7dd23abf93275166e455978842b614bf3
+%global gittag0 2.1.00
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-StudioSixPlusOne
-Version: 2.0.2
+Version: 2.1.00
 Release: 1%{?dist}
 Summary: StudioSixPlusOne plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r StudioSixPlusOne_plugin/dist/StudioSixPlusOne/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.00-1
 - initial specfile

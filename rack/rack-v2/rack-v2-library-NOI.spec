@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 da35d3128bb77fb5a8c9255c4f14b028c45131dd
-%global gittag0 2.0.2
+%global gittag0 2.0.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-NOI
-Version: 2.0.2
+Version: 2.0.3
 Release: 1%{?dist}
 Summary: NOI plugin for Rack
 License: GPLv2+
@@ -61,7 +61,7 @@ BuildRequires: jq
 
 %description
 NOI plugin for Rack.
-Digital Wilt
+granular reverb
 
 %prep
 %setup -n Rack
@@ -153,5 +153,5 @@ cp -r NOI_plugin/dist/NOI/* %{buildroot}%{_libexecdir}/Rack2/plugins/NOI/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
 - initial specfile

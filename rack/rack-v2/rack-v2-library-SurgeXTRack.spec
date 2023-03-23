@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 6e4d86421f9405a4d9d669b1e75b8adf85ce4865
-%global gittag0 2.1.3.0
+%global commit0 f4420b19c7137d85c0390ef494bb880cc2726e74
+%global gittag0 2.1.5.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SurgeXTRack
-Version: 2.1.3.0
+Version: 2.1.5.0
 Release: 1%{?dist}
 Summary: SurgeXTRack plugin for Rack
 License: GPLv2+
@@ -168,5 +168,5 @@ chrpath --delete %{buildroot}%{_libexecdir}/Rack2/plugins/SurgeXTRack/plugin.so
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.3.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.5.0-1
 - initial specfile

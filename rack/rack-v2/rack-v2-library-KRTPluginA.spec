@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 e44cf0c2302580343ed9876e398a418f1b953931
-%global gittag0 2.26.28
+%global commit0 ff45222c863c2ce3ed13cf03b9c9f9c0a5148a41
+%global gittag0 2.26.31
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-KRTPluginA
-Version: 2.26.28
+Version: 2.26.31
 Release: 1%{?dist}
 Summary: KRTPluginA plugin for Rack
 License: GPLv2+
@@ -156,5 +156,5 @@ cp -r KRTPluginA_plugin/dist/KRTPluginA/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.26.28-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.26.31-1
 - initial specfile

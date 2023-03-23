@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 5aa4a546c4121d391aa9b1cac91fceeb21565bba
-%global gittag0 2.1.2
+%global gittag0 2.1.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-QuantalAudio
-Version: 2.1.2
+Version: 2.1.3
 Release: 1%{?dist}
 Summary: QuantalAudio plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r QuantalAudio_plugin/dist/QuantalAudio/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.3-1
 - initial specfile
