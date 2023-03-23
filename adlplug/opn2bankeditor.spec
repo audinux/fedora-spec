@@ -25,7 +25,13 @@ BuildRequires: cmake
 BuildRequires: desktop-file-utils
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-linguist
+%if 0%{?fedora} >= 38
+BuildRequires: qwt-qt5-devel
+%else
 BuildRequires: qwt-devel
+%endif
+BuildRequires: qt5-qtserialport-devel
+BuildRequires: zlib-devel
 BuildRequires: desktop-file-utils
 
 %description

@@ -3,6 +3,8 @@
 # Category: Programming
 # GUIToolkit: Qt4
 
+%global debug_package %{nil}
+
 Summary: Light weight ChucK development environment
 Name:    miniaudicle
 Version: 1.3.5.2
@@ -16,16 +18,19 @@ Distribution: Planet CCRMA
 Source0: https://audicle.cs.princeton.edu/mini/release/files/miniAudicle-%{version}%{?beta:-%{?beta}}.tgz
 Patch0:  miniaudicle-0001-fix-nullptr-check.patch
 
-BuildRequires: gcc gcc-c++ perl
-BuildRequires: bison flex
+BuildRequires: gcc gcc-c++
+BuildRequires: bison
+BuildRequires: flex
 %if 0%{?fedora} >= 32
 BuildRequires: qt4-devel
 %else
 BuildRequires: qt-devel
 %endif
 BuildRequires: qscintilla-devel
-BuildRequires: jack-audio-connection-kit-devel alsa-lib-devel
-BuildRequires: libsndfile-devel pulseaudio-libs-devel
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: libsndfile-devel
+BuildRequires: pulseaudio-libs-devel
 
 %description
 The miniAudicle is a light-weight integrated development environment
@@ -35,18 +40,23 @@ environment, or in conjunction with traditional command-line modes of
 'chuck' operation and with other chuck tools.
 
 %prep
-%autosetup -p1 -n miniAudicle-%{version}%{?beta:-%{?beta}}
+%autosetup -p1 -n miniAudicle-%{version}
 
-%build
-# build alsa version
 cd src
 
 # insert rpm flags in qmake profile
-perl -p -i -e "s|QMAKE_LFLAGS \+=|QMAKE_LFLAGS \+= %{__global_ldflags}|g" miniAudicle.pro
-perl -p -i -e "s|CFLAGS \+=|CFLAGS \+= -std=c++11 %{optflags}|g" miniAudicle.pro
+sed -i -e "s|QMAKE_LFLAGS \+=|QMAKE_LFLAGS \+= %{__global_ldflags}|g" miniAudicle.pro
+sed -i -e "s|CFLAGS \+=|CFLAGS \+= -std=c++11 %{optflags}|g" miniAudicle.pro
 
 # write proper lib path in default preferences
-perl -p -i -e "s|/usr/local/lib/chuck|%{_libdir}/chuck|g" chuck/src/chuck_dl.cpp
+sed -i -e "s|/usr/local/lib/chuck|%{_libdir}/chuck|g" chuck/src/chuck_dl.cpp
+
+%build
+
+%set_build_flags
+
+# build alsa version
+cd src
 
 # build alsa version
 %make_build linux-alsa
