@@ -105,18 +105,10 @@ surge-xt  - cstdint
 vmpc - cstdint
 yabridge  - cstdint
 zynayumi  - cstdint
-zytrax  - cstdint
 tsunami  - error: 'printf' was not declared in this scope
 ```
 SIMD:
 Add BuildRequires: xsimd-devel
-In Fedora 38, the file xsimd/stl/algorithms.hpp is no longer in this package
-```
-Chameleon - error: xsimd/stl/algorithms.hpp: No such file or directory
-princepedal - fatal error: xsimd/stl/algorithms.hpp: No such file or directory
-proteus  - fatal error: xsimd/stl/algorithms.hpp: No such file or directory
-ts-m1n3  - fatal error: xsimd/stl/algorithms.hpp: No such file or directory
-```
 ```
 rack-v1-BaconMusic - aarch64 - fatal error: pmmintrin.h: No such file or directory
 rack-v1-JE - aarch64 - fatal error: pmmintrin.h: No such file or directory
@@ -126,9 +118,7 @@ rack-v1-SurgeRack - aarch64 - fatal error: xmmintrin.h: No such file or director
 ```
 Missing packages:
 ```
-miniaudicle  - No matching package to install: 'qscintilla-devel'
-opl3bankeditor  - No matching package to install: 'qwt-devel'
-opn2bankeditor  -No matching package to install: 'qwt-devel'
+miniaudicle  - No matching package to install: 'qscintilla-devel' # waiting for qt5 support
 polyphone  - No matching package to install: 'qcustomplot-devel'
 rack-v2-RPJ  - fatal error: emmintrin.h: No such file or directory
 ```
