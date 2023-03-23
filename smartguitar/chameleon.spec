@@ -93,6 +93,7 @@ trap "kill $! || true" EXIT
 sleep 10
 
 %set_build_flags
+export LDFLAGS="-I/usr/include $LDFLAGS"
 
 %cmake
 %cmake_build

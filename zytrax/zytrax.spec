@@ -18,6 +18,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/reduz/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: SConstruct-zytrax
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make scons
@@ -43,15 +44,18 @@ simple pattern/orderlist layout).
 %prep
 %autosetup -n %{name}-%{commit0}
 
+cp %{SOURCE1} SConstruct
+
 %build
 
 export XDG_CURRENT_DESKTOP="kde"
 
 %set_build_flags
 
-export CCFLAGS="$CXXFLAGS"
+export CXXFLAGS="-include cstdint $CXXFLAGS"
 
-scons --environment-overrides
+# scons --environment-overrides
+scons
 
 cat > zytrax.desktop << EOF
 [Desktop Entry]

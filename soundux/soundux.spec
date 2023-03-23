@@ -45,7 +45,13 @@ sed -i -e "s/-Werror/ /g" CMakeLists.txt
 
 %build
 
-%cmake -DEMBED_PATH=ON
+%set_build_flags
+
+%cmake \
+%if 0%{?fedora} >= 38
+       -DCMAKE_CXX_FLAGS="-include cstdint -Wno-error=deprecated-declarations -fPIC $CXXFLAGS" \
+%endif
+       -DEMBED_PATH=ON
 %cmake_build
 
 %install 

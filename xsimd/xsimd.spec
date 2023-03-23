@@ -45,12 +45,11 @@ Provides:       %{name} = %{version}-%{release}
 Provides:       %{name}-static = %{version}-%{release}
 %description devel %_description
 
-
 %prep
-%autosetup -p1
+%autosetup -p1 -n xsimd-%{version}
 
 %build
-%cmake -DBUILD_TESTS=ON
+%cmake -DBUILD_TESTS=ON -DCMAKE_CXX_STANDARD=14
 %cmake_build
 
 %install

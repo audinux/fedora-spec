@@ -98,6 +98,12 @@ sed -i -e "s/-O3/-O2/g" configure
 
 %build
 
+%set_build_flags
+%if 0%{?fedora} >= 38
+export CXXFLAGS="-include cstdint $CXXFLAGS"
+export BSE_CFLAGS="$CXXFLAGS"
+%endif
+
 autoreconf --install
 # ./autogen.sh
 
