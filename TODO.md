@@ -95,19 +95,13 @@
 Cstdint missing:
 ```
 sequencer64- cstdint
-
-stone-phaser  - cstdint
-string-machine  - cstdint
+spectmorph  - cstdint
 
 ossia-score - cstdint
 rack-v1-trowaSoft  - cstdint
 rack-v2-SurgeXTRack - cstdint
 rack-v2-trowaSoft  - cstdint
-shortcircuit  - cstdint
-soundux  - cstdint
-spectmorph  - cstdint
 surge-xt  - cstdint
-tipic  - cstdint
 vmpc - cstdint
 yabridge  - cstdint
 zynayumi  - cstdint
@@ -116,16 +110,19 @@ tsunami  - error: 'printf' was not declared in this scope
 ```
 SIMD:
 Add BuildRequires: xsimd-devel
+In Fedora 38, the file xsimd/stl/algorithms.hpp is no longer in this package
 ```
 Chameleon - error: xsimd/stl/algorithms.hpp: No such file or directory
 princepedal - fatal error: xsimd/stl/algorithms.hpp: No such file or directory
 proteus  - fatal error: xsimd/stl/algorithms.hpp: No such file or directory
 ts-m1n3  - fatal error: xsimd/stl/algorithms.hpp: No such file or directory
-rack-v1-BaconMusic  - fatal error: pmmintrin.h: No such file or directory
-rack-v1-JE  -fatal error: pmmintrin.h: No such file or directory
-rack-v1-ParableInstruments  - fatal error: pmmintrin.h: No such file or directory
-rack-v1-squinkylabs-plug1  - fatal error: pmmintrin.h: No such file or directory
-rack-v1-SurgeRack  - fatal error: xmmintrin.h: No such file or directory
+```
+```
+rack-v1-BaconMusic - aarch64 - fatal error: pmmintrin.h: No such file or directory
+rack-v1-JE - aarch64 - fatal error: pmmintrin.h: No such file or directory
+rack-v1-ParableInstruments - aarch64 - fatal error: pmmintrin.h: No such file or directory
+rack-v1-squinkylabs-plug1  - aarch64 - fatal error: pmmintrin.h: No such file or directory
+rack-v1-SurgeRack - aarch64 - fatal error: xmmintrin.h: No such file or directory
 ```
 Missing packages:
 ```
