@@ -94,7 +94,7 @@
 ## Fedora 38 to be fixed
 Cstdint missing:
 ```
-sequencer64- cstdint
+sequencer64 - cstdint
 spectmorph  - cstdint
 
 ossia-score - cstdint
@@ -103,9 +103,9 @@ rack-v2-SurgeXTRack - cstdint
 rack-v2-trowaSoft  - cstdint
 surge-xt  - cstdint
 vmpc - cstdint
-yabridge  - cstdint
-zynayumi  - cstdint
-tsunami  - error: 'printf' was not declared in this scope
+yabridge - cstdint
+zynayumi - cstdint
+tsunami - error: 'printf' was not declared in this scope
 ```
 SIMD:
 Add BuildRequires: xsimd-devel
@@ -119,14 +119,12 @@ rack-v1-SurgeRack - aarch64 - fatal error: xmmintrin.h: No such file or director
 Missing packages:
 ```
 miniaudicle  - No matching package to install: 'qscintilla-devel' # waiting for qt5 support
-polyphone  - No matching package to install: 'qcustomplot-devel'
 rack-v2-RPJ  - fatal error: emmintrin.h: No such file or directory
 ```
 Various:
 ```
 aether  - error: 'memset' offset [0, 3] is out of the bounds [0, 0] [-Werror=array-bounds=]
 improviz - ??
-inconcert  - error: #error C++ versions less than C++14 are not supported.
 loudness-scanner  -  Problem: package libchromaprint-1.5.1-8.fc38.x86_64 requires libavutil.so.58()(64bit), but none of the providers can be 
 mamba  - error: no matching function for call to 'std::vector<std::__cxx11::basic_string<char> >::push_back(char [256])'
 master_me  - ERROR : -lang cpp not supported since CPP backend is not built
