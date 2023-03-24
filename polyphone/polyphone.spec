@@ -26,7 +26,6 @@ BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: portaudio-devel 
 BuildRequires: rtmidi-devel 
 BuildRequires: stk-devel 
-BuildRequires: qcustomplot-devel 
 BuildRequires: libvorbis-devel 
 BuildRequires: libogg-devel 
 BuildRequires: zlib-devel

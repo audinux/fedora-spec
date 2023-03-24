@@ -44,7 +44,11 @@ ALSA, and therefore only runs on Linux.
 %build
 %set_build_flags
 export CXXFLAGS="-std=c++11 $CXXFLAGS"
-%cmake -DINCONCERT_RUN_UNIT_TESTS=OFF
+%cmake \
+%if 0%{?fedora} >= 38
+       -DCMAKE_CXX_STANDARD=14 \
+%endif
+       -DINCONCERT_RUN_UNIT_TESTS=OFF
 %cmake_build
 
 %install
