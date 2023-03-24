@@ -3,9 +3,15 @@
 # Category: Audio, Synthesizer
 # LastSourceUpdate: 2021
 
+%global padthv1_major 0
+%global padthv1_minor 9
+%global padthv1_patch 30
+%global padthv1_version %{padthv1_major}.%{padthv1_minor}.%{padthv1_patch}
+%global padthv1_version_ %{padthv1_major}_%{padthv1_minor}_%{padthv1_patch}
+
 Summary: Old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.
 Name:    padthv1
-Version: 0.9.29
+Version: %{padthv1_version}
 Release: 2%{?dist}
 URL:     https://sourceforge.net/projects/%{name}
 License: GPLv2+
@@ -13,7 +19,7 @@ License: GPLv2+
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://download.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0: https://github.com/rncbc/padthv1/archive/refs/tags/padthv1_%{padthv1_version_}.tar.gz#/%{name}-%{padthv1_version}.tar.gz
 Source1: http://www.linuxsynths.com/Padthv1PatchesDemos/67Padthv1Patches.tar.gz
 Patch0:  padthv1-0001-disable-strip.patch
 
@@ -46,7 +52,7 @@ Requires: %{name}%{?_isa} = %{version}-%{release}
 An LV2 plugin of the padthv1 synthesizer
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n %{name}-%{name}_%{padthv1_version_}
 
 %build
 
@@ -87,6 +93,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.des
 %{_libdir}/lv2/%{name}.lv2/
 
 %changelog
+* Fri Mar 24 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.30-2
+- update to 0.9.30-2
+
 * Thu Jan 26 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.29-2
 - update to 0.9.29-2 - add some presets
 
