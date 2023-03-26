@@ -3,7 +3,7 @@
 # Category: Audio, Editor
 
 Name:    HISE
-Version: 3.0.2
+Version: 3.0.3
 Release: 1%{?dist}
 Summary: The open source framework for sample based instrument
 License: GPLv2+
@@ -121,6 +121,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst/*
 
 %changelog
+* Sun Mar 26 2023 Yann Collette <ycollette.nospam@free.fr> - 3.0.3-1
+- update to 3.0.3-1
+
 * Tue Mar 21 2023 Yann Collette <ycollette.nospam@free.fr> - 3.0.2-1
 - update to 3.0.2-1
 
