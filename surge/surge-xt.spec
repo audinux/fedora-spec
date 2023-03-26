@@ -76,7 +76,13 @@ sed -i -e "s/Surge_XT Effects/Surge_XT_Effects/g" src/surge-fx/CMakeLists.txt
 
 %build
 
-%cmake -DBUILD_SHARED_LIBS=OFF
+%set_build_flags
+
+%cmake \
+%if 0%{?fedora} >= 38
+       -DCMAKE_CXX_FLAGS="-include cstdint -fPIC $CXXFLAGS" \
+%endif
+       -DBUILD_SHARED_LIBS=OFF 
 %cmake_build
 
 %install 

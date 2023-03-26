@@ -45,8 +45,12 @@ It is designed for ease of use and not-looking-crappy™.
 # Now tsunami's CMakeLists.txt set gtk4 by default.
 # To use gtk3, change the BuildRequires, and add this argument to %%cmake:
 # -DGTK4_OR_GTK3=gtk3
-%cmake
 
+%if 0%{?fedora} >= 38
+%cmake -DCMAKE_CXX_FLAGS="-include cstdio $CXXFLAGS"
+%else
+%cmake
+%endif
 %cmake_build
 
 %install

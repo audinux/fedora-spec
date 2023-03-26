@@ -148,7 +148,7 @@ sed -i -e "/,-march=nehalem/d" SurgeXTRack_plugin/RackSDK.cmake
 %build
 
 CURRENT_PATH=`pwd`
-MYCXXFLAGS="`pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src -Wno-error"
+MYCXXFLAGS="`pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src -Wno-error -include cstdint"
 %ifarch x86_64 arm64
 MYCXXFLAGS="$MYCXXFLAGS -DSIMDE_X86_AVX_NATIVE -DSIMDE_X86_SSE4_2_NATIVE -DSIMDE_X86_SSE4_1_NATIVE -DSIMDE_X86_SSSE3_NATIVE -DSIMDE_X86_SSE3_NATIVE -DSIMDE_X86_SSE2_NATIVE -DSIMDE_X86_SSE_NATIVE -DSIMDE_X86_MMX_NATIVE"
 %endif

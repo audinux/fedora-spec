@@ -41,7 +41,14 @@ VST3 version of %{name}
 
 %build
 
+%set_build_flags
+
+%if 0%{?fedora} >= 38
+%cmake -DCMAKE_CXX_FLAGS="-include cstdint $CXXFLAGS"
+%else
 %cmake
+%endif
+
 sed -i -e "/mpc-tests/d" editables/mpc/CMakeLists.txt
 %cmake_build --target vmpc2000xl_Standalone vmpc2000xl_VST3 
 # vmpc2000xl_LV2

@@ -54,6 +54,11 @@ also staying easy to debug and maintain.
 
 %build
 
+%set_build_flags
+%if 0%{?fedora} >= 38
+export CXXFLAGS="-include cstdint $CXXFLAGS"
+%endif
+
 %meson --cross-file=cross-wine.conf \
     --buildtype=release \
     --wrap-mode=default \

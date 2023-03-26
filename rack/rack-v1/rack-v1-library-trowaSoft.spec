@@ -93,7 +93,7 @@ cp -n %{SOURCE2} trowaSoft_plugin/plugin.json
 %build
 
 cd trowaSoft_plugin
-export CXXFLAGS="-include iterator -include utility $CXXFLAGS"
+export CXXFLAGS="-include iterator -include utility -include cstdint $CXXFLAGS"
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 

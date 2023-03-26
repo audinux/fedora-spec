@@ -17,13 +17,11 @@ License: GPL3
 Vendor:       Audinux
 Distribution: Audinux
 
-# git clone --recursive https://github.com/zynayumi/zynayumi
-# find . -name .git -exec rm -rf {} \;
-# cd ..
-# tar cvfz zynayumi.tar.gz zynayumi/*
-# rm -rf zynayumi
+# Usage: ./source-zynayumi.sh <tag>
+#        ./source-zynayumi.sh master
 
 Source0: zynayumi.tar.gz
+Source1: source-zynayumi.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -66,13 +64,19 @@ A DSSI version of %{name}
 
 %autosetup -n %{name}
 
+sed -i -e "s|set(CMAKE_CXX_FLAGS \"|set(CMAKE_CXX_FLAGS \"\${CMAKE_CXX_FLAGS} |g" libzynayumi/CMakeLists.txt
+
 %build
 
 %set_build_flags
 
 # Build libzynayumi
 cd libzynayumi
+%if 0%{?fedora} >= 38
+%cmake -DCMAKE_CXX_FLAGS="-include cstdint $CXXFLAGS"
+%else
 %cmake
+%endif
 %cmake_build
 rm -rf build
 mv %{__cmake_builddir} build
