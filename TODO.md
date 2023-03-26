@@ -90,6 +90,7 @@
 | ultimatevocalremovergui | https://github.com/Anjok07/ultimatevocalremovergui |
 | bintracker              | https://github.com/bintracker/bintracker |
 | glicol-cli              | https://github.com/glicol/glicol-cli |
+| backupband              | https://sourceforge.net/projects/backupband/files/ |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
