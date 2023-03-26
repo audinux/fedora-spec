@@ -97,16 +97,10 @@ Cstdint missing:
 ```
 sequencer64 - cstdint
 spectmorph  - cstdint
-
+vmpc - cstdint -> error: invalid use of incomplete type 'class mpc::engine::audio::server::NonRealTimeAudioServer
+yabridge - cstdint - TODO ...
 ossia-score - cstdint
-rack-v1-trowaSoft  - cstdint
 rack-v2-SurgeXTRack - cstdint
-rack-v2-trowaSoft  - cstdint
-surge-xt  - cstdint
-vmpc - cstdint
-yabridge - cstdint
-zynayumi - cstdint
-tsunami - error: 'printf' was not declared in this scope
 ```
 SIMD:
 Add BuildRequires: xsimd-devel
