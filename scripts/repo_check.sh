@@ -27,9 +27,9 @@ git://source.winehq.org/git/wine
 http://git.drumgizmo.org/dgedit
 http://git.drumgizmo.org/drumgizmo
 http://git.elephly.net/software/lv2-mdametapiano
-http://github.com/Miserlou/RJModules
-http://github.com/stargateaudio/stargate
-http://gitlab.com/unlessgames/unless_modules
+https://github.com/Miserlou/RJModules
+https://github.com/stargateaudio/stargate
+https://gitlab.com/unlessgames/unless_modules
 https://agraef.github.io/purr-data
 https://asb2m10.github.io/dexed
 https://bitbucket.org/agraef/faust-lv2/src
@@ -806,7 +806,7 @@ https://git.zrythm.org/zrythm/zrythm
 https://git.zrythm.org/zrythm/zrythm-media
 https://invent.kde.org/graphics/kxstitch
 https://invent.kde.org/multimedia/subtitlecomposer
-https://ithub.com/Vampouille/superboucle
+https://github.com/Vampouille/superboucle
 https://pagure.io/fedora-kickstarts
 https://pagure.io/fedora-misc-package-utilities
 https://salsa.debian.org/multimedia-team/portsmf
