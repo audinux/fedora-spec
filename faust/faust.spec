@@ -4,7 +4,7 @@
 
 Name:	 faust
 Version: 2.54.9
-Release: 36%{?dist}
+Release: 37%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
 # The rest is GPLv2+
@@ -18,7 +18,8 @@ Distribution: Audinux
 # ./faust-source.sh 2.54.9
 
 Source0: faust.tar.gz
-Source1: faust-source.sh
+Source1: faust-backends.cmake
+Source2: faust-source.sh
 
 BuildRequires: gcc-c++
 BuildRequires: doxygen
@@ -32,6 +33,7 @@ BuildRequires: texlive-collection-basic
 BuildRequires: texlive-collection-fontsrecommended
 BuildRequires: texlive-mdwtools
 BuildRequires: libmicrohttpd-devel
+BuildRequires: llvm-devel
 
 %description
 Faust AUdio STreams is a functional programming language for real-time audio
@@ -116,12 +118,15 @@ signal processing. These libraries are part of the standard Faust libraries.
 %prep
 %autosetup -n faust
 
+cp %{SOURCE1} build
+
 %build
 
 %set_build_flags
 cd build
 %cmake -DINCLUDE_DYNAMIC=ON \
        -DLIBSDIR=%{_lib} \
+       -C %{SOURCE1} \
 %if 0%{?fedora} >= 38
     -DCMAKE_CXX_FLAGS="-include cstdint -fPIC $CXXFLAGS"
 %endif
@@ -180,6 +185,9 @@ done
 %{_datadir}/faust/*.lib
 
 %changelog
+* Sun Mar 26 2023 Yann Collette <ycollette.nospam@free.fr> - 2.54.9-37
+- update to 2.54.9-37 - enable some other backends
+
 * Tue Mar 07 2023 Yann Collette <ycollette.nospam@free.fr> - 2.54.9-36
 - update to 2.54.9-36 - use cmake to build
 

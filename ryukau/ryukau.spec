@@ -52,6 +52,13 @@ LV2 version of %{name}
 %prep
 %autosetup -n %{name}
 
+%ifarch aarch64
+for Files in `find . -name Makefile`
+do
+  sed -i -e "s/-mavx512f -mfma -mavx512vl -mavx512bw -mavx512dq//g" $Files
+done
+%endif
+
 %build
 
 %set_build_flags
