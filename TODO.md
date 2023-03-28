@@ -119,12 +119,8 @@ rack-v2-RPJ  - fatal error: emmintrin.h: No such file or directory
 Various:
 ```
 ryukau  - #error Please compile for the SSE2 instruction set or higher
-
 mpk-m2-editor  - Error: The version in the Python package metadata 0.0.0 normalizes to zero.
-
-aether  - error: 'memset' offset [0, 3] is out of the bounds [0, 0] [-Werror=array-bounds=]
 improviz - ??
-obxd  -  unrecognized command-line option '-m64'
 rack-v2-EH_modules  - ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
 rack-v2-FrankBuss - ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
 rack-v2-SynthKit  - ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
