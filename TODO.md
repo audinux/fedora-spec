@@ -120,11 +120,10 @@ Various:
 ```
 ryukau  - #error Please compile for the SSE2 instruction set or higher
 
+mpk-m2-editor  - Error: The version in the Python package metadata 0.0.0 normalizes to zero.
+
 aether  - error: 'memset' offset [0, 3] is out of the bounds [0, 0] [-Werror=array-bounds=]
 improviz - ??
-loudness-scanner  -  Problem: package libchromaprint-1.5.1-8.fc38.x86_64 requires libavutil.so.58()(64bit), but none of the providers can be 
-mamba  - error: no matching function for call to 'std::vector<std::__cxx11::basic_string<char> >::push_back(char [256])'
-mpk-m2-editor  - Error: The version in the Python package metadata 0.0.0 normalizes to zero.
 obxd  -  unrecognized command-line option '-m64'
 rack-v2-EH_modules  - ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
 rack-v2-FrankBuss - ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
