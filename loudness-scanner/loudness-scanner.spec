@@ -1,5 +1,5 @@
 Name:    loudness-scanner
-Version: 0.5.1
+Version: 0.6.0
 Release: 3%{?dist}
 Summary: A loudness scanner (according to the EBU R128 standard)
 URL:     https://github.com/jiixyj/loudness-scanner
@@ -9,7 +9,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./loudness-scanner-source.sh <tag>
-# ./loudness-scanner-source.sh v0.5.1
+# ./loudness-scanner-source.sh v0.6.0
 
 Source0: loudness-scanner.tar.gz
 Source1: loudness-scanner-source.sh
@@ -17,7 +17,8 @@ Source1: loudness-scanner-source.sh
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: chrpath
-BuildRequires: qt-devel
+BuildRequires: qt5-qtbase-devel
+BuildRequires: qt5-qtsvg-devel
 BuildRequires: glib2-devel
 BuildRequires: libsndfile-devel
 BuildRequires: taglib-devel
@@ -30,7 +31,11 @@ BuildRequires: gstreamer1-plugins-base-devel
 BuildRequires: gstreamer-devel
 BuildRequires: gstreamer-plugins-base-devel
 %endif
-BuildRequires: ffmpeg-devel
+%if 0%{?fedora} >= 37
+Buildrequires: compat-ffmpeg4-devel
+%else
+Buildrequires: ffmpeg-devel
+%endif
 BuildRequires: librsvg2-devel
 BuildRequires: gtk2-devel
 BuildRequires: harfbuzz-devel
@@ -56,24 +61,32 @@ sed -i -e "s/add_subdirectory(ebur128\/ebur128)/#add_subdirectory(ebur128\/ebur1
 
 %set_build_flags
 
-%cmake -DEBUR128_INCLUDE_DIR=/usr/include 
-%make_build
+%cmake \
+%if 0%{?fedora} >= 38
+       -DCMAKE_CXX_FLAGS="-include cstdint $CXXFLAGS" \
+%endif
+       -DEBUR128_INCLUDE_DIR=/usr/include
+%cmake_build
 
 %install
 
 install -d -m 755 %{buildroot}/%{_bindir}
 install -pm 755 %{__cmake_builddir}/loudness          %{buildroot}/%{_bindir}/
 install -pm 755 %{__cmake_builddir}/loudness-drop-gtk %{buildroot}/%{_bindir}/
-install -pm 755 %{__cmake_builddir}/loudness-drop-qt  %{buildroot}/%{_bindir}/
+install -pm 755 %{__cmake_builddir}/loudness-drop-qt5 %{buildroot}/%{_bindir}/
 
 install -d -m 755 %{buildroot}/%{_libdir}
-%if 0%{?fedora} < 32
-install -pm 755 %{__cmake_builddir}/libinput_gstreamer.so %{buildroot}/%{_libdir}/
-%endif
-install -pm 755 %{__cmake_builddir}/libinput_mpg123.so    %{buildroot}/%{_libdir}/
-install -pm 755 %{__cmake_builddir}/libinput_sndfile.so   %{buildroot}/%{_libdir}/
 
-chrpath --delete $RPM_BUILD_ROOT/usr/bin/*
+install -pm 755 %{__cmake_builddir}/libfiletree.so       %{buildroot}/%{_libdir}/
+install -pm 755 %{__cmake_builddir}/libinput_ffmpeg.so   %{buildroot}/%{_libdir}/
+install -pm 755 %{__cmake_builddir}/libinput_sndfile.so  %{buildroot}/%{_libdir}/
+install -pm 755 %{__cmake_builddir}/libinput.so          %{buildroot}/%{_libdir}/
+install -pm 755 %{__cmake_builddir}/libscanner-common.so %{buildroot}/%{_libdir}/
+install -pm 755 %{__cmake_builddir}/libscanner-lib.so    %{buildroot}/%{_libdir}/
+install -pm 755 %{__cmake_builddir}/libscanner-tag.so    %{buildroot}/%{_libdir}/
+
+chrpath --delete %{buildroot}/%{_bindir}/*
+chrpath --delete %{buildroot}/%{_libdir}/*
 
 %files
 %doc README.md
@@ -82,6 +95,9 @@ chrpath --delete $RPM_BUILD_ROOT/usr/bin/*
 %{_libdir}/*
 
 %changelog
+* Mon Mar 27 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.0-4
+- update to 0.6.0-4
+
 * Fri Oct 23 2020 Yann Collette <ycollette.nospam@free.fr> - 0.5.1-4
 - fix debug build
 
