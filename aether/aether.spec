@@ -30,10 +30,9 @@ Aether is an algorithmic reverb LV2 plugin based on Cloudseed.
 %prep
 %autosetup -n Aether
 
-%build
+sed -i -e "s/-Werror//g" CMakeLists.txt
 
-%set_build_flags
-export CXXFLAGS="$CXXFLAGS -Wno-error=stringop-overflow"
+%build
 
 %cmake
 %cmake_build

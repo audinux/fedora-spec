@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name:    obxd
-Version: 2.9
+Version: 2.8
 Release: 2%{?dist}
 Summary: A VST3 Synthesizer
 License: GPLv3
@@ -13,9 +13,8 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/reales/OB-Xd/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Source1: obxd-makefiles.tar.gz
-Source2: vst3sdk.tar.gz
-Source3: vst3-source.sh
+Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
+Source2: obxd-makefiles.tar.gz
 Patch0:  obxd_file_install_resources.patch
 
 BuildRequires: gcc gcc-c++
@@ -59,10 +58,13 @@ VST3 version of %{name}
 %prep
 %autosetup -p1 -n OB-Xd-%{version}
 
-tar xvfz %{SOURCE1}
+unzip %{SOURCE1}
 tar xvfz %{SOURCE2}
 
 sed -i -e "s|-DJucePlugin_Build_Standalone=0|-DJucePlugin_Build_Standalone=1|g" Builds/LinuxMakefile/Makefile
+%ifarch aarch64
+sed -i -e "s/-m64//g" Builds/LinuxMakefile/Makefile
+%endif
 
 %build
 
@@ -77,7 +79,6 @@ cd Builds/LinuxMakefile
 
 %install 
 
-#install -m 755 -d %{buildroot}%{_libdir}/vst3/OB-Xd.vst3/
 install -m 755 -d %{buildroot}%{_libdir}/vst/
 install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 -d %{buildroot}%{_datadir}/discoDSP/OB-Xd/
@@ -86,8 +87,6 @@ cp -r Documents/discoDSP/* %{buildroot}%{_datadir}/discoDSP/
 
 install -m 755 -p Builds/LinuxMakefile/build/OB-Xd %{buildroot}/%{_bindir}/
 install -m 755 -p Builds/LinuxMakefile/build/OB-Xd.so %{buildroot}/%{_libdir}/vst/
-#cp -ra Builds/LinuxMakefile/build/OB-Xd.vst3/* %{buildroot}/%{_libdir}/vst3/OB-Xd.vst3/
-#chmod a+x %{buildroot}/%{_libdir}/vst3/OB-Xd.vst3/Contents/x86_64-linux/OB-Xd.so
 
 %files
 %doc README.md
@@ -95,16 +94,10 @@ install -m 755 -p Builds/LinuxMakefile/build/OB-Xd.so %{buildroot}/%{_libdir}/vs
 %{_bindir}/*
 %{_datadir}/*
 
-#%files -n vst3-%{name}
-#%{_libdir}/vst3/*
-
 %files -n vst-%{name}
 %{_libdir}/vst/*
 
 %changelog
-* Mon Jul 25 2022 Yann Collette <ycollette.nospam@free.fr> - 2.9-2
-- update to 2.9-2
-
 * Sun Jun 26 2022 Yann Collette <ycollette.nospam@free.fr> - 2.8-2
 - update to 2.8-2
 
