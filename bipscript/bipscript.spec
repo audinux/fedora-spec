@@ -3,7 +3,7 @@
 # Category: Audio, Programming
 
 Name:    bipscript
-Version: 0.17
+Version: 0.18
 Release: 1%{?dist}
 Summary: Audio language
 URL:     https://www.bipscript.org/
@@ -86,6 +86,9 @@ cp -ra apidocs/en %{buildroot}/%{_datadir}/bipscript/apidocs/
 %{_datadir}/bipscript/examples/*
 
 %changelog
+* Fri Mar 31 2023 Yann Collette <ycollette.nospam@free.fr> - 0.18-1
+- update to 0.18-1
+
 * Mon Mar 14 2022 Yann Collette <ycollette.nospam@free.fr> - 0.16-1
 - update to 0.16-1
 
