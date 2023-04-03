@@ -1,5 +1,14 @@
 #!/bin/bash
 
+wget -q --spider http://google.com
+
+if [ $? -eq 0 ]; then
+    echo "Net connection OK"
+else
+    echo "No net connection"
+    exit
+fi
+
 REPO_LIST="git://anongit.freedesktop.org/pulseaudio/pulseaudio
 git://gabe.is-a-geek.org/git/inconcert
 git://git.ardour.org/ardour/ardour
