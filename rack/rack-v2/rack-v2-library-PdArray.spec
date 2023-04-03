@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 9075b41435e7020f888cb63c7b136eb6cb365fba
-%global gittag0 2.0.6
+%global commit0 59d4c104b802fc5d6e199b82fc9690ae98078231
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-PdArray
-Version: 2.0.6
+Version: 2.1.0
 Release: 1%{?dist}
 Summary: PdArray plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r PdArray_plugin/dist/PdArray/* %{buildroot}%{_libexecdir}/Rack2/plugins/PdA
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.6-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile

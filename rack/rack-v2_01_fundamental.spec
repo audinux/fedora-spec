@@ -8,13 +8,13 @@
 %global debug_package %{nil}
 
 # Global variables for github repository
-%global commit0 03bd00b96ad19e0575939bb7a0b8b08eff22f076
+%global commit0 ee850f8487280839ae0548f6b9af65cb9faf3ef8
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    rack-v2-Fundamental
 Version: 2.3.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A plugin for Rack
 License: GPLv2+
 URL:     https://github.com/VCVRack/Fundamental
@@ -94,7 +94,7 @@ NEW_FLAGS="-I/usr/include/GLFW"
 NEW_FLAGS="$NEW_FLAGS -I/usr/include/rtaudio"
 %endif
 
-echo "CXXFLAGS += $NEW_FLAGS `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
+echo "CXXFLAGS += $NEW_FLAGS `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/tinyexpr  -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
 
 %if %{use_static_glfw}
 echo "Use Static GLFW"
@@ -179,6 +179,9 @@ cp -r fundamental_plugin/dist/Fundamental/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
+* Sun Apr 02 2023 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-3
+- update to 2.3.0-3 - last master
+
 * Tue Aug 09 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-2
 - update to 2.3.0-2
 
