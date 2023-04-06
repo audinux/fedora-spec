@@ -91,7 +91,6 @@
 | bintracker              | https://github.com/bintracker/bintracker |
 | glicol-cli              | https://github.com/glicol/glicol-cli |
 | backupband              | https://sourceforge.net/projects/backupband/files/ |
-| AIDA-X                  | https://github.com/AidaDSP/AIDA-X |
 | MiniDexed               | https://github.com/probonopd/MiniDexed |
 
 ## Fedora 38 to be fixed

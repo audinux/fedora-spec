@@ -836,7 +836,8 @@ https://github.com/izzyreal/vmpc-juce
 https://github.com/ryukau/VSTPlugins
 https://github.com/pd3v/line
 https://github.com/kosua20/MIDIVisualizer
-https://github.com/mikeoliphant/neural-amp-modeler-lv2"
+https://github.com/mikeoliphant/neural-amp-modeler-lv2
+https://github.com/AidaDSP/AIDA-X"
 
 # These ones have disappeared
 # https://github.com/OpenMusicKontrollers/eteroj.lv2
