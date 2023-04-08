@@ -6,16 +6,16 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 bdcb14c93b39ae0ea9587280c23b50d0f4c6211f
-%global gittag0 2.4
+%global commit0 4dc1722aad609f704ad9e86d44d29e5858db4151
+%global gittag0 2.4.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SeasideModular
-Version: 2.4
-Release: 1%{?dist}
+Version: 2.4.2
+Release: 2%{?dist}
 Summary: SeasideModular plugin for Rack
 License: GPLv2+
 URL:     https://github.com/abluenautilus/SeasideModularVCV
@@ -24,7 +24,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./rack-source.sh <tag>
-# ./rack-source.sh v2.0.3
+# ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
 Source1: https://github.com/abluenautilus/SeasideModularVCV/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
@@ -153,5 +153,5 @@ cp -r SeasideModular_plugin/dist/SeasideModular/* %{buildroot}%{_libexecdir}/Rac
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.2-1
 - initial specfile

@@ -6,16 +6,16 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 083f6a12d09e6b3764c83f2b62fcfa3379460475
-%global gittag0 2.0.8
+%global commit0 8cd4e3a33d42d76ffbff23622ad8c2d3940036cc
+%global gittag0 2.0.9
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-fruitsofkarma
-Version: 2.0.8
-Release: 1%{?dist}
+Version: 2.0.9
+Release: 2%{?dist}
 Summary: fruitsofkarma plugin for Rack
 License: GPLv2+
 URL:     https://github.com/alexey-komarov/fruitsofkarma-vcvrack
@@ -24,7 +24,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./rack-source.sh <tag>
-# ./rack-source.sh v2.0.3
+# ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
 Source1: https://github.com/alexey-komarov/fruitsofkarma-vcvrack/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
@@ -153,5 +153,5 @@ cp -r fruitsofkarma_plugin/dist/fruitsofkarma/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.8-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.9-1
 - initial specfile

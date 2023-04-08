@@ -6,16 +6,16 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 11f9acc7725e10e4476e149effcd09d82694e07f
-%global gittag0 2.1.1
+%global commit0 1dd7483cd6e6d2f839398c5f88bc996cd1738eff
+%global gittag0 2.1.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-ImpromptuModular
-Version: 2.1.1
-Release: 1%{?dist}
+Version: 2.1.2
+Release: 2%{?dist}
 Summary: ImpromptuModular plugin for Rack
 License: GPLv2+
 URL:     https://github.com/MarcBoule/ImpromptuModular/
@@ -24,7 +24,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./rack-source.sh <tag>
-# ./rack-source.sh v2.0.3
+# ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
 Source1: https://github.com/MarcBoule/ImpromptuModular//archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
@@ -153,5 +153,5 @@ cp -r ImpromptuModular_plugin/dist/ImpromptuModular/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-1
 - initial specfile
