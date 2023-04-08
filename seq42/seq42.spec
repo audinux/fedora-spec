@@ -1,5 +1,5 @@
 Name:    seq42
-Version: 2.1.2
+Version: 2.1.3
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -10,15 +10,13 @@ Distribution: Audinux
 
 Source0: https://github.com/Stazed/seq42/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
-BuildRequires: autoconf
-BuildRequires: automake
-BuildRequires: libtool
-BuildRequires: pkgconfig
+BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: gtkmm30-devel
 BuildRequires: liblo-devel
+BuildRequires: desktop-file-utils
 
 %description
 It's a fork of seq24 (which is a fork of the original seq24),
@@ -32,24 +30,38 @@ made it difficult to keep track of the whole song).
 %prep
 %autosetup -n %{name}-%{version}
 
+sed -i -e "/NEWS /,+1d" CMakeLists.txt
+
 %build
 
-autoreconf -i
-
-%configure
-%make_build
+%cmake
+%cmake_build
 
 %install
 
-%make_install
+%cmake_install
+
+install -m 755 -d %{buildroot}/%{_datadir}/seq42/examples/
+cp seq42usr.example %{buildroot}/%{_datadir}/seq42/examples/
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%doc ChangeLog INSTALL NEWS README.md TODO
+%doc ChangeLog README.md
 %license COPYING
 %{_bindir}/*
 %{_datadir}/*
 
 %changelog
+* Sat Apr 08 2023 Yann Collette <ycollette.nospam@free.fr> - 2.1.3-1
+- udate to 2.1.3-1
+
 * Mon Sep 26 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-1
 - udate to 2.1.2-1
 
