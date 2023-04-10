@@ -99,24 +99,21 @@ sed -i -e "s/-O3/-O2/g" configure
 %build
 
 %set_build_flags
-%if 0%{?fedora} >= 38
-export CXXFLAGS="-include cstdint $CXXFLAGS"
-export BSE_CFLAGS="$CXXFLAGS"
-%endif
+
 # Disable some flags to avoid segmentation fault
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Wp,-D_FORTIFY_SOURCE=2//g"`
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Wp,-D_GLIBCXX_ASSERTIONS//g"`
 export CFLAGS=`echo $CFLAGS | sed -e "s/-Wp,-D_FORTIFY_SOURCE=2//g"`
 export CFLAGS=`echo $CFLAGS | sed -e "s/-Wp,-D_GLIBCXX_ASSERTIONS//g"`
 
-autoreconf --install
-./configure --prefix=%{_prefix} --with-lv2 --with-jack --with-qt --libdir=%{_libdir}
+%if 0%{?fedora} >= 38
+export CXXFLAGS="-include cstdint $CXXFLAGS"
+%endif
 
-sed -i 's|^hardcode_libdir_flag_spec=.*|hardcode_libdir_flag_spec=""|g' libtool
-sed -i 's|^runpath_var=LD_RUN_PATH|runpath_var=DIE_RPATH_DIE|g' libtool
+./autogen.sh
 
-# %make_build VERBOSE=1
-make VERBOSE=1
+%configure --with-lv2 --with-jack --with-qt
+%make_build VERBOSE=1 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS"
 
 %install
 

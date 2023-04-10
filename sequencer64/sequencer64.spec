@@ -57,7 +57,7 @@ CXXFLAGS="-std=c++11 -include cstdint $CXXFLAGS" %configure --enable-rtmidi
 %else
 %configure --enable-rtmidi
 %endif
-%make_build 
+%make_build CXXFLAGS="$CXXFLAGS"
 
 %install
 
