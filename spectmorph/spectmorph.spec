@@ -2,11 +2,11 @@
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer
 
-%global commit0 609a19e6aa4b097138a68ca0631801266d005258
+%global commit0 cfad5460c5ff9b5b58957093f1fdca665f9d43db
 
 Name: spectmorph
 Version: 0.5.2
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: SpectMorph is a free software project which allows to analyze samples of musical instruments, and to combine them (morphing)
 URL: http://www.spectmorph.org
 License: GPLv2+
@@ -103,10 +103,13 @@ sed -i -e "s/-O3/-O2/g" configure
 export CXXFLAGS="-include cstdint $CXXFLAGS"
 export BSE_CFLAGS="$CXXFLAGS"
 %endif
+# Disable some flags to avoid segmentation fault
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Wp,-D_FORTIFY_SOURCE=2//g"`
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Wp,-D_GLIBCXX_ASSERTIONS//g"`
+export CFLAGS=`echo $CFLAGS | sed -e "s/-Wp,-D_FORTIFY_SOURCE=2//g"`
+export CFLAGS=`echo $CFLAGS | sed -e "s/-Wp,-D_GLIBCXX_ASSERTIONS//g"`
 
 autoreconf --install
-# ./autogen.sh
-
 ./configure --prefix=%{_prefix} --with-lv2 --with-jack --with-qt --libdir=%{_libdir}
 
 sed -i 's|^hardcode_libdir_flag_spec=.*|hardcode_libdir_flag_spec=""|g' libtool
@@ -154,6 +157,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Mon Apr 10 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.2-3
+- update to 0.5.2-3 - update to cfad5460c5ff9b5b58957093f1fdca665f9d43db
+
 * Wed Mar 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.2-2
 - update to 0.5.2-2 - update to 609a19e6aa4b097138a68ca0631801266d005258
 
