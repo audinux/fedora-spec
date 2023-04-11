@@ -837,7 +837,8 @@ https://github.com/ryukau/VSTPlugins
 https://github.com/pd3v/line
 https://github.com/kosua20/MIDIVisualizer
 https://github.com/mikeoliphant/neural-amp-modeler-lv2
-https://github.com/AidaDSP/AIDA-X"
+https://github.com/AidaDSP/AIDA-X
+https://github.com/tote-bag-labs/valentine"
 
 # These ones have disappeared
 # https://github.com/OpenMusicKontrollers/eteroj.lv2
