@@ -1,5 +1,5 @@
 Name:    aida-x
-Version: 0.1.0
+Version: 0.2.0
 Release: 1%{?dist}
 Summary: An Amp Model Player leveraging AI
 License: GPLv2+
@@ -9,7 +9,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get aidax source code:
-# $ ./aidax-source.sh 0.1.0
+# $ ./aidax-source.sh 0.2.0
 
 Source0: AIDA-X.tar.gz
 
@@ -105,5 +105,8 @@ cp -ra %{__cmake_builddir}/bin/AIDA-X.vst3 %{buildroot}%{_libdir}/vst3/
 %{_libdir}/clap/*
 
 %changelog
+* Sat Apr 15 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
+- update to 0.2.0-1
+
 * Wed Apr 05 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
 - Initial build
