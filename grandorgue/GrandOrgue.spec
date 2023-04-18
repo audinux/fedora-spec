@@ -3,7 +3,7 @@
 # Category: Audio, Sampler
 
 Name:    grandorgue
-Version: 3.10.1
+Version: 3.11.1
 Release: 4%{?dist}
 Summary: A sample based pipe organ simulator.
 License: GPLv2+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./GrandOrgue-source.sh <TAG>
-# ./GrandOrgue-source.sh v3.10.1-1
+# ./GrandOrgue-source.sh 3.11.1-1
 
 Source0: grandorgue.tar.gz
 Source1: GrandOrgue-source.sh
@@ -38,6 +38,7 @@ BuildRequires: libudev-devel
 BuildRequires: rtaudio-devel
 BuildRequires: rtmidi-devel
 BuildRequires: portaudio-devel
+BuildRequires: yaml-cpp-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -67,6 +68,8 @@ This package contains resource files for GrandOrgue.
 %prep
 %autosetup -n grandorgue
 
+sed -i -e "s/target_link_libraries(GrandOrgue golib)/target_link_libraries(GrandOrgue golib yaml-cpp)/g" src/grandorgue/CMakeLists.txt
+
 %build
 
 %set_build_flags
@@ -74,7 +77,8 @@ This package contains resource files for GrandOrgue.
 %if 0%{?fedora} >= 38
        -DCMAKE_CXX_FLAGS="-include cstdint -fPIC $CXXFLAGS" \
 %endif
-       -DLIBINSTDIR=%{_lib}
+       -DLIBINSTDIR=%{_lib} \
+       -DCMAKE_MODULE_PATH=%{_libdir}/cmake/yaml-cpp
 %cmake_build
 
 %install
@@ -116,6 +120,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/GrandOrgue.desktop
 %{_datadir}/GrandOrgue/packages/*.orgue
 
 %changelog
+* Mon Apr 17 2023 Yann Collette <ycollette.nospam@free.fr> - 3.11.1-4
+- update to 3.11.1-1-4
+
 * Thu Mar 02 2023 Yann Collette <ycollette.nospam@free.fr> - 3.10.1-4
 - update to github repo / 3.10.1-1-4
 
