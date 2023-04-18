@@ -92,6 +92,7 @@
 | glicol-cli              | https://github.com/glicol/glicol-cli |
 | backupband              | https://sourceforge.net/projects/backupband/files/ |
 | MiniDexed               | https://github.com/probonopd/MiniDexed |
+| DPF Plugins             | https://github.com/DISTRHO/DPF-Plugins |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
