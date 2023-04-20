@@ -499,7 +499,7 @@ libsndfile
 
 # jack 
 jack-audio-connection-kit
-jack-audio-connection-kit-example-clients
+# jack-audio-connection-kit-example-clients # FC38
 qjackctl
 jackctlmmc
 Carla-mao
@@ -676,14 +676,14 @@ oxefmsynth
 stretchplayer
 sfarkxtc
 lenmus
-GrandOrgue
+grandorgue
 picoloop
 jm2cv
 rakarrack
 
 #language
 chuck
-miniaudicle
+# miniaudicle # YC
 supercollider
 supercollider-sc3-plugins
 supercollider-vim
