@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 24d2eb90d3ca20f2c6cff9f79dd580a0f1a292cf
-%global gittag0 2.0.5
+%global commit0 8f1f0216d14a6f30bfba7cffc428442f1ee3e0ce
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Digital-Apothecary
-Version: 2.0.5
+Name:    rack-v2-vanTies
+Version: 2.0.0
 Release: 2%{?dist}
-Summary: Digital-Apothecary plugin for Rack
+Summary: vanTies plugin for Rack
 License: GPLv2+
-URL:     https://github.com/evanedwardsgit/Digital-Apothecary
+URL:     https://github.com/matthiassars/vanTies
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,8 +27,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/evanedwardsgit/Digital-Apothecary/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: Digital-Apothecary_plugin.json
+Source1: https://github.com/matthiassars/vanTies/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: vanTies_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -60,8 +60,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-Digital-Apothecary plugin for Rack.
-An oscillator that adds harmonically related sine waves.
+vanTies plugin for Rack.
+additive oscillator
 
 %prep
 %setup -n Rack
@@ -134,24 +134,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir Digital-Apothecary_plugin
-tar xvfz %{SOURCE1} --directory=Digital-Apothecary_plugin --strip-components=1 
+mkdir vanTies_plugin
+tar xvfz %{SOURCE1} --directory=vanTies_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Digital-Apothecary_plugin/plugin.json
+cp -n %{SOURCE2} vanTies_plugin/plugin.json
 
 %build
 
-cd Digital-Apothecary_plugin
+cd vanTies_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/Digital-Apothecary/
-cp -r Digital-Apothecary_plugin/dist/Digital-Apothecary/* %{buildroot}%{_libexecdir}/Rack2/plugins/Digital-Apothecary/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/vanTies/
+cp -r vanTies_plugin/dist/vanTies/* %{buildroot}%{_libexecdir}/Rack2/plugins/vanTies/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile
