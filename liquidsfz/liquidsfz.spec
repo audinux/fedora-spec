@@ -3,7 +3,7 @@
 # Category: Audio, Sampler
 
 Name:    liquidsfz
-Version: 0.3.1
+Version: 0.3.2
 Release: 2%{?dist}
 License: BSD-2-Clause
 Summary: Sampler plugin and library for SFZ and Hydrogen instruments
@@ -15,15 +15,15 @@ Distribution: Audinux
 Source0: %{url}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++ make
-BuildRequires: libsndfile-devel
-BuildRequires: lv2-devel
-BuildRequires: readline-devel
-BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool
 BuildRequires: pkgconfig
 BuildRequires: chrpath
+BuildRequires: libsndfile-devel
+BuildRequires: lv2-devel
+BuildRequires: readline-devel
+BuildRequires: jack-audio-connection-kit-devel
 
 %description
 liquidsfz is a free and open source sampler that can load and play .sfz files.
@@ -78,6 +78,9 @@ rm -f %{buildroot}/%{_libdir}/libliquidsfz.la
 %{_libdir}/pkgconfig/liquidsfz.pc
 
 %changelog
+* Sun Apr 23 2023 Yann Collette <ycollette.nospam@free.fr> - 0.3.2-2
+- update to 0.3.2-2
+
 * Fri Jul 22 2022 Yann Collette <ycollette.nospam@free.fr> - 0.3.1-2
 - update to 0.3.1-2
 
