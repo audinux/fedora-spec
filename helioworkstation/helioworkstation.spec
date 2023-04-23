@@ -3,7 +3,7 @@
 # Category: Audio, Sequencer
 
 Name:    helio-workstation
-Version: 3.10.0
+Version: 3.11.0
 Release: 2%{?dist}
 Summary: An audio sequencer
 URL:     https://github.com/helio-fm/helio-workstation
@@ -12,20 +12,24 @@ License: GPLv2+
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./helioworkstation-source.sh 3.10
+# ./helioworkstation-source.sh 3.11
 
 Source0: helio-workstation.tar.gz
 Source1: helioworkstation-source.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: make
-BuildRequires: desktop-file-utils
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
 BuildRequires: libglvnd-devel
-BuildRequires: libX11-devel libXft-devel libXrandr-devel libXinerama-devel libXcursor-devel
+BuildRequires: libX11-devel
+BuildRequires: libXft-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXcursor-devel
+BuildRequires: desktop-file-utils
 
 %description
 Helio Workstation is free and open-source music sequencer, designed to be used on all major platforms.
@@ -76,6 +80,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/doc/%{name}/*
 
 %changelog
+* Sun Apr 23 2023 Yann Collette <ycollette.nospam@free.fr> - 3.11.0-2
+- update to 3.11.0-2
+
 * Mon Sep 26 2022 Yann Collette <ycollette.nospam@free.fr> - 3.10.0-2
 - update to 3.10.0-2
 
