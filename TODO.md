@@ -93,6 +93,7 @@
 | backupband              | https://sourceforge.net/projects/backupband/files/ |
 | MiniDexed               | https://github.com/probonopd/MiniDexed |
 | DPF Plugins             | https://github.com/DISTRHO/DPF-Plugins |
+| elektroid               | https://github.com/dagargo/elektroid |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
