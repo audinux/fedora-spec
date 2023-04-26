@@ -1,7 +1,7 @@
 %define _lto_cflags %{nil}
 
 Name:    ossia-score
-Version: 3.1.8
+Version: 3.1.9
 Release: 1%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL:     https://github.com/OSSIA/score
@@ -14,17 +14,28 @@ Source0: https://github.com/ossia/score/releases/download/v%{version}/ossia.scor
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
+BuildRequires: unzip
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+# BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: boost-devel
 BuildRequires: zlib-devel
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-qtbase-private-devel
-BuildRequires: qt5-qtbase-gui
-BuildRequires: qt5-qtwebsockets-devel
-BuildRequires: qt5-qtdeclarative-devel
-BuildRequires: qt5-qttools
-BuildRequires: qt5-qtserialport-devel
+BuildRequires: llvm-devel
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qtscxml-devel
+BuildRequires: qt6-qtshadertools-devel
+BuildRequires: qt6-qtserialport-devel
+BuildRequires: qt6-qtwebsockets-devel
+BuildRequires: qt6-qtbase-private-devel
+BuildRequires: libxkbcommon-devel
+BuildRequires: sqlite-devel
+BuildRequires: lame-devel
+#BuildRequires: qt5-qtbase-devel
+#BuildRequires: qt5-qtbase-private-devel
+#BuildRequires: qt5-qtbase-gui
+#BuildRequires: qt5-qtwebsockets-devel
+#BuildRequires: qt5-qtdeclarative-devel
+#BuildRequires: qt5-qttools
+#BuildRequires: qt5-qtserialport-devel
 %if 0%{?fedora} >= 36
 Buildrequires: compat-ffmpeg4-devel
 %else
@@ -34,12 +45,12 @@ BuildRequires: portmidi-devel
 BuildRequires: portaudio-devel
 BuildRequires: lilv-devel
 BuildRequires: suil-devel
+BuildRequires: freetype-devel
 BuildRequires: avahi-compat-libdns_sd-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 BuildRequires: fftw-devel
 BuildRequires: libsndfile-devel
-BuildRequires: unzip
 BuildRequires: desktop-file-utils
 
 %description
@@ -48,12 +59,10 @@ ossia score is a sequencer for audio-visual artists, designed to create interact
 %prep
 %autosetup -cn score-v%{version}
 
-sed -i -e "s/BOOST_MINOR 70/BOOST_MINOR 76/g" 3rdparty/libossia/cmake/OssiaDeps.cmake
-
 %build
 
 %set_build_flags
-export CXXFLAGS="-include optional $CXXFLAGS"
+export CXXFLAGS="-include optional -include stdexcept $CXXFLAGS"
 
 %cmake -DCMAKE_BUILD_TYPE=RELEASE
 %cmake_build
@@ -77,6 +86,9 @@ rm -rf %{buildroot}/%{_datadir}/
 %{_bindir}/*
 
 %changelog
+* Tue Apr 25 2023 Yann Collette <ycollette.nospam@free.fr> - 3.1.9-2
+- update to version 3.1.9-2
+
 * Sun Mar 05 2023 Yann Collette <ycollette.nospam@free.fr> - 3.1.8-2
 - update to version 3.1.8-2
 
