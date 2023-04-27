@@ -1,5 +1,5 @@
 Name:    valentine
-Version: 0.0.4
+Version: 0.0.5
 Release: 1%{?dist}
 Summary: An open source compressor meant to pump and breathe 
 License: GPLv3+
@@ -9,7 +9,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources:
-# ./source-valentine.sh v0.0.4
+# ./source-valentine.sh v0.0.5
 
 Source0: valentine.tar.gz
 Source1: source-valentine.sh
@@ -29,7 +29,7 @@ BuildRequires: libxkbcommon-x11-devel
 BuildRequires: libXinerama-devel
 BuildRequires: libcurl-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+# BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
@@ -81,5 +81,8 @@ cp -ra %{__cmake_builddir}/Valentine_artefacts/Standalone/* %{buildroot}%{_bindi
 %{_libdir}/vst3/*
 
 %changelog
+* Thu Apr 27 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.5-1
+- update to 0.0.5-1
+
 * Tue Apr 11 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.4-1
 - Initial spec file
