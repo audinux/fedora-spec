@@ -1,8 +1,8 @@
 Name:    pipecontrol
-Version: 0.2.4
+Version: 0.2.10
 Release: 1%{?dist}
-Summary: osmid is a tool to bridge MIDI and OSC
-URL:     https://github.com/llloret/osmid
+Summary: Pipewire control GUI program in Qt
+URL:     https://github.com/portaloffreedom/pipecontrol
 License: GPLv2+
 
 Vendor:       Audinux
@@ -51,8 +51,11 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/PipeControl.desktop
 %license LICENSE
 %{_bindir}/*
 %{_datadir}/applications/PipeControl.desktop
-%{_datadir}/icons/pipecontrol.svg
+%{_datadir}/icons/hicolor/scalable/apps/
 
 %changelog
+* Sat Apr 29 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2.10-1
+- update to 0.2.10-1
+
 * Tue Nov 01 2022 Yann Collette <ycollette.nospam@free.fr> - 0.2.4-1
 - Initial spec file
