@@ -5,7 +5,7 @@
 # Category: Audio, Effect, Synthesizer
 
 Name:    surge-xt
-Version: 1.2.0
+Version: 1.2.1
 Release: 2%{?dist}
 Summary: A VST3 Synthesizer and Effects, including Airwindows
 License: GPLv2+
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./source-surge.sh release_xt_1.2.0
+# $ ./source-surge.sh release_xt_1.2.1
 
 Source0: surge.tar.gz
 Source1: source-surge.sh
@@ -167,13 +167,16 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Surge-XT-FX.desktop
 %{_libdir}/clap/*
 
 %changelog
-* Mon Apr 10 2023 Jean Pierre Cimalando <jp-dev@gmx.com> - 1.2.0-2
+* Sun Apr 30 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-2
+- update to 1.2.1-2
+
+* Mon Apr 10 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-2
 - update to 1.2.0-2
 
-* Tue Nov 01 2022 Jean Pierre Cimalando <jp-dev@gmx.com> - 1.1.2-2
+* Tue Nov 01 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1.2-2
 - update to 1.1.2-2
 
-* Fri Sep 23 2022 Jean Pierre Cimalando <jp-dev@gmx.com> - 1.1.1-2
+* Fri Sep 23 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-2
 - add patch to fix an out-of-bounds array access
 
 * Fri Aug 26 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
