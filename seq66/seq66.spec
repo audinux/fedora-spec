@@ -1,5 +1,5 @@
 Name:    seq66
-Version: 0.99.3
+Version: 0.99.4
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -14,8 +14,10 @@ BuildRequires: gcc gcc-c++ make
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool
-BuildRequires: pkgconfig
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: qt5-linguist
+BuildRequires: qtchooser
+BuildRequires: qt5-qttools
+BuildRequires: git
 BuildRequires: alsa-lib-devel
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtdeclarative-devel
@@ -23,10 +25,6 @@ BuildRequires: liblo-devel
 BuildRequires: libglvnd-devel
 BuildRequires: rtmidi-devel
 BuildRequires: portmidi-devel
-BuildRequires: qt5-linguist
-BuildRequires: qtchooser
-BuildRequires: qt5-qttools
-BuildRequires: git
 BuildRequires: desktop-file-utils
 
 %description
@@ -90,13 +88,16 @@ desktop-file-install                         \
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
-%doc ChangeLog INSTALL NEWS README.md RELNOTES.md ROADMAP.md TODO
+%doc ChangeLog INSTALL NEWS README.md RELNOTES ROADMAP.md TODO
 %{_bindir}/*
 %{_datadir}/*
 %{_includedir}/*
 %{_libdir}/*
 
 %changelog
+* Sun Apr 30 2023 Yann Collette <ycollette.nospam@free.fr> - 0.99.4-1
+- update 0.99.4-1
+
 * Thu Apr 20 2023 Yann Collette <ycollette.nospam@free.fr> - 0.99.3-1
 - update 0.99.3-1
 
