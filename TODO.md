@@ -92,7 +92,6 @@
 | glicol-cli              | https://github.com/glicol/glicol-cli |
 | backupband              | https://sourceforge.net/projects/backupband/files/ |
 | MiniDexed               | https://github.com/probonopd/MiniDexed |
-| elektroid               | https://github.com/dagargo/elektroid |
 
 ## Fedora 38 to be fixed
 Cstdint missing:

@@ -839,7 +839,8 @@ https://github.com/kosua20/MIDIVisualizer
 https://github.com/mikeoliphant/neural-amp-modeler-lv2
 https://github.com/AidaDSP/AIDA-X
 https://github.com/tote-bag-labs/valentine
-https://github.com/DISTRHO/DPF-Plugins"
+https://github.com/DISTRHO/DPF-Plugins
+https://github.com/dagargo/elektroid"
 
 # These ones have disappeared
 # https://github.com/OpenMusicKontrollers/eteroj.lv2
