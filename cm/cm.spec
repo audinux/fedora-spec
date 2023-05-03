@@ -62,6 +62,7 @@ cp -ra res/* %{buildroot}/%{_datadir}/cm/res/
 %files
 %doc readme.text
 %{_bindir}/*
+%{_datadir}/cm/
 %{_datadir}/cm/res/*
 
 %changelog

@@ -110,7 +110,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/din-jack.desktop
 %doc AUTHORS CHANGELOG BUGS INSTALL NEWS README TODO
 %license COPYING
 %{_bindir}/*
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 %{_datadir}/applications/din.desktop
 %{_datadir}/icons/hicolor/scalable/apps/din.svg
 %{_datadir}/pixmaps/din.png

@@ -52,7 +52,7 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/appdata/*.appdata
 %doc README.rst
 %license COPYING
 %{_bindir}/%{name}
-%{python3_sitelib}/%{name}/*
+%{python3_sitelib}/%{name}/
 %{python3_sitelib}/%{name}-*.egg-info
 %{_datadir}/applications/*
 %{_datadir}/appdata/*

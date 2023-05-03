@@ -111,7 +111,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/hybridreverb2.desktop
 %{_libdir}/lv2/*
 
 %files -n %{name}-common
-%{_datadir}/HybridReverb2/*
+%{_datadir}/HybridReverb2/
 
 %changelog
 * Thu Nov 26 2020 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-1

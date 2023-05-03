@@ -139,7 +139,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/applications/*
 %{_datadir}/man/*
 %{_datadir}/pixmaps/*
-%{_datadir}/spectmorph/*
+%{_datadir}/spectmorph/
 
 %files devel
 %{_includedir}/%{name}/*

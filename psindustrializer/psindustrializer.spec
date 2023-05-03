@@ -71,7 +71,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/%{name}.ap
 %{_datadir}/applications/*
 %{_datadir}/locale/*
 %{_datadir}/pixmaps/*
-%{_datadir}/psindustrializer/*
+%{_datadir}/psindustrializer/
 
 %changelog
 * Mon Dec 13 2021 Yann Collette <ycollette.nospam@free.fr> - 0.2.7-1

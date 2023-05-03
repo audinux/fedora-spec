@@ -63,7 +63,7 @@ The %{name}-doc package contains documentation for %{name}.
 %{_libdir}/pkgconfig/*.pc
 
 %files doc
-%{_datadir}/doc/ulfius/*
+%{_datadir}/doc/ulfius/
 
 %changelog
 * Sun Dec 13 2020 Yann Collette <ycollette dot nospam at free.fr> 2.7.0-1

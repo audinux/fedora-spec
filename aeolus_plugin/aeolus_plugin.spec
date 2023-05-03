@@ -118,7 +118,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Aeolus.desktop
 %doc README.md
 %license LICENSE.txt
 %{_bindir}/*
-%{_datadir}/Aeolus/*
+%{_datadir}/Aeolus/
 %{_datadir}/icons/hicolor/256x256/*
 %{_datadir}/icons/hicolor/64x64/*
 %{_datadir}/applications/*

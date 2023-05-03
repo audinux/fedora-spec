@@ -77,7 +77,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/michisoft-tsunami.des
 %doc README.md
 %license LICENSE
 %{_bindir}/tsunami
-%{_datadir}/tsunami/*
+%{_datadir}/tsunami/
 %{_datadir}/applications/michisoft-tsunami.desktop
 %{_datadir}/icons/hicolor/scalable/apps/tsunami.svg
 %{_datadir}/mime/packages/michisoft-nami.xml

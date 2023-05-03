@@ -59,8 +59,9 @@ desktop-file-install \
 %{_bindir}/milkytracker
 %{_datadir}/applications/*
 %{_datadir}/pixmaps/milkytracker.png
+%{_datadir}/milkytracker/
 %{_datadir}/milkytracker/songs/*
-%{_datadir}/doc/MilkyTracker/*
+%{_datadir}/doc/MilkyTracker/
 
 %changelog
 * Thu Dec 10 2020 Yann Collette <ycollette dot nospam at free dot fr> 1.03.00-2

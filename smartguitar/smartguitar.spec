@@ -100,6 +100,7 @@ mv ToneLibrary-%{toneversion}/SmartAmp/* %{buildroot}%{_datadir}/smartamp/tones/
 %files
 %doc README.md
 %license LICENSE.txt
+%{_datadir}/smartamp/
 %{_datadir}/smartamp/tones/*
 
 %files -n vst3-%{name}

@@ -82,7 +82,7 @@ cp -ra improviz-performance-main/* %{buildroot}/%{_datadir}/%{name}/examples/
 %doc README.md
 %license LICENSE
 %{_bindir}/*
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 
 %changelog
 * Mon Jan 30 2023 Yann Collette <ycollette dot nospam at free.fr> 1.1-3

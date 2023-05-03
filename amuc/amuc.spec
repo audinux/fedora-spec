@@ -67,8 +67,8 @@ rm %{buildroot}/%{_docdir}/amuc/amuc.1
 %doc README
 %license LICENSE
 %{_bindir}/*
-%{_datadir}/amuc/*
-%{_docdir}/amuc/*
+%{_datadir}/amuc/
+%{_docdir}/amuc/
 %{_mandir}/man1/*
 
 %changelog

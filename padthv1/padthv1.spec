@@ -87,6 +87,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.des
 %{_datadir}/man/*/man1/%{name}*
 %{_datadir}/mime/packages/*.xml
 %{_datadir}/metainfo/*.xml
+%{_datadir}/%{name}/
 %{_datadir}/%{name}/presets/*
 
 %files -n lv2-%{name}

@@ -41,7 +41,7 @@ mkdir -p %{buildroot}/%{_datadir}/IR/
 cp -r IR_files/* %{buildroot}/%{_datadir}/IR/
 
 %files
-%{_datadir}/IR/*
+%{_datadir}/IR/
 
 %changelog
 * Tue Oct 05 2021 Yann Collette <ycollette dot nospam at free.fr> 1.0.1-2

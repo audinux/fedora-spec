@@ -55,8 +55,8 @@ cp -ra pd/* %{buildroot}/%{_datadir}/ssr/pd/
 %doc README
 %license COPYING
 %{_bindir}/*
-%{_datadir}/doc/ssr/*
-%{_datadir}/ssr/*
+%{_datadir}/doc/ssr/
+%{_datadir}/ssr/
 %{_mandir}/*
 
 %changelog

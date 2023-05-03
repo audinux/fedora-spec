@@ -32,7 +32,8 @@ C++ implementation of the Python Numpy library.
 %doc README.md
 %license LICENSE
 %{_includedir}/NumCpp.hpp
-%{_includedir}/NumCpp/*
+%{_includedir}/NumCpp/
+%{_datadir}/NumCpp/
 %{_datadir}/NumCpp/cmake/*
 
 %changelog

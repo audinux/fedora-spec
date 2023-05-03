@@ -64,7 +64,7 @@ cp -r Orca-main/resources %{buildroot}/%{_datadir}/%{name}/documentation
 %doc README.md
 %license LICENSE.md
 %{_bindir}/*
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 
 %changelog
 * Sun Oct 09 2022 Yann Collette <ycollette.nospam@free.fr> - 0.1.0.d027a414-3

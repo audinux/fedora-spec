@@ -46,7 +46,7 @@ popd
 %files
 %doc AUTHORS README* 
 %{_bindir}/tetra*
-%{_datadir}/tetraproc/*
+%{_datadir}/tetraproc/
 
 %changelog
 * Tue Oct 20 2020 Yann Collette <ycollette.nospam@free.fr> - 0.8.6-2

@@ -72,7 +72,7 @@ desktop-file-install --vendor '' \
 %license LICENSE
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/mv-6pm/*
+%{_datadir}/mv-6pm/
 %{_datadir}/icons/hicolor/*
 
 %changelog

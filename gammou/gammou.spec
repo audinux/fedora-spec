@@ -125,6 +125,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/*
 %{_datadir}/icons/hicolor/256x256/apps/*
 %{_datadir}/applications/*
+%{_datadir}/%{name}/
 %{_datadir}/%{name}/packages/*
 %{_datadir}/%{name}/waves/.empty
 

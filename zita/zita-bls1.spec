@@ -53,7 +53,7 @@ popd
 %doc AUTHORS README doc
 %license COPYING
 %{_bindir}/*
-%{_datadir}/zita-bls1/*
+%{_datadir}/zita-bls1/
 
 %changelog
 * Mon Oct 15 2018 Yann Collette <ycollette.nospam@free.fr> - 0.3.3-1

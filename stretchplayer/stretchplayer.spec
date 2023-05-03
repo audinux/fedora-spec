@@ -66,6 +66,7 @@ desktop-file-install --vendor '' \
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/*
 %{_datadir}/pixmaps/*
+%{_datadir}/%{name}/
 %{_datadir}/%{name}/icons/*
 %exclude %{_datadir}/%{name}/%{name}.desktop
 

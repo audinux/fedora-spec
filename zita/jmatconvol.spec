@@ -54,6 +54,7 @@ popd
 %doc AUTHORS README*
 %license COPYING
 %{_bindir}/*
+%{_datadir}/jmatconvol/
 %{_datadir}/jmatconvol/config/*
 
 %changelog

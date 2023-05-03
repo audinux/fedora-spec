@@ -85,7 +85,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/net.kushview.element.
 %license LICENSE
 %{_bindir}/*
 %{_datadir}/applications/*
-%{_datadir}/element/*
+%{_datadir}/element/
 %{_datadir}/icons/hicolor/*
 
 %changelog

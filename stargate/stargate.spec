@@ -91,7 +91,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 %{_datadir}/applications/*
 %{_datadir}/mime/*
 %{_datadir}/pixmaps/*
-%{_datadir}/stargate/*
+%{_datadir}/stargate/
 
 %changelog
 * Thu Mar 09 2023 Yann Collette <ycollette.nospam@free.fr> - 23.03.1-1

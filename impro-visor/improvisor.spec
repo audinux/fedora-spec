@@ -179,6 +179,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %license LICENSE.txt
 %{_bindir}/*
 %{_javadir}/*.jar
+%{_datadir}/%{name}/
 %{_datadir}/%{name}/.install4j/*
 %{_datadir}/%{name}/grammars/*
 %{_datadir}/%{name}/leadsheets/*

@@ -78,12 +78,13 @@ cp -ra apidocs/en %{buildroot}/%{_datadir}/bipscript/apidocs/
 %doc README.md
 %license LICENSE
 %{_bindir}/*
+%dir %{_datadir}/bipscript/
 
 %files doc
-%{_datadir}/bipscript/apidocs/*
+%{_datadir}/bipscript/apidocs/
 
 %files examples
-%{_datadir}/bipscript/examples/*
+%{_datadir}/bipscript/examples/
 
 %changelog
 * Fri Mar 31 2023 Yann Collette <ycollette.nospam@free.fr> - 0.18-1

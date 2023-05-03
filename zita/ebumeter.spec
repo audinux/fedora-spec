@@ -50,7 +50,7 @@ popd
 %defattr(-,root,root,-)
 %doc AUTHORS README* 
 %{_bindir}/ebu*
-%{_datadir}/ebumeter/*
+%{_datadir}/ebumeter/
 
 %changelog
 * Fri Feb 17 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.1-1

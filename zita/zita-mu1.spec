@@ -57,7 +57,7 @@ popd
 %defattr(-,root,root,-)
 %doc AUTHORS README* 
 %{_bindir}/*
-%{_datadir}/zita-mu1/*
+%{_datadir}/zita-mu1/
 
 %changelog
 * Tue May 12 2020 Yann Collette <ycollette.nospam@free.fr> - 0.3.3-1

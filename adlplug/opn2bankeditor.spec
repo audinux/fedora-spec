@@ -71,7 +71,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/opn2_bank_editor.desk
 %{_bindir}/opn2_bank_editor
 %{_datadir}/applications/*
 %{_datadir}/icons/*
-%{_datadir}/opn2_bank_editor/*
+%{_datadir}/opn2_bank_editor/
 
 %changelog
 * Thu Oct 1 2020 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-2

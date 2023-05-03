@@ -79,7 +79,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %license LICENSE
 %doc ChangeLog.txt
 %{_bindir}/*
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 %{_datadir}/applications/*
 %{_datadir}/icons/*
 %{_mandir}/man1/*

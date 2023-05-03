@@ -52,7 +52,7 @@ install -m 755 jack-directorrc %{buildroot}/%{_datadir}/jack-director/
 %doc README
 %license gpl-3.0.txt gpl-2.0.txt
 %{_bindir}/*
-%{_datadir}/jack-director/*
+%{_datadir}/jack-director/
 
 %changelog
 * Fri Dec 02 2022 Yann Collette <ycollette.nospam@free.fr> - 0.1.1-1

@@ -78,7 +78,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %doc AUTHORS CHANGELOG.md INSTALL README.md NEWS THANKS
 %license LICENSE
 %{_bindir}/%{name}
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png
 %{_datadir}/man/*

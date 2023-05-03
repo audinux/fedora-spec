@@ -98,7 +98,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.hydrogenmusic.Hyd
 %{_bindir}/hydrogen
 %{_bindir}/h2cli
 %{_bindir}/h2player
-%{_datadir}/hydrogen/*
+%{_datadir}/hydrogen/
 %{_datadir}/icons/*
 %{_datadir}/applications/*.desktop
 %{_datadir}/appdata/*.appdata.xml

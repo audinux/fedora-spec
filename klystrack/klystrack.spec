@@ -135,7 +135,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %doc README.md
 %license LICENSE
 %{_bindir}/*
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 %{_datadir}/applications/*
 %{_datadir}/icons/*
 

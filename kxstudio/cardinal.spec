@@ -122,8 +122,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %files
 %license LICENSE
 %{_bindir}/*
-%{_datadir}/%{name}/*
-%{_datadir}/doc/%{name}/*
+%{_datadir}/%{name}/
+%{_datadir}/doc/%{name}/
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/scalable/apps/*
 
