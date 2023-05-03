@@ -130,9 +130,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/fluxus.desktop
 %files
 %{_bindir}/fluxus
 %{_bindir}/fluxa
-%{_libdir}/fluxus-019/*
-%{_datadir}/fluxus-019/*
-%{_docdir}/fluxus-019/*
+%{_libdir}/fluxus-019/
+%{_datadir}/fluxus-019/
+%{_docdir}/fluxus-019/
 %{_datadir}/pixmaps/fluxus-icon.png
 %{_datadir}/applications/fluxus.desktop
 

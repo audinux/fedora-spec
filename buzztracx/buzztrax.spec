@@ -97,7 +97,7 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}-songio-buzz.
 %{_datadir}/gtk-doc/html/buzztrax-*
 %{_bindir}/buzztrax-cmd
 %{_bindir}/buzztrax-edit
-%{_libdir}/buzztrax-songio/*
+%{_libdir}/buzztrax-songio/
 %{_libdir}/buzztrax
 %{_libdir}/gstreamer-1.0/libbuzztrax*
 %{_libdir}/gstreamer-1.0/libgstbml.*

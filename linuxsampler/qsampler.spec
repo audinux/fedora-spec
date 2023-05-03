@@ -66,6 +66,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/mime/packages/*
 %{_datadir}/applications/*
 %{_datadir}/metainfo/*
+%{_datadir}/qsampler/
 %{_datadir}/qsampler/translations/*
 %{_mandir}/*
 

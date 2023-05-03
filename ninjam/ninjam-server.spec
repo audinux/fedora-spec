@@ -38,7 +38,7 @@ install -m 644 ninjam/server/example.cfg %{buildroot}%{_datadir}/ninjam/
 %files
 %doc ninjam/server/license.txt ninjam/server/cclicense.txt
 %{_bindir}/*
-%{_datadir}/ninjam/*
+%{_datadir}/ninjam/
 
 %changelog
 * Mon Oct 19 2020 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2

@@ -72,7 +72,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/opl3_bank_editor.desk
 %{_datadir}/mime/*
 %{_datadir}/applications/*
 %{_datadir}/icons/*
-%{_datadir}/opl3_bank_editor/*
+%{_datadir}/opl3_bank_editor/
 
 %changelog
 * Thu Oct 1 2020 Yann Collette <ycollette.nospam@free.fr> - 1.5.1-2

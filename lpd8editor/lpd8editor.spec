@@ -73,7 +73,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_bindir}/%{name}
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/scalable/apps
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 
 %changelog
 * Sun Apr 17 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.16-1

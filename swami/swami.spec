@@ -65,9 +65,9 @@ desktop-file-install                                    \
 %files
 %doc AUTHORS ChangeLog NEWS README.md HACKERS
 %license COPYING
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 %{_bindir}/%{name}
-%{_libdir}/%{name}/*
+%{_libdir}/%{name}/
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/*
 %{_datadir}/mime/packages/%{name}.xml
@@ -77,7 +77,7 @@ desktop-file-install                                    \
 
 %files devel
 %{_libdir}/lib%{name}*.so
-%{_includedir}/%{name}/*
+%{_includedir}/%{name}/
 
 %changelog
 * Tue Nov 01 2022 Yann Collette <ycollette.nospam@free.fr> - 2.2.2-24

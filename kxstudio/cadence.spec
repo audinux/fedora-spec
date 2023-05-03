@@ -59,7 +59,7 @@ Set of tools useful for audio production.
 %license COPYING
 %{_bindir}/*
 %{_datadir}/applications/*
-%{_datadir}/cadence/*
+%{_datadir}/cadence/
 %{_datadir}/icons/*
 %{_sysconfdir}/*
 

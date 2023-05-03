@@ -108,7 +108,8 @@ desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-network.desktop
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/icons/*
-%{_datadir}/raysession/*
+%{_datadir}/raysession/
+%{_sysconfdir}/xdg/raysession/
 %{_sysconfdir}/xdg/raysession/client_templates/*
 
 %changelog

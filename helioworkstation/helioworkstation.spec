@@ -77,7 +77,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/*
-%{_datadir}/doc/%{name}/*
+%{_datadir}/doc/%{name}/
 
 %changelog
 * Sun Apr 23 2023 Yann Collette <ycollette.nospam@free.fr> - 3.11.0-2

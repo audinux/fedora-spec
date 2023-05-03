@@ -81,7 +81,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/goatracker.desktop
 %doc authors readme_resid.txt readme_sdl.txt readme.txt
 %license copying
 %{_bindir}/*
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/*
 

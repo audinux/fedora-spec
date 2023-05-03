@@ -64,6 +64,7 @@ cp manage/README.md %{buildroot}/%{_datadir}/%{name}/manage/
 %{_bindir}/lin-vst-servertrack32.exe
 %{_bindir}/lin-vst-servertrack32.exe.so
 %{_bindir}/linvstconvert
+%{_datadir}/%{name}/
 %{_datadir}/%{name}/64bit-32bit/linvst.so
 %{_datadir}/%{name}/doc/*
 %{_datadir}/%{name}/manage/*

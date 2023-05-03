@@ -82,6 +82,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_metainfodir}/*
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/scalable/apps/*
+%{_datadir}/fmit/
 %{_datadir}/fmit/scales/*
 
 %changelog

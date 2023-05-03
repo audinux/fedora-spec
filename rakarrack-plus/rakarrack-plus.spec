@@ -93,8 +93,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/rakarrack-plus.deskto
 %{_datadir}/applications/*
 %{_datadir}/man/*
 %{_datadir}/pixmaps/*
-%{_datadir}/rakarrack-plus/*
-%{_datadir}/RakarrackPlus.lv2/*
+%{_datadir}/rakarrack-plus/
+%{_datadir}/RakarrackPlus.lv2/
 %{_datadir}/doc/rakarrack-plus/html/*
 
 %files -n lv2-%{name}

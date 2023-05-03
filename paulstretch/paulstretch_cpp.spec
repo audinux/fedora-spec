@@ -94,7 +94,7 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}-jack.desktop
 %doc readme.txt
 %{_bindir}/*
 %{_datadir}/applications/*
-%{_datadir}/icons/%{name}/*
+%{_datadir}/icons/%{name}/
 
 %changelog
 * Tue Jan 17 2023 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1

@@ -66,7 +66,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/powertabe
 %{_datadir}/icons/*
 %{_datadir}/metainfo/*
 %{_datadir}/mime/*
-%{_datadir}/powertab/*     
+%{_datadir}/powertab/
 
 %changelog
 * Fri Jul 08 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1

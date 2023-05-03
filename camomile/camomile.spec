@@ -75,7 +75,7 @@ cp Camomile_LV2.so lv2_file_generator %{buildroot}/%{_datadir}/%{name}/lv2/
 %doc README.md
 %license LICENSE
 %{_bindir}/*
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*

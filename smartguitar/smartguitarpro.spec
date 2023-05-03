@@ -95,6 +95,7 @@ mv ToneLibrary-%{toneversion}/SmartAmpPro/* %{buildroot}%{_datadir}/smartamppro/
 %doc README.md
 %license LICENSE.txt
 %{_bindir}/*
+%{_datadir}/smartamppro/
 %{_datadir}/smartamppro/models/*
 %{_datadir}/smartamppro/tones/*
 

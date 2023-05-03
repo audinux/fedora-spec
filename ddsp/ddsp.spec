@@ -136,6 +136,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/DDSP_Synth.desktop
 %doc README.md
 %license LICENSE
 %{_bindir}/*
+%{_datadir}/%{name}/
 %{_datadir}/%{name}/models/*
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/scalable/apps/*

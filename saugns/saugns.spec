@@ -58,6 +58,7 @@ mv %{buildroot}/%{_datadir}/doc/%{name}/ %{buildroot}/%{_datadir}/%{name}/doc/
 %license COPYING
 %{_bindir}/*
 %{_mandir}/*
+%{_datadir}/%{name}/
 %{_datadir}/%{name}/doc/*
 %{_datadir}/%{name}/examples/*
 

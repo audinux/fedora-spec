@@ -69,6 +69,7 @@ desktop-file-validate  %{buildroot}/%{_datadir}/applications/%{name}.desktop
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/icons/*
+%{_datadir}/patchichi/
 %{_datadir}/patchichi/HoustonPatchbay/*
 %{_datadir}/patchichi/locale/*
 %{_datadir}/patchichi/src/*

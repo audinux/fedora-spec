@@ -115,6 +115,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/icons/*
+%{_datadir}/%{name}/
 %{_datadir}/%{name}/demos/*
 
 %files -n vst-%{name}

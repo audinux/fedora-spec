@@ -99,7 +99,7 @@ desktop-file-install --vendor '' \
 %{_datadir}/applications/qutecsound.desktop
 %{_datadir}/mime/packages/qutecsound.xml
 %{_datadir}/icons/hicolor/*
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 
 %changelog
 * Mon Oct 26 2020 Yann Collette <ycollette.nospam@free.fr> - 0.9.8.1-3

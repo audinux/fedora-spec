@@ -67,7 +67,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %license COPYING
 %{_bindir}/*
 %{_datadir}/applications/*.desktop
-%{_datadir}/doc/%{name}/*
+%{_datadir}/doc/%{name}/
 %{_datadir}/pixmaps/*
 %{_mandir}/man1/*
 

@@ -77,6 +77,7 @@ desktop-file-install                         \
 %doc README.md
 %license LICENSE
 %{_bindir}/*
+%{_libdir}/midivisualizer/
 %{_libdir}/midivisualizer/liblibremidi.so
 %{_datadir}/icons/hicolor/256x256/apps/*
 %{_datadir}/applications/*

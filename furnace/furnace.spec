@@ -78,7 +78,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/%{name}.a
 %doc README.md
 %{_bindir}/*
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/doc/furnace/
 %{_datadir}/doc/furnace/papers/*
+%{_datadir}/furnace/
 %{_datadir}/furnace/demos/*
 %{_datadir}/icons/hicolor/1024x1024/apps/%{name}.png
 %{_datadir}/metainfo/%{name}.appdata.xml

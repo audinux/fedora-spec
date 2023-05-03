@@ -158,7 +158,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/lmms.desktop
 %license LICENSE.txt
 %{_bindir}/lmms
 %{_mandir}/man1/*
-%{_libdir}/lmms/*
+%{_libdir}/lmms/
 %{_datadir}/lmms/
 %{_datadir}/applications/lmms.desktop
 %{_datadir}/icons/hicolor/*

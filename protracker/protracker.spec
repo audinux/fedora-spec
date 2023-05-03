@@ -137,7 +137,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 %{_bindir}/protracker2-jack
 %{_bindir}/protracker2-pulse
 %{_bindir}/protracker2-alsa
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 %{_datadir}/icons/*
 %{_datadir}/applications/*
 

@@ -84,7 +84,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %license COPYING
 %{_bindir}/%{name}
 %{_datadir}/man/*
-%{_datadir}/horgand/*
+%{_datadir}/horgand/
 %{_datadir}/applications/*
 %{_datadir}/icons/*
 

@@ -69,7 +69,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %license COPYING
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
+%{_datadir}/doc/%{name}/
 %{_datadir}/doc/%{name}/Mandelbulber_Manual.pdf
 %{_datadir}/pixmaps/mandelbulber.png
 

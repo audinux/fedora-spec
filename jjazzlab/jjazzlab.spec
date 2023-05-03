@@ -85,7 +85,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %doc README.md
 %license LICENSE
 %{_bindir}/*
-%{_datadir}/jjazzlab/*
+%{_datadir}/jjazzlab/
 %{_datadir}/icons/hicolor/scalable/apps/*
 %{_datadir}/applications/*
 

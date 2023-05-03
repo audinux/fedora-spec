@@ -84,7 +84,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/%{name}.ap
 %doc AUTHORS ChangeLog NEWS README
 %license COPYING
 %{_bindir}/amsynth
-%{_datadir}/amsynth/*
+%{_datadir}/amsynth/
 %{_datadir}/appdata/%{name}.appdata.xml
 %{_datadir}/applications/*%{name}.desktop
 %{_datadir}/icons/hicolor/48x48/apps/amsynth.png

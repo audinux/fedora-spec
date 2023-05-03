@@ -169,7 +169,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.zrythm.Zrythm.des
 %{_datadir}/icons/*
 %{_datadir}/locale/*
 %{_datadir}/mime/*
-%{_datadir}/zrythm/*
+%{_datadir}/zrythm/
 %{_datadir}/bash-completion/completions/zrythm
 %{_mandir}/*
 %exclude %{_libdir}/*.a

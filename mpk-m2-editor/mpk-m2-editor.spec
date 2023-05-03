@@ -71,7 +71,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_bindir}/%{name}
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/*
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 %{python3_sitelib}/mpk_m2_editor_ui/*
 %{python3_sitelib}/%{libname}-*.egg-info/
 

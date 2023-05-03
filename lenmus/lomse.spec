@@ -55,6 +55,7 @@ The %{name}-devel package contains header files for %{name}.
 %doc AUTHORS.md CHANGELOG.md README.md NEWS THANKS CONTRIBUTING.md
 %license LICENSE
 %{_libdir}/*
+%{_datadir}/%{name}/
 %{_datadir}/%{name}/fonts/*
 
 %files devel

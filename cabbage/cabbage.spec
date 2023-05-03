@@ -149,6 +149,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Cabbage.desktop
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/scalable/apps/*
 %{_datadir}/icons/hicolor/apps/512x512/*
+%{_datadir}/cabbage/
 %{_datadir}/cabbage/docs/*
 %{_datadir}/cabbage/examples/*
 %{_datadir}/cabbage/themes/*

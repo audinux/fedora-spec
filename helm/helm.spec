@@ -79,8 +79,8 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/*.appdata.xml
 %{_bindir}/*
 %{_libdir}/lv2/*
 %{_libdir}/lxvst/*
-%{_datadir}/helm/*
-%{_datadir}/doc/helm/*
+%{_datadir}/helm/
+%{_datadir}/doc/helm/
 %{_mandir}/man1/helm.1.gz
 %{_datadir}/applications/helm.desktop
 %{_datadir}/icons/hicolor/*

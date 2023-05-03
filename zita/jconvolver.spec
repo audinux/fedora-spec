@@ -52,6 +52,7 @@ popd
 %files
 %doc AUTHORS README* 
 %{_bindir}/*
+%{_datadir}/jconvolver/
 %{_datadir}/jconvolver/config/*
 
 %changelog

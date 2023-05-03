@@ -80,6 +80,7 @@ cp -vfr build/clap/hexosynth_plug.clap %{buildroot}/%{_libdir}/clap/
 %license COPYING
 %{_bindir}/hexosynth_jack
 %{_bindir}/hexosynth
+%{_datadir}/hexosynth/
 %{_datadir}/hexosynth/examples/*
 %{_libdir}/vst/*
 %{_libdir}/vst3/*

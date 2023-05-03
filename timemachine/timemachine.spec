@@ -69,7 +69,7 @@ EOF
 %doc AUTHORS ChangeLog INSTALL NEWS README.md
 %license COPYING
 %{_bindir}/%{name}
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 %{_datadir}/applications/*
 
 %changelog

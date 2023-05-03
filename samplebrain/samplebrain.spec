@@ -76,6 +76,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_bindir}/samplebrain
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*
+%{_datadir}/samplebrain/
 %{_datadir}/samplebrain/docs/*
 
 %changelog

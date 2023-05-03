@@ -74,6 +74,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/com.githu
 %doc README.md
 %license LICENSE
 %{_bindir}/*
+%{_datadir}/neothesia/
 %{_datadir}/neothesia/sf2/*
 %{_datadir}/neothesia/midi/*
 %{_datadir}/applications/com.github.polymeilex.neothesia.desktop

@@ -85,7 +85,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %license COPYING
 %{_bindir}/*
 %{_datadir}/man/*
-%{_datadir}/xjadeo/*
+%{_datadir}/xjadeo/
 %{_datadir}/applications/*
 %{_datadir}/icons/*
 

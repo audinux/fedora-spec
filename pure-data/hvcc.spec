@@ -51,8 +51,9 @@ rm -rf %{buildroot}/%{python3_sitelib}/tests
 %doc README.md
 %license LICENSE
 %{_bindir}/*
-%{python3_sitelib}/%{name}/*
+%{python3_sitelib}/%{name}/
 %{python3_sitelib}/%{name}-*.egg-info
+%{_datadir}/%{name}/
 %{_datadir}/%{name}/docs/*
 %{_datadir}/%{name}/examples/*
 

@@ -105,6 +105,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_bindir}/*
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/*
+%{_datadir}/emissioncontrol2/
 %{_datadir}/emissioncontrol2/samples/*
 
 %changelog

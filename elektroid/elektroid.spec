@@ -57,7 +57,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.appdat
 %license COPYING
 %{_bindir}/*
 %{_datadir}/applications/*
-%{_datadir}/elektroid/*
+%{_datadir}/elektroid/
 %{_datadir}/icons/hicolor/*
 %{_datadir}/locale/*
 %{_datadir}/metainfo/elektroid.appdata.xml

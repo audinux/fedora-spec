@@ -51,6 +51,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/foo-yc20.desktop
 %{_bindir}/*
 %{_libdir}/lv2/*
 %{_datadir}/applications/*
+%{_datadir}/foo-yc20/
 %{_datadir}/foo-yc20/graphics/*
 
 %changelog

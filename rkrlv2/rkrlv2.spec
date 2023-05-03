@@ -51,7 +51,7 @@ sed -i -e "s/-msse -msse2 -mfpmath=sse//g" lv2/CMakeLists.txt
 
 %files
 %{_libdir}/lv2/*
-%{_datadir}/rkr.lv2/*
+%{_datadir}/rkr.lv2/
 
 %changelog
 * Thu Oct 1 2020 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-4

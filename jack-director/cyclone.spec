@@ -78,6 +78,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/pixmaps/*
+%{_datadir}/%{name}/
 %{_datadir}/%{name}/help/*
 %{_datadir}/mime/packages/*
 

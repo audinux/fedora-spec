@@ -83,6 +83,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/16x16/apps/%{name}.ico
 %{_datadir}/icons/hicolor/48x48/apps/%{name}.png
+%{_datadir}/midieditor/
 %{_datadir}/midieditor/manual/*
 %{_datadir}/midieditor/examples/*
 %{_datadir}/midieditor/metronome/*

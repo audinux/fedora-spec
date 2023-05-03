@@ -72,6 +72,7 @@ desktop-file-validate  %{buildroot}/%{_datadir}/applications/%{name}.desktop
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/icons/*
+%{_datadir}/patchance/
 %{_datadir}/patchance/HoustonPatchbay/*
 %{_datadir}/patchance/locale/*
 %{_datadir}/patchance/src/*

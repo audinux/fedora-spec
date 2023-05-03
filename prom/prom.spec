@@ -111,6 +111,7 @@ ln -s %{_datadir}/ProM/data/fonts %{buildroot}/%{_libdir}/vst3/ProM.vst3/Content
 %files
 %doc README.md
 %license LICENSE
+%{_datadir}/ProM/
 %{_datadir}/ProM/data/*
 
 %files -n vst-%{name}

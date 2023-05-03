@@ -49,6 +49,7 @@ cp -r resources/komposter_icon.png %{buildroot}%{_datadir}/icons/hicolor/256x256
 %license LICENSE
 %doc README.md
 %{_bindir}/*
+%{_datadir}/%{name}/
 %{_datadir}/%{name}/doc/*
 %{_datadir}/%{name}/resources/*
 %{_datadir}/%{name}/examples/*

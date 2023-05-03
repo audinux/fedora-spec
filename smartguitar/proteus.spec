@@ -116,6 +116,7 @@ mv ToneLibrary-%{toneversion}/Proteus/* %{buildroot}%{_datadir}/proteus/tones/
 %files
 %doc README.md
 %license LICENSE.txt
+%{_datadir}/proteus/
 %{_datadir}/proteus/tones/*
 
 %files -n vst3-%{name}

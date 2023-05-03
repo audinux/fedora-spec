@@ -39,8 +39,8 @@ sed -i -e "s/lua53/lua/g" backends/Makefile
 %doc README.md
 %license LICENSE.txt
 %{_bindir}/*
-%{_libdir}/%{name}/*
-%{_datadir}/%{name}/*
+%{_libdir}/%{name}/
+%{_datadir}/%{name}/
 
 %changelog
 * Wed Jun 30 2021 Yann Collette <ycollette.nospam@free.fr> - 0.6.0-1

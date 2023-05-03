@@ -122,6 +122,7 @@ chrpath --delete %{buildroot}%{_bindir}/scide
 %exclude %{_datadir}/SuperCollider/README.md
 %exclude %{_datadir}/SuperCollider/README_LINUX.md
 %exclude %{_datadir}/SuperCollider/CHANGELOG.md
+%dir %{_datadir}/SuperCollider/
 %{_datadir}/SuperCollider/HelpSource
 %{_datadir}/SuperCollider/SCClassLibrary
 %{_datadir}/SuperCollider/sounds
@@ -129,6 +130,7 @@ chrpath --delete %{buildroot}%{_bindir}/scide
 %{_datadir}/icons/*
 # scsynth
 %{_bindir}/scsynth
+%{_libdir}/SuperCollider/
 %{_libdir}/SuperCollider/plugins
 %ifnarch %{arm}
 # supernova

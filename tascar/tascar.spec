@@ -76,6 +76,7 @@ mv %buildroot/usr/lib/* %buildroot/%{_libdir}/
 %doc README.md release.md changelog
 %{_bindir}/*
 %{_libdir}/*.so
+%{_datadir}/%{name}/
 %{_datadir}/%{name}/examples/*
 
 %files devel

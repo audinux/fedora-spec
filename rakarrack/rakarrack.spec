@@ -84,7 +84,7 @@ desktop-file-install --vendor '' \
 %{_datadir}/doc/*
 %{_datadir}/man/*
 %{_datadir}/pixmaps/*
-%{_datadir}/rakarrack/*
+%{_datadir}/rakarrack/
 
 %changelog
 * Wed Nov 4 2020 Yann Collette <ycollette dot nospam at free.fr> 0.6.3-2

@@ -74,6 +74,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %files
 %doc README.md USAGE.md INTERFACES.md
 %{_bindir}/*
+%{_datadir}/%{name}/
 %{_datadir}/%{name}/doc/*
 %{_datadir}/applications/alsa-scarlett-gui.desktop
 %{_datadir}/icons/hicolor/256x256/apps/alsa-scarlett-gui.png

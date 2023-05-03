@@ -79,7 +79,7 @@ cp -r factoryPresets/*    %{buildroot}/%{_datadir}/%{name}/presets/
 %doc README
 %license COPYING
 %{_bindir}/*
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 %{_datadir}/pixmaps/*
 
 %files -n lv2-%{name}
