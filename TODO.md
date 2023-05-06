@@ -92,6 +92,9 @@
 | glicol-cli              | https://github.com/glicol/glicol-cli |
 | backupband              | https://sourceforge.net/projects/backupband/files/ |
 | MiniDexed               | https://github.com/probonopd/MiniDexed |
+| melonix                 | https://github.com/mika314/melonix |
+| nbo-plugins             | https://sourceforge.net/projects/nbo-plugins/files/ |
+| js80p                   | https://github.com/attilammagyar/js80p |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
