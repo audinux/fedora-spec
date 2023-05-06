@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name:    infamousPlugins
-Version: 0.3.0
+Version: 0.3.2
 Release: 2%{?dist}
 Summary: LV2 Audio Plugins for Linux 
 URL:     https://github.com/ssj71/infamousPlugins
@@ -64,6 +64,9 @@ things and feel I can do something different...
 %{_libdir}/lv2/*
 
 %changelog
+* Fri May 05 2023 Yann Collette <ycollette.nospam@free.fr> - 0.3.2-2
+- update to 0.3.2-2
+
 * Thu Oct 1 2020 Yann Collette <ycollette.nospam@free.fr> - 0.3.0-2
 - fix for fedora 33
 
