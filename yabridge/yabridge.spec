@@ -6,7 +6,7 @@
 %define _lto_cflags %{nil}
 
 Name:    yabridge
-Version: 5.0.4
+Version: 5.0.5
 Release: 6%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPLv2+
@@ -62,6 +62,9 @@ export CXXFLAGS="-include cstdint $CXXFLAGS"
 %meson --cross-file=cross-wine.conf \
     --buildtype=release \
     --wrap-mode=default \
+%if 0%{?fedora} >= 38
+    -Dcpp_arg="-include cstdint $CXXFLAGS" \
+%endif
     -Dbitbridge=true
 
 %meson_build
@@ -99,6 +102,9 @@ install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}/
 %{_libdir}/*
 
 %changelog
+* Sun May 07 2023 Yann Collette <ycollette.nospam@free.fr> - 5.0.5-6
+- update to 5.0.5-6
+
 * Thu Feb 23 2023 Yann Collette <ycollette.nospam@free.fr> - 5.0.4-6
 - update to 5.0.4-6
 
