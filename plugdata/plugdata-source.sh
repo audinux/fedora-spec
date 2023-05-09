@@ -2,7 +2,7 @@
 
 git clone https://github.com/timothyschoen/PlugData
 cd PlugData
-git switch $1
+git checkout $1
 git submodule update --init --recursive
 find . -name .git -exec rm -rf {} \;
 cd ..
