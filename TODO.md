@@ -95,12 +95,12 @@
 | melonix                 | https://github.com/mika314/melonix |
 | nbo-plugins             | https://sourceforge.net/projects/nbo-plugins/files/ |
 | js80p                   | https://github.com/attilammagyar/js80p |
+| bass-studio             | https://github.com/nidefawl/bass-studio |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
 ```
 yabridge - cstdint - TODO ...
-ossia-score - cstdint
 rack-v2-SurgeXTRack - cstdint
 ```
 SIMD:
