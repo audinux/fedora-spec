@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    balance.lv2
-Version: 0.6.9
+Version: 0.6.10
 Release: 1%{?dist}
 Summary: Stereo Balance Control
 License: GPLv2+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./x42-source.sh <project> <tag>
-# ./x42-source.sh balance.lv2 v0.6.9
+# ./x42-source.sh balance.lv2 v0.6.10
 
 Source0: balance.lv2.tar.gz
 Source1: x42-source.sh
@@ -63,5 +63,8 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Thu May 11 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.10-1
+- update to 0.6.10-1
+
 * Thu Nov 03 2022 Yann Collette <ycollette.nospam@free.fr> - 0.6.9-1
 - Initial spec file

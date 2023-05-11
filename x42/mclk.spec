@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    mclk.lv2
-Version: 0.2.2
+Version: 0.2.3
 Release: 1%{?dist}
 Summary: Midi Clock Generator LV2 Plugin
 License: GPLv2+
@@ -41,6 +41,9 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Thu May 11 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2.3-1
+- update to 0.2.3-1
+
 * Sun Nov 20 2022 Yann Collette <ycollette.nospam@free.fr> - 0.2.2-1
 - update to 0.2.2-1
 

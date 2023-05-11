@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    nodelay.lv2
-Version: 0.6.2
+Version: 0.6.3
 Release: 1%{?dist}
 Summary: audio delay line with latency reporting -- LV2 test & instrumentation tool
 License: GPLv2+
@@ -41,5 +41,8 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Thu May 11 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.3-1
+- update to 0.6.3-1
+
 * Sun Nov 20 2022 Yann Collette <ycollette.nospam@free.fr> - 0.6.2-1
 - Initial spec file

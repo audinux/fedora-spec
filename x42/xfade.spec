@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    xfade.lv2
-Version: 0.3.3
+Version: 0.3.4
 Release: 1%{?dist}
 Summary: stereo DJ X-fade plugin
 License: GPLv2+
@@ -40,6 +40,9 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Thu May 11 2023 Yann Collette <ycollette.nospam@free.fr> - 0.3.4-1
+- update to 0.3.4-1
+
 * Sun Nov 20 2022 Yann Collette <ycollette.nospam@free.fr> - 0.3.3-1
 - update to 0.3.3-1
 

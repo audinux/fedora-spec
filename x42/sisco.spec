@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    sisco.lv2
-Version: 0.9.9
+Version: 0.9.10
 Release: 1%{?dist}
 Summary: A LV2 oscilloscope
 License: GPLv2+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./x42-source.sh <project> <tag>
-# ./x42-source.sh sisco.lv2 v0.9.9
+# ./x42-source.sh sisco.lv2 v0.9.10
 
 Source0: sisco.lv2.tar.gz
 Source1: x42-source.sh
@@ -52,6 +52,9 @@ A LV2 oscilloscope by x42
 %{_datadir}/*
 
 %changelog
+* Wed Mar 15 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.10-1
+- update to 0.9.10-1
+
 * Wed Mar 15 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.9-1
 - update to 0.9.9-1
 

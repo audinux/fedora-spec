@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    gmsynth.lv2
-Version: 0.5.2
+Version: 0.5.3
 Release: 1%{?dist}
 Summary: General MIDI LV2 Synth
 License: GPLv2+
@@ -40,6 +40,9 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Thu May 11 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.3-1
+- update to 0.5.3-1
+
 * Sun Nov 20 2022 Yann Collette <ycollette.nospam@free.fr> - 0.5.2-1
 - update to 0.5.2-1
 

@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    controlfilter.lv2
-Version: 0.5.0
+Version: 0.5.1
 Release: 1%{?dist}
 Summary: LV2 Control Port Parameter Filters -- modular synth blocks
 License: GPLv2+
@@ -45,5 +45,8 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Thu May 11 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.1-1
+- update to 0.5.1-1
+
 * Sun Nov 20 2022 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-1
 - Initial spec file

@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    plumbing.lv2
-Version: 0.1.2
+Version: 0.1.3
 Release: 1%{?dist}
 Summary: LV2 Plumbing Plugins
 License: GPLv2+
@@ -42,5 +42,8 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Thu May 11 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1.3-1
+- update to 0.1.3-1
+
 * Tue Nov 01 2022 Yann Collette <ycollette.nospam@free.fr> - 0.1.2-1
 - Initial spec file

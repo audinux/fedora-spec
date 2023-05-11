@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    meters.lv2
-Version: 0.9.24
+Version: 0.9.25
 Release: 1%{?dist}
 Summary: collection of LV2 plugins for audio-level metering
 License: GPLv2+
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./x42-source.sh <project> <tag>
-# ./x42-source.sh meters.lv2 v0.9.24
+# ./x42-source.sh meters.lv2 v0.9.25
 
 Source0: meters.lv2.tar.gz
 Source1: x42-source.sh
@@ -80,6 +80,9 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_datadir}/*
 
 %changelog
+* Thu May 11 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.25-1
+- update to 0.9.25-1
+
 * Wed Mar 15 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.24-1
 - update to 0.9.24-1
 
