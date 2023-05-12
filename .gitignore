@@ -3,3 +3,5 @@
 *.orig
 .#*
 #*
+scripts/git_tags_new.txt
+scripts/git_tags_old.txt
