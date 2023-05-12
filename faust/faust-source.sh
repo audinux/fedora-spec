@@ -6,8 +6,7 @@
 git clone https://github.com/grame-cncm/faust
 cd faust
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz faust.tar.gz faust/*
