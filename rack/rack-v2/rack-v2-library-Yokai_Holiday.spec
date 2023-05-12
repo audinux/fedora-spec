@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 6acd60b59c98f99420bb3baf48db6c875ac106d8
-%global gittag0 2.0.0.7
+%global gittag0 2.0.0.8
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Yokai_Holiday
-Version: 2.0.0.7
+Version: 2.0.0.8
 Release: 2%{?dist}
 Summary: Yokai_Holiday plugin for Rack
 License: GPLv2+
@@ -61,7 +61,7 @@ BuildRequires: jq
 
 %description
 Yokai_Holiday plugin for Rack.
-Two adjustable taps on a record buffer
+Reverse Delay - Two adjustable taps on a record buffer
 
 %prep
 %setup -n Rack
@@ -153,5 +153,5 @@ cp -r Yokai_Holiday_plugin/dist/Yokai_Holiday/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0.7-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0.8-1
 - initial specfile
