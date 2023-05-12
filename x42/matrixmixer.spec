@@ -34,6 +34,8 @@ A NxM LV2 matrix mixer by x42
 %prep
 %autosetup -n %{name}
 
+sed -i -e "s|lv2/lv2core/lv2.h|lv2.h|g" src/matrixmixer.c
+
 %build
 
 %make_build PREFIX=/usr LV2DIR=%{_libdir}/lv2 matrixmixer_VERSION=%{version} STRIP=true
