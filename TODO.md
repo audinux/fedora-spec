@@ -139,6 +139,8 @@ june-21 -> package cabbage and use it to build a shipped binary
 /bintracker -> problem during chicken dependencies installation
 ```
 
+Add a grub script to add "preempt=full" to existing standard kernels
+
 ## Check Sourceforge
 
 Check if these projects have been moved to github or not:
