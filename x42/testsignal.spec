@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    testsignal.lv2
-Version: 0.6.4
+Version: 0.6.5
 Release: 1%{?dist}
 Summary: LV2 Test Signal Generator
 License: GPLv2+
@@ -42,8 +42,6 @@ The signal level can be varied between -24dBFS and -9dBFS and defaults to -18dBF
 %prep
 %autosetup -n %{name}-%{version}
 
-sed -i -e "s|lv2/lv2core/lv2.h|lv2.h|g" testsignal.c
-
 %build
 
 %set_build_flags
@@ -60,6 +58,9 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Fri May 12 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.5-1
+- update to 0.6.5-1
+
 * Thu May 11 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.4-1
 - update to 0.6.4-1
 
