@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    wolf-shaper
-Version: 1.0.1
+Version: 1.0.2
 Release: 2%{?dist}
 Summary: Wolf-shaper is a waveshaper plugin with a graph editor.
 License: GPLv2+
@@ -109,6 +109,9 @@ cp %__cmake_builddir/bin/wolf-shaper-vst.so %{buildroot}/%{_libdir}/vst/
 %{_libdir}/clap/*
 
 %changelog
+* Sun May 14 2023 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-2
+- update to 1.0.2-2
+
 * Mon Feb 20 2023 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-2
 - update to 1.0.1-2
 
