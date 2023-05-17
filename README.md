@@ -78,20 +78,6 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-$releasever
 skip_if_unavailable = 1
 keepcache = 0
-
-[planetccrma]
-name=Planet CCRMA $releasever - $basearch
-baseurl=http://ccrma.stanford.edu/planetccrma/mirror/fedora/linux/planetccrma/$releasever/$basearch
-enabled=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-planetccrma
-gpgcheck=1
-
-[planetcore]
-name=Planet CCRMA Core $releasever - $basearch
-baseurl=http://ccrma.stanford.edu/planetccrma/mirror/fedora/linux/planetcore/$releasever/$basearch
-enabled=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-planetccrma
-gpgcheck=1
 ```
 
 This is the content of the repo conf file found in /etc/yum.repo.d.
