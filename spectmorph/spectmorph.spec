@@ -2,10 +2,8 @@
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer
 
-%global commit0 cfad5460c5ff9b5b58957093f1fdca665f9d43db
-
 Name: spectmorph
-Version: 0.5.2
+Version: 0.6.0
 Release: 3%{?dist}
 Summary: SpectMorph is a free software project which allows to analyze samples of musical instruments, and to combine them (morphing)
 URL: http://www.spectmorph.org
@@ -14,7 +12,7 @@ License: GPLv2+
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/swesterfeld/spectmorph/archive/%{commit0}.zip#/%{name}-%{commit0}.zip
+Source0: https://github.com/swesterfeld/spectmorph/archive/refs/tags/%{version}.zip#/%{name}-%{version}.zip
 Patch0: spectmorph-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -79,7 +77,7 @@ Requires: %{name}
 CLAP version of %{name}
 
 %prep
-%setup -n spectmorph-%{commit0}
+%setup -n spectmorph-%{version}
 
 %ifarch aarch64
 %patch0 -p1
@@ -120,6 +118,8 @@ export CXXFLAGS="-include cstdint $CXXFLAGS"
 %make_install
 
 chrpath --delete %{buildroot}/%{_libdir}/clap/SpectMorph.clap
+chrpath --delete %{buildroot}/%{_libdir}/lv2/spectmorph.lv2/spectmorph_lv2.so
+chrpath --delete %{buildroot}/%{_libdir}/vst/spectmorph_vst.so
 
 # install smjack.desktop properly.
 desktop-file-install --vendor '' \
@@ -154,6 +154,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Thu May 18 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.0-3
+- update to 0.6.0-3
+
 * Mon Apr 10 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.2-3
 - update to 0.5.2-3 - update to cfad5460c5ff9b5b58957093f1fdca665f9d43db
 

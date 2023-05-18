@@ -1,44 +1,47 @@
-From 88754e93c10d01d50b111c2cfe4d6a4bd1a96394 Mon Sep 17 00:00:00 2001
+From f5d92e209d360b8606cdb95d886ebd42c74b901a Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Tue, 18 Oct 2022 08:19:50 +0200
+Date: Thu, 18 May 2023 21:31:49 +0200
 Subject: [PATCH] aarch64
 
 ---
- lib/smmath.hh         | 6 +++---
- lib/smnoisedecoder.cc | 4 ++++
- 2 files changed, 7 insertions(+), 3 deletions(-)
+ lib/smmath.hh           | 5 ++---
+ lib/smpandaresampler.cc | 7 ++++---
+ 2 files changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/lib/smmath.hh b/lib/smmath.hh
-index ffaabd3..7facc51 100644
+index 3a55b2e..d7667e3 100644
 --- a/lib/smmath.hh
 +++ b/lib/smmath.hh
-@@ -8,9 +8,9 @@
- #include <string.h>
- #include <stdlib.h>
+@@ -10,9 +10,8 @@
  #include <stdint.h>
+ #include <smmatharm.hh>
+ 
+-#ifdef __SSE__
+-#include <xmmintrin.h>
+-#endif
++#define SIMDE_ENABLE_NATIVE_ALIASES
++#include <simde/x86/sse.h>
+ 
+ #include <algorithm>
+ #include <cmath>
+diff --git a/lib/smpandaresampler.cc b/lib/smpandaresampler.cc
+index 12798de..a4307c0 100644
+--- a/lib/smpandaresampler.cc
++++ b/lib/smpandaresampler.cc
+@@ -6,9 +6,10 @@
+ #include "hiir/Downsampler2xSse.h"
+ #include "hiir/Upsampler2xSse.h"
+ #endif
 -#ifdef __SSE__
 -#include <xmmintrin.h>
 -#endif
 +
 +#define SIMDE_ENABLE_NATIVE_ALIASES
 +#include <simde/x86/sse.h>
- 
- #include <algorithm>
- #include <cmath>
-diff --git a/lib/smnoisedecoder.cc b/lib/smnoisedecoder.cc
-index 47f4b06..c69db03 100644
---- a/lib/smnoisedecoder.cc
-+++ b/lib/smnoisedecoder.cc
-@@ -10,6 +10,9 @@
- #include <assert.h>
- #include <map>
- 
-+#define SIMDE_ENABLE_NATIVE_ALIASES
-+#include <simde/x86/sse.h>
 +
- using std::vector;
- using SpectMorph::NoiseDecoder;
- using std::map;
+ #include <math.h>
+ #include <string.h>
+ 
 -- 
-2.37.3
+2.40.1
 
