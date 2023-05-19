@@ -79,8 +79,7 @@ mkdir -p %{buildroot}%{_libdir}/xemacs/site-packages/lisp/chuck/
 cp -a %{SOURCE1} %{buildroot}%{_libdir}/xemacs/site-packages/lisp/chuck/chuck.el
 
 %files
-%doc AUTHORS DEVELOPER PROGRAMMER QUICKSTART README 
-%doc THANKS TODO VERSIONS examples
+%doc README
 %license COPYING
 %{_bindir}/*
 %{_datadir}/emacs/site-lisp/*
