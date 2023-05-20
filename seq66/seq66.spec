@@ -1,5 +1,5 @@
 Name:    seq66
-Version: 0.99.4
+Version: 0.99.5
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -25,6 +25,7 @@ BuildRequires: liblo-devel
 BuildRequires: libglvnd-devel
 BuildRequires: rtmidi-devel
 BuildRequires: portmidi-devel
+BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -95,6 +96,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libdir}/*
 
 %changelog
+* Sat May 20 2023 Yann Collette <ycollette.nospam@free.fr> - 0.99.5-1
+- update 0.99.5-1
+
 * Sun Apr 30 2023 Yann Collette <ycollette.nospam@free.fr> - 0.99.4-1
 - update 0.99.4-1
 
