@@ -2,11 +2,9 @@
 # Type: Plugin, LV2
 # Category: Audio, Effect
 
-%global debug_package %{nil}
-
 Name:    lsp-plugins
 Summary: Linux Studio Plugins collection
-Version: 1.2.6
+Version: 1.2.7
 Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/sadko4u/lsp-plugins
@@ -14,7 +12,7 @@ URL:     https://github.com/sadko4u/lsp-plugins
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./lsp-sources.sh 1.2.6
+# ./lsp-sources.sh 1.2.7
 
 Source0: lsp-plugins.tar.gz
 Source1: lsp-sources.sh
@@ -107,6 +105,9 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %{_libdir}/clap/* 
 
 %changelog
+* Sun May 21 2023 Yann Collette <ycollette dot nospam at free.fr> 1.2.7-1
+- update to 1.2.7-1
+
 * Thu Mar 23 2023 Yann Collette <ycollette dot nospam at free.fr> 1.2.6-1
 - update to 1.2.6-1
 
