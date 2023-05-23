@@ -841,7 +841,9 @@ https://github.com/AidaDSP/AIDA-X
 https://github.com/tote-bag-labs/valentine
 https://github.com/DISTRHO/DPF-Plugins
 https://github.com/dagargo/elektroid
-https://github.com/DISTRHO/Ildaeil"
+https://github.com/DISTRHO/Ildaeil
+https://github.com/moddevices/mod-neural-amp
+https://github.com/moddevices/mod-cv-plugins"
 
 # These ones have disappeared
 # https://github.com/OpenMusicKontrollers/eteroj.lv2
