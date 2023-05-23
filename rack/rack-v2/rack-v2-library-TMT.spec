@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 ebee262418dce7598ea48d015c0f19d2daa94bf7
-%global gittag0 2.0.11
+%global commit0 37a5751cd1055263e66bc729c938e0f46bf7f7f6
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-StochasticTelegraph
-Version: 2.0.11
+Name:    rack-v2-TMT
+Version: 2.0.0
 Release: 2%{?dist}
-Summary: StochasticTelegraph plugin for Rack
+Summary: TMT plugin for Rack
 License: GPLv2+
-URL:     https://github.com/mahlenmorris/VCVRack
+URL:     https://github.com/Jadael/TMT
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,8 +27,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/mahlenmorris/VCVRack/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: StochasticTelegraph_plugin.json
+Source1: https://github.com/Jadael/TMT/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: TMT_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -60,8 +60,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-StochasticTelegraph plugin for Rack.
-Generate sequences or perform math on inputs with a simple BASIC-like language.
+TMT plugin for Rack.
+Randomly re-order the channels of a polyphonic signal. CV controls for seed and number of output channels.
 
 %prep
 %setup -n Rack
@@ -134,24 +134,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir StochasticTelegraph_plugin
-tar xvfz %{SOURCE1} --directory=StochasticTelegraph_plugin --strip-components=1 
+mkdir TMT_plugin
+tar xvfz %{SOURCE1} --directory=TMT_plugin --strip-components=1 
 
-cp -n %{SOURCE2} StochasticTelegraph_plugin/plugin.json
+cp -n %{SOURCE2} TMT_plugin/plugin.json
 
 %build
 
-cd StochasticTelegraph_plugin
+cd TMT_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/StochasticTelegraph/
-cp -r StochasticTelegraph_plugin/dist/StochasticTelegraph/* %{buildroot}%{_libexecdir}/Rack2/plugins/StochasticTelegraph/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/TMT/
+cp -r TMT_plugin/dist/TMT/* %{buildroot}%{_libexecdir}/Rack2/plugins/TMT/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.11-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 8f1f0216d14a6f30bfba7cffc428442f1ee3e0ce
-%global gittag0 2.0.0
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-vanTies
-Version: 2.0.0
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: vanTies plugin for Rack
 License: GPLv2+
@@ -153,5 +153,5 @@ cp -r vanTies_plugin/dist/vanTies/* %{buildroot}%{_libexecdir}/Rack2/plugins/van
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
