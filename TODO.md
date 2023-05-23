@@ -95,6 +95,8 @@
 | melonix                 | https://github.com/mika314/melonix |
 | nbo-plugins             | https://sourceforge.net/projects/nbo-plugins/files/ |
 | bass-studio             | https://github.com/nidefawl/bass-studio |
+| mod-utilities           | https://github.com/moddevices/mod-utilities |
+| mod-system-plugins      | https://github.com/moddevices/mod-system-plugins |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
