@@ -843,7 +843,15 @@ https://github.com/DISTRHO/DPF-Plugins
 https://github.com/dagargo/elektroid
 https://github.com/DISTRHO/Ildaeil
 https://github.com/moddevices/mod-neural-amp
-https://github.com/moddevices/mod-cv-plugins"
+https://github.com/moddevices/mod-cv-plugins
+https://github.com/moddevices/mod-utilities
+https://github.com/moddevices/mod-system-plugins
+https://github.com/x42/stereoroute.lv2
+https://github.com/x42/onsettrigger.lv2
+https://github.com/x42/midimap.lv2
+https://github.com/x42/midigen.lv2
+https://github.com/x42/midifilter.lv2
+https://github.com/x42/mididebug.lv2"
 
 # These ones have disappeared
 # https://github.com/OpenMusicKontrollers/eteroj.lv2
@@ -854,8 +862,6 @@ https://github.com/moddevices/mod-cv-plugins"
 # https://github.com/OpenMusicKontrollers/patchmatrix
 # https://github.com/OpenMusicKontrollers/sherlock.lv2
 # https://github.com/OpenMusicKontrollers/synthpod
-
-# https://github.com/ycollet/Mx44
 
 if [ -f git_tags_new.txt ];
 then
