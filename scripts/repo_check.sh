@@ -851,7 +851,8 @@ https://github.com/x42/onsettrigger.lv2
 https://github.com/x42/midimap.lv2
 https://github.com/x42/midigen.lv2
 https://github.com/x42/midifilter.lv2
-https://github.com/x42/mididebug.lv2"
+https://github.com/x42/mididebug.lv2
+https://github.com/DISTRHO/DIE-Plugins"
 
 # These ones have disappeared
 # https://github.com/OpenMusicKontrollers/eteroj.lv2
