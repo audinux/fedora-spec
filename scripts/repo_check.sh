@@ -852,17 +852,16 @@ https://github.com/x42/midimap.lv2
 https://github.com/x42/midigen.lv2
 https://github.com/x42/midifilter.lv2
 https://github.com/x42/mididebug.lv2
-https://github.com/DISTRHO/DIE-Plugins"
-
-# These ones have disappeared
-# https://github.com/OpenMusicKontrollers/eteroj.lv2
-# https://github.com/OpenMusicKontrollers/mephisto.lv2
-# https://github.com/OpenMusicKontrollers/midi_matrix.lv2
-# https://github.com/OpenMusicKontrollers/moony.lv2
-# https://github.com/OpenMusicKontrollers/orbit.lv2
-# https://github.com/OpenMusicKontrollers/patchmatrix
-# https://github.com/OpenMusicKontrollers/sherlock.lv2
-# https://github.com/OpenMusicKontrollers/synthpod
+https://github.com/DISTRHO/DIE-Plugins
+https://github.com/jdf/processing.py
+https://git.open-music-kontrollers.ch/~hp/eteroj.lv2
+https://git.open-music-kontrollers.ch/~hp/mephisto.lv2
+https://git.open-music-kontrollers.ch/~hp/midi_matrix.lv2
+https://git.open-music-kontrollers.ch/~hp/moony.lv2
+https://git.open-music-kontrollers.ch/~hp/orbit.lv2
+https://git.open-music-kontrollers.ch/~hp/patchmatrix
+https://git.open-music-kontrollers.ch/~hp/sherlock.lv2
+https://git.open-music-kontrollers.ch/~hp/synthpod"
 
 if [ -f git_tags_new.txt ];
 then
