@@ -682,7 +682,6 @@ https://github.com/TimeControlledOrganism/LifeFormModular
 https://github.com/tim-janik/beast
 https://github.com/timothyschoen/PlugData
 https://github.com/tlsa/libcyaml
-https://github.com/tlsa/libcyaml/
 https://github.com/tomdasilva/Mojo
 https://github.com/Tonecarver/tcRackModules
 https://github.com/travisat/Truly
