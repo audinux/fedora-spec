@@ -95,7 +95,6 @@
 | melonix                 | https://github.com/mika314/melonix |
 | nbo-plugins             | https://sourceforge.net/projects/nbo-plugins/files/ |
 | bass-studio             | https://github.com/nidefawl/bass-studio |
-| easyeffects             | https://github.com/wwmm/easyeffects |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
