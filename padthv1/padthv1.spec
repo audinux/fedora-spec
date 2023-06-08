@@ -12,7 +12,7 @@
 Summary: Old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.
 Name:    padthv1
 Version: %{padthv1_version}
-Release: 3%{?dist}
+Release: 4%{?dist}
 URL:     https://sourceforge.net/projects/%{name}
 License: GPLv2+
 
@@ -30,12 +30,12 @@ BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-linguist
 BuildRequires: lv2-devel >= 1.2.0
-BuildRequires: desktop-file-utils
 BuildRequires: libsndfile-devel
 BuildRequires: fftw-devel
 BuildRequires: liblo-devel
 BuildRequires: qt5-qtsvg-devel
 BuildRequires: libappstream-glib
+BuildRequires: desktop-file-utils
 
 Requires: hicolor-icon-theme
 
@@ -73,6 +73,11 @@ install -m 644 src/appdata/org.rncbc.padthv1.metainfo.xml %{buildroot}%{_datadir
 cd %{buildroot}/%{_datadir}/%{name}/presets
 tar xvfz %{SOURCE1}
 
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/org.rncbc.padthv1.desktop
+
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.desktop
 #appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/org.rncbc.padthv1.xml
@@ -87,12 +92,16 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.des
 %{_datadir}/man/*/man1/%{name}*
 %{_datadir}/mime/packages/*.xml
 %{_datadir}/metainfo/*.xml
-%{_datadir}/%{name}/
+%dir %{_datadir}/%{name}/
+%{_datadir}/%{name}/presets/*
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/%{name}.lv2/
 
 %changelog
+* Thu Jun 08 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.31-4
+- update to 0.9.31-4 - install desktop file
+
 * Thu Jun 08 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.31-3
 - update to 0.9.31-3
 
