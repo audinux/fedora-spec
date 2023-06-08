@@ -5,7 +5,7 @@
 # LastSourceUpdate: 2021
 
 Name:    hydrogen
-Version: 1.2.0
+Version: 1.2.1
 Release: 12%{?dist}
 Summary: Advanced drum machine for GNU/Linux
 URL:     http://www.hydrogen-music.org/
@@ -25,8 +25,6 @@ BuildRequires: ladspa-devel
 BuildRequires: liblrdf-devel
 BuildRequires: libsndfile-devel
 BuildRequires: libtar-devel
-BuildRequires: portaudio-devel
-BuildRequires: portmidi-devel
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtxmlpatterns-devel
 BuildRequires: qt5-qtsvg-devel
@@ -69,8 +67,6 @@ export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
        -DWANT_RUBBERBAND:BOOL=ON \
        -DWANT_SHARED:BOOL=ON \
        -DWANT_LRDF=ON \
-       -DWANT_PORTMIDI=ON \
-       -DWANT_PORTAUDIO=ON \
        -DCMAKE_INSTALL_LIBDIR=%{_lib}
 
 %cmake_build
@@ -107,6 +103,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.hydrogenmusic.Hyd
 %exclude %{_includedir}/%{name}
 
 %changelog
+* Thu Jun 08 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-12
+- update to 1.2.1-12
+
 * Sat Apr 08 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-12
 - update to 1.2.0-12
 
