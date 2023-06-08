@@ -17,7 +17,10 @@ Vendor:       Planet CCRMA
 Requires: supercollider >= 3.5
 
 BuildRequires: gcc gcc-c++
-BuildRequires: cmake supercollider-devel fftw-devel stk-devel
+BuildRequires: cmake
+BuildRequires: supercollider-devel
+BuildRequires: fftw-devel
+BuildRequires: stk-devel
 
 Obsoletes: supercollider-extras < 3.5
 Provides:  supercollider-extras = %{version}-%{release}

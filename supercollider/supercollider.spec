@@ -1,25 +1,41 @@
 Summary: Object oriented programming environment for real-time audio and video processing
 Name:    supercollider
 Version: 3.13.0
-Release: 5%{?dist}
+Release: 6%{?dist}
 License: GPL
 URL:     https://supercollider.github.io/
 
 Source0: https://github.com/supercollider/supercollider/releases/download/Version-%{version}/SuperCollider-%{version}-Source.tar.bz2
 
-Requires: emacs w3m-el
-
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
-BuildRequires: cmake gcc gcc-c++ autoconf automake libtool pkgconfig
-BuildRequires: jack-audio-connection-kit-devel libsndfile-devel alsa-lib-devel
-BuildRequires: fftw3-devel libcurl-devel emacs w3m ruby
-BuildRequires: avahi-devel libX11-devel libXt-devel
-BuildRequires: libicu-devel readline-devel
-BuildRequires: qt5-qtbase-devel qt5-qtsensors-devel qt5-qttools-devel qt5-qtsvg-devel
-BuildRequires: qt5-qtlocation-devel qt5-qtwebkit-devel qt5-qtwebengine-devel
-BuildRequires: qt5-qtwebsockets-devel qt5-qtdeclarative-devel
+BuildRequires: gcc gcc-c++
+BuildRequires: cmake
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: libtool
+BuildRequires: pkgconfig
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: libsndfile-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: fftw3-devel
+BuildRequires: libcurl-devel
+BuildRequires: ruby
+BuildRequires: avahi-devel
+BuildRequires: libX11-devel
+BuildRequires: libXt-devel
+BuildRequires: libicu-devel
+BuildRequires: readline-devel
+BuildRequires: qt5-qtbase-devel
+BuildRequires: qt5-qtsensors-devel
+BuildRequires: qt5-qttools-devel
+BuildRequires: qt5-qtsvg-devel
+BuildRequires: qt5-qtlocation-devel
+BuildRequires: qt5-qtwebkit-devel
+BuildRequires: qt5-qtwebengine-devel
+BuildRequires: qt5-qtwebsockets-devel
+BuildRequires: qt5-qtdeclarative-devel
 BuildRequires: yaml-cpp03-devel 
 BuildRequires: cwiid-devel
 # needed because emacs needs alternatives to be installed
@@ -29,6 +45,7 @@ BuildRequires: systemd-devel
 BuildRequires: libatomic
 BuildRequires: boost-devel
 BuildRequires: chrpath
+BuildRequires: desktop-file-utils
 
 %description
 SuperCollider is an object oriented programming environment for
@@ -48,6 +65,7 @@ SuperCollider applications
 %package emacs
 Summary:  SuperCollider support for Emacs
 Requires: supercollider = %{version}-%{release}
+Requires: emacs
 
 %description emacs
 SuperCollider support for the Emacs text editor.
@@ -55,6 +73,7 @@ SuperCollider support for the Emacs text editor.
 %package gedit
 Summary:  SuperCollider support for GEdit
 Requires: supercollider = %{version}-%{release}
+Requires: gedit
 
 %description gedit
 SuperCollider support for the GEdit text editor.
@@ -62,6 +81,7 @@ SuperCollider support for the GEdit text editor.
 %package vim
 Summary:  SuperCollider support for Vim
 Requires: supercollider = %{version}-%{release}
+Requires: vim
 
 %description vim
 SuperCollider support for the Vim text editor.
@@ -112,6 +132,15 @@ install -m0644 SCVersion.txt $RPM_BUILD_ROOT%{_includedir}/SuperCollider/
 # remove a rpath
 chrpath --delete %{buildroot}%{_bindir}/scide
 
+# Install desktop file
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/SuperColliderIDE.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/SuperColliderIDE.desktop
+
 %files
 %doc README*
 %license COPYING
@@ -131,7 +160,7 @@ chrpath --delete %{buildroot}%{_bindir}/scide
 # scsynth
 %{_bindir}/scsynth
 %{_libdir}/SuperCollider/
-%{_libdir}/SuperCollider/plugins
+%dir %{_libdir}/SuperCollider/plugins
 %ifnarch %{arm}
 # supernova
 %{_bindir}/supernova
@@ -159,6 +188,9 @@ chrpath --delete %{buildroot}%{_bindir}/scide
 %{_datadir}/mime/packages/supercollider.xml
 
 %changelog
+* Thu Jun 08 2023 Yann Collette <ycollette.nospam@free.fr> 3.13.0-6
+- update to 3.13.0-6 - install desktop file and fix requirements
+
 * Fri Feb 24 2023 Yann Collette <ycollette.nospam@free.fr> 3.13.0-5
 - update to 3.13.0-5
 
