@@ -1,17 +1,28 @@
-From 354f245de5f5c4d78526baca8f9d0f3311f6a2d1 Mon Sep 17 00:00:00 2001
+From 167d633cb93b9aa30fdb4fe1bbc9d1de250a182b Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Tue, 7 Jun 2022 21:56:10 +0200
-Subject: [PATCH] remove strip
+Date: Thu, 8 Jun 2023 07:20:02 +0200
+Subject: [PATCH] disable strip
 
 ---
- src/CMakeLists.txt | 4 ----
- 1 file changed, 4 deletions(-)
+ src/CMakeLists.txt | 8 --------
+ 1 file changed, 8 deletions(-)
 
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 6402345..1d465a5 100644
+index dabf748..a479398 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -222,10 +222,6 @@ if (CONFIG_JACK)
+@@ -181,10 +181,6 @@ if (CONFIG_LV2)
+   target_link_directories (${PROJECT_NAME}_lv2 PRIVATE ${LV2_LIBRARY_DIRS})
+   target_link_libraries (${PROJECT_NAME}_lv2 PRIVATE ${LV2_LIBRARIES})
+   if (UNIX AND NOT APPLE)
+-    if (NOT CONFIG_DEBUG)
+-      add_custom_command(TARGET ${PROJECT_NAME}_lv2  POST_BUILD
+-        COMMAND strip lib${PROJECT_NAME}_lv2.so)
+-    endif ()
+     if (CONFIG_PREFIX MATCHES $ENV{HOME})
+       set (CONFIG_LV2DIR ${CONFIG_PREFIX}/.lv2)
+     else ()
+@@ -230,10 +226,6 @@ if (CONFIG_JACK)
      target_link_libraries (${PROJECT_NAME}_jack PRIVATE PkgConfig::LIBLO)
    endif ()
    if (UNIX AND NOT APPLE)
@@ -23,5 +34,5 @@ index 6402345..1d465a5 100644
        DESTINATION ${CMAKE_INSTALL_BINDIR})
      install (FILES images/${PROJECT_NAME}.png
 -- 
-2.36.1
+2.40.1
 

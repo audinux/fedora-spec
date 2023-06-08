@@ -5,14 +5,14 @@
 
 %global padthv1_major 0
 %global padthv1_minor 9
-%global padthv1_patch 30
+%global padthv1_patch 31
 %global padthv1_version %{padthv1_major}.%{padthv1_minor}.%{padthv1_patch}
 %global padthv1_version_ %{padthv1_major}_%{padthv1_minor}_%{padthv1_patch}
 
 Summary: Old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.
 Name:    padthv1
 Version: %{padthv1_version}
-Release: 2%{?dist}
+Release: 3%{?dist}
 URL:     https://sourceforge.net/projects/%{name}
 License: GPLv2+
 
@@ -88,12 +88,14 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.des
 %{_datadir}/mime/packages/*.xml
 %{_datadir}/metainfo/*.xml
 %{_datadir}/%{name}/
-%{_datadir}/%{name}/presets/*
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/%{name}.lv2/
 
 %changelog
+* Thu Jun 08 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.31-3
+- update to 0.9.31-3
+
 * Fri Mar 24 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.30-2
 - update to 0.9.30-2
 
