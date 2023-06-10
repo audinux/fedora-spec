@@ -4,7 +4,7 @@ Name:    paulstretch_cpp
 Version: 2.1.0
 Release: 1%{?dist}
 Summary: The Paulstretch program
-License: GPLv2
+License: GPL-2.0-only
 URL:     https://github.com/paulnasca/paulstretch_cpp
 
 Vendor:       Audinux

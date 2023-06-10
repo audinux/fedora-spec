@@ -7,7 +7,7 @@ Version: 0.18
 Release: 1%{?dist}
 Summary: Audio language
 URL:     https://www.bipscript.org/
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -35,7 +35,7 @@ Bipscript is a scripting language for creating music.
 
 %package doc
 Summary: Documentation for %{name}
-License: GPLv2+
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description doc
@@ -43,7 +43,7 @@ Documentation for %{name}
 
 %package examples
 Summary: Examples for %{name}
-License: GPLv2+
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description examples

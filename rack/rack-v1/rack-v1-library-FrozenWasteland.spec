@@ -14,7 +14,7 @@ Name:    rack-v1-FrozenWasteland
 Version: 1.21.3
 Release: 3%{?dist}
 Summary: FrozenWasteland plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/almostEric/FrozenWasteland
 
 Vendor:       Audinux

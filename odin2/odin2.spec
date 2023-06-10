@@ -6,7 +6,7 @@ Name:    odin2
 Version: 2.3.4
 Release: 5%{?dist}
 Summary: A VST3 Synthesizer
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/TheWaveWarden/odin2
 
 Vendor:       Audinux
@@ -44,7 +44,7 @@ Odin 2 Synthesizer Plugin
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
@@ -52,7 +52,7 @@ VST3 version of %{name}
 
 %package -n clap-%{name}
 Summary:  CLAP version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n clap-%{name}
@@ -60,7 +60,7 @@ CLAP version of %{name}
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}

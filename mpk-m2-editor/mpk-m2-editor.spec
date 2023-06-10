@@ -14,7 +14,7 @@ Version: 0.0.1
 Release: 2%{?dist}
 Summary: Alternative to the official AKAI MPKMini MkII Editor
 URL:     https://github.com/PiOverFour/MPK-M2-editor
-License: GPLv3
+License: GPL-3.0-only
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -2,7 +2,7 @@ Name:    lv2lint
 Version: 0.2.0
 Release: 4%{?dist}
 Summary: Check whether a given LV2 plugin is up to the specification
-License: Artistic 2.0
+License: Artistic-2.0
 URL:     https://gitlab.com/drobilla/lv2lint
 
 Vendor:       Audinux

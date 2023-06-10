@@ -9,7 +9,7 @@ Name:    Rack-v1
 Version: 1.1.6
 Release: 13%{?dist}
 Summary: A modular Synthesizer
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/VCVRack/Rack
 
 Vendor:       Audinux

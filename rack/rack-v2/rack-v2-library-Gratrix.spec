@@ -17,7 +17,7 @@ Name:    rack-v2-Gratrix
 Version: 0.6.0
 Release: 1%{?dist}
 Summary: Gratrix plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/gratrix/vcv-gratrix
 
 Vendor:       Audinux

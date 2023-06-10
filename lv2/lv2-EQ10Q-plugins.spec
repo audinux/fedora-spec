@@ -6,7 +6,7 @@ Summary: LV2 Plugin: Parametric audio equalizer with 12 different filter types
 # The vuwidget class is under GPLv3+.  The rest is under GPLv2+.  The GPLv3+ is
 # only only included in the parameq_gui.so library.  The other library,
 # paramEQ.so, contains only GPLv2+ code.
-License: GPLv2+ and GPLv3+
+License: GPL-2.0-or-later AND GPL-3.0-or-later
 URL:     http://eq10q.sourceforge.net/
 
 Source0: http://downloads.sourceforge.net/project/eq10q/eq10q-%{version}.tar.gz

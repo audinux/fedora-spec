@@ -6,7 +6,7 @@ Name:    librearp
 Version: 2.4
 Release: 2%{?dist}
 Summary: A pattern-based arpeggio generator plugin
-License: GPLv3
+License: GPL-3.0-only
 URL:     https://gitlab.com/LibreArp/LibreArp
 
 Vendor:       Audinux
@@ -43,7 +43,7 @@ A pattern-based arpeggio generator plugin
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
@@ -51,7 +51,7 @@ VST3 version of %{name}
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}

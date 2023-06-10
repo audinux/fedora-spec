@@ -2,7 +2,7 @@ Name:    zplugins
 Version: 0.2.5
 Release: 1%{?dist}
 Summary: A collection of audio DSP LV2 plugins
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/zrythm/ZPlugins
 
 Vendor:       Audinux

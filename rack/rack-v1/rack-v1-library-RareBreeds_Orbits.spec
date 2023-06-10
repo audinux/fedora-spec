@@ -14,7 +14,7 @@ Name:    rack-v1-RareBreeds_Orbits
 Version: 1.2.0
 Release: 3%{?dist}
 Summary: RareBreeds_Orbits plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/RareBreeds/Orbits
 
 Vendor:       Audinux

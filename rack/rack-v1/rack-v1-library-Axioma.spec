@@ -14,7 +14,7 @@ Name:    rack-v1-Axioma
 Version: 1.1.0
 Release: 3%{?dist}
 Summary: Axioma plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/kauewerner/Axioma
 
 Vendor:       Audinux

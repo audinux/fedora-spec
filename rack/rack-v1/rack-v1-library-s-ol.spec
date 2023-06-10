@@ -14,7 +14,7 @@ Name:    rack-v1-s-ol
 Version: 1.0.0
 Release: 3%{?dist}
 Summary: s-ol plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://git.s-ol.nu/vcvmods
 
 Vendor:       Audinux

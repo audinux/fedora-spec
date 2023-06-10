@@ -17,7 +17,7 @@ Name:    rack-v2-Noise86
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: Noise86 plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/spacejoey86/Noise86
 
 Vendor:       Audinux

@@ -9,7 +9,7 @@ Name:    smartamppro
 Version: 1.0
 Release: 2%{?dist}
 Summary: Guitar plugin emulating real hardware with Neural Network
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/GuitarML/SmartAmpPro
 
 Vendor:       Audinux
@@ -53,7 +53,7 @@ SmartGuitarAmpPro is a guitar plugin (VST3) made with JUCE that uses neural netw
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

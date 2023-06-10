@@ -7,7 +7,7 @@ Version: 1.3.0
 Release: 2%{?dist}
 Summary: A small cross-platform editor of the OPN2 FM banks of different formats
 URL:     https://github.com/Wohlstand/OPN2BankEditor
-License: GPLv3
+License: GPL-3.0-only
 
 Vendor:       Audinux
 Distribution: Audinux

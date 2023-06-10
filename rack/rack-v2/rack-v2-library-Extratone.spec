@@ -17,7 +17,7 @@ Name:    rack-v2-Extratone
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: Extratone plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/EaterOfSheep/Extratone
 
 Vendor:       Audinux

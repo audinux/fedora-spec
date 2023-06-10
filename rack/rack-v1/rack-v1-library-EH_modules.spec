@@ -14,7 +14,7 @@ Name:    rack-v1-EH_modules
 Version: 1.0.5
 Release: 3%{?dist}
 Summary: EH_modules plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/eh2k/fv1-emu
 
 Vendor:       Audinux

@@ -14,7 +14,7 @@ Name:    rack-v1-SubmarineUtility
 Version: 0.6.2
 Release: 3%{?dist}
 Summary: SubmarineUtility plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/david-c14/SubmarineUtility/
 
 Vendor:       Audinux

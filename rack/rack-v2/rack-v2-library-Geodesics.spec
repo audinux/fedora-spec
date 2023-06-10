@@ -17,7 +17,7 @@ Name:    rack-v2-Geodesics
 Version: 2.3.1
 Release: 2%{?dist}
 Summary: Geodesics plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/MarcBoule/Geodesics/
 
 Vendor:       Audinux

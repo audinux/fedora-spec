@@ -17,7 +17,7 @@ Name:    rack-v2-Kilpatrick-Toolbox
 Version: 2.0.3
 Release: 1%{?dist}
 Summary: Kilpatrick-Toolbox plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/kilpatrickaudio/Kilpatrick-Toolbox
 
 Vendor:       Audinux

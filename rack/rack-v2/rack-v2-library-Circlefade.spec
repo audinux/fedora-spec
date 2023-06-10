@@ -17,7 +17,7 @@ Name:    rack-v2-Circlefade
 Version: 1.0.1
 Release: 1%{?dist}
 Summary: Circlefade plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/max-circlefade/Circlefade
 
 Vendor:       Audinux

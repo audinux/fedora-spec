@@ -6,7 +6,7 @@ Name:    lv2-metaltone
 Version: 0.1
 Release: 1%{?dist}
 Summary: Overdrive / Distortion
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/brummer10/MetalTone
 
 Vendor:       Audinux

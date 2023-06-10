@@ -5,7 +5,7 @@ Version: 0.2.0
 Release: 1%{?dist}
 Summary:  Abstract JACK Patchbay
 
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Houston4444/Patchichi
 
 Vendor:       Audinux

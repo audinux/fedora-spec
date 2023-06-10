@@ -9,7 +9,7 @@ Source0:      https://github.com/smbolton/%{srcname0}/archive/version_%{version}
 Source1:      hexter.desktop
 Source2:      hexter.png
 Patch0:       Fixed-Segfault-on-startup.patch
-License:      GPLv2+
+License:      GPL-2.0-or-later
 
 BuildRequires: gcc
 BuildRequires: alsa-lib-devel

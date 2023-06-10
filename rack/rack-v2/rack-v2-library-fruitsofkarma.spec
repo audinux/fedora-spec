@@ -17,7 +17,7 @@ Name:    rack-v2-fruitsofkarma
 Version: 2.0.9
 Release: 2%{?dist}
 Summary: fruitsofkarma plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/alexey-komarov/fruitsofkarma-vcvrack
 
 Vendor:       Audinux

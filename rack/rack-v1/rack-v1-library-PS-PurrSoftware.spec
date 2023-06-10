@@ -14,7 +14,7 @@ Name:    rack-v1-PS-PurrSoftware
 Version: 1.0.11
 Release: 3%{?dist}
 Summary: PS-PurrSoftware plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/knchaffin/Meander
 
 Vendor:       Audinux

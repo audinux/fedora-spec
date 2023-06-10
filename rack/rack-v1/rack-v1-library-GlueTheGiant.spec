@@ -14,7 +14,7 @@ Name:    rack-v1-GlueTheGiant
 Version: 1.1.3
 Release: 3%{?dist}
 Summary: GlueTheGiant plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/gluethegiant/gtg-rack
 
 Vendor:       Audinux

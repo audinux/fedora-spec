@@ -2,7 +2,7 @@ Name:    lv2file
 Version: 0.95
 Release: 1%{?dist}
 Summary: A simple program which you can use to apply effects to your audio files.
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/jeremysalwen/lv2file
 
 Vendor:       Audinux

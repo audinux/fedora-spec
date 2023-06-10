@@ -8,7 +8,7 @@ Summary:       Inspect realtime system settings
 Name:          realTimeConfigQuickScan
 Version:       0
 Release:       5.%{commitdate}git%{shortcommit0}%{?dist}
-License:       GPLv2+
+License:       GPL-2.0-or-later
 URL:           https://github.com/raboof/%{gitname}
 Source0:       %{URL}/archive/%{commit0}/%{gitname}-%{commit0}.tar.gz
 Source1:       realTimeConfigQuickScan

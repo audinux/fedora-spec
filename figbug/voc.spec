@@ -4,7 +4,7 @@ Name:    voc
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: wacky vocal synth VST
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/FigBug/Voc
 
 Vendor:       Audinux
@@ -42,7 +42,7 @@ wacky vocal synth VST
 
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
-License: GPLv2+
+License: GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n vst3-%{name}
@@ -50,7 +50,7 @@ VST3 version of %{name}
 
 %package -n lv2-%{name}
 Summary: LV2 version of %{name}
-License: GPLv2+
+License: GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n lv2-%{name}

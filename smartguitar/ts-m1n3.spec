@@ -7,7 +7,7 @@ Name:    ts-m1n3
 Version: 1.2
 Release: 1%{?dist}
 Summary: TS-9 guitar pedal clone using neural networks.
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/GuitarML/TS-M1N3
 
 Vendor:       Audinux
@@ -61,7 +61,7 @@ This can be done with the NeuralPi plugin.
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n vst3-%{name}
@@ -69,7 +69,7 @@ VST3 version of %{name}
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n lv2-%{name}

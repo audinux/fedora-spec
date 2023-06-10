@@ -4,7 +4,7 @@ Name:    ChowMultiTool
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: Multi-Tool Audio Plugin
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/Chowdhury-DSP/ChowMultiTool
 
 Vendor:       Audinux

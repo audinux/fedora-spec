@@ -4,7 +4,7 @@ Name:    piano
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Piano VST / LV2 plugin
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/FigBug/Piano
 
 Vendor:       Audinux
@@ -42,7 +42,7 @@ A digital waveguide piano physical model with VST and command line interface.
 
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
-License: GPLv2+
+License: GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n vst3-%{name}
@@ -50,7 +50,7 @@ VST3 version of %{name}
 
 %package -n lv2-%{name}
 Summary: LV2 version of %{name}
-License: GPLv2+
+License: GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n lv2-%{name}

@@ -4,7 +4,7 @@ Name:    ztoolkit
 Version: 0.1.1
 Release: 1%{?dist}
 Summary: GUI toolkit for LV2 plugins
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://git.zrythm.org/cgit/ztoolkit
 
 Vendor:       Audinux

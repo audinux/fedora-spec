@@ -2,7 +2,7 @@ Summary: Impulse responses for various cabinet
 Name:    impulse-response
 Version: 1.0.1
 Release: 2%{?dist}
-License: GPLv2+ and GPLv3
+License: GPL-2.0-or-later AND GPL-3.0-only
 URL:     https://musical-artifacts.com/artifacts/252
 
 Vendor:       Audinux

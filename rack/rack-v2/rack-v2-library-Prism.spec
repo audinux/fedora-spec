@@ -17,7 +17,7 @@ Name:    rack-v2-Prism
 Version: 2.3.4
 Release: 1%{?dist}
 Summary: Prism plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/SteveRussell33/Prism
 
 Vendor:       Audinux

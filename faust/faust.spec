@@ -54,7 +54,7 @@ according to its input signals (and maybe some user interface parameters)
 
 %package doc
 Summary: Documentation for %{name}
-License: GPLv2+
+License: GPL-2.0-or-later
 BuildArch: noarch
 Requires: %{name} = %{version}-%{release}
 
@@ -83,7 +83,7 @@ signal processing. This package provides the development files for osclib.
 
 %package tools
 Summary: 3rd party tools written for %{name}
-License: GPLv2+
+License: GPL-2.0-or-later
 BuildArch: noarch
 Requires: %{name}-osclib-devel = %{version}-%{release}
 Requires: python3
@@ -96,7 +96,7 @@ to help the building process of applications and plugins with Faust.
 
 %package kate
 Summary: Kate/Kwrite plugin for %{name}
-License: GPLv2+
+License: GPL-2.0-or-later
 BuildArch: noarch
 Requires: %{name} = %{version}-%{release}
 
@@ -107,7 +107,7 @@ for KDE's Kate/Kwrite.
 
 %package stdlib
 Summary: standard libraries for %{name}
-License: GPLv2+
+License: GPL-2.0-or-later
 BuildArch: noarch
 Requires: %{name} = %{version}-%{release}
 

@@ -6,7 +6,7 @@ Name:    sonobus
 Version: 1.6.2
 Release: 3%{?dist}
 Summary: A peer to peer audio application
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/essej/sonobus
 
 Vendor:       Audinux
@@ -43,7 +43,7 @@ low-latency peer-to-peer audio between devices over the internet or a local netw
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

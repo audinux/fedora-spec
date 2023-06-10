@@ -14,7 +14,7 @@ Name:    rack-v1-scanner-darkly-collection-one
 Version: 1.0.1
 Release: 3%{?dist}
 Summary: scanner-darkly-collection-one plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/scanner-darkly/vcv-collection-one
 
 Vendor:       Audinux

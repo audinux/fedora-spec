@@ -23,7 +23,7 @@ Name:    lives-mao
 Version: 2022.03.08
 Release: 1%{?dist}
 Summary: Video editor and VJ tool
-License: GPLv3+ and LGPLv3+
+License: GPL-3.0-or-later AND LGPL-3.0-or-later
 URL:     http://lives-video.com
 
 Vendor:       Audinux

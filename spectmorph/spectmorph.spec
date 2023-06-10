@@ -7,7 +7,7 @@ Version: 0.6.0
 Release: 3%{?dist}
 Summary: SpectMorph is a free software project which allows to analyze samples of musical instruments, and to combine them (morphing)
 URL: http://www.spectmorph.org
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -54,7 +54,7 @@ The %{name}-devel package contains header files for %{name}.
 
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst-%{name}
@@ -62,7 +62,7 @@ VST2 version of %{name}
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}
@@ -70,7 +70,7 @@ VST3 version of %{name}
 
 %package -n clap-%{name}
 Summary:  CLAP version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n clap-%{name}

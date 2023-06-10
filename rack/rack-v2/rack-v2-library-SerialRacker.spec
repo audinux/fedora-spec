@@ -17,7 +17,7 @@ Name:    rack-v2-SerialRacker
 Version: 0.6.1
 Release: 1%{?dist}
 Summary: SerialRacker plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/apbianco/SerialRacker
 
 Vendor:       Audinux

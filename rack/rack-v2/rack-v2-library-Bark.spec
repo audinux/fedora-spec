@@ -17,7 +17,7 @@ Name:    rack-v2-Bark
 Version: 2.3.1
 Release: 1%{?dist}
 Summary: Bark plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Coirt/Bark
 
 Vendor:       Audinux

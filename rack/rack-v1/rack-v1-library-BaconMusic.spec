@@ -14,7 +14,7 @@ Name:    rack-v1-BaconMusic
 Version: 1.0.2
 Release: 3%{?dist}
 Summary: BaconMusic plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/baconpaul/BaconPlugs/
 
 Vendor:       Audinux

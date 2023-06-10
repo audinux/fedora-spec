@@ -17,7 +17,7 @@ Name:    rack-v2-VO
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: VO plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/evgazloy/VO
 
 Vendor:       Audinux

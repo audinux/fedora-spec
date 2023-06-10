@@ -14,7 +14,7 @@ Name:    rack-v1-voxglitch
 Version: 1.34.1
 Release: 3%{?dist}
 Summary: voxglitch plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/clone45/voxglitch
 
 Vendor:       Audinux

@@ -14,7 +14,7 @@ Name:    rack-v1-AriaSalvatrice
 Version: 1.8.1
 Release: 3%{?dist}
 Summary: AriaSalvatrice plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/AriaSalvatrice/AriaVCVModules
 
 Vendor:       Audinux

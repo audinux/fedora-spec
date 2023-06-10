@@ -7,7 +7,7 @@ Version: 2.9.1
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
 URL:     https://gitlab.com/iurie-sw/geonkick
-License: GPLv3
+License: GPL-3.0-only
 
 Vendor:       Audinux
 Distribution: Audinux

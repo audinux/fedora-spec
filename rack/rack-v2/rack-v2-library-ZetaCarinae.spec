@@ -17,7 +17,7 @@ Name:    rack-v2-ZetaCarinae
 Version: 2.0.4
 Release: 1%{?dist}
 Summary: ZetaCarinae plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/mhampton/ZetaCarinaeModules
 
 Vendor:       Audinux

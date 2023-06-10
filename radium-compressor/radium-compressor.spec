@@ -7,7 +7,7 @@ Version:        0.5.1
 Release:        20%{?dist}
 Summary:        An audio compressor for JACK
 
-License:        GPLv3+
+License:        GPL-3.0-or-later
 URL:            http://users.notam02.no/~kjetism/radium/
 Source0:        http://archive.notam02.no/arkiv/src/radium_compressor-0.5.1.tar.gz
 Source1:        radium-compressor.desktop

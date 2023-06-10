@@ -17,7 +17,7 @@ Name:    rack-v2-moDllz
 Version: 2.1.2
 Release: 1%{?dist}
 Summary: moDllz plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/dllmusic/moDllz/tree/master/src
 
 Vendor:       Audinux

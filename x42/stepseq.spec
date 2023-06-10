@@ -6,7 +6,7 @@ Name:    stepseq.lv2
 Version: 0.6.13
 Release: 1%{?dist}
 Summary: Simple Step Sequencer
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/stepseq.lv2
 
 Vendor:       Audinux

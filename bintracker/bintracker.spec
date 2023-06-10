@@ -6,7 +6,7 @@ Name:    bintracker
 Version: 0.2.0
 Release: 1%{?dist}
 Summary: A hackable Chiptune Audio Workstation
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/bintracker/bintracker
 
 Vendor:       Audinux

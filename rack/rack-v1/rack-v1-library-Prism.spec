@@ -14,7 +14,7 @@ Name:    rack-v1-Prism
 Version: 1.2.0
 Release: 3%{?dist}
 Summary: Prism plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/AmalgamatedHarmonics/Prism
 
 Vendor:       Audinux

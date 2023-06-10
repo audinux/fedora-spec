@@ -11,7 +11,7 @@ Name:    amuc
 Version: 1.7.%{shortcommit0}
 Release: 3%{?dist}
 Summary: Amuc - the Amsterdam Music Composer
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/pjz/amuc.git
 
 Vendor:       Audinux

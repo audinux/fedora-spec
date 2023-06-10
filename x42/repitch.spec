@@ -6,7 +6,7 @@ Name:    repitch.lv2
 Version: 0.2.3
 Release: 1%{?dist}
 Summary: Counterbalance pitch when vari-speeding
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/repitch.lv2
 
 Vendor:       Audinux

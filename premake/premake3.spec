@@ -2,7 +2,7 @@ Summary: Tool for describing builds
 Name:    premake3
 Version: 3.7
 Release: 2%{?dist}
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     http://sourceforge.net/projects/premake/
 
 Vendor:       Audinux

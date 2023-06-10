@@ -2,7 +2,7 @@ Name:    lv2-fomp-plugins
 Version: 1.2.0
 Release: 14%{?dist}
 Summary: A collection of LV2 plugins
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     http://drobilla.net/
 
 Vendor:       Audinux

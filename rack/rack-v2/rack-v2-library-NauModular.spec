@@ -17,7 +17,7 @@ Name:    rack-v2-NauModular
 Version: 0.6.0
 Release: 1%{?dist}
 Summary: NauModular plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/naus3a/NauModular
 
 Vendor:       Audinux

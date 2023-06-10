@@ -2,7 +2,7 @@ Name:    melodrumatic
 Version: 0.1.3
 Release: 1%{?dist}
 Summary: Audio plugin that lets you use MIDI to pitch-shift via delay to turn unpitched audio into melodies
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/usdivad/Melodrumatic
 
 Vendor:       Audinux
@@ -38,7 +38,7 @@ Controllable via MIDI or mouse.
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

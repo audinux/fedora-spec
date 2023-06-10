@@ -17,7 +17,7 @@ Name:    rack-v2-noobhour
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: noobhour plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/NicolasNeubauer/noobhour_modules
 
 Vendor:       Audinux

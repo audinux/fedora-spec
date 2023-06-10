@@ -14,7 +14,7 @@ Name:    rack-v1-CYC
 Version: 1.0.0
 Release: 3%{?dist}
 Summary: CYC plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/mrletourneau/strong_kar
 
 Vendor:       Audinux

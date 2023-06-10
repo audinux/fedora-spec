@@ -5,7 +5,7 @@ Version: 04282023
 Release: 1%{?dist}
 Summary: An automatic orchestra
 URL:     https://sourceforge.net/projects/backupband
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

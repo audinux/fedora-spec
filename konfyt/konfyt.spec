@@ -7,7 +7,7 @@ Version: 1.3.1
 Release: 3%{?dist}
 Summary: A patch manager
 URL:     https://github.com/noedigcode/konfyt
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

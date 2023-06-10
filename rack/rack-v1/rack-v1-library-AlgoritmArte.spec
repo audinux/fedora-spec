@@ -14,7 +14,7 @@ Name:    rack-v1-AlgoritmArte
 Version: 1.6.2
 Release: 3%{?dist}
 Summary: AlgoritmArte plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/algoritmarte/AlgoritmarteVCVPlugin
 
 Vendor:       Audinux

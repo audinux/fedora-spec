@@ -13,7 +13,7 @@ Name:    rack-v1-Fundamental
 Version: 1.4.0
 Release: 6%{?dist}
 Summary: A plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/VCVRack/Fundamental
 
 Vendor:       Audinux

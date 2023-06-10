@@ -7,7 +7,7 @@ Name:    mod-distortion
 Version: 0.9.%{shortcommit0}
 Release: 2%{?dist}
 Summary: mod-distortion LV2 set of plugins from portalmod
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/portalmod/mod-distortion
 
 Vendor:       Audinux

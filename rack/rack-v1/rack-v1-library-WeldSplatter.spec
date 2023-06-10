@@ -14,7 +14,7 @@ Name:    rack-v1-WeldSplatter
 Version: 1.0.2
 Release: 3%{?dist}
 Summary: WeldSplatter plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/pknodle/WeldSplatter
 
 Vendor:       Audinux

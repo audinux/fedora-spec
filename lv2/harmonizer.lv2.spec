@@ -7,7 +7,7 @@ Name:    lv2-harmonizer
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: LV2 note detection using aubio
-License: GPLv2
+License: GPL-2.0-only
 URL:     https://github.com/dsheeler/harmonizer.lv2
 
 Vendor:       Audinux

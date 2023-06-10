@@ -9,7 +9,7 @@ Version: 0.13.1
 Release: 2%{?dist}
 Summary: A JACK session manager
 
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Houston4444/RaySession
 
 Vendor:       Audinux

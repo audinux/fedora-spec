@@ -7,7 +7,7 @@ Name:    lv2-avw-plugins
 Version: 0.0.8
 Release: 19%{?dist}
 Summary: A port of the AMS internal modules to LV2 plugins
-License: GPLv2
+License: GPL-2.0-only
 URL:     https://github.com/harryhaaren/avw.lv2
 
 Vendor:       Audinux

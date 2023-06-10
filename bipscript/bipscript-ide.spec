@@ -7,7 +7,7 @@ Version: 0.18
 Release: 1%{?dist}
 Summary: An IDEA for bipscript
 URL:     https://gitlab.domainepublic.net/bipscript/ide/
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

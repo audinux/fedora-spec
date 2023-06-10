@@ -8,7 +8,7 @@ Version: 0.1.0
 Release: 4%{?dist}
 Summary: LV2 Event Looper
 URL:     https://github.com/OpenMusicKontrollers/orbit.lv2
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

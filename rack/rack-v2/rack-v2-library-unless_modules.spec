@@ -17,7 +17,7 @@ Name:    rack-v2-unless_modules
 Version: 2.2.5
 Release: 1%{?dist}
 Summary: unless_modules plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     http://gitlab.com/unlessgames/unless_modules
 
 Vendor:       Audinux

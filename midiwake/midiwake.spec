@@ -2,7 +2,7 @@ Name: midiwake
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: A utility to block the screen saver during MIDI activity
-License: GPLv2+
+License: GPL-2.0-or-later
 URL: https://github.com/jpcima/midiwake
 
 Source0: https://github.com/jpcima/midiwake/releases/download/v%{version}/%{name}-%{version}.tar.gz

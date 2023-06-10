@@ -17,7 +17,7 @@ Name:    rack-v2-BlushAudio
 Version: 2.2.0
 Release: 1%{?dist}
 Summary: BlushAudio plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/BlushAudioLab/BlushAudioVCVFreeModules
 
 Vendor:       Audinux

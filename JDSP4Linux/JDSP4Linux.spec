@@ -6,7 +6,7 @@ Name: jamesdsp
 Version: 2.4
 Release: 2%{?dist}
 Summary: An audio effect processor for PipeWire clients
-License: GPLv3
+License: GPL-3.0-only
 URL: https://github.com/theAeon/JDSP4Linux/
 
 Vendor:       Audinux

@@ -10,7 +10,7 @@ Name:    picoloop
 Version: 0.77e.%{shortcommit0}
 Release: 3%{?dist}
 Summary: An audio sequencer
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/yoyz/audio
 
 Vendor:       Audinux

@@ -17,7 +17,7 @@ Name:    rack-v2-TriggerFish-Elements
 Version: 1.0.1
 Release: 1%{?dist}
 Summary: TriggerFish-Elements plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/JTriggerFish/TriggerFish-VCV
 
 Vendor:       Audinux

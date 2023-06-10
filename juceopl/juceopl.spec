@@ -6,7 +6,7 @@ Name:    juceopl
 Version: 1.0.1
 Release: 1%{?dist}
 Summary: A VST instrument which emulates the Yamaha OPL sound chip used in PC sound cards from the 90s
-License: GPLv2
+License: GPL-2.0-only
 URL:     https://github.com/bsutherland/JuceOPLVSTi
 
 Vendor:       Audinux
@@ -48,7 +48,7 @@ It is distributed under the GPLv2 or later.
 
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
-License:  GPLv3
+License:  GPL-3.0-only
 Requires: %{name}
 
 %description -n vst-%{name}

@@ -12,7 +12,7 @@ Version: 1.2.1
 Release: 2%{?dist}
 Summary: Kapitonov Plugins Pack for guitar
 URL:     https://github.com/olegkapitonov/Kapitonov-Plugins-Pack
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -40,7 +40,7 @@ A set of plugins for guitar sound processing
 
 %package -n lv2-kpp-plugins
 Summary: A set of plugins for guitar sound processing - LV2 version
-License:GPLv2+
+License:GPL-2.0-or-later
 
 %description -n lv2-kpp-plugins
 Kapitonov plugins pack.
@@ -48,7 +48,7 @@ A set of plugins for guitar sound processing - LV2 version
 
 %package -n ladspa-kpp-plugins
 Summary: A set of plugins for guitar sound processing - LADSPA version
-License:GPLv2+
+License:GPL-2.0-or-later
 
 %description -n ladspa-kpp-plugins
 Kapitonov plugins pack.

@@ -17,7 +17,7 @@ Name:    rack-v2-mscHack
 Version: 1.0.2
 Release: 1%{?dist}
 Summary: mscHack plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/mschack/VCV-Rack-Plugins
 
 Vendor:       Audinux

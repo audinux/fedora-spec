@@ -2,7 +2,7 @@ Summary: Tool for describing builds
 Name:    premake5
 Version: 5.0.0alpha15
 Release: 1%{?dist}
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github/premake/
 
 Vendor:       Audinux

@@ -2,7 +2,7 @@ Name:    spek
 Version: 0.8.5
 Release: 1%{?dist}
 Summary: Acoustic spectrum analyser
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/alexkay/spek
 
 Vendor:       Audinux

@@ -8,7 +8,7 @@ Name:    DISTRHO-Ports
 Version: 1.1.0
 Release: 4%{?dist}
 Summary: A set of LV2 plugins
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/DISTRHO/DISTRHO-Ports
 
 Vendor:       Audinux

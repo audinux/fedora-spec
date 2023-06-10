@@ -17,7 +17,7 @@ Name:    rack-v2-Edge
 Version: 1.0.2
 Release: 1%{?dist}
 Summary: Edge plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Edge-Modules/Edge
 
 Vendor:       Audinux

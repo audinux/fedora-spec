@@ -4,7 +4,7 @@ Name:    hexosynth
 Version: 0.9.9
 Release: 1%{?dist}
 Summary: A hexagonal modular synthesizer plugin.
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/WeirdConstructor/HexoSynth
 
 Vendor:       Audinux

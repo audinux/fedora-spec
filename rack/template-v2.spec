@@ -17,7 +17,7 @@ Name:    rack-v2-SLUGNAME
 Version: VERSION
 Release: 2%{?dist}
 Summary: SLUGNAME plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     SOURCEURL
 
 Vendor:       Audinux

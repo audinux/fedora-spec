@@ -6,7 +6,7 @@ Name:    littlefly
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: A LV2 Overdrive/Distortion pedal simulation
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/brummer10/LittleFly.lv2
 
 Vendor:       Audinux

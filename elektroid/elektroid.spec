@@ -2,7 +2,7 @@ Name: elektroid
 Summary: Sample and MIDI device manager
 Version: 2.5.2
 Release: 1%{?dist}
-License: GPLv3+
+License: GPL-3.0-or-later
 URL: https://github.com/dagargo/elektroid
 
 Vendor:       Audinux

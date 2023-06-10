@@ -3,7 +3,7 @@ Version: 0.1.1
 Release: 1%{?dist}
 Summary: A simple tracker for LV2 events
 URL:     https://git.open-music-kontrollers.ch/lv2/tracker.lv2
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

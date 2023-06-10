@@ -13,7 +13,7 @@ Name:    rack-v2-skjack
 Version: 0.6.8
 Release: 2%{?dist}
 Summary: A plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/nielszweistein/skjack-vcv2
 
 Vendor:       Audinux

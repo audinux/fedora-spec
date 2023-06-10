@@ -6,7 +6,7 @@ Name:    gmsynth.lv2
 Version: 0.5.3
 Release: 1%{?dist}
 Summary: General MIDI LV2 Synth
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/gmsynth.lv2
 
 Vendor:       Audinux

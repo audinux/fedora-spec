@@ -6,7 +6,7 @@ Name:    mixtri.lv2
 Version: 0.4.10
 Release: 1%{?dist}
 Summary: Matrix Mixer & Trigger (Pre-Processor for Oscilloscope)
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/mixtri.lv2
 
 Vendor:       Audinux

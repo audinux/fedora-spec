@@ -6,7 +6,7 @@ Name:    spectra.lv2
 Version: 0.6.5
 Release: 1%{?dist}
 Summary: Spectrum Analyzer
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/spectra.lv2
 
 Vendor:       Audinux

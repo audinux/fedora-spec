@@ -14,7 +14,7 @@ Name:    rack-v1-squinkylabs-plug1
 Version: 1.0.23
 Release: 3%{?dist}
 Summary: squinkylabs-plug1 plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/squinkylabs/SquinkyVCV
 
 Vendor:       Audinux

@@ -2,7 +2,7 @@ Summary: Impulse response from SNB studio
 Name:    SNB-IR
 Version: 1.0.0
 Release: 2%{?dist}
-License: GPLv2+ and GPLv3
+License: GPL-2.0-or-later AND GPL-3.0-only
 URL:     http://www.grgr.de/IR/
 
 Vendor:       Audinux

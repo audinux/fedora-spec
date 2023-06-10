@@ -14,7 +14,7 @@ Name:    rack-v1-AS
 Version: 1.0.5
 Release: 3%{?dist}
 Summary: AS plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/AScustomWorks/AS
 
 Vendor:       Audinux

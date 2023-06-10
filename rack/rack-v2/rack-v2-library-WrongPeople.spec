@@ -17,7 +17,7 @@ Name:    rack-v2-WrongPeople
 Version: 1.0.1
 Release: 1%{?dist}
 Summary: WrongPeople plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/WrongPeople/WrongPeopleVCV
 
 Vendor:       Audinux

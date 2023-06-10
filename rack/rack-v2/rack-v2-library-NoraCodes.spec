@@ -17,7 +17,7 @@ Name:    rack-v2-NoraCodes
 Version: 1.2.2
 Release: 1%{?dist}
 Summary: NoraCodes plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/NoraCodes/fives
 
 Vendor:       Audinux

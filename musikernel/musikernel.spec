@@ -5,7 +5,7 @@ Name:    musikernel2
 Version: 16.05.1
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
-License: GPLv3
+License: GPL-3.0-only
 URL:     https://github.com/j3ffhubb/musikernel/
 
 Vendor:       Audinux

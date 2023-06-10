@@ -11,7 +11,7 @@ Version: %{v_major}.%{v_minor}.%{v_patch}
 Release: 8%{?dist}
 Summary: Internet jam session software
 URL:     https://github.com/corrados/jamulus/
-License: GPLv2
+License: GPL-2.0-only
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -9,7 +9,7 @@ Name:    lvtk
 Version: 2.0.0.%{shortcommit0}
 Release: 4%{?dist}
 Summary: LV2 Toolkit
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

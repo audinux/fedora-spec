@@ -14,7 +14,7 @@ Name:    rack-v1-Skylights
 Version: 1.0.2
 Release: 3%{?dist}
 Summary: Skylights plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Skrylar/skylights-vcv
 
 Vendor:       Audinux

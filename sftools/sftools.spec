@@ -7,7 +7,7 @@ Name:    sftools
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: Tools for sound font files
-License: GPLv2
+License: GPL-2.0-only
 URL:     https://github.com/musescore/sftools
 
 Vendor:       Audinux

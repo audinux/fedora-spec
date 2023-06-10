@@ -8,7 +8,7 @@ Name:    libbacktrace-devel
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: A C library that may be linked into a C/C++ program to produce symbolic backtraces
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/ianlancetaylor/libbacktrace
 
 Vendor:       Audinux

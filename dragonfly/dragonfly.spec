@@ -8,7 +8,7 @@ Name:    dragonfly-reverb
 Version: 3.2.10
 Release: 3%{?dist}
 Summary: DragonFly reverberation plugin
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/michaelwillis/dragonfly-reverb/
 
 Vendor:       Audinux
@@ -34,7 +34,7 @@ A free hall-style reverb based on freeverb3 algorithms
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
@@ -42,7 +42,7 @@ VST3 version of %{name}
 
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst-%{name}
@@ -50,7 +50,7 @@ VST2 version of %{name}
 
 %package -n clap-%{name}
 Summary:  CLAP version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n clap-%{name}
@@ -58,7 +58,7 @@ CLAP version of %{name}
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}

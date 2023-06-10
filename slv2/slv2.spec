@@ -4,7 +4,7 @@ Name: slv2
 Summary: LV2 host library
 Version: 0.6.6
 Release: 35%{?dist}
-License: GPLv2+
+License: GPL-2.0-or-later
 URL: http://drobilla.net/software/slv2/
 
 Source0: http://download.drobilla.net/%{name}-%{version}.tar.bz2

@@ -11,7 +11,7 @@ Name:    protrekkr
 Version: 1.0.0
 Release: 4%{?dist}
 Summary: A jack tracker
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/falkTX/protrekkr
 
 Vendor:       Audinux

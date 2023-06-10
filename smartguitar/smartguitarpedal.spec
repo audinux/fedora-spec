@@ -7,7 +7,7 @@ Name:    smartguitarpedal
 Version: 1.5
 Release: 1%{?dist}
 Summary: Guitar plugin made with JUCE that uses neural network models to emulate real world hardware.
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/GuitarML/SmartGuitarPedal
 
 Vendor:       Audinux
@@ -49,7 +49,7 @@ network models to emulate real world hardware.
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n vst3-%{name}
@@ -57,7 +57,7 @@ VST3 version of %{name}
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n lv2-%{name}

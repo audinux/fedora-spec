@@ -17,7 +17,7 @@ Name:    rack-v2-SequelSequencers
 Version: 2.2.0
 Release: 1%{?dist}
 Summary: SequelSequencers plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/danieldavies99/sequel
 
 Vendor:       Audinux

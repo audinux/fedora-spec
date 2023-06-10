@@ -7,7 +7,7 @@ Name:    noise-suppression-for-voice
 Version: 1.03
 Release: 3%{?dist}
 Summary: Real-time Noise Suppression LADSPA / LV2 Plugin
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/werman/noise-suppression-for-voice
 
 Vendor:       Audinux

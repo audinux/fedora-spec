@@ -8,7 +8,7 @@ Name: uprising
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: A transition Designer Synth
-License: GPLv2	
+License: GPL-2.0-only
 URL: https://github.com/clearly-broken-software/Uprising
 
 # Usage: ./uprising-source.sh <TAG>
@@ -31,7 +31,7 @@ A transition Designer Synth
 
 %package -n vst-%{name}
 Summary:  VST version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst-%{name}
@@ -39,7 +39,7 @@ VST version of %{name}
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}
