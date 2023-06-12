@@ -96,6 +96,9 @@
 | nbo-plugins             | https://sourceforge.net/projects/nbo-plugins/files/ |
 | bass-studio             | https://github.com/nidefawl/bass-studio |
 | NeuralNote              | https://github.com/DamRsn/NeuralNote |
+| dexed.lv2               | https://github.com/zynthian/zynthian-data (for some presets) |
+|                         | https://github.com/dcoredump/dexed.lv2 (lv2 plugin) |
+|                         | https://github.com/rogerallen/dxsyx (for dxsyx) |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
