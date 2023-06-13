@@ -860,7 +860,12 @@ https://git.open-music-kontrollers.ch/~hp/moony.lv2
 https://git.open-music-kontrollers.ch/~hp/orbit.lv2
 https://git.open-music-kontrollers.ch/~hp/patchmatrix
 https://git.open-music-kontrollers.ch/~hp/sherlock.lv2
-https://git.open-music-kontrollers.ch/~hp/synthpod"
+https://git.open-music-kontrollers.ch/~hp/synthpod
+https://github.com/rogerallen/dxsyx
+https://github.com/dcoredump/dexed.lv2
+https://github.com/fps/fps-plugins.lv2
+git://git.code.sf.net/p/rosegarden/git
+https://github.com/psemiletov/drumrox"
 
 if [ -f git_tags_new.txt ];
 then
