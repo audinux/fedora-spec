@@ -12,7 +12,7 @@ Version: 0.17rc5.%{shortcommit0}
 Release: 4%{?dist}
 Summary: A 3D game engine for livecoding worlds into existence
 URL:     https://pawfal.org/fluxus/
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -7,7 +7,7 @@ Name:    lomse
 Version: 0.20.0.%{shortcommit0}
 Release: 1%{?dist}
 Summary: A free open source library for rendering music scores
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/lenmus/lomse
 
 Vendor:       Audinux

@@ -17,7 +17,7 @@ Name:    rack-v2-CatroBlanco
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: CatroBlanco plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/catronomix/catro-blanco
 
 Vendor:       Audinux

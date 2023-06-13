@@ -6,7 +6,7 @@ Name:    BYOD
 Version: 1.1.3
 Release: 1%{?dist}
 Summary: Build-your-own guitar distortion !
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/Chowdhury-DSP/BYOD
 
 Vendor:       Audinux
@@ -40,7 +40,7 @@ processing blocks.
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
@@ -48,7 +48,7 @@ VST3 version of %{name}
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}

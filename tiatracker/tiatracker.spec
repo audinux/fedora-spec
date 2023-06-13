@@ -7,7 +7,7 @@ Version: 0.1
 Release: 1%{?dist}
 Summary: A music tracker for making Atari VCS 2600 music on the PC
 URL:     https://bitbucket.org/kylearan/tiatracker/src/master/
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

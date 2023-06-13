@@ -2,7 +2,7 @@ Summary:ALSA Scarlett Gen 2/3 Control Panel
 Name: alsa-scarlett-gui
 Version: 0.2
 Release: 1%{?dist}
-License: GPLv2+
+License: GPL-2.0-or-later
 URL: https://github.com/geoffreybennett/alsa-scarlett-gui
 
 Vendor:       Audinux

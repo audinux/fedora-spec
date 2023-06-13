@@ -17,7 +17,7 @@ Name:    rack-v2-CatroModulo
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: CatroModulo plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/catronomix/catro-modulo
 
 Vendor:       Audinux

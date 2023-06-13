@@ -6,7 +6,7 @@ Name:    xmixer
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: A simple 4 in 1 Mixer 
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/brummer10/XMixer.lv2
 
 Vendor:       Audinux

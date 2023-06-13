@@ -2,7 +2,7 @@ Name:    nanoinvaders
 Version: 0.1
 Release: 2%{?dist}
 Summary: Play space invaders in an audio plugin
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/clearly-broken-software/nanoinvaders
 
 Vendor:       Audinux

@@ -17,7 +17,7 @@ Name:    rack-v2-Digital-Apothecary
 Version: 2.0.5
 Release: 2%{?dist}
 Summary: Digital-Apothecary plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/evanedwardsgit/Digital-Apothecary
 
 Vendor:       Audinux

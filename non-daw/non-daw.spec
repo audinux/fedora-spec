@@ -6,7 +6,7 @@ Name:    non-daw
 Version: 1.3.0
 Release: 11%{?dist}
 Summary: A digital audio workstation for JACK
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     http://non.tuxfamily.org/
 
 Vendor:       Audinux

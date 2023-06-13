@@ -6,7 +6,7 @@ Name:    meters.lv2
 Version: 0.9.25
 Release: 1%{?dist}
 Summary: collection of LV2 plugins for audio-level metering
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/meters.lv2
 
 Vendor:       Audinux

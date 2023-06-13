@@ -34,7 +34,7 @@ It uses Jack as realtime audio infrastructure and can be controlled via Midi.
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 
 %description -n lv2-%{name}
 LV2 version of %{name}

@@ -2,7 +2,7 @@ Name:    lv2-fps-plugins
 Version: 1.0beta3
 Release: 1%{?dist}
 Summary: A collection of plugins
-License: GPLV3+
+License: GPL-3.0-or-later
 URL:     https://github.com/fps/fps-plugins.lv2
 
 Vendor:       Audinux

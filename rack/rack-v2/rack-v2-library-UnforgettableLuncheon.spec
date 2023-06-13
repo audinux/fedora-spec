@@ -17,7 +17,7 @@ Name:    rack-v2-UnforgettableLuncheon
 Version: 0.6.3
 Release: 1%{?dist}
 Summary: UnforgettableLuncheon plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/johnnymurf/Unforgettable-Luncheon
 
 Vendor:       Audinux

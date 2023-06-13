@@ -2,7 +2,7 @@ Name:    lv2-kn0ck0ut
 Version: 1.12
 Release: 1%{?dist}
 Summary: An LV2 spectral subtraction plugin
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/jeremysalwen/kn0ck0ut-LV2
 
 Vendor:       Audinux

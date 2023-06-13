@@ -6,7 +6,7 @@ Name:    dpf-plugins
 Version: 1.7
 Release: 3%{?dist}
 Summary: Collection of DPF-based plugins for packaging
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/DISTRHO/DPF-Plugins
 
 Vendor:       Audinux
@@ -29,7 +29,7 @@ Collection of DPF-based plugins ready for packaging.
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
@@ -37,7 +37,7 @@ VST3 version of %{name}
 
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst-%{name}
@@ -45,7 +45,7 @@ VST2 version of %{name}
 
 %package -n clap-%{name}
 Summary:  CLAP version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n clap-%{name}
@@ -53,7 +53,7 @@ CLAP version of %{name}
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}
@@ -61,7 +61,7 @@ LV2 version of %{name}
 
 %package -n ladspa-%{name}
 Summary:  LADSPA version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n ladspa-%{name}
@@ -69,7 +69,7 @@ LADSPA version of %{name}
 
 %package -n dssi-%{name}
 Summary:  DSSI version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n dssi-%{name}

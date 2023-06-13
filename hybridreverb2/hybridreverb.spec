@@ -47,7 +47,7 @@ for the rear channels.
 
 %package -n %{name}-common
 Summary:   Impulse response files for %{name}
-License:   GPLv2+
+License:   GPL-2.0-or-later
 Requires:  %{name}-common
 BuildArch: noarch
 
@@ -56,7 +56,7 @@ Impulse response files for %{name}
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}-common
 
 %description -n lv2-%{name}

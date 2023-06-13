@@ -2,7 +2,7 @@ Name:    swami
 Version: 2.2.2
 Release: 24%{?dist}
 Summary: MIDI instrument and sound editor
-License: GPLv2
+License: GPL-2.0-only
 URL:     http://www.swamiproject.org/
 
 Source0: https://github.com/swami/swami/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz

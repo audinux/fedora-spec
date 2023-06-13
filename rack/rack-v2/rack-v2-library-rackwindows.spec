@@ -17,7 +17,7 @@ Name:    rack-v2-rackwindows
 Version: 1.1.2
 Release: 1%{?dist}
 Summary: rackwindows plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/n0jo/rackwindows
 
 Vendor:       Audinux

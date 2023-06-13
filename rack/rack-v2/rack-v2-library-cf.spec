@@ -17,7 +17,7 @@ Name:    rack-v2-cf
 Version: 2.0.2
 Release: 1%{?dist}
 Summary: cf plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/cfoulc/cf
 
 Vendor:       Audinux

@@ -8,7 +8,7 @@ Version: 0.10.0
 Release: 3%{?dist}
 Summary: OSC injection/ejection from/to UDP/TCP/Serial for LV2
 URL:     https://github.com/OpenMusicKontrollers/eteroj.lv2
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

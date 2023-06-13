@@ -8,7 +8,7 @@ Version: 0.1.2
 Release: 4%{?dist}
 Summary: Lightweight Nonlinear LV2 Plugin Container
 URL:     https://github.com/OpenMusicKontrollers/synthpod
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -14,7 +14,7 @@ Name:    rack-v1-Befaco
 Version: 1.1.0
 Release: 4%{?dist}
 Summary: A plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/VCVRack/Befaco
 
 Vendor:       Audinux

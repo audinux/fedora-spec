@@ -14,7 +14,7 @@ Name:    rack-v1-alto777_LFSR
 Version: 1.0.0
 Release: 3%{?dist}
 Summary: alto777_LFSR plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/alto777/LFSR
 
 Vendor:       Audinux

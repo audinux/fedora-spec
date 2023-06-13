@@ -9,7 +9,7 @@ Version: 1.2.1
 Release: 12%{?dist}
 Summary: Advanced drum machine for GNU/Linux
 URL:     http://www.hydrogen-music.org/
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

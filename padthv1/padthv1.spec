@@ -14,7 +14,7 @@ Name:    padthv1
 Version: %{padthv1_version}
 Release: 4%{?dist}
 URL:     https://sourceforge.net/projects/%{name}
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -17,7 +17,7 @@ Name:    rack-v2-MSM
 Version: 2.0.3
 Release: 1%{?dist}
 Summary: MSM plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/netboy3/MSM-vcvrack-plugin
 
 Vendor:       Audinux

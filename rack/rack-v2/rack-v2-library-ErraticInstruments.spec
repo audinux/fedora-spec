@@ -17,7 +17,7 @@ Name:    rack-v2-ErraticInstruments
 Version: 0.6.2
 Release: 1%{?dist}
 Summary: ErraticInstruments plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/bafonso/Erratic
 
 Vendor:       Audinux

@@ -2,7 +2,7 @@ Summary:    DSSI implementation of Fluidsynth
 Name:       fluidsynth-dssi
 Version:    1.0.0
 Release:    24%{?dist}
-License:    GPLv2+
+License:    GPL-2.0-or-later
 URL:        http://dssi.sourceforge.net/download.html#FluidSynth-DSSI
 Source0:    http://download.sf.net/dssi/fluidsynth-dssi-%{version}.tar.gz
 # Add Fedora's default soundfont path to the scanlist:

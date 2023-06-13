@@ -2,7 +2,7 @@ Name:    ZLFO
 Version: 0.1.3
 Release: 1%{?dist}
 Summary: Fully featured LFO for CV-based automation
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://git.zrythm.org/cgit/ZLFO/
 
 Vendor:       Audinux

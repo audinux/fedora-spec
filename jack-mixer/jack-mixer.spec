@@ -3,7 +3,7 @@ Version: 17
 Release: 1%{?dist}
 Summary: jack_mixer is GTK (2.x) JACK audio mixer with look similar to it`s hardware counterparts
 URL:     https://github.com/jack-mixer/jack_mixer
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

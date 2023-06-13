@@ -7,7 +7,7 @@ Version: 1.0.7
 Release: 1%{?dist}
 Summary: An audio plugin with Pure Data embedded that allows to load and to control patches
 URL:     https://github.com/pierreguillot/Camomile
-License: GPLv3+
+License: GPL-3.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -42,7 +42,7 @@ Linux and macOS.
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

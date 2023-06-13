@@ -17,7 +17,7 @@ Name:    rack-v2-ML_modules
 Version: 2.0.2
 Release: 1%{?dist}
 Summary: ML_modules plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/martin-lueders/ML_modules
 
 Vendor:       Audinux

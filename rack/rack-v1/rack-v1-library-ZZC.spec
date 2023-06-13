@@ -14,7 +14,7 @@ Name:    rack-v1-ZZC
 Version: 1.1.3
 Release: 3%{?dist}
 Summary: ZZC plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/zezic/ZZC
 
 Vendor:       Audinux

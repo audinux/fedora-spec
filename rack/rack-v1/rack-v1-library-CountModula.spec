@@ -14,7 +14,7 @@ Name:    rack-v1-CountModula
 Version: 1.16.0
 Release: 3%{?dist}
 Summary: CountModula plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/countmodula/VCVRackPlugins
 
 Vendor:       Audinux

@@ -11,7 +11,7 @@ Name:    drmr
 Version: 1.0.0.%{shortcommit0}
 Release: 2%{?dist}
 Summary: A drum LV2 plugin
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/falkTX/drmr
 
 Vendor:       Audinux

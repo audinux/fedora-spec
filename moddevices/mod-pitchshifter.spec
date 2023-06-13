@@ -7,7 +7,7 @@ Name:    mod-pitchshifter
 Version: 0.9.%{shortcommit0}
 Release: 3%{?dist}
 Summary: mod-pitchshifter LV2 set of plugins from portalmod
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/portalmod/mod-pitchshifter
 
 Vendor:       Audinux

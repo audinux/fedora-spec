@@ -17,7 +17,7 @@ Name:    rack-v2-ESeries
 Version: 2.0.2
 Release: 1%{?dist}
 Summary: ESeries plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/VCVRack/ESeries
 
 Vendor:       Audinux

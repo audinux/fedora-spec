@@ -14,7 +14,7 @@ Name:    rack-v1-LilacLoop
 Version: 1.0.3
 Release: 3%{?dist}
 Summary: LilacLoop plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/grough/lilac-loop-vcv
 
 Vendor:       Audinux

@@ -6,7 +6,7 @@ Name:    protrekkr2
 Version: 2.6.3
 Release: 1%{?dist}
 Summary: A jack tracker
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/hitchhikr/protrekkr
 
 Vendor:       Audinux

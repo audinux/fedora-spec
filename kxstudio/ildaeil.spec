@@ -2,7 +2,7 @@ Name:    Ildaeil
 Version: 1.2
 Release: 1%{?dist}
 Summary: mini-plugin host as plugin
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/DISTRHO/Ildaeil
 
 Vendor:       Audinux
@@ -43,7 +43,7 @@ This allows, for example, a VST3 host to load LV2 plugins.
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
@@ -51,7 +51,7 @@ VST3 version of %{name}
 
 %package -n clap-%{name}
 Summary:  CLAP version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n clap-%{name}
@@ -59,7 +59,7 @@ CLAP version of %{name}
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}
@@ -67,7 +67,7 @@ LV2 version of %{name}
 
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst-%{name}

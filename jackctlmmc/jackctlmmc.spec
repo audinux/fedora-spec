@@ -2,7 +2,7 @@ Summary: Allows control over JACK transport via Midi
 Name:    jackctlmmc
 Version: 4
 Release: 22%{?dist}
-License: GPLv2
+License: GPL-2.0-only
 URL:     https://sourceforge.net/projects/%{name} 
 
 Source0: https://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
@@ -21,7 +21,7 @@ recorders and midi control pads to let other devices or programs know where you
 are in a track.
 
 %package -n qjackmmc
-License: GPLv2+
+License: GPL-2.0-or-later
 Summary: Qt application that controls JACK transport via Midi
 
 %description -n qjackmmc 

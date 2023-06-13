@@ -6,7 +6,7 @@ Name:    receivemidi
 Version: 1.3.1
 Release: 3%{?dist}
 Summary: A command line tool to receive MIDI event
-License: GPLv3
+License: GPL-3.0-only
 URL:     https://github.com/gbevin/ReceiveMIDI
 
 Vendor:       Audinux

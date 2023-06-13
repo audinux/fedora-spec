@@ -7,7 +7,7 @@ Name:    oxefmsynth
 Version: 1.3.5.%{shortcommit0}
 Release: 2%{?dist}
 Summary: A FM synthetized
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/oxesoft/oxefmsynth
 
 Vendor:       Audinux

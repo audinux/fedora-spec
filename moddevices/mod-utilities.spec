@@ -7,7 +7,7 @@ Name:    mod-utilities
 Version: 0.1.%{shortcommit0}
 Release: 1%{?dist}
 Summary: Some utilities lv2 plugins
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/moddevices/mod-utilities
 
 Vendor:       Audinux

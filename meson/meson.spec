@@ -9,7 +9,7 @@ Name:           meson
 Version:        0.57.1
 Release:        1%{?dist}
 Summary:        High productivity build system
-License:        ASL 2.0
+License:        Apache-2.0
 URL:            https://mesonbuild.com/
 
 Vendor:       Audinux

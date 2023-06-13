@@ -14,7 +14,7 @@ Name:    rack-v1-Southpole
 Version: 0.6.0
 Release: 3%{?dist}
 Summary: Southpole plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/gbrandt1/southpole-vcvrack
 
 Vendor:       Audinux

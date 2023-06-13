@@ -17,7 +17,7 @@ Name:    rack-v2-Nozoid
 Version: 2.1.3
 Release: 1%{?dist}
 Summary: Nozoid plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/ch-nry/VCV_nozori
 
 Vendor:       Audinux

@@ -6,7 +6,7 @@ Name:    plumbing.lv2
 Version: 0.1.3
 Release: 1%{?dist}
 Summary: LV2 Plumbing Plugins
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/plumbing.lv2
 
 Vendor:       Audinux

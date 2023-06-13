@@ -14,7 +14,7 @@ Name:    rack-v1-SkJack
 Version: 1.0.0
 Release: 3%{?dist}
 Summary: SkJack plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Skrylar/skjack-vcv
 
 Vendor:       Audinux

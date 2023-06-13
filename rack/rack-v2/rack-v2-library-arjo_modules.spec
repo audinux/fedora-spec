@@ -17,7 +17,7 @@ Name:    rack-v2-arjo_modules
 Version: 0.6.0
 Release: 1%{?dist}
 Summary: arjo_modules plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/ArjoNagelhout/arjo_modules
 
 Vendor:       Audinux

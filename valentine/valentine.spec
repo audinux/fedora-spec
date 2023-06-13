@@ -2,7 +2,7 @@ Name:    valentine
 Version: 0.0.5
 Release: 1%{?dist}
 Summary: An open source compressor meant to pump and breathe 
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/tote-bag-labs/valentine
 
 Vendor:       Audinux
@@ -48,7 +48,7 @@ you can introduce pumping and breathing artifacts.
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n vst3-%{name}

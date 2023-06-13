@@ -8,7 +8,7 @@ Name:    vitalium
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: A LV2 / VST3 / standalone wavetable synth
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://vital.audio
 
 Vendor:       Audinux

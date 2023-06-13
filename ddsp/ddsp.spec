@@ -39,7 +39,7 @@ VST3/AU plugins and desktop applications built using the JUCE framework and DDSP
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

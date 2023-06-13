@@ -2,7 +2,7 @@ Name:    lv2-aidadsp
 Version: 0.95
 Release: 1%{?dist}
 Summary: Aida DSP's audio plugins in lv2 format
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/moddevices/aidadsp-lv2
 
 # Usage: ./aidadsp-lv2-source.sh <TAG>

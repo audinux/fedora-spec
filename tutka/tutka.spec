@@ -2,7 +2,7 @@ Name: tutka
 Version: 1.1.3
 Release: 1%{?dist}
 Summary: Tutka is a free tracker style MIDI sequencer
-License: GPLv2	
+License: GPL-2.0-only
 URL: https://www.nongnu.org/tutka/	
 
 Vendor:       Audinux

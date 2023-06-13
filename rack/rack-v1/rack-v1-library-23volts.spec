@@ -14,7 +14,7 @@ Name:    rack-v1-23volts
 Version: 1.1.5
 Release: 3%{?dist}
 Summary: 23volts plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/23volts/23volts-vcv
 
 Vendor:       Audinux

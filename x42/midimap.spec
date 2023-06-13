@@ -6,7 +6,7 @@ Name:    midimap.lv2
 Version: 0.4.4
 Release: 1%{?dist}
 Summary: Rule based MIDI mapper plugin
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/midimap.lv2
 
 Vendor:       Audinux

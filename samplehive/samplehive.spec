@@ -2,7 +2,7 @@ Name:    samplehive
 Version: 0.8.4
 Release: 1%{?dist}
 Summary: A simple, modern audio sample browser/manager
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://gitlab.com/samplehive/sample-hive
 
 Vendor:       Audinux

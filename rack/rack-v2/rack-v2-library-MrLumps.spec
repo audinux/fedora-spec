@@ -17,7 +17,7 @@ Name:    rack-v2-MrLumps
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: MrLumps plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/djpeterso23662/MrLumps
 
 Vendor:       Audinux

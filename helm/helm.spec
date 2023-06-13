@@ -10,7 +10,7 @@ Name:    helm
 Version: 1.0.0.%{shortcommit0}
 Release: 5%{?dist}
 Summary: A LV2 / Standalone polyphonic synth with lots of modulation
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/mtytel/helm
 
 Vendor:       Audinux

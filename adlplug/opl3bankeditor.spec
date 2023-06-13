@@ -7,7 +7,7 @@ Version: 1.5.1
 Release: 2%{?dist}
 Summary: A small cross-platform editor of the OPL3 FM banks of different formats
 URL:     https://github.com/Wohlstand/OPL3BankEditor
-License: GPLv3
+License: GPL-3.0-only
 
 Vendor:       Audinux
 Distribution: Audinux

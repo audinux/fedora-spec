@@ -17,7 +17,7 @@ Name:    rack-v2-Koralfx-Modules
 Version: 1.0.2
 Release: 1%{?dist}
 Summary: Koralfx-Modules plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/koralfx/Koralfx-Modules
 
 Vendor:       Audinux

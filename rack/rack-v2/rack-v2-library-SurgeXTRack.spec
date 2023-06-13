@@ -17,7 +17,7 @@ Name:    rack-v2-SurgeXTRack
 Version: 2.1.6.0
 Release: 2%{?dist}
 Summary: SurgeXTRack plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/surge-synthesizer/surge-rack/
 
 Vendor:       Audinux

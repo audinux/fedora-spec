@@ -17,7 +17,7 @@ Name:    rack-v2-forsitan
 Version: 2.0.2
 Release: 1%{?dist}
 Summary: forsitan plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/gosub/forsitan-modulare
 
 Vendor:       Audinux

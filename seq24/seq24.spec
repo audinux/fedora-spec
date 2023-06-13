@@ -2,7 +2,7 @@ Summary:      Real-time midi sequencer
 Name:         seq24
 Version:      0.9.3
 Release:      8%{?dist}
-License:      GPLv2+
+License:      GPL-2.0-or-later
 URL:          http://launchpad.net/%{name}
 
 Vendor:       Audinux

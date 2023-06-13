@@ -7,7 +7,7 @@ Name:    midi_matrix.lv2
 Version: 0.30.0
 Release: 4%{?dist}
 Summary: A LV2 Plugin Bundle
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/OpenMusicKontrollers/midi_matrix.lv2
 
 Vendor:       Audinux

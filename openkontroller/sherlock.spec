@@ -8,7 +8,7 @@ Version: 0.28.0
 Release: 3%{?dist}
 Summary: An investigative LV2 plugin bundle
 URL:     https://github.com/OpenMusicKontrollers/sherlock.lv2
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

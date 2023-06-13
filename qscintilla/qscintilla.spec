@@ -15,7 +15,7 @@ Summary: A Scintilla port to Qt
 Name:    qscintilla
 Version: 2.11.5
 Release: 10%{?dist}
-License: GPLv3
+License: GPL-3.0-only
 Url:     http://www.riverbankcomputing.com/software/qscintilla/
 
 Vendor:       Audinux

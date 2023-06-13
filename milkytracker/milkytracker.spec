@@ -6,7 +6,7 @@ Name:          milkytracker
 Version:       1.03.00
 Release:       2%{?dist}
 Summary:       Module tracker software for creating music
-License:       GPLv3+
+License:       GPL-3.0-or-later
 URL:           https://github.com/milkytracker/MilkyTracker
 
 Vendor:       Audinux

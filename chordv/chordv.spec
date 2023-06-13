@@ -7,7 +7,7 @@ Version: 1.2
 Release: 1%{?dist}
 Summary: ChordV provide an editor to define song and chord.
 URL:     https://sourceforge.net/projects/chordv
-License: GPLv3
+License: GPL-3.0-only
 
 Vendor:       Audinux
 Distribution: Audinux

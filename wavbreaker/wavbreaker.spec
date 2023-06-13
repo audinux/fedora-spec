@@ -2,7 +2,7 @@ Summary: GUI tool to split WAV, MP2 and MP3 files
 Name:    wavbreaker
 Version: 0.16
 Release: 1%{?dist}
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/thp/wavbreaker
 
 Vendor:       Audinux

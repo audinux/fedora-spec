@@ -6,7 +6,7 @@ Name:    lv2-airwindows
 Version: 18.0
 Release: 1%{?dist}
 Summary: Airwindows plugins (ported to LV2)
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/hannesbraun/airwindows-lv2
 
 Vendor:       Audinux

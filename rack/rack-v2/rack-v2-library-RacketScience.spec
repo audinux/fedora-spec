@@ -17,7 +17,7 @@ Name:    rack-v2-RacketScience
 Version: 1.1.0
 Release: 1%{?dist}
 Summary: RacketScience plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/ContemporaryInsanity/RacketScience
 
 Vendor:       Audinux

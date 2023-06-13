@@ -2,7 +2,7 @@ Name:    shortcircuit
 Version: 0.0.1
 Release: 5%{?dist}
 Summary: A VST3 / LV2 Synthesizer
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/surge-synthesizer/shortcircuit3
 
 Vendor:       Audinux
@@ -43,7 +43,7 @@ A VST3  Synthesizer
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

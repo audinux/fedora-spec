@@ -17,7 +17,7 @@ Name:    rack-v2-StochasticTelegraph
 Version: 2.0.11
 Release: 2%{?dist}
 Summary: StochasticTelegraph plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/mahlenmorris/VCVRack
 
 Vendor:       Audinux

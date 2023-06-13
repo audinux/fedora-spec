@@ -17,7 +17,7 @@ Name:    rack-v2-Qwelk
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: Qwelk plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/raincheque/qwelk
 
 Vendor:       Audinux

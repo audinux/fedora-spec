@@ -7,7 +7,7 @@ Name:    mod-system-plugins
 Version: 0.1.%{shortcommit0}
 Release: 1%{?dist}
 Summary: LV2 plugin versions of the I/O processing found in the MOD Dwarf
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/moddevices/mod-system-plugins
 
 Vendor:       Audinux

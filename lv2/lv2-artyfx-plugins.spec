@@ -2,7 +2,7 @@ Name:    lv2-artyfx-plugins
 Version: 1.3.1
 Release: 0.12%{?dist}
 Summary: A collection of LV2 RT plugins
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     http://openavproductions.com/ArtyFX/
 
 Source0: https://github.com/openAVproductions/openAV-ArtyFX/archive/refs/tags/release-%{version}.tar.gz#/%{name}-%{version}.tar.gz

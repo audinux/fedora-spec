@@ -17,7 +17,7 @@ Name:    rack-v2-RJModules
 Version: 1.7.2
 Release: 1%{?dist}
 Summary: RJModules plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     http://github.com/Miserlou/RJModules
 
 Vendor:       Audinux

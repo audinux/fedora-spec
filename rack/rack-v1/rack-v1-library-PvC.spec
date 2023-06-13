@@ -14,7 +14,7 @@ Name:    rack-v1-PvC
 Version: 0.6.0
 Release: 3%{?dist}
 Summary: PvC plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/phdsg/PvC
 
 Vendor:       Audinux

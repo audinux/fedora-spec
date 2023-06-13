@@ -14,7 +14,7 @@ Name:    rack-v1-ModularFungi
 Version: 1.1.4
 Release: 3%{?dist}
 Summary: ModularFungi plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/david-c14/ModularFungi
 
 Vendor:       Audinux

@@ -14,7 +14,7 @@ Name:    rack-v1-com-soundchasing-stochasm
 Version: 0.6.0
 Release: 3%{?dist}
 Summary: com-soundchasing-stochasm plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/teletypist/stochasm
 
 Vendor:       Audinux

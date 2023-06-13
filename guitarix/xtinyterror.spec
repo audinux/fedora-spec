@@ -6,7 +6,7 @@ Name:    xtinyterror
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Valve amplifier simulation
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/brummer10/XTinyTerror.lv2
 
 Vendor:       Audinux

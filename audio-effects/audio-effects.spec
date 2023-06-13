@@ -8,7 +8,7 @@ Name:    audio-effects
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: A collection of VST3 Synthesizer
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/TheWaveWarden/odin2
 
 Vendor:       Audinux
@@ -51,7 +51,7 @@ by Joshua D. Reiss and Andrew P. McPherson.
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

@@ -14,7 +14,7 @@ Name:    rack-v1-sfjack
 Version: 0.6.8
 Release: 1%{?dist}
 Summary: A plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Skrylar/skjack-vcv
 
 Vendor:       Audinux

@@ -17,7 +17,7 @@ Name:    rack-v2-h4n4-modules
 Version: 2.2.1
 Release: 1%{?dist}
 Summary: h4n4-modules plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/hannakoppelaar/h4n4-modules
 
 Vendor:       Audinux

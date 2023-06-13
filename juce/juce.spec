@@ -7,7 +7,7 @@ Version: 7.0.5
 Release: 9%{?dist}
 Summary: JUCE Framework
 URL:     https://github.com/juce-framework/JUCE
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

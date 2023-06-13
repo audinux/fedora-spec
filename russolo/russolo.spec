@@ -4,7 +4,7 @@ Name:    lv2-russolo
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Russolo Suite
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://sourceforge.net/projects/intonarumori/
 
 Vendor:       Audinux

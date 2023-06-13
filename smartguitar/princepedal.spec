@@ -7,7 +7,7 @@ Name:    princepedal
 Version: 1.0
 Release: 1%{?dist}
 Summary: Prince of Tone style guitar plugin made with neural networks
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/GuitarML/PrincePedal
 
 Vendor:       Audinux
@@ -64,7 +64,7 @@ Prince for a King of Tone - like experience!
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n vst3-%{name}
@@ -72,7 +72,7 @@ VST3 version of %{name}
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n lv2-%{name}

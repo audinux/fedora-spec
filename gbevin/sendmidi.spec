@@ -6,7 +6,7 @@ Name:    sendmidi
 Version: 1.2.1
 Release: 3%{?dist}
 Summary: A command line tool to send MIDI event
-License: GPLv3
+License: GPL-3.0-only
 URL:     https://github.com/gbevin/SendMIDI
 
 Vendor:       Audinux

@@ -7,7 +7,7 @@ Name:    matrixmixer.lv2
 Version: 0.4.6
 Release: 2%{?dist}
 Summary: A LV2 matrix mixer
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/matrixmixer.lv2
 
 Vendor:       Audinux

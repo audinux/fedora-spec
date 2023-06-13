@@ -2,7 +2,7 @@ Name:    surge
 Version: 1.9.0
 Release: 8%{?dist}
 Summary: A VST3 / LV2 Synthesizer
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/surge-synthesizer/surge
 
 Vendor:       Audinux
@@ -33,7 +33,7 @@ A VST3 / LV2 Synthesizer
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}
@@ -41,7 +41,7 @@ LV2 version of %{name}
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

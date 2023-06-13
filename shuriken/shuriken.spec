@@ -2,7 +2,7 @@ Name:    shuriken
 Version: 0.5.2
 Release: 2%{?dist}
 Summary: beat slicer
-License: GPLv2
+License: GPL-2.0-only
 URL:     https://github.com/rock-hopper/shuriken/
 
 Vendor:       Audinux

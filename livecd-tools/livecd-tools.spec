@@ -4,7 +4,7 @@ Summary: Tools for building live CDs
 Name: livecd-tools-mao
 Version: 28.3
 Release: 4%{?dist}
-License: GPLv2
+License: GPL-2.0-only
 URL: https://github.com/livecd-tools/livecd-tools
 
 Vendor:       Audinux

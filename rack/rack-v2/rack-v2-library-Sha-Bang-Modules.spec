@@ -17,7 +17,7 @@ Name:    rack-v2-Sha-Bang-Modules
 Version: 2.2.1
 Release: 1%{?dist}
 Summary: Sha-Bang-Modules plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/jeremymuller/Sha-Bang-Modules
 
 Vendor:       Audinux

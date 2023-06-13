@@ -8,7 +8,7 @@ Version: 0.40.0
 Release: 2%{?dist}
 Summary: Realtime Lua as programmable glue in LV2
 URL:     https://github.com/OpenMusicKontrollers/moony.lv2
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

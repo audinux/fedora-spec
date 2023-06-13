@@ -6,7 +6,7 @@ Name:    shiro
 Version: 0.1
 Release: 1%{?dist}
 Summary: SHIRO LV2 plugin collection
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/ninodewit/SHIRO-Plugins
 
 Vendor:       Audinux
@@ -32,7 +32,7 @@ SHIRO LV2 plugin collection
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}
@@ -40,7 +40,7 @@ LV2 version of %{name}
 
 %package -n ladspa-%{name}
 Summary:  LADSPA version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n ladspa-%{name}
@@ -48,7 +48,7 @@ LADSPA version of %{name}
 
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst-%{name}

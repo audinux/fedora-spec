@@ -9,7 +9,7 @@ Name:    ryukau
 Version: 0.0.1.%{commit0}
 Release: 4%{?dist}
 Summary: Some audio plugins (LV2 and VST) from ruykau
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Wasted-Audio/ryukau_LV2Plugins
 
 Vendor:       Audinux
@@ -35,7 +35,7 @@ Some audio plugins (LV2 and VST) from ruykau
 
 %package -n vst-%{name}
 Summary:  VST version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst-%{name}
@@ -43,7 +43,7 @@ VST version of %{name}
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}

@@ -6,7 +6,7 @@ Name:    xuidesigner
 Version: 0.9
 Release: 1%{?dist}
 Summary: X11 LV2 GUI design tool for libxputty
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/brummer10/XUiDesigner
 
 Vendor:       Audinux

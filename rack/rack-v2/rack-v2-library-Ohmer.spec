@@ -17,7 +17,7 @@ Name:    rack-v2-Ohmer
 Version: 2.2.7
 Release: 1%{?dist}
 Summary: Ohmer plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/DomiKamu/Ohmer
 
 Vendor:       Audinux

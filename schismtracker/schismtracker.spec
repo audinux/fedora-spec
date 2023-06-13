@@ -6,7 +6,7 @@ Name:    schismtracker
 Version: 20221020
 Release: 2%{?dist}
 Summary: Module tracker software for creating music
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/schismtracker/schismtracker
 
 Vendor:       Audinux

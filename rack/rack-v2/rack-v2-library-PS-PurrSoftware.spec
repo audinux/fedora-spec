@@ -17,7 +17,7 @@ Name:    rack-v2-PS-PurrSoftware
 Version: 2.0.28
 Release: 1%{?dist}
 Summary: PS-PurrSoftware plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/knchaffin/Meander/tree/master-V2
 
 Vendor:       Audinux

@@ -2,7 +2,7 @@ Summary: VST plug-ins host
 Name: dssi-vst
 Version: 0.9.2
 Release: 28%{?dist}
-License: GPLv2
+License: GPL-2.0-only
 URL: http://breakfastquay.com/dssi-vst/
 
 Source0: http://code.breakfastquay.com/attachments/download/10/%{name}-%{version}.tar.bz2

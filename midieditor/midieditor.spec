@@ -3,7 +3,7 @@ Version: 3.3.2
 Release: 1%{?dist}
 Summary: Provides an interface to edit, record, and play Midi data
 URL:     https://github.com/markusschwenk/midieditor
-License: GPLv3+
+License: GPL-3.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

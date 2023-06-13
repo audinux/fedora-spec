@@ -14,7 +14,7 @@ Name:    rack-v1-AuntyLangtonsFree
 Version: 1.0.1
 Release: 3%{?dist}
 Summary: AuntyLangtonsFree plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/64MM4-KN1F3/AuntyLangtons-FREE
 
 Vendor:       Audinux

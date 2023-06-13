@@ -6,7 +6,7 @@ Name:    xfade.lv2
 Version: 0.3.4
 Release: 1%{?dist}
 Summary: stereo DJ X-fade plugin
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/xfade.lv2
 
 Vendor:       Audinux

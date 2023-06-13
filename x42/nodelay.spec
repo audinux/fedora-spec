@@ -6,7 +6,7 @@ Name:    nodelay.lv2
 Version: 0.6.3
 Release: 1%{?dist}
 Summary: audio delay line with latency reporting -- LV2 test & instrumentation tool
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/nodelay.lv2
 
 Vendor:       Audinux

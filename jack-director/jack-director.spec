@@ -6,7 +6,7 @@ Summary: JackDirector is a GNU/Linux app that lets you control Jack Audio Connec
 Name:    jack-director
 Version: 0.1.1
 Release: 1%{?dist}
-License: GPLv2
+License: GPL-2.0-only
 URL:     https://toxic.cubicarea.it/#jack-director
 
 Vendor:       Audinux

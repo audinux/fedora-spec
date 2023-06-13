@@ -6,7 +6,7 @@ Name:    HISE
 Version: 3.0.3
 Release: 1%{?dist}
 Summary: The open source framework for sample based instrument
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/christophhart/HISE
 
 Vendor:       Audinux
@@ -44,7 +44,7 @@ instruments as well as audio effects.
 
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 
 %description -n vst-%{name}
 VST2 version of %{name}

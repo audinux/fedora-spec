@@ -17,7 +17,7 @@ Name:    rack-v2-LoudNumbers
 Version: 2.0.4
 Release: 1%{?dist}
 Summary: LoudNumbers plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/loudnumbers/loudnumbers_vcv
 
 Vendor:       Audinux

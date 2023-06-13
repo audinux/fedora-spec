@@ -3,7 +3,7 @@ Version: 0.12.0
 Release: 1%{?dist}
 Summary: Python bindings for the liblo OSC library
 
-License: GPLv2+
+License: GPL-2.0-or-later
 URL: https://github.com/gesellkammer/pyliblo3
 Source0: https://github.com/gesellkammer/pyliblo3/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 

@@ -17,7 +17,7 @@ Name:    rack-v2-Ahornberg
 Version: 2.1.9
 Release: 2%{?dist}
 Summary: Ahornberg plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Ahornberg/Ahornberg-VCV-Modules
 
 Vendor:       Audinux

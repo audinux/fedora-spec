@@ -17,7 +17,7 @@ Name:    rack-v2-AlliewayAudio_Freebies
 Version: 2.0.6
 Release: 1%{?dist}
 Summary: AlliewayAudio_Freebies plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/AlliewayAudio/AlliewayAudio_Freebies
 
 Vendor:       Audinux

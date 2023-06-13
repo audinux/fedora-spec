@@ -14,7 +14,7 @@ Name:    rack-v1-Quadraphonics
 Version: 0.6.3
 Release: 3%{?dist}
 Summary: Quadraphonics plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/KoreTeknology/Quadraphonic-Plugins-for-VCV-Rack
 
 Vendor:       Audinux

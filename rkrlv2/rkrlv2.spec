@@ -12,7 +12,7 @@ Version: 0.0.1.%{shortcommit0}
 Release: 4%{?dist}
 Summary: Rakarrack LV2 plugins
 URL:     https://github.com/ssj71/rkrlv2
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

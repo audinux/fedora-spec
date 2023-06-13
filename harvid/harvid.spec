@@ -6,7 +6,7 @@ Name:    harvid
 Version: 0.9.1
 Release: 3%{?dist}
 Summary: harvid -- HTTP Ardour Video Daemon
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/harvid
 
 Vendor:       Audinux

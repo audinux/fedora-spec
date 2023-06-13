@@ -6,7 +6,7 @@ Name:    fat1.lv2
 Version: 0.8.5
 Release: 1%{?dist}
 Summary: Fons Adriaensen's AT1 -- Autotune LV2 plugin
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/fat1.lv2
 
 Vendor:       Audinux

@@ -2,7 +2,7 @@ Name:    lenmus
 Version: 6.0.1
 Release: 2%{?dist}
 Summary: An app to study music theory and train you ear
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/lenmus/lenmus
 
 Vendor:       Audinux

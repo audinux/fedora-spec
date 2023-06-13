@@ -17,7 +17,7 @@ Name:    rack-v2-GrandeModular
 Version: 2.7.2
 Release: 1%{?dist}
 Summary: GrandeModular plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/dbgrande/GrandeModular
 
 Vendor:       Audinux

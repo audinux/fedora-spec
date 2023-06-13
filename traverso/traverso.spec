@@ -7,7 +7,7 @@ Version: 0.49.6
 Release: 4%{?dist}
 Summary: Traverso: A Multitrack Audio Recorder and Editor
 URL:     https://savannah.nongnu.org/projects/traverso/
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

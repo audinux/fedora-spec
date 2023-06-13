@@ -14,7 +14,7 @@ Name:    rack-v1-OrangeLine
 Version: 1.3.8
 Release: 3%{?dist}
 Summary: OrangeLine plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Stubs42/OrangeLine
 
 Vendor:       Audinux

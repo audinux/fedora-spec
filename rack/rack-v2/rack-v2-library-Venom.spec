@@ -17,7 +17,7 @@ Name:    rack-v2-Venom
 Version: 2.2.0
 Release: 2%{?dist}
 Summary: Venom plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/DaveBenham/VenomModules
 
 Vendor:       Audinux
