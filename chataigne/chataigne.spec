@@ -6,7 +6,7 @@ Name:    chataigne
 Version: 1.9.15
 Release: 1%{?dist}
 Summary: Artist-friendly Modular Machine for Art and Technology
-License: GPLv3
+License: GPL-3.0-only
 URL:     https://benjamin.kuperberg.fr/chataigne/fr
 
 Vendor:       Audinux

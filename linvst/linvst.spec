@@ -4,7 +4,7 @@ Name:    LinVst
 Version: 4.78
 Release: 3%{?dist}
 Summary: Linux Windows vst wrapper/bridge
-License: GPLv3
+License: GPL-3.0-only
 URL:     https://github.com/osxmidi/linvst
 
 Source0: %{url}/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz

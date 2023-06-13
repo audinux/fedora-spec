@@ -7,7 +7,7 @@ Name:    postfish
 Version: 2005.01.01
 Release: 2%{?dist}
 Summary: The Postfish is a digital audio post-processing, restoration, filtering and mixdown tool.
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://gitlab.xiph.org/xiph/postfish
 
 Vendor:       Audinux

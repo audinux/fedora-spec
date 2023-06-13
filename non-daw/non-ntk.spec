@@ -4,7 +4,7 @@ Version:        1.3.0
 Release:        0.17.20191215gitdae17718%{?dist}
 Summary:        A fork of FLTK for the non audio suite
 # themse are GPLv2+, FLTK derived code is LGPLv2+
-License:        LGPLv2+ with exceptions and GPLv2+
+License:        LGPL-2.1-or-later WITH Qwt-exception-1.0 AND GPL-2.0-or-later
 URL:            http://non.tuxfamily.org/
 
 Vendor:       Audinux

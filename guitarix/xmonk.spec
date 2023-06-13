@@ -6,7 +6,7 @@ Name:    xmonk
 Version: 0.4.0
 Release: 1%{?dist}
 Summary: A LV2 simple sound generator to have some fun with
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/brummer10/Xmonk.lv2
 
 Vendor:       Audinux

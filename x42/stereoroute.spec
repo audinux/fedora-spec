@@ -6,7 +6,7 @@ Name:    stereoroute.lv2
 Version: 0.1.0
 Release: 1%{?dist}
 Summary: Stereo Routing Plugin
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/stereoroute.lv2
 
 Vendor:       Audinux

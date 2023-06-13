@@ -6,7 +6,7 @@ Name:    mclk.lv2
 Version: 0.2.3
 Release: 1%{?dist}
 Summary: Midi Clock Generator LV2 Plugin
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/mclk.lv2
 
 Vendor:       Audinux

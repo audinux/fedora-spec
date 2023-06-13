@@ -6,7 +6,7 @@ URL:          http://www.smbolton.com/whysynth.html
 Source0:      http://www.smbolton.com/whysynth/whysynth-%{version}.tar.bz2
 Source2:      whysynth.desktop
 Patch0:       whysynth-noinline.patch
-License:      GPLv2+
+License:      GPL-2.0-or-later
 
 BuildRequires: make
 BuildRequires: desktop-file-utils

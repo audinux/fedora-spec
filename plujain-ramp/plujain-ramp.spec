@@ -11,7 +11,7 @@ Name:    plujain-ramp
 Version: 1.1.3
 Release: 2%{?dist}
 Summary: Plujain-Ramp is a mono rhythmic tremolo LV2 Audio Plugin
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Houston4444/plujain-ramp.git
 
 Vendor:       Audinux

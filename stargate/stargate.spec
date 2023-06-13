@@ -6,7 +6,7 @@ Name:    stargate
 Version: 23.03.1
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
-License: GPLv3
+License: GPL-3.0-only
 URL:     http://github.com/stargateaudio/stargate/
 
 Vendor:       Audinux

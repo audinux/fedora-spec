@@ -2,7 +2,7 @@ Name:    lv2-gxmrfreeze
 Version: 0.5
 Release: 1%{?dist}
 Summary: An audio, Guitarix compatible, freeze LV2 plugin
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/ycollet/MrFreezehttps://github.com/romi1502/MrFreeze
 
 Vendor:       Audinux

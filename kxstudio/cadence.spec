@@ -6,7 +6,7 @@ Name:    Cadence
 Version: 0.9.1
 Release: 5%{?dist}
 Summary: JACK control center
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/falkTX/Cadence
 
 Vendor:       Audinux

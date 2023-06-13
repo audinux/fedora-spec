@@ -6,7 +6,7 @@ Name:    balance.lv2
 Version: 0.6.10
 Release: 1%{?dist}
 Summary: Stereo Balance Control
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/balance.lv2
 
 Vendor:       Audinux

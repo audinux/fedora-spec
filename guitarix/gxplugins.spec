@@ -6,7 +6,7 @@ Name:    GxPlugins
 Version: 1.0
 Release: 2%{?dist}
 Summary: Guitarix LV2 plugins collection
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/brummer10/GxPlugins.lv2
 
 Vendor:       Audinux

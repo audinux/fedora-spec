@@ -17,7 +17,7 @@ Name:    rack-v2-ArableInstruments
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: ArableInstruments plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/adbrant/ArableInstruments
 
 Vendor:       Audinux

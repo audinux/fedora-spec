@@ -6,7 +6,7 @@ Summary: Additional DrumKits for Hydrogen
 Name:    hydrogen-drumkits-2
 Version: 0.9.6
 Release: 1%{?dist}
-License: GPLv2+ and GPLv3 and Green OpenMusic
+License: GPL-2.0-or-later AND GPL-3.0-only AND LicenseRef-OpenMusic-green
 URL:     http://www.hydrogen-music.org
 
 Vendor:       Audinux

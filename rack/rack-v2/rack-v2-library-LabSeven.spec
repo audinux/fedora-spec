@@ -17,7 +17,7 @@ Name:    rack-v2-LabSeven
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: LabSeven plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/LabSevenDevVCVRack/LabSeven_VCVRack_modules
 
 Vendor:       Audinux

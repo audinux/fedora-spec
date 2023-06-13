@@ -17,7 +17,7 @@ Name:    rack-v2-MyLittleTools
 Version: 1.0.3
 Release: 1%{?dist}
 Summary: MyLittleTools plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/digitalhappens/MyLittleTools
 
 Vendor:       Audinux

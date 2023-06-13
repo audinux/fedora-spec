@@ -17,7 +17,7 @@ Name:    rack-v2-vanTies
 Version: 2.1.0
 Release: 2%{?dist}
 Summary: vanTies plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/matthiassars/vanTies
 
 Vendor:       Audinux

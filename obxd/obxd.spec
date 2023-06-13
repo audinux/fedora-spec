@@ -6,7 +6,7 @@ Name:    obxd
 Version: 2.8
 Release: 2%{?dist}
 Summary: A VST3 Synthesizer
-License: GPLv3
+License: GPL-3.0-only
 URL:     https://github.com/reales/OB-Xd
 
 Vendor:       Audinux
@@ -41,7 +41,7 @@ Virtual Analog Oberheim VST / VST3 based synthesizer
 
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
-License:  GPLv3
+License:  GPL-3.0-only
 Requires: %{name}
 
 %description -n vst-%{name}
@@ -49,7 +49,7 @@ VST2 version of %{name}
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv3
+License:  GPL-3.0-only
 Requires: %{name}
 
 %description -n vst3-%{name}

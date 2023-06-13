@@ -14,7 +14,7 @@ Name:    rack-v1-8Mode
 Version: 1.0.0
 Release: 3%{?dist}
 Summary: 8Mode plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/8Mode/8Mode-VCV_Modules
 
 Vendor:       Audinux

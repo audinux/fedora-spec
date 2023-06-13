@@ -7,7 +7,7 @@ Version: 3.66.0
 Release: 3%{?dist}
 Summary: Audio spectrum visualizer
 URL:     https://biniou.net/
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

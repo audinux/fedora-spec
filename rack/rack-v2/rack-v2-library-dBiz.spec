@@ -17,7 +17,7 @@ Name:    rack-v2-dBiz
 Version: 2.1
 Release: 1%{?dist}
 Summary: dBiz plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/dBiz/dBiz
 
 Vendor:       Audinux

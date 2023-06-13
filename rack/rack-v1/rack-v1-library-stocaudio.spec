@@ -14,7 +14,7 @@ Name:    rack-v1-stocaudio
 Version: 1.0.1
 Release: 3%{?dist}
 Summary: stocaudio plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/aptrn/stocaudio-modules
 
 Vendor:       Audinux

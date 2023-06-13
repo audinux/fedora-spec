@@ -17,7 +17,7 @@ Name:    rack-v2-Airwin2Rack
 Version: 2.3.0
 Release: 2%{?dist}
 Summary: Airwin2Rack plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/baconpaul/airwin2rack
 
 Vendor:       Audinux

@@ -17,7 +17,7 @@ Name:    rack-v2-SeasideModular
 Version: 2.5.1
 Release: 2%{?dist}
 Summary: SeasideModular plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/abluenautilus/SeasideModularVCV
 
 Vendor:       Audinux

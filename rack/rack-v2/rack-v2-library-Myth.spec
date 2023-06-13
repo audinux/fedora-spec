@@ -17,7 +17,7 @@ Name:    rack-v2-Myth
 Version: 2.0.1
 Release: 1%{?dist}
 Summary: Myth plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Ahineya/vcv-myth-plugin
 
 Vendor:       Audinux

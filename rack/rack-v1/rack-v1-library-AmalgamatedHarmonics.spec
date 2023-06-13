@@ -14,7 +14,7 @@ Name:    rack-v1-AmalgamatedHarmonics
 Version: 1.0.4
 Release: 3%{?dist}
 Summary: AmalgamatedHarmonics plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/jhoar/AmalgamatedHarmonics
 
 Vendor:       Audinux

@@ -4,7 +4,7 @@ Name:    lv2-slowmo
 Version: 0.1
 Release: 1%{?dist}
 Summary: Multiband slowgate with delay
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/brummer10/slowmo.lv2
 
 Vendor:       Audinux

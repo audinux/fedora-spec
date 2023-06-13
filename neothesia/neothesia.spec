@@ -6,7 +6,7 @@ Name:    neothesia
 Version: 0.0.16
 Release: 1%{?dist}
 Summary: Flashy Synthesia Like Software
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/PolyMeilex/Neothesia
 
 Vendor:       Audinux

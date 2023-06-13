@@ -6,7 +6,7 @@ Name:    fil4.lv2
 Version: 0.8.7
 Release: 1%{?dist}
 Summary: 4 Band Parametric EQ
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/fil4.lv2
 
 Vendor:       Audinux

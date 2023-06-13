@@ -13,7 +13,7 @@ Version: 0.7.111.0.%{shortcommit0}
 Release: 2%{?dist}
 Summary: A simple but powerful audio editor
 URL:     https://github.com/momentarylapse/tsunami
-License: GPLv3
+License: GPL-3.0-only
 
 Vendor:       Audinux
 Distribution: Audinux

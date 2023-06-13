@@ -17,7 +17,7 @@ Name:    rack-v2-3HR
 Version: 2.2.0
 Release: 1%{?dist}
 Summary: 3HR plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Geekachuqt/3HR
 
 Vendor:       Audinux

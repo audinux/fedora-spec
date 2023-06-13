@@ -6,7 +6,7 @@ Name:    midimsg-lv2
 Version: 0.0.5
 Release: 2%{?dist}
 Summary: A collection of basic LV2 plugins to translate midi messages to usable values
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/blablack/midimsg-lv2
 
 Vendor:       Audinux

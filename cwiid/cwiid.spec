@@ -10,7 +10,7 @@ Name: cwiid
 Version: 0.6.00
 Release: 36.20100505git%{git_commit8}%{?dist}
 Summary: Wiimote interface library
-License: GPLv2+
+License: GPL-2.0-or-later
 URL: https://github.com/abstrakraft/cwiid
 
 Vendor:       Audinux
@@ -62,7 +62,7 @@ Summary: Enables using the wiimote as an input source
 # The licence must be GPLv2 instead of GPLv2+ for this package
 # since the file wminput/action_enum.txt is GPLv2 as stated
 # in the file.
-License: GPLv2
+License: GPL-2.0-only
 Requires: %{name} = %{version}-%{release}, %{name}-python2
 
 %description wminput

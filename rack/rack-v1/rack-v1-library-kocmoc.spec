@@ -14,7 +14,7 @@ Name:    rack-v1-kocmoc
 Version: 1.3.3
 Release: 3%{?dist}
 Summary: kocmoc plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/janne808/kocmoc-rack-modules/
 
 Vendor:       Audinux

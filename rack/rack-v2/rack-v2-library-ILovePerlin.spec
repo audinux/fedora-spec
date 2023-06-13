@@ -17,7 +17,7 @@ Name:    rack-v2-ILovePerlin
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: ILovePerlin plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/digitalhappens/ILovePerlin
 
 Vendor:       Audinux

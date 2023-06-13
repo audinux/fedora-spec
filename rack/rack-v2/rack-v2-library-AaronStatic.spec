@@ -17,7 +17,7 @@ Name:    rack-v2-AaronStatic
 Version: 2.0.1
 Release: 2%{?dist}
 Summary: AaronStatic plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/aaronstatic/AaronStatic_modules
 
 Vendor:       Audinux

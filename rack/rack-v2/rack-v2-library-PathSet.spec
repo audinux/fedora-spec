@@ -17,7 +17,7 @@ Name:    rack-v2-PathSet
 Version: 2.4.1
 Release: 1%{?dist}
 Summary: PathSet plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/patheros/PathSetModules
 
 Vendor:       Audinux

@@ -2,7 +2,7 @@ Name:    nki
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: A simple console application to convert NKI files
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     http://www.linuxsampler.org/nkitool/
 
 Vendor:       Audinux

@@ -7,7 +7,7 @@ Name:    mod-cv-plugins
 Version: 0.1.%{shortcommit0}
 Release: 1%{?dist}
 Summary: Control Voltage Plugins 
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/moddevices/mod-cv-plugins
 
 Vendor:       Audinux

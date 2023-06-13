@@ -17,7 +17,7 @@ Name:    rack-v2-Starling_Via
 Version: 2.0.1
 Release: 1%{?dist}
 Summary: Starling_Via plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/starlingcode/Via-for-Rack
 
 Vendor:       Audinux

@@ -14,7 +14,7 @@ Name:    rack-v1-RPJ
 Version: 1.0.4
 Release: 3%{?dist}
 Summary: RPJ plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/kockie69/RPJ
 
 Vendor:       Audinux

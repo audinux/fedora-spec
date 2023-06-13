@@ -6,7 +6,7 @@ Name:    BespokeSynth
 Version: 1.1.0
 Release: 8%{?dist}
 Summary: A software modular synth
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/BespokeSynth/BespokeSynth
 
 Vendor:       Audinux

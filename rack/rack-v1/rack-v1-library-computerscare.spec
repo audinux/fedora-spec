@@ -14,7 +14,7 @@ Name:    rack-v1-computerscare
 Version: 1.4.3
 Release: 3%{?dist}
 Summary: computerscare plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/freddyz/computerscare-vcv-modules
 
 Vendor:       Audinux

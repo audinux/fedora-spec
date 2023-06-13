@@ -17,7 +17,7 @@ Name:    rack-v2-LOGinstruments
 Version: 2.0.4
 Release: 1%{?dist}
 Summary: LOGinstruments plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/LOGUNIVPM/LOGinstruments
 
 Vendor:       Audinux

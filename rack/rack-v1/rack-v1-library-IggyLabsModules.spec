@@ -14,7 +14,7 @@ Name:    rack-v1-IggyLabsModules
 Version: 1.1.2
 Release: 3%{?dist}
 Summary: IggyLabsModules plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/IggyLabs/IggyLabsModules
 
 Vendor:       Audinux

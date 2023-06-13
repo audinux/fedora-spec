@@ -6,7 +6,7 @@ Name:    darc.lv2
 Version: 0.6.5
 Release: 1%{?dist}
 Summary: Dynamic Audio Range Compressor
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/darc.lv2
 
 Vendor:       Audinux

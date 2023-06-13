@@ -6,7 +6,7 @@ Name:    grandorgue
 Version: 3.12.1
 Release: 6%{?dist}
 Summary: A sample based pipe organ simulator.
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/GrandOrgue/grandorgue
 
 Vendor:       Audinux

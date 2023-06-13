@@ -2,7 +2,7 @@ Name:    jamin
 Summary: JACK Audio Connection Kit (JACK) Audio Mastering interface
 Version: 0.98.9
 Release: 2%{?dist}
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     http://jamin.sourceforge.net
 
 Vendor:       Audinux

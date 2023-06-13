@@ -14,7 +14,7 @@ Name:    rack-v1-SLM
 Version: 1.1.0
 Release: 3%{?dist}
 Summary: SLM plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/salvolm84/SLM-vcv-rack
 
 Vendor:       Audinux

@@ -17,7 +17,7 @@ Name:    rack-v2-trowaSoft
 Version: 2.0.7
 Release: 1%{?dist}
 Summary: trowaSoft plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/j4s0n-c/trowaSoft-VCV
 
 Vendor:       Audinux

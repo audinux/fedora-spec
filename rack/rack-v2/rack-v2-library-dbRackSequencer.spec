@@ -17,7 +17,7 @@ Name:    rack-v2-dbRackSequencer
 Version: 2.2.2
 Release: 2%{?dist}
 Summary: dbRackSequencer plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/docb/dbRackSequencer
 
 Vendor:       Audinux

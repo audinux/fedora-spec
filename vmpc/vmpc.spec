@@ -4,7 +4,7 @@ Name:    vmpc
 Version: 0.5.0.3
 Release: 1%{?dist}
 Summary: JUCE implementation of VMPC2000XL
-License: GPLv3
+License: GPL-3.0-only
 URL:     https://github.com/izzyreal/vmpc-juce
 
 Vendor:       Audinux
@@ -30,7 +30,7 @@ a JUCE implementation of VMPC2000XL, the Akai MPC2000XL emulator
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n vst3-%{name}

@@ -8,7 +8,7 @@ Version: 1.5.57
 Release: 5%{?dist}
 Summary: A 'visual' instrument and realtime video sampler (for live video improvisation) - server part
 URL:     https://github.com/c0ntrol/veejay
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

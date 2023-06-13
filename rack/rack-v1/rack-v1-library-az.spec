@@ -14,7 +14,7 @@ Name:    rack-v1-az
 Version: 1.1.1
 Release: 3%{?dist}
 Summary: az plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/azrrik/az-vcv
 
 Vendor:       Audinux

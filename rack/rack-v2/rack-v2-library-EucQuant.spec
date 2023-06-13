@@ -17,7 +17,7 @@ Name:    rack-v2-EucQuant
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: EucQuant plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/sindarknave/EucQuant
 
 Vendor:       Audinux

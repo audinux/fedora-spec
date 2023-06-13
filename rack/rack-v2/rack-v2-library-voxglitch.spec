@@ -17,7 +17,7 @@ Name:    rack-v2-voxglitch
 Version: 2.27.0
 Release: 1%{?dist}
 Summary: voxglitch plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/clone45/voxglitch
 
 Vendor:       Audinux

@@ -14,7 +14,7 @@ Name:    rack-v1-VCV-Prototype
 Version: 1.3.0
 Release: 2%{?dist}
 Summary: A plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/VCVRack/VCV-Prototype
 
 Vendor:       Audinux

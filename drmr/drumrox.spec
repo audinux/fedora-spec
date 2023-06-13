@@ -6,7 +6,7 @@ Name:    drumrox
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: A hydrogen compatible drum LV2 plugin
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/psemiletov/drumrox
 
 Vendor:       Audinux

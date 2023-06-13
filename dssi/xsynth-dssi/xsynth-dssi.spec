@@ -2,7 +2,7 @@ Summary:    Classic-analog style software synthesizer
 Name:       xsynth-dssi
 Version:    0.9.4
 Release:    24%{?dist}
-License:    GPLv2+
+License:    GPL-2.0-or-later
 URL:        http://dssi.sourceforge.net/download.html#Xsynth-DSSI
 Source0:    http://download.sf.net/dssi/%{name}-%{version}.tar.gz
 Source1:    http://download.sf.net/dssi/%{name}-%{version}-RELEASE

@@ -2,7 +2,7 @@ Name:    lv2-euclidean-rhythms
 Version: 0.1.1
 Release: 1%{?dist}
 Summary: Implementation of the Euclidean-Rhythms idea in the form of plugin
-License: GPLv3
+License: GPL-3.0-only
 URL:     https://github.com/bruno-unna/euclidean-rhythms
 
 Vendor:       Audinux

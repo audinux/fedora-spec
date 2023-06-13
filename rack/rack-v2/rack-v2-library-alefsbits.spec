@@ -17,7 +17,7 @@ Name:    rack-v2-alefsbits
 Version: 2.5.4
 Release: 1%{?dist}
 Summary: alefsbits plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/alefnull/alefsbits
 
 Vendor:       Audinux

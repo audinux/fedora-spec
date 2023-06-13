@@ -7,7 +7,7 @@ Name:    mammut
 Version: 0.61.%{shortcommit0}
 Release: 2%{?dist}
 Summary: A sound editor with a non-intuitive sound transformation approach using one single gigantic analysis (no windows)
-License: GPLv3
+License: GPL-3.0-only
 URL:     https://github.com/kmatheussen/mammut/
 
 Vendor:       Audinux

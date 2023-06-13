@@ -14,7 +14,7 @@ Name:    rack-v1-Bidoo
 Version: 1.1.39
 Release: 3%{?dist}
 Summary: Bidoo plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/sebastien-bouffier/Bidoo
 
 Vendor:       Audinux

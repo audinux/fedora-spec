@@ -17,7 +17,7 @@ Name:    rack-v2-Kosmodules-Free
 Version: 1.0.1
 Release: 1%{?dist}
 Summary: Kosmodules-Free plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/calvinkosmatka/Kosmodules-Free
 
 Vendor:       Audinux

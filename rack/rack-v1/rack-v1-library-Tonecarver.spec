@@ -14,7 +14,7 @@ Name:    rack-v1-Tonecarver
 Version: 1.0.4
 Release: 3%{?dist}
 Summary: Tonecarver plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Tonecarver/tcRackModules
 
 Vendor:       Audinux

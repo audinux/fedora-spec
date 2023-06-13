@@ -7,7 +7,7 @@ Name:    frequalizer
 Version: 1.0.0
 Release: 2%{?dist}
 Summary: Equalizer using JUCE new dsp module
-License: GPLv3
+License: GPL-3.0-only
 URL:     https://github.com/ffAudio/Frequalizer
 
 Vendor:       Audinux
@@ -53,7 +53,7 @@ This is a JUCE project using the new dsp module for an Equalizer. It features:
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

@@ -17,7 +17,7 @@ Name:    rack-v2-Stoermelder-P1
 Version: 2.0.beta3
 Release: 1%{?dist}
 Summary: Stoermelder-P1 plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/stoermelder/vcvrack-packone
 
 Vendor:       Audinux

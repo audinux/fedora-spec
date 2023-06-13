@@ -46,7 +46,7 @@ Gammou is a polyphonic modular sound synthesizer that be run as VST or standalon
 
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst-%{name}

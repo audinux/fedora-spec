@@ -6,7 +6,7 @@ Name:    aeolus_plugin
 Version: 0.2.0
 Release: 2%{?dist}
 Summary: Pipe organ synthesizer
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/Archie3d/aeolus_plugin
 
 Vendor:       Audinux
@@ -56,7 +56,7 @@ has been translated (partially) to JSON.
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

@@ -7,7 +7,7 @@ Name:    radium
 Version: 3.3.2
 Release: 1%{?dist}
 Summary: A tracker / sequencer
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/kmatheussen/radium
 
 Vendor:       Audinux

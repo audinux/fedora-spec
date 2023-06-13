@@ -17,7 +17,7 @@ Name:    rack-v2-ExpertSleepers-Encoders
 Version: 2.1.0
 Release: 1%{?dist}
 Summary: ExpertSleepers-Encoders plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/expertsleepersltd/vcvrack-encoders
 
 Vendor:       Audinux

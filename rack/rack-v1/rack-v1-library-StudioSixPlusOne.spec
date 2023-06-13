@@ -14,7 +14,7 @@ Name:    rack-v1-StudioSixPlusOne
 Version: 1.3
 Release: 3%{?dist}
 Summary: StudioSixPlusOne plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/StudioSixPlusOne/rack-modules
 
 Vendor:       Audinux

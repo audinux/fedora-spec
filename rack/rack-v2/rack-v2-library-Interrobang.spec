@@ -17,7 +17,7 @@ Name:    rack-v2-Interrobang
 Version: 2.0.1
 Release: 1%{?dist}
 Summary: Interrobang plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/jimallman/interrobang-rack-modules/
 
 Vendor:       Audinux

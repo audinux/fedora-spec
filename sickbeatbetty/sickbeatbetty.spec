@@ -2,7 +2,7 @@ Name:    sickbeatbetty
 Version: 1.0.3
 Release: 1%{?dist}
 Summary: An open source MIDI drum machine / generator VST and standalone application
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/jthwho/SickBeatBetty
 
 Vendor:       Audinux
@@ -42,7 +42,7 @@ It uses the JUCE library which makes it cross platform.
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n vst3-%{name}

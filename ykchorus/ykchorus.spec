@@ -6,7 +6,7 @@ Name:    ykchorus
 Version: 0.2.3
 Release: 1%{?dist}
 Summary: A chorus audio effect plugin based on DSP code by Togu Audio Line (TAL)
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/SpotlightKid/ykchorus
 
 Vendor:       Audinux

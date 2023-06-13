@@ -2,7 +2,7 @@ Name:    stochas
 Version: 1.3.9
 Release: 4%{?dist}
 Summary: A VST3 MIDI sequencer
-License: GPLv3
+License: GPL-3.0-only
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -29,7 +29,7 @@ A VST3 MIDI sequencer
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

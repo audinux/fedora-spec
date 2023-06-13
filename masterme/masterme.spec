@@ -6,7 +6,7 @@ Name:    master_me
 Version: 1.2.0
 Release: 1%{?dist}
 Summary: automatic mastering plugin for live streaming, podcasts and internet radio
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/trummerschlunk/master_me
 
 Vendor:       Audinux
@@ -34,7 +34,7 @@ podcasting and internet radio stations.
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
@@ -42,7 +42,7 @@ VST3 version of %{name}
 
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst-%{name}
@@ -50,7 +50,7 @@ VST2 version of %{name}
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}
@@ -58,7 +58,7 @@ LV2 version of %{name}
 
 %package -n clap-%{name}
 Summary:  CLAP version of %{name}
-License:  GPLv2+
+License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n clap-%{name}

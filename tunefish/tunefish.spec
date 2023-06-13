@@ -7,7 +7,7 @@ Name:    tunefish
 Version: 4.2.0.%{shortcommit0}
 Release: 2%{?dist}
 Summary: Tunefish virtual analog synthesizer - additive wavetable-based synthesizer VST plugin (git version)
-License: GPLv3
+License: GPL-3.0-only
 URL:     https://www.tunefish-synth.com/
 
 Vendor:       Audinux

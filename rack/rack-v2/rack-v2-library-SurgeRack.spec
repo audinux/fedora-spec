@@ -17,7 +17,7 @@ Name:    rack-v2-SurgeRack
 Version: 2.1.7.1
 Release: 1%{?dist}
 Summary: SurgeRack plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/surge-synthesizer/surge-rack/
 
 Vendor:       Audinux

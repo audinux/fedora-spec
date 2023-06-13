@@ -6,7 +6,7 @@ Name:    dpl.lv2
 Version: 0.6.5
 Release: 1%{?dist}
 Summary: Digital Peak Limiter LV2 Plugin
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/dpl.lv2
 
 Vendor:       Audinux

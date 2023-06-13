@@ -14,7 +14,7 @@ Name:    rack-v1-DrumKit
 Version: 1.1.4
 Release: 3%{?dist}
 Summary: DrumKit plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/SVModular/DrumKit
 
 Vendor:       Audinux

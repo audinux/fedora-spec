@@ -14,7 +14,7 @@ Name:    rack-v1-ImpromptuModular
 Version: 1.1.12
 Release: 3%{?dist}
 Summary: ImpromptuModular plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/MarcBoule/ImpromptuModular/
 
 Vendor:       Audinux

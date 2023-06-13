@@ -17,7 +17,7 @@ Name:    rack-v2-FreeSurface
 Version: 2.0.5
 Release: 1%{?dist}
 Summary: FreeSurface plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/freesurfacemodules/FreeSurface
 
 Vendor:       Audinux

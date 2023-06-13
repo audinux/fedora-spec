@@ -2,7 +2,7 @@ Name:    ninjam-server
 Version: 0.0.1
 Release: 2%{?dist}
 Summary: A realtime network sound server
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     http://www.cockos.com/ninjam/
 
 Vendor:       Audinux

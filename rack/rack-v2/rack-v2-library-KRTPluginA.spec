@@ -17,7 +17,7 @@ Name:    rack-v2-KRTPluginA
 Version: 2.26.31
 Release: 1%{?dist}
 Summary: KRTPluginA plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/jackokring/KRTPluginA
 
 Vendor:       Audinux

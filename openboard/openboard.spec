@@ -10,7 +10,7 @@ Name:    openboard
 Version: 1.6.4
 Release: 3%{?dist}
 Summary: Interactive whiteboard for schools and universities
-License: GPLv3+
+License: GPL-3.0-or-later
 Url:     https://openboard.ch
 
 Vendor:       Audinux

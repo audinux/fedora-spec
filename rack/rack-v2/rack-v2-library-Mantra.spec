@@ -17,7 +17,7 @@ Name:    rack-v2-Mantra
 Version: 1.0.1
 Release: 1%{?dist}
 Summary: Mantra plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/giogramegna/mantra-master
 
 Vendor:       Audinux

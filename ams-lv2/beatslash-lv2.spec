@@ -6,7 +6,7 @@ Name:    beatslash-lv2
 Version: 1.0.6
 Release: 3%{?dist}
 Summary: Set of LV2 plugins to mangle, slash, repeat and do much more with your beats
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/blablack/beatslash-lv2
 
 Vendor:       Audinux

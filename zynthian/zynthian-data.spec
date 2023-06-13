@@ -11,7 +11,7 @@ Name:    zynthian-data
 Version: 1.0.0
 Release: 6%{?dist}
 Summary: A set of LV2 presets for DISTRHO
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/zynthian/zynthian-data
 
 Vendor:       Audinux

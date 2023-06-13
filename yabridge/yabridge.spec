@@ -9,7 +9,7 @@ Name:    yabridge
 Version: 5.0.5
 Release: 6%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/robbert-vdh/yabridge
 
 Vendor:       Audinux

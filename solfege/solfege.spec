@@ -7,7 +7,7 @@ Name:    solfege
 Version: 3.23.5pre2
 Release: 11%{?dist}
 Summary: Ear training program for music students
-License: GPLv3
+License: GPL-3.0-only
 URL:     https://www.gnu.org/software/solfege/
 
 Source0: https://git.savannah.gnu.org/cgit/solfege.git/snapshot/solfege-%{version}.tar.gz

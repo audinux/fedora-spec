@@ -6,7 +6,7 @@ Name:    fasttracker2
 Version: 1.67
 Release: 3%{?dist}
 Summary: Module tracker software for creating music
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://16-bits.org/ft2.php
 
 Vendor:       Audinux

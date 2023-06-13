@@ -2,7 +2,7 @@ Name:    mod-gxpitchshifter
 Version: 1.0.3
 Release: 1%{?dist}
 Summary: Guitarix compatible mod-pitchshifter LV2 set of plugins from portalmod
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/ycollet/mod-pitchshifter
 
 Vendor:       Audinux

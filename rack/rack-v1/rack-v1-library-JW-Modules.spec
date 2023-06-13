@@ -14,7 +14,7 @@ Name:    rack-v1-JW-Modules
 Version: 1.0.30
 Release: 3%{?dist}
 Summary: JW-Modules plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/jeremywen/JW-Modules
 
 Vendor:       Audinux

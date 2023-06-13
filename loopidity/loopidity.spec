@@ -2,7 +2,7 @@ Name:    loopidity
 Version: 0.14.026
 Release: 1%{?dist}
 Summary: A multi-track, multi-channel, looping audio recorder designed for live handsfree use
-License: GPLv3+
+License: GPL-3.0-or-later
 URL:     https://github.com/bill-auger/loopidity
 
 Vendor:       Audinux

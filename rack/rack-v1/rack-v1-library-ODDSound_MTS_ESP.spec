@@ -14,7 +14,7 @@ Name:    rack-v1-ODDSound_MTS_ESP
 Version: 1.0.1
 Release: 3%{?dist}
 Summary: ODDSound_MTS_ESP plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://oddsound.com
 
 Vendor:       Audinux

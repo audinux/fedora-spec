@@ -6,7 +6,7 @@ Name:    sisco.lv2
 Version: 0.9.10
 Release: 1%{?dist}
 Summary: A LV2 oscilloscope
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/x42/sisco.lv2
 
 Vendor:       Audinux

@@ -17,7 +17,7 @@ Name:    rack-v2-TMT
 Version: 2.0.0
 Release: 2%{?dist}
 Summary: TMT plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Jadael/TMT
 
 Vendor:       Audinux

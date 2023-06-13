@@ -7,7 +7,7 @@ Name:    mod-neural-amp
 Version: 0.1.%{shortcommit0}
 Release: 1%{?dist}
 Summary: An LV2 plugin based on aidadsp-lv2 that directly contains model files within the plugin.
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/moddevices/mod-neural-amp
 
 Vendor:       Audinux

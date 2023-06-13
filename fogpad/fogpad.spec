@@ -37,7 +37,7 @@ disintegrated.
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPLv3
+License:  GPL-3.0-only
 Requires: %{name}
 
 %description -n vst3-%{name}

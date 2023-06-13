@@ -8,7 +8,7 @@ Version: 0.18.4
 Release: 1%{?dist}
 Summary: A custom sample mashing app designed by Aphex Twin
 URL:     https://gitlab.com/then-try-this/samplebrain
-License: GPLv2+
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

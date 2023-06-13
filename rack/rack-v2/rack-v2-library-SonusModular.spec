@@ -17,7 +17,7 @@ Name:    rack-v2-SonusModular
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: SonusModular plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://gitlab.com/sonusdept/sonusmodular
 
 Vendor:       Audinux
