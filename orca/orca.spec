@@ -9,19 +9,19 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    orca
+Name:    orca-lang
 Version: 0.1.0.%{shortcommit0}
-Release: 3%{?dist}
-Summary: An esoteric programming language
-License: GPLv2+
+Release: 4%{?dist}
+Summary: Esoteric programming language and live editor
+License: MIT
 URL:     https://git.sr.ht/~rabbits/orca
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/hundredrabbits/Orca-c/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: https://github.com/hundredrabbits/Orca-c/archive/%{commit0}.tar.gz#/orca-%{shortcommit0}.tar.gz
 # From https://github.com/hundredrabbits/Orca
-Source1: https://github.com/hundredrabbits/Orca/archive/master.zip#/%{name}-doc.zip
+Source1: https://github.com/hundredrabbits/Orca/archive/master.zip#/orca-doc.zip
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -31,10 +31,17 @@ BuildRequires: portmidi-devel
 BuildRequires: unzip
 
 %description
-Orca is an esoteric programming language, designed to create procedural sequencers in which each letter of the alphabet is an operation,
-where lowercase letters operate on bang, uppercase letters operate each frame.
-The application is not a synthesiser, but a flexible livecoding environment capable of sending MIDI,
-OSC & UDP to your audio interface, like Ableton, Renoise, VCV Rack or SuperCollider. 
+Orca is an esoteric programming language and live editor designed to quickly
+create procedural sequencers. Every letter of the alphabet is an operation,
+lowercase letters execute on *bang*, and uppercase letters execute each frame.
+
+This is the C implementation of the ORCA language and terminal livecoding
+environment. It's designed to be power efficient. It can handle large files,
+even if your terminal is small.
+
+Orca is not a synthesizer, but a flexible livecoding environment capable of
+sending MIDI, OSC, and UDP to your audio/visual interfaces like Ableton,
+Renoise, VCV Rack, or SuperCollider.
 
 %prep
 %autosetup -n Orca-c-%{commit0}
@@ -55,9 +62,9 @@ export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
 %install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
-install -m 755 build/orca %{buildroot}%{_bindir}/
+install -m 755 build/orca %{buildroot}%{_bindir}/%{name}
 install -m 755 -d %{buildroot}/%{_datadir}/%{name}/
-cp -r examples  %{buildroot}/%{_datadir}/%{name}/examples
+cp -r examples %{buildroot}/%{_datadir}/%{name}/examples
 cp -r Orca-main/resources %{buildroot}/%{_datadir}/%{name}/documentation
 
 %files
@@ -67,6 +74,9 @@ cp -r Orca-main/resources %{buildroot}/%{_datadir}/%{name}/documentation
 %{_datadir}/%{name}/
 
 %changelog
+* Tue Jun 13 2023 Justin Koh <j@ustink.org> - 0.1.0.d027a414-4
+- Rename package to orca-lang
+
 * Sun Oct 09 2022 Yann Collette <ycollette.nospam@free.fr> - 0.1.0.d027a414-3
 - update to d027a414d5ff257b52c613284673933077a53cfa
 
