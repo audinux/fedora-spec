@@ -1,14 +1,14 @@
-Name:    spectacle
+Name:    spectacle-analyzer
 Version: 2.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Realtime graphical spectrum analyzer
 URL:     https://github.com/jpcima/spectacle
-License: GPL
+License: ISC
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/jpcima/spectacle/releases/download/v2.0/spectacle-analyzer-v%{version}.tar.gz
+Source0: https://github.com/jpcima/spectacle/releases/download/v2.0/%{name}-v%{version}.tar.gz
 Source1: spectacle.png
 
 BuildRequires: gcc gcc-c++
@@ -34,10 +34,10 @@ transform, available as VST / LV2 audio plugin and JACK client.
 - have zoom functionality and smooth interpolation
 - identify the value under cursor and the peaks
 
-%package -n vst-spectacle
+%package -n vst-%{name}
 Summary: VST Realtime graphical spectrum analyzer
 
-%description -n vst-spectacle
+%description -n vst-%{name}
 Spectacle is a real-time spectral analyzer using the short-time Fourier
 transform.
 
@@ -46,10 +46,10 @@ transform.
 - have zoom functionality and smooth interpolation
 - identify the value under cursor and the peaks
 
-%package -n lv2-spectacle
+%package -n lv2-%{name}
 Summary: LV2 Realtime graphical spectrum analyzer
 
-%description -n lv2-spectacle
+%description -n lv2-%{name}
 Spectacle is a real-time spectral analyzer using the short-time Fourier
 transform.
 
@@ -60,7 +60,7 @@ transform.
 
 %prep
 
-%autosetup -n spectacle-analyzer-v%{version}
+%autosetup -n %{name}-v%{version}
 
 %build
 
@@ -73,40 +73,43 @@ transform.
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/64x64/apps/
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
 
-cp %{SOURCE1} %{buildroot}/%{_datadir}/icons/hicolor/64x64/apps/spectacle.png
+cp %{SOURCE1} %{buildroot}/%{_datadir}/icons/hicolor/64x64/apps/%{name}.png
 
-cat > %{buildroot}/%{_datadir}/applications/spectacle-analyzer.desktop <<EOF
+cat > %{buildroot}/%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
 Version=1.0
 Name=Spectacle Analyzer
 Comment=Realtime graphical spectrum analyzer
-Exec=spectacle-analyzer
-Icon=spectacle
+Exec=%{name}
+Icon=%{name}
 Terminal=false
 Type=Application
 Categories=Audio;AudioVideo;
 EOF
 
-desktop-file-validate %{buildroot}%{_datadir}/applications/spectacle-analyzer.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 desktop-file-install                         \
   --add-category="Audio"                     \
   --delete-original                          \
   --dir=%{buildroot}%{_datadir}/applications \
-  %{buildroot}/%{_datadir}/applications/spectacle-analyzer.desktop
+  %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 %files
 %doc README.md
 %license LICENSE
-%{_bindir}/spectacle-analyzer
+%{_bindir}/%{name}
 %{_datadir}/applications/*
 %{_datadir}/icons/*
 
-%files -n lv2-spectacle
+%files -n lv2-%{name}
 %{_libdir}/lv2/*
-%files -n vst-spectacle
+%files -n vst-%{name}
 %{_libdir}/vst/*
 
 %changelog
+* Wed Jun 14 2023 Justin Koh <j@usitnk.org> - 2.0-2
+- Rename package to spectacle-analyzer
+
 * Thu May 13 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0-1
 - Initial spec file
