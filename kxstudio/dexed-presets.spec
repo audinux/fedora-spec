@@ -26,30 +26,29 @@ A collection of additional preset for Dexed.
 echo "Nothing to build."
 
 %install
-rm -rf $RPM_BUILD_ROOT
 
 # These directories are owned by hydrogen:
-install -dm 0755 $RPM_BUILD_ROOT%{_datadir}/dexed/presets
+install -dm 0755 %{buildroot}%{_datadir}/dexed/presets
 
-7za x %{SOURCE0} -o$RPM_BUILD_ROOT%{_datadir}/dexed/presets/alltheweb
-7za x %{SOURCE1} -o$RPM_BUILD_ROOT%{_datadir}/dexed/presets/cart
-7za x %{SOURCE2} -o$RPM_BUILD_ROOT%{_datadir}/dexed/presets/syntlib
-7za x %{SOURCE3} -o$RPM_BUILD_ROOT%{_datadir}/dexed/presets/
+7za x %{SOURCE0} -o%{buildroot}%{_datadir}/dexed/presets/alltheweb
+7za x %{SOURCE1} -o%{buildroot}%{_datadir}/dexed/presets/cart
+7za x %{SOURCE2} -o%{buildroot}%{_datadir}/dexed/presets/syntlib
+7za x %{SOURCE3} -o%{buildroot}%{_datadir}/dexed/presets/
 
 # Reorganisation
-cd $RPM_BUILD_ROOT%{_datadir}/dexed/presets/alltheweb
+cd %{buildroot}%{_datadir}/dexed/presets/alltheweb
 mv DX7_AllTheWeb/* .
 rmdir DX7_AllTheWeb
 
-cd $RPM_BUILD_ROOT%{_datadir}/dexed/presets/syntlib
+cd %{buildroot}%{_datadir}/dexed/presets/syntlib
 mv SynLib_DX_TX_Marc_Bareille/* .
 rmdir SynLib_DX_TX_Marc_Bareille
 
-cd $RPM_BUILD_ROOT%{_datadir}/dexed/presets/dx7patch
+cd %{buildroot}%{_datadir}/dexed/presets/dx7patch
 mv README README-dx7patch
 
 # Change file / dir properties
-cd $RPM_BUILD_ROOT%{_datadir}/dexed/presets/
+cd %{buildroot}%{_datadir}/dexed/presets/
 find . -name "*.syx" -exec chmod a+rw {} \;
 find . -type d -exec chmod u+rwx,g+rx-w,o+rx-w {} \;
 
