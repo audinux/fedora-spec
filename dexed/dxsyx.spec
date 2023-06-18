@@ -45,10 +45,11 @@ install -m 755 -d %{buildroot}/%{_datadir}/%{name}/doc/
 
 install -m 755 bin/dxsyx %{buildroot}/%{_bindir}/
 install -m 755 doc/* %{buildroot}/%{_datadir}/%{name}/doc/
+
 %files
 %doc README.md
 %license LICENSE.txt
-%{_bindir}*
+%{_bindir}/*
 %{_datadir}/%{name}/doc/*
 
 %changelog
