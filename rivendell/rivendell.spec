@@ -1,6 +1,6 @@
 Summary: A radio automation system
 Name:    rivendell
-Version: 3.6.6
+Version: 4.0.1
 Release: 1%{?dist}
 License: LGPL
 URL:     https://github.com/ElvishArtisan/rivendell
@@ -9,12 +9,12 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/ElvishArtisan/rivendell/archive/refs/tags/v%{version}.tar.gz#/rivendell-%{version}.tar.gz
-Patch0: rivendell-0001-use-nullptr.patch
-Patch1: rivendell-0001-use-nullptr-2.patch
-Patch2: rivendell-0001-use-nullptr-3.patch
 
 BuildRequires: gcc gcc-c++
-BuildRequires: alsa-lib-devel jack-audio-connection-kit-devel
+BuildRequires: autoconf automake libtool
+BuildRequires: python3
+BuildRequires: alsa-lib-devel
+BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: cdparanoia-devel
 BuildRequires: id3lib-devel
 BuildRequires: taglib-devel
@@ -24,9 +24,6 @@ BuildRequires: gtk-update-icon-cache
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt-devel
 BuildRequires: docbook-style-xsl
-BuildRequires: autoconf automake libtool
-BuildRequires: python3
-BuildRequires: sed
 BuildRequires: openssl-devel
 BuildRequires: libcurl-devel
 BuildRequires: expat-devel
@@ -41,9 +38,16 @@ BuildRequires: libdiscid-devel
 BuildRequires: libcoverart-devel
 BuildRequires: libmp4v2-devel
 BuildRequires: twolame-devel
+BuildRequires: ImageMagick-devel
+BuildRequires: ImageMagick-c++-devel
 
-Requires: madplay, autofs
-Requires: python3, python3-pycurl, python3-requests, python3-pyserial, python3-mysql
+Requires: madplay
+Requires: autofs
+Requires: python3
+Requires: python3-pycurl
+Requires: python3-requests
+Requires: python3-pyserial
+Requires: python3-mysql
 
 %description
 Rivendell is a complete radio broadcast automation solution, with
@@ -52,9 +56,9 @@ audio content.  Modules for the production and management of podcast
 audio are also included.
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -n %{name}-%{version}
 
-sed -i -e "s/instdir = @LOCAL_PREFIX@\/lib/instdir = @LOCAL_PREFIX@\/%{_lib}/g" lib/Makefile.am
+sed -i -e "s/Magick++-6.Q16/ImageMagick-7.Q16HDRI/g" configure.ac
 
 %build
 
@@ -62,18 +66,7 @@ sed -i -e "s/instdir = @LOCAL_PREFIX@\/lib/instdir = @LOCAL_PREFIX@\/%{_lib}/g" 
 
 # -Werror=format-security
 
-CFLAGS='-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection'
-export CFLAGS
-CXXFLAGS='-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection'
-export CXXFLAGS
-FFLAGS='-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -I/usr/lib64/gfortran/modules'
-export FFLAGS
-FCFLAGS='-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -I/usr/lib64/gfortran/modules'
-export FCFLAGS
-LDFLAGS='-Wl,-z,relro  -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld'
-export LDFLAGS
-
-%configure --prefix=%{_prefix} --libdir=%{_libdir} --disable-docbook
+%configure --disable-docbook
 %make_build
 
 %install
@@ -158,6 +151,9 @@ exit 0
 %{_unitdir}/*
 
 %changelog
+* Sun Jun 18 2023 Yann Collette <ycollette.nospam@free.fr> - 4.0.1-1
+- update to 4.0.1-1
+
 * Mon Oct 03 2022 Yann Collette <ycollette.nospam@free.fr> - 3.6.6-1
 - update to 3.6.6-1
 
