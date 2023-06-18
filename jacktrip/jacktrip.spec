@@ -4,7 +4,7 @@
 
 Summary: Multimachine jam sessions over the internet
 Name:    jacktrip
-Version: 1.9.0
+Version: 1.10.0
 Release: 2%{?dist}
 License: STK
 URL:     https://ccrma.stanford.edu/software/jacktrip/
@@ -12,7 +12,11 @@ URL:     https://ccrma.stanford.edu/software/jacktrip/
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
-Source0: https://github.com/jacktrip/jacktrip/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+# Usage: ./source-jacktrip.sh <tag>
+#        ./source-jacktrip.sh v1.10.0
+
+Source0: jacktrip.tar.gz
+Source1: source-jacktrip.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: meson
@@ -43,7 +47,7 @@ It is currently being developed and actively tested at CCRMA by the
 SoundWIRE group.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n %{name}
 
 %build
 
@@ -74,6 +78,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/org.jackt
 %{_mandir}/man1/*
 
 %changelog
+* Sat Jun 17 2023 Yann Collette <ycollette.nospam@free.fr> - 1.10.0-2
+- update to 1.10.0-2
+
 * Sat May 13 2023 Yann Collette <ycollette.nospam@free.fr> - 1.9.0-2
 - update to 1.9.0-2
 
