@@ -447,9 +447,11 @@ cp -rav * %{buildroot}/%{_libdir}/lv2/
 
 %files -n dexed_lv2-Aminet
 %{_libdir}/lv2/dexed_lv2-Aminet.lv2/*
+%{_libdir}/lv2/dexed_lv2-Aminet.lv2/.*
 
 %files -n dexed_lv2-BigMamma
 %{_libdir}/lv2/dexed_lv2-BigMamma.lv2/*
+%{_libdir}/lv2/dexed_lv2-BigMamma.lv2/.*
 
 %files -n dexed_lv2-BobbyBluesHimself
 %{_libdir}/lv2/dexed_lv2-BobbyBluesHimself.lv2/*
@@ -471,12 +473,14 @@ cp -rav * %{buildroot}/%{_libdir}/lv2/
 
 %files -n dexed_lv2-DX7_AllTheWeb
 %{_libdir}/lv2/dexed_lv2-DX7_AllTheWeb.lv2/*
+%{_libdir}/lv2/dexed_lv2-DX7_AllTheWeb.lv2/.*
 
 %files -n dexed_lv2-DX7-OC
 %{_libdir}/lv2/dexed_lv2-DX7-OC.lv2/*
 
 %files -n dexed_lv2-dx7patch
 %{_libdir}/lv2/dexed_lv2-dx7patch.lv2/*
+%{_libdir}/lv2/dexed_lv2-dx7patch.lv2/.*
 
 %files -n dexed_lv2-EasySounds
 %{_libdir}/lv2/dexed_lv2-EasySounds.lv2/*
@@ -501,6 +505,7 @@ cp -rav * %{buildroot}/%{_libdir}/lv2/
 
 %files -n dexed_lv2-Instruments
 %{_libdir}/lv2/dexed_lv2-Instruments.lv2/*
+%{_libdir}/lv2/dexed_lv2-Instruments.lv2/.*
 
 %files -n dexed_lv2-IsibashiBiasRom
 %{_libdir}/lv2/dexed_lv2-IsibashiBiasRom.lv2/*
@@ -510,9 +515,11 @@ cp -rav * %{buildroot}/%{_libdir}/lv2/
 
 %files -n dexed_lv2-JeffSaxe
 %{_libdir}/lv2/dexed_lv2-JeffSaxe.lv2/*
+%{_libdir}/lv2/dexed_lv2-JeffSaxe.lv2/.*
 
 %files -n dexed_lv2-Jezreel
 %{_libdir}/lv2/dexed_lv2-Jezreel.lv2/*
+%{_libdir}/lv2/dexed_lv2-Jezreel.lv2/.*
 
 %files -n dexed_lv2-JuanCarlosMagro
 %{_libdir}/lv2/dexed_lv2-JuanCarlosMagro.lv2/*
@@ -528,6 +535,7 @@ cp -rav * %{buildroot}/%{_libdir}/lv2/
 
 %files -n dexed_lv2-LiveMusicHollywoodCollection
 %{_libdir}/lv2/dexed_lv2-LiveMusicHollywoodCollection.lv2/*
+%{_libdir}/lv2/dexed_lv2-LiveMusicHollywoodCollection.lv2/.*
 
 %files -n dexed_lv2-LiveWire
 %{_libdir}/lv2/dexed_lv2-LiveWire.lv2/*
@@ -552,6 +560,7 @@ cp -rav * %{buildroot}/%{_libdir}/lv2/
 
 %files -n dexed_lv2-OriginalYamaha
 %{_libdir}/lv2/dexed_lv2-OriginalYamaha.lv2/*
+%{_libdir}/lv2/dexed_lv2-OriginalYamaha.lv2/.*
 
 %files -n dexed_lv2-Ortega
 %{_libdir}/lv2/dexed_lv2-Ortega.lv2/*
@@ -570,6 +579,7 @@ cp -rav * %{buildroot}/%{_libdir}/lv2/
 
 %files -n dexed_lv2-SoundSations
 %{_libdir}/lv2/dexed_lv2-SoundSations.lv2/*
+%{_libdir}/lv2/dexed_lv2-SoundSations.lv2/.*
 
 %files -n dexed_lv2-SoundSources
 %{_libdir}/lv2/dexed_lv2-SoundSources.lv2/*
@@ -588,15 +598,18 @@ cp -rav * %{buildroot}/%{_libdir}/lv2/
 
 %files -n dexed_lv2-SynLibDXTXMarcBareille
 %{_libdir}/lv2/dexed_lv2-SynLibDXTXMarcBareille.lv2/*
+%{_libdir}/lv2/dexed_lv2-SynLibDXTXMarcBareille.lv2/.*
 
 %files -n dexed_lv2-Syntech
 %{_libdir}/lv2/dexed_lv2-Syntech.lv2/*
 
 %files -n dexed_lv2-TimConrardy
 %{_libdir}/lv2/dexed_lv2-TimConrardy.lv2/*
+%{_libdir}/lv2/dexed_lv2-TimConrardy.lv2/.*
 
 %files -n dexed_lv2-Unsorted
 %{_libdir}/lv2/dexed_lv2-Unsorted.lv2/*
+%{_libdir}/lv2/dexed_lv2-Unsorted.lv2/.*
 
 %changelog
 * Sun Jun 18 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
