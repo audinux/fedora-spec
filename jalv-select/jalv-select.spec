@@ -1,11 +1,11 @@
 # Global variables for github repository
-%global commit0 c8f53207b0feb110d35b2bf5b6fd89dc148f27e7
+%global commit0 29ea666b14e6a1c81190b6b6607fa1b090e20209
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    jalv_select
 Version: 1.3.0.%{shortcommit0}
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: A LV2 Synthesizer launcher for Jack audio
 URL:     https://github.com/brummer10/jalv_select
 License: GPL-2.0-or-later
@@ -15,13 +15,13 @@ Distribution: Audinux
 
 Source0: https://github.com/brummer10/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc gcc-c++ make
 BuildRequires: alsa-lib-devel
-BuildRequires: desktop-file-utils
 BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: gtkmm24-devel
+BuildRequires: gtkmm3.0-devel
 BuildRequires: lv2-devel
 BuildRequires: lilv-devel
+BuildRequires: desktop-file-utils
 
 Requires: jalv jalv-qt jalv-gtk jalv-gtkmm
 
@@ -61,6 +61,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/jalv.select.desktop
 %{_mandir}/man1/jalv.select.*
 
 %changelog
+* Sun Jun 18 2023 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-5
+- update to last master
+
 * Tue Oct 20 2020 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-4
 - fix typo
 
