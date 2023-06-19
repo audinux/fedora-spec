@@ -8,7 +8,7 @@
 
 Name: Carla-mao
 Version: 2.5.5
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Audio plugin host
 Epoch:   1
 License: GPLv2+ and BSD and Boost and ISC and MIT and zlib
@@ -48,7 +48,9 @@ BuildRequires: libappstream-glib
 BuildRequires: desktop-file-utils
 
 Requires: python3-qt5
+Requires: python3-qt5-webkit
 Requires: python3-pyliblo
+Requires: python3-tornado
 Requires: hicolor-icon-theme
 Requires: shared-mime-info
 Requires: wine
@@ -206,6 +208,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 %{_libdir}/pkgconfig/%{pname}-host-plugin.pc
 
 %changelog
+* Sun Jun 18 2023 Yann Collette <ycollette.nospam@free.fr> - 1:2.5.5-3
+- Update to 2.5.5-3 - add missing requires
+
 * Sun Jun 04 2023 Yann Collette <ycollette.nospam@free.fr> - 1:2.5.5-1
 - Update to 2.5.5-1
 
