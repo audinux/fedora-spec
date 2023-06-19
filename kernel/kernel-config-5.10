@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.10.180 Kernel Configuration
+# Linux/x86 5.10.184 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 13.1.1 20230614 (Red Hat 13.1.1-4)"
 CONFIG_CC_IS_GCC=y
@@ -2345,7 +2345,6 @@ CONFIG_BLK_DEV_DRBD=m
 # CONFIG_DRBD_FAULT_INJECTION is not set
 CONFIG_BLK_DEV_NBD=m
 # CONFIG_BLK_DEV_SKD is not set
-# CONFIG_BLK_DEV_SX8 is not set
 CONFIG_BLK_DEV_RAM=m
 CONFIG_BLK_DEV_RAM_COUNT=16
 CONFIG_BLK_DEV_RAM_SIZE=16384
