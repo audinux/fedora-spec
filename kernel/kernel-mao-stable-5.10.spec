@@ -5,7 +5,7 @@
 # Kernel patch version
 %define kpat  180
 # RT patch version
-%define krt   88
+%define krt   89
 # package version
 %define krel  11
 
@@ -203,6 +203,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt-stable%{krt}%{fcver}
 
 %changelog
+* Mon Jun 19 2023 Yann Collette <ycollette.nospam@free.fr> - 5.10.180-rt89-11
+- update to 5.10.180-rt89-11 - vanilla RT kernel
+
 * Wed May 31 2023 Yann Collette <ycollette.nospam@free.fr> - 5.10.180-rt88-11
 - update to 5.10.180-rt88-11 - vanilla RT kernel
 
