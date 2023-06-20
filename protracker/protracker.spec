@@ -4,7 +4,7 @@
 
 Summary: Chiptune tracker for making chiptune-like music on a modern computer.
 Name:    protracker2
-Version: 1.59
+Version: 1.60
 Release: 4%{?dist}
 License: BSD
 URL:     https://16-bits.org/pt.php
@@ -18,6 +18,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: SDL2-devel
+BuildRequires: flac-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -32,7 +33,7 @@ Obsoletes: protracker
 
 %set_build_flags
 
-%cmake -DCMAKE_EXE_LINKER_FLAGS="$LDFLAGS -z muldefs" 
+%cmake -DCMAKE_EXE_LINKER_FLAGS="$LDFLAGS -z muldefs" -DEXTERNAL_LIBFLAC=ON
 %cmake_build
 
 %install
@@ -142,6 +143,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Tue Jun 20 2023 Yann Collette <ycollette.nospam@free.fr> - 1.60.0-4
+- update to 1.60.0-4
+
 * Thu Jun 08 2023 Yann Collette <ycollette.nospam@free.fr> - 1.59.0-4
 - update to 1.59.0-4
 
