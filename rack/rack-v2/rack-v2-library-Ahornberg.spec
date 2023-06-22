@@ -6,18 +6,18 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 72b98b51cb957d5b05380944e8a0c1d3bb27d99f
-%global gittag0 2.1.9
+%global commit0 2d030f5ce12572bf9f6e94639bc66d921478fd69
+%global gittag0 2.1.10
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Ahornberg
-Version: 2.1.9
+Version: 2.1.10
 Release: 2%{?dist}
 Summary: Ahornberg plugin for Rack
-License: GPL-2.0-or-later
+License: GPLv2+
 URL:     https://github.com/Ahornberg/Ahornberg-VCV-Modules
 
 Vendor:       Audinux
@@ -155,5 +155,5 @@ cp -r Ahornberg_plugin/dist/Ahornberg/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.9-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.10-1
 - initial specfile
