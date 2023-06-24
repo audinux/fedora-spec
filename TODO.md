@@ -124,7 +124,6 @@ rack-v2-RPJ  - fatal error: emmintrin.h: No such file or directory
 ```
 Various:
 ```
-vmpc - cstdint -> error: invalid use of incomplete type 'class mpc::engine::audio::server::NonRealTimeAudioServer
 mpk-m2-editor  - Error: The version in the Python package metadata 0.0.0 normalizes to zero.
 improviz - ??
 rack-v2-EH_modules  - ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
