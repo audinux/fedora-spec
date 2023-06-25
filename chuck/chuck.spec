@@ -4,7 +4,7 @@
 
 Name:    chuck
 Summary: Real-time audio synthesis and graphics/multimedia language
-Version: 1.5.0.0
+Version: 1.5.0.3
 Release: 2%{?dist}
 License: GPL
 URL:     https://chuck.cs.princeton.edu/
@@ -12,7 +12,7 @@ URL:     https://chuck.cs.princeton.edu/
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA
 
-Source0: https://chuck.cs.princeton.edu/release/files/chuck-%{version}.tgz
+Source0: https://github.com/ccrma/chuck/archive/refs/tags/chuck-%{version}.tar.gz
 # emacs mode from: http://wiki.cs.princeton.edu/index.php/Recent_chuck-mode.el
 Source1: chuck-mode.el
 
@@ -34,7 +34,7 @@ directly in the program flow.  Other potentially useful features include
 the ability to write/change programs on-the-fly.
 
 %prep
-%autosetup -n chuck-%{version}
+%autosetup -n chuck-chuck-%{version}
 
 %build
 
@@ -79,13 +79,16 @@ mkdir -p %{buildroot}%{_libdir}/xemacs/site-packages/lisp/chuck/
 cp -a %{SOURCE1} %{buildroot}%{_libdir}/xemacs/site-packages/lisp/chuck/chuck.el
 
 %files
-%doc README
-%license COPYING
+%doc README.md
+%license LICENSE
 %{_bindir}/*
 %{_datadir}/emacs/site-lisp/*
 %{_libdir}/xemacs/site-packages/lisp/chuck/*
 
 %changelog
+* Sun Jun 25 2023 Yann Collette <ycollette.nospam@free.fr> - 1.5.0.3-2
+- update to 1.5.0.3-2
+
 * Fri May 19 2023 Yann Collette <ycollette.nospam@free.fr> - 1.5.0.0-2
 - update to 1.5.0.0-2
 
