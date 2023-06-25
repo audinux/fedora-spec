@@ -7,7 +7,7 @@
 
 Summary: Light weight ChucK development environment
 Name:    miniaudicle
-Version: 1.3.5.2
+Version: 1.4.2.0
 Release: 2%{?dist}
 License: LGPL
 URL:     https://audicle.cs.princeton.edu/mini/
@@ -15,18 +15,14 @@ URL:     https://audicle.cs.princeton.edu/mini/
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
-Source0: https://audicle.cs.princeton.edu/mini/release/files/miniAudicle-%{version}%{?beta:-%{?beta}}.tgz
-Patch0:  miniaudicle-0001-fix-nullptr-check.patch
+Source0: miniAudicle.tar.gz
+Source1: source-miniaudicle.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: bison
 BuildRequires: flex
-%if 0%{?fedora} >= 32
-BuildRequires: qt4-devel
-%else
-BuildRequires: qt-devel
-%endif
-BuildRequires: qscintilla-devel
+BuildRequires: qt5-qtbase-devel
+BuildRequires: qscintilla-qt5-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: libsndfile-devel
@@ -40,7 +36,7 @@ environment, or in conjunction with traditional command-line modes of
 'chuck' operation and with other chuck tools.
 
 %prep
-%autosetup -p1 -n miniAudicle-%{version}
+%autosetup -n miniAudicle
 
 cd src
 
@@ -49,7 +45,7 @@ sed -i -e "s|QMAKE_LFLAGS \+=|QMAKE_LFLAGS \+= %{__global_ldflags}|g" miniAudicl
 sed -i -e "s|CFLAGS \+=|CFLAGS \+= -std=c++11 %{optflags}|g" miniAudicle.pro
 
 # write proper lib path in default preferences
-sed -i -e "s|/usr/local/lib/chuck|%{_libdir}/chuck|g" chuck/src/chuck_dl.cpp
+sed -i -e "s|/usr/local/lib/chuck|%{_libdir}/chuck|g" chuck/src/core/chuck_dl.cpp
 
 %build
 
@@ -88,6 +84,9 @@ install -m 755 miniAudicle-pulse %{buildroot}%{_bindir}/miniAudicle-pulse
 %{_bindir}/miniAudicle*
 
 %changelog
+* Sun Jun 25 2023 Yann Collette <ycollette.nospam@free.fr> - 1.4.2.0-2
+- update to 1.4.2.0-2
+
 * Thu Oct 29 2020 Yann Collette <ycollette.nospam@free.fr> - 1.3.5.2-2
 - fix for fedora 33
 
