@@ -32,7 +32,6 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake 
 BuildRequires: git
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel
 BuildRequires: glew-devel
