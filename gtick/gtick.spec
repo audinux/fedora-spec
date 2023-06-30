@@ -1,10 +1,11 @@
 Name: gtick
-Version: 0.5.4
-Release: 11%{?dist}
-License: GPLv3+
+Version: 0.5.5
+Release: 1%{?dist}
+License: GPL-3.0-or-later
 Summary: Metronome application
 URL: http://www.antcom.de/gtick/
 
+# https://git.savannah.gnu.org/cgit/gtick.git/
 Source0: http://www.antcom.de/gtick/download/%{name}-%{version}.tar.gz
 BuildRequires: gcc
 BuildRequires: gtk2-devel
@@ -24,10 +25,10 @@ utilizes GTK+ and OSS (ALSA compatible) or Pulseaudio.
 
 %build
 %configure --with-sndfile
-make %{?_smp_mflags}
+%make_build
 
 %install
-make DESTDIR=%{buildroot} install
+%make_install
 
 desktop-file-edit \
     --set-generic-name="Graphical Metronome" \
@@ -58,6 +59,9 @@ done
 %{_datadir}/icons/hicolor/*/apps/gtick.png
 
 %changelog
+* Fri Jun 30 2023 Justin Koh <j@ustink.org> - 0.5.5-1
+- Update to 0.5.5
+
 * Wed Jan 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.4-11
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
