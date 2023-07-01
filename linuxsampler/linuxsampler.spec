@@ -67,7 +67,7 @@ Linuxsampler plugin for the LV2 plugin standard.
 %endif
 
 %set_build_flags
-export CXXFLAGS="CXXFLAGS -std=c++14"
+export CXXFLAGS="$CXXFLAGS -std=c++14"
 if [ -f Makefile.svn ]; then make -f Makefile.svn; fi
 
 %build
