@@ -13,9 +13,11 @@ Distribution: Audinux
 
 Source0: gRainbow.tar.gz
 Source1: source-grainbow.sh
+Patch0: grainbow-0001-remove-unused-function.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
+BuildRequires: git
 BuildRequires: alsa-lib-devel
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
@@ -29,7 +31,7 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
 BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
-BuildRequires: catch2-devel
+BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -63,7 +65,7 @@ Requires: %{name}
 LV2 version of %{name}
 
 %prep
-%autosetup -n gRainbow
+%autosetup -p1 -n gRainbow
 
 %build
 
@@ -74,12 +76,51 @@ LV2 version of %{name}
 
 %install 
 
-%cmake_install
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 -d %{buildroot}/%{_libdir}/lv2/
+install -m 755 -d %{buildroot}/%{_libdir}/vst3/
+
+cp %{__cmake_builddir}/gRainbow_artefacts/Standalone/gRainbow %{buildroot}/%{_bindir}/
+cp -ra %{__cmake_builddir}/gRainbow_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/gRainbow_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
+
+install -m 755 -d %{buildroot}/%{_datadir}/icons/
+cp Source/Resources/logo.png %{buildroot}/%{_datadir}/icons/gbow.png
+
+# Write desktop files
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+
+cat > %{buildroot}%{_datadir}/applications/grainbow.desktop <<EOF
+[Desktop Entry]
+Categories=AudioVideo;Audio;
+Comment=Granular synthesizer
+Exec=gRainbow
+GenericName=gRainbow
+Icon=gbow
+MimeType=
+Name=gRainbow
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+EOF
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/grainbow.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/grainbow.desktop
 
 %files
 %doc README.md
 %license LICENSE
 %{_bindir}/*
+%{_datadir}/applications/*
+%{_datadir}/icons/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*

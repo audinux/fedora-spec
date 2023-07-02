@@ -1,0 +1,41 @@
+From 32b7109d8119cff4c9289acb426f98f7e1cf8950 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 2 Jul 2023 14:50:36 +0200
+Subject: [PATCH] remove unused function
+
+---
+ Source/Utils/Utils.h | 18 ------------------
+ 1 file changed, 18 deletions(-)
+
+diff --git a/Source/Utils/Utils.h b/Source/Utils/Utils.h
+index 13fb373..9fe5a28 100644
+--- a/Source/Utils/Utils.h
++++ b/Source/Utils/Utils.h
+@@ -106,24 +106,6 @@ typedef struct EnvelopeADSR {
+   }
+ } EnvelopeADSR;
+ 
+-template <typename CompType, typename CompAttachment>
+-class AttachedComponent {
+- public:
+-  AttachedComponent<CompType, CompAttachment>(juce::RangedAudioParameter& param, juce::Component& parent,
+-                                              std::function<void(CompType&)> init = nullptr) {
+-    attachment.reset(new CompAttachment(param, component));
+-    parent.addAndMakeVisible(component);
+-    if (init != nullptr) init(component);
+-    attachment->sendInitialUpdate();
+-  }
+-  CompType component;
+-
+- private:
+-  std::unique_ptr<CompAttachment> attachment;
+-
+-  JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(AttachedComponent)
+-};
+-
+ [[maybe_unused]] static const std::vector<float> getGrainEnvelopeLUT(const float shape, const float tilt) {
+   std::vector<float> lut;
+   /* LUT divided into 3 parts
+-- 
+2.41.0
+
