@@ -868,7 +868,8 @@ git://git.code.sf.net/p/rosegarden/git
 https://github.com/psemiletov/drumrox
 https://github.com/ccrma/chuck
 https://github.com/ccrma/miniAudicle
-https://github.com/bboettcher3/gRainbow"
+https://github.com/bboettcher3/gRainbow
+https://github.com/psemiletov/drumrox-kits"
 
 if [ -f git_tags_new.txt ];
 then
