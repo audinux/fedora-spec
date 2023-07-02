@@ -99,7 +99,6 @@
 | dexed.lv2               | https://github.com/zynthian/zynthian-data (for some presets) |
 |                         | https://github.com/dcoredump/dexed.lv2 (lv2 plugin) |
 |                         | https://github.com/rogerallen/dxsyx (for dxsyx) |
-| gRainbow                | https://github.com/bboettcher3/gRainbow |
 | mtag                    | https://github.com/psemiletov/mtag |
 
 ## Fedora 38 to be fixed

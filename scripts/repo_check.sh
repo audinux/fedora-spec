@@ -867,7 +867,8 @@ https://github.com/fps/fps-plugins.lv2
 git://git.code.sf.net/p/rosegarden/git
 https://github.com/psemiletov/drumrox
 https://github.com/ccrma/chuck
-https://github.com/ccrma/miniAudicle"
+https://github.com/ccrma/miniAudicle
+https://github.com/bboettcher3/gRainbow"
 
 if [ -f git_tags_new.txt ];
 then
