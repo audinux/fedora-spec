@@ -53,7 +53,7 @@ Requires: python3-pyliblo
 Requires: python3-tornado
 Requires: hicolor-icon-theme
 Requires: shared-mime-info
-Requires: wine
+Requires: wine-core
 
 Provides: Carla-mao = %{version}
 
@@ -85,6 +85,8 @@ Features:
 
 Carla is also available as an LV2 plugin for MacOS and Linux, and VST plugin for
 Linux.
+
+This package of Carla includes the wine bridge.
 
 %package devel
 Summary: Header files to access Carla's API
