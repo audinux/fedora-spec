@@ -1,5 +1,5 @@
 Name:    seq66
-Version: 0.99.5
+Version: 0.99.6
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -96,6 +96,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libdir}/*
 
 %changelog
+* Sun Jul 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.99.6-1
+- update 0.99.6-1
+
 * Sat May 20 2023 Yann Collette <ycollette.nospam@free.fr> - 0.99.5-1
 - update 0.99.5-1
 
