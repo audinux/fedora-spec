@@ -42,6 +42,7 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: speexdsp-devel
 BuildRequires: wget
 BuildRequires: desktop-file-utils
+BuildRequires: findutils
 
 Requires(pre): python3-qt5
 
@@ -118,6 +119,8 @@ install -m 644 %{SOURCE1} %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
 
 # Remove empty file
 rm %{buildroot}%{_datadir}/%{name}/surgext/patches/README.md
+# Fix perms
+find %{buildroot}%{_datadir}/%{name} -type f -perm /a+x -exec chmod -x '{}' \+
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
