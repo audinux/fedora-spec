@@ -116,6 +116,9 @@ EOF
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
 install -m 644 %{SOURCE1} %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
 
+# Remove empty file
+rm %{buildroot}%{_datadir}/%{name}/surgext/patches/README.md
+
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
