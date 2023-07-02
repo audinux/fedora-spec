@@ -126,6 +126,11 @@ find %{buildroot}%{_datadir}/%{name} -type f -perm /a+x -exec chmod -x '{}' \+
 sed -i -e 's/\r$//' %{buildroot}%{_datadir}/%{name}/ValleyAudio/res/Topograph.svg
 # Deduplicate files by soft linking
 %fdupes -s %{buildroot}%{_datadir}/%{name}
+# Make sure binaries are executable for stripping by debuginfo
+find %{buildroot}%{_libdir} \
+	\( -name '*.so' -o -name '*.clap' \) \
+	-type f \
+	-exec chmod 0755 '{}' \+
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
