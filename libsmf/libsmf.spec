@@ -1,6 +1,8 @@
+%global realversion 1.3
+
 Summary: LibSMF is a BSD-licensed C library for handling SMF ("*.mid") files
 Name:    libsmf
-Version: 1.3
+Version: 1.4
 Release: 8%{?dist}
 License: BSD
 URL:     https://github.com/stump/%{name}
@@ -8,7 +10,7 @@ URL:     https://github.com/stump/%{name}
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: %{url}/archive/%{name}-%{version}.tar.gz
+Source0: %{url}/archive/%{name}-%{realversion}.tar.gz
 Patch0: libsmf-0001-Fix-buffer-overflow-on-tempo-change-event.patch
 Patch1: libsmf-0002-Fix-validity-checks-of-escaped-data.patch
 Patch2: libsmf-0003-Fix-buffer-overflow-by-reducing-length-of-truncated-.patch
@@ -55,7 +57,7 @@ Summary:  Documentation for %{name}
 The %{name}-doc package contains documentation for %{name}.
 
 %prep
-%autosetup -p1 -n %{name}-%{name}-%{version}
+%autosetup -p1 -n %{name}-%{name}-%{realversion}
 
 %build
 autoreconf --force --install
@@ -92,6 +94,9 @@ rm %{buildroot}/%{_libdir}/libsmf.la
 %{_datadir}/doc/%{name}/api/
 
 %changelog
+* Tue Jul 04 2023 Yann Collette <ycollette dot nospam at free.fr> 1.4-8
+- update to 1.4-8
+
 * Sun Nov 29 2020 Yann Collette <ycollette dot nospam at free.fr> 1.3-8
 - add patches
 
