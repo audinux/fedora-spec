@@ -3,7 +3,7 @@
 # Category: Synthesizer
 
 Name:    drumrox
-Version: 3.1.0
+Version: 3.2.0
 Release: 1%{?dist}
 Summary: A hydrogen compatible drum LV2 plugin
 License: GPL-3.0-or-later
@@ -46,6 +46,9 @@ The main goal of Drumrox is to keep it compatible with MODERN Hydrogen kit forma
 %{_libdir}/lv2/*
 
 %changelog
+* Tue Jul 04 2023 Yann Collette <ycollette.nospam@free.fr> - 3.2.0-1
+- update to 3.2.0-1
+
 * Thu Jun 29 2023 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-1
 - update to 2.3.1-1
 
