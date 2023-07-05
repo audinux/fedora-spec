@@ -2,30 +2,29 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
-Name:          milkytracker
-Version:       1.03.00
-Release:       2%{?dist}
-Summary:       Module tracker software for creating music
-License:       GPL-3.0-or-later
-URL:           https://github.com/milkytracker/MilkyTracker
+Name: milkytracker
+Version: 1.04.00
+Release: 2%{?dist}
+Summary: Module tracker software for creating music
+License: GPL-3.0-or-later
+URL: https://github.com/milkytracker/MilkyTracker
 
-Vendor:       Audinux
+Vendor: Audinux
 Distribution: Audinux
 
-Source0:       https://github.com/milkytracker/MilkyTracker/archive/v%{version}.tar.gz#/MilkyTracker-%{version}.tar.gz
-Source1:       %{name}.desktop
+Source0: https://github.com/milkytracker/MilkyTracker/archive/v%{version}.tar.gz#/MilkyTracker-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: SDL2-devel
 BuildRequires: SDL2-static
-BuildRequires: desktop-file-utils
 BuildRequires: rtmidi-devel
+BuildRequires: rtaudio-devel
 BuildRequires: zlib-devel
+BuildRequires: zziplib-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: cmake
-
-Provides:      bundled(zziplib) = 0.13.47
+BuildRequires: desktop-file-utils
 
 %description
 MilkyTracker is an application for creating music in the .MOD and .XM formats.
@@ -36,7 +35,7 @@ Its goal is to be free replacement for the popular Fasttracker II software.
 
 %build
 
-%cmake -DCMAKE_BUILD_TYPE=RELEASE
+%cmake
 
 %cmake_build
 
@@ -49,21 +48,30 @@ mkdir -p %{buildroot}%{_datadir}/pixmaps
 cp -p resources/pictures/carton.png %{buildroot}%{_datadir}/pixmaps/milkytracker.png
 
 # copy the desktop file
+mkdir -p %{buildroot}%{_datadir}/applications
+cp resources/milkytracker.desktop %{buildroot}%{_datadir}/applications/
+
 desktop-file-install \
-  --dir=%{buildroot}%{_datadir}/applications/ %{SOURCE1}
+    --dir=%{buildroot}%{_datadir}/applications \
+    %{buildroot}%{_datadir}/applications/milkytracker.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/milkytracker.desktop
 
 %files
-%defattr(-,root,root,-)
 %doc AUTHORS NEWS README.md ChangeLog.md
 %license COPYING
 %{_bindir}/milkytracker
 %{_datadir}/applications/*
 %{_datadir}/pixmaps/milkytracker.png
-%{_datadir}/milkytracker/
+%dir %{_datadir}/milkytracker/
 %{_datadir}/milkytracker/songs/*
 %{_datadir}/doc/MilkyTracker/
 
 %changelog
+* Wed Jul 05 2023 Yann Collette <ycollette dot nospam at free dot fr> 1.04.00-2
+- Update to 1.04.00-2
+
 * Thu Dec 10 2020 Yann Collette <ycollette dot nospam at free dot fr> 1.03.00-2
 - Update to 1.03.00-2
 
