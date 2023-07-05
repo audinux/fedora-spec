@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 4dc1722aad609f704ad9e86d44d29e5858db4151
-%global gittag0 2.5.1
+%global commit0 bf3ea150ffa2f3a753ef60bc27a4d7db8707561b
+%global gittag0 2.5.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SeasideModular
-Version: 2.5.1
+Version: 2.5.2
 Release: 2%{?dist}
 Summary: SeasideModular plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r SeasideModular_plugin/dist/SeasideModular/* %{buildroot}%{_libexecdir}/Rac
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.2-1
 - initial specfile
