@@ -99,6 +99,7 @@
 | dexed.lv2               | https://github.com/zynthian/zynthian-data (for some presets) |
 |                         | https://github.com/dcoredump/dexed.lv2 (lv2 plugin) |
 | mtag                    | https://github.com/psemiletov/mtag |
+| midi-chord-reader       | https://github.com/markwilkins/midi-chord-reader |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
