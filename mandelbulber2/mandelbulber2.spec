@@ -70,10 +70,20 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %license COPYING
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/%{name}/
-%{_datadir}/doc/%{name}/
 %{_datadir}/doc/%{name}/Mandelbulber_Manual.pdf
 %{_datadir}/pixmaps/mandelbulber.png
+%dir %{_datadir}/%{name}/
+%{_datadir}/%{name}/data/*
+%{_datadir}/%{name}/examples/*
+%{_datadir}/%{name}/formula/*
+%{_datadir}/%{name}/icons/*
+%{_datadir}/%{name}/language/*
+%{_datadir}/%{name}/materials/*
+%{_datadir}/%{name}/opencl/*
+%{_datadir}/%{name}/scripts/*
+%{_datadir}/%{name}/sounds/*
+%{_datadir}/%{name}/textures/*
+%{_datadir}/%{name}/toolbar/*
 
 %changelog
 * Mon Jul 10 2023 Yann Collette <ycollette.nospam@free.fr> - 2.30-1
