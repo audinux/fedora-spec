@@ -21,13 +21,13 @@
 # Workaround boo#1189991
 %define _lto_cflags %{nil}
 
-%define rname   mscore
+%define rname          mscore
 %define version_lesser 4.0
-%define revision 5485621
-%define fontdir %{_datadir}/fonts/%{name}
-%define docdir  %{_docdir}/%{name}
+%define revision       5485621
+%define fontdir        %{_datadir}/fonts/%{name}
+%define docdir         %{_docdir}/%{name}
 
-Name: mscore
+Name: mscore-mao
 Version: 4.0.2
 Release: 1%{?dist}
 Summary: A WYSIWYG music score typesetter
@@ -74,7 +74,6 @@ Patch3: fix-for-latest-qt-declarative.patch
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
-BuildRequires: fdupes
 BuildRequires: chrpath
 BuildRequires: qt5-linguist
 BuildRequires: qt5-qtbase-devel
@@ -155,11 +154,6 @@ sed -i 's/\(target_link_libraries(mscore ${LINK_LIB}\)/\1 ${CMAKE_DL_LIBS}/' src
 
 %build
 
-# Limit memory / threads on PowerPC to avoid memory issues
-%ifarch ppc64 ppc64le
-%limit_build -m 2000
-%endif
-
 %define __builddir build.release
 # TODO:
 # find out what those do:
@@ -189,15 +183,15 @@ rm -r %{buildroot}%{_libdir}/cmake/KDDockWidgets
 
 # install fonts
 mkdir -p %{buildroot}%{fontdir}
-install -p -m 644 fonts/*.ttf %{buildroot}/%{fontdir}
-install -p -m 644 fonts/*/*.ttf %{buildroot}/%{fontdir}
-install -p -m 644 fonts/bravura/BravuraText.otf %{buildroot}/%{fontdir}
-install -p -m 644 fonts/campania/Campania.otf %{buildroot}/%{fontdir}
-install -p -m 644 fonts/edwin/*.otf %{buildroot}/%{fontdir}
+install -p -m 644 fonts/*.ttf                       %{buildroot}/%{fontdir}
+install -p -m 644 fonts/*/*.ttf                     %{buildroot}/%{fontdir}
+install -p -m 644 fonts/bravura/BravuraText.otf     %{buildroot}/%{fontdir}
+install -p -m 644 fonts/campania/Campania.otf       %{buildroot}/%{fontdir}
+install -p -m 644 fonts/edwin/*.otf                 %{buildroot}/%{fontdir}
 install -p -m 644 fonts/gootville/GootvilleText.otf %{buildroot}/%{fontdir}
-install -p -m 644 fonts/leland/LelandText.otf %{buildroot}/%{fontdir}
-install -p -m 644 fonts/musejazz/MuseJazzText.otf %{buildroot}/%{fontdir}
-install -p -m 644 fonts/petaluma/PetalumaText.otf %{buildroot}/%{fontdir}
+install -p -m 644 fonts/leland/LelandText.otf       %{buildroot}/%{fontdir}
+install -p -m 644 fonts/musejazz/MuseJazzText.otf   %{buildroot}/%{fontdir}
+install -p -m 644 fonts/petaluma/PetalumaText.otf   %{buildroot}/%{fontdir}
 
 # unique names for font docs
 mv fonts/edwin/README.md    fonts/edwin/README.md.edwin
