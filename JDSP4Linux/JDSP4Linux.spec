@@ -3,7 +3,7 @@
 # Category: Effect
 
 Name: jamesdsp
-Version: 2.5
+Version: 2.6
 Release: 2%{?dist}
 Summary: An audio effect processor for PipeWire clients
 License: GPL-3.0-only
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./JDSP4Linux-source.sh <tag>
-# ./JDSP4Linux-source.sh jamesdsp-2.5-1
+# ./JDSP4Linux-source.sh jamesdsp-2.6-1
 
 Source0: JDSP4Linux.tar.gz
 Source1: JDSP4Linux-source.sh
@@ -21,9 +21,9 @@ Source1: JDSP4Linux-source.sh
 BuildRequires: gcc-c++
 BuildRequires: make
 BuildRequires: libarchive-devel
-BuildRequires: (qt5-qtbase-devel >= 5.12.8 or libqt5-qtbase-devel >= 5.12.8)
-BuildRequires: (qt5-qtbase-private-devel or libqt5-qtbase-private-headers-devel)
-BuildRequires: (qt5-qtsvg-devel >= 5.12.8 or libqt5-qtsvg-devel >= 5.12.8)
+BuildRequires: qt5-qtbase-devel
+BuildRequires: qt5-qtbase-private-devel
+BuildRequires: qt5-qtsvg-devel
 BuildRequires: glibmm24-devel
 BuildRequires: glib2-devel
 BuildRequires: pipewire-devel
@@ -67,13 +67,16 @@ install -D -m 755 meta/jamesdsp.desktop %{buildroot}/%{_datadir}/applications/ja
 %{_datadir}/applications/jamesdsp.desktop
 
 %changelog
+* Thu Jul 13 2023 Yann Collette <ycollette.nospam@free.fr> - 2.6-2
+- update to 2.6-2
+
 * Sat Jun 17 2023 Yann Collette <ycollette.nospam@free.fr> - 2.5-2
 - update to 2.5-2
 
 * Mon Apr 17 2023 Yann Collette <ycollette.nospam@free.fr> - 2.4-2
 - update to 2.4-2
 
-* Mon OCt 24 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3-2
+* Mon Oct 24 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3-2
 - update to 2.3-2
 
 * Fri Dec 31 2021 Andrew Robbins <andrew@robbinsa.me> - 2.3-1
