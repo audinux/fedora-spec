@@ -1,0 +1,39 @@
+diff -up SimpleSysexxer-0.3/SimpleSysexxer.pro.orig SimpleSysexxer-0.3/SimpleSysexxer.pro
+--- SimpleSysexxer-0.3/SimpleSysexxer.pro.orig	2009-11-23 00:06:20.000000000 +0100
++++ SimpleSysexxer-0.3/SimpleSysexxer.pro	2019-11-02 17:38:55.474976701 +0100
+@@ -1,12 +1,13 @@
+ TEMPLATE = app
+ TARGET = simplesysexxer
+-target path = /usr/local/bin
+ DEFINES += __LINUX_ALSASEQ__
+ RESOURCES += binincludes/binincludes.qrc
+ LIBS += -lasound
+ QMAKE_CXXFLAGS = -O0 -g3
+ # QT += sql
+ 
++QT += widgets
++
+ # Uncomment this to get a non-debug binary
+ CONFIG += qt release
+ 
+@@ -25,7 +26,7 @@ TRANSLATIONS += binincludes/translations
+ # translation.files = :/binincludes/translations/*.qm
+ 
+ # See http://www.sigvdr.de/mediawiki/index.php?title=Vom_QT4-Programm_zum_Debian_Paket
+-target.path = /usr/local/bin
++target.path = /usr/bin
+ target.files += bin/simplesysexxer
+ desktop.path +=  /usr/share/applications
+ desktop.files += bin/simplesysexxer.desktop
+diff -up SimpleSysexxer-0.3/src/MyMainWindow.h.orig SimpleSysexxer-0.3/src/MyMainWindow.h
+--- SimpleSysexxer-0.3/src/MyMainWindow.h.orig	2009-11-23 00:06:20.000000000 +0100
++++ SimpleSysexxer-0.3/src/MyMainWindow.h	2019-11-02 18:57:59.694371348 +0100
+@@ -26,7 +26,7 @@
+ #include <alsa/asoundlib.h> 
+ 
+ #include <QSettings>
+-#include <QtGui>
++#include <QtWidgets>
+ 
+ #include "ui_MainWindow.h"
+ #include "MidiIn.h"
