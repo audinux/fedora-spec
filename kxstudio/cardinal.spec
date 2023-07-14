@@ -121,6 +121,8 @@ install -m 644 %{SOURCE1} %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
 rm %{buildroot}%{_datadir}/%{name}/surgext/patches/README.md
 # Fix perms
 find %{buildroot}%{_datadir}/%{name} -type f -perm /a+x -exec chmod -x '{}' \+
+# Fix line endings
+sed -i -e 's/\r$//' %{buildroot}%{_datadir}/%{name}/ValleyAudio/res/Topograph.svg
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
