@@ -46,6 +46,7 @@ BuildRequires: findutils
 BuildRequires: fdupes
 
 Requires(pre): python3-qt5
+Requires:      %{name}-common = %{version}-%{release}
 
 %description
 Cardinal, the Rack!
@@ -56,26 +57,37 @@ for FreeBSD, Linux, macOS and Windows.
 It is based on the popular VCV Rack but with a focus on being a fully
 self-contained plugin version.
 
+%package common
+Summary:   Common files for Cardinal
+BuildArch: noarch
+
+%description common
+Common data files for Cardinal standalone and plugin versions.
+
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
+Requires: %{name}-common = %{version}-%{release}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
+Requires: %{name}-common = %{version}-%{release}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
+Requires: %{name}-common = %{version}-%{release}
 
 %description -n vst-%{name}
 VST2 version of %{name}
 
 %package -n clap-%{name}
 Summary:  CLAP version of %{name}
+Requires: %{name}-common = %{version}-%{release}
 
 %description -n clap-%{name}
 CLAP version of %{name}
@@ -132,12 +144,14 @@ find %{buildroot}%{_libdir} \
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%license LICENSE
 %{_bindir}/*
-%{_datadir}/%{name}/
-%{_datadir}/doc/%{name}/
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/scalable/apps/*
+
+%files common
+%license LICENSE
+%{_datadir}/%{name}/
+%{_datadir}/doc/%{name}/
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
