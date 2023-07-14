@@ -4,7 +4,7 @@ Name:    cardinal
 Version: 23.02
 Release: 2%{?dist}
 Summary: Virtual modular synthesizer plugin
-License: GPL-2.0-or-later
+License: GPL-3.0-or-later
 URL:     https://github.com/DISTRHO/Cardinal
 
 Vendor:       Audinux
@@ -42,8 +42,11 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: speexdsp-devel
 BuildRequires: wget
 BuildRequires: desktop-file-utils
+BuildRequires: findutils
+BuildRequires: fdupes
 
 Requires(pre): python3-qt5
+Requires:      %{name}-common = %{version}-%{release}
 
 %description
 Cardinal, the Rack!
@@ -54,30 +57,37 @@ for FreeBSD, Linux, macOS and Windows.
 It is based on the popular VCV Rack but with a focus on being a fully
 self-contained plugin version.
 
+%package common
+Summary:   Common files for Cardinal
+BuildArch: noarch
+
+%description common
+Common data files for Cardinal standalone and plugin versions.
+
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
+Requires: %{name}-common = %{version}-%{release}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
+Requires: %{name}-common = %{version}-%{release}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
-License:  GPL-2.0-or-later
+Requires: %{name}-common = %{version}-%{release}
 
 %description -n vst-%{name}
 VST2 version of %{name}
 
 %package -n clap-%{name}
 Summary:  CLAP version of %{name}
-License:  GPL-2.0-or-later
+Requires: %{name}-common = %{version}-%{release}
 
 %description -n clap-%{name}
 CLAP version of %{name}
@@ -116,16 +126,32 @@ EOF
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
 install -m 644 %{SOURCE1} %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
 
+# Remove empty file
+rm %{buildroot}%{_datadir}/%{name}/surgext/patches/README.md
+# Fix perms
+find %{buildroot}%{_datadir}/%{name} -type f -perm /a+x -exec chmod -x '{}' \+
+# Fix line endings
+sed -i -e 's/\r$//' %{buildroot}%{_datadir}/%{name}/ValleyAudio/res/Topograph.svg
+# Deduplicate files by soft linking
+%fdupes -s %{buildroot}%{_datadir}/%{name}
+# Make sure binaries are executable for stripping by debuginfo
+find %{buildroot}%{_libdir} \
+	\( -name '*.so' -o -name '*.clap' \) \
+	-type f \
+	-exec chmod 0755 '{}' \+
+
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%license LICENSE
 %{_bindir}/*
-%{_datadir}/%{name}/
-%{_datadir}/doc/%{name}/
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/scalable/apps/*
+
+%files common
+%license LICENSE
+%{_datadir}/%{name}/
+%{_datadir}/doc/%{name}/
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
