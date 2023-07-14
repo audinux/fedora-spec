@@ -4,7 +4,7 @@ Name:    cardinal
 Version: 23.02
 Release: 2%{?dist}
 Summary: Virtual modular synthesizer plugin
-License: GPL-2.0-or-later
+License: GPL-3.0-or-later
 URL:     https://github.com/DISTRHO/Cardinal
 
 Vendor:       Audinux
@@ -58,28 +58,24 @@ self-contained plugin version.
 
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
 
 %description -n lv2-%{name}
 LV2 version of %{name}
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
-License:  GPL-2.0-or-later
 
 %description -n vst-%{name}
 VST2 version of %{name}
 
 %package -n clap-%{name}
 Summary:  CLAP version of %{name}
-License:  GPL-2.0-or-later
 
 %description -n clap-%{name}
 CLAP version of %{name}
