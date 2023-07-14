@@ -1,0 +1,55 @@
+From 0fa46f39e80efa3983bed0e08e2891c8671b0654 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Fri, 14 Jul 2023 13:56:20 +0200
+Subject: [PATCH] adjust path
+
+---
+ src/Prototracker.cpp | 10 +++++-----
+ src/Theme.cpp        |  2 +-
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/src/Prototracker.cpp b/src/Prototracker.cpp
+index fa78168..1828703 100644
+--- a/src/Prototracker.cpp
++++ b/src/Prototracker.cpp
+@@ -74,7 +74,7 @@ bool Prototracker::initRenderer()
+ {
+ 	Theme theme;
+ 
+-	if (!theme.load("assets/elements"))
++	if (!theme.load("/usr/share/prototracker-modular/assets/elements"))
+ 	{
+ 		return false;
+ 	}
+@@ -101,11 +101,11 @@ void Prototracker::initEditor()
+ {
+     // Emscripten needs an absolute path to filesystem root
+ #ifdef __EMSCRIPTEN__
+-	const char *gamepadPath = "/assets/gamecontrollerdb.txt";
+-	const char *songPath = "/assets/dub.song";
++	const char *gamepadPath = "/usr/share/prototracker-modular/assets/gamecontrollerdb.txt";
++	const char *songPath = "/usr/share/prototracker-modular/assets/dub.song";
+ #else
+-	const char *gamepadPath = "assets/gamecontrollerdb.txt";
+-	const char *songPath = "assets/dub.song";
++	const char *gamepadPath = "/usr/share/prototracker-modular/assets/gamecontrollerdb.txt";
++	const char *songPath = "/usr/share/prototracker-modular/assets/dub.song";
+ #endif
+ 
+ 	mGamepad->loadDefinitions(gamepadPath);
+diff --git a/src/Theme.cpp b/src/Theme.cpp
+index 4652607..8b908dc 100644
+--- a/src/Theme.cpp
++++ b/src/Theme.cpp
+@@ -12,7 +12,7 @@ Theme::Theme()
+ 	mFontHeight = 8;
+ 	mWidth = 480;
+ 	mHeight = 360;
+-	mBasePath = "assets/";
++	mBasePath = "/usr/share/prototracker-modular/assets/";
+ 	mBackgroundPath = mBasePath+"gui.png";
+ 	mFontPath = mBasePath+"font.png";
+ }
+-- 
+2.41.0
+

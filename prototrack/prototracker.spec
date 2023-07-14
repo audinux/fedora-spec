@@ -14,6 +14,7 @@ Distribution: Audinux
 
 Source0: https://github.com/kometbomb/prototracker-modular/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: prototracker.png
+Patch0: prototracker-0001-move-assets-to-system-dir.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -33,7 +34,7 @@ inputs/outputs (right click cancels). Drag to move modules.
 See MODULES.md for basic info about modules.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{version}
 
 sed -i -e "s|-static-libstdc++ -static-libgcc||g" Makefile.linux
 # Add Fedora flags
