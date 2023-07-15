@@ -424,7 +424,6 @@ https://github.com/loudnumbers/loudnumbers_vcv
 https://github.com/LouisGorenfeld/DigitsVst
 https://github.com/LuaAV/LuaAV
 https://github.com/lucianodato/noise-repellent
-https://github.com/luckyxxl/vcv_luckyxxl
 https://github.com/lv2/lv2
 https://github.com/lvtk/lvtk
 https://github.com/Lyqst/cvly-modules
