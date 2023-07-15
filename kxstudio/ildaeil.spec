@@ -1,5 +1,5 @@
 Name:    Ildaeil
-Version: 1.2
+Version: 1.3
 Release: 1%{?dist}
 Summary: mini-plugin host as plugin
 License: GPL-2.0-or-later
@@ -9,7 +9,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./Ildaeil-source.sh <tag>
-#        ./Ildaeil-source.sh v1.2
+#        ./Ildaeil-source.sh v1.3
 
 Source0: Ildaeil.tar.gz
 Source1: Ildaeil-source.sh
@@ -88,12 +88,6 @@ VST2 version of %{name}
 
 mv %{buildroot}/usr/lib %{buildroot}/%{_libdir}/
 
-install -m 755 -d %{buildroot}/%{_bindir}/
-
-cp bin/Ildaeil-FX    %{buildroot}/%{_bindir}/
-cp bin/Ildaeil-MIDI  %{buildroot}/%{_bindir}/
-cp bin/Ildaeil-Synth %{buildroot}/%{_bindir}/
-
 %files
 %doc README.md
 %license LICENSE
@@ -112,5 +106,8 @@ cp bin/Ildaeil-Synth %{buildroot}/%{_bindir}/
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Jul 15 2023 Yann Collette <ycollette.nospam@free.fr> - 1.3-1
+- update to 1.3-1
+
 * Tue May 16 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2-1
 - Initial build
