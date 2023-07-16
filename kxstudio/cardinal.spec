@@ -1,7 +1,7 @@
 %define _lto_cflags %{nil}
 
 Name:    cardinal
-Version: 23.02
+Version: 23.07
 Release: 2%{?dist}
 Summary: Virtual modular synthesizer plugin
 License: GPL-3.0-or-later
@@ -64,6 +64,14 @@ BuildArch: noarch
 %description common
 Common data files for Cardinal standalone and plugin versions.
 
+%package mini
+Summary:  Mini variant of Cardinal
+Requires: %{name}-common = %{version}-%{release}
+
+%description mini
+This is a special variant with a very small, hand-picked module selection
+and limited IO (2 audio ports plus 5 CV).
+
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
 Requires: %{name}-common = %{version}-%{release}
@@ -106,7 +114,7 @@ export CXXFLAGS="$CXXFLAGS -include cstdint -Wno-error=format-security"
 %install 
 %make_install PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true SYSDEPS=true
 %ifarch x86_64 amd64 aarch64
-mv %buildroot/usr/lib %buildroot/usr/lib64
+mv %{buildroot}/usr/lib %{buildroot}/usr/lib64
 %endif
 
 # Write desktop files
@@ -123,8 +131,19 @@ Type=Application
 Categories=AudioVideo;Audio;Music;
 EOF
 
-install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
-install -m 644 %{SOURCE1} %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
+cat > %{buildroot}%{_datadir}/applications/%{name}-mini.desktop <<EOF
+[Desktop Entry]
+Name=Cardinal Mini
+Exec=CardinalMini
+Icon=Cardinal
+Comment=Cardinal Modular Synthesizer
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+EOF
+
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/512x512/apps/
+install -m 644 %{SOURCE1} %{buildroot}/%{_datadir}/icons/hicolor/512x512/apps/
 
 # Remove empty file
 rm %{buildroot}%{_datadir}/%{name}/surgext/patches/README.md
@@ -144,17 +163,25 @@ find %{buildroot}%{_libdir} \
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%{_bindir}/*
-%{_datadir}/applications/*
-%{_datadir}/icons/hicolor/scalable/apps/*
+%{_bindir}/Cardinal
+%{_bindir}/CardinalNative
+%{_datadir}/applications/%{name}.desktop
 
 %files common
 %license LICENSE
 %{_datadir}/%{name}/
 %{_datadir}/doc/%{name}/
+%{_datadir}/icons/hicolor/512x512/apps/*
+
+%files mini
+%{_bindir}/CardinalMini
+%{_libdir}/lv2/CardinalMini.lv2/
+%{_datadir}/applications/%{name}-mini.desktop
 
 %files -n lv2-%{name}
-%{_libdir}/lv2/*
+%{_libdir}/lv2/Cardinal.lv2/
+%{_libdir}/lv2/CardinalFX.lv2/
+%{_libdir}/lv2/CardinalSynth.lv2/
 
 %files -n vst-%{name}
 %{_libdir}/vst/*
@@ -166,6 +193,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Sun Jul 16 2023 Justin Koh <j@ustink.org> - 23.07-2
+- Update to 23.07-2
+
 * Mon Feb 27 2023 Yann Collette <ycollette.nospam@free.fr> - 23.02-2
 - update to 23.02-2
 
