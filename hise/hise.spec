@@ -3,7 +3,7 @@
 # Category: Audio, Editor
 
 Name:    HISE
-Version: 3.0.3
+Version: 3.5.0
 Release: 1%{?dist}
 Summary: The open source framework for sample based instrument
 License: GPL-2.0-or-later
@@ -17,7 +17,7 @@ Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
-BuildRequires: JUCE61
+BuildRequires: JUCE
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
@@ -58,11 +58,11 @@ unzip %{SOURCE1}
 
 %set_build_flags
 CWD=`pwd`
-export LDFLAGS="`pkg-config --libs glib-2.0 gtk+-3.0 webkit2gtk-4.0` $LDFLAGS"
+#export LDFLAGS="`pkg-config --libs glib-2.0 gtk+-3.0 webkit2gtk-4.0` $LDFLAGS"
 export CPPFLAGS="-I$CWD/VST_SDK/VST2_SDK"
 
 cd projects/standalone/
-Projucer61 --resave HISE\ Standalone.jucer
+Projucer --resave HISE\ Standalone.jucer
 
 cd Builds/LinuxMakefile/
 %make_build CONFIG=Release STRIP=true
@@ -70,7 +70,7 @@ cd Builds/LinuxMakefile/
 cd ../../../..
 
 cd projects/plugin/
-Projucer61 --resave HISE.jucer
+Projucer --resave HISE.jucer
 
 cd Builds/LinuxMakefile/
 %make_build CONFIG=Release STRIP=true
@@ -122,6 +122,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst/*
 
 %changelog
+* Mon Jul 17 2023 Yann Collette <ycollette.nospam@free.fr> - 3.5.0-1
+- update to 3.5.0-1
+
 * Sun Mar 26 2023 Yann Collette <ycollette.nospam@free.fr> - 3.0.3-1
 - update to 3.0.3-1
 
