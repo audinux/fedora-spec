@@ -868,7 +868,9 @@ https://github.com/psemiletov/drumrox
 https://github.com/ccrma/chuck
 https://github.com/ccrma/miniAudicle
 https://github.com/bboettcher3/gRainbow
-https://github.com/psemiletov/drumrox-kits"
+https://github.com/psemiletov/drumrox-kits
+https://github.com/kometbomb/prototracker-modular
+https://github.com/StrangeLoopsAudio/Harmonigon"
 
 if [ -f git_tags_new.txt ];
 then
