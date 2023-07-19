@@ -870,7 +870,8 @@ https://github.com/ccrma/miniAudicle
 https://github.com/bboettcher3/gRainbow
 https://github.com/psemiletov/drumrox-kits
 https://github.com/kometbomb/prototracker-modular
-https://github.com/StrangeLoopsAudio/Harmonigon"
+https://github.com/StrangeLoopsAudio/Harmonigon
+https://github.com/michelesr/jack-oscillator"
 
 if [ -f git_tags_new.txt ];
 then
