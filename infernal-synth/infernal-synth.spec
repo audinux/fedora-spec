@@ -45,7 +45,7 @@ sed -i -e "/-Werror/d" CMakeLists.txt
 
 %build
 
-%cmake -DCMAKE_BUILD_TYPE=RELEASE
+%cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_CXX_FLAGS="-include tuple -fPIC $CXXFLAGS"
 %cmake_build
 
 %install 
