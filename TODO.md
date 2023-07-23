@@ -100,6 +100,7 @@
 |                         | https://github.com/dcoredump/dexed.lv2 (lv2 plugin) |
 | mtag                    | https://github.com/psemiletov/mtag |
 | midi-chord-reader       | https://github.com/markwilkins/midi-chord-reader |
+| ultimatevocalremovergui | https://github.com/Anjok07/ultimatevocalremovergui |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
