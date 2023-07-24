@@ -1,5 +1,5 @@
 Name:    infernal-synth
-Version: 1.2p4
+Version: 1.2p5
 Release: 1%{?dist}
 Summary: An open source VST3 synthesizer and effect plugin.
 License: GPL-3.0-or-later
@@ -8,7 +8,7 @@ URL:     https://sjoerdvankreel.github.io/infernal-synth/
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/sjoerdvankreel/infernal-synth/archive/refs/tags/v1.2-preview4.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/sjoerdvankreel/infernal-synth/archive/refs/tags/v1.2-preview5.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -39,13 +39,14 @@ Requires: %{name}
 VST3 version of %{name}
 
 %prep
-%autosetup -n infernal-synth-1.2-preview4
+%autosetup -n infernal-synth-1.2-preview5
 
 sed -i -e "/-Werror/d" CMakeLists.txt
+sed -i -e "/-march=native/d" CMakeLists.txt
 
 %build
 
-%cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_CXX_FLAGS="-include tuple -fPIC $CXXFLAGS"
+%cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_CXX_FLAGS="-include tuple -include atomic -fPIC $CXXFLAGS"
 %cmake_build
 
 %install 
@@ -61,5 +62,8 @@ cp -rav dist/linux_/RELEASE/* %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Jul 24 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2p5-1
+- update to 1.2p5-1
+
 * Sun Jul 23 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2p4-1
 - Initial spec file
