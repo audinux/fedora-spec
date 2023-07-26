@@ -1,5 +1,5 @@
 Name:    infernal-synth
-Version: 1.2p5
+Version: 1.2p6
 Release: 1%{?dist}
 Summary: An open source VST3 synthesizer and effect plugin.
 License: GPL-3.0-or-later
@@ -8,7 +8,7 @@ URL:     https://sjoerdvankreel.github.io/infernal-synth/
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/sjoerdvankreel/infernal-synth/archive/refs/tags/v1.2-preview5.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/sjoerdvankreel/infernal-synth/archive/refs/tags/v1.2-preview6.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -39,7 +39,7 @@ Requires: %{name}
 VST3 version of %{name}
 
 %prep
-%autosetup -n infernal-synth-1.2-preview5
+%autosetup -n infernal-synth-1.2-preview6
 
 sed -i -e "/-Werror/d" CMakeLists.txt
 sed -i -e "/-march=native/d" CMakeLists.txt
@@ -62,6 +62,9 @@ cp -rav dist/linux_/RELEASE/* %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Tue Jul 25 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2p6-1
+- update to 1.2p6-1
+
 * Mon Jul 24 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2p5-1
 - update to 1.2p5-1
 
