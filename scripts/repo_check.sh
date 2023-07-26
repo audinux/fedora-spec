@@ -875,7 +875,8 @@ https://github.com/michelesr/jack-oscillator
 https://github.com/sjoerdvankreel/infernal-synth
 https://github.com/steinbergmedia/vst3sdk
 https://github.com/khrykin/BlackBird
-https://github.com/attilammagyar/js80p"
+https://github.com/attilammagyar/js80p
+https://github.com/blackboxdsp/rotor"
 
 if [ -f git_tags_new.txt ];
 then
