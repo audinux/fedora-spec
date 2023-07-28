@@ -1,11 +1,11 @@
 # Kernel major version
 %define kmaj  6
 # Kernel minor version
-%define kmin  1
+%define kmin  4
 # Kernel patch version
-%define kpat  33
+%define kpat  6
 # RT patch version
-%define krt   11
+%define krt   8
 # package version
 %define krel  13
 
@@ -201,6 +201,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
 %changelog
+* Thu Jul 27 2023 Yann Collette <ycollette.nospam@free.fr> - 6.4.6-rt8-13
+- update to 6.4.6-rt8-13 - vanilla RT kernel
+
 * Mon Jun 19 2023 Yann Collette <ycollette.nospam@free.fr> - 6.1.33-rt11-13
 - update to 6.1.33-rt11-13 - vanilla RT kernel
 
