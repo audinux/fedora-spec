@@ -12,7 +12,7 @@ fi
 REPO_LIST="http://anongit.freedesktop.org/git/pulseaudio/pulseaudio.git
 git://gabe.is-a-geek.org/git/inconcert
 https://git.ardour.org/ardour/ardour
-https://git.code.sf.net/p/faudiostream/faustlive
+https://github.com/grame-cncm/faustlive
 https://git.code.sf.net/p/guitarix/git
 https://git.code.sf.net/p/isse/code
 https://git.code.sf.net/p/jamin/code
@@ -20,9 +20,9 @@ https://git.code.sf.net/p/kwave/code
 https://git.code.sf.net/p/mv-6pm/code
 https://git.code.sf.net/p/pure-data/pd-anywhere
 https://git.code.sf.net/p/pure-data/pd-extended
-https://git.code.sf.net/p/pure-data/pure-data
+https://github.com/pure-data/pure-data
 https://git.code.sf.net/p/qtgain/code
-https://git.code.sf.net/p/rakarrack/code
+https://git.code.sf.net/p/rakarrack/git
 https://git.code.sf.net/p/swami/code
 https://git.code.sf.net/p/yoshimi/code
 https://git.kernel.org/pub/scm/linux/kernel/git/clrkwllms/rt-tests
@@ -30,24 +30,24 @@ https://git.savannah.gnu.org/git/denemo.git
 https://git.savannah.gnu.org/git/ll-plugins/azr3-jack.git
 https://git.tuxfamily.org/gitroot/non/fltk
 https://git.tuxfamily.org/gitroot/non/non
-https://git.code.sf.net/p/liblo/git liblo-git
+https://git.code.sf.net/p/liblo/git
 https://repo.or.cz/juce-lv2
 https://gitlab.winehq.org/wine/wine
-http://git.drumgizmo.org/dgedit
-http://git.drumgizmo.org/drumgizmo
+http://git.drumgizmo.org/dgedit.git
+http://git.drumgizmo.org/drumgizmo.git
 http://git.elephly.net/software/lv2-mdametapiano
 https://github.com/Miserlou/RJModules
 https://github.com/stargateaudio/stargate
 https://gitlab.com/unlessgames/unless_modules
-https://agraef.github.io/purr-data
-https://asb2m10.github.io/dexed
+https://github.com/agraef/purr-data
+https://github.com/asb2m10/dexed
 https://bitbucket.org/agraef/faust-lv2/src
 https://bitbucket.org/xenakios/paulstretchplugin
 https://codeberg.org/rtcqs/rtcqs
-https://dougal-s.github.io/Aether
+https://github.com/Dougal-s/Aether
 https://git.assembla.com/portaudio
 https://git.code.sf.net/p/backupband/code
-https://git.code.sf.net/p/djv
+https://git.code.sf.net/p/djv/git
 https://git.code.sf.net/p/guvcview/git-master
 https://git.code.sf.net/p/industrializer/code
 https://git.code.sf.net/p/thmad/code
@@ -225,7 +225,7 @@ https://github.com/DISTRHO/plugin-examples
 https://github.com/DISTRHO/ProM
 https://github.com/djpeterso23662/MrLumps
 https://github.com/djpeterso23662/NocturnalEncoder
-https://github.com/dllmusic/moDllz/tree/master/src
+https://github.com/dllmusic/moDllz
 https://github.com/docb/dbRackFormulaOne
 https://github.com/docb/dbRackModules
 https://github.com/docb/dbRackSequencer
@@ -592,7 +592,7 @@ https://github.com/scanner-darkly/vcv-collection-one
 https://github.com/schismtracker/schismtracker
 https://github.com/Sciss/Eisenkraut
 https://github.com/sebastien-bouffier/Bidoo
-https://github.com/sfztools/sfizz
+https://git.zrythm.org/zrythm/ztoolkit.git
 https://github.com/sgossner/VSCO-2-CE
 https://github.com/sickozell/SickoCV
 https://github.com/signal-flux/Signal-Flux-VCV-Rack-Modules
@@ -752,7 +752,6 @@ https://github.com/ycollet/horgand
 https://github.com/ycollet/jackmidilogger
 https://github.com/ycollet/mod-pitchshifter
 https://github.com/ycollet/MrFreeze
-https://github.com/ycollet/MrFreezehttps://github.com/romi1502/MrFreeze
 https://github.com/ycollet/non
 https://github.com/ycollet/ntk
 https://github.com/ycollet/psi-plugins
@@ -768,7 +767,6 @@ https://github.com/zynaddsubfx/zynaddsubfx
 https://github.com/zynaddsubfx/zyn-fusion-build
 https://github.com/zynayumi/zynayumi
 https://github.com/zynthian/zynthian-data
-https://git.kernel.org/pub/scm
 https://git.kernel.org/pub/scm/utils/rt-tests/rt-tests
 https://gitlab.com/ayrsd/audiostellar
 https://gitlab.com/davethecomposer/platonic-music-engine
@@ -805,12 +803,10 @@ https://git.s-ol.nu/vcvmods
 https://git.sr.ht/~alextee/zrythm-libcyaml
 https://git.sr.ht/~rabbits/orca
 https://git.tuxfamily.org/non/non.git
-https://git.zrythm.org/cgit/libaudec
-https://git.zrythm.org/cgit/ZLFO
-https://git.zrythm.org/cgit/ZLFO/
-https://git.zrythm.org/cgit/ztoolkit
-https://git.zrythm.org/zrythm/zrythm
-https://git.zrythm.org/zrythm/zrythm-media
+https://github.com/zrythm/libaudec
+https://github.com/zrythm/ZLFO
+https://github.com/zrythm/zrythm
+https://github.com/zrythm/zrythm-media
 https://invent.kde.org/graphics/kxstitch
 https://invent.kde.org/multimedia/subtitlecomposer
 https://github.com/Vampouille/superboucle
@@ -876,7 +872,9 @@ https://github.com/sjoerdvankreel/infernal-synth
 https://github.com/steinbergmedia/vst3sdk
 https://github.com/khrykin/BlackBird
 https://github.com/attilammagyar/js80p
-https://github.com/blackboxdsp/rotor"
+https://github.com/blackboxdsp/rotor
+https://github.com/allex-k/synth
+https://github.com/sbadon122/ATLAS-06-Synthesizer"
 
 if [ -f git_tags_new.txt ];
 then
