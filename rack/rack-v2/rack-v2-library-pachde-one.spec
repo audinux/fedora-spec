@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 f52edbcc7c9b1c0f14eabdf964387fb975807c18
-%global gittag0 2.1.4
+%global commit0 a0b1c916b00d58c41c121d098df5ae1f82fd2de5
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-LilacLoop
-Version: 2.1.4
+Name:    rack-v2-pachde-one
+Version: 2.0.0
 Release: 2%{?dist}
-Summary: LilacLoop plugin for Rack
+Summary: pachde-one plugin for Rack
 License: GPLv2+
-URL:     https://github.com/grough/lilac-loop-vcv
+URL:     https://github.com/Paul-Dempsey/pachde1
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,13 +27,14 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/grough/lilac-loop-vcv/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: LilacLoop_plugin.json
+Source1: https://github.com/Paul-Dempsey/pachde1/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: pachde-one_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
 BuildRequires: alsa-lib-devel
+BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel
 BuildRequires: glew-devel
@@ -59,8 +60,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-LilacLoop plugin for Rack.
-Stereo multi-track live looper
+pachde-one plugin for Rack.
+A discreet resizable blank panel with themes, colors, and animation
 
 %prep
 %setup -n Rack
@@ -133,24 +134,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir LilacLoop_plugin
-tar xvfz %{SOURCE1} --directory=LilacLoop_plugin --strip-components=1 
+mkdir pachde-one_plugin
+tar xvfz %{SOURCE1} --directory=pachde-one_plugin --strip-components=1 
 
-cp -n %{SOURCE2} LilacLoop_plugin/plugin.json
+cp -n %{SOURCE2} pachde-one_plugin/plugin.json
 
 %build
 
-cd LilacLoop_plugin
+cd pachde-one_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/LilacLoop/
-cp -r LilacLoop_plugin/dist/LilacLoop/* %{buildroot}%{_libexecdir}/Rack2/plugins/LilacLoop/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/pachde-one/
+cp -r pachde-one_plugin/dist/pachde-one/* %{buildroot}%{_libexecdir}/Rack2/plugins/pachde-one/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.4-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

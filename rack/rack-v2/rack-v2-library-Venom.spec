@@ -6,18 +6,18 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 0c388e1bbbd53ccd057ebf9d38ad7b7e3203037a
-%global gittag0 2.3.0
+%global commit0 7d37c428d36cbd031ca4c1d0ac02ac04a333f50e
+%global gittag0 2.3.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Venom
-Version: 2.3.0
+Version: 2.3.2
 Release: 2%{?dist}
 Summary: Venom plugin for Rack
-License: GPL-2.0-or-later
+License: GPLv2+
 URL:     https://github.com/DaveBenham/VenomModules
 
 Vendor:       Audinux
@@ -152,5 +152,5 @@ cp -r Venom_plugin/dist/Venom/* %{buildroot}%{_libexecdir}/Rack2/plugins/Venom/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.2-1
 - initial specfile
