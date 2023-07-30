@@ -92,7 +92,6 @@
 | glicol-cli              | https://github.com/glicol/glicol-cli |
 | backupband              | https://sourceforge.net/projects/backupband/files/ |
 | MiniDexed               | https://github.com/probonopd/MiniDexed |
-| melonix                 | https://github.com/mika314/melonix |
 | nbo-plugins             | https://sourceforge.net/projects/nbo-plugins/files/ |
 | bass-studio             | https://github.com/nidefawl/bass-studio |
 | NeuralNote              | https://github.com/DamRsn/NeuralNote |
@@ -100,7 +99,6 @@
 |                         | https://github.com/dcoredump/dexed.lv2 (lv2 plugin) |
 | mtag                    | https://github.com/psemiletov/mtag |
 | midi-chord-reader       | https://github.com/markwilkins/midi-chord-reader |
-| ultimatevocalremovergui | https://github.com/Anjok07/ultimatevocalremovergui |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
