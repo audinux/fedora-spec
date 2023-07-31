@@ -99,6 +99,10 @@
 |                         | https://github.com/dcoredump/dexed.lv2 (lv2 plugin) |
 | mtag                    | https://github.com/psemiletov/mtag |
 | midi-chord-reader       | https://github.com/markwilkins/midi-chord-reader |
+| arpligner               | https://github.com/YPares/arpligner |
+| Livecut                 | https://github.com/scheffle/Livecut |
+| VocalShaper             | https://github.com/Do-sth-sharp/VocalShaper |
+| ComposeSiren            | https://github.com/patriceguyot/ComposeSiren |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
