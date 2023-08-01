@@ -19,13 +19,13 @@
 %global __requires_exclude qmlimport\\((MuseScore|FileIO).*
 
 %define rname          mscore
-%define version_lesser 4.0
+%define version_lesser 4.1
 %define revision       5485621
 %define fontdir        %{_datadir}/fonts/%{name}
 %define docdir         %{_docdir}/%{name}
 
 Name: mscore-mao
-Version: 4.0.2
+Version: 4.1.1
 Release: 1%{?dist}
 Summary: A WYSIWYG music score typesetter
 
@@ -46,7 +46,6 @@ Summary: A WYSIWYG music score typesetter
 # thirdparty/lame: LGPL 2
 # thirdparty/opus and opusenc: BSD 3
 # thirdparty/rtf2html: LGPL-2.1
-# thirdparty/singleapp: the actual code has BSD 3 (although GPL and LGPL are included)
 # thirdparty/stb: MIT
 # the soundfont we musescore uses (see below) is BSD 3
 License: Apache-2.0 AND BSD-3-Clause AND FTL AND GPL-2.0-only AND SUSE-GPL-3.0-with-font-exception AND GPL-2.0-or-later AND GFDL-1.2-only AND LGPL-2.0-only AND LGPL-2.1-only AND (GPL-2.0-only OR GPL-3.0-only) AND MIT
@@ -69,11 +68,11 @@ Source6: vst3-source.sh
 # PATCH-FIX-OPENSUSE: openSUSE has qmake-qt5 qmake was reserved for qt4, which is no longer present
 Patch0: use-qtmake-qt5.patch
 # PATCH-FIX-UPSTREAM: fix build with jack on linux.
-Patch1: 0dde64eef84.patch
+#Patch1: 0dde64eef84.patch
 # PATCH-FIX-UPSTREAM: make compiler happy by adding returns
-Patch2: musescore-4.0.2-return.patch
+#Patch2: musescore-4.0.2-return.patch
 # PATCH-FIX-UPSTREAM: change in qt-declaratives breaks musescore
-Patch3: fix-for-latest-qt-declarative.patch
+#Patch3: fix-for-latest-qt-declarative.patch
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -114,6 +113,7 @@ BuildRequires: pkgconfig(sndfile)
 BuildRequires: pkgconfig(vorbis)
 BuildRequires: pkgconfig(vorbisenc)
 BuildRequires: pkgconfig(vorbisfile)
+BuildRequires: fdupes
 BuildRequires: desktop-file-utils
 
 Requires: %{name}-fonts = %{version}-%{release}
@@ -153,9 +153,6 @@ sed 's/\r$//' thirdparty/rtf2html/README.ru > tmpfile
 touch -r thirdparty/rtf2html/README.ru tmpfile
 mv -f tmpfile thirdparty/rtf2html/README.ru
 
-# fix missing -ldl
-sed -i 's/\(target_link_libraries(mscore ${LINK_LIB}\)/\1 ${CMAKE_DL_LIBS}/' src/main/CMakeLists.txt
-
 # Install VST3 files
 tar xvfz %{SOURCE5}
 
@@ -172,13 +169,14 @@ CURRENT_PATH=`pwd`
 %cmake \
        -DCMAKE_BUILD_TYPE=RelWithDebInfo \
        -DMUSESCORE_BUILD_CONFIG=release \
-       -DBUILD_UNIT_TESTS=OFF \
-       -DUSE_SYSTEM_FREETYPE=ON \
+       -DBUILD_UNIT_TESTS:BOOL=OFF \
+       -DMUE_BUILD_UNIT_TESTS:BOOL=OFF \
+       -DUSE_SYSTEM_FREETYPE:BOOL=ON \
        -DBUILD_JACK:BOOL=ON \
        -DBUILD_UPDATE_MODULE:BOOL=ON \
-       -DBUILD_CRASHPAD_CLIENT=OFF \
+       -DBUILD_CRASHPAD_CLIENT:BOOL=OFF \
        -DMUSESCORE_REVISION=%{revision} \
-       -DBUILD_VST=ON \
+       -DBUILD_VST:BOOL=ON \
        -DVST3_SDK_PATH:PATH=$CURRENT_PATH/vst3sdk \
        -DBUILD_VIDEOEXPORT_MODULE:BOOL=OFF
 
@@ -226,26 +224,22 @@ rm %{buildroot}%{_bindir}/crashpad_handler
 
 # collect doc files
 install -d -m 755 %{buildroot}/%{docdir}
-install -p -m 644 thirdparty/beatroot/COPYING             %{buildroot}/%{docdir}/COPYING.beatroot
-install -p -m 644 thirdparty/beatroot/README.txt          %{buildroot}/%{docdir}/README.txt.beatroot
-install -p -m 644 thirdparty/dtl/COPYING                  %{buildroot}/%{docdir}/COPYING.BSD.dtl
-install -p -m 644 thirdparty/freetype/README              %{buildroot}/%{docdir}/README.freetype
-install -p -m 644 thirdparty/intervaltree/README          %{buildroot}/%{docdir}/README.intervaltree
-install -p -m 644 thirdparty/rtf2html/ChangeLog           %{buildroot}/%{docdir}/ChangeLog.rtf2html
-install -p -m 644 thirdparty/rtf2html/COPYING.LESSER      %{buildroot}/%{docdir}/COPYING.LESSER.rtf2html
-install -p -m 644 thirdparty/rtf2html/README              %{buildroot}/%{docdir}/README.rtf2html
-install -p -m 644 thirdparty/rtf2html/README.mscore       %{buildroot}/%{docdir}/README.mscore.rtf2html
-install -p -m 644 thirdparty/rtf2html/README.ru           %{buildroot}/%{docdir}/README.ru.rtf2html
-install -p -m 644 thirdparty/singleapp/LGPL_EXCEPTION.txt %{buildroot}/%{docdir}/LGPL_EXCEPTION.txt.singleapp
-install -p -m 644 thirdparty/singleapp/LICENSE.GPL3       %{buildroot}/%{docdir}/LICENSE.GPL3.singleapp
-install -p -m 644 thirdparty/singleapp/LICENSE.LGPL       %{buildroot}/%{docdir}/LICENSE.LGPL.singleapp
-install -p -m 644 thirdparty/singleapp/README.TXT         %{buildroot}/%{docdir}/README.TXT.singleapp
+install -p -m 644 thirdparty/beatroot/COPYING         %{buildroot}/%{docdir}/COPYING.beatroot
+install -p -m 644 thirdparty/beatroot/README.txt      %{buildroot}/%{docdir}/README.txt.beatroot
+install -p -m 644 thirdparty/dtl/COPYING              %{buildroot}/%{docdir}/COPYING.BSD.dtl
+install -p -m 644 thirdparty/freetype/README          %{buildroot}/%{docdir}/README.freetype
+install -p -m 644 thirdparty/intervaltree/README      %{buildroot}/%{docdir}/README.intervaltree
+install -p -m 644 thirdparty/rtf2html/ChangeLog       %{buildroot}/%{docdir}/ChangeLog.rtf2html
+install -p -m 644 thirdparty/rtf2html/COPYING.LESSER  %{buildroot}/%{docdir}/COPYING.LESSER.rtf2html
+install -p -m 644 thirdparty/rtf2html/README          %{buildroot}/%{docdir}/README.rtf2html
+install -p -m 644 thirdparty/rtf2html/README.mscore   %{buildroot}/%{docdir}/README.mscore.rtf2html
+install -p -m 644 thirdparty/rtf2html/README.ru       %{buildroot}/%{docdir}/README.ru.rtf2html
 
-install -p -m 644 tools/bww2mxml/COPYING                  %{buildroot}/%{docdir}/COPYING.bww2mxml
-install -p -m 644 tools/bww2mxml/README                   %{buildroot}/%{docdir}/README.bww2mxml
-install -p -m 644 share/sound/README.md                   %{buildroot}/%{docdir}/README.md.sound
-install -p -m 644 share/instruments/README.md             %{buildroot}/%{docdir}/README.md.instruments
-install -p -m 644 share/wallpapers/COPYRIGHT              %{buildroot}/%{docdir}/COPYING.wallpaper
+install -p -m 644 tools/bww2mxml/COPYING              %{buildroot}/%{docdir}/COPYING.bww2mxml
+install -p -m 644 tools/bww2mxml/README               %{buildroot}/%{docdir}/README.bww2mxml
+install -p -m 644 share/sound/README.md               %{buildroot}/%{docdir}/README.md.sound
+install -p -m 644 share/instruments/README.md         %{buildroot}/%{docdir}/README.md.instruments
+install -p -m 644 share/wallpapers/COPYRIGHT          %{buildroot}/%{docdir}/COPYING.wallpaper
 
 # Install desktop file
 desktop-file-install                         \
@@ -295,6 +289,8 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/org.musescore.MuseSc
 
 
 %changelog
+* Tue Aug 01 2023 Yann Collette <ycollette.nospam@free.fr> - 4.1.1-1
+- update to 4.1.1-1
 * Tue Aug 01 2023 Yann Collette <ycollette.nospam@free.fr> - 4.0.2-1
 - update to 4.0.2-1 for Fedora Audinux
 * Fri Apr 28 2023 Cor Blom <cornelis@solcon.nl>
