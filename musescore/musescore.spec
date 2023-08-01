@@ -18,9 +18,6 @@
 # Internal QML imports
 %global __requires_exclude qmlimport\\((MuseScore|FileIO).*
 
-# Workaround boo#1189991
-%define _lto_cflags %{nil}
-
 %define rname          mscore
 %define version_lesser 4.0
 %define revision       5485621
@@ -63,6 +60,12 @@ Source1: https://ftp.osuosl.org/pub/musescore/soundfont/MuseScore_General/MuseSc
 Source2: https://ftp.osuosl.org/pub/musescore/soundfont/MuseScore_General/MuseScore_General_License.md
 Source3: https://ftp.osuosl.org/pub/musescore/soundfont/MuseScore_General/MuseScore_General_Readme.md
 Source4: https://ftp.osuosl.org/pub/musescore/soundfont/MuseScore_General/MuseScore_General.sf3
+# VST3
+# Usage: ./vst3-source.sh <TAG>
+#        ./vst3-source.sh v3.7.8_build_34
+Source5: vst3sdk.tar.gz
+Source6: vst3-source.sh
+
 # PATCH-FIX-OPENSUSE: openSUSE has qmake-qt5 qmake was reserved for qt4, which is no longer present
 Patch0: use-qtmake-qt5.patch
 # PATCH-FIX-UPSTREAM: fix build with jack on linux.
@@ -78,6 +81,7 @@ BuildRequires: chrpath
 BuildRequires: qt5-linguist
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtbase-private-devel
+BuildRequires: ffmpeg-devel
 BuildRequires: pkgconfig(Qt5Concurrent)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Designer)
@@ -149,18 +153,22 @@ sed 's/\r$//' thirdparty/rtf2html/README.ru > tmpfile
 touch -r thirdparty/rtf2html/README.ru tmpfile
 mv -f tmpfile thirdparty/rtf2html/README.ru
 
-# fix missing -ldl for Leaps
+# fix missing -ldl
 sed -i 's/\(target_link_libraries(mscore ${LINK_LIB}\)/\1 ${CMAKE_DL_LIBS}/' src/main/CMakeLists.txt
+
+# Install VST3 files
+tar xvfz %{SOURCE5}
 
 %build
 
-%define __builddir build.release
 # TODO:
 # find out what those do:
-# BUILD_VIDEOEXPORT_MODULE:BOOL=ON
-# find out how to enable this
-# BUILD_VST:BOOL=ON
-# -DBUILD_UPDATE_MODULE:BOOL=OFF triggers bug  https://github.com/musescore/MuseScore/issues/15617
+# BUILD_VIDEOEXPORT_MODULE:BOOL=ON -> requires ffmpeg-5 ...
+# Fedora ships ffmpeg-6 via ffmpeg-devel and ffmpeg-4 via compat-ffmpeg4-devel
+# -DBUILD_UPDATE_MODULE:BOOL=OFF triggers bug https://github.com/musescore/MuseScore/issues/15617
+
+CURRENT_PATH=`pwd`
+
 %cmake \
        -DCMAKE_BUILD_TYPE=RelWithDebInfo \
        -DMUSESCORE_BUILD_CONFIG=release \
@@ -169,7 +177,11 @@ sed -i 's/\(target_link_libraries(mscore ${LINK_LIB}\)/\1 ${CMAKE_DL_LIBS}/' src
        -DBUILD_JACK:BOOL=ON \
        -DBUILD_UPDATE_MODULE:BOOL=ON \
        -DBUILD_CRASHPAD_CLIENT=OFF \
-       -DMUSESCORE_REVISION=%{revision}
+       -DMUSESCORE_REVISION=%{revision} \
+       -DBUILD_VST=ON \
+       -DVST3_SDK_PATH:PATH=$CURRENT_PATH/vst3sdk \
+       -DBUILD_VIDEOEXPORT_MODULE:BOOL=OFF
+
 %cmake_build
 
 %install
@@ -177,27 +189,31 @@ sed -i 's/\(target_link_libraries(mscore ${LINK_LIB}\)/\1 ${CMAKE_DL_LIBS}/' src
 %cmake_install
 
 # don't package kddockwidgets. It should not be installed
-rm %{buildroot}%{_libdir}/*.a
-rm -r %{buildroot}%{_includedir}/kddockwidgets
-rm -r %{buildroot}%{_libdir}/cmake/KDDockWidgets
+rm %{buildroot}/%{_libdir}/*.a
+rm -r %{buildroot}/%{_includedir}/kddockwidgets
+rm -r %{buildroot}/%{_libdir}/cmake/KDDockWidgets
 
 # install fonts
-mkdir -p %{buildroot}%{fontdir}
+mkdir -p %{buildroot}/%{fontdir}
 install -p -m 644 fonts/*.ttf                       %{buildroot}/%{fontdir}
 install -p -m 644 fonts/*/*.ttf                     %{buildroot}/%{fontdir}
 install -p -m 644 fonts/bravura/BravuraText.otf     %{buildroot}/%{fontdir}
 install -p -m 644 fonts/campania/Campania.otf       %{buildroot}/%{fontdir}
 install -p -m 644 fonts/edwin/*.otf                 %{buildroot}/%{fontdir}
+install -p -m 644 fonts/finalebroadway/*.otf        %{buildroot}/%{fontdir}
+install -p -m 644 fonts/finalemaestro/*.otf         %{buildroot}/%{fontdir}
 install -p -m 644 fonts/gootville/GootvilleText.otf %{buildroot}/%{fontdir}
 install -p -m 644 fonts/leland/LelandText.otf       %{buildroot}/%{fontdir}
 install -p -m 644 fonts/musejazz/MuseJazzText.otf   %{buildroot}/%{fontdir}
 install -p -m 644 fonts/petaluma/PetalumaText.otf   %{buildroot}/%{fontdir}
 
 # unique names for font docs
-mv fonts/edwin/README.md    fonts/edwin/README.md.edwin
-mv fonts/edwin/LICENSE.txt  fonts/edwin/LICENSE.txt.edwin
-mv fonts/leland/README.md   fonts/leland/README.md.leland
-mv fonts/leland/LICENSE.txt fonts/leland/LICENSE.txt.leland
+mv fonts/edwin/README.md        fonts/edwin/README.md.edwin
+mv fonts/edwin/LICENSE.txt      fonts/edwin/LICENSE.txt.edwin
+mv fonts/leland/README.md       fonts/leland/README.md.leland
+mv fonts/leland/LICENSE.txt     fonts/leland/LICENSE.txt.leland
+mv fonts/finalebroadway/OFL.txt fonts/finalebroadway/OFL.txt.finalebroadway
+mv fonts/finalemaestro/OFL.txt  fonts/finalemaestro/OFL.txt.finalemaestro
 
 # also package additional demos
 mkdir -p %{buildroot}%{_datadir}/%{rname}-%{version_lesser}/demos
@@ -209,45 +225,45 @@ rm -r %{buildroot}%{_includedir}/opus
 rm %{buildroot}%{_bindir}/crashpad_handler
 
 # collect doc files
-install -d -m 755 %{buildroot}%docdir
-install -p -m 644 thirdparty/beatroot/COPYING         %{buildroot}%docdir/COPYING.beatroot
-install -p -m 644 thirdparty/beatroot/README.txt      %{buildroot}%docdir/README.txt.beatroot
-install -p -m 644 thirdparty/dtl/COPYING              %{buildroot}%docdir/COPYING.BSD.dtl
-install -p -m 644 thirdparty/freetype/README          %{buildroot}%docdir/README.freetype
-install -p -m 644 thirdparty/intervaltree/README      %{buildroot}%docdir/README.intervaltree
-install -p -m 644 thirdparty/rtf2html/ChangeLog       %{buildroot}%docdir/ChangeLog.rtf2html
-install -p -m 644 thirdparty/rtf2html/COPYING.LESSER  %{buildroot}%docdir/COPYING.LESSER.rtf2html
-install -p -m 644 thirdparty/rtf2html/README          %{buildroot}%docdir/README.rtf2html
-install -p -m 644 thirdparty/rtf2html/README.mscore   %{buildroot}%docdir/README.mscore.rtf2html
-install -p -m 644 thirdparty/rtf2html/README.ru       %{buildroot}%docdir/README.ru.rtf2html
-install -p -m 644 thirdparty/singleapp/LGPL_EXCEPTION.txt %{buildroot}%docdir/LGPL_EXCEPTION.txt.singleapp
-install -p -m 644 thirdparty/singleapp/LICENSE.GPL3   %{buildroot}%docdir/LICENSE.GPL3.singleapp
-install -p -m 644 thirdparty/singleapp/LICENSE.LGPL   %{buildroot}%docdir/LICENSE.LGPL.singleapp
-install -p -m 644 thirdparty/singleapp/README.TXT     %{buildroot}%docdir/README.TXT.singleapp
+install -d -m 755 %{buildroot}/%{docdir}
+install -p -m 644 thirdparty/beatroot/COPYING             %{buildroot}/%{docdir}/COPYING.beatroot
+install -p -m 644 thirdparty/beatroot/README.txt          %{buildroot}/%{docdir}/README.txt.beatroot
+install -p -m 644 thirdparty/dtl/COPYING                  %{buildroot}/%{docdir}/COPYING.BSD.dtl
+install -p -m 644 thirdparty/freetype/README              %{buildroot}/%{docdir}/README.freetype
+install -p -m 644 thirdparty/intervaltree/README          %{buildroot}/%{docdir}/README.intervaltree
+install -p -m 644 thirdparty/rtf2html/ChangeLog           %{buildroot}/%{docdir}/ChangeLog.rtf2html
+install -p -m 644 thirdparty/rtf2html/COPYING.LESSER      %{buildroot}/%{docdir}/COPYING.LESSER.rtf2html
+install -p -m 644 thirdparty/rtf2html/README              %{buildroot}/%{docdir}/README.rtf2html
+install -p -m 644 thirdparty/rtf2html/README.mscore       %{buildroot}/%{docdir}/README.mscore.rtf2html
+install -p -m 644 thirdparty/rtf2html/README.ru           %{buildroot}/%{docdir}/README.ru.rtf2html
+install -p -m 644 thirdparty/singleapp/LGPL_EXCEPTION.txt %{buildroot}/%{docdir}/LGPL_EXCEPTION.txt.singleapp
+install -p -m 644 thirdparty/singleapp/LICENSE.GPL3       %{buildroot}/%{docdir}/LICENSE.GPL3.singleapp
+install -p -m 644 thirdparty/singleapp/LICENSE.LGPL       %{buildroot}/%{docdir}/LICENSE.LGPL.singleapp
+install -p -m 644 thirdparty/singleapp/README.TXT         %{buildroot}/%{docdir}/README.TXT.singleapp
 
-install -p -m 644 tools/bww2mxml/COPYING              %{buildroot}%docdir/COPYING.bww2mxml
-install -p -m 644 tools/bww2mxml/README               %{buildroot}%docdir/README.bww2mxml
-install -p -m 644 share/sound/README.md               %{buildroot}%docdir/README.md.sound
-install -p -m 644 share/instruments/README.md         %{buildroot}%docdir/README.md.instruments
-install -p -m 644 share/wallpapers/COPYRIGHT          %{buildroot}%docdir/COPYING.wallpaper
+install -p -m 644 tools/bww2mxml/COPYING                  %{buildroot}/%{docdir}/COPYING.bww2mxml
+install -p -m 644 tools/bww2mxml/README                   %{buildroot}/%{docdir}/README.bww2mxml
+install -p -m 644 share/sound/README.md                   %{buildroot}/%{docdir}/README.md.sound
+install -p -m 644 share/instruments/README.md             %{buildroot}/%{docdir}/README.md.instruments
+install -p -m 644 share/wallpapers/COPYRIGHT              %{buildroot}/%{docdir}/COPYING.wallpaper
 
 # Install desktop file
 desktop-file-install                         \
   --delete-original                          \
-  --dir=%{buildroot}%{_datadir}/applications \
+  --dir=%{buildroot}/%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/org.musescore.MuseScore.desktop
 
 # Remove rpath in mscore
 chrpath --delete %{buildroot}/%{_bindir}/mscore
 
-%fdupes %{buildroot}%{_prefix}
+%fdupes %{buildroot}/%{_prefix}
 
 %check
-desktop-file-validate %{buildroot}%{_datadir}/applications/org.musescore.MuseScore.desktop
+desktop-file-validate %{buildroot}/%{_datadir}/applications/org.musescore.MuseScore.desktop
 
 %files
 %doc README.md
-%doc %docdir/*
+%doc %{docdir}/*
 %license LICENSE.GPL
 %{_bindir}/%{rname}
 %{_datadir}/metainfo/org.musescore.MuseScore.appdata.xml
@@ -270,12 +286,17 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.musescore.MuseSco
 %license fonts/edwin/LICENSE.txt.edwin
 %doc fonts/leland/README.md.leland
 %license fonts/leland/LICENSE.txt.leland
+%license fonts/finalebroadway/OFL.txt.finalebroadway
+%license fonts/finalemaestro/OFL.txt.finalemaestro
+
 %dir %{fontdir}
 %{fontdir}/*.ttf
 %{fontdir}/*.otf
 
 
 %changelog
+* Tue Aug 01 2023 Yann Collette <ycollette.nospam@free.fr> - 4.0.2-1
+- update to 4.0.2-1 for Fedora Audinux
 * Fri Apr 28 2023 Cor Blom <cornelis@solcon.nl>
 - Add fix-for-latest-qt-declarative.patch to fix boo#1210932
 * Thu Mar 16 2023 Michael Vetter <mvetter@suse.com>
