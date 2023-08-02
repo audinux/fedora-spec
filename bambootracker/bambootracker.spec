@@ -4,7 +4,7 @@
 
 Summary: Music tracker for the Yamaha YM2608 sound chip
 Name:    BambooTracker
-Version: 0.6.1
+Version: 0.6.2
 Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/rerrahkr/BambooTracker
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources:
-# ./bambootracker_source.sh v0.6.1
+# ./bambootracker_source.sh v0.6.2
 
 Source0: BambooTracker.tar.gz
 Source1: bambootracker_source.sh
@@ -69,6 +69,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/*
 
 %changelog
+* Wed Aug 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.2-1
+- update to version 0.6.2-1
+
 * Sun Feb 05 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.1-1
 - update to version 0.6.1-1
 
