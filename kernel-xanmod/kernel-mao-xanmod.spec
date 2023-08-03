@@ -1,9 +1,9 @@
 # Kernel major version
 %define kmaj  6
 # Kernel minor version
-%define kmin  1
+%define kmin  4
 # Kernel patch version
-%define kpat  18
+%define kpat  7
 # Xan version
 %define kxan  1
 # package version
@@ -206,6 +206,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-xan%{kxan}%{fcver}
 
 %changelog
+* Thu Aug 03 2023 Yann Collette <ycollette.nospam@free.fr> - 6.4.7-xan1-12
+- update to 6.4.7-xan1-12 - vanilla XanMod kernel
+
 * Mon May 01 2023 Yann Collette <ycollette.nospam@free.fr> - 6.1.18-xan1-12
 - update to 6.1.18-xan1-12 - vanilla XanMod kernel
 
