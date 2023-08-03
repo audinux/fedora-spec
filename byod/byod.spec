@@ -58,6 +58,7 @@ LV2 version of %{name}
 %autosetup -n %{name}
 
 sed -i -e "s|\"-DCMAKE_BUILD_TYPE=Debug\"|\"-DCMAKE_BUILD_TYPE=Debug\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"|g" modules/JUCE/extras/Build/juceaide/CMakeLists.txt
+
 %build
 
 %define X_display ":98"
