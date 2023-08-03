@@ -1,9 +1,9 @@
 # Kernel major version
 %define kmaj  6
 # Kernel minor version
-%define kmin  2
+%define kmin  4
 # Kernel patch version
-%define kpat  13
+%define kpat  7
 # RT patch version
 %define krt   1
 # package version
@@ -202,6 +202,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-lqx%{krt}%{fcver}
 
 %changelog
+* Wed Aug 02 2023 Yann Collette <ycollette.nospam@free.fr> - 6.4.7-lqx1-12
+- update to 6.4.7-lqx1-12 - vanilla Liquorix kernel
+
 * Mon May 01 2023 Yann Collette <ycollette.nospam@free.fr> - 6.2.13-lqx1-12
 - update to 6.2.13-lqx1-12 - vanilla Liquorix kernel
 
