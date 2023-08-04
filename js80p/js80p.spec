@@ -52,9 +52,11 @@ cp -ra presets %{buildroot}/%{_libdir}/vst3/js80p.vst3/
 %check
 validator %{buildroot}/%{_libdir}/vst3/js80p.vst3
 
-%files -n vst3-%{name}
+%files
 %doc README.md
 %license LICENSE.txt
+
+%files -n vst3-%{name}
 %{_libdir}/vst3/*
 
 %changelog
