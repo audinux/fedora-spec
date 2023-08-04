@@ -103,6 +103,7 @@
 | Livecut                 | https://github.com/scheffle/Livecut |
 | VocalShaper             | https://github.com/Do-sth-sharp/VocalShaper |
 | ComposeSiren            | https://github.com/patriceguyot/ComposeSiren |
+| audiocraft              | https://github.com/facebookresearch/audiocraft |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
