@@ -1,5 +1,5 @@
 Name:    js80p
-Version: 1.9.8
+Version: 1.9.9
 Release: 1%{?dist}
 Summary: A MIDI driven, performance oriented, versatile synthesizer plugin.
 License: GPL-3.0-only
@@ -17,8 +17,18 @@ BuildRequires: cairo-devel
 BuildRequires: xcb-util-renderutil-devel
 BuildRequires: vst3sdk
 
+Obsoletes: %{name} <= 1.9.8
+
 %description
 A MIDI driven, performance oriented, versatile synthesizer VST plugin.
+
+%package -n vst3-%{name}
+Summary:  VST3 version of %{name}
+License:  GPL-2.0-or-later
+Requires: %{name}
+
+%description -n vst3-%{name}
+VST3 version of %{name}
 
 %prep
 %setup -n %{name}-%{version}
@@ -42,7 +52,7 @@ cp -ra presets %{buildroot}/%{_libdir}/vst3/js80p.vst3/
 %check
 validator %{buildroot}/%{_libdir}/vst3/js80p.vst3
 
-%files
+%files -n vst3-%{name}
 %doc README.md
 %license LICENSE.txt
 %{_libdir}/vst3/*
