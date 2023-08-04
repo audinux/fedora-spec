@@ -7,7 +7,7 @@
 %global pname carla
 
 Name: Carla-mao
-Version: 2.5.5
+Version: 2.5.6
 Release: 3%{?dist}
 Summary: Audio plugin host
 Epoch:   1
@@ -210,6 +210,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 %{_libdir}/pkgconfig/%{pname}-host-plugin.pc
 
 %changelog
+* Fri Aug 04 2023 Yann Collette <ycollette.nospam@free.fr> - 1:2.5.6-3
+- Update to 2.5.6-3 - add missing requires
+
 * Sun Jun 18 2023 Yann Collette <ycollette.nospam@free.fr> - 1:2.5.5-3
 - Update to 2.5.5-3 - add missing requires
 
