@@ -26,7 +26,7 @@
 
 Name: mscore-mao
 Version: 4.1.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A WYSIWYG music score typesetter
 
 # Licenses in MuseScore are a mess. To help other maintainers I give the following overview:
@@ -67,12 +67,6 @@ Source6: vst3-source.sh
 
 # PATCH-FIX-OPENSUSE: openSUSE has qmake-qt5 qmake was reserved for qt4, which is no longer present
 Patch0: use-qtmake-qt5.patch
-# PATCH-FIX-UPSTREAM: fix build with jack on linux.
-#Patch1: 0dde64eef84.patch
-# PATCH-FIX-UPSTREAM: make compiler happy by adding returns
-#Patch2: musescore-4.0.2-return.patch
-# PATCH-FIX-UPSTREAM: change in qt-declaratives breaks musescore
-#Patch3: fix-for-latest-qt-declarative.patch
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -121,6 +115,7 @@ Requires: qt5-qtgraphicaleffects
 Requires: qt5-qtquickcontrols2
 Requires: ( alsa-plugins-pulse if pulseaudio )
 Requires: ( pipewire-alsa      if pipewire )
+Required: openssl1.1 # For crashpad binary
 
 %description
 MuseScore is a graphical music typesetter. It allows for note entry on a
@@ -162,23 +157,28 @@ tar xvfz %{SOURCE5}
 # find out what those do:
 # BUILD_VIDEOEXPORT_MODULE:BOOL=ON -> requires ffmpeg-5 ...
 # Fedora ships ffmpeg-6 via ffmpeg-devel and ffmpeg-4 via compat-ffmpeg4-devel
-# -DBUILD_UPDATE_MODULE:BOOL=OFF triggers bug https://github.com/musescore/MuseScore/issues/15617
+# Setting path to crashpad_handler: MUE_CRASHPAD_HANDLER_PATH
+# fvar-tracking-assignments -> disable for link
 
 CURRENT_PATH=`pwd`
 
 %cmake \
-       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-       -DMUSESCORE_BUILD_CONFIG=release \
-       -DBUILD_UNIT_TESTS:BOOL=OFF \
        -DMUE_BUILD_UNIT_TESTS:BOOL=OFF \
-       -DUSE_SYSTEM_FREETYPE:BOOL=ON \
-       -DBUILD_JACK:BOOL=ON \
-       -DBUILD_UPDATE_MODULE:BOOL=ON \
-       -DBUILD_CRASHPAD_CLIENT:BOOL=OFF \
+       -DMUE_BUILD_CRASHPAD_CLIENT:BOOL=OFF \
+       -DMUE_BUILD_VST_MODULE:BOOL=ON \
+       -DMUE_BUILD_VIDEOEXPORT_MODULE:BOOL=OFF \
+       -DMUE_BUILD_UPDATE_MODULE:BOOL=OFF \
+       -DMUSESCORE_BUILD_MODE=release \
+       -DMUSESCORE_BUILD_NUMBER=1 \
        -DMUSESCORE_REVISION=%{revision} \
-       -DBUILD_VST:BOOL=ON \
        -DVST3_SDK_PATH:PATH=$CURRENT_PATH/vst3sdk \
-       -DBUILD_VIDEOEXPORT_MODULE:BOOL=OFF
+       -DCMAKE_SKIP_RPATH:BOOL=ON \
+       -DX86_MAY_HAVE_SSE:BOOL=ON \
+       -DX86_MAY_HAVE_SSE2:BOOL=ON \
+       -DX86_MAY_HAVE_SSE4_1:BOOL=OFF \
+       -DX86_MAY_HAVE_AVX:BOOL=OFF \
+       -DOPUS_X86_PRESUME_SSE:BOOL=ON \
+       -DOPUS_X86_PRESUME_SSE2:BOOL=ON
 
 %cmake_build
 
@@ -220,7 +220,7 @@ install -p -m 644 demos/*.mscz %{buildroot}%{_datadir}/%{rname}-%{version_lesser
 # Remove opus devel files, they are provided by system
 rm -r %{buildroot}%{_includedir}/opus
 # Delete crashpad binary
-rm %{buildroot}%{_bindir}/crashpad_handler
+rm -f %{buildroot}%{_bindir}/crashpad_handler
 
 # collect doc files
 install -d -m 755 %{buildroot}/%{docdir}
@@ -289,6 +289,8 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/org.musescore.MuseSc
 
 
 %changelog
+* Thu Aug 03 2023 Yann Collette <ycollette.nospam@free.fr> - 4.1.1-2
+- update to 4.1.1-2 - fix build
 * Tue Aug 01 2023 Yann Collette <ycollette.nospam@free.fr> - 4.1.1-1
 - update to 4.1.1-1
 * Tue Aug 01 2023 Yann Collette <ycollette.nospam@free.fr> - 4.0.2-1
