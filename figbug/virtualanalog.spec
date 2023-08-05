@@ -2,7 +2,7 @@
 
 Name:    virtualanalog
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Virtual Analog VST
 License: GPL-2.0-or-later
 URL:     https://github.com/FigBug/VirtualAnalog
@@ -80,8 +80,8 @@ install -m 755 -d %{buildroot}%{_libdir}/lv2/
 install -m 755 -d %{buildroot}%{_bindir}/
 
 install -m 755 -p plugin/Builds/LinuxMakefile/build/VirtualAnalog %{buildroot}/%{_bindir}/
-cp -ra plugin/Builds/LinuxMakefile/build/VirtualAnalog.vst3/* %{buildroot}/%{_libdir}/vst3/
-cp -ra plugin/Builds/LinuxMakefile/build/VirtualAnalog.lv2/* %{buildroot}/%{_libdir}/lv2/
+cp -ra plugin/Builds/LinuxMakefile/build/VirtualAnalog.vst3 %{buildroot}/%{_libdir}/vst3/
+cp -ra plugin/Builds/LinuxMakefile/build/VirtualAnalog.lv2 %{buildroot}/%{_libdir}/lv2/
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
 
@@ -116,5 +116,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Aug 05 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2 - fix install
+
 * Thu Jan 12 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
