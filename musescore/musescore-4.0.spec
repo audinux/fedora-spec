@@ -67,9 +67,9 @@ Source5: vst3sdk.tar.gz
 Source6: vst3-source.sh
 
 # PATCH-FIX-OPENSUSE: openSUSE has qmake-qt5 qmake was reserved for qt4, which is no longer present
-Patch0: use-qtmake-qt5.patch
+Patch0: mscore-use-qtmake-qt5.patch
 # PATCH-FIX-UPSTREAM: fix build with jack on linux.
-Patch1: 0dde64eef84.patch
+Patch1: mscore-0dde64eef84.patch
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
