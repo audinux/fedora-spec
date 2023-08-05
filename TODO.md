@@ -104,6 +104,8 @@
 | VocalShaper             | https://github.com/Do-sth-sharp/VocalShaper |
 | ComposeSiren            | https://github.com/patriceguyot/ComposeSiren |
 | audiocraft              | https://github.com/facebookresearch/audiocraft |
+| CHOW                    | https://github.com/Chowdhury-DSP/CHOW |
+| ChowKick                | https://github.com/Chowdhury-DSP/ChowKick |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
@@ -478,8 +480,6 @@ psi-plugins -> another active github repository: https://github.com/psi-im/plugi
 resources -> try to find other IR (https://github.com/jpcima/HybridReverb2-impulse-response-database)
 ryukau -> update to last master
 ```
-
-Check https://github.com/Chowdhury-DSP
 
 Check chpath usage and use patchelf if required (it's required in bespokesynth)
 
