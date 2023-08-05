@@ -70,10 +70,6 @@ Source6: vst3-source.sh
 Patch0: use-qtmake-qt5.patch
 # PATCH-FIX-UPSTREAM: fix build with jack on linux.
 Patch1: 0dde64eef84.patch
-# PATCH-FIX-UPSTREAM: make compiler happy by adding returns
-Patch2: musescore-4.0.2-return.patch
-# PATCH-FIX-UPSTREAM: change in qt-declaratives breaks musescore
-Patch3: fix-for-latest-qt-declarative.patch
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -115,26 +111,24 @@ BuildRequires: pkgconfig(vorbis)
 BuildRequires: pkgconfig(vorbisenc)
 BuildRequires: pkgconfig(vorbisfile)
 BuildRequires: fdupes
+BuildRequires: steinberg-bravura-fonts-all
+BuildRequires: steinberg-petaluma-fonts-all
 BuildRequires: desktop-file-utils
 
-Requires: %{name}-fonts = %{version}-%{release}
 Requires: qt5-qtgraphicaleffects
 Requires: qt5-qtquickcontrols2
 Requires: ( alsa-plugins-pulse if pulseaudio )
 Requires: ( pipewire-alsa      if pipewire )
+# For crashpad binary
+# Requires: openssl1.1 
+Requires: gnu-free-sans-fonts
+Requires: gnu-free-serif-fonts
+Requires: hicolor-icon-theme
 
 %description
 MuseScore is a graphical music typesetter. It allows for note entry on a
 virtual note sheet. It has an integrated sequencer for immediate playing of the
 score. MuseScore can import and export MusicXml and standard MIDI files.
-
-%package fonts
-Summary: MuseScore fonts
-License: GPL-3.0-or-later WITH Font-exception-2.0 AND OFL-1.1
-BuildArch: noarch
-
-%description fonts
-Additional fonts for use by the MuseScore music notation program.
 
 %prep
 %autosetup -p1 -n MuseScore-%{version}
@@ -154,22 +148,25 @@ sed 's/\r$//' thirdparty/rtf2html/README.ru > tmpfile
 touch -r thirdparty/rtf2html/README.ru tmpfile
 mv -f tmpfile thirdparty/rtf2html/README.ru
 
-# fix missing -ldl for Leaps
+# fix missing -ldl
 sed -i 's/\(target_link_libraries(mscore ${LINK_LIB}\)/\1 ${CMAKE_DL_LIBS}/' src/main/CMakeLists.txt
 
 tar xvfz %{SOURCE5}
 
 %build
 
-# TODO:
-# find out what those do:
-# BUILD_VIDEOEXPORT_MODULE:BOOL=ON
+# BUILD_VIDEOEXPORT_MODULE:BOOL=OFF -> requires ffmpeg-5 and Fedora only ship 4 or 6
 # -DBUILD_UPDATE_MODULE:BOOL=OFF triggers bug https://github.com/musescore/MuseScore/issues/15617
 
 CURRENT_PATH=`pwd`
 
+#  CFLAGS="${CFLAGS:--O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64  -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer }" ; export CFLAGS ; 
+#  CXXFLAGS="${CXXFLAGS:--O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64  -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer }" ; export CXXFLAGS ; 
+#  LDFLAGS="${LDFLAGS:--Wl,-z,relro -Wl,--as-needed  -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1  }" ; export LDFLAGS ; 
+
+%define set_build_flags %{nil}
+
 %cmake \
-       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
        -DMUSESCORE_BUILD_CONFIG=release \
        -DBUILD_UNIT_TESTS=OFF \
        -DUSE_SYSTEM_FREETYPE=ON \
@@ -188,23 +185,9 @@ CURRENT_PATH=`pwd`
 %cmake_install
 
 # don't package kddockwidgets. It should not be installed
-rm %{buildroot}%{_libdir}/*.a
-rm -r %{buildroot}%{_includedir}/kddockwidgets
-rm -r %{buildroot}%{_libdir}/cmake/KDDockWidgets
-
-# install fonts
-mkdir -p %{buildroot}%{fontdir}
-install -p -m 644 fonts/*.ttf                       %{buildroot}/%{fontdir}
-install -p -m 644 fonts/*/*.ttf                     %{buildroot}/%{fontdir}
-install -p -m 644 fonts/bravura/BravuraText.otf     %{buildroot}/%{fontdir}
-install -p -m 644 fonts/campania/Campania.otf       %{buildroot}/%{fontdir}
-install -p -m 644 fonts/edwin/*.otf                 %{buildroot}/%{fontdir}
-install -p -m 644 fonts/finalebroadway/*.otf        %{buildroot}/%{fontdir}
-install -p -m 644 fonts/finalemaestro/*.otf         %{buildroot}/%{fontdir}
-install -p -m 644 fonts/gootville/GootvilleText.otf %{buildroot}/%{fontdir}
-install -p -m 644 fonts/leland/LelandText.otf       %{buildroot}/%{fontdir}
-install -p -m 644 fonts/musejazz/MuseJazzText.otf   %{buildroot}/%{fontdir}
-install -p -m 644 fonts/petaluma/PetalumaText.otf   %{buildroot}/%{fontdir}
+rm %{buildroot}/%{_libdir}/*.a
+rm -r %{buildroot}/%{_includedir}/kddockwidgets
+rm -r %{buildroot}/%{_libdir}/cmake/KDDockWidgets
 
 # unique names for font docs
 mv fonts/edwin/README.md        fonts/edwin/README.md.edwin
@@ -215,36 +198,37 @@ mv fonts/finalebroadway/OFL.txt fonts/finalebroadway/OFL.txt.finalebroadway
 mv fonts/finalemaestro/OFL.txt  fonts/finalemaestro/OFL.txt.finalemaestro
 
 # also package additional demos
-mkdir -p %{buildroot}%{_datadir}/%{rname}-%{version_lesser}/demos
-install -p -m 644 demos/*.mscz %{buildroot}%{_datadir}/%{rname}-%{version_lesser}/demos
+mkdir -p %{buildroot}/%{_datadir}/%{rname}-%{version_lesser}/demos
+install -p -m 644 demos/*.mscz %{buildroot}/%{_datadir}/%{rname}-%{version_lesser}/demos
 
 # Remove opus devel files, they are provided by system
-rm -r %{buildroot}%{_includedir}/opus
+rm -r %{buildroot}/%{_includedir}/opus
+
 # Delete crashpad binary
-rm %{buildroot}%{_bindir}/crashpad_handler
+rm %{buildroot}/%{_bindir}/crashpad_handler
 
 # collect doc files
-install -d -m 755 %{buildroot}%docdir
-install -p -m 644 thirdparty/beatroot/COPYING         %{buildroot}%docdir/COPYING.beatroot
-install -p -m 644 thirdparty/beatroot/README.txt      %{buildroot}%docdir/README.txt.beatroot
-install -p -m 644 thirdparty/dtl/COPYING              %{buildroot}%docdir/COPYING.BSD.dtl
-install -p -m 644 thirdparty/freetype/README          %{buildroot}%docdir/README.freetype
-install -p -m 644 thirdparty/intervaltree/README      %{buildroot}%docdir/README.intervaltree
-install -p -m 644 thirdparty/rtf2html/ChangeLog       %{buildroot}%docdir/ChangeLog.rtf2html
-install -p -m 644 thirdparty/rtf2html/COPYING.LESSER  %{buildroot}%docdir/COPYING.LESSER.rtf2html
-install -p -m 644 thirdparty/rtf2html/README          %{buildroot}%docdir/README.rtf2html
-install -p -m 644 thirdparty/rtf2html/README.mscore   %{buildroot}%docdir/README.mscore.rtf2html
-install -p -m 644 thirdparty/rtf2html/README.ru       %{buildroot}%docdir/README.ru.rtf2html
-install -p -m 644 thirdparty/singleapp/LGPL_EXCEPTION.txt %{buildroot}%docdir/LGPL_EXCEPTION.txt.singleapp
-install -p -m 644 thirdparty/singleapp/LICENSE.GPL3   %{buildroot}%docdir/LICENSE.GPL3.singleapp
-install -p -m 644 thirdparty/singleapp/LICENSE.LGPL   %{buildroot}%docdir/LICENSE.LGPL.singleapp
-install -p -m 644 thirdparty/singleapp/README.TXT     %{buildroot}%docdir/README.TXT.singleapp
+install -d -m 755 %{buildroot}/%{docdir}
+install -p -m 644 thirdparty/beatroot/COPYING         %{buildroot}/%{docdir}/COPYING.beatroot
+install -p -m 644 thirdparty/beatroot/README.txt      %{buildroot}/%{docdir}/README.txt.beatroot
+install -p -m 644 thirdparty/dtl/COPYING              %{buildroot}/%{docdir}/COPYING.BSD.dtl
+install -p -m 644 thirdparty/freetype/README          %{buildroot}/%{docdir}/README.freetype
+install -p -m 644 thirdparty/intervaltree/README      %{buildroot}/%{docdir}/README.intervaltree
+install -p -m 644 thirdparty/rtf2html/ChangeLog       %{buildroot}/%{docdir}/ChangeLog.rtf2html
+install -p -m 644 thirdparty/rtf2html/COPYING.LESSER  %{buildroot}/%{docdir}/COPYING.LESSER.rtf2html
+install -p -m 644 thirdparty/rtf2html/README          %{buildroot}/%{docdir}/README.rtf2html
+install -p -m 644 thirdparty/rtf2html/README.mscore   %{buildroot}/%{docdir}/README.mscore.rtf2html
+install -p -m 644 thirdparty/rtf2html/README.ru       %{buildroot}/%{docdir}/README.ru.rtf2html
+install -p -m 644 thirdparty/singleapp/LGPL_EXCEPTION.txt %{buildroot}/%{docdir}/LGPL_EXCEPTION.txt.singleapp
+install -p -m 644 thirdparty/singleapp/LICENSE.GPL3   %{buildroot}/%{docdir}/LICENSE.GPL3.singleapp
+install -p -m 644 thirdparty/singleapp/LICENSE.LGPL   %{buildroot}/%{docdir}/LICENSE.LGPL.singleapp
+install -p -m 644 thirdparty/singleapp/README.TXT     %{buildroot}/%{docdir}/README.TXT.singleapp
 
-install -p -m 644 tools/bww2mxml/COPYING              %{buildroot}%docdir/COPYING.bww2mxml
-install -p -m 644 tools/bww2mxml/README               %{buildroot}%docdir/README.bww2mxml
-install -p -m 644 share/sound/README.md               %{buildroot}%docdir/README.md.sound
-install -p -m 644 share/instruments/README.md         %{buildroot}%docdir/README.md.instruments
-install -p -m 644 share/wallpapers/COPYRIGHT          %{buildroot}%docdir/COPYING.wallpaper
+install -p -m 644 tools/bww2mxml/COPYING              %{buildroot}/%{docdir}/COPYING.bww2mxml
+install -p -m 644 tools/bww2mxml/README               %{buildroot}/%{docdir}/README.bww2mxml
+install -p -m 644 share/sound/README.md               %{buildroot}/%{docdir}/README.md.sound
+install -p -m 644 share/instruments/README.md         %{buildroot}/%{docdir}/README.md.instruments
+install -p -m 644 share/wallpapers/COPYRIGHT          %{buildroot}/%{docdir}/COPYING.wallpaper
 
 # Install desktop file
 desktop-file-install                         \
@@ -273,7 +257,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.musescore.MuseSco
 %{_datadir}/%{rname}-%{version_lesser}/*
 %{_mandir}/man1/*
 
-%files fonts
+# Docs for fonts
 %doc fonts/README.md
 %doc fonts/bravura/bravura-text.md
 %doc fonts/bravura/OFL-FAQ.txt
@@ -287,11 +271,6 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.musescore.MuseSco
 %license fonts/leland/LICENSE.txt.leland
 %license fonts/finalebroadway/OFL.txt.finalebroadway
 %license fonts/finalemaestro/OFL.txt.finalemaestro
-
-%dir %{fontdir}
-%{fontdir}/*.ttf
-%{fontdir}/*.otf
-
 
 %changelog
 * Tue Aug 01 2023 Yann Collette <ycollette.nospam@free.fr> - 4.0.2-1

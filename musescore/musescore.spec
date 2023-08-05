@@ -21,8 +21,8 @@
 %define rname          mscore
 %define version_lesser 4.1
 %define revision       5485621
-%define fontdir        %{_datadir}/fonts/%{name}
 %define docdir         %{_docdir}/%{name}
+%define fontdir        %{_datadir}/fonts/%{name}
 
 Name: mscore-mao
 Version: 4.1.1
@@ -50,6 +50,7 @@ Summary: A WYSIWYG music score typesetter
 # the soundfont we musescore uses (see below) is BSD 3
 License: Apache-2.0 AND BSD-3-Clause AND FTL AND GPL-2.0-only AND SUSE-GPL-3.0-with-font-exception AND GPL-2.0-or-later AND GFDL-1.2-only AND LGPL-2.0-only AND LGPL-2.1-only AND (GPL-2.0-only OR GPL-3.0-only) AND MIT
 URL: https://musescore.org
+
 Source0: https://github.com/musescore/MuseScore/archive/v%{version}/MuseScore-%{version}.tar.gz
 
 # MuseScore expect to be able to download the latest version of its soundfonts
@@ -59,14 +60,17 @@ Source1: https://ftp.osuosl.org/pub/musescore/soundfont/MuseScore_General/MuseSc
 Source2: https://ftp.osuosl.org/pub/musescore/soundfont/MuseScore_General/MuseScore_General_License.md
 Source3: https://ftp.osuosl.org/pub/musescore/soundfont/MuseScore_General/MuseScore_General_Readme.md
 Source4: https://ftp.osuosl.org/pub/musescore/soundfont/MuseScore_General/MuseScore_General.sf3
+
 # VST3
 # Usage: ./vst3-source.sh <TAG>
 #        ./vst3-source.sh v3.7.8_build_34
 Source5: vst3sdk.tar.gz
 Source6: vst3-source.sh
 
-# PATCH-FIX-OPENSUSE: openSUSE has qmake-qt5 qmake was reserved for qt4, which is no longer present
-Patch0: use-qtmake-qt5.patch
+# For mime types
+Source7: %{name}.xml
+
+Patch0: mscore-use-qtmake-qt5.patch
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -107,28 +111,26 @@ BuildRequires: pkgconfig(sndfile)
 BuildRequires: pkgconfig(vorbis)
 BuildRequires: pkgconfig(vorbisenc)
 BuildRequires: pkgconfig(vorbisfile)
+BuildRequires: portmidi-devel
 BuildRequires: fdupes
+BuildRequires: steinberg-bravura-fonts-all
+BuildRequires: steinberg-petaluma-fonts-all
 BuildRequires: desktop-file-utils
 
-Requires: %{name}-fonts = %{version}-%{release}
 Requires: qt5-qtgraphicaleffects
 Requires: qt5-qtquickcontrols2
 Requires: ( alsa-plugins-pulse if pulseaudio )
 Requires: ( pipewire-alsa      if pipewire )
-Required: openssl1.1 # For crashpad binary
+# For crashpad binary
+# Requires: openssl1.1 
+Requires: gnu-free-sans-fonts
+Requires: gnu-free-serif-fonts
+Requires: hicolor-icon-theme
 
 %description
 MuseScore is a graphical music typesetter. It allows for note entry on a
 virtual note sheet. It has an integrated sequencer for immediate playing of the
 score. MuseScore can import and export MusicXml and standard MIDI files.
-
-%package fonts
-Summary: MuseScore fonts
-License: GPL-3.0-or-later WITH Font-exception-2.0 AND OFL-1.1
-BuildArch: noarch
-
-%description fonts
-Additional fonts for use by the MuseScore music notation program.
 
 %prep
 %autosetup -p1 -n MuseScore-%{version}
@@ -162,6 +164,12 @@ tar xvfz %{SOURCE5}
 
 CURRENT_PATH=`pwd`
 
+#  CFLAGS="${CFLAGS:--O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64  -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer }" ; export CFLAGS ; 
+#  CXXFLAGS="${CXXFLAGS:--O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64  -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer }" ; export CXXFLAGS ; 
+#  LDFLAGS="${LDFLAGS:--Wl,-z,relro -Wl,--as-needed  -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1  }" ; export LDFLAGS ; 
+
+%define set_build_flags %{nil}
+
 %cmake \
        -DMUE_BUILD_UNIT_TESTS:BOOL=OFF \
        -DMUE_BUILD_CRASHPAD_CLIENT:BOOL=OFF \
@@ -191,20 +199,6 @@ rm %{buildroot}/%{_libdir}/*.a
 rm -r %{buildroot}/%{_includedir}/kddockwidgets
 rm -r %{buildroot}/%{_libdir}/cmake/KDDockWidgets
 
-# install fonts
-mkdir -p %{buildroot}/%{fontdir}
-install -p -m 644 fonts/*.ttf                       %{buildroot}/%{fontdir}
-install -p -m 644 fonts/*/*.ttf                     %{buildroot}/%{fontdir}
-install -p -m 644 fonts/bravura/BravuraText.otf     %{buildroot}/%{fontdir}
-install -p -m 644 fonts/campania/Campania.otf       %{buildroot}/%{fontdir}
-install -p -m 644 fonts/edwin/*.otf                 %{buildroot}/%{fontdir}
-install -p -m 644 fonts/finalebroadway/*.otf        %{buildroot}/%{fontdir}
-install -p -m 644 fonts/finalemaestro/*.otf         %{buildroot}/%{fontdir}
-install -p -m 644 fonts/gootville/GootvilleText.otf %{buildroot}/%{fontdir}
-install -p -m 644 fonts/leland/LelandText.otf       %{buildroot}/%{fontdir}
-install -p -m 644 fonts/musejazz/MuseJazzText.otf   %{buildroot}/%{fontdir}
-install -p -m 644 fonts/petaluma/PetalumaText.otf   %{buildroot}/%{fontdir}
-
 # unique names for font docs
 mv fonts/edwin/README.md        fonts/edwin/README.md.edwin
 mv fonts/edwin/LICENSE.txt      fonts/edwin/LICENSE.txt.edwin
@@ -219,6 +213,7 @@ install -p -m 644 demos/*.mscz %{buildroot}%{_datadir}/%{rname}-%{version_lesser
 
 # Remove opus devel files, they are provided by system
 rm -r %{buildroot}%{_includedir}/opus
+
 # Delete crashpad binary
 rm -f %{buildroot}%{_bindir}/crashpad_handler
 
@@ -241,11 +236,20 @@ install -p -m 644 share/sound/README.md               %{buildroot}/%{docdir}/REA
 install -p -m 644 share/instruments/README.md         %{buildroot}/%{docdir}/README.md.instruments
 install -p -m 644 share/wallpapers/COPYRIGHT          %{buildroot}/%{docdir}/COPYING.wallpaper
 
+# Mime type
+mkdir -p %{buildroot}%{_datadir}mime/packages
+install -pm 644 %{SOURCE7} %{buildroot}%{_datadir}/mime/packages/
+
 # Install desktop file
-desktop-file-install                         \
-  --delete-original                          \
-  --dir=%{buildroot}/%{_datadir}/applications \
-  %{buildroot}/%{_datadir}/applications/org.musescore.MuseScore.desktop
+desktop-file-install \
+   --dir=%{buildroot}%{_datadir}/applications \
+   --add-category="X-Notation" \
+   --remove-category="Sequencer" \
+   --remove-category="AudioVideoEditing" \
+   --add-mime-type="audio/midi" \
+   --add-mime-type="application/xml" \
+   --set-key="Exec" --set-value='env XDG_CURRENT_DESKTOP="" KDE_FULL_SESSION="" DESKTOP_SESSION="" mscore %F' \
+   %{buildroot}%{_datadir}/applications/org.musescore.MuseScore.desktop
 
 # Remove rpath in mscore
 chrpath --delete %{buildroot}/%{_bindir}/mscore
@@ -268,7 +272,6 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/org.musescore.MuseSc
 %{_datadir}/%{rname}-%{version_lesser}/*
 %{_mandir}/man1/*
 
-%files fonts
 %doc fonts/README.md
 %doc fonts/bravura/bravura-text.md
 %doc fonts/bravura/OFL-FAQ.txt
@@ -282,11 +285,6 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/org.musescore.MuseSc
 %license fonts/leland/LICENSE.txt.leland
 %license fonts/finalebroadway/OFL.txt.finalebroadway
 %license fonts/finalemaestro/OFL.txt.finalemaestro
-
-%dir %{fontdir}
-%{fontdir}/*.ttf
-%{fontdir}/*.otf
-
 
 %changelog
 * Thu Aug 03 2023 Yann Collette <ycollette.nospam@free.fr> - 4.1.1-2
