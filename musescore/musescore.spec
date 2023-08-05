@@ -15,6 +15,8 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
+%define _lto_cflags %{nil}
+
 # Internal QML imports
 %global __requires_exclude qmlimport\\((MuseScore|FileIO).*
 
@@ -164,11 +166,9 @@ tar xvfz %{SOURCE5}
 
 CURRENT_PATH=`pwd`
 
-#  CFLAGS="${CFLAGS:--O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64  -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer }" ; export CFLAGS ; 
-#  CXXFLAGS="${CXXFLAGS:--O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64  -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer }" ; export CXXFLAGS ; 
-#  LDFLAGS="${LDFLAGS:--Wl,-z,relro -Wl,--as-needed  -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1  }" ; export LDFLAGS ; 
-
-%define set_build_flags %{nil}
+%set_build_flags
+export CFLAGS="$CFLAGS -fno-var-tracking-assignments"
+export CXXFLAGS="$CXXFLAGS -fno-var-tracking-assignments"
 
 %cmake \
        -DMUE_BUILD_UNIT_TESTS:BOOL=OFF \
@@ -260,7 +260,6 @@ chrpath --delete %{buildroot}/%{_bindir}/mscore
 desktop-file-validate %{buildroot}/%{_datadir}/applications/org.musescore.MuseScore.desktop
 
 %files
-%doc README.md
 %doc %{docdir}/*
 %license LICENSE.GPL
 %{_bindir}/%{rname}
