@@ -874,7 +874,8 @@ https://github.com/khrykin/BlackBird
 https://github.com/attilammagyar/js80p
 https://github.com/blackboxdsp/rotor
 https://github.com/allex-k/synth
-https://github.com/sbadon122/ATLAS-06-Synthesizer"
+https://github.com/sbadon122/ATLAS-06-Synthesizer
+https://github.com/overtone/overtone/"
 
 if [ -f git_tags_new.txt ];
 then
