@@ -107,6 +107,7 @@
 | CHOW                    | https://github.com/Chowdhury-DSP/CHOW |
 | ChowKick                | https://github.com/Chowdhury-DSP/ChowKick |
 | OwlPlug                 | https://github.com/DropSnorz/OwlPlug |
+| cStop                   | https://github.com/calgoheen/cStop |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
