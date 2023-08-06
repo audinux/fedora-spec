@@ -106,6 +106,7 @@
 | audiocraft              | https://github.com/facebookresearch/audiocraft |
 | CHOW                    | https://github.com/Chowdhury-DSP/CHOW |
 | ChowKick                | https://github.com/Chowdhury-DSP/ChowKick |
+| OwlPlug                 | https://github.com/DropSnorz/OwlPlug |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
