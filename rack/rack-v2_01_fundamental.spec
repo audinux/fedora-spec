@@ -8,12 +8,12 @@
 %global debug_package %{nil}
 
 # Global variables for github repository
-%global commit0 ee850f8487280839ae0548f6b9af65cb9faf3ef8
+%global commit0 60aad63b88718e80b66e36ff7442c9d9fce48a76
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    rack-v2-Fundamental
-Version: 2.3.0
+Version: 2.5.0
 Release: 3%{?dist}
 Summary: A plugin for Rack
 License: GPL-2.0-or-later
@@ -68,9 +68,9 @@ They are also a great reference for creating your own plugins in C++.
 %prep
 %setup -n Rack
 
-%patch0 -p1
+%patch 0 -p1
 %ifarch aarch64
-%patch1 -p1
+%patch 1 -p1
 %endif
 
 CURRENT_PATH=`pwd`
@@ -179,6 +179,9 @@ cp -r fundamental_plugin/dist/Fundamental/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
+* Sun Aug 06 2023 Yann Collette <ycollette.nospam@free.fr> - 2.5.0-3
+- update to 2.5.0-3 - last master
+
 * Sun Apr 02 2023 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-3
 - update to 2.3.0-3 - last master
 
