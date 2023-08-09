@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c53790f562912be16f23c690c82d9b9da9626d64
-%global gittag0 2.0.0
+%global commit0 b05643e5fc4c65823ccef1b90204fada53e99202
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-TheAllElectricSmartGrid
-Version: 2.0.0
+Version: 2.0.2
 Release: 2%{?dist}
 Summary: TheAllElectricSmartGrid plugin for Rack
 License: GPLv2+
@@ -152,5 +152,5 @@ cp -r TheAllElectricSmartGrid_plugin/dist/TheAllElectricSmartGrid/* %{buildroot}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile
