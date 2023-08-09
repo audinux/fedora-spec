@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    LinVst
-Version: 4.78
+Version: 4.9
 Release: 3%{?dist}
 Summary: Linux Windows vst wrapper/bridge
 License: GPL-3.0-only
@@ -70,6 +70,9 @@ cp manage/README.md %{buildroot}/%{_datadir}/%{name}/manage/
 %{_datadir}/%{name}/manage/*
 
 %changelog
+* Wed Aug 09 2023 Yann Collette <ycollette.nospam@free.fr> - 4.9-3
+- update to version 4.9-3
+
 * Thu Feb 09 2023 Yann Collette <ycollette.nospam@free.fr> - 4.78-3
 - update to version 4.78-3 - rebuild with wine 8.
 
