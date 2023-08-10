@@ -109,13 +109,14 @@
 | OwlPlug                 | https://github.com/DropSnorz/OwlPlug |
 | cStop                   | https://github.com/calgoheen/cStop |
 | IR                      | https://github.com/tomscii/ir.lv2 |
+| libremidi               | https://github.com/jcelerier/libremidi |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
 ```
-yabridge - cstdint - TODO ...
 rack-v2-SurgeXTRack - cstdint
 ```
+
 SIMD:
 Add BuildRequires: xsimd-devel
 ```
@@ -125,11 +126,13 @@ rack-v1-ParableInstruments - aarch64 - fatal error: pmmintrin.h: No such file or
 rack-v1-squinkylabs-plug1  - aarch64 - fatal error: pmmintrin.h: No such file or directory
 rack-v1-SurgeRack - aarch64 - fatal error: xmmintrin.h: No such file or directory
 ```
+
 Missing packages:
 ```
 miniaudicle  - No matching package to install: 'qscintilla-devel' # waiting for qt5 support
 rack-v2-RPJ  - fatal error: emmintrin.h: No such file or directory
 ```
+
 Various:
 ```
 mpk-m2-editor  - Error: The version in the Python package metadata 0.0.0 normalizes to zero.
