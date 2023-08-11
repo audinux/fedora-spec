@@ -1,6 +1,6 @@
 Summary: A radio automation system
 Name:    rivendell
-Version: 4.0.1
+Version: 4.1.0
 Release: 1%{?dist}
 License: LGPL
 URL:     https://github.com/ElvishArtisan/rivendell
@@ -43,6 +43,7 @@ BuildRequires: ImageMagick-c++-devel
 
 Requires: madplay
 Requires: autofs
+Requires: python2.7
 Requires: python3
 Requires: python3-pycurl
 Requires: python3-requests
@@ -58,13 +59,12 @@ audio are also included.
 %prep
 %autosetup -n %{name}-%{version}
 
-sed -i -e "s/Magick++-6.Q16/ImageMagick-7.Q16HDRI/g" configure.ac
+sed -i -e "s/Magick++-6.Q16/Magick++-7.Q16HDRI/g" configure.ac
+sed -i -e "s/libmusicbrainz5 libcoverart/libmusicbrainz5 libcoverart libcoverartcc/g" configure.ac
 
 %build
 
 ./autogen.sh
-
-# -Werror=format-security
 
 %configure --disable-docbook
 %make_build
@@ -151,8 +151,8 @@ exit 0
 %{_unitdir}/*
 
 %changelog
-* Sun Jun 18 2023 Yann Collette <ycollette.nospam@free.fr> - 4.0.1-1
-- update to 4.0.1-1
+* Fri Aug 11 2023 Yann Collette <ycollette.nospam@free.fr> - 4.1.0-1
+- update to 4.1.0-1
 
 * Mon Oct 03 2022 Yann Collette <ycollette.nospam@free.fr> - 3.6.6-1
 - update to 3.6.6-1
