@@ -76,7 +76,7 @@ sed -i -e "s/libmusicbrainz5 libcoverart/libmusicbrainz5 libcoverart libcoverart
 install -m 755 -d %{buildroot}/usr/lib/systemd/system/
 mv %{buildroot}/lib/systemd/system/rivendell.service %{buildroot}/usr/lib/systemd/system/rivendell.service
 
-for Files in %{buildroot}/%{_libdir}/rivendell/pypad/*.py
+for Files in %{buildroot}/%{_usr}/lib/rivendell/pypad/*.py
 do
     sed -i -e "s/bin\/python/bin\/python2/g" $Files
 done
@@ -140,7 +140,7 @@ exit 0
 
 %files
 %doc AUTHORS INSTALL NEWS README ChangeLog UPGRADING
-%license COPYING
+%license LICENSES
 %{_datadir}/*
 %{_libdir}/*
 %{_libexecdir}/*
@@ -149,6 +149,9 @@ exit 0
 %{_sysconfdir}/*
 %{_includedir}/*
 %{_unitdir}/*
+%{_usr}/lib/rivendell/cdn/*
+%{_usr}/lib/rivendell/pypad/*
+%{_usr}/lib/firewalld/services/
 
 %changelog
 * Fri Aug 11 2023 Yann Collette <ycollette.nospam@free.fr> - 4.1.0-1
