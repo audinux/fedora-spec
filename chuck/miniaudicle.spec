@@ -1,13 +1,13 @@
 # Tag: Jack
 # Type: IDE
 # Category: Programming
-# GUIToolkit: Qt4
+# GUIToolkit: Qt6
 
 %global debug_package %{nil}
 
 Summary: Light weight ChucK development environment
 Name:    miniaudicle
-Version: 1.4.2.0
+Version: 1.5.1.0
 Release: 2%{?dist}
 License: LGPL
 URL:     https://audicle.cs.princeton.edu/mini/
@@ -15,18 +15,21 @@ URL:     https://audicle.cs.princeton.edu/mini/
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
+# ./source-miniaudicle.sh chuck-1.5.1.0
 Source0: miniAudicle.tar.gz
 Source1: source-miniaudicle.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: bison
 BuildRequires: flex
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qscintilla-qt5-devel
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qscintilla-qt6-devel
+BuildRequires: qt6-rpm-macros
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: libsndfile-devel
 BuildRequires: pulseaudio-libs-devel
+BuildRequires: desktop-file-utils
 
 %description
 The miniAudicle is a light-weight integrated development environment
@@ -47,6 +50,9 @@ sed -i -e "s|CFLAGS \+=|CFLAGS \+= -std=c++11 %{optflags}|g" miniAudicle.pro
 # write proper lib path in default preferences
 sed -i -e "s|/usr/local/lib/chuck|%{_libdir}/chuck|g" chuck/src/core/chuck_dl.cpp
 
+# Create git-rev.h
+echo "#define GIT_REVISION \"%{version}\"" > git-rev.h
+
 %build
 
 %set_build_flags
@@ -55,35 +61,108 @@ sed -i -e "s|/usr/local/lib/chuck|%{_libdir}/chuck|g" chuck/src/core/chuck_dl.cp
 cd src
 
 # build alsa version
-%make_build linux-alsa
+%make_build linux-alsa QMAKE=qmake-qt6.sh
 mv miniAudicle miniAudicle-alsa
 
 # build pulse version
 %make_build clean
-%make_build linux-pulse
+%make_build linux-pulse QMAKE=qmake-qt6.sh
 mv miniAudicle miniAudicle-pulse
 
 # build jack version
 %make_build clean
-%make_build linux-jack
+%make_build linux-jack QMAKE=qmake-qt6.sh
+mv miniAudicle miniAudicle-jack
 
 %install
 
 mkdir -p %{buildroot}%{_bindir}
 cd src
 # install jack version (last built)
-install -m 755 miniAudicle %{buildroot}%{_bindir}/miniAudicle
+install -m 755 miniAudicle-jack %{buildroot}%{_bindir}/miniAudicle-jack
 # install alsa version
 install -m 755 miniAudicle-alsa %{buildroot}%{_bindir}/miniAudicle-alsa
 # install pulse version
 install -m 755 miniAudicle-pulse %{buildroot}%{_bindir}/miniAudicle-pulse
 
+mkdir -p %{buildroot}%{_datadir}/%{name}/examples/
+cp -rav ../examples/* %{buildroot}%{_datadir}/%{name}/examples/
+
+install -m 755 -d %{buildroot}/%{_datadir}/icons/
+cp -a qt/icon/miniaudicle.ico %{buildroot}/%{_datadir}/icons/
+
+# Write desktop files
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+
+cat > %{buildroot}%{_datadir}/applications/%{name}-jack.desktop <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=%name-jack
+Exec=%{name}-jack
+Icon=miniaudicle
+Comment=miniAudicle GUI for Chuck / Jack
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+EOF
+
+cat > %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=%name-alsa
+Exec=%{name}-alsa
+Icon=miniaudicle
+Comment=miniAudicle GUI for Chuck / ALSA
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+EOF
+
+cat > %{buildroot}%{_datadir}/applications/%{name}-pulse.desktop <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=%name-pulse
+Exec=%{name}-pulse
+Icon=miniaudicle
+Comment=miniAudicle GUI for Chuck / PulseAudio
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+EOF
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}-jack.desktop
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}-pulse.desktop
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}-alsa.desktop
+
+%check
+
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-jack.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-pulse.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
+
 %files
-%doc BUGS README.linux VERSIONS
-%license COPYING
-%{_bindir}/miniAudicle*
+%doc BUGS README.md VERSIONS ABOUT
+%license LICENSE
+%{_bindir}/*
+%{_datadir}/%{name}/examples/*
+%{_datadir}/applications/*.desktop
+%{_datadir}/icons/*
 
 %changelog
+* Fri Aug 11 2023 Yann Collette <ycollette.nospam@free.fr> - 1.5.1.0-2
+- update to 1.5.1.0-2
+
 * Sun Jun 25 2023 Yann Collette <ycollette.nospam@free.fr> - 1.4.2.0-2
 - update to 1.4.2.0-2
 
