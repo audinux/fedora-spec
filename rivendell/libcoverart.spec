@@ -1,12 +1,12 @@
 # Global variables for github repository
-%global commit0 fe08928991c9a1aba86fdafc9057658b549dc2fb
+%global commit0 0983ff7b104dc864af56409de5f7c66b061c5857
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Summary: A library for accessing the MusicBrainz Cover Art Archive
 Name:    libcoverart
 Version: 1.0.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: LGPL
 URL:     https://github.com/metabrainz/libcoverart
 
@@ -32,7 +32,7 @@ Requires: %{name} = %{version}-%{release}
 The %{name}-devel package contains header files for %{name}.
 
 %prep
-%autosetup -p1 -n %{name}-%{commit0}
+%autosetup -n %{name}-%{commit0}
 
 find . -name CMakeLists.txt -exec sed -i -e "s/\-Werror//g" {} \;
 find . -name "*.cmake" -exec sed -i -e "s/\-Werror//g" {} \;
@@ -55,6 +55,9 @@ find . -name "*.cmake" -exec sed -i -e "s/\-Werror//g" {} \;
 %{_includedir}/*
 
 %changelog
+* Fri Aug 11 2023 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-4
+- update to last master - 0983ff7b104dc864af56409de5f7c66b061c5857
+
 * Thu Oct 1 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-3
 - fix for fedora 33 + update to last master
 
