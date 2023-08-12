@@ -40,6 +40,7 @@ BuildRequires: libmp4v2-devel
 BuildRequires: twolame-devel
 BuildRequires: ImageMagick-devel
 BuildRequires: ImageMagick-c++-devel
+BuildRequires: systemd-rpm-macros
 
 Requires: madplay
 Requires: autofs
@@ -59,7 +60,9 @@ audio are also included.
 %prep
 %autosetup -n %{name}-%{version}
 
+%if 0%{?fedora} >= 38
 sed -i -e "s/Magick++-6.Q16/Magick++-7.Q16HDRI/g" configure.ac
+%endif
 sed -i -e "s/libmusicbrainz5 libcoverart/libmusicbrainz5 libcoverart libcoverartcc/g" configure.ac
 
 %build
