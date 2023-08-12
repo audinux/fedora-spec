@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 1bb0b6460ad76fd2402cdc34bf4b61864feb95ab
-%global gittag0 2.1.3
+%global commit0 2147c80d246de8161c7f945d36ce9beb3bd16083
+%global gittag0 2.1.5
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-monome
-Version: 2.1.3
+Version: 2.1.5
 Release: 2%{?dist}
 Summary: monome plugin for Rack
 License: GPLv2+
@@ -165,5 +165,5 @@ cp -r monome_plugin/dist/monome/* %{buildroot}%{_libexecdir}/Rack2/plugins/monom
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.5-1
 - initial specfile

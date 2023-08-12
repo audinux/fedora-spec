@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 f52edbcc7c9b1c0f14eabdf964387fb975807c18
-%global gittag0 2.1.4
+%global commit0 2d6220346f31a28888c889a6f6d98fcc7d5c4180
+%global gittag0 2.1.5
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-LilacLoop
-Version: 2.1.4
+Version: 2.1.5
 Release: 2%{?dist}
 Summary: LilacLoop plugin for Rack
 License: GPLv2+
@@ -152,5 +152,5 @@ cp -r LilacLoop_plugin/dist/LilacLoop/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.4-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.5-1
 - initial specfile

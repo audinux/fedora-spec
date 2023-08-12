@@ -6,16 +6,16 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 2f466801e8fb3fedb1385de0cb902115d1609484
-%global gittag0 2.3.0
+%global commit0 e3c5290cd7b4d0c4568fe32419294af81762a4ce
+%global gittag0 2.3.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-BaconMusic
-Version: 2.3.0
-Release: 1%{?dist}
+Version: 2.3.1
+Release: 2%{?dist}
 Summary: BaconMusic plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/baconpaul/BaconPlugs/
@@ -24,7 +24,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./rack-source.sh <tag>
-# ./rack-source.sh v2.0.3
+# ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
 Source1: BaconPlugs.tar.gz
@@ -57,6 +57,7 @@ BuildRequires: libarchive-devel
 BuildRequires: libzstd-devel
 BuildRequires: Rack-v2
 BuildRequires: jq
+BuildRequires: chrpath
 
 %description
 BaconMusic plugin for Rack.
@@ -77,7 +78,7 @@ sed -i -e "s/-march=nehalem//g" dep.mk
 # For -O2 usage
 sed -i -e "s/-O3/-O2/g" compile.mk
 sed -i -e "s/-O3/-O2/g" dep.mk
-sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk 
+sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(MKCFLAGS)/g" dep.mk 
 
 # Remove static gcc lib
 sed -i -e "s/-static-libstdc++ -static-libgcc//g" Makefile
@@ -90,7 +91,7 @@ NEW_FLAGS="-I/usr/include/GLFW"
 NEW_FLAGS="$NEW_FLAGS -I/usr/include/rtaudio"
 %endif
 
-echo "CXXFLAGS += $NEW_FLAGS `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
+echo "MYCXXFLAGS += $NEW_FLAGS -O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/tinyexpr -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
 
 %if %{use_static_glfw}
 echo "Use Static GLFW"
@@ -138,7 +139,12 @@ tar xvfz %{SOURCE1} --directory=BaconMusic_plugin --strip-components=1
 
 cp -n %{SOURCE2} BaconMusic_plugin/plugin.json
 
+sed -i -e "s/EXTRA_CMAKE :=/EXTRA_CMAKE := -DCMAKE_CXX_FLAGS='\$(MYCXXFLAGS)'/g" BaconMusic_plugin/Makefile
+
 %build
+
+CURRENT_PATH=`pwd`
+export MYCXXFLAGS="`pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src -Wno-error -include cstdint"
 
 cd BaconMusic_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
@@ -148,9 +154,11 @@ cd BaconMusic_plugin
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/BaconMusic/
 cp -r BaconMusic_plugin/dist/BaconMusic/* %{buildroot}%{_libexecdir}/Rack2/plugins/BaconMusic/
 
+chrpath --delete %{buildroot}%{_libexecdir}/Rack2/plugins/BaconMusic/plugin.so
+
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-1
 - initial specfile

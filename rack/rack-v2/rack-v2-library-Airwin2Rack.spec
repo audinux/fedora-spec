@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 899424daa4035d8e88496c5d485dedeadbc1a901
-%global gittag0 2.4.0
+%global commit0 bc39556738e0bf27af1390d49aa77f2e0b886041
+%global gittag0 2.5.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Airwin2Rack
-Version: 2.4.0
+Version: 2.5.0
 Release: 2%{?dist}
 Summary: Airwin2Rack plugin for Rack
 License: GPLv2+
@@ -159,5 +159,5 @@ chrpath --delete  %{buildroot}%{_libexecdir}/Rack2/plugins/Airwin2Rack/plugin*.s
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.0-1
 - initial specfile
