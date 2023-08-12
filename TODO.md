@@ -129,7 +129,6 @@ rack-v1-SurgeRack - aarch64 - fatal error: xmmintrin.h: No such file or director
 
 Missing packages:
 ```
-miniaudicle  - No matching package to install: 'qscintilla-devel' # waiting for qt5 support
 rack-v2-RPJ  - fatal error: emmintrin.h: No such file or directory
 ```
 
@@ -140,7 +139,6 @@ improviz - ??
 rack-v2-EH_modules  - ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
 rack-v2-FrankBuss - ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
 rack-v2-SynthKit  - ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
-rivendell  - error: File must begin with "/": %{_unitdir}/*
 ```
 
 ## WIP
@@ -151,7 +149,7 @@ midi2voice (code doesn't install correctly)
 imogen (needs juce cmake file)
 rack-v2-RPJ  -> needs a specific aarch64 patch for intrin.h
 june-21 -> package cabbage and use it to build a shipped binary
-/bintracker -> problem during chicken dependencies installation
+bintracker -> problem during chicken dependencies installation
 ```
 
 Add a grub script to add "preempt=full" to existing standard kernels
