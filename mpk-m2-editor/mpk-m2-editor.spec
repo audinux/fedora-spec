@@ -3,15 +3,16 @@
 # Category: Audio
 
 # Global variables for github repository
-%global commit0 36b5571c7530a224c71c640610f3e9622b989087
+%global commit0 78410346fce152d7ef6cadf1ab0588068e5bf387
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 %define libname mpk_m2_editor
+%define _python_dist_allow_version_zero %{nil}
 
 Name:    mpk-m2-editor
 Version: 0.0.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Alternative to the official AKAI MPKMini MkII Editor
 URL:     https://github.com/PiOverFour/MPK-M2-editor
 License: GPL-3.0-only
@@ -23,11 +24,12 @@ Source0: https://github.com/PiOverFour/MPK-M2-editor/archive/%{commit0}.tar.gz#/
 
 BuildArch: noarch
 
-BuildRequires: desktop-file-utils
 BuildRequires: python3-devel
-BuildRequires: python3-rtmidi
-BuildRequires: python3-qt5-base
 BuildRequires: python3-setuptools
+BuildRequires: desktop-file-utils
+
+Requires: python3-rtmidi
+Requires: python3-qt5-base
 
 %description
 A Linux editor for the Akai LPD8 pad controller.
