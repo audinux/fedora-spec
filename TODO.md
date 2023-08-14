@@ -110,6 +110,10 @@
 | cStop                   | https://github.com/calgoheen/cStop |
 | IR                      | https://github.com/tomscii/ir.lv2 |
 | libremidi               | https://github.com/jcelerier/libremidi |
+| GWC                     | https://sourceforge.net/projects/gwc/files/gwc2/0.22-6/ |
+| SI-Pliguns              | https://github.com/guysherman/si-plugins |
+| RCComp                  | https://github.com/chmaha/RCComp |
+| RCVerb                  | https://github.com/chmaha/RCverb |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
