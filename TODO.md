@@ -114,6 +114,7 @@
 | SI-Pliguns              | https://github.com/guysherman/si-plugins |
 | RCComp                  | https://github.com/chmaha/RCComp |
 | RCVerb                  | https://github.com/chmaha/RCverb |
+| ddsp-vst                | https://github.com/magenta/ddsp-vst |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
