@@ -1,7 +1,5 @@
-%define _lto_cflags %{nil}
-
 Name:    vmpc
-Version: 0.5.1
+Version: 0.5.2
 Release: 1%{?dist}
 Summary: JUCE implementation of VMPC2000XL
 License: GPL-3.0-only
@@ -70,6 +68,9 @@ cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/Standalone/* %{bu
 %{_libdir}/vst3/*
 
 %changelog
+* Tue Aug 15 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.2-1
+- update to 0.5.2-1
+
 * Sun Jul 30 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.1-1
 - update to 0.5.1-1
 
