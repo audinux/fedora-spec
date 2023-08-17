@@ -6,18 +6,18 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 2d6220346f31a28888c889a6f6d98fcc7d5c4180
-%global gittag0 2.1.5
+%global commit0 04411186ac4682bda86a36a42f940a8243b12bc2
+%global gittag0 2.1.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-LilacLoop
-Version: 2.1.5
+Version: 2.1.6
 Release: 2%{?dist}
 Summary: LilacLoop plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/grough/lilac-loop-vcv
 
 Vendor:       Audinux
@@ -152,5 +152,5 @@ cp -r LilacLoop_plugin/dist/LilacLoop/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.6-1
 - initial specfile

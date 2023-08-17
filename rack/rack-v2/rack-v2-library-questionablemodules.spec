@@ -6,16 +6,16 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 d3a4590f3f486191454225b2de4e4279f4755844
-%global gittag0 2.1.7
+%global commit0 2e227e45220fa103e1619672dcf2fcc74b9f12ca
+%global gittag0 2.1.8a
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-questionablemodules
-Version: 2.1.7
-Release: 1%{?dist}
+Version: 2.1.8a
+Release: 2%{?dist}
 Summary: questionablemodules plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/isivisi/questionablemodules
@@ -24,7 +24,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./rack-source.sh <tag>
-# ./rack-source.sh v2.0.3
+# ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
 Source1: questionablemodules.tar.gz
@@ -90,7 +90,7 @@ NEW_FLAGS="-I/usr/include/GLFW"
 NEW_FLAGS="$NEW_FLAGS -I/usr/include/rtaudio"
 %endif
 
-echo "CXXFLAGS += $NEW_FLAGS `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
+echo "CXXFLAGS += $NEW_FLAGS -O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/tinyexpr -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
 
 %if %{use_static_glfw}
 echo "Use Static GLFW"
@@ -152,5 +152,5 @@ cp -r questionablemodules_plugin/dist/questionablemodules/* %{buildroot}%{_libex
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.7-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.8a-1
 - initial specfile
