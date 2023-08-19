@@ -1,5 +1,5 @@
 # Global variables for github repository
-%global commit0 076a23dd0084519e05981588f886c5d7d8a47e5e
+%global commit0 1321e5d1ce0d75ef8963bf0f0c9a00218c748bb5
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
@@ -9,8 +9,8 @@
 
 Name:    zynthian-data
 Version: 1.0.0
-Release: 6%{?dist}
-Summary: A set of LV2 presets for DISTRHO
+Release: 7%{?dist}
+Summary: A set of LV2 presets
 License: GPL-2.0-or-later
 URL:     https://github.com/zynthian/zynthian-data
 
@@ -30,6 +30,8 @@ A set of LV2 presets for various plugins:
 - Vitalium
 - Wolpertinger
 - RaffoSynth
+- Dexed
+- Odin 2
 
 %package distrho
 Summary:  Presets for DISTRHO plugins
@@ -54,7 +56,6 @@ Presets for padthv1 LV2 plugin
 
 %package surge
 Summary:  Presets for Surge plugin
-Requires: lv2-surge
 
 %description surge
 Presets for Surge LV2 plugin
@@ -80,6 +81,19 @@ Requires: lv2-raffosynth
 %description raffosynth
 Presets for RaffoSynth LV2 plugin
 
+%package dexed
+Summary:  Presets for Dexed plugin
+Requires: lv2-dexed
+
+%description dexed
+Presets for Dexed LV2 plugin
+
+%package odin2
+Summary:  Presets for Odin2 plugin
+
+%description odin2
+Presets for Odin2 LV2 / VST3 plugin
+
 %prep
 %autosetup -n %{name}-%{commit0}
 
@@ -97,6 +111,8 @@ cp -r presets/lv2/Surge*        %{buildroot}/usr/%{_lib}/lv2/
 cp -r presets/lv2/Vitalium*     %{buildroot}/usr/%{_lib}/lv2/
 cp -r presets/lv2/Wolpertinger* %{buildroot}/usr/%{_lib}/lv2/
 cp -r presets/lv2/Raffo_Synth*  %{buildroot}/usr/%{_lib}/lv2/
+cp -r presets/lv2/dexed*        %{buildroot}/usr/%{_lib}/lv2/
+cp -r presets/lv2/Odin2*        %{buildroot}/usr/%{_lib}/lv2/
 
 %files distrho
 %{_libdir}/lv2/VEX*
@@ -121,7 +137,16 @@ cp -r presets/lv2/Raffo_Synth*  %{buildroot}/usr/%{_lib}/lv2/
 %files raffosynth
 %{_libdir}/lv2/Raffo_Synth*
 
+%files dexed
+%{_libdir}/lv2/dexed*
+
+%files odin2
+%{_libdir}/lv2/Odin2*
+
 %changelog
+* Wed Jan 26 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-7
+- update to 1.0.0-7 - 1321e5d1ce0d75ef8963bf0f0c9a00218c748bb5
+
 * Wed Jan 26 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-6
 - update to 1.0.0-6
 
