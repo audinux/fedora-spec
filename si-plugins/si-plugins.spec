@@ -72,6 +72,15 @@ DSSI version of %{name}
 
 sed -i -e "s/-Wl,--strip-all//g" Makefile.mk
 
+%ifarch aarch64
+sed -i -e "s/-msse2//g" Makefile.mk
+sed -i -e "s/-msse2//g" dpf/dgl/Makefile.mk
+sed -i -e "s/-msse//g" Makefile.mk
+sed -i -e "s/-msse//g" dpf/dgl/Makefile.mk
+sed -i -e "s/-mfpmath=sse//g" Makefile.mk
+sed -i -e "s/-mfpmath=sse//g" dpf/dgl/Makefile.mk
+%endif
+
 %build
 
 %set_build_flags
