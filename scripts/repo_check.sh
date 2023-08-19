@@ -875,7 +875,9 @@ https://github.com/attilammagyar/js80p
 https://github.com/blackboxdsp/rotor
 https://github.com/allex-k/synth
 https://github.com/sbadon122/ATLAS-06-Synthesizer
-https://github.com/overtone/overtone/"
+https://github.com/overtone/overtone
+https://github.com/guysherman/si-plugins
+https://github.com/AlisterH/gwc"
 
 if [ -f git_tags_new.txt ];
 then
