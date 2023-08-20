@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name:    geonkick
-Version: 2.9.1
+Version: 2.9.2
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
 URL:     https://gitlab.com/iurie-sw/geonkick
@@ -15,16 +15,16 @@ Distribution: Audinux
 Source0: https://gitlab.com/iurie-sw/%{name}/-/archive/v%{version}/%{name}-v%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: lv2-devel
 BuildRequires: libsndfile-devel
 BuildRequires: rapidjson-devel
-BuildRequires: cmake make
-BuildRequires: desktop-file-utils
 BuildRequires: redkite == 1.3.0
 BuildRequires: libX11-devel
 BuildRequires: cairo-devel
+BuildRequires: desktop-file-utils
 
 %description
 Geonkick is a synthesizer that can synthesize elements of percussion.
@@ -56,8 +56,8 @@ sed -i -e "s|\${CMAKE_INSTALL_PREFIX}/lib|\${CMAKE_INSTALL_PREFIX}/%{_lib}|g" pl
 %{_datadir}/*
 
 %changelog
-* Sun May 15 2022 Yann Collette <ycollette.nospam@free.fr> - 2.9.1-2
-- Update to 2.9.1-2
+* Sun Aug 20 2023 Yann Collette <ycollette.nospam@free.fr> - 2.9.2-2
+- Update to 2.9.2-2
 
 * Mon Feb 21 2022 Yann Collette <ycollette.nospam@free.fr> - 2.9.0-2
 - Update to 2.9.0-2
