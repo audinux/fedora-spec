@@ -1,0 +1,47 @@
+From 001904135bafa8931e4cf67402e0fa332feb857d Mon Sep 17 00:00:00 2001
+From: David Runge <dave@sleepmap.de>
+Date: Tue, 28 Apr 2020 22:20:26 +0200
+Subject: [PATCH] Fixing build for lv2 >= 1.18.0
+
+Renaming all instances of _LV2UI_Descriptor to LV2UI_Descriptor.
+This has been a breaking change introduced in lv2 1.18.0.
+---
+ ir_gui.cc | 2 +-
+ lv2_ui.h  | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/ir_gui.cc b/ir_gui.cc
+index 74ff90a..0f482c6 100644
+--- a/ir_gui.cc
++++ b/ir_gui.cc
+@@ -1523,7 +1523,7 @@ static void cleanup(LV2UI_Handle ui) {
+ 	free(cp);
+ }
+ 
+-static LV2UI_Handle instantiate(const struct _LV2UI_Descriptor * descriptor,
++static LV2UI_Handle instantiate(const struct LV2UI_Descriptor * descriptor,
+ 				const char * plugin_uri,
+ 				const char * bundle_path,
+ 				LV2UI_Write_Function write_function,
+diff --git a/lv2_ui.h b/lv2_ui.h
+index d5b813d..b32fba7 100644
+--- a/lv2_ui.h
++++ b/lv2_ui.h
+@@ -238,7 +238,7 @@ typedef void (*LV2UI_Write_Function)(LV2UI_Controller controller,
+ /** This struct contains the implementation of an UI. A pointer to an 
+     object of this type is returned by the lv2ui_descriptor() function. 
+ */
+-typedef struct _LV2UI_Descriptor {
++typedef struct LV2UI_Descriptor {
+   
+   /** The URI for this UI (not for the plugin it controls). */
+   const char* URI;
+@@ -268,7 +268,7 @@ typedef struct _LV2UI_Descriptor {
+ 			same array as the one the plugin host passes to a 
+ 			plugin.
+   */
+-  LV2UI_Handle (*instantiate)(const struct _LV2UI_Descriptor* descriptor,
++  LV2UI_Handle (*instantiate)(const struct LV2UI_Descriptor* descriptor,
+                               const char*                     plugin_uri,
+                               const char*                     bundle_path,
+                               LV2UI_Write_Function            write_function,

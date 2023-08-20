@@ -877,7 +877,8 @@ https://github.com/allex-k/synth
 https://github.com/sbadon122/ATLAS-06-Synthesizer
 https://github.com/overtone/overtone
 https://github.com/guysherman/si-plugins
-https://github.com/AlisterH/gwc"
+https://github.com/AlisterH/gwc
+https://github.com/tomscii/ir.lv2"
 
 if [ -f git_tags_new.txt ];
 then

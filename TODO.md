@@ -108,7 +108,6 @@
 | ChowKick                | https://github.com/Chowdhury-DSP/ChowKick |
 | OwlPlug                 | https://github.com/DropSnorz/OwlPlug |
 | cStop                   | https://github.com/calgoheen/cStop |
-| IR                      | https://github.com/tomscii/ir.lv2 |
 | libremidi               | https://github.com/jcelerier/libremidi |
 | RCComp                  | https://github.com/chmaha/RCComp |
 | RCVerb                  | https://github.com/chmaha/RCverb |
