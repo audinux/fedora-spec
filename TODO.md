@@ -107,11 +107,13 @@
 | CHOW                    | https://github.com/Chowdhury-DSP/CHOW |
 | ChowKick                | https://github.com/Chowdhury-DSP/ChowKick |
 | OwlPlug                 | https://github.com/DropSnorz/OwlPlug |
-| cStop                   | https://github.com/calgoheen/cStop |
 | libremidi               | https://github.com/jcelerier/libremidi |
 | RCComp                  | https://github.com/chmaha/RCComp |
 | RCVerb                  | https://github.com/chmaha/RCverb |
 | ddsp-vst                | https://github.com/magenta/ddsp-vst |
+
+Add these 3 drumkits:
+https://linuxmusicians.com/viewtopic.php?t=26089
 
 ## Fedora 38 to be fixed
 Cstdint missing:
