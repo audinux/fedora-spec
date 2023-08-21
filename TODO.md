@@ -105,7 +105,6 @@
 | ComposeSiren            | https://github.com/patriceguyot/ComposeSiren |
 | audiocraft              | https://github.com/facebookresearch/audiocraft |
 | CHOW                    | https://github.com/Chowdhury-DSP/CHOW |
-| ChowKick                | https://github.com/Chowdhury-DSP/ChowKick |
 | libremidi               | https://github.com/jcelerier/libremidi |
 | ddsp-vst                | https://github.com/magenta/ddsp-vst |
 

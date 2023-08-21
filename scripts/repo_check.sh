@@ -881,7 +881,8 @@ https://github.com/AlisterH/gwc
 https://github.com/tomscii/ir.lv2
 https://github.com/calgoheen/cStop
 https://github.com/chmaha/RCComp
-https://github.com/chmaha/RCVerb"
+https://github.com/chmaha/RCVerb
+https://github.com/Chowdhury-DSP/ChowKick"
 
 if [ -f git_tags_new.txt ];
 then
