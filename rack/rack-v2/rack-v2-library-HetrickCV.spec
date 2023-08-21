@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b8f0c92bd25b53ed015f47b15b37e47d7b88b034
-%global gittag0 2.3.2
+%global commit0 a3a8f856a1346f161a41bf080983bf3f45b314db
+%global gittag0 2.4.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-HetrickCV
-Version: 2.3.2
+Version: 2.4.0
 Release: 2%{?dist}
 Summary: HetrickCV plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r HetrickCV_plugin/dist/HetrickCV/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.0-1
 - initial specfile

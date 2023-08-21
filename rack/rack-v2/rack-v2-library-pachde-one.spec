@@ -7,17 +7,17 @@
 
 # Global variables for github repository
 %global commit0 a0b1c916b00d58c41c121d098df5ae1f82fd2de5
-%global gittag0 2.0.0
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-pachde-one
-Version: 2.0.0
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: pachde-one plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/Paul-Dempsey/pachde1
 
 Vendor:       Audinux
@@ -34,7 +34,6 @@ Patch0: rack-v2-aarch64.patch
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel
 BuildRequires: glew-devel
@@ -153,5 +152,5 @@ cp -r pachde-one_plugin/dist/pachde-one/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
