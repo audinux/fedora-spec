@@ -1,12 +1,12 @@
-From f1634dded411a0e46c29b3cef99edea72de66651 Mon Sep 17 00:00:00 2001
+From e2d73bb85d9257e5b85f99f250ed40b1068dea23 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Tue, 8 Aug 2023 16:05:44 +0200
-Subject: [PATCH] fs fix
+Date: Mon, 21 Aug 2023 21:52:47 +0200
+Subject: [PATCH] patch
 
 ---
  imgcreate/fs.py   |  3 +--
- imgcreate/live.py | 12 ++++++++++++
- 2 files changed, 13 insertions(+), 2 deletions(-)
+ imgcreate/live.py | 14 +++++++++++++-
+ 2 files changed, 14 insertions(+), 3 deletions(-)
 
 diff --git a/imgcreate/fs.py b/imgcreate/fs.py
 index f999d05..a47708f 100644
@@ -23,13 +23,14 @@ index f999d05..a47708f 100644
  def checkfsblksz(fstype, size, use=None, fssize=None):
  
 diff --git a/imgcreate/live.py b/imgcreate/live.py
-index 8f971b6..3b303ae 100644
+index 8f971b6..bd5c856 100644
 --- a/imgcreate/live.py
 +++ b/imgcreate/live.py
-@@ -491,6 +491,18 @@ class x86LiveImageCreator(LiveImageCreatorBase):
+@@ -491,7 +491,19 @@ class x86LiveImageCreator(LiveImageCreatorBase):
          if kernel == self._default_kernel:
              return True
  
+-        if kernel.startswith(b"kernel-") and kernel[7:] == self._default_kernel:
 +        if kernel.startswith("kernel-rt"):
 +            return False
 +
@@ -42,9 +43,10 @@ index 8f971b6..3b303ae 100644
 +        if kernel.startswith("kernel-core"):
 +            return False
 +
-         if kernel.startswith(b"kernel-") and kernel[7:] == self._default_kernel:
++        if kernel.startswith("kernel-") and kernel[7:] == self._default_kernel:
              return True
  
+         return False
 -- 
 2.41.0
 
