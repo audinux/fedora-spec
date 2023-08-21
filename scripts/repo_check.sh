@@ -879,7 +879,9 @@ https://github.com/overtone/overtone
 https://github.com/guysherman/si-plugins
 https://github.com/AlisterH/gwc
 https://github.com/tomscii/ir.lv2
-https://github.com/calgoheen/cStop"
+https://github.com/calgoheen/cStop
+https://github.com/chmaha/RCComp
+https://github.com/chmaha/RCVerb"
 
 if [ -f git_tags_new.txt ];
 then
