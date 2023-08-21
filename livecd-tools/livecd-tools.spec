@@ -3,7 +3,7 @@
 Summary: Tools for building live CDs
 Name: livecd-tools-mao
 Version: 31.0
-Release: 4%{?dist}
+Release: 5%{?dist}
 License: GPL-2.0-only
 URL: https://github.com/livecd-tools/livecd-tools
 
@@ -11,7 +11,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/livecd-tools/livecd-tools/archive/refs/tags/livecd-tools-%{version}.tar.gz
-Patch1: 0002-add-support-for-kernel-rt.patch
+Patch1: livecd-creator-0001-add-support-for-kernel-rt.patch
 
 BuildRequires: make
 BuildRequires: python3-devel
@@ -127,6 +127,9 @@ rm -rfv %{buildroot}%{_mandir}/man8/livecd-iso-to-*
 %{_mandir}/man8/livecd-iso-to-disk.8*
 
 %changelog
+* Mon Aug 21 2023 Yann Collette <ycollette.nospam@free.fr> - 1:31.0-5
+- update to 1:31.0-5
+
 * Tue Aug 08 2023 Yann Collette <ycollette.nospam@free.fr> - 1:31.0-4
 - update to 1:31.0-4
 
