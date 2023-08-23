@@ -112,6 +112,7 @@
 
 Add these 3 drumkits:
 https://linuxmusicians.com/viewtopic.php?t=26089
+http://www.bandshed.net/avldrumkits/
 
 ## Fedora 38 to be fixed
 Cstdint missing:
