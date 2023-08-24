@@ -15,7 +15,7 @@ URL:     https://audicle.cs.princeton.edu/mini/
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
-# ./source-miniaudicle.sh chuck-1.5.1.1
+# ./source-miniaudicle.sh chuck-1.5.1.2
 Source0: miniAudicle.tar.gz
 Source1: source-miniaudicle.sh
 
@@ -160,6 +160,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 %{_datadir}/icons/*
 
 %changelog
+* Thu Aug 24 2023 Yann Collette <ycollette.nospam@free.fr> - 1.5.1.2-2
+- update to 1.5.1.2-2
+
 * Tue Aug 22 2023 Yann Collette <ycollette.nospam@free.fr> - 1.5.1.1-2
 - update to 1.5.1.1-2
 
