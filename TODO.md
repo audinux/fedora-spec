@@ -107,7 +107,6 @@
 | CHOW                    | https://github.com/Chowdhury-DSP/CHOW |
 | libremidi               | https://github.com/jcelerier/libremidi |
 | ddsp-vst                | https://github.com/magenta/ddsp-vst |
-| MOrgan                  | https://github.com/getdunne/MOrgan |
 | LinVst3                 | https://github.com/osxmidi/LinVst3 |
 
 Add these 3 drumkits:
