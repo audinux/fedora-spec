@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    roomreverb
-Version: 1.0.0
+Version: 1.1.0
 Release: 1%{?dist}
 Summary: Room Reverb is a mono/stereo to stereo algorithmic reverb audio plugin
 License: GPL-3.0-or-later
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./roomreverb-source.sh <tag>
-# ./roomreverb-source.sh v1.0.0
+# ./roomreverb-source.sh v1.1.0
 
 Source0: RoomReverb.tar.gz
 Source1: roomreverb-source.sh
@@ -94,6 +94,9 @@ cp -ra %{__cmake_builddir}/RoomReverb_artefacts/Release/VST3/* %{buildroot}/%{_l
 %{_libdir}/clap/*
 
 %changelog
+* Fri Aug 25 2023 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+- update to 1.1.0-1
+
 * Tue Jan 17 2023 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - update to 1.0.0-1
 
