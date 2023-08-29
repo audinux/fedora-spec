@@ -10,7 +10,7 @@
 %define _lto_cflags %{nil}
 
 Name:    rack-v2-VCV-Recorder
-Version: 2.0.0
+Version: 2.0.1
 Release: 3%{?dist}
 Summary: A plugin for Rack
 License: GPL-2.0-or-later
@@ -34,7 +34,6 @@ Patch0: rack-v2-aarch64.patch
 BuildRequires: gcc gcc-c++
 BuildRequires: sed
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel
 BuildRequires: glew-devel
