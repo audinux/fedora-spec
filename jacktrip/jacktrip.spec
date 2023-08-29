@@ -4,7 +4,7 @@
 
 Summary: Multimachine jam sessions over the internet
 Name:    jacktrip
-Version: 1.10.1
+Version: 2.0.0
 Release: 2%{?dist}
 License: STK
 URL:     https://ccrma.stanford.edu/software/jacktrip/
@@ -13,18 +13,20 @@ Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
 # Usage: ./source-jacktrip.sh <tag>
-#        ./source-jacktrip.sh v1.10.1
+#        ./source-jacktrip.sh v2.0.0
 
 Source0: jacktrip.tar.gz
 Source1: source-jacktrip.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: meson
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-qtnetworkauth-devel
-BuildRequires: qt5-qtquickcontrols2-devel
-BuildRequires: qt5-qtsvg-devel
-BuildRequires: qt5-qtwebsockets-devel
+BuildRequires: git
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qtnetworkauth-devel
+BuildRequires: qt6-qtquickcontrols2-devel
+BuildRequires: qt6-qtsvg-devel
+BuildRequires: qt6-qtwebsockets-devel
+BuildRequires: qt6-qtwebengine-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: rtaudio-devel
@@ -78,6 +80,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/org.jackt
 %{_mandir}/man1/*
 
 %changelog
+* Mon Aug 28 2023 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-2
+- update to 2.0.0-2
+
 * Fri Aug 04 2023 Yann Collette <ycollette.nospam@free.fr> - 1.10.1-2
 - update to 1.10.1-2
 
