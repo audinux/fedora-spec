@@ -884,7 +884,10 @@ https://github.com/chmaha/RCComp
 https://github.com/chmaha/RCVerb
 https://github.com/Chowdhury-DSP/ChowKick
 https://github.com/getdunne/MOrgan
-https://github.com/tobanteAudio/modEQ"
+https://github.com/tobanteAudio/modEQ
+https://github.com/sfztools/sfizz
+https://github.com/sfztools/prelude.lv2
+https://github.com/sfztools/toccata.lv2"
 
 if [ -f git_tags_new.txt ];
 then

@@ -1,5 +1,5 @@
 Name:    sfizz
-Version: 1.2.1
+Version: 1.2.2
 Release: 4%{?dist}
 License: BSD-2-Clause
 Summary: Sampler plugin and library for SFZ instruments
@@ -24,11 +24,17 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: libxkbcommon-x11-devel
 BuildRequires: cairo-devel
 BuildRequires: pango-devel
+BuildRequires: simde-devel
+BuildRequires: kiss-fft-devel
+BuildRequires: pugixml-devel
+BuildRequires: cxxopts-devel
+BuildRequires: catch2-devel
 BuildRequires: jack-audio-connection-kit-devel
 
+# option_ex(SFIZZ_USE_SYSTEM_GHC_FS   "Use GHC Filesystem libraries preinstalled on system" OFF)
+
 %description
-Sfizz is a musical sampler, available as a LV2 plugin for musicians, and
-a library for developers.
+Sfizz is a musical sampler for musicians, and a library for developers.
 
 %package devel
 Summary:  Header files for Sfizz
@@ -42,14 +48,13 @@ Header files for the Sfizz library.
 
 %build
 
-%cmake -DLV2PLUGIN_INSTALL_DIR=%{_libdir}/lv2 \
-       -DVSTPLUGIN_INSTALL_DIR=%{_libdir}/vst \
-       -DSFIZZ_JACK=ON \
-       -DSFIZZ_LV2=ON \
-       -DSFIZZ_VST=ON \
-       -DENABLE_LTO=OFF \
-       -DCMAKE_CXX_FLAGS="-include cstdio -include cstdint -include limits -include exception -std=c++11" \
-       -DBUILD_SHARED_LIBS=OFF
+%cmake -DSFIZZ_JACK=ON \
+       -DSFIZZ_USE_SYSTEM_SIMDE=ON \
+       -DSFIZZ_USE_SYSTEM_KISS_FFT=ON \
+       -DSFIZZ_USE_SYSTEM_PUGIXML=ON \
+       -DSFIZZ_USE_SYSTEM_CXXOPTS=ON \
+       -DSFIZZ_USE_SYSTEM_CATCH=ON \
+       -DSFIZZ_USE_SNDFILE=ON
 
 %cmake_build
 
@@ -57,18 +62,12 @@ Header files for the Sfizz library.
 
 %cmake_install
 
-mv %{buildroot}/%{_libdir}/vst %{buildroot}/%{_libdir}/vst3
-
 %files
 %doc README.md GOVERNANCE.md CONTRIBUTING.md AUTHORS.md
 %license LICENSE
 %{_bindir}/sfizz_jack
 %{_bindir}/sfizz_render
 %{_libdir}/libsfizz.so.*
-%dir %{_libdir}/lv2
-%dir %{_libdir}/lv2/sfizz.lv2
-%{_libdir}/lv2/sfizz.lv2/*
-%{_libdir}/vst3/sfizz.vst3/*
 %{_mandir}/*
 
 %files devel
@@ -80,6 +79,9 @@ mv %{buildroot}/%{_libdir}/vst %{buildroot}/%{_libdir}/vst3
 %{_libdir}/pkgconfig/sfizz.pc
 
 %changelog
+* Tue Aug 29 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-4
+- update to 1.2.2-4
+
 * Sat Apr 15 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-4
 - update to 1.2.1-4
 

@@ -108,11 +108,7 @@
 | libremidi               | https://github.com/jcelerier/libremidi |
 | ddsp-vst                | https://github.com/magenta/ddsp-vst |
 | LinVst3                 | https://github.com/osxmidi/LinVst3 |
-| modEQ                   | https://github.com/tobanteAudio/modEQ |
-
-Add these 3 drumkits:
-https://linuxmusicians.com/viewtopic.php?t=26089
-http://www.bandshed.net/avldrumkits/
+| sfizz-ui                | https://github.com/sfztools/sfizz-ui |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
