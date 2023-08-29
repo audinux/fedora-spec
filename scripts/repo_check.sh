@@ -883,7 +883,8 @@ https://github.com/calgoheen/cStop
 https://github.com/chmaha/RCComp
 https://github.com/chmaha/RCVerb
 https://github.com/Chowdhury-DSP/ChowKick
-https://github.com/getdunne/MOrgan"
+https://github.com/getdunne/MOrgan
+https://github.com/tobanteAudio/modEQ"
 
 if [ -f git_tags_new.txt ];
 then
