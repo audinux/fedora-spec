@@ -1,5 +1,5 @@
 Name:    saugns
-Version: 0.4.1
+Version: 0.4.2
 Release: 1%{?dist}
 Summary: Scriptable AUdio GeNeration System - implements the SAU language.
 License: GPLv4+
@@ -9,7 +9,6 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/saugns/saugns/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0: saugns-0001-fix-makefiles.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -38,6 +37,9 @@ the -h option. More can be found in the man page and on the usage web page.
 %prep
 %autosetup -p1 -n %{name}-%{version}
 
+sed -i -e "s/-Wall -I./-Wall -I. \$(DEPFLAGS)/g" Makefile
+sed -i -e "s/-s / /g" Makefile
+
 %build
 
 %set_build_flags
@@ -63,6 +65,9 @@ mv %{buildroot}/%{_datadir}/doc/%{name}/ %{buildroot}/%{_datadir}/%{name}/doc/
 %{_datadir}/%{name}/examples/*
 
 %changelog
+* Tue Aug 29 2023 Yann Collette <ycollette.nospam@free.fr> - 0.4.2-1
+- update to 0.4.2-1
+
 * Tue Jul 04 2023 Yann Collette <ycollette.nospam@free.fr> - 0.4.1-1
 - update to 0.4.1-1
 
