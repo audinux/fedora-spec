@@ -887,7 +887,8 @@ https://github.com/getdunne/MOrgan
 https://github.com/tobanteAudio/modEQ
 https://github.com/sfztools/sfizz
 https://github.com/sfztools/prelude.lv2
-https://github.com/sfztools/toccata.lv2"
+https://github.com/sfztools/toccata.lv2
+https://github.com/sfztools/sfizz-ui"
 
 if [ -f git_tags_new.txt ];
 then
