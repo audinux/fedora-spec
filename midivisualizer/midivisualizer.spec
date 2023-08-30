@@ -1,5 +1,5 @@
 Name:    midivisualizer
-Version: 7.0
+Version: 7.1
 Release: 1%{?dist}
 Summary: A small MIDI visualizer tool, using OpenGL
 URL:     https://github.com/markusschwenk/midieditor
@@ -17,6 +17,7 @@ BuildRequires: compat-ffmpeg4
 BuildRequires: glfw-devel
 BuildRequires: gtk3-devel
 BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: libnotify-devel
 BuildRequires: chrpath
 BuildRequires: desktop-file-utils
 
@@ -77,11 +78,14 @@ desktop-file-install                         \
 %doc README.md
 %license LICENSE
 %{_bindir}/*
-%{_libdir}/midivisualizer/
+%dir %{_libdir}/midivisualizer/
 %{_libdir}/midivisualizer/liblibremidi.so
 %{_datadir}/icons/hicolor/256x256/apps/*
 %{_datadir}/applications/*
 
 %changelog
+* Wed Aug 30 2023 Yann Collette <ycollette.nospam@free.fr> - 7.1-1
+- update to 7.1-1
+
 * Sun Mar 12 2023 Yann Collette <ycollette.nospam@free.fr> - 7.0-1
 - Initial spec file
