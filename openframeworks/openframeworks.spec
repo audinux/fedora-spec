@@ -1,5 +1,5 @@
 Name:    openFrameworks
-Version: 0.11.2
+Version: 0.12.0
 Release: 2%{?dist}
 Summary: openFrameworks library / code
 URL:     https://github.com/openframeworks/openFrameworks
@@ -9,8 +9,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to get the sources:
-# ./source_openframeworks.sh 0.11.2
-# ./source_openframeworks.sh patch-release
+# ./source_openframeworks.sh 0.12.0
 
 Source0: openFrameworks.tar.gz
 Source1: of-make-workspace
@@ -81,6 +80,9 @@ fi
 
 %set_build_flags
 
+export CFLAGS=`echo $CFLAGS | sed -e "s|-Werror=format-security||g"`
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Werror=format-security||g"`
+
 cd libs/openFrameworksCompiled/project
 %make_build Release
 
@@ -121,6 +123,9 @@ chrpath --delete %{buildroot}/opt/openFrameworks/apps/projectGenerator/commandLi
 /opt/%{name}/*
 
 %changelog
+* Thu Aug 31 2023 Yann Collette <ycollette.nospam@free.fr> - 0.12.0-2
+- update to 0.12.0-2
+
 * Thu Mar 25 2021 Yann Collette <ycollette.nospam@free.fr> - 0.11.2-2
 - update to 0.11.2
 
