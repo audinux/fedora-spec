@@ -774,8 +774,7 @@ https://gitlab.com/drobilla/lv2lint
 https://gitlab.com/genhydro/genhydro
 https://gitlab.com/geontime/geonkick
 https://gitlab.com/hampton-harmonics/hampton-harmonics-modules
-https://gitlab.com/iurie-sw/geonkick
-https://gitlab.com/iurie-sw/redkite
+https://gitlab.com/iurie/geonkick
 https://gitlab.com/jeremy_mitchell/sunsetsignals
 https://gitlab.com/lebiniou/lebiniou
 https://gitlab.com/lebiniou/lebiniou-data
@@ -888,7 +887,10 @@ https://github.com/tobanteAudio/modEQ
 https://github.com/sfztools/sfizz
 https://github.com/sfztools/prelude.lv2
 https://github.com/sfztools/toccata.lv2
-https://github.com/sfztools/sfizz-ui"
+https://github.com/sfztools/sfizz-ui
+https://github.com/brummer10/neuralcapture"
+
+# https://gitlab.com/iurie-sw/redkite
 
 if [ -f git_tags_new.txt ];
 then

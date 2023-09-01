@@ -6,8 +6,7 @@
 git clone https://github.com/brummer10/$1
 cd $1
 git checkout $2
-git submodule init
-git submodule update
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz $1.tar.gz $1/*
