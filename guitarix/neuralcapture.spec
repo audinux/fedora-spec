@@ -1,5 +1,5 @@
 Name:    neuralcapture
-Version: 0.1.1
+Version: 0.1.2
 Release: 1%{?dist}
 Summary: A Neural Capture plug to make the process of cloning external soft/hardware a bit more comfortable
 License: BSD
@@ -9,7 +9,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./brummer10-source.sh <project> <tag>
-# ./brummer10-source.sh neuralcapture v0.1.1
+# ./brummer10-source.sh neuralcapture v0.1.2
 Source0: neuralcapture.tar.gz
 Source1: brummer10-source.sh
 
@@ -75,5 +75,8 @@ cp -ra bin/neuralcapture.vst3 %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Sep 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1.2-1
+- update to 0.1.2-1
+
 * Fri Sep 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1.1-1
 - Initial spec file
