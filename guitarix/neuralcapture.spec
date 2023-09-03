@@ -1,9 +1,9 @@
-Name:    neuralcapture
+Name:    neuralrecord
 Version: 0.1.2
 Release: 1%{?dist}
-Summary: A Neural Capture plug to make the process of cloning external soft/hardware a bit more comfortable
+Summary: A Neural Record plug to make the process of cloning external soft/hardware a bit more comfortable
 License: BSD
-URL: https://github.com/brummer10/neuralcapture
+URL: https://github.com/brummer10/neuralrecord
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -29,7 +29,7 @@ BuildRequires: cairo-devel
 BuildRequires: libsndfile-devel
 
 %description
-A Neural Capture plug to make the process of cloning external
+A Neural Record plug to make the process of cloning external
 soft/hardware a bit more comfortable
 
 %package -n lv2-%{name}
@@ -59,9 +59,9 @@ install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 -d %{buildroot}/%{_libdir}/lv2/
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
 
-cp bin/neuralcapture          %{buildroot}/%{_bindir}/
-cp -ra bin/neuralcapture.lv2  %{buildroot}/%{_libdir}/lv2/
-cp -ra bin/neuralcapture.vst3 %{buildroot}/%{_libdir}/vst3/
+cp bin/neuralrecord          %{buildroot}/%{_bindir}/
+cp -ra bin/neuralrecord.lv2  %{buildroot}/%{_libdir}/lv2/
+cp -ra bin/neuralrecord.vst3 %{buildroot}/%{_libdir}/vst3/
 
 %files
 %doc README.md
