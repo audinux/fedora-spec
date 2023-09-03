@@ -6,13 +6,13 @@ Name:    geonkick
 Version: 2.9.2
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
-URL:     https://gitlab.com/iurie-sw/geonkick
+URL:     https://gitlab.com/iurie/geonkick
 License: GPL-3.0-only
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://gitlab.com/iurie-sw/%{name}/-/archive/v%{version}/%{name}-v%{version}.tar.gz
+Source0: https://gitlab.com/iurie/%{name}/-/archive/v%{version}/%{name}-v%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
