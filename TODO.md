@@ -108,6 +108,7 @@
 | libremidi               | https://github.com/jcelerier/libremidi |
 | ddsp-vst                | https://github.com/magenta/ddsp-vst |
 | LinVst3                 | https://github.com/osxmidi/LinVst3 |
+| Wavetable               | https://github.com/FigBug/Wavetable |
 
 ## Fedora 38 to be fixed
 Cstdint missing:
