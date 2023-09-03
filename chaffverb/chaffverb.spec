@@ -27,7 +27,6 @@ BuildRequires: ladspa-devel
 BuildRequires: dssi-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: liblo-devel
-BuildRequires: mesa-libGL-devel
 
 %description
 An audio plugin utilizing pitch shifting, echo and reverb,
