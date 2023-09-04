@@ -3,8 +3,8 @@
 # Category: Audio
 
 %global v_major 3
-%global v_minor 9
-%global v_patch 1
+%global v_minor 10
+%global v_patch 0
 
 Name:    jamulus
 Version: %{v_major}.%{v_minor}.%{v_patch}
@@ -91,6 +91,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-server.deskto
 %{_mandir}/man1/*
 
 %changelog
+* Mon Sep 04 2023 Yann Collette <ycollette.nospam@free.fr> - 3.10.0-8
+- update to 3.10.0-8
+
 * Tue Oct 18 2022 Yann Collette <ycollette.nospam@free.fr> - 3.9.1-8
 - update to 3.9.1-8
 
