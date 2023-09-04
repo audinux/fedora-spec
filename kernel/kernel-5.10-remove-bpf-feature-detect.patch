@@ -1,7 +1,7 @@
-From 0c1173a56c073ab642e1a97d8e13312198633a35 Mon Sep 17 00:00:00 2001
+From c2e6b13f31cf66b42654952653b3b74c651d62d7 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Sat, 11 Jun 2022 08:11:18 +0200
-Subject: [PATCH] remove bpf feature detext
+Date: Sun, 3 Sep 2023 21:37:58 +0200
+Subject: [PATCH] patch elfdep
 
 ---
  tools/lib/bpf/Makefile | 43 ++++--------------------------------------
@@ -94,5 +94,5 @@ index f2a353bba..8c0ebb69d 100644
  	ls *.c *.h > cscope.files
  	cscope -b -q -I $(srctree)/include -f cscope.out
 -- 
-2.36.1
+2.41.0
 
