@@ -4,10 +4,10 @@
 
 Summary: Jack Video Monitor
 Name:    xjadeo
-Version: 0.8.12
+Version: 0.8.13
 Release: 4%{?dist}
 License: GPL
-URL:     http://xjadeo.sourceforge.net/
+URL:     https://xjadeo.sourceforge.net/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -28,11 +28,7 @@ BuildRequires: mesa-libGLU-devel
 BuildRequires: libltc-devel
 BuildRequires: liblo-devel
 BuildRequires: freetype-devel
-%if 0%{?fedora} >= 37
-BuildRequires: compat-ffmpeg4-devel
-%else
 BuildRequires: ffmpeg-devel
-%endif
 BuildRequires: libXv-devel
 BuildRequires: SDL2-devel
 BuildRequires: libXpm-devel
@@ -90,6 +86,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/*
 
 %changelog
+* Sun Sep 03 2023 Yann Collette <ycollette dot nospam at free.fr> 0.8.13-4
+- update to 0.8.13-4
+
 * Sun Jan 01 2023 Yann Collette <ycollette dot nospam at free.fr> 0.8.12-4
 - update to 0.8.12-4
 
