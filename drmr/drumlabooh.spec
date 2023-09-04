@@ -3,7 +3,7 @@
 # Category: Audio, Distortion
 
 Name:    drumlabooh
-Version: 0.0.2
+Version: 0.0.3
 Release: 1%{?dist}
 Summary: LV2/VSTi drum machine that can use Hydrogen, SFZ, and other drumkit formats
 License: GPL-3.0-only
@@ -71,11 +71,11 @@ install -m 755 -d %{buildroot}%{_libdir}/vst3/
 
 cp -ra %{__cmake_builddir}/drumlabooh_artefacts/VST3/*    %{buildroot}/%{_libdir}/vst3/
 cp -ra %{__cmake_builddir}/drumlabooh_artefacts/LV2/*     %{buildroot}/%{_libdir}/lv2/
-cp %{__cmake_builddir}/drumlabooh_artefacts/standalone/*  %{buildroot}/%{_bindir}/
+cp %{__cmake_builddir}/drumlabooh_artefacts/Standalone/*  %{buildroot}/%{_bindir}/
 
-%files -n vst3-%{name}
+%files
 %doc README.md
-%license LICENSE.md
+%license LICENSE
 %{_bindir}/*
 
 %files -n lv2-%{name}
