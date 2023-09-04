@@ -592,7 +592,7 @@ https://github.com/scanner-darkly/vcv-collection-one
 https://github.com/schismtracker/schismtracker
 https://github.com/Sciss/Eisenkraut
 https://github.com/sebastien-bouffier/Bidoo
-https://git.zrythm.org/zrythm/ztoolkit.git
+https://github.com/alex-tee/ztoolkit
 https://github.com/sgossner/VSCO-2-CE
 https://github.com/sickozell/SickoCV
 https://github.com/signal-flux/Signal-Flux-VCV-Rack-Modules
