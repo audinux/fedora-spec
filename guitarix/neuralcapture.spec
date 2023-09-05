@@ -1,5 +1,5 @@
 Name:    neuralrecord
-Version: 0.1.2
+Version: 0.1.3
 Release: 1%{?dist}
 Summary: A Neural Record plug to make the process of cloning external soft/hardware a bit more comfortable
 License: BSD
@@ -9,7 +9,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./brummer10-source.sh <project> <tag>
-# ./brummer10-source.sh neuralcapture v0.1.2
+# ./brummer10-source.sh neuralcapture v0.1.3
 Source0: neuralcapture.tar.gz
 Source1: brummer10-source.sh
 
@@ -75,6 +75,9 @@ cp -ra bin/neuralrecord.vst3 %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Tue Sep 05 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1.3-1
+- update to 0.1.3-1
+
 * Sat Sep 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1.2-1
 - update to 0.1.2-1
 
