@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 80e8976eebbea1e1177beba4de5645eb0ca680e3
-%global gittag0 2.4.0
+%global gittag0 2.4.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Valley
-Version: 2.4.0
+Version: 2.4.1
 Release: 2%{?dist}
 Summary: Valley plugin for Rack
 License: GPL-2.0-or-later
@@ -159,5 +159,5 @@ cp -r Valley_plugin/dist/Valley/* %{buildroot}%{_libexecdir}/Rack2/plugins/Valle
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.1-1
 - initial specfile

@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 ebee262418dce7598ea48d015c0f19d2daa94bf7
-%global gittag0 2.0.11
+%global commit0 421742c3168cced6944479745ee8127296354be4
+%global gittag0 2.0.12
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-StochasticTelegraph
-Version: 2.0.11
+Version: 2.0.12
 Release: 2%{?dist}
 Summary: StochasticTelegraph plugin for Rack
 License: GPL-2.0-or-later
@@ -60,7 +60,7 @@ BuildRequires: jq
 
 %description
 StochasticTelegraph plugin for Rack.
-Generate sequences or perform math on inputs with a simple BASIC-like language.
+Generate sequences, perform math on inputs, and even multitask with a simple BASIC-like language. Can also send Tipsy text messages to modules that support them.
 
 %prep
 %setup -n Rack
@@ -152,5 +152,5 @@ cp -r StochasticTelegraph_plugin/dist/StochasticTelegraph/* %{buildroot}%{_libex
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.11-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.12-1
 - initial specfile
