@@ -1,8 +1,8 @@
-%define commit0 b082cd2be11cb8ac8a0640978f7c54e14b7b87aa
+%define commit0 b4c6cbe29e8bd69c65afef1e8e4db94a995abce9
 
 Name:    organ
 Version: 0.0.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Organ VST / LV2 plugin
 License: GPL-2.0-or-later
 URL:     https://github.com/FigBug/Organ
@@ -17,12 +17,12 @@ Source0: Organ.tar.gz
 Source1: figbug-source.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
 BuildRequires: gtk3-devel
 BuildRequires: webkit2gtk3-devel
-BuildRequires: JUCE
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
@@ -61,19 +61,8 @@ LV2 version of %{name}
 
 %build
 
-%set_build_flags
-export CFLAGS="`pkg-config --cflags gtk+-x11-3.0` $CFLAGS"
-export CXXFLAGS="`pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
-
-cd plugin
-Projucer --resave Organ.jucer
-
-cd Builds/LinuxMakefile
-sed -i -e "s/-Wl,--strip-all/ /g" Makefile
-%ifarch aarch64
-sed -i -e "s/-m64/ /g" Makefile
-%endif
-%make_build CONFIG=Release STRIP=true
+%cmake
+%cmake_build
 
 %install 
 
@@ -81,9 +70,10 @@ install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
 install -m 755 -d %{buildroot}%{_bindir}/
 
-install -m 755 -p plugin/Builds/LinuxMakefile/build/Organ %{buildroot}/%{_bindir}/
-cp -ra plugin/Builds/LinuxMakefile/build/Organ.vst3 %{buildroot}/%{_libdir}/vst3/
-cp -ra plugin/Builds/LinuxMakefile/build/Organ.lv2 %{buildroot}/%{_libdir}/lv2/
+install -m 755 -p %{__cmake_builddir}/Organ_artefacts/Standalone/Organ %{buildroot}/%{_bindir}/
+cp -ra %{__cmake_builddir}/Organ_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/Organ_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
+
 install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
 cp plugin/setBfree/doc/setBfree.png %{buildroot}/%{_datadir}/pixmaps/%{name}.png
 
@@ -119,6 +109,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Sep 06 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
+- update to 0.0.1-2 - update to last master b4c6cbe29e8bd69c65afef1e8e4db94a995abce9
+
 * Sat Aug 05 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
 - update to 0.0.1-2 - fix install and update to last master - b082cd2b
 
