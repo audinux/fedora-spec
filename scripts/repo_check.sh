@@ -889,7 +889,8 @@ https://github.com/sfztools/prelude.lv2
 https://github.com/sfztools/toccata.lv2
 https://github.com/sfztools/sfizz-ui
 https://github.com/brummer10/neuralcapture
-https://github.com/psemiletov/drumlabooh"
+https://github.com/psemiletov/drumlabooh
+https://github.com/FigBug/Wavetable"
 
 # https://gitlab.com/iurie-sw/redkite
 
