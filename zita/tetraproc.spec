@@ -4,7 +4,7 @@
 
 Summary: An A/B convertor and the metering and monitoring. 
 Name:    tetraproc
-Version: 0.8.6
+Version: 0.9.2
 Release: 2%{?dist}
 License: GPL
 URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
@@ -15,9 +15,15 @@ Distribution: Audinux
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: clthreads-devel clxclient-devel
-BuildRequires: libsndfile-devel fftw-devel libpng-devel libXft-devel libX11-devel
+BuildRequires: clthreads-devel
+BuildRequires: clxclient-devel
+BuildRequires: libsndfile-devel
+BuildRequires: fftw-devel
+BuildRequires: libpng-devel
+BuildRequires: libXft-devel
+BuildRequires: libX11-devel
 
 %description
 Tetraproc consists of two parts: the A/B convertor and the
@@ -49,6 +55,9 @@ popd
 %{_datadir}/tetraproc/
 
 %changelog
+* Thu Sep 07 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.2-2
+- update to 0.9.2
+
 * Tue Oct 20 2020 Yann Collette <ycollette.nospam@free.fr> - 0.8.6-2
 - fix debug build
 
