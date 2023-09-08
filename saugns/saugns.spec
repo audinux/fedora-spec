@@ -1,8 +1,8 @@
 Name:    saugns
-Version: 0.4.2
+Version: 0.4.2b
 Release: 1%{?dist}
 Summary: Scriptable AUdio GeNeration System - implements the SAU language.
-License: GPLv4+
+License: GPL-3.0-only
 URL:     https://github.com/saugns/saugns
 
 Vendor:       Audinux
@@ -65,6 +65,9 @@ mv %{buildroot}/%{_datadir}/doc/%{name}/ %{buildroot}/%{_datadir}/%{name}/doc/
 %{_datadir}/%{name}/examples/*
 
 %changelog
+* Fri Sep 08 2023 Yann Collette <ycollette.nospam@free.fr> - 0.4.2b-1
+- update to 0.4.2b-1
+
 * Tue Aug 29 2023 Yann Collette <ycollette.nospam@free.fr> - 0.4.2-1
 - update to 0.4.2-1
 
