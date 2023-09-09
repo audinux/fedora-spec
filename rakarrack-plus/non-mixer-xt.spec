@@ -3,7 +3,7 @@ Name:    non-mixer-xt
 Version: 1.0.4
 Release: 1%{?dist}
 License: GPL-3.0-only
-URL:     https://github.com/Stazed/rakarrack-plus
+URL:     https://github.com/Stazed/non-mixer-xt
 
 Vendor:       Audinux
 Distribution: Audinux
