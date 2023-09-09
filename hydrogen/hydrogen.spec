@@ -5,7 +5,7 @@
 # LastSourceUpdate: 2021
 
 Name:    hydrogen
-Version: 1.2.1
+Version: 1.2.2
 Release: 12%{?dist}
 Summary: Advanced drum machine for GNU/Linux
 URL:     http://www.hydrogen-music.org/
@@ -47,8 +47,8 @@ sed -i -e "s/Sound/X-Sound/g" linux/org.hydrogenmusic.Hydrogen.desktop
 
 %set_build_flags
 
-export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
-export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
+export CMAKE_CXX_FLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
+export CMAKE_C_FLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
 
 %cmake -DWANT_ALSA:BOOL=ON \
        -DWANT_CPPUNIT:BOOL=OFF \
@@ -97,12 +97,15 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.hydrogenmusic.Hyd
 %{_datadir}/hydrogen/
 %{_datadir}/icons/*
 %{_datadir}/applications/*.desktop
-%{_datadir}/appdata/*.appdata.xml
+%{_datadir}/metainfo/org.*.metainfo.xml
 %{_libdir}/*.so
 %{_datadir}/man/*
 %exclude %{_includedir}/%{name}
 
 %changelog
+* Sat Sep 09 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-12
+- update to 1.2.2-12
+
 * Thu Jun 08 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-12
 - update to 1.2.1-12
 
