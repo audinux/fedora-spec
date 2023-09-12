@@ -5,7 +5,7 @@
 
 %global padthv1_major 0
 %global padthv1_minor 9
-%global padthv1_patch 31
+%global padthv1_patch 32
 %global padthv1_version %{padthv1_major}.%{padthv1_minor}.%{padthv1_patch}
 %global padthv1_version_ %{padthv1_major}_%{padthv1_minor}_%{padthv1_patch}
 
@@ -56,7 +56,7 @@ An LV2 plugin of the padthv1 synthesizer
 
 %build
 
-%cmake -DCONFIG_QT6=OFF
+%cmake -DCONFIG_QT6=OFF -DCONFIG_JACK=ON
 %cmake_build
 
 %install
@@ -70,8 +70,9 @@ install -m 755 -d %{buildroot}/%{_datadir}/%{name}/presets/
 install -m 644 src/mimetypes/org.rncbc.padthv1.xml %{buildroot}%{_datadir}/mime/packages/padthv1.xml
 install -m 644 src/appdata/org.rncbc.padthv1.metainfo.xml %{buildroot}%{_datadir}//metainfo/org.rncbc.padthv1.xml
 
-cd %{buildroot}/%{_datadir}/%{name}/presets
+pushd %{buildroot}/%{_datadir}/%{name}/presets
 tar xvfz %{SOURCE1}
+popd
 
 desktop-file-install                         \
   --delete-original                          \
@@ -99,6 +100,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.des
 %{_libdir}/lv2/%{name}.lv2/
 
 %changelog
+* Tue Sep 12 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.32-4
+- update to 0.9.32-4
+
 * Thu Jun 08 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.31-4
 - update to 0.9.31-4 - install desktop file
 
