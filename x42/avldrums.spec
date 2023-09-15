@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name:    lv2-avldrums-x42-plugin
-Version: 0.6.1
+Version: 0.7.0
 Release: 3%{?dist}
 Summary: Simple Drum Sample Player LV2 Plugin
 License: GPL-2.0-or-later
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./x42-source.sh <project> <tag>
-# ./x42-source.sh avldrums.lv2 v0.6.1
+# ./x42-source.sh avldrums.lv2 v0.7.0
 
 Source0: avldrums.lv2.tar.gz
 Source1: x42-source.sh
@@ -55,6 +55,9 @@ sed -i -e "s|-mfpmath=sse||g" Makefile
 %{_libdir}/lv2/avldrums.lv2/*
 
 %changelog
+* Fri Sep 15 2023 Yann Collette <ycollette.nospam@free.fr> - 0.7.0-2
+- update to 0.7.0-2
+
 * Thu May 11 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.1-2
 - update to 0.6.1-2
 
