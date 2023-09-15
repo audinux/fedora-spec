@@ -1,7 +1,7 @@
 %global commit0 cbf1ad7ccf2af4d2102e9b969c342b3f2637c80d
 
 Name:    lv2-neural-amp-modeler
-Version: 0.1.1
+Version: 0.1.2
 Release: 1%{?dist}
 Summary: Neural Amp Modeler LV2 plugin implementation
 License: MIT
@@ -11,7 +11,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./neural-amp-modeler-source.sh <TAG>
-# ./neural-amp-modeler-source.sh 0.1.1
+# ./neural-amp-modeler-source.sh 0.1.2
 
 Source0: neural-amp-modeler-lv2.tar.gz
 Source1: neural-amp-modeler-source.sh
@@ -49,6 +49,9 @@ cp -rav %{__cmake_builddir}/neural_amp_modeler.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Sep 13 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1.2.1
+- update to 0.1.2-1
+
 * Fri Jul 07 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1.1.1
 - update to 0.1.1-1
 
