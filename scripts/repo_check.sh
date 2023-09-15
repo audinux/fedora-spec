@@ -114,7 +114,6 @@ https://github.com/belangeo/soundgrain
 https://github.com/belangeo/zyne
 https://github.com/bellard/quickjs
 https://github.com/benkuper/Chataigne
-https://github.com/benthevining/imogen
 https://github.com/BespokeSynth/BespokeSynth
 https://github.com/bigfug/Fugio
 https://github.com/bill-auger/loopidity
@@ -843,7 +842,6 @@ https://github.com/x42/stereoroute.lv2
 https://github.com/x42/onsettrigger.lv2
 https://github.com/x42/midimap.lv2
 https://github.com/x42/midigen.lv2
-https://github.com/x42/midifilter.lv2
 https://github.com/x42/mididebug.lv2
 https://github.com/DISTRHO/DIE-Plugins
 https://github.com/jdf/processing.py
@@ -892,9 +890,10 @@ https://github.com/brummer10/neuralcapture
 https://github.com/psemiletov/drumlabooh
 https://github.com/FigBug/Wavetable
 https://github.com/Stazed/non-mixer-xt
-https://github.com/rerdavies/ToobAm"
+https://github.com/rerdavies/ToobAmp"
 
 # https://gitlab.com/iurie-sw/redkite
+# https://github.com/benthevining/imogen
 
 if [ -f git_tags_new.txt ];
 then
