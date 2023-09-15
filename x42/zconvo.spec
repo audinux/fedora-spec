@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    zconvo.lv2
-Version: 0.6.8
+Version: 0.7.0
 Release: 1%{?dist}
 Summary: Zero Config Convolver
 License: GPL-2.0-or-later
@@ -73,6 +73,9 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Sep 15 2023 Yann Collette <ycollette.nospam@free.fr> - 0.7.0-1
+- update to 0.7.0-1
+
 * Sun Jul 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.8-1
 - update to 0.6.8-1
 
