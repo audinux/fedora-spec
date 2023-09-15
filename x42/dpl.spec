@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name:    dpl.lv2
-Version: 0.6.5
+Version: 0.6.6
 Release: 1%{?dist}
 Summary: Digital Peak Limiter LV2 Plugin
 License: GPL-2.0-or-later
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./x42-source.sh <project> <tag>
-# ./x42-source.sh dpl.lv2 v0.6.5
+# ./x42-source.sh dpl.lv2 v0.6.6
 
 Source0: dpl.lv2.tar.gz
 Source1: x42-source.sh
@@ -55,6 +55,9 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_datadir}/*
 
 %changelog
+* Fri Sep 15 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.6-1
+- update to 0.6.6-1
+
 * Thu May 11 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.5-1
 - update to 0.6.5-1
 
