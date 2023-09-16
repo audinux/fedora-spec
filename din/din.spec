@@ -4,7 +4,7 @@
 
 Summary: DIN is a synth of a 3rd kind
 Name:    din
-Version: 56.0.0
+Version: 57.0.0
 Release: 1%{?dist}
 License: GPL
 URL:     https://dinisnoise.org/
@@ -12,7 +12,7 @@ URL:     https://dinisnoise.org/
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://archive.org/download/dinisnoise_source_code/din-56.tar.gz
+Source0: https://archive.org/download/dinisnoise_source_code/din-57.tar.gz
 
 BuildRequires: gcc
 BuildRequires: gcc-c++
@@ -47,7 +47,7 @@ Requires: din
 Jack version of the Din synthesizer
 
 %prep
-%autosetup -n %{name}-56
+%autosetup -n %{name}-57
 
 # __line conflict with std c++ headers
 sed -i -e "s/__line/__dinline/g" src/line.h
@@ -61,13 +61,13 @@ sed -i -e "s/__line/__dinline/g" src/line.h
 
 mkdir build_jack
 cd build_jack
-CFLAGS="-D__UNIX_JACK__ $CFLAGS" CXXFLAGS="-std=c++11 -D__UNIX_JACK__ $CXXFLAGS" LDFLAGS="-ljack $LDFLAGS" ../configure --prefix=%{_prefix} --libdir=%{_libdir} --program-suffix=-jack
+CFLAGS="-D__UNIX_JACK__ $CFLAGS" CXXFLAGS="-D__UNIX_JACK__ $CXXFLAGS" LDFLAGS="-ljack $LDFLAGS" ../configure --prefix=%{_prefix} --libdir=%{_libdir} --program-suffix=-jack
 %make_build
 
 cd ..
 mkdir build_alsa
 cd build_alsa
-CFLAGS="-D__LINUX_ALSA__ $CFLAGS" CXXFLAGS="-std=c++11 -D__LINUX_ALSA__ $CXXFLAGS" ../configure --prefix=%{_prefix} --libdir=%{_libdir}
+CFLAGS="-D__LINUX_ALSA__ $CFLAGS" CXXFLAGS="-D__LINUX_ALSA__ $CXXFLAGS" ../configure --prefix=%{_prefix} --libdir=%{_libdir}
 %make_build
 cd ..
 
@@ -120,8 +120,11 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/din-jack.desktop
 %{_datadir}/applications/din-jack.desktop
 
 %changelog
+* Sat Sep 16 2023 Yann Collette <ycollette dot nospam at free.fr> 57.0.0-1
+- update to 57.0.0-1
+
 * Mon Jan 16 2023 Yann Collette <ycollette dot nospam at free.fr> 56.0.0-1
-- update to 55.0.0-1
+- update to 56.0.0-1
 
 * Sun Aug 21 2022 Yann Collette <ycollette dot nospam at free.fr> 54.0.0-1
 - update to 54.0.0-1
