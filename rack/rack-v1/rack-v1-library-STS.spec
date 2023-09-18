@@ -88,7 +88,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 mkdir STS_plugin
 tar xvfz %{SOURCE1} --directory=STS_plugin --strip-components=1 
 
-cp -n %{SOURCE2} STS_plugin/plugin.json
+cp -n %{SOURCE2} STS_plugin/plugin.json || true
 
 %build
 

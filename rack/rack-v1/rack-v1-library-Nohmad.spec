@@ -86,7 +86,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir Nohmad_plugin
 tar xvfz %{SOURCE1} --directory=Nohmad_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Nohmad_plugin/plugin.json
+cp -n %{SOURCE2} Nohmad_plugin/plugin.json || true
 
 %build
 

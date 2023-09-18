@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir NonlinearCircuits_plugin
 tar xvfz %{SOURCE1} --directory=NonlinearCircuits_plugin --strip-components=1 
 
-cp -n %{SOURCE2} NonlinearCircuits_plugin/plugin.json
+cp -n %{SOURCE2} NonlinearCircuits_plugin/plugin.json || true
 
 %build
 

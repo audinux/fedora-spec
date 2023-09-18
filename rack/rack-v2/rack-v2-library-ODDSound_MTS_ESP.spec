@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir ODDSound_MTS_ESP_plugin
 tar xvfz %{SOURCE1} --directory=ODDSound_MTS_ESP_plugin --strip-components=1 
 
-cp -n %{SOURCE2} ODDSound_MTS_ESP_plugin/plugin.json
+cp -n %{SOURCE2} ODDSound_MTS_ESP_plugin/plugin.json || true
 
 %build
 

@@ -135,7 +135,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Nohmad_plugin
 tar xvfz %{SOURCE1} --directory=Nohmad_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Nohmad_plugin/plugin.json
+cp -n %{SOURCE2} Nohmad_plugin/plugin.json || true
 
 %build
 

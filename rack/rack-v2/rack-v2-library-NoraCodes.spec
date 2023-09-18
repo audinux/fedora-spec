@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir NoraCodes_plugin
 tar xvfz %{SOURCE1} --directory=NoraCodes_plugin --strip-components=1 
 
-cp -n %{SOURCE2} NoraCodes_plugin/plugin.json
+cp -n %{SOURCE2} NoraCodes_plugin/plugin.json || true
 
 %build
 

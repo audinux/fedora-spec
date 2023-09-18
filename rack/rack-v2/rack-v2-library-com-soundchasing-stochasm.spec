@@ -135,7 +135,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir com-soundchasing-stochasm_plugin
 tar xvfz %{SOURCE1} --directory=com-soundchasing-stochasm_plugin --strip-components=1 
 
-cp -n %{SOURCE2} com-soundchasing-stochasm_plugin/plugin.json
+cp -n %{SOURCE2} com-soundchasing-stochasm_plugin/plugin.json || true
 
 %build
 

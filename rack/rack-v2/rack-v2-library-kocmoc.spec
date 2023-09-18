@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir kocmoc_plugin
 tar xvfz %{SOURCE1} --directory=kocmoc_plugin --strip-components=1 
 
-cp -n %{SOURCE2} kocmoc_plugin/plugin.json
+cp -n %{SOURCE2} kocmoc_plugin/plugin.json || true
 
 %build
 

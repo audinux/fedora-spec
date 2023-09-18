@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir SeasideModular_plugin
 tar xvfz %{SOURCE1} --directory=SeasideModular_plugin --strip-components=1 
 
-cp -n %{SOURCE2} SeasideModular_plugin/plugin.json
+cp -n %{SOURCE2} SeasideModular_plugin/plugin.json || true
 
 %build
 

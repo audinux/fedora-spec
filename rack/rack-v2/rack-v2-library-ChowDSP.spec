@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir ChowDSP_plugin
 tar xvfz %{SOURCE1} --directory=ChowDSP_plugin --strip-components=1 
 
-cp -n %{SOURCE2} ChowDSP_plugin/plugin.json
+cp -n %{SOURCE2} ChowDSP_plugin/plugin.json || true
 
 %build
 

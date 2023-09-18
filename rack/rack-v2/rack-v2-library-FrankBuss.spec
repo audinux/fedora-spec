@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir FrankBuss_plugin
 tar xvfz %{SOURCE1} --directory=FrankBuss_plugin --strip-components=1 
 
-cp -n %{SOURCE2} FrankBuss_plugin/plugin.json
+cp -n %{SOURCE2} FrankBuss_plugin/plugin.json || true
 
 %build
 

@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir EH_modules_plugin
 tar xvfz %{SOURCE1} --directory=EH_modules_plugin --strip-components=1 
 
-cp -n %{SOURCE2} EH_modules_plugin/plugin.json
+cp -n %{SOURCE2} EH_modules_plugin/plugin.json || true
 
 %build
 

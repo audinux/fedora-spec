@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Skylander_plugin
 tar xvfz %{SOURCE1} --directory=Skylander_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Skylander_plugin/plugin.json
+cp -n %{SOURCE2} Skylander_plugin/plugin.json || true
 
 %build
 

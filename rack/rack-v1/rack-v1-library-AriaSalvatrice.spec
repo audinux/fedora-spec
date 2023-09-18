@@ -88,7 +88,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir AriaSalvatrice_plugin
 tar xvfz %{SOURCE1} --directory=AriaSalvatrice_plugin --strip-components=1 
 
-cp -n %{SOURCE2} AriaSalvatrice_plugin/plugin.json
+cp -n %{SOURCE2} AriaSalvatrice_plugin/plugin.json || true
 
 %build
 

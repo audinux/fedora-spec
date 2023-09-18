@@ -137,7 +137,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir monome_plugin
 tar xvfz %{SOURCE1} --directory=monome_plugin --strip-components=1 
 
-cp -n %{SOURCE2} monome_plugin/plugin.json
+cp -n %{SOURCE2} monome_plugin/plugin.json || true
 
 sed -i -e "s|\$(RACK_DIR)|../..|g" monome_plugin/firmware/common.mk
 sed -i -e "s|?=|=|g" monome_plugin/firmware/common.mk

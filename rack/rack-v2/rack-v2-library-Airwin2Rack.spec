@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Airwin2Rack_plugin
 tar xvfz %{SOURCE1} --directory=Airwin2Rack_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Airwin2Rack_plugin/plugin.json
+cp -n %{SOURCE2} Airwin2Rack_plugin/plugin.json || true
 
 sed -i -e "s/\$(EXTRA_CMAKE)/\$(EXTRA_CMAKE) -DCMAKE_CXX_FLAGS='\$(MYCXXFLAGS)'/g" Airwin2Rack_plugin/Makefile
 

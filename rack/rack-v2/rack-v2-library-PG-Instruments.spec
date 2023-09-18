@@ -135,7 +135,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir PG-Instruments_plugin
 tar xvfz %{SOURCE1} --directory=PG-Instruments_plugin --strip-components=1 
 
-cp -n %{SOURCE2} PG-Instruments_plugin/plugin.json
+cp -n %{SOURCE2} PG-Instruments_plugin/plugin.json || true
 
 %build
 

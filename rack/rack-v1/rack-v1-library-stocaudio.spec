@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir stocaudio_plugin
 tar xvfz %{SOURCE1} --directory=stocaudio_plugin --strip-components=1 
 
-cp -n %{SOURCE2} stocaudio_plugin/plugin.json
+cp -n %{SOURCE2} stocaudio_plugin/plugin.json || true
 
 sed -i -e "/samplerate/d" stocaudio_plugin/Makefile
 

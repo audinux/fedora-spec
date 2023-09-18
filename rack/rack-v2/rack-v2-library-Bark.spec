@@ -137,7 +137,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Bark_plugin
 tar xvfz %{SOURCE1} --directory=Bark_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Bark_plugin/plugin.json
+cp -n %{SOURCE2} Bark_plugin/plugin.json || true
 
 %ifarch aarch64
 %patch1 -p1

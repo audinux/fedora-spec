@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Bastl_plugin
 tar xvfz %{SOURCE1} --directory=Bastl_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Bastl_plugin/plugin.json
+cp -n %{SOURCE2} Bastl_plugin/plugin.json || true
 
 %build
 

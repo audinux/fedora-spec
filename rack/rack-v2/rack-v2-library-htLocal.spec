@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir htLocal_plugin
 tar xvfz %{SOURCE1} --directory=htLocal_plugin --strip-components=1 
 
-cp -n %{SOURCE2} htLocal_plugin/plugin.json
+cp -n %{SOURCE2} htLocal_plugin/plugin.json || true
 
 %build
 

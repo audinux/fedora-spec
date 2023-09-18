@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Chiptuner_plugin
 tar xvfz %{SOURCE1} --directory=Chiptuner_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Chiptuner_plugin/plugin.json
+cp -n %{SOURCE2} Chiptuner_plugin/plugin.json || true
 
 %build
 

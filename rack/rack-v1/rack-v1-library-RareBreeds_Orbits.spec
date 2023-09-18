@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir RareBreeds_Orbits_plugin
 tar xvfz %{SOURCE1} --directory=RareBreeds_Orbits_plugin --strip-components=1 
 
-cp -n %{SOURCE2} RareBreeds_Orbits_plugin/plugin.json
+cp -n %{SOURCE2} RareBreeds_Orbits_plugin/plugin.json || true
 
 %build
 

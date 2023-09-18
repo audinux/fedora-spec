@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir squinkylabs-plug1_plugin
 tar xvfz %{SOURCE1} --directory=squinkylabs-plug1_plugin --strip-components=1 
 
-cp -n %{SOURCE2} squinkylabs-plug1_plugin/plugin.json
+cp -n %{SOURCE2} squinkylabs-plug1_plugin/plugin.json || true
 
 %build
 

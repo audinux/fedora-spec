@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Venom_plugin
 tar xvfz %{SOURCE1} --directory=Venom_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Venom_plugin/plugin.json
+cp -n %{SOURCE2} Venom_plugin/plugin.json || true
 
 %build
 

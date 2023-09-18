@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir Befaco_plugin
 tar xvfz %{SOURCE1} --directory=Befaco_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Befaco_plugin/plugin.json
+cp -n %{SOURCE2} Befaco_plugin/plugin.json || true
 
 %build
 

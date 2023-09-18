@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir ChortlingHamsterModules_plugin
 tar xvfz %{SOURCE1} --directory=ChortlingHamsterModules_plugin --strip-components=1 
 
-cp -n %{SOURCE2} ChortlingHamsterModules_plugin/plugin.json
+cp -n %{SOURCE2} ChortlingHamsterModules_plugin/plugin.json || true
 
 %build
 

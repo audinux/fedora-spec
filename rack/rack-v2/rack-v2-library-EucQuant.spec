@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir EucQuant_plugin
 tar xvfz %{SOURCE1} --directory=EucQuant_plugin --strip-components=1 
 
-cp -n %{SOURCE2} EucQuant_plugin/plugin.json
+cp -n %{SOURCE2} EucQuant_plugin/plugin.json || true
 
 %build
 

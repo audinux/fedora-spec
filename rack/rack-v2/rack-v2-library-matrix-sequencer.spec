@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir matrix-sequencer_plugin
 tar xvfz %{SOURCE1} --directory=matrix-sequencer_plugin --strip-components=1 
 
-cp -n %{SOURCE2} matrix-sequencer_plugin/plugin.json
+cp -n %{SOURCE2} matrix-sequencer_plugin/plugin.json || true
 
 %build
 

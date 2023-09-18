@@ -89,7 +89,7 @@ tar xvfz %{SOURCE1} --directory=rcm_plugin --strip-components=1
 
 sed -i -e "s/-DARCH_LIN/-DARCH_LIN -Wno-error=format-security/g" compile.mk
 
-cp -n %{SOURCE2} rcm_plugin/plugin.json
+cp -n %{SOURCE2} rcm_plugin/plugin.json || true
 
 %build
 

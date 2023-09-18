@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir TheAllElectricSmartGrid_plugin
 tar xvfz %{SOURCE1} --directory=TheAllElectricSmartGrid_plugin --strip-components=1 
 
-cp -n %{SOURCE2} TheAllElectricSmartGrid_plugin/plugin.json
+cp -n %{SOURCE2} TheAllElectricSmartGrid_plugin/plugin.json || true
 
 %build
 

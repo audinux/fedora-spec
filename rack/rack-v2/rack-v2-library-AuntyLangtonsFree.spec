@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir AuntyLangtonsFree_plugin
 tar xvfz %{SOURCE1} --directory=AuntyLangtonsFree_plugin --strip-components=1 
 
-cp -n %{SOURCE2} AuntyLangtonsFree_plugin/plugin.json
+cp -n %{SOURCE2} AuntyLangtonsFree_plugin/plugin.json || true
 
 %build
 

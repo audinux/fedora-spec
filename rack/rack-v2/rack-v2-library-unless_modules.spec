@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir unless_modules_plugin
 tar xvfz %{SOURCE1} --directory=unless_modules_plugin --strip-components=1 
 
-cp -n %{SOURCE2} unless_modules_plugin/plugin.json
+cp -n %{SOURCE2} unless_modules_plugin/plugin.json || true
 
 %build
 

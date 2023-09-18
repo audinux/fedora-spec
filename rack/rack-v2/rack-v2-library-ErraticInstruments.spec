@@ -135,7 +135,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir ErraticInstruments_plugin
 tar xvfz %{SOURCE1} --directory=ErraticInstruments_plugin --strip-components=1 
 
-cp -n %{SOURCE2} ErraticInstruments_plugin/plugin.json
+cp -n %{SOURCE2} ErraticInstruments_plugin/plugin.json || true
 
 %build
 

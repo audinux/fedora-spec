@@ -138,7 +138,7 @@ tar xvfz %{SOURCE1} --directory=FreeSurface_plugin --strip-components=1
 
 sed -i -e "/samplerate/d" FreeSurface_plugin/Makefile
 
-cp -n %{SOURCE2} FreeSurface_plugin/plugin.json
+cp -n %{SOURCE2} FreeSurface_plugin/plugin.json || true
 
 %build
 

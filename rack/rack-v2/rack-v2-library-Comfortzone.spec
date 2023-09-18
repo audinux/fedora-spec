@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Comfortzone_plugin
 tar xvfz %{SOURCE1} --directory=Comfortzone_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Comfortzone_plugin/plugin.json
+cp -n %{SOURCE2} Comfortzone_plugin/plugin.json || true
 
 %build
 

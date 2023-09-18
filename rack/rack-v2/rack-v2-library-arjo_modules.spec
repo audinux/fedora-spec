@@ -135,7 +135,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir arjo_modules_plugin
 tar xvfz %{SOURCE1} --directory=arjo_modules_plugin --strip-components=1 
 
-cp -n %{SOURCE2} arjo_modules_plugin/plugin.json
+cp -n %{SOURCE2} arjo_modules_plugin/plugin.json || true
 
 %build
 

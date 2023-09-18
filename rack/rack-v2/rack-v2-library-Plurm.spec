@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Plurm_plugin
 tar xvfz %{SOURCE1} --directory=Plurm_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Plurm_plugin/plugin.json
+cp -n %{SOURCE2} Plurm_plugin/plugin.json || true
 
 %build
 

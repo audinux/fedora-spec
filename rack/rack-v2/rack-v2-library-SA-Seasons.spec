@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir SA-Seasons_plugin
 tar xvfz %{SOURCE1} --directory=SA-Seasons_plugin --strip-components=1 
 
-cp -n %{SOURCE2} SA-Seasons_plugin/plugin.json
+cp -n %{SOURCE2} SA-Seasons_plugin/plugin.json || true
 
 %build
 

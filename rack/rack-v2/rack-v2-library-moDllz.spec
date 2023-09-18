@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir moDllz_plugin
 tar xvfz %{SOURCE1} --directory=moDllz_plugin --strip-components=1 
 
-cp -n %{SOURCE2} moDllz_plugin/plugin.json
+cp -n %{SOURCE2} moDllz_plugin/plugin.json || true
 
 %build
 

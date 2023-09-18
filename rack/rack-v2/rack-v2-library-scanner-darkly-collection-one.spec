@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir scanner-darkly-collection-one_plugin
 tar xvfz %{SOURCE1} --directory=scanner-darkly-collection-one_plugin --strip-components=1 
 
-cp -n %{SOURCE2} scanner-darkly-collection-one_plugin/plugin.json
+cp -n %{SOURCE2} scanner-darkly-collection-one_plugin/plugin.json || true
 
 %build
 

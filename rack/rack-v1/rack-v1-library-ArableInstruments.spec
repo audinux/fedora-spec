@@ -91,7 +91,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir ArableInstruments_plugin
 tar xvfz %{SOURCE1} --directory=ArableInstruments_plugin --strip-components=1 
 
-cp -n %{SOURCE2} ArableInstruments_plugin/plugin.json
+cp -n %{SOURCE2} ArableInstruments_plugin/plugin.json || true
 
 %build
 

@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir LomasModules_plugin
 tar xvfz %{SOURCE1} --directory=LomasModules_plugin --strip-components=1 
 
-cp -n %{SOURCE2} LomasModules_plugin/plugin.json
+cp -n %{SOURCE2} LomasModules_plugin/plugin.json || true
 
 %build
 

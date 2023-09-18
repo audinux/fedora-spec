@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir PdArray_plugin
 tar xvfz %{SOURCE1} --directory=PdArray_plugin --strip-components=1 
 
-cp -n %{SOURCE2} PdArray_plugin/plugin.json
+cp -n %{SOURCE2} PdArray_plugin/plugin.json || true
 
 %build
 

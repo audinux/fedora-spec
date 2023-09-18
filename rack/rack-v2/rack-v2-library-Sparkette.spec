@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Sparkette_plugin
 tar xvfz %{SOURCE1} --directory=Sparkette_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Sparkette_plugin/plugin.json
+cp -n %{SOURCE2} Sparkette_plugin/plugin.json || true
 
 %build
 

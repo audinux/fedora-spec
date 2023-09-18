@@ -135,7 +135,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Gratrix_plugin
 tar xvfz %{SOURCE1} --directory=Gratrix_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Gratrix_plugin/plugin.json
+cp -n %{SOURCE2} Gratrix_plugin/plugin.json || true
 
 %build
 

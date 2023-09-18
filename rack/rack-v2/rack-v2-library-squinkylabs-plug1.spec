@@ -137,7 +137,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir squinkylabs-plug1_plugin
 tar xvfz %{SOURCE1} --directory=squinkylabs-plug1_plugin --strip-components=1 
 
-cp -n %{SOURCE2} squinkylabs-plug1_plugin/plugin.json
+cp -n %{SOURCE2} squinkylabs-plug1_plugin/plugin.json || true
 
 %ifarch aarch64
 %patch1 -p1

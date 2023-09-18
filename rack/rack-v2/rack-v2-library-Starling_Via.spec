@@ -140,7 +140,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Starling_Via_plugin
 tar xvfz %{SOURCE1} --directory=Starling_Via_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Starling_Via_plugin/plugin.json
+cp -n %{SOURCE2} Starling_Via_plugin/plugin.json || true
 
 %build
 

@@ -135,7 +135,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir MpSeries_plugin
 tar xvfz %{SOURCE1} --directory=MpSeries_plugin --strip-components=1 
 
-cp -n %{SOURCE2} MpSeries_plugin/plugin.json
+cp -n %{SOURCE2} MpSeries_plugin/plugin.json || true
 
 %build
 

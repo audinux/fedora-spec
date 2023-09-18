@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir AudibleInstruments_plugin
 tar xvfz %{SOURCE1} --directory=AudibleInstruments_plugin --strip-components=1 
 
-cp -n %{SOURCE2} AudibleInstruments_plugin/plugin.json
+cp -n %{SOURCE2} AudibleInstruments_plugin/plugin.json || true
 
 %build
 

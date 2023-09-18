@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir AnimatedCircuits_plugin
 tar xvfz %{SOURCE1} --directory=AnimatedCircuits_plugin --strip-components=1 
 
-cp -n %{SOURCE2} AnimatedCircuits_plugin/plugin.json
+cp -n %{SOURCE2} AnimatedCircuits_plugin/plugin.json || true
 
 %build
 

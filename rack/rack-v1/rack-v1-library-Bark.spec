@@ -88,7 +88,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir Bark_plugin
 tar xvfz %{SOURCE1} --directory=Bark_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Bark_plugin/plugin.json
+cp -n %{SOURCE2} Bark_plugin/plugin.json || true
 
 %ifarch aarch64
 %patch1 -p1

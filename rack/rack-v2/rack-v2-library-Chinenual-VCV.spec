@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Chinenual-VCV_plugin
 tar xvfz %{SOURCE1} --directory=Chinenual-VCV_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Chinenual-VCV_plugin/plugin.json
+cp -n %{SOURCE2} Chinenual-VCV_plugin/plugin.json || true
 
 %build
 

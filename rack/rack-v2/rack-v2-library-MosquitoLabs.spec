@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir MosquitoLabs_plugin
 tar xvfz %{SOURCE1} --directory=MosquitoLabs_plugin --strip-components=1 
 
-cp -n %{SOURCE2} MosquitoLabs_plugin/plugin.json
+cp -n %{SOURCE2} MosquitoLabs_plugin/plugin.json || true
 
 %build
 

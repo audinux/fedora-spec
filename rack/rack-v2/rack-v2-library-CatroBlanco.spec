@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir CatroBlanco_plugin
 tar xvfz %{SOURCE1} --directory=CatroBlanco_plugin --strip-components=1 
 
-cp -n %{SOURCE2} CatroBlanco_plugin/plugin.json
+cp -n %{SOURCE2} CatroBlanco_plugin/plugin.json || true
 
 %build
 

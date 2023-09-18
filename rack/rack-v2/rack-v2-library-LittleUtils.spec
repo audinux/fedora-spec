@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir LittleUtils_plugin
 tar xvfz %{SOURCE1} --directory=LittleUtils_plugin --strip-components=1 
 
-cp -n %{SOURCE2} LittleUtils_plugin/plugin.json
+cp -n %{SOURCE2} LittleUtils_plugin/plugin.json || true
 
 %build
 

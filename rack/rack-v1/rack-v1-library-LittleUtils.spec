@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir LittleUtils_plugin
 tar xvfz %{SOURCE1} --directory=LittleUtils_plugin --strip-components=1 
 
-cp -n %{SOURCE2} LittleUtils_plugin/plugin.json
+cp -n %{SOURCE2} LittleUtils_plugin/plugin.json || true || true
 
 %build
 

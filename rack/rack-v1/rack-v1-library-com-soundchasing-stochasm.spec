@@ -86,7 +86,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir com-soundchasing-stochasm_plugin
 tar xvfz %{SOURCE1} --directory=com-soundchasing-stochasm_plugin --strip-components=1 
 
-cp -n %{SOURCE2} com-soundchasing-stochasm_plugin/plugin.json
+cp -n %{SOURCE2} com-soundchasing-stochasm_plugin/plugin.json || true
 
 %build
 

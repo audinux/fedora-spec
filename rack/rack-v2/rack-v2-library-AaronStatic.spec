@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir AaronStatic_plugin
 tar xvfz %{SOURCE1} --directory=AaronStatic_plugin --strip-components=1 
 
-cp -n %{SOURCE2} AaronStatic_plugin/plugin.json
+cp -n %{SOURCE2} AaronStatic_plugin/plugin.json || true
 
 %build
 

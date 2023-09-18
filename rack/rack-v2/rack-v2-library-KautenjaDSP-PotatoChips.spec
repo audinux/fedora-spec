@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir KautenjaDSP-PotatoChips_plugin
 tar xvfz %{SOURCE1} --directory=KautenjaDSP-PotatoChips_plugin --strip-components=1 
 
-cp -n %{SOURCE2} KautenjaDSP-PotatoChips_plugin/plugin.json
+cp -n %{SOURCE2} KautenjaDSP-PotatoChips_plugin/plugin.json || true
 
 %build
 

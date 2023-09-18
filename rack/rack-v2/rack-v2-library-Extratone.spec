@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Extratone_plugin
 tar xvfz %{SOURCE1} --directory=Extratone_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Extratone_plugin/plugin.json
+cp -n %{SOURCE2} Extratone_plugin/plugin.json || true
 
 %build
 

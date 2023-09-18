@@ -139,7 +139,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Valley_plugin
 tar xvfz %{SOURCE1} --directory=Valley_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Valley_plugin/plugin.json
+cp -n %{SOURCE2} Valley_plugin/plugin.json || true
 
 %ifarch aarch64
 %patch1 -p1

@@ -137,7 +137,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir SurgeXTRack_plugin
 tar xvfz %{SOURCE1} --directory=SurgeXTRack_plugin --strip-components=1 
 
-cp -n %{SOURCE2} SurgeXTRack_plugin/plugin.json
+cp -n %{SOURCE2} SurgeXTRack_plugin/plugin.json || true
 
 sed -i -e "s/\$(EXTRA_CMAKE)/\$(EXTRA_CMAKE) -DCMAKE_CXX_FLAGS='\$(MYCXXFLAGS)'/g" SurgeXTRack_plugin/Makefile
 sed -i -e "s/SURGE_LIBS surge-common/SURGE_LIBS surge-common jansson/g" SurgeXTRack_plugin/CMakeLists.txt

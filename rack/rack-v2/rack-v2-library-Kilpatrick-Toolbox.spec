@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Kilpatrick-Toolbox_plugin
 tar xvfz %{SOURCE1} --directory=Kilpatrick-Toolbox_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Kilpatrick-Toolbox_plugin/plugin.json
+cp -n %{SOURCE2} Kilpatrick-Toolbox_plugin/plugin.json || true
 
 %build
 

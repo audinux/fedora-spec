@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir NOI_plugin
 tar xvfz %{SOURCE1} --directory=NOI_plugin --strip-components=1 
 
-cp -n %{SOURCE2} NOI_plugin/plugin.json
+cp -n %{SOURCE2} NOI_plugin/plugin.json || true
 
 %build
 

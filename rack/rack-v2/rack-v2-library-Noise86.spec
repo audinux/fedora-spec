@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Noise86_plugin
 tar xvfz %{SOURCE1} --directory=Noise86_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Noise86_plugin/plugin.json
+cp -n %{SOURCE2} Noise86_plugin/plugin.json || true
 
 %build
 

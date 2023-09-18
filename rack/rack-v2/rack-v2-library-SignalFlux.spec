@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir SignalFlux_plugin
 tar xvfz %{SOURCE1} --directory=SignalFlux_plugin --strip-components=1 
 
-cp -n %{SOURCE2} SignalFlux_plugin/plugin.json
+cp -n %{SOURCE2} SignalFlux_plugin/plugin.json || true
 
 %build
 

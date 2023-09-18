@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir PdArray_plugin
 tar xvfz %{SOURCE1} --directory=PdArray_plugin --strip-components=1 
 
-cp -n %{SOURCE2} PdArray_plugin/plugin.json
+cp -n %{SOURCE2} PdArray_plugin/plugin.json || true
 
 %build
 

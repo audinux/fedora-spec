@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir LyraeModules_plugin
 tar xvfz %{SOURCE1} --directory=LyraeModules_plugin --strip-components=1 
 
-cp -n %{SOURCE2} LyraeModules_plugin/plugin.json
+cp -n %{SOURCE2} LyraeModules_plugin/plugin.json || true
 
 %build
 

@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir FehlerFabrik-Suite_plugin
 tar xvfz %{SOURCE1} --directory=FehlerFabrik-Suite_plugin --strip-components=1 
 
-cp -n %{SOURCE2} FehlerFabrik-Suite_plugin/plugin.json
+cp -n %{SOURCE2} FehlerFabrik-Suite_plugin/plugin.json || true
 
 sed -i -e "/OBJECTS/d" FehlerFabrik-Suite_plugin/Makefile
 sed -i -e "/DEPS/d" FehlerFabrik-Suite_plugin/Makefile

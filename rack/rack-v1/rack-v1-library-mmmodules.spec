@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir mmmodules_plugin
 tar xvfz %{SOURCE1} --directory=mmmodules_plugin --strip-components=1 
 
-cp -n %{SOURCE2} mmmodules_plugin/plugin.json
+cp -n %{SOURCE2} mmmodules_plugin/plugin.json || true
 
 %build
 

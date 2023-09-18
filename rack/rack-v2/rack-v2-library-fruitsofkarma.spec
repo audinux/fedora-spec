@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir fruitsofkarma_plugin
 tar xvfz %{SOURCE1} --directory=fruitsofkarma_plugin --strip-components=1 
 
-cp -n %{SOURCE2} fruitsofkarma_plugin/plugin.json
+cp -n %{SOURCE2} fruitsofkarma_plugin/plugin.json || true
 
 %build
 

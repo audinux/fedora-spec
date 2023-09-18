@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir computerscare_plugin
 tar xvfz %{SOURCE1} --directory=computerscare_plugin --strip-components=1 
 
-cp -n %{SOURCE2} computerscare_plugin/plugin.json
+cp -n %{SOURCE2} computerscare_plugin/plugin.json || true
 
 %build
 

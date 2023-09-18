@@ -135,7 +135,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir BeckstromResearch_plugin
 tar xvfz %{SOURCE1} --directory=BeckstromResearch_plugin --strip-components=1 
 
-cp -n %{SOURCE2} BeckstromResearch_plugin/plugin.json
+cp -n %{SOURCE2} BeckstromResearch_plugin/plugin.json || true
 
 %build
 

@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Yokai_Holiday_plugin
 tar xvfz %{SOURCE1} --directory=Yokai_Holiday_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Yokai_Holiday_plugin/plugin.json
+cp -n %{SOURCE2} Yokai_Holiday_plugin/plugin.json || true
 
 %build
 

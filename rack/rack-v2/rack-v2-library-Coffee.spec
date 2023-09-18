@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Coffee_plugin
 tar xvfz %{SOURCE1} --directory=Coffee_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Coffee_plugin/plugin.json
+cp -n %{SOURCE2} Coffee_plugin/plugin.json || true
 
 %build
 

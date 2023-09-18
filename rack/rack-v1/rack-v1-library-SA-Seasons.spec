@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir SA-Seasons_plugin
 tar xvfz %{SOURCE1} --directory=SA-Seasons_plugin --strip-components=1 
 
-cp -n %{SOURCE2} SA-Seasons_plugin/plugin.json
+cp -n %{SOURCE2} SA-Seasons_plugin/plugin.json || true
 
 %build
 

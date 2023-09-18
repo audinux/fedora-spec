@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir repelzen_plugin
 tar xvfz %{SOURCE1} --directory=repelzen_plugin --strip-components=1 
 
-cp -n %{SOURCE2} repelzen_plugin/plugin.json
+cp -n %{SOURCE2} repelzen_plugin/plugin.json || true
 
 %build
 

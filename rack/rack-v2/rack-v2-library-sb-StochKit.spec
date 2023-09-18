@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir sb-StochKit_plugin
 tar xvfz %{SOURCE1} --directory=sb-StochKit_plugin --strip-components=1 
 
-cp -n %{SOURCE2} sb-StochKit_plugin/plugin.json
+cp -n %{SOURCE2} sb-StochKit_plugin/plugin.json || true
 
 %build
 

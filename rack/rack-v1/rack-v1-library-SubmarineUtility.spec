@@ -86,7 +86,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir SubmarineUtility_plugin
 tar xvfz %{SOURCE1} --directory=SubmarineUtility_plugin --strip-components=1 
 
-cp -n %{SOURCE2} SubmarineUtility_plugin/plugin.json
+cp -n %{SOURCE2} SubmarineUtility_plugin/plugin.json || true
 
 %build
 

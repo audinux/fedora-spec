@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Sha-Bang-Modules_plugin
 tar xvfz %{SOURCE1} --directory=Sha-Bang-Modules_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Sha-Bang-Modules_plugin/plugin.json
+cp -n %{SOURCE2} Sha-Bang-Modules_plugin/plugin.json || true
 
 %build
 

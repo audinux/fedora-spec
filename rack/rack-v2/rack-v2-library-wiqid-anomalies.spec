@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir wiqid-anomalies_plugin
 tar xvfz %{SOURCE1} --directory=wiqid-anomalies_plugin --strip-components=1 
 
-cp -n %{SOURCE2} wiqid-anomalies_plugin/plugin.json
+cp -n %{SOURCE2} wiqid-anomalies_plugin/plugin.json || true
 
 %build
 

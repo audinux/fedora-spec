@@ -96,7 +96,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir CharredDesert_plugin
 tar xvfz %{SOURCE1} --directory=CharredDesert_plugin --strip-components=1 
 
-cp -n %{SOURCE2} CharredDesert_plugin/plugin.json
+cp -n %{SOURCE2} CharredDesert_plugin/plugin.json || true
 
 %build
 

@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir NocturnalEncoder_plugin
 tar xvfz %{SOURCE1} --directory=NocturnalEncoder_plugin --strip-components=1 
 
-cp -n %{SOURCE2} NocturnalEncoder_plugin/plugin.json
+cp -n %{SOURCE2} NocturnalEncoder_plugin/plugin.json || true
 
 %build
 

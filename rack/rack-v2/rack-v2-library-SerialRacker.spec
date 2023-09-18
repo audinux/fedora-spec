@@ -135,7 +135,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir SerialRacker_plugin
 tar xvfz %{SOURCE1} --directory=SerialRacker_plugin --strip-components=1 
 
-cp -n %{SOURCE2} SerialRacker_plugin/plugin.json
+cp -n %{SOURCE2} SerialRacker_plugin/plugin.json || true
 
 %build
 

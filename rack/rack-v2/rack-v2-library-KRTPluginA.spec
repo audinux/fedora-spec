@@ -139,7 +139,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir KRTPluginA_plugin
 tar xvfz %{SOURCE1} --directory=KRTPluginA_plugin --strip-components=1 
 
-cp -n %{SOURCE2} KRTPluginA_plugin/plugin.json
+cp -n %{SOURCE2} KRTPluginA_plugin/plugin.json || true
 
 %build
 

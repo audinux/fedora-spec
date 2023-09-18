@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Stoermelder-P1_plugin
 tar xvfz %{SOURCE1} --directory=Stoermelder-P1_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Stoermelder-P1_plugin/plugin.json
+cp -n %{SOURCE2} Stoermelder-P1_plugin/plugin.json || true
 
 %build
 

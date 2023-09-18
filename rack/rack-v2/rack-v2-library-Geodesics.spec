@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Geodesics_plugin
 tar xvfz %{SOURCE1} --directory=Geodesics_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Geodesics_plugin/plugin.json
+cp -n %{SOURCE2} Geodesics_plugin/plugin.json || true
 
 %build
 

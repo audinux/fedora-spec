@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir Sha-Bang-Modules_plugin
 tar xvfz %{SOURCE1} --directory=Sha-Bang-Modules_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Sha-Bang-Modules_plugin/plugin.json
+cp -n %{SOURCE2} Sha-Bang-Modules_plugin/plugin.json || true
 
 %build
 

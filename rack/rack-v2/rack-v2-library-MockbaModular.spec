@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir MockbaModular_plugin
 tar xvfz %{SOURCE1} --directory=MockbaModular_plugin --strip-components=1 
 
-cp -n %{SOURCE2} MockbaModular_plugin/plugin.json
+cp -n %{SOURCE2} MockbaModular_plugin/plugin.json || true
 
 %build
 

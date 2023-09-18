@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Biset_plugin
 tar xvfz %{SOURCE1} --directory=Biset_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Biset_plugin/plugin.json
+cp -n %{SOURCE2} Biset_plugin/plugin.json || true
 
 %build
 

@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Dintree-Virtual_plugin
 tar xvfz %{SOURCE1} --directory=Dintree-Virtual_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Dintree-Virtual_plugin/plugin.json
+cp -n %{SOURCE2} Dintree-Virtual_plugin/plugin.json || true
 
 %build
 

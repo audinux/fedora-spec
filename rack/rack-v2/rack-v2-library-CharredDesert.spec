@@ -146,7 +146,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir CharredDesert_plugin
 tar xvfz %{SOURCE1} --directory=CharredDesert_plugin --strip-components=1 
 
-cp -n %{SOURCE2} CharredDesert_plugin/plugin.json
+cp -n %{SOURCE2} CharredDesert_plugin/plugin.json || true
 
 %build
 

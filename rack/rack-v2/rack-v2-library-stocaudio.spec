@@ -138,7 +138,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir stocaudio_plugin
 tar xvfz %{SOURCE1} --directory=stocaudio_plugin --strip-components=1 
 
-cp -n %{SOURCE2} stocaudio_plugin/plugin.json
+cp -n %{SOURCE2} stocaudio_plugin/plugin.json || true
 
 # Remove samplerate compilation
 sed -i -e "/DEPS/d" stocaudio_plugin/Makefile

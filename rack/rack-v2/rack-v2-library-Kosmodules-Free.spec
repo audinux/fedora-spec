@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Kosmodules-Free_plugin
 tar xvfz %{SOURCE1} --directory=Kosmodules-Free_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Kosmodules-Free_plugin/plugin.json
+cp -n %{SOURCE2} Kosmodules-Free_plugin/plugin.json || true
 
 %build
 

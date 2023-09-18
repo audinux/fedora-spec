@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir SonusModular_plugin
 tar xvfz %{SOURCE1} --directory=SonusModular_plugin --strip-components=1 
 
-cp -n %{SOURCE2} SonusModular_plugin/plugin.json
+cp -n %{SOURCE2} SonusModular_plugin/plugin.json || true
 
 %build
 

@@ -91,7 +91,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir ErraticInstruments_plugin
 tar xvfz %{SOURCE1} --directory=ErraticInstruments_plugin --strip-components=1 
 
-cp -n %{SOURCE2} ErraticInstruments_plugin/plugin.json
+cp -n %{SOURCE2} ErraticInstruments_plugin/plugin.json || true
 
 %build
 

@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir modular80_plugin
 tar xvfz %{SOURCE1} --directory=modular80_plugin --strip-components=1 
 
-cp -n %{SOURCE2} modular80_plugin/plugin.json
+cp -n %{SOURCE2} modular80_plugin/plugin.json || true
 
 %build
 

@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir QuantalAudio_plugin
 tar xvfz %{SOURCE1} --directory=QuantalAudio_plugin --strip-components=1 
 
-cp -n %{SOURCE2} QuantalAudio_plugin/plugin.json
+cp -n %{SOURCE2} QuantalAudio_plugin/plugin.json || true
 
 %build
 

@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir SequelSequencers_plugin
 tar xvfz %{SOURCE1} --directory=SequelSequencers_plugin --strip-components=1 
 
-cp -n %{SOURCE2} SequelSequencers_plugin/plugin.json
+cp -n %{SOURCE2} SequelSequencers_plugin/plugin.json || true
 
 %build
 

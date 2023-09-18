@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir StochasticTelegraph_plugin
 tar xvfz %{SOURCE1} --directory=StochasticTelegraph_plugin --strip-components=1 
 
-cp -n %{SOURCE2} StochasticTelegraph_plugin/plugin.json
+cp -n %{SOURCE2} StochasticTelegraph_plugin/plugin.json || true
 
 %build
 

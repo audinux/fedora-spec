@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir MrLumps_plugin
 tar xvfz %{SOURCE1} --directory=MrLumps_plugin --strip-components=1 
 
-cp -n %{SOURCE2} MrLumps_plugin/plugin.json
+cp -n %{SOURCE2} MrLumps_plugin/plugin.json || true
 
 %build
 

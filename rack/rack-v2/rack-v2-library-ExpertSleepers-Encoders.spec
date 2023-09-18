@@ -135,7 +135,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir ExpertSleepers-Encoders_plugin
 tar xvfz %{SOURCE1} --directory=ExpertSleepers-Encoders_plugin --strip-components=1 
 
-cp -n %{SOURCE2} ExpertSleepers-Encoders_plugin/plugin.json
+cp -n %{SOURCE2} ExpertSleepers-Encoders_plugin/plugin.json || true
 
 %build
 

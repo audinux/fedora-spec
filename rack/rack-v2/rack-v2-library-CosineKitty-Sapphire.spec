@@ -137,7 +137,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir CosineKitty-Sapphire_plugin
 tar xvfz %{SOURCE1} --directory=CosineKitty-Sapphire_plugin --strip-components=1 
 
-cp -n %{SOURCE2} CosineKitty-Sapphire_plugin/plugin.json
+cp -n %{SOURCE2} CosineKitty-Sapphire_plugin/plugin.json || true
 
 %patch1 -p1
 

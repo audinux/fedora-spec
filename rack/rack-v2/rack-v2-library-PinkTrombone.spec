@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir PinkTrombone_plugin
 tar xvfz %{SOURCE1} --directory=PinkTrombone_plugin --strip-components=1 
 
-cp -n %{SOURCE2} PinkTrombone_plugin/plugin.json
+cp -n %{SOURCE2} PinkTrombone_plugin/plugin.json || true
 
 %build
 

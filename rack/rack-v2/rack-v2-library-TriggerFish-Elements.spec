@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir TriggerFish-Elements_plugin
 tar xvfz %{SOURCE1} --directory=TriggerFish-Elements_plugin --strip-components=1 
 
-cp -n %{SOURCE2} TriggerFish-Elements_plugin/plugin.json
+cp -n %{SOURCE2} TriggerFish-Elements_plugin/plugin.json || true
 
 %build
 

@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir PS-PurrSoftware_plugin
 tar xvfz %{SOURCE1} --directory=PS-PurrSoftware_plugin --strip-components=1 
 
-cp -n %{SOURCE2} PS-PurrSoftware_plugin/plugin.json
+cp -n %{SOURCE2} PS-PurrSoftware_plugin/plugin.json || true
 
 %build
 

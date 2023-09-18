@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Sculpt-O-Sound_plugin
 tar xvfz %{SOURCE1} --directory=Sculpt-O-Sound_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Sculpt-O-Sound_plugin/plugin.json
+cp -n %{SOURCE2} Sculpt-O-Sound_plugin/plugin.json || true
 
 %build
 

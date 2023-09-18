@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir RPJ_plugin
 tar xvfz %{SOURCE1} --directory=RPJ_plugin --strip-components=1 
 
-cp -n %{SOURCE2} RPJ_plugin/plugin.json
+cp -n %{SOURCE2} RPJ_plugin/plugin.json || true
 
 %build
 

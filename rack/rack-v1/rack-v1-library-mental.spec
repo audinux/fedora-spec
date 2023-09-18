@@ -88,7 +88,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 mkdir mental_plugin
 tar xvfz %{SOURCE1} --directory=mental_plugin --strip-components=1 
 
-cp -n %{SOURCE2} mental_plugin/plugin.json
+cp -n %{SOURCE2} mental_plugin/plugin.json || true
 
 %build
 

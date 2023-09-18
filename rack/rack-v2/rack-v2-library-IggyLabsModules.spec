@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir IggyLabsModules_plugin
 tar xvfz %{SOURCE1} --directory=IggyLabsModules_plugin --strip-components=1 
 
-cp -n %{SOURCE2} IggyLabsModules_plugin/plugin.json
+cp -n %{SOURCE2} IggyLabsModules_plugin/plugin.json || true
 
 %build
 

@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir AetrionModular_plugin
 tar xvfz %{SOURCE1} --directory=AetrionModular_plugin --strip-components=1 
 
-cp -n %{SOURCE2} AetrionModular_plugin/plugin.json
+cp -n %{SOURCE2} AetrionModular_plugin/plugin.json || true
 
 %build
 

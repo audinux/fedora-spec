@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir aridacity_plugin
 tar xvfz %{SOURCE1} --directory=aridacity_plugin --strip-components=1 
 
-cp -n %{SOURCE2} aridacity_plugin/plugin.json
+cp -n %{SOURCE2} aridacity_plugin/plugin.json || true
 
 %build
 

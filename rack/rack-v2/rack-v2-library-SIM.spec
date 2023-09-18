@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir SIM_plugin
 tar xvfz %{SOURCE1} --directory=SIM_plugin --strip-components=1 
 
-cp -n %{SOURCE2} SIM_plugin/plugin.json
+cp -n %{SOURCE2} SIM_plugin/plugin.json || true
 
 %build
 

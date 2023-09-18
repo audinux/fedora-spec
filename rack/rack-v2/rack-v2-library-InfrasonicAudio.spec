@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir InfrasonicAudio_plugin
 tar xvfz %{SOURCE1} --directory=InfrasonicAudio_plugin --strip-components=1 
 
-cp -n %{SOURCE2} InfrasonicAudio_plugin/plugin.json
+cp -n %{SOURCE2} InfrasonicAudio_plugin/plugin.json || true
 
 %build
 

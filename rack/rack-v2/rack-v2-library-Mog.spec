@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Mog_plugin
 tar xvfz %{SOURCE1} --directory=Mog_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Mog_plugin/plugin.json
+cp -n %{SOURCE2} Mog_plugin/plugin.json || true
 
 %build
 

@@ -135,7 +135,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir pfzzz_plugin
 tar xvfz %{SOURCE1} --directory=pfzzz_plugin --strip-components=1 
 
-cp -n %{SOURCE2} pfzzz_plugin/plugin.json
+cp -n %{SOURCE2} pfzzz_plugin/plugin.json || true
 
 %build
 

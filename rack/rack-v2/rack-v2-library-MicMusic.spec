@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir MicMusic_plugin
 tar xvfz %{SOURCE1} --directory=MicMusic_plugin --strip-components=1 
 
-cp -n %{SOURCE2} MicMusic_plugin/plugin.json
+cp -n %{SOURCE2} MicMusic_plugin/plugin.json || true
 
 %build
 

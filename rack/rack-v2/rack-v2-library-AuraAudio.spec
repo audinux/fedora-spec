@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir AuraAudio_plugin
 tar xvfz %{SOURCE1} --directory=AuraAudio_plugin --strip-components=1 
 
-cp -n %{SOURCE2} AuraAudio_plugin/plugin.json
+cp -n %{SOURCE2} AuraAudio_plugin/plugin.json || true
 
 %build
 

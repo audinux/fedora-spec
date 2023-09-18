@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Edge_plugin
 tar xvfz %{SOURCE1} --directory=Edge_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Edge_plugin/plugin.json
+cp -n %{SOURCE2} Edge_plugin/plugin.json || true
 
 %build
 

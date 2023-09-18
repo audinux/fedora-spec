@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir LilacLoop_plugin
 tar xvfz %{SOURCE1} --directory=LilacLoop_plugin --strip-components=1 
 
-cp -n %{SOURCE2} LilacLoop_plugin/plugin.json
+cp -n %{SOURCE2} LilacLoop_plugin/plugin.json || true
 
 %build
 

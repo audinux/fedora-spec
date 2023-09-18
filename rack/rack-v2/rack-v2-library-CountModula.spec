@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir CountModula_plugin
 tar xvfz %{SOURCE1} --directory=CountModula_plugin --strip-components=1 
 
-cp -n %{SOURCE2} CountModula_plugin/plugin.json
+cp -n %{SOURCE2} CountModula_plugin/plugin.json || true
 
 %build
 

@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir Truly_plugin
 tar xvfz %{SOURCE1} --directory=Truly_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Truly_plugin/plugin.json
+cp -n %{SOURCE2} Truly_plugin/plugin.json || true
 
 %build
 

@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir Tonecarver_plugin
 tar xvfz %{SOURCE1} --directory=Tonecarver_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Tonecarver_plugin/plugin.json
+cp -n %{SOURCE2} Tonecarver_plugin/plugin.json || true
 
 %build
 

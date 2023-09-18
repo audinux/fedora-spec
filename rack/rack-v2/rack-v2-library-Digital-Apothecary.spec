@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Digital-Apothecary_plugin
 tar xvfz %{SOURCE1} --directory=Digital-Apothecary_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Digital-Apothecary_plugin/plugin.json
+cp -n %{SOURCE2} Digital-Apothecary_plugin/plugin.json || true
 
 %build
 

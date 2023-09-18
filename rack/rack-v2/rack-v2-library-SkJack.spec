@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir SkJack_plugin
 tar xvfz %{SOURCE1} --directory=SkJack_plugin --strip-components=1 
 
-cp -n %{SOURCE2} SkJack_plugin/plugin.json
+cp -n %{SOURCE2} SkJack_plugin/plugin.json || true
 
 %build
 

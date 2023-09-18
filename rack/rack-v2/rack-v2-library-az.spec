@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir az_plugin
 tar xvfz %{SOURCE1} --directory=az_plugin --strip-components=1 
 
-cp -n %{SOURCE2} az_plugin/plugin.json
+cp -n %{SOURCE2} az_plugin/plugin.json || true
 
 %build
 

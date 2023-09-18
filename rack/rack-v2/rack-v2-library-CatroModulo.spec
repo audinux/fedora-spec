@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir CatroModulo_plugin
 tar xvfz %{SOURCE1} --directory=CatroModulo_plugin --strip-components=1 
 
-cp -n %{SOURCE2} CatroModulo_plugin/plugin.json
+cp -n %{SOURCE2} CatroModulo_plugin/plugin.json || true
 
 %build
 

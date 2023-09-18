@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir TMT_plugin
 tar xvfz %{SOURCE1} --directory=TMT_plugin --strip-components=1 
 
-cp -n %{SOURCE2} TMT_plugin/plugin.json
+cp -n %{SOURCE2} TMT_plugin/plugin.json || true
 
 %build
 

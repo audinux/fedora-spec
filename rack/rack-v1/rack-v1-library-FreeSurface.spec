@@ -90,7 +90,7 @@ tar xvfz %{SOURCE1} --directory=FreeSurface_plugin --strip-components=1
 sed -i -e "s/dep\/lib\/libsamplerate.a/-lsamplerate/g" FreeSurface_plugin/Makefile
 sed -i -e "/OBJECTS/d" FreeSurface_plugin/Makefile
 
-cp -n %{SOURCE2} FreeSurface_plugin/plugin.json
+cp -n %{SOURCE2} FreeSurface_plugin/plugin.json || true
 
 %build
 

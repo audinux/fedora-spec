@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir MockbaModular_plugin
 tar xvfz %{SOURCE1} --directory=MockbaModular_plugin --strip-components=1 
 
-cp -n %{SOURCE2} MockbaModular_plugin/plugin.json
+cp -n %{SOURCE2} MockbaModular_plugin/plugin.json || true
 
 %build
 

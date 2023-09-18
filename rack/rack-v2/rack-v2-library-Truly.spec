@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Truly_plugin
 tar xvfz %{SOURCE1} --directory=Truly_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Truly_plugin/plugin.json
+cp -n %{SOURCE2} Truly_plugin/plugin.json || true
 
 %build
 

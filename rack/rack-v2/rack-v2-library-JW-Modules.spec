@@ -135,7 +135,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir JW-Modules_plugin
 tar xvfz %{SOURCE1} --directory=JW-Modules_plugin --strip-components=1 
 
-cp -n %{SOURCE2} JW-Modules_plugin/plugin.json
+cp -n %{SOURCE2} JW-Modules_plugin/plugin.json || true
 
 %build
 

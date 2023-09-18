@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir CaptainsSounds_plugin
 tar xvfz %{SOURCE1} --directory=CaptainsSounds_plugin --strip-components=1 
 
-cp -n %{SOURCE2} CaptainsSounds_plugin/plugin.json
+cp -n %{SOURCE2} CaptainsSounds_plugin/plugin.json || true
 
 %build
 

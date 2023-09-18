@@ -87,7 +87,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir MicMusic_plugin
 tar xvfz %{SOURCE1} --directory=MicMusic_plugin --strip-components=1 
 
-cp -n %{SOURCE2} MicMusic_plugin/plugin.json
+cp -n %{SOURCE2} MicMusic_plugin/plugin.json || true
 
 %build
 

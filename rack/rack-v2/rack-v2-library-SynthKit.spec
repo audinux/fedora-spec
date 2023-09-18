@@ -146,7 +146,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir SynthKit_plugin
 tar xvfz %{SOURCE1} --directory=SynthKit_plugin --strip-components=1 
 
-cp -n %{SOURCE2} SynthKit_plugin/plugin.json
+cp -n %{SOURCE2} SynthKit_plugin/plugin.json || true
 
 %build
 

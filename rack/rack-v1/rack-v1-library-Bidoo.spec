@@ -93,7 +93,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 mkdir Bidoo_plugin
 tar xvfz %{SOURCE1} --directory=Bidoo_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Bidoo_plugin/plugin.json
+cp -n %{SOURCE2} Bidoo_plugin/plugin.json || true
 
 %build
 

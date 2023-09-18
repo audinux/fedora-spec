@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir WhatTheRack_plugin
 tar xvfz %{SOURCE1} --directory=WhatTheRack_plugin --strip-components=1 
 
-cp -n %{SOURCE2} WhatTheRack_plugin/plugin.json
+cp -n %{SOURCE2} WhatTheRack_plugin/plugin.json || true
 
 %build
 

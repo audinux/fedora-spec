@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir PhoturiElectronics_plugin
 tar xvfz %{SOURCE1} --directory=PhoturiElectronics_plugin --strip-components=1 
 
-cp -n %{SOURCE2} PhoturiElectronics_plugin/plugin.json
+cp -n %{SOURCE2} PhoturiElectronics_plugin/plugin.json || true
 
 %build
 
