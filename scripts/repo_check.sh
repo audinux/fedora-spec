@@ -891,7 +891,8 @@ https://github.com/psemiletov/drumlabooh
 https://github.com/FigBug/Wavetable
 https://github.com/Stazed/non-mixer-xt
 https://github.com/rerdavies/ToobAmp
-https://git.iem.at/audioplugins/IEMPluginSuite"
+https://git.iem.at/audioplugins/IEMPluginSuite
+https://github.com/leomccormack/SPARTA"
 
 # https://gitlab.com/iurie-sw/redkite
 # https://github.com/benthevining/imogen
