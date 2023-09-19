@@ -31,6 +31,7 @@
 # ulfius
 # ztoolkit
 # JUCE*
+# hvcc
 
 # libgig before linuxsampler before liblscp
 # non-ntk before ensemble-chorus
@@ -51,10 +52,9 @@
 
 # Reorder srpm file in FILELIST: dependencies first
 
-
 FILELIST=""
 
 for Files in $FILELIST
 do
-    copr-cli build --chroot fedora-37-x86_64 --chroot fedora-37-aarch64 audinux $Files
+    copr-cli build --chroot fedora-39-x86_64 --chroot fedora-39-aarch64 audinux tmp/$Files
 done
