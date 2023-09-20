@@ -7,17 +7,17 @@
 
 # Global variables for github repository
 %global commit0 c217496e40fc566a4306ecf2d6c3d814f19f5187
-%global gittag0 2.0.2
+%global gittag0 2.0.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-LilacModules
-Version: 2.0.2
+Version: 2.0.3
 Release: 2%{?dist}
 Summary: LilacModules plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/grough/lilac-modules-vcv
 
 Vendor:       Audinux
@@ -152,5 +152,5 @@ cp -r LilacModules_plugin/dist/LilacModules/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
 - initial specfile
