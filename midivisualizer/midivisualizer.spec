@@ -1,5 +1,5 @@
 Name:    midivisualizer
-Version: 7.1
+Version: 7.2
 Release: 1%{?dist}
 Summary: A small MIDI visualizer tool, using OpenGL
 URL:     https://github.com/markusschwenk/midieditor
@@ -84,6 +84,9 @@ desktop-file-install                         \
 %{_datadir}/applications/*
 
 %changelog
+* Wed Sep 20 2023 Yann Collette <ycollette.nospam@free.fr> - 7.2-1
+- update to 7.2-1
+
 * Wed Aug 30 2023 Yann Collette <ycollette.nospam@free.fr> - 7.1-1
 - update to 7.1-1
 
