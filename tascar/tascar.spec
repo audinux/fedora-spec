@@ -1,5 +1,5 @@
 Name: tascar
-Version: 0.229.0
+Version: 0.230.0
 Release: 1%{?dist}
 Summary: TASCAR is a collection of tools for creating spatially dynamic acoustic scenes in different render formats	
 License: GPL2	
@@ -87,6 +87,9 @@ mv %buildroot/usr/lib/* %buildroot/%{_libdir}/
 %{_libdir}/*.a
 
 %changelog
+* Thu Sep 21 2023 Yann Collette <ycollette.nospam@free.fr> - 0.230.0-1
+- update to 0.230.0-1
+
 * Fri Jan 27 2023 Yann Collette <ycollette.nospam@free.fr> - 0.229.0-1
 - update to 0.229.0-1
 
