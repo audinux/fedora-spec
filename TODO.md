@@ -83,7 +83,7 @@
 | mellite                 | https://www.sciss.de/mellite/ |
 | arch realtime privilege | https://github.com/archlinux/svntogit-community/tree/packages/realtime-privileges/trunk |
 | MXTune                  | https://github.com/liuanlin-mx/MXTune |
-| MXComp                  | https://github.com/liuanlin-mx/MXComp 
+| MXComp                  | https://github.com/liuanlin-mx/MXComp
 | dm-GrainDelay           | https://github.com/moddevices/dm-GrainDelay |
 | Carve-Distortion        | https://github.com/jd-13/Carve-Distortion |
 | Oi-Grandad              | https://github.com/publicsamples/Oi-Grandad |
@@ -111,6 +111,62 @@
 | anklang                 | https://github.com/tim-janik/anklang |
 
 Check the following URL: https://github.com/forart/HyMPS
+
+## Fedora 39 to be fixed
+
+rack-v1-BaconMusic		-> fails since F36
+rack-v1-ArableInstruments	-> build failure
+rack-v1-Starling_Via		-> build failure
+rack-v2-VCV-Recorder 		-> libopenh264
+rack-v2-SynthKit		-> fails since F36
+rack-v2-skjack			-> libopenh264
+rack-v2-RebelTech		-> intrinsic build failure
+rack-v2-monome 			-> build failure
+rack-v2-ImpromptuModular	-> build failure
+rack-v2-Fundamental 		-> patch problem
+rack-v2-FrozenWasteland		-> build failure
+rack-v2-FrankBuss
+rack-v2-EH_modules
+rack-v1-VCV-Recorder
+rack-v1-SynthKit
+rack-v1-SurgeRack
+rack-v1-Starling_Via
+rack-v1-squinkylabs-plug1
+rack-v1-sfjack
+rack-v1-ParableInstruments
+rack-v1-JE
+rack-v1-Fundamental
+zlfo    -> ztoolkit not found
+xjadeo 	-> libopenh264
+voc 	-> resubmitted
+ts-m1n3 -> 'xsimd8-devel' not found - renamed
+spek 	-> 'wxGTK3-devel' not found - renamed
+SocaLabs-plugins -> build failure
+SN76489 	 -> build failure
+samplehive	 -> 'wxGTK3-devel' not found - renamed
+rt-tests 	 -> mkdir: cannot create directory '/builddir/build/BUILDROOT/rt-tests-2.5-1.fc39.x86_64//usr/lib/python3.12/site-packages/rt-tests/': No such file or directory
+pyliblo 	 -> Cython.Compiler.Errors.CompileError: src/liblo.pyx
+proteus 	 -> 'xsimd8-devel' not found - renamed
+princepedal	 -> 'xsimd8-devel' not found - renamed
+pipecontrol	 -> build failure
+piano 		 -> build failure
+non-daw-lv2	 -> No module named 'imp'
+non-daw 	 -> No module named 'imp'
+mscore-mao	 -> libopenh264
+mamba		 -> -Werror=format-security
+lv2-slowmo	 -> -Werror=format-security
+lv2-metaltone	 -> -Werror=format-security
+livecd-tools-mao -> error: File not found: /builddir/build/BUILDROOT/livecd-tools-mao-31.0-5.fc39.x86_64/usr/lib/python3.12/site-packages/imgcreate
+lenmus		 -> 'wxGTK3-devel' not found - renamed
+jack_mixer	 -> Error compiling Cython file:
+grandorgue	 -> 'wxGTK3-devel' not found - renamed
+gigedit		 -> libtool:   error: specify a tag with '--tag'
+fluida		 -> -Werror=format-security
+chameleon	 -> 'xsimd8-devel' not found - renamed
+non-ntk 	 -> No module named 'imp'
+kernel-xan-mao	 -> aarch64: /builddir/build/BUILD/linux-6.4/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
+kernel-rt-stable-mao -> aarch64: /builddir/build/BUILD/linux-5.10.192/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
+kernel-rt-mao	     -> aarch64: /builddir/build/BUILD/linux-6.4.6/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
 
 ## Fedora 38 to be fixed
 Cstdint missing:
