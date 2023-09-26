@@ -3,12 +3,12 @@ Version: 0.1.3
 Release: 1%{?dist}
 Summary: Fully featured LFO for CV-based automation
 License: GPL-2.0-or-later
-URL:     https://git.zrythm.org/cgit/ZLFO/
+URL:     https://github.com/zrythm/ZLFO
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://git.zrythm.org/cgit/ZLFO/snapshot/ZLFO-%{version}.tar.gz
+Source0: https://github.com/zrythm/ZLFO/archive/refs/tags/v0.1.3.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel
@@ -20,6 +20,8 @@ Fully featured LFO for CV-based automation
 
 %prep
 %autosetup -n %{name}-%{version}
+
+sed -i -e "s/== 0.1.1/== 0.1.2/g" meson.build
 
 %build
 
