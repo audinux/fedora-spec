@@ -2,19 +2,22 @@
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer
 
+%define _lto_cflags %{nil}
+
 Name:    geonkick
-Version: 2.10.0
+Version: 2.10.1
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
-URL:     https://gitlab.com/iurie/geonkick
+URL:     https://github.com/Geonkick-Synthesizer/geonkick
 License: GPL-3.0-only
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://gitlab.com/iurie/%{name}/-/archive/v%{version}/%{name}-v%{version}.tar.gz
+Source0: https://github.com/Geonkick-Synthesizer/geonkick/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc
+BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
@@ -23,6 +26,7 @@ BuildRequires: libsndfile-devel
 BuildRequires: rapidjson-devel
 BuildRequires: libX11-devel
 BuildRequires: cairo-devel
+BuildRequires: openssl-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -30,9 +34,7 @@ Geonkick is a synthesizer that can synthesize elements of percussion.
 The most basic examples are: kick drums, snares, hit-hats, shakers, claps, steaks.
 
 %prep
-%autosetup -n %{name}-v%{version}
-
-sed -i -e "s|\${CMAKE_INSTALL_PREFIX}/lib|\${CMAKE_INSTALL_PREFIX}/%{_lib}|g" plugin/lv2/CMakeLists.txt
+%autosetup -n %{name}-%{version}
 
 %build
 
@@ -55,6 +57,9 @@ sed -i -e "s|\${CMAKE_INSTALL_PREFIX}/lib|\${CMAKE_INSTALL_PREFIX}/%{_lib}|g" pl
 %{_datadir}/*
 
 %changelog
+* Tue Sep 26 2023 Yann Collette <ycollette.nospam@free.fr> - 2.10.1-2
+- Update to 2.10.1-2
+
 * Fri Sep 08 2023 Yann Collette <ycollette.nospam@free.fr> - 2.10.0-2
 - Update to 2.10.0-2
 
