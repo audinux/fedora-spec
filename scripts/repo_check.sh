@@ -771,9 +771,7 @@ https://gitlab.com/ayrsd/audiostellar
 https://gitlab.com/davethecomposer/platonic-music-engine
 https://gitlab.com/drobilla/lv2lint
 https://gitlab.com/genhydro/genhydro
-https://gitlab.com/geontime/geonkick
 https://gitlab.com/hampton-harmonics/hampton-harmonics-modules
-https://gitlab.com/iurie/geonkick
 https://gitlab.com/jeremy_mitchell/sunsetsignals
 https://gitlab.com/lebiniou/lebiniou
 https://gitlab.com/lebiniou/lebiniou-data
@@ -893,8 +891,11 @@ https://github.com/Stazed/non-mixer-xt
 https://github.com/rerdavies/ToobAmp
 https://git.iem.at/audioplugins/IEMPluginSuite
 https://github.com/leomccormack/SPARTA
-https://github.com/midilab/jc303"
+https://github.com/midilab/jc303
+https://github.com/Geonkick-Synthesizer/geonkick"
 
+# https://gitlab.com/geontime/geonkick
+# https://gitlab.com/iurie/geonkick
 # https://gitlab.com/iurie-sw/redkite
 # https://github.com/benthevining/imogen
 
