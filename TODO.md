@@ -109,6 +109,7 @@
 | ddsp-vst                | https://github.com/magenta/ddsp-vst |
 | LinVst3                 | https://github.com/osxmidi/LinVst3 |
 | anklang                 | https://github.com/tim-janik/anklang |
+| dawproject              | https://github.com/bitwig/dawproject |
 
 Check the following URL: https://github.com/forart/HyMPS
 
@@ -130,31 +131,26 @@ rack-v1-ParableInstruments  -> build failure
 rack-v1-VCV-Recorder        -> fatal error: pffft.h: No such file or directory
 rack-v1-sfjack              -> fatal error: pffft.h: No such file or directory
 rack-v1-Fundamental         -> fatal error: pffft.h: No such file or directory
-hvcc             -> python package pb
-zlfo             -> ztoolkit not found
-SocaLabs-plugins -> build failure
-SN76489 	     -> build failure
-pipecontrol	     -> build failure
-piano 		     -> build failure
-rt-tests 	     -> mkdir: cannot create directory '/builddir/build/BUILDROOT/rt-tests-2.5-1.fc39.x86_64//usr/lib/python3.12/site-packages/rt-tests/': No such file or directory
-pyliblo 	     -> Cython.Compiler.Errors.CompileError: src/liblo.pyx
-non-ntk 	     -> No module named 'imp' -> module removed in 3.12
-non-daw-lv2	     -> No module named 'imp' -> module removed in 3.12
-non-daw 	     -> No module named 'imp' -> module removed in 3.12
-mamba		     -> -Werror=format-security
-lv2-slowmo	     -> -Werror=format-security
-lv2-metaltone	 -> -Werror=format-security
-fluida		     -> -Werror=format-security
-livecd-tools-mao -> error: File not found: /builddir/build/BUILDROOT/livecd-tools-mao-31.0-5.fc39.x86_64/usr/lib/python3.12/site-packages/imgcreate
-jack_mixer	     -> Error compiling Cython file:
-gigedit		     -> libtool:   error: specify a tag with '--tag'
-spek 	         -> 'wxGTK3-devel' not found - renamed
-samplehive	     -> 'wxGTK3-devel' not found - renamed
-lenmus		     -> 'wxGTK3-devel' not found - renamed
-grandorgue	     -> 'wxGTK3-devel' not found - renamed
-kernel-xan-mao	 -> aarch64: /builddir/build/BUILD/linux-6.4/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
-kernel-rt-stable-mao -> aarch64: /builddir/build/BUILD/linux-5.10.192/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
-kernel-rt-mao	     -> aarch64: /builddir/build/BUILD/linux-6.4.6/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
+
+SocaLabs-plugins            -> build failure
+SN76489 	                -> build failure
+pipecontrol         	    -> build failure
+piano 		             	-> build failure
+rt-tests 	             	-> No module named 'distutils' -> module removed in 3.12
+pyliblo 	             	-> Cython.Compiler.Errors.CompileError: src/liblo.pyx
+non-ntk 	             	-> No module named 'imp' -> module removed in 3.12
+non-daw-lv2	             	-> No module named 'imp' -> module removed in 3.12
+non-daw 	             	-> No module named 'imp' -> module removed in 3.12
+livecd-tools-mao         	-> error: File not found: /builddir/build/BUILDROOT/livecd-tools-mao-31.0-5.fc39.x86_64/usr/lib/python3.12/site-packages/imgcreate
+jack_mixer	             	-> Error compiling Cython file:
+gigedit		             	-> libtool:   error: specify a tag with '--tag'
+spek 	                 	-> 'wxGTK3-devel' not found - renamed
+samplehive	             	-> 'wxGTK3-devel' not found - renamed
+lenmus		             	-> 'wxGTK3-devel' not found - renamed
+grandorgue	             	-> 'wxGTK3-devel' not found - renamed
+kernel-xan-mao	         	-> aarch64: /builddir/build/BUILD/linux-6.4/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
+kernel-rt-stable-mao        -> aarch64: /builddir/build/BUILD/linux-5.10.192/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
+kernel-rt-mao	            -> aarch64: /builddir/build/BUILD/linux-6.4.6/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
 
 ## Fedora 38 to be fixed
 Cstdint missing:
