@@ -892,12 +892,8 @@ https://github.com/rerdavies/ToobAmp
 https://git.iem.at/audioplugins/IEMPluginSuite
 https://github.com/leomccormack/SPARTA
 https://github.com/midilab/jc303
-https://github.com/Geonkick-Synthesizer/geonkick"
-
-# https://gitlab.com/geontime/geonkick
-# https://gitlab.com/iurie/geonkick
-# https://gitlab.com/iurie-sw/redkite
-# https://github.com/benthevining/imogen
+https://github.com/Geonkick-Synthesizer/geonkick
+https://codeberg.org/obsoleszenz/equis"
 
 if [ -f git_tags_new.txt ];
 then
