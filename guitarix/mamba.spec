@@ -15,6 +15,7 @@ Distribution: Audinux
 Source0: https://github.com/brummer10/Mamba/releases/download/v%{version}/Mamba_%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libX11-devel
 BuildRequires: cairo-devel
@@ -58,7 +59,8 @@ with the synth of your choice.
 
 %set_build_flags
 
-export CXXFLAGS="-std=c++11 -fPIC -include string -I/usr/include/cairo -I/usr/include/sigc++-2.0/ -I/usr/%{_lib}/sigc++-2.0/include $CXXFLAGS"
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Werror=format-security||g"`
+export CFLAGS=`echo $CFLAGS | sed -e "s|-Werror=format-security||g"`
 
 %make_build 
 

@@ -33,7 +33,10 @@ Fluidsynth as LV2 plugin.
 
 %set_build_flags
 
-%make_build STRIP=true CXXFLAGS="$CXXFLAGS -fPIC -I/usr/include/cairo -I/usr/include/sigc++-2.0/ -I/usr/%{_lib}/sigc++-2.0/include" 
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Werror=format-security||g"`
+export CFLAGS=`echo $CFLAGS | sed -e "s|-Werror=format-security||g"`
+
+%make_build STRIP=true 
 
 %install 
 

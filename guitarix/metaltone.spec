@@ -37,6 +37,9 @@ Overdrive / Distortion
 
 %set_build_flags
 
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Werror=format-security||g"`
+export CFLAGS=`echo $CFLAGS | sed -e "s|-Werror=format-security||g"`
+
 %make_build STRIP=true
 
 %install 
