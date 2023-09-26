@@ -148,14 +148,10 @@ fluida		     -> -Werror=format-security
 livecd-tools-mao -> error: File not found: /builddir/build/BUILDROOT/livecd-tools-mao-31.0-5.fc39.x86_64/usr/lib/python3.12/site-packages/imgcreate
 jack_mixer	     -> Error compiling Cython file:
 gigedit		     -> libtool:   error: specify a tag with '--tag'
-ts-m1n3          -> 'xsimd8-devel' not found - renamed
 spek 	         -> 'wxGTK3-devel' not found - renamed
 samplehive	     -> 'wxGTK3-devel' not found - renamed
-proteus 	     -> 'xsimd8-devel' not found - renamed
-princepedal	     -> 'xsimd8-devel' not found - renamed
 lenmus		     -> 'wxGTK3-devel' not found - renamed
 grandorgue	     -> 'wxGTK3-devel' not found - renamed
-chameleon	     -> 'xsimd8-devel' not found - renamed
 kernel-xan-mao	 -> aarch64: /builddir/build/BUILD/linux-6.4/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
 kernel-rt-stable-mao -> aarch64: /builddir/build/BUILD/linux-5.10.192/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
 kernel-rt-mao	     -> aarch64: /builddir/build/BUILD/linux-6.4.6/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
