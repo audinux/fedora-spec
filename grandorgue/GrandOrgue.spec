@@ -26,7 +26,11 @@ BuildRequires: zip
 BuildRequires: po4a
 BuildRequires: ImageMagick
 BuildRequires: docbook-style-xsl
+%if 0%{?fedora} <= 38
 BuildRequires: wxGTK3-devel
+%else
+BuildRequires: wxGTK-devel
+%endif
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: systemd-devel
@@ -73,7 +77,12 @@ sed -i -e "s/target_link_libraries(GrandOrgue golib)/target_link_libraries(Grand
 %build
 
 %set_build_flags
-%cmake -DwxWidgets_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/wx-config-3.0 \
+%cmake \
+%if 0%{?fedora} <= 38
+       -DwxWidgets_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/wx-config-3.0 \
+%else
+       -DwxWidgets_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/wx-config-3.2 \
+%endif
 %if 0%{?fedora} >= 38
        -DCMAKE_CXX_FLAGS="-include cstdint -fPIC $CXXFLAGS" \
 %endif

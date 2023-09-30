@@ -11,12 +11,16 @@ Distribution: Audinux
 Source0: https://gitlab.com/samplehive/sample-hive/-/archive/v%{version}-alpha.1/sample-hive-v%{version}-alpha.1.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: desktop-file-utils
 BuildRequires: meson
 BuildRequires: yaml-cpp-devel
 BuildRequires: taglib-devel
 BuildRequires: sqlite-devel
+%if 0%{?fedora} <= 38
 BuildRequires: wxGTK3-devel
+%else
+BuildRequires: wxGTK-devel
+%endif
+BuildRequires: desktop-file-utils
 
 %description
 SampleHive let’s you manage your audio samples in a nice and simple way,

@@ -12,12 +12,16 @@ Source0: https://github.com/alexkay/spek/releases/download/v%{version}/spek-%{ve
 
 BuildRequires: gcc-c++ gcc
 BuildRequires: autoconf automake
-%if 0%{?fedora} >= 36
+%if 0%{?fedora} <= 38
 Buildrequires: compat-ffmpeg4-devel
 %else
 BuildRequires: ffmpeg-devel
 %endif
+%if 0%{?fedora} <= 38
 BuildRequires: wxGTK3-devel
+%else
+BuildRequires: wxGTK-devel
+%endif
 BuildRequires: SDL2-devel
 BuildRequires: desktop-file-utils
 
@@ -32,7 +36,7 @@ It uses FFmpeg libraries for audio decoding and wxWidgets for the GUI.
 
 %set_build_flags
 
-%if 0%{?fedora} >= 36
+%if 0%{?fedora} <= 38
 export AVCODEC_CFLAGS="-I/usr/include/compat-ffmpeg4"
 export AVFORMAT_CFLAGS="-I/usr/include/compat-ffmpeg4"
 export AVUTIL_CFLAGS="-I/usr/include/compat-ffmpeg4"

@@ -12,19 +12,23 @@ Source0: https://github.com/lenmus/lenmus/archive/Release_%{version}.tar.gz#/%{n
 Source1: FindPortMidi.cmake
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: boost-devel
-BuildRequires: desktop-file-utils
 BuildRequires: zlib-devel 
 BuildRequires: libpng-devel
 BuildRequires: freetype-devel
 BuildRequires: portmidi-devel
 BuildRequires: portaudio-devel
-BuildRequires: cmake
+%if 0%{?fedora} <= 38
 BuildRequires: wxGTK3-devel
+%else
+BuildRequires: wxGTK-devel
+%endif
 BuildRequires: sqlite-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: fluidsynth-devel
 BuildRequires: fluid-soundfont-gm
+BuildRequires: desktop-file-utils
 
 %description
 LenMus Phonascus, "the teacher of music", is a free program to help you in the study of music theory and ear training.
@@ -50,7 +54,11 @@ sed -ie "s/target_link_libraries ( \${LENMUS}/target_link_libraries ( \${LENMUS}
 %build
 
 %cmake -D_filename:FILEPATH=/usr/include/wx-3.0/wx/version.h \
+%if 0%{?fedora} <= 38
        -DwxWidgets_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/wx-config-3.0 \
+%else
+       -DwxWidgets_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/wx-config-3.2 \
+%endif
        -DPortTime_LIBRARY:FILEPATH=/usr/%{_lib}/libportaudio.so \
        -DLENMUS_DOWNLOAD_SOUNDFONT=OFF
 
