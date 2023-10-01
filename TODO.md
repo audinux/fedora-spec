@@ -115,21 +115,23 @@ Check the following URL: https://github.com/forart/HyMPS
 
 ## Fedora 39 to be fixed
 
-rack-v2-RebelTech		    -> intrinsic build failure
 rack-v1-BaconMusic		    -> fails since F36
-rack-v2-SynthKit		    -> fails since F36
-rack-v2-Fundamental 		-> patch problem
 rack-v1-SurgeRack           -> git missing
 rack-v1-ArableInstruments	-> build failure
 rack-v1-Starling_Via		-> build failure
-rack-v2-monome 			    -> build failure
-rack-v2-ImpromptuModular	-> build failure
-rack-v2-FrozenWasteland		-> build failure
 rack-v1-SynthKit            -> build failure
 rack-v1-Starling_Via        -> build failure
 rack-v1-ParableInstruments  -> build failure
 rack-v1-VCV-Recorder        -> fatal error: pffft.h: No such file or directory
 rack-v1-sfjack              -> fatal error: pffft.h: No such file or directory
+
+rack-v2-RebelTech		    -> intrinsic build failure
+rack-v2-SynthKit		    -> fails since F36
+rack-v2-monome 			    -> build failure
+rack-v2-ImpromptuModular	-> build failure
+rack-v2-FrozenWasteland		-> build failure
+
+rack-v2-Fundamental 		-> patch problem
 rack-v1-Fundamental         -> fatal error: pffft.h: No such file or directory
 
 SocaLabs-plugins            -> build failure
@@ -144,10 +146,7 @@ non-daw 	             	-> No module named 'imp' -> module removed in 3.12
 livecd-tools-mao         	-> error: File not found: /builddir/build/BUILDROOT/livecd-tools-mao-31.0-5.fc39.x86_64/usr/lib/python3.12/site-packages/imgcreate
 jack_mixer	             	-> Error compiling Cython file:
 gigedit		             	-> libtool:   error: specify a tag with '--tag'
-spek 	                 	-> 'wxGTK3-devel' not found - renamed
-samplehive	             	-> 'wxGTK3-devel' not found - renamed
-lenmus		             	-> 'wxGTK3-devel' not found - renamed
-grandorgue	             	-> 'wxGTK3-devel' not found - renamed
+
 kernel-xan-mao	         	-> aarch64: /builddir/build/BUILD/linux-6.4/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
 kernel-rt-stable-mao        -> aarch64: /builddir/build/BUILD/linux-5.10.192/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
 kernel-rt-mao	            -> aarch64: /builddir/build/BUILD/linux-6.4.6/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
