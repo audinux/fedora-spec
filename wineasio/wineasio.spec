@@ -15,9 +15,18 @@
 %if 0%{?fedora} >= 36
 %global wineversion 7.2
 %endif
+%if 0%{?fedora} >= 37
+%global wineversion 8.14
+%endif
+%if 0%{?fedora} >= 38
+%global wineversion 8.14
+%endif
+%if 0%{?fedora} >= 39
+%global wineversion 8.14
+%endif
 
 Name: wineasio
-Version: 1.1.0
+Version: 1.2.0
 Release: 2%{?dist}
 Summary: ASIO to JACK driver for WINE
 License: LGPLv2.1
@@ -71,12 +80,12 @@ install -d -m0755 %{buildroot}%{_prefix}/lib/wine
 %endif
 
 # install libs
-install -D -m 0755 build64/wineasio.dll %{buildroot}%{_libdir}/wine/x86_64-windows/wineasio.dll
-install -D -m 0755 build64/wineasio.dll.so %{buildroot}%{_libdir}/wine/x86_64-unix/wineasio.dll.so
+install -D -m 0755 build64/wineasio64.dll %{buildroot}%{_libdir}/wine/x86_64-windows/wineasio64.dll
+install -D -m 0755 build64/wineasio64.dll.so %{buildroot}%{_libdir}/wine/x86_64-unix/wineasio64.dll.so
 
 %if %{with_32bit}
-install -D -m 0755 build32/wineasio.dll %{buildroot}%{_prefix}/lib/wine/i386-windows/wineasio.dll
-install -D -m 0755 build32/wineasio.dll.so %{buildroot}%{_prefix}/lib/wine/i386-unix/wineasio.dll.so
+install -D -m 0755 build32/wineasio32.dll %{buildroot}%{_prefix}/lib/wine/i386-windows/wineasio32.dll
+install -D -m 0755 build32/wineasio32.dll.so %{buildroot}%{_prefix}/lib/wine/i386-unix/wineasio32.dll.so
 %endif
 
 # install gui
@@ -88,12 +97,12 @@ popd
 %license COPYING.LIB COPYING.GUI
 %doc README.md
 
-%{_libdir}/wine/x86_64-windows/wineasio.dll
-%{_libdir}/wine/x86_64-unix/wineasio.dll.so
+%{_libdir}/wine/x86_64-windows/wineasio64.dll
+%{_libdir}/wine/x86_64-unix/wineasio64.dll.so
 
 %if %{with_32bit}
-%{_prefix}/lib/wine/i386-windows/wineasio.dll
-%{_prefix}/lib/wine/i386-unix/wineasio.dll.so
+%{_prefix}/lib/wine/i386-windows/wineasio32.dll
+%{_prefix}/lib/wine/i386-unix/wineasio32.dll.so
 %endif
 
 %{_bindir}/wineasio-settings
@@ -101,6 +110,9 @@ popd
 %{_datadir}/%{name}/*.py
 
 %changelog
+* Sun Oct 01 2023 Patrick Laimbock <patrick@laimbock.com> - 1.2.0-2
+- update to 1.2.0-2
+
 * Sat Mar 26 2022 Patrick Laimbock <patrick@laimbock.com> - 1.1.0-2
 - build against wine-7.5
 
