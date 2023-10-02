@@ -3,7 +3,7 @@
 # Category: Audio, Sequencer
 
 Name:    furnace
-Version: 0.5.8
+Version: 0.6
 Release: 3%{?dist}
 Summary: A multi-system chiptune tracker compatible with DefleMask modules
 License: GPL-2.0-only
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./source-furnace.sh v0.5.8
+# $ ./source-furnace.sh v0.6
 
 Source0: furnace.tar.gz
 Source1: source-furnace.sh
@@ -45,9 +45,8 @@ BuildRequires: mesa-libgbm-devel
 BuildRequires: libglvnd-devel
 BuildRequires: fmt-devel
 BuildRequires: SDL2-devel
-BuildRequires: desktop-file-utils
-BuildRequires: libappstream-glib
 BuildRequires: patchelf
+BuildRequires: desktop-file-utils
 
 %description
 A multi-system chiptune tracker compatible with DefleMask modules
@@ -71,21 +70,20 @@ desktop-file-install                         \
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
-appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/%{name}.appdata.xml
 
 %files
 %license LICENSE
 %doc README.md
 %{_bindir}/*
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/doc/furnace/
-%{_datadir}/doc/furnace/papers/*
-%{_datadir}/furnace/
-%{_datadir}/furnace/demos/*
+%{_datadir}/doc/furnace/*
+%{_datadir}/furnace/*
 %{_datadir}/icons/hicolor/1024x1024/apps/%{name}.png
-%{_datadir}/metainfo/%{name}.appdata.xml
 
 %changelog
+* Mon Oct 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6-3
+- Update to 0.6-3
+
 * Fri Sep 30 2022 Yann Collette <ycollette.nospam@free.fr> - 0.5.8-3
 - use system libs
 
