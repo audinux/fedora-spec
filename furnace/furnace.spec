@@ -78,7 +78,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/doc/furnace/*
 %{_datadir}/furnace/*
-%{_datadir}/icons/hicolor/1024x1024/apps/%{name}.png
+%{_datadir}/icons/hicolor/*
 
 %changelog
 * Mon Oct 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6-3
