@@ -7,17 +7,17 @@
 
 # Global variables for github repository
 %global commit0 e1fcd8c7188506fb7a54b07981c010325a640474
-%global gittag0 2.5.5
+%global gittag0 2.5.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SickoCV
-Version: 2.5.5
+Version: 2.5.6
 Release: 2%{?dist}
 Summary: SickoCV plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/sickozell/SickoCV
 
 Vendor:       Audinux
@@ -152,5 +152,5 @@ cp -r SickoCV_plugin/dist/SickoCV/* %{buildroot}%{_libexecdir}/Rack2/plugins/Sic
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.6-1
 - initial specfile
