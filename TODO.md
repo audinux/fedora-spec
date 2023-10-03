@@ -110,29 +110,15 @@
 | LinVst3                 | https://github.com/osxmidi/LinVst3 |
 | anklang                 | https://github.com/tim-janik/anklang |
 | dawproject              | https://github.com/bitwig/dawproject |
+| csound_plugins          | https://github.com/csound/plugins |
 
 Check the following URL: https://github.com/forart/HyMPS
 
 ## Fedora 39 to be fixed
 
 rack-v1-BaconMusic		    -> fails since F36
-rack-v1-SurgeRack           -> git missing
-rack-v1-ArableInstruments	-> build failure
-rack-v1-Starling_Via		-> build failure
-rack-v1-SynthKit            -> build failure
-rack-v1-Starling_Via        -> build failure
 rack-v1-ParableInstruments  -> build failure
-rack-v1-VCV-Recorder        -> fatal error: pffft.h: No such file or directory
-rack-v1-sfjack              -> fatal error: pffft.h: No such file or directory
-
-rack-v2-RebelTech		    -> intrinsic build failure
-rack-v2-SynthKit		    -> fails since F36
-rack-v2-monome 			    -> build failure
-rack-v2-ImpromptuModular	-> build failure
-rack-v2-FrozenWasteland		-> build failure
-
 rack-v2-Fundamental 		-> patch problem
-rack-v1-Fundamental         -> fatal error: pffft.h: No such file or directory
 
 SocaLabs-plugins            -> build failure
 SN76489 	                -> build failure
