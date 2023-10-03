@@ -31,7 +31,6 @@ Patch0: rack-v1-aarch64.patch
 BuildRequires: gcc gcc-c++
 BuildRequires: sed
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel
 BuildRequires: glew-devel

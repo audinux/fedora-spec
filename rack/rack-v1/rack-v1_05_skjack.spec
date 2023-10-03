@@ -29,13 +29,12 @@ Distribution: Audinux
 # rm -rf skjack-vcv-e494bacb7487df74555a5636b9d67f6176919f57
 
 Source0: Rack.tar.gz
-Source1: rack-v2-skjack.tar.gz
+Source1: skjack-vcv.tar.gz
 Patch0: rack-v1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel
 BuildRequires: glew-devel
