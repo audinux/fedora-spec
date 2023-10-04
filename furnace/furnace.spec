@@ -43,6 +43,7 @@ BuildRequires: rtmidi-devel
 BuildRequires: zlib-devel
 BuildRequires: mesa-libgbm-devel
 BuildRequires: libglvnd-devel
+BuildRequires: fftw-devel
 BuildRequires: fmt-devel
 BuildRequires: SDL2-devel
 BuildRequires: patchelf
@@ -56,10 +57,12 @@ A multi-system chiptune tracker compatible with DefleMask modules
 
 %build
 
-%cmake -DSYSTEM_FMT=ON -DSYSTEM_LIBSNDFILE=ON -DSYSTEM_RTMIDI=ON -DSYSTEM_ZLIB=ON -DSYSTEM_SDL2=ON
+# https://github.com/tildearrow/furnace#cmake-options
+%cmake -DSYSTEM_FFTW=ON -DSYSTEM_FMT=ON -DSYSTEM_LIBSNDFILE=ON \
+       -DSYSTEM_RTMIDI=ON -DSYSTEM_ZLIB=ON -DSYSTEM_SDL2=ON
 %cmake_build
 
-%install 
+%install
 
 %cmake_install
 
