@@ -124,11 +124,7 @@ SocaLabs-plugins            -> build failure
 SN76489 	                -> build failure
 pipecontrol         	    -> build failure
 piano 		             	-> build failure
-rt-tests 	             	-> No module named 'distutils' -> module removed in 3.12
 pyliblo 	             	-> Cython.Compiler.Errors.CompileError: src/liblo.pyx
-non-ntk 	             	-> No module named 'imp' -> module removed in 3.12
-non-daw-lv2	             	-> No module named 'imp' -> module removed in 3.12
-non-daw 	             	-> No module named 'imp' -> module removed in 3.12
 livecd-tools-mao         	-> error: File not found: /builddir/build/BUILDROOT/livecd-tools-mao-31.0-5.fc39.x86_64/usr/lib/python3.12/site-packages/imgcreate
 jack_mixer	             	-> Error compiling Cython file:
 gigedit		             	-> libtool:   error: specify a tag with '--tag'
