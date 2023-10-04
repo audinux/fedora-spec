@@ -34,6 +34,9 @@ BuildRequires: ladspa-devel
 BuildRequires: liblrdf-devel
 BuildRequires: lilv-devel
 BuildRequires: lv2-devel
+%if 0%{?fedora} >= 39
+BuildRequires:  python3.10
+%endif
 BuildRequires: python-unversioned-command
 BuildRequires: desktop-file-utils
 
@@ -57,7 +60,12 @@ sed -i -e "s/DOCUMENT_PATH \"\/non-mixer\/MANUAL\"/DOCUMENT_PATH \"\/non-mixer-l
 
 sed -i -e "/MIDI\/midievent.C/{x;//!d;x}" nonlib/wscript
 
+%if 0%{?fedora} >= 39
+sed -i -e "s|#!/usr/bin/env python|#!/usr/bin/python3.10|g" waf
+%endif
+
 %build
+
 CFLAGS="%{optflags}" CXXFLAGS="%{optflags} -std=c++11" ./waf configure --prefix=%{_prefix} --libdir=%{_libdir} --enable-debug
 ./waf %{?_smp_mflags} -v 
 

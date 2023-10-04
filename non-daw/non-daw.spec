@@ -26,6 +26,9 @@ BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libXpm-devel
 BuildRequires: ladspa-devel
 BuildRequires: liblrdf-devel
+%if 0%{?fedora} >= 39
+BuildRequires:  python3.10
+%endif
 BuildRequires: python-unversioned-command
 BuildRequires: desktop-file-utils
 
@@ -55,8 +58,13 @@ sequencer
 %prep
 %autosetup -n non-daw-v%{version}
 
+%if 0%{?fedora} >= 39
+sed -i -e "s|#!/usr/bin/env python|#!/usr/bin/python3.10|g" waf
+%endif
+
 %build
 %set_build_flags
+
 CXXFLAGS="$CXXFLAGS -std=c++11" ./waf configure --prefix=%{_prefix} --libdir=%{_libdir} --enable-debug
 ./waf %{?_smp_mflags} -v 
 

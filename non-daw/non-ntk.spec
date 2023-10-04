@@ -11,7 +11,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # git clone git://git.tuxfamily.org/gitroot/non/fltk.git ntk
-Source0:        non-ntk-20191215-gitdae177189b12f74ea01ac2389b76326c06d9be78.tar.bz2
+Source0:        non-ntk-20190925-gitdae1771.tar.xz
 # script to create source tarball from git
 # sh non-snapshot.sh $(rev)
 # no desktop file in tarball
@@ -26,6 +26,9 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  libjpeg-devel
 BuildRequires:  pkgconfig(libpng)
 BuildRequires:  python2
+%if 0%{?fedora} >= 39
+BuildRequires:  python3.10
+%endif
 BuildRequires:  zlib-devel
 BuildRequires:  pkgconfig(glu)
 BuildRequires:  pkgconfig(xft)
@@ -51,7 +54,7 @@ Requires: %{name}-devel
 %{summary}, an interactive GUI designer for %{name}.
 
 %prep
-%autosetup -p1 -n non-ntk-20191215
+%autosetup -p1 -n non-ntk-20190925
 
 sed -i -e "s|append_value('C\(.*\)FLAGS', CFLAGS|append_value('C\1FLAGS','%{optflags}'.split(' ')|" wscript
 
@@ -63,6 +66,11 @@ sed -i -e "s/env python/env python2/g" waf
 sed -i -e "s/function_name=//g" wscript
 
 %build
+
+%if 0%{?fedora} >= 39
+alias python="/usr/bin/python3.10"
+%endif
+
 #LDFLAGS="%{?__global_ldflags}"
 ./waf configure --prefix=%{_prefix} --libdir=%{_libdir} --enable-gl || true
 ./waf %{?_smp_mflags} 
