@@ -1,9 +1,9 @@
 # Kernel major version
 %define kmaj  6
 # Kernel minor version
-%define kmin  4
+%define kmin  5
 # Kernel patch version
-%define kpat  7
+%define kpat  5
 # Xan version
 %define kxan  1
 # package version
@@ -22,9 +22,8 @@ URL:     http://www.xanmod.org
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://cdn.kernel.org/pub/linux/kernel/v%{kmaj}.x/linux-%{kmaj}.%{kmin}.tar.gz
+Source0: https://github.com/xanmod/linux/archive/refs/tags/%{kver}-xanmod1.tar.gz
 Source1: kernel-xanmod-config-%{kmaj}.%{kmin}
-Patch0:  https://github.com/xanmod/linux/releases/download/%{kver}-xanmod%{kxan}/patch-%{kver}-xanmod%{kxan}.xz
 
 BuildRequires: openssl-devel
 BuildRequires: openssl
@@ -206,6 +205,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-xan%{kxan}%{fcver}
 
 %changelog
+* Wed Oct 04 2023 Yann Collette <ycollette.nospam@free.fr> - 6.5.5-xan1-12
+- update to 6.5.5-xan1-12 - vanilla XanMod kernel
+
 * Thu Aug 03 2023 Yann Collette <ycollette.nospam@free.fr> - 6.4.7-xan1-12
 - update to 6.4.7-xan1-12 - vanilla XanMod kernel
 
