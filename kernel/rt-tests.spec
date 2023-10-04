@@ -14,6 +14,9 @@ BuildRequires: gcc make
 BuildRequires: numactl-devel
 BuildRequires: python3
 BuildRequires: python3-rpm-macros
+%if 0%{?fedora} >= 39
+BuildRequires:  python3.10
+%endif
 
 %description
 Suite of real-time tests
@@ -21,21 +24,27 @@ Suite of real-time tests
 %prep
 %autosetup
 
+%if 0%{?fedora} >= 39
+sed -i -e "s/python3/python3.10/g" Makefile
+%endif
+
 %build
 %make_build prefix=%{_prefix}
 
 %install
 %make_install prefix=%{_prefix}
 
-mkdir %buildroot/%{python3_sitelib}/%{name}/
-mv %buildroot/%{python3_sitelib}/*.py %buildroot/%{python3_sitelib}/%{name}/
+%if 0%{?fedora} >= 39
+mkdir -p %buildroot/%{python3_sitelib}/
+mv %buildroot/%{_usr}/lib/python3.10/site-packages/* %buildroot/%{python3_sitelib}/
+%endif
 
 %files
 %license COPYING
 %doc README.markdown
 %{_bindir}/*
 %{_mandir}/*
-%{python3_sitelib}/%{name}/*
+%{python3_sitelib}/*
 
 %changelog
 * Fri Jan 20 2023 Yann Collette <ycollette.nospam@free.fr> - 2.5-1
