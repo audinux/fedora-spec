@@ -4,7 +4,7 @@
 
 Name:    furnace
 Version: 0.6
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: A multi-system chiptune tracker compatible with DefleMask modules
 License: GPL-2.0-only
 URL:     https://github.com/tildearrow/furnace
@@ -84,6 +84,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Wed Oct 04 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6-4
+- Update to 0.6-4 - use system fftw
+
 * Mon Oct 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6-3
 - Update to 0.6-3
 
