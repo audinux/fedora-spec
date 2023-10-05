@@ -90,7 +90,7 @@ This package provides real time kernel headers and makefiles sufficient to build
 against the %{version} kernel package.
 
 %prep
-%autosetup -p1 -n linux-%{kmaj}.%{kmin}
+%autosetup -p1 -n linux-%{kver}-xanmod%{kxan}
 
 cp %{SOURCE1} .config
 echo "" > localversion
