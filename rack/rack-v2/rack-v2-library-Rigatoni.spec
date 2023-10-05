@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 37fbae98693ddbfb3ae30d38debbcafa6794c31f
-%global gittag0 2.0.1
+%global commit0 65850adbc647e95b8da48f3eb3171a2347e084b3
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-AuntyLangtonsFree
-Version: 2.0.1
+Name:    rack-v2-Rigatoni
+Version: 2.1.0
 Release: 2%{?dist}
-Summary: AuntyLangtonsFree plugin for Rack
+Summary: Rigatoni plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/64MM4-KN1F3/AuntyLangtons-FREE-V2
+URL:     https://github.com/ianjhoffman/RigatoniModular
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,8 +27,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/64MM4-KN1F3/AuntyLangtons-FREE-V2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: AuntyLangtonsFree_plugin.json
+Source1: https://github.com/ianjhoffman/RigatoniModular/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: Rigatoni_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -59,8 +59,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-AuntyLangtonsFree plugin for Rack.
-A Langton's Ant implementation in Rack
+Rigatoni plugin for Rack.
+A small waveshaping utility that mimics soft oscillator sync for input ramp waves and acts as a through zero FM helper
 
 %prep
 %setup -n Rack
@@ -133,24 +133,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir AuntyLangtonsFree_plugin
-tar xvfz %{SOURCE1} --directory=AuntyLangtonsFree_plugin --strip-components=1 
+mkdir Rigatoni_plugin
+tar xvfz %{SOURCE1} --directory=Rigatoni_plugin --strip-components=1 
 
-cp -n %{SOURCE2} AuntyLangtonsFree_plugin/plugin.json || true
+cp -n %{SOURCE2} Rigatoni_plugin/plugin.json || true
 
 %build
 
-cd AuntyLangtonsFree_plugin
+cd Rigatoni_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/AuntyLangtonsFree/
-cp -r AuntyLangtonsFree_plugin/dist/AuntyLangtonsFree/* %{buildroot}%{_libexecdir}/Rack2/plugins/AuntyLangtonsFree/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/Rigatoni/
+cp -r Rigatoni_plugin/dist/Rigatoni/* %{buildroot}%{_libexecdir}/Rack2/plugins/Rigatoni/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
