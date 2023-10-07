@@ -116,9 +116,12 @@ Check the following URL: https://github.com/forart/HyMPS
 
 ## Fedora 39 to be fixed
 
-rack-v1-BaconMusic		    -> fails since F36
+rack-v1-BaconMusic	    -> fails since F36
 rack-v1-ParableInstruments  -> build failure
-rack-v2-Fundamental 		-> patch problem
+rack-v2-Fundamental         -> patch problem
+
+SN76489 	            -> build failure (normal)
+piano 		            -> build failure (normal)
 
 pyliblo 	             	-> Cython.Compiler.Errors.CompileError: src/liblo.pyx
 jack_mixer	             	-> Error compiling Cython file:
