@@ -5,7 +5,7 @@
 %define _lto_cflags %{nil}
 
 Name:    geonkick
-Version: 2.10.1
+Version: 2.10.2
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
 URL:     https://github.com/Geonkick-Synthesizer/geonkick
@@ -38,11 +38,7 @@ The most basic examples are: kick drums, snares, hit-hats, shakers, claps, steak
 
 %build
 
-%cmake -DCMAKE_BUILD_TYPE=RELEASE \
-       -DCMAKE_CXX_FLAGS="$CXXFLAGS -I/usr/include/redkite" \
-       -DCMAKE_C_FLAGS="$CFLAGS -I/usr/include/redkite" \
-       -DREDKITE_LIBRARY_DIR="/usr/%{_lib}"
-
+%cmake
 %cmake_build
 
 %install
@@ -57,6 +53,9 @@ The most basic examples are: kick drums, snares, hit-hats, shakers, claps, steak
 %{_datadir}/*
 
 %changelog
+* Sat Oct 07 2023 Yann Collette <ycollette.nospam@free.fr> - 2.10.2-2
+- Update to 2.10.2-2
+
 * Tue Sep 26 2023 Yann Collette <ycollette.nospam@free.fr> - 2.10.1-2
 - Update to 2.10.1-2
 
