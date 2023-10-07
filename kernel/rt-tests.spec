@@ -1,5 +1,5 @@
 Name: rt-tests
-Version: 2.5
+Version: 2.6
 Release: 1%{?dist}
 Summary: Various programs that test various rt-linux features
 License: GPL2
@@ -14,9 +14,6 @@ BuildRequires: gcc make
 BuildRequires: numactl-devel
 BuildRequires: python3
 BuildRequires: python3-rpm-macros
-%if 0%{?fedora} >= 39
-BuildRequires:  python3.10
-%endif
 
 %description
 Suite of real-time tests
@@ -24,20 +21,11 @@ Suite of real-time tests
 %prep
 %autosetup
 
-%if 0%{?fedora} >= 39
-sed -i -e "s/python3/python3.10/g" Makefile
-%endif
-
 %build
 %make_build prefix=%{_prefix}
 
 %install
 %make_install prefix=%{_prefix}
-
-%if 0%{?fedora} >= 39
-mkdir -p %buildroot/%{python3_sitelib}/
-mv %buildroot/%{_usr}/lib/python3.10/site-packages/* %buildroot/%{python3_sitelib}/
-%endif
 
 %files
 %license COPYING
@@ -47,6 +35,9 @@ mv %buildroot/%{_usr}/lib/python3.10/site-packages/* %buildroot/%{python3_siteli
 %{python3_sitelib}/*
 
 %changelog
+* Fri Oct 06 2023 Yann Collette <ycollette.nospam@free.fr> - 2.6-1
+- update to 2.6-1
+
 * Fri Jan 20 2023 Yann Collette <ycollette.nospam@free.fr> - 2.5-1
 - update to 2.5-1
 
