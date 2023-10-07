@@ -120,13 +120,15 @@ rack-v1-BaconMusic		    -> fails since F36
 rack-v1-ParableInstruments  -> build failure
 rack-v2-Fundamental 		-> patch problem
 
+pyliblo 	             	-> Cython.Compiler.Errors.CompileError: src/liblo.pyx
+jack_mixer	             	-> Error compiling Cython file:
+
 SocaLabs-plugins            -> build failure
 SN76489 	                -> build failure
-pipecontrol         	    -> build failure
 piano 		             	-> build failure
-pyliblo 	             	-> Cython.Compiler.Errors.CompileError: src/liblo.pyx
+pipecontrol         	    -> build failure
+
 livecd-tools-mao         	-> error: File not found: /builddir/build/BUILDROOT/livecd-tools-mao-31.0-5.fc39.x86_64/usr/lib/python3.12/site-packages/imgcreate
-jack_mixer	             	-> Error compiling Cython file:
 gigedit		             	-> libtool:   error: specify a tag with '--tag'
 
 kernel-xan-mao	         	-> aarch64: /builddir/build/BUILD/linux-6.4/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
