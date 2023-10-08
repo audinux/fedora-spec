@@ -10,7 +10,11 @@ Source0: https://github.com/gesellkammer/pyliblo3/archive/refs/tags/v%{version}.
 BuildRequires: gcc
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
+%if 0%{?fedora} <= 38
 BuildRequires: python3-Cython
+%else
+BuildRequires: python3-cython0.29
+%endif
 BuildRequires: liblo-devel
 
 Provides: %{name} = %{version}-%{release}
