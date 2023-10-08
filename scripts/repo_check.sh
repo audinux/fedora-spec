@@ -893,7 +893,9 @@ https://git.iem.at/audioplugins/IEMPluginSuite
 https://github.com/leomccormack/SPARTA
 https://github.com/midilab/jc303
 https://github.com/Geonkick-Synthesizer/geonkick
-https://codeberg.org/obsoleszenz/equis"
+https://codeberg.org/obsoleszenz/equis
+https://github.com/grame-cncm/faustlive
+https://github.com/brummer10/ToneTwistPlugs"
 
 if [ -f git_tags_new.txt ];
 then
