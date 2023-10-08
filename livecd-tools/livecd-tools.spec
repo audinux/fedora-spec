@@ -87,7 +87,12 @@ Tools for installing Live CD ISOs to different mediums
 %install
 
 # Install Python 3 stuff
+%if 0%{?fedora} <= 38
 %make_install PYTHON=python3
+%else
+# distutils package removed ...
+%make_install PYTHON=python3 PYTHONDIR=/usr/lib/python%{__default_python3_version}/site-packages
+%endif
 
 # Delete docs, we'll grab them later
 rm -rf %{buildroot}%{_datadir}/doc/%{name}
