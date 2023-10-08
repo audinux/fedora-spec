@@ -116,27 +116,18 @@ Check the following URL: https://github.com/forart/HyMPS
 
 ## Fedora 39 to be fixed
 
-rack-v1-BaconMusic	    -> fails since F36
+rack-v1-BaconMusic	        -> fails since F36
 rack-v1-ParableInstruments  -> build failure
-rack-v2-Fundamental         -> patch problem
+rack-v2-Fundamental         -> build problem
 
-SN76489 	            -> build failure (normal)
-piano 		            -> build failure (normal)
+SN76489 	        -> build failure (normal)
+piano 		        -> build failure (normal)
 
-pyliblo 	             	-> Cython.Compiler.Errors.CompileError: src/liblo.pyx
-jack_mixer	             	-> Error compiling Cython file:
+SocaLabs-plugins    -> build failure
+pipecontrol         -> build failure
 
-SocaLabs-plugins            -> build failure
-SN76489 	                -> build failure
-piano 		             	-> build failure
-pipecontrol         	    -> build failure
-
-livecd-tools-mao         	-> error: File not found: /builddir/build/BUILDROOT/livecd-tools-mao-31.0-5.fc39.x86_64/usr/lib/python3.12/site-packages/imgcreate
-gigedit		             	-> libtool:   error: specify a tag with '--tag'
-
-kernel-xan-mao	         	-> aarch64: /builddir/build/BUILD/linux-6.4/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
-kernel-rt-stable-mao        -> aarch64: /builddir/build/BUILD/linux-5.10.192/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
-kernel-rt-mao	            -> aarch64: /builddir/build/BUILD/linux-6.4.6/tools/include/asm-generic/bitsperlong.h:14:2: error: #error Inconsistent word size. Check asm/bitsperlong.h
+livecd-tools-mao    -> error: File not found: /builddir/build/BUILDROOT/livecd-tools-mao-31.0-5.fc39.x86_64/usr/lib/python3.12/site-packages/imgcreate
+gigedit		        -> libtool:   error: specify a tag with '--tag'
 
 ## Fedora 38 to be fixed
 Cstdint missing:
