@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 2147c80d246de8161c7f945d36ce9beb3bd16083
-%global gittag0 2.2.2
+%global gittag0 2.2.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-monome
-Version: 2.2.2
+Version: 2.2.3
 Release: 2%{?dist}
 Summary: monome plugin for Rack
 License: GPL-2.0-or-later
@@ -148,10 +148,12 @@ sed -i -e "s/all: firmware-build/all:/g" monome_plugin/Makefile
 %build
 
 cd monome_plugin/firmware
-%make_build -f earthsea.mk RACK_DIR=../..
-%make_build -f meadowphysics.mk RACK_DIR=../..
-%make_build -f teletype.mk RACK_DIR=../..
-%make_build -f whitewhale.mk RACK_DIR=../..
+%make_build -f earthsea.mk      TARGET_NAME=../../monome_plugin/firmware/earthsea/        RACK_DIR=../..
+%make_build -f meadowphysics.mk TARGET_NAME=../../monome_plugin/firmware/meadowphysics/   RACK_DIR=../..
+%make_build -f teletype.mk      TARGET_NAME=../../monome_plugin/firmware/teletype4/       RACK_DIR=../..
+%make_build -f teletype.mk      TARGET_NAME=../../monome_plugin/firmware/teletype5/       RACK_DIR=../..
+%make_build -f whitewhale.mk    TARGET_NAME=../../monome_plugin/firmware/whitewhale/      RACK_DIR=../..
+%make_build -f whitewhale.mk    TARGET_NAME=../../monome_plugin/firmware/whitewhale-kria/ RACK_DIR=../..
 
 cd ..
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
@@ -165,5 +167,5 @@ cp -r monome_plugin/dist/monome/* %{buildroot}%{_libexecdir}/Rack2/plugins/monom
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.3-1
 - initial specfile

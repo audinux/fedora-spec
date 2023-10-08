@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 80e8976eebbea1e1177beba4de5645eb0ca680e3
-%global gittag0 2.4.3
+%global commit0 1894a7497e2742108cd9501a7d0680fe3633c731
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Valley
-Version: 2.4.3
+Name:    rack-v2-SS-Modules
+Version: 2.0.0
 Release: 2%{?dist}
-Summary: Valley plugin for Rack
+Summary: SS-Modules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/ValleyAudio/ValleyRackFree
+URL:     https://github.com/strongs20/SS-modules
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,10 +27,9 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/ValleyAudio/ValleyRackFree/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: Valley_plugin.json
+Source1: https://github.com/strongs20/SS-modules/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: SS-Modules_plugin.json
 Patch0: rack-v2-aarch64.patch
-Patch1: rack-v2-library-Valley-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -60,10 +59,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-Valley plugin for Rack.
-Topographic drum machine. This module is based on the original
-Mutable Instruments (TM) Grids sequencer module. The Map and Density
-controls explore and control the denisty of many pre-baked drum patterns.
+SS-Modules plugin for Rack.
+Generative melodies with useful parameters
 
 %prep
 %setup -n Rack
@@ -136,28 +133,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir Valley_plugin
-tar xvfz %{SOURCE1} --directory=Valley_plugin --strip-components=1 
+mkdir SS-Modules_plugin
+tar xvfz %{SOURCE1} --directory=SS-Modules_plugin --strip-components=1 
 
-cp -n %{SOURCE2} Valley_plugin/plugin.json || true
-
-%ifarch aarch64
-%patch1 -p1
-%endif
+cp -n %{SOURCE2} SS-Modules_plugin/plugin.json || true
 
 %build
 
-cd Valley_plugin
+cd SS-Modules_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install 
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/Valley/
-cp -r Valley_plugin/dist/Valley/* %{buildroot}%{_libexecdir}/Rack2/plugins/Valley/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/SS-Modules/
+cp -r SS-Modules_plugin/dist/SS-Modules/* %{buildroot}%{_libexecdir}/Rack2/plugins/SS-Modules/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile
