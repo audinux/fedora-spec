@@ -20,7 +20,11 @@ BuildRequires: python3-devel
 BuildRequires: python3-cairo
 BuildRequires: python3-gobject-base
 BuildRequires: python3-pyxdg
+%if 0%{?fedora} <= 38
 BuildRequires: python3-Cython
+%else
+BuildRequires: python3-cython0.29
+%endif
 BuildRequires: python3-docutils
 BuildRequires: desktop-file-utils
 
