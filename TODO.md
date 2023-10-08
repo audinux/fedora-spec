@@ -124,10 +124,55 @@ SN76489 	        -> build failure (normal)
 piano 		        -> build failure (normal)
 
 SocaLabs-plugins    -> build failure
+```
++ cd plugins/CompensatedDelay/Builds/LinuxMakefile
++ sed -i -e s/-Wl,--strip-all//g Makefile
++ /usr/bin/make -O -j8 V=1 VERBOSE=1 CONFIG=Release STRIP=true
+mkdir -p build/intermediate/Release
+Checking if we need to link libexecinfo
+printf "int main() { return 0; }" | g++ -x c++ -o build/intermediate/Release/execinfo.x -lexecinfo - >/dev/null 2>&1 && printf -- "-lexecinfo" > "build/intermediate/Release/execinfo.cmd" || touch "build/intermediate/Release/execinfo.cmd"
+mkdir -p build/intermediate/Release
+Compiling PluginEditor.cpp
+g++  -MMD "-DLINUX=1" "-DNDEBUG=1" "-DJUCE_MODAL_LOOPS_PERMITTED=1" "-DJUCER_LINUX_MAKE_6D53C8B4=1" "-DJUCE_APP_VERSION=1.0.0" "-DJUCE_APP_VERSION_HEX=0x10000" "-DJUCE_USE_EXTERNAL_TEMPORARY_SUBPROCESS=1" -I/usr/include/webkitgtk-4.0 -I/usr/include/gtk-3.0 -I/usr/include/pango-1.0 -I/usr/include/libsoup-2.4 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/dbus-1.0 -I/usr/lib64/dbus-1.0/include -I/usr/include/atk-1.0 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/cloudproviders -I/usr/include/blkid -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/gio-unix-2.0 -I/usr/include/libmount -I/usr/include/pixman-1 -I/usr/include/libxml2 -I/usr/include/fribidi -I/usr/include/sysprof-6 -pthread -I/usr/include/libpng16 -pthread -I../../../../modules/juce/modules/juce_audio_processors/format_types/VST3_SDK -I../../../../modules/plugin_sdk/vstsdk2.4 -I../../JuceLibraryCode -Ipre_build -I../../../../modules/dRowAudio/module -I../../../../modules/gin/modules -I../../../../modules/juce/modules   -fPIC -O3 -fvisibility=hidden -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64   -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -std=c++17 -std=c++20 -include utility -include cmath -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64   -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  "-DJucePlugin_Build_VST=1" "-DJucePlugin_Build_VST3=1" "-DJucePlugin_Build_AU=0" "-DJucePlugin_Build_AUv3=0" "-DJucePlugin_Build_AAX=0" "-DJucePlugin_Build_Standalone=1" "-DJucePlugin_Build_Unity=0" "-DJucePlugin_Build_LV2=0" "-DJUCE_SHARED_CODE=1" -fPIC -fvisibility=hidden -o "build/intermediate/Release/PluginEditor_94d4fb09.o" -c "../../Source/PluginEditor.cpp"
+In file included from ../../Source/PluginEditor.cpp:11:
+../../Source/PluginProcessor.h:44:10: error: ‘void CompensatedDelayAudioProcessor::parameterChanged(gin::Parameter*)’ marked ‘override’, but does not override
+   44 |     void parameterChanged (gin::Parameter*) override { updateLatency(); }
+      |          ^~~~~~~~~~~~~~~~
+In file included from ../../Source/PluginEditor.cpp:12:
+../../Source/PluginEditor.h:30:10: error: ‘void CompensatedDelayAudioProcessorEditor::parameterChanged(gin::Parameter*)’ marked ‘override’, but does not override
+   30 |     void parameterChanged (gin::Parameter* param) override;
+      |          ^~~~~~~~~~~~~~~~
+../../Source/PluginEditor.cpp: In constructor ‘CompensatedDelayAudioProcessorEditor::CompensatedDelayAudioProcessorEditor(CompensatedDelayAudioProcessor&)’:
+../../Source/PluginEditor.cpp:37:29: error: cannot convert ‘CompensatedDelayAudioProcessorEditor*’ to ‘gin::Parameter::ParameterListener*’
+   37 |     proc.mode->addListener (this);
+      |                             ^~~~
+      |                             |
+      |                             CompensatedDelayAudioProcessorEditor*
+In file included from ../../../../modules/gin/modules/gin_plugin/plugin/gin_processor.h:3,
+                 from ../../../../modules/gin/modules/gin_plugin/gin_plugin.h:86,
+                 from ../../JuceLibraryCode/JuceHeader.h:22,
+                 from ../../Source/PluginProcessor.h:13:
+../../../../modules/gin/modules/gin_plugin/plugin/gin_parameter.h:103:42: note:   initializing argument 1 of ‘void gin::Parameter::addListener(ParameterListener*)’
+  103 |     void addListener (ParameterListener* listener);
+      |                       ~~~~~~~~~~~~~~~~~~~^~~~~~~~
+../../Source/PluginEditor.cpp: In destructor ‘virtual CompensatedDelayAudioProcessorEditor::~CompensatedDelayAudioProcessorEditor()’:
+../../Source/PluginEditor.cpp:44:32: error: cannot convert ‘CompensatedDelayAudioProcessorEditor*’ to ‘gin::Parameter::ParameterListener*’
+   44 |     proc.mode->removeListener (this);
+      |                                ^~~~
+      |                                |
+      |                                CompensatedDelayAudioProcessorEditor*
+../../../../modules/gin/modules/gin_plugin/plugin/gin_parameter.h:104:45: note:   initializing argument 1 of ‘void gin::Parameter::removeListener(ParameterListener*)’
+  104 |     void removeListener (ParameterListener* listener);
+      |                          ~~~~~~~~~~~~~~~~~~~^~~~~~~~
+In file included from ../../../../modules/dRowAudio/module/dRowAudio/dRowAudio.h:335,
+                 from ../../JuceLibraryCode/JuceHeader.h:17:
+../../../../modules/dRowAudio/module/dRowAudio/utility/dRowAudio_MusicLibraryHelpers.h: At global scope:
+../../../../modules/dRowAudio/module/dRowAudio/utility/dRowAudio_MusicLibraryHelpers.h:139:24: warning: ‘drow::MusicColumns::iTunesNames’ defined but not used [-Wunused-variable]
+  139 |     static const char* iTunesNames[] =
+      |                        ^~~~~~~~~~~
+```
 pipecontrol         -> build failure
-
-livecd-tools-mao    -> error: File not found: /builddir/build/BUILDROOT/livecd-tools-mao-31.0-5.fc39.x86_64/usr/lib/python3.12/site-packages/imgcreate
-gigedit		        -> libtool:   error: specify a tag with '--tag'
+gigedit		        -> libtool:   error: specify a tag with '--tag' -> add  "--tag=CXX" ?
 
 ## Fedora 38 to be fixed
 Cstdint missing:
