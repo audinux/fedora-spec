@@ -4,7 +4,7 @@
 
 Name:    chuck
 Summary: Real-time audio synthesis and graphics/multimedia language
-Version: 1.5.1.3
+Version: 1.5.1.5
 Release: 2%{?dist}
 License: GPL
 URL:     https://chuck.cs.princeton.edu/
@@ -86,6 +86,9 @@ cp -a %{SOURCE1} %{buildroot}%{_libdir}/xemacs/site-packages/lisp/chuck/chuck.el
 %{_libdir}/xemacs/site-packages/lisp/chuck/*
 
 %changelog
+* Tue Oct 10 2023 Yann Collette <ycollette.nospam@free.fr> - 1.5.1.5-2
+- update to 1.5.1.5-2
+
 * Tue Sep 05 2023 Yann Collette <ycollette.nospam@free.fr> - 1.5.1.3-2
 - update to 1.5.1.3-2
 
