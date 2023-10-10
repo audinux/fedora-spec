@@ -13,7 +13,7 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    rack-v2-Fundamental
-Version: 2.5.1
+Version: 2.6.0
 Release: 3%{?dist}
 Summary: A plugin for Rack
 License: GPL-2.0-or-later
@@ -140,7 +140,10 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir fundamental_plugin
 tar xvfz %{SOURCE1} --directory=fundamental_plugin --strip-components=1 
 
-%build
+# TODO: C++ error - check periodically if the problem is fixed or not.
+sed -i -e "s/using VCVBezelLightBigWhite = LightButton/using VCVBezelLightBigWhite = struct rack::componentlibrary::Lightbutton/g" fundamental_plugin/src/Logic.cpp
+
+%Build
 
 CURRENT_PATH=`pwd`
 export CFLAGS="`pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src"
@@ -179,6 +182,9 @@ cp -r fundamental_plugin/dist/Fundamental/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
+* Tue Oct 10 2023 Yann Collette <ycollette.nospam@free.fr> - 2.6.0-3
+- update to 2.6.0-3
+
 * Fri Aug 25 2023 Yann Collette <ycollette.nospam@free.fr> - 2.5.1-3
 - update to 2.5.1-3
 
