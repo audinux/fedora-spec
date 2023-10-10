@@ -118,7 +118,6 @@ Check the following URL: https://github.com/forart/HyMPS
 
 rack-v1-BaconMusic	        -> fails since F36
 rack-v1-ParableInstruments  -> build failure
-rack-v2-Fundamental         -> build problem
 
 SN76489 	        -> build failure (normal)
 piano 		        -> build failure (normal)
