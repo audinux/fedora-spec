@@ -1,7 +1,7 @@
 %{?!python3_pkgversion:%global python3_pkgversion 3}
 
 Name:    wavefile
-Version: 1.5
+Version: 1.6.2
 Release: 1%{?dist}
 Summary: Pythonic access to audio files	
 License: GPL3	
@@ -46,5 +46,8 @@ Pythonic libsndfile wrapper to read and write audio files.
 %{python3_sitelib}/%{name}-%{version}-py%{python3_version}.egg-info/
 
 %changelog
+* Tue Oct 10 2023 Yann Collette <ycollette.nospam@free.fr> 1.6.2-1
+- update to 1.6.2-1
+
 * Tue Nov 02 2021 Yann Collette <ycollette.nospam@free.fr> 1.5-1
 - initial spec file.
