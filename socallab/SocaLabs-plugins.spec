@@ -19,7 +19,7 @@
 
 Name:    SocaLabs-plugins
 Version: 20220502
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: Various VST/VST3 Plugins from SocaLabs.com
 License: BSD-3-Clause
 URL:     https://github.com/FigBug/slPlugins
@@ -28,12 +28,13 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./socalab-source.sh <tag>
-# ./socalab-source.sh 77b4a8d6bf8da4407fc6de7b9074f68985d33ef8
+# ./socalab-source.sh 20a0b31169f54e942e22b4ac74fcc2788d72ea16
 
 Source0: slPlugins.tar.gz
 Source4: socalab-source.sh
 
 BuildRequires: gcc-c++
+BuildRequires: cmake
 BuildRequires: pkgconfig(alsa)
 BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xinerama)
@@ -44,11 +45,6 @@ BuildRequires: pkgconfig(gtk+-x11-3.0)
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libcurl-devel
 BuildRequires: ladspa-devel
-# This build uses JUCE-6.1.*
-BuildRequires: JUCE
-BuildRequires: xorg-x11-server-Xvfb
-BuildRequires: python3-devel
-BuildRequires: python-unversioned-command
 
 Requires: alsa
 
@@ -78,6 +74,14 @@ https://socalabs.com/
 
 SocaLabs Audio Plugins - VST3 format
 
+%package -n lv2-%{name}
+Summary: Various LV2 Plugins from SocaLabs.com
+
+%description -n lv2-%{name}
+https://socalabs.com/
+
+SocaLabs Audio Plugins - LV2 format
+
 %prep
 %autosetup -n slPlugins
 
@@ -85,47 +89,44 @@ SocaLabs Audio Plugins - VST3 format
 
 %set_build_flags
 
-export CXXFLAGS="-include utility $CXXFLAGS"
-export CURRENT_PATH=`pwd`
+export CXXFLAGS="-std=c++20 -include utility -include cmath $CXXFLAGS"
 
-mkdir -p $CURRENT_PATH/bin/standalone/
-mkdir -p $CURRENT_PATH/bin/vst/
-mkdir -p $CURRENT_PATH/bin/vst3/
-
-#Projucer --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE/modules
-
-cat ci/pluginlist.txt | while read PLUGIN; do
-  PLUGIN=$(echo $PLUGIN|tr -d '\n\r ')
-
-  sed -i -e "s/pluginFormats=\"/pluginFormats=\"buildVST3,/g"       plugins/$PLUGIN/$PLUGIN.jucer
-  sed -i -e "s/pluginFormats=\"/pluginFormats=\"buildStandalone,/g" plugins/$PLUGIN/$PLUGIN.jucer
-  sed -i -e 's/buildStandalone="0"/buildStandalone="1"/g'           plugins/$PLUGIN/$PLUGIN.jucer
-  sed -i -e 's/buildVST3="0"/buildVST3="1"/g'                       plugins/$PLUGIN/$PLUGIN.jucer
-  sed -i -e 's/JUCEOPTIONS/JUCEOPTIONS JUCE_JACK="1"/g'             plugins/$PLUGIN/$PLUGIN.jucer
-
-  Projucer --resave plugins/$PLUGIN/$PLUGIN.jucer
-  
-  cd plugins/$PLUGIN/Builds/LinuxMakefile
-  sed -i -e 's/-Wl,--strip-all//g' Makefile
-  
-  %make_build CONFIG=Release STRIP=true 
-  
-  cp ./build/$PLUGIN                                     $CURRENT_PATH/bin/standalone/
-  cp ./build/$PLUGIN.so                                  $CURRENT_PATH/bin/vst/
-  cp ./build/$PLUGIN.vst3/Contents/%{_target}/$PLUGIN.so $CURRENT_PATH/bin/vst3/
-  cd ../../../..
-done
+%cmake
+%cmake_build
 
 %install
 
-mkdir -p %{buildroot}%{_bindir}
-install bin/standalone/* %{buildroot}%{_bindir}/
+mkdir -p %{buildroot}%{_bindir}/
+mkdir -p %{buildroot}%{_libdir}/vst/
+mkdir -p %{buildroot}%{_libdir}/vst3/
+mkdir -p %{buildroot}%{_libdir}/lv2/
+mkdir -p %{buildroot}%{_libdir}/clap/
 
-mkdir -p %{buildroot}%{_libdir}/vst
-cp bin/vst/*.so %{buildroot}%{_libdir}/vst/
+PLUGIN_LIST="ABTester \
+	     AddInvert \
+	     ChannelMute \
+	     CompensatedDelay \
+	     Compressor \
+	     Delay \
+	     Expander \
+	     Gate \
+	     HugeGain \
+	     Limiter \
+	     Maths \
+	     Oscilloscope \
+	     PitchTrack \
+	     SampleDelay \
+	     SFX8 \
+	     SpectrumAnalyzer \
+	     ToneGenerator"
 
-mkdir -p %{buildroot}%{_libdir}/vst3
-cp bin/vst3/*.so %{buildroot}%{_libdir}/vst3/
+for PLUGIN in $PLUGIN_LIST
+do
+    cp -ra %{__cmake_builddir}/plugins/$PLUGIN/"$PLUGIN"_artefacts/Standalone/* %{buildroot}%{_bindir}/
+    cp -ra %{__cmake_builddir}/plugins/$PLUGIN/"$PLUGIN"_artefacts/LV2/* %{buildroot}%{_libdir}/lv2/
+    cp -ra %{__cmake_builddir}/plugins/$PLUGIN/"$PLUGIN"_artefacts/VST/* %{buildroot}%{_libdir}/vst/
+    cp -ra %{__cmake_builddir}/plugins/$PLUGIN/"$PLUGIN"_artefacts/VST3/* %{buildroot}%{_libdir}/vst3/
+done
 
 %files
 %license LICENSE.md
@@ -138,8 +139,14 @@ cp bin/vst3/*.so %{buildroot}%{_libdir}/vst3/
 %files -n vst3-%{name}
 %{_libdir}/vst3/
 
+%files -n lv2-%{name}
+%{_libdir}/lv2/
+
 %changelog
-* Mon May 20 2022 Yann Collette <ycollette.nospam@free.fr> -
+* Wed Oct 11 2023 Yann Collette <ycollette.nospam@free.fr> - 20200512-6
+- update to 20a0b31169f54e942e22b4ac74fcc2788d72ea16
+
+* Fri May 20 2022 Yann Collette <ycollette.nospam@free.fr> - 20200512-5
 - update to 77b4a8d6bf8da4407fc6de7b9074f68985d33ef8
 
 * Fri Oct 23 2020 Yann Collette <ycollette.nospam@free.fr> - 20200512-5
