@@ -113,7 +113,6 @@
 | csound_plugins          | https://github.com/csound/plugins |
 | shoopdaloop             | https://github.com/SanderVocke/shoopdaloop |
 | qliquidsfz              | https://github.com/be1/qliquidsfz |
-| audio-to-cv-pitch-lv2   | https://github.com/BramGiesen/audio-to-cv-pitch-lv2 |
 | cv_to_cc.lv2            | https://github.com/polyeffects/cv_to_cc.lv2 |
 
 Check the following URL: https://github.com/forart/HyMPS
