@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 470baeb7b6cc6b6a53c7f97e4c70ba03da68e230
-%global gittag0 2.0.4
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-TheAllElectricSmartGrid
-Version: 2.0.4
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: TheAllElectricSmartGrid plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r TheAllElectricSmartGrid_plugin/dist/TheAllElectricSmartGrid/* %{buildroot}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
