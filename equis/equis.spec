@@ -1,7 +1,5 @@
-%define commit0 37b46ef90413a593d87a7e3351c08f1e23e48772
-
 Name:    equis
-Version: 0.5.1
+Version: 0.5.2
 Release: 1%{?dist}
 Summary: The hackable DJ Mixer inspired by the playdifferently model 1
 License: GPL-3.0-or-later
@@ -37,7 +35,6 @@ export RUST_BACKTRACE=1
 
 cargo build --release
 
-
 %install 
 
 install -m 755 -d %{buildroot}/%{_bindir}/
@@ -50,6 +47,9 @@ cp -ra target/release/equis %{buildroot}/%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Fri Oct 13 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.2-1
+- update to 0.5.2-1
+
 * Thu Oct 12 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.1-1
 - update to 0.5.1-1
 
