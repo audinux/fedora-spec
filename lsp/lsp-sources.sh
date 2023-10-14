@@ -8,8 +8,8 @@ git checkout $VERSION
 git submodule init
 git submodule update
 
-make config
 make fetch
+make config
 
 find . -name .git --exec rm -rf {} \;
 cd ..
