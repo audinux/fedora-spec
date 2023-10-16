@@ -124,8 +124,6 @@ rack-v1-ParableInstruments -> fails since F36
 SN76489                    -> build failure (normal)
 piano                      -> build failure (normal)
 pipecontrol                -> build failure
-gigedit                    -> libtool:   error: specify a tag with '--tag' -> add  "--tag=CXX" ?
-                           -> build the new linuxsampler version ?
 
 ## Fedora 38 to be fixed
 SIMD:
