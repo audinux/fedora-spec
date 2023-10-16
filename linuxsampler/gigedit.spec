@@ -49,7 +49,7 @@ before editing them in gigedit.
 
 %set_build_flags
 %configure CXXFLAGS="-std=c++11 -DHAS_PANGOMM_CPP11_ENUMS=0 $CXXFLAGS"
-%make_build
+%make_build LIBTOOLFLAGS="--tag=CXX"
 
 %install
 
