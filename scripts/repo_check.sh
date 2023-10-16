@@ -798,7 +798,6 @@ https://git.savannah.nongnu.org/git/getfem
 https://git.s-ol.nu/vcvmods
 https://git.sr.ht/~alextee/zrythm-libcyaml
 https://git.sr.ht/~rabbits/orca
-https://git.tuxfamily.org/non/non.git
 https://github.com/zrythm/libaudec
 https://github.com/zrythm/ZLFO
 https://github.com/zrythm/zrythm
@@ -896,7 +895,8 @@ https://github.com/Geonkick-Synthesizer/geonkick
 https://codeberg.org/obsoleszenz/equis
 https://github.com/grame-cncm/faustlive
 https://github.com/brummer10/ToneTwistPlugs
-https://github.com/BramGiesen/audio-to-cv-pitch-lv2"
+https://github.com/BramGiesen/audio-to-cv-pitch-lv2
+https://github.com/dan-german/blocks"
 
 if [ -f git_tags_new.txt ];
 then
