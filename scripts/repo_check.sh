@@ -37,7 +37,6 @@ http://git.drumgizmo.org/dgedit.git
 http://git.drumgizmo.org/drumgizmo.git
 http://git.elephly.net/software/lv2-mdametapiano
 https://github.com/Miserlou/RJModules
-https://github.com/stargateaudio/stargate
 https://gitlab.com/unlessgames/unless_modules
 https://github.com/agraef/purr-data
 https://github.com/asb2m10/dexed
