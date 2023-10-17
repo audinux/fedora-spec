@@ -113,7 +113,6 @@
 | csound_plugins          | https://github.com/csound/plugins |
 | shoopdaloop             | https://github.com/SanderVocke/shoopdaloop |
 | qliquidsfz              | https://github.com/be1/qliquidsfz |
-| cv_to_cc.lv2            | https://github.com/polyeffects/cv_to_cc.lv2 |
 
 Check the following URL: https://github.com/forart/HyMPS
 
@@ -121,7 +120,6 @@ Check the following URL: https://github.com/forart/HyMPS
 
 rack-v1-BaconMusic         -> build failure
 rack-v1-ParableInstruments -> fails since F36
-SN76489                    -> build failure (normal)
 piano                      -> build failure (normal)
 pipecontrol                -> build failure
 
