@@ -895,7 +895,8 @@ https://codeberg.org/obsoleszenz/equis
 https://github.com/grame-cncm/faustlive
 https://github.com/brummer10/ToneTwistPlugs
 https://github.com/BramGiesen/audio-to-cv-pitch-lv2
-https://github.com/dan-german/blocks"
+https://github.com/dan-german/blocks
+https://github.com/sonejostudios/DeLooper"
 
 if [ -f git_tags_new.txt ];
 then

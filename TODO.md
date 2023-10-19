@@ -2,7 +2,6 @@
 
 | Package                 | URL|
 |-------------------------|----|
-| DeLooper                | https://github.com/sonejostudios/DeLooper |
 | zrythm - lsp-dsp        | add a devel package for zrythm |
 | openshow                | https://github.com/mapmapteam/openshow |
 | supercollider-study     | https://github.com/rumblesan/super-collider-study |
