@@ -1,15 +1,15 @@
 Name:    blocks
 Version: 0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Simple modular synth
 License: GPL-3.0-or-later
-URL:     https://github.com/dan-german/blocks	
+URL:     https://github.com/dan-german/blocks
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # ./blocks-source.sh <project> <tag>
-# ./blocks-source.sh blocks e59f62761a3efb05184d1150afed5e9a3b9351b4
+# ./blocks-source.sh blocks 1340a5661e3d8361f953203ff27c4b6eb34844c1
 
 Source0: blocks.tar.gz
 Source1: blocks-source.sh
@@ -33,6 +33,8 @@ BuildRequires: libXcursor-devel
 BuildRequires: libcurl-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
+
+Requires: google-roboto-fonts
 
 %description
 Wavetable synth
@@ -70,5 +72,8 @@ cp -ra %{__cmake_builddir}/blocks_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Wed Oct 18 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1-2
+- update to last master -  1340a5661e3d8361f953203ff27c4b6eb34844c1
+
 * Mon Oct 16 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
 - Initial spec file
