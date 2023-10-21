@@ -112,6 +112,7 @@
 | csound_plugins          | https://github.com/csound/plugins |
 | shoopdaloop             | https://github.com/SanderVocke/shoopdaloop |
 | qliquidsfz              | https://github.com/be1/qliquidsfz |
+| juicysfplugin           | https://github.com/Birch-san/juicysfplugin |
 
 Check the following URL: https://github.com/forart/HyMPS
 
