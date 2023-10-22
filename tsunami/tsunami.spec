@@ -1,15 +1,10 @@
-# Global variables for github repository
-%global commit0 57999be98a2bc707bb8db83914f20215afee185e
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 # Tag: MIDI
 # Type: Standalone
 # Category: Audio, DAW
 
 Name:    tsunami
 # upstream version is in src/Tsunami.cpp
-Version: 0.7.111.0.%{shortcommit0}
+Version: 0.7.114
 Release: 2%{?dist}
 Summary: A simple but powerful audio editor
 URL:     https://github.com/momentarylapse/tsunami
@@ -18,7 +13,7 @@ License: GPL-3.0-only
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/momentarylapse/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: https://github.com/momentarylapse/tsunami/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -38,19 +33,14 @@ Tsunami is an open-source digital audio workstation (DAW).
 It is designed for ease of use and not-looking-crappy™.
 
 %prep
-%autosetup -n %{name}-%{commit0}
+%autosetup -n %{name}-%{version}
+
+sed -i "/Exec=/c\Exec=tsunami" static/michisoft-tsunami.desktop
+sed -i "/Icon=/c\Icon=tsunami" static/michisoft-tsunami.desktop
 
 %build
 
-# Now tsunami's CMakeLists.txt set gtk4 by default.
-# To use gtk3, change the BuildRequires, and add this argument to %%cmake:
-# -DGTK4_OR_GTK3=gtk3
-
-%if 0%{?fedora} >= 38
-%cmake -DCMAKE_CXX_FLAGS="-include cstdio $CXXFLAGS"
-%else
 %cmake
-%endif
 %cmake_build
 
 %install
@@ -60,12 +50,10 @@ It is designed for ease of use and not-looking-crappy™.
 # install desktop file properly.
 desktop-file-install --vendor '' \
         --dir %{buildroot}%{_datadir}/applications \
-        --set-key=Exec --set-value=tsunami \
-        --set-icon=tsunami \
         static/michisoft-tsunami.desktop
 
 # desktop icon
-install -Dm 644 static/icon.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/tsunami.svg
+install -Dm 644 static/icons/tsunami.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/tsunami.svg
 
 # mime
 install -Dm 644 static/michisoft-nami.xml %{buildroot}%{_datadir}/mime/packages/michisoft-nami.xml
@@ -83,6 +71,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/michisoft-tsunami.des
 %{_datadir}/mime/packages/michisoft-nami.xml
 
 %changelog
+* Sun Oct 22 2023 Justin Koh <j@ustink.org> - 0.7.114-2
+- update to 0.7.114-2
+
 * Thu Feb 16 2023 Justin Koh <j@ustink.org> - 0.7.111.0-2
 - update to 0.7.111.0-2
 
