@@ -5,7 +5,7 @@
 # Global variables for github repository
 
 Name:    uhhyouplugins
-Version: 0.57.0
+Version: 0.58.0
 Release: 1%{?dist}
 Summary: Uhhyou Plugins VST 3
 License: GPL-2.0-or-later
@@ -15,8 +15,8 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./uhhyouplugins-source.sh <tag>
-# ./uhhyouplugins-source.sh UhhyouPlugins 0.57.0
-# ./vst3sdk-source.sh v3.7.8_build_34
+# ./uhhyouplugins-source.sh UhhyouPlugins 0.58.0
+# ./vst3-source.sh v3.7.8_build_34
 
 Source0: VSTPlugins.tar.gz
 Source1: vst3sdk.tar.gz
@@ -67,7 +67,6 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_CXX_FLAGS="$CXXFLAGS -include limits" \
       -DSMTG_MYPLUGINS_SRC_PATH="../.." \
       -DSMTG_ADD_VST3_HOSTING_SAMPLES=FALSE \
-      -DSMTG_ADD_VST3_PLUGINS_SAMPLES=FALSE \
       -DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG" \
       -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
       -DCMAKE_INSTALL_DO_STRIP:BOOL=OFF \
@@ -94,6 +93,9 @@ cp -ra vst3sdk/build/VST3/Release/* %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Oct 22 2023 Yann Collette <ycollette.nospam@free.fr> - 0.58.0-1
+- update to 0.58.0-1
+
 * Mon Oct 09 2023 Yann Collette <ycollette.nospam@free.fr> - 0.57.0-1
 - update to 0.57.0-1
 
