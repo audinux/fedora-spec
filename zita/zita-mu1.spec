@@ -55,7 +55,7 @@ popd
 
 %files
 %defattr(-,root,root,-)
-%doc AUTHORS README* 
+%doc AUTHORS README*
 %{_bindir}/*
 %{_datadir}/zita-mu1/
 

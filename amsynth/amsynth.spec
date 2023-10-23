@@ -186,10 +186,10 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/%{name}.ap
 * Fri Dec 24 2004 Fernando Lopez-Lezcano <nando at ccrma.stanford.edu> 1.0.0-2
 - use rpm optimization flags
 
-* Mon Dec 20 2004 Fernando Lopez-Lezcano <nando at ccrma.stanford.edu> 
+* Mon Dec 20 2004 Fernando Lopez-Lezcano <nando at ccrma.stanford.edu>
 - spec file cleanup
 
-* Sat May  8 2004 Fernando Lopez-Lezcano <nando at ccrma.stanford.edu> 
+* Sat May  8 2004 Fernando Lopez-Lezcano <nando at ccrma.stanford.edu>
 - added proper buildrequires
 
 * Tue Mar  2 2004 Fernando Lopez-Lezcano <nando at ccrma.stanford.edu> 1.0.0-1

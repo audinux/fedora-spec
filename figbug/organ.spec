@@ -64,7 +64,7 @@ LV2 version of %{name}
 %cmake
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/

@@ -31,7 +31,7 @@ is http://homepages.abdn.ac.uk/mth192/pages/html/dx7.html
 Plus, I was looking for a C++ project to check out C++11 coding.
 
 %prep
-%autosetup -n dxsyx-%{commit0} 
+%autosetup -n dxsyx-%{commit0}
 
 %build
 

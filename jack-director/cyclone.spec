@@ -29,7 +29,7 @@ Cyclone Loop Giant is a music application for GNU/Linux that
 allows users to manipulate loops in various ways.
 It works with professional audio formats
 like .wav .aif .flac, and professional audio environment
-(Jack Audio Connection Kit). 
+(Jack Audio Connection Kit).
 Now it's in early stage of development;
 it's goal is to make a professional audio application for GNU/Linux that can compete
 with Ableton Live in loop handling power.

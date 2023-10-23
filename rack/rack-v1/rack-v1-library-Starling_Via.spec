@@ -94,7 +94,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir Starling_Via_plugin
-tar xvfz %{SOURCE1} --directory=Starling_Via_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=Starling_Via_plugin --strip-components=1
 
 cp -n %{SOURCE2} Starling_Via_plugin/plugin.json || true
 
@@ -103,7 +103,7 @@ cp -n %{SOURCE2} Starling_Via_plugin/plugin.json || true
 cd Starling_Via_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Starling_Via/
 cp -r Starling_Via_plugin/dist/Starling_Via/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Starling_Via/

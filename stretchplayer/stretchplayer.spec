@@ -44,7 +44,7 @@ pre-recorded song.  You can:
 
 %build
 
-%cmake 
+%cmake
 
 %cmake_build
 

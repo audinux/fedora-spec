@@ -37,7 +37,7 @@ BuildRequires: qt5-qtwebkit-devel
 BuildRequires: qt5-qtwebengine-devel
 BuildRequires: qt5-qtwebsockets-devel
 BuildRequires: qt5-qtdeclarative-devel
-BuildRequires: yaml-cpp03-devel 
+BuildRequires: yaml-cpp03-devel
 BuildRequires: cwiid-devel
 # needed because emacs needs alternatives to be installed
 BuildRequires: chkconfig
@@ -57,7 +57,7 @@ compositions, interactive performances, installations etc.
 
 %package devel
 Summary:  Development files for SuperCollider
-Requires: supercollider = %{version}-%{release} 
+Requires: supercollider = %{version}-%{release}
 
 %description devel
 This package includes include files and libraries neede to develop
@@ -102,13 +102,13 @@ sed -i -e "s/typedef struct SNDFILE_tag SNDFILE/typedef struct sf_private_tag SN
 
 %build
 # remove all git directories
-find . -type d -name .git -printf "\"%h/%f\"\n" | xargs rm -rf 
+find . -type d -name .git -printf "\"%h/%f\"\n" | xargs rm -rf
 
-# -DSYSTEM_BOOST=ON 
+# -DSYSTEM_BOOST=ON
 %cmake -DCMAKE_C_FLAGS="%{optflags}" \
        -DCMAKE_CXX_FLAGS="-std=c++11 %{optflags}" \
        -DCMAKE_BUILD_TYPE=RELEASE \
-%ifarch x86_64       
+%ifarch x86_64
        -DLIB_SUFFIX="64" \
 %endif
        -DSUPERNOVA=ON \
@@ -298,7 +298,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/SuperColliderIDE.desk
 - update to 3.5.5
 
 * Sun Jul 15 2012 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 3.5.3-2
-- strip weird characters from sc source files, causes problems 
+- strip weird characters from sc source files, causes problems
   (apparently) with some locales
 
 * Wed Jun 27 2012 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 3.5.3-1
@@ -307,7 +307,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/SuperColliderIDE.desk
 * Tue Jun 26 2012 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 3.5.2-1.fcX.1
 - rebuild for fc14 and gedit2
 
-* Wed May  9 2012 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Wed May  9 2012 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - downloaded Dan Stowell's version of Julius Smith's patch, no change in release
 
 * Tue May  8 2012 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 3.5.2-1
@@ -350,7 +350,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/SuperColliderIDE.desk
 
 * Tue Feb 14 2012 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 3.5-0.1.git20120213
 - update to current git
-- remove supercollider-sclang package and supercollider-libscsynth, 
+- remove supercollider-sclang package and supercollider-libscsynth,
   these packages were created when sc was not 64 bit compliant so
   we could install a 32 bit sclang on a 64 bit install
 - merge supernova package into main package, remove boost library from files
@@ -379,7 +379,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/SuperColliderIDE.desk
   (again) separate packages
 - remove very old obsolete and provides
 
-* Tue Oct 18 2011 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Tue Oct 18 2011 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - tons of changes to the spec file
 
 * Tue Oct 18 2011 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 3.5-0.1.git20111018
@@ -387,7 +387,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/SuperColliderIDE.desk
 
 * Sat Oct 15 2011 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - add git version of sc3-plugins, latest swingosc and latest quarks
-- package cruciallib for Instr and friends (used to be part of the 
+- package cruciallib for Instr and friends (used to be part of the
   main distribution)
 
 * Fri Oct 14 2011 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 3.5-0.1.git20111014
@@ -400,7 +400,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/SuperColliderIDE.desk
 
 * Tue May 31 2011 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 3.4-2
 - added -fpermissive workaround for building on fc15/gcc4.6 (SC_Wii.cpp
-  fails to compile). This is of course not a proper fix. 
+  fails to compile). This is of course not a proper fix.
 
 * Sat Jan  8 2011 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 3.4-2
 - add optimizations to plugins build
@@ -424,29 +424,29 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/SuperColliderIDE.desk
   stk
 
 * Mon Mar  8 2010 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 3.3.1-4
-- rebuild against newer stk libraries, fails to link at runtime with 
+- rebuild against newer stk libraries, fails to link at runtime with
   missing symbols (will try with static stk build)
 
 * Fri Jan 22 2010 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 3.3.1-3
 - split libscsynth into a separate package so that both 32 and 64 bits
   versions can be installed in a 64 bit environment (the 32 bit version
-  is needed by the 32 bit sclang binary). 
+  is needed by the 32 bit sclang binary).
 
 * Tue Jul 21 2009 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 3.3.1-2
 - add patch2 to deal with breakage in gcc4.4/fc11 in swingosc, see
   http://www.listarc.bham.ac.uk/lists/sc-dev/msg10558.html
 
-* Sat Jul  4 2009 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Sat Jul  4 2009 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - install to proper lib64 path on x86_64
 - add sc scel code to install, SConstruct fails to install it
 
-* Wed Jul  1 2009 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Wed Jul  1 2009 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - split out language in supercollider-sclang
 - redo all file lists based on manual installs in a mock chroot
 - enable builds on x86_64, the supercollider-sclang will be copied
   from the i386 build
 
-* Tue Jun 30 2009 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Tue Jun 30 2009 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - split emacs support into separate package
 - added ProcMod.sc patch from Josh for extras
 - create MathLib, AmbIEM, redUniverse, dewdrop_lib packages from
@@ -498,11 +498,11 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/SuperColliderIDE.desk
 - built on CentOS
 - won't build on x86_64
 
-* Sat Nov 17 2007 Fernando Lopez-Lezcano <nando@ccrma.Stanford.EDU> 
+* Sat Nov 17 2007 Fernando Lopez-Lezcano <nando@ccrma.Stanford.EDU>
 - installed Headers in the proper location that matches the pkgconfig
   CFLAGS locations
 
-* Tue Jul 24 2007 Fernando Lopez-Lezcano <nando@ccrma.Stanford.EDU> 
+* Tue Jul 24 2007 Fernando Lopez-Lezcano <nando@ccrma.Stanford.EDU>
 - updated to svn from 07.07.23
 - added w3m to build and run dependencies
 - "source" directory is now "Source"
@@ -564,7 +564,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/SuperColliderIDE.desk
 * Thu Jan  5 2006 Fernando Lopez-Lezcano <nando@ccrma.Stanford.EDU> 0.0.20060105
 - updated to cvs snapshot 2006.01.05
 
-* Fri Jul 15 2005 Fernando Lopez-Lezcano <nando@ccrma.Stanford.EDU> 
+* Fri Jul 15 2005 Fernando Lopez-Lezcano <nando@ccrma.Stanford.EDU>
 - added fc4/gcc4 patch posted by Russell Johnston
 
 * Thu Jul 14 2005 Fernando Lopez-Lezcano <nando@ccrma.Stanford.EDU> 0.0.20050714

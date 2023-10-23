@@ -50,9 +50,9 @@ sed -i -e "/-Wl,--strip-all/d" meson.build
 %set_build_flags
 
 %meson -Dbuild-lv2=true -Dbuild-vst3=true
-%meson_build 
+%meson_build
 
-%install 
+%install
 
 %meson_install
 

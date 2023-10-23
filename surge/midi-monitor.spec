@@ -58,7 +58,7 @@ sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \
 %cmake -DCMAKE_CXX_FLAGS="-include utility"
 %cmake_build
 
-%install 
+%install
 
 export HOME=`pwd`
 mkdir .vst3

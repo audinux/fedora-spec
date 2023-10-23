@@ -5,7 +5,7 @@
 Name:    infamousPlugins
 Version: 0.3.2
 Release: 2%{?dist}
-Summary: LV2 Audio Plugins for Linux 
+Summary: LV2 Audio Plugins for Linux
 URL:     https://github.com/ssj71/infamousPlugins
 License: GPL-2.0-or-later
 

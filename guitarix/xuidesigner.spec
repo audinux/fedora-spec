@@ -47,7 +47,7 @@ export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
 
 %make_build STRIP=true
 
-%install 
+%install
 
 %make_install INSTALL_DIR=%{_libdir} STRIP=true
 

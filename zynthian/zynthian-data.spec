@@ -3,7 +3,7 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-# Tag: 
+# Tag:
 # Type: Presets
 # Category: Audio
 
@@ -99,7 +99,7 @@ Presets for Odin2 LV2 / VST3 plugin
 
 %build
 
-%install 
+%install
 
 mkdir -p %{buildroot}/usr/%{_lib}/lv2/
 cp -r presets/lv2/[oO]bxd*      %{buildroot}/usr/%{_lib}/lv2/

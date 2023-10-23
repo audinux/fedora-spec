@@ -20,7 +20,7 @@ BuildRequires: boost-devel
 A collection of guitar effect LV2 plugins with MOD Devices user interfaces.
 
 %prep
-%autosetup -n gula-plugins-%{commit0} 
+%autosetup -n gula-plugins-%{commit0}
 
 %build
 

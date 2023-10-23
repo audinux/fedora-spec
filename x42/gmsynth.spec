@@ -30,7 +30,7 @@ gmsynth.lv2 is a General MIDI Sample Player Plugin
 export OPTIMIZATIONS="$CFLAGS"
 %make_build PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 STRIP=true
 
-%install 
+%install
 
 %make_install PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 STRIP=true
 

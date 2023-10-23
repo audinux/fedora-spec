@@ -52,7 +52,7 @@ mv JUCE-6.0.8 juce
 %cmake
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
 cp -rav %{__cmake_builddir}/Rotor_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/

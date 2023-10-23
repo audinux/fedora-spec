@@ -191,7 +191,7 @@ install -pm 644 %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/36x36/apps/h
 
 * Sun Jun  4 2006 Anthony Green <green@redhat.com> 0.5.9-3
 - Remove useless post and postun scripts.
-- Tweak hexter jack-dssi-host symlink. 
+- Tweak hexter jack-dssi-host symlink.
 
 * Thu May 18 2006 Anthony Green <green@redhat.com> 0.5.9-2
 - Clean up Requires & BuildRequires.

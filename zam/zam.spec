@@ -31,7 +31,7 @@ Obsoletes: zam < 4.0-4
 
 %description
 Zam LV2 set of plugins
-Compressors, Limiters, Saturation, Tube emulation, 
+Compressors, Limiters, Saturation, Tube emulation,
 Equalizers, Delay, Gates
 
 %package -n ladspa-%{name}
@@ -76,7 +76,7 @@ Zam CLAP plugin
 %set_build_flags
 %make_build PREFIX=/usr LIBDIR=%{_lib} SKIP_STRIPPING=true USE_SYSTEM_LIBS=1 all
 
-%install 
+%install
 
 %make_install PREFIX=/usr LIBDIR=%{_lib} SKIP_STRIPPING=true USE_SYSTEM_LIBS=1 install
 
@@ -95,19 +95,19 @@ done
 %{_bindir}/*
 
 %files -n lv2-%{name}
-%{_libdir}/lv2/* 
+%{_libdir}/lv2/*
 
 %files -n ladspa-%{name}
-%{_libdir}/ladspa/* 
+%{_libdir}/ladspa/*
 
 %files -n vst-%{name}
-%{_libdir}/vst/* 
+%{_libdir}/vst/*
 
 %files -n clap-%{name}
-%{_libdir}/clap/* 
+%{_libdir}/clap/*
 
 %files -n vst3-%{name}
-%{_libdir}/vst3/* 
+%{_libdir}/vst3/*
 
 %changelog
 * Wed Dec 21 2022 Yann Collette <ycollette.nospam@free.fr> - 4.1-4

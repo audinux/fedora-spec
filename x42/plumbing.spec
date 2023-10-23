@@ -32,7 +32,7 @@ intended to be used with Ardour3's linear processor chain.
 export OPTIMIZATIONS="$CFLAGS"
 %make_build PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 STRIP=true
 
-%install 
+%install
 
 %make_install PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 STRIP=true
 

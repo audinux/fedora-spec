@@ -31,7 +31,7 @@ Utilities for SoundFont files.
 
 %build
 
-%cmake 
+%cmake
 %cmake_build
 
 %install

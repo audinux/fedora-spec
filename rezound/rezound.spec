@@ -26,10 +26,10 @@ BuildRequires: audiofile-devel
 BuildRequires: boost-devel
 BuildRequires: fftw-devel
 BuildRequires: flac-devel
-BuildRequires: jack-audio-connection-kit-devel 
-BuildRequires: libogg-devel 
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: libogg-devel
 BuildRequires: pulseaudio-libs-devel
-BuildRequires: libvorbis-devel 
+BuildRequires: libvorbis-devel
 BuildRequires: fox-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
@@ -52,7 +52,7 @@ BuildRequires: desktop-file-utils
 Requires: cdrdao
 
 %description
-ReZound aims to be a stable, open source, and graphical audio file editor 
+ReZound aims to be a stable, open source, and graphical audio file editor
 primarily for but not limited to the Linux operating system.
 
 %prep
@@ -101,7 +101,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %doc docs/Features.txt
 %license docs/COPYING
 %{_bindir}/*
-%{_datadir}/%name/* 
+%{_datadir}/%name/*
 %{_datadir}/applications/%name.desktop
 %exclude %{_includedir}/*
 %exclude %{_libdir}/*

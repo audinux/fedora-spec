@@ -85,7 +85,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir stocaudio_plugin
-tar xvfz %{SOURCE1} --directory=stocaudio_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=stocaudio_plugin --strip-components=1
 
 cp -n %{SOURCE2} stocaudio_plugin/plugin.json || true
 
@@ -96,7 +96,7 @@ sed -i -e "/samplerate/d" stocaudio_plugin/Makefile
 cd stocaudio_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/stocaudio/
 cp -r stocaudio_plugin/dist/stocaudio/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/stocaudio/

@@ -23,7 +23,7 @@ BuildArch: noarch
 Requires: hydrogen >= 0.9.5
 
 %description
-A collection of bandshed drumkits for the 
+A collection of bandshed drumkits for the
 Hydrogen advanced drum machine for GNU/Linux.
 
 %package -n AVLDrumkits-BlackPearl-H2-repack

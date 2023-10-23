@@ -44,7 +44,7 @@ cd src
 
 # insert rpm optflags in makefiles
 sed -i -e "s|-O3|-O3 %{optflags}|g" makefile
-    
+
 # build alsa version
 %make_build linux-alsa
 mv chuck chuck-alsa
@@ -153,7 +153,7 @@ cp -a %{SOURCE1} %{buildroot}%{_libdir}/xemacs/site-packages/lisp/chuck/chuck.el
 * Sun Sep 29 2013 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 1.3.2.0-1
 - final 1.3.2.0 release
 
-* Sat Sep 14 2013 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Sat Sep 14 2013 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - add optflags for proper build on arm
 
 * Thu Aug 29 2013 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 1.3.2.0-0.1.beta4
@@ -194,7 +194,7 @@ cp -a %{SOURCE1} %{buildroot}%{_libdir}/xemacs/site-packages/lisp/chuck/chuck.el
 - updated to 1.2.1.2 (keep building it with -DAJAY for experimental
   features)
 
-* Wed Jul  9 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Wed Jul  9 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - build fixes for gcc4.3 on fc9
 
 * Mon Oct  8 2007 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 1.2.1.1c-1

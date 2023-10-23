@@ -40,7 +40,7 @@ Tuner for Jack Audio Connection Kit
 
 %make_build CXXFLAGS="%build_cxxflags -I/usr/include/cairo -I/usr/include/sigc++-2.0/ -I/usr/%{_lib}/sigc++-2.0/include" STRIP=true
 
-%install 
+%install
 
 %make_install INSTALL_DIR=/usr/%{_lib}/lv2 STRIP=true
 

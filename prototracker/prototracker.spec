@@ -146,7 +146,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 
 %files
 %doc README.md MODULES.md module-ids.md
-%license LICENSE 
+%license LICENSE
 %{_bindir}/*
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/*

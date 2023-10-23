@@ -83,7 +83,7 @@ desktop-file-install                         \
 
 # Install mime type
 install -m 755 -d %{buildroot}/%{_datadir}/mime/packages/
-install -m 644 bin/sysex-mime.xml %{buildroot}/%{_datadir}/mime/packages/ 
+install -m 644 bin/sysex-mime.xml %{buildroot}/%{_datadir}/mime/packages/
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/simplesysexxer.desktop

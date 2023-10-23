@@ -43,7 +43,7 @@ Valve amplifier simulation
 
 %make_build STRIP=true
 
-%install 
+%install
 
 %make_install INSTALL_DIR=/usr/%{_lib}/lv2 STRIP=true
 

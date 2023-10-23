@@ -40,7 +40,7 @@ BuildRequires: desktop-file-utils
 Requires: hicolor-icon-theme
 
 %description
-Based on the PADsynth algorithm, by Paul Nasca (ZynAddSubFX), 
+Based on the PADsynth algorithm, by Paul Nasca (ZynAddSubFX),
 as a special variant of additive synthesis.
 
 %package -n lv2-%{name}

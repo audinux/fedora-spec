@@ -46,7 +46,7 @@ cargo build --release
 cd ../vst
 cargo build --release
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_libdir}/lv2/
 install -m 755 -d %{buildroot}/%{_libdir}/vst/

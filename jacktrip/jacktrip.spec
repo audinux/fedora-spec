@@ -180,7 +180,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/org.jackt
 * Wed Jul  9 2008 Arnaud Gomes-do-Vale <Arnaud.Gomes@ircam.fr>
 - fix building on CentOS
 
-* Wed Jul  9 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Wed Jul  9 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - use qt3-devel when building on fc9
 - add patch for building with gcc4.3
 

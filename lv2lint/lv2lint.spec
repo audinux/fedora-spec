@@ -33,7 +33,7 @@ in order to prevent unsatisfied users.
 %meson
 %meson_build
 
-%install 
+%install
 
 %meson_install
 

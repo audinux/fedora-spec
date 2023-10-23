@@ -25,7 +25,7 @@ BuildRequires: python3
 %description
 Context Free is a program that generates images from written instructions called a grammar.
 The program follows the instructions in a few seconds to create images that can contain
-millions of shapes. 
+millions of shapes.
 
 %prep
 %autosetup -p1 -n context-free-Version%{version}

@@ -27,7 +27,7 @@ Commandline tools to deal with MIDI Timecode (MTC) via http://jackaudio.org
 export OPTIMIZATIONS="$CFLAGS"
 %make_build PREFIX=%{_prefix} STRIP=true
 
-%install 
+%install
 
 %make_install PREFIX=%{_prefix} STRIP=true
 

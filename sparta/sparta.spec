@@ -70,7 +70,7 @@ mv VST_SDK/VST2_SDK SDKs/
        -DCMAKE_SKIP_RPATH=ON
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst/
 cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_array2sh_/sparta_array2sh_artefacts/Release/VST/* %{buildroot}%{_libdir}/vst/

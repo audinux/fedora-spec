@@ -76,7 +76,7 @@ mkdir -p .vst3
 cd Builds/LinuxMakefile
 %make_build CONFIG=Release STRIP=true CXXFLAGS="-I/usr/include/eigen3 -I/usr/include/freetype2" LDFLAGS="$LDFLAGS -lX11 -lXext `pkg-config --libs webkit2gtk-4.0`"
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
 install -m 755 -d %{buildroot}/%{_bindir}/

@@ -96,7 +96,7 @@ pushd .
 
 cd $RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets
 mkdir $RPM_BUILD_ROOT%{_datadir}/projectM-mao/textures
- 
+
 mv milkdrop-md-presets  md
 mv milkdrop-megapack    megapack
 mv milkdrop-vlc-presets vlc
@@ -179,7 +179,7 @@ popd
 
 %files yin
 %{_datadir}/projectM-mao/presets/yin/*
-	
+
 %files creamofthecrop
 %{_datadir}/projectM-mao/presets/cotc-*
 %{_datadir}/projectM-mao/textures/*

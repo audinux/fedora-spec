@@ -27,7 +27,7 @@ rt_pvc is a:
 - vocoder application that allows the user to do time-expansion, frequency expansion, and cross-synthesis in real-time, from mic-input or from file.
 - real-time phase vocoder visualization
 - learning tool that teaches about the phase vocoder and its implemementation
-- open source! 
+- open source!
 
 %prep
 %autosetup -p1 -c -n %{name}-%{version}

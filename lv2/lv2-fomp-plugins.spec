@@ -19,17 +19,17 @@ Requires:      lv2
 %description
 Fomp is an LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen.
 
-There are 13 plugins in total: 1 auto-wah, 1 EQ, 3 chorus, 5 filters, and 3 
+There are 13 plugins in total: 1 auto-wah, 1 EQ, 3 chorus, 5 filters, and 3
 oscillators.
 
-The plugin implementations are identical to their LADSPA forebears, except 
+The plugin implementations are identical to their LADSPA forebears, except
 the primary frequency port of oscillators and filters has been converted to
-Hz to facilitate use in any host without assuming the hidden tuning frequency 
-of AlsaModularSynth. All other frequency ports remain as they were, using 
+Hz to facilitate use in any host without assuming the hidden tuning frequency
+of AlsaModularSynth. All other frequency ports remain as they were, using
 octaves for faithful Moog-like modulation.
 
 %prep
-%autosetup -n fomp-%{version} 
+%autosetup -n fomp-%{version}
 
 # Force use of python2
 sed -i -e "s|env python|env python2|g" waf
@@ -37,11 +37,11 @@ sed -i -e "s|env python|env python2|g" wscript
 
 %build
 %set_build_flags
-./waf configure -v --prefix=%{_prefix} --libdir=%{_libdir} 
+./waf configure -v --prefix=%{_prefix} --libdir=%{_libdir}
 ./waf -v build %{?_smp_mflags}
 
 %install
-./waf install --destdir=%{buildroot} 
+./waf install --destdir=%{buildroot}
 
 %files
 %doc README.md NEWS AUTHORS
@@ -92,6 +92,6 @@ sed -i -e "s|env python|env python2|g" wscript
 * Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
-* Mon Dec 17 2012 Brendan Jones <brendan.jones.it@gmail.com> 1.0.0-1 
+* Mon Dec 17 2012 Brendan Jones <brendan.jones.it@gmail.com> 1.0.0-1
 - Initial build
 

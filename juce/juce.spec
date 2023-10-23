@@ -82,7 +82,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
 %doc README.md
-%license LICENSE.md 
+%license LICENSE.md
 %{_bindir}/*
 %{_datadir}/*
 %{_libdir}/cmake/*

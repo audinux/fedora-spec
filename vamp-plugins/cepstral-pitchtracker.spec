@@ -6,8 +6,8 @@ Name: cepstral-pitchtracker
 Version: 1.0
 Release: 2%{?dist}
 Summary: A straightforward cepstral pitch- and note-tracker Vamp plugin, probably most suited to tracking singing pitch
-License: GLPv2	
-URL: https://code.soundsoftware.ac.uk/projects/cepstral-pitchtracker	
+License: GLPv2
+URL: https://code.soundsoftware.ac.uk/projects/cepstral-pitchtracker
 
 Vendor:       Audinux
 Distribution: Audinux

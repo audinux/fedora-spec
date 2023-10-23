@@ -95,7 +95,7 @@ Summary: Analog simulation of the Vox Suppa Tone Bender pedal
 Analog simulation of the Vox (*) Suppa Tone Bender pedal as LV2 plugin from Guitarix
 
 %package -n lv2-GxSVT-plugin
-Summary: Tube based Bass preamp simulation 
+Summary: Tube based Bass preamp simulation
 
 %description -n lv2-GxSVT-plugin
 Tube based Bass preamp simulation from Guitarix
@@ -208,7 +208,7 @@ Simulation of a Tube based Distortion Pedal from Guitarix
 Summary: Little tube boost pedal simulation
 
 %description -n lv2-GxBoobTube-plugin
-The BoobTube is a little tube boost pedal simulation, it's a variation of the ValveCaster. 
+The BoobTube is a little tube boost pedal simulation, it's a variation of the ValveCaster.
 It adds some overdrive and tube compression along with boosting the signal. From Guitarix
 
 %package -n lv2-GxCreamMachine-plugin
@@ -221,7 +221,7 @@ Simulation, based on a tube power amp circuit.
 Summary: Little tube boost pedal simulation
 
 %description -n lv2-GxValveCaster-plugin
-The ValveCaster is a little tube boost pedal simulation. 
+The ValveCaster is a little tube boost pedal simulation.
 It adds some overdrive and tube compression along with boosting the signal. From Guitarix
 
 %package -n lv2-GxBaJaTubeDriver-plugin
@@ -292,7 +292,7 @@ Summary: Overdrive pedal simulation
 Overdrive pedal simulation from Guitarix
 
 %package -n lv2-GxUltraCab-plugin
-Summary: Cabinet simulator stereo 
+Summary: Cabinet simulator stereo
 
 %description -n lv2-GxUltraCab-plugin
 Cabinet simulator Lv2 stereo plugin from Guitarix
@@ -316,7 +316,7 @@ Vintage Fuzz Pedal simulation from Guitarix
 
 %make_build INSTALL_DIR=%{_libdir}/lv2 SSE_CFLAGS="%{optflags}" STRIP=true
 
-%install 
+%install
 
 %make_install INSTALL_DIR=%{_libdir}/lv2 SSE_CFLAGS="%{optflags}" STRIP=true
 

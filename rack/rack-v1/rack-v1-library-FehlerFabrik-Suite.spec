@@ -85,7 +85,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir FehlerFabrik-Suite_plugin
-tar xvfz %{SOURCE1} --directory=FehlerFabrik-Suite_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=FehlerFabrik-Suite_plugin --strip-components=1
 
 cp -n %{SOURCE2} FehlerFabrik-Suite_plugin/plugin.json || true
 
@@ -98,7 +98,7 @@ sed -i -e "s/dep\/lib\/libsamplerate.a/-lsamplerate/g" FehlerFabrik-Suite_plugin
 cd FehlerFabrik-Suite_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/FehlerFabrik-Suite/
 cp -r FehlerFabrik-Suite_plugin/dist/FehlerFabrik-Suite/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/FehlerFabrik-Suite/

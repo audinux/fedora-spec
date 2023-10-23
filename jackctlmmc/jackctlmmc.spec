@@ -3,7 +3,7 @@ Name:    jackctlmmc
 Version: 4
 Release: 22%{?dist}
 License: GPL-2.0-only
-URL:     https://sourceforge.net/projects/%{name} 
+URL:     https://sourceforge.net/projects/%{name}
 
 Source0: https://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 
@@ -15,8 +15,8 @@ BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: desktop-file-utils
 
 %description
-A small application that allows the user to control JACK transport via Midi 
-Machine Control (MMC) commands. MMC is a common protocol sent by hard disk 
+A small application that allows the user to control JACK transport via Midi
+Machine Control (MMC) commands. MMC is a common protocol sent by hard disk
 recorders and midi control pads to let other devices or programs know where you
 are in a track.
 
@@ -24,9 +24,9 @@ are in a track.
 License: GPL-2.0-or-later
 Summary: Qt application that controls JACK transport via Midi
 
-%description -n qjackmmc 
-QJackMMC is a Qt based program that can connect to a device or program that 
-emits MIDI Machine Control (MMC) and allow it to drive JACK transport, which in 
+%description -n qjackmmc
+QJackMMC is a Qt based program that can connect to a device or program that
+emits MIDI Machine Control (MMC) and allow it to drive JACK transport, which in
 turn can control other programs. QJackMMC is the Qt version of jackctlmmc.
 
 %prep
@@ -42,7 +42,7 @@ for file in  AUTHORS README NEWS VERSION TODO gpl.txt; do
 done
 
 %build
-%configure --enable-gui=yes --enable-cli=yes 
+%configure --enable-gui=yes --enable-cli=yes
 %make_build
 
 %install
@@ -58,7 +58,7 @@ desktop-file-install                                       \
    --dir=%{buildroot}%{_datadir}/applications              \
       %{buildroot}/%{_datadir}/applications/qjackmmc.desktop
 
-%files 
+%files
 %doc AUTHORS README NEWS VERSION TODO
 %license gpl.txt
 %{_bindir}/%{name}
@@ -129,11 +129,11 @@ desktop-file-install                                       \
 
 
 * Sat Aug 06 2011 Brendan Jones <brendan.jones.it@gmail.com> 4-3
-- add License to sub-package 
+- add License to sub-package
 
 * Mon May 30 2011 Brendan Jones <brendan.jones.it@gmail.com> 4-2
-- invalidate installed desktop file, removing sed statements 
+- invalidate installed desktop file, removing sed statements
 
 * Mon May 30 2011 Brendan Jones <brendan.jones.it@gmail.com> 4-1
-- initial build 
+- initial build
 

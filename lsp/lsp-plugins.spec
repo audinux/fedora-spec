@@ -90,16 +90,16 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %{_sysconfdir}/xdg/menus/applications-merged/lsp-plugins.menu
 
 %files -n lv2-%{name}
-%{_libdir}/lv2/* 
+%{_libdir}/lv2/*
 
 %files -n ladspa-%{name}
-%{_libdir}/ladspa/* 
+%{_libdir}/ladspa/*
 
 %files -n vst-%{name}
-%{_libdir}/vst/* 
+%{_libdir}/vst/*
 
 %files -n clap-%{name}
-%{_libdir}/clap/* 
+%{_libdir}/clap/*
 
 %changelog
 * Sat Oct 14 2023 Yann Collette <ycollette dot nospam at free.fr> 1.2.12-1

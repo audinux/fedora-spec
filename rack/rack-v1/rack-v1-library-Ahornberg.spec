@@ -85,7 +85,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir Ahornberg_plugin
-tar xvfz %{SOURCE1} --directory=Ahornberg_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=Ahornberg_plugin --strip-components=1
 
 cp -n %{SOURCE2} Ahornberg_plugin/plugin.json || true
 
@@ -94,7 +94,7 @@ cp -n %{SOURCE2} Ahornberg_plugin/plugin.json || true
 cd Ahornberg_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Ahornberg/
 cp -r Ahornberg_plugin/dist/Ahornberg/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Ahornberg/

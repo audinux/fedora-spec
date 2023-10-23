@@ -77,13 +77,13 @@ EOF
 - update to 0.3.4-6 - fix hangs
 
 * Sat Jul 11 2020 Yann Collette <ycollette dot nospam at free.fr> 0.3.4-5
-- remove fedora flags which make tm hangs. Still hangs under F32 
+- remove fedora flags which make tm hangs. Still hangs under F32
 
 * Fri Jul 10 2020 Yann Collette <ycollette dot nospam at free.fr> 0.3.4-4
-- fix spec file 
+- fix spec file
 
 * Sun Dec 15 2019 Yann Collette <ycollette dot nospam at free.fr> 0.3.4-3
-- Set default format to wav instead of w64 / remove fedora flags which make tm hangs 
+- Set default format to wav instead of w64 / remove fedora flags which make tm hangs
 
 * Wed Aug 21 2019 Yann Collette <ycollette dot nospam at free.fr> 0.3.4-2
 - Set default format to wav instead of w64

@@ -9,7 +9,7 @@ Version: 0.10.2
 Release: 6%{?dist}
 Summary: Music composer similar to tracker applications.
 License: LGPL2.1
-URL:     https://www.buzztrax.org 
+URL:     https://www.buzztrax.org
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -41,10 +41,10 @@ BuildRequires: chrpath
 BuildRequires: desktop-file-utils
 
 %description
-A song consists of a sequence with tracks and in each track one uses patterns with events 
-(musical notes and control changes). In contrast to other Tracker programs, 
-tracks are not simply sample players: a user can make a song using an arrangment 
-of virtual audio plugins that are linked together to create different effects. 
+A song consists of a sequence with tracks and in each track one uses patterns with events
+(musical notes and control changes). In contrast to other Tracker programs,
+tracks are not simply sample players: a user can make a song using an arrangment
+of virtual audio plugins that are linked together to create different effects.
 Each of these machines can be controlled realtime or via patterns in the sequencer.
 
 %package  devel
@@ -134,10 +134,10 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}-songio-buzz.
 
 %changelog
 * Mon Oct 5 2020 Yann Collette <ycollette.nospam@free.fr> - 0.10.2-6
-- Fix for Fedora 33 
+- Fix for Fedora 33
 
 * Thu Apr 30 2020 L.L.Robinson <baggypants@fedoraproject.org> - 0.10.2-5
-- Fix for Fedora 
+- Fix for Fedora
 
 * Sun Oct 23 2016 L.L.Robinson <baggypants@fedoraproject.org> - 0.10.2-4
 - changed source
@@ -149,4 +149,4 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}-songio-buzz.
 - update spec to update icons on install
 
 * Fri Oct 14 2016 L.L.Robinson <baggypants@fedoraproject.org>
-- 
+-

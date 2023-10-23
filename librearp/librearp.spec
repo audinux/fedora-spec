@@ -72,7 +72,7 @@ cd ../LibreArpVST3
 %cmake
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
 cp -ra %{__cmake_builddir}/LibreArp_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/

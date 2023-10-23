@@ -81,7 +81,7 @@ sed -i -e "s/-march=nehalem//g" dep.mk
 # For -O2 usage
 sed -i -e "s/-O3/-O2/g" compile.mk
 sed -i -e "s/-O3/-O2/g" dep.mk
-sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk 
+sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk
 
 # Remove static gcc lib
 sed -i -e "s/-static-libstdc++ -static-libgcc//g" Makefile
@@ -179,7 +179,7 @@ cd ..
 
 %make_build PREFIX=/usr LIBDIR=%{_lib}
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_bindir}/
 mkdir -p %{buildroot}%{_datadir}/pixmaps/

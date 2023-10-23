@@ -85,7 +85,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir Plurm_plugin
-tar xvfz %{SOURCE1} --directory=Plurm_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=Plurm_plugin --strip-components=1
 
 cp -n %{SOURCE2} Plurm_plugin/plugin.json || true
 
@@ -94,7 +94,7 @@ cp -n %{SOURCE2} Plurm_plugin/plugin.json || true
 cd Plurm_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Plurm/
 cp -r Plurm_plugin/dist/Plurm/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Plurm/

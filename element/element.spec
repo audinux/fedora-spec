@@ -58,7 +58,7 @@ sed -i -e "s|/usr/bin/env python|/usr/bin/env python3|g" waf
 
 %set_build_flags
 
-./waf configure --debug --prefix=%{_prefix} --libdir=%{_libdir} 
+./waf configure --debug --prefix=%{_prefix} --libdir=%{_libdir}
 ./waf %{?__smp_mflags}
 
 %install
@@ -81,7 +81,7 @@ sed -i -e "s/Application;//g" %{buildroot}%{_datadir}/applications/net.kushview.
 desktop-file-validate %{buildroot}%{_datadir}/applications/net.kushview.element.desktop
 
 %files
-%doc README.md AUTHORS.md CODE_OF_CONDUCT.md  CONTRIBUTING.md 
+%doc README.md AUTHORS.md CODE_OF_CONDUCT.md  CONTRIBUTING.md
 %license LICENSE
 %{_bindir}/*
 %{_datadir}/applications/*

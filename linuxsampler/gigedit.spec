@@ -87,7 +87,7 @@ rm -f %{buildroot}/%{_libdir}/gigedit/libgigedit.la
 - update to 1.0.0
 - add libxslt-devel build requirement
 
-* Sat Jul 10 2010 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> - 
+* Sat Jul 10 2010 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> -
 - remove and relink libtool with proper binary
 
 * Wed May 19 2010 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> - 0.2.0-1

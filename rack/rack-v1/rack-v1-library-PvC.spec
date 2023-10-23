@@ -84,7 +84,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir PvC_plugin
-tar xvfz %{SOURCE1} --directory=PvC_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=PvC_plugin --strip-components=1
 
 cp -n %{SOURCE2} PvC_plugin/plugin.json || true
 
@@ -93,7 +93,7 @@ cp -n %{SOURCE2} PvC_plugin/plugin.json || true
 cd PvC_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/PvC/
 cp -r PvC_plugin/dist/PvC/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/PvC/

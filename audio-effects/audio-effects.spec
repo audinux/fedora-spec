@@ -47,7 +47,7 @@ BuildRequires: desktop-file-utils
 %description
 Collection of audio effects plugins implemented from the explanations in
 the book "Audio Effects: Theory, Implementation and Application"
-by Joshua D. Reiss and Andrew P. McPherson. 
+by Joshua D. Reiss and Andrew P. McPherson.
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
@@ -178,14 +178,14 @@ cd Builds/LinuxMakefile
 %make_build CONFIG=Release STRIP=true
 cd ../../..
 
-cd Wah-Wah 
+cd Wah-Wah
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Wah-Wah.jucer
 cd Builds/LinuxMakefile
 %make_build CONFIG=Release STRIP=true
 cd ../../..
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_bindir}/

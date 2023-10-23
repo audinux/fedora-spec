@@ -102,28 +102,28 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/rakarrack-plus.deskto
 
 %changelog
 * Fri Oct 06 2023 Yann Collette <ycollette dot nospam at free.fr> 1.2.4-2
-- update to 1.2.4-2 
+- update to 1.2.4-2
 
 * Mon Sep 26 2022 Yann Collette <ycollette dot nospam at free.fr> 1.2.3-2
-- update to 1.2.3-2 
+- update to 1.2.3-2
 
 * Sun Jun 19 2022 Yann Collette <ycollette dot nospam at free.fr> 1.2.2-2
-- update to 1.2.2-2 
+- update to 1.2.2-2
 
 * Tue May 10 2022 Yann Collette <ycollette dot nospam at free.fr> 1.2.1-2
-- update to 1.2.1-2 
+- update to 1.2.1-2
 
 * Tue Apr 19 2022 Yann Collette <ycollette dot nospam at free.fr> 1.2.0-2
-- update to 1.2.0-2 
+- update to 1.2.0-2
 
 * Sun Dec 12 2021 Yann Collette <ycollette dot nospam at free.fr> 1.1.2-2
-- update to 1.1.2-2 
+- update to 1.1.2-2
 
 * Mon Jul 26 2021 Yann Collette <ycollette dot nospam at free.fr> 1.1.1-2
-- update to 1.1.1-2 
+- update to 1.1.1-2
 
 * Wed Jun 23 2021 Yann Collette <ycollette dot nospam at free.fr> 1.1.0-2
-- put lv2 plugins in a separate package 
+- put lv2 plugins in a separate package
 
 * Sat Jun 12 2021 Yann Collette <ycollette dot nospam at free.fr> 1.1.0-1
-- initial release 
+- initial release

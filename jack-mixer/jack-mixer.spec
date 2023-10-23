@@ -33,7 +33,7 @@ Requires: python3-gobject-base
 
 %description
 jack_mixer is Gtk Jack audio mixer with look similar to it`s hardware counterparts.
-It has lot of useful features, apart from being able to mix multiple Jack audio streams. 
+It has lot of useful features, apart from being able to mix multiple Jack audio streams.
 
 %prep
 %autosetup -n %{name}-release-%{version}

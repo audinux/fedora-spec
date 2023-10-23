@@ -57,7 +57,7 @@ source sdl-build/bin/activate
 
 %files
 %doc README.md
-%license LICENSE 
+%license LICENSE
 %{_bindir}/*
 %{_datadir}/*
 

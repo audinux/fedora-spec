@@ -28,7 +28,7 @@ Caps LV2 set of plugins from portalmod
 
 %make_build LV2_DEST=%{buildroot}%{_libdir}/lv2
 
-%install 
+%install
 %make_install LV2_DEST=%{buildroot}%{_libdir}/lv2
 
 %files

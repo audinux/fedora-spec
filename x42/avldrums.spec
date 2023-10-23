@@ -26,7 +26,7 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 
 %description
-avldrums.lv2 is a simple Drum Sample Player Plugin by x42, 
+avldrums.lv2 is a simple Drum Sample Player Plugin by x42,
 dedicated to the https://www.bandshed.net/avldrumkits/
 
 %prep
@@ -45,7 +45,7 @@ sed -i -e "s|-mfpmath=sse||g" Makefile
 
 %make_build PREFIX=/usr LV2DIR=%{_libdir}/lv2 STRIP=true
 
-%install 
+%install
 
 %make_install PREFIX=/usr LV2DIR=%{_libdir}/lv2 STRIP=true
 

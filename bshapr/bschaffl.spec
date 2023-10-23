@@ -22,7 +22,7 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: cairo-devel
 
 %description
-Groove quantizer LV2 MIDI plugin.  B.Schaffl is a slider / shape-controlled MIDI amp & time stretch plugin 
+Groove quantizer LV2 MIDI plugin.  B.Schaffl is a slider / shape-controlled MIDI amp & time stretch plugin
 to vitalize sequencer-controlled MIDI instruments and to produce shuffle / swing effects.
 
 Key features:
@@ -90,4 +90,4 @@ Key features:
 - update to 0.2.0-1
 
 * Mon May 25 2020 Yann Collette <ycollette dot nospam at free.fr> 0.1.0-1
-- initial release 
+- initial release

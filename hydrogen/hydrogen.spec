@@ -19,7 +19,7 @@ Source0: https://github.com/hydrogen-music/hydrogen/archive/%{version}.tar.gz#/%
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: alsa-lib-devel
-BuildRequires: flac-devel 
+BuildRequires: flac-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: ladspa-devel
 BuildRequires: liblrdf-devel
@@ -35,7 +35,7 @@ BuildRequires: rubberband-devel
 BuildRequires: desktop-file-utils
 
 %description
-Advanced drum machine for GNU/Linux. The main goal is to bring 
+Advanced drum machine for GNU/Linux. The main goal is to bring
 professional yet simple and intuitive pattern-based drum programming.
 
 %prep

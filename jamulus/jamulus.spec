@@ -32,7 +32,7 @@ BuildRequires: desktop-file-utils
 %description
 jamulus is a client / server software which allow to perform
 real-time rehearsal over the internet. It uses Jack Audio Connection Kit
-and Opus audio codec to manage the audio session. 
+and Opus audio codec to manage the audio session.
 
 %prep
 %autosetup -n %{name}-r%{v_major}_%{v_minor}_%{v_patch}

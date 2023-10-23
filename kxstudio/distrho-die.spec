@@ -33,9 +33,9 @@ sed -i -e "s/-Wl,--strip-all//g" Makefile.base.mk
 
 %set_build_flags
 
-%make_build 
+%make_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_libdir}/lv2/
 cp -ra bin/* %{buildroot}/%{_libdir}/lv2/

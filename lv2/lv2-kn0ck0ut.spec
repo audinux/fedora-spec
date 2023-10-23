@@ -26,7 +26,7 @@ need a host for LV2 plugins in order to use it, such as Ardour, Qtractor, Ingen,
 lv2_jack_host, or lv2file.
 
 %prep
-%autosetup -n kn0ck0ut-LV2-%{version}  
+%autosetup -n kn0ck0ut-LV2-%{version}
 sed -i -e 's|^CXXFLAGS+=-O3 -ffast-math |CXXFLAGS += %{optflags} -I/usr/include/lv2-c++-tools/ |' Makefile
 sed -i -e 's|^LDFLAGS +=|LDFLAGS += %{optflags} |' Makefile
 sed -i -e 's|^INSTALL_DIR = $(DESTDIR)/usr/lib/lv2|INSTALL_DIR = $(DESTDIR)%{_libdir}/lv2|' Makefile
@@ -102,10 +102,10 @@ sed -i -e 's|^INSTALL_DIR = $(DESTDIR)/usr/lib/lv2|INSTALL_DIR = $(DESTDIR)%{_li
 - fix build on non-x86 64-bit arches
 
 * Tue Jan 10 2012 Brendan Jones <brendan.jones.it@gmail.com> 1.1-0.3.git60421a3
-- git commit containing license clarification 
+- git commit containing license clarification
 
 * Fri Jan 06 2012 Brendan Jones <brendan.jones.it@gmail.com> 1.1-0.2.gitd03e8db0
-- removed lv2config 
+- removed lv2config
 
 * Mon Oct 31 2011 Brendan Jones <brendan.jones.it@gmail.com> 1.1-0.1.gitd03e8db0
 - Initial build

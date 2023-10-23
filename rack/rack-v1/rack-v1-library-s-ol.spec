@@ -86,7 +86,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir s-ol_plugin
-tar xvfz %{SOURCE1} --directory=s-ol_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=s-ol_plugin --strip-components=1
 
 cp -n %{SOURCE2} s-ol_plugin/plugin.json || true
 
@@ -95,7 +95,7 @@ cp -n %{SOURCE2} s-ol_plugin/plugin.json || true
 cd s-ol_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/s-ol/
 cp -r s-ol_plugin/dist/s-ol/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/s-ol/

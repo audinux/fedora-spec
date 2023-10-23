@@ -62,9 +62,9 @@ with the synth of your choice.
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Werror=format-security||g"`
 export CFLAGS=`echo $CFLAGS | sed -e "s|-Werror=format-security||g"`
 
-%make_build 
+%make_build
 
-%install 
+%install
 
 %make_install
 

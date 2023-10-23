@@ -26,14 +26,14 @@ BuildRequires: perl
 %description
 This package contains two subpackages, installing %{name}-all will
 grant rt permissions to all users, installing %{name}-session will
-grant rt permissions only to active sessions in the workstsion. 
+grant rt permissions only to active sessions in the workstsion.
 
 %package all
 Summary: Grant rt permissions to all users
 
 %description all
 Grant all users permission to run processes with realtime scheduling (up to priority %{MAX_PRIORITY})
-and to lock memory (up to %{MAX_MEMORY_LOCK} bytes). 
+and to lock memory (up to %{MAX_MEMORY_LOCK} bytes).
 
 %package session
 Summary: Grant rt permissions to active sessions
@@ -66,7 +66,7 @@ perl -p -i -e "s|\@\@MAX_PRIORITY\@\@|%{MAX_PRIORITY}|g" $RPM_BUILD_ROOT%{_sysco
 perl -p -i -e "s|\@\@MAX_MEMORY_LOCK\@\@|%{MAX_MEMORY_LOCK}|g" $RPM_BUILD_ROOT%{_sysconfdir}/ConsoleKit/run-session.d/rt-permissions.ck
 %endif
 
-%files 
+%files
 %defattr(-,root,root,-)
 %{_sysconfdir}/security/limits.d/99-rt-permissions.conf
 

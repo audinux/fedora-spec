@@ -3,7 +3,7 @@ Version: 1.1.3
 Release: 1%{?dist}
 Summary: Tutka is a free tracker style MIDI sequencer
 License: GPL-2.0-only
-URL: https://www.nongnu.org/tutka/	
+URL: https://www.nongnu.org/tutka/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -22,7 +22,7 @@ Tutka is a free (as in freedom) tracker style MIDI sequencer for GNU/Linux and M
 It is similar to programs like SoundTracker, ProTracker and FastTracker except that it
 does not support samples and is meant for MIDI use only. Tutka uses a custom XML based
 file format for storing songs. Songs in OctaMED SoundStudio's MMD2 file format can
-also be loaded and saved. 
+also be loaded and saved.
 
 %prep
 %autosetup

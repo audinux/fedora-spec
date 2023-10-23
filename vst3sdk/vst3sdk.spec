@@ -90,10 +90,10 @@ sed -i -e "s/VERSION/%{version}/g" %{buildroot}/%{_libdir}/pkgconfig/vst3sdk.pc
 install -m 755 -d %{buildroot}/%{_datadir}/doc/%{name}/
 cd doc
 rsync -r --exclude .git --exclude .github --exclude .gitignore --exclude .gitattributes . %{buildroot}/%{_datadir}/doc/%{name}/
-  
+
 %files
 %doc README.md
-%license LICENSE.txt 
+%license LICENSE.txt
 %{_bindir}/*
 %files -n vst3-%{name}
 %{_libdir}/vst3/*

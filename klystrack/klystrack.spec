@@ -33,7 +33,7 @@ BuildRequires: SDL2_image-devel
 BuildRequires: desktop-file-utils
 
 %description
-Tracker for making C64/NES/Amiga-style chiptunes on a modern platform. 
+Tracker for making C64/NES/Amiga-style chiptunes on a modern platform.
 - Sound
   - Additive synthesis with filters (think SID, Atari, NES etc.)
   - Hard sync and ring modulation (like SID)

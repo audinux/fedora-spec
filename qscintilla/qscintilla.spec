@@ -50,7 +50,7 @@ QScintilla is a port of Scintilla to the Qt GUI toolkit.
 %package devel
 Summary:  QScintilla Development Files
 Requires: %{name}%{?_isa} = %{version}-%{release}
-Requires: qt4-devel 
+Requires: qt4-devel
 %description devel
 %{summary}.
 
@@ -702,17 +702,17 @@ test -x %{buildroot}%{python3_sitearch}/PyQt4/Qsci.so
 - 2.4.2
 
 * Fri Jan 15 2010 Rex Dieter <rdieter@fedoraproject.org> - 2.4.1-1
-- 2.4.1 
+- 2.4.1
 - pyqt4_version 4.7
 
-* Thu Jan 07 2010 Rex Dieter <rdieter@fedoraproject.org> - 2.4-10 
+* Thu Jan 07 2010 Rex Dieter <rdieter@fedoraproject.org> - 2.4-10
 - rebuild (sip)
 
 * Fri Nov 27 2009 Rex Dieter <rdieter@fedoraproject.org> - 2.4-9
 - -python: Requires: sip-api(%%_sip_api_major) >= %%_sip_api
 - -python-devel: Requires: sip-devel
 
-* Mon Nov 23 2009 Rex Dieter <rdieter@fedoraproject.org> - 2.4-8 
+* Mon Nov 23 2009 Rex Dieter <rdieter@fedoraproject.org> - 2.4-8
 - rebuild (for qt-4.6.0-rc1, f13+)
 
 * Wed Nov 11 2009 Rex Dieter <rdieter@fedoraproject.org> - 2.4-7
@@ -768,7 +768,7 @@ test -x %{buildroot}%{python3_sitearch}/PyQt4/Qsci.so
 - use %%_qt4_* macros (preparing for qt4 possibly moving %%_qt4_datadir)
 - -python: fix Requires
 - -python-devel: new pkg
-- omit Obsoletes: PyQt-qscintilla 
+- omit Obsoletes: PyQt-qscintilla
   (leave that to PyQt, that can get the versioning right)
 
 * Mon Jan 28 2008 Dennis Gilmore <dennis@ausil.us> - 2.1-3

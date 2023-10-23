@@ -10,7 +10,7 @@
 Name:    zytrax
 Version: 0.9.0.%{shortcommit0}
 Release: 3%{?dist}
-Summary: Easy to use sequencer with an interface heavily inspired by 90's tracker software 
+Summary: Easy to use sequencer with an interface heavily inspired by 90's tracker software
 URL:     https://github.com/reduz/zytrax.git
 License: GPL-2.0-or-later
 

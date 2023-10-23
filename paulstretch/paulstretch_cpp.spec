@@ -42,7 +42,7 @@ cp paulstretch paulstretch-jack
 
 ./compile_linux_fftw.sh
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_bindir}/
 

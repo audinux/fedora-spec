@@ -25,7 +25,7 @@ Examples for BespokeSynth:
 
 %build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_datadir}/BespokeSynth/examples/Jam/
 cp -r *.bsk  %{buildroot}/%{_datadir}/BespokeSynth/examples/Jam/

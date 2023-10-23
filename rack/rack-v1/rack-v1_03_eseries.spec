@@ -86,14 +86,14 @@ sed -i -e "s/dep\/lib\/librtmidi.a/-lrtmidi/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 
 mkdir eseries_plugin
-tar xvfz %{SOURCE1} --directory=eseries_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=eseries_plugin --strip-components=1
 
 %build
 
 cd eseries_plugin
 %make_build RACK_DIR=.. PREFIX=/usr LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/ESeries/
 cp -r eseries_plugin/dist/ESeries/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/ESeries/

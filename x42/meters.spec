@@ -68,7 +68,7 @@ as well as a mono:
 export OPTIMIZATIONS="$CFLAGS"
 %make_build PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 fat1_VERSION=%{version} STRIP=true
 
-%install 
+%install
 
 %make_install PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 fat1_VERSION=%{version} STRIP=true
 

@@ -23,7 +23,7 @@ BuildRequires: systemd-devel
 %description
 Web Framework to build REST APIs, Webservices or any HTTP endpoint in C language.
 Can stream large amount of data, integrate JSON data with Jansson,
-and create websocket services 
+and create websocket services
 
 %package devel
 Summary:  Development files for %{name}

@@ -6,8 +6,8 @@ Name: qm-vamp-plugins
 Version: 1.8.0
 Release: 2%{?dist}
 Summary: A set of Vamp audio analysis plugins developed at the Centre for Digital Music.
-License: GLPv2	
-URL: https://code.soundsoftware.ac.uk/projects/qm-vamp-plugins/	
+License: GLPv2
+URL: https://code.soundsoftware.ac.uk/projects/qm-vamp-plugins/
 
 Vendor:       Audinux
 Distribution: Audinux

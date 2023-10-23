@@ -5,7 +5,7 @@
 Name:    fluida
 Version: 0.8
 Release: 1%{?dist}
-Summary: Fluidsynth as LV2 plugin 
+Summary: Fluidsynth as LV2 plugin
 License: BSD
 URL: https://github.com/brummer10/Fluida.lv2
 
@@ -36,9 +36,9 @@ Fluidsynth as LV2 plugin.
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Werror=format-security||g"`
 export CFLAGS=`echo $CFLAGS | sed -e "s|-Werror=format-security||g"`
 
-%make_build STRIP=true 
+%make_build STRIP=true
 
-%install 
+%install
 
 %make_install INSTALL_DIR=/usr/%{_lib}/lv2 STRIP=true
 

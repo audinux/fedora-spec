@@ -34,7 +34,7 @@ BuildRequires: simde-devel
 Tunefish is a very tiny virtual analog synthesizer.
 It is developed to fit into about 10kb of compressed machine code
 while still producing an audio quality that can compete with
-commercial synthesizers. 
+commercial synthesizers.
 
 %prep
 %setup -n %{name}-%{commit0}
@@ -53,7 +53,7 @@ cp %{SOURCE1} src/tunefish4/Builds/LinuxMakefile/Makefile
 cd src/tunefish4/Builds/LinuxMakefile
 %make_build CONFIG=Release STRIP=true V=1
 
-%install 
+%install
 
 cd src/tunefish4/Builds/LinuxMakefile
 

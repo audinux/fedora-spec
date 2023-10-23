@@ -29,7 +29,7 @@ Source2: AriaSalvatrice_plugin.json
 Patch0: rack-v1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
-BuildRequires: cmake 
+BuildRequires: cmake
 BuildRequires: git
 BuildRequires: alsa-lib-devel
 BuildRequires: libsamplerate-devel
@@ -86,7 +86,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir AriaSalvatrice_plugin
-tar xvfz %{SOURCE1} --directory=AriaSalvatrice_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=AriaSalvatrice_plugin --strip-components=1
 
 cp -n %{SOURCE2} AriaSalvatrice_plugin/plugin.json || true
 
@@ -98,7 +98,7 @@ make RACK_DIR=.. dep/lib/quickjs/libquickjs.a
 
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/AriaSalvatrice/
 cp -r AriaSalvatrice_plugin/dist/AriaSalvatrice/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/AriaSalvatrice/

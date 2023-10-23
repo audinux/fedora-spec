@@ -22,13 +22,13 @@ Radium Compressor is the system compressor in Radium,
 but distributed as a standalone jack application.
 
 Radium Compressor uses the stereo compressor found in
-effect.lib in the Faust distribution. 
+effect.lib in the Faust distribution.
 
 %prep
 %autosetup -p1 -n radium_compressor-%{version}
 
 find -name "*.h" -exec chmod 0644 {} \;
-# see https://bugzilla.redhat.com/show_bug.cgi?id=904658 for 
+# see https://bugzilla.redhat.com/show_bug.cgi?id=904658 for
 # justification of non-standard optflags
 sed -i -e 's|-O3 -Wall -msse -mfpmath=sse|%{optflags} %{?msse_flags} -O3|' Makefile
 

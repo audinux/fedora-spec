@@ -122,7 +122,7 @@ Requires: qt5-qtquickcontrols2
 Requires: ( alsa-plugins-pulse if pulseaudio )
 Requires: ( pipewire-alsa      if pipewire )
 # For crashpad binary
-# Requires: openssl1.1 
+# Requires: openssl1.1
 Requires: gnu-free-sans-fonts
 Requires: gnu-free-serif-fonts
 Requires: hicolor-icon-theme

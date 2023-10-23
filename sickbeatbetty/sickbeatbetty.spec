@@ -61,7 +61,7 @@ sed -i -e "s|Sick Beat Betty|SickBeatBetty|g" CMakeLists.txt
 %cmake -DCMAKE_CXX_FLAGS="$CXXFLAGS -include utility -fPIC"
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_bindir}

@@ -55,4 +55,4 @@ No loss LV2 sound effect plugin
 - fix install for the next April 1th ...
 
 * Thu Apr 01 2021 Yann Collette <ycollette dot nospam at free.fr> 1.2.0-1
-- initial release 
+- initial release

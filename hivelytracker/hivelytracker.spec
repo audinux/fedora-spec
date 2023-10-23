@@ -6,7 +6,7 @@
 Name:    hivelytracker
 Version: 1.9
 Release: 1%{?dist}
-Summary: Chip music tracker based on AHX 
+Summary: Chip music tracker based on AHX
 License: BSD3
 URL:     https://github.com/pete-gordon/hivelytracker
 
@@ -19,10 +19,10 @@ Distribution: Audinux
 Source0: hivelytracker.tar.gz
 Source1: source_hivelytracker.sh
 
-BuildRequires: gcc	
+BuildRequires: gcc
 BuildRequires: make
-BuildRequires: SDL_image-devel	
-BuildRequires: SDL_ttf-devel	
+BuildRequires: SDL_image-devel
+BuildRequires: SDL_ttf-devel
 BuildRequires: sdl12-compat-devel
 BuildRequires: gtk3-devel
 BuildRequires: desktop-file-utils
@@ -32,7 +32,7 @@ Requires: dejavu-sans-fonts
 Requires: dejavu-serif-fonts
 
 %description
-Format created in the mid '90s, AHX was designed to create a very SID-like sound on the Amiga. 
+Format created in the mid '90s, AHX was designed to create a very SID-like sound on the Amiga.
 ("Sound Interface Device" (SID) was a chip used in Commodore 64 ...)
 HivelyTracker offers the following features over AHX:
 - Multichannel (4 to 16 channels)

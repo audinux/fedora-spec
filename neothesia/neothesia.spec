@@ -41,7 +41,7 @@ export RUST_BACKTRACE=1
 %make_build build-app
 # %make_build build-recorder
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 -d %{buildroot}/%{_datadir}/neothesia/sf2/

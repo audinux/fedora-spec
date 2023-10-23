@@ -74,7 +74,7 @@ sed -i -e "s/-march=nehalem//g" dep.mk
 # For -O2 usage
 sed -i -e "s/-O3/-O2/g" compile.mk
 sed -i -e "s/-O3/-O2/g" dep.mk
-sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk 
+sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk
 
 sed -i -e "47,49d" dep.mk
 
@@ -133,7 +133,7 @@ sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
 mkdir vcv_recorder_plugin
-tar xvfz %{SOURCE1} --directory=vcv_recorder_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=vcv_recorder_plugin --strip-components=1
 cp %{SOURCE2} vcv_recorder_plugin/Makefile
 
 %build
@@ -144,7 +144,7 @@ export CXXFLAGS="-fpermissive -include libavutil/channel_layout.h $CXXFLAGS"
 cd vcv_recorder_plugin
 %make_build RACK_DIR=.. PREFIX=/usr LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/VCV-Recorder/
 cp -r vcv_recorder_plugin/dist/VCV-Recorder/* %{buildroot}%{_libexecdir}/Rack2/plugins/VCV-Recorder/

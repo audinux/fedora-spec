@@ -54,7 +54,7 @@ mkdir -p %{buildroot}%{_datadir}/doc/%{name}
 cp -a usr/share/%{name}/* %{buildroot}%{_datadir}/%{name}/
 cp -a usr/share/doc/%{name}/Mandelbulber_Manual.pdf %{buildroot}%{_datadir}/doc/%{name}/
 
-sed -i -e "s/Graphics;3DGraphics;Math;Science/Graphics/g" %{buildroot}/%{_datadir}/applications/%{name}.desktop 
+sed -i -e "s/Graphics;3DGraphics;Math;Science/Graphics/g" %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 desktop-file-install                         \
   --add-category="Graphics"		     \

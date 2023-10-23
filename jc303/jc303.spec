@@ -72,7 +72,7 @@ mv VST_SDK/VST2_SDK vstsdk2.4
 %cmake
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 cp -ra %{__cmake_builddir}/JC303_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/

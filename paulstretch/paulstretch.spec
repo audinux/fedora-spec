@@ -73,7 +73,7 @@ cd Builds/LinuxMakefile
 
 %make_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst/
 install -m 755 -d %{buildroot}%{_libdir}/vst3/

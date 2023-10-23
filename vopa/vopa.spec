@@ -29,7 +29,7 @@ A LV2 amplifier controlled via MIDI messages
 %set_build_flags
 %make_build INSTALLDIR=%{buildroot}/%{_libdir}/lv2/
 
-%install 
+%install
 
 %make_install INSTALLDIR=%{buildroot}/%{_libdir}/lv2/
 

@@ -85,7 +85,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir JLmod_plugin
-tar xvfz %{SOURCE1} --directory=JLmod_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=JLmod_plugin --strip-components=1
 
 cp -n %{SOURCE2} JLmod_plugin/plugin.json || true
 
@@ -94,7 +94,7 @@ cp -n %{SOURCE2} JLmod_plugin/plugin.json || true
 cd JLmod_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/JLmod/
 cp -r JLmod_plugin/dist/JLmod/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/JLmod/

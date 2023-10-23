@@ -43,7 +43,7 @@ sed -i -e "s/-Wall/-Wall \$(CXXFLAGS)/g" Makefile
 
 make SYS_LIB_PATH=%{_libdir} INSTRUCTION_SET=sse2
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/js80p.vst3/Contents/%{_target}/
 install -m 755 dist/js80p-dev-linux-64bit-sse2-vst3_single_file/js80p.vst3 %{buildroot}/%{_libdir}/vst3/js80p.vst3/Contents/%{_target}/js80p.so

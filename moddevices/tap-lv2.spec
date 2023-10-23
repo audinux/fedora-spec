@@ -38,7 +38,7 @@ export SPECCFLAGS="$CFLAGS"
 
 %make_build INSTALL_PATH=%{_libdir}/lv2
 
-%install 
+%install
 
 %make_install INSTALL_PATH=%{_libdir}/lv2
 

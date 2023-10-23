@@ -81,7 +81,7 @@ sed -i -e "s/-march=nehalem//g" dep.mk
 # For -O2 usage
 sed -i -e "s/-O3/-O2/g" compile.mk
 sed -i -e "s/-O3/-O2/g" dep.mk
-sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk 
+sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk
 
 # Remove static gcc lib
 sed -i -e "s/-static-libstdc++ -static-libgcc//g" Makefile
@@ -138,7 +138,7 @@ sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
 mkdir Starling_Via_plugin
-tar xvfz %{SOURCE1} --directory=Starling_Via_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=Starling_Via_plugin --strip-components=1
 
 cp -n %{SOURCE2} Starling_Via_plugin/plugin.json || true
 
@@ -147,7 +147,7 @@ cp -n %{SOURCE2} Starling_Via_plugin/plugin.json || true
 cd Starling_Via_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/Starling_Via/
 cp -r Starling_Via_plugin/dist/Starling_Via/* %{buildroot}%{_libexecdir}/Rack2/plugins/Starling_Via/

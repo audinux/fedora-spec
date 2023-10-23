@@ -82,7 +82,7 @@ cd ..
 
 ./build-linux.sh build
 
-%install 
+%install
 
 export HOME=`pwd`
 mkdir .vst3

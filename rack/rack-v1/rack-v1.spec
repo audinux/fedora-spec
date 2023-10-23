@@ -149,7 +149,7 @@ cd ..
 
 %make_build PREFIX=/usr LIBDIR=%{_lib}
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_bindir}/
 mkdir -p %{buildroot}%{_datadir}/pixmaps/

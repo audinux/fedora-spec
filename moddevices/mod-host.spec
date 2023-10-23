@@ -93,4 +93,4 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 
 %changelog
 * Tue Jul 27 2021 Yann Collette <ycollette.nospam@free.fr> - 0.10.6-1
-- initial spec 
+- initial spec

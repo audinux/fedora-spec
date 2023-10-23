@@ -23,8 +23,8 @@ Requires: %{name}-libs%{?_isa} = %{version}-%{release}
 %description
 The Swami Project - Sampled Waveforms And Musical Instruments - is a collection
 of free software for editing and sharing MIDI instruments and sounds. Swami
-aims to provide an instrument editing and sharing software for instrument 
-formats such as SoundFont, DLS and GigaSampler. 
+aims to provide an instrument editing and sharing software for instrument
+formats such as SoundFont, DLS and GigaSampler.
 
 %package libs
 Summary: MIDI instrument and sound editor library

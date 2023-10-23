@@ -40,12 +40,12 @@ export DEPCFLAGS="$CFLAGS"
 install -m 755 -d %{buildroot}/%{_bindir}/
 cp bin/simple_osc %{buildroot}/%{_bindir}/
 
-%files 
+%files
 %doc README.md
 %license LICENSE
 %{_bindir}/*
 
 %changelog
 * Wed Jul 19 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
-- initial build 
+- initial build
 

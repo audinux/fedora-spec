@@ -81,9 +81,9 @@ cmake \
 %endif
       -DCMAKE_BUILD_TYPE=DEBUG ..
 
-%make_build 
+%make_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_bindir}/
 cp build/ShortcircuitXT_artefacts/DEBUG/Standalone/Shortcircuit_XT %{buildroot}/%{_bindir}/ShortcitcuitXT
@@ -133,7 +133,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 - update to last nightly
 
 * Mon May 23 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
-- Fix for Fedora 36    
+- Fix for Fedora 36
 
 * Thu Oct 07 2021 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
 - Fix for Fedora 35

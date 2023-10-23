@@ -5,7 +5,7 @@
 Name: aether
 Version: 1.2.1
 Release: 1%{?dist}
-Summary:  An algorithmic reverb LV2 based on Cloudseed 
+Summary:  An algorithmic reverb LV2 based on Cloudseed
 License: MIT
 URL: https://dougal-s.github.io/Aether/
 
@@ -13,7 +13,7 @@ URL: https://dougal-s.github.io/Aether/
 # ./aether-source.sh <TAG>
 # ./aether-source.sh v1.2.1
 
-Source0: Aether.tar.gz	
+Source0: Aether.tar.gz
 Source1: aether-source.sh
 
 BuildRequires: gcc gcc-c++

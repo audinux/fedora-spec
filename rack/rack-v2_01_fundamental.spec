@@ -81,7 +81,7 @@ sed -i -e "s/-march=nehalem//g" dep.mk
 # For -O2 usage
 sed -i -e "s/-O3/-O2/g" compile.mk
 sed -i -e "s/-O3/-O2/g" dep.mk
-sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk 
+sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk
 
 # Remove static gcc lib
 sed -i -e "s/-static-libstdc++ -static-libgcc//g" Makefile
@@ -138,7 +138,7 @@ sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
 mkdir fundamental_plugin
-tar xvfz %{SOURCE1} --directory=fundamental_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=fundamental_plugin --strip-components=1
 
 # TODO: C++ error - check periodically if the problem is fixed or not.
 sed -i -e "s/using VCVBezelLightBigWhite = LightButton/using VCVBezelLightBigWhite = struct rack::componentlibrary::Lightbutton/g" fundamental_plugin/src/Logic.cpp
@@ -173,7 +173,7 @@ cd fundamental_plugin
 
 %make_build RACK_DIR=.. PREFIX=/usr LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/Fundamental/
 cp -r fundamental_plugin/dist/Fundamental/* %{buildroot}%{_libexecdir}/Rack2/plugins/Fundamental/

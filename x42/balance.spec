@@ -53,7 +53,7 @@ fall-off) for input and output signals.
 export OPTIMIZATIONS="$CFLAGS"
 %make_build PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 fat1_VERSION=%{version} STRIP=true FONTFILE=/usr/share/fonts/gnu-free/FreeSansBold.ttf
 
-%install 
+%install
 
 %make_install PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 fat1_VERSION=%{version} STRIP=true FONTFILE=/usr/share/fonts/gnu-free/FreeSansBold.ttf
 

@@ -43,9 +43,9 @@ sed -i -e "s|lib/lv2|%{_lib}/lv2|g" src/CMakeLists.txt
 %cmake
 %cmake_build
 
-%install 
+%install
 
-%cmake_install	
+%cmake_install
 
 %files
 %doc README

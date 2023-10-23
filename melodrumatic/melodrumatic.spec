@@ -59,7 +59,7 @@ Projucer60 --resave Melodrumatic.jucer
 cd Builds/LinuxMakefile
 %make_build CONFIG=Release STRIP=true
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_bindir}/
 cp Builds/LinuxMakefile/build/Melodrumatic %{buildroot}%{_bindir}/

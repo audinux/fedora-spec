@@ -30,7 +30,7 @@ BuildRequires: libXinerama-devel
 Common Music is a music composition system that transforms high-level algorithmic representations of musical processes and structure into a variety of control protocols for sound synthesis and display.
 Its main user application is Grace (Graphical Realtime Algorithmic Composition Environment) a drag-and-drop, cross-platform app implemented in JUCE (C++) and S7 Scheme.
 In Grace musical algorithms can run in real time, or faster-than-real time when doing file-based composition.
-Grace provides two coding languages for designing musical algorithms: S7 Scheme, and SAL, an easy-to-learn but expressive algol-like language. 
+Grace provides two coding languages for designing musical algorithms: S7 Scheme, and SAL, an easy-to-learn but expressive algol-like language.
 
 %prep
 %autosetup -n cm-%{version}

@@ -31,7 +31,7 @@ libreproc Development Files
 %cmake
 %cmake_build
 
-%install 
+%install
 
 %cmake_install
 

@@ -142,7 +142,7 @@ find %{buildroot} -executable -type f -name *.html -exec chmod -x '{}' \+
 %files
 %doc README.md
 %license COPYRIGHT LICENSE
-%{_bindir}/%{name} 
+%{_bindir}/%{name}
 %{_libdir}/%{name}/
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png

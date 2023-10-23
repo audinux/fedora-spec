@@ -78,7 +78,7 @@ sed -i -e "s/-march=nehalem//g" dep.mk
 # For -O2 usage
 sed -i -e "s/-O3/-O2/g" compile.mk
 sed -i -e "s/-O3/-O2/g" dep.mk
-sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(MKCFLAGS)/g" dep.mk 
+sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(MKCFLAGS)/g" dep.mk
 
 # Remove static gcc lib
 sed -i -e "s/-static-libstdc++ -static-libgcc//g" Makefile
@@ -135,7 +135,7 @@ sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
 mkdir BaconMusic_plugin
-tar xvfz %{SOURCE1} --directory=BaconMusic_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=BaconMusic_plugin --strip-components=1
 
 cp -n %{SOURCE2} BaconMusic_plugin/plugin.json || true
 
@@ -149,7 +149,7 @@ export MYCXXFLAGS="`pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I
 cd BaconMusic_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/BaconMusic/
 cp -r BaconMusic_plugin/dist/BaconMusic/* %{buildroot}%{_libexecdir}/Rack2/plugins/BaconMusic/

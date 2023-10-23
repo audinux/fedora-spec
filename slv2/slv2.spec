@@ -23,16 +23,16 @@ Obsoletes: %{name}-examples < 0.6
 Provides: %{name}-examples = %{version}-%{release}
 
 %description
-SLV2 is a library to make the use of LV2 plugins as simple as possible for 
-applications. It is written in standard C using the Redland RDF toolkit. The 
+SLV2 is a library to make the use of LV2 plugins as simple as possible for
+applications. It is written in standard C using the Redland RDF toolkit. The
 Data (RDF) and code (shared library) functionality in SLV2 is strictly
 separated so it is simple to control where each is used (e.g. it is possible
-to discover/investigate plugins and related data without loading any shared 
+to discover/investigate plugins and related data without loading any shared
 libraries, avoiding the associated risks).
 
 %package devel
 Summary: Development libraries and headers for %{name}
-Requires: lv2-devel 
+Requires: lv2-devel
 Requires: redland-devel
 Requires: pkgconfig
 Requires: %{name}%{?_isa} = %{version}-%{release}
@@ -48,7 +48,7 @@ libraries, avoiding the associated risks).
 This package contains the headers and development libraries for SLV2.
 
 %prep
-%autosetup -p1 
+%autosetup -p1
 
 # Fix possible multilib issues
 sed -i 's|/lib/|/%{_lib}/|g' src/world.c

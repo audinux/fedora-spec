@@ -79,7 +79,7 @@ sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \
 %cmake -DCMAKE_CXX_FLAGS="-include utility -fPIC $CXXFLAGS"
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
@@ -88,7 +88,7 @@ install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 -d %{buildroot}%{_datadir}/odin2/Soundbanks/
 
 cp -r Soundbanks/* %{buildroot}%{_datadir}/odin2/Soundbanks/
-rm %{buildroot}%{_datadir}/odin2/Soundbanks/User\ Patches/.gitignore 
+rm %{buildroot}%{_datadir}/odin2/Soundbanks/User\ Patches/.gitignore
 
 install -m 755 -p %{__cmake_builddir}/Odin2_artefacts/Standalone/Odin2 %{buildroot}/%{_bindir}/
 cp -ra %{__cmake_builddir}/Odin2_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/

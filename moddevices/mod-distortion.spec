@@ -27,7 +27,7 @@ mod-distortion LV2 set of plugins from portalmod
 %build
 %make_build INSTALL_PATH=%{buildroot}%{_libdir}/lv2
 
-%install 
+%install
 %make_install INSTALL_PATH=%{buildroot}%{_libdir}/lv2
 
 %files

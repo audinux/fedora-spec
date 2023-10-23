@@ -74,7 +74,7 @@ LV2 version of %{name}
 
 %make_build PREFIX=/usr LIBDIR=%{_lib} SKIP_STRIPPING=true
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_datadir}/ProM/data/
 cp -ra plugins/ProM/projectM/presets %{buildroot}/%{_datadir}/ProM/data/

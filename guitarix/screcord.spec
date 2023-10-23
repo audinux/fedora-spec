@@ -39,7 +39,7 @@ cd Xputty
 cd ..
 %make_build INSTALL_DIR=%{buildroot}%{_libdir}/lv2 STRIP=true
 
-%install 
+%install
 
 %make_install INSTALL_DIR=%{buildroot}%{_libdir}/lv2 STRIP=true
 

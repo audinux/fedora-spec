@@ -26,7 +26,7 @@ BuildRequires: lv2-devel
 
 %description
 Drumrox is LV2 drummachine (DrMr fork) to load Hydrogen drumkits.
-The main goal of Drumrox is to keep it compatible with MODERN Hydrogen kit format. 
+The main goal of Drumrox is to keep it compatible with MODERN Hydrogen kit format.
 
 %prep
 %autosetup -n %{name}-%{version}

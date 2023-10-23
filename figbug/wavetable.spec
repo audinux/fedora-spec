@@ -63,7 +63,7 @@ sed -i -e "s/-static-libstdc++/-lstdc++/g" CMakeLists.txt
 %cmake
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/

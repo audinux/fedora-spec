@@ -60,9 +60,9 @@ export HOME=`pwd`
 mkdir -p .vst3
 
 %cmake -DCMAKE_CXX_FLAGS="-include utility -fPIC"
-%cmake_build 
+%cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 -p %__cmake_builddir/SonoBus_artefacts/Standalone/sonobus %{buildroot}/%{_bindir}/

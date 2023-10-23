@@ -55,4 +55,4 @@ cp vst/target/release/libdm_graindelay.so %{buildroot}/%{_libdir}/vst/
 
 %changelog
 * Wed May 24 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1-bf8e8f71-1
-- initial spec 
+- initial spec

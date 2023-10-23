@@ -41,7 +41,7 @@ sed -i -e "s/strip /true /g" Makefile
 
 %build
 
-%make_build CFLAGS="%{build_cxxflags}" 
+%make_build CFLAGS="%{build_cxxflags}"
 
 %install
 

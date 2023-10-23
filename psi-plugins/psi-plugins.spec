@@ -46,27 +46,27 @@ Summary: PSI Plugins / Midi Rnd LV2 plugin
 %description -n lv2-midi_rnd-psi
 midi_rnd is a simple MIDI random note generator for the inspirationally bereft.
 
-It receives incoming note messages and returns a randomized note of the same 
-velocity with the parameters defined by octave range and scale. The generated 
+It receives incoming note messages and returns a randomized note of the same
+velocity with the parameters defined by octave range and scale. The generated
 note is produced relative to the incoming key.
 
 An attempt to map Note Off midi messages to previously recevied note on
-messages is made but is only reliable for sequential input. As a result some 
-NoteOn messages may be left hanging. 
+messages is made but is only reliable for sequential input. As a result some
+NoteOn messages may be left hanging.
 
 %package -n lv2-sidechain_gate-psi
 Summary: PSI Plugins / Sidechain Gate LV2 plugin
 
 %description -n lv2-sidechain_gate-psi
-This is a stereo gate with optional sidechain input based on the Gate plugin by Steve Harris. 
+This is a stereo gate with optional sidechain input based on the Gate plugin by Steve Harris.
 
 %package -n lv2-super_welle
 Summary: PSI Plugins / Super Welle LV2 plugin
 
 %description -n lv2-super_welle
-super_welle is a 2x16 oscillator virtual analog synthesizer. Originally it 
-started out as an experiment in simulating the super saw of the 
-Roland JP8000/JP8080 but has since widened is scope. 
+super_welle is a 2x16 oscillator virtual analog synthesizer. Originally it
+started out as an experiment in simulating the super saw of the
+Roland JP8000/JP8080 but has since widened is scope.
 
 %prep
 %autosetup -p1 -n psi-plugins-%{commit0}
@@ -120,4 +120,4 @@ cp super_welle.lv2/README.md        README.super_welle.md
 - multi-packages
 
 * Thu Nov 2 2017 Yann Collette <ycollette dot nospam at free.fr> 0.0.1-1
-- initial release 
+- initial release

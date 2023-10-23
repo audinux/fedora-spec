@@ -44,7 +44,7 @@ sed -i -e "s/strip/#strip/g" Makefile
 
 %make_build -j1
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 src/amuc %{buildroot}/%{_bindir}/

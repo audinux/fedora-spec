@@ -50,7 +50,7 @@ popd
 
 %files
 %defattr(-,root,root,-)
-%doc AUTHORS README* 
+%doc AUTHORS README*
 %{_bindir}/zita-*
 %{_mandir}/*/*
 

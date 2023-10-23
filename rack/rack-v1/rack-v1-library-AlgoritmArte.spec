@@ -85,7 +85,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir AlgoritmArte_plugin
-tar xvfz %{SOURCE1} --directory=AlgoritmArte_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=AlgoritmArte_plugin --strip-components=1
 
 cp -n %{SOURCE2} AlgoritmArte_plugin/plugin.json || true
 
@@ -94,7 +94,7 @@ cp -n %{SOURCE2} AlgoritmArte_plugin/plugin.json || true
 cd AlgoritmArte_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/AlgoritmArte/
 cp -r AlgoritmArte_plugin/dist/AlgoritmArte/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/AlgoritmArte/

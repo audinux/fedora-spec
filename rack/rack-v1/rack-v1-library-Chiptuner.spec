@@ -85,7 +85,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir Chiptuner_plugin
-tar xvfz %{SOURCE1} --directory=Chiptuner_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=Chiptuner_plugin --strip-components=1
 
 cp -n %{SOURCE2} Chiptuner_plugin/plugin.json || true
 
@@ -94,7 +94,7 @@ cp -n %{SOURCE2} Chiptuner_plugin/plugin.json || true
 cd Chiptuner_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Chiptuner/
 cp -r Chiptuner_plugin/dist/Chiptuner/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Chiptuner/

@@ -79,4 +79,4 @@ Multi channel MIDI step sequencer LV2 plugin with a variable matrix
 - update to 1.4.0-1
 
 * Sun Dec 29 2019 Yann Collette <ycollette dot nospam at free.fr> 1.2.0-1
-- initial release 
+- initial release

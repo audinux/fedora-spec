@@ -85,7 +85,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir trowaSoft_plugin
-tar xvfz %{SOURCE1} --directory=trowaSoft_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=trowaSoft_plugin --strip-components=1
 
 cp -n %{SOURCE2} trowaSoft_plugin/plugin.json || true
 
@@ -95,7 +95,7 @@ cd trowaSoft_plugin
 export CXXFLAGS="-include iterator -include utility -include cstdint $CXXFLAGS"
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/trowaSoft/
 cp -r trowaSoft_plugin/dist/trowaSoft/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/trowaSoft/

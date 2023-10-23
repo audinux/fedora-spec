@@ -38,7 +38,7 @@ Matching Equalizer to apply EQ curve from on source to a other source.
 
 %make_build INSTALL_DIR=%{buildroot}%{_libdir}/lv2 STRIP=true
 
-%install 
+%install
 
 %make_install INSTALL_DIR=%{buildroot}%{_libdir}/lv2 STRIP=true
 

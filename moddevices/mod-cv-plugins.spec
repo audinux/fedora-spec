@@ -6,7 +6,7 @@
 Name:    mod-cv-plugins
 Version: 0.1.%{shortcommit0}
 Release: 1%{?dist}
-Summary: Control Voltage Plugins 
+Summary: Control Voltage Plugins
 License: GPL-2.0-or-later
 URL:     https://github.com/moddevices/mod-cv-plugins
 

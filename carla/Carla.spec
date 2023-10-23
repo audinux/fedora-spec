@@ -146,10 +146,10 @@ export LDFLAGS=
 make win32 CC=i686-w64-mingw32-gcc CXX=i686-w64-mingw32-g++
 make win64 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++
 
-make wine32 
-make wine64 
+make wine32
+make wine64
 
-%install 
+%install
 %make_install PREFIX=%{_prefix} LIBDIR=%{_libdir}
 
 # Create a vst directory
@@ -372,7 +372,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 * Wed Dec 19 2018 Martin Gansser <martinkg@fedoraproject.org> - 2.0.0-0.2.20181212git51f2073
 - Add subpkg vst
 - Remove group tag
-- Remove old BR qt-devel	
+- Remove old BR qt-devel
 - New git release use correct desktop files
 - Use macro %%{_lib} libdir fix
 - Use %%{__python3} macro

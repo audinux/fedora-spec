@@ -20,7 +20,7 @@ Requires:      lv2
 %global __provides_exclude_from ^%{_libdir}/lv2/.*$
 
 %description
-Arty FX is a plugin bundle of artistic "RT" effects. The aim of this plugin 
+Arty FX is a plugin bundle of artistic "RT" effects. The aim of this plugin
 collection is to allow the designing of your sound just as you desired using
 a fast, efficient workflow.
 

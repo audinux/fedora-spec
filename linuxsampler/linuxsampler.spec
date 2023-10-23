@@ -140,7 +140,7 @@ rm -f %{buildroot}/%{_libdir}/lv2/linuxsampler.lv2/linuxsampler.la
 
 * Tue May 25 2010 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 1.0.0-3
 - remove patch (does not seem to affect linuxsampler but remove it
-  anyway), the problem with pitch bend was range being set to 0 in 
+  anyway), the problem with pitch bend was range being set to 0 in
   certain instruments - that can be edited with gigedit (right click
   on the instrument to get to the options panel)
 
@@ -170,7 +170,7 @@ rm -f %{buildroot}/%{_libdir}/lv2/linuxsampler.lv2/linuxsampler.la
   directory
 
 * Wed Jan 17 2007 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.4.0-2
-- assembler was being mistakenly turned on despite --disable-asm, 
+- assembler was being mistakenly turned on despite --disable-asm,
   default now is off and nothing is needed (if disable-asm is used
   asm is turned on!)
 
@@ -183,11 +183,11 @@ rm -f %{buildroot}/%{_libdir}/lv2/linuxsampler.lv2/linuxsampler.la
 - updated to 0.3.3
 - assembler optimizations are broken, disable them
 
-* Sun Jul  3 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Sun Jul  3 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - added gcc4 patch, posted by Andreas Persson in the linuxsampler
   mailing list
 
-* Fri Jul  1 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Fri Jul  1 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - added sse flags to gig engine build
 
 * Wed Jun 29 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.3.2-1

@@ -84,7 +84,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir 8Mode_plugin
-tar xvfz %{SOURCE1} --directory=8Mode_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=8Mode_plugin --strip-components=1
 
 cp -n %{SOURCE2} 8Mode_plugin/plugin.json || true
 
@@ -93,7 +93,7 @@ cp -n %{SOURCE2} 8Mode_plugin/plugin.json || true
 cd 8Mode_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/8Mode/
 cp -r 8Mode_plugin/dist/8Mode/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/8Mode/

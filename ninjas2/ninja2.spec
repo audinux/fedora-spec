@@ -61,7 +61,7 @@ cp bin/ninjas2-vst.so %{buildroot}/%{_libdir}/vst/
 
 %changelog
 * Sun Oct 4 2020 Yann Collette <ycollette dot nospam at free.fr> 0.2.0-2
-- debug fixes 
+- debug fixes
 
 * Mon Jan 20 2020 Yann Collette <ycollette dot nospam at free.fr> 0.2.0-1
-- initial release 
+- initial release

@@ -17,7 +17,7 @@ BuildRequires: eigen3-devel
 BuildRequires: lv2-devel
 
 %description
-Aida DSP's audio plugins in lv2 format 
+Aida DSP's audio plugins in lv2 format
 
 %prep
 %autosetup -n aidadsp-lv2

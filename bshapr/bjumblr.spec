@@ -23,7 +23,7 @@ BuildRequires: cairo-devel
 BuildRequires: libsndfile-devel
 
 %description
-B.Jumblr is neither a sample slicer nor a step sequencer. 
+B.Jumblr is neither a sample slicer nor a step sequencer.
 From the technical POV B.Jumblr is a sequencer pattern-controlled audio delay effect.
 
 %prep
@@ -87,4 +87,4 @@ From the technical POV B.Jumblr is a sequencer pattern-controlled audio delay ef
 - fix for Fedora 32
 
 * Thu Apr 2 2020 Yann Collette <ycollette dot nospam at free.fr> 0.2.0-1
-- initial release 
+- initial release

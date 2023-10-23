@@ -19,8 +19,8 @@ BuildArch:    noarch
 Requires: jconvolver
 
 %description
-Inpulse responses for jconvolver, they match the configuration files 
-distributed with jconvolver. 
+Inpulse responses for jconvolver, they match the configuration files
+distributed with jconvolver.
 
 %prep
 %autosetup -n reverbs

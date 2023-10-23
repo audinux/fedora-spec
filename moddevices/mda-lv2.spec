@@ -37,7 +37,7 @@ MDA LV2 set of plugins synth from portalmod
 ./waf configure --libdir=%{buildroot}%{_libdir}
 ./waf
 
-%install 
+%install
 ./waf -j1 install
 
 %files

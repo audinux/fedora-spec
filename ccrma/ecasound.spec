@@ -32,7 +32,7 @@ BuildRequires: ruby-devel
 BuildRequires: python2
 BuildRequires: python2-devel
 BuildRequires: python3
-BuildRequires: python2-devel 
+BuildRequires: python2-devel
 BuildRequires: ncurses-devel
 BuildRequires: readline-devel
 BuildRequires: alsa-lib-devel
@@ -45,7 +45,7 @@ BuildRequires: python3-docutils
 BuildRequires: liboil-devel
 BuildRequires: texlive
 BuildRequires: texlive-latex-bin-bin
-BuildRequires: texlive-texlive-scripts-extra 
+BuildRequires: texlive-texlive-scripts-extra
 BuildRequires: texlive-metafont-bin
 BuildRequires: texlive-comment
 BuildRequires: ladspa
@@ -54,19 +54,19 @@ BuildRequires: liblo-devel
 
 %description
 Ecasound is a software package designed for multitrack audio
-processing. It can be used for simple tasks like audio playback, 
-recording and format conversions, as well as for multitrack effect 
-processing, mixing, recording and signal recycling. Ecasound supports 
-a wide range of audio inputs, outputs and effect algorithms. 
+processing. It can be used for simple tasks like audio playback,
+recording and format conversions, as well as for multitrack effect
+processing, mixing, recording and signal recycling. Ecasound supports
+a wide range of audio inputs, outputs and effect algorithms.
 Effects and audio objects can be combined in various ways, and their
-parameters can be controlled by operator objects like oscillators 
-and MIDI-CCs. A versatile console mode user-interface is included 
+parameters can be controlled by operator objects like oscillators
+and MIDI-CCs. A versatile console mode user-interface is included
 in the package.
 
 %package devel
 Summary:  Ecasound - development files
 Requires: ecasound >= %{version}-%{release}
-	
+
 %description devel
 The ecasound-devel package contains the header files and static libraries
 necessary for building apps like ecawave and ecamegapedal that
@@ -77,9 +77,9 @@ Summary:  Ecasound - libecasoundc
 Requires: ecasound >= %{version}-%{release}
 
 %description -n libecasoundc
-Ecasound - libecasoundc package. Provides 
+Ecasound - libecasoundc package. Provides
 C implementation of the Ecasound Control Interface
-(ECI). Both static library files and and header 
+(ECI). Both static library files and and header
 files are included in the package.
 
 %package -n pyecasound
@@ -212,7 +212,7 @@ rm -f %{buildroot}/%{_libdir}/libkvutils.la
 * Thu Feb  6 2014 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 2.9.1-1
 - fix rubyecasound path
 
-* Wed Dec 18 2013 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Wed Dec 18 2013 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - removed documentation build, the system can't seem to find hevea.sty
   although it is installed
 
@@ -231,7 +231,7 @@ rm -f %{buildroot}/%{_libdir}/libkvutils.la
 - updated to 2.6.0
 - properly build documentation (html & pdf)
 
-* Tue Jun 17 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Tue Jun 17 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - added gcc 4.3 patch from gentoo ebuild for fc9 build
 
 * Thu Sep 20 2007 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 2.4.6.1-1
@@ -245,7 +245,7 @@ rm -f %{buildroot}/%{_libdir}/libkvutils.la
 - updated to 2.4.5, fixed pyecasound build (lib64 issues)
 - spec file cleanup
 
-* Wed Dec  6 2006 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Wed Dec  6 2006 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - added --enable-shared to build on x86_64, deleted --disable-static
 
 * Fri Nov 24 2006 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 2.4.4-2
@@ -263,7 +263,7 @@ rm -f %{buildroot}/%{_libdir}/libkvutils.la
   using automake 1.4 and rh9 uses 1.6 by default
 - erase old rh73 conditionals
 
-* Mon May 30 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Mon May 30 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - changed obsolete tag Serial: to Epoch: and Copyright: to License:
 
 * Fri Apr  8 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 2.4.1-1
@@ -272,7 +272,7 @@ rm -f %{buildroot}/%{_libdir}/libkvutils.la
 * Tue Mar 22 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 2.4.0-1
 - updated to 2.4.0, added patch to fix arts support (from cvs snapshot)
 
-* Sun Dec 19 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Sun Dec 19 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - spec file cleanup
 
 * Mon Nov 15 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 2.3.5-1
@@ -322,7 +322,7 @@ rm -f %{buildroot}/%{_libdir}/libkvutils.la
 - updated to 2.2.1
 
 * Mon Jan 20 2003 Kai Vehmanen <kai.vehmanen@wakkanet.fi>
-- added Serial tag to differentiate between 2.2 pre and 
+- added Serial tag to differentiate between 2.2 pre and
   final releases
 
 * Sun Jan 19 2003 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
@@ -337,7 +337,7 @@ rm -f %{buildroot}/%{_libdir}/libkvutils.la
   file to avoid dependency to emacs/elisp)
 - removed unnecessary raw documentation source files
 - man files are no longer installed as doc files
-- use redhat style mandir location 
+- use redhat style mandir location
 
 * Thu Oct 31 2002 Kai Vehmanen <kai.vehmanen@wakkanet.fi>
 - minor layout changes
@@ -352,7 +352,7 @@ rm -f %{buildroot}/%{_libdir}/libkvutils.la
 - fixed the build procedure to handle static builds
 
 * Wed Oct 16 2002 Kai Vehmanen <kai.vehmanen@wakkanet.fi>
-- removed all shared libraries and subpackages containing 
+- removed all shared libraries and subpackages containing
   them
 - ecamonitor binary added to main package
 
@@ -360,7 +360,7 @@ rm -f %{buildroot}/%{_libdir}/libkvutils.la
 - changed libecasoundc versioning back to normal libtool style
 
 * Thu Apr 25 2002 Kai Vehmanen <kai.vehmanen@wakkanet.fi>
-- libraries put to separate subpackages, interface 
+- libraries put to separate subpackages, interface
   version numbers code to library names
 - ecasound-config renamed to libecasound-config
 - ecasoundc-config renamed to libecasoundc-config
@@ -405,7 +405,7 @@ rm -f %{buildroot}/%{_libdir}/libkvutils.la
 - Renamed ecatools programs.
 
 * Mon Apr 15 2000 Kai Vehmanen <kaiv@wakkanet.fi>
-- Removed dynamic linking to ALSA libraries. You 
+- Removed dynamic linking to ALSA libraries. You
   can get ALSA support by recompiling the source-RPM
   package.
 
@@ -413,11 +413,11 @@ rm -f %{buildroot}/%{_libdir}/libkvutils.la
 - Added libqtecasound to ecasound-qt.
 
 * Mon Nov 09 1999 Kai Vehmanen <kaiv@wakkanet.fi>
-- A complete reorganization. Ecasound distribution is now 
+- A complete reorganization. Ecasound distribution is now
   divided to three RPMs: ecasound, ecasound-qt and ecasound-devel.
 
 * Mon Nov 08 1999 Kai Vehmanen <kaiv@wakkanet.fi>
-- As Redhat stopped the RHCN project, so these rpms 
+- As Redhat stopped the RHCN project, so these rpms
   are again distributed via Redhat's contrib service
 - You can also get these from http://ecasound.seul.org/download
 

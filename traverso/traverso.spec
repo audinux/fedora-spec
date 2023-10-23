@@ -26,7 +26,7 @@ BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: filesystem
 BuildRequires: libsndfile-devel
 BuildRequires: wavpack-devel
-BuildRequires: flac-devel 
+BuildRequires: flac-devel
 BuildRequires: libogg-devel
 BuildRequires: libvorbis-devel
 BuildRequires: fftw-devel

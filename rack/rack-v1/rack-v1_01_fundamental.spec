@@ -83,7 +83,7 @@ sed -i -e "s/dep\/lib\/libsamplerate.a/-lsamplerate/g" Makefile
 sed -i -e "s/dep\/lib\/librtmidi.a/-lrtmidi/g" Makefile
 
 mkdir fundamental_plugin
-tar xvfz %{SOURCE1} --directory=fundamental_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=fundamental_plugin --strip-components=1
 
 # Remove libsamplerate download and install
 sed -i -e "7,20d" fundamental_plugin/Makefile
@@ -102,7 +102,7 @@ cd fundamental_plugin
 
 %make_build RACK_DIR=.. PREFIX=/usr LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Fundamental/
 cp -r fundamental_plugin/dist/Fundamental/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Fundamental/

@@ -50,7 +50,7 @@ Set of tools useful for audio production.
 
 %make_build PREFIX=/usr SKIP_STRIPPING=true
 
-%install 
+%install
 
 %make_install PREFIX=/usr SKIP_STRIPPING=true
 

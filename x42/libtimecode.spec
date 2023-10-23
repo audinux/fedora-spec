@@ -3,7 +3,7 @@
 Name:    libtimecode
 Version: 0.1.0
 Release: 1%{?dist}
-Summary: Deal with A/V timecode and framerates 
+Summary: Deal with A/V timecode and framerates
 License: GPL-2.0-or-later
 URL:     https://github.com/x42/libtimecode
 
@@ -48,7 +48,7 @@ export OPTIMIZATIONS="$CFLAGS"
 
 %make_build PREFIX=%{_prefix} STRIP=true
 
-%install 
+%install
 
 %make_install PREFIX=%{_prefix} STRIP=true
 

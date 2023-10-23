@@ -27,11 +27,11 @@ BuildRequires: zlib-devel
 BuildRequires: sed
 
 %description
-Enscribe creates digital audio watermark images from photgraphic images. 
-These images can only be seen using a third party frequency vs time display, 
+Enscribe creates digital audio watermark images from photgraphic images.
+These images can only be seen using a third party frequency vs time display,
 such as my favorite, Baudline (http://www.baudline.com).
-Images are still visible even after such audio mangling techniques as MP3/Ogg 
-compression, reverb, chorus, etc. Heavy EQ and flange can stripe out vertical 
+Images are still visible even after such audio mangling techniques as MP3/Ogg
+compression, reverb, chorus, etc. Heavy EQ and flange can stripe out vertical
 sections, but they can also ruin an otherwise good song too.
 
 %prep

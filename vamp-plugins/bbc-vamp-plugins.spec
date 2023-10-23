@@ -3,11 +3,11 @@
 # Category: Audio, Effect
 
 Name: bbc-vamp-plugins
-Version: 1.1	
+Version: 1.1
 Release: 2%{?dist}
-Summary: A BBC collection of audio feature extraction algorithms	
-License: Apache-2.0	
-URL: https://github.com/bbc/bbc-vamp-plugins	
+Summary: A BBC collection of audio feature extraction algorithms
+License: Apache-2.0
+URL: https://github.com/bbc/bbc-vamp-plugins
 
 Vendor:       Audinux
 Distribution: Audinux

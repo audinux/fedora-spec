@@ -23,14 +23,14 @@ Source0: https://github.com/Qirky/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{s
 BuildArch: noarch
 
 BuildRequires: python3-devel
-BuildRequires: supercollider-devel 
+BuildRequires: supercollider-devel
 BuildRequires: python3-setuptools
 
 Requires: supercollider
 
 %description
 Python3 programming environment providing a fast and user-friendly abstraction to SuperCollider.
-It also comes with its own IDE, which means it can be used straight out of the box; 
+It also comes with its own IDE, which means it can be used straight out of the box;
 all you need is Python and SuperCollider and you're ready to go!
 Note: no longer actively developed.
 

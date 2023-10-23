@@ -95,7 +95,7 @@ sleep 10
 %cmake
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/Prince.vst3/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/Prince.lv2/

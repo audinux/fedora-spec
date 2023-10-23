@@ -9,7 +9,7 @@ Version: 0.0.1
 Release: 1%{?dist}
 Summary: an audio time stretcher plugin using Rubberband
 License: GPL-2.0-only
-URL: https://github.com/clearly-broken-software/Stretcher	
+URL: https://github.com/clearly-broken-software/Stretcher
 
 # Usage: ./stretcher-source.sh <TAG>
 # ./stretcher-source.sh c7dc69b207e0fc44789450f1d2d121b9a887ddf1

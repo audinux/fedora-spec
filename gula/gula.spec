@@ -1,9 +1,9 @@
 Name: gula
 Version: 0.1
 Release: 1%{?dist}
-Summary: An LV2 plugin which is a combination of vibrato and tremelo.	
-License: GPL3	
-URL: https://github.com/steveb/gula-plugins	
+Summary: An LV2 plugin which is a combination of vibrato and tremelo.
+License: GPL3
+URL: https://github.com/steveb/gula-plugins
 
 Source0: https://github.com/steveb/gula-plugins/archive/refs/heads/master.zip#/gula-master.zip
 

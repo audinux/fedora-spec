@@ -67,9 +67,9 @@ sed -i -e "s|#!/usr/bin/env python|#!/usr/bin/python3.10|g" waf
 %build
 
 CFLAGS="%{optflags}" CXXFLAGS="%{optflags} -std=c++11" ./waf configure --prefix=%{_prefix} --libdir=%{_libdir} --enable-debug
-./waf %{?_smp_mflags} -v 
+./waf %{?_smp_mflags} -v
 
-%install 
+%install
 ./waf install --destdir=%{buildroot} --docdir=%{buildroot}/%{_docdir}/
 
 mv %{buildroot}/%{_bindir}/non-mixer                       %{buildroot}/%{_bindir}/non-mixer-lv2

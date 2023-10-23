@@ -4,7 +4,7 @@ Name:           yaml-cpp03
 Version:        0.3.0
 Release:        15%{?dist}
 Summary:        A YAML parser and emitter for C++
-License:        MIT 
+License:        MIT
 URL:            http://code.google.com/p/yaml-cpp/
 
 Vendor:       Audinux
@@ -45,7 +45,7 @@ This is a compatibility package for version 3.
 %prep
 %autosetup -p1 -n %{realname}
 
-# Fix eol 
+# Fix eol
 sed -i 's/\r//' license.txt
 
 %build

@@ -84,9 +84,9 @@ export CXXFLAGS="$CXXFLAGS -include memory"
     -DBESPOKE_VST2_SDK_LOCATION=`pwd`/VST_SDK/VST2_SDK \
     -DBESPOKE_SYSTEM_PYBIND11=ON \
     -DBESPOKE_SYSTEM_JSONCPP=ON
-%cmake_build 
+%cmake_build
 
-%install 
+%install
 
 %cmake_install
 

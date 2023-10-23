@@ -23,7 +23,7 @@ BuildRequires: desktop-file-utils
 This is a Faust implementation of a 1969 designed Yamaha combo organ, the YC-20.
 
 %prep
-%autosetup -n foo-yc20-%{version} 
+%autosetup -n foo-yc20-%{version}
 
 %build
 %set_build_flags
@@ -34,7 +34,7 @@ This is a Faust implementation of a 1969 designed Yamaha combo organ, the YC-20.
 
 %ifarch amd64 x86_64 aarch64
 install -m 755 -d %{buildroot}%{_libdir}/
-mv %{buildroot}/usr/lib/lv2 %{buildroot}/%{_libdir}/lv2 
+mv %{buildroot}/usr/lib/lv2 %{buildroot}/%{_libdir}/lv2
 %endif
 
 desktop-file-install                         \

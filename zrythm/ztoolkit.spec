@@ -31,7 +31,7 @@ A GUI toolkit for LV2 plugins
 %meson -Denable_rsvg=true
 %meson_build
 
-%install 
+%install
 
 %meson_install
 

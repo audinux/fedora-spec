@@ -48,7 +48,7 @@ cd doxygen
 sed -i -e "s/python/python2/g" Makefile
 
 mkdir build
-%make_build CONFIG=Release STRIP=true 
+%make_build CONFIG=Release STRIP=true
 cd ../extras
 
 cd AudioPluginHost/Builds/LinuxMakefile/
@@ -86,7 +86,7 @@ cp -ra doxygen/doc/* %{buildroot}/%{_datadir}/JUCE5/doc/
 
 %files
 %doc README.md
-%license LICENSE.md 
+%license LICENSE.md
 %{_bindir}/*
 %{_datadir}/*
 %{_usrsrc}/*

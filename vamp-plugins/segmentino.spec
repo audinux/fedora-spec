@@ -3,11 +3,11 @@
 # Category: Audio, Effect
 
 Name: segmentino
-Version: 1.1	
+Version: 1.1
 Release: 3%{?dist}
 Summary: Segmentino is a Vamp plugin for automatic music structural segmentation
-License: GLPv2	
-URL: https://code.soundsoftware.ac.uk/projects/segmenter-vamp-plugin	
+License: GLPv2
+URL: https://code.soundsoftware.ac.uk/projects/segmenter-vamp-plugin
 
 Vendor:       Audinux
 Distribution: Audinux

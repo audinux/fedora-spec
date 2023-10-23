@@ -118,7 +118,7 @@ chrpath --delete %{buildroot}/opt/openFrameworks/apps/projectGenerator/commandLi
 
 %files
 %doc README.md
-%license LICENSE.md 
+%license LICENSE.md
 %{_bindir}/*
 /opt/%{name}/*
 

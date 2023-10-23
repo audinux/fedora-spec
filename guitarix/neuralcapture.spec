@@ -53,7 +53,7 @@ VST version of the %{name} plugin.
 
 %make_build SKIP_STRIPPING=true
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 -d %{buildroot}/%{_libdir}/lv2/

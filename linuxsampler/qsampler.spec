@@ -100,7 +100,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 * Thu Sep 16 2010 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.2.2-2.svn507
 - update to latest svn for Fedora 13, fixes segfault on startup
 
-* Wed May 19 2010 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Wed May 19 2010 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - add patch to link with -lX11 for fc13/gcc4.4.4
 
 * Sat Nov  7 2009 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.2.2-1
@@ -136,5 +136,5 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 - updated to 0.1.0, made explicit dependency on linuxsampler
 - added menu entry
 
-* Thu Jan 20 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.0.4-1 
+* Thu Jan 20 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.0.4-1
 - initial build.

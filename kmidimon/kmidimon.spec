@@ -23,7 +23,7 @@ Distribution: Planet CCRMA
 Requires: hicolor-icon-theme
 
 BuildRequires: gcc gcc-c++
-BuildRequires: desktop-file-utils alsa-lib-devel 
+BuildRequires: desktop-file-utils alsa-lib-devel
 BuildRequires: cmake gettext-devel
 BuildRequires: kdelibs-devel
 %if 0%{?fedora} >= 34

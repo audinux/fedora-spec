@@ -44,7 +44,7 @@ cd poly_step_bpm      && %make_build STRIP=true && cd ..
 cd poly_vibrato       && %make_build STRIP=true && cd ..
 cd poly_vibrato_ext   && %make_build STRIP=true && cd ..
 
-%install 
+%install
 
 cd basic_modular.lv2  && %make_install LV2DIR=/usr/%{_lib}/lv2 STRIP=true && cd ..
 cd basic_quantizer    && %make_install LV2DIR=/usr/%{_lib}/lv2 STRIP=true && cd ..

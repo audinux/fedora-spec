@@ -85,7 +85,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir rcm_plugin
-tar xvfz %{SOURCE1} --directory=rcm_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=rcm_plugin --strip-components=1
 
 sed -i -e "s/-DARCH_LIN/-DARCH_LIN -Wno-error=format-security/g" compile.mk
 
@@ -96,7 +96,7 @@ cp -n %{SOURCE2} rcm_plugin/plugin.json || true
 cd rcm_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/rcm/
 cp -r rcm_plugin/dist/rcm/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/rcm/

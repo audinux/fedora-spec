@@ -35,7 +35,7 @@ export RUST_BACKTRACE=1
 
 cargo build --release
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 

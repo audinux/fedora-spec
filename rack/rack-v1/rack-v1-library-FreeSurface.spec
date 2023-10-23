@@ -85,7 +85,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir FreeSurface_plugin
-tar xvfz %{SOURCE1} --directory=FreeSurface_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=FreeSurface_plugin --strip-components=1
 
 sed -i -e "s/dep\/lib\/libsamplerate.a/-lsamplerate/g" FreeSurface_plugin/Makefile
 sed -i -e "/OBJECTS/d" FreeSurface_plugin/Makefile
@@ -97,7 +97,7 @@ cp -n %{SOURCE2} FreeSurface_plugin/plugin.json || true
 cd FreeSurface_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/FreeSurface/
 cp -r FreeSurface_plugin/dist/FreeSurface/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/FreeSurface/

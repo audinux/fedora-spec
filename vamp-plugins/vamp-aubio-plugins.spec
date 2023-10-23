@@ -5,9 +5,9 @@
 Name: vamp-aubio-plugins
 Version: 0.5.1
 Release: 2%{?dist}
-Summary:  aubio plugins for Vamp 	
-License: GLPv2	
-URL: https://github.com/aubio/vamp-aubio-plugins	
+Summary:  aubio plugins for Vamp
+License: GLPv2
+URL: https://github.com/aubio/vamp-aubio-plugins
 
 Vendor:       Audinux
 Distribution: Audinux

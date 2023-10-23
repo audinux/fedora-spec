@@ -23,7 +23,7 @@ BuildRequires: pulseaudio-libs-devel
 BuildRequires: desktop-file-utils
 
 %description
-SimpleScreenRecorder is a Linux program created to record programs and games. 
+SimpleScreenRecorder is a Linux program created to record programs and games.
 
 %prep
 %autosetup -n %{name}-%{commit0}

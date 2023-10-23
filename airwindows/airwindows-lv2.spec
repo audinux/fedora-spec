@@ -33,7 +33,7 @@ Find the original source code at https://github.com/airwindows/airwindows.
 %meson
 %meson_build
 
-%install 
+%install
 
 %meson_install
 

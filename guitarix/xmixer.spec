@@ -5,7 +5,7 @@
 Name:    xmixer
 Version: 0.0.1
 Release: 1%{?dist}
-Summary: A simple 4 in 1 Mixer 
+Summary: A simple 4 in 1 Mixer
 License: GPL-2.0-or-later
 URL:     https://github.com/brummer10/XMixer.lv2
 
@@ -35,7 +35,7 @@ BuildRequires: libsigc++20-devel
 BuildRequires: vim-common
 
 %description
-A simple 4 in 1 Mixer 
+A simple 4 in 1 Mixer
 
 %prep
 %autosetup -n XMixer.lv2
@@ -47,7 +47,7 @@ A simple 4 in 1 Mixer
 export CXXFLAGS="-std=c++11 -fPIC -I/usr/include/cairo $CXXFLAGS"
 %make_build STRIP=true
 
-%install 
+%install
 
 %make_install INSTALL_DIR=/usr/%{_lib}/lv2 STRIP=true
 

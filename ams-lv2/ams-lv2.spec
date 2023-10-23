@@ -53,7 +53,7 @@ sed -i -e "s|'-mfpmath=sse',||g" wscript
 ./waf configure --destdir=%{buildroot} --libdir=%{_libdir}
 ./waf
 
-%install 
+%install
 ./waf -j1 install --destdir=%{buildroot}
 
 %files

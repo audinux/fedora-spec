@@ -84,7 +84,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir SerialRacker_plugin
-tar xvfz %{SOURCE1} --directory=SerialRacker_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=SerialRacker_plugin --strip-components=1
 
 cp -n %{SOURCE2} SerialRacker_plugin/plugin.json || true
 
@@ -93,7 +93,7 @@ cp -n %{SOURCE2} SerialRacker_plugin/plugin.json || true
 cd SerialRacker_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/SerialRacker/
 cp -r SerialRacker_plugin/dist/SerialRacker/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/SerialRacker/

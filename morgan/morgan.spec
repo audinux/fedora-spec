@@ -77,7 +77,7 @@ cd MOrgan\ Perc/Builds/LinuxMakefile/
 %make_build STRIP=true
 cd ../../..
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/

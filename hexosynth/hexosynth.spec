@@ -41,7 +41,7 @@ mkdir build/clap
 mkdir build/vst
 
 # Build jack standalone
-./_build_release.sh 
+./_build_release.sh
 cp release/hexosynth_jack build/
 cp target/release/libhexosynth.so build/vst/
 
@@ -58,7 +58,7 @@ cargo build --release
 cd ..
 cp cpal_standalone/target/release/hexosynth_jack build/hexosynth
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 build/hexosynth_jack %{buildroot}/%{_bindir}/

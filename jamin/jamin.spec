@@ -25,11 +25,11 @@ BuildRequires: intltool
 BuildRequires: libtool
 BuildRequires: fftw-devel
 BuildRequires: gtk3-devel
-BuildRequires: jack-audio-connection-kit-devel 
+BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: ladspa-devel
 BuildRequires: liblo-devel
-BuildRequires: libxml2-devel 
-BuildRequires: perl-XML-Parser 
+BuildRequires: libxml2-devel
+BuildRequires: perl-XML-Parser
 BuildRequires: desktop-file-utils
 
 Requires:      ladspa-swh-plugins
@@ -205,10 +205,10 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 * Fri Mar 06 2009 Orcan Ogetbil <oget [DOT] fedora [AT] gmail [DOT] com> 0.95.0-4
 - Respin for Fedora (SPEC file borrowed from PlanetCCRMA)
 
-* Tue Nov 25 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Tue Nov 25 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - run autogen.sh for fc10
 
-* Wed Nov 14 2007 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Wed Nov 14 2007 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - updated desktop categories
 
 * Wed Dec  6 2006 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.95.0-3
@@ -225,7 +225,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 * Wed May  4 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.95.0-1
 - updated to 0.95.0, fixed file list, added icon to desktop entry
 
-* Tue Dec 21 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Tue Dec 21 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - spec file cleanup
 
 * Mon Aug  9 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.9.17-0.cvs.1
@@ -237,10 +237,10 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 - added liblo requirement, fixed file list
 
 * Fri Jul 30 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.9.0-0.beta10.1
-- updated to the latest beta tarball (0.8.0 does not work with the 
+- updated to the latest beta tarball (0.8.0 does not work with the
   newest swh-plugins)
 
-* Sat May  8 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Sat May  8 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - added proper buildrequires
 
 * Mon Jan 12 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.8.0-1

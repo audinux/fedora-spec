@@ -61,7 +61,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
 %doc README Changelog gtk-wave-cleaner.html gtkrc-example.txt COPYING INSTALL TODO
-%license COPYING 
+%license COPYING
 %{_bindir}/*
 %{_datadir}/applications/gtk-wave-cleaner.desktop
 %{_datadir}/icons/hicolor/128x128/apps/gtk-wave-cleaner.png

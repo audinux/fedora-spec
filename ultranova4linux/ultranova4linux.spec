@@ -53,7 +53,7 @@ cp ultranova4linux %{buildroot}/%{_bindir}/
 cp %SOURCE1 %{buildroot}/etc/udev/rules.d/
 
 %files
-%doc 
+%doc
 %{_bindir}/ultranova4linux
 %{_sysconfdir}/udev/rules.d/92-novation.rules
 

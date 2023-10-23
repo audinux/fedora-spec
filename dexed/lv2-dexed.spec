@@ -33,7 +33,7 @@ synthesizer for android, see msfa in the source folder) stays on the
 Apache 2.0 license to able to collaborate between projects.
 
 %prep
-%autosetup -n dexed.lv2-%{commit0} 
+%autosetup -n dexed.lv2-%{commit0}
 
 sed -i -e "/INSTALL_DIR=/d" src/Makefile
 sed -i -e "/INSTALL_MYPLUGINS_DIR=/d" src/Makefile

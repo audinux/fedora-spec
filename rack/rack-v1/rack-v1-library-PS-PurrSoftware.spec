@@ -85,7 +85,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir PS-PurrSoftware_plugin
-tar xvfz %{SOURCE1} --directory=PS-PurrSoftware_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=PS-PurrSoftware_plugin --strip-components=1
 
 cp -n %{SOURCE2} PS-PurrSoftware_plugin/plugin.json || true
 
@@ -94,7 +94,7 @@ cp -n %{SOURCE2} PS-PurrSoftware_plugin/plugin.json || true
 cd PS-PurrSoftware_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/PS-PurrSoftware/
 cp -r PS-PurrSoftware_plugin/dist/PS-PurrSoftware/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/PS-PurrSoftware/

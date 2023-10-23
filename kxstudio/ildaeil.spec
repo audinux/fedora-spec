@@ -82,7 +82,7 @@ VST2 version of %{name}
 
 %make_build PREFIX=/usr SKIP_STRIPPING=true
 
-%install 
+%install
 
 %make_install PREFIX=/usr SKIP_STRIPPING=true
 

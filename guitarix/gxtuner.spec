@@ -38,9 +38,9 @@ A tuner for jack, with full jack session managment support
 
 export CPPFLAGS="-D__cplusplus -std=c++11 $CXXFLAGS"
 
-%make_build STRIP=true 
+%make_build STRIP=true
 
-%install 
+%install
 
 %make_install STRIP=true
 

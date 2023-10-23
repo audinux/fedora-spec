@@ -190,10 +190,10 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 * Mon Oct 15 2018 Yann Collette <ycollette.nospam@free.fr> - 1.3.5.2-1
 - update for Fedora 29
 
-* Sun Dec  3 2017 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Sun Dec  3 2017 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - add rpm CFLAGS/LDFLAGS to qmake profile
 
-* Mon Oct 17 2016 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Mon Oct 17 2016 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - fix default lib path for chugins
 
 * Wed Oct 12 2016 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 1.3.6.0-1.220a
@@ -205,7 +205,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 * Sun Sep 29 2013 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 1.3.0a-1
 - updated to 1.3.0a
 
-* Sat Sep 14 2013 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Sat Sep 14 2013 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - add optflags for proper build on arm
 
 * Thu Aug 29 2013 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.2.3-0.1.beta15
@@ -226,7 +226,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 * Sat Aug 25 2012 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.2.1-1
 - updated to 0.2.1
 
-* Wed May 19 2010 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Wed May 19 2010 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - add patch to link chuck with -lpthread for fc13/gcc4.4.4
 
 * Mon Oct 12 2009 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> - 0.2.0-1
@@ -237,7 +237,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
   -fno-strict-aliasing so chuck gets compiled with the right
   options for fc11
 
-* Wed Jul  9 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Wed Jul  9 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - build fixes for gcc4.3 on fc9
 
 * Mon Oct  8 2007 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> - 0.1.3.8b-1

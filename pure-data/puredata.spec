@@ -1,4 +1,4 @@
-# 
+#
 # Pure Data vanilla build
 #
 
@@ -51,7 +51,7 @@ BuildRequires: desktop-file-utils
 # the main package requires everything else by default (except -devel)
 Requires: puredata-core
 Requires: puredata-doc
-Requires: puredata-extra 
+Requires: puredata-extra
 Requires: puredata-gui
 Requires: puredata-utils
 # for the gui plugin
@@ -292,7 +292,7 @@ rm -f %{buildroot}%{_libdir}/puredata/doc/Makefile.am
 * Mon Oct 15 2018 Yann Collette <ycollette.nospam@free.fr> -
 - update for Fedora 29
 
-* Wed Nov 23 2016 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> - 
+* Wed Nov 23 2016 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> -
 - do not create symlinks to documentation
 - finish adding all the pd-gui stuff from Debian
 - borrow pre/post scripts from ardour5 spec file

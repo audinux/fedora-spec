@@ -22,7 +22,7 @@ Futurist musician Luigi Russolo, the aim of this project is to create
 new instruments for the new century.
 
 %prep
-%autosetup -n intonarumori-code-r%{commit0} 
+%autosetup -n intonarumori-code-r%{commit0}
 
 sed -i -e "s/lv2core/lv2/g" crazynth/crazynth_stereo/Makefile
 sed -i -e "s/lv2core/lv2/g" omnifono/Makefile
@@ -56,7 +56,7 @@ cp -ra crazynth/crazynth_stereo/Crazynth_Stereo.lv2 %{buildroot}/%{_libdir}/lv2/
 cp omnifono/README README.omnifono
 cp crazynth/crazynth_stereo/README README.crazynth
 
-%files 
+%files
 %doc README.omnifono README.crazynth
 %{_libdir}/lv2/*
 

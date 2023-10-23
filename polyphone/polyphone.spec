@@ -23,11 +23,11 @@ BuildRequires: qt5-linguist
 BuildRequires: alsa-lib-devel
 BuildRequires: desktop-file-utils
 BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: portaudio-devel 
-BuildRequires: rtmidi-devel 
-BuildRequires: stk-devel 
-BuildRequires: libvorbis-devel 
-BuildRequires: libogg-devel 
+BuildRequires: portaudio-devel
+BuildRequires: rtmidi-devel
+BuildRequires: stk-devel
+BuildRequires: libvorbis-devel
+BuildRequires: libogg-devel
 BuildRequires: zlib-devel
 BuildRequires: glib2-devel
 BuildRequires: openssl-devel

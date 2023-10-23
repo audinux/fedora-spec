@@ -18,7 +18,7 @@ BuildRequires: gtk4-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: desktop-file-utils
 
-%description 
+%description
 The Focusrite Scarlett interfaces are class compliant USB audio interfaces meaning
 that they work “out of the box” on Linux as audio and MIDI interfaces (although on
 Gen 3 you need to disable MSD mode first).

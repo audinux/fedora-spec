@@ -18,12 +18,12 @@ BuildRequires: desktop-file-utils
 
 Requires: hicolor-icon-theme
 
-%description 
+%description
 Seq24 is a real-time midi sequencer. It provides a very simple
 interface for editing and playing midi 'loops'.
 
 %prep
-%autosetup 
+%autosetup
 
 %if "%{version}" == "0.9.3"
 # Bug in 0.9.3 and 0.9.3 prereleases
@@ -121,7 +121,7 @@ desktop-file-install \
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
 
 * Sat Feb 18 2012 Brendan Jones <brendan.jones.it@gmail.com> - 0.9.3-0.1.r127
-- upstream trunk 
+- upstream trunk
 
 * Mon Nov 14 2011 Brendan Jones <brendan.jones.it@gmail.com> - 0.9.2-1
 - New upstream version 0.9.2
@@ -211,7 +211,7 @@ desktop-file-install \
 * Fri Jan 21 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.6.0-1
 - updated to 0.6.0, now requires gtkmm2
 
-* Sun Dec 19 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Sun Dec 19 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - spec file cleanup
 
 * Sun Aug 29 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.5.2-1

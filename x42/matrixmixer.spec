@@ -38,7 +38,7 @@ A NxM LV2 matrix mixer by x42
 
 %make_build PREFIX=/usr LV2DIR=%{_libdir}/lv2 matrixmixer_VERSION=%{version} STRIP=true
 
-%install 
+%install
 
 %make_install PREFIX=/usr LV2DIR=%{_libdir}/lv2 matrixmixer_VERSION=%{version} STRIP=true
 

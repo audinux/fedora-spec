@@ -20,7 +20,7 @@ BuildRequires: libtool
 BuildRequires: rubberband-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libsndfile-devel
-BuildRequires: libuuid-devel 
+BuildRequires: libuuid-devel
 BuildRequires: qt5-qtbase-devel
 
 %description
@@ -29,7 +29,7 @@ A simple Qt interface makes it easy to slice up drum loops, assign individual dr
 The JUCE library takes care of handling audio and MIDI behind the scenes.
 
 %prep
-%autosetup 
+%autosetup
 
 %ifarch aarch64
 sed -i -e "/-msse2/d" Shuriken.pro

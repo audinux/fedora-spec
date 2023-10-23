@@ -37,7 +37,7 @@ A JACK patchbay in flow matrix style
 %set_build_flags
 
 %meson
-%meson_build 
+%meson_build
 
 %install
 

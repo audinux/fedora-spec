@@ -161,20 +161,20 @@ desktop-file-install --vendor %{desktop_vendor} \
 * Sat May 13 2006 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.6.6-1
 - updated to 0.6.6, stops to 0.3.0
 
-* Fri Mar 31 2006 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Fri Mar 31 2006 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - proper build dependencies for fc5
 - patch for gcc 4.1
 
 * Mon Jul 11 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.3.1-2
 - obsolete aeolus-stops and include the stops in the main package
 
-* Mon Dec 27 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Mon Dec 27 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - spec file cleanup
 
 * Fri Dec  3 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.3.1-1
 - updated to 0.3.1
 
-* Thu Jul 29 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Thu Jul 29 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - changed default stops directory to /usr/share/aeolus/stops
 - deleted startup script
 
@@ -184,7 +184,7 @@ desktop-file-install --vendor %{desktop_vendor} \
 * Mon Jun 14 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.2.0-1
 - updated to 0.2.0
 
-* Tue May 11 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Tue May 11 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - added alsa-lib-devel buildrequires
 
 * Tue May  4 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.1.0-1

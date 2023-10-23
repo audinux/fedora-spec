@@ -39,7 +39,7 @@ Fons Adriaensen's AT1 -- Autotune LV2 plugin
 %set_build_flags
 %make_build PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 fat1_VERSION=%{version} STRIP=true
 
-%install 
+%install
 
 %make_install PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 fat1_VERSION=%{version} STRIP=true
 

@@ -85,7 +85,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir huaba_plugin
-tar xvfz %{SOURCE1} --directory=huaba_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=huaba_plugin --strip-components=1
 
 cp -n %{SOURCE2} huaba_plugin/plugin.json || true
 
@@ -94,7 +94,7 @@ cp -n %{SOURCE2} huaba_plugin/plugin.json || true
 cd huaba_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/huaba/
 cp -r huaba_plugin/dist/huaba/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/huaba/

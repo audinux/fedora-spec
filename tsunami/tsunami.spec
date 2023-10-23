@@ -21,8 +21,8 @@ BuildRequires: gtk4-devel
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: portaudio-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: libvorbis-devel 
-BuildRequires: libogg-devel 
+BuildRequires: libvorbis-devel
+BuildRequires: libogg-devel
 BuildRequires: flac-devel
 BuildRequires: fftw-devel
 BuildRequires: libunwind-devel

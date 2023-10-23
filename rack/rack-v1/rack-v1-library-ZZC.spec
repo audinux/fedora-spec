@@ -85,7 +85,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir ZZC_plugin
-tar xvfz %{SOURCE1} --directory=ZZC_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=ZZC_plugin --strip-components=1
 
 cp -n %{SOURCE2} ZZC_plugin/plugin.json || true
 
@@ -94,7 +94,7 @@ cp -n %{SOURCE2} ZZC_plugin/plugin.json || true
 cd ZZC_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/ZZC/
 cp -r ZZC_plugin/dist/ZZC/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/ZZC/

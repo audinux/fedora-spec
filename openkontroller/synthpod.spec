@@ -47,9 +47,9 @@ Lightweight Nonlinear LV2 Plugin Container
 %set_build_flags
 
 %meson -Dlv2libdir=%{_lib}/lv2
-%meson_build 
+%meson_build
 
-%install 
+%install
 
 %meson_install
 

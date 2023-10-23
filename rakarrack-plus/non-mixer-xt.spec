@@ -67,4 +67,4 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 %changelog
 * Sat Sep 09 2023 Yann Collette <ycollette dot nospam at free.fr> 1.0.4-1
-- initial release 
+- initial release

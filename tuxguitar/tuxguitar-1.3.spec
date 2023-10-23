@@ -45,7 +45,7 @@ BuildRequires: eclipse-swt
 TuxGuitar is a guitar tablature editor with player support through midi. It can
 display scores and multitrack tabs. Various features TuxGuitar provides include
 autoscrolling while playing, note duration management, bend/slide/vibrato/
-hammer-on/pull-off effects, support for tuplets, time signature management, 
+hammer-on/pull-off effects, support for tuplets, time signature management,
 tempo management, gp3/gp4/gp5/gp6 import and export.
 
 %prep

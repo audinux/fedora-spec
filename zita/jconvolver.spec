@@ -23,9 +23,9 @@ BuildRequires: fftw-devel
 
 %description
 Real-time convolution engine. It can execute up to a 64 by 64 convolution matrix
-(i.e. 4096 simultaneous convolutions) as long as your CPU(s) can handle the load. 
-It is designed to be efficient also for sparse (e.g. diagonal) matrices, 
-and for sparse impulse responses. 
+(i.e. 4096 simultaneous convolutions) as long as your CPU(s) can handle the load.
+It is designed to be efficient also for sparse (e.g. diagonal) matrices,
+and for sparse impulse responses.
 Unused matrix elements and unused partitions do not take any CPU time.
 
 %prep
@@ -50,7 +50,7 @@ cp -r ../config-files/* $RPM_BUILD_ROOT%{_datadir}/jconvolver/config/
 popd
 
 %files
-%doc AUTHORS README* 
+%doc AUTHORS README*
 %{_bindir}/*
 %{_datadir}/jconvolver/
 %{_datadir}/jconvolver/config/*

@@ -53,9 +53,9 @@ cd plugins/LinuxVST
 
 %cmake -DCMAKE_BUILD_TYPE=RELEASE
 
-%cmake_build 
+%cmake_build
 
-%install 
+%install
 
 cd plugins/LinuxVST/
 

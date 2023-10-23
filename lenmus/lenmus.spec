@@ -14,7 +14,7 @@ Source1: FindPortMidi.cmake
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: boost-devel
-BuildRequires: zlib-devel 
+BuildRequires: zlib-devel
 BuildRequires: libpng-devel
 BuildRequires: freetype-devel
 BuildRequires: portmidi-devel

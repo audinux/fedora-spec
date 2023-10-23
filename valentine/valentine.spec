@@ -1,7 +1,7 @@
 Name:    valentine
 Version: 0.0.5
 Release: 1%{?dist}
-Summary: An open source compressor meant to pump and breathe 
+Summary: An open source compressor meant to pump and breathe
 License: GPL-3.0-or-later
 URL:     https://github.com/tote-bag-labs/valentine
 
@@ -64,7 +64,7 @@ VST3 version of %{name}
 %cmake -DCMAKE_CXX_FLAGS="$CXXFLAGS -include cstdint"
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_bindir}

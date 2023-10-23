@@ -95,4 +95,4 @@ Each chop can be leveled up or down (gating). BChoppr is the successor of BSlizr
 - fix for Fedora 32
 
 * Thu Apr 2 2020 Yann Collette <ycollette dot nospam at free.fr> 1.4.0-1
-- initial release 
+- initial release

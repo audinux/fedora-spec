@@ -77,7 +77,7 @@ sed -i -e "s/-march=nehalem//g" dep.mk
 # For -O2 usage
 sed -i -e "s/-O3/-O2/g" compile.mk
 sed -i -e "s/-O3/-O2/g" dep.mk
-sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk 
+sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk
 
 # Remove static gcc lib
 sed -i -e "s/-static-libstdc++ -static-libgcc//g" Makefile
@@ -134,7 +134,7 @@ sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
 mkdir sb-StochKit_plugin
-tar xvfz %{SOURCE1} --directory=sb-StochKit_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=sb-StochKit_plugin --strip-components=1
 
 cp -n %{SOURCE2} sb-StochKit_plugin/plugin.json || true
 
@@ -143,7 +143,7 @@ cp -n %{SOURCE2} sb-StochKit_plugin/plugin.json || true
 cd sb-StochKit_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/sb-StochKit/
 cp -r sb-StochKit_plugin/dist/sb-StochKit/* %{buildroot}%{_libexecdir}/Rack2/plugins/sb-StochKit/

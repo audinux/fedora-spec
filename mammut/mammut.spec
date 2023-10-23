@@ -34,7 +34,7 @@ BuildRequires: desktop-file-utils
 
 %description
 A sound editor with a non-intuitive sound transformation approach using one
-single gigantic analysis (no windows). 
+single gigantic analysis (no windows).
 
 %prep
 %autosetup -p1 -n %{name}-%{commit0}
@@ -61,7 +61,7 @@ cd juce_5_3_2/Builds/Linux
 cd ../../../src
 %make_build -f Makefile.linux  CONFIG=Release STRIP=true V=1
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 src/%{name} %{buildroot}/%{_bindir}/

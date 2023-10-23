@@ -22,7 +22,7 @@ Requires: python3-requests
 Requires: python3-pyphen
 
 %description
-Singing synthesis from MIDI file 
+Singing synthesis from MIDI file
 
 %prep
 %autosetup -n %{name}-%{commit0}

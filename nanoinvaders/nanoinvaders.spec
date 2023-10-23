@@ -39,7 +39,7 @@ Play space invaders in an audio plugin
 
 %make_build PREFIX=/usr LIBDIR=%{_lib} SKIP_STRIPPING=true all
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 -d %{buildroot}/%{_libdir}/lv2/

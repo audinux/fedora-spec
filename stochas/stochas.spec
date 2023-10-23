@@ -47,13 +47,13 @@ sed -i -e "s/find_package/#find_package/g" cmake/versiontools.cmake
 
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/Stochas.vst3/
 %if 0%{?fedora} < 33
-cp -r stochas_artefacts/VST3/Stochas.vst3/* %{buildroot}/%{_libdir}/vst3/Stochas.vst3/	
+cp -r stochas_artefacts/VST3/Stochas.vst3/* %{buildroot}/%{_libdir}/vst3/Stochas.vst3/
 %else
-cp -r %{__cmake_builddir}/stochas_artefacts/VST3/Stochas.vst3/* %{buildroot}/%{_libdir}/vst3/Stochas.vst3/	
+cp -r %{__cmake_builddir}/stochas_artefacts/VST3/Stochas.vst3/* %{buildroot}/%{_libdir}/vst3/Stochas.vst3/
 %endif
 
 install -m 755 -d %{buildroot}%{_bindir}/

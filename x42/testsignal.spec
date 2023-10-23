@@ -48,7 +48,7 @@ The signal level can be varied between -24dBFS and -9dBFS and defaults to -18dBF
 export OPTIMIZATIONS="$CFLAGS"
 %make_build PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 STRIP=true
 
-%install 
+%install
 
 %make_install PREFIX=%{_prefix} LV2DIR=%{_libdir}/lv2 STRIP=true
 

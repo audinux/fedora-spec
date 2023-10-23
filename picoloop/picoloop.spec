@@ -65,8 +65,8 @@ make -f Makefile.PatternPlayer_debian_RtAudio_sdl20 clean
 
 mkdir -p debianrtaudio_sdl20/Machine/Lgptsampler
 
-make -f Makefile.RtMidi_debian_sdl20  
-make -f Makefile.RtAudio_debian_sdl20 
+make -f Makefile.RtMidi_debian_sdl20
+make -f Makefile.RtAudio_debian_sdl20
 make -f Makefile.PatternPlayer_debian_RtAudio_sdl20
 
 mv PatternPlayer_debian_RtAudio_sdl20 picoloop-pulse
@@ -85,8 +85,8 @@ make -f Makefile.PatternPlayer_debian_RtAudio_sdl20 clean
 
 mkdir -p debianrtaudio_sdl20/Machine/Lgptsampler
 
-make -f Makefile.RtMidi_debian_sdl20  
-make -f Makefile.RtAudio_debian_sdl20 
+make -f Makefile.RtMidi_debian_sdl20
+make -f Makefile.RtAudio_debian_sdl20
 make -f Makefile.PatternPlayer_debian_RtAudio_sdl20
 
 mv PatternPlayer_debian_RtAudio_sdl20 picoloop-alsa
@@ -105,8 +105,8 @@ make -f Makefile.PatternPlayer_debian_RtAudio_sdl20 clean
 
 mkdir -p debianrtaudio_sdl20/Machine/Lgptsampler
 
-make -f Makefile.RtMidi_debian_sdl20  
-make -f Makefile.RtAudio_debian_sdl20 
+make -f Makefile.RtMidi_debian_sdl20
+make -f Makefile.RtAudio_debian_sdl20
 make -f Makefile.PatternPlayer_debian_RtAudio_sdl20
 
 mv PatternPlayer_debian_RtAudio_sdl20 picoloop-jack

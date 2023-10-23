@@ -29,10 +29,10 @@ BuildRequires: qt5-linguist
 BuildRequires: desktop-file-utils
 BuildRequires: qtchooser
 
-Requires: ladspa-cmt-plugins 
-Requires: ladspa-swh-plugins 
-Requires: ladspa-vco-plugins 
-Requires: ladspa-rev-plugins 
+Requires: ladspa-cmt-plugins
+Requires: ladspa-swh-plugins
+Requires: ladspa-vco-plugins
+Requires: ladspa-rev-plugins
 Requires: ladspa-mcp-plugins
 
 %description
@@ -187,12 +187,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 - updated to 1.8.8-rc1 release
 
 * Tue Dec  5 2006 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 1.8.7-6
-- added proper require incantations for the specific ladspa plugins 
+- added proper require incantations for the specific ladspa plugins
   needed
 
 * Thu Nov 30 2006 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 1.8.7-5
 - explicitly require all LADSPA plugins used by the examples and demos,
-  and add filter.so (fil plugins). 
+  and add filter.so (fil plugins).
 
 * Tue Nov 28 2006 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 1.8.7-5
 - set LADSPA_PATH to lib64 for x86_64
@@ -210,13 +210,13 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 - added explicit requires for the LADSPA plugins all demos need
 - added Planet CCRMA categories
 
-* Fri Mar 31 2006 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Fri Mar 31 2006 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - proper fc5 build dependencies
 
 * Fri Dec 24 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 1.8.7-2
 - use rpm optimization flags
 
-* Mon Dec 20 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Mon Dec 20 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - spec file cleanup
 
 * Tue Aug 24 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 1.8.7-1

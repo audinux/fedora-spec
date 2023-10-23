@@ -29,8 +29,8 @@ Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $versio
 %global __requires_exclude %{?__requires_exclude:%__requires_exclude|}^perl\\(QuickScanEngine\\)
 
 %description
-Inspects system settings, and makes suggestions for improving realtime/audio 
-performance. 
+Inspects system settings, and makes suggestions for improving realtime/audio
+performance.
 
 %prep
 %setup -q -n %{gitname}-%{commit0}
@@ -142,7 +142,7 @@ desktop-file-install            \
 - User perl(Tk) as BR, edit desktop source
 
 * Mon Oct 29 2012 Brendan Jones <brendan.jones.it@gmail.com> 0-0.5.20120506hg
-- License missing from %%doc 
+- License missing from %%doc
 
 * Mon Oct 29 2012 Brendan Jones <brendan.jones.it@gmail.com> 0-0.4.20120506hg
 - Update source and BuildRequires
@@ -152,4 +152,4 @@ desktop-file-install            \
 - Add desktop file
 
 * Thu Oct 11 2012 Brendan Jones <brendan.jones.it@gmail.com> 0-0.1.20121011hg
-- Initial package 
+- Initial package

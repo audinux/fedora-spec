@@ -30,7 +30,7 @@ BuildRequires: libtiff-devel
 BuildRequires: libpng-devel
 BuildRequires: libjpeg-devel
 BuildRequires: libsndfile-devel
-BuildRequires: desktop-file-utils	
+BuildRequires: desktop-file-utils
 
 %description
 ChordV provide an editor to define song and chord.

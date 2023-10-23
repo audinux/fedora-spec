@@ -37,7 +37,7 @@ sed -i -e "/add_subdirectory(libs\/glfw\/)/d" CMakeLists.txt
        -DGLFW_BUILD_TESTS=OFF \
        -DGLFW_BUILD_EXAMPLES=OFF \
        -DLIBREMIDI_EXAMPLES=OFF \
-       
+
 %cmake_build
 
 %install

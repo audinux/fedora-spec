@@ -6,8 +6,8 @@ Name: beatroot-vamp
 Version: 1.0
 Release: 2%{?dist}
 Summary: A Vamp Plugin implementation of the BeatRoot beat tracking system
-License: GLPv2	
-URL: https://code.soundsoftware.ac.uk/projects/beatroot-vamp	
+License: GLPv2
+URL: https://code.soundsoftware.ac.uk/projects/beatroot-vamp
 
 Vendor:       Audinux
 Distribution: Audinux

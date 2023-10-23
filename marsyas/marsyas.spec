@@ -59,7 +59,7 @@ Summary: Headers for developing programs that will use %{name}
 Requires: %{name} = %{version}-%{release}
 
 %description devel
-This package contains the headers that programmers will 
+This package contains the headers that programmers will
 need to develop applications which will use %{name}.
 
 %prep
@@ -76,9 +76,9 @@ sed -i -e "1i #include <QPainterPath>" src/otherlibs/qwt/qwt_plot_panner.cpp
 %build
 
 %cmake
-%cmake_build 
+%cmake_build
 
-%install 
+%install
 
 %cmake_install
 

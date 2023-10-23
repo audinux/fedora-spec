@@ -69,7 +69,7 @@ sed -i -e "s/-ffast-math//g" compile.mk
 sed -i -e "s/-fno-finite-math-only//g" compile.mk
 sed -i -e "s/-O3/-O2/g" compile.mk
 
-# %{build_cxxflags} 
+# %{build_cxxflags}
 echo "CXXFLAGS += -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I$CURRENT_PATH/dep/nanosvg/src -I/usr/include/rtaudio -I/usr/include/rtmidi -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/jpommier-pffft-29e4f76ac53b -I$CURRENT_PATH/dep/include" >> compile.mk
 
 sed -i -e "s/-Wl,-Bstatic//g" Makefile
@@ -89,14 +89,14 @@ sed -i -e "s/dep\/lib\/librtmidi.a/-lrtmidi/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 
 mkdir audibleinstruments_plugin
-tar xvfz %{SOURCE1} --directory=audibleinstruments_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=audibleinstruments_plugin --strip-components=1
 
 %build
 
 cd audibleinstruments_plugin
 %make_build RACK_DIR=.. PREFIX=/usr LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/AudibleInstruments/
 cp -r audibleinstruments_plugin/dist/AudibleInstruments/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/AudibleInstruments/

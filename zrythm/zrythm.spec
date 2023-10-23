@@ -85,7 +85,7 @@ BuildRequires: pkgconfig(mount)
 BuildRequires: pkgconfig(zlib)
 BuildRequires: python3-devel
 %endif
- 
+
 Requires: breeze-icon-theme
 
 %description
@@ -141,9 +141,9 @@ mkdir build
        --buildtype release \
        --prefix=/usr
 
-%meson_build 
+%meson_build
 
-%install 
+%install
 
 %meson_install
 

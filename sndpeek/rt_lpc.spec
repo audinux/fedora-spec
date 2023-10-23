@@ -34,7 +34,7 @@ LPC analysis and synthesis. It features the following:
 - MIDI controlled pitch (hit 'm')
 - lots of other choices (pitch pulse source selection, emphasis filter)
 - STFT plot
-- modular LPC library 
+- modular LPC library
 
 %prep
 %autosetup -p1 -n %{name}-%{version}

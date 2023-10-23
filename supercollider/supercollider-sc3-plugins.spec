@@ -120,7 +120,7 @@ sed -i -e "s/lib\/SuperCollider/%{_lib}\/SuperCollider/g" source/CMakeLists.txt
 - fix wrong include file in nova gendy ugens
 
 * Sun Jul 15 2012 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 3.5-0.3.20120626
-- strip weird characters from sc source files, causes problems 
+- strip weird characters from sc source files, causes problems
   (apparently) with some locales
 
 * Wed Jun 27 2012 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 3.5-0.2.20120626
@@ -166,7 +166,7 @@ sed -i -e "s/lib\/SuperCollider/%{_lib}\/SuperCollider/g" source/CMakeLists.txt
 * Mon Nov 10 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 0.20081105-0.svn289.1
 - updated to latest svn
 - beqsuite has moved to the main supercollider package
-- added supercollider-ladspa-ugens, supercollider-mkfftw-ugens, 
+- added supercollider-ladspa-ugens, supercollider-mkfftw-ugens,
   supercollider-sl-ugens subpackages, supercollider-bat-ugens,
   supercollider-rmeqsuite-ugens packages
 - relink JoshPVUgens with the proper libraries (otherwise fails to load
@@ -182,7 +182,7 @@ sed -i -e "s/lib\/SuperCollider/%{_lib}\/SuperCollider/g" source/CMakeLists.txt
 - new: MembraneUGens, SymbolicMachines, TagSystemUGens
 - removed: ReverbUGens (now part of the core SuperCollider classes)
 
-* Sat Nov 17 2007 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Sat Nov 17 2007 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - Headers are now coming from a different location
 
 * Thu Jul 26 2007 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> - 0.2007.07.26-1.119svn
@@ -194,7 +194,7 @@ sed -i -e "s/lib\/SuperCollider/%{_lib}\/SuperCollider/g" source/CMakeLists.txt
   collection from svn, use svn checkout date as version, include
   svn revision in the release tag)
 - fix missing include in bhobFFT.cpp (patch0)
-- do not build bhobFFT plugins or install the FFT class or the PV 
+- do not build bhobFFT plugins or install the FFT class or the PV
   help files, the plugin fails to link properly:
 
 ldd -r -d bhobFFT.so

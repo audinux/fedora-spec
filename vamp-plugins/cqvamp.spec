@@ -3,11 +3,11 @@
 # Category: Audio, Effect
 
 Name: cqvamp
-Version: 1.1	
+Version: 1.1
 Release: 2%{?dist}
 Summary: A Vamp plugin implementing the Constant-Q transform of a time-domain signal
-License: GLPv2	
-URL: https://code.soundsoftware.ac.uk/projects/constant-q-cpp	
+License: GLPv2
+URL: https://code.soundsoftware.ac.uk/projects/constant-q-cpp
 
 Vendor:       Audinux
 Distribution: Audinux

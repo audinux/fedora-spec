@@ -51,7 +51,7 @@ A tracker / sequencer
 make packages
 BUILDTYPE=RELEASE ./build_linux.sh -j2
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_datadir}/%{name}/samples/
 install -m 644 *.rad %{buildroot}/%{_datadir}/%{name}/samples/

@@ -90,7 +90,7 @@ autoconf
 %install
 %make_install LDCONFIG=/bin/true
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
-# find all directories 
+# find all directories
 find $RPM_BUILD_ROOT%{_sysconfdir} -type f -exec chmod 0644 {} ';'
 rm $RPM_BUILD_ROOT/%{_libdir}/*.a
 desktop-file-install --dir=${RPM_BUILD_ROOT}%{_datadir}/applications %{SOURCE1}
@@ -242,7 +242,7 @@ desktop-file-install --dir=${RPM_BUILD_ROOT}%{_datadir}/applications %{SOURCE1}
 - solved directory ownership problems
 - Changed license of wminput to GPLv2
 - AUTHORS and NEWS bundled as docs.
-- Added desktop file 
+- Added desktop file
 - Removed static library files
 - Made the spec honor compiler flags.
 - Added bluez-libs-devel to requires of the devel package
@@ -250,7 +250,7 @@ desktop-file-install --dir=${RPM_BUILD_ROOT}%{_datadir}/applications %{SOURCE1}
 - Added bluez-libs-devel to requires of development package
 
 * Wed Apr 09 2008 Victor Bogado <victor@bogado.net> 0.6.00-2
-- added changelog. 
+- added changelog.
 - doc section of files.
 - changed the line that specifies the python library to accomodate the file *.info that is generates with other versions of python.
 - cutted long description lines

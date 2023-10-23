@@ -18,8 +18,8 @@ BuildRequires: gtkmm24-devel >= 2.4.0
 BuildRequires: chrpath
 
 %description
-This package provides an extension to the gtkmm library.  
-It contains widgets which are primarily useful 
+This package provides an extension to the gtkmm library.
+It contains widgets which are primarily useful
 for technical and scientifical purposes.
 Initially, this is a 2-D plotting widget.
 
@@ -29,7 +29,7 @@ Requires: %{name} = %{version}-%{release}
 Requires: gtkmm24-devel
 
 %description devel
-This package contains the headers that programmers will 
+This package contains the headers that programmers will
 need to develop applications which will use plotmm.
 
 %package -n plotmm-examples
@@ -166,7 +166,7 @@ chrpath --delete $RPM_BUILD_ROOT%{_bindir}/plotmm-simple
 - Autorebuild for GCC 4.3
 
 * Tue Sep 12 2006 Haïkel Guémar <karlthered@gmail.com> - 0.1.2-5
-- rebuild for FC6 
+- rebuild for FC6
 
 * Tue Jun 13 2006 Haïkel Guémar <karlthered@gmail.com> - 0.1.2-4
 - some fixes to the spec

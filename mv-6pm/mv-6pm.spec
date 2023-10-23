@@ -30,7 +30,7 @@ BuildRequires: desktop-file-utils
 %description
 6PM is a phase modulation (PM) synthesizer made of six oscillators.
 It works with Jack sound server and Qt5 GUI.
-Phase Modulation is a kind of Frequency modulation (FM) synthesis 
+Phase Modulation is a kind of Frequency modulation (FM) synthesis
 
 %prep
 %autosetup -p1 -n %{name}_v%{version}

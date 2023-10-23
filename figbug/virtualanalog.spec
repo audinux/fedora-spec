@@ -73,7 +73,7 @@ sed -i -e "s/-Wl,--strip-all/ /g" Makefile
 
 %make_build CONFIG=Release STRIP=true
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/

@@ -85,7 +85,7 @@ sleep 10
 %cmake
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/SmartAmp.vst3/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/SmartAmp.lv2/

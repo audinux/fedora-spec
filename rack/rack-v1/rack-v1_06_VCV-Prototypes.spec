@@ -71,7 +71,7 @@ sed -i -e "s/-ffast-math//g" compile.mk
 sed -i -e "s/-fno-finite-math-only//g" compile.mk
 sed -i -e "s/-O3/-O2/g" compile.mk
 
-# %{build_cxxflags} 
+# %{build_cxxflags}
 echo "CXXFLAGS += -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I$CURRENT_PATH/dep/nanosvg/src -I/usr/include/rtaudio -I/usr/include/rtmidi -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/jpommier-pffft-29e4f76ac53b -I$CURRENT_PATH/dep/include" >> compile.mk
 
 sed -i -e "s/-Wl,-Bstatic//g" Makefile
@@ -91,7 +91,7 @@ sed -i -e "s/dep\/lib\/librtmidi.a/-lrtmidi/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 
 mkdir vcv_prototype_plugin
-tar xvfz %{SOURCE1} --directory=vcv_prototype_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=vcv_prototype_plugin --strip-components=1
 
 cp %{SOURCE2} vcv_prototype_plugin/plugin.json
 cp %{SOURCE3} vcv_prototype_plugin/Makefile
@@ -102,7 +102,7 @@ cd vcv_prototype_plugin
 %make_build -j1 RACK_DIR=.. PREFIX=/usr LIBDIR=%{_lib} deps
 %make_build -j1 RACK_DIR=.. PREFIX=/usr LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/VCV-Prototype/
 cp -r vcv_prototype_plugin/dist/VCV-Prototype/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/VCV-Prototype/

@@ -46,4 +46,4 @@ Command line tool for showing capabilities of alsa devices
 
 %changelog
 * Mon Jul 12 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
-- initial release 
+- initial release

@@ -18,7 +18,7 @@ Patch0:  lomse_0001-fix-install.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: boost-devel
-BuildRequires: zlib-devel 
+BuildRequires: zlib-devel
 BuildRequires: libpng-devel
 BuildRequires: freetype-devel
 BuildRequires: cmake

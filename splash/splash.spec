@@ -67,7 +67,7 @@ export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
     -DUSE_SYSTEM_LIBS=ON
 %cmake_build
 
-%install 
+%install
 
 %cmake_install
 

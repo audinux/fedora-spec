@@ -47,7 +47,7 @@ A mixer matrix for Scarlett sound card by x42
 
 %make_build PREFIX=/usr LIBDIR=%{_lib}
 
-%install 
+%install
 
 %make_install PREFIX=/usr LIBDIR=%{_lib}
 

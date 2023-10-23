@@ -77,7 +77,7 @@ sed -i -e "s/-m64//g" Makefile
 
 %make_build CPPFLAGS="-I$CURRENT_DIR/JUCE/modules -I$CURRENT_DIR/External/asio/asio/"
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_bindir}/
 cp -a Builds/LinuxMakefile/build/Chataigne %{buildroot}%{_bindir}/

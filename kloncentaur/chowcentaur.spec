@@ -52,7 +52,7 @@ BuildRequires: JUCE
 BuildRequires: cmake
 
 %description
-The model is constructed using a variety of circuit modelling techniques, 
+The model is constructed using a variety of circuit modelling techniques,
 including nodal analysis, wave digital filters, and recurrent neural networks.
 
 %package -n vst3-%{name}

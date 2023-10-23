@@ -134,7 +134,7 @@ sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
 mkdir Airwin2Rack_plugin
-tar xvfz %{SOURCE1} --directory=Airwin2Rack_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=Airwin2Rack_plugin --strip-components=1
 
 cp -n %{SOURCE2} Airwin2Rack_plugin/plugin.json || true
 
@@ -148,7 +148,7 @@ export MYCXXFLAGS="`pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I
 cd Airwin2Rack_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/Airwin2Rack/
 cp -r Airwin2Rack_plugin/dist/Airwin2Rack/* %{buildroot}%{_libexecdir}/Rack2/plugins/Airwin2Rack/

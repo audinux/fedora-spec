@@ -135,7 +135,7 @@ sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
 mkdir SurgeXTRack_plugin
-tar xvfz %{SOURCE1} --directory=SurgeXTRack_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=SurgeXTRack_plugin --strip-components=1
 
 cp -n %{SOURCE2} SurgeXTRack_plugin/plugin.json || true
 
@@ -156,7 +156,7 @@ export MYCXXFLAGS="$MYCXXFLAGS"
 cd SurgeXTRack_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/SurgeXTRack/
 cp -r SurgeXTRack_plugin/dist/SurgeXTRack/* %{buildroot}%{_libexecdir}/Rack2/plugins/SurgeXTRack/

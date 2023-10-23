@@ -22,9 +22,9 @@ BuildRequires: gtkmm24-devel
 BuildRequires: python2
 
 %description
-Triceratops a polyphonic subtractive synthesizer plugin for use with the LV2 
-architecture, there is no standalone version and LV2 is required along 
-with a suitable host (e.g. Jalv, Zynjacku, Ardour, Qtractor). 
+Triceratops a polyphonic subtractive synthesizer plugin for use with the LV2
+architecture, there is no standalone version and LV2 is required along
+with a suitable host (e.g. Jalv, Zynjacku, Ardour, Qtractor).
 
 %prep
 %autosetup -c -n triceratops-lv2-v0.0.4

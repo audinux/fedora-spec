@@ -50,7 +50,7 @@ sed -i -e "19,21d" src/Makefile
 %make_install PREFIX=/usr
 
 mkdir -p %{buildroot}/usr/bin
-ln -s /usr/bin/ffmpeg  %{buildroot}/usr/bin/ffmpeg_harvid 
+ln -s /usr/bin/ffmpeg  %{buildroot}/usr/bin/ffmpeg_harvid
 ln -s /usr/bin/ffprobe %{buildroot}/usr/bin/ffprobe_harvid
 
 %files

@@ -317,7 +317,7 @@ cp %{SOURCE5} %{buildroot}%{_datadir}/projectM-mao/doc/
 - Rebuild for glew 2.0.0
 
 * Sat Mar 19 2016 Sérgio Basto <sergio@serjux.com> - 2.1.0-2
-- On epel (6 and 7) disable projectM-libvisual. 
+- On epel (6 and 7) disable projectM-libvisual.
 
 * Wed Mar 16 2016 Sérgio Basto <sergio@serjux.com> - 2.1.0-1
 - Update to 2.1.0 .
@@ -333,7 +333,7 @@ cp %{SOURCE5} %{buildroot}%{_datadir}/projectM-mao/doc/
 - Also checked that remove_pulse_browser_h.patch, projectM-pulseaudio-stat.patch
   and projectM-libvisual-gcc46.patch are upstreamed.
 - Add libprojectM-2.1.0-paths.patch and libprojectM-qt-2.1.0-paths.patch, to fix
-  _libdir paths 
+  _libdir paths
 - Using fedora-review fixed: mix tabs and spaces,
   unused-direct-shlib-dependency, wrong-script-end-of-line-encoding and
   spurious-executable-perm.

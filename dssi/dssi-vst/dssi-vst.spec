@@ -216,7 +216,7 @@ ln -s ../dssi/%{name}.so %{buildroot}%{_libdir}/ladspa
 * Wed Mar 25 2009 Orcan Ogetbil <oget[DOT]fedora[AT]gmail[DOT]com> - 0.8-1
 - Update to 0.8. SPEC file is courtesy of PlanetCCRMA.
 
-* Tue Jul  8 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Tue Jul  8 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - added gcc43 patch for building on fc9
 
 * Fri May 23 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> - 0.7-1

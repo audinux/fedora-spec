@@ -2,7 +2,7 @@
 # Type: Standalone
 # Category: Audio, Tool
 
-Summary: An Ambisonic decoder for first and second order. 
+Summary: An Ambisonic decoder for first and second order.
 Name:    ambdec
 Version: 0.7.1
 Release: 1%{?dist}

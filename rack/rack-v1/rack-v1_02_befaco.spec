@@ -86,14 +86,14 @@ sed -i -e "s/dep\/lib\/librtmidi.a/-lrtmidi/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 
 mkdir befaco_plugin
-tar xvfz %{SOURCE1} --directory=befaco_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=befaco_plugin --strip-components=1
 
 %build
 
 cd befaco_plugin
 %make_build RACK_DIR=.. PREFIX=/usr LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Befaco/
 cp -r befaco_plugin/dist/Befaco/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/Befaco/

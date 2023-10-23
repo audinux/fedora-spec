@@ -50,13 +50,13 @@ LDFLAGS="${LDFLAGS:-%{build_ldflags}} -z muldefs" ; export LDFLAGS
 
 %changelog
 * Mon Nov 01 2021 Yann Collette <ycollette.nospam@free.fr> - 0.30.0-4
-- update to 0.30.0-4 
+- update to 0.30.0-4
 
 * Sat Jan 16 2021 Yann Collette <ycollette.nospam@free.fr> - 0.28.0-4
-- update to 0.28.0-4 
+- update to 0.28.0-4
 
 * Mon Oct 19 2020 Yann Collette <ycollette.nospam@free.fr> - 0.26.0-4
-- fix debug build 
+- fix debug build
 
 * Sat Jul 18 2020 Yann Collette <ycollette.nospam@free.fr> - 0.26.0-3
 - update to 0.26.0-3

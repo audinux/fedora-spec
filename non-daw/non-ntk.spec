@@ -73,16 +73,16 @@ alias python="/usr/bin/python3.10"
 
 #LDFLAGS="%{?__global_ldflags}"
 ./waf configure --prefix=%{_prefix} --libdir=%{_libdir} --enable-gl || true
-./waf %{?_smp_mflags} 
+./waf %{?_smp_mflags}
 
-%install 
+%install
 ./waf -v install --destdir=%{buildroot}
 install -d -m 0755 %{buildroot}%{_datadir}/applications
 install -D -m 0644 %{SOURCE1} %{buildroot}%{_datadir}/applications/ntk-fluid.desktop
 rm %{buildroot}%{_libdir}/libntk*.a*
 
 %ldconfig_scriptlets
- 
+
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/ntk-fluid.desktop
 
@@ -150,7 +150,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/ntk-fluid.desktop
 - add desktop scriptlet post fluid
 
 * Mon Sep 02 2013 Brendan Jones <brendan.jones.it@gmail.com> 1.3.0-0.4.20130730gitd006352
-- Adjust license 
+- Adjust license
 - Remove icon scriptlets
 - Correct BRs
 

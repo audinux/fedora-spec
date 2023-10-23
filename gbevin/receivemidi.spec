@@ -42,7 +42,7 @@ cd Builds/LinuxMakefile
 
 %make_build STRIP=true CPPFLAGS="%{optflags}"
 
-%install 
+%install
 
 cd Builds/LinuxMakefile
 

@@ -53,7 +53,7 @@ on the harmonic table!
 %cmake
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_bindir}/
 cp -ra %{__cmake_builddir}/Harmonigon_artefacts/Harmonigon %{buildroot}%{_bindir}/

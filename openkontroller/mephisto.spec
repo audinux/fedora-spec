@@ -35,7 +35,7 @@ A Just-in-time FAUST embedded in an LV2 plugin
 %set_build_flags
 
 %meson -Dlv2libdir=%{_libdir}/lv2/
-%meson_build 
+%meson_build
 
 %install
 

@@ -51,7 +51,7 @@ export CFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g"
 cd docs/doxygen
 
 mkdir build
-%make_build CONFIG=Release STRIP=true 
+%make_build CONFIG=Release STRIP=true
 cd ../../extras
 
 cd AudioPluginHost/Builds/LinuxMakefile/
@@ -89,7 +89,7 @@ cp -ra docs/doxygen/doc/* %{buildroot}/%{_datadir}/JUCE61/doc/
 
 %files
 %doc README.md
-%license LICENSE.md 
+%license LICENSE.md
 %{_bindir}/*
 %{_datadir}/*
 %{_usrsrc}/*

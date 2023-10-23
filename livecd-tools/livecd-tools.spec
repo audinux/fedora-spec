@@ -643,8 +643,8 @@ rm -rfv %{buildroot}%{_mandir}/man8/livecd-iso-to-*
 - default to symlink for /etc/localtime (#885246) (bcl)
 
 * Sat Feb 23 2013 Bruno Wolff III <bruno@wolff.to> 18.14-2
-- Get an up to date build in rawhide, since the mass 
-- rebuild used a master branch that was behind the f18 
+- Get an up to date build in rawhide, since the mass
+- rebuild used a master branch that was behind the f18
 - branch and builds from f18 are no longer inherited.
 
 - Version 18.14 (bcl)
@@ -1013,7 +1013,7 @@ rm -rfv %{buildroot}%{_mandir}/man8/livecd-iso-to-*
 - A few livecd-iso-to-disk tweaks (Martin Dengler, Jason Farrell)
 - Another fix for SELinux being disabled (#508402)
 - Use resize2fs -M and handle resize errors better
-- Use isohybrid on the live image 
+- Use isohybrid on the live image
 - Use system-config-keyboard instead of rhpl
 
 * Sat Jul 25 2009 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 024-2
@@ -1022,7 +1022,7 @@ rm -rfv %{buildroot}%{_mandir}/man8/livecd-iso-to-*
 * Wed May  6 2009 Jeremy Katz <katzj@redhat.com> - 024-1
 - Fix ppc image creation (#497193, help from jwboyer)
 - Fixes for using ext[23] usb stick (wtogami)
-- Check filesystem after resizing and raise an error if there are 
+- Check filesystem after resizing and raise an error if there are
   problems (#497377)
 
 * Tue Apr 14 2009 Jeremy Katz <katzj@redhat.com> - 023-1
@@ -1121,16 +1121,16 @@ rm -rfv %{buildroot}%{_mandir}/man8/livecd-iso-to-*
 - Fix partition size overriding (kanarip)
 
 * Thu Mar  6 2008 Jeremy Katz <katzj@redhat.com> - 015-1
-- Support for using live isos with pxe booting (Richard W.M. Jones and 
+- Support for using live isos with pxe booting (Richard W.M. Jones and
   Chris Lalancette)
 - Fixes for SELinux being disabled (Warren Togami)
 - Stop using mayflower for building the initrd; mkinitrd can do it now
 - Create a minimal /dev rather than using the host /dev (Warren Togami)
-- Support for persistent overlays when using a USB stick (based on support 
+- Support for persistent overlays when using a USB stick (based on support
   by Douglas McClendon)
 
 * Tue Feb 12 2008 Jeremy Katz <katzj@redhat.com> - 014-1
-- Rework to provide a python API for use by other tools (thanks to 
+- Rework to provide a python API for use by other tools (thanks to
   markmc for a lot of the legwork here)
 - Fix creation of images with ext2 filesystems and no SELinux
 - Don't require a yum-cache directory inside of the cachedir (#430066)
@@ -1230,7 +1230,7 @@ rm -rfv %{buildroot}%{_mandir}/man8/livecd-iso-to-*
 - work with ext2 formated usb stick
 
 * Mon Mar 26 2007 Jeremy Katz <katzj@redhat.com> - 004-1
-- add livecd-iso-to-disk for setting up the live CD iso image onto a usb 
+- add livecd-iso-to-disk for setting up the live CD iso image onto a usb
   stick or similar
 
 * Fri Mar 23 2007 Jeremy Katz <katzj@redhat.com> - 003-1

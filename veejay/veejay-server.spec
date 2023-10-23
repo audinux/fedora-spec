@@ -99,7 +99,7 @@ export CXXFLAGS="-fPIC $CXXFLAGS"
 export LDFLAGS="-fPIC $LDFLAGS"
 
 ./autogen.sh
-%configure --prefix=%{_prefix} --libdir=%{_libdir} 
+%configure --prefix=%{_prefix} --libdir=%{_libdir}
 
 find . -name "Makefile" -exec sed -i -e "s/-march=native//g" {} \; -print
 find . -name "Makefile" -exec sed -i -e "s/-O3/-O2/g" {} \; -print
@@ -117,7 +117,7 @@ cd plugin-packs
 cd lvdasciiart
 
 ./autogen.sh
-%configure --prefix=%{_prefix} --libdir=%{_libdir} 
+%configure --prefix=%{_prefix} --libdir=%{_libdir}
 find . -name "Makefile" -exec sed -i -e "s/-march=native//g" {} \; -print
 find . -name "Makefile" -exec sed -i -e "s/-O3/-O2/g" {} \; -print
 find . -name "Makefile" -exec sed -i -e "s/-msse2//g" {} \; -print
@@ -131,7 +131,7 @@ cd ..
 cd lvdcrop
 
 ./autogen.sh
-%configure --prefix=%{_prefix} --libdir=%{_libdir} 
+%configure --prefix=%{_prefix} --libdir=%{_libdir}
 find . -name "Makefile" -exec sed -i -e "s/-march=native//g" {} \; -print
 find . -name "Makefile" -exec sed -i -e "s/-O3/-O2/g" {} \; -print
 find . -name "Makefile" -exec sed -i -e "s/-msse2//g" {} \; -print
@@ -145,7 +145,7 @@ cd ..
 cd lvdgmic
 
 ./autogen.sh
-%configure --prefix=%{_prefix} --libdir=%{_libdir} 
+%configure --prefix=%{_prefix} --libdir=%{_libdir}
 find . -name "Makefile" -exec sed -i -e "s/-march=native//g" {} \; -print
 find . -name "Makefile" -exec sed -i -e "s/-O3/-O2/g" {} \; -print
 find . -name "Makefile" -exec sed -i -e "s/-msse2//g" {} \; -print
@@ -159,7 +159,7 @@ cd ..
 cd lvdshared
 
 ./autogen.sh
-%configure --prefix=%{_prefix} --libdir=%{_libdir} 
+%configure --prefix=%{_prefix} --libdir=%{_libdir}
 find . -name "Makefile" -exec sed -i -e "s/-march=native//g" {} \; -print
 find . -name "Makefile" -exec sed -i -e "s/-O3/-O2/g" {} \; -print
 find . -name "Makefile" -exec sed -i -e "s/-msse2//g" {} \; -print

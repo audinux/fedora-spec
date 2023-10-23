@@ -51,11 +51,11 @@ sed -i -e 's|-std=c99|-std=c99 %{optflags}|' \
 
 %build
 %set_build_flags
-CXXFLAGS=-I/usr/include/lvtk-2 ./waf -v configure --prefix=%{_prefix} --libdir=%{_libdir} --debug 
-./waf build 
+CXXFLAGS=-I/usr/include/lvtk-2 ./waf -v configure --prefix=%{_prefix} --libdir=%{_libdir} --debug
+./waf build
 
 %install
-./waf install --destdir=%{buildroot} 
+./waf install --destdir=%{buildroot}
 
 %files
 %doc THANKS
@@ -132,7 +132,7 @@ CXXFLAGS=-I/usr/include/lvtk-2 ./waf -v configure --prefix=%{_prefix} --libdir=%
 - Remove build flags, correct release
 
 * Sun Nov 27 2011 Brendan Jones <brendan.jones.it@gmail.com> 0.0.6-2
-- License is GPLv2 not GPLv2+ 
+- License is GPLv2 not GPLv2+
 - Patch FSF address
 
 * Sun Nov 27 2011 Brendan Jones <brendan.jones.it@gmail.com> 0.0.6-1

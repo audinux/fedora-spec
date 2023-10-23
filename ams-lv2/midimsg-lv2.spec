@@ -36,7 +36,7 @@ A collection of basic LV2 plugins to translate midi messages to usable values
 ./waf configure --destdir=%{buildroot} --libdir=%{_libdir}
 ./waf
 
-%install 
+%install
 ./waf -j1 install --destdir=%{buildroot}
 
 %files

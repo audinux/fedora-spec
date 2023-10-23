@@ -86,7 +86,7 @@ sed -i -e "s/dep\/lib\/librtmidi.a/-lrtmidi/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 
 mkdir mental_plugin
-tar xvfz %{SOURCE1} --directory=mental_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=mental_plugin --strip-components=1
 
 cp -n %{SOURCE2} mental_plugin/plugin.json || true
 
@@ -95,7 +95,7 @@ cp -n %{SOURCE2} mental_plugin/plugin.json || true
 cd mental_plugin
 %make_build RACK_DIR=.. PREFIX=/usr LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/mental/
 cp -r mental_plugin/dist/Mental/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/mental/

@@ -22,7 +22,7 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: cairo-devel
 
 %description
-LV2 audio effect plugin for chopping stereo audio input signals. 
+LV2 audio effect plugin for chopping stereo audio input signals.
 Each chop can be levelled up or down to get a step sequencer-like effect.
 
 %prep
@@ -80,4 +80,4 @@ Each chop can be levelled up or down to get a step sequencer-like effect.
 - update to 1.2.2-1
 
 * Fri Oct 11 2019 Yann Collette <ycollette dot nospam at free.fr> 1.2.0-1
-- initial release 
+- initial release

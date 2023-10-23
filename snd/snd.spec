@@ -124,7 +124,7 @@ rm -f config.cache
 # removed sndsine for now
 # audinfo is not happy (9/26/2005)
 perl -p -i -e 's|LIBS = -ldl |LIBS = -lpthread -ldl |' makefile
-%make_build sndplay sndinfo 
+%make_build sndplay sndinfo
 
 %install
 mkdir -p %{buildroot}%{_bindir}/
@@ -157,7 +157,7 @@ mkdir -p %{buildroot}/etc
 cat << EOF > %{buildroot}/etc/snd.conf
 ;; Default snd configuration file
 ;;
-;; add paths to begin of default load path (last in the list is the 
+;; add paths to begin of default load path (last in the list is the
 ;; first in the search order)
 (set! *load-path (cons "%{_libdir}/snd/scheme" *load-path))
 EOF
@@ -249,10 +249,10 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 - really updated to the latest snapshot (did not really do that yesterday)
 
 * Wed Nov 16 2011 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 12.6-1
-- updated to 12.6 snapshot (11/16/2011)	
+- updated to 12.6 snapshot (11/16/2011)
 
 * Tue Oct  4 2011 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 12.5-1
-- updated to 12.5 snapshot (04/10/2011)	
+- updated to 12.5 snapshot (04/10/2011)
 - add -lpthread to the sndplay sndinfo build
 
 * Wed Jun  1 2011 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 12.2-1
@@ -269,20 +269,20 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 * Thu May 20 2010 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 11.5-1
 - updated to 11.5's current snapshot (5/20/2010)
 
-* Fri Jan 29 2010 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Fri Jan 29 2010 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - updated to today's snapshot, fixes problems with jack and alsa
   playback
 
 * Wed Jan 27 2010 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 11.2-1
 - udpated to version 11.2 of 2010.01.27, removed sndrecord, no longer
   a make target
-- change default options to not include with-gl when building for gtk, 
+- change default options to not include with-gl when building for gtk,
   this is no longer compatible
 
 * Mon Dec  1 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 10.2-1
 - updated to version 10.2
 
-* Thu Nov 27 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Thu Nov 27 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - use the proper load-path incantation in /etc/snd.conf
 
 * Wed Nov 26 2008 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 10.1-1
@@ -299,12 +299,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 - add patch that forces help files to be found in docdir (patch1)
 - remove reference to dlp scheme directory, no longer exists
 
-* Wed Nov 14 2007 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Wed Nov 14 2007 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - updated desktop categories
 
 * Fri Jun 15 2007 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 9.1-1
 - build on fc6 with new motif (which is installed in /opt), add
-  versioned motif requirement so the right one gets pulled in 
+  versioned motif requirement so the right one gets pulled in
   regardless
 
 * Thu Jun  7 2007 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 9.1-1
@@ -318,12 +318,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 * Sun Nov 26 2006 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 8.5-1
 - updated to snd 8.5
-- spec file tweaks, added hicolor-icon-theme runtime requirement, 
+- spec file tweaks, added hicolor-icon-theme runtime requirement,
   moved icon to proper location, added post/postun scripts
 
 * Thu Sep  7 2006 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 8.3-1
 - updated to 9/7/2006 snapshot
-- add proper build requirements for fc5 (desktop-file-utils, X, 
+- add proper build requirements for fc5 (desktop-file-utils, X,
   change fftw3 to fftw)
 - removed build_for_ccrma flag
 - added build requirements: vorbis-tools, speex-devel, flac-devel
@@ -334,13 +334,13 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 * Sat Apr  2 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 7.11-1
 - updated to 7.11
-- detection of alsa not working, hacked config.h, added -lasound to 
+- detection of alsa not working, hacked config.h, added -lasound to
   link stage and patch to midi.c to be able to build oss and alsa
   support at the same time
 
 * Sat Jan  7 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 7.9-1
 - updated to 7.9 of 2005.01.07
-- start of spec file cleanup, remove almost all build switches, 
+- start of spec file cleanup, remove almost all build switches,
   nobody uses the customization anyway
 - removed sndsine, will not build on fc3
 
@@ -373,9 +373,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 * Sun Aug 17 2003 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 6.11-1
 - updated to 6.11 of 08/15/2003
 - no longer use snd-guile packages (switched to guile 6.4 on all
-  supported redhat releases, created a new build option to enable it, 
+  supported redhat releases, created a new build option to enable it,
   added Obsoletes tag for 7.3 and 8.0 so that snd-guile is erased by
-  the apt dist-upgrade process. 
+  the apt dist-upgrade process.
 - added release tags
 
 * Thu May 29 2003 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 6.9-1
@@ -390,7 +390,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 * Sat Mar 22 2003 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 6.7-1
 - updated to 6.7
 - changed prefix to use default macros
-- do not use links to differentiate between motif and gtk version, 
+- do not use links to differentiate between motif and gtk version,
   motif version is now named "snd" and gtk version "snd-gtk"
 - do not allow oss and alsa versions of the programs to coexist
 - contrib directory for scheme and ruby code is now gone
@@ -416,7 +416,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 - updated to 6.1 of 09/17/2002
 
 * Mon Aug 26 2002 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 6.0-2
-- made dependency on openmotif explicit, otherwise snd appears to be 
+- made dependency on openmotif explicit, otherwise snd appears to be
   happy with lesstif on redhat 7.2 but fails on startup because of an
   undefined symbol
 - updated to snd 6.0 of 08/26/2002
@@ -435,8 +435,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 - updated to latest snd
 
 * Sun Jun 16 2002 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 5.11-1
-- naming of packages: snd -> base package; snd-motif, snd-gtk main 
-  executable, depending on driver either -oss or nothing added; 
+- naming of packages: snd -> base package; snd-motif, snd-gtk main
+  executable, depending on driver either -oss or nothing added;
   -utils, depending on driver either -oss or nothing added
 
 * Fri Jun 14 2002 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
@@ -461,21 +461,21 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 * Mon Dec  3 2001 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 5.5-1
 - updated to 5.5 12/03/2001
-- incorporated guile 1.5.0 in the rpm (what used to be separate snd-guile 
+- incorporated guile 1.5.0 in the rpm (what used to be separate snd-guile
   package). Currently an ugly hack because configuring and compiling snd
-  requires a functional guile, but guile is not installed yet if it is 
+  requires a functional guile, but guile is not installed yet if it is
   going to be part of snd snd rpms. So for now I do a temporary install
   of guile in the final location (by default /usr/lib/snd) while compiling
-  snd. The install is removed at the end of the snd compilation process. 
+  snd. The install is removed at the end of the snd compilation process.
 - install all scheme files in /usr/lib/snd/scheme, including the contrib
   dir
 - create a default /etc/snd.conf that adds all scheme source directories
   to the default search path so that "load-from-path" can use just the
-  file names. 
+  file names.
 
 * Wed Nov 28 2001 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 5.4-2
 - added menu entry for Mandrake 8.x [thanks to Kevin Cosgrove]
-- update to snd-5.4 11/28/2001 (with support for new snd_config_get_id 
+- update to snd-5.4 11/28/2001 (with support for new snd_config_get_id
   in alsa)
 
 * Mon Nov 05 2001 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 5.4-1
@@ -537,18 +537,18 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 * Sat Jan 13 2001 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - compiled for snd-4.10 of Jan 13 2000, release set to 1
 - patched snd-1.h, added ps_fd field to chan_info structure
-- redid the dependencies for all packages. I'm now setting the 
-  dependencies manually and trying to be as general as possible 
-  so that the packages will run in as many distributions as possible. 
-  See the detailed explanation and %defines at the beginning of the 
-  spec file. 
-- deleted the %{usesndguile} option. I now always prefix the path to 
+- redid the dependencies for all packages. I'm now setting the
+  dependencies manually and trying to be as general as possible
+  so that the packages will run in as many distributions as possible.
+  See the detailed explanation and %defines at the beginning of the
+  spec file.
+- deleted the %{usesndguile} option. I now always prefix the path to
   search for guile with /usr/lib/snd/bin/. The library will be found
   there at compile time but as the requirements are location independent
   it will be also looked for elsewhere at run time. Thus a distribution
-  that comes with the latest guile will meet the requirement and the 
+  that comes with the latest guile will meet the requirement and the
   rpm will install. If snd-guile is not installed or the version of
-  guile in the distribution is less than 1.4 the install will fail. 
+  guile in the distribution is less than 1.4 the install will fail.
 - added %{build_utils} to enable or not compilation of the command
   line utilities
 
@@ -562,7 +562,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 * Mon Nov 20 2000 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - compiled for snd-4.8 of Nov 20 2000, release set to 1
-- fixed dependencies, utils packages do not depend on guile-gtk, 
+- fixed dependencies, utils packages do not depend on guile-gtk,
   only gtk-* do (thanks to Volker Kuhlmann <kuhlmav@elec.canterbury.ac.nz>)
 
 * Mon Oct 16 2000 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
@@ -588,8 +588,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 * Tue Aug 15 2000 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - created subpackages snd-motif-oss snd-motif-alsa snd-gtk-oss
   snd-gtk-alsa snd-utils-oss snd-utils-alsa
-- changed configure.in in snd-4.5 to search for guile first in 
-  /usr/lib/snd/, added -rpath to the linker invocation so that 
+- changed configure.in in snd-4.5 to search for guile first in
+  /usr/lib/snd/, added -rpath to the linker invocation so that
   it is not necessary to add /usr/lib/snd/lib to /etc/ld.so.conf
 - TODO: create a snd-devel package with the include files and sndlib?
 
@@ -599,6 +599,6 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 - changed prefix to represent everything up to bin|lib|whatever
   (so that prefix=/usr installs in /usr/bin, follow redhat convention)
 - changed version numbering, 4.5 refers to the version of the program,
-  the release number is the rpm package release number, the .tar.gz 
+  the release number is the rpm package release number, the .tar.gz
   file should be named snd-4.5.tar.gz...
 

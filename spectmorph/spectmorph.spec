@@ -43,7 +43,7 @@ to construct hybrid sounds, for instance a sound between a trumpet and
 a flute; or smooth transitions, for instance a sound that starts as a
 trumpet and then gradually changes to a flute. In its current version,
 SpectMorph ships with many ready-to-use instruments which can be
-combined using morphing. 
+combined using morphing.
 
 %package devel
 Summary: Development files for %{name}

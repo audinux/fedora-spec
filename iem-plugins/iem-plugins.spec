@@ -77,7 +77,7 @@ LV2 version of %{name}
        -DIEM_STANDALONE_JACK_SUPPORT=ON
 %cmake_build
 
-%install 
+%install
 
 PLUGINS="CoordinateConverter
 	GranularEncoder

@@ -28,7 +28,7 @@
 Name:    sonic-pi
 Version: 4.2.0
 Release: 11%{?dist}
-Summary: A musical programming environment 
+Summary: A musical programming environment
 License: MIT
 URL:     https://sonic-pi.net/
 
@@ -74,7 +74,7 @@ BuildRequires: libvorbis-devel
 BuildRequires: vcpkg
 BuildRequires: elixir
 
-Requires(pre): pulseaudio-module-jack 
+Requires(pre): pulseaudio-module-jack
 Requires(pre): jack-audio-connection-kit-example-clients
 Requires(pre): supercollider-sc3-plugins
 Requires(pre): supercollider
@@ -84,13 +84,13 @@ Requires(pre): osmid
 
 %description
 Sonic Pi is an open source programming environment designed to explore and
-teach programming concepts through the process of creating new sounds. 
+teach programming concepts through the process of creating new sounds.
 Comes with an associated scheme of work which emphasizes the importance of
 creativity in the learning process and gives users the control to turn their
 sonic ideas into reality.
 
 %prep
-%autosetup -n %{name}-%{version} 
+%autosetup -n %{name}-%{version}
 
 echo "target_link_libraries(\${APP_NAME} PRIVATE GLEW)" >> app/gui/imgui/CMakeLists.txt
 
@@ -206,7 +206,7 @@ Name=%name
 Exec=%{name}
 Icon=/usr/share/pixmaps/icon-smaller.png
 Comment=Music live coding for everyone
-Comment[es]=Programación de música en vivo al alcance de cualquiera 
+Comment[es]=Programación de música en vivo al alcance de cualquiera
 Terminal=false
 Type=Application
 Categories=Application;AudioVideo;Audio;Development;IDE;Music;Education;

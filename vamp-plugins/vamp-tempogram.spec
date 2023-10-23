@@ -6,8 +6,8 @@ Name: vamp-tempogram
 Version: 1.0
 Release: 2%{?dist}
 Summary: A Vamp plugin implementation of the tempogram and cyclic tempogram features
-License: GLPv2	
-URL: https://code.soundsoftware.ac.uk/projects/vamp-tempogram	
+License: GLPv2
+URL: https://code.soundsoftware.ac.uk/projects/vamp-tempogram
 
 Vendor:       Audinux
 Distribution: Audinux

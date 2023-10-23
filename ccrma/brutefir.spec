@@ -73,13 +73,13 @@ mkdir -p %{buildroot}%{_libdir}/brutefir
 - updated to 1.0i, build on fc6
 
 * Wed Jun 29 2005 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 1.0e-1
-- Mario Torre fixed compilation problems on fc4, later fixed 
+- Mario Torre fixed compilation problems on fc4, later fixed
   upstream in new version
 
-* Fri Dec 24 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Fri Dec 24 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - use rpm optimization flags
 
-* Tue Dec 21 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 
+* Tue Dec 21 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu>
 - spec file cleanup
 
 * Fri Apr 23 2004 Fernando Lopez-Lezcano <nando@ccrma.stanford.edu> 1.0-1

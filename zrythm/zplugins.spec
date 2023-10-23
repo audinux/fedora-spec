@@ -30,9 +30,9 @@ A collection of audio DSP LV2 plugins
 export CFLAGS="-fPIC $CFLAGS"
 
 %meson -Dlv2dir=%{_lib}/lv2
-%meson_build 
+%meson_build
 
-%install 
+%install
 
 %meson_install
 

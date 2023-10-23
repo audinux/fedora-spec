@@ -34,7 +34,7 @@ ShowQ is audio / MIDI trigger software for theatre productions.
 
 %build
 
-%meson 
+%meson
 %meson_build
 
 %install

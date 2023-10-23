@@ -2,7 +2,7 @@
 # Type: Standalone
 # Category: Audio, Tool
 
-Summary: An A/B convertor and the metering and monitoring. 
+Summary: An A/B convertor and the metering and monitoring.
 Name:    tetraproc
 Version: 0.9.2
 Release: 2%{?dist}
@@ -50,7 +50,7 @@ pushd source
 popd
 
 %files
-%doc AUTHORS README* 
+%doc AUTHORS README*
 %{_bindir}/tetra*
 %{_datadir}/tetraproc/
 

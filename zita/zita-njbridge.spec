@@ -40,17 +40,17 @@ sed -i 's|-O2|%{optflags}|' source/Makefile
 %build
 
 pushd source
-%make_build PREFIX=%{_prefix} 
+%make_build PREFIX=%{_prefix}
 popd
 
 %install
 mkdir -p $RPM_BUILD_ROOT%{_mandir}/man1
 pushd source
-%make_install PREFIX=%{_prefix} 
+%make_install PREFIX=%{_prefix}
 popd
 
 %files
-%doc AUTHORS README* 
+%doc AUTHORS README*
 %{_bindir}/zita-*
 %{_mandir}/man1/*
 

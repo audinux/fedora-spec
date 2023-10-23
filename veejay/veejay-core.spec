@@ -89,7 +89,7 @@ export CXXFLAGS="-fPIC $CXXFLAGS"
 export LDFLAGS="-fPIC $LDFLAGS"
 
 ./autogen.sh
-%configure --prefix=%{_prefix} --libdir=%{_libdir} 
+%configure --prefix=%{_prefix} --libdir=%{_libdir}
 
 sed -i -e "s/libpng16/freetype/g" config.h
 find . -name "Makefile" -exec sed -i -e "s/-march=native//g" {} \; -print

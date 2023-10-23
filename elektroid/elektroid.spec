@@ -25,7 +25,7 @@ BuildRequires: libzip-devel
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 
-%description 
+%description
 Elektroid is a sample and MIDI device manager. It includes the
 elektroid GUI application and the elektroid-cli CLI application.
 

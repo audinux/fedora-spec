@@ -2,7 +2,7 @@ Name: bedroomstudio
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: A set of LV2 plugins
-License: MIT 
+License: MIT
 URL: https://github.com/psemiletov/bedroomstudio
 
 Vendor:       Audinux

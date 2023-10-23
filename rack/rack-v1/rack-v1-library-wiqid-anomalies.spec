@@ -85,7 +85,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir wiqid-anomalies_plugin
-tar xvfz %{SOURCE1} --directory=wiqid-anomalies_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=wiqid-anomalies_plugin --strip-components=1
 
 cp -n %{SOURCE2} wiqid-anomalies_plugin/plugin.json || true
 
@@ -94,7 +94,7 @@ cp -n %{SOURCE2} wiqid-anomalies_plugin/plugin.json || true
 cd wiqid-anomalies_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/wiqid-anomalies/
 cp -r wiqid-anomalies_plugin/dist/wiqid-anomalies/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/wiqid-anomalies/

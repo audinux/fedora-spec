@@ -23,7 +23,7 @@ BuildRequires: zita-convolver-devel
 BuildRequires: fftw-devel
 
 %description
-Digital implementation of the 'Blumlein Shuffler', 
+Digital implementation of the 'Blumlein Shuffler',
 used to convert binaural signals into a form suitable for reproduction on a conventional stereo speaker pair.
 
 %prep

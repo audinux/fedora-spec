@@ -63,7 +63,7 @@ CLAP version of %{name}
 
 %make_build SKIP_STRIPPING=true
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/

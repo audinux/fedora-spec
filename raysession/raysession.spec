@@ -66,7 +66,7 @@ rm %{buildroot}/usr/bin/ray-pulse2jack
 
 ln -s /usr/share/raysession/src/bin/ray_git                 %{buildroot}/usr/bin/ray_git
 ln -s /usr/share/raysession/src/bin/ray-jack_checker_daemon %{buildroot}/usr/bin/ray-jack_checker_daemon
-ln -s /usr/share/raysession/src/bin/ray-jack_config_script  %{buildroot}/usr/bin/ray-jack_config_script  
+ln -s /usr/share/raysession/src/bin/ray-jack_config_script  %{buildroot}/usr/bin/ray-jack_config_script
 ln -s /usr/share/raysession/src/bin/ray-pulse2jack          %{buildroot}/usr/bin/ray-pulse2jack
 
 desktop-file-install                         \

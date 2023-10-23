@@ -3,11 +3,11 @@
 # Category: Audio, Effect
 
 Name: nnls-chroma
-Version: 1.1	
+Version: 1.1
 Release: 2%{?dist}
-Summary: NNLS Chroma analyses a single channel of audio using frame-wise spectral input from the Vamp host	
-License: GLPv2	
-URL: http://www.isophonics.net/nnls-chroma	
+Summary: NNLS Chroma analyses a single channel of audio using frame-wise spectral input from the Vamp host
+License: GLPv2
+URL: http://www.isophonics.net/nnls-chroma
 
 Vendor:       Audinux
 Distribution: Audinux

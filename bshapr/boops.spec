@@ -60,43 +60,43 @@ Key features:
 
 %changelog
 * Fri Sep 03 2021 Yann Collette <ycollette dot nospam at free.fr> 1.8.2-3
-- update to 1.8.2-3 
+- update to 1.8.2-3
 
 * Mon Aug 30 2021 Yann Collette <ycollette dot nospam at free.fr> 1.8.0-2
-- update to 1.8.0-2 
+- update to 1.8.0-2
 
 * Sat Jun 26 2021 Yann Collette <ycollette dot nospam at free.fr> 1.6.4-2
-- update to 1.6.4-2fix spec 
+- update to 1.6.4-2fix spec
 
 * Sat Jun 26 2021 Yann Collette <ycollette dot nospam at free.fr> 1.6.2-2
-- fix spec 
+- fix spec
 
 * Sat Jun 12 2021 Yann Collette <ycollette dot nospam at free.fr> 1.6.2-1
-- update to 1.6.2-1 
+- update to 1.6.2-1
 
 * Fri Jun 04 2021 Yann Collette <ycollette dot nospam at free.fr> 1.6.0-1
-- update to 1.6.0-1 
+- update to 1.6.0-1
 
 * Fri May 21 2021 Yann Collette <ycollette dot nospam at free.fr> 1.4.0-1
-- update to 1.4.0-1 
+- update to 1.4.0-1
 
 * Sat May 08 2021 Yann Collette <ycollette dot nospam at free.fr> 1.2.10-1
-- update to 1.2.10-1 
+- update to 1.2.10-1
 
 * Mon Mar 15 2021 Yann Collette <ycollette dot nospam at free.fr> 1.2.8-1
-- update to 1.2.8-1 
+- update to 1.2.8-1
 
 * Thu Feb 11 2021 Yann Collette <ycollette dot nospam at free.fr> 1.2.6-1
-- update to 1.2.6-1 
+- update to 1.2.6-1
 
 * Mon Jan 18 2021 Yann Collette <ycollette dot nospam at free.fr> 1.2.4-1
-- update to 1.2.4-1 
+- update to 1.2.4-1
 
 * Sun Dec 27 2020 Yann Collette <ycollette dot nospam at free.fr> 1.2.2-1
-- update to 1.2.2-1 
+- update to 1.2.2-1
 
 * Sat Dec 5 2020 Yann Collette <ycollette dot nospam at free.fr> 1.2.0-1
-- update to 1.2.0-1 
+- update to 1.2.0-1
 
 * Sat Nov 07 2020 Yann Collette <ycollette dot nospam at free.fr> 0.1-1
-- initial release 
+- initial release

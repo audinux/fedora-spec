@@ -52,7 +52,7 @@ for Files in src/*.hpp ; do sed -i -e "s/lvtk-1/lvtk-2/g" $Files; done
 ./waf configure --destdir=%{buildroot} --libdir=%{_libdir}
 ./waf
 
-%install 
+%install
 ./waf -j1 install --destdir=%{buildroot}
 
 %files

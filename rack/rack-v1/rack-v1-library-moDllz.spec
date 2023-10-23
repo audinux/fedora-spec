@@ -85,7 +85,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir moDllz_plugin
-tar xvfz %{SOURCE1} --directory=moDllz_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=moDllz_plugin --strip-components=1
 
 cp -n %{SOURCE2} moDllz_plugin/plugin.json || true
 
@@ -94,7 +94,7 @@ cp -n %{SOURCE2} moDllz_plugin/plugin.json || true
 cd moDllz_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/moDllz/
 cp -r moDllz_plugin/dist/moDllz/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/moDllz/

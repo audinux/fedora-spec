@@ -34,7 +34,7 @@ export CFLAGS="-fPIC $CFLAGS"
 
 %make_build
 
-%install 
+%install
 
 %make_install
 

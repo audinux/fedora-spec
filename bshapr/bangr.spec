@@ -67,4 +67,4 @@ Key features:
 - update to 1.4.0-1
 
 * Sun Jun 27 2021 Yann Collette <ycollette dot nospam at free.fr> 1.2.0-1
-- initial release 
+- initial release

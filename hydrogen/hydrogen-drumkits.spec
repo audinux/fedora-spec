@@ -36,8 +36,8 @@ Source20: https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main
 Source21: https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/HipHop-1.h2drumkit
 Source22: https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/3355606kit.h2drumkit
 Source23: https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/VariBreaks.h2drumkit
-Source24: https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/Lightning1024.h2drumkit 	
-Source25: https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/SF3007-2011-Set-03.h2drumkit 	
+Source24: https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/Lightning1024.h2drumkit
+Source25: https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/SF3007-2011-Set-03.h2drumkit
 
 # From http://www.bandshed.net/sounds/h2drumkit/
 Source26: http://www.bandshed.net/sounds/h2drumkit/AVL-Drumkits-1.1/AVL-BlackPearl-4A-1.1.h2drumkit
@@ -56,7 +56,7 @@ BuildArch: noarch
 Requires: hydrogen >= 0.9.5
 
 %description
-A collection of additional drumkits for the 
+A collection of additional drumkits for the
 Hydrogen advanced drum machine for GNU/Linux.
 
 %package -n hydrogen-drumkit-3355606kit

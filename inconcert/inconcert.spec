@@ -36,7 +36,7 @@ control the tempo and synchronization of a MIDI sequence. It features
 a tap tempo to adjust the beat (and synchronize the beat) and the
 ability to skip beats or insert beats. It works by controlling the
 Jack Audio Connection Kit's transport. InConcert depends on Jack and
-ALSA, and therefore only runs on Linux. 
+ALSA, and therefore only runs on Linux.
 
 %prep
 %autosetup -n %{name}

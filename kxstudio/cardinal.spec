@@ -111,7 +111,7 @@ export CXXFLAGS="$CXXFLAGS -include cstdint -Wno-error=format-security"
 
 %make_build PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true SYSDEPS=true
 
-%install 
+%install
 %make_install PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true SYSDEPS=true
 %ifarch x86_64 amd64 aarch64
 mv %{buildroot}/usr/lib %{buildroot}/usr/lib64

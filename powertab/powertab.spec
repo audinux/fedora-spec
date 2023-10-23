@@ -1,7 +1,7 @@
 Name:    powertabeditor
 Version: 0.0.1
 Release: 1%{?dist}
-Summary: View and edit guitar powertab tablature. 
+Summary: View and edit guitar powertab tablature.
 URL:     https://github.com/powertab/powertabeditor
 License: GPL-2.0-or-later
 

@@ -39,7 +39,7 @@ find . -type f -exec sed -i -e "s/env python/env python2/g" {} \;
 ./waf configure --destdir=%{buildroot} --prefix=%{_prefix} --libdir=%{_libdir}
 ./waf
 
-%install 
+%install
 ./waf -j1 install --destdir=%{buildroot} -v
 
 %files

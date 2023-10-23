@@ -25,7 +25,7 @@ BuildRequires: Carla-devel
 %else
 BuildRequires: Carla-mao-devel
 %endif
-BuildRequires: liblscp-devel 
+BuildRequires: liblscp-devel
 BuildRequires: fluidsynth-devel
 BuildRequires: desktop-file-utils
 
@@ -49,7 +49,7 @@ sed -i -e "s/\/home\/gideon\/bin\///g" desktopentry/konfyt.desktop
 
 %build
 
-%qmake_qt5 konfyt.pro 
+%qmake_qt5 konfyt.pro
 %make_build
 
 %install
@@ -90,40 +90,40 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %changelog
 * Sun Aug 06 2023 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-3
-- update to 1.4.0-3 
+- update to 1.4.0-3
 
 * Mon May 15 2023 Yann Collette <ycollette.nospam@free.fr> - 1.3.1-3
-- update to 1.3.1-3 
+- update to 1.3.1-3
 
 * Mon Apr 17 2023 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-3
-- update to 1.3.0-3 
+- update to 1.3.0-3
 
 * Sun Jan 22 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-3
-- update to 1.2.3-3 
+- update to 1.2.3-3
 
 * Tue Oct 11 2022 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-3
-- update to 1.2.1-3 
+- update to 1.2.1-3
 
 * Sun Jul 17 2022 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-3
-- update to 1.2.0-3 
+- update to 1.2.0-3
 
 * Tue Jan 18 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1.7-3
-- update to 1.1.7-3 
+- update to 1.1.7-3
 
 * Wed Oct 13 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.6-3
-- update to 1.1.6-3 
+- update to 1.1.6-3
 
 * Thu Jul 15 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.5-3
-- update to 1.1.5-3 
+- update to 1.1.5-3
 
 * Fri Apr 16 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.4-3
-- update to 1.1.4-3 
+- update to 1.1.4-3
 
 * Tue Jan 12 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.3-3
-- update to 1.1.3-3 
+- update to 1.1.3-3
 
 * Wed Oct 14 2020 Yann Collette <ycollette.nospam@free.fr> - 1.1.2-3
-- update to 1.1.2-3 
+- update to 1.1.2-3
 
 * Sat Oct 10 2020 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-3
 - update 1.1.1-3  ...

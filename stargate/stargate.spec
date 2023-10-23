@@ -26,7 +26,7 @@ BuildRequires: make
 BuildRequires: libsndfile-devel
 BuildRequires: portaudio-devel
 BuildRequires: portmidi-devel
-BuildRequires: python3-devel 
+BuildRequires: python3-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: fftw-devel
 BuildRequires: desktop-file-utils
@@ -48,9 +48,9 @@ Requires: python3-pymarshal
 Requires: python3-wavefile
 Requires: (python3-qt6 or python3-qt5)
 Requires: rubberband
-Requires: vorbis-tools 
+Requires: vorbis-tools
 
-Recommends: ffmpeg 
+Recommends: ffmpeg
 
 %description
 Stargate is digital audio workstations (DAWs), instrument and effect plugins

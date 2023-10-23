@@ -51,7 +51,7 @@ It is comparable to that of mixing a real drumkit that has been recorded with a 
 export CXXFLAGS="-std=c++11 -include cstdint $CXXFLAGS"
 %endif
 
-%configure --enable-lv2 --libdir=%{_libdir} 
+%configure --enable-lv2 --libdir=%{_libdir}
 # --disable-cli --with-lv2dir=
 
 %make_build

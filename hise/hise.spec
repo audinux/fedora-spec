@@ -75,7 +75,7 @@ Projucer --resave HISE.jucer
 cd Builds/LinuxMakefile/
 %make_build CONFIG=Release STRIP=true
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 -d %{buildroot}%{_datadir}/%{name}/demos/

@@ -51,7 +51,7 @@ MusiKernel is digital audio workstations (DAWs), instrument and effect plugins
 
 %build
 cd src
-%make_build 
+%make_build
 
 %install
 cd src

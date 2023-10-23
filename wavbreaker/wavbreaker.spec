@@ -18,7 +18,7 @@ BuildRequires: mpg123-devel
 BuildRequires: libao-devel
 BuildRequires: desktop-file-utils
 
-%description 
+%description
 This application's purpose in life is to take a WAV file and break it up into multiple WAV files.
 It makes a clean break at the correct position to burn the files to an Audio CD without any dead
 air between the tracks.
@@ -35,7 +35,7 @@ back up with wavbreaker. The wavmerge tool will only work on files that have the
 (for example, 44.100 Hz sample rate, 16-bit sample size, etc.).
 
 %prep
-%autosetup 
+%autosetup
 
 %build
 
@@ -56,7 +56,7 @@ desktop-file-install                         \
 desktop-file-validate %{buildroot}%{_datadir}/applications/net.sourceforge.wavbreaker.desktop
 
 %files
-%doc AUTHORS README.md CHANGELOG.md CONTRIBUTORS 
+%doc AUTHORS README.md CHANGELOG.md CONTRIBUTORS
 %license COPYING
 %{_bindir}/*
 %{_datadir}/applications/net.sourceforge.wavbreaker.desktop

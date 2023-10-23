@@ -30,9 +30,9 @@ and resampling audio files, based on Robin Gareus' 'audio_decoder' code
 %build
 
 %meson
-%meson_build 
+%meson_build
 
-%install 
+%install
 
 %meson_install
 

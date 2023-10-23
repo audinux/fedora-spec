@@ -42,7 +42,7 @@ export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
 cd src/extralibs/sdl_draw
 %make_build -f makefile.linux
 cd ../../..
-	
+
 %make_build -f makefile.linux
 
 %install

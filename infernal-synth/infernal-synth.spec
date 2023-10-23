@@ -51,7 +51,7 @@ sed -i -e "/-march=native/d" CMakeLists.txt
 %cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_CXX_FLAGS="-include tuple -include atomic -fPIC $CXXFLAGS"
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
 cp -rav dist/linux_/RELEASE/* %{buildroot}/%{_libdir}/vst3/

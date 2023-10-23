@@ -1,7 +1,7 @@
 Name:    soundux
 Version: 0.2.7
 Release: 1%{?dist}
-Summary: A cross-platform soundboard 
+Summary: A cross-platform soundboard
 License: GPL-3.0-or-later
 URL:     https://github.com/Soundux/Soundux
 
@@ -54,9 +54,9 @@ sed -i -e "s/-Werror/ /g" CMakeLists.txt
        -DEMBED_PATH=ON
 %cmake_build
 
-%install 
+%install
 
-%cmake_install	
+%cmake_install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 -d %{buildroot}/%{_libdir}/

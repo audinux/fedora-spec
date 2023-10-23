@@ -5,14 +5,14 @@
 Name: sfxr
 Version: 1.2.1
 Release: 1%{?dist}
-Summary: Create sound effects	
+Summary: Create sound effects
 License: GPL-2.0-only
-URL: http://www.drpetter.se/project_sfxr.html	
+URL: http://www.drpetter.se/project_sfxr.html
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: sfxr-sdl-1.2.1.tar.gz	
+Source0: sfxr-sdl-1.2.1.tar.gz
 Source1: sfxr-share.tar.gz
 
 BuildRequires: gcc-c++
@@ -63,4 +63,4 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %changelog
 * Tue Dec 14 2021 Yann Collette <ycollette.nospam@free.fr>
-- 
+-

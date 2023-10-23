@@ -55,7 +55,7 @@ chmod a+x %{buildroot}%{_libdir}/lv2/abNinjam.lv2/*.so
 
 %files
 %doc README.md
-%license LICENSE 
+%license LICENSE
 %{_libdir}/vst/*
 %{_libdir}/lv2/*
 

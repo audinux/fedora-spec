@@ -86,7 +86,7 @@ sed -i -e "s/dep\/lib\/librtmidi.a/-lrtmidi/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 
 mkdir STS_plugin
-tar xvfz %{SOURCE1} --directory=STS_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=STS_plugin --strip-components=1
 
 cp -n %{SOURCE2} STS_plugin/plugin.json || true
 
@@ -95,7 +95,7 @@ cp -n %{SOURCE2} STS_plugin/plugin.json || true
 cd STS_plugin
 %make_build RACK_DIR=.. PREFIX=/usr LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/STS/
 cp -r STS_plugin/dist/STS/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/STS/

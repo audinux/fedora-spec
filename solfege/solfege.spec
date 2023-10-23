@@ -292,8 +292,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 - Remove X-Fedora Category from meny entry
 - Add pygtk2 Requires
 - Replace libxlst-devel BuildRequires with libxlst
-- Keep timestamps for image files 
-- Convert AUTHORS and README from iso8859 to UTF-8 
+- Keep timestamps for image files
+- Convert AUTHORS and README from iso8859 to UTF-8
 
 * Fri Dec 15 2006 Sindre Pedersen Bjørdal <foolish[AT]guezz.net> - 3.6.4-4
 - Fix permissions issue in wrapper script

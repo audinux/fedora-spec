@@ -33,7 +33,7 @@ A LV2 instrument plugin is planned but not yet executed.
 %autosetup
 
 %build
-%make_build 
+%make_build
 
 %install
 

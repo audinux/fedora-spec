@@ -3,8 +3,8 @@
 Name:    wavefile
 Version: 1.6.2
 Release: 1%{?dist}
-Summary: Pythonic access to audio files	
-License: GPL3	
+Summary: Pythonic access to audio files
+License: GPL3
 URL:     https://github.com/vokimon/python-wavefile
 
 Vendor:       Audinux

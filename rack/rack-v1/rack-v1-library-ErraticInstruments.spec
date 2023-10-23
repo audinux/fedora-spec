@@ -89,7 +89,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir ErraticInstruments_plugin
-tar xvfz %{SOURCE1} --directory=ErraticInstruments_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=ErraticInstruments_plugin --strip-components=1
 
 cp -n %{SOURCE2} ErraticInstruments_plugin/plugin.json || true
 
@@ -98,7 +98,7 @@ cp -n %{SOURCE2} ErraticInstruments_plugin/plugin.json || true
 cd ErraticInstruments_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/ErraticInstruments/
 cp -r ErraticInstruments_plugin/dist/ErraticInstruments/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/ErraticInstruments/

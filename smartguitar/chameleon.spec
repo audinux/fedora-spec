@@ -102,7 +102,7 @@ export LDFLAGS="-I/usr/include $LDFLAGS"
 %cmake
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/Chameleon.vst3/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/Chameleon.lv2/

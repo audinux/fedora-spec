@@ -42,7 +42,7 @@ export CFLAGS=`echo $CFLAGS | sed -e "s|-Werror=format-security||g"`
 
 %make_build STRIP=true
 
-%install 
+%install
 
 %make_install INSTALL_DIR=/usr/%{_lib}/lv2 STRIP=true
 

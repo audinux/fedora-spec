@@ -6,8 +6,8 @@ Name: vamp-simple-cepstrum
 Version: 1.0
 Release: 2%{?dist}
 Summary: A simple Vamp plugin to calculate and return cepstrum values from DFT bins
-License: GLPv2	
-URL: https://code.soundsoftware.ac.uk/projects/vamp-simple-cepstrum	
+License: GLPv2
+URL: https://code.soundsoftware.ac.uk/projects/vamp-simple-cepstrum
 
 Vendor:       Audinux
 Distribution: Audinux

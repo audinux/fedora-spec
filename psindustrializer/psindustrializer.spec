@@ -3,9 +3,9 @@
 # Category: Audio, Synthesizer
 
 Name:    psindustrializer
-Version: 0.2.7	
+Version: 0.2.7
 Release: 1%{?dist}
-Summary: Industrializer is a program for generating percussion sounds for musical purposes	
+Summary: Industrializer is a program for generating percussion sounds for musical purposes
 
 License: GPL-2.0-only
 URL:     https://sourceforge.net/projects/industrializer

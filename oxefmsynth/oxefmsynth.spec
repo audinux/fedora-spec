@@ -40,9 +40,9 @@ export VSTSDK_PATH=vst/vstsdk2.4/
 %set_build_flags
 export CXXFLAGS="-fPIC $CXXFLAGS"
 
-%make_build 
+%make_build
 
-%install 
+%install
 
 export VSTSDK_PATH=vst/vstsdk2.4/
 

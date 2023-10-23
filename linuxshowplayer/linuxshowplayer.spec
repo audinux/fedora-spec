@@ -48,7 +48,7 @@ install -m 755 -d %{buildroot}%{_datadir}/mime/packages
 install -m 644 dist/linuxshowplayer.desktop %{buildroot}%{_datadir}/applications
 install -m 644 dist/linuxshowplayer.png %{buildroot}%{_datadir}/pixmaps
 install -m 644 dist/linuxshowplayer.xml %{buildroot}%{_datadir}/mime/packages
-  
+
 desktop-file-install                         \
   --add-category="Audio"                     \
   --delete-original                          \

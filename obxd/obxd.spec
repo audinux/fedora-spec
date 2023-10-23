@@ -77,7 +77,7 @@ export CPPFLAGS="-I/usr/src/JUCE61/modules -I$CWD/VST_SDK/VST2_SDK -I$CWD/VST_SD
 cd Builds/LinuxMakefile
 %make_build VST Standalone CONFIG=Release64 STRIP=true
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst/
 install -m 755 -d %{buildroot}%{_bindir}/

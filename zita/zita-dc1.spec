@@ -2,7 +2,7 @@
 # Type: Standalone
 # Category: Audio, Effect
 
-Summary: Dynamics Compressor. 
+Summary: Dynamics Compressor.
 Name:    zita-dc1
 Version: 0.3.3
 Release: 1%{?dist}

@@ -6,8 +6,8 @@ Name: miredu
 Version: 1.0
 Release: 2%{?dist}
 Summary: A Vamp plugin implementing basic audio descriptors for educational purposes
-License: GLPv2	
-URL: https://github.com/MTG/miredu	
+License: GLPv2
+URL: https://github.com/MTG/miredu
 
 Vendor:       Audinux
 Distribution: Audinux

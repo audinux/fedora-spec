@@ -41,7 +41,7 @@ find . -name "*.cmake" -exec sed -i -e "s/\-Werror//g" {} \;
 
 %cmake -DCMAKE_BUILD_TYPE=RELEASE
 
-%cmake_build 
+%cmake_build
 
 %install
 

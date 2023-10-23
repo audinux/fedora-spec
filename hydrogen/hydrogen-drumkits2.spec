@@ -119,7 +119,7 @@ BuildArch: noarch
 Requires: hydrogen >= 0.9.5
 
 %description
-A collection of additional drumkits for the 
+A collection of additional drumkits for the
 Hydrogen advanced drum machine for GNU/Linux.
 
 %package -n hydrogen-drumkit-Ace-Tone_Rhythm_Ace

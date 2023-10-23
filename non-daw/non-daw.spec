@@ -52,7 +52,7 @@ application state including JACK and MIDI connections between audio sessions.
 Summary: A MIDI sequencer for JACK
 
 %description -n non-sequencer
-non-sequencer is a powerful, lightweight, real-time, pattern-based MIDI 
+non-sequencer is a powerful, lightweight, real-time, pattern-based MIDI
 sequencer
 
 %prep
@@ -66,9 +66,9 @@ sed -i -e "s|#!/usr/bin/env python|#!/usr/bin/python3.10|g" waf
 %set_build_flags
 
 CXXFLAGS="$CXXFLAGS -std=c++11" ./waf configure --prefix=%{_prefix} --libdir=%{_libdir} --enable-debug
-./waf %{?_smp_mflags} -v 
+./waf %{?_smp_mflags} -v
 
-%install 
+%install
 ./waf install --destdir=%{buildroot} --docdir=%{buildroot}/%{_docdir}/
 for i in %{buildroot}%{_datadir}/applications/*.desktop; do
   sed -i -e 's|\/usr\/bin\/||' $i

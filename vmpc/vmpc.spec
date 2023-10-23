@@ -48,10 +48,10 @@ VST3 version of %{name}
 %endif
 
 sed -i -e "/mpc-tests/d" editables/mpc/CMakeLists.txt
-%cmake_build --target vmpc2000xl_Standalone vmpc2000xl_VST3 
+%cmake_build --target vmpc2000xl_Standalone vmpc2000xl_VST3
 # vmpc2000xl_LV2
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_bindir}

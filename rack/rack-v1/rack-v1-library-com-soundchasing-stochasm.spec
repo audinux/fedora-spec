@@ -84,7 +84,7 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
 mkdir com-soundchasing-stochasm_plugin
-tar xvfz %{SOURCE1} --directory=com-soundchasing-stochasm_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=com-soundchasing-stochasm_plugin --strip-components=1
 
 cp -n %{SOURCE2} com-soundchasing-stochasm_plugin/plugin.json || true
 
@@ -93,7 +93,7 @@ cp -n %{SOURCE2} com-soundchasing-stochasm_plugin/plugin.json || true
 cd com-soundchasing-stochasm_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack1/plugins-v1/com-soundchasing-stochasm/
 cp -r com-soundchasing-stochasm_plugin/dist/com-soundchasing-stochasm/* %{buildroot}%{_libexecdir}/Rack1/plugins-v1/com-soundchasing-stochasm/

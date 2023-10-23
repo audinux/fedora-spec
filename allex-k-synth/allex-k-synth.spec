@@ -44,7 +44,7 @@ tar xvfz %{SOURCE1}
 cd Builds/LinuxMakefile/
 %make_build
 
-%install 
+%install
 
 cd Builds/LinuxMakefile/
 

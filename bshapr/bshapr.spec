@@ -22,9 +22,9 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: cairo-devel
 
 %description
-B.Shapr is an envelope plugin for time or beat position-dependent effects. 
-The user can define up to four different envelope shapes by drawing Bezier curves. 
-Each of these envelope shapes can be connected to different target effects, such as amplification, balance, 
+B.Shapr is an envelope plugin for time or beat position-dependent effects.
+The user can define up to four different envelope shapes by drawing Bezier curves.
+Each of these envelope shapes can be connected to different target effects, such as amplification, balance,
 stereo width, filters, pitch shift, delay, and distortion effects and can be combined together.
 
 %prep
@@ -85,4 +85,4 @@ stereo width, filters, pitch shift, delay, and distortion effects and can be com
 - update to 0.4.0-1
 
 * Sat Aug 24 2019 Yann Collette <ycollette dot nospam at free.fr> 0.3.2-1
-- initial release 
+- initial release

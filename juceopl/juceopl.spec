@@ -67,7 +67,7 @@ CWD=`pwd`
 cd Builds/LinuxMakefile
 %make_build STRIP=true CXXFLAGS="-I$CWD/VST_SDK/VST2_SDK -I/usr/include/JUCE-7.0.5/modules"
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst/
 install -m 755 -p Builds/LinuxMakefile/build/JuceOPLVSTi.so %{buildroot}/%{_libdir}/vst/

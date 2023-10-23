@@ -56,7 +56,7 @@ VST3 version of %{name}
 %cmake
 %cmake_build
 
-%install 
+%install
 
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
 cp -rav %{__cmake_builddir}/ATLAS-06_artefacts/ATLAS-06.vst3 %{buildroot}/%{_libdir}/vst3/

@@ -6,8 +6,8 @@ Name: azi
 Version: 1.0
 Release: 2%{?dist}
 Summary: Experimental azimuth-based stereo plan plugin
-License: GLPv2	
-URL: https://code.soundsoftware.ac.uk/projects/azi	
+License: GLPv2
+URL: https://code.soundsoftware.ac.uk/projects/azi
 
 Vendor:       Audinux
 Distribution: Audinux

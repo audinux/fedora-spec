@@ -6,8 +6,8 @@ Name: tuning-difference
 Version: 1.0
 Release: 2%{?dist}
 Summary: Vamp plugin that estimates the tuning frequency of a recording
-License: GLPv2	
-URL: https://code.soundsoftware.ac.uk/projects/tuning-difference	
+License: GLPv2
+URL: https://code.soundsoftware.ac.uk/projects/tuning-difference
 
 Vendor:       Audinux
 Distribution: Audinux

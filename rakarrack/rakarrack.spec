@@ -94,4 +94,4 @@ desktop-file-install --vendor '' \
 - update for Fedora 29
 
 * Thu Jun 04 2015 Yann Collette <ycollette dot nospam at free.fr> 1.5.1-1
-- initial release 
+- initial release
