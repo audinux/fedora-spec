@@ -897,7 +897,9 @@ https://github.com/brummer10/ToneTwistPlugs
 https://github.com/BramGiesen/audio-to-cv-pitch-lv2
 https://github.com/dan-german/blocks
 https://github.com/sonejostudios/DeLooper
-https://github.com/psemiletov/bedroomstudio"
+https://github.com/psemiletov/bedroomstudio
+https://github.com/x42/mtc-tools
+https://github.com/x42/libtimecode"
 
 if [ -f git_tags_new.txt ];
 then
