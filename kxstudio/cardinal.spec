@@ -1,7 +1,7 @@
 %define _lto_cflags %{nil}
 
 Name:    cardinal
-Version: 23.07
+Version: 23.10
 Release: 2%{?dist}
 Summary: Virtual modular synthesizer plugin
 License: GPL-3.0-or-later
@@ -193,6 +193,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Tue Oct 24 2023 Yann Collette <ycollette.nospam@free.fr> - 23.10-2
+- update to 23.10-2
+
 * Sun Jul 16 2023 Justin Koh <j@ustink.org> - 23.07-2
 - Update to 23.07-2
 
