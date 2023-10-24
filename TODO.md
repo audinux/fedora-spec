@@ -114,6 +114,7 @@
 | qliquidsfz              | https://github.com/be1/qliquidsfz |
 | juicysfplugin           | https://github.com/Birch-san/juicysfplugin |
 | nih-plug                | https://github.com/robbert-vdh/nih-plug |
+| PeakSynth-Audio-Plugin  | https://github.com/owennjpr/PeakSynth-Audio-Plugin |
 
 Check the following URL: https://github.com/forart/HyMPS
 
