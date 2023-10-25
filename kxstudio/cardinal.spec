@@ -1,4 +1,7 @@
 %define _lto_cflags %{nil}
+# On some platforms, the debug symbols extraction produces
+# some timeout.
+%global debug_package %{nil}
 
 Name:    cardinal
 Version: 23.10
