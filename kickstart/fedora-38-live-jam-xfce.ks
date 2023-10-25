@@ -412,7 +412,6 @@ kernel
 kernel-modules
 kernel-modules-extra
 kernel-tools
-#YC: kernel-rt-mao
 kernel-rt-stable-mao
 
 # This was added a while ago, I think it falls into the category of
@@ -506,11 +505,7 @@ jackctlmmc
 Carla-mao
 Cadence
 
-# ffado
-ffado
-
 # pulse
-#YC: pulseaudio-module-jack 
 pavucontrol
 
 # midi
@@ -536,27 +531,29 @@ ams
 aeolus
 minicomputer
 phasex
-Rack-v1
-rack-v1-Befaco
-rack-v1-ESeries
-rack-v1-AudibleInstruments
-rack-v1-Fundamental
+Rack-v2
+rack-v2-Befaco
+rack-v2-ESeries
+rack-v2-AudibleInstruments
+rack-v2-Fundamental
 BespokeSynth
+cardinal
+vst3-cardinal
 
 # guitar
 guitarix
 tuxguitar
 sooperlooper
+mod-gxpitchshifter
+mod-pitchshifter
 
 # recodring and DAW
 audacity
 ardour6
 seq24
 qtractor
-non-daw
 non-mixer
-non-sequencer
-non-session-manager
+raysession
 muse
 rosegarden4
 mixxx
@@ -601,7 +598,6 @@ lv2-samplv1
 lv2-synthv1
 lv2-drumkv1
 lv2-newtonator
-lv2-x42-plugins
 lv2-sorcer
 lv2-fabla
 lv2-artyfx-plugins
@@ -609,7 +605,6 @@ lv2-EQ10Q-plugins
 lv2-linuxsampler-plugins
 lv2-mdaEPiano
 lv2-mdala-plugins
-swh-lv2
 orbit.lv2
 midi_matrix.lv2
 sherlock.lv2
@@ -626,6 +621,39 @@ lv2-avw-plugins
 lv2-kn0ck0ut
 lv2-triceratops
 lv2-fomp-plugins
+lv2-avldrums-x42-plugin
+balance.lv2
+controlfilter.lv2
+darc.lv2
+dpl.lv2
+fat1.lv2
+fil4.lv2
+gmsynth.lv2
+ltc-tools
+matrixmixer.lv2
+mclk.lv2
+meters.lv2
+midifilter.lv2
+midigen.lv2
+midimap.lv2
+mixtri.lv2
+mtc.lv2
+mtc-tools
+nodelay.lv2
+onsettrigger.lv2
+phaserotate.lv2
+repitch.lv2
+sisco.lv2
+spectra.lv2
+stepseq.lv2
+stereoroute.lv2
+testsignal.lv2
+tuna.lv2
+xfade.lv2
+zconvo.lv2
+drmr
+drumlabooh
+drumrox
 
 # dssi
 nekobee-dssi
@@ -650,7 +678,7 @@ zita-resampler
 # writing & publishing
 vim
 nano
-mscore
+mscore-mao
 lilypond
 
 # audio utilities
@@ -665,7 +693,7 @@ realTimeConfigQuickScan
 rtirq
 japa
 radium-compressor
-#YC: solfege
+solfege
 linuxsampler
 libgig
 qsampler
@@ -680,11 +708,11 @@ lenmus
 grandorgue
 picoloop
 jm2cv
-rakarrack
+rakarrack-plus
 
 #language
 chuck
-# miniaudicle # YC
+miniaudicle
 supercollider
 supercollider-sc3-plugins
 supercollider-vim
