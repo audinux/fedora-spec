@@ -1,12 +1,12 @@
-From e2d73bb85d9257e5b85f99f250ed40b1068dea23 Mon Sep 17 00:00:00 2001
+From 9804963727d4fb6e721fc31e54173859738d0633 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Mon, 21 Aug 2023 21:52:47 +0200
+Date: Wed, 25 Oct 2023 21:02:21 +0200
 Subject: [PATCH] patch
 
 ---
  imgcreate/fs.py   |  3 +--
- imgcreate/live.py | 14 +++++++++++++-
- 2 files changed, 14 insertions(+), 3 deletions(-)
+ imgcreate/live.py | 16 ++++++++++++++--
+ 2 files changed, 15 insertions(+), 4 deletions(-)
 
 diff --git a/imgcreate/fs.py b/imgcreate/fs.py
 index f999d05..a47708f 100644
@@ -23,7 +23,7 @@ index f999d05..a47708f 100644
  def checkfsblksz(fstype, size, use=None, fssize=None):
  
 diff --git a/imgcreate/live.py b/imgcreate/live.py
-index 8f971b6..bd5c856 100644
+index 8f971b6..bbed993 100644
 --- a/imgcreate/live.py
 +++ b/imgcreate/live.py
 @@ -491,7 +491,19 @@ class x86LiveImageCreator(LiveImageCreatorBase):
@@ -47,6 +47,15 @@ index 8f971b6..bd5c856 100644
              return True
  
          return False
+@@ -575,7 +587,7 @@ menu separator
+ 
+             if default:
+                 long = self.product
+-            elif kernel.startswith(b"kernel-"):
++            elif kernel.startswith("kernel-"):
+                 long = "%s (%s)" % (self.product, kernel[7:])
+             else:
+                 long = "%s (%s)" % (self.product, kernel)
 -- 
 2.41.0
 

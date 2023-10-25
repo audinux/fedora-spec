@@ -3,7 +3,7 @@
 Summary: Tools for building live CDs
 Name: livecd-tools-mao
 Version: 31.0
-Release: 5%{?dist}
+Release: 6%{?dist}
 License: GPL-2.0-only
 URL: https://github.com/livecd-tools/livecd-tools
 
@@ -132,6 +132,9 @@ rm -rfv %{buildroot}%{_mandir}/man8/livecd-iso-to-*
 %{_mandir}/man8/livecd-iso-to-disk.8*
 
 %changelog
+* Wed Oct 25 2023 Yann Collette <ycollette.nospam@free.fr> - 1:31.0-6
+- update to 1:31.0-6
+
 * Mon Aug 21 2023 Yann Collette <ycollette.nospam@free.fr> - 1:31.0-5
 - update to 1:31.0-5
 
