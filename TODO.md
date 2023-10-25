@@ -118,6 +118,13 @@
 
 Check the following URL: https://github.com/forart/HyMPS
 
+Add dead package:
+- lv2-fil-plugins
+- lv2-instance-access
+- lv2-ui
+- lv2core
+- slv2
+
 ## Fedora 39 to be fixed
 
 rack-v1-BaconMusic         -> build failure
