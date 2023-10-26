@@ -1,6 +1,6 @@
 Summary: Reboot of Non Mixer with eXTended LV2 support.
 Name:    non-mixer-xt
-Version: 1.0.4
+Version: 1.0.5
 Release: 1%{?dist}
 License: GPL-3.0-only
 URL:     https://github.com/Stazed/non-mixer-xt
@@ -8,7 +8,8 @@ URL:     https://github.com/Stazed/non-mixer-xt
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/Stazed/non-mixer-xt/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: non-mixer-xt.tar.gz
+Source1: source-non-mixer-xt.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -36,7 +37,7 @@ The generic parameter editor has been redesigned to accommodate larger
 LV2 plugins, preset support and state save and restore.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n %{name}
 
 %build
 
@@ -66,5 +67,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/doc/non-mixer-xt/*
 
 %changelog
+* Thu Oct 26 2023 Yann Collette <ycollette dot nospam at free.fr> 1.0.5-1
+- update to 1.0.5-1
+
 * Sat Sep 09 2023 Yann Collette <ycollette dot nospam at free.fr> 1.0.4-1
 - initial release
