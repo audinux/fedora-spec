@@ -1,5 +1,5 @@
 Name:    grainbow
-Version: 0.4.0
+Version: 0.4.1
 Release: 1%{?dist}
 Summary: A synthesizer that uses pitch detection to choose candidates for granular synthesis or sampling
 License: GPL-3.0-or-later
@@ -9,11 +9,10 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./source-grainbow.sh v0.4.0
+# $ ./source-grainbow.sh v0.4.1
 
 Source0: gRainbow.tar.gz
 Source1: source-grainbow.sh
-Patch0: grainbow-0001-remove-unused-function.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -65,7 +64,7 @@ Requires: %{name}
 LV2 version of %{name}
 
 %prep
-%autosetup -p1 -n gRainbow
+%autosetup -n gRainbow
 
 %build
 
@@ -129,5 +128,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/grainbow.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Thu Oct 26 2023 Yann Collette <ycollette.nospam@free.fr> - 0.4.1-1
+- update to 0.4.1-1
+
 * Sat Jul 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.4.0-1
 - Initial spec file
