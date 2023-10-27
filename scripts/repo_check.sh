@@ -44,7 +44,7 @@ https://bitbucket.org/agraef/faust-lv2/src
 https://bitbucket.org/xenakios/paulstretchplugin
 https://codeberg.org/rtcqs/rtcqs
 https://github.com/Dougal-s/Aether
-https://git.assembla.com/portaudio
+https://github.com/PortAudio/portaudio
 https://git.code.sf.net/p/backupband/code
 https://git.code.sf.net/p/djv/git
 https://git.code.sf.net/p/guvcview/git-master
