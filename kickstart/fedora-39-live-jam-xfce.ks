@@ -29,7 +29,7 @@ shutdown
 rootpw --plaintext audinuxaudinux
 
 #enable threaded irqs
-bootloader --location=none --append="threadirqs nopti"
+bootloader --location=none --append="threadirqs nopti preempt=full"
 
 #YC: replace development by releases
 repo --name=rpmfusion                --baseurl=http://download1.rpmfusion.org/free/fedora/development/$releasever/Everything/$basearch/os/
