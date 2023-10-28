@@ -34,7 +34,6 @@
 | Mousai                  | https://github.com/SeaDve/Mousai |
 | audioprism              | https://github.com/vsergeev/audioprism |
 | friture                 | https://github.com/tlecomte/friture |
-| MiniGBS                 | https://github.com/baines/MiniGBS |
 | Schrammel_OJD           | https://github.com/JanosGit/Schrammel_OJD |
 | EasySSP                 | https://github.com/automatl/audio-dsp-multi-visualize/ |
 | demucs                  | https://github.com/facebookresearch/demucs |

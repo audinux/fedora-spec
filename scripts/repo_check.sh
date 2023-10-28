@@ -900,7 +900,8 @@ https://github.com/sonejostudios/DeLooper
 https://github.com/psemiletov/bedroomstudio
 https://github.com/x42/mtc-tools
 https://github.com/x42/libtimecode
-https://github.com/x42/ltc-tools"
+https://github.com/x42/ltc-tools
+https://github.com/baines/MiniGBS"
 
 if [ -f git_tags_new.txt ];
 then
