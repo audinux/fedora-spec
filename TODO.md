@@ -132,7 +132,6 @@ Add dead package:
 rack-v1-BaconMusic         -> build failure
 rack-v1-ParableInstruments -> fails since F36
 piano                      -> build failure (normal)
-pipecontrol                -> build failure
 
 ## Fedora 38 to be fixed
 SIMD:
