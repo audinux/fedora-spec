@@ -1,5 +1,5 @@
 Name:    pipecontrol
-Version: 0.2.10
+Version: 0.2.11
 Release: 1%{?dist}
 Summary: Pipewire control GUI program in Qt
 URL:     https://github.com/portaloffreedom/pipecontrol
@@ -54,6 +54,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/PipeControl.desktop
 %{_datadir}/icons/hicolor/scalable/apps/
 
 %changelog
+* Sun Oct 29 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2.11-1
+- update to 0.2.11-1
+
 * Sat Apr 29 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2.10-1
 - update to 0.2.10-1
 
