@@ -4,7 +4,7 @@
 
 Name:    lsp-plugins
 Summary: Linux Studio Plugins collection
-Version: 1.2.12
+Version: 1.2.13
 Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/sadko4u/lsp-plugins
@@ -12,7 +12,7 @@ URL:     https://github.com/sadko4u/lsp-plugins
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/sadko4u/lsp-plugins/releases/download/1.2.12/lsp-plugins-src-1.2.12.tar.gz
+Source0: https://github.com/sadko4u/lsp-plugins/releases/download/%{version}/lsp-plugins-src-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: lv2-devel
@@ -102,6 +102,9 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %{_libdir}/clap/*
 
 %changelog
+* Mon Oct 30 2023 Yann Collette <ycollette dot nospam at free.fr> 1.2.13-1
+- update to 1.2.13-1
+
 * Sat Oct 14 2023 Yann Collette <ycollette dot nospam at free.fr> 1.2.12-1
 - update to 1.2.12-1
 
