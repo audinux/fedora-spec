@@ -1,7 +1,7 @@
 %define _lto_cflags %{nil}
 
 Name:    ossia-score
-Version: 3.1.11
+Version: 3.1.12
 Release: 1%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL:     https://github.com/OSSIA/score
@@ -16,7 +16,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: unzip
 BuildRequires: alsa-lib-devel
-# BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: boost-devel
 BuildRequires: zlib-devel
 BuildRequires: llvm-devel
