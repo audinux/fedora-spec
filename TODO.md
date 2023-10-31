@@ -113,8 +113,7 @@
 | qliquidsfz              | https://github.com/be1/qliquidsfz |
 | juicysfplugin           | https://github.com/Birch-san/juicysfplugin |
 | nih-plug                | https://github.com/robbert-vdh/nih-plug |
-| PeakSynth-Audio-Plugin  | https://github.com/owennjpr/PeakSynth-Audio-Plugin |
-| BesselsTrick            | https://github.com/fcaspe/BesselsTrick |
+| Besselstrick            | https://github.com/fcaspe/BesselsTrick |
 | fxseq                   | https://github.com/ssabug/fxseq |
 | choppah                 | https://github.com/ssabug/choppah |
 

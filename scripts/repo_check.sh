@@ -901,7 +901,8 @@ https://github.com/psemiletov/bedroomstudio
 https://github.com/x42/mtc-tools
 https://github.com/x42/libtimecode
 https://github.com/x42/ltc-tools
-https://github.com/baines/MiniGBS"
+https://github.com/baines/MiniGBS
+https://github.com/owennjpr/PeakSynth-Audio-Plugin"
 
 if [ -f git_tags_new.txt ];
 then
