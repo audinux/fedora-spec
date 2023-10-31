@@ -57,7 +57,7 @@ BuildRequires: desktop-file-utils
 ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 
 %prep
-%autosetup -cn score-v%{version}
+%autosetup -n %{name}-%{version}
 
 %build
 
