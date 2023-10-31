@@ -1,12 +1,15 @@
 Summary: Reboot of Non Mixer with eXTended LV2 support.
 Name:    non-mixer-xt
-Version: 1.0.5
+Version: 1.0.6
 Release: 1%{?dist}
 License: GPL-3.0-only
 URL:     https://github.com/Stazed/non-mixer-xt
 
 Vendor:       Audinux
 Distribution: Audinux
+
+# Usage: ./source-non-mixer-xt.sh <tag>
+#        ./source-non-mixer-xt.sh 1.0.6
 
 Source0: non-mixer-xt.tar.gz
 Source1: source-non-mixer-xt.sh
@@ -27,6 +30,7 @@ BuildRequires: liblrdf-devel
 BuildRequires: lv2-devel
 BuildRequires: lilv-devel
 BuildRequires: suil-devel
+BuildRequires: zix-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -67,6 +71,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/doc/non-mixer-xt/*
 
 %changelog
+* Tue Oct 31 2023 Yann Collette <ycollette dot nospam at free.fr> 1.0.6-1
+- update to 1.0.6-1
+
 * Thu Oct 26 2023 Yann Collette <ycollette dot nospam at free.fr> 1.0.5-1
 - update to 1.0.5-1
 
