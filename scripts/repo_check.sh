@@ -902,7 +902,8 @@ https://github.com/x42/mtc-tools
 https://github.com/x42/libtimecode
 https://github.com/x42/ltc-tools
 https://github.com/baines/MiniGBS
-https://github.com/owennjpr/PeakSynth-Audio-Plugin"
+https://github.com/owennjpr/PeakSynth-Audio-Plugin
+https://github.com/drobilla/zix"
 
 if [ -f git_tags_new.txt ];
 then
