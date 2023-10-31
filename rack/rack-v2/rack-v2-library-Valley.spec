@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 80e8976eebbea1e1177beba4de5645eb0ca680e3
-%global gittag0 2.4.3
+%global gittag0 2.4.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Valley
-Version: 2.4.3
+Version: 2.4.4
 Release: 2%{?dist}
 Summary: Valley plugin for Rack
 License: GPL-2.0-or-later
@@ -80,7 +80,7 @@ sed -i -e "s/-march=nehalem//g" dep.mk
 # For -O2 usage
 sed -i -e "s/-O3/-O2/g" compile.mk
 sed -i -e "s/-O3/-O2/g" dep.mk
-sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk
+sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk 
 
 # Remove static gcc lib
 sed -i -e "s/-static-libstdc++ -static-libgcc//g" Makefile
@@ -91,6 +91,10 @@ NEW_FLAGS="-I/usr/include/GLFW"
 %endif
 %if !%{use_static_rtaudio}
 NEW_FLAGS="$NEW_FLAGS -I/usr/include/rtaudio"
+%endif
+
+%ifarch x86_64
+NEW_FLAGS="$NEW_FLAGS -msse4.2"
 %endif
 
 echo "CXXFLAGS += $NEW_FLAGS -O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/tinyexpr -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
@@ -137,7 +141,7 @@ sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
 mkdir Valley_plugin
-tar xvfz %{SOURCE1} --directory=Valley_plugin --strip-components=1
+tar xvfz %{SOURCE1} --directory=Valley_plugin --strip-components=1 
 
 cp -n %{SOURCE2} Valley_plugin/plugin.json || true
 
@@ -150,7 +154,7 @@ cp -n %{SOURCE2} Valley_plugin/plugin.json || true
 cd Valley_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install
+%install 
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/Valley/
 cp -r Valley_plugin/dist/Valley/* %{buildroot}%{_libexecdir}/Rack2/plugins/Valley/
@@ -159,5 +163,5 @@ cp -r Valley_plugin/dist/Valley/* %{buildroot}%{_libexecdir}/Rack2/plugins/Valle
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.4-1
 - initial specfile
