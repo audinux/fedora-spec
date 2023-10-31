@@ -186,7 +186,8 @@ fi
 action "Adding live user" useradd \$USERADDARGS -m -c "Live System User" audinux
 passwd -d audinux > /dev/null
 usermod -aG wheel    audinux > /dev/null
-usermod -aG jackuser audinux > /dev/null
+# YC usermod -aG jackuser audinux > /dev/null
+usermod -aG pipewire audinux > /dev/null
 usermod -aG root     audinux > /dev/null
 
 # Remove root password lock
@@ -816,6 +817,14 @@ cat > /etc/security/limits.d/95-jack.conf <<EOF
 @jackuser - rtprio 90
 @jackuser - nice -10
 @jackuser - memlock unlimited
+EOF
+
+cat > /etc/security/limits.d/25-pw-rlimits.conf <<EOF
+# Default limits for users of pipewire
+
+@pipewire - rtprio 90
+@pipewire - nice -10
+@pipewire - memlock unlimited
 EOF
 
 # xfce configuration
