@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name: spectmorph
-Version: 0.6.0
+Version: 0.6.1
 Release: 3%{?dist}
 Summary: SpectMorph is a free software project which allows to analyze samples of musical instruments, and to combine them (morphing)
 URL: http://www.spectmorph.org
@@ -13,7 +13,6 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/swesterfeld/spectmorph/archive/refs/tags/%{version}.zip#/%{name}-%{version}.zip
-Patch0: spectmorph-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -79,20 +78,10 @@ CLAP version of %{name}
 %prep
 %setup -n spectmorph-%{version}
 
-%ifarch aarch64
-%patch0 -p1
-%endif
-
 # Fix desktop file
 sed -i -e "s/Icon=smjack.png/Icon=smjack/g" data/smjack.desktop
 sed -i -e "s/Midi//g" data/smjack.desktop
 sed -i -e "/AM_ICONV/d" configure.ac
-
-%ifarch aarch64
-# Disable some compilation flags
-sed -i -e "s/-msse -msse2 -msse3 -mmmx//g" configure
-sed -i -e "s/-O3/-O2/g" configure
-%endif
 
 %build
 
@@ -154,6 +143,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Wed Nov 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.1-3
+- update to 0.6.1-3
+
 * Thu May 18 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.0-3
 - update to 0.6.0-3
 
