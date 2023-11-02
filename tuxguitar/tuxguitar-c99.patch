@@ -1,0 +1,18 @@
+Include <sys/ioctl.h> for the ioctl function prototype.  This avoids a
+build issue with future compilers which do not support implicit
+function declarations by default.
+
+Submitted upstream: <https://sourceforge.net/p/tuxguitar/patches/50/>
+
+diff --git a/TuxGuitar-oss/jni/org_herac_tuxguitar_player_impl_midiport_oss_MidiSystem.c b/TuxGuitar-oss/jni/org_herac_tuxguitar_player_impl_midiport_oss_MidiSystem.c
+index adf3d3701e4ee78e..72de90c3970d35fd 100644
+--- a/TuxGuitar-oss/jni/org_herac_tuxguitar_player_impl_midiport_oss_MidiSystem.c
++++ b/TuxGuitar-oss/jni/org_herac_tuxguitar_player_impl_midiport_oss_MidiSystem.c
+@@ -3,6 +3,7 @@
+ #include <unistd.h>
+ #include <stdlib.h>
+ #include <fcntl.h>
++#include <sys/ioctl.h>
+ #include <sys/soundcard.h>
+ #include "org_herac_tuxguitar_player_impl_midiport_oss_MidiSystem.h"
+ 
