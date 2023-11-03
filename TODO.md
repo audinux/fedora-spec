@@ -116,6 +116,7 @@
 | Besselstrick            | https://github.com/fcaspe/BesselsTrick |
 | fxseq                   | https://github.com/ssabug/fxseq |
 | choppah                 | https://github.com/ssabug/choppah |
+| midilooper              | https://github.com/supergilbert/midilooper |
 
 Check the following URL: https://github.com/forart/HyMPS
 
@@ -125,7 +126,7 @@ Add dead package:
 - lv2-ui
 - lv2core
 - slv2
-
+  
 ## Fedora 39 to be fixed
 
 rack-v1-BaconMusic         -> build failure
