@@ -2,11 +2,11 @@
 # Type: Standalone
 # Category: Audio, DAW
 
-%define commit0 63d03fa3a70ce538ecb8417a9c55d95ee17c5648
+%define commit0 fccbe5d517539f1c45bb54c04646569d0d3c00ec
 
 Name:    lmms-mao-weekly
 Version: 1.2.99
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: Linux MultiMedia Studio - Weekly version
 URL:     https://lmms.io
 
@@ -102,8 +102,7 @@ LMMS combines the features of a tracker-/sequencer-program and those
 of powerful synthesizers, samplers, effects etc. in a modern,
 user-friendly and easy to use graphical user-interface.
 
-Features
-
+Features:
  * Song-Editor for arranging the song
  * creating beats and basslines using the Beat-/Bassline-Editor
  * easy-to-use piano-roll for editing patterns and melodies
@@ -178,6 +177,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/lmms.desktop
 %exclude %{_includedir}/lmms
 
 %changelog
+* Fri Nov 03 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.99-6
+- update to fccbe5d517539f1c45bb54c04646569d0d3c00ec
+
 * Mon Oct 23 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.99-5
 - update to 63d03fa3a70ce538ecb8417a9c55d95ee17c5648
 
