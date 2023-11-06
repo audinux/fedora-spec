@@ -6,7 +6,7 @@ https://copr.fedorainfracloud.org/coprs/ycollet/linuxmao/
 After (including) Fedora 35:
 https://copr.fedorainfracloud.org/coprs/ycollet/audinux/
 
-This repo has old packages for Fedora 25 to 33 and up to date packages for Fedora 36 and 37.
+This repo has old packages for Fedora 25 to 33 and up to date packages for Fedora 36, 37 and 38.
 
 To build the spec file:
 - copy it into your rpmbuild/SPEC directory
@@ -41,22 +41,22 @@ $ cd rpm-copr/34
 $ dnf reposync --release=34 --repoid=copr:copr.fedorainfracloud.org:ycollet:linuxmao --destdir .  --downloadcomp
 ```
 ```
-$ mkdir -p rpm-copr/37
-$ cd rpm-copr/37
-$ dnf reposync --release=37 --repoid=copr:copr.fedorainfracloud.org:ycollet:audinux --destdir .  --downloadcomp
+$ mkdir -p rpm-copr/38
+$ cd rpm-copr/38
+$ dnf reposync --release=38 --repoid=copr:copr.fedorainfracloud.org:ycollet:audinux --destdir .  --downloadcomp
 ```
 
 To test the rebuild of the package using mock:
 ```
-$ mock -r /etc/mock/fedora-37-x86_64.cfg --rebuild polyphone-2.0.1-1.fc34.src.rpm
+$ mock -r /etc/mock/fedora-38-x86_64.cfg --rebuild polyphone-2.0.1-1.fc38.src.rpm
 ```
 
 To enable a thirdparty repository, you must add it to /etc/mock/templates/fedora-37.tpl for example and then, enable it via the command line. For example:
 ```
-$ mock -r /etc/mock/fedora-37-x86_64.cfg --enablerepo=ycollet-audinux --rebuild dgedit-0.1-2.fc34.src.rpm
+$ mock -r /etc/mock/fedora-38-x86_64.cfg --enablerepo=ycollet-audinux --rebuild dgedit-0.1-2.fc38.src.rpm
 ```
 
-The portion added to /etc/mock/templates/fedora-{36,37}.tpl is:
+The portion added to /etc/mock/templates/fedora-{36,37,38}.tpl is:
 
 ```
 [ycollet-audinux]
@@ -92,45 +92,45 @@ This script will download a zip a put everything in /tmp/prepare/ directory.
 
 As a root user:
 ```
-$ livecd-creator --verbose --config=fedora-37-live-jam-xfce.ks --fslabel=Audinux --releasever 37
+$ livecd-creator --verbose --config=fedora-38-live-jam-xfce.ks --fslabel=Audinux --releasever 38
 ```
 
 ```
 # To build using the EPEL 7 version of livecd-tools:
 
 $ mock -r /etc/mock/epel-7-x86_64.cfg --isolation=simple --init --install wget unzip livecd-tools
-$ mock -r /etc/mock/epel-7-x86_64.cfg --copyin fedora-37-live-jam-xfce.ks --copyin prepare.sh /builddir
+$ mock -r /etc/mock/epel-7-x86_64.cfg --copyin fedora-38-live-jam-xfce.ks --copyin prepare.sh /builddir
 $ mock -r /etc/mock/epel-7-x86_64.cfg --enable-network --shell
 
-# To build using the Fedora 37 version of livecd-tools:
+# To build using the Fedora 38 version of livecd-tools:
 
-$ mock -r /etc/mock/fedora-37-x86_64.cfg --isolation=simple --init --install wget unzip livecd-tools
-$ mock -r /etc/mock/fedora-37-x86_64.cfg --copyin fedora-37-live-jam-xfce.ks --copyin prepare.sh /builddir
-$ mock -r /etc/mock/fedora-37-x86_64.cfg --enable-network --shell
+$ mock -r /etc/mock/fedora-38-x86_64.cfg --isolation=simple --init --install wget unzip livecd-tools
+$ mock -r /etc/mock/fedora-38-x86_64.cfg --copyin fedora-38-live-jam-xfce.ks --copyin prepare.sh /builddir
+$ mock -r /etc/mock/fedora-38-x86_64.cfg --enable-network --shell
 
 # Then: preinstall the required files and start livecd-creator
 
 $ cd /builddir
 $ ./prepare.sh
-$ livecd-creator --verbose --config=fedora-37-live-jam-xfce.ks --fslabel=Audinux --releasever 37
+$ livecd-creator --verbose --config=fedora-38-live-jam-xfce.ks --fslabel=Audinux --releasever 38
 ```
 
 To create the LiceCD using livemedia-creator:
 
 As a root user:
 ```
-$ mock -r /etc/mock/fedora-37-x86_64.cfg --isolation=simple --init --install lorax-lmc-novirt wget unzip libblockdev-lvm libblockdev-btrfs libblockdev-swap libblockdev-loop libblockdev-crypto libblockdev-mpath libblockdev-dm libblockdev-mdraid libblockdev-nvdimm
-$ mock -r /etc/mock/fedora-37-x86_64.cfg --copyin fedora-37-live-jam-xfce.ks --copyin prepare.sh /builddir
-$ mock -r /etc/mock/fedora-37-x86_64.cfg --enable-network --shell
+$ mock -r /etc/mock/fedora-38-x86_64.cfg --isolation=simple --init --install lorax-lmc-novirt wget unzip libblockdev-lvm libblockdev-btrfs libblockdev-swap libblockdev-loop libblockdev-crypto libblockdev-mpath libblockdev-dm libblockdev-mdraid libblockdev-nvdimm
+$ mock -r /etc/mock/fedora-38-x86_64.cfg --copyin fedora-38-live-jam-xfce.ks --copyin prepare.sh /builddir
+$ mock -r /etc/mock/fedora-38-x86_64.cfg --enable-network --shell
 $ cd /builddir
 $ ./prepare.sh
-$ livemedia-creator --make-iso --ks fedora-37-live-jam-xfce.ks --project Audinux --iso-name livecd-fedora-37-mao.iso --iso-only --releasever 37 --volid Audinux --image-name Audinux --resultdir /var/lmc --no-virt --tmp /var/tmp
+$ livemedia-creator --make-iso --ks fedora-38-live-jam-xfce.ks --project Audinux --iso-name livecd-fedora-38-mao.iso --iso-only --releasever 38 --volid Audinux --image-name Audinux --resultdir /var/lmc --no-virt --tmp /var/tmp
 ```
 
 To check the potential changes from the kickstart file:
 $ dnf install pykickstart.noarch rpmfusion-free-remix-kickstarts.noarch spin-kickstarts.noarch
 $ ksflatten -c /usr/share/spin-kickstarts/fedora-live-xfce.ks -o xfce.ks
-$ meld fedora-37-live-jam-xfce.ks xfce.ks &
+$ meld fedora-38-live-jam-xfce.ks xfce.ks &
 
 To test the ISO file:
 
@@ -143,20 +143,20 @@ $ dnf install qemu-ui-sdl qemu-audio-sdl
 
 Without audio:
 ```
-$ qemu-kvm -m 2048 -vga qxl -display sdl -cdrom fedora-37-Audinux.iso
+$ qemu-kvm -m 2048 -vga qxl -display sdl -cdrom fedora-38-Audinux.iso
 ```
 With audio and usb:
 ```
-$ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -display sdl -cdrom fedora-37-Audinux.iso
+$ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -display sdl -cdrom fedora-38-Audinux.iso
 ```
 With audio, usb and with 2 cpus:
 ```
-$ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -smp cpus=2 -display sdl -cdrom fedora-37-Audinux.iso
+$ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -smp cpus=2 -display sdl -cdrom fedora-38-Audinux.iso
 ```
 
 To test the USB bootable file:
 ```
-$ qemu-kvm -m 2048 -vga qxl -display sdl -smp cpus=2 -usb -device intel-hda -device hda-duplex -drive file=fedora-37-Audinux.iso -boot menu=on
+$ qemu-kvm -m 2048 -vga qxl -display sdl -smp cpus=2 -usb -device intel-hda -device hda-duplex -drive file=fedora-38-Audinux.iso -boot menu=on
 ```
 
 To mount a usb device:
@@ -170,7 +170,7 @@ Bus 002 Device 003: ID 18d1:4e11 Google Inc. Nexus One
 Manually, using qemu-kvm command line
 
 ```
-$ qemu-kvm -m 2048 -name Audinux -display sdl -cdrom fedora-37-Audinux.iso -usb -device usb-host,hostbus=2,hostaddr=3
+$ qemu-kvm -m 2048 -name Audinux -display sdl -cdrom fedora-38-Audinux.iso -usb -device usb-host,hostbus=2,hostaddr=3
 ```
 
 Write ISO to USB:
@@ -187,7 +187,7 @@ $ mediawriter
 
 Once the USB key is installed, you can add data persistency using livecd-iso-to-disk:
 ```
-$ dnf install livecd-tools
+$ dnf install livecd-tools-mao
 ```
 
 Locate where is your usb disk:
@@ -249,7 +249,7 @@ https://docs.fedoraproject.org/en-US/quick-docs/creating-rpm-packages/
 
 Install the package to be tested + dnf (if you want to install something else) + libX11-xcb (some GUI requires this package to be able to start inside the chroot).
 ```
-$ mock -r /etc/mock/fedora-33-x86_64.cfg --dnf --install linux-show-player-0.5.2-1.fc33.noarch.rpm dnf libX11-xcb
+$ mock -r /etc/mock/fedora-38-x86_64.cfg --dnf --install linux-show-player-0.5.2-1.fc38.noarch.rpm dnf libX11-xcb
 ```
 
 Now, enable X session connections to the host:
@@ -259,7 +259,7 @@ $ xhost +
 
 Then, start a shell chroot (and enable network connection if you want to complete manually the installation):
 ```
-$ mock -r /etc/mock/fedora-33-x86_64.cfg --enable-network --shell
+$ mock -r /etc/mock/fedora-37-x86_64.cfg --enable-network --shell
 ```
 
 Export the host display when you are in the chroot:
@@ -279,5 +279,5 @@ After the tests, exit from the chroot:
 
 And cleanup the chroot:
 ```
-$ mock -r /etc/mock/fedora-33-x86_64.cfg --clean
+$ mock -r /etc/mock/fedora-38-x86_64.cfg --clean
 ```
