@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    zam-mao-plugins
-Version: 4.1
+Version: 4.2
 Release: 4%{?dist}
 Summary: Set of LV2 / VST / VST3 / CLAPS plugins
 License: GPL-2.0-or-later AND ISC
@@ -12,7 +12,7 @@ URL:     http://www.zamaudio.com/
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./zam-source.sh 4.1
+# ./zam-source.sh 4.2
 Source0: zam-plugins-%{version}.tar.xz
 
 BuildRequires: gcc gcc-c++
@@ -26,7 +26,7 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: zita-convolver-devel
 
-Obsoletes: zam-plugins
+Obsoletes: zam-plugisn < 4.0-4
 Obsoletes: zam < 4.0-4
 
 %description
@@ -36,7 +36,7 @@ Equalizers, Delay, Gates
 
 %package -n ladspa-%{name}
 Summary: Zam LADSPA plugin
-Obsoletes: ladspa-zam-plugins
+Obsoletes: ladspa-zam-plugins < 4.0-4
 Obsoletes: ladspa-zam < 4.0-4
 
 %description -n ladspa-%{name}
@@ -56,7 +56,7 @@ Zam VST3 plugin
 
 %package -n lv2-%{name}
 Summary: Zam LV2 plugin
-Obsoletes: lv2-zam-plugins
+Obsoletes: lv2-zam-plugisn < 4.0-4
 Obsoletes: lv2-zam < 4.0-4
 
 %description -n lv2-%{name}
@@ -110,6 +110,9 @@ done
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Nov 05 2023 Yann Collette <ycollette.nospam@free.fr> - 4.2-4
+- update to 4.2-4
+
 * Wed Dec 21 2022 Yann Collette <ycollette.nospam@free.fr> - 4.1-4
 - update to 4.1-4
 
