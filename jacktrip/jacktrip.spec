@@ -4,7 +4,7 @@
 
 Summary: Multimachine jam sessions over the internet
 Name:    jacktrip
-Version: 2.0.2
+Version: 2.1.0
 Release: 2%{?dist}
 License: STK
 URL:     https://ccrma.stanford.edu/software/jacktrip/
@@ -13,7 +13,7 @@ Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
 # Usage: ./source-jacktrip.sh <tag>
-#        ./source-jacktrip.sh v2.0.2
+#        ./source-jacktrip.sh v2.1.0
 
 Source0: jacktrip.tar.gz
 Source1: source-jacktrip.sh
@@ -22,12 +22,13 @@ BuildRequires: gcc gcc-c++
 BuildRequires: meson
 BuildRequires: git
 BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qt5compat-devel
 BuildRequires: qt6-qtnetworkauth-devel
 BuildRequires: qt6-qtquickcontrols2-devel
 BuildRequires: qt6-qtsvg-devel
 BuildRequires: qt6-qtwebsockets-devel
 BuildRequires: qt6-qtwebengine-devel
-BuildRequires: jack-audio-connection-kit-devel
+#BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: rtaudio-devel
 BuildRequires: libsndfile-devel
