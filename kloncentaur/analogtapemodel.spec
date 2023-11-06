@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    AnalogTapeModel
-Version: 2.11.3
+Version: 2.11.4
 Release: 1%{?dist}
 Summary: Physical modelling signal processing for analog tape recording
 License: BSD-3-Clause
@@ -14,7 +14,7 @@ Distribution: Audinux
 
 # to generater code archive:
 # ./source_analogtapemodel.sh <tag>
-# ./source_analogtapemodel.sh 2.11.3
+# ./source_analogtapemodel.sh 2.11.4
 
 Source0: AnalogTapeModel.tar.gz
 Source1: source_analogtapemodel.sh
@@ -97,6 +97,9 @@ cp -r cmake-build/CHOWTapeModel_artefacts/Release/LV2/*.lv2 %{buildroot}%{_libdi
 %{_libdir}/lv2/
 
 %changelog
+* Mon Nov 06 2023 Yann Collette <ycollette.nospam@free.fr> - 2.11.4-1
+- update to 2.11.4-1
+
 * Thu Oct 26 2023 Yann Collette <ycollette.nospam@free.fr> - 2.11.3-1
 - update to 2.11.3-1
 
