@@ -28,7 +28,8 @@ BuildRequires: qt6-qtquickcontrols2-devel
 BuildRequires: qt6-qtsvg-devel
 BuildRequires: qt6-qtwebsockets-devel
 BuildRequires: qt6-qtwebengine-devel
-#BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: qt6-qtshadertools-devel
+BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: rtaudio-devel
 BuildRequires: libsndfile-devel
