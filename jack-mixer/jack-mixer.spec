@@ -1,5 +1,5 @@
 Name:    jack_mixer
-Version: 17
+Version: 18
 Release: 1%{?dist}
 Summary: jack_mixer is GTK (2.x) JACK audio mixer with look similar to it`s hardware counterparts
 URL:     https://github.com/jack-mixer/jack_mixer
@@ -20,16 +20,14 @@ BuildRequires: python3-devel
 BuildRequires: python3-cairo
 BuildRequires: python3-gobject-base
 BuildRequires: python3-pyxdg
-%if 0%{?fedora} <= 38
 BuildRequires: python3-Cython
-%else
-BuildRequires: python3-cython0.29
-%endif
 BuildRequires: python3-docutils
+BuildRequires: python3-appdirs
 BuildRequires: desktop-file-utils
 
 Requires: python3-cairo
 Requires: python3-gobject-base
+Requires: python3-appdirs
 
 %description
 jack_mixer is Gtk Jack audio mixer with look similar to it`s hardware counterparts.
@@ -75,6 +73,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/jack_mixer.desktop
 %{_sysconfdir}/xdg/raysession/client_templates/*
 
 %changelog
+* Fri Nov 10 2023 Yann Collette <ycollette.nospam@free.fr> - 18-1
+- update to 18-1
+
 * Sat Oct 16 2021 Yann Collette <ycollette.nospam@free.fr> - 17-1
 - update to 17-1
 
