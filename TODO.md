@@ -119,7 +119,6 @@
 | midilooper              | https://github.com/supergilbert/midilooper |
 | sound-of-music          | https://github.com/enter-opy/sound-of-music |
 | pulp-fiction            | https://github.com/enter-opy/pulp-fiction |
-| ysfx                    | https://github.com/jpcima/ysfx |
 
 Check the following URL: https://github.com/forart/HyMPS
 

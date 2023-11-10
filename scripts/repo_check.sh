@@ -903,7 +903,11 @@ https://github.com/x42/libtimecode
 https://github.com/x42/ltc-tools
 https://github.com/baines/MiniGBS
 https://github.com/owennjpr/PeakSynth-Audio-Plugin
-https://github.com/drobilla/zix"
+https://github.com/drobilla/zix
+https://github.com/jpcima/ysfx
+https://github.com/geraintluff/jsfx
+https://github.com/Justin-Johnson/ReJJ
+https://github.com/JoepVanlier/JSFX"
 
 if [ -f git_tags_new.txt ];
 then
