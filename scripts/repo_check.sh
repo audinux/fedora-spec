@@ -588,7 +588,7 @@ https://github.com/samaaron/sonic-pi
 https://github.com/sampov2/foo-yc20
 https://github.com/scanner-darkly/vcv-collection-one
 https://github.com/schismtracker/schismtracker
-https://github.com/Sciss/Eisenkraut
+https://codeberg.org/sciss/Eisenkraut
 https://github.com/sebastien-bouffier/Bidoo
 https://github.com/alex-tee/ztoolkit
 https://github.com/sgossner/VSCO-2-CE
