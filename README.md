@@ -217,6 +217,11 @@ To add both data persistency add home persistency on your USB key:
 $ livecd-iso-to-disk --reset-mbr --format --msdos --unencrypted-home --overlay-size-mb 2048 --home-size-mb 2048 Audinux.iso /dev/sdb
 ```
 
+Depending on the size of the iso file, you may need to format the USB drive using a efi format:
+```
+$ livecd-iso-to-disk --reset-mbr --format --efi --unencrypted-home --overlay-size-mb 2048 --home-size-mb 2048 Audinux.iso /dev/sdb
+```
+
 You can find a lot of informations related to USB stick and tools to generate these sticks here:
 https://docs.pagure.org/docs-fedora/create-and-use-live-image.html
 
