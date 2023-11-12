@@ -123,6 +123,7 @@
 | MidiExplorer            | https://github.com/EMATech/MidiExplorer |
 | Fuzzboy                 | https://github.com/DirektDSP/Fuzzboy |
 | arpligner               | https://github.com/YPares/arpligner |
+| ai-improviser-plugin    | https://github.com/yeeking/ai-improviser-plugin |
 
 Check the following URL: https://github.com/forart/HyMPS
 
