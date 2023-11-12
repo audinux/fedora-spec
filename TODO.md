@@ -119,6 +119,11 @@
 | midilooper              | https://github.com/supergilbert/midilooper |
 | sound-of-music          | https://github.com/enter-opy/sound-of-music |
 | pulp-fiction            | https://github.com/enter-opy/pulp-fiction |
+| osccontrol-light        | https://github.com/drlight-code/osccontrol-light |
+| MidiExplorer            | https://github.com/EMATech/MidiExplorer |
+| open303                 | https://github.com/scheffle/open303 |
+| Fuzzboy                 | https://github.com/DirektDSP/Fuzzboy |
+| arpligner               | https://github.com/YPares/arpligner |
 
 Check the following URL: https://github.com/forart/HyMPS
 
