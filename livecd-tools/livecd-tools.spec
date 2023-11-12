@@ -1,16 +1,18 @@
 %define debug_package %{nil}
+%define commit0 064acef0b4ae97a40e76a745f7559ce9c4b983ac
 
 Summary: Tools for building live CDs
 Name: livecd-tools-mao
 Version: 31.0
-Release: 6%{?dist}
+Release: 7%{?dist}
 License: GPL-2.0-only
 URL: https://github.com/livecd-tools/livecd-tools
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/livecd-tools/livecd-tools/archive/refs/tags/livecd-tools-%{version}.tar.gz
+#Source0: https://github.com/livecd-tools/livecd-tools/archive/refs/tags/livecd-tools-%{version}.tar.gz
+Source0: https://github.com/livecd-tools/livecd-tools/archive/%{commit0}.zip#/%{name}-%{commit0}.zip
 Patch1: livecd-creator-0001-add-support-for-kernel-rt.patch
 
 BuildRequires: make
@@ -79,7 +81,7 @@ Tools for installing Live CD ISOs to different mediums
 (e.g. USB sticks, hard drives, PXE boot, etc.)
 
 %prep
-%autosetup -p1 -n livecd-tools-livecd-tools-%{version}
+%autosetup -p1 -n livecd-tools-%{commit0}
 
 %build
 # Nothing to do
@@ -132,6 +134,9 @@ rm -rfv %{buildroot}%{_mandir}/man8/livecd-iso-to-*
 %{_mandir}/man8/livecd-iso-to-disk.8*
 
 %changelog
+* Sat Nov 11 2023 Yann Collette <ycollette.nospam@free.fr> - 1:31.0-7
+- update to 1:31.0-7 - update to last master - 064acef0b4ae97a40e76a745f7559ce9c4b983ac
+
 * Wed Oct 25 2023 Yann Collette <ycollette.nospam@free.fr> - 1:31.0-6
 - update to 1:31.0-6
 
