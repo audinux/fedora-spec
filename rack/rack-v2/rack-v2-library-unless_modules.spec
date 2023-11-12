@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 040a0648bd77c109739afd8970868ec5e780265b
-%global gittag0 2.2.6
+%global gittag0 2.2.7
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-unless_modules
-Version: 2.2.6
+Version: 2.2.7
 Release: 2%{?dist}
 Summary: unless_modules plugin for Rack
 License: GPL-2.0-or-later
@@ -140,6 +140,9 @@ cp -n %{SOURCE2} unless_modules_plugin/plugin.json || true
 
 %build
 
+export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
+
 cd unless_modules_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
@@ -152,5 +155,5 @@ cp -r unless_modules_plugin/dist/unless_modules/* %{buildroot}%{_libexecdir}/Rac
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.6-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.7-1
 - initial specfile
