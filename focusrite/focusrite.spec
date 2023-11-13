@@ -1,7 +1,7 @@
 %define commit0 e176fad933ac152ebf9acc7c3e987794ee4f1c5e
 
 Name: alsa-scarlett-gui
-Version: 0.2
+Version: 0.3
 Summary: ALSA Scarlett Gen 2/3 Control Panel
 Release: 2%{?dist}
 License: GPL-2.0-or-later
@@ -10,7 +10,7 @@ URL: https://github.com/geoffreybennett/alsa-scarlett-gui
 Vendor:       Audinux
 Distribution: Audinux
 
-Source: https://github.com/geoffreybennett/alsa-scarlett-gui/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Source: https://github.com/geoffreybennett/alsa-scarlett-gui/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -27,7 +27,7 @@ functionality that required a kernel driver to be written specifically for those
 devices.
 
 %prep
-%autosetup -n alsa-scarlett-gui-%{commit0}
+%autosetup -n alsa-scarlett-gui-%{version}
 
 sed -i -e "s/-Wall/\${RPMFLAGS}/g" src/Makefile
 sed -i -e "/Value=1.5/d" src/vu.b4.alsa-scarlett-gui.desktop.template
@@ -72,9 +72,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %dir %{_datadir}/%{name}/
 %{_datadir}/%{name}/*
 %{_datadir}/applications/*.desktop
-%{_datadir}/icons/hicolor/256x256/apps/alsa-scarlett-gui.png
+%{_datadir}/icons/hicolor/256x256/apps/*.png
 
 %changelog
+* Mon Nov 13 2023 Yann Collette <ycollette.nospam@free.fr> - 0.3-2
+- update to 0.3-2
+
 * Wed Oct 18 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2-2
 - update to last master - e176fad933ac152ebf9acc7c3e987794ee4f1c5e
 
