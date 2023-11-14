@@ -1,7 +1,7 @@
 %define commit0 e176fad933ac152ebf9acc7c3e987794ee4f1c5e
 
 Name: alsa-scarlett-gui
-Version: 0.3
+Version: 0.3.1
 Summary: ALSA Scarlett Gen 2/3 Control Panel
 Release: 2%{?dist}
 License: GPL-2.0-or-later
@@ -75,6 +75,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/256x256/apps/*.png
 
 %changelog
+* Tue Nov 14 2023 Yann Collette <ycollette.nospam@free.fr> - 0.3.1-2
+- update to 0.3.1-2
+
 * Mon Nov 13 2023 Yann Collette <ycollette.nospam@free.fr> - 0.3-2
 - update to 0.3-2
 
