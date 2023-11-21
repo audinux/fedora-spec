@@ -124,6 +124,9 @@
 | Fuzzboy                 | https://github.com/DirektDSP/Fuzzboy |
 | arpligner               | https://github.com/YPares/arpligner |
 | ai-improviser-plugin    | https://github.com/yeeking/ai-improviser-plugin |
+| hue                     | https://github.com/bljustice/hue |
+| Sound_Nodes             | https://github.com/negdo/Sound_Nodes |
+| ZL-Audio                | https://github.com/ZL-Audio |
 
 Check the following URL: https://github.com/forart/HyMPS
 
