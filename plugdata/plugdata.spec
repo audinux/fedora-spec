@@ -1,5 +1,5 @@
 Name:    plugdata
-Version: 0.8.1
+Version: 0.8.2
 Release: 1%{?dist}
 Summary: Pure Data as a plugin, with a new GUI
 URL:     https://github.com/timothyschoen/PlugData
@@ -9,7 +9,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./plugdata-source.sh <TAG>
-# ./plugdata-source.sh v0.8.1
+# ./plugdata-source.sh v0.8.2
 
 Source0: PlugData.tar.gz
 Source1: plugdata-source.sh
@@ -147,6 +147,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/plugdata.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Tue Nov 21 2023 Yann Collette <ycollette.nospam@free.fr> - 0.8.2-1
+- update to 0.8.2-1
+
 * Fri Nov 17 2023 Yann Collette <ycollette.nospam@free.fr> - 0.8.1-1
 - update to 0.8.1-1
 
