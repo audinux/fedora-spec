@@ -3,7 +3,7 @@
 # Category: Audio, Programming, Graphic
 
 Name:    JUCE
-Version: 7.0.7
+Version: 7.0.9
 Release: 9%{?dist}
 Summary: JUCE Framework
 URL:     https://github.com/juce-framework/JUCE
@@ -89,6 +89,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_includedir}/*
 
 %changelog
+* Mon Nov 20 2023 Yann Collette <ycollette.nospam@free.fr> - 7.0.9-9
+- update to 7.0.9-9
+
 * Wed Aug 23 2023 Yann Collette <ycollette.nospam@free.fr> - 7.0.7-9
 - update to 7.0.7-9
 
