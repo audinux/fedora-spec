@@ -1,5 +1,7 @@
 %define _lto_cflags %{nil}
 
+%define commit0_example 7205f76dda5e91bc7f5292c8af23b66d0f5a1c02
+
 Name:    ossia-score
 Version: 3.1.12
 Release: 1%{?dist}
@@ -11,6 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/ossia/score/releases/download/v%{version}/ossia.score-%{version}-src.tar.xz
+Source1: https://github.com/ossia/score-examples/archive/%{commit0_example}.zip#/ossia-examples-%{commit0_example}.zip
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -29,18 +32,7 @@ BuildRequires: qt6-qtbase-private-devel
 BuildRequires: libxkbcommon-devel
 BuildRequires: sqlite-devel
 BuildRequires: lame-devel
-#BuildRequires: qt5-qtbase-devel
-#BuildRequires: qt5-qtbase-private-devel
-#BuildRequires: qt5-qtbase-gui
-#BuildRequires: qt5-qtwebsockets-devel
-#BuildRequires: qt5-qtdeclarative-devel
-#BuildRequires: qt5-qttools
-#BuildRequires: qt5-qtserialport-devel
-%if 0%{?fedora} >= 36
-Buildrequires: compat-ffmpeg4-devel
-%else
 BuildRequires: ffmpeg-devel
-%endif
 BuildRequires: portmidi-devel
 BuildRequires: portaudio-devel
 BuildRequires: lilv-devel
@@ -53,11 +45,24 @@ BuildRequires: fftw-devel
 BuildRequires: libsndfile-devel
 BuildRequires: desktop-file-utils
 
+Requires: faust-stdlib
+
 %description
 ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 
+%package examples
+Summary: Examples for %{name}.
+Requires: %{name}
+
+%description examples
+Examples for %{name}.
+
 %prep
 %autosetup -n %{name}-%{version}
+
+unzip %{SOURCE1}
+
+sed -i -e "1i #include <QWidget>" src/plugins/score-plugin-gfx/Gfx/Filter/PreviewWidget.hpp
 
 %build
 
@@ -80,10 +85,17 @@ rm -rf %{buildroot}/%{_libdir}/mimalloc-2.0/
 rm -rf %{buildroot}/%{_includedir}/
 rm -rf %{buildroot}/%{_datadir}/
 
+# Install examples
+install -m 755 -d %{buildroot}/%{_datadir}/ossia/examples/
+cp -r score-examples-%{commit0_example}/* %{buildroot}/%{_datadir}/ossia/examples/
+
 %files
 %doc INSTALL.md README.md AUTHORS
 %license LICENSE.txt
 %{_bindir}/*
+
+%files examples
+%{_datadir}/ossia/examples/*
 
 %changelog
 * Sat Jun 24 2023 Yann Collette <ycollette.nospam@free.fr> - 3.1.11-2
