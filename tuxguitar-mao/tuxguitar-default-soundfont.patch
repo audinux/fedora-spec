@@ -1,0 +1,108 @@
+From 73ce4c13aed21de8d4c75f1118f88e7d071c34de Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Wed, 22 Nov 2023 22:15:48 +0100
+Subject: [PATCH] default soundfont
+
+---
+ TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg     | 2 +-
+ .../common-freebsd/dist/tuxguitar-fluidsynth.cfg              | 2 +-
+ .../common-resources/common-freebsd/dist/tuxguitar-jsa.cfg    | 2 +-
+ .../common-linux/dist/tuxguitar-fluidsynth.cfg                | 4 ++--
+ .../common-resources/common-linux/dist/tuxguitar-jsa.cfg      | 2 +-
+ .../common-macosx/Contents/MacOS/dist/tuxguitar-jsa.cfg       | 2 +-
+ .../common-windows/dist/tuxguitar-fluidsynth.cfg              | 2 +-
+ .../common-resources/common-windows/dist/tuxguitar-jsa.cfg    | 2 +-
+ 8 files changed, 9 insertions(+), 9 deletions(-)
+
+diff --git a/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg b/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg
+index df24eec..62b5900 100644
+--- a/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg
++++ b/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg
+@@ -1,2 +1,2 @@
+ ## Default Settings ##
+-tuxguitar-synth-gervill.soundbank.path=${tuxguitar.home.path}/share/soundfont/MagicSFver2.sf2
++tuxguitar-synth-gervill.soundbank.path=/usr/share/soundfonts/default.sf2
+diff --git a/build-scripts/common-resources/common-freebsd/dist/tuxguitar-fluidsynth.cfg b/build-scripts/common-resources/common-freebsd/dist/tuxguitar-fluidsynth.cfg
+index ad7ed68..65a0d2e 100644
+--- a/build-scripts/common-resources/common-freebsd/dist/tuxguitar-fluidsynth.cfg
++++ b/build-scripts/common-resources/common-freebsd/dist/tuxguitar-fluidsynth.cfg
+@@ -1,7 +1,7 @@
+ #tuxguitar-fluidsynth
+ #Fri Oct 30 14:24:16 ART 2015
+ soundfont.count=1
+-soundfont.path0=${tuxguitar.home.path}/share/soundfont/MagicSFver2.sf2
++soundfont.path0=/usr/share/soundfonts/default.sf2
+ 
+ synth.gain=1.1
+ synth.chorus.active=yes
+diff --git a/build-scripts/common-resources/common-freebsd/dist/tuxguitar-jsa.cfg b/build-scripts/common-resources/common-freebsd/dist/tuxguitar-jsa.cfg
+index b13f013..2c98173 100644
+--- a/build-scripts/common-resources/common-freebsd/dist/tuxguitar-jsa.cfg
++++ b/build-scripts/common-resources/common-freebsd/dist/tuxguitar-jsa.cfg
+@@ -1,3 +1,3 @@
+ #tuxguitar-jsa
+ #Mon Nov 02 20:00:23 ART 2015
+-soundbank.custom.path=${tuxguitar.home.path}/share/soundfont/MagicSFver2.sf2
++soundbank.custom.path=/usr/share/soundfonts/default.sf2
+diff --git a/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg b/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg
+index 4bba62c..b87890f 100644
+--- a/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg
++++ b/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg
+@@ -1,7 +1,7 @@
+ #tuxguitar-fluidsynth
+ #Fri Oct 30 14:24:16 ART 2015
+ soundfont.count=1
+-soundfont.path0=${tuxguitar.home.path}/share/soundfont/MagicSFver2.sf2
++soundfont.path0=/usr/share/soundfonts/default.sf2
+ 
+ synth.gain=1.1
+ synth.chorus.active=yes
+@@ -11,4 +11,4 @@ synth.sample-rate=44100.0
+ audio.sample-format=float
+ audio.period-size=512
+ audio.periods=32
+-audio.driver=pulseaudio
++audio.driver=alsa
+diff --git a/build-scripts/common-resources/common-linux/dist/tuxguitar-jsa.cfg b/build-scripts/common-resources/common-linux/dist/tuxguitar-jsa.cfg
+index b13f013..d22acc2 100644
+--- a/build-scripts/common-resources/common-linux/dist/tuxguitar-jsa.cfg
++++ b/build-scripts/common-resources/common-linux/dist/tuxguitar-jsa.cfg
+@@ -1,3 +1,3 @@
+ #tuxguitar-jsa
+ #Mon Nov 02 20:00:23 ART 2015
+-soundbank.custom.path=${tuxguitar.home.path}/share/soundfont/MagicSFver2.sf2
++#soundbank.custom.path=/usr/share/soundfonts/default.sf2
+diff --git a/build-scripts/common-resources/common-macosx/Contents/MacOS/dist/tuxguitar-jsa.cfg b/build-scripts/common-resources/common-macosx/Contents/MacOS/dist/tuxguitar-jsa.cfg
+index b13f013..2c98173 100644
+--- a/build-scripts/common-resources/common-macosx/Contents/MacOS/dist/tuxguitar-jsa.cfg
++++ b/build-scripts/common-resources/common-macosx/Contents/MacOS/dist/tuxguitar-jsa.cfg
+@@ -1,3 +1,3 @@
+ #tuxguitar-jsa
+ #Mon Nov 02 20:00:23 ART 2015
+-soundbank.custom.path=${tuxguitar.home.path}/share/soundfont/MagicSFver2.sf2
++soundbank.custom.path=/usr/share/soundfonts/default.sf2
+diff --git a/build-scripts/common-resources/common-windows/dist/tuxguitar-fluidsynth.cfg b/build-scripts/common-resources/common-windows/dist/tuxguitar-fluidsynth.cfg
+index a41e86f..918db84 100644
+--- a/build-scripts/common-resources/common-windows/dist/tuxguitar-fluidsynth.cfg
++++ b/build-scripts/common-resources/common-windows/dist/tuxguitar-fluidsynth.cfg
+@@ -1,7 +1,7 @@
+ #tuxguitar-fluidsynth
+ #Fri Oct 30 14:24:16 ART 2015
+ soundfont.count=1
+-soundfont.path0=${tuxguitar.home.path}/share/soundfont/MagicSFver2.sf2
++soundfont.path0=/usr/share/soundfonts/default.sf2
+ 
+ synth.gain=1.1
+ synth.chorus.active=yes
+diff --git a/build-scripts/common-resources/common-windows/dist/tuxguitar-jsa.cfg b/build-scripts/common-resources/common-windows/dist/tuxguitar-jsa.cfg
+index b13f013..2c98173 100644
+--- a/build-scripts/common-resources/common-windows/dist/tuxguitar-jsa.cfg
++++ b/build-scripts/common-resources/common-windows/dist/tuxguitar-jsa.cfg
+@@ -1,3 +1,3 @@
+ #tuxguitar-jsa
+ #Mon Nov 02 20:00:23 ART 2015
+-soundbank.custom.path=${tuxguitar.home.path}/share/soundfont/MagicSFver2.sf2
++soundbank.custom.path=/usr/share/soundfonts/default.sf2
+-- 
+2.42.0
+
