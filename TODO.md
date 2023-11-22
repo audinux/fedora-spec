@@ -127,6 +127,7 @@
 | hue                     | https://github.com/bljustice/hue |
 | Sound_Nodes             | https://github.com/negdo/Sound_Nodes |
 | ZL-Audio                | https://github.com/ZL-Audio |
+| CDP8                    | https://github.com/ComposersDesktop/CDP8 |
 
 Check the following URL: https://github.com/forart/HyMPS
 
