@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 2e227e45220fa103e1619672dcf2fcc74b9f12ca
-%global gittag0 2.1.12
+%global gittag0 2.1.13
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-questionablemodules
-Version: 2.1.12
+Version: 2.1.13
 Release: 2%{?dist}
 Summary: questionablemodules plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r questionablemodules_plugin/dist/questionablemodules/* %{buildroot}%{_libex
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.12-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.13-1
 - initial specfile

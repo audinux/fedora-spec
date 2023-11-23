@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 97de81578cb712cb0968eb21daf877fe92c07629
-%global gittag0 2.3.0
+%global gittag0 2.3.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-CosineKitty-Sapphire
-Version: 2.3.0
+Version: 2.3.1
 Release: 2%{?dist}
 Summary: CosineKitty-Sapphire plugin for Rack
 License: GPL-2.0-or-later
@@ -78,7 +78,7 @@ sed -i -e "s/-march=nehalem//g" dep.mk
 # For -O2 usage
 sed -i -e "s/-O3/-O2/g" compile.mk
 sed -i -e "s/-O3/-O2/g" dep.mk
-sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk 
+sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk
 
 # Remove static gcc lib
 sed -i -e "s/-static-libstdc++ -static-libgcc//g" Makefile
@@ -135,7 +135,7 @@ sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
 mkdir CosineKitty-Sapphire_plugin
-tar xvfz %{SOURCE1} --directory=CosineKitty-Sapphire_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=CosineKitty-Sapphire_plugin --strip-components=1
 
 cp -n %{SOURCE2} CosineKitty-Sapphire_plugin/plugin.json || true
 
@@ -146,7 +146,7 @@ cp -n %{SOURCE2} CosineKitty-Sapphire_plugin/plugin.json || true
 cd CosineKitty-Sapphire_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/CosineKitty-Sapphire/
 cp -r CosineKitty-Sapphire_plugin/dist/CosineKitty-Sapphire/* %{buildroot}%{_libexecdir}/Rack2/plugins/CosineKitty-Sapphire/
@@ -155,5 +155,5 @@ cp -r CosineKitty-Sapphire_plugin/dist/CosineKitty-Sapphire/* %{buildroot}%{_lib
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-1
 - initial specfile

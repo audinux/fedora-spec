@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 2277e413c754d1a52c2276067c2c606ee8360b9c
-%global gittag0 2.0.4
+%global gittag0 2.0.5
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Biset
-Version: 2.0.4
+Version: 2.0.5
 Release: 2%{?dist}
 Summary: Biset plugin for Rack
 License: GPL-2.0-or-later
@@ -60,7 +60,7 @@ BuildRequires: jq
 
 %description
 Biset plugin for Rack.
-A text based pattern sequencer for rythm and pitch
+An advanced sequencer based on a tracker and a timeline
 
 %prep
 %setup -n Rack
@@ -152,5 +152,5 @@ cp -r Biset_plugin/dist/Biset/* %{buildroot}%{_libexecdir}/Rack2/plugins/Biset/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
 - initial specfile
