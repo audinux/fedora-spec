@@ -37,6 +37,8 @@ Source0: https://github.com/helge17/tuxguitar/archive/refs/tags/%{version}.tar.g
 Source1: tuxguitar.sh
 # Source2: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
 Source2: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
+# wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.13-201909161045/swt-4.13-gtk-linux-x86_64.zip 
+Source3: swt-4.13-gtk-linux-x86_64.zip
 
 # Fedora specific default soundfont path
 Patch0: 0001-tuxguitar-aarch64.patch
@@ -53,6 +55,9 @@ BuildRequires: make
 BuildRequires: wget
 BuildRequires: maven-local
 BuildRequires: maven-antrun-plugin
+BuildRequires: maven-clean-plugin
+BuildRequires: maven-verifier-plugin
+BuildRequires: maven-resources-plugin
 BuildRequires: alsa-lib-devel
 BuildRequires: fluidsynth-devel
 BuildRequires: jack-audio-connection-kit-devel
@@ -102,19 +107,19 @@ cp VST_SDK/VST2_SDK/pluginterfaces/vst2.x/* build-scripts/native-modules/tuxguit
 cd build-scripts/tuxguitar-linux-swt-x86_64
 
 # Installation of swt-4.13
-wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.13-201909161045/swt-4.13-gtk-linux-x86_64.zip
+
 mkdir swt-4.13-gtk-linux-x86_64
 cd swt-4.13-gtk-linux-x86_64
-unzip ../swt-4.13-gtk-linux-x86_64.zip
+unzip %{SOURCE3}
 mvn install:install-file -Dfile=swt.jar -DgroupId=org.eclipse.swt -DartifactId=org.eclipse.swt.gtk.linux.x86_64 -Dpackaging=jar -Dversion=4.13
 cd ..
 
 # Building tuxguitar
-mvn -e clean verify -P native-modules 
+mvn -e clean verify -P native-modules
 
 %install
 
-%mvn_install
+#mvn_install
 
 # install jnis we built
 mkdir -p %{buildroot}/%{_jnidir}/%{name}/
