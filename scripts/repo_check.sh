@@ -907,7 +907,8 @@ https://github.com/drobilla/zix
 https://github.com/jpcima/ysfx
 https://github.com/geraintluff/jsfx
 https://github.com/Justin-Johnson/ReJJ
-https://github.com/JoepVanlier/JSFX"
+https://github.com/JoepVanlier/JSFX
+https://github.com/helge17/tuxguitar"
 
 if [ -f git_tags_new.txt ];
 then
