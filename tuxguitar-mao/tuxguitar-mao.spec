@@ -28,7 +28,7 @@
 
 Name: tuxguitar
 Version: 1.6.0
-Release: 9%{?dist}
+Release: 10%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
 URL: https://github.com/helge17/tuxguitar
@@ -37,8 +37,17 @@ Source0: https://github.com/helge17/tuxguitar/archive/refs/tags/%{version}.tar.g
 Source1: tuxguitar.sh
 # Source2: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
 Source2: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
-# wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.13-201909161045/swt-4.13-gtk-linux-x86_64.zip 
-Source3: swt-4.13-gtk-linux-x86_64.zip
+# 4.13:
+# wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.13-201909161045/swt-4.13-gtk-linux-x86_64.zip
+# 4.21:
+# wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.21-202109060500/swt-4.21-gtk-linux-x86_64.zip
+# wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.21-202109060500/swt-4.21-gtk-linux-aarch64.zip
+# 4.27:
+# wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.27-202303020300/swt-4.27-gtk-linux-x86_64.zip
+# wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.27-202303020300/swt-4.27-gtk-linux-aarch64.zip
+%define swt_version 4.27
+Source3: swt-%{swt_version}-gtk-linux-aarch64.zip
+Source4: swt-%{swt_version}-gtk-linux-x86_64.zip
 
 # Fedora specific default soundfont path
 Patch0: 0001-tuxguitar-aarch64.patch
@@ -52,12 +61,14 @@ Requires: soundfont2-default
 
 BuildRequires: gcc
 BuildRequires: make
-BuildRequires: wget
 BuildRequires: maven-local
 BuildRequires: maven-antrun-plugin
+BuildRequires: maven-dependency-plugin
 BuildRequires: maven-clean-plugin
+BuildRequires: maven-jar-plugin
 BuildRequires: maven-verifier-plugin
 BuildRequires: maven-resources-plugin
+BuildRequires: maven-compiler-plugin
 BuildRequires: alsa-lib-devel
 BuildRequires: fluidsynth-devel
 BuildRequires: jack-audio-connection-kit-devel
@@ -99,23 +110,32 @@ sed -i "s/static final String RELEASE_NAME =.*/static final String RELEASE_NAME 
 
 # Installing missing VST2 files
 unzip %{SOURCE2}
-mkdir -p build-scripts/native-modules/tuxguitar-synth-vst-linux-x86_64/include/
-cp VST_SDK/VST2_SDK/pluginterfaces/vst2.x/* build-scripts/native-modules/tuxguitar-synth-vst-linux-x86_64/include/
+mkdir -p build-scripts/native-modules/tuxguitar-synth-vst-linux-%{bit}/include/
+cp VST_SDK/VST2_SDK/pluginterfaces/vst2.x/* build-scripts/native-modules/tuxguitar-synth-vst-linux-%{bit}/include/
+
+# Replace swt version
+sed -i -e "s/4.13/%{swt_version}/g" pom.xml
+%ifarch aarch64
+sed -i -e "s/x86_64/aarch64/g" pom.xml
+%endif
 
 %build
 
-cd build-scripts/tuxguitar-linux-swt-x86_64
+cd build-scripts/tuxguitar-linux-swt-%{bit}
 
-# Installation of swt-4.13
-
-mkdir swt-4.13-gtk-linux-x86_64
-cd swt-4.13-gtk-linux-x86_64
+# Installation of swt
+mkdir swt-%{swt_version}-gtk-linux-%{bit}
+cd swt-%{swt_version}-gtk-linux-%{bit}
+%ifarch aarch64
 unzip %{SOURCE3}
-mvn install:install-file -Dfile=swt.jar -DgroupId=org.eclipse.swt -DartifactId=org.eclipse.swt.gtk.linux.x86_64 -Dpackaging=jar -Dversion=4.13
+%else
+unzip %{SOURCE4}
+%endif
+mvn install:install-file -Dfile=swt.jar -DgroupId=org.eclipse.swt -DartifactId=org.eclipse.swt.gtk.linux.%{bit} -Dpackaging=jar -Dversion=%{swt_version}
 cd ..
 
 # Building tuxguitar
-mvn -e clean verify -P native-modules
+mvn -X -e clean verify -P native-modules
 
 %install
 
@@ -211,6 +231,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Thu Nov 23 2023 Fedora Release Engineering <releng@fedoraproject.org> - 1.6.0-10
+- update to 1.6.0-10 - enable aarch64 build - update to swt-4.27
+
 * Wed Nov 22 2023 Fedora Release Engineering <releng@fedoraproject.org> - 1.6.0-9
 - update to 1.6.0-9 - fix LV2 / VST management
 
