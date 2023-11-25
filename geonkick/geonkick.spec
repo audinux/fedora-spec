@@ -5,7 +5,7 @@
 %define _lto_cflags %{nil}
 
 Name:    geonkick
-Version: 2.10.2
+Version: 3.0.0
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
 URL:     https://github.com/Geonkick-Synthesizer/geonkick
@@ -46,13 +46,16 @@ The most basic examples are: kick drums, snares, hit-hats, shakers, claps, steak
 %cmake_install
 
 %files
-%doc README.md doc/Documentation.md
+%doc README.md doc/Geonkick_User_Guide.md
 %license LICENSE
 %{_bindir}/*
-%{_libdir}/*
+%{_libdir}/lv2/*
 %{_datadir}/*
 
 %changelog
+* Sat Nov 25 2023 Yann Collette <ycollette.nospam@free.fr> - 3.0.0-2
+- Update to 3.0.0-2
+
 * Sat Oct 07 2023 Yann Collette <ycollette.nospam@free.fr> - 2.10.2-2
 - Update to 2.10.2-2
 
