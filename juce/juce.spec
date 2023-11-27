@@ -39,7 +39,7 @@ which supports exporting projects for Xcode (macOS and iOS), Visual Studio, Andr
 Code::Blocks and Linux Makefiles as well as containing a source code editor.
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -n %{name}-%{version}
 
 %build
 
@@ -47,7 +47,9 @@ cd docs/doxygen
 make
 cd ../..
 
-%cmake -DJUCE_BUILD_EXTRAS=ON -DJUCE_BUILD_EXAMPLES=OFF -DJUCE_INSTALL_DESTINATION="%{_lib}/cmake/JUCE-%{version}"
+%cmake -DJUCE_BUILD_EXTRAS=ON \
+       -DJUCE_BUILD_EXAMPLES=OFF \
+       -DJUCE_INSTALL_DESTINATION="%{_lib}/cmake/JUCE-%{version}"
 %cmake_build
 
 %install
