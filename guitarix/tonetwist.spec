@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    ToneTwistPlugs
-Version: 0.6
+Version: 0.7
 Release: 1%{?dist}
 Summary: Multi-format LV2|VST2|VST3|CLAP audio effect plugs using the DISTRHO Plugin Framework
 License: GPL-2.0-or-later
@@ -13,13 +13,14 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources:
-# ./brummer10-source.sh ToneTwistPlugs v0.6
+# ./brummer10-source.sh ToneTwistPlugs v0.7
 
 Source0: ToneTwistPlugs.tar.gz
 Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
+BuildRequires: git
 BuildRequires: lv2-devel
 BuildRequires: libX11-devel
 BuildRequires: cairo-devel
@@ -94,5 +95,8 @@ cp -ra bin/*.vst3 %{buildroot}%{_libdir}/vst3/
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Nov 27 2023 Yann Collette <ycollette.nospam@free.fr> - 0.7-1
+- update to 0.7-1
+
 * Sun Oct 08 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6-1
 - Initial spec file
