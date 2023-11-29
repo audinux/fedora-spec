@@ -5,13 +5,10 @@
 
 Name:    jalv_select
 Version: 1.3.0.%{shortcommit0}
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: A LV2 Synthesizer launcher for Jack audio
 URL:     https://github.com/brummer10/jalv_select
 License: GPL-2.0-or-later
-
-Vendor:       Audinux
-Distribution: Audinux
 
 Source0: https://github.com/brummer10/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
@@ -41,6 +38,8 @@ A little GUI to select lv2 plugs from a list
 
 %make_install PREFIX=%{_usr}
 
+%find_lang jalv.select
+
 desktop-file-install --vendor '' \
         --add-category=X-Sound \
         --add-category=Midi \
@@ -52,15 +51,18 @@ desktop-file-install --vendor '' \
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/jalv.select.desktop
 
-%files
-%doc README.md
+%files -f jalv.select.lang
+%doc README.md LOCALISATION.md
+%license LICENSE
 %{_bindir}/jalv.select
 %{_datadir}/applications/jalv.select.desktop
 %{_datadir}/pixmaps/*.png
-%{_datadir}/locale/*
 %{_mandir}/man1/jalv.select.*
 
 %changelog
+* Tue Nov 28 2023 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-6
+- fix spec
+
 * Sun Jun 18 2023 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-5
 - update to last master
 
