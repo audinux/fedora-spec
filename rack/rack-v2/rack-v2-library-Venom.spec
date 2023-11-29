@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 d0be4fa926dca1dbed7ec53d11652c990472bcc0
-%global gittag0 2.4.1
+%global gittag0 2.5.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Venom
-Version: 2.4.1
+Version: 2.5.0
 Release: 2%{?dist}
 Summary: Venom plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r Venom_plugin/dist/Venom/* %{buildroot}%{_libexecdir}/Rack2/plugins/Venom/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.0-1
 - initial specfile

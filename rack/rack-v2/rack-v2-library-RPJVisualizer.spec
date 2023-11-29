@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 001a7a88dbcfb8108d9eb295bf8dc699615038d6
-%global gittag0 2.1.12
+%global gittag0 2.1.15
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-RPJVisualizer
-Version: 2.1.12
+Version: 2.1.15
 Release: 2%{?dist}
 Summary: RPJVisualizer plugin for Rack
 License: GPL-2.0-or-later
@@ -153,5 +153,5 @@ cp -r RPJVisualizer_plugin/dist/RPJVisualizer/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.12-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.15-1
 - initial specfile

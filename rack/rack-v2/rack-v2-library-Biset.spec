@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 2277e413c754d1a52c2276067c2c606ee8360b9c
-%global gittag0 2.0.5
+%global gittag0 2.0.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Biset
-Version: 2.0.5
+Version: 2.0.6
 Release: 2%{?dist}
 Summary: Biset plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r Biset_plugin/dist/Biset/* %{buildroot}%{_libexecdir}/Rack2/plugins/Biset/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.6-1
 - initial specfile
