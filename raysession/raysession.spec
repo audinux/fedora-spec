@@ -3,7 +3,7 @@
 # Category: Session Mngmt
 
 Name:    raysession
-Version: 0.14.2
+Version: 0.14.3
 Release: 2%{?dist}
 Summary: A JACK session manager
 
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source-houston4444.sh <project> <tag>
-#        ./source-houston4444.sh RaySession v0.14.2
+#        ./source-houston4444.sh RaySession v0.14.3
 
 Source0: RaySession.tar.gz
 Source1: source-houston4444.sh
@@ -111,6 +111,9 @@ desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-network.desktop
 %{_sysconfdir}/xdg/raysession/client_templates/*
 
 %changelog
+* Sat Dec 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.14.3-2
+- update to 0.14.3-2
+
 * Mon Oct 23 2023 Yann Collette <ycollette.nospam@free.fr> - 0.14.2-2
 - update to 0.14.2-2
 
