@@ -128,6 +128,7 @@
 | Sound_Nodes             | https://github.com/negdo/Sound_Nodes |
 | ZL-Audio                | https://github.com/ZL-Audio |
 | CDP8                    | https://github.com/ComposersDesktop/CDP8 |
+| Vaporizer2              | https://github.com/VASTDynamics/Vaporizer2 |
 
 Check the following URL: https://github.com/forart/HyMPS
 
