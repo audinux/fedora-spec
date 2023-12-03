@@ -1,5 +1,5 @@
 Name:    vmpc
-Version: 0.5.7
+Version: 0.5.8
 Release: 1%{?dist}
 Summary: JUCE implementation of VMPC2000XL
 License: GPL-3.0-only
@@ -24,7 +24,7 @@ BuildRequires: freetype-devel
 BuildRequires: rapidjson-devel
 
 %description
-a JUCE implementation of VMPC2000XL, the Akai MPC2000XL emulator
+A JUCE implementation of VMPC2000XL, the Akai MPC2000XL emulator
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
@@ -68,6 +68,9 @@ cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/Standalone/* %{bu
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Dec 03 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.8-1
+- update to 0.5.8-1
+
 * Tue Oct 03 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.7-1
 - update to 0.5.7-1
 
