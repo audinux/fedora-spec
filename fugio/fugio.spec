@@ -4,9 +4,11 @@
 # GUIToolkit: Qt5
 # LastSourceUpdate: 2020
 
+%define _lto_cflags %{nil}
+
 Name:    fugio
 Version: 3.1.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Fugio is an open visual programming system for building digital art and creative projects quickly, with no programming experience required
 URL:     https://www.bigfug.com/software/fugio/
 License: LGPL-3.0
@@ -14,24 +16,17 @@ License: LGPL-3.0
 Vendor:       Audinux
 Distribution: Audinux
 
-# git clone https://github.com/bigfug/Fugio
-# cd Fugio
-# git checkout v3.0.0
-# git submodule init
-# git submodule update
-# find . -name .git -exec rm -rf {} \;
-# cd ..
-# tar cvfz Fugio.tar.gz Fugio/*
+# ./fugio-source.sh <tag>
+# ./fugio-source.sh v3.1.0
 
 Source0: Fugio.tar.gz
-Patch0:  fugio-0001-fix-opencv.patch
-Patch1:  fugio-0002-fix-for-lua-5.4.patch
+Source1: fugio-source.sh
+Patch0:  fugio-0002-fix-for-lua-5.4.patch
 
-BuildRequires: gcc gcc-c++ sed
+BuildRequires: gcc gcc-c++
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: cmake
-BuildRequires: desktop-file-utils
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-qttools
@@ -39,14 +34,14 @@ BuildRequires: qt5-qtserialport-devel
 BuildRequires: qt5-linguist
 BuildRequires: qt5-qtwebsockets-devel
 BuildRequires: qt5-qtquickcontrols2-devel
-BuildRequires: ffmpeg-devel
+Buildrequires: compat-ffmpeg4-devel
 BuildRequires: portmidi-devel
 BuildRequires: portaudio-devel
 BuildRequires: opencv-devel
 BuildRequires: fftw-devel
 BuildRequires: lua-devel
-BuildRequires: ffmpeg-devel
 BuildRequires: eigen3-devel
+BuildRequires: desktop-file-utils
 
 %description
 Fugio is an open visual programming system for building digital art and creative projects quickly, with no programming experience required
@@ -62,9 +57,12 @@ sed -i -e "s/Fugio;//g" FugioApp/fugio.desktop
 
 %build
 
-%define _lto_cflags %{nil}
+%set_build_flags
+export CXXFLAGS="$CXXFLAGS -std=c++17 -I/usr/include/compat-ffmpeg4"
+export CFLAGS="$CFLAGS -I/usr/include/compat-ffmpeg4"
+export LDFLAGS="$LDFLAGS -L/usr/lib64/compat-ffmpeg4"
 
-%cmake -DCMAKE_BUILD_TYPE=RELEASE
+%cmake
 
 %cmake_build
 
@@ -94,6 +92,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/fugio.desktop
 %{_datadir}/*
 
 %changelog
+* Fri Dec 01 2023 Yann Collette <ycollette.nospam@free.fr> - 3.1.0-4
+- update to 3.1.0-4
+
 * Thu Oct 1 2020 Yann Collette <ycollette.nospam@free.fr> - 3.1.0-3
 - fix for Fedora 33
 
