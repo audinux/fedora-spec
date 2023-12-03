@@ -4,7 +4,12 @@ Version: 0.9.36
 Release: 1%{?dist}
 License: GPLv2+
 URL: http://qtractor.sourceforge.net/
-Source0: http://downloads.sourceforge.net/qtractor/qtractor-%{version}.tar.gz
+
+# ./qtractor-source.sh <tag>
+# ./qtractor-source.sh qtractor_0_9_36
+
+Source0: qtractor.tar.gz
+Source1: qtractor-source.sh
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -20,10 +25,10 @@ BuildRequires: libmad-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libsndfile-devel
 BuildRequires: libvorbis-devel
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-linguist
-BuildRequires: qt5-qtsvg-devel
-BuildRequires: qt5-qtx11extras-devel
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-linguist
+BuildRequires: qt6-qtsvg-devel
+BuildRequires: qt6-qttools-devel
 BuildRequires: rubberband-devel
 BuildRequires: suil-devel
 BuildRequires: lilv-devel
@@ -32,7 +37,7 @@ BuildRequires: desktop-file-utils
 
 Requires: hicolor-icon-theme
 
-Obsoletes: qtractor <= 0.9.34-1
+Obsoletes: qtractor < 0.9.36-1
 
 %description
 Qtractor is an Audio/MIDI multi-track sequencer application written in C++ 
@@ -43,11 +48,14 @@ evolve as a fairly-featured Linux Desktop Audio Workstation GUI, specially
 dedicated to the personal home-studio.
 
 %prep
-%autosetup -n qtractor-%{version}
+%autosetup -n qtractor
+
+sed -i -e "s|\${JACK_LIBDIR}|/usr/lib64/pipewire-0.3/jack/|g" CMakeLists.txt
 
 %build
 
-%cmake -DCONFIG_LV2_EVENT=on
+%cmake -DCONFIG_LV2_EVENT=ON \
+       -DCONFIG_QT6=ON 
 %cmake_build
 
 %install
@@ -69,6 +77,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.qtractor.de
 %{_datadir}/man/man1/qtractor*
 %{_datadir}/man/*/man1/qtractor*
 %{_datadir}/metainfo/org.rncbc.qtractor.metainfo.xml
+%{_datadir}/qtractor/audio/metro_bar.wav
+%{_datadir}/qtractor/audio/metro_beat.wav
 
 %changelog
 * Fri Dec 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.36-1
