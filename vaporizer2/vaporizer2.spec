@@ -4,7 +4,7 @@
 
 Name:    vaporizer2
 Version: 3.4.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Vaporizer2 hybrid wavetable additive / subtractive VST / AU / AAX synthesizer / sampler workstation plugin
 License: GPL-3.0-or-later
 URL:     https://github.com/VASTDynamics/Vaporizer2
@@ -77,13 +77,13 @@ Data and presets for %{name}
 %install
 
 install -m 755 -d %{buildroot}/%{_libdir}/lv2/
-install -m 755 -d %{buildroot}/%{_libdir}/lv3/
+install -m 755 -d %{buildroot}/%{_libdir}/vst3/
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 -d %{buildroot}/%{_datadir}/%{name}/
 install -m 755 -d %{buildroot}/%{_datadir}/%{name}/doc/
 
-cp -ra  %{__cmake_builddir}/VASTvaporizer2_artefacts/Release/LV2/* %{buildroot}/%{_libdir}/lv2/
-cp -ra  %{__cmake_builddir}/VASTvaporizer2_artefacts/Release/VST3/* %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/VASTvaporizer2_artefacts/Release/LV2/* %{buildroot}/%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/VASTvaporizer2_artefacts/Release/VST3/* %{buildroot}/%{_libdir}/vst3/
 cp %{__cmake_builddir}/VASTvaporizer2_artefacts/Release/Standalone/* %{buildroot}/%{_bindir}/
 cp Documentation/Vaporizer2Manual.pdf %{buildroot}/%{_datadir}/%{name}/doc/
 
