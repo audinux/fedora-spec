@@ -5,7 +5,7 @@
 # Global variables for github repository
 
 Name:    uhhyouplugins
-Version: 0.58.0
+Version: 0.60.0
 Release: 1%{?dist}
 Summary: Uhhyou Plugins VST 3
 License: GPL-2.0-or-later
@@ -15,13 +15,10 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./uhhyouplugins-source.sh <tag>
-# ./uhhyouplugins-source.sh UhhyouPlugins 0.58.0
-# ./vst3-source.sh v3.7.8_build_34
+# ./uhhyouplugins-source.sh UhhyouPlugins 0.60.0
 
 Source0: VSTPlugins.tar.gz
-Source1: vst3sdk.tar.gz
-Source2: vst3-source.sh
-Source3: uhhyouplugins-source.sh
+Source1: uhhyouplugins-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -46,9 +43,6 @@ VST3 version of %{name}
 %prep
 %autosetup -n VSTPlugins
 
-tar xvfz %{SOURCE1}
-cp ci/linux_patch/cairocontext.cpp vst3sdk/vstgui4/vstgui/lib/platform/linux/cairocontext.cpp
-
 %build
 
 export HOME=`pwd`
@@ -56,34 +50,18 @@ mkdir .vst3
 
 %set_build_flags
 
-export CXXFLAGS="-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -mtune=generic -fasynchronous-unwind-tables"
+export CXXFLAGS="-DNDEBUG $CXXFLAGS"
+export CFLAGS="-DNDEBUG $CFLAGS"
 
-export CXXFLAGS="-include cstdint $CXXFLAGS"
+%cmake -DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG" \
+       -DSMTG_RUN_VST_VALIDATOR=OFF
 
-mkdir vst3sdk/build
-cd vst3sdk/build
-
-cmake -DCMAKE_BUILD_TYPE=Release \
-      -DCMAKE_CXX_FLAGS="$CXXFLAGS -include limits" \
-      -DSMTG_MYPLUGINS_SRC_PATH="../.." \
-      -DSMTG_ADD_VST3_HOSTING_SAMPLES=FALSE \
-      -DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG" \
-      -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
-      -DCMAKE_INSTALL_DO_STRIP:BOOL=OFF \
-      -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \
-      -DINCLUDE_INSTALL_DIR:PATH=%{_includedir} \
-      -DLIB_INSTALL_DIR:PATH=%{_libdir} \
-      -DSYSCONF_INSTALL_DIR:PATH=%{_sysconfdir} \
-      -DSHARE_INSTALL_PREFIX:PATH=%{_datadir} \
-      -DCMAKE_STRIP=/usr/bin/true \
-      ..
-
-cmake --build . %{?_smp_mflags}
+%cmake_build
 
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
-cp -ra vst3sdk/build/VST3/Release/* %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/VST3/* %{buildroot}/%{_libdir}/vst3/
 
 %files
 %doc README.md
@@ -93,6 +71,12 @@ cp -ra vst3sdk/build/VST3/Release/* %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Dec 04 2023 Yann Collette <ycollette.nospam@free.fr> - 0.60.0-1
+- update to 0.60.0-1
+
+* Sat Dec 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.59.0-1
+- update to 0.59.0-1
+
 * Sun Oct 22 2023 Yann Collette <ycollette.nospam@free.fr> - 0.58.0-1
 - update to 0.58.0-1
 
