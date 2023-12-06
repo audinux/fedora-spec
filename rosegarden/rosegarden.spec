@@ -1,4 +1,4 @@
-%global major 23.06
+%global major 23.12
 
 Name: rosegarden4
 Version: %{major}
@@ -84,6 +84,9 @@ desktop-file-install \
 %{_datadir}/metainfo/rosegarden.appdata.xml
 
 %changelog
+* Wed Dec 06 2023 Yann Collette <ycollette.nospam@free.fr> - 23.12-1
+- update to 23.12-1
+
 * Wed Jun 07 2023 Yann Collette <ycollette.nospam@free.fr> - 23.06-1
 - update to 23.06-1
 
