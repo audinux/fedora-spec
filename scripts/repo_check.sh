@@ -909,7 +909,8 @@ https://github.com/geraintluff/jsfx
 https://github.com/Justin-Johnson/ReJJ
 https://github.com/JoepVanlier/JSFX
 https://github.com/helge17/tuxguitar
-https://github.com/VASTDynamics/Vaporizer2"
+https://github.com/VASTDynamics/Vaporizer2
+https://github.com/ArdenButterfield/Maim"
 
 if [ -f git_tags_new.txt ];
 then
