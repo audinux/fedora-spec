@@ -910,7 +910,8 @@ https://github.com/Justin-Johnson/ReJJ
 https://github.com/JoepVanlier/JSFX
 https://github.com/helge17/tuxguitar
 https://github.com/VASTDynamics/Vaporizer2
-https://github.com/ArdenButterfield/Maim"
+https://github.com/ArdenButterfield/Maim
+https://github.com/free-audio/clap"
 
 if [ -f git_tags_new.txt ];
 then
