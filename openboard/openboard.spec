@@ -7,7 +7,7 @@
 %define	uname OpenBoard
 
 Name:    openboard
-Version: 1.6.4
+Version: 1.7.0
 Release: 3%{?dist}
 Summary: Interactive whiteboard for schools and universities
 License: GPL-3.0-or-later
@@ -46,6 +46,7 @@ BuildRequires: pkgconfig(Qt5WebKit)
 BuildRequires: pkgconfig(Qt5WebKitWidgets)
 BuildRequires: pkgconfig(Qt5Xml)
 BuildRequires: pkgconfig(Qt5XmlPatterns)
+BuildRequires: pkgconfig(Qt5WebEngineWidgets)
 BuildRequires: pkgconfig(hunspell)
 BuildRequires: pkgconfig(freetype2)
 BuildRequires: pkgconfig(openssl)
@@ -148,6 +149,9 @@ find %{buildroot} -executable -type f -name *.html -exec chmod -x '{}' \+
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Fri Dec 08 2023 Yann Collette <ycollette.nospam@free.fr> - 1.7.0-3
+- update to 1.7.0-3
+
 * Fri Oct 14 2022 Yann Collette <ycollette.nospam@free.fr> - 1.6.4-3
 - update to 1.6.4-3
 
