@@ -128,6 +128,7 @@
 | Sound_Nodes             | https://github.com/negdo/Sound_Nodes |
 | ZL-Audio                | https://github.com/ZL-Audio |
 | CDP8                    | https://github.com/ComposersDesktop/CDP8 |
+| PyMusicLooper           | https://github.com/arkrow/PyMusicLooper |
 
 Check the following URL: https://github.com/forart/HyMPS
 
