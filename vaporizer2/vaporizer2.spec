@@ -3,7 +3,7 @@
 # Category: Audio, Effect, Synthesizer
 
 Name:    vaporizer2
-Version: 3.4.1
+Version: 3.4.3
 Release: 2%{?dist}
 Summary: Vaporizer2 hybrid wavetable additive / subtractive VST / AU / AAX synthesizer / sampler workstation plugin
 License: GPL-3.0-or-later
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./vaporizer2-source.sh v3.4.1
+# $ ./vaporizer2-source.sh v3.4.3
 
 Source0: Vaporizer2.tar.gz
 Source1: vaporizer2-source.sh
@@ -106,6 +106,9 @@ cp -ra VASTvaporizer/Presets %{buildroot}/%{_datadir}/%{name}/
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Dec 11 2023 Yann Collette <ycollette.nospam@free.fr> - 3.4.3-1
+- update to 3.4.3-1
+
 * Wed Dec 06 2023 Yann Collette <ycollette.nospam@free.fr> - 3.4.1-1
 - update to 3.4.1-1
 
