@@ -2,7 +2,7 @@ Name:    midivisualizer
 Version: 7.2
 Release: 1%{?dist}
 Summary: A small MIDI visualizer tool, using OpenGL
-URL:     https://github.com/markusschwenk/midieditor
+URL:     https://github.com/kosua20/MIDIVisualizer
 License: MIT
 
 Vendor:       Audinux
