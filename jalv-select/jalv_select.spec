@@ -2,25 +2,28 @@
 %global commit0 29ea666b14e6a1c81190b6b6607fa1b090e20209
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
+%global commitdate 20221019
 
 Name:    jalv_select
-Version: 1.3.0.%{shortcommit0}
-Release: 6%{?dist}
+Version: 1.3.0
+Release: 6.%{commitdate}git%{shortcommit0}%{?dist}
+Epoch:   1
 Summary: A LV2 Synthesizer launcher for Jack audio
 URL:     https://github.com/brummer10/jalv_select
-License: GPL-2.0-or-later
+License: Unlicense
 
 Source0: https://github.com/brummer10/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Patch0: jalv_select-0001-fix-fr-man-installation.patch
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: gtkmm3.0-devel
 BuildRequires: lv2-devel
 BuildRequires: lilv-devel
+BuildRequires: gtkmm3.0-devel
 BuildRequires: desktop-file-utils
 
-Requires: jalv jalv-qt jalv-gtk jalv-gtkmm
+Requires: jalv jalv-qt jalv-gtk
 
 %description
 A little GUI to select lv2 plugs from a list
@@ -32,11 +35,11 @@ A little GUI to select lv2 plugs from a list
 
 %set_build_flags
 
-%make_build PREFIX=%{_usr}
+%make_build PREFIX=%{_prefix}
 
 %install
 
-%make_install PREFIX=%{_usr}
+%make_install PREFIX=%{_prefix}
 
 %find_lang jalv.select
 
@@ -58,8 +61,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/jalv.select.desktop
 %{_datadir}/applications/jalv.select.desktop
 %{_datadir}/pixmaps/*.png
 %{_mandir}/man1/jalv.select.*
+%{_mandir}/fr/man1/jalv.select.*
 
 %changelog
+* Mon Dec 11 2023 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-6.20221019git29ea666
+- fix spec
+
 * Tue Nov 28 2023 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-6
 - fix spec
 
