@@ -3,7 +3,7 @@
 # Category: Audio, Sequencer
 
 Name:    helio-workstation
-Version: 3.11.0
+Version: 3.12.0
 Release: 2%{?dist}
 Summary: An audio sequencer
 URL:     https://github.com/helio-fm/helio-workstation
@@ -12,7 +12,7 @@ License: GPL-2.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./helioworkstation-source.sh 3.11
+# ./helioworkstation-source.sh 3.12
 
 Source0: helio-workstation.tar.gz
 Source1: helioworkstation-source.sh
@@ -57,8 +57,8 @@ cp -a Projects/Deployment/Linux/Debian/x64/usr/share/applications/Helio.desktop 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/
 cp -ra Projects/Deployment/Linux/Debian/x64/usr/share/icons/* %{buildroot}%{_datadir}/icons/
 
-install -m 755 -d %{buildroot}/%{_datadir}/doc/%{name}/
-cp -ra Docs/* %{buildroot}/%{_datadir}/doc/%{name}/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/doc
+cp -ra Docs/* %{buildroot}/%{_datadir}/%{name}/doc/
 
 # install helioworkstation.desktop properly.
 desktop-file-install --vendor '' \
@@ -77,9 +77,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/*
-%{_datadir}/doc/%{name}/
+%{_datadir}/%{name}/doc/*
 
 %changelog
+* Tue Dec 12 2023 Yann Collette <ycollette.nospam@free.fr> - 3.12.0-2
+- update to 3.12.0-2
+
 * Sun Apr 23 2023 Yann Collette <ycollette.nospam@free.fr> - 3.11.0-2
 - update to 3.11.0-2
 
