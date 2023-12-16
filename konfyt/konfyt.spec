@@ -3,7 +3,7 @@
 # Category: Audio
 
 Name:    konfyt
-Version: 1.4.0
+Version: 1.5.0
 Release: 3%{?dist}
 Summary: A patch manager
 URL:     https://github.com/noedigcode/konfyt
@@ -18,6 +18,7 @@ BuildRequires: gcc gcc-c++ make
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-qtsvg-devel
+BuildRequires: qt5-qtdeclarative-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 %ifarch aarch64
@@ -89,6 +90,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Sat Dec 16 2023 Yann Collette <ycollette.nospam@free.fr> - 1.5.0-3
+- update to 1.5.0-3
+
 * Sun Aug 06 2023 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-3
 - update to 1.4.0-3
 
