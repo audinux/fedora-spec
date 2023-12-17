@@ -1,5 +1,5 @@
 Name:    joepvanlier_ysfx
-Version: 0.0.1
+Version: 0.1.0
 Release: 1%{?dist}
 Summary: A bundle of JSFX and scripts for reaper.
 URL:     https://github.com/JoepVanlier/JSFX
@@ -30,5 +30,8 @@ cp -ra * %{buildroot}%{_datadir}/%{name}/
 %{_datadir}/%{name}/*
 
 %changelog
+* Sun Dec 17 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
+- update to 0.1.0-1
+
 * Fri Nov 10 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
