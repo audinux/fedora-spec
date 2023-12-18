@@ -9,7 +9,7 @@ else
     exit
 fi
 
-REPO_LIST="http://anongit.freedesktop.org/git/pulseaudio/pulseaudio.git
+REPO_LIST="https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git
 git://gabe.is-a-geek.org/git/inconcert
 https://git.ardour.org/ardour/ardour
 https://github.com/grame-cncm/faustlive
