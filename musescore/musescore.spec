@@ -21,13 +21,13 @@
 %global __requires_exclude qmlimport\\((MuseScore|FileIO).*
 
 %define rname          mscore
-%define version_lesser 4.1
+%define version_lesser 4.2
 %define revision       5485621
 %define docdir         %{_docdir}/%{name}
 %define fontdir        %{_datadir}/fonts/%{name}
 
 Name: mscore-mao
-Version: 4.1.1
+Version: 4.2.0
 Release: 2%{?dist}
 Summary: A WYSIWYG music score typesetter
 
@@ -176,6 +176,7 @@ export CXXFLAGS="$CXXFLAGS -fno-var-tracking-assignments"
        -DMUE_BUILD_VST_MODULE:BOOL=ON \
        -DMUE_BUILD_VIDEOEXPORT_MODULE:BOOL=OFF \
        -DMUE_BUILD_UPDATE_MODULE:BOOL=OFF \
+       -DMUE_ENABLE_AUDIO_JACK:BOOL=ON \
        -DMUSESCORE_BUILD_MODE=release \
        -DMUSESCORE_BUILD_NUMBER=1 \
        -DMUSESCORE_REVISION=%{revision} \
@@ -222,7 +223,6 @@ install -d -m 755 %{buildroot}/%{docdir}
 install -p -m 644 thirdparty/beatroot/COPYING         %{buildroot}/%{docdir}/COPYING.beatroot
 install -p -m 644 thirdparty/beatroot/README.txt      %{buildroot}/%{docdir}/README.txt.beatroot
 install -p -m 644 thirdparty/dtl/COPYING              %{buildroot}/%{docdir}/COPYING.BSD.dtl
-install -p -m 644 thirdparty/freetype/README          %{buildroot}/%{docdir}/README.freetype
 install -p -m 644 thirdparty/intervaltree/README      %{buildroot}/%{docdir}/README.intervaltree
 install -p -m 644 thirdparty/rtf2html/ChangeLog       %{buildroot}/%{docdir}/ChangeLog.rtf2html
 install -p -m 644 thirdparty/rtf2html/COPYING.LESSER  %{buildroot}/%{docdir}/COPYING.LESSER.rtf2html
@@ -261,7 +261,7 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/org.musescore.MuseSc
 
 %files
 %doc %{docdir}/*
-%license LICENSE.GPL
+%license LICENSE.txt
 %{_bindir}/%{rname}
 %{_datadir}/metainfo/org.musescore.MuseScore.appdata.xml
 %{_datadir}/applications/org.musescore.MuseScore.desktop
@@ -286,6 +286,8 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/org.musescore.MuseSc
 %license fonts/finalemaestro/OFL.txt.finalemaestro
 
 %changelog
+* Mon Dec 18 2023 Yann Collette <ycollette.nospam@free.fr> - 4.2.0-2
+- update to 4.2.0-2
 * Thu Aug 03 2023 Yann Collette <ycollette.nospam@free.fr> - 4.1.1-2
 - update to 4.1.1-2 - fix build
 * Tue Aug 01 2023 Yann Collette <ycollette.nospam@free.fr> - 4.1.1-1
