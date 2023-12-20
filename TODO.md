@@ -129,6 +129,9 @@
 | ZL-Audio                | https://github.com/ZL-Audio |
 | CDP8                    | https://github.com/ComposersDesktop/CDP8 |
 | PyMusicLooper           | https://github.com/arkrow/PyMusicLooper |
+| xenos                   | https://github.com/raphaelradna/xenos |
+| badhumors               | https://github.com/niflheimmer/badhumors |
+| MXTune                  | https://github.com/liuanlin-mx/MXTune |
 
 Check the following URL: https://github.com/forart/HyMPS
 
