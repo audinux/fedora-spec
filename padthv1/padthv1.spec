@@ -5,7 +5,7 @@
 
 %global padthv1_major 0
 %global padthv1_minor 9
-%global padthv1_patch 32
+%global padthv1_patch 33
 %global padthv1_version %{padthv1_major}.%{padthv1_minor}.%{padthv1_patch}
 %global padthv1_version_ %{padthv1_major}_%{padthv1_minor}_%{padthv1_patch}
 
@@ -100,6 +100,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.des
 %{_libdir}/lv2/%{name}.lv2/
 
 %changelog
+* Wed Dec 20 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.33-4
+- update to 0.9.33-4
+
 * Tue Sep 12 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.32-4
 - update to 0.9.32-4
 
