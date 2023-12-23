@@ -132,6 +132,7 @@
 | xenos                   | https://github.com/raphaelradna/xenos |
 | badhumors               | https://github.com/niflheimmer/badhumors |
 | MXTune                  | https://github.com/liuanlin-mx/MXTune |
+| Tonez                   | https://github.com/retornz/ToneZ |
 
 Check the following URL: https://github.com/forart/HyMPS
 
