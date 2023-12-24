@@ -133,6 +133,7 @@
 | badhumors               | https://github.com/niflheimmer/badhumors |
 | MXTune                  | https://github.com/liuanlin-mx/MXTune |
 | Tonez                   | https://github.com/retornz/ToneZ |
+| JackAss                 | https://github.com/falkTX/JackAss |
 
 Check the following URL: https://github.com/forart/HyMPS
 
