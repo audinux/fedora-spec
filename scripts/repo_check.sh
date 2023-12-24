@@ -355,7 +355,7 @@ https://github.com/jerryuhoo/Fire
 https://github.com/jhoar/AmalgamatedHarmonics
 https://github.com/jiixyj/loudness-scanner
 https://github.com/jimallman/interrobang-rack-modules
-https://github.com/jjazzboss/JJazzLab-X
+https://github.com/jjazzboss/JJazzLab
 https://github.com/JoakimLindbom/JLmod
 https://github.com/Joeboy/joeboy-lv2-plugins
 https://github.com/joelrobichaud/Nohmad
