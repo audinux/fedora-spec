@@ -1,5 +1,5 @@
 Name:    vmpc
-Version: 0.5.11
+Version: 0.5.12
 Release: 1%{?dist}
 Summary: JUCE implementation of VMPC2000XL
 License: GPL-3.0-only
@@ -14,11 +14,11 @@ Patch0: vmpc-0001-fix-build.patch
 BuildRequires: gcc gcc-c++
 BuildRequires: git
 BuildRequires: cmake
-BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: libudisks2-devel
 BuildRequires: gtk3-devel
 BuildRequires: webkit2gtk3-devel
+BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
 BuildRequires: rapidjson-devel
@@ -34,6 +34,22 @@ Requires: %{name}%{?_isa} = %{version}-%{release}
 %description -n vst3-%{name}
 VST3 version of %{name}
 
+%package -n lv2-%{name}
+Summary:  LV2 version of %{name}
+License:  GPL-2.0-or-later
+Requires: %{name}%{?_isa} = %{version}-%{release}
+
+%description -n lv2-%{name}
+LV2 version of %{name}
+
+%package -n standalone-%{name}
+Summary:  Standalone version of %{name}
+License:  GPL-2.0-or-later
+Requires: %{name}%{?_isa} = %{version}-%{release}
+
+%description -n standalone-%{name}
+Standalone version of %{name}
+
 %prep
 %setup -n vmpc-juce-%{version}
 
@@ -41,33 +57,36 @@ VST3 version of %{name}
 
 %set_build_flags
 
-%if 0%{?fedora} >= 38
-%cmake -DCMAKE_CXX_FLAGS="-include cstdint $CXXFLAGS"
-%else
 %cmake
-%endif
-
-sed -i -e "/mpc-tests/d" editables/mpc/CMakeLists.txt
-%cmake_build --target vmpc2000xl_Standalone vmpc2000xl_VST3
-# vmpc2000xl_LV2
+%cmake_build
 
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
-install -m 755 -d %{buildroot}%{_bindir}
+install -m 755 -d %{buildroot}%{_libdir}/lv2/
+install -m 755 -d %{buildroot}%{_bindir}/
 
-cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/Standalone/* %{buildroot}%{_bindir}/
+cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/VST3/* %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/LV2/* %{buildroot}/%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/Standalone/* %{buildroot}/%{_bindir}/
 
 %files
 %doc README.md
 %license LICENSE.txt
+
+%files -n standalone-%{name}
 %{_bindir}/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
+%files -n lv2-%{name}
+%{_libdir}/lv2/*
+
 %changelog
+* Sun Dec 24 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.12-1
+- update to 0.5.12-1
+
 * Mon Dec 18 2023 Yann Collette <ycollette.nospam@free.fr> - 0.5.11-1
 - update to 0.5.11-1
 
