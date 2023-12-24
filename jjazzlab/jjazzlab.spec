@@ -2,8 +2,10 @@
 # TYpe: IDE, Standalone
 # Category: Tool, MIDI, Sequencer
 
+%global __brp_strip %{nil}
+
 Name:     jjazzlab
-Version:  3.2.1
+Version:  4.0.1
 Release:  2%{?dist}
 Summary:  A complete Midi-based framework for automatic backing tracks generation.
 URL:      https://github.com/jjazzboss/JJazzLab-X
@@ -12,7 +14,7 @@ License:  LGPL-3.0
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://www.jjazzlab.com/pkg/JJazzLab-%{version}-Linux.zip
+Source0: https://www.jjazzlab.com/pkg/JJazzLab-%{version}-linux-x64.zip
 Source1: jjazzlab.png
 Source2: README.md
 
@@ -20,6 +22,7 @@ BuildRequires: unzip
 BuildRequires: desktop-file-utils
 
 Requires: java >= 1.5
+Requires: fluidsynth
 
 %description
 JJazzLab-X is a Midi-based framework dedicated to backing tracks
@@ -33,7 +36,7 @@ intelligent and interesting backing tracks: realistic and non-boring
 backing tracks which you can easily adjust to a specific song.
 
 %prep
-%autosetup -n JJazzLab-%{version}-Linux
+%autosetup -c -nJJazzLab-%{version}-Linux
 
 %install
 
@@ -48,6 +51,8 @@ ln -s /opt/jjazzlab/bin/jjazzlab %{buildroot}/%{_bindir}/jjazzlab
 
 # Cleanup
 rm -rf %{buildroot}/opt/jjazzlab/platform/modules/lib/aarch64
+rm -f %{buildroot}/opt/jjazzlab/bin/*.exe
+find %{buildroot}/opt/jjazzlab/ -name "*.dll" -exec rm {} \;
 
 # Install icon
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/256x256/apps/
@@ -83,6 +88,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Sun Dec 24 2023 Yann Collette <ycollette.nospam@free.fr> - 4.0.1-2
+- update to 4.0.1-2
+
 * Wed May 10 2023 Yann Collette <ycollette.nospam@free.fr> - 3.2.1-2
 - install binary Distribution
 
