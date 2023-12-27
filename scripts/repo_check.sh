@@ -282,7 +282,6 @@ https://github.com/geoffreybennett/alsa-scarlett-gui
 https://github.com/geraldmwangi/GuitarMidi-LV2
 https://github.com/gesellkammer/pyliblo3
 https://github.com/gillesdegottex/fmit
-https://github.com/giogramegna/mantra-master
 https://github.com/gluethegiant/gtg-rack
 https://github.com/GModal/ChaffVerb
 https://github.com/gosub/forsitan-modulare
@@ -817,7 +816,6 @@ https://github.com/xanmod/linux
 https://github.com/GModal/vSwell
 https://github.com/pierreguillot/Camomile
 https://github.com/GuitarML/PrincePedal
-https://github.com/bsutherland/JuceOPLVSTi
 https://github.com/FigBug/SN76489
 https://github.com/GrandOrgue/grandorgue
 https://github.com/izzyreal/vmpc-juce
@@ -912,6 +910,10 @@ https://github.com/helge17/tuxguitar
 https://github.com/VASTDynamics/Vaporizer2
 https://github.com/ArdenButterfield/Maim
 https://github.com/free-audio/clap"
+
+# Missing repositories:
+# https://github.com/giogramegna/mantra-master
+# https://github.com/bsutherland/JuceOPLVSTi
 
 if [ -f git_tags_new.txt ];
 then
