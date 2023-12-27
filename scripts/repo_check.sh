@@ -909,7 +909,8 @@ https://github.com/JoepVanlier/JSFX
 https://github.com/helge17/tuxguitar
 https://github.com/VASTDynamics/Vaporizer2
 https://github.com/ArdenButterfield/Maim
-https://github.com/free-audio/clap"
+https://github.com/free-audio/clap
+https://github.com/SpotlightKid/stereocrossdelay"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
