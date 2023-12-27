@@ -1,5 +1,5 @@
 Name:    harmonigon
-Version: 0.1.0
+Version: 0.1.2
 Release: 1%{?dist}
 Summary: A simple harmonic table MIDI sequencer
 License: GPL-3.0-only
@@ -9,7 +9,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./harmonigon-source.sh <TAG>
-#        ./harmonigon-source.sh v0.1.0
+#        ./harmonigon-source.sh v0.1.2
 
 Source0: Harmonigon.tar.gz
 Source1: harmonigon.png
@@ -93,5 +93,11 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/*
 
 %changelog
+* Wed Dec 27 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1.2-1
+- update to 0.1.2-1
+
+* Tue Dec 26 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1.1-1
+- update to 0.1.1-1
+
 * Tue Jul 18 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
 - Initial spec file
