@@ -134,6 +134,9 @@
 | MXTune                  | https://github.com/liuanlin-mx/MXTune |
 | Tonez                   | https://github.com/retornz/ToneZ |
 | JackAss                 | https://github.com/falkTX/JackAss |
+| stereocrossdelay        | https://github.com/SpotlightKid/stereocrossdelay |
+| cchorus                 | https://github.com/SpotlightKid/cchorus |
+| Automated-GuitarAmpModelling | https://github.com/AidaDSP/Automated-GuitarAmpModelling |
 
 Check the following URL: https://github.com/forart/HyMPS
 
