@@ -34,17 +34,19 @@ jobs:
         run: python parse-spec/main.py fedora-spec
 
       - run: echo "TODO Test the ouput non-empty, valid json ..."
+      - run: mkdir output
+      - run: mv search-data.json output/
 
       - name: Push the ouput to web site repo
-        uses: dmnemec/copy_file_to_another_repo_action@main
+        uses: cpina/github-action-push-to-another-repository@main
         env:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
-          source_file: 'search-data.json'
-          destination_repo: 'audinux/audinux.github.io'
-          destination_folder: 'packages'
-          user_email: 'brunovern.a@gmail.com'
-          user_name: 'BrunoVernay'
-          commit_message: 'Search metadata update via GH Actions.'
+          source-directory: output/
+          destination-repository-name: 'audinux/audinux.github.io'
+          target-directory: 'packages/data'
+          user-email: 'brunovern.a@gmail.com'
+          destination-github-username: 'BrunoVernay'
+          commit-message: 'Search metadata update via GH Actions.'
 
       
