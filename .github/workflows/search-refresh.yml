@@ -38,7 +38,7 @@ jobs:
       - name: Push the ouput to web site repo
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
           source_file: 'search-data.json'
           destination_repo: 'audinux/audinux.github.io'
