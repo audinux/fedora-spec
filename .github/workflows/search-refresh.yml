@@ -44,9 +44,10 @@ jobs:
         with:
           source-directory: output/
           destination-repository-name: 'audinux.github.io'
+          destination-github-username: 'audinux'
           target-directory: 'packages/data'
           user-email: 'brunovern.a@gmail.com'
-          destination-github-username: 'BrunoVernay'
+          user-name: 'BrunoVernay'
           commit-message: 'Search metadata update via GH Actions.'
 
       
