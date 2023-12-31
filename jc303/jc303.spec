@@ -1,5 +1,5 @@
 Name:    jc303
-Version: 0.9.1
+Version: 0.9.2
 Release: 1%{?dist}
 Summary: A Free Roland TB-303 Plugin
 License: GPL-3.0-or-later
@@ -97,5 +97,8 @@ cp -ra %{__cmake_builddir}/JC303_artefacts/LV2/*  %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
-* Mon Sep 18 2023 Yann Collette <ycollette.nospam@free.fr> - 1.14.1-1
+* Sun Dec 31 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.2-1
+- update to 0.9.2-1
+
+* Mon Sep 18 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.1-1
 - Initial spec file
