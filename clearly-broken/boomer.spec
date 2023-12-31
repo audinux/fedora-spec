@@ -1,6 +1,6 @@
-# Tag: Drum, Synthesizer
+# Tag: Drum
 # Type: Plugin, LV2, VST3
-# Category: Plugin
+# Category: Synthesizer, Archived
 
 %global commit0 1916d46a2823d0f091edf545666058456c93b004
 

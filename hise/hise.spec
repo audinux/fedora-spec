@@ -1,12 +1,12 @@
 # Tag: Jack, Alsa
-# Type: Plugin, Standalone, VST3
-# Category: Audio, Editor
+# Type: Plugin, Standalone, VST3, IDE, Devel
+# Category: Audio, Programming, Tool
 
 Name:    HISE
 Version: 3.6.2
 Release: 1%{?dist}
 Summary: The open source framework for sample based instrument
-License: GPL-2.0-or-later
+License: GPL-3.0-or-later or Commercial
 URL:     https://github.com/christophhart/HISE
 
 Vendor:       Audinux
