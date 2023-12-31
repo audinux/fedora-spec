@@ -85,6 +85,10 @@ BuildRequires: pkgconfig(mount)
 BuildRequires: pkgconfig(zlib)
 BuildRequires: python3-devel
 %endif
+BuildRequires: sassc
+BuildRequires: appstream-devel
+BuildRequires: libpanel-devel
+BuildRequires: gtksourceview5-devel
 
 Requires: breeze-icon-theme
 
@@ -119,14 +123,14 @@ sed -i -e "149,168d" doc/user/meson.build
 
 %build
 
-# Install sphinx-furo them
+# Install sphinx-furo theme
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 pip install --user furo
 
 mkdir build
 %meson \
        --wrap-mode=nofallback \
-       --force-fallback-for "pangoft2, gtk4, wayland-client, wayland-protocols, gtksourceview-5" \
+       --force-fallback-for "gtk4, wayland-protocols" \
        --default-library static \
        -Dmanpage=true \
        -Duser_manual=true \
@@ -138,6 +142,7 @@ mkdir build
        -Dsdl=enabled \
        -Doptimization=3 \
        -Ddebug=true \
+       -Dbuild_plugins_with_static_libs=false \
        --buildtype release \
        --prefix=/usr
 
