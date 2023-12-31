@@ -6,7 +6,7 @@ Name:    HISE
 Version: 3.6.2
 Release: 1%{?dist}
 Summary: The open source framework for sample based instrument
-License: GPL-3.0-or-later or Commercial
+License: GPL-3.0-or-later OR LicenseRef-www-hise-audio
 URL:     https://github.com/christophhart/HISE
 
 Vendor:       Audinux
