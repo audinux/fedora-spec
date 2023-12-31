@@ -1,7 +1,7 @@
 name: Refresh search data
 on: 
   push:
-    branches: 'main'
+    branches: [ main, master ]
     paths: '**.spec'
   workflow_dispatch:
 
