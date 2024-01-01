@@ -911,7 +911,8 @@ https://github.com/VASTDynamics/Vaporizer2
 https://github.com/ArdenButterfield/Maim
 https://github.com/free-audio/clap
 https://github.com/SpotlightKid/stereocrossdelay
-https://github.com/x42/jackmidi2osc"
+https://github.com/x42/jackmidi2osc
+https://github.com/brummer10/MelMatchEQ.lv2"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
