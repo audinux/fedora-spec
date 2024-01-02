@@ -626,8 +626,8 @@ https://github.com/ssj71/infamousPlugins
 https://github.com/ssj71/OSC2MIDI
 https://github.com/ssj71/reMID.lv2
 https://github.com/ssj71/rkrlv2
-https://github.com/stargateaudio/pymarshal
-https://github.com/stargateaudio/stargate
+https://github.com/d3v-t00Lz/pymarshal
+https://github.com/stargatedaw/stargate
 https://github.com/starlingcode/Via-for-Rack
 https://github.com/stavrosdidakis/Motion-Tracking
 https://github.com/Stazed/rakarrack-plus

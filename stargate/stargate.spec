@@ -3,17 +3,17 @@
 # Category: DAW, Audio
 
 Name:    stargate
-Version: 23.03.1
+Version: 24.01.1
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
 License: GPL-3.0-only
-URL:     http://github.com/stargateaudio/stargate/
+URL:     https://github.com/stargatedaw/stargate
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./stargate-source.sh <TAG>
-# ./stargate-source.sh release-23.03.1
+# ./stargate-source.sh release-24.01.1
 
 Source0: stargate.tar.gz
 Source1: stargate-source.sh
@@ -24,6 +24,7 @@ BuildRequires: git
 BuildRequires: jq
 BuildRequires: make
 BuildRequires: libsndfile-devel
+BuildRequires: soundtouch-devel
 BuildRequires: portaudio-devel
 BuildRequires: portmidi-devel
 BuildRequires: python3-devel
@@ -77,6 +78,11 @@ desktop-file-install --vendor '' \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/stargate.desktop
 
+cd ..
+
+# Remove the symbolic link and create a real directory
+rm -f %{buildroot}%{_datadir}/doc/stargate
+
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 
@@ -84,16 +90,16 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 %doc README.md
 %license LICENSE
 %{_bindir}/stargate
-%{_bindir}/stargate-engine
-%{_bindir}/stargate-sbsms
-%{_bindir}/stargate-soundstretch
-%{_datadir}/doc/stargate/copyright
 %{_datadir}/applications/*
 %{_datadir}/mime/*
 %{_datadir}/pixmaps/*
-%{_datadir}/stargate/
+%dir /opt/stargate/
+/opt/stargate/*
 
 %changelog
+* Tue Jan 02 2024 Yann Collette <ycollette.nospam@free.fr> - 24.01.1-1
+- update to 24.01.1-1
+
 * Thu Mar 09 2023 Yann Collette <ycollette.nospam@free.fr> - 23.03.1-1
 - update to 23.03.1-1
 
