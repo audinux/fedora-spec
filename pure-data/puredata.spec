@@ -2,8 +2,8 @@
 # Pure Data vanilla build
 #
 
-%define pdver 0.53-1
-%define pkgver 0.53.1
+%define pdver 0.54-1
+%define pkgver 0.54.1
 
 Summary: Pure Data
 Name:    puredata
@@ -28,23 +28,30 @@ Source15: pd-gui-plugin.1
 Source16: pd-README
 # mime stuff
 Source17: puredata-gui.sharedmimeinfo
+# deken_cpi
+Source18: dekencpu
 
 # add relevant debian patches
-Patch1: pd-patch-pd2puredata.patch
-Patch2: pd-patch-usrlib64pd_path.patch
-Patch3: pd-patch-usrlibpd_path.patch
-Patch4: pd-patch-helpbrowser_puredata-doc.patch
-Patch5: pd-patch-etc-gui-plugins.patch
-Patch6: pd-patch-fixmanpage.patch
-Patch7: pd-patch-privacy.patch
+Patch1:  pd-patch-pd2puredata.patch
+Patch2:  pd-patch-usrlib64pd_path.patch
+Patch3:  pd-patch-usrlibpd_path.patch
+Patch4:  pd-patch-helpbrowser_puredata-doc.patch
+Patch5:  pd-patch-etc-gui-plugins.patch
+Patch6:  pd-patch-fixmanpage.patch
+Patch7:  pd-patch-privacy.patch
+Patch8:  export.patch
+Patch9:  libpd_example.patch
+Patch10: libpd_visibility.patch
 
-BuildRequires: gcc gcc-c++
+BuildRequires: gcc
+BuildRequires: gcc-c++
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: portaudio-devel
+BuildRequires: portmidi-devel
 BuildRequires: gettext-devel
 BuildRequires: desktop-file-utils
 
@@ -56,6 +63,7 @@ Requires: puredata-gui
 Requires: puredata-utils
 # for the gui plugin
 Requires: python3
+Requires: dejavu-sans-mono-fonts
 
 %description
 Pure Data (also known as Pd) is a real-time graphical programming
@@ -83,6 +91,13 @@ environment for audio and graphics processing.
 
 This package provides the header-files for compiling externals
 (plugins) for puredata.
+
+%package static
+Summary: Pure Data static library
+Requires: puredata-devel
+
+%description static
+Pure Data static lib (libpd static).
 
 %package doc
 Summary: Pure Data documentation
@@ -134,22 +149,28 @@ and pdreceive, for sending and receiving FUDI over the net.
 %setup -n pd-%{pdver}
 
 # pd-patch-pd2puredata.patch
-%patch1 -p1
+%patch 1 -p1
 %ifarch x86_64 amd64
 # pd-patch-usrlib64pd_path.patch
-%patch2 -p1
+%patch 2 -p1
 %else
 # pd-patch-usrlibpd_path.patch
-%patch3 -p1
+%patch 3 -p1
 %endif
 # pd-patch-helpbrowser_puredata-doc.patch
-%patch4 -p1
+%patch 4 -p1
 # pd-patch-etc-gui-plugins.patch
-%patch5 -p1
+%patch 5 -p1
 # pd-patch-fixmanpage.patch
-%patch6 -p1
+%patch 6 -p1
 # pd-patch-privacy.patch
-%patch7 -p1
+%patch 7 -p1
+# export.patch
+%patch 8 -p1
+# libpd_example.patch
+%patch 9 -p1
+# libpd_visibility.patch
+%patch 10 -p1
 
 # fix hardwired lib dir in startup file (why the heck is this hardwired?)
 sed -i -e "s|\"/lib|\"/%{_lib}|g" src/s_main.c
@@ -160,10 +181,20 @@ sed -i -e "s|/usr/local/lib|%{_libdir}|g" src/s_path.c
 
 %set_build_flags
 
+DEKEN_CPU=`%{SOURCE18} uname -m`
+
 # now do the build, use "puredata" as the program name
 ./autogen.sh
-%configure --enable-alsa --enable-jack --program-transform-name 's/pd$$/puredata/'
-
+%configure --enable-alsa \
+	   --enable-jack \
+	   --without-local-portaudio \
+	   --without-local-portmidi \
+	   --program-transform-name 's/pd$$/puredata/' \
+	   --enable-libpd \
+	   --enable-libpd-utils \
+	   --with-floatsize=64 \
+	   --with-deken-cpu=$(DEKEN_CPU) \
+	   --with-external-extension=linux-$(DEKEN_CPU)-64.so
 %make_build
 
 %install
@@ -173,7 +204,6 @@ sed -i -e "s|/usr/local/lib|%{_libdir}|g" src/s_path.c
 # add additional stuff needed by the gui package
 # create plugins enabled directory
 mkdir -p %{buildroot}%{_sysconfdir}/pd/plugins-enabled
-desktop-file-validate %{buildroot}%{_datadir}/applications/org.puredata.pd-gui.desktop
 
 # pd-gui script and plugin
 install -m 755 %{SOURCE12} %{buildroot}%{_bindir}/pd-gui
@@ -191,6 +221,9 @@ install -m 644 doc/1.manual/1.introduction.txt %{buildroot}%{_datadir}/puredata-
 # mime stuff
 mkdir -p %{buildroot}%{_datadir}/mime/packages/
 install -m 644 %{SOURCE17} %{buildroot}%{_datadir}/mime/packages/puredata.xml
+# deken cpi
+mkdir -p %{buildroot}%{_datadir}/puredata/fedora/
+install -m 755 %{SOURCE18} %{buildroot}%{_datadir}/puredata/fedora/
 
 # hardlink pd-* binaries
 rm -f %{buildroot}%{_bindir}/pd
@@ -205,6 +238,16 @@ ln -s %{_libdir}/puredata/bin/pd-watchdog %{buildroot}%{_bindir}/pd-watchdog
 
 rm -f %{buildroot}%{_libdir}/puredata/doc/Makefile.am
 
+# Remove installed fonts
+rm -rf %{buildroot}%{_datadir}/puredata/font
+
+# Already installed
+rm -f %{buildroot}%{_datadir}/puredata/LICENSE.txt
+rm -f %{buildroot}%{_datadir}/puredata/README.txt
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/org.puredata.pd-gui.desktop
+
 %files
 %doc README.txt INSTALL.txt
 %license LICENSE.txt
@@ -218,6 +261,7 @@ rm -f %{buildroot}%{_libdir}/puredata/doc/Makefile.am
 %{_libdir}/puredata/doc/5.reference
 %{_libdir}/puredata/doc/7.stuff
 %{_mandir}/man1/pd.1*
+%{_libdir}/libpd.so.*
 
 %files doc
 %{_libdir}/puredata/doc/1.manual/
@@ -232,6 +276,10 @@ rm -f %{buildroot}%{_libdir}/puredata/doc/Makefile.am
 %{_includedir}/m_pd.h
 %{_includedir}/puredata/
 %{_libdir}/pkgconfig/pd.pc
+%{_libdir}/libpd.so
+
+%files static
+%{_libdir}/libpd.a
 
 %files extra
 %{_libdir}/puredata/extra/
@@ -251,6 +299,7 @@ rm -f %{buildroot}%{_libdir}/puredata/doc/Makefile.am
 %{_datadir}/puredata-gui
 %{_datadir}/mime/packages/puredata.xml
 %{_metainfodir}/org.puredata.pd-gui.metainfo.xml
+%{_datadir}/puredata/fedora/*
 
 %files utils
 %{_bindir}/pdreceive
@@ -259,6 +308,9 @@ rm -f %{buildroot}%{_libdir}/puredata/doc/Makefile.am
 %{_mandir}/man1/pdsend.1.gz
 
 %changelog
+* Wed Jan 03 2024 Yann Collette <ycollette.nospam@free.fr> - 0.54.1-3
+- update to 0.54.1-3
+
 * Mon Jan 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.53.1-3
 - update to 0.53.1-3 - fix package
 

@@ -3,20 +3,18 @@ Date: Tue, 29 Jan 2019 11:31:36 +0100
 Subject: search for GUI plugins in /etc/pd/plugins-enabled
 
 Origin: Debian
-Last-Update: 2016-02-17
 
 this gives us a standard path where the user can symlink-enable their
 system-wide GUI plugins.
-Last-Update: 2016-02-17
+Last-Update: 2023-11-02
+Forwarded: not-needed
 ---
  tcl/pd-gui.tcl | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/tcl/pd-gui.tcl b/tcl/pd-gui.tcl
-index 6408a0b..fa221d7 100755
---- a/tcl/pd-gui.tcl
-+++ b/tcl/pd-gui.tcl
-@@ -803,7 +803,7 @@ proc load_startup_plugins {} {
+--- puredata.orig/tcl/pd-gui.tcl
++++ puredata/tcl/pd-gui.tcl
+@@ -775,7 +775,7 @@
      }
  
      # load other installed plugins

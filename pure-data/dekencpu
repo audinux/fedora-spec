@@ -1,0 +1,82 @@
+#!/bin/sh
+
+# get the "Deken CPU" for the given arch.
+# This is mainly targetted at Debian's ${DEB_HOST_ARCH}
+# it works for many cases of ${DEB_HOST_ARCH_CPU} resp
+# ${DEB_HOST_GNU_CPU}, but not for all
+# (notably the 'x32' Debian architecture has both
+# DEB_HOST_(ARCH|GNU)_CPU set to some x86_64 value)
+
+archmap_() {
+cat <<EOF
+# x86 family
+i386          i386
+i486          i386
+i586          i386
+i686          i386
+x86           i386
+x32           i386 # x86_64 CPU, but 32bit pointers
+amd64         amd64
+x64           amd64
+x86_64        amd64
+hurd-i386     i386
+hurd-amd64    amd64
+kfreebsd-i386 i386
+kfreebsd-amd64 amd64
+
+# arm family
+arm           armv5
+armel         armv6
+armeb         armv6b
+armhf         armv7
+aarch64       arm64
+arm64         arm64
+arm64ilp32    arm64    # ???
+
+# PowerPC family
+powerpc       ppc
+powerpcel     ppcl
+powerpcspe    ppc      # ?
+powerpc64     ppc64
+ppwerpc64el   ppc64l
+powerpc64le   ppc64l
+ppc64el       ppc64l
+
+# MIPS family
+mips          mips
+mipsel        mipsel
+mips64        mips64
+mips64el      mips64el
+
+# others
+# (we just map the original arch to same name
+#  so no need to enumerate all of them)
+EOF
+}
+archmap() {
+	archmap_ | sed -e 's|#.*||' -e 's|[[:space:]]*$||' -e '/^$/d'
+}
+
+usage() {
+    cat >/dev/stderr <<EOF
+usage: $0 <cpu>
+
+  Prints the 'deken CPU' (as used in the filename for Pd-externals) for the given Debian (or GNU) architecture.
+
+Examples:
+   $0 \$(dpkg-architecture -qDEB_HOST_ARCH)
+   $0 \${DEB_HOST_ARCH}
+EOF
+}
+
+cpu="$1"
+
+if [ -z "${cpu}" ]; then
+    usage
+    exit 1
+fi
+
+dekcpu=$(archmap | grep -E "^${cpu}\b" | awk '{print $2}')
+
+echo "${dekcpu:-$cpu}"
+

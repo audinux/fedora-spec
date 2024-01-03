@@ -1,0 +1,20 @@
+Description: reduce visibility of symbols inlibpd
+ by compiling the binary with visbility=hidden
+Author: IOhannes m zmölnig
+Bug: https://github.com/pure-data/pure-data/issues/569
+Last-Update: 2021-12-21
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- puredata.orig/src/Makefile.am
++++ puredata/src/Makefile.am
+@@ -28,6 +28,10 @@
+ 
+ libpdbin_PROGRAMS =
+ 
++# reduce visibility of libpd symbols
++libpd_la_CPPFLAGS += -DEXTERN='__attribute__ ((visibility("default"))) extern'
++libpd_la_CFLAGS += -fvisibility=hidden
++
+ # there are pd_* and pd_*_core variables as we need different flags on Windows
+ # for the DLL and the EXE, other OSes simply set pd_* = $(pd_*_core) later
+ # also, the "_core" suffix is used as this keeps automake from thinking these

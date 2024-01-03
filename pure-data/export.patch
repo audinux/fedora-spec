@@ -1,0 +1,155 @@
+Description: Export required symbols and retract some other symbols
+Author: IOhannes m zmölnig
+Origin: Debian
+Bug: https://github.com/pure-data/pure-data/issues/2122
+Last-Update: 2023-11-02
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- puredata.orig/src/m_pd.h
++++ puredata/src/m_pd.h
+@@ -12,7 +12,6 @@
+ #define PD_MINOR_VERSION 54
+ #define PD_BUGFIX_VERSION 1
+ #define PD_TEST_VERSION ""
+-extern int pd_compatibilitylevel;   /* e.g., 43 for pd 0.43 compatibility */
+ 
+ /* old name for "MSW" flag -- we have to take it for the sake of many old
+ "nmakefiles" for externs, which will define NT and not MSW */
+@@ -903,6 +902,7 @@
+ 
+     /* get version number at run time */
+ EXTERN void sys_getversion(int *major, int *minor, int *bugfix);
++EXTERN int pd_compatibilitylevel;   /* e.g., 43 for pd 0.43 compatibility */
+ 
+     /* get floatsize at run time */
+ EXTERN unsigned int sys_getfloatsize(void);
+--- puredata.orig/src/s_stuff.h
++++ puredata/src/s_stuff.h
+@@ -38,7 +38,7 @@
+ /* s_main.c */
+ extern int sys_debuglevel;
+ extern int sys_verbose;
+-extern int sys_noloadbang;
++EXTERN int sys_noloadbang;
+ EXTERN int sys_havegui(void);
+ extern const char *sys_guicmd;
+ 
+@@ -249,7 +249,7 @@
+                     /* s_midi.c */
+ #define MAXMIDIINDEV 16         /* max. number of input ports */
+ #define MAXMIDIOUTDEV 16        /* max. number of output ports */
+-extern int sys_midiapi;
++EXTERN int sys_midiapi;
+ extern int sys_nmidiin;
+ extern int sys_nmidiout;
+ extern int sys_midiindevlist[];
+@@ -346,7 +346,7 @@
+ #endif
+ 
+ void sys_set_priority(int higher);
+-extern int sys_hipriority;      /* real-time flag, true if priority boosted */
++EXTERN int sys_hipriority;      /* real-time flag, true if priority boosted */
+ 
+ /* s_print.c */
+ 
+--- puredata.orig/src/m_imp.h
++++ puredata/src/m_imp.h
+@@ -102,6 +102,7 @@
+ EXTERN void glob_initfromgui(void *dummy, t_symbol *s, int argc, t_atom *argv);
+ EXTERN void glob_quit(void *dummy); /* glob_exit(0); */
+ EXTERN void glob_exit(void *dummy, t_float status);
++EXTERN void glob_watchdog(t_pd *dummy);
+ EXTERN void open_via_helppath(const char *name, const char *dir);
+ 
+ #define __m_imp_h_
+--- puredata.orig/src/d_fft_fftsg.c
++++ puredata/src/d_fft_fftsg.c
+@@ -109,12 +109,12 @@
+ }
+ 
+ /* -------- public routines -------- */
+-EXTERN void mayer_fht(t_sample *fz, int n)
++void mayer_fht(t_sample *fz, int n)
+ {
+     post("FHT: not yet implemented");
+ }
+ 
+-EXTERN void mayer_dofft(t_sample *fz1, t_sample *fz2, int n, int sgn)
++void mayer_dofft(t_sample *fz1, t_sample *fz2, int n, int sgn)
+ {
+     FFTFLT *buf, *fp3;
+     int i;
+@@ -137,17 +137,17 @@
+     }
+ }
+ 
+-EXTERN void mayer_fft(int n, t_sample *fz1, t_sample *fz2)
++void mayer_fft(int n, t_sample *fz1, t_sample *fz2)
+ {
+     mayer_dofft(fz1, fz2, n, -1);
+ }
+ 
+-EXTERN void mayer_ifft(int n, t_sample *fz1, t_sample *fz2)
++void mayer_ifft(int n, t_sample *fz1, t_sample *fz2)
+ {
+     mayer_dofft(fz1, fz2, n, 1);
+ }
+ 
+-EXTERN void mayer_realfft(int n, t_sample *fz)
++void mayer_realfft(int n, t_sample *fz)
+ {
+     FFTFLT *buf, *fp3;
+     int i, nover2 = n/2;
+@@ -165,7 +165,7 @@
+             *fp1 = fp3[0], *fp2 = fp3[1];
+ }
+ 
+-EXTERN void mayer_realifft(int n, t_sample *fz)
++void mayer_realifft(int n, t_sample *fz)
+ {
+     FFTFLT *buf, *fp3;
+     int i, nover2 = n/2;
+--- puredata.orig/src/d_fft_fftw.c
++++ puredata/src/d_fft_fftw.c
+@@ -167,7 +167,7 @@
+ }
+ 
+ 
+-EXTERN void mayer_fht(t_sample *fz, int n)
++void mayer_fht(t_sample *fz, int n)
+ {
+     post("FHT: not yet implemented");
+ }
+@@ -189,12 +189,12 @@
+         fz1[i] = fz[i*2], fz2[i] = fz[i*2+1];
+ }
+ 
+-EXTERN void mayer_fft(int n, t_sample *fz1, t_sample *fz2)
++void mayer_fft(int n, t_sample *fz1, t_sample *fz2)
+ {
+     mayer_do_cfft(n, fz1, fz2, 1);
+ }
+ 
+-EXTERN void mayer_ifft(int n, t_sample *fz1, t_sample *fz2)
++void mayer_ifft(int n, t_sample *fz1, t_sample *fz2)
+ {
+     mayer_do_cfft(n, fz1, fz2, 0);
+ }
+@@ -205,7 +205,7 @@
+     but it's probably the mayer_fft that should be corrected...
+ */
+ 
+-EXTERN void mayer_realfft(int n, t_sample *fz)
++void mayer_realfft(int n, t_sample *fz)
+ {
+     int i;
+     rfftw_info *p = rfftw_getplan(n, 1);
+@@ -221,7 +221,7 @@
+         fz[i] = -p->out[i];
+ }
+ 
+-EXTERN void mayer_realifft(int n, t_sample *fz)
++void mayer_realifft(int n, t_sample *fz)
+ {
+     int i;
+     rfftw_info *p = rfftw_getplan(n, 0);

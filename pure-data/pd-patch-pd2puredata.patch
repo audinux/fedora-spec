@@ -9,30 +9,29 @@ to be installed simultaneously, puredata will install itself as
 
 This patch ensures that the "puredata" namespace is used throughout
 (both installed binary and library-paths)
+
+Last-Update: 2023-11-02
+Forwarded: not-needed
 ---
  configure.ac | 2 +-
  src/s_main.c | 2 +-
  2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/configure.ac b/configure.ac
-index 93232a8..15ff0f8 100644
---- a/configure.ac
-+++ b/configure.ac
+--- puredata.orig/configure.ac
++++ puredata/configure.ac
 @@ -2,7 +2,7 @@
  ##### Prelude #####
  
  AC_PREREQ(2.59)
--AC_INIT([pd], [0.53.1])
-+AC_INIT([puredata], [0.53.1])
+-AC_INIT([pd], [0.54.1])
++AC_INIT([puredata], [0.54.1])
  AC_CONFIG_SRCDIR(src/m_pd.c)
  AC_CONFIG_AUX_DIR([m4/config])
  AC_CONFIG_MACRO_DIR([m4/generated])
-diff --git a/src/s_main.c b/src/s_main.c
-index c30fef5..b9c527a 100644
---- a/src/s_main.c
-+++ b/src/s_main.c
-@@ -627,7 +627,7 @@ void sys_findprogdir(const char *progname)
- #else
+--- puredata.orig/src/s_main.c
++++ puredata/src/s_main.c
+@@ -718,7 +718,7 @@
+ 
      strncpy(sbuf, sbuf2, MAXPDSTRING-30);
      sbuf[MAXPDSTRING-30] = 0;
 -    strcat(sbuf, "/lib/pd");
