@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 ec22eab2a5294f331dea02cfff4c9be55af7da6f
-%global gittag0 2.5.52
+%global gittag0 2.5.54
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-alefsbits
-Version: 2.5.52
+Version: 2.5.54
 Release: 2%{?dist}
 Summary: alefsbits plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r alefsbits_plugin/dist/alefsbits/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.52-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.54-1
 - initial specfile

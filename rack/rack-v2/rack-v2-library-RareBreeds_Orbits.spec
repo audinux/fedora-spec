@@ -7,17 +7,17 @@
 
 # Global variables for github repository
 %global commit0 a3bca69358ed844c3ef6831d6a39c1a4f3284ec9
-%global gittag0 2.0.3
+%global gittag0 2.0.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-RareBreeds_Orbits
-Version: 2.0.3
+Version: 2.0.4
 Release: 2%{?dist}
 Summary: RareBreeds_Orbits plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL:     https://github.com/RareBreeds/Orbits
 
 Vendor:       Audinux
@@ -152,5 +152,5 @@ cp -r RareBreeds_Orbits_plugin/dist/RareBreeds_Orbits/* %{buildroot}%{_libexecdi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-1
 - initial specfile
