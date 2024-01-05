@@ -306,12 +306,12 @@ remove -march=native from Makefiles if it's present
 
 ```
 Analyzer, Compressor, Effect, Emulator, Delay, Drum, Jack, Alsa
-Editor, Legacy, Live, Effect, Gate, Graphic, Guitar, Amp Simul
+Editor, Legacy, Live, Gate, Graphic, Guitar, Amp Simul
 Delay, Overdrive, Cabinet, Equalizer, Convolution, Octaver
 MIDI, Tablature, Phaser, Tape, Tracker, Reverb, Presets
 Sfz, Sf2, Sf3, Monitoring, Video, Organ, PM, Sequencer
 Keyboard, Library, OSC, Mixer, Modular, Rack, Sampler, Session
-Synthesizer, Loop, Tool
+Synthesizer, Loop, Tool, Devel, Controller, AI, Equalizer
 ```
 
 ### Type:
