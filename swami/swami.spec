@@ -62,6 +62,9 @@ desktop-file-install                                    \
     --dir=%{buildroot}%{_datadir}/applications          \
     %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+
 %files
 %doc AUTHORS ChangeLog NEWS README.md HACKERS
 %license COPYING
