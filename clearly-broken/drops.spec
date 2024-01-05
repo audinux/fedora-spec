@@ -12,11 +12,11 @@ License: GPL3
 Vendor:       Audinux
 Distribution: Audinux
 
-# Usage: ./drops-source.sh <TAG>
-#        ./drops-source.sh v1.0-beta2
+# Usage: ./clearly-broken-source.sh <PROJECT> <TAG>
+#        ./clearly-broken-source.sh drops v1.0-beta2
 
 Source0: drops.tar.gz
-Source1: drops-source.sh
+Source1: clearly-broken-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: jack-audio-connection-kit-devel

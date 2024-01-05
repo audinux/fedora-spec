@@ -11,11 +11,11 @@ Summary: A punchy compressor plugin with character
 License: GPL-2.0-only
 URL: https://github.com/clearly-broken-software/Punch
 
-# Usage: ./punch-source.sh <TAG>
-# ./punch-source.sh 3969dc2fda5afe856a2a515de5c14b345f6891d1
+# Usage: ./clearly-broken-source.sh <PROJECT> <TAG>
+#        ./clearly-broken-source.sh Punch 3969dc2fda5afe856a2a515de5c14b345f6891d1
 
 Source0: Punch.tar.gz
-Source1: punch-source.sh
+Source1: clearly-broken-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make

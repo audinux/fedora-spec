@@ -11,11 +11,11 @@ Summary: Easy to use soundboard
 License: GPL-2.0-only
 URL: https://github.com/clearly-broken-software/SoundBoard
 
-# Usage: ./soundboard-source.sh <TAG>
-# ./soundboard-source.sh c2447333286dad81bdcd73a25e481c3bfdab58e3
+# Usage: ./clearly-broken-source.sh <PROJECT> <TAG>
+#        ./clearly-broken-source.sh SoundBoard c2447333286dad81bdcd73a25e481c3bfdab58e3
 
 Source0: SoundBoard.tar.gz
-Source1: soundboard-source.sh
+Source1: clearly-broken-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make

@@ -11,11 +11,11 @@ Summary: A drum synth
 License: GPL-2.0-only
 URL: https://github.com/clearly-broken-software/boomer
 
-# Usage: ./boomer-source.sh <TAG>
-# ./boomer-source.sh 1916d46a2823d0f091edf545666058456c93b004
+# Usage: ./clearly-broken-source.sh <PROJECT> <TAG>
+#        ./clearly-broken-source.sh boomer 1916d46a2823d0f091edf545666058456c93b004
 
 Source0: boomer.tar.gz
-Source1: boomer-source.sh
+Source1: clearly-broken-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make

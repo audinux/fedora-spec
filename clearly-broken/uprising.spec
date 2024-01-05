@@ -11,11 +11,11 @@ Summary: A transition Designer Synth
 License: GPL-2.0-only
 URL: https://github.com/clearly-broken-software/Uprising
 
-# Usage: ./uprising-source.sh <TAG>
-# ./uprising-source.sh 89f5b49d90cd47611da7e7dc2009061768716b4c
+# Usage: ./clearly-broken-source.sh <PROJECT> <TAG>
+#        ./clearly-broken-source.sh Uprising 89f5b49d90cd47611da7e7dc2009061768716b4c
 
 Source0: Uprising.tar.gz
-Source1: uprising-source.sh
+Source1: clearly-broken-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
