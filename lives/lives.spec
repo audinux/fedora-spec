@@ -36,46 +36,47 @@ Source0: LiVES.tar.gz
 Source1: LiVES.appdata.xml
 Source2: lives-sources.sh
 
-BuildRequires: pkgconfig(jack)
-BuildRequires: pkgconfig(libpulse)
-BuildRequires: pkgconfig(libunicap)
-BuildRequires: pkgconfig(libdv)
-BuildRequires: pkgconfig(libavc1394)
-BuildRequires: pkgconfig(libraw1394)
-BuildRequires: pkgconfig(libv4lconvert)
-BuildRequires: pkgconfig(libfreenect)
-BuildRequires: pkgconfig(frei0r)
-BuildRequires: pkgconfig(liboil-0.3)
-BuildRequires: pkgconfig(theora)
-BuildRequires: pkgconfig(vorbis)
-BuildRequires: pkgconfig(schroedinger-1.0)
-BuildRequires: pkgconfig(libpng)
-BuildRequires: pkgconfig(alsa)
-BuildRequires: pkgconfig(opencv)
-BuildRequires: pkgconfig(fftw3)
+BuildRequires: gcc-c++
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: libtool
+BuildRequires: make
+BuildRequires: doxygen
+BuildRequires: chrpath
+BuildRequires: bison
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pulseaudio-libs-devel
+BuildRequires: libunicap-devel
+BuildRequires: libdv-devel
+BuildRequires: libavc1394-devel
+BuildRequires: libraw1394-devel
+BuildRequires: libv4l-devel
+BuildRequires: libfreenect-devel
+BuildRequires: frei0r-devel
+BuildRequires: liboil-devel
+BuildRequires: libtheora-devel
+BuildRequires: libvorbis-devel
+BuildRequires: schroedinger-devel
+BuildRequires: libpng-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: opencv-devel
+BuildRequires: fftw-devel
 
 # 'tirpc' is required by 'musl-libc'
-BuildRequires: pkgconfig(libtirpc)
-BuildRequires: pkgconfig(libmatroska)
-BuildRequires: pkgconfig(mjpegtools)
+BuildRequires: libtirpc-devel
+BuildRequires: libmatroska-devel
+BuildRequires: mjpegtools-devel
 BuildRequires: ladspa-devel
 BuildRequires: x264-libs
 BuildRequires: gettext-devel
-BuildRequires: doxygen
 BuildRequires: binutils-devel
-BuildRequires: chrpath
-BuildRequires: desktop-file-utils
-BuildRequires: bison
 BuildRequires: gtk3-devel
-BuildRequires: ffmpeg-devel
+BuildRequires: compat-ffmpeg4-devel
 BuildRequires: bzip2-devel
 BuildRequires: libappstream-glib
-BuildRequires: gcc-c++, pkgconf-pkg-config
 BuildRequires: perl-generators
 BuildRequires: python3-devel
-
-# Packages for re-configuration
-BuildRequires: autoconf, automake, libtool, make
+BuildRequires: desktop-file-utils
 
 Requires: mplayer%{?_isa}
 Requires: mpv%{?_isa}
@@ -159,8 +160,10 @@ find %{buildroot} -name 'multi_encoder' -exec rm -f {} ';'
 find %{buildroot}%{_bindir} -name '*_encoder' -exec rm -f {} ';'
 
 # Fix unversioned Python interpreter
-find %{buildroot} -name '*multi_encoder3' | xargs pathfix.py -pn -i "%{__python3}"
-find %{buildroot}%{_bindir} -name '*_encoder3' | xargs pathfix.py -pn -i "%{__python3}"
+for Files in `find %{buildroot} -name '*_encoder3'`
+do
+    sed -i -e "s/#!\/usr\/bin\/env python$/#!\/usr\/bin\/env python3/g" $Files
+done
 
 rm -f %{buildroot}%{_bindir}/lives
 cat > %{buildroot}%{_bindir}/lives <<EOF
