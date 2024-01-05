@@ -184,7 +184,7 @@ rack-v2-SynthKit    - ../arch.mk:10: *** Could not determine CPU architecture of
 ```
 protrekkr2  -> update to 2.6.3
 midi2voice  -> code doesn't install correctly
-imogen      -> needs juce cmake file
+imogen      -> needs juce cmake file # DEAD
 rack-v2-RPJ -> needs a specific aarch64 patch for intrin.h
 june-21     -> package cabbage and use it to build a shipped binary
 bintracker  -> problem during chicken dependencies installation
@@ -327,153 +327,6 @@ Audio, DAW, Effect, Synthesizer, MIDI, Programming, Sampler, Sequencer
 Graphic, Tool, Session Mngmt, Plugin
 ```
 
-### Specs to update:
-
-```
-improviz/context-free.spec
-improviz/improviz.spec
-IR/IR.spec
-jack-mixer/jack-mixer.spec
-jalv-select/jalv-select.spec
-jamin/jamin.spec
-juce/juce5.spec
-juce/juce60.spec
-kernel/kernel-mao-5.10.spec
-kernel/kernel-mao.spec
-kernel/kernel-mao-stable-5.10.spec
-kxstudio/dexed-presets.spec
-lebiniou/lebiniou-data.spec
-lebiniou/ulfius.spec
-lenmus/lenmus.spec
-lenmus/lomse.spec
-libsmf/libsmf.spec
-linuxmao/fogpad-port.spec
-linuxshowplayer/linuxshowplayer.spec
-livecd-tools/livecd-tools.spec
-lives/lives.spec
-loudness-scanner/loudness-scanner.spec
-lv2-fil-plugins/lv2-fil-plugins.spec
-lv2lint/lv2lint.spec
-lv2/lv2-avw-plugins.spec
-lv2/lv2-fomp-plugins.spec
-lv2/lv2-kn0ck0ut.spec
-lv2/lv2-triceratops.spec
-lvtk/lvtk.spec
-mammut/mammut.spec
-mapmap/mapmap.spec
-meson/meson.spec
-midimonster/midimonster.spec
-midizap/midizap.spec
-milkdrop/milkdrop-presets.spec
-moddevices/caps-lv2.spec
-moddevices/mda-lv2.spec
-moddevices/mod-distortion.spec
-moddevices/mod-gxpitchshifter.spec
-moddevices/mod-host.spec
-moddevices/mod-pitchshifter.spec
-moddevices/mod-ui.spec
-moddevices/swh-lv2.spec
-moddevices/tap-lv2.spec
-mrfreeze/gxmrfreeze.spec
-mrfreeze/mrfreeze.spec
-musikernel/musikernel.spec
-mx44/mx44.spec
-nanoinvaders/nanoinvaders.spec
-ninjam/abninjam.spec
-ninjam/ninjam-client.spec
-ninjam/ninjam-server.spec
-ninjas2/ninja2.spec
-noise-suppression/noise-suppression.spec
-non-daw/jm2cv.spec
-non-daw/non-ntk.spec
-openboard/openboard.spec
-openframeworks/libtess2.spec
-openframeworks/openframeworks.spec
-openkontroller/eteroj.spec
-openkontroller/mephisto.spec
-openkontroller/midi_matrix.spec
-openkontroller/moony.spec
-openkontroller/nanomsg.spec
-openkontroller/orbit.spec
-openkontroller/patchmatrix.spec
-openkontroller/sherlock.spec
-openkontroller/synthpod.spec
-openkontroller/tracker.spec
-osc2midi/osc2midi.spec
-ossia/ossia-score.spec
-oxefmsynth/oxefmsynth.spec
-paulstretch/paulstretch.spec
-pianobooster/pianobooster.spec
-picoloop/picoloop.spec
-polylv2/polylv2.spec
-portsmf/portsmf.spec
-postfish/postfish.spec
-premake/premake3.spec
-premake/premake4.spec
-premake/premake5.spec
-processing/processing.spec
-projectm/projectM.spec
-pure-data/puredata.spec
-purr-data/purr-data.spec
-qscintilla/qscintilla.spec
-r128gain/r128gain.spec
-rack/libefsw.spec
-rack/quickjs.spec
-radium/radium.spec
-resources/impulse_response.spec
-rivendell/libcoverart.spec
-rivendell/rivendell.spec
-samplehive/samplehive.spec
-seq24/seq24.spec
-seq42/seq42.spec
-sequencer64/sequencer64.spec
-sfark/libsfark.spec
-sfark/sfark.spec
-sfizz/prelude.spec
-sfizz/sfizz.spec
-sfizz/toccata.spec
-showq/showq.spec
-shuriken/shuriken.spec
-smartguitar/numcpp.spec
-sonic-pi/osmid.spec
-spectacle/spectacle.spec
-ssr/ssr.spec
-stargate/pymarshal.spec
-stargate/wavefile.spec
-stochas/stochas.spec
-stone-phaser/stone-phaser.spec
-stretchplayer/stretchplayer.spec
-string-machine/string-machine.spec
-structuresynth/structuresynth.spec
-supercollider/supercollider-sc3-plugins.spec
-supercollider/supercollider.spec
-supercollider/yaml-cpp03.spec
-surge/midi-monitor.spec
-surge/monique-monosynth.spec
-surge/shortcircuit.spec
-surge/surge.spec
-surge/surge-xt.spec
-timemachine/timemachine.spec
-tunefish/tunefish.spec
-tutka/tutka.spec
-ultranova4linux/ultranova4linux.spec
-veejay/veejay-core.spec
-veejay/veejay-gui.spec
-veejay/veejay-server.spec
-vitalium/vitalium.spec
-vl1/vl1.spec
-vopa/vopa.spec
-vsxu/vsxu.spec
-zita/planetccrma-rt-permissions.spec
-zrythm/libaudec.spec
-zrythm/libbacktrace.spec
-zrythm/libcyaml.spec
-zrythm/reproc.spec
-zrythm/zlfo.spec
-zrythm/zplugins.spec
-zrythm/ztoolkit.spec
-```
-
 ## Add desktop files
 
 ```
@@ -487,47 +340,18 @@ cadence
 carla
 ```
 
-## Add *.sh files
-
-## To be fixed:
-
-```
-Bambootracker         -> pulseaudio pb
-azr3                  -> gtkmm / glibmm detection
-vsxu                  -> nullptr comparison
-rack-v1-VCV-Prototype -> vult file not available
-purr-data             -> a config.h is missing
-lives-mao             -> calloc problem -> check upstream
-```
+And every plugin spec that provides a standalone executable
 
 ## To be added back to repo
 
 ```
-pulseaudio-module-jack
-fluidsynth-dssi
-hydrogen-drumkit-AVL-BlackPearl-4A
+hydrogen-drumkit-AVL-BlackPearl-4A # Bug when installing this one ...
 swami
 ladspa-wasp-plugins
 pyliblo missing lv2-fil-plugins
-solfege
 ```
-
-## regular update
-
-```
-mda-lv2
-ninjam -> there is a github repo now ...
-premake -> moved on github: https://github.com/premake
-psi-plugins -> another active github repository: https://github.com/psi-im/plugins
-resources -> try to find other IR (https://github.com/jpcima/HybridReverb2-impulse-response-database)
-ryukau -> update to last master
-```
-
-Check chpath usage and use patchelf if required (it's required in bespokesynth)
 
 ## Kernel
-
-Add support for aarch64 built.
 
 Fix these warning:
 ```
@@ -551,10 +375,13 @@ Duplicate build-ids /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50
 ```
 zynjack
 mhwaveedit
-check leiningen
+leiningen
 jackctlmmc
 jack-rack
 hydrogen-drumkits
 gwave
 gtick
+swami
+vmpk
+drumstick / drumstick0
 ```
