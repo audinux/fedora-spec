@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources:
-# ./brummer10-source.sh XUiDesigner v1.0
+# ./brummer10-source.sh XUiDesigner 7ad91a5102ff8dee2f82dde452b103014b33dbc9
 
 Source0: XUiDesigner.tar.gz
 Source1: brummer10-source.sh
