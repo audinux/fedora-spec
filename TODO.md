@@ -139,6 +139,7 @@
 | Automated-GuitarAmpModelling | https://github.com/AidaDSP/Automated-GuitarAmpModelling |
 | stargate-sample-pack    | https://github.com/stargatedaw/stargate-sample-pack (250 Mo) |
 | ABS things              | https://sourceforge.net/projects/abcplus/files/ |
+| LeGrandMechantLoop      | https://github.com/benkuper/LeGrandMechantLoop |
 
 Check the following URL: https://github.com/forart/HyMPS
 
@@ -155,17 +156,6 @@ rack-v1-BaconMusic         -> build failure
 rack-v1-ParableInstruments -> fails since F36
 piano                      -> build failure (normal)
 
-## Fedora 38 to be fixed
-SIMD:
-Add BuildRequires: xsimd-devel
-```
-rack-v1-BaconMusic         - aarch64 - fatal error: pmmintrin.h: No such file or directory
-rack-v1-JE                 - aarch64 - fatal error: pmmintrin.h: No such file or directory
-rack-v1-ParableInstruments - aarch64 - fatal error: pmmintrin.h: No such file or directory
-rack-v1-squinkylabs-plug1  - aarch64 - fatal error: pmmintrin.h: No such file or directory
-rack-v1-SurgeRack          - aarch64 - fatal error: xmmintrin.h: No such file or directory
-```
-
 Missing packages:
 ```
 rack-v2-RPJ  - fatal error: emmintrin.h: No such file or directory
@@ -173,10 +163,10 @@ rack-v2-RPJ  - fatal error: emmintrin.h: No such file or directory
 
 Various:
 ```
-improviz - DEPRECATED
-rack-v2-EH_modules  - ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
-rack-v2-FrankBuss   - ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
-rack-v2-SynthKit    - ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
+improviz            -> DEPRECATED
+rack-v2-EH_modules  -> ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
+rack-v2-FrankBuss   -> ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
+rack-v2-SynthKit    -> ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
 ```
 
 ## WIP
