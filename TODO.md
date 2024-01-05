@@ -138,6 +138,7 @@
 | sympathetic-string-resonator | https://github.com/SpotlightKid/sympathetic-string-resonator |
 | Automated-GuitarAmpModelling | https://github.com/AidaDSP/Automated-GuitarAmpModelling |
 | stargate-sample-pack    | https://github.com/stargatedaw/stargate-sample-pack (250 Mo) |
+| ABS things              | https://sourceforge.net/projects/abcplus/files/ |
 
 Check the following URL: https://github.com/forart/HyMPS
 
