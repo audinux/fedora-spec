@@ -1,13 +1,13 @@
-# Tag: Analyzer, Amp Simul
-# Type: Standalone
+# Tag: Analyzer, Amp Simul, Equilizer
+# Type: LV@, Plugin
 # Caterory: Effect, Tool
 
-Name:    lv2-MelMatchEQ
+Name: lv2-MelMatchEQ
 Version: 0.1
 Release: 1%{?dist}
 Summary: MelMatchEQ is a profiling EQ using a 26 step Mel Frequency Band
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/MelMatchEQ.lv2
+URL: https://github.com/brummer10/MelMatchEQ.lv2
 
 Vendor:       Audinux
 Distribution: Audinux

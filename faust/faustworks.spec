@@ -1,18 +1,18 @@
-# Global variables for github repository
-%global commit0 af03cba9c166715334c7e3c5263b6505ef16df26
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 # Tag: Jack, Alsa
 # Type: Standalone, IDE
 # Category: Audio, Programming
 # GUIToolkit: Qt5
 
-Name:    faustworks
+# Global variables for github repository
+%global commit0 af03cba9c166715334c7e3c5263b6505ef16df26
+%global gittag0 master
+%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
+
+Name: faustworks
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: A Faust IDE
-URL:     https://github.com/grame-cncm/faustworks
+URL: https://github.com/grame-cncm/faustworks
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -20,7 +20,7 @@ Distribution: Audinux
 
 Source0: https://github.com/grame-cncm/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
-BuildRequires: gcc gcc-c++ sed
+BuildRequires: gcc gcc-c++
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-qtsvg-devel

@@ -2,27 +2,21 @@
 # Type: Plugin, LV2
 # Category: Audio
 
-Name:    xmixer
+Name: xmixer
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: A simple 4 in 1 Mixer
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/XMixer.lv2
+URL: https://github.com/brummer10/XMixer.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
-# git clone https://github.com/brummer10/XMixer.lv2
-# cd XMixer.lv2
-# #git checkout main
-# git submodule init
-# git submodule update
-# find . -name .git -exec rm -rf {} \;
-# cd ..
-# tar cvfz XMixer.lv2.tar.gz XMixer.lv2/*
-# rm -rf XMixer.lv2
+# To get the sources:
+# ./brummer10-source.sh XMixer.lv2 main
 
 Source0: XMixer.lv2.tar.gz
+Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make

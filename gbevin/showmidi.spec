@@ -1,9 +1,13 @@
-Name:    showdmidi
+# Tag: Alsa, MIDI
+# Type: Standalone, VST3, VST, LV2, Plugin
+# Category: MIDI, Tool
+
+Name: showdmidi
 Version: 0.2.2
 Release: 1%{?dist}
 Summary: Multi-platform GUI application to effortlessly visualize MIDI activity
 License: GPL-3.0-only
-URL:     https://github.com/gbevin/ShowMIDI
+URL: https://github.com/gbevin/ShowMIDI
 
 Vendor:       Audinux
 Distribution: Audinux

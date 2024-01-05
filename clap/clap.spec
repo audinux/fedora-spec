@@ -1,3 +1,7 @@
+# Tag: Library
+# Type: Devel
+# Category: Programming
+
 Summary: CLAP audio plugin API
 Name:    clap
 Version: 1.1.10

@@ -2,12 +2,12 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
-Name:    furnace
+Name: furnace
 Version: 0.6
 Release: 4%{?dist}
 Summary: A multi-system chiptune tracker compatible with DefleMask modules
 License: GPL-2.0-only
-URL:     https://github.com/tildearrow/furnace
+URL: https://github.com/tildearrow/furnace
 
 Vendor:       Audinux
 Distribution: Audinux

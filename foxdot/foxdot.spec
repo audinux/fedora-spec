@@ -7,10 +7,10 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    FoxDot
+Name: FoxDot
 Version: 0.8.11
 Release: 1%{?dist}
-Epoch:   1
+Epoch: 1
 Summary: Python3 programming environment providing a fast and user-friendly abstraction to SuperCollider.
 License: Creative Commons Attribution-ShareAlike 4.0 International Public License
 URL: https://github.com/Qirky/FoxDot

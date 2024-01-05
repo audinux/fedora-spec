@@ -1,9 +1,13 @@
-Name:    wavetable
+# Tag: Jack, Synthesizer
+# Type: Standalone, VST3, LV2
+# Category: Synthesizer
+
+Name: wavetable
 Version: 1.0.18
 Release: 1%{?dist}
 Summary: Wavetable synth
 License: BSD-3-Clause
-URL:     https://github.com/FigBug/Wavetable
+URL: https://github.com/FigBug/Wavetable
 
 Vendor:       Audinux
 Distribution: Audinux

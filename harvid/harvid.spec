@@ -2,19 +2,20 @@
 # Type: Standalone
 # Category: Graphic, Tool
 
-Name:    harvid
+Name: harvid
 Version: 0.9.1
 Release: 3%{?dist}
 Summary: harvid -- HTTP Ardour Video Daemon
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/harvid
+URL: https://github.com/x42/harvid
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/x42/harvid/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: libXrender-devel
 BuildRequires: libX11-devel
 %if 0%{?fedora} >= 37

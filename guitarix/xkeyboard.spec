@@ -2,27 +2,21 @@
 # Type: Plugin, LV2
 # Category: Audio, MIDI
 
-Name:    xkeyboard
+Name: xkeyboard
 Version: 0.0.1
 Release: 1%{?dist}
 Summary:  simple LV2 MIDI keyboard
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/XKeyboard.lv2
+URL: https://github.com/brummer10/XKeyboard.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
-# git clone https://github.com/brummer10/XKeyboard.lv2
-# cd XKeyboard.lv2
-# #git checkout main
-# git submodule init
-# git submodule update
-# find . -name .git -exec rm -rf {} \;
-# cd ..
-# tar cvfz XKeyboard.lv2.tar.gz XKeyboard.lv2/*
-# rm -rf XKeyboard.lv2
+# To get the sources:
+# ./brummer10-source.sh XKeyboard.lv2 main
 
 Source0: XKeyboard.lv2.tar.gz
+Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make

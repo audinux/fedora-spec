@@ -1,4 +1,8 @@
-Name:    neuralrecord
+# Tag: Tool, AI
+# Type: Plugin, LV2, VST3, Stqndqlone
+# Category: Audio, Tool
+
+Name: neuralrecord
 Version: 0.1.9
 Release: 1%{?dist}
 Summary: A Neural Record plug to make the process of cloning external soft/hardware a bit more comfortable
@@ -10,6 +14,7 @@ Distribution: Audinux
 
 # ./brummer10-source.sh <project> <tag>
 # ./brummer10-source.sh neuralcapture v0.1.9
+
 Source0: neuralcapture.tar.gz
 Source1: brummer10-source.sh
 

@@ -1,8 +1,12 @@
-Name:    guitarsynth
+# Tag: Guitar, MIDI, Synthesizer
+# Type: Plugin, LV2
+# Category: Audio, Synthesizer, MIDI
+
+Name: guitarsynth
 Version: 0.1
 Release: 1%{?dist}
 Summary: GuitarSynth is a set of wavetable synths controlled by a monophonic pitchdetector
-URL:     https://github.com/geraldmwangi/GuitarSynth-DPF
+URL: https://github.com/geraldmwangi/GuitarSynth-DPF
 License: LGPLv2+
 
 Vendor:       Audinux

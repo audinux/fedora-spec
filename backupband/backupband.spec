@@ -1,3 +1,7 @@
+# Tag: Jack, Editor, Sequencer
+# Type: Standalone
+# Category: Audio, Synthesizer
+
 %global commit0 21ef45e42c95fdd0484148ca7e9724ce52ca5c9b
 
 Name:    backupband

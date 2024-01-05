@@ -1,9 +1,13 @@
-Name:    lv2-freeze
+# Tag: Effect, Sampler
+# Type: LV2
+# Category: Plugin, Audio 
+
+Name: lv2-freeze
 Version: 0.2.0
 Release: 1%{?dist}
 Summary: LV2 plugin that freezes track audio to reduce DSP load
 License: GPL-3.0
-URL:     https://github.com/taylordotfish/freeze
+URL: https://github.com/taylordotfish/freeze
 
 Vendor:       Audinux
 Distribution: Audinux

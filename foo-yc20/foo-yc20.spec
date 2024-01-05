@@ -4,12 +4,12 @@
 # GUIToolkit: Gtk2
 # LastSourceUpdate: 2018
 
-Name:    foo-yc20
+Name: foo-yc20
 Version: 1.3.0
 Release: 2%{?dist}
 Summary: A Faust emulation on a Yamaha YC20 Combo organ
 License: MIT
-URL:     https://github.com/sampov2/foo-yc20
+URL: https://github.com/sampov2/foo-yc20
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -17,6 +17,7 @@ Distribution: Audinux
 Source0: https://github.com/sampov2/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc-c++
+BuildRequires: make
 BuildRequires: cairo-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: gtk2-devel

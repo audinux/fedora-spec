@@ -2,12 +2,12 @@
 # Type: Standalone
 # Category: Audio, Tool
 
-Name:    xtuner
+Name: xtuner
 Version: 1.0
 Release: 1%{?dist}
 Summary: Tuner for Jack Audio Connection Kit
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/XTuner
+URL: https://github.com/brummer10/XTuner
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -18,7 +18,8 @@ Distribution: Audinux
 Source0: XTuner.tar.gz
 Source1: brummer10-source.sh
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libX11-devel
 BuildRequires: cairo-devel

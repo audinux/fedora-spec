@@ -5,12 +5,12 @@
 %global commit0 bf8e8f714d530789afbca4611e8e25c744ec5890
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    dm-graindelay
+Name: dm-graindelay
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Granular delay, lv2 & vst audio plugin
 License: MIT
-URL:     https://github.com/moddevices/dm-GrainDelay
+URL: https://github.com/moddevices/dm-GrainDelay
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -18,7 +18,7 @@ Distribution: Audinux
 Source0: https://github.com/moddevices/dm-GrainDelay/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: cmake make
+BuildRequires: cmake
 BuildRequires: rust cargo
 BuildRequires: llvm-devel
 BuildRequires: clang-devel

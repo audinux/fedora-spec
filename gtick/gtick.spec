@@ -1,3 +1,7 @@
+# Tag: Alsa, Tool
+# Type: Standalone
+# Category: Audio, Tool
+
 Name: gtick
 Version: 0.5.5
 Release: 1%{?dist}
@@ -7,13 +11,15 @@ URL: http://www.antcom.de/gtick/
 
 # https://git.savannah.gnu.org/cgit/gtick.git/
 Source0: http://www.antcom.de/gtick/download/%{name}-%{version}.tar.gz
+
 BuildRequires: gcc
+BuildRequires: make
 BuildRequires: gtk2-devel
 BuildRequires: glib2-devel
-BuildRequires: desktop-file-utils
 BuildRequires: ImageMagick
 BuildRequires: libsndfile-devel >= 1
 BuildRequires: pulseaudio-libs-devel
+BuildRequires: desktop-file-utils
 
 %description
 gtick is a small metronome application written for Linux and UN*X supporting

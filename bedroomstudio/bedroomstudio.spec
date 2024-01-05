@@ -1,3 +1,7 @@
+# Tag: Effect
+# Type: LV@
+# Category: Audio, Effect
+
 Name: bedroomstudio
 Version: 1.0.0
 Release: 1%{?dist}

@@ -1,11 +1,15 @@
+# Tag: Jack, Synthesizer
+# Type: Standalone, VST3, LV2
+# Category: Synthesizer
+
 %define commit0 c5c2db18f522ddf0e287d242877668f674c2c910
 
-Name:    voc
+Name: voc
 Version: 0.0.1
 Release: 2%{?dist}
 Summary: wacky vocal synth VST
 License: GPL-2.0-or-later
-URL:     https://github.com/FigBug/Voc
+URL: https://github.com/FigBug/Voc
 
 Vendor:       Audinux
 Distribution: Audinux

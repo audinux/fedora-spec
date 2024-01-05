@@ -2,12 +2,12 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
-Name:    fasttracker2
+Name: fasttracker2
 Version: 1.74
 Release: 3%{?dist}
 Summary: Module tracker software for creating music
 License: GPL-3.0-or-later
-URL:     https://16-bits.org/ft2.php
+URL: https://16-bits.org/ft2.php
 
 Vendor:       Audinux
 Distribution: Audinux

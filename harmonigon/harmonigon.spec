@@ -1,9 +1,13 @@
-Name:    harmonigon
+# Tag: Sequencer, MIDI
+# Type: Standalone
+# Category: Synthesizer, MIDI
+
+Name: harmonigon
 Version: 0.1.2
 Release: 1%{?dist}
 Summary: A simple harmonic table MIDI sequencer
 License: GPL-3.0-only
-URL:     https://github.com/StrangeLoopsAudio/Harmonigon
+URL: https://github.com/StrangeLoopsAudio/Harmonigon
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -1,3 +1,7 @@
+# Tag: Jack, Synthesizer
+# Type: Standalone, VST3
+# Category: Audio, Synthesizer
+
 Name:    blackbird
 Version: 0.1.0
 Release: 1%{?dist}

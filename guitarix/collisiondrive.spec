@@ -2,12 +2,12 @@
 # Type: Plugin, LV2
 # Category: Audio, Effect
 
-Name:    lv2-collisiondrive
+Name: v2-collisiondrive
 Version: 0.1
 Release: 1%{?dist}
 Summary: Overdrive / Distortion
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/CollisionDrive
+URL: https://github.com/brummer10/CollisionDrive
 
 Vendor:       Audinux
 Distribution: Audinux

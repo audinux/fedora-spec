@@ -1,23 +1,29 @@
-Summary:       Acid sounds synthesizer
-Name:          nekobee-dssi
-Version:       0.1.7
-Release:       24%{?dist}
-License:       GPL-2.0-or-later
-URL:           http://www.nekosynth.co.uk/wiki/nekobee
-Source0:       http://www.nekosynth.co.uk/releases/nekobee-%{version}.tar.gz
-Source1:       nekobee.desktop
-# Derived from extra/knob.png
-Source2:       nekobee.png
-Patch0:        nekobee-gcc10.patch
+# Tag: Synthesizer
+# Type: Plugin, DSSI
+# Category: Audio, Synthesizer, Plugin
 
-BuildRequires: alsa-lib-devel
-BuildRequires: desktop-file-utils
-BuildRequires: dssi-devel
+Summary: Acid sounds synthesizer
+Name: nekobee-dssi
+Version: 0.1.7
+Release: 24%{?dist}
+License: GPL-2.0-or-later
+URL: http://www.nekosynth.co.uk/wiki/nekobee
+
+Source0: http://www.nekosynth.co.uk/releases/nekobee-%{version}.tar.gz
+Source1: nekobee.desktop
+# Derived from extra/knob.png
+Source2: nekobee.png
+Patch0: nekobee-gcc10.patch
+
 BuildRequires: gcc
+BuildRequires: make
+BuildRequires: alsa-lib-devel
+BuildRequires: dssi-devel
 BuildRequires: gtk2-devel
 BuildRequires: liblo-devel
+BuildRequires: desktop-file-utils
 
-Requires:      dssi
+Requires: dssi
 
 %description
 Since it was first released in 2004, the Disposable Soft Synth Interface has

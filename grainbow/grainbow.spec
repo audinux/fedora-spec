@@ -1,9 +1,13 @@
-Name:    grainbow
+# Tag: Synthesizer, Jack
+# Type: Standalone, VST3, LV@, Plugin
+# Category: Audio, Synthesizer
+
+Name: grainbow
 Version: 0.4.1
 Release: 1%{?dist}
 Summary: A synthesizer that uses pitch detection to choose candidates for granular synthesis or sampling
 License: GPL-3.0-or-later
-URL:     https://github.com/bboettcher3/gRainbow
+URL: https://github.com/bboettcher3/gRainbow
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -1,6 +1,7 @@
-#
-# SPEC file for Gnome Wave Cleaner
-#
+# Tag: Tool, Alsa, Editor
+# Type: Standalone
+# Category: Audio, Tool
+
 %define gwc_version 0.22
 %define gwc_subversion 06
 

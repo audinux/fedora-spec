@@ -2,18 +2,18 @@
 # Type: Plugin, Standalone, VST3
 # Category: Audio, Distortion
 
-Name:    fire
+Name: fire
 Version: 0.9.9
 Release: 1%{?dist}
 Summary: This is a distortion plugin developed by Wings
 License: GPL-2.0-or-later
-URL:     https://github.com/jerryuhoo/Fire
+URL: https://github.com/jerryuhoo/Fire
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./fire-source.sh <TAG>
-# ./fire-source.sh v0.9.9
+#        ./fire-source.sh v0.9.9
 
 Source0: Fire.tar.gz
 Source1: vst3sdk.tar.gz

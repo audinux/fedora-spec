@@ -2,12 +2,12 @@
 # Type: Plugin, LV2
 # Category: Audio, Effect
 
-Name:    GxPlugins
+Name: GxPlugins
 Version: 1.0
 Release: 2%{?dist}
 Summary: Guitarix LV2 plugins collection
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/GxPlugins.lv2
+URL: https://github.com/brummer10/GxPlugins.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -19,6 +19,7 @@ Source0: GxPlugins.lv2.tar.gz
 Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: python
 BuildRequires: gtk2-devel

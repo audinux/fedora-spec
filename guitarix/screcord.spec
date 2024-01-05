@@ -2,12 +2,12 @@
 # Type: Plugin, LV2
 # Category: Audio, Sequencer
 
-Name:    lv2-screcord-plugin
+Name: lv2-screcord-plugin
 Version: 0.2
 Release: 3%{?dist}
 Summary: A simple Lv2 capture plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/screcord.lv2
+URL: https://github.com/brummer10/screcord.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -19,6 +19,7 @@ Source1: brummer10-source.sh
 # ./brummer10-source.sh screcord.lv2 v0.2
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: libsndfile-devel
 BuildRequires: cairo-devel

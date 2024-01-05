@@ -7,12 +7,12 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    gxtuner
+Name: gxtuner
 Version: 3.0.%{shortcommit0}
 Release: 3%{?dist}
 Summary: A tuner for jack, with full jack session managment support
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/gxtuner
+URL: https://github.com/brummer10/gxtuner
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -20,6 +20,7 @@ Distribution: Audinux
 Source0: https://github.com/brummer10/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildReauires: make
 BuildRequires: gtk3-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libX11-devel

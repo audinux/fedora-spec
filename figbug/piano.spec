@@ -1,11 +1,15 @@
+# Tag: Jack, Synthesizer
+# Type: Standalone, VST3, LV2
+# Category: Synthesizer
+
 %define commit0 69917ff3be8b979666c8a823aff22865e83d6d61
 
-Name:    piano
+Name: piano
 Version: 0.0.1
 Release: 2%{?dist}
 Summary: Piano VST / LV2 plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/FigBug/Piano
+URL: https://github.com/FigBug/Piano
 
 Vendor:       Audinux
 Distribution: Audinux

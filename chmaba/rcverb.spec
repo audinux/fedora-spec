@@ -1,3 +1,7 @@
+# Tag: Effect, Reverb
+# Type: Plugin, VST3, LV2
+# Category: Audio, Effect
+
 Name:    rcverb
 Version: 1.0
 Release: 1%{?dist}

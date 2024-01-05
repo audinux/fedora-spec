@@ -1,11 +1,15 @@
+# Tag: Sequencer
+# Type: Plugin, VST3
+# Category: Audio, Sequencer
+
 %define commit0 1cefe703884950c161d2b6777cec47a0020b6d6b
 
-Name:    fxseq
+Name: fxseq
 Version: 0.1
 Release: 1%{?dist}
 Summary: A step sequencer based multi effect plugin using JUCE.
 License: GPL-2.0-or-later
-URL:     https://github.com/ssabug/fxseq
+URL: https://github.com/ssabug/fxseq
 
 Vendor:       Audinux
 Distribution: Audinux

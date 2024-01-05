@@ -1,3 +1,7 @@
+# Tag: Synthesizer
+# Type: Standalone, VST3
+# Category: Audio, Synthesizer
+
 Name:    atlas-06-synthesizer
 Version: 0.0.1
 Release: 1%{?dist}

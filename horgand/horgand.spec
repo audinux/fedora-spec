@@ -8,11 +8,11 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Summary: Software Synthesizer
-Name:    horgand
+Name: horgand
 Version: 1.15.0
 Release: 1%{?dist}
 License: GPL
-URL:     https://github.com/ycollet/horgand
+URL: https://github.com/ycollet/horgand
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -26,7 +26,6 @@ BuildRequires: libtool
 BuildRequires: alsa-lib-devel
 BuildRequires: alsa-utils
 BuildRequires: fltk-devel
-BuildRequires: desktop-file-utils
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsndfile-devel
 BuildRequires: libxcb-devel
@@ -34,6 +33,7 @@ BuildRequires: libXpm-devel
 BuildRequires: zlib-devel
 BuildRequires: freetype-devel
 BuildRequires: fontconfig-devel
+BuildRequires: desktop-file-utils
 
 %description
 Horgand is a organ ... generates sound like a FM sinthesizer in real time,

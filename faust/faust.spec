@@ -2,14 +2,14 @@
 # Type: Standalone, Language
 # Category: Audio, Programming
 
-Name:	 faust
+Name: faust
 Version: 2.69.3
 Release: 37%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
 # The rest is GPLv2+
 License: GPLv2+ and BSD
-URL:     http://faust.grame.fr
+URL: https://faust.grame.fr
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -1,24 +1,29 @@
-Summary:    Classic-analog style software synthesizer
-Name:       xsynth-dssi
-Version:    0.9.4
-Release:    24%{?dist}
-License:    GPL-2.0-or-later
-URL:        http://dssi.sourceforge.net/download.html#Xsynth-DSSI
-Source0:    http://download.sf.net/dssi/%{name}-%{version}.tar.gz
-Source1:    http://download.sf.net/dssi/%{name}-%{version}-RELEASE
-Source2:    %{name}.desktop
-# Derived from a screenshot from xsynth RHBZ#787588
-Source3:    %{name}.png
+# Tag: Synthesizer
+# Type: Plugin, DSSI
+# Category: Audio, Synthesizer, Plugin
 
+Summary: Classic-analog style software synthesizer
+Name: xsynth-dssi
+Version: 0.9.4
+Release: 24%{?dist}
+License: GPL-2.0-or-later
+URL: http://dssi.sourceforge.net/download.html#Xsynth-DSSI
+
+Source0: http://download.sf.net/dssi/%{name}-%{version}.tar.gz
+Source1: http://download.sf.net/dssi/%{name}-%{version}-RELEASE
+Source2: %{name}.desktop
+# Derived from a screenshot from xsynth RHBZ#787588
+Source3: %{name}.png
+
+BuildRequires: gcc
 BuildRequires: make
 BuildRequires: alsa-lib-devel
-BuildRequires: desktop-file-utils
 BuildRequires: dssi-devel
-BuildRequires: gcc
 BuildRequires: gtk2-devel
 BuildRequires: liblo-devel
+BuildRequires: desktop-file-utils
 
-Requires:   dssi
+Requires: dssi
 
 %description
 Xsynth-DSSI is a classic-analog (VCOs-VCF-VCA) style software synthesizer which
@@ -32,11 +37,13 @@ be hosted in-process by audio applications.
 cp -a %{SOURCE1} .
 
 %build
+
 %configure
-make %{?_smp_mflags}
+%make_build
 
 %install
-make install DESTDIR="$RPM_BUILD_ROOT" INSTALL="install -p"
+
+%make_instal
 
 # Make a symlink for easy access
 mkdir -p $RPM_BUILD_ROOT%{_bindir}

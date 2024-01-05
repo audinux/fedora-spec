@@ -2,12 +2,12 @@
 # Type: Plugin, LV2
 # Category: Audio, Effect
 
-Name:    littlefly
+Name: littlefly
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: A LV2 Overdrive/Distortion pedal simulation
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/LittleFly.lv2
+URL: https://github.com/brummer10/LittleFly.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -19,6 +19,7 @@ Source0: LittleFly.lv2.tar.gz
 Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: libX11-devel
 BuildRequires: cairo-devel

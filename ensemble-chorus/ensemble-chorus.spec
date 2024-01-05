@@ -2,11 +2,11 @@
 # Type: Plugin, LV2
 # Category: Audio, Effect
 
-Name:    ensemble-chorus
+Name: ensemble-chorus
 Version: 0.0.1
 Release: 2%{?dist}
 Summary: Effect plugin for ensemble-chorus (VST/LV2)
-URL:     https://github.com/jpcima/ensemble-chorus
+URL: https://github.com/jpcima/ensemble-chorus
 License: BSL-1.0
 
 Vendor:       Audinux
@@ -15,16 +15,21 @@ Distribution: Audinux
 # ./ensemble-chorus-source.sh master
 
 Source0: ensemble-chorus.tar.gz
-Patch0:  ensemble-chorus-0001-fix-JUCE-compilation.patch
+Patch0: ensemble-chorus-0001-fix-JUCE-compilation.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: cmake
-BuildRequires: desktop-file-utils
 BuildRequires: freetype-devel
-BuildRequires: libX11-devel libXft-devel libXrandr-devel libXinerama-devel libXcursor-devel
-BuildRequires: fltk-devel fltk-fluid
+BuildRequires: libX11-devel
+BuildRequires: libXft-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXcursor-devel
+BuildRequires: fltk-devel
+BuildRequires: fltk-fluid
+BuildRequires: desktop-file-utils
 
 %description
 Effect plugin for ensemble-chorus (VST/LV2)

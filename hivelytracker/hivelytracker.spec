@@ -3,12 +3,12 @@
 # Category: Audio, Sequencer
 # LastSourceUpdate: 2020
 
-Name:    hivelytracker
+Name: hivelytracker
 Version: 1.9
 Release: 1%{?dist}
 Summary: Chip music tracker based on AHX
 License: BSD3
-URL:     https://github.com/pete-gordon/hivelytracker
+URL: https://github.com/pete-gordon/hivelytracker
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -1,11 +1,15 @@
+# Tag: Jack, Synthesizer, Modular
+# Type: Plugin, Standalone, VST, VST3, CLAP
+# Category: Audio, Synthesizer
+
 %global commit0 5ddd8a3ee5c2b0868d10d79c20c372d670fb97c9
 
-Name:    hexosynth
+Name: hexosynth
 Version: 0.9.9
 Release: 1%{?dist}
 Summary: A hexagonal modular synthesizer plugin.
 License: GPL-3.0-or-later
-URL:     https://github.com/WeirdConstructor/HexoSynth
+URL: https://github.com/WeirdConstructor/HexoSynth
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -14,7 +18,8 @@ Source0: https://github.com/WeirdConstructor/HexoSynth/archive/%{commit0}.zip#/h
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
-BuildRequires: rust cargo
+BuildRequires: rust
+BuildRequires: cargo
 BuildRequires: xcb-util-wm-devel
 BuildRequires: libXcursor-devel
 BuildRequires: mesa-libGL-devel
@@ -26,6 +31,31 @@ BuildRequires: python3
 
 %description
 Flashy Synthesia Like Software
+
+%package -n vst3-%{name}
+Summary:  VST3 version of %{name}
+License:  GPL-3.0-or-later
+Requires: %{name}
+
+%description -n vst3-%{name}
+VST3 version of %{name}
+
+%package -n vst-%{name}
+Summary:  VST2 version of %{name}
+License:  GPL-3.0-or-later
+Requires: %{name}
+
+%description -n vst-%{name}
+VST2 version of %{name}
+
+%package -n clap-%{name}
+Summary:  CALP version of %{name}
+License:  GPL-3.0-or-later
+Requires: %{name}
+
+%description -n clap-%{name}
+CLAP version of %{name}
+
 
 %prep
 %autosetup -n HexoSynth-%{commit0}
@@ -82,8 +112,14 @@ cp -vfr build/clap/hexosynth_plug.clap %{buildroot}/%{_libdir}/clap/
 %{_bindir}/hexosynth
 %{_datadir}/hexosynth/
 %{_datadir}/hexosynth/examples/*
+
+%files -n vst-%{name}
 %{_libdir}/vst/*
+
+%files -n vst3-%{name}
 %{_libdir}/vst3/*
+
+%files -n clap-%{name}
 %{_libdir}/clap/*
 
 %changelog

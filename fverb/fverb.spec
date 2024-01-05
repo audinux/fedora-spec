@@ -7,11 +7,11 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    fverb
+Name: fverb
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Reverberation plugin
-URL:     https://github.com/jpcima/fverb
+URL: https://github.com/jpcima/fverb
 License: BSL-1.0
 
 Vendor:       Audinux
@@ -29,12 +29,17 @@ Distribution: Audinux
 Source0: fverb.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildReauires: make
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: ladspa-devel
 BuildRequires: lv2-devel
 BuildRequires: freetype-devel
-BuildRequires: libX11-devel libXft-devel libXrandr-devel libXinerama-devel libXcursor-devel
+BuildRequires: libX11-devel
+BuildRequires: libXft-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXcursor-devel
 BuildRequires: desktop-file-utils
 
 %description

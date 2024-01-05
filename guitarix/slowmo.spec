@@ -1,11 +1,15 @@
+# Tag: Guitar, Effect
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 %define commit0 c78ef40603476351ef42641617e99023cc3b324b
 
-Name:    lv2-slowmo
+Name: lv2-slowmo
 Version: 0.1
 Release: 1%{?dist}
 Summary: Multiband slowgate with delay
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/slowmo.lv2
+URL: https://github.com/brummer10/slowmo.lv2
 
 Vendor:       Audinux
 Distribution: Audinux

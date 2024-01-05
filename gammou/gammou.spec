@@ -1,17 +1,21 @@
+# Tag: Synthesizer, Modular
+# Type: Plugin, VST, Standalone
+# Category: Audio, Synthesizer
+
 %global commit0 35bce4608d7b995d9edbf919124b794874d8710c
 
-Name:    gammou
+Name: gammou
 Version: 0.8.1
 Release: 2%{?dist}
 Summary: Modular Sound Synthesizer
-URL:     https://github.com/aliefhooghe/Gammou
+URL: https://github.com/aliefhooghe/Gammou
 License: BSD3
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./gammou-source.sh <TAG>
-# ./gammou-source.sh master
+#        ./gammou-source.sh master
 
 Source0: Gammou.tar.gz
 Source1: gammou.jpg

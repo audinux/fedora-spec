@@ -1,6 +1,6 @@
-# Tag: MIDI, FM, Emulator
-# Type: Plugin, VST, LV2
-# Category: Audio, Synthesizer
+# Tag: Effect, Compressor
+# Type: Plugin, VST3, LV2
+# Category: Audio, Effect
 
 Name:    rccomp
 Version: 0.9

@@ -2,28 +2,24 @@
 # Type: Plugin, LV2
 # Category: Audio, Effect
 
-Name:    xtinyterror
+Name: xtinyterror
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Valve amplifier simulation
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/XTinyTerror.lv2
+URL: https://github.com/brummer10/XTinyTerror.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
-# git clone https://github.com/brummer10/XTinyTerror.lv2
-# cd XTinyTerror.lv2
-# git submodule init
-# git submodule update
-# find . -name .git -exec rm -rf {} \;
-# cd ..
-# tar cvfz XTinyTerror.lv2.tar.gz XTinyTerror.lv2/*
-# rm -rf XTinyTerror.lv2
+# To get the sources:
+# ./brummer10-source.sh XTinyTerror.lv2 main
 
 Source0: XTinyTerror.lv2.tar.gz
+Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: libX11-devel
 BuildRequires: cairo-devel

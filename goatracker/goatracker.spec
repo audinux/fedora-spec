@@ -3,11 +3,11 @@
 # Category: Audio, Sequencer
 
 Summary: A crossplatform music editor for creating Commodore 64 music. Uses reSID library by Dag Lem and supports alternatively HardSID & CatWeasel devices.
-Name:    goatracker
+Name: goatracker
 Version: 2.77
 Release: 2%{?dist}
 License: GPL
-URL:     https://sourceforge.net/projects/goattracker2/
+URL: https://sourceforge.net/projects/goattracker2/
 
 Vendor:       Audinux
 Distribution: Audinux

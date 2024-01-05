@@ -2,12 +2,12 @@
 # Type: Standalone
 # Category: MIDI, Tool
 
-Name:    receivemidi
+Name: receivemidi
 Version: 1.3.1
 Release: 3%{?dist}
 Summary: A command line tool to receive MIDI event
 License: GPL-3.0-only
-URL:     https://github.com/gbevin/ReceiveMIDI
+URL: https://github.com/gbevin/ReceiveMIDI
 
 Vendor:       Audinux
 Distribution: Audinux

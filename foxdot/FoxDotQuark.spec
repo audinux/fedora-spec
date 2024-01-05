@@ -7,18 +7,18 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:     FoxDotQuark
-Version:  0.1
-Release:  2%{?dist}
-Epoch:    1
-Summary:  FoxDot Quark is a required tool to connect FoxDot and SuperCollider.
-License:  Creative Commons Attribution-ShareAlike 4.0 International Public License
-URL:      https://github.com/Qirky/%{name}
+Name: FoxDotQuark
+Version: 0.1
+Release: 2%{?dist}
+Epoch: 1
+Summary: FoxDot Quark is a required tool to connect FoxDot and SuperCollider.
+License: Creative Commons Attribution-ShareAlike 4.0 International Public License
+URL: https://github.com/Qirky/%{name}
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0:  https://github.com/Qirky/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: https://github.com/Qirky/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildArch: noarch
 

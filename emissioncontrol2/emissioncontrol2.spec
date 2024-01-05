@@ -1,3 +1,7 @@
+# Tag: Synthesizer
+# Type: Standalone
+# Category: Synthesizer
+
 Name:    emissioncontrol2
 Version: 1.2
 Release: 1%{?dist}

@@ -1,10 +1,14 @@
+# Tag: Effect, Reverb
+# Type: VST3
+# Category: Plugin
+
 %define commit0 59077dc9bd0d4b47b6e6e84c2aa9c4e14bcea908
 
-Name:    fogpad
+Name: fogpad
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: A VST reverb effect in which the reflections can be frozen, filtered, pitch shifted and ultimately disintegrated.
-URL:     https://github.com/igorski/fogpad
+URL: https://github.com/igorski/fogpad
 License: MIT
 
 Vendor:       Audinux

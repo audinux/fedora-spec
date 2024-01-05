@@ -1,5 +1,5 @@
 # Tag: Equalizer
-# Type: VST
+# Type: VST3
 # Category: Audio, Effect
 # LastSourceUpdate: 2021
 

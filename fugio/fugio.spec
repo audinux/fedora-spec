@@ -6,11 +6,11 @@
 
 %define _lto_cflags %{nil}
 
-Name:    fugio
+Name: fugio
 Version: 3.1.0
 Release: 4%{?dist}
 Summary: Fugio is an open visual programming system for building digital art and creative projects quickly, with no programming experience required
-URL:     https://www.bigfug.com/software/fugio/
+URL: https://www.bigfug.com/software/fugio/
 License: LGPL-3.0
 
 Vendor:       Audinux

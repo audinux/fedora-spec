@@ -1,15 +1,20 @@
-%global       srcname0 hexter
+# Tag: Synthesizer
+# Type: Plugin, DSSI
+# Category: Audio, Synthesizer, Plugin
 
-Summary:      DSSI software synthesizer plugin emulating DX7
-Name:         hexter-dssi
-Version:      1.1.0
-Release:      4%{?dist}
-URL:          http://smbolton.com/hexter.html
-Source0:      https://github.com/smbolton/%{srcname0}/archive/version_%{version}/%{srcname0}-version_%{version}.tar.gz
-Source1:      hexter.desktop
-Source2:      hexter.png
-Patch0:       Fixed-Segfault-on-startup.patch
-License:      GPL-2.0-or-later
+%global srcname0 hexter
+
+Summary: DSSI software synthesizer plugin emulating DX7
+Name: hexter-dssi
+Version: 1.1.0
+Release: 4%{?dist}
+URL: http://smbolton.com/hexter.html
+License: GPL-2.0-or-later
+
+Source0: https://github.com/smbolton/%{srcname0}/archive/version_%{version}/%{srcname0}-version_%{version}.tar.gz
+Source1: hexter.desktop
+Source2: hexter.png
+Patch0: Fixed-Segfault-on-startup.patch
 
 BuildRequires: gcc
 BuildRequires: alsa-lib-devel
@@ -23,7 +28,8 @@ BuildRequires: automake
 BuildRequires: autoconf
 BuildRequires: libtool
 BuildRequires: make
-Requires:      dssi
+
+Requires: dssi
 
 %description
 hexter is a software synthesizer that models the sound generation of a Yamaha

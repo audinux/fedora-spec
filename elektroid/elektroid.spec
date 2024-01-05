@@ -1,3 +1,7 @@
+# Tag: Tool
+# Type: Standalone
+# Category: Tool, MIDI. Audio
+
 Name: elektroid
 Summary: Sample and MIDI device manager
 Version: 2.5.2

@@ -2,11 +2,11 @@
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer
 
-Name:    geonkick
+Name: geonkick
 Version: 3.2.0
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
-URL:     https://github.com/Geonkick-Synthesizer/geonkick
+URL: https://github.com/Geonkick-Synthesizer/geonkick
 License: GPL-3.0-only
 
 Vendor:       Audinux

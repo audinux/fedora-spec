@@ -1,11 +1,15 @@
+# Tag: Jack, Synthesizer
+# Type: Standalone, VST3, VST, LV2
+# Category: Synthesizer
+
 %define commit0 18f10e557c4435125fc04a7ad462c508165ae562
 
-Name:    SN76489
+Name: SN76489
 Version: 0.0.1
 Release: 3%{?dist}
 Summary: Sega Master System Sound Chip VST
 License: LGPLv2+
-URL:     https://github.com/FigBug/SN76489
+URL: https://github.com/FigBug/SN76489
 
 Vendor:       Audinux
 Distribution: Audinux

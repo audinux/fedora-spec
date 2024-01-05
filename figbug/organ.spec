@@ -1,3 +1,7 @@
+# Tag: Jack, Synthesizer, Organ
+# Type: Standalone, VST3, LV2
+# Category: Synthesizer
+
 %define commit0 b4c6cbe29e8bd69c65afef1e8e4db94a995abce9
 
 Name:    organ

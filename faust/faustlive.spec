@@ -1,9 +1,13 @@
-Name:    faustlive
+# Tag: Editor
+# Type: Standalone, Language
+# Category: Tool
+
+Name: faustlive
 Version: 2.5.15
 Release: 1%{?dist}
 Summary: The swiss knife for Faust development
 License: GPL-2.0-or-later
-URL:     https://github.com/grame-cncm/faustlive
+URL: https://github.com/grame-cncm/faustlive
 
 Vendor:       Audinux
 Distribution: Audinux

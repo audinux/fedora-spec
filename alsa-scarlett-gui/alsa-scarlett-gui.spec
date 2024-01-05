@@ -1,3 +1,7 @@
+# Tag: Mixer
+# Type: Standalone
+# Category: Audio, Tool
+
 Name: alsa-scarlett-gui
 Version: 0.3.3
 Summary: ALSA Scarlett Gen 2/3 Control Panel

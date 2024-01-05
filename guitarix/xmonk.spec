@@ -2,12 +2,12 @@
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer
 
-Name:    xmonk
+Name: xmonk
 Version: 0.4.0
 Release: 1%{?dist}
 Summary: A LV2 simple sound generator to have some fun with
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/Xmonk.lv2
+URL: https://github.com/brummer10/Xmonk.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -19,6 +19,7 @@ Source0: Xmonk.lv2.tar.gz
 Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: libX11-devel
 BuildRequires: cairo-devel

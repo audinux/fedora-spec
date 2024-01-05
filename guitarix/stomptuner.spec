@@ -2,12 +2,12 @@
 # Type: Standalone
 # Category: Audio, Tool
 
-Name:    stomptuner
+Name: stomptuner
 Version: 0.2
 Release: 1%{?dist}
 Summary: Tuner for Jack Audio Connection Kit
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/StompTuner
+URL: https://github.com/brummer10/StompTuner
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -18,7 +18,8 @@ Distribution: Audinux
 Source0: StompTuner.tar.gz
 Source1: brummer10-source.sh
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libX11-devel
 BuildRequires: cairo-devel

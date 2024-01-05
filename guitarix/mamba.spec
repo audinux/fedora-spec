@@ -2,7 +2,7 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
-Name:    mamba
+Name: mamba
 Version: 2.5
 Release: 4%{?dist}
 Summary: Virtual Midi Keyboard for Jack Audio Connection Kit

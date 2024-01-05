@@ -7,18 +7,18 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:     BatLib
-Version:  0.1
-Release:  1%{?dist}
-Epoch:    1
-Summary:  Various helper classes I use, and external methods my other Quarks use.
-License:  Creative Commons Attribution-ShareAlike 4.0 International Public License
-URL:      https://github.com/supercollider-quarks/%{name}
+Name: BatLib
+Version: 0.1
+Release: 1%{?dist}
+Epoch: 1
+Summary: Various helper classes I use, and external methods my other Quarks use.
+License: Creative Commons Attribution-ShareAlike 4.0 International Public License
+URL: https://github.com/supercollider-quarks/%{name}
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0:  https://github.com/supercollider-quarks/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: https://github.com/supercollider-quarks/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildArch: noarch
 

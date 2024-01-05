@@ -1,15 +1,19 @@
-Name:    guitarmidi
+# Tag: Guitar, MIDI
+# Type: Plugin, LV2
+# Category: Audio, Effect, MIDI
+
+Name: guitarmidi
 Version: 1.4
 Release: 2%{?dist}
 Summary: A concept for guitar to midi as an lv2 plugin
-URL:     https://github.com/geraldmwangi/GuitarMidi-LV2
+URL: https://github.com/geraldmwangi/GuitarMidi-LV2
 License: LGPLv2+
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./guitarmidi-lv2-source.sh <TAG>
-# ./guitarmidi-lv2-source.sh v1.4
+#        ./guitarmidi-lv2-source.sh v1.4
 
 Source0: GuitarMidi-LV2.tar.gz
 Source1: guitarmidi-lv2-source.sh

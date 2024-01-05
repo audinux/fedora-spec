@@ -2,11 +2,11 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
-Name:    helio-workstation
+Name: helio-workstation
 Version: 3.12.0
 Release: 2%{?dist}
 Summary: An audio sequencer
-URL:     https://github.com/helio-fm/helio-workstation
+URL: https://github.com/helio-fm/helio-workstation
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

@@ -1,5 +1,5 @@
-# Tag: Drum
-# Type: LV2
+# Tag: Drum, Presents
+# Type: LV2, Presets
 # Category: Synthesizer
 
 %global commit0 ddaebac3bb69327623c7a70e3ca235b49fbb3a25

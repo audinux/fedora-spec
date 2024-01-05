@@ -1,3 +1,7 @@
+# Tag: Effect
+# Type: Plugin, LV2
+# Category: Effect
+
 Name: gula
 Version: 0.1
 Release: 1%{?dist}

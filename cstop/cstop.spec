@@ -1,9 +1,13 @@
-Name:    cstop
+# Tag: Effect
+# Type: VST3, Standalone
+# Category: Audio, Plugin
+
+Name: cstop
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: Free tape stop audio effect plugin
 License: MIT
-URL:     https://github.com/calgoheen/cStop
+URL: https://github.com/calgoheen/cStop
 
 Vendor:       Audinux
 Distribution: Audinux

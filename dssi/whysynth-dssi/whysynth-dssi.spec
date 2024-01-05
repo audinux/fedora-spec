@@ -1,23 +1,28 @@
-Summary:      DSSI software synthesizer plugin
-Name:         whysynth-dssi
-Version:      20120903
-Release:      12%{?dist}
-URL:          http://www.smbolton.com/whysynth.html
-Source0:      http://www.smbolton.com/whysynth/whysynth-%{version}.tar.bz2
-Source2:      whysynth.desktop
-Patch0:       whysynth-noinline.patch
-License:      GPL-2.0-or-later
+# Tag: Synthesizer
+# Type: Plugin, DSSI
+# Category: Audio, Synthesizer, Plugin
 
+Summary: DSSI software synthesizer plugin
+Name: whysynth-dssi
+Version: 20120903
+Release: 12%{?dist}
+URL: http://www.smbolton.com/whysynth.html
+License: GPL-2.0-or-later
+
+Source0: http://www.smbolton.com/whysynth/whysynth-%{version}.tar.bz2
+Source2: whysynth.desktop
+Patch0: whysynth-noinline.patch
+
+BuildRequires: gcc
 BuildRequires: make
-BuildRequires: desktop-file-utils
 BuildRequires: dssi-devel
 BuildRequires: gtk2-devel
 BuildRequires: fftw-devel
-BuildRequires: gcc
 BuildRequires: liblo-devel
+BuildRequires: desktop-file-utils
 
-Requires:     dssi
-Requires:     hicolor-icon-theme
+Requires: dssi
+Requires: hicolor-icon-theme
 
 
 
@@ -32,10 +37,12 @@ Soft Synth Interface (DSSI).
 %build
 %configure
 
-make %{?_smp_mflags}
+%make_build
 
 %install
-make install DESTDIR="$RPM_BUILD_ROOT" INSTALL="install -p"
+
+%make_install
+
 mkdir -p $RPM_BUILD_ROOT%{_bindir}
 pushd $RPM_BUILD_ROOT%{_bindir}
 ln -s jack-dssi-host whysynth

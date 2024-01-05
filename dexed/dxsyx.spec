@@ -1,3 +1,7 @@
+# Tag: Tool
+# Type: Standalone
+# Category: Tool
+
 %global commit0 efb54c043ca2791dfb571e54263df4954491509c
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 

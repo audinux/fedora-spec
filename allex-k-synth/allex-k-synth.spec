@@ -1,3 +1,7 @@
+# Tag: Synthesizer
+# Type: Standalone
+# Category: Audio, Synthesizer
+
 Name:    allex-k-synth
 Version: 0.0.1
 Release: 1%{?dist}

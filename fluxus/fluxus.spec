@@ -7,11 +7,11 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    fluxus
+Name: fluxus
 Version: 0.17rc5.%{shortcommit0}
 Release: 4%{?dist}
 Summary: A 3D game engine for livecoding worlds into existence
-URL:     https://pawfal.org/fluxus/
+URL: https://pawfal.org/fluxus/
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

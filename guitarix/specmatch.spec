@@ -1,4 +1,4 @@
-# Tag: Guitar, Jack
+# Tag: Guitar, Analyzer
 # Type: Standalone
 # Category: Audio, Tool
 
@@ -6,12 +6,12 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    specmatch
+Name: specmatch
 Version: 0.44.1
 Release: 1%{?dist}
 Summary: SpecMatch can be used to adapt the sound produced by a Guitarix setting to another recorded sound.
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/guitarix
+URL: https://github.com/brummer10/guitarix
 
 Vendor:       Audinux
 Distribution: Audinux

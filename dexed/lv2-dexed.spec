@@ -1,12 +1,16 @@
+# Tag: Synthesizer
+# Type: LV2
+# Category: Plugin, Synthesizer
+
 %global commit0 32cce1ec397899e27e5932e3f732b3f1bf95de6e
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    lv2-dexed
+Name: lv2-dexed
 Version: 0.9.2.%{shortcommit0}
 Release: 1%{?dist}
 Summary: LV2 FM multi plaform/multi format plugin
 License: Apache-2.0
-URL:     https://github.com/dcoredump/dexed.lv2
+URL: https://github.com/dcoredump/dexed.lv2
 
 Vendor:       Audinux
 Distribution: Audinux

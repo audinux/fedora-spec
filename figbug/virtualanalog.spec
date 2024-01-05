@@ -1,11 +1,15 @@
+# Tag: Jack, Synthesizer
+# Type: Standalone, VST3, LV2
+# Category: Synthesizer
+
 %define commit0 d9703f85e0debbb9764eb516a4e8f6af2a1ad24a
 
-Name:    virtualanalog
+Name: virtualanalog
 Version: 0.0.1
 Release: 2%{?dist}
 Summary: Virtual Analog VST
 License: GPL-2.0-or-later
-URL:     https://github.com/FigBug/VirtualAnalog
+URL: https://github.com/FigBug/VirtualAnalog
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -1,9 +1,13 @@
-Name:    lv2-dexed-presets
+# Tag: Presets
+# Type: Presets
+# Category: Plugin
+
+Name: lv2-dexed-presets
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Presets for LV2 FM multi plaform plugin
 License: GPL-3.0-or-later
-URL:     https://github.com/audinux/fedora-spec
+URL: https://github.com/audinux/fedora-spec
 
 Vendor:       Audinux
 Distribution: Audinux

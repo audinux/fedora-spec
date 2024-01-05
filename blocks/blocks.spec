@@ -1,3 +1,7 @@
+# Tag: Modular, Synthesizer
+# Type: Standalone, VST3
+# Category: Audio, Synthesizer
+
 Name:    blocks
 Version: 0.1
 Release: 2%{?dist}

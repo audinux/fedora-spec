@@ -2,12 +2,12 @@
 # Type: Plugin, LV2
 # Category: Audio, Effect
 
-Name:    xuidesigner
+Name: xuidesigner
 Version: 1.0
 Release: 1%{?dist}
 Summary: X11 LV2 GUI design tool for libxputty
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/XUiDesigner
+URL: https://github.com/brummer10/XUiDesigner
 
 Vendor:       Audinux
 Distribution: Audinux

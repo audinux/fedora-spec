@@ -1,16 +1,21 @@
-Name:    equis
+# Tag: Controller
+# Type: Standalone
+# Category: Audio, Tool
+
+Name: equis
 Version: 0.6.2
 Release: 1%{?dist}
 Summary: The hackable DJ Mixer inspired by the playdifferently model 1
 License: GPL-3.0-or-later
-URL:     https://codeberg.org/obsoleszenz/equis
+URL: https://codeberg.org/obsoleszenz/equis
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://codeberg.org/obsoleszenz/EQUIS/archive/main.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: rust cargo
+BuildRequires: rust
+BuildRequires: cargo
 BuildRequires: jack-audio-connection-kit-devel
 
 %description

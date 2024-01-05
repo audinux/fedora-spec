@@ -7,12 +7,12 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    lv2-GxReverseDelay
+Name: lv2-GxReverseDelay
 Version: 0.1.%{shortcommit0}
 Release: 2%{?dist}
 Summary: Digital reverse delay LV2 plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/GxReverseDelay.lv2
+URL: https://github.com/brummer10/GxReverseDelay.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -21,6 +21,7 @@ Source0: https://github.com/brummer10/GxReverseDelay.lv2/archive/%{commit0}.tar.
 Patch0:  gxreversedelay-0001-cleanup-flags.patch
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: python
 BuildRequires: gtk2-devel

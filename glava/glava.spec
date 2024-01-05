@@ -1,17 +1,17 @@
+# Tag: Analyzer
+# Type: Standalone
+# Category: Audio, Tool, Graphic
+
 # Global variables for github repository
 %global commit0 094dec9b009268814751d3801fc7a5068381c90b
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-# Tag: Analyzer
-# Type: Standalone
-# Category: Audio, Tool, Graphic
-
-Name:    glava
+Name: glava
 Version: 1.6.3
 Release: 2%{?dist}
 Summary: GLava is an OpenGL audio spectrum visualizer
-URL:     https://github.com/wacossusca34/glava
+URL: https://github.com/wacossusca34/glava
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -20,7 +20,8 @@ Distribution: Audinux
 # original tarfile can be found here:
 Source0: https://github.com/wacossusca34/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: libXrender-devel
 BuildRequires: libX11-devel
 BuildRequires: pulseaudio-libs-devel

@@ -2,11 +2,11 @@
 # Type: Devel
 # Category: Programming
 
-Name:    redkite
+Name: redkite
 Version: 1.3.0
 Release: 3%{?dist}
 Summary: A cross-platform GUI toolkit in C++.
-URL:     https://gitlab.com/iurie-sw/redkite
+URL: https://gitlab.com/iurie-sw/redkite
 License: GPL-3.0-only
 
 Vendor:       Audinux
@@ -15,8 +15,8 @@ Distribution: Audinux
 Source0: https://gitlab.com/iurie-sw/%{name}/-/archive/v%{version}/%{name}-v%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: cairo-devel
 BuildRequires: cmake
+BuildRequires: cairo-devel
 
 %description
 Redkite is a small free software and cross-platform GUI toolkit.

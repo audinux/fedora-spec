@@ -1,3 +1,7 @@
+# Tag: Tool, Rack
+# Type: Plugin, DSSI
+# Category: Audio, Effect, Synthesizer, Plugin
+
 Summary: VST plug-ins host
 Name: dssi-vst
 Version: 0.9.2

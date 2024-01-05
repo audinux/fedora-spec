@@ -1,3 +1,7 @@
+# Tag: Amp Simul
+# Type: Plugin, LV2, VST3, VST, CLAP, Standanlone
+# Category: Audio, Effect
+
 Name:    aida-x
 Version: 1.0.0
 Release: 1%{?dist}
