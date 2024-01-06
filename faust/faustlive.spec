@@ -3,7 +3,7 @@
 # Category: Tool
 
 Name: faustlive
-Version: 2.5.15
+Version: 2.5.17
 Release: 1%{?dist}
 Summary: The swiss knife for Faust development
 License: GPL-2.0-or-later
@@ -11,6 +11,9 @@ URL: https://github.com/grame-cncm/faustlive
 
 Vendor:       Audinux
 Distribution: Audinux
+
+# to get source!
+# ./faustlive-source.sh 2.5.17
 
 Source0: faustlive.tar.gz
 Source1: faustlive-source.sh
@@ -82,5 +85,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/FaustLive.desktop
 %{_datadir}/pixmaps/Faustlive.xpm
 
 %changelog
+* Sat Jan 06 2024 Yann Collette <ycollette.nospam@free.fr> - 2.5.17-1
+- update to 2.5.17-1
+
 * Sat Oct 07 2023 Yann Collette <ycollette.nospam@free.fr> - 2.5.15-1
 - initial spec file
