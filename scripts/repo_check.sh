@@ -12,7 +12,6 @@ fi
 REPO_LIST="https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git
 git://gabe.is-a-geek.org/git/inconcert
 https://git.ardour.org/ardour/ardour
-https://github.com/grame-cncm/faustlive
 https://git.code.sf.net/p/guitarix/git
 https://git.code.sf.net/p/isse/code
 https://git.code.sf.net/p/jamin/code
