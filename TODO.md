@@ -133,9 +133,7 @@
 | badhumors               | https://github.com/niflheimmer/badhumors |
 | MXTune                  | https://github.com/liuanlin-mx/MXTune |
 | Tonez                   | https://github.com/retornz/ToneZ |
-| JackAss                 | https://github.com/falkTX/JackAss |
 | cchorus                 | https://github.com/SpotlightKid/cchorus |
-| sympathetic-string-resonator | https://github.com/SpotlightKid/sympathetic-string-resonator |
 | Automated-GuitarAmpModelling | https://github.com/AidaDSP/Automated-GuitarAmpModelling |
 | stargate-sample-pack    | https://github.com/stargatedaw/stargate-sample-pack (250 Mo) |
 | ABS things              | https://sourceforge.net/projects/abcplus/files/ |

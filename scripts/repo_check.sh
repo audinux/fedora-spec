@@ -911,7 +911,9 @@ https://github.com/ArdenButterfield/Maim
 https://github.com/free-audio/clap
 https://github.com/SpotlightKid/stereocrossdelay
 https://github.com/x42/jackmidi2osc
-https://github.com/brummer10/MelMatchEQ.lv2"
+https://github.com/brummer10/MelMatchEQ.lv2
+https://github.com/SpotlightKid/sympathetic-string-resonator
+https://github.com/falkTX/JackAss"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
