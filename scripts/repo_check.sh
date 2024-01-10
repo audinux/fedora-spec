@@ -793,8 +793,6 @@ https://git.savannah.gnu.org/git/traverso
 https://git.savannah.nongnu.org/git/dino
 https://git.savannah.nongnu.org/git/getfem
 https://git.s-ol.nu/vcvmods
-https://git.sr.ht/~alextee/zrythm-libcyaml
-https://git.sr.ht/~rabbits/orca
 https://github.com/zrythm/libaudec
 https://github.com/zrythm/ZLFO
 https://github.com/zrythm/zrythm
