@@ -1,3 +1,7 @@
+# Tag: Rack, Jack
+# Type: Standalone
+# Category: Audio, Effect
+
 # Global variables for github repository
 %global commit0 9e17878aff58ef2e3aecc74fc94a817d96b92d1f
 %global gittag0 master
@@ -20,12 +24,12 @@
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
 
-Name:    mod-host
+Name: mod-host
 Version: 0.10.6.%{shortcommit0}
 Release: 1%{?dist}
 License: GPL-3.0
 Summary: LV2 host for Jack controllable via socket or command line
-Url:     https://github.com/moddevices/mod-host
+Url: https://github.com/moddevices/mod-host
 
 Vendor:       Audinux
 Distribution: Audinux

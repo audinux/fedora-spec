@@ -1,8 +1,12 @@
+# Tag: MIDI
+# Type: Standalone
+# Category: MIDI
+
 Summary: MIDI Looper
-Name:    midilooper
+Name: midilooper
 Version: 0.0.2.1
 Release: 1%{?dist}
-URL:     https://github.com/supergilbert/midilooper
+URL: https://github.com/supergilbert/midilooper
 License: GPL-3.0-or-later
 
 # ./midilooper-source.sh <tag>

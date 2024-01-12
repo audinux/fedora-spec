@@ -3,11 +3,11 @@
 # Category: Audio, Synthesizer
 # GUIToolkit: Qt5
 
-Name:    6PM
+Name: 6PM
 Version: 0.9
 Release: 2%{?dist}
 Summary: Phase Modulation Synthesizer made of 6 oscillators
-URL:     https://sourceforge.net/projects/mv-6pm/
+URL: https://sourceforge.net/projects/mv-6pm/
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

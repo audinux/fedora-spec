@@ -1,20 +1,23 @@
 # Tag: Jack, Equalizer, Compressor, Convolution, Gate, Analyzer, Reverb, Delay, MIDI
-# Type: Plugin, LV2
+# Type: Plugin, LV2, VST, LADSPA, CLAP
 # Category: Audio, Effect
 
-Name:    lsp-plugins
+Name: lsp-plugins
 Summary: Linux Studio Plugins collection
 Version: 1.2.14
 Release: 1%{?dist}
 License: GPL
-URL:     https://github.com/sadko4u/lsp-plugins
+URL: https://github.com/sadko4u/lsp-plugins
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/sadko4u/lsp-plugins/releases/download/%{version}/lsp-plugins-src-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
+BuildRequires: php-cli
+BuildRequires: chrpath
 BuildRequires: lv2-devel
 BuildRequires: ladspa-devel
 BuildRequires: jack-audio-connection-kit-devel
@@ -24,8 +27,6 @@ BuildRequires: expat-devel
 BuildRequires: mesa-libGLU-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXrandr-devel
-BuildRequires: php-cli
-BuildRequires: chrpath
 
 %description
 LSP (Linux Studio Plugins) is a collection of open-source plugins

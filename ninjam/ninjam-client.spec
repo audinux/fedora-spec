@@ -1,9 +1,13 @@
-Name:    ninjam-client
+# Tag: Audio, Live, Session
+# Type: Plugin, LV2, VST
+# Category: Audio, Tool, Session Mngmt
+
+Name: ninjam-client
 Version: 0.0.1
 Release: 2%{?dist}
 Summary: A realtime network sound client
 License: GPL-2.0-or-later
-URL:     http://www.cockos.com/ninjam/
+URL: http://www.cockos.com/ninjam/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -11,6 +15,7 @@ Distribution: Audinux
 Source0: http://www.cockos.com/ninjam/downloads/src/cclient_src_v0.01a.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: ncurses-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: libvorbis-devel

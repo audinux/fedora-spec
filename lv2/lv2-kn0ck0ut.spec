@@ -1,9 +1,13 @@
-Name:    lv2-kn0ck0ut
+# Tag: Audio, Effect
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
+Name: lv2-kn0ck0ut
 Version: 1.12
 Release: 1%{?dist}
 Summary: An LV2 spectral subtraction plugin
 License: GPL-3.0-or-later
-URL:     https://github.com/jeremysalwen/kn0ck0ut-LV2
+URL: https://github.com/jeremysalwen/kn0ck0ut-LV2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -16,7 +20,7 @@ BuildRequires: lv2-devel
 BuildRequires: fftw-devel
 BuildRequires: lv2-c++-tools-devel
 
-Requires:      lv2
+Requires: lv2
 
 %description
 Kn0ck0ut-LV2 is an LV2 plugin to perform spectral subtraction. It can be used

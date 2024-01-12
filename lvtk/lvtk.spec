@@ -1,3 +1,7 @@
+# Tag: Devel, Library
+# Type: Devel
+# Category: Programming
+
 %global debug_package %{nil}
 
 # Global variables for github repository
@@ -5,21 +9,22 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    lvtk
+Name: vtk
 Version: 2.0.0.%{shortcommit0}
 Release: 4%{?dist}
 Summary: LV2 Toolkit
 License: GPL-2.0-or-later
+URL: https://github.com/lvtk/lvtk
 
 Vendor:       Audinux
 Distribution: Audinux
 
-URL:     https://github.com/lvtk/lvtk
 Source0: https://github.com/lvtk/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
-BuildRequires: lv2-devel
+BuildRequires: gcc gcc-c++
+BuildReauires: make
 BuildRequires: python2
+BuildRequires: lv2-devel
 BuildRequires: gtkmm24-devel
 
 %description

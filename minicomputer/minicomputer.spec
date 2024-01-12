@@ -3,12 +3,12 @@
 # Category: Audio, Synthesizer
 # GUIToolkit: Fltk
 
-Name:    minicomputer
+Name: minicomputer
 Summary: Standalone Linux software synthesizer
 Version: 1.4
 Release: 2%{?dist}
 License: GPL
-URL:     https://minicomputer.sourceforge.net/
+URL: https://minicomputer.sourceforge.net/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -18,13 +18,14 @@ Source1: minicomputer-SConstruct
 Source2: https://github.com/jeremysalwen/Minicomputer-LV2/archive/master.zip#/minicomputer-lv2.zip
 
 BuildRequires: gcc gcc-c++
+BuildRequires: scons
+BuildReauires: make
+BuildRequires: unzip
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: liblo-devel
 BuildRequires: lv2-devel
 BuildRequires: fltk-devel
-BuildRequires: scons
-BuildRequires: unzip
 
 %description
 Minicomputer is a standalone Linux software synthesizer for creating experimental electronic sounds as its often

@@ -1,14 +1,18 @@
+# Tag: AI, Effect, Amp Simul
+# Type: LV2
+# Category: Plugin, Effect
+
 # Global variables for github repository
 %global commit0 0dd7c8149a6cedf9904fddad259ee4d12998d030
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    mod-neural-amp
+Name: mod-neural-amp
 Version: 0.1.%{shortcommit0}
 Release: 1%{?dist}
 Summary: An LV2 plugin based on aidadsp-lv2 that directly contains model files within the plugin.
 License: GPL-2.0-or-later
-URL:     https://github.com/moddevices/mod-neural-amp
+URL: https://github.com/moddevices/mod-neural-amp
 
 Vendor:       Audinux
 Distribution: Audinux

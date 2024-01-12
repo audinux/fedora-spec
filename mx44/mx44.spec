@@ -1,8 +1,12 @@
-Name:    mx44
+# Tag: Synthesizer
+# Type: Standalone
+# Category: Synthesizer
+
+Name: mx44
 Version: 0.44.3
 Release: 1%{?dist}
-Summary: A JACK patchbay in flow matrix style
-URL:     http://web.comhem.se/luna/
+Summary: A JACK synthesizer
+URL: http://web.comhem.se/luna/
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -11,6 +15,7 @@ Distribution: Audinux
 Source0: https://github.com/ycollet/Mx44/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: gtk2-devel
 BuildRequires: alsa-lib-devel

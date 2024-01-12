@@ -1,9 +1,13 @@
-Name:    nki
+# Tag: Audio, Tool
+# Type: Standalone
+# Category: Audio, Tool
+
+Name: nki
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: A simple console application to convert NKI files
 License: GPL-3.0-or-later
-URL:     http://www.linuxsampler.org/nkitool/
+URL: http://www.linuxsampler.org/nkitool/
 
 Vendor:       Audinux
 Distribution: Audinux

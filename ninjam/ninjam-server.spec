@@ -1,9 +1,13 @@
-Name:    ninjam-server
+# Tag: Audio, Live, Session
+# Type: Plugin, LV2, VST
+# Category: Audio, Tool, Session Mngmt
+
+Name: ninjam-server
 Version: 0.0.1
 Release: 2%{?dist}
 Summary: A realtime network sound server
 License: GPL-2.0-or-later
-URL:     http://www.cockos.com/ninjam/
+URL: http://www.cockos.com/ninjam/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -11,6 +15,7 @@ Distribution: Audinux
 Source0: http://www.cockos.com/ninjam/downloads/src/ninjam_server_0.06.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: ncurses-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: libvorbis-devel

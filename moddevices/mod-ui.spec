@@ -1,3 +1,7 @@
+# Tag: Effect, Graphic
+# Type: LV2, Plugin
+# Category: Plugin, Graphic
+
 # Global variables for github repository
 %global commit0 78cf965e5068ac3da1d6ac90bf25be312d0043f0
 %global gittag0 master
@@ -22,12 +26,12 @@
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
 
-Name:    mod-ui
+Name: mod-ui
 Version: 0.99.8.%{shortcommit0}
 Release: 1%{?dist}
 License: GPL-3.0
 Summary: Web-based interface for the MOD
-Url:     https://github.com/moddevices/mod-ui
+Url: https://github.com/moddevices/mod-ui
 
 Vendor:       Audinux
 Distribution: Audinux

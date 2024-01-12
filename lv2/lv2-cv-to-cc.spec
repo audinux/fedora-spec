@@ -1,11 +1,15 @@
+# Tag: Audio, Tool
+# Type: Plugin, LV2
+# Category: Audio, Tool
+
 %define commit0 23152a8bf6dcdf2496df0d696dfd4c1a61f67e54
 
-Name:    lv2-cv-to-cc
+Name: lv2-cv-to-cc
 Version: 0.1
 Release: 1%{?dist}
 Summary: convert LV2 CV to MIDI CC
 License: GPL-2.0-or-later
-URL:     https://github.com/polyeffects/cv_to_cc.lv2
+URL: https://github.com/polyeffects/cv_to_cc.lv2
 
 Vendor:       Audinux
 Distribution: Audinux

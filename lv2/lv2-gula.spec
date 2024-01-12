@@ -1,18 +1,23 @@
+# Tag: Audio, Modulaation
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 %define commit0 edc2be7fb6b2121a216993a8b4e7f7c114ad8257
 
-Name:    lv2-gula-plugins
+Name: lv2-gula-plugins
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: LV2 plugins which is a combination of vibrato and tremelo.
 License: GPL-3.0-or-later
-URL:     https://github.com/steveb/gula-plugins
+URL: https://github.com/steveb/gula-plugins
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/steveb/gula-plugins/archive/%{commit0}.zip#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc-c++ make
+BuildRequires: gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: boost-devel
 

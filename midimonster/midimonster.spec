@@ -1,9 +1,13 @@
-Name:    midimonster
+# Tag: MIDI, Jack, OSC, Tool
+# Type: Standalone
+# Category: MIDI, Tool
+
+Name: midimonster
 Version: 0.6
 Release: 2%{?dist}
 Summary: Multi-protocol translation software (ArtNet, MIDI, OSC, JACK MIDI/CV ...)
 License: BSD
-URL:     https://github.com/cbdevnet/midimonster
+URL: https://github.com/cbdevnet/midimonster
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -11,6 +15,7 @@ Distribution: Audinux
 Source0: https://github.com/cbdevnet/midimonster/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildReauires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: lua-devel
 BuildRequires: libevdev-devel

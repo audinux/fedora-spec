@@ -1,3 +1,7 @@
+# Tag: Editor, Video
+# Type: Standalone
+# Category: Tool, Video
+
 # Filtering of private libraries
 %global privlibs libOSC
 %global privlibs %{privlibs}|libOSC_client
@@ -19,18 +23,18 @@
 # If you have both SDL 1 and SDL 2 installed, LiVES will detect both, since it will use SDL2 for projectM and SDL1 for the SDL playback plugin.
 # Use 'SDL2' and 'projectM' together.
 
-Name:    lives-mao
+Name: lives-mao
 Version: 2022.03.08
 Release: 1%{?dist}
 Summary: Video editor and VJ tool
 License: GPL-3.0-or-later AND LGPL-3.0-or-later
-URL:     http://lives-video.com
+URL: http://lives-video.com
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./lives-sources.sh <TAG>
-# ./lives-sources.sh master
+#        ./lives-sources.sh master
 
 Source0: LiVES.tar.gz
 Source1: LiVES.appdata.xml
@@ -61,7 +65,6 @@ BuildRequires: libpng-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: opencv-devel
 BuildRequires: fftw-devel
-
 # 'tirpc' is required by 'musl-libc'
 BuildRequires: libtirpc-devel
 BuildRequires: libmatroska-devel

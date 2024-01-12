@@ -1,8 +1,12 @@
-Name:    loudness-scanner
+# Tag: Tool, Audio, Analyzer
+# Type: Standalone
+# Category: Audio, Tool
+
+Name: loudness-scanner
 Version: 0.6.0
 Release: 3%{?dist}
 Summary: A loudness scanner (according to the EBU R128 standard)
-URL:     https://github.com/jiixyj/loudness-scanner
+URL: https://github.com/jiixyj/loudness-scanner
 License: MIT
 
 Vendor:       Audinux

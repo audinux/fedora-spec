@@ -1,9 +1,13 @@
-Name:    nanoinvaders
+# Tag: Tool, Graphic
+# Type: Standalone, Plugin, LV2, VST
+# Category: Tool, Graohic
+
+Name: nanoinvaders
 Version: 0.1
 Release: 2%{?dist}
 Summary: Play space invaders in an audio plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/clearly-broken-software/nanoinvaders
+URL: https://github.com/clearly-broken-software/nanoinvaders
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -19,6 +23,7 @@ Distribution: Audinux
 Source0: nanoinvaders.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: fftw-devel

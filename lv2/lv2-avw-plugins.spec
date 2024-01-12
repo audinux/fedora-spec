@@ -1,14 +1,18 @@
+# Tag: Audio, Effect
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 # Global variables for github repository
 %global commit0 46af4c950c6fb935145e16be09808f393da69ca3
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    lv2-avw-plugins
+Name: lv2-avw-plugins
 Version: 0.0.8
 Release: 19%{?dist}
 Summary: A port of the AMS internal modules to LV2 plugins
 License: GPL-2.0-only
-URL:     https://github.com/harryhaaren/avw.lv2
+URL: https://github.com/harryhaaren/avw.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -17,12 +21,12 @@ Source0: https://github.com/harryhaaren/avw.lv2/archive/%{commit0}.tar.gz#/%{nam
 
 BuildRequires: gcc-c++
 BuildRequires: make
+BuildRequires: lvtk
+BuildRequires: python2
 BuildRequires: lv2-devel
 BuildRequires: lv2-c++-tools-devel >= 1.0.4
 BuildRequires: gtk2-devel
-BuildRequires: lvtk
 BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: python2
 
 Requires: lv2
 

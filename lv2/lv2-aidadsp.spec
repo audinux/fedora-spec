@@ -1,12 +1,16 @@
-Name:    lv2-aidadsp
+# Tag: Audio, AI
+# Type: Plugin, LV2
+# Category: Audio, Tool
+
+Name: lv2-aidadsp
 Version: 0.95
 Release: 1%{?dist}
 Summary: Aida DSP's audio plugins in lv2 format
 License: GPL-3.0-or-later
-URL:     https://github.com/moddevices/aidadsp-lv2
+URL: https://github.com/moddevices/aidadsp-lv2
 
 # Usage: ./aidadsp-lv2-source.sh <TAG>
-# ./aidadsp-lv2-source.sh v0.95
+#        ./aidadsp-lv2-source.sh v0.95
 
 Source0: aidadsp-lv2.tar.gz
 Source1: aidadsp-lv2-source.sh

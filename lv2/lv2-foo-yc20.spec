@@ -1,16 +1,21 @@
-Name:    lv2-foo-yc20-plugins
+# Tag: Audio, Organ
+# Type: Plugin, LV2
+# Category: Synthesizer
+
+Name: lv2-foo-yc20-plugins
 Version: 1.3.0
 Release: 1%{?dist}
 Summary: This is a Faust implementation of a 1969 designed Yamaha combo organ
 License: LGPL2.1
-URL:     https://github.com/sampov2/foo-yc20
+URL: https://github.com/sampov2/foo-yc20
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/sampov2/foo-yc20/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc-c++ make
+BuildRequires: gcc-c++
+BuildReauires: make
 BuildRequires: lv2-devel
 BuildRequires: gtk2-devel
 BuildRequires: cairo-devel

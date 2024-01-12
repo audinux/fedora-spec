@@ -2,11 +2,11 @@
 # Type: Standalone
 # Category: Audio
 
-Name:    lpd8editor
+Name: lpd8editor
 Version: 0.0.16
 Release: 1%{?dist}
 Summary: A linux editor for the Akai LPD8
-URL:     https://github.com/charlesfleche/lpd8editor
+URL: https://github.com/charlesfleche/lpd8editor
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

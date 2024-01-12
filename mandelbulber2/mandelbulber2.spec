@@ -2,12 +2,12 @@
 # Type: Standalone, IDE, Language
 # Category: Graphic, Tool
 
-Name:    mandelbulber2
+Name: mandelbulber2
 Version: 2.30
 Release: 1%{?dist}
 License: GPL-3.0
 Summary: 3D Mandelbrot renderer
-URL:     http://www.mandelbulber.com/
+URL: http://www.mandelbulber.com/
 
 Vendor:       Audinux
 Distribution: Audinux

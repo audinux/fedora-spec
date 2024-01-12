@@ -1,12 +1,16 @@
+# Tag: Editor, Audio
+# Type: Standalone
+# Category: DAW, Sequencer, Tool
+
 %define __provides_exclude_from ^%{_usr}/lib/musikernel2/.*$
 %global __python %{__python3}
 
-Name:    musikernel2
+Name: musikernel2
 Version: 16.05.1
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
 License: GPL-3.0-only
-URL:     https://github.com/j3ffhubb/musikernel/
+URL: https://github.com/j3ffhubb/musikernel/
 
 Vendor:       Audinux
 Distribution: Audinux

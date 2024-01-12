@@ -1,3 +1,7 @@
+# Tag: Tool
+# Type: Devel
+# Category: Tool, Programming
+
 %define debug_package %{nil}
 %define commit0 064acef0b4ae97a40e76a745f7559ce9c4b983ac
 

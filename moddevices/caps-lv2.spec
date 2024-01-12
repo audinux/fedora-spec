@@ -1,14 +1,18 @@
+# Tag: Effect
+# Type: Plugin, LV2
+# Category: Effect
+
 # Global variables for github repository
 %global commit0 250844ade88552f0e481bc911cca7794c1e68a3f
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    caps-lv2
+Name: caps-lv2
 Version: 0.9.26.%{shortcommit0}
 Release: 1%{?dist}
 Summary: Caps LV2 set of plugins from portalmod
 License: GPL-2.0-or-later
-URL:     https://github.com/moddevices/caps-lv2
+URL: https://github.com/moddevices/caps-lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -16,6 +20,7 @@ Distribution: Audinux
 Source0: https://github.com/moddevices/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 
 %description

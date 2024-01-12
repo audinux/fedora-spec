@@ -1,8 +1,12 @@
-Name:    abNinjam
+# Tag: Audio, Live, Session
+# Type: Plugin, LV2, VST
+# Category: Audio, Tool, Session Mngmt
+
+Name: abNinjam
 Version: 0.0.8
 Release: 3%{?dist}
 Summary: Ninjam LV2 / VST plugin
-URL:     https://github.com/antanasbruzas/abNinjam
+URL: https://github.com/antanasbruzas/abNinjam
 License: MIT
 
 Vendor:       Audinux
@@ -14,6 +18,7 @@ Distribution: Audinux
 Source0: abNinjam.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: lv2-devel
 BuildRequires: libX11-devel
@@ -25,7 +30,6 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: libxkbcommon-x11-devel
 BuildRequires: cairo-devel
 BuildRequires: liblo-devel
-BuildRequires: cmake make
 
 %description
 Ninjam LV2 / VST plugin.

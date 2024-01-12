@@ -1,9 +1,13 @@
-Name:    lv2-fomp-plugins
+# Tag: Audio, Effect
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
+Name: lv2-fomp-plugins
 Version: 1.2.0
 Release: 14%{?dist}
 Summary: A collection of LV2 plugins
 License: GPL-2.0-or-later
-URL:     http://drobilla.net/
+URL: http://drobilla.net/
 
 Vendor:       Audinux
 Distribution: Audinux

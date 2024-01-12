@@ -1,13 +1,13 @@
-# Tag: Guitar, Overdrive
-# Type: Plugin, LV2
-# Category: Audio, Effect
+# Tag: MIDI, Tool, Video
+# Type: Standalone
+# Category: MIDI, Tool
 
-Name:    neothesia
+Name: neothesia
 Version: 0.1.0
 Release: 1%{?dist}
 Summary: Flashy Synthesia Like Software
 License: GPL-3.0-or-later
-URL:     https://github.com/PolyMeilex/Neothesia
+URL: https://github.com/PolyMeilex/Neothesia
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -15,9 +15,8 @@ Distribution: Audinux
 Source0: https://github.com/PolyMeilex/Neothesia/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: cmake make
+BuildRequires: cmake
 BuildRequires: rust cargo
-# BuildRequires: ffmpeg-deve
 BuildRequires: alsa-lib-devel
 BuildRequires: glib2-devel
 BuildRequires: atk-devel

@@ -1,8 +1,12 @@
-Name:    midieditor
+# Tag: Editor, MIDI
+# Type: Standalone
+# Category: DAW, MIDI
+
+Name: midieditor
 Version: 3.3.2
 Release: 1%{?dist}
 Summary: Provides an interface to edit, record, and play Midi data
-URL:     https://github.com/markusschwenk/midieditor
+URL: https://github.com/markusschwenk/midieditor
 License: GPL-3.0-or-later
 
 Vendor:       Audinux

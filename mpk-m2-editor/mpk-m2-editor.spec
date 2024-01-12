@@ -10,11 +10,11 @@
 %define libname mpk_m2_editor
 %define _python_dist_allow_version_zero %{nil}
 
-Name:    mpk-m2-editor
+Name: mpk-m2-editor
 Version: 0.0.1
 Release: 3%{?dist}
 Summary: Alternative to the official AKAI MPKMini MkII Editor
-URL:     https://github.com/PiOverFour/MPK-M2-editor
+URL: https://github.com/PiOverFour/MPK-M2-editor
 License: GPL-3.0-only
 
 Vendor:       Audinux

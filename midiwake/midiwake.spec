@@ -1,3 +1,7 @@
+# Tag: MIDI, Tool
+# Type: Standalone
+# Category: MIDI, Tool
+
 Name: midiwake
 Version: 1.0.0
 Release: 1%{?dist}

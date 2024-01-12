@@ -1,9 +1,13 @@
-Name:    loopidity
+# Tag: Jack, Loop
+# Type: Standalone
+# Category: Audio, Sequencer
+
+Name: loopidity
 Version: 0.14.026
 Release: 1%{?dist}
 Summary: A multi-track, multi-channel, looping audio recorder designed for live handsfree use
 License: GPL-3.0-or-later
-URL:     https://github.com/bill-auger/loopidity
+URL: https://github.com/bill-auger/loopidity
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -12,7 +16,8 @@ Source0: https://github.com/bill-auger/loopidity/archive/refs/tags/v%{version}.t
 Source1: loopidity.jpg
 
 BuildRequires: gcc-c++ gcc
-BuildRequires: autoconf automake
+BuildRequires: autoconf
+BuildRequires: automake
 BuildRequires: SDL-devel
 BuildRequires: SDL_gfx-devel
 BuildRequires: SDL_ttf-devel

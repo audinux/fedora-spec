@@ -1,19 +1,18 @@
+# Tag: Emulator
+# Type: Plugin, LV2
+# Category: Audio, Synthesizer
 # Global variables for github repository
+
 %global commit0 a2d43931ae58561fff2c22d0885f54ebebab36d0
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-# Tag: Emulator
-# Type: Plugin, LV2
-# Category: Audio, Synthesizer
-
-
-Name:    raffosynth
+Name: raffosynth
 Version: 0.1.0
 Release: 1%{?dist}
 Summary: This is a digital emulator of a minimoog synthesizer, built as an LV2 audio plugin for Linux.
 License: GPL-3.0-or-later
-URL:     https://github.com/nicoroulet/moog
+URL: https://github.com/nicoroulet/moog
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -21,6 +20,7 @@ Distribution: Audinux
 Source0: https://github.com/nicoroulet/moog/archive/%{commit0}.tar.gz#/moog-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: lv2-c++-tools-devel
 

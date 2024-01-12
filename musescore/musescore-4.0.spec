@@ -1,3 +1,7 @@
+# Tag: Editor, Tablature, Jack, Alsa, MIDI
+# Type: Standalone
+# Category: DAW, Sequencer, Tool
+
 #
 # spec file for package musescore
 #

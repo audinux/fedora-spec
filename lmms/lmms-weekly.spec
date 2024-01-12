@@ -4,11 +4,11 @@
 
 %define commit0 f3d3a1421e2f4eb7d8dd8b35fdef1e8df2cd2cf8
 
-Name:    lmms-mao-weekly
+Name: lmms-mao-weekly
 Version: 1.2.99
 Release: 8%{?dist}
 Summary: Linux MultiMedia Studio - Weekly version
-URL:     https://lmms.io
+URL: https://lmms.io
 
 # Because dnf does not find a carla so file
 AutoReqProv: no

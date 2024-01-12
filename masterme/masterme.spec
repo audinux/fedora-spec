@@ -2,18 +2,18 @@
 # Type: Standalone
 # Category: Audio, Effect
 
-Name:    master_me
+Name: master_me
 Version: 1.2.0
 Release: 1%{?dist}
 Summary: automatic mastering plugin for live streaming, podcasts and internet radio
 License: GPL-2.0-or-later
-URL:     https://github.com/trummerschlunk/master_me
+URL: https://github.com/trummerschlunk/master_me
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./masterme-source.sh <TAG>
-# ./masterme-source.sh 1.2.0
+#        ./masterme-source.sh 1.2.0
 
 Source0: master_me.tar.gz
 Source1: masterme-source.sh

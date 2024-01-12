@@ -2,11 +2,11 @@
 # Type: Standalone
 # Category: Audio, DAW
 
-Name:    lmms-mao
+Name: lmms-mao
 Version: 1.2.2
 Release: 12%{?dist}
 Summary: Linux MultiMedia Studio
-URL:     https://lmms.io
+URL: https://lmms.io
 
 # Because dnf does not find a carla so file
 AutoReqProv: no

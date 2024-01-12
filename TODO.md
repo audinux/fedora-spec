@@ -238,6 +238,7 @@ kloncentaur: replace sh file for source download
 cadence: add desktop file
 linuxmao/fogpad: split by plugin type
 update qsampler
+fix loop192 name
 
 ## Add source.sh file in spec file:
 
@@ -303,6 +304,7 @@ MIDI, Tablature, Phaser, Tape, Tracker, Reverb, Presets
 Sfz, Sf2, Sf3, Monitoring, Video, Organ, PM, Sequencer
 Keyboard, Library, OSC, Mixer, Modular, Rack, Sampler, Session
 Synthesizer, Loop, Tool, Devel, Controller, AI, Equalizer
+Modulation, Player, Pitch
 ```
 
 ### Type:

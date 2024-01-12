@@ -1,15 +1,19 @@
-Name:    lv2-neural-amp-modeler
+# Tag: Audio, AI, Amp Simul
+# Type: Plugin, LV2
+# Category: Audio, Tool
+
+Name: lv2-neural-amp-modeler
 Version: 0.1.3
 Release: 1%{?dist}
 Summary: Neural Amp Modeler LV2 plugin implementation
 License: MIT
-URL:     https://github.com/mikeoliphant/neural-amp-modeler-lv2
+URL: https://github.com/mikeoliphant/neural-amp-modeler-lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./neural-amp-modeler-source.sh <TAG>
-# ./neural-amp-modeler-source.sh 0.1.3
+#        ./neural-amp-modeler-source.sh 0.1.3
 
 Source0: neural-amp-modeler-lv2.tar.gz
 Source1: neural-amp-modeler-source.sh

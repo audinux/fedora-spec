@@ -1,11 +1,15 @@
+# Tag: Jack, Loop
+# Type: Standalone
+# Category: Audio, Sequencer
+
 %global commit0 9ebaddc0f140f107e46ee8f2a75cad97fef8bee9
 
-Name:    lv2-loopor
+Name: lv2-loopor
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Looper plugin for LV2
 License: MIT
-URL:     https://github.com/stevie67/loopor
+URL: https://github.com/stevie67/loopor
 
 Vendor:       Audinux
 Distribution: Audinux

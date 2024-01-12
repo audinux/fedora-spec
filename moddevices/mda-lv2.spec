@@ -1,14 +1,18 @@
+# Tag: Effect
+# Type: Plugin, LV2
+# Category: Effect
+
 # Global variables for github repository
 %global commit0 3d6dd099146b72c1fe88e06679034715fb999a5b
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    mda-lv2
+Name: mda-lv2
 Version: 0.9.%{shortcommit0}
 Release: 3%{?dist}
 Summary: MDA LV2 set of plugins from portalmod
 License: GPL-2.0-or-later
-URL:     https://github.com/portalmod/mda-lv2
+URL:  https://github.com/portalmod/mda-lv2
 
 Vendor:       Audinux
 Distribution: Audinux

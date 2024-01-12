@@ -1,9 +1,13 @@
-Name:    mod-gxpitchshifter
+# Tag: Effect, Pitch
+# Type: Plugin, LV2
+# Category: Effect
+
+Name: mod-gxpitchshifter
 Version: 1.0.3
 Release: 1%{?dist}
 Summary: Guitarix compatible mod-pitchshifter LV2 set of plugins from portalmod
 License: GPL-2.0-or-later
-URL:     https://github.com/ycollet/mod-pitchshifter
+URL: https://github.com/ycollet/mod-pitchshifter
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -11,10 +15,11 @@ Distribution: Audinux
 Source0: https://github.com/ycollet/mod-pitchshifter/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
+BuildRequires: python3
 BuildRequires: lv2-devel
 BuildRequires: fftw-devel
 BuildRequires: fftw
-BuildRequires: python3
 BuildRequires: python3-mpmath
 BuildRequires: armadillo-devel
 BuildRequires: SuperLU-devel

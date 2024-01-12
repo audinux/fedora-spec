@@ -3,12 +3,12 @@
 # Category: Audio, Effect
 # LastSourceUpdate: 2020
 
-Name:    lv2-noise-repellent
+Name: lv2-noise-repellent
 Version: 0.2.3
 Release: 5%{?dist}
 Summary: A lv2 plug-in for broadband noise reduction.
 License: GPL-2.0-or-later
-URL:     https://github.com/lucianodato/noise-repellent
+URL: https://github.com/lucianodato/noise-repellent
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -1,11 +1,15 @@
+# Tag: Jack, Loop
+# Type: Standalone
+# Category: Audio, Sequencer
+
 %global commit0 91f97ca022ad91a26ca2afd16b698bc88c4bd0f4
 
-Name:    lv2-loop192
+Name: lv2-loop192
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: minimal live MIDI looper
 License: GPL-3.0
-URL:     https://github.com/jean-emmanuel/loop192
+URL: https://github.com/jean-emmanuel/loop192
 
 Vendor:       Audinux
 Distribution: Audinux

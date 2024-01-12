@@ -1,9 +1,13 @@
-Name:    lv2-ir
+# Tag: Audio, Convolution
+# Type: Plugin, LV2
+# Category: Audio, Tool
+
+Name: lv2-ir
 Version: 1.3.4
 Release: 1%{?dist}
 Summary: IR LV2 convolution reverb
 License: GPL-2.0-or-later
-URL:     https://github.com/tomscii/ir.lv2
+URL: https://github.com/tomscii/ir.lv2
 
 Vendor:       Audinux
 Distribution: Audinux

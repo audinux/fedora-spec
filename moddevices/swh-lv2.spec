@@ -1,14 +1,18 @@
+# Tag: Effect
+# Type: LV2, Plugin
+# Category: Effect
+
 # Global variables for github repository
 %global commit0 810b427069441ee365c819220d1515b2d68d941b
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    swh-lv2
+Name: swh-lv2
 Version: 0.9.%{shortcommit0}
 Release: 2%{?dist}
 Summary: SWH LV2 set of plugins from portalmod
 License: GPL-2.0-or-later
-URL:     https://github.com/portalmod/swh-lv2
+URL: https://github.com/portalmod/swh-lv2
 
 Vendor:       Audinux
 Distribution: Audinux

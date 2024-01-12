@@ -1,9 +1,13 @@
+# Tag: Presets, Video
+# Type: Presets
+# Category: Tool
+
 Summary: Additional presets for ProjectM
-Name:    projectM-extra-presets
+Name: projectM-extra-presets
 Version: 1.0.0
 Release: 3%{?dist}
 License: GPL-2.0-or-later AND GPL-3.0-only AND LicenseRef-OpenMusic-green
-URL:     http://projectm.sourceforge.net
+URL: http://projectm.sourceforge.net
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -20,7 +24,8 @@ Source8: http://ycollette.free.fr/Milkdrop/CreamOfTheCrop_20200216.zip
 
 BuildArch: noarch
 
-BuildRequires: p7zip tar
+BuildRequires: p7zip
+BuildReauires: tar
 
 %description
 A collection of additional preset for projectM.

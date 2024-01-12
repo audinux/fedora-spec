@@ -1,14 +1,18 @@
+# Tag: Effect
+# Type: LV2, Plugin
+# Category: Effect
+
 # Global variables for github repository
 %global commit0 cab6e0dfb2ce20e4ad34b067d1281ec0b193598a
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    tap-lv2
+Name: tap-lv2
 Version: 0.9.%{shortcommit0}
 Release: 3%{?dist}
 Summary: TAP LV2 set of plugins from portalmod
 License: GPL-2.0-or-later
-URL:     https://github.com/portalmod/tap-lv2
+URL: https://github.com/portalmod/tap-lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -16,6 +20,7 @@ Distribution: Audinux
 Source0: https://github.com/portalmod/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 
 %description

@@ -1,3 +1,7 @@
+# Tag: Audio, Effect
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 Name: lv2-invada-plugins
 Version: 1.2.0
 Release: 29%{?dist}
@@ -13,8 +17,8 @@ URL: http://www.invadarecords.com/Downloads.php?ID=00000264
 # one, which does not include that.
 Source0: http://launchpad.net/invada-studio/lv2/1.2/+download/invada-studio-plugins-lv2_%{version}-nopkg.tgz
 
-BuildRequires: make
 BuildRequires: gcc
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: gtk2-devel
 

@@ -1,9 +1,13 @@
-Name:    marsyas
+# Tag: Editor, Analyzer
+# Type: Standalone
+# Category: Graphic, Tool, Audio
+
+Name: marsyas
 Version: 0.5.0
 Release: 1%{?dist}
 Summary: Marsyas - Music Analysis, Retrieval and Synthesis for Audio Signals
 License: GPL-2.0-or-later
-URL:     https://github.com/marsyas/marsyas
+URL: https://github.com/marsyas/marsyas
 
 Vendor:       Audinux
 Distribution: Audinux

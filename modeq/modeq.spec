@@ -1,10 +1,15 @@
+# Tag: Equalizer
+# Type: LV2, Plugin
+# Category: Effect
+
 %define commit0 c5567a3fe737ae76d9083bd664d1b93b501333b4
-Name:    modeq
+
+Name: modeq
 Version: 0.4.0
 Release: 1%{?dist}
 Summary: Free EQ audio plugin with modulation
 License: GPL-3.0-only
-URL:     https://github.com/tobanteAudio/modEQ
+URL: https://github.com/tobanteAudio/modEQ
 
 Vendor:       Audinux
 Distribution: Audinux

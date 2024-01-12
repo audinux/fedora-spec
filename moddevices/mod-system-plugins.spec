@@ -1,14 +1,18 @@
+# Tag: Effect, Tool
+# Type: LV2, Plugin
+# Category: Plugin, Effect, Tool
+
 # Global variables for github repository
 %global commit0 edd5216ac8ad7ef6fc0e6dd02762759db7a15986
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    mod-system-plugins
+Name: mod-system-plugins
 Version: 0.1.%{shortcommit0}
 Release: 1%{?dist}
 Summary: LV2 plugin versions of the I/O processing found in the MOD Dwarf
 License: GPL-2.0-or-later
-URL:     https://github.com/moddevices/mod-system-plugins
+URL: https://github.com/moddevices/mod-system-plugins
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -16,6 +20,7 @@ Distribution: Audinux
 Source0: https://github.com/moddevices/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 
 %description

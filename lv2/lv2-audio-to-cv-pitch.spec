@@ -1,12 +1,16 @@
-Name:    lv2-audio-to-cv-pitch
+# Tag: Audio, Tool
+# Type: Plugin, LV2
+# Category: Audio, Tool
+
+Name: lv2-audio-to-cv-pitch
 Version: 0.1
 Release: 1%{?dist}
 Summary: Plugin that converts audio to CV pitch (1 volt per Octave)
 License: GPL-3.0-or-later
-URL:     https://github.com/BramGiesen/audio-to-cv-pitch-lv2
+URL: https://github.com/BramGiesen/audio-to-cv-pitch-lv2
 
 # Usage: ./audio-to-cv-pitch-source.sh <TAG>
-# ./audio-to-cv-pitch-source.sh 27f5a5211ce04159016883870ff51425ee5b49e6
+#        ./audio-to-cv-pitch-source.sh 27f5a5211ce04159016883870ff51425ee5b49e6
 
 Source0: audio-to-cv-pitch-lv2.tar.gz
 Source1: audio-to-cv-pitch-source.sh

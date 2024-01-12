@@ -1,9 +1,13 @@
-Name:    lv2-mrfreeze
+# Tag: Audio, Effect
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
+Name: lv2-mrfreeze
 Version: 0.1
 Release: 1%{?dist}
 Summary: An audio freeze LV2 plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/romi1502/MrFreeze
+URL: https://github.com/romi1502/MrFreeze
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -11,6 +15,7 @@ Distribution: Audinux
 Source0: https://github.com/romi1502/MrFreeze/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: fftw-devel
 BuildRequires: lv2-devel
 BuildRequires: eigen3-devel

@@ -1,11 +1,15 @@
-Name:    lv2-triceratops
+# Tag: Synthesizer
+# Type: Plugin, LV2
+# Category: Synthesizer
+
+Name: lv2-triceratops
 Version: 0.5.0
 Release: 13%{?dist}
 Summary: An LV2 polyphonic synthesizer
 # license specified in headers and in plugin manifest (triceratops.ttl) is ISC
 # http://opensource.org/licenses/isc
 License: ISC
-URL:     https://sourceforge.net/projects/triceratops/
+URL: https://sourceforge.net/projects/triceratops/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -14,12 +18,12 @@ Source0: https://sourceforge.net/projects/triceratops/files/triceratops_v0.5.0_O
 
 BuildRequires: gcc-c++
 BuildRequires: make
+BuildRequires: python2
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libsndfile-devel
 BuildRequires: lv2-devel
 BuildRequires: gtkmm24-devel
-BuildRequires: python2
 
 %description
 Triceratops a polyphonic subtractive synthesizer plugin for use with the LV2

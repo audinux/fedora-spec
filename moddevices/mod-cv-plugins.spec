@@ -1,14 +1,18 @@
+# Tag: Effect, Tool
+# Type: Plugin, LV2
+# Category: Effect, Tool
+
 # Global variables for github repository
 %global commit0 5b175482a32094f39eb46d569ffbc718b157a0ee
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    mod-cv-plugins
+Name: mod-cv-plugins
 Version: 0.1.%{shortcommit0}
 Release: 1%{?dist}
 Summary: Control Voltage Plugins
 License: GPL-2.0-or-later
-URL:     https://github.com/moddevices/mod-cv-plugins
+URL: https://github.com/moddevices/mod-cv-plugins
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -19,6 +23,7 @@ Source0: mod-cv-plugins.tar.gz
 Source1: moddevices-source.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 
 %description

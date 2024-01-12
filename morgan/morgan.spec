@@ -1,9 +1,13 @@
-Name:    morgan
+# Tag: Organ, Synthesizer
+# Type: Plugin, VST3, Standalone
+# Category: Audio, Synthesizer
+
+Name: morgan
 Version: 1.2.0
 Release: 1%{?dist}
 Summary: Organ-inspired VST3 plug-ins
 License: GPL-3.0-only
-URL:     https://github.com/getdunne/MOrgan
+URL: https://github.com/getdunne/MOrgan
 
 Vendor:       Audinux
 Distribution: Audinux

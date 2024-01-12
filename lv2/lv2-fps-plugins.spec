@@ -1,9 +1,13 @@
-Name:    lv2-fps-plugins
+# Tag: Audio, Effect
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
+Name: lv2-fps-plugins
 Version: 1.0beta3
 Release: 1%{?dist}
 Summary: A collection of plugins
 License: GPL-3.0-or-later
-URL:     https://github.com/fps/fps-plugins.lv2
+URL: https://github.com/fps/fps-plugins.lv2
 
 Vendor:       Audinux
 Distribution: Audinux

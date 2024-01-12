@@ -1,4 +1,8 @@
-Name:    lv2-EQ10Q-plugins
+# Tag: Audio, Equalizer
+# Type: Plugin, LV2
+# Category: Audio, Tool
+
+Name: lv2-EQ10Q-plugins
 Version: 2.2
 Release: 8%{?dist}
 Summary: LV2 Plugin: Parametric audio equalizer with 12 different filter types
@@ -7,7 +11,7 @@ Summary: LV2 Plugin: Parametric audio equalizer with 12 different filter types
 # only only included in the parameq_gui.so library.  The other library,
 # paramEQ.so, contains only GPLv2+ code.
 License: GPL-2.0-or-later AND GPL-3.0-or-later
-URL:     http://eq10q.sourceforge.net/
+URL: http://eq10q.sourceforge.net/
 
 Source0: http://downloads.sourceforge.net/project/eq10q/eq10q-%{version}.tar.gz
 # Patches from debian package

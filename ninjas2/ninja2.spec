@@ -1,14 +1,18 @@
+# Tag: Audio, Sampler
+# Type: Standalone, Plugin, LV2, VST
+# Category: Plugin, Sampler
+
 # Global variables for github repository
 %global commit0 a767a9eea4e543061993290168a321d10c08b03c
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Summary: A sample slicer audio plugin
-Name:    ninjas2
+Name: ninjas2
 Version: 0.2.0
 Release: 3%{?dist}
 License: GPL
-URL:     https://github.com/clearly-broken-software/ninjas2
+URL: https://github.com/clearly-broken-software/ninjas2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -25,6 +29,7 @@ Distribution: Audinux
 Source0: ninjas2.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: fftw-devel

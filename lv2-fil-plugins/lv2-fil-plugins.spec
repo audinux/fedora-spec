@@ -1,7 +1,11 @@
+# Tag: Equalizer
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 %global pkgname lv2fil
 
 Summary: Four-band parametric equalizers
-Name:    lv2-fil-plugins
+Name: lv2-fil-plugins
 Version: 2.0
 Release: 13%{?dist}
 # lv2_ui.h is LGPLv2+
@@ -9,20 +13,19 @@ Release: 13%{?dist}
 # The rest is GPLv2+
 # The author claims GPLv2 for the software
 License: LGPLv2+ and GPLv2 and GPLv2+
-URL:     http://nedko.arnaudov.name/soft/lv2fil/
+URL: http://nedko.arnaudov.name/soft/lv2fil/
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source:  https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/lv2fil/2.0+20100312.git18130f5a+dfsg0-2/lv2fil_2.0+20100312.git18130f5a+dfsg0.orig.tar.gz#/lv2fil-2.0.tar.gz
+Source: https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/lv2fil/2.0+20100312.git18130f5a+dfsg0-2/lv2fil_2.0+20100312.git18130f5a+dfsg0.orig.tar.gz#/lv2fil-2.0.tar.gz
 
 BuildRequires: gcc
 BuildRequires: gcc-c++
-BuildRequires: sed
 BuildRequires: make
+BuildRequires: python2
 BuildRequires: liblo-devel
 BuildRequires: lv2-devel
-BuildRequires: python2
 
 Requires: lv2
 Requires: pycairo

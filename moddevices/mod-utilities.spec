@@ -1,14 +1,18 @@
+# Tag: Effect, Tool
+# Type: LV2, Plugin
+# Category: Plugin, Tool
+
 # Global variables for github repository
 %global commit0 b8a9d4558efc136c4ce90657a5958064640074f1
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    mod-utilities
+Name:  mod-utilities
 Version: 0.1.%{shortcommit0}
 Release: 1%{?dist}
 Summary: Some utilities lv2 plugins
 License: GPL-2.0-or-later
-URL:     https://github.com/moddevices/mod-utilities
+URL: https://github.com/moddevices/mod-utilities
 
 Vendor:       Audinux
 Distribution: Audinux

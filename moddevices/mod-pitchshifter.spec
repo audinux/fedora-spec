@@ -1,14 +1,18 @@
+# Tag: Pitch
+# Type: LV2
+# Category: Plugin, Effect
+
 # Global variables for github repository
 %global commit0 efd26e6b02ddf9683ffae00a59ad72b5ab59d585
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    mod-pitchshifter
+Name: mod-pitchshifter
 Version: 0.9.%{shortcommit0}
 Release: 3%{?dist}
 Summary: mod-pitchshifter LV2 set of plugins from portalmod
 License: GPL-2.0-or-later
-URL:     https://github.com/portalmod/mod-pitchshifter
+URL: https://github.com/portalmod/mod-pitchshifter
 
 Vendor:       Audinux
 Distribution: Audinux

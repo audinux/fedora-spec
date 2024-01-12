@@ -1,9 +1,13 @@
-Name:    lv2-euclidean-rhythms
+# Tag: Audio, Sequencer
+# Type: Plugin, LV2
+# Category: Audio, Sequencer
+
+Name: lv2-euclidean-rhythms
 Version: 0.1.1
 Release: 1%{?dist}
 Summary: Implementation of the Euclidean-Rhythms idea in the form of plugin
 License: GPL-3.0-only
-URL:     https://github.com/bruno-unna/euclidean-rhythms
+URL: https://github.com/bruno-unna/euclidean-rhythms
 
 Vendor:       Audinux
 Distribution: Audinux

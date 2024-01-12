@@ -1,11 +1,15 @@
+# Tag: Audio, Player
+# Type: Standalone
+# Category: Audio, Tool
+
 %define commit0 c5ef4cb50faa4acbb78bd339558f37f2b050cd8e
 
-Name:    minigbs
+Name: minigbs
 Summary: Small .gbs chiptune player for Linux
 Version: 1.4.2
 Release: 1%{?dist}
 License: MIT
-URL:     https://github.com/baines/MiniGBS
+URL: https://github.com/baines/MiniGBS
 
 Vendor:       Audinux
 Distribution: Audinux

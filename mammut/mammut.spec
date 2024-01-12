@@ -1,23 +1,28 @@
+# Tag: Editor, Audio
+# Type: Standalone
+# Category: Audio
+
 # Global variables for github repository
 %global commit0 71986a48f10c62f622421c204611b5b354fbad19
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    mammut
+Name: mammut
 Version: 0.61.%{shortcommit0}
 Release: 2%{?dist}
 Summary: A sound editor with a non-intuitive sound transformation approach using one single gigantic analysis (no windows)
 License: GPL-3.0-only
-URL:     https://github.com/kmatheussen/mammut/
+URL: https://github.com/kmatheussen/mammut/
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/kmatheussen/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1: mammut_globals.c
-Patch0:  mammut_0001-fix-juce-encoding.patch
+Patch0: mammut_0001-fix-juce-encoding.patch
 
 BuildRequires: gcc gcc-c++
+BuildReauires: make
 BuildRequires: libX11-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: alsa-lib-devel

@@ -1,8 +1,12 @@
-Name:    mapmap
+# Tag: Editor, Video
+# Type: Standalone
+# Category: Graphic, Tool
+
+Name: mapmap
 Version: 0.6.2
 Release: 1%{?dist}
 Summary: Open source video mapping software
-URL:     https://mapmapteam.github.io
+URL: https://mapmapteam.github.io
 License: GPL-3.0-only
 
 Vendor:       Audinux

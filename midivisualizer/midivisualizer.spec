@@ -1,8 +1,12 @@
-Name:    midivisualizer
+# Tag: MIDI, Video, Tool
+# Type: Standalone
+# Category: MIDI, Tool
+
+Name: midivisualizer
 Version: 7.2
 Release: 1%{?dist}
 Summary: A small MIDI visualizer tool, using OpenGL
-URL:     https://github.com/kosua20/MIDIVisualizer
+URL: https://github.com/kosua20/MIDIVisualizer
 License: MIT
 
 Vendor:       Audinux
@@ -12,13 +16,13 @@ Source0: https://github.com/kosua20/MIDIVisualizer/archive/refs/tags/v%{version}
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
+BuildRequires: chrpath
 BuildRequires: alsa-lib-devel
 BuildRequires: compat-ffmpeg4
 BuildRequires: glfw-devel
 BuildRequires: gtk3-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libnotify-devel
-BuildRequires: chrpath
 BuildRequires: desktop-file-utils
 
 %description

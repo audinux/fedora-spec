@@ -1,14 +1,18 @@
+# Tag: Effect, Delay
+# Type: Plugin, LV2, VST
+# Category: Effect
+
 # Global variables for github repository
 %global commit0 bf8e8f714d530789afbca4611e8e25c744ec5890
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    mod-dm-graindelay
+Name: mod-dm-graindelay
 Version: 0.1.%{shortcommit0}
 Release: 1%{?dist}
 License: MIT
 Summary: Granular delay, lv2 & vst audio plugin
-Url:     https://github.com/moddevices/dm-GrainDelay
+Url: https://github.com/moddevices/dm-GrainDelay
 
 Vendor:       Audinux
 Distribution: Audinux
