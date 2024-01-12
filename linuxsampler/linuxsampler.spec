@@ -3,11 +3,11 @@
 # Category: Audio, Sampler
 
 Summary: Linux Sampler
-Name:    linuxsampler
+Name: linuxsampler
 Version: 2.1.1
 Release: 2%{?dist}
 License: GPL
-URL:     https://www.LinuxSampler.org/
+URL: https://www.LinuxSampler.org/
 
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA

@@ -2,22 +2,21 @@
 # Type: Standalone
 # Category: Audio, Tool
 
-Name:    Cadence
+Name: Cadence
 Version: 0.9.1
 Release: 5%{?dist}
 Summary: JACK control center
 License: GPL-2.0-or-later
-URL:     https://github.com/falkTX/Cadence
+URL: https://github.com/falkTX/Cadence
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/falkTX/Cadence/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0:  cadence_001_fedora_support.patch
-Patch1:  cadence_002_add_missing_include.patch
+Patch0: cadence_001_fedora_support.patch
+Patch1: cadence_002_add_missing_include.patch
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: python3-qt4-devel
 BuildRequires: python3-qt5-devel

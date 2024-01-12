@@ -3,11 +3,11 @@
 # Category: Audio
 
 Summary: LinuxSampler Control Protocol library
-Name:    liblscp
+Name: liblscp
 Version: 0.9.4
 Release: 1%{?dist}
 License: GPL
-URL:     https://www.linuxsampler.org
+URL: https://www.linuxsampler.org
 
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA

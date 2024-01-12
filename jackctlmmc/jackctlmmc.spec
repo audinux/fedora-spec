@@ -1,9 +1,13 @@
+# Tag: Jack
+# Type: Standalone
+# Category: Audio, Tool
+
 Summary: Allows control over JACK transport via Midi
-Name:    jackctlmmc
+Name: jackctlmmc
 Version: 4
 Release: 22%{?dist}
 License: GPL-2.0-only
-URL:     https://sourceforge.net/projects/%{name}
+URL: https://sourceforge.net/projects/%{name}
 
 Source0: https://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 

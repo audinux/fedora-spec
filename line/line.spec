@@ -2,18 +2,18 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
-Name:    line
+Name: line
 Version: 0.4.19
 Release: 1%{?dist}
 Summary: tiny command-line midi sequencer and language for live coding
 License: MIT
-URL:     https://github.com/pd3v/line
+URL: https://github.com/pd3v/line
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./line-source.sh <TAG>
-# ./line-source.sh v0.4.19
+#        ./line-source.sh v0.4.19
 
 Source0: line.tar.gz
 Source1: line_CMakeLists.txt

@@ -17,18 +17,18 @@
 
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 
-Name:    ladspa-vocoder
+Name: ladspa-vocoder
 Version: 0.4
 Release: 1%{?dist}
 Summary: LADSPA vocoder plugin
 License: GPL-2.0+
-Url:     https://www.sirlab.de/linux/download
+Url: https://www.sirlab.de/linux/download
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://www.sirlab.de/linux/download/vocoder-ladspa-%{version}.tgz
-Patch1:  ladspa-vocoder-0001-add-attributes.patch
+Patch1: ladspa-vocoder-0001-add-attributes.patch
 
 BuildRequires: gcc
 BuildRequires: make

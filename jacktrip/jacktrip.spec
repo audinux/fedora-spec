@@ -3,11 +3,11 @@
 # Category: Audio, Sampler, Tool
 
 Summary: Multimachine jam sessions over the internet
-Name:    jacktrip
+Name: jacktrip
 Version: 2.1.0
 Release: 2%{?dist}
 License: STK
-URL:     https://ccrma.stanford.edu/software/jacktrip/
+URL: https://ccrma.stanford.edu/software/jacktrip/
 
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA

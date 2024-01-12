@@ -7,11 +7,11 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    kpp
+Name: kpp
 Version: 1.2.1
 Release: 2%{?dist}
 Summary: Kapitonov Plugins Pack for guitar
-URL:     https://github.com/olegkapitonov/Kapitonov-Plugins-Pack
+URL: https://github.com/olegkapitonov/Kapitonov-Plugins-Pack
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -19,7 +19,9 @@ Distribution: Audinux
 
 Source0: https://github.com/olegkapitonov/Kapitonov-Plugins-Pack/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
-BuildRequires: gcc gcc-c++ make sed
+BuildRequires: gcc gcc-c++
+BuildRequires: faust
+BuildRequires: meson
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: lv2-devel
 BuildRequires: ladspa-devel
@@ -30,10 +32,8 @@ BuildRequires: cairo-devel
 BuildRequires: zita-resampler-devel
 BuildRequires: zita-convolver-devel
 BuildRequires: boost-devel
-BuildRequires: faust
 BuildRequires: faust-osclib-devel
 BuildRequires: fftw-devel
-BuildRequires: meson
 
 %description
 A set of plugins for guitar sound processing

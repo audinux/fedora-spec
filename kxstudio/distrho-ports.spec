@@ -1,15 +1,15 @@
-%global gittag0 2021-03-15
-
 # Tag: Guitar, Equalizer, Convolution, Amp Simul, Overdrive
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer, Effect
 
-Name:    DISTRHO-Ports
+%global gittag0 2021-03-15
+
+Name: DISTRHO-Ports
 Version: 1.1.0
 Release: 4%{?dist}
 Summary: A set of LV2 plugins
 License: GPL-2.0-or-later
-URL:     https://github.com/DISTRHO/DISTRHO-Ports
+URL: https://github.com/DISTRHO/DISTRHO-Ports
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -17,6 +17,7 @@ Distribution: Audinux
 Source0: https://github.com/DISTRHO/DISTRHO-Ports/archive/%{gittag0}.tar.gz#/%{name}-%{gittag0}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: meson
 BuildRequires: ladspa-devel
 BuildRequires: liblo-devel
 BuildRequires: alsa-lib-devel
@@ -28,8 +29,6 @@ BuildRequires: libXcursor-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 BuildRequires: fftw-devel
-BuildRequires: cmake
-BuildRequires: meson
 
 %description
 A set of LV2 plugins

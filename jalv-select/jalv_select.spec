@@ -1,3 +1,7 @@
+# Tag: Jack, Rack
+# Type: Standalone
+# Category: Tool
+
 # Global variables for github repository
 %global commit0 aab00aadee7e9ea498bc59c5cd819505fe8b8c1d
 %global gittag0 master

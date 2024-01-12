@@ -1,11 +1,15 @@
+# Tag: Rack, Tool
+# Type: Standalone
+# Category: Tool, Audio
+
 %global debug_package %{nil}
 
-Name:    LinVst3
+Name: LinVst3
 Version: 4.9
 Release: 1%{?dist}
 Summary: Linux Windows vst3 wrapper/bridge
 License: GPL-3.0-only
-URL:     https://github.com/osxmidi/linvst3
+URL: https://github.com/osxmidi/linvst3
 
 Source0: https://download.steinberg.net/sdk_downloads/vst-sdk_3.7.0_build-116_2020-07-31.zip
 Source1: %{url}/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz

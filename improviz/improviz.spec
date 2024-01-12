@@ -1,11 +1,15 @@
+# Tag: MIDI
+# TYpe: IDE, Standalone
+# Category: Tool, MIDI, Sequencer
+
 %global debug_package %{nil}
 
-Name:    improviz
+Name: improviz
 Summary: A live-coded visual performance tool
 Version: 1.1
 Release: 3%{?dist}
 License: BSD
-URL:     https://github.com/rumblesan/improviz
+URL: https://github.com/rumblesan/improviz
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -18,6 +22,7 @@ BuildRequires: ghc
 BuildRequires: ghc-network-devel
 BuildRequires: stack
 BuildRequires: make
+BuildRequires: unzip
 BuildRequires: gmp-devel
 BuildRequires: libXrandr-devel
 BuildRequires: libXi-devel
@@ -30,7 +35,6 @@ BuildRequires: mesa-libGLU-devel
 BuildRequires: glfw-devel
 BuildRequires: libXxf86vm-devel
 BuildRequires: desktop-file-utils
-BuildRequires: unzip
 
 %description
 Improviz is a live-coding environment built for creating visual performances of abstract shapes,

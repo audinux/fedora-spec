@@ -3,11 +3,11 @@
 # Category: Audio, Sampler
 
 Summary: Instrument editor for gig files
-Name:    gigedit
+Name: gigedit
 Version: 1.1.1
 Release: 2%{?dist}
 License: GPL2
-URL:     http://www.linuxsampler.org/
+URL: http://www.linuxsampler.org/
 
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA

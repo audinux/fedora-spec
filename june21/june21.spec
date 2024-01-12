@@ -1,8 +1,12 @@
-Name:    june21
+# Tag: Synthesizer
+# Type: Plugin, VST3
+# Category: Synthesizer
+
+Name: june21
 Version: 0.9.6
 Release: 1%{?dist}
 Summary: Alpha juno 2 emulator using CSound & Cabbage
-URL:     https://github.com/mikerodd/june-21
+URL: https://github.com/mikerodd/june-21
 License: GPL-3.0-or-later
 
 # TODO:
@@ -16,12 +20,12 @@ Source0: https://github.com/mikerodd/june-21/archive/refs/tags/v0.9.6.tar.gz#/%{
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: git
-BuildRequires: jack-audio-connection-kit-devel
-BuildRequires: csound-devel
-BuildRequires: alsa-lib-devel
 BuildRequires: texlive-pdftex
 BuildRequires: texinfo
 BuildRequires: Cabbage
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: csound-devel
+BuildRequires: alsa-lib-devel
 
 %description
 Roland Juno-1 / Juno-2 / MKS-50 emulator using CSound & Cabbage

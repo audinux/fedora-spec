@@ -15,12 +15,12 @@
 # Type: Plugin, LV2, VST
 # Category: Audio, Effect
 
-Name:    ChowCentaur
+Name: ChowCentaur
 Version: 1.4.0
 Release: 1%{?dist}
 Summary: Digital emulation of the Klon Centaur guitar pedal
 License: BSD-3-Clause
-URL:     https://github.com/jatinchowdhury18/KlonCentaur
+URL: https://github.com/jatinchowdhury18/KlonCentaur
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -33,7 +33,8 @@ Source0: KlonCentaur.tar.gz
 Source1: source_chowcentaur.sh
 
 BuildRequires: gcc-c++
-BuildRequires: make
+BuildRequires: JUCE
+BuildRequires: cmake
 BuildRequires: pkgconfig(alsa)
 BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xinerama)
@@ -48,8 +49,6 @@ BuildRequires: libXrandr-devel
 BuildRequires: libXcursor-devel
 BuildRequires: xsimd-devel
 BuildRequires: lv2-devel
-BuildRequires: JUCE
-BuildRequires: cmake
 
 %description
 The model is constructed using a variety of circuit modelling techniques,

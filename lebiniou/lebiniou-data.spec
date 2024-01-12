@@ -1,8 +1,12 @@
-Name:    lebiniou-data
+# Tag: Live, Presets
+# Type: Presets
+# Category: Graphic
+
+Name: lebiniou-data
 Version: 3.66.0
 Release: 5%{?dist}
 Summary: Lebiniou is an audio spectrum visualizer - data package
-URL:     https://biniou.net/
+URL: https://biniou.net/
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -14,8 +18,10 @@ Source0: https://gitlab.com/lebiniou/lebiniou-data/-/archive/version-%{version}/
 BuildArch: noarch
 
 BuildRequires: make
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: libtool
 BuildRequires: jansson-devel
-BuildRequires: autoconf automake libtool
 
 %description
 

@@ -2,12 +2,12 @@
 # Type: Plugin, LV2, VST
 # Category: Audio, Effect
 
-Name:    ChowMatrix
+Name: ChowMatrix
 Version: 1.3.0
 Release: 1%{?dist}
 Summary: Matrix delay effect
 License: BSD-3-Clause
-URL:     https://github.com/Chowdhury-DSP/ChowMatrix
+URL: https://github.com/Chowdhury-DSP/ChowMatrix
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -20,7 +20,8 @@ Source0: ChowMatrix.tar.gz
 Source1: source_chowmatrix.sh
 
 BuildRequires: gcc-c++
-BuildRequires: make
+BuildRequires: JUCE
+BuildRequires: cmake
 BuildRequires: pkgconfig(alsa)
 BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xinerama)
@@ -35,8 +36,6 @@ BuildRequires: libXrandr-devel
 BuildRequires: libXcursor-devel
 BuildRequires: xsimd-devel
 BuildRequires: lv2-devel
-BuildRequires: JUCE
-BuildRequires: cmake
 
 %description
 CHOW Matrix is a delay effect, made up of an infinitely growable tree

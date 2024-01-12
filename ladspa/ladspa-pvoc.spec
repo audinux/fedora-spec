@@ -2,12 +2,12 @@
 # Type: LADSPA
 # Category: Audio, Synthesizer
 
-Name:    ladspa-pvoc
+Name: ladspa-pvoc
 Version: 0.1.12
 Release: 1%{?dist}
 Summary: LADSPA plugins for time compression/expansion of sound data making use of the phase-vocoding technique
 License: GPL-3.0+
-Url:     http://quitte.de/dsp/pvoc.html
+Url: http://quitte.de/dsp/pvoc.html
 
 Vendor:       Audinux
 Distribution: Audinux

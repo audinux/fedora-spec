@@ -1,9 +1,13 @@
-Name:    Ildaeil
+# Tag: Rack
+# Type: Plugin, LV2, VST3, CLAP, VST, Standalone
+# Category: Plugin
+
+Name: Ildaeil
 Version: 1.3
 Release: 1%{?dist}
 Summary: mini-plugin host as plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/DISTRHO/Ildaeil
+URL: https://github.com/DISTRHO/Ildaeil
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -1,9 +1,13 @@
-Name:    linux-show-player
+# Tag: Editor, Audio
+# Type: Standalone
+# Category: Audio, Sampler, Sequencer
+
+Name: linux-show-player
 Version: 0.5.3
 Release: 1%{?dist}
 Summary: A Cue player designed for stage productions
 License: GPL-2.0-or-later
-URL:     https://github.com/FrancescoCeruti/linux-show-player
+URL: https://github.com/FrancescoCeruti/linux-show-player
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -14,7 +18,6 @@ BuildArch: noarch
 
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
-
 BuildRequires: alsa-lib-devel
 BuildRequires: desktop-file-utils
 

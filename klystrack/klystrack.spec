@@ -8,11 +8,11 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Summary: Chiptune tracker for making chiptune-like music on a modern computer.
-Name:    klystrack
+Name: klystrack
 Version: 1.7.6
 Release: 4%{?dist}
 License: GPL
-URL:     https://kometbomb.github.io/klystrack/
+URL: https://kometbomb.github.io/klystrack/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -26,7 +26,6 @@ Source1: klystrack-source.sh
 BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: alsa-lib-devel
-BuildRequires: desktop-file-utils
 BuildRequires: SDL2-devel
 BuildRequires: SDL2_gfx-devel
 BuildRequires: SDL2_image-devel

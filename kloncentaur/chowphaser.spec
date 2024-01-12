@@ -1,13 +1,13 @@
 # Tag: Guitar, Phaser
-# Type: Plugin, LV2, VST
+# Type: Plugin, VST3
 # Category: Audio, Effect
 
-Name:    ChowPhaser
+Name: ChowPhaser
 Version: 1.1.1
 Release: 1%{?dist}
 Summary: Phaser effect based loosely on the Schulte Compact Phasing 'A'
 License: BSD-3-Clause
-URL:     https://github.com/jatinchowdhury18/ChowPhaser
+URL: https://github.com/jatinchowdhury18/ChowPhaser
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -20,7 +20,8 @@ Source0: ChowPhaser.tar.gz
 Source1: source_chowphaser.sh
 
 BuildRequires: gcc-c++
-BuildRequires: make
+BuildRequires: JUCE
+BuildRequires: cmake
 BuildRequires: pkgconfig(alsa)
 BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xinerama)
@@ -35,8 +36,6 @@ BuildRequires: libXrandr-devel
 BuildRequires: libXcursor-devel
 BuildRequires: xsimd-devel
 BuildRequires: lv2-devel
-BuildRequires: JUCE
-BuildRequires: cmake
 
 %description
 CHOW Phaser is an open-source phaser effect, based very loosely on the classic Shulte Compact Phasing "A".

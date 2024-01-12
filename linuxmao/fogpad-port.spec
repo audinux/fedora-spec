@@ -1,8 +1,12 @@
-Name:    fodpad-port
+# Tag: Effect, Reverb
+# Type: Plugin, LV2, VST3
+# Category: Effect, Plugin
+
+Name: fodpad-port
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: A reverb effect in which the reflections can be frozen, filtered, pitch shifted and ultimately disintegrated
-URL:     https://github.com/linuxmao-org/fogpad-port
+URL: https://github.com/linuxmao-org/fogpad-port
 License: MIT
 
 Vendor:       Audinux

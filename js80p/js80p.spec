@@ -1,9 +1,13 @@
-Name:    js80p
+# Tag: MIDI, Synthesizer
+# TYpe: Plugin, VST3
+# Category: MIDI, Synthesizer
+
+Name: js80p
 Version: 2.4.3
 Release: 1%{?dist}
 Summary: A MIDI driven, performance oriented, versatile synthesizer plugin.
 License: GPL-3.0-only
-URL:     https://github.com/attilammagyar/js80p
+URL: https://github.com/attilammagyar/js80p
 
 Vendor:       Audinux
 Distribution: Audinux

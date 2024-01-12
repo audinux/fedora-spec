@@ -1,3 +1,7 @@
+# Tag: Devel
+# Type: Devel
+# Category: MIDI, Programming
+
 %global realversion 1.3
 
 Summary: LibSMF is a BSD-licensed C library for handling SMF ("*.mid") files

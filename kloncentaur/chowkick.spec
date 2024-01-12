@@ -2,12 +2,12 @@
 # Type: Plugin, LV2, VST
 # Category: Audio, Effect
 
-Name:    ChowKick
+Name: ChowKick
 Version: 1.2.0
 Release: 1%{?dist}
 Summary: Kick synthesizer based on old-school drum machine circuits
 License: BSD-3-Clause
-URL:     https://github.com/Chowdhury-DSP/ChowKick
+URL: https://github.com/Chowdhury-DSP/ChowKick
 
 Vendor:       Audinux
 Distribution: Audinux

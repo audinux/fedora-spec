@@ -1,19 +1,19 @@
 # Tag: Jack, Alsa
-# Type: Plugin, Standalone, VST3
+# Type: Plugin, Standalone, VST3, LV2
 # Category: Audio, Synthesizer
 
-Name:    librearp
+Name: librearp
 Version: 2.4
 Release: 2%{?dist}
 Summary: A pattern-based arpeggio generator plugin
 License: GPL-3.0-only
-URL:     https://gitlab.com/LibreArp/LibreArp
+URL: https://gitlab.com/LibreArp/LibreArp
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./librearp-source.sh <TAG>
-# ./librearp-source.sh 2.4
+#        ./librearp-source.sh 2.4
 
 Source0: LibreArpLV2.tar.gz
 Source1: LibreArpVST3.tar.gz

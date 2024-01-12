@@ -1,8 +1,12 @@
-Name:    jack_mixer
+# Tag: Jack
+# Type: Standalone
+# Category: Audio, Tool
+
+Name: jack_mixer
 Version: 18
 Release: 1%{?dist}
-Summary: jack_mixer is GTK (2.x) JACK audio mixer with look similar to it`s hardware counterparts
-URL:     https://github.com/jack-mixer/jack_mixer
+Summary: jack_mixer is GTK (2.x) JACK audio mixer with look similar to it\`s hardware counterparts
+URL: https://github.com/jack-mixer/jack_mixer
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

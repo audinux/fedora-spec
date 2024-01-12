@@ -2,11 +2,11 @@
 # Type: Standalone
 # Category: Audio
 
-Name:    konfyt
+Name: konfyt
 Version: 1.5.0
 Release: 3%{?dist}
 Summary: A patch manager
-URL:     https://github.com/noedigcode/konfyt
+URL: https://github.com/noedigcode/konfyt
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -14,7 +14,7 @@ Distribution: Audinux
 
 Source0: https://github.com/noedigcode/konfyt/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-qtsvg-devel

@@ -1,9 +1,13 @@
+# Tag: Presets
+# Type: Presets
+# Category: Synthesizer
+
 Summary: Additional presets for Dexed
-Name:    dexed-extra-presets
+Name: dexed-extra-presets
 Version: 1.0.1
 Release: 3%{?dist}
 License: GPL-2.0-or-later AND GPL-3.0-only AND LicenseRef-OpenMusic-green
-URL:     https://asb2m10.github.io/dexed/
+URL: https://asb2m10.github.io/dexed/
 
 Vendor:       Audinux
 Distribution: Audinux

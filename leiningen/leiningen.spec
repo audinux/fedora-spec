@@ -2,12 +2,12 @@
 # Type: Standalone, Language
 # Category: Audio, Programming
 
-Name:    leiningen
+Name: leiningen
 Version: 2.9.7
 Release: 1%{?dist}
 Summary: Clojure project automation tool
 License: EPL
-URL:     https://github.com/technomancy/leiningen
+URL: https://github.com/technomancy/leiningen
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -18,12 +18,11 @@ Source2: https://github.com/technomancy/leiningen/raw/%{version}/bin/lein
 
 BuildArch: noarch
 
+BuildRequires: clojure
+BuildRequires: maven
+BuildRequires: wget
 BuildRequires: jpackage-utils
 BuildRequires: java-devel
-BuildRequires: maven
-BuildRequires: clojure
-BuildRequires: wget
-BuildRequires: sed
 
 Requires: clojure java
 

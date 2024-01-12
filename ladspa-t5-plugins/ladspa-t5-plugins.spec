@@ -2,17 +2,17 @@
 # Type: LADSPA
 # Category: Audio, Effect
 
-Name:    ladspa-t5-plugins
+Name: ladspa-t5-plugins
 Version: 1.8
 Release: 1%{?dist}
 Summary: LADSPA filter plugins
 License: GPL-2.0+
-Url:     https://gitlab.com/t-5/ladspa-t5-plugins
+Url: https://gitlab.com/t-5/ladspa-t5-plugins
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source:  https://gitlab.com/t-5/ladspa-t5-plugins/-/archive/%{version}/ladspa-t5-plugins-%{version}.tar.gz
+Source: https://gitlab.com/t-5/ladspa-t5-plugins/-/archive/%{version}/ladspa-t5-plugins-%{version}.tar.gz
 
 BuildRequires: gcc
 BuildRequires: meson

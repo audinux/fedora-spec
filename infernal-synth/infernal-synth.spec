@@ -1,9 +1,13 @@
-Name:    infernal-synth
+# Tag: Synthesizer
+# Type: Plugin, VST3
+# Category: Audio, Synthesizer
+
+Name: infernal-synth
 Version: 1.4p1
 Release: 1%{?dist}
 Summary: An open source VST3 synthesizer and effect plugin.
 License: GPL-3.0-or-later
-URL:     https://sjoerdvankreel.github.io/infernal-synth/
+URL: https://sjoerdvankreel.github.io/infernal-synth/
 
 Vendor:       Audinux
 Distribution: Audinux

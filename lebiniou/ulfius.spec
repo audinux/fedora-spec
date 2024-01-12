@@ -1,5 +1,9 @@
+# Tag: Devel
+# Type: Devel
+# Category: Programming
+
 Summary: Web Framework to build REST APIs, Webservices or any HTTP endpoint in C language.
-Name:    ulfius
+Name: ulfius
 Version: 2.7.0
 Release: 1%{?dist}
 License: LGPL-2.1

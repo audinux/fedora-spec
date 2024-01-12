@@ -234,7 +234,10 @@ cm/cm.spec
 
 ## Cleanup
 
-none
+kloncentaur: replace sh file for source download
+cadence: add desktop file
+linuxmao/fogpad: split by plugin type
+update qsampler
 
 ## Add source.sh file in spec file:
 
@@ -305,7 +308,7 @@ Synthesizer, Loop, Tool, Devel, Controller, AI, Equalizer
 ### Type:
 
 ```
-Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, CLAP, Pipewire, Presets, Rack, Language
+Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, CLAP, Pipewire, Presets, Rack
 ```
 
 ### Category:

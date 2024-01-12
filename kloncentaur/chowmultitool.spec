@@ -1,11 +1,15 @@
+# Tag: Guitar, Tool
+# Type: Plugin, LV2, VST3, CLAP
+# Category: Audio, Effect
+
 %define _lto_cflags %{nil}
 
-Name:    ChowMultiTool
+Name: ChowMultiTool
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: Multi-Tool Audio Plugin
 License: GPL-3.0-or-later
-URL:     https://github.com/Chowdhury-DSP/ChowMultiTool
+URL: https://github.com/Chowdhury-DSP/ChowMultiTool
 
 Vendor:       Audinux
 Distribution: Audinux

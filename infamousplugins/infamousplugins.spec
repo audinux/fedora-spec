@@ -2,11 +2,11 @@
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer
 
-Name:    infamousPlugins
+Name: infamousPlugins
 Version: 0.3.2
 Release: 2%{?dist}
 Summary: LV2 Audio Plugins for Linux
-URL:     https://github.com/ssj71/infamousPlugins
+URL: https://github.com/ssj71/infamousPlugins
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -14,6 +14,7 @@ Distribution: Audinux
 
 Source0: https://github.com/ssj71/infamousPlugins/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
+BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: extra-cmake-modules
 BuildRequires: qt5-qtbase-devel

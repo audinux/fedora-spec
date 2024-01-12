@@ -2,12 +2,12 @@
 # Type: LADSPA
 # Category: Audio, Synthesizer
 
-Name:    ladspa-blepco
+Name: ladspa-blepco
 Version: 0.1.0
 Release: 1%{?dist}
 Summary: a LADSPA plugin library containing three anti-aliased, minBLEP-based, hard-sync-capable oscillator plugins
 License: GPL-2.0+
-Url:     https://www.sirlab.de/linux/download
+Url: https://www.sirlab.de/linux/download
 
 Vendor:       Audinux
 Distribution: Audinux

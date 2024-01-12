@@ -3,11 +3,11 @@
 # Category: Audio, Tool
 
 Summary: Cyclone Loop Giant is a music application for GNU/Linux that allows users to manipulate loops in various ways.
-Name:    cyclone
+Name: cyclone
 Version: 0.1.3
 Release: 1%{?dist}
 License: GPL-2.0-only
-URL:     https://toxic.cubicarea.it/
+URL: https://toxic.cubicarea.it/
 
 Vendor:       Audinux
 Distribution: Audinux

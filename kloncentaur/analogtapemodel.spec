@@ -2,12 +2,12 @@
 # Type: Plugin, LV2, VST
 # Category: Audio, Effect
 
-Name:    AnalogTapeModel
+Name: AnalogTapeModel
 Version: 2.11.4
 Release: 1%{?dist}
 Summary: Physical modelling signal processing for analog tape recording
 License: BSD-3-Clause
-URL:     https://github.com/jatinchowdhury18/AnalogTapeModel
+URL: https://github.com/jatinchowdhury18/AnalogTapeModel
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -20,7 +20,8 @@ Source0: AnalogTapeModel.tar.gz
 Source1: source_analogtapemodel.sh
 
 BuildRequires: gcc-c++
-BuildRequires: make
+BuildRequires: JUCE
+BuildRequires: cmake
 BuildRequires: pkgconfig(alsa)
 BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xinerama)
@@ -35,8 +36,6 @@ BuildRequires: libXrandr-devel
 BuildRequires: libXcursor-devel
 BuildRequires: xsimd-devel
 BuildRequires: lv2-devel
-BuildRequires: JUCE
-BuildRequires: cmake
 
 %description
 CHOW Tape Model is a physical model of an analog tape machine,

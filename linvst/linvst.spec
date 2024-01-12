@@ -1,11 +1,15 @@
+# Tag: Rack, Tool
+# Type: Standalone
+# Category: Tool, Audio
+
 %global debug_package %{nil}
 
-Name:    LinVst
+Name: LinVst
 Version: 4.9
 Release: 3%{?dist}
 Summary: Linux Windows vst wrapper/bridge
 License: GPL-3.0-only
-URL:     https://github.com/osxmidi/linvst
+URL: https://github.com/osxmidi/linvst
 
 Source0: %{url}/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 

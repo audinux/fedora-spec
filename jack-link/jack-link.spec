@@ -1,9 +1,13 @@
-Name:    jack-link
+# Tag: Jack
+# Type: Standalone
+# Category: Audio, Tool
+
+Name: jack-link
 Version: 0.1.9
 Release: 1%{?dist}
 Summary: JACK transport timebase bridge to Ableton Link
 License: GPL-2.0-only
-URL:     https://github.com/rncbc/jack_link
+URL: https://github.com/rncbc/jack_link
 
 Vendor:       Audinux
 Distribution: Audinux

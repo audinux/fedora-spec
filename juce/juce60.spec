@@ -1,8 +1,12 @@
-Name:    JUCE60
+# Tag: Library, Editor
+# Type: Standalone, IDE, Language
+# Category: Audio, Programming, Graphic
+
+Name: JUCE60
 Version: 6.0.8
 Release: 5%{?dist}
 Summary: JUCE Framework
-URL:     https://github.com/juce-framework/JUCE
+URL: https://github.com/juce-framework/JUCE
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -12,7 +16,8 @@ Distribution: Audinux
 Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0:  juce60-0001-set-default-path.patch
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: dssi-devel
 BuildRequires: ladspa-devel
@@ -20,7 +25,6 @@ BuildRequires: doxygen
 BuildRequires: graphviz
 BuildRequires: python-unversioned-command
 BuildRequires: webkit2gtk3-devel
-BuildRequires: sed
 BuildRequires: libcurl-devel
 
 %description

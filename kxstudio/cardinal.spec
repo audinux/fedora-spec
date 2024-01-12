@@ -1,14 +1,18 @@
+# Tag: Modular
+# Type: Standalone, Plugin, LV@, VST, VST3, CLAP
+# Category: Audio, Synthesizer, Effect
+
 %define _lto_cflags %{nil}
 # On some platforms, the debug symbols extraction produces
 # some timeout.
 %global debug_package %{nil}
 
-Name:    cardinal
+Name: cardinal
 Version: 23.10
 Release: 2%{?dist}
 Summary: Virtual modular synthesizer plugin
 License: GPL-3.0-or-later
-URL:     https://github.com/DISTRHO/Cardinal
+URL: https://github.com/DISTRHO/Cardinal
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -16,7 +20,11 @@ Distribution: Audinux
 Source0: https://github.com/DISTRHO/Cardinal/releases/download/%{version}/cardinal-%{version}.tar.xz
 Source1: Cardinal.png
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
+BuildRequires: findutils
+BuildRequires: fdupes
+BuildRequires: wget
 BuildRequires: python-qt5-devel
 BuildRequires: liblo-devel
 BuildRequires: alsa-lib-devel
@@ -43,10 +51,7 @@ BuildRequires: libXcursor-devel
 BuildRequires: libX11-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: speexdsp-devel
-BuildRequires: wget
 BuildRequires: desktop-file-utils
-BuildRequires: findutils
-BuildRequires: fdupes
 
 Requires(pre): python3-qt5
 Requires:      %{name}-common = %{version}-%{release}
@@ -61,14 +66,14 @@ It is based on the popular VCV Rack but with a focus on being a fully
 self-contained plugin version.
 
 %package common
-Summary:   Common files for Cardinal
+Summary: Common files for Cardinal
 BuildArch: noarch
 
 %description common
 Common data files for Cardinal standalone and plugin versions.
 
 %package mini
-Summary:  Mini variant of Cardinal
+Summary: Mini variant of Cardinal
 Requires: %{name}-common = %{version}-%{release}
 
 %description mini
@@ -76,28 +81,28 @@ This is a special variant with a very small, hand-picked module selection
 and limited IO (2 audio ports plus 5 CV).
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
+Summary: LV2 version of %{name}
 Requires: %{name}-common = %{version}-%{release}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
+Summary: VST3 version of %{name}
 Requires: %{name}-common = %{version}-%{release}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n vst-%{name}
-Summary:  VST2 version of %{name}
+Summary: VST2 version of %{name}
 Requires: %{name}-common = %{version}-%{release}
 
 %description -n vst-%{name}
 VST2 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
+Summary: CLAP version of %{name}
 Requires: %{name}-common = %{version}-%{release}
 
 %description -n clap-%{name}

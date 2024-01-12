@@ -7,12 +7,12 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    protrekkr
+Name: protrekkr
 Version: 1.0.0
 Release: 4%{?dist}
 Summary: A jack tracker
 License: GPL-2.0-or-later
-URL:     https://github.com/falkTX/protrekkr
+URL: https://github.com/falkTX/protrekkr
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -21,7 +21,8 @@ Source0: https://github.com/falkTX/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{
 Source1: protrekkr-makefile.linux
 Patch0:  protrekkr-0001-set-config-file-paths.patch
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: SDL-devel

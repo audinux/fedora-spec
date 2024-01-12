@@ -2,19 +2,20 @@
 # Type: Plugin, LV2
 # Category: Audio, Sampler
 
-Name:    liquidsfz
+Name: liquidsfz
 Version: 0.3.2
 Release: 2%{?dist}
 License: BSD-2-Clause
 Summary: Sampler plugin and library for SFZ and Hydrogen instruments
-Url:     https://github.com/swesterfeld/liquidsfz
+Url: https://github.com/swesterfeld/liquidsfz
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: %{url}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool

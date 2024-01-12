@@ -2,12 +2,12 @@
 # Type: LADSPA
 # Category: Audio, Effect
 
-Name:    ladspa-invada
+Name: ladspa-invada
 Version: 0.3.1
 Release: 1%{?dist}
 Summary: A collection of LADSPA plugins from Invada Records
 License: GPL-2.0+
-Url:     http://www.invadarecords.com/Downloads.php?ID=00000264
+Url: http://www.invadarecords.com/Downloads.php?ID=00000264
 
 Vendor:       Audinux
 Distribution: Audinux

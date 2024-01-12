@@ -2,11 +2,11 @@
 # Type: Standalone
 # Category: Graphic
 
-Name:    lebiniou
+Name: lebiniou
 Version: 3.66.0
 Release: 3%{?dist}
 Summary: Audio spectrum visualizer
-URL:     https://biniou.net/
+URL: https://biniou.net/
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -14,8 +14,15 @@ Distribution: Audinux
 
 Source0: https://gitlab.com/lebiniou/lebiniou/-/archive/version-%{version}/lebiniou-version-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make sed
-BuildRequires: autoconf automake libtool
+BuildRequires: gcc gcc-c++
+BuildRequires: make
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: libtool
+BuildRequires: pandoc
+BuildRequires: perl-podlators
+BuildRequires: gtk-update-icon-cache
+BuildRequires: python3-htmlmin
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libcaca-devel
@@ -23,7 +30,6 @@ BuildRequires: fftw-devel
 BuildRequires: glib2-devel
 BuildRequires: libxml2-devel
 BuildRequires: freetype-devel
-BuildRequires: pandoc
 BuildRequires: libsndfile-devel
 BuildRequires: SDL2_ttf-devel
 BuildRequires: ImageMagick-devel
@@ -31,9 +37,6 @@ BuildRequires: ffmpeg-devel
 BuildRequires: jansson-devel
 BuildRequires: ulfius-devel
 BuildRequires: ffmpeg-devel
-BuildRequires: perl-podlators
-BuildRequires: gtk-update-icon-cache
-BuildRequires: python3-htmlmin
 BuildRequires: desktop-file-utils
 
 Requires(pre): lebiniou-data

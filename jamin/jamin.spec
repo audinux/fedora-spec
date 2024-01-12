@@ -1,9 +1,13 @@
-Name:    jamin
+# Tag: Jack, Editor, Analyzer
+# Type: Standalone
+# Category: Tool, Audio
+
+Name: jamin
 Summary: JACK Audio Connection Kit (JACK) Audio Mastering interface
 Version: 0.98.9
 Release: 2%{?dist}
 License: GPL-2.0-or-later
-URL:     http://jamin.sourceforge.net
+URL: http://jamin.sourceforge.net
 
 Vendor:       Audinux
 Distribution: Audinux

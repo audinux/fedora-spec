@@ -1,3 +1,7 @@
+# Tag: Modular, Alsa
+# Type: Standalone
+# Category: Sequencer, Synthesizer
+
 Name: komposter
 Version: 0.1
 Release: 1%{?dist}
@@ -7,8 +11,7 @@ License: GPL-2.0
 URL: https://github.com/electronoora/komposter
 Source0: https://github.com/electronoora/komposter/archive/refs/heads/master.zip#/komposter.zip
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libglvnd-devel

@@ -14,11 +14,11 @@
 %define maj 10
 %define min 2
 
-Name:    Impro-Visor
+Name: Impro-Visor
 Version: %{maj}.%{min}
 Release: 3%{?dist}
 Summary: Impro-Visor is a music notation program for jazz musicians
-URL:     http://www.cs.hmc.edu/~keller/jazz/improvisor/
+URL: http://www.cs.hmc.edu/~keller/jazz/improvisor/
 License: GPL
 
 Vendor:       Audinux

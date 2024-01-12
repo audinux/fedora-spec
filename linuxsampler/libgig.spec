@@ -3,11 +3,11 @@
 # Category: Audio
 
 Summary: C++ library for loading Gigasampler files and DLS Level 1/2 files.
-Name:    libgig
+Name: libgig
 Version: 4.3.0
 Release: 1%{dist}
 License: GPL
-URL:     https://www.linuxsampler.org
+URL: https://www.linuxsampler.org
 
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA

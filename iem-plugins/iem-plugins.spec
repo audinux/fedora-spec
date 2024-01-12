@@ -1,15 +1,19 @@
-Name:    iem-plugins
+# Tag: Effect
+# Type: Standalone, VST3, LV2
+# Category: Effect, Plugin
+
+Name: iem-plugins
 Version: 1.14.1
 Release: 1%{?dist}
 Summary: The IEM Plug-in Suite is a free and Open-Source audio plug-in suite.
 License: GPL-3.0-or-later
-URL:     https://plugins.iem.at
+URL: https://plugins.iem.at
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./iem-plugins-source.sh <TAG>
-# ./iem-plugins-source.sh v1.14.1
+#        ./iem-plugins-source.sh v1.14.1
 
 Source0: IEMPluginSuite.tar.gz
 Source1: iem-plugins-source.sh

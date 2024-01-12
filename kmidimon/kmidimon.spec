@@ -1,21 +1,21 @@
-%define	desktop_vendor planetccrma
-
 # Tag: MIDI, Alsa
 # Type: Standalone
 # Category: MIDI, Tool
 # GUIToolkit: Qt
 
+%define	desktop_vendor planetccrma
+
 Summary: ALSA MIDI monitor
-Name:    kmidimon
+Name: kmidimon
 Version: 0.7.5
 Release: 1%{?dist}
 License: GPL
-URL:     https://kmetronome.sourceforge.net/kmidimon/
+URL: https://kmetronome.sourceforge.net/kmidimon/
 
 Source0: https://sourceforge.net/projects/kmidimon/files/%{version}/kmidimon-%{version}.tar.bz2
 Source1: kmidimon.desktop
-Patch0:  kmidimon-0001-remove-uninstall-target.patch
-Patch1:  kmidimon-0001-use-nullptr.patch
+Patch0: kmidimon-0001-remove-uninstall-target.patch
+Patch1: kmidimon-0001-use-nullptr.patch
 
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
@@ -23,12 +23,13 @@ Distribution: Planet CCRMA
 Requires: hicolor-icon-theme
 
 BuildRequires: gcc gcc-c++
-BuildRequires: desktop-file-utils alsa-lib-devel
+BuildRequires: desktop-file-utils
 BuildRequires: cmake gettext-devel
 BuildRequires: kdelibs-devel
 %if 0%{?fedora} >= 34
 BuildRequires: drumstick0-devel
 %endif
+BuildRequires: alsa-lib-devel
 
 %description
 MIDI monitor for Linux using ALSA sequencer and KDE user interface.

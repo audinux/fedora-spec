@@ -2,11 +2,11 @@
 # Type: Standalone, IDE, Language
 # Category: Audio, Programming, Graphic
 
-Name:    JUCE
+Name: JUCE
 Version: 7.0.9
 Release: 9%{?dist}
 Summary: JUCE Framework
-URL:     https://github.com/juce-framework/JUCE
+URL: https://github.com/juce-framework/JUCE
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

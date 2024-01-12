@@ -1,9 +1,13 @@
-Name:    jc303
+# Tag: Drum
+# Type: Plugin, LV2, VST, VST3
+# Category: Sequencer, Sampler, Plugin
+
+Name: jc303
 Version: 0.9.2
 Release: 1%{?dist}
 Summary: A Free Roland TB-303 Plugin
 License: GPL-3.0-or-later
-URL:     https://github.com/midilab/jc303
+URL: https://github.com/midilab/jc303
 
 Vendor:       Audinux
 Distribution: Audinux

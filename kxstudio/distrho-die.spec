@@ -1,16 +1,21 @@
-Name:    DIE-Plugins
+# Tag: Effect
+# Type: Plugin, LV2
+# Category: Plugin
+
+Name: DIE-Plugins
 Version: 1.1
 Release: 1%{?dist}
 Summary: DISTRHO Imported Effect Plugins
 License: GPL-2.0-or-later
-URL:     https://github.com/DISTRHO/DIE-Plugins
+URL: https://github.com/DISTRHO/DIE-Plugins
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/DISTRHO/DIE-Plugins/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: libsndfile-devel
 BuildRequires: glib2-devel

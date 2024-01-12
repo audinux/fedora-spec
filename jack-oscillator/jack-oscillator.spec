@@ -1,11 +1,15 @@
+# Tag: Jack
+# Type: Standalone
+# Category: Audio, Synthesizer
+
 %global commit0 31c6bfa81f223ccc5d840effbf15881907eadad4
 
 Summary: Single oscillator with traditional waveforms for JACK
-Name:    jack-oscillator
+Name: jack-oscillator
 Version: 0.1
 Release: 1%{?dist}
 License: GPL-3.0-only
-URL:     https://github.com/michelesr/jack-oscillator
+URL: https://github.com/michelesr/jack-oscillator
 
 Source0: https://github.com/michelesr/jack-oscillator/archive/%{commit0}.zip#/%{name}-%{version}.zip
 
