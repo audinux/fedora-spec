@@ -2,13 +2,13 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 # GUIToolkit: Qt5
-# LastSourceUpdate: 2021
+# LastSourceUpdate: 2024
 
-Name:    hydrogen
-Version: 1.2.2
+Name: hydrogen
+Version: 1.2.3
 Release: 12%{?dist}
 Summary: Advanced drum machine for GNU/Linux
-URL:     http://www.hydrogen-music.org/
+URL: http://www.hydrogen-music.org/
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -103,6 +103,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.hydrogenmusic.Hyd
 %exclude %{_includedir}/%{name}
 
 %changelog
+* Fri Jan 12 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-12
+- update to 1.2.3-12
+
 * Sat Sep 09 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-12
 - update to 1.2.2-12
 
