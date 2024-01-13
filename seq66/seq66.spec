@@ -1,5 +1,5 @@
 Name:    seq66
-Version: 0.99.11
+Version: 0.99.12
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -10,17 +10,18 @@ Distribution: Audinux
 
 Source0: https://github.com/ahlstromcj/seq66/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool
-BuildRequires: qt5-linguist
-BuildRequires: qtchooser
-BuildRequires: qt5-qttools
 BuildRequires: git
-BuildRequires: alsa-lib-devel
+BuildRequires: qtchooser
+BuildRequires: qt5-linguist
+BuildRequires: qt5-qttools
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtdeclarative-devel
+BuildRequires: alsa-lib-devel
 BuildRequires: liblo-devel
 BuildRequires: libglvnd-devel
 BuildRequires: rtmidi-devel
@@ -96,6 +97,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libdir}/*
 
 %changelog
+* Sat Jan 13 2024 Yann Collette <ycollette.nospam@free.fr> - 0.99.12-1
+- update 0.99.12-1
+
 * Tue Dec 05 2023 Yann Collette <ycollette.nospam@free.fr> - 0.99.11-1
 - update 0.99.11-1
 
