@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 da35d3128bb77fb5a8c9255c4f14b028c45131dd
-%global gittag0 2.0.5
+%global commit0 9f2eacbb353bd1f3429d06b51166f0ce4b941c53
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-NOI
-Version: 2.0.5
+Name:    rack-v2-HarmonicAnomalies
+Version: 2.0.2
 Release: 2%{?dist}
-Summary: NOI plugin for Rack
+Summary: HarmonicAnomalies plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/LeNomDesFleurs/NOI-VCVRACK
+URL:     https://github.com/thestrangeagency/HarmonicAnomalies
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -27,8 +27,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/LeNomDesFleurs/NOI-VCVRACK/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: NOI_plugin.json
+Source1: https://github.com/thestrangeagency/HarmonicAnomalies/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: HarmonicAnomalies_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -59,8 +59,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-NOI plugin for Rack.
-granular reverb
+HarmonicAnomalies plugin for Rack.
+Three dimensional looper.
 
 %prep
 %setup -n Rack
@@ -133,24 +133,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir NOI_plugin
-tar xvfz %{SOURCE1} --directory=NOI_plugin --strip-components=1
+mkdir HarmonicAnomalies_plugin
+tar xvfz %{SOURCE1} --directory=HarmonicAnomalies_plugin --strip-components=1
 
-cp -n %{SOURCE2} NOI_plugin/plugin.json || true
+cp -n %{SOURCE2} HarmonicAnomalies_plugin/plugin.json || true
 
 %build
 
-cd NOI_plugin
+cd HarmonicAnomalies_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/NOI/
-cp -r NOI_plugin/dist/NOI/* %{buildroot}%{_libexecdir}/Rack2/plugins/NOI/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/HarmonicAnomalies/
+cp -r HarmonicAnomalies_plugin/dist/HarmonicAnomalies/* %{buildroot}%{_libexecdir}/Rack2/plugins/HarmonicAnomalies/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile
