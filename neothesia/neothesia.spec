@@ -3,7 +3,7 @@
 # Category: MIDI, Tool
 
 Name: neothesia
-Version: 0.1.0
+Version: 0.2.0
 Release: 1%{?dist}
 Summary: Flashy Synthesia Like Software
 License: GPL-3.0-or-later
@@ -16,7 +16,8 @@ Source0: https://github.com/PolyMeilex/Neothesia/archive/refs/tags/v%{version}.t
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
-BuildRequires: rust cargo
+BuildRequires: rust
+BuildRequires: cargo
 BuildRequires: alsa-lib-devel
 BuildRequires: glib2-devel
 BuildRequires: atk-devel
@@ -81,6 +82,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/com.githu
 %{_datadir}/metainfo/com.github.polymeilex.neothesia.metainfo.xml
 
 %changelog
+* Sun Jan 14 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
+- update to 0.2.0-1
+
 * Sun Jul 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
 - update to 0.1.0-1
 
