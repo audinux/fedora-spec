@@ -1,5 +1,5 @@
 Name:    sfizz
-Version: 1.2.2
+Version: 1.2.3
 Release: 4%{?dist}
 License: BSD-2-Clause
 Summary: Sampler plugin and library for SFZ instruments
@@ -79,6 +79,9 @@ Header files for the Sfizz library.
 %{_libdir}/pkgconfig/sfizz.pc
 
 %changelog
+* Mon Jan 15 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-4
+- update to 1.2.3-4
+
 * Tue Aug 29 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-4
 - update to 1.2.2-4
 

@@ -1,5 +1,5 @@
 Name:    sfizz-ui
-Version: 1.2.2
+Version: 1.2.3
 Release: 1%{?dist}
 License: BSD-2-Clause
 Summary: SFZ based sampler, providing LV2 / VST3 plugins using the sfizz
@@ -9,7 +9,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./sfizz-ui-source.sh <tag>
-#        ./sfizz-ui-source.sh 1.2.2
+#        ./sfizz-ui-source.sh 1.2.3
 
 Source0: sfizz-ui.tar.gz
 Source1: sfizz-ui-source.sh
@@ -106,5 +106,8 @@ Header files for the Sfizz library.
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Jan 15 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-1
+- update to 1.2.3-1
+
 * Tue Aug 29 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-1
 - initial release of the spec file
