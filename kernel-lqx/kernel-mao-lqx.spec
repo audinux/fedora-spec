@@ -7,7 +7,7 @@
 # RT patch version
 %define krt   1
 # package version
-%define krel  12
+%define krel  14
 
 %define kver  %{kmaj}.%{kmin}.%{kpat}
 %define fcver %{dist}.%{_arch}
@@ -94,6 +94,15 @@ against the %{version} kernel package.
 %autosetup -p1 -n linux-%{kmaj}.%{kmin}
 
 cp %{SOURCE1} .config
+
+# Activate some missing SELINUX options
+cat <<EOF >.config-fragment
+CONFIG_DEFAULT_SECURITY_SELINUX=y
+CONFIG_LSM="lockdown,yama,integrity,selinux,bpf,landlock"
+EOF
+
+scripts/kconfig/merge_config.sh .config .config-fragment
+
 make oldconfig
 
 sed -i -e "s/EXTRAVERSION =.*/EXTRAVERSION = -lqx%{krt}%{fcver}/g" Makefile
@@ -202,6 +211,12 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-lqx%{krt}%{fcver}
 
 %changelog
+* Wed Jan 17 2024 Yann Collette <ycollette.nospam@free.fr> - 6.6.9-lqx1-14
+- update to 6.6.9-lqx1-14 - add a missing SELINUX option
+
+* Tue Jan 16 2024 Yann Collette <ycollette.nospam@free.fr> - 6.6.9-lqx1-13
+- update to 6.6.9-lqx1-13 - add a missing SELINUX option
+
 * Mon Jan 01 2024 Yann Collette <ycollette.nospam@free.fr> - 6.6.9-lqx1-12
 - update to 6.6.9-lqx1-12 - vanilla Liquorix kernel
 
