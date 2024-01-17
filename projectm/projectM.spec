@@ -16,15 +16,21 @@ Source4: Authoring_Guide.pdf
 Source5: Geiss_Guide.pdf
 
 BuildRequires: gcc gcc-c++
-BuildRequires: automake autoconf libtool make
-BuildRequires: ftgl-devel glew-devel
-BuildRequires: libgomp pulseaudio-libs-devel
-BuildRequires: SDL2-devel
-BuildRequires: jack-audio-connection-kit-devel desktop-file-utils
+BuildRequires: automake
+BuildRequires: autoconf
+BuildRequires: libtool make
+BuildRequires: ftgl-devel
+BuildRequires: glew-devel
+BuildRequires: libgomp
 BuildRequires: pulseaudio-libs-devel
-BuildRequires: dejavu-sans-mono-fonts, dejavu-sans-fonts
+BuildRequires: SDL2-devel
+BuildRequires: pkgconfig(jack)
+BuildRequires: pulseaudio-libs-devel
+BuildRequires: dejavu-sans-mono-fonts
+BuildRequires: dejavu-sans-fonts
 BuildRequires: glm-devel
 BuildRequires: ftgl-devel
+BuildRequires: desktop-file-utils
 
 Requires: dejavu-sans-mono-fonts, dejavu-sans-fonts
 

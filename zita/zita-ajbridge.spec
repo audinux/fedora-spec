@@ -15,8 +15,11 @@ Distribution: Audinux
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
-BuildRequires: jack-audio-connection-kit-devel alsa-lib-devel
-BuildRequires: zita-resampler-devel zita-alsa-pcmi-devel
+BuildRequires: make
+BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: zita-resampler-devel
+BuildRequires: zita-alsa-pcmi-devel
 
 %description
 Zita-ajbridge provides two applications, zita-a2j and zita-j2a. They

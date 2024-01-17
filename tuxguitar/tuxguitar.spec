@@ -57,7 +57,7 @@ Requires:         soundfont2-default
 BuildRequires:    alsa-lib-devel
 BuildRequires:    desktop-file-utils
 BuildRequires:    fluidsynth-devel
-BuildRequires:    jack-audio-connection-kit-devel
+BuildRequires:    pkgconfig(jack)
 BuildRequires:    lv2-devel
 BuildRequires:    suil-devel
 BuildRequires:    lilv-devel

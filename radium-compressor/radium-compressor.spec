@@ -12,8 +12,9 @@ URL:            http://users.notam02.no/~kjetism/radium/
 Source0:        http://archive.notam02.no/arkiv/src/radium_compressor-0.5.1.tar.gz
 Source1:        radium-compressor.desktop
 Patch0:         radium_compressor-0.5.1-cstdlib.patch
-BuildRequires: make
-BuildRequires:  jack-audio-connection-kit-devel
+
+BuildRequires:  make
+BuildRequires:  pkgconfig(jack)
 BuildRequires:  qt4-devel
 BuildRequires:  desktop-file-utils
 

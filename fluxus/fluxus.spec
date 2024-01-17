@@ -27,7 +27,7 @@ BuildRequires: ode-devel >= 0.9
 BuildRequires: racket-devel >= 5.1.1
 BuildRequires: racket >= 5.1.1
 BuildRequires: fftw-devel >= 3.2.2
-BuildRequires: jack-audio-connection-kit-devel >= 1.9.7
+BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: libsndfile-devel >= 1.0.25
 BuildRequires: liblo-devel >= 0.26
 BuildRequires: glew-devel >= 1.5.8
