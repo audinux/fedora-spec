@@ -22,7 +22,7 @@ BuildRequires: scons
 BuildReauires: make
 BuildRequires: unzip
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: liblo-devel
 BuildRequires: lv2-devel
 BuildRequires: fltk-devel

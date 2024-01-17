@@ -24,7 +24,7 @@ BuildRequires: perl-podlators
 BuildRequires: gtk-update-icon-cache
 BuildRequires: python3-htmlmin
 BuildRequires: pulseaudio-libs-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libcaca-devel
 BuildRequires: fftw-devel
 BuildRequires: glib2-devel

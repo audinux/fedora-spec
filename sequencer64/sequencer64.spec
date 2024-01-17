@@ -16,7 +16,7 @@ BuildRequires: git
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: gtkmm24-devel
 BuildRequires: rtmidi-devel

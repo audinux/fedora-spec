@@ -21,7 +21,7 @@ Source1: source-furnace.sh
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libogg-devel
 BuildRequires: libvorbis-devel
 BuildRequires: flac-devel

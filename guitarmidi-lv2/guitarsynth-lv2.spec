@@ -24,7 +24,7 @@ BuildRequires: lv2-devel
 BuildRequires: aubio-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: fftw-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 %description
 GuitarSynth is a set of wavetable synths controlled by a monophonic pitchdetector.

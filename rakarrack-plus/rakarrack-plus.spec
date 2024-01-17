@@ -27,7 +27,7 @@ BuildRequires: libsndfile-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: fftw-devel
 BuildRequires: lv2-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils
 
 %description

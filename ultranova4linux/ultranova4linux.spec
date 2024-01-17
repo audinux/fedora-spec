@@ -18,7 +18,7 @@ Source1: 92-novation.rules
 
 BuildRequires: gcc-c++
 BuildRequires: make
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 %if 0%{?fedora} < 37
 BuildRequires: libusb-devel
 %else

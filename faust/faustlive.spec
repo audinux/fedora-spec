@@ -20,7 +20,7 @@ Source1: faustlive-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsndfile-devel
 BuildRequires: libmicrohttpd-devel
 BuildRequires: qt5-qtbase-devel

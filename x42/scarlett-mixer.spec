@@ -30,7 +30,7 @@ Source0: scarlett-mixer.tar.gz
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel
 BuildRequires: cairo-devel
 BuildRequires: pango-devel

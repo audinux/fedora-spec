@@ -16,7 +16,7 @@ Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{versi
 
 BuildRequires: gcc gcc-c++
 BuildRequires: clthreads-devel clxclient-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libX11-devel libXft-devel
 
 %description

@@ -26,7 +26,7 @@ BuildRequires: liblo-devel
 BuildRequires: portsmf-devel
 BuildRequires: libsndfile-devel
 BuildRequires: boost-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: liblo-devel
 BuildRequires: libatomic
 

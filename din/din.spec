@@ -22,7 +22,7 @@ BuildRequires: libtool
 BuildRequires: intltool
 BuildRequires: make
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: tcl-devel
 BuildRequires: SDL-devel
 BuildRequires: boost-devel

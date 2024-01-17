@@ -56,7 +56,7 @@ BuildRequires: gtk3-devel
 BuildRequires: python3-devel
 BuildRequires: ladspa-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: bluez-libs-devel
 BuildRequires: cairo-devel
 BuildRequires: mesa-libGL-devel

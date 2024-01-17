@@ -12,7 +12,7 @@ Source0: https://github.com/llloret/osmid/archive/v%{version}.tar.gz#/%{name}-%{
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: libX11-devel
 BuildRequires: patchelf

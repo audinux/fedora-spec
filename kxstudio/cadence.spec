@@ -25,7 +25,7 @@ BuildRequires: pulseaudio-libs-devel
 BuildRequires: pulseaudio-module-jack
 BuildRequires: python3-dbus
 BuildRequires: a2jmidid
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: jack-audio-connection-kit-dbus
 BuildRequires: jack_capture
 

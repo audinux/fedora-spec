@@ -31,7 +31,7 @@ BuildRequires: libxkbcommon-x11-devel
 BuildRequires: libXinerama-devel
 BuildRequires: libcurl-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: webkit2gtk3-devel

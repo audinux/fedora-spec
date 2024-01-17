@@ -21,7 +21,7 @@ Source1: fogpad-port-source.sh
 BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: make
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: freetype-devel
 BuildRequires: libX11-devel

@@ -20,7 +20,7 @@ BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: fftw-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: liblo-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libsamplerate-devel

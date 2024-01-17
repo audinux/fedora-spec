@@ -33,7 +33,7 @@ BuildRequires: kf5-kdoctools-devel
 BuildRequires: intltool
 BuildRequires: cmake
 BuildRequires: desktop-file-utils
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: sed
 
 %description

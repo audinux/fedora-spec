@@ -19,7 +19,7 @@ Source0: OPL3BankEditor.tar.gz
 Source1: opl3bankeditor-source.sh
 
 BuildRequires: gcc gcc-c++
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: cmake
 BuildRequires: desktop-file-utils

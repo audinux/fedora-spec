@@ -26,7 +26,7 @@ BuildRequires: liblo-devel
 BuildRequires: libglvnd-devel
 BuildRequires: rtmidi-devel
 BuildRequires: portmidi-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils
 
 %description

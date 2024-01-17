@@ -19,7 +19,7 @@ Source0: https://sourceforge.net/projects/triceratops/files/triceratops_v0.5.0_O
 BuildRequires: gcc-c++
 BuildRequires: make
 BuildRequires: python2
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsamplerate-devel
 BuildRequires: libsndfile-devel
 BuildRequires: lv2-devel

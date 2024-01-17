@@ -24,7 +24,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: make scons
 BuildRequires: alsa-lib-devel
 BuildRequires: desktop-file-utils
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: gtkmm30-devel
 BuildRequires: freetype-devel
 BuildRequires: rtmidi-devel

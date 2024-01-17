@@ -11,7 +11,7 @@ Distribution: Audinux
 Source0: https://github.com/rock-hopper/%{name}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: aubio-devel
 BuildRequires: liblo-devel

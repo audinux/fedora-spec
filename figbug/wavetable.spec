@@ -36,7 +36,7 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: libcurl-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 %description
 Wavetable synth

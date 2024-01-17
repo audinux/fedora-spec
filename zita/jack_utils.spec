@@ -15,7 +15,7 @@ Distribution: Audinux
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 %description
 jack_fpmon: watch an audio signal for denormals, Nan and Inf samples.

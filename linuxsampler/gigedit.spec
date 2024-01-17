@@ -25,7 +25,7 @@ BuildRequires: libsndfile-devel
 BuildRequires: linuxsampler-devel
 BuildRequires: libxslt-devel
 BuildRequires: docbook-style-xsl
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 Requires: hicolor-icon-theme
 

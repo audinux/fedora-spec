@@ -37,7 +37,7 @@ BuildRequires: ncurses-devel
 BuildRequires: readline-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: audiofile-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsamplerate-devel
 BuildRequires: libsndfile-devel
 BuildRequires: hevea

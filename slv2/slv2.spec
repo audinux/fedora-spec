@@ -16,7 +16,7 @@ BuildRequires: gcc
 BuildRequires: lv2-devel
 BuildRequires: python2
 BuildRequires: redland-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 # To provide a clean upgrade path from PlanetCCRMA:
 Obsoletes: %{name}-examples < 0.6

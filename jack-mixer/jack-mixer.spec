@@ -17,7 +17,7 @@ Source0: https://github.com/jack-mixer/jack_mixer/archive/release-%{version}.tar
 BuildRequires: gcc
 BuildRequires: meson
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: glib2-devel
 BuildRequires: gettext
 BuildRequires: python3-devel

@@ -13,7 +13,7 @@ Source0: https://github.com/x42/mtc-tools/archive/refs/tags/v0.2.0.tar.gz#/%{nam
 BuildRequires: gcc
 BuildRequires: make
 BuildRequires: libtimecode-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 %description
 Commandline tools to deal with MIDI Timecode (MTC) via http://jackaudio.org

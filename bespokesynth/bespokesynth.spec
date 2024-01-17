@@ -27,7 +27,7 @@ BuildRequires: patchelf
 BuildRequires: alsa-lib-devel
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: mesa-libGL-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: python3-devel
 BuildRequires: pybind11-devel
 BuildRequires: libcurl-devel

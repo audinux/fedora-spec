@@ -17,7 +17,7 @@ Source0: https://github.com/marsyas/marsyas/archive/refs/tags/version-%{version}
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: doxygen
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtdeclarative-devel

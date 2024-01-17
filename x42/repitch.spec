@@ -17,7 +17,7 @@ Source0: https://github.com/x42/repitch.lv2/archive/refs/tags/v%{version}.tar.gz
 BuildRequires: gcc gcc-c++ make
 BuildRequires: git
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel
 BuildRequires: rubberband-devel
 

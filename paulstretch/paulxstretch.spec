@@ -16,7 +16,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: fftw-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libX11-devel
 BuildRequires: libXinerama-devel
 BuildRequires: libXrandr-devel

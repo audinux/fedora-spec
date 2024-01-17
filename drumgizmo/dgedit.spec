@@ -26,7 +26,7 @@ BuildRequires: qt5-linguist
 BuildRequires: qtchooser
 BuildRequires: alsa-lib-devel
 BuildRequires: desktop-file-utils
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsndfile-devel
 BuildRequires: libao-devel
 

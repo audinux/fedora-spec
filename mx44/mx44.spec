@@ -16,7 +16,7 @@ Source0: https://github.com/ycollet/Mx44/archive/v%{version}.tar.gz#/%{name}-%{v
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: gtk2-devel
 BuildRequires: alsa-lib-devel
 

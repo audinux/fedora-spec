@@ -23,7 +23,7 @@ BuildRequires: libsndfile-devel
 BuildRequires: fltk-fluid
 BuildRequires: fltk-devel
 BuildRequires: libsigc++20-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libXpm-devel
 BuildRequires: ladspa-devel
 BuildRequires: liblrdf-devel

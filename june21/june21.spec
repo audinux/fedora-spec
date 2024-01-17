@@ -23,7 +23,7 @@ BuildRequires: git
 BuildRequires: texlive-pdftex
 BuildRequires: texinfo
 BuildRequires: Cabbage
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: csound-devel
 BuildRequires: alsa-lib-devel
 

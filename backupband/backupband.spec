@@ -24,7 +24,7 @@ Source6: https://sourceforge.net/projects/backupband/files/backupband.zip
 
 BuildRequires: gcc gcc-c++
 BuildRequires: unzip
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: cairo-devel
 

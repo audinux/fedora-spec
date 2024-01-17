@@ -29,7 +29,7 @@ BuildRequires: intltool
 BuildRequires: libtool
 BuildRequires: fftw-devel
 BuildRequires: gtk3-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: ladspa-devel
 BuildRequires: liblo-devel
 BuildRequires: libxml2-devel

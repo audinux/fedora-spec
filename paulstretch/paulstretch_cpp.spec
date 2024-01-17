@@ -26,7 +26,7 @@ BuildRequires: portaudio-devel
 BuildRequires: libmad-devel
 BuildRequires: fftw-devel
 BuildRequires: libsamplerate-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils
 
 %description

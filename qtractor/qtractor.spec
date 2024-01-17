@@ -18,7 +18,7 @@ BuildRequires: dssi-devel
 # for plugin GUI support:
 BuildRequires: gtk2-devel
 BuildRequires: gtkmm2.4-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: ladspa-devel
 BuildRequires: liblo-devel
 BuildRequires: libmad-devel

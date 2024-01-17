@@ -18,7 +18,7 @@ Source2: qutecsound.xml
 
 BuildRequires: gcc gcc-c++
 BuildRequires: desktop-file-utils
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: csound-devel
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtquickcontrols2-devel

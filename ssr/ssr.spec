@@ -16,7 +16,7 @@ BuildRequires: automake
 BuildRequires: libtool
 BuildRequires: pkgconfig
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: qt4-devel
 BuildRequires: ffmpeg-devel
 BuildRequires: pulseaudio-libs-devel

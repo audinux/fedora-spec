@@ -20,7 +20,7 @@ Source0: stone-phaser.tar.gz
 Source1: stone-phaser-source.sh
 
 BuildRequires: gcc gcc-c++
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: freetype-devel
 BuildRequires: libX11-devel libXft-devel

@@ -29,7 +29,7 @@ BuildRequires: pkgconfig(xext)
 BuildRequires: pkgconfig(freetype2)
 BuildRequires: pkgconfig(webkit2gtk-4.0)
 BuildRequires: pkgconfig(gtk+-x11-3.0)
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libcurl-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXrandr-devel

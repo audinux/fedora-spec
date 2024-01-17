@@ -22,7 +22,7 @@ Source2: https://github.com/farvardin/picoloop-manual/files/500912/picoloop_manu
 
 BuildRequires: gcc gcc-c++
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: SDL2-devel
 BuildRequires: SDL2_image-devel
 BuildRequires: SDL2_gfx-devel

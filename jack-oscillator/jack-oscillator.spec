@@ -15,7 +15,7 @@ Source0: https://github.com/michelesr/jack-oscillator/archive/%{commit0}.zip#/%{
 
 BuildRequires: gcc
 BuildRequires: make
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 %description
 Single oscillator synthesizer with traditional waveforms for

@@ -16,7 +16,7 @@ BuildRequires: automake
 BuildRequires: qtchooser
 BuildRequires: fftw-devel
 BuildRequires: libsndfile-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libxml2-devel
 BuildRequires: websocketpp-devel
 BuildRequires: qt5-qtbase-devel

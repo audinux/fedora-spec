@@ -16,7 +16,7 @@ Source0: https://github.com/x42/plumbing.lv2/archive/refs/tags/v%{version}.tar.g
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel
 
 %description

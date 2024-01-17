@@ -45,7 +45,7 @@ Source1: lmms-source.sh
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: git
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: libsamplerate-devel

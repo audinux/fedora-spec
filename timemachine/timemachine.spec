@@ -23,7 +23,7 @@ BuildRequires: intltool
 BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: gtk2-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsndfile-devel
 BuildRequires: liblo-devel
 BuildRequires: gettext-devel

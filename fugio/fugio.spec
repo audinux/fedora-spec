@@ -25,7 +25,7 @@ Patch0:  fugio-0002-fix-for-lua-5.4.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: cmake
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtbase-gui

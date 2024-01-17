@@ -14,7 +14,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: autoconf automake libtool
 BuildRequires: python3
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: cdparanoia-devel
 BuildRequires: id3lib-devel
 BuildRequires: taglib-devel

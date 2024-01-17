@@ -12,7 +12,7 @@ Source0: https://github.com/captnfab/PianoBooster/archive/v%{version}.tar.gz#/Pi
 Patch0: pianobooster-0001-fix-dejavu-font-path.patch
 
 BuildRequires: cmake
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: pkgconfig(alsa)
 BuildRequires: pkgconfig(freetype2)
 BuildRequires: pkgconfig(ftgl)

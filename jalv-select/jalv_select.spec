@@ -22,7 +22,7 @@ BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: make
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel
 BuildRequires: lilv-devel
 BuildRequires: gtkmm3.0-devel

@@ -27,7 +27,7 @@ BuildRequires: pkgconfig
 BuildRequires: libgig-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: sqlite-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsndfile-devel
 BuildRequires: dssi-devel
 BuildRequires: lv2-devel

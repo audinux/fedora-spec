@@ -20,7 +20,7 @@ Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libXext-devel
 BuildRequires: SDL2-devel
 BuildRequires: alsa-lib-devel

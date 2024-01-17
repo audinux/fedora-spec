@@ -36,7 +36,7 @@ BuildRequires: libXcursor-devel
 BuildRequires: SDL2-devel
 BuildRequires: cairo-devel
 BuildRequires: dbus-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: rtaudio-devel
 BuildRequires: libsndfile-devel
 

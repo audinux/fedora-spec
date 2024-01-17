@@ -20,7 +20,7 @@ BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: alsa-lib-devel
 BuildRequires: zita-alsa-pcmi-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: ladspa-devel
 BuildRequires: qt5-qtbase-devel
 BuildRequires: fftw3-devel

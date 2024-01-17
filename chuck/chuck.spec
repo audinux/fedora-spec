@@ -21,7 +21,7 @@ BuildRequires: gcc-c++
 BuildRequires: make
 BuildRequires: bison
 BuildRequires: flex
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: libsndfile-devel
 BuildRequires: pulseaudio-libs-devel

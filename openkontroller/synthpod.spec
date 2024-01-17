@@ -22,7 +22,7 @@ BuildRequires: sratom-devel
 BuildRequires: nanomsg-devel
 BuildRequires: efl-devel
 BuildRequires: elementary-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: zita-alsa-pcmi-devel
 BuildRequires: xcb-util-wm-devel
 BuildRequires: xcb-util-xrm-devel

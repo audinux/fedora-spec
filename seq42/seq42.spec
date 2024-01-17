@@ -12,7 +12,7 @@ Source0: https://github.com/Stazed/seq42/archive/refs/tags/%{version}.tar.gz#/%{
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: gtkmm30-devel
 BuildRequires: liblo-devel

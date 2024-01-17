@@ -21,7 +21,7 @@ BuildRequires: automake
 BuildRequires: SDL-devel
 BuildRequires: SDL_gfx-devel
 BuildRequires: SDL_ttf-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils
 
 %description

@@ -31,7 +31,7 @@ BuildRequires: xcb-util-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: pkgconfig(webkit2gtk-4.0)
 
 %description

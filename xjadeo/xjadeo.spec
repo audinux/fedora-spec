@@ -20,7 +20,7 @@ BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: gettext-devel
 BuildRequires: libxcb-devel
 BuildRequires: libX11-devel

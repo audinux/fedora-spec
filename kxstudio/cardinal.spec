@@ -40,7 +40,7 @@ BuildRequires: zlib-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: non-ntk-fluid
 BuildRequires: non-ntk-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: linuxsampler-devel
 BuildRequires: jansson-devel
 BuildRequires: libarchive-devel

@@ -22,7 +22,7 @@ BuildRequires: lv2-devel
 BuildRequires: lilv-devel
 BuildRequires: suil-devel
 BuildRequires: libyaml-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsamplerate-devel
 BuildRequires: rubberband-devel
 BuildRequires: libsndfile-devel

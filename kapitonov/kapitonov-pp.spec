@@ -22,7 +22,7 @@ Source0: https://github.com/olegkapitonov/Kapitonov-Plugins-Pack/archive/%{commi
 BuildRequires: gcc gcc-c++
 BuildRequires: faust
 BuildRequires: meson
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel
 BuildRequires: ladspa-devel
 BuildRequires: libxcb-devel

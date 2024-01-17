@@ -32,7 +32,7 @@ BuildRequires: pugixml-devel
 BuildRequires: cxxopts-devel
 BuildRequires: catch2-devel
 BuildRequires: lv2-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 %description
 SFZ parser and synth c++ library, providing LV2 / VST3 plugins and JACK standalone client

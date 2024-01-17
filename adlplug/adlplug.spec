@@ -19,7 +19,7 @@ Source1: adlplug-source.sh
 Patch0:  adlplug-0001-fix-JUCE-compilation.patch
 
 BuildRequires: gcc gcc-c++
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: cmake
 BuildRequires: desktop-file-utils

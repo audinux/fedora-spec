@@ -22,7 +22,7 @@ BuildRequires: zeromq-devel
 BuildRequires: python3-devel
 BuildRequires: opencv-devel
 BuildRequires: libgphoto2-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: glm-devel
 BuildRequires: libmodplug-devel
 BuildRequires: libchromaprint-devel

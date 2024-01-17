@@ -26,7 +26,7 @@ Patch0:  padthv1-0001-disable-strip.patch
 BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-linguist
 BuildRequires: lv2-devel >= 1.2.0

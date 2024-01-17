@@ -49,7 +49,7 @@ BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: portaudio-devel
 BuildRequires: portmidi-devel
 BuildRequires: gettext-devel

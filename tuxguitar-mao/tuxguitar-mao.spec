@@ -71,7 +71,7 @@ BuildRequires: maven-resources-plugin
 BuildRequires: maven-compiler-plugin
 BuildRequires: alsa-lib-devel
 BuildRequires: fluidsynth-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel
 BuildRequires: suil-devel
 BuildRequires: lilv-devel

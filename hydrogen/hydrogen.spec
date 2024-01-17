@@ -20,7 +20,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: flac-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: ladspa-devel
 BuildRequires: liblrdf-devel
 BuildRequires: libsndfile-devel

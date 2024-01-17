@@ -24,7 +24,7 @@ BuildRequires: chrpath
 BuildRequires: libsndfile-devel
 BuildRequires: lv2-devel
 BuildRequires: readline-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 %description
 liquidsfz is a free and open source sampler that can load and play .sfz files.

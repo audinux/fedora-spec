@@ -21,7 +21,7 @@ BuildRequires: automake
 BuildRequires: libtool
 BuildRequires: libX11-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils
 
 %description

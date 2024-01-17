@@ -50,7 +50,7 @@ BuildRequires: alsa-lib-devel
 BuildRequires: lzma-sdk-devel
 BuildRequires: ftgl-devel
 BuildRequires: glew-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: glfw-devel
 BuildRequires: libpng-devel
 BuildRequires: pulseaudio-libs-devel

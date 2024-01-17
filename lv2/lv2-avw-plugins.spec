@@ -26,7 +26,7 @@ BuildRequires: python2
 BuildRequires: lv2-devel
 BuildRequires: lv2-c++-tools-devel >= 1.0.4
 BuildRequires: gtk2-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 Requires: lv2
 

@@ -21,7 +21,7 @@ Distribution: Audinux
 BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: qt5-qtbase-devel
 BuildRequires: freetype-devel
 BuildRequires: libglvnd-devel

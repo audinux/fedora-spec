@@ -20,7 +20,7 @@ BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-qtsvg-devel
 BuildRequires: qt5-qtdeclarative-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 %ifarch aarch64
 BuildRequires: Carla-devel
 %else

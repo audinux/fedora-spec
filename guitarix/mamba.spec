@@ -16,7 +16,7 @@ Source0: https://github.com/brummer10/Mamba/releases/download/v%{version}/Mamba_
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libX11-devel
 BuildRequires: cairo-devel
 BuildRequires: liblo-devel

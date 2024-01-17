@@ -19,7 +19,7 @@ Distribution: Audinux
 Source0: https://github.com/corrados/jamulus/archive/r%{v_major}_%{v_minor}_%{v_patch}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: qt5-qtbase-devel

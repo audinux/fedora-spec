@@ -16,7 +16,7 @@ Source0: https://sourceforge.net/projects/cycloneloop/files/cyclone_%{version}.t
 
 BuildRequires: gcc gcc-c++
 BuildRequires: qt-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: libsndfile-devel
 BuildRequires: libsamplerate-devel

@@ -32,7 +32,7 @@ Source3: VCV-Prototype-Makefile
 BuildRequires: gcc gcc-c++
 BuildRequires: sed
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel
 BuildRequires: glew-devel

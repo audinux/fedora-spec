@@ -22,7 +22,7 @@ BuildRequires: python3
 BuildRequires: python3-devel
 BuildRequires: libX11-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
 BuildRequires: libcurl-devel

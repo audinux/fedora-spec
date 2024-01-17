@@ -21,7 +21,7 @@ Source1: x42-source.sh
 BuildRequires: gcc gcc-c++ make
 BuildRequires: git
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel
 BuildRequires: cairo-devel
 BuildRequires: pango-devel

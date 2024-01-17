@@ -22,7 +22,7 @@ BuildRequires: lv2-devel
 BuildRequires: liblo-devel
 BuildRequires: gtkmm30-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils
 
 %description

@@ -30,7 +30,7 @@ Source0: fverb.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildReauires: make
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: ladspa-devel
 BuildRequires: lv2-devel

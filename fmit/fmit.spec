@@ -22,7 +22,7 @@ BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-qtsvg-devel
 BuildRequires: qt5-qtmultimedia-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsndfile-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: fftw-devel

@@ -16,7 +16,7 @@ Source0: https://github.com/kushview/Element/releases/download/%{version}/elemen
 Source1: GitVersion.h
 
 BuildRequires: gcc gcc-c++ make
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: desktop-file-utils
 BuildRequires: freetype-devel

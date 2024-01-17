@@ -21,7 +21,7 @@ BuildRequires: alsa-lib-devel
 BuildRequires: compat-ffmpeg4
 BuildRequires: glfw-devel
 BuildRequires: gtk3-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libnotify-devel
 BuildRequires: desktop-file-utils
 

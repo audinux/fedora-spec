@@ -17,7 +17,7 @@ Source0: https://github.com/Prichman/famitracker-qt/archive/refs/heads/master.zi
 BuildRequires: gcc gcc-c++
 BuildRequires: alsa-lib-devel
 BuildRequires: boost-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: qt5-qtbase-devel
 BuildRequires: desktop-file-utils
 

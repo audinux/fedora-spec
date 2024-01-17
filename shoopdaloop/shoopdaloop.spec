@@ -20,7 +20,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: spdlog-devel
 BuildRequires: boost-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libxkbcommon-x11-devel
 BuildRequires: libglvnd-devel
 BuildRequires: fmt-devel

@@ -26,7 +26,7 @@ Source1: source-zynayumi.sh
 BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: cmake
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: dssi-devel
 BuildRequires: lv2-devel

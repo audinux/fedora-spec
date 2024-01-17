@@ -15,7 +15,7 @@ Distribution: Audinux
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.xz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: zita-resampler-devel
 BuildRequires: clthreads-devel clxclient-devel
 BuildRequires: libpng-devel libsndfile-devel

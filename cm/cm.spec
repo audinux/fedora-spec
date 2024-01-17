@@ -17,7 +17,7 @@ Source0: https://sourceforge.net/projects/commonmusic/files/cm/%{version}/cm-%{v
 
 BuildRequires: gcc gcc-c++ make
 BuildRequires: premake4
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: gsl-devel
 BuildRequires: freetype-devel

@@ -18,7 +18,7 @@ ExclusiveArch: x86_64 arm64
 BuildRequires: gcc-c++
 BuildRequires: make
 BuildRequires: dssi-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: ladspa-devel
 BuildRequires: liblo-devel
 # The -wine subpackage will only be built on x86_64 and amd64

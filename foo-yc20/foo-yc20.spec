@@ -19,7 +19,7 @@ Source0: https://github.com/sampov2/%{name}/archive/%{version}.tar.gz#/%{name}-%
 BuildRequires: gcc-c++
 BuildRequires: make
 BuildRequires: cairo-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: gtk2-devel
 BuildRequires: lv2-devel
 BuildRequires: desktop-file-utils

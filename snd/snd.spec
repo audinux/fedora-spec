@@ -32,7 +32,7 @@ BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: make
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsamplerate-devel
 BuildRequires: vorbis-tools
 BuildRequires: speex-tools

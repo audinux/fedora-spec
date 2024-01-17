@@ -23,7 +23,7 @@ BuildRequires: pandoc
 BuildRequires: intltool
 BuildRequires: alsa-lib-devel
 BuildRequires: gtkmm24-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsndfile-devel
 BuildRequires: dssi-devel
 BuildRequires: liblo-devel

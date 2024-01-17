@@ -22,7 +22,7 @@ BuildRequires: cmake
 BuildRequires: mesa-libGL-devel
 BuildRequires: libsndfile-devel
 BuildRequires: rubberband-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libX11-devel
 BuildRequires: lv2-devel
 

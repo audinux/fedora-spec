@@ -20,7 +20,7 @@ BuildRequires: lv2-devel
 BuildRequires: dssi-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: fftw-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: liblo-devel
 BuildRequires: desktop-file-utils
 

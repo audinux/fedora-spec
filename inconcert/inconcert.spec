@@ -20,7 +20,7 @@ Source0: inconcert.tar.gz
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: qt-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: gtest-devel
 

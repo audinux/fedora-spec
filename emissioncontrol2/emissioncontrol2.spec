@@ -21,7 +21,7 @@ Patch0: emissioncontrol2-0001-add-missing-header.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: libsndfile-devel
 BuildRequires: assimp-devel

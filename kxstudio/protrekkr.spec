@@ -24,7 +24,7 @@ Patch0:  protrekkr-0001-set-config-file-paths.patch
 BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: SDL-devel
 BuildRequires: zlib-devel
 BuildRequires: desktop-file-utils

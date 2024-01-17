@@ -23,7 +23,7 @@ BuildRequires: rtaudio-devel
 BuildRequires: zlib-devel
 BuildRequires: zziplib-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils
 
 %description

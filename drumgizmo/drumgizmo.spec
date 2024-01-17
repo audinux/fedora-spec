@@ -31,7 +31,7 @@ BuildRequires: libXext-devel
 
 # Drumgizmo command-line tools
 BuildRequires: expat-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsmf-devel
 BuildRequires: alsa-lib-devel
 

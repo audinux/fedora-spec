@@ -18,7 +18,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: lv2-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: glib2-devel
 
 %description

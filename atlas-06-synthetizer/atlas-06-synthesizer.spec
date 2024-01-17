@@ -34,7 +34,7 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
 BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: vst3sdk
 BuildRequires: desktop-file-utils
 

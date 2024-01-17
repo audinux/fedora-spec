@@ -17,7 +17,7 @@ Distribution: Audinux
 Source0: https://github.com/harryhaaren/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: cmake
 
 %description

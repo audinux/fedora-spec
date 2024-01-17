@@ -17,7 +17,7 @@ Source0: https://github.com/ssj71/OSC2MIDI/archive/v%{version}.tar.gz#/OSC2MIDI-
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: liblo-devel
 
 %description

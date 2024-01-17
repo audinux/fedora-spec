@@ -26,7 +26,7 @@ BuildRequires: audiofile-devel
 BuildRequires: boost-devel
 BuildRequires: fftw-devel
 BuildRequires: flac-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libogg-devel
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: libvorbis-devel

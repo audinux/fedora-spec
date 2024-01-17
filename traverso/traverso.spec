@@ -22,7 +22,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: qt5-qtbase-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: filesystem
 BuildRequires: libsndfile-devel
 BuildRequires: wavpack-devel

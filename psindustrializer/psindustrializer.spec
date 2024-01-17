@@ -21,7 +21,7 @@ BuildRequires: gcc
 BuildRequires: autoconf
 BuildRequires: libX11-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: audiofile-devel
 BuildRequires: gtk2-devel

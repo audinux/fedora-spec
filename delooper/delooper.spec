@@ -17,7 +17,7 @@ Distribution: Audinux
 Source0: https://github.com/sonejostudios/DeLooper/archive/%{commit0}.zip#/%{name}-%{version}.zip
 
 BuildRequires: gcc gcc-c++
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: faust-tools
 BuildRequires: qt5-qtbase-devel
 BuildRequires: alsa-lib-devel

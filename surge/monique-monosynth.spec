@@ -32,7 +32,7 @@ BuildRequires: libcurl-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: pkgconfig(webkit2gtk-4.0)
 BuildRequires: patchelf
 

@@ -15,7 +15,7 @@ BuildRequires: alsa-lib-devel
 BuildRequires: dssi-devel
 BuildRequires: fftw-devel
 BuildRequires: fontpackages-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-linguist
 BuildRequires: qt5-qtx11extras-devel

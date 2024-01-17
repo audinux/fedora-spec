@@ -31,7 +31,7 @@ BuildRequires: wxGTK3-devel
 %else
 BuildRequires: wxGTK-devel
 %endif
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: systemd-devel
 BuildRequires: wavpack-devel

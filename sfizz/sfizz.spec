@@ -29,7 +29,7 @@ BuildRequires: kiss-fft-devel
 BuildRequires: pugixml-devel
 BuildRequires: cxxopts-devel
 BuildRequires: catch2-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 # option_ex(SFIZZ_USE_SYSTEM_GHC_FS   "Use GHC Filesystem libraries preinstalled on system" OFF)
 

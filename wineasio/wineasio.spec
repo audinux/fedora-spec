@@ -36,11 +36,11 @@ Source0: https://github.com/wineasio/wineasio/releases/download/v%{version}/wine
 
 BuildRequires: gcc
 BuildRequires: make
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: wine-devel >= %{wineversion}
 %if %{with_32bit}
 BuildRequires: glibc-devel(x86-32)
-BuildRequires: jack-audio-connection-kit-devel(x86-32)
+BuildRequires: pkgconfig(jack)(x86-32)
 BuildRequires: wine-devel(x86-32) >= %{wineversion}
 %endif
 

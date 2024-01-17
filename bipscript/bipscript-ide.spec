@@ -21,7 +21,7 @@ BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-qtsvg-devel
 BuildRequires: boost-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: liblo-devel
 BuildRequires: libatomic
 BuildRequires: desktop-file-utils

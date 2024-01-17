@@ -16,7 +16,7 @@ Source0: https://codeberg.org/obsoleszenz/EQUIS/archive/main.tar.gz#/%{name}-%{v
 
 BuildRequires: rust
 BuildRequires: cargo
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 %description
 This is a 8 Channel DJ Mixer built on top of JACK. It's EQ is inspired

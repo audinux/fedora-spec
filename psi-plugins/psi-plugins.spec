@@ -27,7 +27,7 @@ BuildRequires: fltk-devel
 BuildRequires: fltk-fluid
 BuildRequires: non-ntk-devel
 BuildRequires: non-ntk-fluid
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: liblo-devel
 
 %description

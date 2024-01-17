@@ -20,7 +20,7 @@ BuildRequires: php-cli
 BuildRequires: chrpath
 BuildRequires: lv2-devel
 BuildRequires: ladspa-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsndfile-devel
 BuildRequires: cairo-devel
 BuildRequires: expat-devel

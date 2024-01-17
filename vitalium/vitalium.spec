@@ -24,7 +24,7 @@ BuildRequires: liblo-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: mesa-libGL-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: freetype-devel
 BuildRequires: libXrandr-devel
 BuildRequires: libXinerama-devel

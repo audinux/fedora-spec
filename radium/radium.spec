@@ -20,7 +20,7 @@ BuildRequires: qt4-devel
 BuildRequires: libXaw-devel
 BuildRequires: python2-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsamplerate-devel
 BuildRequires: liblrdf-devel
 BuildRequires: libsndfile-devel

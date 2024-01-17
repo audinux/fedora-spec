@@ -19,7 +19,7 @@ Source0: drops.tar.gz
 Source1: clearly-broken-source.sh
 
 BuildRequires: gcc gcc-c++
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: ladspa-devel
 BuildRequires: lv2-devel

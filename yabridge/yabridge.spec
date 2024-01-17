@@ -27,7 +27,7 @@ BuildRequires: boost-devel
 BuildRequires: lv2-devel
 BuildRequires: lilv-devel
 BuildRequires: suil-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: wine-devel
 BuildRequires: boost-devel
 BuildRequires: libxcb-devel

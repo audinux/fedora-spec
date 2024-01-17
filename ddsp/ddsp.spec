@@ -21,7 +21,7 @@ Source1: ddsp-source.sh
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: git
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: libX11-devel
 BuildRequires: mesa-libGL-devel

@@ -15,7 +15,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: libsndfile-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: freeglut-devel
 BuildRequires: libXmu-devel
 BuildRequires: libXext-devel

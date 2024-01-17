@@ -30,7 +30,7 @@ BuildRequires: zita-alsa-pcmi-devel
 BuildRequires: clthreads-devel
 BuildRequires: clxclient-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: readline-devel
 BuildRequires: libX11-devel
 BuildRequires: libXft-devel

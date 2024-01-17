@@ -48,7 +48,7 @@ BuildRequires: make
 BuildRequires: doxygen
 BuildRequires: chrpath
 BuildRequires: bison
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: libunicap-devel
 BuildRequires: libdv-devel

@@ -21,7 +21,7 @@ Patch0: aeolus_plugin-0001-aarch64.patch
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel

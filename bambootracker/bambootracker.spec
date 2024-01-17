@@ -22,7 +22,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: pulseaudio-libs-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsndfile-devel
 BuildRequires: rtaudio-devel
 BuildRequires: rtmidi-devel

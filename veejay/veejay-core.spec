@@ -20,7 +20,7 @@ BuildRequires: automake
 BuildRequires: autoconf
 BuildRequires: libtool
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: gtk2-devel
 BuildRequires: libjpeg-devel
 %if 0%{?fedora} >= 37

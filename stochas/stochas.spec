@@ -22,7 +22,7 @@ BuildRequires: libcurl-devel
 BuildRequires: rsync
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 %description
 A VST3 MIDI sequencer

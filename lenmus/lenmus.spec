@@ -29,7 +29,7 @@ BuildRequires: wxGTK3-devel
 BuildRequires: wxGTK-devel
 %endif
 BuildRequires: sqlite-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: fluidsynth-devel
 BuildRequires: fluid-soundfont-gm
 BuildRequires: desktop-file-utils

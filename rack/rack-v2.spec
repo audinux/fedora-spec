@@ -27,7 +27,7 @@ Patch1: rack-v2-aarch64.patch
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 %if !%{use_embedded_samplerate}
 BuildRequires: libsamplerate-devel
 %endif

@@ -34,7 +34,7 @@ BuildRequires: gtk3-devel
 BuildRequires: libsndfile-devel
 BuildRequires: libvorbis-devel
 BuildRequires: libsamplerate-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils
 
 %description

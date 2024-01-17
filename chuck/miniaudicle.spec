@@ -25,7 +25,7 @@ BuildRequires: flex
 BuildRequires: qt6-qtbase-devel
 BuildRequires: qscintilla-qt6-devel
 BuildRequires: qt6-rpm-macros
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: libsndfile-devel
 BuildRequires: pulseaudio-libs-devel

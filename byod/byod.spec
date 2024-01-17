@@ -20,7 +20,7 @@ Source1: source_byod.sh
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel

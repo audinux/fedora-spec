@@ -18,7 +18,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: clthreads-devel
 BuildRequires: clxclient-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libX11-devel
 BuildRequires: libXft-devel
 BuildRequires: libpng-devel

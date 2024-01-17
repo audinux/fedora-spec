@@ -36,7 +36,7 @@ BuildRequires: libcurl-devel
 BuildRequires: gtk3-devel
 BuildRequires: webkit2gtk3-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXrandr-devel
 BuildRequires: libxkbcommon-x11-devel

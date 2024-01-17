@@ -26,7 +26,7 @@ BuildRequires: make
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
 BuildRequires: python3-numpy
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 Requires: python3
 Requires: pygtk2

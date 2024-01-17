@@ -18,7 +18,7 @@ BuildRequires: alsa-lib-devel
 BuildRequires: libudisks2-devel
 BuildRequires: gtk3-devel
 BuildRequires: webkit2gtk3-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
 BuildRequires: rapidjson-devel

@@ -12,7 +12,7 @@ BuildRequires: cmake
 BuildRequires: doxygen
 BuildRequires: boost-devel
 BuildRequires: libsndfile-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: fftw-devel
 BuildRequires: eigen3-devel
 BuildRequires: liblo-devel

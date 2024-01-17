@@ -16,7 +16,7 @@ Source0: https://sourceforge.net/projects/jack-director/files/JackDirector-%{ver
 
 BuildRequires: gcc gcc-c++
 BuildRequires: qt5-qtbase-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 
 %description

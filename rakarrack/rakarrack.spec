@@ -24,7 +24,7 @@ BuildRequires: libXpm-devel
 BuildRequires: libsndfile-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: fftw-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils
 BuildRequires: autoconf
 BuildRequires: automake

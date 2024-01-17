@@ -25,7 +25,7 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: fftw-devel
 BuildRequires: ladspa-devel
 BuildRequires: dssi-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: liblo-devel
 
 %description

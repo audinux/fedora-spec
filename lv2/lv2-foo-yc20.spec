@@ -19,7 +19,7 @@ BuildReauires: make
 BuildRequires: lv2-devel
 BuildRequires: gtk2-devel
 BuildRequires: cairo-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsndfile-devel
 BuildRequires: glib2-devel
 BuildRequires: desktop-file-utils

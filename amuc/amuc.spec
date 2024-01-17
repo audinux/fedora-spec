@@ -28,7 +28,7 @@ BuildRequires: alsa-lib-devel
 BuildRequires: libX11-devel
 BuildRequires: libXft-devel
 BuildRequires: cairo-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 %description
 Amuc - the Amsterdam Music Composer

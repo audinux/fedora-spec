@@ -12,7 +12,7 @@ Source0: https://github.com/x42/jackmidi2osc/archive/refs/tags/v%{version}.tar.g
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: liblo-devel
 
 %description

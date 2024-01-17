@@ -19,7 +19,7 @@ BuildReauires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: lua-devel
 BuildRequires: libevdev-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: openssl-devel
 BuildRequires: python3-devel
 

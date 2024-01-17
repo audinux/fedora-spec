@@ -49,7 +49,7 @@ BuildRequires: cmake
 BuildRequires: git
 BuildRequires: perl-List-MoreUtils
 BuildRequires: perl-XML-Parser
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel
 BuildRequires: suil-devel
 BuildRequires: lilv-devel

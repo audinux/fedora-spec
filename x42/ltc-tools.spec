@@ -14,7 +14,7 @@ BuildRequires: gcc
 BuildRequires: make
 BuildRequires: libltc-devel
 BuildRequires: libsndfile-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 %description
 Commandline tools to deal with linear-timecode (LTC).

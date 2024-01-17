@@ -24,7 +24,7 @@ BuildRequires: pkgconfig(Qt5Multimedia)
 BuildRequires: pkgconfig(Qt5Location)
 BuildRequires: pkgconfig(Qt5OpenGL)
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils
 
 %description

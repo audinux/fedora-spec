@@ -18,7 +18,7 @@ Patch1:  0001-fix-sigc-namespace.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: atk-devel
 BuildRequires: cairo-devel

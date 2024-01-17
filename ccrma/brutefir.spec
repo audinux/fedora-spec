@@ -17,7 +17,7 @@ BuildRequires: gcc gcc-c++ make
 BuildRequires: flex
 BuildRequires: fftw-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 
 %description
 BruteFIR is a software convolution engine, a program for applying long

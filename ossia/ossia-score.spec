@@ -19,7 +19,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: unzip
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: boost-devel
 BuildRequires: zlib-devel
 BuildRequires: llvm-devel

@@ -23,7 +23,7 @@ BuildRequires: automake
 BuildRequires: libtool
 BuildRequires: glibc-common
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: glib2-devel
 BuildRequires: lv2-devel
 BuildRequires: qt5-qtbase-devel

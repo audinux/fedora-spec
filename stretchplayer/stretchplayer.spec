@@ -20,7 +20,7 @@ Patch2:  stretchplayer-disable-mpg123.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: qt4-devel
 BuildRequires: cmake
 BuildRequires: desktop-file-utils

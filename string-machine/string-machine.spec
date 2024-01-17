@@ -15,7 +15,7 @@ Source0: string-machine.tar.gz
 Source1: string-machine-source.sh
 
 BuildRequires: gcc gcc-c++
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: freetype-devel
 BuildRequires: libX11-devel

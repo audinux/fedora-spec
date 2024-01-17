@@ -26,7 +26,7 @@ BuildRequires: libtool
 BuildRequires: alsa-lib-devel
 BuildRequires: alsa-utils
 BuildRequires: fltk-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: libsndfile-devel
 BuildRequires: libxcb-devel
 BuildRequires: libXpm-devel

@@ -22,7 +22,7 @@ BuildRequires: qt5-qtsvg-devel
 BuildRequires: qt5-linguist
 BuildRequires: alsa-lib-devel
 BuildRequires: desktop-file-utils
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: portaudio-devel
 BuildRequires: rtmidi-devel
 BuildRequires: stk-devel

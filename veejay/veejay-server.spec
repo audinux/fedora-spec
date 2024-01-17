@@ -21,7 +21,7 @@ BuildRequires: autoconf
 BuildRequires: libtool
 BuildRequires: libgomp
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: gtk2-devel
 BuildRequires: libjpeg-devel
 BuildRequires: libpng-devel
