@@ -1,5 +1,5 @@
 Name:    plugdata
-Version: 0.8.2
+Version: 0.8.3
 Release: 1%{?dist}
 Summary: Pure Data as a plugin, with a new GUI
 URL:     https://github.com/timothyschoen/PlugData
@@ -9,7 +9,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./plugdata-source.sh <TAG>
-# ./plugdata-source.sh v0.8.2
+# ./plugdata-source.sh v0.8.3
 
 Source0: PlugData.tar.gz
 Source1: plugdata-source.sh
@@ -17,8 +17,8 @@ Source1: plugdata-source.sh
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: alsa-lib-devel
-BuildRequires: jack-audio-connection-kit-devel
 BuildRequires: ladspa-devel
+BuildRequires: pkgconfig(jack)
 BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xinerama)
 BuildRequires: pkgconfig(xext)
@@ -147,6 +147,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/plugdata.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Wed Jan 17 2024 Yann Collette <ycollette.nospam@free.fr> - 0.8.3-1
+- update to 0.8.3-1
+
 * Tue Nov 21 2023 Yann Collette <ycollette.nospam@free.fr> - 0.8.2-1
 - update to 0.8.2-1
 
