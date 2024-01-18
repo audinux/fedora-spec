@@ -631,7 +631,6 @@ https://github.com/starlingcode/Via-for-Rack
 https://github.com/stavrosdidakis/Motion-Tracking
 https://github.com/Stazed/rakarrack-plus
 https://github.com/Stazed/seq42
-https://github.com/steinbergmedia/vst3sdk
 https://github.com/steveb/gula-plugins
 https://github.com/SteveRussell33/Prism
 https://github.com/stevie67/loopor
