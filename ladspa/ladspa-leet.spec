@@ -7,7 +7,7 @@ Version: 0.2
 Release: 1%{?dist}
 Summary: LADSPA equalizers and chorus plugin
 License: GPL-2.0+
-Url: https://code.google.com/archive/p/leetplugins/
+URL: https://code.google.com/archive/p/leetplugins/
 
 Vendor:       Audinux
 Distribution: Audinux

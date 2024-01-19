@@ -20,7 +20,7 @@ Version: 0.6.3
 Release: 2%{?dist}
 Summary: Visual programming language animation tool
 License: GPL-3.0 and LGPL-3.0
-Url: http://www.vsxu.com/
+URL: http://www.vsxu.com/
 
 Vendor:       Audinux
 Distribution: Audinux

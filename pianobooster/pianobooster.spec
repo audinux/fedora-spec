@@ -7,7 +7,7 @@ Version: 1.0.0
 Release: 8%{?dist}
 Summary: A MIDI file player that teaches you how to play the piano
 License: GPL-3.0-or-later
-Url: https://github.com/captnfab/PianoBooster
+URL: https://github.com/captnfab/PianoBooster
 
 Vendor:       Audinux
 Distribution: Audinux

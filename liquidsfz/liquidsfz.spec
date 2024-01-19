@@ -7,7 +7,7 @@ Version: 0.3.2
 Release: 2%{?dist}
 License: BSD-2-Clause
 Summary: Sampler plugin and library for SFZ and Hydrogen instruments
-Url: https://github.com/swesterfeld/liquidsfz
+URL: https://github.com/swesterfeld/liquidsfz
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -3,7 +3,7 @@ Version: 1.2.3
 Release: 4%{?dist}
 License: BSD-2-Clause
 Summary: Sampler plugin and library for SFZ instruments
-Url:     https://github.com/sfztools/sfizz
+URL:     https://github.com/sfztools/sfizz
 
 Vendor:       Audinux
 Distribution: Audinux

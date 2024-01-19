@@ -22,7 +22,7 @@ Version: 0.4
 Release: 1%{?dist}
 Summary: LADSPA vocoder plugin
 License: GPL-2.0+
-Url: https://www.sirlab.de/linux/download
+URL: https://www.sirlab.de/linux/download
 
 Vendor:       Audinux
 Distribution: Audinux

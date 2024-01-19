@@ -31,7 +31,7 @@ Version: 0.99.8.%{shortcommit0}
 Release: 1%{?dist}
 License: GPL-3.0
 Summary: Web-based interface for the MOD
-Url: https://github.com/moddevices/mod-ui
+URL: https://github.com/moddevices/mod-ui
 
 Vendor:       Audinux
 Distribution: Audinux

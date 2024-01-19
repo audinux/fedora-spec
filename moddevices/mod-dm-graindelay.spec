@@ -12,7 +12,7 @@ Version: 0.1.%{shortcommit0}
 Release: 1%{?dist}
 License: MIT
 Summary: Granular delay, lv2 & vst audio plugin
-Url: https://github.com/moddevices/dm-GrainDelay
+URL: https://github.com/moddevices/dm-GrainDelay
 
 Vendor:       Audinux
 Distribution: Audinux
