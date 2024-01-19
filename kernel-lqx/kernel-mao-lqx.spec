@@ -3,7 +3,7 @@
 # Kernel minor version
 %define kmin  6
 # Kernel patch version
-%define kpat  9
+%define kpat  11
 # RT patch version
 %define krt   1
 # package version
@@ -211,6 +211,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-lqx%{krt}%{fcver}
 
 %changelog
+* Fri Jan 19 2024 Yann Collette <ycollette.nospam@free.fr> - 6.6.11-lqx1-14
+- update to 6.6.11-lqx1-14 - vanilla Liquorix kernel
+
 * Wed Jan 17 2024 Yann Collette <ycollette.nospam@free.fr> - 6.6.9-lqx1-14
 - update to 6.6.9-lqx1-14 - add a missing SELINUX option
 
