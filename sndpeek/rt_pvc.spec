@@ -1,9 +1,13 @@
-Name:    rt_pvc
+# Tag: Analyzer, Effect
+# Type: Standalone
+# Category: Effect
+
+Name: rt_pvc
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: real-time phase vocoder analysis/synthesis library + visualization
 License: GPL
-URL:     https://soundlab.cs.princeton.edu/software/rt_pvc/
+URL: https://soundlab.cs.princeton.edu/software/rt_pvc/
 
 Vendor:       Audinux
 Distribution: Audinux

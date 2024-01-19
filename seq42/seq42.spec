@@ -1,9 +1,13 @@
-Name:    seq42
+# Tag: Sequencer, MIDI
+# Type: Standalone
+# Category: Audio, Sequencer, MIDI
+
+Name: seq42
 Version: 2.1.3
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
-URL:     https://github.com/Stazed/seq42
+URL: https://github.com/Stazed/seq42
 
 Vendor:       Audinux
 Distribution: Audinux

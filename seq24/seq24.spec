@@ -1,19 +1,25 @@
-Summary:      Real-time midi sequencer
-Name:         seq24
-Version:      0.9.3
-Release:      8%{?dist}
-License:      GPL-2.0-or-later
-URL:          http://launchpad.net/%{name}
+# Tag: Sequencer, MIDI
+# Type: Standalone
+# Category: Audio, Sequencer, MIDI
+
+Summary: Real-time midi sequencer
+Name: seq24
+Version: 0.9.3
+Release: 8%{?dist}
+License: GPL-2.0-or-later
+URL: http://launchpad.net/%{name}
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source:       http://launchpad.net/%{name}/trunk/%{version}/+download/seq24-%{version}.tar.bz2
-Source1:      %{name}.png
-Source2:      %{name}.desktop
+Source: http://launchpad.net/%{name}/trunk/%{version}/+download/seq24-%{version}.tar.bz2
+Source1: %{name}.png
+Source2: %{name}.desktop
 
 BuildRequires: gcc gcc-c++
-BuildRequires: lash-devel gtkmm24-devel
+BuildRequires: make
+BuildRequires: lash-devel
+BuildRequires: gtkmm24-devel
 BuildRequires: desktop-file-utils
 
 Requires: hicolor-icon-theme

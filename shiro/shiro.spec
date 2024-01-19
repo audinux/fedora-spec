@@ -1,13 +1,13 @@
 # Tag: Effect
-# Type: LV2
+# Type: LV2, LADSPA, VST, Plugin
 # Category: Effect
 
-Name:    shiro
+Name: shiro
 Version: 0.1
 Release: 1%{?dist}
 Summary: SHIRO LV2 plugin collection
 License: GPL-2.0-or-later
-URL:     https://github.com/ninodewit/SHIRO-Plugins
+URL: https://github.com/ninodewit/SHIRO-Plugins
 
 Vendor:       Audinux
 Distribution: Audinux

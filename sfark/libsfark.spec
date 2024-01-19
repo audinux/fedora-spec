@@ -1,14 +1,18 @@
+# Tag: Library
+# Type: Devel
+# Category: Programming
+
 # Global variables for github repository
 %global commit0 e558feb824132d71004af82cc3a235566b89bec8
 %global gittag0 2.24
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Summary: sfArk library
-Name:    sfArkLib
+Name: sfArkLib
 Version: 2.24.%{shortcommit0}
 Release: 2%{?dist}
 License: GPL
-URL:     https://github.com/raboof/sfArkLib
+URL: https://github.com/raboof/sfArkLib
 
 Vendor:       Audinux
 Distribution: Audinux

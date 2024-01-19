@@ -1,9 +1,13 @@
-Name:    sfizz-ui
+# Tag: Sampler, Synthesizer, Library
+# Type: Plugin, LV2, VST3, Devel
+# Category: Synthesizer, Programming
+
+Name: sfizz-ui
 Version: 1.2.3
 Release: 1%{?dist}
 License: BSD-2-Clause
 Summary: SFZ based sampler, providing LV2 / VST3 plugins using the sfizz
-URL:     https://github.com/sfztools/sfizz-ui
+URL: https://github.com/sfztools/sfizz-ui
 
 Vendor:       Audinux
 Distribution: Audinux

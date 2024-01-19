@@ -3,12 +3,12 @@
 # Category: Audio, Effect
 # GUIToolkit: GTK3
 
-Name:    smartguitarpedal
+Name: smartguitarpedal
 Version: 1.5
 Release: 1%{?dist}
 Summary: Guitar plugin made with JUCE that uses neural network models to emulate real world hardware.
 License: GPL-2.0-or-later
-URL:     https://github.com/GuitarML/SmartGuitarPedal
+URL: https://github.com/GuitarML/SmartGuitarPedal
 
 Vendor:       Audinux
 Distribution: Audinux

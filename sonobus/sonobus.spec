@@ -2,12 +2,12 @@
 # Type: Standalone
 # Category: Audio
 
-Name:    sonobus
+Name: sonobus
 Version: 1.7.2
 Release: 3%{?dist}
 Summary: A peer to peer audio application
 License: GPL-2.0-or-later
-URL:     https://github.com/essej/sonobus
+URL: https://github.com/essej/sonobus
 
 Vendor:       Audinux
 Distribution: Audinux

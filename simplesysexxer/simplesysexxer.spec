@@ -1,3 +1,7 @@
+# Tag: Tool, MIDI
+# Type: Standalone
+# Category: MIDI, Tool
+
 #
 # spec file for package simplesysexxer
 #

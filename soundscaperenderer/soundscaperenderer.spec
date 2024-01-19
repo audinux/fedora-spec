@@ -1,9 +1,13 @@
-Name:    soundscaperenderer
+# Tag: Devel, Tool
+# Type: Language
+# Category: Tool
+
+Name: soundscaperenderer
 Version: 0.6.0
 Release: 1%{?dist}
 Summary: SoundScape Renderer
 License: GPLv4+
-URL:     https://github.com/SoundScapeRenderer/ssr
+URL: https://github.com/SoundScapeRenderer/ssr
 
 Vendor:       Audinux
 Distribution: Audinux

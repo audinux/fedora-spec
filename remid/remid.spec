@@ -1,13 +1,13 @@
 # Tag: MIDI
-# Type: Plugin, LV2
+# Type: Plugin, LV2, Standalone
 # Category: Audio, Synthesizer
 
-Name:    remid
+Name: remid
 Version: 0.3
 Release: 1%{?dist}
 Summary: A lv2 port of the midi controlled implementation of the SID 6581 chip used in the Commodore 64
 License: GPL-2.0-or-later
-URL:     https://github.com/ssj71/reMID.lv2
+URL: https://github.com/ssj71/reMID.lv2
 
 Vendor:       Audinux
 Distribution: Audinux

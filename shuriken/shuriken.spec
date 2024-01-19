@@ -1,9 +1,13 @@
-Name:    shuriken
+# Tag: Audio, Tool, Editor
+# Type: Standalone
+# Category: Audio, Tool
+
+Name: shuriken
 Version: 0.5.2
 Release: 2%{?dist}
 Summary: beat slicer
 License: GPL-2.0-only
-URL:     https://github.com/rock-hopper/shuriken/
+URL: https://github.com/rock-hopper/shuriken/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -11,12 +15,12 @@ Distribution: Audinux
 Source0: https://github.com/rock-hopper/%{name}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: automake
+BuildRequires: libtool
 BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: aubio-devel
 BuildRequires: liblo-devel
-BuildRequires: automake
-BuildRequires: libtool
 BuildRequires: rubberband-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libsndfile-devel

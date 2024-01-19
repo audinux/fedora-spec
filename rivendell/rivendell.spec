@@ -1,9 +1,13 @@
+# Tag: Sequencer, Audio, Editor
+# Type: Standalone
+# Category: Audio, Tool
+
 Summary: A radio automation system
-Name:    rivendell
+Name: rivendell
 Version: 4.1.2
 Release: 1%{?dist}
 License: LGPL
-URL:     https://github.com/ElvishArtisan/rivendell
+URL: https://github.com/ElvishArtisan/rivendell
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -11,7 +15,9 @@ Distribution: Audinux
 Source0: https://github.com/ElvishArtisan/rivendell/archive/refs/tags/v%{version}.tar.gz#/rivendell-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: autoconf automake libtool
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: libtool
 BuildRequires: python3
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)

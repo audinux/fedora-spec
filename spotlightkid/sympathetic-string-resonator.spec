@@ -1,9 +1,13 @@
-Name:    sympathetic-string-resonator
+# Tag: Effect, Audio
+# Type: Standalone, Plugin, LV2
+# Category: Effect, Audio
+
+Name: sympathetic-string-resonator
 Version: 0.1
 Release: 1%{?dist}
 Summary: A sympathetic string resonator
 License: MIT
-URL:     https://github.com/SpotlightKid/sympathetic-string-resonator
+URL: https://github.com/SpotlightKid/sympathetic-string-resonator
 
 Vendor:       Audinux
 Distribution: Audinux

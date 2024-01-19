@@ -3,12 +3,12 @@
 # Category: Tool, Audio
 # GUIToolkit: Qt5
 
-Name:    sftools
+Name: sftools
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: Tools for sound font files
 License: GPL-2.0-only
-URL:     https://github.com/musescore/sftools
+URL: https://github.com/musescore/sftools
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -16,10 +16,10 @@ Distribution: Audinux
 Source0: https://github.com/musescore/sftools/archive/refs/heads/master.zip#/sftools.zip
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: libvorbis-devel
 BuildRequires: qt5-qtbase-devel
 BuildRequires: libsndfile-devel
-BuildRequires: cmake
 
 %description
 Utilities for SoundFont files.

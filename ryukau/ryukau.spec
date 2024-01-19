@@ -1,16 +1,16 @@
 # Tag: Synthesizer
-# Type: LV2
+# Type: Plugin, VST, LV2
 # Category: Synthesizer
 
 # Global variables for github repository
 %global commit0 e5eee4c3
 
-Name:    ryukau
+Name: ryukau
 Version: 0.0.1.%{commit0}
 Release: 4%{?dist}
 Summary: Some audio plugins (LV2 and VST) from ruykau
 License: GPL-2.0-or-later
-URL:     https://github.com/Wasted-Audio/ryukau_LV2Plugins
+URL: https://github.com/Wasted-Audio/ryukau_LV2Plugins
 
 Vendor:       Audinux
 Distribution: Audinux

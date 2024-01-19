@@ -1,3 +1,7 @@
+# Tag: Organ, Synthesizer
+# Type: Plugin, LV2
+# Category: Synthesizer
+
 # Global variables for github repository
 %global commit0 176abd3f6ccabe10699275b8c7b9fd6c3b4ca40c
 %global gittag0 master
@@ -5,12 +9,12 @@
 
 %global debug_package %{nil}
 
-Name:    prelude
+Name: prelude
 Version: 0.0.1
 Release: 1%{?dist}
 License: BSD-2-Clause
 Summary: A wavetable-based church organ
-URL:     https://github.com/sfztools/prelude.lv2
+URL: https://github.com/sfztools/prelude.lv2
 
 Vendor:       Audinux
 Distribution: Audinux

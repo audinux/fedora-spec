@@ -5,12 +5,12 @@
 
 %define toneversion 1.0
 
-Name:    proteus
+Name: proteus
 Version: 0.1
 Release: 2%{?dist}
 Summary: Guitar amp and pedal capture plugin using neural networks.
 License: GPL-2.0-or-later
-URL:     https://github.com/GuitarML/Proteus
+URL: https://github.com/GuitarML/Proteus
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -1,15 +1,15 @@
-# Tag: Synthesizer
-# Type: LV2
-# Category: Synthesizer
+# Tag: Synthesizer, Effect
+# Type: Plugin, VST3
+# Category: Synthesizer, Effect
 
 # Global variables for github repository
 
-Name:    uhhyouplugins
+Name: uhhyouplugins
 Version: 0.61.0
 Release: 1%{?dist}
 Summary: Uhhyou Plugins VST 3
 License: GPL-2.0-or-later
-URL:     https://github.com/ryukau/VSTPlugins
+URL: https://github.com/ryukau/VSTPlugins
 
 Vendor:       Audinux
 Distribution: Audinux

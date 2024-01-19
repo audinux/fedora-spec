@@ -1,3 +1,7 @@
+# Tag: Editor, Audio, Sequencer
+# Type: Standalone
+# Category: Audio, Sequencer, DAW
+
 %global major 23.12
 
 Name: rosegarden4

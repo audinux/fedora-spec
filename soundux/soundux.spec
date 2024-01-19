@@ -1,9 +1,13 @@
-Name:    soundux
+# Tag: Audio, Tool, Sequencer
+# Type: Standalone
+# Category: Tool, Audio, Sequencer
+
+Name: soundux
 Version: 0.2.7
 Release: 1%{?dist}
 Summary: A cross-platform soundboard
 License: GPL-3.0-or-later
-URL:     https://github.com/Soundux/Soundux
+URL: https://github.com/Soundux/Soundux
 
 Vendor:       Audinux
 Distribution: Audinux

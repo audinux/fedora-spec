@@ -1,9 +1,13 @@
+# Tag: Presets
+# Type: Presets
+# Category: Plugin
+
 Summary: Impulse response from SNB studio
-Name:    SNB-IR
+Name: SNB-IR
 Version: 1.0.0
 Release: 2%{?dist}
 License: GPL-2.0-or-later AND GPL-3.0-only
-URL:     http://www.grgr.de/IR/
+URL: http://www.grgr.de/IR/
 
 Vendor:       Audinux
 Distribution: Audinux

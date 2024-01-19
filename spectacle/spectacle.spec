@@ -1,8 +1,12 @@
-Name:    spectacle-analyzer
+# Tag: Analyzer, Audio
+# Type: Standalone, Plugin, LV2
+# Category: Tool, Audio
+
+Name: spectacle-analyzer
 Version: 2.0
 Release: 2%{?dist}
 Summary: Realtime graphical spectrum analyzer
-URL:     https://github.com/jpcima/spectacle
+URL: https://github.com/jpcima/spectacle
 License: ISC
 
 Vendor:       Audinux

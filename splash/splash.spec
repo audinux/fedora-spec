@@ -1,9 +1,13 @@
-Name:    splash
+# Tag: Video, Tool
+# Type: Standalone
+# Category: Tool
+
+Name: splash
 Version: 0.10.4
 Release: 1%{?dist}
 Summary: Modular video-mapping software
 License: GPL-3.0-only
-URL:     https://gitlab.com/splashmapper/splash
+URL: https://gitlab.com/splashmapper/splash
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -1,3 +1,8 @@
+# Tag: Editor, Live
+# Type: Standalone, Language
+# Category: Audio, Programming
+# GUIToolkit: Qt5
+
 # Have a look at:
 # https://github.com/archlinux/svntogit-community/tree/packages/sonic-pi/trunk
 
@@ -20,17 +25,12 @@
 #    platform-folders[core]:x64-linux -> 4.1.0
 # Required: libx11-dev libxft-dev libxext-dev
 
-# Tag: Editor, Live
-# Type: Standalone, Language
-# Category: Audio, Programming
-# GUIToolkit: Qt5
-
-Name:    sonic-pi
+Name: sonic-pi
 Version: 4.2.0
 Release: 11%{?dist}
 Summary: A musical programming environment
 License: MIT
-URL:     https://sonic-pi.net/
+URL: https://sonic-pi.net/
 
 Vendor:       Audinux
 Distribution: Audinux

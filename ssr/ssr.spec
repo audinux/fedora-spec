@@ -1,9 +1,13 @@
+# Tag: Video, Tool, Jack
+# Type: Standalone
+# Category: Tool
+
 Summary: Simple Screen Recorder
-Name:    ssr
+Name: ssr
 Version: 0.4.4
 Release: 1%{?dist}
 License: GPL
-URL:     https://github.com/MaartenBaert/ssr
+URL: https://github.com/MaartenBaert/ssr
 
 Vendor:       Audinux
 Distribution: Audinux

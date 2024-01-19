@@ -3,12 +3,12 @@
 # Category: Audio, Effect
 # GUIToolkit: GTK3
 
-Name:    chameleon
+Name: chameleon
 Version: 1.2
 Release: 1%{?dist}
 Summary: Vintage guitar amp using neural networks.
 License: GPL-2.0-or-later
-URL:     https://github.com/GuitarML/Chameleon
+URL: https://github.com/GuitarML/Chameleon
 
 Vendor:       Audinux
 Distribution: Audinux

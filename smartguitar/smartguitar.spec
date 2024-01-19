@@ -5,12 +5,12 @@
 
 %define toneversion 1.0
 
-Name:    smartamp
+Name: smartamp
 Version: 1.3
 Release: 2%{?dist}
 Summary: Guitar plugin emulating real hardware with Neural Network
 License: GPL-2.0-or-later
-URL:     https://github.com/GuitarML/SmartGuitarAmp
+URL: https://github.com/GuitarML/SmartGuitarAmp
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -1,14 +1,18 @@
+# Tag: Library
+# Type: Devel
+# Category: Programming
+
 # Global variables for github repository
 %global commit0 0983ff7b104dc864af56409de5f7c66b061c5857
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Summary: A library for accessing the MusicBrainz Cover Art Archive
-Name:    libcoverart
+Name: libcoverart
 Version: 1.0.0
 Release: 4%{?dist}
 License: LGPL
-URL:     https://github.com/metabrainz/libcoverart
+URL: https://github.com/metabrainz/libcoverart
 
 Vendor:       Audinux
 Distribution: Audinux

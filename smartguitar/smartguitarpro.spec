@@ -5,12 +5,12 @@
 
 %define toneversion 1.0
 
-Name:    smartamppro
+Name: smartamppro
 Version: 1.0
 Release: 2%{?dist}
 Summary: Guitar plugin emulating real hardware with Neural Network
 License: GPL-2.0-or-later
-URL:     https://github.com/GuitarML/SmartAmpPro
+URL: https://github.com/GuitarML/SmartAmpPro
 
 Vendor:       Audinux
 Distribution: Audinux

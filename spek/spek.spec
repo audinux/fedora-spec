@@ -1,9 +1,13 @@
-Name:    spek
+# Tag: Analyzer, Audio
+# Type: Standalone, Plugin, LV2
+# Category: Tool, Audio
+
+Name: spek
 Version: 0.8.5
 Release: 1%{?dist}
 Summary: Acoustic spectrum analyser
 License: GPL-3.0-or-later
-URL:     https://github.com/alexkay/spek
+URL: https://github.com/alexkay/spek
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -1,11 +1,11 @@
+# Tag: Analyzer, Audio, Editor
+# Type: Standalone
+# Category: Audio, Tool
+
 # Global variables for github repository
 %global commit0 4d2e1d0065b6948462995fe80b952291363097a6
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
-# Tag: Analyzer
-# Type: Standalone
-# Category: Audio, Tool
 
 Summary: Audio Editing Package
 Name: rezound

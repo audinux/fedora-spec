@@ -1,8 +1,12 @@
-Name:    sound2light
+# Tag: Audio, Tool, OSC
+# Type: Standalone
+# Category: Audio, Tool
+
+Name: sound2light
 Version: 0.0.3.1.0.2
 Release: 2%{?dist}
 Summary: A tool converting sound input to OSC trigger signals
-URL:     https://github.com/ETCLabs/Sound2Light
+URL: https://github.com/ETCLabs/Sound2Light
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

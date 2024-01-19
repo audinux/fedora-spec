@@ -1,22 +1,27 @@
+# Tag: Tool
+# Type: Standalone
+# Category: Tool
+
 # Global variables for github repository
 %global commit0 cf9f324a16751812105f1f7613b799e65e43b91f
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Summary: sfArk tool
-Name:    sfarkxtc
+Name: sfarkxtc
 Version: 0.1.%{shortcommit0}
 Release: 2%{?dist}
 License: GPL
-URL:     https://github.com/raboof/sfarkxtc
+URL: https://github.com/raboof/sfarkxtc
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/raboof/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Patch0:  sfark-0001-fix-install-path.patch
+Patch0: sfark-0001-fix-install-path.patch
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: sfArkLib-devel
 BuildRequires: zlib-devel
 

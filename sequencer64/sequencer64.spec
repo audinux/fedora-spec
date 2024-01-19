@@ -1,9 +1,13 @@
-Name:    sequencer64
+# Tag: Sequencer, MIDI
+# Type: Standalone
+# Category: Audio, Sequencer, MIDI
+
+Name: sequencer64
 Version: 0.97.1
 Release: 4%{?dist}
 Summary: MIDI sequencer
 License: GPL
-URL:     https://github.com/ahlstromcj/sequencer64
+URL: https://github.com/ahlstromcj/sequencer64
 
 Vendor:       Audinux
 Distribution: Audinux

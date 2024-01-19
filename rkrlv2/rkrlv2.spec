@@ -7,11 +7,11 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    rkrlv2
+Name: rkrlv2
 Version: 0.0.1.%{shortcommit0}
 Release: 4%{?dist}
 Summary: Rakarrack LV2 plugins
-URL:     https://github.com/ssj71/rkrlv2
+URL: https://github.com/ssj71/rkrlv2
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -22,10 +22,10 @@ Source0: https://github.com/ssj71/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{s
 Patch0:  rkrlv2-0001-custom-install-path.patch
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: lv2-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: fftw-devel
-BuildRequires: cmake
 
 %description
 This project is the rakarrack effects ported to LV2 plugins.

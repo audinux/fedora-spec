@@ -2,12 +2,12 @@
 # Type: LV2
 # Category: Effect
 
-Name:    stereocrossdelay
+Name: stereocrossdelay
 Version: 0.1
 Release: 1%{?dist}
 Summary: A stereo delay plugin with feedback and cross-mixing 
 License: MIT
-URL:     https://github.com/SpotlightKid/stereocrossdelay
+URL: https://github.com/SpotlightKid/stereocrossdelay
 
 Vendor:       Audinux
 Distribution: Audinux

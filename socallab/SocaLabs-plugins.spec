@@ -1,3 +1,7 @@
+# Tag: Compressor, Emulator, Delay, Analyzer
+# Type: Plugin, VST, VST3
+# Category: Audio, Effect, Synthesizer
+
 # spec file for package slPlugins
 #
 # Copyright (c) 2019 SUSE LINUX GmbH, Nuernberg, Germany.
@@ -13,16 +17,12 @@
 
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 
-# Tag: Compressor, Emulator, Delay, Analyzer
-# Type: Plugin, VST, VST3
-# Category: Audio, Effect, Synthesizer
-
-Name:    SocaLabs-plugins
+Name: SocaLabs-plugins
 Version: 20220502
 Release: 6%{?dist}
 Summary: Various VST/VST3 Plugins from SocaLabs.com
 License: BSD-3-Clause
-URL:     https://github.com/FigBug/slPlugins
+URL: https://github.com/FigBug/slPlugins
 
 Vendor:       Audinux
 Distribution: Audinux

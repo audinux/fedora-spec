@@ -1,3 +1,7 @@
+# Tag: Tool, Library
+# Type: Devel
+# Category: Tool, Programming
+
 %{!?_pkgdocdir: %global _pkgdocdir %{_docdir}/%{name}-%{version}}
 
 Name: slv2

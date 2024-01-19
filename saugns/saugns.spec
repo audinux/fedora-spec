@@ -1,9 +1,13 @@
-Name:    saugns
+# Tag: Devel, Audio
+# Type: Standalone, Language
+# Category: Devel, Audio, Tool
+
+Name: saugns
 Version: 0.4.2d
 Release: 1%{?dist}
 Summary: Scriptable AUdio GeNeration System - implements the SAU language.
 License: GPL-3.0-only
-URL:     https://github.com/saugns/saugns
+URL: https://github.com/saugns/saugns
 
 Vendor:       Audinux
 Distribution: Audinux

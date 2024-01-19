@@ -1,3 +1,7 @@
+# Tag: Audio, Effect
+# Type: Plugin, VST3
+# Category: Effect
+
 Name:    rotor
 Version: 1.0.0
 Release: 1%{?dist}

@@ -1,17 +1,21 @@
+# Tag: Live, Sequencer, Editor
+# Type: Standalone
+# Category: Tool, Audio, DAW
+
 %define commit0 acc140d1b08b0fe3088db5324a958caf8c0d4985
 
-Name:    shoopdaloop
+Name: shoopdaloop
 Version: 0.1
 Release: 1%{?dist}
 Summary: A (live) looping application with DAW elements.
 License: GPL
-URL:     https://github.com/SanderVocke/shoopdaloop
+URL: https://github.com/SanderVocke/shoopdaloop
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./shoopdaloop-source.sh <TAG>
-# ./shoopdaloop-source.sh acc140d1b08b0fe3088db5324a958caf8c0d4985
+#        ./shoopdaloop-source.sh acc140d1b08b0fe3088db5324a958caf8c0d4985
 
 Source0: shoopdaloop.tar.gz
 Source1: shoopdaloop-source.sh

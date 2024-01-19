@@ -1,9 +1,13 @@
-Name:    seq66
+# Tag: Sequencer, MIDI
+# Type: Standalone
+# Category: Audio, Sequencer, MIDI
+
+Name: seq66
 Version: 0.99.12
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
-URL:     https://github.com/ahlstromcj/seq66
+URL: https://github.com/ahlstromcj/seq66
 
 Vendor:       Audinux
 Distribution: Audinux

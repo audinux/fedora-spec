@@ -3,12 +3,12 @@
 # Category: Audio, Effect
 # GUIToolkit: GTK3
 
-Name:    princepedal
+Name: princepedal
 Version: 1.0
 Release: 1%{?dist}
 Summary: Prince of Tone style guitar plugin made with neural networks
 License: GPL-2.0-or-later
-URL:     https://github.com/GuitarML/PrincePedal
+URL: https://github.com/GuitarML/PrincePedal
 
 Vendor:       Audinux
 Distribution: Audinux

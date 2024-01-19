@@ -1,9 +1,13 @@
+# Tag: Library
+# Type: Devel
+# Category: Programming
+
 Summary: C++ implementation of the Python Numpy library
-Name:    numcpp
+Name: numcpp
 Version: 2.4.2
 Release: 1%{?dist}
 License: MIT
-URL:     https://github.com/dpilger26/NumCpp
+URL: https://github.com/dpilger26/NumCpp
 
 Vendor:       Audinux
 Distribution: Audinux

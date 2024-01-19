@@ -1,8 +1,8 @@
-# Tag: Editor
-# Type: Standalone, IDE
-# Category: Programming, Audio
+# Tag: Tool
+# Type: Standalone
+# Category: Tool
 
-Name:    rtcqs
+Name: rtcqs
 Version: 0.5.2
 Release: 1%{?dist}
 Summary: rtcqs is a Python utility to setup real time parameters for low latency audio

@@ -1,8 +1,12 @@
-Name:    osmid
+# Tag: OSC, MIDI, Tool
+# Type: Standalone
+# Category: Audio, MIDI, Tool
+
+Name: osmid
 Version: 0.8.0
 Release: 2%{?dist}
 Summary: osmid is a tool to bridge MIDI and OSC
-URL:     https://github.com/llloret/osmid
+URL: https://github.com/llloret/osmid
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

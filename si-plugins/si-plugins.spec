@@ -1,12 +1,12 @@
 # Tag: MIDI, FM, Emulator
-# Type: Plugin, VST, LV2
+# Type: Plugin, VST, LV2, LADSPA, DSSI
 # Category: Audio, Synthesizer
 
-Name:    si-plugins
+Name: si-plugins
 Version: 0.3.0
 Release: 1%{?dist}
 Summary: Shermann Innovations plugin series
-URL:     https://github.com/guysherman/si-plugins
+URL: https://github.com/guysherman/si-plugins
 License: MIT
 
 Vendor:       Audinux

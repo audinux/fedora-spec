@@ -1,14 +1,18 @@
+# Tag: Player, Audio, Tool
+# Type: Standalone
+# Category: Audio, Tool
+
 # This package depends on automagic byte compilation
 # https://fedoraproject.org/wiki/Changes/No_more_automagic_Python_bytecompilation_phase_2
 %global py_byte_compile 1
 %global debug_package %{nil}
 
-Name:    solfege
+Name: solfege
 Version: 3.23.5pre2
 Release: 11%{?dist}
 Summary: Ear training program for music students
 License: GPL-3.0-only
-URL:     https://www.gnu.org/software/solfege/
+URL: https://www.gnu.org/software/solfege/
 
 Source0: https://git.savannah.gnu.org/cgit/solfege.git/snapshot/solfege-%{version}.tar.gz
 # Fix startup issue on F17+ (BZ 832764):

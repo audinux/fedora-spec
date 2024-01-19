@@ -1,3 +1,7 @@
+# Tag: Tool, Audio, Editor
+# Type: Standalone
+# Category: Tool, Audio
+
 %define pkgver 22.5
 %define tarname snd-%{pkgver}
 %define snd_date "03/07/2022"
@@ -12,11 +16,11 @@
 # Category: Audio, Tool
 
 Summary: A sound editor (%{pkgver}, %{snd_date})
-Name:    snd
+Name: snd
 Version: %{pkgver}
 Release: 1%{?dist}
 License: LGPL
-URL:     https://ccrma.stanford.edu/software/snd/
+URL: https://ccrma.stanford.edu/software/snd/
 
 Source:	 https://ccrma.stanford.edu/software/snd/snd-%{pkgver}.tar.gz
 Source1: snd.png

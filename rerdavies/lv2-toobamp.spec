@@ -1,3 +1,7 @@
+# Tag: Guitar, Effect
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 Name:    lv2-toobamp-plugins
 Version: 1.0.29
 Release: 1%{?dist}

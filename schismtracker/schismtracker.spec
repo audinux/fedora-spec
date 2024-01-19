@@ -2,12 +2,12 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
-Name:    schismtracker
+Name: schismtracker
 Version: 20231029
 Release: 2%{?dist}
 Summary: Module tracker software for creating music
 License: GPL-3.0-or-later
-URL:     https://github.com/schismtracker/schismtracker
+URL: https://github.com/schismtracker/schismtracker
 
 Vendor:       Audinux
 Distribution: Audinux

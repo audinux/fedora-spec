@@ -1,9 +1,13 @@
-Name:    sfizz
+# Tag: Sampler, Synthesizer, Library
+# Type: Standalone, Devel
+# Category: Synthesizer, Programming
+
+Name: sfizz
 Version: 1.2.3
 Release: 4%{?dist}
 License: BSD-2-Clause
 Summary: Sampler plugin and library for SFZ instruments
-URL:     https://github.com/sfztools/sfizz
+URL: https://github.com/sfztools/sfizz
 
 Vendor:       Audinux
 Distribution: Audinux

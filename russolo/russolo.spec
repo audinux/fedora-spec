@@ -1,18 +1,23 @@
+# Tag: Effect, Synthesizer
+# Type: Plugin, LV@
+# Category: Effect, Synthesizer
+
 %define commit0 33
 
-Name:    lv2-russolo
+Name: lv2-russolo
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Russolo Suite
 License: GPL-3.0-or-later
-URL:     https://sourceforge.net/projects/intonarumori/
+URL: https://sourceforge.net/projects/intonarumori/
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://sourceforge.net/code-snapshots/svn/i/in/intonarumori/code/intonarumori-code-r%{commit0}.zip
 
-BuildRequires: gcc-c++ make
+BuildRequires: gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 
 %description

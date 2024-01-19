@@ -1,9 +1,13 @@
+# Tag: Presets
+# Type: Presets
+# Category: Plugin
+
 Summary: Impulse responses for various cabinet
-Name:    impulse-response
+Name: impulse-response
 Version: 1.0.1
 Release: 2%{?dist}
 License: GPL-2.0-or-later AND GPL-3.0-only
-URL:     https://musical-artifacts.com/artifacts/252
+URL: https://musical-artifacts.com/artifacts/252
 
 Vendor:       Audinux
 Distribution: Audinux

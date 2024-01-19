@@ -1,9 +1,13 @@
-Name:    sparta
+# Tag: Audio, Effect, Tool
+# Type: Standalone, Plugin, VST
+# Category: Tool, Audio, Effect
+
+Name: sparta
 Version: 1.6.2
 Release: 1%{?dist}
 Summary: A collection of spatial audio related VST plug-ins developed using JUCE and the Spatial_Audio_Framework
 License: GPL-3.0-or-later
-URL:     https://leomccormack.github.io/sparta-site/
+URL: https://leomccormack.github.io/sparta-site/
 
 Vendor:       Audinux
 Distribution: Audinux

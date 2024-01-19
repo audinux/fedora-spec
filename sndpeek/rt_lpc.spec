@@ -1,9 +1,13 @@
-Name:    rt_lpc
+# Tag: Analyzer, Effect
+# Type: Standalone
+# Category: Effect
+
+Name: rt_lpc
 Version: 1.0
 Release: 1%{?dist}
 Summary: real-time LPC analysis + synthesis + visualization
 License: GPL
-URL:     https://soundlab.cs.princeton.edu/software/rt_lpc/
+URL: https://soundlab.cs.princeton.edu/software/rt_lpc/
 
 Vendor:       Audinux
 Distribution: Audinux
