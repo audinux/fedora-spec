@@ -1,13 +1,17 @@
+# Tag: Player
+# Type: Standalone
+# Category: Audio, Tool
+
 # Global variables for github repository
 %global commit0 5e807a87cfad84c648d873107bfc91eef3648a4a
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    stretchplayer
+Name: stretchplayer
 Version: 0.0.1.%{shortcommit0}
 Release: 1%{?dist}
 Summary: Variable speed audio plater
-URL:     https://github.com/smbolton/stretchplayer
+URL: https://github.com/smbolton/stretchplayer
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

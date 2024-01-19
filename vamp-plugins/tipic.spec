@@ -15,7 +15,8 @@ Distribution: Audinux
 Source0: https://code.soundsoftware.ac.uk/attachments/download/2272/tipic-src-v%{version}.tar.gz
 Patch0: tipic-0001-add-cstdint.patch
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: vamp-plugin-sdk-devel
 BuildRequires: boost-devel
 

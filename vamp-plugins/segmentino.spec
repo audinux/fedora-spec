@@ -15,7 +15,8 @@ Distribution: Audinux
 Source0: segmentino-v1.1.tar.gz
 Source1: segmentino-source.sh
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: polyml
 BuildRequires: mercurial
 BuildRequires: vamp-plugin-sdk-devel

@@ -14,7 +14,8 @@ Distribution: Audinux
 
 Source0: https://aubio.org/pub/vamp-aubio-plugins/vamp-aubio-plugins-%{version}.tar.bz2
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: vamp-plugin-sdk-devel
 BuildRequires: aubio-devel
 

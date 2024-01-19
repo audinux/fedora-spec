@@ -2,12 +2,12 @@
 # Type: Plugin, Standalone, VST, LV2, CLAP
 # Category: Audio, Effect
 
-Name:    vswell
+Name: vswell
 Version: 0.3.0
 Release: 1%{?dist}
 Summary: vSwell is a volume envelope audio effect plugin. In LV2, VST, VST3 and CLAP formats.
 License: MIT
-URL:     https://github.com/GModal/vSwell
+URL: https://github.com/GModal/vSwell
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -19,6 +19,7 @@ Source0: vSwell.tar.gz
 Source1: vswell-source.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: hvcc
 BuildRequires: lv2-devel
 BuildRequires: mesa-libGL-devel

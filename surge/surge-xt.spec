@@ -1,15 +1,15 @@
-%define _lto_cflags %{nil}
-
 # Tag: Reverb, Compressor, Equalizer, Overdrive
-# Type: Plugin, VST3, Standalone
+# Type: Plugin, VST3, CLAP, Standalone
 # Category: Audio, Effect, Synthesizer
 
-Name:    surge-xt
+%define _lto_cflags %{nil}
+
+Name: surge-xt
 Version: 1.3.0
 Release: 2%{?dist}
 Summary: A VST3 Synthesizer and Effects, including Airwindows
 License: GPL-2.0-or-later
-URL:     https://github.com/surge-synthesizer/surge
+URL: https://github.com/surge-synthesizer/surge
 
 Vendor:       Audinux
 Distribution: Audinux

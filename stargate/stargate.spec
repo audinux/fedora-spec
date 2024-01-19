@@ -2,24 +2,23 @@
 # Type: Standalone
 # Category: DAW, Audio
 
-Name:    stargate
+Name: stargate
 Version: 24.01.1
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
 License: GPL-3.0-only
-URL:     https://github.com/stargatedaw/stargate
+URL: https://github.com/stargatedaw/stargate
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./stargate-source.sh <TAG>
-# ./stargate-source.sh release-24.01.1
+#        ./stargate-source.sh release-24.01.1
 
 Source0: stargate.tar.gz
 Source1: stargate-source.sh
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: git
 BuildRequires: jq
 BuildRequires: make

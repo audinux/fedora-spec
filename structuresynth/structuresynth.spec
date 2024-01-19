@@ -1,9 +1,13 @@
-Name:    structure-synth
+# Tag: Graphic, Editor
+# Type: Standalone
+# Category: Graphic, Tool
+
+Name: structure-synth
 Version: 1.5.0
 Release: 2%{?dist}
 Summary: Structure Synth generates 3D structures by specifying a design grammar
 License: GPL-2.0-only
-URL:     https://sourceforge.net/projects/structuresynth/
+URL: https://sourceforge.net/projects/structuresynth/
 
 Vendor:       Audinux
 Distribution: Audinux

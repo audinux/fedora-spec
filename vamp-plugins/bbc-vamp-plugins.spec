@@ -14,7 +14,8 @@ Distribution: Audinux
 
 Source0: https://github.com/bbc/bbc-vamp-plugins/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc-c++ make
+BuildRequires: gcc-c++
+BuildRequires: make
 BuildRequires: vamp-plugin-sdk-devel
 
 %description

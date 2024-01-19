@@ -1,9 +1,13 @@
-Name:    surge
+# Tag: Reverb, Compressor, Equalizer, Overdrive, Synthesizer
+# Type: Plugin, VST3, LV2
+# Category: Audio, Effect, Synthesizer
+
+Name: surge
 Version: 1.9.0
 Release: 8%{?dist}
 Summary: A VST3 / LV2 Synthesizer
 License: GPL-2.0-or-later
-URL:     https://github.com/surge-synthesizer/surge
+URL: https://github.com/surge-synthesizer/surge
 
 Vendor:       Audinux
 Distribution: Audinux

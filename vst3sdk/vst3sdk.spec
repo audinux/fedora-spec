@@ -1,3 +1,7 @@
+# Tag: Library, Tool
+# Type: Devel, Standalone, Plugin, VST3
+# Category: Programming, Effect
+
 Name: vst3sdk
 Version: 3.7.10
 Release: 1%{?dist}

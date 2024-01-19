@@ -1,13 +1,17 @@
+# Tag: Video, Tool
+# Type: Standalone
+# Category: Tool
+
 # Global variables for github repository
 %global commit0 8a6e66ed4ac1fce43725e66afc4aaf5b649c73ce
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    veejay-gui
+Name: veejay-gui
 Version: 1.5.57
 Release: 4%{?dist}
 Summary: A 'visual' instrument and realtime video sampler (for live video improvisation)
-URL:     https://github.com/c0ntrol/veejay
+URL: https://github.com/c0ntrol/veejay
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

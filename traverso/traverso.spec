@@ -2,11 +2,11 @@
 # Type: Standalone
 # Category: DAW, Audio, Sequencer
 
-Name:    traverso
+Name: traverso
 Version: 0.49.6
 Release: 4%{?dist}
 Summary: Traverso: A Multitrack Audio Recorder and Editor
-URL:     https://savannah.nongnu.org/projects/traverso/
+URL: https://savannah.nongnu.org/projects/traverso/
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

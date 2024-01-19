@@ -1,14 +1,18 @@
+# Tag: Audio, Tool
+# Type: Standalone
+# Category: Audio, Tool
+
 # Global variables for github repository
 %global commit0 6053ab0499859fce09117901ccb486c6d5de2d9f
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Summary: Audio recorder
-Name:    timemachine
+Name: timemachine
 Version: 0.3.4
 Release: 6%{?dist}
 License: GPL
-URL:     https://github.com/swh/timemachine
+URL: https://github.com/swh/timemachine
 
 Vendor:       Audinux
 Distribution: Audinux

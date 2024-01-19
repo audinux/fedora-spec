@@ -1,14 +1,18 @@
+# Tag: Synthesizer
+# Type: Plugin, VST
+# Category: Synthesizer
+
 # Global variables for github repository
 %global commit0 d56812e8d99d8ce2753deb6d631190c9a1223423
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    tunefish
+Name: tunefish
 Version: 4.2.0.%{shortcommit0}
 Release: 2%{?dist}
 Summary: Tunefish virtual analog synthesizer - additive wavetable-based synthesizer VST plugin (git version)
 License: GPL-3.0-only
-URL:     https://www.tunefish-synth.com/
+URL: https://www.tunefish-synth.com/
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -2,12 +2,12 @@
 # Type: Plugin, VST3, Standalone
 # Category: Audio, Effect, Synthesizer
 
-Name:    vaporizer2
+Name: vaporizer2
 Version: 3.4.5
 Release: 2%{?dist}
 Summary: Vaporizer2 hybrid wavetable additive / subtractive VST / AU / AAX synthesizer / sampler workstation plugin
 License: GPL-3.0-or-later
-URL:     https://github.com/VASTDynamics/Vaporizer2
+URL: https://github.com/VASTDynamics/Vaporizer2
 
 Vendor:       Audinux
 Distribution: Audinux

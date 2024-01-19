@@ -2,12 +2,12 @@
 # Type: Standalone
 # Category: Audio, DAW
 
-Name:    tsunami
+Name: tsunami
 # upstream version is in src/Tsunami.cpp
 Version: 0.7.114
 Release: 2%{?dist}
 Summary: A simple but powerful audio editor
-URL:     https://github.com/momentarylapse/tsunami
+URL: https://github.com/momentarylapse/tsunami
 License: GPL-3.0-only
 
 Vendor:       Audinux

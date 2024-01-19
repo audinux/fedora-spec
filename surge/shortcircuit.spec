@@ -1,7 +1,11 @@
+# Tag: Synthesizer
+# Type: Plugin, VST3
+# Category: Synthesizer
+
 Name:    shortcircuit
 Version: 0.0.1
 Release: 5%{?dist}
-Summary: A VST3 / LV2 Synthesizer
+Summary: A VST3 Synthesizer
 License: GPL-2.0-or-later
 URL:     https://github.com/surge-synthesizer/shortcircuit3
 

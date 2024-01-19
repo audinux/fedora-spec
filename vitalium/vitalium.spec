@@ -1,15 +1,19 @@
+# Tag: Synthesizer
+# Type: Standalone, Plugin, LV2, VST3
+# Category: Synthesizer
+
 %define _lto_cflags %{nil}
 
 %global commit0 65f1fe6c8917de717fe0d30f58b326f1f602ebdd
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    vitalium
+Name: vitalium
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: A LV2 / VST3 / standalone wavetable synth
 License: GPL-2.0-or-later
-URL:     https://vital.audio
+URL: https://vital.audio
 
 Vendor:       Audinux
 Distribution: Audinux

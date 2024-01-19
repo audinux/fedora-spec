@@ -1,9 +1,13 @@
-Name:    valentine
+# Tag: Effect, Compressor
+# Type: Standalone, Plugin, VST3
+# Category: Effect
+
+Name: valentine
 Version: 0.0.5
 Release: 1%{?dist}
 Summary: An open source compressor meant to pump and breathe
 License: GPL-3.0-or-later
-URL:     https://github.com/tote-bag-labs/valentine
+URL: https://github.com/tote-bag-labs/valentine
 
 Vendor:       Audinux
 Distribution: Audinux

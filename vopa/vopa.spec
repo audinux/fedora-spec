@@ -1,13 +1,17 @@
+# Tag: MIDI, Tool, Mixer
+# Type: Plugin, LV2
+# Category: MIDI, Tool
+
 # Global variables for github repository
 %global commit0 a8c25e63f5edb934daa6ba051a95daaae4c0abeb
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    vopa-lv2
+Name: vopa-lv2
 Version: 1.0.0
 Release: 2%{?dist}
 Summary: A LV2 amplifier controlled via MIDI messages
-URL:     https://github.com/ycollet/vopa
+URL: https://github.com/ycollet/vopa
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -16,6 +20,7 @@ Distribution: Audinux
 Source0: https://github.com/ycollet/vopa/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 
 %description

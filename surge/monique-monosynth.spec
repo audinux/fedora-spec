@@ -1,11 +1,15 @@
+# Tag: Synthesizer
+# Type: Standalone, Plugin, VST3, CLAP
+# Category: Synthesizer
+
 %global debug_package %{nil}
 
-Name:    monique-monosynth
+Name: monique-monosynth
 Version: 23102022
 Release: 1%{?dist}
 Summary: Monique is a monophonic synth from Thomas Arndt
 License: GPL-3.0-or-later
-URL:     https://github.com/surge-synthesizer/monique-monosynth
+URL: https://github.com/surge-synthesizer/monique-monosynth
 
 Vendor:       Audinux
 Distribution: Audinux

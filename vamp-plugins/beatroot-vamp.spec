@@ -14,7 +14,8 @@ Distribution: Audinux
 
 Source0: https://code.soundsoftware.ac.uk/attachments/download/885/beatroot-vamp-v%{version}.tar.gz
 
-BuildRequires: gcc-c++ make
+BuildRequires: gcc-c++
+BuildRequires: make
 BuildRequires: vamp-plugin-sdk-devel
 
 %description

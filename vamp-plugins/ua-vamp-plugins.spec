@@ -14,7 +14,8 @@ Distribution: Audinux
 
 Source0: https://github.com/pertusa/UAVampPlugins/archive/refs/heads/master.zip#/ua-vamp-plugins.zip
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: vamp-plugin-sdk-devel
 BuildRequires: boost-devel
 BuildRequires: fftw-devel

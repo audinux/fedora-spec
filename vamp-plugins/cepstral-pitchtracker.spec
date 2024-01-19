@@ -14,7 +14,8 @@ Distribution: Audinux
 
 Source0: https://code.soundsoftware.ac.uk/attachments/download/626/cepstral-pitchtracker-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: vamp-plugin-sdk-devel
 BuildRequires: boost-devel
 

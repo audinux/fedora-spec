@@ -1,13 +1,17 @@
+# Tag: Effect, Phaser
+# Type: Plugin, LADSPA, LV2, VST
+# Category: Effect
+
 # Global variables for github repository
 %global commit0 8ae2fc7544259525027ee4496e7fa0c7527f71e7
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    stone-phaser
+Name: stone-phaser
 Version: 0.1.2
 Release: 2%{?dist}
 Summary: A classic analog phaser effect
-URL:     https://github.com/jpcima/stone-phaser
+URL: https://github.com/jpcima/stone-phaser
 License: BSL-1.0
 
 Vendor:       Audinux
@@ -20,6 +24,7 @@ Source0: stone-phaser.tar.gz
 Source1: stone-phaser-source.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: freetype-devel

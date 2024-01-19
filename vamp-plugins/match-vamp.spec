@@ -14,7 +14,8 @@ Distribution: Audinux
 
 Source0: https://code.soundsoftware.ac.uk/attachments/download/1615/match-vamp-%{version}.tar.bz2
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: vamp-plugin-sdk-devel
 
 %description

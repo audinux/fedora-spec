@@ -1,11 +1,15 @@
+# Tag: MIDI, Tool
+# Type: Standalone, Plugin, VST3
+# Category: MIDI, Tool
+
 %global debug_package %{nil}
 
-Name:    midi-monitor
+Name: midi-monitor
 Version: 30072020
 Release: 1%{?dist}
 Summary: A JUCE-based midi monitor
 License: GPL-2.0-or-later
-URL:     https://github.com/surge-synthesizer/midi-monitor
+URL: https://github.com/surge-synthesizer/midi-monitor
 
 Vendor:       Audinux
 Distribution: Audinux

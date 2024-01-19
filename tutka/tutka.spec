@@ -1,3 +1,7 @@
+# Tag: Audio, Tracker
+# Type: Standalone
+# Category: Audio, Sequencer
+
 Name: tutka
 Version: 1.1.3
 Release: 1%{?dist}

@@ -1,3 +1,7 @@
+# Tag: Audio, Mixer, Tool
+# Type: Standalone
+# Category: Audio, Mixer, Tool
+
 # Global variables for github repository
 %global commit0 25b76aa0cdcaf6bded5876d6072c5446ec3b93d9
 %global gittag0 master

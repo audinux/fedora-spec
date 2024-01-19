@@ -1,4 +1,8 @@
-Name:    stochas
+# Tag: MIDI, Sequencer
+# Type: Standalone, Plugin, VST3
+# Category: DAW, Sequencer
+
+Name: stochas
 Version: 1.3.9
 Release: 4%{?dist}
 Summary: A VST3 MIDI sequencer
@@ -8,7 +12,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Use ./source-stochas.sh to get the sources (latest master for now)
-# ./source-stochas.sh v1.3.9
+#     ./source-stochas.sh v1.3.9
 
 URL:     https://github.com/surge-synthesizer/stochas
 Source0: stochas.tar.gz

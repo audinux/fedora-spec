@@ -1,14 +1,18 @@
+# Tag: Synthesizer
+# Type: Standalone, Plugin, LV2, VST
+# Category: Synthesizer
+
 # Global variables for github repository
 %global commit0 4461547c300896690eb9dd809f7d0aaf648da11c
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    VL1-emulator
+Name: VL1-emulator
 Version: 1.1.0.0
 Release: 2%{?dist}
 Summary: An emulator of Casio VL-Tone VL1
 License: GPL-2.0-or-later
-URL:     https://github.com/linuxmao-org/VL1-emulator
+URL: https://github.com/linuxmao-org/VL1-emulator
 
 Vendor:       Audinux
 Distribution: Audinux

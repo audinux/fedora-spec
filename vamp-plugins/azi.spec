@@ -14,7 +14,8 @@ Distribution: Audinux
 
 Source0: https://code.soundsoftware.ac.uk/hg/azi/archive/tip.zip#/%{name}.zip
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: vamp-plugin-sdk-devel
 
 %description

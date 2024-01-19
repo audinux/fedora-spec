@@ -1,9 +1,13 @@
-Name:    vmpc
+# Tag: Drum, Synthesizer
+# Type: Standalone, Plugin, LV2, VST3
+# Category: Synthesizer
+
+Name: vmpc
 Version: 0.5.14.3
 Release: 1%{?dist}
 Summary: JUCE implementation of VMPC2000XL
 License: GPL-3.0-only
-URL:     https://github.com/izzyreal/vmpc-juce
+URL: https://github.com/izzyreal/vmpc-juce
 
 Vendor:       Audinux
 Distribution: Audinux

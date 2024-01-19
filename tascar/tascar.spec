@@ -1,3 +1,7 @@
+# Tag: Audio, Tool
+# Type: Standalone
+# Category: Audio, Tool
+
 Name: tascar
 Version: 0.230.0
 Release: 1%{?dist}

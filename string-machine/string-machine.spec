@@ -1,8 +1,12 @@
-Name:    string-machine
+# Tag: Synthesizer
+# Type: Plugin, VST, LV2
+# Category: Synthesizer
+
+Name: string-machine
 Version: 0.1
 Release: 1%{?dist}
 Summary: Digital model of electronic string ensemble instrument
-URL:     https://github.com/jpcima/string-machine
+URL: https://github.com/jpcima/string-machine
 License: BSL-1.0
 
 Vendor:       Audinux
@@ -15,6 +19,7 @@ Source0: string-machine.tar.gz
 Source1: string-machine-source.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: freetype-devel

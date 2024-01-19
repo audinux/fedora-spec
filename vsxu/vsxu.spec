@@ -1,3 +1,7 @@
+# Tag: Video, Tool
+# Type: Standalone
+# Category: Tool
+
 #
 # spec file for package vsxu
 #
@@ -36,10 +40,9 @@ Distribution: Audinux
 # tar cvfj vsxu-0.6.3.tar.gz vsxu-0.6.3/*
 Source0:  %{name}-%{version}.tar.gz
 
+BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: fdupes
-BuildRequires: gcc
-BuildRequires: gcc-c++
 BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 BuildRequires: mesa-libEGL-devel

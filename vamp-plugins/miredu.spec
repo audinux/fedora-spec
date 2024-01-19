@@ -14,7 +14,8 @@ Distribution: Audinux
 
 Source0: https://github.com/MTG/miredu/archive/refs/heads/master.zip#/%{name}-master.zip
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: vamp-plugin-sdk-devel
 
 %description
