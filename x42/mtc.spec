@@ -1,20 +1,21 @@
-# Tag: Alsa, Jack
+# Tag: Video, Tool
 # Type: Plugin, LV2
-# Category: Audio, Tool
+# Category: Tool
 
-Name:    mtc.lv2
+Name: mtc.lv2
 Version: 0.2.3
 Release: 1%{?dist}
 Summary: MTC Generator LV2 Plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/mtc.lv2
+URL: https://github.com/x42/mtc.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/x42/mtc.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 
 %description

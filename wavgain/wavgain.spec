@@ -1,11 +1,15 @@
+# Tag: Audio, Editor, Tool
+# Type: Standalone
+# Category: Tool, Audio
+
 Summary: Replaygain functionality for WAV audio files
-Name:    wavegain
+Name: wavegain
 Version: 1.3.2
 Release: 1%{?dist}
 License: LGPL
-URL:     https://github.com/MestreLion/wavegain
+URL: https://github.com/MestreLion/wavegain
 
-Source:	 https://github.com/MestreLion/wavegain/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source:	https://github.com/MestreLion/wavegain/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 Vendor:       Audinux
 Distribution: Audinux

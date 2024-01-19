@@ -2,12 +2,12 @@
 # Type: Plugin, Standalone, VST, LV2, DSSI
 # Category: Audio, Effect
 
-Name:    wolf-shaper
+Name: wolf-shaper
 Version: 1.0.2
 Release: 2%{?dist}
 Summary: Wolf-shaper is a waveshaper plugin with a graph editor.
 License: GPL-2.0-or-later
-URL:     https://github.com/pdesaulniers/wolf-shaper
+URL: https://github.com/pdesaulniers/wolf-shaper
 
 Vendor:       Audinux
 Distribution: Audinux

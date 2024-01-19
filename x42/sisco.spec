@@ -1,13 +1,13 @@
 # Tag: Analyzer
-# Type: Plugin, LV2
+# Type: Plugin, LV2, Staandalone
 # Category: Audio, Tool
 
-Name:    sisco.lv2
+Name: sisco.lv2
 Version: 0.9.10
 Release: 1%{?dist}
 Summary: A LV2 oscilloscope
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/sisco.lv2
+URL: https://github.com/x42/sisco.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -18,7 +18,8 @@ Distribution: Audinux
 Source0: sisco.lv2.tar.gz
 Source1: x42-source.sh
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: git
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)

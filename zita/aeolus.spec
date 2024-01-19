@@ -7,12 +7,12 @@
 
 %define desktop_vendor planetccrma
 
-Name:    aeolus
+Name: aeolus
 Summary: A synthesized pipe organ
 Version: %{aeolus_ver}%{?aeolus_rel:.%{aeolus_rel}}
 Release: 1%{?dist}
 License: GPL
-URL:     http://www.kokkinizita.net/linuxaudio/aeolus/index.html
+URL: http://www.kokkinizita.net/linuxaudio/aeolus/index.html
 
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/aeolus-%{aeolus_ver}%{?aeolus_rel:-%{aeolus_rel}}.tar.bz2
 Source1: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/stops-%{stops_ver}.tar.bz2

@@ -3,12 +3,13 @@
 # Category: Audio, DAW
 
 %global zrythm_version 1.1.11
-Name:    zrythm
+
+Name: zrythm
 Version: 1.0.0.b%{zrythm_version}
 Release: 5%{?dist}
 Summary: Highly automated Digital Audio Workstation (DAW) featureful and intuitive to use
 License: GPL-2.0-or-later
-URL:     https://git.zrythm.org/zrythm/zrythm
+URL: https://git.zrythm.org/zrythm/zrythm
 
 Vendor:       Audinux
 Distribution: Audinux

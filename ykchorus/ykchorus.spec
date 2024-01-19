@@ -2,12 +2,12 @@
 # Type: Plugin, Standalone, LADSPA, VST, LV2, DSSI
 # Category: Audio, Effect
 
-Name:    ykchorus
+Name: ykchorus
 Version: 0.2.3
 Release: 1%{?dist}
 Summary: A chorus audio effect plugin based on DSP code by Togu Audio Line (TAL)
 License: GPL-2.0-or-later
-URL:     https://github.com/SpotlightKid/ykchorus
+URL: https://github.com/SpotlightKid/ykchorus
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -19,6 +19,7 @@ Source0: ykchorus.tar.gz
 Source1: ykchorus-source.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: fftw-devel

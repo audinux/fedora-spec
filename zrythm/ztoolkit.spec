@@ -1,11 +1,15 @@
+# Tag: Library
+# Type: Devel
+# Category: Programming
+
 %global debug_package %{nil}
 
-Name:    ztoolkit
+Name: ztoolkit
 Version: 0.1.2
 Release: 1%{?dist}
 Summary: GUI toolkit for LV2 plugins
 License: GPL-2.0-or-later
-URL:     https://github.com/alex-tee/ztoolkit
+URL: https://github.com/alex-tee/ztoolkit
 
 Vendor:       Audinux
 Distribution: Audinux

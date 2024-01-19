@@ -310,7 +310,7 @@ Modulation, Player, Pitch
 ### Type:
 
 ```
-Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, CLAP, Pipewire, Presets, Rack
+Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, CLAP, Pipewire, Presets, Rack, Driver
 ```
 
 ### Category:

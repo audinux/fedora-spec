@@ -1,9 +1,13 @@
-Name:    zplugins
+# Tag: Audio, Tool
+# Type: Plugin, LV2
+# Category: Audio, Tool
+
+Name: zplugins
 Version: 0.2.5
 Release: 1%{?dist}
 Summary: A collection of audio DSP LV2 plugins
 License: GPL-2.0-or-later
-URL:     https://github.com/zrythm/ZPlugins
+URL: https://github.com/zrythm/ZPlugins
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -11,11 +15,11 @@ Distribution: Audinux
 Source0: https://github.com/zrythm/ZPlugins/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: ztoolkit
+BuildRequires: meson
 BuildRequires: lv2-devel
 BuildRequires: librsvg2-devel
 BuildRequires: libsndfile-devel
-BuildRequires: ztoolkit
-BuildRequires: meson
 
 %description
 A collection of audio DSP LV2 plugins

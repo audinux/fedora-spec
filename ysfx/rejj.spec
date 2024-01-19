@@ -1,8 +1,12 @@
-Name:    rejj
+# Tag: Audio, Effect
+# Type: Plugin
+# Category: Audio, Effect
+
+Name: rejj
 Version: 1.2.0
 Release: 1%{?dist}
 Summary: Reaper JSFX Plugins
-URL:     https://github.com/Justin-Johnson/ReJJ
+URL: https://github.com/Justin-Johnson/ReJJ
 License: MIT
 
 Vendor:       Audinux

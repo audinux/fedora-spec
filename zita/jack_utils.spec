@@ -3,11 +3,11 @@
 # Category: Audio, Tool
 
 Summary: Three small command line programs: jack_fpmon, jack_check, jack_proxy
-Name:    jack_utils
+Name: jack_utils
 Version: 0.0.1
 Release: 1%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -15,6 +15,7 @@ Distribution: Audinux
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: pkgconfig(jack)
 
 %description

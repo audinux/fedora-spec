@@ -1,20 +1,21 @@
-# Tag: Alsa, Jack
+# Tag: Alsa, Jack, Equalizer
 # Type: Plugin, LV2
 # Category: Audio, Tool
 
-Name:    controlfilter.lv2
+Name: controlfilter.lv2
 Version: 0.5.1
 Release: 1%{?dist}
 Summary: LV2 Control Port Parameter Filters -- modular synth blocks
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/controlfilter.lv2
+URL: https://github.com/x42/controlfilter.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/x42/controlfilter.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 
 %description

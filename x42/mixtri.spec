@@ -1,13 +1,13 @@
-# Tag: Alsa, Jack
-# Type: Plugin, LV2
+# Tag: Mixer
+# Type: Standalone, Plugin, LV2
 # Category: Audio, Tool
 
-Name:    mixtri.lv2
+Name: mixtri.lv2
 Version: 0.4.10
 Release: 1%{?dist}
 Summary: Matrix Mixer & Trigger (Pre-Processor for Oscilloscope)
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/mixtri.lv2
+URL: https://github.com/x42/mixtri.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -18,12 +18,11 @@ Distribution: Audinux
 Source0: mixtri.lv2.tar.gz
 Source1: x42-source.sh
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel
-BuildRequires: cairo-devel
-BuildRequires: pango-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 BuildRequires: fftw-devel

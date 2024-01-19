@@ -1,9 +1,13 @@
-Name:    ZLFO
+# Tag: Audio, MIDI, Tool
+# Type: Plugin, LV2
+# Category: Audio, MIDI, Tool
+
+Name: ZLFO
 Version: 0.1.3
 Release: 1%{?dist}
 Summary: Fully featured LFO for CV-based automation
 License: GPL-2.0-or-later
-URL:     https://github.com/zrythm/ZLFO
+URL: https://github.com/zrythm/ZLFO
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -11,9 +15,9 @@ Distribution: Audinux
 Source0: https://github.com/zrythm/ZLFO/archive/refs/tags/v0.1.3.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: lv2-devel
 BuildRequires: meson
 BuildRequires: ztoolkit
+BuildRequires: lv2-devel
 
 %description
 Fully featured LFO for CV-based automation

@@ -3,11 +3,11 @@
 # Category: Audio, Effect
 
 Summary: 4th order crossover filters
-Name:    zita-lrx
+Name: zita-lrx
 Version: 0.1.2
 Release: 1%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -15,9 +15,14 @@ Distribution: Audinux
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: pkgconfig(jack)
-BuildRequires: clthreads-devel clxclient-devel freetype-devel
-BuildRequires: libX11-devel libXft-devel cairo-devel
+BuildRequires: clthreads-devel
+BuildRequires: clxclient-devel
+BuildRequires: freetype-devel
+BuildRequires: libX11-devel
+BuildRequires: libXft-devel
+BuildRequires: cairo-devel
 BuildRequires: desktop-file-utils
 
 %description

@@ -1,15 +1,19 @@
+# Tag: Library
+# Type: Devel
+# Category: Programming
+
 %global debug_package %{nil}
 
 %global commit0 4f57c999716847e45505b3df170150876b545088
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    libbacktrace-devel
+Name: libbacktrace-devel
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: A C library that may be linked into a C/C++ program to produce symbolic backtraces
 License: GPL-2.0-or-later
-URL:     https://github.com/ianlancetaylor/libbacktrace
+URL: https://github.com/ianlancetaylor/libbacktrace
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -1,13 +1,13 @@
-# Tag: Alsa, Jack
+# Tag: Audio, Pitch, Tool
 # Type: Plugin, LV2
 # Category: Audio, Tool
 
-Name:    tuna.lv2
+Name: tuna.lv2
 Version: 0.6.5
 Release: 1%{?dist}
 Summary: Musical Instrument Tuner
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/tuna.lv2
+URL: https://github.com/x42/tuna.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -18,7 +18,8 @@ Distribution: Audinux
 Source0: tuna.lv2.tar.gz
 Source1: x42-source.sh
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel
@@ -27,8 +28,6 @@ BuildRequires: pango-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 BuildRequires: fftw-devel
-BuildRequires: pango-devel
-BuildRequires: cairo-devel
 
 %description
 A musical instrument tuner with strobe characteristics in LV2 plugin format.

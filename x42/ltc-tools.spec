@@ -1,9 +1,13 @@
-Name:    ltc-tools
+# Tag: Video, Tool, Jack
+# Type: Standalone
+# Category: Tool
+
+Name: ltc-tools
 Version: 0.7.0
 Release: 1%{?dist}
 Summary: Tools to deal with linear-timecode (LTC)
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/ltc-tools
+URL: https://github.com/x42/ltc-tools
 
 Vendor:       Audinux
 Distribution: Audinux

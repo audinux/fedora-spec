@@ -1,18 +1,18 @@
+# Tag: Mixer, Alsa, Jack
+# Type: Plugin, LV2
+# Category: Audio, Tool
+
 # Global variables for github repository
 %global commit0 38df4d733fff1a9438a89ec8797bc6b6810adfa7
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-# Tag: Mixer, Alsa, Jack
-# Type: Plugin, LV2
-# Category: Audio, Tool
-
-Name:    scarlett-mixer
+Name: scarlett-mixer
 Version: 0.1.0
 Release: 1%{?dist}
 Summary: A mixer matrix for Scarlett sound card
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/scarlett-mixer
+URL: https://github.com/x42/scarlett-mixer
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -28,7 +28,8 @@ Source0: scarlett-mixer.tar.gz
 # tar cvfz scarlett-mixer.tar.gz scarlett-mixer/*
 # rm -rf scarlett-mixer
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel

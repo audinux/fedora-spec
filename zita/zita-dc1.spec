@@ -3,11 +3,11 @@
 # Category: Audio, Effect
 
 Summary: Dynamics Compressor.
-Name:    zita-dc1
+Name: zita-dc1
 Version: 0.3.3
 Release: 1%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -15,9 +15,15 @@ Distribution: Audinux
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: pkgconfig(jack)
-BuildRequires: clthreads-devel clxclient-devel
-BuildRequires: cairo-devel fftw-devel libpng-devel libXft-devel libX11-devel
+BuildRequires: clthreads-devel
+BuildRequires: clxclient-devel
+BuildRequires: cairo-devel
+BuildRequires: fftw-devel
+BuildRequires: libpng-devel
+BuildRequires: libXft-devel
+BuildRequires: libX11-devel
 
 %description
 Dynamic range compression reduces the volume of loud sounds or amplifies quiet sounds thus reducing or compressing an audio signal's dynamic range.

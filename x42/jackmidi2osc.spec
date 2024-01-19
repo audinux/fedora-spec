@@ -1,9 +1,13 @@
-Name:    jackmidi2osc
+# Tag: Alsa, Jack, OSC, MIDI
+# Type: Standalone
+# Category: Audio, Tool
+
+Name: jackmidi2osc
 Version: 0.2
 Release: 1%{?dist}
 Summary: Jack Midi to OSC 
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/jackmidi2osc
+URL: https://github.com/x42/jackmidi2osc
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -3,11 +3,11 @@
 # Category: Audio, Tool
 
 Summary: Measure Impulse Responses using a sine sweep and deconvolution
-Name:    aliki
+Name: aliki
 Version: 0.3.0
 Release: 1%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -15,10 +15,13 @@ Distribution: Audinux
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: cairo-devel
-BuildRequires: clthreads-devel clxclient-devel
+BuildRequires: clthreads-devel
+BuildRequires: clxclient-devel
 BuildRequires: pkgconfig(jack)
-BuildRequires: libX11-devel libXft-devel
+BuildRequires: libX11-devel
+BuildRequires: libXft-devel
 BuildRequires: zita-convolver-devel
 BuildRequires: fftw-devel
 BuildRequires: libsndfile-devel

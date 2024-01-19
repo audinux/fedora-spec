@@ -1,13 +1,13 @@
-# Tag: Alsa, Jack
-# Type: Plugin, LV2
-# Category: Audio, Tool
+# Tag: Audio, Effect
+# Type: Plugin, LV2, Standalone
+# Category: Audio, Effect
 
-Name:    phaserotate.lv2
+Name: phaserotate.lv2
 Version: 0.6.5
 Release: 1%{?dist}
 Summary: Phase Rotation LV2 plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/phaserotate.lv2
+URL: https://github.com/x42/phaserotate.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -18,7 +18,8 @@ Distribution: Audinux
 Source0: phaserotate.lv2.tar.gz
 Source1: x42-source.sh
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel

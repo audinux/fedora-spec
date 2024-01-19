@@ -3,11 +3,11 @@
 # Category: Audio, Tool
 
 Summary: An A/B convertor and the metering and monitoring.
-Name:    tetraproc
+Name: tetraproc
 Version: 0.9.2
 Release: 2%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux

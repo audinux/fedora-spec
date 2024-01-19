@@ -3,11 +3,11 @@
 # Category: Audio, Tool
 
 Summary: An Ambisonic decoder for first and second order.
-Name:    ambdec
+Name: ambdec
 Version: 0.7.1
 Release: 1%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -15,9 +15,14 @@ Distribution: Audinux
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: pkgconfig(jack)
-BuildRequires: clthreads-devel clxclient-devel
-BuildRequires: libsndfile-devel libpng-devel libXft-devel libX11-devel
+BuildRequires: clthreads-devel
+BuildRequires: clxclient-devel
+BuildRequires: libsndfile-devel
+BuildRequires: libpng-devel
+BuildRequires: libXft-devel
+BuildRequires: libX11-devel
 
 %description
 Main features:

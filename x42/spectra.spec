@@ -1,13 +1,13 @@
-# Tag: Alsa, Jack
-# Type: Plugin, LV2
+# Tag: Audio, Analyzer
+# Type: Plugin, LV2, Standalone
 # Category: Audio, Tool
 
-Name:    spectra.lv2
+Name: spectra.lv2
 Version: 0.6.5
 Release: 1%{?dist}
 Summary: Spectrum Analyzer
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/spectra.lv2
+URL: https://github.com/x42/spectra.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -18,7 +18,8 @@ Distribution: Audinux
 Source0: spectra.lv2.tar.gz
 Source1: x42-source.sh
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel

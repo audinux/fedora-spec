@@ -1,18 +1,23 @@
+# Tag: Library
+# Type: Devel
+# Category: Programming
+
 %define commit0 85af0c9a4ce345395f1dde641a4b6e7b254ecd5e
 
-Name:    libtimecode
+Name: libtimecode
 Version: 0.1.0
 Release: 1%{?dist}
 Summary: Deal with A/V timecode and framerates
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/libtimecode
+URL: https://github.com/x42/libtimecode
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/x42/libtimecode/archive/%{commit0}.zip#/%{name}-%{commit0}.zip
 
-BuildRequires: gcc make
+BuildRequires: gcc
+BuildRequires: make
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool

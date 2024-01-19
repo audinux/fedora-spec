@@ -1,20 +1,21 @@
-# Tag: Alsa, Jack
+# Tag: Audio, MIDI, Tool
 # Type: Plugin, LV2
-# Category: Audio, Tool
+# Category: Audio, MIDI, Tool
 
-Name:    onsettrigger.lv2
+Name: onsettrigger.lv2
 Version: 0.4.3
 Release: 1%{?dist}
 Summary: Audio to Midi Onset Trigger LV2 Plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/onsettrigger.lv2
+URL: https://github.com/x42/onsettrigger.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/x42/onsettrigger.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc make
+BuildRequires: gcc
+BuildRequires: make
 BuildRequires: lv2-devel
 
 %description

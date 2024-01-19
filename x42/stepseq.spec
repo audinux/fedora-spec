@@ -1,13 +1,13 @@
-# Tag: Alsa, Jack
+# Tag: Sequencer
 # Type: Plugin, LV2
-# Category: Audio, Tool
+# Category: Audio, Sequencer
 
-Name:    stepseq.lv2
+Name: stepseq.lv2
 Version: 0.6.13
 Release: 1%{?dist}
 Summary: Simple Step Sequencer
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/stepseq.lv2
+URL: https://github.com/x42/stepseq.lv2
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -1,20 +1,21 @@
-# Tag: Alsa, Jack
+# Tag: Audio, Effect, Pitch
 # Type: Plugin, LV2
-# Category: Audio, Tool
+# Category: Audio, Effect
 
-Name:    repitch.lv2
+Name: repitch.lv2
 Version: 0.2.3
 Release: 1%{?dist}
 Summary: Counterbalance pitch when vari-speeding
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/repitch.lv2
+URL: https://github.com/x42/repitch.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/x42/repitch.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequiers: make
 BuildRequires: git
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)

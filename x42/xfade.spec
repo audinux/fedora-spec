@@ -1,20 +1,21 @@
-# Tag: Alsa, Jack
+# Tag: Audio, Mixer
 # Type: Plugin, LV2
 # Category: Audio, Tool
 
-Name:    xfade.lv2
+Name: xfade.lv2
 Version: 0.3.5
 Release: 1%{?dist}
 Summary: stereo DJ X-fade plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/xfade.lv2
+URL: https://github.com/x42/xfade.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/x42/xfade.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 
 %description

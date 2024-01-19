@@ -2,12 +2,12 @@
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer
 
-Name:    lv2-avldrums-x42-plugin
+Name: lv2-avldrums-x42-plugin
 Version: 0.7.2
 Release: 3%{?dist}
 Summary: Simple Drum Sample Player LV2 Plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/avldrums.lv2
+URL: https://github.com/x42/avldrums.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -18,7 +18,8 @@ Distribution: Audinux
 Source0: avldrums.lv2.tar.gz
 Source1: x42-source.sh
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: cairo-devel
 BuildRequires: pango-devel

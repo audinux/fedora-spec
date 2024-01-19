@@ -1,18 +1,18 @@
+# Tag: Presets
+# Type: Presets
+# Category: Audio
+
 # Global variables for github repository
 %global commit0 1321e5d1ce0d75ef8963bf0f0c9a00218c748bb5
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-# Tag:
-# Type: Presets
-# Category: Audio
-
-Name:    zynthian-data
+Name: zynthian-data
 Version: 1.0.0
 Release: 7%{?dist}
 Summary: A set of LV2 presets
 License: GPL-2.0-or-later
-URL:     https://github.com/zynthian/zynthian-data
+URL: https://github.com/zynthian/zynthian-data
 
 Vendor:       Audinux
 Distribution: Audinux

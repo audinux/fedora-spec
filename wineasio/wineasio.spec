@@ -1,3 +1,7 @@
+# Tag: Jack, Tool
+# Type: Driver
+# Category: Tool, Audio
+
 %global debug_package %{nil}
 %define _lto_cflags %{nil}
 

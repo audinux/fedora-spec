@@ -1,20 +1,21 @@
-# Tag: Alsa, Jack
+# Tag: Audio, Convolver
 # Type: Plugin, LV2
 # Category: Audio, Tool
 
-Name:    zconvo.lv2
+Name: zconvo.lv2
 Version: 0.7.1
 Release: 1%{?dist}
 Summary: Zero Config Convolver
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/zconvo.lv2
+URL: https://github.com/x42/zconvo.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/x42/zconvo.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: fftw-devel
 BuildRequires: libsndfile-devel

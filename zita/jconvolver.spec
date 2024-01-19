@@ -3,18 +3,19 @@
 # Category: Audio, Effect
 
 Summary: Convolution Engine for JACK, based on FFT convolution and using non-uniform partition sizes
-Name:    jconvolver
+Name: jconvolver
 Version: 1.1.0
 Release: 1%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: pkgconfig(jack)
 BuildRequires: zita-convolver-devel
 BuildRequires: libsndfile-devel

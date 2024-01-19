@@ -1,13 +1,13 @@
-# Tag: Alsa, Jack
+# Tag: Alsa, Jack, Equalizer
 # Type: Plugin, LV2
 # Category: Audio, Tool
 
-Name:    fil4.lv2
+Name: fil4.lv2
 Version: 0.8.8
 Release: 1%{?dist}
 Summary: 4 Band Parametric EQ
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/fil4.lv2
+URL: https://github.com/x42/fil4.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -18,7 +18,8 @@ Distribution: Audinux
 Source0: fil4.lv2.tar.gz
 Source1: x42-source.sh
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel

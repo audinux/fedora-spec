@@ -3,18 +3,19 @@
 # Category: Audio, Effect
 
 Summary: Real-time convolution engine.
-Name:    jmatconvol
+Name: jmatconvol
 Version: 0.5.2
 Release: 1%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: pkgconfig(jack)
 BuildRequires: zita-convolver-devel
 BuildRequires: libsndfile-devel

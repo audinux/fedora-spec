@@ -1,21 +1,22 @@
-# Tag:  Effect
-# Type: LADSPA
+# Tag:  Effect, Reverb
+# Type: Plugin, LADSPA
 # Category: Audio
 
 Summary: A reverberation LADSPA plugin
-Name:    REV-plugins
+Name: REV-plugins
 Version: 0.8.1
 Release: 1%{?dist}
 License: GPL
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
 
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/REV-plugins-%{version}.tar.bz2
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: ladspa-devel
 
 %description

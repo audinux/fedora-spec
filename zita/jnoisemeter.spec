@@ -3,11 +3,11 @@
 # Category: Audio, Tool
 
 Summary: Small app designed to measure audio test signals and in particular noise signals.
-Name:    jnoisemeter
+Name: jnoisemeter
 Version: 0.4.1
 Release: 1%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux

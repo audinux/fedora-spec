@@ -5,12 +5,12 @@
 %global debug_package %{nil}
 %define _lto_cflags %{nil}
 
-Name:    yabridge
+Name: yabridge
 Version: 5.1.0
 Release: 6%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPL-2.0-or-later
-URL:     https://github.com/robbert-vdh/yabridge
+URL: https://github.com/robbert-vdh/yabridge
 
 Vendor:       Audinux
 Distribution: Audinux

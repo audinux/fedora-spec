@@ -3,11 +3,11 @@
 # Category: Graphic, Tool
 
 Summary: Jack Video Monitor
-Name:    xjadeo
+Name: xjadeo
 Version: 0.8.13
 Release: 4%{?dist}
 License: GPL
-URL:     https://xjadeo.sourceforge.net/
+URL: https://xjadeo.sourceforge.net/
 
 Vendor:       Audinux
 Distribution: Audinux

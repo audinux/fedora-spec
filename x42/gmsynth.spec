@@ -1,20 +1,21 @@
-# Tag: Alsa, Jack
+# Tag: Alsa, Jack, Synthesizer, MIDI
 # Type: Plugin, LV2
-# Category: Audio, Tool
+# Category: Audio, Tool, Synthesizer
 
-Name:    gmsynth.lv2
+Name: gmsynth.lv2
 Version: 0.5.3
 Release: 1%{?dist}
 Summary: General MIDI LV2 Synth
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/gmsynth.lv2
+URL: https://github.com/x42/gmsynth.lv2
 
 Vendor:       Audinux
 Distribution: Audinuxgm
 
 Source0: https://github.com/x42/gmsynth.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: glib2-devel
 

@@ -1,21 +1,21 @@
-# Tag:  Effect
-# Type: LADSPA
+# Tag: Effect
+# Type: Plugin, LADSPA
 # Category: Audio
 
 Summary: A collection of LADSPA plugins for third order Ambisonics.
-Name:    AMB1-plugins
+Name: AMB1-plugins
 Version: 0.3.0
 Release: 1%{?dist}
 License: GPL
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
 
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
-
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/AMB1-plugins-%{version}.tar.bz2
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: ladspa-devel
 
 %description

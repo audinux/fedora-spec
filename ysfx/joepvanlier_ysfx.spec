@@ -1,8 +1,12 @@
-Name:    joepvanlier_ysfx
+# Tag: Audio, Effect
+# Type: Plugin
+# Category: Audio, Effect
+
+Name: joepvanlier_ysfx
 Version: 0.1.0
 Release: 1%{?dist}
 Summary: A bundle of JSFX and scripts for reaper.
-URL:     https://github.com/JoepVanlier/JSFX
+URL: https://github.com/JoepVanlier/JSFX
 License: MIT
 
 Vendor:       Audinux

@@ -3,11 +3,11 @@
 # Category: Audio, Tool
 
 Summary: Provides A/B processing with file input and output.
-Name:    octofile
+Name: octofile
 Version: 0.3.2
 Release: 1%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -15,7 +15,9 @@ Distribution: Audinux
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
-BuildRequires: libsndfile-devel fftw-devel
+BuildRequires: make
+BuildRequires: libsndfile-devel
+BuildRequires: fftw-devel
 
 %description
 The DSP part is completely separated from the file I/O, and can

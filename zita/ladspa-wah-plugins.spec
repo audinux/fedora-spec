@@ -1,21 +1,22 @@
-# Tag:  Effect
+# Tag: Effect
 # Type: LADSPA
 # Category: Audio
 
 Summary: A WAH filter LADSPA plugin
-Name:    WAH-plugins
+Name: WAH-plugins
 Version: 0.1.0
 Release: 1%{?dist}
 License: GPL
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
 
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/WAH-plugins-%{version}.tar.bz2
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: ladspa-devel
 
 %description

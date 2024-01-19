@@ -3,11 +3,11 @@
 # Category: Audio, Tool
 
 Summary: Full quality multichannel audio over a local IP network
-Name:    zita-ajbridge
+Name: zita-ajbridge
 Version: 0.8.4
 Release: 1%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux

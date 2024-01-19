@@ -1,5 +1,5 @@
 # Tag: Emulator
-# Type: Plugin, LV2, VST
+# Type: Plugin, LV2, VST, DSSI
 # Category: Audio, Synthesizer
 
 # Global variables for github repository
@@ -7,11 +7,11 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    zynayumi
+Name: zynayumi
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: VST/DSSI/LV2 plugin based on ayumi, the highly precise emulator of AY-8910 and YM2149
-URL:     https://github.com/zynayumi/zynayumi
+URL: https://github.com/zynayumi/zynayumi
 License: GPL3
 
 Vendor:       Audinux
@@ -24,7 +24,6 @@ Source0: zynayumi.tar.gz
 Source1: source-zynayumi.sh
 
 BuildRequires: gcc gcc-c++
-BuildRequires: make
 BuildRequires: cmake
 BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel

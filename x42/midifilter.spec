@@ -1,13 +1,13 @@
-# Tag: Alsa, Jack
+# Tag: MIDI, Tool
 # Type: Plugin, LV2
-# Category: Audio, Tool
+# Category: MIDI, Tool
 
-Name:    midifilter.lv2
+Name: midifilter.lv2
 Version: 0.7.3
 Release: 1%{?dist}
 Summary: LV2 plugins to filter midi events
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/midifilter.lv2
+URL: https://github.com/x42/midifilter.lv2
 
 Vendor:       Audinux
 Distribution: Audinux

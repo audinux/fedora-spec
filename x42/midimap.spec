@@ -1,20 +1,21 @@
-# Tag: Alsa, Jack
+# Tag: MIDI, Tool
 # Type: Plugin, LV2
-# Category: Audio, Tool
+# Category: MIDI, Tool
 
-Name:    midimap.lv2
+Name: midimap.lv2
 Version: 0.4.4
 Release: 1%{?dist}
 Summary: Rule based MIDI mapper plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/midimap.lv2
+URL: https://github.com/x42/midimap.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/x42/midimap.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc make
+BuildRequires: gcc
+BuildRequires: make
 BuildRequires: lv2-devel
 
 %description

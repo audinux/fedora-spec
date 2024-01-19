@@ -1,17 +1,17 @@
+# Tag: Jack, Alsa, Tracker
+# Type: Standalone
+# Category: Audio, Sequencer
+
 # Global variables for github repository
 %global commit0 97b79d17b390f70890928cebf74bb28acf32ecea
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-# Tag: Jack, Alsa, Tracker
-# Type: Standalone
-# Category: Audio, Sequencer
-
-Name:    zytrax
+Name: zytrax
 Version: 0.9.0.%{shortcommit0}
 Release: 3%{?dist}
 Summary: Easy to use sequencer with an interface heavily inspired by 90's tracker software
-URL:     https://github.com/reduz/zytrax.git
+URL: https://github.com/reduz/zytrax.git
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -21,7 +21,8 @@ Source0: https://github.com/reduz/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{s
 Source1: SConstruct-zytrax
 
 BuildRequires: gcc gcc-c++
-BuildRequires: make scons
+BuildRequires: make
+BuildRequires: scons
 BuildRequires: alsa-lib-devel
 BuildRequires: desktop-file-utils
 BuildRequires: pkgconfig(jack)

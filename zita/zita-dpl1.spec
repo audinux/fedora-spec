@@ -3,11 +3,11 @@
 # Category: Audio, Effect
 
 Summary: Look-ahead digital peak level limiter
-Name:    zita-dpl1
+Name: zita-dpl1
 Version: 0.3.3
 Release: 1%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -15,11 +15,15 @@ Distribution: Audinux
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
-BuildRequires: cairo-devel libpng-devel
-BuildRequires: clthreads-devel clxclient-devel
+BuildRequires: make
+BuildRequires: cairo-devel
+BuildRequires: libpng-devel
+BuildRequires: clthreads-devel
+BuildRequires: clxclient-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: freetype-devel
-BuildRequires: libX11-devel libXft-devel
+BuildRequires: libX11-devel
+BuildRequires: libXft-devel
 
 %description
 Use special algorithms to allow fast response without excessive LF distortion.

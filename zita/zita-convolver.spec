@@ -3,11 +3,11 @@
 # Category: Audio, Tool
 
 Summary: convolver function
-Name:    zita-convolver
+Name: zita-convolver
 Version: 4.0.3
 Release: 2%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -15,6 +15,7 @@ Distribution: Audinux
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: fftw-devel
 
 %description

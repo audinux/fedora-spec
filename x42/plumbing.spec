@@ -1,20 +1,21 @@
-# Tag: Alsa, Jack
+# Tag: Audio, MIDI, Tool
 # Type: Plugin, LV2
-# Category: Audio, Tool
+# Category: Audio, Tool, MIDI
 
-Name:    plumbing.lv2
+Name: plumbing.lv2
 Version: 0.1.3
 Release: 1%{?dist}
 Summary: LV2 Plumbing Plugins
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/plumbing.lv2
+URL: https://github.com/x42/plumbing.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/x42/plumbing.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel

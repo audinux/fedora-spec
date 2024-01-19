@@ -3,11 +3,11 @@
 # Category: Audio, Tool
 
 Summary: MU1 is a simple Jack app used to organise stereo monitoring.
-Name:    zita-mu1
+Name: zita-mu1
 Version: 0.3.3
 Release: 1%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -15,10 +15,16 @@ Distribution: Audinux
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: pkgconfig(jack)
-BuildRequires: zita-resampler-devel clthreads-devel clxclient-devel
-BuildRequires: cairo-devel libpng-devel libsndfile-devel
-BuildRequires: libX11-devel libXft-devel
+BuildRequires: zita-resampler-devel
+BuildRequires: clthreads-devel
+BuildRequires: clxclient-devel
+BuildRequires: cairo-devel
+BuildRequires: libpng-devel
+BuildRequires: libsndfile-devel
+BuildRequires: libX11-devel
+BuildRequires: libXft-devel
 
 %description
 Written originally for use with Ardour2, but still useful with Ardour3

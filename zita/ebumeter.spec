@@ -3,11 +3,11 @@
 # Category: Audio, Tool
 
 Summary: Loudness measurement according to EBU-R128.
-Name:    ebumeter
+Name: ebumeter
 Version: 0.5.1
 Release: 1%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -15,11 +15,16 @@ Distribution: Audinux
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.xz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: pkgconfig(jack)
 BuildRequires: zita-resampler-devel
-BuildRequires: clthreads-devel clxclient-devel
-BuildRequires: libpng-devel libsndfile-devel
-BuildRequires: libX11-devel libXft-devel xorg-x11-proto-devel
+BuildRequires: clthreads-devel
+BuildRequires: clxclient-devel
+BuildRequires: libpng-devel
+BuildRequires: libsndfile-devel
+BuildRequires: libX11-devel
+BuildRequires: libXft-devel
+BuildRequires: xorg-x11-proto-devel
 
 %description
 Loudness measurement according to EBU-R128.

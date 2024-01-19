@@ -1,9 +1,13 @@
-Name:    libreproc
+# Tag: Library
+# Type: Devel
+# Category: Programming
+
+Name: libreproc
 Version: 14.2.0
 Release: 1%{?dist}
 Summary: A cross-platform (C99/C++11) process library
 License: GPL-2.0-or-later
-URL:     https://github.com/DaanDeMeyer/reproc/
+URL: https://github.com/DaanDeMeyer/reproc/
 
 Vendor:       Audinux
 Distribution: Audinux

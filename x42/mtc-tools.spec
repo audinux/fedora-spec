@@ -1,9 +1,13 @@
-Name:    mtc-tools
+# Tag: Video, Tool
+# Type: Standalone
+# Category: Tool
+
+Name: mtc-tools
 Version: 0.2.0
 Release: 1%{?dist}
 Summary: JACK MIDI Timecode tools
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/mtc-tools
+URL: https://github.com/x42/mtc-tools
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -1,20 +1,21 @@
-# Tag: Alsa, Jack
+# Tag: Audio, Tool
 # Type: Plugin, LV2
 # Category: Audio, Tool
 
-Name:    nodelay.lv2
+Name: nodelay.lv2
 Version: 0.6.3
 Release: 1%{?dist}
 Summary: audio delay line with latency reporting -- LV2 test & instrumentation tool
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/nodelay.lv2
+URL: https://github.com/x42/nodelay.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/x42/nodelay.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 
 %description

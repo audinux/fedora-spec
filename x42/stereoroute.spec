@@ -1,20 +1,21 @@
-# Tag: Alsa, Jack
+# Tag: Audio, Mixer
 # Type: Plugin, LV2
 # Category: Audio, Tool
 
-Name:    stereoroute.lv2
+Name: stereoroute.lv2
 Version: 0.1.0
 Release: 1%{?dist}
 Summary: Stereo Routing Plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/stereoroute.lv2
+URL: https://github.com/x42/stereoroute.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/x42/stereoroute.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc make
+BuildRequires: gcc
+BuildRequires: make
 BuildRequires: lv2-devel
 
 %description

@@ -1,10 +1,14 @@
+# Tag: Audio, Tool
+# Type: Plugin, VST3
+# Category: Audio, Tool
+
 %define commit0 8077347ccf4115567aed81400281dca57acbb0cc
 
-Name:    ysfx
+Name: ysfx
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Hosting library for JSFX
-URL:     https://github.com/jpcima/ysfx
+URL: https://github.com/jpcima/ysfx
 License: Apache-2.0
 
 Vendor:       Audinux

@@ -1,18 +1,24 @@
-Name:           xsimd8
-Version:        8.1.0
-Release:        2%{?dist}
-Summary:        C++ wrappers for SIMD intrinsics
-License:        BSD
-URL:            https://xsimd.readthedocs.io/
+# Tag: Library
+# Type: Devel
+# Category: Programming
+
 %global github  https://github.com/xtensor-stack/xsimd
-Source0:        %{github}/archive/%{version}/xsimd-%{version}.tar.gz
+
+Name: xsimd8
+Version: 8.1.0
+Release: 2%{?dist}
+Summary: C++ wrappers for SIMD intrinsics
+License: BSD
+URL: https://xsimd.readthedocs.io/
+
+Source0: %{github}/archive/%{version}/xsimd-%{version}.tar.gz
 
 # Do not run tests on unsupported architectures
 Patch:          %{github}/pull/742.patch
 
-BuildRequires:  cmake
-BuildRequires:  gcc-c++
-BuildRequires:  gtest-devel
+BuildRequires: gcc-c++
+BuildRequires: cmake
+BuildRequires: gtest-devel
 
 %ifarch %{arm}
 # Only used for testing, as it's a header-only package.
@@ -40,9 +46,9 @@ of common mathematical functions operating on batches. \
 %description %_description
 
 %package devel
-Summary:        %{summary}
-Provides:       %{name} = %{version}-%{release}
-Provides:       %{name}-static = %{version}-%{release}
+Summary: %{summary}
+Provides: %{name} = %{version}-%{release}
+Provides: %{name}-static = %{version}-%{release}
 %description devel %_description
 
 %prep

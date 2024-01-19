@@ -1,20 +1,21 @@
-# Tag: Alsa, Jack
+# Tag: Synthesizer, Tool
 # Type: Plugin, LV2
 # Category: Audio, Tool
 
-Name:    testsignal.lv2
+Name: testsignal.lv2
 Version: 0.6.5
 Release: 1%{?dist}
 Summary: LV2 Test Signal Generator
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/testsignal.lv2
+URL: https://github.com/x42/testsignal.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/x42/testsignal.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 
 %description

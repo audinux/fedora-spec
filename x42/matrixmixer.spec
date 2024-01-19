@@ -1,14 +1,13 @@
-
-# Tag: Mixer, Alsa, Jack
-# Type: Plugin, LV2
+# Tag: Mixer, Alsa, Jack, Mixer
+# Type: Plugin, LV2, Standalone
 # Category: Audio, Tool
 
-Name:    matrixmixer.lv2
+Name: matrixmixer.lv2
 Version: 0.4.6
 Release: 2%{?dist}
 Summary: A LV2 matrix mixer
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/matrixmixer.lv2
+URL: https://github.com/x42/matrixmixer.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -19,7 +18,8 @@ Distribution: Audinux
 Source0: matrixmixer.lv2.tar.gz
 Source1: x42-source.sh
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel

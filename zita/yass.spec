@@ -3,11 +3,11 @@
 # Category: Audio, Tool
 
 Summary: Yet Another Scrolling Scope. Oscilloscope
-Name:    yass
+Name: yass
 Version: 0.1.0
 Release: 1%{?dist}
 License: GPL
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -15,9 +15,11 @@ Distribution: Audinux
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 
 BuildRequires: gcc gcc-c++
-BuildRequires: clthreads-devel clxclient-devel
+BuildRequires: clthreads-devel
+BuildRequires: clxclient-devel
 BuildRequires: pkgconfig(jack)
-BuildRequires: libX11-devel libXft-devel
+BuildRequires: libX11-devel
+BuildRequires: libXft-devel
 
 %description
 Main features: up to 32 channels, variable scrolling speed, automatic gain control, and very light on CPU usage. Beta release available.

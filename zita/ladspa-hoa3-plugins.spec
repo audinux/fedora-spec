@@ -1,21 +1,21 @@
 # Tag:  Effect
-# Type: LADSPA
+# Type: Plugin, LADSPA
 # Category: Audio
 
 Summary: A collection of LADSPA plugins for third order Ambisonics.
-Name:    HOA3-plugins
+Name: HOA3-plugins
 Version: 0.3.0
 Release: 1%{?dist}
 License: GPL
+URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 
 Vendor:       Audinux
 Distribution: Audinux
 
-URL:     http://kokkinizita.linuxaudio.org/linuxaudio/
-
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/HOA3-plugins-%{version}.tar.bz2
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: ladspa-devel
 
 %description

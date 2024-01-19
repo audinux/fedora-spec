@@ -2,12 +2,12 @@
 # Type: Plugin, LV2, VST
 # Category: Audio, Effect
 
-Name:    zam-mao-plugins
+Name: zam-mao-plugins
 Version: 4.2
 Release: 4%{?dist}
 Summary: Set of LV2 / VST / VST3 / CLAPS plugins
 License: GPL-2.0-or-later AND ISC
-URL:     http://www.zamaudio.com/
+URL: http://www.zamaudio.com/
 
 Vendor:       Audinux
 Distribution: Audinux

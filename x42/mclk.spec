@@ -1,20 +1,21 @@
-# Tag: Alsa, Jack
+# Tag: MIDI
 # Type: Plugin, LV2
-# Category: Audio, Tool
+# Category: MIDI, Tool
 
-Name:    mclk.lv2
+Name: mclk.lv2
 Version: 0.2.3
 Release: 1%{?dist}
 Summary: Midi Clock Generator LV2 Plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/x42/mclk.lv2
+URL: https://github.com/x42/mclk.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/x42/mclk.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: lv2-devel

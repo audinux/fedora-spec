@@ -1,8 +1,12 @@
-Name:    geraintluff_ysfx
+# Tag: Audio, Effect
+# Type: Plugin
+# Category: Audio, Effect
+
+Name: geraintluff_ysfx
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Collection of JSFX effects
-URL:     https://github.com/geraintluff/jsfx
+URL: https://github.com/geraintluff/jsfx
 License: MIT
 
 Vendor:       Audinux

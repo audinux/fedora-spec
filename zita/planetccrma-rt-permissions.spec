@@ -1,11 +1,15 @@
+# Tag: Tool
+# Type: Standalone
+# Category: Tool
+
 %define build_session 0
 
 Summary: Grant rt permissions to all users or to active sessions
-Name:    planetccrma-rt-permissions
+Name: planetccrma-rt-permissions
 Version: 2012.09.19
 Release: 1%{?dist}
 License: GPL3
-URL:     http://ccrma.stanford.edu/planetccrma/software/
+URL: http://ccrma.stanford.edu/planetccrma/software/
 
 Vendor:       Audinux
 Distribution: Audinux
