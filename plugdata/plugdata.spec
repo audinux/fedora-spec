@@ -1,8 +1,12 @@
-Name:    plugdata
+# Tag: Editor, Audio, MIDI
+# Type: Standalone, Plugin, LV2, VST3, CLAP
+# Category: Audio, IDE, Language
+
+Name: plugdata
 Version: 0.8.3
 Release: 1%{?dist}
 Summary: Pure Data as a plugin, with a new GUI
-URL:     https://github.com/timothyschoen/PlugData
+URL: https://github.com/timothyschoen/PlugData
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

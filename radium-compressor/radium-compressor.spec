@@ -1,22 +1,27 @@
+# Tag: Audio, Effect, Compressor, Jack
+# Type: Standalone
+# Category: Audio, Effect
+
 %ifarch %ix86 x86_64
 %define msse_flags -msse -mfpmath=sse
 %endif
 
-Name:           radium-compressor
-Version:        0.5.1
-Release:        20%{?dist}
-Summary:        An audio compressor for JACK
+Name: radium-compressor
+Version: 0.5.1
+Release: 20%{?dist}
+Summary: An audio compressor for JACK
+License: GPL-3.0-or-later
+URL: http://users.notam02.no/~kjetism/radium/
 
-License:        GPL-3.0-or-later
-URL:            http://users.notam02.no/~kjetism/radium/
-Source0:        http://archive.notam02.no/arkiv/src/radium_compressor-0.5.1.tar.gz
-Source1:        radium-compressor.desktop
-Patch0:         radium_compressor-0.5.1-cstdlib.patch
+Source0: http://archive.notam02.no/arkiv/src/radium_compressor-0.5.1.tar.gz
+Source1: radium-compressor.desktop
+Patch0: radium_compressor-0.5.1-cstdlib.patch
 
-BuildRequires:  make
-BuildRequires:  pkgconfig(jack)
-BuildRequires:  qt4-devel
-BuildRequires:  desktop-file-utils
+BuildRequires: gcc gcc-c++
+BuildRequires: make
+BuildRequires: pkgconfig(jack)
+BuildRequires: qt4-devel
+BuildRequires: desktop-file-utils
 
 %description
 Radium Compressor is the system compressor in Radium,

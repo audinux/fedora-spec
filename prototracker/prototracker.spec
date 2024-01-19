@@ -2,12 +2,12 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
-Name:    prototracker-modular
+Name: prototracker-modular
 Version: 0.0.8
 Release: 1%{?dist}
 Summary: A modular synth tracker
 License: MIT
-URL:     https://github.com/kometbomb/prototracker-modular
+URL: https://github.com/kometbomb/prototracker-modular
 
 Vendor:       Audinux
 Distribution: Audinux

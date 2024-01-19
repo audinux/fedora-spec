@@ -1,3 +1,7 @@
+# Tag: Library, Devel
+# Type: Devel
+# Category: Programming
+
 %global __python %{__python3}
 
 Name: python-json2daisy

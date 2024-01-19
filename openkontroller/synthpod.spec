@@ -1,13 +1,17 @@
+# Tag: Tool, Rack
+# Type: Plugin, LV2, Standalone
+# Category: Tool, Plugin
+
 # Global variables for github repository
 %global commit0 cb301d2b037cae7afe82559b0c5184e55da759d7
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    synthpod
+Name: synthpod
 Version: 0.1.2
 Release: 4%{?dist}
 Summary: Lightweight Nonlinear LV2 Plugin Container
-URL:     https://github.com/OpenMusicKontrollers/synthpod
+URL: https://github.com/OpenMusicKontrollers/synthpod
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

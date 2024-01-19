@@ -1,3 +1,7 @@
+# Tag: Editor, Jack, Alsa
+# Type: Standalone
+# Category: Audio, MIDI, Sequencer
+
 #
 # Pure Data vanilla build
 #
@@ -6,11 +10,11 @@
 %define pkgver 0.54.1
 
 Summary: Pure Data
-Name:    puredata
+Name: puredata
 Version: %{pkgver}
 Release: 3%{?dist}
 License: BSD
-URL:     https://puredata.info/
+URL: https://puredata.info/
 
 Vendor:       Audinux
 Distribution: Audinux

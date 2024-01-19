@@ -1,13 +1,17 @@
+# Tag: Tool, Devel
+# Type: Plugin, LV2
+# Category: MIDI, Plugin, Programming
+
 # Global variables for github repository
 %global commit0 4dff4d6e48e2b95a188755facddbe373932ae8b1
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    moony.lv2
+Name: moony.lv2
 Version: 0.40.0
 Release: 2%{?dist}
 Summary: Realtime Lua as programmable glue in LV2
-URL:     https://github.com/OpenMusicKontrollers/moony.lv2
+URL: https://github.com/OpenMusicKontrollers/moony.lv2
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

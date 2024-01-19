@@ -1,9 +1,13 @@
+# Tag: Devel, Tool
+# Type: Standalone
+# Category: Tool, Programming
+
 Summary: Tool for describing builds
-Name:    premake5
+Name: premake5
 Version: 5.0.0alpha15
 Release: 1%{?dist}
 License: GPL-3.0-or-later
-URL:     https://github/premake/
+URL: https://github/premake/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -11,6 +15,7 @@ Distribution: Audinux
 Source0: https://github.com/premake/premake-core/archive/v5.0.0-alpha15.tar.gz#/premake5-5.0.0-alpha15.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 
 %description
 Describe your software project with a full-featured scripting language and

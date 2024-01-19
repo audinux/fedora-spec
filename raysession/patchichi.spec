@@ -1,12 +1,15 @@
+# Tag: Session, OSC, Jack
+# Type: Standalone
+# Category: Session Mngmt
+
 %global __python %{__python3}
 
-Name:    patchichi
+Name: patchichi
 Version: 0.2.0
 Release: 1%{?dist}
-Summary:  Abstract JACK Patchbay
-
+Summary: Abstract JACK Patchbay
 License: GPL-2.0-or-later
-URL:     https://github.com/Houston4444/Patchichi
+URL: https://github.com/Houston4444/Patchichi
 
 Vendor:       Audinux
 Distribution: Audinux

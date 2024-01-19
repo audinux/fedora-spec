@@ -1,14 +1,18 @@
+# Tag: DAW, Equalizer, Mixer
+# Type: Standalone
+# Category: Audio, DAW
+
 # Global variables for github repository
 %global commit0 ad624e7e46b043183d3ab669e6cf54cba887e1a6
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    postfish
+Name: postfish
 Version: 2005.01.01
 Release: 2%{?dist}
 Summary: The Postfish is a digital audio post-processing, restoration, filtering and mixdown tool.
 License: GPL-2.0-or-later
-URL:     https://gitlab.xiph.org/xiph/postfish
+URL: https://gitlab.xiph.org/xiph/postfish
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -18,7 +22,6 @@ Source1: postfish.png
 Source2: Makefile.postfish
 
 BuildRequires: gcc gcc-c++
-BuildRequires: desktop-file-utils
 BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: fftw-devel
@@ -27,6 +30,7 @@ BuildRequires: glib2-devel
 BuildRequires: libao-devel
 BuildRequires: gzip
 BuildRequires: perl
+BuildRequires: desktop-file-utils
 
 %description
 The Postfish is a digital audio post-processing, restoration, filtering and mixdown tool.

@@ -1,3 +1,7 @@
+# Tag: Devel, Editor
+# Type: Standalone, Language
+# Category: Tool, Programming
+
 #
 # spec file for package processing
 #
@@ -18,13 +22,13 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    processing
+Name: processing
 Version: 4.3
 Release: 2%{?dist}
 Summary: Processing Development Environment (PDE)
 # Core is LGPL, others are GPL
 License: GPL-2.0+ and LGPL-2.0+
-Url:     https://processing.org/
+URL: https://processing.org/
 
 Vendor:       Audinux
 Distribution: Audinux

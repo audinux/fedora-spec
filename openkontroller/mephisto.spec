@@ -1,8 +1,12 @@
-Name:    lv2-mephisto
+# Tag: Editor, Jack
+# Type: Plugin, LV2
+# Category: Tool, Session Mngmt
+
+Name: lv2-mephisto
 Version: 0.18.2
 Release: 1%{?dist}
 Summary: A JACK patchbay in flow matrix style
-URL:     https://github.com/OpenMusicKontrollers/mephisto.lv2
+URL: https://github.com/OpenMusicKontrollers/mephisto.lv2
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

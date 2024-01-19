@@ -1,8 +1,12 @@
-Name:    pipecontrol
+# Tag: Tool, Graphic, Audio
+# Type: Standalone
+# Category: Audio, Tool
+
+Name: pipecontrol
 Version: 0.2.11
 Release: 1%{?dist}
 Summary: Pipewire control GUI program in Qt
-URL:     https://github.com/portaloffreedom/pipecontrol
+URL: https://github.com/portaloffreedom/pipecontrol
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

@@ -1,13 +1,17 @@
+# Tag: Tool, Devel
+# Type: Plugin, LV2
+# Category: Tool, Plugin
+
 # Global variables for github repository
 %global commit0 6a00bcc5276936d04a97ea5e5228eadf3c595979
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    sherlock.lv2
+Name: sherlock.lv2
 Version: 0.28.0
 Release: 3%{?dist}
 Summary: An investigative LV2 plugin bundle
-URL:     https://github.com/OpenMusicKontrollers/sherlock.lv2
+URL: https://github.com/OpenMusicKontrollers/sherlock.lv2
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

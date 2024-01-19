@@ -4,11 +4,11 @@
 # LastSourceUpdate: 2010
 
 Summary: Guitar Amplifier emulator
-Name:    rakarrack
+Name: rakarrack
 Version: 0.6.3
 Release: 2%{?dist}
 License: GPL
-URL:     http://rakarrack.sourceforge.net/
+URL: http://rakarrack.sourceforge.net/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -16,6 +16,9 @@ Distribution: Audinux
 Source0: https://github.com/ycollet/rakarrack/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: libtool
 BuildRequires: alsa-lib-devel
 BuildRequires: alsa-utils
 BuildRequires: fltk-devel
@@ -26,9 +29,6 @@ BuildRequires: libsamplerate-devel
 BuildRequires: fftw-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils
-BuildRequires: autoconf
-BuildRequires: automake
-BuildRequires: libtool
 
 %description
 This app was born after an informal conversation about effects for guitar using GNU/linux.

@@ -2,19 +2,20 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
-Name:    non-daw
+Name: non-daw
 Version: 1.3.0
 Release: 11%{?dist}
 Summary: A digital audio workstation for JACK
 License: GPL-2.0-or-later
-URL:     http://non.tuxfamily.org/
+URL: http://non.tuxfamily.org/
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://git.tuxfamily.org/non/non.git/snapshot/non-daw-v%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: non-ntk-devel
 BuildRequires: non-ntk-fluid
 BuildRequires: liblo-devel

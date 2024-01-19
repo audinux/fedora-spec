@@ -1,15 +1,15 @@
-%global debug_package %{nil}
-
 # Tag: Session, Jack, Live
 # Type: Standalone
 # Category: Session Mngmt
 # GUIToolkit: Qt5
 
-Name:    performer
+%global debug_package %{nil}
+
+Name: performer
 Version: 1.0.2
 Release: 3%{?dist}
 Summary: Live performance audio session manager using Carla
-URL:     https://github.com/progwolff/performer
+URL: https://github.com/progwolff/performer
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -18,8 +18,10 @@ Distribution: Audinux
 Source0: https://github.com/progwolff/performer/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: qt5-qtdeclarative-devel
+BuildRequires: intltool
+BuildRequires: cmake
 BuildRequires: extra-cmake-modules
+BuildRequires: qt5-qtdeclarative-devel
 BuildRequires: qt5-qtwebengine-devel
 BuildRequires: qt5-qtwebview-devel
 BuildRequires: kf5-kcoreaddons-devel
@@ -30,11 +32,8 @@ BuildRequires: kf5-knotifications-devel
 BuildRequires: kf5-kparts-devel
 BuildRequires: kf5-kcrash-devel
 BuildRequires: kf5-kdoctools-devel
-BuildRequires: intltool
-BuildRequires: cmake
-BuildRequires: desktop-file-utils
 BuildRequires: pkgconfig(jack)
-BuildRequires: sed
+BuildRequires: desktop-file-utils
 
 %description
 Live performance audio session manager using Carla

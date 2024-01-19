@@ -8,11 +8,11 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Summary: PSI LV2 Plugins
-Name:    psi-plugins-doc
+Name: psi-plugins-doc
 Version: 0.0.1
 Release: 4%{?dist}
 License: GPL
-URL:     https://github.com/ycollet/psi-plugins
+URL: https://github.com/ycollet/psi-plugins
 
 Vendor:       Audinux
 Distribution: Audinux

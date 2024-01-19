@@ -1,3 +1,7 @@
+# Tag: Editor, Jack, Alsa
+# Type: Standalone
+# Category: Audio, MIDI, Sequencer
+
 %global debug_package %{nil}
 %undefine _missing_build_ids_terminate_build
 
@@ -31,11 +35,11 @@
 # XXXFIXME: Debianism. We use that version number for convenience here since
 # we actually use the Debian snapshot (.orig tarball) to build the package. Is
 # there a versioning scheme for git packages in RPM land that we should use?
-Name:    purr-data
+Name: purr-data
 Version: 2.17.0
 Release: 2%{?dist}
 Summary: Interactive multimedia programming environment (nw.js variant)
-URL:     https://agraef.github.io/purr-data/
+URL: https://agraef.github.io/purr-data/
 License: GPL
 
 Vendor:       Audinux
@@ -49,7 +53,12 @@ Source1: https://dl.nwjs.io/v%{nwjs_version}/nwjs-sdk-v%{nwjs_version}-linux-%{n
 Source2: purr-data-source.sh
 
 BuildRequires: gcc-c++
-BuildRequires: autoconf automake libtool bison flex rsync
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: libtool
+BuildRequires: bison
+BuildRequires: flex
+BuildRequires: rsync
 BuildRequires: libtirpc-devel
 BuildRequires: gtk2-devel
 BuildRequires: gtk3-devel

@@ -1,13 +1,17 @@
+# Tag: Tool, OSC, MIDI
+# Type: Standalone
+# Category: Tool, Plugin, MIDI
+
 # Global variables for github repository
 %global commit0 5f378860bf9a0f6864f1b191377905008d85e587
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    osc2midi
+Name: osc2midi
 Version: 0.2.5
 Release: 1%{?dist}
 Summary: OSC2MIDI is a highly configurable OSC to jack MIDI (and back).
-URL:     https://github.com/ssj71/OSC2MIDI
+URL: https://github.com/ssj71/OSC2MIDI
 License: GPLv2+ and GPLv2 and (GPLv2+ or MIT) and GPLv3+ and MIT and LGPLv2+ and (LGPLv2+ with exceptions) and Copyright only
 
 Vendor:       Audinux

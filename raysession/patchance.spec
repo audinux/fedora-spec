@@ -4,13 +4,12 @@
 
 %global __python %{__python3}
 
-Name:    patchance
+Name: patchance
 Version: 1.1.0
 Release: 1%{?dist}
 Summary: Jack Patchbay GUI
-
 License: GPL-2.0-or-later
-URL:     https://github.com/Houston4444/Patchance
+URL: https://github.com/Houston4444/Patchance
 
 Vendor:       Audinux
 Distribution: Audinux

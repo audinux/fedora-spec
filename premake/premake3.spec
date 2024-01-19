@@ -1,9 +1,13 @@
+# Tag: Devel, Tool
+# Type: Standalone
+# Category: Tool, Programming
+
 Summary: Tool for describing builds
-Name:    premake3
+Name: premake3
 Version: 3.7
 Release: 2%{?dist}
 License: GPL-3.0-or-later
-URL:     http://sourceforge.net/projects/premake/
+URL: http://sourceforge.net/projects/premake/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -11,9 +15,11 @@ Distribution: Audinux
 Source0: http://downloads.sourceforge.net/premake/premake-src-3.7.zip
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 
 %description
-Describe your software project with a full-featured scripting language and let Premake write the build scripts for you. With one file your project can support both IDE-addicted Windows coders and Linux command-line junkies!
+Describe your software project with a full-featured scripting language and let Premake write the build scripts for you.
+With one file your project can support both IDE-addicted Windows coders and Linux command-line junkies!
 
 %prep
 %autosetup -n Premake-3.7

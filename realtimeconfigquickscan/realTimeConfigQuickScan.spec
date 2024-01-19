@@ -1,24 +1,34 @@
-%global        commit0 4b482db17f8d8567ba0abf33459ceb5f756f088c
-%global        shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global        commitdate 20190803
-%global        gitname realtimeconfigquickscan
-%global        debug_package %{nil}
+# Tag: Session, OSC, Jack
+# Type: Standalone
+# Category: Session Mngmt
 
-Summary:       Inspect realtime system settings
-Name:          realTimeConfigQuickScan
-Version:       0
-Release:       5.%{commitdate}git%{shortcommit0}%{?dist}
-License:       GPL-2.0-or-later
-URL:           https://github.com/raboof/%{gitname}
-Source0:       %{URL}/archive/%{commit0}/%{gitname}-%{commit0}.tar.gz
-Source1:       realTimeConfigQuickScan
-Source2:       QuickScan
-Source3:       QuickScan.desktop
-BuildArch:     noarch
-Requires:      perl(Tk)
-BuildRequires: desktop-file-utils
+%global commit0 4b482db17f8d8567ba0abf33459ceb5f756f088c
+%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
+%global commitdate 20190803
+
+%global gitname realtimeconfigquickscan
+
+%global debug_package %{nil}
+
+Summary: Inspect realtime system settings
+Name: realTimeConfigQuickScan
+Version: 0
+Release: 5.%{commitdate}git%{shortcommit0}%{?dist}
+License: GPL-2.0-or-later
+URL: https://github.com/raboof/%{gitname}
+
+Source0: %{URL}/archive/%{commit0}/%{gitname}-%{commit0}.tar.gz
+Source1: realTimeConfigQuickScan
+Source2: QuickScan
+Source3: QuickScan.desktop
+
+BuildArch: noarch
+
 BuildRequires: perl-generators
-Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
+BuildRequires: desktop-file-utils
+
+Requires: perl(Tk)
+Requires: perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 
 # Prevent bogus perl-provides/requires from polluting rpm
 %{?perl_default_filter}
@@ -33,7 +43,7 @@ Inspects system settings, and makes suggestions for improving realtime/audio
 performance.
 
 %prep
-%setup -q -n %{gitname}-%{commit0}
+%autosetup -n %{gitname}-%{commit0}
 # correct permissions
 chmod +x *.pl
 

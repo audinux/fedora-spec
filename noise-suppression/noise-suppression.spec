@@ -1,14 +1,18 @@
+# Tag: Effect
+# Type: Plugin, LADSPA, LV2, VST, VST3
+# Category: Effect
+
 # Global variables for github repository
 %global commit0 9e76db3f3e4b7dc7c304fd58591a352bb2b6c894
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    noise-suppression-for-voice
+Name: noise-suppression-for-voice
 Version: 1.03
 Release: 3%{?dist}
 Summary: Real-time Noise Suppression LADSPA / LV2 Plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/werman/noise-suppression-for-voice
+URL: https://github.com/werman/noise-suppression-for-voice
 
 Vendor:       Audinux
 Distribution: Audinux

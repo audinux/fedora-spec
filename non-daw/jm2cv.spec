@@ -1,13 +1,17 @@
+# Tag: MIDI, Jack
+# Type: Standalone
+# Category: Tool
+
 # Global variables for github repository
 %global commit0 8bddbd13468b3d8497a9d8a19871293e3088f614
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    jm2cv
+Name: jm2cv
 Version: 0.1
 Release: 2%{?dist}
 Summary: Jack Midi to Control Voltage
-URL:     https://github.com/harryhaaren/jm2cv
+URL: https://github.com/harryhaaren/jm2cv
 License: GPLv2+ and GPLv2 and (GPLv2+ or MIT) and GPLv3+ and MIT and LGPLv2+ and (LGPLv2+ with exceptions) and Copyright only
 
 Vendor:       Audinux

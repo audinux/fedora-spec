@@ -2,12 +2,12 @@
 # Type: Plugin, Standalone, VST3
 # Category: Audio, Synthesizer
 
-Name:    obxd
+Name: obxd
 Version: 2.8
 Release: 2%{?dist}
 Summary: A VST3 Synthesizer
 License: GPL-3.0-only
-URL:     https://github.com/reales/OB-Xd
+URL: https://github.com/reales/OB-Xd
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -15,7 +15,7 @@ Distribution: Audinux
 Source0: https://github.com/reales/OB-Xd/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
 Source2: obxd-makefiles.tar.gz
-Patch0:  obxd_file_install_resources.patch
+Patch0: obxd_file_install_resources.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make

@@ -3,11 +3,11 @@
 # Category: Audio, Tool
 # GUIToolkit: Qt5
 
-Name:    polyphone
+Name: polyphone
 Version: 2.3.0
 Release: 3%{?dist}
 Summary: A SF2 sound font editor
-URL:     https://polyphone-soundfonts.com/
+URL: https://polyphone-soundfonts.com/
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -15,13 +15,12 @@ Distribution: Audinux
 
 Source0: https://github.com/davy7125/polyphone/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ sed
+BuildRequires: gcc gcc-c++
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-qtsvg-devel
 BuildRequires: qt5-linguist
 BuildRequires: alsa-lib-devel
-BuildRequires: desktop-file-utils
 BuildRequires: pkgconfig(jack)
 BuildRequires: portaudio-devel
 BuildRequires: rtmidi-devel
@@ -32,6 +31,7 @@ BuildRequires: zlib-devel
 BuildRequires: glib2-devel
 BuildRequires: openssl-devel
 BuildRequires: flac-devel
+BuildRequires: desktop-file-utils
 
 %description
 Polyphone is a free software for editing soundfonts in format sf2.

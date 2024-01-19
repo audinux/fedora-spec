@@ -2,13 +2,13 @@
 # Type: Standalone
 # Category: Session Mngmt
 
-Name:    raysession
+Name: raysession
 Version: 0.14.3
 Release: 2%{?dist}
 Summary: A JACK session manager
 
 License: GPL-2.0-or-later
-URL:     https://github.com/Houston4444/RaySession
+URL: https://github.com/Houston4444/RaySession
 
 Vendor:       Audinux
 Distribution: Audinux

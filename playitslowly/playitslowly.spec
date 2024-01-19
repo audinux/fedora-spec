@@ -1,10 +1,14 @@
+# Tag: Audio, Player
+# Type: Standalone
+# Category: Audio, Tool
+
 %define commit0 f1d445f8ff410ee378f066441b39dff2adc7af7c
 
-Name:    playitslowly
+Name: playitslowly
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: Play it slowly is a software to play back audio files at a different speed or pitch.
-URL:     https://github.com/jwagner/playitslowly
+URL: https://github.com/jwagner/playitslowly
 License: GPL-2.0-or-later
 
 BuildArch: noarch

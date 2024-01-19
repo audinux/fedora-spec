@@ -1,3 +1,7 @@
+# Tag: Library, Devel
+# Type: Devel
+# Category: Programming
+
 # 5.9 	3.12
 # 5.7 	3.11
 # 5.0 	3.10

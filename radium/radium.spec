@@ -1,14 +1,18 @@
+# Tag: Audio, MIDI, Sequencer, Tracker
+# Type: Standalone
+# Category: Audio, Sequencer
+
 # Global variables for github repository
 %global commit0 3cb4233f1690cb4d338bbfbb860e9ba505b67dba
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    radium
+Name: radium
 Version: 3.3.2
 Release: 1%{?dist}
 Summary: A tracker / sequencer
 License: GPL-2.0-or-later
-URL:     https://github.com/kmatheussen/radium
+URL: https://github.com/kmatheussen/radium
 
 Vendor:       Audinux
 Distribution: Audinux

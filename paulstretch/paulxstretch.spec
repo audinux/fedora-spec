@@ -1,11 +1,15 @@
+# Tag: Effect, Plugin, Audio
+# Type: Standalone, Plugin, VST3
+# Category: Audio, Effect
+
 %global debug_package %{nil}
 
-Name:    paulxstretch
+Name: paulxstretch
 Version: 1.6.0
 Release: 1%{?dist}
 Summary: A Paulstretch VST3/Standalone plugin
 License: MIT
-URL:     https://github.com/essej/paulxstretch
+URL: https://github.com/essej/paulxstretch
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -2,18 +2,18 @@
 # Type: Plugin, Standalone, VST3
 # Category: Audio, Synthesizer
 
-Name:    odin2
+Name: odin2
 Version: 2.3.4
 Release: 5%{?dist}
 Summary: A VST3 Synthesizer
 License: GPL-2.0-or-later
-URL:     https://github.com/TheWaveWarden/odin2
+URL: https://github.com/TheWaveWarden/odin2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./odin-sources.sh <TAG>
-# ./odin-sources.sh v2.3.4
+#        ./odin-sources.sh v2.3.4
 
 Source0: odin2.tar.gz
 Source1: odin-sources.sh

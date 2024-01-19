@@ -1,14 +1,18 @@
+# Tag: Synthesizer
+# Type: Standalone, Plugin, LV2
+# Category: Synthesizer
+
 # Global variables for github repository
 %global commit0 fe078ea036991081c3a28bb388a3fecd0e8e3a5d
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    oxefmsynth
+Name: oxefmsynth
 Version: 1.3.5.%{shortcommit0}
 Release: 2%{?dist}
 Summary: A FM synthetized
 License: GPL-2.0-or-later
-URL:     https://github.com/oxesoft/oxefmsynth
+URL: https://github.com/oxesoft/oxefmsynth
 
 Vendor:       Audinux
 Distribution: Audinux

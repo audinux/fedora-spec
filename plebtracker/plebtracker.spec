@@ -8,11 +8,11 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Summary: Chiptune tracker for making chiptune-like music on a modern computer.
-Name:    plebtracker
+Name: plebtracker
 Version: 0.1
 Release: 3%{?dist}
 License: GPL
-URL:     https://github.com/danfrz/PLEBTracker
+URL: https://github.com/danfrz/PLEBTracker
 
 Vendor:       Audinux
 Distribution: Audinux

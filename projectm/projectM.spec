@@ -1,9 +1,13 @@
-Name:    projectM-mao
+# Tag: Tool, Video, Audio
+# Type: Standalone
+# Category: Tool
+
+Name: projectM-mao
 Version: 3.1.12
 Release: 14%{?dist}
 Summary: The libraries for the projectM music visualization plugin
 License: LGPLv2+
-URL:     https://github.com/projectM-visualizer/projectm
+URL: https://github.com/projectM-visualizer/projectm
 
 Vendor:       Audinux
 Distribution: Audinux

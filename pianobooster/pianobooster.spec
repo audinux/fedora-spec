@@ -1,3 +1,7 @@
+# Tag: MIDI, Player
+# Type: Standalone
+# Category: Audio, MIDI, Tool
+
 Name: pianobooster
 Version: 1.0.0
 Release: 8%{?dist}
@@ -11,6 +15,7 @@ Distribution: Audinux
 Source0: https://github.com/captnfab/PianoBooster/archive/v%{version}.tar.gz#/PianoBooster-%{version}.tar.gz
 Patch0: pianobooster-0001-fix-dejavu-font-path.patch
 
+BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: pkgconfig(jack)
 BuildRequires: pkgconfig(alsa)

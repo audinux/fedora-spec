@@ -1,3 +1,7 @@
+# Tag: Audio, Sequencer
+# Type: Standalone
+# Category: Audio, Sequencer
+
 # Disable production of debug package.
 %global debug_package %{nil}
 
@@ -6,12 +10,12 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    picoloop
+Name: picoloop
 Version: 0.77e.%{shortcommit0}
 Release: 3%{?dist}
 Summary: An audio sequencer
 License: GPL-2.0-or-later
-URL:     https://github.com/yoyz/audio
+URL: https://github.com/yoyz/audio
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -21,6 +25,7 @@ Source1: picoloop-SYSTEMLINUX.cpp
 Source2: https://github.com/farvardin/picoloop-manual/files/500912/picoloop_manual_pc.pdf
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: SDL2-devel

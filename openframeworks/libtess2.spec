@@ -1,11 +1,15 @@
+# Tag: Library
+# Type: Devel
+# Category: Programming
+
 %global debug_package %{nil}
 
 Summary: Game and tools oriented refactored version of GLU tesselator.
-Name:    libtess2
+Name: libtess2
 Version: 1.0.2
 Release: 1%{?dist}
 License: BSD
-URL:     https://github.com/memononen/libtess2
+URL: https://github.com/memononen/libtess2
 
 Vendor:       Audinux
 Distribution: Audinux

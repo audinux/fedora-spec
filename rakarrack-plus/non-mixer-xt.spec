@@ -1,9 +1,13 @@
+# Tag: Audio, Mixer
+# Type: Standalone, LV2, LADSPA
+# Category: Audio, Tool
+
 Summary: Reboot of Non Mixer with eXTended LV2 support.
-Name:    non-mixer-xt
+Name: non-mixer-xt
 Version: 1.1.0
 Release: 1%{?dist}
 License: GPL-3.0-only
-URL:     https://github.com/Stazed/non-mixer-xt
+URL: https://github.com/Stazed/non-mixer-xt
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -1,3 +1,7 @@
+# Tag: Library, MIDI
+# Type: Devel
+# Category: Programming
+
 Summary: Port Standard MIDI File - portable library for reading/writing Standard MIDI Files
 Name: portsmf
 Version: 0.1
@@ -14,7 +18,8 @@ Source0: %{name}.tar.xz
 Patch0: %{name}-shared.patch
 Patch1: %{name}-includes.patch
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libstdc++-devel

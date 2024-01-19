@@ -1,11 +1,15 @@
+# Tag: Effect, Plugin, Audio
+# Type: Standalone
+# Category: Audio, Effect
+
 %global commit0 7f5c3993abe420661ea0b808304b0e2b4b0048c5
 
-Name:    paulstretch_cpp
+Name: paulstretch_cpp
 Version: 2.1.0
 Release: 1%{?dist}
 Summary: The Paulstretch program
 License: GPL-2.0-only
-URL:     https://github.com/paulnasca/paulstretch_cpp
+URL: https://github.com/paulnasca/paulstretch_cpp
 
 Vendor:       Audinux
 Distribution: Audinux

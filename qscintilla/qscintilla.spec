@@ -1,3 +1,6 @@
+# Tag: Library, Devel
+# Type: Devel
+# Category: Programming
 
 %global scintilla_ver 3.10.1
 # sip_ver for Fedora 31: 4.19.19, for Fedora 33: 4.19.24.
@@ -12,11 +15,11 @@
 %global py3_sip %{_bindir}/sip
 
 Summary: A Scintilla port to Qt
-Name:    qscintilla
+Name: qscintilla
 Version: 2.11.5
 Release: 10%{?dist}
 License: GPL-3.0-only
-Url:     http://www.riverbankcomputing.com/software/qscintilla/
+URL: http://www.riverbankcomputing.com/software/qscintilla/
 
 Vendor:       Audinux
 Distribution: Audinux

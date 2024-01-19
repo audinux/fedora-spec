@@ -2,11 +2,11 @@
 # Type: Standalone
 # Category: Audio
 
-Name:    qutecsound
+Name: qutecsound
 Version: 0.9.8.1
 Release: 3%{?dist}
 Summary: A csound file editor
-URL:     https://github.com/CsoundQt/CsoundQt
+URL: https://github.com/CsoundQt/CsoundQt
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -17,12 +17,12 @@ Source1: qutecsound.desktop
 Source2: qutecsound.xml
 
 BuildRequires: gcc gcc-c++
-BuildRequires: desktop-file-utils
 BuildRequires: pkgconfig(jack)
 BuildRequires: csound-devel
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtquickcontrols2-devel
 BuildRequires: libsndfile-devel
+BuildRequires: desktop-file-utils
 
 Requires: csound-manual
 

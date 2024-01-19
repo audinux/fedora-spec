@@ -3,11 +3,11 @@
 # Category: Audio, Sequencer
 
 Summary: Chiptune tracker for making chiptune-like music on a modern computer.
-Name:    protracker2
+Name: protracker2
 Version: 1.65.1
 Release: 4%{?dist}
 License: BSD
-URL:     https://16-bits.org/pt.php
+URL: https://16-bits.org/pt.php
 
 Vendor:       Audinux
 Distribution: Audinux

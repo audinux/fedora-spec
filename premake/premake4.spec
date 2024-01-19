@@ -1,9 +1,13 @@
+# Tag: Devel, Tool
+# Type: Standalone
+# Category: Tool, Programming
+
 Summary: Tool for describing builds
-Name:    premake4
+Name: premake4
 Version: 4.4beta5
 Release: 1%{?dist}
 License: GPL-3.0-or-later
-URL:     http://sourceforge.net/projects/premake/
+URL: http://sourceforge.net/projects/premake/
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -11,6 +15,7 @@ Distribution: Audinux
 Source0: https://sourceforge.net/projects/premake/files/Premake/4.4/premake-4.4-beta5-src.zip
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 
 %description
 Describe your software project with a full-featured scripting language

@@ -6,12 +6,12 @@
 
 %define	uname OpenBoard
 
-Name:    openboard
+Name: openboard
 Version: 1.7.0
 Release: 3%{?dist}
 Summary: Interactive whiteboard for schools and universities
 License: GPL-3.0-or-later
-Url:     https://openboard.ch
+URL: https://openboard.ch
 
 Vendor:       Audinux
 Distribution: Audinux

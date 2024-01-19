@@ -1,14 +1,13 @@
 # Tag: Guitar, Amp Simul
 # Type: Plugin, LV2, Standalone
 # Category: Audio, Effect
-# LastSourceUpdate: 2021
 
 Summary: Guitar Amplifier emulator
-Name:    rakarrack-plus
+Name: rakarrack-plus
 Version: 1.2.4
 Release: 2%{?dist}
 License: GPL
-URL:     https://github.com/Stazed/rakarrack-plus
+URL: https://github.com/Stazed/rakarrack-plus
 
 Vendor:       Audinux
 Distribution: Audinux

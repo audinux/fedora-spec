@@ -1,38 +1,42 @@
+# Tag: Library
+# Type: Devel
+# Category: Programming
+
 # version: dae177189b12f74ea01ac2389b76326c06d9be78
-Name:           non-ntk
-Version:        1.3.0
-Release:        0.17.20191215gitdae17718%{?dist}
-Summary:        A fork of FLTK for the non audio suite
+Name: non-ntk
+Version: 1.3.0
+Release: 0.17.20191215gitdae17718%{?dist}
+Summary: A fork of FLTK for the non audio suite
 # themse are GPLv2+, FLTK derived code is LGPLv2+
-License:        LGPL-2.1-or-later WITH Qwt-exception-1.0 AND GPL-2.0-or-later
-URL:            http://non.tuxfamily.org/
+License: LGPL-2.1-or-later WITH Qwt-exception-1.0 AND GPL-2.0-or-later
+URL: http://non.tuxfamily.org/
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # git clone git://git.tuxfamily.org/gitroot/non/fltk.git ntk
-Source0:        non-ntk-20190925-gitdae1771.tar.xz
+Source0: non-ntk-20190925-gitdae1771.tar.xz
 # script to create source tarball from git
 # sh non-snapshot.sh $(rev)
 # no desktop file in tarball
-Source1:        non-ntk-1.3.0-fluid.desktop
+Source1: non-ntk-1.3.0-fluid.desktop
 # sent upstream via email
-Patch1:         non-ntk-1.3.0-fsf.patch
-Patch2:         non-ntk-unused-shlib.patch
-Patch3:         non-ntk-scandir.patch
+Patch1: non-ntk-1.3.0-fsf.patch
+Patch2: non-ntk-unused-shlib.patch
+Patch3: non-ntk-scandir.patch
 
-BuildRequires:  cairo-devel
-BuildRequires:  desktop-file-utils
-BuildRequires:  libjpeg-devel
-BuildRequires:  pkgconfig(libpng)
-BuildRequires:  python2
+BuildRequires: gcc gcc-c++
+BuildRequires: cairo-devel
+BuildRequires: libjpeg-devel
+BuildRequires: pkgconfig(libpng)
+BuildRequires: python2
 %if 0%{?fedora} >= 39
-BuildRequires:  python3.10
+BuildRequires: python3.10
 %endif
-BuildRequires:  zlib-devel
-BuildRequires:  pkgconfig(glu)
-BuildRequires:  pkgconfig(xft)
-BuildRequires:  gcc gcc-c++
+BuildRequires: zlib-devel
+BuildRequires: pkgconfig(glu)
+BuildRequires: pkgconfig(xft)
+BuildRequires: desktop-file-utils
 
 %description
 %{name} is a fork of the FLTK UI toolkit. It employs cairo support and
@@ -40,8 +44,8 @@ other additions not accepted upstream. It is currently used by the non-*
 audio suite of programs.
 
 %package devel
-Summary:        Development files for the non-ntk GUI library
-Requires:       %{name}%{?_isa} = %{version}-%{release}
+Summary: Development files for the non-ntk GUI library
+Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
 Development files for the Non-ntk GUI library

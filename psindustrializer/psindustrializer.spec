@@ -2,13 +2,12 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-Name:    psindustrializer
+Name: psindustrializer
 Version: 0.2.7
 Release: 1%{?dist}
 Summary: Industrializer is a program for generating percussion sounds for musical purposes
-
 License: GPL-2.0-only
-URL:     https://sourceforge.net/projects/industrializer
+URL: https://sourceforge.net/projects/industrializer
 
 Vendor:       Audinux
 Distribution: Audinux

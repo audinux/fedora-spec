@@ -1,17 +1,20 @@
-Name:    zix
+# Tag: Library
+# Type: Devel
+# Category: Programming
+
+Name: zix
 Version: 0.4.2
 Release: 1%{?dist}
 Summary: A lightweight C library of portability wrappers and data structures
 License: ISC
-URL:     https://github.com/drobilla/zix
+URL: https://github.com/drobilla/zix
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/drobilla/zix/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: meson
 BuildRequires: lv2-devel
 %if 0%{?fedora} >= 38

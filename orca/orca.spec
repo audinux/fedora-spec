@@ -9,12 +9,12 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    orca-lang
+Name: orca-lang
 Version: 0.1.0.%{shortcommit0}
 Release: 4%{?dist}
 Summary: Esoteric programming language and live editor
 License: MIT
-URL:     https://git.sr.ht/~rabbits/orca
+URL: https://git.sr.ht/~rabbits/orca
 
 Vendor:       Audinux
 Distribution: Audinux

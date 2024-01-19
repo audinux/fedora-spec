@@ -1,11 +1,15 @@
+# Tag: Effect, Plugin, Audio
+# Type: Standalone, Plugin, VST, VST3
+# Category: Audio, Effect
+
 %global commit0 371355b375d9
 
-Name:    paulstretch
+Name: paulstretch
 Version: 1.2.4
 Release: 3%{?dist}
 Summary: A Paulstretch VST2/VST3/Standalone plugin
 License: MIT
-URL:     https://bitbucket.org/xenakios/paulstretchplugin
+URL: https://bitbucket.org/xenakios/paulstretchplugin
 
 Vendor:       Audinux
 Distribution: Audinux

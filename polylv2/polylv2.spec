@@ -1,22 +1,25 @@
+# Tag: Effect, Modular
+# Type: Plugin, LV2
+# Category: Audio, Effect
+
 # Global variables for github repository
 %global commit0 acdcb00e81148872930795cddd376afddf208fe1
 %global gittag0 main
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    lv2-polylv2
+Name: lv2-polylv2
 Version: 0.0.1
 Release: 2%{?dist}
 Summary: a collection of LV2 plugins designed for modular / eurorack style use.
 License: GPL-3.0-or-later
-URL:     https://github.com/polyeffects/PolyLV2
+URL: https://github.com/polyeffects/PolyLV2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/polyeffects/PolyLV2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: boost-devel

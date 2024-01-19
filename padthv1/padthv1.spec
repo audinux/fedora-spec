@@ -10,10 +10,10 @@
 %global padthv1_version_ %{padthv1_major}_%{padthv1_minor}_%{padthv1_patch}
 
 Summary: Old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.
-Name:    padthv1
+Name: padthv1
 Version: %{padthv1_version}
 Release: 4%{?dist}
-URL:     https://sourceforge.net/projects/%{name}
+URL: https://sourceforge.net/projects/%{name}
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

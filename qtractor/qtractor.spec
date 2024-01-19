@@ -1,3 +1,7 @@
+# Tag: Editor, Audio, MIDI, Sequencer
+# Type: Standalone, DSSI, LV2, LADSPA, VST, VST3, CLAP
+# Category: DAW, MIDI
+
 Summary: Audio/MIDI multi-track sequencer
 Name: qtractor-mao
 Version: 0.9.38

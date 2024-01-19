@@ -1,8 +1,12 @@
-Name:    openFrameworks
+# Tag: Library, Graphic
+# Type: Devel
+# Category: Programming, Graphic
+
+Name: openFrameworks
 Version: 0.12.0
 Release: 2%{?dist}
 Summary: openFrameworks library / code
-URL:     https://github.com/openframeworks/openFrameworks
+URL: https://github.com/openframeworks/openFrameworks
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -15,7 +19,8 @@ Source0: openFrameworks.tar.gz
 Source1: of-make-workspace
 Source2: source_openframeworks.sh
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: freeimage-devel
 BuildRequires: uriparser-devel
 BuildRequires: pugixml-devel

@@ -1,15 +1,15 @@
 # Tag: Live, Video
-# Type: Plugin, LV2
+# Type: Plugin, LV2, VST, VST3, CLAP
 # Category: Effect
 
 %global commit0 8686010aad8c5b7649cba7d820994b90998dbe53
 
-Name:    prom
+Name: prom
 Version: 0.0.1
 Release: 2%{?dist}
 Summary: ProjectM LV2 plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/DISTRHO/ProM
+URL: https://github.com/DISTRHO/ProM
 
 Vendor:       Audinux
 Distribution: Audinux

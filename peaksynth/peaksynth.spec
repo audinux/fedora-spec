@@ -1,11 +1,15 @@
+# Tag: Synthesizer, MIDI, Audio
+# Type: Plugin, LV2, VST3
+# Category: Audio, Synthesizer
+
 %define commit0 9cf668333ebffdb2b2d3d20b76abd433610c2cfc
 
-Name:    peaksynth-audio-plugin
+Name: peaksynth-audio-plugin
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: MIDI controlled synth that uses filter peaks to create tonal spikes in an audio file
 License: GPLv3
-URL:     https://github.com/owennjpr/PeakSynth-Audio-Plugin
+URL: https://github.com/owennjpr/PeakSynth-Audio-Plugin
 
 Vendor:       Audinux
 Distribution: Audinux

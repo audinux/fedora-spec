@@ -4,12 +4,12 @@
 
 # Version: d958df0486c7397c243f5ac36bf4acbc461a1e50
 
-Name:    non-daw-lv2
+Name: non-daw-lv2
 Version: 1.2.0
 Release: 11.gitd958df04%{?dist}
 Summary: A digital audio workstation for JACK with LV2 plugins
 License: GPL-2.0-or-later
-URL:     https://github.com/falkTX/non
+URL: https://github.com/falkTX/non
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -20,7 +20,8 @@ Source1: non-daw-lv2-sources.sh
 # To get the source package:
 # ./non-daw-lv2-sources.sh
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: non-ntk-devel
 BuildRequires: non-ntk-fluid
 BuildRequires: liblo-devel

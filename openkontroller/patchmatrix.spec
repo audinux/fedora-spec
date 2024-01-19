@@ -1,13 +1,17 @@
+# Tag: Jack, Editor
+# Type: Standalone
+# Category: Session Mngmt, Tool
+
 # Global variables for github repository
 %global commit0 eaa81041f81195d2020d1190fa6b1d0fc7da6505
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    patchmatrix
+Name: patchmatrix
 Version: 0.26.0
 Release: 3%{?dist}
 Summary: A JACK patchbay in flow matrix style
-URL:     https://github.com/OpenMusicKontrollers/patchmatrix
+URL: https://github.com/OpenMusicKontrollers/patchmatrix
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

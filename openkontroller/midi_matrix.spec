@@ -1,14 +1,18 @@
+# Tag: MIDI, Effect
+# Type: Plugin, LV2
+# Category: MIDI, Plugin
+
 # Global variables for github repository
 %global commit0 ab1209eded5184aab28726d627efc66dfbdba37f
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    midi_matrix.lv2
+Name: midi_matrix.lv2
 Version: 0.30.0
 Release: 4%{?dist}
 Summary: A LV2 Plugin Bundle
 License: GPL-2.0-or-later
-URL:     https://github.com/OpenMusicKontrollers/midi_matrix.lv2
+URL: https://github.com/OpenMusicKontrollers/midi_matrix.lv2
 
 Vendor:       Audinux
 Distribution: Audinux
