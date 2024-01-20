@@ -4,7 +4,7 @@
 
 Name: elektroid
 Summary: Sample and MIDI device manager
-Version: 2.5.2
+Version: 3.0
 Release: 1%{?dist}
 License: GPL-3.0-or-later
 URL: https://github.com/dagargo/elektroid
@@ -68,5 +68,8 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.appdat
 %{_datadir}/man/*
 
 %changelog
+* Sat Jan 20 2024 Yann Collette <ycollette.nospam@free.fr> - 3.0-1
+- update to 3.0-1
+
 * Wed Apr 26 2023 Yann Collette <ycollette.nospam@free.fr> - 2.5.2-1
 - initial build
