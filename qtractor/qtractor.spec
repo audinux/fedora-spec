@@ -5,7 +5,7 @@
 Summary: Audio/MIDI multi-track sequencer
 Name: qtractor-mao
 Version: 0.9.38
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPLv2+
 URL: http://qtractor.sourceforge.net/
 
@@ -40,6 +40,8 @@ BuildRequires: aubio-devel
 BuildRequires: desktop-file-utils
 
 Requires: hicolor-icon-theme
+
+Recommends: (qgnomeplatform-qt6%{?_isa} or plasma-desktop%{?_isa})
 
 Obsoletes: qtractor < 0.9.36-1
 
@@ -85,6 +87,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.qtractor.de
 %{_datadir}/qtractor/audio/metro_beat.wav
 
 %changelog
+* Sat Jan 20 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.38-2
+- update to 0.9.38-2 - add a missing Requires for non Qt platform
+
 * Wed Jan 03 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.38-1
 - update to 0.9.38-1
 
