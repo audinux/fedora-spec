@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name: geonkick
-Version: 3.3.0
+Version: 3.3.1
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
 URL: https://github.com/Geonkick-Synthesizer/geonkick
@@ -14,8 +14,7 @@ Distribution: Audinux
 
 Source0: https://github.com/Geonkick-Synthesizer/geonkick/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
@@ -51,6 +50,9 @@ The most basic examples are: kick drums, snares, hit-hats, shakers, claps, steak
 %{_datadir}/*
 
 %changelog
+* Sat Jan 20 2024 Yann Collette <ycollette.nospam@free.fr> - 3.3.1-2
+- Update to 3.3.1-2
+
 * Sat Jan 13 2024 Yann Collette <ycollette.nospam@free.fr> - 3.3.0-2
 - Update to 3.3.0-2
 
