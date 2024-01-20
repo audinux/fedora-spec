@@ -138,6 +138,7 @@
 | stargate-sample-pack    | https://github.com/stargatedaw/stargate-sample-pack (250 Mo) |
 | ABS things              | https://sourceforge.net/projects/abcplus/files/ |
 | LeGrandMechantLoop      | https://github.com/benkuper/LeGrandMechantLoop |
+| Wasted-Audio            | https://github.com/Wasted-Audio |
 
 Check the following URL: https://github.com/forart/HyMPS
 
@@ -240,10 +241,6 @@ linuxmao/fogpad: split by plugin type
 update qsampler
 fix loop192 name
 
-## Add source.sh file in spec file:
-
-Source1: source.sh
-
 ## Add check section:
 ```
 BuildRequires: desktop-file-utils
@@ -266,13 +263,6 @@ vsxu
 install -Dp -m 644 %{SOURCE1} %{buildroot}%{_metainfodir}/LiVES.appdata.xml
 And normalize other installation:
 install -m 755 -d %{buildroot}/%{_datadir}/appdata/
-```
-
-## Add distribution information
-
-```
-Vendor:       Audinux
-Distribution: Audinux
 ```
 
 ## Check before packaging:
@@ -335,8 +325,10 @@ carla
 
 And every plugin spec that provides a standalone executable
 
+~~~
 # LastSourceUpdate: 2010
 # GUIToolkit: Qt5
+~~~
 
 ## To be added back to repo
 
@@ -378,6 +370,4 @@ hydrogen-drumkits
 gwave
 gtick
 swami
-vmpk
-drumstick / drumstick0
 ```
