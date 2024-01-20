@@ -1,5 +1,5 @@
 # Tag: Jack, Alsa
-# Type: Plugin, Standalone, VST3
+# Type: Plugin, Standalone, VST3, CLAP, LV2
 # Category: Audio, Synthesizer
 
 Name: odin2

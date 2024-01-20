@@ -1,5 +1,5 @@
 # Tag: Plugin
-# Type: Plugin, LV2
+# Type: Plugin, LV2, VST, VST3, CLAP, LADSPA
 # Category: Audio, Effect
 
 Name:    dpf-plugins

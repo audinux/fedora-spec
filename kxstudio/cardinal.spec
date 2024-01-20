@@ -1,5 +1,5 @@
 # Tag: Modular
-# Type: Standalone, Plugin, LV@, VST, VST3, CLAP
+# Type: Standalone, Plugin, LV2, VST, VST3, CLAP
 # Category: Audio, Synthesizer, Effect
 
 %define _lto_cflags %{nil}

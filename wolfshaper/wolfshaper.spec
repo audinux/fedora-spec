@@ -1,5 +1,5 @@
 # Tag: Jack, Alsa, Overdrive
-# Type: Plugin, Standalone, VST, LV2, DSSI
+# Type: Plugin, Standalone, VST, LV2, DSSI, CLAP
 # Category: Audio, Effect
 
 Name: wolf-shaper

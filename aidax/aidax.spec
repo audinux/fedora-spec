@@ -2,12 +2,12 @@
 # Type: Plugin, LV2, VST3, VST, CLAP, Standanlone
 # Category: Audio, Effect
 
-Name:    aida-x
+Name: aida-x
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: An Amp Model Player leveraging AI
 License: GPL-2.0-or-later
-URL:     https://github.com/AidaDSP/AIDA-X
+URL: https://github.com/AidaDSP/AIDA-X
 
 Vendor:       Audinux
 Distribution: Audinux

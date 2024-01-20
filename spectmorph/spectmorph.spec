@@ -1,5 +1,5 @@
 # Tag: MIDI
-# Type: Plugin, LV2
+# Type: Plugin, LV2, VST, CLAP
 # Category: Audio, Synthesizer
 
 Name: spectmorph

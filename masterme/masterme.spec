@@ -1,5 +1,5 @@
 # Tag: Editor
-# Type: Standalone
+# Type: Standalone; Plugin, VST3, CLAP, LV2, VST
 # Category: Audio, Effect
 
 Name: master_me

@@ -1,5 +1,5 @@
 # Tag: Guitar
-# Type: Plugin, LV2
+# Type: Plugin, LV2, VST3, CLAP
 # Category: Audio, Effect
 
 Name: ToneTwistPlugs

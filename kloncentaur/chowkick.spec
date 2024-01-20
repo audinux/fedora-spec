@@ -1,5 +1,5 @@
 # Tag: Guitar, Tape
-# Type: Plugin, LV2, VST
+# Type: Plugin, LV2, VST3, CLAP
 # Category: Audio, Effect
 
 Name: ChowKick

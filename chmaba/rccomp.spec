@@ -1,12 +1,12 @@
 # Tag: Effect, Compressor
-# Type: Plugin, VST3, LV2
+# Type: Plugin, CLAP, LV2
 # Category: Audio, Effect
 
-Name:    rccomp
+Name: rccomp
 Version: 0.9
 Release: 1%{?dist}
 Summary: A compressor designed for classical music engineers
-URL:     https://github.com/chmaha/RCComp
+URL: https://github.com/chmaha/RCComp
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

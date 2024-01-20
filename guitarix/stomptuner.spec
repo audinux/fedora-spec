@@ -1,5 +1,5 @@
 # Tag: Guitar, Jack
-# Type: Standalone
+# Type: Standalone, Plugin, LV2, VST3, VST, CLAP
 # Category: Audio, Tool
 
 Name: stomptuner

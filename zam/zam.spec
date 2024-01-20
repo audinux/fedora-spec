@@ -1,5 +1,5 @@
 # Tag: Jack, Compressor, Overdrive, Equalizer, Delay, Gate
-# Type: Plugin, LV2, VST
+# Type: Plugin, LV2, VST, VST3, CLAP
 # Category: Audio, Effect
 
 Name: zam-mao-plugins

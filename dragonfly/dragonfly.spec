@@ -1,5 +1,5 @@
 # Tag: Reverb
-# Type: Plugin, LV2
+# Type: Plugin, LV2, VST, VST3, CLAP
 # Category: Audio, Effect
 
 %define _lto_cflags %{nil}

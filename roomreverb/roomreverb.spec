@@ -1,5 +1,5 @@
 # Tag: Reverb
-# Type: Plugin, LV2
+# Type: Plugin, LV2, CLAP, VST3
 # Category: Audio, Effect
 
 Name: roomreverb
