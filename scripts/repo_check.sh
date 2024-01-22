@@ -913,7 +913,8 @@ https://github.com/SpotlightKid/sympathetic-string-resonator
 https://github.com/falkTX/JackAss
 https://github.com/free-audio/clap-plugins
 https://github.com/free-audio/clap-validator
-https://github.com/free-audio/clap-info"
+https://github.com/free-audio/clap-info
+https://github.com/Stazed/vocoder"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
