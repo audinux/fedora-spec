@@ -3,11 +3,11 @@
 # Category: Programming
 
 Summary: CLAP audio plugin API
-Name:    clap
-Version: 1.1.10
+Name: clap
+Version: 1.2.0
 Release: 1%{?dist}
 License: MIT
-URL:     https://github.com/free-audio/clap
+URL: https://github.com/free-audio/clap
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -55,5 +55,8 @@ Header files for CLAP.
 %{_libdir}/pkgconfig/*
 
 %changelog
+* Mon Jan 22 2024 Yann Collette <ycollette dot nospam at free.fr> 1.2.0-1
+- update to 1.2.0-1
+
 * Fri Dec 08 2023 Yann Collette <ycollette dot nospam at free.fr> 1.1.10-1
 - initial release

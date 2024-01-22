@@ -140,8 +140,6 @@
 | LeGrandMechantLoop      | https://github.com/benkuper/LeGrandMechantLoop |
 | Wasted-Audio            | https://github.com/Wasted-Audio |
 | basic-pitch             | https://github.com/spotify/basic-pitch 
-| clap-host               | https://github.com/free-audio/clap-host |
-| clap-info               | https://github.com/free-audio/clap-info |
 
 Check the following URL: https://github.com/forart/HyMPS
 
