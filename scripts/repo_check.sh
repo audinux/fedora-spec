@@ -910,7 +910,9 @@ https://github.com/SpotlightKid/stereocrossdelay
 https://github.com/x42/jackmidi2osc
 https://github.com/brummer10/MelMatchEQ.lv2
 https://github.com/SpotlightKid/sympathetic-string-resonator
-https://github.com/falkTX/JackAss"
+https://github.com/falkTX/JackAss
+https://github.com/free-audio/clap-plugins
+https://github.com/free-audio/clap-validator"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

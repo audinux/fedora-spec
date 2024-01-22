@@ -139,6 +139,11 @@
 | ABS things              | https://sourceforge.net/projects/abcplus/files/ |
 | LeGrandMechantLoop      | https://github.com/benkuper/LeGrandMechantLoop |
 | Wasted-Audio            | https://github.com/Wasted-Audio |
+| basic-pitch             | https://github.com/spotify/basic-pitch 
+| clap-host               | https://github.com/free-audio/clap-host |
+| clap-plugins            | https://github.com/free-audio/clap-plugins |
+| clap-info               | https://github.com/free-audio/clap-info |
+| clap-validator          | https://github.com/free-audio/clap-validator |
 
 Check the following URL: https://github.com/forart/HyMPS
 
