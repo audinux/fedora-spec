@@ -4,7 +4,7 @@
 
 Name: JUCE
 Version: 7.0.9
-Release: 9%{?dist}
+Release: 10%{?dist}
 Summary: JUCE Framework
 URL: https://github.com/juce-framework/JUCE
 License: GPL-2.0-or-later
@@ -15,6 +15,10 @@ Distribution: Audinux
 Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: juce_Projucer.desktop
 Source2: juce_Projucer.1
+
+Patch0: 0001-build-allow-setting-JUCE_PLUGINHOST_LADSPA.patch
+Patch1: 0002-build-linux-find_packages.patch
+Patch3: 0004-install-paths.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -39,17 +43,23 @@ which supports exporting projects for Xcode (macOS and iOS), Visual Studio, Andr
 Code::Blocks and Linux Makefiles as well as containing a source code editor.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{version}
 
 %build
+
+%set_build_flags
 
 cd docs/doxygen
 make
 cd ../..
 
+export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE -DJUCE_PLUGINHOST_LADSPA=1 $CXXFLAGS"
+export CFLAGS="-DJUCER_ENABLE_GPL_MODE -DJUCE_PLUGINHOST_LADSPA=1 $CFLAGS"
+
 %cmake -DJUCE_BUILD_EXTRAS=ON \
        -DJUCE_BUILD_EXAMPLES=OFF \
-       -DJUCE_INSTALL_DESTINATION="%{_lib}/cmake/JUCE-%{version}"
+       -DJUCE_INSTALL_DESTINATION="%{_lib}/cmake/JUCE-%{version}" \
+       -DJUCE_TOOL_INSTALL_DIR="%{_libexecdir}/juce"
 %cmake_build
 
 %install
@@ -65,6 +75,7 @@ install -m 644 %{SOURCE2} %{buildroot}/%{_mandir}/man1/
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
 install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/applications/
 
+install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 %{__cmake_builddir}/extras/AudioPluginHost/AudioPluginHost_artefacts/AudioPluginHost %{buildroot}/%{_bindir}
 install -m 755 %{__cmake_builddir}/extras/NetworkGraphicsDemo/NetworkGraphicsDemo_artefacts/NetworkGraphicsDemo %{buildroot}/%{_bindir}
 install -m 755 %{__cmake_builddir}/extras/BinaryBuilder/BinaryBuilder_artefacts/BinaryBuilder %{buildroot}/%{_bindir}
@@ -89,8 +100,14 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/*
 %{_libdir}/cmake/*
 %{_includedir}/*
+%{_libexecdir}/juce/juce_lv2_helper
+%{_libexecdir}/juce/juce_vst3_helper
+%{_libexecdir}/juce/juceaide
 
 %changelog
+* Mon Jan 22 2024 Yann Collette <ycollette.nospam@free.fr> - 7.0.9-10
+- update to 7.0.9-10 - add patches from vcpkg + try to enable GPL
+
 * Mon Nov 20 2023 Yann Collette <ycollette.nospam@free.fr> - 7.0.9-9
 - update to 7.0.9-9
 
