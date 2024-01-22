@@ -1,5 +1,5 @@
 # Tag: Plugin
-# Type: Plugin, LV2, VST, CLAP, LADSPA
+# Type: Plugin, LV2, CLAP, LADSPA
 # Category: Audio, Effect
 
 Name: vocoder
