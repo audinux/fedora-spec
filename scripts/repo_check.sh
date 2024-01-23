@@ -914,7 +914,8 @@ https://github.com/falkTX/JackAss
 https://github.com/free-audio/clap-plugins
 https://github.com/free-audio/clap-validator
 https://github.com/free-audio/clap-info
-https://github.com/Stazed/vocoder"
+https://github.com/Stazed/vocoder
+https://github.com/greatest-ape/OctaSine"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
