@@ -140,6 +140,8 @@
 | LeGrandMechantLoop      | https://github.com/benkuper/LeGrandMechantLoop |
 | Wasted-Audio            | https://github.com/Wasted-Audio |
 | basic-pitch             | https://github.com/spotify/basic-pitch 
+| Minaton-XT              | https://github.com/AnClark/Minaton-XT |
+| roboverb                | https://github.com/kushview/roboverb |
 
 Check the following URL: https://github.com/forart/HyMPS
 
