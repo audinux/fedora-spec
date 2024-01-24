@@ -85,7 +85,7 @@ cp %{__cmake_builddir}/drumlabooh_artefacts/Standalone/*  %{buildroot}/%{_bindir
 %{_libdir}/vst3/*
 
 %changelog
-* Wed Jan 24 25 2024 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
+* Wed Jan 24 2024 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
 - update to 2.2.0-1
 
 * Mon Dec 25 2023 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
