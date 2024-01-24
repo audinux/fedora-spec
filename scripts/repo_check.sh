@@ -916,7 +916,8 @@ https://github.com/free-audio/clap-validator
 https://github.com/free-audio/clap-info
 https://github.com/Stazed/vocoder
 https://github.com/greatest-ape/OctaSine
-https://github.com/kushview/roboverb"
+https://github.com/kushview/roboverb
+https://github.com/AnClark/Minaton-XT"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
