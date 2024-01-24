@@ -1,8 +1,8 @@
 # Tag: Synthesizer
-# Type: Devel, Plugin, CLAP
+# Type: Plugin, CLAP
 # Category: Synthesizer
 
-Summary: Frequency modulation synthesizer plugin.
+Summary: Frequency modulation synthesizer plugin
 Name: octasine
 Version: 0.9.0
 Release: 1%{?dist}
