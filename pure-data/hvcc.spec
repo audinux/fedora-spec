@@ -1,6 +1,6 @@
 Name:    hvcc
 Version: 0.10.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: The heavy hvcc compiler for Pure Data patches.
 URL:     https://github.com/Wasted-Audio/hvcc
 License: GPL-3.0-or-later
@@ -18,7 +18,7 @@ BuildRequires: desktop-file-utils
 
 Requires: python3-jinja2
 Requires: python3-importlib-resources
-Requires: python3-json2daisy
+Requires: python3-wstd2daisy
 Requires: python3-setuptools
 Requires: puredata
 
@@ -59,6 +59,9 @@ rm -rf %{buildroot}/%{python3_sitelib}/tests
 %{_datadir}/%{name}/examples/*
 
 %changelog
+* Wed Jan 24 2024 Yann Collette <ycollette.nospam@free.fr> - 0.10.0-2
+- update to 0.10.0-2 - fix python deps
+
 * Wed Dec 06 2023 Yann Collette <ycollette.nospam@free.fr> - 0.10.0-1
 - update to 0.10.0-1
 
