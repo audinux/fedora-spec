@@ -2,12 +2,12 @@
 # Type: Plugin, Standalone, VST3
 # Category: Audio, Distortion
 
-Name:    drumlabooh
-Version: 2.1.0
+Name: drumlabooh
+Version: 2.2.0
 Release: 1%{?dist}
 Summary: LV2/VSTi drum machine that can use Hydrogen, SFZ, and other drumkit formats
 License: GPL-3.0-only
-URL:     https://github.com/psemiletov/drumlabooh
+URL: https://github.com/psemiletov/drumlabooh
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -85,6 +85,9 @@ cp %{__cmake_builddir}/drumlabooh_artefacts/Standalone/*  %{buildroot}/%{_bindir
 %{_libdir}/vst3/*
 
 %changelog
+* Wed Jan 24 25 2024 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
+- update to 2.2.0-1
+
 * Mon Dec 25 2023 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - update to 2.1.0-1
 
