@@ -917,7 +917,18 @@ https://github.com/free-audio/clap-info
 https://github.com/Stazed/vocoder
 https://github.com/greatest-ape/OctaSine
 https://github.com/kushview/roboverb
-https://github.com/AnClark/Minaton-XT"
+https://github.com/AnClark/Minaton-XT
+https://github.com/Wasted-Audio/wstd-eq
+https://github.com/Wasted-Audio/wstd-m3nglr
+https://github.com/Wasted-Audio/wstd-manglr
+https://github.com/Wasted-Audio/wstd-smthr
+https://github.com/Wasted-Audio/wstd-fldr
+https://github.com/Wasted-Audio/wstd-crshr
+https://github.com/Wasted-Audio/wstd-dl3y
+https://github.com/Wasted-Audio/wstd-dlay
+https://github.com/Wasted-Audio/wstd-fl3ngr
+https://github.com/Wasted-Audio/wstd-flangr
+https://github.com/Wasted-Audio/wstd-3q"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

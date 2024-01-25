@@ -136,10 +136,9 @@
 | cchorus                 | https://github.com/SpotlightKid/cchorus |
 | Automated-GuitarAmpModelling | https://github.com/AidaDSP/Automated-GuitarAmpModelling |
 | stargate-sample-pack    | https://github.com/stargatedaw/stargate-sample-pack (250 Mo) |
-| ABS things              | https://sourceforge.net/projects/abcplus/files/ |
+| ABC things              | https://sourceforge.net/projects/abcplus/files/ |
 | LeGrandMechantLoop      | https://github.com/benkuper/LeGrandMechantLoop |
-| Wasted-Audio            | https://github.com/Wasted-Audio |
-| basic-pitch             | https://github.com/spotify/basic-pitch 
+| basic-pitch             | https://github.com/spotify/basic-pitch |
 
 Check the following URL: https://github.com/forart/HyMPS
 

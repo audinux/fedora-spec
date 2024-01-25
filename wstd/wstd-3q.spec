@@ -1,21 +1,21 @@
-# Tag: Effect, Equalizer
+# Tag: Effect, Flanger
 # Type: Plugin, VST, VST3, LV2, CLAP
 # Category: Audio, Effect
 
-Name: wstd-eq
+Name: wstd-3q
 Version: 1.0
 Release: 1%{?dist}
-Summary: Simple nasty EQ plugin
+Summary: WSTD EQ but with separate outputs
 License: GPL-3.0-only
-URL: https://github.com/Wasted-Audio/wstd-eq
+URL: https://github.com/Wasted-Audio/wstd-3q
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # ./wstd-source.sh <project> <tag>
-# ./wstd-source.sh wstd-eq v1.0
+# ./wstd-source.sh wstd-3q v1.0
 
-Source0: wstd-eq.tar.gz
+Source0: wstd-3q.tar.gz
 Source1: hvcc-Makefile
 Source2: wstd-source.sh
 
@@ -32,7 +32,7 @@ BuildRequires: liblo-devel
 BuildRequires: mesa-libGL-devel
 
 %description
-Simple nasty EQ plugin
+WSTD EQ but with separate outputs
 
 %package -n lv2-%{name}
 Summary: LV2 version of the %{name} plugin.
@@ -71,7 +71,7 @@ cp %{SOURCE1} Makefile
 
 %set_build_flags
 
-%make_build PLUGIN=wstd_eq PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true
+%make_build PLUGIN=wstd_3q PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true
 
 %install
 
@@ -80,10 +80,10 @@ install -m 755 -d %{buildroot}/%{_libdir}/vst/
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
 install -m 755 -d %{buildroot}/%{_libdir}/clap/
 
-cp -ra wstd_eq/bin/WSTD_EQ.lv2 %{buildroot}/%{_libdir}/lv2/
-cp wstd_eq/bin/WSTD_EQ-vst.so %{buildroot}/%{_libdir}/vst/
-cp -ra wstd_eq/bin/WSTD_EQ.vst3 %{buildroot}/%{_libdir}/vst3/
-cp wstd_eq/bin/WSTD_EQ.clap %{buildroot}/%{_libdir}/clap/
+cp -ra wstd_3q/bin/WSTD_3Q.lv2 %{buildroot}/%{_libdir}/lv2/
+cp wstd_3q/bin/WSTD_3Q-vst.so %{buildroot}/%{_libdir}/vst/
+cp -ra wstd_3q/bin/WSTD_3Q.vst3 %{buildroot}/%{_libdir}/vst3/
+cp wstd_3q/bin/WSTD_3Q.clap %{buildroot}/%{_libdir}/clap/
 
 %files
 %doc README.md
@@ -102,5 +102,5 @@ cp wstd_eq/bin/WSTD_EQ.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
-* Wed Jan 24 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
+* Wed Jan 24 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
 - Initial version of the spec file
