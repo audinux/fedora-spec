@@ -1,5 +1,5 @@
 # Tag: Effect, Equalizer
-# Type: Plugin, Standalone, VST, VST3, LV2, CLAP
+# Type: Plugin, VST, VST3, LV2, CLAP
 # Category: Audio, Effect
 
 Name: wstd-eq
