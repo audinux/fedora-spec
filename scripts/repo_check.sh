@@ -928,7 +928,8 @@ https://github.com/Wasted-Audio/wstd-dl3y
 https://github.com/Wasted-Audio/wstd-dlay
 https://github.com/Wasted-Audio/wstd-fl3ngr
 https://github.com/Wasted-Audio/wstd-flangr
-https://github.com/Wasted-Audio/wstd-3q"
+https://github.com/Wasted-Audio/wstd-3q
+https://github.com/greyboxaudio/SG-323"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
