@@ -4,7 +4,7 @@
 
 Name: non-daw
 Version: 1.3.0
-Release: 11%{?dist}
+Release: 12%{?dist}
 Summary: A digital audio workstation for JACK
 License: GPL-2.0-or-later
 URL: http://non.tuxfamily.org/
@@ -36,6 +36,12 @@ BuildRequires: desktop-file-utils
 %description
 Non-daw is a digital audio workstation for JACK
 
+%package -n non-jackpatch
+Summary: A tool to record jack patches
+
+%description -n non-jackpatch
+A tool to record jack patches
+
 %package -n non-mixer
 Summary: A digital audio mixer for JACK
 
@@ -44,6 +50,7 @@ non-mixer is a powerful, reliable and fast modular Digital Audio Mixer
 
 %package -n non-session-manager
 Summary: A session manager for JACK
+Requires: non-jackpatch%{?_isa} = %{version}-%{release}
 
 %description -n non-session-manager
 non-session-manager is an audio project session manager. It preserves
@@ -89,10 +96,12 @@ chmod 755 %{buildroot}%{_bindir}/*
 %{_bindir}/%{name}
 %{_bindir}/non-timeline
 %{_docdir}/non-timeline
-%{_bindir}/jackpatch
 %{_datadir}/applications/non-timeline.desktop
 %{_datadir}/icons/hicolor/*/apps/non-timeline*
 %{_datadir}/pixmaps/non-timeline
+
+%files -n non-jackpatch
+%{_bindir}/jackpatch
 
 %files -n non-mixer
 %{_bindir}/non-mixer
@@ -120,6 +129,9 @@ chmod 755 %{buildroot}%{_bindir}/*
 %{_datadir}/pixmaps/non-sequencer
 
 %changelog
+* Fri Jan 26 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-12
+- update to 1.3.0-12
+
 * Wed Jan 05 2022 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-11
 - update desktop
 
