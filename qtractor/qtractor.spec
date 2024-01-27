@@ -4,13 +4,13 @@
 
 Summary: Audio/MIDI multi-track sequencer
 Name: qtractor-mao
-Version: 0.9.38
+Version: 0.9.39
 Release: 2%{?dist}
 License: GPLv2+
 URL: http://qtractor.sourceforge.net/
 
 # ./qtractor-source.sh <tag>
-# ./qtractor-source.sh qtractor_0_9_38
+# ./qtractor-source.sh qtractor_0_9_39
 
 Source0: qtractor.tar.gz
 Source1: qtractor-source.sh
@@ -40,6 +40,7 @@ BuildRequires: aubio-devel
 BuildRequires: desktop-file-utils
 
 Requires: hicolor-icon-theme
+Requires: qt6ct
 
 Recommends: (qgnomeplatform-qt6%{?_isa} or plasma-desktop%{?_isa})
 
@@ -69,8 +70,13 @@ sed -i -e "s|\${JACK_LIBDIR}|/usr/lib64/pipewire-0.3/jack/|g" CMakeLists.txt
 %cmake_install
 %find_lang qtractor --with-qt
 
+# For ticket #51
+desktop-file-edit \
+    --set-key="Exec" --set-value="env QT_QPA_PLATFORMTHEME=qt6ct qtractor %f" \
+    %{buildroot}/%{_datadir}/applications/org.rncbc.qtractor.desktop
+
 %check
-desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.qtractor.desktop
+desktop-file-validate %{buildroot}/%{_datadir}/applications/org.rncbc.qtractor.desktop
 
 %files -f qtractor.lang
 %doc ChangeLog README
@@ -87,6 +93,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.qtractor.de
 %{_datadir}/qtractor/audio/metro_beat.wav
 
 %changelog
+* Sat Jan 27 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.39-2
+- update to 0.9.39-2 - add QT_QPA_PLATFORMTHEME=qt6ct env var in desktop file
+
 * Sat Jan 20 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.38-2
 - update to 0.9.38-2 - add a missing Requires for non Qt platform
 
