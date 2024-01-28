@@ -3,7 +3,7 @@
 # Category: Audio, Programming
 
 Name: leiningen
-Version: 2.9.7
+Version: 2.11.0
 Release: 1%{?dist}
 Summary: Clojure project automation tool
 License: EPL
@@ -54,10 +54,18 @@ install -pm 644 bash_completion.bash %{buildroot}%{_sysconfdir}/bash_completion.
 install -d -m 755 %{buildroot}%{_datadir}/zsh/site-functions
 install -pm 644 zsh_completion.zsh %{buildroot}%{_datadir}/zsh/site-functions/_lein
 
+install -d -m 755 %{buildroot}%{_datadir}/%{name}/doc/
+cp -rav doc/* %{buildroot}%{_datadir}/%{name}/doc/
+
+install -d -m 755 %{buildroot}%{_mandir}/man1/
+install -d -m 755 %{buildroot}%{_mandir}/ja/man1/
+mv %{buildroot}%{_datadir}/%{name}/doc/lein.1 %{buildroot}%{_mandir}/man1/
+mv %{buildroot}%{_datadir}/%{name}/doc/ja/lein_ja.1 %{buildroot}%{_mandir}/ja/man1/lein.1
+
 sed -i -e "/export LEIN_VERSION/i LEIN_JAR=/usr/share/java/leiningen-%{version}-standalone.jar" %{buildroot}%{_bindir}/lein
 
 %files
-%doc README.md TUTORIAL.md NEWS.md CONTRIBUTING.md
+%doc README.md NEWS.md CONTRIBUTING.md
 %license COPYING
 %{_javadir}/*
 %{_bindir}/lein
@@ -67,8 +75,14 @@ sed -i -e "/export LEIN_VERSION/i LEIN_JAR=/usr/share/java/leiningen-%{version}-
 %dir %{_datadir}/zsh/site-functions
 %{_datadir}/zsh/site-functions/_lein
 %{_datadir}/pixmaps/%{name}.png
+%{_datadir}/%{name}/doc/*
+%{_mandir}/man1/*
+%{_mandir}/ja/man1/*
 
 %changelog
+* Sun Jan 28 2024 Yann Collette <ycollette.nospam@free.fr> - 2.11.0-1
+- update to 2.11.0-1
+
 * Tue Nov 09 2021 Yann Collette <ycollette.nospam@free.fr> - 2.9.7-1
 - update to 2.9.7-1
 
