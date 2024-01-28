@@ -1,5 +1,5 @@
 # Tag: Synthesizer, Jack
-# Type: Standalone, VST3, LV@, Plugin
+# Type: Standalone, VST3, LV2, Plugin
 # Category: Audio, Synthesizer
 
 Name: grainbow

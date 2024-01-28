@@ -1,5 +1,5 @@
 # Tag: Analyzer
-# Type: Plugin, LV2, Staandalone
+# Type: Plugin, LV2, Standalone
 # Category: Audio, Tool
 
 Name: sisco.lv2

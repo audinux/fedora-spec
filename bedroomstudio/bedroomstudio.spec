@@ -1,5 +1,5 @@
 # Tag: Effect
-# Type: LV@
+# Type: LV2
 # Category: Audio, Effect
 
 Name: bedroomstudio

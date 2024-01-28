@@ -1,6 +1,6 @@
 # Tag: Tool
 # Type: Standalone
-# Category: Tool, MIDI. Audio
+# Category: Tool, MIDI, Audio
 
 Name: elektroid
 Summary: Sample and MIDI device manager

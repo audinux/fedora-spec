@@ -1,5 +1,5 @@
 # Tag: Effect, Synthesizer
-# Type: Plugin, LV@
+# Type: Plugin, LV2
 # Category: Effect, Synthesizer
 
 %define commit0 33

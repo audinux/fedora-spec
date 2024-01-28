@@ -1,5 +1,5 @@
-# Tag: Analyzer, Amp Simul, Equilizer
-# Type: LV@, Plugin
+# Tag: Analyzer, Amp Simul, Equalizer
+# Type: LV2, Plugin
 # Caterory: Effect, Tool
 
 Name: lv2-MelMatchEQ

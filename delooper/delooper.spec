@@ -1,6 +1,6 @@
 # Tag: Loop
 # Type: Standalone
-# Category: Tool, Audfio
+# Category: Tool, Audio
 
 %global commit0 0ff9ac414d6c7daa3ef494d43524b9e1c9e3f7f5
 

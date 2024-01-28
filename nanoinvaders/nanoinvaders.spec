@@ -1,6 +1,6 @@
 # Tag: Tool, Graphic
 # Type: Standalone, Plugin, LV2, VST
-# Category: Tool, Graohic
+# Category: Tool, Graphic
 
 Name: nanoinvaders
 Version: 0.1
