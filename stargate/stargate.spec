@@ -3,7 +3,7 @@
 # Category: DAW, Audio
 
 Name: stargate
-Version: 24.02.1
+Version: 24.02.2
 Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
 License: GPL-3.0-only
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./stargate-source.sh <TAG>
-#        ./stargate-source.sh release-24.02.1
+#        ./stargate-source.sh release-24.02.2
 
 Source0: stargate.tar.gz
 Source1: stargate-source.sh
@@ -96,6 +96,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stargate.desktop
 /opt/stargate/*
 
 %changelog
+* Mon Jan 29 2024 Yann Collette <ycollette.nospam@free.fr> - 24.02.2-1
+- update to 24.02.2-1
+
 * Sun Jan 21 2024 Yann Collette <ycollette.nospam@free.fr> - 24.02.1-1
 - update to 24.02.1-1
 
