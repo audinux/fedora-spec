@@ -32,6 +32,8 @@ rate the model was trained at (usually 48kHz) - no resampling is done by the plu
 For amp-only models (the most typical), you will need to run an impulse reponse
 after this plugin to model the cabinet.
 
+Some nam model can be found on https://tonehunt.org
+
 %prep
 %autosetup -n neural-amp-modeler-lv2
 
