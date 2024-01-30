@@ -12,7 +12,7 @@
 Summary: Pure Data
 Name: puredata
 Version: %{pkgver}
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: BSD
 URL: https://puredata.info/
 
@@ -47,8 +47,7 @@ Patch8:  export.patch
 Patch9:  libpd_example.patch
 Patch10: libpd_visibility.patch
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool
@@ -313,6 +312,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.puredata.pd-gui.d
 %{_mandir}/man1/pdsend.1.gz
 
 %changelog
+* Tue Jan 30 2024 Yann Collette <ycollette.nospam@free.fr> - 0.54.1-4
+- update to 0.54.1-4 - add missing tk requirements (thanks to Henning Sprang)
+
 * Wed Jan 03 2024 Yann Collette <ycollette.nospam@free.fr> - 0.54.1-3
 - update to 0.54.1-3
 
