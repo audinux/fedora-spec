@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 71ee81a994b469904d0943433a2ddbc85ae35c0a
-%global gittag0 2.3.0
+%global gittag0 2.3.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Sparkette
-Version: 2.3.0
+Version: 2.3.1
 Release: 2%{?dist}
 Summary: Sparkette plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r Sparkette_plugin/dist/Sparkette/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-1
 - initial specfile
