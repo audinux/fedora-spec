@@ -930,7 +930,8 @@ https://github.com/Wasted-Audio/wstd-fl3ngr
 https://github.com/Wasted-Audio/wstd-flangr
 https://github.com/Wasted-Audio/wstd-3q
 https://github.com/greyboxaudio/SG-323
-https://github.com/sjoerdvankreel/firefly-synth"
+https://github.com/sjoerdvankreel/firefly-synth
+https://github.com/jean-emmanuel/seq192"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

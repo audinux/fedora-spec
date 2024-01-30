@@ -1,0 +1,29 @@
+From 38f7aa55e8a00ef76e792af1865f6fbb7a6a6a22 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Tue, 30 Jan 2024 22:44:00 +0100
+Subject: [PATCH] update makefile
+
+---
+ Makefile | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 273ed9a..3e2dd16 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,9 +1,9 @@
+ CXX = g++
+-CXXFLAGS = -g -Og $(shell pkg-config --cflags liblo alsa) -Wall -Wpointer-arith
+-LDFLAGS = $(shell pkg-config --libs liblo alsa)
++CXXFLAGS = -g -Og $(shell pkg-config --cflags liblo alsa) -Wall -Wpointer-arith ${EXTRA_CXXFLAGS}
++LDFLAGS = $(shell pkg-config --libs liblo alsa) ${EXTRA_LDFLAGS}
+ SOURCES = $(wildcard src/core/*.cpp) src/seq192.cpp
+ BIN = seq192
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ 
+ 
+ USE_GTK=1
+-- 
+2.43.0
+
