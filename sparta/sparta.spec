@@ -3,7 +3,7 @@
 # Category: Tool, Audio, Effect
 
 Name: sparta
-Version: 1.6.2
+Version: 1.7.0
 Release: 1%{?dist}
 Summary: A collection of spatial audio related VST plug-ins developed using JUCE and the Spatial_Audio_Framework
 License: GPL-3.0-or-later
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./sparta-source.sh <TAG>
-#        ./sparta-source.sh v1.6.2
+#        ./sparta-source.sh v1.7.0
 
 Source0: SPARTA.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
@@ -97,5 +97,8 @@ cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_multiConv_/sparta_multiconv_art
 %{_libdir}/vst/*
 
 %changelog
+* Mon Jan 29 2024 Yann Collette <ycollette.nospam@free.fr> - 1.7.0-1
+- update to 1.7.0-1
+
 * Tue Sep 19 2023 Yann Collette <ycollette.nospam@free.fr> - 1.6.2-1
 - Initial spec file
