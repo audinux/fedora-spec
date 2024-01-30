@@ -129,6 +129,7 @@ more
 %package gui
 Summary: Pure Data GUI
 Requires: puredata-core
+Requires: tk
 
 %description gui
 Pure Data (also known as Pd) is a real-time graphical programming
