@@ -139,6 +139,8 @@
 | ABC things              | https://sourceforge.net/projects/abcplus/files/ |
 | LeGrandMechantLoop      | https://github.com/benkuper/LeGrandMechantLoop |
 | basic-pitch             | https://github.com/spotify/basic-pitch |
+| nam-juce                | https://github.com/Tr3m/nam-juce |
+| neural-amp-modeler-lv2  | https://github.com/mikeoliphant/neural-amp-modeler-lv2 |
 
 Check the following URL: https://github.com/forart/HyMPS
 
