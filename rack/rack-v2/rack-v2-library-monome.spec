@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 2147c80d246de8161c7f945d36ce9beb3bd16083
-%global gittag0 2.2.5
+%global gittag0 2.2.7
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-monome
-Version: 2.2.5
+Version: 2.2.7
 Release: 2%{?dist}
 Summary: monome plugin for Rack
 License: GPL-2.0-or-later
@@ -168,5 +168,5 @@ cp -r monome_plugin/dist/monome/* %{buildroot}%{_libexecdir}/Rack2/plugins/monom
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.7-1
 - initial specfile
