@@ -36,6 +36,7 @@ BuildRequires: lilv-devel
 BuildRequires: suil-devel
 BuildRequires: zix-devel
 BuildRequires: clap-devel
+BuildRequires: pango-devel
 BuildRequires: desktop-file-utils
 
 %description
