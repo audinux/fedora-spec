@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name: aida-x
-Version: 1.0.0
+Version: 1.1.0
 Release: 1%{?dist}
 Summary: An Amp Model Player leveraging AI
 License: GPL-2.0-or-later
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get aidax source code:
-# $ ./aidax-source.sh 1.0.0
+# $ ./aidax-source.sh 1.1.0
 
 Source0: AIDA-X.tar.gz
 
@@ -35,6 +35,8 @@ of AI trained music gear, which you can then play through! guitar
 Its main intended use is to provide high fidelity simulations of amplifiers.
 However, it is also possible to run entire signal chains consisting of
 any combination of amp, cab, dist, drive, fuzz, boost and eq.
+
+You can find some settings here: https://tonehunt.org
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
@@ -108,6 +110,9 @@ cp -ra %{__cmake_builddir}/bin/AIDA-X.vst3 %{buildroot}%{_libdir}/vst3/
 %{_libdir}/clap/*
 
 %changelog
+* Thu Feb 01 2024 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+- update to 1.1.0-1
+
 * Tue Apr 25 2023 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - update to 1.0.0-1
 
