@@ -14,6 +14,7 @@ Distribution: Audinux
 
 # Usage: ./source-non-mixer-xt.sh <tag>
 #        ./source-non-mixer-xt.sh 1.3.0
+#        ./source-non-mixer-xt.sh 7f860ff3573f733400caaee205d210df8b5818ed
 
 Source0: non-mixer-xt.tar.gz
 Source1: source-non-mixer-xt.sh
@@ -37,6 +38,7 @@ BuildRequires: suil-devel
 BuildRequires: zix-devel
 BuildRequires: clap-devel
 BuildRequires: pango-devel
+BuildRequires: vst3sdk
 BuildRequires: desktop-file-utils
 
 %description
