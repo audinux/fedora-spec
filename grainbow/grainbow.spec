@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name: grainbow
-Version: 1.0.2
+Version: 1.0.3
 Release: 1%{?dist}
 Summary: A synthesizer that uses pitch detection to choose candidates for granular synthesis or sampling
 License: GPL-3.0-or-later
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./source-grainbow.sh v1.0.2
+# $ ./source-grainbow.sh v1.0.3
 
 Source0: gRainbow.tar.gz
 Source1: source-grainbow.sh
@@ -132,6 +132,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/grainbow.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Feb 02 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.3-1
+- update to 1.0.3-1
+
 * Mon Jan 29 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-1
 - update to 1.0.2-1
 
