@@ -7,10 +7,10 @@ Subject: [PATCH 14/14] desktop
  .../common-linux/share/applications/tuxguitar.desktop           | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/build-scripts/common-resources/common-linux/share/applications/tuxguitar.desktop b/build-scripts/common-resources/common-linux/share/applications/tuxguitar.desktop
+diff --git a/desktop/build-scripts/common-resources/common-linux/share/applications/tuxguitar.desktop b/desktop/build-scripts/common-resources/common-linux/share/applications/tuxguitar.desktop
 index 4c2b23a0..d6f41620 100644
---- a/build-scripts/common-resources/common-linux/share/applications/tuxguitar.desktop
-+++ b/build-scripts/common-resources/common-linux/share/applications/tuxguitar.desktop
+--- a/desktop/build-scripts/common-resources/common-linux/share/applications/tuxguitar.desktop
++++ b/desktop/build-scripts/common-resources/common-linux/share/applications/tuxguitar.desktop
 @@ -10,6 +10,6 @@ Type=Application
  MimeType=audio/x-tuxguitar;audio/x-gtp;audio/x-ptb
  Categories=AudioVideo;Audio

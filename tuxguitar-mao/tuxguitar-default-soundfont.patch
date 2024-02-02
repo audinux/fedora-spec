@@ -14,18 +14,18 @@ Subject: [PATCH] default soundfont
  .../common-resources/common-windows/dist/tuxguitar-jsa.cfg    | 2 +-
  8 files changed, 9 insertions(+), 9 deletions(-)
 
-diff --git a/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg b/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg
+diff --git a/desktop/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg b/desktop/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg
 index df24eec..62b5900 100644
---- a/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg
-+++ b/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg
+--- a/desktop/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg
++++ b/desktop/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg
 @@ -1,2 +1,2 @@
  ## Default Settings ##
 -tuxguitar-synth-gervill.soundbank.path=${tuxguitar.home.path}/share/soundfont/MagicSFver2.sf2
 +tuxguitar-synth-gervill.soundbank.path=/usr/share/soundfonts/default.sf2
-diff --git a/build-scripts/common-resources/common-freebsd/dist/tuxguitar-fluidsynth.cfg b/build-scripts/common-resources/common-freebsd/dist/tuxguitar-fluidsynth.cfg
+diff --git a/desktop/build-scripts/common-resources/common-freebsd/dist/tuxguitar-fluidsynth.cfg b/desktop/build-scripts/common-resources/common-freebsd/dist/tuxguitar-fluidsynth.cfg
 index ad7ed68..65a0d2e 100644
---- a/build-scripts/common-resources/common-freebsd/dist/tuxguitar-fluidsynth.cfg
-+++ b/build-scripts/common-resources/common-freebsd/dist/tuxguitar-fluidsynth.cfg
+--- a/desktop/build-scripts/common-resources/common-freebsd/dist/tuxguitar-fluidsynth.cfg
++++ b/desktop/build-scripts/common-resources/common-freebsd/dist/tuxguitar-fluidsynth.cfg
 @@ -1,7 +1,7 @@
  #tuxguitar-fluidsynth
  #Fri Oct 30 14:24:16 ART 2015
@@ -35,19 +35,19 @@ index ad7ed68..65a0d2e 100644
  
  synth.gain=1.1
  synth.chorus.active=yes
-diff --git a/build-scripts/common-resources/common-freebsd/dist/tuxguitar-jsa.cfg b/build-scripts/common-resources/common-freebsd/dist/tuxguitar-jsa.cfg
+diff --git a/desktop/build-scripts/common-resources/common-freebsd/dist/tuxguitar-jsa.cfg b/desktop/build-scripts/common-resources/common-freebsd/dist/tuxguitar-jsa.cfg
 index b13f013..2c98173 100644
---- a/build-scripts/common-resources/common-freebsd/dist/tuxguitar-jsa.cfg
-+++ b/build-scripts/common-resources/common-freebsd/dist/tuxguitar-jsa.cfg
+--- a/desktop/build-scripts/common-resources/common-freebsd/dist/tuxguitar-jsa.cfg
++++ b/desktop/build-scripts/common-resources/common-freebsd/dist/tuxguitar-jsa.cfg
 @@ -1,3 +1,3 @@
  #tuxguitar-jsa
  #Mon Nov 02 20:00:23 ART 2015
 -soundbank.custom.path=${tuxguitar.home.path}/share/soundfont/MagicSFver2.sf2
 +soundbank.custom.path=/usr/share/soundfonts/default.sf2
-diff --git a/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg b/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg
+diff --git a/desktop/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg b/desktop/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg
 index 4bba62c..b87890f 100644
---- a/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg
-+++ b/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg
+--- a/desktop/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg
++++ b/desktop/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg
 @@ -1,7 +1,7 @@
  #tuxguitar-fluidsynth
  #Fri Oct 30 14:24:16 ART 2015
@@ -63,28 +63,28 @@ index 4bba62c..b87890f 100644
  audio.periods=32
 -audio.driver=pulseaudio
 +audio.driver=alsa
-diff --git a/build-scripts/common-resources/common-linux/dist/tuxguitar-jsa.cfg b/build-scripts/common-resources/common-linux/dist/tuxguitar-jsa.cfg
+diff --git a/desktop/build-scripts/common-resources/common-linux/dist/tuxguitar-jsa.cfg b/desktop/build-scripts/common-resources/common-linux/dist/tuxguitar-jsa.cfg
 index b13f013..d22acc2 100644
---- a/build-scripts/common-resources/common-linux/dist/tuxguitar-jsa.cfg
-+++ b/build-scripts/common-resources/common-linux/dist/tuxguitar-jsa.cfg
+--- a/desktop/build-scripts/common-resources/common-linux/dist/tuxguitar-jsa.cfg
++++ b/desktop/build-scripts/common-resources/common-linux/dist/tuxguitar-jsa.cfg
 @@ -1,3 +1,3 @@
  #tuxguitar-jsa
  #Mon Nov 02 20:00:23 ART 2015
 -soundbank.custom.path=${tuxguitar.home.path}/share/soundfont/MagicSFver2.sf2
 +#soundbank.custom.path=/usr/share/soundfonts/default.sf2
-diff --git a/build-scripts/common-resources/common-macosx/Contents/MacOS/dist/tuxguitar-jsa.cfg b/build-scripts/common-resources/common-macosx/Contents/MacOS/dist/tuxguitar-jsa.cfg
+diff --git a/desktop/build-scripts/common-resources/common-macosx/Contents/MacOS/dist/tuxguitar-jsa.cfg b/desktop/build-scripts/common-resources/common-macosx/Contents/MacOS/dist/tuxguitar-jsa.cfg
 index b13f013..2c98173 100644
---- a/build-scripts/common-resources/common-macosx/Contents/MacOS/dist/tuxguitar-jsa.cfg
-+++ b/build-scripts/common-resources/common-macosx/Contents/MacOS/dist/tuxguitar-jsa.cfg
+--- a/desktop/build-scripts/common-resources/common-macosx/Contents/MacOS/dist/tuxguitar-jsa.cfg
++++ b/desktop/build-scripts/common-resources/common-macosx/Contents/MacOS/dist/tuxguitar-jsa.cfg
 @@ -1,3 +1,3 @@
  #tuxguitar-jsa
  #Mon Nov 02 20:00:23 ART 2015
 -soundbank.custom.path=${tuxguitar.home.path}/share/soundfont/MagicSFver2.sf2
 +soundbank.custom.path=/usr/share/soundfonts/default.sf2
-diff --git a/build-scripts/common-resources/common-windows/dist/tuxguitar-fluidsynth.cfg b/build-scripts/common-resources/common-windows/dist/tuxguitar-fluidsynth.cfg
+diff --git a/desktop/build-scripts/common-resources/common-windows/dist/tuxguitar-fluidsynth.cfg b/desktop/build-scripts/common-resources/common-windows/dist/tuxguitar-fluidsynth.cfg
 index a41e86f..918db84 100644
---- a/build-scripts/common-resources/common-windows/dist/tuxguitar-fluidsynth.cfg
-+++ b/build-scripts/common-resources/common-windows/dist/tuxguitar-fluidsynth.cfg
+--- a/desktop/build-scripts/common-resources/common-windows/dist/tuxguitar-fluidsynth.cfg
++++ b/desktop/build-scripts/common-resources/common-windows/dist/tuxguitar-fluidsynth.cfg
 @@ -1,7 +1,7 @@
  #tuxguitar-fluidsynth
  #Fri Oct 30 14:24:16 ART 2015
@@ -94,10 +94,10 @@ index a41e86f..918db84 100644
  
  synth.gain=1.1
  synth.chorus.active=yes
-diff --git a/build-scripts/common-resources/common-windows/dist/tuxguitar-jsa.cfg b/build-scripts/common-resources/common-windows/dist/tuxguitar-jsa.cfg
+diff --git a/desktop/build-scripts/common-resources/common-windows/dist/tuxguitar-jsa.cfg b/desktop/build-scripts/common-resources/common-windows/dist/tuxguitar-jsa.cfg
 index b13f013..2c98173 100644
---- a/build-scripts/common-resources/common-windows/dist/tuxguitar-jsa.cfg
-+++ b/build-scripts/common-resources/common-windows/dist/tuxguitar-jsa.cfg
+--- a/desktop/build-scripts/common-resources/common-windows/dist/tuxguitar-jsa.cfg
++++ b/desktop/build-scripts/common-resources/common-windows/dist/tuxguitar-jsa.cfg
 @@ -1,3 +1,3 @@
  #tuxguitar-jsa
  #Mon Nov 02 20:00:23 ART 2015
