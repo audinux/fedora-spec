@@ -142,6 +142,7 @@
 | nam-juce                | https://github.com/Tr3m/nam-juce |
 | neural-amp-modeler-lv2  | https://github.com/mikeoliphant/neural-amp-modeler-lv2 |
 | OpenKontroller          | https://git.open-music-kontrollers.ch/~hp/ |
+| awesome-juce            | https://github.com/sudara/awesome-juce |
 
 Check the following URL: https://github.com/forart/HyMPS
 
