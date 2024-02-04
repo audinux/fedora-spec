@@ -3,7 +3,7 @@
 # Category: Audio, Sequencer
 
 # Global variables for github repository
-%global commit0 5517c496a7a540a5cf170af3c957e1bb9a0247b2
+%global commit0 725d67898f01cbf903d7ba1494fe5f2532c03055
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
@@ -11,13 +11,13 @@ Name: orbit.lv2
 Version: 0.1.0
 Release: 4%{?dist}
 Summary: LV2 Event Looper
-URL: https://github.com/OpenMusicKontrollers/orbit.lv2
+URL: https://git.open-music-kontrollers.ch/~hp/orbit.lv2
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/OpenMusicKontrollers/orbit.lv2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: https://git.open-music-kontrollers.ch/~hp/orbit.lv2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel

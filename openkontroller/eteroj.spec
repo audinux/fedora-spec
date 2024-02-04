@@ -2,22 +2,17 @@
 # Type: Plugin, LV2
 # Category: Tool, Audio
 
-# Global variables for github repository
-%global commit0 5c048f5c06ddef052bf1ffd2c151e5ff5248fca2
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 Name: eteroj.lv2
 Version: 0.10.0
 Release: 3%{?dist}
 Summary: OSC injection/ejection from/to UDP/TCP/Serial for LV2
-URL: https://github.com/OpenMusicKontrollers/eteroj.lv2
+URL: https://git.open-music-kontrollers.ch/~hp/eteroj.lv2
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/OpenMusicKontrollers/eteroj.lv2/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: https://git.open-music-kontrollers.ch/~hp/eteroj.lv2/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel

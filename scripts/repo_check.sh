@@ -931,7 +931,16 @@ https://github.com/Wasted-Audio/wstd-flangr
 https://github.com/Wasted-Audio/wstd-3q
 https://github.com/greyboxaudio/SG-323
 https://github.com/sjoerdvankreel/firefly-synth
-https://github.com/jean-emmanuel/seq192"
+https://github.com/jean-emmanuel/seq192
+https://git.open-music-kontrollers.ch/~hp/eteroj.lv2
+https://git.open-music-kontrollers.ch/~hp/mephisto.lv2
+https://git.open-music-kontrollers.ch/~hp/orbit.lv2
+https://git.open-music-kontrollers.ch/~hp/patchmatrix
+https://git.open-music-kontrollers.ch/~hp/sherlock.lv2
+https://git.open-music-kontrollers.ch/~hp/tracker.lv2
+https://git.open-music-kontrollers.ch/~hp/midi_matrix.lv2
+https://git.open-music-kontrollers.ch/~hp/moony.lv2
+https://git.open-music-kontrollers.ch/~hp/synthpod"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

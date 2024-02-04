@@ -6,15 +6,16 @@ Name: tracker.lv2
 Version: 0.1.1
 Release: 1%{?dist}
 Summary: A simple tracker for LV2 events
-URL: https://git.open-music-kontrollers.ch/lv2/tracker.lv2
+URL: https://git.open-music-kontrollers.ch/~hp/tracker.lv2
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux
 
-# current commit: e411749572737236d24f7e27f8e6245de8a79891
-# git clone --recursive https://git.open-music-kontrollers.ch/lv2/tracker.lv2
+# current commit: a20e9434ea61f8aacbb302aea2d011f57e9705f6
+# git clone --recursive https://git.open-music-kontrollers.ch/~hp/tracker.lv2
 # cd tracker.lv2
+# git checkout a20e9434ea61f8aacbb302aea2d011f57e9705f6
 # find . -name .git -exec rm -rf {} \;
 # cd ..
 # tar cvfz tracker.lv2.tar.gz tracker.lv2/*

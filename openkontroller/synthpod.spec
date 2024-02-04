@@ -3,7 +3,7 @@
 # Category: Tool, Plugin
 
 # Global variables for github repository
-%global commit0 cb301d2b037cae7afe82559b0c5184e55da759d7
+%global commit0 c91544db474c552b3cf27a87ddc1d60fbeb171f4
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
@@ -11,15 +11,15 @@ Name: synthpod
 Version: 0.1.2
 Release: 4%{?dist}
 Summary: Lightweight Nonlinear LV2 Plugin Container
-URL: https://github.com/OpenMusicKontrollers/synthpod
+URL: https://git.open-music-kontrollers.ch/~hp/synthpod
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/OpenMusicKontrollers/synthpod/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: https://git.open-music-kontrollers.ch/~hp/synthpod/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
-BuildRequires: gcc gcc-c++ sed
+BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel
 BuildRequires: lilv-devel
 BuildRequires: sratom-devel

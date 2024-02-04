@@ -6,13 +6,13 @@ Name: lv2-mephisto
 Version: 0.18.2
 Release: 1%{?dist}
 Summary: A JACK patchbay in flow matrix style
-URL: https://github.com/OpenMusicKontrollers/mephisto.lv2
+URL: https://git.open-music-kontrollers.ch/~hp/mephisto.lv2
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/OpenMusicKontrollers/mephisto.lv2/archive/refs/tags/%{version}.tar.gz#/mephisto.lv2-%{version}.tar.gz
+Source0: https://git.open-music-kontrollers.ch/~hp/mephisto.lv2/archive/%{version}.tar.gz#/mephisto.lv2-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: meson
