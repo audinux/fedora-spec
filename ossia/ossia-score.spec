@@ -7,7 +7,7 @@
 %define commit0_example 7205f76dda5e91bc7f5292c8af23b66d0f5a1c02
 
 Name: ossia-score
-Version: 3.1.12
+Version: 3.1.13
 Release: 1%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL: https://github.com/OSSIA/score
@@ -102,6 +102,9 @@ cp -r score-examples-%{commit0_example}/* %{buildroot}/%{_datadir}/ossia/example
 %{_datadir}/ossia/examples/*
 
 %changelog
+* Tue Feb 06 2024 Yann Collette <ycollette.nospam@free.fr> - 3.1.13-2
+- update to version 3.1.13-2
+
 * Sat Jun 24 2023 Yann Collette <ycollette.nospam@free.fr> - 3.1.11-2
 - update to version 3.1.11-2
 
