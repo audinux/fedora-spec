@@ -1,22 +1,26 @@
-From 0a2abe8f373bd2588407811c4f530184e724a497 Mon Sep 17 00:00:00 2001
+From ef08c42d6be951c1c7dad79e214618f1793f75bb Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Mon, 27 Jun 2022 13:39:08 +0200
-Subject: [PATCH] set config file path
+Date: Tue, 6 Feb 2024 13:02:40 +0100
+Subject: [PATCH] patch
 
 ---
- src/files/config.cpp | 62 +++++---------------------------------------
- src/ptk.cpp          | 12 ++-------
- src/support/main.cpp | 26 +++----------------
- 3 files changed, 12 insertions(+), 88 deletions(-)
+ src/files/config.cpp | 91 ++++----------------------------------------
+ src/ptk.cpp          | 12 +-----
+ src/support/main.cpp | 27 ++-----------
+ 3 files changed, 14 insertions(+), 116 deletions(-)
 
 diff --git a/src/files/config.cpp b/src/files/config.cpp
-index 176b857..dac1167 100644
+index 3a3aea2..5fd364b 100644
 --- a/src/files/config.cpp
 +++ b/src/files/config.cpp
-@@ -296,84 +296,36 @@ void Load_Config(void)
-     // Set default dirs if nothing
-     if(!strlen(Dir_Mods))
-     {
+@@ -312,89 +312,14 @@ void Load_Config(void)
+         fclose(in);
+     }
+     sprintf(Keyboard_Name, "%s", KeyboardName);
+-
+-    // Set default dirs if nothing
+-    if(!strlen(Dir_Mods))
+-    {
 -        GETCWD(Dir_Mods, MAX_PATH);
 -
 -#if defined(__WIN32__)
@@ -24,11 +28,10 @@ index 176b857..dac1167 100644
 -#else
 -        strcat(Dir_Mods, "/modules");
 -#endif
-+        strcpy(Dir_Mods, "/usr/share/protrekkr2/modules");
- 
-     }
-     if(!strlen(Dir_Instrs))
-     {
+-
+-    }
+-    if(!strlen(Dir_Instrs))
+-    {
 -        GETCWD(Dir_Instrs, MAX_PATH);
 -
 -#if defined(__WIN32__)
@@ -37,10 +40,9 @@ index 176b857..dac1167 100644
 -        strcat(Dir_Instrs, "/instruments");
 -#endif
 -
-+        strcpy(Dir_Instrs, "/usr/share/protrekkr2/instruments");
-     }
-     if(!strlen(Dir_Presets))
-     {
+-    }
+-    if(!strlen(Dir_Presets))
+-    {
 -        GETCWD(Dir_Presets, MAX_PATH);
 -
 -#if defined(__WIN32__)
@@ -49,11 +51,10 @@ index 176b857..dac1167 100644
 -        strcat(Dir_Presets, "/presets");
 -#endif
 -
-+        strcpy(Dir_Presets, "/usr/share/protrekkr2/presets");
-     }
- 
-     if(!strlen(Dir_Reverbs))
-     {
+-    }
+-
+-    if(!strlen(Dir_Reverbs))
+-    {
 -        GETCWD(Dir_Reverbs, MAX_PATH);
 -
 -#if defined(__WIN32__)
@@ -62,11 +63,10 @@ index 176b857..dac1167 100644
 -        strcat(Dir_Reverbs, "/reverbs");
 -#endif
 -
-+        strcpy(Dir_Reverbs, "/usr/share/protrekkr2/reverbs");
-     }
- 
-     if(!strlen(Dir_MidiCfg))
-     {
+-    }
+-
+-    if(!strlen(Dir_MidiCfg))
+-    {
 -        GETCWD(Dir_MidiCfg, MAX_PATH);
 -
 -#if defined(__WIN32__)
@@ -75,11 +75,10 @@ index 176b857..dac1167 100644
 -        strcat(Dir_MidiCfg, "/midicfgs");
 -#endif
 -
-+        strcpy(Dir_MidiCfg, "/usr/share/protrekkr2/midicfgs");
-     }
- 
-     if(!strlen(Dir_Patterns))
-     {
+-    }
+-
+-    if(!strlen(Dir_Patterns))
+-    {
 -        GETCWD(Dir_Patterns, MAX_PATH);
 -
 -#if defined(__WIN32__)
@@ -88,11 +87,10 @@ index 176b857..dac1167 100644
 -        strcat(Dir_Patterns, "/patterns");
 -#endif
 -
-+        strcpy(Dir_Patterns, "/usr/share/protrekkr2/patterns");
-     }
- 
-     if(!strlen(Dir_Samples))
-     {
+-    }
+-
+-    if(!strlen(Dir_Samples))
+-    {
 -        GETCWD(Dir_Samples, MAX_PATH);
 -
 -#if defined(__WIN32__)
@@ -101,12 +99,20 @@ index 176b857..dac1167 100644
 -        strcat(Dir_Samples, "/samples");
 -#endif
 -
-+        strcpy(Dir_Samples, "/usr/share/protrekkr2/samples");
-     }
+-    }
++ 
++    strcpy(Dir_Mods, "/usr/share/protrekkr2/modules");
++    strcpy(Dir_Instrs, "/usr/share/protrekkr2/instruments");
++    strcpy(Dir_Presets, "/usr/share/protrekkr2/presets");
++    strcpy(Dir_Reverbs, "/usr/share/protrekkr2/reverbs");
++    strcpy(Dir_MidiCfg, "/usr/share/protrekkr2/midicfgs");
++    strcpy(Dir_Patterns, "/usr/share/protrekkr2/patterns");
++    strcpy(Dir_Samples, "/usr/share/protrekkr2/samples");
  
      cur_dir = Dir_Mods;
+ }
 diff --git a/src/ptk.cpp b/src/ptk.cpp
-index 751b597..fa06bb4 100644
+index 6a5f164..ec44ecd 100644
 --- a/src/ptk.cpp
 +++ b/src/ptk.cpp
 @@ -445,11 +445,7 @@ SDL_Surface *Load_Skin_Picture(char *name)
@@ -136,10 +142,10 @@ index 751b597..fa06bb4 100644
      {
          sprintf(error, "Can't load %s file.", name);
 diff --git a/src/support/main.cpp b/src/support/main.cpp
-index b2b6595..0de9e4e 100644
+index c7c1e07..bc083a0 100644
 --- a/src/support/main.cpp
 +++ b/src/support/main.cpp
-@@ -323,13 +323,7 @@ void Load_Keyboard_Def(char *FileName)
+@@ -330,14 +330,7 @@ void Load_Keyboard_Def(char *FileName)
      char KbFileName[MAX_PATH];
      char Keyboard_Label[256];
  
@@ -150,11 +156,21 @@ index b2b6595..0de9e4e 100644
 -    strcpy(KbFileName, ExePath);
 -    strcat(KbFileName, "/skins/");
 -#endif
+-
 +    strcpy(KbFileName, "/usr/share/protrekkr2/skins/");
- 
      strcat(KbFileName, FileName);
  
-@@ -508,14 +502,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
+     // Current keyboard filename (saved in ptk.cfg)
+@@ -486,7 +479,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
+         while(!Found_File)
+         {
+             CHDIR(ExePath);
+-            FILE *Test_File = fopen("skins/keyboards.txt", "rb");
++            FILE *Test_File = fopen("/usr/share/protrekk2/skins/keyboards.txt", "rb");
+             if(Test_File)
+             {
+                 Found_File = TRUE;
+@@ -515,13 +508,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
      if(!strlen(Keyboard_Name)) sprintf(Keyboard_Name, "%s", "kben.txt");
  
      // All keyboards name
@@ -165,14 +181,13 @@ index b2b6595..0de9e4e 100644
 -    strcpy(Keyboards_FileName, ExePath);
 -    strcat(Keyboards_FileName, "/skins/");
 -#endif
--    strcat(Keyboards_FileName, "keyboards.txt");
-+    strcpy(Keyboards_FileName, "/usr/share/protrekkr2/skins/keyboards.txt");
++    strcpy(Keyboards_FileName, "/usr/share/protrekkr2/skins/");
+     strcat(Keyboards_FileName, "keyboards.txt");
  
      AllKbsFile = fopen(Keyboards_FileName, "r");
-     if(AllKbsFile != NULL)
-@@ -530,14 +517,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
+@@ -536,13 +523,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
+         {
              fscanf(AllKbsFile, "%s", &KbFileName);
- 
  
 -#if defined(__WIN32__)
 -            strcpy(KbFileNameToLoad, ExePath);
@@ -181,11 +196,10 @@ index b2b6595..0de9e4e 100644
 -            strcpy(KbFileNameToLoad, ExePath);
 -            strcat(KbFileNameToLoad, "/skins/");
 -#endif
--
 +            strcpy(KbFileNameToLoad, "/usr/share/protrekkr2/skins/");
+ 
              strcat(KbFileNameToLoad, KbFileName);
  
-             // Load the keyboard file
 -- 
-2.36.1
+2.43.0
 

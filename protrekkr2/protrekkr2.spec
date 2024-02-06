@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer, Sequencer
 
 Name: protrekkr2
-Version: 2.6.3
+Version: 2.6.4
 Release: 1%{?dist}
 Summary: A jack tracker
 License: GPL-2.0-or-later
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/hitchhikr/protrekkr/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0:  protrekkr2-0001-set-config-file-paths.patch
+Patch0: protrekkr2-0001-set-config-file-paths.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -94,6 +94,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/protrekkr2.desktop
 %{_datadir}/*
 
 %changelog
+* Tue Feb 06 2024 Yann Collette <ycollette.nospam@free.fr> - 2.6.4-1
+- Update to 2.6.4-1
+
 * Thu Jan 27 2022 Yann Collette <ycollette.nospam@free.fr> - 2.6.3-1
 - Update to 2.6.3-1
 
