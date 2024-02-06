@@ -38,6 +38,8 @@ BuildRequires: doxygen
 BuildRequires: snappy-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libuuid-devel
+BuildRequires: wayland-devel
+BuildRequires: libxkbcommon-devel
 BuildRequires: desktop-file-utils
 
 # cppzmq
