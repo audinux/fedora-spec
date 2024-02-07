@@ -940,7 +940,8 @@ https://git.open-music-kontrollers.ch/~hp/sherlock.lv2
 https://git.open-music-kontrollers.ch/~hp/tracker.lv2
 https://git.open-music-kontrollers.ch/~hp/midi_matrix.lv2
 https://git.open-music-kontrollers.ch/~hp/moony.lv2
-https://git.open-music-kontrollers.ch/~hp/synthpod"
+https://git.open-music-kontrollers.ch/~hp/synthpod
+https://github.com/brummer10/ImpulseLoader.lv2"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

@@ -143,7 +143,6 @@
 | neural-amp-modeler-lv2  | https://github.com/mikeoliphant/neural-amp-modeler-lv2 |
 | OpenKontroller          | https://git.open-music-kontrollers.ch/~hp/ |
 | awesome-juce            | https://github.com/sudara/awesome-juce |
-| ImpulseLoader.lv2       | https://github.com/brummer10/ImpulseLoader.lv2 |
 
 Check the following URL: https://github.com/forart/HyMPS
 
