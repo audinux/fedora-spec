@@ -2,7 +2,9 @@
 # Type: Plugin, Standalone, VST, VST3, CLAP
 # Category: Audio, Synthesizer
 
-%global commit0 5ddd8a3ee5c2b0868d10d79c20c372d670fb97c9
+%global debug_package %{nil}
+
+%global commit0 d84e0357a98a8235b9383b1a3e913d065a7bad43
 
 Name: hexosynth
 Version: 0.9.9
@@ -17,9 +19,7 @@ Distribution: Audinux
 Source0: https://github.com/WeirdConstructor/HexoSynth/archive/%{commit0}.zip#/hexosynth.zip
 
 BuildRequires: gcc gcc-c++
-BuildRequires: make
-BuildRequires: rust
-BuildRequires: cargo
+BuildRequires: rustup
 BuildRequires: xcb-util-wm-devel
 BuildRequires: libXcursor-devel
 BuildRequires: mesa-libGL-devel
@@ -40,14 +40,6 @@ Requires: %{name}
 %description -n vst3-%{name}
 VST3 version of %{name}
 
-%package -n vst-%{name}
-Summary:  VST2 version of %{name}
-License:  GPL-3.0-or-later
-Requires: %{name}
-
-%description -n vst-%{name}
-VST2 version of %{name}
-
 %package -n clap-%{name}
 Summary:  CALP version of %{name}
 License:  GPL-3.0-or-later
@@ -63,58 +55,63 @@ CLAP version of %{name}
 %build
 
 %set_build_flags
+
 export RUSTFLAGS="-g -O"
 
-mkdir build
-mkdir build/vst3
-mkdir build/clap
-mkdir build/vst
+export CWD=`pwd`
+export RUSTUP_HOME="$CWD/rustup"
+export CARGO_HOME="$CWD/cargo"
+# --default-toolchain=1.75.0
+# rustup-init -y --default-toolchain none
+# rustup target list
+# rustup target add x86_64-unknown-linux-gnu
+# rustup install 1.75.0
+# cargo build --release --bin hexosynth_jack
+
+%ifarch x86_64
+rustup-init -y --default-toolchain nightly-x86_64-unknown-linux-gnu
+%endif
+%ifarch aarch64
+rustup-init -y --default-toolchain nightly-aarch64-unknown-linux-gnu
+%endif
+source cargo/env
 
 # Build jack standalone
-./_build_release.sh
-cp release/hexosynth_jack build/
-cp target/release/libhexosynth.so build/vst/
+cd hexosynth_jack
+cargo build --release --bin hexosynth_jack
+cd ..
 
 # Build VTS3 and CLAP part
-cd nih_plug
-./build.sh
+cd hexosynth_plug
+cargo +nightly xtask bundle hexosynth_plug --release
 cd ..
-cp -rav nih_plug/target/bundled/hexosynth_plug.vst3 build/vst3/
-cp -rav nih_plug/target/bundled/hexosynth_plug.clap build/clap/
 
 # Build standard audio
-cd cpal_standalone
-cargo build --release
+cd hexosynth_cpal
+cargo +nightly build --release --bin hexosynth_cpal
 cd ..
-cp cpal_standalone/target/release/hexosynth_jack build/hexosynth
 
 %install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
-install -m 755 build/hexosynth_jack %{buildroot}/%{_bindir}/
-install -m 755 build/hexosynth %{buildroot}/%{_bindir}/
+install -m 755 target/release/hexosynth_jack %{buildroot}/%{_bindir}/
+install -m 755 target/release/hexosynth_cpal %{buildroot}/%{_bindir}/
+
+install -m 755 -d %{buildroot}/%{_libdir}/vst3/
+install -m 755 -d %{buildroot}/%{_libdir}/clap/
+cp -vfr target/bundled/hexosynth_plug.vst3 %{buildroot}/%{_libdir}/vst3/
+cp -vfr target/bundled/hexosynth_plug.clap %{buildroot}/%{_libdir}/clap/
 
 install -m 755 -d %{buildroot}/%{_datadir}/hexosynth/examples/
 cp -ra misc_patches/* %{buildroot}/%{_datadir}/hexosynth/examples/
 
-install -m 755 -d %{buildroot}/%{_libdir}/vst/
-install -m 755 build/vst//libhexosynth.so %{buildroot}/%{_libdir}/vst/
-
-install -m 755 -d %{buildroot}/%{_libdir}/vst3/
-install -m 755 -d %{buildroot}/%{_libdir}/clap/
-cp -vfr build/vst3/hexosynth_plug.vst3 %{buildroot}/%{_libdir}/vst3/
-cp -vfr build/clap/hexosynth_plug.clap %{buildroot}/%{_libdir}/clap/
-
 %files
-%doc README.md
+%doc README.md CHANGELOG.md doc/hexosynth_wlambda_api.md
 %license COPYING
 %{_bindir}/hexosynth_jack
-%{_bindir}/hexosynth
-%{_datadir}/hexosynth/
+%{_bindir}/hexosynth_cpal
+%dir %{_datadir}/hexosynth/
 %{_datadir}/hexosynth/examples/*
-
-%files -n vst-%{name}
-%{_libdir}/vst/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
@@ -123,5 +120,8 @@ cp -vfr build/clap/hexosynth_plug.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Wed Feb 07 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.9-1
+- Fix spec
+
 * Sun Aug 21 2022 Yann Collette <ycollette.nospam@free.fr> - 0.9.9-1
 - Initial spec file
