@@ -3,7 +3,7 @@
 # Category: Audio, Tool, Plugin
 
 Name: ImpulseLoader
-Version: 0.1
+Version: 0.2
 Release: 1%{?dist}
 Summary: This is a simple, mono, IR-File loader/convolution LV2 plug
 License: GPL-2.0-or-later
@@ -12,7 +12,7 @@ URL: https://github.com/brummer10/ImpulseLoader.lv2
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/brummer10/ImpulseLoader.lv2/releases/download/v0.1/ImpulseLoader.lv2-v0.1-src.tar.xz
+Source0: https://github.com/brummer10/ImpulseLoader.lv2/releases/download/v%{version}/ImpulseLoader.lv2-v%{version}-src.tar.xz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -55,5 +55,8 @@ LV2 version of %{name}
 %{_libdir}/lv2/*
 
 %changelog
+* Thu Feb 08 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2-1
+- update to 0.2-1
+
 * Wed Feb 07 2024 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
 - Initial spec file
