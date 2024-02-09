@@ -80,7 +80,7 @@ cp -rav dist/RELEASE/linux/firefly_synth_1.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
-* Sat Feb 09 2024 Yann Collette <ycollette.nospam@free.fr> - 1.04-1
+* Fri Feb 09 2024 Yann Collette <ycollette.nospam@free.fr> - 1.04-1
 - update to 1.04-1
 
 * Sat Feb 03 2024 Yann Collette <ycollette.nospam@free.fr> - 1.03-1
