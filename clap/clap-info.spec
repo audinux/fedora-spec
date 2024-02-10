@@ -4,7 +4,7 @@
 
 Summary: An automatic CLAP validation and testing tool
 Name: clap-info
-Version: 1.0.0
+Version: 1.2.0
 Release: 1%{?dist}
 License: MIT
 URL: https://github.com/free-audio/clap-info
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./clap-source.sh <project> <tag>
-# ./clap-source.sh clap-info v1.0.0
+# ./clap-source.sh clap-info v1.2.0
 
 Source0: clap-info.tar.gz
 Source1: clap-source.sh
@@ -54,5 +54,8 @@ chrpath --delete %{buildroot}/%{_bindir}/clap-info
 %{_libdir}/*
 
 %changelog
+* Sat Feb 10 2024 Yann Collette <ycollette dot nospam at free.fr> 1.2.0-1
+- update to 1.2.0-1
+
 * Mon Jan 22 2024 Yann Collette <ycollette dot nospam at free.fr> 1.0.0-1
 - initial release
