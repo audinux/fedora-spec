@@ -4,7 +4,7 @@
 
 Name: projectM-mao
 Version: 3.1.12
-Release: 14%{?dist}
+Release: 15%{?dist}
 Summary: The libraries for the projectM music visualization plugin
 License: LGPLv2+
 URL: https://github.com/projectM-visualizer/projectm
@@ -161,6 +161,10 @@ chmod a+x %{buildroot}/%{_bindir}/%{name}-alsa
 # SDL
 mv %{buildroot}/%{_bindir}/projectMSDL %{buildroot}/%{_bindir}/%{name}-sdl
 
+# Icon
+install -m 755 -d %{buildroot}/%{_datadir}/icons/
+install -m 644 ./msvc/projectM.ico %{buildroot}/%{_datadir}/icons/%{name}.png
+
 #
 # Write desktop files
 #
@@ -278,6 +282,9 @@ cp %{SOURCE5} %{buildroot}%{_datadir}/projectM-mao/doc/
 %{_datadir}/projectM-mao/doc/*
 
 %changelog
+* Mon Feb 12 2024 Yann Collette <ycollette.nospam@free.fr> - 3.1.12-13
+- fix icon
+
 * Sun Mar 7 2021 Yann Collette <ycollette.nospam@free.fr> - 3.1.12-12
 - fix permissions
 
