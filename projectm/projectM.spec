@@ -255,6 +255,7 @@ cp %{SOURCE5} %{buildroot}%{_datadir}/projectM-mao/doc/
 %license src/libprojectM/COPYING
 %{_libdir}/libprojectM.so.*
 %{_datadir}/projectM-mao/
+%{_datadir}/icons/projectM-mao.png
 
 %files devel
 %{_includedir}/*
