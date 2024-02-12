@@ -4,7 +4,7 @@
 
 Name: prototracker-modular
 Version: 0.0.8
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A modular synth tracker
 License: MIT
 URL: https://github.com/kometbomb/prototracker-modular
@@ -82,7 +82,7 @@ chmod a+x %{buildroot}/%{_bindir}/%{name}-alsa
 
 # Install icon
 install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
-cp %{SOURCE1} %{buildroot}/%{_datadir}/pixmaps/
+cp %{SOURCE1} %{buildroot}/%{_datadir}/pixmaps/%{name}.png
 
 # Write desktop files
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
@@ -154,5 +154,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 %{_datadir}/%{name}/*
 
 %changelog
+* Mon Feb 12 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.8-2
+- fix desktop icon
+
 * Thu Jul 13 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.8-1
 - initial spec file
