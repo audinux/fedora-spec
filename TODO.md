@@ -64,7 +64,6 @@
 | intersect               | https://github.com/sboukortt/intersect-lv2 |
 | lenticular              | https://github.com/polyeffects/lenticular_lv2 |
 | sushi                   | https://github.com/elk-audio/sushi |
-| guitarix vst            | https://github.com/brummer10/guitarix.vst |
 | ComplexNonlinearities   | https://github.com/jatinchowdhury18/ComplexNonlinearities |
 | repitch                 | https://github.com/maxwellpollack/repitch |
 | Richter Tremolo         | https://github.com/jd-13/Richter-Tremolo |
