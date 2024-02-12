@@ -2,18 +2,18 @@
 # Type: Plugin, LV2, VST
 # Category: Audio, Tool, Programming
 
-Name:    cabbage
+Name: cabbage
 Version: 2.9.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Framework for developing audio plugins with the Csound programming language.
-URL:     https://github.com/rorywalsh/cabbage
+URL: https://github.com/rorywalsh/cabbage
 License: GPL-3.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux
 
-# Usage: ./cabbage-sources.sh <TAG>
-# ./cabbage-sources.sh v2.9.0
+# Usage: ./cabbage-source.sh <TAG>
+#        ./cabbage-source.sh v2.9.0
 
 Source0: cabbage.tar.gz
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
@@ -61,14 +61,15 @@ VST version of %{name}
 
 sed -i -e "s/;Multimedia//g" Installers/Linux/Cabbage.desktop
 sed -i -e "s/VST3_SDK/VST2_SDK/g" CMakeLists.txt
-#sed -i -e "s/ VST//g" CMakeLists.txt
-#sed -i -e "s/ AU//g" CMakeLists.txt
 
 # Install VST SDKs
 
 mkdir SDKs
 unzip %{SOURCE1}
 mv VST_SDK SDKs/
+
+# Fix desktop icon
+sed -i "/Icon/c\Icon=cabbage" Installers/Linux/Cabbage.desktop
 
 %build
 
@@ -161,5 +162,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Cabbage.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Feb 12 2024 Yann Collette <ycollette.nospam@free.fr> - 2.9.0-2
+- fix desktop icon
+
 * Tue Feb 14 2023 Yann Collette <ycollette.nospam@free.fr> - 2.9.0-1
 - Initial spec file
