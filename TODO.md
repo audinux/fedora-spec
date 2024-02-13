@@ -143,6 +143,7 @@
 | OpenKontroller          | https://git.open-music-kontrollers.ch/~hp/ |
 | awesome-juce            | https://github.com/sudara/awesome-juce |
 | MultiMeter              | https://github.com/RealAlexZ/MultiMeter |
+| neural-amp-modeler-ui   | https://github.com/brummer10/neural-amp-modeler-ui |
 
 Check the following URL: https://github.com/forart/HyMPS
 
