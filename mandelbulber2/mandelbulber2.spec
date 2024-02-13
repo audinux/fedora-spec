@@ -2,17 +2,19 @@
 # Type: Standalone, IDE, Language
 # Category: Graphic, Tool
 
+%global _version 2.31-1
+
 Name: mandelbulber2
-Version: 2.30
+Version: 2.31
 Release: 1%{?dist}
 License: GPL-3.0
 Summary: 3D Mandelbrot renderer
-URL: http://www.mandelbulber.com/
+URL: https://mandelbulber.com/
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://sourceforge.net/projects/mandelbulber/files/Mandelbulber%20v2/source%20-%20multiplatform/%{name}-%{version}.tar.gz
+Source0: https://github.com/buddhi1980/mandelbulber2/releases/download/%{_version}/mandelbulber2-%{_version}.tar.gz#/%{name}-%{_version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: pkgconfig(Qt5Core)
@@ -22,6 +24,7 @@ BuildRequires: pkgconfig(Qt5UiTools)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5Multimedia)
 BuildRequires: gsl-devel
+BuildRequires: libtiff-devel
 BuildRequires: libpng-devel
 BuildRequires: lzo-devel
 BuildRequires: libsndfile-devel
@@ -34,7 +37,7 @@ kind of 3D fractals like Mandelbox, Bulbbox, Juliabulb, Menger
 Sponge.
 
 %prep
-%autosetup %{name}-%{version}
+%autosetup -n %{name}-%{_version}
 
 %build
 
