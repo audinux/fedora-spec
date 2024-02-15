@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name: equis
-Version: 0.6.2
+Version: 0.6.3
 Release: 1%{?dist}
 Summary: The hackable DJ Mixer inspired by the playdifferently model 1
 License: GPL-3.0-or-later
@@ -52,6 +52,9 @@ cp -ra target/release/equis %{buildroot}/%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Thu Feb 15 2024 Yann Collette <ycollette.nospam@free.fr> - 0.6.3-1
+- update to 0.6.3-1
+
 * Tue Oct 17 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.2-1
 - update to 0.6.2-1
 
