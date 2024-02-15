@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 a0180a045e5c908c09e138ed20b65fc1e34b0b39
-%global gittag0 2.4.44
+%global commit0 2802604321d286cfdd263aafdf7fd0468ebd8069
+%global gittag0 2.4.45
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Bogaudio
-Version: 2.4.44
+Version: 2.4.45
 Release: 2%{?dist}
 Summary: Bogaudio plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r Bogaudio_plugin/dist/Bogaudio/* %{buildroot}%{_libexecdir}/Rack2/plugins/B
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.44-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.45-1
 - initial specfile
