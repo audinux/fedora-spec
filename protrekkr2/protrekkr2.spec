@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer, Sequencer
 
 Name: protrekkr2
-Version: 2.6.4
+Version: 2.6.5
 Release: 1%{?dist}
 Summary: A jack tracker
 License: GPL-2.0-or-later
@@ -94,6 +94,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/protrekkr2.desktop
 %{_datadir}/*
 
 %changelog
+* Fri Feb 16 2024 Yann Collette <ycollette.nospam@free.fr> - 2.6.5-1
+- Update to 2.6.5-1
+
 * Tue Feb 06 2024 Yann Collette <ycollette.nospam@free.fr> - 2.6.4-1
 - Update to 2.6.4-1
 
