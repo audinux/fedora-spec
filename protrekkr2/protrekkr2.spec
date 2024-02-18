@@ -2,6 +2,8 @@
 # Type: Standalone
 # Category: Audio, Synthesizer, Sequencer
 
+%global commit0 97212456e7c9676b698fcfdc5d8031af8deda5c1
+
 Name: protrekkr2
 Version: 2.6.5
 Release: 1%{?dist}
@@ -12,7 +14,7 @@ URL: https://github.com/hitchhikr/protrekkr
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/hitchhikr/protrekkr/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/hitchhikr/protrekkr/archive/97212456e7c9676b698fcfdc5d8031af8deda5c1.zip#/%{name}-%{commit0}.zip
 Patch0: protrekkr2-0001-set-config-file-paths.patch
 
 BuildRequires: gcc gcc-c++
@@ -26,7 +28,7 @@ BuildRequires: desktop-file-utils
 An ALSA tracker
 
 %prep
-%autosetup -p1 -n protrekkr-%{version}
+%autosetup -p1 -n protrekkr-%{commit0}
 
 sed -i -e "s/-O3/-O2/g" makefile.linux
 sed -i -e "s/-g/-g \$(CFLAGS)/g" makefile.linux
