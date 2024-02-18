@@ -5,7 +5,7 @@
 %global __python %{__python3}
 
 Name: python-wstd2daisy
-Version: 0.5.1
+Version: 0.5.2
 Release: 1%{?dist}
 Summary: Utility for converting JSON board definitions into valid, libDaisy compatible C++ board support files for the Daisy platform.
 License: MIT
@@ -47,5 +47,8 @@ libDaisy compatible C++ board support files for the Daisy platform.
 %doc README.md
 
 %changelog
+* Fri Feb 16 2024 Yann Collette <ycollette.nospam@free.fr> - 0.5.2-1
+- update to 0.5.2-1
+
 * Wed Jan 24 2024 Yann Collette <ycollette.nospam@free.fr> - 0.5.1-1
 - Initial release
