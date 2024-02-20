@@ -2,10 +2,8 @@
 # Type: Standalone
 # Category: Audio, Synthesizer, Sequencer
 
-%global commit0 97212456e7c9676b698fcfdc5d8031af8deda5c1
-
 Name: protrekkr2
-Version: 2.6.5
+Version: 2.6.6
 Release: 1%{?dist}
 Summary: A jack tracker
 License: GPL-2.0-or-later
@@ -14,7 +12,7 @@ URL: https://github.com/hitchhikr/protrekkr
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/hitchhikr/protrekkr/archive/97212456e7c9676b698fcfdc5d8031af8deda5c1.zip#/%{name}-%{commit0}.zip
+Source0: https://github.com/hitchhikr/protrekkr/archive/refs/tags/v2.6.6.tar.gz#/%{name}-%{version}.tar.gz
 Patch0: protrekkr2-0001-set-config-file-paths.patch
 
 BuildRequires: gcc gcc-c++
@@ -28,7 +26,7 @@ BuildRequires: desktop-file-utils
 An ALSA tracker
 
 %prep
-%autosetup -p1 -n protrekkr-%{commit0}
+%autosetup -p1 -n protrekkr-%{version}
 
 sed -i -e "s/-O3/-O2/g" makefile.linux
 sed -i -e "s/-g/-g \$(CFLAGS)/g" makefile.linux
@@ -96,6 +94,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/protrekkr2.desktop
 %{_datadir}/*
 
 %changelog
+* Tue Feb 20 2024 Yann Collette <ycollette.nospam@free.fr> - 2.6.6-1
+- Update to 2.6.6-1
+
 * Fri Feb 16 2024 Yann Collette <ycollette.nospam@free.fr> - 2.6.5-1
 - Update to 2.6.5-1
 
