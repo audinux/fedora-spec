@@ -943,7 +943,10 @@ https://git.open-music-kontrollers.ch/~hp/moony.lv2
 https://git.open-music-kontrollers.ch/~hp/synthpod
 https://github.com/brummer10/ImpulseLoader.lv2
 https://github.com/WeirdConstructor/Kickmess
-https://github.com/brummer10/guitarix.vst"
+https://github.com/brummer10/guitarix.vst
+https://github.com/Gimmeapill/xruncounter
+https://github.com/brummer10/neural-amp-modeler-ui
+https://github.com/brummer10/ImpulseLoaderStereo.lv2"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
