@@ -3,11 +3,11 @@
 # Kernel minor version
 %define kmin  10
 # Kernel patch version
-%define kpat  204
+%define kpat  209
 # RT patch version
-%define krt   100
+%define krt   101
 # package version
-%define krel  11
+%define krel  12
 
 %define kver  %{kmaj}.%{kmin}.%{kpat}
 %define fcver %{dist}.%{_arch}
@@ -180,11 +180,13 @@ EXCLUDES="--exclude SCCS --exclude BitKeeper --exclude .svn --exclude CVS --excl
 tar $EXCLUDES -cf- . | (cd %{buildroot}/usr/src/kernels/%{kver}-rt-stable%{krt}%{fcver}; tar xvf -)
 
 %post
+/sbin/ldconfig
 # Create the initramfs file
 /bin/kernel-install add %{kver}-rt-stable%{krt}%{fcver} /lib/modules/%{kver}-rt-stable%{krt}%{fcver}/vmlinuz
 grub2-mkconfig -o /boot/grub2/grub.cfg
 
 %postun
+/sbin/ldconfig
 /bin/kernel-install remove %{kver}-rt-stable%{krt}%{fcver} /lib/modules/%{kver}-rt-stable%{krt}%{fcver}/vmlinuz
 grub2-mkconfig -o /boot/grub2/grub.cfg
 
@@ -203,6 +205,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt-stable%{krt}%{fcver}
 
 %changelog
+* Fri Feb 23 2024 Yann Collette <ycollette.nospam@free.fr> - 5.10.209-rt101-12
+- update to 5.10.209-rt101-12 - vanilla RT kernel - add ldconfig in post
+
 * Fri Dec 22 2023 Yann Collette <ycollette.nospam@free.fr> - 5.10.204-rt100-11
 - update to 5.10.204-rt100-11 - vanilla RT kernel
 
