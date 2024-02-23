@@ -44,6 +44,8 @@ This is a VST3 wrapper for Guitarix
 %prep
 %autosetup -n guitarix.vst
 
+sed -i -e "/JUCE_CXXFLAGS += -march=x86/d" Builds/LinuxMakefile/Makefile
+
 %build
 
 %make_build STRIP=true CONFIG=Release
