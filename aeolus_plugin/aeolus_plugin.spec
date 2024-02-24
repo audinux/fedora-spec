@@ -2,9 +2,11 @@
 # Type: Standalone, VST3
 # Category: Audio, Synthesizer
 
+%global commit0 50494c1db8a88b4c17254fb40fc8f948b8046a8f
+
 Name:    aeolus_plugin
 Version: 0.2.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Pipe organ synthesizer
 License: GPL-3.0-or-later
 URL:     https://github.com/Archie3d/aeolus_plugin
@@ -13,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source_aeolus_plugin.sh <tag>
-#        ./source_aeolus_plugin.sh v0.2.0
+#        ./source_aeolus_plugin.sh 50494c1db8a88b4c17254fb40fc8f948b8046a8f
 
 Source0: aeolus_plugin.tar.gz
 Source1: source_aeolus_plugin.sh
@@ -60,7 +62,15 @@ License:  GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
-VST3 version of %{name}
+vst3 version of %{name}
+
+%package -n lv2-%{name}
+Summary:  LV2 version of %{name}
+License:  GPL-2.0-or-later
+Requires: %{name}
+
+%description -n lv2-%{name}
+LV2 version of %{name}
 
 %prep
 %setup -n %{name}
@@ -78,10 +88,12 @@ VST3 version of %{name}
 
 install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
+install -m 755 -d %{buildroot}%{_libdir}/lv2/
 install -m 755 -d %{buildroot}%{_datadir}/Aeolus/doc/
 
 cp -ra %{__cmake_builddir}/Aeolus_artefacts/Standalone/* %{buildroot}%{_bindir}/
 cp -ra %{__cmake_builddir}/Aeolus_artefacts/VST3/Aeolus.vst3 %{buildroot}%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/Aeolus_artefacts/LV2/Aeolus.lv2 %{buildroot}%{_libdir}/lv2/
 cp -ra docs/* %{buildroot}%{_datadir}/Aeolus/doc/
 cp -ra Resources/* %{buildroot}%{_datadir}/Aeolus/
 
@@ -126,7 +138,13 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Aeolus.desktop
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
+%files -n lv2-%{name}
+%{_libdir}/lv2/*
+
 %changelog
+* Sat Feb 24 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-3
+- update to 0.2.0-3 - update to 50494c1db8a88b4c17254fb40fc8f948b8046a8f
+
 * Sun Mar 12 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
 - update to 0.2.0-1
 
