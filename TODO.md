@@ -144,6 +144,7 @@
 | awesome-juce            | https://github.com/sudara/awesome-juce |
 | MultiMeter              | https://github.com/RealAlexZ/MultiMeter |
 | neural-amp-modeler-ui   | https://github.com/brummer10/neural-amp-modeler-ui |
+| qlcplus                 | https://github.com/mcallegari/qlcplus |
 
 Check the following URL: https://github.com/forart/HyMPS
 
@@ -153,7 +154,13 @@ Add dead package:
 - lv2-ui
 - lv2core
 - slv2
-  
+
+## Python package
+
+basicpitch from spotify -> https://github.com/spotify/basic-pitch
+spleeter from deezer -> https://github.com/Deezer/spleeter
+demucs from facebook -> https://github.com/facebookresearch/demucs
+
 ## Fedora 39 to be fixed
 
 rack-v1-BaconMusic         -> build failure
