@@ -180,13 +180,11 @@ EXCLUDES="--exclude SCCS --exclude BitKeeper --exclude .svn --exclude CVS --excl
 tar $EXCLUDES -cf- . | (cd %{buildroot}/usr/src/kernels/%{kver}-rt-stable%{krt}%{fcver}; tar xvf -)
 
 %post
-/sbin/ldconfig
 # Create the initramfs file
 /bin/kernel-install add %{kver}-rt-stable%{krt}%{fcver} /lib/modules/%{kver}-rt-stable%{krt}%{fcver}/vmlinuz
 grub2-mkconfig -o /boot/grub2/grub.cfg
 
 %postun
-/sbin/ldconfig
 /bin/kernel-install remove %{kver}-rt-stable%{krt}%{fcver} /lib/modules/%{kver}-rt-stable%{krt}%{fcver}/vmlinuz
 grub2-mkconfig -o /boot/grub2/grub.cfg
 
