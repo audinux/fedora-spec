@@ -32,8 +32,8 @@ rootpw --plaintext audinuxaudinux
 bootloader --location=none --append="threadirqs nopti preempt=full"
 
 #YC: replace development by releases
-repo --name=rpmfusion                --baseurl=http://download1.rpmfusion.org/free/fedora/development/$releasever/Everything/$basearch/os/
-repo --name=rpmfusion-non-free       --baseurl=http://download1.rpmfusion.org/nonfree/fedora/development/$releasever/Everything/$basearch/os/
+repo --name=rpmfusion                --baseurl=http://download1.rpmfusion.org/free/fedora/releases/$releasever/Everything/$basearch/os/
+repo --name=rpmfusion-non-free       --baseurl=http://download1.rpmfusion.org/nonfree/fedora/releases/$releasever/Everything/$basearch/os/
 repo --name=rpmfusion-update-testing --baseurl=http://download1.rpmfusion.org/free/fedora/updates/testing/$releasever/$basearch/
 repo --name=rpmfusion-free-update    --baseurl=http://download1.rpmfusion.org/free/fedora/updates/$releasever/$basearch/
 
@@ -342,8 +342,8 @@ rm -f /var/lib/systemd/random-seed
 
 # forcibly regenerate fontconfig cache (so long as this live image has
 # fontconfig) - see #1169979
-if [ -x /usr/bin/fc-cache ] ; then
-   fc-cache -f
+if [ -x /usr/bin/fc-cache-64 ] ; then
+   fc-cache-64 -f
 fi
 
 echo 'File created by kickstart. See systemd-update-done.service(8).' \
@@ -407,8 +407,6 @@ initscripts
 
 # system packages
 
-# Explicitly specified here:
-# <notting> walters: because otherwise dependency loops cause yum issues.
 kernel
 kernel-modules
 kernel-modules-extra
@@ -416,8 +414,7 @@ kernel-tools
 kernel-rt-stable-mao
 
 # This was added a while ago, I think it falls into the category of
-# "Diagnosis/recovery tool useful from a Live OS image".  Leaving this untouched
-# for now.
+# "Diagnosis/recovery tool useful from a Live OS image".  Leaving this untouched for now.
 memtest86+
 
 syslinux
@@ -425,12 +422,12 @@ syslinux
 # Without this, initramfs generation during live image creation fails: #1242586
 dracut-live
 grub2
+grub2-breeze-theme
+grub2-pc
 grub2-tools
 grub2-efi
-#shim
-#shim-unsigned
-shim-x64
 grub2-efi-x64-cdboot
+shim-x64
 
 # save some space
 -mpage
@@ -489,8 +486,8 @@ alsa-firmware
 alsa-tools
 alsa-utils
 alsamixergui
-alsa-plugins-jack
-alsa-plugins-pulseaudio
+# alsa-plugins-jack
+# alsa-plugins-pulseaudio
 alsa-plugins-usbstream
 alsa-plugins-samplerate
 alsa-plugins-upmix
@@ -499,8 +496,9 @@ a2jmidid
 libsndfile
 
 # jack 
-jack-audio-connection-kit
+# jack-audio-connection-kit
 # jack-audio-connection-kit-example-clients # FC38
+pipewire-jack-audio-connection-kit
 qjackctl
 jackctlmmc
 Carla-mao
@@ -543,6 +541,7 @@ vst3-cardinal
 
 # guitar
 guitarix
+vst3-guitarix
 tuxguitar
 sooperlooper
 mod-gxpitchshifter
@@ -550,9 +549,9 @@ mod-pitchshifter
 
 # recodring and DAW
 audacity
-ardour6
+ardour8
 seq24
-qtractor
+qtractor-mao
 non-mixer
 raysession
 muse
