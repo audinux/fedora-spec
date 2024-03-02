@@ -3,7 +3,7 @@
 # Category: Tool
 
 Name: projectM-mao
-Version: 3.1.12
+Version: 4.1.0
 Release: 15%{?dist}
 Summary: The libraries for the projectM music visualization plugin
 License: LGPLv2+
@@ -12,31 +12,32 @@ URL: https://github.com/projectM-visualizer/projectm
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/projectM-visualizer/projectm/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+# Usage: ./projectm-source.sh <tag>
+#        ./projectm-source.sh v4.1.0
+
+Source0: projectm.tar.gz
 Source1: milkdrop-script.txt
-Source2: projectm-configure.ac
-Source3: projectm-config.inp
-Source4: Authoring_Guide.pdf
-Source5: Geiss_Guide.pdf
+Source2: projectm-config.inp
+Source3: Authoring_Guide.pdf
+Source4: Geiss_Guide.pdf
+Source5: projectm.png
+Source6: projectm-source.sh
 
 BuildRequires: gcc gcc-c++
-BuildRequires: automake
-BuildRequires: autoconf
-BuildRequires: libtool make
+BuildRequires: cmake
+BuildRequires: libgomp
+BuildRequires: bison flex
 BuildRequires: ftgl-devel
 BuildRequires: glew-devel
-BuildRequires: libgomp
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: SDL2-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: pulseaudio-libs-devel
-BuildRequires: dejavu-sans-mono-fonts
-BuildRequires: dejavu-sans-fonts
 BuildRequires: glm-devel
 BuildRequires: ftgl-devel
+BuildRequires: boost-devel
+BuildRequires: chrpath
 BuildRequires: desktop-file-utils
-
-Requires: dejavu-sans-mono-fonts, dejavu-sans-fonts
 
 %description
 projectM is an awesome music visualizer. There is nothing better in the world
@@ -97,38 +98,29 @@ License: GPLv2+ and LGPLv2+ and MIT
 The projectM visualization plugin documentation.
 
 %prep
-%autosetup -n projectm-%{version}
+%autosetup -n projectm
 
-sed -i -e "s/\/usr\/local\/share\/projectM/\/usr\/share\/projectM-mao/g" src/libprojectM/projectM.cpp
-sed -i -e "s/\/usr\/local\/share\/projectM/\/usr\/share\/projectM-mao/g" src/projectM-sdl/pmSDL.hpp
-
-sed -i -e "s/share\/projectM/share\/projectM-mao/g" src/projectM-MusicPlugin/getConfigFilename.h
-sed -i -e "s/share\/projectM/share\/projectM-mao/g" src/projectM-libvisual/actor_projectM.cpp
-sed -i -e "s/share\/projectM/share\/projectM-mao/g" src/museum/projectM-xmms/main.cpp
-sed -i -e "s/share\/projectM/share\/projectM-mao/g" src/projectM-jack/projectM-jack.cpp
-sed -i -e "s/share\/projectM/share\/projectM-mao/g" src/projectM-qt/qpresetfiledialog.hpp
-sed -i -e "s/share\/projectM/share\/projectM-mao/g" src/projectM-qt/qprojectm_mainwindow.hpp
-sed -i -e "s/share\/projectM/share\/projectM-mao/g" src/projectM-test/getConfigFilename.h
-sed -i -e "s/share\/projectM/share\/projectM-mao/g" src/projectM-pulseaudio/qprojectM-pulseaudio.cpp
-sed -i -e "s/share\/projectM/share\/projectM-mao/g" src/projectM-jack/Makefile.am
-
-cp %{SOURCE2} configure.ac
+sed -i -e "s/\/usr\/local\/share\/projectM/\/usr\/share\/projectM-mao/g" src/sdl-test-ui/pmSDL.hpp
+sed -i -e "s/\/usr\/local\/share\/projectM/\/usr\/share\/projectM-mao/g" src/sdl-test-ui/pmSDL.hpp 
 
 %build
 
-./autogen.sh
+CWD=`pwd`
+%set_build_flags
 
-export QT_SELECT=5
+%cmake -DENABLE_BOOST_FILESYSTEM=ON \
+       -DENABLE_SDL_UI=ON \
+       -DENABLE_SYSTEM_GLM=ON \
+       -DCMAKE_CXX_FLAGS="-include chrono -I$CWD/vendor $CXXFLAGS"
 
-%configure --prefix=%{_prefix} --libdir=%{_libdir} --datadir=%{_datadir} --enable-sdl --disable-qt --disable-pulseaudio --disable-jack
-
-sed -i -e "s/share\/projectM/share\/projectM-mao/g" src/libprojectM/libprojectM.pc
-
-%make_build PREFIX=%{_prefix}
+%cmake_build
 
 %install
 
-%make_install PREFIX=%{_prefix}
+%cmake_install
+
+install -m 755 -d %{buildroot}/%{_bindir}/
+cp %{__cmake_builddir}/src/sdl-test-ui/projectM-Test-UI %{buildroot}/%{_bindir}/projectM-mao-sdl
 
 #
 # Write bash command to select the audio driver
@@ -158,12 +150,9 @@ SDL_AUDIODRIVER=alsa projectM-mao-sdl
 EOF
 chmod a+x %{buildroot}/%{_bindir}/%{name}-alsa
 
-# SDL
-mv %{buildroot}/%{_bindir}/projectMSDL %{buildroot}/%{_bindir}/%{name}-sdl
-
 # Icon
 install -m 755 -d %{buildroot}/%{_datadir}/icons/
-install -m 644 ./msvc/projectM.ico %{buildroot}/%{_datadir}/icons/%{name}.png
+install -m 644 %{SOURCE5} %{buildroot}/%{_datadir}/icons/%{name}.png
 
 #
 # Write desktop files
@@ -221,47 +210,40 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications projectM-mao-pul
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications projectM-mao-sdl.desktop
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications projectM-mao-alsa.desktop
 
-mv %{buildroot}%{_datadir}/projectM %{buildroot}%{_datadir}/projectM-mao
-
+install -m 755 -d %{buildroot}%{_datadir}/projectM-mao/presets/
+find . -name "*.milk" -exec cp {} %{buildroot}%{_datadir}/projectM-mao/presets/ \;
 find %{buildroot}%{_datadir}/projectM-mao/presets/ -name "*.milk" -exec chmod a-x {} \;
 
-# Install fonts
-install -m 755 -d %{buildroot}%{_datadir}/projectM-mao/fonts/
-install -m 644 fonts/VeraMono.ttf %{buildroot}%{_datadir}/projectM-mao/fonts/
-install -m 644 fonts/Vera.ttf     %{buildroot}%{_datadir}/projectM-mao/fonts/
-
-# Cleanup install
-rm %{buildroot}%{_bindir}/projectM-unittest
-rm %{buildroot}%{_libdir}/pkgconfig/libprojectM.pc
-rm %{buildroot}%{_datadir}/projectM-mao/presets/*.a
-rm %{buildroot}%{_datadir}/projectM-mao/presets/*.la
-
 # fix config.inp path and font path
-cp %{SOURCE3} %{buildroot}%{_datadir}/projectM-mao/
-# sed -i -e "s/usr\/share\/projectM\/presets/usr\/share\/projectM-mao\/presets/g" %{buildroot}%{_datadir}/projectM-mao/config.inp
-# sed -i -e "s/Vera/\/usr\/share\/projectM-mao\/fonts\/Vera/g" %{buildroot}%{_datadir}/projectM-mao/config.inp
-
-# fix permissions
-find %{buildroot}%{_datadir}/projectM-mao -type d -exec chmod 755 {} \;
+cp %{SOURCE2} %{buildroot}%{_datadir}/projectM-mao/
 
 # Install some documentations for Milkdrop
 install -m 755 -d %{buildroot}%{_datadir}/projectM-mao/doc/
 cp %{SOURCE1} %{buildroot}%{_datadir}/projectM-mao/doc/
+cp %{SOURCE3} %{buildroot}%{_datadir}/projectM-mao/doc/
 cp %{SOURCE4} %{buildroot}%{_datadir}/projectM-mao/doc/
-cp %{SOURCE5} %{buildroot}%{_datadir}/projectM-mao/doc/
+
+# Remove rpath
+chrpath --delete %{buildroot}%{_bindir}/projectM-mao-sdl
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/projectM-mao-jack.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/projectM-mao-pulse.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/projectM-mao-sdl.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/projectM-mao-alsa.desktop
 
 %files
-%doc src/libprojectM/ChangeLog
-%license src/libprojectM/COPYING
-%{_libdir}/libprojectM.so.*
+%doc README.md
+%license LICENSE.txt
+%{_bindir}/*
+%{_libdir}/libproject*.so.*
 %{_datadir}/projectM-mao/
 %{_datadir}/icons/projectM-mao.png
 
 %files devel
 %{_includedir}/*
-%{_libdir}/libprojectM.so
-%exclude %{_libdir}/*.a
-%exclude %{_libdir}/*.la
+%{_libdir}/libproject*.so
+%{_libdir}/cmake/*
 
 %files -n projectM-mao-jack
 %{_bindir}/projectM-mao-jack
