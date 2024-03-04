@@ -3,9 +3,9 @@
 # Kernel minor version
 %define kmin  6
 # Kernel patch version
-%define kpat  15
+%define kpat  19
 # RT patch version
-%define krt   22
+%define krt   24
 # package version
 %define krel  13
 
@@ -201,6 +201,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
 %changelog
+* Mon Mar 04 2024 Yann Collette <ycollette.nospam@free.fr> - 6.6.19-rt24-13
+- update to 6.6.19-rt24-13 - vanilla RT kernel
+
 * Wed Feb 07 2024 Yann Collette <ycollette.nospam@free.fr> - 6.6.15-rt22-13
 - update to 6.6.15-rt22-13 - vanilla RT kernel
 
