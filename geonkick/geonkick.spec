@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name: geonkick
-Version: 3.3.2
+Version: 3.4.0
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
 URL: https://github.com/Geonkick-Synthesizer/geonkick
@@ -50,6 +50,9 @@ The most basic examples are: kick drums, snares, hit-hats, shakers, claps, steak
 %{_datadir}/*
 
 %changelog
+* Mon Mar 04 2024 Yann Collette <ycollette.nospam@free.fr> - 3.4.0-2
+- Update to 3.4.0-2
+
 * Sat Jan 27 2024 Yann Collette <ycollette.nospam@free.fr> - 3.3.2-2
 - Update to 3.3.2-2
 
