@@ -3,7 +3,7 @@
 # Category: Tool
 
 Name: splash
-Version: 0.10.6
+Version: 0.10.8
 Release: 1%{?dist}
 Summary: Modular video-mapping software
 License: GPL-3.0-only
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source-splash.sh <tag>
-#        ./source-splash.sh 0.10.6
+#        ./source-splash.sh 0.10.8
 
 Source0: splash.tar.gz
 Source1: source-splash.sh
@@ -40,12 +40,12 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: libuuid-devel
 BuildRequires: wayland-devel
 BuildRequires: libxkbcommon-devel
+BuildRequires: glm-devel
+BuildRequires: cppzmq-devel
+BuildRequires: doctest-devel
+BuildRequires: flamegraph
 BuildRequires: desktop-file-utils
 
-# cppzmq
-# doctest
-# flamegraph
-# glm
 # hap
 # imgui
 # tracy
