@@ -4,7 +4,7 @@
 
 Name: lsp-plugins
 Summary: Linux Studio Plugins collection
-Version: 1.2.14
+Version: 1.2.15
 Release: 1%{?dist}
 License: GPL
 URL: https://github.com/sadko4u/lsp-plugins
@@ -44,6 +44,12 @@ Summary: VST2 version of %{name} plugins
 %description -n vst-%{name}
 VST2 version of %{name} plugins
 
+%package -n vst3-%{name}
+Summary: VST3 version of %{name} plugins
+
+%description -n vst3-%{name}
+VST3 version of %{name} plugins
+
 %package -n lv2-%{name}
 Summary: LV2 version of %{name} plugins
 
@@ -75,6 +81,7 @@ chrpath --delete %{buildroot}/usr/%{_lib}/lsp-plugins/*.so
 chrpath --delete %{buildroot}/usr/%{_lib}/lv2/lsp-plugins.lv2/*.so
 chrpath --delete %{buildroot}/usr/%{_lib}/vst/lsp-plugins/*.so
 chrpath --delete %{buildroot}/usr/%{_lib}/clap/*.clap
+chrpath --delete `find %{buildroot}/usr/%{_lib}/vst3/ -name "*.so"`
 
 mkdir -p %{buildroot}/usr/share/lsp-plugins/
 mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
@@ -99,10 +106,16 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %files -n vst-%{name}
 %{_libdir}/vst/*
 
+%files -n vst3-%{name}
+%{_libdir}/vst3/*
+
 %files -n clap-%{name}
 %{_libdir}/clap/*
 
 %changelog
+* Wed Mar 06 2024 Yann Collette <ycollette dot nospam at free.fr> 1.2.15-1
+- update to 1.2.15-1
+
 * Sat Dec 23 2023 Yann Collette <ycollette dot nospam at free.fr> 1.2.14-1
 - update to 1.2.14-1
 
