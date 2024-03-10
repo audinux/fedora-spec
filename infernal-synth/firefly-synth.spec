@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name: firefly-synth
-Version: 1.2.1
+Version: 1.2.2
 Release: 1%{?dist}
 Summary: Semi-modular synthesizer plugin
 License: GPL-3.0-or-later
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./synth-source.sh <PROJECT> <TAG>
-#        ./synth-source.sh firefly-synth v1.2.1
+#        ./synth-source.sh firefly-synth v1.2.2
 
 Source0: firefly-synth.tar.gz
 Source1: synth-source.sh
@@ -80,6 +80,9 @@ cp -rav dist/RELEASE/linux/*.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Sun Mar 10 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-1
+- update to 1.2.2-1
+
 * Sat Mar 09 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-1
 - update to 1.2.1-1
 
