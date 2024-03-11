@@ -143,8 +143,6 @@
 | OpenKontroller          | https://git.open-music-kontrollers.ch/~hp/ |
 | awesome-juce            | https://github.com/sudara/awesome-juce |
 | MultiMeter              | https://github.com/RealAlexZ/MultiMeter |
-| neural-amp-modeler-ui   | https://github.com/brummer10/neural-amp-modeler-ui |
-| qlcplus                 | https://github.com/mcallegari/qlcplus |
 | system76-scheduler      | https://github.com/pop-os/system76-scheduler |
 | shoopdaloop             | https://github.com/SanderVocke/shoopdaloop |
 | piper                   | https://github.com/rhasspy/piper |

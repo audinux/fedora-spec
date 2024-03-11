@@ -947,7 +947,8 @@ https://github.com/brummer10/guitarix.vst
 https://github.com/Gimmeapill/xruncounter
 https://github.com/brummer10/neural-amp-modeler-ui
 https://github.com/brummer10/ImpulseLoaderStereo.lv2
-https://github.com/dimtpap/coppwr"
+https://github.com/dimtpap/coppwr
+https://github.com/psemiletov/eko"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
