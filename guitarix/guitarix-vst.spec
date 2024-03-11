@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name: vst3-guitarix
-Version: 0.2
+Version: 0.3
 Release: 1%{?dist}
 Summary: guitarix vst3 wrapper
 License: GPL-2.0-or-later
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources:
-# ./brummer10-source.sh guitarix.vst v0.2
+# ./brummer10-source.sh guitarix.vst v0.3
 
 Source0: guitarix.vst.tar.gz
 Source1: brummer10-source.sh
@@ -60,6 +60,9 @@ cp -ra Builds/LinuxMakefile/build/Guitarix.vst3 %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Mar 11 2024 Yann Collette <ycollette.nospam@free.fr> - 0.3-1
+- update to 0.3-1
+
 * Fri Feb 23 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2-1
 - update to 0.2-1
 
