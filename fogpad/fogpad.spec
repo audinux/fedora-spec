@@ -1,11 +1,11 @@
 # Tag: Effect, Reverb
-# Type: VST3
+# Type: Plugin, VST3
 # Category: Plugin
 
-%define commit0 59077dc9bd0d4b47b6e6e84c2aa9c4e14bcea908
+%define commit0 54f8bda9c0ad8e94788144e2d2b6a2bb8c8ca85a
 
 Name: fogpad
-Version: 0.0.1
+Version: 1.0.3
 Release: 1%{?dist}
 Summary: A VST reverb effect in which the reflections can be frozen, filtered, pitch shifted and ultimately disintegrated.
 URL: https://github.com/igorski/fogpad
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./vst3-source.sh <TAG>
-# ./vst3-source.sh 5cb57b76ee5287868ba6ac6e4d69a1b99f560cdc
+#        ./vst3-source.sh v3.7.10_build_14
 
 Source0: https://github.com/igorski/fogpad/archive/%{commit0}.zip#/%{name}-%{commit0}.zip
 Source1: vst3sdk.tar.gz
@@ -73,5 +73,8 @@ cp -ra %{__cmake_builddir}/VST3/* %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Mar 16 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.3-1
+- update to 1.0.3-1
+
 * Wed Dec 07 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
