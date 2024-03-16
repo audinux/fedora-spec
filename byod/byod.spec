@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name:    BYOD
-Version: 1.2.0
+Version: 1.3.0
 Release: 1%{?dist}
 Summary: Build-your-own guitar distortion !
 License: GPL-3.0-or-later
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source_byod.sh <tag>
-#        ./source_byod.sh v1.2.0
+#        ./source_byod.sh v1.3.0
 
 Source0: BYOD.tar.gz
 Source1: source_byod.sh
@@ -54,6 +54,14 @@ Requires: %{name}
 %description -n lv2-%{name}
 LV2 version of %{name}
 
+%package -n clap-%{name}
+Summary:  CLAP version of %{name}
+License:  GPL-2.0-or-later
+Requires: %{name}
+
+%description -n clap-%{name}
+CLAP version of %{name}
+
 %prep
 %autosetup -n %{name}
 
@@ -79,13 +87,18 @@ sleep 10
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
+install -m 755 -d %{buildroot}%{_libdir}/clap/
 install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 -d %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
 install -m 755 -d %{buildroot}%{_datadir}/applications/
+install -m 755 -d %{buildroot}%{_datadir}/%{name}/manual/
 
-cp -ra %{__cmake_builddir}/BYOD_artefacts/VST3/BYOD.vst3 %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/BYOD_artefacts/LV2/BYOD.lv2 %{buildroot}%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/BYOD_artefacts/VST3/* %{buildroot}%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/BYOD_artefacts/LV2/* %{buildroot}%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/BYOD_artefacts/CLAP/* %{buildroot}%{_libdir}/clap/
 cp %{__cmake_builddir}/BYOD_artefacts/Standalone/BYOD %{buildroot}%{_bindir}/
+
+cp -ra manual/* %{buildroot}%{_datadir}/%{name}/manual/
 
 cp res/logo.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/BYOD.svg
 
@@ -115,6 +128,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_bindir}/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/BYOD.svg
+%{_datadir}/%{name}/manual/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
@@ -122,7 +136,13 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
 
+%files -n clap-%{name}
+%{_libdir}/clap/*
+
 %changelog
+* Sat Mar 16 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-1
+- update to 1.3.0-1
+
 * Wed Aug 02 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
 - update to 1.2.0-1
 
