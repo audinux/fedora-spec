@@ -12,24 +12,12 @@ fi
 REPO_LIST="https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git
 git://gabe.is-a-geek.org/git/inconcert
 https://git.ardour.org/ardour/ardour
-https://git.code.sf.net/p/guitarix/git
-https://git.code.sf.net/p/isse/code
-https://git.code.sf.net/p/jamin/code
-https://git.code.sf.net/p/kwave/code
-https://git.code.sf.net/p/mv-6pm/code
-https://git.code.sf.net/p/pure-data/pd-anywhere
-https://git.code.sf.net/p/pure-data/pd-extended
 https://github.com/pure-data/pure-data
-https://git.code.sf.net/p/qtgain/code
-https://git.code.sf.net/p/rakarrack/git
-https://git.code.sf.net/p/swami/code
-https://git.code.sf.net/p/yoshimi/code
 https://git.kernel.org/pub/scm/linux/kernel/git/clrkwllms/rt-tests
 https://git.savannah.gnu.org/git/denemo.git
 https://git.savannah.gnu.org/git/ll-plugins/azr3-jack.git
 https://git.tuxfamily.org/gitroot/non/fltk
 https://git.tuxfamily.org/gitroot/non/non
-https://git.code.sf.net/p/liblo/git
 https://repo.or.cz/juce-lv2
 https://gitlab.winehq.org/wine/wine
 http://git.drumgizmo.org/dgedit.git
@@ -44,12 +32,6 @@ https://bitbucket.org/xenakios/paulstretchplugin
 https://codeberg.org/rtcqs/rtcqs
 https://github.com/Dougal-s/Aether
 https://github.com/PortAudio/portaudio
-https://git.code.sf.net/p/backupband/code
-https://git.code.sf.net/p/djv/git
-https://git.code.sf.net/p/guvcview/git-master
-https://git.code.sf.net/p/industrializer/code
-https://git.code.sf.net/p/thmad/code
-https://git.code.sf.net/p/timewave-synthesizer/code
 https://github.com/23volts/23volts-vcv
 https://github.com/50m30n3/SO-666
 https://github.com/64MM4-KN1F3/AuntyLangtons-FREE
@@ -846,7 +828,6 @@ https://git.open-music-kontrollers.ch/~hp/synthpod
 https://github.com/rogerallen/dxsyx
 https://github.com/dcoredump/dexed.lv2
 https://github.com/fps/fps-plugins.lv2
-https://git.code.sf.net/p/rosegarden/git
 https://github.com/psemiletov/drumrox
 https://github.com/ccrma/chuck
 https://github.com/ccrma/miniAudicle
@@ -948,11 +929,33 @@ https://github.com/Gimmeapill/xruncounter
 https://github.com/brummer10/neural-amp-modeler-ui
 https://github.com/brummer10/ImpulseLoaderStereo.lv2
 https://github.com/dimtpap/coppwr
-https://github.com/psemiletov/eko"
+https://github.com/psemiletov/eko
+https://github.com/brummer10/guitarix
+https://github.com/KDE/kwave
+https://github.com/swami/swami
+https://github.com/yoshimi/yoshimi
+https://github.com/radarsat1/liblo
+https://github.com/jaswdr/guvcview
+https://github.com/kenbrant1/Timewave_Synthesizer
+https://github.com/tedfelix/rosegarden-official"
+
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
 # https://github.com/bsutherland/JuceOPLVSTi
+
+# Inaccessible on github
+# https://git.code.sf.net/p/isse/code
+# https://git.code.sf.net/p/jamin/code
+# https://git.code.sf.net/p/rakarrack/git
+# https://git.code.sf.net/p/backupband/code
+# https://git.code.sf.net/p/mv-6pm/code
+# https://git.code.sf.net/p/pure-data/pd-anywhere
+# https://git.code.sf.net/p/pure-data/pd-extended
+# https://git.code.sf.net/p/djv/git
+# https://git.code.sf.net/p/thmad/cod
+# https://git.code.sf.net/p/industrializer/code
+# https://git.code.sf.net/p/qtgain/code
 
 if [ -f git_tags_new.txt ];
 then
