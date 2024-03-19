@@ -49,7 +49,7 @@ BuildRequires: pkgconfig(lilv-0)
 
 Requires: lilv
 Requires: python3
-Requires: python3-Pillow
+Requires: python3-pillow
 Requires: python3-pyserial
 Requires: python3-tornado
 
