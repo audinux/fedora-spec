@@ -1,0 +1,32 @@
+From 2e94019e2b66fb44fdfc757d1ce62c48bc87e9c5 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Wed, 20 Mar 2024 13:45:56 +0100
+Subject: [PATCH] fix ffmpeg detection
+
+---
+ cmake/FindFFmpeg.cmake | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/cmake/FindFFmpeg.cmake b/cmake/FindFFmpeg.cmake
+index 0b93165..21a6edb 100644
+--- a/cmake/FindFFmpeg.cmake
++++ b/cmake/FindFFmpeg.cmake
+@@ -10,6 +10,7 @@ macro(FFMPEG_FIND varname shortname headername)
+     /usr/include/x86_64-linux-gnu
+     /usr/local/include
+     /usr/include/
++    /usr/include/ffmpeg
+     NO_DEFAULT_PATH
+     DOC "Location of FFMPEG Headers")
+ 
+@@ -27,6 +28,7 @@ macro(FFMPEG_FIND varname shortname headername)
+     /usr/lib/x86_64-linux-gnu
+     /usr/local/lib
+     /usr/lib
++    /usr/lib64
+     NO_DEFAULT_PATH
+     DOC "Location of FFMPEG Libs")
+ 
+-- 
+2.44.0
+
