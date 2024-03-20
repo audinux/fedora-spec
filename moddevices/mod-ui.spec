@@ -3,7 +3,7 @@
 # Category: Plugin, Graphic
 
 # Global variables for github repository
-%global commit0 78cf965e5068ac3da1d6ac90bf25be312d0043f0
+%global commit0 a1e043cb5886fb61d193fd97ec49b280e63f1a5e
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
@@ -28,7 +28,7 @@
 
 Name: mod-ui
 Version: 0.99.8.%{shortcommit0}
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPL-3.0
 Summary: Web-based interface for the MOD
 URL: https://github.com/moddevices/mod-ui
@@ -81,8 +81,12 @@ python3 setup.py install --prefix=%{_prefix} --root=%{buildroot}
 %{python3_sitelib}/mod/
 %{python3_sitelib}/mod-*.egg-info/
 %{python3_sitelib}/modtools/
-%{_datadir}/mod
+%dir %{_datadir}/mod
+%{_datadir}/mod/*
 
 %changelog
+* Tue Mar 19 2024 Yann Collette <ycollette.nospam@free.fr> - 0.99.8-2
+- update to last master
+
 * Tue Jul 27 2021 Yann Collette <ycollette.nospam@free.fr> - 0.99.8-1
 - initial spec
