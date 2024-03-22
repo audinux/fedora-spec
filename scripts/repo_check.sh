@@ -938,7 +938,8 @@ https://github.com/radarsat1/liblo
 https://github.com/jaswdr/guvcview
 https://github.com/kenbrant1/Timewave_Synthesizer
 https://github.com/tedfelix/rosegarden-official
-https://github.com/apohl79/audiogridder"
+https://github.com/apohl79/audiogridder
+https://github.com/mcallegari/qlcplus"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
