@@ -22,6 +22,7 @@ BuildRequires: qt5-qtscript-devel
 BuildRequires: qt5-qt3d-devel
 BuildRequires: qt5-qtmultimedia-devel
 BuildRequires: qt5-qtsvg-devel
+BuildRequires: qt5-qtserialport-devel
 BuildRequires: qt5-linguist
 BuildRequires: fftw-devel
 BuildRequires: libftdi-devel
