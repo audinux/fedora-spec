@@ -3,7 +3,7 @@
 # Category: Audio, Sequencer
 
 Name: mamba
-Version: 2.5
+Version: 2.6
 Release: 4%{?dist}
 Summary: Virtual Midi Keyboard for Jack Audio Connection Kit
 License: BSD
@@ -86,6 +86,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Mamba.desktop
 %{_datadir}/pixmaps/Mamba.svg
 
 %changelog
+* Sat Mar 23 2024 Yann Collette <ycollette.nospam@free.fr> - 2.6-4
+- update to 2.6-4
+
 * Fri May 19 2023 Yann Collette <ycollette.nospam@free.fr> - 2.5-4
 - update to 2.5-4
 
