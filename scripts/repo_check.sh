@@ -939,7 +939,8 @@ https://github.com/jaswdr/guvcview
 https://github.com/kenbrant1/Timewave_Synthesizer
 https://github.com/tedfelix/rosegarden-official
 https://github.com/apohl79/audiogridder
-https://github.com/mcallegari/qlcplus"
+https://github.com/mcallegari/qlcplus
+https://github.com/gregrecco67/AudiblePlanets"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
