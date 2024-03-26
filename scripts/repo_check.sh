@@ -949,7 +949,7 @@ https://git.code.sf.net/p/mv-6pm/code
 https://git.code.sf.net/p/pure-data/pd-anywhere
 https://git.code.sf.net/p/pure-data/pd-extended
 https://git.code.sf.net/p/djv/git
-https://git.code.sf.net/p/thmad/cod
+https://git.code.sf.net/p/thmad/code
 https://git.code.sf.net/p/industrializer/code
 https://git.code.sf.net/p/qtgain/code"
 
