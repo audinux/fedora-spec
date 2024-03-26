@@ -156,6 +156,10 @@ Add dead package:
 - lv2core
 - slv2
 
+Add missing zita packaes:
+- zita-audiotools-1.3.0.tar.bz2
+- zita-jacktools-1.7.1.tar.bz2
+
 ## Python package
 
 basicpitch from spotify -> https://github.com/spotify/basic-pitch
@@ -184,8 +188,6 @@ rack-v2-SynthKit    -> ../arch.mk:10: *** Could not determine CPU architecture o
 ## WIP
 
 ```
-midi2voice  -> code doesn't install correctly
-imogen      -> needs juce cmake file # DEAD
 rack-v2-RPJ -> needs a specific aarch64 patch for intrin.h
 june-21     -> package cabbage and use it to build a shipped binary
 bintracker  -> problem during chicken dependencies installation
