@@ -940,24 +940,22 @@ https://github.com/kenbrant1/Timewave_Synthesizer
 https://github.com/tedfelix/rosegarden-official
 https://github.com/apohl79/audiogridder
 https://github.com/mcallegari/qlcplus
-https://github.com/gregrecco67/AudiblePlanets"
+https://github.com/gregrecco67/AudiblePlanets
+https://git.code.sf.net/p/isse/code
+https://git.code.sf.net/p/jamin/code
+https://git.code.sf.net/p/rakarrack/git
+https://git.code.sf.net/p/backupband/code
+https://git.code.sf.net/p/mv-6pm/code
+https://git.code.sf.net/p/pure-data/pd-anywhere
+https://git.code.sf.net/p/pure-data/pd-extended
+https://git.code.sf.net/p/djv/git
+https://git.code.sf.net/p/thmad/cod
+https://git.code.sf.net/p/industrializer/code
+https://git.code.sf.net/p/qtgain/code"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
 # https://github.com/bsutherland/JuceOPLVSTi
-
-# Inaccessible on github
-# https://git.code.sf.net/p/isse/code
-# https://git.code.sf.net/p/jamin/code
-# https://git.code.sf.net/p/rakarrack/git
-# https://git.code.sf.net/p/backupband/code
-# https://git.code.sf.net/p/mv-6pm/code
-# https://git.code.sf.net/p/pure-data/pd-anywhere
-# https://git.code.sf.net/p/pure-data/pd-extended
-# https://git.code.sf.net/p/djv/git
-# https://git.code.sf.net/p/thmad/cod
-# https://git.code.sf.net/p/industrializer/code
-# https://git.code.sf.net/p/qtgain/code
 
 if [ -f git_tags_new.txt ];
 then
