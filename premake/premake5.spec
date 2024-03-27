@@ -4,7 +4,7 @@
 
 Summary: Tool for describing builds
 Name: premake5
-Version: 5.0.0alpha15
+Version: 5.0.0beta2
 Release: 1%{?dist}
 License: GPL-3.0-or-later
 URL: https://github/premake/
@@ -12,10 +12,11 @@ URL: https://github/premake/
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/premake/premake-core/archive/v5.0.0-alpha15.tar.gz#/premake5-5.0.0-alpha15.tar.gz
+Source0: https://github.com/premake/premake-core/archive/v5.0.0-beta2.tar.gz#/premake5-5.0.0-beta2.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
+BuildRequires: libuuid-devel
 
 %description
 Describe your software project with a full-featured scripting language and
@@ -23,9 +24,11 @@ let Premake write the build scripts for you. With one file your project can
 support both IDE-addicted Windows coders and Linux command-line junkies!
 
 %prep
-%autosetup -n premake-core-5.0.0-alpha15
+%autosetup -n premake-core-5.0.0-beta2
 
 %build
+
+export CFLAGS="-fPIC -include unistd.h" 
 
 %make_build -f Bootstrap.mak linux
 

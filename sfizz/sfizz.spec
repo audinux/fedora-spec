@@ -54,7 +54,9 @@ Header files for the Sfizz library.
 
 %cmake -DSFIZZ_JACK=ON \
        -DSFIZZ_USE_SYSTEM_SIMDE=ON \
+%if 0%{?fedora} <= 39
        -DSFIZZ_USE_SYSTEM_KISS_FFT=ON \
+%endif
        -DSFIZZ_USE_SYSTEM_PUGIXML=ON \
        -DSFIZZ_USE_SYSTEM_CXXOPTS=ON \
        -DSFIZZ_USE_SYSTEM_CATCH=ON \

@@ -26,8 +26,15 @@ Source1: wmgui.desktop
 Patch0: 0001-Fix-missing-library-from-wmdemo.patch
 
 BuildRequires: gcc-c++
-BuildRequires: bluez-libs-devel, gawk, bison, flex, gtk2-devel, python2-devel >= 2.4, desktop-file-utils, sed
-BuildRequires: autoconf automake
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: gawk
+BuildRequires: bison
+BuildRequires: flex
+BuildRequires: gtk2-devel
+BuildRequires: python2-devel
+BuildRequires: bluez-libs-devel
+BuildRequires: desktop-file-utils
 
 %description
 Cwiid is a library that enables your application to communicate with
@@ -73,6 +80,7 @@ input sources like the mouse and keyboard.
 %autosetup -p1 -n cwiid-%{git_commit}
 
 sed -i -e "s/CFLAGS =/CFLAGS=-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=\/usr\/lib\/rpm\/redhat\/redhat-hardened-cc1 -specs=\/usr\/lib\/rpm\/redhat\/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -I\/usr\/include\/python2.7 -I. /" defs.mak.in
+sed -i -e "s/WARNFLAGS = -Wall -W/WARNFLAGS = -Wall -W -fPIC -Wno-incompatible-pointer-types/g" defs.mak.in
 
 %ifarch aarch64
 sed -i -e "s/-m64//g" defs.mak.in
