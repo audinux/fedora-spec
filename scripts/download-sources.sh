@@ -1,7 +1,7 @@
 #!/bin/bash
 
 RELEASEVER=`cat /etc/fedora-release | cut -d' ' -f3`
-RELEASEVER=38
+RELEASEVER=39
 TMPDIR="tmp"
 
 mkdir -p $TMPDIR
