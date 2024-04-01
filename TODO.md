@@ -166,6 +166,10 @@ basicpitch from spotify -> https://github.com/spotify/basic-pitch
 spleeter from deezer -> https://github.com/Deezer/spleeter
 demucs from facebook -> https://github.com/facebookresearch/demucs
 
+## Fedora 40 to be fixed
+
+sfizz-ui -> vst3 compilation syntax error
+
 ## Fedora 39 to be fixed
 
 rack-v1-BaconMusic         -> build failure
