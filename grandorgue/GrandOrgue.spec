@@ -43,6 +43,7 @@ BuildRequires: rtaudio-devel
 BuildRequires: rtmidi-devel
 BuildRequires: portaudio-devel
 BuildRequires: yaml-cpp-devel
+BuildRequires: libcurl-devel
 BuildRequires: desktop-file-utils
 
 %description

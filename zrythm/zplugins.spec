@@ -20,6 +20,7 @@ BuildRequires: meson
 BuildRequires: lv2-devel
 BuildRequires: librsvg2-devel
 BuildRequires: libsndfile-devel
+BuildRequires: guile22-devel
 
 %description
 A collection of audio DSP LV2 plugins

@@ -187,6 +187,9 @@ sed -i -e "s|/usr/local/lib|%{_libdir}|g" src/s_path.c
 
 DEKEN_CPU=`%{SOURCE18} uname -m`
 
+# For f40 / rawhide
+export CFLAGS="-Wno-incompatible-pointer-types $CFLAGS"
+
 # now do the build, use "puredata" as the program name
 ./autogen.sh
 %configure --enable-alsa \
