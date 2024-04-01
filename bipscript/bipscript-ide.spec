@@ -3,7 +3,7 @@
 # Category: Audio, Programming
 
 Name:    bipscript-ide
-Version: 0.19
+Version: 0.20
 Release: 1%{?dist}
 Summary: An IDEA for bipscript
 URL:     https://gitlab.domainepublic.net/bipscript/ide/
@@ -15,7 +15,7 @@ Distribution: Audinux
 Source0: https://gitlab.domainepublic.net/bipscript/ide/-/archive/v%{version}/ide-v%{version}.tar.gz
 Source1: bipscript-version.h
 
-BuildRequires: gcc gcc-c++ sed
+BuildRequires: gcc gcc-c++
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtbase-gui
 BuildRequires: qt5-qtsvg-devel
@@ -82,6 +82,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/bipscript-ide.desktop
 %{_datadir}/icons/*
 
 %changelog
+* Mon Apr 01 2024 Yann Collette <ycollette.nospam@free.fr> - 0.20-1
+- update to 0.20-1
+
 * Sun Jul 30 2023 Yann Collette <ycollette.nospam@free.fr> - 0.19-1
 - update to 0.19-1
 

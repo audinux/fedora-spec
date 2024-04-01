@@ -3,7 +3,7 @@
 # Category: Audio, Programming
 
 Name:    bipscript
-Version: 0.19
+Version: 0.20
 Release: 1%{?dist}
 Summary: Audio language
 URL:     https://www.bipscript.org/
@@ -14,7 +14,7 @@ Distribution: Audinux
 
 # original tarfile can be found here:
 Source0: https://gitlab.domainepublic.net/bipscript/bipscript/-/archive/v%{version}/bipscript-v%{version}.tar.gz
-Source1: https://gitlab.domainepublic.net/bipscript/examples/-/archive/v%{version}/examples-%{version}.tar.gz
+Source1: https://gitlab.domainepublic.net/bipscript/examples/-/archive/v0.19/examples-v0.19.tar.gz
 Source2: https://gitlab.domainepublic.net/bipscript/apidocs/-/archive/v%{version}/apidocs-v%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
@@ -87,6 +87,9 @@ cp -ra apidocs/en %{buildroot}/%{_datadir}/bipscript/apidocs/
 %{_datadir}/bipscript/examples/
 
 %changelog
+* Mon Apr 01 2024 Yann Collette <ycollette.nospam@free.fr> - 0.20-1
+- update to 0.20-1
+
 * Sun Jul 30 2023 Yann Collette <ycollette.nospam@free.fr> - 0.19-1
 - update to 0.19-1
 
