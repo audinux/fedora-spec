@@ -72,6 +72,7 @@ if [ -f Makefile.svn ]; then make -f Makefile.svn; fi
 
 %build
 
+export HAVE_UNIX98=1
 %configure CXXFLAGS="$CXXFLAGS -std=c++14"
 %make_build
 

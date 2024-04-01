@@ -3,7 +3,7 @@
 # Category: Programming
 
 Name: libreproc
-Version: 14.2.0
+Version: 14.2.5
 Release: 1%{?dist}
 Summary: A cross-platform (C99/C++11) process library
 License: GPL-2.0-or-later
@@ -51,5 +51,8 @@ libreproc Development Files
 %{_libdir}/pkgconfig/*
 
 %changelog
+* Tue Mar 26 2024 Yann Collette <ycollette.nospam@free.fr> - 14.2.5-1
+- update to 14.2.5-1
+
 * Tue Oct 27 2020 Yann Collette <ycollette.nospam@free.fr> - 14.2.0-1
 - Initial build

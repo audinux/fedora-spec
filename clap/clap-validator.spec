@@ -2,6 +2,8 @@
 # Type: Devel, Plugin, CLAP
 # Category: Tool
 
+%global debug_package %{nil}
+
 Summary: An automatic CLAP validation and testing tool
 Name: clap-validator
 Version: 0.3.2
