@@ -169,25 +169,25 @@ demucs from facebook -> https://github.com/facebookresearch/demucs
 ## Fedora 40 to be fixed
 
 sfizz-ui -> vst3 compilation syntax error
+bipescript -> conversion error on f40 / rawhide
+bipescript-ide -> conversion error on f40 / rawhide
+xmonk -> conversion error on f40 / rawhide -> ticket opened
+vmpc -> error: assignment of read-only member
+uhhyouplugins -> vst3sdk build problem
+tuxguitar -> -Wincompatible-pointer-types
+toccata -> sfizz-devel missing
+yabridge -> wineg++ pb
+ts-m1n3  -> xsimd8-devel not found (xsimd-devel on f40 / rawhide)
+synthpod -> serd link pb
+swh-lv2 -> -Wimplicit-function-declaration pb
+surge-xt - arm64 -> compiler segfault
+soundux -> convertion error
+shortcircuit -> distutils missing - python 3.12
+seq66 -> rawhide - conversion error
+seq192 -> rawhide - conversion error
+remid -> implicit declaration of usleep
 
-## Fedora 39 to be fixed
-
-rack-v1-BaconMusic         -> build failure
-rack-v1-ParableInstruments -> fails since F36
-piano                      -> build failure (normal)
-
-Missing packages:
-```
-rack-v2-RPJ  - fatal error: emmintrin.h: No such file or directory
-```
-
-Various:
-```
-improviz            -> DEPRECATED
-rack-v2-EH_modules  -> ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
-rack-v2-FrankBuss   -> ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
-rack-v2-SynthKit    -> ../arch.mk:10: *** Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk.  Stop.
-```
+STOP remid
 
 ## WIP
 
