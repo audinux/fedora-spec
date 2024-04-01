@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 99061c1c0307d0c3d3861edf4eed238cac05bd4d
-%global gittag0 2.4.2
+%global commit0 bd0353a4d12d92a702b91bf1d904ffc13aab5e1b
+%global gittag0 2.4.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-ImpromptuModular
-Version: 2.4.2
+Version: 2.4.3
 Release: 2%{?dist}
 Summary: ImpromptuModular plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r ImpromptuModular_plugin/dist/ImpromptuModular/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.3-1
 - initial specfile

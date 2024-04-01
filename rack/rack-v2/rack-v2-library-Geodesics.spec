@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 160e1f93852a5a9392fdd4695edc2c0b57972d86
-%global gittag0 2.3.1
+%global commit0 61c9cca2731c0afd2fc5174ccfcd9ba8eecde623
+%global gittag0 2.3.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Geodesics
-Version: 2.3.1
+Version: 2.3.2
 Release: 2%{?dist}
 Summary: Geodesics plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r Geodesics_plugin/dist/Geodesics/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.2-1
 - initial specfile
