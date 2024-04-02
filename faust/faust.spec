@@ -3,7 +3,7 @@
 # Category: Audio, Programming
 
 Name: faust
-Version: 2.70.3
+Version: 2.72.13
 Release: 37%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
@@ -15,11 +15,12 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to get source:
-# ./faust-source.sh 2.70.3
+# ./faust-source.sh 2.72.13
 
 Source0: faust.tar.gz
 Source1: faust-backends.cmake
 Source2: faust-source.sh
+Patch0: faust-0001-add-missing-header.patch
 
 BuildRequires: gcc-c++
 BuildRequires: doxygen
@@ -119,7 +120,7 @@ Faust AUdio STreams is a functional programming language for real-time audio
 signal processing. These libraries are part of the standard Faust libraries.
 
 %prep
-%autosetup -n faust
+%autosetup -p1 -n faust
 
 cp %{SOURCE1} build
 
@@ -192,6 +193,9 @@ done
 %{_datadir}/faust/*.lib
 
 %changelog
+* Mon Apr 01 2024 Yann Collette <ycollette.nospam@free.fr> - 2.72.13-37
+- update to 2.72.13-37
+
 * Sat Jan 06 2024 Yann Collette <ycollette.nospam@free.fr> - 2.70.3-37
 - update to 2.70.3-37
 

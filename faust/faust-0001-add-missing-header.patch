@@ -1,0 +1,24 @@
+From c72bca083fe9e16535c3380e951f3b2a7b28fba8 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Mon, 1 Apr 2024 23:08:05 +0200
+Subject: [PATCH] add missing header
+
+---
+ compiler/generator/llvm/llvm_dynamic_dsp_aux.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/compiler/generator/llvm/llvm_dynamic_dsp_aux.cpp b/compiler/generator/llvm/llvm_dynamic_dsp_aux.cpp
+index 1643097..d3f17a8 100644
+--- a/compiler/generator/llvm/llvm_dynamic_dsp_aux.cpp
++++ b/compiler/generator/llvm/llvm_dynamic_dsp_aux.cpp
+@@ -43,6 +43,7 @@
+ #include <llvm/IR/LegacyPassNameParser.h>
+ #include <llvm/IR/Verifier.h>
+ #include <llvm/IR/PassManager.h>
++#include <llvm/IR/Constants.h>
+ #include <llvm/IRReader/IRReader.h>
+ #include <llvm/Linker/Linker.h>
+ #include <llvm/Support/FileSystem.h>
+-- 
+2.44.0
+
