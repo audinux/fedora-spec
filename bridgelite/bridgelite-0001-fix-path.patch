@@ -1,0 +1,34 @@
+From 0dda8e5cdb8d713f1936dd91fcaa6c6e66728e79 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Wed, 3 Apr 2024 12:55:13 +0200
+Subject: [PATCH] fix path
+
+---
+ Source/Synth/GuitarSynth.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Source/Synth/GuitarSynth.cpp b/Source/Synth/GuitarSynth.cpp
+index 143c472..94d7f8b 100644
+--- a/Source/Synth/GuitarSynth.cpp
++++ b/Source/Synth/GuitarSynth.cpp
+@@ -20,7 +20,7 @@ void GuitarSynth::setupNatural(double& progress)
+ 	audioFormatManager.registerBasicFormats();
+ 
+ 	Array<File> files;
+-	File folder(File::getSpecialLocation(File::SpecialLocationType::commonApplicationDataDirectory).getChildFile("Haventone").getChildFile("Bridgelite").getChildFile("Natural"));
++	File folder("/usr/share/Bridgelite/sound/Natural");
+ 	folder.findChildFiles(files, File::findFiles, false);
+ 
+ 	bool putFoldersFirst = false;
+@@ -56,7 +56,7 @@ void GuitarSynth::setupPerfect(double& progress)
+ 	audioFormatManager.registerBasicFormats();
+ 
+ 	Array<File> files;
+-	File folder(File::getSpecialLocation(File::SpecialLocationType::commonApplicationDataDirectory).getChildFile("Haventone").getChildFile("Bridgelite").getChildFile("Tuned"));
++	File folder("/usr/share/Bridgelite/sound/Tuned");
+ 	folder.findChildFiles(files, File::findFiles, false);
+ 
+ 	bool putFoldersFirst = false;
+-- 
+2.44.0
+
