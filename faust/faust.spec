@@ -3,7 +3,7 @@
 # Category: Audio, Programming
 
 Name: faust
-Version: 2.72.13
+Version: 2.72.14
 Release: 37%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
@@ -15,12 +15,11 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to get source:
-# ./faust-source.sh 2.72.13
+# ./faust-source.sh 2.72.14
 
 Source0: faust.tar.gz
 Source1: faust-backends.cmake
 Source2: faust-source.sh
-Patch0: faust-0001-add-missing-header.patch
 
 BuildRequires: gcc-c++
 BuildRequires: doxygen
@@ -193,6 +192,9 @@ done
 %{_datadir}/faust/*.lib
 
 %changelog
+* Tue Apr 02 2024 Yann Collette <ycollette.nospam@free.fr> - 2.72.14-37
+- update to 2.72.14-37
+
 * Mon Apr 01 2024 Yann Collette <ycollette.nospam@free.fr> - 2.72.13-37
 - update to 2.72.13-37
 
