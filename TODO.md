@@ -185,9 +185,14 @@ soundux -> convertion error
 shortcircuit -> distutils missing - python 3.12
 seq66 -> rawhide - conversion error
 seq192 -> rawhide - conversion error
-remid -> implicit declaration of usleep
+rack-v2-SurgeXTRack -> error: possibly dangling reference to a temporary [-Werror=dangling-reference]
+rack-v2-monome -> -Wincompatible-pointer-types
+rack-v2-FrankBuss -> Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk
+rack-v2-CosineKitty-Sapphire -> error: â€˜gcc_structâ€™ attribute directive ignored [-Werror=attributes]
 
-STOP remid
+carla-mao -> to fix then relaunch lmms lmms-weekly
+
+STOP - qsampler
 
 ## WIP
 
