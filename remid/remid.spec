@@ -40,7 +40,9 @@ sed -i -e "s|lib/lv2|%{_lib}/lv2|g" src/CMakeLists.txt
 
 %build
 
-%cmake
+%set_build_flags
+
+%cmake -DCMAKE_C_FLAGS="-Wno-implicit-function-declaration $CFLAGS"
 %cmake_build
 
 %install
