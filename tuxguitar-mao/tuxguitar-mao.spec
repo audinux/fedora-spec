@@ -31,7 +31,7 @@
 %define debug_package %{nil}
 
 Name: tuxguitar
-Version: 1.6.1
+Version: 1.6.2
 Release: 10%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
@@ -40,7 +40,7 @@ URL: https://github.com/helge17/tuxguitar
 Source0: https://github.com/helge17/tuxguitar/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: tuxguitar.sh
 # Source2: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
-Source2: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
+# Source2: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
 # 4.13:
 # wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.13-201909161045/swt-4.13-gtk-linux-x86_64.zip
 # 4.21:
@@ -56,6 +56,7 @@ Source4: swt-%{swt_version}-gtk-linux-x86_64.zip
 # Fedora specific default soundfont path
 Patch0: 0014-desktop.patch
 Patch1: tuxguitar-default-soundfont.patch
+Patch2: 0015-fix-prototype.patch
 
 Requires: eclipse-swt
 Requires: hicolor-icon-theme
@@ -98,6 +99,7 @@ tempo management, gp3/gp4/gp5 import and export.
 
 %patch -P 0 -p1
 %patch -P 1 -p1
+%patch -P 2 -p1
 
 # In source archive, all modules have an attribute "VERSION" set to "SNAPSHOT"
 # this attribute is set during build/delivery
@@ -109,9 +111,9 @@ find . \( -name "*.xml" -or -name "*.gradle" -or -name "*.properties" -or -name 
 sed -i "s/static final String RELEASE_NAME =.*/static final String RELEASE_NAME = (TGApplication.NAME + \" %{version}\");/" desktop/TuxGuitar/src/org/herac/tuxguitar/app/view/dialog/about/TGAboutDialog.java
 
 # Installing missing VST2 files
-unzip %{SOURCE2}
-mkdir -p desktop/build-scripts/native-modules/tuxguitar-synth-vst-linux-%{bit}/include/
-cp VST_SDK/VST2_SDK/pluginterfaces/vst2.x/* desktop/build-scripts/native-modules/tuxguitar-synth-vst-linux-%{bit}/include/
+#unzip %{SOURCE2}
+#mkdir -p desktop/build-scripts/native-modules/tuxguitar-synth-vst-linux-%{bit}/include/
+#cp VST_SDK/VST2_SDK/pluginterfaces/vst2.x/* desktop/build-scripts/native-modules/tuxguitar-synth-vst-linux-%{bit}/include/
 
 # Replace swt version
 sed -i -e "s/4.13/%{swt_version}/g" desktop/pom.xml
@@ -187,7 +189,7 @@ cp desktop/build-scripts/native-modules/%{name}-jack-linux-%{bit}/target/build/s
 
 cp desktop/build-scripts/native-modules/%{name}-synth-lv2-linux-%{bit}/target/build/share/plugins/%{name}-synth-lv2.jar %{buildroot}%{_javadir}/%{name}/
 cp desktop/build-scripts/native-modules/%{name}-fluidsynth-linux-%{bit}/target/build/share/plugins/%{name}-fluidsynth.jar %{buildroot}%{_javadir}/%{name}/
-cp desktop/build-scripts/native-modules/%{name}-synth-vst-linux-%{bit}/target/build/share/plugins/%{name}-synth-vst.jar %{buildroot}%{_javadir}/%{name}/
+#cp desktop/build-scripts/native-modules/%{name}-synth-vst-linux-%{bit}/target/build/share/plugins/%{name}-synth-vst.jar %{buildroot}%{_javadir}/%{name}/
 
 cp desktop/build-scripts/%{name}-linux-swt-%{bit}/target/%{name}-%{version}-linux-swt-%{bit}/lib/*.jar %{buildroot}%{_javadir}/%{name}/
 cp desktop/build-scripts/%{name}-linux-swt-%{bit}/target/%{name}-%{version}-linux-swt-%{bit}/lib/*.so %{buildroot}%{_jnidir}/%{name}/
@@ -195,7 +197,7 @@ cp desktop/build-scripts/%{name}-linux-swt-%{bit}/target/%{name}-%{version}-linu
 
 # clients
 mkdir -p %{buildroot}%{_libexecdir}/%{name}/
-cp desktop/build-scripts/%{name}-linux-swt-%{bit}/target/%{name}-%{version}-linux-swt-%{bit}/vst-client/tuxguitar-synth-vst.bin %{buildroot}%{_libexecdir}/%{name}/
+#cp desktop/build-scripts/%{name}-linux-swt-%{bit}/target/%{name}-%{version}-linux-swt-%{bit}/vst-client/tuxguitar-synth-vst.bin %{buildroot}%{_libexecdir}/%{name}/
 cp desktop/build-scripts/%{name}-linux-swt-%{bit}/target/%{name}-%{version}-linux-swt-%{bit}/lv2-client/tuxguitar-synth-lv2.bin %{buildroot}%{_libexecdir}/%{name}/
 
 # Install vst-client and lv2-client and set the path in these conf files
@@ -207,12 +209,12 @@ lv2.client.working.dir=/tmp/tuxguitar-lv2-client
 EOF
 
 ## /usr/share/tuxguitar/tuxguitar-synth-vst.cfg
-cat > %{buildroot}/%{_datadir}/%{name}/%{name}-synth-vst.cfg <<EOF
-vst.plugin.extensions=so;dll
-vst.plugin.client.command.so=/usr/libexec/tuxguitar/tuxguitar-synth-vst.bin,\${vst.sessionId},\${vst.serverPort},\${vst.fileName}
-vst.plugin.client.command.dll=wine,/usr/libexec/tuxguitar/vst-client.exe,\${vst.sessionId},\${vst.serverPort},\${vst.fileName}
-vst.plugin.client.working.dir=/tmp/tuxguitar-vst-client
-EOF
+#cat > %{buildroot}/%{_datadir}/%{name}/%{name}-synth-vst.cfg <<EOF
+#vst.plugin.extensions=so;dll
+#vst.plugin.client.command.so=/usr/libexec/tuxguitar/tuxguitar-synth-vst.bin,\${vst.sessionId},\${vst.serverPort},\${vst.fileName}
+#vst.plugin.client.command.dll=wine,/usr/libexec/tuxguitar/vst-client.exe,\${vst.sessionId},\${vst.serverPort},\${vst.fileName}
+#vst.plugin.client.working.dir=/tmp/tuxguitar-vst-client
+#EOF
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
@@ -231,6 +233,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Wed Apr 03 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.2-10
+- update to 1.6.2-10
+
 * Fri Feb 02 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.1-10
 - update to 1.6.1-10
 
