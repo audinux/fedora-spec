@@ -2,12 +2,12 @@
 # Type: LV2
 # Category: Synthesizer
 
-Name:    drumrox
-Version: 3.2.1
+Name: drumrox
+Version: 3.3.0
 Release: 1%{?dist}
 Summary: A hydrogen compatible drum LV2 plugin
 License: GPL-3.0-or-later
-URL:     https://github.com/psemiletov/drumrox
+URL: https://github.com/psemiletov/drumrox
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -33,7 +33,11 @@ The main goal of Drumrox is to keep it compatible with MODERN Hydrogen kit forma
 
 %build
 
-%cmake -DLV2_INSTALL_DIR:Path=%{_lib}/lv2
+%set_build_flags
+
+%cmake -DLV2_INSTALL_DIR:Path=%{_lib}/lv2 \
+       -DCMAKE_CXX_FLAGS="-Wno-implicit-function-declaration $CXXFLAGS" \
+       -DCMAKE_C_FLAGS="-Wno-implicit-function-declaration $CFLAGS"
 %cmake_build
 
 %install
@@ -46,6 +50,9 @@ The main goal of Drumrox is to keep it compatible with MODERN Hydrogen kit forma
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Apr 05 2024 Yann Collette <ycollette.nospam@free.fr> - 3.3.0-1
+- update to 3.3.0-1
+
 * Mon Jul 10 2023 Yann Collette <ycollette.nospam@free.fr> - 3.2.1-1
 - update to 3.2.1-1
 
