@@ -2,11 +2,11 @@
 # Type: Standalone, VST3, LV2
 # Category: Synthesizer
 
-%define commit0 b4c6cbe29e8bd69c65afef1e8e4db94a995abce9
+%define commit0 e68789573184c92fe9b6ae1b3139864283f7b762
 
 Name:    organ
 Version: 0.0.1
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Organ VST / LV2 plugin
 License: GPL-2.0-or-later
 URL:     https://github.com/FigBug/Organ
@@ -65,6 +65,10 @@ LV2 version of %{name}
 
 %build
 
+%set_build_flags
+export CXXFLAGS="-Wno-implicit-function-declaration $CXXFLAGS"
+export CFLAGS="-Wno-implicit-function-declaration $CFLAGS"
+
 %cmake
 %cmake_build
 
@@ -113,8 +117,11 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Apr 06 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-4
+- update to 0.0.1-4 - update to last master e68789573184c92fe9b6ae1b3139864283f7b762
+
 * Wed Sep 06 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
-- update to 0.0.1-2 - update to last master b4c6cbe29e8bd69c65afef1e8e4db94a995abce9
+- update to 0.0.1-3 - update to last master b4c6cbe29e8bd69c65afef1e8e4db94a995abce9
 
 * Sat Aug 05 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
 - update to 0.0.1-2 - fix install and update to last master - b082cd2b

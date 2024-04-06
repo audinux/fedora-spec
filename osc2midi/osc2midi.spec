@@ -11,13 +11,14 @@ Name: osc2midi
 Version: 0.2.5
 Release: 1%{?dist}
 Summary: OSC2MIDI is a highly configurable OSC to jack MIDI (and back).
-URL: https://github.com/ssj71/OSC2MIDI
 License: GPLv2+ and GPLv2 and (GPLv2+ or MIT) and GPLv3+ and MIT and LGPLv2+ and (LGPLv2+ with exceptions) and Copyright only
+URL: https://github.com/ssj71/OSC2MIDI
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/ssj71/OSC2MIDI/archive/v%{version}.tar.gz#/OSC2MIDI-%{version}.tar.gz
+Patch0: osc2midi-0001-fix-cflags.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -30,14 +31,14 @@ and the open source Android app called "Control (OSC+MIDI)" but was deliberately
 to be used with any OSC controller or target.
 
 %prep
-%autosetup -n OSC2MIDI-%{version}
-
-sed -i -e "s/CMAKE_C_FLAGS \"/CMAKE_C_FLAGS \"-fPIC /g" src/CMakeLists.txt
+%autosetup -p1 -n OSC2MIDI-%{version}
 
 %build
 
+%set_build_flags
+export CFLAGS="-Wno-incompatible-pointer-types $CFLAGS"
+
 %cmake -DCMAKE_INSTALL_LIBDIR=%{_lib} \
-       -DCMAKE_C_FLAGS=-fPIC \
        -DLIBEXEC_INSTALL_DIR=%{_libexecdir}
 
 %cmake_build

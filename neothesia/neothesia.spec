@@ -2,6 +2,8 @@
 # Type: Standalone
 # Category: MIDI, Tool
 
+%global debug_package %{nil}
+
 Name: neothesia
 Version: 0.2.1
 Release: 1%{?dist}

@@ -39,6 +39,8 @@ guienv = guiconf.Finish()
 guienv.Append(CPPFLAGS = os.environ['CXXFLAGS'])
 guienv.Append(LDFLAGS = os.environ['LDFLAGS'])
 
+env.Append(CPPFLAGS = os.environ['CXXFLAGS'])
+env.Append(LDFLAGS = os.environ['LDFLAGS'])
 env.Program('minicomputerCPU','cpu/main.c');
 
 guienv.Program('minicomputer',['editor/main.cpp','editor/Memory.cpp','editor/syntheditor.cxx']);

@@ -19,7 +19,7 @@ Source2: https://github.com/jeremysalwen/Minicomputer-LV2/archive/master.zip#/mi
 
 BuildRequires: gcc gcc-c++
 BuildRequires: scons
-BuildReauires: make
+BuildRequires: make
 BuildRequires: unzip
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
@@ -48,22 +48,20 @@ sed -i -e "/unistd/a#include<unistd.h>" editor/Memory.h
 
 unzip %{SOURCE2}
 sed -i -e "s|usr/lib/lv2|usr/%{_lib}/lv2|g" Minicomputer-LV2-master/src/Makefile
-sed -i -e "s|TTLS = minicomputer|TTLS = minicomputer.ttl|g" Minicomputer-LV2-master/src/Makefile
 sed -i -e "19i #include <pthread.h>" Minicomputer-LV2-master/src/minicomputer.c
 
 %build
 
 %set_build_flags
+export CFLAGS="-Wno-incompatible-pointer-types $CFLAGS"
+export CXXFLAGS="-Wno-incompatible-pointer-types $CXXFLAGS"
+
 scons DESTDIR="%{buildroot}" Prefix=/usr
 
 cd Minicomputer-LV2-master/src
 %make_build
 
 %install
-
-cd Minicomputer-LV2-master/src
-%make_install
-cd ../..
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 -d %{buildroot}/%{_datadir}/%{name}/doc/
@@ -75,6 +73,9 @@ cp minicomputer.xpm       %{buildroot}/%{_datadir}/pixmaps/
 cp minicomputer           %{buildroot}/%{_bindir}/
 cp minicomputerCPU        %{buildroot}/%{_bindir}/
 cp -r factoryPresets/*    %{buildroot}/%{_datadir}/%{name}/presets/
+
+cd Minicomputer-LV2-master/src
+%make_install
 
 %files
 %doc README

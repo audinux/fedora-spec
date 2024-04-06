@@ -2,6 +2,8 @@
 # Type: Plugin, CLAP
 # Category: Synthesizer
 
+%global debug_package %{nil}
+
 Summary: Frequency modulation synthesizer plugin
 Name: octasine
 Version: 0.9.0
