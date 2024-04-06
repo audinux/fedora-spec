@@ -193,6 +193,7 @@ rack-v2-CosineKitty-Sapphire -> error: â€˜gcc_structâ€™ attribute direc
 qm-vamp-plugins -> kiss_fft_double
 prelude -> sfizz-devel missing
 performer -> moc_performer.cpp:198:21: error: â€˜class Performerâ€™ has no member named â€˜loadHelpâ€™
+peaksynth-audio-plugin -> error: juce_audio_basics/juce_audio_basics.h: No such file or directory
 
 ## WIP
 
