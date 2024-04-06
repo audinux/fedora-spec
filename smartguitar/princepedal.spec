@@ -39,10 +39,10 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
 BuildRequires: webkit2gtk3-devel
-%if 0%{?fedora} >= 38
-BuildRequires: xsimd8-devel
-%else
+%if 0%{?fedora} >= 41
 BuildRequires: xsimd-devel
+%else
+BuildRequires: xsimd8-devel
 %endif
 BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: chrpath

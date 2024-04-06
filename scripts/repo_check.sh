@@ -952,7 +952,8 @@ https://git.code.sf.net/p/djv/git
 https://git.code.sf.net/p/thmad/code
 https://git.code.sf.net/p/industrializer/code
 https://git.code.sf.net/p/qtgain/code
-https://github.com/JamesStubbsEng/8ridgelite"
+https://github.com/JamesStubbsEng/8ridgelite
+https://github.com/mididings/pyliblo"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

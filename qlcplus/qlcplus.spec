@@ -43,6 +43,10 @@ introduce new features.
 
 %build
 
+%set_build_flags
+
+export CXXFLAGS="-Wno-error=template-id-cdtor $CXXFLAGS"
+
 ./translate.sh qmlui
 %qmake_qt5 CONFIG+=qmlui qlc.pro
 %make_build

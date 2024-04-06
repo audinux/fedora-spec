@@ -18,6 +18,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: extra-cmake-modules
 BuildRequires: gettext
+BuildRequires: qt5-linguist
 BuildRequires: pipewire-devel
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtdeclarative-devel

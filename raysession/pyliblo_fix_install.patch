@@ -1,0 +1,40 @@
+From 537d714b949352f2b8ccf925eff145e4c24085b7 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sat, 6 Apr 2024 14:45:19 +0200
+Subject: [PATCH] fix install
+
+---
+ setup.py | 10 ----------
+ 1 file changed, 10 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 0212933..05c41c9 100644
+--- a/setup.py
++++ b/setup.py
+@@ -9,15 +9,6 @@ setup(
+         "scripts/send_osc",
+         "scripts/dump_osc",
+     ],
+-    data_files=[
+-        (
+-            "share/man/man1",
+-            [
+-                "doc/man/send_osc.1",
+-                "doc/man/dump_osc.1",
+-            ],
+-        ),
+-    ],
+     ext_modules=cythonize(
+         [
+             Extension(
+@@ -27,7 +18,6 @@ setup(
+                 ],
+                 extra_compile_args=[
+                     "-fno-strict-aliasing",
+-                    "-Werror-implicit-function-declaration",
+                     "-Wfatal-errors",
+                 ],
+                 libraries=[
+-- 
+2.44.0
+
