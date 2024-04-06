@@ -1,0 +1,25 @@
+From 31fec5858da670ac0e72741e46648e2436613117 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sat, 6 Apr 2024 22:17:00 +0200
+Subject: [PATCH] fix cflags
+
+---
+ src/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index c60c8d3..c391e11 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 2.8)
+ 
+ project (osc2midi)
+ 
+-set(CMAKE_C_FLAGS "-Wall -g -DPREFIX='\"${CMAKE_INSTALL_PREFIX}\"'")
++set(CMAKE_C_FLAGS "-Wall -g -DPREFIX='\"${CMAKE_INSTALL_PREFIX}\"' ${CMAKE_C_FLAGS}")
+ 
+ # check for our various libraries
+ find_package(PkgConfig)
+-- 
+2.44.0
+
