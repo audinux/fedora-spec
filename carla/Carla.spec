@@ -17,6 +17,7 @@ URL: https://github.com/falkTX/Carla
 Source0: https://github.com/falkTX/Carla/archive/v%{version}.tar.gz#/Carla-%{version}.tar.gz
 Patch0: Carla-libdir.patch
 Patch1: Carla-single-libs-path.patch
+Patch2: Carla-0001-fix-prototype.patch
 
 BuildRequires: gcc
 BuildRequires: gcc-c++
@@ -41,9 +42,9 @@ BuildRequires: python3-magic
 BuildRequires: pkgconfig(liblo)
 BuildRequires: pkgconfig(zlib)
 BuildRequires: wine-devel
-BuildRequires: glibc-devel(x86-32)
-BuildRequires: wine-devel(x86-32)
-BuildRequires: libstdc++-devel(x86-32)
+# BuildRequires: glibc-devel(x86-32)
+# BuildRequires: wine-devel(x86-32)
+# BuildRequires: libstdc++-devel(x86-32)
 BuildRequires: libappstream-glib
 BuildRequires: desktop-file-utils
 
@@ -115,7 +116,13 @@ Provides: lv2-Carla-mao-devel = %{version}
 This package contains the Carla LV2 plugin.
 
 %prep
-%autosetup -p0 -n Carla-%{version}
+%setup -n Carla-%{version}
+
+%patch 0 -p0
+%patch 1 -p0
+%if 0%{?fedora} >= 41
+%patch 2 -p1
+%endif
 
 # remove windows stuff
 rm -rf data/{macos,windows}
@@ -143,10 +150,10 @@ make features
 export CFLAGS=
 export CXXFLAGS=
 export LDFLAGS=
-make win32 CC=i686-w64-mingw32-gcc CXX=i686-w64-mingw32-g++
+#make win32 CC=i686-w64-mingw32-gcc CXX=i686-w64-mingw32-g++
 make win64 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++
 
-make wine32
+#make wine32
 make wine64
 
 %install
