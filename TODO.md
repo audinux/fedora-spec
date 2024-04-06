@@ -146,6 +146,7 @@
 | system76-scheduler      | https://github.com/pop-os/system76-scheduler |
 | shoopdaloop             | https://github.com/SanderVocke/shoopdaloop |
 | piper                   | https://github.com/rhasspy/piper |
+| Ratatouille             | https://github.com/brummer10/Ratatouille.lv2 |
 
 Check the following URL: https://github.com/forart/HyMPS
 
@@ -174,10 +175,10 @@ bipescript-ide -> conversion error on f40 / rawhide
 xmonk -> conversion error on f40 / rawhide -> ticket opened
 vmpc -> error: assignment of read-only member
 uhhyouplugins -> vst3sdk build problem
-tuxguitar -> -Wincompatible-pointer-types
 toccata -> sfizz-devel missing
 yabridge -> wineg++ pb
 ts-m1n3  -> xsimd8-devel not found (xsimd-devel on f40 / rawhide)
+tsunami ->
 synthpod -> serd link pb
 swh-lv2 -> -Wimplicit-function-declaration pb
 surge-xt - arm64 -> compiler segfault
@@ -189,10 +190,9 @@ rack-v2-SurgeXTRack -> error: possibly dangling reference to a temporary [-Werro
 rack-v2-monome -> -Wincompatible-pointer-types
 rack-v2-FrankBuss -> Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk
 rack-v2-CosineKitty-Sapphire -> error: â€˜gcc_structâ€™ attribute directive ignored [-Werror=attributes]
-
-carla-mao -> to fix then relaunch lmms lmms-weekly
-
-STOP - qsampler
+qm-vamp-plugins -> kiss_fft_double
+prelude -> sfizz-devel missing
+performer -> moc_performer.cpp:198:21: error: â€˜class Performerâ€™ has no member named â€˜loadHelpâ€™
 
 ## WIP
 
