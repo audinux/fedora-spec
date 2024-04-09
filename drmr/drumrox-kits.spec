@@ -2,14 +2,14 @@
 # Type: LV2, Presets
 # Category: Synthesizer
 
-%global commit0 ddaebac3bb69327623c7a70e3ca235b49fbb3a25
+%global commit0 cecd0845bcf3aebe562e2cfa5231916301668d44
 
-Name:    drumrox-kits
+Name: drumrox-kits
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A set of drumrox drum kits
 License: GPL-3.0-or-later
-URL:     https://github.com/psemiletov/drumrox-kits
+URL: https://github.com/psemiletov/drum_sklad
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -61,8 +61,24 @@ Requires: %{name}
 %description -n %{name}-TamilMultiLayered
 TamilMultiLayered drumkit for %{name}
 
+%package -n %{name}-Wooden
+Summary:  Wooden drumkit for %{name}
+License:  GPL-3.0-or-later
+Requires: %{name}
+
+%description -n %{name}-Wooden
+Wooden drumkit for %{name}
+
+%package -n %{name}-Fricke_MFB512
+Summary:  Fricke MFB512 drumkit for %{name}
+License:  GPL-3.0-or-later
+Requires: %{name}
+
+%description -n %{name}-Fricke_MFB512
+Fricke MFB512 drumkit for %{name}
+
 %prep
-%autosetup -n %{name}-%{commit0}
+%autosetup -n drum_sklad-%{commit0}
 
 %install
 
@@ -71,12 +87,16 @@ install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Lel-PSR/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Rokton-UDS/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Tamil/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/TamilMultiLayered/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Wooden/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Fricke_MFB512/
 
 cp -ra Lel-DR8/* %{buildroot}/%{_datadir}/drumrox-kits/Lel-DR8/
 cp -ra Lel-PSR/* %{buildroot}/%{_datadir}/drumrox-kits/Lel-PSR/
 cp -ra Rokton\ UDS/* %{buildroot}/%{_datadir}/drumrox-kits/Rokton-UDS/
 cp -ra Tamil/* %{buildroot}/%{_datadir}/drumrox-kits/Tamil/
 cp -ra TamilMultiLayered/* %{buildroot}/%{_datadir}/drumrox-kits/TamilMultiLayered/
+cp -ra Wooden/* %{buildroot}/%{_datadir}/drumrox-kits/Wooden/
+cp -ra Fricke\ MFB512/* %{buildroot}/%{_datadir}/drumrox-kits/Fricke_MFB512/
 
 %files
 %doc README.md
@@ -97,6 +117,15 @@ cp -ra TamilMultiLayered/* %{buildroot}/%{_datadir}/drumrox-kits/TamilMultiLayer
 %files -n %{name}-TamilMultiLayered
 %{_datadir}/drumrox-kits/TamilMultiLayered/*
 
+%files -n %{name}-Wooden
+%{_datadir}/drumrox-kits/Wooden/*
+
+%files -n %{name}-Fricke_MFB512
+%{_datadir}/drumrox-kits/Fricke_MFB512/*
+
 %changelog
+* Tue Apr 09 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2
+
 * Sun Jul 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial build
