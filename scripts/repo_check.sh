@@ -953,7 +953,8 @@ https://git.code.sf.net/p/thmad/code
 https://git.code.sf.net/p/industrializer/code
 https://git.code.sf.net/p/qtgain/code
 https://github.com/JamesStubbsEng/8ridgelite
-https://github.com/mididings/pyliblo"
+https://github.com/mididings/pyliblo
+https://github.com/brummer10/Ratatouille.lv2"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

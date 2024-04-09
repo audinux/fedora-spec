@@ -146,7 +146,6 @@
 | system76-scheduler      | https://github.com/pop-os/system76-scheduler |
 | shoopdaloop             | https://github.com/SanderVocke/shoopdaloop |
 | piper                   | https://github.com/rhasspy/piper |
-| Ratatouille             | https://github.com/brummer10/Ratatouille.lv2 |
 
 Check the following URL: https://github.com/forart/HyMPS
 
