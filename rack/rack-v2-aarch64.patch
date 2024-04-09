@@ -1,6 +1,6 @@
-From fe4067f829f14578c4ff63d0d16f901b8eaba739 Mon Sep 17 00:00:00 2001
+From fdf81163f563756685c068e0fd7e2462968a41b0 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Tue, 31 Jan 2023 08:48:17 +0100
+Date: Tue, 9 Apr 2024 21:34:25 +0200
 Subject: [PATCH] aarch64
 
 ---
@@ -13,8 +13,7 @@ Subject: [PATCH] aarch64
  dep/speexdsp/libspeexdsp/resample_sse.h | 6 ++++--
  include/simd/common.hpp                 | 3 ++-
  src/common.cpp                          | 3 +++
- src/engine/Engine.cpp                   | 7 ++++---
- 10 files changed, 27 insertions(+), 11 deletions(-)
+ 9 files changed, 23 insertions(+), 8 deletions(-)
 
 diff --git a/arch.mk b/arch.mk
 index a2a75a3..348a9b2 100644
@@ -30,7 +29,7 @@ index a2a75a3..348a9b2 100644
  else
  $(error Could not determine CPU architecture of $(MACHINE))
 diff --git a/compile.mk b/compile.mk
-index 011b436..8a7343a 100644
+index bbda765..7b97e89 100644
 --- a/compile.mk
 +++ b/compile.mk
 @@ -35,6 +35,9 @@ ifdef ARCH_ARM64
@@ -43,7 +42,7 @@ index 011b436..8a7343a 100644
  
  ifdef ARCH_LIN
  	FLAGS += -DARCH_LIN
-@@ -97,7 +100,7 @@ build/%.m.o: %.m
+@@ -101,7 +104,7 @@ build/%.mm.o: %.mm
  build/%.bin.o: %
  	@mkdir -p $(@D)
  ifdef ARCH_LIN
@@ -160,24 +159,6 @@ index 4f2869c..1d865a1 100644
  #endif
  const std::string API_URL = "https://api.vcvrack.com";
  
-diff --git a/src/engine/Engine.cpp b/src/engine/Engine.cpp
-index 4790f26..0347faa 100644
---- a/src/engine/Engine.cpp
-+++ b/src/engine/Engine.cpp
-@@ -5,9 +5,10 @@
- #include <mutex>
- #include <atomic>
- #include <tuple>
--#if defined ARCH_X64
--	#include <pmmintrin.h>
--#endif
-+#define SIMDE_ENABLE_NATIVE_ALIASES
-+#include <simde/x86/sse3.h>
-+#include <simde/x86/sse2.h>
-+#include <simde/x86/sse.h> 
- 
- #include <engine/Engine.hpp>
- #include <settings.hpp>
 -- 
-2.39.1
+2.44.0
 
