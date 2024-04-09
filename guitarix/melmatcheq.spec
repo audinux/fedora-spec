@@ -34,6 +34,8 @@ sed -i -e "s/INSTALL_DIR =/INSTALL_DIR ?=/g" Makefile
 %build
 
 %set_build_flags
+export CXXFLAGS="-Wno-implicit-function-declaration $CXXFLAGS"
+export CFLAGS="-Wno-implicit-function-declaration $CFLAGS"
 
 %make_build INSTALL_DIR=%{_libdir}/lv2 STRIP=true
 

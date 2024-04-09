@@ -35,12 +35,14 @@ Matching Equalizer to apply EQ curve from on source to a other source.
 %build
 
 %set_build_flags
+export CXXFLAGS="-Wno-implicit-function-declaration -Wno-incompatible-pointer-types $CXXFLAGS"
+export CFLAGS="-Wno-implicit-function-declaration -Wno-incompatible-pointer-types $CFLAGS"
 
-%make_build INSTALL_DIR=%{buildroot}%{_libdir}/lv2 STRIP=true
+%make_build INSTALL_DIR=%{_libdir}/lv2 STRIP=true
 
 %install
 
-%make_install INSTALL_DIR=%{buildroot}%{_libdir}/lv2 STRIP=true
+%make_install INSTALL_DIR=%{_libdir}/lv2 STRIP=true
 
 %files
 %doc README.md

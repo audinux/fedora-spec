@@ -34,15 +34,17 @@ A simple Lv2 capture plugin
 %build
 
 %set_build_flags
+export CXXFLAGS="-Wno-incompatible-pointer-types $CXXFLAGS"
+export CFLAGS="-Wno-incompatible-pointer-types $CFLAGS"
 
 cd Xputty
 %make_build -j1
 cd ..
-%make_build INSTALL_DIR=%{buildroot}%{_libdir}/lv2 STRIP=true
+%make_build INSTALL_DIR=%{_libdir}/lv2 STRIP=true
 
 %install
 
-%make_install INSTALL_DIR=%{buildroot}%{_libdir}/lv2 STRIP=true
+%make_install INSTALL_DIR=%{_libdir}/lv2 STRIP=true
 
 %files
 %doc README.md
