@@ -194,6 +194,9 @@ qm-vamp-plugins -> kiss_fft_double
 prelude -> sfizz-devel missing
 performer -> moc_performer.cpp:198:21: error: â€˜class Performerâ€™ has no member named â€˜loadHelpâ€™
 peaksynth-audio-plugin -> error: juce_audio_basics/juce_audio_basics.h: No such file or directory
+mapmap -> src/control/OscInterface.cpp:54:25: error: invalid conversion (rawhide only)
+lv2-mephisto -> libfaust-signal-c.h:307:67: error: unknown type name â€˜STypeâ€™
+loop192 -> error: invalid conversion
 
 ## WIP
 
