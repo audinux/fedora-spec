@@ -1,5 +1,5 @@
 # Tag: Tool, AI
-# Type: Plugin, LV2, VST3, Stqndqlone
+# Type: Plugin, LV2, VST3, Standalone
 # Category: Audio, Tool
 
 Name: neuralrecord
