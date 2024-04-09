@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 3f12c70741e7ae1108d1746a64386d0ad77b282d
-%global gittag0 2.5.0
+%global commit0 dbd8aa6393e1ae5e7faa043cc7be29c4c96cbd88
+%global gittag0 2.6.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Sparkette
-Version: 2.5.0
+Version: 2.6.0
 Release: 2%{?dist}
 Summary: Sparkette plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r Sparkette_plugin/dist/Sparkette/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.0-1
 - initial specfile

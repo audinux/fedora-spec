@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 6420f2cca0e47a5cba87f214539af5d4d77260ca
-%global gittag0 2.0.11
+%global commit0 a3acddc30732700b91f27075488b914c38b9dcdf
+%global gittag0 2.0.12
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Biset
-Version: 2.0.11
+Version: 2.0.12
 Release: 2%{?dist}
 Summary: Biset plugin for Rack
 License: GPL-2.0-or-later
@@ -60,7 +60,7 @@ BuildRequires: jq
 
 %description
 Biset plugin for Rack.
-PM AM RM VCO with pitch turbulence and attraction
+Recorder / buffer playground with polyphonic playhead
 
 %prep
 %setup -n Rack
@@ -152,5 +152,5 @@ cp -r Biset_plugin/dist/Biset/* %{buildroot}%{_libexecdir}/Rack2/plugins/Biset/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.11-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.12-1
 - initial specfile
