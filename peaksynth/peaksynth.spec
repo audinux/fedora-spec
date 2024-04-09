@@ -19,7 +19,7 @@ Source1: JuceBuild.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
-BuildRequires: JUCE
+BuildRequires: JUCE61
 BuildRequires: fftw-devel
 BuildRequires: libXrandr-devel
 BuildRequires: xcb-util-cursor-devel
@@ -75,7 +75,7 @@ tar xvfz %{SOURCE1}
 
 cd PeakSynth/Builds/LinuxMakefile
 
-%make_build DEPFLAGS=-I/usr/include/JUCE-7.0.7/modules/
+%make_build DEPFLAGS=-I/usr/include/JUCE-7.0.11/modules/
 
 %install
 
