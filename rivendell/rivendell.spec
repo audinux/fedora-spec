@@ -4,7 +4,7 @@
 
 Summary: A radio automation system
 Name: rivendell
-Version: 4.1.3
+Version: 4.2.0
 Release: 1%{?dist}
 License: LGPL
 URL: https://github.com/ElvishArtisan/rivendell
@@ -19,6 +19,7 @@ BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool
 BuildRequires: python3
+BuildRequires: qt5-linguist
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: cdparanoia-devel
@@ -28,6 +29,7 @@ BuildRequires: pam-devel
 BuildRequires: soundtouch-devel
 BuildRequires: gtk-update-icon-cache
 BuildRequires: qt5-qtbase-devel
+BuildRequires: qt5-qtwebkit-devel
 BuildRequires: qt-devel
 BuildRequires: docbook-style-xsl
 BuildRequires: openssl-devel
@@ -163,6 +165,9 @@ exit 0
 %{_usr}/lib/firewalld/services/
 
 %changelog
+* Sun Apr 07 2024 Yann Collette <ycollette.nospam@free.fr> - 4.2.0-1
+- update to 4.2.0-1
+
 * Wed Jan 24 2024 Yann Collette <ycollette.nospam@free.fr> - 4.1.3-1
 - update to 4.1.3-1
 
