@@ -8,7 +8,7 @@
 %global debug_package %{nil}
 
 Name: cardinal
-Version: 23.10
+Version: 24.04
 Release: 2%{?dist}
 Summary: Virtual modular synthesizer plugin
 License: GPL-3.0-or-later
@@ -153,8 +153,6 @@ EOF
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/512x512/apps/
 install -m 644 %{SOURCE1} %{buildroot}/%{_datadir}/icons/hicolor/512x512/apps/
 
-# Remove empty file
-rm %{buildroot}%{_datadir}/%{name}/surgext/patches/README.md
 # Fix perms
 find %{buildroot}%{_datadir}/%{name} -type f -perm /a+x -exec chmod -x '{}' \+
 # Fix line endings
@@ -201,6 +199,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Thu Apr 11 2024 Yann Collette <ycollette.nospam@free.fr> - 24.04-2
+- update to 24.04-2
+
 * Tue Oct 24 2023 Yann Collette <ycollette.nospam@free.fr> - 23.10-2
 - update to 23.10-2
 
