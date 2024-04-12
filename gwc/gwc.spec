@@ -39,11 +39,14 @@ and declicking algorithms.
 %prep
 %autosetup -n %{name}-%{gwc_version}-%{gwc_subversion}
 
+sed -i -e "/CFLAGS =/d" meschach/makefile.in
+
 %build
 
 %set_build_flags
 
-export OPT_CFLAGS="$CFLAGS"
+export OPT_CFLAGS="-Wno-implicit-int -Wno-implicit-function-declaration $CFLAGS"
+export CFLAGS="-Wno-implicit-int -Wno-implicit-function-declaration $CFLAGS"
 
 %configure --enable-ogg --enable-mp3 --enable-pa
 %make_build

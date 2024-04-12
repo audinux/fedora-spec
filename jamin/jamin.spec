@@ -49,6 +49,9 @@ streams. It uses LADSPA for its backend DSP work, specifically the swh plugins.
 
 %build
 
+%set_build_flags
+export CFLAGS="-Wno-incompatible-pointer-types $CFLAGS"
+
 NOCONFIGURE=indeed ./autogen.sh
 %configure
 %make_build

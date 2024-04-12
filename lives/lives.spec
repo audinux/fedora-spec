@@ -2,6 +2,8 @@
 # Type: Standalone
 # Category: Tool, Video
 
+%global commit0 478ac9a3c863e358b39dcba9326f0a2323e07f05
+
 # Filtering of private libraries
 %global privlibs libOSC
 %global privlibs %{privlibs}|libOSC_client
@@ -24,7 +26,7 @@
 # Use 'SDL2' and 'projectM' together.
 
 Name: lives-mao
-Version: 2022.03.08
+Version: 2024.04.11
 Release: 1%{?dist}
 Summary: Video editor and VJ tool
 License: GPL-3.0-or-later AND LGPL-3.0-or-later
@@ -117,6 +119,9 @@ find . -type f -name "*.c" -exec chmod 0644 '{}' \;
 #./autogen.sh --verbose
 
 %build
+
+%set_build_flags
+export CFLAGS="-Wno-implicit-function-declaration $CFLAGS"
 
 ./autogen.sh
 
@@ -212,6 +217,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/LiVES.desktop
 %{_metainfodir}/LiVES.appdata.xml
 
 %changelog
+* Thu Apr 11 2024 Yann Collette <ycollette.nospam@free.fr> - 2024.03.11-23
+- create version 2024.04.11-23
+
 * Tue Mar 08 2022 Yann Collette <ycollette.nospam@free.fr> - 2022.03.08-23
 - create version 2022.03.08-23
 

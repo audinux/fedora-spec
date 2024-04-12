@@ -35,7 +35,12 @@ To control its behavior you have to provide a configuration file named jack-dire
 %prep
 %autosetup -n jack-director-code
 
+sed -i -e "/QMAKE_CFLAGS_RELEASE/d" jack-director.pro
+
 %build
+
+%set_build_flags
+export CFLAGS="-Wno-incompatible-pointer-types -Wno-implicit-function-declaration $CFLAGS"
 
 %qmake_qt5
 %make_build
