@@ -196,6 +196,12 @@ peaksynth-audio-plugin -> error: juce_audio_basics/juce_audio_basics.h: No such 
 mapmap -> src/control/OscInterface.cpp:54:25: error: invalid conversion (rawhide only)
 lv2-mephisto -> libfaust-signal-c.h:307:67: error: unknown type name â€˜STypeâ€™
 loop192 -> error: invalid conversion
+linvst -> 32 bits packages pb
+js80p -> vst3sdk missing
+jc303 -> Failed to checkout tag: '54d83e121545490fdbb2d3dec3ba0c1da6005dde'
+glava -> is triggering the generation of an executable stack (because it has an executable .note.GNU-stack section) - rawhide only
+lives-mao -> libunicap-devel missing on rawhide
+jack-director -> ‘return’ with a value, in function returning void [-Wreturn-mismatch]
 
 ## WIP
 
