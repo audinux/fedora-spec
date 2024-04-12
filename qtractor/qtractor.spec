@@ -91,6 +91,8 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/org.rncbc.qtractor.d
 %{_datadir}/metainfo/org.rncbc.qtractor.metainfo.xml
 %{_datadir}/qtractor/audio/metro_bar.wav
 %{_datadir}/qtractor/audio/metro_beat.wav
+%{_datadir}/qtractor/instruments/*
+%{_datadir}/qtractor/palette/*
 
 %changelog
 * Thu Apr 11 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.90-2
