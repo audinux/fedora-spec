@@ -183,7 +183,6 @@ swh-lv2 -> -Wimplicit-function-declaration pb
 surge-xt - arm64 -> compiler segfault
 soundux -> convertion error
 shortcircuit -> distutils missing - python 3.12
-seq66 -> rawhide - conversion error
 seq192 -> rawhide - conversion error
 rack-v2-SurgeXTRack -> error: possibly dangling reference to a temporary [-Werror=dangling-reference]
 rack-v2-monome -> -Wincompatible-pointer-types
