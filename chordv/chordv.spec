@@ -22,7 +22,11 @@ BuildRequires: qt5-qtsvg-devel
 BuildRequires: qt5-qtmultimedia-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
+%if 0%{?fedora} >= 40
+BuildRequires: podofo0.9-devel
+%else
 BuildRequires: podofo-devel
+%endif
 BuildRequires: libidn-devel
 BuildRequires: freetype-devel
 BuildRequires: fontconfig-devel

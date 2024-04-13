@@ -2,6 +2,8 @@
 # Type: Standalone
 # Category: Audio, Tool
 
+%global debug_package %{nil}
+
 Name: equis
 Version: 0.6.3
 Release: 1%{?dist}
@@ -14,8 +16,8 @@ Distribution: Audinux
 
 Source0: https://codeberg.org/obsoleszenz/EQUIS/archive/main.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: rust
-BuildRequires: cargo
+BuildRequires: gcc
+BuildRequires: rustup
 BuildRequires: pkgconfig(jack)
 
 %description
@@ -37,6 +39,23 @@ embed this in your own application.
 
 export RUSTFLAGS="-g -O"
 export RUST_BACKTRACE=1
+
+export CWD=`pwd`
+export RUSTUP_HOME="$CWD/rustup"
+export CARGO_HOME="$CWD/cargo"
+# rustup-init -y --default-toolchain=1.77.0-x86_64-unknown-linux-gnu
+# rustup-init -y --default-toolchain=nightly-x86_64-unknown-linux-gnu
+# source cargo/env
+# rustup target list
+# cargo build --release --bin hexosynth_jack
+
+%ifarch x86_64
+rustup-init -y --default-toolchain nightly-x86_64-unknown-linux-gnu
+%endif
+%ifarch aarch64
+rustup-init -y --default-toolchain nightly-aarch64-unknown-linux-gnu
+%endif
+source cargo/env
 
 cargo build --release
 

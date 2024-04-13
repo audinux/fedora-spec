@@ -28,6 +28,9 @@ Command line tool for showing capabilities of alsa devices
 
 %build
 
+%set_build_flags
+export CFLAGS="-Wno-implicit-function-declaration $CFLAGS"
+
 ./bootstrap
 
 %configure

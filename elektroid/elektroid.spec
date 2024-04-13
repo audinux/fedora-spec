@@ -40,6 +40,9 @@ autoreconf --install --force
 
 %build
 
+%set_build_flags
+export CFLAGS="-Wno-implicit-function-declaration $CFLAGS"
+
 %configure
 %make_build
 

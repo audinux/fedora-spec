@@ -61,6 +61,9 @@ ln -s /usr/include/openssl Modules/juce_simpleweb/openssl
 
 %build
 
+%set_build_flags
+export CXXFLAGS="-Wno-implicit-function-declaration $CXXFLAGS"
+
 CURRENT_DIR=`pwd`
 
 cd JUCE/extras/Projucer/Builds/LinuxMakefile

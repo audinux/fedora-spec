@@ -50,6 +50,7 @@ Static version of the %{name} library.
 %build
 
 %set_build_flags
+export CXXFLAGS="-include algorithm $CXXFLAGS"
 
 sh autogen.sh
 
