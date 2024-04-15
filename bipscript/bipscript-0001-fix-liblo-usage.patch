@@ -1,0 +1,25 @@
+From ad0633e8bac16a9779f3189804d09ba9679ae831 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Mon, 15 Apr 2024 12:31:06 +0200
+Subject: [PATCH] fix liblo usage
+
+---
+ src/osc/oscinput.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/osc/oscinput.cpp b/src/osc/oscinput.cpp
+index fbf165c..5ddb919 100644
+--- a/src/osc/oscinput.cpp
++++ b/src/osc/oscinput.cpp
+@@ -35,7 +35,7 @@ void osc_error(int num, const char *msg, const char *path) {
+     throw std::logic_error(mesg);
+ }
+ 
+-int osc_handler(const char *path, const char *types, lo_arg **argv, int argc, void *data,
++int osc_handler(const char *path, const char *types, lo_arg **argv, int argc, lo_message data,
+                 void *user_data) {
+     return ((Input *)user_data)->handle(path, types, argv, argc, data);
+ }
+-- 
+2.44.0
+

@@ -16,6 +16,7 @@ Distribution: Audinux
 Source0: https://gitlab.domainepublic.net/bipscript/bipscript/-/archive/v%{version}/bipscript-v%{version}.tar.gz
 Source1: https://gitlab.domainepublic.net/bipscript/examples/-/archive/v0.19/examples-v0.19.tar.gz
 Source2: https://gitlab.domainepublic.net/bipscript/apidocs/-/archive/v0.20/apidocs-v0.20.tar.gz
+Patch0: bipscript-0001-fix-liblo-usage.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -50,7 +51,7 @@ Requires: %{name}
 Examples for %{name}
 
 %prep
-%autosetup -n %{name}-v%{version}
+%autosetup -p1 -n %{name}-v%{version}
 
 mkdir examples && tar xvfz %{SOURCE1} -C examples --strip-components 1
 mkdir apidocs && tar xvfz %{SOURCE2} -C apidocs --strip-components 1
