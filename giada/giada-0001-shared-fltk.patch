@@ -1,0 +1,71 @@
+From cbdd7547567fc5512d4af9241acc2776c597e9e7 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sat, 13 Apr 2024 22:17:26 +0200
+Subject: [PATCH] patch
+
+---
+ CMakeLists.txt | 41 +++++++----------------------------------
+ 1 file changed, 7 insertions(+), 34 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index eb421f2..984fe57 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -338,39 +338,13 @@ endif()
+ find_path(LIBRARY_RTMIDI_INCLUDE_DIR RtMidi.h PATH_SUFFIXES rtmidi)
+ list(APPEND INCLUDE_DIRS ${LIBRARY_RTMIDI_INCLUDE_DIR})
+ 
+-# FLTK 
+-
+-include (ExternalProject)
+-ExternalProject_Add(
+-    fltk
+-	SOURCE_DIR ${CMAKE_SOURCE_DIR}/src/deps/fltk
+-	INSTALL_COMMAND "" # Don't install
+-	CMAKE_ARGS 
+-		-DFLTK_BUILD_TEST=OFF 
+-		-DFLTK_BUILD_EXAMPLES=OFF 
+-		-DOPTION_BUILD_HTML_DOCUMENTATION=OFF 
+-		-DOPTION_BUILD_PDF_DOCUMENTATION=OFF
+-		-DOPTION_USE_SYSTEM_ZLIB=OFF
+-		-DOPTION_USE_WAYLAND=OFF
+-)
+-ExternalProject_Get_property(fltk BINARY_DIR)
+-ExternalProject_Get_property(fltk SOURCE_DIR)
+-list(APPEND INCLUDE_DIRS ${BINARY_DIR})
+-list(APPEND INCLUDE_DIRS ${SOURCE_DIR})
+-if(DEFINED OS_WINDOWS)
+-	list(APPEND LIBRARIES "${BINARY_DIR}/lib/$<$<CONFIG:Debug>:Debug>$<$<CONFIG:Release>:Release>/fltk_images$<$<CONFIG:Debug>:d>.lib")
+-	list(APPEND LIBRARIES "${BINARY_DIR}/lib/$<$<CONFIG:Debug>:Debug>$<$<CONFIG:Release>:Release>/fltk$<$<CONFIG:Debug>:d>.lib")
+-	list(APPEND LIBRARIES "${BINARY_DIR}/lib/$<$<CONFIG:Debug>:Debug>$<$<CONFIG:Release>:Release>/fltk_z$<$<CONFIG:Debug>:d>.lib")
+-	list(APPEND LIBRARIES "${BINARY_DIR}/lib/$<$<CONFIG:Debug>:Debug>$<$<CONFIG:Release>:Release>/fltk_gl$<$<CONFIG:Debug>:d>.lib")
+-	list(APPEND LIBRARIES gdiplus)
+-elseif (DEFINED OS_MACOS)
+-	list(APPEND LIBRARIES "${BINARY_DIR}/lib/$<$<CONFIG:Debug>:Debug>$<$<CONFIG:Release>:Release>/libfltk_images.a")
+-	list(APPEND LIBRARIES "${BINARY_DIR}/lib/$<$<CONFIG:Debug>:Debug>$<$<CONFIG:Release>:Release>/libfltk.a")
+-	list(APPEND LIBRARIES "${BINARY_DIR}/lib/$<$<CONFIG:Debug>:Debug>$<$<CONFIG:Release>:Release>/libfltk_z.a")
+-else() # Linux and FreeBSD
+-	list(APPEND LIBRARIES "${BINARY_DIR}/lib/libfltk_images.a")
+-	list(APPEND LIBRARIES "${BINARY_DIR}/lib/libfltk.a")
+-	list(APPEND LIBRARIES "${BINARY_DIR}/lib/libfltk_z.a")
++# FLTK
++
++find_package(FLTK CONFIG)
++if (FLTK_FOUND)
++	list(APPEND LIBRARIES ${FLTK_LIBRARIES})
++	list(APPEND INCLUDE_DIRS ${FLTK_INCLUDE_DIR})
++	message("LibFLTK library found")
+ endif()
+ 
+ # Libsndfile
+@@ -608,7 +582,6 @@ endif()
+ # ------------------------------------------------------------------------------
+ 
+ add_executable(giada)
+-add_dependencies(giada fltk) # Wait for fltk to be ready before building Giada
+ target_compile_features(giada PRIVATE ${COMPILER_FEATURES})
+ target_sources(giada PRIVATE ${SOURCES})
+ target_compile_definitions(giada PRIVATE ${PREPROCESSOR_DEFS})
+-- 
+2.44.0
+

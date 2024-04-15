@@ -1,0 +1,205 @@
+* Tue May 18 2021 Benjamin A. Beasley <code@musicinmybrain.net> - 0.18.0.1-1
+- Update to 0.18.0.1
+- Unbundle new geompp header-only library dependency
+- Drop giada-0.17.2-missing-include-string.patch since
+  https://github.com/monocasual/giada/issues/454 was fixed
+
+* Wed May 12 2021 Benjamin A. Beasley <code@musicinmybrain.net> - 0.17.2-6
+- Move “forge” macros to the top of the spec file
+
+* Mon Apr 12 2021 Benjamin A. Beasley <code@musicinmybrain.net> - 0.17.2-5
+- Drop one more accommodation for Fedora 32
+
+* Sat Apr 10 2021 Benjamin A. Beasley <code@musicinmybrain.net> - 0.17.2-4
+- Drop workarounds for Fedora 32
+
+* Sat Apr 10 2021 Benjamin A. Beasley <code@musicinmybrain.net> - 0.17.2-3.1
+- Another Fedora 32 fix to prevent FTBFS in Koschei
+
+* Mon Mar 29 2021 Benjamin A. Beasley <code@musicinmybrain.net> - 0.17.2-3
+- Typo fix
+
+* Mon Mar 29 2021 Benjamin A. Beasley <code@musicinmybrain.net> - 0.17.2-2
+- Drop json-static workaround in Fedora 35+
+
+* Sun Mar 28 2021 Benjamin A. Beasley <code@musicinmybrain.net> - 0.17.2-1
+- New upstream version 0.17.2
+- Replace giada-0.17.1-fix-install-path.patch with setting CMAKE_INSTALL_PREFIX
+  to an unusual value
+- Switch to GitHub source tarball
+- Validate bundled rtaudio version in %%check
+- Work around arched json-static for now
+
+* Sat Mar 27 2021 Benjamin A. Beasley <code@musicinmybrain.net> - 0.17.1-5.1
+- Fix Fedora 32 compatibility
+
+* Fri Mar 26 2021 Benjamin A. Beasley <code@musicinmybrain.net> - 0.17.1-5
+- Unbundle json/“JSON for Modern C++”/nlohmann_json
+
+* Fri Feb 26 2021 Benjamin A. Beasley <code@musicinmybrain.net> - 0.17.1-4.1
+- Add Fedora 32 compatibility
+
+* Thu Feb 25 2021 Benjamin A. Beasley <code@musicinmybrain.net> - 0.17.1-4
+- Remove VST 3 SDK and JUCE from source tarball for legal reasons; disable all
+  VST support
+- Update License field to reflect the removed bundled dependencies
+- Remove stray debugging “find” commands
+
+* Tue Feb 23 2021 Benjamin A. Beasley <code@musicinmybrain.net> - 0.17.1-3
+- Add link to upstream issue for format-security patch
+- Add commentary on forked bundled rtaudio, with a link to upstream discussion
+
+* Tue Feb 23 2021 Benjamin A. Beasley <code@musicinmybrain.net> - 0.17.1-2
+- Disable VST3 on PPC64LE due to a non-obvious linker error
+
+* Mon Feb 22 2021 Benjamin A. Beasley <code@musicinmybrain.net> - 0.17.1-2
+- New upstream release 0.17.1
+- Switch to CMake build system
+- Add AppData and updated desktop file from
+  https://github.com/monocasual/giada/pull/358
+- Add virtual Provides, and update License field, for bundled dependencies
+- Update summary and description from upstream
+- Build Giada with tests, and run them at build time
+
+* Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.17.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
+* Tue Nov 24 2020 Erich Eickmeyer <erich@ericheickmeyer.com> - 0.17.0-1
+- New upstream release
+- Add CMake build system
+- VST3 support
+- Show descriptive plug-in names in Plug-in List Window
+- Resizable plug-in list
+- New persistence mechanism for Plug-ins state
+- Improved text truncation for small buttons and text boxes
+- Beautify Sample Editor window
+- Resizable plug-in list window
+- Show descriptive plug-in name in plug-in list
+- Update JUCE, version 6.0.4
+- Update Catch2 to version 2.13.2
+- Replace old filesystem functions in fs.h with std::filesystem
+- Add VST3 SDK as git submodule
+- Set minimum macOS version to 10.14
+- Statically link the MSVC runtime library on Windows
+- Avoid crash on opening plug-in list with invalid plug-ins
+- Rewind sample channels in loop.once.bar mode on bar, if still playing (fix #403)
+- Modernize log::print() function to handle std::string arguments (PR #402)
+- Fix playStatus logic for ending sample channels in loop-once-bar mode (#404)
+- Fix shrinking beats that could glitch the output (#361)
+
+* Thu Oct 08 2020 Erich Eickmeyer <erich@ericheickmeyer.com> - 0.16.4-1
+- New upstream release
+- Support for mono inputs
+- Overdub mode for Sample Channels with optional overdub protection
+- Disable record-on-signal mode when sequencer is running
+- Shift + [click on R button] kills action reading when "Treat one-shot
+  channels with actions as loops" option is on
+- Start MIDI channels automatically after action recording session
+- Fix wrong sample rate conversion when project rate != system rate
+- Fix Wrong begin/end sample markers when loading a project with samplerate != 
+  system.samplerate
+- Fix wrong MIDI learn mapping for master parameters
+- Fix BPM button disabled after audio recording session
+
+* Fri Aug 07 2020 Erich Eickmeyer <erich@ericheickmeyer.com> - 0.16.3.1-1
+- New upstream release
+- Resolves: rhbz #1863622
+
+* Sat Aug 01 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.16.3-3
+- Second attempt - Rebuilt for
+  https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
+* Mon Jul 27 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.16.3-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
+* Mon Jun 15 2020 Erich Eickmeyer <erich@ericheickmeyer.com> - 0.16.3-1
+- New upstream version
+
+* Thu Mar 26 2020 Erich Eickmeyer <erich@ericheickmeyer.com> - 0.16.2.2-1
+- New upstream version
+
+* Tue Jan 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.15.4-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
+* Thu Jul 25 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.15.4-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
+
+* Wed Jul 10 2019 Filipe Rosset <rosset.filipe@gmail.com> - 0.15.4-1
+- Update to 0.15.4 fixes rhbz#1604101 rhbz#1674963 and rhbz#1703719
+
+* Thu Jan 31 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.14.4-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
+* Fri Jul 13 2018 Fedora Release Engineering <releng@fedoraproject.org> - 0.14.4-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
+* Wed Feb 07 2018 Fedora Release Engineering <releng@fedoraproject.org> - 0.14.4-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
+* Sun Jan 07 2018 Orcan Ogetbil <oget[dot]fedora[at]gmail[dot] com> - 0.14.4-1
+- Update to 0.14.4
+
+* Wed Aug 02 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.7.0-13
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
+
+* Wed Jul 26 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.7.0-12
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
+
+* Fri Feb 10 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.7.0-11
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
+* Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 0.7.0-10
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
+* Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7.0-9
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
+
+* Sat May 02 2015 Kalev Lember <kalevlember@gmail.com> - 0.7.0-8
+- Rebuilt for GCC 5 C++11 ABI change
+
+* Thu Feb 19 2015 Rex Dieter <rdieter@fedoraproject.org> 0.7.0-7
+- Fix FTBFS (gcc5?), don't build with -Werror
+
+* Thu Feb 19 2015 Rex Dieter <rdieter@fedoraproject.org> 0.7.0-6
+- rebuild (fltk)
+
+* Sat Aug 16 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7.0-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
+
+* Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7.0-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+
+* Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7.0-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
+
+* Wed Jun 12 2013 Brendan Jones <brendan.jones.it@gmail.com> 0.7.0-2
+- Add missing libsamplerate
+
+* Wed Jun 12 2013 Brendan Jones <brendan.jones.it@gmail.com> 0.7.0-1
+- New upstream 0.7.0
+
+* Wed Feb 13 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.5.6-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
+* Thu Jan 10 2013 Brendan Jones <brendan.jones.it@gmail.com> 0.5.6-1
+- New upstream release
+
+* Tue Dec 11 2012 Brendan Jones <brendan.jones.it@gmail.com> 0.5.4-2
+- Rebuild for new rtaudio
+
+* Thu Nov 29 2012 Brendan Jones <brendan.jones.it@gmail.com> 0.5.4-1
+- New upstream, removing vst patch
+- Apply desktop translation patch from Ismael Olea
+- Remove unecessary scriptlets and add a more descriptive summary
+
+* Mon Nov 26 2012 Brendan Jones <brendan.jones.it@gmail.com> 0.5.2-4
+- Missing BR libXext-devel
+
+* Sun Nov 25 2012 Brendan Jones <brendan.jones.it@gmail.com> 0.5.2-3
+- Add missing BR rtaudio
+
+* Sun Oct 21 2012 Brendan Jones <brendan.jones.it@gmail.com> 0.5.2-2
+- correct description and URL, add make flags
+
+* Sun Oct 14 2012 Brendan Jones <brendan.jones.it@gmail.com> 0.5.2-1
+- Initial package
