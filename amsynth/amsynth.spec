@@ -4,7 +4,7 @@
 
 Summary: Software Synthesizer
 Name:    amsynth
-Version: 1.13.2
+Version: 1.13.3
 Release: 3%{?dist}
 License: GPL
 URL:     https://github.com/amsynth/amsynth
@@ -105,6 +105,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/%{name}.ap
 %{_datadir}/appdata/vst-%{name}-plugin.metainfo.xml
 
 %changelog
+* Mon Apr 15 2024 Yann Collette <ycollette dot nospam at free.fr> 1.13.3-3
+- update to 1.13.3-3
+
 * Sun Mar 12 2023 Yann Collette <ycollette dot nospam at free.fr> 1.13.2-3
 - update to 1.13.2-3
 
