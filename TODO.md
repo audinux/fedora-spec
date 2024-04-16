@@ -169,7 +169,6 @@ demucs from facebook -> https://github.com/facebookresearch/demucs
 ## Fedora 40 to be fixed
 
 sfizz-ui -> vst3 compilation syntax error
-bipescript -> conversion error on f40 / rawhide
 bipescript-ide -> conversion error on f40 / rawhide
 xmonk -> conversion error on f40 / rawhide -> ticket opened
 vmpc -> error: assignment of read-only member
