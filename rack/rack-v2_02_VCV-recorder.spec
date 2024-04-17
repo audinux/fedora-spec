@@ -10,7 +10,7 @@
 %define _lto_cflags %{nil}
 
 Name:    rack-v2-VCV-Recorder
-Version: 2.0.2
+Version: 2.0.3
 Release: 3%{?dist}
 Summary: A plugin for Rack
 License: GPL-2.0-or-later
@@ -23,7 +23,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 # ./vcv-recorder-source.sh <tag>
-# ./vcv-recorder-source.sh v2.0.2
+# ./vcv-recorder-source.sh v2.0.3
 
 Source0: Rack.tar.gz
 Source1: VCV-Recorder.tar.gz
@@ -153,6 +153,9 @@ cp -r vcv_recorder_plugin/dist/VCV-Recorder/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
+* Wed Apr 17 2024 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-3
+- update to 2.0.3-3
+
 * Tue Sep 05 2023 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-3
 - update to 2.0.2-3
 
