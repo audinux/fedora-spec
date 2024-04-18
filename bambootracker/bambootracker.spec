@@ -43,7 +43,7 @@ Music tracker for the Yamaha YM2608 (OPNA) sound chip which was used in NEC PC-8
 
 %qmake_qt5 "PREFIX=/usr" CONFIG+=release CONFIG+=use_alsa CONFIG+=use_pulse CONFIG+=use_jack Project.pro
 make qmake_all
-%make_build PREFIX=/usr CXXFLAGS="-fPIC -include utility"
+%make_build PREFIX=/usr CXXFLAGS="-fPIC -include utility $CXXFLAGS" CFLAGS="-fPIC -include string.h $CFLAGS"
 
 %install
 

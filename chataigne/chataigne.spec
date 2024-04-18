@@ -78,7 +78,7 @@ cd Builds/LinuxMakefile
 sed -i -e "s/-m64//g" Makefile
 %endif
 
-%make_build CPPFLAGS="-I$CURRENT_DIR/JUCE/modules -I$CURRENT_DIR/External/asio/asio/"
+%make_build CPPFLAGS="-I$CURRENT_DIR/JUCE/modules -I$CURRENT_DIR/External/asio/asio/ -Wno-implicit-function-declaration"
 
 %install
 
