@@ -2,12 +2,12 @@
 # Type: Language
 # Category: Audio, Synthesizer, Graphic, Programming
 
-Name:    chuck
+Name: chuck
 Summary: Real-time audio synthesis and graphics/multimedia language
-Version: 1.5.2.3
+Version: 1.5.2.4
 Release: 2%{?dist}
 License: GPL
-URL:     https://chuck.cs.princeton.edu/
+URL: https://chuck.cs.princeton.edu/
 
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA
@@ -16,8 +16,7 @@ Source0: https://github.com/ccrma/chuck/archive/refs/tags/chuck-%{version}.tar.g
 # emacs mode from: http://wiki.cs.princeton.edu/index.php/Recent_chuck-mode.el
 Source1: chuck-mode.el
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: bison
 BuildRequires: flex
@@ -86,6 +85,9 @@ cp -a %{SOURCE1} %{buildroot}%{_libdir}/xemacs/site-packages/lisp/chuck/chuck.el
 %{_libdir}/xemacs/site-packages/lisp/chuck/*
 
 %changelog
+* Fri Apr 19 2024 Yann Collette <ycollette.nospam@free.fr> - 1.5.2.4-2
+- update to 1.5.2.4-2
+
 * Sat Apr 06 2024 Yann Collette <ycollette.nospam@free.fr> - 1.5.2.3-2
 - update to 1.5.2.3-2
 

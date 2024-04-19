@@ -6,7 +6,7 @@
 git clone https://github.com/ccrma/miniAudicle
 cd miniAudicle
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz miniAudicle.tar.gz miniAudicle/*
