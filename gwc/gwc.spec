@@ -16,6 +16,9 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/AlisterH/gwc/releases/download/%{gwc_version}-%{gwc_subversion}/%{name}-%{gwc_version}-%{gwc_subversion}.tar.gz
+Patch0: gwc-0001-fix-implicite-declaration.patch
+Patch1: gwc-0002-fix-makefile.patch
+Patch2: gwc-0003-fix-initialization.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: automake
@@ -37,7 +40,7 @@ stereo, 44.1khz wave formatted file and then use GWC to apply denoising
 and declicking algorithms.
 
 %prep
-%autosetup -n %{name}-%{gwc_version}-%{gwc_subversion}
+%autosetup -p1 -n %{name}-%{gwc_version}-%{gwc_subversion}
 
 sed -i -e "/CFLAGS =/d" meschach/makefile.in
 
@@ -45,8 +48,8 @@ sed -i -e "/CFLAGS =/d" meschach/makefile.in
 
 %set_build_flags
 
-export OPT_CFLAGS="-Wno-implicit-int -Wno-implicit-function-declaration $CFLAGS"
-export CFLAGS="-Wno-implicit-int -Wno-implicit-function-declaration $CFLAGS"
+export CFLAGS="-Wno-incompatible-pointer-types $CFLAGS"
+export OPT_CFLAGS="$CFLAGS"
 
 %configure --enable-ogg --enable-mp3 --enable-pa
 %make_build

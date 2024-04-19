@@ -1,0 +1,1144 @@
+From 6c7343b447592ee8f8893972395c3020e96e6b2b Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Fri, 19 Apr 2024 21:47:14 +0200
+Subject: [PATCH] fix implicite declaration
+
+---
+ meschach/MACHINES/RS6000/machine.c |  1 -
+ meschach/arnoldi.c                 |  1 -
+ meschach/bdfactor.c                |  1 -
+ meschach/bkpfacto.c                |  1 -
+ meschach/chfactor.c                |  1 -
+ meschach/conjgrad.c                |  1 -
+ meschach/copy.c                    |  2 +-
+ meschach/dmacheps.c                |  4 +-
+ meschach/err.c                     |  3 +-
+ meschach/err.h                     |  2 +-
+ meschach/extras.c                  |  1 -
+ meschach/fft.c                     |  1 -
+ meschach/fmacheps.c                |  4 +-
+ meschach/givens.c                  |  1 -
+ meschach/hessen.c                  |  1 -
+ meschach/hsehldr.c                 |  1 -
+ meschach/init.c                    |  1 -
+ meschach/iotort.c                  |  1 -
+ meschach/iter0.c                   |  1 -
+ meschach/iternsym.c                |  1 -
+ meschach/itersym.c                 |  2 +-
+ meschach/ivecop.c                  |  1 -
+ meschach/lanczos.c                 |  1 -
+ meschach/lufactor.c                |  2 +-
+ meschach/machine.c                 |  3 +-
+ meschach/matlab.c                  |  1 -
+ meschach/matop.c                   |  1 -
+ meschach/matrixio.c                |  2 +-
+ meschach/maxint.c                  |  5 ++-
+ meschach/meminfo.c                 |  1 -
+ meschach/memory.c                  |  2 +-
+ meschach/memstat.c                 |  1 -
+ meschach/memtort.c                 |  1 -
+ meschach/mfunc.c                   |  1 -
+ meschach/mfuntort.c                |  1 -
+ meschach/norm.c                    |  1 -
+ meschach/otherio.c                 |  1 -
+ meschach/pxop.c                    |  1 -
+ meschach/qrfactor.c                |  1 -
+ meschach/schur.c                   |  2 +-
+ meschach/solve.c                   |  2 +-
+ meschach/sparse.c                  |  2 +-
+ meschach/sparseio.c                |  3 +-
+ meschach/spbkp.c                   |  2 +-
+ meschach/spchfctr.c                |  1 -
+ meschach/splufctr.c                |  1 +
+ meschach/sprow.c                   |  2 +-
+ meschach/spswap.c                  |  1 -
+ meschach/submat.c                  |  1 -
+ meschach/svd.c                     |  1 -
+ meschach/symmeig.c                 |  2 +-
+ meschach/tags                      | 66 ------------------------------
+ meschach/torture.c                 |  1 -
+ meschach/tutorial.c                |  1 -
+ meschach/update.c                  |  1 -
+ meschach/vecop.c                   |  4 +-
+ meschach/version.c                 |  2 -
+ meschach/zcopy.c                   |  1 -
+ meschach/zfunc.c                   |  1 -
+ meschach/zgivens.c                 |  1 -
+ meschach/zhessen.c                 |  1 -
+ meschach/zhsehldr.c                |  1 -
+ meschach/zlufctr.c                 |  1 -
+ meschach/zmachine.c                |  1 -
+ meschach/zmatio.c                  |  1 -
+ meschach/zmatlab.c                 |  1 -
+ meschach/zmatop.c                  |  1 -
+ meschach/zmemory.c                 |  1 -
+ meschach/znorm.c                   |  1 -
+ meschach/zqrfctr.c                 |  1 -
+ meschach/zschur.c                  |  1 -
+ meschach/zsolve.c                  |  1 -
+ meschach/ztorture.c                |  1 -
+ meschach/zvecop.c                  |  1 -
+ tap_reverb.c                       |  1 +
+ 75 files changed, 32 insertions(+), 140 deletions(-)
+
+diff --git a/meschach/MACHINES/RS6000/machine.c b/meschach/MACHINES/RS6000/machine.c
+index 15ab26f..309b736 100755
+--- a/meschach/MACHINES/RS6000/machine.c
++++ b/meschach/MACHINES/RS6000/machine.c
+@@ -30,7 +30,6 @@
+   full advantage of specialised architectures (pipelining, vector
+   processors etc).
+   */
+-static	char	*rcsid = "$Header: /usr/local/home/des/meschach/meschach/RCS/machine.c,v 1.3 1991/08/29 06:42:11 des Exp $";
+ 
+ #include	"machine.h"
+ 
+diff --git a/meschach/arnoldi.c b/meschach/arnoldi.c
+index b44b6a4..168be69 100755
+--- a/meschach/arnoldi.c
++++ b/meschach/arnoldi.c
+@@ -33,7 +33,6 @@
+ #include	"matrix2.h"
+ #include	"sparse.h"
+ 
+-static char rcsid[] = "$Id: arnoldi.c,v 1.3 1994/01/13 05:45:40 des Exp $";
+ 
+ 
+ /* arnoldi -- an implementation of the Arnoldi method */
+diff --git a/meschach/bdfactor.c b/meschach/bdfactor.c
+index b9c4bdd..28a94df 100755
+--- a/meschach/bdfactor.c
++++ b/meschach/bdfactor.c
+@@ -30,7 +30,6 @@
+   */
+ 
+ /* bdfactor.c  18/11/93 */
+-static	char	rcsid[] = "$Id: ";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/bkpfacto.c b/meschach/bkpfacto.c
+index 6c12f87..0bc4e3f 100755
+--- a/meschach/bkpfacto.c
++++ b/meschach/bkpfacto.c
+@@ -28,7 +28,6 @@
+ 	Matrix factorisation routines to work with the other matrix files.
+ */
+ 
+-static	char	rcsid[] = "$Id: bkpfacto.c,v 1.7 1994/01/13 05:45:50 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/chfactor.c b/meschach/chfactor.c
+index 0023729..30b441f 100755
+--- a/meschach/chfactor.c
++++ b/meschach/chfactor.c
+@@ -29,7 +29,6 @@
+ */
+ 
+ /* CHfactor.c 1.2 11/25/87 */
+-static	char	rcsid[] = "$Id: chfactor.c,v 1.2 1994/01/13 05:36:36 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/conjgrad.c b/meschach/conjgrad.c
+index d6161f2..2d4746f 100755
+--- a/meschach/conjgrad.c
++++ b/meschach/conjgrad.c
+@@ -48,7 +48,6 @@
+ #include	<math.h>
+ #include	"matrix.h"
+ #include	"sparse.h"
+-static char	rcsid[] = "$Id: conjgrad.c,v 1.4 1994/01/13 05:36:45 des Exp $";
+ 
+ 
+ /* #define	MAX_ITER	10000 */
+diff --git a/meschach/copy.c b/meschach/copy.c
+index b75c5ca..178ec9a 100755
+--- a/meschach/copy.c
++++ b/meschach/copy.c
+@@ -24,8 +24,8 @@
+ ***************************************************************************/
+ 
+ 
+-static	char	rcsid[] = "$Id: copy.c,v 1.2 1994/01/13 05:37:14 des Exp $";
+ #include	<stdio.h>
++#include	"MACHINES/Linux/machine.h"
+ #include	"matrix.h"
+ 
+ 
+diff --git a/meschach/dmacheps.c b/meschach/dmacheps.c
+index 2574fa9..6b83acc 100755
+--- a/meschach/dmacheps.c
++++ b/meschach/dmacheps.c
+@@ -34,7 +34,7 @@ double	x;
+     return y;	/* prevents optimisation */
+ }
+ 
+-main()
++int main()
+ {
+     static double	deps, deps1, dtmp;
+ 
+@@ -43,4 +43,6 @@ main()
+ 	deps = 0.5*deps;
+ 
+     printf("%g\n", 2.0*deps);
++
++    return 0;
+ }
+diff --git a/meschach/err.c b/meschach/err.c
+index c4f697f..f4edb32 100755
+--- a/meschach/err.c
++++ b/meschach/err.c
+@@ -28,11 +28,12 @@
+   File with basic error-handling operations
+ */
+ 
+-static	char	rcsid[] = "$Id: err.c,v 1.6 1995/01/30 14:49:14 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<setjmp.h>
+ #include	<ctype.h>
++#include	<unistd.h>
++#include	<stdlib.h>
+ #include        "err.h"
+ 
+ 
+diff --git a/meschach/err.h b/meschach/err.h
+index 8e34de4..885cda9 100755
+--- a/meschach/err.h
++++ b/meschach/err.h
+@@ -34,7 +34,7 @@
+ 
+ 
+ #include        <setjmp.h>
+-#include        "machine.h"
++#include        "MACHINES/Linux/machine.h"
+ 
+ /* Error recovery */
+ 
+diff --git a/meschach/extras.c b/meschach/extras.c
+index b67b577..b270cb7 100755
+--- a/meschach/extras.c
++++ b/meschach/extras.c
+@@ -83,7 +83,6 @@ int	len;
+ 		A[m-1][j0], A[m-1][j0+1], ..., A[m-1][j0+n-1]
+ */
+ 
+-static char	rcsid[] = "$Id: extras.c,v 1.4 1995/06/08 15:13:15 des Exp $";
+ 
+ #include	<math.h>
+ 
+diff --git a/meschach/fft.c b/meschach/fft.c
+index 01e2f8e..18bd43d 100755
+--- a/meschach/fft.c
++++ b/meschach/fft.c
+@@ -30,7 +30,6 @@
+ 	"Digital Signal Processing"
+ */
+ 
+-static char rcsid[] = "$Id: fft.c,v 1.4 1996/08/20 14:21:05 stewart Exp $";
+ 
+ #include        <stdio.h>
+ #include        <math.h>
+diff --git a/meschach/fmacheps.c b/meschach/fmacheps.c
+index 965cf16..8e604f6 100755
+--- a/meschach/fmacheps.c
++++ b/meschach/fmacheps.c
+@@ -34,7 +34,7 @@ double	x;
+     return y;	/* prevents optimisation */
+ }
+ 
+-main()
++int main()
+ {
+     static float	feps, feps1, ftmp;
+ 
+@@ -43,4 +43,6 @@ main()
+ 	feps = 0.5*feps;
+ 
+     printf("%g\n", 2.0*feps);
++
++    return 0;
+ }
+diff --git a/meschach/givens.c b/meschach/givens.c
+index 4eb0285..06527f0 100755
+--- a/meschach/givens.c
++++ b/meschach/givens.c
+@@ -34,7 +34,6 @@
+ */
+ 
+ /* givens.c 1.2 11/25/87 */
+-static	char	rcsid[] = "$Id: givens.c,v 1.3 1995/03/27 15:41:15 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/hessen.c b/meschach/hessen.c
+index e728b24..4e3c5de 100755
+--- a/meschach/hessen.c
++++ b/meschach/hessen.c
+@@ -30,7 +30,6 @@
+ 	factorisations.
+ */
+ 
+-static	char	rcsid[] = "$Id: hessen.c,v 1.2 1994/01/13 05:36:24 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	"matrix.h"
+diff --git a/meschach/hsehldr.c b/meschach/hsehldr.c
+index 85376d3..ce9193b 100755
+--- a/meschach/hsehldr.c
++++ b/meschach/hsehldr.c
+@@ -33,7 +33,6 @@
+ */
+ 
+ /* hsehldr.c 1.3 10/8/87 */
+-static	char	rcsid[] = "$Id: hsehldr.c,v 1.2 1994/01/13 05:36:29 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/init.c b/meschach/init.c
+index 449ff6c..53bf96b 100755
+--- a/meschach/init.c
++++ b/meschach/init.c
+@@ -30,7 +30,6 @@
+ 	This is to be included in the matrix.a library
+ */
+ 
+-static	char	rcsid[] = "$Id: init.c,v 1.6 1994/01/13 05:36:58 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	"matrix.h"
+diff --git a/meschach/iotort.c b/meschach/iotort.c
+index 8054863..acb1f90 100755
+--- a/meschach/iotort.c
++++ b/meschach/iotort.c
+@@ -27,7 +27,6 @@
+ /* test of I/O functions */
+ 
+ 
+-static char rcsid[] = "$Id: $";
+ 
+ #include "sparse.h"
+ #include "zmatrix.h"
+diff --git a/meschach/iter0.c b/meschach/iter0.c
+index c317c0d..7b361fc 100755
+--- a/meschach/iter0.c
++++ b/meschach/iter0.c
+@@ -40,7 +40,6 @@
+ #include        "iter.h"
+ 
+ 
+-static char rcsid[] = "$Id: iter0.c,v 1.3 1995/01/30 14:50:56 des Exp $";
+ 
+ 
+ /* standard functions */
+diff --git a/meschach/iternsym.c b/meschach/iternsym.c
+index 1a1dfa5..850b8ac 100755
+--- a/meschach/iternsym.c
++++ b/meschach/iternsym.c
+@@ -39,7 +39,6 @@
+ #include	"sparse.h"
+ #include        "iter.h"
+ 
+-static char rcsid[] = "$Header: iternsym.c,v 1.6 1995/01/30 14:53:01 des Exp $";
+ 
+ 
+ #ifdef ANSI_C
+diff --git a/meschach/itersym.c b/meschach/itersym.c
+index 7aea7f1..d32500f 100755
+--- a/meschach/itersym.c
++++ b/meschach/itersym.c
+@@ -34,12 +34,12 @@
+ 
+ #include        <stdio.h>
+ #include	<math.h>
++#include        "machine.h"
+ #include        "matrix.h"
+ #include        "matrix2.h"
+ #include	"sparse.h"
+ #include        "iter.h"
+ 
+-static char rcsid[] = "$Id: itersym.c,v 1.2 1995/01/30 14:55:54 des Exp $";
+ 
+ 
+ #ifdef ANSI_C
+diff --git a/meschach/ivecop.c b/meschach/ivecop.c
+index e63992e..fe11db8 100755
+--- a/meschach/ivecop.c
++++ b/meschach/ivecop.c
+@@ -29,7 +29,6 @@
+ #include	<stdio.h>
+ #include 	"matrix.h"
+ 
+-static	char	rcsid[] = "$Id: ivecop.c,v 1.6 1996/08/20 18:19:21 stewart Exp $";
+ 
+ static char    line[MAXLINE];
+ 
+diff --git a/meschach/lanczos.c b/meschach/lanczos.c
+index bb0a3ca..00fbfa5 100755
+--- a/meschach/lanczos.c
++++ b/meschach/lanczos.c
+@@ -34,7 +34,6 @@
+ #include	"matrix.h"
+ #include	"sparse.h"
+ 
+-static char rcsid[] = "$Id: lanczos.c,v 1.4 1994/01/13 05:28:24 des Exp $";
+ 
+ #ifdef ANSI_C
+ extern	VEC	*trieig(VEC *,VEC *,MAT *);
+diff --git a/meschach/lufactor.c b/meschach/lufactor.c
+index 4573582..3acfa60 100755
+--- a/meschach/lufactor.c
++++ b/meschach/lufactor.c
+@@ -29,10 +29,10 @@
+ */
+ 
+ /* LUfactor.c 1.5 11/25/87 */
+-static	char	rcsid[] = "$Id: lufactor.c,v 1.10 1995/05/16 17:26:44 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
++#include	"machine.h"
+ #include	"matrix.h"
+ #include        "matrix2.h"
+ 
+diff --git a/meschach/machine.c b/meschach/machine.c
+index 9d0b761..5137c6b 100755
+--- a/meschach/machine.c
++++ b/meschach/machine.c
+@@ -31,9 +31,8 @@
+   processors etc).
+   */
+ 
+-static	char	*rcsid = "$Id: machine.c,v 1.4 1994/01/13 05:28:56 des Exp $";
+ 
+-#include	"machine.h"
++#include	"MACHINES/Linux/machine.h"
+ 
+ /* __ip__ -- inner product */
+ #ifndef ANSI_C
+diff --git a/meschach/matlab.c b/meschach/matlab.c
+index 976fbb5..e3afd7d 100755
+--- a/meschach/matlab.c
++++ b/meschach/matlab.c
+@@ -36,7 +36,6 @@
+ #include        "matrix.h"
+ #include	"matlab.h"
+ 
+-static char rcsid[] = "$Id: matlab.c,v 1.8 1995/02/14 20:12:36 des Exp $";
+ 
+ /* m_save -- save matrix in ".mat" file for MATLAB
+ 	-- returns matrix to be saved */
+diff --git a/meschach/matop.c b/meschach/matop.c
+index aa76924..eb214a4 100755
+--- a/meschach/matop.c
++++ b/meschach/matop.c
+@@ -30,7 +30,6 @@
+ #include	<stdio.h>
+ #include	"matrix.h"
+ 
+-static	char	rcsid[] = "$Id: matop.c,v 1.4 1995/03/27 15:43:57 des Exp $";
+ 
+ 
+ /* m_add -- matrix addition -- may be in-situ */
+diff --git a/meschach/matrixio.c b/meschach/matrixio.c
+index c74522a..e100cc2 100755
+--- a/meschach/matrixio.c
++++ b/meschach/matrixio.c
+@@ -29,9 +29,9 @@
+ 
+ #include        <stdio.h>
+ #include        <ctype.h>
++#include        <unistd.h>
+ #include        "matrix.h"
+ 
+-static char rcsid[] = "$Id: matrixio.c,v 1.4 1994/01/13 05:31:10 des Exp $";
+ 
+ 
+ /* local variables */
+diff --git a/meschach/maxint.c b/meschach/maxint.c
+index b0282ee..417eb12 100755
+--- a/meschach/maxint.c
++++ b/meschach/maxint.c
+@@ -23,8 +23,9 @@
+ **
+ ***************************************************************************/
+ 
++#include <stdio.h>
+ 
+-main()
++int main()
+ {
+     int		i, old_i;
+ 
+@@ -35,4 +36,6 @@ main()
+ 	i = (i << 1) | 1;
+     }
+     printf("%d\n", old_i);
++
++    return 0;
+ }
+diff --git a/meschach/meminfo.c b/meschach/meminfo.c
+index b0d0755..e8ec162 100755
+--- a/meschach/meminfo.c
++++ b/meschach/meminfo.c
+@@ -42,7 +42,6 @@
+ #include  "iter.h"
+ #endif
+ 
+-static char rcsid[] = "$Id: meminfo.c,v 1.1 1994/01/13 05:31:39 des Exp $";
+ 
+ /* this array is defined further in this file */
+ extern MEM_CONNECT mem_connect[MEM_CONNECT_MAX_LISTS];
+diff --git a/meschach/memory.c b/meschach/memory.c
+index 1b15763..ec416ba 100755
+--- a/meschach/memory.c
++++ b/meschach/memory.c
+@@ -26,10 +26,10 @@
+ 
+ /* memory.c 1.3 11/25/87 */
+ 
++#include 	"machine.h"
+ #include 	"matrix.h"
+ 
+ 
+-static	char	rcsid[] = "$Id: memory.c,v 1.13 1994/04/05 02:10:37 des Exp $";
+ 
+ /* m_get -- gets an mxn matrix (in MAT form) by dynamic memory allocation
+ 	-- normally ALL matrices should be obtained this way
+diff --git a/meschach/memstat.c b/meschach/memstat.c
+index 9d3fd62..ba0261d 100755
+--- a/meschach/memstat.c
++++ b/meschach/memstat.c
+@@ -40,7 +40,6 @@
+ #include  "iter.h"
+ #endif
+ 
+-static char rcsid[] = "$Id: memstat.c,v 1.1 1994/01/13 05:32:44 des Exp $";
+ 
+ /* global variable */
+ 
+diff --git a/meschach/memtort.c b/meschach/memtort.c
+index 58c9c03..e476ecb 100755
+--- a/meschach/memtort.c
++++ b/meschach/memtort.c
+@@ -28,7 +28,6 @@
+   Tests for mem_info.c functions
+   */
+ 
+-static char rcsid[] = "$Id: $";
+ 
+ #include        <stdio.h>
+ #include        <math.h>
+diff --git a/meschach/mfunc.c b/meschach/mfunc.c
+index 148d9b0..5fd1cf6 100755
+--- a/meschach/mfunc.c
++++ b/meschach/mfunc.c
+@@ -35,7 +35,6 @@
+ #include "matrix.h"
+ #include "matrix2.h"
+ 
+-static char	rcsid[] = "$Id: mfunc.c,v 1.2 1994/11/01 05:57:56 des Exp $";
+ 
+ 
+ 
+diff --git a/meschach/mfuntort.c b/meschach/mfuntort.c
+index edc0dae..bcecd0e 100755
+--- a/meschach/mfuntort.c
++++ b/meschach/mfuntort.c
+@@ -26,7 +26,6 @@
+ 
+ /* mfuntort.c,  10/11/93 */
+ 
+-static char rcsid[] = "$Id: mfuntort.c,v 1.2 1994/01/14 01:08:06 des Exp $";
+ 
+ #include        <stdio.h>
+ #include        <math.h>
+diff --git a/meschach/norm.c b/meschach/norm.c
+index 9e81e3b..75b5806 100755
+--- a/meschach/norm.c
++++ b/meschach/norm.c
+@@ -27,7 +27,6 @@
+ /*
+ 	A collection of functions for computing norms: scaled and unscaled
+ */
+-static	char	rcsid[] = "$Id: norm.c,v 1.6 1994/01/13 05:34:35 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/otherio.c b/meschach/otherio.c
+index 1a60cf4..2abf30c 100755
+--- a/meschach/otherio.c
++++ b/meschach/otherio.c
+@@ -28,7 +28,6 @@
+ 	File for doing assorted I/O operations not invlolving
+ 	MAT/VEC/PERM objects
+ */
+-static	char	rcsid[] = "$Id: otherio.c,v 1.2 1994/01/13 05:34:52 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<ctype.h>
+diff --git a/meschach/pxop.c b/meschach/pxop.c
+index bbf71f1..4214499 100755
+--- a/meschach/pxop.c
++++ b/meschach/pxop.c
+@@ -30,7 +30,6 @@
+ #include	<stdio.h>
+ #include	"matrix.h"
+ 
+-static	char	rcsid[] = "$Id: pxop.c,v 1.6 1995/06/08 14:57:11 des Exp $";
+ 
+ /**********************************************************************
+ Note: A permutation is often interpreted as a matrix
+diff --git a/meschach/qrfactor.c b/meschach/qrfactor.c
+index 2144504..58a253d 100755
+--- a/meschach/qrfactor.c
++++ b/meschach/qrfactor.c
+@@ -38,7 +38,6 @@
+ */
+ 
+ 
+-static	char	rcsid[] = "$Id: qrfactor.c,v 1.5 1994/01/13 05:35:07 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/schur.c b/meschach/schur.c
+index bdbca12..6570a7a 100755
+--- a/meschach/schur.c
++++ b/meschach/schur.c
+@@ -32,11 +32,11 @@
+ 
+ #include	<stdio.h>
+ #include	<math.h>
++#include        "machine.h"
+ #include	"matrix.h"
+ #include        "matrix2.h"
+ 
+ 
+-static char rcsid[] = "$Id: schur.c,v 1.7 1994/03/17 05:36:53 des Exp $";
+ 
+ 
+ 
+diff --git a/meschach/solve.c b/meschach/solve.c
+index 2006cb0..1903469 100755
+--- a/meschach/solve.c
++++ b/meschach/solve.c
+@@ -29,10 +29,10 @@
+ */
+ 
+ /* solve.c 1.2 11/25/87 */
+-static	char	rcsid[] = "$Id: solve.c,v 1.3 1994/01/13 05:29:57 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
++#include        "MACHINES/Linux/machine.h"
+ #include        "matrix2.h"
+ 
+ 
+diff --git a/meschach/sparse.c b/meschach/sparse.c
+index 27366f2..b6e1728 100755
+--- a/meschach/sparse.c
++++ b/meschach/sparse.c
+@@ -31,10 +31,10 @@
+ #include	<stdio.h>
+ #include	<math.h>
+ #include        <stdlib.h>
++#include	"MACHINES/Linux/machine.h"
+ #include	"sparse.h"
+ 
+ 
+-static char	rcsid[] = "$Id: sparse.c,v 1.10 1994/03/08 05:46:07 des Exp $";
+ 
+ #define	MINROWLEN	10
+ 
+diff --git a/meschach/sparseio.c b/meschach/sparseio.c
+index c4003b1..b52b0cb 100755
+--- a/meschach/sparseio.c
++++ b/meschach/sparseio.c
+@@ -30,9 +30,10 @@
+ */
+ 
+ #include        <stdio.h>
++#include        <unistd.h>
++#include        "MACHINES/Linux/machine.h"
+ #include        "sparse.h"
+ 
+-static char rcsid[] = "$Id: sparseio.c,v 1.4 1994/01/13 05:34:25 des Exp $";
+ 
+ 
+ 
+diff --git a/meschach/spbkp.c b/meschach/spbkp.c
+index f95818c..09b38cd 100755
+--- a/meschach/spbkp.c
++++ b/meschach/spbkp.c
+@@ -31,10 +31,10 @@
+   Radical revision completed Mon 07th Dec 1992, 10:59:57 AM
+ */
+ 
+-static	char	rcsid[] = "$Id: spbkp.c,v 1.6 1996/08/20 19:53:10 stewart Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
++#include        "MACHINES/Linux/machine.h"
+ #include        "sparse2.h"
+ 
+ 
+diff --git a/meschach/spchfctr.c b/meschach/spchfctr.c
+index 9ac9b0a..071f666 100755
+--- a/meschach/spchfctr.c
++++ b/meschach/spchfctr.c
+@@ -30,7 +30,6 @@
+ 
+ */
+ 
+-static char	rcsid[] = "$Id: spchfctr.c,v 1.5 1996/08/20 19:45:33 stewart Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/splufctr.c b/meschach/splufctr.c
+index 7b9954e..746c5b2 100755
+--- a/meschach/splufctr.c
++++ b/meschach/splufctr.c
+@@ -31,6 +31,7 @@
+ 
+ #include	<stdio.h>
+ #include	<math.h>
++#include        "MACHINES/Linux/machine.h"
+ #include        "sparse2.h"
+ 
+ 
+diff --git a/meschach/sprow.c b/meschach/sprow.c
+index 57d2ea5..792770b 100755
+--- a/meschach/sprow.c
++++ b/meschach/sprow.c
+@@ -31,10 +31,10 @@
+ #include	<stdio.h>
+ #include	<math.h>
+ #include        <stdlib.h>
++#include	"MACHINES/Linux/machine.h"
+ #include	"sparse.h"
+ 
+ 
+-static char	rcsid[] = "$Id: sprow.c,v 1.1 1994/01/13 05:35:36 des Exp $";
+ 
+ #define	MINROWLEN	10
+ 
+diff --git a/meschach/spswap.c b/meschach/spswap.c
+index 633ef98..0fac667 100755
+--- a/meschach/spswap.c
++++ b/meschach/spswap.c
+@@ -30,7 +30,6 @@
+ 	to use Karen George's suggestion to use unordered rows
+ */
+ 
+-static	char	rcsid[] = "$Id: spswap.c,v 1.3 1994/01/13 05:44:43 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/submat.c b/meschach/submat.c
+index a24df62..d6b6df3 100755
+--- a/meschach/submat.c
++++ b/meschach/submat.c
+@@ -29,7 +29,6 @@
+ #include	<stdio.h>
+ #include	"matrix.h"
+ 
+-static	char	rcsid[] = "$Id: submat.c,v 1.2 1994/01/13 05:28:12 des Exp $";
+ 
+ 
+ /* get_col -- gets a specified column of a matrix and retruns it as a vector */
+diff --git a/meschach/svd.c b/meschach/svd.c
+index f84a994..de3f9b1 100755
+--- a/meschach/svd.c
++++ b/meschach/svd.c
+@@ -34,7 +34,6 @@
+ #include        "matrix2.h"
+ 
+ 
+-static char rcsid[] = "$Id: svd.c,v 1.7 1995/09/08 14:45:43 des Exp $";
+ 
+ 
+ 
+diff --git a/meschach/symmeig.c b/meschach/symmeig.c
+index f2bb8a0..467431b 100755
+--- a/meschach/symmeig.c
++++ b/meschach/symmeig.c
+@@ -30,11 +30,11 @@
+ 
+ #include	<stdio.h>
+ #include	<math.h>
++#include        "machine.h"
+ #include	"matrix.h"
+ #include        "matrix2.h"
+ 
+ 
+-static char rcsid[] = "$Id: symmeig.c,v 1.6 1995/03/27 15:45:55 des Exp $";
+ 
+ 
+ 
+diff --git a/meschach/tags b/meschach/tags
+index bc095fb..4503c05 100755
+--- a/meschach/tags
++++ b/meschach/tags
+@@ -492,72 +492,6 @@ px_vec	pxop.c	/^VEC	*px_vec(px,vector,out)$/;"	f
+ px_zvec	zvecop.c	/^ZVEC	*px_zvec(px,vector,out)$/;"	f
+ pxinv_vec	pxop.c	/^VEC	*pxinv_vec(px,x,out)$/;"	f
+ pxinv_zvec	zvecop.c	/^ZVEC	*pxinv_zvec(px,x,out)$/;"	f
+-rcsid	arnoldi.c	/^static char rcsid[] = "$Id: arnoldi.c,v 1.3 1994\/01\/13 05:45:40 des Exp $";$/;"	v	file:
+-rcsid	bdfactor.c	/^static	char	rcsid[] = "$Id: ";$/;"	v	file:
+-rcsid	bkpfacto.c	/^static	char	rcsid[] = "$Id: bkpfacto.c,v 1.7 1994\/01\/13 05:45:50 des Exp $";$/;"	v	file:
+-rcsid	chfactor.c	/^static	char	rcsid[] = "$Id: chfactor.c,v 1.2 1994\/01\/13 05:36:36 des Exp $";$/;"	v	file:
+-rcsid	conjgrad.c	/^static char	rcsid[] = "$Id: conjgrad.c,v 1.4 1994\/01\/13 05:36:45 des Exp $";$/;"	v	file:
+-rcsid	copy.c	/^static	char	rcsid[] = "$Id: copy.c,v 1.2 1994\/01\/13 05:37:14 des Exp $";$/;"	v	file:
+-rcsid	err.c	/^static	char	rcsid[] = "$Id: err.c,v 1.6 1995\/01\/30 14:49:14 des Exp $";$/;"	v	file:
+-rcsid	extras.c	/^static char	rcsid[] = "$Id: extras.c,v 1.4 1995\/06\/08 15:13:15 des Exp $";$/;"	v	file:
+-rcsid	fft.c	/^static char rcsid[] = "$Id: fft.c,v 1.4 1996\/08\/20 14:21:05 stewart Exp $";$/;"	v	file:
+-rcsid	givens.c	/^static	char	rcsid[] = "$Id: givens.c,v 1.3 1995\/03\/27 15:41:15 des Exp $";$/;"	v	file:
+-rcsid	hessen.c	/^static	char	rcsid[] = "$Id: hessen.c,v 1.2 1994\/01\/13 05:36:24 des Exp $";$/;"	v	file:
+-rcsid	hsehldr.c	/^static	char	rcsid[] = "$Id: hsehldr.c,v 1.2 1994\/01\/13 05:36:29 des Exp $";$/;"	v	file:
+-rcsid	init.c	/^static	char	rcsid[] = "$Id: init.c,v 1.6 1994\/01\/13 05:36:58 des Exp $";$/;"	v	file:
+-rcsid	iotort.c	/^static char rcsid[] = "$Id: $";$/;"	v	file:
+-rcsid	iter0.c	/^static char rcsid[] = "$Id: iter0.c,v 1.3 1995\/01\/30 14:50:56 des Exp $";$/;"	v	file:
+-rcsid	iternsym.c	/^static char rcsid[] = "$Header: iternsym.c,v 1.6 1995\/01\/30 14:53:01 des Exp $";$/;"	v	file:
+-rcsid	itersym.c	/^static char rcsid[] = "$Id: itersym.c,v 1.2 1995\/01\/30 14:55:54 des Exp $";$/;"	v	file:
+-rcsid	ivecop.c	/^static	char	rcsid[] = "$Id: ivecop.c,v 1.6 1996\/08\/20 18:19:21 stewart Exp $";$/;"	v	file:
+-rcsid	lanczos.c	/^static char rcsid[] = "$Id: lanczos.c,v 1.4 1994\/01\/13 05:28:24 des Exp $";$/;"	v	file:
+-rcsid	lufactor.c	/^static	char	rcsid[] = "$Id: lufactor.c,v 1.10 1995\/05\/16 17:26:44 des Exp $";$/;"	v	file:
+-rcsid	machine.c	/^static	char	*rcsid = "$Id: machine.c,v 1.4 1994\/01\/13 05:28:56 des Exp $";$/;"	v	file:
+-rcsid	matlab.c	/^static char rcsid[] = "$Id: matlab.c,v 1.8 1995\/02\/14 20:12:36 des Exp $";$/;"	v	file:
+-rcsid	matop.c	/^static	char	rcsid[] = "$Id: matop.c,v 1.4 1995\/03\/27 15:43:57 des Exp $";$/;"	v	file:
+-rcsid	matrixio.c	/^static char rcsid[] = "$Id: matrixio.c,v 1.4 1994\/01\/13 05:31:10 des Exp $";$/;"	v	file:
+-rcsid	meminfo.c	/^static char rcsid[] = "$Id: meminfo.c,v 1.1 1994\/01\/13 05:31:39 des Exp $";$/;"	v	file:
+-rcsid	memory.c	/^static	char	rcsid[] = "$Id: memory.c,v 1.13 1994\/04\/05 02:10:37 des Exp $";$/;"	v	file:
+-rcsid	memstat.c	/^static char rcsid[] = "$Id: memstat.c,v 1.1 1994\/01\/13 05:32:44 des Exp $";$/;"	v	file:
+-rcsid	memtort.c	/^static char rcsid[] = "$Id: $";$/;"	v	file:
+-rcsid	mfunc.c	/^static char	rcsid[] = "$Id: mfunc.c,v 1.2 1994\/11\/01 05:57:56 des Exp $";$/;"	v	file:
+-rcsid	mfuntort.c	/^static char rcsid[] = "$Id: mfuntort.c,v 1.2 1994\/01\/14 01:08:06 des Exp $";$/;"	v	file:
+-rcsid	norm.c	/^static	char	rcsid[] = "$Id: norm.c,v 1.6 1994\/01\/13 05:34:35 des Exp $";$/;"	v	file:
+-rcsid	otherio.c	/^static	char	rcsid[] = "$Id: otherio.c,v 1.2 1994\/01\/13 05:34:52 des Exp $";$/;"	v	file:
+-rcsid	pxop.c	/^static	char	rcsid[] = "$Id: pxop.c,v 1.6 1995\/06\/08 14:57:11 des Exp $";$/;"	v	file:
+-rcsid	qrfactor.c	/^static	char	rcsid[] = "$Id: qrfactor.c,v 1.5 1994\/01\/13 05:35:07 des Exp $";$/;"	v	file:
+-rcsid	schur.c	/^static char rcsid[] = "$Id: schur.c,v 1.7 1994\/03\/17 05:36:53 des Exp $";$/;"	v	file:
+-rcsid	solve.c	/^static	char	rcsid[] = "$Id: solve.c,v 1.3 1994\/01\/13 05:29:57 des Exp $";$/;"	v	file:
+-rcsid	sparse.c	/^static char	rcsid[] = "$Id: sparse.c,v 1.10 1994\/03\/08 05:46:07 des Exp $";$/;"	v	file:
+-rcsid	sparseio.c	/^static char rcsid[] = "$Id: sparseio.c,v 1.4 1994\/01\/13 05:34:25 des Exp $";$/;"	v	file:
+-rcsid	spbkp.c	/^static	char	rcsid[] = "$Id: spbkp.c,v 1.6 1996\/08\/20 19:53:10 stewart Exp $";$/;"	v	file:
+-rcsid	spchfctr.c	/^static char	rcsid[] = "$Id: spchfctr.c,v 1.5 1996\/08\/20 19:45:33 stewart Exp $";$/;"	v	file:
+-rcsid	sprow.c	/^static char	rcsid[] = "$Id: sprow.c,v 1.1 1994\/01\/13 05:35:36 des Exp $";$/;"	v	file:
+-rcsid	spswap.c	/^static	char	rcsid[] = "$Id: spswap.c,v 1.3 1994\/01\/13 05:44:43 des Exp $";$/;"	v	file:
+-rcsid	submat.c	/^static	char	rcsid[] = "$Id: submat.c,v 1.2 1994\/01\/13 05:28:12 des Exp $";$/;"	v	file:
+-rcsid	svd.c	/^static char rcsid[] = "$Id: svd.c,v 1.7 1995\/09\/08 14:45:43 des Exp $";$/;"	v	file:
+-rcsid	symmeig.c	/^static char rcsid[] = "$Id: symmeig.c,v 1.6 1995\/03\/27 15:45:55 des Exp $";$/;"	v	file:
+-rcsid	torture.c	/^static char rcsid[] = "$Id: torture.c,v 1.6 1994\/08\/25 15:22:11 des Exp $";$/;"	v	file:
+-rcsid	tutorial.c	/^static char rcsid[] = "$Id: tutorial.c,v 1.3 1994\/01\/16 22:53:09 des Exp $";$/;"	v	file:
+-rcsid	update.c	/^static	char	rcsid[] = "$Id: update.c,v 1.2 1994\/01\/13 05:26:06 des Exp $";$/;"	v	file:
+-rcsid	vecop.c	/^static	char	rcsid[] = "$Id: vecop.c,v 1.5 1996\/08\/20 18:18:10 stewart Exp $";$/;"	v	file:
+-rcsid	zcopy.c	/^static	char	rcsid[] = "$Id: zcopy.c,v 1.1 1994\/01\/13 04:28:42 des Exp $";$/;"	v	file:
+-rcsid	zfunc.c	/^static char rcsid[] = "$Id: zfunc.c,v 1.3 1995\/04\/07 16:27:25 des Exp $";$/;"	v	file:
+-rcsid	zgivens.c	/^static	char	rcsid[] = "$Id: ";$/;"	v	file:
+-rcsid	zhessen.c	/^static	char	rcsid[] = "$Id: zhessen.c,v 1.2 1995\/03\/27 15:47:50 des Exp $";$/;"	v	file:
+-rcsid	zhsehldr.c	/^static	char	rcsid[] = "$Id: zhsehldr.c,v 1.2 1994\/04\/07 01:43:47 des Exp $";$/;"	v	file:
+-rcsid	zlufctr.c	/^static	char	rcsid[] = "$Id: zlufctr.c,v 1.3 1996\/08\/20 20:07:09 stewart Exp $";$/;"	v	file:
+-rcsid	zmachine.c	/^static	char	*rcsid = "$Id: zmachine.c,v 1.1 1994\/01\/13 04:25:41 des Exp $";$/;"	v	file:
+-rcsid	zmatio.c	/^static char rcsid[] = "$Id: zmatio.c,v 1.1 1994\/01\/13 04:25:18 des Exp $";$/;"	v	file:
+-rcsid	zmatlab.c	/^static char rcsid[] = "$Id: zmatlab.c,v 1.2 1995\/02\/14 20:13:27 des Exp $";$/;"	v	file:
+-rcsid	zmatop.c	/^static	char	rcsid[] = "$Id: zmatop.c,v 1.2 1995\/03\/27 15:49:03 des Exp $";$/;"	v	file:
+-rcsid	zmemory.c	/^static	char	rcsid[] = "$Id: zmemory.c,v 1.2 1994\/04\/05 02:13:14 des Exp $";$/;"	v	file:
+-rcsid	znorm.c	/^static	char	rcsid[] = "$Id: znorm.c,v 1.1 1994\/01\/13 04:21:31 des Exp $";$/;"	v	file:
+-rcsid	zqrfctr.c	/^static	char	rcsid[] = "$Id: zqrfctr.c,v 1.1 1994\/01\/13 04:21:22 des Exp $";$/;"	v	file:
+-rcsid	zschur.c	/^static char rcsid[] = "$Id: zschur.c,v 1.4 1995\/04\/07 16:28:58 des Exp $";$/;"	v	file:
+-rcsid	zsolve.c	/^static	char	rcsid[] = "$Id: zsolve.c,v 1.1 1994\/01\/13 04:20:33 des Exp $";$/;"	v	file:
+-rcsid	ztorture.c	/^static char rcsid[] = "$Id: $";$/;"	v	file:
+-rcsid	zvecop.c	/^static	char	rcsid[] = "$Id: zvecop.c,v 1.3 1997\/10\/07 16:13:54 stewart Exp stewart $";$/;"	v	file:
+ restart	err.c	/^jmp_buf	restart;$/;"	v
+ rhs_lap	tutorial.c	/^VEC *rhs_lap(b)$/;"	f
+ rk4	tutorial.c	/^double rk4(f,t,x,h)$/;"	f
+diff --git a/meschach/torture.c b/meschach/torture.c
+index 5576fdb..cd7e0c0 100755
+--- a/meschach/torture.c
++++ b/meschach/torture.c
+@@ -28,7 +28,6 @@
+ 	library, parts 1 and 2
+ */
+ 
+-static char rcsid[] = "$Id: torture.c,v 1.6 1994/08/25 15:22:11 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/tutorial.c b/meschach/tutorial.c
+index a7d7ca0..751c610 100755
+--- a/meschach/tutorial.c
++++ b/meschach/tutorial.c
+@@ -27,7 +27,6 @@
+ 
+ /* routines from Chapter 1 of Meschach */
+ 
+-static char rcsid[] = "$Id: tutorial.c,v 1.3 1994/01/16 22:53:09 des Exp $";
+ 
+ #include <math.h>
+ #include "matrix.h"
+diff --git a/meschach/update.c b/meschach/update.c
+index f0541af..f49502b 100755
+--- a/meschach/update.c
++++ b/meschach/update.c
+@@ -29,7 +29,6 @@
+ */
+ 
+ /* update.c 1.3 11/25/87 */
+-static	char	rcsid[] = "$Id: update.c,v 1.2 1994/01/13 05:26:06 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/vecop.c b/meschach/vecop.c
+index e5af88a..2a2e9a0 100755
+--- a/meschach/vecop.c
++++ b/meschach/vecop.c
+@@ -27,9 +27,11 @@
+ /* vecop.c 1.3 8/18/87 */
+ 
+ #include	<stdio.h>
++#include	<stdlib.h>
++#include	<unistd.h>
++#include	"machine.h"
+ #include	"matrix.h"
+ 
+-static	char	rcsid[] = "$Id: vecop.c,v 1.5 1996/08/20 18:18:10 stewart Exp $";
+ 
+ 
+ /* _in_prod -- inner product of two vectors from i0 downwards
+diff --git a/meschach/version.c b/meschach/version.c
+index c75536b..bbc121a 100755
+--- a/meschach/version.c
++++ b/meschach/version.c
+@@ -36,10 +36,8 @@
+ 
+ void	m_version()
+ {
+-	static char rcsid[] = "$Id: version.c,v 1.9 1994/03/24 00:04:05 des Exp $";
+ 
+ 	printf("Meshach matrix library version 1.2b\n");
+-	printf("RCS id: %s\n",rcsid);
+ 	printf("Changes since 1.2a:\n");
+ 	printf("\t Fixed bug in schur() for 2x2 blocks with real e-vals\n");
+ 	printf("\t Fixed bug in schur() reading beyond end of array\n");
+diff --git a/meschach/zcopy.c b/meschach/zcopy.c
+index 2989757..192c7eb 100755
+--- a/meschach/zcopy.c
++++ b/meschach/zcopy.c
+@@ -24,7 +24,6 @@
+ ***************************************************************************/
+ 
+ 
+-static	char	rcsid[] = "$Id: zcopy.c,v 1.1 1994/01/13 04:28:42 des Exp $";
+ #include	<stdio.h>
+ #include	"zmatrix.h"
+ 
+diff --git a/meschach/zfunc.c b/meschach/zfunc.c
+index 48b7075..790fe6d 100755
+--- a/meschach/zfunc.c
++++ b/meschach/zfunc.c
+@@ -31,7 +31,6 @@
+ #include	<math.h>
+ #include	"zmatrix.h"
+ 
+-static char rcsid[] = "$Id: zfunc.c,v 1.3 1995/04/07 16:27:25 des Exp $";
+ 
+ #ifndef COMPLEX_H
+ 
+diff --git a/meschach/zgivens.c b/meschach/zgivens.c
+index 5d40d03..6dfcaba 100755
+--- a/meschach/zgivens.c
++++ b/meschach/zgivens.c
+@@ -32,7 +32,6 @@
+ 	Complex version.
+ */
+ 
+-static	char	rcsid[] = "$Id: ";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/zhessen.c b/meschach/zhessen.c
+index 7436e63..7570684 100755
+--- a/meschach/zhessen.c
++++ b/meschach/zhessen.c
+@@ -31,7 +31,6 @@
+ 	Complex version
+ */
+ 
+-static	char	rcsid[] = "$Id: zhessen.c,v 1.2 1995/03/27 15:47:50 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	"zmatrix.h"
+diff --git a/meschach/zhsehldr.c b/meschach/zhsehldr.c
+index 64473a2..487ef58 100755
+--- a/meschach/zhsehldr.c
++++ b/meschach/zhsehldr.c
+@@ -34,7 +34,6 @@
+ 	Complex version
+ */
+ 
+-static	char	rcsid[] = "$Id: zhsehldr.c,v 1.2 1994/04/07 01:43:47 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/zlufctr.c b/meschach/zlufctr.c
+index 0d59542..6608085 100755
+--- a/meschach/zlufctr.c
++++ b/meschach/zlufctr.c
+@@ -28,7 +28,6 @@
+ 	Complex version
+ */
+ 
+-static	char	rcsid[] = "$Id: zlufctr.c,v 1.3 1996/08/20 20:07:09 stewart Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/zmachine.c b/meschach/zmachine.c
+index db0c7f4..94300d5 100755
+--- a/meschach/zmachine.c
++++ b/meschach/zmachine.c
+@@ -31,7 +31,6 @@
+   full advantage of specialised architectures (pipelining, vector
+   processors etc).
+   */
+-static	char	*rcsid = "$Id: zmachine.c,v 1.1 1994/01/13 04:25:41 des Exp $";
+ 
+ #include	<math.h>
+ #include	"machine.h"
+diff --git a/meschach/zmatio.c b/meschach/zmatio.c
+index 6e458a6..a21f587 100755
+--- a/meschach/zmatio.c
++++ b/meschach/zmatio.c
+@@ -29,7 +29,6 @@
+ #include        <ctype.h>
+ #include        "zmatrix.h"
+ 
+-static char rcsid[] = "$Id: zmatio.c,v 1.1 1994/01/13 04:25:18 des Exp $";
+ 
+ 
+ 
+diff --git a/meschach/zmatlab.c b/meschach/zmatlab.c
+index df1b8fa..18e0f22 100755
+--- a/meschach/zmatlab.c
++++ b/meschach/zmatlab.c
+@@ -37,7 +37,6 @@
+ #include        "zmatrix.h"
+ #include	"matlab.h"
+ 
+-static char rcsid[] = "$Id: zmatlab.c,v 1.2 1995/02/14 20:13:27 des Exp $";
+ 
+ /* zm_save -- save matrix in ".mat" file for MATLAB
+    -- returns matrix to be saved */
+diff --git a/meschach/zmatop.c b/meschach/zmatop.c
+index 7a0c354..7af3f1e 100755
+--- a/meschach/zmatop.c
++++ b/meschach/zmatop.c
+@@ -28,7 +28,6 @@
+ #include	<stdio.h>
+ #include	"zmatrix.h"
+ 
+-static	char	rcsid[] = "$Id: zmatop.c,v 1.2 1995/03/27 15:49:03 des Exp $";
+ 
+ 
+ #define	is_zero(z)	((z).re == 0.0 && (z).im == 0.0)
+diff --git a/meschach/zmemory.c b/meschach/zmemory.c
+index 5067170..e8cc49f 100755
+--- a/meschach/zmemory.c
++++ b/meschach/zmemory.c
+@@ -29,7 +29,6 @@
+ #include	<stdio.h>
+ #include	"zmatrix.h"
+ 
+-static	char	rcsid[] = "$Id: zmemory.c,v 1.2 1994/04/05 02:13:14 des Exp $";
+ 
+ 
+ 
+diff --git a/meschach/znorm.c b/meschach/znorm.c
+index c540122..2058caf 100755
+--- a/meschach/znorm.c
++++ b/meschach/znorm.c
+@@ -28,7 +28,6 @@
+ 	A collection of functions for computing norms: scaled and unscaled
+ 	Complex version
+ */
+-static	char	rcsid[] = "$Id: znorm.c,v 1.1 1994/01/13 04:21:31 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/zqrfctr.c b/meschach/zqrfctr.c
+index 72b70d6..df8cdf3 100755
+--- a/meschach/zqrfctr.c
++++ b/meschach/zqrfctr.c
+@@ -38,7 +38,6 @@
+   
+ */
+ 
+-static	char	rcsid[] = "$Id: zqrfctr.c,v 1.1 1994/01/13 04:21:22 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/zschur.c b/meschach/zschur.c
+index c65a57e..da3d200 100755
+--- a/meschach/zschur.c
++++ b/meschach/zschur.c
+@@ -36,7 +36,6 @@
+ #include	"zmatrix.h"
+ #include        "zmatrix2.h"
+ 
+-static char rcsid[] = "$Id: zschur.c,v 1.4 1995/04/07 16:28:58 des Exp $";
+ 
+ #define	is_zero(z)	((z).re == 0.0 && (z).im == 0.0)
+ #define	b2s(t_or_f)	((t_or_f) ? "TRUE" : "FALSE")
+diff --git a/meschach/zsolve.c b/meschach/zsolve.c
+index beffd2d..9f9abcd 100755
+--- a/meschach/zsolve.c
++++ b/meschach/zsolve.c
+@@ -29,7 +29,6 @@
+ 	Complex case
+ */
+ 
+-static	char	rcsid[] = "$Id: zsolve.c,v 1.1 1994/01/13 04:20:33 des Exp $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/ztorture.c b/meschach/ztorture.c
+index 96cf53a..53c792e 100755
+--- a/meschach/ztorture.c
++++ b/meschach/ztorture.c
+@@ -29,7 +29,6 @@
+ 	library, complex routines
+ */
+ 
+-static char rcsid[] = "$Id: $";
+ 
+ #include	<stdio.h>
+ #include	<math.h>
+diff --git a/meschach/zvecop.c b/meschach/zvecop.c
+index e8c9413..8942a8d 100755
+--- a/meschach/zvecop.c
++++ b/meschach/zvecop.c
+@@ -27,7 +27,6 @@
+ #include	<stdio.h>
+ #include	"matrix.h"
+ #include	"zmatrix.h"
+-static	char	rcsid[] = "$Id: zvecop.c,v 1.3 1997/10/07 16:13:54 stewart Exp stewart $";
+ 
+ 
+ 
+diff --git a/tap_reverb.c b/tap_reverb.c
+index e6ab3e2..8917725 100644
+--- a/tap_reverb.c
++++ b/tap_reverb.c
+@@ -25,6 +25,7 @@
+ #include <math.h>
+ #include <unistd.h>
+ 
++#include "gwc.h"
+ #include "tap_reverb_common.h"
+ #include "tap_reverb_file_io.h"
+ #include "tap_reverb.h"
+-- 
+2.44.0
+

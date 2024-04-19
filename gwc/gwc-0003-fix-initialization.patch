@@ -1,0 +1,25 @@
+From e135404ed1b64093ffe59aa624e5b2596ef371f7 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Fri, 19 Apr 2024 22:18:39 +0200
+Subject: [PATCH] fix initialization
+
+---
+ gwc.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gwc.c b/gwc.c
+index 025c40c..8524f47 100644
+--- a/gwc.c
++++ b/gwc.c
+@@ -2368,7 +2368,7 @@ void save_selection_as_encoded(int fmt, char *filename, char *filename_new, stru
+ 
+ void store_selected_filename_as_encoded(gpointer user_data)
+ {
+-    int enc_format = NULL ;
++    int enc_format = 0 ;
+     int l;
+     char trackname[1024] = "" ;
+ 
+-- 
+2.44.0
+

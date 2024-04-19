@@ -1,0 +1,25 @@
+From 0c3aebf84f3386be25e911bf109a93c7190164be Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Fri, 19 Apr 2024 22:05:48 +0200
+Subject: [PATCH] fix makefile
+
+---
+ Makefile.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile.in b/Makefile.in
+index 8820656..d900908 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -782,7 +782,7 @@ meschach.a : meschach/meschach.a
+ meschach/meschach.a :
+ # Alister: a very old message on the mailing list seemed to imply that --with-sparse is necessary to build successfully,
+ #          but this doesn't actually seem to be the case now
+-	(cd meschach ; ./configure --with-sparse ; make part1 ; make part2 ; make part3 ; cp machine.h ..)
++	(cd meschach ; ./configure --with-sparse ; make part1 ; make zpart1 ; make part2 ; make part3 ; cp machine.h ..)
+ 
+ clean :
+ 	rm -f $(APPNAME) *.o core meschach.a meschach/meschach.a machine.h
+-- 
+2.44.0
+
