@@ -39,6 +39,9 @@ BuildRequires: qt-devel
 BuildRequires: qt5-qtbase-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: libevdev-devel
+BuildRequires: serd-devel
+BuildRequires: libvterm-devel
+BuildRequires: glew-devel
 
 %description
 Lightweight Nonlinear LV2 Plugin Container

@@ -34,6 +34,8 @@ SWH LV2 set of plugins from portalmod
 
 %set_build_flags
 
+export CFLAGS="-Wno-implicit-function-declaration $CFLAGS"
+
 %make_build real-clean
 %make_build
 

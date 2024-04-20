@@ -41,6 +41,9 @@ cp %{SOURCE2} .
 
 %build
 
+%set_build_flags
+export CFLAGS="-Wno-incompatible-pointer-types $CFLAGS"
+
 %configure
 %make_build
 
@@ -65,7 +68,6 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/%{name}.ap
 %{_bindir}/*
 %exclude %{_includedir}/*
 %{_libdir}/*
-%{_datadir}/*
 %{_datadir}/appdata/*
 %{_datadir}/applications/*
 %{_datadir}/locale/*

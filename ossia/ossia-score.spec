@@ -73,7 +73,8 @@ sed -i -e "1i #include <QWidget>" src/plugins/score-plugin-gfx/Gfx/Filter/Previe
 %set_build_flags
 export CXXFLAGS="-include optional -include stdexcept $CXXFLAGS"
 
-%cmake -DCMAKE_BUILD_TYPE=RELEASE
+%cmake -DCMAKE_BUILD_TYPE=RELEASE \
+       -DCMAKE_UNITY_BUILD=ON
 %cmake_build
 
 %install

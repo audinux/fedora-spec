@@ -14,6 +14,7 @@ Distribution: Audinux
 
 # To get the sources:
 # ./brummer10-source.sh Xmonk.lv2 0.4
+# ./brummer10-source.sh Xmonk.lv2 master
 
 Source0: Xmonk.lv2.tar.gz
 Source1: brummer10-source.sh
@@ -48,5 +49,5 @@ A LV2 simple sound generator to have some fun with
 %{_libdir}/lv2/*
 
 %changelog
-* Mon Oct 27 2020 Yann Collette <ycollette.nospam@free.fr> - 0.4.0-1
+* Tue Oct 27 2020 Yann Collette <ycollette.nospam@free.fr> - 0.4.0-1
 - Initial spec file
