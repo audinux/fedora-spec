@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 3ad2248b4b9ef175811a67533884226d13ccbd52
-%global gittag0 2.0.33
+%global commit0 71968f49aa8ac69fbd97d8fdfb7b8ac394a148de
+%global gittag0 2.0.34
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-PS-PurrSoftware
-Version: 2.0.33
+Version: 2.0.34
 Release: 2%{?dist}
 Summary: PS-PurrSoftware plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r PS-PurrSoftware_plugin/dist/PS-PurrSoftware/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.33-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.34-1
 - initial specfile

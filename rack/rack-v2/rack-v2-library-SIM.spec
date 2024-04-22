@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 979b1241fc20525170fcbfd699358b73ea251590
-%global gittag0 2.0.1
+%global commit0 19eb35d2d103643e0cfcff7c9d7ab8f7c7cb9c79
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SIM
-Version: 2.0.1
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: SIM plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r SIM_plugin/dist/SIM/* %{buildroot}%{_libexecdir}/Rack2/plugins/SIM/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
