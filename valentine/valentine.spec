@@ -3,7 +3,7 @@
 # Category: Effect
 
 Name: valentine
-Version: 0.0.5
+Version: 1.0.0
 Release: 1%{?dist}
 Summary: An open source compressor meant to pump and breathe
 License: GPL-3.0-or-later
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources:
-# ./source-valentine.sh v0.0.5
+# ./source-valentine.sh v1.0.0
 
 Source0: valentine.tar.gz
 Source1: source-valentine.sh
@@ -85,6 +85,9 @@ cp -ra %{__cmake_builddir}/Valentine_artefacts/Standalone/* %{buildroot}%{_bindi
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Apr 22 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
+- update to 1.0.0-1
+
 * Thu Apr 27 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.5-1
 - update to 0.0.5-1
 
