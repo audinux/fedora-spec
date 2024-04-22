@@ -147,6 +147,7 @@
 | shoopdaloop             | https://github.com/SanderVocke/shoopdaloop |
 | piper                   | https://github.com/rhasspy/piper |
 | TheKissOfShame          | https://github.com/hollance/TheKissOfShame |
+| Sound_Nodes             | https://github.com/negdo/Sound_Nodes |
 
 Check the following URL: https://github.com/forart/HyMPS
 
