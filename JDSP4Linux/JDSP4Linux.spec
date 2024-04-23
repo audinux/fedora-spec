@@ -20,13 +20,15 @@ Source1: JDSP4Linux-source.sh
 
 BuildRequires: gcc-c++
 BuildRequires: make
+BuildRequires: git
 BuildRequires: libarchive-devel
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-qtbase-private-devel
-BuildRequires: qt5-qtsvg-devel
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qtbase-private-devel
+BuildRequires: qt6-qtsvg-devel
 BuildRequires: glibmm24-devel
 BuildRequires: glib2-devel
 BuildRequires: pipewire-devel
+BuildRequires: libxkbcommon-devel
 
 Requires: pipewire >= 0.3
 
@@ -45,14 +47,7 @@ export CFLAGS="$CFLAGS -D__arm__"
 export CXXFLAGS="$CXXFLAGS -D__arm__"
 %endif
 
-%if 0%{?fedora} >= 38
-export CXXFLAGS="-include cstdint $CXXFLAGS"
-%endif
-
-export CFLAGS="-include math.h -Wno-implicit-int -Wno-incompatible-pointer-types -Wno-implicit-function-declaration $CFLAGS"
-export CXXFLAGS="$CXXFLAGS -std=c++17"
-
-%qmake_qt5 JDSP4Linux.pro
+%qmake_qt6 JDSP4Linux.pro
 %make_build
 
 %install
