@@ -3,7 +3,7 @@
 # Category: Programming, Effect
 
 Name: vst3sdk
-Version: 3.7.10
+Version: 3.7.11
 Release: 1%{?dist}
 Summary: VST 3 Plug-In SDK
 License: GPL-3.0-or-Later
@@ -13,7 +13,7 @@ Vendor: Audinux
 Distribution: Audinux
 
 # ./vst3sdk-source.sh <TAG>
-# ./vst3sdk-source.sh v3.7.10_build_14
+# ./vst3sdk-source.sh v3.7.11_build_10
 
 Source0: vst3sdk.tar.gz
 Source1: vst3sdk.pc
@@ -62,10 +62,15 @@ Documentation of %{name}
 %prep
 %autosetup -n %{name}
 
+# Maybe this part is not yet supported on Linux
+rm -rf public.sdk/samples/vst/dataexchange/
+
+sed -i -e "s/other.invoke (false);/other.invoke = false;/g" vstgui4/vstgui/lib/finally.h
+
 %build
 
-%cmake
-%cmake_build -- VERBOSE=1 MAKESILENT=
+%cmake -DSMTG_RUN_VST_VALIDATOR=ON
+%cmake_build -- VERBOSE=1
 
 %install
 
@@ -109,6 +114,9 @@ rsync -r --exclude .git --exclude .github --exclude .gitignore --exclude .gitatt
 %{_datadir}/doc/vst3sdk/*
 
 %changelog
+* Wed Apr 24 2024 Yann Collette <ycollette.nospam@free.fr> - 3.7.11-1
+- update to 3.7.11-1
+
 * Thu Jan 18 2024 Yann Collette <ycollette.nospam@free.fr> - 3.7.10-1
 - update to 3.7.10-1
 
