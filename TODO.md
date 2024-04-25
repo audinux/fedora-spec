@@ -169,35 +169,27 @@ demucs from facebook -> https://github.com/facebookresearch/demucs
 
 ## Fedora 40 to be fixed
 
+cardinal -> gcc segfault on arm64
+dssi-vst
+BYOD -> ??
+mscore-mao
+lv2-loop192
 sfizz-ui -> vst3 compilation syntax error
 bipescript-ide -> conversion error on f40 / rawhide
-xmonk -> conversion error on f40 / rawhide -> ticket opened
 vmpc -> error: assignment of read-only member
-uhhyouplugins -> vst3sdk build problem
-toccata -> sfizz-devel missing
 yabridge -> wineg++ pb
-ts-m1n3  -> xsimd8-devel not found (xsimd-devel on f40 / rawhide)
-tsunami ->
-synthpod -> serd link pb
-swh-lv2 -> -Wimplicit-function-declaration pb
 surge-xt - arm64 -> compiler segfault
 soundux -> convertion error
 shortcircuit -> distutils missing - python 3.12
 seq192 -> rawhide - conversion error
 rack-v2-SurgeXTRack -> error: possibly dangling reference to a temporary [-Werror=dangling-reference]
 rack-v2-monome -> -Wincompatible-pointer-types
-rack-v2-FrankBuss -> Could not determine CPU architecture of aarch64-redhat-linux. Try hacking around in arch.mk
-rack-v2-CosineKitty-Sapphire -> error: â€˜gcc_structâ€™ attribute directive ignored [-Werror=attributes]
-qm-vamp-plugins -> kiss_fft_double
-prelude -> sfizz-devel missing
 performer -> moc_performer.cpp:198:21: error: â€˜class Performerâ€™ has no member named â€˜loadHelpâ€™
 peaksynth-audio-plugin -> error: juce_audio_basics/juce_audio_basics.h: No such file or directory
 mapmap -> src/control/OscInterface.cpp:54:25: error: invalid conversion (rawhide only)
-lv2-mephisto -> libfaust-signal-c.h:307:67: error: unknown type name â€˜STypeâ€™
 loop192 -> error: invalid conversion
 linvst -> 32 bits packages pb
 js80p -> vst3sdk missing
-jc303 -> Failed to checkout tag: '54d83e121545490fdbb2d3dec3ba0c1da6005dde'
 glava -> is triggering the generation of an executable stack (because it has an executable .note.GNU-stack section) - rawhide only
 lives-mao -> libunicap-devel missing on rawhide
 jack-director -> ‘return’ with a value, in function returning void [-Wreturn-mismatch]
