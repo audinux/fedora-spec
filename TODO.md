@@ -170,15 +170,15 @@ demucs from facebook -> https://github.com/facebookresearch/demucs
 ## Fedora 40 to be fixed
 
 cardinal -> gcc segfault on arm64
+surge-xt - arm64 -> compiler segfault
 dssi-vst
+linvst -> 32 bits packages pb
+yabridge -> wineg++ pb
 BYOD -> ??
 mscore-mao
 lv2-loop192
-sfizz-ui -> vst3 compilation syntax error
 bipescript-ide -> conversion error on f40 / rawhide
 vmpc -> error: assignment of read-only member
-yabridge -> wineg++ pb
-surge-xt - arm64 -> compiler segfault
 soundux -> convertion error
 shortcircuit -> distutils missing - python 3.12
 seq192 -> rawhide - conversion error
@@ -188,7 +188,6 @@ performer -> moc_performer.cpp:198:21: error: â€˜class Performerâ€™ has
 peaksynth-audio-plugin -> error: juce_audio_basics/juce_audio_basics.h: No such file or directory
 mapmap -> src/control/OscInterface.cpp:54:25: error: invalid conversion (rawhide only)
 loop192 -> error: invalid conversion
-linvst -> 32 bits packages pb
 js80p -> vst3sdk missing
 glava -> is triggering the generation of an executable stack (because it has an executable .note.GNU-stack section) - rawhide only
 lives-mao -> libunicap-devel missing on rawhide
