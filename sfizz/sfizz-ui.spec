@@ -67,6 +67,8 @@ Header files for the Sfizz library.
 %prep
 %autosetup -n %{name}
 
+sed -i -e "s/other.invoke (false);/other.invoke = false;/g" plugins/editor/external/vstgui4/vstgui/lib/finally.h
+
 %build
 
 %cmake -DPLUGIN_LV2=ON \

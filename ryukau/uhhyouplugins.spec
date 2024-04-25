@@ -43,6 +43,8 @@ VST3 version of %{name}
 %prep
 %autosetup -n VSTPlugins
 
+sed -i -e "s/other.invoke (false);/other.invoke = false;/g" lib/vst3sdk/vstgui4/vstgui/lib/finally.h
+
 %build
 
 export HOME=`pwd`
