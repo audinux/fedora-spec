@@ -13,6 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://sourceforge.net/projects/jack-director/files/JackDirector-%{version}.tar.gz
+Patch0: jack-director-0001-fix-return-value.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: qt5-qtbase-devel
@@ -33,14 +34,11 @@ Features:
 To control its behavior you have to provide a configuration file named jack-directorrc.
 
 %prep
-%autosetup -n jack-director-code
+%autosetup -p1 -n jack-director-code
 
 sed -i -e "/QMAKE_CFLAGS_RELEASE/d" jack-director.pro
 
 %build
-
-%set_build_flags
-export CFLAGS="-Wno-incompatible-pointer-types -Wno-implicit-function-declaration $CFLAGS"
 
 %qmake_qt5
 %make_build

@@ -1,0 +1,117 @@
+From 4f423b28c97ec51cbc6680f6df695e91a9196f19 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Thu, 25 Apr 2024 13:05:32 +0200
+Subject: [PATCH] fix
+
+---
+ config.c        | 8 ++++----
+ jack-director.c | 4 ++--
+ jackclient.c    | 4 ++--
+ string.c        | 8 ++++----
+ 4 files changed, 12 insertions(+), 12 deletions(-)
+
+diff --git a/config.c b/config.c
+index 512001a..8e0f639 100644
+--- a/config.c
++++ b/config.c
+@@ -102,7 +102,7 @@ void SetDefaultValues() {
+   config.mcresyncdelay = 300;
+   config.mcnotransport = 0;
+   config.mcnoposition = 0;
+-  memset(midi_prg, NULL, 16 * 128 * sizeof(MIDI_CMD));
++  memset(midi_prg, 0, 16 * 128 * sizeof(MIDI_CMD));
+ }
+ 
+ 
+@@ -114,11 +114,11 @@ void ParseLine(char *command) { /* Parses key=value1,value2,etc. */
+   param = begin;
+   if (end == NULL) {
+     printerror("Param without value: ", true, param);
+-    return 1;
++    return;
+   }
+   sprintf(message,"command: %s = ", begin);
+   end_buffer = end;
+-  end_opt = 'a';
++  end_opt = "a";
+   while (end_opt != NULL) {
+     SplitComma(end_buffer,&begin_opt,&end_opt);
+     end_buffer = end_opt;
+@@ -341,4 +341,4 @@ unsigned short ParseMidiCmd(char *param, char opts[32][128]) {
+       midi_prg[midich][prgnum] = defmidicmd;
+     }
+     return ok;
+-}
+\ No newline at end of file
++}
+diff --git a/jack-director.c b/jack-director.c
+index 6274466..930e8b2 100644
+--- a/jack-director.c
++++ b/jack-director.c
+@@ -54,10 +54,10 @@ int main (int argc, char **argv) {
+ 
+   if (argc > 1) {
+     free(config.config_file);
+-    config.config_file = AllocString(argv[1]);
++    config.config_file = (char *)AllocString(argv[1]);
+   }
+   
+   ReadConfigFile();
+ 
+   return jackClient();
+-}
+\ No newline at end of file
++}
+diff --git a/jackclient.c b/jackclient.c
+index 44c1fec..39ac5b1 100644
+--- a/jackclient.c
++++ b/jackclient.c
+@@ -540,7 +540,7 @@ void jackMidiClock(jack_nframes_t nframes) { /* Based on JackMidiClock 0.4.0-bad
+   }
+ 
+   if((xstate != JackTransportRolling)) {
+-    return 0;
++    return;
+   }
+ 
+   /* calculate clock tick interval */
+@@ -761,4 +761,4 @@ int jackClient() {
+   
+   jack_client_close(client);
+   return 0;
+-}
+\ No newline at end of file
++}
+diff --git a/string.c b/string.c
+index c272f68..fd8281b 100644
+--- a/string.c
++++ b/string.c
+@@ -102,15 +102,15 @@ char *AllocString(const char *const string_constant)
+ 
+ 
+ void Split(char *const input,char **begin,char **end) {
+-  _Split(input, begin, end, '=');
++  _Split(input, begin, end, "=");
+ }
+ 
+ void SplitComma(char *const input,char **begin,char **end) {
+-  _Split(input, begin, end, ',');
++  _Split(input, begin, end, ",");
+ }
+ 
+ void SplitColon(char *const input,char **begin,char **end) {
+-  _Split(input, begin, end, ':');
++  _Split(input, begin, end, ":");
+ }
+ 
+ void _Split(char *const input,char **begin,char **end, char *split)
+@@ -145,4 +145,4 @@ void _Split(char *const input,char **begin,char **end, char *split)
+ 			*end=NULL;
+ 		}
+ 	}
+-}
+\ No newline at end of file
++}
+-- 
+2.44.0
+
