@@ -182,16 +182,13 @@ vmpc -> error: assignment of read-only member
 soundux -> convertion error
 shortcircuit -> distutils missing - python 3.12
 seq192 -> rawhide - conversion error
-rack-v2-SurgeXTRack -> error: possibly dangling reference to a temporary [-Werror=dangling-reference]
 rack-v2-monome -> -Wincompatible-pointer-types
 performer -> moc_performer.cpp:198:21: error: â€˜class Performerâ€™ has no member named â€˜loadHelpâ€™
 peaksynth-audio-plugin -> error: juce_audio_basics/juce_audio_basics.h: No such file or directory
 mapmap -> src/control/OscInterface.cpp:54:25: error: invalid conversion (rawhide only)
 loop192 -> error: invalid conversion
-js80p -> vst3sdk missing
 glava -> is triggering the generation of an executable stack (because it has an executable .note.GNU-stack section) - rawhide only
 lives-mao -> libunicap-devel missing on rawhide
-jack-director -> ‘return’ with a value, in function returning void [-Wreturn-mismatch]
 
 ## WIP
 
