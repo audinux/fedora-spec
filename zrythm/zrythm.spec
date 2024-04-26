@@ -2,7 +2,7 @@
 # Type: Standalone
 # Category: Audio, DAW
 
-%global zrythm_version 1.1.11
+%global zrythm_version 1
 
 Name: zrythm
 Version: 1.0.0.b%{zrythm_version}
@@ -14,7 +14,7 @@ URL: https://git.zrythm.org/zrythm/zrythm
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://git.zrythm.org/zrythm/zrythm/archive/v1.0.0-beta.%{zrythm_version}.tar.gz#/zrythm-v1.0.0-beta.%{zrythm_version}.tar.gz
+Source0: https://gitlab.zrythm.org/zrythm/zrythm/-/archive/v1.0.0-rc.%{zrythm_version}/zrythm-v1.0.0-rc.%{zrythm_version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: git
@@ -90,6 +90,8 @@ BuildRequires: sassc
 BuildRequires: appstream-devel
 BuildRequires: libpanel-devel
 BuildRequires: gtksourceview5-devel
+BuildRequires: soxr-devel
+BuildRequires: glslc
 
 Requires: breeze-icon-theme
 
@@ -103,12 +105,7 @@ It is written in C and uses the GTK+3 toolkit, with bits and pieces taken from o
 More info at https://www.zrythm.org
 
 %prep
-%autosetup -n zrythm
-
-# Compile using -O0 because of jack xruns
-sed -i -e "/cc = meson.get_compiler ('c')/a add_global_arguments('-O0'\, language : 'c')" meson.build
-sed -i -e "s/-O3/-O0/g" src/utils/meson.build
-sed -i -e "s/-O3/-O0/g" src/audio/meson.build
+%autosetup -n zrythm-v1.0.0-rc.%{zrythm_version}
 
 # Search for libpulse.pc instead of pulseaudio.pc
 sed -i -e "s/'pulseaudio'/'libpulse'/g" meson.build
@@ -131,7 +128,7 @@ pip install --user furo
 mkdir build
 %meson \
        --wrap-mode=nofallback \
-       --force-fallback-for "gtk4, wayland-protocols" \
+       --force-fallback-for "gtk4,wayland-protocols,libadwaita-1,carla-host-plugin" \
        --default-library static \
        -Dmanpage=true \
        -Duser_manual=true \
@@ -216,6 +213,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.zrythm.Zrythm.des
 %endif
 
 %changelog
+* Fri Apr 26 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-rc.1-5
+- update to 1.0.0-rc.1-5
+
 * Fri Mar 25 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-beta.1.1.11-5
 - update to 1.0.0-beta.1.1.11-5
 
