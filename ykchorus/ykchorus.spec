@@ -1,9 +1,9 @@
 # Tag: Jack, Alsa, Effect
-# Type: Plugin, Standalone, LADSPA, VST, LV2, DSSI
+# Type: Plugin, Standalone, LADSPA, VST, LV2, VST3, CLAP
 # Category: Audio, Effect
 
 Name: ykchorus
-Version: 0.2.3
+Version: 0.2.4
 Release: 1%{?dist}
 Summary: A chorus audio effect plugin based on DSP code by Togu Audio Line (TAL)
 License: GPL-2.0-or-later
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./ykchorus-source.sh <tag>
-# ./ykchorus-source.sh v0.2.3
+# ./ykchorus-source.sh v0.2.4
 
 Source0: ykchorus.tar.gz
 Source1: ykchorus-source.sh
@@ -24,7 +24,6 @@ BuildRequires: lv2-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: fftw-devel
 BuildRequires: ladspa-devel
-BuildRequires: dssi-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: liblo-devel
 BuildRequires: mesa-libGL-devel
@@ -33,9 +32,6 @@ BuildRequires: desktop-file-utils
 %description
 A chorus effect inspired by the one found in certain well-known
 Japanese vintage analog synthesizers (You Know which).
-
-%package -n dssi-%{name}
-Summary: DSSI version of the ykchorus plugin.
 
 %package -n ladspa-%{name}
 Summary: LADSPA version of the ykchorus plugin.
@@ -46,8 +42,11 @@ Summary: LV2 version of the ykchorus plugin.
 %package -n vst-%{name}
 Summary: VST version of the ykchorus plugin.
 
-%description -n dssi-%{name}
-DSSI version of the ykchorus plugin.
+%package -n vst3-%{name}
+Summary: VST3 version of the ykchorus plugin.
+
+%package -n clap-%{name}
+Summary: CLAP version of the ykchorus plugin.
 
 %description -n ladspa-%{name}
 LADSPA version of the ykchorus plugin.
@@ -57,6 +56,12 @@ LV2 version of the ykchorus plugin.
 
 %description -n vst-%{name}
 VST version of the ykchorus plugin.
+
+%description -n vst3-%{name}
+VST3 version of the ykchorus plugin.
+
+%description -n clap-%{name}
+CLAP version of the ykchorus plugin.
 
 %prep
 %autosetup -n %{name}
@@ -74,6 +79,12 @@ sed -i -e "s/\$(PREFIX)\/lib/\$(PREFIX)\/lib64/g" Makefile
 %install
 
 %make_install PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true
+
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+install -m 644 ./resources/ykchorus.desktop %{buildroot}/%{_datadir}/applications/
+
+install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
+install -m 644 ./resources/ykchorus.png %{buildroot}/%{_datadir}/pixmaps/
 
 desktop-file-install                         \
   --add-category="Audio;AudioVideo"	     \
@@ -94,15 +105,21 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
 
-%files -n dssi-%{name}
-%{_libdir}/dssi/*
-
 %files -n ladspa-%{name}
 %{_libdir}/ladspa/*
 
 %files -n vst-%{name}
 %{_libdir}/vst/*
 
+%files -n vst3-%{name}
+%{_libdir}/vst3/*
+
+%files -n clap-%{name}
+%{_libdir}/clap/*
+
 %changelog
+* Fri Apr 26 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2.4-1
+- update to 0.2.4-1
+
 * Mon Mar 28 2022 Yann Collette <ycollette.nospam@free.fr> - 0.2.3-1
 - Initial version of the spec file
