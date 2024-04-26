@@ -2,12 +2,12 @@
 # Type: Plugin, LV2, VST
 # Category: Audio, Effect
 
-Name:    BYOD
+Name: BYOD
 Version: 1.3.0
 Release: 1%{?dist}
 Summary: Build-your-own guitar distortion !
 License: GPL-3.0-or-later
-URL:     https://github.com/Chowdhury-DSP/BYOD
+URL: https://github.com/Chowdhury-DSP/BYOD
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -80,7 +80,7 @@ sleep 10
 
 %set_build_flags
 
-%cmake -DCMAKE_CXX_FLAGS="$CXXFLAGS -include utility -fPIC"
+%cmake -DCMAKE_CXX_FLAGS="$CXXFLAGS -include utility -fPIC" -DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON
 %cmake_build
 
 %install
