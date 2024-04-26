@@ -5,7 +5,7 @@
 %global debug_package %{nil}
 
 Name: audibleplanets
-Version: 1.0.18b
+Version: 1.0.19
 Release: 1%{?dist}
 Summary: An expressive, quasi-Ptolemaic semi-modular synthesizer
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./audibleplanets-source.sh <TAG>
-#        ./audibleplanets-source.sh v1.0.18b
+#        ./audibleplanets-source.sh v1.0.19
 
 Source0: AudiblePlanets.tar.gz
 Source1: audibleplanets-source.sh
@@ -98,6 +98,9 @@ cp -ra %{__cmake_builddir}/AudiblePlanets_artefacts/VST3/* %{buildroot}/%{_libdi
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Apr 26 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.19-1
+- update to 1.0.19-1
+
 * Tue Apr 23 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.18b-1
 - update to 1.0.18b-1
 
