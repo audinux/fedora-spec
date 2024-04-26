@@ -144,7 +144,7 @@ sed -i -e "s/SURGE_LIBS surge-common/SURGE_LIBS surge-common jansson/g" SurgeXTR
 
 sed -i -e "/,-march=nehalem/d" SurgeXTRack_plugin/RackSDK.cmake
 
-sed -i -e "s/-Werror/-Wno-error/g" SurgeXTRack_plugin/surge/CMakeLists.txt
+sed -i -e "1i add_compile_options(-Wno-error=dangling-reference)" SurgeXTRack_plugin/surge/CMakeLists.txt
 
 %build
 
