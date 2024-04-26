@@ -3,7 +3,7 @@
 # Category: MIDI, Synthesizer
 
 Name: js80p
-Version: 2.4.3
+Version: 2.9.0
 Release: 1%{?dist}
 Summary: A MIDI driven, performance oriented, versatile synthesizer plugin.
 License: GPL-3.0-only
@@ -34,6 +34,14 @@ Requires: %{name}
 %description -n vst3-%{name}
 VST3 version of %{name}
 
+%package -n vst-%{name}
+Summary:  VST2 version of %{name}
+License:  GPL-2.0-or-later
+Requires: %{name}
+
+%description -n vst-%{name}
+VST2 version of %{name}
+
 %prep
 %setup -n %{name}-%{version}
 
@@ -50,8 +58,11 @@ make SYS_LIB_PATH=%{_libdir} INSTRUCTION_SET=sse2
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/js80p.vst3/Contents/%{_target}/
-install -m 755 dist/js80p-dev-linux-64bit-sse2-vst3_single_file/js80p.vst3 %{buildroot}/%{_libdir}/vst3/js80p.vst3/Contents/%{_target}/js80p.so
+install -m 755 dist/js80p-dev-linux-x86_64-sse2-vst3_single_file/js80p.vst3 %{buildroot}/%{_libdir}/vst3/js80p.vst3/Contents/%{_target}/js80p.so
 cp -ra presets %{buildroot}/%{_libdir}/vst3/js80p.vst3/
+
+install -m 755 -d %{buildroot}%{_libdir}/vst/
+install -m 755 dist/js80p-dev-linux-x86_64-sse2-fst/js80p.so %{buildroot}/%{_libdir}/vst/
 
 %check
 validator %{buildroot}/%{_libdir}/vst3/js80p.vst3
@@ -63,7 +74,13 @@ validator %{buildroot}/%{_libdir}/vst3/js80p.vst3
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
+%files -n vst-%{name}
+%{_libdir}/vst/*
+
 %changelog
+* Fri Apr 26 2024 Yann Collette <ycollette.nospam@free.fr> - 2.9.0-1
+- update to 2.9.0-1
+
 * Sun Nov 19 2023 Yann Collette <ycollette.nospam@free.fr> - 2.4.3-1
 - update to 2.4.3-1
 
