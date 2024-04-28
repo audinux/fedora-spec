@@ -6,7 +6,7 @@
 git clone https://github.com/tote-bag-labs/valentine
 cd valentine
 git checkout $1
-git submodule update --init --progress
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz valentine.tar.gz valentine/*
