@@ -955,7 +955,8 @@ https://github.com/JamesStubbsEng/8ridgelite
 https://github.com/mididings/pyliblo
 https://github.com/brummer10/Ratatouille.lv2
 https://github.com/hollance/TheKissOfShame
-https://github.com/agateau/sfxr-qt"
+https://github.com/agateau/sfxr-qt
+https://github.com/RealAlexZ/MultiMeter"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
