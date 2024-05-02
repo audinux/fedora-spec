@@ -4,13 +4,13 @@
 
 Summary: Audio/MIDI multi-track sequencer
 Name: qtractor-mao
-Version: 0.9.90
+Version: 0.9.91
 Release: 2%{?dist}
 License: GPLv2+
 URL: http://qtractor.sourceforge.net/
 
 # ./qtractor-source.sh <tag>
-# ./qtractor-source.sh qtractor_0_9_90
+# ./qtractor-source.sh qtractor_0_9_91
 
 Source0: qtractor.tar.gz
 Source1: qtractor-source.sh
@@ -95,6 +95,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/org.rncbc.qtractor.d
 %{_datadir}/qtractor/palette/*
 
 %changelog
+* Thu May 02 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.91-2
+- update to 0.9.91-2
+
 * Thu Apr 11 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.90-2
 - update to 0.9.90-2
 
