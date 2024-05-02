@@ -5,7 +5,7 @@
 
 %global padthv1_major 0
 %global padthv1_minor 9
-%global padthv1_patch 90
+%global padthv1_patch 91
 %global padthv1_version %{padthv1_major}.%{padthv1_minor}.%{padthv1_patch}
 %global padthv1_version_ %{padthv1_major}_%{padthv1_minor}_%{padthv1_patch}
 
@@ -101,6 +101,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.des
 %{_libdir}/lv2/%{name}.lv2/
 
 %changelog
+* Thu May 02 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.91-4
+- update to 0.9.91-4
+
 * Tue Apr 09 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.90-4
 - update to 0.9.90-4
 
