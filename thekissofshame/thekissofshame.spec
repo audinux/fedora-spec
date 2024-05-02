@@ -5,7 +5,7 @@
 %global commit0 fd160b9af0f1c764e528aa279556c2720ec2296e
 
 Name: thekissofshame
-Version: 1.0.0
+Version: 1.0.1
 Release: 1%{?dist}
 Summary: DSP Magnetic Tape Emulation
 License: GPL-3.0-or-later
@@ -14,7 +14,7 @@ URL: https://github.com/hollance/TheKissOfShame
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/hollance/TheKissOfShame/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Source0: https://github.com/hollance/TheKissOfShame/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -77,5 +77,8 @@ cp %{__cmake_builddir}/TheKissOfShame_artefacts/Standalone/*  %{buildroot}/%{_bi
 %{_libdir}/vst3/*
 
 %changelog
+* Thu May 02 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
+- update to 1.0.1-1
+
 * Tue Apr 23 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial spec file
