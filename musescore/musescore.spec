@@ -25,13 +25,13 @@
 %global __requires_exclude qmlimport\\((MuseScore|FileIO).*
 
 %define rname          mscore
-%define version_lesser 4.2
+%define version_lesser 4.3
 %define revision       5485621
 %define docdir         %{_docdir}/%{name}
 %define fontdir        %{_datadir}/fonts/%{name}
 
 Name: mscore-mao
-Version: 4.2.1
+Version: 4.3.0
 Release: 2%{?dist}
 Summary: A WYSIWYG music score typesetter
 
@@ -69,7 +69,7 @@ Source4: https://ftp.osuosl.org/pub/musescore/soundfont/MuseScore_General/MuseSc
 
 # VST3
 # Usage: ./vst3-source.sh <TAG>
-#        ./vst3-source.sh v3.7.8_build_34
+#        ./vst3-source.sh v3.7.11_build_10
 Source5: vst3sdk.tar.gz
 Source6: vst3-source.sh
 
@@ -290,6 +290,8 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/org.musescore.MuseSc
 %license fonts/finalemaestro/OFL.txt.finalemaestro
 
 %changelog
+* Thu May 02 2024 Yann Collette <ycollette.nospam@free.fr> - 4.3.0-2
+- update to 4.3.0-2
 * Wed Jan 24 2024 Yann Collette <ycollette.nospam@free.fr> - 4.2.1-2
 - update to 4.2.1-2
 * Mon Dec 18 2023 Yann Collette <ycollette.nospam@free.fr> - 4.2.0-2
