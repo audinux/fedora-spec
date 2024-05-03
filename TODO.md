@@ -105,7 +105,6 @@
 | libremidi               | https://github.com/jcelerier/libremidi |
 | ddsp-vst                | https://github.com/magenta/ddsp-vst |
 | LinVst3                 | https://github.com/osxmidi/LinVst3 |
-| anklang                 | https://github.com/tim-janik/anklang |
 | dawproject              | https://github.com/bitwig/dawproject |
 | csound_plugins          | https://github.com/csound/plugins |
 | shoopdaloop             | https://github.com/SanderVocke/shoopdaloop |
