@@ -51,7 +51,7 @@ Requires: %{name}%{?_isa} = %{version}-%{release}
 VST3 version of %{name}
 
 %prep
-%autosetup -n TheKissOfShame-%{commit0}
+%autosetup -n TheKissOfShame-%{version}
 
 sed -i -e "s/The Kiss Of Shame/The_Kiss_Of_Shame/g" CMakeLists.txt
 

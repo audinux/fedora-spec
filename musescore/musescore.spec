@@ -191,9 +191,6 @@ export CXXFLAGS="$CXXFLAGS -fno-var-tracking-assignments"
        -DX86_MAY_HAVE_SSE4_1:BOOL=OFF \
        -DX86_MAY_HAVE_AVX:BOOL=OFF \
        -DOPUS_X86_PRESUME_SSE:BOOL=ON \
-%if 0%{?fedora} >= 40
-       -DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON \
-%endif
        -DOPUS_X86_PRESUME_SSE2:BOOL=ON
 
 %cmake_build
