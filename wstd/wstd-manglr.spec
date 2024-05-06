@@ -3,7 +3,7 @@
 # Category: Audio, Effect
 
 Name: wstd-manglr
-Version: 1.0.1
+Version: 1.1.0
 Release: 1%{?dist}
 Summary: Modular distortion plugin
 License: GPL-3.0-only
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./wstd-source.sh <project> <tag>
-# ./wstd-source.sh wstd-manglr v1.0.1
+# ./wstd-source.sh wstd-manglr v1.1.0
 
 Source0: wstd-manglr.tar.gz
 Source1: hvcc-Makefile
@@ -102,5 +102,8 @@ cp wstd_manglr/bin/WSTD_MANGLR.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Mon May 06 2024 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+- update to 1.1.0-1
+
 * Wed Jan 24 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
 - Initial version of the spec file
