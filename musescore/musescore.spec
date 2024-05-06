@@ -32,7 +32,7 @@
 
 Name: mscore-mao
 Version: 4.3.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A WYSIWYG music score typesetter
 
 # Licenses in MuseScore are a mess. To help other maintainers I give the following overview:
@@ -173,6 +173,7 @@ CURRENT_PATH=`pwd`
 %set_build_flags
 export CFLAGS="$CFLAGS -fno-var-tracking-assignments"
 export CXXFLAGS="$CXXFLAGS -fno-var-tracking-assignments"
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Wp,-D_GLIBCXX_ASSERTIONS||g"`
 
 %cmake \
        -DMUE_BUILD_UNIT_TESTS:BOOL=OFF \
@@ -290,6 +291,8 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/org.musescore.MuseSc
 %license fonts/finalemaestro/OFL.txt.finalemaestro
 
 %changelog
+* Mon May 06 2024 Yann Collette <ycollette.nospam@free.fr> - 4.3.0-3
+- update to 4.3.0-3 - remove -Wp,-D_GLIBCXX_ASSERTIONS during build
 * Thu May 02 2024 Yann Collette <ycollette.nospam@free.fr> - 4.3.0-2
 - update to 4.3.0-2
 * Wed Jan 24 2024 Yann Collette <ycollette.nospam@free.fr> - 4.2.1-2
