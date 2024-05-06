@@ -170,10 +170,13 @@ tar xvfz %{SOURCE5}
 
 CURRENT_PATH=`pwd`
 
-%set_build_flags
-export CFLAGS="$CFLAGS -fno-var-tracking-assignments"
-export CXXFLAGS="$CXXFLAGS -fno-var-tracking-assignments"
-export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Wp,-D_GLIBCXX_ASSERTIONS||g"`
+echo "CXXFLAGS = $CXXFLAGS"
+echo "CFLAGS   = $CFLAGS"
+echo "LDFLAGS  = $LDFLAGS"
+
+export CXXFLAGS=
+export CFLAGS=
+export LDFLAGS=
 
 %cmake \
        -DMUE_BUILD_UNIT_TESTS:BOOL=OFF \
@@ -225,25 +228,25 @@ rm -f %{buildroot}%{_bindir}/crashpad_handler
 
 # collect doc files
 install -d -m 755 %{buildroot}/%{docdir}
-install -p -m 644 thirdparty/beatroot/COPYING         %{buildroot}/%{docdir}/COPYING.beatroot
-install -p -m 644 thirdparty/beatroot/README.txt      %{buildroot}/%{docdir}/README.txt.beatroot
-install -p -m 644 thirdparty/dtl/COPYING              %{buildroot}/%{docdir}/COPYING.BSD.dtl
-install -p -m 644 thirdparty/intervaltree/README      %{buildroot}/%{docdir}/README.intervaltree
-install -p -m 644 thirdparty/rtf2html/ChangeLog       %{buildroot}/%{docdir}/ChangeLog.rtf2html
-install -p -m 644 thirdparty/rtf2html/COPYING.LESSER  %{buildroot}/%{docdir}/COPYING.LESSER.rtf2html
-install -p -m 644 thirdparty/rtf2html/README          %{buildroot}/%{docdir}/README.rtf2html
-install -p -m 644 thirdparty/rtf2html/README.mscore   %{buildroot}/%{docdir}/README.mscore.rtf2html
-install -p -m 644 thirdparty/rtf2html/README.ru       %{buildroot}/%{docdir}/README.ru.rtf2html
+install -p -m 644 thirdparty/beatroot/COPYING        %{buildroot}/%{docdir}/COPYING.beatroot
+install -p -m 644 thirdparty/beatroot/README.txt     %{buildroot}/%{docdir}/README.txt.beatroot
+install -p -m 644 thirdparty/dtl/COPYING             %{buildroot}/%{docdir}/COPYING.BSD.dtl
+install -p -m 644 thirdparty/intervaltree/README     %{buildroot}/%{docdir}/README.intervaltree
+install -p -m 644 thirdparty/rtf2html/ChangeLog      %{buildroot}/%{docdir}/ChangeLog.rtf2html
+install -p -m 644 thirdparty/rtf2html/COPYING.LESSER %{buildroot}/%{docdir}/COPYING.LESSER.rtf2html
+install -p -m 644 thirdparty/rtf2html/README         %{buildroot}/%{docdir}/README.rtf2html
+install -p -m 644 thirdparty/rtf2html/README.mscore  %{buildroot}/%{docdir}/README.mscore.rtf2html
+install -p -m 644 thirdparty/rtf2html/README.ru      %{buildroot}/%{docdir}/README.ru.rtf2html
 
-install -p -m 644 tools/bww2mxml/COPYING              %{buildroot}/%{docdir}/COPYING.bww2mxml
-install -p -m 644 tools/bww2mxml/README               %{buildroot}/%{docdir}/README.bww2mxml
-install -p -m 644 share/sound/README.md               %{buildroot}/%{docdir}/README.md.sound
-install -p -m 644 share/instruments/README.md         %{buildroot}/%{docdir}/README.md.instruments
-install -p -m 644 share/wallpapers/COPYRIGHT          %{buildroot}/%{docdir}/COPYING.wallpaper
+install -p -m 644 tools/bww2mxml/COPYING             %{buildroot}/%{docdir}/COPYING.bww2mxml
+install -p -m 644 tools/bww2mxml/README              %{buildroot}/%{docdir}/README.bww2mxml
+install -p -m 644 share/sound/README.md              %{buildroot}/%{docdir}/README.md.sound
+install -p -m 644 share/instruments/README.md        %{buildroot}/%{docdir}/README.md.instruments
+install -p -m 644 share/wallpapers/COPYRIGHT         %{buildroot}/%{docdir}/COPYING.wallpaper
 
 # Mime type
 mkdir -p %{buildroot}%{_datadir}mime/packages
-install -pm 644 %{SOURCE7} %{buildroot}%{_datadir}/mime/packages/
+install -p -m 644 %{SOURCE7} %{buildroot}%{_datadir}/mime/packages/
 
 # Install desktop file
 desktop-file-install \
@@ -253,7 +256,7 @@ desktop-file-install \
    --remove-category="AudioVideoEditing" \
    --add-mime-type="audio/midi" \
    --add-mime-type="application/xml" \
-   --set-key="Exec" --set-value='env XDG_CURRENT_DESKTOP="" KDE_FULL_SESSION="" DESKTOP_SESSION="" mscore %F' \
+   --set-key="Exec" --set-value='env XDG_CURRENT_DESKTOP="" KDE_FULL_SESSION="" DESKTOP_SESSION="" GDK_BACKEND=x11 mscore %F' \
    %{buildroot}%{_datadir}/applications/org.musescore.MuseScore.desktop
 
 # Remove rpath in mscore
