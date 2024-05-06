@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 56246cad6227c0feb38fb88a28c88d7e05e88380
-%global gittag0 2.6.9
+%global commit0 9d39087734fc7374f7a90165e9b700c19983c940
+%global gittag0 2.6.10
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SickoCV
-Version: 2.6.9
+Version: 2.6.10
 Release: 2%{?dist}
 Summary: SickoCV plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r SickoCV_plugin/dist/SickoCV/* %{buildroot}%{_libexecdir}/Rack2/plugins/Sic
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.9-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.10-1
 - initial specfile

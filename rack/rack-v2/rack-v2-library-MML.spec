@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b84ce3405335f2eaedf27427db8cd9f789004a88
-%global gittag0 2.0.0
+%global commit0 b3a4be099e8cc77dbdd82829664bf9d0992a1852
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-MML
-Version: 2.0.0
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: MML plugin for Rack
 License: GPL-2.0-or-later
@@ -27,7 +27,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/CHLOzzz/MML/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/CHLOzzz/MML//archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: MML_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -60,7 +60,7 @@ BuildRequires: jq
 
 %description
 MML plugin for Rack.
-Quantize voltage on a base 2 logarithmic scale.
+Quantizer to produce the non-Pythagorean musical scale of The Apples in Stereo, tuned to the logarithms of whole numbers.
 
 %prep
 %setup -n Rack
@@ -152,5 +152,5 @@ cp -r MML_plugin/dist/MML/* %{buildroot}%{_libexecdir}/Rack2/plugins/MML/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile

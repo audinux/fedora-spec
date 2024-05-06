@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 421742c3168cced6944479745ee8127296354be4
-%global gittag0 2.0.13
+%global commit0 12ef248ce6e34c45096fef6c073e58ed35437b41
+%global gittag0 2.0.14
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-StochasticTelegraph
-Version: 2.0.13
+Version: 2.0.14
 Release: 2%{?dist}
 Summary: StochasticTelegraph plugin for Rack
 License: GPL-2.0-or-later
@@ -27,7 +27,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/mahlenmorris/VCVRack/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: VCVRack.tar.gz
 Source2: StochasticTelegraph_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -152,5 +152,5 @@ cp -r StochasticTelegraph_plugin/dist/StochasticTelegraph/* %{buildroot}%{_libex
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.13-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.14-1
 - initial specfile

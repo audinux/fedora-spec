@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 ff2ed1466e41158c205133016d5553a6ac7d51f0
-%global gittag0 2.6.1
+%global commit0 fe140db6f130f6be5fcf5d66789ad44aa215aa3c
+%global gittag0 2.7.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Chinenual-VCV
-Version: 2.6.1
+Version: 2.7.0
 Release: 2%{?dist}
 Summary: Chinenual-VCV plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r Chinenual-VCV_plugin/dist/Chinenual-VCV/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.7.0-1
 - initial specfile

@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 37a5751cd1055263e66bc729c938e0f46bf7f7f6
-%global gittag0 2.0.0
+%global commit0 93b21392e7115ef98cb7c203a91fe3de6e3883c1
+%global gittag0 2.1.8
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-TMT
-Version: 2.0.0
+Version: 2.1.8
 Release: 2%{?dist}
 Summary: TMT plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r TMT_plugin/dist/TMT/* %{buildroot}%{_libexecdir}/Rack2/plugins/TMT/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.8-1
 - initial specfile
