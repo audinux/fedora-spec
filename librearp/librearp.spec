@@ -3,7 +3,7 @@
 # Category: Audio, Synthesizer
 
 Name: librearp
-Version: 2.4
+Version: 2.5
 Release: 2%{?dist}
 Summary: A pattern-based arpeggio generator plugin
 License: GPL-3.0-only
@@ -13,7 +13,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./librearp-source.sh <TAG>
-#        ./librearp-source.sh 2.4
+#        ./librearp-source.sh 2.5
 
 Source0: LibreArpLV2.tar.gz
 Source1: LibreArpVST3.tar.gz
@@ -52,7 +52,6 @@ VST3 version of %{name}
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}
 
 %description -n lv2-%{name}
 VST3 version of %{name}
@@ -81,17 +80,26 @@ cd ../LibreArpVST3
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 cp -ra %{__cmake_builddir}/LibreArp_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 
+install -m 755 -d %{buildroot}%{_bindir}/
+cp -ra %{__cmake_builddir}/LibreArp_artefacts/Standalone/* %{buildroot}/%{_bindir}/
+
+%files
+%doc README.md CHANGELOG.md
+%license LICENSE.md
+%{_bindir}/*
+
 %files -n lv2-%{name}
 %doc README.md CHANGELOG.md
 %license LICENSE.md
 %{_libdir}/lv2/*
 
 %files -n vst3-%{name}
-%doc README.md CHANGELOG.md
-%license LICENSE.md
 %{_libdir}/vst3/*
 
 %changelog
+* Tue May 07 2024 Yann Collette <ycollette.nospam@free.fr> - 2.5-2
+- update to 2.5-2
+
 * Tue May 24 2022 Yann Collette <ycollette.nospam@free.fr> - 2.4-2
 - update to 2.4-2
 
