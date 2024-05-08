@@ -7,7 +7,7 @@
 %define	uname OpenBoard
 
 Name: openboard
-Version: 1.7.0
+Version: 1.7.1
 Release: 3%{?dist}
 Summary: Interactive whiteboard for schools and universities
 License: GPL-3.0-or-later
@@ -149,6 +149,9 @@ find %{buildroot} -executable -type f -name *.html -exec chmod -x '{}' \+
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Wed May 08 2024 Yann Collette <ycollette.nospam@free.fr> - 1.7.1-3
+- update to 1.7.1-3
+
 * Fri Dec 08 2023 Yann Collette <ycollette.nospam@free.fr> - 1.7.0-3
 - update to 1.7.0-3
 
