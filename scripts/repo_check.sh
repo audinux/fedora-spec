@@ -956,11 +956,12 @@ https://github.com/mididings/pyliblo
 https://github.com/brummer10/Ratatouille.lv2
 https://github.com/hollance/TheKissOfShame
 https://github.com/agateau/sfxr-qt
-https://github.com/RealAlexZ/MultiMeter"
+https://github.com/RealAlexZ/MultiMeter
+https://github.com/baconpaul/airwin2rack
+https://github.com/bsutherland/JuceOPLVSTi"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
-# https://github.com/bsutherland/JuceOPLVSTi
 
 if [ -f git_tags_new.txt ];
 then

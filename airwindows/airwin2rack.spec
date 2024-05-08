@@ -1,5 +1,5 @@
 # Tag: Effect
-# Type: Plugin, VST
+# Type: Plugin, VST3, CLAP, LV2
 # Category: Audio, Effect
 
 Name: airwin2rack
