@@ -1,6 +1,6 @@
-From fdf81163f563756685c068e0fd7e2462968a41b0 Mon Sep 17 00:00:00 2001
+From 834429e6ec0d3f871ddf32026afba7bd77a477ab Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Tue, 9 Apr 2024 21:34:25 +0200
+Date: Thu, 9 May 2024 22:02:43 +0200
 Subject: [PATCH] aarch64
 
 ---
@@ -16,7 +16,7 @@ Subject: [PATCH] aarch64
  9 files changed, 23 insertions(+), 8 deletions(-)
 
 diff --git a/arch.mk b/arch.mk
-index a2a75a3..348a9b2 100644
+index 66846fb..a6f31bb 100644
 --- a/arch.mk
 +++ b/arch.mk
 @@ -11,7 +11,7 @@ else ifneq (,$(findstring arm64-,$(MACHINE)))
@@ -29,11 +29,11 @@ index a2a75a3..348a9b2 100644
  else
  $(error Could not determine CPU architecture of $(MACHINE))
 diff --git a/compile.mk b/compile.mk
-index bbda765..7b97e89 100644
+index dcc6af0..e3c6eeb 100644
 --- a/compile.mk
 +++ b/compile.mk
-@@ -35,6 +35,9 @@ ifdef ARCH_ARM64
- 	FLAGS += -DARCH_ARM64
+@@ -32,6 +32,9 @@ endif
+ ifdef ARCH_ARM64
  	FLAGS += -march=armv8-a+fp+simd
  endif
 +ifdef ARCH_AARCH64
@@ -41,8 +41,8 @@ index bbda765..7b97e89 100644
 +endif
  
  ifdef ARCH_LIN
- 	FLAGS += -DARCH_LIN
-@@ -101,7 +104,7 @@ build/%.mm.o: %.mm
+ 	CXXFLAGS += -Wsuggest-override
+@@ -93,7 +96,7 @@ build/%.mm.o: %.mm
  build/%.bin.o: %
  	@mkdir -p $(@D)
  ifdef ARCH_LIN
@@ -52,10 +52,10 @@ index bbda765..7b97e89 100644
  ifdef ARCH_WIN
  	$(OBJCOPY) -I binary -O pe-x86-64 -B i386:x86-64 --rename-section .data=.rodata,alloc,load,readonly,data,contents $< $@
 diff --git a/dep.mk b/dep.mk
-index 41fe589..21d3c25 100644
+index 292b18a..01f178f 100644
 --- a/dep.mk
 +++ b/dep.mk
-@@ -22,6 +22,9 @@ endif
+@@ -21,6 +21,9 @@ endif
  ifdef ARCH_ARM64
  	DEP_FLAGS += -march=armv8-a+fp+simd
  endif
