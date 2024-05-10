@@ -170,13 +170,12 @@ tar xvfz %{SOURCE5}
 
 CURRENT_PATH=`pwd`
 
-echo "CXXFLAGS = $CXXFLAGS"
-echo "CFLAGS   = $CFLAGS"
-echo "LDFLAGS  = $LDFLAGS"
-
-export CXXFLAGS=
-export CFLAGS=
-export LDFLAGS=
+%set_build_flags
+ 
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-fexceptions||g"`
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-fstack-clash-protection||g"`
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-fcf-protection||g"`
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-fstack-protector-strong||g"`
 
 %cmake \
        -DMUE_BUILD_UNIT_TESTS:BOOL=OFF \
