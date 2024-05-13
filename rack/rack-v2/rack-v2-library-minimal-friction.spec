@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 51eebd1f25def24d581c5f69e1c2a4d654f67048
-%global gittag0 2.0.0
+%global commit0 0dd3ae30ebef03855aaecf217a8405af6f6ae1a5
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-minimal-friction
-Version: 2.0.0
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: minimal-friction plugin for Rack
 License: GPL-2.0-or-later
@@ -152,5 +152,5 @@ cp -r minimal-friction_plugin/dist/minimal-friction/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
