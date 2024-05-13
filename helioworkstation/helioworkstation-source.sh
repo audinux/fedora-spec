@@ -5,8 +5,7 @@
 git clone https://github.com/helio-fm/helio-workstation
 cd helio-workstation
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz helio-workstation.tar.gz helio-workstation/
