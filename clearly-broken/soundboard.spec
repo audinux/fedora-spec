@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: Easy to use soundboard
 License: GPL-2.0-only
 URL: https://github.com/clearly-broken-software/SoundBoard
+ExclusiveArch: x86_64 aarch64
 
 # Usage: ./clearly-broken-source.sh <PROJECT> <TAG>
 #        ./clearly-broken-source.sh SoundBoard c2447333286dad81bdcd73a25e481c3bfdab58e3

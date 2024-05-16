@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: Utility for converting JSON board definitions into valid, libDaisy compatible C++ board support files for the Daisy platform.
 License: MIT
 URL: https://github.com/Wasted-Audio/json2daisy
+ExclusiveArch: x86_64 aarch64
 
 Source0: %{pypi_source wstd2daisy}
 

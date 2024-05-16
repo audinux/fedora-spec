@@ -8,6 +8,7 @@ Release: 4%{?dist}
 Summary: A VST3 MIDI sequencer
 License: GPL-3.0-only
 URL: https://github.com/surge-synthesizer/stochas
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

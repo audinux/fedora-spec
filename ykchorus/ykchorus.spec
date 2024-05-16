@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A chorus audio effect plugin based on DSP code by Togu Audio Line (TAL)
 License: GPL-2.0-or-later
 URL: https://github.com/SpotlightKid/ykchorus
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

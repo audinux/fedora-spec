@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A cross-platform soundboard
 License: GPL-3.0-or-later
 URL: https://github.com/Soundux/Soundux
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

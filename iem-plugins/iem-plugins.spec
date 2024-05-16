@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: The IEM Plug-in Suite is a free and Open-Source audio plug-in suite.
 License: GPL-3.0-or-later
 URL: https://plugins.iem.at
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

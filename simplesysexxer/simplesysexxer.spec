@@ -27,6 +27,7 @@ Release: 1%{?dist}
 Summary: A MIDI SysEx Transfer Tool
 License: GPL-2.0-or-later
 URL: http://www.christeck.de/
+ExclusiveArch: x86_64 aarch64
 
 Source: https://sourceforge.net/projects/sysexxer/files/SimpleSysexxer-0.3/%{name}-%{version}.tar.gz
 Patch0: simplesysexxer-Qt5Port.patch

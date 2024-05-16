@@ -8,6 +8,7 @@ Version: 0.1.0
 Release: 1%{?dist}
 License: GPL
 URL:     http://www.coppercloudmusic.com/enscribe/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

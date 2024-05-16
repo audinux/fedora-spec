@@ -8,6 +8,7 @@ Release: 3%{?dist}
 Summary: Set of LV2 plugins to mangle, slash, repeat and do much more with your beats
 License: GPL-2.0-or-later
 URL:     https://github.com/blablack/beatslash-lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

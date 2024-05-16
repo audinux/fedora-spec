@@ -13,6 +13,7 @@ Release: 2%{?dist}
 Summary: Tunefish virtual analog synthesizer - additive wavetable-based synthesizer VST plugin (git version)
 License: GPL-3.0-only
 URL: https://www.tunefish-synth.com/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

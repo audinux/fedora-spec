@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Industrializer is a program for generating percussion sounds for musical purposes
 License: GPL-2.0-only
 URL: https://sourceforge.net/projects/industrializer
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

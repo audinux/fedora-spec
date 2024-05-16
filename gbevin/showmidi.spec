@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Multi-platform GUI application to effortlessly visualize MIDI activity
 License: GPL-3.0-only
 URL: https://github.com/gbevin/ShowMIDI
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

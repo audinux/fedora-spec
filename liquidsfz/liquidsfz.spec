@@ -8,6 +8,7 @@ Release: 2%{?dist}
 License: BSD-2-Clause
 Summary: Sampler plugin and library for SFZ and Hydrogen instruments
 URL: https://github.com/swesterfeld/liquidsfz
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

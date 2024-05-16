@@ -10,6 +10,7 @@ Version: 0.6.6
 Release: 35%{?dist}
 License: GPL-2.0-or-later
 URL: http://drobilla.net/software/slv2/
+ExclusiveArch: x86_64 aarch64
 
 Source0: http://download.drobilla.net/%{name}-%{version}.tar.bz2
 # Remove dates from html doc files RHBZ#566345

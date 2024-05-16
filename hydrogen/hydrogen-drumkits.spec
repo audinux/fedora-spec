@@ -8,6 +8,7 @@ Version: 0.9.6
 Release: 6%{?dist}
 License: GPL-2.0-or-later AND GPL-3.0-only AND LicenseRef-OpenMusic-green
 URL:     http://www.hydrogen-music.org
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

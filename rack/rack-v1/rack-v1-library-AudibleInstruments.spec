@@ -11,6 +11,7 @@ Release: 4%{?dist}
 Summary: AudibleInstruments plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/VCVRack/AudibleInstruments
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

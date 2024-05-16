@@ -18,6 +18,7 @@ Version: %{kver}.xan%{kxan}
 Release: %{krel}%{?dist}
 License: GPL
 URL:     http://www.xanmod.org
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

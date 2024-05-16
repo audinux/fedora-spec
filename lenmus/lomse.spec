@@ -9,6 +9,7 @@ Release: 1%{?dist}
 Summary: A free open source library for rendering music scores
 License: GPL-2.0-or-later
 URL:     https://github.com/lenmus/lomse
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

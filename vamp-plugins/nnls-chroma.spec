@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: NNLS Chroma analyses a single channel of audio using frame-wise spectral input from the Vamp host
 License: GLPv2
 URL: http://www.isophonics.net/nnls-chroma
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

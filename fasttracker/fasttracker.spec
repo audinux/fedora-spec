@@ -8,6 +8,7 @@ Release: 3%{?dist}
 Summary: Module tracker software for creating music
 License: GPL-3.0-or-later
 URL: https://16-bits.org/ft2.php
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

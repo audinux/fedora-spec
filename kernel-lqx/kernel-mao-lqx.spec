@@ -18,6 +18,7 @@ Version: %{kver}.lqx%{krt}
 Release: %{krel}%{?dist}
 License: GPL
 URL:     https://liquorix.net/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

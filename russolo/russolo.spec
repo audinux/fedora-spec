@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: Russolo Suite
 License: GPL-3.0-or-later
 URL: https://sourceforge.net/projects/intonarumori/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

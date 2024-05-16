@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Marsyas - Music Analysis, Retrieval and Synthesis for Audio Signals
 License: GPL-2.0-or-later
 URL: https://github.com/marsyas/marsyas
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -4,6 +4,7 @@ Version: 3.13.0
 Release: 6%{?dist}
 License: GPL
 URL:     https://supercollider.github.io/
+ExclusiveArch: x86_64 aarch64
 
 Source0: https://github.com/supercollider/supercollider/releases/download/Version-%{version}/SuperCollider-%{version}-Source.tar.bz2
 

@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A utility to block the screen saver during MIDI activity
 License: GPL-2.0-or-later
 URL: https://github.com/jpcima/midiwake
+ExclusiveArch: x86_64 aarch64
 
 Source0: https://github.com/jpcima/midiwake/releases/download/v%{version}/%{name}-%{version}.tar.gz
 

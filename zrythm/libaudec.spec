@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: libaudec (lib audio decoder) is a wrapper library over ffmpeg, sndfile and libsamplerate for reading and resampling audio files
 License: GPL-2.0-or-later
 URL: https://git.zrythm.org/zrythm/libaudec
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

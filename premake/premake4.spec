@@ -8,6 +8,7 @@ Version: 4.4beta5
 Release: 1%{?dist}
 License: GPL-3.0-or-later
 URL: http://sourceforge.net/projects/premake/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

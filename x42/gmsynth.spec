@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: General MIDI LV2 Synth
 License: GPL-2.0-or-later
 URL: https://github.com/x42/gmsynth.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinuxgm

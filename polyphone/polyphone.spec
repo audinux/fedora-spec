@@ -8,6 +8,7 @@ Version: 2.3.0
 Release: 3%{?dist}
 Summary: A SF2 sound font editor
 URL: https://polyphone-soundfonts.com/
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

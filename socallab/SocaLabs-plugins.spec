@@ -23,6 +23,7 @@ Release: 6%{?dist}
 Summary: Various VST/VST3 Plugins from SocaLabs.com
 License: BSD-3-Clause
 URL: https://github.com/FigBug/slPlugins
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -10,6 +10,7 @@ Version: 1.4
 Release: 8%{?dist}
 License: BSD
 URL:     https://github.com/stump/%{name}
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

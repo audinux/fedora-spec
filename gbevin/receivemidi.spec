@@ -8,6 +8,7 @@ Release: 3%{?dist}
 Summary: A command line tool to receive MIDI event
 License: GPL-3.0-only
 URL: https://github.com/gbevin/ReceiveMIDI
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

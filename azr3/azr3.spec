@@ -7,6 +7,7 @@ Version: 1.2.3
 Release: 2%{?dist}
 Summary: This JACK program is a port of the free VST plugin AZR-3
 URL:     http://ll-plugins.nongnu.org/azr3/
+ExclusiveArch: x86_64 aarch64
 License: GPL
 
 Vendor:       Audinux

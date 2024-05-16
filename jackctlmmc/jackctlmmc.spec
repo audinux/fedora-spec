@@ -8,6 +8,7 @@ Version: 4
 Release: 22%{?dist}
 License: GPL-2.0-only
 URL: https://sourceforge.net/projects/%{name}
+ExclusiveArch: x86_64 aarch64
 
 Source0: https://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 

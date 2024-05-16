@@ -9,6 +9,7 @@ Version: 0.9.6
 Release: 3%{?dist}
 License: GPL
 URL: https://qsampler.sourceforge.net/qsampler-index.html
+ExclusiveArch: x86_64 aarch64
 
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA

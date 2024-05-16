@@ -15,6 +15,7 @@ Release: 4%{?dist}
 Summary: Esoteric programming language and live editor
 License: MIT
 URL: https://git.sr.ht/~rabbits/orca
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: An LV2 spectral subtraction plugin
 License: GPL-3.0-or-later
 URL: https://github.com/jeremysalwen/kn0ck0ut-LV2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

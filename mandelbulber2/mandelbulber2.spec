@@ -10,6 +10,7 @@ Release: 1%{?dist}
 License: GPL-3.0
 Summary: 3D Mandelbrot renderer
 URL: https://mandelbulber.com/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

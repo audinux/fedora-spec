@@ -7,6 +7,7 @@ Name: whysynth-dssi
 Version: 20120903
 Release: 12%{?dist}
 URL: http://www.smbolton.com/whysynth.html
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Source0: http://www.smbolton.com/whysynth/whysynth-%{version}.tar.bz2

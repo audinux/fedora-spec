@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: TASCAR is a collection of tools for creating spatially dynamic acoustic scenes in different render formats
 License: GPL2
 URL: http://tascar.org/
+ExclusiveArch: x86_64 aarch64
 
 Source0: https://github.com/HoerTech-gGmbH/tascar/archive/refs/tags/release_%{version}.tar.gz#/%{name}-%{version}.tar.gz
 

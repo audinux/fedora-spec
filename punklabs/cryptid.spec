@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: An FM drum synth with the cold clanging heart of a DX7 in the fearsome frame of an 808.
 License: GPL-3.0-or-later
 URL: https://punklabs.com/ot-cryptid
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -16,6 +16,7 @@ Version: 0
 Release: 5.%{commitdate}git%{shortcommit0}%{?dist}
 License: GPL-2.0-or-later
 URL: https://github.com/raboof/%{gitname}
+ExclusiveArch: x86_64 aarch64
 
 Source0: %{URL}/archive/%{commit0}/%{gitname}-%{commit0}.tar.gz
 Source1: realTimeConfigQuickScan

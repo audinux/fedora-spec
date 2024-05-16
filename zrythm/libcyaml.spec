@@ -9,6 +9,7 @@ Summary: C library for reading and writing YAML
 License: ISC
 Packager: Alexandros Theodotou
 URL: https://github.com/tlsa/libcyaml/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

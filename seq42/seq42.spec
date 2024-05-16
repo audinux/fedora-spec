@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
 URL: https://github.com/Stazed/seq42
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

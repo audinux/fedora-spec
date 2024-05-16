@@ -8,6 +8,7 @@ Release: 4%{?dist}
 Summary: A LV2 Plugin Bundle
 License: GPL-2.0-or-later
 URL: https://git.open-music-kontrollers.ch/~hp/midi_matrix.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

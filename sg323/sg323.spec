@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Ursa Major Stargate 323
 License: GPL-3.0-only
 URL: https://github.com/greyboxaudio/SG-323
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

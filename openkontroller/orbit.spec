@@ -12,6 +12,7 @@ Version: 0.1.0
 Release: 4%{?dist}
 Summary: LV2 Event Looper
 URL: https://git.open-music-kontrollers.ch/~hp/orbit.lv2
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

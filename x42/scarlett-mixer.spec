@@ -13,6 +13,7 @@ Release: 1%{?dist}
 Summary: A mixer matrix for Scarlett sound card
 License: GPL-2.0-or-later
 URL: https://github.com/x42/scarlett-mixer
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

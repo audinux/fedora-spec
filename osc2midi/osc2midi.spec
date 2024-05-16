@@ -13,6 +13,7 @@ Release: 1%{?dist}
 Summary: OSC2MIDI is a highly configurable OSC to jack MIDI (and back).
 License: GPLv2+ and GPLv2 and (GPLv2+ or MIT) and GPLv3+ and MIT and LGPLv2+ and (LGPLv2+ with exceptions) and Copyright only
 URL: https://github.com/ssj71/OSC2MIDI
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

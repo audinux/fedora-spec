@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: A modular synth tracker
 License: MIT
 URL: https://github.com/kometbomb/prototracker-modular
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

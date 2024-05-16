@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary:  aubio plugins for Vamp
 License: GLPv2
 URL: https://github.com/aubio/vamp-aubio-plugins
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

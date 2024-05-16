@@ -9,6 +9,7 @@ Version: 2021.03.27
 Release: 1%{?dist}
 License: MIT
 URL:     https://github.com/bellard/quickjs
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

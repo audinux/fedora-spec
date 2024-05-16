@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A subtractive software synthesizer built using the JUCE framework
 License: GPL-3.0-or-later
 URL:     https://github.com/sbadon122/ATLAS-06-Synthesizer
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

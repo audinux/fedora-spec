@@ -20,6 +20,7 @@ Version: 2.11.5
 Release: 10%{?dist}
 License: GPL-3.0-only
 URL: http://www.riverbankcomputing.com/software/qscintilla/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

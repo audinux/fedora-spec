@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: A Vamp plugin implementation of the MATCH audio alignment algorithm
 License: GLPv2
 URL: https://code.soundsoftware.ac.uk/projects/match-vamp
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

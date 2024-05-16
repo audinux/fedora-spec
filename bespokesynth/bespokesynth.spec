@@ -8,6 +8,7 @@ Release: 8%{?dist}
 Summary: A software modular synth
 License: GPL-3.0-or-later
 URL:     https://github.com/BespokeSynth/BespokeSynth
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

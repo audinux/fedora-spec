@@ -6,6 +6,7 @@ Release:        15%{?dist}
 Summary:        A YAML parser and emitter for C++
 License:        MIT
 URL:            http://code.google.com/p/yaml-cpp/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

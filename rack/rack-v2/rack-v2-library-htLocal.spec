@@ -19,6 +19,7 @@ Release: 1%{?dist}
 Summary: htLocal plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/HTlocal/VCV-Modules-HTLocal
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

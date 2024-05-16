@@ -11,6 +11,7 @@ Release:        1%{?dist}
 Summary:        High productivity build system
 License:        Apache-2.0
 URL:            https://mesonbuild.com/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

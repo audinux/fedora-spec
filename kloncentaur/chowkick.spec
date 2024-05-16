@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Kick synthesizer based on old-school drum machine circuits
 License: BSD-3-Clause
 URL: https://github.com/Chowdhury-DSP/ChowKick
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

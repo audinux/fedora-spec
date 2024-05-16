@@ -6,6 +6,7 @@ Release: %autorelease
 Summary: Your hardcore loop machine
 License: GPL-3.0-or-later AND MIT AND BSD-2-Clause
 URL: https://www.giadamusic.com
+ExclusiveArch: x86_64 aarch64
 
 # LICENSING NOTE:
 #

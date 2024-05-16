@@ -8,6 +8,7 @@ Version: 1.6.2
 Release: 2%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BAngr/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

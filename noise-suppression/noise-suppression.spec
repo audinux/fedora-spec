@@ -13,6 +13,7 @@ Release: 3%{?dist}
 Summary: Real-time Noise Suppression LADSPA / LV2 Plugin
 License: GPL-2.0-or-later
 URL: https://github.com/werman/noise-suppression-for-voice
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

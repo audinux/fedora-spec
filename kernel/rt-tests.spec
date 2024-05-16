@@ -4,6 +4,7 @@ Release: 1%{?dist}
 Summary: Various programs that test various rt-linux features
 License: GPL2
 URL: https://git.kernel.org/pub/scm/utils/rt-tests/rt-tests
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

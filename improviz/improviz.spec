@@ -10,6 +10,7 @@ Version: 1.1
 Release: 3%{?dist}
 License: BSD
 URL: https://github.com/rumblesan/improviz
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

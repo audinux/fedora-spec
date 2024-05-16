@@ -8,6 +8,7 @@ Version: 1.2.5
 Release: 2%{?dist}
 License: GPL
 URL: https://github.com/Stazed/rakarrack-plus
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

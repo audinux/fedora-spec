@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A lightweight C library of portability wrappers and data structures
 License: ISC
 URL: https://github.com/drobilla/zix
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

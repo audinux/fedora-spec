@@ -30,6 +30,7 @@ Release: 1%{?dist}
 License: GPL-3.0
 Summary: LV2 host for Jack controllable via socket or command line
 URL: https://github.com/moddevices/mod-host
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

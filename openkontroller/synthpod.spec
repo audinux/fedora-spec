@@ -12,6 +12,7 @@ Version: 0.1.2
 Release: 4%{?dist}
 Summary: Lightweight Nonlinear LV2 Plugin Container
 URL: https://git.open-music-kontrollers.ch/~hp/synthpod
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

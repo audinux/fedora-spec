@@ -8,6 +8,7 @@ Version: 3.0.1
 Release: 1%{?dist}
 License: GPL-3.0-or-later
 URL: https://github.com/dagargo/elektroid
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

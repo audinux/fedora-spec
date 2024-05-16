@@ -14,6 +14,7 @@ Release: 13%{?dist}
 # The author claims GPLv2 for the software
 License: LGPLv2+ and GPLv2 and GPLv2+
 URL: http://nedko.arnaudov.name/soft/lv2fil/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

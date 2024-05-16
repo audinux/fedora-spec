@@ -21,6 +21,7 @@ Version: %{pkgver}
 Release: 1%{?dist}
 License: LGPL
 URL: https://ccrma.stanford.edu/software/snd/
+ExclusiveArch: x86_64 aarch64
 
 Source:	 https://ccrma.stanford.edu/software/snd/snd-%{pkgver}.tar.gz
 Source1: snd.png

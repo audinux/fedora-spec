@@ -14,6 +14,7 @@ Release: 1%{?dist}
 Summary: A C library that may be linked into a C/C++ program to produce symbolic backtraces
 License: GPL-2.0-or-later
 URL: https://github.com/ianlancetaylor/libbacktrace
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

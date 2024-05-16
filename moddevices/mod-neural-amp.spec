@@ -13,6 +13,7 @@ Release: 1%{?dist}
 Summary: An LV2 plugin based on aidadsp-lv2 that directly contains model files within the plugin.
 License: GPL-2.0-or-later
 URL: https://github.com/moddevices/mod-neural-amp
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

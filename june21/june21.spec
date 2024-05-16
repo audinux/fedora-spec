@@ -7,6 +7,7 @@ Version: 0.9.6
 Release: 1%{?dist}
 Summary: Alpha juno 2 emulator using CSound & Cabbage
 URL: https://github.com/mikerodd/june-21
+ExclusiveArch: x86_64 aarch64
 License: GPL-3.0-or-later
 
 # TODO:

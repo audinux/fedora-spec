@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: An app to study music theory and train you ear
 License: GPL-2.0-or-later
 URL: https://github.com/lenmus/lenmus
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

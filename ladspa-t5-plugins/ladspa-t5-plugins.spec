@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: LADSPA filter plugins
 License: GPL-2.0+
 URL: https://gitlab.com/t-5/ladspa-t5-plugins
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

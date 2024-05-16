@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: JACK-MIDI support for VST hosts, including Wine apps
 License: MIT
 URL: https://github.com/falkTX/JackAss
+ExclusiveArch: x86_64 aarch64
 
 Source0: https://github.com/falkTX/JackAss/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip

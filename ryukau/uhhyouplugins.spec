@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: Uhhyou Plugins VST 3
 License: GPL-2.0-or-later
 URL: https://github.com/ryukau/VSTPlugins
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

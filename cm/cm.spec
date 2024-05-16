@@ -7,6 +7,7 @@ Version: 3.10.2
 Release: 3%{?dist}
 Summary: Common Music (CM) is a real-time music composition system implemented in JUCE/C++ and Scheme.
 URL:     https://sourceforge.net/projects/commonmusic
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

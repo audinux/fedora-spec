@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A synthesizer implemented using JUCE framework. Combines additive, subtractive, wavetable, operator(frequency modulation) synthesis methods
 License: GPL-3.0-or-later
 URL:     https://github.com/allex-k/synth
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

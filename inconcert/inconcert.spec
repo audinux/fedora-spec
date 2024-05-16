@@ -7,6 +7,7 @@ Version: 20140109
 Release: 1%{?dist}
 Summary: Live Tempo Adjustment for the Jack Audio Connection Kit
 URL: https://github.com/llloret/osmid
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

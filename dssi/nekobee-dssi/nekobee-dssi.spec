@@ -8,6 +8,7 @@ Version: 0.1.7
 Release: 24%{?dist}
 License: GPL-2.0-or-later
 URL: http://www.nekosynth.co.uk/wiki/nekobee
+ExclusiveArch: x86_64 aarch64
 
 Source0: http://www.nekosynth.co.uk/releases/nekobee-%{version}.tar.gz
 Source1: nekobee.desktop

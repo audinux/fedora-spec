@@ -7,6 +7,7 @@ Version: 1.2.14
 Release: 1%{?dist}
 Summary: Free Music Instrument Tuner
 URL: https://github.com/gillesdegottex/fmit
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

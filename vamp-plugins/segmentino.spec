@@ -8,6 +8,7 @@ Release: 3%{?dist}
 Summary: Segmentino is a Vamp plugin for automatic music structural segmentation
 License: GLPv2
 URL: https://code.soundsoftware.ac.uk/projects/segmenter-vamp-plugin
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

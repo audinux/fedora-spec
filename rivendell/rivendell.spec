@@ -8,6 +8,7 @@ Version: 4.2.2
 Release: 1%{?dist}
 License: LGPL
 URL: https://github.com/ElvishArtisan/rivendell
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

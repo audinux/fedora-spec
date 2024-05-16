@@ -7,6 +7,7 @@ Version: 1.0.0
 Release: 1%{?dist}
 Summary: A reverb effect in which the reflections can be frozen, filtered, pitch shifted and ultimately disintegrated
 URL: https://github.com/linuxmao-org/fogpad-port
+ExclusiveArch: x86_64 aarch64
 License: MIT
 
 Vendor:       Audinux

@@ -10,6 +10,7 @@ Version: 2012.09.19
 Release: 1%{?dist}
 License: GPL3
 URL: http://ccrma.stanford.edu/planetccrma/software/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Release: 12%{?dist}
 Summary: A digital audio workstation for JACK
 License: GPL-2.0-or-later
 URL: http://non.tuxfamily.org/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

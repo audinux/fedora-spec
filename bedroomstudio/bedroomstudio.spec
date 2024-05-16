@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A set of LV2 plugins
 License: MIT
 URL: https://github.com/psemiletov/bedroomstudio
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

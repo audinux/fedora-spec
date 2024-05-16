@@ -12,6 +12,7 @@ Version: 0.0.1
 Release: 1%{?dist}
 Summary: Reverberation plugin
 URL: https://github.com/jpcima/fverb
+ExclusiveArch: x86_64 aarch64
 License: BSL-1.0
 
 Vendor:       Audinux

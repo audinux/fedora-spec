@@ -8,6 +8,7 @@ Version: 1.5.2.4
 Release: 2%{?dist}
 License: GPL
 URL: https://chuck.cs.princeton.edu/
+ExclusiveArch: x86_64 aarch64
 
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA

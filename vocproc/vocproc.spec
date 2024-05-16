@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: VocProc is a LV2 plugin for pitch shifting (with or without formant correction), vocoding, automatic pitch correction and harmonizing of singing voice.
 License: GPL-2.0-or-later
 URL: https://hyperglitch.com/dev/VocProc
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

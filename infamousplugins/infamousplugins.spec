@@ -7,6 +7,7 @@ Version: 0.3.2
 Release: 2%{?dist}
 Summary: LV2 Audio Plugins for Linux
 URL: https://github.com/ssj71/infamousPlugins
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

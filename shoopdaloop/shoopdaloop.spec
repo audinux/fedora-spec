@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: A (live) looping application with DAW elements.
 License: GPL
 URL: https://github.com/SanderVocke/shoopdaloop
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

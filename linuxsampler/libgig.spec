@@ -8,6 +8,7 @@ Version: 4.3.0
 Release: 1%{dist}
 License: GPL
 URL: https://www.linuxsampler.org
+ExclusiveArch: x86_64 aarch64
 
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA

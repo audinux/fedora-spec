@@ -7,6 +7,7 @@ Version: 0.44.3
 Release: 1%{?dist}
 Summary: A JACK synthesizer
 URL: http://web.comhem.se/luna/
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

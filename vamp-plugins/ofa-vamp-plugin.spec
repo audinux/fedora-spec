@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: Plugin that performed audio fingerprinting and track identification using the MusicIP OFA library
 License: GLPv2
 URL: http://code.soundsoftware.ac.uk/projects/ofa-vamp-plugin
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

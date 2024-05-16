@@ -8,6 +8,7 @@ Release: 7%{?dist}
 Summary: A sample based pipe organ simulator.
 License: GPL-2.0-or-later
 URL: https://github.com/GrandOrgue/grandorgue
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

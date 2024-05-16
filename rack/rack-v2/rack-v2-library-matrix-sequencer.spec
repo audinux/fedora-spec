@@ -19,6 +19,7 @@ Release: 2%{?dist}
 Summary: matrix-sequencer plugin for Rack
 License: GPLv2+
 URL:     https://github.com/Retr0-code/Matrix-Sequncer
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

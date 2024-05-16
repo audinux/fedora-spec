@@ -8,6 +8,7 @@ Version: 1.0.1
 Release: 2%{?dist}
 License: GPL-2.0-or-later AND GPL-3.0-only
 URL: https://musical-artifacts.com/artifacts/252
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

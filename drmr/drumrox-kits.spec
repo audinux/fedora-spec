@@ -10,6 +10,7 @@ Release: 2%{?dist}
 Summary: A set of drumrox drum kits
 License: GPL-3.0-or-later
 URL: https://github.com/psemiletov/drum_sklad
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

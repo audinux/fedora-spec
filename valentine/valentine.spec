@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: An open source compressor meant to pump and breathe
 License: GPL-3.0-or-later
 URL: https://github.com/tote-bag-labs/valentine
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

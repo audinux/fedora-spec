@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: An expressive, quasi-Ptolemaic semi-modular synthesizer
 License: GPL-3.0-or-later
 URL: https://github.com/gregrecco67/AudiblePlanets
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

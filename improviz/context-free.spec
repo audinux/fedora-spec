@@ -4,6 +4,7 @@ Version: 3.3
 Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/MtnViewJohn/context-free
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

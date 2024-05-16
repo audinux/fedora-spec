@@ -14,6 +14,7 @@ Epoch: 1
 Summary: Various helper classes I use, and external methods my other Quarks use.
 License: Creative Commons Attribution-ShareAlike 4.0 International Public License
 URL: https://github.com/supercollider-quarks/%{name}
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

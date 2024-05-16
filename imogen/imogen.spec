@@ -6,6 +6,7 @@ Release: 1%{?dist}
 Summary: Ultimate vocal harmonizer
 License: MIT
 URL: https://github.com/benthevining/imogen
+ExclusiveArch: x86_64 aarch64
 
 Source0: https://github.com/benthevining/imogen/archive/%{commit0}.zip#/%{name}-%{commit0}.zip
 

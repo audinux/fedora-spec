@@ -14,6 +14,7 @@ Version: 1.3.0^%{commitdate}git%{shortcommit0}
 Release: %autorelease
 Summary: A little gtkmm GUI to select lv2 plugins from a list and run them with jalv.
 URL:     https://github.com/brummer10/jalv_select
+ExclusiveArch: x86_64 aarch64
 License: Unlicense
 
 Source0: https://github.com/brummer10/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz

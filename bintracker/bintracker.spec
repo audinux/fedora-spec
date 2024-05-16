@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A hackable Chiptune Audio Workstation
 License: GPL-3.0-or-later
 URL:     https://github.com/bintracker/bintracker
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: Structure Synth generates 3D structures by specifying a design grammar
 License: GPL-2.0-only
 URL: https://sourceforge.net/projects/structuresynth/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

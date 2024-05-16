@@ -15,6 +15,7 @@ Summary: a backport of Python standard library importlib.resources module for ol
 
 License: ASL 2.1
 URL: https://github.com/python/importlib_resources
+ExclusiveArch: x86_64 aarch64
 Source0: %{pypi_source importlib_resources}
 BuildArch: noarch
 

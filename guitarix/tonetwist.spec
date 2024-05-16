@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Multi-format LV2|VST2|VST3|CLAP audio effect plugs using the DISTRHO Plugin Framework
 License: GPL-2.0-or-later
 URL: https://github.com/brummer10/ToneTwistPlugs
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

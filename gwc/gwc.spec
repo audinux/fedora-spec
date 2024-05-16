@@ -11,6 +11,7 @@ Release: 1%{?dist}
 Summary: Gtk Wave Cleaner -- audio restoration application
 License: GPL
 URL:     https://gwc.sourceforge.net/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

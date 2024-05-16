@@ -8,6 +8,7 @@ Version: 1.2.0
 Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BSpacr
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

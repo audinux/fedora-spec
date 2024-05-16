@@ -4,6 +4,7 @@ Version: 3.13.0
 Release: 4%{?dist}
 License: GPL
 URL:     https://github.com/supercollider/sc3-plugins/
+ExclusiveArch: x86_64 aarch64
 
 # ./supercollider-sc3-source.sh <tag>
 # ./supercollider-sc3-source.sh Version-3.13.0

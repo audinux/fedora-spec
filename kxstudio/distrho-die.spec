@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: DISTRHO Imported Effect Plugins
 License: GPL-2.0-or-later
 URL: https://github.com/DISTRHO/DIE-Plugins
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

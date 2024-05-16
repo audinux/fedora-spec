@@ -8,6 +8,7 @@ Release: 4%{?dist}
 Summary: Check whether a given LV2 plugin is up to the specification
 License: Artistic-2.0
 URL: https://gitlab.com/drobilla/lv2lint
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

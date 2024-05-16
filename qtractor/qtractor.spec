@@ -8,6 +8,7 @@ Version: 0.9.91
 Release: 2%{?dist}
 License: GPLv2+
 URL: http://qtractor.sourceforge.net/
+ExclusiveArch: x86_64 aarch64
 
 # ./qtractor-source.sh <tag>
 # ./qtractor-source.sh qtractor_0_9_91

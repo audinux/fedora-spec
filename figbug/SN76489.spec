@@ -10,6 +10,7 @@ Release: 3%{?dist}
 Summary: Sega Master System Sound Chip VST
 License: LGPLv2+
 URL: https://github.com/FigBug/SN76489
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

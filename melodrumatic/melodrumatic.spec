@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Audio plugin that lets you use MIDI to pitch-shift via delay to turn unpitched audio into melodies
 License: GPL-3.0-or-later
 URL: https://github.com/usdivad/Melodrumatic
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

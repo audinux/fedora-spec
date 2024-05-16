@@ -8,6 +8,7 @@ Release: 4%{?dist}
 License: BSD-2-Clause
 Summary: Sampler plugin and library for SFZ instruments
 URL: https://github.com/sfztools/sfizz
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

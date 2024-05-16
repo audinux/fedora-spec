@@ -10,6 +10,7 @@ Release: 3%{?dist}
 Summary: Linux Windows vst wrapper/bridge
 License: GPL-3.0-only
 URL: https://github.com/osxmidi/linvst
+ExclusiveArch: x86_64 aarch64
 
 Source0: %{url}/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 

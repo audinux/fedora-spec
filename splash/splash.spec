@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Modular video-mapping software
 License: GPL-3.0-only
 URL: https://gitlab.com/splashmapper/splash
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

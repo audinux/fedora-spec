@@ -12,6 +12,7 @@ Release: 3%{?dist}
 Summary: Interactive whiteboard for schools and universities
 License: GPL-3.0-or-later
 URL: https://openboard.ch
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

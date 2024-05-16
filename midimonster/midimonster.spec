@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: Multi-protocol translation software (ArtNet, MIDI, OSC, JACK MIDI/CV ...)
 License: BSD
 URL: https://github.com/cbdevnet/midimonster
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -16,6 +16,7 @@ Release: 3%{?dist}
 Summary: NocturnalEncoder plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/djpeterso23662/NocturnalEncoder
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

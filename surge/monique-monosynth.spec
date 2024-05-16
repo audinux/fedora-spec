@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: Monique is a monophonic synth from Thomas Arndt
 License: GPL-3.0-or-later
 URL: https://github.com/surge-synthesizer/monique-monosynth
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

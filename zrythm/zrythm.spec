@@ -10,6 +10,7 @@ Release: 5%{?dist}
 Summary: Highly automated Digital Audio Workstation (DAW) featureful and intuitive to use
 License: GPL-2.0-or-later
 URL: https://git.zrythm.org/zrythm/zrythm
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

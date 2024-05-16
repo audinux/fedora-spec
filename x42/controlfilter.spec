@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: LV2 Control Port Parameter Filters -- modular synth blocks
 License: GPL-2.0-or-later
 URL: https://github.com/x42/controlfilter.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

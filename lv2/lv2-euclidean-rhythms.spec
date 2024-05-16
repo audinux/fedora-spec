@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Implementation of the Euclidean-Rhythms idea in the form of plugin
 License: GPL-3.0-only
 URL: https://github.com/bruno-unna/euclidean-rhythms
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

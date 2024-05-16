@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Semi-modular synthesizer plugin
 License: GPL-3.0-or-later
 URL: https://github.com/sjoerdvankreel/firefly-synth
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: guitarix vst3 wrapper
 License: GPL-2.0-or-later
 URL: https://github.com/brummer10/guitarix.vst
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

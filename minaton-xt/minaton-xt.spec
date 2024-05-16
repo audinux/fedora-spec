@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: DPF port of Minaton, an analogue style synthesizer
 License: GPL-3.0-or-later
 URL: https://github.com/AnClark/Minaton-XT
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

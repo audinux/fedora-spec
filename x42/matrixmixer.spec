@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: A LV2 matrix mixer
 License: GPL-2.0-or-later
 URL: https://github.com/x42/matrixmixer.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

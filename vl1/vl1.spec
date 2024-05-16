@@ -13,6 +13,7 @@ Release: 2%{?dist}
 Summary: An emulator of Casio VL-Tone VL1
 License: GPL-2.0-or-later
 URL: https://github.com/linuxmao-org/VL1-emulator
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

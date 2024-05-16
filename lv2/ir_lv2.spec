@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: IR LV2 convolution reverb
 License: GPL-2.0-or-later
 URL: https://github.com/tomscii/ir.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -31,6 +31,7 @@ Release: 1%{?dist}
 Summary: Video editor and VJ tool
 License: GPL-3.0-or-later AND LGPL-3.0-or-later
 URL: http://lives-video.com
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

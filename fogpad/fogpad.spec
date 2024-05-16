@@ -9,6 +9,7 @@ Version: 1.0.3
 Release: 1%{?dist}
 Summary: A VST reverb effect in which the reflections can be frozen, filtered, pitch shifted and ultimately disintegrated.
 URL: https://github.com/igorski/fogpad
+ExclusiveArch: x86_64 aarch64
 License: MIT
 
 Vendor:       Audinux

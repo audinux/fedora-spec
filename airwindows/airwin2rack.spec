@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Airwindows, Consolidated into a single Library, Rack Plugin and DAW Plugin
 License: MIT
 URL: https://github.com/baconpaul/airwin2rack
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

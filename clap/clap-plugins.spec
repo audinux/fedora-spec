@@ -11,6 +11,7 @@ Version: 1.0.1
 Release: 1%{?dist}
 License: MIT
 URL: https://github.com/free-audio/clap-plugins
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

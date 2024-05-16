@@ -14,6 +14,7 @@ Epoch: 1
 Summary: Python3 programming environment providing a fast and user-friendly abstraction to SuperCollider.
 License: Creative Commons Attribution-ShareAlike 4.0 International Public License
 URL: https://github.com/Qirky/FoxDot
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -9,6 +9,7 @@ Release: 2%{?dist}
 Summary: Equalizer using JUCE new dsp module
 License: GPL-3.0-only
 URL:     https://github.com/ffAudio/Frequalizer
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

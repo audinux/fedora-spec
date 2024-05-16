@@ -7,6 +7,7 @@ Version: 0.9.8.1
 Release: 3%{?dist}
 Summary: A csound file editor
 URL: https://github.com/CsoundQt/CsoundQt
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

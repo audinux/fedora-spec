@@ -8,6 +8,7 @@ Release: 24%{?dist}
 Summary: MIDI instrument and sound editor
 License: GPL-2.0-only
 URL: http://www.swamiproject.org/
+ExclusiveArch: x86_64 aarch64
 
 Source0: https://github.com/swami/swami/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 

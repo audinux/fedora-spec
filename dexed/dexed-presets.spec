@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Presets for LV2 FM multi plaform plugin
 License: GPL-3.0-or-later
 URL: https://github.com/audinux/fedora-spec
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

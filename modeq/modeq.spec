@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: Free EQ audio plugin with modulation
 License: GPL-3.0-only
 URL: https://github.com/tobanteAudio/modEQ
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

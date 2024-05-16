@@ -7,6 +7,7 @@ Version: 0.6.0
 Release: 3%{?dist}
 Summary: A loudness scanner (according to the EBU R128 standard)
 URL: https://github.com/jiixyj/loudness-scanner
+ExclusiveArch: x86_64 aarch64
 License: MIT
 
 Vendor:       Audinux

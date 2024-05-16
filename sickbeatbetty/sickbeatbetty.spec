@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: An open source MIDI drum machine / generator VST and standalone application
 License: GPL-3.0-or-later
 URL: https://github.com/jthwho/SickBeatBetty
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Release: 14%{?dist}
 Summary: A collection of LV2 plugins
 License: GPL-2.0-or-later
 URL: http://drobilla.net/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

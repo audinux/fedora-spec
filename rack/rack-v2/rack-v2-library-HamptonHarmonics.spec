@@ -19,6 +19,7 @@ Release: 1%{?dist}
 Summary: HamptonHarmonics plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://gitlab.com/hampton-harmonics/hampton-harmonics-modules
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

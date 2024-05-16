@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: LV2 plugin that freezes track audio to reduce DSP load
 License: GPL-3.0
 URL: https://github.com/taylordotfish/freeze
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

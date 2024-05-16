@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Artist-friendly Modular Machine for Art and Technology
 License: GPL-3.0-only
 URL:     https://benjamin.kuperberg.fr/chataigne/fr
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

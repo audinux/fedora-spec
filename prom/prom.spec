@@ -10,6 +10,7 @@ Release: 2%{?dist}
 Summary: ProjectM LV2 plugin
 License: GPL-2.0-or-later
 URL: https://github.com/DISTRHO/ProM
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

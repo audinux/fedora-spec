@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Create sound effects
 License: GPL-2.0-only
 URL: http://www.drpetter.se/project_sfxr.html
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

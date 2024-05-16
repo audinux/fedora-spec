@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: MelMatchEQ is a profiling EQ using a 26 step Mel Frequency Band
 License: GPL-2.0-or-later
 URL: https://github.com/brummer10/MelMatchEQ.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

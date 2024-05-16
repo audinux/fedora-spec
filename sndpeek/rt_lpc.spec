@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: real-time LPC analysis + synthesis + visualization
 License: GPL
 URL: https://soundlab.cs.princeton.edu/software/rt_lpc/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

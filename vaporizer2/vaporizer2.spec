@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: Vaporizer2 hybrid wavetable additive / subtractive VST / AU / AAX synthesizer / sampler workstation plugin
 License: GPL-3.0-or-later
 URL: https://github.com/VASTDynamics/Vaporizer2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

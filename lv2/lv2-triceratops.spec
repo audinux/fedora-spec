@@ -10,6 +10,7 @@ Summary: An LV2 polyphonic synthesizer
 # http://opensource.org/licenses/isc
 License: ISC
 URL: https://sourceforge.net/projects/triceratops/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

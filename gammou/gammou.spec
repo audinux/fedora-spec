@@ -9,6 +9,7 @@ Version: 0.8.1
 Release: 2%{?dist}
 Summary: Modular Sound Synthesizer
 URL: https://github.com/aliefhooghe/Gammou
+ExclusiveArch: x86_64 aarch64
 License: BSD3
 
 Vendor:       Audinux

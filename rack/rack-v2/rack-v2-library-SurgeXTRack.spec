@@ -19,6 +19,7 @@ Release: 2%{?dist}
 Summary: SurgeXTRack plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/surge-synthesizer/surge-rack/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

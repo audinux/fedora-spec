@@ -19,6 +19,7 @@ Release: 1%{?dist}
 Summary: RODENTMODULES plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/RODENTCAT/RODENTMODULES
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

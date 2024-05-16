@@ -9,6 +9,7 @@ Release: 1%{?dist}
 Summary: A simple, modern audio sample browser/manager
 License: GPL-2.0-or-later
 URL: https://gitlab.com/samplehive/sample-hive
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -13,6 +13,7 @@ Version: 0.0.1
 Release: 1%{?dist}
 Summary: A Faust IDE
 URL: https://github.com/grame-cncm/faustworks
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

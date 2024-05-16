@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: convert LV2 CV to MIDI CC
 License: GPL-2.0-or-later
 URL: https://github.com/polyeffects/cv_to_cc.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

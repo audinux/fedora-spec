@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Aida DSP's audio plugins in lv2 format
 License: GPL-3.0-or-later
 URL: https://github.com/moddevices/aidadsp-lv2
+ExclusiveArch: x86_64 aarch64
 
 # Usage: ./aidadsp-lv2-source.sh <TAG>
 #        ./aidadsp-lv2-source.sh v0.95

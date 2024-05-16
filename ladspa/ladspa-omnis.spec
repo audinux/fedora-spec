@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Omins is a collection of LADSPA plugins geared at modular synthesizers.
 License: GPL-2.0+
 URL: https://www.nongnu.org/om-synth/omins.html
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

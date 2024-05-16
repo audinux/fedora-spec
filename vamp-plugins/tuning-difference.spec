@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: Vamp plugin that estimates the tuning frequency of a recording
 License: GLPv2
 URL: https://code.soundsoftware.ac.uk/projects/tuning-difference
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

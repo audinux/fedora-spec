@@ -11,6 +11,7 @@ Release: 4%{?dist}
 Summary: Some audio plugins (LV2 and VST) from ruykau
 License: GPL-2.0-or-later
 URL: https://github.com/Wasted-Audio/ryukau_LV2Plugins
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

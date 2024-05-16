@@ -9,6 +9,7 @@ Version: 1.0.0
 Release: 1%{?dist}
 Summary: audio looping application
 URL:     https://github.com/chronopoulos/annulus
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

@@ -7,6 +7,7 @@ Version: 0.6.2
 Release: 1%{?dist}
 Summary: Open source video mapping software
 URL: https://mapmapteam.github.io
+ExclusiveArch: x86_64 aarch64
 License: GPL-3.0-only
 
 Vendor:       Audinux

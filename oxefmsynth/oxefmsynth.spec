@@ -13,6 +13,7 @@ Release: 2%{?dist}
 Summary: A FM synthetized
 License: GPL-2.0-or-later
 URL: https://github.com/oxesoft/oxefmsynth
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

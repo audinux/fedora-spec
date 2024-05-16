@@ -10,6 +10,7 @@ Summary: A collection of LV2 plugins from Invada Records
 # The file plugingui/lv2_ui.h is LGPLv2+.  The rest are GPLv2+.
 License: GPLv2+ and LGPLv2+
 URL: http://www.invadarecords.com/Downloads.php?ID=00000264
+ExclusiveArch: x86_64 aarch64
 
 # This package is not hosted on upstream's site, but it is the tarball that
 # they recommend for packagers to use.  The tarball that is hosted on the

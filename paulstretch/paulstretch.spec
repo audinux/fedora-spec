@@ -10,6 +10,7 @@ Release: 3%{?dist}
 Summary: A Paulstretch VST2/VST3/Standalone plugin
 License: MIT
 URL: https://bitbucket.org/xenakios/paulstretchplugin
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

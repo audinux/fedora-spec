@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A multi-track, multi-channel, looping audio recorder designed for live handsfree use
 License: GPL-3.0-or-later
 URL: https://github.com/bill-auger/loopidity
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

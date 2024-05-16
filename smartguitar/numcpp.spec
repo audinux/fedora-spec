@@ -8,6 +8,7 @@ Version: 2.4.2
 Release: 1%{?dist}
 License: MIT
 URL: https://github.com/dpilger26/NumCpp
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -12,6 +12,7 @@ Release: 1%{?dist}
 Summary: A kick drum synthesizer plugin
 License: GPL-3.0-or-later
 URL: https://github.com/WeirdConstructor/Kickmess
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

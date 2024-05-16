@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Physical modelling signal processing for analog tape recording
 License: BSD-3-Clause
 URL: https://github.com/jatinchowdhury18/AnalogTapeModel
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

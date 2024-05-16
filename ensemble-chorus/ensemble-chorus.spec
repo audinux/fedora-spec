@@ -7,6 +7,7 @@ Version: 0.0.1
 Release: 2%{?dist}
 Summary: Effect plugin for ensemble-chorus (VST/LV2)
 URL: https://github.com/jpcima/ensemble-chorus
+ExclusiveArch: x86_64 aarch64
 License: BSL-1.0
 
 Vendor:       Audinux

@@ -10,6 +10,7 @@ Release: 11%{?dist}
 Summary: Live performance mixing tool
 License: GPLv3
 URL: http://openavproductions.com/luppp
+ExclusiveArch: x86_64 aarch64
 
 Source0: https://github.com/harryhaaren/openAV-Luppp/archive/release-%{version}.tar.gz
 Source1: loop.svg

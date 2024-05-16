@@ -12,6 +12,7 @@ Release: 36.20100505git%{git_commit8}%{?dist}
 Summary: Wiimote interface library
 License: GPL-2.0-or-later
 URL: https://github.com/abstrakraft/cwiid
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

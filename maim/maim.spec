@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Audio plugin for custom MP3 distortion and digital glitches
 License: GPL-3.0
 URL:     https://github.com/ArdenButterfield/Maim
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

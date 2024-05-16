@@ -12,6 +12,7 @@ Version: 0.1.2
 Release: 2%{?dist}
 Summary: A classic analog phaser effect
 URL: https://github.com/jpcima/stone-phaser
+ExclusiveArch: x86_64 aarch64
 License: BSL-1.0
 
 Vendor:       Audinux

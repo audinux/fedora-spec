@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: JACK transport timebase bridge to Ableton Link
 License: GPL-2.0-only
 URL: https://github.com/rncbc/jack_link
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

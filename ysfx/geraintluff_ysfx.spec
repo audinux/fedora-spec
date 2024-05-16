@@ -7,6 +7,7 @@ Version: 0.0.1
 Release: 1%{?dist}
 Summary: Collection of JSFX effects
 URL: https://github.com/geraintluff/jsfx
+ExclusiveArch: x86_64 aarch64
 License: MIT
 
 Vendor:       Audinux

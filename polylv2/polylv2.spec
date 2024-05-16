@@ -13,6 +13,7 @@ Release: 2%{?dist}
 Summary: a collection of LV2 plugins designed for modular / eurorack style use.
 License: GPL-3.0-or-later
 URL: https://github.com/polyeffects/PolyLV2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

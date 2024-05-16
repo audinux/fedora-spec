@@ -8,6 +8,7 @@ Version: 1.69.2
 Release: 4%{?dist}
 License: BSD
 URL: https://16-bits.org/pt.php
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

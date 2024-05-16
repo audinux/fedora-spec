@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: MTC Generator LV2 Plugin
 License: GPL-2.0-or-later
 URL: https://github.com/x42/mtc.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

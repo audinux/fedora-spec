@@ -57,6 +57,7 @@ Summary: A WYSIWYG music score typesetter
 # the soundfont we musescore uses (see below) is BSD 3
 License: Apache-2.0 AND BSD-3-Clause AND FTL AND GPL-2.0-only AND SUSE-GPL-3.0-with-font-exception AND GPL-2.0-or-later AND GFDL-1.2-only AND LGPL-2.0-only AND LGPL-2.1-only AND (GPL-2.0-only OR GPL-3.0-only) AND MIT
 URL: https://musescore.org
+ExclusiveArch: x86_64 aarch64
 Source0: https://github.com/musescore/MuseScore/archive/v%{version}/MuseScore-%{version}.tar.gz
 
 # MuseScore expect to be able to download the latest version of its soundfonts

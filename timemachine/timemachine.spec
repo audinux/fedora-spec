@@ -13,6 +13,7 @@ Version: 0.3.4
 Release: 6%{?dist}
 License: GPL
 URL: https://github.com/swh/timemachine
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

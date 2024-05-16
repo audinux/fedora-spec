@@ -7,6 +7,7 @@ Version: 1.1.5
 Release: 2%{?dist}
 Summary: The nanomsg library is a simple high-performance implementation of several "scalability protocols"
 URL: https://github.com/nanomsg/nanomsg
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

@@ -8,6 +8,7 @@ Summary: ALSA Scarlett Gen 2/3 Control Panel
 Release: 2%{?dist}
 License: GPL-2.0-or-later
 URL: https://github.com/geoffreybennett/alsa-scarlett-gui
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -14,6 +14,7 @@ Name: padthv1
 Version: %{padthv1_version}
 Release: 4%{?dist}
 URL: https://sourceforge.net/projects/%{name}
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

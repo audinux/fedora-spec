@@ -7,6 +7,7 @@ Version: 3.66.0
 Release: 5%{?dist}
 Summary: Lebiniou is an audio spectrum visualizer - data package
 URL: https://biniou.net/
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

@@ -13,6 +13,7 @@ Release: 1%{?dist}
 Summary: LV2 note detection using aubio
 License: GPL-2.0-only
 URL: https://github.com/dsheeler/harmonizer.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

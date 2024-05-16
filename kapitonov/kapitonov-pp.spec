@@ -12,6 +12,7 @@ Version: 1.2.1
 Release: 2%{?dist}
 Summary: Kapitonov Plugins Pack for guitar
 URL: https://github.com/olegkapitonov/Kapitonov-Plugins-Pack
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

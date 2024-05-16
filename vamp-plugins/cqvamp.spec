@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: A Vamp plugin implementing the Constant-Q transform of a time-domain signal
 License: GLPv2
 URL: https://code.soundsoftware.ac.uk/projects/constant-q-cpp
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

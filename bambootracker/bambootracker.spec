@@ -8,6 +8,7 @@ Version: 0.6.3
 Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/rerrahkr/BambooTracker
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

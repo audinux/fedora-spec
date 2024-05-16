@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Digital Room Correction
 License: LGPLv2+
 URL:     https://sourceforge.net/projects/drc-fir/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

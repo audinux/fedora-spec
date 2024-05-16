@@ -13,6 +13,7 @@ Release: 1%{?dist}
 Summary: A tracker / sequencer
 License: GPL-2.0-or-later
 URL: https://github.com/kmatheussen/radium
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

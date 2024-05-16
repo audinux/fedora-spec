@@ -7,6 +7,7 @@ Version: 1.0.7
 Release: 1%{?dist}
 Summary: An audio plugin with Pure Data embedded that allows to load and to control patches
 URL:     https://github.com/pierreguillot/Camomile
+ExclusiveArch: x86_64 aarch64
 License: GPL-3.0-or-later
 
 Vendor:       Audinux

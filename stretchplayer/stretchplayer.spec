@@ -12,6 +12,7 @@ Version: 0.0.1.%{shortcommit0}
 Release: 1%{?dist}
 Summary: Variable speed audio plater
 URL: https://github.com/smbolton/stretchplayer
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

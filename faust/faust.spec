@@ -10,6 +10,7 @@ Summary: Compiled language for real-time audio signal processing
 # The rest is GPLv2+
 License: GPLv2+ and BSD
 URL: https://faust.grame.fr
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

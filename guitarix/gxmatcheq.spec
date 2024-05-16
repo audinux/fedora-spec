@@ -13,6 +13,7 @@ Release: 2%{?dist}
 Summary: Matching Equalizer to apply EQ curve from on source to a other source
 License: GPL-2.0-or-later
 URL:     https://github.com/brummer10/GxMatchEQ.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

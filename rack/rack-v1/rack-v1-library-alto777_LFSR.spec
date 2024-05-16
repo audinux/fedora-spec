@@ -16,6 +16,7 @@ Release: 3%{?dist}
 Summary: alto777_LFSR plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/alto777/LFSR
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

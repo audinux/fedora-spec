@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A Neural Record plug to make the process of cloning external soft/hardware a bit more comfortable
 License: BSD
 URL: https://github.com/brummer10/neuralrecord
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

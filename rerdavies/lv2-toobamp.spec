@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A set of high-quality guitar effect plugins for Raspberry Pi with specific support for PiPedal.
 License: GPL-2.0-or-later
 URL:     https://github.com/rerdavies/ToobAmp
+ExclusiveArch: x86_64 aarch64
 
 # ./rerdavies-source.sh <project> <tag>
 # ./rerdavies-source.sh ToobAmp v1.0.29

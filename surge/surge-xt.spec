@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: A VST3 Synthesizer and Effects, including Airwindows
 License: GPL-2.0-or-later
 URL: https://github.com/surge-synthesizer/surge
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

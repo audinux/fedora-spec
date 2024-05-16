@@ -8,6 +8,7 @@ Release: 20%{dist}
 Summary: Synthesizer emulator
 License: GPL-2.0-or-later
 URL: http://bristol.sourceforge.net
+ExclusiveArch: x86_64 aarch64
 
 Source0: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Source1: %{name}.desktop

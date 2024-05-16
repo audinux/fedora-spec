@@ -4,6 +4,7 @@ Release: 1%{?dist}
 Summary: real-time audio visualization
 License: GPL
 URL:     https://www.gewang.com/software/sndpeek/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

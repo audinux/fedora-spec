@@ -7,6 +7,7 @@ Version: 1.2.0
 Release: 1%{?dist}
 Summary: Reaper JSFX Plugins
 URL: https://github.com/Justin-Johnson/ReJJ
+ExclusiveArch: x86_64 aarch64
 License: MIT
 
 Vendor:       Audinux

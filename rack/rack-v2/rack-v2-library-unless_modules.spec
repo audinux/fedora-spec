@@ -19,6 +19,7 @@ Release: 2%{?dist}
 Summary: unless_modules plugin for Rack
 License: GPL-2.0-or-later
 URL:     http://gitlab.com/unlessgames/unless_modules
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

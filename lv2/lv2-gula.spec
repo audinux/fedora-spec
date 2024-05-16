@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: LV2 plugins which is a combination of vibrato and tremelo.
 License: GPL-3.0-or-later
 URL: https://github.com/steveb/gula-plugins
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

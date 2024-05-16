@@ -15,6 +15,7 @@ Release: 4%{?dist}
 Summary: LV2 Toolkit
 License: GPL-2.0-or-later
 URL: https://github.com/lvtk/lvtk
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

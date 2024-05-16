@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: automatic mastering plugin for live streaming, podcasts and internet radio
 License: GPL-2.0-or-later
 URL: https://github.com/trummerschlunk/master_me
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

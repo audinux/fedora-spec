@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A simple harmonic table MIDI sequencer
 License: GPL-3.0-only
 URL: https://github.com/StrangeLoopsAudio/Harmonigon
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

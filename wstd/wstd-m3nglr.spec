@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Multi-Band Modular Delay Audio Plugin
 License: GPL-3.0-only
 URL: https://github.com/Wasted-Audio/wstd-m3nglr
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

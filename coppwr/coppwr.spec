@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: Low level control GUI for the PipeWire multimedia server
 License: GPL-3.0-or-later
 URL: https://github.com/dimtpap/coppwr
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

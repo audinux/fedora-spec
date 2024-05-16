@@ -8,6 +8,7 @@ Version: 1.0.0
 Release: 2%{?dist}
 License: GPL-2.0-or-later AND GPL-3.0-only
 URL: http://www.grgr.de/IR/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

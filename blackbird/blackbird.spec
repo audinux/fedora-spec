@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: VST3 Synth built with JUCE
 License: GPL-3.0-or-later
 URL:     https://github.com/khrykin/BlackBird
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

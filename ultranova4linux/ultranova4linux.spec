@@ -12,6 +12,7 @@ Version: 0.0.%{shortcommit0}
 Release: 4%{?dist}
 Summary: userspace Novation Synthesizer driver
 URL: https://github.com/hansfbaier/ultranova4linux
+ExclusiveArch: x86_64 aarch64
 License: GPL-3.0-only
 
 Vendor:       Audinux

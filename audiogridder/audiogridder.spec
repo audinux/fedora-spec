@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: DSP servers using general purpose computers and networks 
 License: MIT
 URL: https://github.com/apohl79/audiogridder
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

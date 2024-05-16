@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A simple console application to convert NKI files
 License: GPL-3.0-or-later
 URL: http://www.linuxsampler.org/nkitool/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

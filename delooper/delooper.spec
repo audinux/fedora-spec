@@ -9,6 +9,7 @@ Version: 0.0.1
 Release: 1%{?dist}
 Summary: Audio Looper
 URL:     https://github.com/sonejostudios/DeLooper
+ExclusiveArch: x86_64 aarch64
 License: GPL-3.0-or-later
 
 Vendor:       Audinux

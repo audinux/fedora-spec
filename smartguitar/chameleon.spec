@@ -9,6 +9,7 @@ Release: 1%{?dist}
 Summary: Vintage guitar amp using neural networks.
 License: GPL-2.0-or-later
 URL: https://github.com/GuitarML/Chameleon
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

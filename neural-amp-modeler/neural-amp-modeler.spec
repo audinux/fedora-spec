@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Neural Amp Modeler LV2 plugin implementation
 License: MIT
 URL: https://github.com/mikeoliphant/neural-amp-modeler-lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

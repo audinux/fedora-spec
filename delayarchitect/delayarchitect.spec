@@ -7,6 +7,7 @@ Version: 0.1
 Release: 1%{?dist}
 Summary: A visual, musical editor for delay effects
 URL:     https://github.com/jpcima/DelayArchitect
+ExclusiveArch: x86_64 aarch64
 License: BSL-2.0
 
 Vendor:       Audinux

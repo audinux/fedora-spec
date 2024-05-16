@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Ratatouille is a Neural Model loader and mixer
 License: BSD-3-Clause
 URL: https://github.com/brummer10/Ratatouille.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

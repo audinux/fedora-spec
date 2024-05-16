@@ -8,6 +8,7 @@ Release: 8%{?dist}
 Summary: A VST3 / LV2 Synthesizer
 License: GPL-2.0-or-later
 URL: https://github.com/surge-synthesizer/surge
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

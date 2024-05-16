@@ -10,6 +10,7 @@ Version: 0.9.0
 Release: 1%{?dist}
 License: AGPL-3.0-only
 URL: https://github.com/greatest-ape/OctaSine
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

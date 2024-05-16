@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: DSP Magnetic Tape Emulation
 License: GPL-3.0-or-later
 URL: https://github.com/hollance/TheKissOfShame
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

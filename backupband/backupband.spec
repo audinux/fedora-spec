@@ -9,6 +9,7 @@ Version: 04282023
 Release: 1%{?dist}
 Summary: An automatic orchestra
 URL:     https://sourceforge.net/projects/backupband
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

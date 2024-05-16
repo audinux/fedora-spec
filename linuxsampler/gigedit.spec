@@ -8,6 +8,7 @@ Version: 1.1.1
 Release: 2%{?dist}
 License: GPL2
 URL: http://www.linuxsampler.org/
+ExclusiveArch: x86_64 aarch64
 
 Distribution: Planet CCRMA
 Vendor:       Planet CCRMA

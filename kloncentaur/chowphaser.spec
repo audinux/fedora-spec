@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Phaser effect based loosely on the Schulte Compact Phasing 'A'
 License: BSD-3-Clause
 URL: https://github.com/jatinchowdhury18/ChowPhaser
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

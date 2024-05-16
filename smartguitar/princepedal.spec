@@ -9,6 +9,7 @@ Release: 1%{?dist}
 Summary: Prince of Tone style guitar plugin made with neural networks
 License: GPL-2.0-or-later
 URL: https://github.com/GuitarML/PrincePedal
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

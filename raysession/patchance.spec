@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: Jack Patchbay GUI
 License: GPL-2.0-or-later
 URL: https://github.com/Houston4444/Patchance
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

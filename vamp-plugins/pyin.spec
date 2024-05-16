@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: pYIN (Probabilistic YIN) is a modification of the well-loved YIN algorithm for fundamental frequency (F0) estimation in monophonic audio
 License: GLPv2
 URL: https://code.soundsoftware.ac.uk/projects/pyin
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

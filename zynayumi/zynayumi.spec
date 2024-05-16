@@ -12,6 +12,7 @@ Version: 0.0.1
 Release: 1%{?dist}
 Summary: VST/DSSI/LV2 plugin based on ayumi, the highly precise emulator of AY-8910 and YM2149
 URL: https://github.com/zynayumi/zynayumi
+ExclusiveArch: x86_64 aarch64
 License: GPL3
 
 Vendor:       Audinux

@@ -7,6 +7,7 @@ Version: 2.9.0
 Release: 3%{?dist}
 Summary: Framework for developing audio plugins with the Csound programming language.
 URL: https://github.com/rorywalsh/cabbage
+ExclusiveArch: x86_64 aarch64
 License: GPL-3.0-or-later
 
 Vendor:       Audinux

@@ -8,6 +8,7 @@ Version: 0.9.3
 Release: 8%{?dist}
 License: GPL-2.0-or-later
 URL: http://launchpad.net/%{name}
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

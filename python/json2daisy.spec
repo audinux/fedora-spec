@@ -11,6 +11,7 @@ Summary: Utility for converting JSON board definitions into valid, libDaisy comp
 
 License: MIT
 URL: https://github.com/electro-smith/json2daisy
+ExclusiveArch: x86_64 aarch64
 Source0: %{pypi_source json2daisy}
 BuildArch: noarch
 

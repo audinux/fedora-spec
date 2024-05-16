@@ -9,6 +9,7 @@ Version: 0.6.3
 Release: 2%{?dist}
 License: GPL
 URL: http://rakarrack.sourceforge.net/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

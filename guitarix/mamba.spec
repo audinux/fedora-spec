@@ -8,6 +8,7 @@ Release: 4%{?dist}
 Summary: Virtual Midi Keyboard for Jack Audio Connection Kit
 License: BSD
 URL: https://github.com/brummer10/Mamba
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

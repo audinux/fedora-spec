@@ -10,6 +10,7 @@ Version: 1.4.2
 Release: 1%{?dist}
 License: MIT
 URL: https://github.com/baines/MiniGBS
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

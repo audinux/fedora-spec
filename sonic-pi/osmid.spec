@@ -7,6 +7,7 @@ Version: 0.8.0
 Release: 2%{?dist}
 Summary: osmid is a tool to bridge MIDI and OSC
 URL: https://github.com/llloret/osmid
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

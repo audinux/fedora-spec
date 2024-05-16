@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Tutka is a free tracker style MIDI sequencer
 License: GPL-2.0-only
 URL: https://www.nongnu.org/tutka/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

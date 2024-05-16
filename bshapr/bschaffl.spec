@@ -8,6 +8,7 @@ Version: 1.4.10
 Release: 2%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BSchaffl
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

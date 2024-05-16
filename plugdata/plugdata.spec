@@ -7,6 +7,7 @@ Version: 0.8.3
 Release: 1%{?dist}
 Summary: Pure Data as a plugin, with a new GUI
 URL: https://github.com/timothyschoen/PlugData
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

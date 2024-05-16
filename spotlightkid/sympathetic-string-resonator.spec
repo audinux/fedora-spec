@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A sympathetic string resonator
 License: MIT
 URL: https://github.com/SpotlightKid/sympathetic-string-resonator
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

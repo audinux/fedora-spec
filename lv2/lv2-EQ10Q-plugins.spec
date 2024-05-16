@@ -12,6 +12,7 @@ Summary: LV2 Plugin: Parametric audio equalizer with 12 different filter types
 # paramEQ.so, contains only GPLv2+ code.
 License: GPL-2.0-or-later AND GPL-3.0-or-later
 URL: http://eq10q.sourceforge.net/
+ExclusiveArch: x86_64 aarch64
 
 Source0: http://downloads.sourceforge.net/project/eq10q/eq10q-%{version}.tar.gz
 # Patches from debian package

@@ -7,6 +7,7 @@ Version: 1.3.0
 Release: 3%{?dist}
 Summary: A cross-platform GUI toolkit in C++.
 URL: https://gitlab.com/iurie-sw/redkite
+ExclusiveArch: x86_64 aarch64
 License: GPL-3.0-only
 
 Vendor:       Audinux

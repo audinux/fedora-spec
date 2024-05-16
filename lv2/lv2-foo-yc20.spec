@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: This is a Faust implementation of a 1969 designed Yamaha combo organ
 License: LGPL2.1
 URL: https://github.com/sampov2/foo-yc20
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Version: 1.0.0
 Release: 24%{?dist}
 License: GPL-2.0-or-later
 URL: http://dssi.sourceforge.net/download.html#FluidSynth-DSSI
+ExclusiveArch: x86_64 aarch64
 
 Source0:    http://download.sf.net/dssi/fluidsynth-dssi-%{version}.tar.gz
 # Add Fedora's default soundfont path to the scanlist:

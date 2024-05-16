@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: a LADSPA plugin library containing three anti-aliased, minBLEP-based, hard-sync-capable oscillator plugins
 License: GPL-2.0+
 URL: https://www.sirlab.de/linux/download
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

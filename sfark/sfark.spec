@@ -13,6 +13,7 @@ Version: 0.1.%{shortcommit0}
 Release: 2%{?dist}
 License: GPL
 URL: https://github.com/raboof/sfarkxtc
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

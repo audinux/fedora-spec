@@ -18,6 +18,7 @@ Version: %{kver}.rt%{krt}
 Release: %{krel}%{?dist}
 License: GPL
 URL:     http://www.kernel.org
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

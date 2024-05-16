@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A Cue player designed for stage productions
 License: GPL-2.0-or-later
 URL: https://github.com/FrancescoCeruti/linux-show-player
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

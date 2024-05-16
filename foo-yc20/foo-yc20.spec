@@ -10,6 +10,7 @@ Release: 2%{?dist}
 Summary: A Faust emulation on a Yamaha YC20 Combo organ
 License: MIT
 URL: https://github.com/sampov2/foo-yc20
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

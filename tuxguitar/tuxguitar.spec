@@ -33,6 +33,7 @@ Name:             tuxguitar
 Version:          1.5.6
 Release:          8%{?dist}
 URL:              http://www.tuxguitar.com.ar
+ExclusiveArch: x86_64 aarch64
 # Source file cleaned of potentially proprietary SF2, DLL, EXE files:
 #   export VERSION=1.5.2
 #   wget -N http://downloads.sourceforge.net/tuxguitar/tuxguitar-$VERSION-src.tar.gz

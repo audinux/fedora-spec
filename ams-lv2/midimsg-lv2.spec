@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: A collection of basic LV2 plugins to translate midi messages to usable values
 License: GPL-2.0-or-later
 URL:     https://github.com/blablack/midimsg-lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Command line tool for showing capabilities of alsa devices
 License: LicenseRef-Fedora-Public-Domain
 URL:     https://github.com/bubbapizza/alsacap
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

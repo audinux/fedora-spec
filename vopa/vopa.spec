@@ -12,6 +12,7 @@ Version: 1.0.0
 Release: 2%{?dist}
 Summary: A LV2 amplifier controlled via MIDI messages
 URL: https://github.com/ycollet/vopa
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

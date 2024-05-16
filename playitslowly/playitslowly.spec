@@ -9,6 +9,7 @@ Version: 1.0.0
 Release: 1%{?dist}
 Summary: Play it slowly is a software to play back audio files at a different speed or pitch.
 URL: https://github.com/jwagner/playitslowly
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 BuildArch: noarch

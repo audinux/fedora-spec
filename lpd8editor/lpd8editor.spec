@@ -7,6 +7,7 @@ Version: 0.0.16
 Release: 1%{?dist}
 Summary: A linux editor for the Akai LPD8
 URL: https://github.com/charlesfleche/lpd8editor
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

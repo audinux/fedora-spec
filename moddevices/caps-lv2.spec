@@ -13,6 +13,7 @@ Release: 1%{?dist}
 Summary: Caps LV2 set of plugins from portalmod
 License: GPL-2.0-or-later
 URL: https://github.com/moddevices/caps-lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

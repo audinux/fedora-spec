@@ -7,6 +7,7 @@ Version: 0.3.0
 Release: 1%{?dist}
 Summary: Shermann Innovations plugin series
 URL: https://github.com/guysherman/si-plugins
+ExclusiveArch: x86_64 aarch64
 License: MIT
 
 Vendor:       Audinux

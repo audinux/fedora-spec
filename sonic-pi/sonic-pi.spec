@@ -31,6 +31,7 @@ Release: 11%{?dist}
 Summary: A musical programming environment
 License: MIT
 URL: https://sonic-pi.net/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

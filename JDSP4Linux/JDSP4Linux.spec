@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: An audio effect processor for PipeWire clients
 License: GPL-3.0-only
 URL: https://github.com/theAeon/JDSP4Linux/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

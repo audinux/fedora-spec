@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Tuner for Jack Audio Connection Kit
 License: GPL-2.0-or-later
 URL: https://github.com/brummer10/StompTuner
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

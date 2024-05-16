@@ -7,6 +7,7 @@ Version: 2.0
 Release: 2%{?dist}
 Summary: Realtime graphical spectrum analyzer
 URL: https://github.com/jpcima/spectacle
+ExclusiveArch: x86_64 aarch64
 License: ISC
 
 Vendor:       Audinux

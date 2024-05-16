@@ -10,6 +10,7 @@ Release: 2%{?dist}
 Summary: C++ wrappers for SIMD intrinsics
 License: BSD
 URL: https://xsimd.readthedocs.io/
+ExclusiveArch: x86_64 aarch64
 
 Source0: %{github}/archive/%{version}/xsimd-%{version}.tar.gz
 

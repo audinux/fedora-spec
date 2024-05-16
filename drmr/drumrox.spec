@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A hydrogen compatible drum LV2 plugin
 License: GPL-3.0-or-later
 URL: https://github.com/psemiletov/drumrox
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

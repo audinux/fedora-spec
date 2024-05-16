@@ -7,6 +7,7 @@ Version: 0.2.11
 Release: 1%{?dist}
 Summary: Pipewire control GUI program in Qt
 URL: https://github.com/portaloffreedom/pipecontrol
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

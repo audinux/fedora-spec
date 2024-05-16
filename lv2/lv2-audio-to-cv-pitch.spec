@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Plugin that converts audio to CV pitch (1 volt per Octave)
 License: GPL-3.0-or-later
 URL: https://github.com/BramGiesen/audio-to-cv-pitch-lv2
+ExclusiveArch: x86_64 aarch64
 
 # Usage: ./audio-to-cv-pitch-source.sh <TAG>
 #        ./audio-to-cv-pitch-source.sh 27f5a5211ce04159016883870ff51425ee5b49e6

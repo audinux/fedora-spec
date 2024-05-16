@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A collection of plugins
 License: GPL-3.0-or-later
 URL: https://github.com/fps/fps-plugins.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

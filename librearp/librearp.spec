@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: A pattern-based arpeggio generator plugin
 License: GPL-3.0-only
 URL: https://gitlab.com/LibreArp/LibreArp
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

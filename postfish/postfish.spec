@@ -13,6 +13,7 @@ Release: 2%{?dist}
 Summary: The Postfish is a digital audio post-processing, restoration, filtering and mixdown tool.
 License: GPL-2.0-or-later
 URL: https://gitlab.xiph.org/xiph/postfish
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

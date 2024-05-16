@@ -19,6 +19,7 @@ Release: 1%{?dist}
 Summary: CatroBlanco plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/catronomix/catro-blanco
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: A BBC collection of audio feature extraction algorithms
 License: Apache-2.0
 URL: https://github.com/bbc/bbc-vamp-plugins
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

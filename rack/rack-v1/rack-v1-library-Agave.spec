@@ -16,6 +16,7 @@ Release: 3%{?dist}
 Summary: Agave plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/jatinchowdhury18/Agave
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

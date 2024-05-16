@@ -7,6 +7,7 @@ Version: 1.0
 Release: 1%{?dist}
 Summary: A reverb suitable for classical music
 URL:     https://github.com/chmaha/RCVerb
+ExclusiveArch: x86_64 aarch64
 License: GPL-3.0-or-later
 
 Vendor:       Audinux

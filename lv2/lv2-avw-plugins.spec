@@ -13,6 +13,7 @@ Release: 19%{?dist}
 Summary: A port of the AMS internal modules to LV2 plugins
 License: GPL-2.0-only
 URL: https://github.com/harryhaaren/avw.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

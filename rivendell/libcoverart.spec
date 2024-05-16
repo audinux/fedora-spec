@@ -13,6 +13,7 @@ Version: 1.0.0
 Release: 4%{?dist}
 License: LGPL
 URL: https://github.com/metabrainz/libcoverart
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

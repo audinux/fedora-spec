@@ -13,6 +13,7 @@ Version: 0.13.1.%{shortcommit0}
 Release: 5%{?dist}
 License: GPL
 URL: http://rezound.sourceforge.net/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

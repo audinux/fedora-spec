@@ -19,6 +19,7 @@ Release: 2%{?dist}
 Summary: dbRackModules plugin for Rack
 License: GPLv2+
 URL:     https://github.com/docb/dbRackModules
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

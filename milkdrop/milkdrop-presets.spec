@@ -8,6 +8,7 @@ Version: 1.0.0
 Release: 3%{?dist}
 License: GPL-2.0-or-later AND GPL-3.0-only AND LicenseRef-OpenMusic-green
 URL: http://projectm.sourceforge.net
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

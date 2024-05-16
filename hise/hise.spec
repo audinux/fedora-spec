@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: The open source framework for sample based instrument
 License: GPL-3.0-or-later OR LicenseRef-www-hise-audio
 URL: https://github.com/christophhart/HISE
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

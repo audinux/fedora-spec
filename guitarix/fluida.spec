@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Fluidsynth as LV2 plugin
 License: BSD
 URL: https://github.com/brummer10/Fluida.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: UAPlugins are a set of VAMP plugins developed by the Computer Music Laboratory team
 License: GLPv2
 URL: https://github.com/pertusa/UAVampPlugins
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

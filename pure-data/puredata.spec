@@ -15,6 +15,7 @@ Version: %{pkgver}
 Release: 4%{?dist}
 License: BSD
 URL: https://puredata.info/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

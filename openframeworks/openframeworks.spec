@@ -7,6 +7,7 @@ Version: 0.12.0
 Release: 2%{?dist}
 Summary: openFrameworks library / code
 URL: https://github.com/openframeworks/openFrameworks
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

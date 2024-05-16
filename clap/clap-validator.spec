@@ -10,6 +10,7 @@ Version: 0.3.2
 Release: 1%{?dist}
 License: MIT
 URL: https://github.com/free-audio/clap-validator
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Version: 7.1.0
 Release: 1%{?dist}
 License: GPL-3.0-or-later
 URL: https://github.com/psemiletov/eko
+ExclusiveArch: x86_64 aarch64
 
 Source:	https://github.com/psemiletov/eko/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 

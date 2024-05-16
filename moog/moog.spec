@@ -13,6 +13,7 @@ Release: 1%{?dist}
 Summary: This is a digital emulator of a minimoog synthesizer, built as an LV2 audio plugin for Linux.
 License: GPL-3.0-or-later
 URL: https://github.com/nicoroulet/moog
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A collection of spatial audio related VST plug-ins developed using JUCE and the Spatial_Audio_Framework
 License: GPL-3.0-or-later
 URL: https://leomccormack.github.io/sparta-site/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

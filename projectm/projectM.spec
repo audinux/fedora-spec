@@ -8,6 +8,7 @@ Release: 15%{?dist}
 Summary: The libraries for the projectM music visualization plugin
 License: LGPLv2+
 URL: https://github.com/projectM-visualizer/projectm
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

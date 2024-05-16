@@ -8,6 +8,7 @@ Version: 0.98.9
 Release: 2%{?dist}
 License: GPL-2.0-or-later
 URL: http://jamin.sourceforge.net
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

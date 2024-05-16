@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Qt port of SFXR, a sound effect generator, to generate retro-gaming like sound effects.
 License: MIT
 URL: https://github.com/agateau/sfxr-qt
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

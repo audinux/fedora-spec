@@ -8,6 +8,7 @@ Version: 0.1
 Release: 2%{?dist}
 License: MIT-like
 URL: http://sourceforge.net/p/portmedia/wiki/portsmf/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -7,6 +7,7 @@ Version: 1.6.1
 Release: 3%{?dist}
 Summary: A patch manager
 URL: https://github.com/noedigcode/konfyt
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

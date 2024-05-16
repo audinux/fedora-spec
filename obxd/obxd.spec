@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: A VST3 Synthesizer
 License: GPL-3.0-only
 URL: https://github.com/reales/OB-Xd
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -11,6 +11,7 @@ Version: 31.0
 Release: 7%{?dist}
 License: GPL-2.0-only
 URL: https://github.com/livecd-tools/livecd-tools
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

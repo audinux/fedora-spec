@@ -7,6 +7,7 @@ Version: 0.1
 Release: 1%{?dist}
 Summary: Digital model of electronic string ensemble instrument
 URL: https://github.com/jpcima/string-machine
+ExclusiveArch: x86_64 aarch64
 License: BSL-1.0
 
 Vendor:       Audinux

@@ -7,6 +7,7 @@ Version: 3.13.0
 Release: 2%{?dist}
 Summary: An audio sequencer
 URL: https://github.com/helio-fm/helio-workstation
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

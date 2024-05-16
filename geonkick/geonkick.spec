@@ -7,6 +7,7 @@ Version: 3.4.0
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
 URL: https://github.com/Geonkick-Synthesizer/geonkick
+ExclusiveArch: x86_64 aarch64
 License: GPL-3.0-only
 
 Vendor:       Audinux

@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: A Vamp plugin implementing basic audio descriptors for educational purposes
 License: GLPv2
 URL: https://github.com/MTG/miredu
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

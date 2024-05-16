@@ -13,6 +13,7 @@ Release: 1%{?dist}
 Summary: Some utilities lv2 plugins
 License: GPL-2.0-or-later
 URL: https://github.com/moddevices/mod-utilities
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Version: 1.13.4
 Release: 3%{?dist}
 License: GPL
 URL:     https://github.com/amsynth/amsynth
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

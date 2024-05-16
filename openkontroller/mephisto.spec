@@ -7,6 +7,7 @@ Version: 0.18.2
 Release: 1%{?dist}
 Summary: A JACK patchbay in flow matrix style
 URL: https://git.open-music-kontrollers.ch/~hp/mephisto.lv2
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

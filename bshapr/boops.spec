@@ -8,6 +8,7 @@ Version: 1.8.2
 Release: 3%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BOops
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

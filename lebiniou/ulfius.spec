@@ -8,6 +8,7 @@ Version: 2.7.0
 Release: 1%{?dist}
 License: LGPL-2.1
 URL:     https://github.com/babelouest/%{name}
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

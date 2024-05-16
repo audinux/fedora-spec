@@ -19,6 +19,7 @@ Release: 2%{?dist}
 Summary: Sha-Bang-Modules plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/jeremymuller/Sha-Bang-Modules
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

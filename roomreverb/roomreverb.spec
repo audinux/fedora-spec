@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Room Reverb is a mono/stereo to stereo algorithmic reverb audio plugin
 License: GPL-3.0-or-later
 URL: https://github.com/cvde/RoomReverb
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -11,6 +11,7 @@ Version: 0.7.5
 Release: 1%{?dist}
 License: GPL
 URL: https://kmetronome.sourceforge.net/kmidimon/
+ExclusiveArch: x86_64 aarch64
 
 Source0: https://sourceforge.net/projects/kmidimon/files/%{version}/kmidimon-%{version}.tar.bz2
 Source1: kmidimon.desktop

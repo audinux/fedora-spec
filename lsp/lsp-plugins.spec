@@ -8,6 +8,7 @@ Version: 1.2.15
 Release: 1%{?dist}
 License: GPL
 URL: https://github.com/sadko4u/lsp-plugins
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

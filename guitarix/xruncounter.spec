@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: Small linux tool to measure jack xruns and evaluate the overall performance of a system for realtime audio.
 License: GPL-2.0-or-later
 URL: https://github.com/Gimmeapill/xruncounter
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

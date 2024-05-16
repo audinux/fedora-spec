@@ -16,6 +16,7 @@ Release: 3%{?dist}
 Summary: SA-Seasons plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/SpektroAudio/Seasons
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

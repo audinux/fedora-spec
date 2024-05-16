@@ -8,6 +8,7 @@ Version: 2.77
 Release: 2%{?dist}
 License: GPL
 URL: https://sourceforge.net/projects/goattracker2/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

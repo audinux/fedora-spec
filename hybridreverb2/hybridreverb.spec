@@ -7,6 +7,7 @@ Version: 2.1.2
 Release: 1%{?dist}
 Summary: Reverb effect using hybrid impulse convolution
 URL:     https://github.com/jpcima/HybridReverb2
+ExclusiveArch: x86_64 aarch64
 License: BSL-1.0
 
 Vendor:       Audinux

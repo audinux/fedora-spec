@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: MIDI sequencer based on seq24 with less features and more swag
 License: GPL
 URL: https://github.com/jean-emmanuel/seq192
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

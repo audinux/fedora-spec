@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Modern ring modulation effect plugin
 License: GPL-3.0-or-later
 URL:     https://github.com/blackboxdsp/rotor
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: Guitarix LV2 plugins collection
 License: GPL-2.0-or-later
 URL: https://github.com/brummer10/GxPlugins.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

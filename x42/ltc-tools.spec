@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Tools to deal with linear-timecode (LTC)
 License: GPL-2.0-or-later
 URL: https://github.com/x42/ltc-tools
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -9,6 +9,7 @@ Release: 1%{?dist}
 Summary: Guitar plugin made with JUCE that uses neural network models to emulate real world hardware.
 License: GPL-2.0-or-later
 URL: https://github.com/GuitarML/SmartGuitarPedal
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: This is a simple, stereo, IR-File loader/convolution LV2 plug
 License: GPL-2.0-or-later
 URL: https://github.com/brummer10/ImpulseLoaderStereo.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

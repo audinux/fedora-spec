@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Matrix delay effect
 License: BSD-3-Clause
 URL: https://github.com/Chowdhury-DSP/ChowMatrix
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

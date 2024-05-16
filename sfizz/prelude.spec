@@ -15,6 +15,7 @@ Release: 1%{?dist}
 License: BSD-2-Clause
 Summary: A wavetable-based church organ
 URL: https://github.com/sfztools/prelude.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -19,6 +19,7 @@ Release: 2%{?dist}
 Summary: fruitsofkarma plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/alexey-komarov/fruitsofkarma-vcvrack
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

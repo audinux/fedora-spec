@@ -13,6 +13,7 @@ Release: 7%{?dist}
 Summary: A set of LV2 presets
 License: GPL-2.0-or-later
 URL: https://github.com/zynthian/zynthian-data
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

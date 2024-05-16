@@ -13,6 +13,7 @@ Release: 11%{?dist}
 Summary: Ear training program for music students
 License: GPL-3.0-only
 URL: https://www.gnu.org/software/solfege/
+ExclusiveArch: x86_64 aarch64
 
 Source0: https://git.savannah.gnu.org/cgit/solfege.git/snapshot/solfege-%{version}.tar.gz
 # Fix startup issue on F17+ (BZ 832764):

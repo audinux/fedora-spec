@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: minimal live MIDI looper
 License: GPL-3.0
 URL: https://github.com/jean-emmanuel/loop192
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

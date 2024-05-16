@@ -16,6 +16,7 @@ Release: 3%{?dist}
 Summary: KautenjaDSP-PotatoChips plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/Kautenja/PotatoChips
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

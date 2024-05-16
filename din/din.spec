@@ -11,6 +11,7 @@ Version: %din_vers_major.%din_vers_minor.%din_vers_patch
 Release: 1%{?dist}
 License: GPL
 URL:     https://dinisnoise.org/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

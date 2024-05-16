@@ -9,6 +9,7 @@ Version: 1.4
 Release: 2%{?dist}
 License: GPL
 URL: https://minicomputer.sourceforge.net/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

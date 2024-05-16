@@ -45,7 +45,16 @@ url --mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=fedora-$release
 
 repo --name="CoprAudinux" --baseurl=https://copr-be.cloud.fedoraproject.org/results/ycollet/audinux/fedora-$releasever-$basearch/
 
+%pre
+
+harfbuzz.i686
+
+%end
+
 %packages
+
+# Conflict with linuxsampler
+-nilfs-utils
 
 @base-x
 @guest-desktop-agents
@@ -55,11 +64,6 @@ repo --name="CoprAudinux" --baseurl=https://copr-be.cloud.fedoraproject.org/resu
 @hardware-support
 dnf
 anaconda-live
-
-# exclude input methods:
--scim*
--ibus*
--iok
 
 # Make live images easy to shutdown and the like in libvirt
 qemu-guest-agent
@@ -340,12 +344,6 @@ rm -f /var/lib/systemd/random-seed
 # convince readahead not to collect
 # FIXME: for systemd
 
-# forcibly regenerate fontconfig cache (so long as this live image has
-# fontconfig) - see #1169979
-if [ -x /usr/bin/fc-cache-64 ] ; then
-   fc-cache-64 -f
-fi
-
 echo 'File created by kickstart. See systemd-update-done.service(8).' \
     | tee /etc/.updated >/var/.updated
 
@@ -355,7 +353,7 @@ rm -f /boot/*-rescue*
 
 # Disable network service here, as doing it in the services line
 # fails due to RHBZ #1369794
-/sbin/chkconfig network off
+systemctl disable network
 
 # Remove machine-id on pre generated images
 rm -f /etc/machine-id
@@ -429,22 +427,6 @@ grub2-efi
 grub2-efi-x64-cdboot
 shim-x64
 
-# save some space
--mpage
--sox
--hplip
--numactl
--isdn4k-utils
--autofs
-# smartcards won't really work on the livecd.
--coolkey
--wget
-
-# scanning takes quite a bit of space :/
--xsane
--xsane-gimp
--sane-backends
-
 # XFCE
 @xfce-apps
 @xfce-desktop
@@ -459,26 +441,11 @@ fedora-release
 # various system package (since F31)
 chkconfig
 
-# save some space
--autofs
--acpid
--gimp-help
--desktop-backgrounds-basic
--realmd                     # only seems to be used in GNOME
--aspell-*                   # dictionaries are big
--gnumeric
--foomatic-db-ppds
--foomatic
--ibus-typing-booster
--xfce4-sensors-plugin
--nilfs-utils
-
 samba-dc # for wine ...
-wine(x86-32)
+# wine(x86-32) # fc39: pb with fontconfig
+wine
 
 # drop some system-config things
--system-config-rootpassword
--policycoreutils-gui
 python3
 
 # alsa
@@ -734,59 +701,6 @@ emacs
 # Include Mozilla Firefox and Thunderbird
 firefox
 thunderbird
-
-##########
-# Remove #
-##########
-
-## These are packages that are pulled for one reason or another but are safe to remove.
--@input-methods              ## Not necessary can be installed later.
--@dial-up                    ## Not even old computers use dialup anymore.
--system-config-firewall-base ## Doesn't seem to do anything
--gfs2-utils                  ## Part of kernel debug
--kernel-debug-modules-extra  ## Part of kernel debug
--kernel-debug                ## Dont need the debug kernel upon install
--aspell-*                    ## Dictionaries are big and take up space
--man-pages-*                 ## Dictionaries
--quota                       ## Legacy
--minicom                     ## Legacy
--dos2unix                    ## Legacy
--finger                      ## Legacy
--ftp                         ## Legacy
--jwhois                      ## Legacy
--mtr                         ## Legacy
--pinfo                       ## Legacy
--rsh                         ## Legacy
--telnet                      ## Legacy
--nfs-utils                   ## Legacy
--ypbind                      ## Legacy
--yp-tools                    ## Legacy
--rpcbind                     ## Legacy
--acpid                       ## Legacy
--ntsysv                      ## Legacy
--rmt                         ## Legacy
--talk                        ## Legacy
--lftp                        ## Legacy
--tcpdump                     ## Legacy
--dump                        ## Legacy
--@printing                   ## We don't want printer support out of the box.
--fprintd-pam                 ## We don't want printer support out of the box.
--fprintd                     ## We don't want printer support out of the box.
--libfprint                   ## We don't want printer support out of the box.
--python3-cups                ## We don't want printer support out of the box.
--system-config-printer-libs  ## We don't want printer support out of the box.
--ibus-typing-booster         ## Tab completion in libreoffice and the likes Unneeded
--libtranslit                 ## Tab
--libtranslit-m17n            ## Tab
-
-# Not really useful
-# -fedora-jam-backgrounds-kde
-# FC28 required now -tigervnc-server-minimal
--abiword
--xfburn
--lyx-fonts
--goffice
--midori
 
 %end
 

@@ -13,6 +13,7 @@ Release: 1%{?dist}
 Summary: A C++ library for manipulating DX7 SysEx files.
 License: GPLv3+
 URL:     https://github.com/rogerallen/dxsyx
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -13,6 +13,7 @@ Version: 0.0.1
 Release: 4%{?dist}
 License: GPL
 URL: https://github.com/ycollet/psi-plugins
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

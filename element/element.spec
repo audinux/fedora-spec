@@ -7,6 +7,7 @@ Version: 0.46.6
 Release: 1%{?dist}
 Summary: This is the community version of Element, a modular AU/LV2/VST/VST3 audio plugin host.
 URL: https://github.com/kushview/Element
+ExclusiveArch: x86_64 aarch64
 License: GPL3
 
 Vendor:       Audinux

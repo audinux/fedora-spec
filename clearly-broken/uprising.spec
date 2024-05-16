@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: A transition Designer Synth
 License: GPL-2.0-only
 URL: https://github.com/clearly-broken-software/Uprising
+ExclusiveArch: x86_64 aarch64
 
 # Usage: ./clearly-broken-source.sh <PROJECT> <TAG>
 #        ./clearly-broken-source.sh Uprising 89f5b49d90cd47611da7e7dc2009061768716b4c

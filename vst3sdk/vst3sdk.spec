@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: VST 3 Plug-In SDK
 License: GPL-3.0-or-Later
 URL: https://github.com/steinbergmedia/vst3sdk
+ExclusiveArch: x86_64 aarch64
 
 Vendor: Audinux
 Distribution: Audinux

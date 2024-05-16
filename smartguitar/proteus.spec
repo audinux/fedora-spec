@@ -11,6 +11,7 @@ Release: 2%{?dist}
 Summary: Guitar amp and pedal capture plugin using neural networks.
 License: GPL-2.0-or-later
 URL: https://github.com/GuitarML/Proteus
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

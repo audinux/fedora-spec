@@ -9,6 +9,7 @@ Version: 0.0.1
 Release: 1%{?dist}
 Summary: Hosting library for JSFX
 URL: https://github.com/jpcima/ysfx
+ExclusiveArch: x86_64 aarch64
 License: Apache-2.0
 
 Vendor:       Audinux

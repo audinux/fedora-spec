@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Free tape stop audio effect plugin
 License: MIT
 URL: https://github.com/calgoheen/cStop
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

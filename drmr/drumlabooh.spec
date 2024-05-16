@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: LV2/VSTi drum machine that can use Hydrogen, SFZ, and other drumkit formats
 License: GPL-3.0-only
 URL: https://github.com/psemiletov/drumlabooh
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

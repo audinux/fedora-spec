@@ -16,6 +16,7 @@ Release: 3%{?dist}
 Summary: Mantra plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/giogramegna/mantra-master
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

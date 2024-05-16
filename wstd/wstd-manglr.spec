@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Modular distortion plugin
 License: GPL-3.0-only
 URL: https://github.com/Wasted-Audio/wstd-manglr
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

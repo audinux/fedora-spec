@@ -7,6 +7,7 @@ Version: 0.0.8
 Release: 3%{?dist}
 Summary: Ninjam LV2 / VST plugin
 URL: https://github.com/antanasbruzas/abNinjam
+ExclusiveArch: x86_64 aarch64
 License: MIT
 
 Vendor:       Audinux

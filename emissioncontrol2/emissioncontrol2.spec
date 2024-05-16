@@ -7,6 +7,7 @@ Version: 1.2
 Release: 1%{?dist}
 Summary: Granular Scheduler for Arbitrary Sound Files
 URL:     https://github.com/EmissionControl2/EmissionControl2
+ExclusiveArch: x86_64 aarch64
 License: GPL-3.0-or-later
 
 Vendor:       Audinux

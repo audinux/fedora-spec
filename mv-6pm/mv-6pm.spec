@@ -8,6 +8,7 @@ Version: 0.9
 Release: 2%{?dist}
 Summary: Phase Modulation Synthesizer made of 6 oscillators
 URL: https://sourceforge.net/projects/mv-6pm/
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

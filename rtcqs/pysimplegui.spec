@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Super-simple to create custom GUI
 License: LGPLv3+
 URL: https://github.com/PySimpleGUI/PySimpleGUI
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

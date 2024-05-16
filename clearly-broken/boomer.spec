@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: A drum synth
 License: GPL-2.0-only
 URL: https://github.com/clearly-broken-software/boomer
+ExclusiveArch: x86_64 aarch64
 
 # Usage: ./clearly-broken-source.sh <PROJECT> <TAG>
 #        ./clearly-broken-source.sh boomer 1916d46a2823d0f091edf545666058456c93b004

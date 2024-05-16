@@ -7,6 +7,7 @@ Version: 5.4.7
 Release: 2%{?dist}
 Summary: JUCE Framework version 5
 URL: https://github.com/juce-framework/JUCE
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

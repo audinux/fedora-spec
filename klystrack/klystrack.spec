@@ -13,6 +13,7 @@ Version: 1.7.6
 Release: 4%{?dist}
 License: GPL
 URL: https://kometbomb.github.io/klystrack/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

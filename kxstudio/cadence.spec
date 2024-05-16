@@ -8,6 +8,7 @@ Release: 5%{?dist}
 Summary: JACK control center
 License: GPL-2.0-or-later
 URL: https://github.com/falkTX/Cadence
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

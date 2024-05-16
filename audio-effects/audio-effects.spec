@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: A collection of VST3 Synthesizer
 License: GPL-2.0-or-later
 URL:     https://github.com/TheWaveWarden/odin2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

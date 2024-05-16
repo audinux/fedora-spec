@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: audio delay line with latency reporting -- LV2 test & instrumentation tool
 License: GPL-2.0-or-later
 URL: https://github.com/x42/nodelay.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -19,6 +19,7 @@ Release: 2%{?dist}
 Summary: Biset plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/gibbonjoyeux/VCV-Biset
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

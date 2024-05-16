@@ -10,6 +10,7 @@ Version: 1.0.2
 Release: 1%{?dist}
 License: BSD
 URL: https://github.com/memononen/libtess2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

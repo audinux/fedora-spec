@@ -10,6 +10,7 @@ Version: 0.1
 Release: 1%{?dist}
 License: GPL-3.0-only
 URL: https://github.com/michelesr/jack-oscillator
+ExclusiveArch: x86_64 aarch64
 
 Source0: https://github.com/michelesr/jack-oscillator/archive/%{commit0}.zip#/%{name}-%{version}.zip
 

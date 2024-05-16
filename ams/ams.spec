@@ -7,6 +7,7 @@ Name:    ams
 Version: 2.2.1
 Release: 6%{?dist}
 URL:     https://alsamodular.sourceforge.net
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Source0: https://sourceforge.net/projects/alsamodular/files/alsamodular/%{version}/ams-%{version}.tar.gz/download#/%{name}-%{version}.tar.gz

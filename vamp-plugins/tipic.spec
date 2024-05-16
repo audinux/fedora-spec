@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: Tipic - Tibre-Invariant Pitch Chroma
 License: GLPv2
 URL: https://code.soundsoftware.ac.uk/projects/tipic
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: A realtime network sound server
 License: GPL-2.0-or-later
 URL: http://www.cockos.com/ninjam/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

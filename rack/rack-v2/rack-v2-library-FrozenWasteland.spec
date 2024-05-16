@@ -19,6 +19,7 @@ Release: 2%{?dist}
 Summary: FrozenWasteland plugin for Rack
 License: GPLv2+
 URL:     https://github.com/almostEric/FrozenWasteland
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

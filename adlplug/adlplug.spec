@@ -7,6 +7,7 @@ Version: 1.0.2
 Release: 6%{?dist}
 Summary: Synthesizer plugin for ADLMIDI (VST/LV2)
 URL:     https://github.com/jpcima/ADLplug
+ExclusiveArch: x86_64 aarch64
 License: BSL-1.0
 
 Vendor:       Audinux

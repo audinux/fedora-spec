@@ -8,6 +8,7 @@ Version: 1.2.16
 Release: 3%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BSlizr
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

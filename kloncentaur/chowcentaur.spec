@@ -21,6 +21,7 @@ Release: 1%{?dist}
 Summary: Digital emulation of the Klon Centaur guitar pedal
 License: BSD-3-Clause
 URL: https://github.com/jatinchowdhury18/KlonCentaur
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

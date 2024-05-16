@@ -8,6 +8,7 @@ Version: 0.9.4
 Release: 24%{?dist}
 License: GPL-2.0-or-later
 URL: http://dssi.sourceforge.net/download.html#Xsynth-DSSI
+ExclusiveArch: x86_64 aarch64
 
 Source0: http://download.sf.net/dssi/%{name}-%{version}.tar.gz
 Source1: http://download.sf.net/dssi/%{name}-%{version}-RELEASE

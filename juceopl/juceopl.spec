@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A VST instrument which emulates the Yamaha OPL sound chip used in PC sound cards from the 90s
 License: GPL-2.0-only
 URL: https://github.com/bsutherland/JuceOPLVSTi
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

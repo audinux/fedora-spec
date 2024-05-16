@@ -12,6 +12,7 @@ Release: 1%{?dist}
 Summary: SpecMatch can be used to adapt the sound produced by a Guitarix setting to another recorded sound.
 License: GPL-2.0-or-later
 URL: https://github.com/brummer10/guitarix
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

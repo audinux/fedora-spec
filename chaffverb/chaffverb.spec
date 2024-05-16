@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: An audio plugin utilizing pitch shifting, echo and reverb, for creating sounds from shimmers to whale songs.
 License: MIT
 URL:     https://github.com/GModal/ChaffVerb
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

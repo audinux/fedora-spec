@@ -9,6 +9,7 @@ Release: 1%{?dist}
 Summary: Tools for sound font files
 License: GPL-2.0-only
 URL: https://github.com/musescore/sftools
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

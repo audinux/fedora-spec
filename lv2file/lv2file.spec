@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A simple program which you can use to apply effects to your audio files.
 License: GPL-3.0-or-later
 URL: https://github.com/jeremysalwen/lv2file
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

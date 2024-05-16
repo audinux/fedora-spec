@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: SoundScape Renderer
 License: GPLv4+
 URL: https://github.com/SoundScapeRenderer/ssr
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

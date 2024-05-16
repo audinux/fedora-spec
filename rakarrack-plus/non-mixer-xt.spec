@@ -8,6 +8,7 @@ Version: 1.3.3
 Release: 1%{?dist}
 License: GPL-3.0-only
 URL: https://github.com/Stazed/non-mixer-xt
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

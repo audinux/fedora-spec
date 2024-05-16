@@ -13,6 +13,7 @@ Release: 3%{?dist}
 Summary: Amuc - the Amsterdam Music Composer
 License: GPL-2.0-or-later
 URL:     https://github.com/pjz/amuc.git
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

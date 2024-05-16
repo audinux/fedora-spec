@@ -4,6 +4,7 @@ Release: 35%{?dist}
 Summary: GTKmm plot widget for scientific applications
 License: LGPLv2
 URL: http://plotmm.sourceforge.net/
+ExclusiveArch: x86_64 aarch64
 
 Source0: http://download.sourceforge.net/plotmm/plotmm-%{version}.tar.gz
 # Fix code to build against libsigc++20

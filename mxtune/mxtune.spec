@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: pitch correction plugin for VST 
 License: GPL-3.0-or-later
 URL: https://github.com/liuanlin-mx/MXTune
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

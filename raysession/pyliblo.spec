@@ -6,6 +6,7 @@ Release: 1%{?dist}
 Summary: Python bindings for the liblo OSC library
 License: GPL-2.0-or-later
 URL: https://github.com/mididings/pyliblo
+ExclusiveArch: x86_64 aarch64
 
 Source0: https://github.com/mididings/pyliblo/archive/%{commit0}.zip#/%{name}-%{version}.zip
 Patch0: pyliblo_fix_cython.patch

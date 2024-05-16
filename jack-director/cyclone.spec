@@ -8,6 +8,7 @@ Version: 0.1.3
 Release: 1%{?dist}
 License: GPL-2.0-only
 URL: https://toxic.cubicarea.it/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

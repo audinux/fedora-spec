@@ -13,6 +13,7 @@ Release: 2%{?dist}
 Summary: Virtual modular synthesizer plugin
 License: GPL-3.0-or-later
 URL: https://github.com/DISTRHO/Cardinal
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

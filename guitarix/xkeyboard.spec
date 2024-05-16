@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary:  simple LV2 MIDI keyboard
 License: GPL-2.0-or-later
 URL: https://github.com/brummer10/XKeyboard.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

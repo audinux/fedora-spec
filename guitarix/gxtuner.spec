@@ -13,6 +13,7 @@ Release: 3%{?dist}
 Summary: A tuner for jack, with full jack session managment support
 License: GPL-2.0-or-later
 URL: https://github.com/brummer10/gxtuner
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

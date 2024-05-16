@@ -9,6 +9,7 @@ Release: 1%{?dist}
 Summary: Chip music tracker based on AHX
 License: BSD3
 URL: https://github.com/pete-gordon/hivelytracker
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

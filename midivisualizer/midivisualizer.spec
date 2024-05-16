@@ -7,6 +7,7 @@ Version: 7.2
 Release: 1%{?dist}
 Summary: A small MIDI visualizer tool, using OpenGL
 URL: https://github.com/kosua20/MIDIVisualizer
+ExclusiveArch: x86_64 aarch64
 License: MIT
 
 Vendor:       Audinux

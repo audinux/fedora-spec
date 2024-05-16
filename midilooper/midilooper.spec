@@ -7,6 +7,7 @@ Name: midilooper
 Version: 0.0.2.1
 Release: 1%{?dist}
 URL: https://github.com/supergilbert/midilooper
+ExclusiveArch: x86_64 aarch64
 License: GPL-3.0-or-later
 
 # ./midilooper-source.sh <tag>

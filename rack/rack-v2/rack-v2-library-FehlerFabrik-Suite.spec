@@ -19,6 +19,7 @@ Release: 1%{?dist}
 Summary: FehlerFabrik-Suite plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/RCameron93/FehlerFabrik
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -13,6 +13,7 @@ Version: %{aeolus_ver}%{?aeolus_rel:.%{aeolus_rel}}
 Release: 1%{?dist}
 License: GPL
 URL: http://www.kokkinizita.net/linuxaudio/aeolus/index.html
+ExclusiveArch: x86_64 aarch64
 
 Source0: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/aeolus-%{aeolus_ver}%{?aeolus_rel:-%{aeolus_rel}}.tar.bz2
 Source1: https://kokkinizita.linuxaudio.org/linuxaudio/downloads/stops-%{stops_ver}.tar.bz2

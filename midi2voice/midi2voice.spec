@@ -6,6 +6,7 @@ Release: 1%{?dist}
 Summary: Singing synthesis from MIDI file
 License: GPL-2.0-or-later
 URL:     https://github.com/mathigatti/midi2voice
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

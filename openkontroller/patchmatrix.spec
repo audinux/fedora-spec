@@ -7,6 +7,7 @@ Version: 0.26.0
 Release: 3%{?dist}
 Summary: A JACK patchbay in flow matrix style
 URL: https://git.open-music-kontrollers.ch/~hp/patchmatrix
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

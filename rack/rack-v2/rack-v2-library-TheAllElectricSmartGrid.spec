@@ -19,6 +19,7 @@ Release: 2%{?dist}
 Summary: TheAllElectricSmartGrid plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/jvictor0/theallelectricsmartgrid
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

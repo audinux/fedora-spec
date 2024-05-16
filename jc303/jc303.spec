@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: A Free Roland TB-303 Plugin
 License: GPL-3.0-or-later
 URL: https://github.com/midilab/jc303
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

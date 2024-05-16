@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Clojure project automation tool
 License: EPL
 URL: https://github.com/technomancy/leiningen
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

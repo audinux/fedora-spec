@@ -8,6 +8,7 @@ Version: 0.16
 Release: 1%{?dist}
 License: GPL-2.0-or-later
 URL: https://github.com/thp/wavbreaker
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

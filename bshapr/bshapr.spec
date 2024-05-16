@@ -8,6 +8,7 @@ Version: 0.13
 Release: 2%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BShapr
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

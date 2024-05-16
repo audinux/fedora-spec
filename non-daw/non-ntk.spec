@@ -10,6 +10,7 @@ Summary: A fork of FLTK for the non audio suite
 # themse are GPLv2+, FLTK derived code is LGPLv2+
 License: LGPL-2.1-or-later WITH Qwt-exception-1.0 AND GPL-2.0-or-later
 URL: http://non.tuxfamily.org/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

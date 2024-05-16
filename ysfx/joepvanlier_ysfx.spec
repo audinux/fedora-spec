@@ -7,6 +7,7 @@ Version: 0.1.0
 Release: 1%{?dist}
 Summary: A bundle of JSFX and scripts for reaper.
 URL: https://github.com/JoepVanlier/JSFX
+ExclusiveArch: x86_64 aarch64
 License: MIT
 
 Vendor:       Audinux

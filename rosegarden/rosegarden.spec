@@ -10,6 +10,7 @@ Release: 3%{?dist}
 Summary: MIDI, audio and notation editor
 License: GPLv2+
 URL: https://www.rosegardenmusic.com/
+ExclusiveArch: x86_64 aarch64
 
 Source0: https://sourceforge.net/projects/rosegarden/files/rosegarden/%{major}/rosegarden-%{major}.tar.xz
 

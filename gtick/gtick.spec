@@ -8,6 +8,7 @@ Release: 1%{?dist}
 License: GPL-3.0-or-later
 Summary: Metronome application
 URL: http://www.antcom.de/gtick/
+ExclusiveArch: x86_64 aarch64
 
 # https://git.savannah.gnu.org/cgit/gtick.git/
 Source0: http://www.antcom.de/gtick/download/%{name}-%{version}.tar.gz

@@ -10,6 +10,7 @@ Release: 2%{?dist}
 Summary: Piano VST / LV2 plugin
 License: GPL-2.0-or-later
 URL: https://github.com/FigBug/Piano
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: LADSPA plugins for time compression/expansion of sound data making use of the phase-vocoding technique
 License: GPL-3.0+
 URL: http://quitte.de/dsp/pvoc.html
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

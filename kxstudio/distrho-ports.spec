@@ -10,6 +10,7 @@ Release: 4%{?dist}
 Summary: A set of LV2 plugins
 License: GPL-2.0-or-later
 URL: https://github.com/DISTRHO/DISTRHO-Ports
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

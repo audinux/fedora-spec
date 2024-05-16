@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: Experimental azimuth-based stereo plan plugin
 License: GLPv2
 URL: https://code.soundsoftware.ac.uk/projects/azi
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

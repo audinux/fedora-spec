@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: The swiss knife for Faust development
 License: GPL-2.0-or-later
 URL: https://github.com/grame-cncm/faustlive
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

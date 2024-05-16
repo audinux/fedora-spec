@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: SHIRO LV2 plugin collection
 License: GPL-2.0-or-later
 URL: https://github.com/ninodewit/SHIRO-Plugins
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

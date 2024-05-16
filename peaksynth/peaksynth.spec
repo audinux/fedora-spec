@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: MIDI controlled synth that uses filter peaks to create tonal spikes in an audio file
 License: GPLv3
 URL: https://github.com/owennjpr/PeakSynth-Audio-Plugin
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

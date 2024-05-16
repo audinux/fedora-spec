@@ -8,6 +8,7 @@ Version: 0.4.2
 Release: 1%{?dist}
 License: GPL
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

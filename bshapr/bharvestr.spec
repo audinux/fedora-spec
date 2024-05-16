@@ -13,6 +13,7 @@ Version: 0.1.0
 Release: 4%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BHarvestr
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

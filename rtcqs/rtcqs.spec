@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: rtcqs is a Python utility to setup real time parameters for low latency audio
 License: Creative Commons Attribution-ShareAlike 4.0 International Public License
 URL: https://codeberg.org/rtcqs/rtcqs
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

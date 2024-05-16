@@ -13,6 +13,7 @@ Version: 2.24.%{shortcommit0}
 Release: 2%{?dist}
 License: GPL
 URL: https://github.com/raboof/sfArkLib
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

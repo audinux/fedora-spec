@@ -3,6 +3,7 @@ Version: 0.11
 Release: 2%{?dist}
 Summary: The heavy hvcc compiler for Pure Data patches.
 URL:     https://github.com/Wasted-Audio/hvcc
+ExclusiveArch: x86_64 aarch64
 License: GPL-3.0-or-later
 
 BuildArch: noarch

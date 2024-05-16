@@ -11,6 +11,7 @@ Version: 1.5.2.4
 Release: 2%{?dist}
 License: LGPL
 URL: https://audicle.cs.princeton.edu/mini/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA

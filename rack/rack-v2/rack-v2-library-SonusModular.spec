@@ -19,6 +19,7 @@ Release: 1%{?dist}
 Summary: SonusModular plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://gitlab.com/sonusdept/sonusmodular
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

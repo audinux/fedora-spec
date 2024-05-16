@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A stereo delay plugin with feedback and cross-mixing 
 License: MIT
 URL: https://github.com/SpotlightKid/stereocrossdelay
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

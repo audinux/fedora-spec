@@ -7,6 +7,7 @@ Version: 4.13.0
 Release: 1%{?dist}
 Summary: Q Light Controller Plus - The free DMX lighting console
 URL: http://www.hydrogen-music.org/
+ExclusiveArch: x86_64 aarch64
 License: Apache-2.0
 
 Vendor:       Audinux

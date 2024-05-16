@@ -13,6 +13,7 @@ Release: 2%{?dist}
 Summary: Digital reverse delay LV2 plugin
 License: GPL-2.0-or-later
 URL: https://github.com/brummer10/GxReverseDelay.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

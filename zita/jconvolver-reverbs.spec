@@ -8,6 +8,7 @@ Version: 0.8.7
 Release: 1%{?dist}
 License: Unknown
 URL: http://kokkinizita.linuxaudio.org/
+ExclusiveArch: x86_64 aarch64
 
 Source:  http://kokkinizita.linuxaudio.org/linuxaudio/downloads/jconvolver-reverbs.tar.bz2
 

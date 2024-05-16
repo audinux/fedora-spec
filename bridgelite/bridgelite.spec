@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: 8 string guitar virtual instrument with one extra octave below for good measure!
 License: GPL-3.0-or-later
 URL: https://github.com/JamesStubbsEng/8ridgelite
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

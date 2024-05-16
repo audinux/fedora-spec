@@ -8,6 +8,7 @@ Version: 2.3.0
 Release: 2%{?dist}
 License: STK
 URL: https://ccrma.stanford.edu/software/jacktrip/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA

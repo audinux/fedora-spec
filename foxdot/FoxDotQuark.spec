@@ -14,6 +14,7 @@ Epoch: 1
 Summary: FoxDot Quark is a required tool to connect FoxDot and SuperCollider.
 License: Creative Commons Attribution-ShareAlike 4.0 International Public License
 URL: https://github.com/Qirky/%{name}
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

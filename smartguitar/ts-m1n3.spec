@@ -9,6 +9,7 @@ Release: 1%{?dist}
 Summary: TS-9 guitar pedal clone using neural networks.
 License: GPL-2.0-or-later
 URL: https://github.com/GuitarML/TS-M1N3
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

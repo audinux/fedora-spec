@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary:  An algorithmic reverb LV2 based on Cloudseed
 License: MIT
 URL: https://dougal-s.github.io/Aether/
+ExclusiveArch: x86_64 aarch64
 
 # Usage:
 # ./aether-source.sh <TAG>

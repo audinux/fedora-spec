@@ -32,6 +32,7 @@ Release: 2%{?dist}
 License: GPL-3.0
 Summary: Web-based interface for the MOD
 URL: https://github.com/moddevices/mod-ui
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

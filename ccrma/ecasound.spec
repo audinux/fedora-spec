@@ -17,6 +17,7 @@ Version: 2.9.3
 Release: 1%{?dist}
 Epoch:   1
 URL:     https://ecasound.seul.org/ecasound/
+ExclusiveArch: x86_64 aarch64
 License: GPL
 
 Vendor:       Planet CCRMA

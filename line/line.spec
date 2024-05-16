@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: tiny command-line midi sequencer and language for live coding
 License: MIT
 URL: https://github.com/pd3v/line
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

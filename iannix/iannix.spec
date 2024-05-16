@@ -12,6 +12,7 @@ Version: 0.9.20.%{shortcommit0}
 Release: 4%{?dist}
 Summary: A graphic / MIDI / OSC player
 URL:     https://github.com/iannix/Iannix
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: A collection of LADSPA plugins from Invada Records
 License: GPL-2.0+
 URL: http://www.invadarecords.com/Downloads.php?ID=00000264
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

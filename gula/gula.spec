@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: An LV2 plugin which is a combination of vibrato and tremelo.
 License: GPL3
 URL: https://github.com/steveb/gula-plugins
+ExclusiveArch: x86_64 aarch64
 
 Source0: https://github.com/steveb/gula-plugins/archive/refs/heads/master.zip#/gula-master.zip
 

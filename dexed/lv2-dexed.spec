@@ -11,6 +11,7 @@ Release: 1%{?dist}
 Summary: LV2 FM multi plaform/multi format plugin
 License: Apache-2.0
 URL: https://github.com/dcoredump/dexed.lv2
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

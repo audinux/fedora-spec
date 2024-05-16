@@ -8,6 +8,7 @@ Release: 1%{?dist}
 Summary: Digital audio workstations, instrument and effect plugins
 License: GPL-3.0-only
 URL: https://github.com/stargatedaw/stargate
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

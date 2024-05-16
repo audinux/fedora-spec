@@ -9,6 +9,7 @@ Name: hexter-dssi
 Version: 1.1.0
 Release: 4%{?dist}
 URL: http://smbolton.com/hexter.html
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Source0: https://github.com/smbolton/%{srcname0}/archive/version_%{version}/%{srcname0}-version_%{version}.tar.gz

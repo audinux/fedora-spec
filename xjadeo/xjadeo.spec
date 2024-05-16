@@ -8,6 +8,7 @@ Version: 0.8.14
 Release: 5%{?dist}
 License: GPL
 URL: https://xjadeo.sourceforge.net/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

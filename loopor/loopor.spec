@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: Looper plugin for LV2
 License: MIT
 URL: https://github.com/stevie67/loopor
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

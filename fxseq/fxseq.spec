@@ -10,6 +10,7 @@ Release: 1%{?dist}
 Summary: A step sequencer based multi effect plugin using JUCE.
 License: GPL-2.0-or-later
 URL: https://github.com/ssabug/fxseq
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -8,6 +8,7 @@ Release: 2%{?dist}
 Summary: beat slicer
 License: GPL-2.0-only
 URL: https://github.com/rock-hopper/shuriken/
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

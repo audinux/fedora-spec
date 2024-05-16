@@ -8,6 +8,7 @@ Release: 4%{?dist}
 Summary: A multi-system chiptune tracker compatible with DefleMask modules
 License: GPL-2.0-only
 URL: https://github.com/tildearrow/furnace
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

@@ -19,6 +19,7 @@ Release: 1%{?dist}
 Summary: captvolt plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/cnvogelg/captvolt-vcv
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

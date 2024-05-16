@@ -7,6 +7,7 @@ Version: 0.9
 Release: 1%{?dist}
 Summary: A compressor designed for classical music engineers
 URL: https://github.com/chmaha/RCComp
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

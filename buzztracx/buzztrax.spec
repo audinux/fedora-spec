@@ -10,6 +10,7 @@ Release: 6%{?dist}
 Summary: Music composer similar to tracker applications.
 License: LGPL2.1
 URL:     https://www.buzztrax.org
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux

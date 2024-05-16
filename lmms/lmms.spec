@@ -7,6 +7,7 @@ Version: 1.2.2
 Release: 12%{?dist}
 Summary: Linux MultiMedia Studio
 URL: https://lmms.io
+ExclusiveArch: x86_64 aarch64
 
 # Because dnf does not find a carla so file
 AutoReqProv: no
