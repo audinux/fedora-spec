@@ -146,6 +146,8 @@
 | piper                   | https://github.com/rhasspy/piper |
 | Sound_Nodes             | https://github.com/negdo/Sound_Nodes |
 | dublang                 | https://codeberg.org/joenio/dublang |
+| foam-synth              | https://github.com/Madadog/foam-synth |
+| CMBNEX                  | https://github.com/KaixoCode/CMBNEX |
 
 Check the following URL: https://github.com/forart/HyMPS
 
