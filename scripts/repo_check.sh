@@ -958,7 +958,8 @@ https://github.com/hollance/TheKissOfShame
 https://github.com/agateau/sfxr-qt
 https://github.com/RealAlexZ/MultiMeter
 https://github.com/baconpaul/airwin2rack
-https://github.com/bsutherland/JuceOPLVSTi"
+https://github.com/bsutherland/JuceOPLVSTi
+https://github.com/Madadog/foam-synth"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
