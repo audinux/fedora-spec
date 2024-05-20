@@ -147,6 +147,8 @@
 | Sound_Nodes             | https://github.com/negdo/Sound_Nodes |
 | dublang                 | https://codeberg.org/joenio/dublang |
 | CMBNEX                  | https://github.com/KaixoCode/CMBNEX |
+| Cetone033               | https://github.com/AnClark/Cetone033 |
+| CetoneSynthLight        | https://github.com/AnClark/CetoneSynthLight |
 
 Check the following URL: https://github.com/forart/HyMPS
 
