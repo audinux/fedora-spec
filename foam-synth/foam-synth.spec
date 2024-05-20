@@ -1,5 +1,5 @@
-# Tag: Jack, Synthesizer, Modular
-# Type: Plugin, Standalone, VST, VST3, CLAP
+# Tag: Synthesizer
+# Type: Plugin, VST3, CLAP
 # Category: Audio, Synthesizer
 
 %global debug_package %{nil}
