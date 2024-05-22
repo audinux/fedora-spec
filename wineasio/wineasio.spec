@@ -35,7 +35,7 @@ Release: 2%{?dist}
 Summary: ASIO to JACK driver for WINE
 License: LGPLv2.1
 URL: https://github.com/wineasio/wineasio
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 
 
 Source0: https://github.com/wineasio/wineasio/releases/download/v%{version}/wineasio-%{version}.tar.gz
 

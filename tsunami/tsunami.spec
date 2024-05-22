@@ -8,7 +8,7 @@ Version: 0.7.114
 Release: 2%{?dist}
 Summary: A simple but powerful audio editor
 URL: https://github.com/momentarylapse/tsunami
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 
 License: GPL-3.0-only
 
 Vendor:       Audinux

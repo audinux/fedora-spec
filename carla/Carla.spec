@@ -13,7 +13,7 @@ Summary: Audio plugin host
 Epoch:   1
 License: GPLv2+ and BSD and Boost and ISC and MIT and zlib
 URL: https://github.com/falkTX/Carla
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 
 
 Source0: https://github.com/falkTX/Carla/archive/v%{version}.tar.gz#/Carla-%{version}.tar.gz
 Patch0: Carla-libdir.patch

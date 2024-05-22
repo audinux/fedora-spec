@@ -8,7 +8,7 @@ Version: 0.9.2
 Release: 28%{?dist}
 License: GPL-2.0-only
 URL: http://breakfastquay.com/dssi-vst/
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 
 
 Source0: http://code.breakfastquay.com/attachments/download/10/%{name}-%{version}.tar.bz2
 # wine-g++ on wine-devel-1.1.18 (Fedora 11) creates executables with .exe suffix:

@@ -8,7 +8,7 @@ Release: 1%{?dist}
 Summary: Build-your-own guitar distortion !
 License: GPL-3.0-or-later
 URL: https://github.com/Chowdhury-DSP/BYOD
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 
 
 Vendor:       Audinux
 Distribution: Audinux

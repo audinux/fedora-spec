@@ -12,7 +12,7 @@ Version: 1.5.57
 Release: 1%{?dist}
 Summary: A 'visual' instrument and realtime video sampler (for live video improvisation) - core part
 URL: https://github.com/c0ntrol/veejay
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

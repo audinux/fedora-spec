@@ -11,7 +11,7 @@ Release: 6%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPL-2.0-or-later
 URL: https://github.com/robbert-vdh/yabridge
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 
 
 Vendor:       Audinux
 Distribution: Audinux

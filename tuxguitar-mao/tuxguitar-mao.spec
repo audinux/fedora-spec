@@ -36,7 +36,7 @@ Release: 10%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
 URL: https://github.com/helge17/tuxguitar
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 
 
 Source0: https://github.com/helge17/tuxguitar/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: tuxguitar.sh

@@ -8,7 +8,7 @@ Release: 1%{?dist}
 Summary: An open source VST3 synthesizer and effect plugin.
 License: GPL-3.0-or-later
 URL: https://sjoerdvankreel.github.io/infernal-synth/
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 
 
 Vendor:       Audinux
 Distribution: Audinux

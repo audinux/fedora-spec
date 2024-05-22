@@ -9,7 +9,7 @@ Version: 4.0.2
 Release: 2%{?dist}
 Summary: A complete Midi-based framework for automatic backing tracks generation.
 URL: https://github.com/jjazzboss/JJazzLab-X
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 
 License: LGPL-3.0
 
 Vendor:       Audinux

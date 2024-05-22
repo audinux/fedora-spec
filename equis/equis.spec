@@ -10,7 +10,7 @@ Release: 1%{?dist}
 Summary: The hackable DJ Mixer inspired by the playdifferently model 1
 License: GPL-3.0-or-later
 URL: https://codeberg.org/obsoleszenz/equis
-ExclusiveArch: x86_64 aarch64
+/bin/bash: ligne 1: q : commande introuvable
 
 Vendor:       Audinux
 Distribution: Audinux

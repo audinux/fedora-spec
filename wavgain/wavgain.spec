@@ -8,7 +8,7 @@ Version: 1.3.2
 Release: 1%{?dist}
 License: LGPL
 URL: https://github.com/MestreLion/wavegain
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 
 
 Source:	https://github.com/MestreLion/wavegain/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 

@@ -13,7 +13,7 @@ Release: 2%{?dist}
 Summary: A sound editor with a non-intuitive sound transformation approach using one single gigantic analysis (no windows)
 License: GPL-3.0-only
 URL: https://github.com/kmatheussen/mammut/
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 
 
 Vendor:       Audinux
 Distribution: Audinux

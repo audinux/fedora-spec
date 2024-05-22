@@ -2,13 +2,13 @@
 # Type: Standalone
 # Category: Audio, DAW, Sequencer
 
-Name:    chataigne
+Name: chataigne
 Version: 1.9.17
 Release: 1%{?dist}
 Summary: Artist-friendly Modular Machine for Art and Technology
 License: GPL-3.0-only
-URL:     https://benjamin.kuperberg.fr/chataigne/fr
-ExclusiveArch: x86_64 aarch64
+URL: https://benjamin.kuperberg.fr/chataigne/fr
+ExclusiveArch: x86_64 
 
 Vendor:       Audinux
 Distribution: Audinux

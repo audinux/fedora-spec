@@ -13,7 +13,7 @@ Release: 4%{?dist}
 Summary: A jack tracker
 License: GPL-2.0-or-later
 URL: https://github.com/falkTX/protrekkr
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 
 
 Vendor:       Audinux
 Distribution: Audinux

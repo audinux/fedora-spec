@@ -7,7 +7,7 @@ Version: 0.6.1
 Release: 3%{?dist}
 Summary: SpectMorph is a free software project which allows to analyze samples of musical instruments, and to combine them (morphing)
 URL: http://www.spectmorph.org
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 
 License: GPL-2.0-or-later
 
 Vendor:       Audinux

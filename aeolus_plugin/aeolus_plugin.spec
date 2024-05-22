@@ -10,7 +10,7 @@ Release: 3%{?dist}
 Summary: Pipe organ synthesizer
 License: GPL-3.0-or-later
 URL:     https://github.com/Archie3d/aeolus_plugin
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64 
 
 Vendor:       Audinux
 Distribution: Audinux

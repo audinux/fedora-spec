@@ -12,13 +12,13 @@
 %define kver  %{kmaj}.%{kmin}.%{kpat}
 %define fcver %{dist}.%{_arch}
 
-Name:    kernel-lqx-mao
+Name: kernel-lqx-mao
 Summary: The Linux Liquorix Real Time Kernel
 Version: %{kver}.lqx%{krt}
 Release: %{krel}%{?dist}
 License: GPL
-URL:     https://liquorix.net/
-ExclusiveArch: x86_64 aarch64
+URL: https://liquorix.net/
+ExclusiveArch: x86_64 
 
 Vendor:       Audinux
 Distribution: Audinux
