@@ -10,15 +10,15 @@
 Name: mod-pitchshifter
 Version: 0.9.%{shortcommit0}
 Release: 3%{?dist}
-Summary: mod-pitchshifter LV2 set of plugins from portalmod
+Summary: mod-pitchshifter LV2 set of plugins from moddevices
 License: GPL-2.0-or-later
-URL: https://github.com/portalmod/mod-pitchshifter
+URL: https://github.com/moddevices/mod-pitchshifter
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/portalmod/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: https://github.com/moddevices/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel
@@ -30,7 +30,7 @@ BuildRequires: armadillo-devel
 BuildRequires: SuperLU-devel
 
 %description
-mod-pitchshifter LV2 set of plugins from portalmod
+mod-pitchshifter LV2 set of plugins from moddevices
 
 %prep
 %autosetup -n %{name}-%{commit0}

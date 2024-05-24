@@ -5,7 +5,7 @@
 Name: mod-gxpitchshifter
 Version: 1.0.3
 Release: 1%{?dist}
-Summary: Guitarix compatible mod-pitchshifter LV2 set of plugins from portalmod
+Summary: Guitarix compatible mod-pitchshifter LV2 set of plugins from moddevices
 License: GPL-2.0-or-later
 URL: https://github.com/ycollet/mod-pitchshifter
 ExclusiveArch: x86_64 aarch64
@@ -26,7 +26,7 @@ BuildRequires: armadillo-devel
 BuildRequires: SuperLU-devel
 
 %description
-Guitarix compatible mod-pitchshifter LV2 set of plugins from portalmod
+Guitarix compatible mod-pitchshifter LV2 set of plugins from moddevices
 
 %prep
 %autosetup -n %{name}-%{version}

@@ -10,7 +10,7 @@
 Name: caps-lv2
 Version: 0.9.26.%{shortcommit0}
 Release: 1%{?dist}
-Summary: Caps LV2 set of plugins from portalmod
+Summary: Caps LV2 set of plugins from moddevices
 License: GPL-2.0-or-later
 URL: https://github.com/moddevices/caps-lv2
 ExclusiveArch: x86_64 aarch64
@@ -25,7 +25,7 @@ BuildRequires: make
 BuildRequires: lv2-devel
 
 %description
-Caps LV2 set of plugins from portalmod
+Caps LV2 set of plugins from moddevices
 
 %prep
 %autosetup -n %{name}-%{commit0}
