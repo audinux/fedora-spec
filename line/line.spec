@@ -3,7 +3,7 @@
 # Category: Audio, Sequencer
 
 Name: line
-Version: 0.6.1
+Version: 0.6.2
 Release: 1%{?dist}
 Summary: tiny command-line midi sequencer and language for live coding
 License: MIT
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./line-source.sh <TAG>
-#        ./line-source.sh v0.6.1
+#        ./line-source.sh v0.6.2
 
 Source0: line.tar.gz
 Source1: line-source.sh
@@ -66,6 +66,9 @@ chrpath --delete %{buildroot}/%{_bindir}/line
 %{_datadir}/line/lua/lineparser.lua
 
 %changelog
+* Sat May 25 2024 Yann Collette <ycollette.nospam@free.fr> - 0.6.2-1
+- update to 0.6.2-1
+
 * Sun Mar 03 2024 Yann Collette <ycollette.nospam@free.fr> - 0.6.1-1
 - update to 0.6.1-1
 
