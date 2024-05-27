@@ -7,7 +7,7 @@
 %define commit0_example 7205f76dda5e91bc7f5292c8af23b66d0f5a1c02
 
 Name: ossia-score
-Version: 3.1.14
+Version: 3.2.0
 Release: 1%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL: https://github.com/OSSIA/score
@@ -23,6 +23,7 @@ Source1: https://github.com/ossia/score-examples/archive/%{commit0_example}.zip#
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: unzip
+BuildRequires: git
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: boost-devel
@@ -34,6 +35,7 @@ BuildRequires: qt6-qtshadertools-devel
 BuildRequires: qt6-qtserialport-devel
 BuildRequires: qt6-qtwebsockets-devel
 BuildRequires: qt6-qtbase-private-devel
+BuildRequires: qt6-qtsvg-devel
 BuildRequires: libxkbcommon-devel
 BuildRequires: sqlite-devel
 BuildRequires: lame-devel
@@ -48,6 +50,7 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 BuildRequires: fftw-devel
 BuildRequires: libsndfile-devel
+BuildRequires: libcoap-devel
 BuildRequires: desktop-file-utils
 
 Requires: faust-stdlib
@@ -90,7 +93,10 @@ rm -rf %{buildroot}/%{_libdir}/cmake/mimalloc-2.0/
 rm -rf %{buildroot}/%{_libdir}/mimalloc-2.0/
 rm -rf %{buildroot}/%{_includedir}/
 rm -rf %{buildroot}/%{_datadir}/
-
+ 
+rm -rf %{buildroot}/%{_libdir}/cmake/kfr/
+rm -rf %{buildroot}/%{_libdir}/cmake/libcoap/
+   
 # Install examples
 install -m 755 -d %{buildroot}/%{_datadir}/ossia/examples/
 cp -r score-examples-%{commit0_example}/* %{buildroot}/%{_datadir}/ossia/examples/
@@ -104,6 +110,9 @@ cp -r score-examples-%{commit0_example}/* %{buildroot}/%{_datadir}/ossia/example
 %{_datadir}/ossia/examples/*
 
 %changelog
+* Mon May 27 2024 Yann Collette <ycollette.nospam@free.fr> - 3.2.0-2
+- update to version 3.2.0-2
+
 * Mon Apr 15 2024 Yann Collette <ycollette.nospam@free.fr> - 3.1.14-2
 - update to version 3.1.14-2
 
