@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.10.216 Kernel Configuration
+# Linux/x86 5.10.217 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 13.2.1 20240316 (Red Hat 13.2.1-7)"
 CONFIG_CC_IS_GCC=y
