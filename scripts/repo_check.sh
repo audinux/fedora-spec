@@ -962,7 +962,8 @@ https://github.com/bsutherland/JuceOPLVSTi
 https://github.com/Madadog/foam-synth
 https://github.com/AnClark/CetoneSynth
 https://github.com/AnClark/Cetone033
-https://github.com/AnClark/CetoneSynthLight"
+https://github.com/AnClark/CetoneSynthLight
+https://github.com/jpcima/Hera"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
