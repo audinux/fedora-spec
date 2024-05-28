@@ -4,7 +4,7 @@
 
 Name:    blocks
 Version: 0.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Simple modular synth
 License: GPL-3.0-or-later
 URL:     https://github.com/dan-german/blocks
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./blocks-source.sh <project> <tag>
-# ./blocks-source.sh blocks 1340a5661e3d8361f953203ff27c4b6eb34844c1
+# ./blocks-source.sh blocks dda19601e1537cb79ced618e65df88eb431f42bf
 
 Source0: blocks.tar.gz
 Source1: blocks-source.sh
@@ -77,8 +77,11 @@ cp -ra %{__cmake_builddir}/blocks_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Tue May 28 2024 Yann Collette <ycollette.nospam@free.fr> - 0.1-3
+- update to last master -  dda19601e1537cb79ced618e65df88eb431f42bf
+
 * Wed Oct 18 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1-2
-- update to last master -  1340a5661e3d8361f953203ff27c4b6eb34844c1
+- update to last master - 1340a5661e3d8361f953203ff27c4b6eb34844c1
 
 * Mon Oct 16 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
 - Initial spec file
