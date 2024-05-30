@@ -3,7 +3,7 @@
 # Category: MIDI, Tool
 
 Name: receivemidi
-Version: 1.4.2
+Version: 1.4.3
 Release: 3%{?dist}
 Summary: A command line tool to receive MIDI event
 License: GPL-3.0-only
@@ -15,8 +15,7 @@ Distribution: Audinux
 
 Source0: %{url}/archive/%{version}.tar.gz#/ReceiveMIDI-%{version}.tar.gz
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-cursor-devel
@@ -56,6 +55,9 @@ install -m 755 -p build/receivemidi %{buildroot}/%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Thu May 30 2024 Yann Collette <ycollette.nospam@free.fr> - 1.4.3-3
+- update to 1.4.3-3
+
 * Fri Apr 12 2024 Yann Collette <ycollette.nospam@free.fr> - 1.4.2-3
 - update to 1.4.2-3
 
