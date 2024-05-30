@@ -19,9 +19,10 @@ BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: autoconf
 BuildRequires: automake
+BuildRequires: python
 BuildRequires: SDL2-devel
 BuildRequires: libXext-devel
-BuildRequires: python
+BuildRequires: flac-devel
 BuildRequires: desktop-file-utils
 
 %description
