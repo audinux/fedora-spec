@@ -964,7 +964,14 @@ https://github.com/AnClark/CetoneSynth
 https://github.com/AnClark/Cetone033
 https://github.com/AnClark/CetoneSynthLight
 https://github.com/jpcima/Hera
-https://github.com/gbevin/ShowMIDI"
+https://github.com/gbevin/ShowMIDI
+https://github.com/ZL-Audio/ZLEComp
+https://github.com/ZL-Audio/ZLInflator
+https://github.com/ZL-Audio/ZLLMakeup
+https://github.com/ZL-Audio/ZLSplit
+https://github.com/ZL-Audio/ZLEqualizer
+https://github.com/ZL-Audio/ZLLMatch
+https://github.com/ZL-Audio/ZLWarm"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

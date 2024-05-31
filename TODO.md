@@ -124,7 +124,6 @@
 | ai-improviser-plugin     | https://github.com/yeeking/ai-improviser-plugin |
 | hue                      | https://github.com/bljustice/hue |
 | Sound_Nodes              | https://github.com/negdo/Sound_Nodes |
-| ZL-Audio                 | https://github.com/ZL-Audio |
 | CDP8                     | https://github.com/ComposersDesktop/CDP8 |
 | PyMusicLooper            | https://github.com/arkrow/PyMusicLooper |
 | xenos                    | https://github.com/raphaelradna/xenos |
