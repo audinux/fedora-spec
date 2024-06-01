@@ -3,10 +3,10 @@
 # Category: Tool
 
 Name: qlcplus
-Version: 4.13.0
+Version: 4.13.1
 Release: 1%{?dist}
 Summary: Q Light Controller Plus - The free DMX lighting console
-URL: http://www.hydrogen-music.org/
+URL: https://github.com/mcallegari/qlcplus
 ExclusiveArch: x86_64 aarch64
 License: Apache-2.0
 
@@ -73,8 +73,11 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/*.desktop
 %{_sysconfdir}/udev/rules.d/*
 
 %changelog
+* Sat Jun 01 2024 Yann Collette <ycollette.nospam@free.fr> - 4.13.1-1
+- update to 4.13.1-1
+
 * Fri Mar 22 2024 Yann Collette <ycollette.nospam@free.fr> - 4.13.0-1
-- initial spec file
+- update to 4.13.0-1
 
 * Fri Jan 12 2024 Yann Collette <ycollette.nospam@free.fr> - 4.12.4-1
 - initial spec file
