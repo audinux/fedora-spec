@@ -118,6 +118,22 @@ guitarix, but can also be used by any other ladspa host.
 %prep
 %autosetup -n %{name}
 
+cd trunk
+
+# Fix unversioned python shebangs
+	
+%py3_shebang_fix \
+    $(find -name wscript) \
+    waf \
+    tools/make_jsonrpc_methods \
+    src/gx_head/builder/make \
+    .
+	
+# The build system does not use these bundled libraries by default. But
+# just to make sure:
+rm -fr src/zita-convolver src/zita-resampler
+sed -i -e 's|-O3||' wscript
+
 %build
 
 %set_build_flags
