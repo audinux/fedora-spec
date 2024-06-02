@@ -42,11 +42,11 @@ introduce new features.
 %prep
 %autosetup -n qlcplus-QLC-_%{version}
 
+%if 0%{?fedora} < 40
+sed -i -e "/-Wno-template-id-cdtor/d" variables.pri
+%endif
+
 %build
-
-%set_build_flags
-
-export CXXFLAGS="-Wno-error=template-id-cdtor $CXXFLAGS"
 
 ./translate.sh qmlui
 %qmake_qt5 CONFIG+=qmlui qlc.pro
