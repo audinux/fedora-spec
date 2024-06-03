@@ -3,7 +3,7 @@
 # Category: Audio, Distortion
 
 Name: fire
-Version: 0.9.9
+Version: 1.0.1
 Release: 1%{?dist}
 Summary: This is a distortion plugin developed by Wings
 License: GPL-2.0-or-later
@@ -14,12 +14,10 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./fire-source.sh <TAG>
-#        ./fire-source.sh v0.9.9
+#        ./fire-source.sh v1.0.1
 
 Source0: Fire.tar.gz
-Source1: vst3sdk.tar.gz
-Source2: fire-source.sh
-Source3: vst3-source.sh
+Source1: fire-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -58,8 +56,6 @@ VST3 version of %{name}
 %prep
 %autosetup -n Fire
 
-tar xvfz %{SOURCE1}
-
 %build
 
 %cmake
@@ -76,6 +72,9 @@ cp -ra %{__cmake_builddir}/Fire_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Thu May 23 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
+- update to 1.0.1-1
+
 * Sun Jan 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.9-1
 - update to 0.9.9-1
 
