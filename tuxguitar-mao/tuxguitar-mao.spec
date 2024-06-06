@@ -31,7 +31,7 @@
 %define debug_package %{nil}
 
 Name: tuxguitar
-Version: 1.6.2
+Version: 1.6.3
 Release: 10%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
@@ -50,14 +50,13 @@ Source1: tuxguitar.sh
 # 4.27:
 # wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.27-202303020300/swt-4.27-gtk-linux-x86_64.zip
 # wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.27-202303020300/swt-4.27-gtk-linux-aarch64.zip
-%define swt_version 4.27
+%define swt_version 4.21
 Source3: swt-%{swt_version}-gtk-linux-aarch64.zip
 Source4: swt-%{swt_version}-gtk-linux-x86_64.zip
 
 # Fedora specific default soundfont path
 Patch0: 0014-desktop.patch
 Patch1: tuxguitar-default-soundfont.patch
-Patch2: 0015-fix-prototype.patch
 
 Requires: eclipse-swt
 Requires: hicolor-icon-theme
@@ -80,6 +79,7 @@ BuildRequires: lv2-devel
 BuildRequires: suil-devel
 BuildRequires: lilv-devel
 BuildRequires: qt5-qtbase-devel
+BuildRequires: webkit2gtk3-devel
 BuildRequires: eclipse-swt
 BuildRequires: mojo-executor-maven-plugin
 BuildRequires: libappstream-glib
@@ -100,7 +100,6 @@ tempo management, gp3/gp4/gp5 import and export.
 
 %patch -P 0 -p1
 %patch -P 1 -p1
-%patch -P 2 -p1
 
 # In source archive, all modules have an attribute "VERSION" set to "SNAPSHOT"
 # this attribute is set during build/delivery
@@ -113,18 +112,20 @@ sed -i "s/static final String RELEASE_NAME =.*/static final String RELEASE_NAME 
 
 # Installing missing VST2 files
 #unzip %{SOURCE2}
-#mkdir -p desktop/build-scripts/native-modules/tuxguitar-synth-vst-linux-%{bit}/include/
+#mkdir -p desktop/build-scripts/native-modules/tuxguitar-synth-vst-linux/include/
 #cp VST_SDK/VST2_SDK/pluginterfaces/vst2.x/* desktop/build-scripts/native-modules/tuxguitar-synth-vst-linux-%{bit}/include/
 
 # Replace swt version
-sed -i -e "s/4.13/%{swt_version}/g" desktop/pom.xml
+sed -i -e "s/4.21/%{swt_version}/g" desktop/pom.xml
+find . -name "*.xml" -exec sed -i -e "s/9.99-//g" {} \;
+
 %ifarch aarch64
 sed -i -e "s/x86_64/aarch64/g" desktop/pom.xml
 %endif
 
 %build
 
-cd desktop/build-scripts/tuxguitar-linux-swt-%{bit}
+cd desktop/build-scripts/tuxguitar-linux-swt
 
 # Installation of swt
 mkdir swt-%{swt_version}-gtk-linux-%{bit}
@@ -134,7 +135,8 @@ unzip %{SOURCE3}
 %else
 unzip %{SOURCE4}
 %endif
-mvn install:install-file -Dfile=swt.jar -DgroupId=org.eclipse.swt -DartifactId=org.eclipse.swt.gtk.linux.%{bit} -Dpackaging=jar -Dversion=%{swt_version}
+mvn install:install-file -Dfile=swt.jar -DgroupId=org.eclipse.swt -DartifactId=org.eclipse.swt.gtk.linux -Dpackaging=jar -Dversion=%{swt_version}
+
 cd ..
 
 # Building tuxguitar
@@ -154,7 +156,7 @@ cp -a %{SOURCE1} %{buildroot}/%{_bindir}/%{name}
 
 # This file doesn't launch at this point. Might work when we can get the plugins working
 mkdir -p %{buildroot}/%{_datadir}/%{name}/
-cp -a desktop/build-scripts/%{name}-linux-swt-%{bit}/target/%{name}-%{version}-linux-swt-%{bit}/dist/* %{buildroot}/%{_datadir}/%{name}/
+cp -a desktop/build-scripts/%{name}-linux-swt/target/%{name}-%{version}-linux-swt/dist/* %{buildroot}/%{_datadir}/%{name}/
 
 # Fix permissions
 chmod 755 %{buildroot}/%{_bindir}/%{name}
@@ -168,7 +170,7 @@ cp -a desktop/build-scripts/common-resources/common-linux/share/mime/packages/tu
 mkdir -p %{buildroot}/%{_datadir}/%{name}
 cp -a desktop/TuxGuitar/share/* %{buildroot}/%{_datadir}/%{name}
 cp -a misc/tuxguitar.tg %{buildroot}/%{_datadir}/%{name}
-cp -a desktop/build-scripts/%{name}-linux-swt-%{bit}/target/%{name}-%{version}-linux-swt-%{bit}/dist/* %{buildroot}/%{_datadir}/%{name}
+cp -a desktop/build-scripts/%{name}-linux-swt/target/%{name}-%{version}-linux-swt/dist/* %{buildroot}/%{_datadir}/%{name}
 
 # icon
 install -D -m 644 desktop/build-scripts/common-resources/common-linux/share/pixmaps/tuxguitar.xpm %{buildroot}%{_datadir}/pixmaps/tuxguitar.xpm
@@ -184,22 +186,31 @@ desktop-file-install --dir=%{buildroot}/%{_datadir}/applications/ desktop/build-
 
 # jar files
 mkdir -p %{buildroot}/%{_javadir}/%{name}/
-cp desktop/build-scripts/native-modules/%{name}-alsa-linux-%{bit}/target/build/share/plugins/%{name}-alsa.jar %{buildroot}%{_javadir}/%{name}/
-cp desktop/build-scripts/native-modules/%{name}-jack-linux-%{bit}/target/build/share/plugins/%{name}-jack-ui.jar %{buildroot}%{_javadir}/%{name}/
-cp desktop/build-scripts/native-modules/%{name}-jack-linux-%{bit}/target/build/share/plugins/%{name}-jack.jar %{buildroot}%{_javadir}/%{name}/
+cp desktop/build-scripts/native-modules/%{name}-alsa-linux/target/build/share/plugins/%{name}-alsa.jar %{buildroot}%{_javadir}/%{name}/
+cp desktop/build-scripts/native-modules/%{name}-jack-linux/target/build/share/plugins/%{name}-jack-ui.jar %{buildroot}%{_javadir}/%{name}/
+cp desktop/build-scripts/native-modules/%{name}-jack-linux/target/build/share/plugins/%{name}-jack.jar %{buildroot}%{_javadir}/%{name}/
 
-cp desktop/build-scripts/native-modules/%{name}-synth-lv2-linux-%{bit}/target/build/share/plugins/%{name}-synth-lv2.jar %{buildroot}%{_javadir}/%{name}/
-cp desktop/build-scripts/native-modules/%{name}-fluidsynth-linux-%{bit}/target/build/share/plugins/%{name}-fluidsynth.jar %{buildroot}%{_javadir}/%{name}/
-#cp desktop/build-scripts/native-modules/%{name}-synth-vst-linux-%{bit}/target/build/share/plugins/%{name}-synth-vst.jar %{buildroot}%{_javadir}/%{name}/
+cp desktop/build-scripts/native-modules/%{name}-synth-lv2-linux/target/build/share/plugins/%{name}-synth-lv2.jar %{buildroot}%{_javadir}/%{name}/
+cp desktop/build-scripts/native-modules/%{name}-fluidsynth-linux/target/build/share/plugins/%{name}-fluidsynth.jar %{buildroot}%{_javadir}/%{name}/
+#cp desktop/build-scripts/native-modules/%{name}-synth-vst-linux/target/build/share/plugins/%{name}-synth-vst.jar %{buildroot}%{_javadir}/%{name}/
 
-cp desktop/build-scripts/%{name}-linux-swt-%{bit}/target/%{name}-%{version}-linux-swt-%{bit}/lib/*.jar %{buildroot}%{_javadir}/%{name}/
-cp desktop/build-scripts/%{name}-linux-swt-%{bit}/target/%{name}-%{version}-linux-swt-%{bit}/lib/*.so %{buildroot}%{_jnidir}/%{name}/
-cp desktop/build-scripts/%{name}-linux-swt-%{bit}/target/%{name}-%{version}-linux-swt-%{bit}/share/plugins/* %{buildroot}%{_javadir}/%{name}/
+cp desktop/build-scripts/%{name}-linux-swt/target/%{name}-%{version}-linux-swt/lib/*.jar %{buildroot}%{_javadir}/%{name}/
+cp desktop/build-scripts/%{name}-linux-swt/target/%{name}-%{version}-linux-swt/lib/*.so %{buildroot}%{_jnidir}/%{name}/
+cp desktop/build-scripts/%{name}-linux-swt/target/%{name}-%{version}-linux-swt/share/plugins/* %{buildroot}%{_javadir}/%{name}/
+
+# Other files
+
+cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-1.6.3-linux-swt/share/help %{buildroot}/%{_datadir}/%{name}/
+cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-1.6.3-linux-swt/share/lang %{buildroot}/%{_datadir}/%{name}/
+cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-1.6.3-linux-swt/share/scales %{buildroot}/%{_datadir}/%{name}/
+cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-1.6.3-linux-swt/share/skins %{buildroot}/%{_datadir}/%{name}/
+cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-1.6.3-linux-swt/share/templates %{buildroot}/%{_datadir}/%{name}/
+cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-1.6.3-linux-swt/share/tunings %{buildroot}/%{_datadir}/%{name}/
 
 # clients
 mkdir -p %{buildroot}%{_libexecdir}/%{name}/
-#cp desktop/build-scripts/%{name}-linux-swt-%{bit}/target/%{name}-%{version}-linux-swt-%{bit}/vst-client/tuxguitar-synth-vst.bin %{buildroot}%{_libexecdir}/%{name}/
-cp desktop/build-scripts/%{name}-linux-swt-%{bit}/target/%{name}-%{version}-linux-swt-%{bit}/lv2-client/tuxguitar-synth-lv2.bin %{buildroot}%{_libexecdir}/%{name}/
+#cp desktop/build-scripts/%{name}-linux-swt/target/%{name}-%{version}-linux-swt/vst-client/tuxguitar-synth-vst.bin %{buildroot}%{_libexecdir}/%{name}/
+cp desktop/build-scripts/%{name}-linux-swt/target/%{name}-%{version}-linux-swt/lv2-client/tuxguitar-synth-lv2.bin %{buildroot}%{_libexecdir}/%{name}/
 
 # Install vst-client and lv2-client and set the path in these conf files
 
@@ -234,6 +245,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Thu Jun 06 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.3-10
+- update to 1.6.3-10
+
 * Wed Apr 03 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.2-10
 - update to 1.6.2-10
 
