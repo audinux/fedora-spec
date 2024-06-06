@@ -6,7 +6,7 @@ Name: wstd-dl3y
 Version: 1.0
 Release: 1%{?dist}
 Summary: Multi-Band Delay Audio Plugin
-License: GPL-3.0-only
+License: GPL-3.0-or-later
 URL: https://github.com/Wasted-Audio/wstd-dl3y
 ExclusiveArch: x86_64 aarch64
 

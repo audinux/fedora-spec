@@ -6,7 +6,7 @@ Name: wstd-crshr
 Version: 1.0.1
 Release: 1%{?dist}
 Summary: Simple bit reduction plugin
-License: GPL-3.0-only
+License: GPL-3.0-or-later
 URL: https://github.com/Wasted-Audio/wstd-crshr
 ExclusiveArch: x86_64 aarch64
 

@@ -6,7 +6,7 @@ Name: wstd-manglr
 Version: 1.1.0
 Release: 1%{?dist}
 Summary: Modular distortion plugin
-License: GPL-3.0-only
+License: GPL-3.0-or-later
 URL: https://github.com/Wasted-Audio/wstd-manglr
 ExclusiveArch: x86_64 aarch64
 

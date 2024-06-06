@@ -6,7 +6,7 @@ Name: wstd-flangr
 Version: 1.0
 Release: 1%{?dist}
 Summary: Simple flanger plugin
-License: GPL-3.0-only
+License: GPL-3.0-or-later
 URL: https://github.com/Wasted-Audio/wstd-flangr
 ExclusiveArch: x86_64 aarch64
 
