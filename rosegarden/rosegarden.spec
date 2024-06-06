@@ -2,11 +2,11 @@
 # Type: Standalone
 # Category: Audio, Sequencer, DAW
 
-%global major 23.12
+%global major 24.06
 
 Name: rosegarden4
 Version: %{major}
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: MIDI, audio and notation editor
 License: GPLv2+
 URL: https://www.rosegardenmusic.com/
@@ -31,6 +31,8 @@ BuildRequires: libsamplerate-devel
 BuildRequires: libsndfile-devel
 BuildRequires: lirc-devel
 BuildRequires: zlib-devel
+BuildRequires: lilv-devel
+BuildRequires: lv2-devel
 BuildRequires: libappstream-glib
 BuildRequires: desktop-file-utils
 
@@ -89,6 +91,12 @@ desktop-file-install \
 %{_datadir}/metainfo/rosegarden.appdata.xml
 
 %changelog
+* Thu Jun 06 2024 Yann Collette <ycollette.nospam@free.fr> - 24.06-4
+- update to 24.06-4: add missing requirements
+
+* Wed Jun 05 2024 Yann Collette <ycollette.nospam@free.fr> - 24.06-1
+- update to 24.06-1
+
 * Wed Dec 06 2023 Yann Collette <ycollette.nospam@free.fr> - 23.12-1
 - update to 23.12-1
 
