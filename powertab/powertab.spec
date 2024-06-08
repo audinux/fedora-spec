@@ -2,9 +2,11 @@
 # Type: Standalone
 # Category: Audio, DAW
 
+%global commit0 4544a987a5e271dd6ee76aec28a40ab1739798c9
+
 Name: powertabeditor
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: View and edit guitar powertab tablature.
 URL: https://github.com/powertab/powertabeditor
 ExclusiveArch: x86_64 aarch64
@@ -13,7 +15,7 @@ License: GPL-2.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/powertab/powertabeditor/archive/refs/tags/2.0.0-alpha18.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/powertab/powertabeditor/archive/%{commit0}.zip#/%{name}-%{version}.zip
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -22,7 +24,11 @@ BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-linguist
 BuildRequires: alsa-lib-devel
 BuildRequires: doctest-devel
-BuildRequires: minizip-devel
+%if 0%{?fedora} >= 40
+BuildRequires: minizip-ng-compat-devel
+%else
+BuildRequires: minizip-ng-devel
+%endif
 BuildRequires: json-devel
 BuildRequires: pugixml-devel
 BuildRequires: rtmidi-devel
@@ -36,18 +42,14 @@ It is an open source, community-driven successor to the original Power Tab Edito
 A variety of file formats are supported, including .pt2, .ptb, .gp3, .gp4, .gp5, .gpx, and .gp
 
 %prep
-%autosetup -n powertabeditor-2.0.0-alpha18
+%autosetup -n powertabeditor-%{commit0}
 
 sed -i -e "1i #include <zlib.h>" source/formats/gp7/gp7exporter.cpp
 sed -i -e "s/zipOpenNewFileInZip64/zipOpenNewFileInZip_64/g" source/formats/gp7/gp7exporter.cpp
 
-sed -i -e "1i #include <functional>" source/app/viewoptions.cpp
-
 %build
 
 %set_build_flags
-export CFLAGS="-fpermissive $CFLAGS"
-export CXXFLAGS="-fpermissive $CXXFLAGS"
 
 %cmake
 %cmake_build
@@ -74,5 +76,8 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/powertabe
 %{_datadir}/powertab/
 
 %changelog
+* Fri Jun 07 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 4544a987a5e271dd6ee76aec28a40ab1739798c9
+
 * Fri Jul 08 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
