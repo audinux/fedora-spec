@@ -1,13 +1,13 @@
 #!/bin/bash
 
-wget -q --spider http://google.com
-
-if [ $? -eq 0 ]; then
-    echo "Net connection OK"
-else
-    echo "No net connection"
-    exit
-fi
+#wget -q --spider http://google.com
+#
+#if [ $? -eq 0 ]; then
+#    echo "Net connection OK"
+#else
+#    echo "No net connection"
+#    exit
+#fi
 
 REPO_LIST="https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git
 git://gabe.is-a-geek.org/git/inconcert
@@ -971,7 +971,8 @@ https://github.com/ZL-Audio/ZLLMakeup
 https://github.com/ZL-Audio/ZLSplit
 https://github.com/ZL-Audio/ZLEqualizer
 https://github.com/ZL-Audio/ZLLMatch
-https://github.com/ZL-Audio/ZLWarm"
+https://github.com/ZL-Audio/ZLWarm
+https://github.com/brummer10/StompTuner"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
