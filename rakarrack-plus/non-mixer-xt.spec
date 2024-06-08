@@ -4,7 +4,7 @@
 
 Summary: Reboot of Non Mixer with eXTended LV2 support.
 Name: non-mixer-xt
-Version: 1.3.3
+Version: 2.0.0
 Release: 1%{?dist}
 License: GPL-3.0-only
 URL: https://github.com/Stazed/non-mixer-xt
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source-non-mixer-xt.sh <tag>
-#        ./source-non-mixer-xt.sh 1.3.3
+#        ./source-non-mixer-xt.sh 2.0.0
 
 Source0: non-mixer-xt.tar.gz
 Source1: source-non-mixer-xt.sh
@@ -27,6 +27,7 @@ BuildRequires: liblo-devel
 BuildRequires: libsndfile-devel
 BuildRequires: fltk-fluid
 BuildRequires: fltk-devel
+BuildRequires: fltk-static
 BuildRequires: libsigc++20-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: libXpm-devel
@@ -38,6 +39,9 @@ BuildRequires: suil-devel
 BuildRequires: zix-devel
 BuildRequires: clap-devel
 BuildRequires: pango-devel
+BuildRequires: libXfixes-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXcursor-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -78,6 +82,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/doc/non-mixer-xt/*
 
 %changelog
+* Sat Jun 08 2024 Yann Collette <ycollette dot nospam at free.fr> 2.0.0-1
+- update to 2.0.0-1
+
 * Thu May 16 2024 Yann Collette <ycollette dot nospam at free.fr> 1.3.3-1
 - update to 1.3.3-1
 
