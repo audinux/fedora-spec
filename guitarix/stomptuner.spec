@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name: stomptuner
-Version: 0.2
+Version: 0.5
 Release: 1%{?dist}
 Summary: Tuner for Jack Audio Connection Kit
 License: GPL-2.0-or-later
@@ -14,13 +14,14 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources:
-# ./brummer10-source.sh StompTuner v0.2
+# ./brummer10-source.sh StompTuner v0.5
 
 Source0: StompTuner.tar.gz
 Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
+BuildRequires: git
 BuildRequires: pkgconfig(jack)
 BuildRequires: libX11-devel
 BuildRequires: cairo-devel
@@ -79,7 +80,17 @@ CLAP version of %{name}
 
 %install
 
-%make_install PREFIX=/usr LIBDIR=/usr/%{_lib}/ SKIP_STRIPPING=true
+install -m 755 -d %{buildroot}%{_libdir}/vst3/
+install -m 755 -d %{buildroot}%{_libdir}/vst/
+install -m 755 -d %{buildroot}%{_libdir}/clap/
+install -m 755 -d %{buildroot}%{_libdir}/lv2/
+install -m 755 -d %{buildroot}%{_bindir}/
+
+cp -a bin/stomptuner %{buildroot}%{_bindir}/
+cp -a bin/stomptuner.clap %{buildroot}%{_libdir}/clap/
+cp -a bin/stomptuner-vst.so %{buildroot}%{_libdir}/vst/
+cp -ra bin/stomptuner.lv2 %{buildroot}%{_libdir}/lv2/
+cp -ra bin/stomptuner.vst3 %{buildroot}%{_libdir}/vst3/
 
 %files
 %doc README.md
@@ -98,5 +109,8 @@ CLAP version of %{name}
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Jun 08 2024 Yann Collette <ycollette.nospam@free.fr> - 0.5-1
+- update to 0.5-1
+
 * Thu Oct 26 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2-1
 - Initial spec file
