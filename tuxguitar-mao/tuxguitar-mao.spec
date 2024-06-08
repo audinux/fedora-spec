@@ -32,7 +32,7 @@
 
 Name: tuxguitar
 Version: 1.6.3
-Release: 10%{?dist}
+Release: 11%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
 URL: https://github.com/helge17/tuxguitar
@@ -61,6 +61,7 @@ Patch1: tuxguitar-default-soundfont.patch
 Requires: eclipse-swt
 Requires: hicolor-icon-theme
 Requires: soundfont2-default
+Requires: apache-commons-io
 
 BuildRequires: gcc
 BuildRequires: make
@@ -245,6 +246,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Sat Jun 08 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.3-1
+- update to 1.6.3-11 - fix classpath / commons-io for gp7 / gp8 file opening
+
 * Thu Jun 06 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.3-10
 - update to 1.6.3-10
 
