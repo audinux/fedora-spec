@@ -17,6 +17,7 @@ Source0: https://github.com/attilammagyar/js80p/archive/refs/tags/v%{version}.ta
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
+BuildRequires: cppcheck
 BuildRequires: libxcb-devel
 BuildRequires: cairo-devel
 BuildRequires: xcb-util-renderutil-devel
