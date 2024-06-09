@@ -14,7 +14,7 @@ License: GPLv2+
 URL: http://guitarix.sourceforge.net/
 
 # ./brummer10-source.sh <project> <tag>
-# ./brummer10-source.sh guitarix v0.46.0
+# ./brummer10-source.sh guitarix V0.46.0
 
 Source0: guitarix.tar.gz
 Source1: brummer10-source.sh
