@@ -68,7 +68,7 @@ Filters audio through a simulated network of balls and springs.
 %setup -n Rack
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`

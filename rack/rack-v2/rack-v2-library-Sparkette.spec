@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c925a149881120204da2cf6d625f1367377f8339
-%global gittag0 2.7.1
+%global commit0 35bf7a47bb4c05215b003931081ca12ddc2a55f4
+%global gittag0 2.8.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Sparkette
-Version: 2.7.1
+Version: 2.8.0
 Release: 2%{?dist}
 Summary: Sparkette plugin for Rack
 License: GPL-2.0-or-later
@@ -67,7 +67,7 @@ Ellie is hiding on your rack as a blank panel!
 %setup -n Rack
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`
@@ -153,5 +153,5 @@ cp -r Sparkette_plugin/dist/Sparkette/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.7.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.8.0-1
 - initial specfile

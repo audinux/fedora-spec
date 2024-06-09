@@ -10,7 +10,7 @@ Name: Carla-mao
 Version: 2.5.8
 Release: 3%{?dist}
 Summary: Audio plugin host
-Epoch:   1
+Epoch: 1
 License: GPLv2+ and BSD and Boost and ISC and MIT and zlib
 URL: https://github.com/falkTX/Carla
 ExclusiveArch: x86_64 

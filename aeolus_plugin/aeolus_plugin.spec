@@ -4,12 +4,12 @@
 
 %global commit0 50494c1db8a88b4c17254fb40fc8f948b8046a8f
 
-Name:    aeolus_plugin
+Name: aeolus_plugin
 Version: 0.2.0
 Release: 3%{?dist}
 Summary: Pipe organ synthesizer
 License: GPL-3.0-or-later
-URL:     https://github.com/Archie3d/aeolus_plugin
+URL: https://github.com/Archie3d/aeolus_plugin
 ExclusiveArch: x86_64 
 
 Vendor:       Audinux
@@ -77,7 +77,7 @@ LV2 version of %{name}
 %setup -n %{name}
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 %build

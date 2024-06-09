@@ -10,11 +10,11 @@ License: GPL-2.0-or-later
 URL: http://dssi.sourceforge.net/download.html#FluidSynth-DSSI
 ExclusiveArch: x86_64 aarch64
 
-Source0:    http://download.sf.net/dssi/fluidsynth-dssi-%{version}.tar.gz
+Source0: http://download.sf.net/dssi/fluidsynth-dssi-%{version}.tar.gz
 # Add Fedora's default soundfont path to the scanlist:
-Patch0:     fluidsynth-dssi-sf2path.patch
+Patch0: fluidsynth-dssi-sf2path.patch
 # Fluidsynth 1 and 2 support
-Patch1:     fluidsynth-dssi-fluidsynth1and2.patch
+Patch1: fluidsynth-dssi-fluidsynth1and2.patch
 
 Requires: dssi
 
@@ -35,8 +35,8 @@ FluidSynth channel.
 
 %prep
 %setup -q
-%patch0 -p1 -b .sf2path
-%patch1 -p1 -b .fl1and2
+%patch 0 -p1 -b .sf2path
+%patch 1 -p1 -b .fl1and2
 
 %build
 %configure

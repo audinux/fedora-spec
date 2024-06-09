@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 e9070a4796fd43ec24c7331dbd5e70e8e5a4f49b
-%global gittag0 2.1.0
+%global commit0 c0a3e3f2d950b1a235d5aad254777f4ab578c660
+%global gittag0 2.2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SmarTAZZStudio-Free
-Version: 2.1.0
+Version: 2.2.0
 Release: 2%{?dist}
 Summary: SmarTAZZStudio-Free plugin for Rack
 License: GPL-2.0-or-later
@@ -67,7 +67,7 @@ Multiplies a polyphonic signal to 4 outputs
 %setup -n Rack
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`
@@ -153,5 +153,5 @@ cp -r SmarTAZZStudio-Free_plugin/dist/SmarTAZZStudio-Free/* %{buildroot}%{_libex
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
 - initial specfile

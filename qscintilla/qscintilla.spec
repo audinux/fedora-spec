@@ -172,8 +172,8 @@ BuildArch: noarch
 %prep
 %autosetup -n QScintilla-%{version}%{?snap:-snapshot-%{snap}}
 
-%patch100 -p1 -b .sip_check
-%patch101 -p1 -b .qurl
+%patch 100 -p1 -b .sip_check
+%patch 101 -p1 -b .qurl
 
 
 %build

@@ -67,7 +67,7 @@ A dual 4, or single 8, step shift register
 %setup -n Rack
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`

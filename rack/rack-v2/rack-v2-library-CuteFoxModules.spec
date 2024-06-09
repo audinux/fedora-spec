@@ -67,7 +67,7 @@ Quantizer based on a pair of intervals from 0 to 11 (semitones)
 %setup -n Rack
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`

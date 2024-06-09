@@ -68,7 +68,7 @@ Attenuating EQ with mid boost.
 %setup -n Rack
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`
@@ -141,7 +141,7 @@ tar xvfz %{SOURCE1} --directory=Bark_plugin --strip-components=1
 cp -n %{SOURCE2} Bark_plugin/plugin.json || true
 
 %ifarch aarch64
-%patch1 -p1
+%patch 1 -p1
 %endif
 
 %build

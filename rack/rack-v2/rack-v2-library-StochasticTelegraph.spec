@@ -67,7 +67,7 @@ Generate sequences, perform math on inputs, and even multitask with a simple BAS
 %setup -n Rack
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`

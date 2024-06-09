@@ -67,7 +67,7 @@ Pop is a small sample and hold module. One input, one trigger and one output. Bu
 %setup -n Rack
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`

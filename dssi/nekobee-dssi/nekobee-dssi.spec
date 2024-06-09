@@ -38,7 +38,7 @@ those squelchy acid sounds.
 
 %prep
 %setup -q -n nekobee-%{version}
-%patch0 -p1 -b .gcc10
+%patch 0 -p1 -b .gcc10
 
 %build
 %configure

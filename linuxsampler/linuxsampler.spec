@@ -64,7 +64,7 @@ Linuxsampler plugin for the LV2 plugin standard.
 %setup -n linuxsampler%{!?svn:-%{version}}
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 %set_build_flags

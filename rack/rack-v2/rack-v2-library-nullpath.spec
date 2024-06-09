@@ -67,7 +67,7 @@ A 1-9 not-so-sequential switch
 %setup -n Rack
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`

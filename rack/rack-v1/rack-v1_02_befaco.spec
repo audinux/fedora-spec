@@ -56,7 +56,7 @@ Based on Befaco - https://www.befaco.org/en/ Eurorack modules.
 %setup -n Rack
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`

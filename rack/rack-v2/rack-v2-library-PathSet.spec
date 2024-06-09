@@ -67,7 +67,7 @@ Gate shift register with controllable delays. Create generative gate sequences f
 %setup -n Rack
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`

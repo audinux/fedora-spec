@@ -7,14 +7,14 @@
 
 # Global variables for github repository
 %global commit0 6f29b84e18923b6c49cf0f59e14daf35fe2790ad
-%global gittag0 2.2.2
+%global gittag0 2.2.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-squinktronix-plug1
-Version: 2.2.2
+Version: 2.2.4
 Release: 2%{?dist}
 Summary: squinktronix-plug1 plugin for Rack
 License: GPL-2.0-or-later
@@ -67,7 +67,7 @@ Harmony Generator
 %setup -n Rack
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`
@@ -153,5 +153,5 @@ cp -r squinktronix-plug1_plugin/dist/squinktronix-plug1/* %{buildroot}%{_libexec
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.4-1
 - initial specfile

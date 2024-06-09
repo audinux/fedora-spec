@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 49a1b695db62cc93a9aa0a84a01dd00fd63ccb34
-%global gittag0 2.0.5
+%global commit0 0ffebb17c460953f8bd8f97c34c43227705531f2
+%global gittag0 2.0.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-CVfunk
-Version: 2.0.5
+Version: 2.0.6
 Release: 2%{?dist}
 Summary: CVfunk plugin for Rack
 License: GPL-2.0-or-later
@@ -67,7 +67,7 @@ Fusion of a comparator and a step generator
 %setup -n Rack
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`
@@ -153,5 +153,5 @@ cp -r CVfunk_plugin/dist/CVfunk/* %{buildroot}%{_libexecdir}/Rack2/plugins/CVfun
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.6-1
 - initial specfile

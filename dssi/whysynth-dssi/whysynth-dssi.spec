@@ -33,7 +33,7 @@ Soft Synth Interface (DSSI).
 
 %prep
 %setup -q -n whysynth-%{version}
-%patch0 -p1 -b .noinline
+%patch 0 -p1 -b .noinline
 
 %build
 %configure

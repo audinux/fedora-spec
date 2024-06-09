@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 066b89bf1ae895d4a6c4410801deb4705c2498fa
-%global gittag0 2.0.0
+%global commit0 b8c3b1abb76f6602dfbf49d57232115b01250df0
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-eightfold
-Version: 2.0.0
+Version: 2.0.1
 Release: 2%{?dist}
 Summary: eightfold plugin for Rack
 License: GPL-2.0-or-later
@@ -67,7 +67,7 @@ eight-voice algorithmic sequence generator
 %setup -n Rack
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`
@@ -153,5 +153,5 @@ cp -r eightfold_plugin/dist/eightfold/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

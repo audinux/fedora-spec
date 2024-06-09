@@ -45,7 +45,7 @@ interfaces, permitting them to be hosted in-process by audio applications.
 
 %prep
 %setup -q -n %{srcname0}-version_%{version}
-%patch0 -p1
+%patch 0 -p1
 
 %build
 export LDFLAGS="-lm"

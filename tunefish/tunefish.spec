@@ -44,9 +44,9 @@ commercial synthesizers.
 %prep
 %setup -n %{name}-%{commit0}
 
-%patch0 -p1
+%patch 0 -p1
 %ifarch aarch64
-%patch1 -p1
+%patch 1 -p1
 %endif
 
 cp %{SOURCE1} src/tunefish4/Builds/LinuxMakefile/Makefile

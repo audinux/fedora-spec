@@ -67,7 +67,7 @@ Builds control voltages for a chord of up to six notes from one CV input
 %setup -n Rack
 
 %ifarch aarch64
-%patch0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`
