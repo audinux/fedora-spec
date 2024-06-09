@@ -12,11 +12,10 @@ LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${TG_DIR}/lib/java/tuxguitar/
 ##CLASSPATH
 CLASSPATH=
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/commons-compress.jar
+CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/commons-io.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/gervill.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/itext-pdf.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/itext-xmlworker.jar
-CLASSPATH=$CLASSPATH:/usr/share/java/apache-commons-io.jar
-CLASSPATH=$CLASSPATH:/usr/share/java/commons-io.jar
 CLASSPATH=$CLASSPATH:/usr/lib/java/swt.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-alsa.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-ascii.jar
