@@ -2,11 +2,11 @@
 # Type: Standalone
 # Category: Audio, DAW
 
-%global commit0 4544a987a5e271dd6ee76aec28a40ab1739798c9
+%global commit0 f6662dd3c63adeca417c750e689bf7d5cf3a2f01
 
 Name: powertabeditor
 Version: 0.0.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: View and edit guitar powertab tablature.
 URL: https://github.com/powertab/powertabeditor
 ExclusiveArch: x86_64 aarch64
@@ -44,9 +44,6 @@ A variety of file formats are supported, including .pt2, .ptb, .gp3, .gp4, .gp5,
 %prep
 %autosetup -n powertabeditor-%{commit0}
 
-sed -i -e "1i #include <zlib.h>" source/formats/gp7/gp7exporter.cpp
-sed -i -e "s/zipOpenNewFileInZip64/zipOpenNewFileInZip_64/g" source/formats/gp7/gp7exporter.cpp
-
 %build
 
 %set_build_flags
@@ -76,6 +73,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/powertabe
 %{_datadir}/powertab/
 
 %changelog
+* Mon Jun 10 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
+- update to f6662dd3c63adeca417c750e689bf7d5cf3a2f01
+
 * Fri Jun 07 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
 - update to 4544a987a5e271dd6ee76aec28a40ab1739798c9
 
