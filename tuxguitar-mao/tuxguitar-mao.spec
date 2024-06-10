@@ -32,7 +32,7 @@
 
 Name: tuxguitar
 Version: 1.6.3
-Release: 12%{?dist}
+Release: 13%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
 URL: https://github.com/helge17/tuxguitar
@@ -61,6 +61,7 @@ Patch1: tuxguitar-default-soundfont.patch
 Requires: eclipse-swt
 Requires: hicolor-icon-theme
 Requires: soundfont2-default
+Requires: wqy-zenhei-fonts
 
 BuildRequires: gcc
 BuildRequires: make
@@ -122,6 +123,22 @@ find . -name "*.xml" -exec sed -i -e "s/9.99-//g" {} \;
 %ifarch aarch64
 sed -i -e "s/x86_64/aarch64/g" desktop/pom.xml
 %endif
+
+find . -name "*.exe" -print -delete
+find . -name "*.dll" -print -delete
+find . -name "*.sf2" -print -delete
+find . -name "*.jar" -print -delete
+find . -name "*.so"  -print -delete
+
+%pom_xpath_remove "pom:profile[pom:id[text()='platform-windows']]" desktop/pom.xml
+%pom_xpath_remove "pom:profile[pom:id[text()='platform-macos-cocoa']]" desktop/pom.xml
+%pom_xpath_remove "pom:profile[pom:id[text()='platform-freebsd']]" desktop/pom.xml
+# %pom_xpath_set -r pom:org.eclipse.swt.artifactId org.eclipse.swt  desktop/pom.xml
+# %pom_xpath_set -r pom:org.eclipse.swt.artifactId org.eclipse.swt desktop/build-scripts/%{name}-linux-swt
+%pom_xpath_remove "pom:artifactItem[pom:destFileName[text()='swt.jar']]" desktop/build-scripts/%{name}-linux-swt
+# %pom_remove_dep :org.eclipse.swt.gtk.linux desktop/pom.xml
+%pom_remove_dep :org.eclipse.swt.win32.win32 desktop/pom.xml
+%pom_remove_dep :org.eclipse.swt.cocoa.macosx desktop/pom.xml
 
 %build
 
@@ -245,6 +262,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Mon Jun 10 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.3-13
+- update to< 1.6.3-13 - backport elements from opensuse spec
+
 * Sun Jun 09 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.3-12
 - update to< 1.6.3-12 - fix classpath / commons-io for gp7 / gp8 file opening
 
