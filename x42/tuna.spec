@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name: tuna.lv2
-Version: 0.6.5
+Version: 0.6.6
 Release: 1%{?dist}
 Summary: Musical Instrument Tuner
 License: GPL-2.0-or-later
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./x42-source.sh <project> <tag>
-# ./x42-source.sh tuna.lv2 v0.6.5
+# ./x42-source.sh tuna.lv2 v0.6.6
 
 Source0: tuna.lv2.tar.gz
 Source1: x42-source.sh
@@ -54,6 +54,9 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_datadir}/*
 
 %changelog
+* Tue Jun 11 2024 Yann Collette <ycollette.nospam@free.fr> - 0.6.6-1
+- update to 0.6.6-1
+
 * Thu May 11 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.5-1
 - update to 0.6.5-1
 

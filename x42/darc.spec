@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name: darc.lv2
-Version: 0.6.6
+Version: 0.7.0
 Release: 1%{?dist}
 Summary: Dynamic Audio Range Compressor
 License: GPL-2.0-or-later
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./x42-source.sh <project> <tag>
-# ./x42-source.sh darc.lv2 v0.6.6
+# ./x42-source.sh darc.lv2 v0.7.0
 
 Source0: darc.lv2.tar.gz
 Source1: x42-source.sh
@@ -61,6 +61,9 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_datadir}/*
 
 %changelog
+* Tue Jun 11 2024 Yann Collette <ycollette.nospam@free.fr> - 0.7.0-1
+- update to 0.7.0-1
+
 * Fri Sep 15 2023 Yann Collette <ycollette.nospam@free.fr> - 0.6.6-1
 - update to 0.6.6-1
 

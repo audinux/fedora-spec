@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name: fat1.lv2
-Version: 0.8.7
+Version: 0.8.8
 Release: 1%{?dist}
 Summary: Fons Adriaensen's AT1 -- Autotune LV2 plugin
 License: GPL-2.0-or-later
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./x42-source.sh <project> <tag>
-# ./x42-source.sh fat1.lv2 v0.8.7
+# ./x42-source.sh fat1.lv2 v0.8.8
 
 Source0: fat1.lv2.tar.gz
 Source1: x42-source.sh
@@ -53,6 +53,9 @@ Fons Adriaensen's AT1 -- Autotune LV2 plugin
 %{_datadir}/*
 
 %changelog
+* Tue Jun 11 2024 Yann Collette <ycollette.nospam@free.fr> - 0.8.8-1
+- update to 0.8.8-1
+
 * Fri Sep 15 2023 Yann Collette <ycollette.nospam@free.fr> - 0.8.7-1
 - update to 0.8.7-1
 
