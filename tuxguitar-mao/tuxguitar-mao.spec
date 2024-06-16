@@ -32,7 +32,7 @@
 
 Name: tuxguitar
 Version: 1.6.3
-Release: 13%{?dist}
+Release: 14%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
 URL: https://github.com/helge17/tuxguitar
@@ -262,11 +262,14 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Sun Jun 16 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.3-14
+- update to 1.6.3-14 - update tuxguitar.sh
+
 * Mon Jun 10 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.3-13
-- update to< 1.6.3-13 - backport elements from opensuse spec
+- update to 1.6.3-13 - backport elements from opensuse spec
 
 * Sun Jun 09 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.3-12
-- update to< 1.6.3-12 - fix classpath / commons-io for gp7 / gp8 file opening
+- update to 1.6.3-12 - fix classpath / commons-io for gp7 / gp8 file opening
 
 * Sat Jun 08 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.3-11
 - update to 1.6.3-11 - fix classpath / commons-io for gp7 / gp8 file opening
