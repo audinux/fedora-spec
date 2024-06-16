@@ -2,8 +2,8 @@
 # Type: Standalone, IDE, Language
 # Category: Audio, Programming, Graphic
 
-Name: JUCE
-Version: 8.0.0
+Name: JUCE7
+Version: 7.0.12
 Release: 10%{?dist}
 Summary: JUCE Framework
 URL: https://github.com/juce-framework/JUCE
@@ -14,8 +14,8 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Source1: juce_Projucer.desktop
-Source2: juce_Projucer.1
+Source1: juce_Projucer7.desktop
+Source2: juce_Projucer7.1
 
 Patch0: 0001-build-allow-setting-JUCE_PLUGINHOST_LADSPA.patch
 Patch1: 0002-build-linux-find_packages.patch
@@ -44,7 +44,7 @@ which supports exporting projects for Xcode (macOS and iOS), Visual Studio, Andr
 Code::Blocks and Linux Makefiles as well as containing a source code editor.
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -p1 -n JUCE-%{version}
 
 %build
 
@@ -71,10 +71,10 @@ install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/512x512/
 install -m 644 examples/Assets/juce_icon.png %{buildroot}/%{_datadir}/icons/hicolor/512x512/
 
 install -m 755 -d %{buildroot}/%{_mandir}/man1/
-install -m 644 %{SOURCE2} %{buildroot}/%{_mandir}/man1/
+install -m 644 %{SOURCE2} %{buildroot}/%{_mandir}/man1/juce_Projucer.1
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
-install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/applications/
+install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/applications/juce_Projucer.desktop
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 %{__cmake_builddir}/extras/AudioPluginHost/AudioPluginHost_artefacts/AudioPluginHost %{buildroot}/%{_bindir}
@@ -106,8 +106,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libexecdir}/juce/juceaide
 
 %changelog
-* Sat Jun 15 2024 Yann Collette <ycollette.nospam@free.fr> - 8.0.0-10
-- update to 8.0.0-10
+* Sat Jun 15 2024 Yann Collette <ycollette.nospam@free.fr> - 7.0.12-10
+- update to 7.0.12-10 - rename spec to juce7
 
 * Tue Apr 16 2024 Yann Collette <ycollette.nospam@free.fr> - 7.0.12-10
 - update to 7.0.12-10
