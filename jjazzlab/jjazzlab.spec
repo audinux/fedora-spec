@@ -3,6 +3,8 @@
 # Category: Tool, MIDI, Sequencer
 
 %global __brp_strip %{nil}
+%global _missing_build_ids_terminate_build %{nil}
+%global debug_package %{nil}
 
 Name: jjazzlab
 Version: 4.1.0
