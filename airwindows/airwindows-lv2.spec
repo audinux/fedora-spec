@@ -2,12 +2,12 @@
 # Type: Plugin, LV2
 # Category: Audio, Effect
 
-Name:    lv2-airwindows
+Name: lv2-airwindows
 Version: 28.0
 Release: 1%{?dist}
 Summary: Airwindows plugins (ported to LV2)
 License: GPL-3.0-or-later
-URL:     https://github.com/hannesbraun/airwindows-lv2
+URL: https://github.com/hannesbraun/airwindows-lv2
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -15,8 +15,7 @@ Distribution: Audinux
 
 Source0: https://github.com/hannesbraun/airwindows-lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: meson
 BuildRequires: lv2-devel
 BuildRequires: boost-devel
