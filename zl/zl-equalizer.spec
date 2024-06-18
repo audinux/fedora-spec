@@ -4,7 +4,7 @@
 
 Name: zl-equalizer
 Version: 0.3.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Equalizer plugin
 License: GPL-3.0-only
 URL: https://github.com/ZL-Audio/ZLEqualizer
@@ -92,6 +92,9 @@ cp -ra %{__cmake_builddir}/ZLEqualizer_artefacts/LV2/* %{buildroot}%{_libdir}/lv
 %{_libdir}/lv2/*
 
 %changelog
+* Tue Jun 18 2024 Yann Collette <ycollette.nospam@free.fr> - 0.3.2-2
+- update to 0.3.2-2 - tag updated
+
 * Fri Jun 14 2024 Yann Collette <ycollette.nospam@free.fr> - 0.3.2-1
 - update to 0.3.2-1
 
