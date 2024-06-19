@@ -33,6 +33,7 @@ BuildRequires: lirc-devel
 BuildRequires: zlib-devel
 BuildRequires: lilv-devel
 BuildRequires: lv2-devel
+BuildRequires: gtk2-devel
 BuildRequires: libappstream-glib
 BuildRequires: desktop-file-utils
 
