@@ -3,7 +3,7 @@
 # Category: Audio, Sequencer
 
 Name: furnace
-Version: 0.6.3
+Version: 0.6.4
 Release: 4%{?dist}
 Summary: A multi-system chiptune tracker compatible with DefleMask modules
 License: GPL-2.0-only
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./source-furnace.sh v0.6.3
+# $ ./source-furnace.sh v0.6.4
 
 Source0: furnace.tar.gz
 Source1: source-furnace.sh
@@ -84,8 +84,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/furnace/*
 %{_datadir}/icons/hicolor/*
 %{_datadir}/mime/packages/furnace.xml
+%{_datadir}/locale/locale/*
 
 %changelog
+* Wed Jun 19 2024 Yann Collette <ycollette.nospam@free.fr> - 0.6.4-4
+- Update to 0.6.4-4
+
 * Thu May 02 2024 Yann Collette <ycollette.nospam@free.fr> - 0.6.3-4
 - Update to 0.6.3-4
 
