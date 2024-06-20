@@ -3,7 +3,7 @@
 # Category: Audio, Programming
 
 Name: faust
-Version: 2.72.14
+Version: 2.74.6
 Release: 37%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
@@ -16,7 +16,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to get source:
-# ./faust-source.sh 2.72.14
+# ./faust-source.sh 2.74.6
 
 Source0: faust.tar.gz
 Source1: faust-backends.cmake
@@ -193,6 +193,9 @@ done
 %{_datadir}/faust/*.lib
 
 %changelog
+* Thu Jun 20 2024 Yann Collette <ycollette.nospam@free.fr> - 2.74.6-37
+- update to 2.74.6-37
+
 * Tue Apr 02 2024 Yann Collette <ycollette.nospam@free.fr> - 2.72.14-37
 - update to 2.72.14-37
 
