@@ -4,7 +4,7 @@
 
 Name: HISE
 Version: 3.6.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: The open source framework for sample based instrument
 License: GPL-3.0-or-later OR LicenseRef-www-hise-audio
 URL: https://github.com/christophhart/HISE
@@ -44,8 +44,8 @@ It emphasizes on sampling, but includes some basic synthesis features for making
 instruments as well as audio effects.
 
 %package -n vst-%{name}
-Summary:  VST2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST2 version of %{name}
+License: GPL-3.0-or-later OR LicenseRef-www-hise-audio
 
 %description -n vst-%{name}
 VST2 version of %{name}
@@ -90,11 +90,18 @@ install -m 644 -p ./hi_core/hi_images/logo_mini.png %{buildroot}/%{_datadir}/ico
 install -m 755 -d %{buildroot}%{_libdir}/vst/
 install -m 755 -p projects/plugin/Builds/LinuxMakefile/build/HISE.so %{buildroot}%{_libdir}/vst/
 
+install -m 755 -d %{buildroot}/%{_usrsrc}/
+mkdir tmp
+cd tmp
+tar xvfz %{SOURCE0}
+mv HISE %{buildroot}/%{_usrsrc}/
+cd ..
+
 cat > %{buildroot}/%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
 Version=1.0
 Name=HISE
-Exec=hise
+Exec=env GDK_BACKEND=x11 hise
 Icon=hise
 Terminal=false
 Type=Application
@@ -118,11 +125,15 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/*
 %{_datadir}/%{name}/
 %{_datadir}/%{name}/demos/*
+%{_usrsrc}/HISE/*
 
 %files -n vst-%{name}
 %{_libdir}/vst/*
 
 %changelog
+* Sat Jun 22 2024 Yann Collette <ycollette.nospam@free.fr> - 3.6.2-2
+- update to 3.6.2-2 - add HISE sources in /usr/src/HISE
+
 * Sat Sep 23 2023 Yann Collette <ycollette.nospam@free.fr> - 3.6.2-1
 - update to 3.6.2-1
 
