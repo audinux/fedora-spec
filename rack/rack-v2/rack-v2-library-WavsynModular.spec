@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 5a37481464d8bfce825973ee347703273a7d678a
-%global gittag0 2.1.10
+%global commit0 d7ee24c1e7390dd8d4e9a1bf75456f408eca8955
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-TMT
-Version: 2.1.10
+Name:    rack-v2-WavsynModular
+Version: 2.0.0
 Release: 2%{?dist}
-Summary: TMT plugin for Rack
+Summary: WavsynModular plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Jadael/TMT
+URL:     https://github.com/mogrifier/wavsynmodular
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -28,8 +28,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/Jadael/TMT/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: TMT_plugin.json
+Source1: https://github.com/mogrifier/wavsynmodular/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: WavsynModular_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -60,14 +60,14 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-TMT plugin for Rack.
-Randomly re-order the channels of a polyphonic signal. CV controls for seed and number of output channels.
+WavsynModular plugin for Rack.
+Wavefolder with CV controls
 
 %prep
 %setup -n Rack
 
 %ifarch aarch64
-%patch 0 -p1
+%patch0 -p1
 %endif
 
 CURRENT_PATH=`pwd`
@@ -134,24 +134,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir TMT_plugin
-tar xvfz %{SOURCE1} --directory=TMT_plugin --strip-components=1
+mkdir WavsynModular_plugin
+tar xvfz %{SOURCE1} --directory=WavsynModular_plugin --strip-components=1
 
-cp -n %{SOURCE2} TMT_plugin/plugin.json || true
+cp -n %{SOURCE2} WavsynModular_plugin/plugin.json || true
 
 %build
 
-cd TMT_plugin
+cd WavsynModular_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/TMT/
-cp -r TMT_plugin/dist/TMT/* %{buildroot}%{_libexecdir}/Rack2/plugins/TMT/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/WavsynModular/
+cp -r WavsynModular_plugin/dist/WavsynModular/* %{buildroot}%{_libexecdir}/Rack2/plugins/WavsynModular/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.10-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile
