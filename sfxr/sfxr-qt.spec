@@ -3,7 +3,7 @@
 # Category: Synthesizer
 
 Name: sfxr-qt
-Version: 1.5.0
+Version: 1.5.1
 Release: 1%{?dist}
 Summary: Qt port of SFXR, a sound effect generator, to generate retro-gaming like sound effects.
 License: MIT
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./sfxr-qt-source.sh <TAG>
-#        ./sfxr-qt-source.sh 1.5.0
+#        ./sfxr-qt-source.sh 1.5.1
 
 Source0: sfxr-qt.tar.gz
 Source1: sfxr-qt-source.sh
@@ -68,5 +68,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/com.agateau.sfxr-qt.d
 %{_datadir}/icons/hicolor/48x48/apps/sfxr-qt.png
 
 %changelog
+* Mon Jun 24 2024 Yann Collette <ycollette.nospam@free.fr> - 1.5.1-1
+- update to 1.5.1-1
+
 * Tue Dec 14 2021 Yann Collette <ycollette.nospam@free.fr> - 1.5.0-1
 - initial version of the spec
