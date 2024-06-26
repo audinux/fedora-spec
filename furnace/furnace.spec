@@ -84,7 +84,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/furnace/*
 %{_datadir}/icons/hicolor/*
 %{_datadir}/mime/packages/furnace.xml
-%{_datadir}/locale/locale/*
+%{_datadir}/locale/*
 
 %changelog
 * Tue Jun 25 2024 Yann Collette <ycollette.nospam@free.fr> - 0.6.5-4
