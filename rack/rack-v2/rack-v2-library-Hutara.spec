@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 de1c29d54947f634a41b5110668f59e31f0fb435
-%global gittag0 2.4.1
+%global commit0 00321012f9b84060637754cb8b4e9f774ee7100f
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-vanTies
-Version: 2.4.1
+Name:    rack-v2-Hutara
+Version: 2.0.0
 Release: 2%{?dist}
-Summary: vanTies plugin for Rack
+Summary: Hutara plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/matthiassars/vanTies
+URL:     https://github.com/hutara/Hutara-modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -28,8 +28,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/matthiassars/vanTies/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: vanTies_plugin.json
+Source1: https://github.com/hutara/Hutara-modules/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: Hutara_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -60,8 +60,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-vanTies plugin for Rack.
-additive oscillator
+Hutara plugin for Rack.
+Psychedelic Synthesizer,VCO with FM Synthesis, Resample and Waveshaper 
 
 %prep
 %setup -n Rack
@@ -134,24 +134,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir vanTies_plugin
-tar xvfz %{SOURCE1} --directory=vanTies_plugin --strip-components=1
+mkdir Hutara_plugin
+tar xvfz %{SOURCE1} --directory=Hutara_plugin --strip-components=1
 
-cp -n %{SOURCE2} vanTies_plugin/plugin.json || true
+cp -n %{SOURCE2} Hutara_plugin/plugin.json || true
 
 %build
 
-cd vanTies_plugin
+cd Hutara_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/vanTies/
-cp -r vanTies_plugin/dist/vanTies/* %{buildroot}%{_libexecdir}/Rack2/plugins/vanTies/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/Hutara/
+cp -r Hutara_plugin/dist/Hutara/* %{buildroot}%{_libexecdir}/Rack2/plugins/Hutara/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile
