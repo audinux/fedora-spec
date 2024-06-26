@@ -13,12 +13,17 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
+# To get vst3sdk sources:
+# Usage: ./vst3-source.sh <TAG>
+#        ./vst3-source.sh v3.7.11_build_10
+
 Source0: https://github.com/christophhart/HISE/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
+Source1: vst3sdk.tar.gz
+Source2: vst3-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
-BuildRequires: JUCE
+BuildRequires: JUCE7
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
