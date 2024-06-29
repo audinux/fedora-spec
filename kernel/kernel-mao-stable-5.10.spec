@@ -3,9 +3,9 @@
 # Kernel minor version
 %define kmin  10
 # Kernel patch version
-%define kpat  218
+%define kpat  219
 # RT patch version
-%define krt   110
+%define krt   111
 # package version
 %define krel  12
 
@@ -204,6 +204,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt-stable%{krt}%{fcver}
 
 %changelog
+* Sat Jun 29 2024 Yann Collette <ycollette.nospam@free.fr> - 5.10.219-rt111-12
+- update to 5.10.219-rt111-12 - vanilla RT kernel
+
 * Thu Jun 06 2024 Yann Collette <ycollette.nospam@free.fr> - 5.10.218-rt110-12
 - update to 5.10.218-rt110-12 - vanilla RT kernel
 
