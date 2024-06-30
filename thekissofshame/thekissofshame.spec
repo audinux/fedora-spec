@@ -2,10 +2,8 @@
 # Type: Plugin, Standalone, VST3
 # Category: Audio, Distortion
 
-%global commit0 fd160b9af0f1c764e528aa279556c2720ec2296e
-
 Name: thekissofshame
-Version: 1.0.1
+Version: 1.0.2
 Release: 1%{?dist}
 Summary: DSP Magnetic Tape Emulation
 License: GPL-3.0-or-later
@@ -78,6 +76,9 @@ cp %{__cmake_builddir}/TheKissOfShame_artefacts/Standalone/*  %{buildroot}/%{_bi
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Jun 30 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-1
+- update to 1.0.2-1
+
 * Thu May 02 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
 - update to 1.0.1-1
 
