@@ -147,6 +147,7 @@
 | dublang                  | https://codeberg.org/joenio/dublang |
 | CMBNEX                   | https://github.com/KaixoCode/CMBNEX |
 | BeatAligningGuitarLooper | https://github.com/DanielRudrich/BeatAligningGuitarLooper |
+| ConvertWithMoss          | https://github.com/git-moss/ConvertWithMoss | 
 
 Check the following URL: https://github.com/forart/HyMPS
 
