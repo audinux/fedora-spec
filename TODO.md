@@ -148,6 +148,7 @@
 | CMBNEX                   | https://github.com/KaixoCode/CMBNEX |
 | BeatAligningGuitarLooper | https://github.com/DanielRudrich/BeatAligningGuitarLooper |
 | ConvertWithMoss          | https://github.com/git-moss/ConvertWithMoss | 
+| xenos                    | https://github.com/raphaelradna/xenos |
 
 Check the following URL: https://github.com/forart/HyMPS
 
