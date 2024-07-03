@@ -6,8 +6,12 @@
 
 %define commit0_example 7205f76dda5e91bc7f5292c8af23b66d0f5a1c02
 
+# TODO:
+# add https://github.com/ossia/score-addons
+# add https://github.com/ossia/score-user-library
+
 Name: ossia-score
-Version: 3.2.2
+Version: 3.2.3
 Release: 1%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL: https://github.com/OSSIA/score
@@ -110,6 +114,9 @@ cp -r score-examples-%{commit0_example}/* %{buildroot}/%{_datadir}/ossia/example
 %{_datadir}/ossia/examples/*
 
 %changelog
+* Tue Jul 02 2024 Yann Collette <ycollette.nospam@free.fr> - 3.2.3-2
+- update to version 3.2.3-2
+
 * Fri Jun 28 2024 Yann Collette <ycollette.nospam@free.fr> - 3.2.2-2
 - update to version 3.2.2-2
 
