@@ -6,7 +6,7 @@
 
 Summary: Frequency modulation synthesizer plugin
 Name: octasine
-Version: 0.9.0
+Version: 0.9.1
 Release: 1%{?dist}
 License: AGPL-3.0-only
 URL: https://github.com/greatest-ape/OctaSine
@@ -72,5 +72,8 @@ cp target/bundled/octasine.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Wed Jul 03 2024 Yann Collette <ycollette dot nospam at free.fr> 0.9.1-1
+- update to 0.9.1-1
+
 * Tue Jan 23 2024 Yann Collette <ycollette dot nospam at free.fr> 0.9.0-1
 - initial release
