@@ -5,7 +5,7 @@
 %global debug_package %{nil}
 
 Name: monique-monosynth
-Version: 23102022
+Version: 20042024
 Release: 1%{?dist}
 Summary: Monique is a monophonic synth from Thomas Arndt
 License: GPL-3.0-or-later
@@ -116,5 +116,8 @@ patchelf --set-rpath '$ORIGIN/../../../%{_lib}/moniquemonosynth/' %{buildroot}/%
 %{_libdir}/clap/*
 
 %changelog
+* Sun Dec 26 2021 Yann Collette <ycollette.nospam@free.fr> - 20042024-1
+- update to 20042024-1
+
 * Sun Dec 26 2021 Yann Collette <ycollette.nospam@free.fr> - 01122021-1
 - Initial spec file
