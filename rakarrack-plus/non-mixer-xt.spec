@@ -5,7 +5,7 @@
 Summary: Reboot of Non Mixer with eXTended LV2 support.
 Name: non-mixer-xt
 Version: 2.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPL-3.0-only
 URL: https://github.com/Stazed/non-mixer-xt
 ExclusiveArch: x86_64 aarch64
@@ -56,7 +56,12 @@ LV2 plugins, preset support and state save and restore.
 
 %build
 
-%cmake
+
+%cmake -DEnableOptimizations=OFF \
+       -DEnableSSE=OFF \
+       -DEnableSSE2=OFF \
+       -DNativeOptimizations=OFF
+
 %cmake_build
 
 %install
@@ -82,6 +87,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/doc/non-mixer-xt/*
 
 %changelog
+* Thu Jul 04 2024 Yann Collette <ycollette dot nospam at free.fr> 2.0.1-2
+- update to 2.0.1-2 - disable optimizations
+
 * Tue Jun 18 2024 Yann Collette <ycollette dot nospam at free.fr> 2.0.1-1
 - update to 2.0.1-1
 
