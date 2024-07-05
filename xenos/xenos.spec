@@ -1,6 +1,6 @@
-# Tag: Jack, Alsa
-# Type: Plugin, Standalone, VST3
-# Category: Audio, Distortion
+# Tag: Synthesizer
+# Type: Plugin, LV2, VST3
+# Category: Audio, Synthesizer
 
 %global commit0 fa52c4410aad470346fecc35b9b03100207199e5
 
