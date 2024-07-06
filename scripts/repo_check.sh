@@ -973,7 +973,8 @@ https://github.com/ZL-Audio/ZLEqualizer
 https://github.com/ZL-Audio/ZLLMatch
 https://github.com/ZL-Audio/ZLWarm
 https://github.com/brummer10/StompTuner
-https://github.com/raphaelradna/xenos"
+https://github.com/raphaelradna/xenos
+https://github.com/crowbait/GnomeDistort-2"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
