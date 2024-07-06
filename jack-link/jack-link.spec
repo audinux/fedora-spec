@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name: jack-link
-Version: 0.2.1
+Version: 0.2.2
 Release: 1%{?dist}
 Summary: JACK transport timebase bridge to Ableton Link
 License: GPL-2.0-only
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./jack-link-source.sh <TAG>
-#        ./jack-link-source.sh v0.2.1
+#        ./jack-link-source.sh v0.2.2
 
 Source0: jack_link.tar.gz
 Source1: jack-link-source.sh
@@ -47,6 +47,9 @@ export LDFLAGS="-fPIC $LDFLAGS"
 %{_bindir}/*
 
 %changelog
+* Fri Jul 05 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2.2-1
+- update to 0.2.2-1
+
 * Mon Feb 19 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2.1-1
 - update to 0.2.1-1
 
