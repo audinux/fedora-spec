@@ -3,7 +3,7 @@
 # Category: MIDI, Tool
 
 Name: showdmidi
-Version: 0.9.0
+Version: 1.9.9
 Release: 1%{?dist}
 Summary: Multi-platform GUI application to effortlessly visualize MIDI activity
 License: GPL-3.0-only
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./gbevin-source.sh <project> <tag>
-# ./gbevin-source.sh ShowMIDI 0.9.0
+# ./gbevin-source.sh ShowMIDI 1.0.0
 
 Source0: ShowMIDI.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
@@ -108,6 +108,9 @@ cp -ra build/ShowMIDI.vst3 %{buildroot}%{_libdir}/vst3/
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Jul 08 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-3
+- update to 1.0.0-1
+
 * Thu May 30 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.0-3
 - update to 0.9.0-1
 
