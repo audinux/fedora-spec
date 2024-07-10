@@ -286,3 +286,7 @@ And cleanup the chroot:
 ```
 $ mock -r /etc/mock/fedora-38-x86_64.cfg --clean
 ```
+
+# Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=audinux/fedora-spec&type=Date)](https://star-history.com/#audinux/fedora-spec&Date)
