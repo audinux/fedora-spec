@@ -3,9 +3,9 @@
 # Kernel minor version
 %define kmin  10
 # Kernel patch version
-%define kpat  220
+%define kpat  221
 # RT patch version
-%define krt   112
+%define krt   113
 # package version
 %define krel  12
 
@@ -28,7 +28,11 @@ Source1: kernel-config-%{kmaj}.%{kmin}
 Patch0:  https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/%{kmaj}.%{kmin}/older/patch-%{kver}-rt%{krt}.patch.gz
 Patch1:  kernel-5.10-remove-bpf-feature-detect.patch
 
+%if 0%{?fedora} > 40
+BuildRequires: openssl-devel-engine
+%else
 BuildRequires: openssl-devel
+%endif
 BuildRequires: openssl
 BuildRequires: kmod
 BuildRequires: patch
@@ -204,6 +208,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt-stable%{krt}%{fcver}
 
 %changelog
+* Fri Jul 12 2024 Yann Collette <ycollette.nospam@free.fr> - 5.10.221-rt113-12
+- update to 5.10.221-rt113-12 - vanilla RT kernel
+
 * Thu Jul 11 2024 Yann Collette <ycollette.nospam@free.fr> - 5.10.220-rt112-12
 - update to 5.10.220-rt112-12 - vanilla RT kernel
 
