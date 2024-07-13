@@ -31,7 +31,7 @@
 %define fontdir        %{_datadir}/fonts/%{name}
 
 Name: mscore-mao
-Version: 4.3.0
+Version: 4.3.2
 Release: 3%{?dist}
 Summary: A WYSIWYG music score typesetter
 
@@ -177,6 +177,7 @@ export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-fexceptions||g"`
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-fstack-clash-protection||g"`
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-fcf-protection||g"`
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-fstack-protector-strong||g"`
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Wp,-D_GLIBCXX_ASSERTIONS||g"`
 
 %cmake \
        -DMUE_BUILD_UNIT_TESTS:BOOL=OFF \
@@ -294,6 +295,8 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/org.musescore.MuseSc
 %license fonts/finalemaestro/OFL.txt.finalemaestro
 
 %changelog
+* Wed Jul 10 2024 Yann Collette <ycollette.nospam@free.fr> - 4.3.2-3
+- update to 4.3.2-3
 * Mon May 06 2024 Yann Collette <ycollette.nospam@free.fr> - 4.3.0-3
 - update to 4.3.0-3 - remove -Wp,-D_GLIBCXX_ASSERTIONS during build
 * Thu May 02 2024 Yann Collette <ycollette.nospam@free.fr> - 4.3.0-2
