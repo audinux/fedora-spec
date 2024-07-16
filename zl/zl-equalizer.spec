@@ -3,7 +3,7 @@
 # Category: Effect
 
 Name: zl-equalizer
-Version: 0.3.2
+Version: 0.3.3
 Release: 2%{?dist}
 Summary: Equalizer plugin
 License: GPL-3.0-only
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./zl-source.sh <project> <tag>
-# ./zl-source.sh ZLEqualizer 0.3.2
+# ./zl-source.sh ZLEqualizer 0.3.3
 
 Source0: ZLEqualizer.tar.gz
 Source1: zl-source.sh
@@ -92,6 +92,9 @@ cp -ra %{__cmake_builddir}/ZLEqualizer_artefacts/LV2/* %{buildroot}%{_libdir}/lv
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Jul 14 2024 Yann Collette <ycollette.nospam@free.fr> - 0.3.3-2
+- update to 0.3.3-2
+
 * Tue Jun 18 2024 Yann Collette <ycollette.nospam@free.fr> - 0.3.2-2
 - update to 0.3.2-2 - tag updated
 
