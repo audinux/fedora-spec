@@ -980,6 +980,8 @@ https://github.com/DanielRudrich/BeatAligningGuitarLooper"
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
 
+cp git_tags_old.txt git_tags_old.txt.bkp
+
 if [ -f git_tags_new.txt ];
 then
     mv git_tags_new.txt git_tags_old.txt
