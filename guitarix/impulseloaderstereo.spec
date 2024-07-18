@@ -3,7 +3,7 @@
 # Category: Audio, Tool, Plugin
 
 Name: ImpulseLoaderStereo
-Version: 0.2
+Version: 0.3
 Release: 1%{?dist}
 Summary: This is a simple, stereo, IR-File loader/convolution LV2 plug
 License: GPL-2.0-or-later
@@ -56,5 +56,8 @@ LV2 version of %{name}
 %{_libdir}/lv2/*
 
 %changelog
+* Thu Jul 18 2024 Yann Collette <ycollette.nospam@free.fr> - 0.3-1
+- update to 0.3-1
+
 * Thu Feb 08 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2-1
 - Initial spec file
