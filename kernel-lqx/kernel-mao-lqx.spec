@@ -1,7 +1,7 @@
 # Kernel major version
 %define kmaj  6
 # Kernel minor version
-%define kmin  8
+%define kmin  9
 # Kernel patch version
 %define kpat  9
 # RT patch version
@@ -27,7 +27,11 @@ Source0: https://cdn.kernel.org/pub/linux/kernel/v%{kmaj}.x/linux-%{kmaj}.%{kmin
 Source1: https://github.com/damentz/liquorix-package/raw/%{kmaj}.%{kmin}/master/linux-liquorix/debian/config/kernelarch-x86/config-arch-64
 Patch0:  https://github.com/zen-kernel/zen-kernel/releases/download/v%{kmaj}.%{kmin}.%{kpat}-lqx%{krt}/v%{kmaj}.%{kmin}.%{kpat}-lqx%{krt}.patch.xz
 
+%if 0%{?fedora} > 40
+BuildRequires: openssl-devel-engine
+%else
 BuildRequires: openssl-devel
+%endif
 BuildRequires: openssl
 BuildRequires: kmod
 BuildRequires: patch
@@ -212,6 +216,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-lqx%{krt}%{fcver}
 
 %changelog
+* Fri Jul 19 2024 Yann Collette <ycollette.nospam@free.fr> - 6.9.9-lqx1-14
+- update to 6.9.9-lqx1-14 - vanilla Liquorix kernel
+
 * Fri May 03 2024 Yann Collette <ycollette.nospam@free.fr> - 6.8.9-lqx1-14
 - update to 6.8.9-lqx1-14 - vanilla Liquorix kernel
 

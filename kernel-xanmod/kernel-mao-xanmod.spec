@@ -1,7 +1,7 @@
 # Kernel major version
 %define kmaj  6
 # Kernel minor version
-%define kmin  8
+%define kmin  9
 # Kernel patch version
 %define kpat  9
 # Xan version
@@ -26,7 +26,11 @@ Distribution: Audinux
 Source0: https://github.com/xanmod/linux/archive/refs/tags/%{kver}-xanmod1.tar.gz
 Source1: kernel-xanmod-config-%{kmaj}.%{kmin}
 
+%if 0%{?fedora} > 40
+BuildRequires: openssl-devel-engine
+%else
 BuildRequires: openssl-devel
+%endif
 BuildRequires: openssl
 BuildRequires: kmod
 BuildRequires: patch
@@ -206,6 +210,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-xan%{kxan}%{fcver}
 
 %changelog
+* Fri Jul 19 2024 Yann Collette <ycollette.nospam@free.fr> - 6.9.9-xan1-12
+- update to 6.9.9-xan1-12 - vanilla XanMod kernel
+
 * Fri May 03 2024 Yann Collette <ycollette.nospam@free.fr> - 6.8.9-xan1-12
 - update to 6.8.9-xan1-12 - vanilla XanMod kernel
 
