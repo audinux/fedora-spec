@@ -5,7 +5,7 @@
 Summary: Reboot of Non Mixer with eXTended LV2 support.
 Name: non-mixer-xt
 Version: 2.0.2
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: GPL-3.0-only
 URL: https://github.com/Stazed/non-mixer-xt
 ExclusiveArch: x86_64 aarch64
@@ -18,6 +18,7 @@ Distribution: Audinux
 
 Source0: non-mixer-xt.tar.gz
 Source1: source-non-mixer-xt.sh
+Patch0: non-mixer-xt-0001-fix-ladspa-path.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -52,7 +53,7 @@ The generic parameter editor has been redesigned to accommodate larger
 LV2 plugins, preset support and state save and restore.
 
 %prep
-%autosetup -n %{name}
+%autosetup -p1 -n %{name}
 
 %build
 
@@ -90,10 +91,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/doc/non-mixer-xt/*
 
 %changelog
-* Sun Jul 21 2024 Yann Collette <ycollette dot nospam at free.fr> 2.0.2-3
+* Sun Jul 21 2024 Yann Collette <ycollette dot nospam at free.fr> 2.0.2-4
+- update to 2.0.2-4 - fix ladspa search path
 - update to 2.0.2-3 - activate ladspa
-
-* Sun Jul 21 2024 Yann Collette <ycollette dot nospam at free.fr> 2.0.2-2
 - update to 2.0.2-2
 
 * Thu Jul 04 2024 Yann Collette <ycollette dot nospam at free.fr> 2.0.1-2

@@ -1,0 +1,32 @@
+From d1618e505cdff11e7133e100a86a66a83c8ffbc7 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Mon, 22 Jul 2024 17:02:00 +0200
+Subject: [PATCH] fix ladspa path
+
+---
+ mixer/src/ladspa/LADSPAInfo.C | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/mixer/src/ladspa/LADSPAInfo.C b/mixer/src/ladspa/LADSPAInfo.C
+index 0b1cf2e..61fe821 100644
+--- a/mixer/src/ladspa/LADSPAInfo.C
++++ b/mixer/src/ladspa/LADSPAInfo.C
+@@ -82,7 +82,7 @@ LADSPAInfo::RescanPlugins(void)
+ 			cerr << "WARNING: LADSPA_PATH environment variable not set" << endl;
+ 			cerr << "         Assuming /usr/lib/ladspa:/usr/local/lib/ladspa" << endl;
+ 
+-			ScanPathList("/usr/lib/ladspa:/usr/local/lib/ladspa", &LADSPAInfo::ExaminePluginLibrary);
++			ScanPathList("/usr/lib64/ladspa:/usr/local/lib64/ladspa", &LADSPAInfo::ExaminePluginLibrary);
+ 		}
+ 	}
+ 
+@@ -828,4 +828,4 @@ LADSPAInfo::GetDescriptorFunctionForLibrary(unsigned long library_index)
+ 	return desc_func;
+ }
+ 
+-#endif // LADSPA_SUPPORT
+\ No newline at end of file
++#endif // LADSPA_SUPPORT
+-- 
+2.45.2
+
