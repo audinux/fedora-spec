@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 0e3f5a389846d5076815120f971c6461525b4c06
-%global gittag0 2.4.6
+%global commit0 643c1e233a530e8f4533e1e372ae22d7e971d8fb
+%global gittag0 2.4.7
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-CosineKitty-Sapphire
-Version: 2.4.6
+Version: 2.4.7
 Release: 2%{?dist}
 Summary: CosineKitty-Sapphire plugin for Rack
 License: GPL-2.0-or-later
@@ -140,8 +140,6 @@ tar xvfz %{SOURCE1} --directory=CosineKitty-Sapphire_plugin --strip-components=1
 
 cp -n %{SOURCE2} CosineKitty-Sapphire_plugin/plugin.json || true
 
-#patch1 -p1
-
 %build
 
 cd CosineKitty-Sapphire_plugin
@@ -156,5 +154,5 @@ cp -r CosineKitty-Sapphire_plugin/dist/CosineKitty-Sapphire/* %{buildroot}%{_lib
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.6-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.7-1
 - initial specfile

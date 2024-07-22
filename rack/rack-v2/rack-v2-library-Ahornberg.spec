@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 e1c38a19b31c7a4ad656bd8bec5915255e78c3f1
-%global gittag0 2.3.1
+%global commit0 395d677d7b9cec449e6fd8d29a546df6b8fd7f27
+%global gittag0 2.3.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Ahornberg
-Version: 2.3.1
+Version: 2.3.2
 Release: 2%{?dist}
 Summary: Ahornberg plugin for Rack
 License: GPL-2.0-or-later
@@ -137,8 +137,6 @@ sed -i -e "/-rpath/d" plugin.mk
 mkdir Ahornberg_plugin
 tar xvfz %{SOURCE1} --directory=Ahornberg_plugin --strip-components=1
 
-sed -i -e "s/-fno-gnu-unique/-fno-gnu-unique -Wno-error=format-security/g" plugin.mk
-
 cp -n %{SOURCE2} Ahornberg_plugin/plugin.json || true
 
 %build
@@ -155,5 +153,5 @@ cp -r Ahornberg_plugin/dist/Ahornberg/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.2-1
 - initial specfile
