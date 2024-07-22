@@ -3,7 +3,7 @@
 # Category: Audio, Tool
 
 Name: ratatouille
-Version: 0.6
+Version: 0.7
 Release: 1%{?dist}
 Summary: Ratatouille is a Neural Model loader and mixer
 License: BSD-3-Clause
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./brummer10-source.sh <project> <tag>
-# ./brummer10-source.sh Ratatouille.lv2 v0.6
+# ./brummer10-source.sh Ratatouille.lv2 v0.7
 
 Source0: Ratatouille.lv2.tar.gz
 Source1: brummer10-source.sh
@@ -71,6 +71,9 @@ cp -ra bin/Ratatouille.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Jul 22 2024 Yann Collette <ycollette.nospam@free.fr> - 0.7-1
+- update to 0.7-1
+
 * Thu Jul 18 2024 Yann Collette <ycollette.nospam@free.fr> - 0.6-1
 - update to 0.6-1
 
