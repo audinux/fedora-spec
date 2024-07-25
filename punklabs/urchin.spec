@@ -5,7 +5,7 @@
 %global debug_package %{nil}
 
 Name: onetrick-urchin
-Version: 1.0.0
+Version: 1.0.2
 Release: 1%{?dist}
 Summary: A hybrid drum synth that models the gritty lo-fi sound of beats from vintage records without sampling.
 License: GPL-3.0-or-later
@@ -16,7 +16,6 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://punklabs.com/content/projects/ot-urchin/downloads/OneTrickURCHIN-Source-v%{version}.zip
-
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -55,6 +54,8 @@ CLAP version of %{name}
 %prep
 %autosetup -c -n %{name}-%{version}
 
+sed -i -e "s/OneTrick URCHIN/OneTrick_URCHIN/g" bundler.toml
+
 %build
 
 %set_build_flags
@@ -83,7 +84,7 @@ cargo xtask bundle onetrick_urchin --release
 %install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
-install -m 755 'target/bundled/OneTrick URCHIN' %{buildroot}/%{_bindir}/
+install -m 755 'target/bundled/OneTrick_URCHIN' %{buildroot}/%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
 cp -vfr target/bundled/*.vst3 %{buildroot}/%{_libdir}/vst3/
@@ -93,7 +94,7 @@ cp -vfr target/bundled/*.clap %{buildroot}/%{_libdir}/clap/
 
 %files
 %doc README.txt
-%license COPYING.txt
+%license LICENSE.txt
 %{_bindir}/*
 
 %files -n vst3-%{name}
@@ -103,5 +104,8 @@ cp -vfr target/bundled/*.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Thu Jul 25 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-1
+- update to 1.0.2-1
+
 * Sat Mar 16 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial spec file
