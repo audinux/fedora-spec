@@ -3,7 +3,7 @@
 # Category: Programming, Effect
 
 Name: vst3sdk
-Version: 3.7.11
+Version: 3.7.12
 Release: 1%{?dist}
 Summary: VST 3 Plug-In SDK
 License: GPL-3.0-or-Later
@@ -14,7 +14,7 @@ Vendor: Audinux
 Distribution: Audinux
 
 # ./vst3sdk-source.sh <TAG>
-# ./vst3sdk-source.sh v3.7.11_build_10
+# ./vst3sdk-source.sh v3.7.12_build_20
 
 Source0: vst3sdk.tar.gz
 Source1: vst3sdk.pc
@@ -40,22 +40,22 @@ BuildRequires: sqlite-devel
 VST 3 Plug-In SDK
 
 %package -n vst3-%{name}
-Summary:  VST3 plugins from %{name}
-License:  GPL-3.0-or-later
+Summary: VST3 plugins from %{name}
+License: GPL-3.0-or-later
 
 %description -n vst3-%{name}
 VST3 plugins from %{name}
 
 %package src
-Summary:  Sources of %{name}
-License:  GPL-3.0-or-later
+Summary: Sources of %{name}
+License: GPL-3.0-or-later
 
 %description src
 Sources of %{name}
 
 %package doc
-Summary:  Documentation of %{name}
-License:  GPL-3.0-or-later
+Summary: Documentation of %{name}
+License: GPL-3.0-or-later
 
 %description doc
 Documentation of %{name}
@@ -79,10 +79,10 @@ sed -i -e "s/other.invoke (false);/other.invoke = false;/g" vstgui4/vstgui/lib/f
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 
-cp  %{__cmake_builddir}/bin/editorhost %{buildroot}/%{_bindir}/
-cp  %{__cmake_builddir}/bin/moduleinfotool %{buildroot}/%{_bindir}/
-cp  %{__cmake_builddir}/bin/validator %{buildroot}/%{_bindir}/
-cp  %{__cmake_builddir}/bin/Debug/VST3Inspector/VST3Inspector %{buildroot}/%{_bindir}/
+cp %{__cmake_builddir}/bin/editorhost %{buildroot}/%{_bindir}/
+cp %{__cmake_builddir}/bin/moduleinfotool %{buildroot}/%{_bindir}/
+cp %{__cmake_builddir}/bin/validator %{buildroot}/%{_bindir}/
+cp %{__cmake_builddir}/bin/Debug/VST3Inspector/VST3Inspector %{buildroot}/%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
 cp -rav %{__cmake_builddir}/VST3/Debug/* %{buildroot}/%{_libdir}/vst3/
@@ -115,6 +115,9 @@ rsync -r --exclude .git --exclude .github --exclude .gitignore --exclude .gitatt
 %{_datadir}/doc/vst3sdk/*
 
 %changelog
+* Fri Jul 26 2024 Yann Collette <ycollette.nospam@free.fr> - 3.7.12-1
+- update to 3.7.12-1
+
 * Wed Apr 24 2024 Yann Collette <ycollette.nospam@free.fr> - 3.7.11-1
 - update to 3.7.11-1
 
