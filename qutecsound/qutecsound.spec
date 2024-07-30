@@ -3,7 +3,7 @@
 # Category: Audio
 
 Name: qutecsound
-Version: 0.9.8.1
+Version: 1.1.2
 Release: 3%{?dist}
 Summary: A csound file editor
 URL: https://github.com/CsoundQt/CsoundQt
@@ -78,9 +78,9 @@ install -m 755 -d %{buildroot}/%{_datadir}/%{name}/templates
 install -m 755 -d %{buildroot}/%{_datadir}/%{name}/doc
 install -m 755 -d %{buildroot}/%{_datadir}/%{name}/examples
 
-cp -r templates/* %{buildroot}%{_datadir}/%{name}/templates/
-cp -r doc/*       %{buildroot}%{_datadir}/%{name}/doc/
-cp -r examples/*  %{buildroot}%{_datadir}/%{name}/examples/
+cp -r templates/*    %{buildroot}%{_datadir}/%{name}/templates/
+cp -r doc/*          %{buildroot}%{_datadir}/%{name}/doc/
+cp -r src/Examples/* %{buildroot}%{_datadir}/%{name}/examples/
 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/
 install -m 644 images/qtcs.png %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/%{name}.png
@@ -103,6 +103,9 @@ desktop-file-install --vendor '' \
 %{_datadir}/%{name}/
 
 %changelog
+* Mon Jul 29 2024 Yann Collette <ycollette.nospam@free.fr> - 1.1.2-3
+- update to 1.1.2-3
+
 * Mon Oct 26 2020 Yann Collette <ycollette.nospam@free.fr> - 0.9.8.1-3
 - fix debug build
 
