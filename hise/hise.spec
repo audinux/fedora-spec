@@ -11,15 +11,11 @@ URL: https://github.com/christophhart/HISE
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
-Distribution: Audinux
-
-# To get vst3sdk sources:
-# Usage: ./vst3-source.sh <TAG>
-#        ./vst3-source.sh v3.7.11_build_10
+Distribution: Audinu
 
 Source0: https://github.com/christophhart/HISE/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Source1: vst3sdk.tar.gz
-Source2: vst3-source.sh
+# Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
+Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -99,7 +95,12 @@ install -m 755 -d %{buildroot}/%{_usrsrc}/
 mkdir tmp
 cd tmp
 tar xvfz %{SOURCE0}
-mv HISE %{buildroot}/%{_usrsrc}/
+
+rm -rf HISE-%{version}/.github/
+rm -f HISE-%{version}/.gitignore
+rm -f HISE-%{version}/.gitmodules
+
+mv HISE-%{version} %{buildroot}/%{_usrsrc}/HISE
 cd ..
 
 cat > %{buildroot}/%{_datadir}/applications/%{name}.desktop <<EOF
