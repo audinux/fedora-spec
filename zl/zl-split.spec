@@ -3,7 +3,7 @@
 # Category: Effect
 
 Name: zl-split
-Version: 0.1.0
+Version: 0.0.2
 Release: 1%{?dist}
 Summary: Splitter plugin
 License: GPL-3.0-only
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./zl-source.sh <project> <tag>
-# ./zl-source.sh ZLSplit 0.1.0
+# ./zl-source.sh ZLSplit 0.0.2
 
 Source0: ZLSplit.tar.gz
 Source1: zl-source.sh
@@ -92,6 +92,9 @@ cp -ra %{__cmake_builddir}/ZLSplit_artefacts/LV2/* %{buildroot}%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Jul 31 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.2-1
+- update to 0.0.2-1 - will clean COPR
+
 * Sun Jul 28 2024 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
 - update to 0.1.0-1
 
