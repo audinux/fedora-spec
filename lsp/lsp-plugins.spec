@@ -4,7 +4,7 @@
 
 Name: lsp-plugins
 Summary: Linux Studio Plugins collection
-Version: 1.2.16
+Version: 1.2.17
 Release: 1%{?dist}
 License: GPL
 URL: https://github.com/sadko4u/lsp-plugins
@@ -13,14 +13,17 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/sadko4u/lsp-plugins/releases/download/%{version}/lsp-plugins-src-%{version}.tar.gz
+Source0: https://github.com/lsp-plugins/lsp-plugins/releases/download/%{version}/lsp-plugins-src-%{version}.7z
 
 BuildRequires: gcc gcc-c++
+BuildRequires: p7zip
 BuildRequires: make
 BuildRequires: php-cli
 BuildRequires: chrpath
 BuildRequires: lv2-devel
 BuildRequires: ladspa-devel
+BuildRequires: gstreamer1-devel
+BuildRequires: gstreamer1-plugins-base-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: libsndfile-devel
 BuildRequires: cairo-devel
@@ -63,11 +66,20 @@ Summary: CLAP version of %{name} plugins
 %description -n clap-%{name}
 CLAP version of %{name} plugins
 
+%package -n gstreamer1-plugins-%{name}
+Summary: GStreamer version of %{name} plugins
+
+%description -n gstreamer1-plugins-%{name}
+GStreamer version of %{name} plugins
+
 %prep
-%autosetup -n lsp-plugins
+%autosetup -n lsp-plugins-src-%{version}
 
 %build
+
 %set_build_flags
+export CFLAGS="-I/usr/include/gstreamer-1.0 $CFLAGS"
+export CXXFLAGS="-I/usr/include/gstreamer-1.0 $CXXFLAGS"
 
 %make_build PREFIX=%{_usr} LIBDIR=%{_libdir} config
 %make_build PREFIX=%{_usr} LIBDIR=%{_libdir} VERBOSE=1
@@ -80,7 +92,7 @@ chrpath --delete %{buildroot}/usr/bin/*
 chrpath --delete %{buildroot}/usr/%{_lib}/ladspa/*.so
 chrpath --delete %{buildroot}/usr/%{_lib}/lsp-plugins/*.so
 chrpath --delete %{buildroot}/usr/%{_lib}/lv2/lsp-plugins.lv2/*.so
-chrpath --delete %{buildroot}/usr/%{_lib}/vst/lsp-plugins/*.so
+chrpath --delete %{buildroot}/usr/%{_lib}/vst/lsp-plugins.vst/*.so
 chrpath --delete %{buildroot}/usr/%{_lib}/clap/*.clap
 chrpath --delete `find %{buildroot}/usr/%{_lib}/vst3/ -name "*.so"`
 
@@ -98,6 +110,9 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %exclude %{_libdir}/*.a
 %{_sysconfdir}/xdg/menus/applications-merged/lsp-plugins.menu
 
+%files -n gstreamer1-plugins-%{name}
+%{_libdir}/gstreamer-1.0/*
+
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
 
@@ -114,6 +129,9 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %{_libdir}/clap/*
 
 %changelog
+* Sun Aug 04 2024 Yann Collette <ycollette dot nospam at free.fr> 1.2.17-1
+- update to 1.2.17-1
+
 * Wed May 22 2024 Yann Collette <ycollette dot nospam at free.fr> 1.2.16-1
 - update to 1.2.16-1
 
