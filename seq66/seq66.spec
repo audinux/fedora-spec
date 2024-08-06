@@ -3,7 +3,7 @@
 # Category: Audio, Sequencer, MIDI
 
 Name: seq66
-Version: 0.99.12
+Version: 0.99.13
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/ahlstromcj/seq66/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0: seq66_fix_liblo.patch
+# Patch0: seq66_fix_liblo.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -52,7 +52,7 @@ installation. Windows users can get an installer package on GitHub or build
 it with Qt Creator. Provides a comprehensive PDF user-manual.
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -n %{name}-%{version}
 
 mkdir -p .local/bin
 ln -s /usr/bin/qmake-qt5 .local/bin/qmake
@@ -103,6 +103,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libdir}/*
 
 %changelog
+* Tue Aug 06 2024 Yann Collette <ycollette.nospam@free.fr> - 0.99.13-1
+- update 0.99.13-1
+
 * Sat Jan 13 2024 Yann Collette <ycollette.nospam@free.fr> - 0.99.12-1
 - update 0.99.12-1
 
