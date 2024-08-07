@@ -27,7 +27,11 @@ Source0: https://cdn.kernel.org/pub/linux/kernel/v%{kmaj}.x/linux-%{kver}.tar.gz
 Source1: kernel-config-%{kmaj}.%{kmin}
 Patch0: https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/%{kmaj}.%{kmin}/older/patch-%{kver}-rt%{krt}.patch.gz
 
+%if 0%{?fedora} > 40
+BuildRequires: openssl-devel-engine
+%else
 BuildRequires: openssl-devel
+%endif
 BuildRequires: openssl
 BuildRequires: kmod
 BuildRequires: patch
