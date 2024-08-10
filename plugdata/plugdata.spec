@@ -3,8 +3,8 @@
 # Category: Audio, IDE, Language
 
 Name: plugdata
-Version: 0.9.0
-Release: 1%{?dist}
+Version: 0.9.1
+Release: 2%{?dist}
 Summary: Pure Data as a plugin, with a new GUI
 URL: https://github.com/timothyschoen/PlugData
 ExclusiveArch: x86_64 aarch64
@@ -14,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./plugdata-source.sh <TAG>
-# ./plugdata-source.sh v0.9.0
+# ./plugdata-source.sh v0.9.1
 
 Source0: PlugData.tar.gz
 Source1: plugdata-source.sh
@@ -78,7 +78,7 @@ CLAP version of %{name}
 
 %build
 
-%cmake -DCMAKE_INSTALL_LIBDIR=%{_lib} -DBUILD_SHARED_LIBS=OFF -DENABLE_GEM=OFF
+%cmake -DCMAKE_INSTALL_LIBDIR=%{_lib} -DBUILD_SHARED_LIBS=OFF -DENABLE_GEM=ON
 %cmake_build
 
 %install
@@ -138,6 +138,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/plugdata.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Sat Aug 10 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.1-2
+- update to 0.9.1-2
+
+* Mon Jul 29 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.0-2
+- update to 0.9.0-2 - activate GEM
+
 * Sun Jul 21 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.0-1
 - update to 0.9.0-1
 
