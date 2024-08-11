@@ -2,10 +2,8 @@
 # Type: Plugin, VST3
 # Category: Synthesizer, Effect
 
-# Global variables for github repository
-
 Name: uhhyouplugins
-Version: 0.61.0
+Version: 0.62.0
 Release: 1%{?dist}
 Summary: Uhhyou Plugins VST 3
 License: GPL-2.0-or-later
@@ -16,7 +14,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./uhhyouplugins-source.sh <project> <tag>
-# ./uhhyouplugins-source.sh UhhyouPlugins 0.61.0
+# ./uhhyouplugins-source.sh UhhyouPlugins 0.62.0
 
 Source0: VSTPlugins.tar.gz
 Source1: uhhyouplugins-source.sh
@@ -74,6 +72,9 @@ cp -ra %{__cmake_builddir}/VST3/* %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Aug 11 2024 Yann Collette <ycollette.nospam@free.fr> - 0.62.0-1
+- update to 0.62.0-1
+
 * Thu Dec 28 2023 Yann Collette <ycollette.nospam@free.fr> - 0.61.0-1
 - update to 0.61.0-1
 
