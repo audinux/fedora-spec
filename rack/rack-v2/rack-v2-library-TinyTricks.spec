@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 d95b6cece8e57fbf2aa0eadb33ab5c7f32a31868
-%global gittag0 2.5.2
+%global commit0 297c80876e4caba87ec81cbb9b905bf96a7d6cfe
+%global gittag0 2.5.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-TinyTricks
-Version: 2.5.2
+Version: 2.5.3
 Release: 2%{?dist}
 Summary: TinyTricks plugin for Rack
 License: GPL-2.0-or-later
@@ -153,5 +153,5 @@ cp -r TinyTricks_plugin/dist/TinyTricks/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.3-1
 - initial specfile

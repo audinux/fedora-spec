@@ -6,15 +6,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 3b7383a172d30796f19466bc4d11643e1a72eb5d
-%global gittag0 2.0.0
+%global commit0 ff3505b67b2b07e7787c40a89d06b9c42a2ddd65
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SSE
-Version: 2.0.0
+Version: 2.0.2
 Release: 2%{?dist}
 Summary: SSE plugin for Rack
 License: GPL-2.0-or-later
@@ -153,5 +153,5 @@ cp -r SSE_plugin/dist/SSE/* %{buildroot}%{_libexecdir}/Rack2/plugins/SSE/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile
