@@ -1,13 +1,21 @@
-Description: Fix Makefile to allow compiling libpd example
-Author: IOhannes m zmönig
+From: =?utf-8?q?IOhannes_m_zm=C3=B6lnig?= <umlaeute@debian.org>
+Date: Mon, 5 Feb 2024 21:55:07 +0100
+Subject: Fix Makefile to allow compiling libpd example
+
 Origin: Debian
 Forwarded: not-needed
 Last-Update: 2023-07-05
+
+Last-Update: 2023-07-05
 ---
-This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
---- puredata.orig/libpd/test_libpd/Makefile
-+++ puredata/libpd/test_libpd/Makefile
-@@ -1,84 +1,26 @@
+ libpd/test_libpd/Makefile | 79 ++++++-----------------------------------------
+ 1 file changed, 10 insertions(+), 69 deletions(-)
+
+diff --git a/libpd/test_libpd/Makefile b/libpd/test_libpd/Makefile
+index 6cb5bce..81453af 100644
+--- a/libpd/test_libpd/Makefile
++++ b/libpd/test_libpd/Makefile
+@@ -1,86 +1,27 @@
 -# This is a makefile to build "test_libpd".  It assumes that libpd is in the 
 -# source directory "../" and that libpd is already built.
 -
@@ -34,7 +42,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 -
 -PD_DIR = ../..
 -LIBPD_DIR = ..
--LIBPD = $(LIBPD_DIR)/$(SOLIB_PREFIX)pd.$(SOLIB_EXT)
+-LIBPD = $(SOLIB_PREFIX)pd.$(SOLIB_EXT)
 -LIBPD_STATIC = $(LIBPD_DIR)/libpd.$(STATICLIB_EXT)
 -
 +# This is a makefile to build "test_libpd".
@@ -45,11 +53,14 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 -
 -.PHONY: libs clean-libs clean clobber
 -
++.PHONY: all
  all: $(TARGET)
  
 -##### libs
 -
+-# build libpd and move a copy here
 -$(LIBPD):
+-	make -C $(LIBPD_DIR)
 -	cp $(LIBPD_DIR)/$(LIBPD) .
 -
 -# on windows, copy libpd and MinGW winpthread dll to here
@@ -71,22 +82,21 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 -# mac & linux
 -else
 -
--# force static linking? make STATIC=true
+ # force static linking? make STATIC=true
  ifeq ($(STATIC), true)
 -LDFLAGS = $(LIBPD_STATIC)
--else # copy libpd to here by default
++LDFLAGS += -l:libpd.a -lm
+ else # copy libpd to here by default
 -LDFLAGS = $(LIBPD)
 -libs: $(LIBPD)
-+LDFLAGS += -l:libpd.a -lm
-+else
 +LDFLAGS += -lpd
  endif
  
 -clean-libs:
 -	rm -f $(LIBPD)
-+LDFLAGS += -lc
- 
+-
 -endif
++LDFLAGS += -lc
 +CPPFLAGS += -I/usr/include/pd
  
  ##### target
@@ -94,11 +104,11 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 -$(TARGET): ${SRC_FILES:.c=.o} libs
 -	$(CC) -o $@ ${SRC_FILES:.c=.o} $(LDFLAGS)
 +$(TARGET): ${SRC_FILES:.c=.o}
-+	$(CC) -o $@ ${SRC_FILES:.c=.o} $(LDFLAGS) $(LIBS)
++	$(CC) -o $@ $^ $(LDFLAGS) $(LIBS)
  
  ##### clean
  
 -clean: clean-libs
-+.PHONY: clean all
++.PHONY: clean
 +clean:
  	rm -f $(TARGET) *.o

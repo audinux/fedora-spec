@@ -6,14 +6,18 @@ if the puredata-doc package is not installed, some of the menu-entries (namely
 the manual section) will not work correctly.
 This patch checks whether the files are there, and if not, a dialog is raised
 asking the user to install puredata-doc
+
+Origin: Debian
 Forwarded: not-needed
 ---
  tcl/pd_menucommands.tcl | 14 ++++++++++++++
  1 file changed, 14 insertions(+)
 
---- puredata.orig/tcl/pd_menucommands.tcl
-+++ puredata/tcl/pd_menucommands.tcl
-@@ -232,10 +232,23 @@
+diff --git a/tcl/pd_menucommands.tcl b/tcl/pd_menucommands.tcl
+index 954986f..eb76d85 100644
+--- a/tcl/pd_menucommands.tcl
++++ b/tcl/pd_menucommands.tcl
+@@ -232,10 +232,23 @@ proc ::pd_menucommands::set_filenewdir {mytoplevel} {
      }
  }
  
@@ -35,9 +39,9 @@ Forwarded: not-needed
 +    set filename "/usr/share/puredata-gui/1.introduction.txt"
 +    if {![check_puredatadoc $filename]} return
      if {![file exists $filename]} {
-         ::pdwindow::error [format [_ "ignoring '%s': doesn't exist"] $filename]
+         ::pdwindow::error [_ "ignoring '%s': doesn't exist" $filename]
          ::pdwindow::error "\n"
-@@ -295,6 +308,7 @@
+@@ -295,6 +308,7 @@ proc ::pd_menucommands::menu_doc_open {dir basename} {
  
  # open HTML docs from the menu using the OS-default HTML viewer
  proc ::pd_menucommands::menu_openfile {filename} {

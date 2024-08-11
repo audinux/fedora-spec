@@ -12,9 +12,11 @@ Forwarded: not-needed
  tcl/pd-gui.tcl | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
---- puredata.orig/tcl/pd-gui.tcl
-+++ puredata/tcl/pd-gui.tcl
-@@ -775,7 +775,7 @@
+diff --git a/tcl/pd-gui.tcl b/tcl/pd-gui.tcl
+index 6dcd578..46b786f 100755
+--- a/tcl/pd-gui.tcl
++++ b/tcl/pd-gui.tcl
+@@ -776,7 +776,7 @@ proc load_startup_plugins {} {
      }
  
      # load other installed plugins

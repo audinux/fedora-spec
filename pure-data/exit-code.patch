@@ -1,0 +1,28 @@
+From: =?utf-8?q?IOhannes_m_zm=C3=B6lnig?= <zmoelnig@iem.at>
+Date: Tue, 11 Jun 2024 13:19:24 +0200
+Subject: sys_exit(): use the first received exit-code
+
+Closes: https://github.com/pure-data/pure-data/issues/2339
+Forwarded: https://github.com/pure-data/pure-data/pull/2338
+Origin: upstream
+---
+ src/m_sched.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/src/m_sched.c b/src/m_sched.c
+index 67d8b16..e2638c8 100644
+--- a/src/m_sched.c
++++ b/src/m_sched.c
+@@ -241,7 +241,11 @@ void dsp_tick(void);
+ void sys_exit(int status)
+ {
+     pthread_mutex_lock(&sched_mutex);
+-    sys_exitcode = status;
++    if (SYS_QUIT_QUIT != sys_quit) {
++        sys_exitcode = status;
++    } else {
++        pd_error(0, "quit already called with exit code %d", sys_exitcode);
++    }
+     sys_quit = SYS_QUIT_QUIT;
+     pthread_cond_signal(&sched_cond);
+     pthread_mutex_unlock(&sched_mutex);

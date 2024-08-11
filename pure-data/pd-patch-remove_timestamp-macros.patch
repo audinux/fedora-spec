@@ -2,21 +2,23 @@ From: =?utf-8?q?IOhannes_m_zm=C3=B6lnig?= <umlaeute@debian.org>
 Date: Tue, 29 Jan 2019 11:31:36 +0100
 Subject: remove C-macros for timestamps
 
-
 For reproducible builds, we don't want timestamps in the builds.
 Instead we should set the version to be displayed to the Debian
 package version (use PD_TEST_VERSION) for this.
 
 Last-Update: 2023-11-02
+Origin: Debian
 Forwarded: not-needed
 ---
  src/Makefile.am |  4 ++++
  src/s_main.c    | 12 ++++++++----
  2 files changed, 12 insertions(+), 4 deletions(-)
 
---- puredata.orig/src/Makefile.am
-+++ puredata/src/Makefile.am
-@@ -11,6 +11,10 @@
+diff --git a/src/Makefile.am b/src/Makefile.am
+index cd18225..e9490df 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -11,6 +11,10 @@ AM_CPPFLAGS = @PD_CPPFLAGS@
  AM_CFLAGS = @PD_CFLAGS@
  AM_LDFLAGS = @PD_LDFLAGS@
  
@@ -27,9 +29,11 @@ Forwarded: not-needed
  pd_CFLAGS = -DPD -DPD_INTERNAL -DINSTALL_PREFIX=\"$(prefix)\" @PD_CFLAGS@
  pd_LDFLAGS = @PD_LDFLAGS@
  pd_LDADD =
---- puredata.orig/src/s_main.c
-+++ puredata/src/s_main.c
-@@ -33,8 +33,12 @@
+diff --git a/src/s_main.c b/src/s_main.c
+index 6ca5865..e75c3fb 100644
+--- a/src/s_main.c
++++ b/src/s_main.c
+@@ -34,8 +34,12 @@ char *pd_version = "Pd-" stringify(PD_MAJOR_VERSION) "." \
  stringify(PD_MINOR_VERSION) "." stringify(PD_BUGFIX_VERSION) "\
   (" stringify(PD_TEST_VERSION) ")";
  
@@ -43,8 +47,8 @@ Forwarded: not-needed
 +
  
  void pd_init(void);
- int sys_argparse(int argc, const char **argv);
-@@ -434,8 +438,8 @@
+ void pd_term(void);
+@@ -406,8 +410,8 @@ int sys_main(int argc, const char **argv)
          sys_loadpreferences(prefsfile, 1);  /* args to override prefs */
      if (sys_argparse(argc-1, argv+1))           /* parse cmd line args */
          return (1);

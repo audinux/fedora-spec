@@ -1,13 +1,21 @@
-Description: reduce visibility of symbols inlibpd
- by compiling the binary with visbility=hidden
-Author: IOhannes m zmölnig
+From: =?utf-8?q?IOhannes_m_zm=C3=B6lnig?= <umlaeute@debian.org>
+Date: Mon, 5 Feb 2024 21:55:06 +0100
+Subject: reduce visibility of symbols in libpd
+
 Bug: https://github.com/pure-data/pure-data/issues/569
 Last-Update: 2021-12-21
+
+by compiling the binary with visbility=hidden
+Last-Update: 2021-12-21
 ---
-This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
---- puredata.orig/src/Makefile.am
-+++ puredata/src/Makefile.am
-@@ -28,6 +28,10 @@
+ src/Makefile.am | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/Makefile.am b/src/Makefile.am
+index 841b24a..cd18225 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -24,6 +24,10 @@ libpdinclude_HEADERS =
  
  libpdbin_PROGRAMS =
  
