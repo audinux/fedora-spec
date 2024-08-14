@@ -3,7 +3,7 @@
 # Category: Synthesizer
 
 Name: vmpc
-Version: 0.6.0
+Version: 0.6.1
 Release: 1%{?dist}
 Summary: JUCE implementation of VMPC2000XL
 License: GPL-3.0-only
@@ -28,13 +28,15 @@ BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
 BuildRequires: rapidjson-devel
 
+Requires: license-%{name}
+
 %description
 A JUCE implementation of VMPC2000XL, the Akai MPC2000XL emulator
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -42,18 +44,17 @@ VST3 version of %{name}
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
 
-%package -n standalone-%{name}
-Summary:  Standalone version of %{name}
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
 
-%description -n standalone-%{name}
-Standalone version of %{name}
+%description -n license-%{name}
+License and documentation for %{name}
 
 %prep
 %setup -n vmpc-juce-%{version}
@@ -75,11 +76,11 @@ cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/VST3/* %{buildroo
 cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/LV2/* %{buildroot}/%{_libdir}/lv2/
 cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/Standalone/* %{buildroot}/%{_bindir}/
 
-%files
+%files -n license-%{name}
 %doc README.md
 %license LICENSE.txt
 
-%files -n standalone-%{name}
+%files
 %{_bindir}/*
 
 %files -n vst3-%{name}
@@ -89,6 +90,9 @@ cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/Standalone/* %{bu
 %{_libdir}/lv2/*
 
 %changelog
+* Tue Aug 13 2024 Yann Collette <ycollette.nospam@free.fr> - 0.6.1-1
+- update to 0.6.1-1
+
 * Sat Jun 15 2024 Yann Collette <ycollette.nospam@free.fr> - 0.6.0-1
 - update to 0.6.0-1
 
