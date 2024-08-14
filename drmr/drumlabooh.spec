@@ -61,7 +61,7 @@ LV2 version of %{name}
 
 %build
 
-%cmake
+%cmake -DINSTALLKITS=OFF
 %cmake_build
 
 %install
