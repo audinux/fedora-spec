@@ -6,7 +6,7 @@
 
 Name: drumrox-kits
 Version: 0.0.1
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: A set of drumrox drum kits
 License: GPL-3.0-or-later
 URL: https://github.com/psemiletov/drum_sklad
@@ -301,6 +301,9 @@ cp -ra Wooden/* %{buildroot}/%{_datadir}/drumrox-kits/Wooden/
 %{_datadir}/drumrox-kits/The_Almighty_Sound_Drumkit/*
 
 %changelog
+* Sat Aug 17 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-5
+- update to 135e0dde0c81e62567654a2557eee35b2bb59016 - drumkit fix
+
 * Tue Aug 13 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-4
 - update to 0.0.1-4
 
