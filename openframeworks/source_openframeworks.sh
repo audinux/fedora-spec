@@ -6,8 +6,7 @@
 git clone https://github.com/openframeworks/openFrameworks
 cd openFrameworks
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive --progress
 ./scripts/linux/download_libs.sh
 find . -name .git -exec rm -rf {} \;
 cd ..

@@ -6,7 +6,7 @@
 git clone https://github.com/Stazed/non-mixer-xt
 cd non-mixer-xt
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz non-mixer-xt.tar.gz non-mixer-xt/*

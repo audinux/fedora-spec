@@ -5,9 +5,8 @@
 
 git clone https://github.com/tank-trax/ddsp-vst
 cd ddsp-vst
-git switch linux
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 ./repo-init.sh
 find . -name .git -exec rm -rf {} \;
 cd ..

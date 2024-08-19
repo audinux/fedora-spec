@@ -6,8 +6,7 @@
 git clone --recursive https://github.com/Chowdhury-DSP/ChowMatrix
 cd ChowMatrix
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz ChowMatrix.tar.gz ChowMatrix/*

@@ -6,7 +6,7 @@
 git clone https://github.com/Archie3d/aeolus_plugin
 cd aeolus_plugin
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz aeolus_plugin.tar.gz aeolus_plugin/*

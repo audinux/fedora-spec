@@ -6,8 +6,7 @@
 git clone https://github.com/linuxmao-org/VL1-emulator
 cd VL1-emulator
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive --progress
 rm -rf .git dpf/.git
 cd ..
 tar cvfz VL1-emulator.tar.gz VL1-emulator/*

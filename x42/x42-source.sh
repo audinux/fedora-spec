@@ -18,7 +18,7 @@ git checkout $2
 #    git add .gitmodules robtk
 #    git commit -m "add submodule"
 #fi
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz $1.tar.gz $1/*

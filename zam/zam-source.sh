@@ -5,8 +5,7 @@
 git clone https://github.com/zamaudio/zam-plugins
 cd zam-plugins
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive --progress
 make dist
 mv *.tar.xz ..
 cd ..

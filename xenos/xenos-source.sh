@@ -6,7 +6,7 @@
 git clone https://github.com/raphaelradna/xenos
 cd xenos
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progess
 
 git clone https://github.com/juce-framework/JUCE.git
 cd JUCE

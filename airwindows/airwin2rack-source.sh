@@ -6,6 +6,7 @@
 git clone https://github.com/baconpaul/airwin2rack
 cd airwin2rack
 git checkout $1
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz airwin2rack.tar.gz airwin2rack/*

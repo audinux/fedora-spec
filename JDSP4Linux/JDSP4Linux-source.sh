@@ -6,7 +6,7 @@
 git clone https://github.com/theAeon/JDSP4Linux
 cd JDSP4Linux
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz JDSP4Linux.tar.gz JDSP4Linux

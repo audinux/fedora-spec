@@ -6,8 +6,7 @@
 git clone https://github.com/Wohlstand/OPL3BankEditor
 cd OPL3BankEditor
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz OPL3BankEditor.tar.gz OPL3BankEditor/*

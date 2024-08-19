@@ -6,7 +6,7 @@
 git clone https://github.com/BramGiesen/audio-to-cv-pitch-lv2
 cd audio-to-cv-pitch-lv2
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz audio-to-cv-pitch-lv2.tar.gz audio-to-cv-pitch-lv2/*

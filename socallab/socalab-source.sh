@@ -6,8 +6,7 @@
 git clone --recursive https://github.com/FigBug/slPlugins
 cd slPlugins
 git checkout $1
-git submodules init
-git submodules update
+git submodules update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz slPlugins.tar.gz slPlugins/*

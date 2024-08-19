@@ -6,8 +6,7 @@
 git clone https://github.com/tildearrow/furnace
 cd furnace
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz furnace.tar.gz furnace/*

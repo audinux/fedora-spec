@@ -6,7 +6,7 @@
 git clone https://github.com/surge-synthesizer/stochas
 cd stochas
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz stochas.tar.gz stochas/*

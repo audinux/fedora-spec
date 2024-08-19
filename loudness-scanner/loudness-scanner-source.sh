@@ -28,7 +28,7 @@ then
     git commit -m "add submodule"
 fi
 
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz loudness-scanner.tar.gz loudness-scanner/*

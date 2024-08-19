@@ -6,6 +6,7 @@
 git clone https://github.com/pete-gordon/hivelytracker
 cd hivelytracker
 git checkout $1
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz hivelytracker.tar.gz hivelytracker/*

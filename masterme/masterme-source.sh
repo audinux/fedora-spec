@@ -6,7 +6,7 @@
 git clone https://github.com/trummerschlunk/master_me
 cd master_me
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 # Get the Faust sources
 make faustpp/CMakeLists.txt
 find . -name .git -exec rm -rf {} \;

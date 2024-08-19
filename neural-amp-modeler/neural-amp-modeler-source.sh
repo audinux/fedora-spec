@@ -6,7 +6,7 @@
 git clone https://github.com/mikeoliphant/neural-amp-modeler-lv2
 cd neural-amp-modeler-lv2
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz neural-amp-modeler-lv2.tar.gz neural-amp-modeler-lv2/*

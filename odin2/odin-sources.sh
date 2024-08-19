@@ -6,7 +6,7 @@
 git clone https://github.com/TheWaveWarden/odin2
 cd odin2
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz odin2.tar.gz odin2/*

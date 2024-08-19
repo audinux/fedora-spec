@@ -6,7 +6,7 @@
 git clone https://github.com/rorywalsh/cabbage
 cd cabbage
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 # Cleanup macos things
 rm -rf Csound CLIConverter *.dmg *.dylib
