@@ -6,8 +6,7 @@
 git clone https://github.com/antanasbruzas/abNinjam
 cd abNinjam
 git checkout $1
-git submodule init
-git submodule update --recursive
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz abNinjam.tar.gz abNinjam/*

@@ -6,8 +6,7 @@
 git clone --recursive https://github.com/jatinchowdhury18/ChowPhaser
 cd ChowPhaser
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz ChowPhaser.tar.gz ChowPhaser/*

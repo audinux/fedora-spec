@@ -6,8 +6,7 @@
 git clone https://github.com/lmms/lmms
 cd lmms
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz lmms.tar.gz lmms/

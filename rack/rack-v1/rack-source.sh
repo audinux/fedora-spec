@@ -6,8 +6,7 @@
 git clone https://github.com/VCVRack/Rack.git Rack
 cd Rack
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive --progress
 find . -name ".git" -exec rm -rf {} \;
 cd dep
 wget https://vcvrack.com/downloads/dep/pffft.zip

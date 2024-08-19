@@ -6,7 +6,7 @@
 git clone https://github.com/cmajor-lang/cmajor
 cd cmajor
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 
 git clone https://github.com/juce-framework/JUCE/ juce
 cd juce

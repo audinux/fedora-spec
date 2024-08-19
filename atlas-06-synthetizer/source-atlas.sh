@@ -6,7 +6,7 @@
 git clone https://github.com/sbadon122/ATLAS-06-Synthesizer
 cd ATLAS-06-Synthesizer
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz ATLAS-06-Synthesizer.tar.gz ATLAS-06-Synthesizer/*

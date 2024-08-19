@@ -6,7 +6,7 @@
 git clone https://github.com/SpotlightKid/ykchorus
 cd ykchorus
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 rm -rf .git dpf/.git
 cd ..
 tar cvfz ykchorus.tar.gz ykchorus/*

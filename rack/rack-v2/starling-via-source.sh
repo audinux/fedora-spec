@@ -6,8 +6,7 @@
 git clone --recursive https://github.com/starlingcode/Via-for-Rack.git
 cd Via-for-Rack
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive --progress
 find . -name ".git" -exec rm -rf {} \;
 cd ..
 tar cvfz Via-for-Rack.tar.gz Via-for-Rack

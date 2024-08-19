@@ -8,7 +8,7 @@ cd SHIRO-Plugins
 # git protocol has been cancelled ...
 git submodule set-url -- dpf https://github.com/DISTRHO/DPF
 git checkout $1
-git submodule update --init --recursive
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz SHIRO-Plugins.tar.gz SHIRO-Plugins/*

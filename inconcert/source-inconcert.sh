@@ -6,6 +6,7 @@
 git clone git://gabe.is-a-geek.org/git/inconcert.git
 cd inconcert
 git checkout $1
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz inconcert.tar.gz inconcert/*

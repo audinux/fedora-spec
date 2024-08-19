@@ -6,6 +6,7 @@
 git clone https://github.com/airwindows/airwindows
 cd airwindows
 git checkout $1
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 rm -rf plugins/MacAU
 rm -rf plugins/MacSignedAU

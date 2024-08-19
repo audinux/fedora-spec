@@ -7,8 +7,7 @@
 git clone https://github.com/Dougal-s/Aether
 cd Aether
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Aether.tar.gz Aether/*

@@ -4,8 +4,7 @@
 git clone https://github.com/linuxmao-org/fogpad-port
 cd fogpad-port
 git checkout $1
-git submodule init
-git submodule update
+git submodule update --init --recursive --progresss
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz fogpad-port.tar.gz fogpad-port/*
