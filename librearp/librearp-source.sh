@@ -7,6 +7,10 @@ git clone https://gitlab.com/LibreArp/LibreArp LibreArpLV2
 cp -r LibreArpLV2 LibreArpVST3
 cd LibreArpLV2
 git checkout $1-lv2
+if [ $? == 1 ]; then
+    echo "Wrong branch / tag name: $1"
+    exit 1
+fi
 git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
@@ -15,6 +19,10 @@ rm -rf LibreArpLV2
 
 cd LibreArpVST3
 git checkout $1
+if [ $? == 1 ]; then
+    echo "Wrong branch / tag name: $1"
+    exit 1
+fi
 git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
