@@ -27,6 +27,7 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
 BuildRequires: rapidjson-devel
+BuildRequires: libudisks2-devel
 
 Requires: license-%{name}
 
