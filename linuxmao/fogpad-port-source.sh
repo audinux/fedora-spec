@@ -4,6 +4,10 @@
 git clone https://github.com/linuxmao-org/fogpad-port
 cd fogpad-port
 git checkout $1
+if [ $? == 1 ]; then
+    echo "Wrong branch / tag name: $1"
+    exit 1
+fi
 git submodule update --init --recursive --progresss
 find . -name .git -exec rm -rf {} \;
 cd ..

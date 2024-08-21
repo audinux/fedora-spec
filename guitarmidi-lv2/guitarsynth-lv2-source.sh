@@ -6,6 +6,10 @@
 git clone https://github.com/geraldmwangi/GuitarSynth-DPF
 cd GuitarSynth-DPF
 git checkout $1
+if [ $? == 1 ]; then
+    echo "Wrong branch / tag name: $1"
+    exit 1
+fi
 git rm -f dpf
 git submodule add https://github.com/DISTRHO/DPF dpf
 cd dpf

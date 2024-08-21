@@ -6,6 +6,10 @@
 git clone https://github.com/jiixyj/loudness-scanner
 cd loudness-scanner
 git checkout $1
+if [ $? == 1 ]; then
+    echo "Wrong branch / tag name: $1"
+    exit 1
+fi
 
 # git protocol has been cancelled ...
 if [ -d ebur128 ];

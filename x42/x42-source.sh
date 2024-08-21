@@ -6,6 +6,10 @@
 git clone https://github.com/x42/$1
 cd $1
 git checkout $2
+if [ $? == 1 ]; then
+    echo "Wrong branch / tag name: $2"
+    exit 1
+fi
 
 ## git protocol has been cancelled ...
 #if [ -d robtk ];

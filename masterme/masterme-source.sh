@@ -6,6 +6,10 @@
 git clone https://github.com/trummerschlunk/master_me
 cd master_me
 git checkout $1
+if [ $? == 1 ]; then
+    echo "Wrong branch / tag name: $1"
+    exit 1
+fi
 git submodule update --init --recursive --progress
 # Get the Faust sources
 make faustpp/CMakeLists.txt

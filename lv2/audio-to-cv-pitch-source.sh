@@ -6,6 +6,10 @@
 git clone https://github.com/BramGiesen/audio-to-cv-pitch-lv2
 cd audio-to-cv-pitch-lv2
 git checkout $1
+if [ $? == 1 ]; then
+    echo "Wrong branch / tag name: $1"
+    exit 1
+fi
 git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
