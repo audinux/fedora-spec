@@ -6,19 +6,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 0fdffb82ef9d2c379affdcd7c68e5e1900004414
-%global gittag0 2.4.8
+%global commit0 c13145d9bac3ef16d85f26b5f4489f93e58f7176
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-CosineKitty-Sapphire
-Version: 2.4.8
+Name:    rack-v2-gwrthiant
+Version: 2.0.2
 Release: 2%{?dist}
-Summary: CosineKitty-Sapphire plugin for Rack
+Summary: gwrthiant plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/cosinekitty/sapphire
+URL:     https://github.com/dustractor/gwrthiant
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -28,10 +28,9 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/cosinekitty/sapphire/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: CosineKitty-Sapphire_plugin.json
+Source1: https://github.com/dustractor/gwrthiant/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: gwrthiant_plugin.json
 Patch0: rack-v2-aarch64.patch
-Patch1: rack-v2-cosimekitty-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake sed
@@ -61,14 +60,14 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-CosineKitty-Sapphire plugin for Rack.
-Filters audio through a simulated network of balls and springs.
+gwrthiant plugin for Rack.
+Generates a range of polyphonic values based on sin() function.
 
 %prep
 %setup -n Rack
 
 %ifarch aarch64
-%patch 0 -p1
+%patch  0 -p1
 %endif
 
 CURRENT_PATH=`pwd`
@@ -135,24 +134,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir CosineKitty-Sapphire_plugin
-tar xvfz %{SOURCE1} --directory=CosineKitty-Sapphire_plugin --strip-components=1
+mkdir gwrthiant_plugin
+tar xvfz %{SOURCE1} --directory=gwrthiant_plugin --strip-components=1
 
-cp -n %{SOURCE2} CosineKitty-Sapphire_plugin/plugin.json || true
+cp -n %{SOURCE2} gwrthiant_plugin/plugin.json || true
 
 %build
 
-cd CosineKitty-Sapphire_plugin
+cd gwrthiant_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/CosineKitty-Sapphire/
-cp -r CosineKitty-Sapphire_plugin/dist/CosineKitty-Sapphire/* %{buildroot}%{_libexecdir}/Rack2/plugins/CosineKitty-Sapphire/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/gwrthiant/
+cp -r gwrthiant_plugin/dist/gwrthiant/* %{buildroot}%{_libexecdir}/Rack2/plugins/gwrthiant/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.8-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile
