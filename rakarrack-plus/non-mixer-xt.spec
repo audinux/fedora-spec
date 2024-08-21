@@ -18,7 +18,6 @@ Distribution: Audinux
 
 Source0: non-mixer-xt.tar.gz
 Source1: source-non-mixer-xt.sh
-Patch0: non-mixer-xt-0001-fix-ladspa-path.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -53,7 +52,7 @@ The generic parameter editor has been redesigned to accommodate larger
 LV2 plugins, preset support and state save and restore.
 
 %prep
-%autosetup -p1 -n %{name}
+%autosetup -n %{name}
 
 %build
 
