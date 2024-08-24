@@ -31,7 +31,7 @@
 %define debug_package %{nil}
 
 Name: tuxguitar
-Version: 1.6.3
+Version: 1.6.4
 Release: 14%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
@@ -47,16 +47,18 @@ Source1: tuxguitar.sh
 # 4.21:
 # wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.21-202109060500/swt-4.21-gtk-linux-x86_64.zip
 # wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.21-202109060500/swt-4.21-gtk-linux-aarch64.zip
+# 4.26:
+# wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.26-202211231800/swt-4.26-gtk-linux-x86_64.zip
+# wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.26-202211231800/swt-4.26-gtk-linux-aarch64.zip
 # 4.27:
 # wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.27-202303020300/swt-4.27-gtk-linux-x86_64.zip
 # wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.27-202303020300/swt-4.27-gtk-linux-aarch64.zip
-%define swt_version 4.21
+%define swt_version 4.26
 Source3: swt-%{swt_version}-gtk-linux-aarch64.zip
 Source4: swt-%{swt_version}-gtk-linux-x86_64.zip
 
 # Fedora specific default soundfont path
-Patch0: 0014-desktop.patch
-Patch1: tuxguitar-default-soundfont.patch
+Patch0: tuxguitar-default-soundfont.patch
 
 Requires: eclipse-swt
 Requires: hicolor-icon-theme
@@ -100,7 +102,6 @@ tempo management, gp3/gp4/gp5 import and export.
 %setup -q -n %{name}-%{version}
 
 %patch -P 0 -p1
-%patch -P 1 -p1
 
 # In source archive, all modules have an attribute "VERSION" set to "SNAPSHOT"
 # this attribute is set during build/delivery
@@ -190,7 +191,7 @@ cp -a misc/tuxguitar.tg %{buildroot}/%{_datadir}/%{name}
 cp -a desktop/build-scripts/%{name}-linux-swt/target/%{name}-%{version}-linux-swt/dist/* %{buildroot}/%{_datadir}/%{name}
 
 # icon
-install -D -m 644 desktop/build-scripts/common-resources/common-linux/share/pixmaps/tuxguitar.xpm %{buildroot}%{_datadir}/pixmaps/tuxguitar.xpm
+install -D -m 644 desktop/build-scripts/common-resources/common-linux/share/pixmaps/tuxguitar.png %{buildroot}%{_datadir}/pixmaps/tuxguitar.png
 
 # man page
 mkdir -p %{buildroot}/%{_mandir}/man1
@@ -217,12 +218,12 @@ cp desktop/build-scripts/%{name}-linux-swt/target/%{name}-%{version}-linux-swt/s
 
 # Other files
 
-cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-1.6.3-linux-swt/share/help %{buildroot}/%{_datadir}/%{name}/
-cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-1.6.3-linux-swt/share/lang %{buildroot}/%{_datadir}/%{name}/
-cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-1.6.3-linux-swt/share/scales %{buildroot}/%{_datadir}/%{name}/
-cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-1.6.3-linux-swt/share/skins %{buildroot}/%{_datadir}/%{name}/
-cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-1.6.3-linux-swt/share/templates %{buildroot}/%{_datadir}/%{name}/
-cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-1.6.3-linux-swt/share/tunings %{buildroot}/%{_datadir}/%{name}/
+cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-%{version}-linux-swt/share/help %{buildroot}/%{_datadir}/%{name}/
+cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-%{version}-linux-swt/share/lang %{buildroot}/%{_datadir}/%{name}/
+cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-%{version}-linux-swt/share/scales %{buildroot}/%{_datadir}/%{name}/
+cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-%{version}-linux-swt/share/skins %{buildroot}/%{_datadir}/%{name}/
+cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-%{version}-linux-swt/share/templates %{buildroot}/%{_datadir}/%{name}/
+cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-%{version}-linux-swt/share/tunings %{buildroot}/%{_datadir}/%{name}/
 
 # clients
 mkdir -p %{buildroot}%{_libexecdir}/%{name}/
@@ -262,6 +263,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Sat Aug 24 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.4-14
+- update to 1.6.4-14
+
 * Sun Jun 16 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.3-14
 - update to 1.6.3-14 - update tuxguitar.sh
 
