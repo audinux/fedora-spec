@@ -68,7 +68,15 @@ LV2 plugins for %{name}
 
 %build
 
-%cmake -DLV2_PATH=%{_libdir}/lv2 -DBuildCarlaPresets=ON
+%cmake -DLV2_PATH=%{_libdir}/lv2 \
+%ifarch x86_64
+       -DEnableOptimizations=ON \
+       -DEnableSSE=ON \
+       -DEnableSSE2=ON \
+       -DEnableVectorization=OFF \
+       -DEnableAltivec=OFF \
+%endif
+       -DBuildCarlaPresets=ON
 %cmake_build
 
 %install
