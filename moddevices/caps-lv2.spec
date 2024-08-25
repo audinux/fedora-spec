@@ -30,14 +30,24 @@ Caps LV2 set of plugins from moddevices
 %prep
 %autosetup -n %{name}-%{commit0}
 
+find . -name Makefile -exec sed -i -e "/strip-all/d" {} \;
+find . -name Makefile -exec sed -i -e "/OPTS =/d" {} \;
+
 %build
 
-%make_build LV2_DEST=%{buildroot}%{_libdir}/lv2
+%set_build_flags
+
+%make_build DESTDIR=%{buildroot} LV2_DEST=%{_libdir}/lv2 STRIP=true
 
 %install
-%make_install LV2_DEST=%{buildroot}%{_libdir}/lv2
+%make_install DESTDIR=%{buildroot} LV2_DEST=%{_libdir}/lv2 STRIP=true
+
+# Change permissions of so files
+find %{buildroot}/%{_libdir}/lv2 -name "*.so" -exec chmod a+x {} \;
 
 %files
+%doc README.md README
+%license COPYING
 %{_libdir}/lv2/*
 
 %changelog
