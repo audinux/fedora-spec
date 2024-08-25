@@ -2,10 +2,8 @@
 # Type: Standalone, IDE, Language
 # Category: Graphic, Tool
 
-%global _version 2.31-1
-
 Name: mandelbulber2
-Version: 2.31
+Version: 2.32
 Release: 1%{?dist}
 License: GPL-3.0
 Summary: 3D Mandelbrot renderer
@@ -14,8 +12,7 @@ ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
-
-Source0: https://github.com/buddhi1980/mandelbulber2/releases/download/%{_version}/mandelbulber2-%{_version}.tar.gz#/%{name}-%{_version}.tar.gz
+Source0: https://github.com/buddhi1980/mandelbulber2/releases/download/%{version}/mandelbulber2-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: pkgconfig(Qt5Core)
@@ -38,7 +35,7 @@ kind of 3D fractals like Mandelbox, Bulbbox, Juliabulb, Menger
 Sponge.
 
 %prep
-%autosetup -n %{name}-%{_version}
+%autosetup -n %{name}-%{version}
 
 %build
 
@@ -90,6 +87,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/toolbar/*
 
 %changelog
+* Sun Aug 25 2024 Yann Collette <ycollette.nospam@free.fr> - 2.32-1
+- update to 2.32-1
+
 * Mon Jul 10 2023 Yann Collette <ycollette.nospam@free.fr> - 2.30-1
 - update to 2.30-1
 
