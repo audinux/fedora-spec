@@ -10,7 +10,7 @@ if [ $? == 1 ]; then
     echo "Wrong branch / tag name: $1"
     exit 1
 fi
-git submodule update --init --update --recursive
+git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz vst3sdk.tar.gz vst3sdk/*

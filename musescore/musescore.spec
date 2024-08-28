@@ -25,13 +25,13 @@
 %global __requires_exclude qmlimport\\((MuseScore|FileIO).*
 
 %define rname          mscore
-%define version_lesser 4.3
+%define version_lesser 4.4
 %define revision       5485621
 %define docdir         %{_docdir}/%{name}
 %define fontdir        %{_datadir}/fonts/%{name}
 
 Name: mscore-mao
-Version: 4.3.2
+Version: 4.4.0
 Release: 3%{?dist}
 Summary: A WYSIWYG music score typesetter
 
@@ -77,47 +77,28 @@ Source6: vst3-source.sh
 # For mime types
 Source7: %{name}.xml
 
-Patch0: mscore-use-qtmake-qt5.patch
-
 BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: chrpath
-BuildRequires: qt5-linguist
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-qtbase-private-devel
-BuildRequires: ffmpeg-devel
-BuildRequires: pkgconfig(Qt5Concurrent)
-BuildRequires: pkgconfig(Qt5Core)
-BuildRequires: pkgconfig(Qt5Designer)
-BuildRequires: pkgconfig(Qt5Gui)
-BuildRequires: pkgconfig(Qt5Help)
-BuildRequires: pkgconfig(Qt5Network)
-BuildRequires: pkgconfig(Qt5NetworkAuth)
-BuildRequires: pkgconfig(Qt5OpenGL)
-BuildRequires: pkgconfig(Qt5PrintSupport)
-BuildRequires: pkgconfig(Qt5QuickControls2)
-BuildRequires: pkgconfig(Qt5QuickTemplates2)
-BuildRequires: pkgconfig(Qt5Sql)
-BuildRequires: pkgconfig(Qt5Svg)
-BuildRequires: pkgconfig(Qt5Test)
-BuildRequires: pkgconfig(Qt5UiTools)
-BuildRequires: pkgconfig(Qt5Widgets)
-BuildRequires: pkgconfig(Qt5X11Extras)
-BuildRequires: pkgconfig(Qt5Xml)
-BuildRequires: pkgconfig(Qt5XmlPatterns)
-BuildRequires: pkgconfig(alsa)
-BuildRequires: pkgconfig(freetype2)
+BuildRequires: qt6-linguist
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qtbase-private-devel
+BuildRequires: qt6-qttools-devel
+BuildRequires: qt6-qtnetworkauth-devel
+BuildRequires: qt6-qtdeclarative-devel
+BuildRequires: qt6-qtsvg-devel
+BuildRequires: qt6-qt5compat-devel
+BuildRequires: qt6-qtscxml-devel
+BuildRequires: harfbuzz-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: freetype-devel
 BuildRequires: pkgconfig(jack)
-BuildRequires: pkgconfig(libpulse)
-BuildRequires: pkgconfig(libpulse-mainloop-glib)
-BuildRequires: pkgconfig(libpulse-simple)
-BuildRequires: pkgconfig(ogg)
-BuildRequires: pkgconfig(portaudio-2.0)
-BuildRequires: pkgconfig(portaudiocpp)
-BuildRequires: pkgconfig(sndfile)
-BuildRequires: pkgconfig(vorbis)
-BuildRequires: pkgconfig(vorbisenc)
-BuildRequires: pkgconfig(vorbisfile)
+BuildRequires: pulseaudio-libs-devel
+BuildRequires: libogg-devel
+BuildRequires: portaudio-devel
+BuildRequires: libsndfile-devel
+BuildRequires: libvorbis-devel
+BuildRequires: ffmpeg-devel
 BuildRequires: portmidi-devel
 BuildRequires: fdupes
 BuildRequires: steinberg-bravura-fonts-all
@@ -132,6 +113,8 @@ Requires: ( pipewire-alsa      if pipewire )
 # Requires: openssl1.1
 Requires: gnu-free-sans-fonts
 Requires: gnu-free-serif-fonts
+Requires: steinberg-bravura-fonts-all
+Requires: steinberg-petaluma-fonts-all
 Requires: hicolor-icon-theme
 
 %description
@@ -140,7 +123,7 @@ virtual note sheet. It has an integrated sequencer for immediate playing of the
 score. MuseScore can import and export MusicXml and standard MIDI files.
 
 %prep
-%autosetup -p1 -n MuseScore-%{version}
+%autosetup -n MuseScore-%{version}
 
 cp %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} share/sound/
 
@@ -178,6 +161,14 @@ export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-fstack-clash-protection||g"`
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-fcf-protection||g"`
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-fstack-protector-strong||g"`
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Wp,-D_GLIBCXX_ASSERTIONS||g"`
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3||g"`
+
+export CFLAGS=`echo $CFLAGS | sed -e "s|-fexceptions||g"`
+export CFLAGS=`echo $CFLAGS | sed -e "s|-fstack-clash-protection||g"`
+export CFLAGS=`echo $CFLAGS | sed -e "s|-fcf-protection||g"`
+export CFLAGS=`echo $CFLAGS | sed -e "s|-fstack-protector-strong||g"`
+export CFLAGS=`echo $CFLAGS | sed -e "s|-Wp,-D_GLIBCXX_ASSERTIONS||g"`
+export CFLAGS=`echo $CFLAGS | sed -e "s|-Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3||g"`
 
 %cmake \
        -DMUE_BUILD_UNIT_TESTS:BOOL=OFF \
@@ -186,6 +177,7 @@ export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Wp,-D_GLIBCXX_ASSERTIONS||g"`
        -DMUE_BUILD_VIDEOEXPORT_MODULE:BOOL=OFF \
        -DMUE_BUILD_UPDATE_MODULE:BOOL=OFF \
        -DMUE_ENABLE_AUDIO_JACK:BOOL=ON \
+       -DMUSE_COMPILE_USE_PCH:BOOL=OFF \
        -DMUSESCORE_BUILD_MODE=release \
        -DMUSESCORE_BUILD_NUMBER=1 \
        -DMUSESCORE_REVISION=%{revision} \
@@ -206,8 +198,6 @@ export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Wp,-D_GLIBCXX_ASSERTIONS||g"`
 
 # don't package kddockwidgets. It should not be installed
 rm %{buildroot}/%{_libdir}/*.a
-rm -r %{buildroot}/%{_includedir}/kddockwidgets
-rm -r %{buildroot}/%{_libdir}/cmake/KDDockWidgets
 
 # unique names for font docs
 mv fonts/edwin/README.md        fonts/edwin/README.md.edwin
@@ -222,7 +212,18 @@ mkdir -p %{buildroot}%{_datadir}/%{rname}-%{version_lesser}/demos
 install -p -m 644 demos/*.mscz %{buildroot}%{_datadir}/%{rname}-%{version_lesser}/demos
 
 # Remove opus devel files, they are provided by system
-rm -r %{buildroot}%{_includedir}/opus
+rm -rf %{buildroot}%{_includedir}/opus
+rm -rf %{buildroot}%{_includedir}/gmock
+rm -rf %{buildroot}%{_includedir}/gtest
+rm -rf %{buildroot}%{_includedir}/kddockwidgets-qt6
+rm -rf %{buildroot}%{_libdir}/cmake/GTest
+rm -rf %{buildroot}%{_libdir}/cmake/KDDockWidgets-qt6
+rm -rf %{buildroot}%{_libdir}/cmake/Opus
+rm -rf %{buildroot}%{_libdir}/pkgconfig/gmock.pc
+rm -rf %{buildroot}%{_libdir}/pkgconfig/gmock_main.pc
+rm -rf %{buildroot}%{_libdir}/pkgconfig/gtest.pc
+rm -rf %{buildroot}%{_libdir}/pkgconfig/gtest_main.pc
+rm -rf %{buildroot}%{_libdir}/pkgconfig/opus.pc
 
 # Delete crashpad binary
 rm -f %{buildroot}%{_bindir}/crashpad_handler
@@ -295,6 +296,8 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/org.musescore.MuseSc
 %license fonts/finalemaestro/OFL.txt.finalemaestro
 
 %changelog
+* Tue Aug 27 2024 Yann Collette <ycollette.nospam@free.fr> - 4.4.0-3
+- update to 4.4.0-3
 * Wed Jul 10 2024 Yann Collette <ycollette.nospam@free.fr> - 4.3.2-3
 - update to 4.3.2-3
 * Mon May 06 2024 Yann Collette <ycollette.nospam@free.fr> - 4.3.0-3
