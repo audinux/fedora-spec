@@ -20,7 +20,7 @@ Source0: FatFrog.lv2.tar.gz
 Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
-BuildReauires: make
+BuildRequires: make
 BuildRequires: lv2-devel
 BuildRequires: libX11-devel
 BuildRequires: cairo-devel
@@ -49,5 +49,5 @@ A LV2 High Gain Amplifier
 %{_libdir}/lv2/*
 
 %changelog
-* Mon Oct 27 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
+* Tue Oct 27 2020 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial spec file

@@ -2,21 +2,23 @@
 # Type: Plugin, LV2
 # Category: Audio, Effect
 
-%global commit0 bf8e8f714d530789afbca4611e8e25c744ec5890
+%global debug_package %{nil}
+
+%global commit0 a1ad9526fc803865cc041812cd5911d93a51b2fe
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name: dm-graindelay
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Granular delay, lv2 & vst audio plugin
 License: MIT
-URL: https://github.com/moddevices/dm-GrainDelay
+URL: https://github.com/davemollen/dm-GrainDelay
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/moddevices/dm-GrainDelay/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: https://github.com/davemollen/dm-GrainDelay/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -49,18 +51,18 @@ cargo build --release
 
 %install
 
-install -m 755 -d %{buildroot}/%{_libdir}/lv2/
 install -m 755 -d %{buildroot}/%{_libdir}/vst/
 
 cp -rav lv2/dm-GrainDelay.lv2 %{buildroot}/%{_libdir}/lv2/
-cp vst/target/release/libdm_graindelay.so %{buildroot}/%{_libdir}/vst/
 
 %files
 %doc README.md
 %license LICENSE
 %{_libdir}/lv2/*
-%{_libdir}/vst/*
 
 %changelog
+* Thu Aug 29 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to last master - update git url
+
 * Sun Apr 16 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
