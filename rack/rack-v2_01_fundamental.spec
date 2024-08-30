@@ -32,6 +32,7 @@ Patch0: rack-v2-0001-initialize-system-path.patch
 Patch1: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: libsamplerate-devel

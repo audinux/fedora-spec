@@ -31,6 +31,7 @@ Source2: s-ol_plugin.json
 Patch0: rack-v1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel

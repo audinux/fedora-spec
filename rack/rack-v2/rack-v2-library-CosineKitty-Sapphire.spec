@@ -19,7 +19,7 @@ Release: 2%{?dist}
 Summary: CosineKitty-Sapphire plugin for Rack
 License: GPL-2.0-or-later
 URL:     https://github.com/cosinekitty/sapphire
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -34,6 +34,7 @@ Patch0: rack-v2-aarch64.patch
 Patch1: rack-v2-cosimekitty-aarch64.patch
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel

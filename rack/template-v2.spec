@@ -33,6 +33,7 @@ Source2: JSONFILE
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel
@@ -66,7 +67,7 @@ DESCRIPTION
 %setup -n Rack
 
 %ifarch aarch64
-%patch  0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`
