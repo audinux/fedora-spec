@@ -37,7 +37,6 @@ Source3: starling-via-source.sh
 # ./starling-via-source.sh d96fbc6987f34d34ee5751c443b14d51bec06bf2
 
 BuildRequires: gcc gcc-c++
-BuildRequires: cmake sed
 BuildRequires: alsa-lib-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel

@@ -31,7 +31,6 @@ Patch0: rack-v1-aarch64.patch
 Patch1: rack-v1-library-Valley-aarch64.patch
 
 BuildRequires: gcc gcc-c++
-BuildRequires: cmake sed
 BuildRequires: alsa-lib-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel

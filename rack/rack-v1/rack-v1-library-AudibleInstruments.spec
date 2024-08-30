@@ -30,7 +30,6 @@ Patch0: rack-v1-aarch64.patch
 Source3: audible-instruments-source.sh
 
 BuildRequires: gcc gcc-c++
-BuildRequires: cmake sed
 BuildRequires: alsa-lib-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel

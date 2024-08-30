@@ -63,7 +63,6 @@ BuildRequires: rpm
 BuildRequires: elfutils
 BuildRequires: elfutils-libelf-devel
 BuildRequires: grub2-tools
-BuildRequires: sed
 BuildRequires: rsync
 BuildRequires: dwarves
 

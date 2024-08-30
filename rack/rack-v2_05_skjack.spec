@@ -34,7 +34,6 @@ Source2: https://raw.githubusercontent.com/nielszweistein/skjack-vcv2/master/plu
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
-BuildRequires: sed
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: libsamplerate-devel

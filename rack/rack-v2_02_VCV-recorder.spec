@@ -33,7 +33,6 @@ Source3: vcv-recorder-source.sh
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
-BuildRequires: sed
 BuildRequires: alsa-lib-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel

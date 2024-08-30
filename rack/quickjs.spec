@@ -19,7 +19,6 @@ Source0: https://github.com/bellard/quickjs/archive/%{commit0}.tar.gz#/%{name}-%
 BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: make
-BuildRequires: sed
 
 %description
 QuickJS Javascript Engine.

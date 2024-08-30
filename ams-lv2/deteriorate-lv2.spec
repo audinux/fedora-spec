@@ -21,7 +21,6 @@ BuildRequires: gtkmm24-devel
 BuildRequires: gtk2-devel
 BuildRequires: cairo-devel
 BuildRequires: lvtk
-BuildRequires: sed
 BuildRequires: python2
 
 %description

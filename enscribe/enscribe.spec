@@ -25,7 +25,6 @@ BuildRequires: freetype-devel
 BuildRequires: libpng-devel
 BuildRequires: libjpeg-turbo-devel
 BuildRequires: zlib-devel
-BuildRequires: sed
 
 %description
 Enscribe creates digital audio watermark images from photgraphic images.

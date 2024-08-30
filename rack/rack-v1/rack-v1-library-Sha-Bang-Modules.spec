@@ -30,7 +30,6 @@ Source2: Sha-Bang-Modules_plugin.json
 Patch0: rack-v1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
-BuildRequires: cmake sed
 BuildRequires: alsa-lib-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel

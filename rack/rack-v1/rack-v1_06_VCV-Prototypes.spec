@@ -31,7 +31,6 @@ Patch0: rack-v1-aarch64.patch
 Source3: VCV-Prototype-Makefile
 
 BuildRequires: gcc gcc-c++
-BuildRequires: sed
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: libsamplerate-devel

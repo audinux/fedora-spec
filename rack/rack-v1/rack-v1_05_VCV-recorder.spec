@@ -30,7 +30,6 @@ Source2: VCVRecorder-Makefile
 Patch0: rack-v1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
-BuildRequires: sed
 BuildRequires: alsa-lib-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel
