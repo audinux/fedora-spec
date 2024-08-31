@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Editor
 # Type: Standalone; Plugin, VST3, CLAP, LV2, VST
 # Category: Audio, Effect

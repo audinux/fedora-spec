@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Guitar, Overdrive
 # Type: Plugin, LV2
 # Category: Audio, Effect

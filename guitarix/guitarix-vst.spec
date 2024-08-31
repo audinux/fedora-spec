@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Guitar, Emulator, Overdrive, Amp Simul, Cabinet, Effect
 # Type: Plugin, VST3
 # Category: Audio, Effect

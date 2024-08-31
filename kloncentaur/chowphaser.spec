@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Guitar, Phaser
 # Type: Plugin, VST3
 # Category: Audio, Effect

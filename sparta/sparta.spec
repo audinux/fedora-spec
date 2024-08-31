@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Audio, Effect, Tool
 # Type: Standalone, Plugin, VST
 # Category: Tool, Audio, Effect

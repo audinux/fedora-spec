@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Amp Simul
 # Type: Plugin, LV2, VST3, VST, CLAP, Standanlone
 # Category: Audio, Effect

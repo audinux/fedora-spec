@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Drum
 # Type: LV2
 # Category: Synthesizer

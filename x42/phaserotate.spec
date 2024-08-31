@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Audio, Effect
 # Type: Plugin, LV2, Standalone
 # Category: Audio, Effect

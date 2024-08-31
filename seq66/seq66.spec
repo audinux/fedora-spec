@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Sequencer, MIDI
 # Type: Standalone
 # Category: Audio, Sequencer, MIDI

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Alsa, MIDI
 # Type: Standalone
 # Category: Audio, Sequencer

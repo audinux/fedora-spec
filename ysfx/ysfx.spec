@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Audio, Tool
 # Type: Plugin, VST3
 # Category: Audio, Tool

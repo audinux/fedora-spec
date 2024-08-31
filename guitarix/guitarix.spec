@@ -1,3 +1,4 @@
+# Status: active
 # guitarix has merged with gx_head branch and tarball is distributed as guitarix2
 # project name remains guitarix however
 

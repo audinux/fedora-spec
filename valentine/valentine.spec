@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Compressor
 # Type: Standalone, Plugin, VST3
 # Category: Effect

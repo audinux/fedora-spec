@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Guitar, Delay
 # Type: Plugin, LV2, VST
 # Category: Audio, Effect

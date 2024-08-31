@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Alsa, Jack, Analyzer, Graphic
 # Type: Plugin, LV2, Standalone
 # Category: Audio, Tool

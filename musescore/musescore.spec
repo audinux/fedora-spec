@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Editor, Tablature, Jack, Alsa, MIDI
 # Type: Standalone
 # Category: DAW, Sequencer, Tool

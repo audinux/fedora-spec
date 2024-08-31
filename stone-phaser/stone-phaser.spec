@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Phaser
 # Type: Plugin, LADSPA, LV2, VST
 # Category: Effect

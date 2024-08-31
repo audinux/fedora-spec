@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Alsa, Effect
 # Type: Plugin, Standalone, VST, VST3, LV2, CLAP
 # Category: Audio, Effect

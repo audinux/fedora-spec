@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Graphic, Editor
 # Type: Standalone
 # Category: Graphic, Tool

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Synthesizer
 # Type: Standalone, Plugin, LV2, VST
 # Category: Synthesizer

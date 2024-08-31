@@ -1,3 +1,4 @@
+# Status: active
 # Tag: OSC, Tool
 # Type: Plugin, LV2
 # Category: Tool, Audio

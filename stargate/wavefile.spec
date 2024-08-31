@@ -1,3 +1,4 @@
+# Status: active
 %{?!python3_pkgversion:%global python3_pkgversion 3}
 
 Name:    wavefile

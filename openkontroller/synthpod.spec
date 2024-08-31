@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tool, Rack
 # Type: Plugin, LV2, Standalone
 # Category: Tool, Plugin

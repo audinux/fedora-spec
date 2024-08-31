@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tool, Graphic, Audio
 # Type: Standalone
 # Category: Audio, Tool

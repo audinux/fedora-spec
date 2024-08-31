@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Analyzer
 # Type: Plugin, Standalone, VST3
 # Category: Graphic, Audio

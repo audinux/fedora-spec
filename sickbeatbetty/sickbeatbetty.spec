@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Drum, MIDI
 # Type: Standalone, Plugin, VST3
 # Category: Synthesizer

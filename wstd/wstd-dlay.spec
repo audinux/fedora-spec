@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Delay
 # Type: Plugin, VST, VST3, LV2, CLAP
 # Category: Audio, Effect

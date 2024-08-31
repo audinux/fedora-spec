@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Live
 # Type: Standalone, IDE
 # Category: Programming, Audio, Graphic

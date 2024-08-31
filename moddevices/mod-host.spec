@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Rack, Jack
 # Type: Standalone
 # Category: Audio, Effect

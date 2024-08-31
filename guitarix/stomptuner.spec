@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Guitar, Jack
 # Type: Standalone, Plugin, LV2, VST3, VST, CLAP
 # Category: Audio, Tool

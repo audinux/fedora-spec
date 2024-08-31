@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Equalizer
 # Type: VST3
 # Category: Audio, Effect

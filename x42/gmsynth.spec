@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Alsa, Jack, Synthesizer, MIDI
 # Type: Plugin, LV2
 # Category: Audio, Tool, Synthesizer

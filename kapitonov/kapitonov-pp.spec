@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Guitar, Jack, Overdrive, Amp Simul, Cabinet, Gate, Octaver
 # Type: Plugin, LV2
 # Category: Audio, Effect

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Synthesizer
 # Type: Plugin, VST
 # Category: Synthesizer

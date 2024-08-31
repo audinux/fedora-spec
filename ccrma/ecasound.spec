@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Mixer, Editor
 # Type: IDE, Standalone
 # Category: DAW

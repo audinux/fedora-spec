@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Alsa
 # Type: Plugin, Standalone, LV2
 # Category: Audio, Synthesizer

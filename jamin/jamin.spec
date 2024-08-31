@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Editor, Analyzer
 # Type: Standalone
 # Category: Tool, Audio

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Synthesizer
 # Type: Plugin, LV2
 # Category: Synthesizer

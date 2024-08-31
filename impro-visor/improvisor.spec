@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI
 # TYpe: IDE, Standalone
 # Category: Tool, MIDI, Sequencer

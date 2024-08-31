@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Convolution
 # Type: Standalone
 # Category: Tool

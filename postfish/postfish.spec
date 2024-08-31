@@ -1,3 +1,4 @@
+# Status: active
 # Tag: DAW, Equalizer, Mixer
 # Type: Standalone
 # Category: Audio, DAW

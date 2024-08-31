@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect
 # Type: Pipewire
 # Category: Effect

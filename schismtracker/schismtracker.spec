@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tracker, Alsa
 # Type: Standalone
 # Category: Audio, Sequencer

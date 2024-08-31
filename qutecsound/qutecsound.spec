@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Editor
 # Type: Standalone
 # Category: Audio

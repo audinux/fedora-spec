@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Alsa, Tracker
 # Type: Standalone
 # Category: Audio, Sequencer

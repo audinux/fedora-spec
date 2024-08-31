@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Synthesizer
 # Type: Plugin, VST3, CLAP
 # Category: Audio, Synthesizer

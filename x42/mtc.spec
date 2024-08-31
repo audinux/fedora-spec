@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Video, Tool
 # Type: Plugin, LV2
 # Category: Tool

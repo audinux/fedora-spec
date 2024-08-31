@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Alsa, Jack, Equalizer
 # Type: Plugin, LV2
 # Category: Audio, Tool

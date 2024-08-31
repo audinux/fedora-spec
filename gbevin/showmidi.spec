@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Alsa, MIDI
 # Type: Standalone, VST3, VST, LV2, Plugin
 # Category: MIDI, Tool

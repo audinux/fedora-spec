@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tool
 # Type: Standalone, Pipewire
 # Category: Tool

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Graphic
 # Type: Standalone
 # Category: Synthesizer, Audio

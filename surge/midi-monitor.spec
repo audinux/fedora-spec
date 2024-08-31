@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI, Tool
 # Type: Standalone, Plugin, VST3
 # Category: MIDI, Tool

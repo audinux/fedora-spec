@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect
 # Type: Plugin, LADSPA
 # Category: Audio

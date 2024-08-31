@@ -1,3 +1,4 @@
+# Status: active
 Summary: efsw is a C++ cross-platform file system watcher and notifier.
 Name: libefsw
 Version: 1.4.0

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Synthesizer, Effect
 # Type: Standalone, VST3
 # Category: Synthesizer, Effect

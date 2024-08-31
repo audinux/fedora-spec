@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack
 # Type: Plugin, LV2
 # Category: Audio, Effect, Sequencer

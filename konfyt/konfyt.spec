@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI, Sfz, Sf2, Keyboard, Live
 # Type: Standalone
 # Category: Audio

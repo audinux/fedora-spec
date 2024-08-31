@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Modular, Alsa
 # Type: Standalone
 # Category: Sequencer, Synthesizer

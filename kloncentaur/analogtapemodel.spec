@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Guitar, Tape
 # Type: Plugin, LV2, VST
 # Category: Audio, Effect

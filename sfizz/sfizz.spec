@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Sampler, Synthesizer, Library
 # Type: Standalone, Devel
 # Category: Synthesizer, Programming

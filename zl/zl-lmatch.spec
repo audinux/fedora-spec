@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect
 # Type: VST3, Plugin
 # Category: Effect

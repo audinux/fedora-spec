@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Alsa
 # Type: Standalone
 # Category: Synthesizer

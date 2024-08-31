@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Editor, Audio, MIDI
 # Type: Standalone, Plugin, LV2, VST3, CLAP
 # Category: Audio, IDE, Language

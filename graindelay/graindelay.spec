@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Delay
 # Type: Plugin, LV2
 # Category: Audio, Effect

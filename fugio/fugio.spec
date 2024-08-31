@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI
 # Type: Standalone, IDE
 # Category: Programming, Audio, Graphic

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Editor, Jack
 # Type: Plugin, LV2
 # Category: Tool, Session Mngmt

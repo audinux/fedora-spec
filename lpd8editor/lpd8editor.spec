@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI, Editor
 # Type: Standalone
 # Category: Audio

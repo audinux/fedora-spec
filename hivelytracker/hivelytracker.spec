@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tracker
 # Type: Standalone
 # Category: Audio, Sequencer

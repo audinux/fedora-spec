@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Analyzer, Amp Simul
 # Type: Standalone
 # Caterory: Effect, Tool

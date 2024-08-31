@@ -151,6 +151,7 @@
 | JS_Inflator                | https://github.com/Kiriki-liszt/JS_Inflator |
 | oemer                      | https://github.com/BreezeWhite/oemer |
 | Orchestra                  | https://github.com/AbdallahHemdan/Orchestra |
+| gearmulator                | https://github.com/dsp56300/gearmulator |
 
 Check the following URL:
 - https://github.com/forart/HyMPS

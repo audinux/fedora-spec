@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Pitch
 # Type: Plugin, LV2
 # Category: Effect

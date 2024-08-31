@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Analyzer
 # Type: Plugin, VAMP
 # Category: Audio, Effect

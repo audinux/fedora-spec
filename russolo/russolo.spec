@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Synthesizer
 # Type: Plugin, LV2
 # Category: Effect, Synthesizer

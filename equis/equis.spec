@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Controller
 # Type: Standalone
 # Category: Audio, Tool

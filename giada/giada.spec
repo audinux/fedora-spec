@@ -1,3 +1,4 @@
+# Status: active
 %global app_id com.giadamusic.Giada
 
 Name: giada

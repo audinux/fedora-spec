@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tool, Alsa, Editor
 # Type: Standalone
 # Category: Audio, Tool

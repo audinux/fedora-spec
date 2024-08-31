@@ -1,3 +1,4 @@
+# Status: active
 Name:    sndpeek
 Version: 1.41
 Release: 1%{?dist}

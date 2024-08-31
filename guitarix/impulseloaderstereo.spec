@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Convolution, Amp Simul
 # Type: Plugin, LV2
 # Category: Audio, Tool, Plugin

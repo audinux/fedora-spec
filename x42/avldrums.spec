@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Drum
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer

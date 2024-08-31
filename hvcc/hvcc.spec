@@ -1,3 +1,4 @@
+# Status: active
 Name: hvcc
 Version: 0.12.0
 Release: 2%{?dist}

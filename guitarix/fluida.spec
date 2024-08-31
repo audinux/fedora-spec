@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Sf2
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tool, Rack
 # Type: Plugin, VST3, LV2, Standalone
 # Category: Audio, Effect, Synthesizer, Tool

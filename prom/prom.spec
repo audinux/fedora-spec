@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Live, Video
 # Type: Plugin, LV2, VST, VST3, CLAP
 # Category: Effect

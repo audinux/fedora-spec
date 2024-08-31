@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Graphic
 # Type: LV2, Plugin
 # Category: Plugin, Graphic

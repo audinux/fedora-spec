@@ -1,3 +1,4 @@
+# Status: active
 # Global variables for github repository
 %global commit0 d909db65ed706188a2549838b3fc8a3a37fa685b
 %global gittag0 master

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect
 # Type: Plugin, VST3, CLAP, LV2
 # Category: Audio, Effect

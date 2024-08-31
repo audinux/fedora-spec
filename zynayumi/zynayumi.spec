@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Emulator
 # Type: Plugin, LV2, VST, DSSI
 # Category: Audio, Synthesizer

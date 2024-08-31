@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Plugin
 # Type: Plugin, LV2, CLAP, LADSPA
 # Category: Audio, Effect

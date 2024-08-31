@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Delay
 # Type: VST3
 # Category: Effect

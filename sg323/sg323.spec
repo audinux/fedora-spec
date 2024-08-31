@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Reverb
 # Type: Plugin, VST3, CLAP
 # Category: Audio, Effect

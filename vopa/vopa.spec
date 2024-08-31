@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI, Tool, Mixer
 # Type: Plugin, LV2
 # Category: MIDI, Tool

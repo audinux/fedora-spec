@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Editor, Jack, Alsa
 # Type: Standalone
 # Category: Audio, MIDI, Sequencer

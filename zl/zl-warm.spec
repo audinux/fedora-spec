@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Distortion
 # Type: VST3, Plugin
 # Category: Effect

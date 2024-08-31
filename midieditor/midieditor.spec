@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Editor, MIDI
 # Type: Standalone
 # Category: DAW, MIDI

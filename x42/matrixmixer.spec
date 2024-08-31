@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Mixer, Alsa, Jack, Mixer
 # Type: Plugin, LV2, Standalone
 # Category: Audio, Tool

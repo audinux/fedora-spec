@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Alsa
 # Type: Plugin, Standalone, VST3, IDE, Devel
 # Category: Audio, Programming, Tool

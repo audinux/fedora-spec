@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI, Synthesizer
 # TYpe: Plugin, VST3
 # Category: MIDI, Synthesizer

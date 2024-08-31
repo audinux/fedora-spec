@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Audio, Convolver
 # Type: Plugin, LV2
 # Category: Audio, Tool

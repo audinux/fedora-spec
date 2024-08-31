@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Synthesizer
 # Type: Standalone, VST3
 # Category: Audio, Synthesizer

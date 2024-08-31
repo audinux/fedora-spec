@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Mixer
 # Type: Standalone, Plugin, LV2
 # Category: Audio, Tool

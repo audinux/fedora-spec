@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI, Tool, Video
 # Type: Standalone
 # Category: MIDI, Tool

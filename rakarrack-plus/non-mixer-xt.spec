@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Audio, Mixer
 # Type: Standalone, LV2, LADSPA
 # Category: Audio, Tool

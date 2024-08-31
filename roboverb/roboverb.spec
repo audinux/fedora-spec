@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Reverb
 # Type: Plugin, LV2
 # Category: Audio, Effect

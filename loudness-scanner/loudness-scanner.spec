@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tool, Audio, Analyzer
 # Type: Standalone
 # Category: Audio, Tool

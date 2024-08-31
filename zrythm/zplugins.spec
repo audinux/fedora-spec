@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Audio, Tool
 # Type: Plugin, LV2
 # Category: Audio, Tool

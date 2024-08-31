@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Sfz, Alsa
 # Type: Plugin, DSSI, LV2
 # Category: Audio, Sampler

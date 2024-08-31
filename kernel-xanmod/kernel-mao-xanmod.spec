@@ -1,3 +1,4 @@
+# Status: active
 # Kernel major version
 %define kmaj  6
 # Kernel minor version

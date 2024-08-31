@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Guitar, Analyzer
 # Type: Standalone
 # Category: Audio, Tool

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Equalizer
 # Type: Standalone
 # Category: Audio, Effect

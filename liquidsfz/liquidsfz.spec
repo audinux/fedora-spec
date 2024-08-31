@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Sfz, Jack
 # Type: Plugin, LV2
 # Category: Audio, Sampler

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Audio, Tool, Sequencer
 # Type: Standalone
 # Category: Tool, Audio, Sequencer

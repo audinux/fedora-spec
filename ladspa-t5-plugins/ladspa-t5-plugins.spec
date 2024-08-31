@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Equalizer
 # Type: LADSPA
 # Category: Audio, Effect

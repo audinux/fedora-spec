@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Equalizer
 # Type: Plugin, LV2
 # Category: Audio, Effect

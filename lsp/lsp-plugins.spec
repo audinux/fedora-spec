@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Equalizer, Compressor, Convolution, Gate, Analyzer, Reverb, Delay, MIDI
 # Type: Plugin, LV2, VST, LADSPA, CLAP
 # Category: Audio, Effect

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI, Sequencer
 # Type: Standalone, Plugin, VST3
 # Category: DAW, Sequencer

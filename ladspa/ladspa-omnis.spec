@@ -1,3 +1,4 @@
+# Status: active
 # Tag: OSC
 # Type: LADSPA
 # Category: Audio, Synthesizer

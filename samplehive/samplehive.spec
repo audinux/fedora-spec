@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Editor, Audio, Tool
 # Type: Standalone
 # Category: Standalone

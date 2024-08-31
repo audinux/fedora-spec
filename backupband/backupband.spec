@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Editor, Sequencer
 # Type: Standalone
 # Category: Audio, Synthesizer

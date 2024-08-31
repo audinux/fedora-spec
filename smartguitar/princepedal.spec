@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Guitar, Amp Simul
 # Type: Plugin, VST
 # Category: Audio, Effect

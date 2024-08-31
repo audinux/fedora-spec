@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Alsa
 # Type: Standalone, IDE
 # Category: Audio, Programming

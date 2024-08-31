@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Loop
 # Type: Standalone
 # Category: Tool, Audio

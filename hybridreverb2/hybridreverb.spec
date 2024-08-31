@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Reverb, Convolution
 # Type: Plugin, LV2, Standalone
 # Category: Audio, Effect

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Reverb, Compressor, Equalizer, Overdrive, Synthesizer
 # Type: Plugin, VST3, LV2
 # Category: Audio, Effect, Synthesizer

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Editor, Analyzer
 # Type: Standalone
 # Category: Graphic, Tool, Audio

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Sequencer
 # Type: Plugin, LV2
 # Category: Audio, Sequencer

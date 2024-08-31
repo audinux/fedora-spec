@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Audio, Sampler
 # Type: Standalone, Plugin, LV2, VST
 # Category: Plugin, Sampler

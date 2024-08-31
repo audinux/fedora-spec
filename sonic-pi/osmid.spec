@@ -1,3 +1,4 @@
+# Status: active
 # Tag: OSC, MIDI, Tool
 # Type: Standalone
 # Category: Audio, MIDI, Tool

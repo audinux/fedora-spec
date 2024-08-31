@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Audio, Player
 # Type: Standalone
 # Category: Audio, Tool

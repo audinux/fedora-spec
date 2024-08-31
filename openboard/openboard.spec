@@ -1,3 +1,4 @@
+# Status: active
 # Type: Standalone
 # Category: Graphic
 # GUIToolkit: Qt5

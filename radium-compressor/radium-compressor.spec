@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Audio, Effect, Compressor, Jack
 # Type: Standalone
 # Category: Audio, Effect

@@ -1,3 +1,4 @@
+# Status: active
 # Tag:  Drum, Jack, Alsa
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer

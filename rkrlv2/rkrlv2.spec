@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Synthesizer, Effect
 # Type: LV2
 # Category: Synthesizer, Effect

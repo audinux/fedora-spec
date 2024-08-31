@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Guitar, Amp Simul
 # Type: Plugin, LV2, Standalone
 # Category: Audio, Effect

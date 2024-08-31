@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Emulator
 # Type: Standalone, LV2
 # Category: Audio, Programming

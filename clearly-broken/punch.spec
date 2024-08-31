@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Compressor
 # Type: Plugin, LV2, VST3
 # Category: Audio, Effect

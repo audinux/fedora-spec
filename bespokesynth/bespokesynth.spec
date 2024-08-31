@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Modular
 # Type: Standalone
 # Category: Audio, Synthesizer

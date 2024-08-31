@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Sequencer
 # Type: Plugin, VST3
 # Category: Audio, Sequencer

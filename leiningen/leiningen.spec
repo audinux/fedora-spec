@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Editor
 # Type: Standalone, Language
 # Category: Audio, Programming

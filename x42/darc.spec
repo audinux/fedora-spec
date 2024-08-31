@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Alsa, Jack, Effect, Compressor
 # Type: Standalone, Plugin, LV2
 # Category: Audio, Tool

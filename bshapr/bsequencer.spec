@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, MIDI
 # Type: Plugin, LV2
 # Category: Audio, Sequencer

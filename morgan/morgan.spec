@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Organ, Synthesizer
 # Type: Plugin, VST3, Standalone
 # Category: Audio, Synthesizer

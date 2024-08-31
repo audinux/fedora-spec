@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Synthesizer, Modular
 # Type: Plugin, VST, Standalone
 # Category: Audio, Synthesizer

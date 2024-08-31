@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Editor, Audio
 # Type: Standalone
 # Category: DAW, Sequencer, Tool

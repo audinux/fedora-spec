@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Audio, Organ
 # Type: Plugin, LV2
 # Category: Synthesizer

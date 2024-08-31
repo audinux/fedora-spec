@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Loop
 # Type: Standalone
 # Category: Audio, Sequencer

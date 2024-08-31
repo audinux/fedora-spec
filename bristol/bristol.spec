@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Alsa, Synthesizer
 # Type: Standalone
 # Category: Synthesizer

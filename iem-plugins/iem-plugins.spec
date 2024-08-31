@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect
 # Type: Standalone, VST3, LV2
 # Category: Effect, Plugin

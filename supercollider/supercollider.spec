@@ -1,3 +1,4 @@
+# Status: active
 Summary: Object oriented programming environment for real-time audio and video processing
 Name:    supercollider
 Version: 3.13.0

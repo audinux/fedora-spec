@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Live, MIDI, Editor
 # Type: IDE, Language
 # Category: Audio, Programming

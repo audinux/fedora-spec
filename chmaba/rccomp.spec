@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Compressor
 # Type: Plugin, CLAP, LV2
 # Category: Audio, Effect

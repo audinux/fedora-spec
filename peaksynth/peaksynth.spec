@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Synthesizer, MIDI, Audio
 # Type: Plugin, LV2, VST3
 # Category: Audio, Synthesizer

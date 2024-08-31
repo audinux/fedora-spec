@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Audio, AI, Amp Simul
 # Type: Plugin, LV2
 # Category: Audio, Tool

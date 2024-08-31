@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Keyboard
 # Type: Plugin, LV2
 # Category: Audio, MIDI

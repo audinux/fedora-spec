@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Plugin, Delay, MIDI
 # Type: Standalone, Plugin, VST3
 # Category: Audio, Effect

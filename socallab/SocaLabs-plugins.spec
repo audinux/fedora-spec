@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Compressor, Emulator, Delay, Analyzer
 # Type: Plugin, VST, VST3
 # Category: Audio, Effect, Synthesizer

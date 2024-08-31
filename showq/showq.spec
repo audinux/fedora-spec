@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI, Player
 # Type: Standalone
 # Category: MIDI, Audio, Tool

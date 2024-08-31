@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Guitar, Equalizer, Convolution, Amp Simul, Overdrive
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer, Effect

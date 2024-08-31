@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Analyzer, Effect
 # Type: Standalone
 # Category: Effect

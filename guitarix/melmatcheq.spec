@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Analyzer, Amp Simul, Equalizer
 # Type: LV2, Plugin
 # Caterory: Effect, Tool

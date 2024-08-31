@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Tool
 # Type: LV2, Plugin
 # Category: Plugin, Tool

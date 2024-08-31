@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Session, OSC, Jack
 # Type: Standalone
 # Category: Session Mngmt

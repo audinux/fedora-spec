@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Analyzer
 # Type: Plugin, LV2, Standalone
 # Category: Audio, Tool

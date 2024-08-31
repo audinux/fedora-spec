@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Audio, Modulaation
 # Type: Plugin, LV2
 # Category: Audio, Effect

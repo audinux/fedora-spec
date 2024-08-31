@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Modular, Rack
 # Type: Rack
 # Category: Audio, Synthesizer

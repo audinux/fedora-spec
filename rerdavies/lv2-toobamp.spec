@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Guitar, Effect
 # Type: Plugin, LV2
 # Category: Audio, Effect

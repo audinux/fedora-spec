@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Drum
 # Type: Plugin, Standalone, VST3, CLAP
 # Category: Drum, Synthesizer

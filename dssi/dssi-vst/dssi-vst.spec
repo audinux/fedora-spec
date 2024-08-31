@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tool, Rack
 # Type: Plugin, DSSI
 # Category: Audio, Effect, Synthesizer, Plugin

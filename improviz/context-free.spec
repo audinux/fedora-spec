@@ -1,3 +1,4 @@
+# Status: active
 Name:    context-free
 Summary: Context Free is a program that generates images from written instructions called a grammar.
 Version: 3.3

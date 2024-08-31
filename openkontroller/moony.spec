@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tool, Devel
 # Type: Plugin, LV2
 # Category: MIDI, Plugin, Programming

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Library, Editor
 # Type: Standalone, IDE, Language
 # Category: Audio, Programming, Graphic

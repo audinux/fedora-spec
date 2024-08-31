@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Synthesizer, Drum
 # Type: Plugin, VST
 # Category: Audio, Synthesizer

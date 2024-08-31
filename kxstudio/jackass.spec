@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tool
 # Type: Plugin, VST
 # Category: MIDI, Tool

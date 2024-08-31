@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI, FM, Emulator
 # Type: Plugin, VST, LV2
 # Category: Audio, Synthesizer

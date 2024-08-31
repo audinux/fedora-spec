@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Audio, Effect
 # Type: Plugin
 # Category: Audio, Effect

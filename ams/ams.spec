@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Modular, Jack, Alsa
 # Type: Standalone
 # Category: Audio, Synthesizer

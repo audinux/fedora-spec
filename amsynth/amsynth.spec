@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI, Jack
 # Type: LV2, Standalone
 # Category: Synthesizer

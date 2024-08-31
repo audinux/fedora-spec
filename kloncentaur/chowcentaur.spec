@@ -1,3 +1,4 @@
+# Status: active
 # spec file for package ChowCentaur
 #
 # Copyright (c) 2019 SUSE LINUX GmbH, Nuernberg, Germany.

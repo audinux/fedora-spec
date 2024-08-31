@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Mixer
 # Type: Standalone
 # Category: Audio, Tool

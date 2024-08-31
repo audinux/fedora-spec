@@ -1,3 +1,4 @@
+# Status: active
 %global libname mesonbuild
 
 # Don’t run the tests by default, since they are rather flaky.

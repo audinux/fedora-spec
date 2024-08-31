@@ -1,3 +1,4 @@
+# Status: active
 # Tag: DAW, Editor, Player
 # Type: Standalone
 # Category: Audio, DAW

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, MIDI
 # Type: Standalone
 # Category: Audio, DAW

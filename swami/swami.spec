@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Sf2, Editor
 # Type: Standalone
 # Category: Audio, Tool

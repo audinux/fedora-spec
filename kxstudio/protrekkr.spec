@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI, FM, Tracker
 # Type: Standalone
 # Category: Audio, Synthesizer, Sequencer

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Organ, Jack, Alsa
 # Type: Standalone
 # Category: Audio, Synthesizer

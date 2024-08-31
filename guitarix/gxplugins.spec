@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Guitar, Emulator, Overdrive, Amp Simul, Cabinet
 # Type: Plugin, LV2
 # Category: Audio, Effect

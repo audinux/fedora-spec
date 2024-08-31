@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tool, Graphic
 # Type: Standalone, Plugin, LV2, VST
 # Category: Tool, Graphic

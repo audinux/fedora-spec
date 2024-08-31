@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI, FM, Emulator
 # Type: Plugin, VST, LV2, LADSPA, DSSI
 # Category: Audio, Synthesizer

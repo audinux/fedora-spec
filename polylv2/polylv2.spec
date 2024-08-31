@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Modular
 # Type: Plugin, LV2
 # Category: Audio, Effect

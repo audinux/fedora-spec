@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tool
 # Type: Plugin, VST3, Standalone
 # Category: Audio, Tool, Programming

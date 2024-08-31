@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tool, Editor, OSC, MIDI, Sequencer
 # Type: Standalone
 # Category: Tool, MIDI, DAW

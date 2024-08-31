@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Alsa, MIDI
 # Type: Standalone
 # Category: MIDI, Tool

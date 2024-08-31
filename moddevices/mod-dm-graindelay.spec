@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Delay
 # Type: Plugin, LV2, VST
 # Category: Effect

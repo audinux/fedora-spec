@@ -1,3 +1,4 @@
+# Status: active
 Name: rt-tests
 Version: 2.7
 Release: 1%{?dist}

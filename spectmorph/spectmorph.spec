@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI
 # Type: Plugin, LV2, VST, CLAP
 # Category: Audio, Synthesizer

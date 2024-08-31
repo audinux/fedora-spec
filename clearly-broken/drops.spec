@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Sampler
 # Type: Plugin, LV2
 # Category: Audio, Effect

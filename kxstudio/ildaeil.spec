@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Rack
 # Type: Plugin, LV2, VST3, CLAP, VST, Standalone
 # Category: Plugin

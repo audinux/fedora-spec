@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Editor, Audio, MIDI, Sequencer
 # Type: Standalone, DSSI, LV2, LADSPA, VST, VST3, CLAP
 # Category: DAW, MIDI

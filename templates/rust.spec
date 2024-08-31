@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, Synthesizer, Modular
 # Type: Plugin, Standalone, VST, VST3, CLAP
 # Category: Audio, Synthesizer

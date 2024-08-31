@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Synthesizer
 # Type: Plugin, DSSI
 # Category: Audio, Synthesizer, Plugin

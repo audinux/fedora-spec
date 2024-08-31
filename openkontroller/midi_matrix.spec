@@ -1,3 +1,4 @@
+# Status: active
 # Tag: MIDI, Effect
 # Type: Plugin, LV2
 # Category: MIDI, Plugin

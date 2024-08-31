@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Audio, Convolution
 # Type: Plugin, LV2
 # Category: Audio, Tool

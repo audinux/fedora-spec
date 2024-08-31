@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tool
 # Type: Devel, Plugin, CLAP
 # Category: Tool

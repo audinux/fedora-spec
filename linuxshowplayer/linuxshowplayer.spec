@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Editor, Audio
 # Type: Standalone
 # Category: Audio, Sampler, Sequencer

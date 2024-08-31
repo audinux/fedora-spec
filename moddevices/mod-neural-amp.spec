@@ -1,3 +1,4 @@
+# Status: active
 # Tag: AI, Effect, Amp Simul
 # Type: LV2
 # Category: Plugin, Effect

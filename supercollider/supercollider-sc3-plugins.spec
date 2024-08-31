@@ -1,3 +1,4 @@
+# Status: active
 Summary: Collection of SuperCollider plugins
 Name:    supercollider-sc3-plugins
 Version: 3.13.0

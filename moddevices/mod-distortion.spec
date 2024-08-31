@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Effect, Distortion
 # Type: Plugin, LV2
 # Category: Effect

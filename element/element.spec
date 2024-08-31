@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Jack, MIDI, OSC
 # Type: Standalone
 # Category: Audio, Tool

@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Editor, Video
 # Type: Standalone
 # Category: Graphic, Tool

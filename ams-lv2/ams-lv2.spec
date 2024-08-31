@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Modular, Jack, Alsa
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer

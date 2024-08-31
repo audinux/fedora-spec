@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Synthesizer, Effect
 # Type: Plugin, VST3
 # Category: Synthesizer, Effect

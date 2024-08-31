@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Synthesizer
 # Type: Plugin, VST2, CLAP, LV2, Standalone
 # Category: Audio, Synthesizer

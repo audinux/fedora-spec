@@ -1,3 +1,4 @@
+# Status: active
 # Tag: Tool, AI
 # Type: Plugin, LV2, VST3, Standalone
 # Category: Audio, Tool

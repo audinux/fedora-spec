@@ -1,3 +1,4 @@
+# Status: active
 %global realname yaml-cpp
 
 Name:           yaml-cpp03
