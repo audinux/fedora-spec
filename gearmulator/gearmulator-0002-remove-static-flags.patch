@@ -1,0 +1,87 @@
+From 4df172da5d22999947bbe5f7f89dcc162263b6a5 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sat, 31 Aug 2024 21:21:51 +0200
+Subject: [PATCH] remove static flags
+
+---
+ source/dsp56300/source/wxWidgets/build/cmake/init.cmake | 2 +-
+ source/juce.cmake                                       | 4 ----
+ source/mqPerformanceTest/CMakeLists.txt                 | 4 ----
+ source/mqTestConsole/CMakeLists.txt                     | 4 ----
+ source/virusTestConsole/CMakeLists.txt                  | 4 ----
+ 5 files changed, 1 insertion(+), 17 deletions(-)
+
+diff --git a/source/dsp56300/source/wxWidgets/build/cmake/init.cmake b/source/dsp56300/source/wxWidgets/build/cmake/init.cmake
+index ef28c99..7673599 100644
+--- a/source/dsp56300/source/wxWidgets/build/cmake/init.cmake
++++ b/source/dsp56300/source/wxWidgets/build/cmake/init.cmake
+@@ -87,7 +87,7 @@ elseif(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU") OR ("${CMAKE_CXX_COMPILER_ID}
+         if(MINGW)
+             set(STATIC_LINKER_FLAGS " -static")
+         else()
+-            set(STATIC_LINKER_FLAGS " -static-libgcc -static-libstdc++")
++            set(STATIC_LINKER_FLAGS "")
+         endif()
+         wx_string_append(CMAKE_EXE_LINKER_FLAGS "${STATIC_LINKER_FLAGS}")
+         wx_string_append(CMAKE_SHARED_LINKER_FLAGS "${STATIC_LINKER_FLAGS}")
+diff --git a/source/juce.cmake b/source/juce.cmake
+index 9e3e24b..04c8edc 100644
+--- a/source/juce.cmake
++++ b/source/juce.cmake
+@@ -98,10 +98,6 @@ macro(createJucePlugin targetName productName isSynth plugin4CC binaryDataProjec
+ 		add_dependencies(${targetName}_All ${targetName}_CLAP)
+ 	endif()
+ 
+-	if(UNIX AND NOT APPLE)
+-		target_link_libraries(${targetName} PUBLIC -static-libgcc -static-libstdc++)
+-	endif()
+-	
+ 	if(APPLE)
+ 		install(TARGETS ${targetName}_VST3 DESTINATION . COMPONENT ${productName}-VST3)
+ 	else()
+diff --git a/source/mqPerformanceTest/CMakeLists.txt b/source/mqPerformanceTest/CMakeLists.txt
+index a4a8d3b..af2f2e7 100644
+--- a/source/mqPerformanceTest/CMakeLists.txt
++++ b/source/mqPerformanceTest/CMakeLists.txt
+@@ -13,9 +13,5 @@ source_group("source" FILES ${SOURCES})
+ 
+ target_link_libraries(mqPerformanceTest PUBLIC mqConsoleLib)
+ 
+-if(UNIX AND NOT APPLE)
+-	target_link_libraries(mqPerformanceTest PUBLIC -static-libgcc -static-libstdc++)
+-endif()
+-
+ install(TARGETS mqPerformanceTest DESTINATION . COMPONENT VavraPerformanceTest)
+ set_property(TARGET mqPerformanceTest PROPERTY FOLDER "Vavra")
+diff --git a/source/mqTestConsole/CMakeLists.txt b/source/mqTestConsole/CMakeLists.txt
+index 4d3b3b1..2b37ef8 100644
+--- a/source/mqTestConsole/CMakeLists.txt
++++ b/source/mqTestConsole/CMakeLists.txt
+@@ -22,9 +22,5 @@ else()
+ 	target_link_libraries(mqTestConsole PUBLIC portmidi-static)
+ endif()
+ 
+-if(UNIX AND NOT APPLE)
+-	target_link_libraries(mqTestConsole PUBLIC -static-libgcc -static-libstdc++)
+-endif()
+-
+ #install(TARGETS mqTestConsole DESTINATION . COMPONENT STANDALONE)
+ set_property(TARGET mqTestConsole PROPERTY FOLDER "Vavra")
+diff --git a/source/virusTestConsole/CMakeLists.txt b/source/virusTestConsole/CMakeLists.txt
+index d841c9d..be97d2e 100644
+--- a/source/virusTestConsole/CMakeLists.txt
++++ b/source/virusTestConsole/CMakeLists.txt
+@@ -13,10 +13,6 @@ source_group("source" FILES ${SOURCES})
+ 
+ target_link_libraries(virusTestConsole PUBLIC virusConsoleLib)
+ 
+-if(UNIX AND NOT APPLE)
+-	target_link_libraries(virusTestConsole PUBLIC -static-libgcc -static-libstdc++)
+-endif()
+-
+ if(${gearmulator_SYNTH_OSIRUS})
+ 	install(TARGETS virusTestConsole DESTINATION . COMPONENT OsirusTestConsole)
+ 
+-- 
+2.46.0
+
