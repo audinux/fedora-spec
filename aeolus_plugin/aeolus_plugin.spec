@@ -3,21 +3,19 @@
 # Type: Standalone, VST3
 # Category: Audio, Synthesizer
 
-%global commit0 50494c1db8a88b4c17254fb40fc8f948b8046a8f
-
 Name: aeolus_plugin
-Version: 0.2.0
+Version: 0.2.1
 Release: 3%{?dist}
 Summary: Pipe organ synthesizer
 License: GPL-3.0-or-later
 URL: https://github.com/Archie3d/aeolus_plugin
-ExclusiveArch: x86_64 
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source_aeolus_plugin.sh <tag>
-#        ./source_aeolus_plugin.sh 50494c1db8a88b4c17254fb40fc8f948b8046a8f
+#        ./source_aeolus_plugin.sh v0.2.1
 
 Source0: aeolus_plugin.tar.gz
 Source1: source_aeolus_plugin.sh
@@ -144,6 +142,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Aeolus.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Sep 02 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2.1-1
+- update to 0.2.1-1
+
 * Sat Feb 24 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-3
 - update to 0.2.0-3 - update to 50494c1db8a88b4c17254fb40fc8f948b8046a8f
 
