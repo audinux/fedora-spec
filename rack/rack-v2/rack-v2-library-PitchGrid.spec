@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c6cad0f86c4780328bf94c187f67f611d75d876f
-%global gittag0 2.5.0
+%global commit0 41e632af206f61b3f5bf6746f4686172bb2930aa
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-vanTies
-Version: 2.5.0
+Name:    rack-v2-PitchGrid
+Version: 2.0.1
 Release: 2%{?dist}
-Summary: vanTies plugin for Rack
+Summary: PitchGrid plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/matthiassars/vanTies
+URL:     https://github.com/peterjungx/PitchGridRack
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,8 +29,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/matthiassars/vanTies/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: vanTies_plugin.json
+Source1: https://github.com/peterjungx/PitchGridRack/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: PitchGrid_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -61,8 +61,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-vanTies plugin for Rack.
-eratosthenean additive oscillator
+PitchGrid plugin for Rack.
+Microtonally adjusted Hammond frequencies
 
 %prep
 %setup -n Rack
@@ -135,24 +135,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir vanTies_plugin
-tar xvfz %{SOURCE1} --directory=vanTies_plugin --strip-components=1
+mkdir PitchGrid_plugin
+tar xvfz %{SOURCE1} --directory=PitchGrid_plugin --strip-components=1
 
-cp -n %{SOURCE2} vanTies_plugin/plugin.json || true
+cp -n %{SOURCE2} PitchGrid_plugin/plugin.json || true
 
 %build
 
-cd vanTies_plugin
+cd PitchGrid_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/vanTies/
-cp -r vanTies_plugin/dist/vanTies/* %{buildroot}%{_libexecdir}/Rack2/plugins/vanTies/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/PitchGrid/
+cp -r PitchGrid_plugin/dist/PitchGrid/* %{buildroot}%{_libexecdir}/Rack2/plugins/PitchGrid/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile
