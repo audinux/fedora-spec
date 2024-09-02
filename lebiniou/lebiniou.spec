@@ -4,7 +4,7 @@
 # Category: Graphic
 
 Name: lebiniou
-Version: 3.66.0
+Version: 3.67.0
 Release: 3%{?dist}
 Summary: Audio spectrum visualizer
 URL: https://biniou.net/
@@ -24,7 +24,6 @@ BuildRequires: libtool
 BuildRequires: pandoc
 BuildRequires: perl-podlators
 BuildRequires: gtk-update-icon-cache
-BuildRequires: python3-htmlmin
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: libcaca-devel
@@ -96,6 +95,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/net.biniou.LeBiniou.d
 %{_datadir}/*
 
 %changelog
+* Sun Sep 01 2024 Yann Collette <ycollette.nospam@free.fr> - 3.67.0-3
+- update to 3.67.0-3
+
 * Sun Mar 20 2022 Yann Collette <ycollette.nospam@free.fr> - 3.66.0-3
 - update to 3.66.0-3
 
