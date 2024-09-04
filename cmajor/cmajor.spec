@@ -4,7 +4,7 @@
 # Category: Audio, Effect, Synthesizer
 
 Name: cmajor
-Version: 1.0.2616
+Version: 1.0.2634
 Release: 1%{?dist}
 Summary: Cmajor is a programming language for writing fast, portable audio software.
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./source-cmajor.sh 1.0.2616
+# $ ./source-cmajor.sh 1.0.2634
 
 Source0: cmajor.tar.gz
 Source1: source-cmajor.sh
@@ -149,6 +149,9 @@ chrpath --delete %{buildroot}/%{_bindir}/cmaj
 %{_datadir}/cmajor/examples/*
 
 %changelog
+* Wed Sep 04 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.2634-1
+- Update to 1.0.2634
+
 * Thu Aug 15 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.2616-1
 - Update to 1.0.2616
 
