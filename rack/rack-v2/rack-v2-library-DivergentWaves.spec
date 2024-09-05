@@ -19,7 +19,7 @@ Version: 2.0.0
 Release: 1%{?dist}
 Summary: DivergentWaves plugin for Rack
 License: GPL-2.0-or-later
-URL:
+URL: https://github.com/tpcarlson/DivergentWavesVCVRack
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,7 +29,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.0.3
 
 Source0: Rack.tar.gz
-Source1: /archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/tpcarlson/DivergentWavesVCVRack/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: DivergentWaves_plugin.json
 Patch0: rack-v2-aarch64.patch
 
