@@ -3,12 +3,12 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-Name:    BespokeSynth
+Name: BespokeSynth
 Version: 1.2.0
 Release: 8%{?dist}
 Summary: A software modular synth
 License: GPL-3.0-or-later
-URL:     https://github.com/BespokeSynth/BespokeSynth
+URL: https://github.com/BespokeSynth/BespokeSynth
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -22,8 +22,7 @@ Source0: BespokeSynth.tar.gz
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
 Source2: bespokesynth-sources.sh
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: patchelf
 BuildRequires: alsa-lib-devel
@@ -62,8 +61,6 @@ Instead, it has a design more optimized for jamming and exploration.
 sed -i -e "s/\.\.\/\.\.\/MacOSX\/build\/Release\/data/\/usr\/share\/BespokeSynth\/data/g" Source/OpenFrameworksPort.cpp
 
 unzip %{SOURCE1}
-
-# cp %{SOURCE2} libs/JUCE/modules/juce_audio_processors/format_types/
 
 # Manage VST path
 sed -i -e "s/lib\/vst/%{_lib}\/vst/g" libs/JUCE/modules/juce_audio_processors/format_types/juce_VSTPluginFormat.cpp
@@ -117,7 +114,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/BespokeSynth.desktop
 %doc README.md
 %license LICENSE
 %{_bindir}/*
-%{_libdir}/bespokesynth/**
+%{_libdir}/bespokesynth/*
 %{_datadir}/applications/*
 %{_datadir}/BespokeSynth/*
 %{_datadir}/icons/*
