@@ -152,6 +152,10 @@
 | oemer                      | https://github.com/BreezeWhite/oemer |
 | Orchestra                  | https://github.com/AbdallahHemdan/Orchestra |
 | gearmulator                | https://github.com/dsp56300/gearmulator |
+| Subhoofer                  | https://github.com/ardura/Subhoofer |
+| Interleaf                  | https://github.com/ardura/Interleaf |
+| Scrollscope                | https://github.com/ardura/Scrollscope |
+| Canopy-Reverb              | https://github.com/ardura/Canopy-Reverb |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
