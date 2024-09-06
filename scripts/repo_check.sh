@@ -981,7 +981,8 @@ https://github.com/flubber2077/Open-Source-Bassman-Preamp
 https://github.com/davemollen/dm-GrainDelay
 https://github.com/babelouest/ulfius
 https://github.com/dsp56300/gearmulator
-https://github.com/Madadog/three_osc"
+https://github.com/Madadog/three_osc
+https://github.com/ardura/Actuate"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
