@@ -4,7 +4,7 @@
 # Category: Audio, Distortion
 
 Name: drumlabooh
-Version: 4.0.0
+Version: 5.0.0
 Release: 1%{?dist}
 Summary: LV2/VSTi drum machine that can use Hydrogen, SFZ, and other drumkit formats
 License: GPL-3.0-only
@@ -38,20 +38,19 @@ BuildRequires: gtk3-devel
 BuildRequires: webkit2gtk3-devel
 
 %description
-LV2/VSTi drum machine that can use Hydrogen,
-SFZ, and other drumkit formats
+LV2/VSTi drum machine that can use Hydrogen, SFZ, and other drumkit formats
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-3.0-only
+Summary: LV2 version of %{name}
+License: GPL-3.0-only
 Requires: %{name}
 
 %description -n lv2-%{name}
@@ -71,9 +70,9 @@ install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 
-cp -ra %{__cmake_builddir}/drumlabooh_artefacts/VST3/*    %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/drumlabooh_artefacts/LV2/*     %{buildroot}/%{_libdir}/lv2/
-cp %{__cmake_builddir}/drumlabooh_artefacts/Standalone/*  %{buildroot}/%{_bindir}/
+cp -ra %{__cmake_builddir}/drumlabooh_artefacts/VST3/*   %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/drumlabooh_artefacts/LV2/*    %{buildroot}/%{_libdir}/lv2/
+cp %{__cmake_builddir}/drumlabooh_artefacts/Standalone/* %{buildroot}/%{_bindir}/
 
 %files
 %doc README.md
@@ -87,6 +86,9 @@ cp %{__cmake_builddir}/drumlabooh_artefacts/Standalone/*  %{buildroot}/%{_bindir
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Sep 07 2024 Yann Collette <ycollette.nospam@free.fr> - 5.0.0-1
+- update to 5.0.0-1
+
 * Tue Aug 13 2024 Yann Collette <ycollette.nospam@free.fr> - 4.0.0-1
 - update to 4.0.0-1
 
