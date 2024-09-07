@@ -156,6 +156,10 @@
 | Interleaf                  | https://github.com/ardura/Interleaf |
 | Scrollscope                | https://github.com/ardura/Scrollscope |
 | Canopy-Reverb              | https://github.com/ardura/Canopy-Reverb |
+| LIRA-8                     | https://github.com/MikeMorenoDSP/LIRA-8 |
+| glslEditor_AudioPlugin     | https://github.com/COx2/glslEditor_AudioPlugin |
+| MOrgan                     | https://github.com/getdunne/MOrgan |
+| elysiera                   | https://github.com/azur1s/elysiera |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
