@@ -3,10 +3,8 @@
 # Type: Plugin, VST3, CLAP, LV2
 # Category: Audio, Synthesizer
 
-%global commit0 4a87e08ad9370f2d92fb12bf0a0df69738429da4
-
 Name: gearmulator
-Version: 0.0.1
+Version: 1.3.20
 Release: 1%{?dist}
 Summary: Emulation of classic VA synths of the late 90s/2000s that are based on Motorola 56300 family DSPs 
 License: GPL-3.0-or-later
@@ -17,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./gearmulator-source.sh <TAG>
-#        ./gearmulator-source.sh main
+#        ./gearmulator-source.sh 1.3.20
 
 Source0: gearmulator.tar.gz
 Source1: gearmulator-source.sh
@@ -57,39 +55,39 @@ At the moment, the following synthesizers are supported:
 - Nodal Red 2x: Clavia Nord Lead/Rack 2x
 
 %package -n license-%{name}
-Summary:  License and documentation for %{name}
-License:  GPL-3.0-or-later
+Summary: License and documentation for %{name}
+License: GPL-3.0-or-later
 
 %description -n license-%{name}
 License and documentation for version of %{name}
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n vst-%{name}
-Summary:  VST2 version of %{name}
-License:  GPL-3.0-or-later
+Summary: VST2 version of %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n vst-%{name}
 VST2 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  GPL-3.0-or-later
+Summary: CLAP version of %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n clap-%{name}
 CLAP version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-3.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n lv2-%{name}
@@ -166,5 +164,8 @@ cp -ra %{__cmake_builddir}/source/nord/n2x/n2xJucePlugin/n2xJucePlugin_artefacts
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Sep 08 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.20-1
+- update to 1.3.20-1
+
 * Sat Aug 31 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
