@@ -19,8 +19,7 @@ Distribution: Audinux
 
 Source0: gearmulator.tar.gz
 Source1: gearmulator-source.sh
-Patch0: gearmulator-0001-add-missing-header.patch
-Patch1: gearmulator-0002-remove-static-flags.patch
+Patch0: gearmulator-0002-remove-static-flags.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
