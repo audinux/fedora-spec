@@ -4,10 +4,11 @@
 # Category: MIDI, Tool
 
 %global debug_package %{nil}
+%global commit0 74c7830f5763bed01e9a7c4955f0d894ee8412f5
 
 Name: midi-monitor
 Version: 30072020
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A JUCE-based midi monitor
 License: GPL-2.0-or-later
 URL: https://github.com/surge-synthesizer/midi-monitor
@@ -17,7 +18,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./source-midi-monitor.sh 32b80228ccd73f5633dd42a0df958a8c3e1b4e05
+# $ ./source-midi-monitor.sh 74c7830f5763bed01e9a7c4955f0d894ee8412f5
 
 Source0: midi-monitor.tar.gz
 Source1: source-midi-monitor.sh
@@ -44,8 +45,8 @@ BuildRequires: pkgconfig(webkit2gtk-4.0)
 A JUCE-based midi monitor
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
@@ -84,5 +85,8 @@ cp -r %{__cmake_builddir}/midi-monitor_artefacts/VST3/MidiMonitor.vst3/* %{build
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Sep 07 2024 Yann Collette <ycollette.nospam@free.fr> - 30072020-2
+- update to last master - 74c7830f5763bed01e9a7c4955f0d894ee8412f5
+
 * Sun Dec 26 2021 Yann Collette <ycollette.nospam@free.fr> - 30072020-1
 - Initial spec file

@@ -22,7 +22,7 @@ Distribution: Audinux
 Source0: https://github.com/brummer10/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildReauires: make
+BuildRequires: make
 BuildRequires: gtk3-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: libX11-devel
