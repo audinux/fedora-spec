@@ -4,7 +4,7 @@
 # Category: Audio, Sampler, Sequencer
 
 Name: linux-show-player
-Version: 0.5.3
+Version: 0.6.4
 Release: 1%{?dist}
 Summary: A Cue player designed for stage productions
 License: GPL-2.0-or-later
@@ -19,18 +19,31 @@ Source0: https://github.com/FrancescoCeruti/linux-show-player/archive/v%{version
 BuildArch: noarch
 
 BuildRequires: python3-devel
-BuildRequires: python3-setuptools
+#BuildRequires: python-jack-client
+#BuildRequires: python3-mido
+#BuildRequires: python3-qt5-base
+#BuildRequires: python3-sortedcontainers
+#BuildRequires: python3-rtmidi
+#BuildRequires: python3-pyliblo
+#BuildRequires: python3-alsa
+BuildRequires: pyproject-rpm-macros
 BuildRequires: alsa-lib-devel
+BuildRequires: gobject-introspection-devel
 BuildRequires: desktop-file-utils
 
-Requires(pre): python3-gobject
-Requires(pre): python3-qt5-base-gui
-Requires(pre): python3-mido
-Requires(pre): portmidi
-Requires(pre): python-jack-client
-Requires(pre): gstreamer1-plugins-good
-Requires(pre): gstreamer1-libav
-Requires(pre): python3-sortedcontainers
+Requires: python-jack-client
+Requires: python3-mido
+Requires: python3-qt5-base-gui
+Requires: python3-sortedcontainers
+Requires: python3-rtmidi
+Requires: python3-pyliblo
+Requires: python3-alsa
+
+Requires: gstreamer1-plugins-good
+Requires: gstreamer1-libav
+
+%generate_buildrequires
+%pyproject_buildrequires
 
 %description
 Linux Show Player (LiSP) - Sound player designed for stage productions.
@@ -40,37 +53,23 @@ Linux Show Player (LiSP) - Sound player designed for stage productions.
 
 %build
 
-%py3_build
+%pyproject_wheel
 
 %install
-
-%py3_install
-
-install -m 755 -d %{buildroot}%{_datadir}/applications
-install -m 755 -d %{buildroot}%{_datadir}/pixmaps
-install -m 755 -d %{buildroot}%{_datadir}/mime/packages
-
-install -m 644 dist/linuxshowplayer.desktop %{buildroot}%{_datadir}/applications
-install -m 644 dist/linuxshowplayer.png %{buildroot}%{_datadir}/pixmaps
-install -m 644 dist/linuxshowplayer.xml %{buildroot}%{_datadir}/mime/packages
-
-desktop-file-install                         \
-  --add-category="Audio"                     \
-  --delete-original                          \
-  --dir=%{buildroot}%{_datadir}/applications \
-  %{buildroot}%{_datadir}/applications/linuxshowplayer.desktop
+%pyproject_install
+%pyproject_save_files onelogin
 
 %check
-desktop-file-validate %{buildroot}%{_datadir}/applications/linuxshowplayer.desktop
+%pyproject_check_import
 
-%files
+%files -f %{pyproject_files}
 %doc README.md
 %license LICENSE
-%{_bindir}/*
-%{_datadir}/*
-%{python3_sitelib}/*
 
 %changelog
+* Sun Sep 08 2024 Yann Collette <ycollette.nospam@free.fr> - 0.6.4-1
+- update to version 0.6.4-1
+
 * Sat Dec 25 2021 Yann Collette <ycollette.nospam@free.fr> - 0.5.3-1
 - update to version 0.5.3-1
 
