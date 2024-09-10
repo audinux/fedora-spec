@@ -160,6 +160,7 @@
 | glslEditor_AudioPlugin     | https://github.com/COx2/glslEditor_AudioPlugin |
 | MOrgan                     | https://github.com/getdunne/MOrgan |
 | elysiera                   | https://github.com/azur1s/elysiera |
+| RTcmix                     | https://github.com/RTcmix/RTcmix |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
