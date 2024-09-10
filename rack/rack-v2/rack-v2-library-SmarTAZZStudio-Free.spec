@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 efe3d2dec323bab69c2e04696ba048bf8e9e2f12
-%global gittag0 2.3.0
+%global commit0 6e7822ce4a8b41d3a778e2e402e57f826dc37b94
+%global gittag0 2.4.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SmarTAZZStudio-Free
-Version: 2.3.0
+Version: 2.4.0
 Release: 2%{?dist}
 Summary: SmarTAZZStudio-Free plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r SmarTAZZStudio-Free_plugin/dist/SmarTAZZStudio-Free/* %{buildroot}%{_libex
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.0-1
 - initial specfile

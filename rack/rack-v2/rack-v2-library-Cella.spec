@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 00045278665bf551da1f964e0576362a5d57b7f2
-%global gittag0 2.0.1
+%global commit0 33e9491a742943195515445472001bedb9f23f8f
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Cella
-Version: 2.0.1
+Version: 2.0.2
 Release: 2%{?dist}
 Summary: Cella plugin for Rack
 License: GPL-2.0-or-later
@@ -62,13 +62,13 @@ BuildRequires: jq
 
 %description
 Cella plugin for Rack.
-Calculates slope of the incoming signal
+Calculates rate of change of the incoming signal
 
 %prep
 %setup -n Rack
 
 %ifarch aarch64
-%patch  0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`
@@ -154,5 +154,5 @@ cp -r Cella_plugin/dist/Cella/* %{buildroot}%{_libexecdir}/Rack2/plugins/Cella/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile
