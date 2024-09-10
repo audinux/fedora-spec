@@ -3,7 +3,7 @@
 # Usage: ./sparta-sources.sh <TAG>
 #        ./sparta-sources.sh v1.14.1
 
-git clone  https://github.com/leomccormack/SPARTA
+git clone https://github.com/leomccormack/SPARTA
 cd SPARTA
 git checkout $1
 if [ $? == 1 ]; then
