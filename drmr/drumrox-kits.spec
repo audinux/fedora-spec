@@ -3,11 +3,11 @@
 # Type: LV2, Presets
 # Category: Synthesizer
 
-%global commit0 135e0dde0c81e62567654a2557eee35b2bb59016
+%global commit0 ea5329aec334d417d6838bf96f905b93475eec4f
 
 Name: drumrox-kits
 Version: 0.0.1
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: A set of drumrox drum kits
 License: GPL-3.0-or-later
 URL: https://github.com/psemiletov/drum_sklad
@@ -190,6 +190,22 @@ Requires: license-%{name}
 %description -n %{name}-The_Almighty_Sound_Drumkit
 The Almighty Sound drumkit for %{name}
 
+%package -n %{name}-ARP_Axxe
+Summary:  The ARP Axxe drumkit for %{name}
+License:  GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-ARP_Axxe
+The ARP Axxe drumkit for %{name}
+
+%package -n %{name}-Drumulator
+Summary:  The Drumulator drumkit for %{name}
+License:  GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-Drumulator
+The Drumulator drumkit for %{name}
+
 %prep
 %autosetup -n drum_sklad-%{commit0}
 
@@ -215,6 +231,8 @@ install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/TamilMultiLayered/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Technics_PCM_DP50/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/The_Almighty_Sound_Drumkit/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Wooden/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ARP_Axxe/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Drumulator/
 
 cp -ra Cheetah\ SpecDrum\ Standard/* %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Standard/
 cp -ra Cheetah\ SpecDrum\ Latin/* %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Latin/
@@ -236,6 +254,8 @@ cp -ra TamilMultiLayered/* %{buildroot}/%{_datadir}/drumrox-kits/TamilMultiLayer
 cp -ra Technics\ PCM\ DP50/* %{buildroot}/%{_datadir}/drumrox-kits/Technics_PCM_DP50/
 cp -ra The\ Almighty\ Sound\ Drumkit/* %{buildroot}/%{_datadir}/drumrox-kits/The_Almighty_Sound_Drumkit/
 cp -ra Wooden/* %{buildroot}/%{_datadir}/drumrox-kits/Wooden/
+cp -ra ARP\ Axxe/* %{buildroot}/%{_datadir}/drumrox-kits/ARP_Axxe/
+cp -ra Drumulator/* %{buildroot}/%{_datadir}/drumrox-kits/Drumulator/
 
 %files -n license-%{name}
 %doc README.md
@@ -301,7 +321,16 @@ cp -ra Wooden/* %{buildroot}/%{_datadir}/drumrox-kits/Wooden/
 %files -n %{name}-The_Almighty_Sound_Drumkit
 %{_datadir}/drumrox-kits/The_Almighty_Sound_Drumkit/*
 
+%files -n %{name}-ARP_Axxe
+%{_datadir}/drumrox-kits/ARP_Axxe/*
+
+%files -n %{name}-Drumulator
+%{_datadir}/drumrox-kits/Drumulator/*
+
 %changelog
+* Thu Sep 12 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-6
+- update to 135e0dde0c81e62567654a2557eee35b2bb59016
+
 * Sat Aug 17 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-5
 - update to 135e0dde0c81e62567654a2557eee35b2bb59016 - drumkit fix
 
