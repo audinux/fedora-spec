@@ -161,6 +161,7 @@
 | MOrgan                     | https://github.com/getdunne/MOrgan |
 | elysiera                   | https://github.com/azur1s/elysiera |
 | RTcmix                     | https://github.com/RTcmix/RTcmix |
+| nam-juce                   | https://github.com/Tr3m/nam-juce |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
