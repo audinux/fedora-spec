@@ -5,7 +5,7 @@
 
 Name: sparta
 Version: 1.7.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A collection of spatial audio related VST plug-ins developed using JUCE and the Spatial_Audio_Framework
 License: GPL-3.0-or-later
 URL: https://leomccormack.github.io/sparta-site/
@@ -44,6 +44,8 @@ BuildRequires: gtk3-devel
 BuildRequires: webkit2gtk3-devel
 BuildRequires: lapack-devel
 BuildRequires: openblas-devel
+BuildRequires: fftw-devel
+BuildRequires: netcdf-devel
 BuildRequires: chrpath
 
 %description
@@ -89,6 +91,10 @@ mv VST_SDK/VST2_SDK SDKs/
 
 %cmake -DCMAKE_CXX_FLAGS="-include utility -fPIC $CXXFLAGS" \
        -DSAF_PERFORMANCE_LIB=SAF_USE_OPEN_BLAS_AND_LAPACKE \
+       -DSAF_ENABLE_SOFA_READER_MODULE=ON \
+       -DSAF_ENABLE_HADES_MODULE=ON \
+       -DSAF_ENABLE_TRACKER_MODULE=ON \
+       -DSAF_USE_FFTW=ON \
        -DBUILD_PLUGIN_FORMAT_LV2=ON \
        -DBUILD_PLUGIN_FORMAT_VST=ON \
        -DBUILD_PLUGIN_FORMAT_VST3=ON \
@@ -101,43 +107,35 @@ install -m 755 -d %{buildroot}/%{_libdir}/
 cp -ra %{__cmake_builddir}/SDKs/Spatial_Audio_Framework/framework/libsaf.so.* %{buildroot}%{_libdir}/
 
 install -m 755 -d %{buildroot}/%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_array2sh_/sparta_array2sh_artefacts/Release/VST/* %{buildroot}%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_panner_/sparta_panner_artefacts/Release/VST/* %{buildroot}%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_ambiRoomSim_/sparta_ambiRoomSim_artefacts/Release/VST/* %{buildroot}%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_ambiENC_/sparta_ambiENC_artefacts/Release/VST/* %{buildroot}%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_rotator_/sparta_rotator_artefacts/Release/VST/* %{buildroot}%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_beamformer_/sparta_beamformer_artefacts/Release/VST/* %{buildroot}%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_matrixConv_/sparta_matrixconv_artefacts/Release/VST/* %{buildroot}%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_pitchShifter_/sparta_pitchShifter_artefacts/Release/VST/* %{buildroot}%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_ambiDRC_/sparta_ambiDRC_artefacts/Release/VST/* %{buildroot}%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_decorrelator_/sparta_decorrelator_artefacts/Release/VST/* %{buildroot}%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_multiConv_/sparta_multiconv_artefacts/Release/VST/* %{buildroot}%{_libdir}/vst/
-
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_array2sh_/sparta_array2sh_artefacts/Release/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_panner_/sparta_panner_artefacts/Release/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_ambiRoomSim_/sparta_ambiRoomSim_artefacts/Release/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_ambiENC_/sparta_ambiENC_artefacts/Release/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_rotator_/sparta_rotator_artefacts/Release/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_beamformer_/sparta_beamformer_artefacts/Release/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_matrixConv_/sparta_matrixconv_artefacts/Release/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_pitchShifter_/sparta_pitchShifter_artefacts/Release/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_ambiDRC_/sparta_ambiDRC_artefacts/Release/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_decorrelator_/sparta_decorrelator_artefacts/Release/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_multiConv_/sparta_multiconv_artefacts/Release/VST3/* %{buildroot}%{_libdir}/vst3/
-
 install -m 755 -d %{buildroot}/%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_array2sh_/sparta_array2sh_artefacts/Release/LV2/* %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_panner_/sparta_panner_artefacts/Release/LV2/* %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_ambiRoomSim_/sparta_ambiRoomSim_artefacts/Release/LV2/* %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_ambiENC_/sparta_ambiENC_artefacts/Release/LV2/* %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_rotator_/sparta_rotator_artefacts/Release/LV2/* %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_beamformer_/sparta_beamformer_artefacts/Release/LV2/* %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_matrixConv_/sparta_matrixconv_artefacts/Release/LV2/* %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_pitchShifter_/sparta_pitchShifter_artefacts/Release/LV2/* %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_ambiDRC_/sparta_ambiDRC_artefacts/Release/LV2/* %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_decorrelator_/sparta_decorrelator_artefacts/Release/LV2/* %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_multiConv_/sparta_multiconv_artefacts/Release/LV2/* %{buildroot}%{_libdir}/lv2/
+
+MODULES="6DoFconv
+ambiBIN
+ambiDEC
+ambiDRC
+ambiENC
+ambiRoomSim
+array2sh
+beamformer
+binauraliser
+binauraliser_nf
+decorrelator
+matrixConv
+multiConv
+panner
+pitchShifter
+rotator
+spreader"
+
+#  TrackerTest
+
+for Module in $MODULES
+do
+    cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_$Module_/sparta_$Module_artefacts/Release/VST/*  %{buildroot}%{_libdir}/vst/
+    cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_$Module_/sparta_$Module_artefacts/Release/VST3/* %{buildroot}%{_libdir}/vst3/
+    cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_$Module_/sparta_$Module_artefacts/Release/LV2/*  %{buildroot}%{_libdir}/lv2/
+done
 
 # Fix rpath
 for Files in `find %{buildroot}%{_libdir}/lv2/ -name "*.so"`
@@ -168,6 +166,9 @@ done
 %{_libdir}/vst3/*
 
 %changelog
+* Thu Sep 12 2024 Yann Collette <ycollette.nospam@free.fr> - 1.7.1-3
+- update to 1.7.1-3 - enable more plugins
+
 * Mon Sep 09 2024 Yann Collette <ycollette.nospam@free.fr> - 1.7.1-2
 - update to 1.7.1-2 - fix missing so file + enable VST3 / LV2 plugins
 
