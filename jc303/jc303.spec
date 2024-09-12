@@ -4,7 +4,7 @@
 # Category: Sequencer, Sampler, Plugin
 
 Name: jc303
-Version: 0.11.0
+Version: 0.11.1
 Release: 2%{?dist}
 Summary: A Free Roland TB-303 Plugin
 License: GPL-3.0-or-later
@@ -73,9 +73,6 @@ unzip %{SOURCE1}
 
 mv VST_SDK/VST2_SDK vstsdk2.4
 
-# commit id missing in clap repo
-sed -i -e "s/54d83e121545490fdbb2d3dec3ba0c1da6005dde/0a3e7a6494788ea525e95e12a8b6a51640dcdc3e/g" CMakeLists.txt
-
 %build
 
 %cmake
@@ -106,6 +103,9 @@ cp -ra %{__cmake_builddir}/JC303_artefacts/LV2/*  %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Thu Sep 12 2024 Yann Collette <ycollette.nospam@free.fr> - 0.11.1-2
+- update to 0.11.1-2
+
 * Wed Sep 04 2024 Yann Collette <ycollette.nospam@free.fr> - 0.11.0-2
 - update to 0.11.0-2
 
