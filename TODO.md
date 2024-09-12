@@ -162,6 +162,8 @@
 | elysiera                   | https://github.com/azur1s/elysiera |
 | RTcmix                     | https://github.com/RTcmix/RTcmix |
 | nam-juce                   | https://github.com/Tr3m/nam-juce |
+| Digital-Audio-Effects      | https://github.com/Tr3m/Digital-Audio-Effects |
+| multi-tap-delay            | https://github.com/Tr3m/multi-tap-delay |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
