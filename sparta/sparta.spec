@@ -110,31 +110,29 @@ install -m 755 -d %{buildroot}/%{_libdir}/vst/
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
 install -m 755 -d %{buildroot}/%{_libdir}/lv2/
 
-MODULES="6DoFconv
-ambiBIN
-ambiDEC
-ambiDRC
-ambiENC
-ambiRoomSim
-array2sh
-beamformer
-binauraliser
-binauraliser_nf
-decorrelator
-matrixConv
-multiConv
-panner
-pitchShifter
-rotator
-spreader"
+MODULES="_SPARTA_binauraliser_nf_/sparta_binauraliser_nf_artefacts
+_SPARTA_binauraliser_/sparta_binauraliser_artefacts
+_SPARTA_array2sh_/sparta_array2sh_artefacts
+_SPARTA_panner_/sparta_panner_artefacts
+_SPARTA_ambiRoomSim_/sparta_ambiRoomSim_artefacts
+_SPARTA_ambiENC_/sparta_ambiENC_artefacts
+_SPARTA_rotator_/sparta_rotator_artefacts
+_SPARTA_6DoFconv_/sparta_6DoFconv_artefacts
+_SPARTA_beamformer_/sparta_beamformer_artefacts
+_SPARTA_ambiDEC_/sparta_ambiDEC_artefacts
+_SPARTA_matrixConv_/sparta_matrixconv_artefacts
+_SPARTA_pitchShifter_/sparta_pitchShifter_artefacts
+_SPARTA_ambiBIN_/sparta_ambiBIN_artefacts
+_SPARTA_spreader_/sparta_spreader_artefacts
+_SPARTA_ambiDRC_/sparta_ambiDRC_artefacts
+_SPARTA_decorrelator_/sparta_decorrelator_artefacts
+_SPARTA_multiConv_/sparta_multiconv_artefacts"
 
-#  TrackerTest
-
-for Module in $MODULES
+for MODULE in $MODULES
 do
-    cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_$Module_/sparta_$Module_artefacts/Release/VST/*  %{buildroot}%{_libdir}/vst/
-    cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_$Module_/sparta_$Module_artefacts/Release/VST3/* %{buildroot}%{_libdir}/vst3/
-    cp -ra %{__cmake_builddir}/audio_plugins/_SPARTA_$Module_/sparta_$Module_artefacts/Release/LV2/*  %{buildroot}%{_libdir}/lv2/
+    cp -ra %{__cmake_builddir}/audio_plugins/"$MODULE"/Release/VST/*  %{buildroot}%{_libdir}/vst/
+    cp -ra %{__cmake_builddir}/audio_plugins/"$MODULE"/Release/VST3/* %{buildroot}%{_libdir}/vst3/
+    cp -ra %{__cmake_builddir}/audio_plugins/"$MODULE"/Release/LV2/*  %{buildroot}%{_libdir}/lv2/
 done
 
 # Fix rpath
