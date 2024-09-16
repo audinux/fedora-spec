@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 1b9eff950f4ce7de63b137d521690ec655f2110e
-%global gittag0 2.0.2
+%global commit0 84398e97ac9bbf3786abeff64b33c980af00c8b7
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-MUS-X
-Version: 2.0.2
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: MUS-X plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r MUS-X_plugin/dist/MUS-X/* %{buildroot}%{_libexecdir}/Rack2/plugins/MUS-X/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile

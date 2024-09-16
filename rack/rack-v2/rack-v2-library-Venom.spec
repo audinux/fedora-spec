@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 d74a35e71c7ca4444e6e22ab8159033449d975d6
-%global gittag0 2.9.0
+%global commit0 b91a8b7227892aa7fae8a15aa1caaa780cc1be21
+%global gittag0 2.9.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Venom
-Version: 2.9.0
+Version: 2.9.1
 Release: 2%{?dist}
 Summary: Venom plugin for Rack
 License: GPL-2.0-or-later
@@ -68,7 +68,7 @@ Adds additional cloned poly input/output pairs to Clone Merge, Poly Merge, or Po
 %setup -n Rack
 
 %ifarch aarch64
-%patch  0 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`
@@ -154,5 +154,5 @@ cp -r Venom_plugin/dist/Venom/* %{buildroot}%{_libexecdir}/Rack2/plugins/Venom/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.9.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.9.1-1
 - initial specfile

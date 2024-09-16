@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 d7ee24c1e7390dd8d4e9a1bf75456f408eca8955
-%global gittag0 2.0.0
+%global commit0 10549f3bc411df6f1ebb5d7bd6e7be3c3e136714
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-WavsynModular
-Version: 2.0.0
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: WavsynModular plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r WavsynModular_plugin/dist/WavsynModular/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
