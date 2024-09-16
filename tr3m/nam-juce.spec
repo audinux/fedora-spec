@@ -1,5 +1,5 @@
 # Status: active
-# Tag: Jack, Effect, Compressor, Delay
+# Tag: Jack, Effect, AI
 # Type: Plugin, Standalone, VST3
 # Category: Effect, Audio
 
