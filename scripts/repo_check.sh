@@ -982,7 +982,8 @@ https://github.com/davemollen/dm-GrainDelay
 https://github.com/babelouest/ulfius
 https://github.com/dsp56300/gearmulator
 https://github.com/Madadog/three_osc
-https://github.com/ardura/Actuate"
+https://github.com/ardura/Actuate
+https://github.com/Tr3m/Digital-Audio-Effects"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
