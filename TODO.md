@@ -163,6 +163,7 @@
 | RTcmix                     | https://github.com/RTcmix/RTcmix |
 | nam-juce                   | https://github.com/Tr3m/nam-juce |
 | multi-tap-delay            | https://github.com/Tr3m/multi-tap-delay |
+| kluppe                     | https://kluppe.klingt.org/index.html |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
