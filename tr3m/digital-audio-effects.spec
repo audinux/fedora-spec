@@ -3,6 +3,8 @@
 # Type: Plugin, Standalone, VST3
 # Category: Effect, Audio
 
+%global commit0 b227d9f7341ddf16859a0efee4425f8e158d9cc3
+
 Name: digital-audio-effects
 Version: 0.0.1
 Release: 1%{?dist}
@@ -154,5 +156,5 @@ cd ..
 %{_libdir}/vst3/*
 
 %changelog
-* Sun Jan 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
+* Sat Jan 15 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
