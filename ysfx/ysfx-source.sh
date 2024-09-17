@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # To get adlplug source code: ./ysfx-source master
-git clone https://github.com/jpcima/ysfx
+# git clone https://github.com/jpcima/ysfx
+git clone https://github.com/JoepVanlier/ysfx
 cd ysfx
 git checkout $1
 if [ $? == 1 ]; then

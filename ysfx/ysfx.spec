@@ -3,20 +3,18 @@
 # Type: Plugin, VST3
 # Category: Audio, Tool
 
-%define commit0 8077347ccf4115567aed81400281dca57acbb0cc
-
 Name: ysfx
-Version: 0.0.1
+Version: 0.0.23
 Release: 1%{?dist}
 Summary: Hosting library for JSFX
-URL: https://github.com/jpcima/ysfx
+URL: https://github.com/JoepVanlier/ysfx
 ExclusiveArch: x86_64 aarch64
 License: Apache-2.0
 
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./ysfx-source.sh maser
+# ./ysfx-source.sh v0.0.23
 
 Source0: ysfx.tar.gz
 Source1: ysfx-source.sh
@@ -37,9 +35,34 @@ This contains a hosting library, providing a JSFX compiler and runtime.
 In addition, there is an audio plugin which can act as a JSFX host in a
 digital audio workstation.
 
+%package -n license-%{name}
+Summary: License and documentations for %{name}
+License: GPL-3.0-or-later
+
+%description -n license-%{name}
+License and documentations for %{name}
+
+%package -n vst3-%{name}
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n vst3-%{name}
+VST3 version of %{name}
+
+%package -n clap-%{name}
+Summary: CLAP version of %{name}
+License: GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n clap-%{name}
+CLAP version of %{name}
+
 %prep
 
 %autosetup -n ysfx
+
+sed -i -e "s/set(SUFFIX \" FX\")/set(SUFFIX \"_FX\")/g" cmake.plugin.txt
 
 %build
 
@@ -50,12 +73,24 @@ digital audio workstation.
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 cp -ra %{__cmake_builddir}/ysfx_plugin_artefacts/RelWithDebInfo/VST3/* %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/ysfx_plugin_instrument_artefacts/RelWithDebInfo/VST3/* %{buildroot}/%{_libdir}/vst3/
 
-%files
+install -m 755 -d %{buildroot}%{_libdir}/clap/
+cp -ra %{__cmake_builddir}/ysfx_plugin_artefacts/RelWithDebInfo/CLAP/* %{buildroot}/%{_libdir}/clap/
+
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
+
+%files -n vst3-%{name}
 %{_libdir}/vst3/*
 
+%files -n clap-%{name}
+%{_libdir}/clap/*
+
 %changelog
+* Tue Sep 17 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.12-1
+- update to 0.0.23-1 - move to https://github.com/JoepVanlier/ysfx
+
 * Fri Nov 10 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
