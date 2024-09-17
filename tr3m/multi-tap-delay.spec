@@ -43,6 +43,7 @@ BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
 BuildRequires: webkit2gtk3-devel
 BuildRequires: soundtouch-devel
+BuildRequires: JUCE7
 
 %description
 A Multi-Tap delay audio plug-in that utilizes four delay lines to create a rhythmic pattern with the repeats.
