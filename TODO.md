@@ -162,6 +162,7 @@
 | elysiera                   | https://github.com/azur1s/elysiera |
 | RTcmix                     | https://github.com/RTcmix/RTcmix |
 | kluppe                     | https://kluppe.klingt.org/index.html |
+| bark                       | https://github.com/haileys/bark |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
