@@ -985,7 +985,8 @@ https://github.com/Madadog/three_osc
 https://github.com/ardura/Actuate
 https://github.com/Tr3m/Digital-Audio-Effects
 https://github.com/Tr3m/nam-juce
-https://github.com/Tr3m/multi-tap-delay"
+https://github.com/Tr3m/multi-tap-delay
+https://github.com/JoepVanlier/ysfx"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
