@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: actuate
-Version: 1.3.2
+Version: 1.3.3
 Release: 1%{?dist}
 Summary: Synthesizer, Sampler, Granulizer written in Rust with Nih-Plug and egui
 License: GPL-3.0-or-later
@@ -16,7 +16,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/ardura/Actuate/archive/refs/tags/v1.3.2.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/ardura/Actuate/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -100,5 +100,8 @@ cp -ra target/bundled/Actuate.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Mon Sep 16 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.3-1
+- update to 1.3.3-1
+
 * Fri Sep 06 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.2-1
 - Initial spec file
