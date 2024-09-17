@@ -11,7 +11,7 @@ Release: 1%{?dist}
 Summary: A JUCE implementation of the Neural Amp Modeler Plugin
 License: GPL-3.0-or-later
 URL: https://github.com/Tr3m/nam-juce
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64
 
 Vendor:       Audinux
 Distribution: Audinux
