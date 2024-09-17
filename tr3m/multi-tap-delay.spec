@@ -89,8 +89,6 @@ cp -ra %{__cmake_builddir}/multi_tap_delay_artefacts/Release/VST3/* %{buildroot}
 %license LICENSE.txt
 
 %files -n vst3-%{name}
-%doc README.md
-%license LICENSE.txt
 %{_libdir}/vst3/*
 
 %changelog

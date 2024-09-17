@@ -151,10 +151,8 @@ cd ..
 %license LICENSE.txt
 
 %files -n vst3-%{name}
-%doc README.md
-%license LICENSE.txt
 %{_libdir}/vst3/*
 
 %changelog
-* Sat Jan 15 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
+* Sun Sep 15 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
