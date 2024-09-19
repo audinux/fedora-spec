@@ -25,7 +25,7 @@ BuildRequires: dssi-devel
 BuildRequires: ladspa-devel
 BuildRequires: doxygen
 BuildRequires: graphviz
-BuildRequires: python2
+BuildRequires: python3
 BuildRequires: webkit2gtk3-devel
 BuildRequires: libcurl-devel
 
@@ -41,6 +41,8 @@ live-coding engine which can be used for rapid prototyping.
 %prep
 %autosetup -p1 -n JUCE-%{version}
 
+sed -i -e "s/python/python3/g" doxygen/Makefile
+
 %build
 
 %set_build_flags
@@ -51,8 +53,6 @@ export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g -include array"
 export CFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g"
 
 cd doxygen
-sed -i -e "s/python/python2/g" Makefile
-
 mkdir build
 %make_build CONFIG=Release STRIP=true
 cd ../extras
