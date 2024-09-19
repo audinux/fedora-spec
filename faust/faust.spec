@@ -29,7 +29,7 @@ BuildRequires: graphviz
 BuildRequires: cmake
 BuildRequires: unzip
 BuildRequires: pandoc
-BuildRequires: python2
+BuildRequires: python3
 BuildRequires: texlive-latex
 BuildRequires: texlive-collection-basic
 BuildRequires: texlive-collection-fontsrecommended
@@ -37,9 +37,12 @@ BuildRequires: texlive-mdwtools
 BuildRequires: libmicrohttpd-devel
 %if 0%{?fedora} < 39
 BuildRequires: llvm-devel
-%else
+%elif 0%{?fedora} == 40
 BuildRequires: llvm16-devel
+%else
+BuildRequires: llvm17-devel
 %endif
+
 %description
 Faust AUdio STreams is a functional programming language for real-time audio
 signal processing. Its programming model combines two approaches : functional
