@@ -1,0 +1,61 @@
+Improve C99 compatibility of code-generating shell scripts
+
+Explicitly declare the int return type of the main function.  This
+improves compatibility with future C99-only compilers, which might
+no longer support implicit ints.
+
+Submitted upstream: <https://github.com/kmatheussen/jack_capture/pull/52>
+
+diff --git a/gen_das_config_h.sh b/gen_das_config_h.sh
+index a8c3c3377c4ad6f7..8739cf9e527672df 100644
+--- a/gen_das_config_h.sh
++++ b/gen_das_config_h.sh
+@@ -14,7 +14,7 @@
+ 
+ 
+ echo "#include <sndfile.h>" >temp$$.c
+-echo "main(){return SF_FORMAT_OGG;}" >>temp$$.c
++echo "int main(void){return SF_FORMAT_OGG;}" >>temp$$.c
+ echo >>temp$$.c
+ if gcc temp$$.c 2>/dev/null; then
+     echo "#define HAVE_OGG 1"
+@@ -24,7 +24,7 @@ fi
+ 
+ 
+ echo "#include <lame/lame.h>" >temp$$.c
+-echo "main(){return 0;}" >>temp$$.c
++echo "int main(void){return 0;}" >>temp$$.c
+ echo >>temp$$.c
+ if gcc temp$$.c -lmp3lame 2>/dev/null; then
+     echo "#define HAVE_LAME 1"
+@@ -35,7 +35,7 @@ fi
+ 
+ 
+ echo "#include <lo/lo.h>" >temp$$.c
+-echo "main(){return 0;}" >>temp$$.c
++echo "int main(void){return 0;}" >>temp$$.c
+ echo >>temp$$.c
+ if pkg-config --cflags --libs liblo >/dev/null 2>/dev/null && gcc temp$$.c `pkg-config --cflags --libs liblo` 2>/dev/null ; then
+     echo "#define HAVE_LIBLO 1"
+@@ -46,7 +46,7 @@ fi
+ 
+ 
+ echo "#include <jack/jack.h>" >temp$$.c
+-echo "main(){return (int)jack_port_get_latency_range;}" >>temp$$.c
++echo "int main(void){return (int)jack_port_get_latency_range;}" >>temp$$.c
+ echo >>temp$$.c
+ if gcc temp$$.c -ljack 2>/dev/null ; then
+     echo "#define NEW_JACK_LATENCY_API 1"
+diff --git a/gen_setformat_c.sh b/gen_setformat_c.sh
+index 2202df2495005b75..c255157df2ab7281 100644
+--- a/gen_setformat_c.sh
++++ b/gen_setformat_c.sh
+@@ -55,7 +55,7 @@ echo "  return("
+ 
+ for a in $ai;do
+     echo "#include <sndfile.h>" >temp.c
+-    echo "main(){return SF_FORMAT_"$a";}" >>temp.c
++    echo "int main(void){return SF_FORMAT_"$a";}" >>temp.c
+     echo >>temp.c
+     if gcc temp.c 2>/dev/null; then
+ 	echo "    (!strcasecmp(\""$a"\",soundfile_format)) ? SF_FORMAT_"$a":"
