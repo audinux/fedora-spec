@@ -29,6 +29,7 @@ Source1: https://github.com/VCVRack/Fundamental/archive/%{commit0}.tar.gz#/%{nam
 Patch0: rack-v1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: libsamplerate-devel

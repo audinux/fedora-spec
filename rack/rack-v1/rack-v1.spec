@@ -25,6 +25,7 @@ Source1: rack-source.sh
 Patch0: rack-v1-aarch64.patch
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: libsamplerate-devel
