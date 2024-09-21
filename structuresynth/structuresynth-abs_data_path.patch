@@ -1,6 +1,8 @@
---- structure-synth-1.5.0.orig/StructureSynth/GUI/MainWindow.cpp
-+++ structure-synth-1.5.0/StructureSynth/GUI/MainWindow.cpp
-@@ -1074,13 +1074,13 @@
+diff --git StructureSynth/GUI/MainWindow.cpp StructureSynth/GUI/MainWindow.cpp
+index f800a53..51d123b 100644
+--- StructureSynth/GUI/MainWindow.cpp
++++ StructureSynth/GUI/MainWindow.cpp
+@@ -1075,13 +1075,13 @@ namespace StructureSynth {
  		// Mac needs to step two directies up, when debugging in XCode...
  		QString MainWindow::getExamplesDir() {
  			QStringList examplesDir;

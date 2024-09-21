@@ -43,10 +43,10 @@ those squelchy acid sounds.
 
 %build
 %configure
-make %{?_smp_mflags}
+%make_build
 
 %install
-make install DESTDIR="$RPM_BUILD_ROOT" INSTALL="install -p"
+%make_install
 
 # Make a symlink for easy access
 mkdir -p $RPM_BUILD_ROOT%{_bindir}

@@ -16,7 +16,7 @@ Distribution: Audinux
 
 # svn checkout https://svn.code.sf.net/p/structuresynth/code/trunk structuresynth
 # cd structuresythn
-# finf . -nams .svn -exec rm -rf {} \,
+# find . -name .svn -exec rm -rf {} \;
 # cd ..
 # tar cvfz structuresynth.tar.gz structuresynth
 # rm -rf structuresynth
@@ -26,8 +26,6 @@ Source1: structure-synth.1
 Patch0: structuresynth-nullptr.patch
 Patch1: structuresynth-qmake.patch
 Patch2: structuresynth-abs_data_path.patch
-Patch3: structuresynth-sunflow.patch
-Patch4: structuresynth-0001-add-missing-header.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: qt5-qtbase-devel
@@ -41,9 +39,13 @@ Even simple systems may generate surprising and complex structures.
 Structure Synth offers a graphical environment with multiple tabs, syntax highlighting, and OpenGL preview.
 
 %prep
-%autosetup -p1 -n structuresynth
+%autosetup -p0 -n structuresynth
 
 %build
+
+%set_build_flags
+
+export CXXFLAGS="$CXXFLAGS -include climits"
 
 %qmake_qt5 StructureSynth.pro
 %make_build

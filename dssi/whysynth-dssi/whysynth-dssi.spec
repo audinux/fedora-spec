@@ -26,8 +26,6 @@ BuildRequires: desktop-file-utils
 Requires: dssi
 Requires: hicolor-icon-theme
 
-
-
 %description
 WhySynth is a versatile softsynth which operates as a plugin for the Disposable
 Soft Synth Interface (DSSI).

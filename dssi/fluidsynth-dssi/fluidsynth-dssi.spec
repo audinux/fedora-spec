@@ -41,10 +41,10 @@ FluidSynth channel.
 
 %build
 %configure
-make %{?_smp_mflags}
+%make_build
 
 %install
-make install DESTDIR="$RPM_BUILD_ROOT"
+%make_install
 rm $RPM_BUILD_ROOT%{_libdir}/dssi/fluidsynth-dssi.la
 
 %files

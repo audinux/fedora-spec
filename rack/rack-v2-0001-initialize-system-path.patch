@@ -1,7 +1,7 @@
-From 4cd58fcc6a9146190d9c41f2dae108e1b7bece09 Mon Sep 17 00:00:00 2001
+From 8a90f822a0bd79fb9ea348074a3dca103af5c525 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Mon, 7 Aug 2023 21:42:58 +0200
-Subject: [PATCH] init system
+Date: Fri, 20 Sep 2024 17:47:35 +0200
+Subject: [PATCH] initialize system path
 
 ---
  src/asset.cpp  | 2 +-
@@ -22,19 +22,19 @@ index 33bf261..321515e 100644
  }
  
 diff --git a/src/plugin.cpp b/src/plugin.cpp
-index 3115440..2d8968d 100644
+index 7f9dd83..ffbf1da 100644
 --- a/src/plugin.cpp
 +++ b/src/plugin.cpp
 @@ -253,6 +253,9 @@ void init() {
- 	// Load Core
- 	loadPlugin("");
+ 
+ 	pluginsPath = asset::user("plugins");
  
 +	// Load plugins from System path
 +	loadPlugins("/usr/libexec/Rack2/plugins/");
 +
  	// Get user plugins directory
- 	if (settings::devMode) {
- 		pluginsPath = asset::user("plugins");
+ 	system::createDirectory(pluginsPath);
+ 
 -- 
-2.41.0
+2.46.0
 

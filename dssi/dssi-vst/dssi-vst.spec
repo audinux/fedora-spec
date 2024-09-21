@@ -15,8 +15,6 @@ Source0: http://code.breakfastquay.com/attachments/download/10/%{name}-%{version
 # wine-g++ on wine-devel-1.1.18 (Fedora 11) creates executables with .exe suffix:
 Patch1: %{name}-wine1118.patch
 
-ExclusiveArch: x86_64 arm64
-
 BuildRequires: gcc-c++
 BuildRequires: make
 BuildRequires: dssi-devel
