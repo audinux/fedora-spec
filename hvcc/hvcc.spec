@@ -1,6 +1,6 @@
 # Status: active
 Name: hvcc
-Version: 0.12.0
+Version: 0.12.1
 Release: 2%{?dist}
 Summary: The heavy hvcc compiler for Pure Data patches.
 URL: https://github.com/Wasted-Audio/hvcc
@@ -61,6 +61,9 @@ rm -rf %{buildroot}/%{python3_sitelib}/tests
 %{_datadir}/%{name}/examples/*
 
 %changelog
+* Sat Sep 21 2024 Yann Collette <ycollette.nospam@free.fr> - 0.12.1-2
+- update to 0.12.1-2
+
 * Fri Jun 21 2024 Yann Collette <ycollette.nospam@free.fr> - 0.12.0-2
 - update to 0.12.0-2
 
