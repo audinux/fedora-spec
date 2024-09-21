@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 264780468ccfd5fc63065970798dd8233d49f71e
-%global gittag0 2.4.6
+%global commit0 db7930d8b8f5818ece365f7409d5b67ee2f93d70
+%global gittag0 2.3.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-OrangeLine
-Version: 2.4.6
+Name:    rack-v2-Calvario
+Version: 2.3.1
 Release: 2%{?dist}
-Summary: OrangeLine plugin for Rack
+Summary: Calvario plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Stubs42/OrangeLine
+URL:     https://github.com/HydrangeaSystems/Calvario
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,8 +29,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/Stubs42/OrangeLine/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: OrangeLine_plugin.json
+Source1: https://github.com/HydrangeaSystems/Calvario/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: Calvario_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -61,8 +61,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-OrangeLine plugin for Rack.
-Keep CVs in a defined pitch range
+Calvario plugin for Rack.
+Small and brutal signal cross-modulator.
 
 %prep
 %setup -n Rack
@@ -135,24 +135,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir OrangeLine_plugin
-tar xvfz %{SOURCE1} --directory=OrangeLine_plugin --strip-components=1
+mkdir Calvario_plugin
+tar xvfz %{SOURCE1} --directory=Calvario_plugin --strip-components=1
 
-cp -n %{SOURCE2} OrangeLine_plugin/plugin.json || true
+cp -n %{SOURCE2} Calvario_plugin/plugin.json || true
 
 %build
 
-cd OrangeLine_plugin
+cd Calvario_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/OrangeLine/
-cp -r OrangeLine_plugin/dist/OrangeLine/* %{buildroot}%{_libexecdir}/Rack2/plugins/OrangeLine/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/Calvario/
+cp -r Calvario_plugin/dist/Calvario/* %{buildroot}%{_libexecdir}/Rack2/plugins/Calvario/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.6-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-1
 - initial specfile
