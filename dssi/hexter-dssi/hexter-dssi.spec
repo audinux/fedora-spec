@@ -19,6 +19,9 @@ Source2: hexter.png
 Patch0: Fixed-Segfault-on-startup.patch
 
 BuildRequires: gcc
+BuildRequires: automake
+BuildRequires: autoconf
+BuildRequires: libtool
 BuildRequires: alsa-lib-devel
 BuildRequires: desktop-file-utils
 BuildRequires: dssi-devel
@@ -26,10 +29,6 @@ BuildRequires: gtk2-devel
 BuildRequires: liblo-devel
 BuildRequires: ncurses-devel
 BuildRequires: chrpath
-BuildRequires: automake
-BuildRequires: autoconf
-BuildRequires: libtool
-BuildRequires: make
 
 Requires: dssi
 
@@ -52,12 +51,12 @@ interfaces, permitting them to be hosted in-process by audio applications.
 export LDFLAGS="-lm"
 ./autogen.sh
 %configure --with-gnu-ld
-make %{?_smp_mflags}
+%make_build
 (cd extra; gcc $CFLAGS -o tx_edit tx_edit.c -lcurses -lasound -lm)
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
+%make_install
 mkdir -p $RPM_BUILD_ROOT%{_bindir}
 ln -s jack-dssi-host $RPM_BUILD_ROOT%{_bindir}/hexter
 install -m 755 extra/tx_edit $RPM_BUILD_ROOT%{_bindir}/tx_edit

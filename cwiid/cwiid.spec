@@ -34,7 +34,6 @@ BuildRequires: gawk
 BuildRequires: bison
 BuildRequires: flex
 BuildRequires: gtk2-devel
-BuildRequires: python2-devel
 BuildRequires: bluez-libs-devel
 BuildRequires: desktop-file-utils
 
@@ -49,13 +48,6 @@ Requires: %{name} = %{version}-%{release}, bluez-libs-devel
 %description devel
 The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
-
-%package python2
-Summary: Python binding for %{name}
-Requires: %{name} = %{version}-%{release}
-
-%description python2
-Python2 binding for %{name}
 
 %package utils
 Summary: Wiimote connection test application
@@ -72,7 +64,7 @@ Summary: Enables using the wiimote as an input source
 # since the file wminput/action_enum.txt is GPLv2 as stated
 # in the file.
 License: GPL-2.0-only
-Requires: %{name} = %{version}-%{release}, %{name}-python2
+Requires: %{name} = %{version}-%{release}
 
 %description wminput
 This program allows the user to use the wiimote to emulate normal system
@@ -81,7 +73,7 @@ input sources like the mouse and keyboard.
 %prep
 %autosetup -p1 -n cwiid-%{git_commit}
 
-sed -i -e "s/CFLAGS =/CFLAGS=-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=\/usr\/lib\/rpm\/redhat\/redhat-hardened-cc1 -specs=\/usr\/lib\/rpm\/redhat\/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -I\/usr\/include\/python2.7 -I. /" defs.mak.in
+sed -i -e "s/CFLAGS =/CFLAGS=-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -specs=\/usr\/lib\/rpm\/redhat\/redhat-hardened-cc1 -specs=\/usr\/lib\/rpm\/redhat\/redhat-annobin-cc1 -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -I. /" defs.mak.in
 sed -i -e "s/WARNFLAGS = -Wall -W/WARNFLAGS = -Wall -W -fPIC -Wno-incompatible-pointer-types/g" defs.mak.in
 
 %ifarch aarch64
@@ -94,7 +86,7 @@ sed -i -e "s/-fcf-protection//g" defs.mak.in
 aclocal
 autoconf
 
-%configure --disable-static --docdir="%{_pkgdocdir}" --with-python=python2
+%configure --disable-static --docdir="%{_pkgdocdir}" --without-python
 %make_build
 
 %install
@@ -118,9 +110,6 @@ desktop-file-install --dir=${RPM_BUILD_ROOT}%{_datadir}/applications %{SOURCE1}
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*
 
-%files python2
-%{python2_sitearch}/*
-
 %files wminput
 # Fold-in wminput docs into main-package
 %{_pkgdocdir}/Xmodmap
@@ -137,6 +126,9 @@ desktop-file-install --dir=${RPM_BUILD_ROOT}%{_datadir}/applications %{SOURCE1}
 %{_datadir}/applications/wmgui.desktop
 
 %changelog
+* Sat Sep 21 2024 Yann Collette <ycollette.nospam@free.fr> 0.6.00-36.20100505gitfadf11e
+- update for Fedora 41 - disable Python package (Python-2.7 removed from Fedora)
+
 * Tue Nov 5 2019 Yann Collette <ycollette.nospam@free.fr> 0.6.00-36.20100505gitfadf11e
 - update for Fedora 31
 

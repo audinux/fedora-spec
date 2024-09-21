@@ -9,13 +9,14 @@ Release: 1%{?dist}
 Summary: A LV2 simple sound generator to have some fun with
 License: GPL-2.0-or-later
 URL: https://github.com/brummer10/Xmonk.lv2
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources:
 # ./brummer10-source.sh Xmonk.lv2 0.4
+# a build bug has been fixed in master. So build master and if 0.5, build 0.5
 # ./brummer10-source.sh Xmonk.lv2 master
 
 Source0: Xmonk.lv2.tar.gz
