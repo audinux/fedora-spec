@@ -4,7 +4,7 @@
 # Category: Tool
 
 Name: faustlive
-Version: 2.5.18
+Version: 2.5.19
 Release: 1%{?dist}
 Summary: The swiss knife for Faust development
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to get source!
-# ./faustlive-source.sh 2.5.18
+# ./faustlive-source.sh 2.5.19
 
 Source0: faustlive.tar.gz
 Source1: faustlive-source.sh
@@ -30,6 +30,13 @@ BuildRequires: faust
 BuildRequires: faust-osclib-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: libcurl-devel
+%if 0%{?fedora} <= 39
+BuildRequires: llvm-devel
+%elif 0%{?fedora} == 40
+BuildRequires: llvm16-devel
+%else
+BuildRequires: llvm17-devel
+%endif
 BuildRequires: desktop-file-utils
 
 Requires: faust
@@ -57,6 +64,12 @@ sed -i -e "1 i #include <list>" src/Audio/JA/JA_audioFader.h
 sed -i -e "2 i using std::list;" src/Audio/JA/JA_audioFader.h
 
 %build
+
+%if 0%{?fedora} == 40
+export PATH=$PATH:/usr/lib64/llvm16/bin
+%elif 0%{?fedora} >= 41
+export PATH=$PATH:/usr/lib64/llvm17/bin
+%endif
 
 cd Build
 %cmake
@@ -87,6 +100,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/FaustLive.desktop
 %{_datadir}/pixmaps/Faustlive.xpm
 
 %changelog
+* Sat Sep 21 2024 Yann Collette <ycollette.nospam@free.fr> - 2.5.19-1
+- update to 2.5.19-1
+
 * Tue Apr 02 2024 Yann Collette <ycollette.nospam@free.fr> - 2.5.18-1
 - update to 2.5.18-1
 
