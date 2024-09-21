@@ -16,7 +16,7 @@ Distribution: Audinux
 
 # svn checkout https://svn.code.sf.net/p/structuresynth/code/trunk structuresynth
 # cd structuresythn
-# finf . -nams .svn -exec rm -rf {} \,
+# find . -name .svn -exec rm -rf {} \;
 # cd ..
 # tar cvfz structuresynth.tar.gz structuresynth
 # rm -rf structuresynth
