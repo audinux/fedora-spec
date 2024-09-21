@@ -6,7 +6,7 @@
 
 Summary: Old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.
 Name: padthv1
-Version: 1.0.0
+Version: 1.1.1
 Release: 4%{?dist}
 URL: https://sourceforge.net/projects/%{name}
 ExclusiveArch: x86_64 aarch64
@@ -97,6 +97,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.des
 %{_libdir}/lv2/%{name}.lv2/
 
 %changelog
+* Sat Sep 21 2024 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-4
+- update to 1.1.1-4
+
 * Wed Jun 19 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-4
 - update to 1.0.0-4
 
