@@ -1,10 +1,10 @@
 # Status: active
 # Tag: Audio, Tool
-# Type: Plugin, VST3
+# Type: Plugin, VST3; CLAP
 # Category: Audio, Tool
 
 Name: ysfx
-Version: 0.0.23
+Version: 0.0.24
 Release: 1%{?dist}
 Summary: Hosting library for JSFX
 URL: https://github.com/JoepVanlier/ysfx
@@ -14,7 +14,7 @@ License: Apache-2.0
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./ysfx-source.sh v0.0.23
+# ./ysfx-source.sh v0.0.24
 
 Source0: ysfx.tar.gz
 Source1: ysfx-source.sh
@@ -77,6 +77,7 @@ cp -ra %{__cmake_builddir}/ysfx_plugin_instrument_artefacts/RelWithDebInfo/VST3/
 
 install -m 755 -d %{buildroot}%{_libdir}/clap/
 cp -ra %{__cmake_builddir}/ysfx_plugin_artefacts/RelWithDebInfo/CLAP/* %{buildroot}/%{_libdir}/clap/
+cp -ra %{__cmake_builddir}/ysfx_plugin_instrument_artefacts/RelWithDebInfo/CLAP/* %{buildroot}/%{_libdir}/clap/
 
 %files -n license-%{name}
 %doc README.md
@@ -89,7 +90,10 @@ cp -ra %{__cmake_builddir}/ysfx_plugin_artefacts/RelWithDebInfo/CLAP/* %{buildro
 %{_libdir}/clap/*
 
 %changelog
-* Tue Sep 17 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.12-1
+* Sat Sep 21 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.24-1
+- update to 0.0.24-1
+
+* Tue Sep 17 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.23-1
 - update to 0.0.23-1 - move to https://github.com/JoepVanlier/ysfx
 
 * Fri Nov 10 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
