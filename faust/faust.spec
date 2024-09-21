@@ -4,7 +4,7 @@
 # Category: Audio, Programming
 
 Name: faust
-Version: 2.74.6
+Version: 2.75.7
 Release: 37%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to get source:
-# ./faust-source.sh 2.74.6
+# ./faust-source.sh 2.75.7
 
 Source0: faust.tar.gz
 Source1: faust-backends.cmake
@@ -35,12 +35,15 @@ BuildRequires: texlive-collection-basic
 BuildRequires: texlive-collection-fontsrecommended
 BuildRequires: texlive-mdwtools
 BuildRequires: libmicrohttpd-devel
-%if 0%{?fedora} < 39
+%if 0%{?fedora} <= 39
 BuildRequires: llvm-devel
 %elif 0%{?fedora} == 40
 BuildRequires: llvm16-devel
 %else
 BuildRequires: llvm17-devel
+%endif
+%if 0%{?fedora} > 39
+BuildRequires: zlib-ng-compat-devel
 %endif
 
 %description
@@ -130,8 +133,10 @@ cp %{SOURCE1} build
 
 %build
 
-%if 0%{?fedora} >= 39
+%if 0%{?fedora} == 40
 export PATH=$PATH:/usr/lib64/llvm16/bin
+%elif 0%{?fedora} >= 41
+export PATH=$PATH:/usr/lib64/llvm17/bin
 %endif
 
 %set_build_flags
@@ -197,6 +202,9 @@ done
 %{_datadir}/faust/*.lib
 
 %changelog
+* Sat Sep 21 2024 Yann Collette <ycollette.nospam@free.fr> - 2.75.7-37
+- update to 2.75.7-37
+
 * Thu Jun 20 2024 Yann Collette <ycollette.nospam@free.fr> - 2.74.6-37
 - update to 2.74.6-37
 
