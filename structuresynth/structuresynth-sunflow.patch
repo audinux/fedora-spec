@@ -1,0 +1,19 @@
+--- structure-synth-1.5.0.orig/Misc/Sunflow-Colored.rendertemplate
++++ structure-synth-1.5.0/Misc/Sunflow-Colored.rendertemplate
+@@ -1,4 +1,4 @@
+-<template defaultExtension="Sunflow scene file (*.sc)" name="Sunflow" runAfter="&quot;%SUNFLOW%\sunflow2.bat&quot; &quot;$FILE&quot; -o &quot;$FILE.png&quot;">
++<template defaultExtension="Sunflow scene file (*.sc)" name="Sunflow" runAfter="&quot;sunflow&quot; &quot;$FILE&quot; -o &quot;$FILE.png&quot;">
+  <description>
+ A simple Sunflow render template, using one shader for each object. 
+ The template uses ambient occlusion lightning, which means there is no need to worry about setting up light sources. 
+--- structure-synth-1.5.0.orig/Examples/Tutorials/JavaScript - Movie.es	
++++ structure-synth-1.5.0/Examples/Tutorials/JavaScript - Movie.es	
+@@ -26,7 +26,7 @@ for (i = 0; i <=  max; i+=1) {
+        /*
+        name = "f:/Test/out" + pad(i);
+ 	Builder.templateRenderToFile("Sunflow-Colored.rendertemplate", name + ".sc",true); 
+-       Builder.execute('"C:/Program Files/Java/jdk1.6.0_21/bin/java"', '-Xmx1G -server -jar  "%SUNFLOW%/sunflow.jar" ' +  name + ".sc -nogui -o " + name + ".png", true);
++       Builder.execute("sunflow", name + ".sc -o " +  name + ".sc -nogui -o " + name + ".png", true);
+    	*/
+ 
+ 	 // ---- Internal raytrace ------

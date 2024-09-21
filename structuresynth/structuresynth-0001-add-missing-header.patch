@@ -1,0 +1,24 @@
+From 32c90b8b0aee912986eac06723c538c8434e432b Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Fri, 2 Oct 2020 23:32:34 +0200
+Subject: [PATCH] add missing header
+
+---
+ SyntopiaCore/GLEngine/Raytracer/AtomicCounter.h | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/SyntopiaCore/GLEngine/Raytracer/AtomicCounter.h b/SyntopiaCore/GLEngine/Raytracer/AtomicCounter.h
+index dc42d4a..626e1de 100644
+--- a/SyntopiaCore/GLEngine/Raytracer/AtomicCounter.h
++++ b/SyntopiaCore/GLEngine/Raytracer/AtomicCounter.h
+@@ -1,5 +1,7 @@
+ #pragma once
+ 
++#include <limits.h>
++
+ #include <QMutex>
+ #include <QWaitCondition>
+ 
+-- 
+2.26.2
+

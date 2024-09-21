@@ -1,0 +1,18 @@
+--- structure-synth-1.5.0.orig/StructureSynth/GUI/MainWindow.cpp
++++ structure-synth-1.5.0/StructureSynth/GUI/MainWindow.cpp
+@@ -1074,13 +1074,13 @@
+ 		// Mac needs to step two directies up, when debugging in XCode...
+ 		QString MainWindow::getExamplesDir() {
+ 			QStringList examplesDir;
+-			examplesDir << "Examples" << "../../Examples";
++			examplesDir << DATADIR "/Examples" << "Examples";
+ 			return findDirectory(examplesDir);
+ 		}
+ 
+ 		QString MainWindow::getMiscDir() {
+ 			QStringList miscDir;
+-			miscDir << "Misc" << "../../Misc";
++			miscDir << DATADIR "/Misc" << "Misc";
+ 			return findDirectory(miscDir);
+ 		}
+ 
