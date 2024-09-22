@@ -24,7 +24,7 @@ Patch0:  psi-plugins-lv2ui-descriptor.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel
-BuildRequires: python2
+BuildRequires: python3
 BuildRequires: fltk-devel
 BuildRequires: fltk-fluid
 BuildRequires: non-ntk-devel
@@ -76,6 +76,11 @@ Roland JP8000/JP8080 but has since widened is scope.
 %build
 
 %set_build_flags
+
+mkdir bin
+ln -s /usr/bin/python2 bin/python2
+ln -s /usr/bin/python2 bin/python
+export PATH=`pwd`/bin:$PATH
 
 ./waf configure --prefix=%{_prefix} --libdir=%{_libdir}
 ./waf build

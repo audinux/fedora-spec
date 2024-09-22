@@ -11,6 +11,8 @@ URL: https://github.com/Justin-Johnson/ReJJ
 ExclusiveArch: x86_64 aarch64
 License: MIT
 
+BuildArch: noarch
+
 Vendor:       Audinux
 Distribution: Audinux
 

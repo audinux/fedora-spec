@@ -51,7 +51,7 @@ Converts soundfonts in the legacy sfArk v2 file format to sf2
 %{_bindir}/*
 
 %changelog
-* Fri Oct 22 2020 Yann Collette <ycollette dot nospam at free.fr> 0.1-2
+* Thu Oct 22 2020 Yann Collette <ycollette dot nospam at free.fr> 0.1-2
 - fix debug build
 
 * Mon Oct 15 2018 Yann Collette <ycollette dot nospam at free.fr> 0.1-1
