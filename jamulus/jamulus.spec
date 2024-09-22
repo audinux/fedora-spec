@@ -4,7 +4,7 @@
 # Category: Audio
 
 %global v_major 3
-%global v_minor 10
+%global v_minor 11
 %global v_patch 0
 
 Name: jamulus
@@ -93,6 +93,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-server.deskto
 %{_mandir}/man1/*
 
 %changelog
+* Sat Sep 21 2024 Yann Collette <ycollette.nospam@free.fr> - 3.11.0-8
+- update to 3.11.0-8
+
 * Mon Sep 04 2023 Yann Collette <ycollette.nospam@free.fr> - 3.10.0-8
 - update to 3.10.0-8
 
