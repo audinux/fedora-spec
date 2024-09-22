@@ -9,7 +9,7 @@
 %global debug_package %{nil}
 
 # Global variables for github repository
-%global commit0 60aad63b88718e80b66e36ff7442c9d9fce48a76
+%global commit0 e7567e5f27073433cea7f714b46cb62cf89c72a2 
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
@@ -29,8 +29,7 @@ Distribution: Audinux
 
 Source0: Rack.tar.gz
 Source1: https://github.com/VCVRack/Fundamental/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Patch0: rack-v2-0001-initialize-system-path.patch
-Patch1: rack-v2-aarch64.patch
+Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
