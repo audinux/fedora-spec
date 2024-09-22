@@ -19,7 +19,6 @@ ExclusiveArch: x86_64
 Source0: https://github.com/falkTX/Carla/archive/v%{version}.tar.gz#/Carla-%{version}.tar.gz
 Patch0: Carla-libdir.patch
 Patch1: Carla-single-libs-path.patch
-Patch2: Carla-0001-fix-prototype.patch
 
 BuildRequires: gcc
 BuildRequires: gcc-c++
@@ -118,13 +117,7 @@ Provides: lv2-Carla-mao-devel = %{version}
 This package contains the Carla LV2 plugin.
 
 %prep
-%setup -n Carla-%{version}
-
-%patch 0 -p0
-%patch 1 -p0
-%if 0%{?fedora} >= 41
-%patch 2 -p1
-%endif
+%autosetup -p1 -n Carla-%{version}
 
 # remove windows stuff
 rm -rf data/{macos,windows}

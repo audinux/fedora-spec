@@ -1,6 +1,17 @@
---- data/carla-single	2018-09-06 09:49:37.310950156 +1000
-+++ data/carla-single	2019-09-25 16:36:23.365683884 +1000
-@@ -25,9 +25,9 @@
+From 6e7c6a628d9e77f4780b69ff5429312305d099e7 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 22 Sep 2024 20:39:31 +0200
+Subject: [PATCH] single-lib-path
+
+---
+ data/carla-single | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/data/carla-single b/data/carla-single
+index d5bfdca..73b319c 100755
+--- a/data/carla-single
++++ b/data/carla-single
+@@ -25,9 +25,9 @@ import sys
  # --------------------------------------------------------------------------------------------------------
  # Setup
  
@@ -12,3 +23,6 @@
  CARLA_RESDIR = os.path.join(INSTALL_PREFIX, "share", "carla", "resources")
  
  # --------------------------------------------------------------------------------------------------------
+-- 
+2.46.1
+
