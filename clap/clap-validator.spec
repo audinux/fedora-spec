@@ -18,7 +18,8 @@ Distribution: Audinux
 
 Source0: https://github.com/free-audio/clap-validator/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: rust cargo
+BuildRequires: gcc gcc-c++
+BuildRequires: rustup
 
 %description
 A validator and automatic test suite for CLAP plugins.
@@ -30,7 +31,26 @@ Clap-validator can automatically test one or more plugins for common bugs and in
 %build
 
 export RUSTFLAGS="-g -O"
-export RUST_BACKTRACE=1
+
+export CWD=`pwd`
+export RUSTUP_HOME="$CWD/rustup"
+export CARGO_HOME="$CWD/cargo"
+
+#%ifarch x86_64
+#rustup-init -y --default-toolchain nightly-x86_64-unknown-linux-gnu
+#%endif
+#%ifarch aarch64
+#rustup-init -y --default-toolchain nightly-aarch64-unknown-linux-gnu
+#%endif
+
+%ifarch x86_64
+rustup-init -y --default-toolchain 1.76.0-x86_64-unknown-linux-gnu
+%endif
+%ifarch aarch64
+rustup-init -y --default-toolchain 1.76.0-aarch64-unknown-linux-gnu
+%endif
+
+source cargo/env
 
 cargo build --release
 
