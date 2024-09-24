@@ -6,7 +6,7 @@
 %global commit0 ea5329aec334d417d6838bf96f905b93475eec4f
 
 Name: drumrox-kits
-Version: 0.0.1
+Version: 1.0.0
 Release: 6%{?dist}
 Summary: A set of drumrox drum kits
 License: GPL-3.0-or-later
@@ -18,7 +18,7 @@ Distribution: Audinux
 
 BuildArch: noarch
 
-Source0: https://github.com/psemiletov/drumrox-kits/archive/%{commit0}.zip#/%{name}-%{commit0}.zip
+Source0: https://github.com/psemiletov/drum_sklad/archive/refs/tags/1.0.0.tar.gz#/%{name}-%{version}.tar.gz
 
 %description
 Drum kits for Drumrox LV2 drum machine
@@ -207,7 +207,7 @@ Requires: license-%{name}
 The Drumulator drumkit for %{name}
 
 %prep
-%autosetup -n drum_sklad-%{commit0}
+%autosetup -n drum_sklad-%{version}
 
 %install
 
