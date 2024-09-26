@@ -9,7 +9,7 @@
 %global debug_package %{nil}
 
 Name: cardinal
-Version: 24.05
+Version: 24.09
 Release: 2%{?dist}
 Summary: Virtual modular synthesizer plugin
 License: GPL-3.0-or-later
@@ -67,6 +67,13 @@ for FreeBSD, Linux, macOS and Windows.
 It is based on the popular VCV Rack but with a focus on being a fully
 self-contained plugin version.
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+BuildArch: noarch
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package common
 Summary: Common files for Cardinal
 BuildArch: noarch
@@ -77,6 +84,7 @@ Common data files for Cardinal standalone and plugin versions.
 %package mini
 Summary: Mini variant of Cardinal
 Requires: %{name}-common = %{version}-%{release}
+Requires: license-%{name} = %{version}-%{release}
 
 %description mini
 This is a special variant with a very small, hand-picked module selection
@@ -85,6 +93,7 @@ and limited IO (2 audio ports plus 5 CV).
 %package -n lv2-%{name}
 Summary: LV2 version of %{name}
 Requires: %{name}-common = %{version}-%{release}
+Requires: license-%{name} = %{version}-%{release}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -92,6 +101,7 @@ LV2 version of %{name}
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
 Requires: %{name}-common = %{version}-%{release}
+Requires: license-%{name} = %{version}-%{release}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -99,6 +109,7 @@ VST3 version of %{name}
 %package -n vst-%{name}
 Summary: VST2 version of %{name}
 Requires: %{name}-common = %{version}-%{release}
+Requires: license-%{name} = %{version}-%{release}
 
 %description -n vst-%{name}
 VST2 version of %{name}
@@ -106,6 +117,7 @@ VST2 version of %{name}
 %package -n clap-%{name}
 Summary: CLAP version of %{name}
 Requires: %{name}-common = %{version}-%{release}
+Requires: license-%{name} = %{version}-%{release}
 
 %description -n clap-%{name}
 CLAP version of %{name}
@@ -176,7 +188,6 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/%{name}.desktop
 
 %files common
-%license LICENSE
 %{_datadir}/%{name}/
 %{_datadir}/doc/%{name}/
 %{_datadir}/icons/hicolor/512x512/apps/*
@@ -185,6 +196,10 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_bindir}/CardinalMini
 %{_libdir}/lv2/CardinalMini.lv2/
 %{_datadir}/applications/%{name}-mini.desktop
+
+%files -n license-%{name}
+%license LICENSE
+%doc README.md docs/*
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/Cardinal.lv2/
@@ -201,6 +216,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Tue Sep 24 2024 Yann Collette <ycollette.nospam@free.fr> - 24.09-2
+- update to 24.09-2
+
 * Sat May 25 2024 Yann Collette <ycollette.nospam@free.fr> - 24.05-2
 - update to 24.05-2
 
