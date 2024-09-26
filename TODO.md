@@ -163,6 +163,11 @@
 | RTcmix                     | https://github.com/RTcmix/RTcmix |
 | kluppe                     | https://kluppe.klingt.org/index.html |
 | bark                       | https://github.com/haileys/bark |
+| chiptrack                  | https://github.com/jturcotte/chiptrack |
+| LittleGPTracker            | https://github.com/djdiskmachine/LittleGPTracker |
+| xmodits                    | https://github.com/B0ney/xmodits |
+| xmodits-cli                | https://github.com/B0ney/xmodits-cli |
+| dm-Reverse                 | https://github.com/davemollen/dm-Reverse |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
