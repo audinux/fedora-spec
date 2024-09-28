@@ -6,12 +6,11 @@
 %global debug_package %{nil}
 
 Name: equis
-Version: 0.6.3
+Version: 0.7.1
 Release: 1%{?dist}
 Summary: The hackable DJ Mixer inspired by the playdifferently model 1
 License: GPL-3.0-or-later
 URL: https://codeberg.org/obsoleszenz/equis
-/bin/bash: ligne 1: q : commande introuvable
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -45,18 +44,26 @@ export RUST_BACKTRACE=1
 export CWD=`pwd`
 export RUSTUP_HOME="$CWD/rustup"
 export CARGO_HOME="$CWD/cargo"
+
 # rustup-init -y --default-toolchain=1.77.0-x86_64-unknown-linux-gnu
-# rustup-init -y --default-toolchain=nightly-x86_64-unknown-linux-gnu
 # source cargo/env
 # rustup target list
 # cargo build --release --bin hexosynth_jack
 
+#%ifarch x86_64
+#rustup-init -y --default-toolchain nightly-x86_64-unknown-linux-gnu
+#%endif
+#%ifarch aarch64
+#rustup-init -y --default-toolchain nightly-aarch64-unknown-linux-gnu
+#%endif
+
 %ifarch x86_64
-rustup-init -y --default-toolchain nightly-x86_64-unknown-linux-gnu
+rustup-init -y --default-toolchain 1.76.0-x86_64-unknown-linux-gnu
 %endif
 %ifarch aarch64
-rustup-init -y --default-toolchain nightly-aarch64-unknown-linux-gnu
+rustup-init -y --default-toolchain 1.76.0-aarch64-unknown-linux-gnu
 %endif
+
 source cargo/env
 
 cargo build --release
@@ -73,6 +80,9 @@ cp -ra target/release/equis %{buildroot}/%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Sat Sep 28 2024 Yann Collette <ycollette.nospam@free.fr> - 0.7.1-1
+- update to 0.7.1-1
+
 * Thu Feb 15 2024 Yann Collette <ycollette.nospam@free.fr> - 0.6.3-1
 - update to 0.6.3-1
 
