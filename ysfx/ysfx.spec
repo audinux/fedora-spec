@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: ysfx
-Version: 0.0.24
+Version: 0.0.25
 Release: 1%{?dist}
 Summary: Hosting library for JSFX
 URL: https://github.com/JoepVanlier/ysfx
@@ -14,7 +14,7 @@ License: Apache-2.0
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./ysfx-source.sh v0.0.24
+# ./ysfx-source.sh v0.0.25
 
 Source0: ysfx.tar.gz
 Source1: ysfx-source.sh
@@ -90,6 +90,9 @@ cp -ra %{__cmake_builddir}/ysfx_plugin_instrument_artefacts/RelWithDebInfo/CLAP/
 %{_libdir}/clap/*
 
 %changelog
+* Fri Sep 27 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.25-1
+- update to 0.0.25-1
+
 * Sat Sep 21 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.24-1
 - update to 0.0.24-1
 
