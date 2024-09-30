@@ -4,7 +4,7 @@
 # Category: Audio, DAW, Sequencer
 
 Name: chataigne
-Version: 1.9.19
+Version: 1.9.20
 Release: 1%{?dist}
 Summary: Artist-friendly Modular Machine for Art and Technology
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./source-chataigne.sh 1.9.19
+# $ ./source-chataigne.sh 1.9.20
 
 Source0: Chataigne.tar.gz
 Source1: JUCE.tar.gz
@@ -39,6 +39,9 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: lv2-devel
+%if 0%{?fedora} > 40
+BuildRequires: openssl-devel-engine
+%endif
 BuildRequires: openssl-devel
 BuildRequires: hidapi-devel
 BuildRequires: webkit2gtk3-devel
@@ -110,6 +113,9 @@ chrpath --delete %{buildroot}%{_bindir}/Chataigne
 %{_datadir}/applications/*
 
 %changelog
+* Sun Sep 29 2024 Yann Collette <ycollette.nospam@free.fr> - 1.9.20-1
+- Update to 1.9.20-1
+
 * Tue Jun 25 2024 Yann Collette <ycollette.nospam@free.fr> - 1.9.19-1
 - Update to 1.9.19-1
 
