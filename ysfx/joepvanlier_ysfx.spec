@@ -4,12 +4,14 @@
 # Category: Audio, Effect
 
 Name: joepvanlier_ysfx
-Version: 0.1.0
+Version: 0.2.0
 Release: 1%{?dist}
 Summary: A bundle of JSFX and scripts for reaper.
 URL: https://github.com/JoepVanlier/JSFX
 ExclusiveArch: x86_64 aarch64
 License: MIT
+
+BuildArch: noarch
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -36,6 +38,9 @@ cp -ra * %{buildroot}%{_datadir}/%{name}/
 %{_datadir}/%{name}/*
 
 %changelog
+* Sun Sep 29 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
+- update to 0.2.0-1
+
 * Sun Dec 17 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
 - update to 0.1.0-1
 
