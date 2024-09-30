@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 f1a20abf47b7d2318ea0ac67aee75a156f4d99e8
-%global gittag0 2.0.8
+%global commit0 049c8b715b6d90b57f3b22e8d8f658785e6ad096
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-CVfunk
-Version: 2.0.8
+Name:    rack-v2-Wygonium
+Version: 2.0.1
 Release: 2%{?dist}
-Summary: CVfunk plugin for Rack
+Summary: Wygonium plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/codygeary/CVfunk-Modules
+URL:     https://github.com/gwygonik/ORBsqVi
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,8 +29,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/codygeary/CVfunk-Modules/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: CVfunk_plugin.json
+Source1: https://github.com/gwygonik/ORBsqVi/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: Wygonium_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -61,8 +61,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-CVfunk plugin for Rack.
-Fusion of a comparator and a step generator
+Wygonium plugin for Rack.
+An algorithmic sequencer based on the Wygonium ORBsq Mi.
 
 %prep
 %setup -n Rack
@@ -135,24 +135,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir CVfunk_plugin
-tar xvfz %{SOURCE1} --directory=CVfunk_plugin --strip-components=1
+mkdir Wygonium_plugin
+tar xvfz %{SOURCE1} --directory=Wygonium_plugin --strip-components=1
 
-cp -n %{SOURCE2} CVfunk_plugin/plugin.json || true
+cp -n %{SOURCE2} Wygonium_plugin/plugin.json || true
 
 %build
 
-cd CVfunk_plugin
+cd Wygonium_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/CVfunk/
-cp -r CVfunk_plugin/dist/CVfunk/* %{buildroot}%{_libexecdir}/Rack2/plugins/CVfunk/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/Wygonium/
+cp -r Wygonium_plugin/dist/Wygonium/* %{buildroot}%{_libexecdir}/Rack2/plugins/Wygonium/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.8-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile
