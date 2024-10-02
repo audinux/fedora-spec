@@ -989,7 +989,8 @@ https://github.com/Tr3m/nam-juce
 https://github.com/Tr3m/multi-tap-delay
 https://github.com/JoepVanlier/ysfx
 https://github.com/domichel/dkbuilder-guitarix-lv2-plugins
-https://github.com/Princeton-CDH/bitKlavier"
+https://github.com/Princeton-CDH/bitKlavier
+https://github.com/davemollen/dm-Whammy"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
