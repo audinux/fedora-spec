@@ -1,0 +1,13 @@
+diff --git a/bk_JUCE/bitKlavier/Source/PluginConfig.cpp b/bk_JUCE/bitKlavier/Source/PluginConfig.cpp
+index cd86a04..7693bd7 100644
+--- a/bk_JUCE/bitKlavier/Source/PluginConfig.cpp
++++ b/bk_JUCE/bitKlavier/Source/PluginConfig.cpp
+@@ -451,7 +451,7 @@ FileSearchPath BKAudioProcessor::getCustomSamplesSearchPath()
+                     .getChildFile("bitKlavier").getChildFile("samples"));
+ #endif
+ #if JUCE_WINDOWS || JUCE_LINUX
+-    returnPath.directories.add(File::getSpecialLocation(File::userDocumentsDirectory)
++    returnPath.add(File::getSpecialLocation(File::userDocumentsDirectory)
+                     .getChildFile("bitKlavier").getChildFile("samples"));
+ #endif
+     return returnPath;

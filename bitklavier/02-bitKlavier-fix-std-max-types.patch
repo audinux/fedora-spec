@@ -1,0 +1,13 @@
+diff --git a/bk_JUCE/bitKlavier/Source/compressor-dsp/GainComputer.cpp b/bk_JUCE/bitKlavier/Source/compressor-dsp/GainComputer.cpp
+index f7d61f51..2850c85e 100644
+--- a/bk_JUCE/bitKlavier/Source/compressor-dsp/GainComputer.cpp
++++ b/bk_JUCE/bitKlavier/Source/compressor-dsp/GainComputer.cpp
+@@ -71,7 +71,7 @@ void GainComputer::applyCompressionToBuffer(float* src, int numSamples)
+ {
+     for (int i = 0; i < numSamples; ++i)
+     {
+-        const float level = std::max(abs(src[i]), 1e-6f);
++        const float level = std::max(static_cast<float>(abs(src[i])), 1e-6f);
+         float levelInDecibels = Decibels::gainToDecibels(level);
+         src[i] = applyCompression(levelInDecibels);
+     }
