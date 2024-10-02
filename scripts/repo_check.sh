@@ -987,7 +987,8 @@ https://github.com/Tr3m/Digital-Audio-Effects
 https://github.com/Tr3m/nam-juce
 https://github.com/Tr3m/multi-tap-delay
 https://github.com/JoepVanlier/ysfx
-https://github.com/domichel/dkbuilder-guitarix-lv2-plugins"
+https://github.com/domichel/dkbuilder-guitarix-lv2-plugins
+https://github.com/davemollen/dm-Reverse"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

@@ -167,7 +167,22 @@
 | LittleGPTracker            | https://github.com/djdiskmachine/LittleGPTracker |
 | xmodits                    | https://github.com/B0ney/xmodits |
 | xmodits-cli                | https://github.com/B0ney/xmodits-cli |
-| dm-Reverse                 | https://github.com/davemollen/dm-Reverse |
+| juicysfplugin              | https://github.com/osxmidi/juicysfplugin |
+| dm-Stutter                 | https://github.com/davemollen/dm-Stutter |
+| dm-SpaceEcho               | https://github.com/davemollen/dm-SpaceEcho |
+| dm-DS1                     | https://github.com/davemollen/dm-DS1 |
+| dm-Octaver                 | https://github.com/davemollen/dm-Octaver |
+| dm-BigMuff                 | https://github.com/davemollen/dm-BigMuff |
+| dm-TubeScreamer            | https://github.com/davemollen/dm-TubeScreamer |
+| dm-SD1                     | https://github.com/davemollen/dm-SD1 |
+| dm-LFO                     | https://github.com/davemollen/dm-LFO |
+| dm-Reverb                  | https://github.com/davemollen/dm-Reverb |
+| dm-Fuzz                    | https://github.com/davemollen/dm-Fuzz |
+| dm-Shredmaster             | https://github.com/davemollen/dm-Shredmaster |
+| dm-Rat                     | https://github.com/davemollen/dm-Rat |
+| dm-Whammy                  | https://github.com/davemollen/dm-Whammy |
+| dm-Repeat                  | https://github.com/davemollen/dm-Repeat |
+| dm-Vibrato                 | https://github.com/davemollen/dm-Vibrato |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
