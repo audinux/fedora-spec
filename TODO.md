@@ -180,7 +180,6 @@
 | dm-Fuzz                    | https://github.com/davemollen/dm-Fuzz |
 | dm-Shredmaster             | https://github.com/davemollen/dm-Shredmaster |
 | dm-Rat                     | https://github.com/davemollen/dm-Rat |
-| dm-Whammy                  | https://github.com/davemollen/dm-Whammy |
 | dm-Repeat                  | https://github.com/davemollen/dm-Repeat |
 | dm-Vibrato                 | https://github.com/davemollen/dm-Vibrato |
 
