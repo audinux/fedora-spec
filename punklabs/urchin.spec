@@ -66,17 +66,17 @@ export RUSTFLAGS="-g -O"
 export CWD=`pwd`
 export RUSTUP_HOME="$CWD/rustup"
 export CARGO_HOME="$CWD/cargo"
-# rustup-init -y --default-toolchain=1.77.0-x86_64-unknown-linux-gnu
-# rustup-init -y --default-toolchain=nightly-x86_64-unknown-linux-gnu
+# rustup-init -y --no-modify-path --default-toolchain=1.77.0-x86_64-unknown-linux-gnu
+# rustup-init -y --no-modify-path --default-toolchain=nightly-x86_64-unknown-linux-gnu
 # source cargo/env
 # rustup target list
 # cargo build --release --bin hexosynth_jack
 
 %ifarch x86_64
-rustup-init -y --default-toolchain 1.76.0-x86_64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain 1.76.0-x86_64-unknown-linux-gnu
 %endif
 %ifarch aarch64
-rustup-init -y --default-toolchain 1.76.0-aarch64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain 1.76.0-aarch64-unknown-linux-gnu
 %endif
 source cargo/env
 
