@@ -996,7 +996,15 @@ https://github.com/davemollen/dm-Repeat
 https://github.com/davemollen/dm-Vibrato
 https://github.com/davemollen/dm-Reverb
 https://github.com/davemollen/dm-Fuzz
-https://github.com/davemollen/dm-Shredmaster"
+https://github.com/davemollen/dm-Shredmaster
+https://github.com/davemollen/dm-Stutter
+https://github.com/davemollen/dm-SpaceEcho
+https://github.com/davemollen/dm-DS1
+https://github.com/davemollen/dm-Octaver
+https://github.com/davemollen/dm-BigMuff
+https://github.com/davemollen/dm-TubeScreamer
+https://github.com/davemollen/dm-SD1
+https://github.com/davemollen/dm-LFO"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

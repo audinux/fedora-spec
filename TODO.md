@@ -168,14 +168,6 @@
 | xmodits                    | https://github.com/B0ney/xmodits |
 | xmodits-cli                | https://github.com/B0ney/xmodits-cli |
 | juicysfplugin              | https://github.com/osxmidi/juicysfplugin |
-| dm-Stutter                 | https://github.com/davemollen/dm-Stutter |
-| dm-SpaceEcho               | https://github.com/davemollen/dm-SpaceEcho |
-| dm-DS1                     | https://github.com/davemollen/dm-DS1 |
-| dm-Octaver                 | https://github.com/davemollen/dm-Octaver |
-| dm-BigMuff                 | https://github.com/davemollen/dm-BigMuff |
-| dm-TubeScreamer            | https://github.com/davemollen/dm-TubeScreamer |
-| dm-SD1                     | https://github.com/davemollen/dm-SD1 |
-| dm-LFO                     | https://github.com/davemollen/dm-LFO |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
