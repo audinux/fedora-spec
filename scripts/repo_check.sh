@@ -993,7 +993,10 @@ https://github.com/Princeton-CDH/bitKlavier
 https://github.com/davemollen/dm-Whammy
 https://github.com/davemollen/dm-Rat
 https://github.com/davemollen/dm-Repeat
-https://github.com/davemollen/dm-Vibrato"
+https://github.com/davemollen/dm-Vibrato
+https://github.com/davemollen/dm-Reverb
+https://github.com/davemollen/dm-Fuzz
+https://github.com/davemollen/dm-Shredmaster"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

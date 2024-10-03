@@ -176,9 +176,6 @@
 | dm-TubeScreamer            | https://github.com/davemollen/dm-TubeScreamer |
 | dm-SD1                     | https://github.com/davemollen/dm-SD1 |
 | dm-LFO                     | https://github.com/davemollen/dm-LFO |
-| dm-Reverb                  | https://github.com/davemollen/dm-Reverb |
-| dm-Fuzz                    | https://github.com/davemollen/dm-Fuzz |
-| dm-Shredmaster             | https://github.com/davemollen/dm-Shredmaster |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
