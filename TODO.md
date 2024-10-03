@@ -179,9 +179,6 @@
 | dm-Reverb                  | https://github.com/davemollen/dm-Reverb |
 | dm-Fuzz                    | https://github.com/davemollen/dm-Fuzz |
 | dm-Shredmaster             | https://github.com/davemollen/dm-Shredmaster |
-| dm-Rat                     | https://github.com/davemollen/dm-Rat |
-| dm-Repeat                  | https://github.com/davemollen/dm-Repeat |
-| dm-Vibrato                 | https://github.com/davemollen/dm-Vibrato |
 
 Check the following URL:
 - https://github.com/forart/HyMPS

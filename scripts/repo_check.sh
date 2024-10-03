@@ -990,7 +990,10 @@ https://github.com/Tr3m/multi-tap-delay
 https://github.com/JoepVanlier/ysfx
 https://github.com/domichel/dkbuilder-guitarix-lv2-plugins
 https://github.com/Princeton-CDH/bitKlavier
-https://github.com/davemollen/dm-Whammy"
+https://github.com/davemollen/dm-Whammy
+https://github.com/davemollen/dm-Rat
+https://github.com/davemollen/dm-Repeat
+https://github.com/davemollen/dm-Vibrato"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
