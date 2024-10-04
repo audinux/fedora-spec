@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Effect, Oscillator
-# Type: Plugin, LV2, CLAP, VST3
+# Type: Plugin, LV2
 # Category: Effect
 
 %global debug_package %{nil}
