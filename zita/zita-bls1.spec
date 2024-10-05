@@ -34,14 +34,13 @@ used to convert binaural signals into a form suitable for reproduction on a conv
 %prep
 %autosetup
 
-%build
-rm -rf $RPM_BUILD_ROOT
-
 # Force Fedora's optflags
 sed -i 's|-O2|%{optflags}|' source/Makefile
 
+%build
+
 pushd source
-%make_build
+%make_build PREFIX=%{_prefix}
 popd
 
 %install
@@ -50,11 +49,10 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/zita-bls1/
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/doc/
 
 pushd source
-%make_install
+%make_install PREFIX=%{_prefix}
 popd
 
 %files
-%defattr(-,root,root,-)
 %doc AUTHORS README doc
 %license COPYING
 %{_bindir}/*
