@@ -5,7 +5,7 @@
 
 Summary: Convert binaural signals for reproduction on conventional stereo speakers
 Name: zita-bls1
-Version: 0.3.3
+Version: 0.4.0
 Release: 1%{?dist}
 License: GPL
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
@@ -61,6 +61,9 @@ popd
 %{_datadir}/zita-bls1/
 
 %changelog
+* Sat Oct 05 2024 Yann Collette <ycollette.nospam@free.fr> - 0.4.0-1
+- update to 0.4.0-1
+
 * Mon Oct 15 2018 Yann Collette <ycollette.nospam@free.fr> - 0.3.3-1
 - update for Fedora 29
 
