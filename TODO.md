@@ -79,8 +79,6 @@
 | libDaisy   (for hvcc)      | https://github.com/electro-smith/libDaisy |
 | mellite                    | https://www.sciss.de/mellite/ |
 | arch realtime privilege    | https://github.com/archlinux/svntogit-community/tree/packages/realtime-privileges/trunk |
-| MXTune                     | https://github.com/liuanlin-mx/MXTune |
-| MXComp                     | https://github.com/liuanlin-mx/MXComp
 | dm-GrainDelay              | https://github.com/moddevices/dm-GrainDelay |
 | Carve-Distortion           | https://github.com/jd-13/Carve-Distortion |
 | Oi-Grandad                 | https://github.com/publicsamples/Oi-Grandad |
@@ -112,7 +110,6 @@
 | juicysfplugin              | https://github.com/Birch-san/juicysfplugin |
 | nih-plug                   | https://github.com/robbert-vdh/nih-plug |
 | Besselstrick               | https://github.com/fcaspe/BesselsTrick |
-| fxseq                      | https://github.com/ssabug/fxseq |
 | choppah                    | https://github.com/ssabug/choppah |
 | midilooper                 | https://github.com/supergilbert/midilooper |
 | sound-of-music             | https://github.com/enter-opy/sound-of-music |
@@ -128,7 +125,6 @@
 | PyMusicLooper              | https://github.com/arkrow/PyMusicLooper |
 | xenos                      | https://github.com/raphaelradna/xenos |
 | badhumors                  | https://github.com/niflheimmer/badhumors |
-| MXTune                     | https://github.com/liuanlin-mx/MXTune |
 | Tonez                      | https://github.com/retornz/ToneZ |
 | cchorus                    | https://github.com/SpotlightKid/cchorus |
 | Automated-GuitarAmpModelling | https://github.com/AidaDSP/Automated-GuitarAmpModelling |
