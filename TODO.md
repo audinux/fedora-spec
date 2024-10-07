@@ -163,6 +163,9 @@
 | xmodits                    | https://github.com/B0ney/xmodits |
 | xmodits-cli                | https://github.com/B0ney/xmodits-cli |
 | juicysfplugin              | https://github.com/osxmidi/juicysfplugin |
+| ardura                     | https://github.com/ardura |
+| sonic-lineup               | https://github.com/sonic-visualiser/sonic-lineup |
+| tony                       | https://github.com/sonic-visualiser/tony |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
