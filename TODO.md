@@ -157,7 +157,6 @@
 | MOrgan                     | https://github.com/getdunne/MOrgan |
 | elysiera                   | https://github.com/azur1s/elysiera |
 | RTcmix                     | https://github.com/RTcmix/RTcmix |
-| kluppe                     | https://kluppe.klingt.org/index.html |
 | bark                       | https://github.com/haileys/bark |
 | chiptrack                  | https://github.com/jturcotte/chiptrack |
 | LittleGPTracker            | https://github.com/djdiskmachine/LittleGPTracker |

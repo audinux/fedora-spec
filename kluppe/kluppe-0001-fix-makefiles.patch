@@ -1,0 +1,44 @@
+From 8958c09cf4d79043f5b4c4a3ef06caa710f365ea Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Mon, 7 Oct 2024 07:41:29 +0200
+Subject: [PATCH] fix makefiles
+
+---
+ Makefile                     | 5 ++---
+ src/frontend/kluppe/Makefile | 2 +-
+ 2 files changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 8769550..04eb88c 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,12 +1,11 @@
+ CC = gcc
+ VERSION = `cat VERSION`
+-INSTALL_PREFIX = /usr/local
++INSTALL_PREFIX = /usr
+ BIN_DIR = $(INSTALL_PREFIX)/bin
+ PIXMAPS_DIR = $(INSTALL_PREFIX)/share/pixmaps
+ TEMP_ROOT = /tmp
+ TEMP_DIR = kluppe-$(VERSION)
+-CFLAGS = -g -pthread -march=native -mfpmath=sse -msse3 -O3 -Wall -DHAVE_ALSA -DHAVE_OSC -DHAVE_USB
+-#CFLAGS = -msse3 -pthread -O3 -Wall -DHAVE_ALSA -DHAVE_USB -DHAVE_OSC
++CFLAGS = $(MYFLAGS)
+ export 
+ 
+ kluppe: commons 
+diff --git a/src/frontend/kluppe/Makefile b/src/frontend/kluppe/Makefile
+index 63c540c..2433e5d 100644
+--- a/src/frontend/kluppe/Makefile
++++ b/src/frontend/kluppe/Makefile
+@@ -1,6 +1,6 @@
+ BIN_DIR = $(INSTALL_PREFIX)/bin
+ PIXMAPS_DIR = $(INSTALL_PREFIX)/share/pixmaps
+-MAN_DIR = $(INSTALL_PREFIX)/man/man1
++MAN_DIR = $(INSTALL_PREFIX)/share/man/man1
+ SOURCES = sfpreview.c configfile.c griddialog.c threshdialog.c graindialog.c customcurve.c looper.c gtkmeter.c gtkloopview.c kluppe.c alphatrack_callback.c
+ TARGETS = $(SOURCES:.c=.o)
+ 
+-- 
+2.46.2
+
