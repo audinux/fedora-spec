@@ -13,9 +13,8 @@ Source0: http://download.sourceforge.net/plotmm/plotmm-%{version}.tar.gz
 # https://sourceforge.net/tracker/?func=detail&atid=632478&aid=2082337&group_id=102665
 Patch0: plotmm-0.1.2-libsigc++20.patch
 
+BuildRequires: gcc gcc-c++
 BuildRequires: make
-BuildRequires: gcc
-BuildRequires: gcc-c++
 BuildRequires: gtkmm24-devel >= 2.4.0
 BuildRequires: chrpath
 

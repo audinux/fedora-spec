@@ -29,6 +29,12 @@
 %if 0%{?fedora} >= 39
 %global wineversion 8.14
 %endif
+%if 0%{?fedora} >= 40
+%global wineversion 9.15
+%endif
+%if 0%{?fedora} >= 41
+%global wineversion 9.15
+%endif
 
 Name: wineasio
 Version: 1.2.0

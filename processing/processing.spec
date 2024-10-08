@@ -30,7 +30,7 @@ Summary: Processing Development Environment (PDE)
 # Core is LGPL, others are GPL
 License: GPL-2.0+ and LGPL-2.0+
 URL: https://processing.org/
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64
 
 Vendor:       Audinux
 Distribution: Audinux
