@@ -1,3 +1,8 @@
+# Status: active
+# Tag: Jack, Alsa
+# Type: Language
+# Category: Audio, Synthesizer, Graphic, Programming
+
 %ifarch %{java_arches}
 %global JAVA 1
 %else
