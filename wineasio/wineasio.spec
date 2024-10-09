@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 %define _lto_cflags %{nil}
 
-%global with_32bit  1
+%global with_32bit 0
 
 %if 0%{?fedora} >= 33
 %global wineversion 6.13
