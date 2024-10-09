@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 a108d7a201675002aa7b0c13496cb541e37ed1d1
+%global commit0 c2819289e1357f2e120b4a93f55755bbf50f69b5
 
 Name: dm-bigmuff
-Version: 0.0.2
+Version: 0.0.3
 Release: 1%{?dist}
 Summary: A fuzz effect written in Rust modeled after the Electro-Harmonix Op-Amp Big Muff Pi
 URL: https://github.com/davemollen/dm-BigMuff
@@ -122,5 +122,8 @@ cp -vfr dm-BigMuff.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Oct 09 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.3-1
+- update to 0.0.3-1
+
 * Thu Oct 03 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.2-1
 - Initial spec file

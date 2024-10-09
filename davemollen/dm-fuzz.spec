@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 6a4cf524d5b13043275e58def9400716984c78d8
+%global commit0 3f0c5a7e61023aa72ef56b2781a330f1e1e890de
 
 Name: dm-fuzz
-Version: 0.0.4
+Version: 0.0.5
 Release: 1%{?dist}
 Summary: A mono fuzz effect written in Rust
 URL: https://github.com/davemollen/dm-Fuzz
@@ -122,5 +122,8 @@ cp -vfr dm-Fuzz.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Oct 09 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.5-1
+- update to 0.0.5-1
+
 * Thu Oct 03 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.4-1
 - Initial spec file

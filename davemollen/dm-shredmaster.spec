@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 d0009c4d236dfb3e9b6dd1fa3d9a80ecb7a0a4ed
+%global commit0 9e48c36ed75556c59535694284b7c6a620a79070
 
 Name: dm-shredmaster
-Version: 0.0.6
+Version: 0.0.7
 Release: 1%{?dist}
 Summary: A distortion effect written in Rust modeled after the Marshall Shredmaster
 URL: https://github.com/davemollen/dm-Shredmaster
@@ -122,5 +122,8 @@ cp -vfr dm-Shredmaster.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Oct 09 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.7-1
+- update to 0.0.7-1
+
 * Thu Oct 03 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.6-1
 - Initial spec file
