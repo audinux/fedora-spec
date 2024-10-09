@@ -1,0 +1,172 @@
+From 7fea2ce68a7e28cfdaf8b643dc8e122e3cce32b2 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Tue, 8 Oct 2024 23:24:47 +0200
+Subject: [PATCH] naming
+
+---
+ installer/linux/d32.sh      |  2 +-
+ installer/linux/d64.sh      |  2 +-
+ installer/linux/f32.sh      |  2 +-
+ installer/linux/f64.sh      |  2 +-
+ installer/misc/mkpackage.py | 10 +++++-----
+ util/CMakeLists.txt         | 18 +++++++++---------
+ util/make_src_conv          |  2 +-
+ util1/CMakeLists.txt        |  4 ++--
+ 8 files changed, 21 insertions(+), 21 deletions(-)
+
+diff --git a/installer/linux/d32.sh b/installer/linux/d32.sh
+index 8828e6d..36b329e 100644
+--- a/installer/linux/d32.sh
++++ b/installer/linux/d32.sh
+@@ -13,7 +13,7 @@ mkdir -p -m 0755 ../../../CSDIST/$DIR/loc
+ 
+ rm ../../../CSDIST/$DIR/bin/*
+ 
+-cp -pv ../../{linseg,lpanal,brkpt,lpc_export,lpc_import,cs,makecsd,csb64enc,cscore,csound,csound5gui,cvanal,dnoise,mixer,envext,extract,extractor,pvanal,pvlook,het_export,het_import,hetro,scale,scot,scsort,sdif2ad,srconv,tabdes,winsound,cstclsh,cswish,matrix.tk,pv_export,pv_import,atsa,sndinfo} ../../../CSDIST/$DIR/bin
++cp -pv ../../{linseg,lpanal,brkpt,lpc_export,lpc_import,cs,makecsd,csb64enc,cscore,csound,csound5gui,cvanal,dnoise,cs-mixer,cs-envext,cs-extract,cs-extractor,pvanal,pvlook,het_export,het_import,hetro,scale,cs-scot,scsort,sdif2ad,cs-srconv,tabdes,winsound,cstclsh,cswish,matrix.tk,pv_export,pv_import,atsa,cs-sndinfo} ../../../CSDIST/$DIR/bin
+ 
+ strip ../../../CSDIST/$DIR/bin/*
+ 
+diff --git a/installer/linux/d64.sh b/installer/linux/d64.sh
+index 7a18783..2a94bd1 100644
+--- a/installer/linux/d64.sh
++++ b/installer/linux/d64.sh
+@@ -12,7 +12,7 @@ mkdir -p -m 0755 ../../../CSDIST/$DIR/loc
+ 
+ rm ../../../CSDIST/$DIR/bin/*
+ 
+-cp -pv ../../{linseg,lpanal,brkpt,lpc_export,lpc_import,cs,makecsd,csb64enc,cscore,csound,csound5gui,cvanal,dnoise,mixer,envext,extract,extractor,pvanal,pvlook,het_export,het_import,hetro,scale,scot,scsort,sdif2ad,srconv,tabdes,winsound,cstclsh,cswish,matrix.tk,pv_export,pv_import,atsa,sndinfo,cseditor} ../../../CSDIST/$DIR/bin
++cp -pv ../../{linseg,lpanal,brkpt,lpc_export,lpc_import,cs,makecsd,csb64enc,cscore,csound,csound5gui,cvanal,dnoise,mixer,cs-envext,cs-extract,cs-extractor,pvanal,pvlook,het_export,het_import,hetro,scale,cs-scot,scsort,sdif2ad,cs-srconv,tabdes,winsound,cstclsh,cswish,matrix.tk,pv_export,pv_import,atsa,cs-sndinfo,cseditor} ../../../CSDIST/$DIR/bin
+ 
+ strip ../../../CSDIST/$DIR/bin/*
+ 
+diff --git a/installer/linux/f32.sh b/installer/linux/f32.sh
+index c5bd835..5368566 100644
+--- a/installer/linux/f32.sh
++++ b/installer/linux/f32.sh
+@@ -12,7 +12,7 @@ mkdir -p -m 0755 ../../../CSDIST/$DIR/loc
+ 
+ rm ../../../CSDIST/$DIR/bin/*
+ 
+-cp -pv ../../{linseg,lpanal,brkpt,lpc_export,lpc_import,cs,makecsd,csb64enc,cscore,csound,csound5gui,cvanal,dnoise,mixer,envext,extract,extractor,pvanal,pvlook,het_export,het_import,hetro,scale,scot,scsort,sdif2ad,srconv,tabdes,winsound,cstclsh,cswish,matrix.tk,pv_export,pv_import,atsa,sndinfo} ../../../CSDIST/$DIR/bin
++cp -pv ../../{linseg,lpanal,brkpt,lpc_export,lpc_import,cs,makecsd,csb64enc,cscore,csound,csound5gui,cvanal,dnoise,cs-mixer,cs-envext,cs-extract,cs-extractor,pvanal,pvlook,het_export,het_import,hetro,scale,cs-scot,scsort,sdif2ad,cs-srconv,tabdes,winsound,cstclsh,cswish,matrix.tk,pv_export,pv_import,atsa,cs-sndinfo} ../../../CSDIST/$DIR/bin
+ 
+ strip ../../../CSDIST/$DIR/bin/*
+ 
+diff --git a/installer/linux/f64.sh b/installer/linux/f64.sh
+index 76b6ed1..0906625 100644
+--- a/installer/linux/f64.sh
++++ b/installer/linux/f64.sh
+@@ -12,7 +12,7 @@ mkdir -p -m 0755 ../../../CSDIST/$DIR/loc
+ 
+ rm ../../../CSDIST/$DIR/bin/*
+ 
+-cp -pv ../../{linseg,lpanal,brkpt,lpc_export,lpc_import,cs,makecsd,csb64enc,cscore,csound,csound5gui,cvanal,dnoise,mixer,envext,extract,extractor,pvanal,pvlook,het_export,het_import,hetro,scale,scot,scsort,sdif2ad,srconv,tabdes,winsound,cstclsh,cswish,matrix.tk,pv_export,pv_import,atsa,sndinfo,cseditor} ../../../CSDIST/$DIR/bin
++cp -pv ../../{linseg,lpanal,brkpt,lpc_export,lpc_import,cs,makecsd,csb64enc,cscore,csound,csound5gui,cvanal,dnoise,cs-mixer,cs-envext,cs-extract,cs-extractor,pvanal,pvlook,het_export,het_import,hetro,scale,cs-scot,scsort,sdif2ad,cs-srconv,tabdes,winsound,cstclsh,cswish,matrix.tk,pv_export,pv_import,atsa,cs-sndinfo,cseditor} ../../../CSDIST/$DIR/bin
+ 
+ strip ../../../CSDIST/$DIR/bin/*
+ 
+diff --git a/installer/misc/mkpackage.py b/installer/misc/mkpackage.py
+index fe3d860..4dafa99 100755
+--- a/installer/misc/mkpackage.py
++++ b/installer/misc/mkpackage.py
+@@ -71,13 +71,13 @@ headerFiles += ['interfaces/CppSound.hpp', 'interfaces/filebuilding.h']
+ headerFiles += ['interfaces/CsoundFile.hpp']
+ 
+ utils1 = ['csound', 'winsound', 'cstclsh', 'cswish',
+-          'atsa', 'cvanal', 'dnoise', 'envext', 'extractor',
++          'atsa', 'cvanal', 'dnoise', 'cs-envext', 'cs-extractor',
+           'het_export', 'het_import', 'hetro', 'lpanal',
+-          'lpc_export', 'lpc_import', 'mixer', 'pvanal',
+-          'pvlook', 'pv_export', 'pv_import', 'scale', 'sndinfo',
+-          'srconv', 'cseditor']
++          'lpc_export', 'lpc_import', 'cs-mixer', 'pvanal',
++          'pvlook', 'pv_export', 'pv_import', 'cs-scale', 'cs-sndinfo',
++          'cs-srconv', 'cseditor']
+ 
+-utils2 = ['scsort', 'extract', 'cs', 'csb64enc', 'makecsd', 'scot']
++utils2 = ['scsort', 'cs-extract', 'cs', 'csb64enc', 'makecsd', 'cs-scot']
+ 
+ docFiles = ['COPYING', 'ChangeLog', 'INSTALL', 'readme-csound6.txt']
+ 
+diff --git a/util/CMakeLists.txt b/util/CMakeLists.txt
+index ad34fdb..0853cb9 100644
+--- a/util/CMakeLists.txt
++++ b/util/CMakeLists.txt
+@@ -19,34 +19,34 @@ if(BUILD_UTILITIES)
+     make_utility(csanalyze   csanalyze.c)
+     make_utility(cvanal      cvl_main.c)
+     make_utility(dnoise      dnoise_main.c)
+-    make_utility(envext      env_main.c)
+-    make_utility(extractor   xtrc_main.c)
++    make_utility(cs-envext      env_main.c)
++    make_utility(cs-extractor   xtrc_main.c)
+     make_utility(het_export  hetx_main.c)
+     make_utility(het_import  heti_main.c)
+     make_utility(hetro       het_main.c)
+     make_utility(lpanal      lpc_main.c)
+     make_utility(lpc_export  lpcx_main.c ${MATH_LIBRARY})
+     make_utility(lpc_import  lpci_main.c ${MATH_LIBRARY})
+-    make_executable(mixer-bin   mixer_main.c   "${CSOUNDLIB};${MATH_LIBRARY}" mixer)
++    make_executable(mixer-bin   mixer_main.c   "${CSOUNDLIB};${MATH_LIBRARY}" cs-mixer)
+     make_utility(pvanal      pvc_main.c)
+     make_utility(pvlook      pvl_main.c)
+     make_utility(pv_export   pvx_main.c)
+     make_utility(pv_import   pvi_main.c)
+-    make_utility(scale       scale_main.c)
+-    make_utility(sndinfo     sndinfo_main.c)
+-    make_utility(srconv      srconv_main.c)
++    make_utility(cs-scale       scale_main.c)
++    make_utility(cs-sndinfo     sndinfo_main.c)
++    make_utility(cs-srconv      srconv_main.c)
+ 
+ 
+     #find_library(LIBSNDFILE_LIBRARY sndfile libsndfile-1)
+     find_library(LIBSAMPLERATE_LIBRARY NAMES samplerate libsamplerate-0)
+ 
+     if(LIBSNDFILE_LIBRARY AND LIBSAMPLERATE_LIBRARY)
+-        make_executable(src_conv new_srconv.c "${LIBSNDFILE_LIBRARY};${LIBSAMPLERATE_LIBRARY}")
++        make_executable(cs-src_conv new_srconv.c "${LIBSNDFILE_LIBRARY};${LIBSAMPLERATE_LIBRARY}")
+         if(MSVC)
+-            target_link_libraries(src_conv ${LIBSNDFILE_SUPPORT_LIBS})
++            target_link_libraries(cs-src_conv ${LIBSNDFILE_SUPPORT_LIBS})
+         endif()
+     else()
+-        message(STATUS "Not building src_conv (libsndfile or libsamplerate not found).")
++        message(STATUS "Not building cs-src_conv (libsndfile or libsamplerate not found).")
+     endif()
+ 
+ endif()
+diff --git a/util/make_src_conv b/util/make_src_conv
+index ce5a90b..5896091 100755
+--- a/util/make_src_conv
++++ b/util/make_src_conv
+@@ -1,2 +1,2 @@
+ #!/bin/sh
+-gcc -g new_srconv.c -lsndfile -lsamplerate -o src_conv
+\ No newline at end of file
++gcc -g new_srconv.c -lsndfile -lsamplerate -o cs-src_conv
+diff --git a/util1/CMakeLists.txt b/util1/CMakeLists.txt
+index 639ed0a..2078c01 100644
+--- a/util1/CMakeLists.txt
++++ b/util1/CMakeLists.txt
+@@ -1,7 +1,7 @@
+ #extra utilities
+ 
+ make_utility(scsort      sortex/smain.c)
+-make_utility(extract     sortex/xmain.c)
++make_utility(cs-extract  sortex/xmain.c)
+ 
+ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_CLANG OR MSVC)
+     make_utility(cs         csd_util/cs.c)
+@@ -19,6 +19,6 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_CLANG OR MSVC)
+ 
+     set(scot_SRCS
+         scot/scot_main.c scot/scot.c)
+-    make_utility(scot "${scot_SRCS}")
++    make_utility(cs-scot "${scot_SRCS}")
+ endif()
+ 
+-- 
+2.46.2
+

@@ -1,0 +1,25 @@
+From 575e455c18ec1e158660bcaeb443b37bea8c1f09 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Tue, 8 Oct 2024 23:18:00 +0200
+Subject: [PATCH] pulse
+
+---
+ Top/csound.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Top/csound.c b/Top/csound.c
+index e4fd096..91371e4 100644
+--- a/Top/csound.c
++++ b/Top/csound.c
+@@ -3590,7 +3590,7 @@ PUBLIC void csoundReset(CSOUND *csound)
+       strcpy(s, "PortAudio");
+  #endif
+ #else
+-    strcpy(s, "alsa");
++    strcpy(s, "pulse");
+ #endif
+     csoundCreateConfigurationVariable(csound, "rtaudio", s, CSOUNDCFG_STRING,
+                                       0, NULL, &max_len,
+-- 
+2.46.2
+

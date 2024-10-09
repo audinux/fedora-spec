@@ -1,0 +1,62 @@
+From 6f13b0ba1e907a9b4fae12ce6b3c0562d2a5cdfe Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Tue, 8 Oct 2024 23:22:52 +0200
+Subject: [PATCH] plugin dir
+
+---
+ CMakeLists.txt              | 8 +-------
+ Top/csmodule.c              | 4 ++--
+ installer/misc/mkpackage.py | 2 +-
+ 3 files changed, 4 insertions(+), 10 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c333e83..5123acc 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -240,13 +240,7 @@ elseif(NOT DEFINED LIBRARY_INSTALL_DIR)
+ endif()
+ message(STATUS "LIBRARY INSTALL DIR: ${LIBRARY_INSTALL_DIR}")
+ 
+-if(USE_DOUBLE)
+-    message(STATUS "Building with 64-bit floats")
+-    set(PLUGIN_INSTALL_DIR "${LIBRARY_INSTALL_DIR}/csound/plugins64-${APIVERSION}")
+-else()
+-    message(STATUS "Building with 32-bit floats")
+-    set(PLUGIN_INSTALL_DIR "${LIBRARY_INSTALL_DIR}/csound/plugins-${APIVERSION}")
+-endif()
++set(PLUGIN_INSTALL_DIR "${LIBRARY_INSTALL_DIR}/csound/plugins-${APIVERSION}")
+ 
+ if(WIN32 AND NOT MSVC)
+     if(EXISTS "C:/MinGW/include")
+diff --git a/Top/csmodule.c b/Top/csmodule.c
+index a401962..9bbef3a 100644
+--- a/Top/csmodule.c
++++ b/Top/csmodule.c
+@@ -162,9 +162,9 @@ static  const   char    *plugindir64_envvar = "OPCODE6DIR64";
+ #  define ENABLE_OPCODEDIR_WARNINGS 0
+ #  ifndef CS_DEFAULT_PLUGINDIR
+ #    ifndef USE_DOUBLE
+-#      define CS_DEFAULT_PLUGINDIR  "/usr/local/lib/csound/plugins"
++#      define CS_DEFAULT_PLUGINDIR  "/usr/lib/csound/plugins"
+ #    else
+-#      define CS_DEFAULT_PLUGINDIR  "/usr/local/lib/csound/plugins64"
++#      define CS_DEFAULT_PLUGINDIR  "/usr/lib64/csound/plugins"
+ #    endif
+ #  endif
+ #endif
+diff --git a/installer/misc/mkpackage.py b/installer/misc/mkpackage.py
+index 801311b..fe3d860 100755
+--- a/installer/misc/mkpackage.py
++++ b/installer/misc/mkpackage.py
+@@ -27,7 +27,7 @@ libDir2     = libDir + '/csound/lib'
+ # single precision plugin libraries
+ pluginDir32 = libDir + '/csound/plugins'
+ # double precision plugin libraries
+-pluginDir64 = libDir + '/csound/plugins64'
++pluginDir64 = libDir + '/csound/plugins'
+ # documentation
+ docDir      = instPrefix + '/share/doc/csound'
+ # tclcsound.so
+-- 
+2.46.2
+

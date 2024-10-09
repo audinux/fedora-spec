@@ -1,0 +1,32 @@
+From 8b5f77070c5a5a396e5886088d506e00d0cb7125 Mon Sep 17 00:00:00 2001
+From: Peter Robinson <pbrobinson@gmail.com>
+Date: Wed, 31 Jan 2018 13:33:06 +0000
+Subject: [PATCH 1/4] Add support for using xdg-open for opening help
+
+xdg-open is a desktop agnostic way of opening the user's default application.
+By trying xdg-open first we're more likely to open html files in the user's
+default choice.
+
+Signed-off-by: Peter Robinson <pbrobinson@gmail.com>
+---
+ installer/misc/vim/cshelp | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/installer/misc/vim/cshelp b/installer/misc/vim/cshelp
+index 888b8fe25..8c6553de8 100755
+--- a/installer/misc/vim/cshelp
++++ b/installer/misc/vim/cshelp
+@@ -3,7 +3,9 @@
+ BROWSER_CMD=""
+ 
+ if [ "${DISPLAY}" != "" ] ; then
+-    if ( which links | grep -q -G -e "^/usr" ) ; then
++    if ( which xdg-open | grep -E -e "^(/usr)?/bin" ); then
++        BROWSER_CMD="xdg-open" ;
++    elif ( which links | grep -q -G -e "^/usr" ) ; then
+         BROWSER_CMD="links -g" ;
+     elif ( which konqueror | grep -q -G -e "^/opt" ) ; then
+         BROWSER_CMD="konqueror" ;
+-- 
+2.31.1
+

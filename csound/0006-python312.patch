@@ -1,0 +1,27 @@
+From: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Date: Wed, 21 Aug 2024 10:22:40 +0200
+Subject: Fix raw string for Python3.12
+
+Origin: Debian
+Bug: https://github.com/csound/csound/issues/1906
+Last-Update: 2024-07-01
+
+Py3.12 bails out if it encounters an invalid escape sequence
+Last-Update: 2024-07-01
+---
+ tests/commandline/test.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tests/commandline/test.py b/tests/commandline/test.py
+index cd29698..9747132 100755
+--- a/tests/commandline/test.py
++++ b/tests/commandline/test.py
+@@ -193,7 +193,7 @@ def runTest():
+         expectedResult = (len(t) == 3) and 1 or 0
+ 
+         if(os.sep == '\\' or os.name == 'nt'):
+-            executable = (csoundExecutable == "") and "..\csound.exe" or csoundExecutable
++            executable = (csoundExecutable == "") and r"..\csound.exe" or csoundExecutable
+             command = "%s %s %s %s/%s 2> %s"%(executable, parserType, runArgs, sourceDirectory, filename, tempfile)
+             print(command)
+             retVal = os.system(command)
