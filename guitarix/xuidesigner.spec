@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: xuidesigner
-Version: 1.0
+Version: 1.1
 Release: 1%{?dist}
 Summary: X11 LV2 GUI design tool for libxputty
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources:
-# ./brummer10-source.sh XUiDesigner 7ad91a5102ff8dee2f82dde452b103014b33dbc9
+# ./brummer10-source.sh XUiDesigner v1.1
 
 Source0: XUiDesigner.tar.gz
 Source1: brummer10-source.sh
@@ -74,6 +74,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/XUiDesigner.desktop
 %{_libdir}/*
 
 %changelog
+* Thu Oct 10 2024 Yann Collette <ycollette.nospam@free.fr> - 1.1-1
+- update to 1.1-1
+
 * Thu Jan 04 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
 - update to 1.0-1
 
