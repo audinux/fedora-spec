@@ -1007,7 +1007,9 @@ https://github.com/davemollen/dm-SD1
 https://github.com/davemollen/dm-LFO
 https://github.com/liuanlin-mx/MXTune
 https://github.com/liuanlin-mx/MXComp
-https://github.com/ssabug/fxseq"
+https://github.com/ssabug/fxseq
+https://github.com/csound/plugins
+https://github.com/csound/csound"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
