@@ -11,9 +11,6 @@ URL: https://github.com/mikerodd/june-21
 ExclusiveArch: x86_64 aarch64
 License: GPL-3.0-or-later
 
-# TODO:
-# package cabbage
-
 Vendor:       Audinux
 Distribution: Audinux
 
@@ -24,7 +21,7 @@ BuildRequires: cmake
 BuildRequires: git
 BuildRequires: texlive-pdftex
 BuildRequires: texinfo
-BuildRequires: Cabbage
+BuildRequires: cabbage
 BuildRequires: pkgconfig(jack)
 BuildRequires: csound-devel
 BuildRequires: alsa-lib-devel
@@ -48,9 +45,9 @@ install -m 755 -d %{buildroot}%{_libdir}/vst3/
 
 # Build documentation
 
-mkdir %{__cmake_builddir}/june-21/
-
 cd src/plugins/junosyxloader/
+
+mkdir %{__cmake_builddir}/june-21/
 
 cp -r ../../doc/manual.pdf %{__cmake_builddir}/june-21/june-21-manual.pdf
 cp %{__cmake_builddir}/libjsl.so %{__cmake_builddir}/june-21/
