@@ -5,7 +5,7 @@
 
 Name: lsp-plugins
 Summary: Linux Studio Plugins collection
-Version: 1.2.18
+Version: 1.2.19
 Release: 1%{?dist}
 License: GPL
 URL: https://github.com/sadko4u/lsp-plugins
@@ -14,10 +14,9 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/lsp-plugins/lsp-plugins/releases/download/%{version}/lsp-plugins-src-%{version}.7z
+Source0: https://github.com/lsp-plugins/lsp-plugins/releases/download/%{version}/lsp-plugins-src-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: p7zip
 BuildRequires: make
 BuildRequires: php-cli
 BuildRequires: chrpath
@@ -74,7 +73,7 @@ Summary: GStreamer version of %{name} plugins
 GStreamer version of %{name} plugins
 
 %prep
-%autosetup -n lsp-plugins-src-%{version}
+%autosetup -n lsp-plugins
 
 %build
 
@@ -130,6 +129,9 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %{_libdir}/clap/*
 
 %changelog
+* Sat Oct 12 2024 Yann Collette <ycollette dot nospam at free.fr> 1.2.19-1
+- update to 1.2.19-1
+
 * Tue Oct 08 2024 Yann Collette <ycollette dot nospam at free.fr> 1.2.18-1
 - update to 1.2.18-1
 
