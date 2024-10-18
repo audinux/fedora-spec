@@ -4,7 +4,7 @@
 # Category: Audio
 
 Name: qutecsound
-Version: 1.1.2
+Version: 1.1.3
 Release: 3%{?dist}
 Summary: A csound file editor
 URL: https://github.com/CsoundQt/CsoundQt
@@ -104,6 +104,9 @@ desktop-file-install --vendor '' \
 %{_datadir}/%{name}/
 
 %changelog
+* Thu Oct 17 2024 Yann Collette <ycollette.nospam@free.fr> - 1.1.3-3
+- update to 1.1.3-3
+
 * Mon Jul 29 2024 Yann Collette <ycollette.nospam@free.fr> - 1.1.2-3
 - update to 1.1.2-3
 
