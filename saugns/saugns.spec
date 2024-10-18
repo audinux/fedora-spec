@@ -4,7 +4,7 @@
 # Category: Devel, Audio, Tool
 
 Name: saugns
-Version: 0.4.6
+Version: 0.4.7
 Release: 1%{?dist}
 Summary: Scriptable AUdio GeNeration System - implements the SAU language.
 License: GPL-3.0-only
@@ -71,6 +71,9 @@ mv %{buildroot}/%{_datadir}/doc/%{name}/ %{buildroot}/%{_datadir}/%{name}/doc/
 %{_datadir}/%{name}/examples/*
 
 %changelog
+* Thu Oct 17 2024 Yann Collette <ycollette.nospam@free.fr> - 0.4.7-1
+- update to 0.4.7-1
+
 * Wed Oct 02 2024 Yann Collette <ycollette.nospam@free.fr> - 0.4.6-1
 - update to 0.4.6-1
 
