@@ -5,7 +5,7 @@
 # GUIToolkit: Qt5
 
 Name: polyphone
-Version: 2.4.0
+Version: 2.4.1
 Release: 3%{?dist}
 Summary: A SF2 sound font editor
 URL: https://polyphone-soundfonts.com/
@@ -67,17 +67,17 @@ cd sources
 
 cd sources
 
-install -m 755 -d %{buildroot}/%{_datadir}/applications/
-install -m 644 contrib/com.polyphone_soundfonts.polyphone.desktop %{buildroot}%{_datadir}/applications/
-
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 bin/polyphone %{buildroot}%{_bindir}/
+
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+install -m 644 contrib/io.polyphone.polyphone.desktop %{buildroot}%{_datadir}/applications/
 
 install -m 755 -d %{buildroot}/%{_datadir}/mime/packages/
 install -m 644 contrib/%{name}.xml %{buildroot}%{_datadir}/mime/packages/%{name}.xml
 
-install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/
-install -m 644 resources/logo.svg %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/%{name}.svg
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/
+install -m 644 resources/polyphone.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/%{name}.svg
 
 # TODO: install man pages
 
@@ -105,6 +105,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Thu Oct 17 2024 Yann Collette <ycollette.nospam@free.fr> - 2.4.1-3
+- update to 2.4.1-3
+
 * Thu Sep 12 2024 Yann Collette <ycollette.nospam@free.fr> - 2.4.0-3
 - update to 2.4.0-3
 
