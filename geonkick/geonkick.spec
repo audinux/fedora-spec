@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: geonkick
-Version: 3.4.0
+Version: 3.5.0
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
 URL: https://github.com/Geonkick-Synthesizer/geonkick
@@ -32,6 +32,23 @@ BuildRequires: desktop-file-utils
 Geonkick is a synthesizer that can synthesize elements of percussion.
 The most basic examples are: kick drums, snares, hit-hats, shakers, claps, steaks.
 
+Requires: license-%{name}
+
+%package -n lv2-%{name}
+Summary:  LV2 version of %{name}
+License:  GPL-3.0-only
+Requires: license-%{name}
+
+%description -n lv2-%{name}
+LV2 version of %{name}
+
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
+License:  GPL-3.0-only
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %prep
 %autosetup -n %{name}-%{version}
 
@@ -45,13 +62,20 @@ The most basic examples are: kick drums, snares, hit-hats, shakers, claps, steak
 %cmake_install
 
 %files
-%doc README.md doc/Geonkick_User_Guide.md
-%license LICENSE
 %{_bindir}/*
-%{_libdir}/lv2/*
 %{_datadir}/*
 
+%files -n license-%{name}
+%doc README.md doc/Geonkick_User_Guide.md
+%license LICENSE
+
+%files -n lv2-%{name}
+%{_libdir}/lv2/*
+
 %changelog
+* Fri Oct 18 2024 Yann Collette <ycollette.nospam@free.fr> - 3.5.0-2
+- Update to 3.5.0-2
+
 * Mon Mar 04 2024 Yann Collette <ycollette.nospam@free.fr> - 3.4.0-2
 - Update to 3.4.0-2
 
