@@ -8,7 +8,7 @@
 
 Name: miniaudicle
 Summary: Light weight ChucK development environment
-Version: 1.5.3.1
+Version: 1.5.3.2
 Release: 2%{?dist}
 License: LGPL
 URL: https://audicle.cs.princeton.edu/mini/
@@ -18,7 +18,7 @@ Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
 # Usage: ./source-miniaudicle.sh <tag>
-#        ./source-miniaudicle.sh chuck-1.5.3.1
+#        ./source-miniaudicle.sh chuck-1.5.3.2
 
 Source0: miniAudicle.tar.gz
 Source1: source-miniaudicle.sh
@@ -164,6 +164,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 %{_datadir}/icons/*
 
 %changelog
+* Thu Oct 17 2024 Yann Collette <ycollette.nospam@free.fr> - 1.5.3.2-2
+- update to 1.5.3.2-2
+
 * Fri Oct 04 2024 Yann Collette <ycollette.nospam@free.fr> - 1.5.3.1-2
 - update to 1.5.3.1-2
 
