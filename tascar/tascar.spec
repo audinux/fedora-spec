@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: tascar
-Version: 0.232.2
+Version: 0.233.1
 Release: 1%{?dist}
 Summary: TASCAR is a collection of tools for creating spatially dynamic acoustic scenes in different render formats
 License: GPL2
@@ -12,10 +12,13 @@ URL: http://tascar.org/
 ExclusiveArch: x86_64 aarch64
 
 Source0: https://github.com/HoerTech-gGmbH/tascar/archive/refs/tags/release_%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Patch0: 0001-fix-config.mk.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
+BuildRequires: make
 BuildRequires: doxygen
+BuildRequires: xxd
 BuildRequires: boost-devel
 BuildRequires: libsndfile-devel
 BuildRequires: pkgconfig(jack)
@@ -31,7 +34,7 @@ BuildRequires: cairomm-devel
 BuildRequires: pangomm-devel
 BuildRequires: libsigc++20-devel
 BuildRequires: atkmm-devel
-BuildRequires: gtksourceviewmm-devel
+BuildRequires: gtksourceviewmm3-devel
 BuildRequires: libglademm24-devel
 BuildRequires: libltc-devel
 BuildRequires: webkit2gtk3-devel
@@ -40,6 +43,8 @@ BuildRequires: matio-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: libcurl-devel
 BuildRequires: libxml++30-devel
+BuildRequires: libmysofa-devel
+BuildRequires: CUnit-devel
 
 %description
 TASCAR is a collection of tools for creating spatially dynamic acoustic scenes in different render formats
@@ -51,48 +56,48 @@ Requires: %{name} = %{version}-%{release}
 %description devel
 The %{name}-devel package contains header files for %{name}.
 
-%package static
-Summary:  Static libraries for %{name}
-Requires: %{name} = %{version}-%{release}
-
-%description static
-The %{name}-static package contains static libraries for %{name}.
-
 %prep
-%autosetup -n %{name}-release_%{version}
+%autosetup -p1 -n %{name}-release_%{version}
+
+mkdir bin
+ln -s /usr/bin/true bin/git
 
 %build
 
-%cmake
-%cmake_build
+export PATH=`pwd`/bin:$PATH
+
+%make_build
 
 %install
 
-%cmake_install
+%make_install
 
 install -d 755 %buildroot/%{_datadir}/%{name}/examples/
 cp -r examples/* %buildroot/%{_datadir}/%{name}/examples/
 
 %ifarch x86_64 amd64 aarch64
+install -d 755 %buildroot/%{_libdir}/
 mv %buildroot/usr/lib/* %buildroot/%{_libdir}/
 %endif
+
+# Cleanup
+rm %buildroot/%{_bindir}/*.mk
 
 %files
 %license LICENSE
 %doc README.md release.md changelog
 %{_bindir}/*
-%{_libdir}/*.so
-%{_datadir}/%{name}/
+%{_libdir}/*.so.*
 %{_datadir}/%{name}/examples/*
 
 %files devel
-%{_includedir}/*
-%{_libdir}/cmake/*
-
-%files static
-%{_libdir}/*.a
+%{_includedir}/tascar/*
+%{_libdir}/*.so
 
 %changelog
+* Thu Oct 17 2024 Yann Collette <ycollette.nospam@free.fr> - 0.233.1-1
+- update to 0.233.1-1
+
 * Fri Jul 05 2024 Yann Collette <ycollette.nospam@free.fr> - 0.232.2-1
 - update to 0.232.2-1
 
