@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 41e632af206f61b3f5bf6746f4686172bb2930aa
-%global gittag0 2.0.1
+%global commit0 640ef4a08b0289860f8c17e0422293606a852c9c
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-PitchGrid
-Version: 2.0.1
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: PitchGrid plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r PitchGrid_plugin/dist/PitchGrid/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile

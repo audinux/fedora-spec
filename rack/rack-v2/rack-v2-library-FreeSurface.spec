@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 6380be7b20c80c4361d0615d405ead6df743cb67
-%global gittag0 2.1.1
+%global commit0 69231f36033a72878c4c3bd13f22d26272811397
+%global gittag0 2.1.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-FreeSurface
-Version: 2.1.1
+Version: 2.1.4
 Release: 2%{?dist}
 Summary: FreeSurface plugin for Rack
 License: GPL-2.0-or-later
@@ -156,5 +156,5 @@ cp -r FreeSurface_plugin/dist/FreeSurface/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.4-1
 - initial specfile

@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 eef96dbd6933bf42cb89a7a2f242f1cf5ff3d192
-%global gittag0 2.1.0
+%global commit0 7d627d3bf074e604bc81eb0d6dae9065d0c8e214
+%global gittag0 2.1.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Tyche
-Version: 2.1.0
+Version: 2.1.3
 Release: 2%{?dist}
 Summary: Tyche plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Tyche_plugin/dist/Tyche/* %{buildroot}%{_libexecdir}/Rack2/plugins/Tyche/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.3-1
 - initial specfile
