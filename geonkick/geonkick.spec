@@ -64,6 +64,8 @@ License and documentation for %{name}
 %files
 %{_bindir}/*
 %{_datadir}/*
+%exclude %{_includedir}/redkite/*
+%exclude %{_usr}/lib/libredkite.a
 
 %files -n license-%{name}
 %doc README.md doc/Geonkick_User_Guide.md
