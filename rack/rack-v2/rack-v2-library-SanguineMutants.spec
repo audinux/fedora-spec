@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 fa028cf7b38852e18772c024522d0b8f5e314d8a
-%global gittag0 2.5.0
+%global commit0 f35649bb96f6f5c92e053e8fcc02fa60fcacdbef
+%global gittag0 2.5.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SanguineMutants
-Version: 2.5.0
+Version: 2.5.1
 Release: 2%{?dist}
 Summary: SanguineMutants plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 SanguineMutants plugin for Rack.
-Based on Mutable Instruments' Plaits 1.2
+Powerful, polyphonic macro oscillator based on Mutable Instruments' Plaits 1.2
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r SanguineMutants_plugin/dist/SanguineMutants/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.1-1
 - initial specfile
