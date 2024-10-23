@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: coppwr
-Version: 1.6.0
+Version: 1.6.1
 Release: 1%{?dist}
 Summary: Low level control GUI for the PipeWire multimedia server
 License: GPL-3.0-or-later
@@ -103,8 +103,11 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/*.xml
 %{_datadir}/icons/*
 
 %changelog
+* Tue Oct 22 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.1-1
+- update to 1.6.1-1
+
 * Thu May 02 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.0-1
-- Initial spec file
+- update to 1.6.0-1
 
 * Thu Mar 07 2024 Yann Collette <ycollette.nospam@free.fr> - 1.5.1-1
 - Initial spec file
