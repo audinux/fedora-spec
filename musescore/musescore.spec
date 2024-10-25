@@ -27,12 +27,12 @@
 
 %define rname          mscore
 %define version_lesser 4.4
-%define revision       5485621
+%define revision       10242024
 %define docdir         %{_docdir}/%{name}
 %define fontdir        %{_datadir}/fonts/%{name}
 
 Name: mscore-mao
-Version: 4.4.2
+Version: 4.4.3
 Release: 3%{?dist}
 Summary: A WYSIWYG music score typesetter
 
@@ -297,6 +297,8 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/org.musescore.MuseSc
 %license fonts/finalemaestro/OFL.txt.finalemaestro
 
 %changelog
+* Thu Oct 24 2024 Yann Collette <ycollette.nospam@free.fr> - 4.4.3-3
+- update to 4.4.3-3
 * Mon Sep 16 2024 Yann Collette <ycollette.nospam@free.fr> - 4.4.2-3
 - update to 4.4.2-3
 * Sun Sep 08 2024 Yann Collette <ycollette.nospam@free.fr> - 4.4.1-3
