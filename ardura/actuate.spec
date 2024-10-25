@@ -21,7 +21,7 @@ Source0: https://github.com/ardura/Actuate/archive/refs/tags/v%{version}.tar.gz#
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
 BuildRequires: xcb-util-wm-devel
-BuildRequires: libXcursor-devel
+Buildrequires: libXcursor-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libX11-devel
 BuildRequires: openssl-devel
@@ -89,7 +89,7 @@ install -m 755 -d %{buildroot}/%{_libdir}/clap/
 cp -ra target/bundled/Actuate.vst3 %{buildroot}/%{_libdir}/vst3/
 cp -ra target/bundled/Actuate.clap %{buildroot}/%{_libdir}/clap/
 
-%files
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
 
