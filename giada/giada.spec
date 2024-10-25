@@ -2,8 +2,8 @@
 %global app_id com.giadamusic.Giada
 
 Name: giada
-Version: 1.0.0
-Release: %autorelease
+Version: 1.1.0
+Release: 1%{?dist}
 Summary: Your hardcore loop machine
 License: GPL-3.0-or-later AND MIT AND BSD-2-Clause
 URL: https://www.giadamusic.com
@@ -28,12 +28,13 @@ ExclusiveArch: x86_64 aarch64
 # proprietary license.)
 
 # Usage: ./giada-source.sh <TAG>
-#        ./giada-source.sh v1.0.0
+#        ./giada-source.sh 1.1.0
 
 Source0: giada.tar.gz
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
+BuildRequires: git
 BuildRequires: pkgconfig(rtmidi)
 BuildRequires: pkgconfig(sndfile)
 BuildRequires: pkgconfig(samplerate)
@@ -55,6 +56,8 @@ BuildRequires: pkgconfig(freetype2)
 BuildRequires: cmake(nlohmann_json)
 BuildRequires: libcurl-devel
 BuildRequires: webkit2gtk3-devel
+BuildRequires: fltk-devel
+BuildRequires: fltk-fluid
 BuildRequires: json-static
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
@@ -109,4 +112,6 @@ appstreamcli validate --no-net \
 %{_datadir}/icons/hicolor/scalable/apps/%{app_id}.svg
 
 %changelog
-%autochangelog
+* Thu Oct 24 2024 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+- update to 1.1.0-1
+
