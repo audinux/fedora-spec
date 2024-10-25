@@ -1,0 +1,98 @@
+{
+  "slug": "FrequencyDomain",
+  "name": "Frequency Domain",
+  "version": "2.0.3",
+  "license": "GPL-3.0-only",
+  "brand": "Frequency Domain",
+  "author": "almostEric with JerrySV, Jatin Chowdhury",
+  "authorEmail": "almostEric@frozenwastelandmodules.com",
+  "manualUrl": "https://github.com/almostEric/Frequency-Domain/blob/master/README.md",
+  "donateUrl": "https://paypal.me/FrozenWasteland",
+  "changelogUrl": "https://github.com/almostEric/Frequency-Domain/blob/master/CHANGELOG.md",
+  "modules": [
+    {
+      "slug": "BallOfConfusion",
+      "name": "Ball of Confusion",
+      "description": "Spherical Morphing Wavetable Oscillator",
+      "tags": [
+        "Oscillator",
+        "Digital",
+        "Sampler",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "BoxOfRevelation",
+      "name": "Box of Revelation",
+      "description": "3 Dimensional Cube Filter",
+      "tags": [
+        "Filter",
+        "Effect"
+      ]
+    },
+    {
+      "slug": "DanceThisMeshAround",
+      "name": "Dance This Mesh Around",
+      "description": "Multi-Dimensional Digital Waveguide Oscillator",
+      "tags": [
+        "Oscillator",
+        "Effect",
+        "Physical modeling"
+      ]
+    },
+    {
+      "slug": "DelayedReaction",
+      "name": "Delayed Reaction",
+      "description": "Spectral Delay",
+      "tags": [
+        "Delay",
+        "Effect"
+      ]
+    },
+    {
+      "slug": "FreudianSlip",
+      "name": "Freudian Slip",
+      "description": "Resynthesizing Sampler",
+      "tags": [
+        "Synth voice",
+        "Sampler"
+      ]
+    },
+    {
+      "slug": "GrainsOfWrath",
+      "name": "Grains Of Wrath",
+      "description": "Spewer of Grains of varying dispositions",
+      "tags": [
+        "Granular",
+        "Sampler",
+        "Effect",
+        "Polyphonic"
+      ]
+    },
+    {
+      "slug": "HarmonicConvergence",
+      "name": "Harmonic Convergence",
+      "description": "Resynthesis Engine",
+      "tags": [
+        "Synth voice"
+      ]
+    },
+    {
+      "slug": "HeatOfTheMoment",
+      "name": "Heat Of The Moment",
+      "description": "Impulse Generator",
+      "tags": [
+        "Noise"
+      ]
+    },
+    {
+      "slug": "Morphology",
+      "name": "Morphology",
+      "description": "Spectral Morpher",
+      "tags": [
+        "Vocoder",
+        "Effect"
+      ]
+    }
+  ]
+}
