@@ -3,9 +3,10 @@
 # Type: Standalone
 # Category: Audio, DAW
 
+%global commit0 f15579ab1239709b289e73c18349044730012179
+
 Name: tsunami
-# upstream version is in src/Tsunami.cpp
-Version: 0.7.114
+Version: 2024.10
 Release: 2%{?dist}
 Summary: A simple but powerful audio editor
 URL: https://github.com/momentarylapse/tsunami
@@ -16,6 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/momentarylapse/tsunami/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Patch0: 0001-remove-git-call.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -35,10 +37,14 @@ Tsunami is an open-source digital audio workstation (DAW).
 It is designed for ease of use and not-looking-crappy™.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{version}
 
 sed -i "/Exec=/c\Exec=tsunami" static/michisoft-tsunami.desktop
 sed -i "/Icon=/c\Icon=tsunami" static/michisoft-tsunami.desktop
+
+sed -i -e "s/extern//g" .cmake/git-version.h
+sed -i -e "s/GitHash/GitHash=\"%{commit0}\"/g" .cmake/git-version.h
+cp .cmake/git-version.h src
 
 %build
 
@@ -73,6 +79,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/michisoft-tsunami.des
 %{_datadir}/mime/packages/michisoft-nami.xml
 
 %changelog
+* Fri Oct 25 2024 Yann Collette <ycollette.nospam@free.fr> - 2024.10-2
+- update to 2024.10-2
+
 * Sun Oct 22 2023 Justin Koh <j@ustink.org> - 0.7.114-2
 - update to 0.7.114-2
 
