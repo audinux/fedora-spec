@@ -1,0 +1,28 @@
+From a7fcbc3892ec0a73670ef2364d917f5f754a498f Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Fri, 25 Oct 2024 22:54:38 +0200
+Subject: [PATCH] remove git call
+
+---
+ CMakeLists.txt | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 84b3b2a..e535191 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -290,11 +290,6 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
+ find_package(Threads REQUIRED)
+ list(APPEND DEPS Threads::Threads)
+ 
+-# git version
+-include(.cmake/CheckGit.cmake)
+-CheckGitSetup()
+-list(APPEND DEPS git-version)
+-
+ 
+ #=======================================================================================
+ #    target tsunami
+-- 
+2.47.0
+
