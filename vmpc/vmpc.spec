@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: vmpc
-Version: 0.6.1
+Version: 0.6.4
 Release: 1%{?dist}
 Summary: JUCE implementation of VMPC2000XL
 License: GPL-3.0-only
@@ -36,24 +36,24 @@ Requires: license-%{name}
 A JUCE implementation of VMPC2000XL, the Akai MPC2000XL emulator
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
 
 %package -n license-%{name}
-Summary:  License and documentation for %{name}
-License:  GPL-2.0-or-later
+Summary: License and documentation for %{name}
+License: GPL-3.0-or-later
 
 %description -n license-%{name}
 License and documentation for %{name}
@@ -92,6 +92,9 @@ cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/Standalone/* %{bu
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Oct 30 2024 Yann Collette <ycollette.nospam@free.fr> - 0.6.4-1
+- update to 0.6.4-1
+
 * Tue Aug 13 2024 Yann Collette <ycollette.nospam@free.fr> - 0.6.1-1
 - update to 0.6.1-1
 
