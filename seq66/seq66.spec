@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer, MIDI
 
 Name: seq66
-Version: 0.99.14
+Version: 0.99.15
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -73,7 +73,7 @@ export CXXFLAGS="-std=c++11 -include cstdint $CXXFLAGS"
 
 export PATH=.local/bin:$PATH
 
-./bootstrap
+# ./bootstrap
 
 %configure --enable-cli
 %make_build
@@ -104,6 +104,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libdir}/*
 
 %changelog
+* Wed Oct 30 2024 Yann Collette <ycollette.nospam@free.fr> - 0.99.15-1
+- update 0.99.15-1
+
 * Sat Aug 24 2024 Yann Collette <ycollette.nospam@free.fr> - 0.99.14-1
 - update 0.99.14-1
 
