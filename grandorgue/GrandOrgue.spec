@@ -4,7 +4,7 @@
 # Category: Audio, Sampler
 
 Name: grandorgue
-Version: 3.15.2.1
+Version: 3.15.3.0
 Release: 7%{?dist}
 Summary: A sample based pipe organ simulator.
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./GrandOrgue-source.sh <TAG>
-#        ./GrandOrgue-source.sh 3.15.2-1
+#        ./GrandOrgue-source.sh 3.15.3-0
 
 Source0: grandorgue.tar.gz
 Source1: GrandOrgue-source.sh
@@ -56,7 +56,6 @@ Obsoletes: GrandOrgue >= 0.3.1
 %package demo
 Summary: GrandOrgue demo sampleset
 License: GPL-2.0-or-later
-Group: Productivity/Multimedia/Sound/Midi
 BuildArch: noarch
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
@@ -66,7 +65,6 @@ This package contains the demo sampleset for GrandOrgue.
 %package resources
 Summary: GrandOrgue resource files
 License: GPL-2.0-or-later
-Group: Productivity/Multimedia/Sound/Midi
 BuildArch: noarch
 
 %description resources
@@ -132,6 +130,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/GrandOrgue.desktop
 %{_datadir}/GrandOrgue/packages/*.orgue
 
 %changelog
+* Wed Oct 30 2024 Yann Collette <ycollette.nospam@free.fr> - 3.15.3.0-7
+- update to 3.15.3.0-7
+
 * Fri Oct 25 2024 Yann Collette <ycollette.nospam@free.fr> - 3.15.2.1-7
 - update to 3.15.2.1-7
 
