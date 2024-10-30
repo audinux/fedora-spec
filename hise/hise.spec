@@ -4,7 +4,7 @@
 # Category: Audio, Programming, Tool
 
 Name: HISE
-Version: 3.6.2
+Version: 4.1.0
 Release: 2%{?dist}
 Summary: The open source framework for sample based instrument
 License: GPL-3.0-or-later OR LicenseRef-www-hise-audio
@@ -138,6 +138,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst/*
 
 %changelog
+* Wed Oct 30 2024 Yann Collette <ycollette.nospam@free.fr> - 4.1.0-2
+- update to 4.1.0-2
+
 * Sat Jun 22 2024 Yann Collette <ycollette.nospam@free.fr> - 3.6.2-2
 - update to 3.6.2-2 - add HISE sources in /usr/src/HISE
 
