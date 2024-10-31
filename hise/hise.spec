@@ -19,8 +19,8 @@ Source0: https://github.com/christophhart/HISE/archive/refs/tags/%{version}.tar.
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
 
 BuildRequires: gcc gcc-c++
+BuildRequires: unzip
 BuildRequires: make
-BuildRequires: JUCE7
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
@@ -45,52 +45,56 @@ HISE is a cross-platform open source audio application for building virtual inst
 It emphasizes on sampling, but includes some basic synthesis features for making hybrid
 instruments as well as audio effects.
 
-%package -n vst-%{name}
-Summary: VST2 version of %{name}
+%package -n vst3-%{name}
+Summary: VST3 version of %{name}
 License: GPL-3.0-or-later OR LicenseRef-www-hise-audio
 
-%description -n vst-%{name}
-VST2 version of %{name}
+%description -n vst3-%{name}
+VST3 version of %{name}
 
 %prep
 %autosetup -n %{name}-%{version}
 
+# VST2 SDK still required for the build
 unzip %{SOURCE1}
+
+cd tools/SDK
+unzip sdk.zip
 
 %build
 
 %set_build_flags
+
 CWD=`pwd`
-#export LDFLAGS="`pkg-config --libs glib-2.0 gtk+-3.0 webkit2gtk-4.0` $LDFLAGS"
 export CPPFLAGS="-I$CWD/VST_SDK/VST2_SDK"
 
 cd projects/standalone/
-Projucer --resave HISE\ Standalone.jucer
+$CWD/tools/projucer/Projucer --resave HISE\ Standalone.jucer
 
 cd Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true V=1
 
 cd ../../../..
 
 cd projects/plugin/
-Projucer --resave HISE.jucer
+$CWD/tools/projucer/Projucer --resave HISE.jucer
 
 cd Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true v=1
 
 %install
 
-install -m 755 -d %{buildroot}%{_bindir}/
-install -m 755 -d %{buildroot}%{_datadir}/%{name}/demos/
-install -m 755 -d %{buildroot}%{_datadir}/applications/
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/demos/
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
 install -m 755 -d %{buildroot}/%{_datadir}/icons/%{name}/
+install -m 755 -d %{buildroot}/%{_libdir}/vst3/
 
 cp projects/standalone/Builds/LinuxMakefile/build//HISE\ Standalone %{buildroot}/%{_bindir}/hise
 cp -ra extras/* %{buildroot}/%{_datadir}/%{name}/demos/
 install -m 644 -p ./hi_core/hi_images/logo_mini.png %{buildroot}/%{_datadir}/icons/%{name}/%{name}.png
 
-install -m 755 -d %{buildroot}%{_libdir}/vst/
-install -m 755 -p projects/plugin/Builds/LinuxMakefile/build/HISE.so %{buildroot}%{_libdir}/vst/
+cp -ra projects/plugin/Builds/LinuxMakefile/build/HISE.vst3 %{buildroot}/%{_libdir}/vst3/
 
 install -m 755 -d %{buildroot}/%{_usrsrc}/
 mkdir tmp
@@ -100,6 +104,8 @@ tar xvfz %{SOURCE0}
 rm -rf HISE-%{version}/.github/
 rm -f HISE-%{version}/.gitignore
 rm -f HISE-%{version}/.gitmodules
+
+find tools/ -executable -type f -exec rm -rf {} \;
 
 mv HISE-%{version} %{buildroot}/%{_usrsrc}/HISE
 cd ..
@@ -134,8 +140,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/demos/*
 %{_usrsrc}/HISE/*
 
-%files -n vst-%{name}
-%{_libdir}/vst/*
+%files -n vst3-%{name}
+%{_libdir}/vst3/*
 
 %changelog
 * Wed Oct 30 2024 Yann Collette <ycollette.nospam@free.fr> - 4.1.0-2
