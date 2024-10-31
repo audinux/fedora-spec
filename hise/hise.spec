@@ -21,6 +21,7 @@ Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
 BuildRequires: gcc gcc-c++
 BuildRequires: unzip
 BuildRequires: make
+BuildRequires: JUCE61
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
@@ -69,7 +70,7 @@ CWD=`pwd`
 export CPPFLAGS="-I$CWD/VST_SDK/VST2_SDK"
 
 cd projects/standalone/
-$CWD/tools/projucer/Projucer --resave HISE\ Standalone.jucer
+Projucer61 --resave HISE\ Standalone.jucer
 
 cd Builds/LinuxMakefile/
 %make_build CONFIG=Release STRIP=true V=1
@@ -77,7 +78,7 @@ cd Builds/LinuxMakefile/
 cd ../../../..
 
 cd projects/plugin/
-$CWD/tools/projucer/Projucer --resave HISE.jucer
+Projucer61 --resave HISE.jucer
 
 cd Builds/LinuxMakefile/
 %make_build CONFIG=Release STRIP=true v=1
@@ -106,6 +107,7 @@ rm -f HISE-%{version}/.gitignore
 rm -f HISE-%{version}/.gitmodules
 
 find HISE-%{version}/tools -executable -type f -exec rm -rf {} \;
+find HISE-%{version}/tools -name "*.a" -exec rm -rf {} \;
 
 mv HISE-%{version} %{buildroot}/%{_usrsrc}/HISE
 cd ..
