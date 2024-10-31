@@ -105,7 +105,7 @@ rm -rf HISE-%{version}/.github/
 rm -f HISE-%{version}/.gitignore
 rm -f HISE-%{version}/.gitmodules
 
-find tools/ -executable -type f -exec rm -rf {} \;
+find HISE-%{version}/tools -executable -type f -exec rm -rf {} \;
 
 mv HISE-%{version} %{buildroot}/%{_usrsrc}/HISE
 cd ..
