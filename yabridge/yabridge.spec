@@ -7,7 +7,7 @@
 %define _lto_cflags %{nil}
 
 Name: yabridge
-Version: 5.1.0
+Version: 5.1.1
 Release: 6%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPL-2.0-or-later
@@ -33,16 +33,20 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: wine-devel
 BuildRequires: boost-devel
 BuildRequires: libxcb-devel
-BuildRequires: libxcb-devel(x86-32)
-BuildRequires: glibc-devel(x86-32)
-BuildRequires: wine-devel(x86-32)
-BuildRequires: libstdc++-devel(x86-32)
 BuildRequires: dbus-devel
 BuildRequires: gulrak-filesystem-devel
+BuildRequires: tomlplusplus-devel
+BuildRequires: glibc-devel(x86-32)
+BuildRequires: libxcb-devel(x86-32)
+BuildRequires: wine-devel(x86-32)
+BuildRequires: libstdc++-devel
+BuildRequires: libstdc++-devel(x86-32)
+BuildRequires: mingw32-gcc-c++
+BuildRequires: mingw64-gcc-c++
 
 %description
 Yet Another way to use Windows VST plugins on Linux.
-Yabridge seamlessly supports using both 32-bit and 64-bit
+Yabridge seamlessly supports using  64-bit
 Windows VST2 and VST3 plugins in a 64-bit Linux VST host as
 if they were native VST2 and VST3 plugins, with optional
 support for plugin groups to enable inter-plugin communication
@@ -82,8 +86,6 @@ install -dm755 %{buildroot}%{_libdir}/
 
 install %{_vpath_builddir}/yabridge-host.exe %{buildroot}%{_bindir}/
 install %{_vpath_builddir}/yabridge-host.exe.so %{buildroot}%{_bindir}/
-install %{_vpath_builddir}/yabridge-host-32.exe %{buildroot}%{_bindir}/
-install %{_vpath_builddir}/yabridge-host-32.exe.so %{buildroot}%{_bindir}/
 
 install %{_vpath_builddir}/libyabridge-vst2.so %{buildroot}%{_libdir}/
 install %{_vpath_builddir}/libyabridge-chainloader-vst2.so %{buildroot}%{_libdir}/
@@ -104,6 +106,9 @@ install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}/
 %{_libdir}/*
 
 %changelog
+* Tue Nov 05 2024 Yann Collette <ycollette.nospam@free.fr> - 5.1.1-6
+- update to 5.1.1-6
+
 * Sat Dec 23 2023 Yann Collette <ycollette.nospam@free.fr> - 5.1.0-6
 - update to 5.1.0-6
 
