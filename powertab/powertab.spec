@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Audio, DAW
 
-%global commit0 f6662dd3c63adeca417c750e689bf7d5cf3a2f01
+%global commit0 731b4fc5c6500fdc8095e00171e3859179ed2470
 
 Name: powertabeditor
 Version: 0.0.1
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: View and edit guitar powertab tablature.
 URL: https://github.com/powertab/powertabeditor
 ExclusiveArch: x86_64 aarch64
@@ -21,8 +21,9 @@ Source0: https://github.com/powertab/powertabeditor/archive/%{commit0}.zip#/%{na
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: boost-devel
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-linguist
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-linguist
+BuildRequires: qt6-qttools-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: doctest-devel
 %if 0%{?fedora} >= 40
@@ -33,6 +34,7 @@ BuildRequires: minizip-ng-devel
 BuildRequires: json-devel
 BuildRequires: pugixml-devel
 BuildRequires: rtmidi-devel
+BuildRequires: cups-devel
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 
@@ -74,6 +76,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/powertabe
 %{_datadir}/powertab/
 
 %changelog
+* Mon Nov 04 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-4
+- update to 731b4fc5c6500fdc8095e00171e3859179ed2470
+
 * Mon Jun 10 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
 - update to f6662dd3c63adeca417c750e689bf7d5cf3a2f01
 
