@@ -10,7 +10,7 @@
 
 Name: fluxus
 Version: 0.17rc5.%{shortcommit0}
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: A 3D game engine for livecoding worlds into existence
 URL: https://pawfal.org/fluxus/
 ExclusiveArch: x86_64 aarch64
@@ -69,7 +69,7 @@ Requires: gstreamer-plugins-base >= 0.10.25
 Requires: gstreamer-plugins-good >= 0.10.17
 Requires: gstreamer-plugins-bad-free >= 0.10.22
 Requires: libunicap >= 0.9.12
-Requires: ffmpeg >= 0.7
+Requires: (ffmpeg or ffmpeg-free)
 Requires: emacs w3m-el
 
 %description
@@ -142,6 +142,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/fluxus.desktop
 %{_datadir}/emacs/site-lisp/fluxus
 
 %changelog
+* Tue Nov 05 2024 Yann Collette <ycollette.nospam@free.fr> - 0.17rc5-5
+- fix ffmpeg depdendency
+
 * Mon May 10 2021 Yann Collette <ycollette.nospam@free.fr> - 0.17rc5-4
 - fix for pipewire
 

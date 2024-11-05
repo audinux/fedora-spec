@@ -5,7 +5,7 @@
 
 Name: harvid
 Version: 0.9.1
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: harvid -- HTTP Ardour Video Daemon
 License: GPL-2.0-or-later
 URL: https://github.com/x42/harvid
@@ -29,7 +29,7 @@ BuildRequires: libjpeg-turbo-devel
 BuildRequires: vim-common
 BuildRequires: libpng-devel
 
-Requires: ffmpeg
+Requires: (ffmpeg or ffmpeg-free)
 Requires: xjadeo
 
 %description
@@ -63,6 +63,9 @@ ln -s /usr/bin/ffprobe %{buildroot}/usr/bin/ffprobe_harvid
 %{_mandir}/*
 
 %changelog
+* Tue Nov 05 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.1-4
+- update to 0.9.1-4 - fix ffmpeg dependency
+
 * Sun Jan 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.1-3
 - update to 0.9.1-3
 

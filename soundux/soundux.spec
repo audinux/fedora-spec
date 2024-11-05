@@ -5,7 +5,7 @@
 
 Name: soundux
 Version: 0.2.7
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A cross-platform soundboard
 License: GPL-3.0-or-later
 URL: https://github.com/Soundux/Soundux
@@ -35,7 +35,7 @@ BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 BuildRequires: chrpath
 
-Requires: ffmpeg
+Requires: (ffmpeg or ffmpeg-free)
 Requires: youtube-dl
 
 %description
@@ -91,5 +91,8 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/io.github
 %{_datadir}/pixmaps/soundux.png
 
 %changelog
+* Tue Nov 05 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2.7-2
+- update to 0.2.7-2 - fix ffmpeg dependency
+
 * Fri Jan 13 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2.7-1
 - Initial spec file
