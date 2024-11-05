@@ -1010,7 +1010,8 @@ https://github.com/liuanlin-mx/MXComp
 https://github.com/ssabug/fxseq
 https://github.com/csound/plugins
 https://github.com/csound/csound
-https://github.com/ardura/Scrollscope/"
+https://github.com/ardura/Scrollscope
+https://github.com/aaronaanderson/Terrain"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
