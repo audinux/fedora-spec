@@ -4,8 +4,8 @@
 # Category: Audio, Synthesizer
 
 Name: BespokeSynth
-Version: 1.2.0
-Release: 8%{?dist}
+Version: 1.2.1
+Release: 9%{?dist}
 Summary: A software modular synth
 License: GPL-3.0-or-later
 URL: https://github.com/BespokeSynth/BespokeSynth
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./bespokesynth-sources.sh <tag>
-# ./bespokesynth-sources.sh v1.2.0
+# ./bespokesynth-sources.sh v1.2.1
 
 Source0: BespokeSynth.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
@@ -47,7 +47,7 @@ BuildRequires: jsoncpp-devel
 BuildRequires: desktop-file-utils
 
 Requires: youtube-dl
-Requires: ffmpeg
+Requires: (ffmpeg or ffmpeg-free)
 
 %description
 Bespoke is a software modular synthesizer. It contains a bunch of modules,
@@ -120,8 +120,11 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/BespokeSynth.desktop
 %{_datadir}/icons/*
 
 %changelog
+* Sat Nov 02 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-9
+- update to 1.2.1-9 - fix requires 
+
 * Fri Jul 14 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-8
-- update to 1.2.0-7
+- update to 1.2.0-8
 
 * Wed Jan 05 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-8
 - fix default vst search paths

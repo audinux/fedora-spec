@@ -3,10 +3,10 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-%global commit0 8fa9efbbce20d4cde21d4d7fb7ac5a53cb4e2213
+%global commit0 9839f5b002edfefbae31f3e6a3bac966a4fe4e3d
 
 Name: BespokeSynth-weekly
-Version: 1.2.9
+Version: 1.2.10
 Release: 1%{?dist}
 Summary: A software modular synth
 License: GPL-3.0-or-later
@@ -50,7 +50,7 @@ BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 
 Requires: youtube-dl
-Requires: ffmpeg
+Requires: (ffmpeg or ffmpeg-free)
 
 Obsoletes: BespokeSynth < 1.2.9
 
@@ -127,5 +127,8 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/com.bespo
 %{_datadir}/metainfo/com.bespokesynth.BespokeSynth.metainfo.xml
 
 %changelog
+* Sat Nov 02 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.10-1
+- Update to 1.2.10-1 - fix requires 
+
 * Thu Sep 05 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.9-1
 - Initial spec file
