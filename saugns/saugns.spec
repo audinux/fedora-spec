@@ -4,7 +4,7 @@
 # Category: Devel, Audio, Tool
 
 Name: saugns
-Version: 0.4.7c
+Version: 0.4.8
 Release: 1%{?dist}
 Summary: Scriptable AUdio GeNeration System - implements the SAU language.
 License: GPL-3.0-only
@@ -43,7 +43,7 @@ the -h option. More can be found in the man page and on the usage web page.
 %prep
 %autosetup -p1 -n %{name}-%{version}
 
-sed -i -e "s/-Wall -I./-Wall -I. \$(DEPFLAGS)/g" Makefile
+sed -i -e "s/-pedantic -I./-pedantic -I. \$(DEPFLAGS)/g" Makefile
 sed -i -e "s/-s / /g" Makefile
 
 %build
@@ -71,6 +71,9 @@ mv %{buildroot}/%{_datadir}/doc/%{name}/ %{buildroot}/%{_datadir}/%{name}/doc/
 %{_datadir}/%{name}/examples/*
 
 %changelog
+* Sun Nov 03 2024 Yann Collette <ycollette.nospam@free.fr> - 0.4.8-1
+- update to 0.4.8-1
+
 * Wed Oct 30 2024 Yann Collette <ycollette.nospam@free.fr> - 0.4.7c-1
 - update to 0.4.7c-1
 
