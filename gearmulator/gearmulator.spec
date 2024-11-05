@@ -1,10 +1,10 @@
 # Status: active
 # Tag: Synthesizer
-# Type: Plugin, VST3, CLAP, LV2
+# Type: Plugin, VST3, CLAP
 # Category: Audio, Synthesizer
 
 Name: gearmulator
-Version: 1.3.20
+Version: 1.3.21
 Release: 1%{?dist}
 Summary: Emulation of classic VA synths of the late 90s/2000s that are based on Motorola 56300 family DSPs 
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./gearmulator-source.sh <TAG>
-#        ./gearmulator-source.sh 1.3.20
+#        ./gearmulator-source.sh 1.3.21
 
 Source0: gearmulator.tar.gz
 Source1: gearmulator-source.sh
@@ -45,7 +45,7 @@ BuildRequires: webkit2gtk3-devel
 %description
 
 This project emulates various musical devices that used the Motorola 56300 family DSPs.
-The supported plugin formats are VST3, CLAP and LV2.
+The supported plugin formats are VST3 and CLAP.
 At the moment, the following synthesizers are supported:
 - Osirus: Access Virus A,B,C
 - OsTIrus: Access Virus TI/TI2/Snow
@@ -84,67 +84,25 @@ Requires: license-%{name}
 %description -n clap-%{name}
 CLAP version of %{name}
 
-%package -n lv2-%{name}
-Summary: LV2 version of %{name}
-License: GPL-3.0-or-later
-Requires: license-%{name}
-
-%description -n lv2-%{name}
-LV2 version of %{name}
-
 %prep
 %autosetup -p1 -n gearmulator
 
 %build
 
-%cmake -Dgearmulator_BUILD_FX_PLUGIN=ON
+%cmake \
+    -Dgearmulator_BUILD_FX_PLUGIN=ON
+    
 %cmake_build
 
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/source/mqJucePlugin/mqJucePlugin_FX_artefacts/Release/VST3/*           %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/source/mqJucePlugin/mqJucePlugin_artefacts/Release/VST3/*              %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/source/xtJucePlugin/xtJucePlugin_FX_artefacts/Release/VST3/*           %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/source/xtJucePlugin/xtJucePlugin_artefacts/Release/VST3/*              %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/source/osTIrusJucePlugin/osTIrusJucePlugin_FX_artefacts/Release/VST3/* %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/source/osTIrusJucePlugin/osTIrusJucePlugin_artefacts/Release/VST3/*    %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/source/osirusJucePlugin/osirusJucePlugin_FX_artefacts/Release/VST3/*   %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/source/osirusJucePlugin/osirusJucePlugin_artefacts/Release/VST3/*      %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/source/nord/n2x/n2xJucePlugin/n2xJucePlugin_artefacts/Release/VST3/*   %{buildroot}/%{_libdir}/vst3/
-
 install -m 755 -d %{buildroot}%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/source/mqJucePlugin/mqJucePlugin_FX_artefacts/Release/VST/*           %{buildroot}/%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/source/mqJucePlugin/mqJucePlugin_artefacts/Release/VST/*              %{buildroot}/%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/source/xtJucePlugin/xtJucePlugin_FX_artefacts/Release/VST/*           %{buildroot}/%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/source/xtJucePlugin/xtJucePlugin_artefacts/Release/VST/*              %{buildroot}/%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/source/osirusJucePlugin/osirusJucePlugin_FX_artefacts/Release/VST/*   %{buildroot}/%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/source/osirusJucePlugin/osirusJucePlugin_artefacts/Release/VST/*      %{buildroot}/%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/source/osTIrusJucePlugin/osTIrusJucePlugin_FX_artefacts/Release/VST/* %{buildroot}/%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/source/osTIrusJucePlugin/osTIrusJucePlugin_artefacts/Release/VST/*    %{buildroot}/%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/source/nord/n2x/n2xJucePlugin/n2xJucePlugin_artefacts/Release/VST/*   %{buildroot}/%{_libdir}/vst/
-
 install -m 755 -d %{buildroot}%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/source/mqJucePlugin/mqJucePlugin_FX_artefacts/Release/CLAP/*           %{buildroot}/%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/source/mqJucePlugin/mqJucePlugin_artefacts/Release/CLAP/*              %{buildroot}/%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/source/xtJucePlugin/xtJucePlugin_FX_artefacts/Release/CLAP/*           %{buildroot}/%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/source/xtJucePlugin/xtJucePlugin_artefacts/Release/CLAP/*              %{buildroot}/%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/source/osirusJucePlugin/osirusJucePlugin_FX_artefacts/Release/CLAP/*   %{buildroot}/%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/source/osirusJucePlugin/osirusJucePlugin_artefacts/Release/CLAP/*      %{buildroot}/%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/source/osTIrusJucePlugin/osTIrusJucePlugin_FX_artefacts/Release/CLAP/* %{buildroot}/%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/source/osTIrusJucePlugin/osTIrusJucePlugin_artefacts/Release/CLAP/*    %{buildroot}/%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/source/nord/n2x/n2xJucePlugin/n2xJucePlugin_artefacts/Release/CLAP/*   %{buildroot}/%{_libdir}/clap/
 
-install -m 755 -d %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/source/mqJucePlugin/mqJucePlugin_FX_artefacts/Release/LV2/*           %{buildroot}/%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/source/mqJucePlugin/mqJucePlugin_artefacts/Release/LV2/*              %{buildroot}/%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/source/xtJucePlugin/xtJucePlugin_FX_artefacts/Release/LV2/*           %{buildroot}/%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/source/xtJucePlugin/xtJucePlugin_artefacts/Release/LV2/*              %{buildroot}/%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/source/osirusJucePlugin/osirusJucePlugin_FX_artefacts/Release/LV2/*   %{buildroot}/%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/source/osirusJucePlugin/osirusJucePlugin_artefacts/Release/LV2/*      %{buildroot}/%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/source/osTIrusJucePlugin/osTIrusJucePlugin_FX_artefacts/Release/LV2/* %{buildroot}/%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/source/osTIrusJucePlugin/osTIrusJucePlugin_artefacts/Release/LV2/*    %{buildroot}/%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/source/nord/n2x/n2xJucePlugin/n2xJucePlugin_artefacts/Release/LV2/*   %{buildroot}/%{_libdir}/lv2/
+cp -ra bin/plugins/Release/VST3/* %{buildroot}/%{_libdir}/vst3/
+cp -ra bin/plugins/Release/VST/*  %{buildroot}/%{_libdir}/vst/
+cp -ra bin/plugins/Release/CLAP/* %{buildroot}/%{_libdir}/clap/
 
 %files -n license-%{name}
 %doc README.md
@@ -159,10 +117,10 @@ cp -ra %{__cmake_builddir}/source/nord/n2x/n2xJucePlugin/n2xJucePlugin_artefacts
 %files -n clap-%{name}
 %{_libdir}/clap/*
 
-%files -n lv2-%{name}
-%{_libdir}/lv2/*
-
 %changelog
+* Fri Nov 01 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.21-1
+- update to 1.3.21-1
+
 * Sun Sep 08 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.20-1
 - update to 1.3.20-1
 
