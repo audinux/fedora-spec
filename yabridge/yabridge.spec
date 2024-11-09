@@ -6,9 +6,17 @@
 %global debug_package %{nil}
 %define _lto_cflags %{nil}
 
+# For the test:
+# Set the folder in witch it create the linux usable plugins
+# $ yabridgectl set --path=<path>
+# After ad your folders with vst or vst3 plugins, how many you want
+# $ yabridgectl add <vst_folder>
+# Run a sync to create files
+# $ yabridgectl sync
+
 Name: yabridge
 Version: 5.1.1
-Release: 6%{?dist}
+Release: 7%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPL-2.0-or-later
 URL: https://github.com/robbert-vdh/yabridge
@@ -18,6 +26,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/robbert-vdh/yabridge/archive/refs/tags/%{version}.tar.gz#/yabridge-%{version}.tar.gz
+Patch0: yabridge-PR316.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: meson
@@ -41,8 +50,22 @@ BuildRequires: libxcb-devel(x86-32)
 BuildRequires: wine-devel(x86-32)
 BuildRequires: libstdc++-devel
 BuildRequires: libstdc++-devel(x86-32)
-BuildRequires: mingw32-gcc-c++
-BuildRequires: mingw64-gcc-c++
+BuildRequires: asio-devel
+
+Requires: python3
+Requires: wine
+Requires: boost
+Requires: boost-filesystem
+Requires: boost-system
+Requires: libxcb
+Requires: libXau
+
+Requires: wine(x86-32)
+Requires: glibc(x86-32)
+Requires: libgcc(x86-32)
+Requires: libstdc++(x86-32)
+Requires: libxcb(x86-32)
+Requires: libXau(x86-32)
 
 %description
 Yet Another way to use Windows VST plugins on Linux.
@@ -56,7 +79,7 @@ allows yabridge to be both fast and highly compatible, while
 also staying easy to debug and maintain.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{version}
 
 %build
 
@@ -71,7 +94,9 @@ export CXXFLAGS="-include cstdint $CXXFLAGS"
 %if 0%{?fedora} >= 38
     -Dcpp_arg="-include cstdint $CXXFLAGS" \
 %endif
-    -Dbitbridge=true
+    -Dbitbridge=true \
+    -Dclap=true \
+    -Dvst3=true
 
 %meson_build
 
@@ -86,6 +111,9 @@ install -dm755 %{buildroot}%{_libdir}/
 
 install %{_vpath_builddir}/yabridge-host.exe %{buildroot}%{_bindir}/
 install %{_vpath_builddir}/yabridge-host.exe.so %{buildroot}%{_bindir}/
+
+install %{_vpath_builddir}/yabridge-host-32.exe %{buildroot}%{_bindir}/
+install %{_vpath_builddir}/yabridge-host-32.exe.so %{buildroot}%{_bindir}/
 
 install %{_vpath_builddir}/libyabridge-vst2.so %{buildroot}%{_libdir}/
 install %{_vpath_builddir}/libyabridge-chainloader-vst2.so %{buildroot}%{_libdir}/
@@ -106,6 +134,9 @@ install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}/
 %{_libdir}/*
 
 %changelog
+* Fri Nov 08 2024 Yann Collette <ycollette.nospam@free.fr> - 5.1.1-7
+- update to 5.1.1-7 - fix requires and add missing binary. Add a Yabridgectl patch.
+
 * Tue Nov 05 2024 Yann Collette <ycollette.nospam@free.fr> - 5.1.1-6
 - update to 5.1.1-6
 
