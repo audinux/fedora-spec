@@ -5,7 +5,7 @@
 
 Name: raysession
 Version: 0.14.3
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A JACK session manager
 
 License: GPL-2.0-or-later
@@ -36,6 +36,9 @@ BuildRequires: desktop-file-utils
 Requires(pre): python3-qt5
 Requires(pre): python3-pyliblo
 Requires(pre): python3-pyxdg
+%if 0%{?fedora} >= 41
+Requires(pre): python3-legacy-cgi
+%endif
 
 %description
 Ray Session is a GNU/Linux session manager for audio programs as Ardour, Carla,
@@ -113,6 +116,9 @@ desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-network.desktop
 %{_sysconfdir}/xdg/raysession/client_templates/*
 
 %changelog
+* Thu Nov 07 2024 Yann Collette <ycollette.nospam@free.fr> - 0.14.3-3
+- update to 0.14.3-3 - add missing Requires for f41
+
 * Sat Dec 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.14.3-2
 - update to 0.14.3-2
 
