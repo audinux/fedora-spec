@@ -21,11 +21,13 @@ BuildRequires: glibc-devel(x86-32)
 BuildRequires: gtk3-devel
 BuildRequires: libX11-devel
 BuildRequires: libX11-devel(x86-32)
+BuildRequires: libstdc++-devel
 BuildRequires: libstdc++-devel(x86-32)
 BuildRequires: wine-devel
 BuildRequires: wine-devel(x86-32)
 
 Requires: wine
+Requires: wine(x86-32)
 Requires: python3
 
 %description
@@ -34,19 +36,25 @@ LinVst adds support for Windows vst's to be used in Linux vst capable DAW's.
 %prep
 %autosetup
 
-sed -i "s/LINK_WINE = .* -l/LINK_WINE = -L\/usr\/lib64\/wine -l/g" Makefile
-sed -i "s/LINK_WINE32 = .* -l/LINK_WINE32 = -L\/usr\/lib\/wine -l/g" Makefile
+sed -i -e "s/LINK_WINE = .* -l/LINK_WINE = -L\/usr\/lib64\/wine -l/g" Makefile
+sed -i -e "s/LINK_WINE32 = .* -l/LINK_WINE32 = -L\/usr\/lib\/wine -l/g" Makefile
+sed -i -e "s/CXX_FLAGS =/CXX_FLAGS = -fPIC/g" Makefile-convert
 
 %build
 
-export LDFLAGS="-lX11 -lrt"
+%set_build_flags
 
-make
-make -f Makefile-convert
+export LDFLAGS="-lX11 -lrt $LDFLAGS"
+export CFLAGS="-fPIE $CFLAGS"
+export CXXDFLAGS="-fPIE $CXXFLAGS"
+
+# Makefile-64bitonly
+%make_build -f Makefile-64-32bit
+%make_build -f Makefile-convert
 
 %install
 
-%make_install
+%make_install -f Makefile-64-32bit
 %make_install -f Makefile-convert
 
 mkdir -p %{buildroot}/%{_datadir}/%{name}/64bit-32bit
@@ -64,13 +72,13 @@ cp manage/README.md %{buildroot}/%{_datadir}/%{name}/manage/
 %files
 %license COPYING
 %doc README.md
-%{_bindir}/linvstmanage-cli
-%{_bindir}/lin-vst-servertrack.exe
-%{_bindir}/lin-vst-servertrack.exe.so
-%{_bindir}/lin-vst-servertrack32.exe
-%{_bindir}/lin-vst-servertrack32.exe.so
 %{_bindir}/linvstconvert
-%{_datadir}/%{name}/
+%{_bindir}/linvstmanage-cli
+%{_bindir}/lin-vst-server32.exe
+%{_bindir}/lin-vst-server32.exe.so
+%{_bindir}/lin-vst-server.exe
+%{_bindir}/lin-vst-server.exe.so
+%dir %{_datadir}/%{name}/
 %{_datadir}/%{name}/64bit-32bit/linvst.so
 %{_datadir}/%{name}/doc/*
 %{_datadir}/%{name}/manage/*
