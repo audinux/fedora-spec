@@ -1,4 +1,4 @@
-# Status: active
+# Status: inactive
 # Tag: Rack, Tool
 # Type: Standalone
 # Category: Tool, Audio
@@ -13,13 +13,17 @@ License: GPL-3.0-only
 URL: https://github.com/osxmidi/linvst3
 ExclusiveArch: x86_64 aarch64
 
-Source0: https://download.steinberg.net/sdk_downloads/vst-sdk_3.7.0_build-116_2020-07-31.zip
+# ./vst3sdk-source.sh <TAG>
+# ./vst3sdk-source.sh  v3.7.1_build_50
+
+Source0: vst3sdk.tar.gz
 Source1: %{url}/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc-c++
 BuildRequires: make
 BuildRequires: glibc-devel(x86-32)
 BuildRequires: gtk3-devel
+BuildRequires: gtkmm3.0-devel
 BuildRequires: libX11-devel
 BuildRequires: libX11-devel(x86-32)
 BuildRequires: libstdc++-devel(x86-32)
@@ -27,36 +31,41 @@ BuildRequires: wine-devel
 BuildRequires: wine-devel(x86-32)
 
 Requires: wine
+Requires: wine(x86-32)
 Requires: python3
 
 %description
 LinVst3 adds support for Windows vst3's to be used in Linux3 vst3 capable DAW's.
 
 %prep
-%autosetup -n VST_SDK
+%autosetup -n vst3sdk
 
-cd VST3_SDK
 tar xvfz %{SOURCE1}
 cd %{name}-%{version}
 
-sed -i "s/LINK_WINE = .* -l/LINK_WINE = -L\/usr\/lib64\/wine -l/g" Makefile
-sed -i "s/LINK_WINE32 = .* -l/LINK_WINE32 = -L\/usr\/lib\/wine -l/g" Makefile
+sed -i -e "s/CXX_FLAGS =/CXX_FLAGS = -fPIC/g" Makefile-convert
 
 %build
 
-cd VST3_SDK/%{name}-%{version}
+%set_build_flags
 
-# export LDFLAGS="-lX11 -lrt"
+export CXXFLAGS="-include limits $CXXFLAGS"
+export LDFLAGS="-z muldefs $LDFLAGS"
 
-#make -f Makefile-convert
-make
+cd %{name}-%{version}
+
+# make_build -f Makefile-convert
+# make_build -j1
+
+make -f Makefile-convert
+make -j1
 
 %install
 
-cd VST3_SDK/%{name}-%{version}
+cd %{name}-%{version}
 
-%make_install
 %make_install -f Makefile-convert
+%make_install
 
 mkdir -p %{buildroot}/%{_datadir}/%{name}/64bit-32bit
 install -m 755 linvst3.so %{buildroot}/%{_datadir}/%{name}/64bit-32bit
