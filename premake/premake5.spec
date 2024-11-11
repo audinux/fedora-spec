@@ -5,7 +5,7 @@
 
 Summary: Tool for describing builds
 Name: premake5
-Version: 5.0.0beta2
+Version: 5.0.0beta3
 Release: 1%{?dist}
 License: GPL-3.0-or-later
 URL: https://github/premake/
@@ -14,7 +14,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/premake/premake-core/archive/v5.0.0-beta2.tar.gz#/premake5-5.0.0-beta2.tar.gz
+Source0: https://github.com/premake/premake-core/archive/v5.0.0-beta3.tar.gz#/premake5-5.0.0-beta3.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -26,11 +26,13 @@ let Premake write the build scripts for you. With one file your project can
 support both IDE-addicted Windows coders and Linux command-line junkies!
 
 %prep
-%autosetup -n premake-core-5.0.0-beta2
+%autosetup -n premake-core-5.0.0-beta3
 
 %build
 
-export CFLAGS="-fPIC -include unistd.h" 
+%set_build_flags
+
+export CFLAGS="-fPIC $CFLAGS" 
 
 %make_build -f Bootstrap.mak linux
 
@@ -59,6 +61,9 @@ cp packages/debian/premake.1 %{buildroot}/%{_mandir}/man1/premake5.1
 %{_mandir}/man1/premake5.1*
 
 %changelog
+* Mon Nov 11 2024 Yann Collette <ycollette.nospam@free.fr> - 5.0.0-beta3-1
+- update to 5.0.0-beta3-1
+
 * Wed Jun 24 2020 Yann Collette <ycollette.nospam@free.fr> - 5.0.0-alpha15-1
 - update to 5.0.0-alpha15-1
 
