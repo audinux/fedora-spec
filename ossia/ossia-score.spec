@@ -12,7 +12,7 @@
 # add https://github.com/ossia/score-user-library
 
 Name: ossia-score
-Version: 3.2.4
+Version: 3.3.0
 Release: 1%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL: https://github.com/OSSIA/score
@@ -33,6 +33,7 @@ BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: boost-devel
 BuildRequires: zlib-devel
+BuildRequires: zlib-ng-compat-static
 BuildRequires: llvm-devel
 BuildRequires: qt6-qtbase-devel
 BuildRequires: qt6-qtscxml-devel
@@ -44,7 +45,7 @@ BuildRequires: qt6-qtsvg-devel
 BuildRequires: libxkbcommon-devel
 BuildRequires: sqlite-devel
 BuildRequires: lame-devel
-BuildRequires: ffmpeg-devel
+BuildRequires: (ffmpeg-devel or ffmpeg-free-devel)
 BuildRequires: portmidi-devel
 BuildRequires: portaudio-devel
 BuildRequires: lilv-devel
@@ -75,12 +76,7 @@ Examples for %{name}.
 
 unzip %{SOURCE1}
 
-sed -i -e "1i #include <QWidget>" src/plugins/score-plugin-gfx/Gfx/Filter/PreviewWidget.hpp
-
 %build
-
-%set_build_flags
-export CXXFLAGS="-include optional -include stdexcept $CXXFLAGS"
 
 %cmake -DCMAKE_BUILD_TYPE=RELEASE \
        -DCMAKE_UNITY_BUILD=ON
@@ -115,6 +111,9 @@ cp -r score-examples-%{commit0_example}/* %{buildroot}/%{_datadir}/ossia/example
 %{_datadir}/ossia/examples/*
 
 %changelog
+* Tue Nov 12 2024 Yann Collette <ycollette.nospam@free.fr> - 3.3.0-2
+- update to version 3.3.0-2
+
 * Tue Jul 09 2024 Yann Collette <ycollette.nospam@free.fr> - 3.2.4-2
 - update to version 3.2.4-2
 
