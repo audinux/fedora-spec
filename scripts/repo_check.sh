@@ -1012,7 +1012,8 @@ https://github.com/csound/plugins
 https://github.com/csound/csound
 https://github.com/ardura/Scrollscope
 https://github.com/aaronaanderson/Terrain
-https://github.com/ardura/Subhoofer"
+https://github.com/ardura/Subhoofer
+https://github.com/xunil-cloud/CloudReverb"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
