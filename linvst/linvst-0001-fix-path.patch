@@ -1,0 +1,25 @@
+From 709195549ef184494b9ce82e3c8a0dd13af91804 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Thu, 14 Nov 2024 12:42:21 +0100
+Subject: [PATCH] fix path
+
+---
+ manage/linvstmanage-cli | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/manage/linvstmanage-cli b/manage/linvstmanage-cli
+index b0bb69b..af6dfa0 100755
+--- a/manage/linvstmanage-cli
++++ b/manage/linvstmanage-cli
+@@ -56,7 +56,7 @@ class VstBucketChange:
+ # Extract data from respective config file 'linvstmanage.ini'
+ def readConfig(genSet, vstList):
+     possibleConfigPaths = ("~/.config/linvst/manage/linvstmanage.ini", 
+-                           "./linvstmanage.ini")
++                           "/usr/share/LinVst/manage/linvstmanage.ini")
+ 
+     resStr = ""
+     configPath = ""
+-- 
+2.47.0
+

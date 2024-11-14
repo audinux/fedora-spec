@@ -7,13 +7,14 @@
 
 Name: LinVst
 Version: 4.9
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Linux Windows vst wrapper/bridge
 License: GPL-3.0-only
 URL: https://github.com/osxmidi/linvst
 ExclusiveArch: x86_64 
 
 Source0: %{url}/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Patch0: linvst-0001-fix-path.patch
 
 BuildRequires: gcc-c++
 BuildRequires: make
@@ -34,7 +35,7 @@ Requires: python3
 LinVst adds support for Windows vst's to be used in Linux vst capable DAW's.
 
 %prep
-%autosetup
+%autosetup -p1
 
 sed -i -e "s/LINK_WINE = .* -l/LINK_WINE = -L\/usr\/lib64\/wine -l/g" Makefile
 sed -i -e "s/LINK_WINE32 = .* -l/LINK_WINE32 = -L\/usr\/lib\/wine -l/g" Makefile
@@ -57,15 +58,17 @@ export CXXDFLAGS="-fPIE $CXXFLAGS"
 %make_install -f Makefile-64-32bit
 %make_install -f Makefile-convert
 
-mkdir -p %{buildroot}/%{_datadir}/%{name}/64bit-32bit
-install -m 755 linvst.so %{buildroot}/%{_datadir}/%{name}/64bit-32bit
+mkdir -p %{buildroot}/%{_datadir}/%{name}/
+install -m 755 linvst.so %{buildroot}/%{_datadir}/%{name}/
 
 mkdir -p %{buildroot}/%{_datadir}/%{name}/doc
 cp -ra Detailed-Guide %{buildroot}/%{_datadir}/%{name}/doc
 cp -ra Realtime-Audio-Config %{buildroot}/%{_datadir}/%{name}/doc
 
-mkdir -p %{buildroot}/%{_datadir}/%{name}/manage/
+mkdir -p %{buildroot}/%{_bindir}/
 cp manage/linvstmanage-cli %{buildroot}/%{_bindir}/
+
+mkdir -p %{buildroot}/%{_datadir}/%{name}/manage/
 cp manage/linvstmanage.ini %{buildroot}/%{_datadir}/%{name}/manage/
 cp manage/README.md %{buildroot}/%{_datadir}/%{name}/manage/
 
@@ -79,11 +82,15 @@ cp manage/README.md %{buildroot}/%{_datadir}/%{name}/manage/
 %{_bindir}/lin-vst-server.exe
 %{_bindir}/lin-vst-server.exe.so
 %dir %{_datadir}/%{name}/
-%{_datadir}/%{name}/64bit-32bit/linvst.so
+%{_datadir}/%{name}/linvst.so
 %{_datadir}/%{name}/doc/*
 %{_datadir}/%{name}/manage/*
 
 %changelog
+* Thu Nov 14 2024 Yann Collette <ycollette.nospam@free.fr> - 4.9-4
+- update to version 4.9-4 - fix linvstmanage-cli
+
+
 * Wed Aug 09 2023 Yann Collette <ycollette.nospam@free.fr> - 4.9-3
 - update to version 4.9-3
 
