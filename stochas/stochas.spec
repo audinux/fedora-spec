@@ -4,7 +4,7 @@
 # Category: DAW, Sequencer
 
 Name: stochas
-Version: 1.3.12
+Version: 1.3.13
 Release: 4%{?dist}
 Summary: A VST3 MIDI sequencer
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Use ./source-stochas.sh to get the sources (latest master for now)
-#     ./source-stochas.sh v1.3.12
+#     ./source-stochas.sh v1.3.13
 
 Source0: stochas.tar.gz
 Source1: source-stochas.sh
@@ -95,6 +95,9 @@ install -m 644 -p %{__cmake_builddir}/stochas_artefacts/Standalone/Stochas %{bui
 %{_libdir}/clap/*
 
 %changelog
+* Sat Nov 16 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.13-4
+- update to 1.3.13-4
+
 * Wed Oct 30 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.12-4
 - update to 1.3.12-4
 
