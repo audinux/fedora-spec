@@ -8,7 +8,7 @@
 %define	uname OpenBoard
 
 Name: openboard
-Version: 1.7.1
+Version: 1.7.2
 Release: 3%{?dist}
 Summary: Interactive whiteboard for schools and universities
 License: GPL-3.0-or-later
@@ -22,13 +22,10 @@ Source0: https://github.com/OpenBoard-org/OpenBoard/archive/v%{version}/%{uname}
 Source1: %{name}.desktop
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: bison
 BuildRequires: flex
-%if 0%{?fedora} >= 36
-Buildrequires: compat-ffmpeg4-devel
-%else
-BuildRequires: ffmpeg-devel
-%endif
+BuildRequires: (ffmpeg-devel or ffmpeg-free-devel)
 BuildRequires: libpaper-devel
 BuildRequires: qtsingleapplication-qt5-devel
 BuildRequires: quazip-devel
@@ -64,8 +61,9 @@ BuildRequires: libogg-devel
 BuildRequires: libtheora-devel
 BuildRequires: opus-devel
 BuildRequires: lame-devel
-BuildRequires: quazip-devel
+BuildRequires: quazip-qt5-devel
 BuildRequires: libsndfile-devel
+BuildRequires: desktop-file-utils
 
 %description
 OpenBoard is an open source cross-platform interactive white board
@@ -77,80 +75,45 @@ forked from Open-Sankor, which was itself based on Uniboard.
 
 cp -pr %{SOURCE1} .
 
-# remove unwanted and nonfree libraries
-sed -i -e 's|-lfdk-aac ||' src/podcast/podcast.pri
-sed -i -e 's|-lx264 ||' src/podcast/podcast.pri
-sed -i -e 's|-lva-x11 ||' src/podcast/podcast.pri
-sed -i -e 's|-lva ||' src/podcast/podcast.pri
-sed -i -e 's|-lvpx ||' src/podcast/podcast.pri
-sed -i -e 's|-lass ||' src/podcast/podcast.pri
-
-# fix build with poppler 0.83
-sed -i -e 's,std=c++11,std=c++14,g' src/podcast/podcast.pri
-
-# fix libraries
-sed -i -e 's|-lquazip5|-lquazip|' OpenBoard.pro
-
 # fix run.sh
 sed -i -e "s|\$DIR/OpenBoard|/usr/libexec/OpenBoard|g" resources/linux/run.sh
 
 %build
 lrelease-qt5 -removeidentical %{uname}.pro
 
-%if 0%{?fedora} >= 36
-export LDFLAGS="-L/usr/lib64/compat-ffmpeg4 $LDFLAGS"
-export CFLAGS="-I/usr/include/compat-ffmpeg4 $CFLAGS"
-export CXXFLAGS="-I/usr/include/compat-ffmpeg4 $CXXFLAGS"
-%else
 export LDFLAGS="-L/usr/lib64/ffmpeg $LDFLAGS"
-export CFLAGS="-I/usr/include/ffmpeg $CFLAGS"
-export CXXFLAGS="-I/usr/include/ffmpeg $CXXFLAGS"
-%endif
+export CFLAGS="-I/usr/include/ffmpeg -I/usr/include/quazip $CFLAGS"
+export CXXFLAGS="-I/usr/include/ffmpeg -I/usr/include/quazip $CXXFLAGS"
 
-%qmake_qt5 INCLUDEPATH+="/usr/include/quazip"  QMAKE_CXXFLAGS+="-include utility -include optional"
-%make_build
+%cmake -DCMAKE_CXX_STANDARD=20
+%cmake_build
 
 %install
-%make_install
 
-mkdir -p %{buildroot}%{_libdir}/%{name}/
-cp -pr build/linux/release/product/etc %{buildroot}%{_libdir}/%{name}/
-cp -pr build/linux/release/product/i18n %{buildroot}%{_libdir}/%{name}/
-cp -pr build/linux/release/product/library %{buildroot}%{_libdir}/%{name}/
-
-# icons
-install -D -m 0644 resources/images/%{uname}.png %{buildroot}%{_datadir}/icons/hicolor/64x64/apps/%{name}.png
+%cmake_install
 
 # desktop file
-install -D -m 0644 %{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
+desktop-file-install --vendor '' \
+        --dir %{buildroot}%{_datadir}/applications \
+        %{buildroot}%{_datadir}/applications/ch.openboard.OpenBoard.desktop
 
-# internalization
-mkdir -p %{buildroot}%{_libdir}/%{name}/i18n/
-cp -R resources/i18n/%{uname}*.qm %{buildroot}%{_libdir}/%{name}/i18n/
-
-# customizations
-cp -R resources/customizations %{buildroot}%{_libdir}/%{name}/
-
-# binary
-mkdir -p %{buildroot}%{_bindir}/
-install -m 755 resources/linux/run.sh %{buildroot}%{_bindir}/%{name}
-
-# clean some exe bits
-find %{buildroot} -executable -type f -name *.js -exec chmod -x '{}' \+
-find %{buildroot} -executable -type f -name *.svg -exec chmod -x '{}' \+
-find %{buildroot} -executable -type f -name *.css -exec chmod -x '{}' \+
-find %{buildroot} -executable -type f -name *.xml -exec chmod -x '{}' \+
-find %{buildroot} -executable -type f -name *.html -exec chmod -x '{}' \+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/ch.openboard.OpenBoard.desktop
 
 %files
 %doc README.md
 %license COPYRIGHT LICENSE
 %{_bindir}/%{name}
-%{_libdir}/%{name}/
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/icons/hicolor/*/apps/%{name}.png
+%{_datadir}/applications/*
+%{_datadir}/icons/*
+%{_datadir}/mime/*
+%{_datadir}/%{name}/*
+%{_sysconfdir}/%{name}/*
 
 %changelog
+* Mon Nov 18 2024 Yann Collette <ycollette.nospam@free.fr> - 1.7.2-3
+- update to 1.7.2-3
+
 * Wed May 08 2024 Yann Collette <ycollette.nospam@free.fr> - 1.7.1-3
 - update to 1.7.1-3
 
