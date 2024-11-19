@@ -12,11 +12,11 @@
 # add https://github.com/ossia/score-user-library
 
 Name: ossia-score
-Version: 3.3.1
+Version: 3.3.2
 Release: 1%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL: https://github.com/OSSIA/score
-ExclusiveArch: x86_64 
+ExclusiveArch: x86_64
 License: CeCILL License v2
 
 Vendor:       Audinux
@@ -57,6 +57,8 @@ BuildRequires: mesa-libGLU-devel
 BuildRequires: fftw-devel
 BuildRequires: libsndfile-devel
 BuildRequires: libcoap-devel
+BuildRequires: hdf5-devel
+BuildRequires: libatomic
 BuildRequires: desktop-file-utils
 
 Requires: faust-stdlib
@@ -78,8 +80,12 @@ unzip %{SOURCE1}
 
 %build
 
-%cmake -DCMAKE_BUILD_TYPE=RELEASE \
-       -DCMAKE_UNITY_BUILD=ON
+%set_build_flags
+
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Wp,-D_GLIBCXX_ASSERTIONS||g"`
+
+%cmake -DCMAKE_UNITY_BUILD=ON \
+       -DCMAKE_BUILD_TYPE=RELEASE
 %cmake_build
 
 %install
@@ -94,10 +100,13 @@ rm -rf %{buildroot}/%{_libdir}/cmake/mimalloc-2.0/
 rm -rf %{buildroot}/%{_libdir}/mimalloc-2.0/
 rm -rf %{buildroot}/%{_includedir}/
 rm -rf %{buildroot}/%{_datadir}/
- 
+
 rm -rf %{buildroot}/%{_libdir}/cmake/kfr/
 rm -rf %{buildroot}/%{_libdir}/cmake/libcoap/
-   
+
+rm -f %{buildroot}/usr/lib/libhdf5.settings
+rm -f %{buildroot}/usr/lib/pkgconfig/hdf5.pc
+
 # Install examples
 install -m 755 -d %{buildroot}/%{_datadir}/ossia/examples/
 cp -r score-examples-%{commit0_example}/* %{buildroot}/%{_datadir}/ossia/examples/
@@ -106,11 +115,15 @@ cp -r score-examples-%{commit0_example}/* %{buildroot}/%{_datadir}/ossia/example
 %doc INSTALL.md README.md AUTHORS
 %license LICENSE.txt
 %{_bindir}/*
+%{_libdir}/libsnmallocshim*
 
 %files examples
 %{_datadir}/ossia/examples/*
 
 %changelog
+* Tue Nov 19 2024 Yann Collette <ycollette.nospam@free.fr> - 3.3.2-2
+- update to version 3.3.2-2
+
 * Sat Nov 16 2024 Yann Collette <ycollette.nospam@free.fr> - 3.3.1-2
 - update to version 3.3.1-2
 
