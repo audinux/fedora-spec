@@ -1,7 +1,7 @@
-From cafb6fe59fd9206bc97096ce2bba882602b7508f Mon Sep 17 00:00:00 2001
+From 7f21ed89b3f55ecdad43fdada4aa74909b0ea59c Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Fri, 27 Sep 2024 07:14:42 +0200
-Subject: [PATCH] install path
+Date: Tue, 19 Nov 2024 07:06:54 +0100
+Subject: [PATCH] install-paths
 
 ---
  CMakeLists.txt                       | 6 +++---
@@ -9,7 +9,7 @@ Subject: [PATCH] install path
  2 files changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index e748486..840bf4c 100644
+index 019aa86..e8ddac4 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -137,7 +137,7 @@ write_basic_package_version_file("${JUCE_BINARY_DIR}/JUCEConfigVersion.cmake"
@@ -39,7 +39,7 @@ index e748486..840bf4c 100644
      endif()
  endif()
 diff --git a/extras/Build/juceaide/CMakeLists.txt b/extras/Build/juceaide/CMakeLists.txt
-index 651aa53..a6139d7 100644
+index 7ef20ed..06c13ad 100644
 --- a/extras/Build/juceaide/CMakeLists.txt
 +++ b/extras/Build/juceaide/CMakeLists.txt
 @@ -153,7 +153,7 @@ else()
@@ -52,5 +52,5 @@ index 651aa53..a6139d7 100644
  
      install(PROGRAMS "${imported_location}" DESTINATION "${JUCE_TOOL_INSTALL_DIR}")
 -- 
-2.46.1
+2.47.0
 

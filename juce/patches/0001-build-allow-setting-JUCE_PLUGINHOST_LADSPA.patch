@@ -1,8 +1,17 @@
+From 4c14cc571dbe5f8ecaf7cb44dcb437ad8bc6c4dd Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Tue, 19 Nov 2024 07:00:05 +0100
+Subject: [PATCH] build-allow-setting-JUCE_PLUGINHOST_LADSPA
+
+---
+ extras/AudioPluginHost/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
 diff --git a/extras/AudioPluginHost/CMakeLists.txt b/extras/AudioPluginHost/CMakeLists.txt
-index 852796383..37a5306c9 100644
+index 6f4144d..5cb6e04 100644
 --- a/extras/AudioPluginHost/CMakeLists.txt
 +++ b/extras/AudioPluginHost/CMakeLists.txt
-@@ -51,7 +51,7 @@ target_compile_definitions(AudioPluginHost PRIVATE
+@@ -60,7 +60,7 @@ target_compile_definitions(AudioPluginHost PRIVATE
      JUCE_CONTENT_SHARING=1
      JUCE_DIRECTSOUND=1
      JUCE_DISABLE_CAUTIOUS_PARAMETER_ID_CHECKING=1
@@ -11,5 +20,6 @@ index 852796383..37a5306c9 100644
      JUCE_PLUGINHOST_LV2=1
      JUCE_PLUGINHOST_VST3=1
      JUCE_PLUGINHOST_VST=0
---
-2.34.1
+-- 
+2.47.0
+
