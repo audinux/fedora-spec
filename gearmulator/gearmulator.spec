@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: gearmulator
-Version: 1.3.21
+Version: 1.4.0
 Release: 1%{?dist}
 Summary: Emulation of classic VA synths of the late 90s/2000s that are based on Motorola 56300 family DSPs 
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./gearmulator-source.sh <TAG>
-#        ./gearmulator-source.sh 1.3.21
+#        ./gearmulator-source.sh 1.4.0
 
 Source0: gearmulator.tar.gz
 Source1: gearmulator-source.sh
@@ -118,6 +118,9 @@ cp -ra bin/plugins/Release/CLAP/* %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Tue Nov 19 2024 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-1
+- update to 1.4.0-1
+
 * Fri Nov 01 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.21-1
 - update to 1.3.21-1
 
