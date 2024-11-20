@@ -1,18 +1,27 @@
-From 8a90f822a0bd79fb9ea348074a3dca103af5c525 Mon Sep 17 00:00:00 2001
+From 711c1c27bb420b31214143161b8d1b8dd5027e34 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Fri, 20 Sep 2024 17:47:35 +0200
-Subject: [PATCH] initialize system path
+Date: Wed, 20 Nov 2024 21:09:39 +0100
+Subject: [PATCH] fix path
 
 ---
- src/asset.cpp  | 2 +-
- src/plugin.cpp | 3 +++
- 2 files changed, 4 insertions(+), 1 deletion(-)
+ src/asset.cpp  | 4 ++--
+ src/plugin.cpp | 5 ++++-
+ 2 files changed, 6 insertions(+), 3 deletions(-)
 
 diff --git a/src/asset.cpp b/src/asset.cpp
-index 33bf261..321515e 100644
+index 8c3a512..162f3ca 100644
 --- a/src/asset.cpp
 +++ b/src/asset.cpp
-@@ -78,7 +78,7 @@ static void initSystemDir() {
+@@ -42,7 +42,7 @@ static void initSystemDir() {
+ 		return;
+ 
+ 	if (settings::devMode) {
+-		systemDir = system::getWorkingDirectory();
++		systemDir =  "/usr/libexec/Rack2";
+ 		return;
+ 	}
+ 
+@@ -86,7 +86,7 @@ static void initSystemDir() {
  #endif
  #if defined ARCH_LIN
  	// Use the current working directory as the default path on Linux.
@@ -22,19 +31,21 @@ index 33bf261..321515e 100644
  }
  
 diff --git a/src/plugin.cpp b/src/plugin.cpp
-index 7f9dd83..ffbf1da 100644
+index 68940de..9b1d783 100644
 --- a/src/plugin.cpp
 +++ b/src/plugin.cpp
-@@ -253,6 +253,9 @@ void init() {
- 
- 	pluginsPath = asset::user("plugins");
- 
-+	// Load plugins from System path
-+	loadPlugins("/usr/libexec/Rack2/plugins/");
+@@ -270,7 +270,10 @@ void init() {
+ 		pluginsPath = asset::user("plugins");
+ 	}
+ 	else {
+-		pluginsPath = asset::user("plugins-" + APP_OS + "-" + APP_CPU);
++		pluginsPath = asset::user("plugins");
 +
- 	// Get user plugins directory
- 	system::createDirectory(pluginsPath);
++		// Load plugins from System path
++		loadPlugins("/usr/libexec/Rack2/plugins/");
+ 	}
  
+ 	// In Rack <2.4.0, plugins dir was "plugins" regardless of arch.
 -- 
-2.46.0
+2.47.0
 
