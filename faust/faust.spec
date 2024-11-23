@@ -5,7 +5,7 @@
 
 Name: faust
 Version: 2.75.7
-Release: 37%{?dist}
+Release: 38%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
 # The rest is GPLv2+
@@ -126,6 +126,14 @@ Requires: %{name} = %{version}-%{release}
 Faust AUdio STreams is a functional programming language for real-time audio
 signal processing. These libraries are part of the standard Faust libraries.
 
+%package devel
+Summary: Headers for FAUST
+License: GPLv2+ and MIT
+Requires: %{name} = %{version}-%{release}
+
+%description devel
+Headers for FAUST
+
 %prep
 %autosetup -p1 -n faust
 
@@ -174,15 +182,30 @@ done
 %{_bindir}/%{name}
 %{_datadir}/%{name}/
 %{_mandir}/*
+%{_libdir}/libfaust.so.*
 
 %files osclib
 %doc architecture/osclib/README.md
-%{_libdir}/*.so.*
+%{_libdir}/libOSCFaust.a
 
 %files osclib-devel
-%{_includedir}/*
-%{_libdir}/*.so
-%{_libdir}/*.a
+%{_includedir}/faust/osc/*
+
+%files devel
+%{_includedir}/faust/*.h
+%{_includedir}/faust/au/*.h
+%{_includedir}/faust/audio/*.h
+%{_includedir}/faust/dsp/*.h
+%{_includedir}/faust/dsp/*.cpp
+%{_includedir}/faust/gui/*.h
+%{_includedir}/faust/gui/Styles/*
+%{_includedir}/faust/midi/*.h
+%{_includedir}/faust/midi/*.cpp
+%{_includedir}/faust/osc/*.h
+%{_includedir}/faust/unity/*.h
+%{_includedir}/faust/vst/*.h
+%{_libdir}/libHTTPDFaust.a
+%{_libdir}/libfaust.so
 
 %files doc
 %doc documentation/*
@@ -202,6 +225,9 @@ done
 %{_datadir}/faust/*.lib
 
 %changelog
+* Wed Nov 20 2024 Yann Collette <ycollette.nospam@free.fr> - 2.75.7-38
+- update to 2.75.7-38 - fix devel packages
+
 * Sat Sep 21 2024 Yann Collette <ycollette.nospam@free.fr> - 2.75.7-37
 - update to 2.75.7-37
 
