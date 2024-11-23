@@ -14,7 +14,7 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    rack-v2-Fundamental
-Version: 2.6.0
+Version: 2.6.1
 Release: 3%{?dist}
 Summary: A plugin for Rack
 License: GPL-2.0-or-later
@@ -24,17 +24,17 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./rack-source.sh <tag>
-# ./rack-source.sh v2.1.1
+# ./rack-source-v2.sh <tag>
+# ./rack-source-v2.sh v2.1.1
 
 Source0: Rack.tar.gz
-Source1: https://github.com/VCVRack/Fundamental/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/VCVRack/Fundamental/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source2: rack-source-v2.sh
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: alsa-lib-devel
-BuildRequires: pkgconfig(jack)
 BuildRequires: libsamplerate-devel
 BuildRequires: libzip-devel
 BuildRequires: glew-devel
@@ -50,14 +50,13 @@ BuildRequires: rtmidi-devel
 BuildRequires: rtaudio-devel
 %endif
 BuildRequires: speex-devel
-BuildRequires: simde-devel
 BuildRequires: wget
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: gulrak-filesystem-devel
 BuildRequires: libarchive-devel
 BuildRequires: libzstd-devel
-BuildRequires: pulseaudio-libs-devel
-BuildRequires: libsndfile-devel
+BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
@@ -69,9 +68,8 @@ They are also a great reference for creating your own plugins in C++.
 %prep
 %setup -n Rack
 
-%patch  0 -p1
 %ifarch aarch64
-%patch  1 -p1
+%patch 0 -p1
 %endif
 
 CURRENT_PATH=`pwd`
@@ -95,7 +93,7 @@ NEW_FLAGS="-I/usr/include/GLFW"
 NEW_FLAGS="$NEW_FLAGS -I/usr/include/rtaudio"
 %endif
 
-echo "CXXFLAGS += $NEW_FLAGS `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/tinyexpr  -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
+echo "CXXFLAGS += $NEW_FLAGS -O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/tinyexpr -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
 
 %if %{use_static_glfw}
 echo "Use Static GLFW"
@@ -146,33 +144,8 @@ sed -i -e "s/using VCVBezelLightBigWhite = LightButton/using VCVBezelLightBigWhi
 
 %Build
 
-CURRENT_PATH=`pwd`
-export CFLAGS="`pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src"
-export CXXFLAGS=
-export LDFLAGS=
-
-cd dep
-%if %{use_static_glfw}
-cd glfw
-cmake -DCMAKE_INSTALL_PREFIX=.. -DGLFW_COCOA_CHDIR_RESOURCES=OFF -DGLFW_COCOA_MENUBAR=ON -DGLFW_COCOA_RETINA_FRAMEBUFFER=ON -DCMAKE_BUILD_TYPE=DEBUG .
-make
-make install
-cd ..
-%endif
-%if %{use_static_rtaudio}
-cd rtaudio
-cmake -DCMAKE_INSTALL_PREFIX=.. -DCMAKE_CXX_FLAGS=-fPIC -DBUILD_SHARED_LIBS=FALSE -DCMAKE_BUILD_TYPE=DEBUG .
-make
-make install
-cd ..
-%endif
-cd ..
-
-%make_build PREFIX=/usr LIBDIR=%{_lib}
-
 cd fundamental_plugin
-
-%make_build RACK_DIR=.. PREFIX=/usr LIBDIR=%{_lib} dist
+%make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
@@ -183,6 +156,9 @@ cp -r fundamental_plugin/dist/Fundamental/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
+* Fri Nov 22 2024 Yann Collette <ycollette.nospam@free.fr> - 2.6.1-3
+- update to 2.6.1-3
+
 * Tue Oct 10 2023 Yann Collette <ycollette.nospam@free.fr> - 2.6.0-3
 - update to 2.6.0-3
 
