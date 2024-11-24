@@ -5,7 +5,7 @@
 
 Name: HISE
 Version: 4.1.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: The open source framework for sample based instrument
 License: GPL-3.0-or-later OR LicenseRef-www-hise-audio
 URL: https://github.com/christophhart/HISE
@@ -61,6 +61,7 @@ unzip %{SOURCE1}
 
 cd tools/SDK
 unzip sdk.zip
+rm sdk.zip
 
 %build
 
@@ -110,7 +111,10 @@ find HISE-%{version}/tools -executable -type f -exec rm -rf {} \;
 find HISE-%{version}/tools -name "*.a" -exec rm -rf {} \;
 
 mv HISE-%{version} %{buildroot}/%{_usrsrc}/HISE
-cd ..
+
+# unzip the VST3 sdk
+cd %{buildroot}/%{_usrsrc}/HISE/tools/SDK
+unzip sdk.zip
 
 cat > %{buildroot}/%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
@@ -146,6 +150,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Nov 24 2024 Yann Collette <ycollette.nospam@free.fr> - 4.1.0-3
+- update to 4.1.0-3 - update spec with uncompressing sdk.zip
+
 * Wed Oct 30 2024 Yann Collette <ycollette.nospam@free.fr> - 4.1.0-2
 - update to 4.1.0-2
 
