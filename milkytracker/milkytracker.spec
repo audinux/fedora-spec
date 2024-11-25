@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: milkytracker
-Version: 1.04.00
+Version: 1.05.00
 Release: 2%{?dist}
 Summary: Module tracker software for creating music
 License: GPL-3.0-or-later
@@ -26,6 +26,7 @@ BuildRequires: zlib-devel
 BuildRequires: zziplib-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
+BuildRequires: lhasa-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -55,6 +56,7 @@ cp resources/milkytracker.desktop %{buildroot}%{_datadir}/applications/
 
 desktop-file-install \
     --dir=%{buildroot}%{_datadir}/applications \
+    --set-key="Exec" --set-value='env XDG_CURRENT_DESKTOP="" KDE_FULL_SESSION="" DESKTOP_SESSION="" GDK_BACKEND=x11 milkytracker %U' \
     %{buildroot}%{_datadir}/applications/milkytracker.desktop
 
 %check
@@ -71,6 +73,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/milkytracker.desktop
 %{_datadir}/doc/MilkyTracker/
 
 %changelog
+* Mon Nov 25 2024 Yann Collette <ycollette dot nospam at free dot fr> 1.05.00-2
+- Update to 1.05.00-2
+
 * Wed Jul 05 2023 Yann Collette <ycollette dot nospam at free dot fr> 1.04.00-2
 - Update to 1.04.00-2
 
