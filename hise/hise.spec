@@ -12,7 +12,7 @@ URL: https://github.com/christophhart/HISE
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
-Distribution: Audinu
+Distribution: Audinux
 
 Source0: https://github.com/christophhart/HISE/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
@@ -115,6 +115,7 @@ mv HISE-%{version} %{buildroot}/%{_usrsrc}/HISE
 # unzip the VST3 sdk
 cd %{buildroot}/%{_usrsrc}/HISE/tools/SDK
 unzip sdk.zip
+rm sdk.zip
 
 cat > %{buildroot}/%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
