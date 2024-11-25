@@ -28,6 +28,7 @@ BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: lhasa-devel
 BuildRequires: desktop-file-utils
+BuildRequires: libappstream-glib
 
 %description
 MilkyTracker is an application for creating music in the .MOD and .XM formats.
@@ -54,23 +55,29 @@ cp -p resources/pictures/carton.png %{buildroot}%{_datadir}/pixmaps/milkytracker
 mkdir -p %{buildroot}%{_datadir}/applications
 cp resources/milkytracker.desktop %{buildroot}%{_datadir}/applications/
 
+# copy the metainfo file
+mkdir -p %{buildroot}%{_datadir}/metainfo/
+cp resources/org.milkytracker.MilkyTracker.metainfo.xml %{buildroot}%{_datadir}/metainfo/
+
 desktop-file-install \
     --dir=%{buildroot}%{_datadir}/applications \
-    --set-key="Exec" --set-value='env XDG_CURRENT_DESKTOP="" KDE_FULL_SESSION="" DESKTOP_SESSION="" GDK_BACKEND=x11 milkytracker %U' \
+    --set-key="Exec" --set-value='env XDG_CURRENT_DESKTOP="" KDE_FULL_SESSION="" DESKTOP_SESSION="" GDK_BACKEND=x11 milkytracker %f' \
     %{buildroot}%{_datadir}/applications/milkytracker.desktop
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/milkytracker.desktop
+appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/org.milkytracker.MilkyTracker.metainfo.xml
 
 %files
-%doc AUTHORS NEWS README.md ChangeLog.md
+%doc AUTHORS NEWS README.md ChangeLog.md docs/*.html
 %license COPYING
 %{_bindir}/milkytracker
 %{_datadir}/applications/*
 %{_datadir}/pixmaps/milkytracker.png
 %dir %{_datadir}/milkytracker/
 %{_datadir}/milkytracker/songs/*
-%{_datadir}/doc/MilkyTracker/
+%{_datadir}/doc/MilkyTracker/*
+%{_datadir}/metainfo/org.milkytracker.MilkyTracker.metainfo.xml
 
 %changelog
 * Mon Nov 25 2024 Yann Collette <ycollette dot nospam at free dot fr> 1.05.00-2
