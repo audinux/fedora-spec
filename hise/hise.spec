@@ -3,9 +3,11 @@
 # Type: Plugin, Standalone, VST3, IDE, Devel
 # Category: Audio, Programming, Tool
 
+%define _lto_cflags %{nil}
+
 Name: HISE
 Version: 4.1.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: The open source framework for sample based instrument
 License: GPL-3.0-or-later OR LicenseRef-www-hise-audio
 URL: https://github.com/christophhart/HISE
@@ -17,6 +19,7 @@ Distribution: Audinux
 Source0: https://github.com/christophhart/HISE/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
+Patch0: HISE-0001-set-default-src-path.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: unzip
@@ -54,7 +57,7 @@ License: GPL-3.0-or-later OR LicenseRef-www-hise-audio
 VST3 version of %{name}
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{version}
 
 # VST2 SDK still required for the build
 unzip %{SOURCE1}
@@ -151,6 +154,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Nov 25 2024 Yann Collette <ycollette.nospam@free.fr> - 4.1.0-4
+- update to 4.1.0-4 - fix default src path and disable LTO
+
 * Sun Nov 24 2024 Yann Collette <ycollette.nospam@free.fr> - 4.1.0-3
 - update to 4.1.0-3 - update spec with uncompressing sdk.zip
 
