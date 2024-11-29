@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: milkytracker
-Version: 1.05.00
+Version: 1.05.01
 Release: 2%{?dist}
 Summary: Module tracker software for creating music
 License: GPL-3.0-or-later
@@ -80,6 +80,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/org.milky
 %{_datadir}/metainfo/org.milkytracker.MilkyTracker.metainfo.xml
 
 %changelog
+* Thu Nov 28 2024 Yann Collette <ycollette dot nospam at free dot fr> 1.05.01-2
+- Update to 1.05.01-2
+
 * Mon Nov 25 2024 Yann Collette <ycollette dot nospam at free dot fr> 1.05.00-2
 - Update to 1.05.00-2
 
