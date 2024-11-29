@@ -37,6 +37,7 @@ BuildRequires: libcurl-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: boost-devel
 BuildRequires: libatomic
+BuildRequires: chrpath
 
 %description
 ZLEqualizer is an equalizer plugin.
@@ -81,6 +82,10 @@ install -m 755 -d %{buildroot}%{_libdir}/lv2/
 
 cp -ra %{__cmake_builddir}/ZLEqualizer_artefacts/VST3/* %{buildroot}%{_libdir}/vst3/
 cp -ra %{__cmake_builddir}/ZLEqualizer_artefacts/LV2/* %{buildroot}%{_libdir}/lv2/
+
+# Cleanup rpath
+chrpath --delete `find %{buildroot}%{_libdir}/vst3/ -name "*.so"`
+chrpath --delete `find %{buildroot}%{_libdir}/lv2/ -name "*.so"`
 
 %files -n license-%{name}
 %doc README.md CHANGELOG.md
