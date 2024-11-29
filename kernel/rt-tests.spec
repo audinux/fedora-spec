@@ -1,6 +1,6 @@
 # Status: active
 Name: rt-tests
-Version: 2.7
+Version: 2.8
 Release: 1%{?dist}
 Summary: Various programs that test various rt-linux features
 License: GPL2
@@ -37,6 +37,9 @@ Suite of real-time tests
 %{python3_sitelib}/*
 
 %changelog
+* Fri Nov 29 2024 Yann Collette <ycollette.nospam@free.fr> - 2.8-1
+- update to 2.8-1
+
 * Wed May 22 2024 Yann Collette <ycollette.nospam@free.fr> - 2.7-1
 - update to 2.7-1
 
