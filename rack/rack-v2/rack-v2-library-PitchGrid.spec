@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 640ef4a08b0289860f8c17e0422293606a852c9c
-%global gittag0 2.1.0
+%global commit0 e73a32fbcf13f626b6e0fbff4fd2a3f5c08de3e5
+%global gittag0 2.1.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-PitchGrid
-Version: 2.1.0
+Version: 2.1.1
 Release: 2%{?dist}
 Summary: PitchGrid plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 PitchGrid plugin for Rack.
-Microtonally adjusted Hammond frequencies
+Microtonal interface to the Exquis by Intuitive Instruments
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r PitchGrid_plugin/dist/PitchGrid/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
 - initial specfile

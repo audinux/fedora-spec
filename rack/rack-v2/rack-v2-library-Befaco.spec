@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 a4d6bbe8784942f3277e19ad4658af4f264a6553
-%global gittag0 2.8.0
+%global commit0 5a80023d86e0f67ead3e27385170310cd430d44c
+%global gittag0 2.8.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Befaco
-Version: 2.8.0
+Version: 2.8.2
 Release: 2%{?dist}
 Summary: Befaco plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 Befaco plugin for Rack.
-Oscillator including even-harmonic waveform
+Even VCO is an oscillator including even-harmonic waveform
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r Befaco_plugin/dist/Befaco/* %{buildroot}%{_libexecdir}/Rack2/plugins/Befac
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.8.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.8.2-1
 - initial specfile
