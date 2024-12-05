@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer, Sequencer
 
 Name: protrekkr2
-Version: 2.6.7
+Version: 2.7.2
 Release: 1%{?dist}
 Summary: A jack tracker
 License: GPL-2.0-or-later
@@ -31,7 +31,7 @@ An ALSA tracker
 %autosetup -p1 -n protrekkr-%{version}
 
 sed -i -e "s/-O3/-O2/g" makefile.linux
-sed -i -e "s/-g/-g \$(CFLAGS)/g" makefile.linux
+sed -i -e "s/-D __MOT_SWAP__/-D __MOT_SWAP__ \$(CFLAGS)/g" makefile.linux
 sed -i -e "/strip/d" makefile.linux
 
 %build
@@ -96,6 +96,15 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/protrekkr2.desktop
 %{_datadir}/*
 
 %changelog
+* Thu Dec 05 2024 Yann Collette <ycollette.nospam@free.fr> - 2.7.2-1
+- Update to 2.7.2-1
+
+* Tue Dec 03 2024 Yann Collette <ycollette.nospam@free.fr> - 2.7.1-1
+- Update to 2.7.1-1
+
+* Tue Dec 03 2024 Yann Collette <ycollette.nospam@free.fr> - 2.7.0-1
+- Update to 2.7.0-1
+
 * Fri Apr 12 2024 Yann Collette <ycollette.nospam@free.fr> - 2.6.7-1
 - Update to 2.6.7-1
 
