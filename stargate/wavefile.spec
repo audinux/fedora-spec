@@ -2,7 +2,7 @@
 %{?!python3_pkgversion:%global python3_pkgversion 3}
 
 Name:    wavefile
-Version: 1.6.2
+Version: 1.6.3
 Release: 1%{?dist}
 Summary: Pythonic access to audio files
 License: GPL3
@@ -19,6 +19,7 @@ BuildArch: noarch
 BuildRequires: python%{python3_pkgversion}-devel
 BuildRequires: python%{python3_pkgversion}-setuptools
 BuildRequires: python%{python3_pkgversion}-pip
+BuildRequires: python%{python3_pkgversion}-wheel
 
 %{?python_enable_dependency_generator}
 
@@ -36,18 +37,25 @@ Pythonic libsndfile wrapper to read and write audio files.
 %autosetup -p1 -n python-wavefile-python-%{name}-%{version}
 
 %build
-%py3_build
+%pyproject_wheel
 
 %install
-%py3_install
+%pyproject_install
+%pyproject_save_files wavefile
 
-%files -n  python%{python3_pkgversion}-%{name}
+%files -f %{pyproject_files}
 %doc README.md
-# For noarch packages: sitelib
-%{python3_sitelib}/%{name}/
-%{python3_sitelib}/%{name}-%{version}-py%{python3_version}.egg-info/
+%{python3_sitelib}/examples/__pycache__/*
+%{python3_sitelib}/examples/play.py
+%{python3_sitelib}/examples/process.py
+%{python3_sitelib}/examples/record.py
+%{python3_sitelib}/examples/synth.py
+%{python3_sitelib}/examples/wholefile.py
 
 %changelog
+* Wed Dec 04 2024 Yann Collette <ycollette.nospam@free.fr> 1.6.3-1
+- update to 1.6.3-1
+
 * Tue Oct 10 2023 Yann Collette <ycollette.nospam@free.fr> 1.6.2-1
 - update to 1.6.2-1
 
