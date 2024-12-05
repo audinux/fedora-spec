@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer, MIDI
 
 Name: seq66
-Version: 0.99.15
+Version: 0.99.16
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -63,6 +63,7 @@ ln -s /usr/bin/rcc-qt5 .local/bin/rcc
 ln -s /usr/bin/lupdate-qt5 .local/bin/lupdate
 ln -s /usr/bin/lrelease-qt5 .local/bin/lrelease
 
+sed -i -e "s|2\.72|2\.71|g" configure.ac
 %build
 
 %set_build_flags
@@ -73,7 +74,7 @@ export CXXFLAGS="-std=c++11 -include cstdint $CXXFLAGS"
 
 export PATH=.local/bin:$PATH
 
-# ./bootstrap
+./bootstrap
 
 %configure --enable-cli
 %make_build
@@ -104,6 +105,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libdir}/*
 
 %changelog
+* Tue Dec 03 2024 Yann Collette <ycollette.nospam@free.fr> - 0.99.16-1
+- update 0.99.16-1
+
 * Wed Oct 30 2024 Yann Collette <ycollette.nospam@free.fr> - 0.99.15-1
 - update 0.99.15-1
 
