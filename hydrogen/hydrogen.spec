@@ -6,7 +6,7 @@
 # LastSourceUpdate: 2024
 
 Name: hydrogen
-Version: 1.2.3
+Version: 1.2.4
 Release: 12%{?dist}
 Summary: Advanced drum machine for GNU/Linux
 URL: http://www.hydrogen-music.org/
@@ -105,6 +105,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.hydrogenmusic.Hyd
 %exclude %{_includedir}/%{name}
 
 %changelog
+* Sun Dec 08 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.4-12
+- update to 1.2.4-12
+
 * Fri Jan 12 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-12
 - update to 1.2.3-12
 
