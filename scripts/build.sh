@@ -4,8 +4,6 @@
 
 File=$1
 copr-cli build \
-	 --chroot fedora-39-x86_64 \
-	 --chroot fedora-39-aarch64 \
 	 --chroot fedora-40-x86_64 \
 	 --chroot fedora-40-aarch64 \
 	 --chroot fedora-41-x86_64 \
