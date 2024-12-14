@@ -27,12 +27,12 @@
 
 %define rname          mscore
 %define version_lesser 4.4
-%define revision       10242024
+%define revision       12112024
 %define docdir         %{_docdir}/%{name}
 %define fontdir        %{_datadir}/fonts/%{name}
 
 Name: mscore-mao
-Version: 4.4.3
+Version: 4.4.4
 Release: 3%{?dist}
 Summary: A WYSIWYG music score typesetter
 
@@ -157,20 +157,6 @@ CURRENT_PATH=`pwd`
 
 %set_build_flags
  
-export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-fexceptions||g"`
-export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-fstack-clash-protection||g"`
-export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-fcf-protection||g"`
-export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-fstack-protector-strong||g"`
-export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Wp,-D_GLIBCXX_ASSERTIONS||g"`
-export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3||g"`
-
-export CFLAGS=`echo $CFLAGS | sed -e "s|-fexceptions||g"`
-export CFLAGS=`echo $CFLAGS | sed -e "s|-fstack-clash-protection||g"`
-export CFLAGS=`echo $CFLAGS | sed -e "s|-fcf-protection||g"`
-export CFLAGS=`echo $CFLAGS | sed -e "s|-fstack-protector-strong||g"`
-export CFLAGS=`echo $CFLAGS | sed -e "s|-Wp,-D_GLIBCXX_ASSERTIONS||g"`
-export CFLAGS=`echo $CFLAGS | sed -e "s|-Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3||g"`
-
 %cmake \
        -DMUE_BUILD_UNIT_TESTS:BOOL=OFF \
        -DMUE_BUILD_CRASHPAD_CLIENT:BOOL=OFF \
@@ -297,6 +283,8 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/org.musescore.MuseSc
 %license fonts/finalemaestro/OFL.txt.finalemaestro
 
 %changelog
+* Wed Dec 11 2024 Yann Collette <ycollette.nospam@free.fr> - 4.4.4-3
+- update to 4.4.4-3
 * Thu Oct 24 2024 Yann Collette <ycollette.nospam@free.fr> - 4.4.3-3
 - update to 4.4.3-3
 * Mon Sep 16 2024 Yann Collette <ycollette.nospam@free.fr> - 4.4.2-3
