@@ -1,6 +1,6 @@
 # Status: active
 Name: hvcc
-Version: 0.12.1
+Version: 0.13.0
 Release: 2%{?dist}
 Summary: The heavy hvcc compiler for Pure Data patches.
 URL: https://github.com/Wasted-Audio/hvcc
@@ -16,6 +16,9 @@ Source0: https://github.com/Wasted-Audio/hvcc/archive/refs/tags/v%{version}.tar.
 
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
+BuildRequires: python3-pip
+BuildRequires: python3-wheel
+BuildRequires: python3-poetry
 BuildRequires: desktop-file-utils
 
 Requires: python3-jinja2
@@ -33,34 +36,30 @@ that generates C/C++ code and a variety of specific framework wrappers.
 
 %build
 
-%set_build_flags
-
-%{__python3} setup.py build
+%pyproject_wheel
 
 %install
 
-%{__python3} setup.py install --root %{buildroot}
+%pyproject_install
+%pyproject_save_files hvcc
 
 install -m 755 -d %{buildroot}%{_datadir}/%{name}/docs/
-install -m 755 -d %{buildroot}%{_datadir}/%{name}/examples/
 cp -rav docs/* %{buildroot}%{_datadir}/%{name}/docs/
-cp -rav examples/* %{buildroot}%{_datadir}/%{name}/examples/
 
 # Cleanup
 rm -rf %{buildroot}/%{python3_sitelib}/tests
 
-%files
+%files -f %{pyproject_files}
 %doc README.md
 %license LICENSE
-%{_bindir}/*
-%dir %{python3_sitelib}/%{name}/
-%{python3_sitelib}/%{name}/*
-%{python3_sitelib}/%{name}-*.egg-info
-%dir %{_datadir}/%{name}/
-%{_datadir}/%{name}/docs/*
-%{_datadir}/%{name}/examples/*
+%{_bindir}/hvcc
+%{_bindir}/hvutil
+%{_datadir}/hvcc/docs/*
 
 %changelog
+* Fri Dec 13 2024 Yann Collette <ycollette.nospam@free.fr> - 0.13.0-2
+- update to 0.13.0-2
+
 * Sat Sep 21 2024 Yann Collette <ycollette.nospam@free.fr> - 0.12.1-2
 - update to 0.12.1-2
 
