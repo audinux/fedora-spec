@@ -1014,7 +1014,8 @@ https://github.com/ardura/Scrollscope
 https://github.com/aaronaanderson/Terrain
 https://github.com/ardura/Subhoofer
 https://github.com/xunil-cloud/CloudReverb
-https://github.com/bluez/bluez"
+https://github.com/bluez/bluez
+https://github.com/COx2/glslEditor_AudioPlugin"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
