@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 f200a714be4ce89f30b1ccea1ddcf2ddf63ad96f
-%global gittag0 2.0.6
+%global commit0 be6dcc9beb9e8d837b2606a2136c9cd74e573fdf
+%global gittag0 2.0.7
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-acModules
-Version: 2.0.6
+Version: 2.0.7
 Release: 2%{?dist}
 Summary: acModules plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r acModules_plugin/dist/acModules/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.6-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.7-1
 - initial specfile
