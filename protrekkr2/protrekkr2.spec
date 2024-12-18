@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer, Sequencer
 
 Name: protrekkr2
-Version: 2.7.5
+Version: 2.7.6
 Release: 1%{?dist}
 Summary: A jack tracker
 License: GPL-2.0-or-later
@@ -41,6 +41,9 @@ sed -i -e "/strip/d" makefile.linux
 export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
 export LDFLAGS=`echo $LDFLAGS | sed -e "s/-Werror=format-security//g"`
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
+
+export CFLAGS="-Isrc/midi $CFLAGS"
+export CXXFLAGS="-Isrc/midi $CXXFLAGS"
 
 cd src/extralibs/sdl_draw
 %make_build -f makefile.linux
@@ -96,6 +99,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/protrekkr2.desktop
 %{_datadir}/*
 
 %changelog
+* Fri Dec 13 2024 Yann Collette <ycollette.nospam@free.fr> - 2.7.6-1
+- Update to 2.7.6-1
+
 * Sun Dec 08 2024 Yann Collette <ycollette.nospam@free.fr> - 2.7.5-1
 - Update to 2.7.5-1
 
