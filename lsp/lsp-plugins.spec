@@ -3,9 +3,11 @@
 # Type: Plugin, LV2, VST, LADSPA, CLAP
 # Category: Audio, Effect
 
+%define _lto_cflags %{nil}
+
 Name: lsp-plugins
 Summary: Linux Studio Plugins collection
-Version: 1.2.19
+Version: 1.2.20
 Release: 1%{?dist}
 License: GPL
 URL: https://github.com/sadko4u/lsp-plugins
@@ -129,6 +131,9 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %{_libdir}/clap/*
 
 %changelog
+* Sun Dec 22 2024 Yann Collette <ycollette dot nospam at free.fr> 1.2.20-1
+- update to 1.2.20-1
+
 * Sat Oct 12 2024 Yann Collette <ycollette dot nospam at free.fr> 1.2.19-1
 - update to 1.2.19-1
 
