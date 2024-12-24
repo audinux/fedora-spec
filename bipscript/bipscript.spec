@@ -4,7 +4,7 @@
 # Category: Audio, Programming
 
 Name:    bipscript
-Version: 0.20.1
+Version: 0.21
 Release: 1%{?dist}
 Summary: Audio language
 URL:     https://www.bipscript.org/
@@ -16,9 +16,8 @@ Distribution: Audinux
 
 # original tarfile can be found here:
 Source0: https://gitlab.domainepublic.net/bipscript/bipscript/-/archive/v%{version}/bipscript-v%{version}.tar.gz
-Source1: https://gitlab.domainepublic.net/bipscript/examples/-/archive/v0.19/examples-v0.19.tar.gz
-Source2: https://gitlab.domainepublic.net/bipscript/apidocs/-/archive/v0.20/apidocs-v0.20.tar.gz
-Patch0: bipscript-0001-fix-liblo-usage.patch
+Source1: https://gitlab.domainepublic.net/bipscript/examples/-/archive/v0.21/examples-v0.21.tar.gz
+Source2: https://gitlab.domainepublic.net/bipscript/apidocs/-/archive/v0.21/apidocs-v0.21.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -53,7 +52,7 @@ Requires: %{name}
 Examples for %{name}
 
 %prep
-%autosetup -p1 -n %{name}-v%{version}
+%autosetup -n %{name}-v%{version}
 
 mkdir examples && tar xvfz %{SOURCE1} -C examples --strip-components 1
 mkdir apidocs && tar xvfz %{SOURCE2} -C apidocs --strip-components 1
@@ -62,7 +61,7 @@ mkdir apidocs && tar xvfz %{SOURCE2} -C apidocs --strip-components 1
 
 %set_build_flags
 export CFLAGS="$CFLAGS -fPIC"
-export CXXFLAGS="$CXXFLAGS -include cstdint -include map -fPIC"
+#export CXXFLAGS="$CXXFLAGS -include cstdint -include map -fPIC"
 
 %cmake
 %cmake_build
@@ -90,6 +89,9 @@ cp -ra apidocs/en %{buildroot}/%{_datadir}/bipscript/apidocs/
 %{_datadir}/bipscript/examples/
 
 %changelog
+* Tue Dec 24 2024 Yann Collette <ycollette.nospam@free.fr> - 0.21-1
+- update to 0.21-1
+
 * Wed Apr 03 2024 Yann Collette <ycollette.nospam@free.fr> - 0.20.1-1
 - update to 0.20.1-1
 

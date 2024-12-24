@@ -3,11 +3,11 @@
 # Type: Standalone, IDE
 # Category: Audio, Programming
 
-Name:    bipscript-ide
-Version: 0.20
+Name: bipscript-ide
+Version: 0.21
 Release: 1%{?dist}
 Summary: An IDEA for bipscript
-URL:     https://gitlab.domainepublic.net/bipscript/ide/
+URL: https://gitlab.domainepublic.net/bipscript/ide/
 ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
@@ -84,6 +84,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/bipscript-ide.desktop
 %{_datadir}/icons/*
 
 %changelog
+* Tue Dec 24 2024 Yann Collette <ycollette.nospam@free.fr> - 0.21-1
+- update to 0.21-1
+
 * Mon Apr 01 2024 Yann Collette <ycollette.nospam@free.fr> - 0.20-1
 - update to 0.20-1
 
