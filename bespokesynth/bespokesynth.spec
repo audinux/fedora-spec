@@ -4,8 +4,8 @@
 # Category: Audio, Synthesizer
 
 Name: BespokeSynth
-Version: 1.2.1
-Release: 9%{?dist}
+Version: 1.3.0
+Release: 3%{?dist}
 Summary: A software modular synth
 License: GPL-3.0-or-later
 URL: https://github.com/BespokeSynth/BespokeSynth
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./bespokesynth-sources.sh <tag>
-# ./bespokesynth-sources.sh v1.2.1
+# ./bespokesynth-sources.sh v1.3.0
 
 Source0: BespokeSynth.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
@@ -45,6 +45,7 @@ BuildRequires: libusbx-devel
 BuildRequires: libpng-devel
 BuildRequires: jsoncpp-devel
 BuildRequires: desktop-file-utils
+BuildRequires: libappstream-glib
 
 Requires: youtube-dl
 Requires: (ffmpeg or ffmpeg-free)
@@ -56,7 +57,7 @@ Bespoke is like a DAW in some ways, but with less of a focus on a global timelin
 Instead, it has a design more optimized for jamming and exploration.
 
 %prep
-%autosetup -p1 -n %{name}
+%autosetup -p1 -n BespokeSynth
 
 sed -i -e "s/\.\.\/\.\.\/MacOSX\/build\/Release\/data/\/usr\/share\/BespokeSynth\/data/g" Source/OpenFrameworksPort.cpp
 
@@ -109,6 +110,7 @@ desktop-file-install                         \
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/BespokeSynth.desktop
+appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/com.bespokesynth.BespokeSynth.metainfo.xml
 
 %files
 %doc README.md
@@ -118,40 +120,20 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/BespokeSynth.desktop
 %{_datadir}/applications/*
 %{_datadir}/BespokeSynth/*
 %{_datadir}/icons/*
+%{_datadir}/metainfo/com.bespokesynth.BespokeSynth.metainfo.xml
 
 %changelog
-* Sat Nov 02 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-9
-- update to 1.2.1-9 - fix requires 
+* Sun Dec 22 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-3
+- Update to 1.3.0-3
 
-* Fri Jul 14 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-8
-- update to 1.2.0-8
+* Sun Dec 01 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.10-3
+- Update to 1.2.10-3 - update to bc9dd72176ec469e20f978d1cae31503593ebe86
 
-* Wed Jan 05 2022 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-8
-- fix default vst search paths
+* Thu Nov 28 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.10-2
+- Update to 1.2.10-2 - update to 09738d3fa21cf54326e7a75efe8dd2bc4183d47e 
 
-* Tue Nov 16 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-7
-- update to 1.1.0-7
+* Sat Nov 02 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.10-1
+- Update to 1.2.10-1 - fix requires 
 
-* Thu Sep 16 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-7
-- update to 1.0.0-7 - fix install
-
-* Thu Sep 16 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-6
-- update to 1.0.0-6 - fix install
-
-* Tue Sep 14 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-5
-- update to 1.0.0-5
-
-* Fri Oct 2 2020 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-5
-- update for fedora 33
-
-* Wed Sep 16 2020 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-4
-- update to v0.0005-pre
-
-* Wed Aug 19 2020 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
-- update to v0.0004-pre - dc51a8783f71fc5a8f019beb0783d35d9ec5474c
-
-* Wed May 27 2020 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
-- Fix install
-
-* Tue May 26 2020 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
+* Thu Sep 05 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.9-1
 - Initial spec file
