@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: zl-split
-Version: 0.0.2
+Version: 0.1.0
 Release: 1%{?dist}
 Summary: Splitter plugin
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./zl-source.sh <project> <tag>
-# ./zl-source.sh ZLSplit 0.0.2
+# ./zl-source.sh ZLSplit 0.1.0
 
 Source0: ZLSplit.tar.gz
 Source1: zl-source.sh
@@ -79,8 +79,8 @@ sed -i -e "s/ZL Splitte/ZL_Splitte/g" CMakeLists.txt
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
 
-cp -ra %{__cmake_builddir}/ZLSplit_artefacts/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/ZLSplit_artefacts/LV2/* %{buildroot}%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/ZLSplitter_artefacts/VST3/* %{buildroot}%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/ZLSplitter_artefacts/LV2/* %{buildroot}%{_libdir}/lv2/
 
 %files -n license-%{name}
 %doc README.md CHANGELOG.md
@@ -93,6 +93,12 @@ cp -ra %{__cmake_builddir}/ZLSplit_artefacts/LV2/* %{buildroot}%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Dec 27 2024 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
+- update to 0.1.0-1
+
+* Thu Dec 26 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.3-1
+- update to 0.0.3-1
+
 * Wed Jul 31 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.2-1
 - update to 0.0.2-1 - will clean COPR
 
