@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: schismtracker
-Version: 20241021
+Version: 20241226
 Release: 2%{?dist}
 Summary: Module tracker software for creating music
 License: GPL-3.0-or-later
@@ -78,11 +78,14 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/applications/*
 
 %changelog
-* Mon Oct 21 2024 Yann Collette <ycollette dot nospam at free dot fr> - 20241021-1
-- update to 20241021-1
+* Thu Dec 26 2024 Yann Collette <ycollette dot nospam at free dot fr> - 20241226-2
+- update to 20241226-2
 
-* Tue Sep 10 2024 Yann Collette <ycollette dot nospam at free dot fr> - 20240909-1
-- update to 20240909-1
+* Mon Oct 21 2024 Yann Collette <ycollette dot nospam at free dot fr> - 20241021-2
+- update to 20241021-2
+
+* Tue Sep 10 2024 Yann Collette <ycollette dot nospam at free dot fr> - 20240909-2
+- update to 20240909-2
 
 * Sat Aug 10 2024 Yann Collette <ycollette dot nospam at free dot fr> - 20240809-1
 - update to 20240809
