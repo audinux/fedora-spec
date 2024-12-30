@@ -8,7 +8,7 @@
 %global debug_package %{nil}
 
 Name: jjazzlab
-Version: 4.1.1
+Version: 4.1.2
 Release: 2%{?dist}
 Summary: A complete Midi-based framework for automatic backing tracks generation.
 URL: https://github.com/jjazzboss/JJazzLab-X
@@ -91,6 +91,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Mon Dec 30 2024 Yann Collette <ycollette.nospam@free.fr> - 4.1.2-2
+- update to 4.1.2-2
+
 * Mon Sep 16 2024 Yann Collette <ycollette.nospam@free.fr> - 4.1.1-2
 - update to 4.1.1-2
 
