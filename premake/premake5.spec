@@ -5,7 +5,7 @@
 
 Summary: Tool for describing builds
 Name: premake5
-Version: 5.0.0beta3
+Version: 5.0.0beta4
 Release: 1%{?dist}
 License: GPL-3.0-or-later
 URL: https://github/premake/
@@ -14,7 +14,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/premake/premake-core/archive/v5.0.0-beta3.tar.gz#/premake5-5.0.0-beta3.tar.gz
+Source0: https://github.com/premake/premake-core/archive/v5.0.0-beta4.tar.gz#/premake5-5.0.0-beta4.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -26,7 +26,7 @@ let Premake write the build scripts for you. With one file your project can
 support both IDE-addicted Windows coders and Linux command-line junkies!
 
 %prep
-%autosetup -n premake-core-5.0.0-beta3
+%autosetup -n premake-core-5.0.0-beta4
 
 %build
 
@@ -61,6 +61,9 @@ cp packages/debian/premake.1 %{buildroot}/%{_mandir}/man1/premake5.1
 %{_mandir}/man1/premake5.1*
 
 %changelog
+* Mon Dec 30 2024 Yann Collette <ycollette.nospam@free.fr> - 5.0.0-beta4-1
+- update to 5.0.0-beta4-1
+
 * Mon Nov 11 2024 Yann Collette <ycollette.nospam@free.fr> - 5.0.0-beta3-1
 - update to 5.0.0-beta3-1
 
