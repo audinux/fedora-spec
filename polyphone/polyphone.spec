@@ -5,7 +5,7 @@
 # GUIToolkit: Qt5
 
 Name: polyphone
-Version: 2.4.1
+Version: 2.5.0
 Release: 3%{?dist}
 Summary: A SF2 sound font editor
 URL: https://polyphone-soundfonts.com/
@@ -25,6 +25,7 @@ BuildRequires: qt5-linguist
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: portaudio-devel
+BuildRequires: libsndfile-devel
 BuildRequires: rtmidi-devel
 BuildRequires: stk-devel
 BuildRequires: libvorbis-devel
@@ -54,7 +55,7 @@ The goal of Polyphone is to provide:
 %prep
 %autosetup -n %{name}-%{version}
 
-sed -i -e "s/usr\/local/usr\//g" sources/polyphone.pro
+sed -i -e "s/-std=c++17 -O3 -msse2/-std=c++17 -O3/g" sources/polyphone.pro
 
 %build
 
@@ -105,6 +106,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Thu Dec 26 2024 Yann Collette <ycollette.nospam@free.fr> - 2.5.0-3
+- update to 2.5.0-3
+
 * Thu Oct 17 2024 Yann Collette <ycollette.nospam@free.fr> - 2.4.1-3
 - update to 2.4.1-3
 
