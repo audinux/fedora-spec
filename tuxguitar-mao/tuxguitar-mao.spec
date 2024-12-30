@@ -32,7 +32,7 @@
 %define debug_package %{nil}
 
 Name: tuxguitar
-Version: 1.6.5
+Version: 1.6.6
 Release: 14%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
@@ -264,6 +264,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Fri Dec 27 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.6-14
+- update to 1.6.6-14
+
 * Sat Dec 14 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.5-14
 - update to 1.6.5-14
 
