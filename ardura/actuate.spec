@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: actuate
-Version: 1.3.5
+Version: 1.3.6
 Release: 1%{?dist}
 Summary: Synthesizer, Sampler, Granulizer written in Rust with Nih-Plug and egui
 License: GPL-3.0-or-later
@@ -100,6 +100,9 @@ cp -ra target/bundled/Actuate.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Tue Dec 31 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.6-1
+- update to 1.3.6-1
+
 * Thu Oct 17 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.5-1
 - update to 1.3.5-1
 
