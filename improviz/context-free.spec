@@ -1,7 +1,7 @@
 # Status: active
 Name:    context-free
 Summary: Context Free is a program that generates images from written instructions called a grammar.
-Version: 3.3
+Version: 3.4.2
 Release: 1%{?dist}
 License: GPL
 URL:     https://github.com/MtnViewJohn/context-free
@@ -15,7 +15,7 @@ Patch0:  context-free-01_enable_ffmpeg.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: desktop-file-utils
-BuildRequires: ffmpeg-devel
+BuildRequires: (ffmpeg-devel or ffmpeg-free-devel)
 BuildRequires: x264-devel
 BuildRequires: libpng-devel
 BuildRequires: libicu-devel
@@ -56,5 +56,8 @@ cp -ra input/* %{buildroot}/%{_datadir}/%{name}/examples/
 %{_datadir}/*
 
 %changelog
+* Wed Jan 01 2025 Yann Collette <ycollette dot nospam at free.fr> 3.4.2-1
+- update to 3.4.2-1
+
 * Wed Oct 28 2020 Yann Collette <ycollette dot nospam at free.fr> 3.3-1
 - initial build
