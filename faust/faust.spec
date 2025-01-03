@@ -5,7 +5,7 @@
 
 Name: faust
 Version: 2.77.3
-Release: 38%{?dist}
+Release: 39%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
 # The rest is GPLv2+
@@ -151,10 +151,11 @@ export PATH=$PATH:/usr/lib64/llvm17/bin
 cd build
 %cmake -DINCLUDE_DYNAMIC=ON \
        -DLIBSDIR=%{_lib} \
-       -C %{SOURCE1} \
+       -DLINK_LLVM_STATIC=OFF \
 %if 0%{?fedora} >= 38
-    -DCMAKE_CXX_FLAGS="-include cstdint -fPIC $CXXFLAGS"
+       -DCMAKE_CXX_FLAGS="-include cstdint -fPIC $CXXFLAGS" \
 %endif
+       -C %{SOURCE1}
 %cmake_build
 
 %install
@@ -225,6 +226,9 @@ done
 %{_datadir}/faust/*.lib
 
 %changelog
+* Thu Jan 02 2025 Yann Collette <ycollette.nospam@free.fr> - 2.77.3-39
+- update to 2.77.3-39 - fix a problem with the shipped llvm
+
 * Fri Dec 27 2024 Yann Collette <ycollette.nospam@free.fr> - 2.77.3-38
 - update to 2.77.3-38
 
