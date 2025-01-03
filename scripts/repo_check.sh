@@ -1016,7 +1016,8 @@ https://github.com/ardura/Subhoofer
 https://github.com/xunil-cloud/CloudReverb
 https://github.com/bluez/bluez
 https://github.com/COx2/glslEditor_AudioPlugin
-https://github.com/Chowdhury-DSP/ChowMultiTool"
+https://github.com/Chowdhury-DSP/ChowMultiTool
+https://github.com/baconpaul/six-sines"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
