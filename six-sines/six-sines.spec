@@ -6,7 +6,7 @@
 %define _lto_cflags %{nil}
 
 Name: six-sines
-Version: 0.90
+Version: 0.999
 Release: 1%{?dist}
 Summary: Six Sines is a small synthesizer which explores audio rate inter-modulation of signals
 License: MIT
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./six-sines-source.sh <TAG>
-#        ./six-sines-source.sh v0.99
+#        ./six-sines-source.sh v0.999
 
 Source0: six-sines.tar.gz
 Source1: six-sines-source.sh
@@ -139,5 +139,8 @@ patchelf --set-rpath '$ORIGIN/../%{_lib}/six_sines/' `find %{buildroot}/%{_libdi
 %{_libdir}/clap/*
 
 %changelog
+* Fri Jan 03 2025 Yann Collette <ycollette.nospam@free.fr> - 0.999-1
+- update to 0.999-1
+
 * Thu Jan 02 2025 Yann Collette <ycollette.nospam@free.fr> - 0.99-1
 - Initial spec file
