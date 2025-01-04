@@ -3,11 +3,9 @@
 # Type: Plugin, Standalone, VST3
 # Category: Audio, Synthesizer
 
-%define _lto_cflags %{nil}
-
 Name: six-sines
-Version: 0.999
-Release: 1%{?dist}
+Version: 0.9999
+Release: 2%{?dist}
 Summary: Six Sines is a small synthesizer which explores audio rate inter-modulation of signals
 License: MIT
 URL: https://github.com/baconpaul/six-sines
@@ -17,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./six-sines-source.sh <TAG>
-#        ./six-sines-source.sh v0.999
+#        ./six-sines-source.sh v0.9999
 
 Source0: six-sines.tar.gz
 Source1: six-sines-source.sh
@@ -121,8 +119,8 @@ install -m 755 %{__cmake_builddir}/libs/sst/sst-plugininfra/libs/strnatcmp/libst
 install -m 755 %{__cmake_builddir}/libs/sst/sst-plugininfra/libs/filesystem/libfilesystem.so %{buildroot}/%{_libdir}/six_sines/
 
 patchelf --set-rpath '$ORIGIN/../%{_lib}/six_sines/' %{buildroot}/%{_bindir}/Six_Sines
-patchelf --set-rpath '$ORIGIN/../%{_lib}/six_sines/' %{buildroot}/%{_libdir}/clap/Six_Sines.clap
-patchelf --set-rpath '$ORIGIN/../%{_lib}/six_sines/' `find %{buildroot}/%{_libdir}/vst3/Six_Sines.vst3/ -name "*.so"`
+patchelf --set-rpath '$ORIGIN/../six_sines/' %{buildroot}/%{_libdir}/clap/Six_Sines.clap
+patchelf --set-rpath '$ORIGIN/../../../../six_sines/' `find %{buildroot}/%{_libdir}/vst3/Six_Sines.vst3/ -name "*.so"`
 
 %files
 %{_bindir}/*
@@ -139,6 +137,12 @@ patchelf --set-rpath '$ORIGIN/../%{_lib}/six_sines/' `find %{buildroot}/%{_libdi
 %{_libdir}/clap/*
 
 %changelog
+* Sat Jan 04 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9999-2
+- update to 0.9999-2
+
+* Sat Jan 04 2025 Yann Collette <ycollette.nospam@free.fr> - 0.999-2
+- update to 0.999-2 - fix rpath modification
+
 * Fri Jan 03 2025 Yann Collette <ycollette.nospam@free.fr> - 0.999-1
 - update to 0.999-1
 
