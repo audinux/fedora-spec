@@ -7,7 +7,7 @@
 
 Name: cloudreverb
 Version: 0.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Algorithmic reverb plugin based on CloudSeed
 License: MIT
 URL: https://github.com/xunil-cloud/CloudReverb
@@ -96,9 +96,8 @@ install -m 755 -d %{buildroot}%{_libdir}/cloudreverb/
 cp %{__cmake_builddir}/audio_engine/libaudio_engine.so %{buildroot}/%{_libdir}/cloudreverb/
 
 patchelf --set-rpath '$ORIGIN/../%{_lib}/cloudreverb/' %{buildroot}/%{_bindir}/CloudReverb
-cd %{buildroot}/%{_libdir}/
-patchelf --set-rpath '$ORIGIN/../%{_lib}/cloudreverb/' `find lv2/ -name "*.so"`
-patchelf --set-rpath '$ORIGIN/../%{_lib}/cloudreverb/' `find vst3/ -name "*.so"`
+patchelf --set-rpath '$ORIGIN/../../cloudreverb/' `find %{buildroot}/%{_libdir}/lv2/ -name "*.so"`
+patchelf --set-rpath '$ORIGIN/../../../../cloudreverb/' `find %{buildroot}/%{_libdir}/vst3/ -name "*.so"`
 
 %files
 %{_bindir}/*
@@ -115,5 +114,8 @@ patchelf --set-rpath '$ORIGIN/../%{_lib}/cloudreverb/' `find vst3/ -name "*.so"`
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Jan 04 2025 Yann Collette <ycollette.nospam@free.fr> - 0.2-2
+- update to 0.2-2 - fix rpath modification
+
 * Wed Nov 13 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2-1
 - Initial spec file
