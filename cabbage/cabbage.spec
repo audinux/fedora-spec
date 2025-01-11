@@ -4,7 +4,7 @@
 # Category: Audio, Tool, Programming
 
 Name: cabbage
-Version: 2.9.0
+Version: 2.10.0
 Release: 3%{?dist}
 Summary: Framework for developing audio plugins with the Csound programming language.
 URL: https://github.com/rorywalsh/cabbage
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./cabbage-source.sh <TAG>
-#        ./cabbage-source.sh v2.9.0
+#        ./cabbage-source.sh v2.10.0
 
 Source0: cabbage.tar.gz
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
@@ -164,6 +164,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Cabbage.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Thu Jan 09 2025 Yann Collette <ycollette.nospam@free.fr> - 2.10.0-2
+- update to 2.10.0-2
+
 * Mon Feb 12 2024 Yann Collette <ycollette.nospam@free.fr> - 2.9.0-2
 - fix desktop icon
 
