@@ -3,55 +3,48 @@
 # Type: Plugin, LV2
 # Category: Effect
 
-# Global variables for github repository
-%global commit0 b2df88cb28540856b7ec7d0210809efd7ca6bcd7
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 Name: mda-lv2
-Version: 0.9.%{shortcommit0}
+Version: 1.2.10
 Release: 4%{?dist}
-Summary: MDA LV2 set of plugins from moddevices
+Summary: MDA LV2 set of plugins
 License: GPL-2.0-or-later
-URL: https://github.com/moddevices/mda-lv2
+URL: https://gitlab.com/drobilla/mda-lv2
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/moddevices/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: https://gitlab.com/drobilla/mda-lv2/-/archive/v%{version}/mda-lv2-v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel
-BuildRequires: python2
+BuildRequires: meson
+BuildRequires: lv2lint
 
 %description
-MDA LV2 set of plugins synth from moddevices
+MDA LV2 set of plugins synth
 
 %prep
-%autosetup -n %{name}-%{commit0}
-
-# For Fedora 29
-%if 0%{?fedora} >= 29
-  find . -type f -exec sed -i -e "s/env python/env python2/g" {} \;
-%endif
+%autosetup -n %{name}-v%{version}
 
 %build
 
-%set_build_flags
-
-./waf configure --libdir=%{buildroot}%{_libdir}
-./waf
+%meson -Dtests=disabled
+%meson_build
 
 %install
-./waf -j1 install
+
+%meson_install
 
 %files
-%doc README
-%license COPYING
+%doc README.md
+%license LICENSES/GPL-2.0-or-later.txt
 %{_libdir}/lv2/*
 
 %changelog
+* Tue Jan 07 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.10-4
+- update to 1.2.10-4 from drobilla
+
 * Fri May 24 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.2-4
 - update to last master
 
