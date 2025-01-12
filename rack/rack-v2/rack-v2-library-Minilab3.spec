@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 7d9fbde4b2524c2f39a84a9fe8cbeb841590c9f8
-%global gittag0 2.0.0
+%global commit0 ce83bfed012136f49de5dd961e2dafa6cdade97b
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Minilab3
-Version: 2.0.0
+Version: 2.0.1
 Release: 2%{?dist}
 Summary: Minilab3 plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Minilab3_plugin/dist/Minilab3/* %{buildroot}%{_libexecdir}/Rack2/plugins/M
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile
