@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c3ec1b0b947f9267d69bf3c3d14d45bb8a2f0bd4
-%global gittag0 2.4.0
+%global commit0 b0725bdf4d11e36f68ee965dbd599f9c032fcaf0
+%global gittag0 2.4.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-camouflage
-Version: 2.4.0
+Version: 2.4.2
 Release: 2%{?dist}
 Summary: camouflage plugin for Rack
 License: GPL-2.0-or-later
@@ -153,5 +153,5 @@ cp -r camouflage_plugin/dist/camouflage/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.2-1
 - initial specfile
