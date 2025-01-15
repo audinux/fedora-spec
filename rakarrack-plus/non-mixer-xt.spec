@@ -5,7 +5,7 @@
 
 Summary: Reboot of Non Mixer with eXTended LV2 support.
 Name: non-mixer-xt
-Version: 2.0.6
+Version: 2.0.7
 Release: 4%{?dist}
 License: GPL-3.0-only
 URL: https://github.com/Stazed/non-mixer-xt
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source-non-mixer-xt.sh <tag>
-#        ./source-non-mixer-xt.sh 2.0.6
+#        ./source-non-mixer-xt.sh 2.0.7
 
 Source0: non-mixer-xt.tar.gz
 Source1: source-non-mixer-xt.sh
@@ -71,14 +71,14 @@ LV2 plugins, preset support and state save and restore.
 %install
 %cmake_install
 
+sed -i -e "/Version=2.0/d" %{buildroot}/%{_datadir}/applications/midi-mapper-xt.desktop
+
 desktop-file-install --vendor '' \
         --add-category=X-Sound \
         --add-category=Midi \
         --add-category=X-Jack \
         --dir %{buildroot}/%{_datadir}/applications \
         %{buildroot}/%{_datadir}/applications/*.desktop
-
-sed -i -e "/Version=2.0/d" %{buildroot}/%{_datadir}/applications/idi-mapper-xt.desktop
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
@@ -93,6 +93,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/doc/non-mixer-xt/*
 
 %changelog
+* Tue Jan 14 2025 Yann Collette <ycollette dot nospam at free.fr> 2.0.7-2
+- update to 2.0.7-2
+
 * Fri Dec 06 2024 Yann Collette <ycollette dot nospam at free.fr> 2.0.6-2
 - update to 2.0.6-2
 
