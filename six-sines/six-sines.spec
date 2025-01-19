@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: six-sines
-Version: 0.999999
+Version: 0.9999999
 Release: 2%{?dist}
 Summary: Six Sines is a small synthesizer which explores audio rate inter-modulation of signals
 License: MIT
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./six-sines-source.sh <TAG>
-#        ./six-sines-source.sh v0.999999
+#        ./six-sines-source.sh v0.9999999
 
 Source0: six-sines.tar.gz
 Source1: six-sines-source.sh
@@ -100,7 +100,7 @@ export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
 export CFLAGS="-Wno-error=deprecated-declarations $CFLAGS"
 export CXXFLAGS="-include ghc/filesystem.hpp -Wno-error=deprecated-declarations $CXXFLAGS"
 
-%cmake
+%cmake -DBUILD_SHARED_LIBS:BOOL=OFF
 %cmake_build --target six-sines_all
 
 %install
@@ -114,21 +114,12 @@ cp -ra %{__cmake_builddir}/Six_Sines.clap %{buildroot}/%{_libdir}/clap/
 install -m 755 -d %{buildroot}/%{_bindir}/
 cp -ra %{__cmake_builddir}/Six_Sines %{buildroot}/%{_bindir}/
 
-install -m 755 -d %{buildroot}/%{_libdir}/six_sines/
-install -m 755 %{__cmake_builddir}/libs/sst/sst-plugininfra/libs/strnatcmp/libstrnatcmp.so %{buildroot}/%{_libdir}/six_sines/
-install -m 755 %{__cmake_builddir}/libs/sst/sst-plugininfra/libs/filesystem/libfilesystem.so %{buildroot}/%{_libdir}/six_sines/
-
-patchelf --set-rpath '$ORIGIN/../%{_lib}/six_sines/' %{buildroot}/%{_bindir}/Six_Sines
-patchelf --set-rpath '$ORIGIN/../six_sines/' %{buildroot}/%{_libdir}/clap/Six_Sines.clap
-patchelf --set-rpath '$ORIGIN/../../../../six_sines/' `find %{buildroot}/%{_libdir}/vst3/Six_Sines.vst3/ -name "*.so"`
-
 %files
 %{_bindir}/*
 
 %files -n license-%{name}
 %doc README.md doc/manual.md
 %license LICENSE.md
-%{_libdir}/six_sines/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
@@ -137,6 +128,9 @@ patchelf --set-rpath '$ORIGIN/../../../../six_sines/' `find %{buildroot}/%{_libd
 %{_libdir}/clap/*
 
 %changelog
+* Thu Jan 16 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9999999-2
+- update to 0.9999999-2
+
 * Thu Jan 09 2025 Yann Collette <ycollette.nospam@free.fr> - 0.999999-2
 - update to 0.999999-2
 
