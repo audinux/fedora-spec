@@ -4,7 +4,7 @@
 # Category: Programming
 
 Name: zix
-Version: 0.4.2
+Version: 0.6.2
 Release: 1%{?dist}
 Summary: A lightweight C library of portability wrappers and data structures
 License: ISC
@@ -77,5 +77,8 @@ The %{name}-devel package contains documentation files for %{name}.
 %endif
 
 %changelog
+* Sun Jan 19 2025 Yann Collette <ycollette.nospam@free.fr> - 0.6.2-1
+- update to 0.6.2-1
+
 * Tue Oct 31 2023 Yann Collette <ycollette.nospam@free.fr> - 0.4.2-1
 - Initial spec file
