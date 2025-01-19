@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c34a296305f627798934d3999faa65c30bc06005
-%global gittag0 2.0.0
+%global commit0 8a62e59e850fd995c0f46a71982b5f6d85152f8c
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-pachde-hc-one
-Version: 2.0.0
+Version: 2.0.1
 Release: 2%{?dist}
 Summary: pachde-hc-one plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r pachde-hc-one_plugin/dist/pachde-hc-one/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile
