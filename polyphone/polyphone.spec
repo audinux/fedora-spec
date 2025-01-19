@@ -5,7 +5,7 @@
 # GUIToolkit: Qt5
 
 Name: polyphone
-Version: 2.5.0
+Version: 2.5.1
 Release: 3%{?dist}
 Summary: A SF2 sound font editor
 URL: https://polyphone-soundfonts.com/
@@ -106,6 +106,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Sun Jan 19 2025 Yann Collette <ycollette.nospam@free.fr> - 2.5.1-3
+- update to 2.5.1-3
+
 * Thu Dec 26 2024 Yann Collette <ycollette.nospam@free.fr> - 2.5.0-3
 - update to 2.5.0-3
 
