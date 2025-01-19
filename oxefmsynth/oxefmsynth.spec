@@ -10,7 +10,7 @@
 
 Name: oxefmsynth
 Version: 1.3.5.%{shortcommit0}
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A FM synthetized
 License: GPL-2.0-or-later
 URL: https://github.com/oxesoft/oxefmsynth
@@ -25,11 +25,26 @@ Patch0:  oxefmsynth-fix-cxxflags-override.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: libX11-devel
-BuildRequires: wget
-BuildRequires: unzip
+
+Requires: license-%{name}
 
 %description
 A FM Synthesizer
+
+%package -n vst-%{name}
+Summary: VST2 version of %{name}
+License: GPL-2.0-or-later
+Requires: license-%{name}
+
+%description -n vst-%{name}
+VST2 version of %{name}
+
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
 
 %prep
 %autosetup -p1 -n %{name}-%{commit0}
@@ -59,25 +74,15 @@ install -m 755 oxefmsynth %{buildroot}/%{_bindir}/
 install -m 755 -d %{buildroot}%{_libdir}/vst/
 install -m 755 *.so %{buildroot}/%{_libdir}/vst/
 
-install -m 755 -d %{buildroot}%{_libdir}/vst/skins/default/
-install -m 755 -d %{buildroot}%{_libdir}/vst/skins/dx7/
-install -m 755 -d %{buildroot}%{_libdir}/vst/skins/lcd/
-install -m 755 -d %{buildroot}%{_libdir}/vst/skins/snow/
-install -m 755 -d %{buildroot}%{_libdir}/vst/skins/totolitoto/
-install -m 755 -d %{buildroot}%{_libdir}/vst/skins/tx802/
-
-install -m 644 skins/default/*    %{buildroot}/%{_libdir}/vst/skins/default/
-install -m 644 skins/dx7/*        %{buildroot}/%{_libdir}/vst/skins/dx7/
-install -m 644 skins/lcd/*        %{buildroot}/%{_libdir}/vst/skins/lcd/
-install -m 644 skins/snow/*       %{buildroot}/%{_libdir}/vst/skins/snow/
-install -m 644 skins/totolitoto/* %{buildroot}/%{_libdir}/vst/skins/totolitoto/
-install -m 644 skins/tx802/*      %{buildroot}/%{_libdir}/vst/skins/tx802/
-
 %files
+%{_bindir}/*
+
+%files -n vst-%{name}
+%{_libdir}/vst/*
+
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
-%{_bindir}/*
-%{_libdir}/*
 
 %changelog
 * Wed Oct 21 2020 Yann Collette <ycollette.nospam@free.fr> - 1.3.5-2
