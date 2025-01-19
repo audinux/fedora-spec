@@ -3,8 +3,8 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-%global din_vers_major 58
-%global din_vers_minor 1
+%global din_vers_major 59
+%global din_vers_minor 0
 %global din_vers_patch 0
 Summary: DIN is a synth of a 3rd kind
 Name:    din
@@ -17,7 +17,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://archive.org/download/dinisnoise_source_code/din-%din_vers_major.%din_vers_minor.tar.gz
+Source0: https://dinisnoise.org/files/din-%{din_vers_major}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: autoconf
@@ -51,7 +51,7 @@ Requires: din
 Jack version of the Din synthesizer
 
 %prep
-%autosetup -n %{name}-%din_vers_major.%din_vers_minor
+%autosetup -n %{name}-%din_vers_major
 
 # __line conflict with std c++ headers
 sed -i -e "s/__line/__dinline/g" src/line.h
@@ -124,6 +124,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/din-jack.desktop
 %{_datadir}/applications/din-jack.desktop
 
 %changelog
+* Sat Jan 18 2025 Yann Collette <ycollette dot nospam at free.fr> 59.0.0-1
+- update to 59.0.0-1
+
 * Mon Jan 22 2024 Yann Collette <ycollette dot nospam at free.fr> 58.0.0-1
 - update to 58.0.0-1
 
