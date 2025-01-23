@@ -80,6 +80,8 @@ install -m 644 contrib/%{name}.xml %{buildroot}%{_datadir}/mime/packages/%{name}
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/
 install -m 644 resources/polyphone.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/%{name}.svg
 
+cp readme.md readme_source.md
+
 # TODO: install man pages
 
 # install polyphon.desktop properly.
@@ -98,7 +100,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 # polyphone-2.3.0-3.fc33.x86_64/usr/share/mime/packages/polyphone.xml: No valid root node specified
 
 %files
-%doc sources/changelog README.md sources/README
+%doc sources/changelog README.md sources/readme_source.md
 %license LICENSE.txt
 %{_bindir}/polyphone
 %{_datadir}/applications/*.desktop
