@@ -1,0 +1,43 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:22:18 +0200
+Subject: [PATCH] python-2.7.2-add-extension-suffix-to-python-config.patch
+
+00130 #
+Add "--extension-suffix" option to python-config and python-debug-config
+(rhbz#732808)
+
+This is adapted from 3.2's PEP-3149 support.
+
+Fedora's debug build has some non-standard features (see also patch 112
+above), though largely shared with Debian/Ubuntu and Windows
+
+In particular, SO in the Makefile is currently always just ".so" for our
+python 2 optimized builds, but for python 2 debug it should be '_d.so', to
+distinguish the debug vs optimized ABI, following the pattern in the above
+patch.
+
+Not yet sent upstream
+---
+ Misc/python-config.in | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/Misc/python-config.in b/Misc/python-config.in
+index 896c849f061..c1691efdfa9 100644
+--- a/Misc/python-config.in
++++ b/Misc/python-config.in
+@@ -6,7 +6,7 @@ import getopt
+ from distutils import sysconfig
+ 
+ valid_opts = ['prefix', 'exec-prefix', 'includes', 'libs', 'cflags',
+-              'ldflags', 'help']
++              'ldflags', 'extension-suffix', 'help']
+ 
+ def exit_with_usage(code=1):
+     print >>sys.stderr, "Usage: %s [%s]" % (sys.argv[0],
+@@ -56,3 +56,5 @@ for opt in opt_flags:
+                 libs.extend(getvar('LINKFORSHARED').split())
+         print ' '.join(libs)
+ 
++    elif opt == '--extension-suffix':
++        print (sys.pydebug and "_d" or "") + sysconfig.get_config_var('SO')

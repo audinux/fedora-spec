@@ -1,0 +1,80 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:24:12 +0200
+Subject: [PATCH] 00138-fix-distutils-tests-in-debug-build.patch
+
+00138 #
+Fixup some tests within distutils to work with how debug builds are set up:
+---
+ Lib/distutils/tests/test_build_ext.py | 15 +++++++++------
+ 1 file changed, 9 insertions(+), 6 deletions(-)
+
+diff --git a/Lib/distutils/tests/test_build_ext.py b/Lib/distutils/tests/test_build_ext.py
+index a6d2d2eb155..688bdd1bb62 100644
+--- a/Lib/distutils/tests/test_build_ext.py
++++ b/Lib/distutils/tests/test_build_ext.py
+@@ -332,6 +332,7 @@ class BuildExtTestCase(support.TempdirManager,
+         self.assertEqual(lastdir, 'bar')
+ 
+     def test_ext_fullpath(self):
++        debug_ext = sysconfig.get_config_var("DEBUG_EXT")
+         ext = sysconfig.get_config_vars()['SO']
+         dist = Distribution()
+         cmd = build_ext(dist)
+@@ -339,14 +340,14 @@ class BuildExtTestCase(support.TempdirManager,
+         cmd.distribution.package_dir = {'': 'src'}
+         cmd.distribution.packages = ['lxml', 'lxml.html']
+         curdir = os.getcwd()
+-        wanted = os.path.join(curdir, 'src', 'lxml', 'etree' + ext)
++        wanted = os.path.join(curdir, 'src', 'lxml', 'etree' + debug_ext + ext)
+         path = cmd.get_ext_fullpath('lxml.etree')
+         self.assertEqual(wanted, path)
+ 
+         # building lxml.etree not inplace
+         cmd.inplace = 0
+         cmd.build_lib = os.path.join(curdir, 'tmpdir')
+-        wanted = os.path.join(curdir, 'tmpdir', 'lxml', 'etree' + ext)
++        wanted = os.path.join(curdir, 'tmpdir', 'lxml', 'etree' + debug_ext + ext)
+         path = cmd.get_ext_fullpath('lxml.etree')
+         self.assertEqual(wanted, path)
+ 
+@@ -356,13 +357,13 @@ class BuildExtTestCase(support.TempdirManager,
+         cmd.distribution.packages = ['twisted', 'twisted.runner.portmap']
+         path = cmd.get_ext_fullpath('twisted.runner.portmap')
+         wanted = os.path.join(curdir, 'tmpdir', 'twisted', 'runner',
+-                              'portmap' + ext)
++                              'portmap' + debug_ext + ext)
+         self.assertEqual(wanted, path)
+ 
+         # building twisted.runner.portmap inplace
+         cmd.inplace = 1
+         path = cmd.get_ext_fullpath('twisted.runner.portmap')
+-        wanted = os.path.join(curdir, 'twisted', 'runner', 'portmap' + ext)
++        wanted = os.path.join(curdir, 'twisted', 'runner', 'portmap' + debug_ext + ext)
+         self.assertEqual(wanted, path)
+ 
+     def test_build_ext_inplace(self):
+@@ -375,8 +376,9 @@ class BuildExtTestCase(support.TempdirManager,
+         cmd.distribution.package_dir = {'': 'src'}
+         cmd.distribution.packages = ['lxml', 'lxml.html']
+         curdir = os.getcwd()
++        debug_ext = sysconfig.get_config_var("DEBUG_EXT")
+         ext = sysconfig.get_config_var("SO")
+-        wanted = os.path.join(curdir, 'src', 'lxml', 'etree' + ext)
++        wanted = os.path.join(curdir, 'src', 'lxml', 'etree' + debug_ext + ext)
+         path = cmd.get_ext_fullpath('lxml.etree')
+         self.assertEqual(wanted, path)
+ 
+@@ -414,10 +416,11 @@ class BuildExtTestCase(support.TempdirManager,
+         dist = Distribution({'name': 'UpdateManager'})
+         cmd = build_ext(dist)
+         cmd.ensure_finalized()
++        debug_ext = sysconfig.get_config_var("DEBUG_EXT")
+         ext = sysconfig.get_config_var("SO")
+         ext_name = os.path.join('UpdateManager', 'fdsend')
+         ext_path = cmd.get_ext_fullpath(ext_name)
+-        wanted = os.path.join(cmd.build_lib, 'UpdateManager', 'fdsend' + ext)
++        wanted = os.path.join(cmd.build_lib, 'UpdateManager', 'fdsend' + debug_ext + ext)
+         self.assertEqual(ext_path, wanted)
+ 
+     @unittest.skipUnless(sys.platform == 'win32', 'these tests require Windows')

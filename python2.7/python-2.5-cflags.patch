@@ -1,0 +1,26 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:14:08 +0200
+Subject: [PATCH] python-2.5-cflags.patch
+
+00004 #
+Add $(CFLAGS) to the linker arguments when linking the "python" binary
+since some architectures (sparc64) need this (rhbz:199373).
+Not yet filed upstream
+---
+ Makefile.pre.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile.pre.in b/Makefile.pre.in
+index 2a14f3323bc..24b9d40143f 100644
+--- a/Makefile.pre.in
++++ b/Makefile.pre.in
+@@ -487,7 +487,7 @@ coverage-report: regen-grammar
+ 
+ # Build the interpreter
+ $(BUILDPYTHON):	Modules/python.o $(LIBRARY) $(LDLIBRARY)
+-		$(LINKCC) $(LDFLAGS) $(LINKFORSHARED) -o $@ \
++		$(LINKCC) $(CFLAGS) $(LDFLAGS) $(LINKFORSHARED) -o $@ \
+ 			Modules/python.o \
+ 			$(BLDLIBRARY) $(LIBS) $(MODLIBS) $(SYSLIBS) $(LDLAST)
+ 

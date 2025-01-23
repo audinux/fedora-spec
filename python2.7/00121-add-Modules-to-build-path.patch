@@ -1,0 +1,37 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:21:28 +0200
+Subject: [PATCH] 00121-add-Modules-to-build-path.patch
+
+Upstream r79310 removed the "Modules" directory from sys.path when Python is
+running from the build directory on POSIX to fix a unit test (issue #8205).
+This seems to have broken the compileall.py done in "make install": it cannot
+find shared library extension modules at this point in the build (sys.path
+does not contain DESTDIR/usr/lib(64)/python-2.7/lib-dynload for some reason),
+leading to the build failing with:
+Traceback (most recent call last):
+  File "/home/david/rpmbuild/BUILDROOT/python-2.7-0.1.rc2.fc14.x86_64/usr/lib64/python2.7/compileall.py", line 17, in <module>
+    import struct
+  File "/home/david/rpmbuild/BUILDROOT/python-2.7-0.1.rc2.fc14.x86_64/usr/lib64/python2.7/struct.py", line 1, in <module>
+   from _struct import *
+ImportError: No module named _struct
+This patch adds the build Modules directory to build path.
+---
+ Lib/site.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/Lib/site.py b/Lib/site.py
+index 9fd76c8157a..868b7cb58fe 100644
+--- a/Lib/site.py
++++ b/Lib/site.py
+@@ -520,6 +520,10 @@ def main():
+ 
+     abs__file__()
+     known_paths = removeduppaths()
++    from sysconfig import is_python_build
++    if is_python_build():
++        from _sysconfigdata import build_time_vars
++        sys.path.append(os.path.join(build_time_vars['abs_builddir'], 'Modules'))
+     if ENABLE_USER_SITE is None:
+         ENABLE_USER_SITE = check_enableusersite()
+     known_paths = addusersitepackages(known_paths)

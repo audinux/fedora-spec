@@ -1,0 +1,224 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:18:18 +0200
+Subject: [PATCH] 00055-systemtap.patch
+
+00055 #
+Systemtap support: add statically-defined probe points
+Patch based on upstream bug: http://bugs.python.org/issue4111
+fixed up by mjw and wcohen for 2.6.2, then fixed up by dmalcolm for 2.6.4
+then rewritten by mjw (attachment 390110 of rhbz 545179), then reformatted
+for 2.7rc1 by dmalcolm:
+---
+ Include/pydtrace.d | 10 ++++++++
+ Makefile.pre.in    | 15 +++++++++++-
+ Python/ceval.c     | 59 ++++++++++++++++++++++++++++++++++++++++++++++
+ configure.ac       | 32 +++++++++++++++++++++++++
+ pyconfig.h.in      |  3 +++
+ 5 files changed, 118 insertions(+), 1 deletion(-)
+ create mode 100644 Include/pydtrace.d
+
+diff --git a/Include/pydtrace.d b/Include/pydtrace.d
+new file mode 100644
+index 00000000000..3aedc4ce2f8
+--- /dev/null
++++ b/Include/pydtrace.d
+@@ -0,0 +1,10 @@
++provider python {
++	probe function__entry(const char *, const char *, int);
++	probe function__return(const char *, const char *, int);
++};
++
++#pragma D attributes Evolving/Evolving/Common provider python provider
++#pragma D attributes Private/Private/Common provider python module
++#pragma D attributes Private/Private/Common provider python function
++#pragma D attributes Evolving/Evolving/Common provider python name
++#pragma D attributes Evolving/Evolving/Common provider python args
+diff --git a/Makefile.pre.in b/Makefile.pre.in
+index 24b9d40143f..0e6246ae055 100644
+--- a/Makefile.pre.in
++++ b/Makefile.pre.in
+@@ -337,6 +337,7 @@ PYTHON_OBJS=	\
+ 		Python/formatter_unicode.o \
+ 		Python/formatter_string.o \
+ 		Python/$(DYNLOADFILE) \
++		@DTRACEOBJS@ \
+ 		$(LIBOBJS) \
+ 		$(MACHDEP_OBJS) \
+ 		$(THREADOBJ)
+@@ -748,6 +749,18 @@ Python/formatter_unicode.o: $(srcdir)/Python/formatter_unicode.c \
+ Python/formatter_string.o: $(srcdir)/Python/formatter_string.c \
+ 				$(STRINGLIB_HEADERS)
+ 
++# Only needed with --with-dtrace
++buildinclude:
++	mkdir -p Include
++
++Include/pydtrace.h: buildinclude $(srcdir)/Include/pydtrace.d
++	dtrace -o $@ $(DFLAGS) -C -h -s $(srcdir)/Include/pydtrace.d
++
++Python/ceval.o: Include/pydtrace.h
++
++Python/dtrace.o: buildinclude $(srcdir)/Include/pydtrace.d Python/ceval.o
++	dtrace -o $@ $(DFLAGS) -C -G -s $(srcdir)/Include/pydtrace.d Python/ceval.o
++
+ ############################################################################
+ # Header files
+ 
+@@ -1492,7 +1505,7 @@ Python/thread.o: @THREADHEADERS@
+ .PHONY: frameworkinstall frameworkinstallframework frameworkinstallstructure
+ .PHONY: frameworkinstallmaclib frameworkinstallapps frameworkinstallunixtools
+ .PHONY: frameworkaltinstallunixtools recheck clean clobber distclean
+-.PHONY: smelly funny patchcheck altmaninstall commoninstall
++.PHONY: smelly funny patchcheck altmaninstall commoninstall buildinclude
+ .PHONY: gdbhooks
+ 
+ # IF YOU PUT ANYTHING HERE IT WILL GO AWAY
+diff --git a/Python/ceval.c b/Python/ceval.c
+index e1140a8e401..b7427f9658c 100644
+--- a/Python/ceval.c
++++ b/Python/ceval.c
+@@ -19,6 +19,10 @@
+ 
+ #include <ctype.h>
+ 
++#ifdef WITH_DTRACE
++#include "pydtrace.h"
++#endif
++
+ #ifndef WITH_TSC
+ 
+ #define READ_TIMESTAMP(var)
+@@ -674,6 +678,55 @@ PyEval_EvalCode(PyCodeObject *co, PyObject *globals, PyObject *locals)
+                       NULL);
+ }
+ 
++#ifdef WITH_DTRACE
++static void
++dtrace_entry(PyFrameObject *f)
++{
++    const char *filename;
++    const char *fname;
++    int lineno;
++
++    filename = PyString_AsString(f->f_code->co_filename);
++    fname = PyString_AsString(f->f_code->co_name);
++    lineno = PyCode_Addr2Line(f->f_code, f->f_lasti);
++
++    PYTHON_FUNCTION_ENTRY((char *)filename, (char *)fname, lineno);
++
++    /*
++     * Currently a USDT tail-call will not receive the correct arguments.
++     * Disable the tail call here.
++     */
++#if defined(__sparc)
++    asm("nop");
++#endif
++}
++
++static void
++dtrace_return(PyFrameObject *f)
++{
++    const char *filename;
++    const char *fname;
++    int lineno;
++
++    filename = PyString_AsString(f->f_code->co_filename);
++    fname = PyString_AsString(f->f_code->co_name);
++    lineno = PyCode_Addr2Line(f->f_code, f->f_lasti);
++    PYTHON_FUNCTION_RETURN((char *)filename, (char *)fname, lineno);
++
++    /*
++     * Currently a USDT tail-call will not receive the correct arguments.
++     * Disable the tail call here.
++     */
++#if defined(__sparc)
++    asm("nop");
++#endif
++}
++#else
++#define	PYTHON_FUNCTION_ENTRY_ENABLED() 0
++#define	PYTHON_FUNCTION_RETURN_ENABLED() 0
++#define	dtrace_entry(f)
++#define	dtrace_return(f)
++#endif
+ 
+ /* Interpreter main loop */
+ 
+@@ -1021,6 +1074,9 @@ PyEval_EvalFrameEx(PyFrameObject *f, int throwflag)
+         }
+     }
+ 
++    if (PYTHON_FUNCTION_ENTRY_ENABLED())
++        dtrace_entry(f);
++
+     co = f->f_code;
+     names = co->co_names;
+     consts = co->co_consts;
+@@ -3357,6 +3413,9 @@ fast_yield:
+ 
+     /* pop frame */
+ exit_eval_frame:
++    if (PYTHON_FUNCTION_RETURN_ENABLED())
++        dtrace_return(f);
++
+     Py_LeaveRecursiveCall();
+     tstate->frame = f->f_back;
+ 
+diff --git a/configure.ac b/configure.ac
+index 5930552a4c4..3e28b81eaf5 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -3052,6 +3052,38 @@ if test "$with_valgrind" != no; then
+     )
+ fi
+ 
++# Check for dtrace support
++AC_MSG_CHECKING(for --with-dtrace)
++AC_ARG_WITH(dtrace,
++            AC_HELP_STRING(--with(out)-dtrace, disable/enable dtrace support))
++
++if test ! -z "$with_dtrace"
++then
++    if dtrace -G -o /dev/null -s $srcdir/Include/pydtrace.d 2>/dev/null
++    then
++	AC_DEFINE(WITH_DTRACE, 1, 
++	 [Define if you want to compile in Dtrace support])
++	with_dtrace="Sun"
++	DTRACEOBJS="Python/dtrace.o"
++	DTRADEHDRS=""
++    elif dtrace -h -o /dev/null -s $srcdir/Include/pydtrace.d
++    then
++	AC_DEFINE(WITH_DTRACE, 1, 
++	 [Define if you want to compile in Dtrace support])
++	with_dtrace="Apple"
++	DTRACEOBJS=""
++	DTRADEHDRS="pydtrace.h"
++    else
++	with_dtrace="no"
++    fi
++else
++    with_dtrace="no"
++fi
++
++AC_MSG_RESULT($with_dtrace)
++AC_SUBST(DTRACEOBJS)
++AC_SUBST(DTRACEHDRS)
++
+ # Check for --with-wctype-functions
+ AC_MSG_CHECKING(for --with-wctype-functions)
+ AC_ARG_WITH(wctype-functions, 
+diff --git a/pyconfig.h.in b/pyconfig.h.in
+index 4da6e7104ab..652279857ef 100644
+--- a/pyconfig.h.in
++++ b/pyconfig.h.in
+@@ -1145,6 +1145,9 @@
+ /* Define if you want documentation strings in extension modules */
+ #undef WITH_DOC_STRINGS
+ 
++/* Define if you want to compile in Dtrace support */
++#undef WITH_DTRACE
++
+ /* Define if you want to use the new-style (Openstep, Rhapsody, MacOS) dynamic
+    linker (dyld) instead of the old-style (NextStep) dynamic linker (rld).
+    Dyld is necessary to support frameworks. */

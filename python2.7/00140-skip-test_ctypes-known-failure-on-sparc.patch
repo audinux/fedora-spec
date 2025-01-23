@@ -1,0 +1,25 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:24:44 +0200
+Subject: [PATCH] 00140-skip-test_ctypes-known-failure-on-sparc.patch
+
+00140 #
+Sparc-specific: skip known failure in test_ctypes:
+ http://bugs.python.org/issue8314 (rhbz#711584)
+which appears to be a libffi bug
+---
+ Lib/ctypes/test/test_callbacks.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Lib/ctypes/test/test_callbacks.py b/Lib/ctypes/test/test_callbacks.py
+index db3d9e7b198..c5a997b308e 100644
+--- a/Lib/ctypes/test/test_callbacks.py
++++ b/Lib/ctypes/test/test_callbacks.py
+@@ -69,6 +69,7 @@ class Callbacks(unittest.TestCase):
+         self.check_type(c_longlong, 42)
+         self.check_type(c_longlong, -42)
+ 
++    @unittest.skip('Known failure on Sparc: http://bugs.python.org/issue8314')
+     def test_ulonglong(self):
+         # test some 64-bit values, with and without msb set.
+         self.check_type(c_ulonglong, 10955412242170339782)

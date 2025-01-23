@@ -1,0 +1,33 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:17:24 +0200
+Subject: [PATCH] python-2.7rc1-socketmodule-constants2.patch
+
+00014 #
+Add various constants to the socketmodule (rhbz#436560):
+TODO: these patches were added in 2.5.1-22 and 2.5.1-24 but appear not to
+have been sent upstream yet:
+---
+ Modules/socketmodule.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/Modules/socketmodule.c b/Modules/socketmodule.c
+index e0ac9a34232..0eec3ac2c04 100644
+--- a/Modules/socketmodule.c
++++ b/Modules/socketmodule.c
+@@ -5449,6 +5449,15 @@ init_socket(void)
+ #ifdef  TCP_QUICKACK
+     PyModule_AddIntConstant(m, "TCP_QUICKACK", TCP_QUICKACK);
+ #endif
++#ifdef	TCP_CONGESTION
++    PyModule_AddIntConstant(m, "TCP_CONGESTION", TCP_CONGESTION);
++#endif
++#ifdef	TCP_MD5SIG
++    PyModule_AddIntConstant(m, "TCP_MD5SIG", TCP_MD5SIG);
++#endif
++#ifdef	TCP_MD5SIG_MAXKEYLEN
++    PyModule_AddIntConstant(m, "TCP_MD5SIG_MAXKEYLEN", TCP_MD5SIG_MAXKEYLEN);
++#endif
+ 
+ 
+     /* IPX options */

@@ -1,0 +1,68 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:20:52 +0200
+Subject: [PATCH] 00113-more-configuration-flags.patch
+
+00113 #
+Add configure-time support for the COUNT_ALLOCS and CALL_PROFILE options
+described at http://svn.python.org/projects/python/trunk/Misc/SpecialBuilds.txt
+so that if they are enabled, they will be in that build's pyconfig.h, so that
+extension modules will reliably use them
+Not yet sent upstream
+---
+ configure.ac  | 24 ++++++++++++++++++++++++
+ pyconfig.h.in |  6 ++++++
+ 2 files changed, 30 insertions(+)
+
+diff --git a/configure.ac b/configure.ac
+index 19925ce2c6f..e0bc200cf85 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -3032,6 +3032,30 @@ else AC_MSG_RESULT(no)
+ fi],
+ [AC_MSG_RESULT(no)])
+ 
++AC_MSG_CHECKING(for --with-count-allocs)
++AC_ARG_WITH(count-allocs,
++[  --with(out)count-allocs  enable/disable per-type instance accounting], [
++if test "$withval" != no
++then 
++  AC_DEFINE(COUNT_ALLOCS, 1,
++    [Define to keep records of the number of instances of each type]) 
++    AC_MSG_RESULT(yes)
++else AC_MSG_RESULT(no)
++fi],
++[AC_MSG_RESULT(no)])
++
++AC_MSG_CHECKING(for --with-call-profile)
++AC_ARG_WITH(call-profile,
++[  --with(out)-call-profile  enable/disable statistics on function call invocation], [
++if test "$withval" != no
++then 
++  AC_DEFINE(CALL_PROFILE, 1, 
++    [Define to keep records on function call invocation]) 
++    AC_MSG_RESULT(yes)
++else AC_MSG_RESULT(no)
++fi],
++[AC_MSG_RESULT(no)])
++
+ # Check for Python-specific malloc support
+ AC_MSG_CHECKING(for --with-pymalloc)
+ AC_ARG_WITH(pymalloc,
+diff --git a/pyconfig.h.in b/pyconfig.h.in
+index 652279857ef..a81dc34c693 100644
+--- a/pyconfig.h.in
++++ b/pyconfig.h.in
+@@ -1169,6 +1169,12 @@
+ /* Define to profile with the Pentium timestamp counter */
+ #undef WITH_TSC
+ 
++/* Define to keep records of the number of instances of each type */
++#undef COUNT_ALLOCS
++
++/* Define to keep records on function call invocation */
++#undef CALL_PROFILE
++
+ /* Define if you want pymalloc to be disabled when running under valgrind */
+ #undef WITH_VALGRIND
+ 

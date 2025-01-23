@@ -1,0 +1,43 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:12:37 +0200
+Subject: [PATCH] 00001-pydocnogui.patch
+
+Removes the "-g" option from "pydoc", for some reason; I believe
+(dmalcolm 2010-01-29) that this was introduced in this change:
+- fix pydoc (#68082)
+in 2.2.1-12 as a response to the -g option needing TkInter installed
+(Red Hat Linux 8)
+---
+ Lib/pydoc.py | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
+
+diff --git a/Lib/pydoc.py b/Lib/pydoc.py
+index 62cc262ccb8..4ffc8f000e5 100755
+--- a/Lib/pydoc.py
++++ b/Lib/pydoc.py
+@@ -20,9 +20,6 @@ Run "pydoc -p <port>" to start an HTTP server on a given port on the
+ local machine to generate documentation web pages.  Port number 0 can be
+ used to get an arbitrary unused port.
+ 
+-For platforms without a command line, "pydoc -g" starts the HTTP server
+-and also pops up a little window for controlling it.
+-
+ Run "pydoc -w <name>" to write out the HTML documentation for a module
+ to a file named "<name>.html".
+ 
+@@ -2404,13 +2401,10 @@ def cli():
+     Start an HTTP server on the given port on the local machine.  Port
+     number 0 can be used to get an arbitrary unused port.
+ 
+-%s -g
+-    Pop up a graphical interface for finding and serving documentation.
+-
+ %s -w <name> ...
+     Write out the HTML documentation for a module to a file in the current
+     directory.  If <name> contains a '%s', it is treated as a filename; if
+     it names a directory, documentation is written for all the contents.
+-""" % (cmd, os.sep, cmd, cmd, cmd, cmd, os.sep)
++""" % (cmd, os.sep, cmd, cmd, cmd, os.sep)
+ 
+ if __name__ == '__main__': cli()

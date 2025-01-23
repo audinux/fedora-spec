@@ -1,0 +1,25 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:23:19 +0200
+Subject: [PATCH] 00133-skip-test_dl.patch
+
+00133 #
+"dl" is deprecated, and test_dl doesn't work on 64-bit builds:
+---
+ Lib/test/test_dl.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/Lib/test/test_dl.py b/Lib/test/test_dl.py
+index da9730f3d61..45d454711c9 100644
+--- a/Lib/test/test_dl.py
++++ b/Lib/test/test_dl.py
+@@ -12,6 +12,9 @@ sharedlibs = [
+     ('/usr/lib/libc.dylib', 'getpid'),
+     ]
+ 
++# (also, "dl" is deprecated in favor of ctypes)
++@unittest._skipInRpmBuild('fails on 64-bit builds: '
++    'module dl requires sizeof(int) == sizeof(long) == sizeof(char*)')
+ def test_main():
+     for s, func in sharedlibs:
+         try:

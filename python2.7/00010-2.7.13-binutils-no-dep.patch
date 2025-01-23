@@ -1,0 +1,35 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:16:05 +0200
+Subject: [PATCH] 00010-2.7.13-binutils-no-dep.patch
+
+FIXME: Lib/ctypes/util.py posix implementation defines a function
+_get_soname(f).  Upstreams's implementation of this uses objdump to read the
+SONAME from a library; we avoid this, apparently to minimize space
+requirements on the live CD:
+(rhbz:307221)
+---
+ Lib/ctypes/util.py | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/Lib/ctypes/util.py b/Lib/ctypes/util.py
+index ab10ec52ee8..923d1b72714 100644
+--- a/Lib/ctypes/util.py
++++ b/Lib/ctypes/util.py
+@@ -140,11 +140,15 @@ elif os.name == "posix":
+             # assuming GNU binutils / ELF
+             if not f:
+                 return None
+-            cmd = 'if ! type objdump >/dev/null 2>&1; then exit; fi;' \
++            cmd = 'if ! type objdump >/dev/null 2>&1; then exit 10; fi;' \
+                   'objdump -p -j .dynamic 2>/dev/null "$1"'
+             proc = subprocess.Popen((cmd, '_get_soname', f), shell=True,
+                                     stdout=subprocess.PIPE)
+             [dump, _] = proc.communicate()
++            if proc.returncode == 10:
++                return os.path.basename(f) #  This is good for GLibc, I think,
++                                           # and a dep on binutils is big (for
++                                           # live CDs).
+             res = re.search(br'\sSONAME\s+([^\s]+)', dump)
+             if not res:
+                 return None

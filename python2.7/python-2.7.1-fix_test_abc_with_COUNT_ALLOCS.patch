@@ -1,0 +1,42 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:21:51 +0200
+Subject: [PATCH] python-2.7.1-fix_test_abc_with_COUNT_ALLOCS.patch
+
+00128 #
+2.7.1 (in r84230) added a test to test_abc which fails if python is
+configured with COUNT_ALLOCS, which is the case for our debug build
+(the COUNT_ALLOCS instrumentation keeps "C" alive).
+Not yet sent upstream
+---
+ Lib/test/test_abc.py | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/Lib/test/test_abc.py b/Lib/test/test_abc.py
+index dbba37cdb6f..967f4e24810 100644
+--- a/Lib/test/test_abc.py
++++ b/Lib/test/test_abc.py
+@@ -3,6 +3,8 @@
+ 
+ """Unit tests for abc.py."""
+ 
++import sys
++
+ import unittest, weakref
+ from test import test_support
+ 
+@@ -223,8 +225,12 @@ class TestABC(unittest.TestCase):
+         # Trigger cache.
+         C().f()
+         del C
+-        test_support.gc_collect()
+-        self.assertEqual(r(), None)
++        # This doesn't work in our debug build, presumably due to its use
++        # of COUNT_ALLOCS, which makes heap-allocated types immortal (once
++        # they've ever had an instance):
++        if not hasattr(sys, 'getcounts'):
++            test_support.gc_collect()
++            self.assertEqual(r(), None)
+ 
+ def test_main():
+     test_support.run_unittest(TestABC)

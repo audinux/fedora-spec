@@ -1,0 +1,36 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Petr Viktorin <encukou@gmail.com>
+Date: Wed, 17 Jan 2024 17:09:54 +0100
+Subject: [PATCH] 00417: Avoid passing incompatible pointer type in _tkinter
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Modules/_tkinter.c:1178:38: error: passing argument 1 of ‘Tcl_NewUnicodeObj’
+from incompatible pointer type [-Wincompatible-pointer-types]
+---
+ Modules/_tkinter.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Modules/_tkinter.c b/Modules/_tkinter.c
+index 58640e240f3..73b94386ff2 100644
+--- a/Modules/_tkinter.c
++++ b/Modules/_tkinter.c
+@@ -1175,7 +1175,7 @@ AsObj(PyObject *value)
+             return NULL;
+         }
+         if (sizeof(Py_UNICODE) == sizeof(Tcl_UniChar))
+-            return Tcl_NewUnicodeObj(inbuf, size);
++            return Tcl_NewUnicodeObj((const Tcl_UniChar *)inbuf, size);
+         allocsize = ((size_t)size) * sizeof(Tcl_UniChar);
+         if (allocsize >= size)
+             outbuf = (Tcl_UniChar*)attemptckalloc(allocsize);
+@@ -1200,7 +1200,7 @@ AsObj(PyObject *value)
+         ckfree(FREECAST outbuf);
+         return result;
+ #else
+-        return Tcl_NewUnicodeObj(inbuf, size);
++        return Tcl_NewUnicodeObj((const Tcl_UniChar *)inbuf, size);
+ #endif
+     }
+ #endif

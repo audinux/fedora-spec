@@ -1,0 +1,24 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:23:35 +0200
+Subject: [PATCH] 00136-skip-tests-of-seeking-stdin-in-rpmbuild.patch
+
+00136 #
+Some tests try to seek on sys.stdin, but don't work as expected when run
+within Koji/mock; skip them within the rpm build:
+---
+ Lib/test/test_file2k.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Lib/test/test_file2k.py b/Lib/test/test_file2k.py
+index c73e8d8dc45..662b4c166ae 100644
+--- a/Lib/test/test_file2k.py
++++ b/Lib/test/test_file2k.py
+@@ -231,6 +231,7 @@ class OtherFileTests(unittest.TestCase):
+             else:
+                 f.close()
+ 
++    @unittest._skipInRpmBuild('seems not to raise the exception when run in Koji')
+     def testStdinSeek(self):
+         if sys.platform == 'osf1V5':
+             # This causes the interpreter to exit on OSF1 v5.1.

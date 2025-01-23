@@ -1,0 +1,24 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:25:28 +0200
+Subject: [PATCH] 00144-no-gdbm.patch
+
+00144 #
+(Optionally) disable the gdbm module:
+---
+ Modules/Setup.dist | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Modules/Setup.dist b/Modules/Setup.dist
+index c4c88cbf964..2513d71c3bf 100644
+--- a/Modules/Setup.dist
++++ b/Modules/Setup.dist
+@@ -400,7 +400,7 @@ dl dlmodule.c
+ #
+ # First, look at Setup.config; configure may have set this for you.
+ 
+-gdbm gdbmmodule.c -lgdbm
++# gdbm gdbmmodule.c -lgdbm
+ 
+ 
+ # Sleepycat Berkeley DB interface.

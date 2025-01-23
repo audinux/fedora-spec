@@ -1,0 +1,41 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: "Owen W. Taylor" <otaylor@fishsoup.net>
+Date: Mon, 21 Aug 2023 11:32:16 +0200
+Subject: [PATCH] 00403-no-tls-10.patch
+
+Fix test suite failure with openssl >= 3.1.0
+
+https://www.openssl.org/news/openssl-3.1-notes.html
+
+> SSL 3, TLS 1.0, TLS 1.1, and DTLS 1.0 only work at security level 0.
+
+This causes a FTBFS in one of the members of the test suite -
+it dies with a SSL internal error rather than the expected error - in detail:
+
+In test_subclass(), SSL_do_handshake() is called with SSL.version unmodified
+from version passed to SSLContext() - but that's an impossible version
+from the config (Fedora's default security level is 2),
+and an internal error is returned.
+
+The assumption of the code is probably that earlier steps will have negotiated
+a version that's allowed by the config, but this test skips them.
+This is fixed by simply using TLSv1_2 to start with.
+---
+ Lib/test/test_ssl.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/Lib/test/test_ssl.py b/Lib/test/test_ssl.py
+index e26f84676f7..b5cabaab2e5 100644
+--- a/Lib/test/test_ssl.py
++++ b/Lib/test/test_ssl.py
+@@ -1393,7 +1393,9 @@ class SSLErrorTests(unittest.TestCase):
+     def test_subclass(self):
+         # Check that the appropriate SSLError subclass is raised
+         # (this only tests one of them)
+-        ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
++        # since we are bypassing steps that refine the version, TLS-1.0, which is banned in
++        # openssl >= 3.1.0 causes an internal error. Use TLS-1.2 instead.
++        ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+         with closing(socket.socket()) as s:
+             s.bind(("127.0.0.1", 0))
+             s.listen(5)

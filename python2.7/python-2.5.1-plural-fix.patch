@@ -1,0 +1,28 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:14:35 +0200
+Subject: [PATCH] python-2.5.1-plural-fix.patch
+
+00006 #
+Work around a bug in Python' gettext module relating to the "Plural-Forms"
+header (rhbz:252136)
+Related to upstream issues:
+  http://bugs.python.org/issue1448060 and http://bugs.python.org/issue1475523
+though the proposed upstream patches are, alas, different
+---
+ Lib/gettext.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/Lib/gettext.py b/Lib/gettext.py
+index 765cc8c781e..d45947c2bff 100644
+--- a/Lib/gettext.py
++++ b/Lib/gettext.py
+@@ -374,6 +374,8 @@ class GNUTranslations(NullTranslations):
+                     item = item.strip()
+                     if not item:
+                         continue
++                    if item.startswith("#"):
++                        continue
+                     k = v = None
+                     if ':' in item:
+                         k, v = item.split(':', 1)

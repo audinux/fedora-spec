@@ -1,0 +1,55 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:14:59 +0200
+Subject: [PATCH] python-2.5.1-sqlite-encoding.patch
+
+00007 #
+This patch was listed in the changelog as:
+ * Fri Sep 14 2007 Jeremy Katz <katzj@redhat.com> - 2.5.1-11
+ - fix encoding of sqlite .py files to work around weird encoding problem
+ in Turkish (#283331)
+A traceback attached to rhbz 244016 shows the problem most clearly: a
+traceback on attempting to import the sqlite module, with:
+  "SyntaxError: encoding problem: with BOM (__init__.py, line 1)"
+This seems to come from Parser/tokenizer.c:check_coding_spec
+Our patch changes two source files within sqlite3, removing the
+"coding: ISO-8859-1" specs and character E4 = U+00E4 =
+LATIN SMALL LETTER A WITH DIAERESIS from in ghaering's surname.
+
+It may be that the conversion of "ISO-8859-1" to "iso-8859-1" is thwarted
+by the implementation of "tolower" in the Turkish locale; see:
+  https://bugzilla.redhat.com/show_bug.cgi?id=191096#c9
+
+TODO: Not yet sent upstream, and appears to me (dmalcolm 2010-01-29) that
+it may be papering over a symptom
+---
+ Lib/sqlite3/__init__.py | 3 +--
+ Lib/sqlite3/dbapi2.py   | 3 +--
+ 2 files changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/Lib/sqlite3/__init__.py b/Lib/sqlite3/__init__.py
+index 41ef2b76dfc..7864134e934 100644
+--- a/Lib/sqlite3/__init__.py
++++ b/Lib/sqlite3/__init__.py
+@@ -1,7 +1,6 @@
+-#-*- coding: ISO-8859-1 -*-
+ # pysqlite2/__init__.py: the pysqlite2 package.
+ #
+-# Copyright (C) 2005 Gerhard Häring <gh@ghaering.de>
++# Copyright (C) 2005 Gerhard Haering <gh@ghaering.de>
+ #
+ # This file is part of pysqlite.
+ #
+diff --git a/Lib/sqlite3/dbapi2.py b/Lib/sqlite3/dbapi2.py
+index 0d4dcaf6207..16847f79262 100644
+--- a/Lib/sqlite3/dbapi2.py
++++ b/Lib/sqlite3/dbapi2.py
+@@ -1,7 +1,6 @@
+-# -*- coding: iso-8859-1 -*-
+ # pysqlite2/dbapi2.py: the DB-API 2.0 interface
+ #
+-# Copyright (C) 2004-2005 Gerhard Häring <gh@ghaering.de>
++# Copyright (C) 2004-2005 Gerhard Haering <gh@ghaering.de>
+ #
+ # This file is part of pysqlite.
+ #

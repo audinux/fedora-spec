@@ -1,0 +1,27 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:42:52 +0200
+Subject: [PATCH] 00193-enable-loading-sqlite-extensions.patch
+
+00193 #
+Enable loading sqlite extensions. This patch isn't needed for
+python3.spec, since Python 3 has a configuration option for this.
+rhbz#1066708
+Patch provided by John C. Peterson
+---
+ setup.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/setup.py b/setup.py
+index ba0386394ac..efc6443753c 100644
+--- a/setup.py
++++ b/setup.py
+@@ -1240,7 +1240,7 @@ class PyBuildExt(build_ext):
+                 sqlite_defines.append(('MODULE_NAME', '\\"sqlite3\\"'))
+ 
+             # Comment this out if you want the sqlite3 module to be able to load extensions.
+-            sqlite_defines.append(("SQLITE_OMIT_LOAD_EXTENSION", "1"))
++            #sqlite_defines.append(("SQLITE_OMIT_LOAD_EXTENSION", "1"))
+ 
+             if host_platform == 'darwin':
+                 # In every directory on the search path search for a dynamic

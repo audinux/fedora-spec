@@ -1,0 +1,44 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:41:24 +0200
+Subject: [PATCH] 00174-fix-for-usr-move.patch
+
+00174 #
+Workaround for failure to set up prefix/exec_prefix when running
+an embededed libpython that sets Py_SetProgramName() to a name not
+on $PATH when run from the root directory due to
+  https://fedoraproject.org/wiki/Features/UsrMove
+e.g. cmpi-bindings under systemd (rhbz#817554):
+---
+ Modules/getpath.c | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+diff --git a/Modules/getpath.c b/Modules/getpath.c
+index 20d1779d937..eca6d69f618 100644
+--- a/Modules/getpath.c
++++ b/Modules/getpath.c
+@@ -502,6 +502,24 @@ calculate_path(void)
+        MAXPATHLEN bytes long.
+     */
+ 
++    /*
++      Workaround for rhbz#817554, where an empty argv0_path erroneously
++      locates "prefix" as "/lib[64]/python2.7" due to it finding
++      "/lib[64]/python2.7/os.py" via the /lib -> /usr/lib symlink for
++      https://fedoraproject.org/wiki/Features/UsrMove
++    */
++    if (argv0_path[0] == '\0' && 0 == strcmp(prog, "cmpi_swig")) {
++        /*
++          We have an empty argv0_path, presumably because prog aka
++          Py_GetProgramName() was not found on $PATH.
++
++          Set argv0_path to "/usr/" so that search_for_prefix() and
++          search_for_exec_prefix() don't erroneously pick up
++          on /lib/ via the UsrMove symlink:
++        */
++        strcpy(argv0_path, "/usr/");
++    }
++
+     if (!(pfound = search_for_prefix(argv0_path, home))) {
+         if (!Py_FrozenFlag)
+             fprintf(stderr,

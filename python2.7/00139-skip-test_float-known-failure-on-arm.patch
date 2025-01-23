@@ -1,0 +1,24 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:24:27 +0200
+Subject: [PATCH] 00139-skip-test_float-known-failure-on-arm.patch
+
+00139 #
+ARM-specific: skip known failure in test_float:
+ http://bugs.python.org/issue8265 (rhbz#706253)
+---
+ Lib/test/test_float.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Lib/test/test_float.py b/Lib/test/test_float.py
+index c917c1ea458..a2b8f69ffb6 100644
+--- a/Lib/test/test_float.py
++++ b/Lib/test/test_float.py
+@@ -1132,6 +1132,7 @@ class HexFloatTestCase(unittest.TestCase):
+                     self.identical(got, expected)
+ 
+ 
++    @unittest.skip('Known failure on ARM: http://bugs.python.org/issue8265')
+     def test_from_hex(self):
+         MIN = self.MIN;
+         MAX = self.MAX;

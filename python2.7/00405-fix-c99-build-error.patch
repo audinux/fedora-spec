@@ -1,0 +1,37 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Victor Stinner <vstinner@python.org>
+Date: Wed, 4 Oct 2023 15:09:15 +0200
+Subject: [PATCH] 00405-fix-c99-build-error.patch
+
+Fix C99 build error: declare functions explicitly
+---
+ Include/setobject.h   | 2 ++
+ Include/tupleobject.h | 2 ++
+ 2 files changed, 4 insertions(+)
+
+diff --git a/Include/setobject.h b/Include/setobject.h
+index 52b07d52df1..923a7bfb362 100644
+--- a/Include/setobject.h
++++ b/Include/setobject.h
+@@ -93,6 +93,8 @@ PyAPI_FUNC(int) _PySet_NextEntry(PyObject *set, Py_ssize_t *pos, PyObject **key,
+ PyAPI_FUNC(PyObject *) PySet_Pop(PyObject *set);
+ PyAPI_FUNC(int) _PySet_Update(PyObject *set, PyObject *iterable);
+ 
++PyAPI_FUNC(void) _PySet_DebugMallocStats(FILE *out);
++
+ #ifdef __cplusplus
+ }
+ #endif
+diff --git a/Include/tupleobject.h b/Include/tupleobject.h
+index a5ab733208b..f9c5592cbeb 100644
+--- a/Include/tupleobject.h
++++ b/Include/tupleobject.h
+@@ -55,6 +55,8 @@ PyAPI_FUNC(void) _PyTuple_MaybeUntrack(PyObject *);
+ 
+ PyAPI_FUNC(int) PyTuple_ClearFreeList(void);
+ 
++PyAPI_FUNC(void) _PyTuple_DebugMallocStats(FILE *out);
++
+ #ifdef __cplusplus
+ }
+ #endif

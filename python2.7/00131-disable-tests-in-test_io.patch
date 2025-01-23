@@ -1,0 +1,26 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fedora Python maintainers <python-devel@lists.fedoraproject.org>
+Date: Wed, 15 Jul 2020 15:22:43 +0200
+Subject: [PATCH] 00131-disable-tests-in-test_io.patch
+
+00131 #
+The four tests in test_io built on top of check_interrupted_write_retry
+fail when built in Koji, for ppc and ppc64; for some reason, the SIGALRM
+handlers are never called, and the call to write runs to completion
+(rhbz#732998)
+---
+ Lib/test/test_io.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Lib/test/test_io.py b/Lib/test/test_io.py
+index 5ec0b7bb119..d5bf31525fd 100644
+--- a/Lib/test/test_io.py
++++ b/Lib/test/test_io.py
+@@ -3289,6 +3289,7 @@ class SignalsTest(unittest.TestCase):
+         self.check_interrupted_read_retry(lambda x: x,
+                                           mode="r")
+ 
++    @unittest.skip('rhbz#732998')
+     @unittest.skipUnless(threading, 'Threading required for this test.')
+     def check_interrupted_write_retry(self, item, **fdopen_kwargs):
+         """Check that a buffered write, when it gets interrupted (either
