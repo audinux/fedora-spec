@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer, MIDI
 
 Name: seq42
-Version: 2.1.4
+Version: 2.1.5
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -72,6 +72,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_mandir}/*
 
 %changelog
+* Mon Jan 20 2025 Yann Collette <ycollette.nospam@free.fr> - 2.1.5-1
+- udate to 2.1.5-1
+
 * Mon Apr 08 2024 Yann Collette <ycollette.nospam@free.fr> - 2.1.4-1
 - udate to 2.1.4-1
 
