@@ -166,9 +166,9 @@
 | ardura                        | https://github.com/ardura |
 | sonic-lineup                  | https://github.com/sonic-visualiser/sonic-lineup |
 | tony                          | https://github.com/sonic-visualiser/tony |
-| oxefmsynth                    | https://github.com/oxesoft/oxefmsynth |
 | NeuralNote                    | https://github.com/DamRsn/NeuralNote |
 | synth-midi-controller-plugins | https://github.com/mronetwothreefour/synth-midi-controller-plugins |
+| aloop                         | https://github.com/brummer10/aloop |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
