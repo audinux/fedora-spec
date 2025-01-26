@@ -169,6 +169,8 @@
 | NeuralNote                    | https://github.com/DamRsn/NeuralNote |
 | synth-midi-controller-plugins | https://github.com/mronetwothreefour/synth-midi-controller-plugins |
 | aloop                         | https://github.com/brummer10/aloop |
+| Minaton-XT                    | https://github.com/AnClark/Minaton-XT |
+| Miriyaki-XT                   | https://github.com/AnClark/Miriyaki-XT |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
