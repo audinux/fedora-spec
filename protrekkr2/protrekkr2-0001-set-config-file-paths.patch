@@ -1,19 +1,19 @@
-From 26352e5f585d33099683c6b2afed176072c57832 Mon Sep 17 00:00:00 2001
+From f4faa6b87e995b20a8d2c104da3e01305a5ce634 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Tue, 3 Dec 2024 12:54:07 +0100
-Subject: [PATCH] test
+Date: Mon, 27 Jan 2025 21:32:49 +0100
+Subject: [PATCH] patch
 
 ---
  src/files/config.cpp | 88 ++++----------------------------------------
- src/ptk.cpp          | 12 +-----
- src/support/main.cpp | 28 ++------------
- 3 files changed, 13 insertions(+), 115 deletions(-)
+ src/ptk.cpp          | 14 ++-----
+ src/support/main.cpp | 27 ++------------
+ 3 files changed, 14 insertions(+), 115 deletions(-)
 
 diff --git a/src/files/config.cpp b/src/files/config.cpp
-index 2746572..8dd3a58 100644
+index df87fd4..91a032a 100644
 --- a/src/files/config.cpp
 +++ b/src/files/config.cpp
-@@ -310,87 +310,13 @@ void Load_Config(void)
+@@ -354,87 +354,13 @@ void Load_Config(void)
      sprintf(Keyboard_Name, "%s", KeyboardName);
  
      // Set default dirs if nothing
@@ -109,10 +109,10 @@ index 2746572..8dd3a58 100644
      cur_dir = Dir_Mods;
  }
 diff --git a/src/ptk.cpp b/src/ptk.cpp
-index 35cc32e..4c2f6d8 100644
+index bcbad04..0ada2bf 100644
 --- a/src/ptk.cpp
 +++ b/src/ptk.cpp
-@@ -454,11 +454,7 @@ SDL_Surface *Load_Skin_Picture(char *name)
+@@ -467,11 +467,7 @@ SDL_Surface *Load_Skin_Picture(char *name)
      char error[256];
      SDL_Surface *surface;
  
@@ -125,7 +125,7 @@ index 35cc32e..4c2f6d8 100644
  
      surface = Load_Picture(filepath);
      if(surface == NULL)
-@@ -477,11 +473,7 @@ int Load_Font_Datas(char *name)
+@@ -490,11 +486,7 @@ int Load_Font_Data(char *name)
      char filepath[MAX_PATH];
      char error[256];
  
@@ -135,14 +135,21 @@ index 35cc32e..4c2f6d8 100644
 -    sprintf(filepath, "skins/%s", name);
 -#endif
 +    sprintf(filepath, "/usr/share/protrekkr2/skins/%s", name);
-     if(!Create_Font_Datas(filepath))
+     if(!Create_Font_Data(filepath))
      {
          sprintf(error, "Can't load %s file.", name);
+@@ -7943,4 +7935,4 @@ void Display_RShift_Status(void)
+             }
+         }
+     }
+-}
+\ No newline at end of file
++}
 diff --git a/src/support/main.cpp b/src/support/main.cpp
-index fcae3b0..6736502 100644
+index d55a64f..1a693b0 100644
 --- a/src/support/main.cpp
 +++ b/src/support/main.cpp
-@@ -340,13 +340,7 @@ void Load_Keyboard_Def(char *FileName)
+@@ -350,13 +350,7 @@ void Load_Keyboard_Def(char *FileName)
      char KbFileName[MAX_PATH];
      char Keyboard_Label[256];
  
@@ -157,7 +164,7 @@ index fcae3b0..6736502 100644
  
      strcat(KbFileName, FileName);
  
-@@ -514,7 +508,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
+@@ -524,7 +518,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
          while(!Found_File)
          {
              CHDIR(ExePath);
@@ -166,7 +173,7 @@ index fcae3b0..6736502 100644
              if(Test_File)
              {
                  Found_File = TRUE;
-@@ -546,14 +540,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
+@@ -556,14 +550,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
      }
  
      // All keyboards name
@@ -178,11 +185,11 @@ index fcae3b0..6736502 100644
 -    strcat(Keyboards_FileName, "/skins/");
 -#endif
 -    strcat(Keyboards_FileName, "keyboards.txt");
-+    strcpy(Keyboards_FileName, "/usr/share/protrekkr2/skins/");
++    strcpy(Keyboards_FileName, "/usr/share/protrekkr2/skins/keyboards.txt");
  
      AllKbsFile = fopen(Keyboards_FileName, "r");
      if(AllKbsFile != NULL)
-@@ -567,14 +554,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
+@@ -577,13 +564,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
          {
              fscanf(AllKbsFile, "%s", &KbFileName);
  
@@ -193,11 +200,10 @@ index fcae3b0..6736502 100644
 -            strcpy(KbFileNameToLoad, ExePath);
 -            strcat(KbFileNameToLoad, "/skins/");
 -#endif
--
 +            strcpy(KbFileNameToLoad, "/usr/share/protrekkr2/skins/");
+ 
              strcat(KbFileNameToLoad, KbFileName);
  
-             // Load the keyboard file
 -- 
-2.47.0
+2.48.1
 
