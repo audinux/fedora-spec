@@ -5,7 +5,7 @@
 
 Summary: Multimachine jam sessions over the internet
 Name: jacktrip
-Version: 2.4.1
+Version: 2.5.1
 Release: 2%{?dist}
 License: STK
 URL: https://ccrma.stanford.edu/software/jacktrip/
@@ -15,7 +15,7 @@ Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
 # Usage: ./source-jacktrip.sh <tag>
-#        ./source-jacktrip.sh v2.4.1
+#        ./source-jacktrip.sh v2.5.1
 
 Source0: jacktrip.tar.gz
 Source1: source-jacktrip.sh
@@ -25,16 +25,19 @@ BuildRequires: meson
 BuildRequires: git
 BuildRequires: qt6-qtbase-devel
 BuildRequires: qt6-qt5compat-devel
+BuildRequires: qt6-qtdeclarative-devel
 BuildRequires: qt6-qtnetworkauth-devel
 BuildRequires: qt6-qtquickcontrols2-devel
 BuildRequires: qt6-qtsvg-devel
 BuildRequires: qt6-qtwebsockets-devel
 BuildRequires: qt6-qtwebengine-devel
+BuildRequires: qt6-qtwebchannel-devel
 BuildRequires: qt6-qtshadertools-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: rtaudio-devel
 BuildRequires: libsndfile-devel
+BuildRequires: libsamplerate-devel
 BuildRequires: python3-pyyaml
 BuildRequires: python3-jinja2
 BuildRequires: help2man
@@ -57,7 +60,7 @@ SoundWIRE group.
 
 %build
 
-%meson
+%meson --wrap-mode=default
 %meson_build
 
 %install
@@ -69,6 +72,10 @@ desktop-file-install                         \
   --delete-original                          \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/org.jacktrip.JackTrip.desktop
+
+# cleanup
+
+rm -f %{buildroot}/%{_libdir}/libsamplerate.a
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/org.jacktrip.JackTrip.desktop
@@ -84,6 +91,12 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/org.jackt
 %{_mandir}/man1/*
 
 %changelog
+* Fri Jan 31 2025 Yann Collette <ycollette.nospam@free.fr> - 2.5.1-2
+- update to 2.5.1-2
+
+* Wed Jan 22 2025 Yann Collette <ycollette.nospam@free.fr> - 2.5.0-2
+- update to 2.5.0-2
+
 * Sat Sep 28 2024 Yann Collette <ycollette.nospam@free.fr> - 2.4.1-2
 - update to 2.4.1-2
 
