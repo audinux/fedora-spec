@@ -1017,7 +1017,10 @@ https://github.com/xunil-cloud/CloudReverb
 https://github.com/bluez/bluez
 https://github.com/COx2/glslEditor_AudioPlugin
 https://github.com/Chowdhury-DSP/ChowMultiTool
-https://github.com/baconpaul/six-sines"
+https://github.com/baconpaul/six-sines
+https://github.com/brummer10/aloop
+https://github.com/AnClark/Minaton-XT
+https://github.com/AnClark/Miriyaki-XT"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

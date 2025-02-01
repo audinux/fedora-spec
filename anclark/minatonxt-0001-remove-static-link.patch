@@ -1,0 +1,24 @@
+From d434091f38f015e5ae38edafe5814d16dbe987de Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sat, 1 Feb 2025 21:26:50 +0100
+Subject: [PATCH] remove static link
+
+---
+ CMakeLists.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c0140a5..29c8da8 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -74,7 +74,6 @@ make_directory (${GENERATED_WAVES_DIR})
+ 
+ # Binary-to-C converter from Dear ImGui
+ add_executable (binary_to_compressed_c utils/binary_to_compressed_c.cpp)
+-target_link_options (binary_to_compressed_c PRIVATE -static)
+ 
+ set (WAVES_DIR ${PROJECT_SOURCE_DIR}/src/waves)
+ set (GENERATED_WAVE_HEADER ${GENERATED_WAVES_DIR}/minaton_waves.hpp)
+-- 
+2.48.1
+
