@@ -170,6 +170,8 @@
 | synth-midi-controller-plugins | https://github.com/mronetwothreefour/synth-midi-controller-plugins |
 | Tumult                        | https://github.com/consint/Tumult |
 | Xolotl                        | https://github.com/publicsamples/Xolotl |
+| Comprez                       | https://github.com/AnClark/Comprez |
+| RP2A03                        | https://github.com/AnClark/RP2A03 |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
