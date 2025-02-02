@@ -11,7 +11,7 @@ Release: 1%{?dist}
 Summary: Port BordaSynth's Miriyaki to DPF
 License: GPL-3.0-or-later
 URL: https://github.com/AnClark/Miriyaki-XT
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64
 
 Vendor:       Audinux
 Distribution: Audinux
