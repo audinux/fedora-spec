@@ -1020,7 +1020,8 @@ https://github.com/Chowdhury-DSP/ChowMultiTool
 https://github.com/baconpaul/six-sines
 https://github.com/brummer10/aloop
 https://github.com/AnClark/Minaton-XT
-https://github.com/AnClark/Miriyaki-XT"
+https://github.com/AnClark/Miriyaki-XT
+https://github.com/AnClark/RP2A03"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
