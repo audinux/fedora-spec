@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: aloop
-Version: 0.1
+Version: 0.2
 Release: 1%{?dist}
 Summary: Audio File Looper for Linux
 License: GPL-2.0-or-later
@@ -44,5 +44,8 @@ The GUI is created with libxputty.
 %{_datadir}/*
 
 %changelog
+* Mon Feb 03 2025 Yann Collette <ycollette.nospam@free.fr> - 0.2-1
+- update to 0.2-1
+
 * Sat Feb 01 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
 - Initial build
