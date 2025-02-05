@@ -3,18 +3,18 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
-Name: prototracker
-Version: 0.0.2
-Release: 1%{?dist}
-Summary: A synth tracker
+Name: prototracker-modular
+Version: 0.0.8
+Release: 3%{?dist}
+Summary: A modular synth tracker
 License: MIT
-URL: https://github.com/kometbomb/prototracker
+URL: https://github.com/kometbomb/prototracker-modular
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/kometbomb/prototracker/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/kometbomb/prototracker-modular/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: prototracker.png
 Patch0: prototracker-modular-0001-move-assets-to-system-dir.patch
 
@@ -26,12 +26,14 @@ BuildRequires: alsa-lib-devel
 BuildRequires: desktop-file-utils
 
 %description
-Prototracker is a multiplatform fakebit chiptune tracker. Try the online version.
-The editor is a fairly normal tracker. The synth is an absolutely minimal
-single-oscillator synth (with 256 preset waveforms).
-Macros are used to create "instruments" and also some normal channel effects.
-Most keyboard shortcuts are the same as in Protracker.
-See the docs/ directory for help.
+Prototracker-modular is a modular synthesizer fork of Prototracker.
+The idea is that the user can define his/her "sound chip" using
+basic modules. Each channel has its own "sound chip".
+Otherwise, the tracker is exactly like any Prototracker fork.
+
+Double click on synth area to add a new module. Left click to connect
+inputs/outputs (right click cancels). Drag to move modules.
+See MODULES.md for basic info about modules.
 
 %prep
 %autosetup -p1 -n %{name}-%{version}
@@ -51,7 +53,7 @@ sed -i -e "s|-s | |g" Makefile.linux
 %install
 
 install -m 755 -d %{buildroot}/%{_bindir}
-install -m 755 prototracker %{buildroot}/%{_bindir}/prototracker
+install -m 755 prototracker %{buildroot}/%{_bindir}/prototracker-modular
 
 # install assets
 install -m 755 -d %{buildroot}/%{_datadir}/%{name}/
@@ -62,21 +64,21 @@ cp -ra assets doc templates %{buildroot}/%{_datadir}/%{name}/
 cat > %{buildroot}/%{_bindir}/%{name}-jack <<EOF
 #!/bin/bash
 
-SDL_AUDIODRIVER=jack prototracker
+SDL_AUDIODRIVER=jack prototracker-modular
 EOF
 chmod a+x %{buildroot}/%{_bindir}/%{name}-jack
 
 cat > %{buildroot}/%{_bindir}/%{name}-pulse <<EOF
 #!/bin/bash
 
-SDL_AUDIODRIVER=pulse prototracker
+SDL_AUDIODRIVER=pulse prototracker-modular
 EOF
 chmod a+x %{buildroot}/%{_bindir}/%{name}-pulse
 
 cat > %{buildroot}/%{_bindir}/%{name}-alsa <<EOF
 #!/bin/bash
 
-SDL_AUDIODRIVER=alsa prototracker
+SDL_AUDIODRIVER=alsa prototracker-modular
 EOF
 chmod a+x %{buildroot}/%{_bindir}/%{name}-alsa
 
@@ -93,7 +95,7 @@ Encoding=UTF-8
 Name=%name-jack
 Exec=%{name}-jack
 Icon=%{name}
-Comment=Prototracker tracker
+Comment=Prototracker modular tracker
 Terminal=false
 Type=Application
 Categories=AudioVideo;Audio;Music;
@@ -105,7 +107,7 @@ Encoding=UTF-8
 Name=%name-alsa
 Exec=%{name}-alsa
 Icon=%{name}
-Comment=Prototracker tracker
+Comment=Prototracker modular tracker
 Terminal=false
 Type=Application
 Categories=AudioVideo;Audio;Music;
@@ -117,7 +119,7 @@ Encoding=UTF-8
 Name=%name-pulse
 Exec=%{name}-pulse
 Icon=%{name}
-Comment=Prototracker tracker
+Comment=Prototracker modular tracker
 Terminal=false
 Type=Application
 Categories=AudioVideo;Audio;Music;
@@ -145,7 +147,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-pulse.desktop
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 
 %files
-%doc README.md
+%doc README.md MODULES.md module-ids.md
 %license LICENSE
 %{_bindir}/*
 %{_datadir}/pixmaps/*
@@ -154,5 +156,11 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 %{_datadir}/%{name}/*
 
 %changelog
-* Wed Feb 05 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.2-1
+* Wed Feb 05 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.8-3
+- rename executable
+
+* Mon Feb 12 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.8-2
+- fix desktop icon
+
+* Thu Jul 13 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.8-1
 - initial spec file

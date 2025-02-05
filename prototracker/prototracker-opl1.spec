@@ -3,18 +3,18 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
-Name: prototracker
-Version: 0.0.2
+Name: prototracker-opll
+Version: 0.0.8
 Release: 1%{?dist}
-Summary: A synth tracker
+Summary: A synth tracker using YM2413 chip
 License: MIT
-URL: https://github.com/kometbomb/prototracker
+URL: https://github.com/kometbomb/prototracker-opll
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/kometbomb/prototracker/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/kometbomb/prototracker-opll/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: prototracker.png
 Patch0: prototracker-modular-0001-move-assets-to-system-dir.patch
 
@@ -46,12 +46,12 @@ sed -i -e "s|-s | |g" Makefile.linux
 
 %set_build_flags
 
-%make_build -f Makefile.linux
+%make_build PLAT=linux
 
 %install
 
 install -m 755 -d %{buildroot}/%{_bindir}
-install -m 755 prototracker %{buildroot}/%{_bindir}/prototracker
+install -m 755 prototracker-opll %{buildroot}/%{_bindir}/prototracker-opll
 
 # install assets
 install -m 755 -d %{buildroot}/%{_datadir}/%{name}/
@@ -62,21 +62,21 @@ cp -ra assets doc templates %{buildroot}/%{_datadir}/%{name}/
 cat > %{buildroot}/%{_bindir}/%{name}-jack <<EOF
 #!/bin/bash
 
-SDL_AUDIODRIVER=jack prototracker
+SDL_AUDIODRIVER=jack prototracker-opll
 EOF
 chmod a+x %{buildroot}/%{_bindir}/%{name}-jack
 
 cat > %{buildroot}/%{_bindir}/%{name}-pulse <<EOF
 #!/bin/bash
 
-SDL_AUDIODRIVER=pulse prototracker
+SDL_AUDIODRIVER=pulse prototracker-opll
 EOF
 chmod a+x %{buildroot}/%{_bindir}/%{name}-pulse
 
 cat > %{buildroot}/%{_bindir}/%{name}-alsa <<EOF
 #!/bin/bash
 
-SDL_AUDIODRIVER=alsa prototracker
+SDL_AUDIODRIVER=alsa prototracker-opll
 EOF
 chmod a+x %{buildroot}/%{_bindir}/%{name}-alsa
 
@@ -154,5 +154,5 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 %{_datadir}/%{name}/*
 
 %changelog
-* Wed Feb 05 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.2-1
+* Wed Feb 05 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.8-1
 - initial spec file

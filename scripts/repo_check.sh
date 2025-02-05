@@ -833,6 +833,8 @@ https://github.com/ccrma/miniAudicle
 https://github.com/bboettcher3/gRainbow
 https://github.com/psemiletov/drum_sklad
 https://github.com/kometbomb/prototracker-modular
+https://github.com/kometbomb/prototracker
+https://github.com/kometbomb/prototracker-opll
 https://github.com/StrangeLoopsAudio/Harmonigon
 https://github.com/michelesr/jack-oscillator
 https://github.com/sjoerdvankreel/infernal-synth
@@ -1056,7 +1058,7 @@ then
     echo -e "\n\n\n"
     echo "==================="
     echo "= Changes in tags ="
-    echo "===================" 
+    echo "==================="
     echo -e "\n\n\n"
 
     diff git_tags_new.txt git_tags_old.txt
