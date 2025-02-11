@@ -851,6 +851,7 @@ https://github.com/tomscii/ir.lv2
 https://github.com/calgoheen/cStop
 https://github.com/chmaha/RCComp
 https://github.com/chmaha/RCVerb
+https://github.com/chmaha/Enover
 https://github.com/Chowdhury-DSP/ChowKick
 https://github.com/getdunne/MOrgan
 https://github.com/tobanteAudio/modEQ
