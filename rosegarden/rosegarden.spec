@@ -3,7 +3,7 @@
 # Type: Standalone
 # Category: Audio, Sequencer, DAW
 
-%global major 24.12
+%global major 24.12.1
 
 Name: rosegarden4
 Version: %{major}
@@ -13,7 +13,8 @@ License: GPLv2+
 URL: https://www.rosegardenmusic.com/
 ExclusiveArch: x86_64 aarch64
 
-Source0: https://sourceforge.net/projects/rosegarden/files/rosegarden/%{major}/rosegarden-%{major}.tar.xz
+#Source0: https://sourceforge.net/projects/rosegarden/files/rosegarden/%{major}/rosegarden-%{major}.tar.xz
+Source0: https://sourceforge.net/projects/rosegarden/files/rosegarden/24.12/rosegarden-%{major}.tar.xz
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -93,6 +94,9 @@ desktop-file-install \
 %{_datadir}/metainfo/rosegarden.appdata.xml
 
 %changelog
+* Thu Feb 06 2025 Yann Collette <ycollette.nospam@free.fr> - 24.12.1-4
+- update to 24.12.1-4
+
 * Wed Dec 04 2024 Yann Collette <ycollette.nospam@free.fr> - 24.12-4
 - update to 24.12-4
 
