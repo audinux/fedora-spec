@@ -1,8 +1,12 @@
 # Status: active
+# Tag: Jack, MIDI
+# Type: Standalone
+# Category: Audio, DAW
+
 %global app_id com.giadamusic.Giada
 
 Name: giada
-Version: 1.1.0
+Version: 1.1.1
 Release: 1%{?dist}
 Summary: Your hardcore loop machine
 License: GPL-3.0-or-later AND MIT AND BSD-2-Clause
@@ -28,9 +32,10 @@ ExclusiveArch: x86_64 aarch64
 # proprietary license.)
 
 # Usage: ./giada-source.sh <TAG>
-#        ./giada-source.sh 1.1.0
+#        ./giada-source.sh 1.1.1
 
 Source0: giada.tar.gz
+Source1: giada-source.sh
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -94,6 +99,12 @@ rm -rf %{buildroot}/%{_includedir}
 rm -rf %{buildroot}/%{_bindir}/JUCE-*
 rm -rf %{buildroot}/usr/lib/cmake/JUCE-*
 
+rm %{buildroot}/%{_bindir}/fltk-config
+rm %{buildroot}/%{_libdir}/libfltk*
+rm -rf %{buildroot}/%{_datadir}/fltk/
+rm -f %{buildroot}/%{_datadir}/man/man1/fltk-config.1*
+rm -f %{buildroot}/%{_datadir}/man/man3/fltk.3*
+
 %check 
 desktop-file-validate %{buildroot}/%{_datadir}/applications/%{app_id}.desktop
 
@@ -112,6 +123,9 @@ appstreamcli validate --no-net \
 %{_datadir}/icons/hicolor/scalable/apps/%{app_id}.svg
 
 %changelog
+* Fri Feb 07 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
+- update to 1.1.1-1
+
 * Thu Oct 24 2024 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
 - update to 1.1.0-1
 
