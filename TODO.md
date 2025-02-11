@@ -171,6 +171,8 @@
 | Tumult                        | https://github.com/consint/Tumult |
 | Xolotl                        | https://github.com/publicsamples/Xolotl |
 | Comprez                       | https://github.com/AnClark/Comprez |
+| Noteahead                     | https://github.com/juzzlin/Noteahead |
+| spek-X                        | https://github.com/MikeWang000000/spek-X |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
