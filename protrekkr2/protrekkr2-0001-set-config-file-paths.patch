@@ -1,19 +1,19 @@
-From f4faa6b87e995b20a8d2c104da3e01305a5ce634 Mon Sep 17 00:00:00 2001
+From 1e6af60b1d5cf5035d1b2ff059008059d5e973c0 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Mon, 27 Jan 2025 21:32:49 +0100
+Date: Thu, 13 Feb 2025 12:39:50 +0100
 Subject: [PATCH] patch
 
 ---
  src/files/config.cpp | 88 ++++----------------------------------------
- src/ptk.cpp          | 14 ++-----
- src/support/main.cpp | 27 ++------------
- 3 files changed, 14 insertions(+), 115 deletions(-)
+ src/ptk.cpp          | 12 +-----
+ src/support/main.cpp | 16 +-------
+ 3 files changed, 11 insertions(+), 105 deletions(-)
 
 diff --git a/src/files/config.cpp b/src/files/config.cpp
-index df87fd4..91a032a 100644
+index 7308059..cc76554 100644
 --- a/src/files/config.cpp
 +++ b/src/files/config.cpp
-@@ -354,87 +354,13 @@ void Load_Config(void)
+@@ -366,87 +366,13 @@ void Load_Config(void)
      sprintf(Keyboard_Name, "%s", KeyboardName);
  
      // Set default dirs if nothing
@@ -109,10 +109,10 @@ index df87fd4..91a032a 100644
      cur_dir = Dir_Mods;
  }
 diff --git a/src/ptk.cpp b/src/ptk.cpp
-index bcbad04..0ada2bf 100644
+index 142f2ca..2df1a0d 100644
 --- a/src/ptk.cpp
 +++ b/src/ptk.cpp
-@@ -467,11 +467,7 @@ SDL_Surface *Load_Skin_Picture(char *name)
+@@ -482,11 +482,7 @@ SDL_Surface *Load_Skin_Picture(char *name)
      char error[256];
      SDL_Surface *surface;
  
@@ -125,7 +125,7 @@ index bcbad04..0ada2bf 100644
  
      surface = Load_Picture(filepath);
      if(surface == NULL)
-@@ -490,11 +486,7 @@ int Load_Font_Data(char *name)
+@@ -505,11 +501,7 @@ int Load_Font_Data(char *name)
      char filepath[MAX_PATH];
      char error[256];
  
@@ -138,18 +138,11 @@ index bcbad04..0ada2bf 100644
      if(!Create_Font_Data(filepath))
      {
          sprintf(error, "Can't load %s file.", name);
-@@ -7943,4 +7935,4 @@ void Display_RShift_Status(void)
-             }
-         }
-     }
--}
-\ No newline at end of file
-+}
 diff --git a/src/support/main.cpp b/src/support/main.cpp
-index d55a64f..1a693b0 100644
+index d27bd81..e66cdee 100644
 --- a/src/support/main.cpp
 +++ b/src/support/main.cpp
-@@ -350,13 +350,7 @@ void Load_Keyboard_Def(char *FileName)
+@@ -361,13 +361,7 @@ void Load_Keyboard_Def(char *FileName)
      char KbFileName[MAX_PATH];
      char Keyboard_Label[256];
  
@@ -164,32 +157,7 @@ index d55a64f..1a693b0 100644
  
      strcat(KbFileName, FileName);
  
-@@ -524,7 +518,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
-         while(!Found_File)
-         {
-             CHDIR(ExePath);
--            FILE *Test_File = fopen("skins/keyboards.txt", "rb");
-+            FILE *Test_File = fopen("/usr/share/protrekk2/skins/keyboards.txt", "rb");
-             if(Test_File)
-             {
-                 Found_File = TRUE;
-@@ -556,14 +550,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
-     }
- 
-     // All keyboards name
--#if defined(__WIN32__)
--    strcpy(Keyboards_FileName, ExePath);
--    strcat(Keyboards_FileName, "\\skins\\");
--#else
--    strcpy(Keyboards_FileName, ExePath);
--    strcat(Keyboards_FileName, "/skins/");
--#endif
--    strcat(Keyboards_FileName, "keyboards.txt");
-+    strcpy(Keyboards_FileName, "/usr/share/protrekkr2/skins/keyboards.txt");
- 
-     AllKbsFile = fopen(Keyboards_FileName, "r");
-     if(AllKbsFile != NULL)
-@@ -577,13 +564,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
+@@ -608,13 +602,7 @@ extern SDL_NEED int SDL_main(int argc, char *argv[])
          {
              fscanf(AllKbsFile, "%s", &KbFileName);
  
