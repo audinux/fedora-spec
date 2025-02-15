@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: aloop
-Version: 0.2
+Version: 0.3
 Release: 1%{?dist}
 Summary: Audio File Looper for Linux
 License: GPL-2.0-or-later
@@ -33,6 +33,11 @@ The GUI is created with libxputty.
 
 %build
 
+%set_build_flags
+
+export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
+
 %make_build STRIP=true
 
 %install
@@ -44,6 +49,9 @@ The GUI is created with libxputty.
 %{_datadir}/*
 
 %changelog
+* Thu Feb 13 2025 Yann Collette <ycollette.nospam@free.fr> - 0.3-1
+- update to 0.3-1
+
 * Mon Feb 03 2025 Yann Collette <ycollette.nospam@free.fr> - 0.2-1
 - update to 0.2-1
 
