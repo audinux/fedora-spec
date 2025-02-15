@@ -4,7 +4,7 @@
 # Category: Audio, Tool, Plugin
 
 Name: ImpulseLoader
-Version: 0.3
+Version: 0.4
 Release: 1%{?dist}
 Summary: This is a simple, mono, IR-File loader/convolution LV2 plug
 License: GPL-2.0-or-later
@@ -57,6 +57,9 @@ LV2 version of %{name}
 %{_libdir}/lv2/*
 
 %changelog
+* Thu Feb 13 2025 Yann Collette <ycollette.nospam@free.fr> - 0.4-1
+- update to 0.4-1
+
 * Thu Jul 18 2024 Yann Collette <ycollette.nospam@free.fr> - 0.3-1
 - update to 0.3-1
 
