@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b3977e99bef7c905790973c0979eaf784cf3e015
-%global gittag0 2.0.1
+%global commit0 414e488e8db482e0d67a3294b2d8461ade36ac03
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-wildergarden
-Version: 2.0.1
+Name:    rack-v2-ChemicalElements
+Version: 2.0.0
 Release: 2%{?dist}
-Summary: wildergarden plugin for Rack
+Summary: ChemicalElements plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/ArdenButterfield/wildergarden-vcv
+URL:     https://gitlab.com/pythongirl/chemical-elements
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,8 +29,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/ArdenButterfield/wildergarden-vcv/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: wildergarden_plugin.json
+Source1: https://gitlab.com/pythongirl/chemical-elements/-/archive/%{commit0}/chemical-elements-%{commit0}.tar.gz
+Source2: ChemicalElements_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -61,8 +61,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-wildergarden plugin for Rack.
-Dimit is a combined compressor and waveshaper, designed to tame peaks in an audio signal.
+ChemicalElements plugin for Rack.
+Poisson process trigger generator
 
 %prep
 %setup -n Rack
@@ -135,24 +135,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir wildergarden_plugin
-tar xvfz %{SOURCE1} --directory=wildergarden_plugin --strip-components=1
+mkdir ChemicalElements_plugin
+tar xvfz %{SOURCE1} --directory=ChemicalElements_plugin --strip-components=1
 
-cp -n %{SOURCE2} wildergarden_plugin/plugin.json || true
+cp -n %{SOURCE2} ChemicalElements_plugin/plugin.json || true
 
 %build
 
-cd wildergarden_plugin
+cd ChemicalElements_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/wildergarden/
-cp -r wildergarden_plugin/dist/wildergarden/* %{buildroot}%{_libexecdir}/Rack2/plugins/wildergarden/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/ChemicalElements/
+cp -r ChemicalElements_plugin/dist/ChemicalElements/* %{buildroot}%{_libexecdir}/Rack2/plugins/ChemicalElements/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile
