@@ -5,7 +5,7 @@
 
 Summary: CLAP audio plugin API
 Name: clap
-Version: 1.2.3
+Version: 1.2.5
 Release: 1%{?dist}
 License: MIT
 URL: https://github.com/free-audio/clap
@@ -57,6 +57,12 @@ Header files for CLAP.
 %{_libdir}/pkgconfig/*
 
 %changelog
+* Tue Feb 18 2025 Yann Collette <ycollette dot nospam at free.fr> 1.2.5-1
+- update to 1.2.5-1
+
+* Tue Feb 18 2025 Yann Collette <ycollette dot nospam at free.fr> 1.2.4-1
+- update to 1.2.4-1
+
 * Mon Jan 20 2025 Yann Collette <ycollette dot nospam at free.fr> 1.2.3-1
 - update to 1.2.3-1
 
