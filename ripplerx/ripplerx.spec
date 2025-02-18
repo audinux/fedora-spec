@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: ripplerx
-Version: 1.1.1
+Version: 1.3.5
 Release: 1%{?dist}
 Summary: A physically modeled synth
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./ripplerx-source.sh <TAG>
-#        ./ripplerx-source.sh v1.1.1
+#        ./ripplerx-source.sh v1.3.5
 
 Source0: ripplerx.tar.gz
 Source1: ripplerx-source.sh
@@ -89,5 +89,14 @@ cp -ra %{__cmake_builddir}/RipplerX_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Tue Feb 18 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.5-1
+- update to 1.3.5-1
+
+* Tue Feb 18 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.1-1
+- update to 1.3.1-1
+
+* Mon Feb 17 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-1
+- update to 1.2.3-1
+
 * Sat Feb 15 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
 - Initial spec file
