@@ -10,7 +10,7 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name: vtk
+Name: lvtk
 Version: 2.0.0.%{shortcommit0}
 Release: 4%{?dist}
 Summary: LV2 Toolkit
@@ -24,8 +24,8 @@ Distribution: Audinux
 Source0: https://github.com/lvtk/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildReauires: make
-BuildRequires: python2
+BuildRequires: make
+BuildRequires: python2.7
 BuildRequires: lv2-devel
 BuildRequires: gtkmm24-devel
 
