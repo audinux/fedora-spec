@@ -173,11 +173,14 @@
 | Comprez                       | https://github.com/AnClark/Comprez |
 | Noteahead                     | https://github.com/juzzlin/Noteahead |
 | spek-X                        | https://github.com/MikeWang000000/spek-X |
+| bombaz                        | https://github.com/hollance/bombaz |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
 - https://github.com/landonviator
 - https://github.com/publicsamples
+- https://github.com/reales/OPL -> replace JUCEOplVsti ?
+- aeolus plugin -> update to last master
 
 Add dead package:
 - lv2-fil-plugins
