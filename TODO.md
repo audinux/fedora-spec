@@ -173,6 +173,7 @@
 | Comprez                       | https://github.com/AnClark/Comprez |
 | Noteahead                     | https://github.com/juzzlin/Noteahead |
 | spek-X                        | https://github.com/MikeWang000000/spek-X |
+| wild-blossom-plugins          | https://gitlab.com/wild-blossom-audio/wild-blossom-plugins |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
