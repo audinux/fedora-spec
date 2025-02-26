@@ -4,8 +4,8 @@
 # Category: Audio, Tool
 
 Name: alsa-scarlett-gui
-Version: 0.4.0
-Summary: ALSA Scarlett Gen 2/3 Control Panel
+Version: 0.5.0
+Summary: ALSA Scarlett Control Panel
 Release: 2%{?dist}
 License: GPL-2.0-or-later
 URL: https://github.com/geoffreybennett/alsa-scarlett-gui
@@ -20,6 +20,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: gtk4-devel
 BuildRequires: alsa-lib-devel
+BuildRequires: openssl-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -79,6 +80,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/256x256/apps/*.png
 
 %changelog
+* Tue Feb 25 2025 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-2
+- update to 0.5.0-2
+
 * Mon Feb 24 2025 Yann Collette <ycollette.nospam@free.fr> - 0.4.0-2
 - update to 0.4.0-2
 
