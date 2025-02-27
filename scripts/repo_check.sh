@@ -1026,7 +1026,9 @@ https://github.com/AnClark/Minaton-XT
 https://github.com/AnClark/Miriyaki-XT
 https://github.com/AnClark/RP2A03
 https://github.com/stoneface86/trackerboy
-https://github.com/tiagolr/ripplerx"
+https://github.com/tiagolr/ripplerx
+https://gitlab.com/wild-blossom-audio/wild-blossom-plugins
+https://github.com/hollance/bombaz"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
