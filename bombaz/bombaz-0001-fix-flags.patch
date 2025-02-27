@@ -1,0 +1,69 @@
+From 9eeb4753bc1d7f2db8d2f756e398231e14d8ad43 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Thu, 27 Feb 2025 21:51:42 +0100
+Subject: [PATCH] fix flags
+
+---
+ CMakeLists.txt | 39 +--------------------------------------
+ 1 file changed, 1 insertion(+), 38 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a57ee1a..f2099e7 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.22)
+ set(CMAKE_OSX_DEPLOYMENT_TARGET "10.13" CACHE STRING "Minimum OS X deployment target")
+ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+ 
+-project(Bombaz VERSION 1.0.0 LANGUAGES CXX)
++project(Bombaz VERSION 1.0.0 LANGUAGES CXX C)
+ 
+ set_property(GLOBAL PROPERTY USE_FOLDERS YES)
+ option(JUCE_ENABLE_MODULE_SOURCE_GROUPS "Enable Module Source Groups" ON)
+@@ -26,43 +26,6 @@ else()
+     set(CMAKE_XCODE_ATTRIBUTE_DEPLOYMENT_POSTPROCESSING[variant=Release] "YES")
+ endif()
+ 
+-if(MSVC)
+-add_compile_options("/W4")
+-else()
+-add_compile_options(
+-    -Wall
+-    -Wbool-conversion
+-    -Wcast-align
+-    -Wconditional-uninitialized
+-    -Wconstant-conversion
+-    -Wconversion
+-    -Wdeprecated
+-    -Wextra-semi
+-    -Wno-float-equal
+-    -Winconsistent-missing-destructor-override
+-    -Wint-conversion
+-    -Wmissing-field-initializers
+-    -Wmissing-prototypes
+-    -Wno-ignored-qualifiers
+-    -Wnullable-to-nonnull-conversion
+-    -Woverloaded-virtual
+-    -Wpedantic
+-    -Wreorder
+-    -Wshadow-all
+-    -Wshift-sign-overflow
+-    -Wshorten-64-to-32
+-    -Wsign-compare
+-    -Wno-sign-conversion
+-    -Wstrict-aliasing
+-    -Wswitch-enum
+-    -Wuninitialized
+-    -Wunreachable-code
+-    -Wunused-parameter
+-    -Wunused-private-field
+-    -Wzero-as-null-pointer-constant
+-)
+-endif()
+-
+ juce_add_plugin(${PROJECT_NAME}
+     COMPANY_NAME "audiodev.blog"
+     PLUGIN_MANUFACTURER_CODE Dvbl
+-- 
+2.48.1
+
