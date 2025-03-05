@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: actuate
-Version: 1.3.7
+Version: 1.3.8
 Release: 1%{?dist}
 Summary: Synthesizer, Sampler, Granulizer written in Rust with Nih-Plug and egui
 License: GPL-3.0-or-later
@@ -73,10 +73,10 @@ export CARGO_HOME="$CWD/cargo"
 # cargo build --release --bin hexosynth_jack
 
 %ifarch x86_64
-rustup-init -y --no-modify-path --default-toolchain 1.76.0-x86_64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain nightly-x86_64-unknown-linux-gnu
 %endif
 %ifarch aarch64
-rustup-init -y --no-modify-path --default-toolchain 1.76.0-aarch64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linux-gnu
 %endif
 source cargo/env
 
@@ -100,6 +100,9 @@ cp -ra target/bundled/Actuate.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Fri Feb 28 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.8-1
+- update to 1.3.8-1
+
 * Fri Jan 17 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.7-1
 - update to 1.3.7-1
 
