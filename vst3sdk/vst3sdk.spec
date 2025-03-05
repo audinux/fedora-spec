@@ -4,7 +4,7 @@
 # Category: Programming, Effect
 
 Name: vst3sdk
-Version: 3.7.12
+Version: 3.7.13
 Release: 1%{?dist}
 Summary: VST 3 Plug-In SDK
 License: GPL-3.0-or-Later
@@ -15,7 +15,7 @@ Vendor: Audinux
 Distribution: Audinux
 
 # ./vst3sdk-source.sh <TAG>
-# ./vst3sdk-source.sh v3.7.12_build_20
+# ./vst3sdk-source.sh v3.7.13_build_42
 
 Source0: vst3sdk.tar.gz
 Source1: vst3sdk.pc
@@ -116,6 +116,9 @@ rsync -r --exclude .git --exclude .github --exclude .gitignore --exclude .gitatt
 %{_datadir}/doc/vst3sdk/*
 
 %changelog
+* Fri Feb 28 2025 Yann Collette <ycollette.nospam@free.fr> - 3.7.13-1
+- update to 3.7.13-1
+
 * Fri Jul 26 2024 Yann Collette <ycollette.nospam@free.fr> - 3.7.12-1
 - update to 3.7.12-1
 
