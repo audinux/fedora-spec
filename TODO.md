@@ -176,6 +176,10 @@
 | rubberneck                    | https://github.com/hollance/rubberneck |
 | krunch                        | https://github.com/hollance/krunch |
 | TheKissOfShame                | https://github.com/hollance/TheKissOfShame |
+| signls                        | https://github.com/emprcl/signls |
+| Ami-Sampler-VST               | https://github.com/astriiddev/Ami-Sampler-VST |
+| BitDOS-VST                    | https://github.com/astriiddev/BitDOS-VST |
+| Sub_Dominant-VST              | https://github.com/astriiddev/Sub_Dominant-VST |
 
 Check the following URL:
 - https://github.com/forart/HyMPS
@@ -183,6 +187,7 @@ Check the following URL:
 - https://github.com/publicsamples
 - https://github.com/reales/OPL -> replace JUCEOplVsti ?
 - aeolus plugin -> update to last master
+- https://github.com/mod-audio
 
 Add dead package:
 - lv2-fil-plugins
