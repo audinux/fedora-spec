@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 5914634cd91cf11cc32394616252beb19c5c934c
-%global gittag0 2.9.0
+%global commit0 2bf9a06d909ba42cacda22644e60329c9e1302e9
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Befaco
-Version: 2.9.0
+Name:    rack-v2-OuroborosModules
+Version: 2.0.1
 Release: 2%{?dist}
-Summary: Befaco plugin for Rack
+Summary: OuroborosModules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/VCVRack/Befaco
+URL:     https://github.com/Doom2fan/OuroborosModules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,8 +29,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/VCVRack/Befaco/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: Befaco_plugin.json
+Source1: OuroborosModules.tar.gz
+Source2: OuroborosModules_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -61,8 +61,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-Befaco plugin for Rack.
-Even VCO is an oscillator including even-harmonic waveform
+OuroborosModules plugin for Rack.
+Adds features to VCV Rack
 
 %prep
 %setup -n Rack
@@ -79,7 +79,6 @@ sed -i -e "s/-march=nehalem//g" dep.mk
 # For -O2 usage
 sed -i -e "s/-O3/-O2/g" compile.mk
 sed -i -e "s/-O3/-O2/g" dep.mk
-sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk
 
 # Remove static gcc lib
 sed -i -e "s/-static-libstdc++ -static-libgcc//g" Makefile
@@ -135,24 +134,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir Befaco_plugin
-tar xvfz %{SOURCE1} --directory=Befaco_plugin --strip-components=1
+mkdir OuroborosModules_plugin
+tar xvfz %{SOURCE1} --directory=OuroborosModules_plugin --strip-components=1
 
-cp -n %{SOURCE2} Befaco_plugin/plugin.json || true
+cp -n %{SOURCE2} OuroborosModules_plugin/plugin.json || true
 
 %build
 
-cd Befaco_plugin
+cd OuroborosModules_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/Befaco/
-cp -r Befaco_plugin/dist/Befaco/* %{buildroot}%{_libexecdir}/Rack2/plugins/Befaco/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/OuroborosModules/
+cp -r OuroborosModules_plugin/dist/OuroborosModules/* %{buildroot}%{_libexecdir}/Rack2/plugins/OuroborosModules/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.9.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile
