@@ -3,13 +3,13 @@
 # Type: Plugin, CLAP
 # Category: Audio, Effect
 
-%define commit0 3782ff63dd11ac7cba13bd642cd222e8000877b5
+%define commit0 38b379ce918160d2d8e7dc6fa06b283000bae980
 %define _lto_cflags %{nil}
 
 Summary: Example clap plugins
 Name: clap-plugins
 Version: 1.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: MIT
 URL: https://github.com/free-audio/clap-plugins
 ExclusiveArch: x86_64 aarch64
@@ -18,13 +18,15 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./clap-source.sh <project> <tag>
-# ./clap-source.sh clap-plugins 3782ff63dd11ac7cba13bd642cd222e8000877b5
+# ./clap-source.sh clap-plugins 38b379ce918160d2d8e7dc6fa06b283000bae980
 
 Source0: clap-plugins.tar.gz
 Source1: clap-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qtdeclarative-devel
 
 %description
 Example Clap Plugins
@@ -50,5 +52,8 @@ export CFLAGS="-fPIC $CFLAGS"
 %{_libndir}/clap/*
 
 %changelog
+* Tue Mar 11 2025 2024 Yann Collette <ycollette dot nospam at free.fr> 1.0.1-2
+- update to 38b379ce918160d2d8e7dc6fa06b283000bae980
+
 * Mon Jan 22 2024 Yann Collette <ycollette dot nospam at free.fr> 1.0.1-1
 - initial release
