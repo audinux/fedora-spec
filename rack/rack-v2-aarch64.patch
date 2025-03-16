@@ -1,11 +1,11 @@
-From 834429e6ec0d3f871ddf32026afba7bd77a477ab Mon Sep 17 00:00:00 2001
+From cf17b2743f3b9868259f64a24014e267c69d982b Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Thu, 9 May 2024 22:02:43 +0200
-Subject: [PATCH] aarch64
+Date: Fri, 14 Mar 2025 21:25:27 +0100
+Subject: [PATCH] patch
 
 ---
  arch.mk                                 | 2 +-
- compile.mk                              | 5 ++++-
+ compile.mk                              | 3 +++
  dep.mk                                  | 3 +++
  dep/nanovg/src/stb_image.h              | 3 ++-
  dep/pffft/pffft.c                       | 3 ++-
@@ -13,7 +13,7 @@ Subject: [PATCH] aarch64
  dep/speexdsp/libspeexdsp/resample_sse.h | 6 ++++--
  include/simd/common.hpp                 | 3 ++-
  src/common.cpp                          | 3 +++
- 9 files changed, 23 insertions(+), 8 deletions(-)
+ 9 files changed, 22 insertions(+), 7 deletions(-)
 
 diff --git a/arch.mk b/arch.mk
 index 66846fb..a6f31bb 100644
@@ -29,7 +29,7 @@ index 66846fb..a6f31bb 100644
  else
  $(error Could not determine CPU architecture of $(MACHINE))
 diff --git a/compile.mk b/compile.mk
-index dcc6af0..e3c6eeb 100644
+index a076c20..9ac0773 100644
 --- a/compile.mk
 +++ b/compile.mk
 @@ -32,6 +32,9 @@ endif
@@ -42,15 +42,6 @@ index dcc6af0..e3c6eeb 100644
  
  ifdef ARCH_LIN
  	CXXFLAGS += -Wsuggest-override
-@@ -93,7 +96,7 @@ build/%.mm.o: %.mm
- build/%.bin.o: %
- 	@mkdir -p $(@D)
- ifdef ARCH_LIN
--	$(OBJCOPY) -I binary -O elf64-x86-64 -B i386:x86-64 --rename-section .data=.rodata,alloc,load,readonly,data,contents $< $@
-+	$(OBJCOPY) -I binary -O elf64-littleaarch64 -B aarch64 --rename-section .data=.rodata,alloc,load,readonly,data,contents $< $@
- endif
- ifdef ARCH_WIN
- 	$(OBJCOPY) -I binary -O pe-x86-64 -B i386:x86-64 --rename-section .data=.rodata,alloc,load,readonly,data,contents $< $@
 diff --git a/dep.mk b/dep.mk
 index 292b18a..01f178f 100644
 --- a/dep.mk
@@ -160,5 +151,5 @@ index 4f2869c..1d865a1 100644
  const std::string API_URL = "https://api.vcvrack.com";
  
 -- 
-2.44.0
+2.48.1
 

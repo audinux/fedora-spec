@@ -8,7 +8,7 @@
 %define use_embedded_samplerate 0
 
 Name:    Rack-v2
-Version: 2.6.0
+Version: 2.6.1
 Release: 4%{?dist}
 Summary: A modular Synthesizer
 License: GPL-2.0-or-later
@@ -19,7 +19,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./rack-source-v2.sh <tag>
-# ./rack-source-v2.sh v2.6.0
+# ./rack-source-v2.sh v2.6.1
 
 Source0: Rack.tar.gz
 Source1: rack-source-v2.sh
@@ -71,9 +71,9 @@ A modular Synthesizer
 %setup -n Rack
 
 %patch  0 -p1
-%ifarch aarch64
-%patch  1 -p1
-%endif
+#ifarch aarch64
+#patch  1 -p1
+#endif
 
 CURRENT_PATH=`pwd`
 
@@ -154,9 +154,9 @@ sed -i -e "/_MM_SET_DENORMALS_ZERO_MODE/d" src/engine/Engine.cpp
 %build
 
 CURRENT_PATH=`pwd`
-export CFLAGS="-O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src"
-export CXXFLAGS="-O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic"
-export LDFLAGS="-O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic"
+export CFLAGS="-O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src `pkg-config --libs-only-L jack`"
+export CXXFLAGS="-O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic `pkg-config --libs-only-L jack`"
+export LDFLAGS="-O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic `pkg-config --libs-only-L jack`"
 
 cd dep
 %if %{use_static_glfw}
@@ -217,6 +217,9 @@ EOF
 %{_libdir}/*
 
 %changelog
+* Fri Mar 14 2025 Yann Collette <ycollette.nospam@free.fr> - 2.6.1-4
+- update to v2.6.1-4
+
 * Wed Nov 20 2024 Yann Collette <ycollette.nospam@free.fr> - 2.6.0-4
 - update to v2.6.0-4
 
