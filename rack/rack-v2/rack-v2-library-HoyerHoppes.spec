@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 752e866a532c45ebb1f143487cf6796732b42c2a
-%global gittag0 2.0.0
+%global commit0 9158d234902ce8efff3aa125386d4a243a82ca83
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-HoyerHoppes
-Version: 2.0.0
+Version: 2.0.1
 Release: 2%{?dist}
 Summary: HoyerHoppes plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r HoyerHoppes_plugin/dist/HoyerHoppes/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

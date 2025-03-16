@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 378df8b0fc9dd772bebf56962bb7a60f15551c95
-%global gittag0 2.6.2
+%global commit0 1afe55ad5efa77f8d2bbcfaea14b2c39bd483b3d
+%global gittag0 2.6.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SanguineMutants
-Version: 2.6.2
+Version: 2.6.3
 Release: 2%{?dist}
 Summary: SanguineMutants plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r SanguineMutants_plugin/dist/SanguineMutants/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.3-1
 - initial specfile
