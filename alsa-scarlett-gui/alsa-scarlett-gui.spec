@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: alsa-scarlett-gui
-Version: 0.5.0
+Version: 0.5.1
 Summary: ALSA Scarlett Control Panel
 Release: 2%{?dist}
 License: GPL-2.0-or-later
@@ -80,6 +80,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/256x256/apps/*.png
 
 %changelog
+* Sun Mar 16 2025 Yann Collette <ycollette.nospam@free.fr> - 0.5.1-2
+- update to 0.5.1-2
+
 * Tue Feb 25 2025 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-2
 - update to 0.5.0-2
 
