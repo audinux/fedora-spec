@@ -1,7 +1,7 @@
-From 23b27a9e4bed8445ab91185faf5e3dc93e76a911 Mon Sep 17 00:00:00 2001
+From 5536e89e434ee0eff3a9faa37cc9fa9d8facbf44 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Sat, 2 Nov 2024 07:28:07 +0100
-Subject: [PATCH] update patch
+Date: Tue, 11 Mar 2025 21:28:39 +0100
+Subject: [PATCH] patch
 
 ---
  source/juce.cmake                       | 4 ----
@@ -11,20 +11,20 @@ Subject: [PATCH] update patch
  4 files changed, 16 deletions(-)
 
 diff --git a/source/juce.cmake b/source/juce.cmake
-index 4b18539..9723b2e 100644
+index 06fb0cf..170a6ab 100644
 --- a/source/juce.cmake
 +++ b/source/juce.cmake
-@@ -119,10 +119,6 @@ macro(createJucePlugin targetName productName isSynth plugin4CC binaryDataProjec
- 		add_dependencies(${targetName}_All ${targetName}_CLAP)
+@@ -189,10 +189,6 @@ macro(createJucePlugin targetName productName isSynth plugin4CC binaryDataProjec
+ 		add_dependencies(PluginFormat_CLAP ${targetName}_CLAP)
  	endif()
  
 -	if(UNIX AND NOT APPLE)
 -		target_link_libraries(${targetName} PUBLIC -static-libgcc -static-libstdc++)
 -	endif()
 -	
- 	if(USE_VST3)
- 		if(APPLE)
- 			install(TARGETS ${targetName}_VST3 DESTINATION . COMPONENT ${productName}-VST3)
+ 	if(USE_VST2)
+ 		add_dependencies(PluginFormat_VST2 ${targetName}_VST)
+ 	endif()
 diff --git a/source/mqPerformanceTest/CMakeLists.txt b/source/mqPerformanceTest/CMakeLists.txt
 index 903185e..a9f280c 100644
 --- a/source/mqPerformanceTest/CMakeLists.txt
@@ -70,5 +70,5 @@ index 440095b..667caaf 100644
  
  if(${gearmulator_SYNTH_OSIRUS})
 -- 
-2.47.0
+2.48.1
 
