@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Audio, DAW
 
-%define commit0 f579750608da6448283942f557f82714dd840d0a
+%define commit0 8821d88c098ce886ed82df048c89c0106482a702
 
 Name: lmms-mao-weekly
 Version: 1.2.99
-Release: 18%{?dist}
+Release: 19%{?dist}
 Summary: Linux MultiMedia Studio - Weekly version
 URL: https://lmms.io
 ExclusiveArch: x86_64 aarch64
@@ -71,15 +71,16 @@ BuildRequires: libgig-devel
 BuildRequires: ladspa-devel
 BuildRequires: stk-devel
 BuildRequires: qt5-qtbase-devel
+BuildRequires: qt5-qtsvg-devel
+BuildRequires: qt5-linguist
 BuildRequires: fltk-devel
+BuildRequires: fltk-fluid
 %ifarch aarch64
 BuildRequires: Carla-devel
 %else
 BuildRequires: Carla-mao-devel
 %endif
 BuildRequires: bash-completion
-BuildRequires: qt5-linguist
-BuildRequires: fltk-fluid
 BuildRequires: desktop-file-utils
 
 %ifarch aarch64
@@ -179,6 +180,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/lmms.desktop
 %exclude %{_includedir}/lmms
 
 %changelog
+* Mon Mar 10 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.99-19
+- update to 8821d88c098ce886ed82df048c89c0106482a702
+
 * Sun Dec 01 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.99-18
 - update to f579750608da6448283942f557f82714dd840d0a
 
