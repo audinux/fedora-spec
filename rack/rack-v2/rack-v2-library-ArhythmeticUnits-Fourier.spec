@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 d49cb1de630f278852d098dfbb09e3f4c9a8165e
-%global gittag0 2.0.8
+%global commit0 19de25db1214cfb8a6eb85d6db08d307a4e2bf70
+%global gittag0 2.1.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-JW-Modules
-Version: 2.0.8
+Name:    rack-v2-ArhythmeticUnits-Fourier
+Version: 2.1.1
 Release: 2%{?dist}
-Summary: JW-Modules plugin for Rack
+Summary: ArhythmeticUnits-Fourier plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/jeremywen/JW-Modules
+URL:     https://github.com/Kautenja/ArhythmeticUnits-Fourier
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,8 +29,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/jeremywen/JW-Modules/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: JW-Modules_plugin.json
+Source1: https://github.com/Kautenja/ArhythmeticUnits-Fourier/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: ArhythmeticUnits-Fourier_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -61,7 +61,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-JW-Modules plugin for Rack.
+ArhythmeticUnits-Fourier plugin for Rack.
+Tune-able spectrum analyzer
 
 %prep
 %setup -n Rack
@@ -134,24 +135,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir JW-Modules_plugin
-tar xvfz %{SOURCE1} --directory=JW-Modules_plugin --strip-components=1
+mkdir ArhythmeticUnits-Fourier_plugin
+tar xvfz %{SOURCE1} --directory=ArhythmeticUnits-Fourier_plugin --strip-components=1
 
-cp -n %{SOURCE2} JW-Modules_plugin/plugin.json || true
+cp -n %{SOURCE2} ArhythmeticUnits-Fourier_plugin/plugin.json || true
 
 %build
 
-cd JW-Modules_plugin
+cd ArhythmeticUnits-Fourier_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/JW-Modules/
-cp -r JW-Modules_plugin/dist/JW-Modules/* %{buildroot}%{_libexecdir}/Rack2/plugins/JW-Modules/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/ArhythmeticUnits-Fourier/
+cp -r ArhythmeticUnits-Fourier_plugin/dist/ArhythmeticUnits-Fourier/* %{buildroot}%{_libexecdir}/Rack2/plugins/ArhythmeticUnits-Fourier/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.8-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
 - initial specfile
