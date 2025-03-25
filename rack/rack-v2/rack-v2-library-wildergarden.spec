@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b3977e99bef7c905790973c0979eaf784cf3e015
-%global gittag0 2.0.1
+%global commit0 32e5c951651c65fd1bff22450af1c03bbe026cfc
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-wildergarden
-Version: 2.0.1
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: wildergarden plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r wildergarden_plugin/dist/wildergarden/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
