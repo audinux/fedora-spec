@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: six-sines
-Version: 1.0.5
+Version: 1.1.0
 Release: 2%{?dist}
 Summary: Six Sines is a small synthesizer which explores audio rate inter-modulation of signals
 License: MIT
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./six-sines-source.sh <TAG>
-#        ./six-sines-source.sh v1.0.5
+#        ./six-sines-source.sh v1.1.0
 
 Source0: six-sines.tar.gz
 Source1: version_information.cpp 
@@ -101,6 +101,8 @@ export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
 export CFLAGS="-Wno-error=deprecated-declarations $CFLAGS"
 export CXXFLAGS="-include ghc/filesystem.hpp -Wno-error=deprecated-declarations $CXXFLAGS"
 
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
 %cmake -DBUILD_SHARED_LIBS:BOOL=OFF
 
 mkdir -p %{__cmake_builddir}/geninclude
@@ -111,19 +113,19 @@ cp %{SOURCE1} %{__cmake_builddir}/geninclude
 %install
 
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/Release/Six_Sines.vst3 %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/six-sines_assets/Six_Sines.vst3 %{buildroot}/%{_libdir}/vst3/
 
 install -m 755 -d %{buildroot}/%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/Six_Sines.clap %{buildroot}/%{_libdir}/clap/
+cp -ra %{__cmake_builddir}/six-sines_assets/Six_Sines.clap %{buildroot}/%{_libdir}/clap/
 
 install -m 755 -d %{buildroot}/%{_bindir}/
-cp -ra %{__cmake_builddir}/Six_Sines %{buildroot}/%{_bindir}/
+cp -ra %{__cmake_builddir}/six-sines_assets/Six_Sines %{buildroot}/%{_bindir}/
 
 %files
 %{_bindir}/*
 
 %files -n license-%{name}
-%doc README.md doc/manual.md
+%doc README.md doc/manual.md doc/*.png
 %license LICENSE.md
 
 %files -n vst3-%{name}
@@ -133,6 +135,9 @@ cp -ra %{__cmake_builddir}/Six_Sines %{buildroot}/%{_bindir}/
 %{_libdir}/clap/*
 
 %changelog
+* Tue Mar 18 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-2
+- update to 1.1.0-2
+
 * Tue Feb 04 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.5-2
 - update to 1.0.5-2
 
