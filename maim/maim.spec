@@ -4,7 +4,7 @@
 # Category: Effect, Audio
 
 Name:    maim
-Version: 1.0.0
+Version: 1.1.1
 Release: 1%{?dist}
 Summary: Audio plugin for custom MP3 distortion and digital glitches
 License: GPL-3.0
@@ -15,10 +15,11 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./maim-source.sh <TAG>
-#        ./maim-source.sh v1.0.0
+#        ./maim-source.sh v1.1.1
 
 Source0: Maim.tar.gz
 Source1: maim-source.sh
+Patch0: maim-0001-fix-cmake-file.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -40,6 +41,7 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
 BuildRequires: lame-devel
+BuildRequires: opus-devel
 BuildRequires: webkit2gtk3-devel
 
 %description
@@ -58,17 +60,28 @@ Requires: %{name}
 VST3 version of %{name}
 
 %prep
-%autosetup -n Maim
+%autosetup -p1 -n Maim
 
 %build
 
-cd Source/lib/lame/
+cd lib/lame/
 %configure CFLAGS="-fPIC" --disable-frontend --enable-expopt=full --disable-shared --enable-static
 %make_build
-cd ../../..
+cd ../..
 
-%cmake -DLAME_LIB=Source/lib/lame/libmp3lame/.libs/libmp3lame.a
+%set_build_flags
+export CXXFLAGS="-I/usr/include/opus $CXXFLAGS"
+export CFLAGS="-I/usr/include/opus $CFLAGS"
+
+%cmake -DOPUS_X86_PRESUME_SSE4_1:BOOL=OFF \
+       -DOPUS_X86_MAY_HAVE_SSE4_1:BOOL=OFF \
+       -DOPUS_X86_MAY_HAVE_AVX2:BOOL=OFF \
+       -DOPUS_X86_PRESUME_AVX2:BOOL=OFF \
+       -DLAME_LIB=lib/lame/./libmp3lame/.libs/libmp3lame.a
+
 %cmake_build
+
+# ERROR   0002: file '/usr/lib64/vst3/Maim.vst3/Contents/x86_64-linux/Maim.so' contains an invalid runpath '/home/ycollette/rpmbuild/BUILD/Maim/redhat-linux-build/opus' in [/home/ycollette/rpmbuild/BUILD/Maim/redhat-linux-build/opus]
 
 %install
 
@@ -86,5 +99,8 @@ cp -ra Docs/images %{buildroot}%{_datadir}/%{name}/docs/
 %{_datadir}/%{name}/*
 
 %changelog
+* Thu Mar 20 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
+- update to 1.1.1-1
+
 * Wed Dec 06 2023 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial spec file

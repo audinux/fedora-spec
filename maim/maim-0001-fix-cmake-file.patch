@@ -1,0 +1,55 @@
+From 8f6448f068d6ab56a3d391230303d92709e34729 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Thu, 20 Mar 2025 12:41:29 +0100
+Subject: [PATCH] fix cmake file
+
+---
+ CMakeLists.txt | 12 +-----------
+ 1 file changed, 1 insertion(+), 11 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 2e3dd26..d54942d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -38,8 +38,6 @@ project(${PROJECT_NAME} VERSION ${CURRENT_VERSION})
+ 
+ set(LAMELIBRARYPATH "${CMAKE_CURRENT_SOURCE_DIR}/${LAME_LIB}")
+ 
+-add_subdirectory(opus)
+-
+ # Couple tweaks that IMO should be JUCE defaults
+ include(JUCEDefaults)
+ 
+@@ -107,7 +105,6 @@ target_sources(SharedCode INTERFACE ${SourceFiles})
+ target_include_directories(SharedCode
+         INTERFACE
+         lib/lame/include
+-        ${CMAKE_SOURCE_DIR}/opus/include
+         lib/blade/bladeenc
+ )
+ 
+@@ -168,7 +165,6 @@ target_link_libraries(SharedCode
+         #    my_warning_flags
+ )
+ 
+-set_property(TARGET opus PROPERTY POSITION_INDEPENDENT_CODE ON)
+ set_property(TARGET blade_library PROPERTY POSITION_INDEPENDENT_CODE ON)
+ 
+ if (WIN32)
+@@ -198,11 +194,5 @@ target_link_libraries("${PROJECT_NAME}" PRIVATE SharedCode)
+ # IPP support, comment out to disable
+ include(PamplejuceIPP)
+ 
+-# Everything related to the tests target
+-include(Tests)
+-
+-# A separate target keeps the Tests target fast!
+-include(Benchmarks)
+-
+ # Pass some config to GA (like our PRODUCT_NAME)
+-include(GitHubENV)
+\ No newline at end of file
++include(GitHubENV)
+-- 
+2.48.1
+
