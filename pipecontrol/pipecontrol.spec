@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: pipecontrol
-Version: 0.2.11
+Version: 0.3.0
 Release: 1%{?dist}
 Summary: Pipewire control GUI program in Qt
 URL: https://github.com/portaloffreedom/pipecontrol
@@ -20,14 +20,14 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: extra-cmake-modules
 BuildRequires: gettext
-BuildRequires: qt5-linguist
+BuildRequires: qt6-linguist
 BuildRequires: pipewire-devel
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-qtdeclarative-devel
-BuildRequires: qt5-qtquickcontrols2-devel
-BuildRequires: kf5-kirigami2-devel
-BuildRequires: kf5-ki18n-devel
-BuildRequires: kf5-kcoreaddons-devel
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qtdeclarative-devel
+BuildRequires: qt6-qtquickcontrols2-devel
+BuildRequires: kf6-kirigami2-devel
+BuildRequires: kf6-ki18n-devel
+BuildRequires: kf6-kcoreaddons-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -61,6 +61,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/PipeControl.desktop
 %{_datadir}/icons/hicolor/scalable/apps/
 
 %changelog
+* Sun Mar 23 2025 Yann Collette <ycollette.nospam@free.fr> - 0.3.0-1
+- update to 0.3.0-1
+
+* Sat Mar 22 2025 Yann Collette <ycollette.nospam@free.fr> - 0.2.12-1
+- update to 0.2.12-1
+
 * Sun Oct 29 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2.11-1
 - update to 0.2.11-1
 
