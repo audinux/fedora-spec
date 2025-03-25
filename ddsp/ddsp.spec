@@ -8,14 +8,14 @@ Version: 1.1.0
 Release: 1%{?dist}
 Summary: Realtime DDSP Neural Synthesizer and Effect
 URL:     https://github.com/tank-trax/ddsp-vst
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64
 License: Apache-v2
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./ddps-source.sh <TAG>
-# ./ddsp-source.sh v1.1.0
+#        ./ddsp-source.sh v1.1.0
 
 Source0: ddsp-vst.tar.gz
 Source1: ddsp-source.sh
