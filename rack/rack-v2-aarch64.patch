@@ -1,7 +1,7 @@
-From cf17b2743f3b9868259f64a24014e267c69d982b Mon Sep 17 00:00:00 2001
+From caa34486e8e93d64f2fbf3b846db5bd79d676798 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Fri, 14 Mar 2025 21:25:27 +0100
-Subject: [PATCH] patch
+Date: Thu, 27 Mar 2025 21:54:00 +0100
+Subject: [PATCH] aarch64
 
 ---
  arch.mk                                 | 2 +-
@@ -13,7 +13,8 @@ Subject: [PATCH] patch
  dep/speexdsp/libspeexdsp/resample_sse.h | 6 ++++--
  include/simd/common.hpp                 | 3 ++-
  src/common.cpp                          | 3 +++
- 9 files changed, 22 insertions(+), 7 deletions(-)
+ src/engine/Engine.cpp                   | 4 ----
+ 10 files changed, 22 insertions(+), 11 deletions(-)
 
 diff --git a/arch.mk b/arch.mk
 index 66846fb..a6f31bb 100644
@@ -137,10 +138,10 @@ index 2a78268..5ffa7b6 100644
  	#define SIMDE_ENABLE_NATIVE_ALIASES
  	#include <simde/x86/sse4.2.h>
 diff --git a/src/common.cpp b/src/common.cpp
-index 4f2869c..1d865a1 100644
+index aad8aea..220f9d3 100644
 --- a/src/common.cpp
 +++ b/src/common.cpp
-@@ -36,6 +36,9 @@ const std::string APP_VERSION = TOSTRING(_APP_VERSION);
+@@ -36,6 +36,9 @@ const std::string APP_VERSION = TOSTRING(_RACK_VERSION);
  #elif defined ARCH_ARM64
  	const std::string APP_CPU = "arm64";
  	const std::string APP_CPU_NAME = "ARM64";
@@ -149,6 +150,22 @@ index 4f2869c..1d865a1 100644
 +	const std::string APP_CPU_NAME = "AARCH64";
  #endif
  const std::string API_URL = "https://api.vcvrack.com";
+ 
+diff --git a/src/engine/Engine.cpp b/src/engine/Engine.cpp
+index 9e4b452..65c00b2 100644
+--- a/src/engine/Engine.cpp
++++ b/src/engine/Engine.cpp
+@@ -22,11 +22,7 @@ namespace engine {
+ 
+ 
+ inline void cpuPause() {
+-#if defined ARCH_X64
+ 	_mm_pause();
+-#elif defined ARCH_ARM64
+-	__yield();
+-#endif
+ }
+ 
  
 -- 
 2.48.1

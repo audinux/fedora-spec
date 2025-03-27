@@ -1,7 +1,7 @@
-From 711c1c27bb420b31214143161b8d1b8dd5027e34 Mon Sep 17 00:00:00 2001
+From a872c08359b78f059b9d3fd25488f39a21bc47b3 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Wed, 20 Nov 2024 21:09:39 +0100
-Subject: [PATCH] fix path
+Date: Thu, 27 Mar 2025 21:20:18 +0100
+Subject: [PATCH] initialize system path
 
 ---
  src/asset.cpp  | 4 ++--
@@ -31,10 +31,10 @@ index 8c3a512..162f3ca 100644
  }
  
 diff --git a/src/plugin.cpp b/src/plugin.cpp
-index 68940de..9b1d783 100644
+index 6dd0b51..1eff2fb 100644
 --- a/src/plugin.cpp
 +++ b/src/plugin.cpp
-@@ -270,7 +270,10 @@ void init() {
+@@ -274,7 +274,10 @@ void init() {
  		pluginsPath = asset::user("plugins");
  	}
  	else {
@@ -47,5 +47,5 @@ index 68940de..9b1d783 100644
  
  	// In Rack <2.4.0, plugins dir was "plugins" regardless of arch.
 -- 
-2.47.0
+2.48.1
 

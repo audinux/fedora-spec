@@ -8,7 +8,7 @@
 %define use_embedded_samplerate 0
 
 Name:    Rack-v2
-Version: 2.6.2
+Version: 2.6.3
 Release: 4%{?dist}
 Summary: A modular Synthesizer
 License: GPL-2.0-or-later
@@ -19,7 +19,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./rack-source-v2.sh <tag>
-# ./rack-source-v2.sh v2.6.2
+# ./rack-source-v2.sh v2.6.3
 
 Source0: Rack.tar.gz
 Source1: rack-source-v2.sh
@@ -217,6 +217,9 @@ EOF
 %{_libdir}/*
 
 %changelog
+* Thu Mar 27 2025 Yann Collette <ycollette.nospam@free.fr> - 2.6.3-4
+- update to v2.6.3-4
+
 * Mon Mar 17 2025 Yann Collette <ycollette.nospam@free.fr> - 2.6.2-4
 - update to v2.6.2-4
 
