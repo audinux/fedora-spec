@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: aloop
-Version: 0.3
+Version: 0.4
 Release: 1%{?dist}
 Summary: Audio File Looper for Linux
 License: GPL-2.0-or-later
@@ -22,6 +22,7 @@ BuildRequires: cairo-devel
 BuildRequires: libX11-devel
 BuildRequires: libsndfile-devel
 BuildRequires: portaudio-devel
+BuildRequires: rubberband-devel
 
 %description
 aloop is a audio file looper for Linux using PortAudio as backend (jack, pulse, alsa),
@@ -49,6 +50,9 @@ export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
 %{_datadir}/*
 
 %changelog
+* Wed Mar 26 2025 Yann Collette <ycollette.nospam@free.fr> - 0.4-1
+- update to 0.4-1
+
 * Thu Feb 13 2025 Yann Collette <ycollette.nospam@free.fr> - 0.3-1
 - update to 0.3-1
 
