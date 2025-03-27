@@ -150,10 +150,8 @@
 | gearmulator                   | https://github.com/dsp56300/gearmulator |
 | Subhoofer                     | https://github.com/ardura/Subhoofer |
 | Interleaf                     | https://github.com/ardura/Interleaf |
-| Scrollscope                   | https://github.com/ardura/Scrollscope |
 | Canopy-Reverb                 | https://github.com/ardura/Canopy-Reverb |
 | LIRA-8                        | https://github.com/MikeMorenoDSP/LIRA-8 |
-| glslEditor_AudioPlugin        | https://github.com/COx2/glslEditor_AudioPlugin |
 | MOrgan                        | https://github.com/getdunne/MOrgan |
 | elysiera                      | https://github.com/azur1s/elysiera |
 | RTcmix                        | https://github.com/RTcmix/RTcmix |
@@ -175,7 +173,6 @@
 | spek-X                        | https://github.com/MikeWang000000/spek-X |
 | rubberneck                    | https://github.com/hollance/rubberneck |
 | krunch                        | https://github.com/hollance/krunch |
-| TheKissOfShame                | https://github.com/hollance/TheKissOfShame |
 | signls                        | https://github.com/emprcl/signls |
 | Ami-Sampler-VST               | https://github.com/astriiddev/Ami-Sampler-VST |
 | BitDOS-VST                    | https://github.com/astriiddev/BitDOS-VST |
