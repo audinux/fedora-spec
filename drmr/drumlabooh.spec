@@ -4,7 +4,7 @@
 # Category: Audio, Distortion
 
 Name: drumlabooh
-Version: 6.0.0
+Version: 7.0.1
 Release: 1%{?dist}
 Summary: LV2/VSTi drum machine that can use Hydrogen, SFZ, and other drumkit formats
 License: GPL-3.0-only
@@ -86,6 +86,12 @@ cp %{__cmake_builddir}/drumlabooh_artefacts/Standalone/* %{buildroot}/%{_bindir}
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Apr 06 2025 Yann Collette <ycollette.nospam@free.fr> - 7.0.1-1
+- update to 7.0.1-1
+
+* Sun Mar 30 2025 Yann Collette <ycollette.nospam@free.fr> - 7.0.0-1
+- update to 7.0.0-1
+
 * Tue Sep 24 2024 Yann Collette <ycollette.nospam@free.fr> - 6.0.0-1
 - update to 6.0.0-1
 
