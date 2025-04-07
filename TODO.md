@@ -147,7 +147,6 @@
 | JS_Inflator                   | https://github.com/Kiriki-liszt/JS_Inflator |
 | oemer                         | https://github.com/BreezeWhite/oemer |
 | Orchestra                     | https://github.com/AbdallahHemdan/Orchestra |
-| gearmulator                   | https://github.com/dsp56300/gearmulator |
 | Subhoofer                     | https://github.com/ardura/Subhoofer |
 | Interleaf                     | https://github.com/ardura/Interleaf |
 | Canopy-Reverb                 | https://github.com/ardura/Canopy-Reverb |
@@ -177,8 +176,15 @@
 | Ami-Sampler-VST               | https://github.com/astriiddev/Ami-Sampler-VST |
 | BitDOS-VST                    | https://github.com/astriiddev/BitDOS-VST |
 | Sub_Dominant-VST              | https://github.com/astriiddev/Sub_Dominant-VST |
+| Cable                         | https://github.com/magillos/Cable |
+| Just-a-Sample                 | https://github.com/BOBONA/Just-a-Sample |
+| Overdraw                      | https://github.com/unevens/Overdraw |
+| Curvessor                     | https://github.com/unevens/Curvessor |
+| trigger2midi                  | https://github.com/jkbd/trigger2midi |
 
 Check the following URL:
+- https://github.com/dariosanfilippo
+- https://github.com/magnetophon
 - https://github.com/forart/HyMPS
 - https://github.com/landonviator
 - https://github.com/publicsamples
