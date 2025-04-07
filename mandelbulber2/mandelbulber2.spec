@@ -4,7 +4,7 @@
 # Category: Graphic, Tool
 
 Name: mandelbulber2
-Version: 2.32
+Version: 2.33
 Release: 1%{?dist}
 License: GPL-3.0
 Summary: 3D Mandelbrot renderer
@@ -13,15 +13,15 @@ ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
-Source0: https://github.com/buddhi1980/mandelbulber2/releases/download/%{version}/mandelbulber2-%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/buddhi1980/mandelbulber2/releases/download/%{version}/mandelbulber-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: pkgconfig(Qt5Core)
-BuildRequires: pkgconfig(Qt5Gui)
-BuildRequires: pkgconfig(Qt5Network)
-BuildRequires: pkgconfig(Qt5UiTools)
-BuildRequires: pkgconfig(Qt5Widgets)
-BuildRequires: pkgconfig(Qt5Multimedia)
+BuildRequires: pkgconfig(Qt6Core)
+BuildRequires: pkgconfig(Qt6Gui)
+BuildRequires: pkgconfig(Qt6Network)
+BuildRequires: pkgconfig(Qt6UiTools)
+BuildRequires: pkgconfig(Qt6Widgets)
+BuildRequires: pkgconfig(Qt6Multimedia)
 BuildRequires: gsl-devel
 BuildRequires: libtiff-devel
 BuildRequires: libpng-devel
@@ -41,7 +41,7 @@ Sponge.
 %build
 
 cd makefiles
-%qmake_qt5 mandelbulber.pro
+%qmake_qt6 mandelbulber.pro
 %make_build
 
 %install
@@ -88,6 +88,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/toolbar/*
 
 %changelog
+* Sun Mar 30 2025 Yann Collette <ycollette.nospam@free.fr> - 2.33-1
+- update to 2.33-1
+
 * Sun Aug 25 2024 Yann Collette <ycollette.nospam@free.fr> - 2.32-1
 - update to 2.32-1
 
