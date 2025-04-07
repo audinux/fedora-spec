@@ -4,9 +4,9 @@
 # Kernel minor version
 %define kmin  10
 # Kernel patch version
-%define kpat  233
+%define kpat  235
 # RT patch version
-%define krt   125
+%define krt   129
 # package version
 %define krel  12
 
@@ -106,6 +106,8 @@ echo "" > localversion-rt
 make oldconfig
 
 %build
+
+export CFLAGS="-std=c11"
 
 make clean && make %{?_smp_mflags}
 
@@ -208,6 +210,9 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-rt-stable%{krt}%{fcver}
 
 %changelog
+* Tue Apr 01 2025 Yann Collette <ycollette.nospam@free.fr> - 5.10.235-rt129-12
+- update to 5.10.235-rt129-12 - vanilla RT kernel
+
 * Thu Jan 23 2025 Yann Collette <ycollette.nospam@free.fr> - 5.10.233-rt125-12
 - update to 5.10.233-rt125-12 - vanilla RT kernel
 
