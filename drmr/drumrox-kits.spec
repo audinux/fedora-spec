@@ -6,7 +6,7 @@
 %global commit0 ea5329aec334d417d6838bf96f905b93475eec4f
 
 Name: drumrox-kits
-Version: 1.0.0
+Version: 2.0.0
 Release: 6%{?dist}
 Summary: A set of drumrox drum kits
 License: GPL-3.0-or-later
@@ -18,7 +18,7 @@ Distribution: Audinux
 
 BuildArch: noarch
 
-Source0: https://github.com/psemiletov/drum_sklad/archive/refs/tags/1.0.0.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/psemiletov/drum_sklad/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 %description
 Drum kits for Drumrox LV2 drum machine
@@ -206,6 +206,22 @@ Requires: license-%{name}
 %description -n %{name}-Drumulator
 The Drumulator drumkit for %{name}
 
+%package -n %{name}-WatfordRhythmGenerator
+Summary:  The Watford Rhythm Generator drumkit for %{name}
+License:  GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-WatfordRhythmGenerator
+The Watford Rhythm Generator drumkit for %{name}
+
+%package -n %{name}-Copyc4tElNacho
+Summary:  The Copyc4t El Nacho drumkit for %{name}
+License:  GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-Copyc4tElNacho
+The Copyc4t El Nacho drumkit for %{name}
+
 %prep
 %autosetup -n drum_sklad-%{version}
 
@@ -233,6 +249,8 @@ install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/The_Almighty_Sound_Drumk
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Wooden/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ARP_Axxe/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Drumulator/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/WatfordRhythmGenerator/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Copyc4tElNacho/
 
 cp -ra Cheetah\ SpecDrum\ Standard/* %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Standard/
 cp -ra Cheetah\ SpecDrum\ Latin/* %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Latin/
@@ -256,6 +274,8 @@ cp -ra The\ Almighty\ Sound\ Drumkit/* %{buildroot}/%{_datadir}/drumrox-kits/The
 cp -ra Wooden/* %{buildroot}/%{_datadir}/drumrox-kits/Wooden/
 cp -ra ARP\ Axxe/* %{buildroot}/%{_datadir}/drumrox-kits/ARP_Axxe/
 cp -ra Drumulator/* %{buildroot}/%{_datadir}/drumrox-kits/Drumulator/
+cp -ra Watford\ Rhythm\ Generator/* %{buildroot}/%{_datadir}/drumrox-kits/WatfordRhythmGenerator/
+cp -ra Copyc4t\ El\ Nacho\ Drumkit/* %{buildroot}/%{_datadir}/drumrox-kits/Copyc4tElNacho/
 
 %files -n license-%{name}
 %doc README.md
@@ -327,7 +347,16 @@ cp -ra Drumulator/* %{buildroot}/%{_datadir}/drumrox-kits/Drumulator/
 %files -n %{name}-Drumulator
 %{_datadir}/drumrox-kits/Drumulator/*
 
+%files -n %{name}-WatfordRhythmGenerator
+%{_datadir}/drumrox-kits/WatfordRhythmGenerator/*
+
+%files -n %{name}-Copyc4tElNacho
+%{_datadir}/drumrox-kits/Copyc4tElNacho/*
+
 %changelog
+* Sun Mar 30 2025 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-6
+- update to 2.0.0-6
+
 * Thu Sep 12 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-6
 - update to 135e0dde0c81e62567654a2557eee35b2bb59016
 
