@@ -9,7 +9,7 @@
 
 Name:    Rack-v2
 Version: 2.6.3
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: A modular Synthesizer
 License: GPL-2.0-or-later
 URL:     https://github.com/VCVRack/Rack
@@ -188,11 +188,13 @@ mkdir -p %{buildroot}%{_datadir}/pixmaps/
 mkdir -p %{buildroot}%{_datadir}/man/man1/
 mkdir -p %{buildroot}%{_datadir}/applications/
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/translations/
 mkdir -p %{buildroot}%{_libdir}/
 
 install -m 755 Rack         %{buildroot}%{_bindir}/Rack2
 install -m 644 res/icon.png %{buildroot}%{_datadir}/pixmaps/rack2.png
 cp -r res                   %{buildroot}%{_libexecdir}/Rack2/
+cp -r translations/*        %{buildroot}%{_libexecdir}/Rack2/translations/
 install -m 755 libRack.so   %{buildroot}%{_libdir}/
 
 cp cacert.pem Core.json template.vcv %{buildroot}%{_libexecdir}/Rack2/
@@ -217,6 +219,9 @@ EOF
 %{_libdir}/*
 
 %changelog
+* Sun Mar 30 2025 Yann Collette <ycollette.nospam@free.fr> - 2.6.3-5
+- update to v2.6.3-5 - fix translations installation
+
 * Thu Mar 27 2025 Yann Collette <ycollette.nospam@free.fr> - 2.6.3-4
 - update to v2.6.3-4
 
