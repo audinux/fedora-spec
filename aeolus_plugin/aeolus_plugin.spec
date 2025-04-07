@@ -5,7 +5,7 @@
 
 Name: aeolus_plugin
 Version: 0.2.1
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Pipe organ synthesizer
 License: GPL-3.0-or-later
 URL: https://github.com/Archie3d/aeolus_plugin
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source_aeolus_plugin.sh <tag>
-#        ./source_aeolus_plugin.sh v0.2.1
+#        ./source_aeolus_plugin.sh master
 
 Source0: aeolus_plugin.tar.gz
 Source1: source_aeolus_plugin.sh
