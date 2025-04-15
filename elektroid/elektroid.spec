@@ -5,7 +5,7 @@
 
 Name: elektroid
 Summary: Sample and MIDI device manager
-Version: 3.1
+Version: 3.2
 Release: 1%{?dist}
 License: GPL-3.0-or-later
 URL: https://github.com/dagargo/elektroid
@@ -43,7 +43,7 @@ autoreconf --install --force
 %build
 
 %set_build_flags
-export CFLAGS="-Wno-implicit-function-declaration $CFLAGS"
+export CFLAGS="-Wno-incompatible-pointer-types $CFLAGS"
 
 %configure
 %make_build
@@ -55,11 +55,11 @@ export CFLAGS="-Wno-implicit-function-declaration $CFLAGS"
 desktop-file-install                         \
   --delete-original                          \
   --dir=%{buildroot}%{_datadir}/applications \
-  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+  %{buildroot}/%{_datadir}/applications/io.github.dagargo.Elektroid.desktop
 
 %check
-desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
-appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.appdata.xml
+desktop-file-validate %{buildroot}%{_datadir}/applications/io.github.dagargo.Elektroid.desktop
+appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/io.github.dagargo.Elektroid.appdata.xml
 
 %files
 %doc README
@@ -69,10 +69,13 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.appdat
 %{_datadir}/elektroid/
 %{_datadir}/icons/hicolor/*
 %{_datadir}/locale/*
-%{_datadir}/metainfo/elektroid.appdata.xml
+%{_datadir}/metainfo/io.github.dagargo.Elektroid.appdata.xml
 %{_datadir}/man/*
 
 %changelog
+* Sun Apr 13 2025 Yann Collette <ycollette.nospam@free.fr> - 3.2-1
+- update to 3.2-1
+
 * Sun Oct 06 2024 Yann Collette <ycollette.nospam@free.fr> - 3.1-1
 - update to 3.1-1
 
