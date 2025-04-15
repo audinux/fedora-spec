@@ -151,7 +151,6 @@
 | Interleaf                     | https://github.com/ardura/Interleaf |
 | Canopy-Reverb                 | https://github.com/ardura/Canopy-Reverb |
 | LIRA-8                        | https://github.com/MikeMorenoDSP/LIRA-8 |
-| MOrgan                        | https://github.com/getdunne/MOrgan |
 | elysiera                      | https://github.com/azur1s/elysiera |
 | RTcmix                        | https://github.com/RTcmix/RTcmix |
 | bark                          | https://github.com/haileys/bark |
@@ -168,7 +167,6 @@
 | Tumult                        | https://github.com/consint/Tumult |
 | Xolotl                        | https://github.com/publicsamples/Xolotl |
 | Comprez                       | https://github.com/AnClark/Comprez |
-| Noteahead                     | https://github.com/juzzlin/Noteahead |
 | spek-X                        | https://github.com/MikeWang000000/spek-X |
 | rubberneck                    | https://github.com/hollance/rubberneck |
 | krunch                        | https://github.com/hollance/krunch |
@@ -183,13 +181,13 @@
 | trigger2midi                  | https://github.com/jkbd/trigger2midi |
 
 Check the following URL:
+- https://github.com/jmantra/LogicalArdour
 - https://github.com/dariosanfilippo
 - https://github.com/magnetophon
 - https://github.com/forart/HyMPS
 - https://github.com/landonviator
 - https://github.com/publicsamples
 - https://github.com/reales/OPL -> replace JUCEOplVsti ?
-- aeolus plugin -> update to last master
 - https://github.com/mod-audio
 
 Add dead package:
