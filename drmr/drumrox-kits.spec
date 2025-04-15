@@ -1,5 +1,5 @@
 # Status: active
-# Tag: Drum, Presents
+# Tag: Drum, Presets
 # Type: LV2, Presets
 # Category: Synthesizer
 
