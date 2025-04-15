@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer, MIDI
 
 Name: seq192
-Version: 1.6.1
+Version: 1.7.0
 Release: 1%{?dist}
 Summary: MIDI sequencer based on seq24 with less features and more swag
 License: GPL
@@ -62,6 +62,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_mandir}/man1/*
 
 %changelog
+* Tue Apr 08 2025 Yann Collette <ycollette.nospam@free.fr> - 1.7.0-1
+- update to 1.7.0-1
+
 * Wed Apr 02 2025 Yann Collette <ycollette.nospam@free.fr> - 1.6.1-1
 - update to 1.6.1-1
 
