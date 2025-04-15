@@ -4,7 +4,7 @@
 # Category: Effect, Plugin
 
 Name: iem-plugins
-Version: 1.14.1
+Version: 1.15.0
 Release: 1%{?dist}
 Summary: The IEM Plug-in Suite is a free and Open-Source audio plug-in suite.
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./iem-plugins-source.sh <TAG>
-#        ./iem-plugins-source.sh v1.14.1
+#        ./iem-plugins-source.sh v1.15.0
 
 Source0: IEMPluginSuite.tar.gz
 Source1: iem-plugins-source.sh
@@ -42,6 +42,8 @@ BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
 BuildRequires: webkit2gtk3-devel
 
+Requires: license-%{name}
+
 %description
 The IEM Plug-in Suite is a free and Open-Source audio plug-in suite including
 Ambisonic plug-ins up to 7th order created by staff and students of the Institute
@@ -56,10 +58,17 @@ For more information, installation guides and plug-in descriptions see:
 Website: https://plugins.iem.at
 Repository: https://git.iem.at/audioplugins/IEMPluginSuite/
 
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
+License:  GPL-3.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPL-3.0-or-later
-Requires: %{name}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -67,7 +76,7 @@ VST3 version of %{name}
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
 License:  GPL-3.0-or-later
-Requires: %{name}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -126,9 +135,11 @@ do
 done
 
 %files
+%{_bindir}/*
+
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
-%{_bindir}/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
@@ -137,5 +148,8 @@ done
 %{_libdir}/lv2/*
 
 %changelog
+* Thu Apr 10 2025 Yann Collette <ycollette.nospam@free.fr> - 1.15.0-1
+- update to 1.15.0-1
+
 * Mon Sep 18 2023 Yann Collette <ycollette.nospam@free.fr> - 1.14.1-1
 - Initial spec file
