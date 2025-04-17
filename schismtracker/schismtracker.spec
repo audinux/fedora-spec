@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: schismtracker
-Version: 20250313
+Version: 20250415
 Release: 2%{?dist}
 Summary: Module tracker software for creating music
 License: GPL-3.0-or-later
@@ -40,12 +40,7 @@ number of bugfixes and changes to [improve IT].
 %prep
 %autosetup -n %{name}-%{version}
 
-sed -i -e "/-qv 1.2.1/,+2d" configure.ac
-
 %build
-
-%set_build_flags
-export LDFLAGS="$LDFLAGS -lXext"
 
 autoreconf --force --install
 mkdir auto
@@ -54,11 +49,6 @@ mkdir auto
 
 %install
 %make_install
-
-# Remove last action entry
-head -n-3 %{buildroot}/%{_datadir}/applications/schism.desktop > %{buildroot}/%{_datadir}/applications/schism.desktop.tmp
-rm %{buildroot}/%{_datadir}/applications/schism.desktop
-mv %{buildroot}/%{_datadir}/applications/schism.desktop.tmp %{buildroot}/%{_datadir}/applications/schism.desktop
 
 desktop-file-install                         \
   --add-category="Audio;AudioVideo"	     \
@@ -78,6 +68,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Wed Apr 16 2025 Yann Collette <ycollette dot nospam at free dot fr> - 20250415-2
+- update to 20250415-2
+
 * Fri Mar 14 2025 Yann Collette <ycollette dot nospam at free dot fr> - 20250313-2
 - update to 20250313-2
 
