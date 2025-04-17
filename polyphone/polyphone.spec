@@ -6,7 +6,7 @@
 
 Name: polyphone
 Version: 2.5.1
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: A SF2 sound font editor
 URL: https://polyphone-soundfonts.com/
 ExclusiveArch: x86_64 aarch64
@@ -78,13 +78,13 @@ install -m 755 -d %{buildroot}/%{_datadir}/mime/packages/
 install -m 644 contrib/%{name}.xml %{buildroot}%{_datadir}/mime/packages/%{name}.xml
 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/
-install -m 644 resources/polyphone.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/%{name}.svg
+install -m 644 resources/polyphone.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/%{name}.png
+
+install -m 755 -d %{buildroot}/%{_mandir}/
+cp -ra contrib/man/* %{buildroot}/%{_mandir}/
 
 cp readme.md readme_source.md
 
-# TODO: install man pages
-
-# install polyphon.desktop properly.
 desktop-file-install --vendor '' \
         --add-category=X-Drumming \
         --add-category=X-Sound \
@@ -106,8 +106,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/applications/*.desktop
 %{_datadir}/mime/packages/%{name}.xml
 %{_datadir}/icons/hicolor/*
+%{_mandir}/*
 
 %changelog
+* Thu Apr 17 2025 Yann Collette <ycollette.nospam@free.fr> - 2.5.1-4
+- update to 2.5.1-4 - fix icon + install man pages
+
 * Sun Jan 19 2025 Yann Collette <ycollette.nospam@free.fr> - 2.5.1-3
 - update to 2.5.1-3
 
