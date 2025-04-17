@@ -11,6 +11,9 @@ License: GPLv2+
 URL: https://salsa.debian.org/multimedia-team/qmidiroute
 ExclusiveArch: x86_64 aarch64
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://salsa.debian.org/multimedia-team/qmidiroute/-/archive/debian/0.4.0-2/qmidiroute-debian-0.4.0-2.tar.gz
 Patch0: qmidiroute-01-manpage_fix.patch
 

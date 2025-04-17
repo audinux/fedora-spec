@@ -13,6 +13,9 @@ License: GPLv2+
 URL: https://sourceforge.net/projects/alsamodular/
 ExclusiveArch: x86_64 aarch64
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://sourceforge.net/code-snapshots/git/a/al/alsamodular/qmidicontrol.git.git/alsamodular-qmidicontrol.git-665f0976775d06bc4a3680228b998a5956c7461b.zip
 Source1: qmidicontrol-configure.ac
 Source2: qmidicontrol.jpg
