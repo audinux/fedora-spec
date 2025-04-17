@@ -1,13 +1,33 @@
-From a872c08359b78f059b9d3fd25488f39a21bc47b3 Mon Sep 17 00:00:00 2001
+From b0a3cfc82f10d46bb92f9b5156699b6b5b570022 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Thu, 27 Mar 2025 21:20:18 +0100
-Subject: [PATCH] initialize system path
+Date: Thu, 17 Apr 2025 07:25:46 +0200
+Subject: [PATCH] patch
 
 ---
+ Core.json      | 3 ++-
  src/asset.cpp  | 4 ++--
  src/plugin.cpp | 5 ++++-
- 2 files changed, 6 insertions(+), 3 deletions(-)
+ 3 files changed, 8 insertions(+), 4 deletions(-)
 
+diff --git a/Core.json b/Core.json
+index 4726680..63e4731 100644
+--- a/Core.json
++++ b/Core.json
+@@ -4,6 +4,7 @@
+   "license": "GPL-3.0-or-later",
+   "author": "VCV",
+   "brand": "VCV",
++  "version": "2.6.1",
+   "authorEmail": "support@vcvrack.com",
+   "authorUrl": "https://vcvrack.com/",
+   "manualUrl": "https://vcvrack.com/manual/Core",
+@@ -129,4 +130,4 @@
+       ]
+     }
+   ]
+-}
+\ No newline at end of file
++}
 diff --git a/src/asset.cpp b/src/asset.cpp
 index 8c3a512..162f3ca 100644
 --- a/src/asset.cpp
@@ -47,5 +67,5 @@ index 6dd0b51..1eff2fb 100644
  
  	// In Rack <2.4.0, plugins dir was "plugins" regardless of arch.
 -- 
-2.48.1
+2.49.0
 

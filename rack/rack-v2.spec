@@ -9,7 +9,7 @@
 
 Name:    Rack-v2
 Version: 2.6.3
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: A modular Synthesizer
 License: GPL-2.0-or-later
 URL:     https://github.com/VCVRack/Rack
@@ -219,6 +219,9 @@ EOF
 %{_libdir}/*
 
 %changelog
+* Thu Apr 17 2025 Yann Collette <ycollette.nospam@free.fr> - 2.6.3-6
+- update to v2.6.3-6 - fix code plugins detection
+
 * Sun Mar 30 2025 Yann Collette <ycollette.nospam@free.fr> - 2.6.3-5
 - update to v2.6.3-5 - fix translations installation
 
