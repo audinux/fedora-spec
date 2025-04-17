@@ -14,7 +14,7 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    rack-v2-Fundamental
-Version: 2.6.1
+Version: 2.6.2
 Release: 3%{?dist}
 Summary: A plugin for Rack
 License: GPL-2.0-or-later
@@ -156,6 +156,9 @@ cp -r fundamental_plugin/dist/Fundamental/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
+* Thu Apr 17 2025 Yann Collette <ycollette.nospam@free.fr> - 2.6.2-3
+- update to 2.6.2-3
+
 * Fri Nov 22 2024 Yann Collette <ycollette.nospam@free.fr> - 2.6.1-3
 - update to 2.6.1-3
 
