@@ -1,0 +1,52 @@
+Index: qarecord-0.5.0/src/mainwindow.cpp
+===================================================================
+--- qarecord-0.5.0.orig/src/mainwindow.cpp	2009-08-31 13:56:21.000000000 +0200
++++ qarecord-0.5.0/src/mainwindow.cpp	2009-08-31 19:40:26.000000000 +0200
+@@ -383,7 +383,7 @@
+     do {
+         snd_seq_event_input(seq_handle, &ev);
+         if ((ev->type == SND_SEQ_EVENT_NOTEON) && 
+-            (ev->data.control.channel == settings->getMidiChannel())) {
++            (ev->data.control.channel == (settings->getMidiChannel()-1))) {
+ 
+             switch (ev->data.note.note - settings->getMidiNote()) {
+                 case 0: 
+Index: qarecord-0.5.0/src/settings.cpp
+===================================================================
+--- qarecord-0.5.0.orig/src/settings.cpp	2009-08-31 19:40:26.000000000 +0200
++++ qarecord-0.5.0/src/settings.cpp	2009-08-31 19:44:19.000000000 +0200
+@@ -54,7 +54,7 @@
+                 (int) ringBufSize);
+     }
+ 
+-    midiChannel = checkRange("midiChannel", midiChannel, 0, 15);
++    midiChannel = checkRange("midiChannel", midiChannel, 1, 16);
+     midiNote = checkRange("midiNote", midiNote, 0, 127);
+     meterrange = checkRange("meterrange", meterrange, 12, 192);
+     splitMB = checkRange("split", splitMB, 1, 4095);
+@@ -68,7 +68,7 @@
+     ringBufSize = 1048576;
+     enableJack = false;
+     enable32bit = false;
+-    midiChannel = 15;
++    midiChannel = 16;
+     midiNote = 21;
+     channels = 2;
+     meterrange = 85;
+@@ -109,7 +109,6 @@
+                 break;
+             case 'm':
+                 midiChannel = atoi(optarg);
+-                midiChannel--;
+                 break;
+             case 's':
+                 splitMB = atoi(optarg);
+@@ -137,7 +136,7 @@
+                 printf("--buffersize <bytes>        Size of ringbuffer [%ld]\n",
+                     def.ringBufSize);
+                 printf("--channels <num>            Channels [%d]\n",
+-                        def.channels + 1);
++                        def.channels);
+                 printf("--jack                      Enable JACK mode\n");
+                 printf("--meterrange <dB>           Dynamic range of peak meter [%d]\n",
+                     def.meterrange);

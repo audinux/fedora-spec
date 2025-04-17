@@ -1,0 +1,13 @@
+Index: qarecord-0.5.0/src/diskwrite.cpp
+===================================================================
+--- qarecord-0.5.0.orig/src/diskwrite.cpp	2009-09-04 00:54:40.000000000 +0200
++++ qarecord-0.5.0/src/diskwrite.cpp	2009-09-04 00:55:09.000000000 +0200
+@@ -129,7 +129,7 @@
+             count -= count % framesize;
+         }
+ 
+-        if (wavfile && (fwrite(&ringBuf[startpos], count, 1, wavfile) != 1)) {
++        if (wavfile && (count > 0) && (fwrite(&ringBuf[startpos], count, 1, wavfile) != 1)) {
+             qWarning("File write error");
+         }
+         currentDataSize += count;

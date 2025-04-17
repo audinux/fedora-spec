@@ -1,0 +1,13 @@
+Index: qarecord-0.5.0/man/fr/qarecord.1
+===================================================================
+--- qarecord-0.5.0.orig/man/fr/qarecord.1	2009-08-31 13:44:52.000000000 +0200
++++ qarecord-0.5.0/man/fr/qarecord.1	2009-08-31 13:47:29.000000000 +0200
+@@ -103,7 +103,7 @@
+ .B \-\-midiChannel \fIcanal\fP
+ Spécifie le canal MIDI utilisé pour le contrôle de 
+ .B qarecord
+-. La valeur par défaut est 16, le valide domaine des valeurs est 1..16.
++allant de 1 à 16. La valeur par défaut est 16.
+ .TP
+ .B \-\-midiNote \fInombre\fP
+ Spécifie les notes utilisées pour le contrôle MIDI. 

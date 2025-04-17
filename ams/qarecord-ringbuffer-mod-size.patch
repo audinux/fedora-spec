@@ -1,0 +1,13 @@
+Description: Fixes QARecord sometimes crash on recording start.
+Bug-Ubuntu: https://launchpad.net/bugs/475652
+Forwarded: not-needed
+Origin: http://alsamodular.cvs.sourceforge.net/viewvc/alsamodular/qarecord/src/ringbuffer.cpp?r1=1.3&r2=1.4
+--- a/src/ringbuffer.cpp
++++ b/src/ringbuffer.cpp
+@@ -205,5 +205,6 @@
+ #else
+     readOfs += q_atomic_set_int(&fillRate, 0);
+ #endif
++    readOfs %= ringBufSize;
+ }
+ 

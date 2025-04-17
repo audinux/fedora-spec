@@ -1,0 +1,13 @@
+Index: qarecord-0.5.0/src/translations/qarecord_sv.ts
+===================================================================
+--- qarecord-0.5.0.orig/src/translations/qarecord_sv.ts	2009-08-31 13:25:33.000000000 +0200
++++ qarecord-0.5.0/src/translations/qarecord_sv.ts	2009-08-31 13:27:07.000000000 +0200
+@@ -110,7 +110,7 @@
+     <message>
+         <location filename="../mainwindow.cpp" line="145"/>
+         <source>Current:</source>
+-        <translation>Ström:</translation>
++        <translation>Nu:</translation>
+     </message>
+     <message>
+         <location filename="../mainwindow.cpp" line="357"/>
