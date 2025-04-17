@@ -1032,7 +1032,8 @@ https://github.com/hollance/bombaz
 https://github.com/thunderox/stegosaurus
 https://github.com/brummer10/NeuralRack
 https://github.com/trummerschlunk/PodcastPlugins
-https://github.com/juzzlin/Noteahead"
+https://github.com/juzzlin/Noteahead
+https://salsa.debian.org/multimedia-team/qmidiroute"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
