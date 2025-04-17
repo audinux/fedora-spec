@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 64d0b2f71e66e83adbe3d6dd10a913e27aca1536
-%global gittag0 2.2.6
+%global commit0 53b3e5da632926415c8370adab7fe9c6038438b9
+%global gittag0 2.2.7
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-squinktronix-plug1
-Version: 2.2.6
+Version: 2.2.7
 Release: 2%{?dist}
 Summary: squinktronix-plug1 plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r squinktronix-plug1_plugin/dist/squinktronix-plug1/* %{buildroot}%{_libexec
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.6-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.7-1
 - initial specfile
