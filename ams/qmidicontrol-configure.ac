@@ -83,7 +83,7 @@ ac_qtversion=qt5
 dnl endo of qt version test
 
 dnl check for qtchooser
-QTCHOOSER=qtchooser
+AC_SUBST(QTCHOOSER, qtchooser)
 
 dnl check for moc
 AC_SUBST(MOC, moc-qt5)
