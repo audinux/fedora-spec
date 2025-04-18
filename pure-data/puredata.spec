@@ -7,8 +7,8 @@
 # Pure Data vanilla build
 #
 
-%define pdver 0.55-0
-%define pkgver 0.55.0
+%define pdver 0.55-2
+%define pkgver 0.55.2
 
 Summary: Pure Data
 Name: puredata
@@ -45,7 +45,6 @@ Patch4:  pd-patch-helpbrowser_puredata-doc.patch
 Patch5:  pd-patch-etc-gui-plugins.patch
 Patch6:  pd-patch-fixmanpage.patch
 Patch7:  pd-patch-privacy.patch
-Patch8:  export.patch
 Patch9:  libpd_example.patch
 Patch10: libpd_visibility.patch
 Patch11: exit-code.patch
@@ -172,14 +171,10 @@ and pdreceive, for sending and receiving FUDI over the net.
 %patch 6 -p1
 # pd-patch-privacy.patch
 %patch 7 -p1
-# export.patch
-%patch 8 -p1
 # libpd_example.patch
 %patch 9 -p1
 # libpd_visibility.patch
 %patch 10 -p1
-# exit_code.patch
-%patch 11 -p1
 
 # fix hardwired lib dir in startup file (why the heck is this hardwired?)
 sed -i -e "s|\"/lib|\"/%{_lib}|g" src/s_main.c
@@ -227,13 +222,13 @@ install -m 644 %{SOURCE13} %{buildroot}%{_mandir}/man1/pd-gui.1
 install -m 644 %{SOURCE15} %{buildroot}%{_mandir}/man1/pd-gui-plugin.1
 # REAMDE for plugins
 install -m 644 %{SOURCE16} %{buildroot}%{_sysconfdir}/pd/plugins-enabled/README
-# documentation, intro
-mkdir -p %{buildroot}%{_datadir}/puredata-gui
-install -m 644 doc/1.manual/1.introduction.txt %{buildroot}%{_datadir}/puredata-gui
+## documentation, intro
+#mkdir -p %{buildroot}%{_datadir}/puredata-gui
+#install -m 644 doc/1.manual/1.introduction.txt %{buildroot}%{_datadir}/puredata-gui
 # mime stuff
 mkdir -p %{buildroot}%{_datadir}/mime/packages/
 install -m 644 %{SOURCE17} %{buildroot}%{_datadir}/mime/packages/puredata.xml
-# deken cpi
+# deken cpu
 mkdir -p %{buildroot}%{_datadir}/puredata/fedora/
 install -m 755 %{SOURCE18} %{buildroot}%{_datadir}/puredata/fedora/
 
@@ -308,7 +303,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.puredata.pd-gui.d
 %{_datadir}/icons/hicolor/scalable/apps/puredata.svg
 %{_mandir}/man1/pd-gui*
 %{_sysconfdir}/pd/plugins-enabled
-%{_datadir}/puredata-gui
+#{_datadir}/puredata-gui
 %{_datadir}/mime/packages/puredata.xml
 %{_metainfodir}/org.puredata.pd-gui.metainfo.xml
 %{_datadir}/puredata/fedora/*
@@ -320,6 +315,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.puredata.pd-gui.d
 %{_mandir}/man1/pdsend.1.gz
 
 %changelog
+* Fri Apr 18 2025 Yann Collette <ycollette.nospam@free.fr> - 0.55.2-4
+- update to 0.55.2-4
+
 * Sun Aug 11 2024 Yann Collette <ycollette.nospam@free.fr> - 0.55.0-4
 - update to 0.55.0-4
 

@@ -11,11 +11,9 @@ Last-Update: 2021-12-21
  src/Makefile.am | 4 ++++
  1 file changed, 4 insertions(+)
 
-diff --git a/src/Makefile.am b/src/Makefile.am
-index 841b24a..cd18225 100644
---- a/src/Makefile.am
-+++ b/src/Makefile.am
-@@ -24,6 +24,10 @@ libpdinclude_HEADERS =
+--- puredata.orig/src/Makefile.am
++++ puredata/src/Makefile.am
+@@ -24,6 +24,10 @@
  
  libpdbin_PROGRAMS =
  

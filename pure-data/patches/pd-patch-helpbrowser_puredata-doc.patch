@@ -13,11 +13,9 @@ Forwarded: not-needed
  tcl/pd_menucommands.tcl | 14 ++++++++++++++
  1 file changed, 14 insertions(+)
 
-diff --git a/tcl/pd_menucommands.tcl b/tcl/pd_menucommands.tcl
-index 954986f..eb76d85 100644
---- a/tcl/pd_menucommands.tcl
-+++ b/tcl/pd_menucommands.tcl
-@@ -232,10 +232,23 @@ proc ::pd_menucommands::set_filenewdir {mytoplevel} {
+--- puredata.orig/tcl/pd_menucommands.tcl
++++ puredata/tcl/pd_menucommands.tcl
+@@ -233,10 +233,22 @@
      }
  }
  
@@ -31,17 +29,16 @@ index 954986f..eb76d85 100644
 +  }
 +}
 +
-+
  # parse the textfile for the About Pd page
  proc ::pd_menucommands::menu_aboutpd {} {
      set versionstring "Pd $::PD_MAJOR_VERSION.$::PD_MINOR_VERSION.$::PD_BUGFIX_VERSION$::PD_TEST_VERSION"
-     set filename "$::sys_libdir/doc/1.manual/1.introduction.txt"
-+    set filename "/usr/share/puredata-gui/1.introduction.txt"
+     set filename [file join $::sys_guidir about.txt]
++    set filename "/usr/share/puredata-gui/about.txt"
 +    if {![check_puredatadoc $filename]} return
      if {![file exists $filename]} {
          ::pdwindow::error [_ "ignoring '%s': doesn't exist" $filename]
          ::pdwindow::error "\n"
-@@ -295,6 +308,7 @@ proc ::pd_menucommands::menu_doc_open {dir basename} {
+@@ -296,6 +308,7 @@
  
  # open HTML docs from the menu using the OS-default HTML viewer
  proc ::pd_menucommands::menu_openfile {filename} {

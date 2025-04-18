@@ -11,10 +11,8 @@ Last-Update: 2023-07-05
  libpd/test_libpd/Makefile | 79 ++++++-----------------------------------------
  1 file changed, 10 insertions(+), 69 deletions(-)
 
-diff --git a/libpd/test_libpd/Makefile b/libpd/test_libpd/Makefile
-index 6cb5bce..81453af 100644
---- a/libpd/test_libpd/Makefile
-+++ b/libpd/test_libpd/Makefile
+--- puredata.orig/libpd/test_libpd/Makefile
++++ puredata/libpd/test_libpd/Makefile
 @@ -1,86 +1,27 @@
 -# This is a makefile to build "test_libpd".  It assumes that libpd is in the 
 -# source directory "../" and that libpd is already built.
