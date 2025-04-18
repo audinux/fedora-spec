@@ -187,10 +187,8 @@ sed -i -e "s|/usr/local/lib|%{_libdir}|g" src/s_path.c
 
 %set_build_flags
 
-DEKEN_CPU=`%{SOURCE18} uname -m`
-
-# For f40 / rawhide
-export CFLAGS="-Wno-incompatible-pointer-types $CFLAGS"
+MYCPU=`uname -m`
+DEKEN_CPU=`%{SOURCE18} $MYCPU`
 
 # now do the build, use "puredata" as the program name
 ./autogen.sh
