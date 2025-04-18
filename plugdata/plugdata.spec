@@ -45,7 +45,6 @@ BuildRequires: libvorbis-devel
 BuildRequires: opus-devel
 BuildRequires: fluidsynth-devel
 BuildRequires: mesa-libGLU-devel
-BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: desktop-file-utils
 
 %description
