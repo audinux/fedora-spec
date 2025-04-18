@@ -1,0 +1,25 @@
+From 9133992f537f56709ca01142f7f097b4cd789fe8 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Fri, 18 Apr 2025 10:02:24 +0200
+Subject: [PATCH] fix format
+
+---
+ extra/fiddle~/fiddle~.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/extra/fiddle~/fiddle~.c b/extra/fiddle~/fiddle~.c
+index 5001656..2ed579b 100644
+--- a/extra/fiddle~/fiddle~.c
++++ b/extra/fiddle~/fiddle~.c
+@@ -42,7 +42,7 @@
+ #else
+ #define flog log
+ #define fexp exp
+-#define fsqrt sqrt
++#define fsqrt(X) sqrtf((float)X)
+ #endif
+ 
+ char fiddle_version[] = "fiddle version 1.1 TEST4";
+-- 
+2.49.0
+

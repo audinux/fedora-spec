@@ -47,7 +47,7 @@ Patch6:  pd-patch-fixmanpage.patch
 Patch7:  pd-patch-privacy.patch
 Patch9:  libpd_example.patch
 Patch10: libpd_visibility.patch
-Patch11: exit-code.patch
+Patch11: pd-patch-0001-fix-format.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: autoconf
@@ -175,6 +175,8 @@ and pdreceive, for sending and receiving FUDI over the net.
 %patch 9 -p1
 # libpd_visibility.patch
 %patch 10 -p1
+# fix format
+%patch 11 -p1
 
 # fix hardwired lib dir in startup file (why the heck is this hardwired?)
 sed -i -e "s|\"/lib|\"/%{_lib}|g" src/s_main.c
