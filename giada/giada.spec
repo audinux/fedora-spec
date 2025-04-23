@@ -6,7 +6,7 @@
 %global app_id com.giadamusic.Giada
 
 Name: giada
-Version: 1.1.1
+Version: 1.2.0
 Release: 1%{?dist}
 Summary: Your hardcore loop machine
 License: GPL-3.0-or-later AND MIT AND BSD-2-Clause
@@ -32,7 +32,7 @@ ExclusiveArch: x86_64 aarch64
 # proprietary license.)
 
 # Usage: ./giada-source.sh <TAG>
-#        ./giada-source.sh 1.1.1
+#        ./giada-source.sh 1.2.0
 
 Source0: giada.tar.gz
 Source1: giada-source.sh
@@ -61,6 +61,7 @@ BuildRequires: pkgconfig(freetype2)
 BuildRequires: cmake(nlohmann_json)
 BuildRequires: libcurl-devel
 BuildRequires: webkit2gtk3-devel
+BuildRequires: libsamplerate-devel
 BuildRequires: fltk-devel
 BuildRequires: fltk-fluid
 BuildRequires: json-static
@@ -123,6 +124,9 @@ appstreamcli validate --no-net \
 %{_datadir}/icons/hicolor/scalable/apps/%{app_id}.svg
 
 %changelog
+* Mon Apr 21 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
+- update to 1.2.0-1
+
 * Fri Feb 07 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
 - update to 1.1.1-1
 
