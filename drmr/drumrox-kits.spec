@@ -3,10 +3,8 @@
 # Type: LV2, Presets
 # Category: Synthesizer
 
-%global commit0 ea5329aec334d417d6838bf96f905b93475eec4f
-
 Name: drumrox-kits
-Version: 2.0.0
+Version: 2.0.1
 Release: 6%{?dist}
 Summary: A set of drumrox drum kits
 License: GPL-3.0-or-later
@@ -182,14 +180,6 @@ Requires: license-%{name}
 %description -n %{name}-MTI_AO_1
 MTI AO-1 drumkit for %{name}
 
-%package -n %{name}-The_Almighty_Sound_Drumkit
-Summary:  The Almighty Sound drumkit for %{name}
-License:  GPL-3.0-or-later
-Requires: license-%{name}
-
-%description -n %{name}-The_Almighty_Sound_Drumkit
-The Almighty Sound drumkit for %{name}
-
 %package -n %{name}-ARP_Axxe
 Summary:  The ARP Axxe drumkit for %{name}
 License:  GPL-3.0-or-later
@@ -245,7 +235,6 @@ install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/SoundMaster_SR-88/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Tamil/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/TamilMultiLayered/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Technics_PCM_DP50/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/The_Almighty_Sound_Drumkit/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Wooden/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ARP_Axxe/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Drumulator/
@@ -270,7 +259,6 @@ cp -ra SoundMaster\ SR-88/* %{buildroot}/%{_datadir}/drumrox-kits/SoundMaster_SR
 cp -ra Tamil/* %{buildroot}/%{_datadir}/drumrox-kits/Tamil/
 cp -ra TamilMultiLayered/* %{buildroot}/%{_datadir}/drumrox-kits/TamilMultiLayered/
 cp -ra Technics\ PCM\ DP50/* %{buildroot}/%{_datadir}/drumrox-kits/Technics_PCM_DP50/
-cp -ra The\ Almighty\ Sound\ Drumkit/* %{buildroot}/%{_datadir}/drumrox-kits/The_Almighty_Sound_Drumkit/
 cp -ra Wooden/* %{buildroot}/%{_datadir}/drumrox-kits/Wooden/
 cp -ra ARP\ Axxe/* %{buildroot}/%{_datadir}/drumrox-kits/ARP_Axxe/
 cp -ra Drumulator/* %{buildroot}/%{_datadir}/drumrox-kits/Drumulator/
@@ -338,9 +326,6 @@ cp -ra Copyc4t\ El\ Nacho\ Drumkit/* %{buildroot}/%{_datadir}/drumrox-kits/Copyc
 %files -n %{name}-MTI_AO_1
 %{_datadir}/drumrox-kits/MTI_AO_1/*
 
-%files -n %{name}-The_Almighty_Sound_Drumkit
-%{_datadir}/drumrox-kits/The_Almighty_Sound_Drumkit/*
-
 %files -n %{name}-ARP_Axxe
 %{_datadir}/drumrox-kits/ARP_Axxe/*
 
@@ -354,6 +339,9 @@ cp -ra Copyc4t\ El\ Nacho\ Drumkit/* %{buildroot}/%{_datadir}/drumrox-kits/Copyc
 %{_datadir}/drumrox-kits/Copyc4tElNacho/*
 
 %changelog
+* Sun Apr 20 2025 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-6
+- update to 2.0.1-6
+
 * Sun Mar 30 2025 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-6
 - update to 2.0.0-6
 
