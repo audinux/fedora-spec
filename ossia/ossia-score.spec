@@ -12,7 +12,7 @@
 # add https://github.com/ossia/score-user-library
 
 Name: ossia-score
-Version: 3.4.1
+Version: 3.5.1
 Release: 1%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL: https://github.com/OSSIA/score
@@ -115,12 +115,14 @@ cp -r score-examples-%{commit0_example}/* %{buildroot}/%{_datadir}/ossia/example
 %doc INSTALL.md README.md AUTHORS
 %license LICENSE.txt
 %{_bindir}/*
-%{_libdir}/libsnmallocshim*
 
 %files examples
 %{_datadir}/ossia/examples/*
 
 %changelog
+* Sat Apr 19 2025 Yann Collette <ycollette.nospam@free.fr> - 3.5.1-2
+- update to version 3.5.1-2
+
 * Thu Jan 16 2025 Yann Collette <ycollette.nospam@free.fr> - 3.4.1-2
 - update to version 3.4.1-2
 
