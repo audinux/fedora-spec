@@ -201,6 +201,12 @@ Add missing zita packaes:
 - zita-audiotools-1.3.0.tar.bz2
 - zita-jacktools-1.7.1.tar.bz2
 
+Jack-Audio link fix:
+```
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+```
+
 ## Python package
 
 basicpitch from spotify -> https://github.com/spotify/basic-pitch
