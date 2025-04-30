@@ -3,7 +3,7 @@
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer, Effect
 
-%global gittag0 2021-03-15
+%global commit0 43330739392197cd1b3b0df23b194879ddf68f23
 
 Name: DISTRHO-Ports
 Version: 1.1.0
@@ -16,7 +16,11 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/DISTRHO/DISTRHO-Ports/archive/%{gittag0}.tar.gz#/%{name}-%{gittag0}.tar.gz
+# Usage: ./distrho-ports-source.sh <tag>
+#        ./distrho-ports-source.sh master
+
+Source0: DISTRHO-Ports.tar.gz
+Source1: distrho-ports-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: meson
@@ -42,15 +46,18 @@ A set of LV2 plugins
 - ...
 
 %prep
-%autosetup -n %{name}-%{gittag0}
+%autosetup -n %{name}
 
-sed -i -e "/-Wl,--strip-all/d" meson.build
+sed -i -e "s/,--strip-all//g" meson.build
 
 %build
 
 %set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+export CFLAGS="-fpermissive $CFLAGS"
+export CXXFLAGS="-fpermissive $CXXFLAGS"
 
-%meson -Dbuild-lv2=true -Dbuild-vst3=true
+%meson --debug -Dbuild-lv2=true -Dbuild-vst3=true
 %meson_build
 
 %install
