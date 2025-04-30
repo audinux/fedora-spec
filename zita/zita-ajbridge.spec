@@ -36,25 +36,26 @@ client running near the end of the cycle.
 %prep
 %autosetup
 
-%build
-rm -rf $RPM_BUILD_ROOT
-
 # Force Fedora's optflags
 sed -i 's|-O2|%{optflags}|' source/Makefile
+
+%build
+
+%set_build_flags
+
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 pushd source
 %make_build
 popd
 
 %install
+
 pushd source
-mkdir -p $RPM_BUILD_ROOT%{_bindir}
-mkdir -p $RPM_BUILD_ROOT%{_mandir}/man1
-%make_install
+%make_install PREFIX=%{_prefix}
 popd
 
 %files
-%defattr(-,root,root,-)
 %doc AUTHORS README*
 %{_bindir}/zita-*
 %{_mandir}/*/*

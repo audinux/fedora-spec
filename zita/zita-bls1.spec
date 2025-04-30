@@ -39,6 +39,10 @@ sed -i 's|-O2|%{optflags}|' source/Makefile
 
 %build
 
+%set_build_flags
+
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
 pushd source
 %make_build PREFIX=%{_prefix}
 popd
