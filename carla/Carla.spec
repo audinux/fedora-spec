@@ -9,12 +9,12 @@
 
 Name: Carla-mao
 Version: 2.5.9
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Audio plugin host
 Epoch: 1
 License: GPLv2+ and BSD and Boost and ISC and MIT and zlib
 URL: https://github.com/falkTX/Carla
-ExclusiveArch: x86_64 
+ExclusiveArch: x86_64
 
 Source0: https://github.com/falkTX/Carla/archive/v%{version}.tar.gz#/Carla-%{version}.tar.gz
 Patch0: Carla-libdir.patch
@@ -50,11 +50,11 @@ BuildRequires: libappstream-glib
 BuildRequires: desktop-file-utils
 
 Requires: python3-qt5
-Requires: python3-qt5-webkit
 Requires: python3-pyliblo
 Requires: python3-tornado
 Requires: hicolor-icon-theme
 Requires: shared-mime-info
+Requires: a2jmidid
 Requires: wine-core
 
 Provides: Carla-mao = %{version}
@@ -212,6 +212,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 %{_libdir}/pkgconfig/%{pname}-host-plugin.pc
 
 %changelog
+* Wed Apr 30 2025 Yann Collette <ycollette.nospam@free.fr> - 1:2.5.9-4
+- Update to 2.5.9-4 - build without python3-qt5-webkit
+
 * Sun Sep 22 2024 Yann Collette <ycollette.nospam@free.fr> - 1:2.5.9-3
 - Update to 2.5.9-3
 
