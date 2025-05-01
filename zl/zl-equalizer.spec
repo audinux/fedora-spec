@@ -3,8 +3,10 @@
 # Type: LV2, VST3, Plugin
 # Category: Effect
 
+%global toolchain clang
+
 Name: zl-equalizer
-Version: 0.6.1
+Version: 0.6.2
 Release: 2%{?dist}
 Summary: Equalizer plugin
 License: GPL-3.0-only
@@ -15,12 +17,12 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./zl-source.sh <project> <tag>
-# ./zl-source.sh ZLEqualizer 0.6.1
+# ./zl-source.sh ZLEqualizer 0.6.2
 
 Source0: ZLEqualizer.tar.gz
 Source1: zl-source.sh
 
-BuildRequires: gcc gcc-c++
+BuildRequires: clang
 BuildRequires: cmake
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-cursor-devel
@@ -38,6 +40,8 @@ BuildRequires: alsa-lib-devel
 BuildRequires: boost-devel
 BuildRequires: libatomic
 BuildRequires: chrpath
+
+Requires: license-%{name}
 
 %description
 ZLEqualizer is an equalizer plugin.
@@ -72,20 +76,26 @@ sed -i -e "s/ZL Equalizer/ZL_Equalizer/g" CMakeLists.txt
 
 %build
 
-%cmake
+%cmake -DKFR_ENABLE_DFT=ON
 %cmake_build
 
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
+install -m 755 -d %{buildroot}%{_bindir}/
 
 cp -ra %{__cmake_builddir}/ZLEqualizer_artefacts/VST3/* %{buildroot}%{_libdir}/vst3/
 cp -ra %{__cmake_builddir}/ZLEqualizer_artefacts/LV2/* %{buildroot}%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/ZLEqualizer_artefacts/Standalone/* %{buildroot}%{_bindir}/
 
 # Cleanup rpath
 chrpath --delete `find %{buildroot}%{_libdir}/vst3/ -name "*.so"`
 chrpath --delete `find %{buildroot}%{_libdir}/lv2/ -name "*.so"`
+chrpath --delete %{buildroot}%{_bindir}/ZL_Equalizer
+
+%files
+%{_bindir}/*
 
 %files -n license-%{name}
 %doc README.md CHANGELOG.md
@@ -98,6 +108,9 @@ chrpath --delete `find %{buildroot}%{_libdir}/lv2/ -name "*.so"`
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Apr 30 2025 Yann Collette <ycollette.nospam@free.fr> - 0.6.2-2
+- update to 0.6.2-2
+
 * Tue Apr 08 2025 Yann Collette <ycollette.nospam@free.fr> - 0.6.1-2
 - update to 0.6.1-2
 
