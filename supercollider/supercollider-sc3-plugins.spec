@@ -41,6 +41,10 @@ sed -i -e "s/lib\/SuperCollider/%{_lib}\/SuperCollider/g" source/CMakeLists.txt
 
 %build
 
+%set_build_flags
+
+export CXXFLAGS="-include cstdint $CXXFLAGS"
+
 %cmake -DSC_PATH=/usr/include/SuperCollider -DSUPERNOVA=ON
 
 %cmake_build

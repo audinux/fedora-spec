@@ -45,12 +45,15 @@ BuildRequires: qt5-qtwebsockets-devel
 BuildRequires: qt5-qtdeclarative-devel
 BuildRequires: yaml-cpp03-devel
 BuildRequires: cwiid-devel
+BuildRequires: portaudio-devel
 # needed because emacs needs alternatives to be installed
 BuildRequires: chkconfig
 # for udev
 BuildRequires: systemd-devel
 BuildRequires: libatomic
 BuildRequires: boost-devel
+BuildRequires: boost-test
+BuildRequires: boost-static
 BuildRequires: chrpath
 BuildRequires: desktop-file-utils
 
@@ -99,21 +102,14 @@ SuperCollider support for the Vim text editor.
 sed -i -e "s/SET(CMAKE_INSTALL_RPATH/#SET(CMAKE_INSTALL_RPATH/g" editors/sc-ide/CMakeLists.txt
 sed -i -e "s/SET(CMAKE_INSTALL_RPATH/#SET(CMAKE_INSTALL_RPATH/g" lang/CMakeLists.txt
 
-# Remove boost / test_exec_monitor. With fedora flags, cmake fails to detect test_exec_monitor
-sed -i -e "/add_library(boost_test_exec_monitor_lib SHARED IMPORTED)/d" CMakeLists.txt
-sed -i -e "s/test_exec_monitor//g" CMakeLists.txt
-sed -i -e "280,281d" CMakeLists.txt
-
-sed -i -e "s/typedef struct SNDFILE_tag SNDFILE/typedef struct sf_private_tag SNDFILE/g" include/plugin_interface/SC_SndBuf.h
-
 %build
 # remove all git directories
 find . -type d -name .git -printf "\"%h/%f\"\n" | xargs rm -rf
 
 # -DSYSTEM_BOOST=ON
-%cmake -DCMAKE_C_FLAGS="%{optflags}" \
-       -DCMAKE_CXX_FLAGS="-std=c++11 %{optflags}" \
-       -DCMAKE_BUILD_TYPE=RELEASE \
+%cmake -DCMAKE_BUILD_TYPE=RELEASE \
+       -DSYSTEM_BOOST=ON \
+       -DENABLE_TESTSUITE=OFF \
 %ifarch x86_64
        -DLIB_SUFFIX="64" \
 %endif
@@ -166,8 +162,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/SuperColliderIDE.desk
 %{_datadir}/icons/*
 # scsynth
 %{_bindir}/scsynth
-%{_libdir}/SuperCollider/
-%dir %{_libdir}/SuperCollider/plugins
+%{_libdir}/SuperCollider/plugins/*
 %ifnarch %{arm}
 # supernova
 %{_bindir}/supernova
