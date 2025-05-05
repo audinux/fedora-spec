@@ -4,7 +4,7 @@
 # Category: Tool
 
 Name: splash
-Version: 0.10.20
+Version: 0.11.0
 Release: 1%{?dist}
 Summary: Modular video-mapping software
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source-splash.sh <tag>
-#        ./source-splash.sh 0.10.20
+#        ./source-splash.sh 0.11.0
 
 Source0: splash.tar.gz
 Source1: source-splash.sh
@@ -93,6 +93,9 @@ mv %{buildroot}/%{_datadir}/fonts/*.ttf %{buildroot}/%{_datadir}/fonts/%{name}/
 %{_datadir}/%{name}/*
 
 %changelog
+* Sun May 04 2025 Yann Collette <ycollette.nospam@free.fr> - 0.11.0-1
+- update to 0.11.0-1
+
 * Tue Nov 05 2024 Yann Collette <ycollette.nospam@free.fr> - 0.10.20-1
 - update to 0.10.20-1
 
