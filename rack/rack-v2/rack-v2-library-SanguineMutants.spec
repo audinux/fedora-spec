@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 7247f3923dcc8d9770c6f35b4ce3dab0843d06e7
-%global gittag0 2.6.5
+%global commit0 ca37976c6190363ecac16ca4fefc3322c9fd5e62
+%global gittag0 2.6.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SanguineMutants
-Version: 2.6.5
+Version: 2.6.6
 Release: 2%{?dist}
 Summary: SanguineMutants plugin for Rack
 License: GPL-2.0-or-later
@@ -29,7 +29,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/Bloodbat/SanguineMutants/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: SanguineMutants.tar.gz
 Source2: SanguineMutants_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -154,5 +154,5 @@ cp -r SanguineMutants_plugin/dist/SanguineMutants/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.6-1
 - initial specfile

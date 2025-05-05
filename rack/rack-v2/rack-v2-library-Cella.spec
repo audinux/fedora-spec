@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 26139a57101b2c7df8b98b649a7f7d107fb1f625
-%global gittag0 2.8.0
+%global commit0 c1f5613aba067a42928c3d464bc31395441953ec
+%global gittag0 2.8.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Cella
-Version: 2.8.0
+Version: 2.8.1
 Release: 2%{?dist}
 Summary: Cella plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Cella_plugin/dist/Cella/* %{buildroot}%{_libexecdir}/Rack2/plugins/Cella/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.8.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.8.1-1
 - initial specfile
