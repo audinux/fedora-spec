@@ -201,6 +201,10 @@ Add missing zita packaes:
 - zita-audiotools-1.3.0.tar.bz2
 - zita-jacktools-1.7.1.tar.bz2
 
+Specmatch requires some python modules:
+- nothing provides python3.12dist(pydub) needed by specmatch-0.10.0-1.fc40.noarch from copr:copr.fedorainfracloud.org:ycollet:audinux
+- nothing provides python3.12dist(resampy) needed by specmatch-0.10.0-1.fc40.noarch from copr:copr.fedorainfracloud.org:ycollet:audinux
+
 Jack-Audio link fix:
 ```
 %set_build_flags
