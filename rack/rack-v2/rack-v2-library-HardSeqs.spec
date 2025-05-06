@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 2b633ff42aadf35f8d4f638d5df709de67bf5ceb
-%global gittag0 2.1.1
+%global commit0 82b5d6faf2a5ed457e027c91fce1fc5eb19217be
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-VsWorld
-Version: 2.1.1
+Name:    rack-v2-HardSeqs
+Version: 2.0.0
 Release: 2%{?dist}
-Summary: VsWorld plugin for Rack
+Summary: HardSeqs plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Synismusist/VsWorld
+URL:     https://github.com/regular-dev/hardseqs
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,8 +29,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/Synismusist/VsWorld/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: VsWorld_plugin.json
+Source1: https://github.com/regular-dev/hardseqs/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: HardSeqs_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -61,8 +61,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-VsWorld plugin for Rack.
-Dynamic just intonation tuner
+HardSeqs plugin for Rack.
+Hard Sequencer
 
 %prep
 %setup -n Rack
@@ -135,24 +135,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir VsWorld_plugin
-tar xvfz %{SOURCE1} --directory=VsWorld_plugin --strip-components=1
+mkdir HardSeqs_plugin
+tar xvfz %{SOURCE1} --directory=HardSeqs_plugin --strip-components=1
 
-cp -n %{SOURCE2} VsWorld_plugin/plugin.json || true
+cp -n %{SOURCE2} HardSeqs_plugin/plugin.json || true
 
 %build
 
-cd VsWorld_plugin
+cd HardSeqs_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/VsWorld/
-cp -r VsWorld_plugin/dist/VsWorld/* %{buildroot}%{_libexecdir}/Rack2/plugins/VsWorld/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/HardSeqs/
+cp -r HardSeqs_plugin/dist/HardSeqs/* %{buildroot}%{_libexecdir}/Rack2/plugins/HardSeqs/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

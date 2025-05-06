@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 d8ffda55c59e2b40091c6437b115d114287073c1
-%global gittag0 2.0.0
+%global commit0 4385a3f0c14a5993bf37f9425934b1bb2212436c
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-nullpath
-Version: 2.0.0
+Version: 2.0.1
 Release: 2%{?dist}
 Summary: nullpath plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r nullpath_plugin/dist/nullpath/* %{buildroot}%{_libexecdir}/Rack2/plugins/n
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile
