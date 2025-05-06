@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 c5b1445681168ffe49d8081543dd2ab40e3c0289
+%global commit0 3d2ee4174e9c430fa6903e23b7fcec4e372f2dad
 
 Name: dm-vibrato
-Version: 0.0.4
+Version: 0.0.5
 Release: 1%{?dist}
 Summary: A mono vibrato effect written in Rust
 URL: https://github.com/davemollen/dm-Vibrato
@@ -79,10 +79,10 @@ export CARGO_HOME="$CWD/cargo"
 # source cargo/env
 
 %ifarch x86_64
-rustup-init --no-modify-path -y --default-toolchain 1.76.0-x86_64-unknown-linux-gnu
+rustup-init --no-modify-path -y --default-toolchain nightly-x86_64-unknown-linux-gnu
 %endif
 %ifarch aarch64
-rustup-init --no-modify-path -y --default-toolchain 1.76.0-aarch64-unknown-linux-gnu
+rustup-init --no-modify-path -y --default-toolchain nightly-aarch64-unknown-linux-gnu
 %endif
 source cargo/env
 
@@ -122,5 +122,8 @@ cp -vfr dm-Vibrato.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Tue May 06 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.5-1
+- update to 0.0.5-1
+
 * Thu Oct 03 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.4-1
 - Initial spec file

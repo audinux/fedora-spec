@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 76fa750a16bf07a1ed6e551736a138bbabbe067c
+%global commit0 6a5dced3c8fb7d3658ba0999c0449daa5622632a
 
 Name: dm-Whammy
-Version: 0.0.5
+Version: 0.0.6
 Release: 1%{?dist}
 Summary: A mono pitchshift effect written in Rust inspired by the DigiTech Whammy
 URL: https://github.com/davemollen/dm-Whammy
@@ -79,10 +79,10 @@ export CARGO_HOME="$CWD/cargo"
 # source cargo/env
 
 %ifarch x86_64
-rustup-init --no-modify-path -y --default-toolchain 1.76.0-x86_64-unknown-linux-gnu
+rustup-init --no-modify-path -y --default-toolchain nightly-x86_64-unknown-linux-gnu
 %endif
 %ifarch aarch64
-rustup-init --no-modify-path -y --default-toolchain 1.76.0-aarch64-unknown-linux-gnu
+rustup-init --no-modify-path -y --default-toolchain nightly-aarch64-unknown-linux-gnu
 %endif
 source cargo/env
 
@@ -122,5 +122,8 @@ cp -vfr dm-Whammy.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Tue May 06 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.6-1
+- update to 0.0.6-1
+
 * Wed Oct 02 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.5-1
 - Initial spec file

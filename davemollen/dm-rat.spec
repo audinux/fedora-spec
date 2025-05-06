@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 5edc7daea8542a490c150dc963d5f7304f699f1a
+%global commit0 860cf2dd728e4aba494be6131511024100222d73
 
 Name: dm-rat
-Version: 0.0.7
+Version: 0.0.8
 Release: 1%{?dist}
 Summary: A distortion effect written in Rust modeled after the ProCo Rat
 URL: https://github.com/davemollen/dm-Rat
@@ -122,6 +122,9 @@ cp -vfr dm-Rat.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Tue May 06 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.8-1
+- update to 0.0.8-1
+
 * Wed Oct 09 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.7-1
 - update to 0.0.7-1
 

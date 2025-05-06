@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 d1b04d06337f6f1896ae0bb56498ff05b9889c12
+%global commit0 c5d3dcdf57244d55ed06678ca8f20a947b5a0497
 
 Name: dm-repeat
-Version: 0.0.5
+Version: 0.0.6
 Release: 1%{?dist}
 Summary: A multitap delay effect written in Rust
 URL: https://github.com/davemollen/dm-Repeat
@@ -79,10 +79,10 @@ export CARGO_HOME="$CWD/cargo"
 # source cargo/env
 
 %ifarch x86_64
-rustup-init --no-modify-path -y --default-toolchain 1.76.0-x86_64-unknown-linux-gnu
+rustup-init --no-modify-path -y --default-toolchain nightly-x86_64-unknown-linux-gnu
 %endif
 %ifarch aarch64
-rustup-init --no-modify-path -y --default-toolchain 1.76.0-aarch64-unknown-linux-gnu
+rustup-init --no-modify-path -y --default-toolchain nightly-aarch64-unknown-linux-gnu
 %endif
 source cargo/env
 
@@ -122,5 +122,8 @@ cp -vfr dm-Repeat.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Tue May 06 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.6-1
+- update to 0.0.6-1
+
 * Thu Oct 03 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.4-1
 - Initial spec file
