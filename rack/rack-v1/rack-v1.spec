@@ -131,6 +131,7 @@ sed -i -e "s/assert(!err);/\/\/assert(!err);/g" src/system.cpp
 export CFLAGS=
 export CXXFLAGS=
 export LDFLAGS=
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 cd dep
 %if %{use_static_glfw}
