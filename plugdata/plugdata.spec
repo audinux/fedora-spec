@@ -19,6 +19,7 @@ Distribution: Audinux
 
 Source0: PlugData.tar.gz
 Source1: plugdata-source.sh
+Patch0: plugdata-0001-fix-fsqrt-cast.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -75,11 +76,16 @@ Requires: %{name}
 CLAP version of %{name}
 
 %prep
-%autosetup -n PlugData
+%autosetup -p1 -n PlugData
 
 %build
 
-%cmake -DCMAKE_INSTALL_LIBDIR=%{_lib} -DBUILD_SHARED_LIBS=OFF -DENABLE_GEM=ON
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
+%cmake -DCMAKE_INSTALL_LIBDIR=%{_lib} \
+       -DBUILD_SHARED_LIBS=OFF \
+       -DENABLE_GEM=ON
 %cmake_build
 
 %install

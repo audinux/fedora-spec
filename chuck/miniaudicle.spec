@@ -61,6 +61,8 @@ echo "#define GIT_REVISION \"%{version}\"" > git-rev.h
 
 %set_build_flags
 
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
 # build alsa version
 cd src
 

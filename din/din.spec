@@ -65,13 +65,23 @@ sed -i -e "s/__line/__dinline/g" src/line.h
 
 mkdir build_jack
 cd build_jack
-CFLAGS="-D__UNIX_JACK__ $CFLAGS" CXXFLAGS="-D__UNIX_JACK__ $CXXFLAGS" LDFLAGS="-ljack $LDFLAGS" ../configure --prefix=%{_prefix} --libdir=%{_libdir} --program-suffix=-jack
+CFLAGS="-D__UNIX_JACK__ $CFLAGS" CXXFLAGS="-DCONST=const -D__UNIX_JACK__ $CXXFLAGS" LDFLAGS="`pkg-config --libs jack` $LDFLAGS" ../configure --prefix=%{_prefix} --libdir=%{_libdir} --program-suffix=-jack
+
+%if 0%{?fedora} >= 42
+sed -i -e "s/-ltcl8.6/-ltcl/g" src/Makefile
+%endif
+
 %make_build
 
 cd ..
 mkdir build_alsa
 cd build_alsa
-CFLAGS="-D__LINUX_ALSA__ $CFLAGS" CXXFLAGS="-D__LINUX_ALSA__ $CXXFLAGS" ../configure --prefix=%{_prefix} --libdir=%{_libdir}
+CFLAGS="-D__LINUX_ALSA__ $CFLAGS" CXXFLAGS="-DCONST=const -D__LINUX_ALSA__ $CXXFLAGS" ../configure --prefix=%{_prefix} --libdir=%{_libdir}
+
+%if 0%{?fedora} >= 42
+sed -i -e "s/-ltcl8.6/-ltcl/g" src/Makefile
+%endif
+
 %make_build
 cd ..
 
