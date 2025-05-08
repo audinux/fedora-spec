@@ -3,7 +3,9 @@
 # Type: Standalone
 # Category: Tool, Audio
 
-%define pkgver 22.5
+%define _lto_cflags %{nil}
+
+%define pkgver 25.3
 %define tarname snd-%{pkgver}
 %define snd_date "03/07/2022"
 
@@ -11,10 +13,6 @@
 
 # configuration options (note: check later --with-rt)
 %define config_options --prefix=%{_prefix} --with-alsa --with-jack --with-ladspa --with-doc-dir=%{_datadir}/doc/snd-%{pkgver}
-
-# Tag: Editor, Legacy
-# Type: Standalone
-# Category: Audio, Tool
 
 Summary: A sound editor (%{pkgver}, %{snd_date})
 Name: snd
@@ -193,6 +191,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_bindir}/snd-info
 
 %changelog
+* Wed May 07 2025 Yann Collette <ycollette.nospam@free.fr> - 25.3-1
+- update to 25.3-1
+
 * Tue Aug 02 2022 Yann Collette <ycollette.nospam@free.fr> - 22.5-1
 - update to 22.5-1
 
