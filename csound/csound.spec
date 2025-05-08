@@ -13,7 +13,7 @@ Name: csound
 Version: 6.18.1
 Release: 12%{?dist}
 Summary: A sound synthesis language and library
-URL: https://csound.com/index.html
+URL: https://csound.com
 License: LGPLv2+
 
 Source0: https://github.com/csound/csound/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
@@ -25,6 +25,7 @@ Patch3: 0003-use-standard-plugins-path.patch
 Patch4: 0004-fix-naming-conflicts.patch
 Patch5: 0005-OSC-types.patch
 Patch6: 0006-python312.patch
+Patch7: 0007-fix-plugin-template.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -144,6 +145,7 @@ done
 find html/examples -type f -print0 | xargs -0 chmod a-x
 
 %build
+
 %if "%{_libdir}" == "%{_prefix}/lib64"
     %global uselib64 ON
 %else
@@ -159,6 +161,10 @@ JAVA_VAL=OFF
 %if %{JAVA}
 JAVA_VAL=ON
 %endif
+
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
 %cmake -DUSE_LIB64:BOOL=%{uselib64} \
        -DFAIL_MISSING:BOOL=ON \
        -DBUILD=BUILD_PYTHON_INTERFACE:BOOL=ON \
@@ -179,7 +185,8 @@ JAVA_VAL=ON
        -DNEED_PORTTIME:BOOL=OFF \
        -DBUILD_P5GLOVE_OPCODES:BOOL=OFF \
        -DBUILD_WEBSOCKET_OPCODE:BOOL=OFF \
-       -DBUILD_TESTS:BOOL=OFF
+       -DBUILD_TESTS:BOOL=OFF \
+       -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
 
 %cmake_build
 

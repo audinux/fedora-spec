@@ -1,0 +1,25 @@
+From 6aaf44f221a5b18a597c2e01c64578eeefebc0cf Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Thu, 8 May 2025 08:10:36 +0200
+Subject: [PATCH] fix plugin template
+
+---
+ include/plugin.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/plugin.h b/include/plugin.h
+index dcf011e..55e8055 100644
+--- a/include/plugin.h
++++ b/include/plugin.h
+@@ -1002,7 +1002,7 @@ template <std::size_t N> struct InPlug : OPDS {
+   /** check if this opcode runs at perf time
+   */
+   bool is_perf() {
+-      return this->opaddr ? true : false;
++      return this->opadr ? true : false;
+   }
+ 
+ };
+-- 
+2.49.0
+

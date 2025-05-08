@@ -33,7 +33,7 @@ BuildRequires: libX11-devel
 BuildRequires: libXext-devel
 BuildRequires: libwebsockets-devel
 BuildRequires: fluidsynth-devel
-BuildRequires: faust-osclib-devel
+BuildRequires: faust-devel
 BuildRequires: csound-devel
 BuildRequires: lame-devel
 BuildRequires: wiiuse-devel
@@ -47,7 +47,8 @@ Csound plugins which were originally in the main repository, and for new plugins
 %build
 
 %cmake -DBUILD_HDF5_OPCODES=OFF \
-       -DBUILD_TESTS:BOOL=OFF
+       -DBUILD_TESTS:BOOL=OFF \
+       -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
 
 %cmake_build
 
