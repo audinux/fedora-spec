@@ -179,6 +179,8 @@
 | Overdraw                      | https://github.com/unevens/Overdraw |
 | Curvessor                     | https://github.com/unevens/Curvessor |
 | trigger2midi                  | https://github.com/jkbd/trigger2midi |
+| museg^t                       | https://github.com/greynewell/musegpt |
+| regrader                      | https://github.com/igorski/regrader |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -202,8 +204,9 @@ Add missing zita packaes:
 - zita-jacktools-1.7.1.tar.bz2
 
 Specmatch requires some python modules:
-- nothing provides python3.12dist(pydub) needed by specmatch-0.10.0-1.fc40.noarch from copr:copr.fedorainfracloud.org:ycollet:audinux
-- nothing provides python3.12dist(resampy) needed by specmatch-0.10.0-1.fc40.noarch from copr:copr.fedorainfracloud.org:ycollet:audinux
+- audioop-lts: https://github.com/AbstractUmbra/audioop
+- pydup:       https://github.com/jiaaro/pydub/
+- resampy:     https://github.com/bmcfee/resampy
 
 Jack-Audio link fix:
 ```
