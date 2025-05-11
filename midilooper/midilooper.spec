@@ -48,10 +48,10 @@ sed -i -e "/CMAKE_CXX_FLAGS_RELEASE/d" CMakeLists.txt
 
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=maybe-uninitialized//g"`
 export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=maybe-uninitialized//g"`
-export CXXFLAGS="-Wno-incompatible-pointer-types $CXXFLAGS"
 export CFLAGS="-Wno-incompatible-pointer-types $CFLAGS"
 
-%cmake
+%cmake -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
+
 %cmake_build
 
 %install
