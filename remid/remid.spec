@@ -44,7 +44,9 @@ sed -i -e "s|lib/lv2|%{_lib}/lv2|g" src/CMakeLists.txt
 
 %set_build_flags
 
-%cmake -DCMAKE_C_FLAGS="-Wno-implicit-function-declaration $CFLAGS"
+%cmake -DCMAKE_C_FLAGS="-Wno-implicit-function-declaration $CFLAGS" \
+       -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
+
 %cmake_build
 
 %install
