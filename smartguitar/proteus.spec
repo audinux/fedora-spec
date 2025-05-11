@@ -7,7 +7,7 @@
 %define toneversion 1.0
 
 Name: proteus
-Version: 0.1
+Version: 1.2.0
 Release: 2%{?dist}
 Summary: Guitar amp and pedal capture plugin using neural networks.
 License: GPL-2.0-or-later
@@ -18,7 +18,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources:
-# ./source-guitarml.sh Proteus d663c5783b3abc581ee3ab1d65d1552d4c9a9cf9
+# ./source-guitarml.sh Proteus v1.2
 
 Source0: Proteus.tar.gz
 Source1: https://github.com/GuitarML/ToneLibrary/archive/refs/tags/v%{toneversion}.zip#/tonelib-%{toneversion}.zip
@@ -44,7 +44,7 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
 BuildRequires: webkit2gtk3-devel
-BuildRequires: xsimd8-devel
+BuildRequires: xsimd-devel
 BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: chrpath
 BuildRequires: unzip
@@ -93,7 +93,7 @@ Xvfb %{X_display} >& Xvfb.log &
 trap "kill $! || true" EXIT
 sleep 10
 
-%cmake
+%cmake -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
 %cmake_build
 
 %install
@@ -124,6 +124,9 @@ mv ToneLibrary-%{toneversion}/Proteus/* %{buildroot}%{_datadir}/proteus/tones/
 %{_libdir}/lv2/*
 
 %changelog
+* Fri May 09 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2-2
+- update to 1.2-2
+
 * Fri Dec 23 2022 Yann Collette <ycollette.nospam@free.fr> - 0.1-2
 - update to 0.1-2 - add presets
 
