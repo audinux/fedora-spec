@@ -6,7 +6,7 @@
 
 Summary: Old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.
 Name: padthv1
-Version: 1.3.0
+Version: 1.3.1
 Release: 4%{?dist}
 URL: https://sourceforge.net/projects/%{name}
 ExclusiveArch: x86_64 aarch64
@@ -52,7 +52,10 @@ An LV2 plugin of the padthv1 synthesizer
 
 %build
 
-%cmake -DCONFIG_QT6=OFF -DCONFIG_JACK=ON
+%cmake -DCONFIG_QT6=OFF \
+       -DCONFIG_JACK=ON \
+       -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
+
 %cmake_build
 
 %install
@@ -97,6 +100,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.des
 %{_libdir}/lv2/%{name}.lv2/
 
 %changelog
+* Fri May 09 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.1-4
+- update to 1.3.1-4
+
 * Thu Jan 16 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-4
 - update to 1.3.0-4
 
