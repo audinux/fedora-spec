@@ -42,6 +42,10 @@ sed -i -e "/QMAKE_CFLAGS_RELEASE/d" jack-director.pro
 
 %build
 
+%set_build_flags
+export CFLAGS="-Wno-implicit-function-declaration -Wno-incompatible-pointer-types $CFLAGS"
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
 %qmake_qt5
 %make_build
 
