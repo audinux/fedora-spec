@@ -35,7 +35,8 @@ jack_link is a JACK transport timebase prototype bridge to Ableton Link.
 
 %set_build_flags
 export CCFLAGS="-fPIC $CXXFLAGS"
-export LDFLAGS="-fPIC $LDFLAGS"
+export LDFLAGS="-fPIC `pkg-config --libs-only-L jack` $LDFLAGS"
+
 %make_build PREFIX=/usr
 
 %install
