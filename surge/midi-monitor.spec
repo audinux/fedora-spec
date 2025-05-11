@@ -62,7 +62,11 @@ sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \
 
 %build
 
-%cmake -DCMAKE_CXX_FLAGS="-include utility"
+%set_build_flags
+
+export CXXFLAGS="-include utility $CXXFLAGS"
+
+%cmake
 %cmake_build
 
 %install
