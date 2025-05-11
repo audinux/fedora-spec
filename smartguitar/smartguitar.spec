@@ -84,7 +84,7 @@ sleep 10
 
 %set_build_flags
 
-%cmake
+%cmake -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
 %cmake_build
 
 %install
