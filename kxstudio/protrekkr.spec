@@ -48,6 +48,7 @@ sed -i -e "s/-Wno-format -O3/-Wno-format -O3 -fPIC/g" src/extralibs/tinyxml/Make
 
 export CFLAGS=`echo -fPIC $CFLAGS | sed -e "s/-Werror=format-security//g"`
 export CXXFLAGS=`echo -fPIC $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 cd src/extralibs/sdl_draw
 %make_build -f makefile.linux
