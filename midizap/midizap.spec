@@ -22,7 +22,7 @@ Distribution: Audinux
 Source0: https://github.com/agraef/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildReauires: make
+BuildRequires: make
 BuildRequires: emacs
 BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
@@ -55,23 +55,24 @@ sed -i -e "/CFLAGS=/d" Makefile
 
 %build
 
-%%make_build CFLAGS="%{build_cflags}"
+%set_build_flags
+
+export CFLAGS="-Wno-incompatible-pointer-types $CFLAGS"
+
+%make_build
 
 %install
 
-rm -rf %{buildroot}
 %make_install
 
 %files
-%defattr(-,root,root,-)
-%doc LICENSE README.md
+%doc README.md
+%license LICENSE
 %{_bindir}/*
-%{_datadir}/*
 %{_mandir}/*
 %{_sysconfdir}/*
 
 %files emacs
-%defattr(-,root,root,-)
 %{_datadir}/emacs/site-lisp/*
 
 %changelog
