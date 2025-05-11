@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: line
-Version: 0.6.7.4
+Version: 0.6.1
 Release: 1%{?dist}
 Summary: tiny command-line midi sequencer and language for live coding
 License: MIT
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./line-source.sh <TAG>
-#        ./line-source.sh v0.6.7.4
+#        ./line-source.sh v0.6.1
 
 Source0: line.tar.gz
 Source1: line-source.sh
@@ -43,7 +43,13 @@ sed -i -e "s|std::string parserFile = \"../lineparser.lua\";|std::string parserF
 
 %build
 
-%cmake -DRTMIDI_API_JACK=ON -DRTMIDI_API_ALSA=ON
+%set_build_flags
+
+export LDFLAGS="`pkg-config --libs jack` $LDFLAGS"
+
+%cmake -DRTMIDI_API_JACK=ON \
+       -DRTMIDI_API_ALSA=ON
+
 %cmake_build
 
 %install
