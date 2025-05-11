@@ -5,11 +5,11 @@
 
 %global debug_package %{nil}
 
-%global commit0 2eeb7ce2e838c1668e0eeac4eeef9f40e0310c91
+%global commit0 e50235e08845f1cea4d9dc9f33dd5f820c4c69ef
 
 Name: wild-blossom-plugins
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A saturation plugin.
 License: GPL-3.0-or-later
 URL: https://gitlab.com/wild-blossom-audio/wild-blossom-plugins
@@ -60,10 +60,10 @@ export CARGO_HOME="$CWD/cargo"
 # cargo build --release --bin hexosynth_jack
 
 %ifarch x86_64
-rustup-init -y --no-modify-path --default-toolchain nightly-x86_64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain 1.80.0-x86_64-unknown-linux-gnu
 %endif
 %ifarch aarch64
-rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain 1.80.0-aarch64-unknown-linux-gnu
 %endif
 source cargo/env
 
@@ -79,5 +79,8 @@ cp -vfr target/release/libwild_blossom_saturator.so %{buildroot}/%{_libdir}/vst/
 %{_libdir}/vst/*
 
 %changelog
+* Fri May 09 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2
+
 * Wed Feb 26 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
