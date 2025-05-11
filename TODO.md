@@ -181,6 +181,7 @@
 | trigger2midi                  | https://github.com/jkbd/trigger2midi |
 | museg^t                       | https://github.com/greynewell/musegpt |
 | regrader                      | https://github.com/igorski/regrader |
+| StoneMistress                 | https://github.com/NaviCisco/StoneMistress |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -212,6 +213,9 @@ Jack-Audio link fix:
 ```
 %set_build_flags
 export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
+
+       -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
 ```
 
 ## Python package
