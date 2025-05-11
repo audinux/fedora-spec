@@ -23,8 +23,10 @@ Patch4: fix_typos.patch
 Patch5: jamin-gcc10.patch
 Patch6: jamin-spectrum.patch
 Patch7: NEWS.patch
+Patch8: 1006-fix-callback.patch
 
-BuildRequires: gcc make
+BuildRequires: gcc
+BuildRequires: make
 BuildRequires: autoconf
 BuildRequires: gettext
 BuildRequires: intltool
