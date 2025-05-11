@@ -44,6 +44,9 @@ sed -i '/CPP/d' Makefile
 
 %build
 
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
 %make_build
 
 %install
