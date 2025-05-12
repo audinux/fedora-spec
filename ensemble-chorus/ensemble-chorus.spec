@@ -3,6 +3,8 @@
 # Type: Plugin, LV2
 # Category: Audio, Effect
 
+%global commit0 59baeb86b8851f521bc8162e22e3f15061662cc3
+
 Name: ensemble-chorus
 Version: 0.0.1
 Release: 2%{?dist}
@@ -41,13 +43,17 @@ Effect plugin for ensemble-chorus (VST/LV2)
 %autosetup -p1 -n ensemble-chorus
 
 %ifarch x86_64
-  sed -i -e "s/lib\/lv2/lib64\/lv2/g" CMakeLists.txt
-  sed -i -e "s/lib\/vst/lib64\/vst/g" CMakeLists.txt
+sed -i -e "s/lib\/lv2/lib64\/lv2/g" CMakeLists.txt
+sed -i -e "s/lib\/vst/lib64\/vst/g" CMakeLists.txt
 %endif
 
 sed -i -e "s/AudioMidi;//g" resources/desktop/ensemble_chorus.desktop
 
 %build
+
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+export CXXFLAGS="-include cstdint $CXXFLAGS"
 
 %cmake -DCMAKE_INSTALL_LIBDIR=%{_lib} \
        -DLIBEXEC_INSTALL_DIR=%{_libexecdir}
