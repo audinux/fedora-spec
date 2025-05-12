@@ -1,4 +1,4 @@
-# Status: active
+# Status: inactive
 # Tag: Jack
 # Type: Standalone
 # Category: Audio, Tool
@@ -7,7 +7,7 @@ Name: inconcert
 Version: 20140109
 Release: 1%{?dist}
 Summary: Live Tempo Adjustment for the Jack Audio Connection Kit
-URL: https://github.com/llloret/osmid
+URL: https://www.teuton.org/~gabriel/InConcert/
 ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
@@ -45,12 +45,10 @@ ALSA, and therefore only runs on Linux.
 
 %build
 %set_build_flags
-export CXXFLAGS="-std=c++11 $CXXFLAGS"
-%cmake \
-%if 0%{?fedora} >= 38
-       -DCMAKE_CXX_STANDARD=14 \
-%endif
-       -DINCONCERT_RUN_UNIT_TESTS=OFF
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
+%cmake -DINCONCERT_RUN_UNIT_TESTS=OFF \
+       -DCMAKE_CXX_STANDARD=11
 %cmake_build
 
 %install
