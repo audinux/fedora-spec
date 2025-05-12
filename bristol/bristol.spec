@@ -8,10 +8,10 @@ Version: 0.60.11
 Release: 20%{dist}
 Summary: Synthesizer emulator
 License: GPL-2.0-or-later
-URL: http://bristol.sourceforge.net
+URL: https://bristol.sourceforge.net
 ExclusiveArch: x86_64 aarch64
 
-Source0: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0: https://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Source1: %{name}.desktop
 Patch0: bristol-0.60.9-CVE-2010-3351.patch
 Patch1: bristol-0.60.11-fix-build-with-alsa.patch
