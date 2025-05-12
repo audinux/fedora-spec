@@ -73,10 +73,10 @@ export CARGO_HOME="$CWD/cargo"
 # cargo build --release --bin hexosynth_jack
 
 %ifarch x86_64
-rustup-init -y --no-modify-path --default-toolchain nightly-x86_64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain 1.86-x86_64-unknown-linux-gnu
 %endif
 %ifarch aarch64
-rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain 1.86-aarch64-unknown-linux-gnu
 %endif
 source cargo/env
 
