@@ -20,6 +20,7 @@ Distribution: Audinux
 Source0: gearmulator.tar.gz
 Source1: gearmulator-source.sh
 Patch0: gearmulator-0002-remove-static-flags.patch
+Patch1: gearmulator-0001-fix-syntax-errors.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -88,6 +89,9 @@ CLAP version of %{name}
 %autosetup -p1 -n gearmulator
 
 %build
+
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 %cmake \
     -Dgearmulator_BUILD_FX_PLUGIN=ON
