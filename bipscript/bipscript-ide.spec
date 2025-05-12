@@ -40,6 +40,9 @@ cp %{SOURCE1} version.h
 
 %build
 
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
 %qmake_qt5 bipscript-ide.pro
 %make_build
 

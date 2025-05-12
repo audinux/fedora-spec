@@ -18,6 +18,7 @@ Distribution: Audinux
 Source0: https://gitlab.domainepublic.net/bipscript/bipscript/-/archive/v%{version}/bipscript-v%{version}.tar.gz
 Source1: https://gitlab.domainepublic.net/bipscript/examples/-/archive/v0.21/examples-v0.21.tar.gz
 Source2: https://gitlab.domainepublic.net/bipscript/apidocs/-/archive/v0.21/apidocs-v0.21.tar.gz
+Patch0: bipscript-0001-fix-syntax-errors.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -52,7 +53,7 @@ Requires: %{name}
 Examples for %{name}
 
 %prep
-%autosetup -n %{name}-v%{version}
+%autosetup -p1 -n %{name}-v%{version}
 
 mkdir examples && tar xvfz %{SOURCE1} -C examples --strip-components 1
 mkdir apidocs && tar xvfz %{SOURCE2} -C apidocs --strip-components 1
@@ -61,7 +62,7 @@ mkdir apidocs && tar xvfz %{SOURCE2} -C apidocs --strip-components 1
 
 %set_build_flags
 export CFLAGS="$CFLAGS -fPIC"
-#export CXXFLAGS="$CXXFLAGS -include cstdint -include map -fPIC"
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 %cmake
 %cmake_build
