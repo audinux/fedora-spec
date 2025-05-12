@@ -14,7 +14,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# to get source!
+# to get source:
 # ./faustlive-source.sh 2.5.19
 
 Source0: faustlive.tar.gz
@@ -27,6 +27,7 @@ BuildRequires: libsndfile-devel
 BuildRequires: libmicrohttpd-devel
 BuildRequires: qt5-qtbase-devel
 BuildRequires: faust
+BuildRequires: faust-devel
 BuildRequires: faust-osclib-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: libcurl-devel
@@ -70,6 +71,9 @@ export PATH=$PATH:/usr/lib64/llvm16/bin
 %elif 0%{?fedora} >= 41
 export PATH=$PATH:/usr/lib64/llvm17/bin
 %endif
+
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 cd Build
 %cmake
