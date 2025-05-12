@@ -3,11 +3,11 @@
 # Type: IDE, Language
 # Category: Audio, Programming
 
-Name:    common-music
+Name: common-music
 Version: 3.10.2
 Release: 3%{?dist}
 Summary: Common Music (CM) is a real-time music composition system implemented in JUCE/C++ and Scheme.
-URL:     https://sourceforge.net/projects/commonmusic
+URL: https://sourceforge.net/projects/commonmusic
 ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
@@ -47,10 +47,14 @@ Grace provides two coding languages for designing musical algorithms: S7 Scheme,
 find juce/modules -type f -exec chmod a-x {} \;
 
 %set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+export CFLAGS="-fpermissive $CFLAGS"
+export CXXFLAGS="-fpermissive $CXXFLAGS"
 
 premake4 --with-jack
 # Remove strip option for debug symbol generation
 sed -i -e "s/-L. -s/-L./g" Grace.make
+
 %make_build config=release
 
 %install
@@ -64,7 +68,6 @@ cp -ra res/* %{buildroot}/%{_datadir}/cm/res/
 %files
 %doc readme.text
 %{_bindir}/*
-%{_datadir}/cm/
 %{_datadir}/cm/res/*
 
 %changelog
