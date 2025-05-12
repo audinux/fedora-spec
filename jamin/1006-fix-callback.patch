@@ -1,0 +1,39 @@
+From bcd6d23664e7f64d82cc75345e1c5e39ee47b8fd Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Thu, 8 May 2025 23:11:53 +0200
+Subject: [PATCH] patch
+
+---
+ src/callbacks.c | 2 +-
+ src/state.c     | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/callbacks.c b/src/callbacks.c
+index 8651e14..4080caa 100644
+--- a/src/callbacks.c
++++ b/src/callbacks.c
+@@ -1815,7 +1815,7 @@ void
+ on_jack_ports_activate                 (GtkMenuItem     *menuitem,
+                                         gpointer         user_data)
+ {
+-  iomenu_pull_down_ports(menuitem);
++  iomenu_pull_down_ports();
+ }
+ 
+ 
+diff --git a/src/state.c b/src/state.c
+index 15808de..825bce6 100644
+--- a/src/state.c
++++ b/src/state.c
+@@ -422,7 +422,7 @@ void s_redo()
+               }
+             else
+               {
+-                set_scene_warning_button (scene);
++                set_scene_warning_button ();
+               }
+           }
+         set_EQ_curve_values (0, 0.0);
+-- 
+2.49.0
+
