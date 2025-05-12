@@ -15,6 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/Geonkick-Synthesizer/geonkick/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Patch0: geonkick-0001-fix-syntax-error.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -50,9 +51,12 @@ License:  GPL-3.0-only
 License and documentation for %{name}
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{version}
 
 %build
+
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 %cmake
 %cmake_build
