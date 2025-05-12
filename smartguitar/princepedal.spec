@@ -41,7 +41,7 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
 BuildRequires: webkit2gtk3-devel
-BuildRequires: xsimd8-devel
+BuildRequires: xsimd-devel
 BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: chrpath
 BuildRequires: unzip
