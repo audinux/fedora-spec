@@ -9,7 +9,8 @@ Release: 1%{?dist}
 Summary: A synthesizer that uses pitch detection to choose candidates for granular synthesis or sampling
 License: GPL-3.0-or-later
 URL: https://github.com/bboettcher3/gRainbow
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64
+# removed aarch64 because of a strange linker problem
 
 Vendor:       Audinux
 Distribution: Audinux
