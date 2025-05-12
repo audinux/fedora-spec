@@ -72,7 +72,9 @@ LV2 version of %{name}
 %autosetup -n ChowKick
 
 %build
+
 %set_build_flags
+export CXXFLAGS="-Wno-template-body $CXXFLAGS"
 
 %cmake -DCHOWKICK_BUILD_CLAP=ON
 %cmake_build
