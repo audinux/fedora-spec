@@ -4,7 +4,7 @@
 # Category: MIDI, Tool
 
 Name: midifilter.lv2
-Version: 0.7.3
+Version: 0.7.4
 Release: 1%{?dist}
 Summary: LV2 plugins to filter midi events
 License: GPL-2.0-or-later
@@ -16,7 +16,8 @@ Distribution: Audinux
 
 Source0: https://github.com/x42/midifilter.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: lv2-devel
 
 %description
@@ -75,6 +76,9 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Mon May 12 2025 Yann Collette <ycollette.nospam@free.fr> - 0.7.4-1
+- update to 0.7.4-1
+
 * Fri Sep 15 2023 Yann Collette <ycollette.nospam@free.fr> - 0.7.3-1
 - update to 0.7.3-1
 
