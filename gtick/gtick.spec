@@ -13,6 +13,7 @@ ExclusiveArch: x86_64 aarch64
 
 # https://git.savannah.gnu.org/cgit/gtick.git/
 Source0: http://www.antcom.de/gtick/download/%{name}-%{version}.tar.gz
+Patch0: gtick-0001-fix-syntax-error.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -29,13 +30,15 @@ different meters (2/4, 3/4, 4/4) and speeds ranging from 30 to 250 bpm. It
 utilizes GTK+ and OSS (ALSA compatible) or Pulseaudio.
 
 %prep
-%setup -q
+%autosetup -p1 -n %{name}-%{version}
 
 %build
+
 %configure --with-sndfile
 %make_build
 
 %install
+
 %make_install
 
 desktop-file-edit \

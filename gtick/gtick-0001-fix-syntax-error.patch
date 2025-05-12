@@ -1,0 +1,25 @@
+From 8a61f1387fc30251210504286784dd24cda3098a Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 11 May 2025 22:16:04 +0200
+Subject: [PATCH] fix syntax error
+
+---
+ src/optionlexer.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/optionlexer.h b/src/optionlexer.h
+index da772cd..e745471 100644
+--- a/src/optionlexer.h
++++ b/src/optionlexer.h
+@@ -24,7 +24,7 @@
+ #define OPTIONLEXER_H
+ 
+ extern FILE *option_in;
+-int option_parse();
++int option_parse(void *option_list);
+ 
+ void option_lexer_init(char* filename);
+ void option_lexer_deinit();
+-- 
+2.49.0
+
