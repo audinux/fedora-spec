@@ -7,16 +7,15 @@
 
 Summary: DSSI software synthesizer plugin emulating DX7
 Name: hexter-dssi
-Version: 1.1.0
+Version: 1.1.1
 Release: 4%{?dist}
-URL: http://smbolton.com/hexter.html
+URL: https://github.com/theabolton/hexter
 ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
-Source0: https://github.com/smbolton/%{srcname0}/archive/version_%{version}/%{srcname0}-version_%{version}.tar.gz
+Source0: https://github.com/theabolton/hexter/releases/download/version_%{version}/hexter-%{version}.tar.bz2
 Source1: hexter.desktop
 Source2: hexter.png
-Patch0: Fixed-Segfault-on-startup.patch
 
 BuildRequires: gcc
 BuildRequires: automake
@@ -44,18 +43,21 @@ DSSI is a plugin API for software instruments (soft synths) with user
 interfaces, permitting them to be hosted in-process by audio applications.
 
 %prep
-%setup -q -n %{srcname0}-version_%{version}
-%patch 0 -p1
+%autosetup -n hexter-%{version}
 
 %build
-export LDFLAGS="-lm"
+
+%set_build_flags
+export CFLAGS="-Wno-incompatible-pointer-types $CFLAGS"
+export LDFLAGS="-lm $LDFLAGS"
+
 ./autogen.sh
 %configure --with-gnu-ld
 %make_build
 (cd extra; gcc $CFLAGS -o tx_edit tx_edit.c -lcurses -lasound -lm)
 
 %install
-rm -rf $RPM_BUILD_ROOT
+
 %make_install
 mkdir -p $RPM_BUILD_ROOT%{_bindir}
 ln -s jack-dssi-host $RPM_BUILD_ROOT%{_bindir}/hexter
@@ -70,7 +72,8 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/36x36/apps
 install -pm 644 %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/36x36/apps/hexter.png
 
 %files
-%doc AUTHORS ChangeLog COPYING README.rst TODO
+%doc AUTHORS ChangeLog README.rst TODO
+%license COPYING
 %{_bindir}/hexter
 %{_bindir}/tx_edit
 %{_datadir}/hexter/
@@ -79,6 +82,9 @@ install -pm 644 %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/36x36/apps/h
 %{_libdir}/dssi/*
 
 %changelog
+* Tue May 13 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-4
+- update to 1.1.1-4
+
 * Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 1.1.0-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
