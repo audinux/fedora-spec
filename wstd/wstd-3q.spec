@@ -23,7 +23,7 @@ Source2: wstd-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
-BuildRequires: hvcc
+BuildRequires: hvcc == 0.10.0
 BuildRequires: lv2-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: fftw-devel
