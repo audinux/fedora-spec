@@ -21,7 +21,7 @@ Source0: ChaffVerb.tar.gz
 Source1: chaffverb-source.sh
 
 BuildRequires: gcc gcc-c++
-BuildRequires: hvcc
+BuildRequires: hvcc == 0.10.0
 BuildRequires: lv2-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: fftw-devel

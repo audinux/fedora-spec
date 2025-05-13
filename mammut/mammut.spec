@@ -24,7 +24,7 @@ Source1: mammut_globals.c
 Patch0: mammut_0001-fix-juce-encoding.patch
 
 BuildRequires: gcc gcc-c++
-BuildReauires: make
+BuildRequires: make
 BuildRequires: libX11-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: alsa-lib-devel
@@ -48,7 +48,9 @@ single gigantic analysis (no windows).
 
 cp %{SOURCE1} src/globals.c
 
-sed -i -e "s/-march=native//g" juce_5_3_2/Builds/Linux/Makefile
+sed -i -e "s|-march=native|-fpermissive|g" juce_5_3_2/Builds/Linux/Makefile
+sed -i -e "s|--libs alsa|--libs jack alsa|g" juce_5_3_2/Builds/Linux/Makefile
+sed -i -e "s|-ljack|-L/usr/lib64/pipewire-0.3/jack -ljack -fpermissive|g" src/Makefile.linux
 
 %ifarch aarch64
 sed -i -e "s|-msse2||g" juce_5_3_2/Builds/Linux/Makefile
@@ -59,8 +61,6 @@ sed -i -e "s|-mfpmath=sse||g" src/Makefile.common
 %endif
 
 %build
-
-%set_build_flags
 
 cd juce_5_3_2/Builds/Linux
 %make_build CONFIG=Release STRIP=true V=1

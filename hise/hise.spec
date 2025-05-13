@@ -71,7 +71,7 @@ rm sdk.zip
 %set_build_flags
 
 CWD=`pwd`
-export CPPFLAGS="-I$CWD/VST_SDK/VST2_SDK"
+export CPPFLAGS="-Wno-template-body -I$CWD/VST_SDK/VST2_SDK"
 
 cd projects/standalone/
 Projucer61 --resave HISE\ Standalone.jucer

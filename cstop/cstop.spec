@@ -57,6 +57,7 @@ VST3 version of %{name}
 %build
 
 %set_build_flags
+export CXXFLAGS="-Wno-template-body $CXXFLAGS"
 
 %cmake
 %cmake_build
