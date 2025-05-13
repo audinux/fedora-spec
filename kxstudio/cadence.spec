@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: Cadence
-Version: 0.9.1
+Version: 0.9.2
 Release: 5%{?dist}
 Summary: JACK control center
 License: GPL-2.0-or-later
@@ -16,7 +16,6 @@ Distribution: Audinux
 
 Source0: https://github.com/falkTX/Cadence/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0: cadence_001_fedora_support.patch
-Patch1: cadence_002_add_missing_include.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -28,7 +27,6 @@ BuildRequires: pulseaudio-module-jack
 BuildRequires: python3-dbus
 BuildRequires: a2jmidid
 BuildRequires: pkgconfig(jack)
-BuildRequires: jack-audio-connection-kit-dbus
 BuildRequires: jack_capture
 
 Requires: jack-audio-connection-kit-dbus
@@ -65,6 +63,9 @@ Set of tools useful for audio production.
 %{_sysconfdir}/*
 
 %changelog
+* Tue May 13 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.2-1
+- update to 0.9.2-1
+
 * Sat Oct 24 2020 Yann Collette <ycollette.nospam@free.fr> - 0.9.1-1
 - fix debug build
 
