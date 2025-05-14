@@ -1,0 +1,25 @@
+From a1003823455ccc6fc5bf50bc02697d99301cbf05 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Wed, 14 May 2025 07:52:05 +0200
+Subject: [PATCH] fix prototype
+
+---
+ cyclonic.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/cyclonic.h b/cyclonic.h
+index 6c94775..a594389 100644
+--- a/cyclonic.h
++++ b/cyclonic.h
+@@ -53,7 +53,7 @@ int sooloovol;
+ char *cyclonic_msg();
+ void cyclonic_stop();
+ int cyclonic_state();
+-long cyclonic_samplerate();
++long cyclonic_samplerate(jack_client_t *client);
+ int cyclonic(char *nomeclient);
+ int sl_connect();
+ int sl_verify();
+-- 
+2.49.0
+

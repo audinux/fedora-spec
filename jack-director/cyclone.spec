@@ -15,6 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://sourceforge.net/projects/cycloneloop/files/cyclone_%{version}.tar.gz
+Patch0: cyclone-0001-fix-prototype.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: qt-devel
@@ -38,13 +39,12 @@ with Ableton Live in loop handling power.
 
 
 %prep
-%autosetup -n cyclone
+%autosetup -p1 -n cyclone
 
 %build
 
 %set_build_flags
-
-export LDFLAGS="-z muldefs $MDFLAGS"
+export LDFLAGS="-z muldefs `pkg-config --libs-only-L jack` $LDFLAGS"
 
 %qmake_qt4
 %make_build
@@ -80,7 +80,6 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/pixmaps/*
-%{_datadir}/%{name}/
 %{_datadir}/%{name}/help/*
 %{_datadir}/mime/packages/*
 

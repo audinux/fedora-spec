@@ -59,6 +59,7 @@ sed -i -e "s|/usr/bin/env python|/usr/bin/env python3|g" waf
 %build
 
 %set_build_flags
+export CXXFLAGS="-Wno-template-body $CXXFLAGS"
 
 ./waf configure --debug --prefix=%{_prefix} --libdir=%{_libdir}
 ./waf %{?__smp_mflags}
