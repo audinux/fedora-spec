@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: coppwr
-Version: 1.6.1
+Version: 1.6.2
 Release: 1%{?dist}
 Summary: Low level control GUI for the PipeWire multimedia server
 License: GPL-3.0-or-later
@@ -53,10 +53,10 @@ export CARGO_HOME="$CWD/cargo"
 # cargo build --release --bin hexosynth_jack
 
 %ifarch x86_64
-rustup-init -y --no-modify-path --default-toolchain=1.76.0-x86_64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain=1.81.0-x86_64-unknown-linux-gnu
 %endif
 %ifarch aarch64
-rustup-init -y --no-modify-path --default-toolchain=1.76.0-aarch64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain=1.81.0-aarch64-unknown-linux-gnu
 %endif
 source cargo/env
 
@@ -103,6 +103,9 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/*.xml
 %{_datadir}/icons/*
 
 %changelog
+* Thu May 15 2025 Yann Collette <ycollette.nospam@free.fr> - 1.6.2-1
+- update to 1.6.2-1
+
 * Tue Oct 22 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.1-1
 - update to 1.6.1-1
 
