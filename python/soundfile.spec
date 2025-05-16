@@ -6,7 +6,7 @@
 %global __python /usr/bin/python3
 
 Name: python3-soundfile
-Version: 0.12.1
+Version: 0.13.1
 Release: 1%{?dist}
 Summary: SoundFile is an audio library based on libsndfile, CFFI, and NumPy
 License: BSD-3-Clause
@@ -64,5 +64,8 @@ represents audio data as NumPy arrays.
 %{python_sitelib}/__pycache__/*
 
 %changelog
+* Fri May 16 2025 Yann Collette <ycollette.nospam@free.fr> - 0.13.1-1
+- update to 0.13.1
+
 * Sat Jul 13 2024 Yann Collette <ycollette.nospam@free.fr> - 0.12.1-1
 - Initial release
