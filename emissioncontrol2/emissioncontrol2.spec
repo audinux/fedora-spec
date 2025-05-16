@@ -50,26 +50,22 @@ sed -i -e "s/-m64//g" test_opendialog.make
 sed -i -e "s/-m64//g" test_opendialogmultiple.make
 sed -i -e "s/-m64//g" test_pickfolder.make
 sed -i -e "s/-m64//g" test_savedialog.make
-# Still fail to build!: rror: narrowing conversion of '-1' from 'int' to 'char' [-Wnarrowing]
+# Still fail to build!: error: narrowing conversion of '-1' from 'int' to 'char' [-Wnarrowing]
 %endif
 
 %build
 
 %set_build_flags
-%if 0%{?fedora} >= 38
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 export CXXFLAGS="-include cstdint $CXXFLAGS"
-%endif
 
 cd ecSource/external/nativefiledialog/build/gmake_linux
 %make_build
 cd ../../../../..
 
 cd ecSource
-%if 0%{?fedora} >= 38
-%cmake -DCMAKE_CXX_FLAGS="-include cstdint -fPIC $CXXFLAGS"
-%else
-%cmake
-%endif
+%cmake -DCMAKE_CXX_FLAGS="-include cstdint -fPIC $CXXFLAGS" \
+       -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
 %cmake_build
 
 %install
@@ -111,7 +107,6 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_bindir}/*
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/*
-%{_datadir}/emissioncontrol2/
 %{_datadir}/emissioncontrol2/samples/*
 
 %changelog

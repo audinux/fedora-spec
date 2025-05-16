@@ -49,6 +49,9 @@ sed -i -e "/Encoding=/d"  Install/chordV.desktop
 
 %build
 
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
 %qmake_qt5 chordV.pro
 %make_build
 

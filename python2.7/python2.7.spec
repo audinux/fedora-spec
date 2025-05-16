@@ -13,13 +13,6 @@
 # Run the test suite in %%check
 %bcond_without tests
 
-# Simplify dependencis for Flatpaks that include Python-2.7
-%if 0%{?flatpak}
-%bcond_with tkinter
-%else
-%bcond_without tkinter
-%endif
-
 %global unicode ucs4
 %global pybasever 2.7
 %global pyshortver 27
@@ -135,9 +128,6 @@ Provides: python(abi) = %{pybasever}
 
 # To test the python27 without disrupting everything, we keep providing the devel part until mid September 2019
 Provides: python2-devel = %{version}-%{release}
-%if %{with tkinter}
-Provides: python2-tkinter = %{version}-%{release}
-%endif
 
 
 # =======================
@@ -169,11 +159,6 @@ BuildRequires: pkgconf-pkg-config
 BuildRequires: readline-devel
 BuildRequires: sqlite-devel
 BuildRequires: tar
-%if %{with tkinter}
-BuildRequires: tcl-devel
-BuildRequires: tix-devel
-BuildRequires: tk-devel
-%endif
 BuildRequires: zlib-devel
 BuildRequires: gnupg2
 BuildRequires: git-core
@@ -254,7 +239,6 @@ Obsoletes: python2-debug < %{version}-%{release}
 Obsoletes: python2-devel < %{version}-%{release}
 Obsoletes: python2-libs < %{version}-%{release}
 Obsoletes: python2-test < %{version}-%{release}
-Obsoletes: python2-tkinter < %{version}-%{release}
 Obsoletes: python2-tools < %{version}-%{release}
 
 
@@ -343,7 +327,6 @@ Source102: setuptools-CVE-2024-6345.patch
 #     - _sha512 sha512module.c
 #     - linuxaudiodev linuxaudiodev.c
 #     - timing timingmodule.c
-#     - _tkinter _tkinter.c tkappinit.c
 #     - dl dlmodule.c
 #     - gdbm gdbmmodule.c
 #     - _bsddb _bsddb.c
@@ -1164,9 +1147,7 @@ git apply %{PATCH351}
 %patch -P410 -p1
 %patch -P417 -p1
 
-%if %{without tkinter}
 %patch -P4000 -p1
-%endif
 
 # This shouldn't be necesarry, but is right now (2.2a3)
 find -name "*~" |xargs rm -f
@@ -1184,7 +1165,7 @@ find -name "*~" |xargs rm -f
 
 %build
 topdir=$(pwd)
-export CFLAGS="$RPM_OPT_FLAGS -D_GNU_SOURCE -fPIC -fwrapv"
+export CFLAGS="$RPM_OPT_FLAGS -D_GNU_SOURCE -fPIC -fwrapv -std=gnu17 -pedantic -Wno-incompatible-pointer-types -Wno-implicit-function-declaration"
 export CXXFLAGS="$RPM_OPT_FLAGS -D_GNU_SOURCE -fPIC -fwrapv"
 export CPPFLAGS="$(pkg-config --cflags-only-I libffi)"
 export OPT="$RPM_OPT_FLAGS -D_GNU_SOURCE -fPIC -fwrapv"
@@ -1241,6 +1222,7 @@ BuildPython() {
   %global _configure $topdir/configure
 
 %configure \
+  --disable-tkbuild \
   --enable-ipv6 \
   --enable-shared \
   --enable-unicode=%{unicode} \
@@ -1836,9 +1818,6 @@ CheckPython \
 
 #files tkinter
 %{pylibdir}/lib-tk
-%if %{with tkinter}
-%{dynload_dir}/_tkinter.so
-%endif
 
 #files test
 %{pylibdir}/bsddb/test

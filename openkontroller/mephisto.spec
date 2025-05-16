@@ -20,7 +20,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: meson
 BuildRequires: cmake
 BuildRequires: lv2-devel
-BuildRequires: faust-osclib-devel
+BuildRequires: faust-devel
 BuildRequires: fontconfig
 BuildRequires: fontconfig-devel
 BuildRequires: mesa-libGL-devel
