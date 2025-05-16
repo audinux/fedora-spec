@@ -185,6 +185,7 @@
 | gate12                        | https://github.com/tiagolr/gate12 |
 | Disflux                       | https://github.com/Dimethoxy/Disflux |
 | Plasma                        | https://github.com/Dimethoxy/Plasma |
+| tek                           | https://codeberg.org/unspeaker/tek |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
