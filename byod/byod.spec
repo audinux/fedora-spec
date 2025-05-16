@@ -82,7 +82,8 @@ sleep 10
 
 %set_build_flags
 
-%cmake -DCMAKE_CXX_FLAGS="$CXXFLAGS -include utility -fPIC" -DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON
+%cmake -DCMAKE_CXX_FLAGS="$CXXFLAGS -Wno-template-body -include utility -fPIC" \
+       -DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON
 %cmake_build
 
 %install
