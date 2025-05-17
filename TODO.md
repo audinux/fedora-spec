@@ -186,6 +186,7 @@
 | Disflux                       | https://github.com/Dimethoxy/Disflux |
 | Plasma                        | https://github.com/Dimethoxy/Plasma |
 | tek                           | https://codeberg.org/unspeaker/tek |
+| SignalViewLV2                 | https://github.com/TimKrause2/SignalViewLV2 |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
