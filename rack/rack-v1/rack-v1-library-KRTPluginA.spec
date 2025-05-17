@@ -93,6 +93,10 @@ cp -n %{SOURCE2} KRTPluginA_plugin/plugin.json || true
 
 %build
 
+%set_build_flags
+export CXXFLAGS="-fpermissive $CXXFLAGS"
+export LDFLAGS="-z muldefs $LDFLAGS"
+
 cd KRTPluginA_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 

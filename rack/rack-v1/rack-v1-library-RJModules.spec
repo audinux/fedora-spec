@@ -93,9 +93,16 @@ cp -n %{SOURCE2} RJModules_plugin/plugin.json || true
 
 %build
 
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
 cd dep
 cd rtaudio
-cmake -DCMAKE_INSTALL_PREFIX=.. -DBUILD_SHARED_LIBS=FALSE -DCMAKE_BUILD_TYPE=DEBUG .
+cmake -DCMAKE_INSTALL_PREFIX=.. \
+      -DBUILD_SHARED_LIBS=FALSE \
+      -DCMAKE_BUILD_TYPE=DEBUG \
+      -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`" \
+      .
 make
 make install
 cd ..
