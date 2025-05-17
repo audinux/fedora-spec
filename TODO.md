@@ -204,6 +204,7 @@ Add dead package:
 - lv2-ui
 - lv2core
 - slv2
+- phasex
 
 Add missing zita packaes:
 - zita-audiotools-1.3.0.tar.bz2
