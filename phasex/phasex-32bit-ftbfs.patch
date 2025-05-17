@@ -1,0 +1,15 @@
+diff --git a/src/timekeeping.c b/src/timekeeping.c
+index 7832e10..ecfc518 100644
+--- a/src/timekeeping.c
++++ b/src/timekeeping.c
+@@ -278,8 +278,8 @@ inc_midi_index(void)
+ 		                         & buffer_size_mask);
+ 		g_atomic_int_set(&midi_index, (gint)(new_midi_index));
+ #if (ARCH_BITS == 32)
+-		new_midi_index = (guint)(g_atomic_int_get(&pending_midi_period_index));
+-		g_atomic_int_set(&midi_period_index, (gint)(new_midi_index));
++		new_midi_index = (guint)(g_atomic_int_get(&pending_midi_clock_time_index));
++		g_atomic_int_set(&midi_clock_time_index, (gint)(new_midi_index));
+ #endif
+ #if (ARCH_BITS == 64)
+ 		new_timeref.gptr = g_atomic_pointer_get(&(pending_midi_timeref.gptr));

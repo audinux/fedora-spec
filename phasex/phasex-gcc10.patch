@@ -1,0 +1,35 @@
+diff -rup phasex-dev-m1-orig/src/lash.c phasex-dev-m1/src/lash.c
+--- phasex-dev-m1-orig/src/lash.c	2010-08-26 11:23:25.000000000 +0200
++++ phasex-dev-m1/src/lash.c	2020-02-01 19:18:01.950255327 +0100
+@@ -24,6 +24,12 @@
+  
+ #include "lash.h"
+ 
++lash_client_t *lash_client;
++char *lash_buffer;
++
++char *lash_jackname;
++snd_seq_t *lash_alsaid;
++
+ int lash_clinit(int argc, char** argv, jack_client_t *jack_client, snd_seq_t *alsa_handle)
+ {
+     lash_jackname = jack_get_client_name(jack_client);
+diff -rup phasex-dev-m1-orig/src/lash.h phasex-dev-m1/src/lash.h
+--- phasex-dev-m1-orig/src/lash.h	2010-08-26 11:23:25.000000000 +0200
++++ phasex-dev-m1/src/lash.h	2020-02-01 18:59:54.045006038 +0100
+@@ -31,11 +31,11 @@
+ #include "patch.h"
+ #include "param.h"
+  
+-lash_client_t *lash_client;
+-char *lash_buffer;
++extern lash_client_t *lash_client;
++extern char *lash_buffer;
+ 
+-char *lash_jackname;
+-snd_seq_t *lash_alsaid;
++extern char *lash_jackname;
++extern snd_seq_t *lash_alsaid;
+ 
+ int lash_clinit(int argc, char** argv, jack_client_t *jack_client, snd_seq_t *alsa_handle);
+ int lash_pollevent();

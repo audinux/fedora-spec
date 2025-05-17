@@ -1,0 +1,104 @@
+diff --git a/src/alsa_seq.c b/src/alsa_seq.c
+index 775466f..547f4f5 100644
+--- a/src/alsa_seq.c
++++ b/src/alsa_seq.c
+@@ -26,7 +26,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+-#include <asoundlib.h>
++#include <alsa/asoundlib.h>
+ #include "phasex.h"
+ #include "config.h"
+ #include "timekeeping.h"
+diff --git a/src/alsa_seq.h b/src/alsa_seq.h
+index 931f5ab..b632ab8 100644
+--- a/src/alsa_seq.h
++++ b/src/alsa_seq.h
+@@ -24,7 +24,7 @@
+ #define _ALSA_SEQ_H_
+ 
+ #include <pthread.h>
+-#include <asoundlib.h>
++#include <alsa/asoundlib.h>
+ #include "phasex.h"
+ #include "mididefs.h"
+ 
+diff --git a/src/lash.c b/src/lash.c
+index cb1b3ec..cc945e9 100644
+--- a/src/lash.c
++++ b/src/lash.c
+@@ -26,7 +26,7 @@
+ #include <string.h>
+ #include <lash/lash.h>
+ #include <jack/jack.h>
+-#include <asoundlib.h>
++#include <alsa/asoundlib.h>
+ #include "phasex.h"
+ #include "patch.h"
+ #include "param.h"
+diff --git a/src/lash.h b/src/lash.h
+index 569aee7..52f478e 100644
+--- a/src/lash.h
++++ b/src/lash.h
+@@ -26,7 +26,7 @@
+ 
+ #include <lash/lash.h>
+ #include <jack/jack.h>
+-#include <asoundlib.h>
++#include <alsa/asoundlib.h>
+ 
+ 
+ extern lash_client_t    *lash_client;
+diff --git a/src/midi_event.c b/src/midi_event.c
+index 3817146..c140899 100644
+--- a/src/midi_event.c
++++ b/src/midi_event.c
+@@ -26,7 +26,7 @@
+ #include <ctype.h>
+ #include <pthread.h>
+ #include <time.h>
+-#include <asoundlib.h>
++#include <alsa/asoundlib.h>
+ #include <glib.h>
+ #include "phasex.h"
+ #include "timekeeping.h"
+diff --git a/src/phasex.c b/src/phasex.c
+index e13eedf..7eb614d 100644
+--- a/src/phasex.c
++++ b/src/phasex.c
+@@ -33,7 +33,7 @@
+ #include <errno.h>
+ #include <getopt.h>
+ #include <pthread.h>
+-#include <asoundlib.h>
++#include <alsa/asoundlib.h>
+ #include "phasex.h"
+ #include "config.h"
+ #include "driver.h"
+diff --git a/src/rawmidi.c b/src/rawmidi.c
+index 04b71fc..ad48664 100644
+--- a/src/rawmidi.c
++++ b/src/rawmidi.c
+@@ -25,7 +25,7 @@
+ #include <stdlib.h>
+ #include <ctype.h>
+ #include <pthread.h>
+-#include <asoundlib.h>
++#include <alsa/asoundlib.h>
+ #include "phasex.h"
+ #include "timekeeping.h"
+ #include "settings.h"
+diff --git a/src/timekeeping.c b/src/timekeeping.c
+index 7832e10..cc22950 100644
+--- a/src/timekeeping.c
++++ b/src/timekeeping.c
+@@ -26,7 +26,7 @@
+ #include <ctype.h>
+ #include <pthread.h>
+ #include <time.h>
+-#include <asoundlib.h>
++#include <alsa/asoundlib.h>
+ #include <glib.h>
+ #include "phasex.h"
+ #include "timekeeping.h"

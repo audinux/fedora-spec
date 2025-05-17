@@ -1,0 +1,12 @@
+diff -Nurp phasex-dev-m1.orig/src/phasex.c phasex-dev-m1.new/src/phasex.c
+--- phasex-dev-m1.orig/src/phasex.c	2010-08-26 11:23:25.000000000 +0200
++++ phasex-dev-m1.new/src/phasex.c	2014-06-29 21:36:46.802878363 +0200
+@@ -298,7 +298,7 @@ phasex_shutdown(const char *msg) {
+ 
+     /* output message from caller */
+     if (msg != NULL) {
+-	fprintf (stderr, msg);
++	fprintf (stderr, "%s", msg);
+     }
+ 
+     /* set the global shutdown flag */
