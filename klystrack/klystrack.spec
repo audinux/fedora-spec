@@ -20,7 +20,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the source archive:
-# ./klystrack-source.sh v1.7.6
+# ./klystrack-source.sh 1.7.6-make-fix
 
 Source0: klystrack.tar.gz
 Source1: klystrack-source.sh
@@ -66,6 +66,8 @@ sed -i -e "s/AudioVideo;AudioVideoEditing/Audio/g" linux/klystrack.desktop
 %build
 
 %set_build_flags
+export CXXFLAGS="-Wno-incompatible-pointer-types $CXXFLAGS"
+export CFLAGS="-Wno-incompatible-pointer-types $CFLAGS"
 
 %make_build MYCFLAGS="$CFLAGS" DESTDIR=%{buildroot} PREFIX=/usr RES_PATH=/usr/share/%{name}/ CFG=release
 

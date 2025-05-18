@@ -4,13 +4,13 @@
 # Category: Programming
 
 # Global variables for github repository
-%global commit0 89abb1b6732a867630b9f2cdb3eef30ec25fda87
+%global commit0 8185a391fe14c6ecad6cbec38d8c98db11b92ecf
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name: BatLib
 Version: 0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Epoch: 1
 Summary: Various helper classes I use, and external methods my other Quarks use.
 License: Creative Commons Attribution-ShareAlike 4.0 International Public License
@@ -49,8 +49,8 @@ install -m 644 external_methods/osx/scide_scapp/image_from_sound.sc %{buildroot}
 %{_datadir}/*
 
 %changelog
-* Fri Oct 23 2020 Yann Collette <ycollette dot nospam at free.fr> 0.1.0-1
-- initial release of the spec file
+* Sat May 17 2025 Yann Collette <ycollette dot nospam at free.fr> 0.1.0-2
+- update to last master - 8185a391fe14c6ecad6cbec38d8c98db11b92ecf
 
-* Wed Jun 06 2019 Yann Collette <ycollette dot nospam at free.fr> 0.1.0-1
+* Thu Jun 06 2019 Yann Collette <ycollette dot nospam at free.fr> 0.1.0-1
 - initial release of the spec file

@@ -17,10 +17,10 @@ Source0: http://download.drobilla.net/%{name}-%{version}.tar.bz2
 # Remove dates from html doc files RHBZ#566345
 Patch0: %{name}-no-date-on-docs.patch
 
+BuildRequires: gcc gcc-c++
 BuildRequires: doxygen
-BuildRequires: gcc
+BuildRequires: python2.7
 BuildRequires: lv2-devel
-BuildRequires: python2
 BuildRequires: redland-devel
 BuildRequires: pkgconfig(jack)
 
@@ -72,23 +72,24 @@ sed -i 's|/usr/bin/.*python$|/usr/bin/python2|' autowaf.py swig/python/*.py wscr
 sed -i 's|lv2core|lv2|g' wscript
 
 %build
-export CFLAGS="%{optflags}"
-export CXXFLAGS="%{optflags}"
-export LINKFLAGS="$RPM_LD_FLAGS"
+
+%set_build_flags
+
 ./waf configure --prefix=%{_prefix} \
 	--libdir=%{_libdir} \
 	--htmldir=%{_pkgdocdir} \
 	--build-docs
+
 ./waf build -v %{?_smp_mflags}
 
 # Workaround the doxygen bug
 rm -f build/default/doc/man/man3/_*
 
 %install
+
 DESTDIR=%{buildroot} ./waf install
 chmod +x %{buildroot}%{_libdir}/lib%{name}.so*
 install -pm 644 AUTHORS ChangeLog COPYING README %{buildroot}%{_pkgdocdir}
-
 
 %files
 %license %{_pkgdocdir}/COPYING

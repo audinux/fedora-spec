@@ -47,5 +47,5 @@ install -m 644 FoxDot.quark FoxDot.sc %{buildroot}/%{_datadir}/SuperCollider/Qua
 * Fri Oct 23 2020 Yann Collette <ycollette dot nospam at free.fr> 0.1.0-2
 - fix debug build
 
-* Wed Jun 06 2019 Yann Collette <ycollette dot nospam at free.fr> 0.1.0-1
+* Thu Jun 06 2019 Yann Collette <ycollette dot nospam at free.fr> 0.1.0-1
 - initial release of the spec file
