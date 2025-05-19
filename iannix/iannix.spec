@@ -4,13 +4,13 @@
 # Category: Sequencer
 
 # Global variables for github repository
-%global commit0 1294f84ba809ebf5262a1c7071a18ac5ff4109b0
+%global commit0 fd6df511ebd880b9aa668374d7bad4ea52c7a519
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name:    IanniX
 Version: 0.9.20.%{shortcommit0}
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: A graphic / MIDI / OSC player
 URL:     https://github.com/iannix/Iannix
 ExclusiveArch: x86_64 aarch64
@@ -22,7 +22,6 @@ Distribution: Audinux
 Source0: https://github.com/iannix/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1: iannix.xml
 Patch0:  iannix-0001-fix-missing-glew.patch
-Patch1:  iannix-0002-add-missing-header.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -83,6 +82,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Mon May 19 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.20-5
+- update to last master - fd6df511ebd880b9aa668374d7bad4ea52c7a519
+
 * Tue Oct 20 2020 Yann Collette <ycollette.nospam@free.fr> - 0.9.20-4
 - fix debug build
 
