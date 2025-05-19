@@ -5,7 +5,7 @@
 # GUIToolkit: Qt5
 
 Name: samplebrain
-Version: 0.18.4
+Version: 0.18.5
 Release: 1%{?dist}
 Summary: A custom sample mashing app designed by Aphex Twin
 URL: https://gitlab.com/then-try-this/samplebrain
@@ -15,7 +15,7 @@ License: GPL-2.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://gitlab.com/then-try-this/samplebrain/-/archive/%{version}_release/samplebrain-%{version}_release.tar.gz
+Source0: https://gitlab.com/then-try-this/samplebrain/-/archive/v%{version}_release/samplebrain-v%{version}_release.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: qt5-qtbase-devel
@@ -40,12 +40,15 @@ worked on it (during 2015 and 2016) we gradually added more and more
 tweakable parameters until it became slightly out of control.
 
 %prep
-%autosetup -n %{name}-%{version}_release
+%autosetup -n %{name}-v%{version}_release
 
 sed -i -e "/Encoding/d" desktop/samplebrain.desktop
 sed -i -e "s/GNOME;Application;/Audio;AudioVideo/g" desktop/samplebrain.desktop
 
 %build
+
+%set_build_flags
+export CXXFLAGS="-fpermissive $CXXFLAGS"
 
 %qmake_qt5 samplebrain.pro
 %make_build
@@ -78,10 +81,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_bindir}/samplebrain
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*
-%{_datadir}/samplebrain/
 %{_datadir}/samplebrain/docs/*
 
 %changelog
+* Mon May 19 2025 Yann Collette <ycollette.nospam@free.fr> - 0.18.5-1
+- update to 0.18.5-1
+
 * Fri Oct 14 2022 Yann Collette <ycollette.nospam@free.fr> - 0.18.4-1
 - update to 0.18.4-1
 

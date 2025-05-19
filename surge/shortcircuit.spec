@@ -3,12 +3,14 @@
 # Type: Plugin, VST3
 # Category: Synthesizer
 
-Name:    shortcircuit
+%global commit0 4bd459d5ad8ee3091d35b1a5f2d812c8a8912bd6
+
+Name: shortcircuit
 Version: 0.0.1
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: A VST3 Synthesizer
 License: GPL-2.0-or-later
-URL:     https://github.com/surge-synthesizer/shortcircuit3
+URL: https://github.com/surge-synthesizer/shortcircuit-xt
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -17,7 +19,7 @@ Distribution: Audinux
 # To get the sources, use:
 # $ ./source-shortcircuit.sh main
 
-Source0: shortcircuit.tar.gz
+Source0: shortcircuit-xt.tar.gz
 Source1: source-shortcircuit.sh
 
 BuildRequires: gcc gcc-c++
@@ -41,7 +43,6 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
 BuildRequires: pybind11-devel
 BuildRequires: simde-devel
-BuildRequires: pybind11-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -56,15 +57,13 @@ Requires: %{name}
 VST3 version of %{name}
 
 %prep
-%autosetup -n shortcircuit3
+%autosetup -n shortcircuit-xt
 
 sed -i -e "s|Shortcircuit XT|Shortcircuit_XT|g" CMakeLists.txt
 sed -i -e "s| >= MINSIGSTKSZ ? 32768 : MINSIGSTKSZ||g" libs/catch2/include/catch2/catch2.hpp
 
-%if 0%{?fedora} >= 37
-rm -rf libs/pybind11/include/pybind11/
-ln -s /usr/include/pybind11 libs/pybind11/include/pybind11
-%endif
+sed -i -e "/-Werror/d" cmake/compiler-options.cmake
+sed -i -e "/-march=nehalem/d" cmake/compiler-options.cmake
 
 %build
 
@@ -72,22 +71,8 @@ ln -s /usr/include/pybind11 libs/pybind11/include/pybind11
 
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
 
-mkdir -p build
-cd build
-cmake \
-      -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
-      -DCMAKE_INSTALL_PREFIX:PATH=/usr \
-      -DINCLUDE_INSTALL_DIR:PATH=/usr/include \
-      -DLIB_INSTALL_DIR:PATH=/usr/lib64 \
-      -DSYSCONF_INSTALL_DIR:PATH=/etc \
-      -DSHARE_INSTALL_PREFIX:PATH=/usr/share \
-      -DLIB_SUFFIX=64 \
-%if 0%{?fedora} >= 38
-      -DCMAKE_CXX_FLAGS="-include cstdint $CXXFLAGS" \
-%endif
-      -DCMAKE_BUILD_TYPE=DEBUG ..
-
-%make_build
+%cmake -DBUILD_SHARED_LIBS=OFF
+%cmake_build
 
 %install
 
@@ -132,6 +117,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Mon May 19 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-6
+- update to last nightly - 4bd459d5ad8ee3091d35b1a5f2d812c8a8912bd6
+
 * Tue Mar 21 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-5
 - update to last nightly - 15b969b8ac1151c9c9a81665738ef9f81511136c
 

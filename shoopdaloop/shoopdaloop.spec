@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Tool, Audio, DAW
 
-%define commit0 acc140d1b08b0fe3088db5324a958caf8c0d4985
+%define commit0 ef5c1664e1b3324a6538dec5124e24304b23154b
 
 Name: shoopdaloop
 Version: 0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A (live) looping application with DAW elements.
 License: GPL
 URL: https://github.com/SanderVocke/shoopdaloop
@@ -17,25 +17,14 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./shoopdaloop-source.sh <TAG>
-#        ./shoopdaloop-source.sh acc140d1b08b0fe3088db5324a958caf8c0d4985
+#        ./shoopdaloop-source.sh ef5c1664e1b3324a6538dec5124e24304b23154b
 
 Source0: shoopdaloop.tar.gz
 Source1: shoopdaloop-source.sh
 
 BuildRequires: gcc gcc-c++
-BuildRequires: cmake
-BuildRequires: spdlog-devel
-BuildRequires: boost-devel
-BuildRequires: pkgconfig(jack)
-BuildRequires: libxkbcommon-x11-devel
-BuildRequires: libglvnd-devel
-BuildRequires: fmt-devel
-BuildRequires: lilv-devel
-BuildRequires: serd
-BuildRequires: sord
-BuildRequires: lv2-devel
-BuildRequires: python3
-BuildRequires: python3-pyside2-devel
+BuildRequires: rustup
+BuildRequires: git
 
 %description
 ShoopDaLoop is a live looping application for Linux with a few DAW-like features.
@@ -45,21 +34,31 @@ ShoopDaLoop is a live looping application for Linux with a few DAW-like features
 
 %build
 
-python3 -m venv sdl-build
-source sdl-build/bin/activate
-pip install py-build-cmake~=0.1.8
-pip install ctypesgen
-pip install pycparser
-pip install build
-pip install installer
-pip install meson
+%set_build_flags
 
-%{__python3} -m build --no-isolation --wheel .
+export RUSTFLAGS="-g -O"
+
+export CWD=`pwd`
+export RUSTUP_HOME="$CWD/rustup"
+export CARGO_HOME="$CWD/cargo"
+# rustup-init -y --no-modify-path --default-toolchain=1.77.0-x86_64-unknown-linux-gnu
+# rustup-init -y --no-modify-path --default-toolchain=nightly-x86_64-unknown-linux-gnu
+# source cargo/env
+# rustup target list
+# cargo build --release --bin hexosynth_jack
+
+%ifarch x86_64
+rustup-init -y --no-modify-path --default-toolchain 1.82.0-x86_64-unknown-linux-gnu
+%endif
+%ifarch aarch64
+rustup-init -y --no-modify-path --default-toolchain 1.82.0-aarch64-unknown-linux-gnu
+%endif
+source cargo/env
+
+cargo build --release
 
 %install
 
-source sdl-build/bin/activate
-%{__python3} -m pip install dist/shoopdaloop-*.whl
 
 %files
 %doc README.md
@@ -68,5 +67,8 @@ source sdl-build/bin/activate
 %{_datadir}/*
 
 %changelog
+* Mon May 19 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1-2
+- update to 0.1-2
+
 * Fri Oct 13 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
 - initial version

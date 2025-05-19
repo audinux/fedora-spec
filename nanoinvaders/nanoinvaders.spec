@@ -15,8 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # git clone https://github.com/clearly-broken-software/nanoinvaders
-# git submodule init
-# git submodule update
+# git submodule update --init --recursive
 # find . -name .git -exec rm -rf {} \;
 # cd ..
 # tar cvfz nanoinvaders.tar.gz nanoinvaders/

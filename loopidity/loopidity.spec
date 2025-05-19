@@ -33,9 +33,12 @@ for live handsfree use.
 %prep
 %autosetup -n %{name}-%{version}
 
+autoreconf --install
+
 %build
 
-autoreconf --install
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 %configure
 %make_build
@@ -74,7 +77,10 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %license COPYING
 %{_bindir}/*
 %{_datadir}/applications/*.desktop
-%{_datadir}/doc/%{name}/
+%{_datadir}/doc/%{name}/COPYING
+%{_datadir}/doc/%{name}/COPYING.fonts
+%{_datadir}/doc/%{name}/LICENSES
+%{_datadir}/doc/%{name}/LICENSES.data
 %{_datadir}/pixmaps/*
 %{_mandir}/man1/*
 

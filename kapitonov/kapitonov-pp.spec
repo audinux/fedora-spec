@@ -34,7 +34,7 @@ BuildRequires: cairo-devel
 BuildRequires: zita-resampler-devel
 BuildRequires: zita-convolver-devel
 BuildRequires: boost-devel
-BuildRequires: faust-osclib-devel
+BuildRequires: faust-devel
 BuildRequires: fftw-devel
 
 %description

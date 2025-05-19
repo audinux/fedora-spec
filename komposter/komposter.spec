@@ -30,10 +30,16 @@ Modular virtual analog software synthesizer and sequencer for 4KB and 64KB intro
 ./autogen.sh
 
 %build
+
+%set_build_flags
+export CXXFLAGS="-Wno-incompatible-pointer-types $CXXFLAGS"
+export CFLAGS="-Wno-incompatible-pointer-types $CFLAGS"
+
 %configure
 %make_build
 
 %install
+
 %make_install
 
 mkdir -p %{buildroot}%{_datadir}/%{name}/examples/
@@ -54,7 +60,6 @@ cp -r resources/komposter_icon.png %{buildroot}%{_datadir}/icons/hicolor/256x256
 %license LICENSE
 %doc README.md
 %{_bindir}/*
-%{_datadir}/%{name}/
 %{_datadir}/%{name}/doc/*
 %{_datadir}/%{name}/resources/*
 %{_datadir}/%{name}/examples/*
