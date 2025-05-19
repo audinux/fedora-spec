@@ -29,7 +29,7 @@ Distribution: Audinux
 
 # to generater code archive:
 # ./source_chowcentaur.sh <tag>
-# ./source_chowcentaur.sh 1.4.0
+# ./source_chowcentaur.sh v1.4.0
 
 Source0: KlonCentaur.tar.gz
 Source1: source_chowcentaur.sh

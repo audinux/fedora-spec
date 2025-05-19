@@ -16,7 +16,7 @@ Distribution: Audinux
 
 # to generater code archive:
 # ./source_chowphaser.sh <tag>
-# ./source_chowphaser.sh 1.1.1
+# ./source_chowphaser.sh v1.1.1
 
 Source0: ChowPhaser.tar.gz
 Source1: source_chowphaser.sh

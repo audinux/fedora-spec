@@ -41,12 +41,14 @@ jack_proxy: this just copies inputs to outputs. There are some Jack
 %prep
 %autosetup
 
-%build
-rm -rf $RPM_BUILD_ROOT
-
 # Force Fedora's optflags
 sed -i 's|-O2|%{optflags}|' source/Makefile
 sed -i 's|-lasound||' source/Makefile
+
+%build
+
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 pushd source
 %make_build
@@ -56,11 +58,10 @@ popd
 mkdir -p $RPM_BUILD_ROOT%{_bindir}/
 
 pushd source
-%make_install
+%make_install PREFIX=%{_prefix}
 popd
 
 %files
-%defattr(-,root,root,-)
 %doc AUTHORS README
 %license COPYING
 %{_bindir}/*
