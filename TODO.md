@@ -185,7 +185,6 @@
 | gate12                        | https://github.com/tiagolr/gate12 |
 | Disflux                       | https://github.com/Dimethoxy/Disflux |
 | Plasma                        | https://github.com/Dimethoxy/Plasma |
-| tek                           | https://codeberg.org/unspeaker/tek |
 | SignalViewLV2                 | https://github.com/TimKrause2/SignalViewLV2 |
 
 Check the following URL:
@@ -215,6 +214,8 @@ Specmatch requires some python modules:
 - pydup:       https://github.com/jiaaro/pydub/
 - resampy:     https://github.com/bmcfee/resampy
 
+Add a grub script to add "preempt=full threadirqs" to existing standard kernels
+
 Jack-Audio link fix:
 ```
 %set_build_flags
@@ -229,39 +230,6 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 basicpitch from spotify -> https://github.com/spotify/basic-pitch
 spleeter from deezer -> https://github.com/Deezer/spleeter
 demucs from facebook -> https://github.com/facebookresearch/demucs
-
-## Fedora 40 to be fixed
-
-cardinal -> gcc segfault on arm64
-surge-xt - arm64 -> compiler segfault
-dssi-vst
-linvst -> 32 bits packages pb
-yabridge -> wineg++ pb
-BYOD -> ??
-mscore-mao
-lv2-loop192
-bipescript-ide -> conversion error on f40 / rawhide
-vmpc -> error: assignment of read-only member
-soundux -> convertion error
-shortcircuit -> distutils missing - python 3.12
-seq192 -> rawhide - conversion error
-rack-v2-monome -> -Wincompatible-pointer-types
-performer -> moc_performer.cpp:198:21: error: â€˜class Performerâ€™ has no member named â€˜loadHelpâ€™
-peaksynth-audio-plugin -> error: juce_audio_basics/juce_audio_basics.h: No such file or directory
-mapmap -> src/control/OscInterface.cpp:54:25: error: invalid conversion (rawhide only)
-loop192 -> error: invalid conversion
-glava -> is triggering the generation of an executable stack (because it has an executable .note.GNU-stack section) - rawhide only
-lives-mao -> libunicap-devel missing on rawhide
-
-## WIP
-
-```
-rack-v2-RPJ -> needs a specific aarch64 patch for intrin.h
-june-21     -> package cabbage and use it to build a shipped binary
-bintracker  -> problem during chicken dependencies installation
-```
-
-Add a grub script to add "preempt=full threadirqs" to existing standard kernels
 
 ## Check Sourceforge
 
@@ -319,9 +287,6 @@ cm/cm.spec
 
 kloncentaur: replace sh file for source download
 cadence: add desktop file
-linuxmao/fogpad: split by plugin type
-update qsampler
-fix loop192 name
 
 ## Add check section:
 ```
