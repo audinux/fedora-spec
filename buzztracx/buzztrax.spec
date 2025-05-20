@@ -54,7 +54,7 @@ Summary:  Development files for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
-The %{name}-devel package contains libraries and header files for
+The %{name}-devel package contains libraries and header files for %{name}
 
 %prep
 
@@ -65,22 +65,24 @@ sed -i -e "71d" Makefile.am
 %build
 
 %set_build_flags
+export CXXFLAGS="-Wno-error -Wno-incompatible-pointer-types $CXXFLAGS"
+export CFLAGS="-Wno-error -Wno-incompatible-pointer-types $CFLAGS"
 
 autoreconf
 
-%configure --enable-dllwrapper=no --disable-rpath
+%configure
 
-%make_build CFLAGS="$CFLAGS -Wno-error"
+%make_build
 
 %install
 
 %make_install
-%ifarch x86_64 amd64
-mv %{buildroot}/usr/lib/buzztrax-songio %{buildroot}/%{_libdir}/
-%endif
+# %ifarch x86_64 amd64
+# mv %{buildroot}/usr/lib/buzztrax-songio %{buildroot}/%{_libdir}/
+# %endif
 
 chrpath --delete %{buildroot}/%{_libdir}/libbuzztrax-core.so.1.1.0
-chrpath --delete %{buildroot}/%{_libdir}/buzztrax-songio/libbtbsl.so
+chrpath --delete %{buildroot}/%{_usr}/lib/buzztrax-songio/libbtbsl.so
 chrpath --delete %{buildroot}/%{_bindir}/buzztrax-cmd
 chrpath --delete %{buildroot}/%{_bindir}/buzztrax-edit
 chrpath --delete %{buildroot}/%{_libdir}/gstreamer-1.0/libbuzztraxaudio.so
@@ -99,7 +101,7 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}-songio-buzz.
 %{_datadir}/gtk-doc/html/buzztrax-*
 %{_bindir}/buzztrax-cmd
 %{_bindir}/buzztrax-edit
-%{_libdir}/buzztrax-songio/
+%{_usr}/lib/buzztrax-songio/
 %{_libdir}/buzztrax
 %{_libdir}/gstreamer-1.0/libbuzztrax*
 %{_libdir}/gstreamer-1.0/libgstbml.*

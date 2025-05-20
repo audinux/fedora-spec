@@ -3,6 +3,8 @@
 # Type: Plugin, Standalone, VST3
 # Category: Audio, Synthesizer
 
+%global commit0 fd208b30da8c2c7ff63aada57f0088b4a52a27fd
+
 Name: juceopl
 Version: 1.0.1
 Release: 1%{?dist}
@@ -14,7 +16,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/bsutherland/JuceOPLVSTi/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/bsutherland/JuceOPLVSTi/archive/%{commit0}.zip#/%{name}-%{version}.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
 Source2: Builds.zip
@@ -27,7 +29,7 @@ BuildRequires: freetype-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: JUCE
+BuildRequires: JUCE60
 BuildRequires: libXrandr-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
@@ -57,7 +59,7 @@ Requires: %{name}
 VST2 version of %{name}
 
 %prep
-%autosetup -n JuceOPLVSTi-%{version}
+%autosetup -n JuceOPLVSTi-%{commit0}
 
 unzip %{SOURCE1}
 unzip %{SOURCE2}

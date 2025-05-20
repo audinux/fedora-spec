@@ -4,6 +4,7 @@
 # Category: Tool, Audio
 
 %global debug_package %{nil}
+%global commit0 286ab995035308f83f63b1df4584161bebd97df5
 
 Name: LinVst3
 Version: 4.9
@@ -17,7 +18,7 @@ ExclusiveArch: x86_64 aarch64
 # ./vst3sdk-source.sh  v3.7.1_build_50
 
 Source0: vst3sdk.tar.gz
-Source1: %{url}/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source1: https://github.com/osxmidi/LinVst3/archive/%{commit0}.zip#/%{name}-%{version}.zip
 
 BuildRequires: gcc-c++
 BuildRequires: make
@@ -40,19 +41,18 @@ LinVst3 adds support for Windows vst3's to be used in Linux3 vst3 capable DAW's.
 %prep
 %autosetup -n vst3sdk
 
-tar xvfz %{SOURCE1}
-cd %{name}-%{version}
+unzip %{SOURCE1}
+cd %{name}-%{commit0}
 
 sed -i -e "s/CXX_FLAGS =/CXX_FLAGS = -fPIC/g" Makefile-convert
 
 %build
 
 %set_build_flags
-
 export CXXFLAGS="-include limits $CXXFLAGS"
 export LDFLAGS="-z muldefs $LDFLAGS"
 
-cd %{name}-%{version}
+cd %{name}-%{commit0}
 
 # make_build -f Makefile-convert
 # make_build -j1
