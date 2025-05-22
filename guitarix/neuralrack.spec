@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: neuralrack
-Version: 0.1.6
+Version: 0.1.7
 Release: 1%{?dist}
 Summary: NeuralRack is a Neural Model and Impulse Response File loader for Linux
 License: BSD-3-Clause
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./brummer10-source.sh <project> <tag>
-# ./brummer10-source.sh NeuralRack v0.1.6
+# ./brummer10-source.sh NeuralRack v0.1.7
 
 Source0: NeuralRack.tar.gz
 Source1: brummer10-source.sh
@@ -88,6 +88,9 @@ cp -a bin/Neuralrack %{buildroot}/%{_bindir}/
 %{_libdir}/lv2/*
 
 %changelog
+* Tue May 20 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1.7-1
+- update to 0.1.7-1
+
 * Sat Apr 26 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1.6-1
 - update to 0.1.6-1
 
