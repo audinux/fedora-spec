@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: drumrox-kits
-Version: 2.0.1
+Version: 3.0.0
 Release: 6%{?dist}
 Summary: A set of drumrox drum kits
 License: GPL-3.0-or-later
@@ -210,7 +210,47 @@ License:  GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-Copyc4tElNacho
-The Copyc4t El Nacho drumkit for %{name}
+The Copyc4t El Nacho Kit drumkit for %{name}
+
+%package -n %{name}-ChoosyHouseKit
+Summary:  The Choosy House Kit drumkit for %{name}
+License:  GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-ChoosyHouseKit
+The Choosy House Kit drumkit for %{name}
+
+%package -n %{name}-ElgamCarousel
+Summary:  The Elgam Carousel drumkit for %{name}
+License:  GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-ElgamCarousel
+The Elgam Carousel drumkit for %{name}
+
+%package -n %{name}-ASR-XPro
+Summary:  The ASR-X Pro drumkit for %{name}
+License:  GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-ASR-XPro
+The ASR-X Pro drumkit for %{name}
+
+%package -n %{name}-FrickeMFB512
+Summary:  The Fricke MFB512 Kit drumkit for %{name}
+License:  GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-FrickeMFB512
+The Fricke MFB512 Kit drumkit for %{name}
+
+%package -n %{name}-FormantaPolivoks
+Summary:  The Formanta Polivoks Kit drumkit for %{name}
+License:  GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-FormantaPolivoks
+The Formanta Polivoks Kit drumkit for %{name}
 
 %prep
 %autosetup -n drum_sklad-%{version}
@@ -240,6 +280,11 @@ install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ARP_Axxe/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Drumulator/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/WatfordRhythmGenerator/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Copyc4tElNacho/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ChoosyHouseKit/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ElgamCarousel/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ASR-XPro/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/FrickeMFB512/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/FormantaPolivoks/
 
 cp -ra Cheetah\ SpecDrum\ Standard/* %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Standard/
 cp -ra Cheetah\ SpecDrum\ Latin/* %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Latin/
@@ -264,6 +309,11 @@ cp -ra ARP\ Axxe/* %{buildroot}/%{_datadir}/drumrox-kits/ARP_Axxe/
 cp -ra Drumulator/* %{buildroot}/%{_datadir}/drumrox-kits/Drumulator/
 cp -ra Watford\ Rhythm\ Generator/* %{buildroot}/%{_datadir}/drumrox-kits/WatfordRhythmGenerator/
 cp -ra Copyc4t\ El\ Nacho\ Drumkit/* %{buildroot}/%{_datadir}/drumrox-kits/Copyc4tElNacho/
+cp -ra Choosy\ House\ Kit/* %{buildroot}/%{_datadir}/drumrox-kits/ChoosyHouseKit/
+cp -ra Elgam\ Carousel/*  %{buildroot}/%{_datadir}/drumrox-kits/ElgamCarousel/
+cp -ra ASR-X\ Pro/* %{buildroot}/%{_datadir}/drumrox-kits/ASR-XPro/
+cp -ra Fricke\ MFB512/* %{buildroot}/%{_datadir}/drumrox-kits/FrickeMFB512/
+cp -ra Formanta\ Polivoks/* %{buildroot}/%{_datadir}/drumrox-kits/FormantaPolivoks/
 
 %files -n license-%{name}
 %doc README.md
@@ -337,6 +387,21 @@ cp -ra Copyc4t\ El\ Nacho\ Drumkit/* %{buildroot}/%{_datadir}/drumrox-kits/Copyc
 
 %files -n %{name}-Copyc4tElNacho
 %{_datadir}/drumrox-kits/Copyc4tElNacho/*
+
+%files -n %{name}-ChoosyHouseKit
+%{_datadir}/drumrox-kits/ChoosyHouseKit/*
+
+%files -n %{name}-ElgamCarousel
+%{_datadir}/drumrox-kits/ElgamCarousel/*
+
+%files -n %{name}-ASR-XPro
+%{_datadir}/drumrox-kits/ASR-XPro/*
+
+%files -n %{name}-FrickeMFB512
+%{_datadir}/drumrox-kits/FrickeMFB512/*
+
+%files -n %{name}-FormantaPolivoks
+%{_datadir}/drumrox-kits/FormantaPolivoks/*
 
 %changelog
 * Sun Apr 20 2025 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-6
