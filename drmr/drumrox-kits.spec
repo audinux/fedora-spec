@@ -5,7 +5,7 @@
 
 Name: drumrox-kits
 Version: 3.0.0
-Release: 6%{?dist}
+Release: 7%{?dist}
 Summary: A set of drumrox drum kits
 License: GPL-3.0-or-later
 URL: https://github.com/psemiletov/drum_sklad
@@ -252,6 +252,14 @@ Requires: license-%{name}
 %description -n %{name}-FormantaPolivoks
 The Formanta Polivoks Kit drumkit for %{name}
 
+%package -n %{name}-KloneDualPercussionSynthesiser
+Summary:  The Klone Dual Percussion Synthesiser Kit drumkit for %{name}
+License:  GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-KloneDualPercussionSynthesiser
+The Klone Dual Percussion Synthesiser drumkit for %{name}
+
 %prep
 %autosetup -n drum_sklad-%{version}
 
@@ -285,6 +293,7 @@ install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ElgamCarousel/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ASR-XPro/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/FrickeMFB512/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/FormantaPolivoks/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/KloneDualPercussionSynthesiser/
 
 cp -ra Cheetah\ SpecDrum\ Standard/* %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Standard/
 cp -ra Cheetah\ SpecDrum\ Latin/* %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Latin/
@@ -314,6 +323,7 @@ cp -ra Elgam\ Carousel/*  %{buildroot}/%{_datadir}/drumrox-kits/ElgamCarousel/
 cp -ra ASR-X\ Pro/* %{buildroot}/%{_datadir}/drumrox-kits/ASR-XPro/
 cp -ra Fricke\ MFB512/* %{buildroot}/%{_datadir}/drumrox-kits/FrickeMFB512/
 cp -ra Formanta\ Polivoks/* %{buildroot}/%{_datadir}/drumrox-kits/FormantaPolivoks/
+cp -ra Klone\ Dual\ Percussion\ Synthesiser/* %{buildroot}/%{_datadir}/drumrox-kits/KloneDualPercussionSynthesiser/
 
 %files -n license-%{name}
 %doc README.md
@@ -403,7 +413,13 @@ cp -ra Formanta\ Polivoks/* %{buildroot}/%{_datadir}/drumrox-kits/FormantaPolivo
 %files -n %{name}-FormantaPolivoks
 %{_datadir}/drumrox-kits/FormantaPolivoks/*
 
+%files -n %{name}-KloneDualPercussionSynthesiser
+%{_datadir}/drumrox-kits/KloneDualPercussionSynthesiser/*
+
 %changelog
+* Thu May 22 2025 Yann Collette <ycollette.nospam@free.fr> - 3.0.0-7
+- update to 3.0.0-7
+
 * Sun Apr 20 2025 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-6
 - update to 2.0.1-6
 
