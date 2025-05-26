@@ -190,6 +190,7 @@
 | time12                        | https://github.com/tiagolr/time12 |
 | Millisecond                   | https://github.com/gaheldev/Millisecond |
 | nih-plug                      | https://github.com/robbert-vdh/nih-plug |
+| boris-granular-station        | https://github.com/glesdora/boris-granular-station |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
