@@ -186,6 +186,10 @@
 | Disflux                       | https://github.com/Dimethoxy/Disflux |
 | Plasma                        | https://github.com/Dimethoxy/Plasma |
 | SignalViewLV2                 | https://github.com/TimKrause2/SignalViewLV2 |
+| lossless-cut                  | https://github.com/mifi/lossless-cut |
+| time12                        | https://github.com/tiagolr/time12 |
+| Millisecond                   | https://github.com/gaheldev/Millisecond |
+| nih-plug                      | https://github.com/robbert-vdh/nih-plug |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -196,6 +200,8 @@ Check the following URL:
 - https://github.com/publicsamples
 - https://github.com/reales/OPL -> replace JUCEOplVsti ?
 - https://github.com/mod-audio
+- https://github.com/hollance
+- https://github.com/tiagolr
 
 Add dead package:
 - lv2-fil-plugins
