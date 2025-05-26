@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 67de322d8198b25192d06555f168942c6312cbef
-%global gittag0 2.1.3
+%global commit0 ebb4b7223e34810aee505bad3977ac9d00d0ccba
+%global gittag0 2.1.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-VsWorld
-Version: 2.1.3
+Version: 2.1.4
 Release: 2%{?dist}
 Summary: VsWorld plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r VsWorld_plugin/dist/VsWorld/* %{buildroot}%{_libexecdir}/Rack2/plugins/VsW
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.4-1
 - initial specfile

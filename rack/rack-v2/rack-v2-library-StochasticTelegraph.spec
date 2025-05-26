@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 3ad4e8258dbe0f06f333d39ef2cfc09521e7880d
-%global gittag0 2.0.19
+%global commit0 73915dd4f1bf5ef25f30d930632b1f6c80c7249a
+%global gittag0 2.0.20
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-StochasticTelegraph
-Version: 2.0.19
+Version: 2.0.20
 Release: 2%{?dist}
 Summary: StochasticTelegraph plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r StochasticTelegraph_plugin/dist/StochasticTelegraph/* %{buildroot}%{_libex
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.19-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.20-1
 - initial specfile
