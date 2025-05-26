@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: helio-workstation
-Version: 3.15.0
+Version: 3.16.0
 Release: 2%{?dist}
 Summary: An audio sequencer
 URL: https://github.com/helio-fm/helio-workstation
@@ -14,7 +14,7 @@ License: GPL-2.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./helioworkstation-source.sh 3.15
+# ./helioworkstation-source.sh 3.16
 
 Source0: helio-workstation.tar.gz
 Source1: helioworkstation-source.sh
@@ -80,6 +80,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/doc/*
 
 %changelog
+* Sun May 25 2025 Yann Collette <ycollette.nospam@free.fr> - 3.16.0-2
+- update to 3.16.0-2
+
 * Sun Apr 20 2025 Yann Collette <ycollette.nospam@free.fr> - 3.15.0-2
 - update to 3.15.0-2
 
