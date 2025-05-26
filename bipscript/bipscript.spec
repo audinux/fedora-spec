@@ -3,11 +3,11 @@
 # Type: Standalone, Language
 # Category: Audio, Programming
 
-Name:    bipscript
-Version: 0.21
+Name: bipscript
+Version: 0.22
 Release: 1%{?dist}
 Summary: Audio language
-URL:     https://www.bipscript.org/
+URL: https://www.bipscript.org/
 ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
@@ -18,7 +18,6 @@ Distribution: Audinux
 Source0: https://gitlab.domainepublic.net/bipscript/bipscript/-/archive/v%{version}/bipscript-v%{version}.tar.gz
 Source1: https://gitlab.domainepublic.net/bipscript/examples/-/archive/v0.21/examples-v0.21.tar.gz
 Source2: https://gitlab.domainepublic.net/bipscript/apidocs/-/archive/v0.21/apidocs-v0.21.tar.gz
-Patch0: bipscript-0001-fix-syntax-errors.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -53,7 +52,7 @@ Requires: %{name}
 Examples for %{name}
 
 %prep
-%autosetup -p1 -n %{name}-v%{version}
+%autosetup -n %{name}-v%{version}
 
 mkdir examples && tar xvfz %{SOURCE1} -C examples --strip-components 1
 mkdir apidocs && tar xvfz %{SOURCE2} -C apidocs --strip-components 1
@@ -61,7 +60,8 @@ mkdir apidocs && tar xvfz %{SOURCE2} -C apidocs --strip-components 1
 %build
 
 %set_build_flags
-export CFLAGS="$CFLAGS -fPIC"
+export CFLAGS="-fPIC $CFLAGS"
+export CXXFLAGS="-fPIC -Wno-template-body $CXXFLAGS"
 export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 %cmake
@@ -90,6 +90,9 @@ cp -ra apidocs/en %{buildroot}/%{_datadir}/bipscript/apidocs/
 %{_datadir}/bipscript/examples/
 
 %changelog
+* Sun May 25 2025 Yann Collette <ycollette.nospam@free.fr> - 0.22-1
+- update to 0.22-1
+
 * Tue Dec 24 2024 Yann Collette <ycollette.nospam@free.fr> - 0.21-1
 - update to 0.21-1
 
