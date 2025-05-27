@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 701a1b1a06cd42e73619f3d20dd10cdc1c9de182
-%global gittag0 2.0.1
+%global commit0 f845b65b4280e765e79f2ce0d8a7523ccc647225
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-HawthornLabs
-Version: 2.0.1
+Version: 2.0.2
 Release: 2%{?dist}
 Summary: HawthornLabs plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r HawthornLabs_plugin/dist/HawthornLabs/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile
