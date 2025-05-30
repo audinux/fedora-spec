@@ -5,7 +5,7 @@
 
 Summary: A simple MIDI tracker and sequencer
 Name: noteahead
-Version: 0.7.0
+Version: 0.8.0
 Release: 1%{?dist}
 License: GPLv2+
 URL: https://github.com/juzzlin/Noteahead
@@ -63,6 +63,9 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/noteahea
 %{_datadir}/pixmaps/*.png
 
 %changelog
+* Fri May 30 2025 Yann Collette <ycollette.nospam@free.fr> - 0.8.0-1
+- update to 0.8.0-1
+
 * Sun May 25 2025 Yann Collette <ycollette.nospam@free.fr> - 0.7.0-1
 - update to 0.7.0-1
 
