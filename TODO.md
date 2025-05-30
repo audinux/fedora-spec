@@ -179,7 +179,7 @@
 | Overdraw                      | https://github.com/unevens/Overdraw |
 | Curvessor                     | https://github.com/unevens/Curvessor |
 | trigger2midi                  | https://github.com/jkbd/trigger2midi |
-| museg^t                       | https://github.com/greynewell/musegpt |
+| musegpt                       | https://github.com/greynewell/musegpt |
 | regrader                      | https://github.com/igorski/regrader |
 | StoneMistress                 | https://github.com/NaviCisco/StoneMistress |
 | gate12                        | https://github.com/tiagolr/gate12 |
@@ -205,12 +205,24 @@ Check the following URL:
 - https://github.com/tiagolr
 
 Add dead package:
+- gmixer
+- jokosher
+- kguitar
+- lv2-EQ10Q-plugins
+- lv2-artyfx-plugins
+- lv2-avw-plugins
 - lv2-fil-plugins
+- lv2-fomp-plugins
 - lv2-instance-access
+- lv2-invada-plugins
+- lv2-kn0ck0ut
+- lv2-triceratops
 - lv2-ui
 - lv2core
-- slv2
 - phasex
+- rtirq
+- slv2
+- zynjacku
 
 Add missing zita packaes:
 - zita-audiotools-1.3.0.tar.bz2
