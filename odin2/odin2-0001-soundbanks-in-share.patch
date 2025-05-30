@@ -1,28 +1,34 @@
-From 1ef41527899a7fafe9dbf8f91bb8ca4f40ed50f5 Mon Sep 17 00:00:00 2001
+From 0860a69899373c23c49f437871b569f94d408496 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Wed, 18 Aug 2021 06:36:01 +0200
-Subject: [PATCH] soundbank in share
+Date: Thu, 29 May 2025 19:42:49 +0200
+Subject: [PATCH] patch
 
 ---
- Source/GlobalIncludes.h | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+ Source/GlobalIncludes.h | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
 diff --git a/Source/GlobalIncludes.h b/Source/GlobalIncludes.h
-index a7b0bd6..91b0aa5 100644
+index 46a0c40..816b54f 100644
 --- a/Source/GlobalIncludes.h
 +++ b/Source/GlobalIncludes.h
-@@ -75,10 +75,7 @@
+@@ -71,9 +71,7 @@
  #define MATRIX_SECTION_INDEX_MATRIX 0
  
  #ifdef ODIN_LINUX
--#define ODIN_STORAGE_PATH                                                                                              \
--	File::getSpecialLocation(File::SpecialLocationType::userHomeDirectory).getFullPathName() +                         \
--	    File::getSeparatorString() + ".local" + File::getSeparatorString() + "share" + File::getSeparatorString() +    \
--	    "odin2"
+-#define ODIN_STORAGE_PATH                                                                                                                                                          \
+-	File::getSpecialLocation(File::SpecialLocationType::userHomeDirectory).getFullPathName() + File::getSeparatorString() + ".local" + File::getSeparatorString() + "share" +      \
+-	    File::getSeparatorString() + "odin2"
 +#define ODIN_STORAGE_PATH "/usr/share/odin2"
  #endif
  #ifdef ODIN_MAC
- #define ODIN_STORAGE_PATH                                                                                              \
+ #define ODIN_STORAGE_PATH                                                                                                                                                          \
+@@ -362,4 +360,4 @@ public:
+ 		static auto typeface_aldrich = Typeface::createSystemTypefaceFor(BinaryData::aldrich_regular_ttf, BinaryData::aldrich_regular_ttfSize);
+ 		return Font(typeface_aldrich).withHeight(p_size);
+ 	}
+-};
+\ No newline at end of file
++};
 -- 
-2.31.1
+2.49.0
 

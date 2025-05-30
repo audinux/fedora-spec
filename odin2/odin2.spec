@@ -4,10 +4,10 @@
 # Category: Audio, Synthesizer
 
 Name: odin2
-Version: 2.3.4
+Version: 2.4.1
 Release: 5%{?dist}
 Summary: A VST3 Synthesizer
-License: GPL-2.0-or-later
+License: GPL-3.0-or-later
 URL: https://github.com/TheWaveWarden/odin2
 ExclusiveArch: x86_64 aarch64
 
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./odin-sources.sh <TAG>
-#        ./odin-sources.sh v2.3.4
+#        ./odin-sources.sh v2.4.1
 
 Source0: odin2.tar.gz
 Source1: odin-sources.sh
@@ -71,14 +71,9 @@ LV2 version of %{name}
 %prep
 %autosetup -p1 -n %{name}
 
-sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"/g" libs/JUCE/extras/Build/juceaide/CMakeLists.txt
-
-sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"/g" libs/JUCELV2/extras/Build/juceaide/CMakeLists.txt
-
 %build
 
-%set_build_flags
-%cmake -DCMAKE_CXX_FLAGS="-include utility -fPIC $CXXFLAGS"
+%cmake
 %cmake_build
 
 %install
@@ -89,8 +84,8 @@ install -m 755 -d %{buildroot}%{_libdir}/clap/
 install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 -d %{buildroot}%{_datadir}/odin2/Soundbanks/
 
-cp -r Soundbanks/* %{buildroot}%{_datadir}/odin2/Soundbanks/
-rm %{buildroot}%{_datadir}/odin2/Soundbanks/User\ Patches/.gitignore
+cp -r assets/Soundbanks/* %{buildroot}%{_datadir}/odin2/Soundbanks/
+rm -f %{buildroot}%{_datadir}/odin2/Soundbanks/User\ Patches/.gitignore
 
 install -m 755 -p %{__cmake_builddir}/Odin2_artefacts/Standalone/Odin2 %{buildroot}/%{_bindir}/
 cp -ra %{__cmake_builddir}/Odin2_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
@@ -137,6 +132,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Fri May 30 2025 Yann Collette <ycollette.nospam@free.fr> - 2.4.1-5
+- update to 2.4.1-5
+
+* Thu May 29 2025 Yann Collette <ycollette.nospam@free.fr> - 2.4.0-5
+- update to 2.4.0-5
+
 * Sat Feb 25 2023 Yann Collette <ycollette.nospam@free.fr> - 2.3.4-5
 - update to 2.3.4-5 - fix desktop file - use cmake
 
