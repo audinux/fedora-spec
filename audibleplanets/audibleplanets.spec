@@ -6,18 +6,18 @@
 %global debug_package %{nil}
 
 Name: audibleplanets
-Version: 1.1.5
+Version: 1.2.2
 Release: 1%{?dist}
 Summary: An expressive, quasi-Ptolemaic semi-modular synthesizer
 License: GPL-3.0-or-later
 URL: https://github.com/gregrecco67/AudiblePlanets
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./audibleplanets-source.sh <TAG>
-#        ./audibleplanets-source.sh v1.1.5
+#        ./audibleplanets-source.sh v1.2.2
 
 Source0: AudiblePlanets.tar.gz
 Source1: audibleplanets-source.sh
@@ -67,13 +67,28 @@ Many mutually modulatable parameters are configurable by the user,
 and a robust system of randomization facilitates sonic exploration
 and discovery.
 
+%package -n license-%{name}
+Summary:  License and documentation fpr %{name}
+License:  GPL-3.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPL-3.0-or-later
-Requires: %{name}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
+
+%package -n lv2-%{name}
+Summary:  LV2 version of %{name}
+License:  GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n lv2-%{name}
+LV2 version of %{name}
 
 %prep
 %autosetup -n AudiblePlanets
@@ -85,21 +100,32 @@ VST3 version of %{name}
 
 %install
 
-install -m 755 -d %{buildroot}%{_bindir}/
-cp -ra %{__cmake_builddir}/AudiblePlanets_artefacts/Standalone/* %{buildroot}/%{_bindir}/
-
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 cp -ra %{__cmake_builddir}/AudiblePlanets_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 
-%files -n %{name}
+install -m 755 -d %{buildroot}%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/AudiblePlanets_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
+
+%files -n license-%{name}
 %doc README.md
 %license LICENSE.txt
-%{_bindir}/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
+%files -n lv2-%{name}
+%{_libdir}/lv2/*
+
 %changelog
+* Thu May 29 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-1
+- update to 1.2.2-1
+
+* Wed May 28 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-1
+- update to 1.2.1-1
+
+* Tue May 27 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
+- update to 1.2.0-1
+
 * Fri Aug 16 2024 Yann Collette <ycollette.nospam@free.fr> - 1.1.5-1
 - update to 1.1.5-1
 
