@@ -4,7 +4,7 @@
 # Category: Sequencer, Sampler, Plugin
 
 Name: jc303
-Version: 0.12.0
+Version: 0.12.1
 Release: 2%{?dist}
 Summary: A Free Roland TB-303 Plugin
 License: GPL-3.0-or-later
@@ -66,6 +66,14 @@ Requires: %{name}
 %description -n lv2-%{name}
 LV2 version of %{name}
 
+%package -n clap-%{name}
+Summary:  CLAP version of %{name}
+License:  GPL-3.0-or-later
+Requires: %{name}
+
+%description -n clap-%{name}
+CLAP version of %{name}
+
 %prep
 %autosetup -n %{name}-%{version}
 
@@ -81,13 +89,14 @@ mv VST_SDK/VST2_SDK vstsdk2.4
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/JC303_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
-
 install -m 755 -d %{buildroot}%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/JC303_artefacts/VST/*  %{buildroot}/%{_libdir}/vst/
-
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/JC303_artefacts/LV2/*  %{buildroot}/%{_libdir}/lv2/
+install -m 755 -d %{buildroot}%{_libdir}/clap/
+
+cp -ra %{__cmake_builddir}/JC303_artefacts/Release/VST3/* %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/JC303_artefacts/Release/VST/*  %{buildroot}/%{_libdir}/vst/
+cp -ra %{__cmake_builddir}/JC303_artefacts/Release/LV2/*  %{buildroot}/%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/JC303_artefacts/Release/CLAP/* %{buildroot}/%{_libdir}/clap/
 
 %files
 %doc README.md
@@ -102,7 +111,13 @@ cp -ra %{__cmake_builddir}/JC303_artefacts/LV2/*  %{buildroot}/%{_libdir}/lv2/
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
 
+%files -n clap-%{name}
+%{_libdir}/clap/*
+
 %changelog
+* Fri May 30 2025 Yann Collette <ycollette.nospam@free.fr> - 0.12.1-2
+- update to 0.12.1-2
+
 * Tue Apr 01 2025 Yann Collette <ycollette.nospam@free.fr> - 0.12.0-2
 - update to 0.12.0-2
 
