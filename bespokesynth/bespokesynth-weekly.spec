@@ -5,6 +5,8 @@
 
 %global commit0 0878b6c68a1d1ef883b78e0b00b1aa4c3cfaa9a1
 
+%global toolchain clang
+
 Name: BespokeSynth-weekly
 Version: 1.3.10
 Release: 3%{?dist}
@@ -27,6 +29,7 @@ Source2: bespokesynth-sources.sh
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: patchelf
+BuildRequires: mold
 BuildRequires: alsa-lib-devel
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: mesa-libGL-devel
@@ -87,7 +90,9 @@ export CXXFLAGS="$CXXFLAGS -include memory"
 %cmake \
     -DBESPOKE_VST2_SDK_LOCATION=`pwd`/VST_SDK/VST2_SDK \
     -DBESPOKE_SYSTEM_PYBIND11=ON \
-    -DBESPOKE_SYSTEM_JSONCPP=ON
+    -DBESPOKE_SYSTEM_JSONCPP=ON \
+    -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=mold"
+
 %cmake_build
 
 %install

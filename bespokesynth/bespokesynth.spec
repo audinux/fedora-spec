@@ -5,7 +5,7 @@
 
 Name: BespokeSynth
 Version: 1.3.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: A software modular synth
 License: GPL-3.0-or-later
 URL: https://github.com/BespokeSynth/BespokeSynth
@@ -25,6 +25,7 @@ Source2: bespokesynth-sources.sh
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: patchelf
+BuildRequires: mold
 BuildRequires: alsa-lib-devel
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: mesa-libGL-devel
@@ -83,7 +84,8 @@ export CXXFLAGS="$CXXFLAGS -include memory"
 %cmake \
     -DBESPOKE_VST2_SDK_LOCATION=`pwd`/VST_SDK/VST2_SDK \
     -DBESPOKE_SYSTEM_PYBIND11=ON \
-    -DBESPOKE_SYSTEM_JSONCPP=ON
+    -DBESPOKE_SYSTEM_JSONCPP=ON \
+    -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=mold"
 %cmake_build
 
 %install
@@ -123,8 +125,8 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/com.bespo
 %{_datadir}/metainfo/com.bespokesynth.BespokeSynth.metainfo.xml
 
 %changelog
-* Sun Dec 22 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-3
-- Update to 1.3.0-3
+* Fri May 30 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-4
+- Update to 1.3.0-4 - fix link problem with corruption
 
 * Sun Dec 01 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.10-3
 - Update to 1.2.10-3 - update to bc9dd72176ec469e20f978d1cae31503593ebe86
