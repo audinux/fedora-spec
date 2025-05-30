@@ -3,13 +3,14 @@
 # Type: Rack
 # Category: Audio, Synthesizer
 
-%define use_static_glfw 0
+%define use_static_glew 0
+%define use_static_glfw 1
 %define use_static_rtaudio 1
 %define use_embedded_samplerate 0
 
 Name:    Rack-v2
 Version: 2.6.4
-Release: 6%{?dist}
+Release: 7%{?dist}
 Summary: A modular Synthesizer
 License: GPL-2.0-or-later
 URL:     https://github.com/VCVRack/Rack
@@ -34,7 +35,9 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: libsamplerate-devel
 %endif
 BuildRequires: libzip-devel
+%if !%{use_static_glew}
 BuildRequires: glew-devel
+%endif
 %if !%{use_static_glfw}
 BuildRequires: glfw-devel
 %endif
@@ -49,9 +52,6 @@ BuildRequires: openssl-devel
 BuildRequires: jansson-devel
 BuildRequires: gtk3-devel
 BuildRequires: rtmidi-devel
-%if !%{use_static_rtaudio}
-BuildRequires: rtaudio-devel
-%endif
 BuildRequires: speex-devel
 BuildRequires: wget
 BuildRequires: simde-devel
@@ -70,9 +70,9 @@ A modular Synthesizer
 %prep
 %setup -n Rack
 
-%patch  0 -p1
+%patch 0 -p1
 %ifarch aarch64
-%patch  1 -p1
+%patch 1 -p1
 %endif
 
 CURRENT_PATH=`pwd`
@@ -95,6 +95,9 @@ NEW_FLAGS="-I/usr/include/GLFW"
 %if !%{use_static_rtaudio}
 NEW_FLAGS="$NEW_FLAGS -I/usr/include/rtaudio"
 %endif
+%if !%{use_static_glew}
+NEW_FLAGS="$NEW_FLAGS -I/usr/include/GL"
+%endif
 
 echo "CXXFLAGS += $NEW_FLAGS `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/tinyexpr -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
 
@@ -113,15 +116,26 @@ echo "Use embedded libsamplerate"
 %else
 echo "Do not use embedded libsamplerate"
 %endif
+%if %{use_static_glew}
+echo "Use Static GLEW"
+%else
+echo "Do not use static GLEW"
+%endif
 
 sed -i -e "s/-Wl,-Bstatic//g" Makefile
 
+%if !%{use_static_glew}
 sed -i -e "s/dep\/lib\/libGLEW.a/-lGLEW/g" Makefile
+%else
+sed -i -e "s/dep\/lib\/libgGLEW.a/dep\/%{_lib}\/libGLEW.a/g" Makefile
+%endif
+
 %if !%{use_static_glfw}
 sed -i -e "s/dep\/lib\/libglfw3.a/-lglfw/g" Makefile
 %else
 sed -i -e "s/dep\/lib\/libglfw3.a/dep\/%{_lib}\/libglfw3.a/g" Makefile
 %endif
+
 sed -i -e "s/dep\/lib\/libjansson.a/-ljansson/g" Makefile
 sed -i -e "s/dep\/lib\/libcurl.a/-lcurl/g" Makefile
 sed -i -e "s/dep\/lib\/libssl.a/-lssl/g" Makefile
@@ -165,6 +179,9 @@ cmake -DCMAKE_INSTALL_PREFIX=.. -DCMAKE_CXX_FLAGS="-O2 -fPIC"  -DGLFW_COCOA_CHDI
 make
 make install
 cd ..
+%endif
+%if %{use_static_glew}
+make glew
 %endif
 %if %{use_static_rtaudio}
 cd rtaudio
@@ -219,6 +236,9 @@ EOF
 %{_libdir}/*
 
 %changelog
+* Fri May 30 2025 Yann Collette <ycollette.nospam@free.fr> - 2.6.4-7
+- update to v2.6.4-7 - fix a GLEW / GLFW problem
+
 * Tue May 06 2025 Yann Collette <ycollette.nospam@free.fr> - 2.6.4-6
 - update to v2.6.4-6
 
