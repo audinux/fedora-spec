@@ -191,6 +191,7 @@
 | Millisecond                   | https://github.com/gaheldev/Millisecond |
 | nih-plug                      | https://github.com/robbert-vdh/nih-plug |
 | boris-granular-station        | https://github.com/glesdora/boris-granular-station |
+| Cable                         | https://github.com/magillos/Cable |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
