@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: audibleplanets
-Version: 1.2.2
+Version: 1.2.3
 Release: 1%{?dist}
 Summary: An expressive, quasi-Ptolemaic semi-modular synthesizer
 License: GPL-3.0-or-later
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./audibleplanets-source.sh <TAG>
-#        ./audibleplanets-source.sh v1.2.2
+#        ./audibleplanets-source.sh v1.2.3
 
 Source0: AudiblePlanets.tar.gz
 Source1: audibleplanets-source.sh
@@ -117,6 +117,9 @@ cp -ra %{__cmake_builddir}/AudiblePlanets_artefacts/LV2/* %{buildroot}/%{_libdir
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Jun 01 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-1
+- update to 1.2.3-1
+
 * Thu May 29 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-1
 - update to 1.2.2-1
 
