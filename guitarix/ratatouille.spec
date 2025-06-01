@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: ratatouille
-Version: 0.9.10
+Version: 0.9.11
 Release: 1%{?dist}
 Summary: Ratatouille is a Neural Model loader and mixer
 License: BSD-3-Clause
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./brummer10-source.sh <project> <tag>
-# ./brummer10-source.sh Ratatouille.lv2 v0.9.10
+# ./brummer10-source.sh Ratatouille.lv2 v0.9.11
 
 Source0: Ratatouille.lv2.tar.gz
 Source1: brummer10-source.sh
@@ -28,6 +28,9 @@ BuildRequires: cairo-devel
 BuildRequires: libX11-devel
 BuildRequires: libsndfile-devel
 BuildRequires: fftw-devel
+BuildRequires: pkgconfig(jack)
+
+Requires: license-%{name}
 
 %description
 Ratatouille is a Neural Model loader and mixer for Linux/Windows.
@@ -43,11 +46,32 @@ Ratatouille.lv2 supports resampling when needed to match the expected
 sample rate of the loaded models. Both models may have different
 expectations regarding the sample rate.
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}.
+
+%description -n license-%{name}
+License and documentation for %{name}.
+
 %package -n lv2-%{name}
 Summary: LV2 version of the %{name} plugin.
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of the %{name} plugin.
+
+%package -n vst-%{name}
+Summary: VST version of the %{name} plugin.
+Requires: license-%{name}
+
+%description -n vst-%{name}
+VST version of the %{name} plugin.
+
+%package -n clap-%{name}
+Summary: CLAP version of the %{name} plugin.
+Requires: license-%{name}
+
+%description -n clap-%{name}
+CLAP version of the %{name} plugin.
 
 %prep
 %autosetup -n Ratatouille.lv2
@@ -63,18 +87,36 @@ export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
 
 %install
 
+install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 -d %{buildroot}/%{_libdir}/lv2/
+install -m 755 -d %{buildroot}/%{_libdir}/clap/
+install -m 755 -d %{buildroot}/%{_libdir}/vst/
 
-cp -ra bin/Ratatouille.lv2 %{buildroot}/%{_libdir}/lv2/
+cp -ra bin/Ratatouille.lv2  %{buildroot}/%{_libdir}/lv2/
+cp -a bin/Ratatouille.clap  %{buildroot}/%{_libdir}/clap/
+cp -a bin/Ratatouillevst.so %{buildroot}/%{_libdir}/vst/
+cp -a bin/Ratatouille       %{buildroot}/%{_bindir}/
 
 %files
+%{_bindir}/*
+
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
 
+%files -n vst-%{name}
+%{_libdir}/vst/*
+
+%files -n clap-%{name}
+%{_libdir}/clap/*
+
 %changelog
+* Sat May 31 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.11-1
+- update to 0.9.11-1
+
 * Mon Mar 17 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.10-1
 - update to 0.9.10-1
 
