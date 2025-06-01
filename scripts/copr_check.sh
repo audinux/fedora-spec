@@ -14,7 +14,7 @@ then
     mv copr_tags_new.txt copr_tags_old.txt
 fi
 
-dnf repoquery --repoid=copr:copr.fedorainfracloud.org:ycollet:audinux --queryformat "%45{name} %{evr} %{buildtime}" | sort -r -k3 > copr_tags_new.txt
+dnf repoquery --repoid=copr:copr.fedorainfracloud.org:ycollet:audinux --queryformat "%{full_nevra} %{buildtime}\n" | sort -k2 | sed -e "s/^[ ]*//g" | sed -e "s/ /__/g" > copr_tags_new.txt
 
 if [ -f copr_tags_old.txt ];
 then
