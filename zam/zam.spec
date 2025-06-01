@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: zam-mao-plugins
-Version: 4.3
+Version: 4.4
 Release: 4%{?dist}
 Summary: Set of LV2 / VST / VST3 / CLAPS plugins
 License: GPL-2.0-or-later AND ISC
@@ -14,7 +14,8 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./zam-source.sh 4.3
+# ./zam-source.sh 4.4
+
 Source0: zam-plugins-%{version}.tar.xz
 
 BuildRequires: gcc gcc-c++
@@ -112,6 +113,9 @@ done
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Jun 01 2025 Yann Collette <ycollette.nospam@free.fr> - 4.4-4
+- update to 4.4-4
+
 * Sun May 12 2024 Yann Collette <ycollette.nospam@free.fr> - 4.3-4
 - update to 4.3-4
 
