@@ -4,18 +4,18 @@
 # Category: Audio, Synthesizer
 
 Name: aeolus_plugin
-Version: 0.2.1
+Version: 0.3.0
 Release: 4%{?dist}
 Summary: Pipe organ synthesizer
 License: GPL-3.0-or-later
 URL: https://github.com/Archie3d/aeolus_plugin
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source_aeolus_plugin.sh <tag>
-#        ./source_aeolus_plugin.sh master
+#        ./source_aeolus_plugin.sh v0.3.0
 
 Source0: aeolus_plugin.tar.gz
 Source1: source_aeolus_plugin.sh
@@ -72,6 +72,14 @@ Requires: %{name}
 %description -n lv2-%{name}
 LV2 version of %{name}
 
+%package -n clap-%{name}
+Summary:  CLAP version of %{name}
+License:  GPL-2.0-or-later
+Requires: %{name}
+
+%description -n clap-%{name}
+CLAP version of %{name}
+
 %prep
 %setup -n %{name}
 
@@ -89,11 +97,13 @@ LV2 version of %{name}
 install -m 755 -d %{buildroot}%{_bindir}/
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
+install -m 755 -d %{buildroot}%{_libdir}/clap/
 install -m 755 -d %{buildroot}%{_datadir}/Aeolus/doc/
 
 cp -ra %{__cmake_builddir}/Aeolus_artefacts/Standalone/* %{buildroot}%{_bindir}/
-cp -ra %{__cmake_builddir}/Aeolus_artefacts/VST3/Aeolus.vst3 %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/Aeolus_artefacts/LV2/Aeolus.lv2 %{buildroot}%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/Aeolus_artefacts/VST3/*       %{buildroot}%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/Aeolus_artefacts/LV2/*        %{buildroot}%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/Aeolus_artefacts/CLAP/*       %{buildroot}%{_libdir}/clap/
 cp -ra docs/* %{buildroot}%{_datadir}/Aeolus/doc/
 cp -ra Resources/* %{buildroot}%{_datadir}/Aeolus/
 
@@ -141,7 +151,13 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Aeolus.desktop
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
 
+%files -n clap-%{name}
+%{_libdir}/clap/*
+
 %changelog
+* Sat May 31 2025 Yann Collette <ycollette.nospam@free.fr> - 0.3.0-1
+- update to 0.3.0-1
+
 * Mon Sep 02 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2.1-1
 - update to 0.2.1-1
 
