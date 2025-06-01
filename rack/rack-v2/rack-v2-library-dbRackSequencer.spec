@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 2baf81ee51941f9c027c8da121d11c190cc1fb96
-%global gittag0 2.6.1
+%global commit0 6cb0bb639659f39e08f7cf9008e2860a6397384c
+%global gittag0 2.6.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-dbRackSequencer
-Version: 2.6.1
+Version: 2.6.2
 Release: 2%{?dist}
 Summary: dbRackSequencer plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r dbRackSequencer_plugin/dist/dbRackSequencer/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.2-1
 - initial specfile
