@@ -1037,7 +1037,9 @@ https://salsa.debian.org/multimedia-team/qmidiroute
 https://git.code.sf.net/p/alsamodular/qmidicontrol.git alsamodular-qmidicontrol.git
 https://git.code.sf.net/p/alsamodular/qarecord.git alsamodular-qarecord.git
 https://github.com/theabolton/hexter
-https://codeberg.org/unspeaker/tek"
+https://codeberg.org/unspeaker/tek
+https://github.com/robbert-vdh/nih-plug
+https://github.com/spatialaudio/jackclient-python"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
