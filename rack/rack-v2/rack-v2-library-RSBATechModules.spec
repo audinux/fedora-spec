@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b62224e1fceb5660e37574c19ad6fbf22b3839d3
-%global gittag0 2.1.7
+%global commit0 a6ae3cdbe20520d9d21c4cbc0584679a7870f84d
+%global gittag0 2.1.8
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-RSBATechModules
-Version: 2.1.7
+Version: 2.1.8
 Release: 2%{?dist}
 Summary: RSBATechModules plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r RSBATechModules_plugin/dist/RSBATechModules/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.7-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.8-1
 - initial specfile
