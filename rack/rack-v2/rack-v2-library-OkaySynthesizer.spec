@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 7a6d3e48e293779fca7dbf2e7e8828f6a3efa78f
-%global gittag0 2.6.8
+%global commit0 e06a976140b5fc782ef032ea1da4d2d0b9b4c267
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-SanguineMutants
-Version: 2.6.8
+Name:    rack-v2-OkaySynthesizer
+Version: 2.0.1
 Release: 2%{?dist}
-Summary: SanguineMutants plugin for Rack
+Summary: OkaySynthesizer plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Bloodbat/SanguineMutants
+URL:     https://github.com/rafkhan/okay-synthesizer-vcvrack
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,8 +29,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: SanguineMutants.tar.gz
-Source2: SanguineMutants_plugin.json
+Source1: https://github.com/rafkhan/okay-synthesizer-vcvrack/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: OkaySynthesizer_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -61,8 +61,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-SanguineMutants plugin for Rack.
-Powerful, polyphonic macro oscillator based on Mutable Instruments' Plaits 1.2
+OkaySynthesizer plugin for Rack.
+Dual phase maniuplation LFO
 
 %prep
 %setup -n Rack
@@ -135,24 +135,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir SanguineMutants_plugin
-tar xvfz %{SOURCE1} --directory=SanguineMutants_plugin --strip-components=1
+mkdir OkaySynthesizer_plugin
+tar xvfz %{SOURCE1} --directory=OkaySynthesizer_plugin --strip-components=1
 
-cp -n %{SOURCE2} SanguineMutants_plugin/plugin.json || true
+cp -n %{SOURCE2} OkaySynthesizer_plugin/plugin.json || true
 
 %build
 
-cd SanguineMutants_plugin
+cd OkaySynthesizer_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/SanguineMutants/
-cp -r SanguineMutants_plugin/dist/SanguineMutants/* %{buildroot}%{_libexecdir}/Rack2/plugins/SanguineMutants/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/OkaySynthesizer/
+cp -r OkaySynthesizer_plugin/dist/OkaySynthesizer/* %{buildroot}%{_libexecdir}/Rack2/plugins/OkaySynthesizer/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.8-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile
