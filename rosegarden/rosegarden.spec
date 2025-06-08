@@ -3,7 +3,7 @@
 # Type: Standalone
 # Category: Audio, Sequencer, DAW
 
-%global major 24.12.1
+%global major 25.06
 
 Name: rosegarden4
 Version: %{major}
@@ -13,8 +13,10 @@ License: GPLv2+
 URL: https://www.rosegardenmusic.com/
 ExclusiveArch: x86_64 aarch64
 
-#Source0: https://sourceforge.net/projects/rosegarden/files/rosegarden/%{major}/rosegarden-%{major}.tar.xz
-Source0: https://sourceforge.net/projects/rosegarden/files/rosegarden/24.12/rosegarden-%{major}.tar.xz
+Source0: https://sourceforge.net/projects/rosegarden/files/rosegarden/%{major}/rosegarden-%{major}.tar.xz
+Source1: https://raw.githubusercontent.com/hughsie/fedora-appstream/master/screenshots-extra/rosegarden/a.png
+Source2: https://raw.githubusercontent.com/hughsie/fedora-appstream/master/screenshots-extra/rosegarden/b.png
+Source3: https://raw.githubusercontent.com/hughsie/fedora-appstream/master/screenshots-extra/rosegarden/c.png
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -72,9 +74,9 @@ chmod 644 src/gui/widgets/BaseTextFloat.*
 # See http://people.freedesktop.org/~hughsient/appdata/#screenshots for more details.
 #
 appstream-util replace-screenshots %{buildroot}%{_datadir}/metainfo/rosegarden.appdata.xml \
-  https://raw.githubusercontent.com/hughsie/fedora-appstream/master/screenshots-extra/rosegarden/a.png \
-  https://raw.githubusercontent.com/hughsie/fedora-appstream/master/screenshots-extra/rosegarden/b.png \
-  https://raw.githubusercontent.com/hughsie/fedora-appstream/master/screenshots-extra/rosegarden/c.png
+  %{SOURCE1} \
+  %{SOURCE2} \
+  %{SOURCE3}
 
 desktop-file-install \
   --dir %{buildroot}%{_datadir}/applications \
@@ -94,6 +96,9 @@ desktop-file-install \
 %{_datadir}/metainfo/rosegarden.appdata.xml
 
 %changelog
+* Wed Jun 04 2025 Yann Collette <ycollette.nospam@free.fr> - 25.06-4
+- update to 25.06-4
+
 * Thu Feb 06 2025 Yann Collette <ycollette.nospam@free.fr> - 24.12.1-4
 - update to 24.12.1-4
 
