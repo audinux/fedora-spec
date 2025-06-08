@@ -5,14 +5,14 @@
 
 Summary: Audio/MIDI multi-track sequencer
 Name: qtractor-mao
-Version: 1.5.5
+Version: 1.5.6
 Release: 2%{?dist}
 License: GPLv2+
 URL: https://qtractor.org/
 ExclusiveArch: x86_64 aarch64
 
 # ./qtractor-source.sh <tag>
-# ./qtractor-source.sh v1.5.5
+# ./qtractor-source.sh v1.5.6
 
 Source0: qtractor.tar.gz
 Source1: qtractor-source.sh
