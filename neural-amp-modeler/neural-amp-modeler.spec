@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: lv2-neural-amp-modeler
-Version: 0.1.8
+Version: 0.1.9
 Release: 1%{?dist}
 Summary: Neural Amp Modeler LV2 plugin implementation
 License: MIT
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./neural-amp-modeler-source.sh <TAG>
-#        ./neural-amp-modeler-source.sh v0.1.8
+#        ./neural-amp-modeler-source.sh v0.1.9
 
 Source0: neural-amp-modeler-lv2.tar.gz
 Source1: neural-amp-modeler-source.sh
@@ -55,6 +55,9 @@ cp -rav %{__cmake_builddir}/neural_amp_modeler.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Jun 09 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1.9.1
+- update to 0.1.9-1
+
 * Wed May 28 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1.8.1
 - update to 0.1.8-1
 
