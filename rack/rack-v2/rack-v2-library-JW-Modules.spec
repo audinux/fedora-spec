@@ -8,14 +8,14 @@
 
 # Global variables for github repository
 %global commit0 1e572c81bd5c92d393281572ffb6ab48b0d8fcc8
-%global gittag0 2.0.14
+%global gittag0 2.0.15
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-JW-Modules
-Version: 2.0.14
+Version: 2.0.15
 Release: 2%{?dist}
 Summary: JW-Modules plugin for Rack
 License: GPL-2.0-or-later
@@ -153,5 +153,5 @@ cp -r JW-Modules_plugin/dist/JW-Modules/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.14-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.15-1
 - initial specfile
