@@ -1039,7 +1039,9 @@ https://git.code.sf.net/p/alsamodular/qarecord.git alsamodular-qarecord.git
 https://github.com/theabolton/hexter
 https://codeberg.org/unspeaker/tek
 https://github.com/robbert-vdh/nih-plug
-https://github.com/spatialaudio/jackclient-python"
+https://github.com/spatialaudio/jackclient-python
+https://github.com/glesdora/boris-granular-station
+https://github.com/gabrielsoule/resonarium"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

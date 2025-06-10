@@ -189,7 +189,6 @@
 | lossless-cut                  | https://github.com/mifi/lossless-cut |
 | time12                        | https://github.com/tiagolr/time12 |
 | Millisecond                   | https://github.com/gaheldev/Millisecond |
-| boris-granular-station        | https://github.com/glesdora/boris-granular-station |
 | Cable                         | https://github.com/magillos/Cable |
 
 Check the following URL:
