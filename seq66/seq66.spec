@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer, MIDI
 
 Name: seq66
-Version: 0.99.19
+Version: 0.99.20
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -67,9 +67,7 @@ sed -i -e "s|2\.72|2\.71|g" configure.ac
 
 %set_build_flags
 
-%if 0%{?fedora} >= 38
 export CXXFLAGS="-std=c++11 -include cstdint $CXXFLAGS"
-%endif
 
 export PATH=.local/bin:$PATH
 
@@ -104,6 +102,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libdir}/*
 
 %changelog
+* Thu Jun 12 2025 Yann Collette <ycollette.nospam@free.fr> - 0.99.20-1
+- update 0.99.20-1
+
 * Sun Mar 02 2025 Yann Collette <ycollette.nospam@free.fr> - 0.99.19-1
 - update 0.99.19-1
 
