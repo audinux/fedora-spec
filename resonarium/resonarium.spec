@@ -4,7 +4,7 @@
 # Category: Audio, Effect, Synthesizer
 
 Name: resonarium
-Version: 0.0.10
+Version: 1.0.0
 Release: 1%{?dist}
 Summary: An expressive, semi-modular, and comprehensive physical modeling/waveguide synthesizer
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./resonarium-source.sh <tag>
-#        ./resonarium-source.sh v0.0.10
+#        ./resonarium-source.sh v1.0.0
 
 Source0: resonarium.tar.gz
 Source1: resonarium-source.sh
@@ -117,5 +117,8 @@ cp -ra %{__cmake_builddir}/Resonarium_Instrument_artefacts/Standalone/*  %{build
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Jun 11 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
+- update to 1.0.0-1
+
 * Mon Jun 09 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.10-1
 - Initial spec file
