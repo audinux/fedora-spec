@@ -142,7 +142,7 @@
 | Sound_Nodes                   | https://github.com/negdo/Sound_Nodes |
 | dublang                       | https://codeberg.org/joenio/dublang |
 | CMBNEX                        | https://github.com/KaixoCode/CMBNEX |
-| ConvertWithMoss               | https://github.com/git-moss/ConvertWithMoss | 
+| ConvertWithMoss               | https://github.com/git-moss/ConvertWithMoss |
 | node_sound                    | https://github.com/Lubba-64/node_sound |
 | JS_Inflator                   | https://github.com/Kiriki-liszt/JS_Inflator |
 | oemer                         | https://github.com/BreezeWhite/oemer |
@@ -190,6 +190,11 @@
 | time12                        | https://github.com/tiagolr/time12 |
 | Millisecond                   | https://github.com/gaheldev/Millisecond |
 | Cable                         | https://github.com/magillos/Cable |
+| Borg-ER-3                     | https://github.com/mrbid/Borg-ER-3 |
+| Hamburger                     | https://github.com/Davit-G/Hamburger |
+| scale-remapper                | https://github.com/xivilay/scale-remapper |
+| BitDOS-VST                    | https://github.com/astriiddev/BitDOS-VST |
+| Relief_Compressor             | https://github.com/Kiriki-liszt/Relief_Compressor |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -240,7 +245,7 @@ Jack-Audio link fix:
 export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 
-       -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
+	   -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
 ```
 
 ## Python package
@@ -413,18 +418,18 @@ pyliblo missing lv2-fil-plugins
 Fix these warning:
 ```
 Duplicate build-ids /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/lib/modules/5.15.70-rt50.fc35.x86_64/vmlinuz and
-                    /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/boot/vmlinuz-5.15.70-rt50.fc35.x86_64
+					/home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/boot/vmlinuz-5.15.70-rt50.fc35.x86_64
 absolute symlink: /lib/modules/5.15.70-rt50.fc35.x86_64/build -> /usr/src/kernels/5.15.70-rt50.fc35.x86_64
 Missing build-id in /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/realmode/rm/realmode.elf
 Missing build-id in /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/purgatory/purgatory.chk
 Missing build-id in /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/boot/setup.elf
 
 Duplicate build-ids /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/entry/vdso/vdso64.so and
-                    /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/entry/vdso/vdso64.so.dbg
+					/home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/entry/vdso/vdso64.so.dbg
 Duplicate build-ids /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/entry/vdso/vdso32.so.dbg and
-                    /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/entry/vdso/vdso32.so
+					/home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/arch/x86/entry/vdso/vdso32.so
 Duplicate build-ids /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/tools/objtool/fixdep and
-                    /home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/tools/bpf/resolve_btfids/fixdep
+					/home/collette/rpmbuild/BUILDROOT/kernel-rt-mao-5.15.70.rt50-13.fc35.x86_64/usr/src/kernels/5.15.70-rt50.fc35.x86_64/tools/bpf/resolve_btfids/fixdep
 ```
 
 # Check on src.fedora
