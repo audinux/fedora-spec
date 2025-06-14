@@ -14,8 +14,8 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# Usage: ./ripplerx-source.sh <TAG>
-#        ./ripplerx-source.sh v1.4.3
+# Usage: ./ripplerx-source.sh <PROJECT> <TAG>
+#        ./ripplerx-source.sh ripplerx v1.4.3
 
 Source0: ripplerx.tar.gz
 Source1: ripplerx-source.sh
