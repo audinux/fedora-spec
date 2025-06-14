@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: jamesdsp
-Version: 2.7.3
+Version: 2.7.4
 Release: 2%{?dist}
 Summary: An audio effect processor for PipeWire clients
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./JDSP4Linux-source.sh <tag>
-# ./JDSP4Linux-source.sh jamesdsp-2.7-3
+# ./JDSP4Linux-source.sh jamesdsp-2.7-4
 
 Source0: JDSP4Linux.tar.gz
 Source1: JDSP4Linux-source.sh
@@ -68,6 +68,9 @@ install -D -m 755 meta/jamesdsp.desktop %{buildroot}/%{_datadir}/applications/ja
 %{_datadir}/applications/jamesdsp.desktop
 
 %changelog
+* Thu Jun 12 2025 Yann Collette <ycollette.nospam@free.fr> - 2.7.4-2
+- update to 2.7.4-2
+
 * Tue Apr 23 2024 Yann Collette <ycollette.nospam@free.fr> - 2.7.3-2
 - update to 2.7.3-2
 
