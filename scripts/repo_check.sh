@@ -1041,7 +1041,10 @@ https://codeberg.org/unspeaker/tek
 https://github.com/robbert-vdh/nih-plug
 https://github.com/spatialaudio/jackclient-python
 https://github.com/glesdora/boris-granular-station
-https://github.com/gabrielsoule/resonarium"
+https://github.com/gabrielsoule/resonarium
+https://github.com/mrbid/Borg-ER-3
+https://github.com/tiagolr/reevr
+https://github.com/tiagolr/gate12"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
