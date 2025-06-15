@@ -182,12 +182,10 @@
 | musegpt                       | https://github.com/greynewell/musegpt |
 | regrader                      | https://github.com/igorski/regrader |
 | StoneMistress                 | https://github.com/NaviCisco/StoneMistress |
-| gate12                        | https://github.com/tiagolr/gate12 |
 | Disflux                       | https://github.com/Dimethoxy/Disflux |
 | Plasma                        | https://github.com/Dimethoxy/Plasma |
 | SignalViewLV2                 | https://github.com/TimKrause2/SignalViewLV2 |
 | lossless-cut                  | https://github.com/mifi/lossless-cut |
-| time12                        | https://github.com/tiagolr/time12 |
 | Millisecond                   | https://github.com/gaheldev/Millisecond |
 | Cable                         | https://github.com/magillos/Cable |
 | Borg-ER-3                     | https://github.com/mrbid/Borg-ER-3 |
@@ -206,7 +204,6 @@ Check the following URL:
 - https://github.com/reales/OPL -> replace JUCEOplVsti ?
 - https://github.com/mod-audio
 - https://github.com/hollance
-- https://github.com/tiagolr
 
 Add dead package:
 - gmixer
