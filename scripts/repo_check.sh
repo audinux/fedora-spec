@@ -1044,7 +1044,9 @@ https://github.com/glesdora/boris-granular-station
 https://github.com/gabrielsoule/resonarium
 https://github.com/mrbid/Borg-ER-3
 https://github.com/tiagolr/reevr
-https://github.com/tiagolr/gate12"
+https://github.com/tiagolr/gate12
+https://github.com/tiagolr/time12
+https://github.com/tiagolr/filtr"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
