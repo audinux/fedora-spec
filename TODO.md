@@ -187,9 +187,6 @@
 | SignalViewLV2                 | https://github.com/TimKrause2/SignalViewLV2 |
 | lossless-cut                  | https://github.com/mifi/lossless-cut |
 | Millisecond                   | https://github.com/gaheldev/Millisecond |
-| Cable                         | https://github.com/magillos/Cable |
-| Borg-ER-3                     | https://github.com/mrbid/Borg-ER-3 |
-| Hamburger                     | https://github.com/Davit-G/Hamburger |
 | scale-remapper                | https://github.com/xivilay/scale-remapper |
 | BitDOS-VST                    | https://github.com/astriiddev/BitDOS-VST |
 | Relief_Compressor             | https://github.com/Kiriki-liszt/Relief_Compressor |
