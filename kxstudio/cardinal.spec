@@ -9,7 +9,7 @@
 %global debug_package %{nil}
 
 Name: cardinal
-Version: 24.12
+Version: 25.06
 Release: 2%{?dist}
 Summary: Virtual modular synthesizer plugin
 License: GPL-3.0-or-later
@@ -216,6 +216,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Sun Jun 22 2025 Yann Collette <ycollette.nospam@free.fr> - 25.06-2
+- update to 25.06-2
+
 * Mon Dec 16 2024 Yann Collette <ycollette.nospam@free.fr> - 24.12-2
 - update to 24.12-2
 
