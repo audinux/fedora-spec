@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c9f4e3288cc1bba9a3cb3600e8329467fb40dec8
-%global gittag0 2.3.2
+%global commit0 8a34a39080f2a6c6044e7ece8ca8d00f2310bb3b
+%global gittag0 2.4.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SanguineMonsters
-Version: 2.3.2
+Version: 2.4.0
 Release: 2%{?dist}
 Summary: SanguineMonsters plugin for Rack
 License: GPL-2.0-or-later
@@ -29,7 +29,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/Bloodbat/SanguineMonsters/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: SanguineMonsters.tar.gz
 Source2: SanguineMonsters_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 SanguineMonsters plugin for Rack.
-An 8 to 1 switch/sequencer that can avoid consecutive random repeated values; can be one shot, and can be reset to either no step value or the first step.
+8 to 1 switch/sequencer that can avoid consecutive random repeated values; can be one shot, and can be reset to either no step value or the first step
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r SanguineMonsters_plugin/dist/SanguineMonsters/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.0-1
 - initial specfile

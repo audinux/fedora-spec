@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 391b9bf929b60e80d4f2f1a471aaf943b7126913
-%global gittag0 2.0.0
+%global commit0 39d9429c92b1332b41d17fff49dbfd433869b968
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-JulioChaos
-Version: 2.0.0
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: JulioChaos plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 JulioChaos plugin for Rack.
-Chaotic oscillator based on Chua's circuit
+Chaotic oscillator based on Rossler's attractor
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r JulioChaos_plugin/dist/JulioChaos/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile

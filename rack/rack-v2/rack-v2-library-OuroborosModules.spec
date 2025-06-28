@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 2bf9a06d909ba42cacda22644e60329c9e1302e9
-%global gittag0 2.0.1
+%global commit0 e659439d3ae0e40847cf1a469bca03dfd4c70279
+%global gittag0 2.1.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-OuroborosModules
-Version: 2.0.1
+Version: 2.1.1
 Release: 2%{?dist}
 Summary: OuroborosModules plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 OuroborosModules plugin for Rack.
-Adds features to VCV Rack
+Adds meta features to VCV Rack (Cable sounds, startup pre-muter; Full list in the manual)
 
 %prep
 %setup -n Rack
@@ -79,6 +79,7 @@ sed -i -e "s/-march=nehalem//g" dep.mk
 # For -O2 usage
 sed -i -e "s/-O3/-O2/g" compile.mk
 sed -i -e "s/-O3/-O2/g" dep.mk
+sed -i -e "s/DEP_FLAGS += -g -O2/DEP_FLAGS += -g -O2 \$(CFLAGS)/g" dep.mk
 
 # Remove static gcc lib
 sed -i -e "s/-static-libstdc++ -static-libgcc//g" Makefile
@@ -153,5 +154,5 @@ cp -r OuroborosModules_plugin/dist/OuroborosModules/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
 - initial specfile
