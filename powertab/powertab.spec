@@ -4,7 +4,7 @@
 # Category: Audio, DAW
 
 Name: powertabeditor
-Version: 2.0.21
+Version: 2.0.22
 Release: 4%{?dist}
 Summary: View and edit guitar powertab tablature.
 URL: https://github.com/powertab/powertabeditor
@@ -14,7 +14,7 @@ License: GPL-2.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/powertab/powertabeditor/archive/refs/tags/2.0.21.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/powertab/powertabeditor/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -74,6 +74,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/powertabe
 %{_datadir}/powertab/
 
 %changelog
+* Sun Jun 29 2025 Yann Collette <ycollette.nospam@free.fr> - 2.0.22-4
+- update to 2.0.22-4
+
 * Thu Nov 21 2024 Yann Collette <ycollette.nospam@free.fr> - 2.0.21-4
 - update to 2.0.21-4
 
