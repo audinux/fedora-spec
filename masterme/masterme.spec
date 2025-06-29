@@ -1,10 +1,10 @@
 # Status: active
 # Tag: Editor
-# Type: Standalone; Plugin, VST3, CLAP, LV2, VST
+# Type: Standalone, Plugin, VST3, CLAP, LV2, VST
 # Category: Audio, Effect
 
 Name: master_me
-Version: 1.2.0
+Version: 1.3.0
 Release: 1%{?dist}
 Summary: automatic mastering plugin for live streaming, podcasts and internet radio
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./masterme-source.sh <TAG>
-#        ./masterme-source.sh 1.2.0
+#        ./masterme-source.sh 1.3.0
 
 Source0: master_me.tar.gz
 Source1: masterme-source.sh
@@ -110,6 +110,9 @@ cp bin/master_me-vst.so %{buildroot}/%{_libdir}/vst/
 %{_libdir}/clap/*
 
 %changelog
+* Sun Jun 29 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-1
+- update to 1.3.0-1
+
 * Sun Apr 16 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
 - update to 1.2.0-1
 
