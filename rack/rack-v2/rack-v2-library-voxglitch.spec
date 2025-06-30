@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 ff7f2a4cb54b24173061cbb5211bc996b6383f3c
-%global gittag0 2.32.4
+%global commit0 2912ff0d6b21a61361bfd7ffbde91a416ee0af76
+%global gittag0 2.33.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-voxglitch
-Version: 2.32.4
+Version: 2.33.0
 Release: 2%{?dist}
 Summary: voxglitch plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r voxglitch_plugin/dist/voxglitch/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.32.4-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.33.0-1
 - initial specfile

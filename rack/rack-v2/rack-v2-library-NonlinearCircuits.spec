@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 2e6bffda1df17188061b0065054b98713102556c
-%global gittag0 2.3.2
+%global commit0 2865e828b66047fc3ea63b5d690262fa6f4aad3e
+%global gittag0 2.4.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-NonlinearCircuits
-Version: 2.3.2
+Version: 2.4.0
 Release: 2%{?dist}
 Summary: NonlinearCircuits plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r NonlinearCircuits_plugin/dist/NonlinearCircuits/* %{buildroot}%{_libexecdi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.0-1
 - initial specfile
