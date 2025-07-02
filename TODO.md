@@ -190,6 +190,11 @@
 | scale-remapper                | https://github.com/xivilay/scale-remapper |
 | BitDOS-VST                    | https://github.com/astriiddev/BitDOS-VST |
 | Relief_Compressor             | https://github.com/Kiriki-liszt/Relief_Compressor |
+| lamb-rs                       | https://github.com/magnetophon/lamb-rs |
+| newlab-plugins                | https://github.com/nicolasdittlo/newlab-plugins |
+| verbMASCHINE                  | https://github.com/SomeOtter/verbMASCHINE |
+| eclipsa-audio-plugin          | https://github.com/google/eclipsa-audio-plugin |
+| PWAR                          | https://github.com/ripxorip/PWAR |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
