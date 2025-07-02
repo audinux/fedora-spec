@@ -1,6 +1,6 @@
 # Status: active
 Name: rt-tests
-Version: 2.8
+Version: 2.9
 Release: 1%{?dist}
 Summary: Various programs that test various rt-linux features
 License: GPL2
@@ -12,7 +12,8 @@ Distribution: Audinux
 
 Source0: https://git.kernel.org/pub/scm/utils/rt-tests/rt-tests.git/snapshot/rt-tests-%{version}.tar.gz
 
-BuildRequires: gcc make
+BuildRequires: gcc
+BuildRequires: make
 BuildRequires: numactl-devel
 BuildRequires: python3
 BuildRequires: python3-rpm-macros
@@ -37,6 +38,9 @@ Suite of real-time tests
 %{python3_sitelib}/*
 
 %changelog
+* Tue Jul 01 2025 Yann Collette <ycollette.nospam@free.fr> - 2.9-1
+- update to 2.9-1
+
 * Fri Nov 29 2024 Yann Collette <ycollette.nospam@free.fr> - 2.8-1
 - update to 2.8-1
 
