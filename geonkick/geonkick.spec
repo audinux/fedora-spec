@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: geonkick
-Version: 3.5.2
+Version: 3.6.0
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
 URL: https://github.com/Geonkick-Synthesizer/geonkick
@@ -15,7 +15,6 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/Geonkick-Synthesizer/geonkick/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0: geonkick-0001-fix-syntax-error.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -51,7 +50,7 @@ License:  GPL-3.0-only
 License and documentation for %{name}
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -n %{name}-%{version}
 
 %build
 
@@ -79,6 +78,9 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Thu Jul 03 2025 Yann Collette <ycollette.nospam@free.fr> - 3.6.0-2
+- Update to 3.6.0-2
+
 * Mon Jan 27 2025 Yann Collette <ycollette.nospam@free.fr> - 3.5.2-2
 - Update to 3.5.2-2
 
