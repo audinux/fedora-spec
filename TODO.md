@@ -195,6 +195,8 @@
 | verbMASCHINE                  | https://github.com/SomeOtter/verbMASCHINE |
 | eclipsa-audio-plugin          | https://github.com/google/eclipsa-audio-plugin |
 | PWAR                          | https://github.com/ripxorip/PWAR |
+| melrose                       | https://github.com/emicklei/melrose |
+| MN-Better-Notation-Plugins-for-MuseScore | https://github.com/mnorrisvuw/MN-Better-Notation-Plugins-for-MuseScore |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
