@@ -31,7 +31,7 @@ BuildRequires: libftdi-devel
 BuildRequires: systemd-devel
 BuildRequires: libmad-devel
 BuildRequires: libsndfile-devel
-BuildRequires: desktop-file-utils
+<BuildRequires: desktop-file-utils
 
 %description
 Q Light Controller Plus (QLC+) is a free and cross-platform software
