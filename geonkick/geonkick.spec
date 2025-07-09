@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: geonkick
-Version: 3.6.0
+Version: 3.6.1
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
 URL: https://github.com/Geonkick-Synthesizer/geonkick
@@ -78,6 +78,9 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Jul 07 2025 Yann Collette <ycollette.nospam@free.fr> - 3.6.1-2
+- Update to 3.6.1-2
+
 * Thu Jul 03 2025 Yann Collette <ycollette.nospam@free.fr> - 3.6.0-2
 - Update to 3.6.0-2
 
