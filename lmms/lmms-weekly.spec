@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Audio, DAW
 
-%define commit0 76dddd8c66b103723940bf5f9326e6b8934e3d5c
+%define commit0 4c3f8191af2c35ae40d5b15d8aeedb68d43f1c54
 
 Name: lmms-mao-weekly
 Version: 1.2.99
-Release: 22%{?dist}
+Release: 23%{?dist}
 Summary: Linux MultiMedia Studio - Weekly version
 URL: https://lmms.io
 ExclusiveArch: x86_64 aarch64
@@ -180,6 +180,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/lmms.desktop
 %exclude %{_includedir}/lmms
 
 %changelog
+* Wed Jul 09 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.99-23
+- update to 4c3f8191af2c35ae40d5b15d8aeedb68d43f1c54
+
 * Sun Jun 15 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.99-22
 - update to 76dddd8c66b103723940bf5f9326e6b8934e3d5c
 
