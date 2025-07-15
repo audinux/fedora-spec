@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 e659439d3ae0e40847cf1a469bca03dfd4c70279
-%global gittag0 2.1.1
+%global commit0 baf41292e37bfd722b240c406c83c0cc0d5bbe40
+%global gittag0 2.1.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-OuroborosModules
-Version: 2.1.1
+Version: 2.1.2
 Release: 2%{?dist}
 Summary: OuroborosModules plugin for Rack
 License: GPL-2.0-or-later
@@ -59,6 +59,7 @@ BuildRequires: libarchive-devel
 BuildRequires: libzstd-devel
 BuildRequires: Rack-v2
 BuildRequires: jq
+BuildRequires: chrpath
 
 %description
 OuroborosModules plugin for Rack.
@@ -140,6 +141,9 @@ tar xvfz %{SOURCE1} --directory=OuroborosModules_plugin --strip-components=1
 
 cp -n %{SOURCE2} OuroborosModules_plugin/plugin.json || true
 
+sed -i -e "/-static-libstdc++/d" OuroborosModules_plugin/RackSDK.cmake
+sed -i -e "/-march=nehalem/d" OuroborosModules_plugin/RackSDK.cmake
+
 %build
 
 cd OuroborosModules_plugin
@@ -150,9 +154,11 @@ cd OuroborosModules_plugin
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/OuroborosModules/
 cp -r OuroborosModules_plugin/dist/OuroborosModules/* %{buildroot}%{_libexecdir}/Rack2/plugins/OuroborosModules/
 
+chrpath --delete  %{buildroot}%{_libexecdir}/Rack2/plugins/OuroborosModules/plugin*.so
+
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-1
 - initial specfile

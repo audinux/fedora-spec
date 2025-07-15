@@ -8,14 +8,14 @@
 
 # Global variables for github repository
 %global commit0 d288900a0049725e9018f30d78c7d6c8dc230eab
-%global gittag0 2.12.0
+%global gittag0 2.13.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Airwin2Rack
-Version: 2.12.0
+Version: 2.13.0
 Release: 2%{?dist}
 Summary: Airwin2Rack plugin for Rack
 License: GPL-2.0-or-later
@@ -161,5 +161,5 @@ chrpath --delete  %{buildroot}%{_libexecdir}/Rack2/plugins/Airwin2Rack/plugin*.s
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.12.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.13.0-1
 - initial specfile
