@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: fluida
-Version: 0.9.3
+Version: 0.9.4
 Release: 1%{?dist}
 Summary: Fluidsynth as LV2 plugin
 License: BSD
@@ -51,6 +51,9 @@ export CFLAGS=`echo $CFLAGS | sed -e "s|-Werror=format-security||g"`
 %{_libdir}/lv2/*
 
 %changelog
+* Tue Jul 15 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.4-1
+- update to 0.9.4-1
+
 * Sun Oct 06 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.3-1
 - update to 0.9.3-1
 
