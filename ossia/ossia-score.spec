@@ -4,6 +4,7 @@
 # Category: Tool, MIDI, DAW
 
 %define _lto_cflags %{nil}
+%global toolchain clang
 
 %define commit0_example 7205f76dda5e91bc7f5292c8af23b66d0f5a1c02
 
@@ -25,10 +26,11 @@ Distribution: Audinux
 Source0: https://github.com/ossia/score/releases/download/v%{version}/ossia.score-%{version}-src.tar.xz
 Source1: https://github.com/ossia/score-examples/archive/%{commit0_example}.zip#/ossia-examples-%{commit0_example}.zip
 
-BuildRequires: gcc gcc-c++
+BuildRequires: clang
 BuildRequires: cmake
 BuildRequires: unzip
 BuildRequires: git
+BuildRequires: mold
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: boost-devel
@@ -85,7 +87,11 @@ unzip %{SOURCE1}
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Wp,-D_GLIBCXX_ASSERTIONS||g"`
 
 %cmake -DCMAKE_UNITY_BUILD=ON \
-       -DCMAKE_BUILD_TYPE=RELEASE
+       -DCMAKE_BUILD_TYPE=RELEASE \
+       -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=mold $LDFLAGS" \
+       -DCMAKE_SHARED_LINKER_FLAGS="-fuse-ld=mold $LDFLAGS" \
+       -DCMAKE_MODULE_LINKER_FLAGS="-fuse-ld=mold $LDFLAGS"
+
 %cmake_build
 
 %install
