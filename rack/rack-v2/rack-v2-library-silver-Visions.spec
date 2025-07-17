@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b3a81b835549c532157b9de862b8f42963ede74f
-%global gittag0 2.0.0
+%global commit0 1d0af1378761ec11d1b687b37b42bf441ca6847c
+%global gittag0 2.1.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-silver-Visions
-Version: 2.0.0
+Version: 2.1.1
 Release: 2%{?dist}
 Summary: silver-Visions plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r silver-Visions_plugin/dist/silver-Visions/* %{buildroot}%{_libexecdir}/Rac
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
 - initial specfile
