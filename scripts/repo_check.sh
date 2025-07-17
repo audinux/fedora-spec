@@ -1047,7 +1047,8 @@ https://github.com/tiagolr/reevr
 https://github.com/tiagolr/gate12
 https://github.com/tiagolr/time12
 https://github.com/tiagolr/filtr
-https://github.com/Davit-G/Hamburger"
+https://github.com/Davit-G/Hamburger
+https://github.com/ZL-Audio/ZLEqualizer"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
