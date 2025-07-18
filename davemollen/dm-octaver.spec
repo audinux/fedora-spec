@@ -49,11 +49,7 @@ LV2 version of %{name}
 
 %autosetup -n dm-Octaver-%{commit0}
 
-rm -f .cargo/config.toml
-
 %build
-
-export RUSTFLAGS="-g -O"
 
 export CWD=`pwd`
 export RUSTUP_HOME="$CWD/rustup"
