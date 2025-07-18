@@ -6,7 +6,7 @@
 # LastSourceUpdate: 2024
 
 Name: hydrogen
-Version: 1.2.4
+Version: 1.2.5
 Release: 12%{?dist}
 Summary: Advanced drum machine for GNU/Linux
 URL: http://www.hydrogen-music.org/
@@ -16,7 +16,11 @@ License: GPL-2.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/hydrogen-music/hydrogen/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+# Usage: ./hydrogen-source.sh <TAG>
+#        ./hydrogen-source.sh 1.2.5
+
+Source0: hydrogen.tar.gz
+Source1: hydrogen-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -27,10 +31,10 @@ BuildRequires: ladspa-devel
 BuildRequires: liblrdf-devel
 BuildRequires: libsndfile-devel
 BuildRequires: libtar-devel
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-qtxmlpatterns-devel
-BuildRequires: qt5-qtsvg-devel
-BuildRequires: qt5-linguist
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qtsvg-devel
+BuildRequires: qt6-qttools-devel
+BuildRequires: qt6-linguist
 BuildRequires: libarchive-devel
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: rubberband-devel
@@ -41,7 +45,7 @@ Advanced drum machine for GNU/Linux. The main goal is to bring
 professional yet simple and intuitive pattern-based drum programming.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n %{name}
 
 sed -i -e "s/Sound/X-Sound/g" linux/org.hydrogenmusic.Hydrogen.desktop
 
@@ -68,7 +72,9 @@ export CMAKE_C_FLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
        -DWANT_PULSEAUDIO:BOOL=ON \
        -DWANT_RUBBERBAND:BOOL=ON \
        -DWANT_SHARED:BOOL=ON \
-       -DWANT_LRDF=ON \
+       -DWANT_LRDF:BOOL=ON \
+       -DWANT_QT6:BOOL=ON \
+       -DWANT_OSC:BOOL=ON \
        -DCMAKE_INSTALL_LIBDIR=%{_lib}
 
 %cmake_build
@@ -91,7 +97,7 @@ desktop-file-install --vendor '' \
 desktop-file-validate %{buildroot}%{_datadir}/applications/org.hydrogenmusic.Hydrogen.desktop
 
 %files
-%doc AUTHORS ChangeLog README.md
+%doc AUTHORS CHANGELOG.md README.md
 %license COPYING*
 %{_bindir}/hydrogen
 %{_bindir}/h2cli
@@ -105,6 +111,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.hydrogenmusic.Hyd
 %exclude %{_includedir}/%{name}
 
 %changelog
+* Fri Jul 18 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.5-12
+- update to 1.2.5-12
+
 * Sun Dec 08 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.4-12
 - update to 1.2.4-12
 
