@@ -197,6 +197,7 @@
 | PWAR                          | https://github.com/ripxorip/PWAR |
 | melrose                       | https://github.com/emicklei/melrose |
 | MN-Better-Notation-Plugins-for-MuseScore | https://github.com/mnorrisvuw/MN-Better-Notation-Plugins-for-MuseScore |
+| SolidFuel                     | https://github.com/SolidFuel |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
