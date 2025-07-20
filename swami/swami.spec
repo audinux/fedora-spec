@@ -5,13 +5,14 @@
 
 Name: swami
 Version: 2.2.2
-Release: 24%{?dist}
+Release: 25%{?dist}
 Summary: MIDI instrument and sound editor
 License: GPL-2.0-only
 URL: http://www.swamiproject.org/
 ExclusiveArch: x86_64 aarch64
 
 Source0: https://github.com/swami/swami/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Patch0: swami-0001-fix-missing-header.patch
 
 BuildRequires: gcc
 BuildRequires: cmake
@@ -48,11 +49,13 @@ Headers and development files for The Swami Project - Sampled Waveforms And
 Musical Instruments.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{version}
 
 %build
 
-%cmake -DLIB_SUFFIX="" -DPLUGINS_DIR=%{_lib}/swami/
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+       -DLIB_SUFFIX="" \
+       -DPLUGINS_DIR=%{_lib}/swami/
 %cmake_build
 
 %install
@@ -89,6 +92,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_includedir}/%{name}/
 
 %changelog
+* Sun Jul 20 2025 Yann Collette <ycollette.nospam@free.fr> - 2.2.2-25
+- update to 2.2.2-25 - fix for cmake-4
+
 * Tue Nov 01 2022 Yann Collette <ycollette.nospam@free.fr> - 2.2.2-24
 - update to 2.2.2-24
 

@@ -1,0 +1,25 @@
+From 6bfd1e19cfd4ee68e09421c1dd3270cf98d9b786 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 20 Jul 2025 21:38:30 +0200
+Subject: [PATCH] fix missing header
+
+---
+ src/swamigui/patch_funcs.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/swamigui/patch_funcs.c b/src/swamigui/patch_funcs.c
+index abfea32..6ad010b 100644
+--- a/src/swamigui/patch_funcs.c
++++ b/src/swamigui/patch_funcs.c
+@@ -23,6 +23,8 @@
+ #include <gtk/gtk.h>
+ #include <string.h>
+ 
++#include <sndfile.h>
++
+ #include <libinstpatch/libinstpatch.h>
+ #include <libswami/libswami.h>
+ 
+-- 
+2.50.1
+
