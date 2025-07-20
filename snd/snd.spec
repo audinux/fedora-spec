@@ -5,7 +5,7 @@
 
 %define _lto_cflags %{nil}
 
-%define pkgver 25.3
+%define pkgver 25.5
 %define tarname snd-%{pkgver}
 %define snd_date "03/07/2022"
 
@@ -32,8 +32,7 @@ Distribution: Planet CCRMA
 
 Requires: hicolor-icon-theme
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
@@ -49,9 +48,7 @@ BuildRequires: gettext-devel
 BuildRequires: libXpm-devel
 BuildRequires: libtimidity-devel
 BuildRequires: timidity++
-BuildRequires: flac
 BuildRequires: flac-devel
-BuildRequires: mpg123
 BuildRequires: mpg123-devel
 BuildRequires: gtk3-devel
 BuildRequires: gtkglext-devel
@@ -191,6 +188,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_bindir}/snd-info
 
 %changelog
+* Sun Jul 20 2025 Yann Collette <ycollette.nospam@free.fr> - 25.5-1
+- update to 25.5-1
+
 * Wed May 07 2025 Yann Collette <ycollette.nospam@free.fr> - 25.3-1
 - update to 25.3-1
 
