@@ -1,0 +1,81 @@
+# Status: active
+# Tag: Arpeggiator
+# Type: Plugin, Standalone, VST3
+# Category: Audio, Tool
+
+Name: solid-arp
+Version: 0.3.0
+Release: 1%{?dist}
+Summary: Stable Random Arpeggiator VST
+License: GPL-3.0-or-later
+URL: https://github.com/SolidFuel/Arp
+ExclusiveArch: x86_64 aarch64
+
+Vendor:       Audinux
+Distribution: Audinux
+
+# Usage: ./solidfuel-source.sh <PROJECT> <TAG>
+#        ./solidfuel-source.sh Arp v0.3.0
+
+Source0: Arp.tar.gz
+Source1: solidfuel-source.sh
+
+BuildRequires: gcc gcc-c++
+BuildRequires: cmake
+BuildRequires: git
+BuildRequires: cairo-devel
+BuildRequires: fontconfig-devel
+BuildRequires: freetype-devel
+BuildRequires: libX11-devel
+BuildRequires: xcb-util-keysyms-devel
+BuildRequires: xcb-util-devel
+BuildRequires: libXrandr-devel
+BuildRequires: xcb-util-cursor-devel
+BuildRequires: libxkbcommon-x11-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libcurl-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: pkgconfig(jack)
+BuildRequires: mesa-libGL-devel
+BuildRequires: libXcursor-devel
+BuildRequires: gtk3-devel
+BuildRequires: webkit2gtk3-devel
+
+%description
+Stable Arpeggiator VST
+Most random arpeggiators do not give you the same pattern every time through.
+This one does.
+You can get it to randomize the velocity and gate as well. Those patterns will also be stable.
+Two other sets of algorithms are available:
+- Linear - Up, Down, Zigzag
+- Spiral - In, Out, InOut, OutIn
+
+%package -n vst3-%{name}
+Summary:  VST3 version of %{name}
+License:  GPL-3.0-or-later
+Requires: %{name}%{?_isa} = %{version}-%{release}
+
+%description -n vst3-%{name}
+VST3 version of %{name}
+
+%prep
+%autosetup -n Arp
+
+%build
+
+%cmake
+%cmake_build
+
+%install
+
+install -m 755 -d %{buildroot}%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/Source/solidArp_artefacts/Release/VST3/*  %{buildroot}/%{_libdir}/vst3/
+
+%files -n vst3-%{name}
+%doc README.md
+%license LICENSE
+%{_libdir}/vst3/*
+
+%changelog
+* Mon Jul 21 2025 Yann Collette <ycollette.nospam@free.fr> - 0.3.0-1
+- Initial spec file

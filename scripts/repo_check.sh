@@ -1048,7 +1048,9 @@ https://github.com/tiagolr/gate12
 https://github.com/tiagolr/time12
 https://github.com/tiagolr/filtr
 https://github.com/Davit-G/Hamburger
-https://github.com/ZL-Audio/ZLEqualizer"
+https://github.com/ZL-Audio/ZLEqualizer
+https://github.com/SolidFuel/Arp
+https://github.com/SolidFuel/Utility"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

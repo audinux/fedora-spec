@@ -197,7 +197,6 @@
 | PWAR                          | https://github.com/ripxorip/PWAR |
 | melrose                       | https://github.com/emicklei/melrose |
 | MN-Better-Notation-Plugins-for-MuseScore | https://github.com/mnorrisvuw/MN-Better-Notation-Plugins-for-MuseScore |
-| SolidFuel                     | https://github.com/SolidFuel |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -370,7 +369,7 @@ MIDI, Tablature, Phaser, Tape, Tracker, Reverb, Presets
 Sfz, Sf2, Sf3, Monitoring, Video, Organ, PM, Sequencer
 Keyboard, Library, OSC, Mixer, Modular, Rack, Sampler, Session
 Synthesizer, Loop, Tool, Devel, Controller, AI, Equalizer
-Modulation, Player, Pitch
+Modulation, Player, Pitch, Arpeggiator
 ```
 
 ### Type:
