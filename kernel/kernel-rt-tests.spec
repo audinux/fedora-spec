@@ -1,7 +1,7 @@
 # Status: active
-Name: rt-tests
+Name: kernel-rt-tests
 Version: 2.9
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Various programs that test various rt-linux features
 License: GPL2
 URL: https://git.kernel.org/pub/scm/utils/rt-tests/rt-tests
@@ -18,11 +18,13 @@ BuildRequires: numactl-devel
 BuildRequires: python3
 BuildRequires: python3-rpm-macros
 
+Obsoletes: rt-tests <= 2.9
+
 %description
 Suite of real-time tests
 
 %prep
-%autosetup
+%autosetup -n rt-tests-%{version}
 
 %build
 %make_build prefix=%{_prefix}
@@ -38,6 +40,9 @@ Suite of real-time tests
 %{python3_sitelib}/*
 
 %changelog
+* Fri Jul 25 2025 Yann Collette <ycollette.nospam@free.fr> - 2.9-2
+- update to 2.9-2 - rename package from rt-tests to kernel-rt-tests
+
 * Tue Jul 01 2025 Yann Collette <ycollette.nospam@free.fr> - 2.9-1
 - update to 2.9-1
 
