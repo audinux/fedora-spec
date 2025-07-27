@@ -1050,7 +1050,8 @@ https://github.com/tiagolr/filtr
 https://github.com/Davit-G/Hamburger
 https://github.com/ZL-Audio/ZLEqualizer
 https://github.com/SolidFuel/Arp
-https://github.com/SolidFuel/Utility"
+https://github.com/SolidFuel/Utility
+https://github.com/aiobofh/midi-utils"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
