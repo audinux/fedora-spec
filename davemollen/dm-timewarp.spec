@@ -5,11 +5,11 @@
 
 %global debug_package %{nil}
 
-%global commit0 f7d74d13550e3f9536f8e38c1adf6b8575fbffa4
+%global commit0 853da5081afd927552a38eae3f0f60cfbdf75b9b
 
 Name: dm-TimeWarp
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A granular effect written in Rust
 URL: https://github.com/davemollen/dm-TimeWarp
 ExclusiveArch: x86_64 aarch64
@@ -118,5 +118,8 @@ cp -vfr dm-TimeWarp.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2
+
 * Tue May 06 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file

@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 d1ac5e72ec0fd7aeea8faf3a91b571b7398eb48e
+%global commit0 08251944166aea5c637c9e6b5f6df17feb36415c
 
 Name: dm-Reverse
-Version: 0.0.5
+Version: 0.0.6
 Release: 1%{?dist}
 Summary: Reverse delay audio plugin
 URL: https://github.com/davemollen/dm-Reverse
@@ -19,6 +19,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/davemollen/dm-Reverse/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Patch0: dm-reverse-0001-fix-cargo-conf.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -51,7 +52,7 @@ LV2 version of %{name}
 
 %prep
 
-%autosetup -n dm-Reverse-%{commit0}
+%autosetup -p1 -n dm-Reverse-%{commit0}
 
 %build
 
@@ -103,6 +104,9 @@ cp -vfr target/release/libdm_reverse.so %{buildroot}/%{_libdir}/vst/
 %{_libdir}/vst/*
 
 %changelog
+* Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.6-1
+- update to 0.0.6-1
+
 * Tue May 06 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.5-1
 - update to 0.0.5-1
 

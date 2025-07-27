@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 a60e3cec7d5ff721f1fbb7f193d730f0b1d350ff
+%global commit0 5dcf7dc2b167408f9505ede8e9ec441c0c626d8c
 
 Name: dm-octaver
-Version: 0.0.4
+Version: 0.0.5
 Release: 1%{?dist}
 Summary: A harsh octave down effect written in Rust
 URL: https://github.com/davemollen/dm-Octaver
@@ -85,6 +85,9 @@ cp -vfr dm-Octaver.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.5-1
+- update to 0.0.5-1
+
 * Tue May 06 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.4-1
 - update to 0.0.4-1
 

@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 21817bfcc423acc71e1fc243b57762267d5ee49e
+%global commit0 4b761a137681fc6d0dac10365162357653c62b27
 
 Name: dm-stutter
-Version: 0.1.0
+Version: 0.1.2
 Release: 1%{?dist}
 Summary: A stereo stutter effect written in Rust
 URL: https://github.com/davemollen/dm-Stutter
@@ -118,6 +118,9 @@ cp -vfr dm-Stutter.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1.2-1
+- update to 0.1.2-1
+
 * Tue May 06 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
 - update to 0.1.0-1
 

@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 c5d3dcdf57244d55ed06678ca8f20a947b5a0497
+%global commit0 13b6e13a6f52a2a575115648ae91c8fef19a013a
 
 Name: dm-repeat
-Version: 0.0.6
+Version: 0.0.8
 Release: 1%{?dist}
 Summary: A multitap delay effect written in Rust
 URL: https://github.com/davemollen/dm-Repeat
@@ -118,6 +118,9 @@ cp -vfr dm-Repeat.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.8-1
+- update to 0.0.8-1
+
 * Tue May 06 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.6-1
 - update to 0.0.6-1
 

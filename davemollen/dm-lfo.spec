@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 5c46f4c56a1d00c434c106e50faa0d96daaf741f
+%global commit0 6592c35e251e0966f5b3d810bbd31f8586ce272e
 
 Name: dm-LFO
-Version: 0.0.4
+Version: 0.0.5
 Release: 1%{?dist}
 Summary: This is a low frequency oscillator plugin written in Rust
 URL: https://github.com/davemollen/dm-LFO
@@ -86,6 +86,9 @@ cp -vfr dm-LFO.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.5-1
+- update to 0.0.5-1
+
 * Tue May 06 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.4-1
 - update to 0.0.4-1
 

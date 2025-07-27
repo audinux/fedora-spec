@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 6a5dced3c8fb7d3658ba0999c0449daa5622632a
+%global commit0 4030e290af70a5869568157c120b5885f42c96bb
 
 Name: dm-Whammy
-Version: 0.0.6
+Version: 0.0.8
 Release: 1%{?dist}
 Summary: A mono pitchshift effect written in Rust inspired by the DigiTech Whammy
 URL: https://github.com/davemollen/dm-Whammy
@@ -118,6 +118,9 @@ cp -vfr dm-Whammy.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.8-1
+- update to 0.0.8-1
+
 * Tue May 06 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.6-1
 - update to 0.0.6-1
 

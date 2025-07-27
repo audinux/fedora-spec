@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 f578940b8586f5ed6d3b4650b6f4c7516a49b1a6
+%global commit0 8095f1e478001bc59b001014b5f776d2ee50e129
 
 Name: dm-TubeScreamer
-Version: 0.0.6
+Version: 0.0.7
 Release: 2%{?dist}
 Summary: An overdrive effect written in Rust modeled after the Ibanez Tube Screamer
 URL: https://github.com/davemollen/dm-TubeScreamer
@@ -118,6 +118,9 @@ cp -vfr dm-TubeScreamer.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.7-1
+- update to 0.0.7-1
+
 * Tue May 06 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.6-2
 - update to 0.0.6-2
 

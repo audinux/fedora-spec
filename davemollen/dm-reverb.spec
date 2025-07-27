@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 8bd180bdfe035830c334837bd280fee9f31a8b2c
+%global commit0 27a38d8a19742a496659da08c1dc2531b27712a0
 
 Name: dm-reverb
-Version: 0.1.0
+Version: 0.1.4
 Release: 1%{?dist}
 Summary: A reverb effect written in Rust inspired by the Make Noise Erbe-Verb
 URL: https://github.com/davemollen/dm-Reverb
@@ -118,6 +118,9 @@ cp -vfr dm-Reverb.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1.4-1
+- update to 0.1.4-1
+
 * Tue May 06 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
 - update to 0.1.0-1
 
