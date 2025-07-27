@@ -3,12 +3,12 @@
 # Type: Language
 # Category: Audio, Synthesizer, Graphic, Programming
 
+Name: supercollider
 Summary: Object oriented programming environment for real-time audio and video processing
-Name:    supercollider
-Version: 3.13.1
+Version: 3.14.0
 Release: 6%{?dist}
 License: GPL
-URL:     https://supercollider.github.io/
+URL: https://supercollider.github.io/
 ExclusiveArch: x86_64 aarch64
 
 Source0: https://github.com/supercollider/supercollider/releases/download/Version-%{version}/SuperCollider-%{version}-Source.tar.bz2
@@ -34,15 +34,13 @@ BuildRequires: libX11-devel
 BuildRequires: libXt-devel
 BuildRequires: libicu-devel
 BuildRequires: readline-devel
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-qtsensors-devel
-BuildRequires: qt5-qttools-devel
-BuildRequires: qt5-qtsvg-devel
-BuildRequires: qt5-qtlocation-devel
-BuildRequires: qt5-qtwebkit-devel
-BuildRequires: qt5-qtwebengine-devel
-BuildRequires: qt5-qtwebsockets-devel
-BuildRequires: qt5-qtdeclarative-devel
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qttools-devel
+BuildRequires: qt6-qtsvg-devel
+BuildRequires: qt6-qtlocation-devel
+BuildRequires: qt6-qtwebengine-devel
+BuildRequires: qt6-qtwebsockets-devel
+BuildRequires: qt6-qtdeclarative-devel
 BuildRequires: yaml-cpp03-devel
 BuildRequires: cwiid-devel
 BuildRequires: portaudio-devel
@@ -80,14 +78,6 @@ Requires: emacs
 %description emacs
 SuperCollider support for the Emacs text editor.
 
-%package gedit
-Summary:  SuperCollider support for GEdit
-Requires: supercollider = %{version}-%{release}
-Requires: gedit
-
-%description gedit
-SuperCollider support for the GEdit text editor.
-
 %package vim
 Summary:  SuperCollider support for Vim
 Requires: supercollider = %{version}-%{release}
@@ -106,7 +96,6 @@ sed -i -e "s/SET(CMAKE_INSTALL_RPATH/#SET(CMAKE_INSTALL_RPATH/g" lang/CMakeLists
 # remove all git directories
 find . -type d -name .git -printf "\"%h/%f\"\n" | xargs rm -rf
 
-# -DSYSTEM_BOOST=ON
 %cmake -DCMAKE_BUILD_TYPE=RELEASE \
        -DSYSTEM_BOOST=ON \
        -DENABLE_TESTSUITE=OFF \
@@ -114,6 +103,8 @@ find . -type d -name .git -printf "\"%h/%f\"\n" | xargs rm -rf
        -DLIB_SUFFIX="64" \
 %endif
        -DSUPERNOVA=ON \
+       -DSC_VIM=ON \
+       -DSC_EL=ON \
        -DCMAKE_INSTALL_PREFIX=%{_prefix}
 
 %cmake_build
@@ -173,6 +164,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/SuperColliderIDE.desk
 # ide
 %{_bindir}/scide
 %{_datadir}/applications/SuperColliderIDE.desktop
+# others
+%{_metainfodir}/online.supercollider.SuperCollider.metainfo.xml
+%{_datadir}/mime/packages/supercollider.xml
 
 %files devel
 %{_includedir}/SuperCollider
@@ -184,12 +178,10 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/SuperColliderIDE.desk
 %files vim
 %{_datadir}/SuperCollider/Extensions/scide_scvim/SCVim.sc
 
-%files gedit
-%{_libdir}/gedit*/plugins/*
-%{_datadir}/gtksourceview*/language-specs/supercollider.lang
-%{_datadir}/mime/packages/supercollider.xml
-
 %changelog
+* Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> 3.14.0-6
+- update to 3.14.0-6
+
 * Sun Mar 16 2025 Yann Collette <ycollette.nospam@free.fr> 3.13.1-6
 - update to 3.13.1-6
 
