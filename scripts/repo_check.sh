@@ -1051,7 +1051,8 @@ https://github.com/Davit-G/Hamburger
 https://github.com/ZL-Audio/ZLEqualizer
 https://github.com/SolidFuel/Arp
 https://github.com/SolidFuel/Utility
-https://github.com/aiobofh/midi-utils"
+https://github.com/aiobofh/midi-utils
+https://github.com/davemollen/dm-Seq"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
