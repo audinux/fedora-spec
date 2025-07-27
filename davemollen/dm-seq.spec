@@ -1,6 +1,6 @@
 # Status: active
-# Tag: Effect, Reverb
-# Type: Plugin, LV2, CLAP, VST3
+# Tag: Effect, Sequencer
+# Type: Plugin, LV2
 # Category: Effect
 
 %global debug_package %{nil}
