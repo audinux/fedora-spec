@@ -197,6 +197,10 @@
 | PWAR                          | https://github.com/ripxorip/PWAR |
 | melrose                       | https://github.com/emicklei/melrose |
 | MN-Better-Notation-Plugins-for-MuseScore | https://github.com/mnorrisvuw/MN-Better-Notation-Plugins-for-MuseScore |
+| bluelab-plugins               | https://github.com/falkTX/bluelab-plugins |
+| jack_interposer               | https://github.com/falkTX/jack_interposer |
+| sassy                         | https://github.com/jarikomppa/sassy |
+| smol-rack                     | https://github.com/giulioz/smol-rack |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
