@@ -1,10 +1,12 @@
 # Status: active
 # Tag: Drum, Synthesizer
-# Type: Standalone, Plugin, LV2, VST3
+# Type: Standalone, Plugin, VST3
 # Category: Synthesizer
 
+%global commit0 201e8733bb70d31558d2313cd65ccc88cf668412
+
 Name: vmpc
-Version: 0.9.0.0
+Version: 0.9.0.4
 Release: 1%{?dist}
 Summary: JUCE implementation of VMPC2000XL
 License: GPL-3.0-only
@@ -15,7 +17,6 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/izzyreal/vmpc-juce/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0: vmpc-0001-fix-build.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: git
@@ -43,14 +44,6 @@ Requires: license-%{name}
 %description -n vst3-%{name}
 VST3 version of %{name}
 
-%package -n lv2-%{name}
-Summary: LV2 version of %{name}
-License: GPL-3.0-or-later
-Requires: license-%{name}
-
-%description -n lv2-%{name}
-LV2 version of %{name}
-
 %package -n license-%{name}
 Summary: License and documentation for %{name}
 License: GPL-3.0-or-later
@@ -61,21 +54,23 @@ License and documentation for %{name}
 %prep
 %setup -n vmpc-juce-%{version}
 
+# Remove LV2 plugin ... Segfault during build
+sed -i -e "s/FORMATS LV2 VST3 AU AUv3 Standalone/FORMATS VST3 AU AUv3 Standalone/g" CMakeLists.txt
+
 %build
 
 %set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
-%cmake
+%cmake -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
 %cmake_build
 
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
-install -m 755 -d %{buildroot}%{_libdir}/lv2/
 install -m 755 -d %{buildroot}%{_bindir}/
 
 cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/VST3/* %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/LV2/* %{buildroot}/%{_libdir}/lv2/
 cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/Standalone/* %{buildroot}/%{_bindir}/
 
 %files -n license-%{name}
@@ -88,10 +83,10 @@ cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/Standalone/* %{bu
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
-%files -n lv2-%{name}
-%{_libdir}/lv2/*
-
 %changelog
+* Wed Jul 30 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.0.4-1
+- update to 0.9.0.4-1
+
 * Fri Feb 28 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.0.0-1
 - update to 0.9.0.0-1
 
