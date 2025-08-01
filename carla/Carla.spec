@@ -8,7 +8,7 @@
 %global pname carla
 
 Name: Carla-mao
-Version: 2.5.9
+Version: 2.5.10
 Release: 4%{?dist}
 Summary: Audio plugin host
 Epoch: 1
@@ -212,6 +212,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 %{_libdir}/pkgconfig/%{pname}-host-plugin.pc
 
 %changelog
+* Thu Jul 31 2025 Yann Collette <ycollette.nospam@free.fr> - 1:2.5.10-4
+- Update to 2.5.10-4
+
 * Wed Apr 30 2025 Yann Collette <ycollette.nospam@free.fr> - 1:2.5.9-4
 - Update to 2.5.9-4 - build without python3-qt5-webkit
 
