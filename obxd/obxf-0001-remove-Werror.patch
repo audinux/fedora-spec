@@ -1,0 +1,40 @@
+From 92b8dc796ef3ddf88eec83ee1e94b487c1e7e958 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Fri, 1 Aug 2025 13:08:05 +0200
+Subject: [PATCH] remove -Werror
+
+---
+ CMakeLists.txt | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1694038..1d3cd7a 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -178,7 +178,6 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+         -Wall
+         -Wextra
+         -Wpedantic
+-        -Werror
+         -Wno-language-extension-token
+         -Wno-macro-redefined
+     )
+@@ -187,7 +186,7 @@ else()
+         message(STATUS "gcc version < 13; dont run werror in release.")
+         add_compile_options($<$<CONFIG:Release>:-w>)
+     else()
+-        target_compile_options(OB-Xf PRIVATE -Wall -Wextra -Wpedantic -Werror)
++        target_compile_options(OB-Xf PRIVATE -Wall -Wextra -Wpedantic)
+     endif()
+ endif()
+ 
+@@ -199,4 +198,4 @@ target_compile_definitions(OB-Xf PRIVATE)
+ 
+ add_subdirectory(assets)
+ 
+-include(cmake/basic_installer.cmake)
+\ No newline at end of file
++include(cmake/basic_installer.cmake)
+-- 
+2.50.1
+
