@@ -3,11 +3,11 @@
 # Type: Plugin, LV2, VST, VST3, CLAP
 # Category: Effect
 
-%global commit0 8686010aad8c5b7649cba7d820994b90998dbe53
+%global commit0 0d145cf8edf546f5a4128515583780ab2c844565
 
 Name: prom
 Version: 0.0.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: ProjectM LV2 plugin
 License: GPL-2.0-or-later
 URL: https://github.com/DISTRHO/ProM
@@ -34,13 +34,22 @@ BuildRequires: libXcursor-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: mesa-libGLU-devel
 
+Conflicts: dpf-plugins
+
 %description
 A ProjectM LV2 plugin
+
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
+License:  GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -48,7 +57,7 @@ VST3 version of %{name}
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}
+Requires: license-%{name}
 
 %description -n vst-%{name}
 VST2 version of %{name}
@@ -56,7 +65,7 @@ VST2 version of %{name}
 %package -n clap-%{name}
 Summary:  CLAP version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}
+Requires: license-%{name}
 
 %description -n clap-%{name}
 CLAP version of %{name}
@@ -64,7 +73,7 @@ CLAP version of %{name}
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -110,10 +119,9 @@ rm -rf %{buildroot}/%{_libdir}/vst3/ProM.vst3/Contents/Resources/fonts
 ln -s %{_datadir}/ProM/data/presets %{buildroot}/%{_libdir}/vst3/ProM.vst3/Contents/Resources/presets
 ln -s %{_datadir}/ProM/data/fonts %{buildroot}/%{_libdir}/vst3/ProM.vst3/Contents/Resources/fonts
 
-%files
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
-%{_datadir}/ProM/
 %{_datadir}/ProM/data/*
 
 %files -n vst-%{name}
@@ -129,6 +137,9 @@ ln -s %{_datadir}/ProM/data/fonts %{buildroot}/%{_libdir}/vst3/ProM.vst3/Content
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Aug 04 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
+- update to version 0.0.1-3 - conflicts with dpf-plugins
+
 * Sun Oct 23 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
 - update to version 0.0.1-2
 
