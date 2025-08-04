@@ -4,7 +4,7 @@
 # Category: Synthesizer, Effects
 
 %global debug_package %{nil}
-%global commit0 d64b2ab9cfb94773c5ee4d0e72aef5921ee95d2d
+%global commit0 ecfd6322c776d9f0373d31758976c2353c162737
 
 Name: nih-plug
 Version: 0.4.3
