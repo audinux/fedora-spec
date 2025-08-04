@@ -6,8 +6,8 @@
 %global commit0 aa23b122b5f51bc28218791f4a961043e1d86ba3
 
 Name: obxf
-Version: 0.01
-Release: 1%{?dist}
+Version: 0.1
+Release: 2%{?dist}
 Summary: OB-Xf is a continuation and modernatization of the last open source release of OB-Xd by 2DaT and later discoDSP
 License: GPL-3.0-only
 URL: https://github.com/surge-synthesizer/OB-Xf
@@ -18,10 +18,12 @@ Distribution: Audinux
 
 Source0: https://github.com/surge-synthesizer/OB-Xf/archive/%{commit0}.zip#/%{name}-%{version}.zip
 Patch0: obxf-0001-remove-Werror.patch
+Patch1: obxf-0002-remove-fetchcontent-for-fmt.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: git
+BuildRequires: fmt-devel
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
@@ -123,5 +125,8 @@ chrpath --delete `find %{buildroot}/usr/bin/ -executable -type f`
 %{_libdir}/clap/*
 
 %changelog
+* Mon Aug 04 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
+- Try to fix a dependency problem
+
 * Fri Aug 01 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
