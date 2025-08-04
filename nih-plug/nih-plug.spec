@@ -8,7 +8,7 @@
 
 Name: nih-plug
 Version: 0.4.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Rust VST3 and CLAP plugin framework and plugins - because everything is better when you do it yourself
 License: ISC
 URL: https://github.com/robbert-vdh/nih-plug
@@ -123,7 +123,7 @@ do
     cp -vfr target/bundled/$Files.clap %{buildroot}/%{_libdir}/clap/
 done
 
-%files
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
 
@@ -134,5 +134,8 @@ done
 %{_libdir}/clap/*
 
 %changelog
+* Mon Aug 04 2025 Yann Collette <ycollette.nospam@free.fr> - 0.4.3-2
+- fix package
+
 * Tue May 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.4.3-1
 - Initial spec file

@@ -5,7 +5,7 @@
 
 Name: stereocrossdelay
 Version: 0.2.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A stereo delay plugin with feedback and cross-mixing 
 License: MIT
 URL: https://github.com/SpotlightKid/stereocrossdelay
@@ -43,7 +43,7 @@ License and documentaion for %{name}
 %package -n lv2-%{name}
 Summary: LV2 version of %{name}
 License: MIT
-Requires: license-%{name}}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -51,7 +51,7 @@ LV2 version of %{name}
 %package -n ladspa-%{name}
 Summary: LADSPA version of %{name}
 License: MIT
-Requires: license-%{name}}
+Requires: license-%{name}
 
 %description -n ladspa-%{name}
 LADSPA version of %{name}
@@ -59,7 +59,7 @@ LADSPA version of %{name}
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
 License: MIT
-Requires: license-%{name}}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -67,7 +67,7 @@ VST3 version of %{name}
 %package -n vst-%{name}
 Summary: VST2 version of %{name}
 License: MIT
-Requires: license-%{name}}
+Requires: license-%{name}
 
 %description -n vst-%{name}
 VST2 version of %{name}
@@ -75,7 +75,7 @@ VST2 version of %{name}
 %package -n clap-%{name}
 Summary: CLAP version of %{name}
 License: MIT
-Requires: license-%{name}}
+Requires: license-%{name}
 
 %description -n clap-%{name}
 CLAP version of %{name}
@@ -132,6 +132,9 @@ cd ..
 %{_libdir}/clap/*
 
 %changelog
+* Mon Aug 04 2025 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-2
+- fix package
+
 * Thu Nov 14 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
 - update to 0.2.0-1
 
