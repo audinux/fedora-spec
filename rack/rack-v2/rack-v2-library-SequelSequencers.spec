@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 44d2f80efc93c071d1195ab67ede88eafa03974c
-%global gittag0 2.3.1
+%global commit0 70f443ae84bfa1751f8af804682b7b73a6d851df
+%global gittag0 2.4.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SequelSequencers
-Version: 2.3.1
+Version: 2.4.1
 Release: 2%{?dist}
 Summary: SequelSequencers plugin for Rack
 License: GPL-2.0-or-later
@@ -136,7 +136,7 @@ sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
 mkdir SequelSequencers_plugin
-tar xvfz %{SOURCE1} --directory=SequelSequencers_plugin --strip-components=1 
+tar xvfz %{SOURCE1} --directory=SequelSequencers_plugin --strip-components=1
 
 cp -n %{SOURCE2} SequelSequencers_plugin/plugin.json || true
 
@@ -145,7 +145,7 @@ cp -n %{SOURCE2} SequelSequencers_plugin/plugin.json || true
 cd SequelSequencers_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
-%install 
+%install
 
 mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/SequelSequencers/
 cp -r SequelSequencers_plugin/dist/SequelSequencers/* %{buildroot}%{_libexecdir}/Rack2/plugins/SequelSequencers/
@@ -154,5 +154,5 @@ cp -r SequelSequencers_plugin/dist/SequelSequencers/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.1-1
 - initial specfile
