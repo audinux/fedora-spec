@@ -242,7 +242,7 @@ Specmatch requires some python modules:
 - pydup:       https://github.com/jiaaro/pydub/
 - resampy:     https://github.com/bmcfee/resampy
 
-Add a grub script to add "preempt=full threadirqs" to existing standard kernels
+Add a grub script to add "preempt=full threadirqs nopti" to existing standard kernels
 
 Jack-Audio link fix:
 ```
@@ -252,6 +252,9 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 	   -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
 ```
+
+Add Xenomai real time kernel:
+https://doc.fedora-fr.org/wiki/Mise_en_%C5%93uvre_de_Xenomai_pour_cr%C3%A9er_un_noyau_Temps_R%C3%A9el_dur
 
 ## Python package
 
