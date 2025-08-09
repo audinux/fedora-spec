@@ -3,10 +3,10 @@
 # Type: Plugin, Standalone, VST3, LV2
 # Category: Audio, Effect
 
-%global commit0 511d360d4b1bb5ec4520999f7cfbe54c0b784b0e
+%global commit0 ec3a5a617b0e7f601e8ae721963bcde431df7a10
 
 Name: cloudreverb
-Version: 0.2
+Version: 0.3
 Release: 2%{?dist}
 Summary: Algorithmic reverb plugin based on CloudSeed
 License: MIT
@@ -41,7 +41,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: patchelf
 
 Requires: license-%{name}
