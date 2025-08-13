@@ -33,7 +33,6 @@ https://codeberg.org/rtcqs/rtcqs
 https://github.com/Dougal-s/Aether
 https://github.com/PortAudio/portaudio
 https://github.com/23volts/23volts-vcv
-https://github.com/50m30n3/SO-666
 https://github.com/64MM4-KN1F3/AuntyLangtons-FREE
 https://github.com/8bitbubsy/ft2-clone
 https://github.com/8bitbubsy/pt2-clone
@@ -1057,6 +1056,7 @@ https://github.com/surge-synthesizer/OB-Xf"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
+# https://github.com/50m30n3/SO-666
 
 cp git_tags_old.txt git_tags_old.txt.bkp
 
