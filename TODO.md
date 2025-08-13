@@ -202,6 +202,10 @@
 | sassy                         | https://github.com/jarikomppa/sassy |
 | smol-rack                     | https://github.com/giulioz/smol-rack |
 | CTAGDRC                       | https://github.com/p-hlp/CTAGDRC |
+| dfjpverb                      | https://github.com/SpotlightKid/dfjpverb |
+| dfzitarev1                    | https://github.com/SpotlightKid/dfzitarev1 |
+| sendmixer                     | https://github.com/SpotlightKid/sendmixer |
+| LiveMixer                     | https://github.com/sonejostudios/LiveMixer |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
