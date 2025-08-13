@@ -4,10 +4,11 @@
 # Category: Audio, Programming, Tool
 
 %define _lto_cflags %{nil}
+%global toolchain clang
 
 Name: HISE
 Version: 4.1.0
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: The open source framework for sample based instrument
 License: GPL-3.0-or-later OR LicenseRef-www-hise-audio
 URL: https://github.com/christophhart/HISE
@@ -21,7 +22,7 @@ Source0: https://github.com/christophhart/HISE/archive/refs/tags/%{version}.tar.
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
 Patch0: HISE-0001-set-default-src-path.patch
 
-BuildRequires: gcc gcc-c++
+BuildRequires: clang
 BuildRequires: unzip
 BuildRequires: make
 BuildRequires: JUCE61
@@ -41,7 +42,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -154,6 +154,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Tue Aug 12 2025 Yann Collette <ycollette.nospam@free.fr> - 4.1.0-5
+- update to 4.1.0-5 - use clang
+
 * Mon Nov 25 2024 Yann Collette <ycollette.nospam@free.fr> - 4.1.0-4
 - update to 4.1.0-4 - fix default src path and disable LTO
 
