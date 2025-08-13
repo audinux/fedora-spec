@@ -1052,7 +1052,9 @@ https://github.com/SolidFuel/Arp
 https://github.com/SolidFuel/Utility
 https://github.com/aiobofh/midi-utils
 https://github.com/davemollen/dm-Seq
-https://github.com/surge-synthesizer/OB-Xf"
+https://github.com/surge-synthesizer/OB-Xf
+https://github.com/mikeoliphant/StompboxUI
+https://github.com/mikeoliphant/stompbox"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
