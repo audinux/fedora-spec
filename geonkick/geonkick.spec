@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: geonkick
-Version: 3.6.1
+Version: 3.6.2
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
 URL: https://github.com/Geonkick-Synthesizer/geonkick
@@ -67,8 +67,6 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 %files
 %{_bindir}/*
 %{_datadir}/*
-%exclude %{_includedir}/redkite/*
-%exclude %{_usr}/lib/libredkite.a
 
 %files -n license-%{name}
 %doc README.md doc/Geonkick_User_Guide.md
@@ -78,6 +76,9 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Aug 09 2025 Yann Collette <ycollette.nospam@free.fr> - 3.6.2-2
+- Update to 3.6.2-2
+
 * Mon Jul 07 2025 Yann Collette <ycollette.nospam@free.fr> - 3.6.1-2
 - Update to 3.6.1-2
 
