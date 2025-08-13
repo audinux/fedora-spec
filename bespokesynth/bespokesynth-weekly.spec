@@ -42,7 +42,6 @@ BuildRequires: libXrandr-devel
 BuildRequires: libXinerama-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: libglvnd-devel
 BuildRequires: libusbx-devel
 BuildRequires: libpng-devel
