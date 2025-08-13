@@ -201,6 +201,7 @@
 | jack_interposer               | https://github.com/falkTX/jack_interposer |
 | sassy                         | https://github.com/jarikomppa/sassy |
 | smol-rack                     | https://github.com/giulioz/smol-rack |
+| CTAGDRC                       | https://github.com/p-hlp/CTAGDRC |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -255,6 +256,118 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 Add Xenomai real time kernel:
 https://doc.fedora-fr.org/wiki/Mise_en_%C5%93uvre_de_Xenomai_pour_cr%C3%A9er_un_noyau_Temps_R%C3%A9el_dur
+
+## Fixes
+
+Remove webkit2gtk3-devel dependencies from the following packages:
+
+bespokesynth/bespokesynth.spec
+drmr/drumlabooh.spec
+six-sines/six-sines.spec
+ysfx/ysfx.spec
+allex-k-synth/allex-k-synth.spec
+roomreverb/roomreverb.spec
+gearmulator/gearmulator.spec
+noise-suppression/noise-suppression.spec
+hamburger/hamburger.spec
+vaporizer2/vaporizer2.spec
+juceopl/juceopl.spec
+delayarchitect/delayarchitect.spec
+airwindows/airwin2rack.spec
+fxseq/fxseq.spec
+mammut/mammut.spec
+bassman/bassman.spec
+rotor/rotor.spec
+morgan/morgan.spec
+modeq/modeq.spec
+bridgelite/bridgelite.spec
+templates/juce.spec
+soundux/soundux.spec
+xenos/xenos.spec
+smartguitar/smartguitarpedal.spec
+smartguitar/princepedal.spec
+smartguitar/ts-m1n3.spec
+smartguitar/smartguitarpro.spec
+smartguitar/chameleon.spec
+smartguitar/proteus.spec
+smartguitar/smartguitar.spec
+tr3m/nam-juce.spec
+tr3m/multi-tap-delay.spec
+tr3m/digital-audio-effects.spec
+beataligninglooper/beataligninglooper.spec
+audibleplanets/audibleplanets.spec
+cabbage/cabbage.spec
+giada/giada.spec
+sparta/sparta.spec
+solidfuel/arp.spec
+solidfuel/utility.spec
+dexed/dexed.spec
+maim/maim.spec
+glslplugin/glslplugin.spec
+sonobus/sonobus.spec
+multimeter/multimeter.spec
+hera/hera.spec
+jc303/jc303.spec
+fire/fire.spec
+resonarium/resonarium.spec
+tunefish/tunefish.spec
+bombaz/bombaz.spec
+thekissofshame/thekissofshame.spec
+peaksynth/peaksynth.spec
+byod/byod.spec
+terrain/terrain.spec
+iem-plugins/iem-plugins.spec
+valentine/valentine.spec
+gnomedistort/gnomedistort.spec
+chataigne/chataigne.spec
+cmajor/cmajor.spec
+juce/juce.spec
+juce/juce7.spec
+juce/juce60.spec
+juce/juce61.spec
+juce/juce5.spec
+melodrumatic/melodrumatic.spec
+vmpc/vmpc.spec
+cstop/cstop.spec
+imogen/imogen.spec
+paulstretch/paulstretch.spec
+paulstretch/paulxstretch.spec
+figbug/virtualanalog.spec
+figbug/SN76489.spec
+figbug/piano.spec
+figbug/voc.spec
+figbug/wavetable.spec
+figbug/organ.spec
+mxtune/mxtune.spec
+mxtune/mxcomp.spec
+delirion/delirion.spec
+tiagolr/gate12.spec
+tiagolr/time12.spec
+tiagolr/reevr.spec
+tiagolr/ripplerx.spec
+tiagolr/filtr.spec
+stochas/stochas.spec
+bitklavier/bitKlavier.spec
+tuxguitar-mao/tuxguitar-mao.spec
+surge/surge-xt.spec
+surge/shortcircuit.spec
+boris-granular-station/boris-granular-station.spec
+audio-effects/audio-effects.spec
+camomile/camomile.spec
+sg323/sg323.spec
+ddsp/ddsp.spec
+frequalizer/frequalizer.spec
+audiogridder/audiogridder.spec
+grainbow/grainbow.spec
+harmonigon/harmonigon.spec
+tascar/tascar.spec
+blocks/blocks.spec
+atlas-06-synthetizer/atlas-06-synthesizer.spec
+aeolus_plugin/aeolus_plugin.spec
+blackbird/blackbird.spec
+infernal-synth/infernal-synth.spec
+infernal-synth/firefly-synth.spec
+sickbeatbetty/sickbeatbetty.spec
 
 ## Python package
 
