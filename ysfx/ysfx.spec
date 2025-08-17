@@ -5,7 +5,7 @@
 
 Name: ysfx
 Version: 0.0.38
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Hosting library for JSFX
 URL: https://github.com/JoepVanlier/ysfx
 ExclusiveArch: x86_64 aarch64
@@ -24,7 +24,6 @@ BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: freetype-devel
 BuildRequires: libcurl-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 
 %description
@@ -91,6 +90,9 @@ cp -ra %{__cmake_builddir}/ysfx_plugin_instrument_artefacts/RelWithDebInfo/CLAP/
 %{_libdir}/clap/*
 
 %changelog
+* Wed Aug 13 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.38-2
+- update to 0.0.38-2 - remove an obsolete dependency
+
 * Fri May 16 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.38-1
 - update to 0.0.38-1
 

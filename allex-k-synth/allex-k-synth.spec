@@ -3,12 +3,12 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-Name:    allex-k-synth
+Name: allex-k-synth
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A synthesizer implemented using JUCE framework. Combines additive, subtractive, wavetable, operator(frequency modulation) synthesis methods
 License: GPL-3.0-or-later
-URL:     https://github.com/allex-k/synth
+URL: https://github.com/allex-k/synth
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -32,7 +32,6 @@ BuildRequires: libxkbcommon-x11-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: desktop-file-utils
 
@@ -47,6 +46,10 @@ tar xvfz %{SOURCE1}
 
 %build
 
+%set_build_flags
+
+export CXXFLAGS="`pkg-config --cflags gtk+-3.0` $CXXFLAGS"
+
 cd Builds/LinuxMakefile/
 %make_build
 
@@ -54,7 +57,7 @@ cd Builds/LinuxMakefile/
 
 cd Builds/LinuxMakefile/
 
- install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 -d %{buildroot}/%{_bindir}/
 cp  build/synth %{buildroot}/%{_bindir}/allex-k-synth
 
 # Install icon
@@ -91,5 +94,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/*
 
 %changelog
+* Wed Aug 13 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2 - remove an obsolete dependency
+
 * Thu Jul 27 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file

@@ -5,7 +5,7 @@
 
 Name: six-sines
 Version: 1.1.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Six Sines is a small synthesizer which explores audio rate inter-modulation of signals
 License: MIT
 URL: https://github.com/baconpaul/six-sines
@@ -41,7 +41,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: rtaudio-devel
 BuildRequires: rtmidi-devel
 BuildRequires: gulrak-filesystem-devel
@@ -135,6 +134,9 @@ cp -ra %{__cmake_builddir}/six-sines_assets/Six_Sines %{buildroot}/%{_bindir}/
 %{_libdir}/clap/*
 
 %changelog
+* Wed Aug 13 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-3
+- update to 1.1.0-3 - remove an obsolete dependency
+
 * Tue Mar 18 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-2
 - update to 1.1.0-2
 

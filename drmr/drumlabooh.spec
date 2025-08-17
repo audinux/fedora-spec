@@ -5,7 +5,7 @@
 
 Name: drumlabooh
 Version: 10.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: LV2/VSTi drum machine that can use Hydrogen, SFZ, and other drumkit formats
 License: GPL-3.0-only
 URL: https://github.com/psemiletov/drumlabooh
@@ -35,7 +35,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 LV2/VSTi drum machine that can use Hydrogen, SFZ, and other drumkit formats
@@ -86,6 +85,9 @@ cp %{__cmake_builddir}/drumlabooh_artefacts/Standalone/* %{buildroot}/%{_bindir}
 %{_libdir}/vst3/*
 
 %changelog
+* Wed Aug 13 2025 Yann Collette <ycollette.nospam@free.fr> - 10.0.1-2
+- update to 10.0.1-2 - remove an obsolete dependency
+
 * Sat Jun 14 2025 Yann Collette <ycollette.nospam@free.fr> - 10.0.1-1
 - update to 10.0.1-1
 

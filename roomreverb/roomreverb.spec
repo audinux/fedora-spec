@@ -5,7 +5,7 @@
 
 Name: roomreverb
 Version: 1.3.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Room Reverb is a mono/stereo to stereo algorithmic reverb audio plugin
 License: GPL-3.0-or-later
 URL: https://github.com/cvde/RoomReverb
@@ -26,7 +26,6 @@ BuildRequires: lv2-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: freetype-devel
 BuildRequires: libcurl-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 
 %description
@@ -90,6 +89,9 @@ cp -ra %{__cmake_builddir}/RoomReverb_artefacts/Release/VST3/* %{buildroot}/%{_l
 %{_libdir}/clap/*
 
 %changelog
+* Wed Aug 13 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-2
+- update to 1.3.0-2 - remove an obsolete dependency
+
 * Tue Jan 14 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-1
 - update to 1.3.0-1
 
