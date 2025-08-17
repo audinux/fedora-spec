@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer, MIDI
 
 Name: seq192
-Version: 1.8.0
+Version: 1.8.2
 Release: 1%{?dist}
 Summary: MIDI sequencer based on seq24 with less features and more swag
 License: GPL
@@ -62,6 +62,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_mandir}/man1/*
 
 %changelog
+* Sun Aug 17 2025 Yann Collette <ycollette.nospam@free.fr> - 1.8.2-1
+- update to 1.8.2-1
+
 * Sat Jul 19 2025 Yann Collette <ycollette.nospam@free.fr> - 1.8.0-1
 - update to 1.8.0-1
 
