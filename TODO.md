@@ -265,12 +265,6 @@ https://doc.fedora-fr.org/wiki/Mise_en_%C5%93uvre_de_Xenomai_pour_cr%C3%A9er_un_
 
 Remove webkit2gtk3-devel dependencies from the following packages:
 
-bespokesynth/bespokesynth.spec
-drmr/drumlabooh.spec
-six-sines/six-sines.spec
-ysfx/ysfx.spec
-allex-k-synth/allex-k-synth.spec
-roomreverb/roomreverb.spec
 gearmulator/gearmulator.spec
 noise-suppression/noise-suppression.spec
 hamburger/hamburger.spec
@@ -285,7 +279,6 @@ rotor/rotor.spec
 morgan/morgan.spec
 modeq/modeq.spec
 bridgelite/bridgelite.spec
-templates/juce.spec
 soundux/soundux.spec
 xenos/xenos.spec
 smartguitar/smartguitarpedal.spec
