@@ -143,7 +143,6 @@
 | dublang                       | https://codeberg.org/joenio/dublang |
 | CMBNEX                        | https://github.com/KaixoCode/CMBNEX |
 | ConvertWithMoss               | https://github.com/git-moss/ConvertWithMoss |
-| node_sound                    | https://github.com/Lubba-64/node_sound |
 | JS_Inflator                   | https://github.com/Kiriki-liszt/JS_Inflator |
 | oemer                         | https://github.com/BreezeWhite/oemer |
 | Orchestra                     | https://github.com/AbdallahHemdan/Orchestra |

@@ -1054,7 +1054,8 @@ https://github.com/aiobofh/midi-utils
 https://github.com/davemollen/dm-Seq
 https://github.com/surge-synthesizer/OB-Xf
 https://github.com/mikeoliphant/StompboxUI
-https://github.com/mikeoliphant/stompbox"
+https://github.com/mikeoliphant/stompbox
+https://github.com/Lubba-64/node_sound"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
