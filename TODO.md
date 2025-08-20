@@ -79,7 +79,6 @@
 | libDaisy   (for hvcc)         | https://github.com/electro-smith/libDaisy |
 | mellite                       | https://www.sciss.de/mellite/ |
 | arch realtime privilege       | https://github.com/archlinux/svntogit-community/tree/packages/realtime-privileges/trunk |
-| dm-GrainDelay                 | https://github.com/moddevices/dm-GrainDelay |
 | Carve-Distortion              | https://github.com/jd-13/Carve-Distortion |
 | Oi-Grandad                    | https://github.com/publicsamples/Oi-Grandad |
 | ultimatevocalremovergui       | https://github.com/Anjok07/ultimatevocalremovergui |
@@ -153,7 +152,6 @@
 | elysiera                      | https://github.com/azur1s/elysiera |
 | RTcmix                        | https://github.com/RTcmix/RTcmix |
 | bark                          | https://github.com/haileys/bark |
-| chiptrack                     | https://github.com/jturcotte/chiptrack |
 | LittleGPTracker               | https://github.com/djdiskmachine/LittleGPTracker |
 | xmodits                       | https://github.com/B0ney/xmodits |
 | xmodits-cli                   | https://github.com/B0ney/xmodits-cli |

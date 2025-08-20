@@ -1055,7 +1055,8 @@ https://github.com/davemollen/dm-Seq
 https://github.com/surge-synthesizer/OB-Xf
 https://github.com/mikeoliphant/StompboxUI
 https://github.com/mikeoliphant/stompbox
-https://github.com/Lubba-64/node_sound"
+https://github.com/Lubba-64/node_sound
+https://github.com/jturcotte/chiptrack"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
