@@ -3,10 +3,8 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
-%global commit0 91f97ca022ad91a26ca2afd16b698bc88c4bd0f4
-
 Name: lv2-loop192
-Version: 0.0.1
+Version: 0.1.0
 Release: 1%{?dist}
 Summary: minimal live MIDI looper
 License: GPL-3.0
@@ -16,7 +14,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/jean-emmanuel/loop192/archive/%{commit0}.zip#/%{name}-%{commit0}.zip
+Source0: https://github.com/jean-emmanuel/loop192/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc-c++
 BuildRequires: make
@@ -31,7 +29,7 @@ BuildRequires: desktop-file-utils
 Looper plugin for LV2, specifically for the Mod Devices pedal board.
 
 %prep
-%autosetup -n loop192-%{commit0}
+%autosetup -n loop192-%{version}
 
 %build
 
@@ -59,5 +57,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/loop192.desktop
 %{_mandir}/*
 
 %changelog
+* Tue Aug 19 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
+- update to 0.1.0-1
+
 * Sun Oct 30 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial development
