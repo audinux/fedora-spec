@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 d117341478a9c9706c2edba1d490f4621f3f19db
+%global commit0 69aa60b8d13f70b3babc508b229c36fdb2238c5e
 
 Name: dm-seq
-Version: 0.0.1
+Version: 0.0.2
 Release: 1%{?dist}
 Summary: A monophonic step sequencer effect
 URL: https://github.com/davemollen/dm-Seq
@@ -84,5 +84,8 @@ cp -vfr dm-Seq.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Aug 18 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.2-1
+- update to 0.0.2-1
+
 * Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
