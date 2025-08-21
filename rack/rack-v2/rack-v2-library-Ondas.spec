@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b05388a5c625c17c4d33e8694d0262f0d0a29439
-%global gittag0 2.0.4
+%global commit0 05c07684b30bfe6aeed676063f9d2d3f971e7b40
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Ondas
-Version: 2.0.4
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: Ondas plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Ondas_plugin/dist/Ondas/* %{buildroot}%{_libexecdir}/Rack2/plugins/Ondas/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile

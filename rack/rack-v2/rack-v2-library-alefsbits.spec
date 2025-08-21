@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 fe79f1d02cb5793f58e2332024f701c0cf4fbc1a
-%global gittag0 2.5.60
+%global commit0 f6192a74f867be4338da7accde238b32c577ab3d
+%global gittag0 2.5.63
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-alefsbits
-Version: 2.5.60
+Version: 2.5.63
 Release: 2%{?dist}
 Summary: alefsbits plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r alefsbits_plugin/dist/alefsbits/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.60-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.63-1
 - initial specfile
