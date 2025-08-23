@@ -33,11 +33,11 @@ BuildRequires: libXrandr-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
 BuildRequires: libXinerama-devel
+BuildRequires: mesa-libGL-devel
+BuildRequires: libXcursor-devel
 BuildRequires: libcurl-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
-BuildRequires: mesa-libGL-devel
-BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
 
 %description

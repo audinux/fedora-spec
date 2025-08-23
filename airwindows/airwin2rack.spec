@@ -5,7 +5,7 @@
 
 Name: airwin2rack
 Version: 2.12.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Airwindows, Consolidated into a single Library, Rack Plugin and DAW Plugin
 License: MIT
 URL: https://github.com/baconpaul/airwin2rack
@@ -39,7 +39,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 Airwindows, Consolidated into a single Library, Rack Plugin and DAW Plugin
@@ -108,6 +107,9 @@ cp -rav %{__cmake_builddir}/src-juce/airwin-consolidated_artefacts/Standalone/* 
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 2.12.0-2
+- update to 2.12.0-2 - remove unused dep
+
 * Wed Jul 10 2024 Yann Collette <ycollette.nospam@free.fr> - 2.12.0-1
 - update to 2.12.0-1
 

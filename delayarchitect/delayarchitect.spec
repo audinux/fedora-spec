@@ -3,11 +3,13 @@
 # Type: VST3
 # Category: Effect
 
-Name:    delay-architect
+%global commit0 84e7e3d19ecb06884d5a7d9775737c31e6383fac
+
+Name: delay-architect
 Version: 0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A visual, musical editor for delay effects
-URL:     https://github.com/jpcima/DelayArchitect
+URL: https://github.com/jpcima/DelayArchitect
 ExclusiveArch: x86_64 aarch64
 License: BSL-2.0
 
@@ -24,8 +26,15 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: libX11-devel
+BuildRequires: xcb-util-keysyms-devel
+BuildRequires: xcb-util-devel
+BuildRequires: libXrandr-devel
+BuildRequires: xcb-util-cursor-devel
+BuildRequires: libxkbcommon-x11-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXcursor-devel
+BuildRequires: mesa-libGL-devel
 BuildRequires: libcurl-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: freetype-devel
 
 %description
@@ -60,5 +69,8 @@ cp -ra %{__cmake_builddir}/DelayArchitect_artefacts/RelWithDebInfo/VST3//* %{bui
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1-2
+- update to 0.1-2 - remove unused dep
+
 * Thu Feb 17 2022 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
 - Initial spec file

@@ -7,7 +7,7 @@
 
 Name: bassman-preamp
 Version: 0.5.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: VST3 audio plugin for emulating a guitar amplifier
 License: GPL-3.0-or-later
 URL: https://github.com/flubber2077/Open-Source-Bassman-Preamp
@@ -39,7 +39,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 Requires: license-%{name}
 
@@ -73,7 +72,7 @@ unzip %{SOURCE1}
 
 %set_build_flags
 
-export CXXFLAGS="-include utility $CXXFLAGS"
+export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -include utility $CXXFLAGS"
 
 cd Builds/LinuxMakefile
 
@@ -100,5 +99,8 @@ install -m 755 build/Bassman_Preamp %{buildroot}%{_bindir}/
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-2
+- update to 0.5.9-2 - remove unused dep
+
 * Wed Jul 31 2024 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-1
 - Initial spec file

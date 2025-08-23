@@ -7,7 +7,7 @@
 
 Name: juceopl
 Version: 1.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A VST instrument which emulates the Yamaha OPL sound chip used in PC sound cards from the 90s
 License: GPL-2.0-only
 URL: https://github.com/bsutherland/JuceOPLVSTi
@@ -40,7 +40,8 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
+BuildRequires: fontconfig-devel
+BuildRequires: freetype-devel
 BuildRequires: flac-devel
 BuildRequires: libogg-devel
 BuildRequires: libvorbis-devel
@@ -69,7 +70,7 @@ unzip %{SOURCE2}
 CWD=`pwd`
 
 cd Builds/LinuxMakefile
-%make_build STRIP=true CXXFLAGS="-I$CWD/VST_SDK/VST2_SDK -I/usr/include/JUCE-7.0.5/modules"
+%make_build STRIP=true CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -I$CWD/VST_SDK/VST2_SDK -I/usr/include/JUCE-7.0.5/modules"
 
 %install
 
@@ -84,5 +85,8 @@ install -m 755 -p Builds/LinuxMakefile/build/JuceOPLVSTi.so %{buildroot}/%{_libd
 %{_libdir}/vst/*
 
 %changelog
-* Mon Feb 27 2023  Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
+* Fri Aug 22 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-2
+- update to 1.0.1-2 - remove usunsed dep
+
+* Mon Feb 27 2023 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
 - Initial spec file

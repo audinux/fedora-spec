@@ -3,14 +3,12 @@
 # Type: Standalone
 # Category: Audio
 
-# Global variables for github repository
 %global commit0 71986a48f10c62f622421c204611b5b354fbad19
-%global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name: mammut
 Version: 0.61.%{shortcommit0}
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A sound editor with a non-intuitive sound transformation approach using one single gigantic analysis (no windows)
 License: GPL-3.0-only
 URL: https://github.com/kmatheussen/mammut/
@@ -31,7 +29,6 @@ BuildRequires: alsa-lib-devel
 BuildRequires: freetype-devel
 BuildRequires: libcurl-devel
 BuildRequires: libXinerama-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: libsndfile-devel
 BuildRequires: libvorbis-devel
@@ -101,6 +98,9 @@ desktop-file-install                         \
 %{_datadir}/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 4.61-71986a48-3
+- remove unused dep
+
 * Sun Dec 05 2021 Yann Collette <ycollette.nospam@free.fr> - 4.61-71986a48-2
 - Fix build with native flags
 

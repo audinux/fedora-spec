@@ -5,7 +5,7 @@
 
 Name: hamburger
 Version: 0.5
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Hamburger is a distortion plugin with inbuilt dynamics controls and equalisation that can deliver both subtle tangy harmonics and absolute annilhilation and noise-wall-ification to any sound
 License: AGPL-3.0-or-later
 URL: https://github.com/Davit-G/Hamburger
@@ -35,7 +35,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 Requires: license-%{name}
 
@@ -100,5 +99,8 @@ cp %{__cmake_builddir}/Hamburger_artefacts/Standalone/*  %{buildroot}/%{_bindir}
 %{_libdir}/clap/*
 
 %changelog
+* Fri Aug 22 2025 Yann Collette <ycollette.nospam@free.fr> - 0.5-2
+- update to 0.5-2 - remove unused dep
+
 * Mon Jun 16 2025 Yann Collette <ycollette.nospam@free.fr> - 0.5-1
 - Initial spec file

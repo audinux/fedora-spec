@@ -3,12 +3,12 @@
 # Type: Plugin, VST3
 # Category: Effect
 
-Name:    rotor
+Name: rotor
 Version: 1.0.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Modern ring modulation effect plugin
 License: GPL-3.0-or-later
-URL:     https://github.com/blackboxdsp/rotor
+URL: https://github.com/blackboxdsp/rotor
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -30,7 +30,6 @@ BuildRequires: libxkbcommon-x11-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 
 %description
@@ -51,7 +50,9 @@ VST3 version of %{name}
 %autosetup -n %{name}-develop
 
 tar xvfz %{SOURCE1}
-mv JUCE-6.0.8 juce
+mv JUCE-6.0.8 vendor/
+rm -rf vendor/juce
+mv vendor/JUCE-6.0.8 vendor/juce
 
 %build
 
@@ -71,5 +72,8 @@ cp -rav %{__cmake_builddir}/Rotor_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-2
+- update to 1.0.0-2 - remove unused dep
+
 * Wed Jul 26 2023 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial spec file

@@ -7,7 +7,7 @@
 
 Name: fxseq
 Version: 0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A step sequencer based multi effect plugin using JUCE.
 License: GPL-2.0-or-later
 URL: https://github.com/ssabug/fxseq
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./fxseq-source.sh <TAG>
-# ./fxseq-source.sh master
+#        ./fxseq-source.sh master
 
 Source0: fxseq.tar.gz
 Source1: fxseq-source.sh
@@ -39,7 +39,6 @@ BuildRequires: alsa-lib-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 Fxseq is a step sequencer-based multi effect like dblue glitch or effectrix.
@@ -64,5 +63,8 @@ cp -rav %{__cmake_builddir}/fxseq-VST3_artefacts/VST3/* %{buildroot}%{_libdir}/v
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1-2
+- update to 0.1-2 - remove unused dep
+
 * Thu Nov 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
 - Initial spec file

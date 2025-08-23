@@ -260,19 +260,27 @@ https://doc.fedora-fr.org/wiki/Mise_en_%C5%93uvre_de_Xenomai_pour_cr%C3%A9er_un_
 
 ## Fixes
 
-Remove webkit2gtk3-devel dependencies from the following packages:
+### Update rust package:
 
-gearmulator/gearmulator.spec
-noise-suppression/noise-suppression.spec
-hamburger/hamburger.spec
-vaporizer2/vaporizer2.spec
-juceopl/juceopl.spec
-delayarchitect/delayarchitect.spec
-airwindows/airwin2rack.spec
-fxseq/fxseq.spec
-mammut/mammut.spec
-bassman/bassman.spec
-rotor/rotor.spec
+Use cargo-rpm-macros and:
+- %cargo_build
+- %cargo_install
+- %cargo_test
+
+Add BuildRequires: cargo-rpm-macros
+
+### Remove webkit2gtk3-devel dependencies from the following packages:
+
+May requires:
+BuildRequires: libatomic
+BuildRequires: fontconfig-devel
+BuildRequires: freetype-devel
+
+And -DJUCE_WEB_BROWSER=0 to deactivate the use of webkit in JUCE.
+
+export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -include utility $CXXFLAGS"
+
+
 morgan/morgan.spec
 modeq/modeq.spec
 bridgelite/bridgelite.spec

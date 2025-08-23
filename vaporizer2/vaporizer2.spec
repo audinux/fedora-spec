@@ -5,7 +5,7 @@
 
 Name: vaporizer2
 Version: 3.5.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Vaporizer2 hybrid wavetable additive / subtractive VST / AU / AAX synthesizer / sampler workstation plugin
 License: GPL-3.0-or-later
 URL: https://github.com/VASTDynamics/Vaporizer2
@@ -33,10 +33,10 @@ BuildRequires: libxkbcommon-x11-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: fftw-devel
+BuildRequires: libatomic
 BuildRequires: desktop-file-utils
 
 %description
@@ -108,6 +108,9 @@ cp -ra VASTvaporizer/Presets %{buildroot}/%{_datadir}/%{name}/
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Aug 22 2025 Yann Collette <ycollette.nospam@free.fr> - 3.5.0-2
+- update to 3.5.0-2 - remove unused dep
+
 * Sat Mar 02 2024 Yann Collette <ycollette.nospam@free.fr> - 3.5.0-1
 - update to 3.5.0-1
 

@@ -5,7 +5,7 @@
 
 Name: morgan
 Version: 1.2.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Organ-inspired VST3 plug-ins
 License: GPL-3.0-only
 URL: https://github.com/getdunne/MOrgan
@@ -39,7 +39,6 @@ BuildRequires: libXcursor-devel
 BuildRequires: lv2-devel
 BuildRequires: openssl-devel
 BuildRequires: hidapi-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: libglvnd-devel
 BuildRequires: desktop-file-utils
@@ -69,7 +68,7 @@ tar xvfz %{SOURCE1}
 
 %set_build_flags
 
-export CXXFLAGS="$CXXFLAGS -include cstring -include utility -I/usr/src/JUCE61/modules -I/usr/src/JUCE61/modules/juce_audio_processors/format_types/VST3_SDK/"
+export CXXFLAGS="$CXXFLAGS `pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -include cstring -include utility -I/usr/src/JUCE61/modules -I/usr/src/JUCE61/modules/juce_audio_processors/format_types/VST3_SDK/"
 
 cd MOrgan\ Cab/Builds/LinuxMakefile
 %make_build STRIP=true
@@ -181,5 +180,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/morgan_perc.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-2
+- update to 1.2.0-2 - remove unused spec
+
 * Thu Aug 24 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
 - Initial spec file
