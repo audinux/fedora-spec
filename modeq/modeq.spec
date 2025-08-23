@@ -7,7 +7,7 @@
 
 Name: modeq
 Version: 0.4.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Free EQ audio plugin with modulation
 License: GPL-3.0-only
 URL: https://github.com/tobanteAudio/modEQ
@@ -42,16 +42,24 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: desktop-file-utils
+
+Requires: license-%{name}
 
 %description
 EQ audio effects plugin with modulation.
 
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
+License:  GPL-3.0-only
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPL-3.0-only
-Requires: %{name}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -100,15 +108,20 @@ desktop-file-install                         \
 desktop-file-validate %{buildroot}%{_datadir}/applications/modeq.desktop
 
 %files
-%doc README.md
-%license LICENSE.md
 %{_bindir}/*
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/*
+
+%files -n license-%{name}
+%doc README.md
+%license LICENSE.md
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 0.4.0-2
+- update to 0.4.0-2 - remove unused dep
+
 * Mon Aug 28 2023 Yann Collette <ycollette.nospam@free.fr> - 0.4.0-1
 - Initial build

@@ -8,7 +8,7 @@
 
 Name: smartamp
 Version: 1.3
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Guitar plugin emulating real hardware with Neural Network
 License: GPL-2.0-or-later
 URL: https://github.com/GuitarML/SmartGuitarAmp
@@ -43,17 +43,23 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: unzip
 
 %description
 SmartGuitarAmp is a guitar plugin (VST3) made with JUCE that uses neural network models to emulate real world hardware.
 
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
+License:  GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -61,7 +67,7 @@ VST3 version of %{name}
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -100,10 +106,12 @@ unzip %{SOURCE1}
 mv ToneLibrary-%{toneversion}/SmartAmp/* %{buildroot}%{_datadir}/smartamp/tones/
 
 %files
-%doc README.md
-%license LICENSE.txt
 %{_datadir}/smartamp/
 %{_datadir}/smartamp/tones/*
+
+%files -n license-%{name}
+%doc README.md
+%license LICENSE.txt
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
@@ -112,6 +120,9 @@ mv ToneLibrary-%{toneversion}/SmartAmp/* %{buildroot}%{_datadir}/smartamp/tones/
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3-3
+- update to 1.3-3 - remove unused dep
+
 * Fri Dec 23 2022 Yann Collette <ycollette.nospam@free.fr> - 1.3-2
 - update to 1.3-2 - add presets
 

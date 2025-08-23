@@ -6,7 +6,7 @@
 
 Name: chameleon
 Version: 1.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Vintage guitar amp using neural networks.
 License: GPL-2.0-or-later
 URL: https://github.com/GuitarML/Chameleon
@@ -40,12 +40,7 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
-%if 0%{?fedora} >= 38
-BuildRequires: xsimd8-devel
-%else
 BuildRequires: xsimd-devel
-%endif
 BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: chrpath
 
@@ -66,10 +61,17 @@ the sound quality of the previous stateless LSTM used in the
 SmartAmpPro. It also improves CPU usage compared to the
 SmartAmpPro and SmartGuitarAmp.
 
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
+License:  GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -77,7 +79,7 @@ VST3 version of %{name}
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -115,7 +117,7 @@ cp -ra %{__cmake_builddir}/Chameleon_artefacts/VST3/Chameleon.vst3/* %{buildroot
 chrpath --delete %{buildroot}%{_libdir}/lv2/Chameleon.lv2/libChameleon.so
 chrpath --delete `find %{buildroot}%{_libdir}/vst3/Chameleon.vst3 -name Chameleon.so`
 
-%files
+%files -n license-%{name}
 %doc README.md
 %license LICENSE.txt
 
@@ -126,5 +128,8 @@ chrpath --delete `find %{buildroot}%{_libdir}/vst3/Chameleon.vst3 -name Chameleo
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2-2
+- update to 1.2-2 - remove unused dep
+
 * Wed Nov 23 2022 Yann Collette <ycollette.nospam@free.fr> - 1.2-1
 - Initial spec file

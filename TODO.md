@@ -280,19 +280,8 @@ And -DJUCE_WEB_BROWSER=0 to deactivate the use of webkit in JUCE.
 
 export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -include utility $CXXFLAGS"
 
+soundux/soundux.spec -> requires webkit
 
-morgan/morgan.spec
-modeq/modeq.spec
-bridgelite/bridgelite.spec
-soundux/soundux.spec
-xenos/xenos.spec
-smartguitar/smartguitarpedal.spec
-smartguitar/princepedal.spec
-smartguitar/ts-m1n3.spec
-smartguitar/smartguitarpro.spec
-smartguitar/chameleon.spec
-smartguitar/proteus.spec
-smartguitar/smartguitar.spec
 tr3m/nam-juce.spec
 tr3m/multi-tap-delay.spec
 tr3m/digital-audio-effects.spec

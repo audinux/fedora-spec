@@ -6,7 +6,7 @@
 
 Name: princepedal
 Version: 1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Prince of Tone style guitar plugin made with neural networks
 License: GPL-2.0-or-later
 URL: https://github.com/GuitarML/PrincePedal
@@ -40,11 +40,12 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: xsimd-devel
 BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: chrpath
 BuildRequires: unzip
+
+Requires: license-%{name}
 
 %description
 The Prince is a plugin of my homebuilt Prince of Tone style pedal,
@@ -60,10 +61,17 @@ The original Prince of Tone pedal is essentially 1/2 of the highly
 sought after King of Tone by AnalogMan. Use two instances of the
 Prince for a King of Tone - like experience!
 
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
+License:  GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -71,7 +79,7 @@ VST3 version of %{name}
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -108,9 +116,11 @@ chrpath --delete `find %{buildroot}%{_libdir}/vst3/Prince.vst3 -name Prince.so`
 chrpath --delete %{buildroot}%{_bindir}/Prince
 
 %files
+%{_bindir}/*
+
+%files -n license-%{name}
 %doc README.md
 %license LICENSE.txt
-%{_bindir}/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
@@ -119,5 +129,8 @@ chrpath --delete %{buildroot}%{_bindir}/Prince
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0-2
+- update to 1.0-2 - remove unused dep
+
 * Fri Feb 24 2023 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
 - Initial spec file

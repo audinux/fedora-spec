@@ -7,7 +7,7 @@
 
 Name: bridgelite
 Version: 1.0.5
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: 8 string guitar virtual instrument with one extra octave below for good measure!
 License: GPL-3.0-or-later
 URL: https://github.com/JamesStubbsEng/8ridgelite
@@ -39,15 +39,23 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
+
+Requires: license-%{name}
 
 %description
 8 string guitar virtual instrument with one extra octave below for good measure!
 
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
+License:  GPL-3.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPL-3.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -63,7 +71,7 @@ tar xvfz %{SOURCE1}
 
 cd Builds/LinuxMakefile/
 
-export CXXFLAGS="-I/usr/src/JUCE61/modules/ $CXXFLAGS"
+export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -I/usr/src/JUCE61/modules/ $CXXFLAGS"
 
 %make_build STRIP=true CONFIG=Release
 
@@ -86,9 +94,16 @@ cp -ra 8ridge_lite.vst3 %{buildroot}/%{_libdir}/vst3/
 %{_bindir}/*
 %{_datadir}/Bridgelite/sound/*
 
+%files -n license-%{name}
+%doc README.md
+%license LICENSE
+
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.5-2
+- update to 1.0.5-2 - remove unused dep
+
 * Wed Apr 03 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.5-1
 - Initial spec file

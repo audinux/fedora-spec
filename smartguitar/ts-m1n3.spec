@@ -6,7 +6,7 @@
 
 Name: ts-m1n3
 Version: 1.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: TS-9 guitar pedal clone using neural networks.
 License: GPL-2.0-or-later
 URL: https://github.com/GuitarML/TS-M1N3
@@ -40,12 +40,7 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
-%if 0%{?fedora} >= 38
-BuildRequires: xsimd8-devel
-%else
 BuildRequires: xsimd-devel
-%endif
 BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: chrpath
 
@@ -61,10 +56,17 @@ use prior to amp -> cabinet -> reverb effects to fully simulate
 playing an overdrive pedal through a physical amplifier.
 This can be done with the NeuralPi plugin.
 
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
+License:  GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -72,7 +74,7 @@ VST3 version of %{name}
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -107,7 +109,7 @@ cp -ra %{__cmake_builddir}/TS-M1N3_artefacts/VST3/TS-M1N3.vst3/* %{buildroot}%{_
 chrpath --delete %{buildroot}%{_libdir}/lv2/TS-M1N3.lv2/libTS-M1N3.so
 chrpath --delete `find %{buildroot}%{_libdir}/vst3/TS-M1N3.vst3 -name TS-M1N3.so`
 
-%files
+%files -n license-%{name}
 %doc README.md
 %license LICENSE.txt
 
@@ -118,5 +120,8 @@ chrpath --delete `find %{buildroot}%{_libdir}/vst3/TS-M1N3.vst3 -name TS-M1N3.so
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1-2
+- update to 0.1-2 - remove unused dep
+
 * Wed Nov 23 2022 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
 - Initial spec file

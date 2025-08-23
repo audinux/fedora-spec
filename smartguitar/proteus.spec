@@ -8,7 +8,7 @@
 
 Name: proteus
 Version: 1.2.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Guitar amp and pedal capture plugin using neural networks.
 License: GPL-2.0-or-later
 URL: https://github.com/GuitarML/Proteus
@@ -43,7 +43,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: xsimd-devel
 BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: chrpath
@@ -61,10 +60,17 @@ Quad Cortex, or ToneX, in a free and open source plugin, with the
 ability to capture and share the sound of guitar gear normally
 costing hundreds or thousands of dollars.
 
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
+License:  GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -72,7 +78,7 @@ VST3 version of %{name}
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -112,10 +118,12 @@ unzip %{SOURCE1}
 mv ToneLibrary-%{toneversion}/Proteus/* %{buildroot}%{_datadir}/proteus/tones/
 
 %files
-%doc README.md
-%license LICENSE.txt
 %{_datadir}/proteus/
 %{_datadir}/proteus/tones/*
+
+%files -n license-%{name}
+%doc README.md
+%license LICENSE.txt
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
@@ -124,6 +132,9 @@ mv ToneLibrary-%{toneversion}/Proteus/* %{buildroot}%{_datadir}/proteus/tones/
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2-3
+- update to 1.2-3 - removed unused dep
+
 * Fri May 09 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2-2
 - update to 1.2-2
 

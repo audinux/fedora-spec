@@ -8,7 +8,7 @@
 
 Name: smartamppro
 Version: 1.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Guitar plugin emulating real hardware with Neural Network
 License: GPL-2.0-or-later
 URL: https://github.com/GuitarML/SmartAmpPro
@@ -44,19 +44,27 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: json-devel
 BuildRequires: numcpp
 BuildRequires: boost-devel
 BuildRequires: unzip
 
+Requires: license-%{name}
+
 %description
 SmartGuitarAmpPro is a guitar plugin (VST3) made with JUCE that uses neural network models to emulate real world hardware.
+
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
+License:  GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
 
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -76,7 +84,7 @@ export HOME=`pwd`
 mkdir -p .vst3
 
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true CXXFLAGS="-I/usr/include/eigen3 -I/usr/include/freetype2" LDFLAGS="$LDFLAGS -lX11 -lXext `pkg-config --libs webkit2gtk-4.0`"
+%make_build CONFIG=Release STRIP=true CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -I/usr/include/eigen3 -I/usr/include/freetype2" LDFLAGS="$LDFLAGS -lX11 -lXext"
 
 %install
 
@@ -94,17 +102,22 @@ unzip %{SOURCE2}
 mv ToneLibrary-%{toneversion}/SmartAmpPro/* %{buildroot}%{_datadir}/smartamppro/tones/
 
 %files
-%doc README.md
-%license LICENSE.txt
 %{_bindir}/*
 %{_datadir}/smartamppro/
 %{_datadir}/smartamppro/models/*
 %{_datadir}/smartamppro/tones/*
 
+%files -n license-%{name}
+%doc README.md
+%license LICENSE.txt
+
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0-3
+- update to 1.0-3 - remove unused dep
+
 * Fri Dec 23 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0-2
 - update to 1.0-2 - add presets
 

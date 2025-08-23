@@ -5,7 +5,7 @@
 
 Name: soundux
 Version: 0.2.7
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A cross-platform soundboard
 License: GPL-3.0-or-later
 URL: https://github.com/Soundux/Soundux
@@ -24,7 +24,6 @@ BuildRequires: pipewire-devel
 BuildRequires: libX11-devel
 BuildRequires: libwnck3-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: libappindicator-devel
 BuildRequires: libappindicator-gtk3-devel
 BuildRequires: libdwarf-devel
@@ -54,9 +53,7 @@ sed -i -e "s/-Werror/ /g" CMakeLists.txt
 %set_build_flags
 
 %cmake \
-%if 0%{?fedora} >= 38
-       -DCMAKE_CXX_FLAGS="-include cstdint -Wno-error=deprecated-declarations -fPIC $CXXFLAGS" \
-%endif
+       -DCMAKE_CXX_FLAGS="-include cstdint -Wno-error=deprecated-declarations -DJUCE_WEB_BROWSER=0 -fPIC $CXXFLAGS" \
        -DEMBED_PATH=ON
 %cmake_build
 
@@ -91,6 +88,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/io.github
 %{_datadir}/pixmaps/soundux.png
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 0.2.7-3
+- update to 0.2.7-3 - remove unused dep
+
 * Tue Nov 05 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2.7-2
 - update to 0.2.7-2 - fix ffmpeg dependency
 

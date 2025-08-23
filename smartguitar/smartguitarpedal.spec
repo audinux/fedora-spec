@@ -6,7 +6,7 @@
 
 Name: smartguitarpedal
 Version: 1.5
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Guitar plugin made with JUCE that uses neural network models to emulate real world hardware.
 License: GPL-2.0-or-later
 URL: https://github.com/GuitarML/SmartGuitarPedal
@@ -40,19 +40,27 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: xsimd-devel
 BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: chrpath
+
+Requires: license-%{name}
 
 %description
 Guitar plugin made with JUCE that uses neural
 network models to emulate real world hardware.
 
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
+License:  GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -60,7 +68,7 @@ VST3 version of %{name}
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -95,7 +103,7 @@ cp -ra %{__cmake_builddir}/SmartPedal_artefacts/VST3/SmartPedal.vst3/* %{buildro
 chrpath --delete %{buildroot}%{_libdir}/lv2/SmartPedal.lv2/libSmartPedal.so
 chrpath --delete `find %{buildroot}%{_libdir}/vst3/SmartPedal.vst3 -name SmartPedal.so`
 
-%files
+%files -n license-%{name}
 %doc README.md
 %license LICENSE.txt
 
@@ -106,5 +114,8 @@ chrpath --delete `find %{buildroot}%{_libdir}/vst3/SmartPedal.vst3 -name SmartPe
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 1.5-2
+- update to 1.5-2 - remove unused dep
+
 * Wed Nov 23 2022 Yann Collette <ycollette.nospam@free.fr> - 1.5-1
 - Initial spec file

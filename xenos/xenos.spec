@@ -7,7 +7,7 @@
 
 Name: xenos
 Version: 1.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Xenos: Xenharmonic Stochastic Synthesizer
 License: GPL-3.0-or-later
 URL: https://github.com/raphaelradna/xenos
@@ -41,7 +41,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 Xenos is a virtual instrument plug-in that implements and extends the
@@ -99,5 +98,8 @@ cp -ra %{__cmake_builddir}/Xenos_artefacts/LV2/*  %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.9-2
+- update to 0.9.9-2 - remove unused dep
+
 * Sun Jan 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.9-1
 - Initial spec file
