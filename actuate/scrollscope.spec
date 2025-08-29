@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: scrollscope
-Version: 1.4.2
+Version: 1.4.3
 Release: 1%{?dist}
 Summary: A simple scrolling oscilloscope
 License: GPL-3.0-or-later
@@ -76,10 +76,10 @@ export CARGO_HOME="$CWD/cargo"
 # cargo build --release --bin hexosynth_jack
 
 %ifarch x86_64
-rustup-init -y --no-modify-path --default-toolchain 1.78.0-x86_64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain 1.86.0-x86_64-unknown-linux-gnu
 %endif
 %ifarch aarch64
-rustup-init -y --no-modify-path --default-toolchain 1.78.0-aarch64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain 1.86.0-aarch64-unknown-linux-gnu
 %endif
 source cargo/env
 
@@ -107,6 +107,9 @@ cp -ra target/bundled/scrollscope.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Wed Aug 27 2025 Yann Collette <ycollette.nospam@free.fr> - 1.4.3-1
+- update to 1.4.3-1
+
 * Thu Mar 27 2025 Yann Collette <ycollette.nospam@free.fr> - 1.4.2-1
 - update to 1.4.2-1
 
