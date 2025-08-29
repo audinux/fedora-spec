@@ -3,10 +3,8 @@
 # Type: Standalone, Plugin, VST3
 # Category: Synthesizer
 
-%global commit0 201e8733bb70d31558d2313cd65ccc88cf668412
-
 Name: vmpc
-Version: 0.9.0.4
+Version: 0.9.0.6
 Release: 1%{?dist}
 Summary: JUCE implementation of VMPC2000XL
 License: GPL-3.0-only
@@ -24,7 +22,6 @@ BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: libudisks2-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
@@ -84,6 +81,9 @@ cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/Standalone/* %{bu
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Aug 25 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.0.6-1
+- update to 0.9.0.6-1
+
 * Wed Jul 30 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.0.4-1
 - update to 0.9.0.4-1
 
