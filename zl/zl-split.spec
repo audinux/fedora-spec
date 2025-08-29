@@ -3,11 +3,13 @@
 # Type: VST3, LV2, Plugin
 # Category: Effect
 
+%global toolchain clang
+
 Name: zl-split
-Version: 0.1.0
+Version: 0.2.0
 Release: 1%{?dist}
 Summary: Splitter plugin
-License: GPL-3.0-only
+License: AGPL-3.0-or-later
 URL: https://github.com/ZL-Audio/ZLSplit
 ExclusiveArch: x86_64 aarch64
 
@@ -15,12 +17,12 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./zl-source.sh <project> <tag>
-# ./zl-source.sh ZLSplit 0.1.0
+# ./zl-source.sh ZLSplit 0.2.0
 
 Source0: ZLSplit.tar.gz
 Source1: zl-source.sh
 
-BuildRequires: gcc gcc-c++
+BuildRequires: clang
 BuildRequires: cmake
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-cursor-devel
@@ -71,7 +73,7 @@ sed -i -e "s/ZL Splitte/ZL_Splitte/g" CMakeLists.txt
 
 %build
 
-%cmake
+%cmake -DKFR_ENABLE_DFT=ON
 %cmake_build
 
 %install
@@ -93,6 +95,9 @@ cp -ra %{__cmake_builddir}/ZLSplitter_artefacts/LV2/* %{buildroot}%{_libdir}/lv2
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Aug 25 2025 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
+- update to 0.2.0-1
+
 * Fri Dec 27 2024 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
 - update to 0.1.0-1
 
