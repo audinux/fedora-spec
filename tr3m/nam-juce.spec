@@ -7,7 +7,7 @@
 
 Name: nam-juce
 Version: 0.4.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A JUCE implementation of the Neural Amp Modeler Plugin
 License: GPL-3.0-or-later
 URL: https://github.com/Tr3m/nam-juce
@@ -41,7 +41,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 A JUCE implementation of Steven Atkinson's NeuralAmpModelerPlugin.
@@ -93,5 +92,8 @@ cp -ra %{__cmake_builddir}/NEURAL_AMP_MODELER_artefacts/Release/VST3/* %{buildro
 %{_libdir}/vst3/*
 
 %changelog
-* Mon Sep 16 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
+* Mon Aug 25 2025 Yann Collette <ycollette.nospam@free.fr> - 0.4.0-2
+- update to 0.4.0-2 - remove unused dep
+
+* Mon Sep 16 2024 Yann Collette <ycollette.nospam@free.fr> - 0.4.0-1
 - Initial spec file

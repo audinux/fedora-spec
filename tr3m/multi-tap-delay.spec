@@ -7,7 +7,7 @@
 
 Name: multi-tap-delay
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A digital delay VST plugin that utilizes four delay lines to create a rhythmic pattern with the repeats
 License: GPL-3.0-or-later
 URL: https://github.com/Tr3m/multi-tap-delay
@@ -41,7 +41,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: soundtouch-devel
 BuildRequires: JUCE7
 
@@ -93,5 +92,8 @@ cp -ra %{__cmake_builddir}/multi_tap_delay_artefacts/Release/VST3/* %{buildroot}
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Aug 25 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2 - remove unused dep
+
 * Mon Sep 16 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file

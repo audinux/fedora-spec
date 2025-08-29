@@ -3,11 +3,11 @@
 # Type: Plugin, Standalone, VST3
 # Category: Effect, Audio
 
-%global commit0 b227d9f7341ddf16859a0efee4425f8e158d9cc3
+%global commit0 375e968ca30af10062fd09c18241a270d91a2f88
 
 Name: digital-audio-effects
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A collection of real-time audio effect algorithms implemented in C++.
 License: GPL-3.0-or-later
 URL: https://github.com/Tr3m/Digital-Audio-Effects
@@ -41,7 +41,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 This a collection of real-time audio effect algorithms implemented in C++.
@@ -97,7 +96,7 @@ VST3 version of %{name}
 %autosetup -n Digital-Audio-Effects
 
 sed -i -e "s/PRODUCT_NAME \"Digital Delay\"/PRODUCT_NAME \"Digital_Delay\"/g" plugins/Delay/CMakeLists.txt
-sed -i -e "s/PRODUCT_NAME \"IIR Filter\"/PRODUCT_NAME \"IIR_Filter\"/g" plugins/IIRFIlter/CMakeLists.txt
+sed -i -e "s/PRODUCT_NAME \"IIR Filter\"/PRODUCT_NAME \"IIR_Filter\"/g" plugins/IIRFilter/CMakeLists.txt
 
 %build
 
@@ -106,7 +105,7 @@ Compressor
 Delay
 Distortion
 Flanger
-IIRFIlter
+IIRFilter
 Limiter
 Reverb
 Vibrado"
@@ -125,7 +124,7 @@ install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_bindir}/
 
 FILES="./Vibrado/%{__cmake_builddir}/VIBRADO_PLUGIN_artefacts
-./IIRFIlter/%{__cmake_builddir}/IIR_FILTER_PLUGIN_artefacts
+./IIRFilter/%{__cmake_builddir}/IIR_FILTER_PLUGIN_artefacts
 ./Reverb/%{__cmake_builddir}/REVERB_PLUGIN_artefacts
 ./Distortion/%{__cmake_builddir}/DISTORTION_PLUGIN_artefacts
 ./Chorus/%{__cmake_builddir}/CHORUS_PLUGIN_artefacts
@@ -154,5 +153,8 @@ cd ..
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Aug 25 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2 - remove unused dep
+
 * Sun Sep 15 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
