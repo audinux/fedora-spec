@@ -5,7 +5,7 @@
 
 Name: hera
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Juno 60 emulation synthesizer
 URL: https://github.com/jpcima/Hera
 ExclusiveArch: x86_64 aarch64
@@ -39,7 +39,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 Juno 60 emulation synthesizer, with support of MPE.
@@ -74,5 +73,8 @@ cp -ra %{__cmake_builddir}/Hera_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2 - remove unused dep
+
 * Tue May 28 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file

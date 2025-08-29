@@ -7,7 +7,7 @@
 
 Name: beataligninglooper
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A guitar looper 
 License: GPL-3.0-or-later
 URL: https://github.com/DanielRudrich/BeatAligningGuitarLooper
@@ -39,7 +39,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: fftw-devel
 BuildRequires: desktop-file-utils
 
@@ -59,7 +58,7 @@ unzip %{SOURCE1}
 
 cd Builds/LinuxMakefile/
 
-%make_build CXXFLAGS="-include math.h" LDFLAGS="-lfftw3 -lfftw3f"
+%make_build CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -Wno-template-body -include math.h" LDFLAGS="-lfftw3 -lfftw3f"
 
 %install
 
@@ -103,5 +102,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/*
 
 %changelog
-* Sun Jan 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.9-1
+* Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2 - remove unused dep
+
+* Sun Jan 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file

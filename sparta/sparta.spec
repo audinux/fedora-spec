@@ -5,7 +5,7 @@
 
 Name: sparta
 Version: 1.8.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: A collection of spatial audio related VST plug-ins developed using JUCE and the Spatial_Audio_Framework
 License: GPL-3.0-or-later
 URL: https://leomccormack.github.io/sparta-site/
@@ -41,7 +41,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: lapack-devel
 BuildRequires: openblas-devel
 BuildRequires: fftw-devel
@@ -164,6 +163,9 @@ done
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 1.8.0-4
+- update to 1.8.0-4 - remove unused dep
+
 * Mon Jul 14 2025 Yann Collette <ycollette.nospam@free.fr> - 1.8.0-3
 - update to 1.8.0-3
 

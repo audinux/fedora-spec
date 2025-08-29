@@ -5,7 +5,7 @@
 
 Name: sonobus
 Version: 1.7.2
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: A peer to peer audio application
 License: GPL-2.0-or-later
 URL: https://github.com/essej/sonobus
@@ -36,7 +36,6 @@ BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -106,6 +105,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/sonobus.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 1.7.2-4
+- update to 1.7.2-4 - remove unused dep
+
 * Mon Dec 11 2023 Yann Collette <ycollette.nospam@free.fr> - 1.7.2-3
 - update to 1.7.2-3
 

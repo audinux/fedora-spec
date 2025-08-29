@@ -5,7 +5,7 @@
 
 Name: cabbage
 Version: 2.10.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Framework for developing audio plugins with the Csound programming language.
 URL: https://github.com/rorywalsh/cabbage
 ExclusiveArch: x86_64 aarch64
@@ -30,7 +30,6 @@ BuildRequires: libpng-devel
 BuildRequires: harfbuzz-devel
 BuildRequires: glib2-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: libcurl-devel
 BuildRequires: libsndfile-devel
@@ -164,6 +163,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Cabbage.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 2.10.0-4
+- update to 2.10.0-4 - remove unused dep
+
 * Thu Jan 09 2025 Yann Collette <ycollette.nospam@free.fr> - 2.10.0-2
 - update to 2.10.0-2
 

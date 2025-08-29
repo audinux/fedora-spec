@@ -3,11 +3,11 @@
 # Type: Plugin, Standalone, VST3
 # Category: Graphic, Audio
 
-%global commit0 dd0dc1a6587e14f9bf67bba0c4161a6cb8e844b4
+%global commit0 53586210b8281e98726937e53ecc1fab86583191
 
 Name: multimeter
 Version: 1.0.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A comprehensive set of plugin real-time audio analysis tools in one window
 License: GPL-3.0-or-later
 URL: https://github.com/RealAlexZ/MultiMeter
@@ -39,7 +39,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 MultiMeter, an aesthetic AU/VST audio analyzer, caters to audio engineers, producers,
@@ -65,7 +64,7 @@ sed -i -e "s/std::log10f/log10f/g" Source/SpectrumAnalyzer/SpectrumAnalyzer.cpp
 %build
 
 %set_build_flags
-export CXXFLAGS="-include utility $CFLAGS"
+export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -include utility $CFLAGS"
 
 cd Builds/LinuxMakefile/
 %make_build
@@ -87,5 +86,8 @@ install -m 755 Builds/LinuxMakefile/build/MultiMeter %{buildroot}/%{_bindir}/
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-2
+- update to 1.0.0-2 - removed unused dep - update to 53586210
+
 * Mon Apr 29 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial spec file

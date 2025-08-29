@@ -5,7 +5,7 @@
 
 Name: solid-utility
 Version: 1.0.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Versatile VST3 Channel Utility for Digital Audio Workstations
 License: GPL-3.0-or-later
 URL: https://github.com/SolidFuel/Utility
@@ -39,7 +39,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 Versatile VST3 Channel Utility for Digital Audio Workstations.
@@ -78,5 +77,8 @@ cp -ra %{__cmake_builddir}/Source/solidUtility_artefacts/Release/VST3/*  %{build
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-2
+- update to 1.0.0-2 - remove unused dep
+
 * Mon Jul 21 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial spec file

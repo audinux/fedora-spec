@@ -5,7 +5,7 @@
 
 Name: dexed
 Version: 0.9.8
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: DX7 FM multi plaform/multi format plugin
 License: GPL-3.0-or-later
 URL: https://github.com/asb2m10/dexed
@@ -39,7 +39,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 Dexed is a multi platform, multi format plugin synth that is closely modeled on the Yamaha DX7.
@@ -98,6 +97,9 @@ cp -ra %{__cmake_builddir}/Source/Dexed_artefacts/CLAP/*  %{buildroot}/%{_libdir
 %{_libdir}/clap/*
 
 %changelog
+* Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.8-2
+- update to 0.9.8-2 - remove unused dep
+
 * Wed Oct 09 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.8-1
 - update to 0.9.8-1
 

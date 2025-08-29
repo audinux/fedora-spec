@@ -280,26 +280,10 @@ And -DJUCE_WEB_BROWSER=0 to deactivate the use of webkit in JUCE.
 
 export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -include utility $CXXFLAGS"
 
-soundux/soundux.spec -> requires webkit
+webkit2gtk4.1-devel still available on Fedora 43
+ 
+soundux/soundux.spec -> requires webkit -> build error due to pipewire API
 
-tr3m/nam-juce.spec
-tr3m/multi-tap-delay.spec
-tr3m/digital-audio-effects.spec
-beataligninglooper/beataligninglooper.spec
-audibleplanets/audibleplanets.spec
-cabbage/cabbage.spec
-giada/giada.spec
-sparta/sparta.spec
-solidfuel/arp.spec
-solidfuel/utility.spec
-dexed/dexed.spec
-maim/maim.spec
-glslplugin/glslplugin.spec
-sonobus/sonobus.spec
-multimeter/multimeter.spec
-hera/hera.spec
-jc303/jc303.spec
-fire/fire.spec
 resonarium/resonarium.spec
 tunefish/tunefish.spec
 bombaz/bombaz.spec

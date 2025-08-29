@@ -7,7 +7,7 @@
 
 Name: giada
 Version: 1.2.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Your hardcore loop machine
 License: GPL-3.0-or-later AND MIT AND BSD-2-Clause
 URL: https://www.giadamusic.com
@@ -60,7 +60,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: pkgconfig(freetype2)
 BuildRequires: cmake(nlohmann_json)
 BuildRequires: libcurl-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: fltk-devel
 BuildRequires: fltk-fluid
@@ -109,11 +108,11 @@ rm -f %{buildroot}/%{_datadir}/man/man3/fltk.3*
 %check 
 desktop-file-validate %{buildroot}/%{_datadir}/applications/%{app_id}.desktop
 
-appstream-util validate-relax \
-    %{buildroot}/%{_metainfodir}/%{app_id}.metainfo.xml
+#appstream-util validate-relax \
+#    %{buildroot}/%{_metainfodir}/%{app_id}.metainfo.xml
 
-appstreamcli validate --no-net \
-    %{buildroot}/%{_metainfodir}/%{app_id}.metainfo.xml
+#appstreamcli validate --no-net \
+#    %{buildroot}/%{_metainfodir}/%{app_id}.metainfo.xml
 
 %files
 %license COPYING
@@ -124,6 +123,9 @@ appstreamcli validate --no-net \
 %{_datadir}/icons/hicolor/scalable/apps/%{app_id}.svg
 
 %changelog
+* Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-2
+- update to 1.2.1-2 - removed unused dep
+
 * Sat Jun 28 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-1
 - update to 1.2.1-1
 

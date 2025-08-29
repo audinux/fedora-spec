@@ -5,7 +5,7 @@
 
 Name: fire
 Version: 1.0.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: This is a distortion plugin developed by Wings
 License: GPL-2.0-or-later
 URL: https://github.com/jerryuhoo/Fire
@@ -39,7 +39,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 This is a multi-band distortion plugin 『Fire』.
@@ -73,6 +72,9 @@ cp -ra %{__cmake_builddir}/Fire_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-2
+- update to 1.0.2-2 - remove unused dep
+
 * Sat Jul 05 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-1
 - update to 1.0.2-1
 

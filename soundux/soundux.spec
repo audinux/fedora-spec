@@ -1,7 +1,9 @@
-# Status: active
+# Status: inactive
 # Tag: Audio, Tool, Sequencer
 # Type: Standalone
 # Category: Tool, Audio, Sequencer
+
+# Build error due to pipewire API change a priori
 
 Name: soundux
 Version: 0.2.7
@@ -30,6 +32,7 @@ BuildRequires: libdwarf-devel
 BuildRequires: openssl-devel
 BuildRequires: binutils-devel
 BuildRequires: elfutils-devel
+BuildRequires: webkit2gtk4.1-devel
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 BuildRequires: chrpath
@@ -47,6 +50,8 @@ With Soundux you can play audio to a specific application on Linux.
 sed -i -e "s/-Werror/ /g" CMakeLists.txt
 #-Wno-gnu
 #-Wno-unused-lambda-capture
+
+sed -i -e "s/REQUIRED webkit2gtk-4.0/REQUIRED webkit2gtk-4.1/g" src/ui/impl/webview/lib/webviewpp/CMakeLists.txt
 
 %build
 

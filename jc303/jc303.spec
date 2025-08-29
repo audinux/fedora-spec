@@ -5,7 +5,7 @@
 
 Name: jc303
 Version: 0.12.2
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A Free Roland TB-303 Plugin
 License: GPL-3.0-or-later
 URL: https://github.com/midilab/jc303
@@ -37,7 +37,6 @@ BuildRequires: fftw-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 A Cmake JUCE port of Robin Schmidt Open303, a Roland TB-303 clone plugin.
@@ -115,6 +114,9 @@ cp -ra %{__cmake_builddir}/JC303_artefacts/Release/CLAP/* %{buildroot}/%{_libdir
 %{_libdir}/clap/*
 
 %changelog
+* Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 0.12.2-3
+- update to 0.12.2-3 - remove unused dep
+
 * Tue Jun 03 2025 Yann Collette <ycollette.nospam@free.fr> - 0.12.2-2
 - update to 0.12.2-2
 

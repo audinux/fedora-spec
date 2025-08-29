@@ -3,12 +3,12 @@
 # Type: VST3
 # Category: Effect, Audio
 
-Name:    maim
+Name: maim
 Version: 1.1.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Audio plugin for custom MP3 distortion and digital glitches
 License: GPL-3.0
-URL:     https://github.com/ArdenButterfield/Maim
+URL: https://github.com/ArdenButterfield/Maim
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -42,7 +42,6 @@ BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
 BuildRequires: lame-devel
 BuildRequires: opus-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 MAIM is an audio plugin that circuit bends an MP3 encoder in real time,
@@ -99,6 +98,9 @@ cp -ra Docs/images %{buildroot}%{_datadir}/%{name}/docs/
 %{_datadir}/%{name}/*
 
 %changelog
+* Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-2
+- update to 1.1.1-2 - remove unused dep
+
 * Thu Mar 20 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
 - update to 1.1.1-1
 

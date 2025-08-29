@@ -7,7 +7,7 @@
 
 Name: audibleplanets
 Version: 1.2.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: An expressive, quasi-Ptolemaic semi-modular synthesizer
 License: GPL-3.0-or-later
 URL: https://github.com/gregrecco67/AudiblePlanets
@@ -41,7 +41,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 Four bodies revolve with uniform circular motion, each around one of
@@ -117,6 +116,9 @@ cp -ra %{__cmake_builddir}/AudiblePlanets_artefacts/LV2/* %{buildroot}/%{_libdir
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-2
+- update to 1.2.3-2 - remove unused dep
+
 * Sun Jun 01 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-1
 - update to 1.2.3-1
 
