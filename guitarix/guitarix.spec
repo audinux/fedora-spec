@@ -1,4 +1,8 @@
 # Status: active
+# Tag: Tool, Rack
+# Type: Plugin, LV2, Standalone
+# Category: Audio, Effect, Tool
+
 # guitarix has merged with gx_head branch and tarball is distributed as guitarix2
 # project name remains guitarix however
 
@@ -8,14 +12,14 @@
 %global altname2 guitarix2
 
 Name: guitarix
-Version: 0.46.0
+Version: 0.47.0
 Release: 10%{?dist}
 Summary: A virtual guitar amplifier
 License: GPLv2+
 URL: http://guitarix.sourceforge.net/
 
 # ./brummer10-source.sh <project> <tag>
-# ./brummer10-source.sh guitarix V0.46.0
+# ./brummer10-source.sh guitarix V0.47.0
 
 Source0: guitarix.tar.gz
 Source1: brummer10-source.sh
@@ -24,6 +28,9 @@ BuildRequires: gcc-c++
 BuildRequires: python3
 BuildRequires: python3-devel
 BuildRequires: faust
+BuildRequires: gperf
+BuildRequires: intltool
+BuildRequires: sassc
 BuildRequires: fftw-devel >= 3.3.8
 BuildRequires: gtk3-devel >= 3.22
 BuildRequires: gtkmm30-devel >= 3.22
@@ -33,20 +40,17 @@ BuildRequires: libsndfile-devel
 BuildRequires: zita-convolver-devel >= 3.0.2
 BuildRequires: zita-resampler-devel >= 0.1.1-3
 BuildRequires: gettext-devel
-BuildRequires: intltool
 BuildRequires: boost-devel
 BuildRequires: liblrdf-devel
 BuildRequires: lv2-devel
 BuildRequires: lilv-devel
-BuildRequires: gperf
 BuildRequires: avahi-gobject-devel
 BuildRequires: eigen3-devel
 BuildRequires: libcurl-devel >= 7.26.0
-BuildRequires: google-roboto-condensed-fonts
-BuildRequires: %{_bindir}/sassc
 BuildRequires: glade-devel
 BuildRequires: bluez-libs-devel
 BuildRequires: liblo-devel
+BuildRequires: google-roboto-condensed-fonts
 BuildRequires: libappstream-glib
 BuildRequires: desktop-file-utils
 
@@ -213,6 +217,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/org.%{name}.%{
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Aug 25 2025  Yann Collette <ycollette.nospam@free.fr> - 0.47.0-10
+- update to 0.47.0-10
+
 * Sun Jun 02 2024  Yann Collette <ycollette.nospam@free.fr> - 0.46.0-10
 - update to 0.46.0-10
 
