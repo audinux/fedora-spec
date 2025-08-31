@@ -1072,6 +1072,7 @@ fi
 for File in $REPO_LIST
 do
     echo "Processing $File"
+    sleep 0.1
     ALL_TAGS="`git ls-remote --tags $File 2>&1 | grep -v redirect | sed -e "s/\^{}//g" | sort | uniq`"
     if [ ! -z "$ALL_TAGS" ];
     then
