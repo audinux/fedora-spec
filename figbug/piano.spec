@@ -3,11 +3,11 @@
 # Type: Standalone, VST3, LV2
 # Category: Synthesizer
 
-%define commit0 69917ff3be8b979666c8a823aff22865e83d6d61
+%define commit0 86010d25c55e8e2c8e7f9d992655015ebee36bee
 
 Name: piano
 Version: 0.0.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Piano VST / LV2 plugin
 License: GPL-2.0-or-later
 URL: https://github.com/FigBug/Piano
@@ -23,12 +23,11 @@ Source0: Piano.tar.gz
 Source1: figbug-source.sh
 
 BuildRequires: gcc gcc-c++
+BuildRequires: cmake
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
-BuildRequires: JUCE
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
@@ -46,18 +45,33 @@ BuildRequires: desktop-file-utils
 %description
 A digital waveguide piano physical model with VST and command line interface.
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
 License: GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
+%package -n vst-%{name}
+Summary: VST2 version of %{name}
+License: GPL-2.0-or-later
+Requires: license-%{name}
+
+%description -n vst-%{name}
+VST2 version of %{name}
+
 %package -n lv2-%{name}
 Summary: LV2 version of %{name}
 License: GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -67,30 +81,20 @@ LV2 version of %{name}
 
 %build
 
-%set_build_flags
-export CFLAGS="`pkg-config --cflags gtk+-x11-3.0` $CFLAGS"
-export CXXFLAGS="`pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
-
-cd plugin
-Projucer --resave Piano.jucer
-
-cd Builds/LinuxMakefile
-sed -i -e "s/-Wl,--strip-all/ /g" Makefile
-%ifarch aarch64
-sed -i -e "s/-m64/ /g" Makefile
-%endif
-
-%make_build CONFIG=Release STRIP=true
+%cmake
+%cmake_build
 
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
+install -m 755 -d %{buildroot}%{_libdir}/vst/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
 install -m 755 -d %{buildroot}%{_bindir}/
 
-install -m 755 -p plugin/Builds/LinuxMakefile/build/Piano %{buildroot}/%{_bindir}/
-cp -ra plugin/Builds/LinuxMakefile/build/Piano.vst3 %{buildroot}/%{_libdir}/vst3/
-cp -ra plugin/Builds/LinuxMakefile/build/Piano.lv2 %{buildroot}/%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/Piano_artefacts/Standalone/* %{buildroot}/%{_bindir}/
+cp -ra %{__cmake_builddir}/Piano_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/Piano_artefacts/VST/* %{buildroot}/%{_libdir}/vst/
+cp -ra %{__cmake_builddir}/Piano_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
 
@@ -112,17 +116,25 @@ desktop-file-install                         \
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%license COPYING
 %{_bindir}/*
 %{_datadir}/*
 
+%files -n license-%{name}
+%license COPYING
+
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
+
+%files -n vst-%{name}
+%{_libdir}/vst/*
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Aug 31 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
+- update to 0.0.1-3
+
 * Sat Aug 05 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
 - update to 0.0.1-2 - fix install
 

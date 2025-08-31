@@ -3,14 +3,14 @@
 # Type: Standalone, VST3, LV2
 # Category: Synthesizer
 
-%define commit0 e68789573184c92fe9b6ae1b3139864283f7b762
+%define commit0 31fef425acca9b167309ed9212c4c1adcae3b23a
 
-Name:    organ
+Name: organ
 Version: 0.0.1
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: Organ VST / LV2 plugin
-License: GPL-2.0-or-later
-URL:     https://github.com/FigBug/Organ
+License: GPL-3.0-or-later
+URL: https://github.com/FigBug/Organ
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -28,7 +28,6 @@ BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
@@ -46,10 +45,17 @@ BuildRequires: desktop-file-utils
 %description
 Organ VST / LV2 plugin
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
 License: GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -57,7 +63,7 @@ VST3 version of %{name}
 %package -n lv2-%{name}
 Summary: LV2 version of %{name}
 License: GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -108,9 +114,12 @@ desktop-file-install                         \
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%license LICENSE
 %{_bindir}/*
 %{_datadir}/*
+
+%files -n license-%{name}
+%doc README.md
+%license LICENSE
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
@@ -119,6 +128,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Aug 31 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-5
+- update to 0.0.1-4 - remove unused dep, update to last master
+
 * Sat Apr 06 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-4
 - update to 0.0.1-4 - update to last master e68789573184c92fe9b6ae1b3139864283f7b762
 

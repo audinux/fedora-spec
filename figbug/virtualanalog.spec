@@ -1,15 +1,17 @@
-# Status: active
+# Status: inactive
 # Tag: Jack, Synthesizer
 # Type: Standalone, VST3, LV2
 # Category: Synthesizer
 
-%define commit0 d9703f85e0debbb9764eb516a4e8f6af2a1ad24a
+# Build failure
+
+%define commit0 b513412581e3adeaf91cc4996edb2650894ebad6
 
 Name: virtualanalog
 Version: 0.0.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Virtual Analog VST
-License: GPL-2.0-or-later
+License: BSD-3-Clause
 URL: https://github.com/FigBug/VirtualAnalog
 ExclusiveArch: x86_64 aarch64
 
@@ -27,7 +29,6 @@ BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: JUCE
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
@@ -46,10 +47,17 @@ BuildRequires: desktop-file-utils
 %description
 Virtual Analog VST / LV2 plugin
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
 License: GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -57,7 +65,7 @@ VST3 version of %{name}
 %package -n lv2-%{name}
 Summary: LV2 version of %{name}
 License: GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -110,10 +118,12 @@ desktop-file-install                         \
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%docs README.md
-%license LICENSE
 %{_bindir}/*
 %{_datadir}/*
+
+%files -n license-%{name}
+%doc README.md
+%license LICENSE
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
@@ -122,6 +132,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Aug 31 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
+- update to 0.0.1-2 - remove unused dep
+
 * Sat Aug 05 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
 - update to 0.0.1-2 - fix install
 

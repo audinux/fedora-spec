@@ -28,7 +28,6 @@ BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
@@ -46,10 +45,17 @@ BuildRequires: desktop-file-utils
 %description
 Sega Master System Sound Chip VST
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
 License: GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -57,7 +63,7 @@ VST3 version of %{name}
 %package -n vst-%{name}
 Summary: VST2 version of %{name}
 License: GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n vst-%{name}
 VST version of %{name}
@@ -65,7 +71,7 @@ VST version of %{name}
 %package -n lv2-%{name}
 Summary: LV2 version of %{name}
 License: GPL-2.0-or-later
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -115,9 +121,11 @@ desktop-file-install                         \
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%license LICENSE
 %{_bindir}/*
 %{_datadir}/*
+
+%files -n license-%{name}
+%license LICENSE
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*

@@ -70,7 +70,6 @@
 | Songbird formant filter       | https://github.com/jd-13/Songbird-Formant-Filter |
 | Carve Distortion              | https://github.com/jd-13/Carve-Distortion |
 | Monstr Stereo Imaging         | https://github.com/jd-13/MONSTR-Stereo-Imaging |
-| VirtualAnalog                 | https://github.com/FigBug/VirtualAnalog |
 | BlackBird                     | https://github.com/khrykin/BlackBird |
 | PeakEater                     | https://github.com/vvvar/PeakEater |
 | rotor                         | https://github.com/blackboxdsp/rotor |
@@ -307,12 +306,6 @@ cstop/cstop.spec
 imogen/imogen.spec
 paulstretch/paulstretch.spec
 paulstretch/paulxstretch.spec
-figbug/virtualanalog.spec
-figbug/SN76489.spec
-figbug/piano.spec
-figbug/voc.spec
-figbug/wavetable.spec
-figbug/organ.spec
 mxtune/mxtune.spec
 mxtune/mxcomp.spec
 delirion/delirion.spec

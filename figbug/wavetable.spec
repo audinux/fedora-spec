@@ -5,7 +5,7 @@
 
 Name: wavetable
 Version: 1.0.23
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Wavetable synth
 License: BSD-3-Clause
 URL: https://github.com/FigBug/Wavetable
@@ -26,7 +26,6 @@ BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
@@ -43,10 +42,17 @@ BuildRequires: pkgconfig(jack)
 %description
 Wavetable synth
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: BSD-3-Clause
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
 License: BSD-3-Clause
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -54,7 +60,7 @@ VST3 version of %{name}
 %package -n lv2-%{name}
 Summary: LV2 version of %{name}
 License: BSD-3-Clause
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -80,9 +86,11 @@ cp -ra %{__cmake_builddir}/Wavetable_artefacts/VST3/* %{buildroot}/%{_libdir}/vs
 cp -ra %{__cmake_builddir}/Wavetable_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
 
 %files
+%{_bindir}/*
+
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
-%{_bindir}/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
@@ -91,6 +99,9 @@ cp -ra %{__cmake_builddir}/Wavetable_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Aug 31 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.23-2
+- update to 1.0.23-2 - remove unused dep
+
 * Fri Feb 14 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.23-1
 - update to 1.0.23-1
 
