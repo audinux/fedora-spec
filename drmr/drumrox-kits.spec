@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: drumrox-kits
-Version: 3.0.0
+Version: 3.0.1
 Release: 7%{?dist}
 Summary: A set of drumrox drum kits
 License: GPL-3.0-or-later
@@ -417,6 +417,9 @@ cp -ra Klone\ Dual\ Percussion\ Synthesiser/* %{buildroot}/%{_datadir}/drumrox-k
 %{_datadir}/drumrox-kits/KloneDualPercussionSynthesiser/*
 
 %changelog
+* Sat Aug 30 2025 Yann Collette <ycollette.nospam@free.fr> - 3.0.1-7
+- update to 3.0.1-7
+
 * Thu May 22 2025 Yann Collette <ycollette.nospam@free.fr> - 3.0.0-7
 - update to 3.0.0-7
 
