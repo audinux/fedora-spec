@@ -5,7 +5,7 @@
 
 %global commit0 eac485b0be09725f41b5baeef5139015c24ae38c
 
-Name: unplugged
+Name: unplugeed
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: A collection of VST plugins
