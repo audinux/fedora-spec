@@ -1056,11 +1056,12 @@ https://github.com/surge-synthesizer/OB-Xf
 https://github.com/mikeoliphant/StompboxUI
 https://github.com/mikeoliphant/stompbox
 https://github.com/Lubba-64/node_sound
-https://github.com/jturcotte/chiptrack"
+https://github.com/jturcotte/chiptrack
+https://github.com/unplugred/vsst"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
-# https://github.com/50m30n3/SO-666
+# https://github.com/50m30n3/SO-666
 
 cp git_tags_old.txt git_tags_old.txt.bkp
 
