@@ -5,7 +5,7 @@
 
 %global commit0 eac485b0be09725f41b5baeef5139015c24ae38c
 
-Name: unplugeed
+Name: unplugred
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: A collection of VST plugins
@@ -214,8 +214,49 @@ do
     cp -ra %{__cmake_builddir}/$Plugins/Standalone/* %{buildroot}/%{_bindir}/
 done
 
+# Install icon
+install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
+cp setup/assets/icon.ico %{buildroot}/%{_datadir}/pixmaps/unplugred.ico
+
+# Write desktop files
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+
+PLUGIN_LIST="CRMBL
+Prisma
+Prismon
+Pisstortion
+ModMan
+MPaint
+RedBass
+PlasticFuneral
+SunBurnt
+VU
+Scope
+MagicCarpet
+ClickBox
+PNCH
+Proto
+DietAudio"
+
+for Plugin in $PLUGIN_LIST
+do
+    cat > %{buildroot}%{_datadir}/applications/Unplugred_$Plugin.desktop <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=$Plugin
+Exec=$Plugin
+Icon=unplugred
+Comment=$Plugin plugin
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+EOF
+done
+
 %files
 %{_bindir}/*
+%{_datadir}/applications/*
+%{_datadir}/pixmaps/*
 
 %files -n license-%{name}
 %doc README.md
