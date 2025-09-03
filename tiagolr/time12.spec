@@ -5,7 +5,7 @@
 
 Name: time12
 Version: 1.1.8
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: An envelope based delay modulator
 License: GPL-3.0-only
 URL: https://github.com/tiagolr/time12
@@ -26,7 +26,6 @@ BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: libudisks2-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
@@ -90,5 +89,8 @@ cp -ra %{__cmake_builddir}/TIME12_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Sep 03 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.8-2
+- update to 1.1.0-2 - remove unused dep
+
 * Sun Jun 15 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.8-1
 - Initial spec file

@@ -5,7 +5,7 @@
 
 Name: gate12
 Version: 1.1.7
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Trance gate / volume shaper
 License: GPL-3.0-only
 URL: https://github.com/tiagolr/gate12
@@ -26,7 +26,6 @@ BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: libudisks2-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
@@ -89,5 +88,8 @@ cp -ra %{__cmake_builddir}/GATE12_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Sep 03 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.7-2
+- update to 1.1.7-2 - remove unused dep
+
 * Sat Jun 14 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.7-1
 - Initial spec file

@@ -309,11 +309,6 @@ paulstretch/paulxstretch.spec
 mxtune/mxtune.spec
 mxtune/mxcomp.spec
 delirion/delirion.spec
-tiagolr/gate12.spec
-tiagolr/time12.spec
-tiagolr/reevr.spec
-tiagolr/ripplerx.spec
-tiagolr/filtr.spec
 stochas/stochas.spec
 bitklavier/bitKlavier.spec
 tuxguitar-mao/tuxguitar-mao.spec
