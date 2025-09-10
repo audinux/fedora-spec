@@ -332,6 +332,8 @@ infernal-synth/infernal-synth.spec
 infernal-synth/firefly-synth.spec
 sickbeatbetty/sickbeatbetty.spec
 
+libglademm24-devel not available anymore on Fedora 44
+
 ## Python package
 
 basicpitch from spotify -> https://github.com/spotify/basic-pitch
