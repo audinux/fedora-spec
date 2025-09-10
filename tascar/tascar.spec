@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: tascar
-Version: 0.234.3
+Version: 0.234.4
 Release: 1%{?dist}
 Summary: TASCAR is a collection of tools for creating spatially dynamic acoustic scenes in different render formats
 License: GPL2
@@ -35,9 +35,8 @@ BuildRequires: pangomm-devel
 BuildRequires: libsigc++20-devel
 BuildRequires: atkmm-devel
 BuildRequires: gtksourceviewmm3-devel
-BuildRequires: libglademm24-devel
 BuildRequires: libltc-devel
-BuildRequires: webkit2gtk3-devel
+BuildRequires: webkit2gtk4.1-devel
 BuildRequires: portaudio-devel
 BuildRequires: matio-devel
 BuildRequires: libsamplerate-devel
@@ -82,6 +81,7 @@ mv %buildroot/usr/lib/* %buildroot/%{_libdir}/
 
 # Cleanup
 rm %buildroot/%{_bindir}/*.mk
+rm -rf %buildroot/builddir
 
 %files
 %license LICENSE
@@ -95,6 +95,9 @@ rm %buildroot/%{_bindir}/*.mk
 %{_libdir}/*.so
 
 %changelog
+* Tue Sep 09 2025 Yann Collette <ycollette.nospam@free.fr> - 0.234.4-1
+- update to 0.234.4-1
+
 * Sun May 18 2025 Yann Collette <ycollette.nospam@free.fr> - 0.234.3-1
 - update to 0.234.3-1
 
