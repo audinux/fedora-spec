@@ -202,6 +202,7 @@
 | dfzitarev1                    | https://github.com/SpotlightKid/dfzitarev1 |
 | sendmixer                     | https://github.com/SpotlightKid/sendmixer |
 | LiveMixer                     | https://github.com/sonejostudios/LiveMixer |
+| snibbetracker                 | https://github.com/linuxmao-org/snibbetracker |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
