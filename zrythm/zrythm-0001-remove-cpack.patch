@@ -1,0 +1,114 @@
+From caa923c0643e3604e1f9829b4a0cb56ef25c004e Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Tue, 2 Sep 2025 07:56:21 +0200
+Subject: [PATCH] remove cpack
+
+---
+ CMakeLists.txt | 71 +-------------------------------------------------
+ 1 file changed, 1 insertion(+), 70 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 5bf8c52..2d36418 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1447,67 +1447,8 @@ elseif(APPLE)
+     )
+   "
+   COMPONENT Runtime)
+-else()
+-  install(
+-    IMPORTED_RUNTIME_ARTIFACTS
+-      Qt6::Core
+-      Qt6::Gui
+-      Qt6::Widgets
+-      Qt6::Quick
+-      Qt6::QuickControls2
+-      Qt6::Concurrent
+-    RUNTIME
+-      COMPONENT Runtime
+-    LIBRARY
+-      COMPONENT Runtime
+-      NAMELINK_COMPONENT Development
+-  )
+-  install(
+-    DIRECTORY ${QT6_PREFIX_PATH}/plugins/
+-    DESTINATION plugins
+-    COMPONENT Runtime
+-  )
+-  install(
+-    DIRECTORY ${QT6_PREFIX_PATH}/lib/
+-    TYPE LIB
+-    COMPONENT Runtime
+-    FILES_MATCHING
+-    PATTERN "*.so*"
+-    PATTERN "cmake" EXCLUDE
+-    PATTERN "pkgconfig" EXCLUDE
+-    PATTERN "objects-*" EXCLUDE
+-  )
+-  install(
+-    DIRECTORY ${QT6_PREFIX_PATH}/qml/
+-    DESTINATION qml
+-    COMPONENT Runtime
+-    PATTERN "*"
+-    PATTERN "Qt5Compat" EXCLUDE
+-    PATTERN "objects-*" EXCLUDE
+-    PATTERN "*.a" EXCLUDE
+-    PATTERN "*.prl" EXCLUDE
+-  )
+-  if(compiler_is_gcc)
+-    # bundle libstdc++
+-    execute_process(
+-      COMMAND sh -c "gcc --print-file-name=libstdc++.so"
+-      OUTPUT_VARIABLE _libstdcxx_path
+-      OUTPUT_STRIP_TRAILING_WHITESPACE
+-      COMMAND_ERROR_IS_FATAL ANY
+-    )
+-    get_filename_component(_libstdcxx_path "${_libstdcxx_path}" REALPATH)
+-    install(
+-      FILES "${_libstdcxx_path}"
+-      DESTINATION lib
+-      COMPONENT Runtime
+-      RENAME "libstdc++.so.6"
+-    )
+-  endif()
+ endif()
+ 
+-# Post-install script
+-install(SCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/cmake/post_install.cmake)
+-
+ set(CPACK_PACKAGE_NAME "Zrythm")
+ set(CPACK_PACKAGE_VENDOR "Alexandros Theodotou and Contributors")
+ set(CPACK_PACKAGE_INSTALL_DIRECTORY "Zrythm ${ZRYTHM_VERSION_MAJOR}.${ZRYTHM_VERSION_MINOR}")
+@@ -1522,13 +1463,6 @@ set(CPACK_THREADS 0) # use all CPU cores
+ #   EXPANDED
+ #   BOLD_TITLE
+ # )
+-cpack_add_component(Runtime
+-  DISPLAY_NAME "Zrythm Runtime"
+-  DESCRIPTION "Zrythm Runtime"
+-  REQUIRED
+-  # GROUP Zrythm
+-)
+-set(CPACK_COMPONENTS_ALL "Runtime")
+ 
+ if(WIN32)
+   if(MAGICK_EXECUTABLE)
+@@ -1542,9 +1476,6 @@ endif()
+ 
+ # -- Generator-specific options --
+ 
+-# Archive generator (GNU/Linux)
+-set(CPACK_ARCHIVE_COMPONENT_INSTALL ON)
+-
+ # DragNDrop generator (MacOS)
+ set(CPACK_DMG_SLA_USE_RESOURCE_FILE_LICENSE ON)
+ set(CPACK_DMG_DS_STORE_SETUP_SCRIPT "${CMAKE_SOURCE_DIR}/data/platform/macos/dmg_setup.scpt")
+@@ -1556,4 +1487,4 @@ set(CPACK_INNOSETUP_ICON_FILE "${ZRYTHM_ICO_FILE}")
+ set(CPACK_INNOSETUP_LANGUAGES "english;brazilianPortuguese;catalan;french;german;hebrew;italian;japanese;norwegian;polish;portuguese;russian;spanish;turkish;ukrainian")
+ set(CPACK_INNOSETUP_RUN_EXECUTABLES "zrythm")
+ 
+-include(CPack) # must be included after specifying the CPACK_ variables
++# include(CPack) # must be included after specifying the CPACK_ variables
+-- 
+2.51.0
+
