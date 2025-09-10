@@ -3,7 +3,7 @@
 # Type: Standalone
 # Category: Audio, DAW
 
-%global commit0 c3baa11958a1e005396d4cb3f857b243f9cc090b
+%global commit0 75172483d4ff4329fe0059b10465cff53da203b7
 
 Name: zrythm
 Version: 1.9.9
@@ -11,7 +11,7 @@ Release: 1%{?dist}
 Summary: Highly automated Digital Audio Workstation (DAW) featureful and intuitive to use
 License: GPL-2.0-or-later
 URL: https://github.com/zrythm/zrythm
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -70,6 +70,7 @@ BuildRequires: magic_enum-devel
 BuildRequires: gsl-lite-devel
 BuildRequires: llvm-devel
 BuildRequires: llvm
+BuildRequires: xorg-x11-server-Xvfb
 BuildRequires: desktop-file-utils
 
 Requires: breeze-icon-theme
@@ -93,7 +94,16 @@ More info at https://www.zrythm.org
 # LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes '
 
 # removed: -fstack-protector-strong -fstack-clash-protection -fcf-protection -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1
-export CXXFLAGS='-O0 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3   -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
+#export CXXFLAGS='-O0 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3   -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
+
+%define X_display ":98"
+#############################################
+### Launch a virtual framebuffer X server ###
+#############################################
+export DISPLAY=%{X_display}
+Xvfb %{X_display} >& Xvfb.log &
+trap "kill $! || true" EXIT
+sleep 10
 
 %cmake -DZRYTHM_BUNDLED_PLUGINS_WITH_STATIC_LINKING=OFF \
        -DZRYTHM_BUNDLED_PLUGINS=OFF \
