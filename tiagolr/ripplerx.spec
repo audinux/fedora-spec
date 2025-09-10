@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: ripplerx
-Version: 1.5.0
+Version: 1.5.15
 Release: 1%{?dist}
 Summary: A physically modeled synth
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./ripplerx-source.sh <PROJECT> <TAG>
-#        ./ripplerx-source.sh ripplerx v1.5.0
+#        ./ripplerx-source.sh ripplerx v1.5.15
 
 Source0: ripplerx.tar.gz
 Source1: ripplerx-source.sh
@@ -88,6 +88,33 @@ cp -ra %{__cmake_builddir}/RipplerX_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Sep 10 2025 Yann Collette <ycollette.nospam@free.fr> - 1.5.15-1
+- update to 1.5.15-1
+
+* Tue Sep 09 2025 Yann Collette <ycollette.nospam@free.fr> - 1.5.14-1
+- update to 1.5.14-1
+
+* Tue Sep 09 2025 Yann Collette <ycollette.nospam@free.fr> - 1.5.10-1
+- update to 1.5.10-1
+
+* Sun Sep 07 2025 Yann Collette <ycollette.nospam@free.fr> - 1.5.8-1
+- update to 1.5.8-1
+
+* Sat Sep 06 2025 Yann Collette <ycollette.nospam@free.fr> - 1.5.7-1
+- update to 1.5.7-1
+
+* Fri Sep 05 2025 Yann Collette <ycollette.nospam@free.fr> - 1.5.6-1
+- update to 1.5.6-1
+
+* Fri Sep 05 2025 Yann Collette <ycollette.nospam@free.fr> - 1.5.3-1
+- update to 1.5.3-1
+
+* Thu Sep 04 2025 Yann Collette <ycollette.nospam@free.fr> - 1.5.2-1
+- update to 1.5.2-1
+
+* Thu Sep 04 2025 Yann Collette <ycollette.nospam@free.fr> - 1.5.1-1
+- update to 1.5.1-1
+
 * Wed Sep 03 2025 Yann Collette <ycollette.nospam@free.fr> - 1.5.0-1
 - update to 1.5.0-1
 
