@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: coppwr
-Version: 1.6.2
+Version: 1.7.0
 Release: 1%{?dist}
 Summary: Low level control GUI for the PipeWire multimedia server
 License: GPL-3.0-or-later
@@ -53,10 +53,10 @@ export CARGO_HOME="$CWD/cargo"
 # cargo build --release --bin hexosynth_jack
 
 %ifarch x86_64
-rustup-init -y --no-modify-path --default-toolchain=1.81.0-x86_64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain=1.89.0-x86_64-unknown-linux-gnu
 %endif
 %ifarch aarch64
-rustup-init -y --no-modify-path --default-toolchain=1.81.0-aarch64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain=1.89.0-aarch64-unknown-linux-gnu
 %endif
 source cargo/env
 
@@ -79,9 +79,9 @@ install -m 755 -d %{buildroot}/%{_datadir}/applications/
 install -m 755 -d %{buildroot}/%{_datadir}/metainfo/
 
 cp assets/icon/scalable.svg %{buildroot}/%{_datadir}/icons/scalable/io.github.dimtpap.coppwr.svg 
-cp assets/icon/32.png %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/io.github.dimtpap.coppwr.png
-cp assets/icon/48.png %{buildroot}/%{_datadir}/icons/hicolor/48x48/apps/io.github.dimtpap.coppwr.png
-cp assets/icon/64.png %{buildroot}/%{_datadir}/icons/hicolor/64x64/apps/io.github.dimtpap.coppwr.png
+cp assets/icon/32.png  %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/io.github.dimtpap.coppwr.png
+cp assets/icon/48.png  %{buildroot}/%{_datadir}/icons/hicolor/48x48/apps/io.github.dimtpap.coppwr.png
+cp assets/icon/64.png  %{buildroot}/%{_datadir}/icons/hicolor/64x64/apps/io.github.dimtpap.coppwr.png
 cp assets/icon/128.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/io.github.dimtpap.coppwr.png
 cp assets/icon/256.png %{buildroot}/%{_datadir}/icons/hicolor/256x256/apps/io.github.dimtpap.coppwr.png
 cp assets/icon/512.png %{buildroot}/%{_datadir}/icons/hicolor/512x512/apps/io.github.dimtpap.coppwr.png
@@ -103,6 +103,9 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/*.xml
 %{_datadir}/icons/*
 
 %changelog
+* Thu Sep 11 2025 Yann Collette <ycollette.nospam@free.fr> - 1.7.0-1
+- update to 1.7.0-1
+
 * Thu May 15 2025 Yann Collette <ycollette.nospam@free.fr> - 1.6.2-1
 - update to 1.6.2-1
 
