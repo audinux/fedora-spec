@@ -5,7 +5,7 @@
 
 Summary: A radio automation system
 Name: rivendell
-Version: 4.3.0
+Version: 4.4.0
 Release: 1%{?dist}
 License: LGPL
 URL: https://github.com/ElvishArtisan/rivendell
@@ -158,7 +158,10 @@ exit 0
 %{_libdir}/*
 %{_libexecdir}/*
 %{_bindir}/*
+%if 0%{?fedora} < 44
 %{_sbindir}/*
+%endif
+%{_usr}/sbin/*
 %{_sysconfdir}/*
 %{_includedir}/*
 %{_unitdir}/*
@@ -167,6 +170,9 @@ exit 0
 %{_usr}/lib/firewalld/services/
 
 %changelog
+* Thu Aug 21 2025 Yann Collette <ycollette.nospam@free.fr> - 4.4.0-1
+- update to 4.4.0-1
+
 * Thu Jun 27 2024 Yann Collette <ycollette.nospam@free.fr> - 4.3.0-1
 - update to 4.3.0-1
 
