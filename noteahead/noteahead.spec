@@ -5,7 +5,7 @@
 
 Summary: A simple MIDI tracker and sequencer
 Name: noteahead
-Version: 0.10.0
+Version: 0.12.0
 Release: 1%{?dist}
 License: GPLv2+
 URL: https://github.com/juzzlin/Noteahead
@@ -21,7 +21,9 @@ BuildRequires: qt6-qtbase-devel
 BuildRequires: qt6-qtdeclarative-devel
 BuildRequires: qt6-qttools-devel
 BuildRequires: qt6-linguist
+BuildRequires: rtaudio-devel
 BuildRequires: rtmidi-devel
+BuildRequires: libsndfile-devel
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 
@@ -63,6 +65,9 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/noteahea
 %{_datadir}/pixmaps/*.png
 
 %changelog
+* Thu Sep 11 2025 Yann Collette <ycollette.nospam@free.fr> - 0.12.0-1
+- update to 0.12.0-1
+
 * Mon Jul 21 2025 Yann Collette <ycollette.nospam@free.fr> - 0.10.0-1
 - update to 0.10.0-1
 
