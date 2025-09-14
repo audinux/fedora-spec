@@ -6,7 +6,7 @@
 %global toolchain clang
 
 Name: cmajor
-Version: 1.0.2956
+Version: 1.0.2997
 Release: 1%{?dist}
 Summary: Cmajor is a programming language for writing fast, portable audio software.
 License: GPL-3.0-or-later
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./source-cmajor.sh 1.0.2956
+# $ ./source-cmajor.sh 1.0.2997
 
 Source0: cmajor.tar.gz
 Source1: source-cmajor.sh
@@ -38,7 +38,7 @@ BuildRequires: libxkbcommon-x11-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: webkit2gtk3-devel
+BuildRequires: webkit2gtk4.1-devel
 BuildRequires: gtk3-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: chrpath
@@ -102,7 +102,8 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
        -DWARNINGS_AS_ERRORS=OFF \
        -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=mold $LDFLAGS" \
        -DCMAKE_SHARED_LINKER_FLAGS="-fuse-ld=mold $LDFLAGS" \
-       -DCMAKE_MODULE_LINKER_FLAGS="-fuse-ld=mold $LDFLAGS"
+       -DCMAKE_MODULE_LINKER_FLAGS="-fuse-ld=mold $LDFLAGS" \
+       -DWEBKIT2_GTK_VERSION="webkit2gtk-4.1"
 %cmake_build
 
 %install
@@ -159,6 +160,12 @@ chrpath --delete %{buildroot}/%{_bindir}/cmaj
 %{_datadir}/cmajor/examples/*
 
 %changelog
+* Sun Sep 14 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.2997-1
+- Update to 1.0.2997-1
+
+* Fri Sep 12 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.2990-1
+- Update to 1.0.2990-1
+
 * Sun Aug 17 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.2956-1
 - Update to 1.0.2956-1
 
