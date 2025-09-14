@@ -4,7 +4,7 @@
 # Category: Audio, Programming
 
 Name: leiningen
-Version: 2.11.2
+Version: 2.12.0
 Release: 1%{?dist}
 Summary: Clojure project automation tool
 License: EPL
@@ -82,6 +82,9 @@ sed -i -e "/export LEIN_VERSION/i LEIN_JAR=/usr/share/java/leiningen-%{version}-
 %{_mandir}/ja/man1/*
 
 %changelog
+* Sun Sep 14 2025 Yann Collette <ycollette.nospam@free.fr> - 2.12.0-1
+- update to 2.12.0-1
+
 * Wed Feb 14 2024 Yann Collette <ycollette.nospam@free.fr> - 2.11.2-1
 - update to 2.11.2-1
 
