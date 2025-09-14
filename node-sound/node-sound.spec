@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: node-sound
-Version: 3.0.1
+Version: 4.0.0
 Release: 1%{?dist}
 Summary: FOSS VST synth/effect based on nodes
 License: MIT
@@ -105,5 +105,8 @@ cp -vfr target/bundled/*.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Sun Sep 14 2025 Yann Collette <ycollette.nospam@free.fr> - 4.0.0-1
+- update to 4.0.0-1
+
 * Mon Aug 18 2025 Yann Collette <ycollette.nospam@free.fr> - 3.0.1-1
 - Initial spec file
