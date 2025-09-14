@@ -6,7 +6,7 @@
 %global app_id com.giadamusic.Giada
 
 Name: giada
-Version: 1.2.1
+Version: 1.3.0
 Release: 2%{?dist}
 Summary: Your hardcore loop machine
 License: GPL-3.0-or-later AND MIT AND BSD-2-Clause
@@ -32,7 +32,7 @@ ExclusiveArch: x86_64 aarch64
 # proprietary license.)
 
 # Usage: ./giada-source.sh <TAG>
-#        ./giada-source.sh 1.2.1
+#        ./giada-source.sh 1.3.0
 
 Source0: giada.tar.gz
 Source1: giada-source.sh
@@ -123,6 +123,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{app_id}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/%{app_id}.svg
 
 %changelog
+* Sun Sep 14 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-2
+- update to 1.3.0-2
+
 * Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-2
 - update to 1.2.1-2 - removed unused dep
 
