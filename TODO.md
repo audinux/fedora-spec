@@ -291,10 +291,11 @@ peaksynth/peaksynth.spec
 byod/byod.spec
 terrain/terrain.spec
 iem-plugins/iem-plugins.spec
+cmajor/cmajor.spec
 valentine/valentine.spec
+
 gnomedistort/gnomedistort.spec
 chataigne/chataigne.spec
-cmajor/cmajor.spec
 juce/juce.spec
 juce/juce7.spec
 juce/juce60.spec
