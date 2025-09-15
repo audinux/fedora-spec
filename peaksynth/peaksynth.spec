@@ -7,7 +7,7 @@
 
 Name: peaksynth-audio-plugin
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: MIDI controlled synth that uses filter peaks to create tonal spikes in an audio file
 License: GPLv3
 URL: https://github.com/owennjpr/PeakSynth-Audio-Plugin
@@ -37,7 +37,6 @@ BuildRequires: freetype-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 
 %description
@@ -75,6 +74,10 @@ tar xvfz %{SOURCE1}
 
 %build
 
+%set_build_flags
+
+export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 $CXXFLAGS"
+
 cd PeakSynth/Builds/LinuxMakefile
 
 %make_build DEPFLAGS=-I/usr/include/JUCE-7.0.11/modules/
@@ -98,5 +101,8 @@ cp -ra PeakSynth/Builds/LinuxMakefile/build/PeakSynth.lv2 %{buildroot}/%{_libdir
 %{_libdir}/vst3/*
 
 %changelog
+* Wed Sep 10 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2 - remove unused dep
+
 * Tue Oct 31 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file - 9cf668333ebffdb2b2d3d20b76abd433610c2cfc

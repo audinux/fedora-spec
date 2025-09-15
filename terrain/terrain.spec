@@ -1,11 +1,11 @@
 # Status: active
 # Tag: Synthesizer
-# Type: Plugin, Standalone, VST3
+# Type: Plugin, Standalone, VST3, CLAP
 # Category: Audio, Synthesizer
 
 Name: terrain
 Version: 1.2.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Open Source Wave Terrain Synth 
 License: GPL-3.0-or-later
 URL: https://github.com/aaronaanderson/Terrain
@@ -39,7 +39,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 Requires: license-%{name}
 
@@ -164,5 +163,8 @@ cp -ra %{__cmake_builddir}/WaveTerrainSynth_artefacts/Standalone/*  %{buildroot}
 %{_libdir}/clap/*
 
 %changelog
+* Wed Sep 10 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-2
+- update to 1.2.2-2 - remove unused dep
+
 * Mon Nov 04 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-1
 - Initial spec file

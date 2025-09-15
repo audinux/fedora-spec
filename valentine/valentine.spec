@@ -5,7 +5,7 @@
 
 Name: valentine
 Version: 1.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: An open source compressor meant to pump and breathe
 License: GPL-3.0-or-later
 URL: https://github.com/tote-bag-labs/valentine
@@ -39,7 +39,6 @@ BuildRequires: alsa-lib-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 Valentine is a compressor and distortion processor. It was inspired
@@ -87,6 +86,9 @@ cp -ra %{__cmake_builddir}/Valentine_artefacts/Standalone/* %{buildroot}%{_bindi
 %{_libdir}/vst3/*
 
 %changelog
+* Wed Sep 10 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-2
+- update to 1.0.1-2 - remove unused dep
+
 * Sun Apr 28 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
 - update to 1.0.1-1
 

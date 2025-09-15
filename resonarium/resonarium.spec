@@ -5,7 +5,7 @@
 
 Name: resonarium
 Version: 1.0.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: An expressive, semi-modular, and comprehensive physical modeling/waveguide synthesizer
 License: GPL-3.0-or-later
 URL: https://github.com/gabrielsoule/resonarium
@@ -37,7 +37,6 @@ BuildRequires: libxkbcommon-x11-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils
@@ -117,6 +116,9 @@ cp -ra %{__cmake_builddir}/Resonarium_Instrument_artefacts/Standalone/*  %{build
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Sep 10 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-2
+- update to 1.0.0-2
+
 * Wed Jun 11 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - update to 1.0.0-1
 

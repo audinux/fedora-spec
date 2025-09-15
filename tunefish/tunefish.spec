@@ -10,7 +10,7 @@
 
 Name: tunefish
 Version: 4.2.0.%{shortcommit0}
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Tunefish virtual analog synthesizer - additive wavetable-based synthesizer VST plugin (git version)
 License: GPL-3.0-only
 URL: https://www.tunefish-synth.com/
@@ -32,7 +32,6 @@ BuildRequires: alsa-lib-devel
 BuildRequires: freetype-devel
 BuildRequires: libcurl-devel
 BuildRequires: libXinerama-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: simde-devel
 
@@ -56,6 +55,8 @@ cp %{SOURCE1} src/tunefish4/Builds/LinuxMakefile/Makefile
 
 %set_build_flags
 
+export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 $CXXFLAGS"
+
 cd src/tunefish4/Builds/LinuxMakefile
 %make_build CONFIG=Release STRIP=true V=1
 
@@ -75,6 +76,9 @@ install -m 644 ../../../../patches/tf4programs/* %{buildroot}/%{_libdir}/vst/tf4
 %{_libdir}/*
 
 %changelog
+* Wed Sep 10 2025 Yann Collette <ycollette.nospam@free.fr> - 4.2.0.d56812e8-3
+- update to 4.2.0-3 - remove unused dep
+
 * Sun Jan 17 2021 Yann Collette <ycollette.nospam@free.fr> - 4.2.0.d56812e8-2
 - update to 4.2.0-2
 

@@ -5,7 +5,7 @@
 
 Name: bombaz
 Version: 1.0.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Simple bass synth VSTi based on window function synthesis
 License: GPL-3.0-or-later
 URL: https://github.com/hollance/bombaz
@@ -39,7 +39,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 Requires: license-%{name}
 
@@ -89,5 +88,8 @@ cp -ra %{__cmake_builddir}/Bombaz_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3
 %{_libdir}/vst3/*
 
 %changelog
+* Wed Sep 10 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-2
+- update to 1.0.0-2 - remove unused dep
+
 * Thu Feb 27 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial spec file

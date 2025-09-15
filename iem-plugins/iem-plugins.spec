@@ -5,7 +5,7 @@
 
 Name: iem-plugins
 Version: 1.15.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: The IEM Plug-in Suite is a free and Open-Source audio plug-in suite.
 License: GPL-3.0-or-later
 URL: https://plugins.iem.at
@@ -40,7 +40,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 Requires: license-%{name}
 
@@ -148,6 +147,9 @@ done
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Sep 10 2025 Yann Collette <ycollette.nospam@free.fr> - 1.15.0-2
+- update to 1.15.0-2 - remove unused dep
+
 * Thu Apr 10 2025 Yann Collette <ycollette.nospam@free.fr> - 1.15.0-1
 - update to 1.15.0-1
 

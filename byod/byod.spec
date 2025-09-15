@@ -5,7 +5,7 @@
 
 Name: BYOD
 Version: 1.3.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Build-your-own guitar distortion !
 License: GPL-3.0-or-later
 URL: https://github.com/Chowdhury-DSP/BYOD
@@ -26,7 +26,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: lv2-devel
 BuildRequires: xorg-x11-server-Xvfb
@@ -143,6 +142,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Wed Sep 10 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-2
+- update to 1.3.0-2 - remove unused dep
+
 * Sat Mar 16 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-1
 - update to 1.3.0-1
 

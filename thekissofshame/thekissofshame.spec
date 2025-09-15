@@ -5,7 +5,7 @@
 
 Name: thekissofshame
 Version: 1.0.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: DSP Magnetic Tape Emulation
 License: GPL-3.0-or-later
 URL: https://github.com/hollance/TheKissOfShame
@@ -35,7 +35,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 The Kiss of Shame, debuted at the Audio Engineering Society Convention 2014
@@ -77,6 +76,9 @@ cp %{__cmake_builddir}/TheKissOfShame_artefacts/Standalone/*  %{buildroot}/%{_bi
 %{_libdir}/vst3/*
 
 %changelog
+* Wed Sep 10 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-2
+- update to 1.0.2-2 - rmove unused dep
+
 * Sun Jun 30 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-1
 - update to 1.0.2-1
 
