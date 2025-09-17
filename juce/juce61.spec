@@ -5,7 +5,7 @@
 
 Name: JUCE61
 Version: 6.1.6
-Release: 6%{?dist}
+Release: 7%{?dist}
 Summary: JUCE Framework
 URL: https://github.com/juce-framework/JUCE
 ExclusiveArch: x86_64 aarch64
@@ -26,8 +26,12 @@ BuildRequires: ladspa-devel
 BuildRequires: doxygen
 BuildRequires: graphviz
 BuildRequires: python-unversioned-command
-BuildRequires: webkit2gtk3-devel
 BuildRequires: libcurl-devel
+BuildRequires: freetype-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXcursor-devel
+BuildRequires: libglvnd-devel
 
 %description
 JUCE is an open-source cross-platform C++ application framework used for rapidly
@@ -97,6 +101,9 @@ cp -ra docs/doxygen/doc/* %{buildroot}/%{_datadir}/JUCE61/doc/
 %{_usrsrc}/*
 
 %changelog
+* Tue Sep 16 2025 Yann Collette <ycollette.nospam@free.fr> - 6.1.6-7
+- update to 6.1.6-7 - remove unused dep
+
 * Tue Apr 05 2022 Yann Collette <ycollette.nospam@free.fr> - 6.1.6-6
 - update to 6.1.6-6 - fix for Fedora 36
 

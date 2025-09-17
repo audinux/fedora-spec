@@ -1,17 +1,17 @@
-From 0bc4389da9983778c06eacc7190e97c53089954b Mon Sep 17 00:00:00 2001
+From d1c8297faab92ff894dac26fb1e74b7cf8fb1f2e Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Tue, 19 Nov 2024 07:02:37 +0100
-Subject: [PATCH] build-linux-find_packages.patch
+Date: Mon, 15 Sep 2025 22:10:32 +0200
+Subject: [PATCH] build
 
 ---
  extras/Build/CMake/JUCEModuleSupport.cmake | 23 ++++++++++++++++++++++
  1 file changed, 23 insertions(+)
 
 diff --git a/extras/Build/CMake/JUCEModuleSupport.cmake b/extras/Build/CMake/JUCEModuleSupport.cmake
-index 0d93d36..a7e265b 100644
+index 03378a2..13f88b4 100644
 --- a/extras/Build/CMake/JUCEModuleSupport.cmake
 +++ b/extras/Build/CMake/JUCEModuleSupport.cmake
-@@ -390,6 +390,29 @@ function(_juce_create_pkgconfig_target name)
+@@ -388,6 +388,29 @@ function(_juce_create_pkgconfig_target name)
          return()
      endif()
  
@@ -42,5 +42,5 @@ index 0d93d36..a7e265b 100644
      pkg_check_modules(${name} ${JUCE_ARG_UNPARSED_ARGUMENTS})
  
 -- 
-2.47.0
+2.51.0
 

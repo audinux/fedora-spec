@@ -4,7 +4,7 @@
 # Category: Audio, Programming, Graphic
 
 Name: JUCE
-Version: 8.0.7
+Version: 8.0.10
 Release: 10%{?dist}
 Summary: JUCE Framework
 URL: https://github.com/juce-framework/JUCE
@@ -30,9 +30,12 @@ BuildRequires: lv2-devel
 BuildRequires: dssi-devel
 BuildRequires: ladspa-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXcursor-devel
+BuildRequires: libglvnd-devel
 BuildRequires: python-unversioned-command
 BuildRequires: desktop-file-utils
 
@@ -103,10 +106,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libdir}/cmake/*
 %{_includedir}/*
 %{_libexecdir}/juce/juce_lv2_helper
-%{_libexecdir}/juce/juce_vst3_helper
 %{_libexecdir}/juce/juceaide
 
 %changelog
+* Mon Sep 15 2025 Yann Collette <ycollette.nospam@free.fr> - 8.0.10-10
+- update to 8.0.10-10
+
 * Tue Apr 08 2025 Yann Collette <ycollette.nospam@free.fr> - 8.0.7-10
 - update to 8.0.7-10
 

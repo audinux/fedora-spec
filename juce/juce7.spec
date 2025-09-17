@@ -5,7 +5,7 @@
 
 Name: JUCE7
 Version: 7.0.12
-Release: 10%{?dist}
+Release: 11%{?dist}
 Summary: JUCE Framework
 URL: https://github.com/juce-framework/JUCE
 ExclusiveArch: x86_64 aarch64
@@ -30,9 +30,12 @@ BuildRequires: lv2-devel
 BuildRequires: dssi-devel
 BuildRequires: ladspa-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXcursor-devel
+BuildRequires: libglvnd-devel
 BuildRequires: python-unversioned-command
 BuildRequires: desktop-file-utils
 
@@ -107,6 +110,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libexecdir}/juce/juceaide
 
 %changelog
+* Mon Sep 15 2025 Yann Collette <ycollette.nospam@free.fr> - 7.0.12-11
+- update to 7.0.12-11 - remove unused dep
+
 * Sat Jun 15 2024 Yann Collette <ycollette.nospam@free.fr> - 7.0.12-10
 - update to 7.0.12-10 - rename spec to juce7
 
