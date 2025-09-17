@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 8a34a39080f2a6c6044e7ece8ca8d00f2310bb3b
-%global gittag0 2.4.0
+%global commit0 15092a84076d3aeee03404f5e8df2fc7dca40798
+%global gittag0 2.4.5
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-SanguineMonsters
-Version: 2.4.0
+Version: 2.4.5
 Release: 2%{?dist}
 Summary: SanguineMonsters plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r SanguineMonsters_plugin/dist/SanguineMonsters/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.5-1
 - initial specfile

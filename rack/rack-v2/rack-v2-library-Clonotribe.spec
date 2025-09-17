@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c933d68fea2a1674b180cd23c0f344d5298764a8
-%global gittag0 2.1.0
+%global commit0 2b75fcf57269be3e10b7183aa0cdcdcb9893091f
+%global gittag0 2.2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Clonotribe
-Version: 2.1.0
+Version: 2.2.0
 Release: 2%{?dist}
 Summary: Clonotribe plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Clonotribe_plugin/dist/Clonotribe/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
 - initial specfile

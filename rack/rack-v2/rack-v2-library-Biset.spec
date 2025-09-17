@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 99b47c52c113789a028d8ed3417c5f426057ede6
-%global gittag0 2.0.13
+%global commit0 af5277d7e5819d56382ee934ca78ae477764377d
+%global gittag0 2.0.14
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Biset
-Version: 2.0.13
+Version: 2.0.14
 Release: 2%{?dist}
 Summary: Biset plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Biset_plugin/dist/Biset/* %{buildroot}%{_libexecdir}/Rack2/plugins/Biset/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.13-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.14-1
 - initial specfile
