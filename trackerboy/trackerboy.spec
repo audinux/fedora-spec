@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: trackerboy
-Version: 0.6.5
+Version: 0.6.6
 Release: 1%{?dist}
 Summary: Game Boy / Game Boy Color music tracker
 URL: https://github.com/stoneface86/trackerboy
@@ -66,5 +66,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/examples/*
 
 %changelog
+* Tue Sep 16 2025 Yann Collette <ycollette.nospam@free.fr> - 0.6.6-1
+- update to 0.6.6-1
+
 * Wed Feb 05 2025 Yann Collette <ycollette.nospam@free.fr> - 0.6.5-1
 - initial version of the spec file
