@@ -50,7 +50,7 @@ BuildRequires: libappstream-glib
 BuildRequires: desktop-file-utils
 
 Requires: python3-qt5
-Requires: python3-pyliblo
+Requires: python3-pyliblo3
 Requires: python3-tornado
 Requires: hicolor-icon-theme
 Requires: shared-mime-info
