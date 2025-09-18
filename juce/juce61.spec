@@ -17,6 +17,7 @@ Distribution: Audinux
 # original tarfile can be found here:
 Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0:  juce61-0001-set-default-path.patch
+Patch1:  juce61-0002-fix-curl-API.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -27,11 +28,13 @@ BuildRequires: doxygen
 BuildRequires: graphviz
 BuildRequires: python-unversioned-command
 BuildRequires: libcurl-devel
+BuildRequires: gtk3-devel
+BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
 BuildRequires: libXrandr-devel
 BuildRequires: libXinerama-devel
 BuildRequires: libXcursor-devel
-BuildRequires: libglvnd-devel
+BuildRequires: mesa-libGL-devel
 
 %description
 JUCE is an open-source cross-platform C++ application framework used for rapidly
@@ -51,29 +54,29 @@ live-coding engine which can be used for rapid prototyping.
 
 #export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE $CXXFLAGS"
 #export CFLAGS="-DJUCER_ENABLE_GPL_MODE $CFLAGS"
-export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g -std=c++14 -include utility"
-export CFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g"
+export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g -std=c++14 -include utility $CXXFLAGS"
+export CFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g $CFLAGS"
 
 cd docs/doxygen
 
 mkdir build
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true DEPFLAGS="$CXXFLAGS"
 cd ../../extras
 
 cd AudioPluginHost/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true DEPFLAGS="$CXXFLAGS"
 cd ../../..
 
 cd BinaryBuilder/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true DEPFLAGS="$CXXFLAGS"
 cd ../../..
 
 cd Projucer/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true DEPFLAGS="$CXXFLAGS"
 cd ../../..
 
 cd UnitTestRunner/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true DEPFLAGS="$CXXFLAGS"
 cd ../../..
 
 %install

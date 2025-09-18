@@ -5,7 +5,7 @@
 
 Name: JUCE5
 Version: 5.4.7
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: JUCE Framework version 5
 URL: https://github.com/juce-framework/JUCE
 ExclusiveArch: x86_64 aarch64
@@ -17,6 +17,7 @@ Distribution: Audinux
 # original tarfile can be found here:
 Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0:  juce5-0001-set-default-path.patch
+Patch1:  juce5-0002-fix-curl-API.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -26,8 +27,15 @@ BuildRequires: ladspa-devel
 BuildRequires: doxygen
 BuildRequires: graphviz
 BuildRequires: python3
-BuildRequires: webkit2gtk3-devel
 BuildRequires: libcurl-devel
+BuildRequires: gtk3-devel
+BuildRequires: fontconfig-devel
+BuildRequires: freetype-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXcursor-devel
+BuildRequires: mesa-libGL-devel
+BuildRequires: webkit2gtk4.1-devel
 
 %description
 JUCE is an open-source cross-platform C++ application framework used for rapidly
@@ -43,34 +51,34 @@ live-coding engine which can be used for rapid prototyping.
 
 sed -i -e "s/python/python3/g" doxygen/Makefile
 
+find extras -name Makefile -exec sed -i -e "s/webkit2gtk-4.0/webkit2gtk-4.1/g" {} \; -print
+
 %build
 
 %set_build_flags
 
-#export CXXFLAGS="$CXXFLAGS -DJUCER_ENABLE_GPL_MODE -O0"
-#export CFLAGS="$CFLAGS -DJUCER_ENABLE_GPL_MODE -O0"
-export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g -include array"
-export CFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g"
+export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g -include array $CXXFLAGS"
+export CFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g $CFLAGS"
 
 cd doxygen
 mkdir build
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true DEPFLAGS="$CXXFLAGS"
 cd ../extras
 
 cd AudioPluginHost/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true DEPFLAGS="$CXXFLAGS"
 cd ../../..
 
 cd BinaryBuilder/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true DEPFLAGS="$CXXFLAGS"
 cd ../../..
 
 cd Projucer/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true DEPFLAGS="$CXXFLAGS"
 cd ../../..
 
 cd UnitTestRunner/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true DEPFLAGS="$CXXFLAGS"
 cd ../../..
 
 %install
@@ -98,6 +106,9 @@ cp -ra doxygen/doc/* %{buildroot}/%{_datadir}/JUCE5/doc/
 %{_usrsrc}/*
 
 %changelog
+* Wed Sep 17 2025 Yann Collette <ycollette.nospam@free.fr> - 5.4.7-3
+- update to 5.4.7-3 - remove unused dep
+
 * Tue Jun 01 2021 Yann Collette <ycollette.nospam@free.fr> - 5.4.7-2
 - fix crash at startup
 

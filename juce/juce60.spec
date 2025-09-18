@@ -5,7 +5,7 @@
 
 Name: JUCE60
 Version: 6.0.8
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: JUCE Framework
 URL: https://github.com/juce-framework/JUCE
 ExclusiveArch: x86_64 aarch64
@@ -17,6 +17,7 @@ Distribution: Audinux
 # original tarfile can be found here:
 Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0:  juce60-0001-set-default-path.patch
+Patch1:  juce60-0002-fix-curl-API.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -26,8 +27,14 @@ BuildRequires: ladspa-devel
 BuildRequires: doxygen
 BuildRequires: graphviz
 BuildRequires: python3
-BuildRequires: webkit2gtk3-devel
 BuildRequires: libcurl-devel
+BuildRequires: gtk3-devel
+BuildRequires: fontconfig-devel
+BuildRequires: freetype-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXcursor-devel
+BuildRequires: mesa-libGL-devel
 
 %description
 JUCE is an open-source cross-platform C++ application framework used for rapidly
@@ -49,28 +56,28 @@ sed -i -e "s/python/python3/g" docs/doxygen/Makefile
 
 #export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE $CXXFLAGS"
 #export CFLAGS="-DJUCER_ENABLE_GPL_MODE $CFLAGS"
-export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g"
-export CFLAGS="-DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g"
+export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g $CXXFLAGS"
+export CFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -DJUCER_ENABLE_GPL_MODE -O0 -fPIE -g $CFLAGS"
 
 cd docs/doxygen
 mkdir build
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true DEPFLAGS="$CXXFLAGS"
 cd ../../extras
 
 cd AudioPluginHost/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true DEPFLAGS="$CXXFLAGS"
 cd ../../..
 
 cd BinaryBuilder/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true DEPFLAGS="$CXXFLAGS"
 cd ../../..
 
 cd Projucer/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true DEPFLAGS="$CXXFLAGS"
 cd ../../..
 
 cd UnitTestRunner/Builds/LinuxMakefile/
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true DEPFLAGS="$CXXFLAGS"
 cd ../../..
 
 %install
@@ -98,6 +105,9 @@ cp -ra docs/doxygen/doc/* %{buildroot}/%{_datadir}/JUCE60/doc/
 %{_usrsrc}/*
 
 %changelog
+* Wed Sep 17 2025 Yann Collette <ycollette.nospam@free.fr> - 6.0.8-6
+- update to 6.0.8-6 - remove unused dep
+
 * Tue Jun 01 2021 Yann Collette <ycollette.nospam@free.fr> - 6.0.8-5
 - fix crash at startup
 

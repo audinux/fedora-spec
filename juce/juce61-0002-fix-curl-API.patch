@@ -1,0 +1,25 @@
+From d1eabff457f870b090e540befbe84faa04923e65 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Wed, 17 Sep 2025 22:14:05 +0200
+Subject: [PATCH] fix curl API
+
+---
+ modules/juce_core/native/juce_curl_Network.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules/juce_core/native/juce_curl_Network.cpp b/modules/juce_core/native/juce_curl_Network.cpp
+index bbff6ca..6183130 100644
+--- a/modules/juce_core/native/juce_curl_Network.cpp
++++ b/modules/juce_core/native/juce_curl_Network.cpp
+@@ -373,7 +373,7 @@ public:
+ 
+             // get content length size
+             double curlLength;
+-            if (symbols->curl_easy_getinfo (curl, CURLINFO_CONTENT_LENGTH_DOWNLOAD, &curlLength) == CURLE_OK)
++            if (symbols->curl_easy_getinfo (curl, CURLINFO_CONTENT_LENGTH_DOWNLOAD_T, &curlLength) == CURLE_OK)
+                 contentLength = static_cast<int64> (curlLength);
+         }
+ 
+-- 
+2.51.0
+
