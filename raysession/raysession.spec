@@ -5,7 +5,7 @@
 
 Name: raysession
 Version: 0.14.4
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: A JACK session manager
 
 License: GPL-2.0-or-later
@@ -34,7 +34,7 @@ BuildRequires: gtk-update-icon-cache
 BuildRequires: desktop-file-utils
 
 Requires(pre): python3-qt5
-Requires(pre): python3-pyliblo
+Requires(pre): python3-pyliblo3
 Requires(pre): python3-pyxdg
 %if 0%{?fedora} >= 41
 Requires(pre): python3-legacy-cgi
@@ -116,6 +116,9 @@ desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-network.desktop
 %{_sysconfdir}/xdg/raysession/client_templates/*
 
 %changelog
+* Fri Sep 19 2025 Yann Collette <ycollette.nospam@free.fr> - 0.14.4-4
+- update to 0.14.4-4 - use python3-pyliblo3
+
 * Mon Nov 11 2024 Yann Collette <ycollette.nospam@free.fr> - 0.14.4-3
 - update to 0.14.4-3
 
