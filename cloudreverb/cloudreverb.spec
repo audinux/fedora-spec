@@ -3,10 +3,8 @@
 # Type: Plugin, Standalone, VST3, LV2
 # Category: Audio, Effect
 
-%global commit0 ec3a5a617b0e7f601e8ae721963bcde431df7a10
-
 Name: cloudreverb
-Version: 0.3
+Version: 0.3.1
 Release: 2%{?dist}
 Summary: Algorithmic reverb plugin based on CloudSeed
 License: MIT
@@ -17,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./cloudreverb-source.sh <TAG>
-#        ./cloudreverb-source.sh master
+#        ./cloudreverb-source.sh v0.3.1
 
 Source0: CloudReverb.tar.gz
 Source1: cloudreverb-source.sh
@@ -113,8 +111,11 @@ patchelf --set-rpath '$ORIGIN/../../../../cloudreverb/' `find %{buildroot}/%{_li
 %{_libdir}/lv2/*
 
 %changelog
-* Sat Jan 04 2025 Yann Collette <ycollette.nospam@free.fr> - 0.2-2
-- update to 0.2-2 - fix rpath modification
+* Sat Sep 20 2025 Yann Collette <ycollette.nospam@free.fr> - 0.3.1-2
+- update to 0.3.1-2
+
+* Sat Jan 04 2025 Yann Collette <ycollette.nospam@free.fr> - 0.3-2
+- update to 0.3-2 - fix rpath modification
 
 * Wed Nov 13 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2-1
 - Initial spec file
