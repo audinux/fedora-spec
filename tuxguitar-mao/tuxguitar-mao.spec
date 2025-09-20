@@ -33,7 +33,7 @@
 
 Name: tuxguitar
 Version: 1.6.6
-Release: 14%{?dist}
+Release: 15%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
 URL: https://github.com/helge17/tuxguitar
@@ -83,7 +83,6 @@ BuildRequires: lv2-devel
 BuildRequires: suil-devel
 BuildRequires: lilv-devel
 BuildRequires: qt5-qtbase-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: eclipse-swt
 BuildRequires: mojo-executor-maven-plugin
 BuildRequires: libappstream-glib
@@ -264,6 +263,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Sat Sep 20 2025 Yann Collette <ycollette.nospam@free.fr> - 1.6.6-15
+- update to 1.6.6-15 - remove unused dep
+
 * Fri Dec 27 2024 Yann Collette <ycollette.nospam@free.fr> - 1.6.6-14
 - update to 1.6.6-14
 

@@ -1,14 +1,17 @@
 # Status: active
+
+%global commit0 65529819fe97473aedf47548b6655cfb4241df08
+
 Summary: Collection of SuperCollider plugins
-Name:    supercollider-sc3-plugins
+Name: supercollider-sc3-plugins
 Version: 3.13.0
-Release: 4%{?dist}
+Release: 5%{?dist}
 License: GPL
-URL:     https://github.com/supercollider/sc3-plugins/
+URL: https://github.com/supercollider/sc3-plugins/
 ExclusiveArch: x86_64 aarch64
 
 # ./supercollider-sc3-source.sh <tag>
-# ./supercollider-sc3-source.sh Version-3.13.0
+# ./supercollider-sc3-source.sh main
 
 Source0: sc3-plugins.tar.gz
 Source1: supercollider-sc3-source.sh
@@ -60,6 +63,9 @@ export CXXFLAGS="-include cstdint $CXXFLAGS"
 %{_libdir}/SuperCollider/plugins/*
 
 %changelog
+* Sat Sep 20 2025 Yann Collette <ycollette.nospam@free.fr> 3.13.0-5
+- update to 3.13.0-5 - update to last main
+
 * Fri Feb 24 2023 Yann Collette <ycollette.nospam@free.fr> 3.13.0-4
 - update to 3.13.0
 
