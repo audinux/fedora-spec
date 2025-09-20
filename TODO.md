@@ -268,6 +268,10 @@ Use cargo-rpm-macros and:
 
 Add BuildRequires: cargo-rpm-macros
 
+### Adapt some plugins to the new hvcc
+
+Does not export to dpf anymore, must choose lv2 / vst3 / calp
+
 ### Remove webkit2gtk3-devel dependencies from the following packages:
 
 May requires:
@@ -283,26 +287,9 @@ webkit2gtk4.1-devel still available on Fedora 43
  
 soundux/soundux.spec -> requires webkit -> build error due to pipewire API
 
-resonarium/resonarium.spec
-tunefish/tunefish.spec
-bombaz/bombaz.spec
-thekissofshame/thekissofshame.spec
-peaksynth/peaksynth.spec
-byod/byod.spec
-terrain/terrain.spec
-iem-plugins/iem-plugins.spec
-cmajor/cmajor.spec
-valentine/valentine.spec
-
 gnomedistort/gnomedistort.spec
 chataigne/chataigne.spec
-juce/juce.spec
-juce/juce7.spec
-juce/juce60.spec
-juce/juce61.spec
-juce/juce5.spec
 melodrumatic/melodrumatic.spec
-vmpc/vmpc.spec
 cstop/cstop.spec
 imogen/imogen.spec
 paulstretch/paulstretch.spec
@@ -312,7 +299,6 @@ mxtune/mxcomp.spec
 delirion/delirion.spec
 stochas/stochas.spec
 bitklavier/bitKlavier.spec
-tuxguitar-mao/tuxguitar-mao.spec
 surge/surge-xt.spec
 surge/shortcircuit.spec
 boris-granular-station/boris-granular-station.spec
