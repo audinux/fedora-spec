@@ -4,7 +4,7 @@
 # Category: Audio, IDE, Language
 
 Name: plugdata
-Version: 0.9.1
+Version: 0.9.2
 Release: 2%{?dist}
 Summary: Pure Data as a plugin, with a new GUI
 URL: https://github.com/timothyschoen/PlugData
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./plugdata-source.sh <TAG>
-# ./plugdata-source.sh v0.9.1
+# ./plugdata-source.sh v0.9.2
 
 Source0: PlugData.tar.gz
 Source1: plugdata-source.sh
@@ -30,7 +30,6 @@ BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xinerama)
 BuildRequires: pkgconfig(xext)
 BuildRequires: pkgconfig(freetype2)
-BuildRequires: pkgconfig(webkit2gtk-4.0)
 BuildRequires: pkgconfig(gtk+-x11-3.0)
 BuildRequires: libcurl-devel
 BuildRequires: mesa-libGL-devel
@@ -145,6 +144,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/plugdata.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Sun Sep 21 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.2-2
+- update to 0.9.2-2
+
 * Sat Aug 10 2024 Yann Collette <ycollette.nospam@free.fr> - 0.9.1-2
 - update to 0.9.1-2
 
