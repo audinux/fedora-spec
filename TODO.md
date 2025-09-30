@@ -221,7 +221,6 @@ Add dead package:
 - lv2-EQ10Q-plugins
 - lv2-artyfx-plugins
 - lv2-avw-plugins
-- lv2-fil-plugins
 - lv2-fomp-plugins
 - lv2-instance-access
 - lv2-invada-plugins
@@ -268,6 +267,75 @@ Use cargo-rpm-macros and:
 
 Add BuildRequires: cargo-rpm-macros
 
+### F43 Fixes
+
+To delete a build:
+```
+$ copr-cli delete-build 9585595
+```
+
+To list failed builds:
+```
+$ copr-cli list-builds ycollet/audinux | grep failed
+```
+
+9585045 SocaLabs-plugins
+9585040 sndpeek failed
+9585031 SN76489 failed
+9584971 sickbeatbetty
+9584860 sg-323
+9584671 rt_pvc
+9584668 rt_lpc
+9571795 rack-v1-SurgeRack
+9570990 python-pydantic
+9566115 paulxstretch
+9566103 paulstretch
+9565208 nih-plug
+9565136 mxtune
+9565127 mxcomp
+9564870 midi-monitor
+9564833 melodrumatic
+9564772 maim
+9564759 lv2-toobamp-plugins
+9564427 konfyt
+9564414 kickmess
+9564413 june21
+9564268 infernal-synth
+9563939 HISE
+9563918 harmonigon
+9563827 grainbow
+9563821 gnomedistort2
+9563797 glava
+9563730 gearmulator
+9563668 frequalizer
+9563605 firefly-synth
+9563467 emissioncontrol2
+9562148 delirion
+9562139 ddsp
+9562129 cstop
+9561786 ChowPhaser
+9561785 ChowMatrix
+9561780 ChowKick
+9561776 ChowCentaur
+9561745 chataigne
+9561737 chaffverb
+9561608 Cadence
+9561596 cabbage
+9561534 bridgelite
+9561531 boris-granular-station
+9561435 blocks
+9561417 blackbird
+9561406 bitKlavier
+9561377 bipscript
+9561305 beataligninglooper
+9561282 bassman-preamp
+9561261 audiogridder
+9561242 atlas-06-synthesizer
+9561231 AnalogTapeModel
+9561076 aida-x
+9561063 aeolus_plugin
+9560183 qscintilla
+
 ### Adapt some plugins to the new hvcc
 
 Does not export to dpf anymore, must choose lv2 / vst3 / calp
@@ -284,23 +352,21 @@ And -DJUCE_WEB_BROWSER=0 to deactivate the use of webkit in JUCE.
 export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -include utility $CXXFLAGS"
 
 webkit2gtk4.1-devel still available on Fedora 43
- 
+
 soundux/soundux.spec -> requires webkit -> build error due to pipewire API
+
+surge/shortcircuit.spec -> build failure -> open ticket
 
 gnomedistort/gnomedistort.spec
 chataigne/chataigne.spec
 melodrumatic/melodrumatic.spec
 cstop/cstop.spec
-imogen/imogen.spec
 paulstretch/paulstretch.spec
 paulstretch/paulxstretch.spec
 mxtune/mxtune.spec
 mxtune/mxcomp.spec
 delirion/delirion.spec
-stochas/stochas.spec
 bitklavier/bitKlavier.spec
-surge/surge-xt.spec
-surge/shortcircuit.spec
 boris-granular-station/boris-granular-station.spec
 audio-effects/audio-effects.spec
 camomile/camomile.spec
@@ -310,7 +376,6 @@ frequalizer/frequalizer.spec
 audiogridder/audiogridder.spec
 grainbow/grainbow.spec
 harmonigon/harmonigon.spec
-tascar/tascar.spec
 blocks/blocks.spec
 atlas-06-synthetizer/atlas-06-synthesizer.spec
 aeolus_plugin/aeolus_plugin.spec
@@ -483,7 +548,6 @@ And every plugin spec that provides a standalone executable
 hydrogen-drumkit-AVL-BlackPearl-4A # Bug when installing this one ...
 swami
 ladspa-wasp-plugins
-pyliblo missing lv2-fil-plugins
 ```
 
 ## Kernel
