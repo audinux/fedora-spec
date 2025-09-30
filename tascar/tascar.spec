@@ -36,7 +36,6 @@ BuildRequires: libsigc++20-devel
 BuildRequires: atkmm-devel
 BuildRequires: gtksourceviewmm3-devel
 BuildRequires: libltc-devel
-BuildRequires: webkit2gtk4.1-devel
 BuildRequires: portaudio-devel
 BuildRequires: matio-devel
 BuildRequires: libsamplerate-devel
@@ -95,6 +94,9 @@ rm -rf %buildroot/builddir
 %{_libdir}/*.so
 
 %changelog
+* Tue Sep 30 2025 Yann Collette <ycollette.nospam@free.fr> - 0.234.5-1
+- update to 0.234.5-1 - remove unused dep
+
 * Tue Sep 09 2025 Yann Collette <ycollette.nospam@free.fr> - 0.234.4-1
 - update to 0.234.4-1
 

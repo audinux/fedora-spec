@@ -5,7 +5,7 @@
 
 Name: stochas
 Version: 1.3.13
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: A VST3 MIDI sequencer
 License: GPL-3.0-only
 URL: https://github.com/surge-synthesizer/stochas
@@ -14,8 +14,8 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# Use ./source-stochas.sh to get the sources (latest master for now)
-#     ./source-stochas.sh v1.3.13
+# To get the sources:
+# ./source-stochas.sh v1.3.13
 
 Source0: stochas.tar.gz
 Source1: source-stochas.sh
@@ -25,7 +25,6 @@ BuildRequires: cmake
 BuildRequires: rsync
 BuildRequires: alsa-lib-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: libcurl-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
@@ -95,6 +94,9 @@ install -m 644 -p %{__cmake_builddir}/stochas_artefacts/Standalone/Stochas %{bui
 %{_libdir}/clap/*
 
 %changelog
+* Tue Sep 30 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.13-5
+- update to 1.3.13-5 - remove unused dep
+
 * Sat Nov 16 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.13-4
 - update to 1.3.13-4
 

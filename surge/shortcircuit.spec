@@ -7,7 +7,7 @@
 
 Name: shortcircuit
 Version: 0.0.1
-Release: 6%{?dist}
+Release: 7%{?dist}
 Summary: A VST3 Synthesizer
 License: GPL-2.0-or-later
 URL: https://github.com/surge-synthesizer/shortcircuit-xt
@@ -34,7 +34,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
 BuildRequires: libcurl-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
@@ -70,6 +69,7 @@ sed -i -e "/-march=nehalem/d" cmake/compiler-options.cmake
 %set_build_flags
 
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
+export CXXFLAGS="-Wno-template-body $CXXFLAGS"
 
 %cmake -DBUILD_SHARED_LIBS=OFF
 %cmake_build
@@ -117,6 +117,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Tue Sep 30 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-7
+- update to 0.0.1-7 - remove unused dep
+
 * Mon May 19 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-6
 - update to last nightly - 4bd459d5ad8ee3091d35b1a5f2d812c8a8912bd6
 

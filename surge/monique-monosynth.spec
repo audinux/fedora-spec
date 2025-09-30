@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: monique-monosynth
-Version: 20042024
+Version: 30092025
 Release: 1%{?dist}
 Summary: Monique is a monophonic synth from Thomas Arndt
 License: GPL-3.0-or-later
@@ -23,23 +23,23 @@ Source0: monique-monosynth.tar.gz
 Source1: source-monique-monosynth.sh
 
 BuildRequires: gcc gcc-c++
-BuildRequires: libX11-devel
 BuildRequires: cmake
-BuildRequires: xcb-util-cursor-devel
-BuildRequires: libxkbcommon-x11-devel
 BuildRequires: rsync
 BuildRequires: git
 BuildRequires: python3
 BuildRequires: chrpath
+BuildRequires: xcb-util-cursor-devel
+BuildRequires: libxkbcommon-x11-devel
+BuildRequires: libX11-devel
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
 BuildRequires: libcurl-devel
+BuildRequires: gtk3-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
-BuildRequires: pkgconfig(webkit2gtk-4.0)
 BuildRequires: patchelf
 
 %description
@@ -72,6 +72,9 @@ sed -i -e "/Werror/d" CMakeLists.txt
 
 # Fix build of juceaide on f36
 sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \"-DCMAKE_CXX_FLAGS='-include utility -fPIC'\"/g" libs/JUCE/extras/Build/juceaide/CMakeLists.txt
+
+# Fix webkit deps
+sed -i -e "s/webkit2gtk-4.0/webkit2gtk-4.1/g" libs/JUCE/extras/Build/CMake/JUCEUtils.cmake
 
 %build
 
@@ -117,6 +120,9 @@ patchelf --set-rpath '$ORIGIN/../../../%{_lib}/moniquemonosynth/' %{buildroot}/%
 %{_libdir}/clap/*
 
 %changelog
+* Tue Sep 30 2025 Yann Collette <ycollette.nospam@free.fr> - 30092024-1
+- update to 30092025-1
+
 * Sun Dec 26 2021 Yann Collette <ycollette.nospam@free.fr> - 20042024-1
 - update to 20042024-1
 

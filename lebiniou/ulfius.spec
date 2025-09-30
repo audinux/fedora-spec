@@ -8,7 +8,7 @@ Name: ulfius
 Version: 2.7.0
 Release: 1%{?dist}
 License: LGPL-2.1
-URL:     https://github.com/babelouest/%{name}
+URL: https://github.com/babelouest/ulfius
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -16,8 +16,7 @@ Distribution: Audinux
 
 Source0: %{url}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: libcurl-devel
 BuildRequires: gnutls-devel
@@ -49,6 +48,10 @@ The %{name}-doc package contains documentation for %{name}.
 
 %build
 
+%set_build_flags
+
+export CFLAGS="-Wno-error=attribute-warning $CFLAGS"
+
 %cmake
 %cmake_build
 
@@ -72,5 +75,8 @@ The %{name}-doc package contains documentation for %{name}.
 %{_datadir}/doc/ulfius/
 
 %changelog
+* Tue Sep 30 2025 Yann Collette <ycollette dot nospam at free.fr> 2.7.0-2
+- update to 2.7.0-2
+
 * Sun Dec 13 2020 Yann Collette <ycollette dot nospam at free.fr> 2.7.0-1
 - Initial release of spec file for 2.7.0

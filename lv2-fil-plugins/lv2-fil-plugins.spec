@@ -22,8 +22,7 @@ Distribution: Audinux
 
 Source: https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/lv2fil/2.0+20100312.git18130f5a+dfsg0-2/lv2fil_2.0+20100312.git18130f5a+dfsg0.orig.tar.gz#/lv2fil-2.0.tar.gz
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: python2
 BuildRequires: liblo-devel
@@ -32,7 +31,7 @@ BuildRequires: lv2-devel
 Requires: lv2
 Requires: pycairo
 Requires: pygtk2
-Requires: python3-pyliblo
+Requires: python3-pyliblo3
 
 %description
 Stereo and mono LV2 plugins, four-band parametric equalizers.
