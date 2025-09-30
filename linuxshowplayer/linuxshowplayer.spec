@@ -35,7 +35,7 @@ BuildRequires: desktop-file-utils
 Requires: python3-qt5
 Requires: python3-sortedcontainers
 Requires: python3-rtmidi
-Requires: python3-pyliblo
+Requires: python3-pyliblo3
 Requires: python3-alsa
 Requires: python3-mido
 Requires: python3-humanize
@@ -51,8 +51,6 @@ Linux Show Player (LiSP) - Sound player designed for stage productions.
 %autosetup -n %{name}-%{version}
 
 sed -i -e "s/mido = \"\^1.3\"/mido = \"\^1.2\"/g" pyproject.toml
-# sed -i -e "s/falcon = \"\^3.0\"/falcon = \"\^4.0\"/g" pyproject.toml
-# sed -i -e "s/humanize = \"\^4.8.0\"/humanize = \"\^4.0.0\"/g" pyproject.toml
 
 sed -i -e "/pyqt5-qt5/d" pyproject.toml
 sed -i -e "/falcon/d" pyproject.toml
@@ -60,7 +58,7 @@ sed -i -e "/humanize/d" pyproject.toml
 sed -i -e "/python3-qt5/d" pyproject.toml
 sed -i -e "/jack-client/d" pyproject.toml
 
-#sed -i -e "s/pyqt5/python3-qt5/g" pyproject.toml
+sed -i -e "s/3\.13/3\.15/g" pyproject.toml
 
 %build
 %pyproject_wheel

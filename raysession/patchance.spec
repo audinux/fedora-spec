@@ -35,7 +35,7 @@ BuildRequires: gtk-update-icon-cache
 BuildRequires: desktop-file-utils
 
 Requires(pre): python3-qt5
-Requires(pre): python3-pyliblo
+Requires(pre): python3-pyliblo3
 Requires(pre): python3-pyxdg
 
 %description
