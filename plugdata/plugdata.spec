@@ -45,6 +45,7 @@ BuildRequires: libvorbis-devel
 BuildRequires: opus-devel
 BuildRequires: fluidsynth-devel
 BuildRequires: mesa-libGLU-devel
+BuildRequires: libatomic
 BuildRequires: desktop-file-utils
 
 %description
