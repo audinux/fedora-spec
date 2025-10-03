@@ -1058,7 +1058,8 @@ https://github.com/mikeoliphant/stompbox
 https://github.com/Lubba-64/node_sound
 https://github.com/jturcotte/chiptrack
 https://github.com/unplugred/vsts
-https://github.com/linuxmao-org/snibbetracker"
+https://github.com/linuxmao-org/snibbetracker
+https://github.com/QuentinFAIDIDE/KholorsStation"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
