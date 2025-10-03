@@ -19,7 +19,7 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 
 Name: SocaLabs-plugins
-Version: 20220502
+Version: 20250807
 Release: 6%{?dist}
 Summary: Various VST/VST3 Plugins from SocaLabs.com
 License: BSD-3-Clause
@@ -30,7 +30,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./socalab-source.sh <tag>
-# ./socalab-source.sh 20a0b31169f54e942e22b4ac74fcc2788d72ea16
+# ./socalab-source.sh a64ec82683b90bc1d22c11752d4fa6bac94a7f35
 
 Source0: slPlugins.tar.gz
 Source4: socalab-source.sh
@@ -42,7 +42,6 @@ BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xinerama)
 BuildRequires: pkgconfig(xext)
 BuildRequires: pkgconfig(freetype2)
-BuildRequires: pkgconfig(webkit2gtk-4.0)
 BuildRequires: pkgconfig(gtk+-x11-3.0)
 BuildRequires: pkgconfig(jack)
 BuildRequires: libcurl-devel
@@ -117,8 +116,8 @@ PLUGIN_LIST="ABTester \
 	     Maths \
 	     Oscilloscope \
 	     PitchTrack \
-	     SampleDelay \
 	     SFX8 \
+	     SampleDelay \
 	     SpectrumAnalyzer \
 	     ToneGenerator"
 
@@ -145,6 +144,9 @@ done
 %{_libdir}/lv2/
 
 %changelog
+* Wed Oct 01 2025 Yann Collette <ycollette.nospam@free.fr> - 20250807-6
+- update to a64ec82683b90bc1d22c11752d4fa6bac94a7f35
+
 * Wed Oct 11 2023 Yann Collette <ycollette.nospam@free.fr> - 20200512-6
 - update to 20a0b31169f54e942e22b4ac74fcc2788d72ea16
 
