@@ -1,0 +1,45 @@
+From 61e234b979e4f964eeb53fda76dfd3ca8bf1becf Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Thu, 2 Oct 2025 22:23:20 +0200
+Subject: [PATCH] devendor third parties
+
+---
+ CMakeLists.txt | 22 ++++------------------
+ 1 file changed, 4 insertions(+), 18 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8a8c2d9..ca8223a 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -60,24 +60,10 @@ FetchContent_Declare(
+ 
+ FetchContent_MakeAvailable(juce)
+ 
+-# gRPC lib download and setup
+-set(ABSL_ENABLE_INSTALL ON)
+-FetchContent_Declare(
+-  gRPC
+-  GIT_REPOSITORY https://github.com/grpc/grpc
+-  GIT_TAG v1.50.2
+-  EXCLUDE_FROM_ALL)
+-FetchContent_MakeAvailable(gRPC)
+-set(protobuf_MSVC_STATIC_RUNTIME ON)
+-set(gRPC_MSVC_STATIC_RUNTIME ON)
+-
+-# Configure the FetchContent for spdlog
+-FetchContent_Declare(
+-  spdlog
+-  GIT_REPOSITORY https://github.com/gabime/spdlog.git
+-  GIT_TAG v1.14.1)
+-FetchContent_MakeAvailable(spdlog)
+-set_target_properties(spdlog PROPERTIES POSITION_INDEPENDENT_CODE ON)
++find_package(PkgConfig REQUIRED)
++find_package(gRPC REQUIRED CONFIG)
++find_package(Protobuf REQUIRED)
++find_package(spdlog REQUIRED CONFIG)
+ 
+ # Fetchcontent for muFFT
+ set(MUFFT_ENABLE_FFTW OFF)
+-- 
+2.51.0
+

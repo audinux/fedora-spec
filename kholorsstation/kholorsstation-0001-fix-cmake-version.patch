@@ -1,0 +1,40 @@
+From 28a31676e6e321c413544f388084fe4d072665d0 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Thu, 2 Oct 2025 21:34:19 +0200
+Subject: [PATCH] fix cmake version
+
+---
+ CMakeLists.txt | 12 ++----------
+ 1 file changed, 2 insertions(+), 10 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 631ea17..8a8c2d9 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -8,15 +8,7 @@ if(NOT GIT_EXECUTABLE)
+ endif()
+ 
+ # use git describe to generate a version tag
+-execute_process(
+-  COMMAND ${GIT_EXECUTABLE} describe --tags --dirty --match "v*"
+-  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+-  OUTPUT_VARIABLE GIT_DESCRIBE_VERSION
+-  RESULT_VARIABLE GIT_DESCRIBE_ERROR_CODE
+-  OUTPUT_STRIP_TRAILING_WHITESPACE)
+-if(GIT_DESCRIBE_ERROR_CODE)
+-  message(FATAL_ERROR "Unable to call git describe")
+-endif()
++set(GIT_DESCRIBE_VERSION "1.24.1")
+ # we inject the project version as a preprocessor variable into the code
+ add_compile_definitions(GIT_DESCRIBE_VERSION="${GIT_DESCRIBE_VERSION}")
+ 
+@@ -156,4 +148,4 @@ if (WIN32)
+   endif()
+ 
+ 
+-endif()
+\ No newline at end of file
++endif()
+-- 
+2.51.0
+

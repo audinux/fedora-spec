@@ -1,0 +1,33 @@
+From 9362ee1ec027179b6f42e89f460afa87a55becf2 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Thu, 2 Oct 2025 22:58:47 +0200
+Subject: [PATCH] patch
+
+---
+ src/AudioTransport/CMakeLists.txt | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
+
+diff --git a/src/AudioTransport/CMakeLists.txt b/src/AudioTransport/CMakeLists.txt
+index f2c5fc2..93999d3 100644
+--- a/src/AudioTransport/CMakeLists.txt
++++ b/src/AudioTransport/CMakeLists.txt
+@@ -1,13 +1,9 @@
+ # defining targets that are handy for protobuf execution in this target
+-set(_PROTOBUF_LIBPROTOBUF libprotobuf)
++set(_PROTOBUF_LIBPROTOBUF protobuf)
+ set(_REFLECTION grpc++_reflection)
+-set(_PROTOBUF_PROTOC $<TARGET_FILE:protoc>)
++set(_PROTOBUF_PROTOC protoc)
+ set(_GRPC_GRPCPP grpc++)
+-if(CMAKE_CROSSCOMPILING)
+-  find_program(_GRPC_CPP_PLUGIN_EXECUTABLE grpc_cpp_plugin)
+-else()
+-  set(_GRPC_CPP_PLUGIN_EXECUTABLE $<TARGET_FILE:grpc_cpp_plugin>)
+-endif()
++set(_GRPC_CPP_PLUGIN_EXECUTABLE /usr/bin/grpc_cpp_plugin)
+ 
+ # defining paths to proto file
+ get_filename_component(at_proto "./AudioTransport.proto" ABSOLUTE)
+-- 
+2.51.0
+
