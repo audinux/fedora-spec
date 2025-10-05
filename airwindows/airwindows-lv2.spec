@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: lv2-airwindows
-Version: 30.0
+Version: 32.0
 Release: 1%{?dist}
 Summary: Airwindows plugins (ported to LV2)
 License: GPL-3.0-or-later
@@ -44,6 +44,9 @@ Find the original source code at https://github.com/airwindows/airwindows.
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Oct 05 2025 Yann Collette <ycollette.nospam@free.fr> - 32.0-1
+- update to 32.0-1
+
 * Sat Sep 14 2024 Yann Collette <ycollette.nospam@free.fr> - 30.0-1
 - update to 30.0-1
 
