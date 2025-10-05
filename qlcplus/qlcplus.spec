@@ -4,7 +4,7 @@
 # Category: Tool
 
 Name: qlcplus
-Version: 4.14.3
+Version: 5.0.0
 Release: 1%{?dist}
 Summary: Q Light Controller Plus - The free DMX lighting console
 URL: https://github.com/mcallegari/qlcplus
@@ -49,7 +49,7 @@ sed -i -e "/-Wno-template-id-cdtor/d" variables.pri
 
 %build
 
-./translate.sh qmlui
+./translate.sh release qmlui
 %qmake_qt5 CONFIG+=qmlui qlc.pro
 %make_build
 
@@ -74,6 +74,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/*.desktop
 %{_sysconfdir}/udev/rules.d/*
 
 %changelog
+* Sun Oct 05 2025 Yann Collette <ycollette.nospam@free.fr> - 5.0.0-1
+- update to 5.0.0-1
+
 * Thu Jul 03 2025 Yann Collette <ycollette.nospam@free.fr> - 4.14.3-1
 - update to 4.14.3-1
 
