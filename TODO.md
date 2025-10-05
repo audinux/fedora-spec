@@ -202,6 +202,8 @@
 | dfzitarev1                    | https://github.com/SpotlightKid/dfzitarev1 |
 | sendmixer                     | https://github.com/SpotlightKid/sendmixer |
 | LiveMixer                     | https://github.com/sonejostudios/LiveMixer |
+| two-filters                   | https://github.com/baconpaul/two-filters |
+| Chasm                         | https://github.com/DirektDSP/Chasm |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour

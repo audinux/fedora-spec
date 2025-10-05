@@ -478,7 +478,6 @@ https://github.com/openAVproductions/openAV-ArtyFX
 https://github.com/OpenBoard-org/OpenBoard
 https://github.com/openframeworks/openFrameworks
 https://github.com/ossia/score
-https://github.com/OSSIA/score
 https://github.com/oswald2/DGPatchMaker
 https://github.com/osxmidi/linvst
 https://github.com/oxesoft/oxefmsynth
