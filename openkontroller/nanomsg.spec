@@ -4,7 +4,7 @@
 # Category: Programming
 
 Name: nanomsg
-Version: 1.1.5
+Version: 1.2.2
 Release: 2%{?dist}
 Summary: The nanomsg library is a simple high-performance implementation of several "scalability protocols"
 URL: https://github.com/nanomsg/nanomsg
@@ -50,17 +50,20 @@ The %{name}-devel package contains header files for %{name}.
 %{_includedir}/*
 
 %changelog
+* Sun Oct 05 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-2
+- update to 1.2.2-2
+
 * Thu Oct 1 2020 Yann Collette <ycollette.nospam@free.fr> - 1.1.5-2
 - fix for fedora 33
 
-* Wed Nov 13 2019 Yann Collette <ycollette.nospam@free.fr> - 1.1.5
-- update to 1.1.5
+* Wed Nov 13 2019 Yann Collette <ycollette.nospam@free.fr> - 1.1.5-1
+- update to 1.1.5-1
 
-* Mon Oct 15 2018 Yann Collette <ycollette.nospam@free.fr> - 1.1.2
+* Mon Oct 15 2018 Yann Collette <ycollette.nospam@free.fr> - 1.1.2-1
 - update for Fedora 29
 
-* Sat May 12 2017 Yann Collette <ycollette.nospam@free.fr> - 1.1.2
-- update to 1.1.2
+* Sat May 12 2017 Yann Collette <ycollette.nospam@free.fr> - 1.1.2-1
+- update to 1.1.2-1
 
-* Sat Jun 06 2015 Yann Collette <ycollette.nospam@free.fr> - 1.0.0
+* Sat Jun 06 2015 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial build
