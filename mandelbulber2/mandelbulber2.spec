@@ -4,7 +4,7 @@
 # Category: Graphic, Tool
 
 Name: mandelbulber2
-Version: 2.33
+Version: 2.34
 Release: 1%{?dist}
 License: GPL-3.0
 Summary: 3D Mandelbrot renderer
@@ -13,7 +13,7 @@ ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
-Source0: https://github.com/buddhi1980/mandelbulber2/releases/download/%{version}/mandelbulber-%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/buddhi1980/mandelbulber2/releases/download/%{version}/mandelbulber2-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: pkgconfig(Qt6Core)
@@ -88,6 +88,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/toolbar/*
 
 %changelog
+* Sun Oct 05 2025 Yann Collette <ycollette.nospam@free.fr> - 2.34-1
+- update to 2.34-1
+
 * Sun Mar 30 2025 Yann Collette <ycollette.nospam@free.fr> - 2.33-1
 - update to 2.33-1
 
