@@ -281,8 +281,6 @@ To list failed builds:
 $ copr-cli list-builds ycollet/audinux | grep failed
 ```
 
-9585045 SocaLabs-plugins
-9585040 sndpeek failed
 9585031 SN76489 failed
 9584971 sickbeatbetty
 9584860 sg-323

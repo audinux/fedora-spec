@@ -1,0 +1,72 @@
+From 082ce4bfc690bc10d2e9706be02d5e9629d6d751 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Mon, 6 Oct 2025 19:51:21 +0200
+Subject: [PATCH] fix complex usage
+
+---
+ src/marsyas/MagFFT.cpp  | 8 ++++----
+ src/sndpeek/chuck_fft.h | 2 +-
+ src/sndpeek/sndpeek.cpp | 4 ++--
+ 3 files changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/src/marsyas/MagFFT.cpp b/src/marsyas/MagFFT.cpp
+index 056f998..ab8d400 100644
+--- a/src/marsyas/MagFFT.cpp
++++ b/src/marsyas/MagFFT.cpp
+@@ -33,14 +33,14 @@ Numerical Recipes.
+ #include <math.h>
+ #include "MagFFT.h"
+ 
+-typedef struct { float re ; float im ; } complex ;
++typedef struct { float re ; float im ; } complex_snd ;
+ 
+ #define CABS(x) hypot( (x).re, (x).im )
+ 
+-complex cadd(), csub(), cmult(), smult(), cdiv(), conjg(), csqrt() ;
++complex_snd cadd(), csub(), cmult(), smult(), cdiv(), conjg(), csqrt() ;
+ 
+-extern complex zero ;
+-extern complex one ;
++extern complex_snd zero ;
++extern complex_snd one ;
+ extern float synt ;
+ 
+ 
+diff --git a/src/sndpeek/chuck_fft.h b/src/sndpeek/chuck_fft.h
+index c2d3067..7156627 100644
+--- a/src/sndpeek/chuck_fft.h
++++ b/src/sndpeek/chuck_fft.h
+@@ -12,7 +12,7 @@
+ 
+ 
+ // complex type
+-typedef struct { float re ; float im ; } complex;
++typedef struct { float re ; float im ; } complex_snd;
+ 
+ // complex absolute value
+ #define cmp_abs(x) ( sqrt( (x).re * (x).re + (x).im * (x).im ) )
+diff --git a/src/sndpeek/sndpeek.cpp b/src/sndpeek/sndpeek.cpp
+index 77fca13..f258d3e 100644
+--- a/src/sndpeek/sndpeek.cpp
++++ b/src/sndpeek/sndpeek.cpp
+@@ -1583,7 +1583,7 @@ void displayFunc( )
+         // take forward FFT; result in buffer as FFT_SIZE/2 complex values
+         rfft( (float *)buffer, g_fft_size/2, FFT_FORWARD );
+         // cast to complex
+-        complex * cbuf = (complex *)buffer;
++        complex_snd * cbuf = (complex_snd *)buffer;
+ 
+         // reset drawing offsets
+         x = -1.8f;
+@@ -1910,7 +1910,7 @@ void extract_buffer( )
+     // take the forward fft, leaving fftsize/2 complex values
+     rfft( (float *)buffer, g_buffer_size/2, FFT_FORWARD );
+     // cast to complex
+-    complex * cbuf = (complex *)buffer;
++    complex_snd * cbuf = (complex_snd *)buffer;
+ 
+     // get magnitude spectrum
+     for( i = 0; i < g_buffer_size/2; i++ )
+-- 
+2.51.0
+

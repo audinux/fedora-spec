@@ -1,0 +1,25 @@
+From f7b7c7077ba5c2777e556caca1ea07d864a79b4c Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Mon, 6 Oct 2025 20:24:36 +0200
+Subject: [PATCH] fix link to jack
+
+---
+ src/sndpeek/makefile.jack | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/sndpeek/makefile.jack b/src/sndpeek/makefile.jack
+index ec15276..92a1a93 100644
+--- a/src/sndpeek/makefile.jack
++++ b/src/sndpeek/makefile.jack
+@@ -3,7 +3,7 @@ CPP=g++
+ INCLUDES=-I../marsyas/
+ MARSYAS_DIR=../marsyas/
+ CFLAGS=-D__LINUX_JACK__ -D__LITTLE_ENDIAN__ -D__USE_GLUT__ $(INCLUDES) -O3 -c
+-LIBS=-L/usr/X11R6/lib -lpthread -lstdc++ -lglut -lGL -lGLU -lasound -ljack -lXmu -lX11 -lXext -lXi -lm -lsndfile
++LIBS=-L/usr/X11R6/lib -lpthread -lstdc++ -lglut -lGL -lGLU -lasound `pkg-config --libs-only-L jack` -ljack -lXmu -lX11 -lXext -lXi -lm -lsndfile
+ 
+ OBJS=chuck_fft.o RtAudio.o Thread.o sndpeek.o Stk.o \
+ 	Centroid.o DownSampler.o Flux.o LPC.o MFCC.o RMS.o Rolloff.o \
+-- 
+2.51.0
+
