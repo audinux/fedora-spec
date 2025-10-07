@@ -5,7 +5,7 @@
 
 Name: sickbeatbetty
 Version: 1.0.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: An open source MIDI drum machine / generator VST and standalone application
 License: GPL-3.0-or-later
 URL: https://github.com/jthwho/SickBeatBetty
@@ -39,7 +39,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -113,5 +112,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Tue Oct 07 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.3-2
+- update to 1.0.3-2 - remove unused dep
+
 * Fri Mar 03 2023 Yann Collette <ycollette.nospam@free.fr> - 1.0.3-1
 - Initial spec file

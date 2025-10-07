@@ -7,7 +7,7 @@
 
 Name: paulstretch
 Version: 1.2.4
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: A Paulstretch VST2/VST3/Standalone plugin
 License: MIT
 URL: https://bitbucket.org/xenakios/paulstretchplugin
@@ -40,7 +40,6 @@ BuildRequires: freetype-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 
 %description
@@ -75,6 +74,10 @@ sed -i -e "s|libcurl|libcurl fftw3 fftw3f|g" Builds/LinuxMakefile/Makefile
 
 %build
 
+%set_build_flags
+
+export CXXFLAGS="`pkg-config --cflags gtk+-3.0` $CXXFLAGS"
+
 cd Builds/LinuxMakefile
 
 %make_build
@@ -100,6 +103,9 @@ cp -ra  Builds/LinuxMakefile/build/PaulXStretch.vst3 %{buildroot}/%{_libdir}/vst
 %{_libdir}/vst3/*
 
 %changelog
+* Tue Oct 07 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.4-4
+- update to 1.2.4-4 - remove unused dep
+
 * Fri Oct 01 2021 Yann Collette <ycollette.nospam@free.fr> - 1.2.4-3
 - fix for Fedora 35
 

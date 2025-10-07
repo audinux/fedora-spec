@@ -7,7 +7,7 @@
 
 Name: paulxstretch
 Version: 1.6.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A Paulstretch VST3/Standalone plugin
 License: MIT
 URL: https://github.com/essej/paulxstretch
@@ -30,7 +30,6 @@ BuildRequires: libXcursor-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: freetype-devel
 BuildRequires: libcurl-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: desktop-file-utils
 
@@ -56,7 +55,7 @@ sed -i -e "s/\"-DJUCE_BUILD_HELPER_TOOLS=ON\"/\"-DJUCE_BUILD_HELPER_TOOLS=ON\" \
 
 %set_build_flags
 
-%cmake -DCMAKE_CXX_FLAGS="-include utility -fPIC $CXXFLAGS"
+%cmake -DCMAKE_CXX_FLAGS="`pkg-config --cflags gtk+-3.0` -include utility -fPIC $CXXFLAGS"
 %cmake_build
 
 %install
@@ -102,6 +101,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Tue Oct 07 2025 Yann Collette <ycollette.nospam@free.fr> - 1.6.0-2
+- update to 1.6.0-2 -remove unused dep
+
 * Wed Jan 18 2023 Yann Collette <ycollette.nospam@free.fr> - 1.6.0-1
 - update to 1.6.0-1
 

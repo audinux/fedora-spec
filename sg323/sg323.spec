@@ -5,7 +5,7 @@
 
 Name: sg-323
 Version: 1.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Ursa Major Stargate 323
 License: GPL-3.0-only
 URL: https://github.com/greyboxaudio/SG-323
@@ -39,7 +39,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 This plugin is an authentic emulation of my Ursa Major Stargate 323 Reverb.
@@ -96,6 +95,9 @@ cp -ra %{__cmake_builddir}/SG323_artefacts/CLAP/* %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Tue Oct 07 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-2
+- update to 1.0.1-2 - rzmove unused dep
+
 * Sat Mar 08 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
 - update to 1.0.1-1
 

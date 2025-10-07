@@ -5,7 +5,7 @@
 
 Name: grainbow
 Version: 1.0.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A synthesizer that uses pitch detection to choose candidates for granular synthesis or sampling
 License: GPL-3.0-or-later
 URL: https://github.com/bboettcher3/gRainbow
@@ -35,7 +35,6 @@ BuildRequires: libxkbcommon-x11-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils
@@ -135,6 +134,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/grainbow.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Tue Oct 07 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.3-2
+- update to 1.0.3-2 - remove unused dep
+
 * Fri Feb 02 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.3-1
 - update to 1.0.3-1
 
