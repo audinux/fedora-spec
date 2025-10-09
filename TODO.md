@@ -282,13 +282,9 @@ $ copr-cli list-builds ycollet/audinux | grep failed
 ```
 
 9585031 SN76489 failed
-9584671 rt_pvc
-9584668 rt_lpc
 9571795 rack-v1-SurgeRack
 9570990 python-pydantic
 9565208 nih-plug
-9565136 mxtune
-9565127 mxcomp
 9564870 midi-monitor
 9564833 melodrumatic
 9564772 maim
@@ -357,18 +353,14 @@ gnomedistort/gnomedistort.spec
 chataigne/chataigne.spec
 melodrumatic/melodrumatic.spec
 cstop/cstop.spec
-mxtune/mxtune.spec
-mxtune/mxcomp.spec
 delirion/delirion.spec
 bitklavier/bitKlavier.spec
 boris-granular-station/boris-granular-station.spec
 audio-effects/audio-effects.spec
 camomile/camomile.spec
-sg323/sg323.spec
 ddsp/ddsp.spec
 frequalizer/frequalizer.spec
 audiogridder/audiogridder.spec
-grainbow/grainbow.spec
 harmonigon/harmonigon.spec
 blocks/blocks.spec
 atlas-06-synthetizer/atlas-06-synthesizer.spec

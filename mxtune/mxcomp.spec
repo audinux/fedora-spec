@@ -7,7 +7,7 @@
 
 Name: mxcomp
 Version: 0.1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A digital compression plugin for VST
 License: GPL-3.0-or-later
 URL: https://github.com/liuanlin-mx/MXComp
@@ -43,7 +43,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: fftw-devel
 BuildRequires: glfw-devel
 BuildRequires: chrpath
@@ -79,5 +78,8 @@ chrpath --delete %{buildroot}%{_libdir}/vst/libmx_comp.so
 %{_libdir}/vst/*
 
 %changelog
+* Wed Oct 08 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-2
+- update to 0.1.0-2 - remove unused dep
+
 * Sat Oct 05 2024 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
 - Initial spec file

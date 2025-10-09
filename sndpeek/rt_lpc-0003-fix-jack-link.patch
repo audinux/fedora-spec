@@ -1,0 +1,25 @@
+From a9dac95e2e5d32e506e656d3c331303936597445 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Wed, 8 Oct 2025 18:58:32 +0200
+Subject: [PATCH] fix jack link
+
+---
+ src/makefile.jack | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/makefile.jack b/src/makefile.jack
+index 230ff08..784e900 100755
+--- a/src/makefile.jack
++++ b/src/makefile.jack
+@@ -6,7 +6,7 @@ CPP=g++
+ INCLUDES=
+ CFLAGS=-D__LINUX_JACK__ $(INCLUDES) $(FED_CFLAGS) -O3 -c
+ CXXFLAGS=-D__LINUX_JACK__ $(INCLUDES) $(FED_CXXFLAGS) -O3 -c
+-LIBS=-ljack -lasound -L/usr/X11R6/lib -lGL -lGLU -lglut -lX11 -lXi -lXext -lXmu -lm
++LIBS=`pkg-config --libs-only-L jack` -ljack -lasound -L/usr/X11R6/lib -lGL -lGLU -lglut -lX11 -lXi -lXext -lXmu -lm
+ 
+ rt_lpc: $(OBJS)
+ 	$(CPP) -o $@ $(OBJS) $(LIBS)
+-- 
+2.51.0
+

@@ -1,0 +1,39 @@
+From 6c136d8ec56e75fb971163068e374d02ef2ed9b6 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Wed, 8 Oct 2025 18:25:24 +0200
+Subject: [PATCH] fix complex usage
+
+---
+ src/chuck_fft.h | 2 +-
+ src/rt_lpc.cpp  | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/chuck_fft.h b/src/chuck_fft.h
+index 3605d2a..125f2ab 100755
+--- a/src/chuck_fft.h
++++ b/src/chuck_fft.h
+@@ -12,7 +12,7 @@
+ 
+ 
+ // complex type
+-typedef struct { float re ; float im ; } complex;
++typedef struct { float re ; float im ; } complex_lpc;
+ 
+ // complex absolute value
+ #define cmp_abs(x) ( sqrt( (x).re * (x).re + (x).im * (x).im ) )
+diff --git a/src/rt_lpc.cpp b/src/rt_lpc.cpp
+index 102c6e0..12a287c 100755
+--- a/src/rt_lpc.cpp
++++ b/src/rt_lpc.cpp
+@@ -959,7 +959,7 @@ void displayFunc( )
+         
+         x = -1.8f;
+         y = -1.0f;
+-        complex * cbuf = (complex *)buffer;
++        complex_lpc * cbuf = (complex_lpc *)buffer;
+         
+         // color the spectrum
+         glColor3f( 0.4f, 1.0f, 0.4f );
+-- 
+2.51.0
+

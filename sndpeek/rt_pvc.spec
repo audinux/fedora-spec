@@ -16,6 +16,7 @@ Distribution: Audinux
 
 Source0: https://soundlab.cs.princeton.edu/software/rt_pvc/rt_pvc-%{version}.tgz
 Patch0: rt_pvc-0001-fix-build.patch
+Patch1: rt_pvc-0002-fix-complex-usage.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make

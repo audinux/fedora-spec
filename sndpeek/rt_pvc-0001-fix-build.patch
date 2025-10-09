@@ -46,7 +46,7 @@ index 0000000..b5e229a
 +INCLUDES=
 +CFLAGS=-D__LINUX_JACK__ $(INCLUDES) $(FED_CFLAGS) -O3 -g -c
 +CXXFLAGS=-D__LINUX_JACK__ $(INCLUDES) $(FED_CXXFLAGS) -O3 -g -c
-+LIBS=-lasound -ljack -L/usr/X11R6/lib -lGL -lGLU -lglut -lX11 -lXi -lXext -lXmu -lm
++LIBS=-lasound `pkg-config --libs-only-L jack` -ljack -L/usr/X11R6/lib -lGL -lGLU -lglut -lX11 -lXi -lXext -lXmu -lm
 +
 +rt_pvc: $(OBJS)
 +	$(CPP) -o $@ $(OBJS) $(LIBS)

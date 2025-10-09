@@ -7,7 +7,7 @@
 
 Name: mxtune
 Version: 1.2.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: pitch correction plugin for VST 
 License: GPL-3.0-or-later
 URL: https://github.com/liuanlin-mx/MXTune
@@ -39,7 +39,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: aubio-devel
 BuildRequires: soundtouch-devel
 BuildRequires: rubberband-devel
@@ -78,5 +77,8 @@ install -m 755 %{__cmake_builddir}/*.so %{buildroot}/%{_libdir}/vst/
 %{_libdir}/*
 
 %changelog
+* Wed Oct 08 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-2
+- update to 1.2.0-2 - remove unused dep
+
 * Sat Apr 13 2024 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
 - Initial spec file

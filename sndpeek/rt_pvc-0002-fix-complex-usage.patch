@@ -1,0 +1,71 @@
+From 9831ecd076f024a7811efb209d4b395ae827d79d Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Wed, 8 Oct 2025 18:31:33 +0200
+Subject: [PATCH] fix complex usage
+
+---
+ chuck_fft.h | 2 +-
+ pvc.cpp     | 6 +++---
+ rt_pvc.cpp  | 2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/chuck_fft.h b/chuck_fft.h
+index 2418e57..e082b86 100755
+--- a/chuck_fft.h
++++ b/chuck_fft.h
+@@ -14,7 +14,7 @@
+ 
+ 
+ // complex type
+-typedef struct { float re ; float im ; } complex;
++typedef struct { float re ; float im ; } complex_pvc;
+ // polar type
+ typedef struct { float modulus ; float phase ; } polar;
+ 
+diff --git a/pvc.cpp b/pvc.cpp
+index 6e4a0d3..169d8df 100644
+--- a/pvc.cpp
++++ b/pvc.cpp
+@@ -151,7 +151,7 @@ void pv_analyze( pvc_data * data, SAMPLE * buffer, uint hop_size )
+     assert( hop_size <= data->window_size );
+     
+     uint to_copy = 0;
+-    complex * cmp = NULL;
++    complex_pvc * cmp = NULL;
+     int i;
+     uint len = data->window_size / 2;
+     SAMPLE * w = data->window[data->which];
+@@ -181,7 +181,7 @@ void pv_analyze( pvc_data * data, SAMPLE * buffer, uint hop_size )
+         memcpy( w2, w, data->window_size * sizeof(SAMPLE) );
+         apply_window( w2, data->the_window, data->window_size );
+         rfft( w2, data->window_size / 2, FFT_FORWARD );
+-        cmp = (complex *)w2;
++        cmp = (complex_pvc *)w2;
+         for( i = 0; i < len; i++ )
+         {
+             p->array[i].modulus = __modulus(cmp[i]);
+@@ -384,7 +384,7 @@ void pv_cross_synth( polar_window * input, const polar_window * filter )
+ //-----------------------------------------------------------------------------
+ void pv_ifft( const polar_window * window, SAMPLE * buffer )
+ {
+-    complex * cmp = (complex *)buffer;
++    complex_pvc * cmp = (complex_pvc *)buffer;
+     const polar * p = (const polar *)window->array;
+     int i;
+ 
+diff --git a/rt_pvc.cpp b/rt_pvc.cpp
+index ab63cc4..f6a9e7b 100755
+--- a/rt_pvc.cpp
++++ b/rt_pvc.cpp
+@@ -676,7 +676,7 @@ void displayFunc( )
+         
+         x = -1.8f;
+         y = -1.2f;
+-        complex * cbuf = (complex *)buffer;
++        complex_pvc * cbuf = (complex_pvc *)buffer;
+         
+         // color the spectrum
+         glColor3f( 0.4f, 1.0f, 0.4f );
+-- 
+2.51.0
+

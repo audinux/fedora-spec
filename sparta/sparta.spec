@@ -45,6 +45,7 @@ BuildRequires: lapack-devel
 BuildRequires: openblas-devel
 BuildRequires: fftw-devel
 BuildRequires: netcdf-devel
+BuildRequires: libatomic
 BuildRequires: chrpath
 
 %description

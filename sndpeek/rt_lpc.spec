@@ -16,6 +16,8 @@ Distribution: Audinux
 
 Source0: https://soundlab.cs.princeton.edu/software/rt_lpc/files/rt_lpc-%{version}.tgz
 Patch0: rt_lpc-0001-fix-build.patch
+Patch1: rt_lpc-0002-fix-complex-usage.patch
+Patch2: rt_lpc-0003-fix-jack-link.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
