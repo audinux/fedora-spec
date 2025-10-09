@@ -34,7 +34,6 @@ BuildRequires: libcurl-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 
 %description
@@ -58,6 +57,8 @@ cp %{SOURCE1} .
 %build
 
 %set_build_flags
+
+export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 $CXXFLAGS"
 
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Melodrumatic.jucer

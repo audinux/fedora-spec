@@ -36,10 +36,12 @@ BuildRequires: libcurl-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
 BuildRequires: libX11-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXcursor-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
 BuildRequires: pkgconfig(jack)
-BuildRequires: pkgconfig(webkit2gtk-4.0)
 
 %description
 A JUCE-based midi monitor

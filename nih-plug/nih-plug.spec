@@ -4,11 +4,11 @@
 # Category: Synthesizer, Effects
 
 %global debug_package %{nil}
-%global commit0 ecfd6322c776d9f0373d31758976c2353c162737
+%global commit0 28b149ec4d62757d0b448809148a0c3ca6e09a95
 
 Name: nih-plug
 Version: 0.4.3
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Rust VST3 and CLAP plugin framework and plugins - because everything is better when you do it yourself
 License: ISC
 URL: https://github.com/robbert-vdh/nih-plug
@@ -134,6 +134,9 @@ done
 %{_libdir}/clap/*
 
 %changelog
+* Thu Oct 09 2025 Yann Collette <ycollette.nospam@free.fr> - 0.4.3-3
+- update to 0.4.3-2 - update to last master: 28b149ec4d62757d0b448809148a0c3ca6e09a95
+
 * Mon Aug 04 2025 Yann Collette <ycollette.nospam@free.fr> - 0.4.3-2
 - fix package
 

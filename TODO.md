@@ -106,7 +106,6 @@
 | shoopdaloop                   | https://github.com/SanderVocke/shoopdaloop |
 | qliquidsfz                    | https://github.com/be1/qliquidsfz |
 | juicysfplugin                 | https://github.com/Birch-san/juicysfplugin |
-| nih-plug                      | https://github.com/robbert-vdh/nih-plug |
 | Besselstrick                  | https://github.com/fcaspe/BesselsTrick |
 | choppah                       | https://github.com/ssabug/choppah |
 | midilooper                    | https://github.com/supergilbert/midilooper |
@@ -283,11 +282,6 @@ $ copr-cli list-builds ycollet/audinux | grep failed
 
 9585031 SN76489 failed
 9571795 rack-v1-SurgeRack
-9570990 python-pydantic
-9565208 nih-plug
-9564870 midi-monitor
-9564833 melodrumatic
-9564772 maim
 9564759 lv2-toobamp-plugins
 9564427 konfyt
 9564414 kickmess
@@ -338,6 +332,9 @@ May requires:
 BuildRequires: libatomic
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
+BuildRequires: libxkbcommon-x11-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libXcursor-devel
 
 And -DJUCE_WEB_BROWSER=0 to deactivate the use of webkit in JUCE.
 
@@ -346,12 +343,10 @@ export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 -include ut
 webkit2gtk4.1-devel still available on Fedora 43
 
 soundux/soundux.spec -> requires webkit -> build error due to pipewire API
-
 surge/shortcircuit.spec -> build failure -> open ticket
 
 gnomedistort/gnomedistort.spec
 chataigne/chataigne.spec
-melodrumatic/melodrumatic.spec
 cstop/cstop.spec
 delirion/delirion.spec
 bitklavier/bitKlavier.spec
