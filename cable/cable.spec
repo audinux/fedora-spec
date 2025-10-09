@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: cable
-Version: 0.9.10
+Version: 0.9.17
 Release: 1%{?dist}
 Summary: Application to dynamically modify Pipewire and Wireplumber settings at runtime
 License: GPL-3.0-or-later
@@ -70,5 +70,5 @@ install -Dm644 com.github.magillos.cable.desktop %{buildroot}/%{_datadir}/applic
 %{_datadir}/applications/*
 
 %changelog
-* Mon Jun 02 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.9-1
+* Mon Jun 02 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.18-1
 - initial spec

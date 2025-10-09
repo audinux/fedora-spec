@@ -280,10 +280,9 @@ To list failed builds:
 $ copr-cli list-builds ycollet/audinux | grep failed
 ```
 
+9564759 lv2-toobamp-plugins -> zstd link problem -> post a message on discussion
+
 9585031 SN76489 failed
-9571795 rack-v1-SurgeRack
-9564759 lv2-toobamp-plugins
-9564427 konfyt
 9564414 kickmess
 9564413 june21
 9564268 infernal-synth
