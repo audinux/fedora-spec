@@ -321,6 +321,13 @@ $ copr-cli list-builds ycollet/audinux | grep failed
 9561063 aeolus_plugin
 9560183 qscintilla
 
+### Fix cmake 4 usage
+
+Add:
+```
+cmake_minimum_required(VERSION 3.3...3.10)
+```
+
 ### Adapt some plugins to the new hvcc
 
 Does not export to dpf anymore, must choose lv2 / vst3 / calp
