@@ -1,6 +1,6 @@
 # Status: active
 # Tag: MIDI, Synthesizer
-# Type: Standalone, VST3
+# Type: Standalone, Plugin, VST3, CLAP, LV2
 # Category: Audio, Synthesizer
 
 Name: aeolus_plugin
@@ -27,10 +27,11 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: libcurl-devel
 BuildRequires: freetype-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: simde-devel
 BuildRequires: desktop-file-utils
+
+Requires: license-%{name}
 
 %description
 Pipe organ emulator using additive synthesis as a VST plugin
@@ -56,10 +57,17 @@ generation including
 The original binary format for the pipe models and the organ configuration
 has been translated (partially) to JSON.
 
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
+License:  GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 vst3 version of %{name}
@@ -67,7 +75,7 @@ vst3 version of %{name}
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -75,7 +83,7 @@ LV2 version of %{name}
 %package -n clap-%{name}
 Summary:  CLAP version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}
+Requires: license-%{name}
 
 %description -n clap-%{name}
 CLAP version of %{name}
@@ -137,13 +145,15 @@ desktop-file-install                         \
 desktop-file-validate %{buildroot}%{_datadir}/applications/Aeolus.desktop
 
 %files
-%doc README.md
-%license LICENSE.txt
 %{_bindir}/*
 %{_datadir}/Aeolus/
 %{_datadir}/icons/hicolor/256x256/*
 %{_datadir}/icons/hicolor/64x64/*
 %{_datadir}/applications/*
+
+%files -n license-%{name}
+%doc README.md
+%license LICENSE.txt
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*

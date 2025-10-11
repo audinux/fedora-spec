@@ -3,12 +3,12 @@
 # Type: Standalone, VST3
 # Category: Audio, Synthesizer
 
-Name:    blocks
+Name: blocks
 Version: 0.1
 Release: 3%{?dist}
 Summary: Simple modular synth
 License: GPL-3.0-or-later
-URL:     https://github.com/dan-german/blocks
+URL: https://github.com/dan-german/blocks
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -26,7 +26,6 @@ BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
@@ -79,7 +78,7 @@ cp -ra %{__cmake_builddir}/blocks_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 
 %changelog
 * Tue May 28 2024 Yann Collette <ycollette.nospam@free.fr> - 0.1-3
-- update to last master -  dda19601e1537cb79ced618e65df88eb431f42bf
+- update to last master - dda19601e1537cb79ced618e65df88eb431f42bf
 
 * Wed Oct 18 2023 Yann Collette <ycollette.nospam@free.fr> - 0.1-2
 - update to last master - 1340a5661e3d8361f953203ff27c4b6eb34844c1

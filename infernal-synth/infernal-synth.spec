@@ -1,4 +1,4 @@
-# Status: active
+# Status: inactive
 # Tag: Synthesizer
 # Type: Plugin, VST3
 # Category: Audio, Synthesizer

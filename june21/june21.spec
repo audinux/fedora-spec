@@ -14,7 +14,7 @@ License: GPL-3.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/mikerodd/june-21/archive/refs/tags/v0.9.6.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/mikerodd/june-21/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake

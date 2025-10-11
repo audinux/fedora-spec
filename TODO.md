@@ -282,18 +282,11 @@ $ copr-cli list-builds ycollet/audinux | grep failed
 
 9564759 lv2-toobamp-plugins -> zstd link problem -> post a message on discussion
 
-9585031 SN76489 failed
-9564414 kickmess
-9564413 june21
-9564268 infernal-synth
 9563939 HISE
 9563918 harmonigon
-9563827 grainbow
 9563821 gnomedistort2
 9563797 glava
-9563730 gearmulator
 9563668 frequalizer
-9563605 firefly-synth
 9563467 emissioncontrol2
 9562148 delirion
 9562139 ddsp
@@ -303,22 +296,16 @@ $ copr-cli list-builds ycollet/audinux | grep failed
 9561780 ChowKick
 9561776 ChowCentaur
 9561745 chataigne
-9561737 chaffverb
 9561608 Cadence
-9561596 cabbage
 9561534 bridgelite
 9561531 boris-granular-station
-9561435 blocks
 9561417 blackbird
 9561406 bitKlavier
-9561377 bipscript
 9561305 beataligninglooper
 9561282 bassman-preamp
 9561261 audiogridder
 9561242 atlas-06-synthesizer
 9561231 AnalogTapeModel
-9561076 aida-x
-9561063 aeolus_plugin
 9560183 qscintilla
 
 ### Fix cmake 4 usage
@@ -363,12 +350,8 @@ ddsp/ddsp.spec
 frequalizer/frequalizer.spec
 audiogridder/audiogridder.spec
 harmonigon/harmonigon.spec
-blocks/blocks.spec
 atlas-06-synthetizer/atlas-06-synthesizer.spec
-aeolus_plugin/aeolus_plugin.spec
 blackbird/blackbird.spec
-infernal-synth/infernal-synth.spec
-infernal-synth/firefly-synth.spec
 sickbeatbetty/sickbeatbetty.spec
 
 libglademm24-devel not available anymore on Fedora 44

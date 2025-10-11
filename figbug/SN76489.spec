@@ -3,11 +3,11 @@
 # Type: Standalone, VST3, VST, LV2
 # Category: Synthesizer
 
-%define commit0 18f10e557c4435125fc04a7ad462c508165ae562
+%define commit0 a5448839895cf58eb97a99920b328da7cf5ea6ad
 
 Name: SN76489
 Version: 0.0.1
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Sega Master System Sound Chip VST
 License: LGPLv2+
 URL: https://github.com/FigBug/SN76489
@@ -137,6 +137,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Oct 11 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-4
+- update to 0.0.1-4 - update to last master
+
 * Tue Oct 17 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
 - update to 0.0.1-3 - update to last master
 
