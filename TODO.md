@@ -203,7 +203,6 @@
 | LiveMixer                     | https://github.com/sonejostudios/LiveMixer |
 | two-filters                   | https://github.com/baconpaul/two-filters |
 | Chasm                         | https://github.com/DirektDSP/Chasm |
-| Millisecond                   | https://github.com/gaheldev/Millisecond |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour

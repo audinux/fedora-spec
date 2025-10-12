@@ -1059,7 +1059,8 @@ https://github.com/jturcotte/chiptrack
 https://github.com/unplugred/vsts
 https://github.com/linuxmao-org/snibbetracker
 https://github.com/QuentinFAIDIDE/KholorsStation
-https://github.com/zmann-org/zmann"
+https://github.com/zmann-org/zmann
+https://github.com/gaheldev/Millisecond"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
