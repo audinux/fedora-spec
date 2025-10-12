@@ -33,7 +33,6 @@ BuildRequires: pango-devel
 BuildRequires: lsb_release
 BuildRequires: libXrandr-devel
 BuildRequires: libzstd-devel
-BuildRequires: libzstd-static
 
 %description
 ToobAmp LV2 plugins are a set of high-quality guitar effect plugins for Raspberry Pi.
