@@ -4,12 +4,12 @@
 # Category: Audio, Effect
 # LastSourceUpdate: 2021
 
-Name:    frequalizer
+Name: frequalizer
 Version: 1.0.0
 Release: 2%{?dist}
 Summary: Equalizer using JUCE new dsp module
 License: GPL-3.0-only
-URL:     https://github.com/ffAudio/Frequalizer
+URL: https://github.com/ffAudio/Frequalizer
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -19,11 +19,9 @@ Distribution: Audinux
 # ./frequalizer-source.sh c4b1b611c8d818107639c79f974bca6a414d672d
 
 Source0: Frequalizer.tar.gz
-Source1: Frequalizer.jucer
-Source2: frequalizer-source.sh
+Source1: frequalizer-source.sh
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
@@ -36,7 +34,6 @@ BuildRequires: libxkbcommon-x11-devel
 BuildRequires: libXcursor-devel
 BuildRequires: libcurl-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel

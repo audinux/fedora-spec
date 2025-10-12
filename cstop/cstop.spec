@@ -35,7 +35,6 @@ BuildRequires: libxkbcommon-x11-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils

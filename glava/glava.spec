@@ -1,11 +1,10 @@
-# Status: active
+# Status: inactive
 # Tag: Analyzer
 # Type: Standalone
 # Category: Audio, Tool, Graphic
 
 # Global variables for github repository
 %global commit0 094dec9b009268814751d3801fc7a5068381c90b
-%global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name: glava

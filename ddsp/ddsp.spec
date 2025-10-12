@@ -1,13 +1,13 @@
-# Status: active
+# Status: inactive
 # Tag: Synthesizer, Effect
 # Type: Standalone, VST3
 # Category: Synthesizer, Effect
 
-Name:    ddsp
-Version: 1.1.0
+Name: ddsp
+Version: 1.1.1
 Release: 1%{?dist}
 Summary: Realtime DDSP Neural Synthesizer and Effect
-URL:     https://github.com/tank-trax/ddsp-vst
+URL: https://github.com/tank-trax/ddsp-vst
 ExclusiveArch: x86_64
 License: Apache-v2
 
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./ddps-source.sh <TAG>
-#        ./ddsp-source.sh v1.1.0
+#        ./ddsp-source.sh v1.1.1
 
 Source0: ddsp-vst.tar.gz
 Source1: ddsp-source.sh
@@ -31,7 +31,6 @@ BuildRequires: alsa-lib-devel
 BuildRequires: freetype-devel
 BuildRequires: libcurl-devel
 BuildRequires: libXinerama-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: chrpath
 BuildRequires: desktop-file-utils
@@ -52,6 +51,7 @@ VST3 version of %{name}
 
 sed -i -e "s/DDSP Effect/DDSP_Effect/g" CMakeLists.txt
 sed -i -e "s/DDSP Synth/DDSP_Synth/g" CMakeLists.txt
+sed -i -e "/-stdlib=libc\+\+/d" CMakeLists.txt
 
 %build
 
@@ -147,5 +147,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/DDSP_Synth.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Oct 12 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
+- update to 1.1.1-1
+
 * Tue Feb 07 2023 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
 - Initial spec file

@@ -3,10 +3,10 @@
 # Type: Plugin, VST3
 # Category: Effect
 
-%global commit0 ea49b7599fd96cc7a831ffc6081aadeca435ff7d
+%global commit0 947d5ba328094984c2259e3c1f6772af0ade7f0d
 
 Name: delirion
-Version: 0.0.1
+Version: 1.1.0
 Release: 1%{?dist}
 Summary: A multiband Doppler-based chorusing/detune effect
 License: GPL-3.0-or-later
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./delirion-source.sh <TAG>
-#        ./delirion-source.sh master
+#        ./delirion-source.sh maste
 
 Source0: delirion.tar.gz
 Source1: delirion-source.sh
@@ -41,7 +41,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 A VST audio plugin that is a multi-band doppler shifter with band
@@ -77,5 +76,8 @@ cp -ra %{__cmake_builddir}/delirion_artefacts/VST3/*  %{buildroot}/%{_libdir}/vs
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Oct 12 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+- update to 1.1.0-1
+
 * Mon Sep 02 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file

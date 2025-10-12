@@ -44,12 +44,12 @@ BuildRequires: openssl-devel-engine
 %endif
 BuildRequires: openssl-devel
 BuildRequires: hidapi-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: libglvnd-devel
 BuildRequires: bluez-libs-devel
 BuildRequires: SDL2-devel
 BuildRequires: libusb1-devel
+BuildRequires: webkit2gtk4.1-devel
 BuildRequires: chrpath
 BuildRequires: desktop-file-utils
 
@@ -67,7 +67,7 @@ ln -s /usr/include/openssl Modules/juce_simpleweb/openssl
 %build
 
 %set_build_flags
-export CXXFLAGS="-Wno-implicit-function-declaration $CXXFLAGS"
+export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -Wno-implicit-function-declaration $CXXFLAGS"
 
 CURRENT_DIR=`pwd`
 

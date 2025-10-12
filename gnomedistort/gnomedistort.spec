@@ -39,7 +39,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 
 %description
 Brutal multi-band distortion plugin with unique functions:

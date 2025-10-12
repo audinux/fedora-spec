@@ -283,14 +283,6 @@ $ copr-cli list-builds ycollet/audinux | grep failed
 9564759 lv2-toobamp-plugins -> zstd link problem -> post a message on discussion
 
 9563939 HISE
-9563918 harmonigon
-9563821 gnomedistort2
-9563797 glava
-9563668 frequalizer
-9563467 emissioncontrol2
-9562148 delirion
-9562139 ddsp
-9562129 cstop
 9561786 ChowPhaser
 9561785 ChowMatrix
 9561780 ChowKick
@@ -338,18 +330,12 @@ webkit2gtk4.1-devel still available on Fedora 43
 soundux/soundux.spec -> requires webkit -> build error due to pipewire API
 surge/shortcircuit.spec -> build failure -> open ticket
 
-gnomedistort/gnomedistort.spec
 chataigne/chataigne.spec
-cstop/cstop.spec
-delirion/delirion.spec
 bitklavier/bitKlavier.spec
 boris-granular-station/boris-granular-station.spec
 audio-effects/audio-effects.spec
 camomile/camomile.spec
-ddsp/ddsp.spec
-frequalizer/frequalizer.spec
 audiogridder/audiogridder.spec
-harmonigon/harmonigon.spec
 atlas-06-synthetizer/atlas-06-synthesizer.spec
 blackbird/blackbird.spec
 sickbeatbetty/sickbeatbetty.spec

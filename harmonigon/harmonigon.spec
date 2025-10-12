@@ -21,8 +21,7 @@ Source0: Harmonigon.tar.gz
 Source1: harmonigon.png
 Source2: harmonigon-source.sh
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: git
 BuildRequires: cairo-devel
@@ -36,7 +35,6 @@ BuildRequires: libxkbcommon-x11-devel
 BuildRequires: libXcursor-devel
 BuildRequires: libcurl-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXrandr-devel
