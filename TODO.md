@@ -287,7 +287,6 @@ $ copr-cli list-builds ycollet/audinux | grep failed
 9561785 ChowMatrix
 9561780 ChowKick
 9561776 ChowCentaur
-9561745 chataigne
 9561608 Cadence
 9561534 bridgelite
 9561531 boris-granular-station
@@ -330,7 +329,6 @@ webkit2gtk4.1-devel still available on Fedora 43
 soundux/soundux.spec -> requires webkit -> build error due to pipewire API
 surge/shortcircuit.spec -> build failure -> open ticket
 
-chataigne/chataigne.spec
 bitklavier/bitKlavier.spec
 boris-granular-station/boris-granular-station.spec
 audio-effects/audio-effects.spec

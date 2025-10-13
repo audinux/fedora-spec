@@ -67,7 +67,7 @@ ln -s /usr/include/openssl Modules/juce_simpleweb/openssl
 %build
 
 %set_build_flags
-export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -Wno-implicit-function-declaration $CXXFLAGS"
+export CXXFLAGS="`pkg-config --cflags gtk+-3.0 webkit2gtk-4.1` -Wno-implicit-function-declaration $CXXFLAGS"
 
 CURRENT_DIR=`pwd`
 
@@ -100,7 +100,7 @@ cp Builds/LinuxMakefile/Chataigne.AppDir/chataigne.png %{buildroot}/%{_datadir}/
 # Install some libs
 install -m 755 -d %{buildroot}%{_libdir}/
 cp -rav Builds/LinuxMakefile/Chataigne.AppDir/usr/lib/libartnet.so* %{buildroot}%{_libdir}/
-cp -rac Builds/LinuxMakefile/Chataigne.AppDir/usr/lib/libServus.so* %{buildroot}%{_libdir}/
+cp -rav Builds/LinuxMakefile/Chataigne.AppDir/usr/lib/libServus.so* %{buildroot}%{_libdir}/
 
 chrpath --delete %{buildroot}%{_bindir}/Chataigne
 
