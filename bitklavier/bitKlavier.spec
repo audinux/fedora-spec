@@ -147,6 +147,7 @@ tar xvfz %{SOURCE1}
 
 %set_build_flags
 
+export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 $CXXFLAGS"
 export LDFLAGS="-z muldefs $MDFLAGS"
 export CPPFLAGS="-I`pwd`/VST_SDK/VST2_SDK/"
 
