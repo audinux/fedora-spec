@@ -280,8 +280,6 @@ To list failed builds:
 $ copr-cli list-builds ycollet/audinux | grep failed
 ```
 
-9561406 bitKlavier
-
 9561305 beataligninglooper
 9561282 bassman-preamp
 9561261 audiogridder
@@ -319,20 +317,15 @@ webkit2gtk4.1-devel still available on Fedora 43
 soundux/soundux.spec -> requires webkit -> build error due to pipewire API
 surge/shortcircuit.spec -> build failure -> open ticket
 
-bitklavier/bitKlavier.spec
-boris-granular-station/boris-granular-station.spec
 audiogridder/audiogridder.spec
 atlas-06-synthetizer/atlas-06-synthesizer.spec
-blackbird/blackbird.spec
 sickbeatbetty/sickbeatbetty.spec
-
-libglademm24-devel not available anymore on Fedora 44
 
 ## Python package
 
 basicpitch from spotify -> https://github.com/spotify/basic-pitch
-spleeter from deezer -> https://github.com/Deezer/spleeter
-demucs from facebook -> https://github.com/facebookresearch/demucs
+spleeter from deezer    -> https://github.com/Deezer/spleeter
+demucs from facebook    -> https://github.com/facebookresearch/demucs
 
 ## Check Sourceforge
 
@@ -401,12 +394,6 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/*%{name}.*.xml
 ```
 
-```
-polyphone
-faustworks
-vsxu
-```
-
 ## Install appdata.xml files:
 
 ```
@@ -430,7 +417,6 @@ remove -march=native from Makefiles if it's present
 | picoloop/picoloop.spec         | complex ... |
 | orca/orca.spec                 | really special build system |
 | zrythm/ztoolkit                | it's a static library ... |
-| zrythm/zrythm                  | embedded glibc problem |
 
 ## Tag list:
 
