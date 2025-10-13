@@ -3,9 +3,11 @@
 # Type: Plugin, VST3, Standalone
 # Category: Synthesizer
 
+%global commit0 4b2367e884168c2591a0db311c036fe28a73282f
+
 Name: boris-granular-station
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A live-input granular plugin
 License: GPL-2.0-or-later
 URL: https://github.com/glesdora/boris-granular-station
@@ -36,7 +38,6 @@ BuildRequires: libxkbcommon-x11-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils
@@ -93,10 +94,14 @@ cp -ra %{__cmake_builddir}/BorisGranularStation_artefacts/Boris_Granular_Station
 
 %files -n license-%{name}
 %doc readme.md
+%license LICENSE
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Oct 13 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2 - update to last master
+
 * Mon Jun 09 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file

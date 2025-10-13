@@ -29,7 +29,6 @@ BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xinerama)
 BuildRequires: pkgconfig(xext)
 BuildRequires: pkgconfig(freetype2)
-BuildRequires: pkgconfig(webkit2gtk-4.0)
 BuildRequires: pkgconfig(gtk+-x11-3.0)
 BuildRequires: pkgconfig(jack)
 BuildRequires: libcurl-devel
@@ -40,6 +39,8 @@ BuildRequires: xsimd-devel
 BuildRequires: lv2-devel
 BuildRequires: chrpath
 
+Requires: license-%{name}
+
 %description
 ChowKick is a kick drum synthesizer plugin based on creative modelling
 of old-school drum machine circuits. MIDI input to the plugin triggers
@@ -47,9 +48,17 @@ a pulse with a parameterized size and shape.
 The pulse is then passed into a resonant filter which can be tuned to a
 specific frequency, or matched to the frequency of the incoming MIDI notes.
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: BSD-3-Clause
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  BSD-3-Clause
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -57,6 +66,7 @@ VST3 version of %{name}
 %package -n clap-%{name}
 Summary:  CLAP version of %{name}
 License:  BSD-3-Clause
+Requires: license-%{name}
 
 %description -n clap-%{name}
 CLAP version of %{name}
@@ -64,6 +74,7 @@ CLAP version of %{name}
 %package -n lv2-%{name}
 Summary:  LV2 version of %{name}
 License:  BSD-3-Clause
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -98,9 +109,11 @@ chrpath --delete %{buildroot}%{_libdir}/clap/ChowKick.clap
 chrpath --delete %{buildroot}%{_bindir}/ChowKick
 
 %files
+%{_bindir}/*
+
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
-%{_bindir}/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/
@@ -110,7 +123,6 @@ chrpath --delete %{buildroot}%{_bindir}/ChowKick
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/
-
 
 %changelog
 * Mon Aug 21 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1

@@ -16,7 +16,7 @@ Distribution: Audinux
 
 # to generater code archive:
 # ./source_chowmatrix.sh <tag>
-# ./source_chowmatrix.sh 1.3.0
+# ./source_chowmatrix.sh v1.3.0
 
 Source0: ChowMatrix.tar.gz
 Source1: source_chowmatrix.sh
@@ -29,7 +29,6 @@ BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xinerama)
 BuildRequires: pkgconfig(xext)
 BuildRequires: pkgconfig(freetype2)
-BuildRequires: pkgconfig(webkit2gtk-4.0)
 BuildRequires: pkgconfig(gtk+-x11-3.0)
 BuildRequires: pkgconfig(jack)
 BuildRequires: libcurl-devel
@@ -39,13 +38,24 @@ BuildRequires: libXcursor-devel
 BuildRequires: xsimd-devel
 BuildRequires: lv2-devel
 
+Requires: license-%{name}
+
 %description
 CHOW Matrix is a delay effect, made up of an infinitely growable tree
 of delay lines, each with individual controls for feedback, panning,
 distortion, and more.
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: BSD-3-Clause
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary: CHOW Matrix plugin (VST3)
+License: BSD-3-Clause
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 CHOW Matrix is a delay effect, made up of an infinitely growable tree
@@ -54,6 +64,8 @@ distortion, and more.
 
 %package -n lv2-%{name}
 Summary: CHOW Matrix plugin (LV2)
+License: BSD-3-Clause
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 CHOW Matrix is a delay effect, made up of an infinitely growable tree
@@ -79,18 +91,16 @@ mkdir -p %{buildroot}%{_libdir}/lv2
 cp -r cmake-build/ChowMatrix_artefacts/Release/LV2/*.lv2 %{buildroot}%{_libdir}/lv2/
 
 %files
-%doc README.md
-%license LICENSE
 %{_bindir}/*
 
-%files -n vst3-%{name}
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
+
+%files -n vst3-%{name}
 %{_libdir}/vst3/
 
 %files -n lv2-%{name}
-%doc README.md
-%license LICENSE
 %{_libdir}/lv2/
 
 %changelog

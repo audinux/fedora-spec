@@ -42,7 +42,6 @@ BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xinerama)
 BuildRequires: pkgconfig(xext)
 BuildRequires: pkgconfig(freetype2)
-BuildRequires: pkgconfig(webkit2gtk-4.0)
 BuildRequires: pkgconfig(gtk+-x11-3.0)
 BuildRequires: pkgconfig(jack)
 BuildRequires: libcurl-devel
@@ -52,18 +51,31 @@ BuildRequires: libXcursor-devel
 BuildRequires: xsimd-devel
 BuildRequires: lv2-devel
 
+Requires: license-%{name}
+
 %description
 The model is constructed using a variety of circuit modelling techniques,
 including nodal analysis, wave digital filters, and recurrent neural networks.
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: BSD-3-Clause
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary: Digital emulation of the Klon Centaur guitar pedal (VST3)
+License: BSD-3-Clause
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 Digital emulation of the Klon Centaur guitar pedal using RNNs, Wave Digital Filters, and more
 
 %package -n lv2-%{name}
 Summary: Digital emulation of the Klon Centaur guitar pedal (LV2)
+License: BSD-3-Clause
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 Digital emulation of the Klon Centaur guitar pedal using RNNs, Wave Digital Filters, and more
@@ -87,18 +99,16 @@ mkdir -p %{buildroot}%{_libdir}/lv2
 cp -r cmake-build/ChowCentaur/ChowCentaur_artefacts/Release/LV2/*.lv2 %{buildroot}%{_libdir}/lv2/
 
 %files
-%doc README.md
-%license LICENSE
 %{_bindir}/*
 
-%files -n vst3-%{name}
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
+
+%files -n vst3-%{name}
 %{_libdir}/vst3/
 
 %files -n lv2-%{name}
-%doc README.md
-%license LICENSE
 %{_libdir}/lv2/
 
 %changelog

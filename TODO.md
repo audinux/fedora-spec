@@ -280,18 +280,8 @@ To list failed builds:
 $ copr-cli list-builds ycollet/audinux | grep failed
 ```
 
-9564759 lv2-toobamp-plugins -> zstd link problem -> post a message on discussion
-
-9563939 HISE
-9561786 ChowPhaser
-9561785 ChowMatrix
-9561780 ChowKick
-9561776 ChowCentaur
-9561608 Cadence
-9561534 bridgelite
-9561531 boris-granular-station
-9561417 blackbird
 9561406 bitKlavier
+
 9561305 beataligninglooper
 9561282 bassman-preamp
 9561261 audiogridder
@@ -331,8 +321,6 @@ surge/shortcircuit.spec -> build failure -> open ticket
 
 bitklavier/bitKlavier.spec
 boris-granular-station/boris-granular-station.spec
-audio-effects/audio-effects.spec
-camomile/camomile.spec
 audiogridder/audiogridder.spec
 atlas-06-synthetizer/atlas-06-synthesizer.spec
 blackbird/blackbird.spec

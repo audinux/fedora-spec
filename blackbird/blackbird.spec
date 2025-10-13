@@ -3,12 +3,12 @@
 # Type: Standalone, VST3
 # Category: Audio, Synthesizer
 
-Name:    blackbird
+Name: blackbird
 Version: 0.1.0
 Release: 1%{?dist}
 Summary: VST3 Synth built with JUCE
 License: GPL-3.0-or-later
-URL:     https://github.com/khrykin/BlackBird
+URL: https://github.com/khrykin/BlackBird
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -31,20 +31,28 @@ BuildRequires: libxkbcommon-x11-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: JUCE60
 BuildRequires: vst3sdk
 BuildRequires: desktop-file-utils
 
+Requires: license-%{name}
+
 %description
 VST3 Synth built with JUCE
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: GPL-3.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-or-later
-Requires: %{name}
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -55,6 +63,9 @@ VST3 version of %{name}
 tar xvfz %{SOURCE1}
 
 %build
+
+%set_build_flags
+export CXXFLAGS="`pkg-config --cflags gtk+-3.0` -DJUCE_WEB_BROWSER=0 $CXXFLAGS"
 
 cd Builds/LinuxMakefile/
 %make_build CONFIG=Release
@@ -101,12 +112,14 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 # validator %{buildroot}/%{_libdir}/vst3/BlackBird.vst3
 
 %files
-%doc README.md
-%license LICENSE.txt
 %{_bindir}/*
 %{_datadir}/blackbird/presets/*
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/*
+
+%files -n license-%{name}
+%doc README.md
+%license LICENSE.txt
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*

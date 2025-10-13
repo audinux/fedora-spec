@@ -1,0 +1,25 @@
+From 4820bc99ed65c70bbadfe6efc886530a04bae02a Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Mon, 13 Oct 2025 18:14:01 +0200
+Subject: [PATCH] fix fsqrt
+
+---
+ libpd/pure-data/extra/fiddle~/fiddle~.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/libpd/pure-data/extra/fiddle~/fiddle~.c b/libpd/pure-data/extra/fiddle~/fiddle~.c
+index 5001656..13ed783 100644
+--- a/libpd/pure-data/extra/fiddle~/fiddle~.c
++++ b/libpd/pure-data/extra/fiddle~/fiddle~.c
+@@ -42,7 +42,7 @@
+ #else
+ #define flog log
+ #define fexp exp
+-#define fsqrt sqrt
++#define fsqrt(X) sqrtf((float)X)
+ #endif
+ 
+ char fiddle_version[] = "fiddle version 1.1 TEST4";
+-- 
+2.51.0
+

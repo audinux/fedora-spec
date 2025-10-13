@@ -29,7 +29,6 @@ BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xinerama)
 BuildRequires: pkgconfig(xext)
 BuildRequires: pkgconfig(freetype2)
-BuildRequires: pkgconfig(webkit2gtk-4.0)
 BuildRequires: pkgconfig(gtk+-x11-3.0)
 BuildRequires: pkgconfig(jack)
 BuildRequires: libcurl-devel
@@ -39,11 +38,22 @@ BuildRequires: libXcursor-devel
 BuildRequires: xsimd-devel
 BuildRequires: lv2-devel
 
+Requires: license-%{name}
+
 %description
 CHOW Phaser is an open-source phaser effect, based very loosely on the classic Shulte Compact Phasing "A".
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: BSD-3-Clause
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary: CHOW Phaser plugin (VST3)
+License: BSD-3-Clause
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 CHOW Phaser is an open-source phaser effect, based very loosely on the classic Shulte Compact Phasing "A".
@@ -68,13 +78,13 @@ cp -r cmake-build/ChowPhaserMono_artefacts/Release/VST3/*.vst3 %{buildroot}%{_li
 cp -r cmake-build/ChowPhaserStereo_artefacts/Release/VST3/*.vst3 %{buildroot}%{_libdir}/vst3/
 
 %files
-%doc README.md
-%license LICENSE
 %{_bindir}/*
 
-%files -n vst3-%{name}
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
+
+%files -n vst3-%{name}
 %{_libdir}/vst3/
 
 %changelog
