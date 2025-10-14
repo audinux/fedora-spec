@@ -17,7 +17,8 @@ Distribution: Audinux
 # original tarfile can be found here:
 Source0: https://sourceforge.net/projects/commonmusic/files/cm/%{version}/cm-%{version}.zip
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: premake4
 BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
