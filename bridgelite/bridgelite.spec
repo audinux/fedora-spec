@@ -89,8 +89,6 @@ install -m 755 -d %{buildroot}%{_libdir}/vst3/
 cp -ra 8ridge_lite.vst3 %{buildroot}/%{_libdir}/vst3/
 
 %files
-%doc README.md
-%license LICENSE
 %{_bindir}/*
 %{_datadir}/Bridgelite/sound/*
 
