@@ -4,7 +4,7 @@
 # Category: Tool
 
 Name: millisecond
-Version: 0.1.1
+Version: 0.2.0
 Release: 1%{?dist}
 Summary: Optimize your Linux system for low latency audio
 License: GPL-3.0-or-later
@@ -66,5 +66,8 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/io.github.gaheldev.M
 %{_datadir}/icons/hicolor/symbolic/*
 
 %changelog
+* Tue Oct 14 2025 Yann Collette <ycollette dot nospam at free.fr> 0.2.0-1
+- update to 0.2.0-1
+
 * Sun Oct 12 2025 Yann Collette <ycollette dot nospam at free.fr> 0.1.1-1
 - initial release of the spec file
