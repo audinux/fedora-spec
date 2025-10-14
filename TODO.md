@@ -280,12 +280,7 @@ To list failed builds:
 $ copr-cli list-builds ycollet/audinux | grep failed
 ```
 
-9561305 beataligninglooper
-9561282 bassman-preamp
-9561261 audiogridder
-9561242 atlas-06-synthesizer
 9561231 AnalogTapeModel
-9560183 qscintilla
 
 ### Fix cmake 4 usage
 
@@ -316,10 +311,6 @@ webkit2gtk4.1-devel still available on Fedora 43
 
 soundux/soundux.spec -> requires webkit -> build error due to pipewire API
 surge/shortcircuit.spec -> build failure -> open ticket
-
-audiogridder/audiogridder.spec
-atlas-06-synthetizer/atlas-06-synthesizer.spec
-sickbeatbetty/sickbeatbetty.spec
 
 ## Python package
 

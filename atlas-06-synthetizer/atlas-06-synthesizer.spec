@@ -3,12 +3,12 @@
 # Type: Standalone, VST3
 # Category: Audio, Synthesizer
 
-Name:    atlas-06-synthesizer
+Name: atlas-06-synthesizer
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: A subtractive software synthesizer built using the JUCE framework
 License: GPL-3.0-or-later
-URL:     https://github.com/sbadon122/ATLAS-06-Synthesizer
+URL: https://github.com/sbadon122/ATLAS-06-Synthesizer
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -34,7 +34,6 @@ BuildRequires: libxkbcommon-x11-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: gtk3-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: vst3sdk

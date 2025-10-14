@@ -16,7 +16,7 @@ Distribution: Audinux
 
 # to generater code archive:
 # ./source_analogtapemodel.sh <tag>
-# ./source_analogtapemodel.sh 2.11.4
+# ./source_analogtapemodel.sh v2.11.4
 
 Source0: AnalogTapeModel.tar.gz
 Source1: source_analogtapemodel.sh
@@ -29,7 +29,6 @@ BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xinerama)
 BuildRequires: pkgconfig(xext)
 BuildRequires: pkgconfig(freetype2)
-BuildRequires: pkgconfig(webkit2gtk-4.0)
 BuildRequires: pkgconfig(gtk+-x11-3.0)
 BuildRequires: pkgconfig(jack)
 BuildRequires: libcurl-devel
@@ -39,12 +38,23 @@ BuildRequires: libXcursor-devel
 BuildRequires: xsimd-devel
 BuildRequires: lv2-devel
 
+Requires: license-%{name}
+
 %description
 CHOW Tape Model is a physical model of an analog tape machine,
 implemented as an audio plugin.
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: BSD-3-Clause
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary: CHOW Tape Model plugin (VST3)
+License: BSD-3-Clause
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 CHOW Tape Model is a physical model of an analog tape machine,
@@ -52,6 +62,8 @@ implemented as an audio plugin.
 
 %package -n lv2-%{name}
 Summary: CHOW Tape Model plugin (LV2)
+License: BSD-3-Clause
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 CHOW Tape Model is a physical model of an analog tape machine,
@@ -83,18 +95,16 @@ mkdir -p %{buildroot}%{_libdir}/lv2
 cp -r cmake-build/CHOWTapeModel_artefacts/Release/LV2/*.lv2 %{buildroot}%{_libdir}/lv2/
 
 %files
-%doc README.md
-%license LICENSE
 %{_bindir}/*
 
-%files -n vst3-%{name}
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
+
+%files -n vst3-%{name}
 %{_libdir}/vst3/
 
 %files -n lv2-%{name}
-%doc README.md
-%license LICENSE
 %{_libdir}/lv2/
 
 %changelog

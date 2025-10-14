@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./audiogridder-source.sh <TAG>
-#        ./audiogridder-source.sh v1.2.0
+#        ./audiogridder-source.sh release_1_2_0 
 
 Source0: audiogridder.tar.gz
 Source1: audiogridder-source.sh
@@ -50,7 +50,6 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: desktop-file-utils
 
 %description
