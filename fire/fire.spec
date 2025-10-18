@@ -4,7 +4,7 @@
 # Category: Audio, Distortion
 
 Name: fire
-Version: 1.5.0b
+Version: 1.5.0
 Release: 2%{?dist}
 Summary: This is a distortion plugin developed by Wings
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./fire-source.sh <TAG>
-#        ./fire-source.sh v1.5.0b
+#        ./fire-source.sh v1.5.0
 
 Source0: Fire.tar.gz
 Source1: fire-source.sh
@@ -72,6 +72,9 @@ cp -ra %{__cmake_builddir}/Fire_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Oct 18 2025 Yann Collette <ycollette.nospam@free.fr> - 1.5.0-2
+- update to 1.5.0-2
+
 * Sat Sep 20 2025 Yann Collette <ycollette.nospam@free.fr> - 1.5.0b-2
 - update to 1.5.0b-2
 
