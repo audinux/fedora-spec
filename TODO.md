@@ -59,7 +59,6 @@
 | Dexed                         | https://github.com/asb2m10/dexed |
 | buzzmachines                  | https://github.com/Buzztrax/buzzmachines |
 | speclet                       | https://github.com/JohT/speclet |
-| ysfx                          | https://github.com/jpcima/ysfx |
 | rosegarden-fork               | https://github.com/thanks4opensource/rosegarden-fork |
 | intersect                     | https://github.com/sboukortt/intersect-lv2 |
 | lenticular                    | https://github.com/polyeffects/lenticular_lv2 |
@@ -287,7 +286,6 @@ Package ddsp from file ../ddsp/ddsp.spec is missing (status: inactive) - webkit2
 Package delooper from file ../delooper/delooper.spec is missing (status: active) - ERROR : faust/dsp/dsp-combiner.h not found
 Package foam-synth from file ../foam-synth/foam-synth.spec is missing (status: active) - rust syntax error
 Package gammou from file ../gammou/gammou.spec is missing (status: active) - c++ syntax error
-Package geraintluff_ysfx from file ../ysfx/geraintluff_ysfx.spec is missing (status: active) - debug info file missing
 Package gtk-wave-cleaner from file ../gwc/gwc.spec is missing (status: active) - prototype C error
 Package hexosynth from file ../hexosynth/hexosynth.spec is missing (status: active) - rust syntax error
 Package inconcert from file ../inconcert/inconcert.spec is missing (status: inactive) - c++ syntax error
