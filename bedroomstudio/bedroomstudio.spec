@@ -1,11 +1,11 @@
 # Status: active
-# Tag: Effect
+# Tag: Effect, Overdrive
 # Type: LV2
 # Category: Audio, Effect
 
 Name: bedroomstudio
 Version: 1.0.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A set of LV2 plugins
 License: MIT
 URL: https://github.com/psemiletov/bedroomstudio
@@ -21,8 +21,26 @@ BuildRequires: cmake
 BuildRequires: lv2-devel
 
 %description
-A set of LV2 plugins for bedroom music studio :) The idea is to
-provide simple, nice sounding effects those become a legend.
+A set of LV2 plugins for bedroom music studio :)
+The idea is to provide simple, nice sounding effects those become a legend.
+
+https://psemiletov.github.io/bedroomstudio/
+
+Current plugins list:
+
+Metalluga - the hard and crips distortion with five controls to customize the
+effect for your needs: Drive, Level, Weigth, Resonance and Warmth.
+The main control here is Level, all other builds around it.
+If don't touch too much the distortion stuff, you can use Metalluga in more
+soft genres such as blues.
+
+Bronza - the plain fuzz pedal with two parameters - Level and Fuzz. Sounds
+like in sixties
+
+Grelka Overdrive - the classic overdrive, has Drive, Level, Lows and Treble
+parameters to define the sound.
+
+Charm - the saturation effect, makes sound more "analog".
 
 %prep
 %autosetup -n %{name}-%{version}
@@ -44,5 +62,8 @@ sed -i -e "s/lib\/lv2/%{_lib}\/lv2/g" CMakeLists.txt
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Oct 20 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-2
+- update to 1.0.0-2 - update description
+
 * Mon Oct 23 2023 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial packaging.
