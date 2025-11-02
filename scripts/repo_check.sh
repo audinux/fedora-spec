@@ -679,7 +679,6 @@ https://github.com/vokimon/python-wavefile
 https://github.com/wacossusca34/glava
 https://github.com/Wasted-Audio/hvcc
 https://github.com/Wasted-Audio/ryukau_LV2Plugins
-https://github.com/WeirdConstructor/HexoSynth
 https://github.com/weldr/lorax
 https://github.com/werman/noise-suppression-for-voice
 https://github.com/williamweston/phasex
@@ -923,7 +922,6 @@ https://git.open-music-kontrollers.ch/~hp/midi_matrix.lv2
 https://git.open-music-kontrollers.ch/~hp/moony.lv2
 https://git.open-music-kontrollers.ch/~hp/synthpod
 https://github.com/brummer10/ImpulseLoader.lv2
-https://github.com/WeirdConstructor/Kickmess
 https://github.com/brummer10/guitarix.vst
 https://github.com/Gimmeapill/xruncounter
 https://github.com/brummer10/neural-amp-modeler-ui
@@ -1065,6 +1063,8 @@ https://github.com/gaheldev/Millisecond"
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
 # https://github.com/50m30n3/SO-666
+# https://github.com/WeirdConstructor/HexoSynth
+# https://github.com/WeirdConstructor/Kickmess
 
 cp git_tags_old.txt git_tags_old.txt.bkp
 
