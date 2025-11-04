@@ -6,7 +6,7 @@
 %global toolchain clang
 
 Name: zl-equalizer
-Version: 0.6.3
+Version: 1.0.0
 Release: 2%{?dist}
 Summary: Equalizer plugin
 License: GPL-3.0-only
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./zl-source.sh <project> <tag>
-# ./zl-source.sh ZLEqualizer 0.6.3
+# ./zl-source.sh ZLEqualizer 1.0.0
 
 Source0: ZLEqualizer.tar.gz
 Source1: zl-source.sh
@@ -72,7 +72,7 @@ LV2 version of %{name}
 %prep
 %autosetup -n ZLEqualizer
 
-sed -i -e "s/ZL Equalizer/ZL_Equalizer/g" CMakeLists.txt
+sed -i -e "s/ZL Equalizer 2/ZL_Equalizer_2/g" CMakeLists.txt
 
 %build
 
@@ -92,7 +92,7 @@ cp -ra %{__cmake_builddir}/ZLEqualizer_artefacts/Standalone/* %{buildroot}%{_bin
 # Cleanup rpath
 chrpath --delete `find %{buildroot}%{_libdir}/vst3/ -name "*.so"`
 chrpath --delete `find %{buildroot}%{_libdir}/lv2/ -name "*.so"`
-chrpath --delete %{buildroot}%{_bindir}/ZL_Equalizer
+chrpath --delete %{buildroot}%{_bindir}/*
 
 %files
 %{_bindir}/*

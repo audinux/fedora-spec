@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 2aca188b0dec6b606cdc6c5910f33ce51a5d1082
-%global gittag0 2.0.18
+%global commit0 98d7049fbbe5095f1eb3bc712d7ef7f17434ef8a
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-LydD-Modules
-Version: 2.0.18
+Name:    rack-v2-CuteLab
+Version: 2.1.0
 Release: 2%{?dist}
-Summary: LydD-Modules plugin for Rack
+Summary: CuteLab plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Lydian-Des/LydD_Modules
+URL:     https://github.com/cutelabnyc/cute-vcv
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,8 +29,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/Lydian-Des/LydD_Modules/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: LydD-Modules_plugin.json
+Source1: https://github.com/cutelabnyc/cute-vcv/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: CuteLab_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -61,8 +61,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-LydD-Modules plugin for Rack.
-Infinite Sequencer
+CuteLab plugin for Rack.
+Pulsar synthesis oscillator with a twist
 
 %prep
 %setup -n Rack
@@ -135,24 +135,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir LydD-Modules_plugin
-tar xvfz %{SOURCE1} --directory=LydD-Modules_plugin --strip-components=1
+mkdir CuteLab_plugin
+tar xvfz %{SOURCE1} --directory=CuteLab_plugin --strip-components=1
 
-cp -n %{SOURCE2} LydD-Modules_plugin/plugin.json || true
+cp -n %{SOURCE2} CuteLab_plugin/plugin.json || true
 
 %build
 
-cd LydD-Modules_plugin
+cd CuteLab_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/LydD-Modules/
-cp -r LydD-Modules_plugin/dist/LydD-Modules/* %{buildroot}%{_libexecdir}/Rack2/plugins/LydD-Modules/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/CuteLab/
+cp -r CuteLab_plugin/dist/CuteLab/* %{buildroot}%{_libexecdir}/Rack2/plugins/CuteLab/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.18-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile

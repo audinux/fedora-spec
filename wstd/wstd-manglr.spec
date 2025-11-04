@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: wstd-manglr
-Version: 1.1.0
+Version: 1.2
 Release: 1%{?dist}
 Summary: Modular distortion plugin
 License: GPL-3.0-or-later
@@ -15,15 +15,15 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./wstd-source.sh <project> <tag>
-# ./wstd-source.sh wstd-manglr v1.1.0
+# ./wstd-source.sh wstd-manglr v1.2
 
 Source0: wstd-manglr.tar.gz
-Source1: hvcc-Makefile
-Source2: wstd-source.sh
+Source1: wstd-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
-BuildRequires: hvcc == 0.10.0
+BuildRequires: hvcc
+BuildRequires: jq
 BuildRequires: lv2-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: fftw-devel
@@ -67,11 +67,14 @@ VST3 version of the %{name} plugin.
 %prep
 %autosetup -n %{name}
 
-cp %{SOURCE1} Makefile
+jq '.dpf.plugin_formats |= map(select(. != "au"))' WSTD_MANGLR.json > tmp.$$.json && mv tmp.$$.json WSTD_MANGLR.json
 
 %build
 
 %set_build_flags
+
+export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
 
 %make_build PLUGIN=wstd_manglr PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true
 
@@ -82,10 +85,10 @@ install -m 755 -d %{buildroot}/%{_libdir}/vst/
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
 install -m 755 -d %{buildroot}/%{_libdir}/clap/
 
-cp -ra wstd_manglr/bin/WSTD_MANGLR.lv2 %{buildroot}/%{_libdir}/lv2/
-cp wstd_manglr/bin/WSTD_MANGLR-vst.so %{buildroot}/%{_libdir}/vst/
-cp -ra wstd_manglr/bin/WSTD_MANGLR.vst3 %{buildroot}/%{_libdir}/vst3/
-cp wstd_manglr/bin/WSTD_MANGLR.clap %{buildroot}/%{_libdir}/clap/
+cp -ra bin/WSTD_MANGLR.lv2 %{buildroot}/%{_libdir}/lv2/
+cp bin/WSTD_MANGLR-vst.so %{buildroot}/%{_libdir}/vst/
+cp -ra bin/WSTD_MANGLR.vst3 %{buildroot}/%{_libdir}/vst3/
+cp bin/WSTD_MANGLR.clap %{buildroot}/%{_libdir}/clap/
 
 %files
 %doc README.md
@@ -104,6 +107,9 @@ cp wstd_manglr/bin/WSTD_MANGLR.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Mon Nov 03 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2-1
+- update to 1.2-1
+
 * Mon May 06 2024 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
 - update to 1.1.0-1
 

@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 9f46a71e38e6ae06b98e8c76e15cc315a1d3a304
-%global gittag0 2.0.1
+%global commit0 fdb02f6d616930be6da274e509317cc45a5c42f5
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-pachde-CHEM
-Version: 2.0.1
+Version: 2.0.2
 Release: 2%{?dist}
 Summary: pachde-CHEM plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r pachde-CHEM_plugin/dist/pachde-CHEM/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile

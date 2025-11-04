@@ -232,6 +232,12 @@ Add dead package:
 - rtirq
 - slv2
 - zynjacku
+- monobristol
+- new-session-manager
+- nted
+- paulstretch
+- pianobooster
+- solfege
 
 Add missing zita packaes:
 - zita-audiotools-1.3.0.tar.bz2

@@ -32,8 +32,8 @@
 %define debug_package %{nil}
 
 Name: tuxguitar
-Version: 1.6.6
-Release: 15%{?dist}
+Version: 2.0.0
+Release: 16%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
 URL: https://github.com/helge17/tuxguitar
@@ -54,7 +54,11 @@ Source1: tuxguitar.sh
 # 4.27:
 # wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.27-202303020300/swt-4.27-gtk-linux-x86_64.zip
 # wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.27-202303020300/swt-4.27-gtk-linux-aarch64.zip
-%define swt_version 4.26
+# 4.36:
+# wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.36-202505281830/swt-4.36-gtk-linux-x86_64.zip
+# wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.36-202505281830/swt-4.36-gtk-linux-aarch64.zip
+
+%define swt_version 4.36
 Source3: swt-%{swt_version}-gtk-linux-aarch64.zip
 Source4: swt-%{swt_version}-gtk-linux-x86_64.zip
 
@@ -110,7 +114,7 @@ tempo management, gp3/gp4/gp5 import and export.
 find . \( -name "*.xml" -or -name "*.gradle" -or -name "*.properties" -or -name control -or -name Info.plist \) \
      -and -type f -exec sed -i "s/SNAPSHOT/%{version}/" '{}' \;
 
-sed -i "s/static final String RELEASE_NAME =.*/static final String RELEASE_NAME = (TGApplication.NAME + \" %{version}\");/" desktop/TuxGuitar/src/org/herac/tuxguitar/app/view/dialog/about/TGAboutDialog.java
+sed -i "s/static final String RELEASE_NAME =.*/static final String RELEASE_NAME = (TGApplication.NAME + \" %{version}\");/" desktop/TuxGuitar/src/app/tuxguitar/app/view/dialog/about/TGAboutDialog.java
 
 # Installing missing VST2 files
 #unzip %{SOURCE2}
@@ -263,6 +267,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Sun Nov 02 2025 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-16
+- update to 2.0.0-16 - fix sh script
+
+* Sat Nov 01 2025 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-15
+- update to 2.0.0-15
+
 * Sat Sep 20 2025 Yann Collette <ycollette.nospam@free.fr> - 1.6.6-15
 - update to 1.6.6-15 - remove unused dep
 

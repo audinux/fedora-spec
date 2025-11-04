@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 2aca188b0dec6b606cdc6c5910f33ce51a5d1082
-%global gittag0 2.0.18
+%global commit0 99d9d9f079d77520f755eb5337784b1fbda765ea
+%global gittag0 2.0.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-LydD-Modules
-Version: 2.0.18
+Name:    rack-v2-QuestionableDinner
+Version: 2.0.4
 Release: 2%{?dist}
-Summary: LydD-Modules plugin for Rack
+Summary: QuestionableDinner plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Lydian-Des/LydD_Modules
+URL:     https://github.com/NullCodeMusic/Questionable-Dinner
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,8 +29,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/Lydian-Des/LydD_Modules/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: LydD-Modules_plugin.json
+Source1: https://github.com/NullCodeMusic/Questionable-Dinner/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: QuestionableDinner_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -61,8 +61,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-LydD-Modules plugin for Rack.
-Infinite Sequencer
+QuestionableDinner plugin for Rack.
+Compare, split, subtract and mangle two inputs
 
 %prep
 %setup -n Rack
@@ -135,24 +135,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir LydD-Modules_plugin
-tar xvfz %{SOURCE1} --directory=LydD-Modules_plugin --strip-components=1
+mkdir QuestionableDinner_plugin
+tar xvfz %{SOURCE1} --directory=QuestionableDinner_plugin --strip-components=1
 
-cp -n %{SOURCE2} LydD-Modules_plugin/plugin.json || true
+cp -n %{SOURCE2} QuestionableDinner_plugin/plugin.json || true
 
 %build
 
-cd LydD-Modules_plugin
+cd QuestionableDinner_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/LydD-Modules/
-cp -r LydD-Modules_plugin/dist/LydD-Modules/* %{buildroot}%{_libexecdir}/Rack2/plugins/LydD-Modules/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/QuestionableDinner/
+cp -r QuestionableDinner_plugin/dist/QuestionableDinner/* %{buildroot}%{_libexecdir}/Rack2/plugins/QuestionableDinner/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.18-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-1
 - initial specfile

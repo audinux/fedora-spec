@@ -26,13 +26,12 @@ CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-converter.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-debug-helper.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-editor-utils.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-fluidsynth.jar
-CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-gervill.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-gm-settings.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-gm-utils.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-gpx.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-gtp.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-gtp-ui.jar
-CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-image.jar
+CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-image-swt.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-jack.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-jack-ui.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar.jar
@@ -51,15 +50,14 @@ CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-synth-export.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-synth-gervill.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-synth.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-synth-lv2.jar
-CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-synth-vst.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-tef.jar
-CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-tray.jar
+CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-tray-swt.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-tuner.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-ui-toolkit.jar
 CLASSPATH=$CLASSPATH:/usr/share/java/tuxguitar/tuxguitar-ui-toolkit-swt.jar
 
 ##MAINCLASS
-MAINCLASS=org.herac.tuxguitar.app.TGMainSingleton
+MAINCLASS=app.tuxguitar.app.TGMainSingleton
 
 ##JVM ARGUMENTS
 VM_ARGS="-Xmx512m"
@@ -67,6 +65,9 @@ VM_ARGS="-Xmx512m"
 ##EXPORT VARS
 export CLASSPATH
 export LD_LIBRARY_PATH
+
+##Avoid problems with Accelerated Compositing mode in SWT/WebKitGTK
+export WEBKIT_DISABLE_COMPOSITING_MODE=1
 
 ##TMP DIRECTORY
 mkdir -p /tmp/tuxguitar-lv2-client
