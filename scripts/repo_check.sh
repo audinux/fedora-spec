@@ -1058,7 +1058,8 @@ https://github.com/unplugred/vsts
 https://github.com/linuxmao-org/snibbetracker
 https://github.com/QuentinFAIDIDE/KholorsStation
 https://github.com/zmann-org/zmann
-https://github.com/gaheldev/Millisecond"
+https://github.com/gaheldev/Millisecond
+https://codeberg.org/tenacityteam/tenacity"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
