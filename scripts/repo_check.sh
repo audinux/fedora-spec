@@ -1065,7 +1065,7 @@ https://codeberg.org/tenacityteam/tenacity"
 # https://github.com/giogramegna/mantra-master
 # https://github.com/50m30n3/SO-666
 # https://github.com/WeirdConstructor/HexoSynth
-# https://github.com/WeirdConstructor/Kickmess
+# https://github.com/WeirdConstructor/Kickmess
 
 cp git_tags_old.txt git_tags_old.txt.bkp
 
