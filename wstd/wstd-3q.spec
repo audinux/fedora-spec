@@ -1,10 +1,10 @@
 # Status: active
-# Tag: Effect, Flanger
+# Tag: Effect, Equalizer
 # Type: Plugin, VST, VST3, LV2, CLAP
 # Category: Audio, Effect
 
 Name: wstd-3q
-Version: 1.0
+Version: 1.1
 Release: 1%{?dist}
 Summary: WSTD EQ but with separate outputs
 License: GPL-3.0-or-later
@@ -15,15 +15,15 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./wstd-source.sh <project> <tag>
-# ./wstd-source.sh wstd-3q v1.0
+# ./wstd-source.sh wstd-3q v1.1
 
 Source0: wstd-3q.tar.gz
-Source1: hvcc-Makefile
-Source2: wstd-source.sh
+Source1: wstd-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
-BuildRequires: hvcc == 0.10.0
+BuildRequires: hvcc
+BuildRequires: jq
 BuildRequires: lv2-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: fftw-devel
@@ -67,11 +67,14 @@ VST3 version of the %{name} plugin.
 %prep
 %autosetup -n %{name}
 
-cp %{SOURCE1} Makefile
+jq '.dpf.plugin_formats |= map(select(. != "au"))' WSTD_3Q.json > tmp.$$.json && mv tmp.$$.json WSTD_3Q.json
 
 %build
 
 %set_build_flags
+
+export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
+export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
 
 %make_build PLUGIN=wstd_3q PREFIX=/usr LIBDIR=%{_libdir} SKIP_STRIPPING=true
 
@@ -82,10 +85,10 @@ install -m 755 -d %{buildroot}/%{_libdir}/vst/
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
 install -m 755 -d %{buildroot}/%{_libdir}/clap/
 
-cp -ra wstd_3q/bin/WSTD_3Q.lv2 %{buildroot}/%{_libdir}/lv2/
-cp wstd_3q/bin/WSTD_3Q-vst.so %{buildroot}/%{_libdir}/vst/
-cp -ra wstd_3q/bin/WSTD_3Q.vst3 %{buildroot}/%{_libdir}/vst3/
-cp wstd_3q/bin/WSTD_3Q.clap %{buildroot}/%{_libdir}/clap/
+cp -ra bin/WSTD_3Q.lv2 %{buildroot}/%{_libdir}/lv2/
+cp bin/WSTD_3Q-vst.so %{buildroot}/%{_libdir}/vst/
+cp -ra bin/WSTD_3Q.vst3 %{buildroot}/%{_libdir}/vst3/
+cp bin/WSTD_3Q.clap %{buildroot}/%{_libdir}/clap/
 
 %files
 %doc README.md
@@ -104,5 +107,8 @@ cp wstd_3q/bin/WSTD_3Q.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Mon Nov 03 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1-1
+- update to 1.1-1
+
 * Wed Jan 24 2024 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
 - Initial version of the spec file
