@@ -4,7 +4,7 @@
 # Category: Session Mngmt
 
 Name: raysession
-Version: 0.14.4
+Version: 0.17.0
 Release: 4%{?dist}
 Summary: A JACK session manager
 
@@ -16,24 +16,28 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source-houston4444.sh <project> <tag>
-#        ./source-houston4444.sh RaySession v0.14.4
+#        ./source-houston4444.sh RaySession v0.17.0
 
 Source0: RaySession.tar.gz
 Source1: source-houston4444.sh
 
 BuildArch: noarch
 
-BuildRequires: python3-qt5-devel
 BuildRequires: python3
+BuildRequires: python3-pyqt6-devel
+BuildRequires: python3-QtPy
+BuildRequires: python-jack-client
 BuildRequires: qtchooser
 BuildRequires: liblo-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-linguist
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-linguist
 BuildRequires: gtk-update-icon-cache
 BuildRequires: desktop-file-utils
 
-Requires(pre): python3-qt5
+Requires(pre): python3-QtPy
+Requires(pre): python-jack-client
+Requires(pre): python3-pyqt6
 Requires(pre): python3-pyliblo3
 Requires(pre): python3-pyxdg
 %if 0%{?fedora} >= 41
@@ -51,17 +55,19 @@ be able to save or close all documents together.
 %autosetup -n RaySession
 
 # Fix desktop categories
+sed -i -e "s/AudioVideo;//g" data/share/applications/ray-alsapatch.desktop
+sed -i -e "s/AudioVideo;//g" data/share/applications/ray-jack_checker.desktop
+sed -i -e "s/AudioVideo;//g" data/share/applications/ray-jackpatch.desktop
+sed -i -e "s/AudioVideo;//g" data/share/applications/ray-network.desktop
 sed -i -e "s/AudioVideo;//g" data/share/applications/raysession.desktop
-# Fix permission on executable python script
-chmod a+x src/shared/jacklib.py
 
 %build
 
-%make_build PREFIX=/usr LRELEASE=lrelease-qt5
+%make_build PREFIX=/usr LRELEASE=lrelease-qt6 RCC=/usr/lib64/qt6/libexec/rcc
 
 %install
 
-%make_install PREFIX=/usr LRELEASE=lrelease-qt5
+%make_install PREFIX=/usr LRELEASE=lrelease-qt6 RCC=/usr/lib64/qt6/libexec/rcc
 
 # Cleanup and redo symbolic links
 rm %{buildroot}/usr/bin/ray_git
@@ -78,7 +84,7 @@ desktop-file-install                         \
   --add-category="Audio;AudioVideo;Qt"	     \
   --delete-original                          \
   --dir=%{buildroot}%{_datadir}/applications \
-  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+  %{buildroot}/%{_datadir}/applications/raysession.desktop
 
 desktop-file-install                         \
   --add-category="System"                    \
@@ -98,12 +104,22 @@ desktop-file-install                         \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/ray-network.desktop
 
+desktop-file-install                         \
+  --add-category="System"                    \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/ray-alsapatch.desktop
+
+# cleanup
+rm -rf %{buildroot}/etc/bash_completion.d/ray_completion.sh
+
 %check
 
-desktop-file-validate  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+desktop-file-validate  %{buildroot}/%{_datadir}/applications/raysession.desktop
 desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-jack_checker.desktop
 desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-jackpatch.desktop
 desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-network.desktop
+desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-alsapatch.desktop
 
 %files
 %doc README.md
@@ -116,6 +132,9 @@ desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-network.desktop
 %{_sysconfdir}/xdg/raysession/client_templates/*
 
 %changelog
+* Mon Nov 03 2025 Yann Collette <ycollette.nospam@free.fr> - 0.17.0-4
+- update to 0.17.0-4
+
 * Fri Sep 19 2025 Yann Collette <ycollette.nospam@free.fr> - 0.14.4-4
 - update to 0.14.4-4 - use python3-pyliblo3
 
