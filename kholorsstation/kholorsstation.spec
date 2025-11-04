@@ -4,7 +4,7 @@
 # Category: Audio, Tool, Graphic
 
 Name: kholorsstation
-Version: 1.24.1
+Version: 1.25.0
 Release: 1%{?dist}
 Summary: Live, color-coded spectrogram of your DAW tracks in a single window
 License: GPL-3.0-or-later
@@ -93,26 +93,6 @@ VST3 version of %{name}
 %cmake
 %cmake_build
 
-# CMake Error at src/AudioTransport/CMakeLists.txt:21 (add_custom_command):
-#   Error evaluating generator expression:
-#     $<TARGET_FILE:protoc>
-#   No target "protoc"
-
-# CMake Error at src/AudioTransport/CMakeLists.txt:21 (add_custom_command):
-#   Error evaluating generator expression:
-#     $<TARGET_FILE:grpc_cpp_plugin>
-#   No target "grpc_cpp_plugin"
-
-# CMake Error at src/AudioTransport/CMakeLists.txt:21 (add_custom_command):
-#   Error evaluating generator expression:
-#     $<TARGET_FILE:protoc>
-#   No target "protoc"
-
-# CMake Error at src/AudioTransport/CMakeLists.txt:21 (add_custom_command):
-#   Error evaluating generator expression:
-#     $<TARGET_FILE:grpc_cpp_plugin>
-#   No target "grpc_cpp_plugin"
-
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
@@ -166,5 +146,8 @@ patchelf --set-rpath '$ORIGIN/../../../../KholorsStation/' `find %{buildroot}/%{
 %{_datadir}/applications/*
 
 %changelog
+* Sun Nov 02 2025 Yann Collette <ycollette.nospam@free.fr> - 1.25.0-1
+- update to 1.25.0-1
+
 * Thu Oct 02 2025 Yann Collette <ycollette.nospam@free.fr> - 1.24.1-1
 - Initial spec file
