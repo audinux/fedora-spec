@@ -4,7 +4,7 @@
 # Category: Tool
 
 Name: qlcplus
-Version: 5.0.0
+Version: 5.0.1
 Release: 1%{?dist}
 Summary: Q Light Controller Plus - The free DMX lighting console
 URL: https://github.com/mcallegari/qlcplus
@@ -19,13 +19,14 @@ Source0: https://github.com/mcallegari/qlcplus/archive/refs/tags/QLC+_%{version}
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: alsa-lib-devel
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-qtscript-devel
-BuildRequires: qt5-qt3d-devel
-BuildRequires: qt5-qtmultimedia-devel
-BuildRequires: qt5-qtsvg-devel
-BuildRequires: qt5-qtserialport-devel
-BuildRequires: qt5-linguist
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qt3d-devel
+BuildRequires: qt6-qtmultimedia-devel
+BuildRequires: qt6-qtsvg-devel
+BuildRequires: qt6-qtserialport-devel
+BuildRequires: qt6-qttools-devel
+BuildRequires: qt6-qtwebsockets-devel
+BuildRequires: qt6-linguist
 BuildRequires: fftw-devel
 BuildRequires: libftdi-devel
 BuildRequires: systemd-devel
@@ -43,19 +44,14 @@ introduce new features.
 %prep
 %autosetup -n qlcplus-QLC-_%{version}
 
-%if 0%{?fedora} < 40
-sed -i -e "/-Wno-template-id-cdtor/d" variables.pri
-%endif
-
 %build
 
-./translate.sh release qmlui
-%qmake_qt5 CONFIG+=qmlui qlc.pro
-%make_build
+%cmake
+%cmake_build
 
 %install
 
-%make_install INSTALL_ROOT=%{buildroot}
+%cmake_install
 
 %check
 desktop-file-validate %{buildroot}/%{_datadir}/applications/*.desktop
@@ -72,8 +68,12 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/*.desktop
 %dir %{_datadir}/qlcplus
 %{_datadir}/qlcplus/*
 %{_sysconfdir}/udev/rules.d/*
+%{_mandir}/*
 
 %changelog
+* Wed Nov 05 2025 Yann Collette <ycollette.nospam@free.fr> - 5.0.1-1
+- update to 5.0.1-1
+
 * Sun Oct 05 2025 Yann Collette <ycollette.nospam@free.fr> - 5.0.0-1
 - update to 5.0.0-1
 
