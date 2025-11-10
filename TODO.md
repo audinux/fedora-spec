@@ -202,6 +202,10 @@
 | LiveMixer                     | https://github.com/sonejostudios/LiveMixer |
 | two-filters                   | https://github.com/baconpaul/two-filters |
 | Chasm                         | https://github.com/DirektDSP/Chasm |
+| PoeesiaVol1Women              | https://codeberg.org/IvyAudio/PoeesiaVol1Women |
+| Saturation                    | https://github.com/apmastering/Saturation |
+| APComp                        | https://github.com/apmastering/APComp |
+| DrumGroovePro                 | https://github.com/InToEtherion/DrumGroovePro |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
