@@ -8,7 +8,7 @@
 %global debug_package %{nil}
 
 Name: jjazzlab
-Version: 4.1.2
+Version: 5.0.0
 Release: 2%{?dist}
 Summary: A complete Midi-based framework for automatic backing tracks generation.
 URL: https://github.com/jjazzboss/JJazzLab-X
@@ -18,7 +18,7 @@ License: LGPL-3.0
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/jjazzboss/JJazzLab/releases/download/%{version}/JJazzLab-%{version}-linux-x64.tar.xz
+Source0: https://github.com/jjazzboss/JJazzLab/releases/download/%{version}-win-linux/JJazzLab-%{version}.-linux.tar.xz
 Source1: jjazzlab.png
 Source2: README.md
 
@@ -91,6 +91,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Sun Nov 09 2025 Yann Collette <ycollette.nospam@free.fr> - 5.0.0-2
+- update to 5.0.0-2
+
 * Mon Dec 30 2024 Yann Collette <ycollette.nospam@free.fr> - 4.1.2-2
 - update to 4.1.2-2
 
