@@ -1059,7 +1059,8 @@ https://github.com/linuxmao-org/snibbetracker
 https://github.com/QuentinFAIDIDE/KholorsStation
 https://github.com/zmann-org/zmann
 https://github.com/gaheldev/Millisecond
-https://codeberg.org/tenacityteam/tenacity"
+https://codeberg.org/tenacityteam/tenacity
+https://github.com/InToEtherion/DrumGroovePro"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

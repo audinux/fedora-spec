@@ -205,7 +205,7 @@
 | PoeesiaVol1Women              | https://codeberg.org/IvyAudio/PoeesiaVol1Women |
 | Saturation                    | https://github.com/apmastering/Saturation |
 | APComp                        | https://github.com/apmastering/APComp |
-| DrumGroovePro                 | https://github.com/InToEtherion/DrumGroovePro |
+| kunquat                       | https://github.com/kunquat/kunquat |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
