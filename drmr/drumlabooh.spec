@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Jack, Alsa
+# Tag: Drum
 # Type: Plugin, Standalone, VST3
-# Category: Audio, Distortion
+# Category: Audio, Sequencer
 
 Name: drumlabooh
 Version: 11.0.0
