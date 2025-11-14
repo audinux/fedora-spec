@@ -206,6 +206,7 @@
 | Saturation                    | https://github.com/apmastering/Saturation |
 | APComp                        | https://github.com/apmastering/APComp |
 | kunquat                       | https://github.com/kunquat/kunquat |
+| StoneMistress                 | https://github.com/NaviCisco/StoneMistress |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
