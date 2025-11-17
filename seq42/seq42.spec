@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer, MIDI
 
 Name: seq42
-Version: 2.1.5
+Version: 2.1.6
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -69,9 +69,20 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/doc/seq42/COPYING
 %{_datadir}/doc/seq42/SEQ42
 %{_datadir}/doc/seq42/seq42usr.example
+%{_datadir}/icons/hicolor/16x16/apps/seq42.png
+%{_datadir}/icons/hicolor/22x22/apps/seq42.png
+%{_datadir}/icons/hicolor/24x24/apps/seq42.png
+%{_datadir}/icons/hicolor/32x32/apps/seq42.png
+%{_datadir}/icons/hicolor/48x48/apps/seq42.png
+%{_datadir}/icons/hicolor/64x64/apps/seq42.png
+%{_datadir}/icons/hicolor/96x96/apps/seq42.png
+%{_datadir}/icons/hicolor/scalable/apps/seq42.svg
 %{_mandir}/*
 
 %changelog
+* Mon Nov 17 2025 Yann Collette <ycollette.nospam@free.fr> - 2.1.6-1
+- udate to 2.1.6-1
+
 * Mon Jan 20 2025 Yann Collette <ycollette.nospam@free.fr> - 2.1.5-1
 - udate to 2.1.5-1
 
