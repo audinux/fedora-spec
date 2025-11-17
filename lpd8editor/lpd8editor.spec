@@ -4,7 +4,7 @@
 # Category: Audio
 
 Name: lpd8editor
-Version: 0.0.16
+Version: 0.0.17
 Release: 1%{?dist}
 Summary: A linux editor for the Akai LPD8
 URL: https://github.com/charlesfleche/lpd8editor
@@ -19,9 +19,10 @@ Source0: https://github.com/charlesfleche/lpd8editor/archive/v%{version}.tar.gz#
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: git
-BuildRequires: qt5-linguist
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-qtsvg-devel
+BuildRequires: qt6-linguist
+BuildRequires: qt6-qttools-devel
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qtsvg-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: desktop-file-utils
 
@@ -78,6 +79,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/
 
 %changelog
+* Sun Nov 16 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.17-1
+- Update to 0.0.17-1
+
 * Sun Apr 17 2022 Yann Collette <ycollette.nospam@free.fr> - 0.0.16-1
 - Update to 0.0.16-1
 
