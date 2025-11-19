@@ -1061,7 +1061,10 @@ https://github.com/zmann-org/zmann
 https://github.com/gaheldev/Millisecond
 https://codeberg.org/tenacityteam/tenacity
 https://github.com/InToEtherion/DrumGroovePro
-https://github.com/Wamphyre/DrumCraker"
+https://github.com/Wamphyre/DrumCraker
+https://github.com/karmatripping/KarmaViz
+https://github.com/moderngl/moderngl
+https://github.com/spatialaudio/python-sounddevice"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

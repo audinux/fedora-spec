@@ -207,7 +207,6 @@
 | APComp                        | https://github.com/apmastering/APComp |
 | kunquat                       | https://github.com/kunquat/kunquat |
 | StoneMistress                 | https://github.com/NaviCisco/StoneMistress |
-| KarmaViz                      | https://github.com/karmatripping/KarmaViz |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
