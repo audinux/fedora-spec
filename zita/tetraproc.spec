@@ -5,7 +5,7 @@
 
 Summary: An A/B convertor and the metering and monitoring.
 Name: tetraproc
-Version: 0.9.2
+Version: 0.10.0
 Release: 2%{?dist}
 License: GPL
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
@@ -40,13 +40,20 @@ sed -i 's|-O2|%{optflags}|' source/Makefile
 
 %build
 
+%set_build_flags
+
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
 pushd source
+
 %make_build PREFIX=%{_prefix} LDLIBS="-lpthread -lsndfile -lfftw3f -lclxclient -lclthreads -ljack -lpng -lXft -lX11 -lrt"
+
 popd
 
 %install
 
 mkdir -p $RPM_BUILD_ROOT%{_mandir}/man1
+
 pushd source
 %make_install PREFIX=%{_prefix}
 popd
@@ -57,14 +64,17 @@ popd
 %{_datadir}/tetraproc/
 
 %changelog
+* Wed Nov 19 2025 Yann Collette <ycollette.nospam@free.fr> - 0.10.0-2
+- update to 0.10.0-2
+
 * Thu Sep 07 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.2-2
-- update to 0.9.2
+- update to 0.9.2-2
 
 * Tue Oct 20 2020 Yann Collette <ycollette.nospam@free.fr> - 0.8.6-2
 - fix debug build
 
 * Tue May 12 2020 Yann Collette <ycollette.nospam@free.fr> - 0.8.6-1
-- update to 0.8.6
+- update to 0.8.6-1
 
 * Mon Oct 15 2018 Yann Collette <ycollette.nospam@free.fr> - 0.8.2-1
 - update for Fedora 29
