@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Audio, Player
+# Tag: Tool, Video, Audio
 # Type: Standalone
-# Category: Audio, Tool
+# Category: Tool
 
 %global commit0 67e8a15dda8cb7b5f052ade0731db3de62d82063
 %global __python /usr/bin/python3

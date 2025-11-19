@@ -1064,7 +1064,8 @@ https://github.com/InToEtherion/DrumGroovePro
 https://github.com/Wamphyre/DrumCraker
 https://github.com/karmatripping/KarmaViz
 https://github.com/moderngl/moderngl
-https://github.com/spatialaudio/python-sounddevice"
+https://github.com/spatialaudio/python-sounddevice
+https://github.com/moderngl/glcontext"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
