@@ -429,6 +429,12 @@ Add:
 cmake_minimum_required(VERSION 3.3...3.10)
 ```
 
+or 
+
+```
+-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+```
+
 ### Adapt some plugins to the new hvcc
 
 Does not export to dpf anymore, must choose lv2 / vst3 / calp
