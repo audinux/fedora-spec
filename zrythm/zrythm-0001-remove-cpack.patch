@@ -1,17 +1,17 @@
-From caa923c0643e3604e1f9829b4a0cb56ef25c004e Mon Sep 17 00:00:00 2001
+From b1d4f989003c788a2aa185139f3cbba8789772e8 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Tue, 2 Sep 2025 07:56:21 +0200
-Subject: [PATCH] remove cpack
+Date: Thu, 20 Nov 2025 20:52:35 +0100
+Subject: [PATCH] cpack
 
 ---
- CMakeLists.txt | 71 +-------------------------------------------------
- 1 file changed, 1 insertion(+), 70 deletions(-)
+ CMakeLists.txt | 71 --------------------------------------------------
+ 1 file changed, 71 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 5bf8c52..2d36418 100644
+index 2a7eec4..fc5c83c 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -1447,67 +1447,8 @@ elseif(APPLE)
+@@ -1272,67 +1272,8 @@ elseif(APPLE)
      )
    "
    COMPONENT Runtime)
@@ -78,8 +78,8 @@ index 5bf8c52..2d36418 100644
 -
  set(CPACK_PACKAGE_NAME "Zrythm")
  set(CPACK_PACKAGE_VENDOR "Alexandros Theodotou and Contributors")
- set(CPACK_PACKAGE_INSTALL_DIRECTORY "Zrythm ${ZRYTHM_VERSION_MAJOR}.${ZRYTHM_VERSION_MINOR}")
-@@ -1522,13 +1463,6 @@ set(CPACK_THREADS 0) # use all CPU cores
+ set(CPACK_PACKAGE_VERSION "${ZRYTHM_PACKAGE_VERSION}")
+@@ -1348,13 +1289,6 @@ set(CPACK_THREADS 0) # use all CPU cores
  #   EXPANDED
  #   BOLD_TITLE
  # )
@@ -93,7 +93,7 @@ index 5bf8c52..2d36418 100644
  
  if(WIN32)
    if(MAGICK_EXECUTABLE)
-@@ -1542,9 +1476,6 @@ endif()
+@@ -1368,9 +1302,6 @@ endif()
  
  # -- Generator-specific options --
  
@@ -103,12 +103,12 @@ index 5bf8c52..2d36418 100644
  # DragNDrop generator (MacOS)
  set(CPACK_DMG_SLA_USE_RESOURCE_FILE_LICENSE ON)
  set(CPACK_DMG_DS_STORE_SETUP_SCRIPT "${CMAKE_SOURCE_DIR}/data/platform/macos/dmg_setup.scpt")
-@@ -1556,4 +1487,4 @@ set(CPACK_INNOSETUP_ICON_FILE "${ZRYTHM_ICO_FILE}")
+@@ -1381,5 +1312,3 @@ set(CPACK_INNOSETUP_USE_MODERN_WIZARD ON)
+ set(CPACK_INNOSETUP_ICON_FILE "${ZRYTHM_ICO_FILE}")
  set(CPACK_INNOSETUP_LANGUAGES "english;brazilianPortuguese;catalan;french;german;hebrew;italian;japanese;norwegian;polish;portuguese;russian;spanish;turkish;ukrainian")
  set(CPACK_INNOSETUP_RUN_EXECUTABLES "zrythm")
- 
+-
 -include(CPack) # must be included after specifying the CPACK_ variables
-+# include(CPack) # must be included after specifying the CPACK_ variables
 -- 
-2.51.0
+2.51.1
 

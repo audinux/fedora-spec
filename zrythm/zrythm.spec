@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Audio, DAW
 
-%global commit0 75172483d4ff4329fe0059b10465cff53da203b7
+%global commit0 74ec7d0a84a1a4872c9751b3eaa17a3e121f7447
 
 Name: zrythm
 Version: 1.9.9
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Highly automated Digital Audio Workstation (DAW) featureful and intuitive to use
 License: GPL-2.0-or-later
 URL: https://github.com/zrythm/zrythm
@@ -87,6 +87,8 @@ More info at https://www.zrythm.org
 %prep
 %autosetup -p1 -n zrythm-%{commit0}
 
+sed -i -e "s/Qt6 6.10/Qt6 6.8/g" CMakeLists.txt
+
 %build
 
 # CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
@@ -109,7 +111,9 @@ sleep 10
        -DZRYTHM_BUNDLED_PLUGINS=OFF \
        -DZRYTHM_USE_JACK=ON \
        -DZRYTHM_USER_MANUAL=OFF \
-       -DENABLE_CPACK=OFF
+       -DENABLE_CPACK=OFF \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 %cmake_build
 
 %install
@@ -128,7 +132,7 @@ desktop-file-install --vendor '' \
 desktop-file-validate %{buildroot}%{_datadir}/applications/org.zrythm.Zrythm.desktop
 
 %files
-%doc AUTHORS THANKS CHANGELOG.md CONTRIBUTING.md
+%doc CHANGELOG.md CONTRIBUTING.md
 %license COPYING
 %{_bindir}/*
 %{_datadir}/applications/*
@@ -140,5 +144,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.zrythm.Zrythm.des
 %{_mandir}/*
 
 %changelog
+* Thu Nov 20 2025 Yann Collette <ycollette.nospam@free.fr> - 1.9.9-2
+- update to 1.9.9-2
+
 * Mon Sep 01 2025 Yann Collette <ycollette.nospam@free.fr> - 1.9.9-1
 - Initial build
