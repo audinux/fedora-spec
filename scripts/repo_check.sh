@@ -1065,7 +1065,8 @@ https://github.com/Wamphyre/DrumCraker
 https://github.com/karmatripping/KarmaViz
 https://github.com/moderngl/moderngl
 https://github.com/spatialaudio/python-sounddevice
-https://github.com/moderngl/glcontext"
+https://github.com/moderngl/glcontext
+https://github.com/sjoerdvankreel/firefly-synth-2"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
