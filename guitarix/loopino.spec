@@ -65,6 +65,7 @@ CLAP version of %{name}
 %autosetup -n Loopino
 
 sed -i -e "/$Version=0.2/d" Loopino/loopino.desktop
+sed -i -e "/SSE_CFLAGS =/d" Loopino/Makefile
 
 %build
 
