@@ -1067,7 +1067,8 @@ https://github.com/moderngl/moderngl
 https://github.com/spatialaudio/python-sounddevice
 https://github.com/moderngl/glcontext
 https://github.com/sjoerdvankreel/firefly-synth-2
-https://github.com/brummer10/Loopino"
+https://github.com/brummer10/Loopino
+https://gitlab.com/andreasersson/drumelidrum-vst"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
