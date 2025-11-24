@@ -5,7 +5,7 @@
 
 Name: supercollider
 Summary: Object oriented programming environment for real-time audio and video processing
-Version: 3.14.0
+Version: 3.14.1
 Release: 6%{?dist}
 License: GPL
 URL: https://supercollider.github.io/
@@ -179,6 +179,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/SuperColliderIDE.desk
 %{_datadir}/SuperCollider/Extensions/scide_scvim/SCVim.sc
 
 %changelog
+* Mon Nov 24 2025 Yann Collette <ycollette.nospam@free.fr> 3.14.1-6
+- update to 3.14.1-6
+
 * Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> 3.14.0-6
 - update to 3.14.0-6
 
