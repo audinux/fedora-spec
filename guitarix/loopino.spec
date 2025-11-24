@@ -1,7 +1,7 @@
 # Status: active
-# Tag: MIDI
-# Type: Standalone
-# Category: Audio, Sequencer
+# Tag: MIDI, Sampler
+# Type: Standalone, Plugin, CLAP
+# Category: Audio, Sampler
 
 %global commit0 5e8da1a1cf81fc5125388c0d861028043de71f05
 
