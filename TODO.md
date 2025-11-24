@@ -207,6 +207,13 @@
 | APComp                        | https://github.com/apmastering/APComp |
 | kunquat                       | https://github.com/kunquat/kunquat |
 | StoneMistress                 | https://github.com/NaviCisco/StoneMistress |
+| intersect-lv2                 | https://github.com/sboukortt/intersect-lv2 |
+| blue                          | https://github.com/kunstmusik/blue |
+| filurep-vst                   | https://gitlab.com/andreasersson/filurep-vst |
+| polyfilur-vst                 | https://gitlab.com/andreasersson/polyfilur-vst |
+| filur-super                   | https://gitlab.com/andreasersson/filur-super |
+| lesynth-fourier               | https://github.com/hlavnjak/lesynth-fourier |
+| VOSIMSynth                    | https://github.com/austensatterlee/VOSIMSynth |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -577,7 +584,7 @@ Modulation, Player, Pitch, Arpeggiator
 ### Type:
 
 ```
-Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, CLAP, Pipewire, Presets, Rack, Driver
+Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, CLAP, Pipewire, Presets, Rack, Driver, Nyquist
 ```
 
 ### Category:
