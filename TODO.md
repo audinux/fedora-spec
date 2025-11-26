@@ -209,8 +209,6 @@
 | StoneMistress                 | https://github.com/NaviCisco/StoneMistress |
 | intersect-lv2                 | https://github.com/sboukortt/intersect-lv2 |
 | blue                          | https://github.com/kunstmusik/blue |
-| polyfilur-vst                 | https://gitlab.com/andreasersson/polyfilur-vst |
-| filur-super                   | https://gitlab.com/andreasersson/filur-super |
 | lesynth-fourier               | https://github.com/hlavnjak/lesynth-fourier |
 | VOSIMSynth                    | https://github.com/austensatterlee/VOSIMSynth |
 
