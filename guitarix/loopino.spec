@@ -3,11 +3,9 @@
 # Type: Standalone, Plugin, CLAP
 # Category: Audio, Sampler
 
-%global commit0 5e8da1a1cf81fc5125388c0d861028043de71f05
-
 Name: loopino
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A Minimalist Sampler for Linux
 License: BSD
 URL: https://github.com/brummer10/Loopino
@@ -18,7 +16,7 @@ Distribution: Audinux
 
 
 # ./brummer10-source.sh <project> <tag>
-# ./brummer10-source.sh Loopino main
+# ./brummer10-source.sh Loopino v0.0.1
 
 Source0: Loopino.tar.gz
 
@@ -108,5 +106,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/loopino.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Wed Nov 26 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2 - real 0.0.1 release
+
 * Sat Nov 22 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
