@@ -122,7 +122,6 @@
 | xenos                         | https://github.com/raphaelradna/xenos |
 | badhumors                     | https://github.com/niflheimmer/badhumors |
 | Tonez                         | https://github.com/retornz/ToneZ |
-| cchorus                       | https://github.com/SpotlightKid/cchorus |
 | Automated-GuitarAmpModelling  | https://github.com/AidaDSP/Automated-GuitarAmpModelling |
 | stargate-sample-pack          | https://github.com/stargatedaw/stargate-sample-pack (250 Mo) |
 | ABC things                    | https://sourceforge.net/projects/abcplus/files/ |
@@ -196,9 +195,6 @@
 | sassy                         | https://github.com/jarikomppa/sassy |
 | smol-rack                     | https://github.com/giulioz/smol-rack |
 | CTAGDRC                       | https://github.com/p-hlp/CTAGDRC |
-| dfjpverb                      | https://github.com/SpotlightKid/dfjpverb |
-| dfzitarev1                    | https://github.com/SpotlightKid/dfzitarev1 |
-| sendmixer                     | https://github.com/SpotlightKid/sendmixer |
 | LiveMixer                     | https://github.com/sonejostudios/LiveMixer |
 | two-filters                   | https://github.com/baconpaul/two-filters |
 | Chasm                         | https://github.com/DirektDSP/Chasm |
@@ -209,8 +205,16 @@
 | StoneMistress                 | https://github.com/NaviCisco/StoneMistress |
 | intersect-lv2                 | https://github.com/sboukortt/intersect-lv2 |
 | blue                          | https://github.com/kunstmusik/blue |
-| lesynth-fourier               | https://github.com/hlavnjak/lesynth-fourier |
 | VOSIMSynth                    | https://github.com/austensatterlee/VOSIMSynth |
+| ConvertWithMoss               | https://github.com/git-moss/ConvertWithMoss |
+| OmniAmp                       | https://github.com/ArborealAudio/OmniAmp |
+| cchorus                       | https://github.com/SpotlightKid/cchorus |
+| dfjpverb                      | https://github.com/SpotlightKid/dfjpverb |
+| dfzitarev1                    | https://github.com/SpotlightKid/dfzitarev1 |
+| sendmixer                     | https://github.com/SpotlightKid/sendmixer |
+| waxman                        | https://github.com/SpotlightKid/waxman |
+| adt                           | https://github.com/SpotlightKid/adt |
+| Birdhouse                     | https://github.com/madskjeldgaard/Birdhouse |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
