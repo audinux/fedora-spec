@@ -14,11 +14,11 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./ykchorus-source.sh <tag>
-# ./ykchorus-source.sh v0.2.4
+# ./spotlightkid-source.sh <project> <tag>
+# ./spotlightkid-source.sh ykchorus v0.2.4
 
 Source0: ykchorus.tar.gz
-Source1: ykchorus-source.sh
+Source1: spotlightkid-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make

@@ -1071,7 +1071,8 @@ https://github.com/brummer10/Loopino
 https://gitlab.com/andreasersson/drumelidrum-vst
 https://gitlab.com/andreasersson/filurep-vst
 https://gitlab.com/andreasersson/polyfilur-vst
-https://github.com/hlavnjak/lesynth-fourier"
+https://github.com/hlavnjak/lesynth-fourier
+https://github.com/SpotlightKid/adt"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

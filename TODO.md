@@ -213,7 +213,6 @@
 | dfzitarev1                    | https://github.com/SpotlightKid/dfzitarev1 |
 | sendmixer                     | https://github.com/SpotlightKid/sendmixer |
 | waxman                        | https://github.com/SpotlightKid/waxman |
-| adt                           | https://github.com/SpotlightKid/adt |
 | Birdhouse                     | https://github.com/madskjeldgaard/Birdhouse |
 
 Check the following URL:
