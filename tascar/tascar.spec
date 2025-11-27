@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: tascar
-Version: 0.235.1
+Version: 0.235.2
 Release: 1%{?dist}
 Summary: TASCAR is a collection of tools for creating spatially dynamic acoustic scenes in different render formats
 License: GPL2
@@ -12,7 +12,7 @@ URL: http://tascar.org/
 ExclusiveArch: x86_64 aarch64
 
 Source0: https://github.com/HoerTech-gGmbH/tascar/archive/refs/tags/release_%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0: 0001-fix-config.mk.patch
+Patch0: tascar-0001-fix-config.mk.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -94,6 +94,9 @@ rm -rf %buildroot/builddir
 %{_libdir}/*.so
 
 %changelog
+* Thu Nov 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.235.2-1
+- update to 0.235.2-1
+
 * Sat Nov 01 2025 Yann Collette <ycollette.nospam@free.fr> - 0.235.1-1
 - update to 0.235.1-1
 
