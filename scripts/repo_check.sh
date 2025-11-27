@@ -1070,7 +1070,8 @@ https://github.com/sjoerdvankreel/firefly-synth-2
 https://github.com/brummer10/Loopino
 https://gitlab.com/andreasersson/drumelidrum-vst
 https://gitlab.com/andreasersson/filurep-vst
-https://gitlab.com/andreasersson/polyfilur-vst"
+https://gitlab.com/andreasersson/polyfilur-vst
+https://github.com/hlavnjak/lesynth-fourier"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
