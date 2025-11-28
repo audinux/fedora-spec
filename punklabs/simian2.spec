@@ -1,7 +1,7 @@
 # Status: active
 # Tag: Drum
 # Type: Plugin, Standalone, VST3, CLAP
-# Category: Drum, Synthesizer
+# Category: Synthesizer
 
 %global debug_package %{nil}
 
