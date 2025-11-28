@@ -1,5 +1,5 @@
 # Status: active
-# Tag: MIDI, Jack
+# Tag: MIDI, Jack, FM
 # Type: Standalone
 # Category: Synthesizer
 

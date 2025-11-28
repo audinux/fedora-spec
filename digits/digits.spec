@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Synthesizer
+# Tag: 
 # Type: Plugin, VST
-# Category: Audio, Synth
+# Category: Audio, Synthesizer
 
 %global commit0 f5ee4aa74e40b118bddcb3ef18d44b734e6fbef8
 

@@ -1,5 +1,5 @@
 # Status: active
-# Tag: Synthesizer
+# Tag: FM
 # Type: Plugin, VST3, CLAP
 # Category: Audio, Synthesizer
 

@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Editor
-# Type: Standalone; Plugin, LADSPA, VST3, CLAP, LV2, VST
+# Type: Standalone, Plugin, LADSPA, VST3, CLAP, LV2, VST
 # Category: Audio, Effect
 
 Name: podcastplugins

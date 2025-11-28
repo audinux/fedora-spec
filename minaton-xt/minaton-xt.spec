@@ -1,6 +1,6 @@
 # Status: active
-# Tag: Synthesizer
-# Type: Plugin, VST2, CLAP, LV2, Standalone
+# Tag:
+# Type: Plugin, VST3, CLAP, LV2, Standalone
 # Category: Audio, Synthesizer
 
 Name: minaton-xt
