@@ -211,7 +211,6 @@
 | cchorus                       | https://github.com/SpotlightKid/cchorus |
 | dfjpverb                      | https://github.com/SpotlightKid/dfjpverb |
 | dfzitarev1                    | https://github.com/SpotlightKid/dfzitarev1 |
-| sendmixer                     | https://github.com/SpotlightKid/sendmixer |
 | Birdhouse                     | https://github.com/madskjeldgaard/Birdhouse |
 
 Check the following URL:
@@ -275,7 +274,38 @@ https://doc.fedora-fr.org/wiki/Mise_en_%C5%93uvre_de_Xenomai_pour_cr%C3%A9er_un_
 
 ## Fixes
 
-### Update rust package:
+### Fix tags in spec
+
+imogen/imogen.spec has no 'Type:' tag
+supercollider/supercollider-sc3-plugins.spec has no 'Type:' tag
+supercollider/yaml-cpp03.spec has no 'Type:' tag
+raysession/pyliblo.spec has no 'Type:' tag
+jjazzlab/jjazzlab.spec has no 'Type:' tag
+stargate/pymarshal.spec has no 'Type:' tag
+stargate/wavefile.spec has no 'Type:' tag
+impro-visor/improvisor.spec has no 'Type:' tag
+sfizz/toccata.spec has no 'Type:' tag
+js80p/js80p.spec has no 'Type:' tag
+meson/meson.spec has no 'Type:' tag
+midi2voice/midi2voice.spec has no 'Type:' tag
+lenmus/lomse.spec has no 'Type:' tag
+mrfreeze/gxmrfreeze.spec has no 'Type:' tag
+kernel-xanmod/kernel-mao-xanmod.spec has no 'Type:' tag
+rack/libefsw.spec has no 'Type:' tag
+rack/quickjs.spec has no 'Type:' tag
+bitklavier/bitKlavier.spec has no 'Type:' tag
+python2.7/python2.7.spec has no 'Type:' tag
+tenaticy/tenacity.spec has no 'Type:' tag
+improviz/context-free.spec has no 'Type:' tag
+improviz/improviz.spec has no 'Type:' tag
+lv2/plotmm.spec has no 'Type:' tag
+kernel-lqx/kernel-mao-lqx.spec has no 'Type:' tag
+kernel/kernel-rt-tests.spec has no 'Type:' tag
+kernel/kernel-mao-stable-5.15.spec has no 'Type:' tag
+kernel/kernel-mao.spec has no 'Type:' tag
+kernel/kernel-mao-stable-5.10.spec has no 'Type:' tag
+
+### Update rust package:
 
 Use cargo-rpm-macros and:
 - %cargo_build
@@ -577,7 +607,7 @@ MIDI, Tablature, Phaser, Tape, Tracker, Reverb, Presets
 Sfz, Sf2, Sf3, Monitoring, Video, Organ, PM, Sequencer
 Keyboard, Library, OSC, Mixer, Modular, Rack, Sampler, Session
 Synthesizer, Loop, Tool, Devel, Controller, AI, Equalizer
-Modulation, Player, Pitch, Arpeggiator
+Modulation, Player, Pitch, Arpeggiator, Mixer
 ```
 
 ### Type:
