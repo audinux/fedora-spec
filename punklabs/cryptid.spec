@@ -1,5 +1,5 @@
 # Status: active
-# Tag: Jack, Synthesizer, Drum
+# Tag: Jack, FM, Drum
 # Type: Plugin, Standalone, VST3, CLAP
 # Category: Synthesizer
 

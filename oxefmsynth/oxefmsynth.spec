@@ -1,5 +1,5 @@
 # Status: active
-# Tag: Synthesizer
+# Tag: FM
 # Type: Standalone, Plugin, LV2
 # Category: Synthesizer
 
@@ -11,7 +11,7 @@
 Name: oxefmsynth
 Version: 1.3.5.%{shortcommit0}
 Release: 3%{?dist}
-Summary: A FM synthetized
+Summary: A FM Synthesizer
 License: GPL-2.0-or-later
 URL: https://github.com/oxesoft/oxefmsynth
 ExclusiveArch: x86_64 aarch64

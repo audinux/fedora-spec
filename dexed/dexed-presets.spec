@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Presets
+# Tag: Presets, FM
 # Type: Presets
-# Category: Plugin
+# Category: Synthesizer 
 
 Name: lv2-dexed-presets
 Version: 0.0.1

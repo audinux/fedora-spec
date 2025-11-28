@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Amp Simul
-# Type: Plugin, LV2, VST3, VST, CLAP, Standanlone
+# Type: Plugin, LV2, VST3, VST, CLAP, Standalone
 # Category: Audio, Effect
 
 Name: aida-x

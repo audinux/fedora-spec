@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Jack
+# Tag: Jack, Loop
 # Type: Standalone
-# Category: Audio, Looper
+# Category: Audio, Sequencer
 
 %global commit0 da64bd13d0b5db400e7a0fabd3efe245979e6667
 

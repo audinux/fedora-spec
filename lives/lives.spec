@@ -1,7 +1,7 @@
 # Status: active
 # Tag: Editor, Video
 # Type: Standalone
-# Category: Tool, Video
+# Category: Tool, Graphic
 
 %global commit0 478ac9a3c863e358b39dcba9326f0a2323e07f05
 

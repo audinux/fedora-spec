@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Jack, Alsa
+# Tag: Jack, Alsa, Amp Simul
 # Type: Plugin, Standalone, VST3
-# Category: Audio, Distortion
+# Category: Effect
 
 %global commit0 b456ddc08ac4098078b0604e69febc863beeada6
 

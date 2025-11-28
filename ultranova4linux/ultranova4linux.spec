@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Audio, Mixer, Tool
+# Tag: Mixer, Tool
 # Type: Standalone
-# Category: Audio, Mixer, Tool
+# Category: Audio, Tool
 
 # Global variables for github repository
 %global commit0 25b76aa0cdcaf6bded5876d6072c5446ec3b93d9

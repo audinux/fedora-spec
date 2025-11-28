@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Synthesizer, Effects
+# Tag:
 # Type: Plugin, Standalone, VST3, CLAP
-# Category: Synthesizer, Effects
+# Category: Synthesizer, Effect, Programming
 
 %global debug_package %{nil}
 %global commit0 28b149ec4d62757d0b448809148a0c3ca6e09a95

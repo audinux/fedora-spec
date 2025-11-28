@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Audio, Tool
-# Type: Plugin, VST3; CLAP
-# Category: Audio, Tool
+# Tag: Tool
+# Type: Plugin, VST3, CLAP
+# Category: Audio, Tool, Programming
 
 Name: ysfx
 Version: 0.0.42

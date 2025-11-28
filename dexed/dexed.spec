@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Jack, Alsa
+# Tag: Jack, Alsa, FM
 # Type: Plugin, Standalone, VST3
-# Category: Audio, Distortion
+# Category: Synthesizer
 
 Name: dexed
 Version: 0.9.9

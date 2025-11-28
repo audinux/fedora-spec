@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Jack, Alsa
+# Tag: Jack, Alsa, Emulator
 # Type: Plugin, Standalone, VST3
-# Category: Audio, Distortion
+# Category: Effect
 
 Name: thekissofshame
 Version: 1.0.2

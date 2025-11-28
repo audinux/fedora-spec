@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Synthesizer
-# Type: LV2
-# Category: Plugin, Synthesizer
+# Tag: FM
+# Type: Plugin, LV2
+# Category: Synthesizer
 
 %global commit0 32cce1ec397899e27e5932e3f732b3f1bf95de6e
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})

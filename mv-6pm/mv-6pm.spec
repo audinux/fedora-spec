@@ -1,5 +1,5 @@
 # Status: active
-# Tag: Jack, PM
+# Tag: Jack, FM
 # Type: Standalone
 # Category: Audio, Synthesizer
 # GUIToolkit: Qt5

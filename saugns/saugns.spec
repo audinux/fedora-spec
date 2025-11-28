@@ -1,7 +1,7 @@
 # Status: active
 # Tag: Devel, Audio
-# Type: Standalone, Language
-# Category: Devel, Audio, Tool
+# Type: Standalone, Language, Devel
+# Category: Audio, Tool, Programming
 
 Name: saugns
 Version: 0.5.5b

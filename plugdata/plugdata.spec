@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Editor, Audio, MIDI
-# Type: Standalone, Plugin, LV2, VST3, CLAP
-# Category: Audio, IDE, Language
+# Tag: Editor
+# Type: Standalone, Plugin, LV2, VST3, CLAP, IDE
+# Category: Audio, MIDI, Programming
 
 Name: plugdata
 Version: 0.9.2
