@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: drumgroovepro
-Version: 0.9.8
+Version: 0.9.9
 Release: 1%{?dist}
 Summary: A free, open-source MIDI drum groove sequencer
 License: GPL-3.0-or-later
@@ -15,10 +15,11 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./drumgroovepro-source.sh <TAG>
-#        ./drumgroovepro-source.sh V0.9.8
+#        ./drumgroovepro-source.sh V0.9.9
 
 Source0: DrumGroovePro.tar.gz
 Source1: drumgroovepro-source.sh
+Patch0: drumgroovepro-0001-remove-cmake-flags.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -40,6 +41,8 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
 
+Requires: license-%{name}
+
 %description
 A VST3 plugin for browsing, arranging, and exporting MIDI drum grooves
 with drum library remapping and multi-track timeline capabilities.
@@ -55,20 +58,29 @@ Perfect for:
 * Exporting complete drum arrangements as MIDI files
 * Creating custom drum patterns by mixing and matching parts
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: GPL-3.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
 License: GPL-3.0-or-later
-Requires: %{name}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %prep
-%autosetup -n DrumGroovePro
+%autosetup -p1 -n DrumGroovePro
 
 sed -i -e "s|../JUCE juce_build|JUCE juce_build|g" CMakeLists.txt
 
 %build
+
+export HOME=`pwd`
 
 %set_build_flags
 export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
@@ -78,16 +90,28 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 %install
 
-install -m 755 -d %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/VST3/* %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/lib/VST3/* %{buildroot}/%{_libdir}/vst3/
+export HOME=`pwd`
 
-%files -n vst3-%{name}
+install -m 755 -d %{buildroot}%{_libdir}/vst3/
+cp -ra .vst3/* %{buildroot}/%{_libdir}/vst3/
+
+install -m 755 -d %{buildroot}%{_bindir}/
+cp -ra %{__cmake_builddir}/DrumGroovePro_artefacts/Standalone/* %{buildroot}/%{_bindir}/
+
+%files
+%{_bindir}/*
+
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
+
+%files -n vst3-%{name}
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Nov 28 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.9-1
+- update to 0.9.9-1
+
 * Fri Nov 21 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.8-1
 - update to 0.9.8-1
 

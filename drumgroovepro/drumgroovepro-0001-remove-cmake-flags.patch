@@ -1,0 +1,39 @@
+From 99de6fd066cb50f1da44e7a77df5b79f2265b3d1 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Fri, 28 Nov 2025 13:37:01 +0100
+Subject: [PATCH] remove cmake flags
+
+---
+ CMakeLists.txt | 16 ----------------
+ 1 file changed, 16 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index d6f9a32..f80ed42 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -254,22 +254,6 @@ elseif(UNIX AND NOT APPLE)
+         JUCE_USE_XRENDER=1
+         JUCE_USE_XCURSOR=1
+     )
+-
+-    # Linux compiler flags
+-    target_compile_options(DrumGroovePro PRIVATE
+-        -Wall
+-        -Wextra
+-        -Wno-unused-parameter
+-        -Wno-missing-field-initializers
+-    )
+-
+-    if(CMAKE_BUILD_TYPE STREQUAL "Release")
+-        target_compile_options(DrumGroovePro PRIVATE
+-            -O3
+-            -ffast-math
+-            -fno-finite-math-only
+-        )
+-    endif()
+ endif()
+ 
+ #==============================================================================
+-- 
+2.51.1
+
