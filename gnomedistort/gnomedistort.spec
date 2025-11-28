@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Effect
+# Tag: Distortion
 # Type: Plugin, VST3
-# Category: Effect, Distortion
+# Category: Effect
 
 Name: gnomedistort2
 Version: 1.0.0

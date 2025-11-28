@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Effect, Distortion
+# Tag: Distortion
 # Type: Plugin, Standalone, VST3, CLAP
-# Category: Effect, Distortion
+# Category: Effect
 
 Name: hamburger
 Version: 0.5
