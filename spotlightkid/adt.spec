@@ -1,6 +1,6 @@
 # Status: active
-# Tag: Effect, Delay, Reverb
-# Type: Plugin, Standalone, LADSPA, VST, LV2, VST3, CLAP
+# Tag: Effect
+# Type: Plugin, LV2, VST3, CLAP
 # Category: Audio, Effect
 
 Name: adt
