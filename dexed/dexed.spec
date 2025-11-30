@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: dexed
-Version: 0.9.9
+Version: 1.0.1
 Release: 2%{?dist}
 Summary: DX7 FM multi plaform/multi format plugin
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./dexed-source.sh <TAG>
-#        ./dexed-source.sh v0.9.9
+#        ./dexed-source.sh v1.0.1
 
 Source0: dexed.tar.gz
 Source1: dexed-source.sh
@@ -108,6 +108,9 @@ cp -ra %{__cmake_builddir}/Source/Dexed_artefacts/CLAP/*  %{buildroot}/%{_libdir
 %{_libdir}/clap/*
 
 %changelog
+* Sun Nov 30 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-2
+- update to 1.0.1-2
+
 * Sun Nov 16 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.9-2
 - update to 0.9.9-2
 
