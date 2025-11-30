@@ -208,9 +208,6 @@
 | VOSIMSynth                    | https://github.com/austensatterlee/VOSIMSynth |
 | ConvertWithMoss               | https://github.com/git-moss/ConvertWithMoss |
 | OmniAmp                       | https://github.com/ArborealAudio/OmniAmp |
-| cchorus                       | https://github.com/SpotlightKid/cchorus |
-| dfjpverb                      | https://github.com/SpotlightKid/dfjpverb |
-| dfzitarev1                    | https://github.com/SpotlightKid/dfzitarev1 |
 | Birdhouse                     | https://github.com/madskjeldgaard/Birdhouse |
 
 Check the following URL:

@@ -1074,7 +1074,10 @@ https://gitlab.com/andreasersson/polyfilur-vst
 https://github.com/hlavnjak/lesynth-fourier
 https://github.com/SpotlightKid/adt
 https://github.com/SpotlightKid/waxman
-https://github.com/SpotlightKid/sendmixer"
+https://github.com/SpotlightKid/sendmixer
+https://github.com/SpotlightKid/cchorus
+https://github.com/SpotlightKid/dfjpverb
+https://github.com/SpotlightKid/dfzitarev1"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
