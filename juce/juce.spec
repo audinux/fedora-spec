@@ -4,7 +4,7 @@
 # Category: Audio, Programming, Graphic
 
 Name: JUCE
-Version: 8.0.10
+Version: 8.0.11
 Release: 10%{?dist}
 Summary: JUCE Framework
 URL: https://github.com/juce-framework/JUCE
@@ -24,6 +24,7 @@ Patch3: 0004-install-paths.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
+BuildRequires: python3
 BuildRequires: doxygen
 BuildRequires: graphviz
 BuildRequires: lv2-devel
@@ -36,7 +37,6 @@ BuildRequires: libXrandr-devel
 BuildRequires: libXinerama-devel
 BuildRequires: libXcursor-devel
 BuildRequires: libglvnd-devel
-BuildRequires: python-unversioned-command
 BuildRequires: desktop-file-utils
 
 %description
@@ -55,11 +55,11 @@ Code::Blocks and Linux Makefiles as well as containing a source code editor.
 %set_build_flags
 
 cd docs/doxygen
-make
+python3 build.py
 cd ../..
 
-export CXXFLAGS="-DJUCER_ENABLE_GPL_MODE -DJUCE_PLUGINHOST_LADSPA=1 $CXXFLAGS"
-export CFLAGS="-DJUCER_ENABLE_GPL_MODE -DJUCE_PLUGINHOST_LADSPA=1 $CFLAGS"
+export CXXFLAGS="-DJUCE_PLUGINHOST_LADSPA=1 $CXXFLAGS"
+export CFLAGS="-DJUCE_PLUGINHOST_LADSPA=1 $CFLAGS"
 
 %cmake -DJUCE_BUILD_EXTRAS=ON \
        -DJUCE_BUILD_EXAMPLES=OFF \
@@ -109,6 +109,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libexecdir}/juce/juceaide
 
 %changelog
+* Mon Dec 01 2025 Yann Collette <ycollette.nospam@free.fr> - 8.0.11-10
+- update to 8.0.11-10
+
 * Mon Sep 15 2025 Yann Collette <ycollette.nospam@free.fr> - 8.0.10-10
 - update to 8.0.10-10
 
