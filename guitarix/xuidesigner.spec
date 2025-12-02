@@ -5,7 +5,7 @@
 
 Name: xuidesigner
 Version: 1.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: X11 LV2 GUI design tool for libxputty
 License: GPL-2.0-or-later
 URL: https://github.com/brummer10/XUiDesigner
@@ -28,13 +28,13 @@ BuildRequires: lilv-devel
 BuildRequires: vim-common
 BuildRequires: desktop-file-utils
 
+Requires: python3
+
 %description
 X11 LV2 GUI design tool for libxputty
 
 %prep
 %autosetup -n XUiDesigner
-
-sed -i -e "s|#! /usr/bin/python|#! /usr/bin/python3|g" tools/dsp2cc
 
 # Don't strip
 sed -i -e "s| -s | |g" Makefile
@@ -74,6 +74,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/XUiDesigner.desktop
 %{_libdir}/*
 
 %changelog
+* Tue Dec 02 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1-2
+- update to 1.1-2
+
 * Thu Oct 10 2024 Yann Collette <ycollette.nospam@free.fr> - 1.1-1
 - update to 1.1-1
 
