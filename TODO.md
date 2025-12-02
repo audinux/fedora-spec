@@ -208,7 +208,7 @@
 | VOSIMSynth                    | https://github.com/austensatterlee/VOSIMSynth |
 | ConvertWithMoss               | https://github.com/git-moss/ConvertWithMoss |
 | OmniAmp                       | https://github.com/ArborealAudio/OmniAmp |
-| Birdhouse                     | https://github.com/madskjeldgaard/Birdhouse |
+| STR-X                         | https://github.com/ArborealAudio/STR-X |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
