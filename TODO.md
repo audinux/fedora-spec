@@ -209,6 +209,9 @@
 | ConvertWithMoss               | https://github.com/git-moss/ConvertWithMoss |
 | OmniAmp                       | https://github.com/ArborealAudio/OmniAmp |
 | STR-X                         | https://github.com/ArborealAudio/STR-X |
+| SignalViewLV2                 | https://github.com/TimKrause2/SignalViewLV2 |
+| VocoderSynth                  | https://github.com/TimKrause2/VocoderSynth |
+| midi-okular-pageturner        | https://github.com/wakira/midi-okular-pageturner |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
