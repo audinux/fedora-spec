@@ -3,10 +3,10 @@
 # Type: Standalone
 # Category: DAW, MIDI
 
-Summary: A simple MIDI tracker and sequencer
 Name: noteahead
-Version: 1.0.0
+Version: 1.1.0
 Release: 1%{?dist}
+Summary: A simple MIDI tracker and sequencer
 License: GPLv2+
 URL: https://github.com/juzzlin/Noteahead
 ExclusiveArch: x86_64 aarch64
@@ -65,6 +65,9 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/noteahea
 %{_datadir}/pixmaps/*.png
 
 %changelog
+* Thu Dec 04 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+- update to 1.1.0-1
+
 * Sat Nov 22 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - update to 1.0.0-1
 
