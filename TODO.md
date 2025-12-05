@@ -210,8 +210,11 @@
 | OmniAmp                       | https://github.com/ArborealAudio/OmniAmp |
 | STR-X                         | https://github.com/ArborealAudio/STR-X |
 | SignalViewLV2                 | https://github.com/TimKrause2/SignalViewLV2 |
-| VocoderSynth                  | https://github.com/TimKrause2/VocoderSynth |
 | midi-okular-pageturner        | https://github.com/wakira/midi-okular-pageturner |
+| RTcmix                        | https://github.com/RTcmix/RTcmix |
+| RTcmixShell                   | https://github.com/RTcmix/RTcmixShell |
+| MONSTR-Stereo-Imaging         | https://github.com/jd-13/MONSTR-Stereo-Imaging |
+| FFTBalance                    | https://github.com/juzzlin/FFTBalance |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -607,7 +610,7 @@ MIDI, Tablature, Phaser, Tape, Tracker, Reverb, Presets
 Sfz, Sf2, Sf3, Monitoring, Video, Organ, PM, Sequencer
 Keyboard, Library, OSC, Mixer, Modular, Rack, Sampler, Session
 Synthesizer, Loop, Tool, Devel, Controller, AI, Equalizer
-Modulation, Player, Pitch, Arpeggiator, Mixer
+Modulation, Player, Pitch, Arpeggiator, Mixer, Vocoder
 ```
 
 ### Type:
