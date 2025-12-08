@@ -9,6 +9,7 @@ do
 	git pull
 	git submodule init
 	git submodule update
+	git submodule sync > /dev/null 2>&1
 	cd ..
     fi
 
