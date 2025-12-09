@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: wstd-dl3y
-Version: 1.1
+Version: 1.1.1
 Release: 1%{?dist}
 Summary: Multi-Band Delay Audio Plugin
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./wstd-source.sh <project> <tag>
-# ./wstd-source.sh wstd-dl3y v1.1
+# ./wstd-source.sh wstd-dl3y v1.1.1
 
 Source0: wstd-dl3y.tar.gz
 Source1: wstd-source.sh
@@ -107,6 +107,9 @@ cp bin/WSTD_DL3Y.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Tue Dec 09 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
+- update to 1.1.1-1
+
 * Mon Nov 03 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1-1
 - update to 1.1-1
 
