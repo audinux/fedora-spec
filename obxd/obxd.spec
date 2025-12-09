@@ -1,10 +1,10 @@
 # Status: active
 # Tag: Jack, Alsa
-# Type: Plugin, Standalone, VST3
+# Type: Plugin, Standalone, VST2
 # Category: Audio, Synthesizer
 
 Name: obxd
-Version: 2.8
+Version: 2.19
 Release: 2%{?dist}
 Summary: A VST3 Synthesizer
 License: GPL-3.0-only
@@ -27,7 +27,7 @@ BuildRequires: freetype-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
-BuildRequires: JUCE61
+BuildRequires: JUCE
 BuildRequires: libXrandr-devel
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: libxkbcommon-x11-devel
@@ -39,7 +39,7 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 
 %description
-Virtual Analog Oberheim VST / VST3 based synthesizer
+Virtual Analog Oberheim VST based synthesizer
 
 %package -n vst-%{name}
 Summary:  VST2 version of %{name}
@@ -49,21 +49,15 @@ Requires: %{name}
 %description -n vst-%{name}
 VST2 version of %{name}
 
-%package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-only
-Requires: %{name}
-
-%description -n vst3-%{name}
-VST3 version of %{name}
-
 %prep
 %autosetup -p1 -n OB-Xd-%{version}
 
 unzip %{SOURCE1}
+mkdir vstsdk2.4
+mv VST_SDK/VST2_SDK/* vstsdk2.4
+
 tar xvfz %{SOURCE2}
 
-sed -i -e "s|-DJucePlugin_Build_Standalone=0|-DJucePlugin_Build_Standalone=1|g" Builds/LinuxMakefile/Makefile
 %ifarch aarch64
 sed -i -e "s/-m64//g" Builds/LinuxMakefile/Makefile
 %endif
@@ -74,32 +68,23 @@ sed -i -e "s/-m64//g" Builds/LinuxMakefile/Makefile
 
 CWD=`pwd`
 
-export CPPFLAGS="-I/usr/src/JUCE61/modules -I$CWD/VST_SDK/VST2_SDK -I$CWD/VST_SDK/VST3_SDK -include utility $CPPFLAGS"
-
 cd Builds/LinuxMakefile
-%make_build VST Standalone CONFIG=Release64 STRIP=true
+%make_build VST CONFIG=Release64 STRIP=true
 
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst/
-install -m 755 -d %{buildroot}%{_bindir}/
-install -m 755 -d %{buildroot}%{_datadir}/discoDSP/OB-Xd/
-
-cp -r Documents/discoDSP/* %{buildroot}%{_datadir}/discoDSP/
-
-install -m 755 -p Builds/LinuxMakefile/build/OB-Xd %{buildroot}/%{_bindir}/
 install -m 755 -p Builds/LinuxMakefile/build/OB-Xd.so %{buildroot}/%{_libdir}/vst/
 
-%files
-%doc README.md
-%license license.txt
-%{_bindir}/*
-%{_datadir}/*
-
 %files -n vst-%{name}
+%doc README.md
+%license LICENSE
 %{_libdir}/vst/*
 
 %changelog
+* Tue Dec 09 2025 Yann Collette <ycollette.nospam@free.fr> - 2.19-2
+- update to 2.19-2
+
 * Sun Jun 26 2022 Yann Collette <ycollette.nospam@free.fr> - 2.8-2
 - update to 2.8-2
 
