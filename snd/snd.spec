@@ -5,7 +5,7 @@
 
 %define _lto_cflags %{nil}
 
-%define pkgver 25.5
+%define pkgver 25.9
 %define tarname snd-%{pkgver}
 %define snd_date "03/07/2022"
 
@@ -188,6 +188,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_bindir}/snd-info
 
 %changelog
+* Sun Dec 14 2025 Yann Collette <ycollette.nospam@free.fr> - 25.9-1
+- update to 25.9-1
+
 * Sun Jul 20 2025 Yann Collette <ycollette.nospam@free.fr> - 25.5-1
 - update to 25.5-1
 
