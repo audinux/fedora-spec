@@ -3,13 +3,13 @@
 # Type: Plugin, CLAP
 # Category: Audio, Effect
 
-%define commit0 38b379ce918160d2d8e7dc6fa06b283000bae980
+%define commit0 f21ad7f23e12692afc4d97188b1055c6ca515720
 %define _lto_cflags %{nil}
 
 Summary: Example clap plugins
 Name: clap-plugins
 Version: 1.0.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: MIT
 URL: https://github.com/free-audio/clap-plugins
 ExclusiveArch: x86_64 aarch64
@@ -52,7 +52,10 @@ export CFLAGS="-fPIC $CFLAGS"
 %{_libndir}/clap/*
 
 %changelog
-* Tue Mar 11 2025 2024 Yann Collette <ycollette dot nospam at free.fr> 1.0.1-2
+* Thu Dec 11 2025 Yann Collette <ycollette dot nospam at free.fr> 1.0.1-3
+- update to f21ad7f23e12692afc4d97188b1055c6ca515720
+
+* Tue Mar 11 2025 Yann Collette <ycollette dot nospam at free.fr> 1.0.1-2
 - update to 38b379ce918160d2d8e7dc6fa06b283000bae980
 
 * Mon Jan 22 2024 Yann Collette <ycollette dot nospam at free.fr> 1.0.1-1
