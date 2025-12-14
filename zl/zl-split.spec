@@ -6,7 +6,7 @@
 %global toolchain clang
 
 Name: zl-split
-Version: 0.2.0
+Version: 0.2.1
 Release: 1%{?dist}
 Summary: Splitter plugin
 License: AGPL-3.0-or-later
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./zl-source.sh <project> <tag>
-# ./zl-source.sh ZLSplit 0.2.0
+# ./zl-source.sh ZLSplit 0.2.1
 
 Source0: ZLSplit.tar.gz
 Source1: zl-source.sh
@@ -95,6 +95,9 @@ cp -ra %{__cmake_builddir}/ZLSplitter_artefacts/LV2/* %{buildroot}%{_libdir}/lv2
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Dec 14 2025 Yann Collette <ycollette.nospam@free.fr> - 0.2.1-1
+- update to 0.2.1-1
+
 * Mon Aug 25 2025 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
 - update to 0.2.0-1
 
