@@ -215,6 +215,9 @@
 | RTcmixShell                   | https://github.com/RTcmix/RTcmixShell |
 | MONSTR-Stereo-Imaging         | https://github.com/jd-13/MONSTR-Stereo-Imaging |
 | FFTBalance                    | https://github.com/juzzlin/FFTBalance |
+| kina-vst                      | https://github.com/neurodyn/kina-vst |
+| cheapsynth01                  | https://github.com/yasuyuki-baba/cheapsynth01 |
+| dkbuilder-guitarix-lv2-plugins | https://github.com/domichel/dkbuilder-guitarix-lv2-plugins |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -226,6 +229,7 @@ Check the following URL:
 - https://github.com/reales/OPL -> replace JUCEOplVsti ?
 - https://github.com/mod-audio
 - https://github.com/hollance
+- https://github.com/sfzinstruments/mappings -> some sfz sound fonts
 
 Add dead package:
 - gmixer
