@@ -506,6 +506,8 @@ surge/shortcircuit.spec -> build failure -> open ticket
 basicpitch from spotify -> https://github.com/spotify/basic-pitch
 spleeter from deezer    -> https://github.com/Deezer/spleeter
 demucs from facebook    -> https://github.com/facebookresearch/demucs
+stemgen                 -> https://github.com/axeldelafosse/stemgen
+stemgen (rust)          -> https://github.com/acolombier/stemgen (real-time)
 
 ## Check Sourceforge
 
