@@ -218,6 +218,7 @@
 | kina-vst                      | https://github.com/neurodyn/kina-vst |
 | cheapsynth01                  | https://github.com/yasuyuki-baba/cheapsynth01 |
 | dkbuilder-guitarix-lv2-plugins | https://github.com/domichel/dkbuilder-guitarix-lv2-plugins |
+| MISST                         | https://github.com/Frikallo/MISST |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
