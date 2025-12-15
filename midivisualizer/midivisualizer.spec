@@ -4,7 +4,7 @@
 # Category: MIDI, Tool
 
 Name: midivisualizer
-Version: 7.2
+Version: 7.3
 Release: 1%{?dist}
 Summary: A small MIDI visualizer tool, using OpenGL
 URL: https://github.com/kosua20/MIDIVisualizer
@@ -20,7 +20,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: chrpath
 BuildRequires: alsa-lib-devel
-BuildRequires: compat-ffmpeg4
+BuildRequires: (ffmpeg-devel or ffmpeg-free-devel)
 BuildRequires: glfw-devel
 BuildRequires: gtk3-devel
 BuildRequires: pkgconfig(jack)
@@ -90,6 +90,9 @@ desktop-file-install                         \
 %{_datadir}/applications/*
 
 %changelog
+* Mon Dec 15 2025 Yann Collette <ycollette.nospam@free.fr> - 7.3-1
+- update to 7.3-1
+
 * Wed Sep 20 2023 Yann Collette <ycollette.nospam@free.fr> - 7.2-1
 - update to 7.2-1
 
