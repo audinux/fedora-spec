@@ -17,7 +17,7 @@
 Summary: A sound editor (%{pkgver}, %{snd_date})
 Name: snd
 Version: %{pkgver}
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: LGPL
 URL: https://ccrma.stanford.edu/software/snd/
 ExclusiveArch: x86_64 aarch64
@@ -43,15 +43,13 @@ BuildRequires: gsl-devel
 BuildRequires: fftw-devel
 BuildRequires: ladspa-devel
 BuildRequires: liblrdf-devel
-# BuildRequires: gamin-devel
 BuildRequires: gettext-devel
 BuildRequires: libXpm-devel
 BuildRequires: libtimidity-devel
 BuildRequires: timidity++
 BuildRequires: flac-devel
 BuildRequires: mpg123-devel
-BuildRequires: gtk3-devel
-BuildRequires: gtkglext-devel
+BuildRequires: motif-devel
 BuildRequires: desktop-file-utils
 
 Requires: mpg123
@@ -68,12 +66,13 @@ pub/Lisp/%{tarname}.tar.gz.
 
 This package contains snd version %{pkgver}, dated %{snd_date}.
 
-%package gtk
-Summary: Gtk version of snd (%{pkgver}, %{snd_date})
+%package gui
+Summary: Motif version of snd (%{pkgver}, %{snd_date})
 Requires: snd == %{version}-%{release}
+Obsoletes: snd-gtk < 25.9
 
-%description gtk
-A version of the Snd editor (%{pkgver} of %{snd_date}) compiled with the gtk
+%description gui
+A version of the Snd editor (%{pkgver} of %{snd_date}) compiled with the Motif
 gui.
 
 %package utils
@@ -113,10 +112,10 @@ done
 
 %build
 
-# build Gtk version
-%configure %{config_options} --with-gtk=yes
+# build Motif version
+%configure %{config_options} --with-gui=yes
 %make_build
-mv snd snd-gtk
+mv snd snd-gui
 make clean
 rm -f config.cache
 
@@ -125,13 +124,14 @@ rm -f config.cache
 # removed sndsine for now
 # audinfo is not happy (9/26/2005)
 perl -p -i -e 's|LIBS = -ldl |LIBS = -lpthread -ldl |' makefile
-%make_build sndplay sndinfo
+%make_build snd sndplay sndinfo
+mv snd snd-nox
 
 %install
 mkdir -p %{buildroot}%{_bindir}/
 mkdir -p %{buildroot}%{_mandir}/man1
 install -m 644 snd.1 %{buildroot}%{_mandir}/man1
-install -m 755 snd-gtk %{buildroot}%{_bindir}/snd-gtk
+install -m 755 snd-gui %{buildroot}%{_bindir}/snd-gui
 # removed sndsine for now
 install -m 755 sndplay sndinfo %{buildroot}%{_bindir}
 
@@ -180,14 +180,17 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libdir}/snd/scheme
 %config(noreplace) /etc/snd.conf
 
-%files gtk
-%{_bindir}/snd-gtk
+%files gui
+%{_bindir}/snd-gui
 
 %files utils
 %{_bindir}/sndplay
 %{_bindir}/snd-info
 
 %changelog
+* Sun Dec 14 2025 Yann Collette <ycollette.nospam@free.fr> - 25.9-2
+- update to 25.9-2 - enable motif gui
+
 * Sun Dec 14 2025 Yann Collette <ycollette.nospam@free.fr> - 25.9-1
 - update to 25.9-1
 
