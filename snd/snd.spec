@@ -17,7 +17,7 @@
 Summary: A sound editor (%{pkgver}, %{snd_date})
 Name: snd
 Version: %{pkgver}
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: LGPL
 URL: https://ccrma.stanford.edu/software/snd/
 ExclusiveArch: x86_64 aarch64
@@ -29,8 +29,6 @@ Patch0:  snd-13-docdir.patch
 
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
-
-Requires: hicolor-icon-theme
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -55,6 +53,8 @@ BuildRequires: desktop-file-utils
 Requires: mpg123
 Requires: flac
 Requires: timidity++
+Requires: xorg-x11-fonts-misc
+Requires: hicolor-icon-theme
 
 %description
 Snd is a sound editor modelled loosely after Emacs and an old,
@@ -153,16 +153,6 @@ desktop-file-install --vendor %{desktop_vendor} \
   `for c in ${BASE} ${XTRA} ; do echo "--add-category $c " ; done` \
   %{SOURCE2}
 
-#--- a configuration file with the default scheme paths ready to go
-mkdir -p %{buildroot}/etc
-cat << EOF > %{buildroot}/etc/snd.conf
-;; Default snd configuration file
-;;
-;; add paths to begin of default load path (last in the list is the
-;; first in the search order)
-(set! *load-path (cons "%{_libdir}/snd/scheme" *load-path))
-EOF
-
 # sndinfo conflicts with a utility in csound (from fedora extras), so
 # rename it snd-info
 mv %{buildroot}%{_bindir}/sndinfo %{buildroot}%{_bindir}/snd-info
@@ -178,7 +168,6 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/applications/*snd.desktop
 %{_mandir}/man1/snd.1*
 %{_libdir}/snd/scheme
-%config(noreplace) /etc/snd.conf
 
 %files gui
 %{_bindir}/snd-gui
@@ -188,6 +177,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_bindir}/snd-info
 
 %changelog
+* Mon Dec 15 2025 Yann Collette <ycollette.nospam@free.fr> - 25.9-3
+- update to 25.9-3 - fix configuration and remove custom conf file
+
 * Sun Dec 14 2025 Yann Collette <ycollette.nospam@free.fr> - 25.9-2
 - update to 25.9-2 - enable motif gui
 
