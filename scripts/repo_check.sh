@@ -1080,7 +1080,8 @@ https://github.com/SpotlightKid/dfjpverb
 https://github.com/SpotlightKid/dfzitarev1
 https://github.com/madskjeldgaard/Birdhouse
 https://github.com/TimKrause2/twk-ladspa-plugins
-https://github.com/TimKrause2/VocoderSynth"
+https://github.com/TimKrause2/VocoderSynth
+https://github.com/jmantra/jdrummer"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
