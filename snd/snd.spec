@@ -12,12 +12,12 @@
 %define	desktop_vendor planetccrma
 
 # configuration options (note: check later --with-rt)
-%define config_options --prefix=%{_prefix} --with-alsa --with-jack --with-ladspa --with-doc-dir=%{_datadir}/doc/snd-%{pkgver}
+%define config_options --prefix=%{_prefix} --with-alsa --with-jack --with-ladspa --with-doc-dir=%{_datadir}/doc/snd/
 
 Summary: A sound editor (%{pkgver}, %{snd_date})
 Name: snd
 Version: %{pkgver}
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: LGPL
 URL: https://ccrma.stanford.edu/software/snd/
 ExclusiveArch: x86_64 aarch64
@@ -102,19 +102,18 @@ features of the audio hardware.
 # the html documentation
 for i in *.html ; do
     for j in *.html ; do
-        %{__perl} -p -i -e "s|href=\"${i}|href=\"file://%{_datadir}/doc/snd-%{pkgver}/${i}|g" ${j}
+        %{__perl} -p -i -e "s|href=\"${i}|href=\"file://%{_datadir}/doc/snd/${i}|g" ${j}
     done
 done
 
-# but also change the directory where the html files are looked up
-# by default
-%{__perl} -p -i -e "s|/usr/share/doc/snd-10/snd.html|/usr/share/doc/snd-%{pkgver}/snd.html|g" index.scm
+# but also change the directory where the html files are looked up by default
+%{__perl} -p -i -e "s|/usr/share/doc/snd-10/snd.html|/usr/share/doc/snd/snd.html|g" index.scm
 
 %build
 
 # build Motif version
 %configure %{config_options} --with-gui=yes
-%make_build
+%make_build -j1
 mv snd snd-gui
 make clean
 rm -f config.cache
@@ -124,7 +123,7 @@ rm -f config.cache
 # removed sndsine for now
 # audinfo is not happy (9/26/2005)
 perl -p -i -e 's|LIBS = -ldl |LIBS = -lpthread -ldl |' makefile
-%make_build snd sndplay sndinfo
+%make_build -j1 snd sndplay sndinfo
 mv snd snd-nox
 
 %install
@@ -177,6 +176,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_bindir}/snd-info
 
 %changelog
+* Tue Dec 16 2025 Yann Collette <ycollette.nospam@free.fr> - 25.9-4
+- update to 25.9-4 - fix documentation
+
 * Mon Dec 15 2025 Yann Collette <ycollette.nospam@free.fr> - 25.9-3
 - update to 25.9-3 - fix configuration and remove custom conf file
 
