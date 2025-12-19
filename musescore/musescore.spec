@@ -26,13 +26,13 @@
 %global __requires_exclude qmlimport\\((MuseScore|FileIO).*
 
 %define rname          mscore
-%define version_lesser 4.4
-%define revision       12112024
+%define version_lesser 4.6
+%define revision       12182025
 %define docdir         %{_docdir}/%{name}
 %define fontdir        %{_datadir}/fonts/%{name}
 
 Name: mscore-mao
-Version: 4.4.4
+Version: 4.6.5
 Release: 3%{?dist}
 Summary: A WYSIWYG music score typesetter
 
@@ -71,7 +71,7 @@ Source4: https://ftp.osuosl.org/pub/musescore/soundfont/MuseScore_General/MuseSc
 
 # VST3
 # Usage: ./vst3-source.sh <TAG>
-#        ./vst3-source.sh v3.7.11_build_10
+#        ./vst3-source.sh v3.7.14_build_55
 Source5: vst3sdk.tar.gz
 Source6: vst3-source.sh
 
@@ -90,6 +90,7 @@ BuildRequires: qt6-qtdeclarative-devel
 BuildRequires: qt6-qtsvg-devel
 BuildRequires: qt6-qt5compat-devel
 BuildRequires: qt6-qtscxml-devel
+BuildRequires: qt6-qtshadertools-devel
 BuildRequires: harfbuzz-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: freetype-devel
@@ -99,7 +100,7 @@ BuildRequires: libogg-devel
 BuildRequires: portaudio-devel
 BuildRequires: libsndfile-devel
 BuildRequires: libvorbis-devel
-BuildRequires: ffmpeg-devel
+BuildRequires: (ffmpeg-devel or ffmpeg-free-devel)
 BuildRequires: portmidi-devel
 BuildRequires: fdupes
 BuildRequires: steinberg-bravura-fonts-all
@@ -156,26 +157,30 @@ tar xvfz %{SOURCE5}
 CURRENT_PATH=`pwd`
 
 %set_build_flags
- 
+
+export CFLAGS="-Wno-implicit-function-declaration $CFLAGS"
+export CXXFLAGS="-Wno-implicit-function-declaration $CXXFLAGS"
+
 %cmake \
-       -DMUE_BUILD_UNIT_TESTS:BOOL=OFF \
-       -DMUE_BUILD_CRASHPAD_CLIENT:BOOL=OFF \
-       -DMUE_BUILD_VST_MODULE:BOOL=ON \
-       -DMUE_BUILD_VIDEOEXPORT_MODULE:BOOL=OFF \
-       -DMUE_BUILD_UPDATE_MODULE:BOOL=OFF \
-       -DMUE_ENABLE_AUDIO_JACK:BOOL=ON \
-       -DMUSE_COMPILE_USE_PCH:BOOL=OFF \
-       -DMUSESCORE_BUILD_MODE=release \
-       -DMUSESCORE_BUILD_NUMBER=1 \
-       -DMUSESCORE_REVISION=%{revision} \
-       -DVST3_SDK_PATH:PATH=$CURRENT_PATH/vst3sdk \
-       -DCMAKE_SKIP_RPATH:BOOL=ON \
-       -DX86_MAY_HAVE_SSE:BOOL=ON \
-       -DX86_MAY_HAVE_SSE2:BOOL=ON \
-       -DX86_MAY_HAVE_SSE4_1:BOOL=OFF \
-       -DX86_MAY_HAVE_AVX:BOOL=OFF \
-       -DOPUS_X86_PRESUME_SSE:BOOL=ON \
-       -DOPUS_X86_PRESUME_SSE2:BOOL=ON
+    -DCMAKE_UNITY_BUILD:BOOL=ON \
+    -DMUE_BUILD_UNIT_TESTS:BOOL=OFF \
+    -DMUE_BUILD_CRASHPAD_CLIENT:BOOL=OFF \
+    -DMUE_BUILD_VST_MODULE:BOOL=ON \
+    -DMUE_BUILD_VIDEOEXPORT_MODULE:BOOL=OFF \
+    -DMUE_BUILD_UPDATE_MODULE:BOOL=OFF \
+    -DMUE_ENABLE_AUDIO_JACK:BOOL=ON \
+    -DMUSE_COMPILE_USE_PCH:BOOL=OFF \
+    -DMUSESCORE_BUILD_MODE=release \
+    -DMUSESCORE_BUILD_NUMBER=1 \
+    -DMUSESCORE_REVISION=%{revision} \
+    -DVST3_SDK_PATH:PATH=$CURRENT_PATH/vst3sdk \
+    -DCMAKE_SKIP_RPATH:BOOL=ON \
+    -DX86_MAY_HAVE_SSE:BOOL=ON \
+    -DX86_MAY_HAVE_SSE2:BOOL=ON \
+    -DX86_MAY_HAVE_SSE4_1:BOOL=OFF \
+    -DX86_MAY_HAVE_AVX:BOOL=OFF \
+    -DOPUS_X86_PRESUME_SSE:BOOL=ON \
+    -DOPUS_X86_PRESUME_SSE2:BOOL=ON
 
 %cmake_build
 
@@ -283,6 +288,8 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/org.musescore.MuseSc
 %license fonts/finalemaestro/OFL.txt.finalemaestro
 
 %changelog
+* Thu Dec 18 2025 Yann Collette <ycollette.nospam@free.fr> - 4.6.5-3
+- update to 4.6.5-3
 * Wed Dec 11 2024 Yann Collette <ycollette.nospam@free.fr> - 4.4.4-3
 - update to 4.4.4-3
 * Thu Oct 24 2024 Yann Collette <ycollette.nospam@free.fr> - 4.4.3-3
