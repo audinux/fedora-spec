@@ -319,7 +319,6 @@ https://github.com/jatinchowdhury18/ChowDSP-VCV
 https://github.com/jatinchowdhury18/ChowPhaser
 https://github.com/jatinchowdhury18/KlonCentaur
 https://github.com/jberg/milkdrop-editor-electron
-https://github.com/jean-emmanuel/loop192
 https://github.com/jean-emmanuel/open-stage-control
 https://github.com/jensschulze/GoodSheperd
 https://github.com/jeremymuller/Sha-Bang-Modules
@@ -911,7 +910,6 @@ https://github.com/Wasted-Audio/wstd-flangr
 https://github.com/Wasted-Audio/wstd-3q
 https://github.com/greyboxaudio/SG-323
 https://github.com/sjoerdvankreel/firefly-synth
-https://github.com/jean-emmanuel/seq192
 https://git.open-music-kontrollers.ch/~hp/eteroj.lv2
 https://git.open-music-kontrollers.ch/~hp/mephisto.lv2
 https://git.open-music-kontrollers.ch/~hp/orbit.lv2
@@ -1089,6 +1087,8 @@ https://github.com/YPares/arpligner"
 # https://github.com/50m30n3/SO-666
 # https://github.com/WeirdConstructor/HexoSynth
 # https://github.com/WeirdConstructor/Kickmess
+# https://github.com/jean-emmanuel/loop192
+# https://github.com/jean-emmanuel/seq192
 
 cp git_tags_old.txt git_tags_old.txt.bkp
 
