@@ -1,10 +1,10 @@
 # Status: active
 # Tag: Drum, Presets
 # Type: LV2, Presets
-# Category: Synthesizer
+# Category: Synthesizer, Sequencer
 
 Name: drumrox-kits
-Version: 3.0.1
+Version: 4.0.0
 Release: 7%{?dist}
 Summary: A set of drumrox drum kits
 License: GPL-3.0-or-later
@@ -100,21 +100,23 @@ Requires: license-%{name}
 %description -n %{name}-SoundMaster_SR-88
 SoundMaster SR-88 drumkit for %{name}
 
-%package -n %{name}-Ludwig_Sixties
-Summary:  Ludwig Sixties drumkit for %{name}
+%package -n %{name}-Sixties_Rock
+Summary:  Sixties Rock drumkit for %{name}
 License:  GPL-3.0-or-later
 Requires: license-%{name}
+Obsoletes: %{name}-Ludwig_Sixties <= 3.0.1
 
-%description -n %{name}-Ludwig_Sixties
-Ludwig Sixties drumkit for %{name}
+%description -n %{name}-Sixties_Rock
+Sixties Rock drumkit for %{name}
 
-%package -n %{name}-Ludwig_Basic
-Summary:  Ludwig Basic drumkit for %{name}
+%package -n %{name}-Sixties_Basic
+Summary:  Sixties Basic drumkit for %{name}
 License:  GPL-3.0-or-later
 Requires: license-%{name}
+Obsoletes: %{name}-Ludwig_Basic <= 3.0.1
 
-%description -n %{name}-Ludwig_Basic
-Ludwig Basic drumkit for %{name}
+%description -n %{name}-Sixties_Basic
+Sixties Basic drumkit for %{name}
 
 %package -n %{name}-ELI_CompuRhythm_CR_7030
 Summary:  ELI CompuRhythm CR 7030 drumkit for %{name}
@@ -164,13 +166,14 @@ Requires: license-%{name}
 %description -n %{name}-GEM_Drum15
 GEM Drum15 drumkit for %{name}
 
-%package -n %{name}-Gretch_Jazzkit
-Summary:  Gretch Jazzkit drumkit for %{name}
+%package -n %{name}-Jazzkit
+Summary:  Jazzkit drumkit for %{name}
 License:  GPL-3.0-or-later
 Requires: license-%{name}
+Obsoletes: %{name}-Gretch_Jazzkit <= 3.0.1
 
-%description -n %{name}-Gretch_Jazzkit
-Gretch Jazzkit drumkit for %{name}
+%description -n %{name}-Jazzkit
+Jazzkit drumkit for %{name}
 
 %package -n %{name}-MTI_AO_1
 Summary:  MTI AO-1 drumkit for %{name}
@@ -272,11 +275,11 @@ install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Afro/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ELI_CompuRhythm_CR_7030/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Fricke_MFB512/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/GEM_Drum15/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Gretch_Jazzkit/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Jazzkit/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Lel-DR8/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Lel-PSR/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Ludwig_Sixties/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Ludwig_Basic/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Sixties_Rock/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Sixties_Basic/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/MTI_AO_1/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Rokton-UDS/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/SoundMaster_SR-88/
@@ -302,11 +305,11 @@ cp -ra Cheetah\ SpecDrum\ Afro/* %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_S
 cp -ra ELI\ CompuRhythm\ CR\ 7030/* %{buildroot}/%{_datadir}/drumrox-kits/ELI_CompuRhythm_CR_7030/
 cp -ra Fricke\ MFB512/* %{buildroot}/%{_datadir}/drumrox-kits/Fricke_MFB512/
 cp -ra GEM\ Drum15/* %{buildroot}/%{_datadir}/drumrox-kits/GEM_Drum15/
-cp -ra Gretch\ Jazzkit/* %{buildroot}/%{_datadir}/drumrox-kits/Gretch_Jazzkit/
+cp -ra Jazzkit/* %{buildroot}/%{_datadir}/drumrox-kits/Jazzkit/
 cp -ra Lel-DR8/* %{buildroot}/%{_datadir}/drumrox-kits/Lel-DR8/
 cp -ra Lel-PSR/* %{buildroot}/%{_datadir}/drumrox-kits/Lel-PSR/
-cp -ra Ludwig\ Sixties/* %{buildroot}/%{_datadir}/drumrox-kits/Ludwig_Sixties/
-cp -ra Ludwig\ Basic/* %{buildroot}/%{_datadir}/drumrox-kits/Ludwig_Basic/
+cp -ra Sixties\ Rock/* %{buildroot}/%{_datadir}/drumrox-kits/Sixties_Rock/
+cp -ra Sixties\ Basic/* %{buildroot}/%{_datadir}/drumrox-kits/Sixties_Basic/
 cp -ra MTI\ AO-1/* %{buildroot}/%{_datadir}/drumrox-kits/MTI_AO_1/
 cp -ra Rokton\ UDS/* %{buildroot}/%{_datadir}/drumrox-kits/Rokton-UDS/
 cp -ra SoundMaster\ SR-88/* %{buildroot}/%{_datadir}/drumrox-kits/SoundMaster_SR-88/
@@ -356,11 +359,11 @@ cp -ra Klone\ Dual\ Percussion\ Synthesiser/* %{buildroot}/%{_datadir}/drumrox-k
 %files -n %{name}-SoundMaster_SR-88
 %{_datadir}/drumrox-kits/SoundMaster_SR-88/*
 
-%files -n %{name}-Ludwig_Sixties
-%{_datadir}/drumrox-kits/Ludwig_Sixties/*
+%files -n %{name}-Sixties_Rock
+%{_datadir}/drumrox-kits/Sixties_Rock/*
 
-%files -n %{name}-Ludwig_Basic
-%{_datadir}/drumrox-kits/Ludwig_Basic/*
+%files -n %{name}-Sixties_Basic
+%{_datadir}/drumrox-kits/Sixties_Basic/*
 
 %files -n %{name}-ELI_CompuRhythm_CR_7030
 %{_datadir}/drumrox-kits/ELI_CompuRhythm_CR_7030/*
@@ -380,8 +383,8 @@ cp -ra Klone\ Dual\ Percussion\ Synthesiser/* %{buildroot}/%{_datadir}/drumrox-k
 %files -n %{name}-GEM_Drum15
 %{_datadir}/drumrox-kits/GEM_Drum15/*
 
-%files -n %{name}-Gretch_Jazzkit
-%{_datadir}/drumrox-kits/Gretch_Jazzkit/*
+%files -n %{name}-Jazzkit
+%{_datadir}/drumrox-kits/Jazzkit/*
 
 %files -n %{name}-MTI_AO_1
 %{_datadir}/drumrox-kits/MTI_AO_1/*
@@ -417,6 +420,9 @@ cp -ra Klone\ Dual\ Percussion\ Synthesiser/* %{buildroot}/%{_datadir}/drumrox-k
 %{_datadir}/drumrox-kits/KloneDualPercussionSynthesiser/*
 
 %changelog
+* Thu Dec 18 2025 Yann Collette <ycollette.nospam@free.fr> - 4.0.0-7
+- update to 4.0.0-7
+
 * Sat Aug 30 2025 Yann Collette <ycollette.nospam@free.fr> - 3.0.1-7
 - update to 3.0.1-7
 
