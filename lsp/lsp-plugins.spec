@@ -7,7 +7,7 @@
 
 Name: lsp-plugins
 Summary: Linux Studio Plugins collection
-Version: 1.2.25
+Version: 1.2.26
 Release: 1%{?dist}
 License: GPL
 URL: https://github.com/sadko4u/lsp-plugins
@@ -131,6 +131,9 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %{_libdir}/clap/*
 
 %changelog
+* Sun Dec 21 2025 Yann Collette <ycollette dot nospam at free.fr> 1.2.26-1
+- update to 1.2.26-1
+
 * Sat Nov 01 2025 Yann Collette <ycollette dot nospam at free.fr> 1.2.25-1
 - update to 1.2.25-1
 
