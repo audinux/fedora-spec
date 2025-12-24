@@ -57,8 +57,11 @@ Source1: tuxguitar.sh
 # 4.36:
 # wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.36-202505281830/swt-4.36-gtk-linux-x86_64.zip
 # wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.36-202505281830/swt-4.36-gtk-linux-aarch64.zip
+# 4.37:
+# wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.37-202509050730/swt-4.37-gtk-linux-x86_64.zip
+# wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.37-202509050730/swt-4.37-gtk-linux-aarch64.zip
 
-%define swt_version 4.36
+%Define swt_version 4.36
 Source3: swt-%{swt_version}-gtk-linux-aarch64.zip
 Source4: swt-%{swt_version}-gtk-linux-x86_64.zip
 
