@@ -83,7 +83,7 @@ cp target/release/liblesynth_fourier.so %{buildroot}/%{_libdir}/vst3/LeSynthFour
 %{_libdir}/vst3/*
 
 %changelog
-* Wed 24 Dec 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
+* Wed Dec 24 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
 - update to 1.2.0-1
 
 * Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1.4-1
