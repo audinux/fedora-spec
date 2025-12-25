@@ -7,7 +7,7 @@
 
 Name: BespokeSynth-weekly
 Version: 1.3.10
-Release: 11%{?dist}
+Release: 12%{?dist}
 Summary: A software modular synth
 License: GPL-3.0-or-later
 URL: https://github.com/BespokeSynth/BespokeSynth
@@ -129,6 +129,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/com.bespo
 %{_datadir}/metainfo/com.bespokesynth.BespokeSynth.metainfo.xml
 
 %changelog
+* Thu Dec 25 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-12
+- Update to 1.3.10-12 - 7df1d9236514772a7ab8a038846c8ef0515bfec1
+
 * Wed Dec 10 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-11
 - Update to 1.3.10-11 - 7df1d9236514772a7ab8a038846c8ef0515bfec1
 
