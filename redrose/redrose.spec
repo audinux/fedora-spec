@@ -1,5 +1,5 @@
 # Status: active
-# Tag: Editor, Tablature, Alsa, MIDI
+# Tag: Editor, Tablature, MIDI, Alsa, Jack, Pipewire
 # Type: Standalone
 # Category: Sequencer, Tool
 
