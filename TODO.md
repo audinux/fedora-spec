@@ -609,7 +609,7 @@ active / inactive
 ### Tag:
 
 ```
-Analyzer, Compressor, Effect, Emulator, Delay, Drum, Jack, Alsa
+Analyzer, Compressor, Effect, Emulator, Delay, Drum, Jack, Alsa, Pipewire
 Editor, Legacy, Live, Gate, Graphic, Guitar, Amp Simul
 Delay, Overdrive, Cabinet, Equalizer, Convolution, Octaver
 MIDI, Tablature, Phaser, Tape, Tracker, Reverb, Presets
@@ -622,13 +622,13 @@ Modulation, Player, Pitch, Arpeggiator, Mixer, Vocoder
 ### Type:
 
 ```
-Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, CLAP, Pipewire, Presets, Rack, Driver, Nyquist
+Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, CLAP, Presets, Rack, Driver, Nyquist
 ```
 
 ### Category:
 
 ```
-Audio, DAW, Effect, Synthesizer, MIDI, Programming, Sampler, Sequencer
+Audio, DAW, Effect, Synthesizer, Programming, Sampler, Sequencer
 Graphic, Tool, Session Mngmt, Plugin
 ```
 
