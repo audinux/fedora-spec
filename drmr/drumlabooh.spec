@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: drumlabooh
-Version: 12.0.0
+Version: 12.1.0
 Release: 2%{?dist}
 Summary: LV2/VSTi drum machine that can use Hydrogen, SFZ, and other drumkit formats
 License: GPL-3.0-only
@@ -85,6 +85,9 @@ cp %{__cmake_builddir}/drumlabooh_artefacts/Standalone/* %{buildroot}/%{_bindir}
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Dec 26 2025 Yann Collette <ycollette.nospam@free.fr> - 12.1.0-2
+- update to 12.1.0-2
+
 * Fri Dec 19 2025 Yann Collette <ycollette.nospam@free.fr> - 12.0.0-2
 - update to 12.0.0-2
 
