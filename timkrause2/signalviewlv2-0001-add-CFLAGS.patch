@@ -1,0 +1,40 @@
+From f362bd9520d2df93c1f4f152ac59559f85d2def3 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Fri, 26 Dec 2025 09:04:39 +0100
+Subject: [PATCH] add CFLAGS
+
+---
+ Makefile | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 48c59d8..9ae85f6 100644
+--- a/Makefile
++++ b/Makefile
+@@ -16,12 +16,12 @@ all: SignalView.lv2
+ $(BUILDDIR)/libpugl.a: $(shell find pugl/)
+ 	mkdir -p $(@D)
+ 	mkdir -p $@.tmp
+-	cd $@.tmp ; gcc -I$(CURDIR)/pugl/include `pkg-config --cflags x11` $(addprefix $(CURDIR)/, $(PUGL_C_FILES)) -c
++	cd $@.tmp ; gcc $(CFLAGS) -I$(CURDIR)/pugl/include `pkg-config --cflags x11` $(addprefix $(CURDIR)/, $(PUGL_C_FILES)) -c
+ 	$(AR) $(ARFLAGS) $@ $@.tmp/*.o
+ 	rm -rf $@.tmp
+ 
+ SignalView.so: SignalView.o
+-	g++ -shared -o SignalView.so SignalView.o
++	g++ $(LDFLAGS) -shared -o SignalView.so SignalView.o
+ 
+ SignalView.o: SignalView.cpp SignalView.h uris.h
+ 
+@@ -29,7 +29,7 @@ UI_OBJS= SignalViewUI.o Font.o Grid.o LGraph.o Shader.o Spectrum.o Waterfall.o S
+ 	GraphFill.o TGraph.o
+ 
+ SignalViewUI.so: $(UI_OBJS) $(BUILDDIR)/libpugl.a
+-	g++ -Wall -Wextra -shared -fPIC -o SignalViewUI.so  $(UI_OBJS) \
++	g++ $(CXXFLAGS) -Wall -Wextra -shared -fPIC -o SignalViewUI.so  $(UI_OBJS) \
+ 	 -L$(BUILDDIR) -lpugl `pkg-config --libs x11 xext xcursor xrandr glx fftw3 freetype2`
+ 
+ SignalViewUI.o: SignalViewUI.cpp
+-- 
+2.52.0
+

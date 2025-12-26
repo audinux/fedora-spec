@@ -1081,7 +1081,8 @@ https://github.com/TimKrause2/twk-ladspa-plugins
 https://github.com/TimKrause2/VocoderSynth
 https://github.com/jmantra/jdrummer
 https://github.com/YPares/arpligner
-https://github.com/be1/redrose"
+https://github.com/be1/redrose
+https://github.com/TimKrause2/SignalViewLV2"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
