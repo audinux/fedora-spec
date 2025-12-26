@@ -10,12 +10,12 @@ asking the user to install puredata-doc
 Origin: Debian
 Forwarded: not-needed
 ---
- tcl/pd_menucommands.tcl | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ tcl/pd_menucommands.tcl | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
 --- puredata.orig/tcl/pd_menucommands.tcl
 +++ puredata/tcl/pd_menucommands.tcl
-@@ -233,10 +233,22 @@
+@@ -235,6 +235,16 @@
      }
  }
  
@@ -31,14 +31,16 @@ Forwarded: not-needed
 +
  # parse the textfile for the About Pd page
  proc ::pd_menucommands::menu_aboutpd {} {
-     set versionstring "Pd $::PD_MAJOR_VERSION.$::PD_MINOR_VERSION.$::PD_BUGFIX_VERSION$::PD_TEST_VERSION"
+     set versionstring "$::PD_APPLICATION_NAME $::PD_MAJOR_VERSION.$::PD_MINOR_VERSION.$::PD_BUGFIX_VERSION$::PD_TEST_VERSION"
+@@ -258,6 +268,7 @@
+     }
+ 
      set filename [file join $::sys_guidir about.txt]
-+    set filename "/usr/share/puredata-gui/about.txt"
 +    if {![check_puredatadoc $filename]} return
      if {![file exists $filename]} {
          ::pdwindow::error [_ "ignoring '%s': doesn't exist" $filename]
          ::pdwindow::error "\n"
-@@ -296,6 +308,7 @@
+@@ -317,6 +328,7 @@
  
  # open HTML docs from the menu using the OS-default HTML viewer
  proc ::pd_menucommands::menu_openfile {filename} {

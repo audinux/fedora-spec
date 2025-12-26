@@ -7,8 +7,8 @@
 # Pure Data vanilla build
 #
 
-%define pdver 0.55-2
-%define pkgver 0.55.2
+%define pdver 0.56-2
+%define pkgver 0.56.2
 
 Summary: Pure Data
 Name: puredata
@@ -47,7 +47,6 @@ Patch6:  pd-patch-fixmanpage.patch
 Patch7:  pd-patch-privacy.patch
 Patch9:  libpd_example.patch
 Patch10: libpd_visibility.patch
-Patch11: pd-patch-0001-fix-format.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: autoconf
@@ -175,8 +174,6 @@ and pdreceive, for sending and receiving FUDI over the net.
 %patch 9 -p1
 # libpd_visibility.patch
 %patch 10 -p1
-# fix format
-%patch 11 -p1
 
 # fix hardwired lib dir in startup file (why the heck is this hardwired?)
 sed -i -e "s|\"/lib|\"/%{_lib}|g" src/s_main.c
@@ -315,6 +312,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.puredata.pd-gui.d
 %{_mandir}/man1/pdsend.1.gz
 
 %changelog
+* Fri Dec 26 2025 Yann Collette <ycollette.nospam@free.fr> - 0.56.2-4
+- update to 0.56.2-4
+
 * Fri Apr 18 2025 Yann Collette <ycollette.nospam@free.fr> - 0.55.2-4
 - update to 0.55.2-4
 

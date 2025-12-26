@@ -24,14 +24,14 @@ Forwarded: not-needed
  ##### Prelude #####
  
  AC_PREREQ(2.59)
--AC_INIT([pd], [0.55.2])
-+AC_INIT([puredata], [0.55.2])
+-AC_INIT([pd], [0.56.2])
++AC_INIT([puredata], [0.56.2])
  AC_CONFIG_SRCDIR(src/m_pd.c)
  AC_CONFIG_AUX_DIR([m4/config])
  AC_CONFIG_MACRO_DIR([m4/generated])
 --- puredata.orig/src/s_main.c
 +++ puredata/src/s_main.c
-@@ -710,7 +710,7 @@
+@@ -714,7 +714,7 @@
  
      strncpy(sbuf, sbuf2, MAXPDSTRING-30);
      sbuf[MAXPDSTRING-30] = 0;

@@ -44,7 +44,7 @@ Forwarded: not-needed
  
  void pd_init(void);
  void pd_term(void);
-@@ -406,8 +410,8 @@
+@@ -409,8 +413,8 @@
          sys_loadpreferences(prefsfile, 1);  /* args to override prefs */
      if (sys_argparse(argc-1, argv+1))           /* parse cmd line args */
          return (1);
