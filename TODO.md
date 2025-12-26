@@ -177,7 +177,6 @@
 | StoneMistress                 | https://github.com/NaviCisco/StoneMistress |
 | Disflux                       | https://github.com/Dimethoxy/Disflux |
 | Plasma                        | https://github.com/Dimethoxy/Plasma |
-| SignalViewLV2                 | https://github.com/TimKrause2/SignalViewLV2 |
 | lossless-cut                  | https://github.com/mifi/lossless-cut |
 | Millisecond                   | https://github.com/gaheldev/Millisecond |
 | scale-remapper                | https://github.com/xivilay/scale-remapper |
@@ -209,7 +208,6 @@
 | ConvertWithMoss               | https://github.com/git-moss/ConvertWithMoss |
 | OmniAmp                       | https://github.com/ArborealAudio/OmniAmp |
 | STR-X                         | https://github.com/ArborealAudio/STR-X |
-| SignalViewLV2                 | https://github.com/TimKrause2/SignalViewLV2 |
 | midi-okular-pageturner        | https://github.com/wakira/midi-okular-pageturner |
 | RTcmix                        | https://github.com/RTcmix/RTcmix |
 | RTcmixShell                   | https://github.com/RTcmix/RTcmixShell |
