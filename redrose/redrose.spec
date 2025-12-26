@@ -5,7 +5,7 @@
 
 Name: redrose
 Version: 0.5.44
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: ABC notation music integrated environment
 License: GPL-3.0
 URL: http://brouits.free.fr/redrose
@@ -18,6 +18,7 @@ Source0: https://github.com/be1/redrose/archive/refs/tags/%{version}.tar.gz#/%{n
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
+BuildRequires: patchelf
 BuildRequires: qt6-qtbase-devel
 BuildRequires: qt6-qttools-devel
 BuildRequires: libsmf-devel
@@ -37,14 +38,17 @@ ABC music notation integrated environment
 %prep
 %autosetup -n %{name}-%{version}
 
+# Use a fluidsynth default SF2 file
 sed -i -e "s|/usr/share/sounds/sf2/default-GM.sf2|/usr/share/sounds/sf2/default.sf2|g" app/config.h.in
+# Force the build of libabc as a static library
+sed -i -e "s|add_library(abc \${SRCS} \${HEADERS})|add_library(abc STATIC \${SRCS} \${HEADERS})|g" abc/CMakeLists.txt
 
 %build
 
 %cmake
 %cmake_build
 
-%Install
+%install
 
 %cmake_install
 
@@ -68,5 +72,8 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/fr.free.b
 %{_datadir}/%{name}/locale/*.qm
 
 %changelog
+* Fri Dec 26 2025 Yann Collette <ycollette.nospam@free.fr> - 0.5.44-2
+- update to 0.5.44-2: fix installation
+
 * Wed Dec 24 2025 Yann Collette <ycollette.nospam@free.fr> - 0.5.44-1
 - Initial development
