@@ -4,7 +4,7 @@
 # Category: Audio, Tool, Graphic
 
 Name: kholorsstation
-Version: 1.25.0
+Version: 1.26.0
 Release: 1%{?dist}
 Summary: Live, color-coded spectrogram of your DAW tracks in a single window
 License: GPL-3.0-or-later
@@ -146,6 +146,9 @@ patchelf --set-rpath '$ORIGIN/../../../../KholorsStation/' `find %{buildroot}/%{
 %{_datadir}/applications/*
 
 %changelog
+* Fri Dec 26 2025 Yann Collette <ycollette.nospam@free.fr> - 1.26.0-1
+- update to 1.26.0-1
+
 * Sun Nov 02 2025 Yann Collette <ycollette.nospam@free.fr> - 1.25.0-1
 - update to 1.25.0-1
 
