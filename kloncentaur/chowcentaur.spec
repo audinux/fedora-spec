@@ -1,4 +1,8 @@
 # Status: active
+# Tag: Guitar, Overdrive
+# Type: Plugin, LV2, VST3
+# Category: Audio, Effect
+
 # spec file for package ChowCentaur
 #
 # Copyright (c) 2019 SUSE LINUX GmbH, Nuernberg, Germany.
@@ -12,9 +16,6 @@
 # license that conforms to the Open Source Definition (Version 1.9)
 # published by the Open Source Initiative.
 
-# Tag: Guitar, Overdrive
-# Type: Plugin, LV2, VST
-# Category: Audio, Effect
 
 Name: ChowCentaur
 Version: 1.4.0
@@ -28,11 +29,11 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to generater code archive:
-# ./source_chowcentaur.sh <tag>
-# ./source_chowcentaur.sh v1.4.0
+# Usage: ./source_jatinchowdhury18.sh <project> <tag>
+#        ./source_jatinchowdhury18.sh KlonCentaur v1.4.0
 
 Source0: KlonCentaur.tar.gz
-Source1: source_chowcentaur.sh
+Source1: source_jatinchowdhury18.sh
 
 BuildRequires: gcc-c++
 BuildRequires: JUCE

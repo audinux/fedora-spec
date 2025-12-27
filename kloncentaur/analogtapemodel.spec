@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Guitar, Tape
-# Type: Plugin, LV2, VST
+# Type: Plugin, LV2, VST3
 # Category: Audio, Effect
 
 Name: AnalogTapeModel
@@ -15,11 +15,11 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to generater code archive:
-# ./source_analogtapemodel.sh <tag>
-# ./source_analogtapemodel.sh v2.11.4
+# Usage: ./source_jatinchowdhury18.sh <project> <tag>
+#        ./source_jatinchowdhury18.sh AnalogTapeModel v2.11.4
 
 Source0: AnalogTapeModel.tar.gz
-Source1: source_analogtapemodel.sh
+Source1: source_jatinchowdhury18.sh
 
 BuildRequires: gcc-c++
 BuildRequires: JUCE

@@ -21,12 +21,11 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to generater code archive:
-# Usage: ./source_chowdhurydsp.sh <project> <tag>
-#        ./source_chowdhurydsp.sh ChowMultiTool v1.0.0
-#        ./source_chowdhurydsp.sh ChowMultiTool main
+# Usage: ./source_jatinchowdhury18.sh <project> <tag>
+#        ./source_jatinchowdhury18.sh ChowMultiTool v1.0.0
 
 Source0: ChowMultiTool.tar.gz
-Source1: source_chowdhurydsp.sh
+Source1: source_jatinchowdhury18.sh
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -35,7 +34,6 @@ BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xinerama)
 BuildRequires: pkgconfig(xext)
 BuildRequires: pkgconfig(freetype2)
-BuildRequires: pkgconfig(webkit2gtk-4.0)
 BuildRequires: pkgconfig(gtk+-x11-3.0)
 BuildRequires: pkgconfig(jack)
 BuildRequires: libcurl-devel

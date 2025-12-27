@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Guitar, Delay
-# Type: Plugin, LV2, VST
+# Type: Plugin, LV2, VST3
 # Category: Audio, Effect
 
 Name: ChowMatrix
@@ -15,11 +15,11 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to generater code archive:
-# ./source_chowmatrix.sh <tag>
-# ./source_chowmatrix.sh v1.3.0
+# Usage: ./source_jatinchowdhury18.sh <project> <tag>
+#        ./source_jatinchowdhury18.sh ChowMatrix v1.3.0
 
 Source0: ChowMatrix.tar.gz
-Source1: source_chowmatrix.sh
+Source1: source_jatinchowdhury18.sh
 
 BuildRequires: gcc-c++
 BuildRequires: JUCE

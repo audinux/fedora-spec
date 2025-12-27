@@ -15,11 +15,11 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to generater code archive:
-# ./source_chowphaser.sh <tag>
-# ./source_chowphaser.sh v1.1.1
+# Usage: ./source_jatinchowdhury18.sh <project> <tag>
+#        ./source_jatinchowdhury18.sh ChowPhaser v1.1.1
 
 Source0: ChowPhaser.tar.gz
-Source1: source_chowphaser.sh
+Source1: source_jatinchowdhury18.sh
 
 BuildRequires: gcc-c++
 BuildRequires: JUCE

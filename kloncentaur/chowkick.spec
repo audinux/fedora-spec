@@ -15,11 +15,11 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to generater code archive:
-# ./source_chowkick.sh <tag>
-# ./source_chowkick.sh v1.2.0
+# Usage: ./source_jatinchowdhury18.sh <project> <tag>
+#        ./source_jatinchowdhury18.sh ChowKick v1.2.0
 
 Source0: ChowKick.tar.gz
-Source1: source_chowkick.sh
+Source1: source_jatinchowdhury18.sh
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
