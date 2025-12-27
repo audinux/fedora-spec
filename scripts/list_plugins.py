@@ -105,10 +105,22 @@ if __name__ == '__main__':
     print("# Checking")
     print("#\n#\n#")
 
-    for name, val in spec_dict.items():
+    for name in sorted(spec_dict):
+        val = spec_dict[name]
         if not all([True if _tag in val['dnf_type'] else False for _tag in val['tag']]):
             print(f"{name}: miss some types: {','.join(val['tag'])} / {','.join(val['dnf_type'])}")
             
-    for name, val in spec_dict.items():
+    for name in sorted(spec_dict):
+        val = spec_dict[name]
         if not val['found']:
             print(f"{name}: was not found")
+
+    print("Plugin list:")
+
+    print("| name | file | tags | dnf tags | found |")
+    print("|------|------|------|----------|-------|")
+    for name in sorted(spec_dict):
+        val = spec_dict[name]
+        _file = val['file'].replace('../', '', 1) if val['file'] else None
+        print(f"| {name} | {_file} | {','.join(val['tag'])} | {','.join(val['dnf_type'])} | {val['found']} |")
+    
