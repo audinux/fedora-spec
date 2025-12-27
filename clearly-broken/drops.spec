@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Sampler
-# Type: Plugin, LV2
+# Type: Plugin, VST3, LV2
 # Category: Audio, Effect
 
 Name:    drops

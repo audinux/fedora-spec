@@ -1,7 +1,8 @@
 # Status: active
 # Tag: Effect
-# Type: Plugin, LV2
+# Type: Plugin, LV2, VST
 # Category: Audio, Effect
+# Todo: split into LV2 / VST / license packages
 
 %global commit0 59baeb86b8851f521bc8162e22e3f15061662cc3
 

@@ -1,4 +1,4 @@
-# Status: active
+# Status: inactive
 # Tag: Effect
 # Type: Plugin, CLAP
 # Category: Audio, Effect

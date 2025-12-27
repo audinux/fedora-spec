@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Effect, Delay
-# Type: VST3
+# Type: Plugin, VST3
 # Category: Effect
 
 %global commit0 84e7e3d19ecb06884d5a7d9775737c31e6383fac

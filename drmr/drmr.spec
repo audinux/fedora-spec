@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Drum
-# Type: LV2
+# Type: Plugin, LV2
 # Category: Synthesizer
 
 # Global variables for github repository

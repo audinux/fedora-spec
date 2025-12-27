@@ -24,21 +24,21 @@ Source1: fxseq-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
+BuildRequires: alsa-lib-devel
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
-BuildRequires: libX11-devel
-BuildRequires: xcb-util-keysyms-devel
-BuildRequires: xcb-util-devel
-BuildRequires: libXrandr-devel
-BuildRequires: xcb-util-cursor-devel
-BuildRequires: libxkbcommon-x11-devel
-BuildRequires: libXinerama-devel
-BuildRequires: libcurl-devel
-BuildRequires: alsa-lib-devel
-BuildRequires: mesa-libGL-devel
-BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
+BuildRequires: libX11-devel
+BuildRequires: libXcursor-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libcurl-devel
+BuildRequires: libxkbcommon-x11-devel
+BuildRequires: mesa-libGL-devel
+BuildRequires: xcb-util-cursor-devel
+BuildRequires: xcb-util-devel
+BuildRequires: xcb-util-keysyms-devel
 
 %description
 Fxseq is a step sequencer-based multi effect like dblue glitch or effectrix.

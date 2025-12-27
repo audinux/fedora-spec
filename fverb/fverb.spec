@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Reverb
-# Type: Plugin, LV2
+# Type: Standalone, Plugin, LV2, VST, LADSPA
 # Category: Audio, Effect
 
 # Global variables for github repository
@@ -81,10 +81,13 @@ A LV2 reverberation plugin
 %doc README.md
 %license LICENSE.md
 %{_bindir}/%{name}
+
 %files -n lv2-fverb
 %{_libdir}/lv2/*
+
 %files -n vst-fverb
 %{_libdir}/vst/*
+
 %files -n ladspa-fverb
 %{_libdir}/ladspa/*
 

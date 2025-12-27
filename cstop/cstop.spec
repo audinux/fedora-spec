@@ -1,7 +1,7 @@
 # Status: active
 # Tag: Effect
-# Type: VST3, Standalone
-# Category: Audio, Plugin
+# Type: Plugin, VST3, Standalone
+# Category: Audio, Effect
 
 Name: cstop
 Version: 1.0.1

@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Jack, Alsa, FM
-# Type: Plugin, Standalone, VST3
+# Type: Plugin, Standalone, VST3, CLAP
 # Category: Synthesizer
 
 Name: dexed

@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Drum
-# Type: Plugin, Standalone, VST3
+# Type: Plugin, Standalone, LV2, VST3
 # Category: Audio, Sequencer
 
 Name: drumlabooh

@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Drum, Presets
-# Type: LV2, Presets
+# Type: Presets
 # Category: Synthesizer, Sequencer
 
 Name: drumrox-kits

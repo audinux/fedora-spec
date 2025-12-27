@@ -1,9 +1,7 @@
 # Status: active
 # Tag: Jack, Emulator
-# Type: Standalone, LV2
+# Type: Standalone, Plugin, LV2
 # Category: Audio, Programming
-# GUIToolkit: Gtk2
-# LastSourceUpdate: 2018
 
 Name: foo-yc20
 Version: 1.3.0

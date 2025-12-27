@@ -2,6 +2,7 @@
 # Tag: Delay
 # Type: Plugin, LV2
 # Category: Audio, Effect
+# Todo: split into lv2 / license package
 
 %global debug_package %{nil}
 

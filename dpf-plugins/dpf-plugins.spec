@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Plugin
-# Type: Plugin, LV2, VST, VST3, CLAP, LADSPA
+# Type: Plugin, LV2, VST, VST3, CLAP, LADSPA, DSSI
 # Category: Audio, Effect
 
 %global commit0 3858414367d1fce1e2c5d949f4ed46dde10bbf5c

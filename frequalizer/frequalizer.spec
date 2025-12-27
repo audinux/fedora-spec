@@ -1,8 +1,8 @@
 # Status: active
 # Tag: Equalizer
-# Type: VST3
+# Type: Plugin, VST3
 # Category: Audio, Effect
-# LastSourceUpdate: 2021
+# Todo: split into VST3 / license packages
 
 Name: frequalizer
 Version: 1.0.0

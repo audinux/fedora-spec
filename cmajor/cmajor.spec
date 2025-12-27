@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Reverb, Compressor, Equalizer, Overdrive
-# Type: Plugin, VST3, CLAP, Standalone
+# Type: Plugin, VST3, Standalone
 # Category: Audio, Effect, Synthesizer
 
 %global toolchain clang

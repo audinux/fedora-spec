@@ -219,29 +219,29 @@ cp -ra Flanger/Builds/LinuxMakefile/build/Flanger.vst3 %{buildroot}/%{_libdir}/v
 install -m 755 -p Panning/Builds/LinuxMakefile/build/Panning %{buildroot}/%{_bindir}/
 cp -ra Panning/Builds/LinuxMakefile/build/Panning.vst3 %{buildroot}/%{_libdir}/vst3/
 
-install -m 755 -p Parametric\ EQ/Builds/LinuxMakefile/build/Parametric\ EQ %{buildroot}/%{_bindir}/
-cp -ra Parametric\ EQ/Builds/LinuxMakefile/build/Parametric\ EQ.vst3 %{buildroot}/%{_libdir}/vst3/
+install -m 755 -p Parametric\ EQ/Builds/LinuxMakefile/build/Parametric\ EQ %{buildroot}/%{_bindir}/Parametric_EQ
+cp -ra Parametric\ EQ/Builds/LinuxMakefile/build/Parametric\ EQ.vst3 %{buildroot}/%{_libdir}/vst3/Parametric_EQ.vst3
 
 install -m 755 -p Phaser/Builds/LinuxMakefile/build/Phaser %{buildroot}/%{_bindir}/
 cp -ra Phaser/Builds/LinuxMakefile/build/Phaser.vst3 %{buildroot}/%{_libdir}/vst3/
 
-install -m 755 -p Ping-Pong\ Delay/Builds/LinuxMakefile/build/Ping-Pong\ Delay %{buildroot}/%{_bindir}/
-cp -ra Ping-Pong\ Delay/Builds/LinuxMakefile/build/Ping-Pong\ Delay.vst3 %{buildroot}/%{_libdir}/vst3/
+install -m 755 -p Ping-Pong\ Delay/Builds/LinuxMakefile/build/Ping-Pong\ Delay %{buildroot}/%{_bindir}/Ping-Pong_Delay
+cp -ra Ping-Pong\ Delay/Builds/LinuxMakefile/build/Ping-Pong\ Delay.vst3 %{buildroot}/%{_libdir}/vst3/Ping-Pong_Delay.vst3
 
-install -m 755 -p Pitch\ Shift/Builds/LinuxMakefile/build/Pitch\ Shift %{buildroot}/%{_bindir}/
-cp -ra Pitch\ Shift/Builds/LinuxMakefile/build/Pitch\ Shift.vst3 %{buildroot}/%{_libdir}/vst3/
+install -m 755 -p Pitch\ Shift/Builds/LinuxMakefile/build/Pitch\ Shift %{buildroot}/%{_bindir}/Pitch_Shift
+cp -ra Pitch\ Shift/Builds/LinuxMakefile/build/Pitch\ Shift.vst3 %{buildroot}/%{_libdir}/vst3/Pitch_Shift.vst3
 
-install -m 755 -p Ring\ Modulation/Builds/LinuxMakefile/build/Ring\ Modulation %{buildroot}/%{_bindir}/
-cp -ra Ring\ Modulation/Builds/LinuxMakefile/build/Ring\ Modulation.vst3 %{buildroot}/%{_libdir}/vst3/
+install -m 755 -p Ring\ Modulation/Builds/LinuxMakefile/build/Ring\ Modulation %{buildroot}/%{_bindir}/Ring_Modulation
+cp -ra Ring\ Modulation/Builds/LinuxMakefile/build/Ring\ Modulation.vst3 %{buildroot}/%{_libdir}/vst3/Ring_Modulation.vst3
 
 install -m 755 -p Robotization-Whisperization/Builds/LinuxMakefile/build/Robotization-Whisperization %{buildroot}/%{_bindir}/
 cp -ra Robotization-Whisperization/Builds/LinuxMakefile/build/Robotization-Whisperization.vst3 %{buildroot}/%{_libdir}/vst3/
 
-install -m 755 -p Template\ Frequency\ Domain/Builds/LinuxMakefile/build/Template\ Frequency\ Domain %{buildroot}/%{_bindir}/
-cp -ra Template\ Frequency\ Domain/Builds/LinuxMakefile/build/Template\ Frequency\ Domain.vst3 %{buildroot}/%{_libdir}/vst3/
+install -m 755 -p Template\ Frequency\ Domain/Builds/LinuxMakefile/build/Template\ Frequency\ Domain %{buildroot}/%{_bindir}/Template_Frequency_Domain
+cp -ra Template\ Frequency\ Domain/Builds/LinuxMakefile/build/Template\ Frequency\ Domain.vst3 %{buildroot}/%{_libdir}/vst3/Template_Frequency_Domain.vst3
 
-install -m 755 -p Template\ Time\ Domain/Builds/LinuxMakefile/build/Template\ Time\ Domain %{buildroot}/%{_bindir}/
-cp -ra Template\ Time\ Domain/Builds/LinuxMakefile/build/Template\ Time\ Domain.vst3 %{buildroot}/%{_libdir}/vst3/
+install -m 755 -p Template\ Time\ Domain/Builds/LinuxMakefile/build/Template\ Time\ Domain %{buildroot}/%{_bindir}/Template_Time_Domain
+cp -ra Template\ Time\ Domain/Builds/LinuxMakefile/build/Template\ Time\ Domain.vst3 %{buildroot}/%{_libdir}/vst3/Template_Time_Domain.vst3
 
 install -m 755 -p Tremolo/Builds/LinuxMakefile/build/Tremolo %{buildroot}/%{_bindir}/
 cp -ra Tremolo/Builds/LinuxMakefile/build/Tremolo.vst3 %{buildroot}/%{_libdir}/vst3/
@@ -330,7 +330,7 @@ EOF
 cat > %{buildroot}%{_datadir}/applications/Parametric_EQ.desktop <<EOF
 [Desktop Entry]
 Name=Parametric EQ
-Exec=Parametric\ EQ
+Exec=Parametric_EQ
 Icon=/usr/share/pixmaps/audio-effects
 Comment=Audio Effects Parametric EQ
 Terminal=false
@@ -352,7 +352,7 @@ EOF
 cat > %{buildroot}%{_datadir}/applications/Ping-Pong_Delay.desktop <<EOF
 [Desktop Entry]
 Name=Ping-Pong Delay
-Exec=Ping-Pong\ Delay
+Exec=Ping-Pong_Delay
 Icon=/usr/share/pixmaps/audio-effects
 Comment=Audio Effects Ping-Pong Delay
 Terminal=false
@@ -363,7 +363,7 @@ EOF
 cat > %{buildroot}%{_datadir}/applications/Pitch_Shift.desktop <<EOF
 [Desktop Entry]
 Name=Pitch Shift
-Exec=Pitch\ Shift
+Exec=Pitch_Shift
 Icon=/usr/share/pixmaps/audio-effects
 Comment=Audio Effects Pitch Shift
 Terminal=false
@@ -374,7 +374,7 @@ EOF
 cat > %{buildroot}%{_datadir}/applications/Ring_Modulation.desktop <<EOF
 [Desktop Entry]
 Name=Ring Modulation
-Exec=Ring\ Modulation
+Exec=Ring_Modulation
 Icon=/usr/share/pixmaps/audio-effects
 Comment=Audio Effects Ring Modulation
 Terminal=false
@@ -396,7 +396,7 @@ EOF
 cat > %{buildroot}%{_datadir}/applications/Template_Frequency_Domain.desktop <<EOF
 [Desktop Entry]
 Name=Template Frequency Domain
-Exec=Template\ Frequency\ Domain
+Exec=Template_Frequency_Domain
 Icon=/usr/share/pixmaps/audio-effects
 Comment=Audio Effects Template Frequency Domain
 Terminal=false
@@ -407,7 +407,7 @@ EOF
 cat > %{buildroot}%{_datadir}/applications/Template_Time_Domain.desktop <<EOF
 [Desktop Entry]
 Name=Template Time Domain
-Exec=Template\ Time\ Domain
+Exec=Template_Time_Domain
 Icon=/usr/share/pixmaps/audio-effects
 Comment=Audio Effects Template Time Domain
 Terminal=false
