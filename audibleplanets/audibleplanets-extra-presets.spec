@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Presets
-# Type: VST3, Presets
+# Type: Presets
 # Category: Synthesizer
 
 %global commit0 7c78117c018fbbc6d1fb3970662d4a7c1d63a6e4

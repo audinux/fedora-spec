@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Synthesizer
-# Type: Plugin, Standalone, VST3
+# Type: Plugin, Standalone, VST3, LV2
 # Category: Audio, Synthesizer
 
 %global commit0 901d3753cf8728217abc034251ada2d5fbc12ae6

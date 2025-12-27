@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Jack, Alsa, Distortion
-# Type: Plugin, Standalone, VST3
+# Type: Plugin, Standalone, VST3, CLAP
 # Category: Effect
 
 Name: birdhouse

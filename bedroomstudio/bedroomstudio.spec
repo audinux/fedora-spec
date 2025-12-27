@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Effect, Overdrive
-# Type: LV2
+# Type: Plugin, LV2
 # Category: Audio, Effect
 
 Name: bedroomstudio

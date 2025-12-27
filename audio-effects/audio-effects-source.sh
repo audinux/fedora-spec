@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Usage: ./audio-effects-sources.sh <TAG>
-# ./audio-effects-sources.sh v1.0.0
+# Usage: ./audio-effects-source.sh <TAG>
+#        ./audio-effects-source.sh v1.0.0
 
 git clone https://github.com/juandagilc/Audio-Effects
 cd Audio-Effects

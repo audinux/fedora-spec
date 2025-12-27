@@ -1,6 +1,6 @@
 # Status: active
 # Tag: MIDI, Jack
-# Type: LV2, Standalone
+# Type: Standalone, Plugin, VST, DSSI
 # Category: Synthesizer
 
 Summary: Software Synthesizer

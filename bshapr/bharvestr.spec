@@ -1,12 +1,12 @@
 # Status: active
+# Tag: Jack
+# Type: Plugin, LV2
+# Category: Audio, Synthesizer
+
 # Global variables for github repository
 %global commit0 50cc35124c17d2c42b8b097b558eaa07eab438b7
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
-# Tag: Jack
-# Type: Plugin, LV2
-# Category: Audio, Synthesizer
 
 Summary: Experimental granular synthesizer LV2 plugin
 Name:    lv2-BHarvestr

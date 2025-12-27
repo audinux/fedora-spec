@@ -1,7 +1,8 @@
 # Status: active
 # Tag: MIDI, FM, Emulator
-# Type: Plugin, VST, LV2
+# Type: Standalone, Plugin, VST, LV2
 # Category: Audio, Synthesizer
+# Todo: to split into standalone / lv2 / vst
 
 Name:    adlplug
 Version: 1.0.2

@@ -1,4 +1,4 @@
-# Status: active
+# Status: inactive
 # Tag: Audio, Live, Session
 # Type: Plugin, LV2, VST
 # Category: Audio, Tool, Session Mngmt

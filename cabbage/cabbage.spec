@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Tool
-# Type: Plugin, LV2, VST
+# Type: Plugin, VST3, VST
 # Category: Audio, Tool, Programming
 
 Name: cabbage

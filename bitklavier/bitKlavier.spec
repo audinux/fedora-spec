@@ -1,3 +1,8 @@
+# Status: active
+# Tag: Jack, Piano
+# Type: Standalone, Plugin, VST3; VST
+# Category: Audio, Synthesizer
+
 #
 # spec file for package bitKlavier
 #

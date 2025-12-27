@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Jack, Alsa
-# Type: Plugin, Standalone, VST3
+# Type: Plugin, Standalone, VST3, LV2
 # Category: Audio, Synthesizer
 
 %global debug_package %{nil}

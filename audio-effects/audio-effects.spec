@@ -5,19 +5,19 @@
 
 %define commit0 5360f1b47ec123db4f1cc046745e313bdd44e4d0
 
-Name:    audio-effects
+Name: audio-effects
 Version: 1.0.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A collection of VST3 Synthesizer
-License: GPL-2.0-or-later
-URL:     https://github.com/TheWaveWarden/odin2
+License: GPL-3.0-or-later
+URL: https://github.com/juandagilc/Audio-Effects
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-# Usage: ./audio-effects-sources.sh <TAG>
-# ./audio-effects-sources.sh master
+# Usage: ./audio-effects-source.sh <TAG>
+#        ./audio-effects-source.sh master
 
 # Icon from https://www.flaticon.com/free-icons/sound-effect
 Source0: Audio-Effects.tar.gz
@@ -25,36 +25,45 @@ Source1: jucer.tar.gz
 Source2: audio-effects.png
 Source3: audio-effects-source.sh
 
-BuildRequires: gcc gcc-c++ make
+BuildRequires: gcc gcc-c++
+BuildRequires: make
+BuildRequires: JUCE60
+BuildRequires: alsa-lib-devel
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
 BuildRequires: gtk3-devel
-BuildRequires: webkit2gtk3-devel
 BuildRequires: libX11-devel
-BuildRequires: xcb-util-keysyms-devel
-BuildRequires: xcb-util-devel
-BuildRequires: JUCE60
-BuildRequires: libXrandr-devel
-BuildRequires: xcb-util-cursor-devel
-BuildRequires: libxkbcommon-x11-devel
-BuildRequires: libXinerama-devel
-BuildRequires: libcurl-devel
-BuildRequires: alsa-lib-devel
-BuildRequires: pkgconfig(jack)
-BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libcurl-devel
+BuildRequires: libxkbcommon-x11-devel
+BuildRequires: mesa-libGL-devel
+BuildRequires: pkgconfig(jack)
+BuildRequires: xcb-util-cursor-devel
+BuildRequires: xcb-util-devel
+BuildRequires: xcb-util-keysyms-devel
 BuildRequires: desktop-file-utils
+
+Requires: license-%{name}
 
 %description
 Collection of audio effects plugins implemented from the explanations in
 the book "Audio Effects: Theory, Implementation and Application"
 by Joshua D. Reiss and Andrew P. McPherson.
 
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
+License:  GPL-3.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
-Requires: %{name}
+License:  GPL-3.0-or-later
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -72,119 +81,119 @@ cd Chorus
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Chorus.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Compressor-Expander
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Compressor-Expander.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Delay
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Delay.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Distortion
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Distortion.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Flanger
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Flanger.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Panning
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Panning.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Parametric\ EQ
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Parametric\ EQ.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Phaser
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Phaser.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Ping-Pong\ Delay
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Ping-Pong\ Delay.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Pitch\ Shift
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Pitch\ Shift.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Ring\ Modulation
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Ring\ Modulation.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Robotization-Whisperization
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Robotization-Whisperization.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Template\ Frequency\ Domain
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Template\ Frequency\ Domain.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Template\ Time\ Domain
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Template\ Time\ Domain.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Tremolo
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Tremolo.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Vibrato
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Vibrato.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 cd Wah-Wah
 Projucer60 --set-global-search-path linux defaultJuceModulePath /usr/src/JUCE60/modules/
 Projucer60 --resave Wah-Wah.jucer
 cd Builds/LinuxMakefile
-%make_build CONFIG=Release STRIP=true
+%make_build CONFIG=Release STRIP=true CXXFLAGS="-DJUCE_WEB_BROWSER=0 `pkg-config --cflags gtk+-x11-3.0` $CXXFLAGS"
 cd ../../..
 
 %install
@@ -455,32 +464,19 @@ do
 done
 
 %files
-%doc README.md
 %{_bindir}/*
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/*
+
+%files -n license-%{name}
+%doc README.md
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
 %changelog
-* Tue Aug 09 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3.4-4
-- update to 2.3.4-4
+* Tue Aug 09 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-2
+- update to 1.0.0-2: fix packaging
 
-* Tue Jun 14 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3.3-4
-- update to 2.3.3-4
-
-* Sat Jun 11 2022 Yann Collette <ycollette.nospam@free.fr> - 2.3.2-4
-- update to 2.3.2-4
-
-* Fri Aug 20 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-4
-- add LV2 version
-
-* Wed Aug 18 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-2
-- update to 2.3.1-2
-
-* Mon Oct 26 2020 Yann Collette <ycollette.nospam@free.fr> - 2.2.4-2
-- fix install
-
-* Sat Oct 24 2020 Yann Collette <ycollette.nospam@free.fr> - 2.2.4-1
+* Tue Aug 09 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial spec file
