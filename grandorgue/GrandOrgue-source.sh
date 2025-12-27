@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Usage: ./grandorgue-sources.sh <TAG>
-# ./grandorgue-sources.sh v2.3.4
+#        ./grandorgue-sources.sh v2.3.4
 
 git clone https://github.com/GrandOrgue/grandorgue
 cd grandorgue
