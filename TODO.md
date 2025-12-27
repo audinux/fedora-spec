@@ -218,6 +218,7 @@
 | dkbuilder-guitarix-lv2-plugins | https://github.com/domichel/dkbuilder-guitarix-lv2-plugins |
 | MISST                         | https://github.com/Frikallo/MISST |
 | EasyABC                       | https://github.com/jwdj/EasyABC |
+| Munt                          | https://github.com/munt/munt |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
