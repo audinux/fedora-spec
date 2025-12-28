@@ -10,7 +10,7 @@ Version: 1.0.1
 Release: 1%{?dist}
 Summary: A physically modeled piano synth with a chill lo-fi sound.
 License: GPL-3.0-or-later
-URL: https://punklabs.com/ot-urchin
+URL: https://punklabs.com/ot-keys
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
