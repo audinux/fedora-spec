@@ -1,10 +1,10 @@
 # Status: active
 # Tag: Synthesizer
-# Type: Plugin, VST3, CLAP
+# Type: Plugin, VST3, CLAP, VST
 # Category: Audio, Synthesizer
 
 Name: gearmulator
-Version: 2.0.15
+Version: 2.1.0
 Release: 1%{?dist}
 Summary: Emulation of classic VA synths of the late 90s/2000s that are based on Motorola 56300 family DSPs 
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./gearmulator-source.sh <TAG>
-#        ./gearmulator-source.sh 2.0.15
+#        ./gearmulator-source.sh 2.1.0
 
 Source0: gearmulator.tar.gz
 Source1: gearmulator-source.sh
@@ -121,6 +121,9 @@ cp -ra bin/plugins/Release/CLAP/* %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Sun Dec 28 2025 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+- update to 2.1.0-1
+
 * Mon Dec 22 2025 Yann Collette <ycollette.nospam@free.fr> - 2.0.15-1
 - update to 2.0.15-1
 

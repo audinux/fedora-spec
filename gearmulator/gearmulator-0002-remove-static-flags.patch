@@ -1,20 +1,21 @@
-From 5536e89e434ee0eff3a9faa37cc9fa9d8facbf44 Mon Sep 17 00:00:00 2001
+From 2ed189a9a3c74c8ebe355819dbd8ed33d7c00cd9 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Tue, 11 Mar 2025 21:28:39 +0100
-Subject: [PATCH] patch
+Date: Sun, 28 Dec 2025 09:39:58 +0100
+Subject: [PATCH] fix stdc++
 
 ---
- source/juce.cmake                       | 4 ----
- source/mqPerformanceTest/CMakeLists.txt | 4 ----
- source/mqTestConsole/CMakeLists.txt     | 4 ----
- source/virusTestConsole/CMakeLists.txt  | 4 ----
- 4 files changed, 16 deletions(-)
+ source/juce.cmake                                  | 4 ----
+ source/mqPerformanceTest/CMakeLists.txt            | 4 ----
+ source/mqTestConsole/CMakeLists.txt                | 4 ----
+ source/ronaldo/je8086/jeTestConsole/CMakeLists.txt | 4 ----
+ source/virusTestConsole/CMakeLists.txt             | 4 ----
+ 5 files changed, 20 deletions(-)
 
 diff --git a/source/juce.cmake b/source/juce.cmake
-index 06fb0cf..170a6ab 100644
+index 08c97fe9..151d9cb2 100644
 --- a/source/juce.cmake
 +++ b/source/juce.cmake
-@@ -189,10 +189,6 @@ macro(createJucePlugin targetName productName isSynth plugin4CC binaryDataProjec
+@@ -197,10 +197,6 @@ macro(createJucePlugin targetName productName isSynth plugin4CC binaryDataProjec
  		add_dependencies(PluginFormat_CLAP ${targetName}_CLAP)
  	endif()
  
@@ -26,7 +27,7 @@ index 06fb0cf..170a6ab 100644
  		add_dependencies(PluginFormat_VST2 ${targetName}_VST)
  	endif()
 diff --git a/source/mqPerformanceTest/CMakeLists.txt b/source/mqPerformanceTest/CMakeLists.txt
-index 903185e..a9f280c 100644
+index 903185e1..a9f280c1 100644
 --- a/source/mqPerformanceTest/CMakeLists.txt
 +++ b/source/mqPerformanceTest/CMakeLists.txt
 @@ -15,10 +15,6 @@ createMacSetupScript("mqPerformanceTest")
@@ -41,7 +42,7 @@ index 903185e..a9f280c 100644
  
  if(APPLE)
 diff --git a/source/mqTestConsole/CMakeLists.txt b/source/mqTestConsole/CMakeLists.txt
-index 4d3b3b1..2b37ef8 100644
+index 4d3b3b18..2b37ef8b 100644
 --- a/source/mqTestConsole/CMakeLists.txt
 +++ b/source/mqTestConsole/CMakeLists.txt
 @@ -22,9 +22,5 @@ else()
@@ -54,8 +55,23 @@ index 4d3b3b1..2b37ef8 100644
 -
  #install(TARGETS mqTestConsole DESTINATION . COMPONENT STANDALONE)
  set_property(TARGET mqTestConsole PROPERTY FOLDER "Vavra")
+diff --git a/source/ronaldo/je8086/jeTestConsole/CMakeLists.txt b/source/ronaldo/je8086/jeTestConsole/CMakeLists.txt
+index 251a4143..93712254 100644
+--- a/source/ronaldo/je8086/jeTestConsole/CMakeLists.txt
++++ b/source/ronaldo/je8086/jeTestConsole/CMakeLists.txt
+@@ -15,10 +15,6 @@ createMacSetupScript("jeTestConsole")
+ 
+ target_link_libraries(jeTestConsole PUBLIC jeLib)
+ 
+-if(UNIX AND NOT APPLE)
+-	target_link_libraries(jeTestConsole PUBLIC -static-libgcc -static-libstdc++)
+-endif()
+-
+ install(TARGETS jeTestConsole DESTINATION . COMPONENT JE8086TestConsole)
+ 
+ if(APPLE)
 diff --git a/source/virusTestConsole/CMakeLists.txt b/source/virusTestConsole/CMakeLists.txt
-index 440095b..667caaf 100644
+index 440095b4..667caafc 100644
 --- a/source/virusTestConsole/CMakeLists.txt
 +++ b/source/virusTestConsole/CMakeLists.txt
 @@ -13,10 +13,6 @@ source_group("source" FILES ${SOURCES})
@@ -70,5 +86,5 @@ index 440095b..667caaf 100644
  
  if(${gearmulator_SYNTH_OSIRUS})
 -- 
-2.48.1
+2.52.0
 
