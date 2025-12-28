@@ -1,0 +1,32 @@
+From cf70c354e23c812b91e34092e499e909c36e2630 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sun, 28 Dec 2025 15:55:42 +0100
+Subject: [PATCH] fix rtaudio usage
+
+---
+ src/backends/desktop_application/desktop_application.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/backends/desktop_application/desktop_application.cpp b/src/backends/desktop_application/desktop_application.cpp
+index 86dbffe..6ff71c1 100644
+--- a/src/backends/desktop_application/desktop_application.cpp
++++ b/src/backends/desktop_application/desktop_application.cpp
+@@ -229,7 +229,7 @@ namespace Gammou {
+             for (auto idx = 0u; idx <  device_count; ++idx) {
+                 const auto info = rt_audio.getDeviceInfo(idx);
+ 
+-                if (info.probed && info.outputChannels == _synthesizer.get_output_count()) {
++                if (info.ID && info.outputChannels == _synthesizer.get_output_count()) {
+                     auto& device_dir = api_dir.get_or_create_directory(info.name);
+ 
+                     for (auto sample_rate : info.sampleRates) {
+@@ -312,4 +312,4 @@ namespace Gammou {
+             builder.empty_space());
+     }
+ 
+-}
+\ No newline at end of file
++}
+-- 
+2.52.0
+

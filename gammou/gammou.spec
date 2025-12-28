@@ -11,7 +11,7 @@ Release: 2%{?dist}
 Summary: Modular Sound Synthesizer
 URL: https://github.com/aliefhooghe/Gammou
 ExclusiveArch: x86_64 
-License: BSD3
+License: BSD-3-Clause
 
 Vendor:       Audinux
 Distribution: Audinux
@@ -22,6 +22,7 @@ Distribution: Audinux
 Source0: Gammou.tar.gz
 Source1: gammou.jpg
 Source2: gammou-source.sh
+Patch0: gammou-0001-fix-rtaudio-usage.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -47,19 +48,28 @@ BuildRequires: cxxopts-devel
 BuildRequires: chrpath
 BuildRequires: desktop-file-utils
 
+Requires: license-%{name}
+
 %description
 Gammou is a polyphonic modular sound synthesizer that be run as VST or standalone.
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: BSD-3-Clause
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst-%{name}
-Summary:  VST2 version of %{name}
-License:  GPL-2.0-or-later
-Requires: %{name}
+Summary: VST2 version of %{name}
+License: BSD-3-Clause
+Requires: license-%{name}
 
 %description -n vst-%{name}
 VST2 version of %{name}
 
 %prep
-%autosetup -n Gammou
+%autosetup -p1 -n Gammou
 
 %build
 
@@ -125,15 +135,16 @@ chrpath --replace %{_libdir}/%{name}/ %{buildroot}/%{_bindir}/gammou
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%doc README.md
-%license LICENSE
 %{_bindir}/*
 %{_libdir}/*
 %{_datadir}/icons/hicolor/256x256/apps/*
 %{_datadir}/applications/*
-%{_datadir}/%{name}/
 %{_datadir}/%{name}/packages/*
 %{_datadir}/%{name}/waves/.empty
+
+%files -n license-%{name}
+%doc README.md
+%license LICENSE
 
 %files -n vst-%{name}
 %{_libdir}/vst/*
