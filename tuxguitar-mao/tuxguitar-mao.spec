@@ -32,7 +32,7 @@
 %define debug_package %{nil}
 
 Name: tuxguitar
-Version: 2.0.0
+Version: 2.0.1
 Release: 16%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
@@ -61,7 +61,7 @@ Source1: tuxguitar.sh
 # wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.37-202509050730/swt-4.37-gtk-linux-x86_64.zip
 # wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.37-202509050730/swt-4.37-gtk-linux-aarch64.zip
 
-%Define swt_version 4.36
+%define swt_version 4.36
 Source3: swt-%{swt_version}-gtk-linux-aarch64.zip
 Source4: swt-%{swt_version}-gtk-linux-x86_64.zip
 
@@ -270,6 +270,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Sun Dec 28 2025 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-16
+- update to 2.0.1-16
+
 * Sun Nov 02 2025 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-16
 - update to 2.0.0-16 - fix sh script
 
