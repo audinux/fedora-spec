@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Tool, AI
-# Type: Plugin, LV2, VST3, Standalone
+# Type: Plugin, LV2, Standalone
 # Category: Audio, Tool
 
 Name: neuralrack

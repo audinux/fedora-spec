@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: milkytracker
-Version: 1.05.01
+Version: 1.06
 Release: 2%{?dist}
 Summary: Module tracker software for creating music
 License: GPL-3.0-or-later
@@ -57,7 +57,7 @@ cp resources/milkytracker.desktop %{buildroot}%{_datadir}/applications/
 
 # copy the metainfo file
 mkdir -p %{buildroot}%{_datadir}/metainfo/
-cp resources/org.milkytracker.MilkyTracker.metainfo.xml %{buildroot}%{_datadir}/metainfo/
+cp %{__cmake_builddir}/resources/org.milkytracker.MilkyTracker.metainfo.xml %{buildroot}%{_datadir}/metainfo/
 
 desktop-file-install \
     --dir=%{buildroot}%{_datadir}/applications \
@@ -72,6 +72,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/org.milky
 %doc AUTHORS NEWS README.md ChangeLog.md docs/*.html
 %license COPYING
 %{_bindir}/milkytracker
+%{_bindir}/milkycli
 %{_datadir}/applications/*
 %{_datadir}/pixmaps/milkytracker.png
 %dir %{_datadir}/milkytracker/
@@ -80,6 +81,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/org.milky
 %{_datadir}/metainfo/org.milkytracker.MilkyTracker.metainfo.xml
 
 %changelog
+* Thu Jun 19 2025 Yann Collette <ycollette dot nospam at free dot fr> 1.06-2
+- Update to 1.06-2
+
 * Thu Nov 28 2024 Yann Collette <ycollette dot nospam at free dot fr> 1.05.01-2
 - Update to 1.05.01-2
 

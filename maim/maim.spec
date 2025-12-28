@@ -1,6 +1,6 @@
 # Status: active
-# Tag: Plugin, Effect, Audio
-# Type: VST3
+# Tag: Effect, Audio
+# Type: Plugin, VST3
 # Category: Effect, Audio
 
 Name: maim

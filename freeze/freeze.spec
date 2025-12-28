@@ -3,6 +3,8 @@
 # Type: LV2
 # Category: Plugin, Audio 
 
+%global debug_package %{nil}
+
 Name: lv2-freeze
 Version: 0.2.0
 Release: 1%{?dist}

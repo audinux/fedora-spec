@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Reverb, Compressor, Equalizer, Overdrive
-# Type: Plugin, VST3, Standalone
+# Type: Plugin, VST3, LV2, Standalone
 # Category: Audio, Effect, Synthesizer
 
 Name: vaporizer2

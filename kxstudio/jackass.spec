@@ -17,8 +17,7 @@ Source0: https://github.com/falkTX/JackAss/archive/refs/tags/v%{version}.tar.gz#
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: mingw32-winpthreads-static
 BuildRequires: mingw64-winpthreads-static

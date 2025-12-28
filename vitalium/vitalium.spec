@@ -1,4 +1,4 @@
-# Status: active
+# Status: inactive
 # Tag: Synthesizer
 # Type: Standalone, Plugin, LV2, VST3
 # Category: Synthesizer

@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Guitar, MIDI, Synthesizer
-# Type: Plugin, LV2
+# Type: Plugin, LV2, VST, LADSPA
 # Category: Audio, Synthesizer, MIDI
 
 Name: guitarsynth

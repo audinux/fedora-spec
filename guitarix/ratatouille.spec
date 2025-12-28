@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Tool, AI
-# Type: Plugin, LV2, VST3, Standalone
+# Type: Plugin, LV2, VST, CLAP, Standalone
 # Category: Audio, Tool
 
 Name: ratatouille

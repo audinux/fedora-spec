@@ -1,6 +1,6 @@
 # Status: active
 # Tag: FM
-# Type: Standalone, Plugin, LV2
+# Type: Standalone, Plugin, VST
 # Category: Synthesizer
 
 # Global variables for github repository

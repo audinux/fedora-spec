@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Jack, Alsa
-# Type: Plugin, Standalone, VST2
+# Type: Plugin, Standalone, VST
 # Category: Audio, Synthesizer
 
 Name: obxd

@@ -24,7 +24,7 @@ Source0: https://github.com/harryhaaren/avw.lv2/archive/%{commit0}.tar.gz#/%{nam
 BuildRequires: gcc-c++
 BuildRequires: make
 BuildRequires: lvtk
-BuildRequires: python2
+BuildRequires: python2.7
 BuildRequires: lv2-devel
 BuildRequires: lv2-c++-tools-devel >= 1.0.4
 BuildRequires: gtk2-devel

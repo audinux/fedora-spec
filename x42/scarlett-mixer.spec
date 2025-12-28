@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Mixer, Alsa, Jack
-# Type: Plugin, LV2
+# Type: Standalone
 # Category: Audio, Tool
 
 # Global variables for github repository

@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Audio, Mixer
-# Type: Standalone, LV2, LADSPA
+# Type: Standalone
 # Category: Audio, Tool
 
 Summary: Reboot of Non Mixer with eXTended LV2 support.

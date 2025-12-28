@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Audio, Effect, Tool
-# Type: Standalone, Plugin, VST
+# Type: Standalone, Plugin, VST3, VST, LV2
 # Category: Tool, Audio, Effect
 
 Name: sparta

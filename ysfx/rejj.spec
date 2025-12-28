@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Audio, Effect
-# Type: Plugin
+# Type: Plugin, YSFX
 # Category: Audio, Effect
 
 Name: rejj

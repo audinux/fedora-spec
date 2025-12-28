@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Synthesizer
-# Type: Plugin, Standalone, VST3
+# Type: Plugin, Standalone, VST3, CLAP
 # Category: Audio, Synthesizer
 
 Name: six-sines

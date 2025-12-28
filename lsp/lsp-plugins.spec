@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Jack, Equalizer, Compressor, Convolution, Gate, Analyzer, Reverb, Delay, MIDI
-# Type: Plugin, LV2, VST, LADSPA, CLAP
+# Type: Plugin, LV2, VST, LADSPA, CLAP, VST3, GSTREAMER
 # Category: Audio, Effect
 
 %define _lto_cflags %{nil}

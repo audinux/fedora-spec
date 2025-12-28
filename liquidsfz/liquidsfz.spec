@@ -2,6 +2,7 @@
 # Tag: Sfz, Jack
 # Type: Plugin, LV2
 # Category: Audio, Sampler
+# Todo: split into lv2 / standalone / license package
 
 Name: liquidsfz
 Version: 0.3.2

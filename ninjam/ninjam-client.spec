@@ -1,7 +1,7 @@
 # Status: active
 # Tag: Audio, Live, Session
-# Type: Plugin, LV2, VST
-# Category: Audio, Tool, Session Mngmt
+# Type: Standalone
+# Category: Audio, Tool
 
 Name: ninjam-client
 Version: 0.0.1

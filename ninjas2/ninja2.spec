@@ -2,6 +2,7 @@
 # Tag: Audio, Sampler
 # Type: Standalone, Plugin, LV2, VST
 # Category: Plugin, Sampler
+# Todo: split into LV2 / VST / Standalone / license packages
 
 # Global variables for github repository
 %global commit0 a767a9eea4e543061993290168a321d10c08b03c

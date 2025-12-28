@@ -2,6 +2,7 @@
 # Tag: Tool, Graphic
 # Type: Standalone, Plugin, LV2, VST
 # Category: Tool, Graphic
+# Todo: split into LV2 / VST / standalone / license packages
 
 Name: nanoinvaders
 Version: 0.1

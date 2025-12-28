@@ -20,7 +20,7 @@ Source0: https://sourceforge.net/projects/triceratops/files/triceratops_v0.5.0_O
 
 BuildRequires: gcc-c++
 BuildRequires: make
-BuildRequires: python2
+BuildRequires: python2.7
 BuildRequires: pkgconfig(jack)
 BuildRequires: libsamplerate-devel
 BuildRequires: libsndfile-devel

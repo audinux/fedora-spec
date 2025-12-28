@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: lv2-fomp-plugins
-Version: 1.2.0
+Version: 1.2.4
 Release: 14%{?dist}
 Summary: A collection of LV2 plugins
 License: GPL-2.0-or-later
@@ -14,13 +14,13 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: http://deb.debian.org/debian/pool/main/f/fomp/fomp_1.2.0.orig.tar.bz2
+Source0: http://deb.debian.org/debian/pool/main/f/fomp/fomp_%{version}.orig.tar.xz
 
 BuildRequires: gcc-c++ make
 BuildRequires: lv2-devel
-BuildRequires: python2
+BuildRequires: meson
 
-Requires:      lv2
+Requires: lv2
 
 %description
 Fomp is an LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen.
@@ -37,17 +37,14 @@ octaves for faithful Moog-like modulation.
 %prep
 %autosetup -n fomp-%{version}
 
-# Force use of python2
-sed -i -e "s|env python|env python2|g" waf
-sed -i -e "s|env python|env python2|g" wscript
-
 %build
-%set_build_flags
-./waf configure -v --prefix=%{_prefix} --libdir=%{_libdir}
-./waf -v build %{?_smp_mflags}
+
+%meson -Dtests=disabled
+%meson_build
 
 %install
-./waf install --destdir=%{buildroot}
+
+%meson_install
 
 %files
 %doc README.md NEWS AUTHORS
@@ -55,8 +52,11 @@ sed -i -e "s|env python|env python2|g" wscript
 %{_libdir}/lv2/fomp.lv2
 
 %changelog
-* Thu Dec 31 2020 Yann Collette <ycollette.nospam@free.fr> - 1.2.0.14
-- update to 1.2.0
+* Sun Dec 28 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.4-14
+- update to 1.2.4-14
+
+* Thu Dec 31 2020 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-14
+- update to 1.2.0-14
 
 * Fri Feb 01 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.0-14
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild

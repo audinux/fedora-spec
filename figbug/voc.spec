@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Jack, Synthesizer
-# Type: Standalone, VST3, LV2
+# Type: Standalone, VST3, VST, LV2
 # Category: Synthesizer
 
 %define commit0 feff8e72319f166275d33970efe2ab23ce8f1e84

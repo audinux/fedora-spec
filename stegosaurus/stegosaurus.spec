@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Synthesizer, Drum
-# Type: Plugin, LV2, VST3
+# Type: Plugin, LV2, VST, DSSI
 # Category: Synthesizer
 
 %global commit0 2820a1d31c744ed1a21e572dfa4cf490719dc76b

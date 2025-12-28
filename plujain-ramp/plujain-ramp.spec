@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Effect
-# Type: LV2
+# Type: Plugin, LV2
 # Category: Effect
 
 # Global variables for github repository

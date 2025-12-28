@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Audio, Effect
-# Type: Plugin
+# Type: Plugin, YSFX
 # Category: Audio, Effect
 
 %global commit0 e98d64401ba57590b7ea0d3592675accb43667da

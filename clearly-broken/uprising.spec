@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Synthesizer
-# Type: Plugin, LV2, VST3
+# Type: Plugin, LV2, VST
 # Category: Synthesizer
 
 %global commit0 89f5b49d90cd47611da7e7dc2009061768716b4c

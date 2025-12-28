@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Sampler
-# Type: Plugin, LV2, VST3
+# Type: Plugin, LV2, VST
 # Category: Audio, Effect
 
 %global commit0 c2447333286dad81bdcd73a25e481c3bfdab58e3

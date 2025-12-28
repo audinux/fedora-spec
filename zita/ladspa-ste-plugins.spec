@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Effect
-# Type: LADSPA
+# Type: Plugin, LADSPA
 # Category: Audio
 
 Summary: A stereo width LADSPA plugin

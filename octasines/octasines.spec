@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Synthesizer
-# Type: Plugin, CLAP
+# Type: Plugin, VST, CLAP
 # Category: Synthesizer
 
 %global debug_package %{nil}

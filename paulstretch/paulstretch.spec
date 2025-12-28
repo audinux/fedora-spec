@@ -7,7 +7,7 @@
 
 Name: paulstretch
 Version: 1.2.4
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: A Paulstretch VST2/VST3/Standalone plugin
 License: MIT
 URL: https://bitbucket.org/xenakios/paulstretchplugin
@@ -45,20 +45,28 @@ BuildRequires: gtk3-devel
 %description
 A PaulStretch VST/VST3/Standalone plugin
 
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
+License:  GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary:  VST3 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
-%package -n vst2-%{name}
+%package -n vst-%{name}
 Summary:  VST2 version of %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}
+Obsoletes: vst2-%{name} < 1.2.4-5
+Requires: license-%{name}
 
-%description -n vst2-%{name}
+%description -n vst-%{name}
 VST2 version of %{name}
 
 %prep
@@ -93,16 +101,21 @@ install -m 755  Builds/LinuxMakefile/build/PaulXStretch.so %{buildroot}/%{_libdi
 cp -ra  Builds/LinuxMakefile/build/PaulXStretch.vst3 %{buildroot}/%{_libdir}/vst3/
 
 %files
-%doc readme.txt
 %{_bindir}/*
 
-%files -n vst2-%{name}
+%files -n license-%{name}
+%doc readme.txt
+
+%files -n vst-%{name}
 %{_libdir}/vst/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Dec 28 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.4-5
+- update to 1.2.4-5 - rename vst package
+
 * Tue Oct 07 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.4-4
 - update to 1.2.4-4 - remove unused dep
 

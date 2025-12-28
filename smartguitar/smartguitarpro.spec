@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Guitar, Amp Simul
-# Type: Plugin, VST
+# Type: Plugin, VST3
 # Category: Audio, Effect
 # GUIToolkit: GTK3
 

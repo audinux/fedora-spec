@@ -1,6 +1,6 @@
 # Status: inactive
 # Tag: Synthesizer
-# Type: Plugin, VST3
+# Type: Plugin, VST3, CLAP
 # Category: Audio, Synthesizer
 
 Name: infernal-synth

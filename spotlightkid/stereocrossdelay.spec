@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Effect
-# Type: LV2
+# Type: Plugin, LV2, VST, VST3, LADSPA, CLAP
 # Category: Effect
 
 Name: stereocrossdelay

@@ -1,4 +1,4 @@
-# Status: active
+# Status: inactive
 # Tag: Audio, MIDI, Sequencer, Tracker
 # Type: Standalone
 # Category: Audio, Sequencer

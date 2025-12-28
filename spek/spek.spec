@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Analyzer, Audio
-# Type: Standalone, Plugin, LV2
+# Type: Standalone
 # Category: Tool, Audio
 
 Name: spek
@@ -61,7 +61,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/spek.desktop
 %{_datadir}/icons/hicolor/*
 %{_datadir}/locale/*
-%{_mandir}//man1/spek.1.gz
+%{_mandir}/man1/spek.1.gz
 
 %changelog
 * Sat Feb 01 2025 Yann Collette <ycollette.nospam@free.fr> - 0.8.5-2

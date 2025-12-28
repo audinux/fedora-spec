@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Analyzer, Audio
-# Type: Standalone, Plugin, LV2
+# Type: Standalone, Plugin, LV2, VST
 # Category: Tool, Audio
 
 Name: spectacle-analyzer

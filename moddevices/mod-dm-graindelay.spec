@@ -1,4 +1,4 @@
-# Status: active
+# Status: inactive
 # Tag: Effect, Delay
 # Type: Plugin, LV2, VST
 # Category: Effect
@@ -21,9 +21,12 @@ Distribution: Audinux
 
 Source0: https://github.com/moddevices/dm-GrainDelay/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires: clang
-BuildRequires: rust cargo
-BuildRequires: lv2-devel
+BuildRequires: gcc gcc-c++
+BuildRequires: cmake
+BuildRequires: rustup
+BuildRequires: llvm-devel
+BuildRequires: clang-devel
+BuildRequires: libcurl-devel
 
 %description
 A granular delay effect written in Rust. The effect can be compiled
@@ -36,8 +39,20 @@ mono for now.
 
 %build
 
-export RUSTFLAGS="-g -O"
-export RUST_BACKTRACE=1
+export CWD=`pwd`
+export RUSTUP_HOME="$CWD/rustup"
+export CARGO_HOME="$CWD/cargo"
+# rustup-init --no-modify-path -y --default-toolchain=1.76.0-x86_64-unknown-linux-gnu
+# rustup-init --no-modify-path -y --default-toolchain=nightly-x86_64-unknown-linux-gnu
+# source cargo/env
+
+%ifarch x86_64
+rustup-init --no-modify-path -y --default-toolchain 1.76.0-x86_64-unknown-linux-gnu
+%endif
+%ifarch aarch64
+rustup-init --no-modify-path -y --default-toolchain 1.76.0-aarch64-unknown-linux-gnu
+%endif
+source cargo/env
 
 cd lv2
 cargo build --release

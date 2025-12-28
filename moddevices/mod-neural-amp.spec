@@ -1,7 +1,7 @@
 # Status: active
 # Tag: AI, Effect, Amp Simul
-# Type: LV2
-# Category: Plugin, Effect
+# Type: Plugin, LV2
+# Category: Effect
 
 # Global variables for github repository
 %global commit0 0dd7c8149a6cedf9904fddad259ee4d12998d030

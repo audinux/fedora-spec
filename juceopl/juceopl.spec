@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Jack, Alsa
-# Type: Plugin, Standalone, VST3
+# Type: Plugin, Standalone, VST
 # Category: Audio, Synthesizer
 
 %global commit0 fd208b30da8c2c7ff63aada57f0088b4a52a27fd

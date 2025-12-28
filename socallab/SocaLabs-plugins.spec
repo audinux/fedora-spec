@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Compressor, Emulator, Delay, Analyzer
-# Type: Plugin, VST, VST3
+# Type: Plugin, VST, VST3, LV2
 # Category: Audio, Effect, Synthesizer
 
 # spec file for package slPlugins

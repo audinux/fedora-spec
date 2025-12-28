@@ -1,7 +1,8 @@
 # Status: active
 # Tag: Guitar, Jack, Overdrive, Amp Simul, Cabinet, Gate, Octaver
-# Type: Plugin, LV2
+# Type: Plugin, LV2, LADSPA
 # Category: Audio, Effect
+# Todo: split into LV2 / LADSPA / license packages
 
 # Global variables for github repository
 %global commit0 828dcf7ede9260da6d65ab6896d99d694f7f12af

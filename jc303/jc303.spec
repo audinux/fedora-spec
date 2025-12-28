@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Drum
-# Type: Plugin, LV2, VST, VST3
+# Type: Plugin, LV2, VST, VST3, CLAP
 # Category: Sequencer, Sampler, Plugin
 
 Name: jc303

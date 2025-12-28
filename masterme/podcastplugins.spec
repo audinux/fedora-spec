@@ -2,6 +2,7 @@
 # Tag: Editor
 # Type: Standalone, Plugin, LADSPA, VST3, CLAP, LV2, VST
 # Category: Audio, Effect
+# Todo: split into LADSPA / VST3 / VST / CLAP / LV2 / standalone / license packages
 
 Name: podcastplugins
 Version: 1.0.0

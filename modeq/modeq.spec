@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Equalizer
-# Type: LV2, Plugin
+# Type: VST3, Plugin
 # Category: Effect
 
 %define commit0 c5567a3fe737ae76d9083bd664d1b93b501333b4

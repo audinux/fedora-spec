@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Guitar, Amp Simul
-# Type: Plugin, VST
+# Type: Standalone
 # Category: Audio, Effect
 # LastSourceUpdate: 2010
 

@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Effect
-# Type: Plugin, LV2, VST3
+# Type: Plugin, LV2, VST
 # Category: Audio, Effect
 
 %global commit0 c7dc69b207e0fc44789450f1d2d121b9a887ddf1

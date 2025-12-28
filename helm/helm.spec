@@ -2,6 +2,7 @@
 # Tag: Jack, Alsa
 # Type: Plugin, Standalone, LV2
 # Category: Audio, Synthesizer
+# Todo: rename lxvst -> vst and split package into lv2 / vst / standalone / license
 
 %global commit0 abdedd527e6e1cf86636f0f1e8a3e75b06ed166a
 %global gittag0 master
