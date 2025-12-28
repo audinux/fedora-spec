@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 7c41d8bec4de4e2133bfac7b08b5fbc8d5516b5e
-%global gittag0 2.3.0
+%global commit0 716821701486cceaf6f8c0076288945e0329d95f
+%global gittag0 2.4.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Moffenzeef
-Version: 2.3.0
+Version: 2.4.0
 Release: 2%{?dist}
 Summary: Moffenzeef plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Moffenzeef_plugin/dist/Moffenzeef/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.0-1
 - initial specfile

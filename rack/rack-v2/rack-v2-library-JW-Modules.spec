@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 dd00c56d2b0aa9c221269b6b3c00f04111834838
-%global gittag0 2.0.17
+%global commit0 0bb827a57a6bf20a0f02214b93516749ec1b42e6
+%global gittag0 2.0.20
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-JW-Modules
-Version: 2.0.17
+Version: 2.0.20
 Release: 2%{?dist}
 Summary: JW-Modules plugin for Rack
 License: GPL-2.0-or-later
@@ -153,5 +153,5 @@ cp -r JW-Modules_plugin/dist/JW-Modules/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.17-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.20-1
 - initial specfile
