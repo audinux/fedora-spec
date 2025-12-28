@@ -623,7 +623,7 @@ Modulation, Player, Pitch, Arpeggiator, Mixer, Vocoder
 ### Type:
 
 ```
-Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, CLAP, Presets, Rack, Driver, Nyquist
+Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, CLAP, YSFX, GSTREAMER, Presets, Rack, Driver, Nyquist
 ```
 
 ### Category:
