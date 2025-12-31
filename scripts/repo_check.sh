@@ -1027,7 +1027,6 @@ https://github.com/thunderox/stegosaurus
 https://github.com/brummer10/NeuralRack
 https://github.com/trummerschlunk/PodcastPlugins
 https://github.com/juzzlin/Noteahead
-https://salsa.debian.org/multimedia-team/qmidiroute
 https://git.code.sf.net/p/alsamodular/qmidicontrol.git
 https://git.code.sf.net/p/alsamodular/qarecord.git
 https://github.com/theabolton/hexter
@@ -1082,7 +1081,10 @@ https://github.com/TimKrause2/VocoderSynth
 https://github.com/jmantra/jdrummer
 https://github.com/YPares/arpligner
 https://github.com/be1/redrose
-https://github.com/TimKrause2/SignalViewLV2"
+https://github.com/TimKrause2/SignalViewLV2
+https://git.code.sf.net/p/qmidiarp/code
+https://git.code.sf.net/p/alsamodular/ams.git
+https://git.code.sf.net/p/alsamodular/qmidiroute.git"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
