@@ -219,6 +219,7 @@
 | MISST                         | https://github.com/Frikallo/MISST |
 | EasyABC                       | https://github.com/jwdj/EasyABC |
 | Munt                          | https://github.com/munt/munt |
+| tixl                          | https://github.com/tixl3d/tixl |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
