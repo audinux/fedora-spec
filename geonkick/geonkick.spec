@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: geonkick
-Version: 3.6.2
+Version: 3.7.0
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
 URL: https://github.com/Geonkick-Synthesizer/geonkick
@@ -15,6 +15,10 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/Geonkick-Synthesizer/geonkick/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+# Usage: ./vst3-source.sh <TAG>
+#        ./vst3-source.sh v3.8.0_build_66
+Source1: vst3sdk.tar.gz
+Source2: vst3-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -42,6 +46,14 @@ Requires: license-%{name}
 %description -n lv2-%{name}
 LV2 version of %{name}
 
+%package -n vst3-%{name}
+Summary:  VST3 version of %{name}
+License:  GPL-3.0-only
+Requires: license-%{name}
+
+%description -n vst3-%{name}
+VST3 version of %{name}
+
 %package -n license-%{name}
 Summary:  License and documentation for %{name}
 License:  GPL-3.0-only
@@ -52,30 +64,53 @@ License and documentation for %{name}
 %prep
 %autosetup -n %{name}-%{version}
 
+tar xvfz %{SOURCE1}
+sed -i -e "s/Homepage=/X-Homepage=/g" data/geonkick.desktop
+
 %build
 
 %set_build_flags
 export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
-%cmake
+%cmake -DVST3_SDK_PATH=`pwd`/vst3sdk
 %cmake_build
 
 %install
 
 %cmake_install
 
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+
 %files
 %{_bindir}/*
-%{_datadir}/*
+%{_datadir}/applications/geonkick.desktop
+%{_datadir}/icons/hicolor/128x128/apps/geonkick.png
+%{_datadir}/icons/hicolor/16x16/apps/geonkick.png
+%{_datadir}/icons/hicolor/22x22/apps/geonkick.png
+%{_datadir}/icons/hicolor/24x24/apps/geonkick.png
+%{_datadir}/icons/hicolor/32x32/apps/geonkick.png
+%{_datadir}/icons/hicolor/48x48/apps/geonkick.png
+%{_datadir}/icons/hicolor/64x64/apps/geonkick.png
+%{_datadir}/icons/hicolor/scalable/apps/geonkick.svg
+%{_datadir}/man/man1/geonkick.1.gz
+%{_datadir}/mime/packages/geonkick.xml
 
 %files -n license-%{name}
-%doc README.md doc/Geonkick_User_Guide.md
+%doc README.md doc/Geonkick_User_Guide.md CHANGELOG.md
 %license LICENSE
+%{_datadir}/%{name}/presets/*
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
 
+%files -n vst3-%{name}
+%{_libdir}/vst3/*
+
 %changelog
+* Fri Jan 02 2026 Yann Collette <ycollette.nospam@free.fr> - 3.7.0-2
+- Update to 3.7.0-2
+
 * Sat Aug 09 2025 Yann Collette <ycollette.nospam@free.fr> - 3.6.2-2
 - Update to 3.6.2-2
 
