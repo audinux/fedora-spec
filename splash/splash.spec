@@ -4,7 +4,7 @@
 # Category: Tool
 
 Name: splash
-Version: 0.11.14
+Version: 0.11.16
 Release: 1%{?dist}
 Summary: Modular video-mapping software
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source-splash.sh <tag>
-#        ./source-splash.sh 0.11.14
+#        ./source-splash.sh 0.11.16
 
 Source0: splash.tar.gz
 Source1: source-splash.sh
@@ -66,6 +66,9 @@ Splash, a multi-projector video-mapping software
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
 export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
 
+export CXXFLAGS="-Wno-error $CXXFLAGS"
+export CFLAGS="-Wno-error $CFLAGS"
+
 %cmake \
     -DBUILD_SHARED_LIBS=ON \
 %ifarch x86_64
@@ -93,6 +96,9 @@ mv %{buildroot}/%{_datadir}/fonts/*.ttf %{buildroot}/%{_datadir}/fonts/%{name}/
 %{_datadir}/%{name}/*
 
 %changelog
+* Fri Jan 02 2026 Yann Collette <ycollette.nospam@free.fr> - 0.11.16-1
+- update to 0.11.16-1
+
 * Mon Dec 01 2025 Yann Collette <ycollette.nospam@free.fr> - 0.11.14-1
 - update to 0.11.14-1
 
