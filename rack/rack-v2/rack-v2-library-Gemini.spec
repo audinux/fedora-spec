@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 2e2de391729af3add9d408c94d8f0a648832f6e4
-%global gittag0 2.0.0
+%global commit0 4626190b9db72fa600e10f1e1eb557b713b6d170
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Gemini
-Version: 2.0.0
+Version: 2.0.1
 Release: 2%{?dist}
 Summary: Gemini plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 Gemini plugin for Rack.
-Dual Juno-inspired oscillator
+Dual Juno-inspired oscillator, based on Winterbloom's Castor and Pollux
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r Gemini_plugin/dist/Gemini/* %{buildroot}%{_libexecdir}/Rack2/plugins/Gemin
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

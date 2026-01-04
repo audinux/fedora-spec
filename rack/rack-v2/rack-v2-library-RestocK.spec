@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 7e1183865abcb95631d8510e79ed92c2a75b89d9
-%global gittag0 2.0.0
+%global commit0 4e9ca5c42b55302827ed710c3f92fbf3a97a415d
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-RestocK
-Version: 2.0.0
+Version: 2.0.1
 Release: 2%{?dist}
 Summary: RestocK plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r RestocK_plugin/dist/RestocK/* %{buildroot}%{_libexecdir}/Rack2/plugins/Res
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

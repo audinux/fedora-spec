@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 ffa186c217421920c8d1aa4924df3e1ee04d1f47
-%global gittag0 2.6.3
+%global commit0 07a8b030371e2744d91d0be18a7c547c69220750
+%global gittag0 2.6.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-vanTies
-Version: 2.6.3
+Version: 2.6.4
 Release: 2%{?dist}
 Summary: vanTies plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r vanTies_plugin/dist/vanTies/* %{buildroot}%{_libexecdir}/Rack2/plugins/van
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.4-1
 - initial specfile
