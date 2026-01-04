@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: reevr
-Version: 1.3.1
+Version: 1.3.2
 Release: 2%{?dist}
 Summary: Convolution reverb with pre and post modulation
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./ripplerx-source.sh <PROJECT> <TAG>
-#        ./ripplerx-source.sh reevr v1.3.1
+#        ./ripplerx-source.sh reevr v1.3.2
 
 Source0: reevr.tar.gz
 Source1: ripplerx-source.sh
@@ -87,6 +87,9 @@ cp -ra %{__cmake_builddir}/REEVR_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Jan 03 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.2-2
+- update to 1.3.2-2
+
 * Thu Dec 18 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.1-2
 - update to 1.3.1-2
 
