@@ -1,16 +1,30 @@
-From 2ed189a9a3c74c8ebe355819dbd8ed33d7c00cd9 Mon Sep 17 00:00:00 2001
+From 9744e3391f70b7a69b4ddfa0250841e503a4b790 Mon Sep 17 00:00:00 2001
 From: Yann Collette <ycollette.nospam@free.fr>
-Date: Sun, 28 Dec 2025 09:39:58 +0100
-Subject: [PATCH] fix stdc++
+Date: Mon, 5 Jan 2026 21:59:16 +0100
+Subject: [PATCH] remove static
 
 ---
- source/juce.cmake                                  | 4 ----
- source/mqPerformanceTest/CMakeLists.txt            | 4 ----
- source/mqTestConsole/CMakeLists.txt                | 4 ----
- source/ronaldo/je8086/jeTestConsole/CMakeLists.txt | 4 ----
- source/virusTestConsole/CMakeLists.txt             | 4 ----
- 5 files changed, 20 deletions(-)
+ source/dsp56300/source/wxWidgets/build/cmake/init.cmake | 2 --
+ source/juce.cmake                                       | 4 ----
+ source/mqPerformanceTest/CMakeLists.txt                 | 4 ----
+ source/mqTestConsole/CMakeLists.txt                     | 4 ----
+ source/ronaldo/je8086/jeTestConsole/CMakeLists.txt      | 4 ----
+ source/virusTestConsole/CMakeLists.txt                  | 4 ----
+ 6 files changed, 22 deletions(-)
 
+diff --git a/source/dsp56300/source/wxWidgets/build/cmake/init.cmake b/source/dsp56300/source/wxWidgets/build/cmake/init.cmake
+index ef28c996..ef64ea07 100644
+--- a/source/dsp56300/source/wxWidgets/build/cmake/init.cmake
++++ b/source/dsp56300/source/wxWidgets/build/cmake/init.cmake
+@@ -86,8 +86,6 @@ elseif(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU") OR ("${CMAKE_CXX_COMPILER_ID}
+     if(wxBUILD_USE_STATIC_RUNTIME AND NOT APPLE)
+         if(MINGW)
+             set(STATIC_LINKER_FLAGS " -static")
+-        else()
+-            set(STATIC_LINKER_FLAGS " -static-libgcc -static-libstdc++")
+         endif()
+         wx_string_append(CMAKE_EXE_LINKER_FLAGS "${STATIC_LINKER_FLAGS}")
+         wx_string_append(CMAKE_SHARED_LINKER_FLAGS "${STATIC_LINKER_FLAGS}")
 diff --git a/source/juce.cmake b/source/juce.cmake
 index 08c97fe9..151d9cb2 100644
 --- a/source/juce.cmake
@@ -56,18 +70,18 @@ index 4d3b3b18..2b37ef8b 100644
  #install(TARGETS mqTestConsole DESTINATION . COMPONENT STANDALONE)
  set_property(TARGET mqTestConsole PROPERTY FOLDER "Vavra")
 diff --git a/source/ronaldo/je8086/jeTestConsole/CMakeLists.txt b/source/ronaldo/je8086/jeTestConsole/CMakeLists.txt
-index 251a4143..93712254 100644
+index cdefec28..22aeda17 100644
 --- a/source/ronaldo/je8086/jeTestConsole/CMakeLists.txt
 +++ b/source/ronaldo/je8086/jeTestConsole/CMakeLists.txt
-@@ -15,10 +15,6 @@ createMacSetupScript("jeTestConsole")
+@@ -15,10 +15,6 @@ createMacSetupScript("JE8086TestConsole")
  
- target_link_libraries(jeTestConsole PUBLIC jeLib)
+ target_link_libraries(JE8086TestConsole PUBLIC jeLib)
  
 -if(UNIX AND NOT APPLE)
--	target_link_libraries(jeTestConsole PUBLIC -static-libgcc -static-libstdc++)
+-	target_link_libraries(JE8086TestConsole PUBLIC -static-libgcc -static-libstdc++)
 -endif()
 -
- install(TARGETS jeTestConsole DESTINATION . COMPONENT JE8086TestConsole)
+ install(TARGETS JE8086TestConsole DESTINATION . COMPONENT JE8086TestConsole)
  
  if(APPLE)
 diff --git a/source/virusTestConsole/CMakeLists.txt b/source/virusTestConsole/CMakeLists.txt
