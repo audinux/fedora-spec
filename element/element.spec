@@ -14,8 +14,8 @@ License: GPL3
 Vendor:       Audinux
 Distribution: Audinux
 
-# Usage: ./element-source.sh <TAG>
-#        ./element-source.sh 1.0.0b2
+# Usage: ./element-source.sh <PROJECT> <TAG>
+#        ./element-source.sh Element 1.0.0b2
 Source0: Element.tar.gz
 Source1: element-source.sh
 
