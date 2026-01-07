@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 3c364b222a02250af5e96bfc7d2b2d7c73eb4069
-%global gittag0 2.3.5
+%global commit0 52376feb0d2173f9bcac34ed763071b353ec6cdf
+%global gittag0 2.3.8
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-MADZINE
-Version: 2.3.5
+Version: 2.3.8
 Release: 2%{?dist}
 Summary: MADZINE plugin for Rack
 License: GPL-2.0-or-later
@@ -29,7 +29,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/mmmmmmmadman/MADZINE-VCV/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: MADZINE-VCV.tar.gz
 Source2: MADZINE_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -154,5 +154,5 @@ cp -r MADZINE_plugin/dist/MADZINE/* %{buildroot}%{_libexecdir}/Rack2/plugins/MAD
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.8-1
 - initial specfile
