@@ -4,7 +4,7 @@
 # Category: Audio, Sampler
 
 Name: loopino
-Version: 0.5.0
+Version: 0.8.0
 Release: 2%{?dist}
 Summary: A Minimalist Sampler for Linux
 License: BSD
@@ -16,7 +16,7 @@ Distribution: Audinux
 
 
 # ./brummer10-source.sh <project> <tag>
-# ./brummer10-source.sh Loopino v0.5.0
+# ./brummer10-source.sh Loopino v0.8.0
 
 Source0: Loopino.tar.gz
 
@@ -106,6 +106,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/loopino.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Wed Jan 07 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.0-2
+- update to 0.8.0-2
+
 * Sat Jan 03 2026 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-2
 - update to 0.5.0-2
 
