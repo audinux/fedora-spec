@@ -1,17 +1,17 @@
 #!/bin/bash
 
-# Usage: ./element-source.sh <TAG>
-#        ./element-source.sh v1.0.0b2
+# Usage: ./element-source.sh <PROJECT> <TAG>
+#        ./element-source.sh Element v1.0.0b2
 
-git clone https://github.com/kushview/Element/
-cd Element
-git checkout $1
+git clone https://github.com/kushview/$1
+cd $1
+git checkout $2
 if [ $? == 1 ]; then
-    echo "Wrong branch / tag name: $1"
+    echo "Wrong branch / tag name: $2"
     exit 1
 fi
 git submodule update --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
-tar cvfz Element.tar.gz Element/*
-rm -rf Element
+tar cvfz $1.tar.gz $1/*
+rm -rf $1
