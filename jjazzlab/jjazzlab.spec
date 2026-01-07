@@ -8,10 +8,10 @@
 %global debug_package %{nil}
 
 Name: jjazzlab
-Version: 5.0.1
+Version: 5.1
 Release: 2%{?dist}
 Summary: A complete Midi-based framework for automatic backing tracks generation.
-URL: https://github.com/jjazzboss/JJazzLab-X
+URL: https://github.com/jjazzboss/JJazzLab
 ExclusiveArch: x86_64 
 License: LGPL-3.0
 
