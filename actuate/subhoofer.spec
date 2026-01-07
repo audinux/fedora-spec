@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: subhoofer
-Version: 2.2.2
+Version: 2.2.3
 Release: 1%{?dist}
 Summary: Sub and Bass Enhancement plugin
 License: GPL-3.0-or-later
@@ -78,10 +78,10 @@ export CARGO_HOME="$CWD/cargo"
 # cargo build --release --bin hexosynth_jack
 
 %ifarch x86_64
-rustup-init -y --no-modify-path --default-toolchain 1.76.0-x86_64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain 1.92.0-x86_64-unknown-linux-gnu
 %endif
 %ifarch aarch64
-rustup-init -y --no-modify-path --default-toolchain 1.76.0-aarch64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain 1.92.0-aarch64-unknown-linux-gnu
 %endif
 source cargo/env
 
@@ -104,5 +104,8 @@ cp -ra target/bundled/Subhoofer.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Wed Jan 07 2026 Yann Collette <ycollette.nospam@free.fr> - 2.2.3-1
+- update to 2.2.3-1
+
 * Mon Nov 11 2024 Yann Collette <ycollette.nospam@free.fr> - 2.2.2-1
 - Initial spec file
