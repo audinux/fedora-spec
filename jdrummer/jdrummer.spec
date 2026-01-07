@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: jdrummer
-Version: 0.0.1
+Version: 1.5
 Release: 1%{?dist}
 Summary: An open source drum plugin that acts as an alternative to EZDrummer3
 License: GPL-3.0-or-later
@@ -86,5 +86,8 @@ install -m 755 %{__cmake_builddir}/jdrummer_artefacts/Standalone/jdrummer %{buil
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Jan 05 2026 Yann Collette <ycollette.nospam@free.fr> - 1.5-1
+- update to 1.5-1
+
 * Tue Dec 16 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
