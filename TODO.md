@@ -220,7 +220,6 @@
 | EasyABC                       | https://github.com/jwdj/EasyABC |
 | Munt                          | https://github.com/munt/munt |
 | tixl                          | https://github.com/tixl3d/tixl |
-| virtual-midi-controller       | https://github.com/kushview/virtual-midi-controller |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
