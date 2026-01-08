@@ -4,7 +4,7 @@
 # Category: Audio, Sampler
 
 Name: grandorgue
-Version: 3.16.3.1
+Version: 3.17.0.0
 Release: 7%{?dist}
 Summary: A sample based pipe organ simulator.
 License: GPL-2.0-or-later
@@ -14,11 +14,11 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# Usage: ./grandOrgue-source.sh <TAG>
-#        ./grandOrgue-source.sh 3.16.3-1
+# Usage: ./grandorgue-source.sh <TAG>
+#        ./grandorgue-source.sh 3.17.0-0
 
 Source0: grandorgue.tar.gz
-Source1: grandOrgue-source.sh
+Source1: grandorgue-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -130,6 +130,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/GrandOrgue.desktop
 %{_datadir}/GrandOrgue/packages/*.orgue
 
 %changelog
+* Thu Jan 08 2026 Yann Collette <ycollette.nospam@free.fr> - 3.17.0.0-7
+- update to 3.17.0.0-7
+
 * Sat Dec 27 2025 Yann Collette <ycollette.nospam@free.fr> - 3.16.3.1-7
 - update to 3.16.3.1-7
 
