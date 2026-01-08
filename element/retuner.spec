@@ -116,24 +116,3 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/retuner.desktop
 %changelog
 * Wed Jan 07 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
 - First version of the spec
-
-* Tue May 31 2022 Yann Collette <ycollette.nospam@free.fr> - 0.46.6-1
-- update to 0.46.6-1
-
-* Tue Mar 15 2022 Yann Collette <ycollette.nospam@free.fr> - 0.46.4-1
-- update to 0.46.4-1
-
-* Wed Jul 28 2021 Yann Collette <ycollette.nospam@free.fr> - 0.46.3-1
-- update to 0.46.3-1
-
-* Tue Jul 20 2021 Yann Collette <ycollette.nospam@free.fr> - 0.46.2-1
-- update to 0.46.2-1
-
-* Fri Apr 02 2021 Yann Collette <ycollette.nospam@free.fr> - 0.46.0-1
-- update to 0.46.0
-
-* Sun Oct 25 2020 Yann Collette <ycollette.nospam@free.fr> - 0.45.1-1
-- update to 0.45.1
-
-* Wed Oct 14 2020 Yann Collette <ycollette.nospam@free.fr> - 0.44.0-1
-- Initial spec file
