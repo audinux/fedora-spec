@@ -220,6 +220,8 @@
 | EasyABC                       | https://github.com/jwdj/EasyABC |
 | Munt                          | https://github.com/munt/munt |
 | tixl                          | https://github.com/tixl3d/tixl |
+| Symphonium                    | https://github.com/ttdm/Symphonium |
+| qsynthi                       | https://github.com/arth3mis/qsynthi |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
