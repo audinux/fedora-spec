@@ -1086,7 +1086,8 @@ https://git.code.sf.net/p/qmidiarp/code
 https://git.code.sf.net/p/alsamodular/ams.git
 https://git.code.sf.net/p/alsamodular/qmidiroute.git
 https://github.com/kushview/retuner
-https://github.com/kushview/virtual-midi-controller"
+https://github.com/kushview/virtual-midi-controller
+https://github.com/minimaxir/miditui"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
