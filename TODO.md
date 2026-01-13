@@ -227,6 +227,7 @@
 | vitalium-verb                 | https://github.com/BillyDM/vitalium-verb |
 | CTAGDRC                       | https://github.com/BillyDM/CTAGDRC |
 | mod-cabsim-IR-loader          | https://github.com/mod-audio/mod-cabsim-IR-loader |
+| NoiseRF                       | https://github.com/floe-audio/NoiseRF |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
