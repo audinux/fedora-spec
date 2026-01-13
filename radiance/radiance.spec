@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: radiance
-Version: 0.7.0
+Version: 0.7.1
 Release: 1%{?dist}
 Summary: Radiance is video art software for VJs
 License: MIT
@@ -106,5 +106,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Mon Jan 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.7.1-1
+- update to 0.7.1-1
+
 * Fri Dec 19 2025 Yann Collette <ycollette.nospam@free.fr> - 0.7.0-1
 - Initial spec file
