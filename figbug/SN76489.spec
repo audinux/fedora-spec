@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: SN76489
-Version: 1.1.0
+Version: 1.1.2
 Release: 4%{?dist}
 Summary: Sega Master System Sound Chip VST
 License: LGPLv2+
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./figbug-source.sh <project> <tag>
-# ./figbug-source.sh SN76489 v1.1.0
+# ./figbug-source.sh SN76489 v1.1.2
 
 Source0: SN76489.tar.gz
 Source1: figbug-source.sh
@@ -135,6 +135,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Tue Jan 13 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.2-4
+- update to 1.1.2-4
+
+* Sun Jan 11 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-4
+- update to 1.1.1-4
+
 * Fri Jan 02 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-4
 - update to 1.1.0-4
 
