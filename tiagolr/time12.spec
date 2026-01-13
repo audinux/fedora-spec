@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: time12
-Version: 1.2.2
+Version: 1.2.3
 Release: 2%{?dist}
 Summary: An envelope based delay modulator
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./ripplerx-source.sh <PROJECT> <TAG>
-#        ./ripplerx-source.sh time12 v1.2.2
+#        ./ripplerx-source.sh time12 v1.2.3
 
 Source0: time12.tar.gz
 Source1: ripplerx-source.sh
@@ -89,6 +89,9 @@ cp -ra %{__cmake_builddir}/TIME12_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Jan 11 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-2
+- update to 1.2.3-2
+
 * Mon Nov 17 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-2
 - update to 1.2.2-2
 
