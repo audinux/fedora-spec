@@ -19,7 +19,7 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 
 Name: SocaLabs-plugins
-Version: 20250807
+Version: 20260213
 Release: 6%{?dist}
 Summary: Various VST/VST3 Plugins from SocaLabs.com
 License: BSD-3-Clause
@@ -30,7 +30,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./socalab-source.sh <tag>
-# ./socalab-source.sh a64ec82683b90bc1d22c11752d4fa6bac94a7f35
+# ./socalab-source.sh dd96ff4c161a29b779436433cb93183941029ef1
 
 Source0: slPlugins.tar.gz
 Source4: socalab-source.sh
@@ -103,23 +103,31 @@ mkdir -p %{buildroot}%{_libdir}/vst3/
 mkdir -p %{buildroot}%{_libdir}/lv2/
 mkdir -p %{buildroot}%{_libdir}/clap/
 
-PLUGIN_LIST="ABTester \
-	     AddInvert \
-	     ChannelMute \
-	     CompensatedDelay \
-	     Compressor \
-	     Delay \
-	     Expander \
-	     Gate \
-	     HugeGain \
-	     Limiter \
-	     Maths \
-	     Oscilloscope \
-	     PitchTrack \
-	     SFX8 \
-	     SampleDelay \
-	     SpectrumAnalyzer \
-	     ToneGenerator"
+PLUGIN_LIST="ABTester
+AddInvert
+ChannelMute
+CompensatedDelay
+Compressor
+Crossfeed
+Delay
+Expander
+Gate
+GraphicEQ
+HugeGain
+Limiter
+Maths
+MidiLooper
+Oscilloscope
+PitchTrack
+SampleDelay
+SFX8
+SimpleVerb
+SpectrumAnalyzer
+StereoEnhancer
+StereoProcessor
+ToneGenerator
+WaveLooper
+XYScope"
 
 for PLUGIN in $PLUGIN_LIST
 do
@@ -144,6 +152,9 @@ done
 %{_libdir}/lv2/
 
 %changelog
+* Tue Jan 13 2026 Yann Collette <ycollette.nospam@free.fr> - 20260213-6
+- update to dd96ff4c161a29b779436433cb93183941029ef1
+
 * Wed Oct 01 2025 Yann Collette <ycollette.nospam@free.fr> - 20250807-6
 - update to a64ec82683b90bc1d22c11752d4fa6bac94a7f35
 
