@@ -222,6 +222,11 @@
 | tixl                          | https://github.com/tixl3d/tixl |
 | Symphonium                    | https://github.com/ttdm/Symphonium |
 | qsynthi                       | https://github.com/arth3mis/qsynthi |
+| ChorusExMachina               | https://github.com/peastman/ChorusExMachina |
+| osm                           | https://github.com/psmokotnin/osm |
+| vitalium-verb                 | https://github.com/BillyDM/vitalium-verb |
+| CTAGDRC                       | https://github.com/BillyDM/CTAGDRC |
+| mod-cabsim-IR-loader          | https://github.com/mod-audio/mod-cabsim-IR-loader |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
