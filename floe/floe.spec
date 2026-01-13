@@ -8,7 +8,7 @@
 
 Name: floe
 Version: 1.1.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Sample library platform with a simple, powerful interface
 License: GPL-3.0-or-later
 URL: https://github.com/floe-audio/Floe
@@ -54,7 +54,7 @@ Requires: license-%{name}
 VST3 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CALP version of %{name}
+Summary:  CLAP version of %{name}
 License:  GPL-3.0-or-later
 Requires: license-%{name}
 
@@ -89,7 +89,7 @@ cp -vfr zig-out/.vst3/* %{buildroot}/%{_libdir}/vst3/
 cp -vfr zig-out/.clap/* %{buildroot}/%{_libdir}/clap/
 
 
-%files
+%files -n license-%{name}
 %doc readme.md faq.md 
 %license LICENSES/*
 
@@ -100,5 +100,8 @@ cp -vfr zig-out/.clap/* %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Tue Jan 13 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-2
+- update to 1.1.1-2 - fix package
+
 * Mon Jan 12 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
 - Initial spec file
