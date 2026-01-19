@@ -1088,7 +1088,9 @@ https://git.code.sf.net/p/alsamodular/qmidiroute.git
 https://github.com/kushview/retuner
 https://github.com/kushview/virtual-midi-controller
 https://github.com/minimaxir/miditui
-https://github.com/floe-audio/Floe"
+https://github.com/floe-audio/Floe
+https://github.com/floe-audio/NoiseRF
+https://github.com/mod-audio/mod-cabsim-IR-loader"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
