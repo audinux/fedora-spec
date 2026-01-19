@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: gate12
-Version: 1.2.3
+Version: 1.3.0
 Release: 2%{?dist}
 Summary: Trance gate / volume shaper
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./ripplerx-source.sh <PROJECT> <TAG>
-#        ./ripplerx-source.sh gate12 v1.2.3
+#        ./ripplerx-source.sh gate12 v1.3.0
 
 Source0: gate12.tar.gz
 Source1: ripplerx-source.sh
@@ -88,6 +88,9 @@ cp -ra %{__cmake_builddir}/GATE12_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Jan 19 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-2
+- update to 1.3.0-2
+
 * Sat Dec 13 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-2
 - update to 1.2.3-2
 
