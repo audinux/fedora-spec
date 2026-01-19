@@ -5,7 +5,7 @@
 # LastSourceUpdate: 2020
 
 Name: lv2-noise-repellent
-Version: 0.2.3
+Version: 0.2.5
 Release: 5%{?dist}
 Summary: A lv2 plug-in for broadband noise reduction.
 License: GPL-2.0-or-later
@@ -45,7 +45,10 @@ Limitations
 
 %build
 
-%meson --buildtype=release --libdir=%{_lib} --wrap-mode forcefallback
+%meson --buildtype=release \
+       --libdir=%{_lib} \
+       --wrap-mode forcefallback \
+       -Dstatic_libspecbleach=true
 %meson_build
 
 %install
@@ -62,6 +65,12 @@ rm -rf %{buildroot}/%{_libdir}/pkgconfig/libspecbleach.pc
 %exclude %{_includedir}/
 
 %changelog
+* Sat Jan 17 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.5-5
+- update to 0.2.5-5
+
+* Wed Jan 14 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.4-5
+- update to 0.2.4-5
+
 * Tue Mar 07 2023 Yann Collette <ycollette.nospam@free.fr> - 0.2.3-5
 - update to 0.2.3-5 - fixes
 
