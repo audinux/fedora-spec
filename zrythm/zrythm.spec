@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Audio, DAW
 
-%global commit0 74ec7d0a84a1a4872c9751b3eaa17a3e121f7447
+%global commit0 9cca91d511a2fe00b3ce9a14bb25437ecf3b5eaa
 
 Name: zrythm
 Version: 1.9.9
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Highly automated Digital Audio Workstation (DAW) featureful and intuitive to use
 License: GPL-2.0-or-later
 URL: https://github.com/zrythm/zrythm
@@ -29,48 +29,47 @@ BuildRequires: python3
 BuildRequires: doxygen
 BuildRequires: python3-sphinx-intl
 BuildRequires: rubygem-sass
-BuildRequires: gettext-devel
-BuildRequires: qt6-qtbase-devel
-BuildRequires: qt6-qtsvg-devel
-BuildRequires: qt6-linguist
-BuildRequires: qt6-qttools-devel
-BuildRequires: qt6-qtdeclarative-devel
-BuildRequires: fontconfig-devel
-BuildRequires: freetype-devel
-BuildRequires: mesa-libGL-devel
-BuildRequires: libXrandr-devel
-BuildRequires: libXinerama-devel
-BuildRequires: libXcursor-devel
-BuildRequires: lv2-devel
-BuildRequires: lilv-devel
-BuildRequires: suil-devel
-BuildRequires: alsa-lib-devel
-BuildRequires: pkgconfig(jack)
-BuildRequires: libsndfile-devel
-BuildRequires: libogg-devel
-BuildRequires: libvorbis-devel
-BuildRequires: flac-devel
-BuildRequires: opus-devel
-BuildRequires: lame-devel
-BuildRequires: mpg123-devel
-BuildRequires: speex-devel
-BuildRequires: sqlite-devel
-BuildRequires: boost-devel
-BuildRequires: libchromaprint-devel
-BuildRequires: fmt-devel
-BuildRequires: libzstd-devel
-BuildRequires: spdlog-devel
-BuildRequires: google-benchmark-devel
-BuildRequires: json-devel
-BuildRequires: mbedtls-devel
-BuildRequires: gtest-devel
-BuildRequires: gtest-devel
-BuildRequires: xxhash-devel
-BuildRequires: magic_enum-devel
-BuildRequires: gsl-lite-devel
-BuildRequires: llvm-devel
 BuildRequires: llvm
 BuildRequires: xorg-x11-server-Xvfb
+BuildRequires: alsa-lib-devel
+BuildRequires: boost-devel
+BuildRequires: flac-devel
+BuildRequires: fmt-devel
+BuildRequires: fontconfig-devel
+BuildRequires: freetype-devel
+BuildRequires: gettext-devel
+BuildRequires: google-benchmark-devel
+BuildRequires: gsl-lite-devel
+BuildRequires: gtest-devel
+BuildRequires: json-devel
+BuildRequires: lame-devel
+BuildRequires: libXcursor-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libchromaprint-devel
+BuildRequires: libogg-devel
+BuildRequires: libsndfile-devel
+BuildRequires: libvorbis-devel
+BuildRequires: libzstd-devel
+BuildRequires: lilv-devel
+BuildRequires: llvm-devel
+BuildRequires: lv2-devel
+BuildRequires: magic_enum-devel
+BuildRequires: mbedtls-devel
+BuildRequires: mesa-libGL-devel
+BuildRequires: mpg123-devel
+BuildRequires: opus-devel
+BuildRequires: pkgconfig(jack)
+BuildRequires: qt6-linguist
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qtdeclarative-devel
+BuildRequires: qt6-qtsvg-devel
+BuildRequires: qt6-qttools-devel
+BuildRequires: spdlog-devel
+BuildRequires: speex-devel
+BuildRequires: sqlite-devel
+BuildRequires: suil-devel
+BuildRequires: xxhash-devel
 BuildRequires: desktop-file-utils
 
 Requires: breeze-icon-theme
@@ -108,7 +107,7 @@ trap "kill $! || true" EXIT
 sleep 10
 
 %cmake -DZRYTHM_BUNDLED_PLUGINS_WITH_STATIC_LINKING=OFF \
-       -DZRYTHM_BUNDLED_PLUGINS=OFF \
+       -DZRYTHM_BUNDLED_PLUGINS=ON \
        -DZRYTHM_USE_JACK=ON \
        -DZRYTHM_USER_MANUAL=OFF \
        -DENABLE_CPACK=OFF \
@@ -144,6 +143,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.zrythm.Zrythm.des
 %{_mandir}/*
 
 %changelog
+* Thu Jan 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.9.9-3
+- update to 1.9.9-3 - update to 9cca91d511a2fe00b3ce9a14bb25437ecf3b5eaa
+
 * Thu Nov 20 2025 Yann Collette <ycollette.nospam@free.fr> - 1.9.9-2
 - update to 1.9.9-2
 
