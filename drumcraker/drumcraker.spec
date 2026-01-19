@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: drumcraker
-Version: 1.2.3
+Version: 1.2.4
 Release: 1%{?dist}
 Summary: Free drum sampler VST3 plugin optimized for Linux and PipeWire, fully compatible with DrumGizmo drum kits
 License: MIT
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./drumcraker-source.sh <TAG>
-#        ./drumcraker-source.sh v1.2.3
+#        ./drumcraker-source.sh v1.2.4
 
 Source0: DrumCraker.tar.gz
 Source1: drumcraker-source.sh
@@ -23,22 +23,22 @@ Source1: drumcraker-source.sh
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: git
+BuildRequires: alsa-lib-devel
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
-BuildRequires: libX11-devel
-BuildRequires: xcb-util-keysyms-devel
-BuildRequires: xcb-util-devel
-BuildRequires: libXrandr-devel
-BuildRequires: xcb-util-cursor-devel
-BuildRequires: libxkbcommon-x11-devel
-BuildRequires: libXinerama-devel
-BuildRequires: libcurl-devel
-BuildRequires: alsa-lib-devel
-BuildRequires: pkgconfig(jack)
-BuildRequires: mesa-libGL-devel
-BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
+BuildRequires: libX11-devel
+BuildRequires: libXcursor-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libcurl-devel
+BuildRequires: libxkbcommon-x11-devel
+BuildRequires: mesa-libGL-devel
+BuildRequires: pkgconfig(jack)
+BuildRequires: xcb-util-cursor-devel
+BuildRequires: xcb-util-devel
+BuildRequires: xcb-util-keysyms-devel
 
 %description
 DrumCraker is a free drum sampler VST3 plugin optimized for Linux and PipeWire,
@@ -78,6 +78,9 @@ cp assets/background.png %{buildroot}/%{_libdir}/vst3/DrumCraker.vst3/Contents/R
 %{_libdir}/vst3/*
 
 %changelog
+* Wed Jan 14 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.4-1
+- update to 1.2.4-1
+
 * Fri Dec 19 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-1
 - update to 1.2.3-1
 
