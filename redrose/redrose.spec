@@ -4,7 +4,7 @@
 # Category: Sequencer, Tool
 
 Name: redrose
-Version: 0.5.52
+Version: 0.6.3
 Release: 2%{?dist}
 Summary: ABC notation music integrated environment
 License: GPL-3.0
@@ -72,6 +72,15 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/fr.free.b
 %{_datadir}/%{name}/locale/*.qm
 
 %changelog
+* Fri Jan 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.6.3-2
+- update to 0.6.3-2
+
+* Fri Jan 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.6.2-2
+- update to 0.6.2-2
+
+* Wed Jan 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.6.1-2
+- update to 0.6.1-2
+
 * Sun Jan 18 2026 Yann Collette <ycollette.nospam@free.fr> - 0.5.52-2
 - update to 0.5.52-2
 
