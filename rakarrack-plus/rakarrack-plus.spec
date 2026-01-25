@@ -5,7 +5,7 @@
 
 Summary: Guitar Amplifier emulator
 Name: rakarrack-plus
-Version: 1.3.2
+Version: 1.4.0
 Release: 4%{?dist}
 License: GPL
 URL: https://github.com/Stazed/rakarrack-plus
@@ -31,6 +31,7 @@ BuildRequires: libsndfile-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: fftw-devel
 BuildRequires: lv2-devel
+BuildRequires: zita-resampler-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: desktop-file-utils
 
@@ -73,6 +74,8 @@ LV2 plugins for %{name}
 %build
 
 %cmake -DLV2_PATH=%{_libdir}/lv2 \
+       -DEnablePFFFT=ON \
+       -DEnableZITA=ON \
 %ifarch x86_64
        -DEnableOptimizations=ON \
        -DEnableSSE=ON \
@@ -107,12 +110,23 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/rakarrack-plus.deskto
 %{_datadir}/pixmaps/*
 %{_datadir}/rakarrack-plus/
 %{_datadir}/doc/rakarrack-plus/html/*
+%{_datadir}/icons/hicolor/128x128/apps/rakarrack-plus.png
+%{_datadir}/icons/hicolor/16x16/apps/rakarrack-plus.png
+%{_datadir}/icons/hicolor/24x24/apps/rakarrack-plus.png
+%{_datadir}/icons/hicolor/256x256/apps/rakarrack-plus.png
+%{_datadir}/icons/hicolor/32x32/apps/rakarrack-plus.png
+%{_datadir}/icons/hicolor/48x48/apps/rakarrack-plus.png
+%{_datadir}/icons/hicolor/64x64/apps/rakarrack-plus.png
+%{_datadir}/icons/hicolor/scalable/apps/rakarrack-plus.svg
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
 %{_datadir}/RakarrackPlus.lv2/*
 
 %changelog
+* Sun Jan 25 2026 Yann Collette <ycollette dot nospam at free.fr> 1.4.0-3
+- update to 1.4.0-3
+
 * Sun Jan 04 2026 Yann Collette <ycollette dot nospam at free.fr> 1.3.2-3
 - update to 1.3.2-3
 
