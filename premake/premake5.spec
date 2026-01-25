@@ -3,7 +3,7 @@
 # Type: Standalone
 # Category: Tool, Programming
 
-%global beta_version beta7
+%global beta_version beta8
 Summary: Tool for describing builds
 Name: premake5
 Version: 5.0.0%beta_version
@@ -62,6 +62,9 @@ cp packages/debian/premake.1 %{buildroot}/%{_mandir}/man1/premake5.1
 %{_mandir}/man1/premake5.1*
 
 %changelog
+* Sat Jan 24 2026 Yann Collette <ycollette.nospam@free.fr> - 5.0.0-beta8-1
+- update to 5.0.0-beta8-1
+
 * Tue Jun 10 2025 Yann Collette <ycollette.nospam@free.fr> - 5.0.0-beta7-1
 - update to 5.0.0-beta7-1
 
