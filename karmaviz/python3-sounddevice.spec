@@ -4,7 +4,7 @@
 # Category: Programming
 
 Name: python3-sounddevice
-Version: 0.5.3
+Version: 0.5.5
 Release: 1%{?dist}
 Summary: Python PortAudio bindings
 License: MIT
@@ -46,5 +46,11 @@ convenience functions to play and record NumPy_ arrays containing audio signals
 %{_usr}/lib/python%{python3_version}/site-packages/_sounddevice.py
 
 %changelog
+* Fri Jan 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.5.5-1
+- update to 0.5.5-1 
+
+* Thu Jan 22 2026 Yann Collette <ycollette.nospam@free.fr> - 0.5.4-1
+- update to 0.5.4-1 
+
 * Tue Nov 18 2025 Yann Collette <ycollette.nospam@free.fr> - 0.5.3-1
 - Initial spec file 
