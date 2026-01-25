@@ -228,6 +228,10 @@
 | CTAGDRC                       | https://github.com/BillyDM/CTAGDRC |
 | VST-AnalogChannel             | https://github.com/FilTer87/VST-AnalogChannel |
 | SpatGRIS                      | https://github.com/GRIS-UdeM/SpatGRIS |
+| iem-wfs                       | https://git.iem.at/audioplugins/iem-wfs |
+| cqt-analyzer                  | https://git.iem.at/audioplugins/cqt-analyzer |
+| SpectralShift                 | https://github.com/trencrumb/SpectralShift |
+| VoyeSeq                       | https://github.com/yellius/VoyeSeq |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -518,6 +522,7 @@ spleeter from deezer    -> https://github.com/Deezer/spleeter
 demucs from facebook    -> https://github.com/facebookresearch/demucs
 stemgen                 -> https://github.com/axeldelafosse/stemgen
 stemgen (rust)          -> https://github.com/acolombier/stemgen (real-time)
+python-audio-separator  -> https://github.com/nomadkaraoke/python-audio-separator
 
 ## Check Sourceforge
 
