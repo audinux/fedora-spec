@@ -8,7 +8,7 @@
 %define	uname OpenBoard
 
 Name: openboard
-Version: 1.7.3
+Version: 1.7.4
 Release: 3%{?dist}
 Summary: Interactive whiteboard for schools and universities
 License: GPL-3.0-or-later
@@ -27,25 +27,21 @@ BuildRequires: bison
 BuildRequires: flex
 BuildRequires: (ffmpeg-devel or ffmpeg-free-devel)
 BuildRequires: libpaper-devel
-BuildRequires: qtsingleapplication-qt5-devel
+BuildRequires: qtsingleapplication-qt6-devel
 BuildRequires: quazip-devel
 BuildRequires: t1lib-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: pkgconfig(Qt5Core)
-BuildRequires: pkgconfig(Qt5Gui)
-BuildRequires: pkgconfig(Qt5Help)
-BuildRequires: pkgconfig(Qt5Multimedia)
-BuildRequires: pkgconfig(Qt5MultimediaWidgets)
-BuildRequires: pkgconfig(Qt5Network)
-BuildRequires: pkgconfig(Qt5PrintSupport)
-BuildRequires: pkgconfig(Qt5Script)
-BuildRequires: pkgconfig(Qt5Svg)
-BuildRequires: pkgconfig(Qt5UiTools)
-BuildRequires: pkgconfig(Qt5WebKit)
-BuildRequires: pkgconfig(Qt5WebKitWidgets)
-BuildRequires: pkgconfig(Qt5Xml)
-BuildRequires: pkgconfig(Qt5XmlPatterns)
-BuildRequires: pkgconfig(Qt5WebEngineWidgets)
+BuildRequires: pkgconfig(Qt6Core)
+BuildRequires: pkgconfig(Qt6Gui)
+BuildRequires: pkgconfig(Qt6Help)
+BuildRequires: pkgconfig(Qt6Multimedia)
+BuildRequires: pkgconfig(Qt6MultimediaWidgets)
+BuildRequires: pkgconfig(Qt6Network)
+BuildRequires: pkgconfig(Qt6PrintSupport)
+BuildRequires: pkgconfig(Qt6Svg)
+BuildRequires: pkgconfig(Qt6UiTools)
+BuildRequires: pkgconfig(Qt6WebEngineWidgets)
+BuildRequires: pkgconfig(Qt6Xml)
 BuildRequires: pkgconfig(hunspell)
 BuildRequires: pkgconfig(freetype2)
 BuildRequires: pkgconfig(openssl)
@@ -61,7 +57,7 @@ BuildRequires: libogg-devel
 BuildRequires: libtheora-devel
 BuildRequires: opus-devel
 BuildRequires: lame-devel
-BuildRequires: quazip-qt5-devel
+BuildRequires: quazip-qt6-devel
 BuildRequires: libsndfile-devel
 BuildRequires: desktop-file-utils
 
@@ -79,7 +75,7 @@ cp -pr %{SOURCE1} .
 sed -i -e "s|\$DIR/OpenBoard|/usr/libexec/OpenBoard|g" resources/linux/run.sh
 
 %build
-lrelease-qt5 -removeidentical %{uname}.pro
+lrelease-qt6 -removeidentical %{uname}.pro
 
 export LDFLAGS="-L/usr/lib64/ffmpeg $LDFLAGS"
 export CFLAGS="-I/usr/include/ffmpeg -I/usr/include/quazip $CFLAGS"
@@ -111,6 +107,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/ch.openboard.OpenBoar
 %{_sysconfdir}/%{name}/*
 
 %changelog
+* Thu Jan 22 2026 Yann Collette <ycollette.nospam@free.fr> - 1.7.4-3
+- update to 1.7.4-3
+
 * Tue Dec 17 2024 Yann Collette <ycollette.nospam@free.fr> - 1.7.3-3
 - update to 1.7.3-3
 
