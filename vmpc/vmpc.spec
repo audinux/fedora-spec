@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: vmpc
-Version: 0.9.0.16
+Version: 0.9.0.18
 Release: 1%{?dist}
 Summary: JUCE implementation of VMPC2000XL
 License: GPL-3.0-only
@@ -15,6 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/izzyreal/vmpc-juce/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Patch0: vmpc-0001-force-shared.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: git
@@ -49,7 +50,7 @@ License: GPL-3.0-or-later
 License and documentation for %{name}
 
 %prep
-%setup -n vmpc-juce-%{version}
+%autosetup -n vmpc-juce-%{version}
 
 # Remove LV2 plugin ... Segfault during build
 sed -i -e "s/FORMATS LV2 VST3 AU AUv3 Standalone/FORMATS VST3 AU AUv3 Standalone/g" CMakeLists.txt
@@ -59,7 +60,9 @@ sed -i -e "s/FORMATS LV2 VST3 AU AUv3 Standalone/FORMATS VST3 AU AUv3 Standalone
 %set_build_flags
 export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
-%cmake -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
+%cmake -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`" \
+       -DBUILD_SHARED_LIBS=OFF
+
 %cmake_build
 
 %install
@@ -67,8 +70,8 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_bindir}/
 
-cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/VST3/* %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/Standalone/* %{buildroot}/%{_bindir}/
+cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/Standalone/* %{buildroot}/%{_bindir}/
 
 %files -n license-%{name}
 %doc README.md
@@ -81,6 +84,12 @@ cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/RelWithDebInfo/Standalone/* %{bu
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Jan 25 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.0.18-1
+- update to 0.9.0.18-1
+
+* Fri Jan 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.0.17-1
+- update to 0.9.0.17-1
+
 * Sun Sep 28 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.0.16-1
 - update to 0.9.0.16-1
 

@@ -1,0 +1,25 @@
+From 03981819cefd4adbe255651120f65adca1f411a7 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Sun, 25 Jan 2026 14:02:31 +0100
+Subject: [PATCH] force shared
+
+---
+ CMakeLists.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 07702c3..545c299 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -46,6 +46,8 @@ if(MSVC)
+     set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>" CACHE INTERNAL "")
+ endif()
+ 
++set(JSON_VALIDATOR_SHARED_LIBS OFF CACHE BOOL "" FORCE)
++
+ string(TIMESTAMP CONFIGURE_TIMESTAMP "%a, %d %b %Y %H:%M:%S")
+ 
+ file(WRITE ${CMAKE_CURRENT_SOURCE_DIR}/src/main/build_info/VmpcJuceBuildInfo.hpp "#pragma once\nnamespace vmpc_juce::build_info { inline const char *getVersionString(){ return \"${VMPC_VERSION}\"; } inline const char *getTimeStampString(){ return \"${CONFIGURE_TIMESTAMP}\"; }}")
+-- 
+2.52.0
+
