@@ -230,8 +230,12 @@
 | SpatGRIS                      | https://github.com/GRIS-UdeM/SpatGRIS |
 | iem-wfs                       | https://git.iem.at/audioplugins/iem-wfs |
 | cqt-analyzer                  | https://git.iem.at/audioplugins/cqt-analyzer |
-| SpectralShift                 | https://github.com/trencrumb/SpectralShift |
 | VoyeSeq                       | https://github.com/yellius/VoyeSeq |
+| plugins                       | https://github.com/luna-co-software/plugins |
+| rnnoise                       | https://github.com/xiph/rnnoise |
+| OxiSynth                      | https://github.com/PolyMeilex/OxiSynth |
+| tune                          | https://github.com/Woyten/tune |
+| xsynth                        | https://github.com/BlackMIDIDevs/xsynth |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour

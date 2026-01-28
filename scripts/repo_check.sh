@@ -1090,7 +1090,9 @@ https://github.com/kushview/virtual-midi-controller
 https://github.com/minimaxir/miditui
 https://github.com/floe-audio/Floe
 https://github.com/floe-audio/NoiseRF
-https://github.com/mod-audio/mod-cabsim-IR-loader"
+https://github.com/mod-audio/mod-cabsim-IR-loader
+https://github.com/subalterngames/cacophony
+https://github.com/trencrumb/SpectralShift"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
