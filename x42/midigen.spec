@@ -4,7 +4,7 @@
 # Category: MIDI, Tool
 
 Name: midigen.lv2
-Version: 0.4.2
+Version: 0.4.3
 Release: 1%{?dist}
 Summary: LV2 MIDI Test Sequence Generator
 License: GPL-2.0-or-later
@@ -42,5 +42,8 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Jan 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.3-1
+- update to 0.4.3
+
 * Wed May 24 2023 Yann Collette <ycollette.nospam@free.fr> - 0.4.2-1
 - Initial spec file
