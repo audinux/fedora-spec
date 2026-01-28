@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: stepseq.lv2
-Version: 0.6.14
+Version: 0.6.15
 Release: 1%{?dist}
 Summary: Simple Step Sequencer
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./x42-source.sh <project> <tag>
-# ./x42-source.sh stepseq.lv2 v0.6.14
+# ./x42-source.sh stepseq.lv2 v0.6.15
 
 Source0: stepseq.lv2.tar.gz
 Source1: x42-source.sh
@@ -53,6 +53,9 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_datadir}/*
 
 %changelog
+* Mon Jan 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.6.15-1
+- update to 0.6.15-1
+
 * Tue Jun 11 2024 Yann Collette <ycollette.nospam@free.fr> - 0.6.14-1
 - update to 0.6.14-1
 
