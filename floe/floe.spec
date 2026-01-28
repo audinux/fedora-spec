@@ -7,7 +7,7 @@
 %global zig_version 0.14.0
 
 Name: floe
-Version: 1.1.1
+Version: 1.1.2
 Release: 2%{?dist}
 Summary: Sample library platform with a simple, powerful interface
 License: GPL-3.0-or-later
@@ -30,6 +30,7 @@ BuildRequires: libX11-devel
 BuildRequires: libXext-devel
 BuildRequires: libcurl-devel
 BuildRequires: openssl-devel
+BuildRequires: vulkan-loader-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 
@@ -100,6 +101,9 @@ cp -vfr zig-out/.clap/* %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Tue Jan 27 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.2-2
+- update to 1.1.2-2
+
 * Tue Jan 13 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-2
 - update to 1.1.1-2 - fix package
 
