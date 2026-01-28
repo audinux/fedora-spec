@@ -4,7 +4,7 @@
 # Category: Audio
 
 Name: lpd8editor
-Version: 0.0.17
+Version: 0.0.18
 Release: 1%{?dist}
 Summary: A linux editor for the Akai LPD8
 URL: https://github.com/charlesfleche/lpd8editor
@@ -79,6 +79,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/
 
 %changelog
+* Mon Jan 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.18-1
+- Update to 0.0.18-1
+
 * Sun Nov 16 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.17-1
 - Update to 0.0.17-1
 
