@@ -236,6 +236,7 @@
 | OxiSynth                      | https://github.com/PolyMeilex/OxiSynth |
 | tune                          | https://github.com/Woyten/tune |
 | xsynth                        | https://github.com/BlackMIDIDevs/xsynth |
+| 3HSPlug                       | https://github.com/src3453/3HSPlug |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
