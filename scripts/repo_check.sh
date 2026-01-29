@@ -555,7 +555,6 @@ https://github.com/RomanKubiak/ctrlr
 https://github.com/romi1502/MrFreeze
 https://github.com/rorywalsh/cabbage
 https://github.com/RPTools/maptool
-https://github.com/rumblesan/improviz
 https://github.com/sadko4u/lsp-plugins
 https://github.com/sadko4u/tamgamp.lv2
 https://github.com/sadko4u/timbre-mill
@@ -1092,7 +1091,8 @@ https://github.com/floe-audio/Floe
 https://github.com/floe-audio/NoiseRF
 https://github.com/mod-audio/mod-cabsim-IR-loader
 https://github.com/subalterngames/cacophony
-https://github.com/trencrumb/SpectralShift"
+https://github.com/trencrumb/SpectralShift
+https://codeberg.org/rumblesan/improviz"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
