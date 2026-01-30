@@ -1,0 +1,28 @@
+From f8354cfee429136a6719b499f409c4368e1e643b Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Fri, 30 Jan 2026 12:48:24 +0100
+Subject: [PATCH] remove static libstdc++
+
+---
+ CMakeLists.txt | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 60371b2..d1c5e31 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -90,11 +90,6 @@ target_link_libraries(pluginval PRIVATE
+     juce::juce_audio_utils
+     juce::juce_recommended_warning_flags)
+ 
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+-    target_link_libraries(pluginval PRIVATE
+-        -static-libstdc++)
+-endif()
+-
+ set (cmdline_docs_out "${CMAKE_CURRENT_LIST_DIR}/docs/Command line options.md")
+ 
+ add_custom_command (OUTPUT "${cmdline_docs_out}"
+-- 
+2.52.0
+

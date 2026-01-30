@@ -1092,7 +1092,8 @@ https://github.com/floe-audio/NoiseRF
 https://github.com/mod-audio/mod-cabsim-IR-loader
 https://github.com/subalterngames/cacophony
 https://github.com/trencrumb/SpectralShift
-https://codeberg.org/rumblesan/improviz"
+https://codeberg.org/rumblesan/improviz
+https://github.com/Tracktion/pluginval"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
