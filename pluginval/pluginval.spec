@@ -18,7 +18,9 @@ Distribution: Audinux
 #        ./pluginval-source.sh v1.0.4
 
 Source0: pluginval.tar.gz
-Source1: pluginval-source.sh
+# Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
+Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
+Source2: pluginval-source.sh
 Patch0: pluginval-0001-remove-static-libstdc.patch
 
 BuildRequires: gcc gcc-c++
@@ -61,9 +63,15 @@ Highlights:
 %prep
 %autosetup -p1 -n pluginval
 
+unzip %{SOURCE1}
+
 %build
 
-%cmake
+CWD=`pwd`
+
+export VST2_SDK_DIR="$CWD/VST_SDK/VST2_SDK/"
+
+%cmake -DPLUGINVAL_ENABLE_RTCHECK=ON
 %cmake_build
 
 %install
