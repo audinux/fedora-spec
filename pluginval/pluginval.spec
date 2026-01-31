@@ -5,7 +5,7 @@
 
 Name: pluginval
 Version: 1.0.4
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Cross platform plugin testing and validation tool
 License: GPL-3.0-or-later
 URL: https://github.com/Tracktion/pluginval
@@ -71,7 +71,7 @@ CWD=`pwd`
 
 export VST2_SDK_DIR="$CWD/VST_SDK/VST2_SDK/"
 
-%cmake -DPLUGINVAL_ENABLE_RTCHECK=ON
+%cmake -DPLUGINVAL_ENABLE_RTCHECK=OFF
 %cmake_build
 
 %install
@@ -89,5 +89,8 @@ cp -ra docs/*  %{buildroot}/%{_datadir}/%{name}/doc/
 %{_datadir}/%{name}/doc/*
 
 %changelog
+* Sat Jan 31 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.4-2
+- update to 1.0.4-2 - deactivate PLUGINVAL_ENABLE_RTCHECK for now
+
 * Fri Jan 30 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.4-1
 - Initial spec file
