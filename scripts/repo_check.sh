@@ -1093,7 +1093,9 @@ https://github.com/mod-audio/mod-cabsim-IR-loader
 https://github.com/subalterngames/cacophony
 https://github.com/trencrumb/SpectralShift
 https://codeberg.org/rumblesan/improviz
-https://github.com/Tracktion/pluginval"
+https://github.com/Tracktion/pluginval
+https://github.com/tiagolr/qdelay
+https://caoua.org/git/midish"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
