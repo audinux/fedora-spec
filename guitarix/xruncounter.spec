@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Audio, Tool
 
-%global commit0 4c234ddf154b5ea656a90ad77a440d4e2893d7a7
+%global commit0 c9c4a3123d2faf05cb898ca3af45b64ad21cebff
 
 Name: xruncounter
 Version: 0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Small linux tool to measure jack xruns and evaluate the overall performance of a system for realtime audio.
 License: GPL-2.0-or-later
 URL: https://github.com/Gimmeapill/xruncounter
@@ -45,5 +45,8 @@ cp xruncounter %{buildroot}%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Thu Feb 05 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1-2
+- update to 0.1-2 - update to c9c4a3123d2faf05cb898ca3af45b64ad21cebff
+
 * Tue Feb 20 2024 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
 - Initial spec file
