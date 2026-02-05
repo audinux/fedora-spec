@@ -4,16 +4,17 @@
 # Category: Audio, Effect
 
 Name: stompboxui
-Version: 0.1.15
+Version: 0.1.16
 Release: 1%{?dist}
 Summary: Remote GUI and VST3 plugin for Stompbox guitar simulation
 License: GPL-3.0-or-later
 URL: https://github.com/mikeoliphant/StompboxUI
+ExclusiveArch: x86_64
 
 %global debug_package %{nil}
 
 # ./mikeoliphant-source.sh <project> <tag>
-# ./mikeoliphant-source.sh StompboxUI v0.1.15
+# ./mikeoliphant-source.sh StompboxUI v0.1.16
 # ./mikeoliphant-source.sh StompboxUI master
 
 Source0: StompboxUI.tar.gz
@@ -51,7 +52,7 @@ License and documentation for %{name}
 
 # Build image processor
 
-cd StompboxImageProcessor/
+cd StompboxUI/StompboxImageProcessor/
 dotnet build -c Release StompboxImageProcessor.csproj
 dotnet run -c Release StompboxImageProcessor.csproj
 cd ..
@@ -64,15 +65,18 @@ dotnet build -c Release StompboxRemoteGL.csproj
 %install
 
 mkdir -p %{buildroot}/%{_bindir}/
-cp StompboxRemoteGL/bin/Release/net8.0/StompboxRemoteGL  %{buildroot}/%{_bindir}/
+cp StompboxUI/StompboxRemoteGL/bin/Release/net8.0/StompboxRemoteGL  %{buildroot}/%{_bindir}/
 
 %files
 %{_bindir}/StompboxRemoteGL
 
 %files -n license-%{name}
-%doc README.md
-%license LICENSE
+%doc README.md CREDITS.md
+%license LICENSE.md
 
 %changelog
+* Wed Feb 04 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.16-1
+- update to 0.1.16-1
+
 * Wed Aug 13 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1.15-1
 - Initial build
