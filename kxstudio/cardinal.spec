@@ -9,7 +9,7 @@
 %global debug_package %{nil}
 
 Name: cardinal
-Version: 25.06
+Version: 26.01
 Release: 2%{?dist}
 Summary: Virtual modular synthesizer plugin
 License: GPL-3.0-or-later
@@ -56,7 +56,7 @@ BuildRequires: speexdsp-devel
 BuildRequires: desktop-file-utils
 
 Requires(pre): python3-qt5
-Requires:      %{name}-common = %{version}-%{release}
+Requires: %{name}-common = %{version}-%{release}
 
 %description
 Cardinal, the Rack!
@@ -216,6 +216,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Sat Jan 31 2026 Yann Collette <ycollette.nospam@free.fr> - 26.01-2
+- update to 26.01-2
+
 * Sun Jun 22 2025 Yann Collette <ycollette.nospam@free.fr> - 25.06-2
 - update to 25.06-2
 
