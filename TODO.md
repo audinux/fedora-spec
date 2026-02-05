@@ -237,6 +237,7 @@
 | tune                          | https://github.com/Woyten/tune |
 | xsynth                        | https://github.com/BlackMIDIDevs/xsynth |
 | 3HSPlug                       | https://github.com/src3453/3HSPlug |
+| sonusmix                      | https://codeberg.org/sonusmix/sonusmix |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
