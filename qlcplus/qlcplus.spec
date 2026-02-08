@@ -4,7 +4,7 @@
 # Category: Tool
 
 Name: qlcplus
-Version: 5.1.0
+Version: 5.2.0
 Release: 1%{?dist}
 Summary: Q Light Controller Plus - The free DMX lighting console
 URL: https://github.com/mcallegari/qlcplus
@@ -71,6 +71,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/*.desktop
 %{_mandir}/*
 
 %changelog
+* Fri Feb 06 2026 Yann Collette <ycollette.nospam@free.fr> - 5.2.0-1
+- update to 5.2.0-1
+
 * Tue Jan 06 2026 Yann Collette <ycollette.nospam@free.fr> - 5.1.0-1
 - update to 5.1.0-1
 
