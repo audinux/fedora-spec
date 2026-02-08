@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: drumcraker
-Version: 1.2.4
+Version: 1.2.5
 Release: 1%{?dist}
 Summary: Free drum sampler VST3 plugin optimized for Linux and PipeWire, fully compatible with DrumGizmo drum kits
 License: MIT
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./drumcraker-source.sh <TAG>
-#        ./drumcraker-source.sh v1.2.4
+#        ./drumcraker-source.sh v1.2.5
 
 Source0: DrumCraker.tar.gz
 Source1: drumcraker-source.sh
@@ -78,6 +78,9 @@ cp assets/background.png %{buildroot}/%{_libdir}/vst3/DrumCraker.vst3/Contents/R
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Feb 07 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.5-1
+- update to 1.2.5-1
+
 * Wed Jan 14 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.4-1
 - update to 1.2.4-1
 
