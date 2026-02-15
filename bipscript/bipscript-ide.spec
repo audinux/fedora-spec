@@ -4,7 +4,7 @@
 # Category: Audio, Programming
 
 Name: bipscript-ide
-Version: 0.22
+Version: 0.23
 Release: 1%{?dist}
 Summary: An IDEA for bipscript
 URL: https://gitlab.domainepublic.net/bipscript/ide/
@@ -18,9 +18,9 @@ Source0: https://gitlab.domainepublic.net/bipscript/ide/-/archive/v%{version}/id
 Source1: bipscript-version.h
 
 BuildRequires: gcc gcc-c++
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-qtbase-gui
-BuildRequires: qt5-qtsvg-devel
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qtbase-gui
+BuildRequires: qt6-qtsvg-devel
 BuildRequires: boost-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
@@ -43,7 +43,7 @@ cp %{SOURCE1} version.h
 %set_build_flags
 export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
-%qmake_qt5 bipscript-ide.pro
+%qmake_qt6 bipscript-ide.pro
 %make_build
 
 %install
@@ -87,6 +87,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/bipscript-ide.desktop
 %{_datadir}/icons/*
 
 %changelog
+* Thu Feb 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.23-1
+- update to 0.23-1
+
 * Sun May 25 2025 Yann Collette <ycollette.nospam@free.fr> - 0.22-1
 - update to 0.22-1
 
