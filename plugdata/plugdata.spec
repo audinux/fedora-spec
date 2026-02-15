@@ -4,7 +4,7 @@
 # Category: Audio, MIDI, Programming
 
 Name: plugdata
-Version: 0.9.2
+Version: 0.9.3
 Release: 2%{?dist}
 Summary: Pure Data as a plugin, with a new GUI
 URL: https://github.com/timothyschoen/PlugData
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./plugdata-source.sh <TAG>
-# ./plugdata-source.sh v0.9.2
+# ./plugdata-source.sh v0.9.3
 
 Source0: PlugData.tar.gz
 Source1: plugdata-source.sh
@@ -48,29 +48,38 @@ BuildRequires: mesa-libGLU-devel
 BuildRequires: libatomic
 BuildRequires: desktop-file-utils
 
+Requires: license-%{name}
+
 %description
 Plugin wrapper around PureData to allow patching in a wide selection of DAWs.
 
-%package -n vst3-%{name}
-Summary:  VST3 version of %{name}
+%package -n license-%{name}
+Summary:  License and documentation for %{name}
 License:  GPL-2.0-or-later
-Requires: %{name}
+
+%description -n license-%{name}
+License and documentation for %{name}
+
+%package -n vst3-%{name}
+Summary: VST3 version of %{name}
+License: GPL-2.0-or-later
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
-Requires: %{name}
+Summary: LV2 version of %{name}
+License: GPL-2.0-or-later
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  GPL-2.0-or-later
-Requires: %{name}
+Summary: CLAP version of %{name}
+License: GPL-2.0-or-later
+Requires: license-%{name}
 
 %description -n clap-%{name}
 CLAP version of %{name}
@@ -128,11 +137,13 @@ desktop-file-install --vendor '' \
 desktop-file-validate %{buildroot}%{_datadir}/applications/plugdata.desktop
 
 %files
-%doc README.md
-%license LICENSE
 %{_bindir}/*
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/*
+
+%files -n license-%{name}
+%doc README.md
+%license LICENSE
 %{_fontbasedir}/*
 
 %files -n vst3-%{name}
@@ -145,6 +156,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/plugdata.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Sun Feb 15 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.3-2
+- update to 0.9.3-2
+
 * Sun Sep 21 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.2-2
 - update to 0.9.2-2
 
