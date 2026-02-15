@@ -3,19 +3,18 @@
 # Type: Standalone
 # Category: Audio, Effect
 
+%global debug_package %{nil}
+
 Name: stompboxui
-Version: 0.1.16
+Version: 0.2.0
 Release: 1%{?dist}
 Summary: Remote GUI and VST3 plugin for Stompbox guitar simulation
 License: GPL-3.0-or-later
 URL: https://github.com/mikeoliphant/StompboxUI
 ExclusiveArch: x86_64
 
-%global debug_package %{nil}
-
 # ./mikeoliphant-source.sh <project> <tag>
-# ./mikeoliphant-source.sh StompboxUI v0.1.16
-# ./mikeoliphant-source.sh StompboxUI master
+# ./mikeoliphant-source.sh StompboxUI v0.2.0
 
 Source0: StompboxUI.tar.gz
 Source1: mikeoliphant-source.sh
@@ -75,6 +74,9 @@ cp StompboxUI/StompboxRemoteGL/bin/Release/net8.0/StompboxRemoteGL  %{buildroot}
 %license LICENSE.md
 
 %changelog
+* Thu Feb 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
+- update to 0.2.0-1
+
 * Wed Feb 04 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.16-1
 - update to 0.1.16-1
 
