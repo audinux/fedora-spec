@@ -1096,7 +1096,7 @@ https://codeberg.org/rumblesan/improviz
 https://github.com/Tracktion/pluginval
 https://github.com/tiagolr/qdelay
 https://caoua.org/git/midish
-https://github.com/luna-co-software/plugins"
+https://github.com/dusk-audio/dusk-audio-plugins"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
