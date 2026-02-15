@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: element
-Version: 1.0.0b2
+Version: 1.0.0
 Release: 1%{?dist}
 Summary: This is the community version of Element, a modular LV2/VST/VST3/LADSPA audio plugin host.
 URL: https://github.com/kushview/Element
@@ -15,12 +15,13 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./element-source.sh <PROJECT> <TAG>
-#        ./element-source.sh Element 1.0.0b2
+#        ./element-source.sh Element 1.0.0
 Source0: Element.tar.gz
 Source1: element-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
+BuildRequires: git
 BuildRequires: lua-ldoc
 BuildRequires: ImageMagick
 BuildRequires: pkgconfig(jack)
@@ -41,6 +42,7 @@ BuildRequires: suil-devel
 BuildRequires: libcurl-devel
 BuildRequires: gtk2-devel
 BuildRequires: readline-devel
+BuildRequires: sol2-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -71,13 +73,16 @@ desktop-file-install --vendor '' \
 desktop-file-validate %{buildroot}%{_datadir}/applications/element.desktop
 
 %files
-%doc README.md AUTHORS.md CODE_OF_CONDUCT.md  CONTRIBUTING.md
-%license LICENSES/GPL3.txt
+%doc README.md AUTHORS.md CODE_OF_CONDUCT.md CONTRIBUTING.md
+%license LICENSES/*
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Thu Feb 12 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
+- update to 1.0.0-1
+
 * Tue Jan 06 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0b2-1
 - update to 1.0.0b2-1
 
