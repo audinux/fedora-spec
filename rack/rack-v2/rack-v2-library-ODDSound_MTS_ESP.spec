@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 ca9b2a24190c1a8dc797dd8928476aedf6b91eb6
-%global gittag0 2.0.4
+%global commit0 4c66d00a839b53b01ad02b425416702680b8424f
+%global gittag0 2.0.5
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-ODDSound_MTS_ESP
-Version: 2.0.4
+Version: 2.0.5
 Release: 2%{?dist}
 Summary: ODDSound_MTS_ESP plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r ODDSound_MTS_ESP_plugin/dist/ODDSound_MTS_ESP/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
 - initial specfile

@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 46418a55bb43deb765f5be98cfb47e380bd9bc20
-%global gittag0 2.2.0
+%global commit0 086d8c47ba610052e305c9d0a333c0f0e8abe98d
+%global gittag0 2.3.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Sulamith
-Version: 2.2.0
+Version: 2.3.2
 Release: 2%{?dist}
 Summary: Sulamith plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 Sulamith plugin for Rack.
-Multi-tool with probability, scaled random cv gen, a<>b switch, constant voltage, 0.2s-10s gate & trig out + text label. Slew&retrig menu options.
+Granular stereo recorder and stochastic effect. Stutter, Distortion, Glitches (port from Stochkit).
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r Sulamith_plugin/dist/Sulamith/* %{buildroot}%{_libexecdir}/Rack2/plugins/S
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.2-1
 - initial specfile
