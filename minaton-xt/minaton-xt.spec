@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: minaton-xt
-Version: 0.2.0
+Version: 1.0.0
 Release: 1%{?dist}
 Summary: DPF port of Minaton, an analogue style synthesizer
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source-minaton.sh <tag>
-#        ./source-minaton.sh 0.2.0
+#        ./source-minaton.sh 1.0.0
 
 Source0: Minaton-XT.tar.gz
 Source1: source-minaton.sh
@@ -37,34 +37,41 @@ The synth has three oscillators, two LFOs, One low pass resonant filter, oscilla
 two ADSR envelopes which can be redirected to oscillator pitch. The mod wheel controls
 filter frequency.
 
+%package -n license-%{name}
+Summary: License and documentation %{name}
+License: GPL-3.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst-%{name}
-Summary:  VST2 version of %{name}
-License:  GPL-3.0-or-later
-Requires: %{name}
+Summary: VST2 version of %{name}
+License: GPL-3.0-or-later
+Requires: license-%{name}
 
 %description -n vst-%{name}
 VST2 version of %{name}
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-or-later
-Requires: %{name}
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  GPL-3.0-or-later
-Requires: %{name}
+Summary: CLAP version of %{name}
+License: GPL-3.0-or-later
+Requires: license-%{name}
 
 %description -n clap-%{name}
 CLAP version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-3.0-or-later
-Requires: %{name}
+Summary: LV2 version of %{name}
+License: GPL-3.0-or-later
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
@@ -87,18 +94,15 @@ install -m 755 -d %{buildroot}/%{_libdir}/vst/
 install -m 755 -d %{buildroot}/%{_libdir}/vst3
 install -m 755 -d %{buildroot}/%{_libdir}/clap/
 install -m 755 -d %{buildroot}/%{_libdir}/lv2/
-install -m 755 -d %{buildroot}/%{_bindir}/
 
-cp %{__cmake_builddir}/bin/minaton %{buildroot}/%{_bindir}/
 cp %{__cmake_builddir}/bin/minaton.clap %{buildroot}/%{_libdir}/clap/
 cp -ra %{__cmake_builddir}/bin/minaton.lv2 %{buildroot}/%{_libdir}/lv2/
 cp %{__cmake_builddir}/bin/minaton-vst2.so %{buildroot}/%{_libdir}/vst/
 cp -ra %{__cmake_builddir}/bin/minaton.vst3 %{buildroot}/%{_libdir}/vst3/
 
-%files
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
-%{_bindir}/*
 
 %files -n vst-%{name}
 %{_libdir}/vst/*
@@ -113,5 +117,8 @@ cp -ra %{__cmake_builddir}/bin/minaton.vst3 %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Feb 14 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
+- update to 1.0.0-1
+
 * Wed Jan 24 2024 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
 - Initial spec file
