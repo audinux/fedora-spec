@@ -3,12 +3,11 @@
 # Type: Plugin, YSFX
 # Category: Audio, Effect
 
-Name: rejj
+Name: ysfx-rejj
 Version: 1.2.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Reaper JSFX Plugins
 URL: https://github.com/Justin-Johnson/ReJJ
-ExclusiveArch: x86_64 aarch64
 License: MIT
 
 BuildArch: noarch
@@ -16,9 +15,9 @@ BuildArch: noarch
 Vendor:       Audinux
 Distribution: Audinux
 
-Requires: ysfx
-
 Source0: https://github.com/Justin-Johnson/ReJJ/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+
+Obsoletes:  rejj <= 1.2.0-1
 
 %description
 This is a collection of audio effects I have written in REAPER's JSFX language.
@@ -38,5 +37,8 @@ cp -ra * %{buildroot}%{_datadir}/%{name}/
 %{_datadir}/%{name}/*
 
 %changelog
+* Tue Feb 17 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-2
+- update to 1.2.0-2 - rename spec
+
 * Fri Nov 10 2023 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
 - Initial spec file
