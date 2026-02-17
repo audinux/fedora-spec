@@ -1097,7 +1097,11 @@ https://github.com/Tracktion/pluginval
 https://github.com/tiagolr/qdelay
 https://caoua.org/git/midish
 https://github.com/dusk-audio/dusk-audio-plugins
-https://github.com/LMSBAND/LMS"
+https://github.com/LMSBAND/LMS
+https://github.com/chkhld/jsfx
+https://github.com/Sonic-Anomaly/Sonic-Anomaly-JSFX
+https://github.com/TukanStudios/TUKAN_STUDIOS_PLUGINS
+https://github.com/ReaTeam/JSFX"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
