@@ -285,6 +285,8 @@ Specmatch requires some python modules:
 - pydup:       https://github.com/jiaaro/pydub/
 - resampy:     https://github.com/bmcfee/resampy
 
+For YSFX plugins, add a ysfx- prefix.
+
 Add a grub script to add "preempt=full threadirqs nopti" to existing standard kernels
 
 Jack-Audio link fix:
