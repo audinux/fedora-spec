@@ -3,10 +3,8 @@
 # Type: Plugin, YSFX
 # Category: Audio, Effect
 
-%global commit0 50b9054b0820200693518754c3732c7449d6ec76
-
 Name: ysfx-lms
-Version: 0.0.1
+Version: 2.0
 Release: 2%{?dist}
 Summary: LMS Plugin Suite - Open source JSFX audio plugins
 URL: https://github.com/LMSBAND/LMS
@@ -17,7 +15,7 @@ BuildArch: noarch
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/LMSBAND/LMS/archive/%{commit0}.zip#/%{name}-%{version}.tar.gz
+Source0: https://github.com/LMSBAND/LMS/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 Obsoletes:  lms <= 0.0.1-1
 
@@ -26,7 +24,7 @@ LMS Plugin Suite - Open source JSFX audio plugins.
 
 %prep
 
-%autosetup -n LMS-%{commit0}
+%autosetup -n LMS-%{version}
 
 %install
 
@@ -38,6 +36,9 @@ cp -ra * %{buildroot}%{_datadir}/%{name}/
 %{_datadir}/%{name}/*
 
 %changelog
+* Wed Feb 18 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0-2
+- update to 2.0-2
+
 * Tue Feb 17 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
 - update to 0.0.1-2 - rename spec
 
