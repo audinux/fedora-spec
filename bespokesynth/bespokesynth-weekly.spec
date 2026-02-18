@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-%global commit0 edd1d9e45325dab68e225a98256a74ac1ceaf220
+%global commit0 f435799ad6ca15a892b628e0198153012fcd337b
 
 Name: BespokeSynth-weekly
 Version: 1.3.10
-Release: 13%{?dist}
+Release: 14%{?dist}
 Summary: A software modular synth
 License: GPL-3.0-or-later
 URL: https://github.com/BespokeSynth/BespokeSynth
@@ -29,23 +29,23 @@ BuildRequires: cmake
 BuildRequires: patchelf
 BuildRequires: mold
 BuildRequires: alsa-lib-devel
-BuildRequires: pulseaudio-libs-devel
+BuildRequires: freetype-devel
+BuildRequires: gtk3-devel
+BuildRequires: jsoncpp-devel
+BuildRequires: libX11-devel
+BuildRequires: libXcursor-devel
+BuildRequires: libXext-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXrandr-devel
+BuildRequires: libcurl-devel
+BuildRequires: libglvnd-devel
+BuildRequires: libpng-devel
+BuildRequires: libusbx-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: pkgconfig(jack)
-BuildRequires: python3-devel
+BuildRequires: pulseaudio-libs-devel
 BuildRequires: pybind11-devel
-BuildRequires: libcurl-devel
-BuildRequires: freetype-devel
-BuildRequires: libX11-devel
-BuildRequires: libXext-devel
-BuildRequires: libXrandr-devel
-BuildRequires: libXinerama-devel
-BuildRequires: libXcursor-devel
-BuildRequires: gtk3-devel
-BuildRequires: libglvnd-devel
-BuildRequires: libusbx-devel
-BuildRequires: libpng-devel
-BuildRequires: jsoncpp-devel
+BuildRequires: python3-devel
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 
@@ -129,6 +129,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/com.bespo
 %{_datadir}/metainfo/com.bespokesynth.BespokeSynth.metainfo.xml
 
 %changelog
+* Wed Feb 18 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-14
+- Update to 1.3.10-14 - f435799ad6ca15a892b628e0198153012fcd337b
+
 * Tue Feb 03 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-13
 - Update to 1.3.10-13 - edd1d9e45325dab68e225a98256a74ac1ceaf220
 
