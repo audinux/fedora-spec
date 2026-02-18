@@ -255,26 +255,14 @@ Add dead package:
 - gmixer
 - jokosher
 - kguitar
-- lv2-EQ10Q-plugins
-- lv2-artyfx-plugins
-- lv2-avw-plugins
-- lv2-fomp-plugins
 - lv2-instance-access
-- lv2-invada-plugins
-- lv2-kn0ck0ut
-- lv2-triceratops
 - lv2-ui
 - lv2core
-- phasex
 - rtirq
-- slv2
 - zynjacku
 - monobristol
 - new-session-manager
 - nted
-- paulstretch
-- pianobooster
-- solfege
 
 Add missing zita packaes:
 - zita-audiotools-1.3.0.tar.bz2
@@ -284,8 +272,6 @@ Specmatch requires some python modules:
 - audioop-lts: https://github.com/AbstractUmbra/audioop
 - pydup:       https://github.com/jiaaro/pydub/
 - resampy:     https://github.com/bmcfee/resampy
-
-For YSFX plugins, add a ysfx- prefix.
 
 Add a grub script to add "preempt=full threadirqs nopti" to existing standard kernels
 

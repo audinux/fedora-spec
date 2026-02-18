@@ -1101,7 +1101,10 @@ https://github.com/LMSBAND/LMS
 https://github.com/chkhld/jsfx
 https://github.com/Sonic-Anomaly/Sonic-Anomaly-JSFX
 https://github.com/TukanStudios/TUKAN_STUDIOS_PLUGINS
-https://github.com/ReaTeam/JSFX"
+https://github.com/ReaTeam/JSFX
+https://codeberg.org/yimrakhee/smallmuffin
+https://codeberg.org/yimrakhee/letsdist
+https://codeberg.org/yimrakhee/crushfuzz"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
