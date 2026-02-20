@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: qdelay
-Version: 1.0.8
+Version: 1.1.0
 Release: 1%{?dist}
 Summary: A Dual Delay with more features than it should
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./ripplerx-source.sh <PROJECT> <TAG>
-#        ./ripplerx-source.sh qdelay v1.0.8
+#        ./ripplerx-source.sh qdelay v1.1.0
 
 Source0: qdelay.tar.gz
 Source1: ripplerx-source.sh
@@ -106,5 +106,8 @@ cp -ra %{__cmake_builddir}/QDelay_artefacts/Standalone/*  %{buildroot}/%{_bindir
 %{_libdir}/lv2/*
 
 %changelog
+* Thu Feb 19 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+- update to 1.1.0-1
+
 * Fri Jan 30 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.8-1
 - Initial spec file
