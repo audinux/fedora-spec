@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: tascar
-Version: 0.235.2
+Version: 0.236.0
 Release: 1%{?dist}
 Summary: TASCAR is a collection of tools for creating spatially dynamic acoustic scenes in different render formats
 License: GPL2
@@ -19,30 +19,30 @@ BuildRequires: cmake
 BuildRequires: make
 BuildRequires: doxygen
 BuildRequires: xxd
-BuildRequires: boost-devel
-BuildRequires: libsndfile-devel
-BuildRequires: pkgconfig(jack)
-BuildRequires: fftw-devel
-BuildRequires: eigen3-devel
-BuildRequires: liblo-devel
-BuildRequires: gsl-devel
-BuildRequires: xerces-c-devel
-BuildRequires: freetype-devel
-BuildRequires: gtkmm30-devel
-BuildRequires: glibmm24-devel
-BuildRequires: cairomm-devel
-BuildRequires: pangomm-devel
-BuildRequires: libsigc++20-devel
-BuildRequires: atkmm-devel
-BuildRequires: gtksourceviewmm3-devel
-BuildRequires: libltc-devel
-BuildRequires: portaudio-devel
-BuildRequires: matio-devel
-BuildRequires: libsamplerate-devel
-BuildRequires: libcurl-devel
-BuildRequires: libxml++30-devel
-BuildRequires: libmysofa-devel
 BuildRequires: CUnit-devel
+BuildRequires: atkmm-devel
+BuildRequires: boost-devel
+BuildRequires: cairomm-devel
+BuildRequires: eigen3-devel
+BuildRequires: fftw-devel
+BuildRequires: freetype-devel
+BuildRequires: glibmm24-devel
+BuildRequires: gsl-devel
+BuildRequires: gtkmm30-devel
+BuildRequires: gtksourceviewmm3-devel
+BuildRequires: libcurl-devel
+BuildRequires: liblo-devel
+BuildRequires: libltc-devel
+BuildRequires: libmysofa-devel
+BuildRequires: libsamplerate-devel
+BuildRequires: libsigc++20-devel
+BuildRequires: libsndfile-devel
+BuildRequires: libxml++30-devel
+BuildRequires: matio-devel
+BuildRequires: pangomm-devel
+BuildRequires: pkgconfig(jack)
+BuildRequires: portaudio-devel
+BuildRequires: xerces-c-devel
 
 %description
 TASCAR is a collection of tools for creating spatially dynamic acoustic scenes in different render formats
@@ -79,7 +79,6 @@ mv %buildroot/usr/lib/* %buildroot/%{_libdir}/
 %endif
 
 # Cleanup
-rm %buildroot/%{_bindir}/*.mk
 rm -rf %buildroot/builddir
 
 %files
@@ -94,6 +93,9 @@ rm -rf %buildroot/builddir
 %{_libdir}/*.so
 
 %changelog
+* Fri Feb 20 2026 Yann Collette <ycollette.nospam@free.fr> - 0.236.0-1
+- update to 0.236.0-1
+
 * Thu Nov 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.235.2-1
 - update to 0.235.2-1
 
