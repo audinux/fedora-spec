@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: smallmuffin
-Version: 0.1.0
+Version: 0.1.5
 Release: 1%{?dist}
 Summary: Vintage Fuzz plugin for Guitar and Bass
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./yimrakhee-source.sh <project> <tag>
-# ./yimrakhee-source.sh smallmuffin v0.1.0
+# ./yimrakhee-source.sh smallmuffin v0.1.5
 
 Source0: smallmuffin.tar.gz
 Source1: yimrakhee-source.sh
@@ -95,5 +95,8 @@ cp -ra %{__cmake_builddir}/smallmuffin_artefacts/LV2/*  %{buildroot}/%{_libdir}/
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Feb 20 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.5-1
+- update to 0.1.5-1
+
 * Wed Feb 18 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
 - Initial spec file
