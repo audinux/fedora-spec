@@ -4,7 +4,7 @@
 # Category: Session Mngmt
 
 Name: raysession
-Version: 0.17.2
+Version: 0.17.3
 Release: 4%{?dist}
 Summary: A JACK session manager
 
@@ -16,7 +16,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source-houston4444.sh <project> <tag>
-#        ./source-houston4444.sh RaySession v0.17.2
+#        ./source-houston4444.sh RaySession v0.17.3
 
 Source0: RaySession.tar.gz
 Source1: source-houston4444.sh
@@ -75,6 +75,9 @@ rm %{buildroot}/usr/bin/ray-jack_checker_daemon
 rm %{buildroot}/usr/bin/ray-jack_config_script
 rm %{buildroot}/usr/bin/ray-pulse2jack
 
+# Fix a path
+sed -i -e "s|PY_FILE=.*|PY_FILE=/usr/share/raysession/src/completion|g" %{buildroot}/usr/share/bash-completion/completions/ray_control
+
 ln -s /usr/share/raysession/src/bin/ray_git                 %{buildroot}/usr/bin/ray_git
 ln -s /usr/share/raysession/src/bin/ray-jack_checker_daemon %{buildroot}/usr/bin/ray-jack_checker_daemon
 ln -s /usr/share/raysession/src/bin/ray-jack_config_script  %{buildroot}/usr/bin/ray-jack_config_script
@@ -130,8 +133,12 @@ desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-alsapatch.deskt
 %{_datadir}/raysession/*
 %dir %{_sysconfdir}/xdg/raysession/
 %{_sysconfdir}/xdg/raysession/client_templates/*
+%{_datadir}/bash-completion/completions/ray_control
 
 %changelog
+* Sat Feb 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.17.3-4
+- update to 0.17.3-4
+
 * Mon Dec 29 2025 Yann Collette <ycollette.nospam@free.fr> - 0.17.2-4
 - update to 0.17.2-4
 
