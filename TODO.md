@@ -238,6 +238,10 @@
 | xsynth                        | https://github.com/BlackMIDIDevs/xsynth |
 | 3HSPlug                       | https://github.com/src3453/3HSPlug |
 | sonusmix                      | https://codeberg.org/sonusmix/sonusmix |
+| Overdrive-ReNEO               | https://github.com/Mrugalla/Overdrive-ReNEO |
+| Hammer-and-Meiszel            | https://github.com/Mrugalla/Hammer-and-Meiszel |
+| Manta                         | https://github.com/Mrugalla/Manta |
+| NEL-19                        | https://github.com/Mrugalla/NEL-19 |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
