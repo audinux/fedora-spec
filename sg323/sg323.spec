@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: sg-323
-Version: 1.1.0
+Version: 1.1.1
 Release: 2%{?dist}
 Summary: Ursa Major Stargate 323
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./sg323-source.sh <TAG>
-#        ./sg323-source.sh 1.1.0
+#        ./sg323-source.sh 1.1.1
 
 Source0: SG-323.tar.gz
 Source1: sg323-source.sh
@@ -95,6 +95,9 @@ cp -ra %{__cmake_builddir}/SG323_artefacts/CLAP/* %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Sat Feb 21 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-2
+- update to 1.1.1-2
+
 * Wed Jan 14 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-2
 - update to 1.1.0-2
 
