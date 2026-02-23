@@ -4,7 +4,7 @@
 # Category: Session Mngmt
 
 Name: patchance
-Version: 1.3.0
+Version: 1.3.1
 Release: 1%{?dist}
 Summary: Jack Patchbay GUI
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source-houston4444.sh <project> <tag>
-#        ./source-houston4444.sh Patchance v1.3.0
+#        ./source-houston4444.sh Patchance v1.3.1
 
 Source0: Patchance.tar.gz
 Source1: source-houston4444.sh
@@ -81,6 +81,9 @@ desktop-file-validate  %{buildroot}/%{_datadir}/applications/%{name}.desktop
 %{_datadir}/patchance/src/*
 
 %changelog
+* Sat Feb 21 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.1-1
+- update to 1.3.1-1
+
 * Mon Nov 03 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-1
 - update to 1.3.0-1
 
