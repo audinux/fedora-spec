@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b59ff9dd55db31d0cc4777f295558264ac12a669
-%global gittag0 2.0.2
+%global commit0 6c76c99ea9316fcbdf24c1c514b6159f583a6c28
+%global gittag0 2.0.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-TeknoLogical
-Version: 2.0.2
+Version: 2.0.3
 Release: 2%{?dist}
 Summary: TeknoLogical plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/AgostoSound/TeknoLogical
+URL:     https://github.com/augustopampaluna/TeknoLogical
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,7 +29,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/AgostoSound/TeknoLogical/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/augustopampaluna/TeknoLogical/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: TeknoLogical_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -154,5 +154,5 @@ cp -r TeknoLogical_plugin/dist/TeknoLogical/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
 - initial specfile
