@@ -5,7 +5,7 @@
 
 Summary: Reboot of Non Mixer with eXTended LV2 support.
 Name: non-mixer-xt
-Version: 2.0.12
+Version: 2.0.13
 Release: 4%{?dist}
 License: GPL-3.0-only
 URL: https://github.com/Stazed/non-mixer-xt
@@ -15,34 +15,40 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source-non-mixer-xt.sh <tag>
-#        ./source-non-mixer-xt.sh 2.0.12
+#        ./source-non-mixer-xt.sh 2.0.13
 
 Source0: non-mixer-xt.tar.gz
 Source1: source-non-mixer-xt.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
-BuildRequires: non-ntk-devel
-BuildRequires: non-ntk-fluid
-BuildRequires: liblo-devel
-BuildRequires: libsndfile-devel
-BuildRequires: fltk-fluid
-BuildRequires: fltk-devel
-BuildRequires: fltk-static
-BuildRequires: libsigc++20-devel
-BuildRequires: pkgconfig(jack)
-BuildRequires: libXpm-devel
-BuildRequires: ladspa-devel
-BuildRequires: liblrdf-devel
-BuildRequires: lv2-devel
-BuildRequires: lilv-devel
-BuildRequires: suil-devel
-BuildRequires: zix-devel
 BuildRequires: clap-devel
-BuildRequires: pango-devel
+BuildRequires: non-ntk-fluid
+%if 0%{?fedora} >= 44
+BuildRequires: fltk1.3-devel
+BuildRequires: fltk1.3-fluid
+BuildRequires: fltk1.3-static
+%else
+BuildRequires: fltk-devel
+BuildRequires: fltk-fluid
+BuildRequires: fltk-static
+%endif
+BuildRequires: ladspa-devel
+BuildRequires: libXcursor-devel
 BuildRequires: libXfixes-devel
 BuildRequires: libXinerama-devel
-BuildRequires: libXcursor-devel
+BuildRequires: libXpm-devel
+BuildRequires: liblo-devel
+BuildRequires: liblrdf-devel
+BuildRequires: libsigc++20-devel
+BuildRequires: libsndfile-devel
+BuildRequires: lilv-devel
+BuildRequires: lv2-devel
+BuildRequires: non-ntk-devel
+BuildRequires: pango-devel
+BuildRequires: pkgconfig(jack)
+BuildRequires: suil-devel
+BuildRequires: zix-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -93,6 +99,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/doc/non-mixer-xt/*
 
 %changelog
+* Tue Feb 24 2026 Yann Collette <ycollette dot nospam at free.fr> 2.0.13-2
+- update to 2.0.13-2
+
 * Fri Jan 09 2026 Yann Collette <ycollette dot nospam at free.fr> 2.0.12-2
 - update to 2.0.12-2
 
