@@ -4,7 +4,7 @@
 # Category: Audio, DAW, Sequencer
 
 Name: chataigne
-Version: 1.9.24
+Version: 1.10.1
 Release: 1%{?dist}
 Summary: Artist-friendly Modular Machine for Art and Technology
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./source-chataigne.sh 1.9.24
+# $ ./source-chataigne.sh 1.10.1
 
 Source0: Chataigne.tar.gz
 Source1: JUCE.tar.gz
@@ -39,9 +39,7 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: lv2-devel
-%if 0%{?fedora} > 40
 BuildRequires: openssl-devel-engine
-%endif
 BuildRequires: openssl-devel
 BuildRequires: hidapi-devel
 BuildRequires: gtk3-devel
@@ -51,6 +49,7 @@ BuildRequires: SDL2-devel
 BuildRequires: libusb1-devel
 BuildRequires: webkit2gtk4.1-devel
 BuildRequires: chrpath
+BuildRequires: JUCE7
 BuildRequires: desktop-file-utils
 
 %description
@@ -61,13 +60,13 @@ Artist-friendly Modular Machine for Art and Technology
 
 tar xvfz %{SOURCE1}
 
+rm -rf Modules/juce_simpleweb/libs/
 rm -rf Modules/juce_simpleweb/openssl/
-ln -s /usr/include/openssl Modules/juce_simpleweb/openssl
+# ln -s /usr/include/openssl Modules/juce_simpleweb/openssl
 
 %build
 
 %set_build_flags
-export CXXFLAGS="`pkg-config --cflags gtk+-3.0 webkit2gtk-4.1` -Wno-implicit-function-declaration $CXXFLAGS"
 
 CURRENT_DIR=`pwd`
 
@@ -82,8 +81,9 @@ cd Builds/LinuxMakefile
 %ifarch aarch64
 sed -i -e "s/-m64//g" Makefile
 %endif
+sed -i -e "s/webkit2gtk-4.0/webkit2gtk-4.1/g" Makefile
 
-%make_build CPPFLAGS="-I$CURRENT_DIR/JUCE/modules -I$CURRENT_DIR/External/asio/asio/ -Wno-implicit-function-declaration"
+%make_build CPPFLAGS="-I$CURRENT_DIR/JUCE/modules/ -I$CURRENT_DIR/modules/ -I$CURRENT_DIR/External/asio/asio/"
 
 %install
 
@@ -99,8 +99,8 @@ cp Builds/LinuxMakefile/Chataigne.AppDir/chataigne.png %{buildroot}/%{_datadir}/
 
 # Install some libs
 install -m 755 -d %{buildroot}%{_libdir}/
-cp -rav Builds/LinuxMakefile/Chataigne.AppDir/usr/lib/libartnet.so* %{buildroot}%{_libdir}/
-cp -rav Builds/LinuxMakefile/Chataigne.AppDir/usr/lib/libServus.so* %{buildroot}%{_libdir}/
+cp -rav External/servus/lib/linux/libServus.so.6 %{buildroot}%{_libdir}/
+cp -rav External/mosquitto/lib/linux/libmosquittopp.so %{buildroot}%{_libdir}/libmosquittopp.so.1
 
 chrpath --delete %{buildroot}%{_bindir}/Chataigne
 
@@ -113,6 +113,9 @@ chrpath --delete %{buildroot}%{_bindir}/Chataigne
 %{_datadir}/applications/*
 
 %changelog
+* Tue Feb 24 2026 Yann Collette <ycollette.nospam@free.fr> - 1.10.1-1
+- Update to 1.10.1-1
+
 * Tue Oct 08 2024 Yann Collette <ycollette.nospam@free.fr> - 1.9.24-1
 - Update to 1.9.24-1
 
