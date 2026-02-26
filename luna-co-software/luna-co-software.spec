@@ -3,11 +3,11 @@
 # Type: Plugin, Standalone, VST3
 # Category: Effect
 
-%global commit0 07e149aa68c5633a25c08708fa61d2e912cfb97f
+%global commit0 df0f370efde85dbc0a56978ca7a85d92170b1292
 
 Name: luna-co-software
 Version: 0.0.1
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: A collection of professional audio VST3/LV2 plugins built with JUCE
 License: GPL-3.0-or-later
 URL: https://github.com/dusk-audio/dusk-audio-plugins
@@ -73,7 +73,7 @@ Requires: license-%{name}
 LV2 version of %{name}
 
 %prep
-%autosetup -n plugins
+%autosetup -n dusk-audio-plugins
 
 sed -i -e "s/PLUGIN_NAME \"Spectrum Analyzer\"/PLUGIN_NAME \"Spectrum_Analyzer\"/g" plugins/spectrum-analyzer/CMakeLists.txt
 sed -i -e "s/PLUGIN_NAME \"4K EQ\"/PLUGIN_NAME \"4K_EQ\"/g" plugins/4k-eq/CMakeLists.txt
@@ -131,8 +131,11 @@ cp -ra %{__cmake_builddir}/plugins/groovemind/GrooveMind_artefacts/Standalone/* 
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Feb 25 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-6
+- update to 0.0.1-6 - update to df0f370efde85dbc0a56978ca7a85d92170b1292
+
 * Thu Feb 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-5
-- update to 0.0.1-4 - update to 07e149aa68c5633a25c08708fa61d2e912cfb97f
+- update to 0.0.1-5 - update to 07e149aa68c5633a25c08708fa61d2e912cfb97f
 
 * Sun Feb 08 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-4
 - update to 0.0.1-4 - update to d5c04615c670a36b5429d798cc5fb83cf5f1dc72
