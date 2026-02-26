@@ -1104,7 +1104,9 @@ https://github.com/TukanStudios/TUKAN_STUDIOS_PLUGINS
 https://github.com/ReaTeam/JSFX
 https://codeberg.org/yimrakhee/smallmuffin
 https://codeberg.org/yimrakhee/letsdist
-https://codeberg.org/yimrakhee/crushfuzz"
+https://codeberg.org/yimrakhee/crushfuzz
+https://github.com/brummer10/luma
+https://github.com/tiagolr/tilr_jsfx"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

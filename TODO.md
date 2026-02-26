@@ -242,6 +242,13 @@
 | Hammer-and-Meiszel            | https://github.com/Mrugalla/Hammer-and-Meiszel |
 | Manta                         | https://github.com/Mrugalla/Manta |
 | NEL-19                        | https://github.com/Mrugalla/NEL-19 |
+| Relief_Compressor             | https://github.com/Kiriki-liszt/Relief_Compressor |
+| Pult-EQ                       | https://github.com/consint/Pult-EQ |
+| audio-plugin-coder            | https://github.com/Noizefield/audio-plugin-coder |
+| airwindows-clap-build         | https://github.com/stevefolta/airwindows-clap-build |
+| Enover                        | https://github.com/chmaha/Enover |
+| gig2sfz                       | https://github.com/stevefolta/gig2sfz |
+| wolf-spectrum                 | https://github.com/wolf-plugins/wolf-spectrum |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
