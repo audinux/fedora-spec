@@ -8,7 +8,7 @@
 %define	uname OpenBoard
 
 Name: openboard
-Version: 1.7.5
+Version: 1.7.6
 Release: 3%{?dist}
 Summary: Interactive whiteboard for schools and universities
 License: GPL-3.0-or-later
@@ -47,11 +47,7 @@ BuildRequires: pkgconfig(freetype2)
 BuildRequires: pkgconfig(openssl)
 BuildRequires: poppler-devel
 BuildRequires: poppler-cpp-devel
-%if 0%{?fedora} >= 36
 BuildRequires: sdl12-compat-devel
-%else
-BuildRequires: SDL-devel
-%endif
 BuildRequires: libvorbis-devel
 BuildRequires: libogg-devel
 BuildRequires: libtheora-devel
@@ -107,6 +103,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/ch.openboard.OpenBoar
 %{_sysconfdir}/%{name}/*
 
 %changelog
+* Wed Feb 25 2026 Yann Collette <ycollette.nospam@free.fr> - 1.7.6-3
+- update to 1.7.6-3
+
 * Tue Feb 03 2026 Yann Collette <ycollette.nospam@free.fr> - 1.7.5-3
 - update to 1.7.5-3
 
