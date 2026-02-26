@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: letsdist
-Version: 0.1.5
+Version: 0.2.0
 Release: 1%{?dist}
 Summary: Aggressive Distortion vst3 plugin for Guitar
 License: GPL-3.0-or-later
@@ -14,31 +14,17 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./yimrakhee-source.sh <project> <tag>
-# ./yimrakhee-source.sh letsdist v0.1.5
-
-Source0: letsdist.tar.gz
-Source1: yimrakhee-source.sh
+Source0: https://codeberg.org/yimrakhee/letsdist/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: cmake
+BuildRequires: rustup
 BuildRequires: git
-BuildRequires: cairo-devel
-BuildRequires: fontconfig-devel
-BuildRequires: freetype-devel
-BuildRequires: libX11-devel
-BuildRequires: xcb-util-keysyms-devel
-BuildRequires: xcb-util-devel
-BuildRequires: libXrandr-devel
-BuildRequires: xcb-util-cursor-devel
-BuildRequires: libxkbcommon-x11-devel
-BuildRequires: libXinerama-devel
-BuildRequires: mesa-libGL-devel
-BuildRequires: libXcursor-devel
-BuildRequires: libcurl-devel
-BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
-BuildRequires: gtk3-devel
+BuildRequires: libglvnd-devel
+BuildRequires: libXcursor-devel
+BuildRequires: xcb-util-wm-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: python3
 
 %description
 Aggressive Distortion vst3 plugin for Guitar.
@@ -73,16 +59,36 @@ LV2 version of %{name}
 
 %build
 
-%cmake
-%cmake_build
+%set_build_flags
+
+export RUSTFLAGS="-g -O"
+
+export CWD=`pwd`
+export RUSTUP_HOME="$CWD/rustup"
+export CARGO_HOME="$CWD/cargo"
+# rustup-init -y --no-modify-path --default-toolchain=1.77.0-x86_64-unknown-linux-gnu
+# rustup-init -y --no-modify-path --default-toolchain=nightly-x86_64-unknown-linux-gnu
+# source cargo/env
+# rustup target list
+# cargo build --release --bin hexosynth_jack
+
+%ifarch x86_64
+rustup-init -y --no-modify-path --default-toolchain nightly-x86_64-unknown-linux-gnu
+%endif
+%ifarch aarch64
+rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linux-gnu
+%endif
+source cargo/env
+
+cargo build --release
 
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/letsdist_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
+cp -ra targte/release/smallmuffin_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
 
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/letsdist_artefacts/LV2/*  %{buildroot}/%{_libdir}/lv2/
+cp -ra target/release/smallmuffin_artefacts/LV2/*  %{buildroot}/%{_libdir}/lv2/
 
 %files -n license-%{name}
 %doc README.md
@@ -95,6 +101,9 @@ cp -ra %{__cmake_builddir}/letsdist_artefacts/LV2/*  %{buildroot}/%{_libdir}/lv2
 %{_libdir}/lv2/*
 
 %changelog
+* Thu Feb 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
+- update to 0.2.0-1
+
 * Sat Feb 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.5-1
 - update to 0.1.5-1
 
