@@ -1,6 +1,6 @@
 # Status: active
 Name: kernel-rt-tests
-Version: 2.9
+Version: 2.10
 Release: 2%{?dist}
 Summary: Various programs that test various rt-linux features
 License: GPL2
@@ -40,6 +40,9 @@ Suite of real-time tests
 %{python3_sitelib}/*
 
 %changelog
+* Sun Mar 01 2026 Yann Collette <ycollette.nospam@free.fr> - 2.10-2
+- update to 2.10-2
+
 * Fri Jul 25 2025 Yann Collette <ycollette.nospam@free.fr> - 2.9-2
 - update to 2.9-2 - rename package from rt-tests to kernel-rt-tests
 
