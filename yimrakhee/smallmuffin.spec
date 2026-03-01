@@ -14,11 +14,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./yimrakhee-source.sh <project> <tag>
-# ./yimrakhee-source.sh smallmuffin v0.2.0
-
-Source0: smallmuffin.tar.gz
-Source1: yimrakhee-source.sh
+Source0: https://codeberg.org/crushfuzz/smallmuffin/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
