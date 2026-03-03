@@ -1105,6 +1105,7 @@ https://github.com/ReaTeam/JSFX
 https://codeberg.org/yimrakhee/smallmuffin
 https://codeberg.org/yimrakhee/letsdist
 https://codeberg.org/yimrakhee/crushfuzz
+https://codeberg.org/yimrakhee/sprints
 https://github.com/brummer10/luma
 https://github.com/tiagolr/tilr_jsfx"
 
