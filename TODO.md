@@ -249,6 +249,7 @@
 | Enover                        | https://github.com/chmaha/Enover |
 | gig2sfz                       | https://github.com/stevefolta/gig2sfz |
 | wolf-spectrum                 | https://github.com/wolf-plugins/wolf-spectrum |
+| aelapse                       | https://github.com/smiarx/aelapse |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
