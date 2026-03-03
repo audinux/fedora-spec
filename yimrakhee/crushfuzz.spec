@@ -1,7 +1,9 @@
 # Status: active
 # Tag: Distortion
-# Type: Plugin, VST3, LV2
+# Type: Standalone, Plugin, VST3
 # Category: Effect
+
+%global debug_package %{nil}
 
 Name: crushfuzz
 Version: 0.2.0
@@ -14,7 +16,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://codeberg.org/crushfuzz/letsdist/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://codeberg.org/yimrakhee/crushfuzz/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -25,6 +27,8 @@ BuildRequires: libXcursor-devel
 BuildRequires: xcb-util-wm-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: python3
+
+Requires: license-%{name}
 
 %description
 Bitcrusher plugin for Guitar.
@@ -44,14 +48,6 @@ Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
-
-%package -n lv2-%{name}
-Summary: LV2 version of %{name}
-License: GPL-3.0-or-later
-Requires: license-%{name}
-
-%description -n lv2-%{name}
-LV2 version of %{name}
 
 %prep
 %autosetup -n %{name}
@@ -83,21 +79,21 @@ cargo build --release
 
 %install
 
-install -m 755 -d %{buildroot}%{_libdir}/vst3/
-cp -ra target/release/crushfuzz_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
+install -m 755 -d %{buildroot}%{_libdir}/vst3/Contents/%{_target}/
+cp -ra target/release/libcrushfuzz.so %{buildroot}/%{_libdir}/vst3/Contents/%{_target}/
 
-install -m 755 -d %{buildroot}%{_libdir}/lv2/
-cp -ra target/release/crushfuzz_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
+install -m 755 -d %{buildroot}%{_bindir}/
+cp -ra target/release/crushfuzz %{buildroot}/%{_bindir}/
+
+%files
+%{_bindir}/*
 
 %files -n license-%{name}
 %doc README.md
 %license LICENSE
 
 %files -n vst3-%{name}
-%{_libdir}/vst3/*
-
-%files -n lv2-%{name}
-%{_libdir}/lv2/*
+%{_libdir}/
 
 %changelog
 * Fri Feb 27 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1

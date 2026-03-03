@@ -1,7 +1,9 @@
 # Status: active
 # Tag: Distortion
-# Type: Plugin, VST3, LV2
+# Type: Standalone, Plugin, VST3
 # Category: Effect
+
+%global debug_package %{nil}
 
 Name: letsdist
 Version: 0.2.0
@@ -26,6 +28,8 @@ BuildRequires: xcb-util-wm-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: python3
 
+Requires: license-%{name}
+
 %description
 Aggressive Distortion vst3 plugin for Guitar.
 Inspired by the legendary circuit. It combines raw hard-clipping characteristics with modern
@@ -45,14 +49,6 @@ Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
-
-%package -n lv2-%{name}
-Summary: LV2 version of %{name}
-License: GPL-3.0-or-later
-Requires: license-%{name}
-
-%description -n lv2-%{name}
-LV2 version of %{name}
 
 %prep
 %autosetup -n %{name}
@@ -84,11 +80,14 @@ cargo build --release
 
 %install
 
-install -m 755 -d %{buildroot}%{_libdir}/vst3/
-cp -ra targte/release/smallmuffin_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
+install -m 755 -d %{buildroot}%{_libdir}/vst3/Contents/%{_target}/
+cp -ra target/release/libletsdist.so %{buildroot}/%{_libdir}/vst3/Contents/%{_target}/
 
-install -m 755 -d %{buildroot}%{_libdir}/lv2/
-cp -ra target/release/smallmuffin_artefacts/LV2/*  %{buildroot}/%{_libdir}/lv2/
+install -m 755 -d %{buildroot}%{_bindir}/
+cp -ra target/release/letsdist %{buildroot}/%{_bindir}/
+
+%files
+%{_bindir}/*
 
 %files -n license-%{name}
 %doc README.md
@@ -96,9 +95,6 @@ cp -ra target/release/smallmuffin_artefacts/LV2/*  %{buildroot}/%{_libdir}/lv2/
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
-
-%files -n lv2-%{name}
-%{_libdir}/lv2/*
 
 %changelog
 * Thu Feb 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
