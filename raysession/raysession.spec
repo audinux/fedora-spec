@@ -43,6 +43,7 @@ Requires(pre): python3-pyxdg
 %if 0%{?fedora} >= 41
 Requires(pre): python3-legacy-cgi
 %endif
+Requires(pre): wmctrl
 
 %description
 Ray Session is a GNU/Linux session manager for audio programs as Ardour, Carla,
