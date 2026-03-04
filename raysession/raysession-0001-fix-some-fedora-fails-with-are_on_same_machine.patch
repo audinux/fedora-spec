@@ -1,0 +1,54 @@
+From 5ee269583afdafc320860bee3ed1b8fb4c5dc752 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Wed, 4 Mar 2026 22:26:08 +0100
+Subject: [PATCH] fix some fedora fails with are_on_same_machine
+
+---
+ src/shared/osclib/funcs.py | 23 +++++------------------
+ 1 file changed, 5 insertions(+), 18 deletions(-)
+
+diff --git a/src/shared/osclib/funcs.py b/src/shared/osclib/funcs.py
+index 50c34b5..5d7957f 100644
+--- a/src/shared/osclib/funcs.py
++++ b/src/shared/osclib/funcs.py
+@@ -154,26 +154,13 @@ def are_on_same_machine(
+         return True
+ 
+     LOCAL_ADDRS = ('127.0.0.1', '127.0.1.1', '::1')
+-
+-    if host1 in LOCAL_ADDRS and host2 in LOCAL_ADDRS:
+-        return True
+-
+     ip = get_machine_192()
+ 
+-    if ip not in (resolve_host(address1.hostname),
+-                  resolve_host(address2.hostname)):
+-        return False
+-
+-    if ip == resolve_host(address1.hostname) == resolve_host(address2.hostname):
+-        # on some systems (as fedora),
+-        # socket.gethostbyname returns a 192.168.. url
+-        return True
+-
+-    for host in (address1.hostname, address2.hostname):
+-        if resolve_host(host) in LOCAL_ADDRS and host == ip:
+-            return True
++    for host in host1, host2:
++        if not (host == ip or host in LOCAL_ADDRS):
++            return False
++    return True
+ 
+-    return False
+ 
+ def are_same_osc_port(url1: str | Address, url2: str | Address) -> bool:
+     if isinstance(url1, Address):
+@@ -214,4 +201,4 @@ def get_net_url(port: Union[int, str], protocol=UDP) -> str:
+         # in this case, impossible to call it from another machine
+         return ''
+     
+-    return f"osc.{proto_str}://{ip}:{port}/"
+\ No newline at end of file
++    return f"osc.{proto_str}://{ip}:{port}/"
+-- 
+2.53.0
+

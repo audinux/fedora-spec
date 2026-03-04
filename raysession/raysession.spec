@@ -5,7 +5,7 @@
 
 Name: raysession
 Version: 0.17.3
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: A JACK session manager
 
 License: GPL-2.0-or-later
@@ -20,6 +20,7 @@ Distribution: Audinux
 
 Source0: RaySession.tar.gz
 Source1: source-houston4444.sh
+Patch0: raysession-0001-fix-some-fedora-fails-with-are_on_same_machine.patch
 
 BuildArch: noarch
 
@@ -53,7 +54,7 @@ As Non Session Manager, the principle is to load together audio programs, then
 be able to save or close all documents together.
 
 %prep
-%autosetup -n RaySession
+%autosetup -p1 -n RaySession
 
 # Fix desktop categories
 sed -i -e "s/AudioVideo;//g" data/share/applications/ray-alsapatch.desktop
