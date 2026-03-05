@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Distortion
-# Type: Standalone, Plugin, VST3
+# Type: Standalone, Plugin, VST3, CLAP
 # Category: Effect
 
 %global debug_package %{nil}
@@ -50,6 +50,14 @@ Requires: license-%{name}
 %description -n vst3-%{name}
 VST3 version of %{name}
 
+%package -n clap-%{name}
+Summary: CLAP version of %{name}
+License: GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n clap-%{name}
+CLAP version of %{name}
+
 %prep
 %autosetup -n %{name}
 
@@ -80,8 +88,11 @@ cargo build --release
 
 %install
 
-install -m 755 -d %{buildroot}%{_libdir}/vst3/Contents/%{_target}/
-cp -ra target/release/libsmallmuffin.so %{buildroot}/%{_libdir}/vst3/Contents/%{_target}/
+install -m 755 -d %{buildroot}%{_libdir}/vst3/smallmuffin.vst3/Contents/%{_target}/
+cp -ra target/release/libsmallmuffin.so %{buildroot}/%{_libdir}/vst3/smallmuffin.vst3/Contents/%{_target}/
+
+install -m 755 -d %{buildroot}%{_libdir}/clap/
+cp -ra target/release/libsmallmuffin.so %{buildroot}/%{_libdir}/clap/smallmuffin.clap
 
 install -m 755 -d %{buildroot}%{_bindir}/
 cp -ra target/release/smallmuffin %{buildroot}/%{_bindir}/
@@ -95,6 +106,9 @@ cp -ra target/release/smallmuffin %{buildroot}/%{_bindir}/
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
+
+%files -n clap-%{name}
+%{_libdir}/clap/*
 
 %changelog
 * Wed Feb 25 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1

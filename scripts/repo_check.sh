@@ -1102,12 +1102,17 @@ https://github.com/chkhld/jsfx
 https://github.com/Sonic-Anomaly/Sonic-Anomaly-JSFX
 https://github.com/TukanStudios/TUKAN_STUDIOS_PLUGINS
 https://github.com/ReaTeam/JSFX
-https://codeberg.org/yimrakhee/smallmuffin
-https://codeberg.org/yimrakhee/letsdist
-https://codeberg.org/yimrakhee/crushfuzz
-https://codeberg.org/yimrakhee/springs
 https://github.com/brummer10/luma
-https://github.com/tiagolr/tilr_jsfx"
+https://github.com/tiagolr/tilr_jsfx
+https://codeberg.org/yimrakhee/ampb
+https://codeberg.org/yimrakhee/ampg
+https://codeberg.org/yimrakhee/crushfuzz
+https://codeberg.org/yimrakhee/distb
+https://codeberg.org/yimrakhee/fuzzb
+https://codeberg.org/yimrakhee/letsdist
+https://codeberg.org/yimrakhee/smallmuffin
+https://codeberg.org/yimrakhee/springs
+https://codeberg.org/yimrakhee/suboctb"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master

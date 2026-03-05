@@ -1,22 +1,22 @@
 # Status: active
-# Tag: Reverb
+# Tag: Distortion
 # Type: Standalone, Plugin, VST3, CLAP
 # Category: Effect
 
 %global debug_package %{nil}
 
-Name: springs
+Name: suboctb
 Version: 0.2.0
 Release: 1%{?dist}
-Summary: A classic, chirpy spring reverb audio plugin
+Summary: Analog-style bass sub-octave synthesizer plugin
 License: GPL-3.0-or-later
-URL: https://codeberg.org/yimrakhee/springs
+URL: https://codeberg.org/yimrakhee/suboctb
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://codeberg.org/yimrakhee/springs/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://codeberg.org/yimrakhee/suboctb/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -31,11 +31,7 @@ BuildRequires: python3
 Requires: license-%{name}
 
 %description
-A classic, chirpy spring reverb audio plugin (GNU GPLv3)
-emulates the physical characteristics of a mechanical spring reverb tank.
-It captures the signature metallic "boing" and "chirp" of vintage guitar amplifiers
-by utilizing a series of Schroeder All-Pass Filters to simulate frequency dispersion,
-alongside soft-clipping input drive and customizable feedback damping.
+Analog-style bass sub-octave synthesizer plugin.
 
 %package -n license-%{name}
 Summary: License and documentation for %{name}
@@ -90,14 +86,14 @@ cargo build --release
 
 %install
 
-install -m 755 -d %{buildroot}%{_libdir}/vst3/springs.vst3/Contents/%{_target}/
-cp -ra target/release/libsprings.so %{buildroot}/%{_libdir}/vst3/springs.vst3/Contents/%{_target}/
+install -m 755 -d %{buildroot}%{_libdir}/vst3/suboctb.vst3/Contents/%{_target}/
+cp -ra target/release/libsuboctb.so %{buildroot}/%{_libdir}/vst3/suboctb.vst3/Contents/%{_target}/
 
 install -m 755 -d %{buildroot}%{_libdir}/clap/
-cp -ra target/release/libsprings.so %{buildroot}/%{_libdir}/clap/springs.clap
+cp -ra target/release/libsuboctb.so %{buildroot}/%{_libdir}/clap/suboctb.clap
 
 install -m 755 -d %{buildroot}%{_bindir}/
-cp -ra target/release/springs  %{buildroot}/%{_bindir}/
+cp -ra target/release/suboctb %{buildroot}/%{_bindir}/
 
 %files
 %{_bindir}/*
@@ -107,11 +103,11 @@ cp -ra target/release/springs  %{buildroot}/%{_bindir}/
 %license LICENSE
 
 %files -n vst3-%{name}
-%{_libdir}/vst3/*
+%{_libdir}/vst3/
 
 %files -n clap-%{name}
-%{_libdir}/clap/*
+%{_libdir}/clap/
 
 %changelog
-* Tue Mar 03 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
+* Thu Mar 05 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
 - Initial spec file
