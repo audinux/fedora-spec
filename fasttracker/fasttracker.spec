@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: fasttracker2
-Version: 2.08
+Version: 2.09
 Release: 3%{?dist}
 Summary: Module tracker software for creating music
 License: GPL-3.0-or-later
@@ -140,6 +140,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Fri Mar 06 2026 Yann Collette <ycollette.nospam@free.fr> - 2.09-3
+- update to 2.09-3
+
 * Wed Mar 04 2026 Yann Collette <ycollette.nospam@free.fr> - 2.08-3
 - update to 2.08-3
 
