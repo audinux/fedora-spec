@@ -4,7 +4,7 @@
 # Category: Session Mngmt
 
 Name: raysession
-Version: 0.17.3
+Version: 0.17.4
 Release: 5%{?dist}
 Summary: A JACK session manager
 
@@ -16,11 +16,10 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source-houston4444.sh <project> <tag>
-#        ./source-houston4444.sh RaySession v0.17.3
+#        ./source-houston4444.sh RaySession v0.17.4
 
 Source0: RaySession.tar.gz
 Source1: source-houston4444.sh
-Patch0: raysession-0001-fix-some-fedora-fails-with-are_on_same_machine.patch
 
 BuildArch: noarch
 
@@ -138,6 +137,9 @@ desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-alsapatch.deskt
 %{_datadir}/bash-completion/completions/ray_control
 
 %changelog
+* Fri Mar 06 2026 Yann Collette <ycollette.nospam@free.fr> - 0.17.4-4
+- update to 0.17.4-4
+
 * Sat Feb 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.17.3-4
 - update to 0.17.3-4
 
