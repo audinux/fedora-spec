@@ -948,7 +948,6 @@ https://git.code.sf.net/p/thmad/code
 https://git.code.sf.net/p/industrializer/code
 https://git.code.sf.net/p/qtgain/code
 https://github.com/JamesStubbsEng/8ridgelite
-https://github.com/mididings/pyliblo
 https://github.com/brummer10/Ratatouille.lv2
 https://github.com/hollance/TheKissOfShame
 https://github.com/agateau/sfxr-qt
@@ -1121,6 +1120,7 @@ https://codeberg.org/yimrakhee/suboctb"
 # https://github.com/WeirdConstructor/Kickmess
 # https://github.com/jean-emmanuel/loop192
 # https://github.com/jean-emmanuel/seq192
+# https://github.com/mididings/pyliblo
 
 cp git_tags_old.txt git_tags_old.txt.bkp
 
