@@ -3,12 +3,12 @@
 # Type: Standalone
 # Category: Audio, Tool
 
-%global commit0 25b5412f6b531c557ff05dde5ae5b07b479dd5d4
+%global commit0 30f6c4a0a129e20f7525100cfc12764e4fdff989
 
 Name: luma
 Version: 0.0.1
-Release: 1%{?dist}
-Summary: a minimal LV2 host for Linux that runs LV2 plugins with X11 user interfaces using JACK for audio
+Release: 2%{?dist}
+Summary: A minimal LV2 host for Linux that runs LV2 plugins with X11 user interfaces using JACK for audio
 License: GPL-2.0-or-later
 URL: https://github.com/brummer10/luma
 ExclusiveArch: x86_64
@@ -16,7 +16,11 @@ ExclusiveArch: x86_64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/brummer10/Luma/archive/%{commit0}.zip#/%{name}-%{version}.zip
+# ./brummer10-source.sh <project> <tag>
+# ./brummer10-source.sh luma main
+
+Source0: luma.tar.gz
+Source1: brummer10-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -38,7 +42,7 @@ Luma is intentionally compact, readable, and suitable as both:
 - a testbed for LV2 UI and Atom interaction
     
 %prep
-%autosetup -n Luma-%{commit0}
+%autosetup -n luma
 
 %build
 
@@ -47,12 +51,15 @@ Luma is intentionally compact, readable, and suitable as both:
 %install
 
 install -m 755 -d %{buildroot}%{_bindir}/
-install -m 755 luma %{buildroot}%{_bindir}/
+install -m 755 Luma/luma %{buildroot}%{_bindir}/
 
 %files
 %doc ReadMe.md
 %{_bindir}/*
 
 %changelog
+* Sat Mar 07 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2
+
 * Wed Feb 25 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial build
