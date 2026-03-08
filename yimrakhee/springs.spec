@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: springs
-Version: 0.2.0
+Version: 0.2.1
 Release: 1%{?dist}
 Summary: A classic, chirpy spring reverb audio plugin
 License: GPL-3.0-or-later
@@ -113,5 +113,8 @@ cp -ra target/release/springs  %{buildroot}/%{_bindir}/
 %{_libdir}/clap/*
 
 %changelog
+* Sat Mar 07 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.1-1
+- update to 0.2.1-1
+
 * Tue Mar 03 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
 - Initial spec file
