@@ -37,6 +37,8 @@ Its goal is to be free replacement for the popular Fasttracker II software.
 %prep
 %autosetup -n MilkyTracker-%{version}
 
+sed -i -e "/cmake_policy(SET CMP0004 OLD)/d" CMakeLists.txt
+
 %build
 
 %cmake
