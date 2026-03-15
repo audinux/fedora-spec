@@ -63,6 +63,11 @@ VST3 version of %{name}
 
 %build
 
+%set_build_flags
+
+export CXXFLAGS="-DJUCE_USE_CURL=0 $CXXFLAGS"
+export CFLAGS="-DJUCE_USE_CURL=0 $CFLAGS"
+
 %cmake -DCOPY_FOLDER=copy_folder
 %cmake_build
 
