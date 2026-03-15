@@ -19,6 +19,7 @@ Source0: https://github.com/alexkay/spek/releases/download/v%{version}/spek-%{ve
 BuildRequires: gcc-c++ gcc
 BuildRequires: autoconf automake
 BuildRequires: (ffmpeg-devel or ffmpeg-free-devel)
+BuildRequires: (libavcodec-devel or libavcodec-free-devel)
 BuildRequires: wxGTK-devel
 BuildRequires: SDL2-devel
 BuildRequires: desktop-file-utils
