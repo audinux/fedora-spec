@@ -91,6 +91,9 @@ tar xvfz %{SOURCE1} --directory=fundamental_plugin --strip-components=1
 # Remove libsamplerate download and install
 sed -i -e "7,20d" fundamental_plugin/Makefile
 
+# Remove unsupported policy
+sed -i -e "/cmake_policy(SET CMP0042 OLD)/d" dep/rtaudio/CMakeLists.txt
+
 %build
 
 cd dep

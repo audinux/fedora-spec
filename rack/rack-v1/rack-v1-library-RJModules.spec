@@ -86,6 +86,9 @@ sed -i -e "s/dep\/lib\/librtaudio.a/-lrtaudio/g" Makefile
 # We use provided RtAudio library because Rack hangs when using jack and fedora rtaudio
 sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -lpulse/g" Makefile
 
+# Remove unsupported policy
+sed -i -e "/cmake_policy(SET CMP0042 OLD)/d" dep/rtaudio/CMakeLists.txt
+
 mkdir RJModules_plugin
 tar xvfz %{SOURCE1} --directory=RJModules_plugin --strip-components=1
 
