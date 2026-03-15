@@ -51,6 +51,8 @@ BuildRequires: wine-devel(x86-32)
 BuildRequires: libstdc++-devel
 BuildRequires: libstdc++-devel(x86-32)
 BuildRequires: asio-devel
+BuildRequires: libatomic
+BuildRequires: libatomic(x86-32)
 
 Requires: python3
 Requires: wine
@@ -59,6 +61,7 @@ Requires: boost-filesystem
 Requires: boost-system
 Requires: libxcb
 Requires: libXau
+Requires: libatomic
 
 Requires: wine(x86-32)
 Requires: glibc(x86-32)
@@ -66,6 +69,7 @@ Requires: libgcc(x86-32)
 Requires: libstdc++(x86-32)
 Requires: libxcb(x86-32)
 Requires: libXau(x86-32)
+Requires: libatomic(x86-32)
 
 %description
 Yet Another way to use Windows VST plugins on Linux.
