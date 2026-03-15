@@ -27,7 +27,7 @@ Source8: http://ycollette.free.fr/Milkdrop/CreamOfTheCrop_20200216.zip
 BuildArch: noarch
 
 BuildRequires: p7zip
-BuildReauires: tar
+BuildRequires: tar
 
 %description
 A collection of additional preset for projectM.
@@ -77,7 +77,8 @@ echo "Nothing to build."
 
 install -dm 0755 $RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets
 
-tar xvfz %{SOURCE0} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
+# tar problem on FC44: Cannot open: Invalid cross-device link for some files
+# tar xvfz %{SOURCE0} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
 tar xvfz %{SOURCE1} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
 tar xvfz %{SOURCE2} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
 tar xvfz %{SOURCE3} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
@@ -86,7 +87,7 @@ pushd .
 
 cd $RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets
 
-mv presets-2.0.0-Source              presets-2.0.0
+# mv presets-2.0.0-Source              presets-2.0.0
 mv presets-projectm-2.0.0-Source     projectm-2.0.0
 mv presets_milkdrop_200-2.0.0-Source milkdrop-2.0.0
 mv presets_milkdrop_104-2.0.0-Source milkdrop-1.0.4
@@ -146,7 +147,7 @@ rm md/presets/*.bat
 rm -rf milkdrop-2.0.0/CMakeFiles
 rm -rf milkdrop-1.0.4/CMakeFiles
 rm -rf projectm-2.0.0/CMakeFiles
-rm -rf presets-2.0.0/CMakeFiles
+# rm -rf presets-2.0.0/CMakeFiles
 
 find . -name "amandio c*" -exec rm {} \;
 find . -name "*.bak" -exec rm {} \;
@@ -160,13 +161,14 @@ find . -name "*.mil"  -exec mv {} `basename {} .mil`.milk \;
 # Manage permissions
 
 find %{buildroot}%{_datadir}/projectM-mao -type d -exec chmod 755 {} \;
+find %{buildroot}%{_datadir}/projectM-mao -type f -exec chmod a-x {} \;
 
 find . -name "*.milk" -exec chmod 644 {} \;
 
 popd
 
 %files
-%{_datadir}/projectM-mao/presets/presets-2.0.0/*
+# {_datadir}/projectM-mao/presets/presets-2.0.0/*
 %{_datadir}/projectM-mao/presets/projectm-2.0.0/*
 %{_datadir}/projectM-mao/presets/milkdrop-2.0.0/*
 %{_datadir}/projectM-mao/presets/milkdrop-1.0.4/*
