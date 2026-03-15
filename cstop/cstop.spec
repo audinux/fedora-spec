@@ -89,7 +89,7 @@ fi
 
 %set_build_flags
 
-%cmake -DCMAKE_CXX_FLAGS="`pkg-config --cflags webkit2gtk-4.1` `pkg-config --cflags gtk+-3.0` $CXXFLAGS"
+%cmake -DCMAKE_CXX_FLAGS="`pkg-config --cflags webkit2gtk-4.1` `pkg-config --cflags gtk+-3.0` -DJUCE_USE_CURL=0 $CXXFLAGS"
 %cmake_build
 
 %install
