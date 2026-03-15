@@ -32,7 +32,7 @@ An audio freeze LV2 plugin
 
 %set_build_flags
 export CFLAGS="-I/usr/include/eigen3 $CFLAGS"
-export CXXFLAGS="-I/usr/include/eigen3 $CXXFLAGS"
+export CXXFLAGS="-std=c++14 -I/usr/include/eigen3 $CXXFLAGS"
 
 %ifarch aarch64
 %make_build DESTDIR=%{buildroot} INSTALL_PATH=%{_libdir}/lv2/ NOOPT=true
