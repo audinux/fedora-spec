@@ -36,6 +36,8 @@ BuildRequires: cairo-devel
 BuildRequires: pango-devel
 BuildRequires: gtkmm30-devel
 BuildRequires: sqlite-devel
+BuildRequires: wayland-protocols-devel
+BuildRequires: expat-devel
 
 %description
 VST 3 Plug-In SDK
@@ -75,7 +77,7 @@ sed -i -e "s/other.invoke (false);/other.invoke = false;/g" vstgui4/vstgui/lib/f
 export CXXFLAGS="-include cstdint $CXXFLAGS"
 
 %cmake -DSMTG_RUN_VST_VALIDATOR=ON
-%cmake_build -- VERBOSE=1
+%cmake_build
 
 %install
 
