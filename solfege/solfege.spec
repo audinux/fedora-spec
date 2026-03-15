@@ -16,7 +16,11 @@ License: GPL-3.0-only
 URL: https://www.gnu.org/software/solfege/
 ExclusiveArch: x86_64 aarch64
 
-Source0: https://git.savannah.gnu.org/cgit/solfege.git/snapshot/solfege-%{version}.tar.gz
+# Usage: ./solfege-source.sh <TAG>
+#        ./solfege-source.sh 3.23.5pre2
+
+Source0: solfege.tar.gz
+Source1: solfege-source.sh
 # Fix startup issue on F17+ (BZ 832764):
 # Correctly determine the PREFIX even if solfege is executed as /bin/solfege
 Patch0: solfege-3.20.6-prefix.patch
@@ -48,7 +52,7 @@ Solfege is free music education software. Use it to train your rhythm,
 interval, scale and chord skills. Solfege - Smarten your ears!
 
 %prep
-%autosetup -p1 -n solfege-%{version}
+%autosetup -p1 -n solfege
 
 %build
 autoreconf -if
