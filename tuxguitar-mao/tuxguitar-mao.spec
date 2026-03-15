@@ -75,7 +75,9 @@ Requires: wqy-zenhei-fonts
 
 BuildRequires: gcc
 BuildRequires: make
-BuildRequires: maven-local
+BuildRequires: javapackages-tools
+BuildRequires: javapackages-compat
+BuildRequires: maven
 BuildRequires: maven-antrun-plugin
 BuildRequires: maven-dependency-plugin
 BuildRequires: maven-clean-plugin
@@ -137,16 +139,6 @@ find . -name "*.dll" -print -delete
 find . -name "*.sf2" -print -delete
 find . -name "*.jar" -print -delete
 find . -name "*.so"  -print -delete
-
-%pom_xpath_remove "pom:profile[pom:id[text()='platform-windows']]" desktop/pom.xml
-%pom_xpath_remove "pom:profile[pom:id[text()='platform-macos-cocoa']]" desktop/pom.xml
-%pom_xpath_remove "pom:profile[pom:id[text()='platform-freebsd']]" desktop/pom.xml
-# %pom_xpath_set -r pom:org.eclipse.swt.artifactId org.eclipse.swt  desktop/pom.xml
-# %pom_xpath_set -r pom:org.eclipse.swt.artifactId org.eclipse.swt desktop/build-scripts/%{name}-linux-swt
-%pom_xpath_remove "pom:artifactItem[pom:destFileName[text()='swt.jar']]" desktop/build-scripts/%{name}-linux-swt
-# %pom_remove_dep :org.eclipse.swt.gtk.linux desktop/pom.xml
-%pom_remove_dep :org.eclipse.swt.win32.win32 desktop/pom.xml
-%pom_remove_dep :org.eclipse.swt.cocoa.macosx desktop/pom.xml
 
 %build
 
