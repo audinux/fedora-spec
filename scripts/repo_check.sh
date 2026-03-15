@@ -1111,7 +1111,9 @@ https://codeberg.org/yimrakhee/fuzzb
 https://codeberg.org/yimrakhee/letsdist
 https://codeberg.org/yimrakhee/smallmuffin
 https://codeberg.org/yimrakhee/springs
-https://codeberg.org/yimrakhee/suboctb"
+https://codeberg.org/yimrakhee/suboctb
+https://github.com/babelouest/orcania
+https://github.com/babelouest/yder"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
