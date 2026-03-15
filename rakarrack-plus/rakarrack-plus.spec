@@ -20,9 +20,15 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: alsa-utils
+%if 0%{?fedora} >= 44
+BuildRequires: fltk1.3-devel
+BuildRequires: fltk1.3-fluid
+BuildRequires: fltk1.3-static
+%else
 BuildRequires: fltk-devel
 BuildRequires: fltk-fluid
 BuildRequires: fltk-static
+%endif
 BuildRequires: non-ntk-devel
 BuildRequires: non-ntk-fluid
 Buildrequires: liblo-devel
