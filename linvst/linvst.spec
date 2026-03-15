@@ -26,10 +26,14 @@ BuildRequires: libstdc++-devel
 BuildRequires: libstdc++-devel(x86-32)
 BuildRequires: wine-devel
 BuildRequires: wine-devel(x86-32)
+BuildRequires: libatomic
+BuildRequires: libatomic(x86-32)
 
 Requires: wine
 Requires: wine(x86-32)
 Requires: python3
+Requires: libatomic
+Requires: libatomic(x86-32)
 
 %description
 LinVst adds support for Windows vst's to be used in Linux vst capable DAW's.
