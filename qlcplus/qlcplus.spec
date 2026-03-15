@@ -46,6 +46,12 @@ introduce new features.
 
 %build
 
+%set_build_flags
+
+export CXXFLAGS="-Wno-error=sfinae-incomplete $CXXFLAGS"
+export CXXFLAGS="-Wno-error=unused-but-set-variable $CXXFLAGS"
+export CXXFLAGS="-Wno-error=deprecated-enum-enum-conversion $CXXFLAGS"
+
 %cmake
 %cmake_build
 
