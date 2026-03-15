@@ -134,6 +134,7 @@ export CXXFLAGS="-Wno-error=sign-conversion $CXXFLAGS"
 export CXXFLAGS="-Wno-error=float-equal $CXXFLAGS"
 export CXXFLAGS="-Wno-error=write-strings $CXXFLAGS"
 export CXXFLAGS="-Wno-error=sequence-point $CXXFLAGS"
+export CXXFLAGS="-Wno-error=invalid-constexpr $CXXFLAGS"
 
 %cmake
 %cmake_build
