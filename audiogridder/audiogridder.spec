@@ -29,7 +29,6 @@ BuildRequires: pkgconfig(libavdevice)
 BuildRequires: pkgconfig(libavfilter)
 BuildRequires: pkgconfig(libavformat)
 BuildRequires: pkgconfig(libavutil)
-BuildRequires: pkgconfig(libpostproc)
 BuildRequires: pkgconfig(libswresample)
 BuildRequires: pkgconfig(libswscale)
 BuildRequires: boost-devel
@@ -50,6 +49,7 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
+BuildRequires: libpostproc-free-devel
 BuildRequires: desktop-file-utils
 
 %description
