@@ -52,8 +52,8 @@ things and feel I can do something different...
 
 %build
 
-%cmake -DLIBDIR=%{_lib}
-
+%cmake -DLIBDIR=%{_lib} \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

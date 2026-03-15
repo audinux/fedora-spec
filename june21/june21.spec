@@ -36,7 +36,7 @@ Roland Juno-1 / Juno-2 / MKS-50 emulator using CSound & Cabbage
 
 cd src/plugins/junosyxloader/
 
-%cmake
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

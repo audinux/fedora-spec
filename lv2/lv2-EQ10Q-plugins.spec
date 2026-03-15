@@ -15,7 +15,7 @@ License: GPL-2.0-or-later AND GPL-3.0-or-later
 URL: http://eq10q.sourceforge.net/
 ExclusiveArch: x86_64 aarch64
 
-Source0: http://downloads.sourceforge.net/project/eq10q/eq10q-%{version}.tar.gz
+Source0: https://downloads.sourceforge.net/project/eq10q/eq10q-%{version}.tar.gz
 # Patches from debian package
 Patch0: eq10q_01-fix_prexix.patch
 Patch1: eq10q_02-remove_sse_flags.patch
@@ -24,9 +24,9 @@ Patch3: eq10q_04-spelling.patch
 Patch4: eq10q_05-pow10.patch
 Patch5: eq10q_0006-Fix-lv2-types.patch
 
+BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: pkgconfig
-BuildRequires: gcc-c++
 BuildRequires: fftw-devel
 BuildRequires: gtkmm24-devel
 BuildRequires: plotmm-devel
@@ -59,7 +59,9 @@ sed -i 's|-msse -mfpmath=sse||g' CMakeLists.txt
 sed -i -e "/CMAKE_INSTALL_PREFIX/d" CMakeLists.txt
 
 %build
-%{cmake} -DCMAKE_INSTALL_PREFIX="%{_libdir}/lv2" ..
+%{cmake} -DCMAKE_INSTALL_PREFIX="%{_libdir}/lv2" \
+         -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+	 ..
 %cmake_build
 
 %install

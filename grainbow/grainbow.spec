@@ -76,7 +76,7 @@ LV2 version of %{name}
 
 %set_build_flags
 
-%cmake
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

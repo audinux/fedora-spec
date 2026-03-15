@@ -80,7 +80,8 @@ cd Plugin
        -DCMAKE_BUILD_TYPE=Release \
        -DRTNEURAL_XSIMD=ON \
        -DCMAKE_PREFIX_PATH=/usr/lib64/juce \
-       -DCMAKE_CXX_FLAGS="-include utility -fPIC $CXXFLAGS"
+       -DCMAKE_CXX_FLAGS="-include utility -fPIC $CXXFLAGS" \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 touch cmake-build/CHOWTapeModel_artefacts/JuceLibraryCode/AppConfig.h
 cmake --build cmake-build %{?_smp_mflags}

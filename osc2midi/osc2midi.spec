@@ -42,6 +42,7 @@ export CFLAGS="-Wno-incompatible-pointer-types $CFLAGS"
 
 %cmake -DCMAKE_INSTALL_LIBDIR=%{_lib} \
        -DLIBEXEC_INSTALL_DIR=%{_libexecdir} \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
        -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
 
 %cmake_build

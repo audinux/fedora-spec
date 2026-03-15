@@ -65,7 +65,7 @@ primarily for but not limited to the Linux operating system.
 
 export PATH=/usr/libexec/fox:$PATH
 
-%cmake
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

@@ -66,7 +66,8 @@ is really recommended.
 %cmake -DUSE_SYSTEM_FONT=ON \
        -DUSE_JACK=ON \
        -DWITH_MAN=ON \
-       -DWITH_INTERNAL_FLUIDSYNTH=OFF
+       -DWITH_INTERNAL_FLUIDSYNTH=OFF \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 %cmake_build
 

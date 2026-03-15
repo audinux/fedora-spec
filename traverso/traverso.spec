@@ -48,7 +48,10 @@ Traverso: A Multitrack Audio Recorder and Editor
 
 %build
 
-%cmake
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

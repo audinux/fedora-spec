@@ -57,7 +57,8 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 export CXXFLAGS="-include cstdint $CXXFLAGS"
 
 %cmake -DCMAKE_INSTALL_LIBDIR=%{_lib} \
-       -DLIBEXEC_INSTALL_DIR=%{_libexecdir}
+       -DLIBEXEC_INSTALL_DIR=%{_libexecdir} \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 %cmake_build
 

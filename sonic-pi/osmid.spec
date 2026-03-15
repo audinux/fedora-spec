@@ -42,7 +42,7 @@ want to use just one direction for the conversion, it makes sense to keep this s
 
 %build
 
-%cmake
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

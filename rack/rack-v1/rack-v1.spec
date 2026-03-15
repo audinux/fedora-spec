@@ -126,6 +126,9 @@ sed -i -e "s/pluginsPath = userDir + \"\/plugins-v\"/pluginsPath = systemDir + \
 # Disable an assert triggered with pipewire
 sed -i -e "s/assert(!err);/\/\/assert(!err);/g" src/system.cpp
 
+# Remove unsupported policy
+sed -i -e "/cmake_policy(SET CMP0042 OLD)/d" dep/rtaudio/CMakeLists.txt
+
 %build
 
 export CFLAGS=
@@ -136,7 +139,13 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 cd dep
 %if %{use_static_glfw}
 cd glfw
-cmake -DCMAKE_INSTALL_PREFIX=.. -DGLFW_COCOA_CHDIR_RESOURCES=OFF -DGLFW_COCOA_MENUBAR=ON -DGLFW_COCOA_RETINA_FRAMEBUFFER=ON -DCMAKE_BUILD_TYPE=DEBUG .
+cmake -DCMAKE_INSTALL_PREFIX=.. \
+      -DGLFW_COCOA_CHDIR_RESOURCES=OFF \
+      -DGLFW_COCOA_MENUBAR=ON \
+      -DGLFW_COCOA_RETINA_FRAMEBUFFER=ON \
+      -DCMAKE_BUILD_TYPE=DEBUG \
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+      .
 make
 make install
 cd ..

@@ -11,7 +11,8 @@ License: GPL
 URL: https://supercollider.github.io/
 ExclusiveArch: x86_64 aarch64
 
-Source0: https://github.com/supercollider/supercollider/releases/download/Version-%{version}/SuperCollider-%{version}-Source.tar.bz2
+# Source0: https://github.com/supercollider/supercollider/releases/download/Version-{version}/SuperCollider-{version}-Source.tar.bz2
+Source0: supercollider.tar.gz
 
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
@@ -87,7 +88,7 @@ Requires: vim
 SuperCollider support for the Vim text editor.
 
 %prep
-%autosetup -n SuperCollider-%{version}-Source
+%autosetup -n supercollider
 
 sed -i -e "s/SET(CMAKE_INSTALL_RPATH/#SET(CMAKE_INSTALL_RPATH/g" editors/sc-ide/CMakeLists.txt
 sed -i -e "s/SET(CMAKE_INSTALL_RPATH/#SET(CMAKE_INSTALL_RPATH/g" lang/CMakeLists.txt
@@ -105,7 +106,8 @@ find . -type d -name .git -printf "\"%h/%f\"\n" | xargs rm -rf
        -DSUPERNOVA=ON \
        -DSC_VIM=ON \
        -DSC_EL=ON \
-       -DCMAKE_INSTALL_PREFIX=%{_prefix}
+       -DCMAKE_INSTALL_PREFIX=%{_prefix} \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 %cmake_build
 

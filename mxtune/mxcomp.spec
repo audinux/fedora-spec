@@ -62,7 +62,7 @@ sed -i -e "/net_log.h/d" src/plugin_editor.cpp
 
 %build
 
-%cmake
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

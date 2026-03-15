@@ -63,7 +63,8 @@ export CXXFLAGS="-fpermissive $CXXFLAGS"
 %cmake -D_filename:FILEPATH=/usr/include/wx-3.0/wx/version.h \
        -DwxWidgets_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/wx-config-3.2 \
        -DPortTime_LIBRARY:FILEPATH=/usr/%{_lib}/libportaudio.so \
-       -DLENMUS_DOWNLOAD_SOUNDFONT=OFF
+       -DLENMUS_DOWNLOAD_SOUNDFONT=OFF \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 %cmake_build
 

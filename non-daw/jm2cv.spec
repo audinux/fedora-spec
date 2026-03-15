@@ -37,7 +37,7 @@ specifically the section on control voltages.
 
 %build
 
-%cmake
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

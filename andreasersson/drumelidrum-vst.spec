@@ -54,7 +54,7 @@ VST3 plugins from %{name}
 export CXXFLAGS="-include limits -DRELEASE -include exception -include cstdint -fPIC $CXXFLAGS"
 export CFLAGS="-fPIC $CFLAGS"
 
-%cmake
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

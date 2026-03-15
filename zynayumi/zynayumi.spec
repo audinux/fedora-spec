@@ -20,7 +20,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source-zynayumi.sh <tag>
-#        ./source-zynayumi.sh master
+#        ./source-zynayumi.sh main
 
 Source0: zynayumi.tar.gz
 Source1: source-zynayumi.sh
@@ -74,9 +74,9 @@ sed -i -e "s|set(CMAKE_CXX_FLAGS \"|set(CMAKE_CXX_FLAGS \"\${CMAKE_CXX_FLAGS} |g
 # Build libzynayumi
 cd libzynayumi
 %if 0%{?fedora} >= 38
-%cmake -DCMAKE_CXX_FLAGS="-include cstdint $CXXFLAGS"
+%cmake -DCMAKE_CXX_FLAGS="-include cstdint $CXXFLAGS" -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %else
-%cmake
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %endif
 %cmake_build
 rm -rf build

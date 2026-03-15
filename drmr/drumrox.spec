@@ -36,7 +36,8 @@ The main goal of Drumrox is to keep it compatible with MODERN Hydrogen kit forma
 
 %cmake -DLV2_INSTALL_DIR:Path=%{_lib}/lv2 \
        -DCMAKE_CXX_FLAGS="-Wno-implicit-function-declaration $CXXFLAGS" \
-       -DCMAKE_C_FLAGS="-Wno-implicit-function-declaration $CFLAGS"
+       -DCMAKE_C_FLAGS="-Wno-implicit-function-declaration $CFLAGS" \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

@@ -50,7 +50,8 @@ pre-recorded song.  You can:
 
 %build
 
-%cmake
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+       -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
 
 %cmake_build
 

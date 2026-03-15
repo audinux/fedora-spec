@@ -44,7 +44,7 @@ sed -i -e "s/lib\/lv2/%{_lib}\/lv2/g" CMakeLists.txt
 %set_build_flags
 export LDFLAGS="$LDFLAGS -z muldefs"
 
-%cmake
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

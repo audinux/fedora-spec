@@ -117,6 +117,9 @@ developing addons for lmms.
 sed -i -e "s/-std=c11/-std=c11 -fPIC -DPIC/g" src/3rdparty/rpmalloc/CMakeLists.txt
 sed -i -e "s/CARLA_EXPORT/CARLA_API_EXPORT/g" plugins/carlabase/carla.h
 
+sed -i -e "/CMAKE_POLICY(SET CMP0026 OLD)/d" CMakeLists.txt
+sed -i -e "/CMAKE_POLICY(SET CMP0050 OLD)/d" CMakeLists.txt
+
 %build
 
 %cmake -DWANT_SDL:BOOL=OFF \
@@ -133,7 +136,8 @@ sed -i -e "s/CARLA_EXPORT/CARLA_API_EXPORT/g" plugins/carlabase/carla.h
        -DCMAKE_EXE_LINKER_FLAGS:STRING="$LDFLAGS -pie" \
        -DCMAKE_SKIP_RPATH=OFF \
        -DCMAKE_INSTALL_LIBDIR=%{_lib} \
-       -DLIBEXEC_INSTALL_DIR=%{_libexecdir}
+       -DLIBEXEC_INSTALL_DIR=%{_libexecdir} \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 %cmake_build
 

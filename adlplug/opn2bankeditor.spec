@@ -47,8 +47,12 @@ sed -i -e "/Categories/d" src/resources/opn2_bank_editor.desktop
 
 %build
 
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
 %cmake -DCMAKE_INSTALL_LIBDIR=%{_lib} \
-       -DLIBEXEC_INSTALL_DIR=%{_libexecdir}
+       -DLIBEXEC_INSTALL_DIR=%{_libexecdir} \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 %cmake_build
 

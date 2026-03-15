@@ -48,7 +48,8 @@ sed -i 's|SET(CMAKE_CXX_FLAGS ".*")|SET(CMAKE_CXX_FLAGS "%{optflags}")|;
 %build
 
 echo '#define GIT_VERSION "%{version}-%{release}"' > src/version.hxx
-%cmake -DRELEASE_BUILD=1
+%cmake -DRELEASE_BUILD=1 \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

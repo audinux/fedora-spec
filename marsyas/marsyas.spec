@@ -81,7 +81,7 @@ sed -i -e "1i #include <QPainterPath>" src/otherlibs/qwt/qwt_plot_panner.cpp
 
 %build
 
-%cmake
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

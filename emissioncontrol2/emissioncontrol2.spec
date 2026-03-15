@@ -53,6 +53,9 @@ sed -i -e "s/-m64//g" test_savedialog.make
 # Still fail to build!: error: narrowing conversion of '-1' from 'int' to 'char' [-Wnarrowing]
 %endif
 
+sed -i -e "/cmake_policy(SET CMP0042 OLD)/d" ecSource/external/allolib/external/rtmidi/CMakeLists.txt
+sed -i -e "/cmake_policy(SET CMP0042 OLD)/d" ecSource/external/allolib/external/rtaudio/CMakeLists.txt
+
 %build
 
 %set_build_flags
@@ -65,7 +68,8 @@ cd ../../../../..
 
 cd ecSource
 %cmake -DCMAKE_CXX_FLAGS="-include cstdint -fPIC $CXXFLAGS" \
-       -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
+       -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`" \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

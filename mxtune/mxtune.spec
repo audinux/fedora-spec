@@ -63,7 +63,7 @@ sed -i -e "s|-s ||g" CMakeLists.txt
 
 PWD=`pwd`
 
-%cmake
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

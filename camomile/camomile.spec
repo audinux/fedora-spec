@@ -59,7 +59,7 @@ VST3 version of %{name}
 %set_build_flags
 export CXXFLAGS="`pkg-config --cflags gtk+-3.0 webkit2gtk-4.1` $CXXFLAGS"
 
-%cmake
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

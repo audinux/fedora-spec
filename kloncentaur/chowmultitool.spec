@@ -22,7 +22,7 @@ Distribution: Audinux
 
 # to generater code archive:
 # Usage: ./source_jatinchowdhury18.sh <project> <tag>
-#        ./source_jatinchowdhury18.sh ChowMultiTool v1.0.0
+#        ./source_jatinchowdhury18.sh ChowMultiTool v1.1.0
 
 Source0: ChowMultiTool.tar.gz
 Source1: source_jatinchowdhury18.sh
@@ -82,7 +82,9 @@ License and documentation for %{name}
 %build
 %set_build_flags
 
-%cmake
+export CXXFLAGS="-Wno-template-body $CXXFLAGS"
+
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

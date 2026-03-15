@@ -43,7 +43,8 @@ sed -i -e "s/-msse -msse2 -mfpmath=sse//g" lv2/CMakeLists.txt
 
 %build
 
-%cmake -DLV2_INSTALL_DIR:PATH=%{_libdir}/lv2/rkr.lv2
+%cmake -DLV2_INSTALL_DIR:PATH=%{_libdir}/lv2/rkr.lv2 \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 %cmake_build
 

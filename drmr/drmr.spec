@@ -42,7 +42,8 @@ sed -i -e "/set(CMAKE_C_FLAGS/d" CMakeLists.txt
 %set_build_flags
 export CFLAGS="-Wno-implicit-function-declaration $CFLAGS"
 
-%cmake -DLV2_INSTALL_DIR:Path=%{_lib}/lv2
+%cmake -DLV2_INSTALL_DIR:Path=%{_lib}/lv2 \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 %cmake_build
 

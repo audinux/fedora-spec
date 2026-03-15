@@ -87,7 +87,8 @@ LV2 version of %{name}
 %set_build_flags
 export CXXFLAGS="-Wno-template-body $CXXFLAGS"
 
-%cmake -DCHOWKICK_BUILD_CLAP=ON
+%cmake -DCHOWKICK_BUILD_CLAP=ON \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

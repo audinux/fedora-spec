@@ -37,8 +37,8 @@ BuildRequires: libXcursor-devel
 FM synthesizer plugins, based on OPL3 and OPN2 sound chip emulations.
 
 %package -n opnplug
-Summary:    Synthesizer plugin for OPNMIDI (VST/LV2)
-Requires:   %{name}%{?_isa} = %{version}-%{release}, pkgconfig
+Summary: Synthesizer plugin for OPNMIDI (VST/LV2)
+Requires: %{name}%{?_isa} = %{version}-%{release}, pkgconfig
 
 %description -n opnplug
 Synthesizer plugin for OPNMIDI (VST/LV2)
@@ -51,12 +51,16 @@ Synthesizer plugin for OPNMIDI (VST/LV2)
 
 %set_build_flags
 
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
 mkdir -p build_adl
 cd build_adl
 
 cmake -DCMAKE_INSTALL_PREFIX=/usr \
       -DCMAKE_INSTALL_LIBDIR=%{_lib} \
       -DLIBEXEC_INSTALL_DIR=%{_libexecdir} \
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+      -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`" \
       ..
 
 %make_build
@@ -70,6 +74,8 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr \
       -DCMAKE_INSTALL_LIBDIR=%{_lib} \
       -DLIBEXEC_INSTALL_DIR=%{_libexecdir} \
       -DADLplug_CHIP=OPN2 \
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+      -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`" \
       ..
 
 %make_build

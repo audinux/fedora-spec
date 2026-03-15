@@ -44,10 +44,12 @@ sed -i -e "s|-mfpmath=sse||g" src/avtk/CMakeLists.txt
 %endif
 
 %build
-%cmake
+
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install
+
 %cmake_install
 
 %files

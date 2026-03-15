@@ -48,6 +48,7 @@ Csound plugins which were originally in the main repository, and for new plugins
 
 %cmake -DBUILD_HDF5_OPCODES=OFF \
        -DBUILD_TESTS:BOOL=OFF \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
        -DCMAKE_LIBRARY_PATH="`pkg-config --libs-only-L jack | sed -e 's/-L//g'`"
 
 %cmake_build
@@ -62,7 +63,7 @@ mv %{buildroot}/usr/lib/csound/plugins64-6.0/ %{buildroot}/%{_libdir}/csound/plu
 %files
 %license LICENSE
 %doc README.md
-%{_libdir}/csound/plugins-6.0/libchua.so
+# {_libdir}/csound/plugins-6.0/libchua.so -> because eigen3 not correctly detected ...
 %{_libdir}/csound/plugins-6.0/libfaustcsound.so
 %{_libdir}/csound/plugins-6.0/libimage.so
 %{_libdir}/csound/plugins-6.0/libpy.so

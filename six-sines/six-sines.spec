@@ -102,7 +102,8 @@ export CXXFLAGS="-include ghc/filesystem.hpp -Wno-error=deprecated-declarations 
 
 export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
-%cmake -DBUILD_SHARED_LIBS:BOOL=OFF
+%cmake -DBUILD_SHARED_LIBS:BOOL=OFF \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 mkdir -p %{__cmake_builddir}/geninclude
 cp %{SOURCE1} %{__cmake_builddir}/geninclude

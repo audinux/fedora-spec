@@ -79,7 +79,8 @@ cd src
 %if 0%{?fedora} >= 37
        -DLLVM_DIR=%{_libdir}/llvm14/lib/cmake/llvm \
 %endif
-       -DGAMMOU_SAMPLE_PATH=%{_datadir}/%{name}/waves/
+       -DGAMMOU_SAMPLE_PATH=%{_datadir}/%{name}/waves/ \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install

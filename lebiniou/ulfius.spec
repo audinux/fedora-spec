@@ -5,7 +5,7 @@
 
 Summary: Web Framework to build REST APIs, Webservices or any HTTP endpoint in C language.
 Name: ulfius
-Version: 2.7.0
+Version: 2.7.15
 Release: 1%{?dist}
 License: LGPL-2.1
 URL: https://github.com/babelouest/ulfius
@@ -24,6 +24,8 @@ BuildRequires: libmicrohttpd-devel
 BuildRequires: jansson-devel
 BuildRequires: zlib-devel
 BuildRequires: systemd-devel
+BuildRequires: orcania-devel
+BuildRequires: yder-devel
 
 %description
 Web Framework to build REST APIs, Webservices or any HTTP endpoint in C language.
@@ -52,7 +54,7 @@ The %{name}-doc package contains documentation for %{name}.
 
 export CFLAGS="-Wno-error=attribute-warning $CFLAGS"
 
-%cmake
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install
@@ -75,6 +77,9 @@ export CFLAGS="-Wno-error=attribute-warning $CFLAGS"
 %{_datadir}/doc/ulfius/
 
 %changelog
+* Tue Mar 10 2026 Yann Collette <ycollette dot nospam at free.fr> 2.7.15-2
+- update to 2.7.15-2
+
 * Tue Sep 30 2025 Yann Collette <ycollette dot nospam at free.fr> 2.7.0-2
 - update to 2.7.0-2
 
