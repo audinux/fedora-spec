@@ -41,6 +41,7 @@ sed -i -e "/Value=1.5/d" src/vu.b4.alsa-scarlett-gui.desktop.template
 
 %set_build_flags
 
+export CFLAGS="-Wno-error=discarded-qualifiers $CFLAGS"
 export RPMFLAGS="$CFLAGS"
 
 cd src
