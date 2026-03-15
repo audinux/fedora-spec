@@ -38,6 +38,7 @@ The GUI is created with libxputty.
 
 export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s/-Werror=format-security//g"`
+export CXXFLAGS="-include cstdint $CXXFLAGS"
 
 %make_build STRIP=true
 
