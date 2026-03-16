@@ -19,6 +19,7 @@ Distribution: Audinux
 
 Source0: OB-Xf.tar.gz
 Source1: obxf-source.sh
+Patch0: obxf-0002-remove-fetchcontent-for-fmt.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake

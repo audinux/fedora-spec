@@ -1,0 +1,38 @@
+From f3907bc1c91d15a039105f9c4ab38216fa7b972b Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Mon, 16 Mar 2026 07:46:55 +0100
+Subject: [PATCH] fmt
+
+---
+ CMakeLists.txt      | 2 ++
+ libs/CMakeLists.txt | 1 -
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f9dc22c..ce91836 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -88,6 +88,8 @@ endif()
+ add_compile_definitions(JUCE_WEB_BROWSER=0)
+ add_compile_definitions(JUCE_USE_CURL=0)
+ 
++find_package(fmt)
++
+ list(APPEND OBXF_JUCE_FORMATS VST3 Standalone)
+ 
+ if(APPLE)
+diff --git a/libs/CMakeLists.txt b/libs/CMakeLists.txt
+index e665e3d..313cda9 100644
+--- a/libs/CMakeLists.txt
++++ b/libs/CMakeLists.txt
+@@ -4,7 +4,6 @@ add_subdirectory(sst/sst-cmake)
+ set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" PARENT_SCOPE)
+ 
+ add_subdirectory(JUCE EXCLUDE_FROM_ALL)
+-add_subdirectory(fmt EXCLUDE_FROM_ALL)
+ 
+ add_library(simde INTERFACE)
+ target_include_directories(simde INTERFACE simde)
+-- 
+2.53.0
+
