@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 fcad9cc606e64d2d56d9550bef79e6d282df83cf
-%global gittag0 2.2.0
+%global commit0 17cc67529c3bf9970c27fda78688e5631a2cabe6
+%global gittag0 2.3.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Stoermelder-P1
-Version: 2.2.0
+Version: 2.3.0
 Release: 2%{?dist}
 Summary: Stoermelder-P1 plugin for Rack
 License: GPL-2.0-or-later
@@ -29,7 +29,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/stoermelder/vcvrack-packone/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: vcvrack-packone.tar.gz
 Source2: Stoermelder-P1_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 Stoermelder-P1 plugin for Rack.
-Add CV automation to 32 parameters of any module
+A live programming environment for ORCA, an esoteric programming language designed to quickly create procedural sequencers
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r Stoermelder-P1_plugin/dist/Stoermelder-P1/* %{buildroot}%{_libexecdir}/Rac
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-1
 - initial specfile

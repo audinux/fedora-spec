@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 bb336fcfafd6a17650f1fbec0b9f4bb90d6f0ddd
-%global gittag0 2.0.0
+%global commit0 483baf72a4dba00bd286dbf2a075214307ce7051
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-wintoid
-Version: 2.0.0
+Version: 2.0.1
 Release: 2%{?dist}
 Summary: wintoid plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r wintoid_plugin/dist/wintoid/* %{buildroot}%{_libexecdir}/Rack2/plugins/win
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

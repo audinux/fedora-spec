@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 715e77d6f68f5542f5c6b7a317a7be37d35d42ee
-%global gittag0 2.6.31
+%global commit0 eff448f818f7ca94c6a893b69a907fcf45f0a639
+%global gittag0 2.6.32
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Autinn
-Version: 2.6.31
+Version: 2.6.32
 Release: 2%{?dist}
 Summary: Autinn plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Autinn_plugin/dist/Autinn/* %{buildroot}%{_libexecdir}/Rack2/plugins/Autin
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.31-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.32-1
 - initial specfile

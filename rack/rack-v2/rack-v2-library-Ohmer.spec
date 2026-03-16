@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 ee24dd45231f04f4bee8fd78c8a07b6d00f710e8
-%global gittag0 2.6.6
+%global commit0 d6e2f29b000335c630ff56a78483b01febafc65c
+%global gittag0 2.6.12
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Ohmer
-Version: 2.6.6
+Version: 2.6.12
 Release: 2%{?dist}
 Summary: Ohmer plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 Ohmer plugin for Rack.
-CPU-controlled clock generator or clock modulator
+Rotate Klok Divider (RKD) module (inspired from 4ms RCD hardware)
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r Ohmer_plugin/dist/Ohmer/* %{buildroot}%{_libexecdir}/Rack2/plugins/Ohmer/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.6-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.12-1
 - initial specfile
