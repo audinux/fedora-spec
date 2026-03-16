@@ -252,6 +252,10 @@
 | aelapse                       | https://github.com/smiarx/aelapse |
 | Squeezer                      | https://github.com/mzuther/Squeezer |
 | reapack-jm                    | https://github.com/jozmac/reapack-jm |
+| lv2-stereo-mixer              | https://github.com/unclechu/lv2-stereo-mixer |
+| TeAr                          | https://github.com/odoare/TeAr |
+| retromulator                  | https://github.com/reales/retromulator |
+| INTERSECT                     | https://github.com/tucktuckg00se/INTERSECT |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -351,6 +355,7 @@ liquidsfz: termios missing ?? a priori a missing include
 kernel-xan:drivers/gpu/drm/amd/amdgpu/amdgpu_gart.c:305:18: error: variable ‘p’ set but not used [-Werror=unused-but-set-variable=]
 Cadence: deactivated: python3-qt4 not available anymore and project archived
 chaffverb: requires hvcc 0.10
+vswell: requires hvcc 0.10
 cmajor: cmajor/juce/modules/juce_audio_processors/processors/juce_AudioPluginInstance.h:164:74: error: no matching constructor for initialization of 'AudioProcessor'
 ensemble-chorus: error: invalid use of incomplete type ‘class Fl_Group’
 fxseq: make: *** No rule to make target 'fxseq-VST3_All'.  Stop.
@@ -360,22 +365,12 @@ lmms-mao: CMake Error at CMakeLists.txt:540 (GET_TARGET_PROPERTY): The LOCATION 
 miriyaki-xt: error: the type ‘const DISTRHO::Parameter’ of ‘constexpr’ variable ‘DISTRHO::kParameterBypass’ is not literal
 kickmess: error: failed to get `baseview` as a dependency of package `kickmessvst v0.2.2 (/builddir/build/BUILD/kickmess-0.2.2-build/Kickmess-e02760ca72031587007c33395419d5f67e2296d8)`
 nih-plug: error[E0554]: `#![feature]` may not be used on the stable release channel
-mrfreeze: error: #error Eigen requires at least c++14 support
-gxmrfreeze: error: #error Eigen requires at least c++14 support
 milkdrop-preset: Cannot open: Invalid cross-device link on some files with tar ... -> To avoid this, you can use the --one-file-system option when creating the archive
 rakarrack: rakarrack.cxx:22467:3: error: ‘fl_register_images’ was not declared in this scope
-rakarrack-plus: CMake Error at /usr/lib64/cmake/fltk/FLTK-Targets.cmake:189 (message):
-  The imported target "fltk::fluid-shared" references the file
-
-     "/usr/bin/fluid-shared"
-
-  but this file does not exist.  Possible reasons include:
 sonobus: Source/VersionInfo.cpp:119:116: error: no matching function for call to ‘VersionInfo::VersionInfo(<brace-enclosed initializer list>)’
   119 |     return std::unique_ptr<VersionInfo> (new VersionInfo ({ versionString, releaseNotes, std::move (parsedAssets) }));
 vocoder: DPF/distrho/DistrhoDetails.hpp:750:34: error: the type ‘const DISTRHO::Parameter’ of ‘constexpr’ variable ‘DISTRHO::kParameterBypass’ is not literal
-zl-compressor, zl-equalizer, zl-split: JUCE/modules/juce_audio_processors/processors/juce_AudioPluginInstance.h:173:74: error: no matching constructor for initialization of 'AudioProcessor'
-  173 |     AudioPluginInstance (const short channelLayoutList[numLayouts][2]) : AudioProcessor (channelLayoutList) {}
-wstd*:   - nothing provides (python3.14dist(arpeggio) < 3~~ with python3.14dist(arpeggio) >= 2.0.2) needed by hvcc-0.15.0-2.fc44.noarch from copr_base
+wolf-shaper: dpf/distrho/DistrhoDetails.hpp:750:34: error: the type ‘const DISTRHO::Parameter’ of ‘constexpr’ variable ‘DISTRHO::kParameterBypass’ is not literal
 
 #### Warnings
 
