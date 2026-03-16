@@ -4,7 +4,7 @@
 # Category: Tool
 
 Name: qlcplus
-Version: 5.2.0
+Version: 5.2.1
 Release: 1%{?dist}
 Summary: Q Light Controller Plus - The free DMX lighting console
 URL: https://github.com/mcallegari/qlcplus
@@ -48,7 +48,9 @@ introduce new features.
 
 %set_build_flags
 
+%if 0%{?fedora} >= 44
 export CXXFLAGS="-Wno-error=sfinae-incomplete $CXXFLAGS"
+%endif
 export CXXFLAGS="-Wno-error=unused-but-set-variable $CXXFLAGS"
 export CXXFLAGS="-Wno-error=deprecated-enum-enum-conversion $CXXFLAGS"
 
@@ -77,6 +79,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/*.desktop
 %{_mandir}/*
 
 %changelog
+* Sun Mar 15 2026 Yann Collette <ycollette.nospam@free.fr> - 5.2.1-1
+- update to 5.2.1-1
+
 * Fri Feb 06 2026 Yann Collette <ycollette.nospam@free.fr> - 5.2.0-1
 - update to 5.2.0-1
 
