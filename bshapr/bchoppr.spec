@@ -5,7 +5,7 @@
 
 Summary: An audio stream chopping LV2 plugin
 Name:    lv2-BChoppr
-Version: 1.12.6
+Version: 1.12.8
 Release: 3%{?dist}
 License: GPL
 URL:     https://github.com/sjaehn/BChoppr
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./sjaehn-source.sh <project> <tag>
-# ./sjaehn-source.sh BChoppr 1.12.6
+# ./sjaehn-source.sh BChoppr 1.12.8
 
 Source0: BChoppr.tar.gz
 Source1: sjaehn-source.sh
@@ -25,6 +25,7 @@ BuildRequires: lv2-devel
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-keysyms-devel
 BuildRequires: cairo-devel
+BuildRequires: libsndfile-devel
 
 %description
 BChoppr cuts the audio input stream into a repeated sequence of up to 16 chops.
@@ -41,7 +42,7 @@ Each chop can be leveled up or down (gating). BChoppr is the successor of BSlizr
 	    LV2DIR=%{_libdir}/lv2 \
 	    DESTDIR=%{buildroot} \
 	    STRIP=true \
-	    CXXFLAGS="$CXXFLAGS -include stdexcept -std=c++11 -fvisibility=hidden -fPIC"
+	    CXXFLAGS="$CXXFLAGS `pkg-config --cflags cairo` -include stdexcept -std=c++11 -fvisibility=hidden -fPIC"
 
 %install
 
@@ -49,7 +50,7 @@ Each chop can be leveled up or down (gating). BChoppr is the successor of BSlizr
 	      LV2DIR=%{_libdir}/lv2 \
 	      DESTDIR=%{buildroot} \
 	      STRIP=true \
-	      CXXFLAGS="$CXXFLAGS -include stdexcept -std=c++11 -fvisibility=hidden -fPIC"
+	      CXXFLAGS="$CXXFLAGS `pkg-config --cflags cairo` -include stdexcept -std=c++11 -fvisibility=hidden -fPIC"
 
 %files
 %doc README.md
@@ -57,6 +58,9 @@ Each chop can be leveled up or down (gating). BChoppr is the successor of BSlizr
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Mar 15 2026 Yann Collette <ycollette dot nospam at free.fr> 1.12.8-3
+- updata to 1.12.8-3
+
 * Fri Dec 09 2022 Yann Collette <ycollette dot nospam at free.fr> 1.12.6-3
 - updata to 1.12.6-3
 
