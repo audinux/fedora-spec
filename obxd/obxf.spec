@@ -3,10 +3,8 @@
 # Type: Plugin, Standalone, VST3, LV2, CLAP
 # Category: Audio, Synthesizer
 
-%global commit0 aa23b122b5f51bc28218791f4a961043e1d86ba3
-
 Name: obxf
-Version: 0.1
+Version: 1.0.0
 Release: 2%{?dist}
 Summary: OB-Xf is a continuation and modernatization of the last open source release of OB-Xd by 2DaT and later discoDSP
 License: GPL-3.0-only
@@ -16,9 +14,11 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/surge-synthesizer/OB-Xf/archive/%{commit0}.zip#/%{name}-%{version}.zip
-Patch0: obxf-0001-remove-Werror.patch
-Patch1: obxf-0002-remove-fetchcontent-for-fmt.patch
+# Usage: ./obxf-source.sh <TAG>
+#        ./obxf-source.sh v1.0.0
+
+Source0: OB-Xf.tar.gz
+Source1: obxf-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -80,7 +80,7 @@ Requires: license-%{name}
 CLAP version of %{name}
 
 %prep
-%autosetup -p1 -n OB-Xf-%{commit0}
+%autosetup -p1 -n OB-Xf
 
 %build
 
@@ -112,7 +112,7 @@ chrpath --delete `find %{buildroot}/usr/bin/ -executable -type f`
 %{_bindir}/*
 
 %files -n license-%{name}
-%doc README.md HISTORY.md
+%doc README.md
 %license LICENSE
 
 %files -n vst3-%{name}
