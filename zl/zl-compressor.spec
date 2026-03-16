@@ -18,6 +18,7 @@ Distribution: Audinux
 
 # ./zl-source.sh <project> <tag>
 # ./zl-source.sh ZLCompressor 0.1.1
+# ./zl-source.sh ZLCompressor main
 
 Source0: ZLCompressor.tar.gz
 Source1: zl-source.sh

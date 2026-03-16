@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./zl-source.sh <project> <tag>
-# ./zl-source.sh ZLEqualizer 1.1.0
+# ./zl-source.sh ZLEqualizer main
 
 Source0: ZLEqualizer.tar.gz
 Source1: zl-source.sh
