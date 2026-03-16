@@ -3,11 +3,11 @@
 # Type: Plugin, Standalone, VST3
 # Category: Effect
 
-%global commit0 df0f370efde85dbc0a56978ca7a85d92170b1292
+%global commit0 721f3dd5cb3f32597973f605abddfd79a401fcd2
 
 Name: luna-co-software
 Version: 0.0.1
-Release: 6%{?dist}
+Release: 7%{?dist}
 Summary: A collection of professional audio VST3/LV2 plugins built with JUCE
 License: GPL-3.0-or-later
 URL: https://github.com/dusk-audio/dusk-audio-plugins
@@ -131,6 +131,9 @@ cp -ra %{__cmake_builddir}/plugins/groovemind/GrooveMind_artefacts/Standalone/* 
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Mar 15 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-7
+- update to 0.0.1-7 - update to 721f3dd5cb3f32597973f605abddfd79a401fcd2
+
 * Wed Feb 25 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-6
 - update to 0.0.1-6 - update to df0f370efde85dbc0a56978ca7a85d92170b1292
 
