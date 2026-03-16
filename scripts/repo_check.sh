@@ -1112,6 +1112,7 @@ https://codeberg.org/yimrakhee/letsdist
 https://codeberg.org/yimrakhee/smallmuffin
 https://codeberg.org/yimrakhee/springs
 https://codeberg.org/yimrakhee/suboctb
+https://codeberg.org/yimrakhee/tuneb
 https://github.com/babelouest/orcania
 https://github.com/babelouest/yder"
 
