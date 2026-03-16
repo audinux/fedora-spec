@@ -3,11 +3,9 @@
 # Type: Plugin, LV2, VST, LADSPA, CLAP, VST3, GSTREAMER
 # Category: Audio, Effect
 
-%define _lto_cflags %{nil}
-
 Name: lsp-plugins
 Summary: Linux Studio Plugins collection
-Version: 1.2.26
+Version: 1.2.27
 Release: 1%{?dist}
 License: GPL
 URL: https://github.com/sadko4u/lsp-plugins
@@ -110,7 +108,6 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %{_libdir}/*.so
 %{_libdir}/lsp-plugins/*.so
 %exclude %{_libdir}/*.a
-%{_sysconfdir}/xdg/menus/applications-merged/lsp-plugins.menu
 
 %files -n gstreamer1-plugins-%{name}
 %{_libdir}/gstreamer-1.0/*
@@ -131,6 +128,9 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %{_libdir}/clap/*
 
 %changelog
+* Sun Mar 15 2026 Yann Collette <ycollette dot nospam at free.fr> 1.2.27-1
+- update to 1.2.27-1
+
 * Sun Dec 21 2025 Yann Collette <ycollette dot nospam at free.fr> 1.2.26-1
 - update to 1.2.26-1
 
