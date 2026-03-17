@@ -1,0 +1,26 @@
+From 739755ce3e583ba28e5ff9c0b88e53d1c457fae0 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Tue, 17 Mar 2026 22:01:21 +0100
+Subject: [PATCH] add missing headers
+
+---
+ src/stereo-mixer.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/src/stereo-mixer.c b/src/stereo-mixer.c
+index d5258e0..036f0c2 100644
+--- a/src/stereo-mixer.c
++++ b/src/stereo-mixer.c
+@@ -12,6 +12,9 @@ Author: Viacheslav Lotsmanov (unclechu)
+ #include <stdio.h>
+ #endif
+ 
++#include <stdlib.h>
++#include <math.h>
++
+ #include "lv2/lv2plug.in/ns/lv2core/lv2.h"
+ #include "lv2/lv2plug.in/ns/ext/atom/atom.h"
+ 
+-- 
+2.53.0
+

@@ -252,7 +252,6 @@
 | aelapse                       | https://github.com/smiarx/aelapse |
 | Squeezer                      | https://github.com/mzuther/Squeezer |
 | reapack-jm                    | https://github.com/jozmac/reapack-jm |
-| lv2-stereo-mixer              | https://github.com/unclechu/lv2-stereo-mixer |
 | TeAr                          | https://github.com/odoare/TeAr |
 | retromulator                  | https://github.com/reales/retromulator |
 | INTERSECT                     | https://github.com/tucktuckg00se/INTERSECT |

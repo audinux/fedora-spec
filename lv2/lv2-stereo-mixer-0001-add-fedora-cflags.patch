@@ -1,0 +1,25 @@
+From dd0fd423ab831adc47cf5522488d9bba597cbe70 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Tue, 17 Mar 2026 22:03:07 +0100
+Subject: [PATCH] add fedora cflags
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 84b8170..e52f5f0 100644
+--- a/Makefile
++++ b/Makefile
+@@ -10,7 +10,7 @@ $(BUNDLE): clean $(ALL_TTL) $(NAME).so
+ 	cp $(ALL_TTL) $(NAME).so $(BUNDLE)
+ 
+ $(NAME).so:
+-	gcc -shared -fPIC -DPIC src/$(NAME).c $(LIBS) -o $(NAME).so $(DEBUG)
++	gcc -shared -fPIC -DPIC $(CFLAGS) src/$(NAME).c $(LIBS) -o $(NAME).so $(DEBUG)
+ 
+ clean:
+ 	rm -rf $(BUNDLE) $(NAME).so
+-- 
+2.53.0
+
