@@ -255,6 +255,7 @@
 | TeAr                          | https://github.com/odoare/TeAr |
 | retromulator                  | https://github.com/reales/retromulator |
 | INTERSECT                     | https://github.com/tucktuckg00se/INTERSECT |
+| hvcc-plugins                  | https://github.com/mod-audio/hvcc-plugins |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
