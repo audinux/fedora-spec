@@ -109,7 +109,7 @@ sed -i -e "s/SUBLEVEL = 0/SUBLEVEL = %{kpat}/g" Makefile
 
 %build
 
-make clean && make %{?_smp_mflags}
+make clean && make KCFLAGS="-Wno-error=unused-but-set-variable" %{?_smp_mflags}
 
 %install
 
