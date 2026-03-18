@@ -4,13 +4,13 @@
 # Category: Programming, Audio
 
 # Global variables for github repository
-%global commit0 5d9de9547ab87f175fabeb94c96ffcc07f7c3d6f
+%global commit0 affae587ab7b2a5f93102302254de16dd72d4c50
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Name: FoxDot
 Version: 0.8.11
-Release: 1%{?dist}
+Release: 2%{?dist}
 Epoch: 1
 Summary: Python3 programming environment providing a fast and user-friendly abstraction to SuperCollider.
 License: Creative Commons Attribution-ShareAlike 4.0 International Public License
@@ -67,6 +67,9 @@ cp -a . %{py3dir}
 %{python3_sitelib}/%{name}-*.egg-info
 
 %changelog
+* Wed Mar 18 2026 Yann Collette <ycollette dot nospam at free.fr> 0.8.11-2
+- update to 0.8.11-2 - update to last master
+
 * Fri Oct 23 2020 Yann Collette <ycollette dot nospam at free.fr> 0.8.11-1
 - update to 0.8.11 - fix debug build
 
