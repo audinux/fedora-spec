@@ -1,4 +1,4 @@
-# Status: active
+# Status: inactive
 # Tag: Jack
 # Type: Standalone
 # Category: Audio, Tool
