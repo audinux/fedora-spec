@@ -1,0 +1,4 @@
+KERNEL_AUDIO_TUNED_OPTS="preempt=full threadirqs nopti"
+KERNEL_AUDIO_TUNED_INTEL_OPTS="intel_pstate=disable"
+KERNEL_AUDIO_TUNED_AMD_OPTS=""
+KERNEL_AUDIO_TUNED_ENABLE="yes"

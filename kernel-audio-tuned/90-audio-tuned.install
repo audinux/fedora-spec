@@ -1,0 +1,80 @@
+#!/bin/bash
+
+set -euo pipefail
+
+COMMAND="$1"
+KERNEL_VERSION="$2"
+BOOT_DIR="/boot"
+ENTRY_DIR="${BOOT_DIR}/loader/entries"
+SYSCONFIG="/etc/sysconfig/kernel-audio-tuned"
+
+# Charger config si présent
+if [[ -f "$SYSCONFIG" ]]; then
+    source "$SYSCONFIG"
+fi
+
+: "${KERNEL_AUDIO_TUNED_ENABLE:=yes}"
+
+if [[ "$KERNEL_AUDIO_TUNED_ENABLE" != "yes" ]]; then
+    exit 0
+fi
+
+# Détection CPU
+CPU_VENDOR="$(grep -m1 'vendor_id' /proc/cpuinfo | awk '{print $3}')"
+
+CPU_OPTS=""
+case "$CPU_VENDOR" in
+    GenuineIntel)
+        CPU_OPTS="${KERNEL_AUDIO_TUNED_INTEL_OPTS:-}"
+        ;;
+    AuthenticAMD)
+        CPU_OPTS="${KERNEL_AUDIO_TUNED_AMD_OPTS:-}"
+        ;;
+esac
+
+COMMON_OPTS="${KERNEL_AUDIO_TUNED_OPTS:-}"
+FINAL_OPTS="${COMMON_OPTS} ${CPU_OPTS}"
+
+# Fonction : créer entrée
+create_entry() {
+    local entry="$1"
+    local new_entry="${entry%.conf}-audio.conf"
+
+    # 🔒 éviter doublon
+    if [[ -f "$new_entry" ]]; then
+        return
+    fi
+
+    cp "$entry" "$new_entry"
+
+    # Modifier title
+    sed -i 's/^title \(.*\)$/title \1 (Audio tuned)/' "$new_entry"
+
+    # Ajouter options proprement (évite duplication)
+    sed -i "s/^options \(.*\)$/options \1 ${FINAL_OPTS}/" "$new_entry"
+}
+
+# Fonction : supprimer entrée
+remove_entry() {
+    local entry="$1"
+    local new_entry="${entry%.conf}-audio.conf"
+
+    if [[ -f "$new_entry" ]]; then
+        rm -f "$new_entry"
+    fi
+}
+
+case "$COMMAND" in
+    add)
+        for entry in "${ENTRY_DIR}"/*"${KERNEL_VERSION}"*.conf; do
+            create_entry "$entry"
+        done
+        ;;
+    remove)
+        for entry in "${ENTRY_DIR}"/*"${KERNEL_VERSION}"*.conf; do
+            remove_entry "$entry"
+        done
+        ;;
+esac
+
+exit 0
