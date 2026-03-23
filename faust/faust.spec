@@ -4,7 +4,7 @@
 # Category: Audio, Programming
 
 Name: faust
-Version: 2.83.1
+Version: 2.85.5
 Release: 39%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to get source:
-# ./faust-source.sh 2.83.1
+# ./faust-source.sh 2.85.5
 
 Source0: faust.tar.gz
 Source1: faust-backends.cmake
@@ -35,16 +35,8 @@ BuildRequires: texlive-collection-basic
 BuildRequires: texlive-collection-fontsrecommended
 BuildRequires: texlive-mdwtools
 BuildRequires: libmicrohttpd-devel
-%if 0%{?fedora} <= 39
-BuildRequires: llvm-devel
-%elif 0%{?fedora} == 40
-BuildRequires: llvm16-devel
-%else
-BuildRequires: llvm17-devel
-%endif
-%if 0%{?fedora} > 39
+BuildRequires: llvm18-devel
 BuildRequires: zlib-ng-compat-devel
-%endif
 
 %description
 Faust AUdio STreams is a functional programming language for real-time audio
@@ -141,20 +133,15 @@ cp %{SOURCE1} build
 
 %build
 
-%if 0%{?fedora} == 40
-export PATH=$PATH:/usr/lib64/llvm16/bin
-%elif 0%{?fedora} >= 41
-export PATH=$PATH:/usr/lib64/llvm17/bin
-%endif
-
 %set_build_flags
+
+export PATH=/usr/lib64/llvm18/bin:$PATH
+
 cd build
 %cmake -DINCLUDE_DYNAMIC=ON \
        -DLIBSDIR=%{_lib} \
        -DLINK_LLVM_STATIC=OFF \
-%if 0%{?fedora} >= 38
        -DCMAKE_CXX_FLAGS="-include cstdint -fPIC $CXXFLAGS" \
-%endif
        -C %{SOURCE1}
 %cmake_build
 
@@ -226,6 +213,9 @@ done
 %{_datadir}/faust/*.lib
 
 %changelog
+* Sat Mar 21 2026 Yann Collette <ycollette.nospam@free.fr> - 2.85.5-39
+- update to 2.85.5-39
+
 * Tue Dec 16 2025 Yann Collette <ycollette.nospam@free.fr> - 2.83.1-39
 - update to 2.83.1-39
 
