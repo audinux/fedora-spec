@@ -1117,7 +1117,8 @@ https://github.com/babelouest/orcania
 https://github.com/babelouest/yder
 https://github.com/unclechu/lv2-stereo-mixer
 https://github.com/hal0zer0/openwurli
-https://github.com/maolan/maolan"
+https://github.com/maolan/maolan
+https://github.com/tiagolr/sirial"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
