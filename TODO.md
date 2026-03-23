@@ -256,6 +256,7 @@
 | retromulator                  | https://github.com/reales/retromulator |
 | INTERSECT                     | https://github.com/tucktuckg00se/INTERSECT |
 | hvcc-plugins                  | https://github.com/mod-audio/hvcc-plugins |
+| VCV-PureData                  | https://github.com/porres/VCV-PureData |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
