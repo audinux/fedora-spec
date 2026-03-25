@@ -112,22 +112,15 @@ rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linu
 %endif
 source cargo/env
 
-cargo build --release
+cargo xtask bundle openwurli --release
 
 %install
 
-install -m 755 -d %{buildroot}%{_libdir}/vst3/openwurli.vst3/Contents/%{_target}/
-cp -ra target/release/libopenwurli.so %{buildroot}/%{_libdir}/vst3/openwurli.vst3/Contents/%{_target}/
+install -m 755 -d %{buildroot}%{_libdir}/vst3/
+cp -ra target/bundled/openwurli.vst3 %{buildroot}/%{_libdir}/vst3/
 
 install -m 755 -d %{buildroot}%{_libdir}/clap/
-cp -ra target/release/libopenwurli.so %{buildroot}/%{_libdir}/clap/openwurli.clap
-
-install -m 755 -d %{buildroot}%{_bindir}/
-cp -ra target/release/preamp-bench %{buildroot}/%{_bindir}/
-cp -ra target/release/reed-renderer %{buildroot}/%{_bindir}/
-
-%files
-%{_bindir}/*
+cp -ra target/bundled/openwurli.clap %{buildroot}/%{_libdir}/clap/
 
 %files -n license-%{name}
 %doc README.md CHANGELOG.md
