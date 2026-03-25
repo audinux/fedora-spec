@@ -1118,7 +1118,8 @@ https://github.com/babelouest/yder
 https://github.com/unclechu/lv2-stereo-mixer
 https://github.com/hal0zer0/openwurli
 https://github.com/maolan/maolan
-https://github.com/tiagolr/sirial"
+https://github.com/tiagolr/sirial
+https://github.com/kayrockscreenprinting/ultramaster_kr106"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
