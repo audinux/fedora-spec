@@ -257,6 +257,9 @@
 | INTERSECT                     | https://github.com/tucktuckg00se/INTERSECT |
 | hvcc-plugins                  | https://github.com/mod-audio/hvcc-plugins |
 | VCV-PureData                  | https://github.com/porres/VCV-PureData |
+| Amplitron                     | https://github.com/sudip-mondal-2002/Amplitron |
+| Mercury                       | https://github.com/GuitarML/Mercury |
+| Earth                         | https://github.com/GuitarML/Earth |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
