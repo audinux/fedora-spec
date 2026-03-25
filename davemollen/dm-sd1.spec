@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 70add6356b2459b2bf0b15de0327ead53c074e1a
+%global commit0 730be455fb1dc5ce761f2196d22df8280e6d0faa
 
 Name: dm-SD1
-Version: 0.0.8
+Version: 0.1.0
 Release: 1%{?dist}
 Summary: An overdrive effect written in Rust modeled after the Boss SD-1
 URL: https://github.com/davemollen/dm-SD1
@@ -118,6 +118,9 @@ cp -vfr dm-SD1.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Mar 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
+- update to 0.1.0-1
+
 * Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.8-1
 - update to 0.0.8-1
 
