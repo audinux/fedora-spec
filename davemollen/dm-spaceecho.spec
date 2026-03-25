@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 40c759fd529802a179ba1d7f74714fbc0593e276
+%global commit0 3481dcb5b3802141232f7fc1b0dba278608c18c7
 
 Name: dm-Spaceecho
-Version: 0.1.5
+Version: 0.1.6
 Release: 1%{?dist}
 Summary: A delay and reverb effect inspired by Space Echo devices written in Rust
 URL: https://github.com/davemollen/dm-SpaceEcho
@@ -118,6 +118,9 @@ cp -vfr dm-SpaceEcho.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Mar 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.6-1
+- update to 0.1.6-1
+
 * Wed Aug 20 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1.5-1
 - update to 0.1.5-1
 
