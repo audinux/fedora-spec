@@ -3,10 +3,13 @@
 # Type: Standalone
 # Category: DAW
 
-%global debug_package %{nil}
+#global _dwz_low_mem_die_limit 0
+#global _dwz_max_die_limit 0
+%global _find_debuginfo_dwz_opts %{nil}
+%global __brp_mangle_shebangs %{nil}
 
 Name: maolan
-Version: 0.0.4
+Version: 0.0.5
 Release: 1%{?dist}
 Summary: Maolan is a Rust DAW focused on recording, editing, routing, automation, export, and plugin hosting
 License: BSD-2-Clause
@@ -31,6 +34,8 @@ BuildRequires: suil-devel
 BuildRequires: rubberband-devel
 BuildRequires: gtk2-devel
 BuildRequires: python3
+BuildRequires: cargo-rpm-macros
+BuildRequires: desktop-file-utils
 
 %description
 Maolan is a Rust DAW focused on recording, editing, routing, automation, export, and plugin hosting.
@@ -38,11 +43,16 @@ Maolan is a Rust DAW focused on recording, editing, routing, automation, export,
 %prep
 %autosetup -n %{name}-%{version}
 
+# Manage debug flags via a build section
+mkdir -p .cargo
+cat >> .cargo/config.toml << 'EOF'
+[build]
+rustflags = ["-C", "debuginfo=2", "-C", "dwarf-version=4"]
+EOF
+
 %build
 
 %set_build_flags
-
-export RUSTFLAGS="-g -O"
 
 export CWD=`pwd`
 export RUSTUP_HOME="$CWD/rustup"
@@ -66,13 +76,35 @@ cargo build --release
 %install
 
 install -m 755 -d %{buildroot}%{_bindir}/
-cp -ra target/release/maolan %{buildroot}/%{_bindir}/
+install -m 755 target/release/maolan %{buildroot}/%{_bindir}/
+install -m 755 target/release/maolan-cli %{buildroot}/%{_bindir}/
+
+# Install icon
+install -m 755 -d %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
+cp images/%{name}.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
+
+# Write desktop files
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+cp desktop/%{name}-linux.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
 %doc README.md docs/*.md
 %license LICENSE
 %{_bindir}/*
+%{_datadir}/icons/hicolor/scalable/apps/*
+%{_datadir}/applications/*
 
 %changelog
+* Mon Mar 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.5-1
+- update to 0.0.5-1
+
 * Sun Mar 22 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.4-1
 - Initial spec file
