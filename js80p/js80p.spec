@@ -4,7 +4,7 @@
 # Category: MIDI, Synthesizer
 
 Name: js80p
-Version: 3.5.0
+Version: 4.0.0
 Release: 1%{?dist}
 Summary: A MIDI driven, performance oriented, versatile synthesizer plugin.
 License: GPL-3.0-only
@@ -61,7 +61,7 @@ make SYS_LIB_PATH=%{_libdir} INSTRUCTION_SET=sse2
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/js80p.vst3/Contents/%{_target}/
-install -m 755 dist/js80p-dev-linux-x86_64-sse2-vst3_single_file/js80p.vst3 %{buildroot}/%{_libdir}/vst3/js80p.vst3/Contents/%{_target}/js80p.so
+install -m 755 dist/js80p-dev-linux-x86_64-sse2-vst3_single/js80p.vst3 %{buildroot}/%{_libdir}/vst3/js80p.vst3/Contents/%{_target}/js80p.so
 cp -ra presets %{buildroot}/%{_libdir}/vst3/js80p.vst3/
 
 install -m 755 -d %{buildroot}%{_libdir}/vst/
@@ -81,6 +81,9 @@ validator %{buildroot}/%{_libdir}/vst3/js80p.vst3
 %{_libdir}/vst/*
 
 %changelog
+* Tue Mar 24 2026 Yann Collette <ycollette.nospam@free.fr> - 4.0.0-1
+- update to 4.0.0-1
+
 * Mon Nov 10 2025 Yann Collette <ycollette.nospam@free.fr> - 3.5.0-1
 - update to 3.5.0-1
 
