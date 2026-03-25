@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer, MIDI
 
 Name: seq42
-Version: 2.2.0
+Version: 2.2.1
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL
@@ -82,32 +82,35 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_mandir}/*
 
 %changelog
+* Wed Mar 25 2026 Yann Collette <ycollette.nospam@free.fr> - 2.2.1-1
+- update to 2.2.1-1
+
 * Fri Feb 13 2026 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
-- udate to 2.2.0-1
+- update to 2.2.0-1
 
 * Mon Nov 17 2025 Yann Collette <ycollette.nospam@free.fr> - 2.1.6-1
-- udate to 2.1.6-1
+- update to 2.1.6-1
 
 * Mon Jan 20 2025 Yann Collette <ycollette.nospam@free.fr> - 2.1.5-1
-- udate to 2.1.5-1
+- update to 2.1.5-1
 
 * Mon Apr 08 2024 Yann Collette <ycollette.nospam@free.fr> - 2.1.4-1
-- udate to 2.1.4-1
+- update to 2.1.4-1
 
 * Sat Apr 08 2023 Yann Collette <ycollette.nospam@free.fr> - 2.1.3-1
-- udate to 2.1.3-1
+- update to 2.1.3-1
 
 * Mon Sep 26 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-1
-- udate to 2.1.2-1
+- update to 2.1.2-1
 
 * Tue Apr 19 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
-- udate to 2.1.1-1
+- update to 2.1.1-1
 
 * Mon Mar 21 2022 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
-- udate to 2.1.0-1
+- update to 2.1.0-1
 
 * Mon Mar 14 2022 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
-- udate to 2.0.0-1
+- update to 2.0.0-1
 
 * Mon May 03 2021 Yann Collette <ycollette.nospam@free.fr> - 1.1.4-1
 - initial version
