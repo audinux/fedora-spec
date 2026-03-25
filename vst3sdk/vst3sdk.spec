@@ -85,9 +85,9 @@ export CXXFLAGS="-include cstdint $CXXFLAGS"
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 
-cp %{__cmake_builddir}/bin/editorhost %{buildroot}/%{_bindir}/
+cp %{__cmake_builddir}/bin/editorhost     %{buildroot}/%{_bindir}/
 cp %{__cmake_builddir}/bin/moduleinfotool %{buildroot}/%{_bindir}/
-cp %{__cmake_builddir}/bin/validator %{buildroot}/%{_bindir}/
+cp %{__cmake_builddir}/bin/validator      %{buildroot}/%{_bindir}/
 cp %{__cmake_builddir}/bin/Debug/VST3Inspector/VST3Inspector %{buildroot}/%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
@@ -111,6 +111,7 @@ rsync -r --exclude .git --exclude .github --exclude .gitignore --exclude .gitatt
 %doc README.md
 %license LICENSE.txt
 %{_bindir}/*
+
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
