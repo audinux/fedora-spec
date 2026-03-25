@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 e5bfb7bd9062fb1082de928a0ae5c48faa1d9099
+%global commit0 d5bbb8e67f5506b5b529fbd4db2ab56540ddd299
 
 Name: dm-vibrato
-Version: 0.0.6
+Version: 0.0.9
 Release: 1%{?dist}
 Summary: A mono vibrato effect written in Rust
 URL: https://github.com/davemollen/dm-Vibrato
@@ -118,6 +118,9 @@ cp -vfr dm-Vibrato.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Mar 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.9-1
+- update to 0.0.9-1
+
 * Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.6-1
 - update to 0.0.6-1
 
