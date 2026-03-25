@@ -5,10 +5,10 @@
 
 %global debug_package %{nil}
 
-%global commit0 273c382706c94661fa3b0286ae717069f9916c2c
+%global commit0 6b778b75e9d7a4b9efbd3700d4614e34378fddef
 
 Name: dm-ds1
-Version: 0.1.1
+Version: 0.1.3
 Release: 1%{?dist}
 Summary: A distortion effect written in Rust modeled after the Boss DS-1
 URL: https://github.com/davemollen/dm-DS1
@@ -118,6 +118,9 @@ cp -vfr dm-DS1.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Mar 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.3-1
+- update to 0.1.3-1
+
 * Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1.1-1
 - update to 0.1.1-1
 
