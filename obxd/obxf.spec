@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: obxf
-Version: 1.0.1
+Version: 1.0.2
 Release: 2%{?dist}
 Summary: OB-Xf is a continuation and modernatization of the last open source release of OB-Xd by 2DaT and later discoDSP
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./obxf-source.sh <TAG>
-#        ./obxf-source.sh v1.0.1
+#        ./obxf-source.sh v1.0.2
 
 Source0: OB-Xf.tar.gz
 Source1: obxf-source.sh
@@ -126,6 +126,9 @@ chrpath --delete `find %{buildroot}/usr/bin/ -executable -type f`
 %{_libdir}/clap/*
 
 %changelog
+* Thu Mar 26 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-1
+- update to 1.0.2-1
+
 * Tue Mar 24 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
 - update to 1.0.1-1
 
