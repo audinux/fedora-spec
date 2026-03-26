@@ -13,7 +13,7 @@
 # add https://github.com/ossia/score-user-library
 
 Name: ossia-score
-Version: 3.8.0
+Version: 3.8.1
 Release: 1%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL: https://github.com/OSSIA/score
@@ -112,6 +112,8 @@ rm -rf %{buildroot}/%{_libdir}/cmake/libcoap/
 
 rm -f %{buildroot}/usr/lib/libhdf5.settings
 rm -f %{buildroot}/usr/lib/pkgconfig/hdf5.pc
+# Remove /usr/etc/xeus-cpp/tags.d/xtensor.json
+rm -rf %{buildroot}/usr/etc/
 
 # Install examples
 install -m 755 -d %{buildroot}/%{_datadir}/ossia/examples/
@@ -126,6 +128,9 @@ cp -r score-examples-%{commit0_example}/* %{buildroot}/%{_datadir}/ossia/example
 %{_datadir}/ossia/examples/*
 
 %changelog
+* Wed Mar 25 2026 Yann Collette <ycollette.nospam@free.fr> - 3.8.1-2
+- update to version 3.8.1-2
+
 * Tue Feb 03 2026 Yann Collette <ycollette.nospam@free.fr> - 3.8.0-2
 - update to version 3.8.0-2
 
