@@ -3,11 +3,11 @@
 # Type: Plugin, Standalone, VST3
 # Category: Effect
 
-%global commit0 721f3dd5cb3f32597973f605abddfd79a401fcd2
+%global commit0 5838084a2ab14f56da8be628010ee275d339d7e1
 
 Name: luna-co-software
 Version: 0.0.1
-Release: 7%{?dist}
+Release: 8%{?dist}
 Summary: A collection of professional audio VST3/LV2 plugins built with JUCE
 License: GPL-3.0-or-later
 URL: https://github.com/dusk-audio/dusk-audio-plugins
@@ -86,6 +86,9 @@ sed -i -e "s/PRODUCT_NAME \"Chord Analyzer\"/PRODUCT_NAME \"Chord_Analyzer\"/g" 
 
 %build
 
+%set_build_flags
+export CXXFLAGS="-DJUCE_IGNORE_VST3_MISMATCHED_PARAMETER_ID_WARNING $CXXFLAGS"
+
 %cmake
 %cmake_build
 
@@ -99,24 +102,24 @@ cp -ra %{__cmake_builddir}/bin/VST3/* %{buildroot}%{_libdir}/vst3/
 cp -ra %{__cmake_builddir}/bin/LV2/* %{buildroot}%{_libdir}/lv2/
 cp -ra %{__cmake_builddir}/bin/Standalone/* %{buildroot}%{_bindir}/
 
-cp -ra %{__cmake_builddir}/plugins/spectrum-analyzer/SpectrumAnalyzer_artefacts/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/plugins/spectrum-analyzer/SpectrumAnalyzer_artefacts/LV2/* %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/plugins/spectrum-analyzer/SpectrumAnalyzer_artefacts/Standalone/* %{buildroot}%{_bindir}/
+VST3_PLUGIN_LIST=`find %{__cmake_builddir}/plugins -name "VST3" | grep artefacts`
+LV2_PLUGIN_LIST=`find %{__cmake_builddir}/plugins -name "LV2" | grep artefacts`
+STANDALONE_PLUGIN_LIST=`find %{__cmake_builddir}/plugins -name "Standalone" | grep artefacts`
 
-cp -ra %{__cmake_builddir}/plugins/chord-analyzer/ChordAnalyzer_artefacts/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/plugins/chord-analyzer/ChordAnalyzer_artefacts/LV2/* %{buildroot}%{_libdir}/lv2/
+for Files in $VST3_PLUGIN_LIST
+do
+    cp -ra $Files %{buildroot}%{_libdir}/vst3/
+done
 
-cp -ra %{__cmake_builddir}/plugins/Velvet90/Velvet90_artefacts/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/plugins/Velvet90/Velvet90_artefacts/LV2/* %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/plugins/Velvet90/Velvet90_artefacts/Standalone/* %{buildroot}%{_bindir}/
+for Files in $LV2_PLUGIN_LIST
+do
+    cp -ra $Files %{buildroot}%{_libdir}/lv2/
+done
 
-cp -ra %{__cmake_builddir}/plugins/convolution-reverb/ConvolutionReverb_artefacts/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/plugins/convolution-reverb/ConvolutionReverb_artefacts/LV2/* %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/plugins/convolution-reverb/ConvolutionReverb_artefacts/Standalone/* %{buildroot}%{_bindir}/
-
-cp -ra %{__cmake_builddir}/plugins/groovemind/GrooveMind_artefacts/VST3/* %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/plugins/groovemind/GrooveMind_artefacts/LV2/* %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/plugins/groovemind/GrooveMind_artefacts/Standalone/* %{buildroot}%{_bindir}/
+for Files in $STANDALONE_PLUGIN_LIST
+do
+    cp -ra $Files %{buildroot}%{_bindir}/
+done
 
 %files
 %{_bindir}/*
@@ -131,6 +134,9 @@ cp -ra %{__cmake_builddir}/plugins/groovemind/GrooveMind_artefacts/Standalone/* 
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Mar 29 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-8
+- update to 0.0.1-8 - update to 5838084a2ab14f56da8be628010ee275d339d7e1
+
 * Sun Mar 15 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-7
 - update to 0.0.1-7 - update to 721f3dd5cb3f32597973f605abddfd79a401fcd2
 
