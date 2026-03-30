@@ -260,20 +260,7 @@
 | Amplitron                     | https://github.com/sudip-mondal-2002/Amplitron |
 | Mercury                       | https://github.com/GuitarML/Mercury |
 | Earth                         | https://github.com/GuitarML/Earth |
-| FreeEQ8                       | https://github.com/GareBear99/FreeEQ8 |
-| PaintMask                     | https://github.com/GareBear99/PaintMask_Free-JUCE-Plugin |
-| WURP_Toxic-Motion-Engine      | https://github.com/GareBear99/WURP_Toxic-Motion-Engine_JUCE |
-| AETHER_Choir-Atmosphere       | https://github.com/GareBear99/AETHER_Choir-Atmosphere-Designer |
-| WhisperGate_Free              | https://github.com/GareBear99/WhisperGate_Free-JUCE-Plugin |
-| Therum                        | https://github.com/GareBear99/Therum_JUCE-Plugin |
-| Instrudio                     | https://github.com/GareBear99/Instrudio |
-| BassMaid                      | https://github.com/GareBear99/BassMaid |
-| SpaceMaid                     | https://github.com/GareBear99/SpaceMaid |
-| GlueMaid                      | https://github.com/GareBear99/GlueMaid |
-| MixMaid                       | https://github.com/GareBear99/MixMaid |
-| ChainMaid                     | https://github.com/GareBear99/ChainMaid |
-| RiftWaveSuite                 | https://github.com/GareBear99/RiftWaveSuite_RiftSynth_WaveForm_Lite |
-| FreeSampler                   | https://github.com/GareBear99/FreeSampler_v0.3 |
+| emusc                         | https://github.com/skjelten/emusc |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
