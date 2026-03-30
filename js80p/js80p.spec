@@ -4,7 +4,7 @@
 # Category: MIDI, Synthesizer
 
 Name: js80p
-Version: 4.0.0
+Version: 4.0.1
 Release: 1%{?dist}
 Summary: A MIDI driven, performance oriented, versatile synthesizer plugin.
 License: GPL-3.0-only
@@ -81,6 +81,9 @@ validator %{buildroot}/%{_libdir}/vst3/js80p.vst3
 %{_libdir}/vst/*
 
 %changelog
+* Sun Mar 29 2026 Yann Collette <ycollette.nospam@free.fr> - 4.0.1-1
+- update to 4.0.1-1
+
 * Tue Mar 24 2026 Yann Collette <ycollette.nospam@free.fr> - 4.0.0-1
 - update to 4.0.0-1
 
