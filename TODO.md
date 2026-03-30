@@ -260,6 +260,10 @@
 | Mercury                       | https://github.com/GuitarML/Mercury |
 | Earth                         | https://github.com/GuitarML/Earth |
 | emusc                         | https://github.com/skjelten/emusc |
+| textbeat                      | https://github.com/flipcoder/textbeat |
+| cane                          | https://github.com/tarpit-collective/cane |
+| picoTracker                   | https://github.com/xiphonics/picoTracker |
+| ArachnoTracker                | https://github.com/EricsonWillians/ArachnoTracker |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
