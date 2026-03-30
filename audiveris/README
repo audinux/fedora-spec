@@ -1,0 +1,7 @@
+To build Audiveris:
+
+$ dnf install java-25-openjdk java-25-openjdk-devel
+$ rm -rf ~/.gradle
+$ ./gradlew --info
+
+The application is in app/build/distributions.

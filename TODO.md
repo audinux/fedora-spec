@@ -13,7 +13,6 @@
 |                               | - https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Deblock |
 | NoiseTorch                    | https://github.com/lawl/NoiseTorch |
 | CadMus                        | https://github.com/josh-richardson/cadmus |
-| audiveris                     | https://github.com/Audiveris/audiveris |
 | Teragon audio                 | http://teragonaudio.com/software.html |
 |                               | - Kickmaker: http://static.teragonaudio.com/downloads/KickMaker/KickMaker.zip |
 |                               | - BeatCounter: https://github.com/teragonaudio/BeatCounter/archive/refs/tags/2.1.tar.gz |
