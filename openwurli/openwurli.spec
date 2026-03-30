@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: openwurli
-Version: 0.3.0
+Version: 0.3.1
 Release: 1%{?dist}
 Summary: An audio plugin attempting to recreate the Wurlitzer 200A sound with circuit & physics modeling
 License: GPL-3.0-or-later
@@ -133,6 +133,9 @@ cp -ra target/bundled/openwurli.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/
 
 %changelog
+* Sun Mar 29 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.1-1
+- update to 0.3.1-1
+
 * Sat Mar 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.0-1
 - update to 0.3.0-1
 
