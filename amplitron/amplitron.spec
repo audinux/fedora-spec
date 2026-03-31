@@ -1,0 +1,91 @@
+# Status: active
+# Tag: Tool, Rack
+# Type: Plugin, LV2, Standalone
+# Category: Audio, Effect, Tool
+
+Name: amplitron
+Version: 0.1.71
+Release: 1%{?dist}
+Summary: Poor man's guitar amp
+License: MIT
+URL: https://github.com/sudip-mondal-2002/Amplitron
+ExclusiveArch: x86_64 aarch64
+
+Vendor:       Audinux
+Distribution: Audinux
+
+# Usage: ./amplitron-source.sh <TAG>
+#        ./amplitron-source.sh v0.1.71
+
+Source0: Amplitron.tar.gz
+Source1: amplitron-source.sh
+Patch0: amplitron-0001-fix-nanosvg-header.patch
+
+BuildRequires: gcc gcc-c++
+BuildRequires: cmake
+BuildRequires: SDL2-devel
+BuildRequires: mesa-libGL-devel
+BuildRequires: pkgconfig(jack)
+BuildRequires: portaudio-devel
+BuildRequires: nanosvg-devel
+BuildRequires: desktop-file-utils
+
+%description
+Professional real-time guitar amplifier simulator with ultra-low latency,
+11 studio-quality effects, and a beautiful visual pedal board interface.
+Available as a native desktop app and a browser-based web demo.
+Built in C++17 with PortAudio, SDL2, and Dear ImGui.
+
+%prep
+%autosetup -p1 -n Amplitron
+
+%build
+
+%cmake
+%cmake_build
+
+%install
+
+%cmake_install
+
+# cleanup
+mkdir -p %{buildroot}/%{_datadir}/%{name}/
+mv %{buildroot}/%{_bindir}/presets %{buildroot}/%{_datadir}/%{name}/ 
+
+# install icon
+mkdir -p %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
+cp assets/icon.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
+
+# create desktop file
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
+[Desktop Entry]
+Name=%{name}
+Exec=%{name}
+Icon=%{name}
+Comment=Poor man's guitar amp
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+EOF
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+
+%files
+%doc README.md docs/*
+%license LICENSE
+%{_bindir}/*
+%{_datadir}/applications/*
+%{_datadir}/%{name}/presets/*
+%{_datadir}/icons/hicolor/scalable/apps/*
+
+%changelog
+* Tue Mar 31 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.71-1
+- Initial spec file
