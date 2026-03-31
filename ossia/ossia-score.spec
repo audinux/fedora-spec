@@ -14,7 +14,7 @@
 
 Name: ossia-score
 Version: 3.8.2
-Release: 1%{?dist}
+Release: 3%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL: https://github.com/OSSIA/score
 ExclusiveArch: x86_64
@@ -110,10 +110,12 @@ rm -rf %{buildroot}/%{_datadir}/
 rm -rf %{buildroot}/%{_libdir}/cmake/kfr/
 rm -rf %{buildroot}/%{_libdir}/cmake/libcoap/
 
+rm -f %{buildroot}/%{_bindir}/h5cc
 rm -f %{buildroot}/usr/lib/libhdf5.settings
 rm -f %{buildroot}/usr/lib/pkgconfig/hdf5.pc
-# Remove /usr/etc/xeus-cpp/tags.d/xtensor.json
+
 rm -rf %{buildroot}/usr/etc/
+rm -f %{buildroot}/%{_bindir}/linuxcheck
 
 # Install examples
 install -m 755 -d %{buildroot}/%{_datadir}/ossia/examples/
@@ -128,6 +130,9 @@ cp -r score-examples-%{commit0_example}/* %{buildroot}/%{_datadir}/ossia/example
 %{_datadir}/ossia/examples/*
 
 %changelog
+* Mon Mar 30 2026 Yann Collette <ycollette.nospam@free.fr> - 3.8.2-3
+- update to version 3.8.2-3 - cleanup
+
 * Fri Mar 27 2026 Yann Collette <ycollette.nospam@free.fr> - 3.8.2-2
 - update to version 3.8.2-2
 
