@@ -1,0 +1,28 @@
+From 844406398e86cd0537b5a06fa4f31c8efd471355 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Wed, 1 Apr 2026 08:22:30 +0200
+Subject: [PATCH] remove some gcc options
+
+---
+ CMakeLists.txt | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 91d2ca9..f620ddb 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -20,11 +20,6 @@ elseif(MSVC)
+     if(CMAKE_BUILD_TYPE STREQUAL "Release")
+         add_compile_options(/O2 /arch:AVX)
+     endif()
+-else()
+-    add_compile_options(-Wall -Wextra -ffast-math)
+-    if(CMAKE_BUILD_TYPE STREQUAL "Release")
+-        add_compile_options(-O3 -march=native -ftree-vectorize)
+-    endif()
+ endif()
+ 
+ # --- Dependencies ---
+-- 
+2.53.0
+

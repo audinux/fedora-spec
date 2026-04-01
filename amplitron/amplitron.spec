@@ -20,6 +20,7 @@ Distribution: Audinux
 Source0: Amplitron.tar.gz
 Source1: amplitron-source.sh
 Patch0: amplitron-0001-fix-nanosvg-header.patch
+Patch1: amplitron-0002-remove-some-gcc-options.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -40,6 +41,14 @@ Built in C++17 with PortAudio, SDL2, and Dear ImGui.
 %autosetup -p1 -n Amplitron
 
 %build
+
+%set_build_flags
+
+%ifarch x86_64
+export CXXFLAGS="-mno-avx -mno-avx2 -mno-fma $CXXFLAGS"
+export CFLAGS="-mno-avx -mno-avx2 -mno-fma $CFLAGS"
+export LDFLAGS="-mno-avx -mno-avx2 -mno-fma $LDFLAGS"
+%endif
 
 %cmake
 %cmake_build
