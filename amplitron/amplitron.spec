@@ -1,11 +1,11 @@
 # Status: active
 # Tag: Tool, Rack
-# Type: Plugin, LV2, Standalone
+# Type: Standalone
 # Category: Audio, Effect, Tool
 
 Name: amplitron
 Version: 0.1.71
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Poor man's guitar amp
 License: MIT
 URL: https://github.com/sudip-mondal-2002/Amplitron
@@ -21,6 +21,7 @@ Source0: Amplitron.tar.gz
 Source1: amplitron-source.sh
 Patch0: amplitron-0001-fix-nanosvg-header.patch
 Patch1: amplitron-0002-remove-some-gcc-options.patch
+Patch2: amplitron-0003-set-presets-path.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -45,9 +46,9 @@ Built in C++17 with PortAudio, SDL2, and Dear ImGui.
 %set_build_flags
 
 %ifarch x86_64
-export CXXFLAGS="-mno-avx -mno-avx2 -mno-fma $CXXFLAGS"
-export CFLAGS="-mno-avx -mno-avx2 -mno-fma $CFLAGS"
-export LDFLAGS="-mno-avx -mno-avx2 -mno-fma $LDFLAGS"
+#export CXXFLAGS="-mno-avx -mno-avx2 -mno-fma $CXXFLAGS"
+#export CFLAGS="-mno-avx -mno-avx2 -mno-fma $CFLAGS"
+#export LDFLAGS="-mno-avx -mno-avx2 -mno-fma $LDFLAGS"
 %endif
 
 %cmake
@@ -71,7 +72,7 @@ install -m 755 -d %{buildroot}/%{_datadir}/applications/
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
 Name=%{name}
-Exec=%{name}
+Exec=guitar-amp
 Icon=%{name}
 Comment=Poor man's guitar amp
 Terminal=false
@@ -96,5 +97,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/*
 
 %changelog
+* Wed Apr 01 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.71-2
+- update to 0.1.71-2 - fix preset path
+
 * Tue Mar 31 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.71-1
 - Initial spec file
