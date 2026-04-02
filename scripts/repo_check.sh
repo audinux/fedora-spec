@@ -1122,7 +1122,8 @@ https://github.com/tiagolr/sirial
 https://github.com/kayrockscreenprinting/ultramaster_kr106
 https://github.com/GareBear99/FreeEQ8
 https://github.com/Audiveris/audiveris
-https://github.com/sudip-mondal-2002/Amplitron"
+https://github.com/sudip-mondal-2002/Amplitron
+https://github.com/brummer10/Staircase"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
