@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: zam-mao-plugins
-Version: 4.4
+Version: 4.5
 Release: 4%{?dist}
 Summary: Set of LV2 / VST / VST3 / CLAPS plugins
 License: GPL-2.0-or-later AND ISC
@@ -14,7 +14,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./zam-source.sh 4.4
+# ./zam-source.sh 4.5
 
 Source0: zam-plugins-%{version}.tar.xz
 
@@ -29,6 +29,8 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: zita-convolver-devel
 
+Requires: license-%{name}
+
 Obsoletes: zam-plugisn < 4.0-4
 Obsoletes: zam < 4.0-4
 
@@ -37,22 +39,31 @@ Zam LV2 set of plugins
 Compressors, Limiters, Saturation, Tube emulation,
 Equalizers, Delay, Gates
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n ladspa-%{name}
 Summary: Zam LADSPA plugin
 Obsoletes: ladspa-zam-plugins < 4.0-4
 Obsoletes: ladspa-zam < 4.0-4
+Requires: license-%{name}
 
 %description -n ladspa-%{name}
 Zam LADSPA plugin
 
 %package -n vst-%{name}
 Summary: Zam VST plugin
+Requires: license-%{name}
 
 %description -n vst-%{name}
 Zam VST plugin
 
 %package -n vst3-%{name}
 Summary: Zam VST3 plugin
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 Zam VST3 plugin
@@ -61,12 +72,14 @@ Zam VST3 plugin
 Summary: Zam LV2 plugin
 Obsoletes: lv2-zam-plugisn < 4.0-4
 Obsoletes: lv2-zam < 4.0-4
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 Zam LV2 plugin
 
 %package -n clap-%{name}
 Summary: Zam CLAP plugin
+Requires: license-%{name}
 
 %description -n clap-%{name}
 Zam CLAP plugin
@@ -93,9 +106,11 @@ do
 done
 
 %files
+%{_bindir}/*
+
+%files -n license-%{name}
 %doc changelog README.md
 %license COPYING
-%{_bindir}/*
 
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
@@ -113,6 +128,9 @@ done
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Apr 03 2026 Yann Collette <ycollette.nospam@free.fr> - 4.5-4
+- update to 4.5-4
+
 * Sun Jun 01 2025 Yann Collette <ycollette.nospam@free.fr> - 4.4-4
 - update to 4.4-4
 
