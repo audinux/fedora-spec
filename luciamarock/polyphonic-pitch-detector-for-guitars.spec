@@ -46,6 +46,7 @@ The system is currently in a developmental phase to incorporate frequency domain
 %autosetup -n Polyphonic-Pitch-Detector-for-guitars-%{commit0}
 
 sed -i -e "s|cmake_minimum_required (VERSION 2.6)|cmake_minimum_required (VERSION 3.30)|g" CMakeLists.txt
+sed -i -e "s|-msse4.2||g" CMakeLists.txt
 
 %build
 
