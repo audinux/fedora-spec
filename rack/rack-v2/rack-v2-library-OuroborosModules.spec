@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 baf41292e37bfd722b240c406c83c0cc0d5bbe40
-%global gittag0 2.1.2
+%global commit0 d5bb1b83cc3e4b9c1685177359fb1c0430bd2cf9
+%global gittag0 2.2.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-OuroborosModules
-Version: 2.1.2
+Version: 2.2.2
 Release: 2%{?dist}
 Summary: OuroborosModules plugin for Rack
 License: GPL-2.0-or-later
@@ -160,5 +160,5 @@ chrpath --delete  %{buildroot}%{_libexecdir}/Rack2/plugins/OuroborosModules/plug
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.2-1
 - initial specfile

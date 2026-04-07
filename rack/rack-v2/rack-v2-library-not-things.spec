@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c7965d08451c835037180c7d8e2c9967b24324b6
-%global gittag0 2.0.5
+%global commit0 38dd95c475157e954fed56002d1bfb39f8a3274d
+%global gittag0 2.0.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-not-things
-Version: 2.0.5
+Version: 2.0.6
 Release: 2%{?dist}
 Summary: not-things plugin for Rack
 License: GPL-2.0-or-later
@@ -155,5 +155,5 @@ cp -r not-things_plugin/dist/not-things/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.6-1
 - initial specfile
