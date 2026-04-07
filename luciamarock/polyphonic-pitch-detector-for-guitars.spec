@@ -7,7 +7,7 @@
 
 Name: polyphonic-pitch-detector-for-guitars
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Polyphonic Pitch Detector for guitars
 License: GPL-3.0-or-later
 URL: https://github.com/luciamarock/Polyphonic-Pitch-Detector-for-guitars
@@ -55,10 +55,11 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 %cmake \
 %if 0%{?fedora} <= 38
-       -DwxWidgets_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/wx-config-3.0
+       -DwxWidgets_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/wx-config-3.0 \
 %else
-       -DwxWidgets_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/wx-config-3.2
+       -DwxWidgets_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/wx-config-3.2 \
 %endif
+       -DCMAKE_EXE_LINKER_FLAGS="-Wl,-rpath,'\$ORIGIN/../%{_lib}/pdct' $LDFLAGS"
 
 %cmake_build
 
@@ -68,8 +69,6 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 mkdir -p %{buildroot}/%{_libdir}/pdct/
 install -m 755 %{__cmake_builddir}/pdct_lib/libpdct_lib.so %{buildroot}/%{_libdir}/pdct/
-
-patchelf --set-rpath '$ORIGIN/../%{_lib}/pdct/' %{buildroot}/%{_bindir}/pdct
 
 # Write the icon
 install -m 755 -d %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
@@ -106,5 +105,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/pdct.desktop
 %{_datadir}/icons/hicolor/scalable/apps/pdct.svg
 
 %changelog
+* Tue Apr 07 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2 - fix RPATH change
+
 * Fri Apr 03 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial version - dc4565b3827afd34db47d8ecc770a29b1aed61f0
