@@ -4,7 +4,7 @@
 # Category: Audio, Effect, Tool
 
 Name: amplitron
-Version: 0.1.74
+Version: 0.1.138
 Release: 2%{?dist}
 Summary: Poor man's guitar amp
 License: MIT
@@ -15,13 +15,12 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./amplitron-source.sh <TAG>
-#        ./amplitron-source.sh v0.1.74
+#        ./amplitron-source.sh v0.1.138
 
 Source0: Amplitron.tar.gz
 Source1: amplitron-source.sh
 Patch0: amplitron-0001-fix-nanosvg-header.patch
 Patch1: amplitron-0002-remove-some-gcc-options.patch
-Patch2: amplitron-0003-set-presets-path.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -49,10 +48,6 @@ Built in C++17 with PortAudio, SDL2, and Dear ImGui.
 %install
 
 %cmake_install
-
-# cleanup
-mkdir -p %{buildroot}/%{_datadir}/%{name}/
-mv %{buildroot}/%{_bindir}/presets %{buildroot}/%{_datadir}/%{name}/ 
 
 # install icon
 mkdir -p %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
@@ -89,6 +84,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/*
 
 %changelog
+* Mon Apr 06 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.138-2
+- update to 0.1.138-2
+
 * Thu Apr 02 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.74-2
 - update to 0.1.74-2
 

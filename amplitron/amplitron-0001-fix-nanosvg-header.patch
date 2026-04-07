@@ -1,6 +1,6 @@
-From 44756ffbb9c9a7bc63b7cd228e370bed5ca7c30c Mon Sep 17 00:00:00 2001
+From ff77e4cafea3b62477a13a6e14e79049c3646a9c Mon Sep 17 00:00:00 2001
 From: Yann Collette <yc@example.com>
-Date: Thu, 2 Apr 2026 12:51:40 +0200
+Date: Tue, 7 Apr 2026 09:49:40 +0200
 Subject: [PATCH] patch
 
 ---
@@ -8,12 +8,12 @@ Subject: [PATCH] patch
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/src/gui/gui_manager.cpp b/src/gui/gui_manager.cpp
-index 5b11dc6..fbb684b 100644
+index ace0512..76b21ee 100644
 --- a/src/gui/gui_manager.cpp
 +++ b/src/gui/gui_manager.cpp
-@@ -17,9 +17,9 @@
- #pragma GCC diagnostic push
+@@ -20,9 +20,9 @@
  #pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
+ #endif
  #define NANOSVG_IMPLEMENTATION
 -#include "nanosvg.h"
 +#include <nanosvg/nanosvg.h>
@@ -22,7 +22,7 @@ index 5b11dc6..fbb684b 100644
 +#include <nanosvg/nanosvgrast.h>
  #pragma GCC diagnostic pop
  
- namespace GuitarAmp {
+ namespace Amplitron {
 -- 
 2.53.0
 
