@@ -9,7 +9,7 @@
 %global __brp_mangle_shebangs %{nil}
 
 Name: maolan
-Version: 0.0.5
+Version: 0.0.6
 Release: 1%{?dist}
 Summary: Maolan is a Rust DAW focused on recording, editing, routing, automation, export, and plugin hosting
 License: BSD-2-Clause
@@ -24,6 +24,7 @@ Source0: https://github.com/maolan/maolan/archive/refs/tags/%{version}.tar.gz#/%
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
 BuildRequires: git
+BuildRequires: cmake
 BuildRequires: pkgconfig(jack)
 BuildRequires: libglvnd-devel
 BuildRequires: libXcursor-devel
@@ -103,6 +104,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Tue Apr 07 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.6-1
+- update to 0.0.6-1
+
 * Mon Mar 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.5-1
 - update to 0.0.5-1
 
