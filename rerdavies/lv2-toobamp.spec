@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: lv2-toobamp-plugins
-Version: 1.1.61
+Version: 1.2.74
 Release: 2%{?dist}
 Summary: A set of high-quality guitar effect plugins for Raspberry Pi with specific support for PiPedal.
 License: GPL-2.0-or-later
@@ -12,7 +12,7 @@ URL: https://github.com/rerdavies/ToobAmp
 ExclusiveArch: x86_64 aarch64
 
 # ./rerdavies-source.sh <project> <tag>
-# ./rerdavies-source.sh ToobAmp v1.1.61
+# ./rerdavies-source.sh ToobAmp v1.2.74
 
 Source0: ToobAmp.tar.gz
 Source1: rerdavies-source.sh
@@ -59,10 +59,13 @@ sed -i -e "s/\.a//g" modules/lv2cairo/src/test/CMakeLists.txt
 %build
 
 %set_build_flags
+# Use ld instead of mold because of an error related to unknown flag --error-rwx-segments
+export LDFLAGS="-fuse-ld=ld $LDFLAGS"
 
 %cmake -DBUILD_TESTING=OFF \
        -DBoost_USE_STATIC_LIBS=OFF \
-       -DCMAKE_CXX_FLAGS="$CXXFLAGS -Wno-template-body -include algorithm -include cstdint"
+       -DWARNINGS_ARE_ERRORS=OFF \
+       -DCMAKE_CXX_FLAGS="$CXXFLAGS -Wno-template-body -include algorithm -include cstdint -include mutex"
 %cmake_build
 
 %install
@@ -74,6 +77,9 @@ sed -i -e "s/\.a//g" modules/lv2cairo/src/test/CMakeLists.txt
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Apr 08 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.74-2
+- update to 1.2.74-2
+
 * Thu Oct 09 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.61-2
 - update to 1.1.61-2 - add zstd
 
