@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: lv2-toobamp-plugins
-Version: 1.2.74
+Version: 1.2.75
 Release: 2%{?dist}
 Summary: A set of high-quality guitar effect plugins for Raspberry Pi with specific support for PiPedal.
 License: GPL-2.0-or-later
@@ -12,7 +12,7 @@ URL: https://github.com/rerdavies/ToobAmp
 ExclusiveArch: x86_64 aarch64
 
 # ./rerdavies-source.sh <project> <tag>
-# ./rerdavies-source.sh ToobAmp v1.2.74
+# ./rerdavies-source.sh ToobAmp v1.2.75
 
 Source0: ToobAmp.tar.gz
 Source1: rerdavies-source.sh
@@ -65,9 +65,9 @@ export LDFLAGS="-fuse-ld=ld $LDFLAGS"
 %cmake -DBUILD_TESTING=OFF \
        -DBoost_USE_STATIC_LIBS=OFF \
        -DWARNINGS_ARE_ERRORS=OFF \
-       -DCMAKE_CXX_FLAGS="$CXXFLAGS -Wno-template-body -include algorithm -include cstdint -include mutex"
+       -DCMAKE_CXX_FLAGS="$CXXFLAGS -Wno-template-body"
 %cmake_build
-
+#  -include algorithm -include cstdint -include mutex
 %install
 
 %cmake_install
@@ -77,6 +77,9 @@ export LDFLAGS="-fuse-ld=ld $LDFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Thu Apr 09 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.75-2
+- update to 1.2.75-2
+
 * Wed Apr 08 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.74-2
 - update to 1.2.74-2
 
