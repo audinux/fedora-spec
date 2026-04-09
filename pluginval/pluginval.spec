@@ -3,9 +3,11 @@
 # Type: Standalone
 # Category: Tool
 
+%global commit0 2b972221e88a03d10b8f932a09a7a1b1c1b7caec
+
 Name: pluginval
 Version: 1.0.4
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Cross platform plugin testing and validation tool
 License: GPL-3.0-or-later
 URL: https://github.com/Tracktion/pluginval
@@ -15,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./pluginval-source.sh <TAG>
-#        ./pluginval-source.sh v1.0.4
+#        ./pluginval-source.sh develop
 
 Source0: pluginval.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
@@ -71,6 +73,9 @@ CWD=`pwd`
 
 export VST2_SDK_DIR="$CWD/VST_SDK/VST2_SDK/"
 
+%set_build_flags
+export CXXFLAGS="-DRELEASE $CXXFLAGS"
+
 %cmake -DPLUGINVAL_ENABLE_RTCHECK=OFF
 %cmake_build
 
@@ -89,6 +94,9 @@ cp -ra docs/*  %{buildroot}/%{_datadir}/%{name}/doc/
 %{_datadir}/%{name}/doc/*
 
 %changelog
+* Wed Apr 08 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.4-3
+- update to 1.0.4-3 - use develop branch - 2b972221e88a03d10b8f932a09a7a1b1c1b7caec
+
 * Sat Jan 31 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.4-2
 - update to 1.0.4-2 - deactivate PLUGINVAL_ENABLE_RTCHECK for now
 
