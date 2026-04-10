@@ -1,24 +1,28 @@
-From 844406398e86cd0537b5a06fa4f31c8efd471355 Mon Sep 17 00:00:00 2001
+From b0375ab93e290ab619013fdf96025324decaaa14 Mon Sep 17 00:00:00 2001
 From: Yann Collette <yc@example.com>
-Date: Wed, 1 Apr 2026 08:22:30 +0200
-Subject: [PATCH] remove some gcc options
+Date: Fri, 10 Apr 2026 12:43:37 +0200
+Subject: [PATCH] patch
 
 ---
- CMakeLists.txt | 5 -----
- 1 file changed, 5 deletions(-)
+ CMakeLists.txt | 9 ---------
+ 1 file changed, 9 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 91d2ca9..f620ddb 100644
+index 7004957..bcd5b95 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -20,11 +20,6 @@ elseif(MSVC)
+@@ -21,15 +21,6 @@ elseif(MSVC)
      if(CMAKE_BUILD_TYPE STREQUAL "Release")
          add_compile_options(/O2 /arch:AVX)
      endif()
 -else()
 -    add_compile_options(-Wall -Wextra -ffast-math)
 -    if(CMAKE_BUILD_TYPE STREQUAL "Release")
--        add_compile_options(-O3 -march=native -ftree-vectorize)
+-        add_compile_options(-O3 -ftree-vectorize)
+-        # -march=native is only valid for native (non-cross) builds
+-        if(NOT ANDROID AND NOT IOS AND NOT EMSCRIPTEN)
+-            add_compile_options(-march=native)
+-        endif()
 -    endif()
  endif()
  
