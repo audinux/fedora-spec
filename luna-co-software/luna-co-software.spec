@@ -3,11 +3,11 @@
 # Type: Plugin, Standalone, VST3
 # Category: Effect
 
-%global commit0 5838084a2ab14f56da8be628010ee275d339d7e1
+%global commit0 299764a1e2b40bf86cd3fc10aa9c794710c72505
 
 Name: luna-co-software
 Version: 0.0.1
-Release: 8%{?dist}
+Release: 9%{?dist}
 Summary: A collection of professional audio VST3/LV2 plugins built with JUCE
 License: GPL-3.0-or-later
 URL: https://github.com/dusk-audio/dusk-audio-plugins
@@ -134,6 +134,9 @@ done
 %{_libdir}/lv2/*
 
 %changelog
+* Thu Apr 09 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-9
+- update to 0.0.1-9 - update to 299764a1e2b40bf86cd3fc10aa9c794710c72505
+
 * Sun Mar 29 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-8
 - update to 0.0.1-8 - update to 5838084a2ab14f56da8be628010ee275d339d7e1
 
