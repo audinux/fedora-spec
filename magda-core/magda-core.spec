@@ -4,18 +4,18 @@
 # Category: DAW, MIDI
 
 Name: magda-core
-Version: 0.4.1
+Version: 0.4.4
 Release: 1%{?dist}
 Summary: A DAW built for automation, transformation, and fast musical iteration
 License: GPL-3.0-or-later
 URL: https://github.com/Conceptual-Machines/magda-core
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./magda-core-source.sh <TAG>
-#        ./magda-core-source.sh v0.4.1
+#        ./magda-core-source.sh v0.4.4
 
 Source0: magda-core.tar.gz
 Source1: magda-core-source.sh
@@ -39,6 +39,7 @@ BuildRequires: libcurl-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: gtk3-devel
+BuildRequires: webkit2gtk4.1-devel
 
 %description
 MAGDA is a free, open-source DAW with AI integrated from the ground up. Built on C++20, JUCE, and Tracktion Engine.
@@ -63,12 +64,19 @@ Features:
 
 %cmake -DMAGDA_BUILD_TESTS=OFF \
        -DMAGDA_BUILD_EXAMPLES=OFF \
-       -DCMAKE_CXX_FLAGS="-Wno-template-body $CXXFLAGS"
+       -DCMAKE_CXX_FLAGS="-Wno-template-body `pkg-config --cflags webkit2gtk-4.1` `pkg-config --cflags gtk+-3.0` $CXXFLAGS"
 %cmake_build
 
 %install
 
 %cmake_install
+
+# cleanup
+rm -rf %{buildroot}/%{_bindir}/JUCE*
+rm -f %{buildroot}/%{_bindir}/convert_hf_to_gguf.py
+rm -rf %{buildroot}/%{_includedir}/
+rm -rf %{buildroot}/%{_usr}/lib/cmake
+rm -rf %{buildroot}/%{_libdir}
 
 %files
 %doc README.md CONTRIBUTING.md SECURITY.md
@@ -76,5 +84,11 @@ Features:
 %{_bindir}/*
 
 %changelog
+* Sun Apr 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.4-1
+- update to 0.4.4-1
+
+* Sat Apr 11 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.3-1
+- update to 0.4.3-1
+
 * Fri Apr 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.1-1
 - Initial spec file
