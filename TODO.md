@@ -264,7 +264,6 @@
 | picoTracker                   | https://github.com/xiphonics/picoTracker |
 | ArachnoTracker                | https://github.com/EricsonWillians/ArachnoTracker |
 | musializer-plugin             | https://github.com/ameyakakade/musializer-plugin |
-| drummock                      | https://github.com/ameyakakade/drummock |
 | VstProfiler                   | https://github.com/QuentinStoll/VstProfiler |
 | Instrudio                     | https://github.com/GareBear99/Instrudio |
 

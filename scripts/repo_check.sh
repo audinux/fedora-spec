@@ -1125,7 +1125,8 @@ https://github.com/sudip-mondal-2002/Amplitron
 https://github.com/brummer10/Staircase
 https://github.com/soundspear/formula
 https://github.com/luciamarock/Polyphonic-Pitch-Detector-for-guitars
-https://github.com/Conceptual-Machines/magda-core"
+https://github.com/Conceptual-Machines/magda-core
+https://github.com/ameyakakade/drummock"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
