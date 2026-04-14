@@ -1,271 +1,274 @@
 ## Add new packages
 
-| Package                       | URL|
-|-------------------------------|----|
-| zrythm - lsp-dsp              | add a devel package for zrythm |
-| openshow                      | https://github.com/mapmapteam/openshow |
-| supercollider-study           | https://github.com/rumblesan/super-collider-study |
-| SynthDefs                     | https://github.com/everythingwillbetakenaway/Synthdefs |
-| vapoursynth                   | http://www.vapoursynth.com/ |
-|                               | https://github.com/dubhater/vapoursynth-fluxsmooth |
-|                               | - https://github.com/HolyWu/L-SMASH-Works |
-|                               | - https://github.com/dubhater/vapoursynth-mvtools |
-|                               | - https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Deblock |
-| NoiseTorch                    | https://github.com/lawl/NoiseTorch |
-| CadMus                        | https://github.com/josh-richardson/cadmus |
-| Teragon audio                 | http://teragonaudio.com/software.html |
-|                               | - Kickmaker: http://static.teragonaudio.com/downloads/KickMaker/KickMaker.zip |
-|                               | - BeatCounter: https://github.com/teragonaudio/BeatCounter/archive/refs/tags/2.1.tar.gz |
-|                               | - ExtraNotes: http://static.teragonaudio.com/downloads/ExtraNotes/ExtraNotes.zip |
-|                               | - HiLoFilter: http://static.teragonaudio.com/downloads/HiLoFilter/HiLoFilter.zip |
-|                               | - NotNotchFilter: http://static.teragonaudio.com/downloads/NotNotchFilter/NotNotchFilter.zip |
-|                               | - ChaosChimp: http://static.teragonaudio.com/downloads/ChaosChimp/ChaosChimp.zip |
-|                               | - MrsWatson: http://static.teragonaudio.com/downloads/MrsWatson/MrsWatson.zip |
-|                               | - all: https://launchpad.net/~kxstudio-debian/+archive/ubuntu/plugins/+sourcefiles/teragonaudio-plugins/5:20140325.3/teragonaudio-plugins_20140325.3.tar.gz |
-| inscore                       | https://inscore.grame.fr |
-| Gwion                         | https://github.com/Gwion |
-| Amati                         | https://github.com/glocq/Amati |
-| Pure language                 | https://agraef.github.io/pure-lang |
-| ORCHESTOOLS-PIANO-S           | https://github.com/ilirbajri/ORCHESTOOLS-PIANO-S |
-| QuatumVerb                    | https://github.com/QVbDev/quantumVerb |
-| Livecode-This                 | https://github.com/gilfuser/livecode-this |
-| SpleeterRT                    | https://github.com/james34602/SpleeterRT |
-| Mousai                        | https://github.com/SeaDve/Mousai |
-| audioprism                    | https://github.com/vsergeev/audioprism |
-| friture                       | https://github.com/tlecomte/friture |
-| Schrammel_OJD                 | https://github.com/JanosGit/Schrammel_OJD |
-| EasySSP                       | https://github.com/automatl/audio-dsp-multi-visualize/ |
-| demucs                        | https://github.com/facebookresearch/demucs |
-| pedalevite                    | https://github.com/EleonoreMizo/pedalevite -> code for vst2 ... |
-|                               | http://ldesoras.free.fr/doc/articles/pedale-vite/pedale-vite.html |
-| tap192                        | https://github.com/PlagiatBros/tap192 |
-| genDrumKit                    | https://github.com/peter-zenk/genDrumkit |
-| Jammernetz                    | https://github.com/christofmuc/JammerNetz/ |
-| axiom                         | https://github.com/monadgroup/axiom - not llvm 11 - try 9 10 |
-| EEL_VM                        | https://github.com/james34602/EEL_VM |
-| AutoEq                        | https://github.com/jaakkopasanen/AutoEq |
-| SynthLab                      | https://github.com/mpue/Synthlab |
-| AlgAudio                      | https://github.com/rafalcieslak/AlgAudio |
-| psychosynth                   | https://github.com/arximboldi/psychosynth |
-| tidal                         | https://github.com/archlinux/svntogit-community/blob/packages/haskell-tidal/trunk/PKGBUILD |
-| juced                         | https://github.com/kunitoki/juced |
-| hpsjam                        | https://github.com/hselasky/hpsjam |
-| gyroflow                      | https://github.com/gyroflow/gyroflow |
-| studio-controls               | https://github.com/ovenwerks/studio-controls |
-| rtcqs                         | https://codeberg.org/rtcqs/rtcqs |
-| soundgrain                    | https://github.com/belangeo/soundgrain |
-| anklang                       | https://github.com/tim-janik/anklang |
-| Dexed                         | https://github.com/asb2m10/dexed |
-| buzzmachines                  | https://github.com/Buzztrax/buzzmachines |
-| speclet                       | https://github.com/JohT/speclet |
-| rosegarden-fork               | https://github.com/thanks4opensource/rosegarden-fork |
-| intersect                     | https://github.com/sboukortt/intersect-lv2 |
-| lenticular                    | https://github.com/polyeffects/lenticular_lv2 |
-| sushi                         | https://github.com/elk-audio/sushi |
-| ComplexNonlinearities         | https://github.com/jatinchowdhury18/ComplexNonlinearities |
-| repitch                       | https://github.com/maxwellpollack/repitch |
-| Richter Tremolo               | https://github.com/jd-13/Richter-Tremolo |
-| Songbird formant filter       | https://github.com/jd-13/Songbird-Formant-Filter |
-| Carve Distortion              | https://github.com/jd-13/Carve-Distortion |
-| Monstr Stereo Imaging         | https://github.com/jd-13/MONSTR-Stereo-Imaging |
-| BlackBird                     | https://github.com/khrykin/BlackBird |
-| PeakEater                     | https://github.com/vvvar/PeakEater |
-| rotor                         | https://github.com/blackboxdsp/rotor |
-| the synister                  | https://github.com/the-synister/the-source/ |
-| Various plugins               | https://github.com/mzuther?tab=repositories |
-| libDaisy   (for hvcc)         | https://github.com/electro-smith/libDaisy |
-| mellite                       | https://www.sciss.de/mellite/ |
-| arch realtime privilege       | https://github.com/archlinux/svntogit-community/tree/packages/realtime-privileges/trunk |
-| Carve-Distortion              | https://github.com/jd-13/Carve-Distortion |
-| Oi-Grandad                    | https://github.com/publicsamples/Oi-Grandad |
-| ultimatevocalremovergui       | https://github.com/Anjok07/ultimatevocalremovergui |
-| bintracker                    | https://github.com/bintracker/bintracker |
-| glicol-cli                    | https://github.com/glicol/glicol-cli |
-| backupband                    | https://sourceforge.net/projects/backupband/files/ |
-| MiniDexed                     | https://github.com/probonopd/MiniDexed |
-| nbo-plugins                   | https://sourceforge.net/projects/nbo-plugins/files/ |
-| bass-studio                   | https://github.com/nidefawl/bass-studio |
-| NeuralNote                    | https://github.com/DamRsn/NeuralNote |
-| dexed.lv2                     | https://github.com/zynthian/zynthian-data (for some presets) |
-|                               | https://github.com/dcoredump/dexed.lv2 (lv2 plugin) |
-| mtag                          | https://github.com/psemiletov/mtag |
-| midi-chord-reader             | https://github.com/markwilkins/midi-chord-reader |
-| arpligner                     | https://github.com/YPares/arpligner |
-| Livecut                       | https://github.com/scheffle/Livecut |
-| VocalShaper                   | https://github.com/Do-sth-sharp/VocalShaper |
-| ComposeSiren                  | https://github.com/patriceguyot/ComposeSiren |
-| audiocraft                    | https://github.com/facebookresearch/audiocraft |
-| CHOW                          | https://github.com/Chowdhury-DSP/CHOW |
-| libremidi                     | https://github.com/jcelerier/libremidi |
-| ddsp-vst                      | https://github.com/magenta/ddsp-vst |
-| LinVst3                       | https://github.com/osxmidi/LinVst3 |
-| dawproject                    | https://github.com/bitwig/dawproject |
-| csound_plugins                | https://github.com/csound/plugins |
-| shoopdaloop                   | https://github.com/SanderVocke/shoopdaloop |
-| qliquidsfz                    | https://github.com/be1/qliquidsfz |
-| juicysfplugin                 | https://github.com/Birch-san/juicysfplugin |
-| Besselstrick                  | https://github.com/fcaspe/BesselsTrick |
-| choppah                       | https://github.com/ssabug/choppah |
-| midilooper                    | https://github.com/supergilbert/midilooper |
-| sound-of-music                | https://github.com/enter-opy/sound-of-music |
-| pulp-fiction                  | https://github.com/enter-opy/pulp-fiction |
-| osccontrol-light              | https://github.com/drlight-code/osccontrol-light |
-| MidiExplorer                  | https://github.com/EMATech/MidiExplorer |
-| Fuzzboy                       | https://github.com/DirektDSP/Fuzzboy |
-| arpligner                     | https://github.com/YPares/arpligner |
-| ai-improviser-plugin          | https://github.com/yeeking/ai-improviser-plugin |
-| hue                           | https://github.com/bljustice/hue |
-| Sound_Nodes                   | https://github.com/negdo/Sound_Nodes |
-| CDP8                          | https://github.com/ComposersDesktop/CDP8 |
-| PyMusicLooper                 | https://github.com/arkrow/PyMusicLooper |
-| xenos                         | https://github.com/raphaelradna/xenos |
-| badhumors                     | https://github.com/niflheimmer/badhumors |
-| Tonez                         | https://github.com/retornz/ToneZ |
-| Automated-GuitarAmpModelling  | https://github.com/AidaDSP/Automated-GuitarAmpModelling |
-| stargate-sample-pack          | https://github.com/stargatedaw/stargate-sample-pack (250 Mo) |
-| ABC things                    | https://sourceforge.net/projects/abcplus/files/ |
-| LeGrandMechantLoop            | https://github.com/benkuper/LeGrandMechantLoop |
-| basic-pitch                   | https://github.com/spotify/basic-pitch |
-| nam-juce                      | https://github.com/Tr3m/nam-juce |
-| neural-amp-modeler-lv2        | https://github.com/mikeoliphant/neural-amp-modeler-lv2 |
-| OpenKontroller                | https://git.open-music-kontrollers.ch/~hp/ |
-| awesome-juce                  | https://github.com/sudara/awesome-juce |
-| system76-scheduler            | https://github.com/pop-os/system76-scheduler |
-| shoopdaloop                   | https://github.com/SanderVocke/shoopdaloop |
-| piper                         | https://github.com/rhasspy/piper |
-| Sound_Nodes                   | https://github.com/negdo/Sound_Nodes |
-| dublang                       | https://codeberg.org/joenio/dublang |
-| CMBNEX                        | https://github.com/KaixoCode/CMBNEX |
-| ConvertWithMoss               | https://github.com/git-moss/ConvertWithMoss |
-| JS_Inflator                   | https://github.com/Kiriki-liszt/JS_Inflator |
-| oemer                         | https://github.com/BreezeWhite/oemer |
-| Orchestra                     | https://github.com/AbdallahHemdan/Orchestra |
-| Subhoofer                     | https://github.com/ardura/Subhoofer |
-| Interleaf                     | https://github.com/ardura/Interleaf |
-| Canopy-Reverb                 | https://github.com/ardura/Canopy-Reverb |
-| LIRA-8                        | https://github.com/MikeMorenoDSP/LIRA-8 |
-| elysiera                      | https://github.com/azur1s/elysiera |
-| RTcmix                        | https://github.com/RTcmix/RTcmix |
-| bark                          | https://github.com/haileys/bark |
-| LittleGPTracker               | https://github.com/djdiskmachine/LittleGPTracker |
-| xmodits                       | https://github.com/B0ney/xmodits |
-| xmodits-cli                   | https://github.com/B0ney/xmodits-cli |
-| juicysfplugin                 | https://github.com/osxmidi/juicysfplugin |
-| ardura                        | https://github.com/ardura |
-| sonic-lineup                  | https://github.com/sonic-visualiser/sonic-lineup |
-| tony                          | https://github.com/sonic-visualiser/tony |
-| NeuralNote                    | https://github.com/DamRsn/NeuralNote |
-| synth-midi-controller-plugins | https://github.com/mronetwothreefour/synth-midi-controller-plugins |
-| Tumult                        | https://github.com/consint/Tumult |
-| Xolotl                        | https://github.com/publicsamples/Xolotl |
-| Comprez                       | https://github.com/AnClark/Comprez |
-| spek-X                        | https://github.com/MikeWang000000/spek-X |
-| rubberneck                    | https://github.com/hollance/rubberneck |
-| krunch                        | https://github.com/hollance/krunch |
-| signls                        | https://github.com/emprcl/signls |
-| Ami-Sampler-VST               | https://github.com/astriiddev/Ami-Sampler-VST |
-| BitDOS-VST                    | https://github.com/astriiddev/BitDOS-VST |
-| Sub_Dominant-VST              | https://github.com/astriiddev/Sub_Dominant-VST |
-| Cable                         | https://github.com/magillos/Cable |
-| Just-a-Sample                 | https://github.com/BOBONA/Just-a-Sample |
-| Overdraw                      | https://github.com/unevens/Overdraw |
-| Curvessor                     | https://github.com/unevens/Curvessor |
-| trigger2midi                  | https://github.com/jkbd/trigger2midi |
-| musegpt                       | https://github.com/greynewell/musegpt |
-| regrader                      | https://github.com/igorski/regrader |
-| StoneMistress                 | https://github.com/NaviCisco/StoneMistress |
-| Disflux                       | https://github.com/Dimethoxy/Disflux |
-| Plasma                        | https://github.com/Dimethoxy/Plasma |
-| lossless-cut                  | https://github.com/mifi/lossless-cut |
-| Millisecond                   | https://github.com/gaheldev/Millisecond |
-| scale-remapper                | https://github.com/xivilay/scale-remapper |
-| BitDOS-VST                    | https://github.com/astriiddev/BitDOS-VST |
-| Relief_Compressor             | https://github.com/Kiriki-liszt/Relief_Compressor |
-| lamb-rs                       | https://github.com/magnetophon/lamb-rs |
-| newlab-plugins                | https://github.com/nicolasdittlo/newlab-plugins |
-| verbMASCHINE                  | https://github.com/SomeOtter/verbMASCHINE |
-| eclipsa-audio-plugin          | https://github.com/google/eclipsa-audio-plugin |
-| PWAR                          | https://github.com/ripxorip/PWAR |
-| melrose                       | https://github.com/emicklei/melrose |
-| MN-Better-Notation-Plugins-for-MuseScore | https://github.com/mnorrisvuw/MN-Better-Notation-Plugins-for-MuseScore |
-| bluelab-plugins               | https://github.com/falkTX/bluelab-plugins |
-| jack_interposer               | https://github.com/falkTX/jack_interposer |
-| sassy                         | https://github.com/jarikomppa/sassy |
-| smol-rack                     | https://github.com/giulioz/smol-rack |
-| CTAGDRC                       | https://github.com/p-hlp/CTAGDRC |
-| LiveMixer                     | https://github.com/sonejostudios/LiveMixer |
-| two-filters                   | https://github.com/baconpaul/two-filters |
-| Chasm                         | https://github.com/DirektDSP/Chasm |
-| PoeesiaVol1Women              | https://codeberg.org/IvyAudio/PoeesiaVol1Women |
-| Saturation                    | https://github.com/apmastering/Saturation |
-| APComp                        | https://github.com/apmastering/APComp |
-| kunquat                       | https://github.com/kunquat/kunquat |
-| StoneMistress                 | https://github.com/NaviCisco/StoneMistress |
-| intersect-lv2                 | https://github.com/sboukortt/intersect-lv2 |
-| blue                          | https://github.com/kunstmusik/blue |
-| VOSIMSynth                    | https://github.com/austensatterlee/VOSIMSynth |
-| ConvertWithMoss               | https://github.com/git-moss/ConvertWithMoss |
-| OmniAmp                       | https://github.com/ArborealAudio/OmniAmp |
-| STR-X                         | https://github.com/ArborealAudio/STR-X |
-| midi-okular-pageturner        | https://github.com/wakira/midi-okular-pageturner |
-| RTcmix                        | https://github.com/RTcmix/RTcmix |
-| RTcmixShell                   | https://github.com/RTcmix/RTcmixShell |
-| MONSTR-Stereo-Imaging         | https://github.com/jd-13/MONSTR-Stereo-Imaging |
-| FFTBalance                    | https://github.com/juzzlin/FFTBalance |
-| kina-vst                      | https://github.com/neurodyn/kina-vst |
-| cheapsynth01                  | https://github.com/yasuyuki-baba/cheapsynth01 |
-| dkbuilder-guitarix-lv2-plugins | https://github.com/domichel/dkbuilder-guitarix-lv2-plugins |
-| MISST                         | https://github.com/Frikallo/MISST |
-| EasyABC                       | https://github.com/jwdj/EasyABC |
-| Munt                          | https://github.com/munt/munt |
-| tixl                          | https://github.com/tixl3d/tixl |
-| Symphonium                    | https://github.com/ttdm/Symphonium |
-| qsynthi                       | https://github.com/arth3mis/qsynthi |
-| ChorusExMachina               | https://github.com/peastman/ChorusExMachina |
-| osm                           | https://github.com/psmokotnin/osm |
-| vitalium-verb                 | https://github.com/BillyDM/vitalium-verb |
-| CTAGDRC                       | https://github.com/BillyDM/CTAGDRC |
-| VST-AnalogChannel             | https://github.com/FilTer87/VST-AnalogChannel |
-| SpatGRIS                      | https://github.com/GRIS-UdeM/SpatGRIS |
-| iem-wfs                       | https://git.iem.at/audioplugins/iem-wfs |
-| cqt-analyzer                  | https://git.iem.at/audioplugins/cqt-analyzer |
-| VoyeSeq                       | https://github.com/yellius/VoyeSeq |
-| plugins                       | https://github.com/luna-co-software/plugins |
-| rnnoise                       | https://github.com/xiph/rnnoise |
-| OxiSynth                      | https://github.com/PolyMeilex/OxiSynth |
-| tune                          | https://github.com/Woyten/tune |
-| xsynth                        | https://github.com/BlackMIDIDevs/xsynth |
-| 3HSPlug                       | https://github.com/src3453/3HSPlug |
-| sonusmix                      | https://codeberg.org/sonusmix/sonusmix |
-| Overdrive-ReNEO               | https://github.com/Mrugalla/Overdrive-ReNEO |
-| Hammer-and-Meiszel            | https://github.com/Mrugalla/Hammer-and-Meiszel |
-| Manta                         | https://github.com/Mrugalla/Manta |
-| NEL-19                        | https://github.com/Mrugalla/NEL-19 |
-| Relief_Compressor             | https://github.com/Kiriki-liszt/Relief_Compressor |
-| Pult-EQ                       | https://github.com/consint/Pult-EQ |
-| audio-plugin-coder            | https://github.com/Noizefield/audio-plugin-coder |
-| airwindows-clap-build         | https://github.com/stevefolta/airwindows-clap-build |
-| Enover                        | https://github.com/chmaha/Enover |
-| gig2sfz                       | https://github.com/stevefolta/gig2sfz |
-| wolf-spectrum                 | https://github.com/wolf-plugins/wolf-spectrum |
-| aelapse                       | https://github.com/smiarx/aelapse |
-| Squeezer                      | https://github.com/mzuther/Squeezer |
-| reapack-jm                    | https://github.com/jozmac/reapack-jm |
-| TeAr                          | https://github.com/odoare/TeAr |
-| retromulator                  | https://github.com/reales/retromulator |
-| INTERSECT                     | https://github.com/tucktuckg00se/INTERSECT |
-| hvcc-plugins                  | https://github.com/mod-audio/hvcc-plugins |
-| VCV-PureData                  | https://github.com/porres/VCV-PureData |
-| Mercury                       | https://github.com/GuitarML/Mercury |
-| Earth                         | https://github.com/GuitarML/Earth |
-| emusc                         | https://github.com/skjelten/emusc |
-| textbeat                      | https://github.com/flipcoder/textbeat |
-| cane                          | https://github.com/tarpit-collective/cane |
-| picoTracker                   | https://github.com/xiphonics/picoTracker |
-| ArachnoTracker                | https://github.com/EricsonWillians/ArachnoTracker |
-| musializer-plugin             | https://github.com/ameyakakade/musializer-plugin |
-| VstProfiler                   | https://github.com/QuentinStoll/VstProfiler |
-| Instrudio                     | https://github.com/GareBear99/Instrudio |
+| Package                                  | URL                                                                                                                                                         |
+|------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| zrythm - lsp-dsp                         | add a devel package for zrythm                                                                                                                              |
+| openshow                                 | https://github.com/mapmapteam/openshow                                                                                                                      |
+| supercollider-study                      | https://github.com/rumblesan/super-collider-study                                                                                                           |
+| SynthDefs                                | https://github.com/everythingwillbetakenaway/Synthdefs                                                                                                      |
+| vapoursynth                              | http://www.vapoursynth.com/                                                                                                                                 |
+|                                          | https://github.com/dubhater/vapoursynth-fluxsmooth                                                                                                          |
+|                                          | - https://github.com/HolyWu/L-SMASH-Works                                                                                                                   |
+|                                          | - https://github.com/dubhater/vapoursynth-mvtools                                                                                                           |
+|                                          | - https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Deblock                                                                                         |
+| NoiseTorch                               | https://github.com/lawl/NoiseTorch                                                                                                                          |
+| CadMus                                   | https://github.com/josh-richardson/cadmus                                                                                                                   |
+| Teragon audio                            | http://teragonaudio.com/software.html                                                                                                                       |
+|                                          | - Kickmaker: http://static.teragonaudio.com/downloads/KickMaker/KickMaker.zip                                                                               |
+|                                          | - BeatCounter: https://github.com/teragonaudio/BeatCounter/archive/refs/tags/2.1.tar.gz                                                                     |
+|                                          | - ExtraNotes: http://static.teragonaudio.com/downloads/ExtraNotes/ExtraNotes.zip                                                                            |
+|                                          | - HiLoFilter: http://static.teragonaudio.com/downloads/HiLoFilter/HiLoFilter.zip                                                                            |
+|                                          | - NotNotchFilter: http://static.teragonaudio.com/downloads/NotNotchFilter/NotNotchFilter.zip                                                                |
+|                                          | - ChaosChimp: http://static.teragonaudio.com/downloads/ChaosChimp/ChaosChimp.zip                                                                            |
+|                                          | - MrsWatson: http://static.teragonaudio.com/downloads/MrsWatson/MrsWatson.zip                                                                               |
+|                                          | - all: https://launchpad.net/~kxstudio-debian/+archive/ubuntu/plugins/+sourcefiles/teragonaudio-plugins/5:20140325.3/teragonaudio-plugins_20140325.3.tar.gz |
+| inscore                                  | https://inscore.grame.fr                                                                                                                                    |
+| Gwion                                    | https://github.com/Gwion                                                                                                                                    |
+| Amati                                    | https://github.com/glocq/Amati                                                                                                                              |
+| Pure language                            | https://agraef.github.io/pure-lang                                                                                                                          |
+| ORCHESTOOLS-PIANO-S                      | https://github.com/ilirbajri/ORCHESTOOLS-PIANO-S                                                                                                            |
+| QuatumVerb                               | https://github.com/QVbDev/quantumVerb                                                                                                                       |
+| Livecode-This                            | https://github.com/gilfuser/livecode-this                                                                                                                   |
+| SpleeterRT                               | https://github.com/james34602/SpleeterRT                                                                                                                    |
+| Mousai                                   | https://github.com/SeaDve/Mousai                                                                                                                            |
+| audioprism                               | https://github.com/vsergeev/audioprism                                                                                                                      |
+| friture                                  | https://github.com/tlecomte/friture                                                                                                                         |
+| Schrammel_OJD                            | https://github.com/JanosGit/Schrammel_OJD                                                                                                                   |
+| EasySSP                                  | https://github.com/automatl/audio-dsp-multi-visualize/                                                                                                      |
+| demucs                                   | https://github.com/facebookresearch/demucs                                                                                                                  |
+| pedalevite                               | https://github.com/EleonoreMizo/pedalevite -> code for vst2 ...                                                                                             |
+|                                          | http://ldesoras.free.fr/doc/articles/pedale-vite/pedale-vite.html                                                                                           |
+| tap192                                   | https://github.com/PlagiatBros/tap192                                                                                                                       |
+| genDrumKit                               | https://github.com/peter-zenk/genDrumkit                                                                                                                    |
+| Jammernetz                               | https://github.com/christofmuc/JammerNetz/                                                                                                                  |
+| axiom                                    | https://github.com/monadgroup/axiom - not llvm 11 - try 9 10                                                                                                |
+| EEL_VM                                   | https://github.com/james34602/EEL_VM                                                                                                                        |
+| AutoEq                                   | https://github.com/jaakkopasanen/AutoEq                                                                                                                     |
+| SynthLab                                 | https://github.com/mpue/Synthlab                                                                                                                            |
+| AlgAudio                                 | https://github.com/rafalcieslak/AlgAudio                                                                                                                    |
+| psychosynth                              | https://github.com/arximboldi/psychosynth                                                                                                                   |
+| tidal                                    | https://github.com/archlinux/svntogit-community/blob/packages/haskell-tidal/trunk/PKGBUILD                                                                  |
+| juced                                    | https://github.com/kunitoki/juced                                                                                                                           |
+| hpsjam                                   | https://github.com/hselasky/hpsjam                                                                                                                          |
+| gyroflow                                 | https://github.com/gyroflow/gyroflow                                                                                                                        |
+| studio-controls                          | https://github.com/ovenwerks/studio-controls                                                                                                                |
+| rtcqs                                    | https://codeberg.org/rtcqs/rtcqs                                                                                                                            |
+| soundgrain                               | https://github.com/belangeo/soundgrain                                                                                                                      |
+| anklang                                  | https://github.com/tim-janik/anklang                                                                                                                        |
+| Dexed                                    | https://github.com/asb2m10/dexed                                                                                                                            |
+| buzzmachines                             | https://github.com/Buzztrax/buzzmachines                                                                                                                    |
+| speclet                                  | https://github.com/JohT/speclet                                                                                                                             |
+| rosegarden-fork                          | https://github.com/thanks4opensource/rosegarden-fork                                                                                                        |
+| intersect                                | https://github.com/sboukortt/intersect-lv2                                                                                                                  |
+| lenticular                               | https://github.com/polyeffects/lenticular_lv2                                                                                                               |
+| sushi                                    | https://github.com/elk-audio/sushi                                                                                                                          |
+| ComplexNonlinearities                    | https://github.com/jatinchowdhury18/ComplexNonlinearities                                                                                                   |
+| repitch                                  | https://github.com/maxwellpollack/repitch                                                                                                                   |
+| Richter Tremolo                          | https://github.com/jd-13/Richter-Tremolo                                                                                                                    |
+| Songbird formant filter                  | https://github.com/jd-13/Songbird-Formant-Filter                                                                                                            |
+| Carve Distortion                         | https://github.com/jd-13/Carve-Distortion                                                                                                                   |
+| Monstr Stereo Imaging                    | https://github.com/jd-13/MONSTR-Stereo-Imaging                                                                                                              |
+| BlackBird                                | https://github.com/khrykin/BlackBird                                                                                                                        |
+| PeakEater                                | https://github.com/vvvar/PeakEater                                                                                                                          |
+| rotor                                    | https://github.com/blackboxdsp/rotor                                                                                                                        |
+| the synister                             | https://github.com/the-synister/the-source/                                                                                                                 |
+| Various plugins                          | https://github.com/mzuther?tab=repositories                                                                                                                 |
+| libDaisy   (for hvcc)                    | https://github.com/electro-smith/libDaisy                                                                                                                   |
+| mellite                                  | https://www.sciss.de/mellite/                                                                                                                               |
+| arch realtime privilege                  | https://github.com/archlinux/svntogit-community/tree/packages/realtime-privileges/trunk                                                                     |
+| Carve-Distortion                         | https://github.com/jd-13/Carve-Distortion                                                                                                                   |
+| Oi-Grandad                               | https://github.com/publicsamples/Oi-Grandad                                                                                                                 |
+| ultimatevocalremovergui                  | https://github.com/Anjok07/ultimatevocalremovergui                                                                                                          |
+| bintracker                               | https://github.com/bintracker/bintracker                                                                                                                    |
+| glicol-cli                               | https://github.com/glicol/glicol-cli                                                                                                                        |
+| backupband                               | https://sourceforge.net/projects/backupband/files/                                                                                                          |
+| MiniDexed                                | https://github.com/probonopd/MiniDexed                                                                                                                      |
+| nbo-plugins                              | https://sourceforge.net/projects/nbo-plugins/files/                                                                                                         |
+| bass-studio                              | https://github.com/nidefawl/bass-studio                                                                                                                     |
+| NeuralNote                               | https://github.com/DamRsn/NeuralNote                                                                                                                        |
+| dexed.lv2                                | https://github.com/zynthian/zynthian-data (for some presets)                                                                                                |
+|                                          | https://github.com/dcoredump/dexed.lv2 (lv2 plugin)                                                                                                         |
+| mtag                                     | https://github.com/psemiletov/mtag                                                                                                                          |
+| midi-chord-reader                        | https://github.com/markwilkins/midi-chord-reader                                                                                                            |
+| arpligner                                | https://github.com/YPares/arpligner                                                                                                                         |
+| Livecut                                  | https://github.com/scheffle/Livecut                                                                                                                         |
+| VocalShaper                              | https://github.com/Do-sth-sharp/VocalShaper                                                                                                                 |
+| ComposeSiren                             | https://github.com/patriceguyot/ComposeSiren                                                                                                                |
+| audiocraft                               | https://github.com/facebookresearch/audiocraft                                                                                                              |
+| CHOW                                     | https://github.com/Chowdhury-DSP/CHOW                                                                                                                       |
+| libremidi                                | https://github.com/jcelerier/libremidi                                                                                                                      |
+| ddsp-vst                                 | https://github.com/magenta/ddsp-vst                                                                                                                         |
+| LinVst3                                  | https://github.com/osxmidi/LinVst3                                                                                                                          |
+| dawproject                               | https://github.com/bitwig/dawproject                                                                                                                        |
+| csound_plugins                           | https://github.com/csound/plugins                                                                                                                           |
+| shoopdaloop                              | https://github.com/SanderVocke/shoopdaloop                                                                                                                  |
+| qliquidsfz                               | https://github.com/be1/qliquidsfz                                                                                                                           |
+| juicysfplugin                            | https://github.com/Birch-san/juicysfplugin                                                                                                                  |
+| Besselstrick                             | https://github.com/fcaspe/BesselsTrick                                                                                                                      |
+| choppah                                  | https://github.com/ssabug/choppah                                                                                                                           |
+| midilooper                               | https://github.com/supergilbert/midilooper                                                                                                                  |
+| sound-of-music                           | https://github.com/enter-opy/sound-of-music                                                                                                                 |
+| pulp-fiction                             | https://github.com/enter-opy/pulp-fiction                                                                                                                   |
+| osccontrol-light                         | https://github.com/drlight-code/osccontrol-light                                                                                                            |
+| MidiExplorer                             | https://github.com/EMATech/MidiExplorer                                                                                                                     |
+| Fuzzboy                                  | https://github.com/DirektDSP/Fuzzboy                                                                                                                        |
+| arpligner                                | https://github.com/YPares/arpligner                                                                                                                         |
+| ai-improviser-plugin                     | https://github.com/yeeking/ai-improviser-plugin                                                                                                             |
+| hue                                      | https://github.com/bljustice/hue                                                                                                                            |
+| Sound_Nodes                              | https://github.com/negdo/Sound_Nodes                                                                                                                        |
+| CDP8                                     | https://github.com/ComposersDesktop/CDP8                                                                                                                    |
+| PyMusicLooper                            | https://github.com/arkrow/PyMusicLooper                                                                                                                     |
+| xenos                                    | https://github.com/raphaelradna/xenos                                                                                                                       |
+| badhumors                                | https://github.com/niflheimmer/badhumors                                                                                                                    |
+| Tonez                                    | https://github.com/retornz/ToneZ                                                                                                                            |
+| Automated-GuitarAmpModelling             | https://github.com/AidaDSP/Automated-GuitarAmpModelling                                                                                                     |
+| stargate-sample-pack                     | https://github.com/stargatedaw/stargate-sample-pack (250 Mo)                                                                                                |
+| ABC things                               | https://sourceforge.net/projects/abcplus/files/                                                                                                             |
+| LeGrandMechantLoop                       | https://github.com/benkuper/LeGrandMechantLoop                                                                                                              |
+| basic-pitch                              | https://github.com/spotify/basic-pitch                                                                                                                      |
+| nam-juce                                 | https://github.com/Tr3m/nam-juce                                                                                                                            |
+| neural-amp-modeler-lv2                   | https://github.com/mikeoliphant/neural-amp-modeler-lv2                                                                                                      |
+| OpenKontroller                           | https://git.open-music-kontrollers.ch/~hp/                                                                                                                  |
+| awesome-juce                             | https://github.com/sudara/awesome-juce                                                                                                                      |
+| system76-scheduler                       | https://github.com/pop-os/system76-scheduler                                                                                                                |
+| shoopdaloop                              | https://github.com/SanderVocke/shoopdaloop                                                                                                                  |
+| piper                                    | https://github.com/rhasspy/piper                                                                                                                            |
+| Sound_Nodes                              | https://github.com/negdo/Sound_Nodes                                                                                                                        |
+| dublang                                  | https://codeberg.org/joenio/dublang                                                                                                                         |
+| CMBNEX                                   | https://github.com/KaixoCode/CMBNEX                                                                                                                         |
+| ConvertWithMoss                          | https://github.com/git-moss/ConvertWithMoss                                                                                                                 |
+| JS_Inflator                              | https://github.com/Kiriki-liszt/JS_Inflator                                                                                                                 |
+| oemer                                    | https://github.com/BreezeWhite/oemer                                                                                                                        |
+| Orchestra                                | https://github.com/AbdallahHemdan/Orchestra                                                                                                                 |
+| Subhoofer                                | https://github.com/ardura/Subhoofer                                                                                                                         |
+| Interleaf                                | https://github.com/ardura/Interleaf                                                                                                                         |
+| Canopy-Reverb                            | https://github.com/ardura/Canopy-Reverb                                                                                                                     |
+| LIRA-8                                   | https://github.com/MikeMorenoDSP/LIRA-8                                                                                                                     |
+| elysiera                                 | https://github.com/azur1s/elysiera                                                                                                                          |
+| RTcmix                                   | https://github.com/RTcmix/RTcmix                                                                                                                            |
+| bark                                     | https://github.com/haileys/bark                                                                                                                             |
+| LittleGPTracker                          | https://github.com/djdiskmachine/LittleGPTracker                                                                                                            |
+| xmodits                                  | https://github.com/B0ney/xmodits                                                                                                                            |
+| xmodits-cli                              | https://github.com/B0ney/xmodits-cli                                                                                                                        |
+| juicysfplugin                            | https://github.com/osxmidi/juicysfplugin                                                                                                                    |
+| ardura                                   | https://github.com/ardura                                                                                                                                   |
+| sonic-lineup                             | https://github.com/sonic-visualiser/sonic-lineup                                                                                                            |
+| tony                                     | https://github.com/sonic-visualiser/tony                                                                                                                    |
+| NeuralNote                               | https://github.com/DamRsn/NeuralNote                                                                                                                        |
+| synth-midi-controller-plugins            | https://github.com/mronetwothreefour/synth-midi-controller-plugins                                                                                          |
+| Tumult                                   | https://github.com/consint/Tumult                                                                                                                           |
+| Xolotl                                   | https://github.com/publicsamples/Xolotl                                                                                                                     |
+| Comprez                                  | https://github.com/AnClark/Comprez                                                                                                                          |
+| spek-X                                   | https://github.com/MikeWang000000/spek-X                                                                                                                    |
+| rubberneck                               | https://github.com/hollance/rubberneck                                                                                                                      |
+| krunch                                   | https://github.com/hollance/krunch                                                                                                                          |
+| signls                                   | https://github.com/emprcl/signls                                                                                                                            |
+| Ami-Sampler-VST                          | https://github.com/astriiddev/Ami-Sampler-VST                                                                                                               |
+| BitDOS-VST                               | https://github.com/astriiddev/BitDOS-VST                                                                                                                    |
+| Sub_Dominant-VST                         | https://github.com/astriiddev/Sub_Dominant-VST                                                                                                              |
+| Cable                                    | https://github.com/magillos/Cable                                                                                                                           |
+| Just-a-Sample                            | https://github.com/BOBONA/Just-a-Sample                                                                                                                     |
+| Overdraw                                 | https://github.com/unevens/Overdraw                                                                                                                         |
+| Curvessor                                | https://github.com/unevens/Curvessor                                                                                                                        |
+| trigger2midi                             | https://github.com/jkbd/trigger2midi                                                                                                                        |
+| musegpt                                  | https://github.com/greynewell/musegpt                                                                                                                       |
+| regrader                                 | https://github.com/igorski/regrader                                                                                                                         |
+| StoneMistress                            | https://github.com/NaviCisco/StoneMistress                                                                                                                  |
+| Disflux                                  | https://github.com/Dimethoxy/Disflux                                                                                                                        |
+| Plasma                                   | https://github.com/Dimethoxy/Plasma                                                                                                                         |
+| lossless-cut                             | https://github.com/mifi/lossless-cut                                                                                                                        |
+| Millisecond                              | https://github.com/gaheldev/Millisecond                                                                                                                     |
+| scale-remapper                           | https://github.com/xivilay/scale-remapper                                                                                                                   |
+| BitDOS-VST                               | https://github.com/astriiddev/BitDOS-VST                                                                                                                    |
+| Relief_Compressor                        | https://github.com/Kiriki-liszt/Relief_Compressor                                                                                                           |
+| lamb-rs                                  | https://github.com/magnetophon/lamb-rs                                                                                                                      |
+| newlab-plugins                           | https://github.com/nicolasdittlo/newlab-plugins                                                                                                             |
+| verbMASCHINE                             | https://github.com/SomeOtter/verbMASCHINE                                                                                                                   |
+| eclipsa-audio-plugin                     | https://github.com/google/eclipsa-audio-plugin                                                                                                              |
+| PWAR                                     | https://github.com/ripxorip/PWAR                                                                                                                            |
+| melrose                                  | https://github.com/emicklei/melrose                                                                                                                         |
+| MN-Better-Notation-Plugins-for-MuseScore | https://github.com/mnorrisvuw/MN-Better-Notation-Plugins-for-MuseScore                                                                                      |
+| bluelab-plugins                          | https://github.com/falkTX/bluelab-plugins                                                                                                                   |
+| jack_interposer                          | https://github.com/falkTX/jack_interposer                                                                                                                   |
+| sassy                                    | https://github.com/jarikomppa/sassy                                                                                                                         |
+| smol-rack                                | https://github.com/giulioz/smol-rack                                                                                                                        |
+| CTAGDRC                                  | https://github.com/p-hlp/CTAGDRC                                                                                                                            |
+| LiveMixer                                | https://github.com/sonejostudios/LiveMixer                                                                                                                  |
+| two-filters                              | https://github.com/baconpaul/two-filters                                                                                                                    |
+| Chasm                                    | https://github.com/DirektDSP/Chasm                                                                                                                          |
+| PoeesiaVol1Women                         | https://codeberg.org/IvyAudio/PoeesiaVol1Women                                                                                                              |
+| Saturation                               | https://github.com/apmastering/Saturation                                                                                                                   |
+| APComp                                   | https://github.com/apmastering/APComp                                                                                                                       |
+| kunquat                                  | https://github.com/kunquat/kunquat                                                                                                                          |
+| StoneMistress                            | https://github.com/NaviCisco/StoneMistress                                                                                                                  |
+| intersect-lv2                            | https://github.com/sboukortt/intersect-lv2                                                                                                                  |
+| blue                                     | https://github.com/kunstmusik/blue                                                                                                                          |
+| VOSIMSynth                               | https://github.com/austensatterlee/VOSIMSynth                                                                                                               |
+| ConvertWithMoss                          | https://github.com/git-moss/ConvertWithMoss                                                                                                                 |
+| OmniAmp                                  | https://github.com/ArborealAudio/OmniAmp                                                                                                                    |
+| STR-X                                    | https://github.com/ArborealAudio/STR-X                                                                                                                      |
+| midi-okular-pageturner                   | https://github.com/wakira/midi-okular-pageturner                                                                                                            |
+| RTcmix                                   | https://github.com/RTcmix/RTcmix                                                                                                                            |
+| RTcmixShell                              | https://github.com/RTcmix/RTcmixShell                                                                                                                       |
+| MONSTR-Stereo-Imaging                    | https://github.com/jd-13/MONSTR-Stereo-Imaging                                                                                                              |
+| FFTBalance                               | https://github.com/juzzlin/FFTBalance                                                                                                                       |
+| kina-vst                                 | https://github.com/neurodyn/kina-vst                                                                                                                        |
+| cheapsynth01                             | https://github.com/yasuyuki-baba/cheapsynth01                                                                                                               |
+| dkbuilder-guitarix-lv2-plugins           | https://github.com/domichel/dkbuilder-guitarix-lv2-plugins                                                                                                  |
+| MISST                                    | https://github.com/Frikallo/MISST                                                                                                                           |
+| EasyABC                                  | https://github.com/jwdj/EasyABC                                                                                                                             |
+| Munt                                     | https://github.com/munt/munt                                                                                                                                |
+| tixl                                     | https://github.com/tixl3d/tixl                                                                                                                              |
+| Symphonium                               | https://github.com/ttdm/Symphonium                                                                                                                          |
+| qsynthi                                  | https://github.com/arth3mis/qsynthi                                                                                                                         |
+| ChorusExMachina                          | https://github.com/peastman/ChorusExMachina                                                                                                                 |
+| osm                                      | https://github.com/psmokotnin/osm                                                                                                                           |
+| vitalium-verb                            | https://github.com/BillyDM/vitalium-verb                                                                                                                    |
+| CTAGDRC                                  | https://github.com/BillyDM/CTAGDRC                                                                                                                          |
+| VST-AnalogChannel                        | https://github.com/FilTer87/VST-AnalogChannel                                                                                                               |
+| SpatGRIS                                 | https://github.com/GRIS-UdeM/SpatGRIS                                                                                                                       |
+| iem-wfs                                  | https://git.iem.at/audioplugins/iem-wfs                                                                                                                     |
+| cqt-analyzer                             | https://git.iem.at/audioplugins/cqt-analyzer                                                                                                                |
+| VoyeSeq                                  | https://github.com/yellius/VoyeSeq                                                                                                                          |
+| plugins                                  | https://github.com/luna-co-software/plugins                                                                                                                 |
+| rnnoise                                  | https://github.com/xiph/rnnoise                                                                                                                             |
+| OxiSynth                                 | https://github.com/PolyMeilex/OxiSynth                                                                                                                      |
+| tune                                     | https://github.com/Woyten/tune                                                                                                                              |
+| xsynth                                   | https://github.com/BlackMIDIDevs/xsynth                                                                                                                     |
+| 3HSPlug                                  | https://github.com/src3453/3HSPlug                                                                                                                          |
+| sonusmix                                 | https://codeberg.org/sonusmix/sonusmix                                                                                                                      |
+| Overdrive-ReNEO                          | https://github.com/Mrugalla/Overdrive-ReNEO                                                                                                                 |
+| Hammer-and-Meiszel                       | https://github.com/Mrugalla/Hammer-and-Meiszel                                                                                                              |
+| Manta                                    | https://github.com/Mrugalla/Manta                                                                                                                           |
+| NEL-19                                   | https://github.com/Mrugalla/NEL-19                                                                                                                          |
+| Relief_Compressor                        | https://github.com/Kiriki-liszt/Relief_Compressor                                                                                                           |
+| Pult-EQ                                  | https://github.com/consint/Pult-EQ                                                                                                                          |
+| audio-plugin-coder                       | https://github.com/Noizefield/audio-plugin-coder                                                                                                            |
+| airwindows-clap-build                    | https://github.com/stevefolta/airwindows-clap-build                                                                                                         |
+| Enover                                   | https://github.com/chmaha/Enover                                                                                                                            |
+| gig2sfz                                  | https://github.com/stevefolta/gig2sfz                                                                                                                       |
+| wolf-spectrum                            | https://github.com/wolf-plugins/wolf-spectrum                                                                                                               |
+| aelapse                                  | https://github.com/smiarx/aelapse                                                                                                                           |
+| Squeezer                                 | https://github.com/mzuther/Squeezer                                                                                                                         |
+| reapack-jm                               | https://github.com/jozmac/reapack-jm                                                                                                                        |
+| TeAr                                     | https://github.com/odoare/TeAr                                                                                                                              |
+| retromulator                             | https://github.com/reales/retromulator                                                                                                                      |
+| INTERSECT                                | https://github.com/tucktuckg00se/INTERSECT                                                                                                                  |
+| hvcc-plugins                             | https://github.com/mod-audio/hvcc-plugins                                                                                                                   |
+| VCV-PureData                             | https://github.com/porres/VCV-PureData                                                                                                                      |
+| Mercury                                  | https://github.com/GuitarML/Mercury                                                                                                                         |
+| Earth                                    | https://github.com/GuitarML/Earth                                                                                                                           |
+| emusc                                    | https://github.com/skjelten/emusc                                                                                                                           |
+| textbeat                                 | https://github.com/flipcoder/textbeat                                                                                                                       |
+| cane                                     | https://github.com/tarpit-collective/cane                                                                                                                   |
+| picoTracker                              | https://github.com/xiphonics/picoTracker                                                                                                                    |
+| ArachnoTracker                           | https://github.com/EricsonWillians/ArachnoTracker                                                                                                           |
+| musializer-plugin                        | https://github.com/ameyakakade/musializer-plugin                                                                                                            |
+| VstProfiler                              | https://github.com/QuentinStoll/VstProfiler                                                                                                                 |
+| Instrudio                                | https://github.com/GareBear99/Instrudio                                                                                                                     |
+| verberate                                | https://github.com/ameyakakade/verberate                                                                                                                    |
+| Songbird-Formant-Filter                  | https://github.com/jd-13/Songbird-Formant-Filter                                                                                                            |
+| metronomek                               | https://github.com/SeeLook/metronomek                                                                                                                       |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
