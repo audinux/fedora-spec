@@ -4,7 +4,7 @@
 # Category: DAW, MIDI
 
 Name: magda-core
-Version: 0.4.4
+Version: 0.4.5
 Release: 1%{?dist}
 Summary: A DAW built for automation, transformation, and fast musical iteration
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./magda-core-source.sh <TAG>
-#        ./magda-core-source.sh v0.4.4
+#        ./magda-core-source.sh v0.4.5
 
 Source0: magda-core.tar.gz
 Source1: magda-core-source.sh
@@ -84,6 +84,9 @@ rm -rf %{buildroot}/%{_libdir}
 %{_bindir}/*
 
 %changelog
+* Mon Apr 13 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.5-1
+- update to 0.4.5-1
+
 * Sun Apr 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.4-1
 - update to 0.4.4-1
 
