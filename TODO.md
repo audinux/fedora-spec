@@ -269,6 +269,19 @@
 | verberate                                | https://github.com/ameyakakade/verberate                                                                                                                    |
 | Songbird-Formant-Filter                  | https://github.com/jd-13/Songbird-Formant-Filter                                                                                                            |
 | metronomek                               | https://github.com/SeeLook/metronomek                                                                                                                       |
+| mucap                                    | https://github.com/polygon/mucap                                                                                                                            |
+| mpe-emulator                             | https://github.com/attilammagyar/mpe-emulator                                                                                                               |
+| aelapse                                  | https://github.com/smiarx/aelapse                                                                                                                           |
+| DEL2                                     | https://github.com/magnetophon/DEL2                                                                                                                         |
+| gpuaudio-sdk                             | https://github.com/gpuaudio/gpuaudio-sdk                                                                                                                    |
+| rverse                                   | https://github.com/SamuFL/rverse                                                                                                                            |
+| scream-dpf                               | https://gitlab.com/z3nlabs/scream-dpf                                                                                                                       |
+| reconnie                                 | https://codeberg.org/rubberplayer/reconnie                                                                                                                  |
+| nine-strip                               | https://github.com/blablack/nine-strip                                                                                                                      |
+| WarpCore                                 | https://github.com/ManasWolrd/WarpCore                                                                                                                      |
+| wetdelay                                 | https://github.com/yonie/wetdelay                                                                                                                           |
+| Nebula-De-Esser                          | https://github.com/subhankardas15071992-cloud/Nebula-De-Esser                                                                                               |
+| BiRR                                     | https://github.com/odoare/BiRR                                                                                                                              |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
