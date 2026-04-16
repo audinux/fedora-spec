@@ -27,6 +27,7 @@ BuildRequires: libxslt
 BuildRequires: zip
 BuildRequires: po4a
 BuildRequires: ImageMagick
+BuildRequires: librsvg2-tools
 BuildRequires: docbook-style-xsl
 %if 0%{?fedora} <= 38
 BuildRequires: wxGTK3-devel
@@ -46,6 +47,7 @@ BuildRequires: rtmidi-devel
 BuildRequires: portaudio-devel
 BuildRequires: yaml-cpp-devel
 BuildRequires: libcurl-devel
+BuildRequires: librsvg2-devel
 BuildRequires: desktop-file-utils
 
 %description
