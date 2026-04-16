@@ -4,7 +4,7 @@
 # Category: Programming
 
 Name: libreproc
-Version: 14.2.5
+Version: 14.2.7
 Release: 1%{?dist}
 Summary: A cross-platform (C99/C++11) process library
 License: GPL-2.0-or-later
@@ -14,7 +14,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/DaanDeMeyer/reproc/archive/v14.2.0.tar.gz#/reproc-%{version}.tar.gz
+Source0: https://github.com/daandemeyer/reproc/archive/refs/tags/v%{version}.tar.gz#/reproc-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -53,6 +53,9 @@ libreproc Development Files
 %{_libdir}/pkgconfig/*
 
 %changelog
+* Wed Apr 15 2026 Yann Collette <ycollette.nospam@free.fr> - 14.2.7-1
+- update to 14.2.7-1
+
 * Tue Mar 26 2024 Yann Collette <ycollette.nospam@free.fr> - 14.2.5-1
 - update to 14.2.5-1
 
