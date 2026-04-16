@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-%global commit0 3c78dcf405d2c1e0fe31aa49a40686b180311b32
+%global commit0 3833df302edd3ab89af1a276efc472f81b76fda9
 
 Name: BespokeSynth-weekly
 Version: 1.3.10
-Release: 20%{?dist}
+Release: 21%{?dist}
 Summary: A software modular synth
 License: GPL-3.0-or-later
 URL: https://github.com/BespokeSynth/BespokeSynth
@@ -129,6 +129,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/com.bespo
 %{_datadir}/metainfo/com.bespokesynth.BespokeSynth.metainfo.xml
 
 %changelog
+* Wed Apr 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-21
+- Update to 1.3.10-21 - 3833df302edd3ab89af1a276efc472f81b76fda9
+
 * Mon Apr 13 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-20
 - Update to 1.3.10-20 - 3c78dcf405d2c1e0fe31aa49a40686b180311b32
 
