@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Jack, MIDI
+# Tag: Tool
 # Type: Standalone
-# Category: Audio, DAW
+# Category: TOOL, Plugin
 
 %global debug_package %{nil}
 %define _lto_cflags %{nil}
