@@ -4,7 +4,7 @@
 # Category: MIDI, Tool
 
 Name: midifilter.lv2
-Version: 0.7.6
+Version: 0.7.7
 Release: 1%{?dist}
 Summary: LV2 plugins to filter midi events
 License: GPL-2.0-or-later
@@ -76,6 +76,9 @@ export OPTIMIZATIONS="$CFLAGS"
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Apr 20 2026 Yann Collette <ycollette.nospam@free.fr> - 0.7.7-1
+- update to 0.7.7-1
+
 * Mon Jan 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.7.6-1
 - update to 0.7.6-1
 
