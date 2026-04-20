@@ -285,6 +285,7 @@
 | RSTelecom                                | https://github.com/reillypascal/RSTelecom                                                                                                                   |
 | Image-In                                 | https://github.com/odoare/Image-In                                                                                                                          |
 | ToneZ                                    | https://github.com/retornz/ToneZ                                                                                                                            |
+| protoplug                                | https://github.com/pac-dev/protoplug                                                                                                                        |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
