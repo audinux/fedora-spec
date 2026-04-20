@@ -286,6 +286,7 @@
 | Image-In                                 | https://github.com/odoare/Image-In                                                                                                                          |
 | ToneZ                                    | https://github.com/retornz/ToneZ                                                                                                                            |
 | protoplug                                | https://github.com/pac-dev/protoplug                                                                                                                        |
+| SmoothIR                                 | https://github.com/brummer10/SmoothIR                                                                                                                       |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
