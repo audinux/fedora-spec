@@ -7,7 +7,7 @@
 
 Name: yabridge-tui
 Version: 0.2.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: TUI wrapper for yabridgectl
 License: GPL-3.0-or-later
 URL: https://codeberg.org/olivierlm/yabridge-tui
@@ -20,6 +20,8 @@ Source0: https://codeberg.org/olivierlm/yabridge-tui/archive/v0.2.1.tar.gz#/%{na
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
+
+Requires: yabridge
 
 %description
 TUI wrapper for yabridgectl. Manage Windows VST2/VST3/CLAP plugins on Linux without typing commands.
@@ -64,5 +66,8 @@ install -m 755 target/release/yabridge-tui %{buildroot}/%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Sat Apr 18 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.1-2
+- update to 0.2.1-2: add yabridge as requirements
+
 * Sat Apr 18 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.1-1
 - Initial spec file
