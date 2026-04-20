@@ -282,6 +282,9 @@
 | wetdelay                                 | https://github.com/yonie/wetdelay                                                                                                                           |
 | Nebula-De-Esser                          | https://github.com/subhankardas15071992-cloud/Nebula-De-Esser                                                                                               |
 | BiRR                                     | https://github.com/odoare/BiRR                                                                                                                              |
+| RSTelecom                                | https://github.com/reillypascal/RSTelecom                                                                                                                   |
+| Image-In                                 | https://github.com/odoare/Image-In                                                                                                                          |
+| ToneZ                                    | https://github.com/retornz/ToneZ                                                                                                                            |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
