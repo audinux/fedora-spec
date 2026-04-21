@@ -11,6 +11,7 @@ if [ $? == 1 ]; then
     exit 1
 fi
 git submodule update --init --recursive --progress
+git lfs checkout
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz magda-core.tar.gz magda-core/*
