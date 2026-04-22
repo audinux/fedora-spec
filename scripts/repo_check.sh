@@ -1128,7 +1128,8 @@ https://github.com/luciamarock/Polyphonic-Pitch-Detector-for-guitars
 https://github.com/Conceptual-Machines/magda-core
 https://github.com/ameyakakade/drummock
 https://github.com/mlm-games/yadaw
-https://codeberg.org/olivierlm/yabridge-tui"
+https://codeberg.org/olivierlm/yabridge-tui
+https://github.com/brunoherbelin/vimix"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
