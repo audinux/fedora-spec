@@ -287,6 +287,10 @@
 | ToneZ                                    | https://github.com/retornz/ToneZ                                                                                                                            |
 | protoplug                                | https://github.com/pac-dev/protoplug                                                                                                                        |
 | SmoothIR                                 | https://github.com/brummer10/SmoothIR                                                                                                                       |
+| there-will-be-blood                      | https://github.com/coconut-audio/there-will-be-blood                                                                                                        |
+| sound-of-music                           | https://github.com/coconut-audio/sound-of-music                                                                                                             |
+| pulp-fiction                             | https://github.com/coconut-audio/pulp-fiction                                                                                                               |
+| aether                                   | https://github.com/coconut-audio/aether                                                                                                                     |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
