@@ -1129,7 +1129,8 @@ https://github.com/Conceptual-Machines/magda-core
 https://github.com/ameyakakade/drummock
 https://github.com/mlm-games/yadaw
 https://codeberg.org/olivierlm/yabridge-tui
-https://github.com/brunoherbelin/vimix"
+https://github.com/brunoherbelin/vimix
+https://github.com/psemiletov/rokerpack"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
