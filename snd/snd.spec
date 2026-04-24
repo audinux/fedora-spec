@@ -5,7 +5,7 @@
 
 %define _lto_cflags %{nil}
 
-%define pkgver 26.1
+%define pkgver 26.3
 %define tarname snd-%{pkgver}
 %define snd_date "02/13/2026"
 
@@ -143,7 +143,7 @@ mkdir -p %{buildroot}%{_datadir}/icons/hicolor/32x32/apps
 install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/icons/hicolor/32x32/apps/
 
 # menu categories
-BASE="Application AudioVideo Audio"
+BASE="AudioVideo Audio"
 XTRA="X-Jack X-Editors"
 
 %{__mkdir} -p %{buildroot}%{_datadir}/applications
@@ -176,6 +176,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_bindir}/snd-info
 
 %changelog
+* Fri Apr 24 2026 Yann Collette <ycollette.nospam@free.fr> - 26.3-4
+- update to 26.3-4
+
 * Fri Feb 13 2026 Yann Collette <ycollette.nospam@free.fr> - 26.1-4
 - update to 26.1-4
 
