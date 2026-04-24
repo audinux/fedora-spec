@@ -1,0 +1,66 @@
+From d3ff8a88d7a7905057ddb8d87cc1cf7c761e71f0 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette@adobe.com>
+Date: Fri, 24 Apr 2026 18:51:22 +0200
+Subject: [PATCH 6/6] Fix reserve/resize bugs causing segfault on Linux in
+ update_snaps and get_profile_points
+
+reserve() only allocates capacity without changing size, making operator[]
+access undefined behaviour caught by libstdc++ assertions on Linux.
+Replace reserve with resize in basic_editor::update_snaps (xlines, ylines),
+multi_curve::get_total_points (crvs), and multi_curve::get_profile_points
+(profile), and drop the now-redundant profile.clear() call.
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+---
+ src/basic_editor.cc | 4 ++--
+ src/multi_curve.cc  | 5 ++---
+ 2 files changed, 4 insertions(+), 5 deletions(-)
+
+diff --git a/src/basic_editor.cc b/src/basic_editor.cc
+index fd9aee9..e3acd48 100644
+--- a/src/basic_editor.cc
++++ b/src/basic_editor.cc
+@@ -288,7 +288,7 @@ void basic_editor::update_snaps () {
+     n = 4 * p;
+     nx2 = n / 2;
+     if (n > nx) {
+-      xlines.reserve (n);
++      xlines.resize (n);
+       nx = n;
+     }
+     for (int i = 0, j = 0; i < p; ++i) {
+@@ -311,7 +311,7 @@ void basic_editor::update_snaps () {
+     n = 4 * p;
+     ny2 = n / 2;
+     if (n > ny) {
+-      ylines.reserve (n);
++      ylines.resize (n);
+       ny = n;
+     }
+     for (int i = 0, j = 0; i < p; ++i) {
+diff --git a/src/multi_curve.cc b/src/multi_curve.cc
+index 39dedac..90b7aa2 100644
+--- a/src/multi_curve.cc
++++ b/src/multi_curve.cc
+@@ -601,7 +601,7 @@ int multi_curve::get_total_points () {
+ 
+ int multi_curve::get_total_points (vector<int>& crvs) {
+   int j = ncurvs, j_1 = j - 1;
+-  crvs.reserve (j);
++  crvs.resize (j);
+   int total = 0;
+   for (int i = 0; i < j; ++i) {
+     vector<crvpt>& vpts = curv[i].vpts; 
+@@ -618,8 +618,7 @@ int multi_curve::get_total_points (vector<int>& crvs) {
+ int multi_curve::get_profile_points (vector<crvpt>& profile) {
+   vector<int> crvs;
+   int n = get_total_points (crvs);
+-  profile.reserve (n);
+-  profile.clear ();
++  profile.resize (n);
+   for (int i = 0, k = 0; i < ncurvs; ++i) {
+     vector<crvpt>& vpts = curv[i].vpts; 
+     for (int p = 0; p < crvs[i]; ++p) profile[k++] = vpts[p];
+-- 
+2.53.0
+

@@ -1,0 +1,34 @@
+From 94bdfd4346ab61e58cc4307db896ec21ecf04840 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette@adobe.com>
+Date: Fri, 24 Apr 2026 15:40:37 +0200
+Subject: [PATCH 4/6] Fix mondrian::earliest_leaf / latest_leaf crash on empty
+ container
+
+Both functions dereferenced begin() / --end() without checking whether the
+leaves list was empty, causing undefined behaviour. Return nullptr instead.
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+---
+ src/mondrian.cc | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/mondrian.cc b/src/mondrian.cc
+index c098249..d3b03a9 100644
+--- a/src/mondrian.cc
++++ b/src/mondrian.cc
+@@ -835,10 +835,12 @@ void mondrian::remove_leaf (rect* L) {
+ }
+ 
+ rect* mondrian::earliest_leaf () {
++  if (leaves.empty()) return 0;
+   return *(leaves.begin());
+ }
+ 
+ rect* mondrian::latest_leaf () {
++  if (leaves.empty()) return 0;
+   return *(--leaves.end());
+ }
+ 
+-- 
+2.53.0
+

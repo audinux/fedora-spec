@@ -1,0 +1,28 @@
+From 175b6344e3b30da7bf3806452518351cbd0e6382 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette@adobe.com>
+Date: Fri, 24 Apr 2026 15:39:42 +0200
+Subject: [PATCH 2/6] Guard against empty bits vector in number.cc render()
+
+bits[0] and bits[last_bit] were accessed unconditionally. If num_bits is 0
+the vector is empty and both accesses are out-of-bounds. Return early instead.
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+---
+ src/number.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/number.cc b/src/number.cc
+index ede3cf7..a10f42b 100644
+--- a/src/number.cc
++++ b/src/number.cc
+@@ -174,6 +174,7 @@ void number::render () {
+   shapeform = cb_make_shapeform.state;
+   vector<unsigned char>& bits = bd_bits.bits;
+   int num_bits = bd_bits.num_bits;
++  if (num_bits == 0) return;
+   points.clear ();
+   float scale = sp_scale.value;
+   float cx = 0.5, cy = 0;
+-- 
+2.53.0
+

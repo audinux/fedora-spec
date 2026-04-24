@@ -3,7 +3,7 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-%global din_vers_major 59
+%global din_vers_major 63
 %global din_vers_minor 0
 %global din_vers_patch 0
 Summary: DIN is a synth of a 3rd kind
@@ -18,6 +18,12 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://dinisnoise.org/files/din-%{din_vers_major}.tar.gz
+Patch0: 0001-Fix-vector-reference-invalidation-in-number.cc-rende.patch
+Patch1: 0002-Guard-against-empty-bits-vector-in-number.cc-render.patch
+Patch2: 0003-Fix-superformula-crash-when-bookmarks-list-is-empty.patch
+Patch3: 0004-Fix-mondrian-earliest_leaf-latest_leaf-crash-on-empt.patch
+Patch4: 0005-Fix-bit_display-handle_input-out-of-bounds-access-wh.patch
+Patch5: 0006-Fix-reserve-resize-bugs-causing-segfault-on-Linux-in.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: autoconf
@@ -51,17 +57,23 @@ Requires: din
 Jack version of the Din synthesizer
 
 %prep
-%autosetup -n %{name}-%din_vers_major
+%autosetup -p1 -n %{name}-%din_vers_major
 
 # __line conflict with std c++ headers
 sed -i -e "s/__line/__dinline/g" src/line.h
 
+# remove strip from Makefile
+sed -i -e "/@strip --strip-all din\$(EXEEXT)/d" src/Makefile.am
+
 %build
+
 %set_build_flags
 
 # To select an api:
 # __UNIX_JACK__
 # __LINUX_ALSA__
+
+autoreconf
 
 mkdir build_jack
 cd build_jack
@@ -134,6 +146,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/din-jack.desktop
 %{_datadir}/applications/din-jack.desktop
 
 %changelog
+* Fri Apr 24 2026 Yann Collette <ycollette dot nospam at free.fr> 63.0.0-1
+- update to 63.0.0-1
+
 * Sat Jan 18 2025 Yann Collette <ycollette dot nospam at free.fr> 59.0.0-1
 - update to 59.0.0-1
 

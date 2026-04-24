@@ -1,0 +1,37 @@
+From 9f7397f4ddc89ce9bb2434471f0dc2e639e646ea Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette@adobe.com>
+Date: Fri, 24 Apr 2026 15:40:16 +0200
+Subject: [PATCH 3/6] Fix superformula crash when bookmarks list is empty
+
+bid was uninitialized in the constructor. browse() called wrap(0, bid, -1)
+and then indexed into an empty bookmarks vector when nbookmarks == 0.
+Initialize bid to 0 and guard browse() with an early return.
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+---
+ src/superformula.cc | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/superformula.cc b/src/superformula.cc
+index 19f3b41..454e732 100644
+--- a/src/superformula.cc
++++ b/src/superformula.cc
+@@ -21,6 +21,7 @@ superformula::superformula () {
+   name = "Superformula";
+   center_x = 0.5;
+   center_y = 0;
++  bid = 0;
+   load_params ();
+ }
+ 
+@@ -134,6 +135,7 @@ void superformula::render () {
+ }
+ 
+ void superformula::browse (int i) {
++  if (nbookmarks == 0) return;
+   bid += i;
+   wrap (0, bid, nbookmarks-1);
+   bookmark& bi = bookmarks[bid];
+-- 
+2.53.0
+

@@ -1,0 +1,30 @@
+From 35f4824c8eabc93ed7141f693fda8da52606f36d Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette@adobe.com>
+Date: Fri, 24 Apr 2026 15:40:57 +0200
+Subject: [PATCH 5/6] Fix bit_display::handle_input out-of-bounds access when
+ bits is empty
+
+find_bit_id() returns last_bit which equals -1 when num_bits is 0, and
+bits[cur_id] would then be an out-of-bounds access. Return early when the
+widget has no bits to display.
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+---
+ src/bit_display.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/bit_display.cc b/src/bit_display.cc
+index 3e8722a..1cebc7e 100644
+--- a/src/bit_display.cc
++++ b/src/bit_display.cc
+@@ -60,6 +60,7 @@ int bit_display::find_bit_id () {
+ 
+ int bit_display::handle_input () {
+   int ret = widget::handle_input ();
++  if (hover && num_bits == 0) return ret;
+   if (hover) {
+     if (lmb) {
+       cur_id = find_bit_id ();
+-- 
+2.53.0
+

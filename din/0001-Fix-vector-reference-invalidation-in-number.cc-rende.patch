@@ -1,0 +1,29 @@
+From 220ad7622cfe69f8e962649d83e9fb57177f376a Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette@adobe.com>
+Date: Fri, 24 Apr 2026 15:39:23 +0200
+Subject: [PATCH 1/6] Fix vector reference invalidation in number.cc render()
+
+points.begin() was stored as a reference before push_back(), which can
+reallocate the vector and leave a dangling reference. Store by value instead.
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+---
+ src/number.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/number.cc b/src/number.cc
+index 4661f93..ede3cf7 100644
+--- a/src/number.cc
++++ b/src/number.cc
+@@ -210,7 +210,7 @@ void number::render () {
+       pbi = bi;
+     }
+     if (b0 != bl) {
+-      point<float>& p0 = *points.begin ();
++      point<float> p0 = *points.begin ();
+       points.push_back (p0);
+     }
+   } else {
+-- 
+2.53.0
+
