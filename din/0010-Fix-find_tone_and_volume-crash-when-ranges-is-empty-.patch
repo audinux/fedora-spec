@@ -1,0 +1,27 @@
+From 26cade559bd0075fc94f6e9b8faec14dbbd75f17 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette@adobe.com>
+Date: Sat, 25 Apr 2026 10:05:12 +0200
+Subject: [PATCH 1/2] Fix find_tone_and_volume crash when ranges is empty at
+ startup
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+---
+ src/microtonal-keyboard.cc | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/microtonal-keyboard.cc b/src/microtonal-keyboard.cc
+index 99dd558..4395eea 100644
+--- a/src/microtonal-keyboard.cc
++++ b/src/microtonal-keyboard.cc
+@@ -2476,6 +2476,8 @@ int microtonal_keyboard::find_range (float x, int r) {
+ 
+ int microtonal_keyboard::find_tone_and_volume () {
+ 
++  if (num_ranges == 0) return 0;
++
+   // locate current tone
+   range* curr = &ranges [current_range];
+   box<int>& e = curr->extents;
+-- 
+2.53.0
+

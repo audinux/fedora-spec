@@ -1,0 +1,30 @@
+From de5d3b093cd96e1c318da9ef32fb869ba99a276a Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette@adobe.com>
+Date: Sat, 25 Apr 2026 09:19:14 +0200
+Subject: [PATCH] Fix menu::load_range_mod crash when sel_range exceeds ranges
+ vector size
+
+Guard against out-of-bounds access when saved sel_range index is larger
+than the current mkb.ranges vector (e.g. after loading a scale with
+fewer ranges).
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+---
+ src/menu.cc | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/menu.cc b/src/menu.cc
+index be31728..4cbe619 100644
+--- a/src/menu.cc
++++ b/src/menu.cc
+@@ -3544,6 +3544,7 @@ void menu::load_range (int r) {
+ }
+ 
+ void menu::load_range_mod (int r) {
++  if (r < 0 || static_cast<size_t>(r) >= mkb.ranges.size()) return;
+   range& ri = mkb.ranges [r];
+   cb_mod_ran.set_state (ri.mod.active, 0);
+   sp_ran_mod_width.set_value (ri.mod.fm.depth);
+-- 
+2.53.0
+

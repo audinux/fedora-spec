@@ -1,0 +1,44 @@
+From 9c624a49035e1fde577c4adc386cdf80614a65c7 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette@adobe.com>
+Date: Sat, 25 Apr 2026 10:28:12 +0200
+Subject: [PATCH] Fix two null-pointer/OOB bugs in delay::prep and
+ delay::operator()
+
+In prep(), samples[nsamples-1] was read as the fill() start value when
+nsamples==0 (first allocation), giving an out-of-bounds access at
+samples[-1]. Guard the call with if (nsamples > 0).
+
+In operator(), fbk/vol/samples are null until set() is first called, but
+applyfx() invokes the operator unconditionally on the global left_delay /
+right_delay objects. Add an early return when nsamples==0.
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+---
+ src/delay.cc | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/src/delay.cc b/src/delay.cc
+index 025058c..69c8d03 100644
+--- a/src/delay.cc
++++ b/src/delay.cc
+@@ -75,7 +75,8 @@ void delay::prep () {
+     }
+     samples = newsamples;
+     int extra = n - nsamples;
+-    fill (samples, samples [nsamples - 1], samples [0], extra);
++    if (nsamples > 0)
++      fill (samples, samples [nsamples - 1], samples [0], extra);
+     float** nbf[2] = {&fbk, &vol};
+     for (int i = 0; i < 2; ++i) {
+       float* bi = *nbf[i];
+@@ -111,6 +112,7 @@ void delay::get (float& p, float& q) {
+ }
+ 
+ void delay::operator() (float* out, int n, float fdr) {
++  if (!nsamples) return;
+   float fo, fi;
+   for (int i = 0; i < n; ++i) {
+     float& si = samples [id];
+-- 
+2.53.0
+

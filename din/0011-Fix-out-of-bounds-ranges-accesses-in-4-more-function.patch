@@ -1,0 +1,56 @@
+From a62939b92d63ac732214d290cddbdfa74f1d087c Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette@adobe.com>
+Date: Sat, 25 Apr 2026 10:13:15 +0200
+Subject: [PATCH 2/2] Fix out-of-bounds ranges[] accesses in 4 more functions
+ when ranges is empty
+
+- selected_range_to_all: guard ranges[sel_range] access
+- find_range: guard ranges[r] access (called from drone::set_pos)
+- set_ran_mod / toggle_ran_mod: guard ranges[sel_range] after the loop
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+---
+ src/microtonal-keyboard.cc | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/src/microtonal-keyboard.cc b/src/microtonal-keyboard.cc
+index 4395eea..eedec78 100644
+--- a/src/microtonal-keyboard.cc
++++ b/src/microtonal-keyboard.cc
+@@ -329,6 +329,7 @@ void microtonal_keyboard::default_range_to_all (int h) {
+ }
+ 
+ void microtonal_keyboard::selected_range_to_all (int h) {
++  if (num_ranges == 0) return;
+   if (h)
+     set_range_height (0, last_range, ranges[dinfo.sel_range].extents.height);
+   else
+@@ -2453,6 +2454,7 @@ void microtonal_keyboard::find_visible_ranges (int dir) {
+ }
+ 
+ int microtonal_keyboard::find_range (float x, int r) {
++  if (num_ranges == 0) return 0;
+   while (1) {
+     range& curr = ranges [r];
+     float deltax = x - curr.extents.left;
+@@ -4167,7 +4169,7 @@ void microtonal_keyboard::set_ran_mod (int w) {
+     range& ri = ranges[i];
+     ri.mod.active = w;
+   }
+-  MENU.cb_mod_ran.set_state (ranges[dinfo.sel_range].mod.active, 0);
++  if (num_ranges > 0) MENU.cb_mod_ran.set_state (ranges[dinfo.sel_range].mod.active, 0);
+ }
+ 
+ void microtonal_keyboard::pause_resume_ran_mod () {
+@@ -4182,7 +4184,7 @@ void microtonal_keyboard::toggle_ran_mod () {
+     range& ri = ranges[i];
+     ri.mod.active = !ri.mod.active;
+   }
+-  MENU.cb_mod_ran.set_state (ranges[dinfo.sel_range].mod.active, 0);
++  if (num_ranges > 0) MENU.cb_mod_ran.set_state (ranges[dinfo.sel_range].mod.active, 0);
+ }
+ 
+ void microtonal_keyboard::update_drone_mod_solvers (int w, multi_curve& mx) {
+-- 
+2.53.0
+

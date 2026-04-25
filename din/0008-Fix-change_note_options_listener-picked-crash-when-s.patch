@@ -1,0 +1,29 @@
+From 63d0a26711f72dc80f1636ee3bbb19620148784d Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette@adobe.com>
+Date: Sat, 25 Apr 2026 09:46:33 +0200
+Subject: [PATCH] Fix change_note_options_listener::picked crash when sel_range
+ is out of bounds
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+---
+ src/menu.cc | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/src/menu.cc b/src/menu.cc
+index 4cbe619..688d52d 100644
+--- a/src/menu.cc
++++ b/src/menu.cc
+@@ -4517,7 +4517,9 @@ void change_note_options_listener::picked (label& lbl, int dir) {
+       MENU.remove_from_tab (MENUP.cb_mkb_ranges, MENUP.ol_change_note_style); 
+     string cn (mkb_info::cnno[mkb.dinfo.change_note]);
+     lbl.set_text (chg+cn);
+-    print_range_info (mkb.ranges[mkb.dinfo.sel_range]);
++    int sr = mkb.dinfo.sel_range;
++    if (sr >= 0 && static_cast<size_t>(sr) < mkb.ranges.size())
++      print_range_info (mkb.ranges[sr]);
+   } else {
+     mkb.dinfo.change_note_style = !mkb.dinfo.change_note_style;
+     set (lbl, mkb.dinfo.change_note_style);
+-- 
+2.53.0
+

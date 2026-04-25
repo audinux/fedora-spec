@@ -1,0 +1,39 @@
+From 402a83362af0d1b71d0aa1d8a15e6e97de346a5f Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette@adobe.com>
+Date: Sat, 25 Apr 2026 09:58:05 +0200
+Subject: [PATCH] Fix find_current_range / find_visible_ranges crash when
+ ranges is empty at startup
+
+window_resized is called before create_ranges runs, so num_ranges == 0 and
+ranges is empty; accessing ranges[0] or ranges[last_range] triggers abort.
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+---
+ src/microtonal-keyboard.cc | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/src/microtonal-keyboard.cc b/src/microtonal-keyboard.cc
+index e3408f2..99dd558 100644
+--- a/src/microtonal-keyboard.cc
++++ b/src/microtonal-keyboard.cc
+@@ -2420,6 +2420,7 @@ void microtonal_keyboard::scroll (int dx, int dy, int warp_mouse) {
+ }
+ 
+ void microtonal_keyboard::find_current_range () {
++  if (num_ranges == 0) return;
+   // find the range where mouse is found
+   if (win_mousex <= ranges[0].extents.left) current_range = 0; else
+   if (win_mousex >= ranges[last_range].extents.right) current_range = last_range; else
+@@ -2434,7 +2435,8 @@ void microtonal_keyboard::find_current_range () {
+   find_visible_ranges ();
+ }
+ 
+-void microtonal_keyboard::find_visible_ranges (int dir) { 
++void microtonal_keyboard::find_visible_ranges (int dir) {
++  if (num_ranges == 0) return;
+   // we only draw visible ranges
+   if (dir > 0) {
+     while ((visr < last_range) && (ranges[visr].extents.right < win.right)) ++visr;
+-- 
+2.53.0
+

@@ -1,0 +1,58 @@
+From c0cb576b34db0989ba134804e0918151d602fc64 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette@adobe.com>
+Date: Sat, 25 Apr 2026 10:40:13 +0200
+Subject: [PATCH] Fix OOB and null-pointer bugs in keyboard_keyboard::draw and
+ note_on
+
+- Guard midi note marking loop with keys.empty() check
+- Cap notes/keys iteration to min(notes.size(), keys.size()) to prevent OOB
+- Guard note_on early return when keys is empty
+- Add missing <algorithm> include for std::min
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+---
+ src/keyboard_keyboard.cc | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/src/keyboard_keyboard.cc b/src/keyboard_keyboard.cc
+index 808e361..5b43c67 100644
+--- a/src/keyboard_keyboard.cc
++++ b/src/keyboard_keyboard.cc
+@@ -17,6 +17,7 @@
+ #include "console.h"
+ #include "color.h"
+ #include "log.h"
++#include <algorithm>
+ #include <fstream>
+ using namespace std;
+ 
+@@ -388,7 +389,7 @@ void keyboard_keyboard::draw () {
+ 
+   if (UI_OFF) return;
+ 
+-  if (midiin.available) { // mark midi notes
++  if (midiin.available && !keys.empty ()) { // mark midi notes
+     glColor3f (0.25, 0.25, 0.25);
+     int startx = keys[0].x, starty = keys[0].y;
+     int marker = 15;
+@@ -409,7 +410,7 @@ void keyboard_keyboard::draw () {
+ 
+   if (num_triggered_notes) {
+     if (show_nearby_notes) { // mark notes near to cursor
+-      for (int i = 0, j = notes.size (); i < j; ++i) {
++      for (int i = 0, j = std::min (notes.size (), keys.size ()); i < j; ++i) {
+         key_info& ki = keys [i];
+         note& ni = notes[i];
+         float dhz = ni.hz - recent_note_hz;
+@@ -497,6 +498,8 @@ void keyboard_keyboard::note_on (unsigned char id, unsigned char vel) {
+     return;
+   }
+ 
++  if (keys.empty ()) return;
++
+   note& n = midi_notes [id];
+   int i12 = id % 12;
+ 
+-- 
+2.53.0
+

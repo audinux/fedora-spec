@@ -24,6 +24,13 @@ Patch2: 0003-Fix-superformula-crash-when-bookmarks-list-is-empty.patch
 Patch3: 0004-Fix-mondrian-earliest_leaf-latest_leaf-crash-on-empt.patch
 Patch4: 0005-Fix-bit_display-handle_input-out-of-bounds-access-wh.patch
 Patch5: 0006-Fix-reserve-resize-bugs-causing-segfault-on-Linux-in.patch
+Patch6: 0007-Fix-menu-load_range_mod-crash-when-sel_range-exceeds.patch
+Patch7: 0008-Fix-change_note_options_listener-picked-crash-when-s.patch
+Patch8: 0009-Fix-find_current_range-find_visible_ranges-crash-whe.patch
+Patch9: 0010-Fix-find_tone_and_volume-crash-when-ranges-is-empty-.patch
+Patch10: 0011-Fix-out-of-bounds-ranges-accesses-in-4-more-function.patch
+Patch11: 0012-Fix-two-null-pointer-OOB-bugs-in-delay-prep-and-dela.patch
+Patch12: 0013-Fix-OOB-and-null-pointer-bugs-in-keyboard_keyboard-d.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: autoconf
@@ -48,16 +55,8 @@ In digital music software.
 You had pulse, sine, triangle and sawtooth,
 And went forth and made electronic music.
 
-%package -n din-jack
-Summary:  Jack version of the Din synthesiser
-Requires: %{name}%{?_isa} = %{version}-%{release}
-Requires: din
-
-%description -n din-jack
-Jack version of the Din synthesizer
-
 %prep
-%autosetup -p1 -n %{name}-%din_vers_major
+%autosetup -p1 -n %{name}-%{din_vers_major}
 
 # __line conflict with std c++ headers
 sed -i -e "s/__line/__dinline/g" src/line.h
@@ -135,14 +134,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/din-jack.desktop
 %files
 %doc AUTHORS CHANGELOG BUGS INSTALL NEWS README TODO
 %license COPYING
-%{_bindir}/*
-%{_datadir}/%{name}/
-%{_datadir}/applications/din.desktop
+%{_bindir}/din
+%{_bindir}/din-jack
 %{_datadir}/icons/hicolor/scalable/apps/din.svg
 %{_datadir}/pixmaps/din.png
-
-%files -n din-jack
-%{_bindir}/din-jack
+%{_datadir}/%{name}/factory/*
+%{_datadir}/applications/din.desktop
 %{_datadir}/applications/din-jack.desktop
 
 %changelog
