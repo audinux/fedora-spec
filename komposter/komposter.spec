@@ -7,10 +7,10 @@ Name: komposter
 Version: 0.1
 Release: 1%{?dist}
 Summary: Modular virtual analog software synthesizer and sequencer for 4KB and 64KB intros
-
 License: GPL-2.0
 URL: https://github.com/electronoora/komposter
 ExclusiveArch: x86_64 aarch64
+
 Source0: https://github.com/electronoora/komposter/archive/refs/heads/master.zip#/komposter.zip
 
 BuildRequires: gcc gcc-c++
