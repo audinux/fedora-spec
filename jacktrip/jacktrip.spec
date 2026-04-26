@@ -5,7 +5,7 @@
 
 Summary: Multimachine jam sessions over the internet
 Name: jacktrip
-Version: 2.7.2
+Version: 3.0.0
 Release: 2%{?dist}
 License: STK
 URL: https://ccrma.stanford.edu/software/jacktrip/
@@ -15,7 +15,7 @@ Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
 
 # Usage: ./source-jacktrip.sh <tag>
-#        ./source-jacktrip.sh v2.7.2
+#        ./source-jacktrip.sh v3.0.0
 
 Source0: jacktrip.tar.gz
 Source1: source-jacktrip.sh
@@ -74,7 +74,6 @@ desktop-file-install                         \
   %{buildroot}/%{_datadir}/applications/org.jacktrip.JackTrip.desktop
 
 # cleanup
-
 rm -f %{buildroot}/%{_libdir}/libsamplerate.a
 
 %check
@@ -91,6 +90,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/org.jackt
 %{_mandir}/man1/*
 
 %changelog
+* Sun Apr 26 2026 Yann Collette <ycollette.nospam@free.fr> - 3.0.0-2
+- update to 3.0.0-2
+
 * Sun Feb 08 2026 Yann Collette <ycollette.nospam@free.fr> - 2.7.2-2
 - update to 2.7.2-2
 
