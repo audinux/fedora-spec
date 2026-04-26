@@ -1131,7 +1131,8 @@ https://github.com/mlm-games/yadaw
 https://codeberg.org/olivierlm/yabridge-tui
 https://github.com/brunoherbelin/vimix
 https://github.com/psemiletov/rokerpack
-https://github.com/brummer10/SmoothIR"
+https://github.com/brummer10/SmoothIR
+https://github.com/reduz/chibitracker"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
