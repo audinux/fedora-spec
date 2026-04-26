@@ -5,7 +5,7 @@
 
 Name: libefsw
 Summary: efsw is a C++ cross-platform file system watcher and notifier.
-Version: 1.5.1
+Version: 1.6.0
 Release: 1%{?dist}
 License: MIT
 URL: https://github.com/SpartanJ/efsw
@@ -66,6 +66,9 @@ The %{name}-static package contains static library for %{name}.
 %{_libdir}/*.a
 
 %changelog
+* Sun Apr 26 2026 Yann Collette <ycollette dot nospam at free.fr> 1.6.0-1
+- update to 1.6.0-1
+
 * Wed Jan 07 2026 Yann Collette <ycollette dot nospam at free.fr> 1.5.1-1
 - update to 1.5.1-1
 
