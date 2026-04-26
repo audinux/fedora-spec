@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: ultramaster-kr106
-Version: 2.5.11
+Version: 2.5.12
 Release: 1%{?dist}
 Summary: JUCE port of Ultramaster Group's classic 2001 software synth
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./ultramaster-kr106-source.sh <TAG>
-#        ./ultramaster-kr106-source.sh v2.5.11
+#        ./ultramaster-kr106-source.sh v2.5.12
 
 Source0: ultramaster_kr106.tar.gz
 Source1: ultramaster-kr106-source.sh
@@ -118,6 +118,9 @@ cp -ra %{__cmake_builddir}/KR106_artefacts/CLAP/*  %{buildroot}/%{_libdir}/clap/
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Apr 25 2026 Yann Collette <ycollette.nospam@free.fr> - 2.5.12-1
+- update to 2.5.12-1
+
 * Sat Apr 25 2026 Yann Collette <ycollette.nospam@free.fr> - 2.5.11-1
 - update to 2.5.11-1
 
