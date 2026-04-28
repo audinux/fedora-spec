@@ -285,11 +285,13 @@
 | RSTelecom                                | https://github.com/reillypascal/RSTelecom                                                                                                                   |
 | Image-In                                 | https://github.com/odoare/Image-In                                                                                                                          |
 | ToneZ                                    | https://github.com/retornz/ToneZ                                                                                                                            |
-| protoplug                                | https://github.com/pac-dev/protoplug                                                                                                                        |
 | there-will-be-blood                      | https://github.com/coconut-audio/there-will-be-blood                                                                                                        |
 | sound-of-music                           | https://github.com/coconut-audio/sound-of-music                                                                                                             |
 | pulp-fiction                             | https://github.com/coconut-audio/pulp-fiction                                                                                                               |
 | aether                                   | https://github.com/coconut-audio/aether                                                                                                                     |
+| ArachnoTracker                           | https://github.com/EricsonWillians/ArachnoTracker                                                                                                           |
+| DPF                                      | https://github.com/Chmod666music/DPF                                                                                                                        |
+| omelette-tracker                         | https://github.com/lowerothello/omelette-tracker                                                                                                            |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
