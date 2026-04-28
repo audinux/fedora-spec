@@ -134,6 +134,7 @@ Install QEmu-KVM and the SDL interface.
 ```
 $ dnf install qemu-system-x86-core qemu-kvm
 $ dnf install qemu-ui-sdl qemu-audio-sdl
+$ dnf install qemu-device-display-qxl
 ```
 
 Without audio:
