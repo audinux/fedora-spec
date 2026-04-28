@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 0898c27bb6ba1f84fb4479c621406784af7275e7
-%global gittag0 2.0.0
+%global commit0 10933aa3cfd6bbdfb5da1d6bcb3f33428f0ec507
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Chrysalis
-Version: 2.0.0
+Version: 2.0.1
 Release: 2%{?dist}
 Summary: Chrysalis plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Chrysalis_plugin/dist/Chrysalis/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

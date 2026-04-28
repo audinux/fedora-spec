@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 739b6958d49e41536d1f902381982e73f65b763d
-%global gittag0 2.0.0
+%global commit0 2000f2e118074cdcadfb84b529b64cd60ac532c0
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-AlteredStateMachines
-Version: 2.0.0
+Version: 2.0.1
 Release: 2%{?dist}
 Summary: AlteredStateMachines plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r AlteredStateMachines_plugin/dist/AlteredStateMachines/* %{buildroot}%{_lib
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile
