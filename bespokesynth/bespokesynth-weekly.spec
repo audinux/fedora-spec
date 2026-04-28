@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-%global commit0 3833df302edd3ab89af1a276efc472f81b76fda9
+%global commit0 d7cd8317fd5194f3c17d65a3a0bcbf49626c14af
 
 Name: BespokeSynth-weekly
 Version: 1.3.10
-Release: 21%{?dist}
+Release: 23%{?dist}
 Summary: A software modular synth
 License: GPL-3.0-or-later
 URL: https://github.com/BespokeSynth/BespokeSynth
@@ -104,6 +104,7 @@ cp %{__cmake_builddir}/libs/freeverb/libfreeverb.so         %{buildroot}/%{_libd
 cp %{__cmake_builddir}/libs/oddsound-mts/liboddsound-mts.so %{buildroot}/%{_libdir}/bespokesynth/
 cp %{__cmake_builddir}/libs/xwax/libxwax.so                 %{buildroot}/%{_libdir}/bespokesynth/
 cp %{__cmake_builddir}/libs/nanovg/libnanovg.so             %{buildroot}/%{_libdir}/bespokesynth/
+cp %{__cmake_builddir}/libs/abletonmove/libabletonmove.so   %{buildroot}/%{_libdir}/bespokesynth/
 
 patchelf --set-rpath '$ORIGIN/../%{_lib}/bespokesynth/' %{buildroot}/%{_bindir}/BespokeSynth
 
@@ -129,6 +130,12 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/com.bespo
 %{_datadir}/metainfo/com.bespokesynth.BespokeSynth.metainfo.xml
 
 %changelog
+* Tue Apr 28 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-23
+- Update to 1.3.10-23 - d7cd8317fd5194f3c17d65a3a0bcbf49626c14af
+
+* Mon Apr 27 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-22
+- Update to 1.3.10-22 - 636a04520bdd99cce5acaa6394f0a668ede991d8
+
 * Wed Apr 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-21
 - Update to 1.3.10-21 - 3833df302edd3ab89af1a276efc472f81b76fda9
 
