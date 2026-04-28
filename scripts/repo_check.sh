@@ -1134,7 +1134,8 @@ https://github.com/psemiletov/rokerpack
 https://github.com/brummer10/SmoothIR
 https://github.com/reduz/chibitracker
 https://github.com/pac-dev/protoplug
-https://github.com/ycollet/protoplug"
+https://github.com/ycollet/protoplug
+https://github.com/muse-sequencer/muse"
 
 # Missing repositories:
 # https://github.com/giogramegna/mantra-master
