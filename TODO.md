@@ -305,6 +305,9 @@ Check the following URL:
 - https://github.com/hollance
 - https://github.com/sfzinstruments/mappings -> some sfz sound fonts
 
+Check for LADSPA plugins missing in:
+https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/
+
 Add dead package:
 - gmixer
 - jokosher
