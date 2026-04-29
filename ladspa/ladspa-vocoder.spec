@@ -23,13 +23,13 @@ Version: 0.4
 Release: 1%{?dist}
 Summary: LADSPA vocoder plugin
 License: GPL-2.0+
-URL: https://www.sirlab.de/linux/download
+URL: https://www.sirlab.de/linux/vocoder/download/
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://www.sirlab.de/linux/download/vocoder-ladspa-%{version}.tgz
+Source0: https://www.sirlab.de/linux/vocoder/download/vocoder-ladspa-%{version}.tgz
 Patch1: ladspa-vocoder-0001-add-attributes.patch
 
 BuildRequires: gcc
