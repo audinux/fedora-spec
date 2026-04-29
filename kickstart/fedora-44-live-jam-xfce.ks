@@ -476,7 +476,7 @@ mamba
 
 # synthesis
 hydrogen
-# YC 44 hydrogen-drumkit-AVL-BlackPearl-4A
+hydrogen-drumkit-AVL-BlackPearl-2023
 bristol
 yoshimi
 zynaddsubfx
@@ -512,7 +512,7 @@ seq24
 qtractor-mao
 non-mixer
 raysession
-#YC 44 muse
+muse
 rosegarden4
 mixxx
 milkytracker
@@ -539,7 +539,7 @@ ladspa-rev-plugins
 ladspa-swh-plugins
 ladspa-tap-plugins
 ladspa-vco-plugins
-# YC 44 ladspa-vocoder
+ladspa-vocoder
 # YC 44 ladspa-wasp-plugins
 
 # lv2 plugins
