@@ -42,11 +42,16 @@ Source24: https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main
 Source25: https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/SF3007-2011-Set-03.h2drumkit
 
 # From http://www.bandshed.net/sounds/h2drumkit/
-Source26: http://www.bandshed.net/sounds/h2drumkit/AVL-Drumkits-1.1/AVL-BlackPearl-4A-1.1.h2drumkit
-Source27: http://www.bandshed.net/sounds/h2drumkit/AVL-Drumkits-1.1/AVL-BlackPearl-4B-1.1.h2drumkit
-Source28: http://www.bandshed.net/sounds/h2drumkit/AVL-Drumkits-1.1/AVL-BlackPearl-5-1.1.h2drumkit
-Source29: http://www.bandshed.net/sounds/h2drumkit/AVL-Drumkits-1.1/AVL-RedZep-4-1.1.h2drumkit
-Source30: http://www.bandshed.net/sounds/h2drumkit/AVL-Drumkits-1.1/AVL-RedZep-5-1.1.h2drumkit
+# http://www.bandshed.net/sounds/h2drumkit/AVL-Drumkits-1.1/AVL-BlackPearl-4A-1.1.h2drumkit
+# http://www.bandshed.net/sounds/h2drumkit/AVL-Drumkits-1.1/AVL-BlackPearl-4B-1.1.h2drumkit
+# http://www.bandshed.net/sounds/h2drumkit/AVL-Drumkits-1.1/AVL-BlackPearl-5-1.1.h2drumkit
+# http://www.bandshed.net/sounds/h2drumkit/AVL-Drumkits-1.1/AVL-RedZep-4-1.1.h2drumkit
+# http://www.bandshed.net/sounds/h2drumkit/AVL-Drumkits-1.1/AVL-RedZep-5-1.1.h2drumkit
+Source26: http://www.bandshed.net/sounds/AVLDrumkits_H2/AVLDrumkits-BlackPearl-2023.h2drumkit
+Source27: http://www.bandshed.net/sounds/AVLDrumkits_H2/AVLDrumkits-BlondeBop-HotRod.h2drumkit
+Source28: http://www.bandshed.net/sounds/AVLDrumkits_H2/AVLDrumkits-BlondeBop.h2drumkit
+Source29: http://www.bandshed.net/sounds/AVLDrumkits_H2/AVLDrumkits-BuskmansHoliday.h2drumkit
+Source30: http://www.bandshed.net/sounds/AVLDrumkits_H2/AVLDrumkits-RedZeppelin-2023.h2drumkit
 
 Source31: https://freewavesamples.com/files/KawaiXD-5Kit.h2drumkit
 Source32: https://freewavesamples.com/files/RolandJD-990Kit.h2drumkit
@@ -97,11 +102,11 @@ Summary: YamahaVintageKit Hydrogen drumkit
 %description -n hydrogen-drumkit-YamahaVintageKit
 YamahaVintageKit hydrogen drumkit
 
-%package -n hydrogen-drumkit-AVL-BlackPearl-4A-1.1
-Summary: AVL-BlackPearl-4A-1.1 Hydrogen drumkit
+%package -n hydrogen-drumkit-AVL-BlackPearl-2023
+Summary: AVL-BlackPearl-2023 Hydrogen drumkit
 
-%description -n hydrogen-drumkit-AVL-BlackPearl-4A-1.1
-AVL-BlackPearl-4A-1.1 hydrogen drumkit
+%description -n hydrogen-drumkit-AVL-BlackPearl-2023
+AVL-BlackPearl-2023 hydrogen drumkit
 
 %package -n hydrogen-drumkit-Boss_DR-110
 Summary: Boss_DR-110 Hydrogen drumkit
@@ -127,11 +132,11 @@ Summary: Techno-1 Hydrogen drumkit
 %description -n hydrogen-drumkit-Techno-1
 Techno-1 hydrogen drumkit
 
-%package -n hydrogen-drumkit-AVL-BlackPearl-4B-1.1
-Summary: AVL-BlackPearl-4B-1.1 Hydrogen drumkit
+%package -n hydrogen-drumkit-AVL-BlondeBop-HotRod
+Summary: AVL-BlondeBop-HotRod Hydrogen drumkit
 
-%description -n hydrogen-drumkit-AVL-BlackPearl-4B-1.1
-AVL-BlackPearl-4B-1.1 hydrogen drumkit
+%description -n hydrogen-drumkit-AVL-BlondeBop-HotRod
+AVL-BlondeBop-HotRod hydrogen drumkit
 
 %package -n hydrogen-drumkit-ElectricEmpireKit
 Summary: ElectricEmpireKit Hydrogen drumkit
@@ -151,11 +156,11 @@ Summary: Millo_MultiLayered2 Hydrogen drumkit
 %description -n hydrogen-drumkit-Millo_MultiLayered2
 Millo_MultiLayered2 hydrogen drumkit
 
-%package -n hydrogen-drumkit-AVL-BlackPearl-5-1.1
-Summary: AVL-BlackPearl-5-1.1 Hydrogen drumkit
+%package -n hydrogen-drumkit-AVL-BlondeBop
+Summary: AVL-BlondeBop Hydrogen drumkit
 
-%description -n hydrogen-drumkit-AVL-BlackPearl-5-1.1
-AVL-BlackPearl-5-1.1 hydrogen drumkit
+%description -n hydrogen-drumkit-AVL-BlondeBop
+AVL-BlondeBop hydrogen drumkit
 
 %package -n hydrogen-drumkit-Classic-626
 Summary: Classic-626 Hydrogen drumkit
@@ -187,11 +192,11 @@ Summary: TR808909 Hydrogen drumkit
 %description -n hydrogen-drumkit-TR808909
 TR808909 hydrogen drumkit
 
-%package -n hydrogen-drumkit-AVL-RedZep-4-1.0
-Summary: AVL-RedZep-4-1.0 Hydrogen drumkit
+%package -n hydrogen-drumkit-AVL-BuskmansHoliday
+Summary: AVL-BuskmansHoliday Hydrogen drumkit
 
-%description -n hydrogen-drumkit-AVL-RedZep-4-1.0
-AVL-RedZep-4-1.0 hydrogen drumkit
+%description -n hydrogen-drumkit-AVL-BuskmansHoliday
+AVL-BuskmansHoliday hydrogen drumkit
 
 %package -n hydrogen-drumkit-Classic-808
 Summary: Classic-808 Hydrogen drumkit
@@ -217,11 +222,11 @@ Summary: SF3007-2011-Set-03 Hydrogen drumkit
 %description -n hydrogen-drumkit-SF3007-2011-Set-03
 SF3007-2011-Set-03 hydrogen drumkit
 
-%package -n hydrogen-drumkit-AVL-RedZep-5-1.1
-Summary: AVL-RedZep-5-1.1 Hydrogen drumkit
+%package -n hydrogen-drumkit-AVL-RedZeppelin-2023
+Summary: AVL-RedZeppelin-2023 Hydrogen drumkit
 
-%description -n hydrogen-drumkit-AVL-RedZep-5-1.1
-AVL-RedZep-5-1.1 hydrogen drumkit
+%description -n hydrogen-drumkit-AVL-RedZeppelin-2023
+AVL-RedZeppelin-2023 hydrogen drumkit
 
 %package -n hydrogen-drumkit-ColomboAcousticDrumkit
 Summary: ColomboAcousticDrumkit Hydrogen drumkit
@@ -421,8 +426,8 @@ rm %{buildroot}/%{_datadir}/hydrogen/data/drumkits/BJA_Pacific/._*
 %files -n hydrogen-drumkit-YamahaVintageKit
 %{_datadir}/hydrogen/data/drumkits/YamahaVintageKit/*
 
-%files -n hydrogen-drumkit-AVL-BlackPearl-4A-1.1
-%{_datadir}/hydrogen/data/drumkits/AVL-BlackPearl-4A-1.1/*
+%files -n hydrogen-drumkit-AVL-BlackPearl-2023
+%{_datadir}/hydrogen/data/drumkits/AVLDrumkits-BlackPearl-2023/*
 
 %files -n hydrogen-drumkit-Boss_DR-110
 %{_datadir}/hydrogen/data/drumkits/Boss_DR-110/*
@@ -436,8 +441,8 @@ rm %{buildroot}/%{_datadir}/hydrogen/data/drumkits/BJA_Pacific/._*
 %files -n hydrogen-drumkit-Techno-1
 %{_datadir}/hydrogen/data/drumkits/Techno-1/*
 
-%files -n hydrogen-drumkit-AVL-BlackPearl-4B-1.1
-%{_datadir}/hydrogen/data/drumkits/AVL-BlackPearl-4B-1.1/*
+%files -n hydrogen-drumkit-AVL-BlondeBop-HotRod
+%{_datadir}/hydrogen/data/drumkits/AVLDrumkits-BlondeBop-HotRod/*
 
 %files -n hydrogen-drumkit-ElectricEmpireKit
 %{_datadir}/hydrogen/data/drumkits/ElectricEmpireKit/*
@@ -448,8 +453,8 @@ rm %{buildroot}/%{_datadir}/hydrogen/data/drumkits/BJA_Pacific/._*
 %files -n hydrogen-drumkit-Millo_MultiLayered2
 %{_datadir}/hydrogen/data/drumkits/Millo_MultiLayered2/*
 
-%files -n hydrogen-drumkit-AVL-BlackPearl-5-1.1
-%{_datadir}/hydrogen/data/drumkits/AVL-BlackPearl-5-1.1/*
+%files -n hydrogen-drumkit-AVL-BlondeBop
+%{_datadir}/hydrogen/data/drumkits/AVLDrumkits-BlondeBop/*
 
 %files -n hydrogen-drumkit-Classic-626
 %{_datadir}/hydrogen/data/drumkits/Classic-626/*
@@ -466,8 +471,8 @@ rm %{buildroot}/%{_datadir}/hydrogen/data/drumkits/BJA_Pacific/._*
 %files -n hydrogen-drumkit-TR808909
 %{_datadir}/hydrogen/data/drumkits/TR808909/*
 
-%files -n hydrogen-drumkit-AVL-RedZep-4-1.0
-%{_datadir}/hydrogen/data/drumkits/AVL-RedZep-4-1.0/*
+%files -n hydrogen-drumkit-AVL-BuskmansHoliday
+%{_datadir}/hydrogen/data/drumkits/AVLDrumkits-BuskmansHoliday/*
 
 %files -n hydrogen-drumkit-Classic-808
 %{_datadir}/hydrogen/data/drumkits/Classic-808/*
@@ -481,8 +486,8 @@ rm %{buildroot}/%{_datadir}/hydrogen/data/drumkits/BJA_Pacific/._*
 %files -n hydrogen-drumkit-SF3007-2011-Set-03
 %{_datadir}/hydrogen/data/drumkits/SF3007-2011-Set-03/*
 
-%files -n hydrogen-drumkit-AVL-RedZep-5-1.1
-%{_datadir}/hydrogen/data/drumkits/AVL-RedZep-5-1.1/*
+%files -n hydrogen-drumkit-AVL-RedZeppelin-2023
+%{_datadir}/hydrogen/data/drumkits/AVLDrumkits-RedZeppelin-2023/*
 
 %files -n hydrogen-drumkit-ColomboAcousticDrumkit
 %{_datadir}/hydrogen/data/drumkits/ColomboAcousticDrumkit/*
