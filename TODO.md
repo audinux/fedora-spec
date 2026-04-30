@@ -292,6 +292,7 @@
 | ArachnoTracker                           | https://github.com/EricsonWillians/ArachnoTracker                                                                                                           |
 | DPF                                      | https://github.com/Chmod666music/DPF                                                                                                                        |
 | omelette-tracker                         | https://github.com/lowerothello/omelette-tracker                                                                                                            |
+| neampmod-the-victor                      | https://github.com/danielwray/neampmod-the-victor                                                                                                           |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -307,6 +308,21 @@ Check the following URL:
 
 Check for LADSPA plugins missing in:
 https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/
+
+https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-LEET-plugin-0.2-160000.1.6.src.rpm
+https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-WAH-0.0.2-160000.1.5.src.rpm
+https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-aweight-0.3.0-160000.1.5.src.rpm
+https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-bs2b-0.9.1-160000.1.4.src.rpm
+https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-clipper-1-160000.2.4.src.rpm
+https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-foo-plugins-1.2-160000.1.6.src.rpm
+https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-invada-studio-plugins-0.3.1-160000.1.6.src.rpm
+https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-lemux-0.2-160000.2.5.src.rpm
+https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-lgv-plugins-0.1-160000.1.5.src.rpm
+https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-njl-0.2.1-160000.2.pm.2.src.rpm
+https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-omins-0.2.1-160000.1.6.src.rpm
+https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-trigger-20080510-160000.1.4.src.rpm
+https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-wasp-0.1.4-160000.1.5.src.rpm
+https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-wubflip-1-160000.1.7.src.rpm
 
 Add dead package:
 - gmixer
