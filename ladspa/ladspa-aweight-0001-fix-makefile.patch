@@ -1,0 +1,76 @@
+From d894d97af1e216ab33563bf63adc279f8f9f1aee Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Wed, 29 Apr 2026 23:02:24 +0200
+Subject: [PATCH] fix makefile
+
+---
+ Makefile | 30 +++++++++++-------------------
+ 1 file changed, 11 insertions(+), 19 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index c6e3e51..be31b5a 100644
+--- a/Makefile
++++ b/Makefile
+@@ -17,13 +17,7 @@
+ 
+ # Compilation flags
+ #
+-DEBUG_FLAGS = -g
+-OPTIM_FLAGS = -O3
+-SHOBJ_FLAGS = -fpic -D_REENTRANT
+-CPPFLAGS = $(OPTIM_FLAGS) -Wall
+-LDFLAGS +=
+-LDLIBS +=
+-
++SHOBJ_FLAGS = -fPIC -D_REENTRANT
+ 
+ # Targets
+ #
+@@ -31,27 +25,25 @@ LDLIBS +=
+ AWJACK_0 = awjack.o aweight.o
+ 
+ awjack.so:	$(AWJACK_0)
+-	g++ -o $@ -shared $(AWJACK_0) -ljack -lm
++	g++ -fPIC -o $@ -shared $(AWJACK_0) $(LDFLAGS) -ljack -lm
+ 
+ awjack.o:	awjack.cc 
+-	g++ -c $(CPPFLAGS) $(SHOBJ_FLAGS) awjack.cc
+-
+-
++	g++ -c $(SHOBJ_FLAGS) $(CXXFLAGS) awjack.cc
+ 
+ AWPLUG_O = awplug.o awplug_if.o aweight.o
+ 
+-awplug.so:	$(AWPLUG_O)
+-	g++ -o $@ -shared $(AWPLUG_O) -lm 
++awplug.so: $(AWPLUG_O)
++	g++ -fPIC -o $@ -shared $(AWPLUG_O) $(LDFLAGS) -lm 
+ 
+-awplug.o:	ladspaplugin.h awplug.h awplug.cc
+-	g++ -c $(CPPFLAGS) $(SHOBJ_FLAGS) awplug.cc
++awplug.o: ladspaplugin.h awplug.h awplug.cc
++	g++ -c $(SHOBJ_FLAGS) $(CXXFLAGS) awplug.cc
+ 
+-awplug_if.o:	ladspaplugin.h awplug.h awplug_if.cc
+-	g++ -c $(CPPFLAGS) $(SHOBJ_FLAGS) awplug_if.cc
++awplug_if.o: ladspaplugin.h awplug.h awplug_if.cc
++	g++ -c $(SHOBJ_FLAGS) $(CXXFLAGS) awplug_if.cc
+ 
+ 
+ 
+-install:	awjack.so awplug.so	
++install: awjack.so awplug.so	
+ 	/bin/cp  awjack.so /usr/lib/jack
+ 	/bin/cp  awplug.so /usr/lib/ladspa
+ 
+@@ -62,6 +54,6 @@ clean:
+ 
+ DIR := $(shell basename `pwd`)
+ 
+-archive:	clean
++archive: clean
+ 	cd ..; /bin/rm -f $(DIR).tar.bz2; tar cvf $(DIR).tar $(DIR); bzip2 $(DIR).tar
+ 
+-- 
+2.54.0
+
