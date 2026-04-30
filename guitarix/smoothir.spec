@@ -3,10 +3,8 @@
 # Type: Standalone, Plugin, CLAP
 # Category: Audio, Sampler
 
-%global commit0 1d99e24e5f4e061596774f1395feae5db242c836
-
 Name: smoothir
-Version: 0.0.1
+Version: 0.1
 Release: 1%{?dist}
 Summary: Creating impulse responses (IRs) through spectral matching of two audio files
 License: BSD
@@ -18,7 +16,7 @@ Distribution: Audinux
 
 
 # ./brummer10-source.sh <project> <tag>
-# ./brummer10-source.sh SmoothIR main
+# ./brummer10-source.sh SmoothIR v0.1
 
 Source0: SmoothIR.tar.gz
 Source1: brummer10-source.sh
@@ -80,5 +78,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/smoothir.desktop
 %{_datadir}/icons/hicolor/scalable/apps/smoothir.svg
 
 %changelog
+* Wed Apr 29 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
+- update to 0.1-1
+
 * Fri Apr 24 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
