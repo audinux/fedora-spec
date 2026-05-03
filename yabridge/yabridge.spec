@@ -16,7 +16,7 @@
 
 Name: yabridge
 Version: 5.1.1
-Release: 7%{?dist}
+Release: 8%{?dist}
 Summary: A modern and transparent way to use Windows VST2 and VST3 plugins on Linux
 License: GPL-2.0-or-later
 URL: https://github.com/robbert-vdh/yabridge
@@ -58,7 +58,6 @@ Requires: python3
 Requires: wine
 Requires: boost
 Requires: boost-filesystem
-Requires: boost-system
 Requires: libxcb
 Requires: libXau
 Requires: libatomic
@@ -138,6 +137,9 @@ install tools/yabridgectl/target/release/yabridgectl %{buildroot}%{_bindir}/
 %{_libdir}/*
 
 %changelog
+* Sun May 03 2026 Yann Collette <ycollette.nospam@free.fr> - 5.1.1-8
+- update to 5.1.1-8 - rebuild for boost-system problem.
+
 * Fri Nov 08 2024 Yann Collette <ycollette.nospam@free.fr> - 5.1.1-7
 - update to 5.1.1-7 - fix requires and add missing binary. Add a Yabridgectl patch.
 
