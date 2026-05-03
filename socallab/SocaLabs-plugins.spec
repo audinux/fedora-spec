@@ -19,7 +19,7 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 
 Name: SocaLabs-plugins
-Version: 20260213
+Version: 20260503
 Release: 6%{?dist}
 Summary: Various VST/VST3 Plugins from SocaLabs.com
 License: BSD-3-Clause
@@ -30,7 +30,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./socalab-source.sh <tag>
-# ./socalab-source.sh dd96ff4c161a29b779436433cb93183941029ef1
+# ./socalab-source.sh c4d19c3850bcc8ebf4a4f26ce1c53037589ffb19
 
 Source0: slPlugins.tar.gz
 Source4: socalab-source.sh
@@ -152,6 +152,9 @@ done
 %{_libdir}/lv2/
 
 %changelog
+* Sun May 03 2026 Yann Collette <ycollette.nospam@free.fr> - 20260503-6
+- update to c4d19c3850bcc8ebf4a4f26ce1c53037589ffb19
+
 * Tue Jan 13 2026 Yann Collette <ycollette.nospam@free.fr> - 20260213-6
 - update to dd96ff4c161a29b779436433cb93183941029ef1
 
