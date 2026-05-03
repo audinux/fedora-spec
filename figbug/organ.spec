@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: organ
-Version: 1.0.4
+Version: 1.0.7
 Release: 5%{?dist}
 Summary: Organ VST / LV2 plugin
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./figbug-source.sh <project> <tag>
-# ./figbug-source.sh Organ v1.0.4
+# ./figbug-source.sh Organ v1.0.7
 
 Source0: Organ.tar.gz
 Source1: figbug-source.sh
@@ -139,6 +139,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Sun May 03 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.7-5
+- update to 1.0.7-5
+
 * Tue Jan 13 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.4-5
 - update to 1.0.4-5
 
