@@ -10,7 +10,7 @@ Version: 0.2.2
 Release: 1%{?dist}
 Summary: A music making program for 24-bit unicode terminals
 License: GPL-3.0-or-later
-URL: https://codeberg.org/unspeaker/tek
+URL: https://codeberg.org/unspeaker/tek # https://github.com/johnmatter/tek
 ExclusiveArch: x86_64
 
 # aarch64 -> rust lilv crate build broken for now
