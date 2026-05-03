@@ -4,7 +4,7 @@
 # Category: Audio
 
 %global v_major 3
-%global v_minor 11
+%global v_minor 12
 %global v_patch 0
 
 Name: jamulus
@@ -24,9 +24,9 @@ BuildRequires: gcc gcc-c++
 BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: pulseaudio-libs-devel
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-linguist
-BuildRequires: qt5-qtmultimedia-devel
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-linguist
+BuildRequires: qt6-qtmultimedia-devel
 BuildRequires: libsndfile-devel
 BuildRequires: opus-devel
 BuildRequires: desktop-file-utils
@@ -44,7 +44,7 @@ and Opus audio codec to manage the audio session.
 
 %build
 
-%qmake_qt5 Jamulus.pro CONFIG+="noupcasename"
+%qmake_qt6 Jamulus.pro CONFIG+="noupcasename"
 %make_build VERBOSE=1
 
 %install
@@ -93,6 +93,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-server.deskto
 %{_mandir}/man1/*
 
 %changelog
+* Sun May 03 2026 Yann Collette <ycollette.nospam@free.fr> - 3.12.0-8
+- update to 3.12.0-8
+
 * Sat Sep 21 2024 Yann Collette <ycollette.nospam@free.fr> - 3.11.0-8
 - update to 3.11.0-8
 
