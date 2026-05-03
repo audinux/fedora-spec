@@ -540,7 +540,7 @@ ladspa-swh-plugins
 ladspa-tap-plugins
 ladspa-vco-plugins
 ladspa-vocoder
-# YC 44 ladspa-wasp-plugins
+ladspa-wasp
 
 # lv2 plugins
 lv2
@@ -575,7 +575,6 @@ sisco.lv2
 rkrlv2
 ams-lv2
 lv2-avw-plugins
-#YC pyliblo missing lv2-fil-plugins
 lv2-kn0ck0ut
 lv2-triceratops
 lv2-fomp-plugins
