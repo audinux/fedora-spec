@@ -29,11 +29,12 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./socalab-source.sh <tag>
-# ./socalab-source.sh c4d19c3850bcc8ebf4a4f26ce1c53037589ffb19
+# ./figbug-source.sh <project> <tag>
+# ./figbug-source.sh slPlugins c4d19c3850bcc8ebf4a4f26ce1c53037589ffb19
+
 
 Source0: slPlugins.tar.gz
-Source4: socalab-source.sh
+Source4: figbug-source.sh
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
