@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: mod-gxpitchshifter
-Version: 1.0.3
+Version: 1.0.4
 Release: 1%{?dist}
 Summary: Guitarix compatible mod-pitchshifter LV2 set of plugins from moddevices
 License: GPL-2.0-or-later
@@ -19,10 +19,9 @@ Source0: https://github.com/ycollet/mod-pitchshifter/archive/v%{version}.tar.gz#
 BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: python3
+BuildRequires: python3-mpmath
 BuildRequires: lv2-devel
 BuildRequires: fftw-devel
-BuildRequires: fftw
-BuildRequires: python3-mpmath
 BuildRequires: armadillo-devel
 BuildRequires: SuperLU-devel
 
@@ -53,6 +52,9 @@ sed -i -e "s/-Wl,--strip-all//" Makefile.mk
 %{_libdir}/lv2/*
 
 %changelog
+* Wed May 06 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.4-1
+- update to 1.0.4-1
+
 * Thu Nov 24 2022 Yann Collette <ycollette.nospam@free.fr> - 1.0.3-1
 - update to 1.0.3-1
 
