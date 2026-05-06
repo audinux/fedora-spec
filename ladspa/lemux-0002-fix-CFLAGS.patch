@@ -1,0 +1,47 @@
+From bed642462b223a82199c4ec7701b58c4cd82a379 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Wed, 6 May 2026 21:38:09 +0200
+Subject: [PATCH] fix CFLAGS
+
+---
+ GNUmakefile | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
+
+diff --git a/GNUmakefile b/GNUmakefile
+index 2cf00c8..8aa5287 100644
+--- a/GNUmakefile
++++ b/GNUmakefile
+@@ -27,10 +27,6 @@ INCLUDES = -Ibase -I. -Idev/SID/resid
+ CC = gcc
+ CXX = g++
+ 
+-CFLAGS = -g -O0 $(INCLUDES) -Wall
+-CXXFLAGS = $(CFLAGS)
+-LDFLAGS = $(LIBS) -shared
+-
+ ANALYSEPLUGIN=analyseplugin
+ 
+ SIDLIB = dev/SID/resid/.libs/libresid.a
+@@ -75,16 +71,16 @@ endif
+ gen/dep/%.d: %.cc
+ 	@mkdir -p gen/dep/
+ 	@echo "<dep| $<"
+-	@$(CC) -M -MG $(CFLAGS) $< | sed -e 's@ /[^ ]*@@g' -e 's@^\(.*\)\.o:@gen/dep/\1.d gen/obj/\1.o:@' > $@
++	@$(CC) -M -MG $(CFLAGS) $(INCLUDES) $< | sed -e 's@ /[^ ]*@@g' -e 's@^\(.*\)\.o:@gen/dep/\1.d gen/obj/\1.o:@' > $@
+ 
+ gen/obj/%.o: %.cc
+ 	@mkdir -p gen/obj/
+ 	@echo "|cmp> $<"
+-	@$(CXX) -c $(CXXFLAGS) $< -o $@
++	@$(CXX) -c $(CXXFLAGS) -fPIC $(INCLUDES) $< -o $@
+ 
+ gen/$(NAME).so: $(OBJ)
+ 	@echo "=lnk= $@"
+-	@$(CXX) $(CXXFLAGS) -o $@ $(OBJ) $(LDFLAGS)
++	@$(CXX) -shared $(INCLUDES) -o $@ $(OBJ) $(LDFLAGS)
+ 	-@$(ANALYSEPLUGIN) ./$@ 2>&1 | c++filt
+ 
+ clean:
+-- 
+2.54.0
+

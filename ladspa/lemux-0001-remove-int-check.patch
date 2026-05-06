@@ -1,0 +1,30 @@
+From 41a3fb3c221b1bf70ea330a7543860333f5aa383 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Wed, 6 May 2026 21:30:03 +0200
+Subject: [PATCH] remove int check
+
+---
+ dev/SID/resid/configure.in | 7 -------
+ 1 file changed, 7 deletions(-)
+
+diff --git a/dev/SID/resid/configure.in b/dev/SID/resid/configure.in
+index 2d3413b..46e055c 100644
+--- a/dev/SID/resid/configure.in
++++ b/dev/SID/resid/configure.in
+@@ -46,13 +46,6 @@ dnl Checks for libraries.
+ 
+ dnl Checks for header files.
+ 
+-dnl Checks for typedefs, structures, and compiler characteristics.
+-AC_CHECK_SIZEOF(int, 4)
+-
+-if test $ac_cv_sizeof_int -lt 4; then
+-  AC_MSG_ERROR([only 32 bit or better CPUs are supported])
+-fi
+-
+ AC_CACHE_CHECK([for working bool], ac_cv_cxx_bool,
+ [AC_TRY_COMPILE(,
+ [
+-- 
+2.54.0
+
