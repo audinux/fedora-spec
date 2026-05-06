@@ -4,7 +4,7 @@
 # Category: Synthesizer, Sequencer
 
 Name: drumrox-kits
-Version: 4.0.0
+Version: 5.0.0
 Release: 7%{?dist}
 Summary: A set of drumrox drum kits
 License: GPL-3.0-or-later
@@ -263,6 +263,22 @@ Requires: license-%{name}
 %description -n %{name}-KloneDualPercussionSynthesiser
 The Klone Dual Percussion Synthesiser drumkit for %{name}
 
+%package -n %{name}-Avangard
+Summary:  The Avangard drumkit for %{name}
+License:  GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-Avangard
+The Avangard drumkit for %{name}
+
+%package -n %{name}-Sopromat
+Summary:  The Sopromat drumkit for %{name}
+License:  GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-Sopromat
+The Sopromat drumkit for %{name}
+
 %prep
 %autosetup -n drum_sklad-%{version}
 
@@ -297,6 +313,8 @@ install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ASR-XPro/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/FrickeMFB512/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/FormantaPolivoks/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/KloneDualPercussionSynthesiser/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Avangard/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Sopromat/
 
 cp -ra Cheetah\ SpecDrum\ Standard/* %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Standard/
 cp -ra Cheetah\ SpecDrum\ Latin/* %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Latin/
@@ -327,6 +345,8 @@ cp -ra ASR-X\ Pro/* %{buildroot}/%{_datadir}/drumrox-kits/ASR-XPro/
 cp -ra Fricke\ MFB512/* %{buildroot}/%{_datadir}/drumrox-kits/FrickeMFB512/
 cp -ra Formanta\ Polivoks/* %{buildroot}/%{_datadir}/drumrox-kits/FormantaPolivoks/
 cp -ra Klone\ Dual\ Percussion\ Synthesiser/* %{buildroot}/%{_datadir}/drumrox-kits/KloneDualPercussionSynthesiser/
+cp -ra Avangard/* %{buildroot}/%{_datadir}/drumrox-kits/Avangard/
+cp -ra Sopromat/* %{buildroot}/%{_datadir}/drumrox-kits/Sopromat/
 
 %files -n license-%{name}
 %doc README.md
@@ -419,7 +439,16 @@ cp -ra Klone\ Dual\ Percussion\ Synthesiser/* %{buildroot}/%{_datadir}/drumrox-k
 %files -n %{name}-KloneDualPercussionSynthesiser
 %{_datadir}/drumrox-kits/KloneDualPercussionSynthesiser/*
 
+%files -n %{name}-Avangard
+%{_datadir}/drumrox-kits/Avangard/*
+
+%files -n %{name}-Sopromat
+%{_datadir}/drumrox-kits/Sopromat/*
+
 %changelog
+* Tue May 05 2026 Yann Collette <ycollette.nospam@free.fr> - 5.0.0-7
+- update to 5.0.0-7
+
 * Thu Dec 18 2025 Yann Collette <ycollette.nospam@free.fr> - 4.0.0-7
 - update to 4.0.0-7
 
