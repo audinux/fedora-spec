@@ -510,7 +510,7 @@ audacity
 ardour8
 seq24
 qtractor-mao
-non-mixer
+non-mixer-xt
 raysession
 muse
 rosegarden4
