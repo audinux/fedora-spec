@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: drumgroovepro
-Version: 0.9.9
+Version: 1.0.0
 Release: 1%{?dist}
 Summary: A free, open-source MIDI drum groove sequencer
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./drumgroovepro-source.sh <TAG>
-#        ./drumgroovepro-source.sh V0.9.9
+#        ./drumgroovepro-source.sh v1.0.0
 
 Source0: DrumGroovePro.tar.gz
 Source1: drumgroovepro-source.sh
@@ -109,6 +109,9 @@ cp -ra %{__cmake_builddir}/DrumGroovePro_artefacts/Standalone/* %{buildroot}/%{_
 %{_libdir}/vst3/*
 
 %changelog
+* Tue May 05 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
+- update to 1.0.0-1
+
 * Fri Nov 28 2025 Yann Collette <ycollette.nospam@free.fr> - 0.9.9-1
 - update to 0.9.9-1
 
