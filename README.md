@@ -27,7 +27,7 @@ The SRPMS file is located in:
 - SRPMS
 
 Install the rpm file using yum:
-as a root user: 
+as a root user:
 ```
 $ yum install filename.rpm
 # or

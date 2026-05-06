@@ -468,7 +468,7 @@ Package rack-v2-squinkylabs-plug1 from file ../rack/rack-v2/rack-v2-library-squi
 Package rack-v2-VCV-Recorder from file ../rack/rack-v2_02_VCV-recorder.spec is missing (status: active) - ffmpeg version problem
 Package veejay-core from file ../veejay/veejay-core.spec is missing (status: active) - error: conflicting types for 'yuv_init_lib';
 Package tunefish from file ../tunefish/tunefish.spec is missing (status: active) - %patchN is obsolete
-	
+
 inactive:
 Package lomse from file ../lenmus/lomse.spec is missing (status: active)
 Package kernel-rt-mao from file ../kernel/kernel-mao.spec is missing (status: active)
@@ -583,7 +583,7 @@ Add:
 cmake_minimum_required(VERSION 3.3...3.10)
 ```
 
-or 
+or
 
 ```
 -DCMAKE_POLICY_VERSION_MINIMUM=3.5
