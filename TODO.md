@@ -295,6 +295,10 @@
 | neampmod-the-victor                      | https://github.com/danielwray/neampmod-the-victor                                                                                                           |
 | GreenVocoder                             | https://github.com/ManasWolrd/GreenVocoder                                                                                                                  |
 | Recording-analyzer                       | https://github.com/mcochris/Recording-analyzer                                                                                                              |
+| qtpod                                    | https://llg.cubic.org/tools/qtpod                                                                                                                           |
+| pod-ui                                   | https://github.com/arteme/pod-ui                                                                                                                            |
+| wetdelay                                 | https://github.com/yonie/wetdelay                                                                                                                           |
+| WetReverb                                | https://github.com/yonie/WetReverb                                                                                                                          |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
