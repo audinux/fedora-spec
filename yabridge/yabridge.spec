@@ -6,6 +6,8 @@
 %global debug_package %{nil}
 %define _lto_cflags %{nil}
 
+%global commit0 48ea9749b682c48875366134a42073d6b3d0a8c4
+
 # For the test:
 # Set the folder in witch it create the linux usable plugins
 # $ yabridgectl set --path=<path>
@@ -25,8 +27,7 @@ ExclusiveArch: x86_64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/robbert-vdh/yabridge/archive/refs/tags/%{version}.tar.gz#/yabridge-%{version}.tar.gz
-Patch0: yabridge-PR316.patch
+Source0:https://github.com/robbert-vdh/yabridge/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: meson
@@ -82,21 +83,17 @@ allows yabridge to be both fast and highly compatible, while
 also staying easy to debug and maintain.
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{commit0}
 
 %build
 
 %set_build_flags
-%if 0%{?fedora} >= 38
 export CXXFLAGS="-include cstdint $CXXFLAGS"
-%endif
 
 %meson --cross-file=cross-wine.conf \
     --buildtype=release \
     --wrap-mode=default \
-%if 0%{?fedora} >= 38
     -Dcpp_arg="-include cstdint $CXXFLAGS" \
-%endif
     -Dbitbridge=true \
     -Dclap=true \
     -Dvst3=true
