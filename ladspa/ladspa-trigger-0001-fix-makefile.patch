@@ -1,0 +1,54 @@
+From 96042bf0df2070846b7eb835dbb9a06cbd3a5b71 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Thu, 7 May 2026 12:49:56 +0200
+Subject: [PATCH] fix makefile
+
+---
+ Makefile | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index af1f90e..b74401f 100644
+--- a/Makefile
++++ b/Makefile
+@@ -5,9 +5,9 @@
+ # Change these if you want to install somewhere else. In particularly
+ # you may wish to remove the middle "local/" part of each entry.
+ 
+-INSTALL_PLUGINS_DIR	=	/usr/lib/ladspa/
++INSTALL_PLUGINS_DIR	=	/usr/lib64/ladspa/
+ INSTALL_INCLUDE_DIR	=	/usr/include/
+-INSTALL_BINARY_DIR	=	/usr/local/bin/
++INSTALL_BINARY_DIR	=	/usr/bin/
+ INSTALL_SAMPLES_DIR	= 	/usr/share/ladspa/samples/
+ 
+ ###############################################################################
+@@ -17,12 +17,12 @@ INSTALL_SAMPLES_DIR	= 	/usr/share/ladspa/samples/
+ 
+ INCLUDES	=	-I. -Iinclude
+ LIBRARIES	=	-ldl -lm -lsndfile
+-CFLAGS		=	$(INCLUDES) -Wall -Werror -O3 -fPIC -fno-stack-protector
+-CXXFLAGS	=	$(CFLAGS)
++CFLAGS		+=	$(INCLUDES)
++CXXFLAGS	+=	$(INCLUDES)
+ PLUGINS		=	plugins/trigger.so
+ PROGRAMMS	=
+-CC		=	cc
+-CPP		=	c++
++CC		=	gcc
++CPP		=	gc++
+ 
+ ###############################################################################
+ #
+@@ -31,7 +31,7 @@ CPP		=	c++
+ 
+ plugins/%.so:	src/%.c include/ladspa.h
+ 	$(CC) $(CFLAGS) -o src/$*.o -c src/$*.c
+-	$(LD) $(LIBRARIES) -o plugins/$*.so src/$*.o -shared
++	$(CC) $(LIBRARIES) $(LDFLAGS) -o plugins/$*.so src/$*.o -shared
+ 
+ ###############################################################################
+ #
+-- 
+2.54.0
+
