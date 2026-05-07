@@ -110,7 +110,7 @@ $ ./prepare.sh
 $ livecd-creator --verbose --config=fedora-43-live-jam-xfce.ks --fslabel=Audinux --releasever 43
 ```
 
-To create the LiceCD using livemedia-creator:
+To create the Lice CD using livemedia-creator:
 
 As a root user:
 ```
@@ -127,7 +127,7 @@ $ dnf install pykickstart.noarch rpmfusion-free-remix-kickstarts.noarch spin-kic
 $ ksflatten -c /usr/share/spin-kickstarts/fedora-live-xfce.ks -o xfce.ks
 $ meld fedora-43-live-jam-xfce.ks xfce.ks &
 
-To test the ISO file:
+To test the ISO file with a standard BIOS:
 
 Install QEmu-KVM and the SDL interface.
 
@@ -169,6 +169,16 @@ Manually, using qemu-kvm command line
 $ qemu-kvm -m 2048 -name Audinux -display sdl -cdrom fedora-43-Audinux.iso -usb -device usb-host,hostbus=2,hostaddr=3
 ```
 
+To test the ISO file with a UEFI BIOS:
+
+```
+$ dnf install edk2-ovmf
+```
+
+```
+$ qemu-kvm -m 2048 -vga qxl -display sdl -cdrom fedora-43-Audinux.iso -bios /usr/share/edk2/ovmf/OVMF_CODE.fd
+```
+
 Write ISO to USB:
 
 You can use dd:
@@ -183,7 +193,7 @@ $ mediawriter
 
 Once the USB key is installed, you can add data persistency using livecd-iso-to-disk:
 ```
-$ dnf install livecd-tools-mao
+$ dnf install livecd-tools
 ```
 
 Locate where is your usb disk:
