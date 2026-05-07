@@ -6,8 +6,7 @@
 %global debug_package %{nil}
 
 # Global variables for github repository
-%global commit0 d6bf8e20c534da645813749089ecf3ecec6adbdf
-%global gittag0 master
+%global commit0 9df9786e2ad3c01955cdf4cdd5ae1fffad8fa5cc
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 %global commit_doc      34e91f8629d0ddd72fd699402dc598d48cdbe9d7
@@ -15,7 +14,7 @@
 
 Name: orca-lang
 Version: 0.1.0.%{shortcommit0}
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: Esoteric programming language and live editor
 License: MIT
 URL: https://git.sr.ht/~rabbits/orca
@@ -24,7 +23,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://git.sr.ht/~rabbits/orca/archive/%{commit0}.tar.gz#/orca-%{shortcommit0}.tar.gz
+Source0: https://github.com/hundredrabbits/Orca-c/archive/%{commit0}.tar.gz#/orca-%{shortcommit0}.tar.gz
 Source1: https://git.sr.ht/~rabbits/orca-rack/archive/%{commit_doc}.tar.gz#/orca-rack-master.tar.gz
 Source2: https://git.sr.ht/~rabbits/orca-examples/archive/%{commit_examples}.tar.gz#/orca-examples-master.tar.gz
 
@@ -48,7 +47,7 @@ sending MIDI, OSC, and UDP to your audio/visual interfaces like Ableton,
 Renoise, VCV Rack, or SuperCollider.
 
 %prep
-%autosetup -n orca-%{commit0}
+%autosetup -n Orca-c-%{commit0}
 
 tar xvfz %{SOURCE1}
 tar xvfz %{SOURCE2}
@@ -82,6 +81,9 @@ cp -r orca-rack-%{commit_doc}/* %{buildroot}/%{_datadir}/%{name}/documentation
 %{_datadir}/%{name}/
 
 %changelog
+* Thu May 07 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.0.9df9786e-6
+- update to last master - 9df9786e2ad3c01955cdf4cdd5ae1fffad8fa5cc
+
 * Sat May 25 2024 Yann Collette <ycollette.nospam@free.fr> - 0.1.0.d6bf8e20-5
 - add some more docs and examples
 
