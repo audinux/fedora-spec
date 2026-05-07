@@ -15,6 +15,10 @@ Version: 0.9.1
 Release: 1%{?dist}
 License: GPL-2.0
 URL: https://bs2b.sourceforge.net/
+ExclusiveArch: x86_64 aarch64
+
+Vendor:       Audinux
+Distribution: Audinux
 
 Source0: https://sourceforge.net/projects/bs2b/files/plugins/LADSPA%20plugin/%{version}/ladspa-bs2b-%{version}.tar.bz2
 

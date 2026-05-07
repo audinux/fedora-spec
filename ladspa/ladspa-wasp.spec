@@ -1,3 +1,8 @@
+# Status: active
+# Tag: Effect
+# Type: LADSPA
+# Category: Audio, Effects
+
 # This file and all modifications and additions to the pristine
 # package are under the same license as the package itself.
 #
