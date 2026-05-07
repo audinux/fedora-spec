@@ -299,6 +299,9 @@
 | pod-ui                                   | https://github.com/arteme/pod-ui                                                                                                                            |
 | wetdelay                                 | https://github.com/yonie/wetdelay                                                                                                                           |
 | WetReverb                                | https://github.com/yonie/WetReverb                                                                                                                          |
+| extempore                                | https://github.com/digego/extempore                                                                                                                         |
+| Bonzomatic                               | https://github.com/Gargaj/Bonzomatic                                                                                                                        |
+| stemdeck                                 | https://github.com/thcp/stemdeck                                                                                                                            |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
