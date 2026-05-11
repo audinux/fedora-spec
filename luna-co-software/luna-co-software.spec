@@ -1,13 +1,13 @@
 # Status: active
 # Tag: Jack, Alsa, Distortion
-# Type: Plugin, Standalone, VST3
+# Type: Plugin, VST3, LV2
 # Category: Effect
 
-%global commit0 299764a1e2b40bf86cd3fc10aa9c794710c72505
+%global commit0 96809cc6b3b33054815e740065a0bf265c344dd8
 
 Name: luna-co-software
 Version: 0.0.1
-Release: 9%{?dist}
+Release: 10%{?dist}
 Summary: A collection of professional audio VST3/LV2 plugins built with JUCE
 License: GPL-3.0-or-later
 URL: https://github.com/dusk-audio/dusk-audio-plugins
@@ -96,15 +96,12 @@ export CXXFLAGS="-DJUCE_IGNORE_VST3_MISMATCHED_PARAMETER_ID_WARNING $CXXFLAGS"
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
-install -m 755 -d %{buildroot}%{_bindir}/
 
 cp -ra %{__cmake_builddir}/bin/VST3/* %{buildroot}%{_libdir}/vst3/
 cp -ra %{__cmake_builddir}/bin/LV2/* %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/bin/Standalone/* %{buildroot}%{_bindir}/
 
 VST3_PLUGIN_LIST=`find %{__cmake_builddir}/plugins -name "VST3" | grep artefacts`
 LV2_PLUGIN_LIST=`find %{__cmake_builddir}/plugins -name "LV2" | grep artefacts`
-STANDALONE_PLUGIN_LIST=`find %{__cmake_builddir}/plugins -name "Standalone" | grep artefacts`
 
 for Files in $VST3_PLUGIN_LIST
 do
@@ -116,14 +113,6 @@ do
     cp -ra $Files %{buildroot}%{_libdir}/lv2/
 done
 
-for Files in $STANDALONE_PLUGIN_LIST
-do
-    cp -ra $Files %{buildroot}%{_bindir}/
-done
-
-%files
-%{_bindir}/*
-
 %files -n license-%{name}
 %doc README.md
 
@@ -134,6 +123,9 @@ done
 %{_libdir}/lv2/*
 
 %changelog
+* Sun May 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-10
+- update to 0.0.1-10 - 96809cc6b3b33054815e740065a0bf265c344dd8
+
 * Thu Apr 09 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-9
 - update to 0.0.1-9 - update to 299764a1e2b40bf86cd3fc10aa9c794710c72505
 
