@@ -4,7 +4,7 @@
 # Category: Audio, Sampler
 
 Name: smoothir
-Version: 0.1
+Version: 0.2
 Release: 1%{?dist}
 Summary: Creating impulse responses (IRs) through spectral matching of two audio files
 License: BSD
@@ -16,7 +16,7 @@ Distribution: Audinux
 
 
 # ./brummer10-source.sh <project> <tag>
-# ./brummer10-source.sh SmoothIR v0.1
+# ./brummer10-source.sh SmoothIR v0.2
 
 Source0: SmoothIR.tar.gz
 Source1: brummer10-source.sh
@@ -78,6 +78,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/smoothir.desktop
 %{_datadir}/icons/hicolor/scalable/apps/smoothir.svg
 
 %changelog
+* Sun May 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2-1
+- update to 0.2-1
+
 * Wed Apr 29 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
 - update to 0.1-1
 
