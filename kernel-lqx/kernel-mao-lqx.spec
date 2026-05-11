@@ -2,9 +2,9 @@
 # Kernel major version
 %define kmaj  6
 # Kernel minor version
-%define kmin  18
+%define kmin  19
 # Kernel patch version
-%define kpat  16
+%define kpat  14
 # RT patch version
 %define krt   1
 # package version
@@ -202,20 +202,20 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 grub2-mkconfig -o /boot/grub2/grub.cfg
 
 %files
-%defattr (-, root, root)
 /lib/modules/%{kver}-lqx%{krt}%{fcver}
 /boot/*
 %ghost /boot/initramfs-%{kver}-lqx%{krt}%{fcver}
 
 %files headers
-%defattr (-, root, root)
 /usr/include
 
 %files devel
-%defattr (-, root, root)
 /usr/src/kernels/%{kver}-lqx%{krt}%{fcver}
 
 %changelog
+* Fri May 08 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-lqx1-14
+- update to 6.19.14-lqx1-14 - vanilla Liquorix kernel
+
 * Wed Mar 11 2026 Yann Collette <ycollette.nospam@free.fr> - 6.18.16-lqx1-14
 - update to 6.18.16-lqx1-14 - vanilla Liquorix kernel
 
