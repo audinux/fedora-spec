@@ -168,8 +168,6 @@
 | Sub_Dominant-VST                         | https://github.com/astriiddev/Sub_Dominant-VST                                                                                                              |
 | Cable                                    | https://github.com/magillos/Cable                                                                                                                           |
 | Just-a-Sample                            | https://github.com/BOBONA/Just-a-Sample                                                                                                                     |
-| Overdraw                                 | https://github.com/unevens/Overdraw                                                                                                                         |
-| Curvessor                                | https://github.com/unevens/Curvessor                                                                                                                        |
 | trigger2midi                             | https://github.com/jkbd/trigger2midi                                                                                                                        |
 | musegpt                                  | https://github.com/greynewell/musegpt                                                                                                                       |
 | regrader                                 | https://github.com/igorski/regrader                                                                                                                         |
@@ -302,6 +300,22 @@
 | extempore                                | https://github.com/digego/extempore                                                                                                                         |
 | Bonzomatic                               | https://github.com/Gargaj/Bonzomatic                                                                                                                        |
 | stemdeck                                 | https://github.com/thcp/stemdeck                                                                                                                            |
+| spectral-abyss-multiband-saturation      | https://github.com/pschaupp/spectral-abyss-multiband-saturation                                                                                             |
+| Overdraw                                 | https://github.com/unevens/Overdraw                                                                                                                         |
+| Curvessor                                | https://github.com/unevens/Curvessor                                                                                                                        |
+| modal-synth                              | https://github.com/crispinha/modal-synth                                                                                                                    |
+| Hammer-and-Meiszel                       | https://github.com/Mrugalla/Hammer-and-Meiszel                                                                                                              |
+| RCSiner                                  | https://github.com/RCJacH/RCSiner                                                                                                                           |
+| INTERSECT                                | https://github.com/tucktuckg00se/INTERSECT                                                                                                                  |
+| JS_Inflator                              | https://github.com/Kiriki-liszt/JS_Inflator                                                                                                                 |
+| Transfer                                 | https://github.com/MeijisIrlnd/Transfer                                                                                                                     |
+| Plasma                                   | https://github.com/Dimethoxy/Plasma                                                                                                                         |
+| Disflux                                  | https://github.com/Dimethoxy/Disflux                                                                                                                        |
+| NeuralResonatorVST                       | https://github.com/rodrigodzf/NeuralResonatorVST                                                                                                            |
+| valentine                                | https://github.com/tote-bag-labs/valentine                                                                                                                  |
+| DAFx19-Gamelanizer                       | https://github.com/lukemcraig/DAFx19-Gamelanizer                                                                                                            |
+| microbiome                               | https://github.com/dsmaugy/microbiome                                                                                                                       |
+| RE201models                              | https://github.com/je3928/RE201models                                                                                                                       |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -314,21 +328,6 @@ Check the following URL:
 - https://github.com/mod-audio
 - https://github.com/hollance
 - https://github.com/sfzinstruments/mappings -> some sfz sound fonts
-
-Check for LADSPA plugins missing in:
-https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/
-
-https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-LEET-plugin-0.2-160000.1.6.src.rpm
-https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-WAH-0.0.2-160000.1.5.src.rpm
-https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-foo-plugins-1.2-160000.1.6.src.rpm
-https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-invada-studio-plugins-0.3.1-160000.1.6.src.rpm
-https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-lemux-0.2-160000.2.5.src.rpm
-https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-lgv-plugins-0.1-160000.1.5.src.rpm
-https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-njl-0.2.1-160000.2.pm.2.src.rpm
-https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-omins-0.2.1-160000.1.6.src.rpm
-https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-trigger-20080510-160000.1.4.src.rpm
-https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-wasp-0.1.4-160000.1.5.src.rpm
-https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_16.0/Multimedia/src/ladspa-wubflip-1-160000.1.7.src.rpm
 
 Add dead package:
 - gmixer
