@@ -2,9 +2,9 @@
 # Kernel major version
 %define kmaj  6
 # Kernel minor version
-%define kmin  18
+%define kmin  19
 # Kernel patch version
-%define kpat  16
+%define kpat  14
 # Xan version
 %define kxan  1
 # package version
@@ -196,20 +196,20 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 grub2-mkconfig -o /boot/grub2/grub.cfg
 
 %files
-%defattr (-, root, root)
 /lib/modules/%{kver}-xan%{kxan}%{fcver}
 /boot/*
 %ghost /boot/initramfs-%{kver}-xan%{kxan}%{fcver}
 
 %files headers
-%defattr (-, root, root)
 /usr/include
 
 %files devel
-%defattr (-, root, root)
 /usr/src/kernels/%{kver}-xan%{kxan}%{fcver}
 
 %changelog
+* Fri May 08 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-xan1-12
+- update to 6.19.14-xan1-12 - vanilla XanMod kernel
+
 * Wed Mar 11 2026 Yann Collette <ycollette.nospam@free.fr> - 6.18.16-xan1-12
 - update to 6.18.16-xan1-12 - vanilla XanMod kernel
 
