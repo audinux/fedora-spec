@@ -1,15 +1,20 @@
 #!/bin/bash
 
 set -euo pipefail
+shopt -s nullglob
 
-COMMAND="$1"
-KERNEL_VERSION="$2"
+COMMAND="${1:-}"
+KERNEL_VERSION="${2:-}"
 
 BOOT_DIR="/boot"
 ENTRY_DIR="${BOOT_DIR}/loader/entries"
+
 SYSCONFIG="/etc/sysconfig/kernel-audio-tuned"
 
-# Load user config
+# ----------------------------------------------------------------------
+# Load user configuration
+# ----------------------------------------------------------------------
+
 if [[ -f "$SYSCONFIG" ]]; then
     source "$SYSCONFIG"
 fi
@@ -20,24 +25,38 @@ if [[ "$KERNEL_AUDIO_TUNED_ENABLE" != "yes" ]]; then
     exit 0
 fi
 
+# ----------------------------------------------------------------------
 # Read installonly_limit from dnf
+# ----------------------------------------------------------------------
+
 get_installonly_limit() {
     local limit
 
-    limit=$(grep -E '^installonly_limit=' /etc/dnf/dnf.conf 2>/dev/null | cut -d= -f2 || true)
+    limit=$(
+        grep -E '^installonly_limit=' /etc/dnf/dnf.conf 2>/dev/null \
+        | cut -d= -f2 \
+        || true
+    )
 
-    # fallback if not defined
-    if [[ -z "$limit" ]]; then
+    if [[ -z "${limit:-}" ]]; then
         limit=3
     fi
 
     echo "$limit"
 }
 
+# ----------------------------------------------------------------------
 # CPU detection
-CPU_VENDOR="$(grep -m1 'vendor_id' /proc/cpuinfo | awk '{print $3}')"
+# ----------------------------------------------------------------------
+
+CPU_VENDOR="$(
+    grep -m1 'vendor_id' /proc/cpuinfo 2>/dev/null \
+    | awk '{print $3}' \
+    || true
+)"
 
 CPU_OPTS=""
+
 case "$CPU_VENDOR" in
     GenuineIntel)
         CPU_OPTS="${KERNEL_AUDIO_TUNED_INTEL_OPTS:-}"
@@ -50,63 +69,102 @@ esac
 COMMON_OPTS="${KERNEL_AUDIO_TUNED_OPTS:-}"
 FINAL_OPTS="${COMMON_OPTS} ${CPU_OPTS}"
 
-# Create the entry
+# ----------------------------------------------------------------------
+# Creation of a BSL audio entry
+# ----------------------------------------------------------------------
+
 create_entry() {
     local entry="$1"
+
     local base
     base="$(basename "$entry" .conf)"
 
+    # avoid to compute again an audio entry
+    if [[ "$base" == *-audio ]]; then
+        return
+    fi
+
     local new_entry="${ENTRY_DIR}/${base}-audio.conf"
 
-    # Avoir doubles
+    # avoid doubles
     if [[ -f "$new_entry" ]]; then
         return
     fi
 
-    cp "$entry" "$new_entry"
+    cp "$entry" "$new_entry" || :
 
-    sed -i 's/^title \(.*\)$/title \1 (Audio tuned)/' "$new_entry"
-    sed -i "s/^options \(.*\)$/options \1 ${FINAL_OPTS}/" "$new_entry"
+    # Change the title
+    sed -i \
+        's/^title \(.*\)$/title \1 (Audio tuned)/' \
+        "$new_entry" || :
+
+    # Add the kernel options
+    sed -i \
+        "s/^options \(.*\)$/options \1 ${FINAL_OPTS}/" \
+        "$new_entry" || :
 }
 
-# Remove the entry
+# ----------------------------------------------------------------------
+# Removal of an audio entry
+# ----------------------------------------------------------------------
+
 remove_entry() {
     local entry="$1"
+
     local base
     base="$(basename "$entry" .conf)"
 
+    # Avoid double computation
+    if [[ "$base" == *-audio ]]; then
+        return
+    fi
+
     local new_entry="${ENTRY_DIR}/${base}-audio.conf"
 
-    [[ -f "$new_entry" ]] && rm -f "$new_entry"
+    rm -f "$new_entry" || :
 }
 
-# Cleanup wrt installonly_limit
+# ----------------------------------------------------------------------
+# Removal of old entries
+# ----------------------------------------------------------------------
+
 cleanup_entries() {
     local max
-    max=$(get_installonly_limit)
+    max="$(get_installonly_limit)"
 
-    # Sorted list of audio entries
-    mapfile -t entries < <(ls -1 ${ENTRY_DIR}/*-audio.conf 2>/dev/null | sort -V)
+    mapfile -t entries < <(
+        ls -1 "${ENTRY_DIR}"/*-audio.conf 2>/dev/null \
+        | sort -V
+    )
 
-    local count=${#entries[@]}
+    local count="${#entries[@]}"
 
     if (( count > max )); then
         for ((i=0; i < count - max; i++)); do
-            rm -f "${entries[$i]}"
+            rm -f "${entries[$i]}" || :
         done
     fi
 }
 
+# ----------------------------------------------------------------------
 # Main
+# ----------------------------------------------------------------------
+
 case "$COMMAND" in
     add)
-        for entry in "${ENTRY_DIR}"/*"${KERNEL_VERSION}"*.conf; do
+        entries=( "${ENTRY_DIR}"/*"${KERNEL_VERSION}"*.conf )
+
+        for entry in "${entries[@]}"; do
             create_entry "$entry"
         done
+
         cleanup_entries
         ;;
+
     remove)
-        for entry in "${ENTRY_DIR}"/*"${KERNEL_VERSION}"*.conf; do
+        entries=( "${ENTRY_DIR}"/*"${KERNEL_VERSION}"*.conf )
+
+        for entry in "${entries[@]}"; do
             remove_entry "$entry"
         done
         ;;

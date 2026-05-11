@@ -1,6 +1,6 @@
 Name: kernel-audio-tuned
 Version: 1.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Audio tuned kernel boot entries for Fedora
 BuildArch: noarch
 License: GPLv3
@@ -40,6 +40,9 @@ fi
 %config(noreplace) /etc/sysconfig/kernel-audio-tuned
 
 %changelog
+* Sun May 10 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-4
+- update to 1.0-4 - avoid some errors when there are no kernels to manage
+
 * Tue May 05 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-3
 - update to 1.0-3 - limit the number of audio tuned entries to installonly_limit
 
