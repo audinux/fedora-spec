@@ -339,12 +339,10 @@
 | phlegetron                               | https://github.com/igorski/phlegetron                                                                                                                       |
 | delirion                                 | https://github.com/igorski/delirion                                                                                                                         |
 | rdpiano                                  | https://github.com/giulioz/rdpiano                                                                                                                          |
-| ir.lv2                                   | https://git.hq.sig7.se/ir.lv2.git                                                                                                                           |
 | Panacea                                  | https://github.com/consint/Panacea                                                                                                                          |
 | Pult-EQ                                  | https://github.com/consint/Pult-EQ                                                                                                                          |
 | lkjb-plugins                             | https://github.com/lkjbdsp/lkjb-plugins                                                                                                                     |
 | Biztortion                               | https://github.com/killbizz/Biztortion                                                                                                                      |
-| spice-oss#spice-fx---open-source-edition | https://github.com/DatanoiseTV/spice-oss#spice-fx---open-source-edition                                                                                     |
 | RetroPlug                                | https://github.com/tommitytom/RetroPlug                                                                                                                     |
 | Frequalizer                              | https://github.com/ffAudio/Frequalizer                                                                                                                      |
 | beatcrafter                              | https://github.com/innermost47/beatcrafter                                                                                                                  |

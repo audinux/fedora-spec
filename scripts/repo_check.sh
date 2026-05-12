@@ -585,7 +585,6 @@ https://github.com/sjaehn/BSpacr
 https://github.com/Skrylar/skjack-vcv
 https://github.com/Skrylar/skylights-vcv
 https://github.com/smbddha/sb-StochKit
-https://github.com/smbolton/stretchplayer
 https://github.com/snappy46/GuitarixDroid
 https://github.com/snappy46/GuitarixMidiController
 https://github.com/s-ol/vcvmods
@@ -842,7 +841,7 @@ https://github.com/sbadon122/ATLAS-06-Synthesizer
 https://github.com/overtone/overtone
 https://github.com/guysherman/si-plugins
 https://github.com/AlisterH/gwc
-https://github.com/tomscii/ir.lv2
+https://git.hq.sig7.se/ir.lv2.git
 https://github.com/calgoheen/cStop
 https://github.com/chmaha/RCComp
 https://github.com/chmaha/RCVerb
@@ -1028,7 +1027,6 @@ https://github.com/juzzlin/Noteahead
 https://git.code.sf.net/p/alsamodular/qmidicontrol.git
 https://git.code.sf.net/p/alsamodular/qarecord.git
 https://github.com/theabolton/hexter
-https://codeberg.org/unspeaker/tek
 https://github.com/robbert-vdh/nih-plug
 https://github.com/spatialaudio/jackclient-python
 https://github.com/glesdora/boris-granular-station
@@ -1135,9 +1133,12 @@ https://github.com/brummer10/SmoothIR
 https://github.com/reduz/chibitracker
 https://github.com/pac-dev/protoplug
 https://github.com/ycollet/protoplug
-https://github.com/muse-sequencer/muse"
+https://github.com/muse-sequencer/muse
+https://github.com/DatanoiseTV/spice-oss"
 
 # Missing repositories:
+# https://github.com/smbolton/stretchplayer (source on ycollet)
+# https://codeberg.org/unspeaker/tek (source on ycollet)
 # https://github.com/giogramegna/mantra-master
 # https://github.com/50m30n3/SO-666
 # https://github.com/WeirdConstructor/HexoSynth
