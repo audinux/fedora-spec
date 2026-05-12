@@ -4,7 +4,7 @@
 # Category: Tool
 
 Name: vimix
-Version: 0.9.0
+Version: 0.9.1
 Release: 1%{?dist}
 Summary: Live Video Mixer
 URL: https://github.com/brunoherbelin/vimix
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to get the sources:
-# ./vimix-source.sh 0.9.0
+# ./vimix-source.sh 0.9.1
 
 Source0: vimix.tar.gz
 Source1: vimix-source.sh
@@ -98,5 +98,8 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.metainf
 %{_datadir}/mime/packages/*
 
 %changelog
+* Tue May 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.1-1
+- update to 0.9.1-1
+
 * Wed Apr 22 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.0-1
 - initial specfile
