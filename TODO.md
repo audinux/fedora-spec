@@ -316,6 +316,41 @@
 | DAFx19-Gamelanizer                       | https://github.com/lukemcraig/DAFx19-Gamelanizer                                                                                                            |
 | microbiome                               | https://github.com/dsmaugy/microbiome                                                                                                                       |
 | RE201models                              | https://github.com/je3928/RE201models                                                                                                                       |
+| VinSynth                                 | https://github.com/ashaydave/VinSynth                                                                                                                       |
+| Gripverb                                 | https://github.com/ashaydave/Gripverb                                                                                                                       |
+| DCOffsetter                              | https://github.com/wheatBread1306/DCOffsetter                                                                                                               |
+| ClassicReverb-RE02                       | https://github.com/AnClark/ClassicReverb-RE02                                                                                                               |
+| ClassicReverb-RE03                       | https://github.com/AnClark/ClassicReverb-RE03                                                                                                               |
+| ClassicReverb-RE04                       | https://github.com/AnClark/ClassicReverb-RE04                                                                                                               |
+| vst-vac-6v                               | https://codeberg.org/pongasoft/vst-vac-6v                                                                                                                   |
+| CrushClone                               | https://github.com/doxiedevops/CrushClone                                                                                                                   |
+| music21                                  | https://github.com/cuthbertLab/music21                                                                                                                      |
+| Harpejji-VST                             | https://github.com/ABSounds/Harpejji-VST                                                                                                                    |
+| FlappyChord                              | https://github.com/odoare/FlappyChord                                                                                                                       |
+| PerceptoMap                              | https://github.com/hqrrr/PerceptoMap                                                                                                                        |
+| ZeroComp                                 | https://github.com/Jun-Murakami/ZeroComp                                                                                                                    |
+| ZeroEQ                                   | https://github.com/Jun-Murakami/ZeroEQ                                                                                                                      |
+| ZeroLimi                                 | https://github.com/Jun-Murakami/ZeroLimi                                                                                                                    |
+| MixCompare                               | https://github.com/Jun-Murakami/MixCompare                                                                                                                  |
+| rechoir                                  | https://github.com/igorski/rechoir                                                                                                                          |
+| darvaza                                  | https://github.com/igorski/darvaza                                                                                                                          |
+| homecorrupter                            | https://github.com/igorski/homecorrupter                                                                                                                    |
+| transformant                             | https://github.com/igorski/transformant                                                                                                                     |
+| phlegetron                               | https://github.com/igorski/phlegetron                                                                                                                       |
+| delirion                                 | https://github.com/igorski/delirion                                                                                                                         |
+| rdpiano                                  | https://github.com/giulioz/rdpiano                                                                                                                          |
+| ir.lv2                                   | https://git.hq.sig7.se/ir.lv2.git                                                                                                                           |
+| Panacea                                  | https://github.com/consint/Panacea                                                                                                                          |
+| Pult-EQ                                  | https://github.com/consint/Pult-EQ                                                                                                                          |
+| lkjb-plugins                             | https://github.com/lkjbdsp/lkjb-plugins                                                                                                                     |
+| Biztortion                               | https://github.com/killbizz/Biztortion                                                                                                                      |
+| spice-oss#spice-fx---open-source-edition | https://github.com/DatanoiseTV/spice-oss#spice-fx---open-source-edition                                                                                     |
+| RetroPlug                                | https://github.com/tommitytom/RetroPlug                                                                                                                     |
+| Frequalizer                              | https://github.com/ffAudio/Frequalizer                                                                                                                      |
+| beatcrafter                              | https://github.com/innermost47/beatcrafter                                                                                                                  |
+| PodcastPlugins                           | https://github.com/trummerschlunk/PodcastPlugins                                                                                                            |
+| ripchord                                 | https://github.com/trackbout/ripchord                                                                                                                       |
+| DtBlkFx                                  | https://codeberg.org/skullzy/DtBlkFx                                                                                                                        |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
