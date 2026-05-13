@@ -349,7 +349,7 @@
 | PodcastPlugins                           | https://github.com/trummerschlunk/PodcastPlugins                                                                                                            |
 | ripchord                                 | https://github.com/trackbout/ripchord                                                                                                                       |
 | DtBlkFx                                  | https://codeberg.org/skullzy/DtBlkFx                                                                                                                        |
-| midiverb_emulator                        | https://github.com/thement/midiverb_emulator                                                                                                                |
+| VerbVerb_I                               | https://github.com/amateurtools/VerbVerb_I                                                                                                                  |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
