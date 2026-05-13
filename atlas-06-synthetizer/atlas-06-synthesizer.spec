@@ -3,9 +3,11 @@
 # Type: Standalone, VST3
 # Category: Audio, Synthesizer
 
+%global commit0 856e56654a1dd95c47acc188c2f603c650ab6ce3
+
 Name: atlas-06-synthesizer
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A subtractive software synthesizer built using the JUCE framework
 License: GPL-3.0-or-later
 URL: https://github.com/sbadon122/ATLAS-06-Synthesizer
@@ -36,8 +38,9 @@ BuildRequires: xcb-util-keysyms-devel
 BuildRequires: xcb-util-devel
 BuildRequires: gtk3-devel
 BuildRequires: pkgconfig(jack)
-BuildRequires: vst3sdk
 BuildRequires: desktop-file-utils
+
+Requires: license-%{name}
 
 %description
 A subtractive software synthesizer built using the JUCE framework.
@@ -45,10 +48,17 @@ It currently builds to vst, vst3 and audio unit. This synthesizer
 is inspired by 80s synths and its signal flow is a mix of a Roland
 Juno-06 and Roland Juno-106. Installer included with repo.
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: GPL-3.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-or-later
-Requires: %{name}
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -95,18 +105,22 @@ desktop-file-install                         \
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
-# validator %{buildroot}/%{_libdir}/vst3/ATLAS-06.vst3
 
 %files
-%doc README.md
-%license LICENSE.md
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/pixmaps/*
+
+%files -n license-%{name}
+%doc README.md
+%license LICENSE.md
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
 %changelog
+* Wed May 13 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2
+
 * Thu Jul 27 2023 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
