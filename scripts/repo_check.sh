@@ -1134,7 +1134,10 @@ https://github.com/reduz/chibitracker
 https://github.com/pac-dev/protoplug
 https://github.com/ycollet/protoplug
 https://github.com/muse-sequencer/muse
-https://github.com/DatanoiseTV/spice-oss"
+https://github.com/DatanoiseTV/spice-oss
+https://github.com/AnClark/ClassicReverb-RE02
+https://github.com/AnClark/ClassicReverb-RE03
+https://github.com/AnClark/ClassicReverb-RE04"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
