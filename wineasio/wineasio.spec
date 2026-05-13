@@ -41,10 +41,16 @@
 %if 0%{?fedora} >= 42
 %global wineversion 10.12
 %endif
+%if 0%{?fedora} >= 43
+%global wineversion 11.0
+%endif
+%if 0%{?fedora} >= 44
+%global wineversion 11.0
+%endif
 
 Name: wineasio
 Version: 1.3.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: ASIO to JACK driver for WINE
 License: LGPLv2.1
 URL: https://github.com/wineasio/wineasio
@@ -128,6 +134,9 @@ popd
 %{_datadir}/%{name}/*.py
 
 %changelog
+* Wed May 13 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-3
+- update to 1.3.0-3 - update wine versions for f43 and f44
+
 * Fri Jul 25 2025 Patrick Laimbock <patrick@laimbock.com> - 1.3.0-2
 - update to 1.3.0-2
 
