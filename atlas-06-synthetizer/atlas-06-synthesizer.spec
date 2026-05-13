@@ -80,7 +80,7 @@ cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
 Encoding=UTF-8
 Name=%name
-Exec=%{name}
+Exec=ATLAS-06
 Icon=%{name}
 Comment=ATLAS 06 Synthesizer
 Terminal=false
