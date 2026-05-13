@@ -3,7 +3,7 @@
 # ./traverso-source.sh <tag>
 # ./traverso-source.sh master
 
-git clone https://git.savannah.nongnu.org/git/traverso.git
+git clone --depth=1 https://git.savannah.nongnu.org/git/traverso.git
 cd traverso
 git checkout $1
 if [ $? == 1 ]; then

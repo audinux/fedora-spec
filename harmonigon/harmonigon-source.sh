@@ -3,14 +3,14 @@
 # Usage: ./harmonigon-source.sh <TAG>
 #        ./harmonigon-source.sh master
 
-git clone https://github.com/StrangeLoopsAudio/Harmonigon
+git clone --depth=1 https://github.com/StrangeLoopsAudio/Harmonigon
 cd Harmonigon
 git checkout $1
 if [ $? == 1 ]; then
     echo "Wrong branch / tag name: $1"
     exit 1
 fi
-git submodule update --init --recursive --progress
+git submodule update --depth=1 --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Harmonigon.tar.gz Harmonigon/*

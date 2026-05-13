@@ -3,16 +3,16 @@
 # Usage: ./source-cmajor.sh <tag>
 #        ./source-cmajor.sh 1.0.2562
 
-git clone https://github.com/cmajor-lang/cmajor
+git clone --depth=1 https://github.com/cmajor-lang/cmajor
 cd cmajor
 git checkout $1
 if [ $? == 1 ]; then
     echo "Wrong branch / tag name: $1"
     exit 1
 fi
-git submodule update --init --recursive --progress
+git submodule update --depth=1 --init --recursive --progress
 
-git clone https://github.com/juce-framework/JUCE/ juce
+git clone --depth=1 https://github.com/juce-framework/JUCE/ juce
 cd juce
 git checkout 7.0.12
 cd ..

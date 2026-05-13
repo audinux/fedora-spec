@@ -3,14 +3,14 @@
 # Usage: ./luna-co-software-source.sh <TAG>
 #        ./luna-co-software-source.sh main
 
-git clone https://github.com/dusk-audio/dusk-audio-plugins
+git clone --depth=1 https://github.com/dusk-audio/dusk-audio-plugins
 cd dusk-audio-plugins
 git checkout $1
 if [ $? == 1 ]; then
     echo "Wrong branch / tag name: $1"
     exit 1
 fi
-git submodule update --init --recursive --progress
+git submodule update --depth=1 --init --recursive --progress
 git submodule add https://github.com/juce-framework/JUCE.git external/JUCE
 
 find . -name .git -exec rm -rf {} \;

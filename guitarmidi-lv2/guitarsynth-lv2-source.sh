@@ -3,7 +3,7 @@
 # Usage: ./guitarsynth-lv2-source.sh <TAG>
 #        ./guitarsynth-lv2-source.sh master
 
-git clone https://github.com/geraldmwangi/GuitarSynth-DPF
+git clone --depth=1 https://github.com/geraldmwangi/GuitarSynth-DPF
 cd GuitarSynth-DPF
 git checkout $1
 if [ $? == 1 ]; then

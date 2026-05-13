@@ -3,7 +3,7 @@
 # ./x42-source.sh <project> <tag>
 # ./x42-source.sh fil4.lv2 v0.4.4
 
-git clone https://github.com/x42/$1
+git clone --depth=1 https://github.com/x42/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then
@@ -22,7 +22,7 @@ fi
 #    git add .gitmodules robtk
 #    git commit -m "add submodule"
 #fi
-git submodule update --init --recursive --progress
+git submodule update --depth=1 --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz $1.tar.gz $1/*

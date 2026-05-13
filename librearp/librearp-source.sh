@@ -3,7 +3,7 @@
 # Usage: ./librearp-source.sh <TAG>
 #        ./librearp-source.sh 2.5
 
-git clone https://gitlab.com/LibreArp/LibreArp LibreArpLV2
+git clone --depth=1 https://gitlab.com/LibreArp/LibreArp LibreArpLV2
 cp -r LibreArpLV2 LibreArpVST3
 cd LibreArpLV2
 git checkout $1-lv2
@@ -11,7 +11,7 @@ if [ $? == 1 ]; then
     echo "Wrong branch / tag name: $1"
     exit 1
 fi
-git submodule update --init --recursive --progress
+git submodule update --depth=1 --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz LibreArpLV2.tar.gz LibreArpLV2/*
@@ -23,7 +23,7 @@ if [ $? == 1 ]; then
     echo "Wrong branch / tag name: $1"
     exit 1
 fi
-git submodule update --init --recursive --progress
+git submodule update --depth=1 --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz LibreArpVST3.tar.gz LibreArpVST3/*

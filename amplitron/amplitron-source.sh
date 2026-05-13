@@ -3,18 +3,18 @@
 # Usage: ./amplitron-source.sh <TAG>
 #        ./amplitron-source.sh v0.1.71
 
-git clone https://github.com/sudip-mondal-2002/Amplitron
+git clone --depth=1 https://github.com/sudip-mondal-2002/Amplitron
 cd Amplitron
 git checkout $1
 if [ $? == 1 ]; then
     echo "Wrong branch / tag name: $1"
     exit 1
 fi
-git submodule update --init --recursive --progress
+git submodule update --depth=1 --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 
 # From .github/workflows/ci.yml
-git clone --depth 1 --branch v1.90.1 https://github.com/ocornut/imgui.git external/imgui
+git clone --depth=1 --depth 1 --branch v1.90.1 https://github.com/ocornut/imgui.git external/imgui
 curl -sL -o external/nanosvg.h https://raw.githubusercontent.com/memononen/nanosvg/master/src/nanosvg.h
 curl -sL -o external/nanosvgrast.h https://raw.githubusercontent.com/memononen/nanosvg/master/src/nanosvgrast.h
 curl -sL -o external/dr_wav.h https://raw.githubusercontent.com/mackron/dr_libs/master/dr_wav.h

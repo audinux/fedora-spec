@@ -3,7 +3,7 @@
 # ./loudness-scanner-source.sh <tag>
 # ./loudness-scanner-source.sh v0.5.1
 
-git clone https://github.com/jiixyj/loudness-scanner
+git clone --depth=1 https://github.com/jiixyj/loudness-scanner
 cd loudness-scanner
 git checkout $1
 if [ $? == 1 ]; then
@@ -32,7 +32,7 @@ then
     git commit -m "add submodule"
 fi
 
-git submodule update --init --recursive --progress
+git submodule update --depth=1 --init --recursive --progress
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz loudness-scanner.tar.gz loudness-scanner/*
