@@ -4,24 +4,24 @@
 # Category: Audio, Effect, Synthesizer, Tool
 
 %define _lto_cflags %{nil}
+%global commit0 97a9e0740baf6df2df942495c02532a624c44682
 
 %global pname carla
 
 Name: Carla-mao
 Version: 2.5.10
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: Audio plugin host
 Epoch: 1
 License: GPLv2+ and BSD and Boost and ISC and MIT and zlib
 URL: https://github.com/falkTX/Carla
 ExclusiveArch: x86_64
 
-Source0: https://github.com/falkTX/Carla/archive/v%{version}.tar.gz#/Carla-%{version}.tar.gz
+Source0: https://github.com/falkTX/Carla/archive/%{commit0}.tar.gz#/Carla-%{version}.tar.gz
 Patch0: Carla-libdir.patch
 Patch1: Carla-single-libs-path.patch
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: mingw32-gcc-c++
 BuildRequires: mingw64-gcc-c++
@@ -39,13 +39,14 @@ BuildRequires: pkgconfig(mxml)
 BuildRequires: pkgconfig(gl)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: python3-qt5-base
-BuildRequires: python3-magic
+BuildRequires: python3-file-magic
 BuildRequires: pkgconfig(liblo)
 BuildRequires: pkgconfig(zlib)
 BuildRequires: wine-devel
 # BuildRequires: glibc-devel(x86-32)
 # BuildRequires: wine-devel(x86-32)
 # BuildRequires: libstdc++-devel(x86-32)
+BuildRequires: chrpath
 BuildRequires: libappstream-glib
 BuildRequires: desktop-file-utils
 
@@ -117,7 +118,7 @@ Provides: lv2-Carla-mao-devel = %{version}
 This package contains the Carla LV2 plugin.
 
 %prep
-%autosetup -p1 -n Carla-%{version}
+%autosetup -p1 -n Carla-%{commit0}
 
 # remove windows stuff
 rm -rf data/{macos,windows}
@@ -165,6 +166,9 @@ chmod a+x %{buildroot}%{_datadir}/%{pname}/{carla,carla-control,carla-jack-multi
 
 # fix perm due rpmlint W: unstripped-binary-or-object /usr/lib64/carla/libcarla_interposer-jack-x11.so
 find %{buildroot}%{_libdir} -name '*.so' -exec chmod +x '{}' ';'
+
+chrpath --delete %{buildroot}/%{_libdir}/carla/libcarla_frontend.so
+chrpath --delete %{buildroot}/%{_libdir}/carla/styles/carlastyle.so
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop

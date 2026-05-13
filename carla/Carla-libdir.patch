@@ -1,18 +1,151 @@
-From 742862ee3fceef752fc829d307f2d9bf8921f057 Mon Sep 17 00:00:00 2001
-From: Yann Collette <ycollette.nospam@free.fr>
-Date: Sun, 22 Sep 2024 20:44:57 +0200
-Subject: [PATCH] libdir
+From c323a064ee294ed2aa8d91f7ed58a28f97e471f6 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Tue, 12 May 2026 22:10:30 +0200
+Subject: [PATCH] patch
 
 ---
- source/frontend/carla_shared.py | 24 ++++++++++++------------
- 1 file changed, 12 insertions(+), 12 deletions(-)
+ data/carla                                    |  3 +-
+ data/carla-control                            |  3 +-
+ data/carla-database                           |  3 +-
+ data/carla-jack-multi                         |  3 +-
+ data/carla-jack-patchbayplugin                |  2 +-
+ data/carla-jack-single                        |  3 +-
+ data/carla-patchbay                           |  3 +-
+ data/carla-rack                               |  3 +-
+ data/carla-settings                           |  3 +-
+ source/backend/engine/CarlaEngineJack.cpp     |  2 +-
+ source/frontend/carla_shared.py               | 34 +++++++++----------
+ .../frontend/pluginlist/pluginlistdialog.cpp  | 28 +++++++--------
+ 13 files changed, 50 insertions(+), 42 deletions(-)
 
+diff --git a/data/carla b/data/carla
+index 4b6def8..210006a 100755
+--- a/data/carla
++++ b/data/carla
+@@ -11,5 +11,6 @@ if [ "$1" = "--gdb" ]; then
+ fi
+ 
+ INSTALL_PREFIX="X-PREFIX-X"
+-export PATH="$INSTALL_PREFIX"/lib/carla:$PATH
++export PATH="$INSTALL_PREFIX"/lib64/carla:$PATH
++export LD_LIBRARY_PATH="$INSTALL_PREFIX"/lib64/carla:$LD_LIBRARY_PATH
+ exec $PYTHON "$INSTALL_PREFIX"/share/carla/carla --with-appname="$0" --with-libprefix="$INSTALL_PREFIX" "$@"
+diff --git a/data/carla-control b/data/carla-control
+index 3338fee..c94f5ac 100755
+--- a/data/carla-control
++++ b/data/carla-control
+@@ -11,5 +11,6 @@ if [ "$1" = "--gdb" ]; then
+ fi
+ 
+ INSTALL_PREFIX="X-PREFIX-X"
+-export PATH="$INSTALL_PREFIX"/lib/carla:$PATH
++export PATH="$INSTALL_PREFIX"/lib64/carla:$PATH
++export LD_LIBRARY_PATH="$INSTALL_PREFIX"/lib64/carla:$LD_LIBRARY_PATH
+ exec $PYTHON "$INSTALL_PREFIX"/share/carla/carla-control --with-appname="$0" --with-libprefix="$INSTALL_PREFIX" "$@"
+diff --git a/data/carla-database b/data/carla-database
+index 0aebdd1..83ed58a 100755
+--- a/data/carla-database
++++ b/data/carla-database
+@@ -11,5 +11,6 @@ if [ "$1" = "--gdb" ]; then
+ fi
+ 
+ INSTALL_PREFIX="X-PREFIX-X"
+-export PATH="$INSTALL_PREFIX"/lib/carla:$PATH
++export PATH="$INSTALL_PREFIX"/lib64/carla:$PATH
++export LD_LIBRARY_PATH="$INSTALL_PREFIX"/lib64/carla:$LD_LIBRARY_PATH
+ exec $PYTHON "$INSTALL_PREFIX"/share/carla/carla_database.py --with-libprefix="$INSTALL_PREFIX" "$@"
+diff --git a/data/carla-jack-multi b/data/carla-jack-multi
+index 5caef0c..8cdcce8 100755
+--- a/data/carla-jack-multi
++++ b/data/carla-jack-multi
+@@ -11,5 +11,6 @@ if [ "$1" = "--gdb" ]; then
+ fi
+ 
+ INSTALL_PREFIX="X-PREFIX-X"
+-export PATH="$INSTALL_PREFIX"/lib/carla:$PATH
++export PATH="$INSTALL_PREFIX"/lib64/carla:$PATH
++export LD_LIBRARY_PATH="$INSTALL_PREFIX"/lib64/carla:$LD_LIBRARY_PATH
+ exec $PYTHON "$INSTALL_PREFIX"/share/carla/carla-jack-multi --with-appname="$0" --with-libprefix="$INSTALL_PREFIX" "$@"
+diff --git a/data/carla-jack-patchbayplugin b/data/carla-jack-patchbayplugin
+index d47b193..7007303 100755
+--- a/data/carla-jack-patchbayplugin
++++ b/data/carla-jack-patchbayplugin
+@@ -5,7 +5,7 @@ if [ -f "$(dirname ${0})/carla-utils.pc" ]; then
+     export ENGINE_OPTION_PATH_BINARIES="$(pwd)/bin"
+ else
+     INSTALL_PREFIX="X-PREFIX-X"
+-    export ENGINE_OPTION_PATH_BINARIES="${INSTALL_PREFIX}/lib/carla"
++    export ENGINE_OPTION_PATH_BINARIES="${INSTALL_PREFIX}/lib64/carla"
+     export ENGINE_OPTION_PATH_RESOURCES="${INSTALL_PREFIX}/share/carla/resources"
+ fi
+ 
+diff --git a/data/carla-jack-single b/data/carla-jack-single
+index 64ffacb..a41cf64 100755
+--- a/data/carla-jack-single
++++ b/data/carla-jack-single
+@@ -11,5 +11,6 @@ if [ "$1" = "--gdb" ]; then
+ fi
+ 
+ INSTALL_PREFIX="X-PREFIX-X"
+-export PATH="$INSTALL_PREFIX"/lib/carla:$PATH
++export PATH="$INSTALL_PREFIX"/lib64/carla:$PATH
++export LD_LIBRARY_PATH="$INSTALL_PREFIX"/lib64/carla:$LD_LIBRARY_PATH
+ exec $PYTHON "$INSTALL_PREFIX"/share/carla/carla-jack-single --with-appname="$0" --with-libprefix="$INSTALL_PREFIX" "$@"
+diff --git a/data/carla-patchbay b/data/carla-patchbay
+index 83bafb0..8f4866d 100755
+--- a/data/carla-patchbay
++++ b/data/carla-patchbay
+@@ -11,5 +11,6 @@ if [ "$1" = "--gdb" ]; then
+ fi
+ 
+ INSTALL_PREFIX="X-PREFIX-X"
+-export PATH="$INSTALL_PREFIX"/lib/carla:$PATH
++export PATH="$INSTALL_PREFIX"/lib64/carla:$PATH
++export LD_LIBRARY_PATH="$INSTALL_PREFIX"/lib64/carla:$LD_LIBRARY_PATH
+ exec $PYTHON "$INSTALL_PREFIX"/share/carla/carla-patchbay --with-appname="$0" --with-libprefix="$INSTALL_PREFIX" "$@"
+diff --git a/data/carla-rack b/data/carla-rack
+index 7462511..b0c070f 100755
+--- a/data/carla-rack
++++ b/data/carla-rack
+@@ -11,5 +11,6 @@ if [ "$1" = "--gdb" ]; then
+ fi
+ 
+ INSTALL_PREFIX="X-PREFIX-X"
+-export PATH="$INSTALL_PREFIX"/lib/carla:$PATH
++export PATH="$INSTALL_PREFIX"/lib64/carla:$PATH
++export LD_LIBRARY_PATH="$INSTALL_PREFIX"/lib64/carla:$LD_LIBRARY_PATH
+ exec $PYTHON "$INSTALL_PREFIX"/share/carla/carla-rack --with-appname="$0" --with-libprefix="$INSTALL_PREFIX" "$@"
+diff --git a/data/carla-settings b/data/carla-settings
+index da6c8b8..7a87d81 100755
+--- a/data/carla-settings
++++ b/data/carla-settings
+@@ -11,5 +11,6 @@ if [ "$1" = "--gdb" ]; then
+ fi
+ 
+ INSTALL_PREFIX="X-PREFIX-X"
+-export PATH="$INSTALL_PREFIX"/lib/carla:$PATH
++export PATH="$INSTALL_PREFIX"/lib64/carla:$PATH
++export LD_LIBRARY_PATH="$INSTALL_PREFIX"/lib64/carla:$LD_LIBRARY_PATH
+ exec $PYTHON "$INSTALL_PREFIX"/share/carla/carla_settings.py --with-libprefix="$INSTALL_PREFIX" "$@"
+diff --git a/source/backend/engine/CarlaEngineJack.cpp b/source/backend/engine/CarlaEngineJack.cpp
+index e7e1dea..abb37e9 100644
+--- a/source/backend/engine/CarlaEngineJack.cpp
++++ b/source/backend/engine/CarlaEngineJack.cpp
+@@ -4588,7 +4588,7 @@ int jack_initialize(jack_client_t* const client, const char* const load_init)
+ #endif
+ 
+     // FIXME
+-    engine->setOption(ENGINE_OPTION_PATH_BINARIES, 0, "/usr/lib/carla");
++    engine->setOption(ENGINE_OPTION_PATH_BINARIES, 0, "/usr/lib64/carla");
+     engine->setOption(ENGINE_OPTION_PATH_RESOURCES, 0, "/usr/share/resources");
+ 
+     if (engine->initInternal(client))
 diff --git a/source/frontend/carla_shared.py b/source/frontend/carla_shared.py
-index c4387eb..84082f2 100644
+index aae07a0..7d41aa7 100644
 --- a/source/frontend/carla_shared.py
 +++ b/source/frontend/carla_shared.py
-@@ -466,28 +466,28 @@ else:
-     splitter = ":"
+@@ -480,32 +480,32 @@ else:
+     CONFIG_HOME = os.getenv("XDG_CONFIG_HOME", HOME + "/.config")
  
      DEFAULT_LADSPA_PATH  = HOME + "/.ladspa"
 -    DEFAULT_LADSPA_PATH += ":/usr/lib/ladspa"
@@ -50,8 +183,108 @@ index c4387eb..84082f2 100644
 +    DEFAULT_VST3_PATH   += ":/usr/lib64/vst3"
 +    DEFAULT_VST3_PATH   += ":/usr/local/lib64/vst3"
  
+     DEFAULT_CLAP_PATH    = HOME + "/.clap"
+-    DEFAULT_CLAP_PATH   += ":/usr/lib/clap"
+-    DEFAULT_CLAP_PATH   += ":/usr/local/lib/clap"
++    DEFAULT_CLAP_PATH   += ":/usr/lib64/clap"
++    DEFAULT_CLAP_PATH   += ":/usr/local/lib64/clap"
+ 
      DEFAULT_SF2_PATH     = HOME + "/.sounds/sf2"
      DEFAULT_SF2_PATH    += ":" + HOME + "/.sounds/sf3"
+@@ -625,8 +625,8 @@ if not CWD:
+ # make it work with cxfreeze
+ if os.path.isfile(CWD):
+     CWD = os.path.dirname(CWD)
+-    if CWD.endswith("/lib"):
+-        CWD = CWD.rsplit("/lib",1)[0]
++    if CWD.endswith("/lib64"):
++        CWD = CWD.rsplit("/lib64",1)[0]
+     CXFREEZE = True
+     if not CARLA_OS_WIN:
+         os.environ['CARLA_MAGIC_FILE'] = os.path.join(CWD, "magic.mgc")
+@@ -808,7 +808,7 @@ def getPaths(libPrefix = None):
+     CWDl = CWD.lower()
+ 
+     # adjust for special distros
+-    libdir  = os.path.basename(os.path.normpath(X_LIBDIR_X))  if X_LIBDIR_X  else "lib"
++    libdir  = os.path.basename(os.path.normpath(X_LIBDIR_X))  if X_LIBDIR_X  else "lib64"
+     datadir = os.path.basename(os.path.normpath(X_DATADIR_X)) if X_DATADIR_X else "share"
+ 
+     # standalone, installed system-wide linux
+diff --git a/source/frontend/pluginlist/pluginlistdialog.cpp b/source/frontend/pluginlist/pluginlistdialog.cpp
+index bc6ff2c..b37f22d 100644
+--- a/source/frontend/pluginlist/pluginlistdialog.cpp
++++ b/source/frontend/pluginlist/pluginlistdialog.cpp
+@@ -132,8 +132,8 @@ struct PluginPaths {
+             ladspa += ":/Library/Audio/Plug-Ins/LADSPA";
+            #else
+             ladspa  = HOME + "/.ladspa";
+-            ladspa += ":/usr/local/lib/ladspa";
+-            ladspa += ":/usr/lib/ladspa";
++            ladspa += ":/usr/local/lib64/ladspa";
++            ladspa += ":/usr/lib64/ladspa";
+            #endif
+         }
+ 
+@@ -156,8 +156,8 @@ struct PluginPaths {
+             dssi += ":/Library/Audio/Plug-Ins/DSSI";
+            #else
+             dssi  = HOME + "/.dssi";
+-            dssi += ":/usr/local/lib/dssi";
+-            dssi += ":/usr/lib/dssi";
++            dssi += ":/usr/local/lib64/dssi";
++            dssi += ":/usr/lib64/dssi";
+            #endif
+         }
+        #endif // !CARLA_FRONTEND_ONLY_EMBEDDABLE_PLUGINS
+@@ -180,8 +180,8 @@ struct PluginPaths {
+             lv2 += ":/Library/Audio/Plug-Ins/LV2";
+            #else
+             lv2 = HOME + "/.lv2";
+-            lv2 += ":/usr/local/lib/lv2";
+-            lv2 += ":/usr/lib/lv2";
++            lv2 += ":/usr/local/lib64/lv2";
++            lv2 += ":/usr/lib64/lv2";
+            #endif
+         }
+ 
+@@ -208,10 +208,10 @@ struct PluginPaths {
+             // no official spec, use common paths
+             vst2 = HOME + "/.vst";
+             vst2 += ":" + HOME + "/.lxvst";
+-            vst2 += ":/usr/local/lib/vst";
+-            vst2 += ":/usr/local/lib/lxvst";
+-            vst2 += ":/usr/lib/vst";
+-            vst2 += ":/usr/lib/lxvst";
++            vst2 += ":/usr/local/lib64/vst";
++            vst2 += ":/usr/local/lib64/lxvst";
++            vst2 += ":/usr/lib64/vst";
++            vst2 += ":/usr/lib64/lxvst";
+            #endif
+         }
+ 
+@@ -233,8 +233,8 @@ struct PluginPaths {
+             vst3 += ":/Library/Audio/Plug-Ins/VST3";
+            #else
+             vst3 = HOME + "/.vst3";
+-            vst3 += ":/usr/local/lib/vst3";
+-            vst3 += ":/usr/lib/vst3";
++            vst3 += ":/usr/local/lib64/vst3";
++            vst3 += ":/usr/lib64/vst3";
+            #endif
+         }
+ 
+@@ -256,8 +256,8 @@ struct PluginPaths {
+             clap += ":/Library/Audio/Plug-Ins/CLAP";
+            #else
+             clap = HOME + "/.clap";
+-            clap += ":/usr/local/lib/clap";
+-            clap += ":/usr/lib/clap";
++            clap += ":/usr/local/lib64/clap";
++            clap += ":/usr/lib64/clap";
+            #endif
+         }
+ 
 -- 
-2.46.1
+2.54.0
 
