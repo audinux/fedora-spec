@@ -3,7 +3,7 @@
 # ./starling-via-source.sh <tag>
 # ./starling-via-source.sh v0.6.0
 
-git clone --depth=1 --recursive https://github.com/starlingcode/Via-for-Rack.git
+git clone --depth=1 https://github.com/starlingcode/Via-for-Rack.git
 cd Via-for-Rack
 git checkout $1
 if [ $? == 1 ]; then

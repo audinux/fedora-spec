@@ -12,9 +12,10 @@ if [ $? == 1 ]; then
 fi
 git submodule update --depth=1 --init --recursive --progress
 
-git clone --depth=1 --recursive https://github.com/juce-framework/JUCE.git
+git clone --depth=1 https://github.com/juce-framework/JUCE.git
 cd JUCE
 git checkout 8.0.10
+git submodule update --depth=1 --init --recursive --progress
 cd ..
 
 find . -name .git -exec rm -rf {} \;
