@@ -319,9 +319,6 @@
 | VinSynth                                 | https://github.com/ashaydave/VinSynth                                                                                                                       |
 | Gripverb                                 | https://github.com/ashaydave/Gripverb                                                                                                                       |
 | DCOffsetter                              | https://github.com/wheatBread1306/DCOffsetter                                                                                                               |
-| ClassicReverb-RE02                       | https://github.com/AnClark/ClassicReverb-RE02                                                                                                               |
-| ClassicReverb-RE03                       | https://github.com/AnClark/ClassicReverb-RE03                                                                                                               |
-| ClassicReverb-RE04                       | https://github.com/AnClark/ClassicReverb-RE04                                                                                                               |
 | vst-vac-6v                               | https://codeberg.org/pongasoft/vst-vac-6v                                                                                                                   |
 | CrushClone                               | https://github.com/doxiedevops/CrushClone                                                                                                                   |
 | music21                                  | https://github.com/cuthbertLab/music21                                                                                                                      |
@@ -350,6 +347,46 @@
 | ripchord                                 | https://github.com/trackbout/ripchord                                                                                                                       |
 | DtBlkFx                                  | https://codeberg.org/skullzy/DtBlkFx                                                                                                                        |
 | VerbVerb_I                               | https://github.com/amateurtools/VerbVerb_I                                                                                                                  |
+| quantumVerb                              | https://github.com/QVbDev/quantumVerb                                                                                                                       |
+| Strauss                                  | https://github.com/Noahdw/Strauss                                                                                                                           |
+| EP-MK1                                   | https://github.com/MikeMorenoDSP/EP-MK1                                                                                                                     |
+| RSAlgorithmicVerb                        | https://github.com/reillypascal/RSAlgorithmicVerb                                                                                                           |
+| GuitarD                                  | https://github.com/TobiasKozel/GuitarD                                                                                                                      |
+| FaustSynth                               | https://github.com/ZhiyuAlexZhang/FaustSynth                                                                                                                |
+| signalizer                               | https://github.com/jthorborg/signalizer                                                                                                                     |
+| fuzzball                                 | https://github.com/fake-industries/fuzzball                                                                                                                 |
+| soyboy-sp.vst3                           | https://github.com/t-sin/soyboy-sp.vst3                                                                                                                     |
+| simple-reverb                            | https://github.com/szkkng/simple-reverb                                                                                                                     |
+| TerminalVelocity                         | https://github.com/ReplicatAudio/TerminalVelocity                                                                                                           |
+| GamepadMidiVST                           | https://github.com/Tronhjem/GamepadMidiVST                                                                                                                  |
+| ORchestra                                | https://github.com/Tronhjem/ORchestra                                                                                                                       |
+| WX_CRUSHER                               | https://github.com/wxxminjeong/WX_CRUSHER                                                                                                                   |
+| visimusic                                | https://github.com/darilin98/visimusic                                                                                                                      |
+| MultiBandEQ                              | https://github.com/GiorgosChr/MultiBandEQ                                                                                                                   |
+| zippify                                  | https://github.com/GrieferPig/zippify                                                                                                                       |
+| Space_Dust_Synthesizer                   | https://github.com/gadalleore/Space_Dust_Synthesizer                                                                                                        |
+| mioSynth                                 | https://github.com/YeshiNamkhai/mioSynth                                                                                                                    |
+| GroovOliou                               | https://github.com/oliou/GroovOliou                                                                                                                         |
+| Blackheart                               | https://github.com/sachhm/Blackheart                                                                                                                        |
+| VibratoPlugin                            | https://github.com/Speechrezz/VibratoPlugin                                                                                                                 |
+| Viruz2                                   | https://github.com/EZForever/Viruz2                                                                                                                         |
+| FxBox                                    | https://github.com/marc365/FxBox                                                                                                                            |
+| chartchotic                              | https://github.com/noahbaxter/chartchotic                                                                                                                   |
+| destroyfx                                | https://github.com/sophiapoirier/destroyfx                                                                                                                  |
+| niner                                    | https://github.com/hyperfocusdsp/niner                                                                                                                      |
+| pMix2                                    | https://github.com/olilarkin/pMix2                                                                                                                          |
+| Melodrumatic                             | https://github.com/usdivad/Melodrumatic                                                                                                                     |
+| ClassicMasterLimiter-RE01                | https://github.com/AnClark/ClassicMasterLimiter-RE01                                                                                                        |
+| RaffoSynth-XT                            | https://github.com/AnClark/RaffoSynth-XT                                                                                                                    |
+| Triceratops-XT                           | https://github.com/AnClark/Triceratops-XT                                                                                                                   |
+| beatrice-vst                             | https://github.com/prj-beatrice/beatrice-vst                                                                                                                |
+| tract-plugin-pack                        | https://github.com/xxx/tract-plugin-pack                                                                                                                    |
+| Comp                                     | https://github.com/DawidKwaskiewicz/Comp                                                                                                                    |
+| autokit                                  | https://github.com/Hornfisk/autokit                                                                                                                         |
+| squelchbox                               | https://github.com/Hornfisk/squelchbox                                                                                                                      |
+| TinyVU                                   | https://github.com/Jun-Murakami/TinyVU                                                                                                                      |
+| vst-sam-spl-64                           | https://codeberg.org/pongasoft/vst-sam-spl-64                                                                                                               |
+| TestTone                                 | https://github.com/Jun-Murakami/TestTone                                                                                                                    |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
