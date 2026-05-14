@@ -373,7 +373,6 @@
 | FxBox                                    | https://github.com/marc365/FxBox                                                                                                                            |
 | chartchotic                              | https://github.com/noahbaxter/chartchotic                                                                                                                   |
 | destroyfx                                | https://github.com/sophiapoirier/destroyfx                                                                                                                  |
-| niner                                    | https://github.com/hyperfocusdsp/niner                                                                                                                      |
 | pMix2                                    | https://github.com/olilarkin/pMix2                                                                                                                          |
 | Melodrumatic                             | https://github.com/usdivad/Melodrumatic                                                                                                                     |
 | ClassicMasterLimiter-RE01                | https://github.com/AnClark/ClassicMasterLimiter-RE01                                                                                                        |
