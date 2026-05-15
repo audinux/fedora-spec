@@ -402,7 +402,6 @@
 | stereogain                               | https://github.com/osam-cologne/stereogain                                                                                                                  |
 | Gain-Booster                             | https://github.com/Moebytes/Gain-Booster                                                                                                                    |
 | OpenDaw                                  | https://github.com/glenwrhodes/OpenDaw                                                                                                                      |
-| spiro                                    | https://github.com/p-o-l-e/spiro                                                                                                                            |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour

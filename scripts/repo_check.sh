@@ -1139,7 +1139,8 @@ https://github.com/AnClark/ClassicReverb-RE02
 https://github.com/AnClark/ClassicReverb-RE03
 https://github.com/AnClark/ClassicReverb-RE04
 https://github.com/hyperfocusdsp/niner
-https://github.com/GizzZmo/DSP4Guitar"
+https://github.com/GizzZmo/DSP4Guitar
+https://github.com/p-o-l-e/spiro"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
