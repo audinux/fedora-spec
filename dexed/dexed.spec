@@ -5,7 +5,7 @@
 
 Name: dexed
 Version: 1.0.1a
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: DX7 FM multi plaform/multi format plugin
 License: GPL-3.0-or-later
 URL: https://github.com/asb2m10/dexed
@@ -19,6 +19,7 @@ Distribution: Audinux
 
 Source0: dexed.tar.gz
 Source1: dexed-source.sh
+Source2: dexed-icon-250.png
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -94,8 +95,35 @@ cp -ra %{__cmake_builddir}/Source/Dexed_artefacts/VST3/*  %{buildroot}/%{_libdir
 install -m 755 -d %{buildroot}/%{_libdir}/clap/
 cp -ra %{__cmake_builddir}/Source/Dexed_artefacts/CLAP/*  %{buildroot}/%{_libdir}/clap/
 
+install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
+cp %{SOURCE2} %{buildroot}/%{_datadir}/pixmaps/
+
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dexed
+Exec=Dexed
+Icon=dexed-icon-250
+Comment=Synth that is closely modeled on the Yamaha DX7
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+EOF
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+
 %files
 %{_bindir}/*
+%{_datadir}/applications/*
+%{_datadir}/pixmaps/*
 
 %files -n license-%{name}
 %doc README.md
@@ -108,6 +136,9 @@ cp -ra %{__cmake_builddir}/Source/Dexed_artefacts/CLAP/*  %{buildroot}/%{_libdir
 %{_libdir}/clap/*
 
 %changelog
+* Thu May 14 2026 Sean Champ <spchamp@users.noreply.github.com> - 1.0.1a-3
+- install application icon, desktop file
+
 * Sun Mar 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.1a-2
 - update to 1.0.1a-2
 
