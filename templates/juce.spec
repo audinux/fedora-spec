@@ -3,19 +3,19 @@
 # Type: Plugin, Standalone, VST3
 # Category: Effect
 
-Name:    fire
+Name: fire
 Version: 0.9.9
 Release: 1%{?dist}
 Summary: This is a distortion plugin developed by Wings
 License: GPL-2.0-or-later
-URL:     https://github.com/jerryuhoo/Fire
+URL: https://github.com/jerryuhoo/Fire
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./fire-source.sh <TAG>
-# ./fire-source.sh v0.9.9
+#        ./fire-source.sh v0.9.9
 
 Source0: Fire.tar.gz
 Source1: fire-source.sh
@@ -45,9 +45,16 @@ This is a multi-band distortion plugin 『Fire』.
 It can be used in DAWs which supports AU and Vst3 plugins such
 as Ableton Live, Fl Studio, etc.
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n vst3-%{name}
@@ -66,9 +73,11 @@ VST3 version of %{name}
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 cp -ra %{__cmake_builddir}/Fire_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
 
-%files -n vst3-%{name}
+%files -n license-%{name}
 %doc README.md
 %license LICENSE.md
+
+%files -n vst3-%{name}
 %{_libdir}/vst3/*
 
 %changelog
