@@ -386,6 +386,24 @@
 | TinyVU                                   | https://github.com/Jun-Murakami/TinyVU                                                                                                                      |
 | vst-sam-spl-64                           | https://codeberg.org/pongasoft/vst-sam-spl-64                                                                                                               |
 | TestTone                                 | https://github.com/Jun-Murakami/TestTone                                                                                                                    |
+| 3DMMEx                                   | https://github.com/benstone/3DMMEx                                                                                                                          |
+| spectral-forge                           | https://github.com/Taikakim/spectral-forge                                                                                                                  |
+| ai-dj                                    | https://github.com/innermost47/ai-dj                                                                                                                        |
+| kotoist                                  | https://github.com/ales-tsurko/kotoist                                                                                                                      |
+| vocal-gate                               | https://github.com/dan-k-k/vocal-gate                                                                                                                       |
+| stem-extractor                           | https://github.com/dan-k-k/stem-extractor                                                                                                                   |
+| SMPLComp                                 | https://github.com/p-hlp/SMPLComp                                                                                                                           |
+| CtrlrX                                   | https://github.com/damiensellier/CtrlrX                                                                                                                     |
+| XenRoll                                  | https://github.com/Ankalot/XenRoll                                                                                                                          |
+| hand-control-vst                         | https://github.com/Cookseyyyyyy/hand-control-vst                                                                                                            |
+| orbital-bass-engine                      | https://github.com/tywr/orbital-bass-engine                                                                                                                 |
+| RhyGa                                    | https://github.com/odoare/RhyGa                                                                                                                             |
+| Grace                                    | https://github.com/s-oram/Grace                                                                                                                             |
+| stereogain                               | https://github.com/osam-cologne/stereogain                                                                                                                  |
+| Gain-Booster                             | https://github.com/Moebytes/Gain-Booster                                                                                                                    |
+| OpenDaw                                  | https://github.com/glenwrhodes/OpenDaw                                                                                                                      |
+| DSP4Guitar                               | https://github.com/GizzZmo/DSP4Guitar                                                                                                                       |
+| spiro                                    | https://github.com/p-o-l-e/spiro                                                                                                                            |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
