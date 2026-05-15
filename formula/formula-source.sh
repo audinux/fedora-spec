@@ -3,7 +3,7 @@
 # Usage: ./formula-source.sh <TAG>
 #        ./formula-source.sh v1.2.2
 
-git clone --depth=1 https://github.com/soundspear/formula
+git clone https://github.com/soundspear/formula
 cd formula
 git checkout $1
 if [ $? == 1 ]; then

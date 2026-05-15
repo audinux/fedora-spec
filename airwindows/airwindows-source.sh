@@ -3,7 +3,7 @@
 # Usage: ./airwindows-source.sh <TAG>
 # ./airwindows-source.sh master
 
-git clone --depth=1 https://github.com/airwindows/airwindows
+git clone https://github.com/airwindows/airwindows
 cd airwindows
 git checkout $1
 if [ $? == 1 ]; then

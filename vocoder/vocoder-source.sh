@@ -3,7 +3,7 @@
 # Usage: ./vocoder-sources.sh <TAG>
 # ./vocoder-sources.sh main
 
-git clone --depth=1 https://github.com/Stazed/vocoder
+git clone https://github.com/Stazed/vocoder
 cd vocoder
 git checkout $1
 if [ $? == 1 ]; then

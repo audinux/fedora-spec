@@ -3,7 +3,7 @@
 # Usage: ./source-shortcircuit.sh <tag>
 #        ./source-shortcircuit.sh main
 
-git clone --depth=1 https://github.com/surge-synthesizer/shortcircuit-xt
+git clone https://github.com/surge-synthesizer/shortcircuit-xt
 cd shortcircuit-xt
 git checkout $1
 if [ $? == 1 ]; then

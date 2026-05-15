@@ -3,7 +3,7 @@
 # Usage: ./masterme-source.sh <TAG>
 # ./masterme-source.sh 1.1.0
 
-git clone --depth=1 https://github.com/trummerschlunk/master_me
+git clone https://github.com/trummerschlunk/master_me
 cd master_me
 git checkout $1
 if [ $? == 1 ]; then

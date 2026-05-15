@@ -3,7 +3,7 @@
 # Usage: ./boris-granular-station-source.sh <tag>
 #        ./boris-granular-station-source.sh master
 
-git clone --depth=1 https://github.com/glesdora/boris-granular-station
+git clone https://github.com/glesdora/boris-granular-station
 cd boris-granular-station
 git checkout $1
 if [ $? == 1 ]; then

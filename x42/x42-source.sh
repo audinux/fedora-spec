@@ -3,7 +3,7 @@
 # ./x42-source.sh <project> <tag>
 # ./x42-source.sh fil4.lv2 v0.4.4
 
-git clone --depth=1 https://github.com/x42/$1
+git clone https://github.com/x42/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

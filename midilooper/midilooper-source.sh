@@ -3,7 +3,7 @@
 # ./midilooper-source.sh <tag>
 # ./midilooper-source.sh 0.0.2.1
 
-git clone --depth=1 https://github.com/supergilbert/midilooper
+git clone https://github.com/supergilbert/midilooper
 cd midilooper
 git checkout $1
 if [ $? == 1 ]; then

@@ -3,7 +3,7 @@
 # Usage: ./giada-source.sh <TAG>
 #        ./giada-source.sh v1.0.0
 
-git clone --depth=1 https://github.com/monocasual/giada
+git clone https://github.com/monocasual/giada
 cd giada
 git checkout $1
 if [ $? == 1 ]; then

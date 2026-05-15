@@ -3,7 +3,7 @@
 # ./bespokesynth-sources.sh <tag>
 # ./bespokesynth-sources.sh v1.0.999
 
-git clone --depth=1 https://github.com/BespokeSynth/BespokeSynth
+git clone https://github.com/BespokeSynth/BespokeSynth
 cd BespokeSynth
 git checkout $1
 if [ $? == 1 ]; then

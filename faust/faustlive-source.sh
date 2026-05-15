@@ -3,7 +3,7 @@
 # to get source!
 # ./faustlive-source.sh 2.5.15
 
-git clone --depth=1 https://github.com/grame-cncm/faustlive
+git clone https://github.com/grame-cncm/faustlive
 cd faustlive
 git checkout $1
 if [ $? == 1 ]; then

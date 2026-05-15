@@ -3,7 +3,7 @@
 # Usage: ./source.sh <TAG>
 # ./dragonfly-source.sh 3.2.5
 
-git clone --depth=1 https://github.com/michaelwillis/dragonfly-reverb
+git clone https://github.com/michaelwillis/dragonfly-reverb
 cd dragonfly-reverb
 git checkout $1
 if [ $? == 1 ]; then

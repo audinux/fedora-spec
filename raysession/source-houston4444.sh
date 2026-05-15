@@ -3,7 +3,7 @@
 # Usage: ./source-houston4444.sh <project> <tag>
 #        ./source-houston4444.sh RaySession v0.13.0
 
-git clone --depth=1 https://github.com/Houston4444/$1
+git clone https://github.com/Houston4444/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

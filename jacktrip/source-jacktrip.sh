@@ -3,7 +3,7 @@
 # Usage: ./source-jacktrip.sh <tag>
 #        ./source-jacktrip.sh v1.10.0
 
-git clone --depth=1 https://github.com/jacktrip/jacktrip
+git clone https://github.com/jacktrip/jacktrip
 cd jacktrip
 git checkout $1
 if [ $? == 1 ]; then

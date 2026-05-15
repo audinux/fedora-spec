@@ -3,7 +3,7 @@
 # Usage: ./source-minaton.sh <tag>
 #        ./source-minaton.sh 0.2.0
 
-git clone --depth=1 https://github.com/AnClark/Minaton-XT
+git clone https://github.com/AnClark/Minaton-XT
 cd Minaton-XT
 git checkout $1
 if [ $? == 1 ]; then

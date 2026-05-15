@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # To get ensemble-chorus source code: ./ensemble-choris-source master
-git clone --depth=1 https://github.com/jpcima/ensemble-chorus
+git clone https://github.com/jpcima/ensemble-chorus
 cd ensemble-chorus
 git checkout $1
 if [ $? == 1 ]; then

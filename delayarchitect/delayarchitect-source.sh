@@ -3,7 +3,7 @@
 # ./delayarchitect-source.sh <tag>
 # ./delayarchitect-source.sh master
 
-git clone --depth=1 https://github.com/jpcima/DelayArchitect
+git clone https://github.com/jpcima/DelayArchitect
 cd DelayArchitect
 git checkout $1
 if [ $? == 1 ]; then

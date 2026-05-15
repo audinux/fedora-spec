@@ -3,7 +3,7 @@
 # Usage: ./gearmulator-source.sh <TAG>
 #        ./gearmulator-source.sh main
 
-git clone --depth=1 https://github.com/dsp56300/gearmulator
+git clone https://github.com/dsp56300/gearmulator
 cd gearmulator
 git checkout $1
 if [ $? == 1 ]; then

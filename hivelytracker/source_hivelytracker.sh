@@ -3,7 +3,7 @@
 # Usage: ./source_hivelytracker.sh <tag>
 #        ./source_hivelytracker.sh master
 
-git clone --depth=1 https://github.com/pete-gordon/hivelytracker
+git clone https://github.com/pete-gordon/hivelytracker
 cd hivelytracker
 git checkout $1
 if [ $? == 1 ]; then

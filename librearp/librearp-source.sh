@@ -3,7 +3,7 @@
 # Usage: ./librearp-source.sh <TAG>
 #        ./librearp-source.sh 2.5
 
-git clone --depth=1 https://gitlab.com/LibreArp/LibreArp LibreArpLV2
+git clone https://gitlab.com/LibreArp/LibreArp LibreArpLV2
 cp -r LibreArpLV2 LibreArpVST3
 cd LibreArpLV2
 git checkout $1-lv2

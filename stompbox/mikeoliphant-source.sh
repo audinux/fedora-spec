@@ -3,7 +3,7 @@
 # ./mikeoliphant-source.sh <project> <tag>
 # ./mikeoliphant-source.sh stompbox v0.1.15
 
-git clone --depth=1 https://github.com/mikeoliphant/$1
+git clone https://github.com/mikeoliphant/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

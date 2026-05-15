@@ -2,7 +2,7 @@
 
 # To get RCComp source code:
 # ./rccomp-source.sh v0.9
-git clone --depth=1 https://github.com/chmaha/RCComp
+git clone https://github.com/chmaha/RCComp
 cd RCComp
 git checkout $1
 if [ $? == 1 ]; then

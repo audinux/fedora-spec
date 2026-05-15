@@ -3,7 +3,7 @@
 # Usage: ./airwin2rack-source.sh <TAG>
 #        ./airwin2rack-source.sh master
 
-git clone --depth=1 https://github.com/baconpaul/airwin2rack
+git clone https://github.com/baconpaul/airwin2rack
 cd airwin2rack
 git checkout $1
 if [ $? == 1 ]; then

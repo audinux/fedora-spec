@@ -3,7 +3,7 @@
 # ./modeq-source.sh <tag>
 # ./modeq-source.sh v0.4.0
 
-git clone --depth=1 https://github.com/tobanteAudio/modEQ
+git clone https://github.com/tobanteAudio/modEQ
 cd modEQ
 git checkout $1
 if [ $? == 1 ]; then

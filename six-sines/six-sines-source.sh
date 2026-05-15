@@ -3,7 +3,7 @@
 # Usage: ./six-sines-source.sh <TAG>
 #        ./six-sines-source.sh v0.99
 
-git clone --depth=1 https://github.com/baconpaul/six-sines
+git clone https://github.com/baconpaul/six-sines
 cd six-sines
 git checkout $1
 if [ $? == 1 ]; then

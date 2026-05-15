@@ -4,7 +4,7 @@
 # ./source-prom <TAG>
 # ./source-prom master
 
-git clone --depth=1 https://github.com/DISTRHO/ProM
+git clone https://github.com/DISTRHO/ProM
 cd ProM
 git checkout $1
 if [ $? == 1 ]; then

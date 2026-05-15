@@ -3,7 +3,7 @@
 # Usage: ./spicefx-source.sh <TAG>
 #        ./spicefx-source.sh main
 
-git clone --depth=1 https://github.com/DatanoiseTV/spice-oss
+git clone https://github.com/DatanoiseTV/spice-oss
 cd spice-oss
 git checkout $1
 if [ $? == 1 ]; then

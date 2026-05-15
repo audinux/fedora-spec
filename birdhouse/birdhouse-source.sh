@@ -3,7 +3,7 @@
 # Usage: ./birdhouse-source.sh <TAG>
 #        ./birdhouse-source.sh v0.1.2
 
-git clone --depth=1 https://github.com/madskjeldgaard/Birdhouse
+git clone https://github.com/madskjeldgaard/Birdhouse
 cd Birdhouse
 git checkout $1
 if [ $? == 1 ]; then

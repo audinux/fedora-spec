@@ -3,7 +3,7 @@
 # ./blocks-source.sh <project> <tag>
 # ./blocks-source.sh blocks master
 
-git clone --depth=1 https://github.com/dan-german/$1
+git clone https://github.com/dan-german/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

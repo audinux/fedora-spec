@@ -4,7 +4,7 @@
 # ./aether-source <TAG>
 # ./aether-source v1.2.1
 
-git clone --depth=1 https://github.com/Dougal-s/Aether
+git clone https://github.com/Dougal-s/Aether
 cd Aether
 git checkout $1
 if [ $? == 1 ]; then

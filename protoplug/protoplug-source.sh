@@ -3,7 +3,7 @@
 # Usage: ./protoplug-sources.sh <TAG>
 #        ./protoplug-sources.sh fixes
 
-git clone --depth=1 https://github.com/ycollet/protoplug/
+git clone https://github.com/ycollet/protoplug/
 cd protoplug
 git checkout $1
 if [ $? == 1 ]; then

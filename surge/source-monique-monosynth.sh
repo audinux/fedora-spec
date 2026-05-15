@@ -3,7 +3,7 @@
 # Usage: ./source-monique-monosynth.sh <tag>
 #        ./source-monique-monosynth.sh main
 
-git clone --depth=1 https://github.com/surge-synthesizer/monique-monosynth
+git clone https://github.com/surge-synthesizer/monique-monosynth
 cd monique-monosynth
 git checkout $1
 if [ $? == 1 ]; then

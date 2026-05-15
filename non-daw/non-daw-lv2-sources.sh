@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone --depth=1 https://github.com/falkTX/non non-daw-lv2
+git clone https://github.com/falkTX/non non-daw-lv2
 cd non-daw-lv2
 git submodule update --depth=1 --init --recursive --progress
 find . -name .git -exec rm -rf {} \;

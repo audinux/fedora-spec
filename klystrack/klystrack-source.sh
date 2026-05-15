@@ -4,7 +4,7 @@
 # ./klystrack-source <TAG>
 # ./klystrack-source 1.7.6
 
-git clone --depth=1 https://github.com/kometbomb/klystrack.git
+git clone https://github.com/kometbomb/klystrack.git
 cd klystrack
 git checkout $1
 if [ $? == 1 ]; then

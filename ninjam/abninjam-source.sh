@@ -3,7 +3,7 @@
 # ./abninjam-source.sh <tag>
 # ./abninjam-source.sh v0.0.8
 
-git clone --depth=1 https://github.com/antanasbruzas/abNinjam
+git clone https://github.com/antanasbruzas/abNinjam
 cd abNinjam
 git checkout $1
 if [ $? == 1 ]; then

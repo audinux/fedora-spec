@@ -3,7 +3,7 @@
 # Usage: ./lives-sources.sh <TAG>
 #        ./lives-sources.sh master
 
-git clone --depth=1 https://github.com/salsaman/LiVES
+git clone https://github.com/salsaman/LiVES
 cd LiVES
 git checkout $1
 if [ $? == 1 ]; then

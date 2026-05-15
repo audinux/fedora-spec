@@ -3,7 +3,7 @@
 # Usage: ./audio-effects-source.sh <TAG>
 #        ./audio-effects-source.sh v1.0.0
 
-git clone --depth=1 https://github.com/juandagilc/Audio-Effects
+git clone https://github.com/juandagilc/Audio-Effects
 cd Audio-Effects
 git checkout $1
 if [ $? == 1 ]; then

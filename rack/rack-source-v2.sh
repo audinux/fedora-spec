@@ -3,7 +3,7 @@
 # ./rack-source.sh <tag>
 # ./rack-source.sh v2.2.1
 
-git clone --depth=1 https://github.com/VCVRack/Rack.git Rack
+git clone https://github.com/VCVRack/Rack.git Rack
 cd Rack
 git checkout $1
 if [ $? == 1 ]; then

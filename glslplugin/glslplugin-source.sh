@@ -3,7 +3,7 @@
 # Usage: ./glslplugin-source.sh <TAG>
 #        ./glslplugin-source.sh next
 
-git clone --depth=1 https://github.com/COx2/glslEditor_AudioPlugin/
+git clone https://github.com/COx2/glslEditor_AudioPlugin/
 cd glslEditor_AudioPlugin
 git checkout $1
 if [ $? == 1 ]; then

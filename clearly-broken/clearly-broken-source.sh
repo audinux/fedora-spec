@@ -3,7 +3,7 @@
 # Usage: ./clearly-broken-source.sh <PROJECT> <TAG>
 #        ./clearly-broken-source.sh boomer 1916d46a2823d0f091edf545666058456c93b004
 
-git clone --depth=1 https://github.com/clearly-broken-software/$1
+git clone https://github.com/clearly-broken-software/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

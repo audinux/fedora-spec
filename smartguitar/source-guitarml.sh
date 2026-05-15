@@ -3,7 +3,7 @@
 # Usage: ./source-guitarml.sh <project> <tag>
 #        ./source-guitarml.sh SmartGuitarAmp v1.3
 
-git clone --depth=1 https://github.com/GuitarML/$1
+git clone https://github.com/GuitarML/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

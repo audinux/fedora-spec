@@ -3,7 +3,7 @@
 # ./moddevices-source.sh <project> <tag>
 # ./moddevices-source.sh mod-cv-plugins 5b175482a32094f39eb46d569ffbc718b157a0ee
 
-git clone --depth=1 https://github.com/moddevices/$1
+git clone https://github.com/moddevices/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

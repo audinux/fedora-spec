@@ -3,7 +3,7 @@
 # Usage: ./stargate-source.sh <TAG>
 # ./stargate-source.sh release-23.03.1
 
-git clone --depth=1 https://github.com/stargatedaw/stargate
+git clone https://github.com/stargatedaw/stargate
 cd stargate
 git checkout $1
 if [ $? == 1 ]; then

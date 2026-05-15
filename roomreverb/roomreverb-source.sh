@@ -3,7 +3,7 @@
 # ./roomreverb-source.sh <tag>
 # ./roomreverb-source.sh v0.6.1
 
-git clone --depth=1 https://github.com/cvde/RoomReverb
+git clone https://github.com/cvde/RoomReverb
 cd RoomReverb
 git checkout $1
 if [ $? == 1 ]; then

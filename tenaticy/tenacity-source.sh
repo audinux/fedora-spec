@@ -3,7 +3,7 @@
 # Usage: ./tenacity-sources.sh <TAG>
 #        ./tenacity-source.sh v1.3.4
 
-git clone --depth=1 https://codeberg.org/tenacityteam/tenacity.git
+git clone https://codeberg.org/tenacityteam/tenacity.git
 cd tenacity
 git checkout $1
 if [ $? == 1 ]; then

@@ -3,7 +3,7 @@
 # Usage: ./cetone-source.sh <PROJECT> <TAG>
 #        ./cetone-source.sh CetoneSynth master
 
-git clone --depth=1 https://github.com/AnClark/$1
+git clone https://github.com/AnClark/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

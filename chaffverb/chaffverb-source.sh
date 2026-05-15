@@ -3,7 +3,7 @@
 # ./chaffverb-source.sh <tag>
 # ./chaffverb-source.sh v0.6.3
 
-git clone --depth=1 https://github.com/GModal/ChaffVerb
+git clone https://github.com/GModal/ChaffVerb
 cd ChaffVerb
 git checkout $1
 if [ $? == 1 ]; then

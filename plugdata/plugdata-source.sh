@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone --depth=1 https://github.com/timothyschoen/PlugData
+git clone https://github.com/timothyschoen/PlugData
 cd PlugData
 git checkout $1
 if [ $? == 1 ]; then

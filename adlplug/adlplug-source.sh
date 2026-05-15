@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # To get adlplug source code: ./adlplug-source v1.0.2
-git clone --depth=1 https://github.com/jpcima/ADLplug
+git clone https://github.com/jpcima/ADLplug
 cd ADLplug
 git checkout $1
 if [ $? == 1 ]; then

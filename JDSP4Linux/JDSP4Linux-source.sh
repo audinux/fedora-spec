@@ -3,7 +3,7 @@
 # ./JDSP4Linux-source.sh <tag>
 # ./JDSP4Linux-source.sh jamesdsp-2.3-1
 
-git clone --depth=1 https://github.com/theAeon/JDSP4Linux
+git clone https://github.com/theAeon/JDSP4Linux
 cd JDSP4Linux
 git checkout $1
 if [ $? == 1 ]; then

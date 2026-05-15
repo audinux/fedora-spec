@@ -3,7 +3,7 @@
 # Usage: ./drumgroovepro-source.sh <TAG>
 #        ./drumgroovepro-source.sh v0.9.5
 
-git clone --depth=1 https://github.com/InToEtherion/DrumGroovePro
+git clone https://github.com/InToEtherion/DrumGroovePro
 cd DrumGroovePro
 git checkout $1
 if [ $? == 1 ]; then
@@ -12,7 +12,7 @@ if [ $? == 1 ]; then
 fi
 git submodule update --depth=1 --init --recursive --progress
 
-git clone --depth=1 https://github.com/juce-framework/JUCE.git
+git clone https://github.com/juce-framework/JUCE.git
 cd JUCE
 git checkout 8.0.10
 git submodule update --depth=1 --init --recursive --progress

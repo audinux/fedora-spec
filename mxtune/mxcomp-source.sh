@@ -3,7 +3,7 @@
 # Usage: ./mxcomp-source.sh <TAG>
 #        ./mxcomp-source.sh v0.9.8
 
-git clone --depth=1 https://github.com/liuanlin-mx/MXComp
+git clone https://github.com/liuanlin-mx/MXComp
 cd MXComp
 git checkout $1
 if [ $? == 1 ]; then

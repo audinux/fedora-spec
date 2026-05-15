@@ -3,7 +3,7 @@
 # ./opn2bankeditor-source.sh <tag>
 # ./opn2bankeditor-source.sh v1.3
 
-git clone --depth=1 https://github.com/Wohlstand/OPN2BankEditor
+git clone https://github.com/Wohlstand/OPN2BankEditor
 cd OPN2BankEditor
 git checkout $1
 if [ $? == 1 ]; then

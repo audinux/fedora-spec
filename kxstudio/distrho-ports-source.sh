@@ -3,7 +3,7 @@
 # Usage: ./distrho-ports-source.sh <tag>
 #        ./distrho-ports-source.sh master
 
-git clone --depth=1 https://github.com/DISTRHO/DISTRHO-Ports
+git clone https://github.com/DISTRHO/DISTRHO-Ports
 cd DISTRHO-Ports
 git checkout $1
 if [ $? == 1 ]; then

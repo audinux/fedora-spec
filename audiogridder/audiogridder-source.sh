@@ -3,7 +3,7 @@
 # Usage: ./audiogridder-source.sh <TAG>
 #        ./audiogridder-source.sh v1.2.0
 
-git clone --depth=1 https://github.com/apohl79/audiogridder
+git clone https://github.com/apohl79/audiogridder
 cd audiogridder
 git checkout $1
 if [ $? == 1 ]; then

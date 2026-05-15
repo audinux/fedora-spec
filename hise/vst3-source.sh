@@ -3,7 +3,7 @@
 # Usage: ./vst3-source.sh <TAG>
 #        ./vst3-source.sh v3.7.11_build_10
 
-git clone --depth=1 https://github.com/steinbergmedia/vst3sdk
+git clone https://github.com/steinbergmedia/vst3sdk
 cd vst3sdk
 git checkout $1
 if [ $? == 1 ]; then

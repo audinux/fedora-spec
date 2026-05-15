@@ -3,7 +3,7 @@
 # ./timkrause2-source.sh <project> <tag>
 # ./timkrause2-source.sh VocoderSynth main
 
-git clone --depth=1 https://github.com/TimKrause2/$1
+git clone https://github.com/TimKrause2/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

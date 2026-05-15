@@ -2,7 +2,7 @@
 
 # ./source.sh tag -> ./source.sh 3.6
 
-git clone --depth=1 https://github.com/helio-fm/helio-workstation
+git clone https://github.com/helio-fm/helio-workstation
 cd helio-workstation
 git checkout $1
 if [ $? == 1 ]; then

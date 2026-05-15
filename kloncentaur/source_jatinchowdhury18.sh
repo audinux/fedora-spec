@@ -3,7 +3,7 @@
 # Usage: ./source_jatinchowdhury18.sh <project> <tag>
 #        ./source_jatinchowdhury18.sh AnalogTapeModel 1.2.0
 
-git clone --depth=1 https://github.com/jatinchowdhury18/$1
+git clone https://github.com/jatinchowdhury18/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

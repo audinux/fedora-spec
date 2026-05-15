@@ -3,7 +3,7 @@
 # Usage: ./bambootracker_source.sh <TAG>
 # ./bambootracker_source.sh v0.4.6
 
-git clone --depth=1 https://github.com/rerrahkr/BambooTracker
+git clone https://github.com/rerrahkr/BambooTracker
 cd BambooTracker
 git checkout $1
 if [ $? == 1 ]; then

@@ -3,7 +3,7 @@
 # Usage: ./hydrogen-source.sh <TAG>
 #        ./hydrogen-source.sh 1.2.5
 
-git clone --depth=1 https://github.com/hydrogen-music/hydrogen
+git clone https://github.com/hydrogen-music/hydrogen
 cd hydrogen
 git checkout $1
 if [ $? == 1 ]; then

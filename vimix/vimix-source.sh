@@ -3,7 +3,7 @@
 # Usage: ./vimix-source.sh <TAG>
 #        ./vimix-source.sh 0.9.0
 
-git clone --depth=1 https://github.com/brunoherbelin/vimix
+git clone https://github.com/brunoherbelin/vimix
 cd vimix
 git checkout $1
 if [ $? == 1 ]; then

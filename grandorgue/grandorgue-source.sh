@@ -3,7 +3,7 @@
 # Usage: ./grandorgue-sources.sh <TAG>
 #        ./grandorgue-sources.sh v2.3.4
 
-git clone --depth=1 https://github.com/GrandOrgue/grandorgue
+git clone https://github.com/GrandOrgue/grandorgue
 cd grandorgue
 git checkout $1
 if [ $? == 1 ]; then

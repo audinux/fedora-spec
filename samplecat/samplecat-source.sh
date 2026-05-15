@@ -3,7 +3,7 @@
 # Usage: ./samplecat-source.sh <TAG>
 #        ./samplecat-source.sh v0.3.4
 
-git clone --depth=1 https://github.com/ayyi/samplecat
+git clone https://github.com/ayyi/samplecat
 cd samplecat
 git checkout $1
 if [ $? == 1 ]; then

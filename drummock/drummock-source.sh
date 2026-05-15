@@ -3,7 +3,7 @@
 # Usage: ./drummock-source.sh <TAG>
 #        ./drummock-source.sh 0.0.1
 
-git clone --depth=1 https://github.com/ameyakakade/drummock/
+git clone https://github.com/ameyakakade/drummock/
 cd drummock
 git checkout $1
 if [ $? == 1 ]; then

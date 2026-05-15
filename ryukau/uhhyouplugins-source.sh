@@ -3,7 +3,7 @@
 # ./uhhyouplugins-source.sh <tag>
 # ./uhhyouplugins-source.sh e5eee4c3
 
-git clone --depth=1 https://github.com/ryukau/VSTPlugins
+git clone https://github.com/ryukau/VSTPlugins
 cd VSTPlugins
 git checkout $1
 if [ $? == 1 ]; then

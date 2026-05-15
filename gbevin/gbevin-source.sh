@@ -3,7 +3,7 @@
 # ./gbevin-source.sh <project> <tag>
 # ./gbevin-source.sh ShowMIDI 0.2.2
 
-git clone --depth=1 https://github.com/gbevin/$1
+git clone https://github.com/gbevin/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

@@ -3,7 +3,7 @@
 # Usage: ./source-grainbow.sh <tag>
 #        ./source-grainbow.sh v0.4.0
 
-git clone --depth=1 https://github.com/bboettcher3/gRainbow
+git clone https://github.com/bboettcher3/gRainbow
 cd gRainbow
 git checkout $1
 if [ $? == 1 ]; then

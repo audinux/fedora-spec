@@ -3,7 +3,7 @@
 # ./lmms-source.sh <tag>
 # ./lmms-source.sh v1.2.2
 
-git clone --depth=1 https://github.com/lmms/lmms
+git clone https://github.com/lmms/lmms
 cd lmms
 git checkout $1
 if [ $? == 1 ]; then

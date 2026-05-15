@@ -3,7 +3,7 @@
 # Usage: ./delirion-sources.sh <TAG>
 #        ./delirion-sources.sh master
 
-git clone --depth=1 https://github.com/igorski/delirion
+git clone https://github.com/igorski/delirion
 cd delirion
 git checkout $1
 if [ $? == 1 ]; then
@@ -12,7 +12,7 @@ if [ $? == 1 ]; then
 fi
 git submodule update --depth=1 --init --recursive --progress
 
-git clone --depth=1 https://github.com/juce-framework/JUCE
+git clone https://github.com/juce-framework/JUCE
 cd JUCE
 git checkout 8.0.1
 cd ..

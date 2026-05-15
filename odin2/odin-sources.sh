@@ -3,7 +3,7 @@
 # Usage: ./odin-sources.sh <TAG>
 # ./odin-sources.sh v2.3.4
 
-git clone --depth=1 https://github.com/TheWaveWarden/odin2
+git clone https://github.com/TheWaveWarden/odin2
 cd odin2
 git checkout $1
 if [ $? == 1 ]; then

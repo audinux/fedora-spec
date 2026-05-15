@@ -3,7 +3,7 @@
 # Usage: ./source-valentine.sh <tag>
 #        ./source-valentine.sh v1.0.0
 
-git clone --depth=1 https://github.com/tote-bag-labs/valentine
+git clone https://github.com/tote-bag-labs/valentine
 cd valentine
 git checkout $1
 if [ $? == 1 ]; then

@@ -3,7 +3,7 @@
 # Usage: ./source-cmajor.sh <tag>
 #        ./source-cmajor.sh 1.0.2562
 
-git clone --depth=1 https://github.com/cmajor-lang/cmajor
+git clone https://github.com/cmajor-lang/cmajor
 cd cmajor
 git checkout $1
 if [ $? == 1 ]; then
@@ -12,7 +12,7 @@ if [ $? == 1 ]; then
 fi
 git submodule update --depth=1 --init --recursive --progress
 
-git clone --depth=1 https://github.com/juce-framework/JUCE/ juce
+git clone https://github.com/juce-framework/JUCE/ juce
 cd juce
 git checkout 7.0.12
 cd ..

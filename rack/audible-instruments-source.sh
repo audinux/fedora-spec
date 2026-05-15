@@ -3,7 +3,7 @@
 # ./audible-instruments-source.sh <tag>
 # ./audible-instruments-source.sh v0.6.0
 
-git clone --depth=1 https://github.com/VCVRack/AudibleInstruments.git
+git clone https://github.com/VCVRack/AudibleInstruments.git
 cd AudibleInstruments
 git checkout $1
 if [ $? == 1 ]; then

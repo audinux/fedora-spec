@@ -3,7 +3,7 @@
 # To get aidax source code:
 # $ ./aidax-source.sh 0.1.0
 
-git clone --depth=1 https://github.com/AidaDSP/AIDA-X
+git clone https://github.com/AidaDSP/AIDA-X
 cd AIDA-X
 git checkout $1
 if [ $? == 1 ]; then

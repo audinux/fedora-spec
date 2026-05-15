@@ -3,7 +3,7 @@
 # ./spotlightkid-source.sh <project> <tag>
 # ./spotlightkid-source.sh stereocrossdelay master
 
-git clone --depth=1 https://github.com/SpotlightKid/$1
+git clone https://github.com/SpotlightKid/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

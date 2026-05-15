@@ -3,7 +3,7 @@
 # Usage: ./source_byod.sh <tag>
 #        ./source_byod.sh v1.0.1
 
-git clone --depth=1 https://github.com/Chowdhury-DSP/BYOD
+git clone https://github.com/Chowdhury-DSP/BYOD
 cd BYOD
 git checkout $1
 if [ $? == 1 ]; then

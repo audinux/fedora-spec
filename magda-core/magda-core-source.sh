@@ -3,7 +3,7 @@
 # Usage: ./magda-core-source.sh <TAG>
 #        ./magda-core-source.sh v0.4.1
 
-git clone --depth=1 https://github.com/Conceptual-Machines/magda-core
+git clone https://github.com/Conceptual-Machines/magda-core
 cd magda-core
 git checkout $1
 if [ $? == 1 ]; then

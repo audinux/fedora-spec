@@ -2,7 +2,7 @@
 
 # To get si-plugins source code:
 # ./si-plugins-source.sh v0.3.0
-git clone --depth=1 https://github.com/guysherman/si-plugins
+git clone https://github.com/guysherman/si-plugins
 cd si-plugins
 git checkout $1
 if [ $? == 1 ]; then

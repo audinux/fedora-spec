@@ -3,7 +3,7 @@
 # Usage: ./luna-co-software-source.sh <TAG>
 #        ./luna-co-software-source.sh main
 
-git clone --depth=1 https://github.com/dusk-audio/dusk-audio-plugins
+git clone https://github.com/dusk-audio/dusk-audio-plugins
 cd dusk-audio-plugins
 git checkout $1
 if [ $? == 1 ]; then

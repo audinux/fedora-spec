@@ -3,7 +3,7 @@
 # to get source from 2.27.2 tag
 # ./faust-source.sh 2.27.2
 
-git clone --depth=1 https://github.com/grame-cncm/faust
+git clone https://github.com/grame-cncm/faust
 cd faust
 git checkout $1
 if [ $? == 1 ]; then

@@ -3,7 +3,7 @@
 # Usage: ./fire-source.sh <TAG>
 #        ./fire-source.sh v0.9.8
 
-git clone --depth=1 https://github.com/jerryuhoo/Fire/
+git clone https://github.com/jerryuhoo/Fire/
 cd Fire
 git checkout $1
 if [ $? == 1 ]; then

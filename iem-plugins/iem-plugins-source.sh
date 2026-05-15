@@ -3,7 +3,7 @@
 # Usage: ./iem-plugins-sources.sh <TAG>
 #        ./iem-plugins-sources.sh v1.14.1
 
-git clone --depth=1  https://git.iem.at/audioplugins/IEMPluginSuite
+git clone  https://git.iem.at/audioplugins/IEMPluginSuite
 cd IEMPluginSuite
 git checkout $1
 if [ $? == 1 ]; then

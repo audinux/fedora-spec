@@ -3,7 +3,7 @@
 # Usage: ./cloudreverb-source.sh <TAG>
 #        ./cloudreverb-source.sh master
 
-git clone --depth=1 https://github.com/xunil-cloud/CloudReverb/
+git clone https://github.com/xunil-cloud/CloudReverb/
 cd CloudReverb
 git checkout $1
 if [ $? == 1 ]; then

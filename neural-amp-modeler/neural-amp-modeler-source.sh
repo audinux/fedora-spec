@@ -3,7 +3,7 @@
 # Usage: ./neural-amp-modeler-lv2-source.sh <TAG>
 # ./neural-amp-modeler-lv2-source.sh master
 
-git clone --depth=1 https://github.com/mikeoliphant/neural-amp-modeler-lv2
+git clone https://github.com/mikeoliphant/neural-amp-modeler-lv2
 cd neural-amp-modeler-lv2
 git checkout $1
 if [ $? == 1 ]; then

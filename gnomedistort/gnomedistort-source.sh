@@ -3,7 +3,7 @@
 # Usage: ./gnomedistort-source.sh <TAG>
 #        ./gnomedistort-source.sh v1.0.0
 
-git clone --depth=1 https://github.com/crowbait/GnomeDistort-2
+git clone https://github.com/crowbait/GnomeDistort-2
 cd GnomeDistort-2
 git checkout $1
 if [ $? == 1 ]; then

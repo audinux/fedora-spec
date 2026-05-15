@@ -3,7 +3,7 @@
 # Usage: ./pluginval-source.sh <TAG>
 #        ./pluginval-source.sh v1.0.4
 
-git clone --depth=1 https://github.com/Tracktion/pluginval/
+git clone https://github.com/Tracktion/pluginval/
 cd pluginval
 git checkout $1
 if [ $? == 1 ]; then

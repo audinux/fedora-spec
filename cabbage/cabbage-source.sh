@@ -3,7 +3,7 @@
 # Usage: ./cabbage-sources.sh <TAG>
 # ./cabbage-sources.sh v2.9.0
 
-git clone --depth=1 https://github.com/rorywalsh/cabbage
+git clone https://github.com/rorywalsh/cabbage
 cd cabbage
 git checkout $1
 if [ $? == 1 ]; then

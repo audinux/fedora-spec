@@ -2,7 +2,7 @@
 
 # To get RCVerb source code:
 # ./rcverb-source.sh v1.0
-git clone --depth=1 https://github.com/chmaha/RCVerb
+git clone https://github.com/chmaha/RCVerb
 cd RCVerb
 git checkout $1
 if [ $? == 1 ]; then

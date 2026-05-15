@@ -3,7 +3,7 @@
 # ./qtractor-source.sh <tag>
 # ./qtractor-source.sh qtractor_0_9_36
 
-git clone --depth=1 https://github.com/rncbc/qtractor
+git clone https://github.com/rncbc/qtractor
 cd qtractor
 git checkout $1
 if [ $? == 1 ]; then

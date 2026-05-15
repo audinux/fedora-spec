@@ -3,7 +3,7 @@
 # Usage: ./shoopdaloop-source.sh <TAG>
 # ./shoopdaloop-source.sh v0.95
 
-git clone --depth=1 https://github.com/SanderVocke/shoopdaloop
+git clone https://github.com/SanderVocke/shoopdaloop
 cd shoopdaloop
 git checkout $1
 if [ $? == 1 ]; then

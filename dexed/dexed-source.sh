@@ -3,7 +3,7 @@
 # Usage: ./dexed-source.sh <TAG>
 #        ./dexed-source.sh v0.9.6
 
-git clone --depth=1 https://github.com/asb2m10/dexed
+git clone https://github.com/asb2m10/dexed
 cd dexed
 git checkout $1
 if [ $? == 1 ]; then

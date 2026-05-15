@@ -3,7 +3,7 @@
 # Usage: ./stegosaurus-sources.sh <TAG>
 #        ./stegosaurus-sources.sh main
 
-git clone --depth=1 https://github.com/thunderox/stegosaurus/
+git clone https://github.com/thunderox/stegosaurus/
 cd stegosaurus
 git checkout $1
 if [ $? == 1 ]; then

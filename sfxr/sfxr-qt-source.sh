@@ -3,7 +3,7 @@
 # Usage: ./sfxr-qt-source.sh <TAG>
 #        ./sfxr-qt-source.sh 1.5.0
 
-git clone --depth=1 https://github.com/agateau/sfxr-qt
+git clone https://github.com/agateau/sfxr-qt
 cd sfxr-qt
 git checkout $1
 if [ $? == 1 ]; then

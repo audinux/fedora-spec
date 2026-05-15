@@ -3,7 +3,7 @@
 # ./clap-source.sh <project> <tag>
 # ./clap-source.sh clap-plugins 1.0.1
 
-git clone --depth=1 https://github.com/free-audio/$1
+git clone https://github.com/free-audio/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

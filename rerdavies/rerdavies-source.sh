@@ -3,7 +3,7 @@
 # ./rerdavies-source.sh <project> <tag>
 # ./rerdavies-source.sh ToobAmp v1.0.29
 
-git clone --depth=1 https://github.com/rerdavies/$1
+git clone https://github.com/rerdavies/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

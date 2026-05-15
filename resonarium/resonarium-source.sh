@@ -3,7 +3,7 @@
 # Usage: ./resonarium-source.sh <tag>
 #        ./resonarium-source.sh master
 
-git clone --depth=1 https://github.com/gabrielsoule/resonarium
+git clone https://github.com/gabrielsoule/resonarium
 cd resonarium
 git checkout $1
 if [ $? == 1 ]; then

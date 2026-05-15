@@ -3,7 +3,7 @@
 # Usage: ./source-surge.sh <tag>
 #        ./source-surge.sh release_xt_1.0.0
 
-git clone --depth=1 https://github.com/surge-synthesizer/surge
+git clone https://github.com/surge-synthesizer/surge
 cd surge
 git checkout $1
 if [ $? == 1 ]; then

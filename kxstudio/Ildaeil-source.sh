@@ -3,7 +3,7 @@
 # Usage: ./Ildaeil-source.sh <tag>
 #        ./Ildaeil-source.sh v1.2
 
-git clone --depth=1 https://github.com/DISTRHO/Ildaeil
+git clone https://github.com/DISTRHO/Ildaeil
 cd Ildaeil
 git checkout $1
 if [ $? == 1 ]; then

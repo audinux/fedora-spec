@@ -3,7 +3,7 @@
 # Usage: ./ultramaster-kr106-source.sh <TAG>
 #        ./ultramaster-kr106-source.sh v2.4.2
 
-git clone --depth=1 https://github.com/kayrockscreenprinting/ultramaster_kr106
+git clone https://github.com/kayrockscreenprinting/ultramaster_kr106
 cd ultramaster_kr106
 git checkout $1
 if [ $? == 1 ]; then

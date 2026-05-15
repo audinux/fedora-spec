@@ -3,7 +3,7 @@
 # ./source_openframeworks.sh 0.11.2
 
 # original tarfile can be found here:
-git clone --depth=1 https://github.com/openframeworks/openFrameworks
+git clone https://github.com/openframeworks/openFrameworks
 cd openFrameworks
 git checkout $1
 if [ $? == 1 ]; then

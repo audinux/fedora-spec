@@ -3,7 +3,7 @@
 # Usage: ./source-miniaudicle.sh <tag>
 #        ./source-miniaudicle.sh miniAudicle-1.4.2.0
 
-git clone --depth=1 https://github.com/ccrma/miniAudicle
+git clone https://github.com/ccrma/miniAudicle
 cd miniAudicle
 git checkout $1
 if [ $? == 1 ]; then

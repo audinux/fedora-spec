@@ -3,7 +3,7 @@
 # Usage: ./audibleplanets-sources.sh <TAG>
 #        ./audibleplanets-sources.sh v1.0.4
 
-git clone --depth=1 https://github.com/gregrecco67/AudiblePlanets
+git clone https://github.com/gregrecco67/AudiblePlanets
 cd AudiblePlanets
 git checkout $1
 if [ $? == 1 ]; then

@@ -3,7 +3,7 @@
 # ./opl3bankeditor-source.sh <tag>
 # ./opl3bankeditor-source.sh v1.5.1
 
-git clone --depth=1 https://github.com/Wohlstand/OPL3BankEditor
+git clone https://github.com/Wohlstand/OPL3BankEditor
 cd OPL3BankEditor
 git checkout $1
 if [ $? == 1 ]; then

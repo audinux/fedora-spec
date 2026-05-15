@@ -3,7 +3,7 @@
 # Usage: ./source-atlas.sh <tag>
 #        ./source-atlas.sh master
 
-git clone --depth=1 --depth=1 https://github.com/sbadon122/ATLAS-06-Synthesizer
+git clone --depth=1 https://github.com/sbadon122/ATLAS-06-Synthesizer
 cd ATLAS-06-Synthesizer
 git checkout $1
 if [ $? == 1 ]; then

@@ -3,7 +3,7 @@
 # Usage: ./vaporizer2-source.sh <tag>
 #        ./vaporizer2-source.sh v3.4.0
 
-git clone --depth=1 https://github.com/VASTDynamics/Vaporizer2
+git clone https://github.com/VASTDynamics/Vaporizer2
 cd Vaporizer2
 git checkout $1
 if [ $? == 1 ]; then

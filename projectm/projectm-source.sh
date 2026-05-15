@@ -3,7 +3,7 @@
 # Usage: ./projectm-source.sh <tag>
 #        ./projectm-source.sh v4.1.0
 
-git clone --depth=1 https://github.com/projectM-visualizer/projectm
+git clone https://github.com/projectM-visualizer/projectm
 cd projectm
 git checkout $1
 if [ $? == 1 ]; then

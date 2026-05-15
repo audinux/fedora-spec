@@ -3,7 +3,7 @@
 # ./vswell-source.sh <tag>
 # ./vswell-source.sh v0.3.0
 
-git clone --depth=1 https://github.com/GModal/vSwell
+git clone https://github.com/GModal/vSwell
 cd vSwell
 git checkout $1
 if [ $? == 1 ]; then

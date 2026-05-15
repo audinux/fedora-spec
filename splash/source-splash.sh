@@ -3,7 +3,7 @@
 # Usage: ./source-splash.sh <tag>
 #        ./source-splash.sh v8.9.40
 
-git clone --depth=1 https://gitlab.com/splashmapper/splash
+git clone https://gitlab.com/splashmapper/splash
 cd splash
 git checkout $1
 if [ $? == 1 ]; then

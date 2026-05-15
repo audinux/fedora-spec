@@ -3,7 +3,7 @@
 # Usage: ./source-furnace.sh <tag>
 #        ./source-furnace.sh v0.5.8
 
-git clone --depth=1 https://github.com/tildearrow/furnace
+git clone https://github.com/tildearrow/furnace
 cd furnace
 git checkout $1
 if [ $? == 1 ]; then

@@ -3,7 +3,7 @@
 # Usage: ./jack-link-source.sh <TAG>
 #        ./jack-link-source.sh v0.1.8
 
-git clone --depth=1 https://github.com/rncbc/jack_link
+git clone https://github.com/rncbc/jack_link
 cd jack_link
 git checkout $1
 if [ $? == 1 ]; then

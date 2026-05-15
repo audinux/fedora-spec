@@ -3,7 +3,7 @@
 # Usage: ./frequalizer-source.sh <TAG>
 # ./frequalizer-source.sh master
 
-git clone --depth=1 https://github.com/ffAudio/Frequalizer
+git clone https://github.com/ffAudio/Frequalizer
 cd Frequalizer
 git checkout $1
 if [ $? == 1 ]; then

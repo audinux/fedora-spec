@@ -3,7 +3,7 @@
 # Usage: ./maim-sources.sh <TAG>
 #        ./maim-sources.sh v1.9.9
 
-git clone --depth=1 https://github.com/ArdenButterfield/Maim
+git clone https://github.com/ArdenButterfield/Maim
 cd Maim
 git checkout $1
 if [ $? == 1 ]; then

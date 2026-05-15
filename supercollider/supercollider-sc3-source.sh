@@ -3,7 +3,7 @@
 # ./supercollider-sc3-source.sh <tag>
 # ./supercollider-sc3-source.sh Version-3.11.1
 
-git clone --depth=1 https://github.com/supercollider/sc3-plugins
+git clone https://github.com/supercollider/sc3-plugins
 cd sc3-plugins
 git checkout $1
 if [ $? == 1 ]; then

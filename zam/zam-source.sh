@@ -2,7 +2,7 @@
 
 # ./source.sh 3.13
 
-git clone --depth=1 https://github.com/zamaudio/zam-plugins
+git clone https://github.com/zamaudio/zam-plugins
 cd zam-plugins
 git checkout $1
 if [ $? == 1 ]; then

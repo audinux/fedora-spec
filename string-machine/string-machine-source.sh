@@ -3,7 +3,7 @@
 # ./string-machine-source.sh <tag>
 # ./string-machine-source.sh master
 
-git clone --depth=1 https://github.com/jpcima/string-machine
+git clone https://github.com/jpcima/string-machine
 cd string-machine
 git checkout $1
 if [ $? == 1 ]; then

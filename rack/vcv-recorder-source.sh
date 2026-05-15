@@ -3,7 +3,7 @@
 # ./vcv-recorder-source.sh <tag>
 # ./vcv-recorder-source.sh v2
 
-git clone --depth=1 https://github.com/VCVRack/VCV-Recorder
+git clone https://github.com/VCVRack/VCV-Recorder
 cd VCV-Recorder
 git checkout $1
 if [ $? == 1 ]; then

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # To get dgedit source code: ./dgedit-source.sh v0.10.0
-git clone --depth=1 http://git.drumgizmo.org/dgedit.git
+git clone http://git.drumgizmo.org/dgedit.git
 cd dgedit
 git checkout $1
 if [ $? == 1 ]; then

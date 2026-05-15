@@ -3,7 +3,7 @@
 # ./fugio-source.sh <tag>
 # ./fugio-source.sh v3.1.0
 
-git clone --depth=1 https://github.com/bigfug/Fugio
+git clone https://github.com/bigfug/Fugio
 cd Fugio
 git checkout $1
 if [ $? == 1 ]; then

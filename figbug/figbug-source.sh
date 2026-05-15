@@ -3,7 +3,7 @@
 # ./figbug-source.sh <project> <tag>
 # ./figbug-source.sh Voc master
 
-git clone --depth=1 https://github.com/FigBug/$1
+git clone https://github.com/FigBug/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

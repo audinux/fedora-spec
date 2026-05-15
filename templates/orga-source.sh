@@ -3,7 +3,7 @@
 # Usage: ./brummer10-source.sh <project> <tag>
 #        ./brummer10-source.sh xtuner v1.0
 
-git clone --depth=1 https://github.com/brummer10/$1
+git clone https://github.com/brummer10/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

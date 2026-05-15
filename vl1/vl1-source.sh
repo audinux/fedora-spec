@@ -3,7 +3,7 @@
 # ./vl1-source.sh <tag>
 # ./vl1-source.sh 1.1.0.0
 
-git clone --depth=1 https://github.com/linuxmao-org/VL1-emulator
+git clone https://github.com/linuxmao-org/VL1-emulator
 cd VL1-emulator
 git checkout $1
 if [ $? == 1 ]; then

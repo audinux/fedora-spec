@@ -3,7 +3,7 @@
 # Usage: ./ddps-source.sh <TAG>
 # ./ddsp-source.sh v1.1.0
 
-git clone --depth=1 https://github.com/tank-trax/ddsp-vst
+git clone https://github.com/tank-trax/ddsp-vst
 cd ddsp-vst
 git checkout $1
 if [ $? == 1 ]; then

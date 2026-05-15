@@ -3,7 +3,7 @@
 # Usage: ./source-non-mixer-xt.sh <tag>
 #        ./source-non-mixer-xt.sh 1.0.5
 
-git clone --depth=1 https://github.com/Stazed/non-mixer-xt
+git clone https://github.com/Stazed/non-mixer-xt
 cd non-mixer-xt
 git checkout $1
 if [ $? == 1 ]; then

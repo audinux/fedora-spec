@@ -3,7 +3,7 @@
 # Usage: ./sfizz-ui-source.sh <tag>
 #        ./sfizz-ui-source.sh 1.2.2
 
-git clone --depth=1 https://github.com/sfztools/sfizz-ui
+git clone https://github.com/sfztools/sfizz-ui
 cd sfizz-ui
 git checkout $1
 if [ $? == 1 ]; then

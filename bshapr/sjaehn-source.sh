@@ -3,7 +3,7 @@
 # ./sjaehn-source.sh <project> <tag>
 # ./sjaehn-source.sh BChoppr 1.12.4
 
-git clone --depth=1 https://github.com/sjaehn/$1
+git clone https://github.com/sjaehn/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

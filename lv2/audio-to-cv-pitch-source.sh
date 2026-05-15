@@ -3,7 +3,7 @@
 # Usage: ./audio-to-cv-pitch-source.sh <TAG>
 # ./audio-to-cv-pitch-source.sh v0.95
 
-git clone --depth=1 https://github.com/BramGiesen/audio-to-cv-pitch-lv2
+git clone https://github.com/BramGiesen/audio-to-cv-pitch-lv2
 cd audio-to-cv-pitch-lv2
 git checkout $1
 if [ $? == 1 ]; then

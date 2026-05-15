@@ -3,7 +3,7 @@
 # Usage: ./tek-source.sh <TAG>
 #        ./tek-source.sh 0.2.2
 
-git clone --depth=1 https://codeberg.org/unspeaker/tek/
+git clone https://codeberg.org/unspeaker/tek/
 cd tek
 git checkout $1
 if [ $? == 1 ]; then

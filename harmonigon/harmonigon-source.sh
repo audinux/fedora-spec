@@ -3,7 +3,7 @@
 # Usage: ./harmonigon-source.sh <TAG>
 #        ./harmonigon-source.sh master
 
-git clone --depth=1 https://github.com/StrangeLoopsAudio/Harmonigon
+git clone https://github.com/StrangeLoopsAudio/Harmonigon
 cd Harmonigon
 git checkout $1
 if [ $? == 1 ]; then

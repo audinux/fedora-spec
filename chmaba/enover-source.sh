@@ -2,7 +2,7 @@
 
 # To get Enover source code:
 # ./envoer-source.sh v1.0
-git clone --depth=1 https://github.com/chmaha/Enover
+git clone https://github.com/chmaha/Enover
 cd Enover
 git checkout $1
 if [ $? == 1 ]; then

@@ -3,7 +3,7 @@
 # Usage: ./sg323-sources.sh <TAG>
 #        ./sg323-sources.sh 0.6.3
 
-git clone --depth=1 https://github.com/greyboxaudio/SG-323
+git clone https://github.com/greyboxaudio/SG-323
 cd SG-323
 git checkout $1
 if [ $? == 1 ]; then

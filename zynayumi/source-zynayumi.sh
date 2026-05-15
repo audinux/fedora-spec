@@ -3,7 +3,7 @@
 # Usage: ./source-zynayumi.sh <tag>
 #        ./source-zynayumi.sh master
 
-git clone --depth=1 https://github.com/zynayumi/zynayumi
+git clone https://github.com/zynayumi/zynayumi
 cd zynayumi
 git checkout $1
 if [ $? == 1 ]; then

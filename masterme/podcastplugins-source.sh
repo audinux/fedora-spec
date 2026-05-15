@@ -3,7 +3,7 @@
 # Usage: ./podcastplugins-source.sh <TAG>
 #        ./podcastplugins-source.sh 1.0.0
 
-git clone --depth=1 https://github.com/trummerschlunk/PodcastPlugins
+git clone https://github.com/trummerschlunk/PodcastPlugins
 cd PodcastPlugins
 git checkout $1
 if [ $? == 1 ]; then

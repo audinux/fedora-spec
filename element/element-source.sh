@@ -3,7 +3,7 @@
 # Usage: ./element-source.sh <PROJECT> <TAG>
 #        ./element-source.sh Element v1.0.0b2
 
-git clone --depth=1 https://github.com/kushview/$1
+git clone https://github.com/kushview/$1
 cd $1
 git checkout $2
 if [ $? == 1 ]; then

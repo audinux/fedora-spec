@@ -3,7 +3,7 @@
 # ./shiro-source.sh <tag>
 # ./shiro-source.sh master
 
-git clone --depth=1 https://github.com/ninodewit/SHIRO-Plugins
+git clone https://github.com/ninodewit/SHIRO-Plugins
 cd SHIRO-Plugins
 # git protocol has been cancelled ...
 git submodule set-url -- dpf https://github.com/DISTRHO/DPF

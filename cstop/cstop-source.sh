@@ -3,7 +3,7 @@
 # Usage: ./cstop-source.sh <tag>
 #        ./cstop-source.sh v1.0.0
 
-git clone --depth=1 https://github.com/calgoheen/cStop
+git clone https://github.com/calgoheen/cStop
 cd cStop
 git checkout $1
 if [ $? == 1 ]; then
