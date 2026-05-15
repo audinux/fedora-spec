@@ -2,13 +2,12 @@
 # Tag: Sf2
 # Type: Standalone
 # Category: Audio, Tool
-# GUIToolkit: Qt5
 
 Name: polyphone
-Version: 2.5.1
+Version: 2.6.0
 Release: 4%{?dist}
-Summary: A SF2 sound font editor
-URL: https://polyphone-soundfonts.com/
+Summary: Sound font editor
+URL: https://www.polyphone.io
 ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
@@ -18,10 +17,10 @@ Distribution: Audinux
 Source0: https://github.com/davy7125/polyphone/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-qtbase-gui
-BuildRequires: qt5-qtsvg-devel
-BuildRequires: qt5-linguist
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qtbase-gui
+BuildRequires: qt6-qtsvg-devel
+BuildRequires: qt6-linguist
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: portaudio-devel
@@ -37,20 +36,29 @@ BuildRequires: flac-devel
 BuildRequires: desktop-file-utils
 
 %description
-Polyphone is a free software for editing soundfonts in format sf2.
-These files contain a multitude of audio samples put together and configured so
-as to form musical instruments that can be used by synthesizers such
-as fluidsynth and played using a MIDI keyboard.
+Turn any sound into a playable instrument with the help of SoundFonts.
+These files contain a multitude of audio samples put together and
+configured so as to form musical instruments that can be used by
+synthesizers such as fluidsynth and played using a MIDI keyboard.
 The goal of Polyphone is to provide:
-
-* a simple and efficient interface for creating and editing .sf2 files,
-  available on Windows, Mac OS X and Linux, tools to facilitate and automate
-  the editing of different parameters, making it possible to handle a
-  large amount of data.
-
-* Polyphone is licensed under GNU General Public License.
-  Anyone may thus access the source code, and is welcome to help
-  in the development of the program.
+ - a simple and efficient interface for creating and editing soundfonts,
+available on Linux, Windows and Mac OS X,
+ - tools to facilitate and automate the setting of different parameters,
+making it possible to handle a large amount of data.
+ 
+Main features:
+ - import from sf2, sfz, sfArk, sf3, grandOrgue
+ - export as sf2, sfz, sf3,
+ - support of sf2 format v2.01 and v2.04 (with 24-bit samples),
+ - support for jack and ASIO audio servers,
+ - simultaneous editing of parameters,
+ - specific tools for musical instrument creation,
+ - automatic detection of the sample pitch and correction,
+ - automatic loop of samples,
+ - a recorder, for the record of what is played in a .wav file,
+ - built-in synthesizer, using a virtual keyboard or MIDI signals,
+ - user manual, forum and online soundfont repository,
+ - available in several languages.
 
 %prep
 %autosetup -n %{name}-%{version}
@@ -61,29 +69,27 @@ sed -i -e "s/-std=c++17 -O3 -msse2/-std=c++17 -O3/g" sources/polyphone.pro
 
 cd sources
 
-%qmake_qt5 "DEFINES+=USE_LOCAL_RTMIDI USE_LOCAL_QCUSTOMPLOT" polyphone.pro
+%qmake_qt6 "DEFINES+=USE_LOCAL_RTMIDI USE_LOCAL_QCUSTOMPLOT" polyphone.pro
 %make_build
 
 %install
 
-cd sources
-
 install -m 755 -d %{buildroot}/%{_bindir}/
-install -m 755 bin/polyphone %{buildroot}%{_bindir}/
+install -m 755 sources/bin/polyphone %{buildroot}%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
-install -m 644 contrib/io.polyphone.polyphone.desktop %{buildroot}%{_datadir}/applications/
+install -m 644 packaging/io.polyphone.polyphone.desktop %{buildroot}%{_datadir}/applications/
 
 install -m 755 -d %{buildroot}/%{_datadir}/mime/packages/
-install -m 644 contrib/%{name}.xml %{buildroot}%{_datadir}/mime/packages/%{name}.xml
+install -m 644 packaging/%{name}.xml %{buildroot}%{_datadir}/mime/packages/%{name}.xml
 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/
-install -m 644 resources/polyphone.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/%{name}.png
+install -m 644 packaging/polyphone.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/%{name}.png
 
 install -m 755 -d %{buildroot}/%{_mandir}/
-cp -ra contrib/man/* %{buildroot}/%{_mandir}/
+cp -ra packaging/man/* %{buildroot}/%{_mandir}/
 
-cp readme.md readme_source.md
+cp sources/readme.md sources/readme_source.md
 
 desktop-file-install --vendor '' \
         --add-category=X-Drumming \
@@ -109,6 +115,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/*
 
 %changelog
+* Fri May 15 2026 Yann Collette <ycollette.nospam@free.fr> - 2.6.0-4
+- update to 2.6.0-4
+
 * Thu Apr 17 2025 Yann Collette <ycollette.nospam@free.fr> - 2.5.1-4
 - update to 2.5.1-4 - fix icon + install man pages
 
