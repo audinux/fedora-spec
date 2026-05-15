@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Audio, DAW
 
-%define commit0 9a64272244178247255b9fbc3e882aaff2c17a3e
+%define commit0 97d652d10ee8b04b881a8839ef2e27973e84a43b
 
 Name: lmms-mao-weekly
 Version: 1.2.99
-Release: 37%{?dist}
+Release: 38%{?dist}
 Summary: Linux MultiMedia Studio - Weekly version
 URL: https://lmms.io
 ExclusiveArch: x86_64 aarch64
@@ -40,8 +40,8 @@ License: GPLv2+ and GPLv2 and (GPLv2+ or MIT) and GPLv3+ and MIT and LGPLv2+ and
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./lmms-source.sh <tag>
-# ./lmms-source.sh master
+# Usage: ./lmms-source.sh <tag>
+#        ./lmms-source.sh master
 
 Source0: lmms.tar.gz
 Source1: lmms-source.sh
@@ -180,6 +180,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/lmms.desktop
 %exclude %{_includedir}/lmms
 
 %changelog
+* Fri May 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.99-38
+- update to 97d652d10ee8b04b881a8839ef2e27973e84a43b
+
 * Tue May 05 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.99-37
 - update to 9a64272244178247255b9fbc3e882aaff2c17a3e
 
