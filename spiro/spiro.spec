@@ -11,7 +11,7 @@ Release: 1%{?dist}
 Summary: Semi-modular synthesizer
 License: MIT
 URL: https://github.com/p-o-l-e/spiro
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64
 
 Vendor:       Audinux
 Distribution: Audinux
