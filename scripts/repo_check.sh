@@ -1159,12 +1159,11 @@ if [ -f git_tags_new.txt ];
 then
     mv git_tags_new.txt git_tags_old.txt
 fi
-
 for File in $REPO_LIST
 do
     echo "Processing $File"
     sleep 0.1
-    ALL_TAGS="`git ls-remote --tags $File 2>&1 | grep -v redirect | sed -e "s/\^{}//g" | sort | uniq`"
+    ALL_TAGS="`git ls-remote --tags $File 2>&1| grep -v redirect | sort | uniq`"
     if [ ! -z "$ALL_TAGS" ];
     then
 	for Tag in $ALL_TAGS
