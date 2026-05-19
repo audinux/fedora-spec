@@ -1,14 +1,14 @@
-From d4c8b8d91a2da3898dcda64e605255b44743e171 Mon Sep 17 00:00:00 2001
+From 2a7c7741d9673215a2bd58367f8ee3c4f4ace61c Mon Sep 17 00:00:00 2001
 From: Yann Collette <yc@example.com>
-Date: Sun, 17 May 2026 20:51:29 +0200
+Date: Mon, 18 May 2026 21:25:05 +0200
 Subject: [PATCH] patch
 
 ---
- CMakeLists.txt | 11 +----------
- 1 file changed, 1 insertion(+), 10 deletions(-)
+ CMakeLists.txt | 9 ---------
+ 1 file changed, 9 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index de5297c..41bb21e 100644
+index ebc0f46..fd657ae 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -21,15 +21,6 @@ elseif(MSVC)
@@ -27,13 +27,6 @@ index de5297c..41bb21e 100644
  endif()
  
  # --- nlohmann/json (header-only, fetched at configure time) ----------------
-@@ -601,4 +592,4 @@ else() # NOT EMSCRIPTEN, ANDROID, or IOS
-     install(DIRECTORY presets DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/amplitron)
-     install(DIRECTORY assets/fonts DESTINATION bin/assets)
- 
--endif() # EMSCRIPTEN / ANDROID / IOS / desktop
-\ No newline at end of file
-+endif() # EMSCRIPTEN / ANDROID / IOS / desktop
 -- 
 2.54.0
 
