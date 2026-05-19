@@ -4,7 +4,7 @@
 # Category: MIDI, Synthesizer
 
 Name: js80p
-Version: 4.0.1
+Version: 4.0.2
 Release: 1%{?dist}
 Summary: A MIDI driven, performance oriented, versatile synthesizer plugin.
 License: GPL-3.0-only
@@ -29,18 +29,25 @@ Obsoletes: %{name} <= 1.9.8
 %description
 A MIDI driven, performance oriented, versatile synthesizer VST plugin.
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
-Requires: %{name}
+Summary: VST3 version of %{name}
+License: GPL-2.0-or-later
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n vst-%{name}
-Summary:  VST2 version of %{name}
-License:  GPL-2.0-or-later
-Requires: %{name}
+Summary: VST2 version of %{name}
+License: GPL-2.0-or-later
+Requires: license-%{name}
 
 %description -n vst-%{name}
 VST2 version of %{name}
@@ -48,15 +55,13 @@ VST2 version of %{name}
 %prep
 %setup -n %{name}-%{version}
 
-%set_build_flags
-
 sed -i -e "/Werror/d" Makefile
 sed -i -e "/Wno-format/d" Makefile
 sed -i -e "s/-Wall/-Wall \$(CXXFLAGS)/g" Makefile
 
 %build
 
-make SYS_LIB_PATH=%{_libdir} INSTRUCTION_SET=sse2
+%make_build SYS_LIB_PATH=%{_libdir} INSTRUCTION_SET=sse2
 
 %install
 
@@ -70,7 +75,7 @@ install -m 755 dist/js80p-dev-linux-x86_64-sse2-fst/js80p.so %{buildroot}/%{_lib
 %check
 validator %{buildroot}/%{_libdir}/vst3/js80p.vst3
 
-%files
+%files -n license-%{name}
 %doc README.md
 %license LICENSE.txt
 
@@ -81,6 +86,9 @@ validator %{buildroot}/%{_libdir}/vst3/js80p.vst3
 %{_libdir}/vst/*
 
 %changelog
+* Mon May 18 2026 Yann Collette <ycollette.nospam@free.fr> - 4.0.2-1
+- update to 4.0.2-1
+
 * Sun Mar 29 2026 Yann Collette <ycollette.nospam@free.fr> - 4.0.1-1
 - update to 4.0.1-1
 
