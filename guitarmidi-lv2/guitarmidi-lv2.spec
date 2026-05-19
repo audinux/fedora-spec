@@ -5,11 +5,11 @@
 
 %global debug_package %{nil}
 
-%global commit0 26fbf6565af6a7e5ccc2caea398ba805db0c5862
+%global commit0 460af5c7ca03f27db50d3ddc88f388e5fa94099b
 
 Name: guitarmidi
 Version: 2.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A concept for guitar to midi as an lv2 plugin
 URL: https://github.com/geraldmwangi/GuitarMidi-LV2
 ExclusiveArch: x86_64 aarch64
@@ -29,7 +29,6 @@ BuildRequires: cmake
 BuildRequires: git
 BuildRequires: lv2-devel
 BuildRequires: aubio-devel
-BuildRequires: pango-devel
 
 %description
 A concept for guitar to midi as an lv2 plugin. GuitarMidi-LV2 analyses the
@@ -70,6 +69,9 @@ make install
 %{_libdir}/lv2/*
 
 %changelog
+* Mon May 18 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0-3
+- update to 2.0-3 - update to 460af5c7ca03f27db50d3ddc88f388e5fa94099b
+
 * Sun May 17 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0-2
 - update to 2.0-2
 
