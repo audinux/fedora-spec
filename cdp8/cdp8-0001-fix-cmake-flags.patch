@@ -1,0 +1,940 @@
+From d74f3d5d929919604d4a86372bc98b8bdd046daf Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Mon, 18 May 2026 22:13:37 +0200
+Subject: [PATCH] fix cmake flags
+
+---
+ dev/aaio/CMakeLists.txt                         |  2 +-
+ dev/blur/CMakeLists.txt                         |  2 +-
+ dev/cdp2k/CMakeLists.txt                        | 10 +---------
+ dev/cdparams/CMakeLists.txt                     | 10 +---------
+ dev/cdparams_other/CMakeLists.txt               | 10 +---------
+ dev/cdparse/CMakeLists.txt                      | 10 +---------
+ dev/combine/CMakeLists.txt                      | 10 +---------
+ dev/distort/CMakeLists.txt                      | 10 +---------
+ dev/editsf/CMakeLists.txt                       |  2 +-
+ dev/env/CMakeLists.txt                          | 10 +---------
+ dev/extend/CMakeLists.txt                       | 10 +---------
+ dev/externals/fastconv/CMakeLists.txt           |  2 +-
+ dev/externals/mctools/CMakeLists.txt            |  2 +-
+ dev/externals/paprogs/listaudevs/CMakeLists.txt |  2 +-
+ dev/externals/paprogs/paplay/CMakeLists.txt     |  2 +-
+ dev/externals/paprogs/pvplay/CMakeLists.txt     |  2 +-
+ dev/externals/paprogs/recsf/CMakeLists.txt      |  2 +-
+ dev/externals/portsf/CMakeLists.txt             |  2 +-
+ dev/externals/reverb/CMakeLists.txt             |  2 +-
+ dev/filter/CMakeLists.txt                       | 10 +---------
+ dev/focus/CMakeLists.txt                        | 10 +---------
+ dev/formants/CMakeLists.txt                     | 10 +---------
+ dev/grain/CMakeLists.txt                        |  2 +-
+ dev/hfperm/CMakeLists.txt                       | 10 +---------
+ dev/hilite/CMakeLists.txt                       | 10 +---------
+ dev/houskeep/CMakeLists.txt                     | 10 +---------
+ dev/misc/CMakeLists.txt                         |  2 +-
+ dev/modify/CMakeLists.txt                       | 10 +---------
+ dev/morph/CMakeLists.txt                        |  2 +-
+ dev/new/CMakeLists.txt                          | 14 +-------------
+ dev/newsfsys/CMakeLists.txt                     |  2 +-
+ dev/pagrab/CMakeLists.txt                       |  2 +-
+ dev/paview/CMakeLists.txt                       | 10 +---------
+ dev/pitch/CMakeLists.txt                        | 10 +---------
+ dev/pitchinfo/CMakeLists.txt                    | 10 +---------
+ dev/pv/CMakeLists.txt                           |  2 +-
+ dev/pview/CMakeLists.txt                        | 10 +---------
+ dev/pvxio2/CMakeLists.txt                       | 14 +-------------
+ dev/repitch/CMakeLists.txt                      |  2 +-
+ dev/science/CMakeLists.txt                      | 14 +-------------
+ dev/sfsys/CMakeLists.txt                        | 10 +---------
+ dev/sfutils/CMakeLists.txt                      | 10 +---------
+ dev/sndinfo/CMakeLists.txt                      |  2 +-
+ dev/spec/CMakeLists.txt                         | 10 +---------
+ dev/specinfo/CMakeLists.txt                     | 10 +---------
+ dev/standalone/CMakeLists.txt                   | 10 +---------
+ dev/standnew/CMakeLists.txt                     | 14 +-------------
+ dev/strange/CMakeLists.txt                      | 10 +---------
+ dev/stretch/CMakeLists.txt                      | 10 +---------
+ dev/submix/CMakeLists.txt                       | 10 +---------
+ dev/synth/CMakeLists.txt                        | 10 +---------
+ dev/tabedit/CMakeLists.txt                      | 10 +---------
+ dev/texture/CMakeLists.txt                      | 10 +---------
+ 53 files changed, 53 insertions(+), 341 deletions(-)
+
+diff --git a/dev/aaio/CMakeLists.txt b/dev/aaio/CMakeLists.txt
+index a43bc44..364d68c 100644
+--- a/dev/aaio/CMakeLists.txt
++++ b/dev/aaio/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ # CMakeLists.txt for libaaio.a. NB  NOT on Windows!
+ 
+-set(CMAKE_C_FLAGS "-O -Wall ")
++set(CMAKE_C_FLAGS "-O2 -Wall ${CMAKE_C_FLAGS}")
+ 
+ include_directories(../newinclude)
+ set(AAIOLIB_SRCS aaio.c)
+diff --git a/dev/blur/CMakeLists.txt b/dev/blur/CMakeLists.txt
+index 4543499..272962f 100644
+--- a/dev/blur/CMakeLists.txt
++++ b/dev/blur/CMakeLists.txt
+@@ -5,7 +5,7 @@ else()
+   if(MINGW OR MSVC)
+     set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32 -D_WIN32")
+   else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
++    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+   endif()
+ endif()
+ 
+diff --git a/dev/cdp2k/CMakeLists.txt b/dev/cdp2k/CMakeLists.txt
+index a5813ab..d76bc69 100644
+--- a/dev/cdp2k/CMakeLists.txt
++++ b/dev/cdp2k/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O -Wall  -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32 -D_WIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DCDP97 -Dunix -Dlinux -D_X86_")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ set(CDP2K_SRCS ../cdparse/cdparse.c dzsetup.c formantsg.c mainfuncs.c parstruct.c readdata.c readfiles.c special.c tkinput.c tklib1.c tklib3.c validate.c writedata.c)
+ 
+diff --git a/dev/cdparams/CMakeLists.txt b/dev/cdparams/CMakeLists.txt
+index 1352ec9..5d1bb7b 100644
+--- a/dev/cdparams/CMakeLists.txt
++++ b/dev/cdparams/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall  -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32 -D_WIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/cdparams_other/CMakeLists.txt b/dev/cdparams_other/CMakeLists.txt
+index ef2cf76..aaced95 100644
+--- a/dev/cdparams_other/CMakeLists.txt
++++ b/dev/cdparams_other/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall  -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32 -D_WIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/cdparse/CMakeLists.txt b/dev/cdparse/CMakeLists.txt
+index dab5a7f..e89cd5d 100644
+--- a/dev/cdparse/CMakeLists.txt
++++ b/dev/cdparse/CMakeLists.txt
+@@ -1,14 +1,6 @@
+ # DEVELOPMENT for newsfsys
+ 
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall  -Dunix -DIS_CDPARSE")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32 -D_WIN32 -DIS_CDPARSE")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix -DIS_CDPARSE")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix -DIS_CDPARSE ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/combine/CMakeLists.txt b/dev/combine/CMakeLists.txt
+index b1c1b90..d6d258e 100644
+--- a/dev/combine/CMakeLists.txt
++++ b/dev/combine/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall  -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/distort/CMakeLists.txt b/dev/distort/CMakeLists.txt
+index 1c16f6b..ceb814b 100644
+--- a/dev/distort/CMakeLists.txt
++++ b/dev/distort/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/editsf/CMakeLists.txt b/dev/editsf/CMakeLists.txt
+index a5263e0..344de8b 100644
+--- a/dev/editsf/CMakeLists.txt
++++ b/dev/editsf/CMakeLists.txt
+@@ -4,7 +4,7 @@ else()
+   if(MINGW OR MSVC)
+     set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+   else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
++    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+   endif()
+ endif()
+ 
+diff --git a/dev/env/CMakeLists.txt b/dev/env/CMakeLists.txt
+index 16138d7..1fd67cb 100644
+--- a/dev/env/CMakeLists.txt
++++ b/dev/env/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall  -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/extend/CMakeLists.txt b/dev/extend/CMakeLists.txt
+index 65155a6..62267df 100644
+--- a/dev/extend/CMakeLists.txt
++++ b/dev/extend/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/externals/fastconv/CMakeLists.txt b/dev/externals/fastconv/CMakeLists.txt
+index 73d768d..5e5bb25 100644
+--- a/dev/externals/fastconv/CMakeLists.txt
++++ b/dev/externals/fastconv/CMakeLists.txt
+@@ -13,7 +13,7 @@ else()
+      endif()
+       
+    else()
+-    set(CMAKE_C_FLAGS "-O3 -Wall -Dlinux -Dunix -fomit-frame-pointer -funroll-loops")
++    set(CMAKE_C_FLAGS "-O3 -Wall -Dlinux -Dunix -fomit-frame-pointer -funroll-loops ${CMAKE_C_FLAGS}")
+   endif()
+ endif()
+ 
+diff --git a/dev/externals/mctools/CMakeLists.txt b/dev/externals/mctools/CMakeLists.txt
+index 84c0923..e76bf78 100644
+--- a/dev/externals/mctools/CMakeLists.txt
++++ b/dev/externals/mctools/CMakeLists.txt
+@@ -13,7 +13,7 @@ else()
+         set(CMAKE_CXX_FLAGS "-O2 -DWIN32 -D_WIN32")
+     endif()
+   else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix -fomit-frame-pointer -funroll-loops")
++    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix -fomit-frame-pointer -funroll-loops ${CMAKE_C_FLAGS}")
+   endif()
+ endif()
+ 
+diff --git a/dev/externals/paprogs/listaudevs/CMakeLists.txt b/dev/externals/paprogs/listaudevs/CMakeLists.txt
+index a12900a..2cd5717 100644
+--- a/dev/externals/paprogs/listaudevs/CMakeLists.txt
++++ b/dev/externals/paprogs/listaudevs/CMakeLists.txt
+@@ -25,7 +25,7 @@ else()
+     include_directories(/usr/include/sound)
+     link_directories (/usr/local/lib)
+     find_library(PA NAMES libportaudio.a)
+-    set(CMAKE_C_FLAGS "-O3 -Wall -Dlinux -Dunix -fomit-frame-pointer -funroll-loops")
++    set(CMAKE_C_FLAGS "-O3 -Wall -Dlinux -Dunix -fomit-frame-pointer -funroll-loops ${CMAKE_C_FLAGS}")
+     set(EXTRA_LIBRARIES1 pthread ${PA} ${EXTRA_LIBRARIES} jack asound)
+   endif()
+ endif()
+diff --git a/dev/externals/paprogs/paplay/CMakeLists.txt b/dev/externals/paprogs/paplay/CMakeLists.txt
+index 15f4881..21637be 100644
+--- a/dev/externals/paprogs/paplay/CMakeLists.txt
++++ b/dev/externals/paprogs/paplay/CMakeLists.txt
+@@ -28,7 +28,7 @@ else()
+     link_directories (/usr/local/lib)
+     find_library(PA NAMES libportaudio.a)
+ #    find_library(AAIOLIB NAMES libaaio.a)
+-    set(CMAKE_C_FLAGS "-O3 -Wall -Dlinux -Dunix -fomit-frame-pointer -funroll-loops")
++    set(CMAKE_C_FLAGS "-O3 -Wall -Dlinux -Dunix -fomit-frame-pointer -funroll-loops ${CMAKE_C_FLAGS}")
+ #    set(EXTRA_LIBRARIES1 jack asound portsf portaudio pthread ${AAIOLIB} ${PA} ${EXTRA_LIBRARIES})
+ 	set(EXTRA_LIBRARIES1  portsf portaudio pthread aaio ${PA} ${EXTRA_LIBRARIES} jack asound)
+   endif()
+diff --git a/dev/externals/paprogs/pvplay/CMakeLists.txt b/dev/externals/paprogs/pvplay/CMakeLists.txt
+index 8a42595..39f3dc7 100644
+--- a/dev/externals/paprogs/pvplay/CMakeLists.txt
++++ b/dev/externals/paprogs/pvplay/CMakeLists.txt
+@@ -27,7 +27,7 @@ else()
+     link_directories (/usr/local/lib)
+ #    find_library(AAIOLIB NAMES libaaio.a)
+     find_library(PA NAMES libportaudio.a)
+-    set(CMAKE_C_FLAGS "-O3 -Wall -Dlinux -Dunix -fomit-frame-pointer -funroll-loops")
++    set(CMAKE_C_FLAGS "-O3 -Wall -Dlinux -Dunix -fomit-frame-pointer -funroll-loops ${CMAKE_C_FLAGS}")
+     set(EXTRA_LIBRARIES1  pthread aaio ${PA}  ${EXTRA_LIBRARIES} asound jack)
+   endif()
+ endif()
+diff --git a/dev/externals/paprogs/recsf/CMakeLists.txt b/dev/externals/paprogs/recsf/CMakeLists.txt
+index 4bafe19..64085d5 100644
+--- a/dev/externals/paprogs/recsf/CMakeLists.txt
++++ b/dev/externals/paprogs/recsf/CMakeLists.txt
+@@ -26,7 +26,7 @@ else()
+     link_directories (/usr/local/lib)
+ #    find_library(AAIOLIB NAMES libaaio.a) 
+     find_library(PA NAMES libportaudio.a)
+-    set(CMAKE_C_FLAGS "-O3 -Wall -Dlinux -Dunix -fomit-frame-pointer -funroll-loops")
++    set(CMAKE_C_FLAGS "-O3 -Wall -Dlinux -Dunix -fomit-frame-pointer -funroll-loops ${CMAKE_C_FLAGS}")
+     set(EXTRA_LIBRARIES1  portsf pthread m aaio ${PA} ${EXTRA_LIBARIES} asound jack)
+   endif()
+ endif()
+diff --git a/dev/externals/portsf/CMakeLists.txt b/dev/externals/portsf/CMakeLists.txt
+index caea278..5622cbf 100644
+--- a/dev/externals/portsf/CMakeLists.txt
++++ b/dev/externals/portsf/CMakeLists.txt
+@@ -4,7 +4,7 @@ else()
+   if(MINGW OR MSVC)
+     set(CMAKE_C_FLAGS "-O2")
+   else()
+-    set(CMAKE_C_FLAGS "-O2 -Dunix -Dlinux")
++    set(CMAKE_C_FLAGS "-O2 -Dunix -Dlinux ${CMAKE_C_FLAGS}")
+   endif()
+ endif()
+ 
+diff --git a/dev/externals/reverb/CMakeLists.txt b/dev/externals/reverb/CMakeLists.txt
+index 30da6d6..d8119eb 100644
+--- a/dev/externals/reverb/CMakeLists.txt
++++ b/dev/externals/reverb/CMakeLists.txt
+@@ -11,7 +11,7 @@ else()
+         set(CMAKE_CXX_FLAGS "-O2 -DWIN32 -D_WIN32")
+     endif()
+   else()
+-    set(CMAKE_C_FLAGS "-O3 -Wall -Dlinux -Dunix -fomit-frame-pointer -funroll-loops")
++    set(CMAKE_C_FLAGS "-O3 -Wall -Dlinux -Dunix -fomit-frame-pointer -funroll-loops ${CMAKE_C_FLAGS}")
+   endif()
+ endif()
+ 
+diff --git a/dev/filter/CMakeLists.txt b/dev/filter/CMakeLists.txt
+index b6a7018..43d9a7b 100644
+--- a/dev/filter/CMakeLists.txt
++++ b/dev/filter/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall  -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/focus/CMakeLists.txt b/dev/focus/CMakeLists.txt
+index fb2b863..3a5b580 100644
+--- a/dev/focus/CMakeLists.txt
++++ b/dev/focus/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall  -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/formants/CMakeLists.txt b/dev/formants/CMakeLists.txt
+index a2bb7c2..a8997b0 100755
+--- a/dev/formants/CMakeLists.txt
++++ b/dev/formants/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/grain/CMakeLists.txt b/dev/grain/CMakeLists.txt
+index a3f9814..5285830 100644
+--- a/dev/grain/CMakeLists.txt
++++ b/dev/grain/CMakeLists.txt
+@@ -4,7 +4,7 @@ else()
+   if(MINGW OR MSVC)
+     set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+   else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
++    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+   endif()
+ endif()
+ 
+diff --git a/dev/hfperm/CMakeLists.txt b/dev/hfperm/CMakeLists.txt
+index db5825c..c7553fb 100644
+--- a/dev/hfperm/CMakeLists.txt
++++ b/dev/hfperm/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/hilite/CMakeLists.txt b/dev/hilite/CMakeLists.txt
+index 31628da..69ef87d 100644
+--- a/dev/hilite/CMakeLists.txt
++++ b/dev/hilite/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/houskeep/CMakeLists.txt b/dev/houskeep/CMakeLists.txt
+index e0ea728..996811f 100644
+--- a/dev/houskeep/CMakeLists.txt
++++ b/dev/houskeep/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/misc/CMakeLists.txt b/dev/misc/CMakeLists.txt
+index 90a7061..a0d5487 100644
+--- a/dev/misc/CMakeLists.txt
++++ b/dev/misc/CMakeLists.txt
+@@ -4,7 +4,7 @@ else()
+   if(MINGW OR MSVC)
+     set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+   else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
++    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+   endif()
+ endif()
+ 
+diff --git a/dev/modify/CMakeLists.txt b/dev/modify/CMakeLists.txt
+index 94f7a5a..ebe6db1 100644
+--- a/dev/modify/CMakeLists.txt
++++ b/dev/modify/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/morph/CMakeLists.txt b/dev/morph/CMakeLists.txt
+index 7983f4f..51ee1ed 100644
+--- a/dev/morph/CMakeLists.txt
++++ b/dev/morph/CMakeLists.txt
+@@ -4,7 +4,7 @@ else()
+   if(MINGW OR MSVC)
+     set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+   else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
++    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+   endif()
+ endif()
+ 
+diff --git a/dev/new/CMakeLists.txt b/dev/new/CMakeLists.txt
+index 0088741..847d942 100644
+--- a/dev/new/CMakeLists.txt
++++ b/dev/new/CMakeLists.txt
+@@ -1,16 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-  link_directories (/usr/local/lib)
+-#  find_library(AAIOLIB NAMES libaaio.a)
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-    link_directories (/usr/local/lib)
+-#    find_library(AAIOLIB NAMES libaaio.a)
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/newsfsys/CMakeLists.txt b/dev/newsfsys/CMakeLists.txt
+index 3b14606..3564b4b 100644
+--- a/dev/newsfsys/CMakeLists.txt
++++ b/dev/newsfsys/CMakeLists.txt
+@@ -9,7 +9,7 @@ else()
+       set(CMAKE_C_FLAGS "-O2 -D_X86_ -DWIN32 -D_WIN32 -DENABLE_PVX")
+     endif()
+   else()
+-    set(CMAKE_C_FLAGS "-O2 -Dunix -Dlinux -D_X86_ -DENABLE_PVX")
++    set(CMAKE_C_FLAGS "-O2 -Dunix -Dlinux -D_X86_ -DENABLE_PVX ${CMAKE_C_FLAGS}")
+   endif()
+ endif()
+ 
+diff --git a/dev/pagrab/CMakeLists.txt b/dev/pagrab/CMakeLists.txt
+index 73e9656..2cadcd2 100644
+--- a/dev/pagrab/CMakeLists.txt
++++ b/dev/pagrab/CMakeLists.txt
+@@ -4,7 +4,7 @@ else()
+   if(MINGW OR MSVC)
+     set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+   else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
++    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+   endif()
+ endif()
+ 
+diff --git a/dev/paview/CMakeLists.txt b/dev/paview/CMakeLists.txt
+index 0c13f93..ad9950f 100644
+--- a/dev/paview/CMakeLists.txt
++++ b/dev/paview/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/pitch/CMakeLists.txt b/dev/pitch/CMakeLists.txt
+index f7ef945..81cba58 100644
+--- a/dev/pitch/CMakeLists.txt
++++ b/dev/pitch/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall  -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/pitchinfo/CMakeLists.txt b/dev/pitchinfo/CMakeLists.txt
+index 98e4947..f3836c8 100644
+--- a/dev/pitchinfo/CMakeLists.txt
++++ b/dev/pitchinfo/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall  -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/pv/CMakeLists.txt b/dev/pv/CMakeLists.txt
+index b81f9c0..0d360b2 100644
+--- a/dev/pv/CMakeLists.txt
++++ b/dev/pv/CMakeLists.txt
+@@ -4,7 +4,7 @@ else()
+   if(MINGW OR MSVC)
+     set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+   else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
++    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+   endif()
+ endif()
+ 
+diff --git a/dev/pview/CMakeLists.txt b/dev/pview/CMakeLists.txt
+index edb371b..2565523 100644
+--- a/dev/pview/CMakeLists.txt
++++ b/dev/pview/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall  -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/pvxio2/CMakeLists.txt b/dev/pvxio2/CMakeLists.txt
+index b7d7b5a..d51e0ae 100644
+--- a/dev/pvxio2/CMakeLists.txt
++++ b/dev/pvxio2/CMakeLists.txt
+@@ -1,16 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    if(MSVC)
+-        set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32 -D_WIN32 -D_CRT_SECURE_NO_DEPRECATE")
+-    else()
+-        set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32 -D_WIN32")
+-    endif()
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DCDP97 -Dunix -Dlinux -D_X86_")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -DCDP97 -Dunix -Dlinux -D_X86_ ${CMAKE_C_FLAGS}")
+ 
+ include_directories(../newinclude)
+ 
+diff --git a/dev/repitch/CMakeLists.txt b/dev/repitch/CMakeLists.txt
+index b79edd2..101d2e9 100644
+--- a/dev/repitch/CMakeLists.txt
++++ b/dev/repitch/CMakeLists.txt
+@@ -8,7 +8,7 @@ else()
+ 	set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+     endif()
+   else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
++    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+   endif()
+ endif()
+ 
+diff --git a/dev/science/CMakeLists.txt b/dev/science/CMakeLists.txt
+index e6b018d..9f05d72 100644
+--- a/dev/science/CMakeLists.txt
++++ b/dev/science/CMakeLists.txt
+@@ -1,16 +1,4 @@
+-if(APPLE)
+-   set(CMAKE_C_FLAGS "-O2 -Wall  -Dunix")
+-   link_directories (/usr/local/lib)
+-#   find_library(AAIOLIB NAMES libaaio.a)
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-    link_directories (/usr/local/lib)
+-#    find_library(AAIOLIB NAMES libaaio.a)
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ #include_directories(../newinclude /usr/local/include)
+diff --git a/dev/sfsys/CMakeLists.txt b/dev/sfsys/CMakeLists.txt
+index fbb91f3..a00d8d6 100644
+--- a/dev/sfsys/CMakeLists.txt
++++ b/dev/sfsys/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2  -DCDP97 -Dunix -D__MAC__ -DMAC  -DFILE_AMB_SUPPORT")
+-else()
+-  if(MINGW)
+-    set(CMAKE_C_FLAGS "-O2 -DCDP97 -DCDP99 -DFILE64_WIN -D_X86_ -DWIN32 -D_WIN32 -D__GNUWIN32__ -DFILE_AMB_SUPPORT")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -DCDP97 -Dunix -Dlinux -D_X86_  -DFILE_AMB_SUPPORT")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -DCDP97 -Dunix -Dlinux -D_X86_  -DFILE_AMB_SUPPORT ${CMAKE_C_FLAGS}")
+ 
+ include_directories(../../include)
+ 
+diff --git a/dev/sfutils/CMakeLists.txt b/dev/sfutils/CMakeLists.txt
+index 7ea4ee6..6c9a7e4 100644
+--- a/dev/sfutils/CMakeLists.txt
++++ b/dev/sfutils/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix -DENABLE_PVX")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DENABLE_PVX -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -DENABLE_PVX -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../newsfsys ../pvxio2)
+ 
+diff --git a/dev/sndinfo/CMakeLists.txt b/dev/sndinfo/CMakeLists.txt
+index 6b9a14a..54d41b5 100644
+--- a/dev/sndinfo/CMakeLists.txt
++++ b/dev/sndinfo/CMakeLists.txt
+@@ -4,7 +4,7 @@ else()
+   if(MINGW OR MSVC)
+     set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+   else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
++    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+   endif()
+ endif()
+ 
+diff --git a/dev/spec/CMakeLists.txt b/dev/spec/CMakeLists.txt
+index 5b5110c..86f0442 100644
+--- a/dev/spec/CMakeLists.txt
++++ b/dev/spec/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall  -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/specinfo/CMakeLists.txt b/dev/specinfo/CMakeLists.txt
+index b58265e..f4e6dc2 100644
+--- a/dev/specinfo/CMakeLists.txt
++++ b/dev/specinfo/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys)
+ 
+diff --git a/dev/standalone/CMakeLists.txt b/dev/standalone/CMakeLists.txt
+index c3ed295..c4d19fd 100644
+--- a/dev/standalone/CMakeLists.txt
++++ b/dev/standalone/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys)
+ 
+diff --git a/dev/standnew/CMakeLists.txt b/dev/standnew/CMakeLists.txt
+index 9eb46a8..a9daaa6 100644
+--- a/dev/standnew/CMakeLists.txt
++++ b/dev/standnew/CMakeLists.txt
+@@ -1,16 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-  link_directories (/usr/local/lib)
+-#  find_library(AAIOLIB NAMES libaaio.a)
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-    link_directories (/usr/local/lib)
+-#    find_library(AAIOLIB NAMES libaaio.a)
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2)
+ 
+diff --git a/dev/strange/CMakeLists.txt b/dev/strange/CMakeLists.txt
+index 4cbfb4e..25d74d9 100644
+--- a/dev/strange/CMakeLists.txt
++++ b/dev/strange/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys)
+ 
+diff --git a/dev/stretch/CMakeLists.txt b/dev/stretch/CMakeLists.txt
+index 0696196..4438a4f 100644
+--- a/dev/stretch/CMakeLists.txt
++++ b/dev/stretch/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2 )
+ 
+diff --git a/dev/submix/CMakeLists.txt b/dev/submix/CMakeLists.txt
+index 9e96425..9e5b67f 100644
+--- a/dev/submix/CMakeLists.txt
++++ b/dev/submix/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2 )
+ 
+diff --git a/dev/synth/CMakeLists.txt b/dev/synth/CMakeLists.txt
+index 835d29b..26d7d8b 100644
+--- a/dev/synth/CMakeLists.txt
++++ b/dev/synth/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2 )
+ 
+diff --git a/dev/tabedit/CMakeLists.txt b/dev/tabedit/CMakeLists.txt
+index 3ece169..766ffcd 100644
+--- a/dev/tabedit/CMakeLists.txt
++++ b/dev/tabedit/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall  -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2 )
+ 
+diff --git a/dev/texture/CMakeLists.txt b/dev/texture/CMakeLists.txt
+index 085675a..868ac1d 100644
+--- a/dev/texture/CMakeLists.txt
++++ b/dev/texture/CMakeLists.txt
+@@ -1,12 +1,4 @@
+-if(APPLE)
+-  set(CMAKE_C_FLAGS "-O2 -Wall -Dunix")
+-else()
+-  if(MINGW OR MSVC)
+-    set(CMAKE_C_FLAGS "-O2 -Wall -DWIN32")
+-  else()
+-    set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix")
+-  endif()
+-endif()
++set(CMAKE_C_FLAGS "-O2 -Wall -Dlinux -Dunix ${CMAKE_C_FLAGS}")
+ 
+ link_directories(../cdp2k ../newsfsys ../pvxio2 )
+ 
+-- 
+2.54.0
+

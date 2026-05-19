@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 width="800px" height="800px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<g>
+	<path fill="#394240" d="M60,0H4C1.789,0,0,1.789,0,4v56c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4V4C64,1.789,62.211,0,60,0z
+		 M51,2v38h-6V2H51z M35,2v38h-6V2H35z M19,2v38h-6V2H19z M11,62H4c-1.104,0-2-0.896-2-2V4c0-1.104,0.641-2,2-2h7v39
+		c0,0.553,0.447,1,1,1h3v20H11z M17,62V42h3c0.553,0,1-0.447,1-1V2h6v39c0,0.553,0.447,1,1,1h3v20H17z M33,62V42h3
+		c0.553,0,1-0.447,1-1V2h6v39c0,0.553,0.447,1,1,1h3v20H33z M62,60c0,1.104-0.896,2-2,2h-7h-4V42h3c0.553,0,1-0.447,1-1V2h7
+		c1.016,0,2,0.896,2,2V60z"/>
+	<g>
+		<rect x="45" y="2" fill="#506C7F" width="6" height="38"/>
+		<rect x="29" y="2" fill="#506C7F" width="6" height="38"/>
+		<rect x="13" y="2" fill="#506C7F" width="6" height="38"/>
+	</g>
+	<g>
+		<path fill="#F9EBB2" d="M11,41V2H4C2.641,2,2,2.896,2,4v56c0,1.104,0.896,2,2,2h7h4V42h-3C11.447,42,11,41.553,11,41z"/>
+		<path fill="#F9EBB2" d="M27,41V2h-6v39c0,0.553-0.447,1-1,1h-3v20h14V42h-3C27.447,42,27,41.553,27,41z"/>
+		<path fill="#F9EBB2" d="M43,41V2h-6v39c0,0.553-0.447,1-1,1h-3v20h14V42h-3C43.447,42,43,41.553,43,41z"/>
+		<path fill="#F9EBB2" d="M60,2h-7v39c0,0.553-0.447,1-1,1h-3v20h4h7c1.104,0,2-0.896,2-2V4C62,2.896,61.016,2,60,2z"/>
+	</g>
+</g>
+</svg>
