@@ -7,7 +7,7 @@
 
 Name: cdp
 Version: 8.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: New version of CDP software 
 License: LGPL-2.1
 URL: https://composersdesktop.com/index.html
@@ -41,6 +41,21 @@ License: LGPL-2.1
 %description doc
 Documentation for %{name}
 
+%package compat
+Summary: compatibility layer for %{name}
+Requires: %{name}%{?_isa} = %{version}-%{release}
+
+%description compat
+This package provides a compatibility layout for CDP (Composers Desktop Project)
+tools expected by legacy applications. It creates the traditional _cdprogs
+directory structure and maps modern Fedora CDP binaries into it.
+Many older applications (e.g. SoundThread) expect CDP tools to be located in:
+
+    $cdpprogs/_cdprogs/
+
+instead of Fedora's standard /usr/bin layout.
+This package bridges that gap without modifying upstream CDP packaging.
+
 %prep
 %autosetup -p1 -n CDP8-%{commit0}
 
@@ -73,14 +88,32 @@ unzip %{SOURCE4}
 unzip %{SOURCE5}
 popd
 
+# Map CDP tools into legacy layout
+# Adjust list depending on Fedora CDP packaging
+
+mkdir -p %{buildroot}/%{_libexecdir}/cdp/_cdprogs/
+
+
+for tool in %{buildroot}/%{_bindir}/*
+do
+    TOOL=`basename $tool`
+    ln -s %{_bindir}/$TOOL %{buildroot}/%{_libexecdir}/cdp/_cdprogs/$TOOL
+done
+
 %files
 %doc README.md
 %license LICENSE
 %{_bindir}/*
 
+%files compat
+%{_libexecdir}/cdp/_cdprogs/*
+
 %files doc
 %{_datadir}/%{name}/docs/pdf/*
 
 %changelog
+* Tue May 19 2026 Yann Collette <ycollette.nospam@free.fr> - 8.0-2
+- update to 8.0-2 - add a CDP compatibility layer
+
 * Mon May 18 2026 Yann Collette <ycollette.nospam@free.fr> - 8.0-1
 - initial version of the spec

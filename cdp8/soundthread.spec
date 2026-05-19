@@ -12,7 +12,7 @@
 
 Name: SoundThread
 Version: 0.4.0b
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Experimental sound design workstation
 License: MIT
 URL: https://github.com/j-p-higgins/SoundThread
@@ -29,7 +29,7 @@ BuildRequires: godot
 BuildRequires: unzip
 BuildRequires: desktop-file-utils
 
-Requires: cdp
+Requires: cdp-compat
 
 %description
 SoundThread is a Godot-based experimental sound design environment.
@@ -97,5 +97,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/*
 
 %changelog
+* Tue May 19 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.0b-2
+- update to 0.4.0b-2 - use cdp-compat
+
 * Tue May 19 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.0b-1
 - initial version of the spec
