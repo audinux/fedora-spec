@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: vmpc
-Version: 0.9.5
+Version: 0.9.6
 Release: 1%{?dist}
 Summary: JUCE implementation of VMPC2000XL
 License: GPL-3.0-only
@@ -84,6 +84,9 @@ cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/Standalone/* %{buildroot}/%{_bin
 %{_libdir}/vst3/*
 
 %changelog
+* Tue May 19 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.6-1
+- update to 0.9.6-1
+
 * Mon May 11 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.5-1
 - update to 0.9.5-1
 
