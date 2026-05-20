@@ -1,3 +1,8 @@
+# Status: active
+# Tag: Tool
+# Type: Standalone
+# Category: Tool
+
 Name: kernel-audio-tuned
 Version: 1.0
 Release: 4%{?dist}
