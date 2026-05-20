@@ -1040,7 +1040,6 @@ https://github.com/Davit-G/Hamburger
 https://github.com/ZL-Audio/ZLEqualizer
 https://github.com/SolidFuel/Arp
 https://github.com/SolidFuel/Utility
-https://github.com/aiobofh/midi-utils
 https://github.com/davemollen/dm-Seq
 https://github.com/surge-synthesizer/OB-Xf
 https://github.com/mikeoliphant/StompboxUI
@@ -1154,6 +1153,7 @@ https://github.com/j-p-higgins/SoundThread"
 # https://github.com/jean-emmanuel/loop192
 # https://github.com/jean-emmanuel/seq192
 # https://github.com/mididings/pyliblo
+# https://github.com/aiobofh/midi-utils
 
 cp git_tags_old.txt git_tags_old.txt.bkp
 
