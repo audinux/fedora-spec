@@ -1,0 +1,10 @@
+[Unit]
+Description=Audio topology IRQ tuning
+ConditionKernelCommandLine=audio_profile=enabled
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/audio-topology-profile/irq-affinity.sh
+
+[Install]
+WantedBy=multi-user.target
