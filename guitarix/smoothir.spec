@@ -4,7 +4,7 @@
 # Category: Audio, Sampler
 
 Name: smoothir
-Version: 0.2
+Version: 0.3
 Release: 1%{?dist}
 Summary: Creating impulse responses (IRs) through spectral matching of two audio files
 License: BSD
@@ -15,8 +15,8 @@ Vendor:       Audinux
 Distribution: Audinux
 
 
-# ./brummer10-source.sh <project> <tag>
-# ./brummer10-source.sh SmoothIR v0.2
+# Usage: ./brummer10-source.sh <project> <tag>
+#        ./brummer10-source.sh SmoothIR v0.3
 
 Source0: SmoothIR.tar.gz
 Source1: brummer10-source.sh
@@ -34,6 +34,8 @@ BuildRequires: fftw-devel
 BuildRequires: vim-common
 BuildRequires: desktop-file-utils
 
+Requires: license-%{name}
+
 %description
 SmoothIR is a tool for creating impulse responses (IRs) through spectral matching of two audio files,
 with a focus on musically useful results rather than purely technical accuracy.
@@ -42,25 +44,44 @@ The spectral difference between a Reference and a Source is transformed into an 
 then deliberately smoothed and band-limited.
 The result is an IR that works very well for creative applications (e.g. guitars, reamping, sound design).
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: BSD
+
+%description -n license-%{name}
+License and documentation for %{name}
+
+%package -n clap-%{name}
+Summary: CLAP version of %{name}
+License: BSD
+Requires: license-%{name}
+
+%description -n clap-%{name}
+CLAP version of %{name}
+
 %prep
 %autosetup -n SmoothIR
 
-sed -i -e "/Version=0.2/d" SmoothIR/smoothir.desktop
+sed -i -e "/Version=0.2/d" SmoothIR/Resources/smoothir.desktop
 
 %build
 
 %make_build STRIP=true
+%make_build STRIP=true -- clap
 
 %install
+
+install -m 755 -d %{buildroot}%{_libdir}/clap/
+cp -ra bin/smootheq.clap %{buildroot}/%{_libdir}/clap/
 
 install -m 755 -d %{buildroot}%{_bindir}/
 cp -ra bin/smoothir %{buildroot}/%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
-cp SmoothIR/smoothir.desktop %{buildroot}/%{_datadir}/applications/
+cp SmoothIR/Resources/smoothir.desktop %{buildroot}/%{_datadir}/applications/
 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
-cp SmoothIR/smoothir.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
+cp SmoothIR/Resources/smoothir.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
 
 desktop-file-install --vendor '' \
         --add-category=X-Sound \
@@ -77,7 +98,16 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/smoothir.desktop
 %{_datadir}/applications/smoothir.desktop
 %{_datadir}/icons/hicolor/scalable/apps/smoothir.svg
 
+%files -n license-%{name}
+%doc README.md
+
+%files -n clap-%{name}
+%{_libdir}/clap/*
+
 %changelog
+* Wed May 20 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3-1
+- update to 0.3-1
+
 * Sun May 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2-1
 - update to 0.2-1
 
