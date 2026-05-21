@@ -278,7 +278,6 @@
 | nine-strip                               | https://github.com/blablack/nine-strip                                                                                                                      |
 | WarpCore                                 | https://github.com/ManasWolrd/WarpCore                                                                                                                      |
 | wetdelay                                 | https://github.com/yonie/wetdelay                                                                                                                           |
-| Nebula-De-Esser                          | https://github.com/subhankardas15071992-cloud/Nebula-De-Esser                                                                                               |
 | BiRR                                     | https://github.com/odoare/BiRR                                                                                                                              |
 | RSTelecom                                | https://github.com/reillypascal/RSTelecom                                                                                                                   |
 | Image-In                                 | https://github.com/odoare/Image-In                                                                                                                          |
@@ -405,9 +404,6 @@
 | qpitch                                   | https://github.com/skynse/qpitch                                                                                                                            |
 | INTERSECT                                | https://github.com/tucktuckg00se/INTERSECT                                                                                                                  |
 | osccontrol-light                         | https://github.com/drlight-code/osccontrol-light                                                                                                            |
-| Nebula-Cluster                           | https://github.com/subhankardas15071992-cloud/Nebula-Cluster                                                                                                |
-| Nebula-De-Esser                          | https://github.com/subhankardas15071992-cloud/Nebula-De-Esser                                                                                               |
-| Nebula-Stereo-Delay                      | https://github.com/subhankardas15071992-cloud/Nebula-Stereo-Delay                                                                                           |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
