@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: nebula-de-esser
-Version: 3.1.0
+Version: 3.2.0
 Release: 1%{?dist}
 Summary: Nebula DeEsser is a high-performance de-esser plugin built for professionals who demand precision.
 License: AGPL-3.0-or-later
@@ -118,5 +118,8 @@ cp -vfr target/release/libnebula_desser.so %{buildroot}/%{_libdir}/clap/%{name}.
 %{_libdir}/clap/*
 
 %changelog
+* Sat May 23 2026 Yann Collette <ycollette.nospam@free.fr> - 3.2.0-1
+- update to 3.2.0-1
+
 * Thu May 21 2026 Yann Collette <ycollette.nospam@free.fr> - 3.1.0-1
 - Initial spec file
