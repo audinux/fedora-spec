@@ -401,7 +401,6 @@
 | stereogain                               | https://github.com/osam-cologne/stereogain                                                                                                                  |
 | Gain-Booster                             | https://github.com/Moebytes/Gain-Booster                                                                                                                    |
 | OpenDaw                                  | https://github.com/glenwrhodes/OpenDaw                                                                                                                      |
-| qpitch                                   | https://github.com/skynse/qpitch                                                                                                                            |
 | INTERSECT                                | https://github.com/tucktuckg00se/INTERSECT                                                                                                                  |
 | osccontrol-light                         | https://github.com/drlight-code/osccontrol-light                                                                                                            |
 
