@@ -5,7 +5,7 @@
 
 Name: magda-core
 Version: 0.8.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A DAW built for automation, transformation, and fast musical iteration
 License: GPL-3.0-or-later
 URL: https://github.com/Conceptual-Machines/magda-core
@@ -79,14 +79,20 @@ rm -rf %{buildroot}/%{_includedir}/
 rm -rf %{buildroot}/%{_usr}/lib/cmake
 rm -rf %{buildroot}/%{_libdir}
 
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/
+mv %{buildroot}/%{_bindir}/controllers %{buildroot}/%{_datadir}/%{name}/
+mv %{buildroot}/%{_bindir}/lang %{buildroot}/%{_datadir}/%{name}/
+
 %files
 %doc README.md CONTRIBUTING.md SECURITY.md
 %license LICENSE
 %{_bindir}/*
+%{_datadir}/%{name}/controllers/*
+%{_datadir}/%{name}/lang/*
 
 %changelog
-* Thu May 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.1-1
-- update to 0.8.1-1
+* Thu May 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.1-2
+- update to 0.8.1-2 - fix installation
 
 * Mon May 18 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.0-1
 - update to 0.8.0-1
