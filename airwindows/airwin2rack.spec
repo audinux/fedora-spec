@@ -3,9 +3,11 @@
 # Type: Plugin, VST3, CLAP, LV2
 # Category: Audio, Effect
 
+%global commit0 4ded9cca19e238f32e411c93525a6f9927e10c49
+
 Name: airwin2rack
 Version: 2.12.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Airwindows, Consolidated into a single Library, Rack Plugin and DAW Plugin
 License: MIT
 URL: https://github.com/baconpaul/airwin2rack
@@ -15,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./airwin2rack-source.sh <TAG>
-#        ./airwin2rack-source.sh v2.12.0
+#        ./airwin2rack-source.sh main
 
 Source0: airwin2rack.tar.gz
 Source2: airwin2rack-source.sh
@@ -107,6 +109,9 @@ cp -rav %{__cmake_builddir}/src-juce/airwin-consolidated_artefacts/Standalone/* 
 %{_libdir}/lv2/*
 
 %changelog
+* Mon May 25 2026 Yann Collette <ycollette.nospam@free.fr> - 2.12.0-3
+- update to 2.12.0-3 - update to 4ded9cca19e238f32e411c93525a6f9927e10c49
+
 * Sat Aug 23 2025 Yann Collette <ycollette.nospam@free.fr> - 2.12.0-2
 - update to 2.12.0-2 - remove unused dep
 
