@@ -5,10 +5,8 @@
 
 %global debug_package %{nil}
 
-%global commit0 460af5c7ca03f27db50d3ddc88f388e5fa94099b
-
 Name: guitarmidi
-Version: 2.0
+Version: 2.1
 Release: 3%{?dist}
 Summary: A concept for guitar to midi as an lv2 plugin
 URL: https://github.com/geraldmwangi/GuitarMidi-LV2
@@ -19,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./guitarmidi-lv2-source.sh <TAG>
-#        ./guitarmidi-lv2-source.sh master
+#        ./guitarmidi-lv2-source.sh v2.1
 
 Source0: GuitarMidi-LV2.tar.gz
 Source1: guitarmidi-lv2-source.sh
@@ -31,8 +29,8 @@ BuildRequires: lv2-devel
 BuildRequires: aubio-devel
 
 %description
-A concept for guitar to midi as an lv2 plugin. GuitarMidi-LV2 analyses the
-signal of a guitar in standard tuning E A D g b e extracts the notes played.
+A concept for guitar to midi as an LV2 plugin. GuitarMidi-LV2 analyses the
+signal of a guitar in standard tuning E A D G B E extracts the notes played.
 It deploys a bank of elliptic cauer bandpass filters to separate the
 polyphonic audio into monophonic frequency segments, which are then
 analysed by monophonic pitch detectors.
@@ -69,6 +67,9 @@ make install
 %{_libdir}/lv2/*
 
 %changelog
+* Thu May 28 2026 Yann Collette <ycollette.nospam@free.fr> - 2.1-3
+- update to 2.1-3
+
 * Mon May 18 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0-3
 - update to 2.0-3 - update to 460af5c7ca03f27db50d3ddc88f388e5fa94099b
 
