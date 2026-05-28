@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b76c5b2674cf3903a43ae3d3203e9fc76eea6fb2
-%global gittag0 2.0.0
+%global commit0 f6cf8d6c73d5bfceb30a35b7c9736c3d9be5befe
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-PatchableDevices
-Version: 2.0.0
+Version: 2.0.1
 Release: 2%{?dist}
 Summary: PatchableDevices plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r PatchableDevices_plugin/dist/PatchableDevices/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

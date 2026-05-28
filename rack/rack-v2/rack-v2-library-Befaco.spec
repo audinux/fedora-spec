@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 53f92ff053b7e466ce60c254871a557aa3dd3800
-%global gittag0 2.9.1
+%global commit0 c06a414a7e45e4f79a31316187358100c87c4bc2
+%global gittag0 2.10.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Befaco
-Version: 2.9.1
+Version: 2.10.0
 Release: 2%{?dist}
 Summary: Befaco plugin for Rack
 License: GPL-2.0-or-later
@@ -29,7 +29,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/VCVRack/Befaco/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: Befaco.tar.gz
 Source2: Befaco_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -154,5 +154,5 @@ cp -r Befaco_plugin/dist/Befaco/* %{buildroot}%{_libexecdir}/Rack2/plugins/Befac
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.9.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.10.0-1
 - initial specfile

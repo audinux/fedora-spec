@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 6c76c99ea9316fcbdf24c1c514b6159f583a6c28
-%global gittag0 2.0.3
+%global commit0 a9aec50be7f975ece4000a4146fc530bfe6abdef
+%global gittag0 2.0.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-TeknoLogical
-Version: 2.0.3
+Version: 2.0.6
 Release: 2%{?dist}
 Summary: TeknoLogical plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r TeknoLogical_plugin/dist/TeknoLogical/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.6-1
 - initial specfile

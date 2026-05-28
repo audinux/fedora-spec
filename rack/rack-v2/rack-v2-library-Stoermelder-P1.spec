@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 11d927c29a15d3daa28ed201bc8ffd7e2001de92
-%global gittag0 2.3.1
+%global commit0 0f2d414bcbc7c337acfed381511591645b30b4cd
+%global gittag0 2.4.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Stoermelder-P1
-Version: 2.3.1
+Version: 2.4.0
 Release: 2%{?dist}
 Summary: Stoermelder-P1 plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 Stoermelder-P1 plugin for Rack.
-A live programming environment for ORCA, an esoteric programming language designed to quickly create procedural sequencers
+MIDI converter for your Expert Sleepers hardware setup (ES-5, ES-8, ES-9 etc.)
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r Stoermelder-P1_plugin/dist/Stoermelder-P1/* %{buildroot}%{_libexecdir}/Rac
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.0-1
 - initial specfile
