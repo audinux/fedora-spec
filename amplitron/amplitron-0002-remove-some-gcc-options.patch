@@ -1,22 +1,20 @@
-From 2a7c7741d9673215a2bd58367f8ee3c4f4ace61c Mon Sep 17 00:00:00 2001
+From 513c7d4ef1a41e6854e8c634f647d0168eeba0a2 Mon Sep 17 00:00:00 2001
 From: Yann Collette <yc@example.com>
-Date: Mon, 18 May 2026 21:25:05 +0200
+Date: Thu, 28 May 2026 12:49:55 +0200
 Subject: [PATCH] patch
 
 ---
- CMakeLists.txt | 9 ---------
- 1 file changed, 9 deletions(-)
+ CMakeLists.txt | 7 -------
+ 1 file changed, 7 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index ebc0f46..fd657ae 100644
+index d23bcac..2f4f5f4 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -21,15 +21,6 @@ elseif(MSVC)
-     if(CMAKE_BUILD_TYPE STREQUAL "Release")
-         add_compile_options(/O2 /arch:AVX)
+@@ -36,13 +36,6 @@ else()
+         # with -ffast-math Clang warns in external headers.
+         add_compile_options(-Wno-nan-infinity-disabled)
      endif()
--else()
--    add_compile_options(-Wall -Wextra -ffast-math)
 -    if(CMAKE_BUILD_TYPE STREQUAL "Release")
 -        add_compile_options(-O3 -ftree-vectorize)
 -        # -march=native is only valid for native (non-cross) builds
