@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-%global commit0 03332b457efd8ae3f62cfe75a8a2727cb5b59ede
+%global commit0 327faf74991b9622f6587842f6a52467bd8271a8
 
 Name: BespokeSynth-weekly
 Version: 1.3.10
-Release: 24%{?dist}
+Release: 25%{?dist}
 Summary: A software modular synth
 License: GPL-3.0-or-later
 URL: https://github.com/BespokeSynth/BespokeSynth
@@ -16,8 +16,8 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./bespokesynth-sources.sh <tag>
-# ./bespokesynth-sources.sh main
+# Usage: ./bespokesynth-sources.sh <tag>
+#        ./bespokesynth-sources.sh main
 
 Source0: BespokeSynth.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
@@ -130,8 +130,11 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/com.bespo
 %{_datadir}/metainfo/com.bespokesynth.BespokeSynth.metainfo.xml
 
 %changelog
-* Tue May 05 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-23
-- Update to 1.3.10-23 - 03332b457efd8ae3f62cfe75a8a2727cb5b59ede
+* Tue May 26 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-25
+- Update to 1.3.10-25 - 327faf74991b9622f6587842f6a52467bd8271a8
+
+* Tue May 05 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-24
+- Update to 1.3.10-24 - 03332b457efd8ae3f62cfe75a8a2727cb5b59ede
 
 * Tue Apr 28 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-23
 - Update to 1.3.10-23 - d7cd8317fd5194f3c17d65a3a0bcbf49626c14af
