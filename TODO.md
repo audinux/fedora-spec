@@ -275,7 +275,6 @@
 | rverse                                   | https://github.com/SamuFL/rverse                                                                                                                            |
 | scream-dpf                               | https://gitlab.com/z3nlabs/scream-dpf                                                                                                                       |
 | reconnie                                 | https://codeberg.org/rubberplayer/reconnie                                                                                                                  |
-| nine-strip                               | https://github.com/blablack/nine-strip                                                                                                                      |
 | WarpCore                                 | https://github.com/ManasWolrd/WarpCore                                                                                                                      |
 | wetdelay                                 | https://github.com/yonie/wetdelay                                                                                                                           |
 | BiRR                                     | https://github.com/odoare/BiRR                                                                                                                              |

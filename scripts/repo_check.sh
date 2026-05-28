@@ -1146,7 +1146,8 @@ https://github.com/subhankardas15071992-cloud/Nebula-Stereo-Delay
 https://github.com/subhankardas15071992-cloud/Nebula-Delay
 https://github.com/subhankardas15071992-cloud/Nebula-Cluster
 https://github.com/subhankardas15071992-cloud/Nebula-De-Esser
-https://github.com/skynse/qpitch"
+https://github.com/skynse/qpitch
+https://github.com/blablack/nine-strip"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
