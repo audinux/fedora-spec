@@ -4,7 +4,7 @@
 # Category: DAW, MIDI
 
 Name: magda-core
-Version: 0.9.0
+Version: 0.9.1
 Release: 2%{?dist}
 Summary: A DAW built for automation, transformation, and fast musical iteration
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./magda-core-source.sh <TAG>
-#        ./magda-core-source.sh v0.9.0
+#        ./magda-core-source.sh v0.9.1
 
 Source0: magda-core.tar.gz
 Source1: magda-core-source.sh
@@ -24,6 +24,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: git
 BuildRequires: git-lfs
+BuildRequires: patchelf
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
@@ -72,12 +73,20 @@ Features:
 
 %cmake_install
 
+# install onnxruntime and fix RPATH
+install -m 755 -d %{buildroot}/%{_libdir}/magda-core/
+install -m 755 %{__cmake_builddir}/_deps/onnxruntime-src/lib/libonnxruntime.so.1.* %{buildroot}/%{_libdir}/magda-core/
+patchelf --set-rpath '$ORIGIN/../%{_lib}/magda-core/' %{buildroot}/%{_bindir}/MAGDA
+
 # cleanup
 rm -rf %{buildroot}/%{_bindir}/JUCE*
 rm -f %{buildroot}/%{_bindir}/convert_hf_to_gguf.py
 rm -rf %{buildroot}/%{_includedir}/
 rm -rf %{buildroot}/%{_usr}/lib/cmake
-rm -rf %{buildroot}/%{_libdir}
+rm -rf %{buildroot}/%{_libdir}/cmake
+rm -rf %{buildroot}/%{_libdir}/libggml*.a
+rm -rf %{buildroot}/%{_libdir}/libllama.a
+rm -rf %{buildroot}/%{_libdir}/pkgconfig
 
 install -m 755 -d %{buildroot}/%{_datadir}/%{name}/
 mv %{buildroot}/%{_bindir}/controllers %{buildroot}/%{_datadir}/%{name}/
@@ -87,10 +96,14 @@ mv %{buildroot}/%{_bindir}/lang %{buildroot}/%{_datadir}/%{name}/
 %doc README.md CONTRIBUTING.md SECURITY.md
 %license LICENSE
 %{_bindir}/*
+%{_libdir}/magda-core/*
 %{_datadir}/%{name}/controllers/*
 %{_datadir}/%{name}/lang/*
 
 %changelog
+* Wed May 27 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.1-2
+- update to 0.9.1-2
+
 * Mon May 25 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.0-2
 - update to 0.9.0-2
 
