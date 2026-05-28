@@ -4,14 +4,14 @@
 # Category: Audio, Effect
 
 Name: stompbox
-Version: 0.2.1
+Version: 0.2.2
 Release: 1%{?dist}
 Summary: Guitar amplification and effects pedalboard simulation
 License: GPL-3.0-or-later
 URL: https://github.com/mikeoliphant/stompbox
 
-# ./mikeoliphant-source.sh <project> <tag>
-# ./mikeoliphant-source.sh stompbox v0.2.1
+# Usage: ./mikeoliphant-source.sh <project> <tag>
+#        ./mikeoliphant-source.sh stompbox v0.2.2
 
 Source0: stompbox.tar.gz
 Source1: mikeoliphant-source.sh
@@ -73,6 +73,9 @@ cp %{__cmake_builddir}/stompbox-jack/stompbox-jack %{buildroot}/%{_bindir}/
 %{_libdir}/libstompbox-capi.so
 
 %changelog
+* Wed May 27 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.2-1
+- update to 0.2.2-1
+
 * Mon Mar 30 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.1-1
 - update to 0.2.1-1
 
