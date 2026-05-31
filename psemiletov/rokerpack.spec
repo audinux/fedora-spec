@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: rokerpack
-Version: 1.0.0
+Version: 1.1.0
 Release: 1%{?dist}
 Summary: A set of VST3 guitar plugins and tuners
 License: Unlicense
@@ -105,5 +105,8 @@ cp -ra %{__cmake_builddir}/Tembr_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 %{_libdir}/vst3/*
 
 %changelog
+* Fri May 29 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+- update to 1.1.0-1
+
 * Thu Apr 23 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial build
