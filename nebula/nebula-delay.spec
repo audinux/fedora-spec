@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: nebula-delay
-Version: 1.1.0
+Version: 1.2.0
 Release: 1%{?dist}
 Summary: A free open-source dirt box plugin.
 License: AGPL-3.0-or-later
@@ -120,5 +120,8 @@ cp -vfr target/release/libnebula_delay.so %{buildroot}/%{_libdir}/clap/%{name}.c
 %{_libdir}/clap/*
 
 %changelog
+* Sat May 30 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
+- update to 1.2.0-1
+
 * Thu May 21 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
 - Initial spec file

@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: nebula-stereo-delay
-Version: 1.1.0
+Version: 1.2.0
 Release: 1%{?dist}
 Summary: A stereo delay engine forged in double-precision
 License: AGPL-3.0-or-later
@@ -125,5 +125,8 @@ cp -vfr target/release/libnebula_stereo_delay.so %{buildroot}/%{_libdir}/clap/%{
 %{_libdir}/clap/*
 
 %changelog
+* Sat May 30 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
+- update to 1.2.0-1
+
 * Thu May 21 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
 - Initial spec file
