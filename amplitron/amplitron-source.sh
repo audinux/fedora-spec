@@ -11,7 +11,6 @@ if [ $? == 1 ]; then
     exit 1
 fi
 git submodule update --depth=1 --init --recursive --progress
-find . -name .git -exec rm -rf {} \;
 
 # From .github/workflows/ci.yml
 git clone --depth 1 --branch v1.90.1 https://github.com/ocornut/imgui.git external/imgui
@@ -24,6 +23,8 @@ curl -sL -o external/kiss_fft/kiss_fft.h https://raw.githubusercontent.com/mborg
 curl -sL -o external/kiss_fft/kiss_fft.c https://raw.githubusercontent.com/mborgerding/kissfft/master/kiss_fft.c
 curl -sL -o external/kiss_fft/_kiss_fft_guts.h https://raw.githubusercontent.com/mborgerding/kissfft/master/_kiss_fft_guts.h
 curl -sL -o external/kiss_fft/kiss_fft_log.h https://raw.githubusercontent.com/mborgerding/kissfft/master/kiss_fft_log.h
+
+find . -name .git -exec rm -rf {} \;
 
 cd ..
 
