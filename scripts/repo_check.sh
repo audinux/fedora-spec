@@ -1147,7 +1147,8 @@ https://github.com/subhankardas15071992-cloud/Nebula-Delay
 https://github.com/subhankardas15071992-cloud/Nebula-Cluster
 https://github.com/subhankardas15071992-cloud/Nebula-De-Esser
 https://github.com/skynse/qpitch
-https://github.com/blablack/nine-strip"
+https://github.com/blablack/nine-strip
+https://forge.chapril.org/jmtrivial/boutronique"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
