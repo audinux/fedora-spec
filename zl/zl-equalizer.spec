@@ -76,7 +76,15 @@ sed -i -e "s/ZL Equalizer 2/ZL_Equalizer_2/g" CMakeLists.txt
 
 %build
 
-%cmake -DKFR_ENABLE_DFT=ON
+%cmake \
+%ifarch x86_64
+    -DZL_HWY_STATIC_TARGET=SSE2 \
+%endif
+%ifarch aarch64
+    -DZL_HWY_STATIC_TARGET=NEON \
+%endif
+    -DKFR_ENABLE_DFT=ON
+       
 %cmake_build
 
 %install
