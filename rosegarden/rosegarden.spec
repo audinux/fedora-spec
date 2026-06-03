@@ -3,7 +3,7 @@
 # Type: Standalone
 # Category: Audio, Sequencer, DAW
 
-%global major 25.12
+%global major 26.06
 
 Name: rosegarden4
 Version: %{major}
@@ -96,6 +96,9 @@ desktop-file-install \
 %{_datadir}/metainfo/rosegarden.appdata.xml
 
 %changelog
+* Wed Jun 03 2026 Yann Collette <ycollette.nospam@free.fr> - 26.06-4
+- update to 26.06-4
+
 * Wed Dec 03 2025 Yann Collette <ycollette.nospam@free.fr> - 25.12-4
 - update to 25.12-4
 
