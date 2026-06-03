@@ -4,7 +4,7 @@
 # Category: Audio, Effect, Tool
 
 Name: amplitron
-Version: 0.1.304
+Version: 0.1.336
 Release: 2%{?dist}
 Summary: Poor man's guitar amp
 License: MIT
@@ -15,12 +15,11 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./amplitron-source.sh <TAG>
-#        ./amplitron-source.sh v0.1.304
+#        ./amplitron-source.sh v0.1.336
 
 Source0: Amplitron.tar.gz
 Source1: amplitron-source.sh
-Patch0: amplitron-0001-fix-nanosvg-header.patch
-Patch1: amplitron-0002-remove-some-gcc-options.patch
+Patch0: amplitron-0002-remove-some-gcc-options.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -32,6 +31,7 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: portaudio-devel
 BuildRequires: nanosvg-devel
 BuildRequires: rtmidi-devel
+BuildRequires: gtest-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -75,6 +75,16 @@ desktop-file-install                         \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
+# cleanup
+rm -rf %{buildroot}/%{_includedir}/gmock/
+rm -rf %{buildroot}/%{_includedir}/gtest/
+rm -rf %{buildroot}/%{_libdir}/libgmock*
+rm -rf %{buildroot}/%{_libdir}/libgtest*
+rm -rf %{buildroot}/%{_libdir}/cmake/GTest/
+rm -rf %{buildroot}/%{_libdir}/pkgconfig/gmock.*
+rm -rf %{buildroot}/%{_libdir}/pkgconfig/gtest.*
+
+
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
@@ -87,6 +97,15 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/*
 
 %changelog
+* Wed Jun 03 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.336-2
+- update to 0.1.336-2
+
+* Tue Jun 02 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.334-2
+- update to 0.1.334-2
+
+* Mon Jun 01 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.306-2
+- update to 0.1.306-2
+
 * Sat May 30 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.304-2
 - update to 0.1.304-2
 

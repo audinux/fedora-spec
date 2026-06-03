@@ -1,6 +1,6 @@
-From 513c7d4ef1a41e6854e8c634f647d0168eeba0a2 Mon Sep 17 00:00:00 2001
+From 99de77dfc50e07671bb85538714cab6ad41143ae Mon Sep 17 00:00:00 2001
 From: Yann Collette <yc@example.com>
-Date: Thu, 28 May 2026 12:49:55 +0200
+Date: Wed, 3 Jun 2026 13:00:52 +0200
 Subject: [PATCH] patch
 
 ---
@@ -8,10 +8,10 @@ Subject: [PATCH] patch
  1 file changed, 7 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index d23bcac..2f4f5f4 100644
+index b3a7c35..ae24de1 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -36,13 +36,6 @@ else()
+@@ -38,13 +38,6 @@ else()
          # with -ffast-math Clang warns in external headers.
          add_compile_options(-Wno-nan-infinity-disabled)
      endif()
