@@ -402,6 +402,9 @@
 | OpenDaw                                  | https://github.com/glenwrhodes/OpenDaw                                                                                                                      |
 | INTERSECT                                | https://github.com/tucktuckg00se/INTERSECT                                                                                                                  |
 | osccontrol-light                         | https://github.com/drlight-code/osccontrol-light                                                                                                            |
+| granular-synthesizer                     | https://github.com/hadencain/granular-synthesizer                                                                                                           |
+| monksynth                                | https://github.com/JonET/monksynth                                                                                                                          |
+| mruby-zest-build                         | https://github.com/mruby-zest/mruby-zest-build                                                                                                              |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
