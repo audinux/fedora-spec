@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: yadaw
-Version: 0.8.5
+Version: 0.8.9
 Release: 1%{?dist}
 Summary: An sfx creation tool and midi player that doesn't crash often
 License: AGPL-3.0-or-later
@@ -104,6 +104,15 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/io.github
 %{_datadir}/metainfo/*
 
 %changelog
+* Tue Jun 02 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.9-1
+- update to 0.8.9-1
+
+* Tue Jun 02 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.8-1
+- update to 0.8.8-1
+
+* Mon Jun 01 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.7-1
+- update to 0.8.7-1
+
 * Fri May 29 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.5-1
 - update to 0.8.5-1
 
