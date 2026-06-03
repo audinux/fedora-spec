@@ -1,0 +1,25 @@
+From f2c3edf12b9dc04239b6bf594cee92902dac8c5a Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Tue, 2 Jun 2026 21:49:40 +0200
+Subject: [PATCH] set qml path
+
+---
+ src/mruby-widget-lib/src/api.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/mruby-widget-lib/src/api.c b/src/mruby-widget-lib/src/api.c
+index 6949413..8032012 100644
+--- a/src/mruby-widget-lib/src/api.c
++++ b/src/mruby-widget-lib/src/api.c
+@@ -88,7 +88,7 @@ zest_open(char *address)
+     //Find QML Root
+     const char *roots[] = {
+         "./src/mruby-zest/example/MainWindow.qml",
+-        "./qml/MainWindow.qml"};
++        "/usr/share/zyn-fusion/qml/MainWindow.qml"};
+ 
+     zest_t *z = calloc(1, sizeof(zest_t));
+ 
+-- 
+2.54.0
+

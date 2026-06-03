@@ -1148,7 +1148,11 @@ https://github.com/subhankardas15071992-cloud/Nebula-Cluster
 https://github.com/subhankardas15071992-cloud/Nebula-De-Esser
 https://github.com/skynse/qpitch
 https://github.com/blablack/nine-strip
-https://forge.chapril.org/jmtrivial/boutronique"
+https://forge.chapril.org/jmtrivial/boutronique
+https://github.com/rncbc/qsampler
+https://github.com/mruby-zest/mruby-zest-build
+https://github.com/rncbc/qmidictl
+https://github.com/rncbc/qmidinet"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
