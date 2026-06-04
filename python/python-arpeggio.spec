@@ -6,7 +6,7 @@
 %global pypi_name arpeggio
 
 Name: python-%{pypi_name}
-Version: 2.0.2
+Version: 2.0.3
 Release: 1%{?dist}
 Summary: Packrat parser interpreter
 
@@ -55,5 +55,8 @@ Arpeggio is a recursive descent parser with memoization based on PEG grammars
 %license LICENSE
 
 %changelog
+* Thu Jun 04 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
+- update to 2.0.3-1
+
 * Mon Mar 16 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial reimport of the spec from fedora
