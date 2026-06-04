@@ -4,7 +4,7 @@
 # Category: DAW, MIDI
 
 Name: noteahead
-Version: 3.1.0
+Version: 3.2.0
 Release: 1%{?dist}
 Summary: A simple MIDI tracker and sequencer
 License: GPLv2+
@@ -42,12 +42,16 @@ sed -i -e "s/Categories=Audio;/Categories=Audio;AudioVideo/g" data/linux/noteahe
 sed -i -e "/<screenshots>/d" data/linux/noteahead.appdata.xml
 sed -i -e "/<\/screenshots>/d" data/linux/noteahead.appdata.xml
 
+# Remove all the -march=x86-64-2 and -march=native flags
+sed -i -e "/-march/d" CMakeLists.txt
+
 %build
 
 %set_build_flags
 export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
-%cmake
+%cmake -DBUILD_TESTS=OFF \
+       -DENABLE_JACK_SUPPORT=ON
 %cmake_build
 
 %install
@@ -68,6 +72,9 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/noteahea
 %{_datadir}/pixmaps/*.png
 
 %changelog
+* Thu Jun 04 2026 Yann Collette <ycollette.nospam@free.fr> - 3.2.0-1
+- update to 3.2.0-1
+
 * Sun May 31 2026 Yann Collette <ycollette.nospam@free.fr> - 3.1.0-1
 - update to 3.1.0-1
 
