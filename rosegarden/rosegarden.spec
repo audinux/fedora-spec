@@ -89,6 +89,7 @@ desktop-file-install \
 %doc AUTHORS CONTRIBUTING README.md
 %license COPYING
 %{_bindir}/rosegarden
+%{_libdir}/librosegardenGtk2.so
 %{_datadir}/applications/*rosegarden.desktop
 %{_datadir}/icons/hicolor/*/mimetypes/application-x-rosegarden-*.png
 %{_datadir}/icons/hicolor/*/apps/rosegarden.png
