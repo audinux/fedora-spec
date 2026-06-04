@@ -405,6 +405,9 @@
 | granular-synthesizer                     | https://github.com/hadencain/granular-synthesizer                                                                                                           |
 | monksynth                                | https://github.com/JonET/monksynth                                                                                                                          |
 | mruby-zest-build                         | https://github.com/mruby-zest/mruby-zest-build                                                                                                              |
+| Ambience1.0.1                            | https://github.com/OTODESK4193/Ambience1.0.1                                                                                                                |
+| TermenFlux                               | https://github.com/hergezod/TermenFlux                                                                                                                      |
+| SongRec                                  | https://github.com/marin-m/SongRec                                                                                                                          |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
