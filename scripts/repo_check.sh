@@ -1152,7 +1152,9 @@ https://forge.chapril.org/jmtrivial/boutronique
 https://github.com/rncbc/qsampler
 https://github.com/mruby-zest/mruby-zest-build
 https://github.com/rncbc/qmidictl
-https://github.com/rncbc/qmidinet"
+https://github.com/rncbc/qmidinet
+https://github.com/marin-m/SongRec
+https://github.com/Wasted-Audio/wstd-mseq"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
