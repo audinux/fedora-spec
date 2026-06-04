@@ -5,7 +5,7 @@
 
 %define _lto_cflags %{nil}
 
-%define pkgver 26.3
+%define pkgver 26.4
 %define tarname snd-%{pkgver}
 %define snd_date "02/13/2026"
 
@@ -113,6 +113,7 @@ done
 
 # build Motif version
 %configure %{config_options} --with-gui=yes
+
 %make_build -j1
 mv snd snd-gui
 make clean
@@ -120,13 +121,16 @@ rm -f config.cache
 
 # build snd utilities
 %configure --with-no-gui %{config_options}
+
 # removed sndsine for now
 # audinfo is not happy (9/26/2005)
 perl -p -i -e 's|LIBS = -ldl |LIBS = -lpthread -ldl |' makefile
+
 %make_build -j1 snd sndplay sndinfo
 mv snd snd-nox
 
 %install
+
 mkdir -p %{buildroot}%{_bindir}/
 mkdir -p %{buildroot}%{_mandir}/man1
 install -m 644 snd.1 %{buildroot}%{_mandir}/man1
@@ -176,6 +180,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_bindir}/snd-info
 
 %changelog
+* Thu Jun 04 2026 Yann Collette <ycollette.nospam@free.fr> - 26.4-4
+- update to 26.4-4
+
 * Fri Apr 24 2026 Yann Collette <ycollette.nospam@free.fr> - 26.3-4
 - update to 26.3-4
 
