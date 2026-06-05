@@ -10,7 +10,7 @@
 
 Name: Carla-mao
 Version: 2.5.10
-Release: 6%{?dist}
+Release: 7%{?dist}
 Summary: Audio plugin host
 Epoch: 1
 License: GPLv2+ and BSD and Boost and ISC and MIT and zlib
@@ -223,6 +223,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 %{_libdir}/pkgconfig/%{pname}-host-plugin.pc
 
 %changelog
+* Fri Jun 05 2026 Yann Collette <ycollette.nospam@free.fr> - 1:2.5.10-7
+- Update to 2.5.10-7 - fix so loading
+
 * Tue Apr 28 2026 Yann Collette <ycollette.nospam@free.fr> - 1:2.5.10-5
 - Update to 2.5.10-5
 
