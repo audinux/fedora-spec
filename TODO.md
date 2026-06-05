@@ -407,7 +407,12 @@
 | mruby-zest-build                         | https://github.com/mruby-zest/mruby-zest-build                                                                                                              |
 | Ambience1.0.1                            | https://github.com/OTODESK4193/Ambience1.0.1                                                                                                                |
 | TermenFlux                               | https://github.com/hergezod/TermenFlux                                                                                                                      |
-| SongRec                                  | https://github.com/marin-m/SongRec                                                                                                                          |
+| DeepGliss                                | https://github.com/JoshuaPostel/DeepGliss                                                                                                                   |
+| keykit                                   | https://github.com/nosuchtim/keykit                                                                                                                         |
+| seq                                      | https://github.com/eclab/seq                                                                                                                                |
+| binary-synth                             | https://github.com/MaxAlyokhin/binary-synth                                                                                                                 |
+| b-step                                   | https://github.com/surge-synthesizer/b-step                                                                                                                 |
+| bore-scheduler                           | https://github.com/firelzrd/bore-scheduler                                                                                                                  |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
