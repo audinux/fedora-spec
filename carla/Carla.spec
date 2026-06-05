@@ -170,6 +170,12 @@ find %{buildroot}%{_libdir} -name '*.so' -exec chmod +x '{}' ';'
 chrpath --delete %{buildroot}/%{_libdir}/carla/libcarla_frontend.so
 chrpath --delete %{buildroot}/%{_libdir}/carla/styles/carlastyle.so
 
+# Install a carla.conf file
+mkdir -p %{buildroot}%{_sysconfdir}/ld.so.conf.d
+echo "%{_libdir}/carla" > %{buildroot}%{_sysconfdir}/ld.so.conf.d/carla.conf
+
+%ldconfig_scriptlets
+
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx.carla.appdata.xml
@@ -200,6 +206,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/studio.kx
 %{_datadir}/icons/hicolor/*/apps/%{pname}*.svg
 %{_datadir}/mime/packages/%{pname}.xml
 %{_datadir}/metainfo/studio.kx.carla.appdata.xml
+%{_sysconfdir}/ld.so.conf.d/carla.conf
 
 %files -n vst-%{name}
 %{_libdir}/vst/
