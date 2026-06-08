@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: qpitch
-Version: 1.2.2
+Version: 1.2.3
 Release: 1%{?dist}
 Summary: A free autotune plugin that actually works
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./qpitch-source.sh <TAG>
-#        ./qpitch-source.sh v1.2.2
+#        ./qpitch-source.sh v1.2.3
 
 Source0: qpitch.tar.gz
 Source1: qpitch-source.sh
@@ -95,5 +95,8 @@ cp -ra %{__cmake_builddir}/QPitch_artefacts/CLAP/* %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Mon Jun 08 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-1
+- update to 1.2.3-1
+
 * Sat May 23 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-1
 - Initial spec file
