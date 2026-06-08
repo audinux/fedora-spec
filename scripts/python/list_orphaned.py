@@ -3,6 +3,7 @@
 import requests  
 import json
 import argparse
+import sys
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Perform thirdparty analysis')
@@ -12,12 +13,6 @@ if __name__ == '__main__':
 
     response = requests.get('https://src.fedoraproject.org/extras/pagure_owner_alias.json')
     data = json.loads(response.text)
-
-    #print(data.keys())
-    #for key in data.keys():
-    #    print(f"{key}:")
-    #    for key2 in data[key].keys():
-    #        print(f"  - {key2}")
     
     if args.stat:
         not_orphaned = 0
