@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: niner
-Version: 0.7.9
+Version: 1.0.0
 Release: 1%{?dist}
 Summary: Monophonic analogue kick drum synthesizer
 License: GPL-3.0-or-later
@@ -113,6 +113,9 @@ cp -vfr target/bundled/*.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Mon Jun 08 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
+- update to 1.0.0-1
+
 * Thu May 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.7.9-1
 - update to 0.7.9-1
 
