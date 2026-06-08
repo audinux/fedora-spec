@@ -17,10 +17,7 @@ Distribution: Audinux
 Source0: https://github.com/ahlstromcj/seq66/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: make
-BuildRequires: autoconf
-BuildRequires: automake
-BuildRequires: libtool
+BuildRequires: meson
 BuildRequires: git
 BuildRequires: qtchooser
 BuildRequires: qt5-linguist
@@ -54,31 +51,17 @@ it with Qt Creator. Provides a comprehensive PDF user-manual.
 %prep
 %autosetup -n %{name}-%{version}
 
-mkdir -p .local/bin
-ln -s /usr/bin/qmake-qt5 .local/bin/qmake
-ln -s /usr/bin/moc-qt5 .local/bin/moc
-ln -s /usr/bin/uic-qt5 .local/bin/uic
-ln -s /usr/bin/rcc-qt5 .local/bin/rcc
-ln -s /usr/bin/lupdate-qt5 .local/bin/lupdate
-ln -s /usr/bin/lrelease-qt5 .local/bin/lrelease
+sed -i -e "s|subdir('nsis')|#subdir('nsis')|g" meson.build
 
-sed -i -e "s|2\.72|2\.71|g" configure.ac
+
 %build
 
-%set_build_flags
-
-export CXXFLAGS="-std=c++11 -include cstdint $CXXFLAGS"
-
-export PATH=.local/bin:$PATH
-
-./bootstrap
-
-%configure --enable-cli
-%make_build
+%meson -Dgui=true -Dcli=true --wrap-mode=default
+%meson_build
 
 %install
 
-%make_install
+%meson_install
 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/%{name}/
 install -m 644 -p desktop/seq66.xpm %{buildroot}/%{_datadir}/icons/%{name}/
@@ -95,11 +78,10 @@ desktop-file-install                         \
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
-%doc ChangeLog INSTALL NEWS README.md RELNOTES ROADMAP.md TODO
+%doc ChangeLog NEWS README.md RELNOTES ROADMAP.md TODO
 %{_bindir}/*
 %{_datadir}/*
 %{_includedir}/*
-%{_libdir}/*
 
 %changelog
 * Mon Jun 08 2026 Yann Collette <ycollette.nospam@free.fr> - 0.99.25-1
