@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Jack, Piano
-# Type: Standalone, Plugin, VST3; VST
+# Type: Standalone, Plugin, VST3, VST
 # Category: Audio, Synthesizer
 
 #

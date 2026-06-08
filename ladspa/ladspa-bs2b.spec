@@ -1,7 +1,7 @@
 # Status: active
 # Tag: Effect
 # Type: LADSPA
-# Category: Audio, Effects
+# Category: Audio, Effect
 
 # Copyright (c) 2010 oc2pus
 # This file and all modifications and additions to the pristine

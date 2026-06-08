@@ -1,7 +1,7 @@
 # Status: active
 # Tag: Tool
 # Type: Standalone
-# Category: TOOL, Plugin
+# Category: Tool, Plugin
 
 %global debug_package %{nil}
 %define _lto_cflags %{nil}

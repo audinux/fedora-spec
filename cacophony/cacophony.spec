@@ -1,5 +1,5 @@
 # Status: active
-# Tag: Sequancer
+# Tag: Sequencer
 # Type: Standalone
 # Category: Audio, Synthesizer
 
