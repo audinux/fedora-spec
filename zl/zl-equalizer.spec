@@ -6,7 +6,7 @@
 %global toolchain clang
 
 Name: zl-equalizer
-Version: 1.2.0
+Version: 1.2.1
 Release: 2%{?dist}
 Summary: Equalizer plugin
 License: GPL-3.0-only
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./zl-source.sh <project> <tag>
-#        ./zl-source.sh ZLEqualizer 1.2.0
+#        ./zl-source.sh ZLEqualizer 1.2.1
 
 Source0: ZLEqualizer.tar.gz
 Source1: zl-source.sh
@@ -116,6 +116,9 @@ chrpath --delete %{buildroot}%{_bindir}/*
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Jun 08 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-2
+- update to 1.2.1-2
+
 * Sun May 31 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-2
 - update to 1.2.0-2
 
