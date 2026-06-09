@@ -413,7 +413,6 @@
 | binary-synth                             | https://github.com/MaxAlyokhin/binary-synth                                                                                                                 |
 | b-step                                   | https://github.com/surge-synthesizer/b-step                                                                                                                 |
 | bore-scheduler                           | https://github.com/firelzrd/bore-scheduler                                                                                                                  |
-| sitar                                    | https://github.com/stefdoerr/sitar                                                                                                                          |
 | umbrella                                 | https://codeberg.org/thi.ng/umbrella                                                                                                                        |
 
 Check the following URL:

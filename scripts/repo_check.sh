@@ -1154,7 +1154,10 @@ https://github.com/mruby-zest/mruby-zest-build
 https://github.com/rncbc/qmidictl
 https://github.com/rncbc/qmidinet
 https://github.com/marin-m/SongRec
-https://github.com/Wasted-Audio/wstd-mseq"
+https://github.com/Wasted-Audio/wstd-mseq
+https://github.com/stefdoerr/sitar
+https://github.com/stefdoerr/boreas
+https://github.com/stefdoerr/grains-of-sand"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
