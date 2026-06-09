@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Effect, Phaser
-# Type: Plugin, LADSPA, LV2, VST
+# Type: Plugin, LADSPA, LV2, VST, MODGUI
 # Category: Effect
 
 # Global variables for github repository

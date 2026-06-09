@@ -1,6 +1,6 @@
 # Status: active
 # Tag: IR
-# Type: LV2
+# Type: LV2, MODGUI
 # Category: Plugin, Effect
 
 %global debug_package %{nil}

@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Delay
-# Type: Plugin, LV2
+# Type: Plugin, LV2, MODGUI
 # Category: Audio, Effect
 # Todo: split into lv2 / license package
 

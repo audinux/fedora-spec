@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Effect, Vibrato
-# Type: Plugin, LV2, CLAP, VST3
+# Type: Plugin, LV2, CLAP, VST3, MODGUI
 # Category: Effect
 
 %global debug_package %{nil}

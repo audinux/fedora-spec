@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Effect, Tool
-# Type: LV2, Plugin
+# Type: LV2, Plugin, MODGUI
 # Category: Plugin, Tool
 
 # Global variables for github repository

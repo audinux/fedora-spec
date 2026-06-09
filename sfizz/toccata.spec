@@ -1,4 +1,8 @@
 # Status: active
+# Tag: MIDI, Synthesizer
+# Type: Plugin, LV2, MODGUI
+# Category: Audio, Synthesizer
+
 # Global variables for github repository
 %global commit0 d909db65ed706188a2549838b3fc8a3a37fa685b
 %global gittag0 master
@@ -6,12 +10,12 @@
 
 %global debug_package %{nil}
 
-Name:    toccata
+Name: toccata
 Version: 0.0.1
 Release: 1%{?dist}
 License: BSD-2-Clause
 Summary: A reasonable LV2 church organ
-URL:     https://github.com/sfztools/toccata.lv2
+URL:https://github.com/sfztools/toccata.lv2
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

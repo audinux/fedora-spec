@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Pitch
-# Type: LV2
+# Type: LV2, MODGUI
 # Category: Plugin, Effect
 
 # Global variables for github repository

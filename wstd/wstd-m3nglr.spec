@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Effect
-# Type: Plugin, VST, VST3, LV2, CLAP
+# Type: Plugin, VST, VST3, LV2, CLAP, MODGUI
 # Category: Audio, Effect
 
 Name: wstd-m3nglr

@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Organ, Synthesizer
-# Type: Plugin, LV2
+# Type: Plugin, LV2, MODGUI
 # Category: Synthesizer
 
 # Global variables for github repository

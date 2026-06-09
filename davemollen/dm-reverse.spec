@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Effect, Phaser
-# Type: Plugin, LV2, VST
+# Type: Plugin, LV2, VST, MODGUI
 # Category: Effect
 
 %global debug_package %{nil}

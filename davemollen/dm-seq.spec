@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Effect, Sequencer
-# Type: Plugin, LV2
+# Type: Plugin, LV2, MODGUI
 # Category: Effect
 
 %global debug_package %{nil}

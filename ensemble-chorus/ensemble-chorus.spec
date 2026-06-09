@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Effect
-# Type: Plugin, LV2, VST
+# Type: Plugin, LV2, VST, MODGUI
 # Category: Audio, Effect
 # Todo: split into LV2 / VST / license packages
 

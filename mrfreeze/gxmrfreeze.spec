@@ -1,4 +1,8 @@
 # Status: active
+# Tag: Audio, Effect
+# Type: Plugin, LV2, MODGUI
+# Category: Audio, Effect
+
 Name:    lv2-gxmrfreeze
 Version: 0.5
 Release: 1%{?dist}

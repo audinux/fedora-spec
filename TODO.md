@@ -414,6 +414,7 @@
 | b-step                                   | https://github.com/surge-synthesizer/b-step                                                                                                                 |
 | bore-scheduler                           | https://github.com/firelzrd/bore-scheduler                                                                                                                  |
 | sitar                                    | https://github.com/stefdoerr/sitar                                                                                                                          |
+| umbrella                                 | https://codeberg.org/thi.ng/umbrella                                                                                                                        |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -834,7 +835,7 @@ Modulation, Player, Pitch, Arpeggiator, Mixer, Vocoder
 ### Type:
 
 ```
-Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, CLAP, YSFX, GSTREAMER, Presets, Rack, Driver, Nyquist
+Devel, IDE, Language, DSSI, LV2, LADSPA, VAMP, Standalone, VST, VST3, CLAP, YSFX, GSTREAMER, MODGUI, Presets, Rack, Driver, Nyquist
 ```
 
 ### Category:

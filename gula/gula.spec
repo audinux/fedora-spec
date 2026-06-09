@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Effect
-# Type: Plugin, LV2
+# Type: Plugin, LV2, MODGUI
 # Category: Effect
 
 Name: gula

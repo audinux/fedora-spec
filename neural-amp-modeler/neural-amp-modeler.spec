@@ -1,6 +1,6 @@
 # Status: active
 # Tag: Audio, AI, Amp Simul
-# Type: Plugin, LV2
+# Type: Plugin, LV2, MODGUI
 # Category: Audio, Tool
 
 Name: lv2-neural-amp-modeler
