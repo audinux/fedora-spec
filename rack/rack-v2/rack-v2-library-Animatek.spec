@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 480eb263386ac5b4645aa58303f9a3c23b78c189
-%global gittag0 2.5.0
+%global commit0 6598dd67a84c398317b405c88e58d0277ba0412d
+%global gittag0 2.5.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Animatek
-Version: 2.5.0
+Version: 2.5.4
 Release: 2%{?dist}
 Summary: Animatek plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 Animatek plugin for Rack.
-Step sequencer
+Ultimate Ztep Zequencer. 16-step sequencer with per-step Pitch/Octave/Duration/Mod1/Mod2 and bipolar Prob/Pulse, eight step modes (Play/Mute/Skip/Accum±/Pulse/Gated/Hold), per-row randomize and shift, multiple direction modes (Forward/Backward/Pendulum/Ping-Pong/Random/Drunk/Odd-Even/Jump/Converge/Diverge), accumulator with modulo wrap, swing, slew, polyphonic step-gates output and EOC.
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r Animatek_plugin/dist/Animatek/* %{buildroot}%{_libexecdir}/Rack2/plugins/A
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.4-1
 - initial specfile

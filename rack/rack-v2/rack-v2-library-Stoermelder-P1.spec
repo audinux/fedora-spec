@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 0f2d414bcbc7c337acfed381511591645b30b4cd
-%global gittag0 2.4.0
+%global commit0 9cb3ce605acafd153b522c2196056d2585334817
+%global gittag0 2.4.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Stoermelder-P1
-Version: 2.4.0
+Version: 2.4.1
 Release: 2%{?dist}
 Summary: Stoermelder-P1 plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Stoermelder-P1_plugin/dist/Stoermelder-P1/* %{buildroot}%{_libexecdir}/Rac
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.1-1
 - initial specfile
