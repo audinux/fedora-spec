@@ -77,9 +77,9 @@ install -m 755 -d %{buildroot}/%{_datadir}/applications/
 
 cat > %{buildroot}%{_datadir}/applications/%{name}-jack.desktop <<EOF
 [Desktop Entry]
-Name=%name-jack
+Name=%{name}-jack
 Exec=%{name}-jack
-Icon=/usr/share/pixmaps/ft2-clone.ico
+Icon=ft2-clone
 Comment=FastTrack2 tracker
 Terminal=false
 Type=Application
@@ -88,9 +88,9 @@ EOF
 
 cat > %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop <<EOF
 [Desktop Entry]
-Name=%name-alsa
+Name=%{name}-alsa
 Exec=%{name}-alsa
-Icon=/usr/share/pixmaps/ft2-clone.ico
+Icon=ft2-clone
 Comment=FastTrack2 tracker
 Terminal=false
 Type=Application
@@ -99,9 +99,9 @@ EOF
 
 cat > %{buildroot}%{_datadir}/applications/%{name}-pulse.desktop <<EOF
 [Desktop Entry]
-Name=%name-pulse
+Name=%{name}-pulse
 Exec=%{name}-pulse
-Icon=/usr/share/pixmaps/ft2-clone.ico
+Icon=ft2-clone
 Comment=FastTrack2 tracker
 Terminal=false
 Type=Application
