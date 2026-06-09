@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: niner
-Version: 1.0.0
+Version: 1.0.1
 Release: 1%{?dist}
 Summary: Monophonic analogue kick drum synthesizer
 License: GPL-3.0-or-later
@@ -27,6 +27,7 @@ BuildRequires: libXcursor-devel
 BuildRequires: xcb-util-wm-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: python3
+BuildRequires: desktop-file-utils
 
 Requires: license-%{name}
 
@@ -87,6 +88,7 @@ rustup-init -y --no-modify-path --default-toolchain 1.88.0-aarch64-unknown-linux
 source cargo/env
 
 cargo xtask bundle niner --release
+cargo build --release --frozen --bin niner-standalone
 
 %install
 
@@ -99,12 +101,69 @@ cp -vfr target/bundled/*.vst3 %{buildroot}/%{_libdir}/vst3/
 install -m 755 -d %{buildroot}/%{_libdir}/clap/
 cp -vfr target/bundled/*.clap %{buildroot}/%{_libdir}/clap/
 
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/apps/1024x1024/
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/apps/128x128/
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/apps/16x16/
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/apps/256x256/
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/apps/32x32/
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/apps/48x48/
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/apps/512x512/
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/apps/64x64/
+install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
+
+install -m 644 assets/icon/niner-1024.png %{buildroot}/%{_datadir}/icons/hicolor/apps/1024x1024/%{name}.png
+install -m 644 assets/icon/niner-128.png  %{buildroot}/%{_datadir}/icons/hicolor/apps/128x128/%{name}.png
+install -m 644 assets/icon/niner-16.png   %{buildroot}/%{_datadir}/icons/hicolor/apps/16x16/%{name}.png
+install -m 644 assets/icon/niner-256.png  %{buildroot}/%{_datadir}/icons/hicolor/apps/256x256/%{name}.png
+install -m 644 assets/icon/niner-32.png   %{buildroot}/%{_datadir}/icons/hicolor/apps/32x32/%{name}.png
+install -m 644 assets/icon/niner-48.png   %{buildroot}/%{_datadir}/icons/hicolor/apps/48x48/%{name}.png
+install -m 644 assets/icon/niner-512.png  %{buildroot}/%{_datadir}/icons/hicolor/apps/512x512/%{name}.png
+install -m 644 assets/icon/niner-64.png   %{buildroot}/%{_datadir}/icons/hicolor/apps/64x64/%{name}.png
+install -m 644 assets/icon/niner.ico      %{buildroot}/%{_datadir}/pixmaps/%{name}.ico
+
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/presets/
+
+cp assets/factory_presets/* %{buildroot}/%{_datadir}/%{name}/presets/
+
+# Write desktop files
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
+[Desktop Entry]
+Name=%{name}
+Exec=%{name}
+Icon=%{name}
+Comment= Monophonic analogue kick drum synthesizer
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+EOF
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+
 %files
 %{_bindir}/*
+%{_datadir}/icons/hicolor/apps/1024x1024/*
+%{_datadir}/icons/hicolor/apps/128x128/*
+%{_datadir}/icons/hicolor/apps/16x16/*
+%{_datadir}/icons/hicolor/apps/256x256/*
+%{_datadir}/icons/hicolor/apps/32x32/*
+%{_datadir}/icons/hicolor/apps/48x48/*
+%{_datadir}/icons/hicolor/apps/512x512/*
+%{_datadir}/icons/hicolor/apps/64x64/*
+%{_datadir}/pixmaps/*
+%{_datadir}/applications/*
 
 %files -n license-%{name}
 %doc README.md docs/*
 %license LICENSE
+%{_datadir}/%{name}/presets/*
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
@@ -113,6 +172,9 @@ cp -vfr target/bundled/*.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Tue Jun 09 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
+- update to 1.0.1-1
+
 * Mon Jun 08 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - update to 1.0.0-1
 
