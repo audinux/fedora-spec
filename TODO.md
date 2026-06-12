@@ -414,6 +414,10 @@
 | b-step                                   | https://github.com/surge-synthesizer/b-step                                                                                                                 |
 | bore-scheduler                           | https://github.com/firelzrd/bore-scheduler                                                                                                                  |
 | umbrella                                 | https://codeberg.org/thi.ng/umbrella                                                                                                                        |
+| plugins                                  | https://github.com/mpue/plugins                                                                                                                             |
+| SynthlabX-                               | https://github.com/mpue/SynthlabX-                                                                                                                          |
+| Lupo                                     | https://github.com/mpue/Lupo                                                                                                                                |
+| Quetzalcoatl                             | https://github.com/publicsamples/Quetzalcoatl                                                                                                               |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
