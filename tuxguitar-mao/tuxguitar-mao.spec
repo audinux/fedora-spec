@@ -33,7 +33,7 @@
 
 Name: tuxguitar
 Version: 2.0.1
-Release: 16%{?dist}
+Release: 17%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
 URL: https://github.com/helge17/tuxguitar
@@ -262,6 +262,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Thu Jun 11 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-17
+- update to 2.0.1-17 - fix tuxguitar.sh script
+
 * Sun Dec 28 2025 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-16
 - update to 2.0.1-16
 
