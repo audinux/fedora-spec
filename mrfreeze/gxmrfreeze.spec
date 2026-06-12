@@ -3,12 +3,12 @@
 # Type: Plugin, LV2, MODGUI
 # Category: Audio, Effect
 
-Name:    lv2-gxmrfreeze
+Name: lv2-gxmrfreeze
 Version: 0.5
 Release: 1%{?dist}
 Summary: An audio, Guitarix compatible, freeze LV2 plugin
 License: GPL-2.0-or-later
-URL:     https://github.com/ycollet/MrFreezehttps://github.com/romi1502/MrFreeze
+URL: https://github.com/ycollet/MrFreeze
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -17,6 +17,7 @@ Distribution: Audinux
 Source0: https://github.com/ycollet/MrFreeze/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: fftw-devel
 BuildRequires: lv2-devel
 BuildRequires: eigen3-devel
@@ -26,6 +27,8 @@ An audio, Guitarix compatible, freeze LV2 plugin
 
 %prep
 %autosetup -n MrFreeze-%{version}
+
+sed -i -e "s/-std=c++11//g" Makefile
 
 %build
 

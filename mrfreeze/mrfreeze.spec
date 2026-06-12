@@ -28,6 +28,8 @@ An audio freeze LV2 plugin
 %prep
 %autosetup -n MrFreeze-%{version}
 
+sed -i -e "s/-std=c++11//g" Makefile
+
 %build
 
 %set_build_flags
