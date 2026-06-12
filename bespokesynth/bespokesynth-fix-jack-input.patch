@@ -1,0 +1,61 @@
+From e5d6939901c20417e22e0bcd5a1c4124c6f1de11 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Mon, 25 May 2026 18:59:12 +0200
+Subject: [PATCH] Fix Jack Input
+
+---
+ Source/MainComponent.cpp | 17 ++---------------
+ Source/ModularSynth.cpp  |  6 +++---
+ 2 files changed, 5 insertions(+), 18 deletions(-)
+
+diff --git a/Source/MainComponent.cpp b/Source/MainComponent.cpp
+index 885975139..8ec8d266c 100644
+--- a/Source/MainComponent.cpp
++++ b/Source/MainComponent.cpp
+@@ -271,21 +271,8 @@ class MainContentComponent : public OpenGLAppComponent,
+          {
+             ofLog() << "output: " << loadedSetup.outputDeviceName << "   input: " << loadedSetup.inputDeviceName;
+ 
+-            int numInputChannels = 0;
+-            int64 inputMask = loadedSetup.inputChannels.toInteger();
+-            while (inputMask != 0)
+-            {
+-               ++numInputChannels;
+-               inputMask >>= 1;
+-            }
+-
+-            int numOutputChannels = 0;
+-            int64 outputMask = loadedSetup.outputChannels.toInteger();
+-            while (outputMask != 0)
+-            {
+-               ++numOutputChannels;
+-               outputMask >>= 1;
+-            }
++            int numInputChannels = loadedSetup.inputChannels.countNumberOfSetBits();
++            int numOutputChannels = loadedSetup.outputChannels.countNumberOfSetBits();
+ 
+             mSynth.InitIOBuffers(numInputChannels, numOutputChannels);
+ 
+diff --git a/Source/ModularSynth.cpp b/Source/ModularSynth.cpp
+index 01ad4134a..dffacdd2e 100644
+--- a/Source/ModularSynth.cpp
++++ b/Source/ModularSynth.cpp
+@@ -2454,9 +2454,9 @@ void ModularSynth::AudioIn(const float* const* input, int bufferSize, int nChann
+    int oversampling = UserPrefs.oversampling.Get();
+ 
+    assert(bufferSize * oversampling == mIOBufferSize);
+-   assert(nChannels == (int)mInputBuffers.size());
+ 
+-   for (int i = 0; i < nChannels; ++i)
++   int channelsToProcess = MIN(nChannels, (int)mInputBuffers.size());
++   for (int i = 0; i < channelsToProcess; ++i)
+    {
+       if (oversampling == 1)
+       {
+@@ -3949,4 +3949,4 @@ void ConsoleListener::TextEntryActivated(TextEntry* entry)
+ void ConsoleListener::TextEntryComplete(TextEntry* entry)
+ {
+    TheSynth->OnConsoleInput();
+-}
+\ No newline at end of file
++}

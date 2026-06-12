@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-%global commit0 c78d0e94a5903517aaf585ec6feefe8013fd460b
+%global commit0 6dbf18a77baad722b75492313ebaab5aedbcfa33
 
 Name: BespokeSynth-weekly
 Version: 1.3.10
-Release: 27%{?dist}
+Release: 28%{?dist}
 Summary: A software modular synth
 License: GPL-3.0-or-later
 URL: https://github.com/BespokeSynth/BespokeSynth
@@ -23,6 +23,7 @@ Source0: BespokeSynth.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
 Source2: bespokesynth-sources.sh
+Patch0: bespokesynth-fix-jack-input.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -130,6 +131,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/com.bespo
 %{_datadir}/metainfo/com.bespokesynth.BespokeSynth.metainfo.xml
 
 %changelog
+* Thu Jun 11 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-28
+- Update to 1.3.10-28 - 6dbf18a77baad722b75492313ebaab5aedbcfa33
+
 * Mon Jun 08 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-27
 - Update to 1.3.10-27 - c78d0e94a5903517aaf585ec6feefe8013fd460b
 
