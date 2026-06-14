@@ -1157,7 +1157,9 @@ https://github.com/marin-m/SongRec
 https://github.com/Wasted-Audio/wstd-mseq
 https://github.com/stefdoerr/sitar
 https://github.com/stefdoerr/boreas
-https://github.com/stefdoerr/grains-of-sand"
+https://github.com/stefdoerr/grains-of-sand
+https://github.com/drobilla/patchage
+https://github.com/drobilla/ganv"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)

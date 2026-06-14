@@ -1,0 +1,34 @@
+From be11620bcce7f863a0c2fb0d105796448e81e160 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Sun, 14 Jun 2026 13:15:59 +0200
+Subject: [PATCH] remove intl dep
+
+---
+ meson.build | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/meson.build b/meson.build
+index 27cb852..1e88cbd 100644
+--- a/meson.build
++++ b/meson.build
+@@ -45,8 +45,6 @@ endif
+ 
+ m_dep = cc.find_library('m', required: false)
+ 
+-intl_dep = cc.find_library('intl', required: get_option('nls'))
+-
+ gtk2_dep = dependency('gtk+-2.0',
+                       version: '>= 2.10.0',
+                       include_type: 'system')
+@@ -163,7 +161,7 @@ libganv = library(
+   sources + ganv_marshal_sources,
+   c_args: c_suppressions + extra_args + ['-DGANV_INTERNAL'],
+   cpp_args: cpp_suppressions + extra_args + ['-DGANV_INTERNAL'],
+-  dependencies: [gtk2_dep, gtkmm2_dep, gvc_dep, intl_dep, m_dep],
++  dependencies: [gtk2_dep, gtkmm2_dep, gvc_dep, m_dep],
+   include_directories: include_dirs,
+   install: true,
+   version: meson.project_version(),
+-- 
+2.54.0
+
