@@ -40,6 +40,7 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
+BuildRequires: desktop-file-utils
 
 Requires: license-%{name}
 
