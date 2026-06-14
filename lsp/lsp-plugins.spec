@@ -5,7 +5,7 @@
 
 Name: lsp-plugins
 Summary: Linux Studio Plugins collection
-Version: 1.2.29
+Version: 1.2.33
 Release: 1%{?dist}
 License: GPL
 URL: https://github.com/sadko4u/lsp-plugins
@@ -32,42 +32,56 @@ BuildRequires: mesa-libGLU-devel
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXrandr-devel
 
+Requires: license-%{name}
+
 %description
 LSP (Linux Studio Plugins) is a collection of open-source plugins
 currently compatible with LADSPA, LV2 and LinuxVST formats.
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n ladspa-%{name}
 Summary: LADSPA version of %{name} plugins
+Requires: license-%{name}
 
 %description -n ladspa-%{name}
 LADSPA version of %{name} plugins
 
 %package -n vst-%{name}
 Summary: VST2 version of %{name} plugins
+Requires: license-%{name}
 
 %description -n vst-%{name}
 VST2 version of %{name} plugins
 
 %package -n vst3-%{name}
 Summary: VST3 version of %{name} plugins
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name} plugins
 
 %package -n lv2-%{name}
 Summary: LV2 version of %{name} plugins
+Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name} plugins
 
 %package -n clap-%{name}
 Summary: CLAP version of %{name} plugins
+Requires: license-%{name}
 
 %description -n clap-%{name}
 CLAP version of %{name} plugins
 
 %package -n gstreamer1-plugins-%{name}
 Summary: GStreamer version of %{name} plugins
+Requires: license-%{name}
 
 %description -n gstreamer1-plugins-%{name}
 GStreamer version of %{name} plugins
@@ -100,14 +114,16 @@ mkdir -p %{buildroot}/usr/share/lsp-plugins/
 mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 
 %files
-%doc CHANGELOG README.md
-%license COPYING
 %{_bindir}/*
 %{_datadir}/*
 %{_libdir}/pkgconfig/*
 %{_libdir}/*.so
 %{_libdir}/lsp-plugins/*.so
 %exclude %{_libdir}/*.a
+
+%files -n license-%{name}
+%doc CHANGELOG README.md
+%license COPYING
 
 %files -n gstreamer1-plugins-%{name}
 %{_libdir}/gstreamer-1.0/*
@@ -128,6 +144,12 @@ mv %{buildroot}/usr/share/doc/lsp-plugins %{buildroot}/usr/share/lsp-plugins/doc
 %{_libdir}/clap/*
 
 %changelog
+* Sat Jun 13 2026 Yann Collette <ycollette dot nospam at free.fr> 1.2.33-1
+- update to 1.2.33-1
+
+* Fri Jun 12 2026 Yann Collette <ycollette dot nospam at free.fr> 1.2.31-1
+- update to 1.2.31-1
+
 * Wed Apr 01 2026 Yann Collette <ycollette dot nospam at free.fr> 1.2.29-1
 - update to 1.2.29-1
 
