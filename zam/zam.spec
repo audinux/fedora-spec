@@ -8,13 +8,14 @@ Version: 4.5
 Release: 4%{?dist}
 Summary: Set of LV2 / VST / VST3 / CLAPS plugins
 License: GPL-2.0-or-later AND ISC
-URL: http://www.zamaudio.com/
+URL: https://www.zamaudio.com
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./zam-source.sh 4.5
+# Usage: ./zam-source.sh TAG
+#        ./zam-source.sh 4.5
 
 Source0: zam-plugins-%{version}.tar.xz
 
