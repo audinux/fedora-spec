@@ -11,11 +11,10 @@ License: MIT
 BuildArch: noarch
 
 Source0: detect.sh
-Source1: topology.sh
-Source2: build-profile.sh
-Source3: irq-affinity.sh
-Source4: audio-topology-generator
-Source5: audio-topology.service
+Source1: build-profile.sh
+Source2: irq-affinity.sh
+Source3: 10-audio-topology.conf
+Source4: audio-topology.service
 
 Requires: systemd
 Requires: pipewire
@@ -33,15 +32,14 @@ and RT kernel detection.
 %install
 
 install -m 0755 -d %{buildroot}/%{_libexecdir}/audio-topology-profile/
+install -m 0755 -d %{buildroot}/%{_userunitdir}/pipewire.service.d/
 install -m 0755 -d %{buildroot}/%{_unitdir}/
-install -m 0755 -d %{buildroot}/%{_systemdgeneratordir}/
 
-install -m 0755 detect.sh        %{buildroot}/%{_libexecdir}/audio-topology-profile/
-install -m 0755 topology.sh      %{buildroot}/%{_libexecdir}/audio-topology-profile/
-install -m 0755 build-profile.sh %{buildroot}/%{_libexecdir}/audio-topology-profile/
-install -m 0755 irq-affinity.sh  %{buildroot}/%{_libexecdir}/audio-topology-profile/
-install -m 0755 audio-topology-generator %{buildroot}/%{_systemdgeneratordir}/
-install -m 0644 audio-topology.service   %{buildroot}/%{_unitdir}/
+install -m 0755 %{SOURCE0} %{buildroot}/%{_libexecdir}/audio-topology-profile/
+install -m 0755 %{SOURCE1} %{buildroot}/%{_libexecdir}/audio-topology-profile/
+install -m 0755 %{SOURCE2} %{buildroot}/%{_libexecdir}/audio-topology-profile/
+install -m 0755 %{SOURCE3} %{buildroot}/%{_userunitdir}/pipewire.service.d/
+install -m 0644 %{SOURCE4} %{buildroot}/%{_unitdir}/
 
 %post
 %systemd_post audio-topology.service
@@ -54,7 +52,7 @@ install -m 0644 audio-topology.service   %{buildroot}/%{_unitdir}/
 
 %files
 %{_libexecdir}/audio-topology-profile/*
-%{_systemdgeneratordir}/audio-topology-generator
+%{_userunitdir}/pipewire.service.d/10-audio-topology.conf
 %{_unitdir}/audio-topology.service
 
 %changelog
