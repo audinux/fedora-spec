@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=NodeBox
+GenericName=Generative Design Tool
+Comment=Node-based GUI for data visualizations and generative design
+Exec=nodebox %f
+Icon=nodebox
+MimeType=application/x-nodebox;
+Categories=Graphics;2DGraphics;Science;Education;
+Terminal=false
+StartupNotify=true
