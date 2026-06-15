@@ -19,7 +19,7 @@ Distribution: Audinux
 
 Source0: dexed.tar.gz
 Source1: dexed-icon-250.png
-Source1: dexed-icon.svg
+Source2: dexed-icon.svg
 Source3: dexed-source.sh
 
 BuildRequires: gcc gcc-c++
