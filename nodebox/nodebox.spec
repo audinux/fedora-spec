@@ -25,10 +25,12 @@ Source0: nodebox-%{version}.tar.gz
 Source1: nodebox-source.sh
 Source2: nodebox.sh
 Source3: nodebox.desktop
+Source4: nodebox-icon.svg
 
 # Java 11+ is required (build.xml sets release="11")
 BuildRequires: java-11-openjdk-devel
 BuildRequires: ant
+BuildRequires: gtk-update-icon-cache
 BuildRequires: desktop-file-utils
 
 Requires: java-11-openjdk-headless
@@ -87,8 +89,7 @@ system ffmpeg binary.
 install -d %{buildroot}%{_datadir}/%{name}/lib/
 install -d %{buildroot}%{_datadir}/%{name}/resources/
 
-cp -a dist/unpacked/lib/nodebox.jar \
-       %{buildroot}%{_datadir}/%{name}/lib/
+cp -a dist/unpacked/lib/nodebox.jar %{buildroot}%{_datadir}/%{name}/lib/
 cp -a dist/unpacked/resources/libraries \
     dist/unpacked/resources/examples \
     dist/unpacked/resources/res \
@@ -97,8 +98,7 @@ cp -a dist/unpacked/resources/libraries \
 
 # Symlink system ffmpeg so NodeBox can find it at its expected path
 install -d %{buildroot}%{_datadir}/%{name}/resources/bin/
-ln -s %{_bindir}/ffmpeg \
-      %{buildroot}%{_datadir}/%{name}/resources/bin/ffmpeg
+ln -s %{_bindir}/ffmpeg %{buildroot}%{_datadir}/%{name}/resources/bin/ffmpeg
 
 # Launcher wrapper
 install -D -m 0755 %{SOURCE2} %{buildroot}%{_bindir}/%{name}
@@ -106,10 +106,8 @@ install -D -m 0755 %{SOURCE2} %{buildroot}%{_bindir}/%{name}
 sed -i 's|%%{_datadir}|%{_datadir}|g' %{buildroot}%{_bindir}/%{name}
 
 # Icons
-install -D -m 0644 artwork/nodebox-icon.svg \
-    %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
-install -D -m 0644 artwork/nodebox-icon.png \
-    %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/%{name}.png
+install -D -m 0644 %{SOURCE4}               %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
+install -D -m 0644 artwork/nodebox-icon.png %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/%{name}.png
 
 # Desktop entry
 desktop-file-install \
