@@ -5,7 +5,7 @@
 
 Name: dexed
 Version: 1.0.1a
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: DX7 FM multi plaform/multi format plugin
 License: GPL-3.0-or-later
 URL: https://github.com/asb2m10/dexed
@@ -18,8 +18,9 @@ Distribution: Audinux
 #        ./dexed-source.sh v1.0.1a
 
 Source0: dexed.tar.gz
-Source1: dexed-source.sh
-Source2: dexed-icon-250.png
+Source1: dexed-icon-250.png
+Source1: dexed-icon.svg
+Source3: dexed-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -88,16 +89,19 @@ CLAP version of %{name}
 %install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
-cp -ra %{__cmake_builddir}/Source/Dexed_artefacts/Standalone/*  %{buildroot}/%{_bindir}/
+cp -ra %{__cmake_builddir}/Source/Dexed_artefacts/Standalone/* %{buildroot}/%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/Source/Dexed_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/Source/Dexed_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 
 install -m 755 -d %{buildroot}/%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/Source/Dexed_artefacts/CLAP/*  %{buildroot}/%{_libdir}/clap/
+cp -ra %{__cmake_builddir}/Source/Dexed_artefacts/CLAP/* %{buildroot}/%{_libdir}/clap/
 
 install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
-cp %{SOURCE2} %{buildroot}/%{_datadir}/pixmaps/
+install -m 644 %{SOURCE1} %{buildroot}/%{_datadir}/pixmaps/%{name}.png
+
+install -m 755 -d %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
+install -m 644 %{SOURCE2} %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
 
@@ -106,7 +110,7 @@ cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 Encoding=UTF-8
 Name=Dexed
 Exec=Dexed
-Icon=dexed-icon-250
+Icon=dexed
 Comment=Synth that is closely modeled on the Yamaha DX7
 Terminal=false
 Type=Application
@@ -125,6 +129,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/pixmaps/*
+%{_datadir}/icons/*
 
 %files -n license-%{name}
 %doc README.md
@@ -137,8 +142,11 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Mon Jun 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.1a-4
+- update to 1.0.1a-4 - add a svg icon
+
 * Thu May 14 2026 Sean Champ <spchamp@users.noreply.github.com> - 1.0.1a-3
-- install application icon, desktop file
+- update to 1.0.1a-3 - install application icon, desktop file
 
 * Sun Mar 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.1a-2
 - update to 1.0.1a-2
