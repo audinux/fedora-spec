@@ -3,6 +3,8 @@
 # Type: Standalone
 # Category: Tool
 
+%global debug_package %{nil}
+
 Name: nodebox
 Version: 3.1.0
 Release: 1%{?dist}
@@ -18,7 +20,7 @@ Distribution: Audinux
 # repository, downloads all Maven dependencies, builds the fat jar and
 # resources directory, then packages them offline-ready.
 
-# Usage: ./nodebox-source.sh v%{version}
+# Usage: ./nodebox-source.sh <TAG>
 #        ./nodebox-source.sh v3.1.0
 
 Source0: nodebox-%{version}.tar.gz
@@ -28,12 +30,12 @@ Source3: nodebox.desktop
 Source4: nodebox-icon.svg
 
 # Java 11+ is required (build.xml sets release="11")
-BuildRequires: java-11-openjdk-devel
+BuildRequires: java-latest-openjdk-devel
 BuildRequires: ant
 BuildRequires: gtk-update-icon-cache
 BuildRequires: desktop-file-utils
 
-Requires: java-11-openjdk-headless
+Requires: java-latest-openjdk-headless
 # ffmpeg is used for video export via FileUtils.getApplicationFile("bin/ffmpeg")
 # which resolves to resources/bin/ffmpeg, symlinked to the system binary
 Requires: (ffmpeg or ffmpeg-free)
@@ -135,5 +137,5 @@ fi
 %{_datadir}/icons/hicolor/256x256/apps/%{name}.png
 
 %changelog
-* Sun Jun 15 2026 Yann Collette <ycollette.nospam@free.fr> - 3.1.0-1
+* Mon Jun 15 2026 Yann Collette <ycollette.nospam@free.fr> - 3.1.0-1
 - Initial packaging
