@@ -1,15 +1,11 @@
 #!/bin/bash
-set -e
 
-# minimum viable audio machine
+CPUS=$(nproc --all)
+
+# Require at least 4 CPUs
 [ "$CPUS" -ge 4 ] || exit 1
 
-# Require RT kernel
-grep -qw "preempt=full" /proc/cmdline && AUDIO_OK=1
-uname -v | grep -qi PREEMPT_RT && AUDIO_OK=1
-[ -n "$AUDIO_OK" ] || exit 1
-
-# Require enough CPUs
-CPUS=$(nproc --all)
+# Require a PREEMPT_DYNAMIC or PREEMPT_RT kernel
+uname -v | grep -qiE "PREEMPT_RT|PREEMPT_DYNAMIC" || exit 1
 
 exit 0

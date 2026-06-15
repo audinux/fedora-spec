@@ -1,0 +1,11 @@
+[Unit]
+Description=Audio topology: PipeWire CPU affinity
+After=pipewire.service
+Wants=pipewire.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/audio-topology-profile/apply-pipewire-affinity.sh
+
+[Install]
+WantedBy=pipewire.service
