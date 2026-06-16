@@ -41,7 +41,7 @@ All actions are logged to the systemd journal under the `audio-topology`
 tag and can be reviewed with:
 
 ```
-journalctl -t audio-topology
+$ journalctl -t audio-topology
 ```
 
 ### User service — `audio-topology-user.service` (runs as the logged-in user)
@@ -77,7 +77,7 @@ clients to run at RT priority without root privileges.
 Make sure your user account is in the `audio` group:
 
 ```
-sudo usermod -aG audio $USER
+$ sudo usermod -aG audio $USER
 ```
 
 Log out and back in for the change to take effect.
@@ -192,20 +192,20 @@ lowered relative to audio threads.
 
 ```bash
 # Check which CPUs PipeWire is allowed to run on
-taskset -cp $(pgrep -x pipewire)
+$ taskset -cp $(pgrep -x pipewire)
 
 # Confirm the runtime drop-in was written
-cat $XDG_RUNTIME_DIR/systemd/user/pipewire.service.d/10-audio-topology.conf
+$ cat $XDG_RUNTIME_DIR/systemd/user/pipewire.service.d/10-audio-topology.conf
 
 # Check the user service ran correctly
-systemctl --user status audio-topology-user.service
+$ systemctl --user status audio-topology-user.service
 
 # Check the system service (IRQ affinity, governor, threadirqs)
-systemctl status audio-topology.service
+$ systemctl status audio-topology.service
 
 # Review all actions taken at boot
-journalctl -t audio-topology
+$ journalctl -t audio-topology
 
 # Check PipeWire thread scheduling and CPU assignment
-ps -eLo pid,tid,psr,cls,rtprio,comm | grep pipewire
+$ ps -eLo pid,tid,psr,cls,rtprio,comm | grep pipewire
 ```

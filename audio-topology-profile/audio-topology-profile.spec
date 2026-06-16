@@ -95,14 +95,14 @@ echo ""
 %{_sysconfdir}/security/limits.d/90-audio-topology.conf
 
 %changelog
-* Sun Jun 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-3
+* Mon Jun 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-3
 - build-profile.sh: add isolcpus= kernel parameter as highest-priority CPU source
 - irq-affinity.sh: set IRQ threads to SCHED_FIFO:1 when threadirqs is active;
   set 'performance' CPU governor on audio CPUs; add systemd journal logging
 - Add 90-audio-topology.conf: PAM limits for @audio group (rtprio, memlock, nice)
 - Add procps-ng dependency (ps, used by irq-affinity.sh)
 
-* Sun Jun 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-2
+* Mon Jun 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-2
 - Fix detect.sh: CPUS was used before being defined; add PREEMPT_DYNAMIC detection
 - Fix irq-affinity.sh: use build-profile.sh for dynamic CPU selection; use
   smp_affinity_list instead of smp_affinity; call detect.sh unconditionally
@@ -110,5 +110,5 @@ echo ""
 - Replace static 10-audio-topology.conf drop-in with apply-pipewire-affinity.sh
   and audio-topology-user.service for dynamic, kernel-aware PipeWire affinity
 
-* Wed May 20 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
+* Mon Jun 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
 - Initial version of the spec
