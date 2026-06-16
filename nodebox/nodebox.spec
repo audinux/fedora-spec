@@ -7,7 +7,7 @@
 
 Name: nodebox
 Version: 3.1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Node-based GUI for data visualizations and generative design
 License: GPL-3.0-or-later
 URL: https://nodebox.net
@@ -32,7 +32,6 @@ Source4: nodebox-icon.svg
 # Java 11+ is required (build.xml sets release="11")
 BuildRequires: java-latest-openjdk-devel
 BuildRequires: ant
-BuildRequires: gtk-update-icon-cache
 BuildRequires: desktop-file-utils
 
 Requires: java-latest-openjdk-headless
@@ -116,17 +115,8 @@ desktop-file-install \
     --dir %{buildroot}%{_datadir}/applications \
     %{SOURCE3}
 
-%post
-/bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
-
-%postun
-if [ $1 -eq 0 ]; then
-    /bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
-    /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
-fi
-
-%posttrans
-/usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
 %license src/main/java/nodebox/client/Application.java
@@ -137,5 +127,8 @@ fi
 %{_datadir}/icons/hicolor/256x256/apps/%{name}.png
 
 %changelog
+* Tue Jun 16 2026 Yann Collette <ycollette.nospam@free.fr> - 3.1.0-2
+- update to 3.1.0-2 - cleanup spec
+
 * Mon Jun 15 2026 Yann Collette <ycollette.nospam@free.fr> - 3.1.0-1
 - Initial packaging
