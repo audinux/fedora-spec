@@ -7,8 +7,8 @@
 # Pure Data vanilla build
 #
 
-%define pdver 0.56-2
-%define pkgver 0.56.2
+%define pdver 0.56-4
+%define pkgver 0.56.4
 
 Summary: Pure Data
 Name: puredata
@@ -312,6 +312,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.puredata.pd-gui.d
 %{_mandir}/man1/pdsend.1.gz
 
 %changelog
+* Tue Jun 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.56.4-4
+- update to 0.56.4-4
+
 * Fri Dec 26 2025 Yann Collette <ycollette.nospam@free.fr> - 0.56.2-4
 - update to 0.56.2-4
 
