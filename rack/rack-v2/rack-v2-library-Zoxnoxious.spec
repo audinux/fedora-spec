@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 48e77e08a1a5987cd0960513d679d1b7d540de1a
-%global gittag0 2.0.8
+%global commit0 c31fd8a390418691a9eb6c3077ca991e40a6b1bb
+%global gittag0 2.0.9
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Zoxnoxious
-Version: 2.0.8
+Version: 2.0.9
 Release: 2%{?dist}
 Summary: Zoxnoxious plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Zoxnoxious_plugin/dist/Zoxnoxious/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.8-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.9-1
 - initial specfile

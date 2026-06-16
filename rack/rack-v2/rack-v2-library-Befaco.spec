@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c06a414a7e45e4f79a31316187358100c87c4bc2
-%global gittag0 2.10.0
+%global commit0 637e42c1589d212ff70eee1ffa35236e72ac78c6
+%global gittag0 2.11.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-Befaco
-Version: 2.10.0
+Version: 2.11.0
 Release: 2%{?dist}
 Summary: Befaco plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Befaco_plugin/dist/Befaco/* %{buildroot}%{_libexecdir}/Rack2/plugins/Befac
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.10.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.11.0-1
 - initial specfile
