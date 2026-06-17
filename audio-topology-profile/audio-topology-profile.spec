@@ -5,7 +5,7 @@
 
 Name: audio-topology-profile
 Version: 1.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: CPU topology aware audio tuning for PipeWire/JACK
 License: MIT
 BuildArch: noarch
@@ -95,6 +95,11 @@ echo ""
 %{_sysconfdir}/security/limits.d/90-audio-topology.conf
 
 %changelog
+* Tue Jun 17 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-4
+- detect.sh: fix PREEMPT_DYNAMIC detection — only enable tuning when
+  booted with preempt=full; without it PREEMPT_DYNAMIC runs in voluntary
+  preemption mode and gives no latency benefit over a standard kernel
+
 * Mon Jun 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-3
 - build-profile.sh: add isolcpus= kernel parameter as highest-priority CPU source
 - irq-affinity.sh: set IRQ threads to SCHED_FIFO:1 when threadirqs is active;

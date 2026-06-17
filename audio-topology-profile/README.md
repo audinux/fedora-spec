@@ -9,9 +9,18 @@ apply several layers of tuning at boot and at user login.
 
 ### System service — `audio-topology.service` (runs as root)
 
-Activated at boot on kernels reporting `PREEMPT_RT` or `PREEMPT_DYNAMIC`
-in `uname -v`, with at least 4 CPUs available. On other kernels it exits
-cleanly without doing anything.
+Activated at boot with at least 4 CPUs and one of the following conditions:
+
+- Kernel reports `PREEMPT_RT` in `uname -v` — always fully preemptible,
+  no extra configuration needed.
+- Kernel reports `PREEMPT_DYNAMIC` in `uname -v` **and** the kernel was
+  booted with `preempt=full` on the cmdline. Without `preempt=full`,
+  a `PREEMPT_DYNAMIC` kernel (the Fedora default) runs in voluntary
+  preemption mode, which gives no latency benefit over a standard kernel
+  and is therefore skipped.
+
+On kernels that do not meet these conditions the service exits cleanly
+without doing anything.
 
 **CPU set selection** (`build-profile.sh`) — priority order:
 
