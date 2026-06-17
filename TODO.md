@@ -418,6 +418,7 @@
 | SynthlabX-                               | https://github.com/mpue/SynthlabX-                                                                                                                          |
 | Lupo                                     | https://github.com/mpue/Lupo                                                                                                                                |
 | Quetzalcoatl                             | https://github.com/publicsamples/Quetzalcoatl                                                                                                               |
+| csound-vst3-opcodes                      | https://github.com/gogins-dev/csound-vst3-opcodes                                                                                                           |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
