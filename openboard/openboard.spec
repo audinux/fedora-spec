@@ -1,6 +1,7 @@
 # Status: active
+# Tag: Graphic, Tool
 # Type: Standalone
-# Category: Graphic
+# Category: Graphic, Tool
 # GUIToolkit: Qt5
 
 %global debug_package %{nil}

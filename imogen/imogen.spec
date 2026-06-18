@@ -1,4 +1,7 @@
 # Status: active
+# Tag: Synthesizer, Vocoder
+# Type: Plugin, VST3, CLAP
+# Category: Audio, Plugin
 %global commit0 ebaba6375f2de68222a853c01427e44eabea2896
 
 Name: imogen

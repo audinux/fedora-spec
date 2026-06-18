@@ -1,4 +1,7 @@
 # Status: active
+# Tag: Tool, Monitoring
+# Type: Standalone
+# Category: Tool
 Name: kernel-rt-tests
 Version: 2.10
 Release: 2%{?dist}

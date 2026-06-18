@@ -1,4 +1,7 @@
 # Status: active
+# Tag: Tool
+# Type: Driver
+# Category: Tool
 # Kernel major version
 %define kmaj  6
 # Kernel minor version

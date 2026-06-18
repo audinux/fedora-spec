@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Analyzer, Amp Simul
-# Type: Standalone
-# Caterory: Effect, Tool
+# Tag: Analyzer, Equalizer
+# Type: Plugin, LV2
+# Category: Effect, Tool
 
 # Global variables for github repository
 %global commit0 f1c3f4b94ea04a991c201bbe6a19336471b5f37e

@@ -1,3 +1,7 @@
+# Status: active
+# Tag: Editor
+# Type: Standalone
+# Category: Audio, DAW
 %global	optflags %{optflags} -fPIC
 
 Summary: An easy-to-use multi-track audio editor and recorder

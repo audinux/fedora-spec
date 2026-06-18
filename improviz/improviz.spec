@@ -1,7 +1,7 @@
 # Status: active
-# Tag: MIDI
-# TYpe: IDE, Standalone
-# Category: Tool, MIDI, Sequencer
+# Tag: Live, Graphic, Video
+# Type: Standalone
+# Category: Graphic, Tool
 
 %global debug_package %{nil}
 

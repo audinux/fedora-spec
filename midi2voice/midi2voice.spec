@@ -1,4 +1,7 @@
 # Status: active
+# Tag: MIDI, Synthesizer
+# Type: Standalone
+# Category: Audio, Synthesizer
 %global commit0 ae519c239b9e9a3beca10aa0f4551a15dde40c2e
 
 Name:    midi2voice

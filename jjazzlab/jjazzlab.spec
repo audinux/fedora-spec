@@ -1,7 +1,7 @@
 # Status: active
-# Tag: MIDI
-# TYpe: IDE, Standalone
-# Category: Tool, MIDI, Sequencer
+# Tag: MIDI, Sequencer
+# Type: IDE, Standalone
+# Category: Tool, Sequencer
 
 %global __brp_strip %{nil}
 %global _missing_build_ids_terminate_build %{nil}

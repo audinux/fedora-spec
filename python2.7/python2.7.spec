@@ -1,3 +1,7 @@
+# Status: active
+# Tag: Tool, Devel
+# Type: Language
+# Category: Programming
 # ======================================================
 # Conditionals and other variables controlling the build
 # ======================================================

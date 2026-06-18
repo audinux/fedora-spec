@@ -1,4 +1,7 @@
 # Status: active
+# Tag: Library, Devel
+# Type: Language
+# Category: Programming
 # Global variables for github repository
 %global commit0 b5e62895c619d4ffc75c9d822c8d85f1ece77e5b
 %global gittag0 master

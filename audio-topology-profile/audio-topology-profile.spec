@@ -95,7 +95,7 @@ echo ""
 %{_sysconfdir}/security/limits.d/90-audio-topology.conf
 
 %changelog
-* Tue Jun 17 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-4
+* Wed Jun 17 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-4
 - detect.sh: fix PREEMPT_DYNAMIC detection — only enable tuning when
   booted with preempt=full; without it PREEMPT_DYNAMIC runs in voluntary
   preemption mode and gives no latency benefit over a standard kernel

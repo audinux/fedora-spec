@@ -1,7 +1,7 @@
 # Status: active
 # Tag: MIDI, Synthesizer
-# TYpe: Plugin, VST3, VST
-# Category: MIDI, Synthesizer
+# Type: Plugin, VST3, VST
+# Category: Synthesizer
 
 Name: js80p
 Version: 4.0.2

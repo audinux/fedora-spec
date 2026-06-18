@@ -1,4 +1,7 @@
 # Status: active
+# Tag: Tool, Devel
+# Type: Devel
+# Category: Programming, Tool
 %global libname mesonbuild
 
 # Don’t run the tests by default, since they are rather flaky.

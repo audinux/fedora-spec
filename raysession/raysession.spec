@@ -5,7 +5,7 @@
 
 Name: raysession
 Version: 0.18.0
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: A JACK session manager
 
 License: GPL-2.0-or-later
@@ -137,6 +137,9 @@ desktop-file-validate  %{buildroot}/%{_datadir}/applications/ray-alsapatch.deskt
 %{_datadir}/bash-completion/completions/ray_control
 
 %changelog
+* Mon May 18 2026 Yann Collette <ycollette.nospam@free.fr> - 0.18.0-5
+- update to 0.18.0-5 - fix connexions
+
 * Sat Apr 11 2026 Yann Collette <ycollette.nospam@free.fr> - 0.18.0-4
 - update to 0.18.0-4
 

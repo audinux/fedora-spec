@@ -1,4 +1,7 @@
 # Status: active
+# Tag: Graphic, Tool
+# Type: Standalone
+# Category: Graphic, Tool
 Name:    context-free
 Summary: Context Free is a program that generates images from written instructions called a grammar.
 Version: 3.4.2

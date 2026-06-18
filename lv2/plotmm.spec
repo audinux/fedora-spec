@@ -1,4 +1,7 @@
 # Status: active
+# Tag: Library, Graphic
+# Type: Devel
+# Category: Tool
 Name: plotmm
 Version: 0.1.2
 Release: 35%{?dist}

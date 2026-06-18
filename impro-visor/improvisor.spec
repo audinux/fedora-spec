@@ -1,7 +1,7 @@
 # Status: active
-# Tag: MIDI
-# TYpe: IDE, Standalone
-# Category: Tool, MIDI, Sequencer
+# Tag: MIDI, Sequencer
+# Type: IDE, Standalone
+# Category: Tool, Sequencer
 
 # Copyright (c) 2007-2008 oc2pus
 # This file and all modifications and additions to the pristine

@@ -1,7 +1,7 @@
 # Status: active
-# Tag: Analyzer, Amp Simul, Equalizer
-# Type: LV2, Plugin
-# Caterory: Effect, Tool
+# Tag: Analyzer, Equalizer
+# Type: Plugin, LV2
+# Category: Effect, Tool
 
 Name: lv2-MelMatchEQ
 Version: 0.1

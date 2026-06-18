@@ -1,4 +1,7 @@
 # Status: active
+# Tag: Library
+# Type: Devel
+# Category: Programming
 %{?!python3_pkgversion:%global python3_pkgversion 3}
 
 Name:    pymarshal

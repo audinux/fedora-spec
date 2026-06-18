@@ -1,7 +1,7 @@
 # Status: active
-# Tag:
-# Type:
-# Caterogy: Presets
+# Tag: Presets, Rack
+# Type: Presets
+# Category: Tool
 
 Name:    BespokeSynth-examples
 Version: 1.0.0
