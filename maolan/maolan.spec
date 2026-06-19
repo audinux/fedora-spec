@@ -9,7 +9,7 @@
 %global __brp_mangle_shebangs %{nil}
 
 Name: maolan
-Version: 0.2.0
+Version: 0.2.1
 Release: 1%{?dist}
 Summary: Maolan is a Rust DAW focused on recording, editing, routing, automation, export, and plugin hosting
 License: BSD-2-Clause
@@ -107,7 +107,10 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/*
 
 %changelog
-* Tue Jun 2 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
+* Fri Jun 19 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.1-1
+- update to 0.2.1-1
+
+* Tue Jun 02 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
 - update to 0.2.0-1
 
 * Wed May 20 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.1-1
