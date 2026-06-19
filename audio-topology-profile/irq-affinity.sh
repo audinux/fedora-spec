@@ -11,14 +11,19 @@ AUDIO_CPUS=$(/usr/libexec/audio-topology-profile/build-profile.sh)
 
 systemd-cat -t "$LOG_TAG" echo "Applying audio topology: audio CPUs=$AUDIO_CPUS"
 
-# Expand a CPU list/range string ("0,4,8" or "2-7") to space-separated numbers
+# Expand a CPU list/range string ("0,4,8" or "2-7") to space-separated numbers.
+# IFS must NOT be set to ',' inside the function body: doing so breaks the inner
+# "for i in $(seq ...)" because seq outputs newlines, and with IFS=',' the entire
+# newline-separated output is treated as one token, corrupting the result.
 expand_cpulist() {
     local result=""
-    local IFS=','
-    for part in $1; do
+    local part i start end
+    local -a parts
+    IFS=',' read -ra parts <<< "$1"
+    for part in "${parts[@]}"; do
         if [[ "$part" == *-* ]]; then
-            local start="${part%-*}"
-            local end="${part#*-}"
+            start="${part%-*}"
+            end="${part#*-}"
             for i in $(seq "$start" "$end"); do
                 result="$result $i"
             done

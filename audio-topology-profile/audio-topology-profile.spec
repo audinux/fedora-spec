@@ -5,7 +5,7 @@
 
 Name: audio-topology-profile
 Version: 1.0
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: CPU topology aware audio tuning for PipeWire/JACK
 License: MIT
 BuildArch: noarch
@@ -59,6 +59,7 @@ threads at RT priority without requiring root privileges.
 install -m 0755 -d %{buildroot}/%{_libexecdir}/audio-topology-profile/
 install -m 0755 -d %{buildroot}/%{_unitdir}/
 install -m 0755 -d %{buildroot}/%{_userunitdir}/
+install -m 0755 -d %{buildroot}/%{_userunitdir}/pipewire.service.wants/
 install -m 0755 -d %{buildroot}/%{_sysconfdir}/security/limits.d/
 
 install -m 0755 %{SOURCE0} %{buildroot}/%{_libexecdir}/audio-topology-profile/
@@ -69,8 +70,14 @@ install -m 0644 %{SOURCE4} %{buildroot}/%{_unitdir}/
 install -m 0644 %{SOURCE5} %{buildroot}/%{_userunitdir}/
 install -m 0644 %{SOURCE6} %{buildroot}/%{_sysconfdir}/security/limits.d/
 
+# Create the WantedBy symlink so the user service is auto-enabled for all users
+# without requiring "systemctl --user enable audio-topology-user.service"
+ln -s ../audio-topology-user.service \
+    %{buildroot}/%{_userunitdir}/pipewire.service.wants/audio-topology-user.service
+
 %post
 %systemd_post audio-topology.service
+%systemd_user_post audio-topology-user.service
 echo ""
 echo "NOTE: The RT priority limits installed by this package apply to members"
 echo "of the 'audio' group. If your user account is not already in that group,"
@@ -84,17 +91,29 @@ echo ""
 
 %preun
 %systemd_preun audio-topology.service
+%systemd_user_preun audio-topology-user.service
 
 %postun
 %systemd_postun_with_restart audio-topology.service
+%systemd_user_postun audio-topology-user.service
 
 %files
 %{_libexecdir}/audio-topology-profile/
 %{_unitdir}/audio-topology.service
 %{_userunitdir}/audio-topology-user.service
+%{_userunitdir}/pipewire.service.wants/audio-topology-user.service
 %{_sysconfdir}/security/limits.d/90-audio-topology.conf
 
 %changelog
+* Thu Jun 19 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-5
+- irq-affinity.sh: fix expand_cpulist() IFS bug — local IFS=',' contaminated
+  the inner "for i in $(seq ...)" loop, treating all seq output as one token
+  with embedded newlines; NON_AUDIO was wrongly set to all CPUs
+- apply-pipewire-affinity.sh: add systemd-cat logging; add taskset fallback
+  on all PipeWire threads when set-property is not supported
+- spec: install pipewire.service.wants/ symlink so user service is auto-enabled
+  without requiring "systemctl --user enable"; add %systemd_user_post/preun/postun
+
 * Wed Jun 17 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-4
 - detect.sh: fix PREEMPT_DYNAMIC detection — only enable tuning when
   booted with preempt=full; without it PREEMPT_DYNAMIC runs in voluntary
