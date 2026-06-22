@@ -5,10 +5,12 @@
 
 Name: audio-topology-profile
 Version: 1.0
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: CPU topology aware audio tuning for PipeWire/JACK
 License: MIT
 BuildArch: noarch
+
+BuildRequires: systemd-rpm-macros
 
 Source0: detect.sh
 Source1: build-profile.sh
@@ -77,6 +79,10 @@ ln -s ../audio-topology-user.service \
 
 %post
 %systemd_post audio-topology.service
+# Auto-enable and start the system service: it is purpose-built to run on every
+# boot and there is no reason for an administrator to opt out selectively.
+systemctl enable audio-topology.service >/dev/null 2>&1 || :
+systemctl start  audio-topology.service >/dev/null 2>&1 || :
 %systemd_user_post audio-topology-user.service
 echo ""
 echo "NOTE: The RT priority limits installed by this package apply to members"
@@ -105,14 +111,19 @@ echo ""
 %{_sysconfdir}/security/limits.d/90-audio-topology.conf
 
 %changelog
-* Thu Jun 19 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-5
+* Mon Jun 22 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-6
+- spec: auto-enable and start audio-topology.service in %post so the system
+  service (IRQ affinity, CPU governor) runs on every boot without requiring
+  a manual "systemctl enable audio-topology.service" after install
+
+* Sun Jun 21 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-5
 - irq-affinity.sh: fix expand_cpulist() IFS bug — local IFS=',' contaminated
   the inner "for i in $(seq ...)" loop, treating all seq output as one token
   with embedded newlines; NON_AUDIO was wrongly set to all CPUs
 - apply-pipewire-affinity.sh: add systemd-cat logging; add taskset fallback
   on all PipeWire threads when set-property is not supported
 - spec: install pipewire.service.wants/ symlink so user service is auto-enabled
-  without requiring "systemctl --user enable"; add %systemd_user_post/preun/postun
+  without requiring "systemctl --user enable";
 
 * Wed Jun 17 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-4
 - detect.sh: fix PREEMPT_DYNAMIC detection — only enable tuning when
