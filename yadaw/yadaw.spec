@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: yadaw
-Version: 0.8.9
+Version: 0.9.1
 Release: 1%{?dist}
 Summary: An sfx creation tool and midi player that doesn't crash often
 License: AGPL-3.0-or-later
@@ -16,7 +16,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/mlm-games/yadaw/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/mlm-games/yadaw/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -72,7 +72,7 @@ cargo build --release
 %install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
-install -m 755 target/release/yadaw %{buildroot}/%{_bindir}/
+install -m 755 target/release/yadaw-desktop %{buildroot}/%{_bindir}/%{name}
 
 # Install icon
 install -m 755 -d %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
@@ -104,6 +104,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/io.github
 %{_datadir}/metainfo/*
 
 %changelog
+* Mon Jun 22 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.1-1
+- update to 0.9.1-1
+
 * Tue Jun 02 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.9-1
 - update to 0.8.9-1
 
