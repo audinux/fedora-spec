@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: guitarmidi
-Version: 2.1
+Version: 2.2
 Release: 3%{?dist}
 Summary: A concept for guitar to midi as an lv2 plugin
 URL: https://github.com/geraldmwangi/GuitarMidi-LV2
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./guitarmidi-lv2-source.sh <TAG>
-#        ./guitarmidi-lv2-source.sh v2.1
+#        ./guitarmidi-lv2-source.sh v2.2
 
 Source0: GuitarMidi-LV2.tar.gz
 Source1: guitarmidi-lv2-source.sh
@@ -27,6 +27,7 @@ BuildRequires: cmake
 BuildRequires: git
 BuildRequires: lv2-devel
 BuildRequires: aubio-devel
+BuildRequires: zita-resampler-devel
 
 %description
 A concept for guitar to midi as an LV2 plugin. GuitarMidi-LV2 analyses the
@@ -67,6 +68,9 @@ make install
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Jun 21 2026 Yann Collette <ycollette.nospam@free.fr> - 2.2-3
+- update to 2.2-3
+
 * Thu May 28 2026 Yann Collette <ycollette.nospam@free.fr> - 2.1-3
 - update to 2.1-3
 
