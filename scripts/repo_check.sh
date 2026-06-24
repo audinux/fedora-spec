@@ -1160,7 +1160,9 @@ https://github.com/stefdoerr/boreas
 https://github.com/stefdoerr/grains-of-sand
 https://github.com/drobilla/patchage
 https://github.com/drobilla/ganv
-https://codeberg.org/yimrakhee/a2core.lv2"
+https://codeberg.org/yimrakhee/a2core.lv2
+https://github.com/nannou-org/nannou
+https://github.com/BaraMGB/NextStudio"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
