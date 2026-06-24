@@ -24,7 +24,7 @@
 %global debug_package %{nil}
 
 Name: processing
-Version: 4.5.3
+Version: 4.5.4
 Release: 2%{?dist}
 Summary: Processing Development Environment (PDE)
 # Core is LGPL, others are GPL
@@ -35,7 +35,7 @@ ExclusiveArch: x86_64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/processing/processing4/releases/download/processing-1314-%{version}/processing-%{version}-linux-x64-portable.zip
+Source0: https://github.com/processing/processing4/releases/download/processing-1432-%{version}/processing-%{version}-linux-x64-portable.zip
 Source1: %{name}.desktop
 
 AutoReqProv: no
@@ -62,7 +62,7 @@ Processing for learning and prototyping.
 %build
 
 %install
-install -dm 0755 %{buildroot}/opt/%{name}
+install -m 0755 -d %{buildroot}/opt/%{name}
 cp -R * %{buildroot}/opt/%{name}/
 
 install -dm 0755 %{buildroot}/%{_datadir}/pixmaps
@@ -72,7 +72,7 @@ install -dm 0755 %{buildroot}/%{_datadir}/applications
 install -m 0644 %{SOURCE1} %{buildroot}/%{_datadir}/applications/
 
 # Create a symlink
-install -dm 0755 %{buildroot}/%{_bindir}
+install -m 0755 -d %{buildroot}/%{_bindir}
 ln -s /opt/processing/bin/processing %{buildroot}/%{_bindir}/processing
 
 # Remove some non x86_64-linux files
@@ -99,6 +99,9 @@ rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/application/laun
 %{_datadir}/applications/%{name}.desktop
 
 %changelog
+* Wed Jun 24 2026 Yann Collette <ycollette.nospam@free.fr> - 4.5.4-2
+- update to 4.5.4-2
+
 * Mon Mar 02 2026 Yann Collette <ycollette.nospam@free.fr> - 4.5.3-2
 - update to 4.5.3-2
 
