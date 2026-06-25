@@ -3,43 +3,31 @@
 # Type: Standalone, Language
 # Category: Tool, Programming
 
-#
-# spec file for package processing
-#
-# Copyright (c) 2016 SUSE LINUX GmbH, Nuernberg, Germany.
-#
-# All modifications and additions to the file contributed by third parties
-# remain the property of their copyright owners, unless otherwise agreed
-# upon. The license for this file, and modifications and additions to the
-# file, is the same license as for the pristine package itself (unless the
-# license for the pristine package is not an Open Source License, in which
-# case the license is the MIT License). An "Open Source License" is a
-# license that conforms to the Open Source Definition (Version 1.9)
-# published by the Open Source Initiative.
-
-# Please submit bugfixes or comments via http://bugs.opensuse.org/
-#
-
-# Disable production of debug package.
 %global debug_package %{nil}
+
+# Build number embedded in the upstream release tag (processing-BUILDNUM-VERSION).
+# Update this together with Version on each upstream release.
+%global buildnum 1432
 
 Name: processing
 Version: 4.5.4
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Processing Development Environment (PDE)
 # Core is LGPL, others are GPL
 License: GPL-2.0+ and LGPL-2.0+
 URL: https://processing.org/
-ExclusiveArch: x86_64
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/processing/processing4/releases/download/processing-1432-%{version}/processing-%{version}-linux-x64-portable.zip
-Source1: %{name}.desktop
+Source0: https://github.com/processing/processing4/releases/download/processing-%{buildnum}-%{version}/processing-%{version}-linux-x64-portable.zip
+Source1: https://github.com/processing/processing4/releases/download/processing-%{buildnum}-%{version}/processing-%{version}-linux-aarch64-portable.zip
+Source2: %{name}.desktop
 
+# Upstream ships self-contained portable zips with a bundled JRE and native
+# OpenGL libraries (JOGL); automatic dependency detection is not useful here.
 AutoReqProv: no
-BuildArch: x86_64
 
 %description
 Processing is a flexible software sketchbook and a language for learning
@@ -57,7 +45,13 @@ Processing for learning and prototyping.
 - Well documented, with many books available
 
 %prep
-%autosetup -n Processing
+%ifarch x86_64
+%setup -q -n Processing
+%endif
+%ifarch aarch64
+# -T disables Source0 extraction; -b 1 extracts the aarch64 zip before cd
+%setup -q -n Processing -T -b 1
+%endif
 
 %build
 
@@ -66,31 +60,43 @@ install -m 0755 -d %{buildroot}/opt/%{name}
 cp -R * %{buildroot}/opt/%{name}/
 
 install -dm 0755 %{buildroot}/%{_datadir}/pixmaps
-install -m 0644 lib/app/resources/lib/icons/pde-256.png %{buildroot}/%{_datadir}/pixmaps/%{name}.png
+install -m 0644 lib/app/resources/lib/icons/pde-256.png \
+    %{buildroot}/%{_datadir}/pixmaps/%{name}.png
 
 install -dm 0755 %{buildroot}/%{_datadir}/applications
-install -m 0644 %{SOURCE1} %{buildroot}/%{_datadir}/applications/
+install -m 0644 %{SOURCE2} %{buildroot}/%{_datadir}/applications/
 
-# Create a symlink
 install -m 0755 -d %{buildroot}/%{_bindir}
 ln -s /opt/processing/bin/processing %{buildroot}/%{_bindir}/processing
 
-# Remove some non x86_64-linux files
-# find . -name "*arm*"
-rm -rf %{buildroot}/opt/processing/./lib/app/jogl-all-2.5.0-natives-linux-armv6hf-9c936e2029c28b1788e972cee34b8d.jar
-rm -rf %{buildroot}/opt/processing/./lib/app/resources/modes/java/libraries/io/library/linux-armv6hf
-rm -rf %{buildroot}/opt/processing/./lib/app/resources/modes/java/libraries/io/library/linux-arm64
-rm -rf %{buildroot}/opt/processing/./lib/app/resources/modes/java/application/launch4j/bin/windres-armv6hf
-rm -rf %{buildroot}/opt/processing/./lib/app/resources/modes/java/application/launch4j/bin/ld-linux-armv6hf
-rm -rf %{buildroot}/opt/processing/./lib/app/resources/modes/java/application/launch4j/bin/ld-armv6hf
-rm -rf %{buildroot}/opt/processing/./lib/app/resources/modes/java/application/launch4j/bin/windres-linux-armv6hf
-rm -rf %{buildroot}/opt/processing/./lib/app/resources/modes/java/mode/gluegen-rt-2.5.0-natives-linux-armv6hf.jar
-rm -rf %{buildroot}/opt/processing/./lib/app/resources/modes/java/mode/jogl-all-2.5.0-natives-linux-armv6hf.jar
-rm -rf %{buildroot}/opt/processing/./lib/app/resources/core/library/gluegen-rt-2.5.0-natives-linux-armv6hf.jar
-rm -rf %{buildroot}/opt/processing/./lib/app/resources/core/library/jogl-all-2.5.0-natives-linux-armv6hf.jar
-rm -rf %{buildroot}/opt/processing/./lib/app/gluegen-rt-2.5.0-natives-linux-armv6hf-d04f255aa1f37c245b032c7eec9477c.jar
+# Remove Windows cross-compilation tools present in both arch zips
 rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/application/launch4j/bin/windres-windows.exe
 rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/application/launch4j/bin/ld-windows.exe
+
+%ifarch x86_64
+# Remove non-x86_64 native libraries bundled in the x64 portable zip
+rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/libraries/io/library/linux-armv6hf
+rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/libraries/io/library/linux-arm64
+rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/application/launch4j/bin/windres-armv6hf
+rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/application/launch4j/bin/ld-linux-armv6hf
+rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/application/launch4j/bin/ld-armv6hf
+rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/application/launch4j/bin/windres-linux-armv6hf
+rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/mode/jogl-all-2.5.0-natives-linux-armv6hf.jar
+rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/mode/gluegen-rt-2.5.0-natives-linux-armv6hf.jar
+rm -rf %{buildroot}/opt/processing/lib/app/resources/core/library/jogl-all-2.5.0-natives-linux-armv6hf.jar
+rm -rf %{buildroot}/opt/processing/lib/app/resources/core/library/gluegen-rt-2.5.0-natives-linux-armv6hf.jar
+rm -rf %{buildroot}/opt/processing/lib/app/jogl-all-2.5.0-natives-linux-armv6hf-*.jar
+rm -rf %{buildroot}/opt/processing/lib/app/gluegen-rt-2.5.0-natives-linux-armv6hf-*.jar
+%endif
+
+%ifarch aarch64
+# Remove non-aarch64 native libraries bundled in the aarch64 portable zip
+rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/libraries/io/library/linux-armv6hf
+rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/application/launch4j/bin/windres-armv6hf
+rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/application/launch4j/bin/ld-linux-armv6hf
+rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/application/launch4j/bin/ld-armv6hf
+rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/application/launch4j/bin/windres-linux-armv6hf
+%endif
 
 %files
 %{_bindir}/%{name}
@@ -99,6 +105,13 @@ rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/application/laun
 %{_datadir}/applications/%{name}.desktop
 
 %changelog
+* Wed Jun 25 2026 Yann Collette <ycollette.nospam@free.fr> - 4.5.4-3
+- add aarch64 support: Source1 is the aarch64 portable zip; %prep selects
+  the right zip per arch; %install removes arch-specific native files
+- add %global buildnum for easier version bumps (update both together)
+- cleanup: remove OpenSUSE copyright header, stray comments, redundant
+  BuildArch line, and normalize rm -rf paths (removed spurious ./)
+
 * Wed Jun 24 2026 Yann Collette <ycollette.nospam@free.fr> - 4.5.4-2
 - update to 4.5.4-2
 
