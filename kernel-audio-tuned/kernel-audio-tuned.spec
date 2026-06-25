@@ -5,7 +5,7 @@
 
 Name: kernel-audio-tuned
 Version: 1.0
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: Audio tuned kernel boot entries for Fedora
 BuildArch: noarch
 License: GPLv3
@@ -19,13 +19,17 @@ parameters (preempt, IRQ threading, etc.) using kernel-install hooks.
 
 %install
 
-mkdir -p %{buildroot}/usr/lib/kernel/install.d
-mkdir -p %{buildroot}/etc/sysconfig
+install -m 0755 -d %{buildroot}%{_prefix}/lib/kernel/install.d
+install -m 0755 -d %{buildroot}%{_sysconfdir}/sysconfig
 
-install -m 0755 %{SOURCE0} %{buildroot}/usr/lib/kernel/install.d/
-install -m 0644 %{SOURCE1} %{buildroot}/etc/sysconfig/kernel-audio-tuned
+install -m 0755 %{SOURCE0} %{buildroot}%{_prefix}/lib/kernel/install.d/
+install -m 0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/sysconfig/kernel-audio-tuned
 
 %post
+# Pre-delete stale audio entries so upgrades regenerate with current options
+for entry in /boot/loader/entries/*-audio.conf; do
+    rm -f "$entry" || :
+done
 for k in /lib/modules/*; do
     version=$(basename "$k")
     if [ -f "/boot/vmlinuz-$version" ]; then
@@ -41,10 +45,20 @@ if [ $1 -eq 0 ]; then
 fi
 
 %files
-/usr/lib/kernel/install.d/90-audio-tuned.install
-%config(noreplace) /etc/sysconfig/kernel-audio-tuned
+%{_prefix}/lib/kernel/install.d/90-audio-tuned.install
+%config(noreplace) %{_sysconfdir}/sysconfig/kernel-audio-tuned
 
 %changelog
+* Wed Jun 25 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-5
+- 90-audio-tuned.install: fix sed delimiters (/ → |) so options containing
+  slashes are handled correctly; move CPU detection into add) branch only;
+  fix cleanup_entries to use printf instead of ls; wrap source sysconfig
+  with || true so a syntax error cannot abort the hook
+- spec: pre-delete *-audio.conf in %%post before regenerating so package
+  upgrades with changed options actually update the boot entries; use
+  %%{_prefix} and %%{_sysconfdir} macros in %%install and %%files
+- sysconfig: add security note for nopti
+
 * Sun May 10 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-4
 - update to 1.0-4 - avoid some errors when there are no kernels to manage
 

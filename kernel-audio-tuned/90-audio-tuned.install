@@ -16,7 +16,7 @@ SYSCONFIG="/etc/sysconfig/kernel-audio-tuned"
 # ----------------------------------------------------------------------
 
 if [[ -f "$SYSCONFIG" ]]; then
-    source "$SYSCONFIG"
+    source "$SYSCONFIG" || true
 fi
 
 : "${KERNEL_AUDIO_TUNED_ENABLE:=yes}"
@@ -46,30 +46,6 @@ get_installonly_limit() {
 }
 
 # ----------------------------------------------------------------------
-# CPU detection
-# ----------------------------------------------------------------------
-
-CPU_VENDOR="$(
-    grep -m1 'vendor_id' /proc/cpuinfo 2>/dev/null \
-    | awk '{print $3}' \
-    || true
-)"
-
-CPU_OPTS=""
-
-case "$CPU_VENDOR" in
-    GenuineIntel)
-        CPU_OPTS="${KERNEL_AUDIO_TUNED_INTEL_OPTS:-}"
-        ;;
-    AuthenticAMD)
-        CPU_OPTS="${KERNEL_AUDIO_TUNED_AMD_OPTS:-}"
-        ;;
-esac
-
-COMMON_OPTS="${KERNEL_AUDIO_TUNED_OPTS:-}"
-FINAL_OPTS="${COMMON_OPTS} ${CPU_OPTS}"
-
-# ----------------------------------------------------------------------
 # Creation of a BSL audio entry
 # ----------------------------------------------------------------------
 
@@ -95,12 +71,12 @@ create_entry() {
 
     # Change the title
     sed -i \
-        's/^title \(.*\)$/title \1 (Audio tuned)/' \
+        's|^title \(.*\)$|title \1 (Audio tuned)|' \
         "$new_entry" || :
 
     # Add the kernel options
     sed -i \
-        "s/^options \(.*\)$/options \1 ${FINAL_OPTS}/" \
+        "s|^options \(.*\)$|options \1 ${FINAL_OPTS}|" \
         "$new_entry" || :
 }
 
@@ -133,7 +109,7 @@ cleanup_entries() {
     max="$(get_installonly_limit)"
 
     mapfile -t entries < <(
-        ls -1 "${ENTRY_DIR}"/*-audio.conf 2>/dev/null \
+        printf '%s\n' "${ENTRY_DIR}"/*-audio.conf \
         | sort -V
     )
 
@@ -152,6 +128,15 @@ cleanup_entries() {
 
 case "$COMMAND" in
     add)
+        CPU_VENDOR="$(grep -m1 'vendor_id' /proc/cpuinfo 2>/dev/null | awk '{print $3}' || true)"
+        CPU_OPTS=""
+        case "$CPU_VENDOR" in
+            GenuineIntel) CPU_OPTS="${KERNEL_AUDIO_TUNED_INTEL_OPTS:-}" ;;
+            AuthenticAMD) CPU_OPTS="${KERNEL_AUDIO_TUNED_AMD_OPTS:-}" ;;
+        esac
+        COMMON_OPTS="${KERNEL_AUDIO_TUNED_OPTS:-}"
+        FINAL_OPTS="${COMMON_OPTS} ${CPU_OPTS}"
+
         entries=( "${ENTRY_DIR}"/*"${KERNEL_VERSION}"*.conf )
 
         for entry in "${entries[@]}"; do

@@ -1,3 +1,6 @@
+# nopti: disables Page Table Isolation (Spectre/Meltdown mitigation).
+# Reduces syscall overhead; acceptable trade-off on a dedicated audio workstation.
+# Remove if the machine handles untrusted code or shared data.
 KERNEL_AUDIO_TUNED_OPTS="preempt=full threadirqs nopti"
 KERNEL_AUDIO_TUNED_INTEL_OPTS="intel_pstate=disable"
 KERNEL_AUDIO_TUNED_AMD_OPTS=""
