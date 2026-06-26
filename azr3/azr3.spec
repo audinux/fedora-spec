@@ -3,32 +3,30 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-Name:    azr3-jack
-Version: 1.2.3
+Name: azr3-jack
+Version: 2.0.0
 Release: 2%{?dist}
 Summary: This JACK program is a port of the free VST plugin AZR-3
-URL:     http://ll-plugins.nongnu.org/azr3/
+URL: http://ll-plugins.nongnu.org/azr3/
 ExclusiveArch: x86_64 aarch64
-License: GPL
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source:  https://download.savannah.gnu.org/releases/ll-plugins/%{name}-%{version}.tar.bz2
+Source: https://github.com/ycollet/azr3/archive/refs/tags/v2.0.0.tar.gz#/%{name}-%{version}.tar.gz
 Source1: azr3.png
-Patch1:  0001-fix-sigc-namespace.patch
 
 BuildRequires: gcc gcc-c++
-BuildRequires: make
+BuildRequires: cmake
 BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
-BuildRequires: atk-devel
-BuildRequires: cairo-devel
-BuildRequires: cairomm-devel
-BuildRequires: glibmm24-devel
-BuildRequires: gtkmm24-devel
-BuildRequires: pango-devel
+BuildRequires: gtkmm4.0-devel
+BuildRequires: liblo-devel
+BuildRequires: lv2-devel
 BuildRequires: desktop-file-utils
+
+Requires: license-%{name}
 
 %description
 This JACK program is a port of the free VST plugin AZR-3.
@@ -48,20 +46,33 @@ switch between fast and slow rotation, and the fast and slow rotation
 speeds themselves can be changed separately for the lower and upper
 frequencies.
 
+%package -n license-%{name}
+Summary: License and documentations for %{name}
+License: GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentations for %{name}
+
+%package -n lv2-%{name}
+Summary: LV2 version of %{name}
+License: GPL-2.0-or-later
+Requires: license-%{name}
+
+%description -n lv2-%{name}
+LV2 version of %{name}
+
 %prep
 
-%autosetup -p1 -n azr3-jack-%{version}
+%autosetup -n azr3-%{version}
 
 %build
-%set_build_flags
 
-export CXXFLAGS="$CXXFLAGS -I/usr/include/gtkmm-2.4 -I/usr/include/glibmm-2.4/ -I/usr/lib64/glibmm-2.4/include"
-
-%configure
-%make_build
+%cmake
+%cmake_build
 
 %install
-%make_install prefix=%{_usr} libdir=%{_libdir}
+
+%cmake_install
 
 mkdir -p %{buildroot}%{_datadir}/pixmaps
 mkdir -p %{buildroot}%{_datadir}/applications
@@ -76,7 +87,7 @@ Comment[it]=Organo VST a barre a n canali.
 Exec=/usr/bin/azr3
 Type=Application
 Terminal=false
-Icon=/usr/share/pixmaps/azr3.png
+Icon=azr3
 Categories=Audio;AudioVideo;
 EOF
 
@@ -90,18 +101,24 @@ desktop-file-install                         \
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%doc AUTHORS ChangeLog README
-%license COPYING
 %{_bindir}/azr3
 %{_datadir}/pixmaps/azr3.png
 %{_datadir}/applications/azr3-jack.desktop
-%dir %{_datadir}/azr3-jack
 %{_datadir}/azr3-jack/presets
 %{_datadir}/azr3-jack/*.png
 %{_mandir}/man1/azr3.1*
-%exclude %{_docdir}/azr3-jack/*
+
+%files -n license-%{name}
+%doc AUTHORS ChangeLog README
+%license COPYING
+
+%files -n lv2-%{name}
+%{_libdir}/lv2/*
 
 %changelog
+* Fri Jun 26 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-2
+- update to 2.0.0 - lv2 version
+
 * Fri Nov 05 2021 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-2
 - install desktop file
 
