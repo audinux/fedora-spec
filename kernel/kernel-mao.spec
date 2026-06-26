@@ -3,13 +3,13 @@
 # Type: Driver
 # Category: Tool
 # Kernel major version
-%define kmaj  6
+%define kmaj  7
 # Kernel minor version
-%define kmin  6
+%define kmin  0
 # Kernel patch version
-%define kpat  65
+%define kpat  12
 # RT patch version
-%define krt   47
+%define krt   0
 # package version
 %define krel  13
 
@@ -29,9 +29,9 @@ Distribution: Audinux
 
 Source0: https://cdn.kernel.org/pub/linux/kernel/v%{kmaj}.x/linux-%{kver}.tar.gz
 Source1: kernel-config-%{kmaj}.%{kmin}
-Patch0: https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/%{kmaj}.%{kmin}/older/patch-%{kver}-rt%{krt}.patch.gz
 
-%if 0%{?fedora} > 40
+%if 0%{?fedora} > 40 && 0%{?fedora} < 45
+# openssl-devel-engine existed only in OpenSSL 3.x (Fedora 41-44)
 BuildRequires: openssl-devel-engine
 %else
 BuildRequires: openssl-devel
@@ -103,6 +103,13 @@ against the %{version} kernel package.
 cp %{SOURCE1} .config
 sed -i -e "s/EXTRAVERSION =/EXTRAVERSION = -rt%{krt}%{fcver}/g" Makefile
 echo "" > localversion-rt
+
+# Activate some missing SELINUX options
+cat <<EOF >.config-fragment
+CONFIG_PREEMPT_RT=y
+EOF
+
+scripts/kconfig/merge_config.sh .config .config-fragment
 
 make oldconfig
 
@@ -195,20 +202,20 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 grub2-mkconfig -o /boot/grub2/grub.cfg
 
 %files
-%defattr (-, root, root)
 /lib/modules/%{kver}-rt%{krt}%{fcver}
 /boot/*
 %ghost /boot/initramfs-%{kver}-rt%{krt}%{fcver}
 
 %files headers
-%defattr (-, root, root)
 /usr/include
 
 %files devel
-%defattr (-, root, root)
 /usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
 %changelog
+* Thu Jun 25 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.12-rt0-13
+- update to 7.0.12-rt0-13 - vanilla RT kernel 7.0.12 with PREEMPT_RT enabled
+
 * Tue Dec 24 2024 Yann Collette <ycollette.nospam@free.fr> - 6.6.65-rt47-13
 - update to 6.6.65-rt47-13 - vanilla RT kernel
 
