@@ -1,5 +1,5 @@
 # Status: active
-# Tag: Drum
+# Tag: Drum, Sampler
 # Type: Plugin, CLAP, VST3
 # Category: Tool
 
