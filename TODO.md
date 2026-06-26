@@ -419,6 +419,8 @@
 | Lupo                                     | https://github.com/mpue/Lupo                                                                                                                                |
 | Quetzalcoatl                             | https://github.com/publicsamples/Quetzalcoatl                                                                                                               |
 | csound-vst3-opcodes                      | https://github.com/gogins-dev/csound-vst3-opcodes                                                                                                           |
+| Parkinsound                              | https://github.com/pilali/Parkinsound                                                                                                                       |
+| midi-ble-rt                              | https://github.com/mwprado/midi-ble-rt                                                                                                                      |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
