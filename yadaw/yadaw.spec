@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: yadaw
-Version: 0.9.1
+Version: 0.9.2
 Release: 1%{?dist}
 Summary: An sfx creation tool and midi player that doesn't crash often
 License: AGPL-3.0-or-later
@@ -72,7 +72,7 @@ cargo build --release
 %install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
-install -m 755 target/release/yadaw-desktop %{buildroot}/%{_bindir}/%{name}
+install -m 755 target/release/yadaw %{buildroot}/%{_bindir}/%{name}
 
 # Install icon
 install -m 755 -d %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
@@ -104,6 +104,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/io.github
 %{_datadir}/metainfo/*
 
 %changelog
+* Thu Jun 25 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.2-1
+- update to 0.9.2-1
+
 * Mon Jun 22 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.1-1
 - update to 0.9.1-1
 
