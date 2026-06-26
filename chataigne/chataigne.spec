@@ -39,7 +39,10 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: lv2-devel
+%if 0%{?fedora} > 40 && 0%{?fedora} < 45
+# openssl-devel-engine existed only in OpenSSL 3.x (Fedora 41-44)
 BuildRequires: openssl-devel-engine
+%endif
 BuildRequires: openssl-devel
 BuildRequires: hidapi-devel
 BuildRequires: gtk3-devel

@@ -30,7 +30,8 @@ Distribution: Audinux
 Source0: https://gitlab.com/xanmod/linux/-/archive/%{kver}-xanmod1/linux-%{kver}-xanmod1.tar.gz
 Source1: kernel-xanmod-config-%{kmaj}.%{kmin}
 
-%if 0%{?fedora} > 40
+%if 0%{?fedora} > 40 && 0%{?fedora} < 45
+# openssl-devel-engine existed only in OpenSSL 3.x (Fedora 41-44)
 BuildRequires: openssl-devel-engine
 %else
 BuildRequires: openssl-devel

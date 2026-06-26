@@ -31,7 +31,8 @@ Source0: https://cdn.kernel.org/pub/linux/kernel/v%{kmaj}.x/linux-%{kmaj}.%{kmin
 Source1: https://github.com/damentz/liquorix-package/raw/%{kmaj}.%{kmin}/master/linux-liquorix/debian/config/kernelarch-x86/config-arch-64
 Patch0:  https://github.com/zen-kernel/zen-kernel/releases/download/v%{kmaj}.%{kmin}.%{kpat}-lqx%{krt}/v%{kmaj}.%{kmin}.%{kpat}-lqx%{krt}.patch.xz
 
-%if 0%{?fedora} > 40
+%if 0%{?fedora} > 40 && 0%{?fedora} < 45
+# openssl-devel-engine existed only in OpenSSL 3.x (Fedora 41-44)
 BuildRequires: openssl-devel-engine
 %else
 BuildRequires: openssl-devel
