@@ -10,7 +10,7 @@
 
 Name: dm-graindelay
 Version: 0.0.5
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Granular delay, lv2 & vst audio plugin
 License: MIT
 URL: https://github.com/davemollen/dm-GrainDelay
@@ -33,6 +33,29 @@ A granular delay effect written in Rust.
 The effect can be compiled to a lv2 or vst plugin.
 This plugin has been written primarily to run on Mod devices.
 And because I mainly use this for guitar it's just mono for now.
+
+%package -n license-%{name}
+Summary: License and documentations for %{name}
+License: MIT
+
+%description -n license-%{name}
+License and documentations for %{name}
+
+%package -n vst-%{name}
+Summary: VST2 version of %{name}
+License: MIT
+Requires: license-%{name}
+
+%description -n vst-%{name}
+VST2 version of %{name}
+
+%package -n lv2-%{name}
+Summary: LV2 version of %{name}
+License: MIT
+Requires: license-%{name}
+
+%description -n lv2-%{name}
+LV2 version of %{name}
 
 %prep
 %autosetup -n dm-GrainDelay-%{commit0}
@@ -62,16 +85,26 @@ cargo build --release
 
 %install
 
-install -m 755 -d %{buildroot}/%{_libdir}/vst/
-
+install -m 755 -d %{buildroot}/%{_libdir}/lv2/
 cp -rav lv2/dm-GrainDelay.lv2 %{buildroot}/%{_libdir}/lv2/
 
-%files
+install -m 755 -d %{buildroot}/%{_libdir}/vst/
+install -m 755 vst/target/release/libdm_grain_delay.so %{buildroot}/%{_libdir}/vst/
+
+%files -n license-%{name}
 %doc README.md
 %license LICENSE
+
+%files -n lv2-%{name}
 %{_libdir}/lv2/*
 
+%files -n vst-%{name}
+%{_libdir}/vst/*
+
 %changelog
+* Fri Jun 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.5-3
+- update to 0.0.5-3 - fix installation
+
 * Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.5-2
 - update to 0.0.5-2
 
