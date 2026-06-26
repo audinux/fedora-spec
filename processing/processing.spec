@@ -7,10 +7,10 @@
 
 # Build number embedded in the upstream release tag (processing-BUILDNUM-VERSION).
 # Update this together with Version on each upstream release.
-%global buildnum 1432
+%global buildnum 1433
 
 Name: processing
-Version: 4.5.4
+Version: 4.5.5
 Release: 3%{?dist}
 Summary: Processing Development Environment (PDE)
 # Core is LGPL, others are GPL
@@ -105,7 +105,10 @@ rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/application/laun
 %{_datadir}/applications/%{name}.desktop
 
 %changelog
-* Wed Jun 25 2026 Yann Collette <ycollette.nospam@free.fr> - 4.5.4-3
+* Thu Jun 25 2026 Yann Collette <ycollette.nospam@free.fr> - 4.5.5-3
+- update to 4.5.5-3
+
+* Thu Jun 25 2026 Yann Collette <ycollette.nospam@free.fr> - 4.5.4-3
 - add aarch64 support: Source1 is the aarch64 portable zip; %prep selects
   the right zip per arch; %install removes arch-specific native files
 - add %global buildnum for easier version bumps (update both together)
