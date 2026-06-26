@@ -1162,7 +1162,10 @@ https://github.com/drobilla/patchage
 https://github.com/drobilla/ganv
 https://codeberg.org/yimrakhee/a2core.lv2
 https://github.com/nannou-org/nannou
-https://github.com/BaraMGB/NextStudio"
+https://github.com/BaraMGB/NextStudio
+https://codeberg.org/yimrakhee/ml7
+https://codeberg.org/yimrakhee/satordist.lv2
+https://codeberg.org/yimrakhee/rustydrumgizmo"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
