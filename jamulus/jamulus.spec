@@ -5,7 +5,7 @@
 
 %global v_major 3
 %global v_minor 12
-%global v_patch 1
+%global v_patch 2
 
 Name: jamulus
 Version: %{v_major}.%{v_minor}.%{v_patch}
@@ -93,6 +93,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-server.deskto
 %{_mandir}/man1/*
 
 %changelog
+* Wed Jun 24 2026 Yann Collette <ycollette.nospam@free.fr> - 3.12.2-8
+- update to 3.12.2-8
+
 * Sun May 17 2026 Yann Collette <ycollette.nospam@free.fr> - 3.12.1-8
 - update to 3.12.1-8
 
