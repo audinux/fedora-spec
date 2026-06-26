@@ -49,7 +49,7 @@ fi
 %config(noreplace) %{_sysconfdir}/sysconfig/kernel-audio-tuned
 
 %changelog
-* Wed Jun 25 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-5
+* Thu Jun 25 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-5
 - 90-audio-tuned.install: fix sed delimiters (/ → |) so options containing
   slashes are handled correctly; move CPU detection into add) branch only;
   fix cleanup_entries to use printf instead of ls; wrap source sysconfig
