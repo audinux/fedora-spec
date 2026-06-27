@@ -1165,7 +1165,8 @@ https://github.com/nannou-org/nannou
 https://github.com/BaraMGB/NextStudio
 https://codeberg.org/yimrakhee/ml7
 https://codeberg.org/yimrakhee/satordist.lv2
-https://codeberg.org/yimrakhee/rustydrumgizmo"
+https://codeberg.org/yimrakhee/rustydrumgizmo
+https://github.com/mwprado/midi-ble-rt"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
