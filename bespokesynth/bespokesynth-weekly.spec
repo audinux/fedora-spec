@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-%global commit0 b6f7109630681b2d7f1bcdd72f0a429dc47a8d8d
+%global commit0 26231fd486e78e68b4fcca26850cc47026107727
 
 Name: BespokeSynth-weekly
 Version: 1.3.10
-Release: 30%{?dist}
+Release: 31%{?dist}
 Summary: A software modular synth
 License: GPL-3.0-or-later
 URL: https://github.com/BespokeSynth/BespokeSynth
@@ -23,7 +23,6 @@ Source0: BespokeSynth.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
 Source2: bespokesynth-sources.sh
-Patch0: bespokesynth-fix-jack-input.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -62,7 +61,7 @@ Bespoke is like a DAW in some ways, but with less of a focus on a global timelin
 Instead, it has a design more optimized for jamming and exploration.
 
 %prep
-%autosetup -p1 -n BespokeSynth
+%autosetup -n BespokeSynth
 
 sed -i -e "s/\.\.\/\.\.\/MacOSX\/build\/Release\/data/\/usr\/share\/BespokeSynth\/data/g" Source/OpenFrameworksPort.cpp
 
@@ -131,6 +130,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/com.bespo
 %{_datadir}/metainfo/com.bespokesynth.BespokeSynth.metainfo.xml
 
 %changelog
+* Fri Jun 26 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-31
+- Update to 1.3.10-31 - 26231fd486e78e68b4fcca26850cc47026107727
+
 * Wed Jun 17 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.10-30
 - Update to 1.3.10-30 - b6f7109630681b2d7f1bcdd72f0a429dc47a8d8d
 
