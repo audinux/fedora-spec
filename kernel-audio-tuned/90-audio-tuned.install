@@ -128,6 +128,13 @@ cleanup_entries() {
 
 case "$COMMAND" in
     add)
+        # Skip non-standard kernel flavors (RT, LQX, Xanmod, …)
+        for skip in ${KERNEL_AUDIO_TUNED_SKIP_FLAVORS:-}; do
+            if [[ "$KERNEL_VERSION" == *"$skip"* ]]; then
+                exit 0
+            fi
+        done
+
         CPU_VENDOR="$(grep -m1 'vendor_id' /proc/cpuinfo 2>/dev/null | awk '{print $3}' || true)"
         CPU_OPTS=""
         case "$CPU_VENDOR" in

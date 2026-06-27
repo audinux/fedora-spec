@@ -5,7 +5,7 @@
 
 Name: kernel-audio-tuned
 Version: 1.0
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: Audio tuned kernel boot entries for Fedora
 BuildArch: noarch
 License: GPLv3
@@ -49,6 +49,13 @@ fi
 %config(noreplace) %{_sysconfdir}/sysconfig/kernel-audio-tuned
 
 %changelog
+* Sat Jun 27 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-6
+- 90-audio-tuned.install: skip non-standard kernel flavors (RT, LQX, Xanmod)
+  by checking KERNEL_VERSION against KERNEL_AUDIO_TUNED_SKIP_FLAVORS before
+  creating audio entries; defaults cover kernel-rt-mao (.rt), kernel-lqx-mao
+  (lqx), and kernel-xan-mao (xan); set to "" in sysconfig to include all
+- sysconfig: document and default KERNEL_AUDIO_TUNED_SKIP_FLAVORS
+
 * Thu Jun 25 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-5
 - 90-audio-tuned.install: fix sed delimiters (/ → |) so options containing
   slashes are handled correctly; move CPU detection into add) branch only;

@@ -5,3 +5,11 @@ KERNEL_AUDIO_TUNED_OPTS="preempt=full threadirqs nopti"
 KERNEL_AUDIO_TUNED_INTEL_OPTS="intel_pstate=disable"
 KERNEL_AUDIO_TUNED_AMD_OPTS=""
 KERNEL_AUDIO_TUNED_ENABLE="yes"
+
+# Space-separated substrings: skip audio entries for kernels whose version
+# string contains any of these tokens. Covers the audinux custom kernels:
+#   kernel-rt-mao  → version contains ".rt"
+#   kernel-lqx-mao → version contains "lqx"
+#   kernel-xan-mao → version contains "xan"
+# Set to "" to create audio entries for all installed kernels.
+KERNEL_AUDIO_TUNED_SKIP_FLAVORS=".rt lqx xan"
