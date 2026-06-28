@@ -10,7 +10,7 @@
 
 Name: protrekkr
 Version: 1.0.0
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: A jack tracker
 License: GPL-2.0-or-later
 URL: https://github.com/falkTX/protrekkr
@@ -32,7 +32,10 @@ BuildRequires: zlib-devel
 BuildRequires: desktop-file-utils
 
 %description
-A jack tracker
+ProTrekkr (formerly known as NoiseTrekker by Juan Antonio Arguelles Rius aka Arguru) is
+a tracker program combining a software synthesizer together with a traditional samples
+tracker which can be used to create electronic music (like psytrance, trance goa,
+hard acid, IDM, chip, techno, etc.) for small sized intros, demos or games.
 
 %prep
 %autosetup -p1 -n %{name}-%{commit0}
@@ -104,6 +107,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/*
 
 %changelog
+* Sun Jun 28 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-5
+- update to 1.0.0-5 - update description
+
 * Mon Dec 06 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-4
 - fix hangs due to tinyxml
 
