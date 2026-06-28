@@ -420,7 +420,11 @@
 | Quetzalcoatl                             | https://github.com/publicsamples/Quetzalcoatl                                                                                                               |
 | csound-vst3-opcodes                      | https://github.com/gogins-dev/csound-vst3-opcodes                                                                                                           |
 | Parkinsound                              | https://github.com/pilali/Parkinsound                                                                                                                       |
-| midi-ble-rt                              | https://github.com/mwprado/midi-ble-rt                                                                                                                      |
+| ANATOMY                                  | https://github.com/OTODESK4193/ANATOMY                                                                                                                      |
+| ImageStereoMultiband                     | https://github.com/piedracobalto/ImageStereoMultiband                                                                                                       |
+| sparkplayer                              | https://github.com/dividebysandwich/sparkplayer                                                                                                             |
+| sra                                      | https://github.com/imzzdenis/sra                                                                                                                            |
+| jmidiracc                                | https://codeberg.org/zynskeyfolf/jmidiracc                                                                                                                  |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
