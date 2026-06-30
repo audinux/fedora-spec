@@ -14,25 +14,24 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# To get the sources:
-# ./bambootracker_source.sh v0.6.5
+# To get the sources: ./bambootracker_source.sh <TAG>
+#                     ./bambootracker_source.sh v0.6.5
 
 Source0: BambooTracker.tar.gz
 Source1: bambootracker_source.sh
 
 BuildRequires: gcc gcc-c++
-BuildRequires: make
+BuildRequires: cmake
 BuildRequires: alsa-lib-devel
 BuildRequires: pulseaudio-libs-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: libsndfile-devel
 BuildRequires: rtaudio-devel
 BuildRequires: rtmidi-devel
-BuildRequires: qt5-qtmultimedia-devel
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-qtbase-gui
-BuildRequires: qt5-linguist
-BuildRequires: qtchooser
+BuildRequires: qt6-qtmultimedia-devel
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qttools-devel
+BuildRequires: qt6-qt5compat-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -41,23 +40,24 @@ Music tracker for the Yamaha YM2608 (OPNA) sound chip which was used in NEC PC-8
 %prep
 %autosetup -n %{name}
 
+sed -i -e "s/set(CMAKE_C_FLAGS \"-O3 -Wall\")/set(CMAKE_C_FLAGS \"-O3 -Wall \${CMAKE_C_FLAGS}\")/g" submodules/emu2149/src/CMakeLists.txt
+
 %build
 
-%qmake_qt5 "PREFIX=/usr" CONFIG+=release CONFIG+=use_alsa CONFIG+=use_pulse CONFIG+=use_jack Project.pro
-make qmake_all
-%make_build PREFIX=/usr CXXFLAGS="-fPIC -include utility -include cstdint $CXXFLAGS" CFLAGS="-fPIC -include string.h $CFLAGS"
+%set_build_flags
+export CXXFLAGS="-include cstdint $CXXFLAGS"
+
+%cmake -DSYSTEM_RTAUDIO=ON \
+       -DSYSTEM_RTMIDI=ON \
+       -DWARNINGS_ARE_ERRORS=OFF \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+%cmake_build
 
 %install
 
-%make_install INSTALL_ROOT=%{buildroot} PREFIX=/usr
-
-# cleanup
-
-rm -rf %{buildroot}/%{_datadir}/doc/BambooTracker
+%cmake_install
 
 desktop-file-install --vendor '' \
-        --add-category=Midi \
-        --add-category=Sequencer \
         --dir %{buildroot}%{_datadir}/applications \
         %{buildroot}%{_datadir}/applications/%{name}.desktop
 
@@ -68,7 +68,19 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %doc CHANGELOG.md IMPORTANT.md LICENSE README.md README_ja.md
 %license LICENSE
 %{_bindir}/*
-%{_datadir}/*
+%{_datadir}/applications/*
+%{_datadir}/BambooTracker/demos/*
+%{_datadir}/BambooTracker/lang/*
+%{_datadir}/BambooTracker/skins/*
+%{_datadir}/doc/BambooTracker/licenses/*
+%{_datadir}/doc/BambooTracker/specs/*
+%{_datadir}/icons/hicolor/16x16/*
+%{_datadir}/icons/hicolor/32x32/*
+%{_datadir}/icons/hicolor/64x64/*
+%{_datadir}/icons/hicolor/128x128/*
+%{_datadir}/icons/hicolor/256x256/*
+%{_datadir}/man/*
+%{_datadir}/mime/*
 
 %changelog
 * Sat Mar 08 2025 Yann Collette <ycollette.nospam@free.fr> - 0.6.5-1
