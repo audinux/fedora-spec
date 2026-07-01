@@ -17,7 +17,7 @@ def get_files(path, extension):
 
 if __name__ == '__main__':
     spec_dict = {}
-    spec_files = sorted(get_files('..', 'spec'))
+    spec_files = sorted(get_files('../..', 'spec'))
     tags = set()
     spec_type_list = [
         'clap',
