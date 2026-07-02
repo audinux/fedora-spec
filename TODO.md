@@ -445,7 +445,6 @@ Add dead package:
 - lv2-instance-access
 - lv2-ui
 - lv2core
-- rtirq
 - zynjacku
 - monobristol
 - new-session-manager
