@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: element
-Version: 1.1.0
+Version: 1.1.1
 Release: 1%{?dist}
 Summary: This is the community version of Element, a modular LV2/VST/VST3/LADSPA audio plugin host.
 URL: https://github.com/kushview/Element
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./element-source.sh <PROJECT> <TAG>
-#        ./element-source.sh Element 1.1.0
+#        ./element-source.sh Element 1.1.1
 
 Source0: Element.tar.gz
 Source1: element-source.sh
@@ -81,6 +81,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/element.desktop
 %{_datadir}/icons/hicolor/*
 
 %changelog
+* Fri Jul 03 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
+- update to 1.1.1-1
+
 * Tue Jun 30 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
 - update to 1.1.0-1
 
