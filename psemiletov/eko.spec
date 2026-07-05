@@ -5,7 +5,7 @@
 
 Summary: A sound editor
 Name: eko
-Version: 7.1.0
+Version: 8.0.0
 Release: 1%{?dist}
 License: GPL-3.0-or-later
 URL: https://github.com/psemiletov/eko
@@ -64,6 +64,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/%{name}/docs/*
 
 %changelog
+* Sun Jul 05 2026 Yann Collette <ycollette.nospam@free.fr> - 8.0.0-1
+- update to 8.0.0-1
+
 * Mon Mar 11 2024 Yann Collette <ycollette.nospam@free.fr> - 7.1.0-1
 - initial version of the spec
 
