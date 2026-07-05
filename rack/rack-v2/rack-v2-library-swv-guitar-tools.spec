@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 3ecd142afd29f028c414ac7ca01166712eff7547
-%global gittag0 2.0.3
+%global commit0 d6d9c6e2862386e5277af77e44bc6ad08ff8abdf
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-swv-guitar-tools
-Version: 2.0.3
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: swv-guitar-tools plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r swv-guitar-tools_plugin/dist/swv-guitar-tools/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile

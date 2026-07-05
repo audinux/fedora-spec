@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 08b01547202291f1ef13bae4c6fa0c03031f728a
-%global gittag0 2.1.1
+%global commit0 4371a43a909aa81ff0feb13f96e9f20b787c625b
+%global gittag0 2.2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-BCNmodular
-Version: 2.1.1
+Version: 2.2.0
 Release: 2%{?dist}
 Summary: BCNmodular plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r BCNmodular_plugin/dist/BCNmodular/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
 - initial specfile

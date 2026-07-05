@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 6779763c3485d221f1ea21c668d95d1faf1df6f4
-%global gittag0 2.0.22
+%global commit0 71e0bcbed9bf52498b42ffac86775e7043d2069a
+%global gittag0 2.0.30
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-LydD-Modules
-Version: 2.0.22
+Version: 2.0.30
 Release: 2%{?dist}
 Summary: LydD-Modules plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r LydD-Modules_plugin/dist/LydD-Modules/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.22-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.30-1
 - initial specfile

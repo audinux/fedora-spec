@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 859753fc15c221846f2e94d7478e8cd44241d883
-%global gittag0 2.1.7
+%global commit0 db0da92ece0c8c0f12136ce07a494d887be0428c
+%global gittag0 2.1.8
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-QuestionableDinner
-Version: 2.1.7
+Version: 2.1.8
 Release: 2%{?dist}
 Summary: QuestionableDinner plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r QuestionableDinner_plugin/dist/QuestionableDinner/* %{buildroot}%{_libexec
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.7-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.8-1
 - initial specfile

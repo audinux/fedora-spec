@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 5b885219b2f70cf342de75f30de6184e9b51dae2
-%global gittag0 2.1.1
+%global commit0 db01f822804f370fe2c801d610fd261a851c31b9
+%global gittag0 2.1.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name:    rack-v2-tnn1t1s-ghost
-Version: 2.1.1
+Version: 2.1.2
 Release: 2%{?dist}
 Summary: tnn1t1s-ghost plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r tnn1t1s-ghost_plugin/dist/tnn1t1s-ghost/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-1
 - initial specfile
