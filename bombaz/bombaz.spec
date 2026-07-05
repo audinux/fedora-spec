@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: bombaz
-Version: 1.0.0
+Version: 1.0.1
 Release: 2%{?dist}
 Summary: Simple bass synth VSTi based on window function synthesis
 License: GPL-3.0-or-later
@@ -14,10 +14,11 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/hollance/bombaz/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0: bombaz-0001-fix-flags.patch
+# Usage: ./bombaz-source.sh <TAG>
+#        ./bombaz-source.sh v1.0.1
 
-# Build with JUCE-8
+Source0: bombaz.tar.gz
+Source1: bombaz-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -61,8 +62,16 @@ Requires: license-%{name}
 %description -n vst3-%{name}
 VST3 version of %{name}
 
+%package -n lv2-%{name}
+Summary:  LV2 version of %{name}
+License:  GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n lv2-%{name}
+LV2 version of %{name}
+
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -n %{name}
 
 %build
 
@@ -71,14 +80,11 @@ VST3 version of %{name}
 
 %install
 
-install -m 755 -d %{buildroot}%{_bindir}/
-cp -ra %{__cmake_builddir}/Bombaz_artefacts/Standalone/*  %{buildroot}/%{_bindir}/
-
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 cp -ra %{__cmake_builddir}/Bombaz_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
 
-%files
-%{_bindir}/*
+install -m 755 -d %{buildroot}%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/Bombaz_artefacts/LV2/*  %{buildroot}/%{_libdir}/lv2/
 
 %files -n license-%{name}
 %doc README.md
@@ -87,7 +93,13 @@ cp -ra %{__cmake_builddir}/Bombaz_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
+%files -n lv2-%{name}
+%{_libdir}/lv2/*
+
 %changelog
+* Sun Jul 05 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-2
+- update to 1.0.1-2
+
 * Wed Sep 10 2025 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-2
 - update to 1.0.0-2 - remove unused dep
 
