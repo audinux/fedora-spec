@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: filtr
-Version: 1.2.0
+Version: 1.3.0
 Release: 2%{?dist}
 Summary: Envelope based filter modulator
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./ripplerx-source.sh <PROJECT> <TAG>
-#        ./ripplerx-source.sh filtr v1.2.0
+#        ./ripplerx-source.sh filtr v1.3.0
 
 Source0: filtr.tar.gz
 Source1: ripplerx-source.sh
@@ -90,6 +90,9 @@ cp -ra %{__cmake_builddir}/FILTR_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Jul 06 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-2
+- update to 1.3.0-2
+
 * Sun Jul 05 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-2
 - update to 1.2.0-2
 
