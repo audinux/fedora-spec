@@ -424,7 +424,9 @@
 | ImageStereoMultiband                     | https://github.com/piedracobalto/ImageStereoMultiband                                                                                                       |
 | sparkplayer                              | https://github.com/dividebysandwich/sparkplayer                                                                                                             |
 | sra                                      | https://github.com/imzzdenis/sra                                                                                                                            |
-| jmidiracc                                | https://codeberg.org/zynskeyfolf/jmidiracc                                                                                                                  |
+| LMTR                                     | https://codeberg.org/agrigolo/LMTR                                                                                                                          |
+| openmeters                               | https://github.com/httpsworldview/openmeters                                                                                                                |
+| unshuffle                                | https://github.com/calloga/unshuffle                                                                                                                        |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -452,7 +454,7 @@ Add dead package:
 
 Add missing zita packaes:
 - zita-audiotools-1.3.0.tar.bz2
-- zita-jacktools-1.7.1.tar.bz2
+- zita-jacktools-1.8.0.tar.bz2
 
 Specmatch requires some python modules:
 - audioop-lts: https://github.com/AbstractUmbra/audioop

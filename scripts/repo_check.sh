@@ -1168,7 +1168,8 @@ https://codeberg.org/yimrakhee/satordist.lv2
 https://codeberg.org/yimrakhee/rustydrumgizmo
 https://github.com/mwprado/midi-ble-rt
 https://github.com/brummer10/ToneTwistPlugs
-https://github.com/odoare/Mechanodd"
+https://github.com/odoare/Mechanodd
+https://codeberg.org/zynskeyfolf/jmidiracc"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
