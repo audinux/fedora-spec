@@ -424,9 +424,11 @@
 | ImageStereoMultiband                     | https://github.com/piedracobalto/ImageStereoMultiband                                                                                                       |
 | sparkplayer                              | https://github.com/dividebysandwich/sparkplayer                                                                                                             |
 | sra                                      | https://github.com/imzzdenis/sra                                                                                                                            |
-| LMTR                                     | https://codeberg.org/agrigolo/LMTR                                                                                                                          |
 | openmeters                               | https://github.com/httpsworldview/openmeters                                                                                                                |
 | unshuffle                                | https://github.com/calloga/unshuffle                                                                                                                        |
+| melonix                                  | https://github.com/mika314/melonix                                                                                                                          |
+| coddle                                   | https://github.com/coddle-cpp/coddle                                                                                                                        |
+| TUKAN_STUDIOS_PLUGINS                    | https://github.com/TukanStudios/TUKAN_STUDIOS_PLUGINS                                                                                                       |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
