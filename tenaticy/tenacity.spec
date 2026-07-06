@@ -23,7 +23,6 @@ Patch2:	tenacity-1.3.4-fix-missing-include.patch
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 BuildRequires: chrpath
-BuildRequires: desktop-file-utils
 BuildRequires: doxygen
 BuildRequires: git
 BuildRequires: python
@@ -67,6 +66,7 @@ BuildRequires: twolame-devel
 BuildRequires: vamp-plugin-sdk-devel
 BuildRequires: libvorbis-devel
 BuildRequires: zlib-ng-compat-devel
+BuildRequires: desktop-file-utils
 
 %description
 This is an easy-to-use multi-track audio editor and recorder. It is not merely
@@ -139,6 +139,10 @@ rm -f %{buildroot}%{_datadir}/%{name}/help/*
 # We take this with our macro
 rm -f %{buildroot}%{_datadir}/doc/%{name}/LICENSE.txt
 
+# Install manually libnyquist
+install -m 755 %{__cmake_builddir}/lib-src/libnyquist/libnyquist.so %{buildroot}/%{_libdir}/
+chrpath --delete %{buildroot}/%{_libdir}/libnyquist.so
+
 %find_lang %{name}
 
 %files -f %{name}.lang
@@ -161,6 +165,7 @@ rm -f %{buildroot}%{_datadir}/doc/%{name}/LICENSE.txt
 %files libs
 %{_libdir}/%{name}/lib-*.so
 %{_libdir}/%{name}/modules/mod-*.so
+%{_libdir}/libnyquist.so
 
 %changelog
 * Mon Jul 06 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.5-1
