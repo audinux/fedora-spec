@@ -6,13 +6,13 @@
 
 Summary: An easy-to-use multi-track audio editor and recorder
 Name: tenacity
-Version: 1.3.4
+Version: 1.3.5
 Release: 1%{?dist}
 License: GPLv2+
 Url: https://codeberg.org/tenacityteam/tenacity
 
 # Usage: ./tenacity-sources.sh <TAG>
-#        ./tenacity-source.sh v1.3.4
+#        ./tenacity-source.sh v1.3.5
 
 Source0: tenacity.tar.gz
 Source1: tenacity-source.sh
@@ -161,8 +161,10 @@ rm -f %{buildroot}%{_datadir}/doc/%{name}/LICENSE.txt
 %files libs
 %{_libdir}/%{name}/lib-*.so
 %{_libdir}/%{name}/modules/mod-*.so
-%{_libdir}/libnyquist.so
 
 %changelog
+* Mon Jul 06 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.5-1
+- update to 1.3.5-1
+
 * Tue Nov 04 2025 Yann Collette <ycollette.nospam@free.fr> - 1.3.4-1
 - initial spec from openmandriva
