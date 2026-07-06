@@ -16,18 +16,8 @@
 %global _smp_build_ncpus 1
 %global debug_package %{nil}
 
-# vcpkg is installing
-#    gl3w[core]:x64-linux -> 2018-05-31#4
-#    catch2[core]:x64-linux -> 2.13.9
-#    concurrentqueue[core]:x64-linux -> 1.0.3
-#  * egl-registry[core]:x64-linux -> 2021-11-23
-#    kissfft[core]:x64-linux -> 2021-11-14
-#  * opengl-registry[core]:x64-linux -> 2021-11-17
-#    platform-folders[core]:x64-linux -> 4.1.0
-# Required: libx11-dev libxft-dev libxext-dev
-
 Name: sonic-pi
-Version: 4.2.0
+Version: 4.6.0
 Release: 11%{?dist}
 Summary: A musical programming environment
 License: MIT
@@ -94,15 +84,6 @@ sonic ideas into reality.
 %prep
 %autosetup -n %{name}-%{version}
 
-echo "target_link_libraries(\${APP_NAME} PRIVATE GLEW)" >> app/gui/imgui/CMakeLists.txt
-
-sed -i -e "s|#!/usr/bin/env python|#!/usr/bin/env python3|g" app/server/ruby/vendor/rugged-1.3.0/vendor/libgit2/script/release.py
-sed -i -e "s|#!/usr/bin/env python|#!/usr/bin/env python3|g" app/server/ruby/vendor/rugged-1.3.0/vendor/libgit2/tests/generate.py
-
-sed -i -e "s/return QCoreApplication::applicationDirPath() + \"\/..\/..\/..\/..\";/return QString(\"\/usr\/share\/sonic-pi\");/g" app/gui/qt/mainwindow.cpp
-
-sed -i -e "s/env python/env python3/g" app/server/ruby/vendor/ffi-1.11.3/ext/ffi_c/libffi/generate-darwin-source-and-headers.py
-
 # remove make clean
 sed -i -e "/make clean/d" app/server/ruby/bin/compile-extensions.rb
 sed -i -e "s/erl -make//g" app/linux-prebuild.sh
@@ -137,15 +118,15 @@ cd app
 
 %install
 mkdir -p %{buildroot}%{_bindir}/
-mkdir -p %{buildroot}%{_datadir}/%{name}/app/gui/qt/theme/
+#mkdir -p %{buildroot}%{_datadir}/%{name}/app/gui/qt/theme/
 mkdir -p %{buildroot}%{_datadir}/%{name}/etc/
 mkdir -p %{buildroot}%{_datadir}/applications/
-cp -ra app/gui/qt/theme/*    %{buildroot}%{_datadir}/%{name}/app/gui/qt/theme/
-cp app/build/gui/qt/sonic-pi %{buildroot}%{_bindir}/%{name}
-cp -ra etc/*                 %{buildroot}%{_datadir}/%{name}/etc/
+#cp -ra app/gui/qt/theme/*    %{buildroot}%{_datadir}/%{name}/app/gui/qt/theme/
+cp app/build/gui/sonic-pi %{buildroot}%{_bindir}/%{name}
+cp -ra etc/*              %{buildroot}%{_datadir}/%{name}/etc/
 
 mkdir -p %{buildroot}%{_datadir}/pixmaps/
-cp app/gui/qt/images/icon-smaller.png %{buildroot}%{_datadir}/pixmaps/
+cp app/gui/images/icon-smaller.png %{buildroot}%{_datadir}/pixmaps/
 
 mkdir -p %{buildroot}%{_datadir}/%{name}/app/server/native/osmid/
 ln -s /usr/bin/m2o %{buildroot}%{_datadir}/%{name}/app/server/native/osmid/
@@ -171,6 +152,9 @@ cp -ra  app/server/ruby/bin/* %{buildroot}%{_datadir}/%{name}/app/server/ruby/bi
 %if 0%{?fedora} >= 36
 %define rb_version "3.1.0"
 %endif
+%if 0%{?fedora} >= 41
+%define rb_version "4.0.0"
+%endif
 
 mkdir -p %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/
 
@@ -182,18 +166,6 @@ cp -ra app/server/ruby/vendor/* %{buildroot}%{_datadir}/%{name}/app/server/ruby/
 
 mkdir -p %{buildroot}%{_datadir}/%{name}/app/server/ruby/lib/
 cp -ra app/server/ruby/lib/* %{buildroot}%{_datadir}/%{name}/app/server/ruby/lib/
-
-rm %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/atomic_reference.so
-ln -s %{_datadir}/%{name}/app/server/ruby/vendor/atomic/ext/atomic_reference.so \
-   %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/atomic_reference.so
-
-rm %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/ffi_c.so
-ln -s %{_datadir}/%{name}/app/server/ruby/vendor/ffi-1.11.3/ext/ffi_c/ffi_c.so \
-   %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/ffi_c.so
-
-rm %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/ruby_prof.so
-ln -s %{_datadir}/%{name}/app/server/ruby/vendor/ruby-prof-0.15.8/ext/ruby_prof/ruby_prof.so \
-   %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/ruby_prof.so
 
 rm %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/rugged.so
 ln -s %{_datadir}/%{name}/app/server/ruby/vendor/rugged-0.28.4.1/ext/rugged/rugged.so \
@@ -216,7 +188,6 @@ X-AppInstall-Package=%{name}
 EOF
 
 # Cleanup
-
 find %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor -name "*.o" \
                                                              -o -name "*.c" -o -name "*.h" \
                                                              -o -name "*.txt" -o -name "*.a" \
@@ -224,11 +195,7 @@ find %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor -name "*.o" \
 							     -o -name "\.?*" -o -name "*.md" -exec rm -rf {} \;
 
 # Remove source for compiled rubygem
-rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/rugged-0.28.4.1/
-rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/ffi-1.11.3/
-rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/atomic/
-rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/ruby-prof-0.15.8/
-rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/interception/
+rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/rugged-1.9.0/
 
 # Install desktop file
 desktop-file-install --vendor '' \
@@ -249,6 +216,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}
 
 %changelog
+* Sun Jul 05 2026 Yann Collette <ycollette.nospam@free.fr> 4.6.0-11
+- update to 4.6.0-11
+
 * Thu Sep 15 2022 Yann Collette <ycollette.nospam@free.fr> 4.2.0-11
 - update to 4.2.0-11
 
