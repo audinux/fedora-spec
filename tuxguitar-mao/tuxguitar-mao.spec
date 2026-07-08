@@ -33,7 +33,7 @@
 
 Name: tuxguitar
 Version: 2.0.1
-Release: 17%{?dist}
+Release: 18%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
 URL: https://github.com/helge17/tuxguitar
@@ -68,7 +68,6 @@ Source4: swt-%{swt_version}-gtk-linux-x86_64.zip
 # Fedora specific default soundfont path
 Patch0: tuxguitar-default-soundfont.patch
 
-Requires: eclipse-swt
 Requires: hicolor-icon-theme
 Requires: soundfont2-default
 Requires: wqy-zenhei-fonts
@@ -92,13 +91,9 @@ BuildRequires: lv2-devel
 BuildRequires: suil-devel
 BuildRequires: lilv-devel
 BuildRequires: qt5-qtbase-devel
-BuildRequires: eclipse-swt
 BuildRequires: mojo-executor-maven-plugin
 BuildRequires: libappstream-glib
 BuildRequires: desktop-file-utils
-
-# eclipse-swt upstream stopped supporting non-64bit arches at version 4.11
-ExcludeArch: s390 %{arm} %{ix86}
 
 %description
 TuxGuitar is a guitar tablature editor with player support through midi. It can
@@ -127,7 +122,6 @@ sed -i "s/static final String RELEASE_NAME =.*/static final String RELEASE_NAME 
 #cp VST_SDK/VST2_SDK/pluginterfaces/vst2.x/* desktop/build-scripts/native-modules/tuxguitar-synth-vst-linux-%{bit}/include/
 
 # Replace swt version
-sed -i -e "s/4.21/%{swt_version}/g" desktop/pom.xml
 find . -name "*.xml" -exec sed -i -e "s/9.99-//g" {} \;
 
 %ifarch aarch64
@@ -152,6 +146,15 @@ unzip %{SOURCE3}
 %else
 unzip %{SOURCE4}
 %endif
+
+# Remove upstream signatures before Fedora brp scripts normalize the jar
+# During rpmbuild, /usr/bin/add-det is modifying the version in the jar, so, corrupting signature of swt.jar
+zip -d swt.jar \
+    'META-INF/*.SF' \
+    'META-INF/*.RSA' \
+    'META-INF/*.DSA' \
+    'META-INF/*.EC' || :
+
 mvn install:install-file -Dfile=swt.jar -DgroupId=org.eclipse.swt -DartifactId=org.eclipse.swt.gtk.linux -Dpackaging=jar -Dversion=%{swt_version}
 
 cd ..
@@ -215,8 +218,10 @@ cp desktop/build-scripts/%{name}-linux-swt/target/%{name}-%{version}-linux-swt/l
 cp desktop/build-scripts/%{name}-linux-swt/target/%{name}-%{version}-linux-swt/lib/*.so %{buildroot}%{_jnidir}/%{name}/
 cp desktop/build-scripts/%{name}-linux-swt/target/%{name}-%{version}-linux-swt/share/plugins/* %{buildroot}%{_javadir}/%{name}/
 
-# Other files
+# Install custom swt
+cp desktop/build-scripts/tuxguitar-linux-swt/swt-%{swt_version}-gtk-linux-%{bit}/swt.jar %{buildroot}%{_javadir}/%{name}/
 
+# Other files
 cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-%{version}-linux-swt/share/help %{buildroot}/%{_datadir}/%{name}/
 cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-%{version}-linux-swt/share/lang %{buildroot}/%{_datadir}/%{name}/
 cp -ra desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-%{version}-linux-swt/share/scales %{buildroot}/%{_datadir}/%{name}/
@@ -262,6 +267,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Wed Jul 08 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-18
+- update to 2.0.1-18 - fix swt install
+
 * Thu Jun 11 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-17
 - update to 2.0.1-17 - fix tuxguitar.sh script
 
