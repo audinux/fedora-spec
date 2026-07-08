@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: LMTR
-Version: 0.4.3
+Version: 0.4.5
 Release: 1%{?dist}
 Summary: A 16-tracks multitrack recorder for Linux, based on Jack
 URL: https://codeberg.org/agrigolo/LMTR
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./LMTR-source.sh <TAG>
-#        ./LMTR-source.sh v0.4.3
+#        ./LMTR-source.sh v0.4.5
 
 Source0: LMTR.tar.gz
 Source1: LMTR-source.sh
@@ -75,5 +75,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/512x512/apps/lmtr.png
 
 %changelog
+* Tue Jul 07 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.5-1
+- update to 0.4.5-1
+
 * Mon Jul 06 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.3-1
 - Initial spec file
