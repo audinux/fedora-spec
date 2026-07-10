@@ -2,7 +2,7 @@
 # Tag: Editor, Live
 # Type: Standalone, Language
 # Category: Audio, Programming
-# GUIToolkit: Qt5
+# GUIToolkit: Qt6
 
 # Have a look at:
 # https://github.com/archlinux/svntogit-community/tree/packages/sonic-pi/trunk
@@ -18,7 +18,7 @@
 
 Name: sonic-pi
 Version: 4.6.0
-Release: 11%{?dist}
+Release: 13%{?dist}
 Summary: A musical programming environment
 License: MIT
 URL: https://sonic-pi.net/
@@ -27,7 +27,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/samaaron/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
+Source0: https://github.com/sonic-pi-net/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -55,8 +55,6 @@ BuildRequires: rubygem-racc
 BuildRequires: rubygem-rexml
 %endif
 BuildRequires: zlib-devel
-BuildRequires: crossguid2-devel
-BuildRequires: gsl-lite-devel
 BuildRequires: libuuid-devel
 BuildRequires: reproc-devel
 BuildRequires: SDL2-devel
@@ -153,7 +151,7 @@ cp -ra  app/server/ruby/bin/* %{buildroot}%{_datadir}/%{name}/app/server/ruby/bi
 %define rb_version "3.1.0"
 %endif
 %if 0%{?fedora} >= 41
-%define rb_version "4.0.0"
+%define rb_version "3.3.0"
 %endif
 
 mkdir -p %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/
@@ -168,7 +166,7 @@ mkdir -p %{buildroot}%{_datadir}/%{name}/app/server/ruby/lib/
 cp -ra app/server/ruby/lib/* %{buildroot}%{_datadir}/%{name}/app/server/ruby/lib/
 
 rm %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/rugged.so
-ln -s %{_datadir}/%{name}/app/server/ruby/vendor/rugged-0.28.4.1/ext/rugged/rugged.so \
+ln -s %{_datadir}/%{name}/app/server/ruby/vendor/rugged-1.9.0/ext/rugged/rugged.so \
    %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/rugged.so
 
 find %{buildroot}%{_datadir}/%{name}/etc/wavetables/ -name "AdventureKidWaveforms.txt" -exec chmod a-x {} \;
@@ -187,15 +185,22 @@ Categories=Application;AudioVideo;Audio;Development;IDE;Music;Education;
 X-AppInstall-Package=%{name}
 EOF
 
-# Cleanup
-find %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor -name "*.o" \
-                                                             -o -name "*.c" -o -name "*.h" \
-                                                             -o -name "*.txt" -o -name "*.a" \
-							     -o -name "*.html" -o -name "*.text" \
-							     -o -name "\.?*" -o -name "*.md" -exec rm -rf {} \;
+# Remove build artifacts from the vendor gem tree.
+# Parentheses are mandatory: without them find's operator precedence makes
+# -delete (or -exec) bind only to the last -name condition, leaving all other
+# patterns matched but not acted on.
+find %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor -type f \
+    \( -name "*.o"    -o -name "*.c"    -o -name "*.h"    \
+    -o -name "*.a"    -o -name "*.txt"  -o -name "*.md"   \
+    -o -name "*.html" -o -name "*.text" -o -name "*.log"  \
+    -o -name "extconf.rb" -o -name "Makefile" -o -name "*.mk" \
+    -o -name "*.gemspec"  -o -name "Rakefile"              \) \
+    -delete 2>/dev/null || true
 
-# Remove source for compiled rubygem
-rm -rf %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor/rugged-1.9.0/
+# Remove test / spec / benchmark directories from vendor gems
+find %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor -depth -type d \
+    \( -name "test" -o -name "spec" -o -name "tests" -o -name "benchmark" \) \
+    -exec rm -rf {} + 2>/dev/null || true
 
 # Install desktop file
 desktop-file-install --vendor '' \
@@ -216,6 +221,22 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}
 
 %changelog
+* Thu Jul 10 2026 Yann Collette <ycollette.nospam@free.fr> 4.6.0-13
+- fix vendor cleanup find command: missing parentheses around -o conditions
+  caused -delete/-exec to bind only to the last pattern (*.md), leaving all
+  other build artifacts (*.o *.c *.h *.a Makefile extconf.rb etc.) unremoved
+- add missing patterns to cleanup: extconf.rb Makefile *.mk *.gemspec Rakefile *.log
+- add separate find pass to remove test/ spec/ benchmark/ dirs from vendor gems
+- switch to -type f -delete (faster and safer than -exec rm -rf {})
+
+* Thu Jul 10 2026 Yann Collette <ycollette.nospam@free.fr> 4.6.0-12
+- fix rugged symlink: 0.28.4.1 → 1.9.0 (version shipped in 4.6.0 vendor tree)
+- remove erroneous rm -rf rugged-1.9.0/ that broke the symlink target
+- fix Source0 URL: samaaron/sonic-pi → sonic-pi-net/sonic-pi (upstream moved)
+- drop BuildRequires crossguid2-devel, gsl-lite-devel (not used by 4.6.0 cmake)
+- fix rb_version for Fedora 41+: 4.0.0 → 3.3.0 (Ruby 4.0 does not exist)
+- fix GUIToolkit comment: Qt5 → Qt6
+
 * Sun Jul 05 2026 Yann Collette <ycollette.nospam@free.fr> 4.6.0-11
 - update to 4.6.0-11
 
