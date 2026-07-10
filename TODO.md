@@ -427,7 +427,6 @@
 | openmeters                               | https://github.com/httpsworldview/openmeters                                                                                                                |
 | unshuffle                                | https://github.com/calloga/unshuffle                                                                                                                        |
 | melonix                                  | https://github.com/mika314/melonix                                                                                                                          |
-| coddle                                   | https://github.com/coddle-cpp/coddle                                                                                                                        |
 | TUKAN_STUDIOS_PLUGINS                    | https://github.com/TukanStudios/TUKAN_STUDIOS_PLUGINS                                                                                                       |
 
 Check the following URL:
