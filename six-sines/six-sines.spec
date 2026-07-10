@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: six-sines
-Version: 1.1.0
+Version: 1.2.0
 Release: 3%{?dist}
 Summary: Six Sines is a small synthesizer which explores audio rate inter-modulation of signals
 License: MIT
@@ -15,11 +15,10 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./six-sines-source.sh <TAG>
-#        ./six-sines-source.sh v1.1.0
+#        ./six-sines-source.sh v1.2.0
 
 Source0: six-sines.tar.gz
-Source1: version_information.cpp 
-Source2: six-sines-source.sh
+Source1: six-sines-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -103,12 +102,10 @@ export CXXFLAGS="-include ghc/filesystem.hpp -Wno-error=deprecated-declarations 
 export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 %cmake -DBUILD_SHARED_LIBS:BOOL=OFF \
+       -DGIT_COMMIT_HASH="00000000" \
        -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
-mkdir -p %{__cmake_builddir}/geninclude
-cp %{SOURCE1} %{__cmake_builddir}/geninclude
-
-%cmake_build --target six-sines_all
+%cmake_build
 
 %install
 
@@ -135,6 +132,9 @@ cp -ra %{__cmake_builddir}/six-sines_assets/Six_Sines %{buildroot}/%{_bindir}/
 %{_libdir}/clap/*
 
 %changelog
+* Fri Jul 10 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-3
+- update to 1.2.0-3
+
 * Wed Aug 13 2025 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-3
 - update to 1.1.0-3 - remove an obsolete dependency
 
