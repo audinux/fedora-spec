@@ -1,3 +1,4 @@
+
 # Status: active
 # Tag: Drum, Sampler
 # Type: Plugin, CLAP, VST3
@@ -6,7 +7,7 @@
 %global debug_package %{nil}
 
 Name: rustydrumgizmo
-Version: 0.3.2
+Version: 0.3.3
 Release: 1%{?dist}
 Summary: Rusty DrumGizmo is a modern Rust port of the acclaimed DrumGizmo acoustic drum sampler
 License: GPL-3.0-or-later
@@ -103,6 +104,9 @@ cp -ra target/release/librustydrumgizmo.so %{buildroot}/%{_libdir}/clap/rusty_dr
 %{_libdir}/clap/*
 
 %changelog
+* Wed Jul 08 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.3-1
+- update to 0.3.3-1
+
 * Tue Jul 07 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.2-1
 - update to 0.3.2-1
 
