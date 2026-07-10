@@ -14,7 +14,7 @@ git submodule update --depth=1 --init --recursive --progress
 
 git clone https://github.com/juce-framework/JUCE/ juce
 cd juce
-git checkout 7.0.12
+git checkout 8.0.12
 cd ..
 
 rm -rf 3rdParty/llvm/release/android
