@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: cstop
-Version: 2.0.0
+Version: 2.0.1
 Release: 1%{?dist}
 Summary: Free tape stop audio effect plugin
 License: MIT
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./cstop-source.sh <tag>
-#        ./cstop-source.sh v2.0.0
+#        ./cstop-source.sh 2.0.1
 
 Source0: cStop.tar.gz
 Source1: cstop.png
@@ -136,7 +136,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/cstop.desktop
 
 %files -n license-%{name}
 %doc README.md VERSION
-%license LICENSE
+%license LICENSE.md
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
@@ -145,6 +145,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/cstop.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Thu Jul 09 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+- update to 2.0.1-1
+
 * Fri Jan 30 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - update to 2.0.0-1
 
