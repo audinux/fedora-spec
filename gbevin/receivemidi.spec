@@ -4,7 +4,7 @@
 # Category: MIDI, Tool
 
 Name: receivemidi
-Version: 1.4.4
+Version: 1.5.0
 Release: 3%{?dist}
 Summary: A command line tool to receive MIDI event
 License: GPL-3.0-only
@@ -56,6 +56,9 @@ install -m 755 -p build/receivemidi %{buildroot}/%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Fri Jul 10 2026 Yann Collette <ycollette.nospam@free.fr> - 1.5.0-3
+- update to 1.5.0-3
+
 * Thu Oct 17 2024 Yann Collette <ycollette.nospam@free.fr> - 1.4.4-3
 - update to 1.4.4-3
 
