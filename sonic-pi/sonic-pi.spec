@@ -73,6 +73,7 @@ Requires(pre): pulseaudio-module-jack
 Requires(pre): supercollider-sc3-plugins
 Requires(pre): supercollider
 Requires(pre): ruby
+Requires(pre): rubygem-racc
 Requires(pre): aubio
 Requires(pre): osmid
 Requires(pre): libatomic
