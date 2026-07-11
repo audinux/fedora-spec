@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Tool
 
-%global commit0 2b972221e88a03d10b8f932a09a7a1b1c1b7caec
+%global commit0 4c5adc2c1a9910251667152166139a0c37b953e6
 
 Name: pluginval
 Version: 1.0.4
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Cross platform plugin testing and validation tool
 License: GPL-3.0-or-later
 URL: https://github.com/Tracktion/pluginval
@@ -94,6 +94,9 @@ cp -ra docs/*  %{buildroot}/%{_datadir}/%{name}/doc/
 %{_datadir}/%{name}/doc/*
 
 %changelog
+* Sat Jul 11 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.4-4
+- update to 1.0.4-4 - use develop branch - 4c5adc2c1a9910251667152166139a0c37b953e6
+
 * Wed Apr 08 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.4-3
 - update to 1.0.4-3 - use develop branch - 2b972221e88a03d10b8f932a09a7a1b1c1b7caec
 
