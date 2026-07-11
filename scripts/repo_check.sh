@@ -9,6 +9,8 @@
 #    exit
 #fi
 
+TIMEOUT=30
+
 REPO_LIST="https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git
 git://gabe.is-a-geek.org/git/inconcert
 https://git.ardour.org/ardour/ardour
@@ -1172,7 +1174,8 @@ https://github.com/odoare/Mechanodd
 https://codeberg.org/zynskeyfolf/jmidiracc
 https://codeberg.org/yimrakhee/satordist2
 https://codeberg.org/agrigolo/LMTR
-https://github.com/coddle-cpp/coddle"
+https://github.com/coddle-cpp/coddle
+https://github.com/eclab/seq"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
@@ -1196,7 +1199,7 @@ for File in $REPO_LIST
 do
     echo "Processing $File"
     sleep 0.1
-    ALL_TAGS="`timeout --signal=TERM 10s git ls-remote --tags $File 2>&1| grep -v redirect | sort | uniq`"
+    ALL_TAGS="`timeout --signal=TERM ${TIMEOUT}s git ls-remote --tags $File 2>&1| grep -v redirect | sort | uniq`"
     if [ ! -z "$ALL_TAGS" ];
     then
 	for Tag in $ALL_TAGS
