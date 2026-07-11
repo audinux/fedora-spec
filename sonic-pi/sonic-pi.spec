@@ -31,6 +31,9 @@ Source0: https://github.com/sonic-pi-net/%{name}/archive/v%{version}/%{name}-%{v
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
+BuildRequires: vcpkg
+BuildRequires: elixir
+BuildRequires: patchelf
 BuildRequires: qt6-linguist
 BuildRequires: qt6-qtbase-devel
 BuildRequires: qt6-qttools-devel
@@ -61,16 +64,17 @@ BuildRequires: SDL2-devel
 BuildRequires: libsndfile-devel
 BuildRequires: libogg-devel
 BuildRequires: libvorbis-devel
-BuildRequires: vcpkg
-BuildRequires: elixir
+BuildRequires: libpng-devel
+BuildRequires: libatomic
+BuildRequires: desktop-file-utils
 
 Requires(pre): pulseaudio-module-jack
-Requires(pre): jack-audio-connection-kit-example-clients
 Requires(pre): supercollider-sc3-plugins
 Requires(pre): supercollider
 Requires(pre): ruby
 Requires(pre): aubio
 Requires(pre): osmid
+Requires(pre): libatomic
 
 %description
 Sonic Pi is an open source programming environment designed to explore and
@@ -81,6 +85,19 @@ sonic ideas into reality.
 
 %prep
 %autosetup -n %{name}-%{version}
+
+# From logs:
+# /usr/bin/ruby-mri: No such file or directory -- /app/server/ruby/bin/clear-logs.rb (LoadError)
+# /usr/bin/ruby-mri: No such file or directory -- /app/server/ruby/bin/daemon.rb (LoadError)
+# [GUI] - could not open file /usr/bin/../../../app/gui/theme/light/doc-styles.css
+# [GUI] - could not open file /usr/bin/../../../app/gui/theme/app.qss
+
+# app/api/src/sonicpi_api.cpp
+#    m_paths[SonicPiPath::FetchUrlPath]        = m_paths[SonicPiPath::RootPath] / "app/server/ruby/bin/fetch-url.rb";
+#    m_paths[SonicPiPath::ClearLogsPath]        = m_paths[SonicPiPath::RootPath] / "app/server/ruby/bin/clear-logs.rb";
+
+# app/linux-build-gui.sh:cmake --build .
+# app/linux-config.sh:cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE="$config" ..
 
 # remove make clean
 sed -i -e "/make clean/d" app/server/ruby/bin/compile-extensions.rb
@@ -105,6 +122,9 @@ rm -rf app/server/ruby/vendor/metaclass-0.0.4
 rm -rf app/server/ruby/vendor/mocha-1.1.0
 rm -rf app/server/ruby/vendor/rake-compiler-1.1.0
 rm -rf app/server/ruby/vendor/rouge
+
+# install some gems
+gem install prime -v 0.1.2
 
 %build
 
@@ -153,6 +173,12 @@ cp -ra  app/server/ruby/bin/* %{buildroot}%{_datadir}/%{name}/app/server/ruby/bi
 %if 0%{?fedora} >= 41
 %define rb_version "3.3.0"
 %endif
+%if 0%{?fedora} >= 42
+%define rb_version "3.4.0"
+%endif
+%if 0%{?fedora} >= 44
+%define rb_version "4.0.0"
+%endif
 
 mkdir -p %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/
 
@@ -165,23 +191,22 @@ cp -ra app/server/ruby/vendor/* %{buildroot}%{_datadir}/%{name}/app/server/ruby/
 mkdir -p %{buildroot}%{_datadir}/%{name}/app/server/ruby/lib/
 cp -ra app/server/ruby/lib/* %{buildroot}%{_datadir}/%{name}/app/server/ruby/lib/
 
-rm %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/rugged.so
+rm %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/rugged/rugged.so
 ln -s %{_datadir}/%{name}/app/server/ruby/vendor/rugged-1.9.0/ext/rugged/rugged.so \
-   %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/rugged.so
+   %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/rugged/rugged.so
 
 find %{buildroot}%{_datadir}/%{name}/etc/wavetables/ -name "AdventureKidWaveforms.txt" -exec chmod a-x {} \;
 
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=%name
 Exec=%{name}
-Icon=/usr/share/pixmaps/icon-smaller.png
+Icon=icon-smaller
 Comment=Music live coding for everyone
 Comment[es]=Programación de música en vivo al alcance de cualquiera
 Terminal=false
 Type=Application
-Categories=Application;AudioVideo;Audio;Development;IDE;Music;Education;
+Categories=AudioVideo;Audio;
 X-AppInstall-Package=%{name}
 EOF
 
@@ -202,6 +227,16 @@ find %{buildroot}/%{_datadir}/%{name}/app/server/ruby/vendor -depth -type d \
     \( -name "test" -o -name "spec" -o -name "tests" -o -name "benchmark" \) \
     -exec rm -rf {} + 2>/dev/null || true
 
+# Install KissFFT
+install -m 755 -d %{buildroot}/%{_libdir}/sonic-pi/
+cp app/build/kissfft-*/libkissfft-float.so.* %{buildroot}/%{_libdir}/sonic-pi/
+
+# Fix rpath problem
+patchelf --set-rpath '$ORIGIN/../%{_lib}/sonic-pi/' %{buildroot}/%{_bindir}/sonic-pi
+
+# Fix some python interp
+sed -i -e "s|env python|env python3|g" %{buildroot}/%{_datadir}/sonic-pi/app/server/ruby/vendor/rugged-1.9.0/vendor/libgit2/script/release.py
+
 # Install desktop file
 desktop-file-install --vendor '' \
         --add-category=X-Sound \
@@ -218,10 +253,13 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %doc CHANGELOG.md COMMUNITY.md CONTRIBUTING.md CONTRIBUTORS.md FAQ.md README.md SYNTH_DESIGN.md TYPES-OF-CONTRIBUTIONS.md
 %license LICENSE.md
 %{_bindir}/sonic-pi
-%{_datadir}
+%{_datadir}/applications/*
+%{_datadir}/pixmaps/*
+%{_datadir}/sonic-pi/*
+%{_libdir}/sonic-pi/*.so*
 
 %changelog
-* Thu Jul 10 2026 Yann Collette <ycollette.nospam@free.fr> 4.6.0-13
+* Fri Jul 10 2026 Yann Collette <ycollette.nospam@free.fr> 4.6.0-13
 - fix vendor cleanup find command: missing parentheses around -o conditions
   caused -delete/-exec to bind only to the last pattern (*.md), leaving all
   other build artifacts (*.o *.c *.h *.a Makefile extconf.rb etc.) unremoved
@@ -229,7 +267,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 - add separate find pass to remove test/ spec/ benchmark/ dirs from vendor gems
 - switch to -type f -delete (faster and safer than -exec rm -rf {})
 
-* Thu Jul 10 2026 Yann Collette <ycollette.nospam@free.fr> 4.6.0-12
+* Fri Jul 10 2026 Yann Collette <ycollette.nospam@free.fr> 4.6.0-12
 - fix rugged symlink: 0.28.4.1 → 1.9.0 (version shipped in 4.6.0 vendor tree)
 - remove erroneous rm -rf rugged-1.9.0/ that broke the symlink target
 - fix Source0 URL: samaaron/sonic-pi → sonic-pi-net/sonic-pi (upstream moved)
