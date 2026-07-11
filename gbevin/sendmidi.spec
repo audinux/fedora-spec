@@ -4,7 +4,7 @@
 # Category: MIDI, Tool
 
 Name: sendmidi
-Version: 1.3.1
+Version: 1.4.0
 Release: 3%{?dist}
 Summary: A command line tool to send MIDI event
 License: GPL-3.0-only
@@ -16,8 +16,7 @@ Distribution: Audinux
 
 Source0: %{url}/archive/%{version}.tar.gz#/SendMIDI-%{version}.tar.gz
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
+BuildRequires: gcc gcc-c++
 BuildRequires: make
 BuildRequires: libX11-devel
 BuildRequires: xcb-util-cursor-devel
@@ -57,6 +56,9 @@ install -m 755 -p build/sendmidi %{buildroot}/%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Fri Jul 10 2026 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-3
+- update to 1.4.0-3
+
 * Fri Apr 12 2024 Yann Collette <ycollette.nospam@free.fr> - 1.3.1-3
 - update to 1.3.1-3
 
