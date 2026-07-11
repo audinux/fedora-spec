@@ -4,7 +4,7 @@
 # Category: MIDI, Tool
 
 Name: midi-ble-rt
-Version: 0.9.4
+Version: 0.9.5
 Release: 2%{?dist}
 Summary: BLE-MIDI/GATT to ALSA Sequencer bridge
 License: MIT
@@ -71,6 +71,9 @@ for bin in \
 %{_datadir}/man/man1/*
 
 %changelog
+* Sat Jul 11 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.5-2
+- update to 0.9.5-2
+
 * Sun Jul 05 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.4-2
 - update to 0.9.4-2
 
