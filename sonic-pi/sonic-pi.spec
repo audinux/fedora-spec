@@ -28,6 +28,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/sonic-pi-net/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
+Patch0: sonic-pi-0001-fix-system-paths.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -84,7 +85,7 @@ creativity in the learning process and gives users the control to turn their
 sonic ideas into reality.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{version}
 
 # From logs:
 # /usr/bin/ruby-mri: No such file or directory -- /app/server/ruby/bin/clear-logs.rb (LoadError)
@@ -135,11 +136,12 @@ cd app
 ./linux-build-all.sh
 
 %install
+
 mkdir -p %{buildroot}%{_bindir}/
-#mkdir -p %{buildroot}%{_datadir}/%{name}/app/gui/qt/theme/
+mkdir -p %{buildroot}%{_datadir}/%{name}/app/gui/theme/
 mkdir -p %{buildroot}%{_datadir}/%{name}/etc/
 mkdir -p %{buildroot}%{_datadir}/applications/
-#cp -ra app/gui/qt/theme/*    %{buildroot}%{_datadir}/%{name}/app/gui/qt/theme/
+cp -ra app/gui/theme/*    %{buildroot}%{_datadir}/%{name}/app/gui/theme/
 cp app/build/gui/sonic-pi %{buildroot}%{_bindir}/%{name}
 cp -ra etc/*              %{buildroot}%{_datadir}/%{name}/etc/
 
@@ -190,6 +192,9 @@ cp -ra app/server/ruby/vendor/* %{buildroot}%{_datadir}/%{name}/app/server/ruby/
 
 mkdir -p %{buildroot}%{_datadir}/%{name}/app/server/ruby/lib/
 cp -ra app/server/ruby/lib/* %{buildroot}%{_datadir}/%{name}/app/server/ruby/lib/
+
+mkdir -p %{buildroot}%{_datadir}/%{name}/app/server/beam/
+cp -ra app/server/beam/tau %{buildroot}%{_datadir}/%{name}/app/server/beam/
 
 rm %{buildroot}%{_datadir}/%{name}/app/server/ruby/rb-native/%{rb_version}/rugged/rugged.so
 ln -s %{_datadir}/%{name}/app/server/ruby/vendor/rugged-1.9.0/ext/rugged/rugged.so \
@@ -255,6 +260,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_bindir}/sonic-pi
 %{_datadir}/applications/*
 %{_datadir}/pixmaps/*
+%dir %{_datadir}/sonic-pi
 %{_datadir}/sonic-pi/*
 %{_libdir}/sonic-pi/*.so*
 

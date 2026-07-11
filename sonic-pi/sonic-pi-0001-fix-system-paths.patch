@@ -1,0 +1,40 @@
+From 6c00b65270ebfd005c9acd50d433add6a84ba15f Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Sat, 11 Jul 2026 12:49:39 +0200
+Subject: [PATCH] fix system paths
+
+---
+ app/api/src/sonicpi_api.cpp | 2 +-
+ app/gui/mainwindow.cpp      | 3 +--
+ 2 files changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/app/api/src/sonicpi_api.cpp b/app/api/src/sonicpi_api.cpp
+index 4c1f1428..4d8b6cf6 100644
+--- a/app/api/src/sonicpi_api.cpp
++++ b/app/api/src/sonicpi_api.cpp
+@@ -746,7 +746,7 @@ APIBootResult SonicPiAPI::Boot(bool noScsynthInputs)
+ bool SonicPiAPI::InitializePaths(const fs::path& root)
+ {
+     // sanitise and set app root path
+-    m_paths[SonicPiPath::RootPath] = fs::canonical(fs::absolute(root));
++    m_paths[SonicPiPath::RootPath] = "/usr/share/sonic-pi/";
+ 
+     // Sonic pi home directory
+     m_paths[SonicPiPath::HomePath] = FindHomePath();
+diff --git a/app/gui/mainwindow.cpp b/app/gui/mainwindow.cpp
+index e5d716c5..11c28613 100644
+--- a/app/gui/mainwindow.cpp
++++ b/app/gui/mainwindow.cpp
+@@ -1336,8 +1336,7 @@ QString MainWindow::rootPath()
+     // We should pass this to the build instead of wiring it up this way!
+     return QCoreApplication::applicationDirPath() + "/../../../..";
+ #else
+-    // On linux, CMake builds app into the build folder
+-    return QCoreApplication::applicationDirPath() + "/../../..";
++    return "/usr/share/sonic-pi/";
+ #endif
+ }
+ 
+-- 
+2.55.0
+
