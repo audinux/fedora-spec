@@ -4,17 +4,21 @@
 # Category: Synthesizer
 
 Summary: Software Synthesizer
-Name:    amsynth
-Version: 1.13.4
+Name: amsynth
+Version: 2.0.0
 Release: 3%{?dist}
 License: GPL
-URL:     https://github.com/amsynth/amsynth
+URL: https://github.com/amsynth/amsynth
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/amsynth/amsynth/archive/release-%{version}.tar.gz#/%{name}-%{version}.tar.gz
+# Usage: ./amsynth-source.sh <TAG>
+#        ./amsynth-source.sh release-2.0.0
+
+Source0: amsynth.tar.gz
+Source1: amsynth-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: autoconf-archive
@@ -34,38 +38,49 @@ BuildRequires: gettext-devel
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 
+Requires: license-amsynth
+
 %description
 amSynth is a software synthesizer, taking inspiration from the
 original synths and latest digital ones, while keeping an intuitive
 interface.
 
+%package -n license-amsynth
+Summary: License and documentations for %{name}
+
+%description -n license-amsynth
+License and documentations for %{amsynth}
+
 %package -n lv2-amsynth
 Summary: amsynth lv2 plugin
+Requires: license-amsynth
 
 %description -n lv2-amsynth
 Amsynth LV2 plugin
 
 %package -n vst-amsynth
 Summary: amsynth vst plugin
+Requires: license-amsynth
 
 %description -n vst-amsynth
 Amsynth VST plugin
 
 %package -n dssi-amsynth
 Summary: amsynth DSSI plugin
+Requires: license-amsynth
 
 %description -n dssi-amsynth
 Amsynth DSSI plugin
 
 %prep
-%autosetup -n %{name}-release-%{version}
+%autosetup -n %{name}
 
 %build
 
 autoreconf --install --force
 intltoolize
 
-%configure
+%configure --with-nsm --with-jack
 %make_build
 
 %install
@@ -83,16 +98,20 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/%{name}.appdata.xml
 
 %files
-%doc AUTHORS ChangeLog NEWS README
-%license COPYING
 %{_bindir}/amsynth
-%{_datadir}/amsynth/
+%dir %{_datadir}/amsynth/
 %{_datadir}/appdata/%{name}.appdata.xml
 %{_datadir}/applications/*%{name}.desktop
 %{_datadir}/icons/hicolor/48x48/apps/amsynth.png
 %{_datadir}/icons/hicolor/scalable/apps/amsynth.svg
 %{_datadir}/locale/*
 %{_mandir}/*
+%{_datadir}/amsynth/banks/*
+%{_datadir}/amsynth/skins/*
+
+%files -n license-amsynth
+%doc AUTHORS CHANGELOG.md README.md CONTRIBUTING.md
+%license COPYING
 
 %files -n dssi-amsynth
 %{_libdir}/dssi/*
@@ -107,6 +126,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/%{name}.ap
 %{_datadir}/appdata/vst-%{name}-plugin.metainfo.xml
 
 %changelog
+* Sat Jul 11 2026 Yann Collette <ycollette dot nospam at free.fr> 2.0.0-3
+- update to 2.0.0-3
+
 * Thu May 02 2024 Yann Collette <ycollette dot nospam at free.fr> 1.13.4-3
 - update to 1.13.4-3
 
