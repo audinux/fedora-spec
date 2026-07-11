@@ -15,6 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/alexkay/spek/releases/download/v%{version}/spek-%{version}.tar.xz
+Patch0: spek-fix-compatibility-with-ffmpeg8.patch
 
 BuildRequires: gcc-c++ gcc
 BuildRequires: autoconf automake
@@ -29,7 +30,7 @@ Spek is an acoustic spectrum analyser written in C++.
 It uses FFmpeg libraries for audio decoding and wxWidgets for the GUI.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{version}
 
 %build
 
