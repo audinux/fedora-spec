@@ -4,7 +4,7 @@
 # Category: Tool
 
 Name: audiveris
-Version: 5.10.2
+Version: 5.11.0
 Release: 1%{?dist}
 Summary: Optical Music Recognition software
 License: AGPL-3.0-or-later
@@ -39,18 +39,19 @@ The Audiveris application is built around the tight integration of two main comp
 %autosetup -c
 
 %install
-unzip -o %SOURCE0
+
+unzip -o %{SOURCE0}
 
 mkdir -p %{buildroot}/opt/
 mv app-%{version} %{buildroot}/opt/audiveris
 
 # wrapper
-mkdir -p %{buildroot}%{_bindir}
-cat > %{buildroot}%{_bindir}/audiveris << 'EOF'
+mkdir -p %{buildroot}/%{_bindir}
+cat > %{buildroot}/%{_bindir}/audiveris << 'EOF'
 #!/bin/sh
 exec /opt/audiveris/bin/Audiveris "$@"
 EOF
-chmod +x %{buildroot}%{_bindir}/audiveris
+chmod +x %{buildroot}/%{_bindir}/audiveris
 
 # cleanup
 rm -f %{buildroot}/opt/audiveris/bin/Audiveris.bat
@@ -60,5 +61,8 @@ rm -f %{buildroot}/opt/audiveris/bin/Audiveris.bat
 %{_bindir}/audiveris
 
 %changelog
+* Sun Jul 12 2026 Yann Collette <ycollette.nospam@free.fr> - 5.11.0-1
+- update to 5.11.0-1
+
 * Mon Mar 30 2026 Yann Collette <ycollette.nospam@free.fr> - 5.10.2-1
 - initial spec
