@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-HamptonHarmonics
+Name: rack-v1-HamptonHarmonics
 Version: 1.4.0
 Release: 3%{?dist}
 Summary: HamptonHarmonics plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://gitlab.com/hampton-harmonics/hampton-harmonics-modules
+URL: https://gitlab.com/hampton-harmonics/hampton-harmonics-modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

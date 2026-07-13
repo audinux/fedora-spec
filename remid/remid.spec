@@ -28,8 +28,8 @@ A lv2 port of the midi controlled implementation of
 the SID 6581 chip used in the Commodore 64
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-2.0-or-later
 
 %description -n lv2-%{name}
 LV2 version of %{name}

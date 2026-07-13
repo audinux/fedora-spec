@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-ZetaCarinae
+Name: rack-v2-ZetaCarinae
 Version: 2.0.4
 Release: 1%{?dist}
 Summary: ZetaCarinae plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/mhampton/ZetaCarinaeModules
+URL: https://github.com/mhampton/ZetaCarinaeModules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

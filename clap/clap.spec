@@ -31,7 +31,7 @@ The two most important objects are clap_host and clap_plugin.
 src/plugin-template.c is a very minimal example which demonstrates how to wire a CLAP plugin.
 
 %package devel
-Summary:  Header files for CLAP
+Summary: Header files for CLAP
 
 %description devel
 Header files for CLAP.

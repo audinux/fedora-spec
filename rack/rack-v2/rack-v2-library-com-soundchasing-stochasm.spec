@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-com-soundchasing-stochasm
+Name: rack-v2-com-soundchasing-stochasm
 Version: 0.6.0
 Release: 1%{?dist}
 Summary: com-soundchasing-stochasm plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/teletypist/stochasm
+URL: https://github.com/teletypist/stochasm
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

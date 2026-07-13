@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-OSCelot
+Name: rack-v2-OSCelot
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: OSCelot plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/The-Modular-Mind/oscelot
+URL: https://github.com/The-Modular-Mind/oscelot
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Circlefade
+Name: rack-v2-Circlefade
 Version: 1.0.1
 Release: 1%{?dist}
 Summary: Circlefade plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/max-circlefade/Circlefade
+URL: https://github.com/max-circlefade/Circlefade
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

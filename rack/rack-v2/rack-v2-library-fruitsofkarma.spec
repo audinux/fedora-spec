@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-fruitsofkarma
+Name: rack-v2-fruitsofkarma
 Version: 2.0.10
 Release: 2%{?dist}
 Summary: fruitsofkarma plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/alexey-komarov/fruitsofkarma-vcvrack
+URL: https://github.com/alexey-komarov/fruitsofkarma-vcvrack
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

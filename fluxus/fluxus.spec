@@ -79,7 +79,7 @@ and can be used within it’s own livecoding environment or from within
 the DrRacket IDE.
 
 %package emacs
-Summary:  Fluxus support for Emacs
+Summary: Fluxus support for Emacs
 Requires: fluxus = %{version}-%{release}
 
 %description emacs

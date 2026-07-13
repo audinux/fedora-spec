@@ -26,8 +26,8 @@ BuildRequires: lv2-c++-tools-devel
 VocProc is a LV2 plugin for pitch shifting (with or without formant correction), vocoding, automatic pitch correction and harmonizing of singing voice.
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}

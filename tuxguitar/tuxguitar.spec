@@ -29,11 +29,11 @@
 %endif
 %endif
 
-Summary:          A multitrack tablature editor and player written in Java-SWT
-Name:             tuxguitar
-Version:          1.5.6
-Release:          8%{?dist}
-URL:              http://www.tuxguitar.com.ar
+Summary: A multitrack tablature editor and player written in Java-SWT
+Name: tuxguitar
+Version: 1.5.6
+Release: 8%{?dist}
+URL: http://www.tuxguitar.com.ar
 ExclusiveArch: x86_64 aarch64
 # Source file cleaned of potentially proprietary SF2, DLL, EXE files:
 #   export VERSION=1.5.2
@@ -43,38 +43,38 @@ ExclusiveArch: x86_64 aarch64
 #   find tuxguitar-$VERSION-src -name "*.dll" -exec rm {} \;
 #   find tuxguitar-$VERSION-src -name "*.sf2" -exec rm {} \;
 #   tar zcf tuxguitar-$VERSION-src-clean.tar.gz tuxguitar-$VERSION-src
-Source0:          %{name}-%{version}-src-clean.tar.gz
+Source0: %{name}-%{version}-src-clean.tar.gz
 # Usage: ./tuxguitar-source.sh 1.5.6
 Source1:          tuxguitar-source.sh
 
 # Fedora specific start script
-Patch0:           tuxguitar-startscript.patch
+Patch0: tuxguitar-startscript.patch
 # Fedora specific default soundfont path
 Patch1:           tuxguitar-default-soundfont.patch
 # Build scripts for Fedora's additional arches
 Patch2:           tuxguitar-additional-arch.patch
 Patch3:           tuxguitar-c99.patch
-License:          LGPLv2+
+License: LGPLv2+
 
-Requires:         eclipse-swt
-Requires:         hicolor-icon-theme
-Requires:         soundfont2-default
+Requires: eclipse-swt
+Requires: hicolor-icon-theme
+Requires: soundfont2-default
 
-BuildRequires:    alsa-lib-devel
-BuildRequires:    desktop-file-utils
-BuildRequires:    fluidsynth-devel
-BuildRequires:    pkgconfig(jack)
-BuildRequires:    lv2-devel
-BuildRequires:    suil-devel
-BuildRequires:    lilv-devel
-BuildRequires:    qt5-qtbase-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: desktop-file-utils
+BuildRequires: fluidsynth-devel
+BuildRequires: pkgconfig(jack)
+BuildRequires: lv2-devel
+BuildRequires: suil-devel
+BuildRequires: lilv-devel
+BuildRequires: qt5-qtbase-devel
 
-BuildRequires:    eclipse-swt
-BuildRequires:    gcc
-BuildRequires:    make
-BuildRequires:    libappstream-glib
-BuildRequires:    maven-local
-BuildRequires:    maven-antrun-plugin
+BuildRequires: eclipse-swt
+BuildRequires: gcc
+BuildRequires: make
+BuildRequires: libappstream-glib
+BuildRequires: maven-local
+BuildRequires: maven-antrun-plugin
 
 # eclipse-swt upstream stopped supporting non-64bit arches at version 4.11
 ExcludeArch: s390 %{arm} %{ix86}

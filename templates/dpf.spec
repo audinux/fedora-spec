@@ -3,12 +3,12 @@
 # Type: LV2
 # Category: Effect
 
-Name:    shiro
+Name: shiro
 Version: 0.1
 Release: 1%{?dist}
 Summary: SHIRO LV2 plugin collection
 License: GPL-2.0-or-later
-URL:     https://github.com/ninodewit/SHIRO-Plugins
+URL: https://github.com/ninodewit/SHIRO-Plugins
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -34,24 +34,24 @@ BuildRequires: ladspa-devel
 SHIRO LV2 plugin collection
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
 
 %package -n ladspa-%{name}
-Summary:  LADSPA version of %{name}
-License:  GPL-2.0-or-later
+Summary: LADSPA version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n ladspa-%{name}
 LADSPA version of %{name}
 
 %package -n vst-%{name}
-Summary:  VST2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST2 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n vst-%{name}

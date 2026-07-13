@@ -41,21 +41,21 @@ features, comparable to both hardware and commercial Windows/Mac
 software samplers.
 
 %package devel
-Summary:  Linux Sampler development files
+Summary: Linux Sampler development files
 Requires: %{name} = %{version}-%{release}
 
 %description devel
 Libraries and include files for Linux Sampler development
 
 %package dssi
-Summary:  Linux Sampler DSSI plugin
+Summary: Linux Sampler DSSI plugin
 Requires: %{name} = %{version}-%{release}
 
 %description dssi
 Linuxsampler plugin for the Disposable Soft Synth Interface (DSSI).
 
 %package -n lv2-linuxsampler-plugins
-Summary:  Linux Sampler LV2 plugin
+Summary: Linux Sampler LV2 plugin
 Requires: %{name} = %{version}-%{release}
 
 %description -n lv2-linuxsampler-plugins

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-CVfunk
+Name: rack-v2-CVfunk
 Version: 2.0.43
 Release: 2%{?dist}
 Summary: CVfunk plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/codygeary/CVfunk-Modules
+URL: https://github.com/codygeary/CVfunk-Modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

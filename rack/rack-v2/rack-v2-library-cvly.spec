@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-cvly
+Name: rack-v2-cvly
 Version: 2.0.1
 Release: 1%{?dist}
 Summary: cvly plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Lyqst/cvly-modules
+URL: https://github.com/Lyqst/cvly-modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

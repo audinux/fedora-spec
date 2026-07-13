@@ -34,14 +34,14 @@ Sequencer64 is a reboot of seq24, extending it with many new features.
 The heart of seq24 remains intact.
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
 
 %description devel
 The %{name}-devel package contains header files for %{name}.
 
 %package doc
-Summary:  Documentation for %{name}
+Summary: Documentation for %{name}
 Requires: %{name} = %{version}-%{release}
 
 %description doc

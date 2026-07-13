@@ -4,10 +4,10 @@
 # Category: Audio, Synthesizer
 
 Summary: Alsa Modular Synth, a realtime modular synthesizer
-Name:    ams
+Name: ams
 Version: 2.2.1
 Release: 6%{?dist}
-URL:     https://alsamodular.sourceforge.net
+URL: https://alsamodular.sourceforge.net
 ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 

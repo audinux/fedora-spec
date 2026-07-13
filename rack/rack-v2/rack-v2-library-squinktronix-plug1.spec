@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-squinktronix-plug1
+Name: rack-v2-squinktronix-plug1
 Version: 2.2.7
 Release: 2%{?dist}
 Summary: squinktronix-plug1 plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/squinkylabs/SqHarmony
+URL: https://github.com/squinkylabs/SqHarmony
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

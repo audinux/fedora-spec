@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-CosineKitty-Sapphire
+Name: rack-v2-CosineKitty-Sapphire
 Version: 2.6.007
 Release: 2%{?dist}
 Summary: CosineKitty-Sapphire plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/cosinekitty/sapphire
+URL: https://github.com/cosinekitty/sapphire
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

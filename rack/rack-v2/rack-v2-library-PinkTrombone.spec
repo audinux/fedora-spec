@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-PinkTrombone
+Name: rack-v2-PinkTrombone
 Version: 2.0.2
 Release: 1%{?dist}
 Summary: PinkTrombone plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/VegaDeftwing/PinkTromboneVCV
+URL: https://github.com/VegaDeftwing/PinkTromboneVCV
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

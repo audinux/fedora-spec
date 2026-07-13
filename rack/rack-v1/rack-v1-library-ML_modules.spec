@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-ML_modules
+Name: rack-v1-ML_modules
 Version: 1.1.4
 Release: 3%{?dist}
 Summary: ML_modules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/martin-lueders/ML_modules
+URL: https://github.com/martin-lueders/ML_modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

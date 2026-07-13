@@ -20,7 +20,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/raboof/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Patch0:  libsfark-0001-fix-install-path.patch
+Patch0: libsfark-0001-fix-install-path.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: zlib-devel
@@ -32,7 +32,7 @@ A simple command-line tool to convert sfArk files to sf2
 based on this library can be found at https://github.com/raboof/sfArkXTm
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
 
 %description devel

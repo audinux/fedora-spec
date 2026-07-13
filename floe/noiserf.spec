@@ -9,7 +9,7 @@
 Name: noiserf
 Version: 0.7.0
 Release: 1%{?dist}
-Summary:  High quality noise reduction plugin
+Summary: High quality noise reduction plugin
 License: GPL-3.0-or-later
 URL: https://github.com/floe-audio/NoiseRF
 ExclusiveArch: x86_64
@@ -62,8 +62,8 @@ License: GPL-3.0-or-later
 License and documentation for %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  GPL-3.0-or-later
+Summary: CLAP version of %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n clap-%{name}

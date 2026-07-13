@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-BaconMusic
+Name: rack-v2-BaconMusic
 Version: 2.7.0
 Release: 2%{?dist}
 Summary: BaconMusic plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/baconpaul/BaconPlugs/
+URL: https://github.com/baconpaul/BaconPlugs/
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

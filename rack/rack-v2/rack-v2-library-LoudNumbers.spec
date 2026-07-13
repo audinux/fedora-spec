@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-LoudNumbers
+Name: rack-v2-LoudNumbers
 Version: 2.0.4
 Release: 1%{?dist}
 Summary: LoudNumbers plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/loudnumbers/loudnumbers_vcv
+URL: https://github.com/loudnumbers/loudnumbers_vcv
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

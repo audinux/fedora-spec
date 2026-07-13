@@ -40,7 +40,7 @@ BuildRequires: libxml2-devel
 BuildRequires: perl-XML-Parser
 BuildRequires: desktop-file-utils
 
-Requires:      ladspa-swh-plugins
+Requires: ladspa-swh-plugins
 # Add ladspa-foo (not packaged anymore) as a Requires
 
 %description

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-NullSet
+Name: rack-v2-NullSet
 Version: 2.0.0
 Release: 2%{?dist}
 Summary: NullSet plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/nicholas-j-denning/NullSet
+URL: https://github.com/nicholas-j-denning/NullSet
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Starling_Via
+Name: rack-v2-Starling_Via
 Version: 2.0.1
 Release: 1%{?dist}
 Summary: Starling_Via plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/starlingcode/Via-for-Rack
+URL: https://github.com/starlingcode/Via-for-Rack
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Interrobang
+Name: rack-v2-Interrobang
 Version: 2.0.1
 Release: 1%{?dist}
 Summary: Interrobang plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/jimallman/interrobang-rack-modules/
+URL: https://github.com/jimallman/interrobang-rack-modules/
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

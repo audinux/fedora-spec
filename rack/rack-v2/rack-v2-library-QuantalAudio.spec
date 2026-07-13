@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-QuantalAudio
+Name: rack-v2-QuantalAudio
 Version: 2.2.2
 Release: 2%{?dist}
 Summary: QuantalAudio plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/sumpygump/quantal-audio
+URL: https://github.com/sumpygump/quantal-audio
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

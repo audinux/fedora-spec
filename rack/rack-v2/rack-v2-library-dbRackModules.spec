@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-dbRackModules
+Name: rack-v2-dbRackModules
 Version: 2.6.1
 Release: 2%{?dist}
 Summary: dbRackModules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/docb/dbRackModules
+URL: https://github.com/docb/dbRackModules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

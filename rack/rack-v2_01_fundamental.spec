@@ -13,12 +13,12 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    rack-v2-Fundamental
+Name: rack-v2-Fundamental
 Version: 2.6.4
 Release: 3%{?dist}
 Summary: A plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/VCVRack/Fundamental
+URL: https://github.com/VCVRack/Fundamental
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

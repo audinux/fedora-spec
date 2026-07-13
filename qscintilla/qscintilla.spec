@@ -53,7 +53,7 @@ QScintilla is a port of Scintilla to the Qt GUI toolkit.
 %{?scintilla_ver:This version of QScintilla is based on Scintilla v%{scintilla_ver}.}
 
 %package devel
-Summary:  QScintilla Development Files
+Summary: QScintilla Development Files
 Requires: %{name}%{?_isa} = %{version}-%{release}
 Requires: qt4-devel
 %description devel
@@ -67,7 +67,7 @@ Provides: bundled(scintilla) = %{scintilla_ver}
 %{summary}.
 
 %package qt5-devel
-Summary:  QScintilla Development Files
+Summary: QScintilla Development Files
 Requires: %{name}-qt5%{?_isa} = %{version}-%{release}
 Requires: qt5-qtbase-devel
 %description qt5-devel
@@ -77,7 +77,7 @@ Requires: qt5-qtbase-devel
 %if 0%{?py2}
 %if 0%{?qt4}
 %package -n python2-qscintilla
-Summary:  QScintilla python2 bindings
+Summary: QScintilla python2 bindings
 BuildRequires: python2-devel
 BuildRequires: PyQt4-devel
 BuildRequires: python2-sip-devel >= %{sip_ver}
@@ -91,7 +91,7 @@ Requires: python2-qt4
 %{summary}.
 
 %package -n python2-qscintilla-devel
-Summary:  Development files for QScintilla python2 bindings
+Summary: Development files for QScintilla python2 bindings
 Obsoletes: qscintilla-python-devel < 2.9.2-2
 Provides:  qscintilla-python-devel = %{version}-%{release}
 Requires: PyQt4-devel
@@ -102,7 +102,7 @@ BuildArch: noarch
 
 %if 0%{?qt5}
 %package -n python2-qscintilla-qt5
-Summary:  QScintilla-qt5 python2 bindings
+Summary: QScintilla-qt5 python2 bindings
 BuildRequires: python2-qt5
 BuildRequires: python2-qt5-devel
 BuildRequires: python2-sip-devel >= %{sip_ver}
@@ -114,7 +114,7 @@ Requires: python2-qt5%{?pyqt5_version: >= %{pyqt5_version}}
 %{summary}.
 
 %package -n python2-qscintilla-qt5-devel
-Summary:  Development files for QScintilla-qt5 python2 bindings
+Summary: Development files for QScintilla-qt5 python2 bindings
 Provides: %{name}-qt5-python2-devel = %{version}-%{release}
 Requires: python2-qt5-devel
 BuildArch: noarch
@@ -126,7 +126,7 @@ BuildArch: noarch
 %if 0%{?py3}
 %if 0%{?qt4}
 %package -n python3-qscintilla
-Summary:  QScintilla python3 bindings
+Summary: QScintilla python3 bindings
 BuildRequires: python3-devel
 BuildRequires: python3-PyQt4-devel
 BuildRequires: python3-sip-devel >= %{sip_ver}
@@ -139,7 +139,7 @@ Requires: python3-PyQt4
 %{summary}.
 
 %package -n python3-qscintilla-devel
-Summary:  Development files for QScintilla python3 bindings
+Summary: Development files for QScintilla python3 bindings
 Provides: %{name}-python3-devel = %{version}-%{release}
 Requires: python3-PyQt4-devel
 BuildArch: noarch
@@ -149,7 +149,7 @@ BuildArch: noarch
 
 %if 0%{?qt5}
 %package -n python3-qscintilla-qt5
-Summary:  QScintilla-qt5 python3 bindings
+Summary: QScintilla-qt5 python3 bindings
 BuildRequires: python3-qt5
 BuildRequires: python3-qt5-devel
 BuildRequires: python3-sip-devel >= %{sip_ver}
@@ -161,7 +161,7 @@ Requires: python3-qt5%{?pyqt5_version: >= %{pyqt5_version}}
 %{summary}.
 
 %package -n python3-qscintilla-qt5-devel
-Summary:  Development files for QScintilla-qt5 python3 bindings
+Summary: Development files for QScintilla-qt5 python3 bindings
 Provides: %{name}-qt5-python3-devel = %{version}-%{release}
 Requires: python3-qt5-devel
 BuildArch: noarch

@@ -31,7 +31,7 @@ BuildRequires: libuuid-devel
 C++ library for loading Gigasampler files and DLS Level 1/2 files.
 
 %package devel
-Summary:  C++ library for loading Gigasampler files and DLS Level 1/2 files.
+Summary: C++ library for loading Gigasampler files and DLS Level 1/2 files.
 Requires: %{name} = %{version}-%{release}
 
 %description devel

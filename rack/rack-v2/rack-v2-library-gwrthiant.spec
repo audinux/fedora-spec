@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-gwrthiant
+Name: rack-v2-gwrthiant
 Version: 2.0.2
 Release: 2%{?dist}
 Summary: gwrthiant plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/dustractor/gwrthiant
+URL: https://github.com/dustractor/gwrthiant
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

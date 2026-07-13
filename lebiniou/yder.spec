@@ -27,7 +27,7 @@ Simple and easy to use logging library. You can log messages to the console, a f
 Yder is mono-thread, which mean that you can use only one instance of Yder log at the same time in your program.
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description devel

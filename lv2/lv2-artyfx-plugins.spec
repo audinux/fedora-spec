@@ -21,7 +21,7 @@ BuildRequires: cairomm-devel
 BuildRequires: lv2-devel
 BuildRequires: pkgconfig(jack)
 
-Requires:      lv2
+Requires: lv2
 
 %global __provides_exclude_from ^%{_libdir}/lv2/.*$
 

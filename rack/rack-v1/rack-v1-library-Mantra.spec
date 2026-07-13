@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-Mantra
+Name: rack-v1-Mantra
 Version: 1.0.1
 Release: 3%{?dist}
 Summary: Mantra plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/giogramegna/mantra-master
+URL: https://github.com/giogramegna/mantra-master
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

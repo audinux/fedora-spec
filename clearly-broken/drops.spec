@@ -3,11 +3,11 @@
 # Type: Plugin, VST3, LV2
 # Category: Audio, Effect
 
-Name:    drops
+Name: drops
 Version: 1.0.b2
 Release: 1%{?dist}
 Summary: Sampler plugin
-URL:     https://github.com/clearly-broken-software/drops
+URL: https://github.com/clearly-broken-software/drops
 ExclusiveArch: x86_64 aarch64
 License: GPL3
 

@@ -42,8 +42,8 @@ Melodrumatic is an audio plugin that lets you "pitch-shift" via delay
 Controllable via MIDI or mouse.
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

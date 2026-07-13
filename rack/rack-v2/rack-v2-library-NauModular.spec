@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-NauModular
+Name: rack-v2-NauModular
 Version: 0.6.0
 Release: 1%{?dist}
 Summary: NauModular plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/naus3a/NauModular
+URL: https://github.com/naus3a/NauModular
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

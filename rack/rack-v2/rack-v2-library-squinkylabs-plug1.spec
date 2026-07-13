@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-squinkylabs-plug1
+Name: rack-v2-squinkylabs-plug1
 Version: 2.1.9
 Release: 2%{?dist}
 Summary: squinkylabs-plug1 plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/kockie69/SquinkyVCV-main
+URL: https://github.com/kockie69/SquinkyVCV-main
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Befaco
+Name: rack-v2-Befaco
 Version: 2.11.0
 Release: 2%{?dist}
 Summary: Befaco plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/VCVRack/Befaco
+URL: https://github.com/VCVRack/Befaco
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Sulamith
+Name: rack-v2-Sulamith
 Version: 2.3.2
 Release: 2%{?dist}
 Summary: Sulamith plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/JohannAsbjoernson/Sulamith
+URL: https://github.com/JohannAsbjoernson/Sulamith
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -7,19 +7,19 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    lomse
+Name: lomse
 Version: 0.20.0.%{shortcommit0}
 Release: 1%{?dist}
 Summary: A free open source library for rendering music scores
 License: GPL-2.0-or-later
-URL:     https://github.com/lenmus/lomse
+URL: https://github.com/lenmus/lomse
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/lenmus/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Patch0:  lomse_0001-fix-install.patch
+Patch0: lomse_0001-fix-install.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: boost-devel
@@ -32,8 +32,8 @@ BuildRequires: cmake
 Lomse objective is provide software developers with a library to add capabilities to any program for rendering, editing and playing back music scores. It is written in C++ and it is free open source and platform independent. Lomse stands for "LenMus Open Music Score Edition Library".
 
 %package devel
-Summary:        Development files for %{name}
-Requires:       %{name} = %{version}-%{release}
+Summary: Development files for %{name}
+Requires: %{name} = %{version}-%{release}
 
 %description devel
 The %{name}-devel package contains header files for %{name}.

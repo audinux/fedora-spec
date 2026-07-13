@@ -4,12 +4,12 @@
 # Category: Programming
 %{?!python3_pkgversion:%global python3_pkgversion 3}
 
-Name:    pymarshal
+Name: pymarshal
 Version: 2.2.0
 Release: 1%{?dist}
 Summary: Python data serialization library
 License: BSD-2
-URL:     https://github.com/stargateaudio/pymarshal
+URL: https://github.com/stargateaudio/pymarshal
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

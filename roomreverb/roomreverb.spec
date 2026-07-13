@@ -34,24 +34,24 @@ plugin with many presets that lets you add reverberation to your
 recordings in your DAW.
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  GPL-2.0-or-later
+Summary: CLAP version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n clap-%{name}

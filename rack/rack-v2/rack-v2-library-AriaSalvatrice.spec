@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-AriaSalvatrice
+Name: rack-v2-AriaSalvatrice
 Version: 1.8.1
 Release: 1%{?dist}
 Summary: AriaSalvatrice plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/AriaSalvatrice/AriaVCVModules
+URL: https://github.com/AriaSalvatrice/AriaVCVModules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

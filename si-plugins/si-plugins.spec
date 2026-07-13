@@ -38,32 +38,32 @@ BuildRequires: desktop-file-utils
 Shermann Innovations plugin series
 
 %package -n vst-%{name}
-Summary:  VST version of %{name}
-License:  MIT
+Summary: VST version of %{name}
+License: MIT
 Requires: %{name}
 
 %description -n vst-%{name}
 VST version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  MIT
+Summary: LV2 version of %{name}
+License: MIT
 Requires: %{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
 
 %package -n ladspa-%{name}
-Summary:  LADSPA version of %{name}
-License:  MIT
+Summary: LADSPA version of %{name}
+License: MIT
 Requires: %{name}
 
 %description -n ladspa-%{name}
 LADSPA version of %{name}
 
 %package -n dssi-%{name}
-Summary:  DSSI version of %{name}
-License:  MIT
+Summary: DSSI version of %{name}
+License: MIT
 Requires: %{name}
 
 %description -n dssi-%{name}

@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-LyraeModules
+Name: rack-v1-LyraeModules
 Version: 1.0.2
 Release: 3%{?dist}
 Summary: LyraeModules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/VegaDeftwing/LyraeModules
+URL: https://github.com/VegaDeftwing/LyraeModules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

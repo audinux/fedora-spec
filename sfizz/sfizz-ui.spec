@@ -44,23 +44,23 @@ BuildRequires: pkgconfig(jack)
 SFZ parser and synth c++ library, providing LV2 / VST3 plugins and JACK standalone client
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  BSD-2-Clause
+Summary: VST3 version of %{name}
+License: BSD-2-Clause
 Requires: %{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  BSD-2-Clause
+Summary: LV2 version of %{name}
+License: BSD-2-Clause
 Requires: %{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
 
 %package devel
-Summary:  Header files for Sfizz
+Summary: Header files for Sfizz
 Requires: %{name} = %{version}-%{release}
 
 %description devel

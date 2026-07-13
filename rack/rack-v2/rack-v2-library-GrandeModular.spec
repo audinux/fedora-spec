@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-GrandeModular
+Name: rack-v2-GrandeModular
 Version: 2.8.0
 Release: 2%{?dist}
 Summary: GrandeModular plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/dbgrande/GrandeModular
+URL: https://github.com/dbgrande/GrandeModular
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

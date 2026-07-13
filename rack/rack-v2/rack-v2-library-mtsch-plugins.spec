@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-mtsch-plugins
+Name: rack-v2-mtsch-plugins
 Version: 0.6.0
 Release: 1%{?dist}
 Summary: mtsch-plugins plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/mtsch/mtsch-vcvrack-plugins
+URL: https://github.com/mtsch/mtsch-vcvrack-plugins
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

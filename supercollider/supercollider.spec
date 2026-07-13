@@ -64,7 +64,7 @@ creating music applications of all kinds, such as complete
 compositions, interactive performances, installations etc.
 
 %package devel
-Summary:  Development files for SuperCollider
+Summary: Development files for SuperCollider
 Requires: supercollider = %{version}-%{release}
 
 %description devel
@@ -72,7 +72,7 @@ This package includes include files and libraries neede to develop
 SuperCollider applications
 
 %package emacs
-Summary:  SuperCollider support for Emacs
+Summary: SuperCollider support for Emacs
 Requires: supercollider = %{version}-%{release}
 Requires: emacs
 
@@ -80,7 +80,7 @@ Requires: emacs
 SuperCollider support for the Emacs text editor.
 
 %package vim
-Summary:  SuperCollider support for Vim
+Summary: SuperCollider support for Vim
 Requires: supercollider = %{version}-%{release}
 Requires: vim
 

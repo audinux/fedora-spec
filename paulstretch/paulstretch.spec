@@ -46,23 +46,23 @@ BuildRequires: gtk3-devel
 A PaulStretch VST/VST3/Standalone plugin
 
 %package -n license-%{name}
-Summary:  License and documentation for %{name}
-License:  GPL-2.0-or-later
+Summary: License and documentation for %{name}
+License: GPL-2.0-or-later
 
 %description -n license-%{name}
 License and documentation for %{name}
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-2.0-or-later
 Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n vst-%{name}
-Summary:  VST2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST2 version of %{name}
+License: GPL-2.0-or-later
 Obsoletes: vst2-%{name} < 1.2.4-5
 Requires: license-%{name}
 

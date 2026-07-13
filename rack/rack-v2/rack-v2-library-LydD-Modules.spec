@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-LydD-Modules
+Name: rack-v2-LydD-Modules
 Version: 2.0.30
 Release: 2%{?dist}
 Summary: LydD-Modules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Lydian-Des/LydD_Modules
+URL: https://github.com/Lydian-Des/LydD_Modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

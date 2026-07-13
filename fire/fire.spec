@@ -46,8 +46,8 @@ It can be used in DAWs which supports AU and Vst3 plugins such
 as Ableton Live, Fl Studio, etc.
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

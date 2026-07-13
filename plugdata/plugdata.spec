@@ -54,8 +54,8 @@ Requires: license-%{name}
 Plugin wrapper around PureData to allow patching in a wide selection of DAWs.
 
 %package -n license-%{name}
-Summary:  License and documentation for %{name}
-License:  GPL-2.0-or-later
+Summary: License and documentation for %{name}
+License: GPL-2.0-or-later
 
 %description -n license-%{name}
 License and documentation for %{name}

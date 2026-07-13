@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-RSBATechModules
+Name: rack-v2-RSBATechModules
 Version: 2.1.9
 Release: 2%{?dist}
 Summary: RSBATechModules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/rjsmith/rsbatech-modules
+URL: https://github.com/rjsmith/rsbatech-modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

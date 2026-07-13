@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Biset
+Name: rack-v2-Biset
 Version: 2.0.14
 Release: 2%{?dist}
 Summary: Biset plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/gibbonjoyeux/VCV-Biset
+URL: https://github.com/gibbonjoyeux/VCV-Biset
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

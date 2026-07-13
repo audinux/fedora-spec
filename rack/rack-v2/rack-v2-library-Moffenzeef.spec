@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Moffenzeef
+Name: rack-v2-Moffenzeef
 Version: 2.6.1
 Release: 2%{?dist}
 Summary: Moffenzeef plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/moffenzeefmodular/VCVrack-submission
+URL: https://github.com/moffenzeefmodular/VCVrack-submission
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

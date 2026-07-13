@@ -8,12 +8,12 @@
 
 %define debug_package %{nil}
 
-Name:    dxsyx
+Name: dxsyx
 Version: 0.0.1.%{shortcommit0}
 Release: 1%{?dist}
 Summary: A C++ library for manipulating DX7 SysEx files.
 License: GPLv3+
-URL:     https://github.com/rogerallen/dxsyx
+URL: https://github.com/rogerallen/dxsyx
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

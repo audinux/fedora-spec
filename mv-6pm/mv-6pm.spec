@@ -17,7 +17,7 @@ Distribution: Audinux
 
 Source0: https://sourceforge.net/projects/mv-6pm/files/6PM_v0.9.tgz
 Source1: mv-6pm.desktop
-Patch0:  mv-6pm-use-global-presets.patch
+Patch0: mv-6pm-use-global-presets.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: pkgconfig(Qt5Core)

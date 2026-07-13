@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-VsWorld
+Name: rack-v2-VsWorld
 Version: 2.1.4
 Release: 2%{?dist}
 Summary: VsWorld plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Synismusist/VsWorld
+URL: https://github.com/Synismusist/VsWorld
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

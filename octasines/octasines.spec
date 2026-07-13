@@ -28,16 +28,16 @@ BuildRequires: xcb-util-wm-devel
 Frequency modulation synthesizer plugin
 
 %package -n vst-%{name}
-Summary:  VST2 version of %{name}
-License:  AGPL-3.0-only
+Summary: VST2 version of %{name}
+License: AGPL-3.0-only
 Requires: %{name}
 
 %description -n vst-%{name}
 VST2 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  AGPL-3.0-only
+Summary: CLAP version of %{name}
+License: AGPL-3.0-only
 Requires: %{name}
 
 %description -n clap-%{name}

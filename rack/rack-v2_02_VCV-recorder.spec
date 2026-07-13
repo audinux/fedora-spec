@@ -10,12 +10,12 @@
 %global debug_package %{nil}
 %define _lto_cflags %{nil}
 
-Name:    rack-v2-VCV-Recorder
+Name: rack-v2-VCV-Recorder
 Version: 2.0.3
 Release: 3%{?dist}
 Summary: A plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/VCVRack/VCV-Recorder
+URL: https://github.com/VCVRack/VCV-Recorder
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

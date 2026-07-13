@@ -4,11 +4,11 @@
 # Category: Audio, Sampler
 
 Summary: Software Synthesizer
-Name:    drumgizmo
+Name: drumgizmo
 Version: 0.9.20
 Release: 2%{?dist}
 License: GPL
-URL:     https://www.drumgizmo.org/wiki/doku.php
+URL: https://www.drumgizmo.org/wiki/doku.php
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

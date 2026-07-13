@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-TeknoLogical
+Name: rack-v2-TeknoLogical
 Version: 2.0.6
 Release: 2%{?dist}
 Summary: TeknoLogical plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/augustopampaluna/TeknoLogical
+URL: https://github.com/augustopampaluna/TeknoLogical
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

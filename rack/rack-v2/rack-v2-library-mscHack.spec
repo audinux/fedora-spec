@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-mscHack
+Name: rack-v2-mscHack
 Version: 2.0.0
 Release: 2%{?dist}
 Summary: mscHack plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/baconpaul/mschack-VCV-Rack-Plugins
+URL: https://github.com/baconpaul/mschack-VCV-Rack-Plugins
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

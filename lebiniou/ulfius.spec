@@ -33,14 +33,14 @@ Can stream large amount of data, integrate JSON data with Jansson,
 and create websocket services
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
 The %{name}-devel package contains header files for %{name}.
 
 %package doc
-Summary:  Documentation for %{name}
+Summary: Documentation for %{name}
 
 %description doc
 The %{name}-doc package contains documentation for %{name}.

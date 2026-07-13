@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-CavianSequencer
+Name: rack-v2-CavianSequencer
 Version: 2.0.0
 Release: 2%{?dist}
 Summary: CavianSequencer plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/nikscave/Cavian-VCV
+URL: https://github.com/nikscave/Cavian-VCV
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-FartSynthson
+Name: rack-v2-FartSynthson
 Version: 2.0.0
 Release: 2%{?dist}
 Summary: FartSynthson plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Cumbiambero/fart-synthson
+URL: https://github.com/Cumbiambero/fart-synthson
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

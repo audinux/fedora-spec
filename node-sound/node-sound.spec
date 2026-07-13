@@ -36,23 +36,23 @@ I reserve the right to quit this project whenever, that
 said I am still finding fun new things to add every now and then...
 
 %package -n license-%{name}
-Summary:  License and documentation for %{name}
-License:  MIT
+Summary: License and documentation for %{name}
+License: MIT
 
 %description -n license-%{name}
 License and documentation for %{name}
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  MIT
+Summary: VST3 version of %{name}
+License: MIT
 Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  MIT
+Summary: CLAP version of %{name}
+License: MIT
 Requires: license-%{name}
 
 %description -n clap-%{name}

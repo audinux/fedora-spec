@@ -3,12 +3,12 @@
 # Type: Plugin, LV2
 # Category: Audio, Effect
 
-Name:    deteriorate-lv2
+Name: deteriorate-lv2
 Version: 1.0.7
 Release: 2%{?dist}
 Summary: Set of plugins to destroy and deteriorate the sound quality of a live input
 License: GPL-2.0-or-later
-URL:     https://github.com/blablack/deteriorate-lv2
+URL: https://github.com/blablack/deteriorate-lv2
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

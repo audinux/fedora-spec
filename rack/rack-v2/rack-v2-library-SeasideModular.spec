@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-SeasideModular
+Name: rack-v2-SeasideModular
 Version: 2.5.2
 Release: 2%{?dist}
 Summary: SeasideModular plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/abluenautilus/SeasideModularVCV
+URL: https://github.com/abluenautilus/SeasideModularVCV
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

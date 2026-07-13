@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-WrongPeople
+Name: rack-v1-WrongPeople
 Version: 1.0.1
 Release: 3%{?dist}
 Summary: WrongPeople plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/WrongPeople/WrongPeopleVCV
+URL: https://github.com/WrongPeople/WrongPeopleVCV
 ExclusiveArch: x86_64
 
 Vendor:       Audinux

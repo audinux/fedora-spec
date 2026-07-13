@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-forsitan
+Name: rack-v2-forsitan
 Version: 2.2.1
 Release: 2%{?dist}
 Summary: forsitan plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/gosub/forsitan-modulare
+URL: https://github.com/gosub/forsitan-modulare
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

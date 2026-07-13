@@ -27,7 +27,7 @@ nor modify internal data structures, and only data in already
 existing partitions can be modified this way.
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
 
 %description devel

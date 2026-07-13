@@ -3,12 +3,12 @@
 # Type: Plugin, Standalone, VST, VST3, LV2, CLAP
 # Category: Audio, Effect
 
-Name:    chaffverb
+Name: chaffverb
 Version: 0.2.3
 Release: 1%{?dist}
 Summary: An audio plugin utilizing pitch shifting, echo and reverb, for creating sounds from shimmers to whale songs.
 License: MIT
-URL:     https://github.com/GModal/ChaffVerb
+URL: https://github.com/GModal/ChaffVerb
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

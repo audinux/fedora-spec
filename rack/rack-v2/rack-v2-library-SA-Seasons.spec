@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-SA-Seasons
+Name: rack-v2-SA-Seasons
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: SA-Seasons plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/SpektroAudio/Seasons
+URL: https://github.com/SpektroAudio/Seasons
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-BGal256
+Name: rack-v2-BGal256
 Version: 2.0.3
 Release: 2%{?dist}
 Summary: BGal256 plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Shtrompel/BGal256
+URL: https://github.com/Shtrompel/BGal256
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

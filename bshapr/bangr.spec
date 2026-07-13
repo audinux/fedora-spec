@@ -4,11 +4,11 @@
 # Category: Audio, Effect
 
 Summary: Multi-dimensional dynamically distorted staggered multi-bandpass LV2 plugin
-Name:    BAngr
+Name: BAngr
 Version: 1.6.4
 Release: 2%{?dist}
 License: GPL
-URL:     https://github.com/sjaehn/BAngr/
+URL: https://github.com/sjaehn/BAngr/
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

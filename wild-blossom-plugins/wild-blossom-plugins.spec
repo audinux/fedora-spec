@@ -35,8 +35,8 @@ BuildRequires: python3
 Wild Blossom Saturator
 
 %package -n vst-%{name}
-Summary:  VST2 version of %{name}
-License:  GPL-3.0-or-later
+Summary: VST2 version of %{name}
+License: GPL-3.0-or-later
 
 %description -n vst-%{name}
 VST2 version of %{name}

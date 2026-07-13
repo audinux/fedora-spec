@@ -42,8 +42,8 @@ in Los Angeles, was a pioneering DAW plugin that leveraged commercial UX/UI
 design principles to shape its magnetic tape + circuitry emulation algorithms.
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n vst3-%{name}

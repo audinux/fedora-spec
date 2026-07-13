@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Geodesics
+Name: rack-v2-Geodesics
 Version: 2.4.0
 Release: 2%{?dist}
 Summary: Geodesics plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/MarcBoule/Geodesics/
+URL: https://github.com/MarcBoule/Geodesics/
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

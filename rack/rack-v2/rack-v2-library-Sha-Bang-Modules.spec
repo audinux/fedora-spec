@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Sha-Bang-Modules
+Name: rack-v2-Sha-Bang-Modules
 Version: 2.2.2
 Release: 2%{?dist}
 Summary: Sha-Bang-Modules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/jeremymuller/Sha-Bang-Modules
+URL: https://github.com/jeremymuller/Sha-Bang-Modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

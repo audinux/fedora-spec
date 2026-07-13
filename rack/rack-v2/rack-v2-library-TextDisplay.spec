@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-TextDisplay
+Name: rack-v2-TextDisplay
 Version: 2.0.0
 Release: 2%{?dist}
 Summary: TextDisplay plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/detnoise/TextDisplay
+URL: https://github.com/detnoise/TextDisplay
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

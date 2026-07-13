@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-Bidoo
+Name: rack-v1-Bidoo
 Version: 1.1.39
 Release: 3%{?dist}
 Summary: Bidoo plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/sebastien-bouffier/Bidoo
+URL: https://github.com/sebastien-bouffier/Bidoo
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

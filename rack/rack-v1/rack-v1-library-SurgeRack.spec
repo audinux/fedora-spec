@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-SurgeRack
+Name: rack-v1-SurgeRack
 Version: 1.7.1.2
 Release: 3%{?dist}
 Summary: SurgeRack plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/surge-synthesizer/surge-rack/
+URL: https://github.com/surge-synthesizer/surge-rack/
 ExclusiveArch: x86_64
 
 Vendor:       Audinux

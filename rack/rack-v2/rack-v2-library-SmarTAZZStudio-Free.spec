@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-SmarTAZZStudio-Free
+Name: rack-v2-SmarTAZZStudio-Free
 Version: 2.4.1
 Release: 2%{?dist}
 Summary: SmarTAZZStudio-Free plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/mlaban64/STS-Free
+URL: https://github.com/mlaban64/STS-Free
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

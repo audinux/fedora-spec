@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-Southpole
+Name: rack-v1-Southpole
 Version: 0.6.0
 Release: 3%{?dist}
 Summary: Southpole plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/gbrandt1/southpole-vcvrack
+URL: https://github.com/gbrandt1/southpole-vcvrack
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

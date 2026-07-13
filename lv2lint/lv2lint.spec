@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: %{url}/-/archive/%{version}/lv2lint-%{version}.tar.gz
-Patch0:  lv2lint-0001-fix-multiple-symbol.patch
+Patch0: lv2lint-0001-fix-multiple-symbol.patch
 
 BuildRequires: gcc
 BuildRequires: meson

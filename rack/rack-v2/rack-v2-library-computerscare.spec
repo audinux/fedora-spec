@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-computerscare
+Name: rack-v2-computerscare
 Version: 2.3.3
 Release: 2%{?dist}
 Summary: computerscare plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/freddyz/computerscare-vcv-modules
+URL: https://github.com/freddyz/computerscare-vcv-modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

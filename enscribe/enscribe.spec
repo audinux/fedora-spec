@@ -4,11 +4,11 @@
 # Category: Synthesizer, Audio
 
 Summary: Enscribe creates digital audio watermark images from photgraphic images.
-Name:    enscribe
+Name: enscribe
 Version: 0.1.0
 Release: 1%{?dist}
 License: GPL
-URL:     http://www.coppercloudmusic.com/enscribe/
+URL: http://www.coppercloudmusic.com/enscribe/
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

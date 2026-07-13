@@ -14,7 +14,7 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-DivergentWaves
+Name: rack-v2-DivergentWaves
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: DivergentWaves plugin for Rack

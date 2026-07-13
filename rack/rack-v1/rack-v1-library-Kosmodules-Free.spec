@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-Kosmodules-Free
+Name: rack-v1-Kosmodules-Free
 Version: 1.0.1
 Release: 3%{?dist}
 Summary: Kosmodules-Free plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/calvinkosmatka/Kosmodules-Free
+URL: https://github.com/calvinkosmatka/Kosmodules-Free
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -6,11 +6,11 @@
 %global realversion 1.3
 
 Summary: LibSMF is a BSD-licensed C library for handling SMF ("*.mid") files
-Name:    libsmf
+Name: libsmf
 Version: 1.4
 Release: 8%{?dist}
 License: BSD
-URL:     https://github.com/stump/%{name}
+URL: https://github.com/stump/%{name}
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -43,21 +43,21 @@ tempo map handling etc. The only dependencies are C compiler and glib.
 Full API documentation and examples are included.
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
 The %{name}-devel package contains header files for %{name}.
 
 %package static
-Summary:  Static library for %{name}
+Summary: Static library for %{name}
 Requires: %{name}-devel%{?_isa} = %{version}-%{release}
 
 %description static
 The %{name}-static package contains static library for %{name}.
 
 %package doc
-Summary:  Documentation for %{name}
+Summary: Documentation for %{name}
 
 %description doc
 The %{name}-doc package contains documentation for %{name}.

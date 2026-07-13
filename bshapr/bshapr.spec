@@ -4,11 +4,11 @@
 # Category: Audio, Effect
 
 Summary: Beat / envelope shaper LV2 plugin
-Name:    lv2-BShapr
+Name: lv2-BShapr
 Version: 0.13
 Release: 2%{?dist}
 License: GPL
-URL:     https://github.com/sjaehn/BShapr
+URL: https://github.com/sjaehn/BShapr
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

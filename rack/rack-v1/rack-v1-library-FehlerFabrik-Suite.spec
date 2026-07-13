@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-FehlerFabrik-Suite
+Name: rack-v1-FehlerFabrik-Suite
 Version: 1.1.2
 Release: 3%{?dist}
 Summary: FehlerFabrik-Suite plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/RCameron93/FehlerFabrik
+URL: https://github.com/RCameron93/FehlerFabrik
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

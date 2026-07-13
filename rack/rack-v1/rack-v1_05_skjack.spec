@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-sfjack
+Name: rack-v1-sfjack
 Version: 0.6.8
 Release: 1%{?dist}
 Summary: A plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Skrylar/skjack-vcv
+URL: https://github.com/Skrylar/skjack-vcv
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

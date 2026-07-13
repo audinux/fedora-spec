@@ -47,8 +47,8 @@ MultiMeter delivers a robust array of functions for pristine real-time audio ana
 to empower mixing, mastering, and sound design.
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n vst3-%{name}

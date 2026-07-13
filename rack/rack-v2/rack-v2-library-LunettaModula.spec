@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-LunettaModula
+Name: rack-v2-LunettaModula
 Version: 2.1.0
 Release: 1%{?dist}
 Summary: LunettaModula plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/countmodula/VCVRackLunettaModula
+URL: https://github.com/countmodula/VCVRackLunettaModula
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

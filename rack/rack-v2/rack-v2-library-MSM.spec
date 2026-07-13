@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-MSM
+Name: rack-v2-MSM
 Version: 2.0.3
 Release: 1%{?dist}
 Summary: MSM plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/netboy3/MSM-vcvrack-plugin
+URL: https://github.com/netboy3/MSM-vcvrack-plugin
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

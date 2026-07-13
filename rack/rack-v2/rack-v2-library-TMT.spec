@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-TMT
+Name: rack-v2-TMT
 Version: 2.2.0
 Release: 2%{?dist}
 Summary: TMT plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Jadael/TMT
+URL: https://github.com/Jadael/TMT
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

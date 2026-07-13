@@ -33,8 +33,8 @@ A starting point for building LV2 audio plugins targeting MOD Desktop using DPF.
 Includes a working passthrough+gain example and a MOD pedalboard GUI (modgui).
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}

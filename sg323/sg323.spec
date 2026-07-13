@@ -46,23 +46,23 @@ It is based on over 2 years of work, which included a detailed analysis of
 the original circuit logic and filters, as well as the actual eprom data.
 
 %package -n license-%{name}
-Summary:  License and documentation for %{name}
-License:  GPL-3.0-only
+Summary: License and documentation for %{name}
+License: GPL-3.0-only
 
 %description -n license-%{name}
 License and documentation for %{name}
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-only
+Summary: VST3 version of %{name}
+License: GPL-3.0-only
 Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  GPL-3.0-only
+Summary: CLAP version of %{name}
+License: GPL-3.0-only
 Requires: license-%{name}
 
 %description -n clap-%{name}

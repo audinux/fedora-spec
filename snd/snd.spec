@@ -25,7 +25,7 @@ ExclusiveArch: x86_64 aarch64
 Source:	 https://ccrma.stanford.edu/software/snd/snd-%{pkgver}.tar.gz
 Source1: snd.png
 Source2: snd.desktop
-Patch0:  snd-13-docdir.patch
+Patch0: snd-13-docdir.patch
 
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA

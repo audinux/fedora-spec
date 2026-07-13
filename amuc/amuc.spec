@@ -8,19 +8,19 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    amuc
+Name: amuc
 Version: 1.7.%{shortcommit0}
 Release: 3%{?dist}
 Summary: Amuc - the Amsterdam Music Composer
 License: GPL-2.0-or-later
-URL:     https://github.com/pjz/amuc.git
+URL: https://github.com/pjz/amuc.git
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/pjz/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Patch0:  amuc-0001-fix-build-with-gcc-7.patch
+Patch0: amuc-0001-fix-build-with-gcc-7.patch
 Patch1:  amuc-0002-add-missing-library.patch
 Patch2:  amuc-0003-fix-makefiles.patch
 

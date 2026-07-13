@@ -9,12 +9,12 @@
 # — ekulik
 %bcond_with check
 
-Name:           meson
-Version:        0.57.1
-Release:        1%{?dist}
-Summary:        High productivity build system
-License:        Apache-2.0
-URL:            https://mesonbuild.com/
+Name: meson
+Version: 0.57.1
+Release: 1%{?dist}
+Summary: High productivity build system
+License: Apache-2.0
+URL: https://mesonbuild.com/
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -24,60 +24,60 @@ Source:         https://github.com/mesonbuild/meson/releases/download/%{version_
 
 BuildArch:      noarch
 
-BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
-Requires:       python%{python3_version}dist(setuptools)
-Requires:       ninja-build
+BuildRequires: python3-devel
+BuildRequires: python3-setuptools
+Requires: python%{python3_version}dist(setuptools)
+Requires: ninja-build
 
 %if %{with check}
-BuildRequires:  ninja-build
+BuildRequires: ninja-build
 # Some tests expect the unversioned executable
-BuildRequires:  /usr/bin/python
+BuildRequires: /usr/bin/python
 # Various languages
-BuildRequires:  gcc
-BuildRequires:  libasan
-BuildRequires:  gcc-c++
-BuildRequires:  gcc-gfortran
-BuildRequires:  gcc-objc
-BuildRequires:  gcc-objc++
-BuildRequires:  java-devel
-BuildRequires:  libomp-devel
-BuildRequires:  mono-core mono-devel
-BuildRequires:  rust
+BuildRequires: gcc
+BuildRequires: libasan
+BuildRequires: gcc-c++
+BuildRequires: gcc-gfortran
+BuildRequires: gcc-objc
+BuildRequires: gcc-objc++
+BuildRequires: java-devel
+BuildRequires: libomp-devel
+BuildRequires: mono-core mono-devel
+BuildRequires: rust
 # Since the build is noarch, we can't use %%ifarch
 #%%ifarch %%{ldc_arches}
 #BuildRequires:  ldc
 #%%endif
 # Various libs support
-BuildRequires:  boost-devel
-BuildRequires:  gtest-devel
-BuildRequires:  gmock-devel
-BuildRequires:  qt5-qtbase-devel
-BuildRequires:  qt5-qtbase-private-devel
-BuildRequires:  qt5-linguist
-BuildRequires:  vala
-BuildRequires:  python3-gobject-base
-BuildRequires:  wxGTK3-devel
-BuildRequires:  flex
-BuildRequires:  bison
-BuildRequires:  gettext
-BuildRequires:  gnustep-base-devel
-BuildRequires:  %{_bindir}/gnustep-config
-BuildRequires:  git-core
-BuildRequires:  pkgconfig(protobuf)
-BuildRequires:  pkgconfig(glib-2.0)
-BuildRequires:  pkgconfig(glib-sharp-2.0)
-BuildRequires:  pkgconfig(gobject-introspection-1.0)
-BuildRequires:  gtk-doc
-BuildRequires:  itstool
-BuildRequires:  pkgconfig(zlib)
-BuildRequires:  zlib-static
-BuildRequires:  python3dist(cython)
-BuildRequires:  pkgconfig(sdl2)
-BuildRequires:  %{_bindir}/pcap-config
-BuildRequires:  pkgconfig(vulkan)
-BuildRequires:  llvm-devel
-BuildRequires:  cups-devel
+BuildRequires: boost-devel
+BuildRequires: gtest-devel
+BuildRequires: gmock-devel
+BuildRequires: qt5-qtbase-devel
+BuildRequires: qt5-qtbase-private-devel
+BuildRequires: qt5-linguist
+BuildRequires: vala
+BuildRequires: python3-gobject-base
+BuildRequires: wxGTK3-devel
+BuildRequires: flex
+BuildRequires: bison
+BuildRequires: gettext
+BuildRequires: gnustep-base-devel
+BuildRequires: %{_bindir}/gnustep-config
+BuildRequires: git-core
+BuildRequires: pkgconfig(protobuf)
+BuildRequires: pkgconfig(glib-2.0)
+BuildRequires: pkgconfig(glib-sharp-2.0)
+BuildRequires: pkgconfig(gobject-introspection-1.0)
+BuildRequires: gtk-doc
+BuildRequires: itstool
+BuildRequires: pkgconfig(zlib)
+BuildRequires: zlib-static
+BuildRequires: python3dist(cython)
+BuildRequires: pkgconfig(sdl2)
+BuildRequires: %{_bindir}/pcap-config
+BuildRequires: pkgconfig(vulkan)
+BuildRequires: llvm-devel
+BuildRequires: cups-devel
 %endif
 
 %description

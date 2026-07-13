@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-trowaSoft
+Name: rack-v1-trowaSoft
 Version: 1.0.3
 Release: 3%{?dist}
 Summary: trowaSoft plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/j4s0n-c/trowaSoft-VCV
+URL: https://github.com/j4s0n-c/trowaSoft-VCV
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

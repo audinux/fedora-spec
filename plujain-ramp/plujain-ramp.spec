@@ -8,7 +8,7 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:  plujain-ramp
+Name: plujain-ramp
 Version: 1.1.3
 Release: 2%{?dist}
 Summary: Plujain-Ramp is a mono rhythmic tremolo LV2 Audio Plugin

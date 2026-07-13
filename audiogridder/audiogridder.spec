@@ -70,8 +70,8 @@ For more information and intstallation instructions, please visit
 https://audiogridder.com.
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  MIT
+Summary: VST3 version of %{name}
+License: MIT
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n vst3-%{name}

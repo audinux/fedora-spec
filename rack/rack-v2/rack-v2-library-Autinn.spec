@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Autinn
+Name: rack-v2-Autinn
 Version: 2.6.32
 Release: 2%{?dist}
 Summary: Autinn plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/NikolaiVChr/Autinn
+URL: https://github.com/NikolaiVChr/Autinn
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

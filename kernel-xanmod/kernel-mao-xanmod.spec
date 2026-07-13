@@ -16,12 +16,12 @@
 %define kver  %{kmaj}.%{kmin}.%{kpat}
 %define fcver %{dist}.%{_arch}
 
-Name:    kernel-xan-mao
+Name: kernel-xan-mao
 Summary: The Linux XanMod Real Time Kernel
 Version: %{kver}.xan%{kxan}
 Release: %{krel}%{?dist}
 License: GPL
-URL:     http://www.xanmod.org
+URL: http://www.xanmod.org
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

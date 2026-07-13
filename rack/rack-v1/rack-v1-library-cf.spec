@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-cf
+Name: rack-v1-cf
 Version: 1.1.1
 Release: 3%{?dist}
 Summary: cf plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/cfoulc/cf
+URL: https://github.com/cfoulc/cf
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

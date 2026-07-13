@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-SanguineMutants
+Name: rack-v2-SanguineMutants
 Version: 2.6.11
 Release: 2%{?dist}
 Summary: SanguineMutants plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Bloodbat/SanguineMutants
+URL: https://github.com/Bloodbat/SanguineMutants
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

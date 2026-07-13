@@ -44,8 +44,8 @@ Camomile supports the VST3, LV2 and Audio Unit plugin formats on Windows,
 Linux and macOS.
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

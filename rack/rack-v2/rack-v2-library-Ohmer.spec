@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Ohmer
+Name: rack-v2-Ohmer
 Version: 2.6.12
 Release: 2%{?dist}
 Summary: Ohmer plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/DomiKamu/Ohmer
+URL: https://github.com/DomiKamu/Ohmer
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

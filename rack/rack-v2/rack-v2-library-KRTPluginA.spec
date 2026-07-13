@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-KRTPluginA
+Name: rack-v2-KRTPluginA
 Version: 2.26.31
 Release: 1%{?dist}
 Summary: KRTPluginA plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/jackokring/KRTPluginA
+URL: https://github.com/jackokring/KRTPluginA
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

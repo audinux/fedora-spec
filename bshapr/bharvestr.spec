@@ -9,11 +9,11 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Summary: Experimental granular synthesizer LV2 plugin
-Name:    lv2-BHarvestr
+Name: lv2-BHarvestr
 Version: 0.1.0
 Release: 4%{?dist}
 License: GPL
-URL:     https://github.com/sjaehn/BHarvestr
+URL: https://github.com/sjaehn/BHarvestr
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

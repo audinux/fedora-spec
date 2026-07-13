@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Myth
+Name: rack-v2-Myth
 Version: 2.0.1
 Release: 1%{?dist}
 Summary: Myth plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Ahineya/vcv-myth-plugin
+URL: https://github.com/Ahineya/vcv-myth-plugin
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -16,12 +16,12 @@
 %define kver  %{kmaj}.%{kmin}.%{kpat}
 %define fcver %{dist}.%{_arch}
 
-Name:    kernel-rt-mao
+Name: kernel-rt-mao
 Summary: The Linux Real Time Kernel
 Version: %{kver}.rt%{krt}
 Release: %{krel}%{?dist}
 License: GPL
-URL:     http://www.kernel.org
+URL: http://www.kernel.org
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

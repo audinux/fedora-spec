@@ -42,8 +42,8 @@ harmonized against the scale you pick. The 48-string bank spans roughly four oct
 and N STRINGS cursors over how many of them ring at once.
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}

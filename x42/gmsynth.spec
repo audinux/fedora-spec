@@ -12,7 +12,7 @@ URL: https://github.com/x42/gmsynth.lv2
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
-Distribution: Audinuxgm
+Distribution: Audinux
 
 Source0: https://github.com/x42/gmsynth.lv2/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 

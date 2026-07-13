@@ -7,13 +7,13 @@
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 %global prerel 9
 
-Name:  phasex
+Name: phasex
 Version: 0.14.97
 Release: %{prerel}.20150304git%{shortcommit}%{?dist}.6
 Summary: PHASEX -- Phase Harmonic Advanced Synthesis EXperiment
 # Automatically converted from old format: GPLv3+ - review is highly recommended.
 License: GPL-3.0-or-later
-URL:     https://github.com/williamweston/phasex
+URL: https://github.com/williamweston/phasex
 
 # The source for this package was pulled from upstream's vcs.
 # Use the following commands to generate the tarball:
@@ -39,7 +39,7 @@ BuildRequires: gtk2-devel >= 2.4.0
 BuildRequires: perl-interpreter
 BuildRequires: desktop-file-utils
 
-Requires:      hicolor-icon-theme
+Requires: hicolor-icon-theme
 
 %description
 PHASEX is an experimental JACK audio / ALSA MIDI softsynth for Linux

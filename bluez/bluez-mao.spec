@@ -9,12 +9,12 @@
 %bcond_with deprecated
 %endif
 
-Name:    bluez-mao
+Name: bluez-mao
 Version: 5.79
 Release: 1%{?dist}
 Summary: Bluetooth utilities
 License: GPL-2.0-or-later
-URL:     http://www.bluez.org/
+URL: http://www.bluez.org/
 
 Source0: https://www.kernel.org/pub/linux/bluetooth/bluez-%{version}.tar.xz
 

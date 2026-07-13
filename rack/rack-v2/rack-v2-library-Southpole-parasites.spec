@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Southpole-parasites
+Name: rack-v2-Southpole-parasites
 Version: 0.6.0
 Release: 1%{?dist}
 Summary: Southpole-parasites plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/gbrandt1/southpole-vcvrack
+URL: https://github.com/gbrandt1/southpole-vcvrack
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -54,16 +54,16 @@ matched for MIDI input (2) and avoids too much timestretching by generating harm
 already near their target pitch (3). Voila!
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-3.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-3.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}

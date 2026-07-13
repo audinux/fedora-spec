@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-patina
+Name: rack-v2-patina
 Version: 2.0.1
 Release: 2%{?dist}
 Summary: patina plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/epadilla/patina
+URL: https://github.com/epadilla/patina
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

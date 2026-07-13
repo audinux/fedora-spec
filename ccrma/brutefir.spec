@@ -4,11 +4,11 @@
 # Category: Tool
 
 Summary: Generic FIR filter (convolution) engine
-Name:    brutefir
+Name: brutefir
 Version: 1.0o
 Release: 1%{?dist}
 License: GPL
-URL:     https://torger.se/anders/brutefir.html
+URL: https://torger.se/anders/brutefir.html
 ExclusiveArch: x86_64 aarch64
 Source0: https://torger.se/anders/files/brutefir-%{version}.tar.gz
 

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-WhatTheRack
+Name: rack-v2-WhatTheRack
 Version: 2.0.3
 Release: 1%{?dist}
 Summary: WhatTheRack plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/korfuri/WhatTheRack
+URL: https://github.com/korfuri/WhatTheRack
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

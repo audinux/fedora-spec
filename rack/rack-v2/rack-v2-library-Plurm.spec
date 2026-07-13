@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Plurm
+Name: rack-v2-Plurm
 Version: 2.0.1
 Release: 1%{?dist}
 Summary: Plurm plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/terrytheplatypus/Plurm
+URL: https://github.com/terrytheplatypus/Plurm
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-SLUGNAME
+Name: rack-v2-SLUGNAME
 Version: VERSION
 Release: 2%{?dist}
 Summary: SLUGNAME plugin for Rack
 License: GPL-2.0-or-later
-URL:     SOURCEURL
+URL: SOURCEURL
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -52,8 +52,8 @@ or a reverb. With the right input gain and release settings,
 you can introduce pumping and breathing artifacts.
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n vst3-%{name}

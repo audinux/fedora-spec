@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-LittleUtils
+Name: rack-v1-LittleUtils
 Version: 1.0.3
 Release: 3%{?dist}
 Summary: LittleUtils plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/mgunyho/Little-Utils
+URL: https://github.com/mgunyho/Little-Utils
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

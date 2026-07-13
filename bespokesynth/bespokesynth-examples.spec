@@ -3,12 +3,12 @@
 # Type: Presets
 # Category: Tool
 
-Name:    BespokeSynth-examples
+Name: BespokeSynth-examples
 Version: 1.0.0
 Release: 7%{?dist}
 Summary: Examples for BespokeSynth
 License: GPL-2.0-or-later
-URL:     https://github.com/initialed85/bespoke-synth-jams
+URL: https://github.com/initialed85/bespoke-synth-jams
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

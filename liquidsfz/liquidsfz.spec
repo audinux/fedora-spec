@@ -34,14 +34,14 @@ liquidsfz is a free and open source sampler that can load and play .sfz files.
 It can also load and play Hydrogen drumkits. We support JACK and LV2.
 
 %package devel
-Summary:  Header files for %{name}
+Summary: Header files for %{name}
 Requires: %{name} = %{version}-%{release}
 
 %description devel
 Header files for the %{name} library.
 
 %package static
-Summary:  Static libraries for %{name}
+Summary: Static libraries for %{name}
 Requires: %{name} = %{version}-%{release}
 
 %description static

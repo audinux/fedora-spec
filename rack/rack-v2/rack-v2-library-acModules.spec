@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-acModules
+Name: rack-v2-acModules
 Version: 2.0.7
 Release: 2%{?dist}
 Summary: acModules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/gwygonik/acModules
+URL: https://github.com/gwygonik/acModules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

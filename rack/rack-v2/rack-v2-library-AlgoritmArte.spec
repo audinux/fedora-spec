@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-AlgoritmArte
+Name: rack-v2-AlgoritmArte
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: AlgoritmArte plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/algoritmarte/AlgoritmarteVCVPlugin
+URL: https://github.com/algoritmarte/AlgoritmarteVCVPlugin
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

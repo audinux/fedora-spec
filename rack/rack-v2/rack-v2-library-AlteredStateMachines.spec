@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-AlteredStateMachines
+Name: rack-v2-AlteredStateMachines
 Version: 2.0.1
 Release: 2%{?dist}
 Summary: AlteredStateMachines plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://codeberg.org/alteredstatemachines/alteredstatemachines-vcv
+URL: https://codeberg.org/alteredstatemachines/alteredstatemachines-vcv
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -43,7 +43,7 @@ BuildRequires: pkgconfig(jack)
 Sfizz is a musical sampler for musicians, and a library for developers.
 
 %package devel
-Summary:  Header files for Sfizz
+Summary: Header files for Sfizz
 Requires: %{name} = %{version}-%{release}
 
 %description devel

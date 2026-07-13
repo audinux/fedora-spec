@@ -104,7 +104,7 @@ Features
  * MIDI-support
 
 %package devel
-Summary:  Development files for lmms
+Summary: Development files for lmms
 Requires: lmms-mao = %{version}-%{release}
 
 %description devel

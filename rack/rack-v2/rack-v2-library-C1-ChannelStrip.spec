@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-C1-ChannelStrip
+Name: rack-v2-C1-ChannelStrip
 Version: 2.1.1
 Release: 2%{?dist}
 Summary: C1-ChannelStrip plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Eurikon/C1-ChannelStrip
+URL: https://github.com/Eurikon/C1-ChannelStrip
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

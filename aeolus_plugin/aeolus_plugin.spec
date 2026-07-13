@@ -58,31 +58,31 @@ The original binary format for the pipe models and the organ configuration
 has been translated (partially) to JSON.
 
 %package -n license-%{name}
-Summary:  License and documentation for %{name}
-License:  GPL-2.0-or-later
+Summary: License and documentation for %{name}
+License: GPL-2.0-or-later
 
 %description -n license-%{name}
 License and documentation for %{name}
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-2.0-or-later
 Requires: license-%{name}
 
 %description -n vst3-%{name}
 vst3 version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-2.0-or-later
 Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  GPL-2.0-or-later
+Summary: CLAP version of %{name}
+License: GPL-2.0-or-later
 Requires: license-%{name}
 
 %description -n clap-%{name}

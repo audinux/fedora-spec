@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-SIM
+Name: rack-v2-SIM
 Version: 2.1.2
 Release: 2%{?dist}
 Summary: SIM plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/imDanSable/SIM
+URL: https://github.com/imDanSable/SIM
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-BeckstromResearch
+Name: rack-v2-BeckstromResearch
 Version: 0.6.0
 Release: 1%{?dist}
 Summary: BeckstromResearch plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/chrisbeckstrom/Beckstrom_Research_Rack
+URL: https://github.com/chrisbeckstrom/Beckstrom_Research_Rack
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

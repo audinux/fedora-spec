@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Coffee
+Name: rack-v2-Coffee
 Version: 2.4.1
 Release: 1%{?dist}
 Summary: Coffee plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/CoffeeVCV/CoffeeVCV/blob/master/README.md
+URL: https://github.com/CoffeeVCV/CoffeeVCV/blob/master/README.md
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

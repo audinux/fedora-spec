@@ -19,7 +19,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/jwagner/playitslowly/archive/%{commit0}.zip#/%{name}-%{version}.zip
-# Patch0:  playitslowly_0001_force_gtk3.patch
+# Patch0: playitslowly_0001_force_gtk3.patch
 
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools

@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-ErraticInstruments
+Name: rack-v1-ErraticInstruments
 Version: 0.6.2
 Release: 3%{?dist}
 Summary: ErraticInstruments plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/bafonso/Erratic
+URL: https://github.com/bafonso/Erratic
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

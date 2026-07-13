@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-ImpromptuModular
+Name: rack-v1-ImpromptuModular
 Version: 1.1.12
 Release: 3%{?dist}
 Summary: ImpromptuModular plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/MarcBoule/ImpromptuModular/
+URL: https://github.com/MarcBoule/ImpromptuModular/
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

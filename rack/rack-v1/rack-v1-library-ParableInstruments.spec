@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-ParableInstruments
+Name: rack-v1-ParableInstruments
 Version: 1.0.0
 Release: 3%{?dist}
 Summary: ParableInstruments plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/adbrant/ArableInstruments
+URL: https://github.com/adbrant/ArableInstruments
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

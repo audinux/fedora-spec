@@ -15,7 +15,7 @@ Version: 0.0.1
 Release: 1%{?dist}
 License: BSD-2-Clause
 Summary: A reasonable LV2 church organ
-URL:https://github.com/sfztools/toccata.lv2
+URL: https://github.com/sfztools/toccata.lv2
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -35,7 +35,7 @@ License: MIT
 License and documentation for %{name}
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
 Requires: license-%{name}
 

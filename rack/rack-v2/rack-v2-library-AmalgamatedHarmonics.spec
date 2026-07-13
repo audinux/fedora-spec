@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-AmalgamatedHarmonics
+Name: rack-v2-AmalgamatedHarmonics
 Version: 2.0.1
 Release: 1%{?dist}
 Summary: AmalgamatedHarmonics plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/jhoar/AmalgamatedHarmonics
+URL: https://github.com/jhoar/AmalgamatedHarmonics
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

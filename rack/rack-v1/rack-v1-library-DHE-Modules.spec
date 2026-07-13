@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-DHE-Modules
+Name: rack-v1-DHE-Modules
 Version: 1.5.1
 Release: 3%{?dist}
 Summary: DHE-Modules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/dhemery/DHE-Modules/
+URL: https://github.com/dhemery/DHE-Modules/
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

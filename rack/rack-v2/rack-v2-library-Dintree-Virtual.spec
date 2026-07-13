@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Dintree-Virtual
+Name: rack-v2-Dintree-Virtual
 Version: 2.0.17
 Release: 1%{?dist}
 Summary: Dintree-Virtual plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/hires/Dintree-Virtual
+URL: https://github.com/hires/Dintree-Virtual
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

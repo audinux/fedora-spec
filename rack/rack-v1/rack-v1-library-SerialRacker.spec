@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-SerialRacker
+Name: rack-v1-SerialRacker
 Version: 0.6.1
 Release: 3%{?dist}
 Summary: SerialRacker plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/apbianco/SerialRacker
+URL: https://github.com/apbianco/SerialRacker
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

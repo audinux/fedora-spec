@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-CaptainsSounds
+Name: rack-v2-CaptainsSounds
 Version: 1.0.7
 Release: 1%{?dist}
 Summary: CaptainsSounds plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/mikeallisonJS/vcv-CaptainsSounds
+URL: https://github.com/mikeallisonJS/vcv-CaptainsSounds
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

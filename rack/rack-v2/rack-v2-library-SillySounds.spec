@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-SillySounds
+Name: rack-v2-SillySounds
 Version: 2.1.1
 Release: 2%{?dist}
 Summary: SillySounds plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/loparcog/SillySounds
+URL: https://github.com/loparcog/SillySounds
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

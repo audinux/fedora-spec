@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Tyche
+Name: rack-v2-Tyche
 Version: 2.1.5
 Release: 2%{?dist}
 Summary: Tyche plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/denolehov/VCVTyche
+URL: https://github.com/denolehov/VCVTyche
 ExclusiveArch: x86_64
 
 Vendor:       Audinux

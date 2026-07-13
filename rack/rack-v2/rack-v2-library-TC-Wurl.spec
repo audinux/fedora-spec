@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-TC-Wurl
+Name: rack-v2-TC-Wurl
 Version: 2.0.1
 Release: 2%{?dist}
 Summary: TC-Wurl plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Eurikon/TC-Wurl
+URL: https://github.com/Eurikon/TC-Wurl
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

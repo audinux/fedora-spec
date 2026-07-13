@@ -4,11 +4,11 @@
 # Category: Audio, Effect
 
 Summary: An audio stream chopping LV2 plugin
-Name:    lv2-BChoppr
+Name: lv2-BChoppr
 Version: 1.12.8
 Release: 3%{?dist}
 License: GPL
-URL:     https://github.com/sjaehn/BChoppr
+URL: https://github.com/sjaehn/BChoppr
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

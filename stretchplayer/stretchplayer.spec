@@ -20,7 +20,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/smbolton/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Patch0:  stretchplayer-fix-cast.patch
+Patch0: stretchplayer-fix-cast.patch
 Patch1:  stretchplayer-remove-inline.patch
 Patch2:  stretchplayer-disable-mpg123.patch
 

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-vitamin
+Name: rack-v2-vitamin
 Version: 2.0.1
 Release: 1%{?dist}
 Summary: vitamin plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/xaviershay/vitamin-vcv-modules
+URL: https://github.com/xaviershay/vitamin-vcv-modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

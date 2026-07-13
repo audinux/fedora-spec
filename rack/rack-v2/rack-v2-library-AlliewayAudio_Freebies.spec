@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-AlliewayAudio_Freebies
+Name: rack-v2-AlliewayAudio_Freebies
 Version: 2.0.7
 Release: 2%{?dist}
 Summary: AlliewayAudio_Freebies plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/AlliewayAudio/AlliewayAudio_Freebies
+URL: https://github.com/AlliewayAudio/AlliewayAudio_Freebies
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-MicMusic
+Name: rack-v2-MicMusic
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: MicMusic plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/very-cool-name/MicMusic-VCV
+URL: https://github.com/very-cool-name/MicMusic-VCV
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -5,11 +5,11 @@
 
 %global commit0 0ff9ac414d6c7daa3ef494d43524b9e1c9e3f7f5
 
-Name:    delooper
+Name: delooper
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Audio Looper
-URL:     https://github.com/sonejostudios/DeLooper
+URL: https://github.com/sonejostudios/DeLooper
 ExclusiveArch: x86_64 aarch64
 License: GPL-3.0-or-later
 

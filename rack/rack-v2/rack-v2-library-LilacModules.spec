@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-LilacModules
+Name: rack-v2-LilacModules
 Version: 2.0.3
 Release: 2%{?dist}
 Summary: LilacModules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/grough/lilac-modules-vcv
+URL: https://github.com/grough/lilac-modules-vcv
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

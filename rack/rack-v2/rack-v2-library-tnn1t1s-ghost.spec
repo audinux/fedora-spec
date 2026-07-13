@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-tnn1t1s-ghost
+Name: rack-v2-tnn1t1s-ghost
 Version: 2.1.2
 Release: 2%{?dist}
 Summary: tnn1t1s-ghost plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/tnn1t1s/tnn1t1s-ghost
+URL: https://github.com/tnn1t1s/tnn1t1s-ghost
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

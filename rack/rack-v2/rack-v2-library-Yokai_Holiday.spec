@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Yokai_Holiday
+Name: rack-v2-Yokai_Holiday
 Version: 2.0.0.8
 Release: 2%{?dist}
 Summary: Yokai_Holiday plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/demcanulty/Yokai_Holiday/
+URL: https://github.com/demcanulty/Yokai_Holiday/
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

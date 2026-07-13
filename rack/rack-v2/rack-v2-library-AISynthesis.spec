@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-AISynthesis
+Name: rack-v2-AISynthesis
 Version: 2.0.1
 Release: 2%{?dist}
 Summary: AISynthesis plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/AIsynthesis/vcvrack
+URL: https://github.com/AIsynthesis/vcvrack
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

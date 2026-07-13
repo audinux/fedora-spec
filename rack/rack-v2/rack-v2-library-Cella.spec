@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Cella
+Name: rack-v2-Cella
 Version: 2.9.0
 Release: 2%{?dist}
 Summary: Cella plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/victorkashirin/CellaVCV
+URL: https://github.com/victorkashirin/CellaVCV
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

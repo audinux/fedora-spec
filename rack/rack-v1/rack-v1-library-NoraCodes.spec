@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-NoraCodes
+Name: rack-v1-NoraCodes
 Version: 1.2.2
 Release: 3%{?dist}
 Summary: NoraCodes plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/NoraCodes/fives
+URL: https://github.com/NoraCodes/fives
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

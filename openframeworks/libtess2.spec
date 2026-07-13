@@ -34,14 +34,14 @@ The main point of the refactoring has been the interface and memory
 allocation scheme.
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
 The %{name}-devel package contains header files for %{name}.
 
 %package static
-Summary:  Static library for %{name}
+Summary: Static library for %{name}
 Requires: %{name}-devel%{?_isa} = %{version}-%{release}
 
 %description static

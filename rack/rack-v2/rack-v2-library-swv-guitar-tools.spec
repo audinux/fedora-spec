@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-swv-guitar-tools
+Name: rack-v2-swv-guitar-tools
 Version: 2.1.0
 Release: 2%{?dist}
 Summary: swv-guitar-tools plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/shortwavlabs/vcv-guitar-collection
+URL: https://github.com/shortwavlabs/vcv-guitar-collection
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

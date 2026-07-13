@@ -7,11 +7,11 @@
 %global din_vers_minor 2
 %global din_vers_patch 0
 Summary: DIN is a synth of a 3rd kind
-Name:    din
+Name: din
 Version: %din_vers_major.%din_vers_minor.%din_vers_patch
 Release: 1%{?dist}
 License: GPL
-URL:     https://dinisnoise.org/
+URL: https://dinisnoise.org/
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-huaba
+Name: rack-v1-huaba
 Version: 1.1.0
 Release: 3%{?dist}
 Summary: huaba plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/dhuber81/huaba
+URL: https://github.com/dhuber81/huaba
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

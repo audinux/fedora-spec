@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-JW-Modules
+Name: rack-v2-JW-Modules
 Version: 2.0.41
 Release: 2%{?dist}
 Summary: JW-Modules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/jeremywen/JW-Modules
+URL: https://github.com/jeremywen/JW-Modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
