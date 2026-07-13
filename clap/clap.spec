@@ -5,7 +5,7 @@
 
 Summary: CLAP audio plugin API
 Name: clap
-Version: 1.2.9
+Version: 1.2.10
 Release: 1%{?dist}
 License: MIT
 URL: https://github.com/free-audio/clap
@@ -15,8 +15,6 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/free-audio/clap/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
-
-BuildArch: noarch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -57,6 +55,9 @@ Header files for CLAP.
 %{_libdir}/pkgconfig/*
 
 %changelog
+* Mon Jul 13 2026 Yann Collette <ycollette dot nospam at free.fr> 1.2.10-1
+- update to 1.2.10-1
+
 * Thu Jun 18 2026 Yann Collette <ycollette dot nospam at free.fr> 1.2.9-1
 - update to 1.2.9-1
 
