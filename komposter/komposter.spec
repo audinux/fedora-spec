@@ -5,13 +5,14 @@
 
 Name: komposter
 Version: 0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Modular virtual analog software synthesizer and sequencer for 4KB and 64KB intros
 License: GPL-2.0
 URL: https://github.com/electronoora/komposter
 ExclusiveArch: x86_64 aarch64
 
 Source0: https://github.com/electronoora/komposter/archive/refs/heads/master.zip#/komposter.zip
+Patch0: komposter-0001-fix-generic-build-and-resources-path.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: autoconf
@@ -25,7 +26,7 @@ BuildRequires: freetype-devel
 Modular virtual analog software synthesizer and sequencer for 4KB and 64KB intros
 
 %prep
-%autosetup -n %{name}-master
+%autosetup -p1 -n %{name}-master
 
 ./autogen.sh
 
@@ -66,5 +67,8 @@ cp -r resources/komposter_icon.png %{buildroot}%{_datadir}/icons/hicolor/256x256
 %{_datadir}/icons/*
 
 %changelog
+* Mon Jul 13 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1-2
+- update to 0.1-2 - fix generic build + fix resources path
+
 * Sun Feb 13 2022 Yann Collette <ycollette.nospam@free.fr> - 0.1-1
 - Initial version of the spec file

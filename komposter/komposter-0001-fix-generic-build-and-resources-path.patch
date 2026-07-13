@@ -1,0 +1,40 @@
+From fea209836ff5c6d7526001703ecc9153f4e7347f Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Mon, 13 Jul 2026 16:45:37 +0200
+Subject: [PATCH] fix generic build and resources path
+
+---
+ Makefile.am  | 2 +-
+ acinclude.m4 | 3 ---
+ 2 files changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index 68354c1..63c2f14 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -6,7 +6,7 @@ EXTRA_DIST = doc/ \
+ 						 player/ \
+ 						 resources/
+ 
+-AM_CPPFLAGS = -DRESOURCEPATH=\"$(prefix)/share/komposter\"
++AM_CPPFLAGS = -DRESOURCEPATH=\"$(prefix)/share/komposter/resources/\"
+ 
+ komposter_SOURCES = about.c \
+ 										audio.c \
+diff --git a/acinclude.m4 b/acinclude.m4
+index e3fe939..ff21284 100644
+--- a/acinclude.m4
++++ b/acinclude.m4
+@@ -361,9 +361,6 @@ AC_DEFUN([AC_COMPILE_MODE],
+ 		else
+ 			AC_MSG_RESULT([default])
+ 		fi
+-	else
+-		AC_MSG_RESULT([autodetect])
+-		AC_CHECK_CFLAG([-march=native])
+ 	fi
+ 
+ 	AC_CHECK_HEADER_DIRECTORY([/opt/include])
+-- 
+2.55.0
+
