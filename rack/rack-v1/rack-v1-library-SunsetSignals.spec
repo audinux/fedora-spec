@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-SunsetSignals
+Name: rack-v1-SunsetSignals
 Version: 1.0.0
 Release: 3%{?dist}
 Summary: SunsetSignals plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://gitlab.com/jeremy_mitchell/sunsetsignals
+URL: https://gitlab.com/jeremy_mitchell/sunsetsignals
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -33,23 +33,23 @@ BuildRequires: python3
 Rust VST3 and CLAP plugin framework and plugins - because everything is better when you do it yourself
 
 %package -n license-%{name}
-Summary:  License and documentation for %{name}
-License:  ISC
+Summary: License and documentation for %{name}
+License: ISC
 
 %description -n license-%{name}
 License and documentation for %{name}
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  ISC
+Summary: VST3 version of %{name}
+License: ISC
 Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  ISC
+Summary: CLAP version of %{name}
+License: ISC
 Requires: license-%{name}
 
 %description -n clap-%{name}

@@ -43,31 +43,31 @@ BuildRequires: alsa-lib-devel
 Nintendo RP2A03 Synthesizer
 
 %package -n license-%{name}
-Summary:  License and documentation for %{name}
-License:  LGPL-2.1
+Summary: License and documentation for %{name}
+License: LGPL-2.1
 
 %description -n license-%{name}
 License and documentation for %{name}
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  LGPL-2.1
+Summary: VST3 version of %{name}
+License: LGPL-2.1
 Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n vst-%{name}
-Summary:  VST2 version of %{name}
-License:  LGPL-2.1
+Summary: VST2 version of %{name}
+License: LGPL-2.1
 Requires: license-%{name}
 
 %description -n vst-%{name}
 VST2 version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  LGPL-2.1
+Summary: LV2 version of %{name}
+License: LGPL-2.1
 Requires: license-%{name}
 
 %description -n lv2-%{name}

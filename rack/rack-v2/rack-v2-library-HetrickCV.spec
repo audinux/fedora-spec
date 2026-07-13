@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-HetrickCV
+Name: rack-v2-HetrickCV
 Version: 2.5.4
 Release: 2%{?dist}
 Summary: HetrickCV plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/mhetrick/hetrickcv
+URL: https://github.com/mhetrick/hetrickcv
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

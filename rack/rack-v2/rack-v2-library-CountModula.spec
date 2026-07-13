@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-CountModula
+Name: rack-v2-CountModula
 Version: 2.5.0
 Release: 2%{?dist}
 Summary: CountModula plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/countmodula/VCVRackPlugins
+URL: https://github.com/countmodula/VCVRackPlugins
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

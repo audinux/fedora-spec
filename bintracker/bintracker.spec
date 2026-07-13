@@ -3,12 +3,12 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
-Name:    bintracker
+Name: bintracker
 Version: 0.2.0
 Release: 1%{?dist}
 Summary: A hackable Chiptune Audio Workstation
 License: GPL-3.0-or-later
-URL:     https://github.com/bintracker/bintracker
+URL: https://github.com/bintracker/bintracker
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

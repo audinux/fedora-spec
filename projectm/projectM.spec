@@ -49,7 +49,7 @@ projectM is an LGPL'ed reimplementation of Milkdrop under OpenGL. All projectM
 requires is a video card with 3D acceleration and your favorite music.
 
 %package  devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}, pkgconfig
 
 %description devel

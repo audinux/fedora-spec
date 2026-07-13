@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-Alikins
+Name: rack-v1-Alikins
 Version: 1.0.1
 Release: 3%{?dist}
 Summary: Alikins plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/alikins/Alikins-rack-plugins
+URL: https://github.com/alikins/Alikins-rack-plugins
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

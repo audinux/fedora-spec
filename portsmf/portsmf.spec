@@ -32,7 +32,7 @@ PortSMF is "Port Standard MIDI File", a cross-platform, C++ library
 for reading and writing Standard MIDI Files.
 
 %package devel
-Summary:  Header files for portSMF library
+Summary: Header files for portSMF library
 Requires: %{name} = %{version}-%{release}
 Requires: libstdc++-devel
 
@@ -40,7 +40,7 @@ Requires: libstdc++-devel
 Header files for portSMF library.
 
 %package static
-Summary:  Static portSMF library
+Summary: Static portSMF library
 Requires: %{name}-devel = %{version}-%{release}
 
 %description static

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-LilacLoop
+Name: rack-v2-LilacLoop
 Version: 2.1.6
 Release: 2%{?dist}
 Summary: LilacLoop plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/grough/lilac-loop-vcv
+URL: https://github.com/grough/lilac-loop-vcv
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

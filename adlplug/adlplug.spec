@@ -4,11 +4,11 @@
 # Category: Audio, Synthesizer
 # Todo: to split into standalone / lv2 / vst
 
-Name:    adlplug
+Name: adlplug
 Version: 1.0.2
 Release: 6%{?dist}
 Summary: Synthesizer plugin for ADLMIDI (VST/LV2)
-URL:     https://github.com/jpcima/ADLplug
+URL: https://github.com/jpcima/ADLplug
 ExclusiveArch: x86_64 aarch64
 License: BSL-1.0
 
@@ -19,7 +19,7 @@ Distribution: Audinux
 
 Source0: ADLplug.tar.gz
 Source1: adlplug-source.sh
-Patch0:  adlplug-0001-fix-JUCE-compilation.patch
+Patch0: adlplug-0001-fix-JUCE-compilation.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: pkgconfig(jack)

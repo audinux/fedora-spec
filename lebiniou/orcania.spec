@@ -23,7 +23,7 @@ BuildRequires: cmake
 Potluck with different functions for different purposes that can be shared among C programs.
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description devel

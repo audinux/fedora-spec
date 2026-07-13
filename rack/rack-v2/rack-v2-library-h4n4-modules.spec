@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-h4n4-modules
+Name: rack-v2-h4n4-modules
 Version: 2.3.0
 Release: 2%{?dist}
 Summary: h4n4-modules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/hannakoppelaar/h4n4-modules
+URL: https://github.com/hannakoppelaar/h4n4-modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

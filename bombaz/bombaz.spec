@@ -48,23 +48,23 @@ Monophonic bass synth VST plug-in based on Window Function synthesis.
 It's particularly useful for adding sub-bass layers.
 
 %package -n license-%{name}
-Summary:  License and documentation for %{name}
-License:  GPL-3.0-or-later
+Summary: License and documentation for %{name}
+License: GPL-3.0-or-later
 
 %description -n license-%{name}
 License and documentation for %{name}
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-3.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n lv2-%{name}

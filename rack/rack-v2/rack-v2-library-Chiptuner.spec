@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Chiptuner
+Name: rack-v2-Chiptuner
 Version: 2.0.0
 Release: 2%{?dist}
 Summary: Chiptuner plugin for Rack
 License: GPLv2+
-URL:     https://github.com/The-Great-Assyr/Chiptuner
+URL: https://github.com/The-Great-Assyr/Chiptuner
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

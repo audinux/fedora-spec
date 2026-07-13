@@ -4,11 +4,11 @@
 # Category: Audio, Effect
 
 Summary: Pattern-controlled audio stream / sample re-sequencer LV2 plugin
-Name:    lv2-BJumblr
+Name: lv2-BJumblr
 Version: 1.6.8
 Release: 3%{?dist}
 License: GPL
-URL:     https://github.com/sjaehn/BJumblr
+URL: https://github.com/sjaehn/BJumblr
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

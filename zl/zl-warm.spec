@@ -43,15 +43,15 @@ BuildRequires: libatomic
 ZLWarm is a distortion / saturation plugin.
 
 %package -n license-%{name}
-Summary:  License and documentation of %{name}
-License:  GPL-3.0-only
+Summary: License and documentation of %{name}
+License: GPL-3.0-only
 
 %description -n license-%{name}
 License and documentation of %{name}
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-only
+Summary: VST3 version of %{name}
+License: GPL-3.0-only
 Requires: license-%{name}
 
 %description -n vst3-%{name}

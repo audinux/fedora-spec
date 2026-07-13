@@ -37,72 +37,72 @@ Requires: license-%{name}
 Lel-DR8 drumkit for %{name}
 
 %package -n %{name}-Lel-PSR
-Summary:  Lel-PSR drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: Lel-PSR drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-Lel-PSR
 Lel-PSR drumkit for %{name}
 
 %package -n %{name}-Rokton-UDS
-Summary:  Rokton-UDS drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: Rokton-UDS drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-Rokton-UDS
 Rokton-UDS drumkit for %{name}
 
 %package -n %{name}-Tamil
-Summary:  Tamil drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: Tamil drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-Tamil
 Tamil drumkit for %{name}
 
 %package -n %{name}-TamilMultiLayered
-Summary:  TamilMultiLayered drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: TamilMultiLayered drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-TamilMultiLayered
 TamilMultiLayered drumkit for %{name}
 
 %package -n %{name}-Wooden
-Summary:  Wooden drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: Wooden drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-Wooden
 Wooden drumkit for %{name}
 
 %package -n %{name}-Fricke_MFB512
-Summary:  Fricke MFB512 drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: Fricke MFB512 drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-Fricke_MFB512
 Fricke MFB512 drumkit for %{name}
 
 %package -n %{name}-Technics_PCM_DP50
-Summary:  Technics PCM DP50 drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: Technics PCM DP50 drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-Technics_PCM_DP50
 Technics PCM DP50 drumkit for %{name}
 
 %package -n %{name}-SoundMaster_SR-88
-Summary:  SoundMaster SR-88 drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: SoundMaster SR-88 drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-SoundMaster_SR-88
 SoundMaster SR-88 drumkit for %{name}
 
 %package -n %{name}-Sixties_Rock
-Summary:  Sixties Rock drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: Sixties Rock drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 Obsoletes: %{name}-Ludwig_Sixties <= 3.0.1
 
@@ -110,8 +110,8 @@ Obsoletes: %{name}-Ludwig_Sixties <= 3.0.1
 Sixties Rock drumkit for %{name}
 
 %package -n %{name}-Sixties_Basic
-Summary:  Sixties Basic drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: Sixties Basic drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 Obsoletes: %{name}-Ludwig_Basic <= 3.0.1
 
@@ -119,56 +119,56 @@ Obsoletes: %{name}-Ludwig_Basic <= 3.0.1
 Sixties Basic drumkit for %{name}
 
 %package -n %{name}-ELI_CompuRhythm_CR_7030
-Summary:  ELI CompuRhythm CR 7030 drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: ELI CompuRhythm CR 7030 drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-ELI_CompuRhythm_CR_7030
 ELI CompuRhythm CR 7030 drumkit for %{name}
 
 %package -n %{name}-Cheetah_SpecDrum_Standard
-Summary:  Cheetah SpecDrum Standard drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: Cheetah SpecDrum Standard drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-Cheetah_SpecDrum_Standard
 Cheetah SpecDrum Standard drumkit for %{name}
 
 %package -n %{name}-Cheetah_SpecDrum_Latin
-Summary:  Cheetah SpecDrum Latin drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: Cheetah SpecDrum Latin drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-Cheetah_SpecDrum_Latin
 Cheetah SpecDrum Latin drumkit for %{name}
 
 %package -n %{name}-Cheetah_SpecDrum_Electro
-Summary:  Cheetah SpecDrum Electro drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: Cheetah SpecDrum Electro drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-Cheetah_SpecDrum_Electro
 Cheetah SpecDrum Electro drumkit for %{name}
 
 %package -n %{name}-Cheetah_SpecDrum_Afro
-Summary:  Cheetah SpecDrum Afro drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: Cheetah SpecDrum Afro drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-Cheetah_SpecDrum_Afro
 Cheetah SpecDrum Afro drumkit for %{name}
 
 %package -n %{name}-GEM_Drum15
-Summary:  GEM Drum15 drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: GEM Drum15 drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-GEM_Drum15
 GEM Drum15 drumkit for %{name}
 
 %package -n %{name}-Jazzkit
-Summary:  Jazzkit drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: Jazzkit drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 Obsoletes: %{name}-Gretch_Jazzkit <= 3.0.1
 
@@ -176,104 +176,104 @@ Obsoletes: %{name}-Gretch_Jazzkit <= 3.0.1
 Jazzkit drumkit for %{name}
 
 %package -n %{name}-MTI_AO_1
-Summary:  MTI AO-1 drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: MTI AO-1 drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-MTI_AO_1
 MTI AO-1 drumkit for %{name}
 
 %package -n %{name}-ARP_Axxe
-Summary:  The ARP Axxe drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: The ARP Axxe drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-ARP_Axxe
 The ARP Axxe drumkit for %{name}
 
 %package -n %{name}-Drumulator
-Summary:  The Drumulator drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: The Drumulator drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-Drumulator
 The Drumulator drumkit for %{name}
 
 %package -n %{name}-WatfordRhythmGenerator
-Summary:  The Watford Rhythm Generator drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: The Watford Rhythm Generator drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-WatfordRhythmGenerator
 The Watford Rhythm Generator drumkit for %{name}
 
 %package -n %{name}-Copyc4tElNacho
-Summary:  The Copyc4t El Nacho drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: The Copyc4t El Nacho drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-Copyc4tElNacho
 The Copyc4t El Nacho Kit drumkit for %{name}
 
 %package -n %{name}-ChoosyHouseKit
-Summary:  The Choosy House Kit drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: The Choosy House Kit drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-ChoosyHouseKit
 The Choosy House Kit drumkit for %{name}
 
 %package -n %{name}-ElgamCarousel
-Summary:  The Elgam Carousel drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: The Elgam Carousel drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-ElgamCarousel
 The Elgam Carousel drumkit for %{name}
 
 %package -n %{name}-ASR-XPro
-Summary:  The ASR-X Pro drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: The ASR-X Pro drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-ASR-XPro
 The ASR-X Pro drumkit for %{name}
 
 %package -n %{name}-FrickeMFB512
-Summary:  The Fricke MFB512 Kit drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: The Fricke MFB512 Kit drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-FrickeMFB512
 The Fricke MFB512 Kit drumkit for %{name}
 
 %package -n %{name}-FormantaPolivoks
-Summary:  The Formanta Polivoks Kit drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: The Formanta Polivoks Kit drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-FormantaPolivoks
 The Formanta Polivoks Kit drumkit for %{name}
 
 %package -n %{name}-KloneDualPercussionSynthesiser
-Summary:  The Klone Dual Percussion Synthesiser Kit drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: The Klone Dual Percussion Synthesiser Kit drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-KloneDualPercussionSynthesiser
 The Klone Dual Percussion Synthesiser drumkit for %{name}
 
 %package -n %{name}-Avangard
-Summary:  The Avangard drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: The Avangard drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-Avangard
 The Avangard drumkit for %{name}
 
 %package -n %{name}-Sopromat
-Summary:  The Sopromat drumkit for %{name}
-License:  GPL-3.0-or-later
+Summary: The Sopromat drumkit for %{name}
+License: GPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n %{name}-Sopromat

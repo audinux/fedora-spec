@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-Valley
+Name: rack-v1-Valley
 Version: 1.1.7
 Release: 3%{?dist}
 Summary: Valley plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/ValleyAudio/ValleyRackFree
+URL: https://github.com/ValleyAudio/ValleyRackFree
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -38,16 +38,16 @@ BuildRequires: desktop-file-utils
 A compressor designed for classical music engineers
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  GPL-2.0-or-later
+Summary: CLAP version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n clap-%{name}
 CLAP version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}

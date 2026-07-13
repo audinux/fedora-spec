@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-SickoCV
+Name: rack-v2-SickoCV
 Version: 2.7.9
 Release: 2%{?dist}
 Summary: SickoCV plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/sickozell/SickoCV
+URL: https://github.com/sickozell/SickoCV
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

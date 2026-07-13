@@ -31,7 +31,7 @@ BuildRequires: libxml2-devel
 A library for accessing the MusicBrainz Cover Art Archive
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
 
 %description devel

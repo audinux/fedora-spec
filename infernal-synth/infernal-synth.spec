@@ -37,16 +37,16 @@ InfernalSynth is a semi-modular software synthesizer and effect plugin.
 For system requirements, download and installation, see the project website.
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  GPL-3.0-or-later
+Summary: CLAP version of %{name}
+License: GPL-3.0-or-later
 Requires: %{name}
 
 %description -n clap-%{name}

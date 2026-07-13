@@ -10,12 +10,12 @@
 %global debug_package %{nil}
 %define _lto_cflags %{nil}
 
-Name:    rack-v2-skjack
+Name: rack-v2-skjack
 Version: 0.6.8
 Release: 2%{?dist}
 Summary: A plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/nielszweistein/skjack-vcv2
+URL: https://github.com/nielszweistein/skjack-vcv2
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

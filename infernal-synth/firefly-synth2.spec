@@ -39,16 +39,16 @@ BuildRequires: gtk3-devel
 A semi-modular software synthesizer plugin. It's basically InfernalSynth's big brother.
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  GPL-3.0-or-later
+Summary: CLAP version of %{name}
+License: GPL-3.0-or-later
 Requires: %{name}
 
 %description -n clap-%{name}

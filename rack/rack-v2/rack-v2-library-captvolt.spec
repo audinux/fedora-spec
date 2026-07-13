@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-captvolt
+Name: rack-v2-captvolt
 Version: 2.1.0
 Release: 2%{?dist}
 Summary: captvolt plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/cnvogelg/captvolt-vcv
+URL: https://github.com/cnvogelg/captvolt-vcv
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

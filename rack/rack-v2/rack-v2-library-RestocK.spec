@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-RestocK
+Name: rack-v2-RestocK
 Version: 2.1.0
 Release: 2%{?dist}
 Summary: RestocK plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/shortwavlabs/vcv-restoch-plugins
+URL: https://github.com/shortwavlabs/vcv-restoch-plugins
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

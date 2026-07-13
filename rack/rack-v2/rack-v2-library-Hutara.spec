@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Hutara
+Name: rack-v2-Hutara
 Version: 2.0.0
 Release: 2%{?dist}
 Summary: Hutara plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/hutara/Hutara-modules
+URL: https://github.com/hutara/Hutara-modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -29,7 +29,7 @@ BuildRequires: cairo-gobject-devel
 An interactive Gtk canvas widget for graph-based interfaces.
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description devel

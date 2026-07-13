@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Astravox
+Name: rack-v2-Astravox
 Version: 2.0.3
 Release: 2%{?dist}
 Summary: Astravox plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/JackArkyDev/Astravox
+URL: https://github.com/JackArkyDev/Astravox
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

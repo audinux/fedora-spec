@@ -3,12 +3,12 @@
 # Type: LV2
 # Category: Effect
 
-Name:    lv2-invada-plugins
+Name: lv2-invada-plugins
 Version: 1.2.0
 Release: 29%{?dist}
 Summary: A collection of LV2 plugins from Invada Records
 License: GPL-2.0-or-later
-URL:     http://www.invadarecords.com/Downloads.php?ID=00000264
+URL: http://www.invadarecords.com/Downloads.php?ID=00000264
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

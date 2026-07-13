@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-rchoices
+Name: rack-v1-rchoices
 Version: 1.0.0
 Release: 3%{?dist}
 Summary: rchoices plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/davekch/rchoices
+URL: https://github.com/davekch/rchoices
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

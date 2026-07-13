@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-21kHz
+Name: rack-v1-21kHz
 Version: 1.0.1
 Release: 3%{?dist}
 Summary: 21kHz plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/netboy3/21kHz-rack-plugins
+URL: https://github.com/netboy3/21kHz-rack-plugins
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

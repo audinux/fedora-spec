@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-mmmodules
+Name: rack-v2-mmmodules
 Version: 2.0.6
 Release: 1%{?dist}
 Summary: mmmodules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Myst-Mach/mmmodules/
+URL: https://github.com/Myst-Mach/mmmodules/
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

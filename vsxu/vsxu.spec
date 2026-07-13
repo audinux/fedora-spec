@@ -40,7 +40,7 @@ Distribution: Audinux
 # cd ..
 # mv vsxu vsxu-0.6.3
 # tar cvfj vsxu-0.6.3.tar.gz vsxu-0.6.3/*
-Source0:  %{name}-%{version}.tar.gz
+Source0: %{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -70,20 +70,20 @@ environment with its main purpose to visualize music and create graphic effects
 in real-time.
 
 %package	devel
-Summary:        Development files for vsxu
-Requires:       %{name}-libs = %{version}
+Summary: Development files for vsxu
+Requires: %{name}-libs = %{version}
 
 %description	devel
 Those development headers are required if you plan on coding against VSXu.
 
 %package	libs
-Summary:        Visual programming language animation library
+Summary: Visual programming language animation library
 
 %description	libs
 Shared VSXu libraries. To be installed by system dependencies.
 
 %package	data
-Summary:        VSXu artwork and other data
+Summary: VSXu artwork and other data
 BuildArch:      noarch
 
 %description	data
@@ -91,32 +91,32 @@ This package contains the core artwork and other shared data that is used by var
 VSXu components.
 
 %package	artiste
-Summary:        VSXu graphic effects creator
-Requires:       %{name}-data = %{version}
-Requires:       %{name}-libs = %{version}
+Summary: VSXu graphic effects creator
+Requires: %{name}-data = %{version}
+Requires: %{name}-libs = %{version}
 
 %description	artiste
 VSXu VPL environment used to create visuals.
 
 %package	player
-Summary:        VSXu graphic effects player
-Requires:       %{name}-data = %{version}
-Requires:       %{name}-libs = %{version}
+Summary: VSXu graphic effects player
+Requires: %{name}-data = %{version}
+Requires: %{name}-libs = %{version}
 
 %description	player
 VSXu player used to load and run the visuals created in VSXu artiste.
 
 %package	server
-Summary:        VSXu remote viewer
-Requires:       %{name}-data = %{version}
-Requires:       %{name}-libs = %{version}
+Summary: VSXu remote viewer
+Requires: %{name}-data = %{version}
+Requires: %{name}-libs = %{version}
 
 %description	server
 The server is used as a remote screen to VSXu artiste. Mainly intended for live performances.
 
 %package	tools
-Summary:        VSXu support tools
-Requires:       %{name}-libs = %{version}
+Summary: VSXu support tools
+Requires: %{name}-libs = %{version}
 
 %description	tools
 This package contains a few support tools for VSXu.

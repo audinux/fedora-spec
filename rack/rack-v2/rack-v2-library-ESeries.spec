@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-ESeries
+Name: rack-v2-ESeries
 Version: 2.0.2
 Release: 1%{?dist}
 Summary: ESeries plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/VCVRack/ESeries
+URL: https://github.com/VCVRack/ESeries
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

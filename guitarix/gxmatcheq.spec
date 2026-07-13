@@ -8,12 +8,12 @@
 %global gittag0 v0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    lv2-GxMatchEQ
+Name: lv2-GxMatchEQ
 Version: 0.1.%{shortcommit0}
 Release: 2%{?dist}
 Summary: Matching Equalizer to apply EQ curve from on source to a other source
 License: GPL-2.0-or-later
-URL:     https://github.com/brummer10/GxMatchEQ.lv2
+URL: https://github.com/brummer10/GxMatchEQ.lv2
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

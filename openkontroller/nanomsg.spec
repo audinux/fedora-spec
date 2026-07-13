@@ -24,7 +24,7 @@ The nanomsg library is a simple high-performance implementation of several "scal
 For more information check the http://nanomsg.org.
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
 
 %description devel

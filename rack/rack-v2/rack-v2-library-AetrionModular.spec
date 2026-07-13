@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-AetrionModular
+Name: rack-v2-AetrionModular
 Version: 2.1.0
 Release: 1%{?dist}
 Summary: AetrionModular plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/aetrion-music/aetrion-modular
+URL: https://github.com/aetrion-music/aetrion-modular
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

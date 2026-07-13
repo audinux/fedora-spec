@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Nozoid
+Name: rack-v2-Nozoid
 Version: 2.1.3
 Release: 1%{?dist}
 Summary: Nozoid plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/ch-nry/VCV_nozori
+URL: https://github.com/ch-nry/VCV_nozori
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

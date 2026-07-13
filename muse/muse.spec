@@ -12,7 +12,7 @@
 %undefine _ld_as_needed
 %undefine _lto_cflags
 
-Name:  muse
+Name: muse
 Summary: Midi/Audio Music Sequencer
 # Epoch is set to 1 for PlanetCCRMA compatibility.
 # See: https://fedoraproject.org/wiki/AudioCreation

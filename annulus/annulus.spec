@@ -5,11 +5,11 @@
 
 %define commit0 e5bc560f957c7897c22b10171d4e57738bb17cf9
 
-Name:    annulus
+Name: annulus
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: audio looping application
-URL:     https://github.com/chronopoulos/annulus
+URL: https://github.com/chronopoulos/annulus
 ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 

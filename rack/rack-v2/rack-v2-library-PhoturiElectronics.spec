@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-PhoturiElectronics
+Name: rack-v2-PhoturiElectronics
 Version: 2.1.0
 Release: 1%{?dist}
 Summary: PhoturiElectronics plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/BooleanMuse/Photuri-Electronics
+URL: https://github.com/BooleanMuse/Photuri-Electronics
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -30,7 +30,7 @@ BuildRequires: libXpm-devel
 BuildRequires: ladspa-devel
 BuildRequires: liblrdf-devel
 %if 0%{?fedora} >= 39
-BuildRequires:  python3.10
+BuildRequires: python3.10
 %endif
 BuildRequires: python-unversioned-command
 BuildRequires: desktop-file-utils

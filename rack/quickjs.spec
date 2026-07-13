@@ -8,11 +8,11 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 Summary: QuickJS Javascript Engine.
-Name:    quickjs
+Name: quickjs
 Version: 2021.03.27
 Release: 1%{?dist}
 License: MIT
-URL:     https://github.com/bellard/quickjs
+URL: https://github.com/bellard/quickjs
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -28,7 +28,7 @@ BuildRequires: make
 QuickJS Javascript Engine.
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description devel

@@ -23,7 +23,7 @@ BuildRequires: cmake
 Fully featured LFO for CV-based automation
 
 %package devel
-Summary:  libreproc Development Files
+Summary: libreproc Development Files
 Requires: %{name} = %{version}-%{release}
 
 %description devel

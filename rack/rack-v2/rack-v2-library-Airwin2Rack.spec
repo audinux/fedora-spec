@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Airwin2Rack
+Name: rack-v2-Airwin2Rack
 Version: 2.13.0
 Release: 2%{?dist}
 Summary: Airwin2Rack plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/baconpaul/airwin2rack
+URL: https://github.com/baconpaul/airwin2rack
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

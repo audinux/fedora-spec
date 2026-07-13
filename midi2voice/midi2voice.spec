@@ -4,12 +4,12 @@
 # Category: Audio, Synthesizer
 %global commit0 ae519c239b9e9a3beca10aa0f4551a15dde40c2e
 
-Name:    midi2voice
+Name: midi2voice
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: Singing synthesis from MIDI file
 License: GPL-2.0-or-later
-URL:     https://github.com/mathigatti/midi2voice
+URL: https://github.com/mathigatti/midi2voice
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

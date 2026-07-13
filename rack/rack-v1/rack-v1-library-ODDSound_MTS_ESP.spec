@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-ODDSound_MTS_ESP
+Name: rack-v1-ODDSound_MTS_ESP
 Version: 1.0.1
 Release: 3%{?dist}
 Summary: ODDSound_MTS_ESP plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://oddsound.com
+URL: https://oddsound.com
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

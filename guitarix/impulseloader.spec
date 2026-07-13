@@ -32,8 +32,8 @@ BuildRequires: vim-common
 This is a simple, mono, IR-File loader/convolution LV2 plug
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}

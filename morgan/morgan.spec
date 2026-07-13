@@ -52,8 +52,8 @@ that's what you're looking for, have a look at the excellent
 and "clonewheel" organ plug-ins available commercially.
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-only
+Summary: VST3 version of %{name}
+License: GPL-3.0-only
 
 %description -n vst3-%{name}
 VST3 version of %{name}

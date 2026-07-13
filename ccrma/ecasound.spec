@@ -13,11 +13,11 @@
 %define makepdf 0
 
 Summary: ecasound - multitrack audio processing tool
-Name:    ecasound
+Name: ecasound
 Version: 2.9.3
 Release: 1%{?dist}
 Epoch:   1
-URL:     https://ecasound.seul.org/ecasound/
+URL: https://ecasound.seul.org/ecasound/
 ExclusiveArch: x86_64 aarch64
 License: GPL
 
@@ -66,7 +66,7 @@ and MIDI-CCs. A versatile console mode user-interface is included
 in the package.
 
 %package devel
-Summary:  Ecasound - development files
+Summary: Ecasound - development files
 Requires: ecasound >= %{version}-%{release}
 
 %description devel
@@ -75,7 +75,7 @@ necessary for building apps like ecawave and ecamegapedal that
 directly link against ecasound libraries.
 
 %package -n libecasoundc
-Summary:  Ecasound - libecasoundc
+Summary: Ecasound - libecasoundc
 Requires: ecasound >= %{version}-%{release}
 
 %description -n libecasoundc
@@ -85,14 +85,14 @@ C implementation of the Ecasound Control Interface
 files are included in the package.
 
 %package -n pyecasound
-Summary:  Python bindings to ecasound control interface.
+Summary: Python bindings to ecasound control interface.
 Requires: ecasound
 
 %description -n pyecasound
 Python bindings to Ecasound Control Interface (ECI).
 
 %package -n rubyecasound
-Summary:  Ruby bindings to ecasound control interface.
+Summary: Ruby bindings to ecasound control interface.
 Requires: ecasound
 
 %description -n rubyecasound

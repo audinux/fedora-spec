@@ -56,24 +56,24 @@ License: BSD-3-Clause
 License and documentation for %{name}
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  BSD-3-Clause
+Summary: VST3 version of %{name}
+License: BSD-3-Clause
 Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  BSD-3-Clause
+Summary: CLAP version of %{name}
+License: BSD-3-Clause
 Requires: license-%{name}
 
 %description -n clap-%{name}
 CLAP version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  BSD-3-Clause
+Summary: LV2 version of %{name}
+License: BSD-3-Clause
 Requires: license-%{name}
 
 %description -n lv2-%{name}

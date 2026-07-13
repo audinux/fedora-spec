@@ -39,8 +39,8 @@ It uses wavetable synthesis to generate various simple waveforms that
 act as the modulation signal for the input.
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

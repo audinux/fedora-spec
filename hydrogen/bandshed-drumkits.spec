@@ -4,11 +4,11 @@
 # Category: Sequencer
 
 Summary: Bandshed DrumKits for Hydrogen
-Name:    bandshed-drumkits
+Name: bandshed-drumkits
 Version: 0.0.1
 Release: 1%{?dist}
 License: GPL-2.0-or-later AND GPL-3.0-only AND LicenseRef-OpenMusic-green
-URL:     http://www.bandshed.net/avldrumkits/
+URL: http://www.bandshed.net/avldrumkits/
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

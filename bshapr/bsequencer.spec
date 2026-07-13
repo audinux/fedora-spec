@@ -4,11 +4,11 @@
 # Category: Audio, Sequencer
 
 Summary: Multi channel MIDI step sequencer LV2 plugin with a variable matrix
-Name:    lv2-BSEQuencer
+Name: lv2-BSEQuencer
 Version: 1.8.10
 Release: 2%{?dist}
 License: GPL
-URL:     https://github.com/sjaehn/BSEQuencer
+URL: https://github.com/sjaehn/BSEQuencer
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

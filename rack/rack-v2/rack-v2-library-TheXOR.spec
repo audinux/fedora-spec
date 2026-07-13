@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-TheXOR
+Name: rack-v2-TheXOR
 Version: 1.1.1
 Release: 1%{?dist}
 Summary: TheXOR plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/The-XOR/RackPlugins
+URL: https://github.com/The-XOR/RackPlugins
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

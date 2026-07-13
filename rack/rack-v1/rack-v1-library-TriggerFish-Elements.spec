@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-TriggerFish-Elements
+Name: rack-v1-TriggerFish-Elements
 Version: 1.0.1
 Release: 3%{?dist}
 Summary: TriggerFish-Elements plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/JTriggerFish/TriggerFish-VCV
+URL: https://github.com/JTriggerFish/TriggerFish-VCV
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Zoxnoxious
+Name: rack-v2-Zoxnoxious
 Version: 2.0.9
 Release: 2%{?dist}
 Summary: Zoxnoxious plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/brer-rabbit/zoxnoxious-virtual/
+URL: https://github.com/brer-rabbit/zoxnoxious-virtual/
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

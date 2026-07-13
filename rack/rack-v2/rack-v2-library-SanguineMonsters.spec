@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-SanguineMonsters
+Name: rack-v2-SanguineMonsters
 Version: 2.4.5
 Release: 2%{?dist}
 Summary: SanguineMonsters plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Bloodbat/SanguineMonsters
+URL: https://github.com/Bloodbat/SanguineMonsters
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

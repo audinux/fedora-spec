@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-HetrickCVGPL
+Name: rack-v2-HetrickCVGPL
 Version: 2.0.0
 Release: 2%{?dist}
 Summary: HetrickCVGPL plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/mhetrick/phasorbeatgen
+URL: https://github.com/mhetrick/phasorbeatgen
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

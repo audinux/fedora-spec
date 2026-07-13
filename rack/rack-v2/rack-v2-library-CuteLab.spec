@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-CuteLab
+Name: rack-v2-CuteLab
 Version: 2.1.0
 Release: 2%{?dist}
 Summary: CuteLab plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/cutelabnyc/cute-vcv
+URL: https://github.com/cutelabnyc/cute-vcv
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-RODENTMODULES
+Name: rack-v1-RODENTMODULES
 Version: 0.6.1
 Release: 3%{?dist}
 Summary: RODENTMODULES plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/RODENTCAT/RODENTMODULES
+URL: https://github.com/RODENTCAT/RODENTMODULES
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

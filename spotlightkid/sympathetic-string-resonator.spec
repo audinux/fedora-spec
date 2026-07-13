@@ -34,8 +34,8 @@ BuildRequires: ladspa-devel
 A sympathetic string resonator
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  MIT
+Summary: LV2 version of %{name}
+License: MIT
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description -n lv2-%{name}

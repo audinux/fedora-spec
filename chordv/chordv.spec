@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: Audio, Sequencer
 
-Name:    chordv
+Name: chordv
 Version: 1.2
 Release: 1%{?dist}
 Summary: ChordV provide an editor to define song and chord.
-URL:     https://sourceforge.net/projects/chordv
+URL: https://sourceforge.net/projects/chordv
 ExclusiveArch: x86_64 aarch64
 License: GPL-3.0-only
 

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Stalys
+Name: rack-v2-Stalys
 Version: 1.4.2
 Release: 1%{?dist}
 Summary: Stalys plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/denischevalier/StalysVCVPlugin
+URL: https://github.com/denischevalier/StalysVCVPlugin
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

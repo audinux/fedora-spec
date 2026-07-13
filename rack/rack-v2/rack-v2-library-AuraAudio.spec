@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-AuraAudio
+Name: rack-v2-AuraAudio
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: AuraAudio plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/emurray2/auraaudio-vcv-rack
+URL: https://github.com/emurray2/auraaudio-vcv-rack
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

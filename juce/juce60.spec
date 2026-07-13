@@ -16,7 +16,7 @@ Distribution: Audinux
 
 # original tarfile can be found here:
 Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0:  juce60-0001-set-default-path.patch
+Patch0: juce60-0001-set-default-path.patch
 Patch1:  juce60-0002-fix-curl-API.patch
 
 BuildRequires: gcc gcc-c++

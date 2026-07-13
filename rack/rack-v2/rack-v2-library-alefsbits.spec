@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-alefsbits
+Name: rack-v2-alefsbits
 Version: 2.5.63
 Release: 2%{?dist}
 Summary: alefsbits plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/alefnull/alefsbits
+URL: https://github.com/alefnull/alefsbits
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

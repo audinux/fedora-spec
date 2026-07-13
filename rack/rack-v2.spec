@@ -8,12 +8,12 @@
 %define use_static_rtaudio 1
 %define use_embedded_samplerate 0
 
-Name:    Rack-v2
+Name: Rack-v2
 Version: 2.6.6
 Release: 7%{?dist}
 Summary: A modular Synthesizer
 License: GPL-2.0-or-later
-URL:     https://github.com/VCVRack/Rack
+URL: https://github.com/VCVRack/Rack
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

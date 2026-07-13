@@ -52,8 +52,8 @@ features of the OPL2, and some features of the OPL3.
 It is distributed under the GPLv2 or later.
 
 %package -n vst-%{name}
-Summary:  VST2 version of %{name}
-License:  GPL-3.0-only
+Summary: VST2 version of %{name}
+License: GPL-3.0-only
 Requires: %{name}
 
 %description -n vst-%{name}

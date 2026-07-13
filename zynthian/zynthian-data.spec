@@ -38,75 +38,75 @@ A set of LV2 presets for various plugins:
 - Custom (OS-251, argotlunar2, mod-mda-DX10, mod-mda-JX10, mod-mda-TestTone)
 
 %package distrho
-Summary:  Presets for DISTRHO plugins
+Summary: Presets for DISTRHO plugins
 Requires: DISTRHO-Ports
 
 %description distrho
 Presets for DISTRHO plugins
 
 %package synthv1
-Summary:  Presets for synthv1 plugin
+Summary: Presets for synthv1 plugin
 Requires: lv2-synthv1
 
 %description synthv1
 Presets for synthv1 LV2 plugin
 
 %package padthv1
-Summary:  Presets for padthv1 plugin
+Summary: Presets for padthv1 plugin
 Requires: lv2-padthv1
 
 %description padthv1
 Presets for padthv1 LV2 plugin
 
 %package vitalium
-Summary:  Presets for Vitalium plugin
+Summary: Presets for Vitalium plugin
 Requires: DISTRHO-Ports
 
 %description vitalium
 Presets for Vitalium LV2 plugin
 
 %package wolpertinger
-Summary:  Presets for Wolpertinger plugin
+Summary: Presets for Wolpertinger plugin
 Requires: DISTRHO-Ports
 
 %description wolpertinger
 Presets for Wolpertinger LV2 plugin
 
 %package raffosynth
-Summary:  Presets for RaffoSynth plugin
+Summary: Presets for RaffoSynth plugin
 Requires: lv2-raffosynth
 
 %description raffosynth
 Presets for RaffoSynth LV2 plugin
 
 %package dexed
-Summary:  Presets for Dexed plugin
+Summary: Presets for Dexed plugin
 Requires: lv2-dexed
 
 %description dexed
 Presets for Dexed LV2 plugin
 
 %package odin2
-Summary:  Presets for Odin2 plugin
+Summary: Presets for Odin2 plugin
 
 %description odin2
 Presets for Odin2 LV2 / VST3 plugin
 
 %package dragonfly
-Summary:  Presets for Dragonfly plugin
+Summary: Presets for Dragonfly plugin
 Requires: lv2-dragonfly
 
 %description dragonfly
 Presets for Dragonfly LV2 plugin
 
 %package helm
-Summary:  Presets for Helm plugin
+Summary: Presets for Helm plugin
 
 %description helm
 Presets for Helm LV2 plugin
 
 %package custom
-Summary:  Presets for Custom plugin
+Summary: Presets for Custom plugin
 
 %description custom
 Presets for Custom LV2 plugin

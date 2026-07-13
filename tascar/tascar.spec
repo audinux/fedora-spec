@@ -48,7 +48,7 @@ BuildRequires: xerces-c-devel
 TASCAR is a collection of tools for creating spatially dynamic acoustic scenes in different render formats
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
 
 %description devel

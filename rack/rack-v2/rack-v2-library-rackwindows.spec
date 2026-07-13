@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-rackwindows
+Name: rack-v2-rackwindows
 Version: 1.1.2
 Release: 1%{?dist}
 Summary: rackwindows plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/n0jo/rackwindows
+URL: https://github.com/n0jo/rackwindows
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-OuroborosModules
+Name: rack-v2-OuroborosModules
 Version: 2.2.3
 Release: 2%{?dist}
 Summary: OuroborosModules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Doom2fan/OuroborosModules
+URL: https://github.com/Doom2fan/OuroborosModules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

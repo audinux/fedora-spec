@@ -27,7 +27,7 @@ LibCYAML is a C library for reading and writing structured YAML documents.
 It is written in ISO C11 and licensed under the ISC licence.
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
 
 %description devel

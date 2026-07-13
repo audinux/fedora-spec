@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-kathode
+Name: rack-v2-kathode
 Version: 2.0.0
 Release: 2%{?dist}
 Summary: kathode plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/ketodin/kathode
+URL: https://github.com/ketodin/kathode
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

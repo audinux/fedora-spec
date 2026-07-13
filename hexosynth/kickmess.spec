@@ -46,8 +46,8 @@ I will not guarantee that your presets will sound the same. After Version 1.0
 significant changes will come with a change in the major version number.
 
 %package -n vst-%{name}
-Summary:  VST2 version of %{name}
-License:  GPL-3.0-or-later
+Summary: VST2 version of %{name}
+License: GPL-3.0-or-later
 Requires: %{name}
 
 %description -n vst-%{name}

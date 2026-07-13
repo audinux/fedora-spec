@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-SphericalSoundSocietyFree
+Name: rack-v2-SphericalSoundSocietyFree
 Version: 2.0.0
 Release: 2%{?dist}
 Summary: SphericalSoundSocietyFree plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/spherical-sound-society/VCV-Free
+URL: https://github.com/spherical-sound-society/VCV-Free
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

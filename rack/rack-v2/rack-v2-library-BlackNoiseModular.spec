@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-BlackNoiseModular
+Name: rack-v2-BlackNoiseModular
 Version: 2.0.2
 Release: 2%{?dist}
 Summary: BlackNoiseModular plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/BlackNoiseModular/VCV
+URL: https://github.com/BlackNoiseModular/VCV
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

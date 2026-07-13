@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-az
+Name: rack-v1-az
 Version: 1.1.1
 Release: 3%{?dist}
 Summary: az plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/azrrik/az-vcv
+URL: https://github.com/azrrik/az-vcv
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

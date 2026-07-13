@@ -3,7 +3,7 @@
 # Type: Standalone, IDE
 # Category: Programming, Audio
 
-Name:    PySimpleGUI
+Name: PySimpleGUI
 Version: 4.60.3
 Release: 1%{?dist}
 Summary: Super-simple to create custom GUI

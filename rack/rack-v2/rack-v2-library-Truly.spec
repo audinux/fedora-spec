@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Truly
+Name: rack-v2-Truly
 Version: 1.0.2
 Release: 1%{?dist}
 Summary: Truly plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/travisat/Truly
+URL: https://github.com/travisat/Truly
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

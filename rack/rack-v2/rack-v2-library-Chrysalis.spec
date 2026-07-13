@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Chrysalis
+Name: rack-v2-Chrysalis
 Version: 2.0.2
 Release: 2%{?dist}
 Summary: Chrysalis plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/celestebetancur/Chrysalis
+URL: https://github.com/celestebetancur/Chrysalis
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -44,24 +44,24 @@ PROBABLY THE MOST VERSATILE WAVETABLE SYNTHESIZER.
 Vaporizer2 is a hybrid wavetable additive / subtractive VST / AU / AAX / LV2 synthesizer / sampler workstation.
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
 Requires: data-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-3.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-3.0-or-later
 Requires: data-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
 
 %package -n data-%{name}
-Summary:  Data and presets for %{name}
-License:  GPL-3.0-or-later
+Summary: Data and presets for %{name}
+License: GPL-3.0-or-later
 
 %description -n data-%{name}
 Data and presets for %{name}

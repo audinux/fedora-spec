@@ -6,7 +6,7 @@
 Name: boreas
 Version: 0.0.2
 Release: 1%{?dist}
-Summary:  A MOD freeze plugin
+Summary: A MOD freeze plugin
 License: GPL-2.0-or-later
 URL: https://github.com/stefdoerr/boreas
 ExclusiveArch: x86_64 aarch64
@@ -38,8 +38,8 @@ steady sine oscillators and plays those, so the sustain is dead steady with no l
 and no buzz.
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}

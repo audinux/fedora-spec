@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-NLS
+Name: rack-v2-NLS
 Version: 2.1.6.0
 Release: 2%{?dist}
 Summary: NLS plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/michelezaccagnini/NLS/tree/main
+URL: https://github.com/michelezaccagnini/NLS/tree/main
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

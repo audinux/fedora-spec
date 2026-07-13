@@ -32,16 +32,16 @@ BuildRequires: lv2-devel
 An audio time stretcher plugin using Rubberband.
 
 %package -n vst-%{name}
-Summary:  VST version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst-%{name}
 VST version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}

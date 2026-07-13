@@ -35,16 +35,16 @@ BuildRequires: python3
 Flashy Synthesia Like Software
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CALP version of %{name}
-License:  GPL-3.0-or-later
+Summary: CALP version of %{name}
+License: GPL-3.0-or-later
 Requires: %{name}
 
 %description -n clap-%{name}

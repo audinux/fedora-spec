@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-IggyLabsModules
+Name: rack-v1-IggyLabsModules
 Version: 1.1.2
 Release: 3%{?dist}
 Summary: IggyLabsModules plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/IggyLabs/IggyLabsModules
+URL: https://github.com/IggyLabs/IggyLabsModules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

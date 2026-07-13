@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-3HR
+Name: rack-v2-3HR
 Version: 2.2.0
 Release: 1%{?dist}
 Summary: 3HR plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Geekachuqt/3HR
+URL: https://github.com/Geekachuqt/3HR
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

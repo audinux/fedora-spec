@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-Prism
+Name: rack-v1-Prism
 Version: 1.2.0
 Release: 3%{?dist}
 Summary: Prism plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/AmalgamatedHarmonics/Prism
+URL: https://github.com/AmalgamatedHarmonics/Prism
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

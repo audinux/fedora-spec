@@ -51,8 +51,8 @@ This is a JUCE project using the new dsp module for an Equalizer. It features:
  - drag frequency and gain directly in the graph
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

@@ -5,12 +5,12 @@
 
 %global commit0 3858414367d1fce1e2c5d949f4ed46dde10bbf5c
 
-Name:    dpf-plugins
+Name: dpf-plugins
 Version: 1.7
 Release: 3%{?dist}
 Summary: Collection of DPF-based plugins for packaging
 License: GPL-2.0-or-later
-URL:     https://github.com/DISTRHO/DPF-Plugins
+URL: https://github.com/DISTRHO/DPF-Plugins
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -51,55 +51,55 @@ The list of plugins/packs are:
 - ProM
 
 %package -n license-%{name}
-Summary:  License and documentation for %{name}
-License:  GPL-2.0-or-later
+Summary: License and documentation for %{name}
+License: GPL-2.0-or-later
 
 %description -n license-%{name}
 License and documentation for %{name}
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-2.0-or-later
 Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n vst-%{name}
-Summary:  VST2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: VST2 version of %{name}
+License: GPL-2.0-or-later
 Requires: license-%{name}
 
 %description -n vst-%{name}
 VST2 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  GPL-2.0-or-later
+Summary: CLAP version of %{name}
+License: GPL-2.0-or-later
 Requires: license-%{name}
 
 %description -n clap-%{name}
 CLAP version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-2.0-or-later
 Requires: license-%{name}
 
 %description -n lv2-%{name}
 LV2 version of %{name}
 
 %package -n ladspa-%{name}
-Summary:  LADSPA version of %{name}
-License:  GPL-2.0-or-later
+Summary: LADSPA version of %{name}
+License: GPL-2.0-or-later
 Requires: license-%{name}
 
 %description -n ladspa-%{name}
 LADSPA version of %{name}
 
 %package -n dssi-%{name}
-Summary:  DSSI version of %{name}
-License:  GPL-2.0-or-later
+Summary: DSSI version of %{name}
+License: GPL-2.0-or-later
 Requires: license-%{name}
 
 %description -n dssi-%{name}

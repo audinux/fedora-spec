@@ -44,16 +44,16 @@ facet of the CRYPTID, reconstructing its wretched inner-workings. From the
 hit the Gong! Do you want to believe?
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-or-later
+Summary: VST3 version of %{name}
+License: GPL-3.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n clap-%{name}
-Summary:  CLAP version of %{name}
-License:  GPL-3.0-or-later
+Summary: CLAP version of %{name}
+License: GPL-3.0-or-later
 Requires: %{name}
 
 %description -n clap-%{name}

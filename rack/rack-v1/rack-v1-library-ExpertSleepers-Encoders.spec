@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-ExpertSleepers-Encoders
+Name: rack-v1-ExpertSleepers-Encoders
 Version: 1.1.0
 Release: 3%{?dist}
 Summary: ExpertSleepers-Encoders plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/expertsleepersltd/vcvrack-encoders
+URL: https://github.com/expertsleepersltd/vcvrack-encoders
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

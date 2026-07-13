@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-matrix-sequencer
+Name: rack-v2-matrix-sequencer
 Version: 2.0.0
 Release: 2%{?dist}
 Summary: matrix-sequencer plugin for Rack
 License: GPLv2+
-URL:     https://github.com/Retr0-code/Matrix-Sequncer
+URL: https://github.com/Retr0-code/Matrix-Sequncer
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

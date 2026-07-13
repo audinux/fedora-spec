@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-RPJ
+Name: rack-v2-RPJ
 Version: 2.2.4
 Release: 2%{?dist}
 Summary: RPJ plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/kockie69/RPJ
+URL: https://github.com/kockie69/RPJ
 ExclusiveArch: x86_64 
 
 Vendor:       Audinux

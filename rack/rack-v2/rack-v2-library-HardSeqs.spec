@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-HardSeqs
+Name: rack-v2-HardSeqs
 Version: 2.0.0
 Release: 2%{?dist}
 Summary: HardSeqs plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/regular-dev/hardseqs
+URL: https://github.com/regular-dev/hardseqs
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

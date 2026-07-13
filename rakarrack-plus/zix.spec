@@ -30,7 +30,7 @@ BuildRequires: glib2-devel
 Zix is a lightweight C library of portability wrappers and data structures.
 
 %package devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
 
 %description devel
@@ -38,7 +38,7 @@ The %{name}-devel package contains header files for %{name}.
 
 %if 0%{?fedora} >= 38
 %package doc
-Summary:  Documentation files for %{name}
+Summary: Documentation files for %{name}
 Requires: %{name} = %{version}-%{release}
 
 %description doc

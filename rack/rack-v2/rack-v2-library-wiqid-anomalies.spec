@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-wiqid-anomalies
+Name: rack-v2-wiqid-anomalies
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: wiqid-anomalies plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/wiqid/anomalies
+URL: https://github.com/wiqid/anomalies
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

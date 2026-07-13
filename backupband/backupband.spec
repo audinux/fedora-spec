@@ -5,11 +5,11 @@
 
 %global commit0 21ef45e42c95fdd0484148ca7e9724ce52ca5c9b
 
-Name:    backupband
+Name: backupband
 Version: 04282023
 Release: 1%{?dist}
 Summary: An automatic orchestra
-URL:     https://sourceforge.net/projects/backupband
+URL: https://sourceforge.net/projects/backupband
 ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 

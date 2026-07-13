@@ -3,12 +3,12 @@
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer
 
-Name:    ams-lv2
+Name: ams-lv2
 Version: 1.2.2
 Release: 3%{?dist}
 Summary: Set of Modular Synth plugins (from Alsa Modular Synth)
 License: GPL-2.0-or-later
-URL:     https://github.com/blablack/ams-lv2
+URL: https://github.com/blablack/ams-lv2
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

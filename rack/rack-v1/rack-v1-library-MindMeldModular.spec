@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-MindMeldModular
+Name: rack-v1-MindMeldModular
 Version: 1.1.14
 Release: 3%{?dist}
 Summary: MindMeldModular plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/MarcBoule/MindMeldModular
+URL: https://github.com/MarcBoule/MindMeldModular
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

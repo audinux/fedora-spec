@@ -3,11 +3,11 @@
 # Type: Plugin, LV2, Standalone
 # Category: Audio, Effect
 
-Name:    hybridreverb2
+Name: hybridreverb2
 Version: 2.1.2
 Release: 1%{?dist}
 Summary: Reverb effect using hybrid impulse convolution
-URL:     https://github.com/jpcima/HybridReverb2
+URL: https://github.com/jpcima/HybridReverb2
 ExclusiveArch: x86_64 aarch64
 License: BSL-1.0
 
@@ -16,7 +16,7 @@ Distribution: Audinux
 
 Source0: https://github.com/jpcima/HybridReverb2/releases/download/v%{version}/HybridReverb2-%{version}.tar.gz
 Source1: https://github.com/jpcima/HybridReverb2-impulse-response-database/archive/v1.0.0.zip#/impulse-response-database.zip
-Patch0:  hybridreverb-0001-fix-JUCE-compilation.patch
+Patch0: hybridreverb-0001-fix-JUCE-compilation.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: pkgconfig(jack)
@@ -48,17 +48,17 @@ channels and a second plugin which uses the corresponding "rear" preset
 for the rear channels.
 
 %package -n %{name}-common
-Summary:   Impulse response files for %{name}
-License:   GPL-2.0-or-later
-Requires:  %{name}-common
+Summary: Impulse response files for %{name}
+License: GPL-2.0-or-later
+Requires: %{name}-common
 BuildArch: noarch
 
 %description -n %{name}-common
 Impulse response files for %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-2.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-2.0-or-later
 Requires: %{name}-common
 
 %description -n lv2-%{name}

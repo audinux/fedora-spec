@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-dbRackSequencer
+Name: rack-v2-dbRackSequencer
 Version: 2.6.3
 Release: 2%{?dist}
 Summary: dbRackSequencer plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/docb/dbRackSequencer
+URL: https://github.com/docb/dbRackSequencer
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

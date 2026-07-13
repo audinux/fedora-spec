@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-KautenjaDSP-PotatoChips
+Name: rack-v1-KautenjaDSP-PotatoChips
 Version: 1.11.0
 Release: 3%{?dist}
 Summary: KautenjaDSP-PotatoChips plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Kautenja/PotatoChips
+URL: https://github.com/Kautenja/PotatoChips
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

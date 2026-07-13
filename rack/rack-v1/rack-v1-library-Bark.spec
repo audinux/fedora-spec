@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-Bark
+Name: rack-v1-Bark
 Version: 1.2.5
 Release: 3%{?dist}
 Summary: Bark plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Coirt/Bark
+URL: https://github.com/Coirt/Bark
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -27,7 +27,7 @@ BuildRequires: linuxsampler-devel
 LinuxSampler Control Protocol library
 
 %package devel
-Summary:  LinuxSampler Control Protocol library developer resources
+Summary: LinuxSampler Control Protocol library developer resources
 Requires: %{name} = %{version}-%{release}
 
 %description devel

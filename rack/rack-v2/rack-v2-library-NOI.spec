@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-NOI
+Name: rack-v2-NOI
 Version: 2.0.9
 Release: 2%{?dist}
 Summary: NOI plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/LeNomDesFleurs/NOI-VCVRACK
+URL: https://github.com/LeNomDesFleurs/NOI-VCVRACK
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

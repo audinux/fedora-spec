@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-TyrannosaurusRu
+Name: rack-v2-TyrannosaurusRu
 Version: 2.1.0
 Release: 1%{?dist}
 Summary: TyrannosaurusRu plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/fairplay/vcv-rack-plugins
+URL: https://github.com/fairplay/vcv-rack-plugins
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

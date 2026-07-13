@@ -21,7 +21,7 @@ Distribution: Audinux
 
 Source0: https://github.com/falkTX/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1: protrekkr-makefile.linux
-Patch0:  protrekkr-0001-set-config-file-paths.patch
+Patch0: protrekkr-0001-set-config-file-paths.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make

@@ -8,7 +8,7 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:  mod-utilities
+Name: mod-utilities
 Version: 0.1.%{shortcommit0}
 Release: 1%{?dist}
 Summary: Some utilities lv2 plugins

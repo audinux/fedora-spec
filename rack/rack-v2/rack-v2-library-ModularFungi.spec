@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-ModularFungi
+Name: rack-v2-ModularFungi
 Version: 1.1.4
 Release: 1%{?dist}
 Summary: ModularFungi plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/david-c14/ModularFungi
+URL: https://github.com/david-c14/ModularFungi
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

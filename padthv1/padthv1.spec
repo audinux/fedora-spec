@@ -17,7 +17,7 @@ Distribution: Audinux
 
 Source0: https://github.com/rncbc/padthv1/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: https://www.linuxsynths.com/Padthv1PatchesDemos/67Padthv1Patches.tar.gz
-Patch0:  padthv1-0001-disable-strip.patch
+Patch0: padthv1-0001-disable-strip.patch
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -40,7 +40,7 @@ Based on the PADsynth algorithm, by Paul Nasca (ZynAddSubFX),
 as a special variant of additive synthesis.
 
 %package -n lv2-%{name}
-Summary:  An LV2 port of synthv1
+Summary: An LV2 port of synthv1
 Requires: lv2
 Requires: %{name}%{?_isa} = %{version}-%{release}
 

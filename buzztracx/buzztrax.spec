@@ -5,19 +5,19 @@
 
 %global debug_package %{nil}
 
-Name:    buzztrax
+Name: buzztrax
 Version: 0.10.2
 Release: 6%{?dist}
 Summary: Music composer similar to tracker applications.
 License: LGPL2.1
-URL:     https://www.buzztrax.org
+URL: https://www.buzztrax.org
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/Buzztrax/buzztrax/releases/download/RELEASE_0_10_2/%{name}-%{version}.tar.gz
-Patch0:  buzztrax-0001-fix-build.patch
+Patch0: buzztrax-0001-fix-build.patch
 Patch1:  buzztrax-0002-support-fluidsynth-2.patch
 
 BuildRequires: gcc gcc-c++
@@ -50,7 +50,7 @@ of virtual audio plugins that are linked together to create different effects.
 Each of these machines can be controlled realtime or via patterns in the sequencer.
 
 %package  devel
-Summary:  Development files for %{name}
+Summary: Development files for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description devel

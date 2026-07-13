@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Ahornberg
+Name: rack-v2-Ahornberg
 Version: 2.3.4
 Release: 2%{?dist}
 Summary: Ahornberg plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/Ahornberg/Ahornberg-VCV-Modules
+URL: https://github.com/Ahornberg/Ahornberg-VCV-Modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

@@ -4,17 +4,17 @@
 # Category: Sequencer
 
 Summary: Additional DrumKits for Hydrogen
-Name:    hydrogen-drumkits
+Name: hydrogen-drumkits
 Version: 0.9.6
 Release: 6%{?dist}
 License: GPL-2.0-or-later AND GPL-3.0-only AND LicenseRef-OpenMusic-green
-URL:     http://www.hydrogen-music.org
+URL: http://www.hydrogen-music.org
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0:  https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/ForzeeStereo.h2drumkit
+Source0: https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/ForzeeStereo.h2drumkit
 Source1:  https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/BJA_Pacific.h2drumkit
 Source2:  https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/DeathMetal.h2drumkit
 Source3:  https://sourceforge.net/projects/hydrogen/files/Sound%20Libraries/Main%20sound%20libraries/Millo_MultiLayered3.h2drumkit

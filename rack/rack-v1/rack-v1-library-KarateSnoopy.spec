@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-KarateSnoopy
+Name: rack-v1-KarateSnoopy
 Version: 1.0.0
 Release: 3%{?dist}
 Summary: KarateSnoopy plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/KarateSnoopy/vcv-karatesnoopy
+URL: https://github.com/KarateSnoopy/vcv-karatesnoopy
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

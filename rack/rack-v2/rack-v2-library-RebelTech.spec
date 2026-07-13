@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-RebelTech
+Name: rack-v2-RebelTech
 Version: 2.0.1
 Release: 1%{?dist}
 Summary: RebelTech plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/hemmer/rebel-tech-vcv
+URL: https://github.com/hemmer/rebel-tech-vcv
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

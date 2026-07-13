@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-SonusModular
+Name: rack-v2-SonusModular
 Version: 2.1.1
 Release: 2%{?dist}
 Summary: SonusModular plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://gitlab.com/sonusdept/sonusmodular
+URL: https://gitlab.com/sonusdept/sonusmodular
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

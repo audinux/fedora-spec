@@ -6,12 +6,12 @@
 %define use_static_glfw 0
 %define use_static_rtaudio 1
 
-Name:    Rack-v1
+Name: Rack-v1
 Version: 1.1.6
 Release: 13%{?dist}
 Summary: A modular Synthesizer
 License: GPL-2.0-or-later
-URL:     https://github.com/VCVRack/Rack
+URL: https://github.com/VCVRack/Rack
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -59,7 +59,7 @@ Requires: rack-v1-Fundamental
 A modular Synthesizer
 
 %package doc
-Summary:   Documentation files for Rack
+Summary: Documentation files for Rack
 BuildArch: noarch
 
 %description doc

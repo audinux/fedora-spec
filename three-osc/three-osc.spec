@@ -33,8 +33,8 @@ bandlimited synthesis by default, unison with many detuned voices,
 and legato.
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-3.0-or-later
+Summary: LV2 version of %{name}
+License: GPL-3.0-or-later
 Requires: %{name}
 
 %description -n lv2-%{name}

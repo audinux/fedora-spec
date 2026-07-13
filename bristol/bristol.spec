@@ -33,8 +33,8 @@ The application consists of the engine, which is called bristol,
 and its own GUI library called brighton that represents all the emulations.
 
 %package devel
-Summary:    %{summary}
-Requires:   %{name} = %{version}
+Summary: %{summary}
+Requires: %{name} = %{version}
 
 %description devel
 This package contains the development libraries for Bristol.

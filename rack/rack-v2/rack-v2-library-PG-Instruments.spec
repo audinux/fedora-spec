@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-PG-Instruments
+Name: rack-v2-PG-Instruments
 Version: 0.6.4
 Release: 1%{?dist}
 Summary: PG-Instruments plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/imekon/PG-Instruments
+URL: https://github.com/imekon/PG-Instruments
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

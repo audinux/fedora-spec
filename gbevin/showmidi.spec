@@ -44,24 +44,24 @@ Multi-platform command-line tool making it very easy to quickly
 send MIDI messages to MIDI devices from your computer.
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0-only
+Summary: VST3 version of %{name}
+License: GPL-3.0-only
 Requires: %{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
 
 %package -n vst-%{name}
-Summary:  VST2 version of %{name}
-License:  GPL-3.0-only
+Summary: VST2 version of %{name}
+License: GPL-3.0-only
 Requires: %{name}
 
 %description -n vst-%{name}
 VST2 version of %{name}
 
 %package -n lv2-%{name}
-Summary:  LV2 version of %{name}
-License:  GPL-3.0-only
+Summary: LV2 version of %{name}
+License: GPL-3.0-only
 Requires: %{name}
 
 %description -n lv2-%{name}

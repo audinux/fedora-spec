@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-Rigatoni
+Name: rack-v2-Rigatoni
 Version: 2.2.0
 Release: 2%{?dist}
 Summary: Rigatoni plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/ianjhoffman/RigatoniModular
+URL: https://github.com/ianjhoffman/RigatoniModular
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

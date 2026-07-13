@@ -8,11 +8,11 @@
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
-Name:    IanniX
+Name: IanniX
 Version: 0.9.20.%{shortcommit0}
 Release: 5%{?dist}
 Summary: A graphic / MIDI / OSC player
-URL:     https://github.com/iannix/Iannix
+URL: https://github.com/iannix/Iannix
 ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
@@ -21,7 +21,7 @@ Distribution: Audinux
 
 Source0: https://github.com/iannix/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1: iannix.xml
-Patch0:  iannix-0001-fix-missing-glew.patch
+Patch0: iannix-0001-fix-missing-glew.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make

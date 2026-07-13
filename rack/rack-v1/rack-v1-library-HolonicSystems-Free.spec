@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-HolonicSystems-Free
+Name: rack-v1-HolonicSystems-Free
 Version: 1.0.7
 Release: 3%{?dist}
 Summary: HolonicSystems-Free plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/hdavid/VCVRack-Holon.ist
+URL: https://github.com/hdavid/VCVRack-Holon.ist
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

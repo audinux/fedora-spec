@@ -6,12 +6,12 @@
 %define gwc_version 0.22
 %define gwc_subversion 06
 
-Name:   gtk-wave-cleaner
+Name: gtk-wave-cleaner
 Version: %{gwc_version}.%{gwc_subversion}
 Release: 1%{?dist}
 Summary: Gtk Wave Cleaner -- audio restoration application
 License: GPL
-URL:     https://gwc.sourceforge.net/
+URL: https://gwc.sourceforge.net/
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

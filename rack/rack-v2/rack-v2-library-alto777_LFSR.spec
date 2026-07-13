@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-alto777_LFSR
+Name: rack-v2-alto777_LFSR
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: alto777_LFSR plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/alto777/LFSR
+URL: https://github.com/alto777/LFSR
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

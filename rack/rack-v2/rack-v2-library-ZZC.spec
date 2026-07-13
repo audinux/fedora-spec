@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-ZZC
+Name: rack-v2-ZZC
 Version: 2.1.2
 Release: 2%{?dist}
 Summary: ZZC plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/zezic/ZZC
+URL: https://github.com/zezic/ZZC
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

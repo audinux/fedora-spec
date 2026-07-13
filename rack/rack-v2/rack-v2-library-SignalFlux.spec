@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-SignalFlux
+Name: rack-v2-SignalFlux
 Version: 1.1.0
 Release: 1%{?dist}
 Summary: SignalFlux plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/signal-flux/Signal-Flux-VCV-Rack-Modules
+URL: https://github.com/signal-flux/Signal-Flux-VCV-Rack-Modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

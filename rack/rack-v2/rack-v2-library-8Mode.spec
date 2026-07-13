@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-8Mode
+Name: rack-v2-8Mode
 Version: 2.0.0
 Release: 1%{?dist}
 Summary: 8Mode plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/8Mode/8Mode-VCV_Modules
+URL: https://github.com/8Mode/8Mode-VCV_Modules
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

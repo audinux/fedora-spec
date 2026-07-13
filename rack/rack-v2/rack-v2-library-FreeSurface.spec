@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-FreeSurface
+Name: rack-v2-FreeSurface
 Version: 2.1.4
 Release: 2%{?dist}
 Summary: FreeSurface plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/freesurfacemodules/FreeSurface
+URL: https://github.com/freesurfacemodules/FreeSurface
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

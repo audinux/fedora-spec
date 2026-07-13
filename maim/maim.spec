@@ -51,8 +51,8 @@ With heavily hacked real MP3 encoders at its core, MAIM gives you the full
 gamut of digital distortion, from the realistic to the fantastical.
 
 %package -n vst3-%{name}
-Summary:  VST3 version of %{name}
-License:  GPL-3.0
+Summary: VST3 version of %{name}
+License: GPL-3.0
 Requires: %{name}
 
 %description -n vst3-%{name}

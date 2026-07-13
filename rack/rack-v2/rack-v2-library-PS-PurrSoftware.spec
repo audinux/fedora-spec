@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-PS-PurrSoftware
+Name: rack-v2-PS-PurrSoftware
 Version: 2.0.35
 Release: 2%{?dist}
 Summary: PS-PurrSoftware plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/knchaffin/Meander/tree/master-V2
+URL: https://github.com/knchaffin/Meander/tree/master-V2
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

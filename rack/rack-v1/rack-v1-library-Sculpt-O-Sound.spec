@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-Sculpt-O-Sound
+Name: rack-v1-Sculpt-O-Sound
 Version: 1.1.0
 Release: 3%{?dist}
 Summary: Sculpt-O-Sound plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/josbouten/Sculpt-O-Sound
+URL: https://github.com/josbouten/Sculpt-O-Sound
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

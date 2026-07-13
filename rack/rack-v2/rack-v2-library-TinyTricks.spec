@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-TinyTricks
+Name: rack-v2-TinyTricks
 Version: 2.5.4
 Release: 2%{?dist}
 Summary: TinyTricks plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/thomassidor/tinytricks
+URL: https://github.com/thomassidor/tinytricks
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

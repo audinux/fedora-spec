@@ -3,12 +3,12 @@
 # Type: Standalone
 # Category: Audio, Tool
 
-Name:    alsacap
+Name: alsacap
 Version: 1.0
 Release: 1%{?dist}
 Summary: Command line tool for showing capabilities of alsa devices
 License: LicenseRef-Fedora-Public-Domain
-URL:     https://github.com/bubbapizza/alsacap
+URL: https://github.com/bubbapizza/alsacap
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

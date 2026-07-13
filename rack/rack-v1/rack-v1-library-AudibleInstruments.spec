@@ -6,12 +6,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-AudibleInstruments
+Name: rack-v1-AudibleInstruments
 Version: 1.5.0
 Release: 4%{?dist}
 Summary: AudibleInstruments plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/VCVRack/AudibleInstruments
+URL: https://github.com/VCVRack/AudibleInstruments
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

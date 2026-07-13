@@ -14,12 +14,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v2-TercerBrazo
+Name: rack-v2-TercerBrazo
 Version: 1.0.3
 Release: 1%{?dist}
 Summary: TercerBrazo plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/diegodorado/TercerBrazo
+URL: https://github.com/diegodorado/TercerBrazo
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

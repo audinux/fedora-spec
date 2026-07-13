@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-modular80
+Name: rack-v1-modular80
 Version: 1.0.3
 Release: 3%{?dist}
 Summary: modular80 plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/cschol/modular80
+URL: https://github.com/cschol/modular80
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux

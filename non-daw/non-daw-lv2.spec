@@ -38,7 +38,7 @@ BuildRequires: liblrdf-devel
 BuildRequires: lilv-devel
 BuildRequires: lv2-devel
 %if 0%{?fedora} >= 39
-BuildRequires:  python3.10
+BuildRequires: python3.10
 %endif
 BuildRequires: python-unversioned-command
 BuildRequires: desktop-file-utils
@@ -48,7 +48,7 @@ Non-daw-lv2 is a digital audio workstation for JACK.
 It suppors LV2 plugins.
 
 %package -n non-mixer-lv2
-Summary:  A digital audio mixer for JACK
+Summary: A digital audio mixer for JACK
 Requires: non-daw
 
 %description -n non-mixer-lv2

@@ -11,12 +11,12 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name:    rack-v1-JLmod
+Name: rack-v1-JLmod
 Version: 1.0.0
 Release: 3%{?dist}
 Summary: JLmod plugin for Rack
 License: GPL-2.0-or-later
-URL:     https://github.com/JoakimLindbom/JLmod
+URL: https://github.com/JoakimLindbom/JLmod
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
