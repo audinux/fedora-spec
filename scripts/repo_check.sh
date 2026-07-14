@@ -1175,7 +1175,8 @@ https://codeberg.org/zynskeyfolf/jmidiracc
 https://codeberg.org/yimrakhee/satordist2
 https://codeberg.org/agrigolo/LMTR
 https://github.com/coddle-cpp/coddle
-https://github.com/eclab/seq"
+https://github.com/eclab/seq
+https://codeberg.org/yimrakhee/morpheus6"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
