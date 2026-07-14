@@ -4,7 +4,7 @@
 # Category: Tool
 
 Name: projectM-mao
-Version: 4.1.6
+Version: 4.1.7
 Release: 15%{?dist}
 Summary: The libraries for the projectM music visualization plugin
 License: LGPLv2+
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./projectm-source.sh <tag>
-#        ./projectm-source.sh v4.1.6
+#        ./projectm-source.sh v4.1.7
 
 Source0: projectm.tar.gz
 Source1: milkdrop-script.txt
@@ -267,6 +267,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/projectM-mao-alsa.des
 %{_datadir}/projectM-mao/doc/*
 
 %changelog
+* Tue Jul 14 2026 Yann Collette <ycollette.nospam@free.fr> - 4.1.7-13
+- update to 4.1.7-13
+
 * Fri Nov 28 2025 Yann Collette <ycollette.nospam@free.fr> - 4.1.6-13
 - update to 4.1.6-13
 
