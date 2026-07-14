@@ -6,7 +6,7 @@
 Name: borg-er-3
 Version: 1.0.4
 Release: 1%{?dist}
-Summary: A JACK synthesizer
+Summary: A portable (SDL) audio synthesizer / tone generator inspired by the Korg ER-1
 URL: https://github.com/mrbid/Borg-ER-3/
 ExclusiveArch: x86_64 aarch64
 License: MIT
@@ -23,7 +23,13 @@ BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 
 %description
-Mx44 is a polyphonic multichannel midi realtime software synthesizer.
+Fixed-state modular synthesizer using FART oscillators, if you can hold back the
+chuckles for a moment stands for Frequency, Amplitude, Resolution, and Transformation
+oscillators, the resolution regards harmonic resolution and transformation regards
+the wave-shape being produced by the oscillator.
+The envelope can be clicked and dragged into any shape, the biquads can be manually
+configured on a per coefficient basis, they are executed in sequential order so
+BIQUAD 1 executes first.
 
 %prep
 %autosetup -n Borg-ER-3-%{version}
