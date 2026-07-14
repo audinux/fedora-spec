@@ -1,12 +1,12 @@
 # Status: active
-# Tag: Plugin
+# Tag: Effect
 # Type: Plugin, LV2, MODGUI
 # Category: Audio, Effect
 
 Name: sitar
 Version: 0.0.6
 Release: 1%{?dist}
-Summary: Simple LADSPA/LV2/CLAP vocoder plugin using DPF
+Summary: A sitar-like resonator LV2 plugin
 License: GPL-2.0-or-later
 URL: https://github.com/stefdoerr/sitar
 ExclusiveArch: x86_64 aarch64

@@ -8,7 +8,7 @@
 Name: nebula-delay
 Version: 1.2.0
 Release: 1%{?dist}
-Summary: A free open-source dirt box plugin.
+Summary: Nebula Delay - lightweight monophonic delay audio plugin by Nebula Audio
 License: AGPL-3.0-or-later
 URL: https://github.com/subhankardas15071992-cloud/Nebula-Delay
 ExclusiveArch: x86_64 aarch64

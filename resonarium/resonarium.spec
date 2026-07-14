@@ -1,7 +1,7 @@
 # Status: active
 # Tag: Effect, Synthesizer
 # Type: Plugin, VST3, LV2, Standalone
-# Category: Audio, Effect, Synthesizer
+# Category: Audio, Synthesizer
 
 Name: resonarium
 Version: 1.0.0
