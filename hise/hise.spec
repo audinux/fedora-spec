@@ -7,7 +7,7 @@
 %global toolchain clang
 
 Name: HISE
-Version: 4.1.0
+Version: 4.9.3
 Release: 5%{?dist}
 Summary: The open source framework for sample based instrument
 License: GPL-3.0-or-later OR LicenseRef-www-hise-audio
@@ -17,15 +17,18 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/christophhart/HISE/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+# Usage: ./hise-source.sh <TAG>
+#        ./hise-source.sh v4.9.3
+
+Source0: HISE.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
 Source1: http://ycollette.free.fr/LMMS/vstsdk3610_11_06_2018_build_37.zip
+Source2: hise-source.sh
 Patch0: HISE-0001-set-default-src-path.patch
 
 BuildRequires: clang
 BuildRequires: unzip
 BuildRequires: make
-BuildRequires: JUCE61
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
@@ -57,7 +60,7 @@ License: GPL-3.0-or-later OR LicenseRef-www-hise-audio
 VST3 version of %{name}
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -p1 -n %{name}
 
 # VST2 SDK still required for the build
 unzip %{SOURCE1}
@@ -74,7 +77,7 @@ CWD=`pwd`
 export CPPFLAGS="-Wno-template-body -I$CWD/VST_SDK/VST2_SDK"
 
 cd projects/standalone/
-Projucer61 --resave HISE\ Standalone.jucer
+../../JUCE/projucer/Projucer --resave HISE\ Standalone.jucer
 
 cd Builds/LinuxMakefile/
 %make_build CONFIG=Release STRIP=true V=1
@@ -82,7 +85,7 @@ cd Builds/LinuxMakefile/
 cd ../../../..
 
 cd projects/plugin/
-Projucer61 --resave HISE.jucer
+../../JUCE/projucer/Projucer --resave HISE.jucer
 
 cd Builds/LinuxMakefile/
 %make_build CONFIG=Release STRIP=true v=1
@@ -154,6 +157,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Wed Jul 15 2026 Yann Collette <ycollette.nospam@free.fr> - 4.9.3-5
+- update to 4.9.3-5
+
 * Tue Aug 12 2025 Yann Collette <ycollette.nospam@free.fr> - 4.1.0-5
 - update to 4.1.0-5 - use clang
 

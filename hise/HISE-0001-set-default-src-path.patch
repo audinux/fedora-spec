@@ -1,24 +1,24 @@
-From 450f71e3bde137e2f6c3107ac83ab4f3bdd0ba79 Mon Sep 17 00:00:00 2001
-From: Yann Collette <ycollette.nospam@free.fr>
-Date: Mon, 25 Nov 2024 22:50:41 +0100
-Subject: [PATCH] set default src path
+From f90a8254bbce84b8b9bf06c71129e7ff39757c33 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Wed, 15 Jul 2026 21:13:10 +0200
+Subject: [PATCH] fix path
 
 ---
  hi_core/hi_core/HiseSettings.cpp | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/hi_core/hi_core/HiseSettings.cpp b/hi_core/hi_core/HiseSettings.cpp
-index e3787dd..4cf94bf 100644
+index 226095b..262a8b8 100644
 --- a/hi_core/hi_core/HiseSettings.cpp
 +++ b/hi_core/hi_core/HiseSettings.cpp
-@@ -1206,6 +1206,7 @@ var HiseSettings::Data::getDefaultSetting(const Identifier& id) const
+@@ -1336,6 +1336,7 @@ var HiseSettings::Data::getDefaultSetting(const Identifier& id) const
  	else if (id == Scripting::EnableMousePositioning) return "Yes";
  	else if (id == Scripting::CompileTimeout)		return 5.0;
  	else if (id == Scripting::SaveConnectedFilesOnCompile) return "No";
 +	else if (id == Compiler::HisePath)              return "/usr/src/HISE";
- #if HISE_USE_VS2022
- 	else if (id == Compiler::VisualStudioVersion)	return "Visual Studio 2022";
- #else
+ 	else if (id == Scripting::RestApiPort)			return 1900;
+ 	else if (id == Scripting::AutoStartRestServer)	return "No";
+ 	else if (id == Scripting::CorsAllowedOrigins)	return "*";
 -- 
-2.47.0
+2.55.0
 
