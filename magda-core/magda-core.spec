@@ -3,9 +3,11 @@
 # Type: Standalone
 # Category: DAW, MIDI
 
+%global onnx_runtine_version 1.26.0
+
 Name: magda-core
-Version: 0.14.0
-Release: 2%{?dist}
+Version: 0.15.0
+Release: 4%{?dist}
 Summary: A DAW built for automation, transformation, and fast musical iteration
 License: GPL-3.0-or-later
 URL: https://github.com/Conceptual-Machines/magda-core
@@ -15,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./magda-core-source.sh <TAG>
-#        ./magda-core-source.sh v0.14.0
+#        ./magda-core-source.sh v0.15.0
 
 Source0: magda-core.tar.gz
 Source1: magda-core-source.sh
@@ -25,6 +27,7 @@ BuildRequires: cmake
 BuildRequires: git
 BuildRequires: git-lfs
 BuildRequires: patchelf
+BuildRequires: mold
 BuildRequires: cairo-devel
 BuildRequires: fontconfig-devel
 BuildRequires: freetype-devel
@@ -66,6 +69,7 @@ Features:
 
 %cmake -DMAGDA_BUILD_TESTS=OFF \
        -DMAGDA_BUILD_EXAMPLES=OFF \
+       -DCMAKE_INSTALL_RPATH='$ORIGIN/../%{_lib}/magda-core/' \
        -DCMAKE_CXX_FLAGS="-Wno-template-body `pkg-config --cflags webkit2gtk-4.1` `pkg-config --cflags gtk+-3.0` $CXXFLAGS"
 %cmake_build
 
@@ -75,8 +79,8 @@ Features:
 
 # install onnxruntime and fix RPATH
 install -m 755 -d %{buildroot}/%{_libdir}/magda-core/
-install -m 755 %{__cmake_builddir}/_deps/onnxruntime-src/lib/libonnxruntime.so.1.* %{buildroot}/%{_libdir}/magda-core/
-patchelf --set-rpath '$ORIGIN/../%{_lib}/magda-core/' %{buildroot}/%{_bindir}/MAGDA
+install -m 755 %{__cmake_builddir}/_deps/onnxruntime-src/lib/libonnxruntime.so.%{onnx_runtine_version} %{buildroot}/%{_libdir}/magda-core/
+ln -s libonnxruntime.so.%{onnx_runtime_version} %{buildroot}%{_libdir}/magda-core/libonnxruntime.so.1
 
 # cleanup
 rm -rf %{buildroot}/%{_bindir}/JUCE*
@@ -101,6 +105,15 @@ mv %{buildroot}/%{_bindir}/lang %{buildroot}/%{_datadir}/%{name}/
 %{_datadir}/%{name}/lang/*
 
 %changelog
+* Thu Jul 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.15.0-4
+- update to 0.15.0-4 - fix symbolic link to libonnxruntime
+
+* Thu Jul 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.15.0-3
+- update to 0.15.0-3
+
+* Wed Jul 15 2026 Yann Collette <ycollette.nospam@free.fr> - 0.15.0-2
+- update to 0.15.0-2
+
 * Wed Jul 08 2026 Yann Collette <ycollette.nospam@free.fr> - 0.14.0-2
 - update to 0.14.0-2
 
