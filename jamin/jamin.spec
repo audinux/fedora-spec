@@ -6,7 +6,7 @@
 Name: jamin
 Summary: JACK Audio Connection Kit (JACK) Audio Mastering interface
 Version: 0.98.9
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: GPL-2.0-or-later
 URL: http://jamin.sourceforge.net
 ExclusiveArch: x86_64 aarch64
@@ -15,6 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://salsa.debian.org/multimedia-team/jamin/-/archive/upstream/0.98.9_git20170111_199091_repack1/jamin-upstream-0.98.9_git20170111_199091_repack1.tar.gz#/%{name}-%{version}.tar.gz
+Source1: jamin-wrapper
 Patch0: 1003_add_dynamic_linking.patch
 Patch1: 1004_install_correct_dir.patch
 Patch2: 1005_desktop_file.patch
@@ -24,6 +25,7 @@ Patch5: jamin-gcc10.patch
 Patch6: jamin-spectrum.patch
 Patch7: NEWS.patch
 Patch8: 1006-fix-callback.patch
+Patch9: 1010_clear_history_state.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -41,7 +43,10 @@ BuildRequires: perl-XML-Parser
 BuildRequires: desktop-file-utils
 
 Requires: ladspa-swh-plugins
-# Add ladspa-foo (not packaged anymore) as a Requires
+Requires: ladspa-foo-plugins
+# gawk is needed for jamin-wrapper
+Requires: gawk
+
 
 %description
 JAMin is the JACK Audio Connection Kit (JACK) Audio Mastering interface. JAMin
@@ -64,6 +69,9 @@ NOCONFIGURE=indeed ./autogen.sh
 
 %make_install
 
+# install wrapper script
+install -m 755 %{SOURCE1} %{buildroot}%{_bindir}
+
 # move icon to the proper freedesktop location
 install -m 755 -d %{buildroot}%{_datadir}/icons/hicolor/scalable/apps
 mv %{buildroot}%{_datadir}/icons/%{name}.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
@@ -83,7 +91,7 @@ Comment[cz]=JACK Audio Mastering interface
 Comment[fr]=Interface de masterisation JACK Audio
 Comment[ru]=JAMin -- приложение для мастеринга звука
 Keywords=audio;sound;mastering;ladspa
-Exec=jamin
+Exec=jamin-wrapper
 Icon=jamin
 MimeType=application/x-jamin;
 StartupNotify=true
