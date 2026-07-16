@@ -26,6 +26,7 @@ Patch6: jamin-spectrum.patch
 Patch7: NEWS.patch
 Patch8: 1006-fix-callback.patch
 Patch9: 1010_clear_history_state.patch
+Patch10: 1011_interface_c.patch
 
 BuildRequires: gcc
 BuildRequires: make
