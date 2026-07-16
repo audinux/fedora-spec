@@ -1,0 +1,24 @@
+diff --git a/src/hdeq.c b/src/hdeq.c
+index 7ed31ee..8650c37 100644
+--- a/src/hdeq.c
++++ b/src/hdeq.c
+@@ -139,7 +139,7 @@ static GtkMenu           *HDEQ_menu;
+ //static GdkPixmap *hdeq_pixmap = NULL;
+ 
+ 
+-static GtkHScale       *l_low2mid, *l_mid2high;
++static GtkScale       *l_low2mid, *l_mid2high;
+ static GtkWidget       *l_comp[3];
+ static GtkLabel        *l_low2mid_lbl, *l_mid2high_lbl, *l_comp_lbl[3], 
+                        *l_EQ_curve_lbl = NULL, *l_c_curve_lbl[3];
+@@ -252,8 +252,8 @@ void bind_hdeq ()
+         that was set in glade-2.  If you change the widget name in glade-2
+         you'll break the app.  */
+ 
+-    l_low2mid = GTK_HSCALE (lookup_widget (main_window, "low2mid"));
+-    l_mid2high = GTK_HSCALE (lookup_widget (main_window, "mid2high"));
++    l_low2mid = GTK_SCALE (lookup_widget (main_window, "low2mid"));
++    l_mid2high = GTK_SCALE (lookup_widget (main_window, "mid2high"));
+     l_low2mid_lbl = GTK_LABEL (lookup_widget (main_window, "low2mid_lbl"));
+     l_mid2high_lbl = GTK_LABEL (lookup_widget (main_window, "mid2high_lbl"));
+ 

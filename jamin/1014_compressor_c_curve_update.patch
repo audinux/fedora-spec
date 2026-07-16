@@ -1,0 +1,37 @@
+diff --git a/src/compressor-ui.c b/src/compressor-ui.c
+index b94c31e..351f62e 100644
+--- a/src/compressor-ui.c
++++ b/src/compressor-ui.c
+@@ -226,7 +226,7 @@ void re_changed(int id, float value)
+ 
+ 
+   compressors[i].release = value;
+-  comp_curve_update;
++  comp_curve_update(i);
+ }
+ 
+ void th_changed(int id, float value)
+@@ -273,9 +273,9 @@ void th_changed(int id, float value)
+   compressors[i].threshold = value;
+   if (auto_gain[i]) {
+     calc_auto_gain(i);
+-  } else {
++  } // else {
+ 	comp_curve_update(i);
+-  }
++  // }
+   gtk_meter_set_warn_point(le_meter[i], value);
+ }
+ 
+@@ -323,9 +323,9 @@ void ra_changed(int id, float value)
+   compressors[i].ratio = value;
+   if (auto_gain[i]) {
+     calc_auto_gain(i);
+-  } else {
++  } // else {
+ 	comp_curve_update(i);
+-  }
++  // }
+   gtk_meter_set_warn_point(le_meter[i], value);
+ }
+ 

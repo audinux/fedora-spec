@@ -27,6 +27,9 @@ Patch7: NEWS.patch
 Patch8: 1006-fix-callback.patch
 Patch9: 1010_clear_history_state.patch
 Patch10: 1011_interface_c.patch
+Patch11: 1012_hdeq_c_hscale.patch
+Patch12: 1013_gtkmeter_c_queue_draw.patch
+Patch13: 1014_compressor_c_curve_update.patch
 
 BuildRequires: gcc
 BuildRequires: make
