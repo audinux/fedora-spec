@@ -3,11 +3,11 @@
 # Type: Standalone
 # Category: DAW, MIDI
 
-%global onnx_runtine_version 1.26.0
+%global onnx_runtime_version 1.26.0
 
 Name: magda-core
 Version: 0.15.0
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: A DAW built for automation, transformation, and fast musical iteration
 License: GPL-3.0-or-later
 URL: https://github.com/Conceptual-Machines/magda-core
@@ -79,7 +79,7 @@ Features:
 
 # install onnxruntime and fix RPATH
 install -m 755 -d %{buildroot}/%{_libdir}/magda-core/
-install -m 755 %{__cmake_builddir}/_deps/onnxruntime-src/lib/libonnxruntime.so.%{onnx_runtine_version} %{buildroot}/%{_libdir}/magda-core/
+install -m 755 %{__cmake_builddir}/_deps/onnxruntime-src/lib/libonnxruntime.so.%{onnx_runtime_version} %{buildroot}/%{_libdir}/magda-core/
 ln -s libonnxruntime.so.%{onnx_runtime_version} %{buildroot}%{_libdir}/magda-core/libonnxruntime.so.1
 
 # cleanup
@@ -105,6 +105,9 @@ mv %{buildroot}/%{_bindir}/lang %{buildroot}/%{_datadir}/%{name}/
 %{_datadir}/%{name}/lang/*
 
 %changelog
+* Thu Jul 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.15.0-5
+- update to 0.15.0-5 - fix typos
+
 * Thu Jul 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.15.0-4
 - update to 0.15.0-4 - fix symbolic link to libonnxruntime
 
