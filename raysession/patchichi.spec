@@ -2,11 +2,12 @@
 # Tag: Session, OSC, Jack
 # Type: Standalone
 # Category: Session Mngmt
+# Screenshot: patchichi_1.png
 
 %global __python %{__python3}
 
 Name: patchichi
-Version: 0.3.0
+Version: 0.5.0
 Release: 1%{?dist}
 Summary: Abstract JACK Patchbay
 License: GPL-2.0-or-later
@@ -17,7 +18,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./source-houston4444.sh <project> <tag>
-#        ./source-houston4444.sh Patchichi v0.3.0
+#        ./source-houston4444.sh Patchichi v0.5.0
 
 Source0: Patchichi.tar.gz
 Source1: source-houston4444.sh
@@ -29,12 +30,12 @@ BuildRequires: python3
 BuildRequires: qtchooser
 BuildRequires: liblo-devel
 BuildRequires: alsa-lib-devel
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-linguist
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-linguist
 BuildRequires: gtk-update-icon-cache
 BuildRequires: desktop-file-utils
 
-Requires(pre): python3-qt5
+Requires(pre): python3-pyqt6
 Requires(pre): python3-pyliblo3
 Requires(pre): python3-pyxdg
 
@@ -52,11 +53,15 @@ sed -i -e "s/AudioVideo;//g" data/share/applications/patchichi.desktop
 
 %build
 
-%make_build PREFIX=/usr LRELEASE=lrelease-qt5
+export PATH=/usr/lib64/qt6/libexec:$PATH
+
+%make_build PREFIX=/usr LRELEASE=lrelease-qt6
 
 %install
 
-%make_install PREFIX=/usr LRELEASE=lrelease-qt5
+export PATH=/usr/lib64/qt6/libexec:$PATH
+
+%make_install PREFIX=/usr LRELEASE=lrelease-qt6
 
 desktop-file-install                         \
   --add-category="Audio;AudioVideo;Qt"	     \
@@ -65,8 +70,7 @@ desktop-file-install                         \
   %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 %check
-
-desktop-file-validate  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 %files
 %doc readme.md
@@ -74,12 +78,15 @@ desktop-file-validate  %{buildroot}/%{_datadir}/applications/%{name}.desktop
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/icons/*
-%{_datadir}/patchichi/
+%dir %{_datadir}/patchichi/
 %{_datadir}/patchichi/HoustonPatchbay/*
 %{_datadir}/patchichi/locale/*
 %{_datadir}/patchichi/src/*
 
 %changelog
+* Sat Jul 18 2026 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-1
+- update to 0.5.0-1
+
 * Tue Sep 30 2025 Yann Collette <ycollette.nospam@free.fr> - 0.3.0-1
 - update to 0.3.0-1
 
