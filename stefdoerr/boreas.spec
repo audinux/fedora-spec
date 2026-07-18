@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: boreas
-Version: 0.0.3
+Version: 0.1.0
 Release: 1%{?dist}
 Summary: A MOD freeze plugin
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./stefdoerr-source.sh <PROJECT> <TAG>
-#        ./stefdoerr-source.sh boreas v0.0.3
+#        ./stefdoerr-source.sh boreas v0.1.0
 
 Source0: boreas.tar.gz
 Source1: stefdoerr-source.sh
@@ -64,6 +64,9 @@ cp -ra bin/boreas.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Jul 17 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
+- update to 0.1.0-1
+
 * Thu Jul 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.3-1
 - update to 0.0.3-1
 
