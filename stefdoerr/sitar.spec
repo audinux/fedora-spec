@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: sitar
-Version: 0.1.1
+Version: 0.1.2
 Release: 1%{?dist}
 Summary: A sitar-like resonator LV2 plugin
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./stefdoerr-source.sh <PROJECT> <TAG>
-#        ./stefdoerr-source.sh sitar v0.1.1
+#        ./stefdoerr-source.sh sitar v0.1.2
 
 Source0: sitar.tar.gz
 Source1: stefdoerr-source.sh
@@ -68,6 +68,9 @@ cp -ra bin/sitar.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Jul 17 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.2-1
+- update to 0.1.2-1
+
 * Thu Jul 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.1-1
 - update to 0.1.1-1
 
