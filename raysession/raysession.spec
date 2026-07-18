@@ -2,6 +2,7 @@
 # Tag: Session, OSC, Jack
 # Type: Standalone
 # Category: Session Mngmt
+# Screenshot: raysession_1.png
 
 Name: raysession
 Version: 0.18.0

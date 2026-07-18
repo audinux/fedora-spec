@@ -2,6 +2,7 @@
 # Tag: Session, OSC, Jack
 # Type: Standalone
 # Category: Session Mngmt
+# Screenshot: patchance_1.png
 
 Name: patchance
 Version: 1.4.0
