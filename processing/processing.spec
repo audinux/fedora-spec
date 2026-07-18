@@ -7,10 +7,10 @@
 
 # Build number embedded in the upstream release tag (processing-BUILDNUM-VERSION).
 # Update this together with Version on each upstream release.
-%global buildnum 1433
+%global buildnum 1434
 
 Name: processing
-Version: 4.5.5
+Version: 4.5.6
 Release: 3%{?dist}
 Summary: Processing Development Environment (PDE)
 # Core is LGPL, others are GPL
@@ -105,6 +105,9 @@ rm -rf %{buildroot}/opt/processing/lib/app/resources/modes/java/application/laun
 %{_datadir}/applications/%{name}.desktop
 
 %changelog
+* Fri Jul 17 2026 Yann Collette <ycollette.nospam@free.fr> - 4.5.6-3
+- update to 4.5.6-3
+
 * Thu Jun 25 2026 Yann Collette <ycollette.nospam@free.fr> - 4.5.5-3
 - update to 4.5.5-3
 
