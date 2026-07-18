@@ -1,26 +1,26 @@
-From a377bc13d52e7584b12cca5019d2b00e2c3386ea Mon Sep 17 00:00:00 2001
-From: Yann Collette <ycollette.nospam@free.fr>
-Date: Sun, 18 May 2025 13:28:12 +0200
+From a2a7175c246c2ad4b6563ad33ce9dcc32427fd7b Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Sat, 18 Jul 2026 15:48:12 +0200
 Subject: [PATCH] fix config
 
 ---
- config.mk | 14 +-------------
- 1 file changed, 1 insertion(+), 13 deletions(-)
+ config.mk | 13 +------------
+ 1 file changed, 1 insertion(+), 12 deletions(-)
 
 diff --git a/config.mk b/config.mk
-index 211c838..8ae0d5e 100644
+index d4c3cc6..9e560c6 100644
 --- a/config.mk
 +++ b/config.mk
-@@ -3,8 +3,6 @@ VERSION=0.234.3
+@@ -21,8 +21,6 @@ ifeq "x$(ARCH)" "xx86_64"
+   endif
+ endif
  
- ARCH:=$(shell uname -m)
- 
--CXXFLAGS = -Wall -Wextra -Wdeprecated-declarations -Wno-psabi -std=c++17 -pthread	\
+-CXXFLAGS += -Wall -Wextra -Wdeprecated-declarations -Wno-psabi -std=c++17 -pthread	\
 --ggdb -fno-finite-math-only -Wno-psabi
  # -Wconversion
  # -Werror
  
-@@ -15,22 +13,13 @@ UNAME_S := $(shell uname -s)
+@@ -33,22 +31,14 @@ UNAME_S := $(shell uname -s)
  ifeq ($(UNAME_S),Linux)
    DLLEXT=.so
    EXTERNALS +=  alsa
@@ -30,7 +30,7 @@ index 211c838..8ae0d5e 100644
  endif
  endif
  
--
+ 
 -ifeq "$(ARCH)" "x86_64"
 -  CXXFLAGS += -msse -msse2 -mfpmath=sse
 -  ifneq "$(UNAME_S)" "Darwin"
@@ -38,13 +38,13 @@ index 211c838..8ae0d5e 100644
 -  endif
 -endif
 -
- CPPFLAGS = -std=c++17
--PREFIX = /usr/local
-+PREFIX = /usr/
+ CPPFLAGS += -std=c++17
+-PREFIX ?= /usr/local
++PREFIX ?= /usr/
  
- GITMODIFIED:=$(shell test -z "`git status --porcelain -uno`" || echo "-modified")
- COMMITHASH:=$(shell git log -1 --abbrev=7 --pretty='format:%h')
-@@ -59,7 +48,6 @@ SOURCE_DIR = src
+ # Development builds derive FULLVERSION from Git metadata so local builds
+ # include the commit count, commit hash and dirty state. Release/package builds
+@@ -90,7 +80,6 @@ SOURCE_DIR = src
  export VERSION
  export SOURCE_DIR
  export BUILD_DIR
@@ -53,5 +53,5 @@ index 211c838..8ae0d5e 100644
  export HAS_OPENMHA
  export HAS_OPENCV2
 -- 
-2.49.0
+2.55.0
 

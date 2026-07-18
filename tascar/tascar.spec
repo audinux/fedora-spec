@@ -4,19 +4,21 @@
 # Category: Audio, Tool
 
 Name: tascar
-Version: 0.237.1
+Version: 0.238.1
 Release: 1%{?dist}
 Summary: TASCAR is a collection of tools for creating spatially dynamic acoustic scenes in different render formats
 License: GPL2
 URL: http://tascar.org/
 ExclusiveArch: x86_64 aarch64
 
+Vendor:       Audinux
+Distribution: Audinux
+
 Source0: https://github.com/HoerTech-gGmbH/tascar/archive/refs/tags/release_%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0: tascar-0001-fix-config.mk.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
-BuildRequires: make
 BuildRequires: doxygen
 BuildRequires: xxd
 BuildRequires: CUnit-devel
@@ -60,15 +62,21 @@ The %{name}-devel package contains header files for %{name}.
 mkdir bin
 ln -s /usr/bin/true bin/git
 
+rm cmake/modules/FindEigen3.cmake
+
 %build
 
 export PATH=`pwd`/bin:$PATH
 
-%make_build
+%set_build_flags
+export CXXFLAGS="-I/usr/include/eigen3 $CXXFLAGS"
+
+%cmake
+%cmake_build
 
 %install
 
-%make_install
+%cmake_install
 
 install -d 755 %buildroot/%{_datadir}/%{name}/examples/
 cp -r examples/* %buildroot/%{_datadir}/%{name}/examples/
@@ -94,6 +102,9 @@ rm -rf %buildroot/home
 %{_libdir}/*.so
 
 %changelog
+* Sat Jul 18 2026 Yann Collette <ycollette.nospam@free.fr> - 0.238.1-1
+- update to 0.238.1-1
+
 * Wed Apr 08 2026 Yann Collette <ycollette.nospam@free.fr> - 0.237.1-1
 - update to 0.237.1-1
 
