@@ -1,0 +1,25 @@
+From 0635ce8bd39f20162c7c6e9d21e792bc920777a2 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Sat, 18 Jul 2026 08:43:56 +0200
+Subject: [PATCH] fix ladspa path
+
+---
+ src/plugin.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/plugin.c b/src/plugin.c
+index f4e82dc..4737d3a 100644
+--- a/src/plugin.c
++++ b/src/plugin.c
+@@ -29,7 +29,7 @@ void plugin_init()
+ 	if (getenv("LADSPA_PATH")) {
+ 		plugin_path = getenv("LADSPA_PATH");
+ 	} else {
+-		plugin_path = "/usr/local/lib/ladspa:" PACKAGE_LIB_DIR "/ladspa";
++		plugin_path = "/usr/lib64/ladspa:" PACKAGE_LIB_DIR "/ladspa";
+ 	}
+ }
+ 
+-- 
+2.55.0
+

@@ -6,9 +6,9 @@
 Name: jamin
 Summary: JACK Audio Connection Kit (JACK) Audio Mastering interface
 Version: 0.98.9
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: GPL-2.0-or-later
-URL: http://jamin.sourceforge.net
+URL: https://jamin.sourceforge.net
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -30,6 +30,7 @@ Patch10: 1011_interface_c.patch
 Patch11: 1012_hdeq_c_hscale.patch
 Patch12: 1013_gtkmeter_c_queue_draw.patch
 Patch13: 1014_compressor_c_curve_update.patch
+Patch14: 1015_fix_ladspa_path.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -50,7 +51,6 @@ Requires: ladspa-swh-plugins
 Requires: ladspa-foo-plugins
 # gawk is needed for jamin-wrapper
 Requires: gawk
-
 
 %description
 JAMin is the JACK Audio Connection Kit (JACK) Audio Mastering interface. JAMin
@@ -129,6 +129,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/mime/packages/%{name}.xml
 
 %changelog
+* Sat Jul 18 2026 Yann Collette <ycollette.nospam@free.fr> - 0.98.9-4
+- update to 0.98.9-4 - fix ladspa path - fix wrapper
+
+* Fri Jul 17 2026 Sean Champ - 0.98.9-3
+- update to 0.98.9-3 - add some patches + fix spec
+
 * Thu Mar 02 2023 Yann Collette <ycollette.nospam@free.fr> - 0.98.9-2
 - fix desktop file
 

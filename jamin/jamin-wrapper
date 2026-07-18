@@ -8,9 +8,6 @@
 #   ~/.jamin/default.jam file, adds an arg for loading the default
 #   jam file from jamin's defualt.jam example, using XDG_RUNTIME_DIRS
 #
-# - If LADSPA_PATH is not already set in the environment, ensures
-#   LADSPA_PATH will be set for the location of ladspa-swh-plugins.
-#   This environment variable is used within jamin
 
 OPTSTR="Xf:hj:n:s:c:rpil:vVdFTtgD"
 PARSED=$(getopt -n jamin-wrapper -o ${OPTSTR} -- "$@");
@@ -46,16 +43,6 @@ while true; do
 done
 
 
-if [ -z "${LADSPA_PATH}" ]; then
-    SC4_PTH=$(rpm -ql ladspa-swh-plugins | grep sc4_1882)
-    if [ -n "${SC4_PTH}" ]; then
-        LADSPA_PATH=$(dirname "${SC4_PTH}")
-    else
-        echo "$0: LADSPA sc4_1882 plugin not found. Is ladspa-swh-plugins installed?" 1>&2
-        exit 1
-    fi
-fi
-
 if [ "${NEED_DEFAULT_JAM}" -eq 1 ] &&
     ! [ -e "${HOME}/.jamin/default.jam" ]  &&
     [ -n "${XDG_DATA_DIRS}" ]; then
@@ -74,8 +61,8 @@ fi
 
 if [ "${NEED_GDB}" -ne 0 ]; then
     set -x
-    LADSPA_PATH="${LADSPA_PATH}" exec gdb --args jamin "${ARGS[@]}" "${@}"
+    exec gdb --args jamin "${ARGS[@]}" "${@}"
 else
     set -x
-    LADSPA_PATH="${LADSPA_PATH}" exec jamin "${ARGS[@]}" "${@}"
+    exec jamin "${ARGS[@]}" "${@}"
 fi
