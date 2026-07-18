@@ -19,7 +19,7 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 
 Name: SocaLabs-plugins
-Version: 20260503
+Version: 20260717
 Release: 6%{?dist}
 Summary: Various VST/VST3 Plugins from SocaLabs.com
 License: BSD-3-Clause
@@ -29,9 +29,8 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./figbug-source.sh <project> <tag>
-# ./figbug-source.sh slPlugins c4d19c3850bcc8ebf4a4f26ce1c53037589ffb19
-
+# To get the source code: ./figbug-source.sh <project> <tag>
+#                         ./figbug-source.sh slPlugins 28e3ea302e5ed1f4d60b50e51892136f9a26ebb6
 
 Source0: slPlugins.tar.gz
 Source4: figbug-source.sh
@@ -118,10 +117,11 @@ HugeGain
 Limiter
 Maths
 MidiLooper
+MidiMonitor
 Oscilloscope
 PitchTrack
-SampleDelay
 SFX8
+SampleDelay
 SimpleVerb
 SpectrumAnalyzer
 StereoEnhancer
@@ -153,6 +153,9 @@ done
 %{_libdir}/lv2/
 
 %changelog
+* Fri Jul 17 2026 Yann Collette <ycollette.nospam@free.fr> - 20260717-6
+- update to 28e3ea302e5ed1f4d60b50e51892136f9a26ebb6
+
 * Sun May 03 2026 Yann Collette <ycollette.nospam@free.fr> - 20260503-6
 - update to c4d19c3850bcc8ebf4a4f26ce1c53037589ffb19
 
