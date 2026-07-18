@@ -25,7 +25,8 @@ Source1: source-houston4444.sh
 
 BuildArch: noarch
 
-BuildRequires: python3-qt5-devel
+BuildRequires: python3-pyqt6-devel
+BuildRequires: python3-pyqt6-base
 BuildRequires: python3
 BuildRequires: qtchooser
 BuildRequires: liblo-devel
