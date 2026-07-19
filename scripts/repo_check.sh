@@ -1177,7 +1177,8 @@ https://codeberg.org/agrigolo/LMTR
 https://github.com/coddle-cpp/coddle
 https://github.com/eclab/seq
 https://codeberg.org/yimrakhee/morpheus6
-https://github.com/LX-Audiolabs/clap-validator"
+https://github.com/LX-Audiolabs/clap-validator
+https://github.com/tiagolr/tetraop"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
