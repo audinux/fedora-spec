@@ -19,7 +19,7 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 
 Name: SocaLabs-plugins
-Version: 20260717
+Version: 20260719
 Release: 6%{?dist}
 Summary: Various VST/VST3 Plugins from SocaLabs.com
 License: BSD-3-Clause
@@ -30,7 +30,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the source code: ./figbug-source.sh <project> <tag>
-#                         ./figbug-source.sh slPlugins 28e3ea302e5ed1f4d60b50e51892136f9a26ebb6
+#                         ./figbug-source.sh slPlugins 5b1cd80c6d392e5410d3cd99c8bf8b7cac615e18
 
 Source0: slPlugins.tar.gz
 Source4: figbug-source.sh
@@ -57,7 +57,7 @@ SocaLabs Audio Plugins: https://SocaLabs.com/
 - Effect: Compressor, Delay, Mverb 2020, Sample Delay
 - Analyzer: Oscilloscope, Spectrum Analyzer
 - Developer tool: AB Tester, Add & Invert, Channel Mute, Compensated Delay, Huge Gain
-- Math:  Tone Generator
+- Math: Tone Generator
 
 %package -n vst-%{name}
 Summary: Various VST2 Plugins from SocaLabs.com
@@ -153,6 +153,9 @@ done
 %{_libdir}/lv2/
 
 %changelog
+* Sun Jul 19 2026 Yann Collette <ycollette.nospam@free.fr> - 20260719-6
+- update to 5b1cd80c6d392e5410d3cd99c8bf8b7cac615e18
+
 * Fri Jul 17 2026 Yann Collette <ycollette.nospam@free.fr> - 20260717-6
 - update to 28e3ea302e5ed1f4d60b50e51892136f9a26ebb6
 
