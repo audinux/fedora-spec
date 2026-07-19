@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: wavetable
-Version: 1.0.33
+Version: 1.0.34
 Release: 2%{?dist}
 Summary: Wavetable synth
 License: BSD-3-Clause
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the source: ./figbug-source.sh <project> <tag>
-#                    ./figbug-source.sh Wavetable v1.0.33
+#                    ./figbug-source.sh Wavetable v1.0.34
 
 Source0: Wavetable.tar.gz
 Source1: figbug-source.sh
@@ -99,6 +99,9 @@ cp -ra %{__cmake_builddir}/Wavetable_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Jul 19 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.34-2
+- update to 1.0.34-2
+
 * Fri Jul 17 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.33-2
 - update to 1.0.33-2
 
