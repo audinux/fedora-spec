@@ -1179,7 +1179,9 @@ https://github.com/eclab/seq
 https://codeberg.org/yimrakhee/morpheus6
 https://github.com/LX-Audiolabs/clap-validator
 https://github.com/tiagolr/tetraop
-https://codeberg.org/yimrakhee/zanhyang6"
+https://codeberg.org/yimrakhee/zanhyang6
+https://git.raphaelforment.fr/BuboBubo/Cagire
+https://github.com/sova-org/hydra-rust"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
