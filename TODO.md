@@ -427,6 +427,9 @@
 | unshuffle                                | https://github.com/calloga/unshuffle                                                                                                                        |
 | melonix                                  | https://github.com/mika314/melonix                                                                                                                          |
 | TUKAN_STUDIOS_PLUGINS                    | https://github.com/TukanStudios/TUKAN_STUDIOS_PLUGINS                                                                                                       |
+| Cagire                                   | https://git.raphaelforment.fr/BuboBubo/Cagire                                                                                                               |
+| sova                                     | https://github.com/sova-org/sova                                                                                                                            |
+| hydra-rust                               | https://github.com/sova-org/hydra-rust                                                                                                                      |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
