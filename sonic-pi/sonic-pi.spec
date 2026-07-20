@@ -1,8 +1,7 @@
-# Status: inactive
+# Status: active
 # Tag: Editor, Live
 # Type: Standalone, Language
 # Category: Audio, Programming
-# GUIToolkit: Qt6
 
 # Have a look at:
 # https://github.com/archlinux/svntogit-community/tree/packages/sonic-pi/trunk
