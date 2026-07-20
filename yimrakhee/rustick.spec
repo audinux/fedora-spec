@@ -6,18 +6,21 @@
 
 %global debug_package %{nil}
 
-Name: rustydrumgizmo
+Name: rustick
 Version: 0.3.3
 Release: 1%{?dist}
 Summary: Rusty DrumGizmo is a modern Rust port of the acclaimed DrumGizmo acoustic drum sampler
 License: GPL-3.0-or-later
-URL: https://codeberg.org/yimrakhee/rustydrumgizmo
+URL: https://codeberg.org/yimrakhee/rustick
 ExclusiveArch: x86_64 aarch64
+
+Provides:  rustydrumgizmo = %{version}-%{release}
+Obsoletes: rustydrumgizmo < %{version}-%{release}
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://codeberg.org/yimrakhee/rustydrumgizmo/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://codeberg.org/yimrakhee/rustick/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -29,8 +32,10 @@ BuildRequires: xcb-util-wm-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: python3
 
+Requires: license-%{name}
+
 %description
-Rusty DrumGizmo is a modern Rust port of the acclaimed DrumGizmo acoustic drum sampler.
+Rustick is a modern Rust port of the acclaimed DrumGizmo acoustic drum sampler.
 Built with nih-plug and egui, it aims to bring the raw, multi-channel acoustic drum sounds
 of the original DrumGizmo ecosystem into a memory-safe, optimized Rust architecture.
 
@@ -76,10 +81,10 @@ export CARGO_HOME="$CWD/cargo"
 # cargo build --release
 
 %ifarch x86_64
-rustup-init -y --no-modify-path --default-toolchain nightly-x86_64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain 1.88.0-x86_64-unknown-linux-gnu
 %endif
 %ifarch aarch64
-rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain 1.88.0-aarch64-unknown-linux-gnu
 %endif
 source cargo/env
 
@@ -87,11 +92,17 @@ cargo build --release
 
 %install
 
-install -m 755 -d %{buildroot}%{_libdir}/vst3/rusty_drumgizmo.vst3/Contents/%{_target}/
-cp -ra target/release/librustydrumgizmo.so %{buildroot}/%{_libdir}/vst3/rusty_drumgizmo.vst3/Contents/%{_target}/
+install -m 755 -d %{buildroot}%{_libdir}/vst3/rustick.vst3/Contents/%{_target}/
+cp -ra target/release/librustydrumgizmo.so %{buildroot}/%{_libdir}/vst3/rustick.vst3/Contents/%{_target}/
 
 install -m 755 -d %{buildroot}%{_libdir}/clap/
-cp -ra target/release/librustydrumgizmo.so %{buildroot}/%{_libdir}/clap/rusty_drumgizmo.clap
+cp -ra target/release/librustydrumgizmo.so %{buildroot}/%{_libdir}/clap/rustick.clap
+
+install -m 755 -d %{buildroot}%{_bindir}/
+install -m 755 target/release/rustydrumgizmo %{buildroot}%{_bindir}/
+
+%files
+%{_bindir}/*
 
 %files -n license-%{name}
 %doc README.md
@@ -104,6 +115,9 @@ cp -ra target/release/librustydrumgizmo.so %{buildroot}/%{_libdir}/clap/rusty_dr
 %{_libdir}/clap/*
 
 %changelog
+* Mon Jul 20 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.3-2
+- update to 0.3.3-2 - rename from rustydrumgizmo to rustick
+
 * Wed Jul 08 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.3-1
 - update to 0.3.3-1
 
