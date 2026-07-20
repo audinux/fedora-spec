@@ -4,7 +4,7 @@
 # Category: Audio, Effect, Tool
 
 Name: amplitron
-Version: 0.1.356
+Version: 0.1.358
 Release: 2%{?dist}
 Summary: Poor man's guitar amp
 License: MIT
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./amplitron-source.sh <TAG>
-#        ./amplitron-source.sh v0.1.356
+#        ./amplitron-source.sh v0.1.358
 
 Source0: Amplitron.tar.gz
 Source1: amplitron-source.sh
@@ -96,6 +96,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/*
 
 %changelog
+* Mon Jul 20 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.358-2
+- update to 0.1.358-2
+
 * Wed Jul 08 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.356-2
 - update to 0.1.356-2
 
