@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 13073aab4473759fab8565c4f4966d5aaf3c7aeb
-%global gittag0 2.5.4
+%global commit0 fa16b8ca0e07e99e43f3168111405f13654dbc69
+%global gittag0 2.6.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Leviathan
-Version: 2.5.4
+Version: 2.6.2
 Release: 2%{?dist}
 Summary: Leviathan plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Leviathan_plugin/dist/Leviathan/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.4-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.2-1
 - initial specfile

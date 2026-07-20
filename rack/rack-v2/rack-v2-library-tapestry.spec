@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 4c2d9288efa39550954daed4b2b36f9ac83c97b5
-%global gittag0 2.0.0
+%global commit0 6b70f9999c7b0545bf18c1c5bff716189406d4fb
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-tapestry
-Version: 2.0.0
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: tapestry plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r tapestry_plugin/dist/tapestry/* %{buildroot}%{_libexecdir}/Rack2/plugins/t
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
