@@ -6,7 +6,7 @@
 %global onnx_runtime_version 1.26.0
 
 Name: magda-core
-Version: 0.15.0
+Version: 0.16.0
 Release: 5%{?dist}
 Summary: A DAW built for automation, transformation, and fast musical iteration
 License: GPL-3.0-or-later
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./magda-core-source.sh <TAG>
-#        ./magda-core-source.sh v0.15.0
+#        ./magda-core-source.sh v0.16.0
 
 Source0: magda-core.tar.gz
 Source1: magda-core-source.sh
@@ -105,6 +105,9 @@ mv %{buildroot}/%{_bindir}/lang %{buildroot}/%{_datadir}/%{name}/
 %{_datadir}/%{name}/lang/*
 
 %changelog
+* Tue Jul 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.16.0-5
+- update to 0.16.0-5
+
 * Thu Jul 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.15.0-5
 - update to 0.15.0-5 - fix typos
 
