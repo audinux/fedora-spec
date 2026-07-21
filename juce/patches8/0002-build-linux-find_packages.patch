@@ -1,0 +1,46 @@
+From d1c8297faab92ff894dac26fb1e74b7cf8fb1f2e Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Mon, 15 Sep 2025 22:10:32 +0200
+Subject: [PATCH] build
+
+---
+ extras/Build/CMake/JUCEModuleSupport.cmake | 23 ++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+diff --git a/extras/Build/CMake/JUCEModuleSupport.cmake b/extras/Build/CMake/JUCEModuleSupport.cmake
+index 03378a2..13f88b4 100644
+--- a/extras/Build/CMake/JUCEModuleSupport.cmake
++++ b/extras/Build/CMake/JUCEModuleSupport.cmake
+@@ -388,6 +388,29 @@ function(_juce_create_pkgconfig_target name)
+         return()
+     endif()
+ 
++    # The package that can be found via find_package instead of pkg-config
++    if("${name}" STREQUAL "freetype2")
++        find_package(Freetype REQUIRED)
++        add_library(juce::pkgconfig_${name} INTERFACE)
++        target_link_libraries(juce::pkgconfig_${name} INTERFACE Freetype::Freetype)
++        return()
++    elseif("${name}" STREQUAL "libcurl")
++        find_package(CURL REQUIRED)
++        add_library(juce::pkgconfig_${name} INTERFACE)
++        target_link_libraries(juce::pkgconfig_${name} INTERFACE CURL::libcurl)
++        return()
++    elseif("${name}" STREQUAL "alsa")
++        find_package(ALSA REQUIRED)
++        add_library(juce::pkgconfig_${name} INTERFACE)
++        target_link_libraries(juce::pkgconfig_${name} INTERFACE ALSA::ALSA)
++        return()
++    elseif("${name}" STREQUAL "gl")
++        find_package(OpenGL REQUIRED)
++        add_library(juce::pkgconfig_${name} INTERFACE)
++        target_link_libraries(juce::pkgconfig_${name} INTERFACE OpenGL::GL)
++        return()
++    endif()
++
+     find_package(PkgConfig REQUIRED)
+     pkg_check_modules(${name} ${JUCE_ARG_UNPARSED_ARGUMENTS})
+ 
+-- 
+2.51.0
+

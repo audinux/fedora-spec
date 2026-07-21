@@ -1,0 +1,48 @@
+From cf39e719e6d711082aa86a3abef8806ed563d0bd Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Mon, 15 Sep 2025 22:15:33 +0200
+Subject: [PATCH] patch
+
+---
+ CMakeLists.txt                       | 4 ++--
+ extras/Build/juceaide/CMakeLists.txt | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index feeb476..ec455de 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -137,7 +137,7 @@ write_basic_package_version_file("${JUCE_BINARY_DIR}/JUCEConfigVersion.cmake"
+     VERSION ${JUCE_VERSION}
+     COMPATIBILITY ExactVersion)
+ 
+-set(JUCE_INSTALL_DESTINATION "lib/cmake/JUCE-${JUCE_VERSION}" CACHE STRING
++set(JUCE_INSTALL_DESTINATION "share/juce" CACHE STRING
+     "The location, relative to the install prefix, where the JUCE config file will be installed")
+ 
+ set(JUCE_MODULE_PATH "include/JUCE-${JUCE_VERSION}/modules")
+@@ -181,7 +181,7 @@ if(("${CMAKE_SOURCE_DIR}" STREQUAL "${JUCE_SOURCE_DIR}") AND (NOT JUCE_BUILD_HEL
+     _juce_add_lv2_manifest_helper_target()
+ 
+     if(TARGET juce_lv2_helper)
+-        install(TARGETS juce_lv2_helper EXPORT LV2_HELPER DESTINATION "bin/JUCE-${JUCE_VERSION}")
++        install(TARGETS juce_lv2_helper EXPORT LV2_HELPER DESTINATION "${JUCE_TOOL_INSTALL_DIR}")
+         install(EXPORT LV2_HELPER NAMESPACE juce:: DESTINATION "${JUCE_INSTALL_DESTINATION}")
+     endif()
+ endif()
+diff --git a/extras/Build/juceaide/CMakeLists.txt b/extras/Build/juceaide/CMakeLists.txt
+index 17e5520..b49098b 100644
+--- a/extras/Build/juceaide/CMakeLists.txt
++++ b/extras/Build/juceaide/CMakeLists.txt
+@@ -168,7 +168,7 @@ else()
+ 
+     add_executable(juce::juceaide ALIAS juceaide)
+ 
+-    set(JUCE_TOOL_INSTALL_DIR "bin/JUCE-${JUCE_VERSION}" CACHE STRING
++    set(JUCE_TOOL_INSTALL_DIR "${JUCE_TOOL_INSTALL_DIR}" CACHE STRING
+         "The location, relative to the install prefix, where juceaide will be installed")
+ 
+     install(PROGRAMS "${imported_location}" DESTINATION "${JUCE_TOOL_INSTALL_DIR}")
+-- 
+2.51.0
+
