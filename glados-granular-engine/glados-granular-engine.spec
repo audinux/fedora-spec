@@ -1,5 +1,5 @@
 # Status: active
-# Tag: Jack, Alsa, Distortion
+# Tag: Effect
 # Type: Plugin, Standalone, VST3
 # Category: Effect
 
