@@ -3,11 +3,11 @@
 # Type: Plugin, VST
 # Category: Audio, Effect
 
-%global commit0 781eaee378303c7dc4d9edcaabb086cf160ff5df
+%global commit0 51a71636fe38bc51cee54861689318ffb7d2e434
 
 Name: airwindows
 Version: 0.0.1
-Release: 110%{?dist}
+Release: 111%{?dist}
 Summary: A huge set of VST2 plugins
 License: MIT
 URL: https://github.com/airwindows/airwindows
@@ -71,6 +71,9 @@ install -m 755 %{__cmake_builddir}/*.so %{buildroot}/%{_libdir}/vst/
 %{_libdir}/*
 
 %changelog
+* Mon Jul 20 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-111
+- update to 51a71636fe38bc51cee54861689318ffb7d2e434
+
 * Fri Jul 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-110
 - update to 781eaee378303c7dc4d9edcaabb086cf160ff5df
 
