@@ -1181,7 +1181,8 @@ https://github.com/LX-Audiolabs/clap-validator
 https://github.com/tiagolr/tetraop
 https://codeberg.org/yimrakhee/zanhyang6
 https://git.raphaelforment.fr/BuboBubo/Cagire
-https://github.com/sova-org/hydra-rust"
+https://github.com/sova-org/hydra-rust
+https://github.com/JosueFabian18/glados-granular-engine"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
