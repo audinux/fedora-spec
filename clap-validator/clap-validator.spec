@@ -6,17 +6,17 @@
 %global debug_package %{nil}
 
 Name: clap-validator
-Version: 0.3.4
+Version: 0.4.1
 Release: 1%{?dist}
 Summary: An automatic CLAP validation and testing tool
 License: MIT
-URL: https://github.com/LX-Audiolabs/clap-validator
+URL: https://github.com/free-audio/clap-validator
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/LX-Audiolabs/clap-validator/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/free-audio/clap-validator/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -73,5 +73,11 @@ cp -vfr target/release/clap-validator %{buildroot}/%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Wed Jul 22 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.1-1
+- update to 0.4.1-1
+
+* Wed Jul 22 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.5-1
+- update to 0.3.5-1
+
 * Thu Jul 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.4-1
 - Initial spec file
