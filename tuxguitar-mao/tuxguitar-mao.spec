@@ -32,7 +32,7 @@
 %define debug_package %{nil}
 
 Name: tuxguitar
-Version: 2.0.1
+Version: 2.1.0
 Release: 18%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
@@ -61,7 +61,7 @@ Source1: tuxguitar.sh
 # wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.37-202509050730/swt-4.37-gtk-linux-x86_64.zip
 # wget https://archive.eclipse.org/eclipse/downloads/drops4/R-4.37-202509050730/swt-4.37-gtk-linux-aarch64.zip
 
-%define swt_version 4.36
+%define swt_version 4.37
 Source3: swt-%{swt_version}-gtk-linux-aarch64.zip
 Source4: swt-%{swt_version}-gtk-linux-x86_64.zip
 
@@ -201,8 +201,8 @@ cp -a desktop/build-scripts/common-resources/common-linux/share/man/man1/%{name}
     
 # desktop files
 mkdir -p %{buildroot}/%{_datadir}/applications/
-install -pm 644 desktop/build-scripts/common-resources/common-linux/share/applications/%{name}.desktop %{buildroot}/%{_datadir}/applications/
-desktop-file-install --dir=%{buildroot}/%{_datadir}/applications/ desktop/build-scripts/common-resources/common-linux/share/applications/%{name}.desktop
+install -pm 644 desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-2.1.0-linux-swt/share/applications/TuxGuitar.desktop %{buildroot}/%{_datadir}/applications/%{name}.desktop
+desktop-file-install --dir=%{buildroot}/%{_datadir}/applications/ %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 # jar files
 mkdir -p %{buildroot}/%{_javadir}/%{name}/
@@ -254,7 +254,7 @@ EOF
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
-%license LICENSE
+%license desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-2.1.0-linux-swt/doc/LICENSE
 %doc AUTHORS CHANGES README.md
 %{_bindir}/%{name}
 %{_datadir}/%{name}
@@ -267,6 +267,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Sat Jul 25 2026 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-18
+- update to 2.1.0-18
+
 * Wed Jul 08 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-18
 - update to 2.0.1-18 - fix swt install
 
