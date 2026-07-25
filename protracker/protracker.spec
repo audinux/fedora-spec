@@ -5,7 +5,7 @@
 
 Summary: Chiptune tracker for making chiptune-like music on a modern computer.
 Name: protracker2
-Version: 1.91
+Version: 1.92
 Release: 4%{?dist}
 License: BSD
 URL: https://16-bits.org/pt.php
@@ -145,6 +145,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Sat Jul 25 2026 Yann Collette <ycollette.nospam@free.fr> - 1.92-4
+- update to 1.92-4
+
 * Sun Jul 05 2026 Yann Collette <ycollette.nospam@free.fr> - 1.91-4
 - update to 1.91-4
 
