@@ -615,7 +615,6 @@ https://github.com/SteveRussell33/Prism
 https://github.com/stevie67/loopor
 https://github.com/stoermelder/vcvrack-packone
 https://github.com/Strum/Strums_Mental_VCV_Modules
-https://github.com/Stubs42/OrangeLine
 https://github.com/StudioSixPlusOne/rack-modules
 https://github.com/stump/libsmf
 https://github.com/sumpygump/quantal-audio
@@ -1195,6 +1194,7 @@ https://github.com/JosueFabian18/glados-granular-engine"
 # https://github.com/jean-emmanuel/seq192
 # https://github.com/mididings/pyliblo
 # https://github.com/aiobofh/midi-utils
+# https://github.com/Stubs42/OrangeLine
 
 cp git_tags_old.txt git_tags_old.txt.bkp
 
