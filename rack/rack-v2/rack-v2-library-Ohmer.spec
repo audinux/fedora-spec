@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 d6e2f29b000335c630ff56a78483b01febafc65c
-%global gittag0 2.6.12
+%global commit0 00f3497ddc62edda46463d8084e6bc7cf5bcd1db
+%global gittag0 2.6.13
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Ohmer
-Version: 2.6.12
+Version: 2.6.13
 Release: 2%{?dist}
 Summary: Ohmer plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Ohmer_plugin/dist/Ohmer/* %{buildroot}%{_libexecdir}/Rack2/plugins/Ohmer/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.12-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.13-1
 - initial specfile

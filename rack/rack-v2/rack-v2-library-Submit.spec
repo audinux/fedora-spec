@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 4b5cc1e051533d4aa712a5368b817c0cb98203dd
-%global gittag0 2.15.3
+%global commit0 77967e5837a0d83f1692ca410c49ef777d9e6f65
+%global gittag0 2.16.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Submit
-Version: 2.15.3
+Version: 2.16.0
 Release: 2%{?dist}
 Summary: Submit plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 Submit plugin for Rack.
-All-in-one voice module — oscillator, wavefolder, slope and contour
+West Coast voice with oscillator, wavefolder, slope and contour envelope.
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r Submit_plugin/dist/Submit/* %{buildroot}%{_libexecdir}/Rack2/plugins/Submi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.15.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.16.0-1
 - initial specfile

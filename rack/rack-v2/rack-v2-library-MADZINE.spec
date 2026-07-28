@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 a68d3792787fb976acc9d5ac351c05154e4e5262
-%global gittag0 2.5.3
+%global commit0 f8f8a93c0ec59255984ff2c3e56e080927b80522
+%global gittag0 2.6.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-MADZINE
-Version: 2.5.3
+Version: 2.6.0
 Release: 2%{?dist}
 Summary: MADZINE plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r MADZINE_plugin/dist/MADZINE/* %{buildroot}%{_libexecdir}/Rack2/plugins/MAD
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.0-1
 - initial specfile

@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 bea6fe0d95e0e6693ac7814554e42906236ac99f
-%global gittag0 2.2.1
+%global commit0 b172a1d5c09fa35b3e17ca2b1667c893d36154ff
+%global gittag0 2.3.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Coalescent
-Version: 2.2.1
+Version: 2.3.0
 Release: 2%{?dist}
 Summary: Coalescent plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Coalescent_plugin/dist/Coalescent/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-1
 - initial specfile
