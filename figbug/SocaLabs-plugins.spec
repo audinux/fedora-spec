@@ -19,7 +19,7 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 
 Name: SocaLabs-plugins
-Version: 20260719
+Version: 20260727
 Release: 6%{?dist}
 Summary: Various VST/VST3 Plugins from SocaLabs.com
 License: BSD-3-Clause
@@ -30,7 +30,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the source code: ./figbug-source.sh <project> <tag>
-#                         ./figbug-source.sh slPlugins 5b1cd80c6d392e5410d3cd99c8bf8b7cac615e18
+#                         ./figbug-source.sh slPlugins 49b22928a59ce577b4bb949a91857a5ec17f4354
 
 Source0: slPlugins.tar.gz
 Source4: figbug-source.sh
@@ -153,6 +153,9 @@ done
 %{_libdir}/lv2/
 
 %changelog
+* Mon Jul 27 2026 Yann Collette <ycollette.nospam@free.fr> - 20260727-6
+- update to 49b22928a59ce577b4bb949a91857a5ec17f4354
+
 * Sun Jul 19 2026 Yann Collette <ycollette.nospam@free.fr> - 20260719-6
 - update to 5b1cd80c6d392e5410d3cd99c8bf8b7cac615e18
 
