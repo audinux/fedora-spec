@@ -127,6 +127,8 @@ For aarch64:
 $ dnf install qemu-user-static-aarch64 qemu-user-static
 $ rm -f /var/tmp/fedora44-aarch64.img
 $ livemedia-creator --make-disk --ks fedora-44-live-jam-xfce.ks --no-virt --arch=aarch64 --image-name fedora44-aarch64.img
+$ livemedia-creator --make-disk --arch=aarch64 --ks=fedora-44-live-jam-xfce.ks --iso=Fedora-Server-dvd-aarch64-44.iso
+$ systemd-run --scope livemedia-creator --make-disk --no-virt --arch=aarch64 --ks fedora-44-live-jam-xfce.ks --keep-image --image-name=fedora44-aarch64.img
 ```
 
 To check the potential changes from the kickstart file:
