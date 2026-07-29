@@ -8,13 +8,13 @@ Version: 0.1.0
 Release: 1%{?dist}
 Summary: minimal live MIDI looper
 License: GPL-3.0
-URL: https://github.com/jean-emmanuel/loop192
+URL: https://framagit.org/jean-emmanuel/loop192
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/jean-emmanuel/loop192/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://framagit.org/jean-emmanuel/loop192/-/archive/%{version}/loop192-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc-c++
 BuildRequires: make

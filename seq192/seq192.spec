@@ -8,13 +8,13 @@ Version: 1.8.2
 Release: 1%{?dist}
 Summary: MIDI sequencer based on seq24 with less features and more swag
 License: GPL
-URL: https://github.com/jean-emmanuel/seq192
+URL: https://framagit.org/jean-emmanuel/seq192
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/jean-emmanuel/seq192/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://framagit.org/jean-emmanuel/seq192/-/archive/%{version}/seq192-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0: seq192-0001-update-makefile.patch
 
 BuildRequires: gcc gcc-c++

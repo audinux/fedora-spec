@@ -10,13 +10,13 @@ Summary: A live-coded visual performance tool
 Version: 1.1
 Release: 3%{?dist}
 License: BSD
-URL: https://github.com/rumblesan/improviz
+URL: https://codeberg.org/rumblesan/improviz
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/rumblesan/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://codeberg.org/rumblesan/improviz/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: improviz.yaml
 Source2: https://github.com/rumblesan/improviz-performance/archive/main.zip#/improviz-performance.zip
 

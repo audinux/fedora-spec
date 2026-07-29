@@ -1181,7 +1181,9 @@ https://github.com/tiagolr/tetraop
 https://codeberg.org/yimrakhee/zanhyang6
 https://git.raphaelforment.fr/BuboBubo/Cagire
 https://github.com/sova-org/hydra-rust
-https://github.com/JosueFabian18/glados-granular-engine"
+https://github.com/JosueFabian18/glados-granular-engine
+https://framagit.org/jean-emmanuel/loop192
+https://framagit.org/jean-emmanuel/seq192"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
@@ -1190,8 +1192,6 @@ https://github.com/JosueFabian18/glados-granular-engine"
 # https://github.com/50m30n3/SO-666
 # https://github.com/WeirdConstructor/HexoSynth
 # https://github.com/WeirdConstructor/Kickmess
-# https://github.com/jean-emmanuel/loop192
-# https://github.com/jean-emmanuel/seq192
 # https://github.com/mididings/pyliblo
 # https://github.com/aiobofh/midi-utils
 # https://github.com/Stubs42/OrangeLine
