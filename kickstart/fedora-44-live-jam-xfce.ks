@@ -361,7 +361,7 @@ if [ -n "$LIVE_ROOT" ]; then
     cp "$INSTALL_ROOT"/usr/share/licenses/*-release-common/* "$LIVE_ROOT/"
 
 # only works on x86, x86_64
-if [ "$(uname -i)" = "i386" -o "$(uname -i)" = "x86_64" ]; then
+if [ "$(uname -i)" = "x86_64" ]; then
     # For livecd-creator builds
     if [ ! -d $LIVE_ROOT/LiveOS ]; then mkdir -p $LIVE_ROOT/LiveOS ; fi
     cp /usr/bin/livecd-iso-to-disk $LIVE_ROOT/LiveOS
@@ -420,8 +420,6 @@ kernel-modules
 kernel-modules-extra
 kernel-tools
 
-%ifarch x86_64
-
 # This was added a while ago, I think it falls into the category of
 # "Diagnosis/recovery tool useful from a Live OS image".  Leaving this untouched for now.
 memtest86+
@@ -438,8 +436,6 @@ grub2-efi
 grub2-efi-x64-cdboot
 shim-x64
 
-%endif
-
 # XFCE
 @xfce-apps
 @xfce-desktop
@@ -454,13 +450,9 @@ fedora-release
 # various system package (since F31)
 chkconfig
 
-%ifarch x86_64
-
 samba-dc # for wine ...
 # wine(x86-32) # fc39: pb with fontconfig
 wine
-
-%endif
 
 # drop some system-config things
 python3
