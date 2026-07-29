@@ -124,7 +124,9 @@ $ livemedia-creator --make-iso --ks fedora-44-live-jam-xfce.ks --project Audinux
 
 For aarch64:
 ```
-$ livemedia-creator --make-disk --image-name=fedora44-audinux-aarch64.img --ks=fedora-44-live-jam-xfce.ks --arch=aarch64 --keep-image
+$ dnf install qemu-user-static-aarch64 qemu-user-static
+$ rm -f /var/tmp/fedora44-aarch64.img
+$ livemedia-creator --make-disk --ks fedora-44-live-jam-xfce.ks --no-virt --arch=aarch64 --image-name fedora44-aarch64.img
 ```
 
 To check the potential changes from the kickstart file:
