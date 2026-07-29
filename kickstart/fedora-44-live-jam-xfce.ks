@@ -184,7 +184,7 @@ fi
 action "Adding live user" useradd \$USERADDARGS -m -c "Live System User" audinux
 passwd -d audinux > /dev/null
 usermod -aG wheel    audinux > /dev/null
-#YC usermod -aG jackuser audinux > /dev/null
+usermod -aG jackuser audinux > /dev/null
 usermod -aG pipewire audinux > /dev/null
 usermod -aG root     audinux > /dev/null
 
@@ -377,6 +377,23 @@ if [ "$(uname -i)" = "i386" -o "$(uname -i)" = "x86_64" ]; then
     ' /usr/share/lorax/templates.d/99-generic/live/x86.tmpl
 fi
 
+# only works on aarch64
+if [ "$(uname -i)" = "aarch64" ]; then
+    # For livecd-creator builds
+    if [ ! -d $LIVE_ROOT/LiveOS ]; then mkdir -p $LIVE_ROOT/LiveOS ; fi
+    cp /usr/bin/livecd-iso-to-disk $LIVE_ROOT/LiveOS
+
+    # For lorax/livemedia-creator builds
+    sed -i '
+    /## make boot.iso/ i\
+    # Add livecd-iso-to-disk script to .iso filesystem at /LiveOS/\
+    <% f = "usr/bin/livecd-iso-to-disk" %>\
+    %if exists(f):\
+        install ${f} ${LIVEDIR}/${f|basename}\
+    %endif\
+    ' /usr/share/lorax/templates.d/99-generic/live/aarch64.tmpl
+fi
+
 %end
 
 #################################
@@ -403,6 +420,8 @@ kernel-modules
 kernel-modules-extra
 kernel-tools
 
+%ifarch x86_64
+
 # This was added a while ago, I think it falls into the category of
 # "Diagnosis/recovery tool useful from a Live OS image".  Leaving this untouched for now.
 memtest86+
@@ -419,6 +438,8 @@ grub2-efi
 grub2-efi-x64-cdboot
 shim-x64
 
+%endif
+
 # XFCE
 @xfce-apps
 @xfce-desktop
@@ -433,9 +454,13 @@ fedora-release
 # various system package (since F31)
 chkconfig
 
+%ifarch x86_64
+
 samba-dc # for wine ...
 # wine(x86-32) # fc39: pb with fontconfig
 wine
+
+%endif
 
 # drop some system-config things
 python3

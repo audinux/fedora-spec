@@ -122,6 +122,11 @@ $ ./prepare.sh
 $ livemedia-creator --make-iso --ks fedora-44-live-jam-xfce.ks --project Audinux --iso-name livecd-fedora-44-mao.iso --iso-only --releasever 44 --volid Audinux --image-name Audinux --resultdir /var/lmc --no-virt --tmp /var/tmp
 ```
 
+For aarch64:
+```
+$ livemedia-creator --make-disk --image-name=fedora44-audinux-aarch64.img --ks=fedora-44-live-jam-xfce.ks --arch=aarch64 --keep-image
+```
+
 To check the potential changes from the kickstart file:
 $ dnf install pykickstart.noarch rpmfusion-free-remix-kickstarts.noarch spin-kickstarts.noarch
 $ ksflatten -c /usr/share/spin-kickstarts/fedora-live-xfce.ks -o xfce.ks
@@ -177,6 +182,22 @@ $ dnf install edk2-ovmf
 
 ```
 $ qemu-kvm -m 2048 -vga qxl -display sdl -cdrom fedora-44-Audinux.iso -bios /usr/share/edk2/ovmf/OVMF_CODE.fd
+```
+
+To test the aarch64 version:
+```
+qemu-system-aarch64 \
+    -machine virt \
+    -cpu cortex-a72 \
+    -m 4096 \
+    -smp 4 \
+    -bios /usr/share/edk2/aarch64/QEMU_EFI.fd \
+    -drive if=virtio,file=fedora44-audinux-aarch64.img,format=raw \
+    -device virtio-gpu-pci \
+    -device qemu-xhci \
+    -device usb-kbd \
+    -device usb-tablet \
+    -nic user
 ```
 
 Write ISO to USB:
