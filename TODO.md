@@ -428,6 +428,15 @@
 | melonix                                  | https://github.com/mika314/melonix                                                                                                                          |
 | TUKAN_STUDIOS_PLUGINS                    | https://github.com/TukanStudios/TUKAN_STUDIOS_PLUGINS                                                                                                       |
 | sova                                     | https://github.com/sova-org/sova                                                                                                                            |
+| ft2-plugin                               | https://github.com/juho/ft2-plugin                                                                                                                          |
+| HyperPrismReimagined                     | https://github.com/themightyzq/HyperPrismReimagined                                                                                                         |
+| XenRoll                                  | https://github.com/Ankalot/XenRoll                                                                                                                          |
+| mrt2-accompany                           | https://github.com/maxgraf96/mrt2-accompany                                                                                                                 |
+| pcf_rebirth                              | https://github.com/ReinerBforartists/pcf_rebirth                                                                                                            |
+| plugins                                  | https://github.com/samueljustice/plugins                                                                                                                    |
+| pcmg                                     | https://github.com/JohnDowson/pcmg                                                                                                                          |
+| oosc-rs                                  | https://github.com/karasikq/oosc-rs                                                                                                                         |
+| s-rack                                   | https://github.com/sharph/s-rack                                                                                                                            |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
