@@ -123,18 +123,88 @@ $ livemedia-creator --make-iso --ks fedora-44-live-jam-xfce.ks --project Audinux
 ```
 
 For aarch64:
-```
-$ dnf install qemu-user-static-aarch64 qemu-user-static
-$ rm -f /var/tmp/fedora44-aarch64.img
-$ livemedia-creator --make-disk --ks fedora-44-live-jam-xfce.ks --no-virt --arch=aarch64 --image-name fedora44-aarch64.img
-$ livemedia-creator --make-disk --arch=aarch64 --ks=fedora-44-live-jam-xfce.ks --iso=Fedora-Server-dvd-aarch64-44.iso
-$ systemd-run --scope livemedia-creator --make-disk --no-virt --arch=aarch64 --ks fedora-44-live-jam-xfce.ks --keep-image --image-name=fedora44-aarch64.img
+
+First, create a Fedora aarch64 minimal virtual machine:
+```  
+# Install the aarch64 QEMU system emulator and UEFI firmware
+$ sudo dnf install qemu-system-aarch64 edk2-aarch64
+
+# Download a Fedora aarch64 cloud image (small, no desktop)
+$ wget https://download.fedoraproject.org/pub/fedora/linux/releases/44/Cloud/aarch64/images/Fedora-Cloud-Base-44-*.aarch64.qcow2
+
+# Resize it — the default cloud image is ~5 GB, too small for a live CD build
+$ qemu-img resize Fedora-Cloud-Base-44-*.aarch64.qcow2 30G
+
+# Boot the VM
+$ qemu-system-aarch64 \
+      -machine virt \
+      -cpu cortex-a57 \
+      -m 4096 \
+      -smp 4 \
+      -bios /usr/share/edk2/aarch64/QEMU_EFI.fd \
+      -drive file=Fedora-Cloud-Base-44-*.aarch64.qcow2,format=qcow2 \
+      -drive file=cloud-init.iso,format=raw \
+      -nographic \
+      -netdev user,id=net0,hostfwd=tcp::2222-:22 \
+      -device virtio-net-pci,netdev=net0
 ```
 
+The cloud image needs a cloud-init.iso to set the initial password/SSH key. The quickest way:
+```
+# Create a minimal cloud-init config
+$ mkdir -p cloud-init
+$ cat > cloud-init/user-data << 'EOF'
+#cloud-config
+password: fedora
+chpasswd: { expire: false }
+ssh_pwauth: true
+EOF
+
+cat > cloud-init/meta-data << 'EOF'
+instance-id: audinux-build
+local-hostname: audinux-build
+EOF
+
+$  genisoimage -output cloud-init.iso -volid cidata -joliet -rock cloud-init/user-data cloud-init/meta-data
+```
+
+Once inside the VM:
+```  
+# Expand the filesystem to use the resized disk
+$ sudo growpart /dev/vda 4
+$ sudo resize2fs /dev/vda4    # or btrfs filesystem resize if using btrfs
+
+# Install build tools
+$ sudo dnf install -y lorax livecd-tools git
+  
+# Clone your spec repo to get the kickstart file
+$ git clone https://github.com/audinux/fedora-spec
+
+# Build
+$ sudo livemedia-creator \
+      --make-iso \
+      --ks fedora-spec/fedora-44-live-jam-xfce.ks \
+      --project Audinux \
+      --iso-name audinux-44-aarch64.iso \
+      --releasever 44 \
+      --iso-only \
+      --no-virt \
+      --tmp /var/tmp
+```
+
+Then copy the ISO out via SCP:
+```
+$ scp -P 2222 fedora@localhost:/var/lmc/audinux-44-aarch64.iso .
+```
+
+The main downside is speed — cortex-a57 emulation on x86_64 is slow, and a full live ISO build can take 1–3 hours. Giving the VM more CPUs (-smp 8) and RAM (-m 8192) helps significantly.
+
 To check the potential changes from the kickstart file:
+```
 $ dnf install pykickstart.noarch rpmfusion-free-remix-kickstarts.noarch spin-kickstarts.noarch
 $ ksflatten -c /usr/share/spin-kickstarts/fedora-live-xfce.ks -o xfce.ks
 $ meld fedora-44-live-jam-xfce.ks xfce.ks &
+```
 
 To test the ISO file with a standard BIOS:
 
@@ -150,10 +220,12 @@ Without audio:
 ```
 $ qemu-kvm -m 2048 -vga qxl -display sdl -cdrom fedora-44-Audinux.iso
 ```
+
 With audio and usb:
 ```
 $ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -display sdl -cdrom fedora-44-Audinux.iso
 ```
+
 With audio, usb and with 2 cpus:
 ```
 $ qemu-kvm -m 2048 -vga qxl -usb -device intel-hda -device hda-duplex -smp cpus=2 -display sdl -cdrom fedora-44-Audinux.iso
@@ -179,18 +251,14 @@ $ qemu-kvm -m 2048 -name Audinux -display sdl -cdrom fedora-44-Audinux.iso -usb 
 ```
 
 To test the ISO file with a UEFI BIOS:
-
 ```
 $ dnf install edk2-ovmf
-```
-
-```
 $ qemu-kvm -m 2048 -vga qxl -display sdl -cdrom fedora-44-Audinux.iso -bios /usr/share/edk2/ovmf/OVMF_CODE.fd
 ```
 
 To test the aarch64 version:
 ```
-qemu-system-aarch64 \
+$ qemu-system-aarch64 \
     -machine virt \
     -cpu cortex-a72 \
     -m 4096 \
@@ -210,6 +278,7 @@ You can use dd:
 ```
 $ dd if=Audinux.iso of=/dev/sdc bs=1024
 ```
+
 Or mediawriter:
 ```
 $ dnf install mediawriter
@@ -224,7 +293,7 @@ $ dnf install livecd-tools
 Locate where is your usb disk:
 ```
 $ dmesg | tail
-or
+# or
 $ lsblk
 ```
 
