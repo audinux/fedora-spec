@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: cagire
-Version: 0.1.9
+Version: 0.2.0
 Release: 1%{?dist}
 Summary: Forth music sequencer for live coding
 License: GPL-3.0-or-later
@@ -80,5 +80,8 @@ install -m 755 target/release/cagire %{buildroot}/%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Thu Jul 30 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
+- update to 0.2.0-1
+
 * Mon Jul 20 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.9-1
 - Initial spec file
