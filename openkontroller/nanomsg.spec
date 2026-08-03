@@ -4,7 +4,7 @@
 # Category: Programming
 
 Name: nanomsg
-Version: 1.2.2
+Version: 1.2.4
 Release: 2%{?dist}
 Summary: The nanomsg library is a simple high-performance implementation of several "scalability protocols"
 URL: https://github.com/nanomsg/nanomsg
@@ -20,7 +20,11 @@ BuildRequires: gcc gcc-c++
 BuildRequires: cmake
 
 %description
-The nanomsg library is a simple high-performance implementation of several "scalability protocols". These scalability protocols are light-weight messaging protocols which can be used to solve a number of very common messaging patterns, such as request/reply, publish/subscribe, surveyor/respondent, and so forth. These protocols can run over a variety of transports such as TCP, UNIX sockets, and even WebSocket.
+The nanomsg library is a simple high-performance implementation of several "scalability protocols".
+These scalability protocols are light-weight messaging protocols which can be used to solve a number
+of very common messaging patterns, such as request/reply, publish/subscribe, surveyor/respondent,
+and so forth. These protocols can run over a variety of transports such as TCP, UNIX sockets,
+and even WebSocket.
 For more information check the http://nanomsg.org.
 
 %package devel
@@ -50,6 +54,12 @@ The %{name}-devel package contains header files for %{name}.
 %{_includedir}/*
 
 %changelog
+* Mon Aug 03 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.4-2
+- update to 1.2.4-2
+
+* Sun Aug 02 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-2
+- update to 1.2.3-2
+
 * Sun Oct 05 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-2
 - update to 1.2.2-2
 
