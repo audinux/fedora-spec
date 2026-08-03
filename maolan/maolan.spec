@@ -9,7 +9,7 @@
 %global __brp_mangle_shebangs %{nil}
 
 Name: maolan
-Version: 0.2.3
+Version: 0.2.4
 Release: 1%{?dist}
 Summary: Maolan is a Rust DAW focused on recording, editing, routing, automation, export, and plugin hosting
 License: BSD-2-Clause
@@ -85,11 +85,15 @@ install -m 755 target/release/maolan-cli %{buildroot}/%{_bindir}/
 
 # Install icon
 install -m 755 -d %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
-cp images/%{name}.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
+cp assets/images/%{name}-icon.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/%{name}-icon.svg
+cp assets/images/%{name}.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 # Write desktop files
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
-cp desktop/%{name}-linux.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
+cp assets/desktop/%{name}-linux.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
+
+install -m 755 -d %{buildroot}/%{_datadir}/fonts/%{name}/
+install -m 644 assets/fonts/lucide-metronome.ttf %{buildroot}%{_datadir}/fonts/%{name}/
 
 desktop-file-install                         \
   --delete-original                          \
@@ -100,13 +104,17 @@ desktop-file-install                         \
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%doc README.md docs/*.md
+%doc README.md
 %license LICENSE
 %{_bindir}/*
 %{_datadir}/icons/hicolor/scalable/apps/*
 %{_datadir}/applications/*
+%{_datadir}/fonts/%{name}/*
 
 %changelog
+* Sun Aug 02 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.4-1
+- update to 0.2.4-1
+
 * Tue Jul 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.3-1
 - update to 0.2.3-1
 
