@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: freeeq8
-Version: 2.3.0
+Version: 2.3.1
 Release: 1%{?dist}
 Summary: FreeEQ8 is a professional-grade, free and open-source 8-band parametric EQ
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./gearbear99-source.sh <PROJECT> <TAG>
-#        ./gearbear99-source.sh FreeEQ8 v2.3.0
+#        ./gearbear99-source.sh FreeEQ8 v2.3.1
 
 Source0: FreeEQ8.tar.gz
 Source1: gearbear99-source.sh
@@ -89,6 +89,9 @@ cp -ra %{__cmake_builddir}/FreeEQ8_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Aug 02 2026 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-1
+- update to 2.3.1-1
+
 * Fri May 29 2026 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-1
 - update to 2.3.0-1
 
