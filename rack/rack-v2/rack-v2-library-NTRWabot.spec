@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b8c84d19855036797cab60813e0385693792ec8d
-%global gittag0 2.9.7
+%global commit0 9dbb67304e711530c927f7ac25359e31b8e55311
+%global gittag0 2.10.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-NTRWabot
-Version: 2.9.7
+Version: 2.10.0
 Release: 2%{?dist}
 Summary: NTRWabot plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r NTRWabot_plugin/dist/NTRWabot/* %{buildroot}%{_libexecdir}/Rack2/plugins/N
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.9.7-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.10.0-1
 - initial specfile
