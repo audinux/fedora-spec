@@ -1168,7 +1168,6 @@ https://codeberg.org/yimrakhee/ml7
 https://codeberg.org/yimrakhee/satordist.lv2
 https://codeberg.org/yimrakhee/rustydrumgizmo
 https://github.com/mwprado/midi-ble-rt
-https://github.com/brummer10/ToneTwistPlugs
 https://github.com/odoare/Mechanodd
 https://codeberg.org/zynskeyfolf/jmidiracc
 https://codeberg.org/yimrakhee/satordist2
@@ -1183,7 +1182,8 @@ https://git.raphaelforment.fr/BuboBubo/Cagire
 https://github.com/sova-org/hydra-rust
 https://github.com/JosueFabian18/glados-granular-engine
 https://framagit.org/jean-emmanuel/loop192
-https://framagit.org/jean-emmanuel/seq192"
+https://framagit.org/jean-emmanuel/seq192
+https://github.com/brummer10/ToneShiftEQ"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
