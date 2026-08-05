@@ -1183,7 +1183,8 @@ https://github.com/sova-org/hydra-rust
 https://github.com/JosueFabian18/glados-granular-engine
 https://framagit.org/jean-emmanuel/loop192
 https://framagit.org/jean-emmanuel/seq192
-https://github.com/brummer10/ToneShiftEQ"
+https://github.com/brummer10/ToneShiftEQ
+https://github.com/gPTPPs/ppsvaulttracker"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
