@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: mechanodd
-Version: 0.3.0
+Version: 0.3.1
 Release: 1%{?dist}
 Summary: MechanOdd is a polyphonic physical-modelling synthesizer plugin
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./mechanodd-source.sh <TAG>
-#        ./mechanodd-source.sh v0.3.0
+#        ./mechanodd-source.sh v0.3.1
 
 Source0: Mechanodd.tar.gz
 Source1: mechanodd-source.sh
@@ -91,6 +91,9 @@ cp -ra %{__cmake_builddir}/MechanOdd_artefacts/Release/Standalone/* %{buildroot}
 %{_libdir}/vst3/*
 
 %changelog
+* Tue Aug 04 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.1-1
+- update to 0.3.1-1
+
 * Mon Jul 06 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.0-1
 - update to 0.3.0-1
 
