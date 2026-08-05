@@ -437,6 +437,12 @@
 | pcmg                                     | https://github.com/JohnDowson/pcmg                                                                                                                          |
 | oosc-rs                                  | https://github.com/karasikq/oosc-rs                                                                                                                         |
 | s-rack                                   | https://github.com/sharph/s-rack                                                                                                                            |
+| calfnxt                                  | https://github.com/boomshop/calfnxt                                                                                                                         |
+| ppsvaulttracker                          | https://github.com/gPTPPs/ppsvaulttracker                                                                                                                   |
+| jasm-sessions                            | https://codeberg.org/jasm/jasm-sessions                                                                                                                     |
+| jasm-session-manager                     | https://codeberg.org/jasm/jasm-session-manager                                                                                                              |
+| soundshed-guitar                         | https://github.com/webprofusion/soundshed-guitar                                                                                                            |
+| altar                                    | https://github.com/iamlamprey/altar                                                                                                                         |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
