@@ -438,7 +438,6 @@
 | oosc-rs                                  | https://github.com/karasikq/oosc-rs                                                                                                                         |
 | s-rack                                   | https://github.com/sharph/s-rack                                                                                                                            |
 | calfnxt                                  | https://github.com/boomshop/calfnxt                                                                                                                         |
-| ppsvaulttracker                          | https://github.com/gPTPPs/ppsvaulttracker                                                                                                                   |
 | jasm-sessions                            | https://codeberg.org/jasm/jasm-sessions                                                                                                                     |
 | jasm-session-manager                     | https://codeberg.org/jasm/jasm-session-manager                                                                                                              |
 | soundshed-guitar                         | https://github.com/webprofusion/soundshed-guitar                                                                                                            |
