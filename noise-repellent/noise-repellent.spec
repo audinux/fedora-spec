@@ -5,7 +5,7 @@
 # LastSourceUpdate: 2020
 
 Name: noise-repellent
-Version: 0.3.0
+Version: 0.3.1
 Release: 5%{?dist}
 Summary: A lv2 plug-in for broadband noise reduction.
 License: GPL-2.0-or-later
@@ -38,6 +38,7 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: xcb-util-cursor-devel
 BuildRequires: xcb-util-devel
 BuildRequires: xcb-util-keysyms-devel
+BuildRequires: chrpath
 
 %description
 Features
@@ -85,7 +86,9 @@ LV2 version of %{name}
 sed -i -e "s|PRODUCT_NAME \"Noise Repellent\"|PRODUCT_NAME \"Noise_Repellent\"|g" CMakeLists.txt
 %build
 
-%cmake
+%cmake -DUSE_SYSTEM_FFTW=ON \
+       -DUSE_SYSTEM_FREETYPE=ON \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install
@@ -111,6 +114,9 @@ chrpath --delete `find %{buildroot}/usr/%{_lib}/lv2/ -name "*.so"`
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Aug 09 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.1-5
+- update to 0.3.1-5
+
 * Sun Aug 02 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.0-5
 - update to 0.3.0-5
 
