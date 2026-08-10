@@ -3,25 +3,25 @@
 # Type: Driver
 # Category: Tool
 # Kernel major version
-%define kmaj  6
+%global kmaj  6
 # Kernel minor version
-%define kmin  19
+%global kmin  19
 # Kernel patch version
-%define kpat  14
+%global kpat  14
 # Xan version
-%define kxan  1
+%global kxan  1
 # package version
-%define krel  12
+%global krel  14
 
-%define kver  %{kmaj}.%{kmin}.%{kpat}
-%define fcver %{dist}.%{_arch}
+%global kver  %{kmaj}.%{kmin}.%{kpat}
+%global fcver %{dist}.%{_arch}
 
 Name: kernel-xan-mao
 Summary: The Linux XanMod Real Time Kernel
 Version: %{kver}.xan%{kxan}
 Release: %{krel}%{?dist}
-License: GPL
-URL: http://www.xanmod.org
+License: GPL-2.0-only
+URL: https://www.xanmod.org
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -67,14 +67,13 @@ BuildRequires: rpm-build
 BuildRequires: rpm
 BuildRequires: elfutils
 BuildRequires: elfutils-libelf-devel
-BuildRequires: grub2-tools
 BuildRequires: rsync
 BuildRequires: dwarves
 
 Provides: kernel = %{version}
 Provides: kernel-xan-mao = %{version}
 
-%define __spec_install_post /usr/lib/rpm/brp-compress || :
+%global __spec_install_post /usr/lib/rpm/brp-compress || :
 %define debug_package %{nil}
 
 %description
@@ -106,24 +105,20 @@ echo "" > localversion
 echo "" > localversion-rt
 echo "" > localversion-xanmod
 
-make oldconfig
+make olddefconfig
 
 sed -i -e "s/EXTRAVERSION =.*/EXTRAVERSION = -xan%{kxan}%{fcver}/g" Makefile
 sed -i -e "s/SUBLEVEL = 0/SUBLEVEL = %{kpat}/g" Makefile
 
 %build
 
-make clean && make KCFLAGS="-Wno-error=unused-but-set-variable" %{?_smp_mflags}
+%{make_build} KCFLAGS="-Wno-error=unused-but-set-variable"
 
 %install
 
 KBUILD_IMAGE=$(make image_name)
 
-%ifarch ia64
-  mkdir -p %{buildroot}/boot/efi %{buildroot}/lib/modules
-%else
-  mkdir -p %{buildroot}/boot     %{buildroot}/lib/modules
-%endif
+mkdir -p %{buildroot}/boot %{buildroot}/lib/modules
 
 make %{?_smp_mflags} INSTALL_MOD_PATH=%{buildroot} KBUILD_SRC= mod-fw= INSTALL_MOD_STRIP=1 CONFIG_MODULE_COMPRESS=1 CONFIG_MODULE_COMPRESS_XZ=1 modules_install
 
@@ -131,14 +126,8 @@ make %{?_smp_mflags} INSTALL_MOD_PATH=%{buildroot} KBUILD_SRC= mod-fw= INSTALL_M
 # into consideration when performing disk space calculations. (See bz #530778)
 dd if=/dev/zero of=%{buildroot}/boot/initramfs-%{kver}-xan%{kxan}%{fcver}.img bs=1M count=20
 
-%ifarch ia64
-  cp $KBUILD_IMAGE %{buildroot}/boot/efi/vmlinuz-%{kver}-xan%{kxan}%{fcver}
-  chmod a+x %{buildroot}/boot/efi/vmlinuz-%{kver}-xan%{kxan}%{fcver}
-  ln -s efi/vmlinuz-%{kver}-%{fcver} %{buildroot}/boot/
-%else
-  cp $KBUILD_IMAGE %{buildroot}/boot/vmlinuz-%{kver}-xan%{kxan}%{fcver}
-  chmod a+x %{buildroot}/boot/vmlinuz-%{kver}-xan%{kxan}%{fcver}
-%endif
+cp $KBUILD_IMAGE %{buildroot}/boot/vmlinuz-%{kver}-xan%{kxan}%{fcver}
+chmod a+x %{buildroot}/boot/vmlinuz-%{kver}-xan%{kxan}%{fcver}
 
 make %{?_smp_mflags} INSTALL_HDR_PATH=%{buildroot}/usr KBUILD_SRC= headers_install
 cp System.map %{buildroot}/boot/System.map-%{kver}-xan%{kxan}%{fcver}
@@ -159,10 +148,10 @@ mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/updates
 
 # CONFIG_KERNEL_HEADER_TEST generates some extra files in the process of
 # testing so just delete
-find . -name *.h.s -delete
+find . -name "*.h.s" -delete
 
 # first copy everything
-cp --parents `find  -type f -name "Makefile*" -o -name "Kconfig*"` %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
+cp --parents $(find -type f \( -name "Makefile*" -o -name "Kconfig*" \)) %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
 cp Module.symvers %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
 cp System.map %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
 if [ -s Module.markers ]; then
@@ -191,18 +180,22 @@ EXCLUDES="--exclude SCCS --exclude BitKeeper --exclude .svn --exclude CVS --excl
 tar $EXCLUDES -cf- . | (cd %{buildroot}/usr/src/kernels/%{kver}-xan%{kxan}%{fcver}; tar xvf -)
 
 %post
-# Create the initramfs file
+# Create the initramfs file; kernel-install also updates the bootloader (BLS)
 /bin/kernel-install add %{kver}-xan%{kxan}%{fcver} /lib/modules/%{kver}-xan%{kxan}%{fcver}/vmlinuz
-grub2-mkconfig -o /boot/grub2/grub.cfg
 
-%postun
-/bin/kernel-install remove %{kver}-xan%{kxan}%{fcver} /lib/modules/%{kver}-xan%{kxan}%{fcver}/vmlinuz
-grub2-mkconfig -o /boot/grub2/grub.cfg
+%preun
+# $1=0: full removal; $1=1: upgrade (new RPM release, same kernel version)
+# Only remove when fully uninstalling to avoid wiping the just-installed initramfs
+if [ "$1" = "0" ]; then
+    /bin/kernel-install remove %{kver}-xan%{kxan}%{fcver} /lib/modules/%{kver}-xan%{kxan}%{fcver}/vmlinuz
+fi
 
 %files
 /lib/modules/%{kver}-xan%{kxan}%{fcver}
-/boot/*
-%ghost /boot/initramfs-%{kver}-xan%{kxan}%{fcver}
+/boot/vmlinuz-%{kver}-xan%{kxan}%{fcver}
+/boot/System.map-%{kver}-xan%{kxan}%{fcver}
+/boot/config-%{kver}-xan%{kxan}%{fcver}
+%ghost /boot/initramfs-%{kver}-xan%{kxan}%{fcver}.img
 
 %files headers
 /usr/include
@@ -211,6 +204,15 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 /usr/src/kernels/%{kver}-xan%{kxan}%{fcver}
 
 %changelog
+* Sun Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-xan1-14
+- fix kernel-install on RPM-release-only upgrades: replace %postun with %preun
+  guarded by $1=0 so kernel-install remove is skipped during upgrades
+
+* Sun Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-xan1-13
+- modernize spec: %define→%global, GPL→SPDX, URL http→https, make olddefconfig,
+  %{make_build} with KCFLAGS, remove ia64 dead code, drop grub2-mkconfig,
+  fix find quoting and parentheses, explicit %files instead of /boot/*
+
 * Fri May 08 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-xan1-12
 - update to 6.19.14-xan1-12 - vanilla XanMod kernel
 
