@@ -4,7 +4,7 @@
 # Category: Audio, Programming, Graphic
 
 Name: JUCE
-Version: 9.0.0
+Version: 9.0.1
 Release: 10%{?dist}
 Summary: JUCE Framework
 URL: https://github.com/juce-framework/JUCE
@@ -36,6 +36,7 @@ BuildRequires: freetype-devel
 BuildRequires: libXrandr-devel
 BuildRequires: libXinerama-devel
 BuildRequires: libXcursor-devel
+BuildRequires: libXi-devel
 BuildRequires: libglvnd-devel
 BuildRequires: desktop-file-utils
 
@@ -109,8 +110,11 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libexecdir}/juce/juceaide
 
 %changelog
+* Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 9.0.1-10
+- update to 9.0.1-10
+
 * Tue Jul 21 2026 Yann Collette <ycollette.nospam@free.fr> - 9.0.0-10
-- update to 9.0.9-10
+- update to 9.0.0-10
 
 * Tue Jul 21 2026 Yann Collette <ycollette.nospam@free.fr> - 8.0.15-10
 - update to 8.0.15-10
