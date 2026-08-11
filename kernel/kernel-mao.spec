@@ -5,9 +5,9 @@
 # Kernel major version
 %global kmaj  7
 # Kernel minor version
-%global kmin  0
+%global kmin  1
 # Kernel patch version
-%global kpat  12
+%global kpat  7
 # RT patch version
 %global krt   0
 # package version
@@ -206,14 +206,17 @@ fi
 /usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
 %changelog
-* Sun Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.12-rt0-15
-- fix kernel-install on RPM-release-only upgrades: replace %postun with %preun
+* Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.7-rt0-15
+- update to 7.1.7-rt0-13 - vanilla RT kernel 7.1.7 with PREEMPT_RT enabled
+
+* Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.12-rt0-15
+- fix kernel-install on RPM-release-only upgrades: replace postun with preun
   guarded by $1=0 so kernel-install remove is skipped during upgrades
 
-* Sun Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.12-rt0-14
-- modernize spec: %define→%global, GPL→SPDX, make olddefconfig, %{make_build},
+* Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.12-rt0-14
+- modernize spec: define→global, GPL→SPDX, make olddefconfig, {make_build},
   remove ia64 dead code, drop grub2-mkconfig (kernel-install handles BLS),
-  fix find quoting and parentheses, explicit %files instead of /boot/*
+  fix find quoting and parentheses, explicit files instead of /boot/*
 
 * Thu Jun 25 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.12-rt0-13
 - update to 7.0.12-rt0-13 - vanilla RT kernel 7.0.12 with PREEMPT_RT enabled
