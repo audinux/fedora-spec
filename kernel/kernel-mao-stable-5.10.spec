@@ -204,14 +204,14 @@ fi
 /usr/src/kernels/%{kver}-rt-stable%{krt}%{fcver}
 
 %changelog
-* Sun Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 5.10.235-rt129-14
-- fix kernel-install on RPM-release-only upgrades: replace %postun with %preun
+* Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 5.10.235-rt129-14
+- fix kernel-install on RPM-release-only upgrades: replace postun with preun
   guarded by $1=0 so kernel-install remove is skipped during upgrades
 
-* Sun Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 5.10.235-rt129-13
-- modernize spec: %define→%global, GPL→SPDX, make olddefconfig, %{make_build},
+* Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 5.10.235-rt129-13
+- modernize spec: define→global, GPL→SPDX, make olddefconfig, {make_build},
   openssl-devel-engine upper bound fc45, remove ia64 dead code, drop grub2-mkconfig,
-  fix find quoting and parentheses, explicit %files, drop %defattr
+  fix find quoting and parentheses, explicit files, drop defattr
 
 * Tue Apr 01 2025 Yann Collette <ycollette.nospam@free.fr> - 5.10.235-rt129-12
 - update to 5.10.235-rt129-12 - vanilla RT kernel

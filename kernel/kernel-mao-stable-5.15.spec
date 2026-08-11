@@ -196,14 +196,14 @@ fi
 /usr/src/kernels/%{kver}-rt-stable%{krt}%{fcver}
 
 %changelog
-* Sun Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 5.15.85-rt55-3
-- fix kernel-install on RPM-release-only upgrades: replace %postun with %preun
+* Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 5.15.85-rt55-3
+- fix kernel-install on RPM-release-only upgrades: replace postun with preun
   guarded by $1=0 so kernel-install remove is skipped during upgrades
 
-* Sun Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 5.15.85-rt55-2
-- modernize spec: %define→%global, GPL→SPDX, make olddefconfig, %{make_build},
+* Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 5.15.85-rt55-2
+- modernize spec: define→global, GPL→SPDX, make olddefconfig, {make_build},
   remove ia64 dead code, drop grub2-mkconfig, fix find quoting and parentheses,
-  explicit %files, drop %defattr
+  explicit files, drop defattr
 
 * Thu Dec 29 2022 Yann Collette <ycollette.nospam@free.fr> - 5.15.85-rt55-1
 - update to 5.15.85-rt55-1 - vanilla RT kernel
