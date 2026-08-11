@@ -3,11 +3,11 @@
 # Type: Driver
 # Category: Tool
 # Kernel major version
-%global kmaj  6
+%global kmaj  7
 # Kernel minor version
-%global kmin  19
+%global kmin  1
 # Kernel patch version
-%global kpat  14
+%global kpat  6
 # RT patch version
 %global krt   1
 # package version
@@ -210,14 +210,17 @@ fi
 /usr/src/kernels/%{kver}-lqx%{krt}%{fcver}
 
 %changelog
-* Sun Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-lqx1-16
-- fix kernel-install on RPM-release-only upgrades: replace %postun with %preun
+* Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.7-lqx1-16
+- update to 7.1.7-lqx1-14 - vanilla Liquorix kernel
+
+* Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-lqx1-16
+- fix kernel-install on RPM-release-only upgrades: replace postun with preun
   guarded by $1=0 so kernel-install remove is skipped during upgrades
 
-* Sun Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-lqx1-15
-- modernize spec: %define→%global, GPL→SPDX, make olddefconfig, %{make_build},
+* Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-lqx1-15
+- modernize spec: define→global, GPL→SPDX, make olddefconfig, {make_build},
   remove ia64 dead code, drop grub2-mkconfig, fix find quoting and parentheses,
-  explicit %files instead of /boot/*
+  explicit files instead of /boot/*
 
 * Fri May 08 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-lqx1-14
 - update to 6.19.14-lqx1-14 - vanilla Liquorix kernel
