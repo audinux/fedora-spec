@@ -1184,7 +1184,9 @@ https://github.com/JosueFabian18/glados-granular-engine
 https://framagit.org/jean-emmanuel/loop192
 https://framagit.org/jean-emmanuel/seq192
 https://github.com/brummer10/ToneShiftEQ
-https://github.com/gPTPPs/ppsvaulttracker"
+https://github.com/gPTPPs/ppsvaulttracker
+https://github.com/brummer10/loadbox
+https://github.com/Mukkemann1972/retrotrax"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
