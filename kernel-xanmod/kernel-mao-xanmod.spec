@@ -3,11 +3,11 @@
 # Type: Driver
 # Category: Tool
 # Kernel major version
-%global kmaj  6
+%global kmaj  7
 # Kernel minor version
-%global kmin  19
+%global kmin  1
 # Kernel patch version
-%global kpat  14
+%global kpat  8
 # Xan version
 %global kxan  1
 # package version
@@ -204,14 +204,17 @@ fi
 /usr/src/kernels/%{kver}-xan%{kxan}%{fcver}
 
 %changelog
-* Sun Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-xan1-14
-- fix kernel-install on RPM-release-only upgrades: replace %postun with %preun
+* Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.7-xan1-14
+- update to 7.1.7-xan1-12 - vanilla XanMod kernel
+
+* Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-xan1-14
+- fix kernel-install on RPM-release-only upgrades: replace postun with preun
   guarded by $1=0 so kernel-install remove is skipped during upgrades
 
-* Sun Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-xan1-13
-- modernize spec: %define→%global, GPL→SPDX, URL http→https, make olddefconfig,
-  %{make_build} with KCFLAGS, remove ia64 dead code, drop grub2-mkconfig,
-  fix find quoting and parentheses, explicit %files instead of /boot/*
+* Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-xan1-13
+- modernize spec: define→global, GPL→SPDX, URL http→https, make olddefconfig,
+  {make_build} with KCFLAGS, remove ia64 dead code, drop grub2-mkconfig,
+  fix find quoting and parentheses, explicit files instead of /boot/*
 
 * Fri May 08 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-xan1-12
 - update to 6.19.14-xan1-12 - vanilla XanMod kernel
