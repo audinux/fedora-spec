@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: hamburger
-Version: 0.7.1
+Version: 0.7.2
 Release: 2%{?dist}
 Summary: Hamburger is a distortion plugin with inbuilt dynamics controls and equalisation that can deliver both subtle tangy harmonics and absolute annilhilation and noise-wall-ification to any sound
 License: AGPL-3.0-or-later
@@ -99,6 +99,9 @@ cp %{__cmake_builddir}/Hamburger_artefacts/Standalone/*  %{buildroot}/%{_bindir}
 %{_libdir}/clap/*
 
 %changelog
+* Wed Aug 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.7.2-2
+- update to 0.7.2-2
+
 * Sun Jul 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.7.1-2
 - update to 0.7.1-2
 
