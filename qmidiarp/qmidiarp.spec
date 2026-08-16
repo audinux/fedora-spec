@@ -5,7 +5,7 @@
 
 Name: qmidiarp
 Summary: An arpeggiator, sequencer and MIDI LFO for ALSA
-Version: 0.7.4
+Version: 0.7.5
 Release: 21%{?dist}
 License: GPL-2.0-or-later
 URL: https://sourceforge.net/projects/qmidiarp 
@@ -75,6 +75,9 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 %{_libdir}/lv2/qmidiarp*
 
 %changelog
+* Tue Aug 11 2026 Yann Collette <ycollette.nospam@free.fr> - 0.7.5-21
+- update to 0.7.5-21
+
 * Wed Jan 28 2026 Yann Collette <ycollette.nospam@free.fr> - 0.7.4-21
 - update to 0.7.4-21
 
