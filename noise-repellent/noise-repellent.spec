@@ -5,7 +5,7 @@
 # LastSourceUpdate: 2020
 
 Name: noise-repellent
-Version: 0.3.1
+Version: 0.3.2
 Release: 5%{?dist}
 Summary: A lv2 plug-in for broadband noise reduction.
 License: GPL-2.0-or-later
@@ -114,6 +114,9 @@ chrpath --delete `find %{buildroot}/usr/%{_lib}/lv2/ -name "*.so"`
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Aug 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.2-5
+- update to 0.3.2-5
+
 * Sun Aug 09 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.1-5
 - update to 0.3.1-5
 
