@@ -11,7 +11,7 @@ Release: 1%{?dist}
 Summary: A PipeWire patchbay for Linux that visualizes your audio graph, hosts LV2 effects plugins inline, and auto-connects ports with persistent routing rules.
 License: MIT
 URL: https://github.com/lemonxah/zestbay
-ExclusiveArch: x86_64 aarch64
+ExclusiveArch: x86_64
 
 Vendor:       Audinux
 Distribution: Audinux
