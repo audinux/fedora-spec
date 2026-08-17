@@ -10,7 +10,7 @@ Version: 0.0.1
 Release: 1%{?dist}
 Summary: A collection of VST plugins
 License: AGPLv3-or-later
-URL: https://github.com/unplugred/vsst
+URL: https://github.com/unplugred/vsts
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
