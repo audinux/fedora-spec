@@ -1186,7 +1186,8 @@ https://framagit.org/jean-emmanuel/seq192
 https://github.com/brummer10/ToneShiftEQ
 https://github.com/gPTPPs/ppsvaulttracker
 https://github.com/brummer10/loadbox
-https://github.com/Mukkemann1972/retrotrax"
+https://github.com/Mukkemann1972/retrotrax
+https://github.com/lemonxah/zestbay"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
