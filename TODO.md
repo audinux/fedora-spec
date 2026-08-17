@@ -442,6 +442,8 @@
 | jasm-session-manager                     | https://codeberg.org/jasm/jasm-session-manager                                                                                                              |
 | soundshed-guitar                         | https://github.com/webprofusion/soundshed-guitar                                                                                                            |
 | altar                                    | https://github.com/iamlamprey/altar                                                                                                                         |
+| midiguitar                               | https://github.com/Stazed/midiguitar                                                                                                                        |
+| feral                                    | https://github.com/jmcgill-public/feral                                                                                                                     |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
