@@ -1187,7 +1187,10 @@ https://github.com/brummer10/ToneShiftEQ
 https://github.com/gPTPPs/ppsvaulttracker
 https://github.com/brummer10/loadbox
 https://github.com/Mukkemann1972/retrotrax
-https://github.com/lemonxah/zestbay"
+https://github.com/lemonxah/zestbay
+https://github.com/andreademurtas/gala
+https://github.com/andreademurtas/gjalla
+https://github.com/andreademurtas/galdr"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)

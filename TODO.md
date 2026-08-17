@@ -444,6 +444,11 @@
 | altar                                    | https://github.com/iamlamprey/altar                                                                                                                         |
 | midiguitar                               | https://github.com/Stazed/midiguitar                                                                                                                        |
 | feral                                    | https://github.com/jmcgill-public/feral                                                                                                                     |
+| linuxmeeter                              | https://github.com/dslapelis/linuxmeeter                                                                                                                    |
+| crimson-chorus                           | https://github.com/MichaelAngulo3232/crimson-chorus                                                                                                         |
+| AmpForge                                 | https://github.com/Loursy/AmpForge                                                                                                                          |
+| jove                                     | https://github.com/DatanoiseTV/jove                                                                                                                         |
+| neuralblender                            | https://sourceforge.net/projects/neuralblender                                                                                                              |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
