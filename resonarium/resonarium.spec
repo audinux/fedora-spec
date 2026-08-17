@@ -5,7 +5,8 @@
 
 Name: resonarium
 Version: 0.1.0
-Release: 2%{?dist}
+Release: 4%{?dist}
+Epoch: 1
 Summary: An expressive, semi-modular, and comprehensive physical modeling/waveguide synthesizer
 License: GPL-3.0-or-later
 URL: https://github.com/gabrielsoule/resonarium
@@ -116,6 +117,9 @@ cp -ra %{__cmake_builddir}/Resonarium_Instrument_artefacts/Standalone/*  %{build
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Aug 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-4
+- update to 0.1.0-4 - update epoch
+
 * Sun Aug 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-2
 - update to 0.1.0-2
 
