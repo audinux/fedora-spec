@@ -5,13 +5,14 @@
 
 Name: kernel-audio-tuned
 Version: 1.0
-Release: 6%{?dist}
+Release: 7%{?dist}
 Summary: Audio tuned kernel boot entries for Fedora
 BuildArch: noarch
 License: GPLv3
 
 Source0: 90-audio-tuned.install
 Source1: kernel-audio-tuned.sysconfig
+Source2: kernel-audio-tuned-grub.cfg
 
 %description
 Creates additional kernel boot entries with low-latency tuning
@@ -21,9 +22,11 @@ parameters (preempt, IRQ threading, etc.) using kernel-install hooks.
 
 install -m 0755 -d %{buildroot}%{_prefix}/lib/kernel/install.d
 install -m 0755 -d %{buildroot}%{_sysconfdir}/sysconfig
+install -m 0755 -d %{buildroot}%{_sysconfdir}/default/grub.d
 
 install -m 0755 %{SOURCE0} %{buildroot}%{_prefix}/lib/kernel/install.d/
 install -m 0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/sysconfig/kernel-audio-tuned
+install -m 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/default/grub.d/50-kernel-audio-tuned.cfg
 
 %post
 # Pre-delete stale audio entries so upgrades regenerate with current options
@@ -36,19 +39,38 @@ for k in /lib/modules/*; do
         /usr/bin/kernel-install add "$version" "/boot/vmlinuz-$version" || :
     fi
 done
+# Apply the GRUB timeout drop-in
+if [ -f /boot/efi/EFI/fedora/grub.cfg ]; then
+    grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg 2>/dev/null || :
+elif [ -f /boot/grub2/grub.cfg ]; then
+    grub2-mkconfig -o /boot/grub2/grub.cfg 2>/dev/null || :
+fi
 
 %preun
 if [ $1 -eq 0 ]; then
     for entry in /boot/loader/entries/*-audio.conf; do
         rm -f "$entry" || :
     done
+    # Remove the GRUB timeout drop-in and restore the previous timeout
+    if [ -f /boot/efi/EFI/fedora/grub.cfg ]; then
+        grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg 2>/dev/null || :
+    elif [ -f /boot/grub2/grub.cfg ]; then
+        grub2-mkconfig -o /boot/grub2/grub.cfg 2>/dev/null || :
+    fi
 fi
 
 %files
 %{_prefix}/lib/kernel/install.d/90-audio-tuned.install
 %config(noreplace) %{_sysconfdir}/sysconfig/kernel-audio-tuned
+%config(noreplace) %{_sysconfdir}/default/grub.d/50-kernel-audio-tuned.cfg
 
 %changelog
+* Mon Aug 17 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-7
+- install /etc/default/grub.d/50-kernel-audio-tuned.cfg to force a 4-second
+  GRUB menu timeout (GRUB_TIMEOUT=4, GRUB_TIMEOUT_STYLE=menu) so the
+  audio-tuned entry is selectable at boot; grub2-mkconfig is run in %%post
+  (install/upgrade) and %%preun (full removal) to apply/restore the change
+
 * Sat Jun 27 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-6
 - 90-audio-tuned.install: skip non-standard kernel flavors (RT, LQX, Xanmod)
   by checking KERNEL_VERSION against KERNEL_AUDIO_TUNED_SKIP_FLAVORS before
