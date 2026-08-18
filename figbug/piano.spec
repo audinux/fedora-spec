@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: piano
-Version: 1.0.12
+Version: 1.0.13
 Release: 3%{?dist}
 Summary: Piano VST / LV2 plugin
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the source code: ./figbug-source.sh <project> <tag>
-#                         ./figbug-source.sh Piano v1.0.12
+#                         ./figbug-source.sh Piano v1.0.13
 
 Source0: Piano.tar.gz
 Source1: figbug-source.sh
@@ -130,6 +130,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Tue Aug 18 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.13-3
+- update to 1.0.13-3
+
 * Mon Aug 17 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.12-3
 - update to 1.0.12-3
 
