@@ -1190,7 +1190,8 @@ https://github.com/Mukkemann1972/retrotrax
 https://github.com/lemonxah/zestbay
 https://github.com/andreademurtas/gala
 https://github.com/andreademurtas/gjalla
-https://github.com/andreademurtas/galdr"
+https://github.com/andreademurtas/galdr
+https://git.code.sf.net/p/neuralblender/code"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
