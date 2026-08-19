@@ -9,7 +9,7 @@ Release: 1%{?dist}
 Summary:  Guitar amp modeling plugin based on RTNeural and NeuralAmp
 License: GPL-3.0-or-later
 URL: https://sourceforge.net/projects/neuralblender/
-ExclusiveArch: x86_64
+ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
