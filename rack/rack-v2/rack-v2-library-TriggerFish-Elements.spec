@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b454b7388de025ac8c084fe6e49c7633f6b3afe9
-%global gittag0 2.0.0
+%global commit0 42bd76d52382140137e7f49ee2b58f3c53953bc3
+%global gittag0 2.2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-TriggerFish-Elements
-Version: 2.0.0
+Version: 2.2.0
 Release: 2%{?dist}
 Summary: TriggerFish-Elements plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r TriggerFish-Elements_plugin/dist/TriggerFish-Elements/* %{buildroot}%{_lib
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
 - initial specfile

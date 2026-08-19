@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 36c8eed1b33560cc2d419133460401f0f859183f
-%global gittag0 2.0.0
+%global commit0 811b78fa0dedb6b6edc28c0b2c7c61a9b4a33171
+%global gittag0 2.2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-phrasing-module
-Version: 2.0.0
+Version: 2.2.0
 Release: 2%{?dist}
 Summary: phrasing-module plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r phrasing-module_plugin/dist/phrasing-module/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
 - initial specfile

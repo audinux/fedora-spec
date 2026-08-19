@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b819787d86a1db0ad6f4208cb96b8e3589b5e4ee
-%global gittag0 2.0.1
+%global commit0 841db41bd4bedf75ade38629075b0d2ef3ba3857
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-MockbaModular
-Version: 2.0.1
+Version: 2.0.2
 Release: 2%{?dist}
 Summary: MockbaModular plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r MockbaModular_plugin/dist/MockbaModular/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile
