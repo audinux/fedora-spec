@@ -5,7 +5,7 @@
 
 Name: kernel-audio-tuned
 Version: 1.0
-Release: 7%{?dist}
+Release: 8%{?dist}
 Summary: Audio tuned kernel boot entries for Fedora
 BuildArch: noarch
 License: GPLv3
@@ -45,12 +45,18 @@ if [ -f /boot/efi/EFI/fedora/grub.cfg ]; then
 elif [ -f /boot/grub2/grub.cfg ]; then
     grub2-mkconfig -o /boot/grub2/grub.cfg 2>/dev/null || :
 fi
+# menu_auto_hide in grubenv overrides GRUB_TIMEOUT_STYLE from grub.cfg;
+# unset it so the menu is actually visible
+grub2-editenv - unset menu_auto_hide 2>/dev/null || :
 
 %preun
 if [ $1 -eq 0 ]; then
     for entry in /boot/loader/entries/*-audio.conf; do
         rm -f "$entry" || :
     done
+    # Restore menu_auto_hide before regenerating so GRUB reverts to its
+    # normal hidden-on-success behaviour after the drop-in is removed
+    grub2-editenv - set menu_auto_hide=1 2>/dev/null || :
     # Remove the GRUB timeout drop-in and restore the previous timeout
     if [ -f /boot/efi/EFI/fedora/grub.cfg ]; then
         grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg 2>/dev/null || :
@@ -65,6 +71,12 @@ fi
 %config(noreplace) %{_sysconfdir}/default/grub.d/50-kernel-audio-tuned.cfg
 
 %changelog
+* Thu Aug 20 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-8
+- fix GRUB menu not appearing: also unset menu_auto_hide in grubenv in %%post;
+  Fedora's grub.cfg checks ${menu_auto_hide} after applying timeout_style and
+  overrides it to hidden when boot_success=1, regardless of GRUB_TIMEOUT_STYLE;
+  restore menu_auto_hide=1 in %%preun on full removal
+
 * Mon Aug 17 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-7
 - install /etc/default/grub.d/50-kernel-audio-tuned.cfg to force a 4-second
   GRUB menu timeout (GRUB_TIMEOUT=4, GRUB_TIMEOUT_STYLE=menu) so the
