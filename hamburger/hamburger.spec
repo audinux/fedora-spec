@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: hamburger
-Version: 0.7.2
+Version: 0.8
 Release: 2%{?dist}
 Summary: Hamburger is a distortion plugin with inbuilt dynamics controls and equalisation that can deliver both subtle tangy harmonics and absolute annilhilation and noise-wall-ification to any sound
 License: AGPL-3.0-or-later
@@ -77,13 +77,13 @@ CLAP version of %{name}
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/Hamburger_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/Hamburger_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 
 install -m 755 -d %{buildroot}%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/Hamburger_artefacts/CLAP/*  %{buildroot}/%{_libdir}/clap/
+cp -ra %{__cmake_builddir}/Hamburger_artefacts/CLAP/* %{buildroot}/%{_libdir}/clap/
 
 install -m 755 -d %{buildroot}%{_bindir}/
-cp %{__cmake_builddir}/Hamburger_artefacts/Standalone/*  %{buildroot}/%{_bindir}/
+cp %{__cmake_builddir}/Hamburger_artefacts/Standalone/* %{buildroot}/%{_bindir}/
 
 %files
 %{_bindir}/*
@@ -99,6 +99,9 @@ cp %{__cmake_builddir}/Hamburger_artefacts/Standalone/*  %{buildroot}/%{_bindir}
 %{_libdir}/clap/*
 
 %changelog
+* Fri Aug 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8-2
+- update to 0.8-2
+
 * Wed Aug 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.7.2-2
 - update to 0.7.2-2
 
