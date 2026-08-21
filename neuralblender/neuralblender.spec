@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: neuralblender
-Version: 1.1.0
+Version: 1.1.5
 Release: 1%{?dist}
 Summary:  Guitar amp modeling plugin based on RTNeural and NeuralAmp
 License: GPL-3.0-or-later
@@ -27,6 +27,7 @@ BuildRequires: fftw-devel
 BuildRequires: fftw-static
 BuildRequires: pkgconfig(jack)
 BuildRequires: xxd
+BuildRequires: desktop-file-utils
 
 Requires: license-%{name}
 Requires: common-%{name}
@@ -75,8 +76,18 @@ sed -i -e "s|DESTINATION lib/lv2/neuralblender.lv2|DESTINATION %{_lib}/lv2/neura
 
 %cmake_install
 
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+
 %files
 %{_bindir}/*
+%{_datadir}/applications/neuralblender.desktop
+%{_datadir}/icons/hicolor/256x256/apps/neuralblender.png
 
 %files -n common-%{name}
 %{_datadir}/neuralblender/ir/*
@@ -91,5 +102,8 @@ sed -i -e "s|DESTINATION lib/lv2/neuralblender.lv2|DESTINATION %{_lib}/lv2/neura
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Aug 21 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.5-1
+- update to 1.1.5-1
+
 * Tue Aug 18 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
 - Initial build
