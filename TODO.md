@@ -447,6 +447,7 @@
 | linuxmeeter                              | https://github.com/dslapelis/linuxmeeter                                                                                                                    |
 | crimson-chorus                           | https://github.com/MichaelAngulo3232/crimson-chorus                                                                                                         |
 | jove                                     | https://github.com/DatanoiseTV/jove                                                                                                                         |
+| SpectrumWorx                             | https://github.com/surge-synthesizer/SpectrumWorx                                                                                                           |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
