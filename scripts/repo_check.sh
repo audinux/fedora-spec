@@ -1193,7 +1193,8 @@ https://github.com/andreademurtas/gjalla
 https://github.com/andreademurtas/galdr
 https://git.code.sf.net/p/neuralblender/code
 https://github.com/Loursy/AmpForge
-https://github.com/samplaman/owmb"
+https://github.com/samplaman/owmb
+https://github.com/danylokravchenko/rusty-amp"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
