@@ -448,6 +448,9 @@
 | crimson-chorus                           | https://github.com/MichaelAngulo3232/crimson-chorus                                                                                                         |
 | jove                                     | https://github.com/DatanoiseTV/jove                                                                                                                         |
 | SpectrumWorx                             | https://github.com/surge-synthesizer/SpectrumWorx                                                                                                           |
+| pyfootctrl                               | https://github.com/varlen/pyfootctrl                                                                                                                        |
+| generate                                 | https://github.com/maolan/generate                                                                                                                          |
+| plugins                                  | https://github.com/maolan/plugins                                                                                                                           |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
