@@ -1194,7 +1194,8 @@ https://github.com/andreademurtas/galdr
 https://git.code.sf.net/p/neuralblender/code
 https://github.com/Loursy/AmpForge
 https://github.com/samplaman/owmb
-https://github.com/danylokravchenko/rusty-amp"
+https://github.com/danylokravchenko/rusty-amp
+https://github.com/maolan/plugins"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)

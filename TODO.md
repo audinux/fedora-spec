@@ -450,7 +450,6 @@
 | SpectrumWorx                             | https://github.com/surge-synthesizer/SpectrumWorx                                                                                                           |
 | pyfootctrl                               | https://github.com/varlen/pyfootctrl                                                                                                                        |
 | generate                                 | https://github.com/maolan/generate                                                                                                                          |
-| plugins                                  | https://github.com/maolan/plugins                                                                                                                           |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
