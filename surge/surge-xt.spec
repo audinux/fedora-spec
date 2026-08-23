@@ -14,8 +14,8 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# To get the sources, use:
-# $ ./source-surge.sh release_xt_1.3.4
+# Usage: ./source-surge.sh <project> <tag>
+# $ ./source-surge.sh surge release_xt_1.3.4
 
 Source0: surge.tar.gz
 Source1: source-surge.sh

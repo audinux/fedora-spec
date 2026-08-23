@@ -17,11 +17,11 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# To get the sources, use:
-# $ ./source-midi-monitor.sh 74c7830f5763bed01e9a7c4955f0d894ee8412f5
+# Usage: ./source-surge.sh <project> <tag>
+# $ ./source-surge.sh midi-monitor 74c7830f5763bed01e9a7c4955f0d894ee8412f5
 
 Source0: midi-monitor.tar.gz
-Source1: source-midi-monitor.sh
+Source1: source-surge.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake

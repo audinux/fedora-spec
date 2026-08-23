@@ -16,11 +16,11 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# To get the sources, use:
-# $ ./source-shortcircuit.sh main
+# Usage: ./source-surge.sh <project> <tag>
+# $ ./source-surge.sh shortcircuit main
 
 Source0: shortcircuit-xt.tar.gz
-Source1: source-shortcircuit.sh
+Source1: source-surge.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake

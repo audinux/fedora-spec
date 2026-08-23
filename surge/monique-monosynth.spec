@@ -16,11 +16,11 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-# To get the sources, use:
-# $ ./source-monique-monosynth.sh main
+# Usage: ./source-surge.sh <project> <tag>
+# $ ./source-surge.sh monique-monosynth main
 
 Source0: monique-monosynth.tar.gz
-Source1: source-monique-monosynth.sh
+Source1: source-surge.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
