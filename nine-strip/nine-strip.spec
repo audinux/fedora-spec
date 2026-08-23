@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: nine-strip
-Version: 0.1.2
+Version: 0.1.3
 Release: 1%{?dist}
 Summary: A channel strip plugin built with JUCE, incorporating classic Airwindows processing algorithms into a comprehensive mixing tool
 License: AGPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./nine-strip-source.sh <TAG>
-#        ./nine-strip-source.sh v0.1.2
+#        ./nine-strip-source.sh v0.1.3
 
 Source0: nine-strip.tar.gz
 Source1: nine-strip.svg
@@ -129,5 +129,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Aug 22 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.3-1
+- update to 0.1.3-1
+
 * Wed May 27 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.2-1
 - Initial spec file
