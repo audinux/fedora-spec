@@ -94,6 +94,8 @@ glibc package.
 %package devel
 Summary: Development package for building real time kernel modules to match the %{version} kernel
 AutoReqProv: no
+# For NVidia driver build
+Provides: kernel-devel-uname-r = %{kver}-rt%{krt}%{fcver}
 
 %description devel
 This package provides real time kernel headers and makefiles sufficient to build modules
