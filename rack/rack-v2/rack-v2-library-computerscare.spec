@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 3b002037ddc5cf04ebe2e572d7893eeba30deef3
-%global gittag0 2.3.3
+%global commit0 2af99d5d059fb03e0357e07fd8accd3b0a1917d6
+%global gittag0 2.3.11
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-computerscare
-Version: 2.3.3
+Version: 2.3.11
 Release: 2%{?dist}
 Summary: computerscare plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r computerscare_plugin/dist/computerscare/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.11-1
 - initial specfile
