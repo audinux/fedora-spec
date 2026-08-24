@@ -7,7 +7,7 @@
 # Kernel minor version
 %global kmin  1
 # Kernel patch version
-%global kpat  6
+%global kpat  9
 # RT patch version
 %global krt   1
 # package version
@@ -212,8 +212,11 @@ fi
 /usr/src/kernels/%{kver}-lqx%{krt}%{fcver}
 
 %changelog
+* Mon Aug 24 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-lqx1-17
+- update to 7.1.9-lqx1-17 - vanilla Liquorix kernel
+
 * Mon Aug 24 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.7-lqx1-17
-- update to 7.1.7-lqx1-17 - vanilla Liquorix kernel - add a missing provides
+- update to 7.1.7-lqx1-17 - add a missing provides
 
 * Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.7-lqx1-16
 - update to 7.1.7-lqx1-16 - vanilla Liquorix kernel

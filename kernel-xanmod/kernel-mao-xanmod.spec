@@ -7,7 +7,7 @@
 # Kernel minor version
 %global kmin  1
 # Kernel patch version
-%global kpat  8
+%global kpat  9
 # Xan version
 %global kxan  1
 # package version
@@ -206,8 +206,11 @@ fi
 /usr/src/kernels/%{kver}-xan%{kxan}%{fcver}
 
 %changelog
+* Mon Aug 24 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-xan1-15
+- update to 7.1.9-xan1-15 - vanilla XanMod kernel
+
 * Mon Aug 24 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.7-xan1-15
-- update to 7.1.7-xan1-15 - vanilla XanMod kernel - add a missing provides
+- update to 7.1.7-xan1-15 - add a missing provides
 
 * Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.7-xan1-14
 - update to 7.1.7-xan1-12 - vanilla XanMod kernel

@@ -7,7 +7,7 @@
 # Kernel minor version
 %global kmin  1
 # Kernel patch version
-%global kpat  7
+%global kpat  9
 # RT patch version
 %global krt   0
 # package version
@@ -208,8 +208,11 @@ fi
 /usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
 %changelog
+* Mon Aug 24 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-rt0-16
+- update to 7.1.9-rt0-16 - vanilla RT kernel 7.1.9 with PREEMPT_RT enabled
+
 * Mon Aug 24 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.7-rt0-16
-- update to 7.1.7-rt0-16 - vanilla RT kernel 7.1.7 with PREEMPT_RT enabled - add a missing provides
+- update to 7.1.7-rt0-16 - add a missing provides
 
 * Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.7-rt0-15
 - update to 7.1.7-rt0-15 - vanilla RT kernel 7.1.7 with PREEMPT_RT enabled
