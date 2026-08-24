@@ -3,8 +3,8 @@
 # Type: Standalone
 # Category: Audio, Synthesizer
 
-%global din_vers_major 64
-%global din_vers_minor 2
+%global din_vers_major 65
+%global din_vers_minor 0
 %global din_vers_patch 0
 Summary: DIN is a synth of a 3rd kind
 Name: din
@@ -17,22 +17,10 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://dinisnoise.org/files/din-%{din_vers_major}.%{din_vers_minor}.tar.gz
-# Patch0: 0001-Fix-vector-reference-invalidation-in-number.cc-rende.patch
-# Patch1: 0002-Guard-against-empty-bits-vector-in-number.cc-render.patch
-# Patch2: 0003-Fix-superformula-crash-when-bookmarks-list-is-empty.patch
-Patch3: 0004-Fix-mondrian-earliest_leaf-latest_leaf-crash-on-empt.patch
-Patch4: 0005-Fix-bit_display-handle_input-out-of-bounds-access-wh.patch
-# Patch5: 0006-Fix-reserve-resize-bugs-causing-segfault-on-Linux-in.patch
-Patch6: 0007-Fix-menu-load_range_mod-crash-when-sel_range-exceeds.patch
-Patch7: 0008-Fix-change_note_options_listener-picked-crash-when-s.patch
-Patch8: 0009-Fix-find_current_range-find_visible_ranges-crash-whe.patch
-Patch9: 0010-Fix-find_tone_and_volume-crash-when-ranges-is-empty-.patch
-Patch10: 0011-Fix-out-of-bounds-ranges-accesses-in-4-more-function.patch
-Patch11: 0012-Fix-two-null-pointer-OOB-bugs-in-delay-prep-and-dela.patch
-Patch12: 0013-Fix-OOB-and-null-pointer-bugs-in-keyboard_keyboard-d.patch
+Source0: https://dinisnoise.org/files/din-%{din_vers_major}.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: make
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: libtool
@@ -56,7 +44,7 @@ You had pulse, sine, triangle and sawtooth,
 And went forth and made electronic music.
 
 %prep
-%autosetup -p1 -n %{name}-%{din_vers_major}.%{din_vers_minor}
+%autosetup -p1 -n %{name}-%{din_vers_major}
 
 # __line conflict with std c++ headers
 sed -i -e "s/__line/__dinline/g" src/line.h
@@ -143,6 +131,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/din-jack.desktop
 %{_datadir}/applications/din-jack.desktop
 
 %changelog
+* Sun Aug 23 2026 Yann Collette <ycollette dot nospam at free.fr> 65.0.0-1
+- update to 65.0.0-1
+
 * Sun May 10 2026 Yann Collette <ycollette dot nospam at free.fr> 64.2.0-1
 - update to 64.2.0-1
 
