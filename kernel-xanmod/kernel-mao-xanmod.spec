@@ -11,7 +11,7 @@
 # Xan version
 %global kxan  1
 # package version
-%global krel  14
+%global krel  15
 
 %global kver  %{kmaj}.%{kmin}.%{kpat}
 %global fcver %{dist}.%{_arch}
@@ -92,6 +92,8 @@ glibc package.
 %package devel
 Summary: Development package for building real time kernel modules to match the %{version} kernel
 AutoReqProv: no
+# For NVidia driver build
+Provides: kernel-devel-uname-r = %{kver}-xanmod%{kxan}%{fcver}
 
 %description devel
 This package provides real time kernel headers and makefiles sufficient to build modules
@@ -204,6 +206,9 @@ fi
 /usr/src/kernels/%{kver}-xan%{kxan}%{fcver}
 
 %changelog
+* Mon Aug 24 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.7-xan1-15
+- update to 7.1.7-xan1-15 - vanilla XanMod kernel - add a missing provides
+
 * Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.7-xan1-14
 - update to 7.1.7-xan1-12 - vanilla XanMod kernel
 

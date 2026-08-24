@@ -11,7 +11,7 @@
 # RT patch version
 %global krt   1
 # package version
-%global krel  16
+%global krel  17
 
 %global kver  %{kmaj}.%{kmin}.%{kpat}
 %global fcver %{dist}.%{_arch}
@@ -93,6 +93,8 @@ glibc package.
 %package devel
 Summary: Development package for building real time kernel modules to match the %{version} kernel
 AutoReqProv: no
+# For NVidia driver build
+Provides: kernel-devel-uname-r = %{kver}-lqx%{krt}%{fcver}
 
 %description devel
 This package provides real time kernel headers and makefiles sufficient to build modules
@@ -210,8 +212,11 @@ fi
 /usr/src/kernels/%{kver}-lqx%{krt}%{fcver}
 
 %changelog
+* Mon Aug 24 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.7-lqx1-17
+- update to 7.1.7-lqx1-17 - vanilla Liquorix kernel - add a missing provides
+
 * Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.7-lqx1-16
-- update to 7.1.7-lqx1-14 - vanilla Liquorix kernel
+- update to 7.1.7-lqx1-16 - vanilla Liquorix kernel
 
 * Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 6.19.14-lqx1-16
 - fix kernel-install on RPM-release-only upgrades: replace postun with preun

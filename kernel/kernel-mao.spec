@@ -11,7 +11,7 @@
 # RT patch version
 %global krt   0
 # package version
-%global krel  15
+%global krel  16
 
 %global kver  %{kmaj}.%{kmin}.%{kpat}
 %global fcver %{dist}.%{_arch}
@@ -91,6 +91,8 @@ glibc package.
 %package devel
 Summary: Development package for building real time kernel modules to match the %{version} kernel
 AutoReqProv: no
+# For NVidia driver build
+Provides: kernel-devel-uname-r = %{kver}-rt%{krt}%{fcver}
 
 %description devel
 This package provides real time kernel headers and makefiles sufficient to build modules
@@ -206,8 +208,11 @@ fi
 /usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
 %changelog
+* Mon Aug 24 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.7-rt0-16
+- update to 7.1.7-rt0-16 - vanilla RT kernel 7.1.7 with PREEMPT_RT enabled - add a missing provides
+
 * Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.7-rt0-15
-- update to 7.1.7-rt0-13 - vanilla RT kernel 7.1.7 with PREEMPT_RT enabled
+- update to 7.1.7-rt0-15 - vanilla RT kernel 7.1.7 with PREEMPT_RT enabled
 
 * Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.12-rt0-15
 - fix kernel-install on RPM-release-only upgrades: replace postun with preun
