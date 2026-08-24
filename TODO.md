@@ -450,6 +450,8 @@
 | SpectrumWorx                             | https://github.com/surge-synthesizer/SpectrumWorx                                                                                                           |
 | pyfootctrl                               | https://github.com/varlen/pyfootctrl                                                                                                                        |
 | generate                                 | https://github.com/maolan/generate                                                                                                                          |
+| NeuralAmpModeler-rs                      | https://github.com/fabiohl/NeuralAmpModeler-rs                                                                                                              |
+| NamtoClo                                 | https://github.com/Goaltoday/NamtoClo                                                                                                                       |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
