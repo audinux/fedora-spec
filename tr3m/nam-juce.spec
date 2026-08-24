@@ -3,10 +3,8 @@
 # Type: Plugin, Standalone, VST3
 # Category: Effect, Audio
 
-%global commit0 fdcfaa57b13e7cfdfb28f77ba4112020557b0d35
-
 Name: nam-juce
-Version: 0.4.0
+Version: 0.5.0
 Release: 2%{?dist}
 Summary: A JUCE implementation of the Neural Amp Modeler Plugin
 License: GPL-3.0-or-later
@@ -17,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./tr3m-source.sh <PROJECT> <TAG>
-#        ./tr3m-source.sh nam-juce v0.4.0
+#        ./tr3m-source.sh nam-juce v0.5.0
 
 Source0: nam-juce.tar.gz
 Source1: tr3m-source.sh
@@ -92,6 +90,9 @@ cp -ra %{__cmake_builddir}/NEURAL_AMP_MODELER_artefacts/Release/VST3/* %{buildro
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Aug 24 2026 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-2
+- update to 0.5.0-2
+
 * Mon Aug 25 2025 Yann Collette <ycollette.nospam@free.fr> - 0.4.0-2
 - update to 0.4.0-2 - remove unused dep
 
