@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: cagire
-Version: 0.2.0
+Version: 0.2.1
 Release: 1%{?dist}
 Summary: Forth music sequencer for live coding
 License: GPL-3.0-or-later
@@ -22,6 +22,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: rustup
 BuildRequires: cmake
 BuildRequires: clang
+BuildRequires: git
 BuildRequires: pipewire-devel
 BuildRequires: xcb-util-wm-devel
 BuildRequires: libXcursor-devel
@@ -80,6 +81,9 @@ install -m 755 target/release/cagire %{buildroot}/%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Mon Aug 24 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.1-1
+- update to 0.2.1-1
+
 * Thu Jul 30 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.0-1
 - update to 0.2.0-1
 
