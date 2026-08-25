@@ -11,7 +11,7 @@
 # RT patch version
 %global krt   0
 # package version
-%global krel  16
+%global krel  17
 
 %global kver  %{kmaj}.%{kmin}.%{kpat}
 %global fcver %{dist}.%{_arch}
@@ -71,9 +71,10 @@ BuildRequires: dwarves
 
 Provides: kernel = %{version}
 Provides: kernel-rt-mao = %{version}
+Provides: kernel-uname-r = %{kver}-rt%{krt}%{fcver}
 
 %global __spec_install_post /usr/lib/rpm/brp-compress || :
-%define debug_package %{nil}
+%global debug_package %{nil}
 
 %description
 The Linux Real Time Kernel, the operating system core itself
@@ -208,6 +209,9 @@ fi
 /usr/src/kernels/%{kver}-rt%{krt}%{fcver}
 
 %changelog
+* Tue Aug 25 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-rt0-17
+- update to 7.1.9-rt0-17 - add a missing provides
+
 * Mon Aug 24 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-rt0-16
 - update to 7.1.9-rt0-16 - vanilla RT kernel 7.1.9 with PREEMPT_RT enabled
 

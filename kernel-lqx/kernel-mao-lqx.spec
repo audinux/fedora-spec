@@ -11,7 +11,7 @@
 # RT patch version
 %global krt   1
 # package version
-%global krel  17
+%global krel  18
 
 %global kver  %{kmaj}.%{kmin}.%{kpat}
 %global fcver %{dist}.%{_arch}
@@ -73,9 +73,10 @@ BuildRequires: dwarves
 
 Provides: kernel = %{version}
 Provides: kernel-lqx-mao = %{version}
+Provides: kernel-uname-r = %{kver}-lqx%{krt}%{fcver}
 
 %global __spec_install_post /usr/lib/rpm/brp-compress || :
-%define debug_package %{nil}
+%global debug_package %{nil}
 
 %description
 The Linux Real Time Kernel, the operating system core itself
@@ -212,6 +213,9 @@ fi
 /usr/src/kernels/%{kver}-lqx%{krt}%{fcver}
 
 %changelog
+* Tue Aug 25 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-lqx1-18
+- update to 7.1.9-lqx1-18 - add a missing provides
+
 * Mon Aug 24 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-lqx1-17
 - update to 7.1.9-lqx1-17 - vanilla Liquorix kernel
 

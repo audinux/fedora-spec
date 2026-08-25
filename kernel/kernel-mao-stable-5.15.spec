@@ -68,9 +68,10 @@ BuildRequires: dwarves
 
 Provides: kernel = %{version}
 Provides: kernel-rt-mao = %{version}
+Provides: kernel-uname-r = %{kver}-rt%{krt}%{fcver}
 
 %global __spec_install_post /usr/lib/rpm/brp-compress || :
-%define debug_package %{nil}
+%global debug_package %{nil}
 
 %description
 The Linux Real Time Kernel, the operating system core itself

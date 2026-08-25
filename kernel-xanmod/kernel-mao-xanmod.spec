@@ -11,7 +11,7 @@
 # Xan version
 %global kxan  1
 # package version
-%global krel  15
+%global krel  16
 
 %global kver  %{kmaj}.%{kmin}.%{kpat}
 %global fcver %{dist}.%{_arch}
@@ -72,9 +72,10 @@ BuildRequires: dwarves
 
 Provides: kernel = %{version}
 Provides: kernel-xan-mao = %{version}
+Provides: kernel-uname-r = %{kver}-xanmod%{kxan}%{fcver}
 
 %global __spec_install_post /usr/lib/rpm/brp-compress || :
-%define debug_package %{nil}
+%global debug_package %{nil}
 
 %description
 The Linux Real Time Kernel, the operating system core itself
@@ -206,6 +207,9 @@ fi
 /usr/src/kernels/%{kver}-xan%{kxan}%{fcver}
 
 %changelog
+* Tue Aug 25 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-xan1-16
+- update to 7.1.9-xan1-16 - add a missing provides
+
 * Mon Aug 24 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-xan1-15
 - update to 7.1.9-xan1-15 - vanilla XanMod kernel
 
