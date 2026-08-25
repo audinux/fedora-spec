@@ -4,7 +4,7 @@
 # Category: Tool
 
 Name: owmb
-Version: 1.0.0
+Version: 1.1.0
 Release: 1%{?dist}
 Summary: Open wav media browser
 License: MIT
@@ -14,7 +14,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/samplaman/owmb/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/samplaman/owmb/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -115,5 +115,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst3/*
 
 %changelog
-* Sun Jan 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.9.9-1
+* Tue Aug 25 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+- Initial spec file
+
+* Wed Aug 19 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial spec file
