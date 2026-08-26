@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer
 
 Name: retrotrax
-Version: 0.91.0
+Version: 0.92.0
 Release: 1%{?dist}
 Summary: Mukkemann RetroTrax — Tracker-Plugin im ProTracker-Look mit C64-SID & Amiga-Sample-Sound
 License: GPL-2.0-or-later
@@ -117,5 +117,8 @@ cp -ra %{__cmake_builddir}/RetroTrax_artefacts/Standalone/* %{buildroot}/%{_bind
 %{_libdir}/lv2/*
 
 %changelog
-* Sun Jan 01 2023 Yann Collette <ycollette.nospam@free.fr> - 0.91.0-1
+* Wed Aug 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.92.0-1
+- update to 0.92.0-1
+
+* Tue Aug 11 2026 Yann Collette <ycollette.nospam@free.fr> - 0.91.0-1
 - Initial spec file
