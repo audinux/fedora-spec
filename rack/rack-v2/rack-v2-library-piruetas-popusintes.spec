@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 406359b1d9bdd8735aab01b6fc1d5cac1c659e22
-%global gittag0 2.1.1
+%global commit0 ce7f5db718c50865eb971368ddfb20cfcce6f4be
+%global gittag0 2.2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-piruetas-popusintes
-Version: 2.1.1
+Version: 2.2.0
 Release: 2%{?dist}
 Summary: piruetas-popusintes plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 piruetas-popusintes plugin for Rack.
-comparadora
+interacciones entre dos chips 555
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r piruetas-popusintes_plugin/dist/piruetas-popusintes/* %{buildroot}%{_libex
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
 - initial specfile

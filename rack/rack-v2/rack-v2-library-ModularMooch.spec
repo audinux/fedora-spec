@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 f92912c590553ecb2bb7bc5a65ba44da19e4ccd0
-%global gittag0 2.1.0
+%global commit0 2dca0ada7a3b84af6e1402545ee702d7c16e3142
+%global gittag0 2.1.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-ModularMooch
-Version: 2.1.0
+Version: 2.1.1
 Release: 2%{?dist}
 Summary: ModularMooch plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 ModularMooch plugin for Rack.
-Multi-algorithmic Generative Sequencer
+A multi-algorithmic sequencer capable of generating complex evolving patterns. Algorithms include one & two-dimensional cellular automata such as Conway's Game of Life. Sequences can be captured and looped, much like the Turing Machine.
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r ModularMooch_plugin/dist/ModularMooch/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
 - initial specfile

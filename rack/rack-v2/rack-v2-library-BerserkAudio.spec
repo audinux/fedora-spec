@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 781d54dfba5caae4293cf6d4e41caba6de87eae7
-%global gittag0 2.0.1
+%global commit0 b9d77ecc8f013958813fc22ff7eba9feb31cb69e
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-BerserkAudio
-Version: 2.0.1
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: BerserkAudio plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 BerserkAudio plugin for Rack.
-Sample-reordering effect.
+Comb reverb with self-oscillating feedback.
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r BerserkAudio_plugin/dist/BerserkAudio/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
