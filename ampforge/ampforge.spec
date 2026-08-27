@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: ampforge
-Version: 0.3.0
+Version: 0.4.0
 Release: 1%{?dist}
 Summary: Open-source guitar amp simulator plugin — VST3/LV2/CLAP, with a reorderable pedalboard chain (amp, cab IR, drive, mod, delay/reverb)
 License: GPL-3.0-or-later
@@ -113,5 +113,8 @@ install -m 755 %{__cmake_builddir}/bin/ampforge_main.clap %{buildroot}/%{_libdir
 %{_libdir}/clap/*
 
 %changelog
+* Thu Aug 27 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.0-1
+- update to 0.4.0-1
+
 * Wed Aug 19 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.0-1
 - Initial build
