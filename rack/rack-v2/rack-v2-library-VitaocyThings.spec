@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b42dff6d0f26c0bb06da025045ad3f10e945eec6
-%global gittag0 2.2.1
+%global commit0 6f49f8420646d726db39fb26d337a269d6e839f7
+%global gittag0 2.0.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name: rack-v2-shapetaker
-Version: 2.2.1
+Name: rack-v2-VitaocyThings
+Version: 2.0.0
 Release: 2%{?dist}
-Summary: shapetaker plugin for Rack
+Summary: VitaocyThings plugin for Rack
 License: GPL-2.0-or-later
-URL: https://github.com/joshpanzarella/shapetaker-vcv
+URL: https://github.com/Vitaocy/VitaocyThings
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,8 +29,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/joshpanzarella/shapetaker-vcv/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: shapetaker_plugin.json
+Source1: https://github.com/Vitaocy/VitaocyThings/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: VitaocyThings_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -61,8 +61,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-shapetaker plugin for Rack.
-Gesture-based envelope generator with multi-speed outputs
+VitaocyThings plugin for Rack.
+Microtonal quantizer with selectable equal division of the octave
 
 %prep
 %setup -n Rack
@@ -135,24 +135,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir shapetaker_plugin
-tar xvfz %{SOURCE1} --directory=shapetaker_plugin --strip-components=1
+mkdir VitaocyThings_plugin
+tar xvfz %{SOURCE1} --directory=VitaocyThings_plugin --strip-components=1
 
-cp -n %{SOURCE2} shapetaker_plugin/plugin.json || true
+cp -n %{SOURCE2} VitaocyThings_plugin/plugin.json || true
 
 %build
 
-cd shapetaker_plugin
+cd VitaocyThings_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/shapetaker/
-cp -r shapetaker_plugin/dist/shapetaker/* %{buildroot}%{_libexecdir}/Rack2/plugins/shapetaker/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/VitaocyThings/
+cp -r VitaocyThings_plugin/dist/VitaocyThings/* %{buildroot}%{_libexecdir}/Rack2/plugins/VitaocyThings/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
 - initial specfile

@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 483baf72a4dba00bd286dbf2a075214307ce7051
-%global gittag0 2.0.1
+%global commit0 241026b1e17c0b8a1fcf90ca6b67a982aaf05e1e
+%global gittag0 2.2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-wintoid
-Version: 2.0.1
+Version: 2.2.0
 Release: 2%{?dist}
 Summary: wintoid plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 wintoid plugin for Rack.
-4-operator FM/PM synthesizer with waveshaping, wavefolding, and feedback
+16-channel polyphonic 4-operator FM/PM synthesizer with waveshaping, wavefolding, and feedback
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r wintoid_plugin/dist/wintoid/* %{buildroot}%{_libexecdir}/Rack2/plugins/win
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
 - initial specfile

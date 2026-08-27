@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 b42dff6d0f26c0bb06da025045ad3f10e945eec6
-%global gittag0 2.2.1
+%global commit0 3103107724b8cb45a45425a56153b278e0b32e9d
+%global gittag0 2.0.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
-Name: rack-v2-shapetaker
-Version: 2.2.1
+Name: rack-v2-Aluminium
+Version: 2.0.2
 Release: 2%{?dist}
-Summary: shapetaker plugin for Rack
+Summary: Aluminium plugin for Rack
 License: GPL-2.0-or-later
-URL: https://github.com/joshpanzarella/shapetaker-vcv
+URL: https://github.com/neilbgr/Aluminium
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,8 +29,8 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/joshpanzarella/shapetaker-vcv/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source2: shapetaker_plugin.json
+Source1: https://github.com/neilbgr/Aluminium/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source2: Aluminium_plugin.json
 Patch0: rack-v2-aarch64.patch
 
 BuildRequires: gcc gcc-c++
@@ -61,8 +61,8 @@ BuildRequires: Rack-v2
 BuildRequires: jq
 
 %description
-shapetaker plugin for Rack.
-Gesture-based envelope generator with multi-speed outputs
+Aluminium plugin for Rack.
+Splits a polyphonic MIDI-CV keyboard signal (V/OCT, GATE, VELOCITY, AFTERTOUCH, RETRIGGER) into two note-range zones, each independently configurable as polyphonic passthrough or monophonic with note-priority (last/highest/lowest) and true legato gate behavior
 
 %prep
 %setup -n Rack
@@ -135,24 +135,24 @@ sed -i -e "s/dep\/lib\/librtaudio.a/dep\/%{_lib}\/librtaudio.a -lpulse-simple -l
 sed -i -e "/-rpath/d" Makefile
 sed -i -e "/-rpath/d" plugin.mk
 
-mkdir shapetaker_plugin
-tar xvfz %{SOURCE1} --directory=shapetaker_plugin --strip-components=1
+mkdir Aluminium_plugin
+tar xvfz %{SOURCE1} --directory=Aluminium_plugin --strip-components=1
 
-cp -n %{SOURCE2} shapetaker_plugin/plugin.json || true
+cp -n %{SOURCE2} Aluminium_plugin/plugin.json || true
 
 %build
 
-cd shapetaker_plugin
+cd Aluminium_plugin
 %make_build RACK_DIR=.. PREFIX=/usr STRIP=true LIBDIR=%{_lib} dist
 
 %install
 
-mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/shapetaker/
-cp -r shapetaker_plugin/dist/shapetaker/* %{buildroot}%{_libexecdir}/Rack2/plugins/shapetaker/
+mkdir -p %{buildroot}%{_libexecdir}/Rack2/plugins/Aluminium/
+cp -r Aluminium_plugin/dist/Aluminium/* %{buildroot}%{_libexecdir}/Rack2/plugins/Aluminium/
 
 %files
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
 - initial specfile
