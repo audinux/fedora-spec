@@ -11,7 +11,7 @@
 # Xan version
 %global kxan  1
 # package version
-%global krel  16
+%global krel  18
 
 %global kver  %{kmaj}.%{kmin}.%{kpat}
 %global fcver %{dist}.%{_arch}
@@ -72,7 +72,7 @@ BuildRequires: dwarves
 
 Provides: kernel = %{version}
 Provides: kernel-xan-mao = %{version}
-Provides: kernel-uname-r = %{kver}-xanmod%{kxan}%{fcver}
+Provides: kernel-uname-r = %{kver}-xanmod%{kxan}.%{krel}%{fcver}
 
 %global __spec_install_post /usr/lib/rpm/brp-compress || :
 %global debug_package %{nil}
@@ -94,7 +94,7 @@ glibc package.
 Summary: Development package for building real time kernel modules to match the %{version} kernel
 AutoReqProv: no
 # For NVidia driver build
-Provides: kernel-devel-uname-r = %{kver}-xanmod%{kxan}%{fcver}
+Provides: kernel-devel-uname-r = %{kver}-xanmod%{kxan}.%{krel}%{fcver}
 
 %description devel
 This package provides real time kernel headers and makefiles sufficient to build modules
@@ -110,7 +110,7 @@ echo "" > localversion-xanmod
 
 make olddefconfig
 
-sed -i -e "s/EXTRAVERSION =.*/EXTRAVERSION = -xan%{kxan}%{fcver}/g" Makefile
+sed -i -e "s/EXTRAVERSION =.*/EXTRAVERSION = -xan%{kxan}.%{krel}%{fcver}/g" Makefile
 sed -i -e "s/SUBLEVEL = 0/SUBLEVEL = %{kpat}/g" Makefile
 
 %build
@@ -127,86 +127,93 @@ make %{?_smp_mflags} INSTALL_MOD_PATH=%{buildroot} KBUILD_SRC= mod-fw= INSTALL_M
 
 # We estimate the size of the initramfs because rpm needs to take this size
 # into consideration when performing disk space calculations. (See bz #530778)
-dd if=/dev/zero of=%{buildroot}/boot/initramfs-%{kver}-xan%{kxan}%{fcver}.img bs=1M count=20
+dd if=/dev/zero of=%{buildroot}/boot/initramfs-%{kver}-xan%{kxan}.%{krel}%{fcver}.img bs=1M count=20
 
-cp $KBUILD_IMAGE %{buildroot}/boot/vmlinuz-%{kver}-xan%{kxan}%{fcver}
-chmod a+x %{buildroot}/boot/vmlinuz-%{kver}-xan%{kxan}%{fcver}
+cp $KBUILD_IMAGE %{buildroot}/boot/vmlinuz-%{kver}-xan%{kxan}.%{krel}%{fcver}
+chmod a+x %{buildroot}/boot/vmlinuz-%{kver}-xan%{kxan}.%{krel}%{fcver}
 
 make %{?_smp_mflags} INSTALL_HDR_PATH=%{buildroot}/usr KBUILD_SRC= headers_install
-cp System.map %{buildroot}/boot/System.map-%{kver}-xan%{kxan}%{fcver}
-cp .config    %{buildroot}/boot/config-%{kver}-xan%{kxan}%{fcver}
+cp System.map %{buildroot}/boot/System.map-%{kver}-xan%{kxan}.%{krel}%{fcver}
+cp .config    %{buildroot}/boot/config-%{kver}-xan%{kxan}.%{krel}%{fcver}
 
-cp %{buildroot}/boot/vmlinuz-%{kver}-xan%{kxan}%{fcver} %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/vmlinuz
+cp %{buildroot}/boot/vmlinuz-%{kver}-xan%{kxan}.%{krel}%{fcver} %{buildroot}/lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}/vmlinuz
 
-rm -f %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
-rm -f %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/source
+rm -f %{buildroot}/lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}/build
+rm -f %{buildroot}/lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}/source
 
-mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
-(cd %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver} ; ln -s build source)
+mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}/build
+(cd %{buildroot}/lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver} ; ln -s build source)
 
 # dirs for additional modules per module-init-tools, kbuild/modules.txt
-mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/extra
-mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/internal
-mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/updates
+mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}/extra
+mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}/internal
+mkdir -p %{buildroot}/lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}/updates
 
 # CONFIG_KERNEL_HEADER_TEST generates some extra files in the process of
 # testing so just delete
 find . -name "*.h.s" -delete
 
 # first copy everything
-cp --parents $(find -type f \( -name "Makefile*" -o -name "Kconfig*" \)) %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
-cp Module.symvers %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
-cp System.map %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
+cp --parents $(find -type f \( -name "Makefile*" -o -name "Kconfig*" \)) %{buildroot}/lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}/build
+cp Module.symvers %{buildroot}/lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}/build
+cp System.map %{buildroot}/lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}/build
 if [ -s Module.markers ]; then
-  cp Module.markers %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
+  cp Module.markers %{buildroot}/lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}/build
 fi
 
 # Move the devel headers out of the root file system
 
-DevelDir=/usr/src/kernels/%{kver}-xan%{kxan}%{fcver}
+DevelDir=/usr/src/kernels/%{kver}-xan%{kxan}.%{krel}%{fcver}
 
-mkdir -p %{buildroot}/usr/src/kernels/%{kver}-xan%{kxan}%{fcver}
-mv %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build %{buildroot}/$DevelDir
+mkdir -p %{buildroot}/usr/src/kernels/%{kver}-xan%{kxan}.%{krel}%{fcver}
+mv %{buildroot}/lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}/build %{buildroot}/$DevelDir
 
 # This is going to create a broken link during the build, but we don't use
 # it after this point.  We need the link to actually point to something
 # when kernel-devel is installed, and a relative link doesn't work across
 # the F17 UsrMove feature.
 
-ln -sf $DevelDir %{buildroot}/lib/modules/%{kver}-xan%{kxan}%{fcver}/build
+ln -sf $DevelDir %{buildroot}/lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}/build
 
 # prune junk from kernel-devel
 
 find %{buildroot}/usr/src/kernels -name ".*.cmd" -delete
 
 EXCLUDES="--exclude SCCS --exclude BitKeeper --exclude .svn --exclude CVS --exclude .pc --exclude .hg --exclude .git --exclude .tmp_versions --exclude=*vmlinux* --exclude=*.o --exclude=*.ko --exclude=*.ko.xz --exclude=*.cmd --exclude=Documentation --exclude=firmware --exclude .config.old --exclude .missing-syscalls.d"
-tar $EXCLUDES -cf- . | (cd %{buildroot}/usr/src/kernels/%{kver}-xan%{kxan}%{fcver}; tar xvf -)
+tar $EXCLUDES -cf- . | (cd %{buildroot}/usr/src/kernels/%{kver}-xan%{kxan}.%{krel}%{fcver}; tar xvf -)
 
 %post
 # Create the initramfs file; kernel-install also updates the bootloader (BLS)
-/bin/kernel-install add %{kver}-xan%{kxan}%{fcver} /lib/modules/%{kver}-xan%{kxan}%{fcver}/vmlinuz
+/bin/kernel-install add %{kver}-xan%{kxan}.%{krel}%{fcver} /lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}/vmlinuz
 
 %preun
 # $1=0: full removal; $1=1: upgrade (new RPM release, same kernel version)
 # Only remove when fully uninstalling to avoid wiping the just-installed initramfs
 if [ "$1" = "0" ]; then
-    /bin/kernel-install remove %{kver}-xan%{kxan}%{fcver} /lib/modules/%{kver}-xan%{kxan}%{fcver}/vmlinuz
+    /bin/kernel-install remove %{kver}-xan%{kxan}.%{krel}%{fcver} /lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}/vmlinuz
 fi
 
 %files
-/lib/modules/%{kver}-xan%{kxan}%{fcver}
-/boot/vmlinuz-%{kver}-xan%{kxan}%{fcver}
-/boot/System.map-%{kver}-xan%{kxan}%{fcver}
-/boot/config-%{kver}-xan%{kxan}%{fcver}
-%ghost /boot/initramfs-%{kver}-xan%{kxan}%{fcver}.img
+/lib/modules/%{kver}-xan%{kxan}.%{krel}%{fcver}
+/boot/vmlinuz-%{kver}-xan%{kxan}.%{krel}%{fcver}
+/boot/System.map-%{kver}-xan%{kxan}.%{krel}%{fcver}
+/boot/config-%{kver}-xan%{kxan}.%{krel}%{fcver}
+%ghost /boot/initramfs-%{kver}-xan%{kxan}.%{krel}%{fcver}.img
 
 %files headers
 /usr/include
 
 %files devel
-/usr/src/kernels/%{kver}-xan%{kxan}%{fcver}
+/usr/src/kernels/%{kver}-xan%{kxan}.%{krel}%{fcver}
 
 %changelog
+* Wed Aug 26 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-xan1-18
+- fix invalid version string: use '.' instead of '-' before %%{krel}
+
+* Wed Aug 26 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-xan1-17
+- embed RPM release (%{krel}) in EXTRAVERSION and all module/boot paths so
+  each RPM release installs to its own unique /lib/modules/ path
+
 * Tue Aug 25 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-xan1-16
 - update to 7.1.9-xan1-16 - add a missing provides
 

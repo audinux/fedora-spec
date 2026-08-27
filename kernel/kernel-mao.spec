@@ -11,7 +11,7 @@
 # RT patch version
 %global krt   0
 # package version
-%global krel  17
+%global krel  19
 
 %global kver  %{kmaj}.%{kmin}.%{kpat}
 %global fcver %{dist}.%{_arch}
@@ -71,7 +71,7 @@ BuildRequires: dwarves
 
 Provides: kernel = %{version}
 Provides: kernel-rt-mao = %{version}
-Provides: kernel-uname-r = %{kver}-rt%{krt}%{fcver}
+Provides: kernel-uname-r = %{kver}-rt%{krt}.%{krel}%{fcver}
 
 %global __spec_install_post /usr/lib/rpm/brp-compress || :
 %global debug_package %{nil}
@@ -93,7 +93,7 @@ glibc package.
 Summary: Development package for building real time kernel modules to match the %{version} kernel
 AutoReqProv: no
 # For NVidia driver build
-Provides: kernel-devel-uname-r = %{kver}-rt%{krt}%{fcver}
+Provides: kernel-devel-uname-r = %{kver}-rt%{krt}.%{krel}%{fcver}
 
 %description devel
 This package provides real time kernel headers and makefiles sufficient to build modules
@@ -103,7 +103,7 @@ against the %{version} kernel package.
 %autosetup -p1 -n linux-%{kver}
 
 cp %{SOURCE1} .config
-sed -i -e "s/EXTRAVERSION =/EXTRAVERSION = -rt%{krt}%{fcver}/g" Makefile
+sed -i -e "s/EXTRAVERSION =/EXTRAVERSION = -rt%{krt}.%{krel}%{fcver}/g" Makefile
 echo "" > localversion-rt
 
 # Activate some missing SELINUX options
@@ -129,86 +129,97 @@ make %{?_smp_mflags} INSTALL_MOD_PATH=%{buildroot} KBUILD_SRC= mod-fw= INSTALL_M
 
 # We estimate the size of the initramfs because rpm needs to take this size
 # into consideration when performing disk space calculations. (See bz #530778)
-dd if=/dev/zero of=%{buildroot}/boot/initramfs-%{kver}-rt%{krt}%{fcver}.img bs=1M count=20
+dd if=/dev/zero of=%{buildroot}/boot/initramfs-%{kver}-rt%{krt}.%{krel}%{fcver}.img bs=1M count=20
 
-cp $KBUILD_IMAGE %{buildroot}/boot/vmlinuz-%{kver}-rt%{krt}%{fcver}
-chmod a+x %{buildroot}/boot/vmlinuz-%{kver}-rt%{krt}%{fcver}
+cp $KBUILD_IMAGE %{buildroot}/boot/vmlinuz-%{kver}-rt%{krt}.%{krel}%{fcver}
+chmod a+x %{buildroot}/boot/vmlinuz-%{kver}-rt%{krt}.%{krel}%{fcver}
 
 make %{?_smp_mflags} INSTALL_HDR_PATH=%{buildroot}/usr KBUILD_SRC= headers_install
-cp System.map %{buildroot}/boot/System.map-%{kver}-rt%{krt}%{fcver}
-cp .config    %{buildroot}/boot/config-%{kver}-rt%{krt}%{fcver}
+cp System.map %{buildroot}/boot/System.map-%{kver}-rt%{krt}.%{krel}%{fcver}
+cp .config    %{buildroot}/boot/config-%{kver}-rt%{krt}.%{krel}%{fcver}
 
-cp %{buildroot}/boot/vmlinuz-%{kver}-rt%{krt}%{fcver} %{buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/vmlinuz
+cp %{buildroot}/boot/vmlinuz-%{kver}-rt%{krt}.%{krel}%{fcver} %{buildroot}/lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}/vmlinuz
 
-rm -f %{buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build
-rm -f %{buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/source
+rm -f %{buildroot}/lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}/build
+rm -f %{buildroot}/lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}/source
 
-mkdir -p %{buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build
-(cd %{buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver} ; ln -s build source)
+mkdir -p %{buildroot}/lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}/build
+(cd %{buildroot}/lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver} ; ln -s build source)
 
 # dirs for additional modules per module-init-tools, kbuild/modules.txt
-mkdir -p %{buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/extra
-mkdir -p %{buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/internal
-mkdir -p %{buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/updates
+mkdir -p %{buildroot}/lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}/extra
+mkdir -p %{buildroot}/lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}/internal
+mkdir -p %{buildroot}/lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}/updates
 
 # CONFIG_KERNEL_HEADER_TEST generates some extra files in the process of
 # testing so just delete
 find . -name "*.h.s" -delete
 
 # first copy everything
-cp --parents $(find -type f \( -name "Makefile*" -o -name "Kconfig*" \)) %{buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build
-cp Module.symvers %{buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build
-cp System.map %{buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build
+cp --parents $(find -type f \( -name "Makefile*" -o -name "Kconfig*" \)) %{buildroot}/lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}/build
+cp Module.symvers %{buildroot}/lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}/build
+cp System.map %{buildroot}/lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}/build
 if [ -s Module.markers ]; then
-  cp Module.markers %{buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build
+  cp Module.markers %{buildroot}/lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}/build
 fi
 
 # Move the devel headers out of the root file system
 
-DevelDir=/usr/src/kernels/%{kver}-rt%{krt}%{fcver}
+DevelDir=/usr/src/kernels/%{kver}-rt%{krt}.%{krel}%{fcver}
 
-mkdir -p %{buildroot}/usr/src/kernels/%{kver}-rt%{krt}%{fcver}
-mv %{buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build %{buildroot}/$DevelDir
+mkdir -p %{buildroot}/usr/src/kernels/%{kver}-rt%{krt}.%{krel}%{fcver}
+mv %{buildroot}/lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}/build %{buildroot}/$DevelDir
 
 # This is going to create a broken link during the build, but we don't use
 # it after this point.  We need the link to actually point to something
 # when kernel-devel is installed, and a relative link doesn't work across
 # the F17 UsrMove feature.
 
-ln -sf $DevelDir %{buildroot}/lib/modules/%{kver}-rt%{krt}%{fcver}/build
+ln -sf $DevelDir %{buildroot}/lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}/build
 
 # prune junk from kernel-devel
 
 find %{buildroot}/usr/src/kernels -name ".*.cmd" -delete
 
 EXCLUDES="--exclude SCCS --exclude BitKeeper --exclude .svn --exclude CVS --exclude .pc --exclude .hg --exclude .git --exclude .tmp_versions --exclude=*vmlinux* --exclude=*.o --exclude=*.ko --exclude=*.ko.xz --exclude=*.cmd --exclude=Documentation --exclude=firmware --exclude .config.old --exclude .missing-syscalls.d"
-tar $EXCLUDES -cf- . | (cd %{buildroot}/usr/src/kernels/%{kver}-rt%{krt}%{fcver}; tar xvf -)
+tar $EXCLUDES -cf- . | (cd %{buildroot}/usr/src/kernels/%{kver}-rt%{krt}.%{krel}%{fcver}; tar xvf -)
 
 %post
 # Create the initramfs file; kernel-install also updates the bootloader (BLS)
-/bin/kernel-install add %{kver}-rt%{krt}%{fcver} /lib/modules/%{kver}-rt%{krt}%{fcver}/vmlinuz
+/bin/kernel-install add %{kver}-rt%{krt}.%{krel}%{fcver} /lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}/vmlinuz
 
 %preun
 # $1=0: full removal; $1=1: upgrade (new RPM release, same kernel version)
 # Only remove when fully uninstalling to avoid wiping the just-installed initramfs
 if [ "$1" = "0" ]; then
-    /bin/kernel-install remove %{kver}-rt%{krt}%{fcver} /lib/modules/%{kver}-rt%{krt}%{fcver}/vmlinuz
+    /bin/kernel-install remove %{kver}-rt%{krt}.%{krel}%{fcver} /lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}/vmlinuz
 fi
 
 %files
-/lib/modules/%{kver}-rt%{krt}%{fcver}
-/boot/vmlinuz-%{kver}-rt%{krt}%{fcver}
-/boot/System.map-%{kver}-rt%{krt}%{fcver}
-/boot/config-%{kver}-rt%{krt}%{fcver}
-%ghost /boot/initramfs-%{kver}-rt%{krt}%{fcver}.img
+/lib/modules/%{kver}-rt%{krt}.%{krel}%{fcver}
+/boot/vmlinuz-%{kver}-rt%{krt}.%{krel}%{fcver}
+/boot/System.map-%{kver}-rt%{krt}.%{krel}%{fcver}
+/boot/config-%{kver}-rt%{krt}.%{krel}%{fcver}
+%ghost /boot/initramfs-%{kver}-rt%{krt}.%{krel}%{fcver}.img
 
 %files headers
 /usr/include
 
 %files devel
-/usr/src/kernels/%{kver}-rt%{krt}%{fcver}
+/usr/src/kernels/%{kver}-rt%{krt}.%{krel}%{fcver}
 
 %changelog
+* Wed Aug 26 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-rt0-19
+- fix invalid version string: use '.' instead of '-' before %%{krel} so the
+  kernel uname-r has only one '-' (e.g. 7.1.9-rt0.19.fc44.x86_64), matching
+  RPM version string rules and the standard Fedora kernel format
+
+* Wed Aug 26 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-rt0-18
+- embed RPM release (%{krel}) in EXTRAVERSION and all module/boot paths so
+  each RPM release installs to its own /lib/modules/kver-rtN-krel.fcVER/ path,
+  fixing the file conflict when the same kernel version is rebuilt with a new
+  RPM release number
+
 * Tue Aug 25 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-rt0-17
 - update to 7.1.9-rt0-17 - add a missing provides
 
