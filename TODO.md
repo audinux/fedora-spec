@@ -452,6 +452,9 @@
 | generate                                 | https://github.com/maolan/generate                                                                                                                          |
 | NeuralAmpModeler-rs                      | https://github.com/fabiohl/NeuralAmpModeler-rs                                                                                                              |
 | NamtoClo                                 | https://github.com/Goaltoday/NamtoClo                                                                                                                       |
+| pulse                                    | https://github.com/invertedworld/pulse                                                                                                                      |
+| CoggPlugin                               | https://github.com/enplasmatic/CoggPlugin                                                                                                                   |
+| AudioABComparator                        | https://github.com/KarmaGame33/AudioABComparator                                                                                                            |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
