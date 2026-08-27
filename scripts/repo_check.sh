@@ -1233,6 +1233,41 @@ done
 wget http://kokkinizita.linuxaudio.org/linuxaudio/downloads/index.html -O /tmp/index.html
 cat /tmp/index.html | grep -oP "(HREF|href)=\"\K.+?(?=\")" | grep tar| sort >> git_tags_new.txt
 
+REPO_LIST="https://sourceforge.net/projects/kmidimon/files/
+https://sourceforge.net/projects/cycloneloop/files/
+https://sourceforge.net/projects/jack-director/files/
+https://sourceforge.net/projects/triceratops/files/
+https://sourceforge.net/projects/alsamodular/files/alsamodular/
+https://sourceforge.net/projects/alsamodular/files/QMidiControl/
+https://sourceforge.net/projects/projectm/files/
+https://sourceforge.net/projects/chordv/files/
+https://sourceforge.net/projects/rosegarden/files/
+https://sourceforge.net/projects/premake/files/Premake/
+https://sourceforge.net/projects/bs2b/files/plugins/LADSPA%20plugin/
+https://sourceforge.net/projects/bs2b/files/libbs2b/
+https://sourceforge.net/projects/ladspa-lgv/files/ladspa-lgv/
+https://sourceforge.net/projects/commonmusic/files/cm/
+https://sourceforge.net/projects/mv-6pm/files/
+https://sourceforge.net/projects/goattracker2/files/GoatTracker%202/
+https://sourceforge.net/projects/impro-visor/files/
+https://sourceforge.net/projects/minicomputer/files/minicomputer/
+https://sourceforge.net/projects/industrializer/files/
+https://sourceforge.net/projects/drc-fir/files/drc-fir/
+https://sourceforge.net/projects/neuralblender/files/source/
+https://sourceforge.net/projects/plotmm/files/plotmm/
+https://sourceforge.net/projects/qmidiarp/files/qmidiarp/
+https://sourceforge.net/projects/qmidictl/files/qmidictl/
+https://sourceforge.net/projects/qmidinet/files/qmidinet/
+https://sourceforge.net/projects/eq10q/files/"
+
+for File in $REPO_LIST
+do
+    echo "Processing $File"
+    wget $File -O /tmp/repo_check.html
+    cat /tmp/repo_check.html | grep net.sf.files | sed -e "s/\",\"/\n/g" | grep name >> git_tags_new.txt
+    sleep 0.1
+done
+
 if [ -f git_tags_old.txt ];
 then
     echo -e "\n\n\n"
@@ -1243,4 +1278,3 @@ then
 
     diff git_tags_new.txt git_tags_old.txt
 fi
-
