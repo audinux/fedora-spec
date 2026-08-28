@@ -4,7 +4,7 @@
 # Category: Tool
 
 Name: owmb
-Version: 1.1.0
+Version: 1.1.1
 Release: 1%{?dist}
 Summary: Open wav media browser
 License: MIT
@@ -115,8 +115,11 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Aug 28 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
+- update to 1.1.1-1
+
 * Tue Aug 25 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
-- Initial spec file
+- update to 1.1.0-1
 
 * Wed Aug 19 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial spec file
