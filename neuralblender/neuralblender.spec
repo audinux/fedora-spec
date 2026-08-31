@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: neuralblender
-Version: 1.2.8
+Version: 1.2.13
 Release: 1%{?dist}
 Summary:  Guitar amp modeling plugin based on RTNeural and NeuralAmp
 License: GPL-3.0-or-later
@@ -60,7 +60,7 @@ Requires: common-%{name}
 LV2 version of %{name}
 
 %prep
-%autosetup -n %{name}
+%autosetup -n %{name}-%{version}
 
 sed -i -e "s|DESTINATION lib/lv2/neuralblender.lv2|DESTINATION %{_lib}/lv2/neuralblender.lv2|g" CMakeLists.txt
 
@@ -103,6 +103,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Aug 31 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.13-1
+- update to 1.2.13-1
+
+* Fri Aug 28 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.9-1
+- update to 1.2.9-1
+
 * Fri Aug 28 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.8-1
 - update to 1.2.8-1
 
