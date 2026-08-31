@@ -4,7 +4,7 @@
 # Category: Tool, MIDI
 
 Name: midish
-Version: 1.4.1
+Version: 1.5.0
 Release: 1%{?dist}
 Summary: Midish is an open-source MIDI sequencer/filter for Unix-like operating systems
 License: BSD-1-Clause
@@ -57,5 +57,8 @@ Midish is open-source software distributed under a BSD-style license (compatible
 %{_mandir}/man1/smfrec.1.gz
 
 %changelog
+* Mon Aug 31 2026 Yann Collette <ycollette.nospam@free.fr> - 1.5.0-1
+- update to 1.5.0-1
+
 * Fri Jan 30 2026 Yann Collette <ycollette.nospam@free.fr> - 1.4.1-1
 - Initial spec file
