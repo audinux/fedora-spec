@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: nextstudio
-Version: 0.0.4a
+Version: 0.0.5a
 Release: 1%{?dist}
 Summary: Digital Audio Workstation built with JUCE and Tracktion Engine
 License: AGPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./nextstudio-source.sh <TAG>
-#        ./nextstudio-source.sh v0.04-alpha
+#        ./nextstudio-source.sh v0.05-alpha
 
 Source0: NextStudio.tar.gz
 Source1: nextstudio-source.sh
@@ -95,6 +95,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Mon Aug 31 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.5-alpha-1
+- update to 0.0.5-alpha-1
+
 * Sat Aug 22 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.4-alpha-1
 - update to 0.0.4-alpha-1
 
