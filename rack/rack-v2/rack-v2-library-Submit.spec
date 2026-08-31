@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 189ca1812f8234cb68c91a5721bd58884973e6ee
-%global gittag0 2.19.1
+%global commit0 683afb29106448ac50577805149011daa99a1b34
+%global gittag0 2.21.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Submit
-Version: 2.19.1
+Version: 2.21.0
 Release: 2%{?dist}
 Summary: Submit plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Submit_plugin/dist/Submit/* %{buildroot}%{_libexecdir}/Rack2/plugins/Submi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.19.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.21.0-1
 - initial specfile
