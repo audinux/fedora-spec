@@ -455,6 +455,9 @@
 | pulse                                    | https://github.com/invertedworld/pulse                                                                                                                      |
 | CoggPlugin                               | https://github.com/enplasmatic/CoggPlugin                                                                                                                   |
 | AudioABComparator                        | https://github.com/KarmaGame33/AudioABComparator                                                                                                            |
+| default_eq                               | https://github.com/lsooxlla8/default_eq                                                                                                                     |
+| default_distortion                       | https://github.com/lsooxlla8/default_distortion                                                                                                             |
+| mvave-chocolate-sysex                    | https://github.com/cbix/mvave-chocolate-sysex                                                                                                               |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
