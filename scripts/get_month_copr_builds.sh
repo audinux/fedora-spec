@@ -10,6 +10,10 @@
 CUTOFF=$(date -d "30 days ago" +%s)
 PAGE=1
 
+echo "### News for august 2026"
+echo "* new packages"
+echo "* updated packages"
+
 while : ; do
   DATA=$(curl -s "https://copr.fedorainfracloud.org/api_3/build/list?ownername=ycollet&projectname=audinux&page=$PAGE")
   
