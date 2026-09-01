@@ -6,7 +6,7 @@
 %global _cmake_shared_libs %{nil}
 
 Name: spectrumworx
-Version: 20260822
+Version: 20260901
 Release: 1%{?dist}
 Summary: A port of Little Endian's SpectrumWorx effect plugin to modern plugin standards
 License: GPL-3.0-or-later
@@ -180,5 +180,8 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 %{_libdir}/clap/*
 
 %changelog
-* Tue Sep 30 2025 Yann Collette <ycollette.nospam@free.fr> - 20260822-1
+* Tue Sep 01 2026 Yann Collette <ycollette.nospam@free.fr> - 20260901-1
+- update to 20260901-1
+
+* Sun Aug 23 2026 Yann Collette <ycollette.nospam@free.fr> - 20260822-1
 - Initial spec file
