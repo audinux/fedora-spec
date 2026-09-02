@@ -7,7 +7,7 @@
 %global zig_version 0.14.0
 
 Name: floe
-Version: 2.0.2
+Version: 2.0.3
 Release: 2%{?dist}
 Summary: Sample library platform with a simple, powerful interface
 License: GPL-3.0-or-later
@@ -101,6 +101,9 @@ cp -vfr zig-out/.clap/* %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Tue Sep 01 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-2
+- update to 2.0.3-2
+
 * Mon Jul 27 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-2
 - update to 2.0.2-2
 
