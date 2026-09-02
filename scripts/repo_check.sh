@@ -9,7 +9,7 @@
 #    exit
 #fi
 
-TIMEOUT=30
+TIMEOUT=60
 
 REPO_LIST="https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git
 git://gabe.is-a-geek.org/git/inconcert
@@ -1208,17 +1208,22 @@ https://github.com/maolan/plugins"
 # https://github.com/aiobofh/midi-utils
 # https://github.com/Stubs42/OrangeLine
 
+# Copy everything in case of problems
+cp git_tags_* /tmp
+
+# Copy the old tag list as a backup
 cp git_tags_old.txt git_tags_old.txt.bkp
 
 if [ -f git_tags_new.txt ];
 then
     mv git_tags_new.txt git_tags_old.txt
 fi
+
 for File in $REPO_LIST
 do
     echo "Processing $File"
-    sleep 0.1
-    ALL_TAGS="`timeout --signal=TERM ${TIMEOUT}s git ls-remote --tags $File 2>&1| grep -v redirect | sort | uniq`"
+    sleep 1
+    ALL_TAGS="`timeout --signal=TERM ${TIMEOUT}s git ls-remote --tags $File`"
     if [ ! -z "$ALL_TAGS" ];
     then
 	for Tag in $ALL_TAGS
