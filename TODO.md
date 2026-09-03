@@ -447,8 +447,8 @@
 | linuxmeeter                              | https://github.com/dslapelis/linuxmeeter                                                                                                                    |
 | crimson-chorus                           | https://github.com/MichaelAngulo3232/crimson-chorus                                                                                                         |
 | jove                                     | https://github.com/DatanoiseTV/jove                                                                                                                         |
-| SpectrumWorx                             | https://github.com/surge-synthesizer/SpectrumWorx                                                                                                           |
 | pyfootctrl                               | https://github.com/varlen/pyfootctrl                                                                                                                        |
+| mvave-chocolate-sysex                    | https://github.com/cbix/mvave-chocolate-sysex                                                                                                               |
 | generate                                 | https://github.com/maolan/generate                                                                                                                          |
 | NeuralAmpModeler-rs                      | https://github.com/fabiohl/NeuralAmpModeler-rs                                                                                                              |
 | NamtoClo                                 | https://github.com/Goaltoday/NamtoClo                                                                                                                       |
@@ -457,7 +457,6 @@
 | AudioABComparator                        | https://github.com/KarmaGame33/AudioABComparator                                                                                                            |
 | default_eq                               | https://github.com/lsooxlla8/default_eq                                                                                                                     |
 | default_distortion                       | https://github.com/lsooxlla8/default_distortion                                                                                                             |
-| mvave-chocolate-sysex                    | https://github.com/cbix/mvave-chocolate-sysex                                                                                                               |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
