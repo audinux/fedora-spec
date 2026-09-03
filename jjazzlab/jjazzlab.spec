@@ -13,7 +13,7 @@ Release: 2%{?dist}
 Summary: A complete Midi-based framework for automatic backing tracks generation.
 URL: https://github.com/jjazzboss/JJazzLab
 ExclusiveArch: x86_64 
-License: LGPL-3.0
+License: LGPL-3.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

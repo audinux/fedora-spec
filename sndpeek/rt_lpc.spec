@@ -7,7 +7,7 @@ Name: rt_lpc
 Version: 1.0
 Release: 1%{?dist}
 Summary: real-time LPC analysis + synthesis + visualization
-License: GPL
+License: GPL-2.0-or-later
 URL: https://soundlab.cs.princeton.edu/software/rt_lpc/
 ExclusiveArch: x86_64 aarch64
 

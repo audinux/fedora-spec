@@ -7,7 +7,7 @@ Summary: convolver function
 Name: zita-convolver
 Version: 4.0.3
 Release: 2%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 ExclusiveArch: x86_64 aarch64
 

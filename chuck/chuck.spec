@@ -7,7 +7,7 @@ Name: chuck
 Summary: Real-time audio synthesis and graphics/multimedia language
 Version: 1.5.5.8
 Release: 2%{?dist}
-License: GPL-2.0 OR MIT
+License: GPL-2.0-or-later OR MIT
 URL: https://chuck.cs.princeton.edu/
 ExclusiveArch: x86_64 aarch64
 

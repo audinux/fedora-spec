@@ -7,7 +7,7 @@ Summary: No loss LV2 sound effect plugin
 Name: lv2-BSpacr
 Version: 1.2.0
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/sjaehn/BSpacr
 ExclusiveArch: x86_64 aarch64
 

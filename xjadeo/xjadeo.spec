@@ -7,7 +7,7 @@ Summary: Jack Video Monitor
 Name: xjadeo
 Version: 0.8.15
 Release: 5%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://xjadeo.sourceforge.net/
 ExclusiveArch: x86_64 aarch64
 

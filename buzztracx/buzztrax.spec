@@ -9,7 +9,7 @@ Name: buzztrax
 Version: 0.10.2
 Release: 6%{?dist}
 Summary: Music composer similar to tracker applications.
-License: LGPL2.1
+License: LGPL-2.1-or-later
 URL: https://www.buzztrax.org
 ExclusiveArch: x86_64 aarch64
 

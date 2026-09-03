@@ -7,7 +7,7 @@ Summary: Simple Screen Recorder
 Name: ssr
 Version: 0.4.4
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/MaartenBaert/ssr
 ExclusiveArch: x86_64 aarch64
 

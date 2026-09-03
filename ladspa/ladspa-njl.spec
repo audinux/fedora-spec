@@ -14,7 +14,7 @@ Name: ladspa-njl
 Summary: NJL LADSPA plugin
 Version: 0.2.1
 Release: 1%{?dist}
-License: GPL-2.0
+License: GPL-2.0-or-later
 URL: http://users.ecs.soton.ac.uk/njl98r/code/audio/
 
 Vendor:       Audinux

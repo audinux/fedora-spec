@@ -42,7 +42,7 @@ Release: 2%{?dist}
 Summary: Interactive multimedia programming environment (nw.js variant)
 URL: https://agraef.github.io/purr-data/
 ExclusiveArch: x86_64 aarch64
-License: GPL
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

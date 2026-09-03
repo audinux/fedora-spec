@@ -21,7 +21,7 @@ Release: 3%{?dist}
 Summary: Impro-Visor is a music notation program for jazz musicians
 URL: http://www.cs.hmc.edu/~keller/jazz/improvisor/
 ExclusiveArch: x86_64 aarch64
-License: GPL
+License: GPL-2.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

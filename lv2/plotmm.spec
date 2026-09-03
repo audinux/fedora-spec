@@ -6,7 +6,7 @@ Name: plotmm
 Version: 0.1.2
 Release: 35%{?dist}
 Summary: GTKmm plot widget for scientific applications
-License: LGPLv2
+License: LGPL-2.0-or-later
 URL: http://plotmm.sourceforge.net/
 ExclusiveArch: x86_64 aarch64
 

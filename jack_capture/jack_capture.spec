@@ -11,7 +11,7 @@ Summary: Record sound files with JACK
 # jack_capture.c and atomicity/* are GPLv2+,
 # jack_capture_gui2.cpp is BSD,
 # atomic/* are LGPLv2+.
-License: GPLv2+ and BSD and LGPLv2+
+License: GPL-2.0-or-later and BSD and LGPL-2.0-or-later
 URL: https://github.com/kmatheussen/jack_capture
 
 Vendor:       Audinux

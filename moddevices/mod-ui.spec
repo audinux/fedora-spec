@@ -30,7 +30,7 @@
 Name: mod-ui
 Version: 0.99.8.%{shortcommit0}
 Release: 2%{?dist}
-License: GPL-3.0
+License: GPL-3.0-or-later
 Summary: Web-based interface for the MOD
 URL: https://github.com/moddevices/mod-ui
 ExclusiveArch: x86_64 aarch64

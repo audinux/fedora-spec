@@ -10,7 +10,7 @@ Summary: ALSA MIDI monitor
 Name: kmidimon
 Version: 0.7.5
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://kmetronome.sourceforge.net/kmidimon/
 ExclusiveArch: x86_64 aarch64
 

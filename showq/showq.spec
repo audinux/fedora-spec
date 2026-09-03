@@ -12,7 +12,7 @@ Name: showq
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: MIDI controlable audio player
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/evandelisle/showq
 ExclusiveArch: x86_64 aarch64
 

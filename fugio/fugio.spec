@@ -13,7 +13,7 @@ Release: 4%{?dist}
 Summary: Fugio is an open visual programming system for building digital art and creative projects quickly, with no programming experience required
 URL: https://www.bigfug.com/software/fugio/
 ExclusiveArch: x86_64 aarch64
-License: LGPL-3.0
+License: LGPL-3.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

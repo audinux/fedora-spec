@@ -14,7 +14,7 @@ Version: 6.18.1
 Release: 12%{?dist}
 Summary: A sound synthesis language and library
 URL: https://csound.com
-License: LGPLv2+
+License: LGPL-2.1-or-later
 
 Source0: https://github.com/csound/csound/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: https://github.com/csound/manual/releases/download/6.18.0/Csound6.18.0_manual_html.zip

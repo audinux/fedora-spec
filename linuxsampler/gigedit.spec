@@ -7,7 +7,7 @@ Summary: Instrument editor for gig files
 Name: gigedit
 Version: 1.1.1
 Release: 2%{?dist}
-License: GPL2
+License: GPL-2.0-or-later
 URL: http://www.linuxsampler.org/
 ExclusiveArch: x86_64 aarch64
 

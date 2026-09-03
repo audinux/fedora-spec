@@ -12,7 +12,7 @@ Summary: Experimental granular synthesizer LV2 plugin
 Name: lv2-BHarvestr
 Version: 0.1.0
 Release: 4%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/sjaehn/BHarvestr
 ExclusiveArch: x86_64 aarch64
 

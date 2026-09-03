@@ -12,7 +12,7 @@ Name: dxsyx
 Version: 0.0.1.%{shortcommit0}
 Release: 1%{?dist}
 Summary: A C++ library for manipulating DX7 SysEx files.
-License: GPLv3+
+License: GPL-3.0-or-later
 URL: https://github.com/rogerallen/dxsyx
 ExclusiveArch: x86_64 aarch64
 

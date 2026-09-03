@@ -7,7 +7,7 @@ Summary: Real-time convolution engine.
 Name: jmatconvol
 Version: 0.5.2
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 ExclusiveArch: x86_64 aarch64
 

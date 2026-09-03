@@ -12,7 +12,7 @@ Name: aeolus
 Summary: A synthesized pipe organ
 Version: %{aeolus_ver}%{?aeolus_rel:.%{aeolus_rel}}
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://www.kokkinizita.net/linuxaudio/aeolus/index.html
 ExclusiveArch: x86_64 aarch64
 

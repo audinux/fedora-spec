@@ -9,7 +9,7 @@ Name: lv2-freeze
 Version: 0.2.0
 Release: 1%{?dist}
 Summary: LV2 plugin that freezes track audio to reduce DSP load
-License: GPL-3.0
+License: GPL-3.0-or-later
 URL: https://github.com/taylordotfish/freeze
 ExclusiveArch: x86_64 aarch64
 

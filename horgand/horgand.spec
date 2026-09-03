@@ -12,7 +12,7 @@ Summary: Software Synthesizer
 Name: horgand
 Version: 1.15.0
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/ycollet/horgand
 ExclusiveArch: x86_64 aarch64
 

@@ -12,7 +12,7 @@ Name: tamgamp
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Tamgamp is a LV2 guitar amp simulator
-License: LGPL3
+License: LGPL-3.0-or-later
 URL: https://github.com/sadko4u/tamgamp.lv2
 ExclusiveArch: x86_64 aarch64
 
@@ -28,7 +28,7 @@ BuildRequires: zita-resampler-devel
 
 %package -n lv2-%{name}
 Summary: Tamgamp is a LV2 guitar amp simulator
-License: LGPL3
+License: LGPL-3.0-or-later
 
 %description -n lv2-%{name}
 Tamgamp (Rhymes with: "Damage Amp") is a LV2 guitar amp simulator.

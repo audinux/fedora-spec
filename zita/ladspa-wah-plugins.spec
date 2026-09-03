@@ -7,7 +7,7 @@ Summary: A WAH filter LADSPA plugin
 Name: WAH-plugins
 Version: 0.1.0
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 ExclusiveArch: x86_64 aarch64
 

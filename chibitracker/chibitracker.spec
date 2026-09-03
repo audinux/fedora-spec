@@ -7,7 +7,7 @@ Name: chibitracker
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Fast music tracker
-License: GPLv2+
+License: GPL-2.0-or-later
 URL: https://github.com/reduz/chibitracker
 ExclusiveArch: x86_64
 

@@ -7,7 +7,7 @@ Name: projectM-mao
 Version: 4.1.7
 Release: 15%{?dist}
 Summary: The libraries for the projectM music visualization plugin
-License: LGPLv2+
+License: LGPL-2.1-or-later
 URL: https://github.com/projectM-visualizer/projectm
 ExclusiveArch: x86_64 aarch64
 
@@ -58,7 +58,7 @@ developing applications that use %{name}.
 
 %package -n projectM-mao-jack
 Summary: The projectM visualization plugin for jack
-License: GPLv2+ and MIT
+License: GPL-2.0-or-later and MIT
 Requires: projectM-mao-SDL
 
 %description -n projectM-mao-jack
@@ -67,7 +67,7 @@ JACK compatible applications.
 
 %package -n projectM-mao-pulseaudio
 Summary: The projectM visualization plugin for pulseaudio
-License: GPLv2+ and MIT
+License: GPL-2.0-or-later and MIT
 Requires: projectM-mao-SDL
 
 %description -n projectM-mao-pulseaudio
@@ -76,7 +76,7 @@ pulseaudio compatible applications.
 
 %package -n projectM-mao-alsa
 Summary: The projectM visualization plugin for ALSA
-License: GPLv2+ and MIT
+License: GPL-2.0-or-later and MIT
 Requires: projectM-mao-SDL
 
 %description -n projectM-mao-alsa
@@ -85,7 +85,7 @@ ALSA compatible applications.
 
 %package -n projectM-mao-SDL
 Summary: The projectM visualization plugin for SDL
-License: GPLv2+ and LGPLv2+ and MIT
+License: GPL-2.0-or-later and LGPL-2.0-or-later and MIT
 Requires: projectM-mao
 
 %description -n projectM-mao-SDL
@@ -94,7 +94,7 @@ SDL compatible applications.
 
 %package -n projectM-mao-doc
 Summary: The projectM visualization plugin documentation
-License: GPLv2+ and LGPLv2+ and MIT
+License: GPL-2.0-or-later and LGPL-2.0-or-later and MIT
 
 %description -n projectM-mao-doc
 The projectM visualization plugin documentation.

@@ -9,7 +9,7 @@ Name: rosegarden4
 Version: %{major}
 Release: 4%{?dist}
 Summary: MIDI, audio and notation editor
-License: GPLv2+
+License: GPL-2.0-or-later
 URL: https://www.rosegardenmusic.com/
 ExclusiveArch: x86_64 aarch64
 

@@ -54,7 +54,7 @@ Patch1:           tuxguitar-default-soundfont.patch
 # Build scripts for Fedora's additional arches
 Patch2:           tuxguitar-additional-arch.patch
 Patch3:           tuxguitar-c99.patch
-License: LGPLv2+
+License: LGPL-2.1-or-later
 
 Requires: eclipse-swt
 Requires: hicolor-icon-theme

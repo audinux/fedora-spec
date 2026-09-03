@@ -7,7 +7,7 @@ Summary: Measure Impulse Responses using a sine sweep and deconvolution
 Name: aliki
 Version: 0.3.0
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 ExclusiveArch: x86_64 aarch64
 

@@ -7,7 +7,7 @@ Name: context-free
 Summary: Context Free is a program that generates images from written instructions called a grammar.
 Version: 3.4.3
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/MtnViewJohn/context-free
 ExclusiveArch: x86_64 aarch64
 

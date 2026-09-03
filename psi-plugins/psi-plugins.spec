@@ -12,7 +12,7 @@ Summary: PSI LV2 Plugins
 Name: psi-plugins-doc
 Version: 0.0.1
 Release: 4%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/ycollet/psi-plugins
 ExclusiveArch: x86_64 aarch64
 

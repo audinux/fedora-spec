@@ -9,7 +9,7 @@ Release: 1%{?dist}
 Summary: Sampler plugin
 URL: https://github.com/clearly-broken-software/drops
 ExclusiveArch: x86_64 aarch64
-License: GPL3
+License: GPL-3.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

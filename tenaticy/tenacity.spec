@@ -8,7 +8,7 @@ Summary: An easy-to-use multi-track audio editor and recorder
 Name: tenacity
 Version: 1.3.5
 Release: 1%{?dist}
-License: GPLv2+
+License: GPL-2.0-or-later
 Url: https://codeberg.org/tenacityteam/tenacity
 
 # Usage: ./tenacity-sources.sh <TAG>
@@ -87,7 +87,7 @@ Features:
 
 %package libs
 Summary: Libraries needed for %{name}
-License: GPLv2+
+License: GPL-2.0-or-later
 
 %description libs
 An easy-to-use multi-track audio editor and recorder.

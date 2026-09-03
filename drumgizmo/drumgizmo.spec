@@ -7,7 +7,7 @@ Summary: Software Synthesizer
 Name: drumgizmo
 Version: 0.9.20
 Release: 2%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://www.drumgizmo.org/wiki/doku.php
 ExclusiveArch: x86_64 aarch64
 

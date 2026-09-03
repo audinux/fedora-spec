@@ -7,7 +7,7 @@ Summary: Pattern-controlled MIDI amp & time stretch LV2 plugin to produce shuffl
 Name: lv2-BSchaffl
 Version: 1.4.10
 Release: 2%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/sjaehn/BSchaffl
 ExclusiveArch: x86_64 aarch64
 

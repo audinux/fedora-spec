@@ -8,7 +8,7 @@ Summary: Guitar Amplifier emulator
 Name: rakarrack
 Version: 0.6.3
 Release: 2%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://rakarrack.sourceforge.net/
 ExclusiveArch: x86_64 aarch64
 

@@ -18,7 +18,7 @@ Name: rack-v2-matrix-sequencer
 Version: 2.0.0
 Release: 2%{?dist}
 Summary: matrix-sequencer plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL: https://github.com/Retr0-code/Matrix-Sequncer
 ExclusiveArch: x86_64 aarch64
 

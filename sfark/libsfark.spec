@@ -12,7 +12,7 @@ Summary: sfArk library
 Name: sfArkLib
 Version: 2.24.%{shortcommit0}
 Release: 2%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/raboof/sfArkLib
 ExclusiveArch: x86_64 aarch64
 

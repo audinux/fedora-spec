@@ -7,7 +7,7 @@ Summary: A radio automation system
 Name: rivendell
 Version: 4.5.0
 Release: 1%{?dist}
-License: LGPL
+License: LGPL-2.0-or-later
 URL: https://github.com/ElvishArtisan/rivendell
 ExclusiveArch: x86_64 aarch64
 

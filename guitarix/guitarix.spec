@@ -15,7 +15,7 @@ Name: guitarix
 Version: 0.47.0
 Release: 10%{?dist}
 Summary: A virtual guitar amplifier
-License: GPLv2+
+License: GPL-2.0-or-later
 URL: http://guitarix.sourceforge.net/
 
 # ./brummer10-source.sh <project> <tag>
@@ -68,21 +68,21 @@ like flanger, phaser or auto-wah.
 
 %package -n libgxw
 Summary: Guitarix GTK library
-License: GPLv2+ 
+License: GPL-2.0-or-later 
 
 %description -n libgxw
 This package contains the Guitarix GTK widget library
 
 %package -n libgxwmm
 Summary: Guitarix GTK C++ library
-License: GPLv2+ 
+License: GPL-2.0-or-later 
 
 %description -n libgxwmm
 This package contains the Guitarix GTK C++ widget library
 
 %package -n libgxw-devel
 Summary: Development files for libgxw
-License: GPLv2+ 
+License: GPL-2.0-or-later 
 Requires: libgxw%{?_isa} = %{version}-%{release}
 
 %description -n libgxw-devel
@@ -91,7 +91,7 @@ widget library
 
 %package -n libgxwmm-devel
 Summary: Development files for libgxwmm
-License: GPLv2+ 
+License: GPL-2.0-or-later 
 Requires: libgxwmm%{?_isa} = %{version}-%{release}
 
 %description -n libgxwmm-devel
@@ -100,7 +100,7 @@ library
 
 %package -n gxw-glade
 Summary: Guitarix GTK library glade support
-License: GPLv2+ 
+License: GPL-2.0-or-later 
 Requires: glade
 Requires: libgxw-devel%{?_isa} = %{version}-%{release}
 
@@ -112,7 +112,7 @@ with glade
 Summary: Collection of LV2 guitarix plug-ins
 # ladspa/distortion.cpp and ladspa/guitarix-ladspa.cpp are BSD
 # The rest of ladspa/* is GPLv+
-License: GPLv2+ 
+License: GPL-2.0-or-later 
 Requires: lv2
 Requires: %{name}%{?_isa} = %{version}-%{release}
 

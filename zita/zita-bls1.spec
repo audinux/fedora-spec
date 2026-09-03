@@ -7,7 +7,7 @@ Summary: Convert binaural signals for reproduction on conventional stereo speake
 Name: zita-bls1
 Version: 0.4.0
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 ExclusiveArch: x86_64 aarch64
 

@@ -7,7 +7,7 @@ Name: lsp-plugins
 Summary: Linux Studio Plugins collection
 Version: 1.2.35
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/sadko4u/lsp-plugins
 ExclusiveArch: x86_64 aarch64
 

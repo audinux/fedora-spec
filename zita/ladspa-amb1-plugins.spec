@@ -7,7 +7,7 @@ Summary: A collection of LADSPA plugins for third order Ambisonics.
 Name: AMB1-plugins
 Version: 0.3.0
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 ExclusiveArch: x86_64 aarch64
 

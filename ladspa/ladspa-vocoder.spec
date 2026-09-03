@@ -22,7 +22,7 @@ Name: ladspa-vocoder
 Version: 0.4
 Release: 1%{?dist}
 Summary: LADSPA vocoder plugin
-License: GPL-2.0+
+License: GPL-2.0-or-later
 URL: https://www.sirlab.de/linux/vocoder/download/
 ExclusiveArch: x86_64 aarch64
 

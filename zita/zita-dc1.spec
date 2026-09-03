@@ -7,7 +7,7 @@ Summary: Dynamics Compressor.
 Name: zita-dc1
 Version: 0.3.3
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 ExclusiveArch: x86_64 aarch64
 

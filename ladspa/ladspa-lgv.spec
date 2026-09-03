@@ -12,7 +12,7 @@ Name: ladspa-lgv
 Summary: Luis Garrido's LADSPA plugin collection
 Version: 0.1
 Release: 1%{?dist}
-License: GPL-2.0
+License: GPL-2.0-or-later
 URL: https://sourceforge.net/projects/ladspa-lgv/
 
 Vendor:       Audinux

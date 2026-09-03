@@ -9,7 +9,7 @@ Summary: Collection of SuperCollider plugins
 Name: supercollider-sc3-plugins
 Version: 3.14.0
 Release: 5%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/supercollider/sc3-plugins/
 ExclusiveArch: x86_64 aarch64
 

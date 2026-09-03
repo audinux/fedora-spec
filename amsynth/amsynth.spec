@@ -7,7 +7,7 @@ Summary: Software Synthesizer
 Name: amsynth
 Version: 2.0.0
 Release: 3%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/amsynth/amsynth
 ExclusiveArch: x86_64 aarch64
 

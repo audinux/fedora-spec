@@ -9,7 +9,7 @@ Name: ladspa-twk
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: A collection of ladspa plugins
-License: GPL-3.0+
+License: GPL-3.0-or-later
 URL: https://github.com/TimKrause2/twk-ladspa-plugins
 ExclusiveArch: x86_64 aarch64
 

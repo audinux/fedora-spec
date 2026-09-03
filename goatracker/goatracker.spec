@@ -7,7 +7,7 @@ Summary: A crossplatform music editor for creating Commodore 64 music. Uses reSI
 Name: goatracker
 Version: 2.77
 Release: 2%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://sourceforge.net/projects/goattracker2/
 ExclusiveArch: x86_64 aarch64
 

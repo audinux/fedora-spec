@@ -8,7 +8,7 @@ Summary: LinuxSampler GUI front-end
 Name: qsampler
 Version: 0.9.6
 Release: 3%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://qsampler.sourceforge.net/qsampler-index.html
 ExclusiveArch: x86_64 aarch64
 

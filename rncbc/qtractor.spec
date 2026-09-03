@@ -7,7 +7,7 @@ Summary: Audio/MIDI multi-track sequencer
 Name: qtractor-mao
 Version: 1.6.3
 Release: 2%{?dist}
-License: GPLv2+
+License: GPL-2.0-or-later
 URL: https://qtractor.org/
 ExclusiveArch: x86_64 aarch64
 

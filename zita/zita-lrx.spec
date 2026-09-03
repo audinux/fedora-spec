@@ -7,7 +7,7 @@ Summary: 4th order crossover filters
 Name: zita-lrx
 Version: 0.1.2
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 ExclusiveArch: x86_64 aarch64
 

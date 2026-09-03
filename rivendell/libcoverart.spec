@@ -12,7 +12,7 @@ Summary: A library for accessing the MusicBrainz Cover Art Archive
 Name: libcoverart
 Version: 1.0.0
 Release: 4%{?dist}
-License: LGPL
+License: LGPL-2.0-or-later
 URL: https://github.com/metabrainz/libcoverart
 ExclusiveArch: x86_64 aarch64
 

@@ -7,7 +7,7 @@ Name: kluppe
 Version: 0.6.20
 Release: 1%{?dist}
 Summary: kluppe is a loop-player and recorder, designed for live use
-License: GPL-2.0
+License: GPL-2.0-or-later
 URL: https://kluppe.klingt.org/index.html
 ExclusiveArch: x86_64 aarch64
 

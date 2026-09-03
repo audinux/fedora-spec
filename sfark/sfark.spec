@@ -12,7 +12,7 @@ Summary: sfArk tool
 Name: sfarkxtc
 Version: 0.1.%{shortcommit0}
 Release: 2%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/raboof/sfarkxtc
 ExclusiveArch: x86_64 aarch64
 

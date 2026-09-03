@@ -9,7 +9,7 @@ Name: peaksynth-audio-plugin
 Version: 0.0.1
 Release: 2%{?dist}
 Summary: MIDI controlled synth that uses filter peaks to create tonal spikes in an audio file
-License: GPLv3
+License: GPL-3.0-or-later
 URL: https://github.com/owennjpr/PeakSynth-Audio-Plugin
 ExclusiveArch: x86_64 aarch64
 

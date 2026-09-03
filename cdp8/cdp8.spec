@@ -9,7 +9,7 @@ Name: cdp
 Version: 8.0
 Release: 2%{?dist}
 Summary: New version of CDP software 
-License: LGPL-2.1
+License: LGPL-2.1-or-later
 URL: https://composersdesktop.com/index.html
 ExclusiveArch: x86_64 aarch64
 
@@ -36,7 +36,7 @@ Discover new musical possibilities with CDP, a mature and wide-ranging suite of 
 
 %package doc
 Summary: Documentation for %{name}
-License: LGPL-2.1
+License: LGPL-2.1-or-later
 
 %description doc
 Documentation for %{name}

@@ -10,7 +10,7 @@ Name: miniaudicle
 Summary: Light weight ChucK development environment
 Version: 1.5.5.8
 Release: 2%{?dist}
-License: GPL-2.0
+License: GPL-2.0-or-later
 URL: https://audicle.cs.princeton.edu/mini/
 ExclusiveArch: x86_64 aarch64
 

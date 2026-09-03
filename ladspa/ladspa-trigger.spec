@@ -15,7 +15,7 @@ Name: ladspa-trigger
 Summary: Trigger LADSPA plugin
 Version: 20080510
 Release: 1%{?dist}
-License: GPL-2.0
+License: GPL-2.0-or-later
 URL: https://sourceforge.net/projects/ladspa-trigger/
 ExclusiveArch: x86_64 aarch64
 

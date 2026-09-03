@@ -12,7 +12,7 @@ Summary: Chiptune tracker for making chiptune-like music on a modern computer.
 Name: klystrack
 Version: 1.7.6
 Release: 4%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://kometbomb.github.io/klystrack/
 ExclusiveArch: x86_64 aarch64
 

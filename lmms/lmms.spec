@@ -33,7 +33,7 @@ AutoReqProv: no
 #   - embedded zynaddsubfx plugin: GPLv2+
 #     - fltk (zynaddsubfx): LGPLv2+, with exceptions (but we use
 #       system's fltk)
-License: GPLv2+ and GPLv2 and (GPLv2+ or MIT) and GPLv3+ and MIT and LGPLv2+ and (LGPLv2+ with exceptions) and Copyright only
+License: GPL-2.0-or-later and GPL-2.0-only and (GPL-2.0-or-later or MIT) and GPL-3.0-or-later and MIT and LGPL-2.0-or-later and (LGPL-2.0-or-later with exceptions) and Copyright only
 
 Vendor:       Audinux
 Distribution: Audinux

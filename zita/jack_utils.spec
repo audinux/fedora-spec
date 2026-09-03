@@ -7,7 +7,7 @@ Summary: Three small command line programs: jack_fpmon, jack_check, jack_proxy
 Name: jack_utils
 Version: 0.0.1
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 ExclusiveArch: x86_64 aarch64
 

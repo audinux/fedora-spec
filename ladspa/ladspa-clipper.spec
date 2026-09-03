@@ -14,7 +14,7 @@ Name: ladspa-clipper
 Summary: Clipper LADSPA plugin - Hard clipping, without any aliasing protection
 Version: 1.0
 Release: 1%{?dist}
-License: GPL-2.0
+License: GPL-2.0-or-later
 URL: http://quitte.de/dsp/
 
 Vendor:       Audinux

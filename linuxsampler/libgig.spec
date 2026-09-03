@@ -7,7 +7,7 @@ Summary: C++ library for loading Gigasampler files and DLS Level 1/2 files.
 Name: libgig
 Version: 4.3.0
 Release: 1%{dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://www.linuxsampler.org
 ExclusiveArch: x86_64 aarch64
 

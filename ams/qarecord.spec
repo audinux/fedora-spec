@@ -9,7 +9,7 @@ Summary: Audio recording tool
 Name: qarecord
 Version: 0.0.1
 Release: 1%{?dist}
-License: GPLv2+
+License: GPL-2.0-or-later
 URL: https://sourceforge.net/projects/alsamodular/
 ExclusiveArch: x86_64 aarch64
 

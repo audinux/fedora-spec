@@ -108,7 +108,7 @@ License: Python
 #   certifi: MPLv2.0
 #   setuptools: MIT
 #   webencodings: BSD
-License: Python and MIT and ASL 2.0 and BSD and ISC and LGPLv2 and MPLv2.0 and (ASL 2.0 or BSD)
+License: Python and MIT and Apache-2.0 and BSD and ISC and LGPL-2.0-only and MPL-2.0 and (Apache-2.0 or BSD)
 %endif
 
 # Python 2 is deprecated in Fedora 30+, see:

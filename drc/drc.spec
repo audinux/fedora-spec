@@ -7,7 +7,7 @@ Name: drc
 Version: 3.2.3
 Release: 1%{?dist}
 Summary: Digital Room Correction
-License: LGPLv2+
+License: LGPL-2.1-or-later
 URL: https://sourceforge.net/projects/drc-fir/
 ExclusiveArch: x86_64 aarch64
 

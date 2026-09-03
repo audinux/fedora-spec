@@ -7,7 +7,7 @@ Name: ladspa-t5-plugins
 Version: 1.8
 Release: 1%{?dist}
 Summary: LADSPA filter plugins
-License: GPL-2.0+
+License: GPL-2.0-or-later
 URL: https://gitlab.com/t-5/ladspa-t5-plugins
 ExclusiveArch: x86_64 aarch64
 

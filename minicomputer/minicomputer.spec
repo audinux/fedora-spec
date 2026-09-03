@@ -8,7 +8,7 @@ Name: minicomputer
 Summary: Standalone Linux software synthesizer
 Version: 1.4
 Release: 2%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://minicomputer.sourceforge.net/
 ExclusiveArch: x86_64 aarch64
 

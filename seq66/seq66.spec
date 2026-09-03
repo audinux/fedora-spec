@@ -7,7 +7,7 @@ Name: seq66
 Version: 0.99.27
 Release: 1%{?dist}
 Summary: MIDI sequencer
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/ahlstromcj/seq66
 ExclusiveArch: x86_64 aarch64
 

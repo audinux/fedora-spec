@@ -7,7 +7,7 @@ Summary: An audio stream chopping LV2 plugin
 Name: lv2-BChoppr
 Version: 1.12.8
 Release: 3%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/sjaehn/BChoppr
 ExclusiveArch: x86_64 aarch64
 

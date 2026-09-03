@@ -12,7 +12,7 @@ Name: ladspa-lemux
 Summary: lemux - LADSPA instrument plugins based on openMSX devices
 Version: 0.2
 Release: 1%{?dist}
-License: GPL-2.0
+License: GPL-2.0-or-later
 URL: http://lumatec.be/joost
 ExclusiveArch: x86_64 aarch64
 

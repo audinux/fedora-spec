@@ -7,7 +7,7 @@ Summary: An A/B convertor and the metering and monitoring.
 Name: tetraproc
 Version: 0.10.0
 Release: 2%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 ExclusiveArch: x86_64 aarch64
 

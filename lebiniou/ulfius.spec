@@ -7,7 +7,7 @@ Summary: Web Framework to build REST APIs, Webservices or any HTTP endpoint in C
 Name: ulfius
 Version: 2.7.15
 Release: 1%{?dist}
-License: LGPL-2.1
+License: LGPL-2.1-or-later
 URL: https://github.com/babelouest/ulfius
 ExclusiveArch: x86_64 aarch64
 

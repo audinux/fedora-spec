@@ -9,7 +9,7 @@ Name: openav-luppp
 Version: 1.1
 Release: 11%{?dist}
 Summary: Live performance mixing tool
-License: GPLv3
+License: GPL-3.0-or-later
 URL: http://openavproductions.com/luppp
 ExclusiveArch: x86_64 aarch64
 

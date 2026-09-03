@@ -13,7 +13,7 @@ Release: 13%{?dist}
 # log.*, lv2filter.*, lv2plugin.c are GPLv2
 # The rest is GPLv2+
 # The author claims GPLv2 for the software
-License: LGPLv2+ and GPLv2 and GPLv2+
+License: LGPL-2.0-or-later and GPL-2.0-only and GPL-2.0-or-later
 URL: http://nedko.arnaudov.name/soft/lv2fil/
 ExclusiveArch: x86_64 aarch64
 

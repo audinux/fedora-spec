@@ -14,7 +14,7 @@ Release: 2%{?dist}
 Summary: Jack Midi to Control Voltage
 URL: https://github.com/harryhaaren/jm2cv
 ExclusiveArch: x86_64 aarch64
-License: GPLv2+ and GPLv2 and (GPLv2+ or MIT) and GPLv3+ and MIT and LGPLv2+ and (LGPLv2+ with exceptions) and Copyright only
+License: GPL-2.0-only
 
 Vendor:       Audinux
 Distribution: Audinux

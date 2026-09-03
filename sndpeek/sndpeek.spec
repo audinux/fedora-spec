@@ -7,7 +7,7 @@ Name: sndpeek
 Version: 1.41
 Release: 2%{?dist}
 Summary: real-time audio visualization
-License: GPL
+License: GPL-2.0-or-later
 URL: https://www.gewang.com/software/sndpeek/
 ExclusiveArch: x86_64 aarch64
 

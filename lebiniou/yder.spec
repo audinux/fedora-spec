@@ -7,7 +7,7 @@ Summary: Logging library for C applications
 Name: yder
 Version: 1.4.20
 Release: 1%{?dist}
-License: LGPL2.1
+License: LGPL-2.1-or-later
 URL: https://github.com/babelouest/yder
 ExclusiveArch: x86_64 aarch64
 

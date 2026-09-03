@@ -7,7 +7,7 @@ Name: sequencer64
 Version: 0.97.1
 Release: 4%{?dist}
 Summary: MIDI sequencer
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/ahlstromcj/sequencer64
 ExclusiveArch: x86_64 aarch64
 

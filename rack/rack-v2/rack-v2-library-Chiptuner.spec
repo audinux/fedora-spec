@@ -18,7 +18,7 @@ Name: rack-v2-Chiptuner
 Version: 2.0.0
 Release: 2%{?dist}
 Summary: Chiptuner plugin for Rack
-License: GPLv2+
+License: GPL-2.0-or-later
 URL: https://github.com/The-Great-Assyr/Chiptuner
 ExclusiveArch: x86_64 aarch64
 

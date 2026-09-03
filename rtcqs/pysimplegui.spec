@@ -7,7 +7,7 @@ Name: PySimpleGUI
 Version: 4.60.3
 Release: 1%{?dist}
 Summary: Super-simple to create custom GUI
-License: LGPLv3+
+License: LGPL-3.0-or-later
 URL: https://github.com/PySimpleGUI/PySimpleGUI
 ExclusiveArch: x86_64 aarch64
 

@@ -28,7 +28,7 @@
 Name: mod-host
 Version: 0.10.6.%{shortcommit0}
 Release: 1%{?dist}
-License: GPL-3.0
+License: GPL-3.0-or-later
 Summary: LV2 host for Jack controllable via socket or command line
 URL: https://github.com/moddevices/mod-host
 ExclusiveArch: x86_64 aarch64

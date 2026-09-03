@@ -14,7 +14,7 @@ Name: ladspa-wubflip
 Summary: WubFlip ladspa effect plugin
 Version: 1
 Release: 1%{?dist}
-License: GPL-2.0
+License: GPL-2.0-or-later
 URL: http://www.alexs.org/ladspa/
 
 Source0: https://github.com/ycollet/ladspa-wubflip/archive/%{commit0}.tar.gz#/ladspa-wubflip-%{commit0}.tar.gz

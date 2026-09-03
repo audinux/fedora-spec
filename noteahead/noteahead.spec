@@ -7,7 +7,7 @@ Name: noteahead
 Version: 7.2.1
 Release: 1%{?dist}
 Summary: A simple MIDI tracker and sequencer
-License: GPLv2+
+License: GPL-2.0-or-later
 URL: https://github.com/juzzlin/Noteahead
 ExclusiveArch: x86_64 aarch64
 

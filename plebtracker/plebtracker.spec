@@ -12,7 +12,7 @@ Summary: Chiptune tracker for making chiptune-like music on a modern computer.
 Name: plebtracker
 Version: 0.1
 Release: 3%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/danfrz/PLEBTracker
 ExclusiveArch: x86_64 aarch64
 

@@ -9,7 +9,7 @@ Summary: QMidiControl is a virtual MIDI control pad
 Name: qmidicontrol
 Version: 0.0.1
 Release: 1%{?dist}
-License: GPLv2+
+License: GPL-2.0-or-later
 URL: https://sourceforge.net/projects/alsamodular/
 ExclusiveArch: x86_64 aarch64
 

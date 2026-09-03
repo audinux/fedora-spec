@@ -9,7 +9,7 @@ Release: 1%{?dist}
 Summary: A software MIDI controller which can send MIDI to any input device
 URL: https://github.com/kushview/virtual-midi-controller
 ExclusiveArch: x86_64 aarch64
-License: GPL3
+License: GPL-3.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

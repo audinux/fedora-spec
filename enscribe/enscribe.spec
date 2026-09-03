@@ -7,7 +7,7 @@ Summary: Enscribe creates digital audio watermark images from photgraphic images
 Name: enscribe
 Version: 0.1.0
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://www.coppercloudmusic.com/enscribe/
 ExclusiveArch: x86_64 aarch64
 

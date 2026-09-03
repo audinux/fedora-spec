@@ -7,7 +7,7 @@ Summary: LinuxSampler Control Protocol library
 Name: liblscp
 Version: 0.9.4
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://www.linuxsampler.org
 ExclusiveArch: x86_64 aarch64
 

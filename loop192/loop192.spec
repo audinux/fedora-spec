@@ -7,7 +7,7 @@ Name: lv2-loop192
 Version: 0.1.0
 Release: 1%{?dist}
 Summary: minimal live MIDI looper
-License: GPL-3.0
+License: GPL-3.0-or-later
 URL: https://framagit.org/jean-emmanuel/loop192
 ExclusiveArch: x86_64 aarch64
 

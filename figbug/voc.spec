@@ -7,7 +7,7 @@ Name: voc
 Version: 1.1.10
 Release: 3%{?dist}
 Summary: wacky vocal synth VST
-License: LGPLv2+
+License: LGPL-2.1-or-later
 URL: https://github.com/FigBug/Voc
 ExclusiveArch: x86_64 aarch64
 

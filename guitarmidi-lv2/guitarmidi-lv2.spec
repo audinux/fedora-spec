@@ -11,7 +11,7 @@ Release: 3%{?dist}
 Summary: A concept for guitar to midi as an lv2 plugin
 URL: https://github.com/geraldmwangi/GuitarMidi-LV2
 ExclusiveArch: x86_64 aarch64
-License: LGPLv2+
+License: LGPL-2.1-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

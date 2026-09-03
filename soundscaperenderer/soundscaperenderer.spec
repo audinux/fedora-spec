@@ -7,7 +7,7 @@ Name: soundscaperenderer
 Version: 0.6.0
 Release: 1%{?dist}
 Summary: SoundScape Renderer
-License: GPLv4+
+License: GPL-3.0-or-later
 URL: https://github.com/SoundScapeRenderer/ssr
 ExclusiveArch: x86_64 aarch64
 

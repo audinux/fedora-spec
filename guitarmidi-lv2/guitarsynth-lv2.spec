@@ -9,7 +9,7 @@ Release: 1%{?dist}
 Summary: GuitarSynth is a set of wavetable synths controlled by a monophonic pitchdetector
 URL: https://github.com/geraldmwangi/GuitarSynth-DPF
 ExclusiveArch: x86_64 aarch64
-License: LGPLv2+
+License: LGPL-2.1-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

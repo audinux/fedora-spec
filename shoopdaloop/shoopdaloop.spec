@@ -9,7 +9,7 @@ Name: shoopdaloop
 Version: 0.1
 Release: 2%{?dist}
 Summary: A (live) looping application with DAW elements.
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/SanderVocke/shoopdaloop
 ExclusiveArch: x86_64 aarch64
 

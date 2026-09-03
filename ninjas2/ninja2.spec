@@ -13,7 +13,7 @@ Summary: A sample slicer audio plugin
 Name: ninjas2
 Version: 0.2.0
 Release: 3%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/clearly-broken-software/ninjas2
 ExclusiveArch: x86_64 aarch64
 

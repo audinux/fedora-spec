@@ -6,7 +6,7 @@
 Name: mandelbulber2
 Version: 2.34
 Release: 1%{?dist}
-License: GPL-3.0
+License: GPL-3.0-or-later
 Summary: 3D Mandelbrot renderer
 URL: https://mandelbulber.com/
 ExclusiveArch: x86_64 aarch64

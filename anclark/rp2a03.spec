@@ -9,7 +9,7 @@ Name: rp2a03
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: Nintendo RP2A03 Synthesizer
-License: LGPL-2.1
+License: LGPL-2.1-or-later
 URL: https://github.com/AnClark/RP2A03
 ExclusiveArch: x86_64 aarch64
 
@@ -44,14 +44,14 @@ Nintendo RP2A03 Synthesizer
 
 %package -n license-%{name}
 Summary: License and documentation for %{name}
-License: LGPL-2.1
+License: LGPL-2.1-or-later
 
 %description -n license-%{name}
 License and documentation for %{name}
 
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
-License: LGPL-2.1
+License: LGPL-2.1-or-later
 Requires: license-%{name}
 
 %description -n vst3-%{name}
@@ -59,7 +59,7 @@ VST3 version of %{name}
 
 %package -n vst-%{name}
 Summary: VST2 version of %{name}
-License: LGPL-2.1
+License: LGPL-2.1-or-later
 Requires: license-%{name}
 
 %description -n vst-%{name}
@@ -67,7 +67,7 @@ VST2 version of %{name}
 
 %package -n lv2-%{name}
 Summary: LV2 version of %{name}
-License: LGPL-2.1
+License: LGPL-2.1-or-later
 Requires: license-%{name}
 
 %description -n lv2-%{name}

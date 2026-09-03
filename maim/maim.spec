@@ -7,7 +7,7 @@ Name: maim
 Version: 1.1.1
 Release: 2%{?dist}
 Summary: Audio plugin for custom MP3 distortion and digital glitches
-License: GPL-3.0
+License: GPL-3.0-or-later
 URL: https://github.com/ArdenButterfield/Maim
 ExclusiveArch: x86_64 aarch64
 
@@ -52,7 +52,7 @@ gamut of digital distortion, from the realistic to the fantastical.
 
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
-License: GPL-3.0
+License: GPL-3.0-or-later
 Requires: %{name}
 
 %description -n vst3-%{name}

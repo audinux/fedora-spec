@@ -7,7 +7,7 @@ Summary: Replaygain functionality for WAV audio files
 Name: wavegain
 Version: 1.3.2
 Release: 1%{?dist}
-License: LGPL
+License: LGPL-2.0-or-later
 URL: https://github.com/MestreLion/wavegain
 ExclusiveArch: x86_64 
 

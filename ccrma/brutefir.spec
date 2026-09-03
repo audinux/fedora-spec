@@ -7,7 +7,7 @@ Summary: Generic FIR filter (convolution) engine
 Name: brutefir
 Version: 1.0o
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://torger.se/anders/brutefir.html
 ExclusiveArch: x86_64 aarch64
 Source0: https://torger.se/anders/files/brutefir-%{version}.tar.gz

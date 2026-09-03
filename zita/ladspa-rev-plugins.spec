@@ -7,7 +7,7 @@ Summary: A reverberation LADSPA plugin
 Name: REV-plugins
 Version: 0.8.1
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 ExclusiveArch: x86_64 aarch64
 

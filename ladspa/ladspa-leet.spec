@@ -7,7 +7,7 @@ Name: ladspa-leet
 Version: 0.2
 Release: 1%{?dist}
 Summary: LADSPA equalizers and chorus plugin
-License: GPL-2.0+
+License: GPL-2.0-or-later
 URL: https://code.google.com/archive/p/leetplugins/
 ExclusiveArch: x86_64 aarch64
 

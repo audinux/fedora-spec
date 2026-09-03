@@ -12,7 +12,7 @@ Name: ladspa-aweight
 Summary: aweight LADSPA plugin
 Version: 0.3.0
 Release: 1%{?dist}
-License: GPL-2.0
+License: GPL-2.0-or-later
 URL: http://users.skynet.be/solaris/linuxaudio/downloads
 
 Vendor:       Audinux

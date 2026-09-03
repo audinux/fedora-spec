@@ -8,7 +8,7 @@ Version: 1.0
 Release: 8%{?dist}
 Summary: Audio tuned kernel boot entries for Fedora
 BuildArch: noarch
-License: GPLv3
+License: GPL-3.0-or-later
 
 Source0: 90-audio-tuned.install
 Source1: kernel-audio-tuned.sysconfig

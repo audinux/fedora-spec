@@ -7,7 +7,7 @@ Summary: Full quality multichannel audio over a local IP network
 Name: zita-ajbridge
 Version: 0.8.4
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 ExclusiveArch: x86_64 aarch64
 

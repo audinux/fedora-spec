@@ -7,7 +7,7 @@ Summary: Provides A/B processing with file input and output.
 Name: octofile
 Version: 0.3.2
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 ExclusiveArch: x86_64 aarch64
 

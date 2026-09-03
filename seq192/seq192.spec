@@ -7,7 +7,7 @@ Name: seq192
 Version: 1.8.2
 Release: 1%{?dist}
 Summary: MIDI sequencer based on seq24 with less features and more swag
-License: GPL
+License: GPL-2.0-or-later
 URL: https://framagit.org/jean-emmanuel/seq192
 ExclusiveArch: x86_64 aarch64
 

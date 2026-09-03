@@ -7,7 +7,7 @@ Summary: A stereo width LADSPA plugin
 Name: STE-plugins
 Version: 0.0.2
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 ExclusiveArch: x86_64 aarch64
 

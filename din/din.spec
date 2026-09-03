@@ -10,7 +10,7 @@ Summary: DIN is a synth of a 3rd kind
 Name: din
 Version: %din_vers_major.%din_vers_minor.%din_vers_patch
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://dinisnoise.org/
 ExclusiveArch: x86_64 aarch64
 

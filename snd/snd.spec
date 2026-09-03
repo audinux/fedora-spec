@@ -18,7 +18,7 @@ Summary: A sound editor (%{pkgver}, %{snd_date})
 Name: snd
 Version: %{pkgver}
 Release: 4%{?dist}
-License: LGPL
+License: LGPL-2.0-or-later
 URL: https://ccrma.stanford.edu/software/snd/
 ExclusiveArch: x86_64 aarch64
 

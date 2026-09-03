@@ -7,7 +7,7 @@ Name: seq42
 Version: 2.2.1
 Release: 1%{?dist}
 Summary: MIDI sequencer
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/Stazed/seq42
 ExclusiveArch: x86_64 aarch64
 

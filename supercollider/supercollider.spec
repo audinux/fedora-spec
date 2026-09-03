@@ -7,7 +7,7 @@ Name: supercollider
 Summary: Object oriented programming environment for real-time audio and video processing
 Version: 3.14.1
 Release: 6%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://supercollider.github.io/
 ExclusiveArch: x86_64 aarch64
 

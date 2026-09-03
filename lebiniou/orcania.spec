@@ -7,7 +7,7 @@ Summary: Potluck with different functions for different purposes that can be sha
 Name: orcania
 Version: 2.3.3
 Release: 1%{?dist}
-License: LGPL2.1
+License: LGPL-2.1-or-later
 URL: https://github.com/babelouest/orcania
 ExclusiveArch: x86_64 aarch64
 

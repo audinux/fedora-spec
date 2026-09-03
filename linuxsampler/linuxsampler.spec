@@ -7,7 +7,7 @@ Summary: Linux Sampler
 Name: linuxsampler
 Version: 2.1.1
 Release: 2%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://www.LinuxSampler.org/
 ExclusiveArch: x86_64 aarch64
 

@@ -7,7 +7,7 @@ Name: redrose
 Version: 0.6.11
 Release: 2%{?dist}
 Summary: ABC notation music integrated environment
-License: GPL-3.0
+License: GPL-3.0-or-later
 URL: http://brouits.free.fr/redrose
 ExclusiveArch: x86_64 aarch64
 

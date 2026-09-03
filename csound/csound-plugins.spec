@@ -8,7 +8,7 @@ Version: 1.0.2
 Release: 1%{?dist}
 Summary: Csound plugins which were originally in the main repository, and for new plugins as well.
 URL: https://github.com/csound/plugins
-License: LGPLv2+
+License: LGPL-2.1-or-later
 
 # Usage: ./csound-plugins-source.sh <TAG>
 #        ./csound-plugins-source.sh 1.0.2

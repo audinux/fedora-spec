@@ -13,12 +13,12 @@ Name: python-importlib-resources
 Version: 5.10.2
 Release: 1%{?dist}
 Summary: a backport of Python standard library importlib.resources module for older Pythons.
-
-License: ASL 2.1
+License: Apache-2.0
 URL: https://github.com/python/importlib_resources
-ExclusiveArch: x86_64 aarch64
-Source0: %{pypi_source importlib_resources}
 BuildArch: noarch
+ExclusiveArch: x86_64 aarch64
+
+Source0: %{pypi_source importlib_resources}
 
 BuildRequires: python3-devel
 BuildRequires: pyproject-rpm-macros

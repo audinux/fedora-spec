@@ -7,7 +7,7 @@ Name: ladspa-omins
 Version: 0.2.0
 Release: 1%{?dist}
 Summary: Omins is a collection of LADSPA plugins geared at modular synthesizers.
-License: GPL-2.0+
+License: GPL-2.0-or-later
 URL: https://www.nongnu.org/om-synth/omins.html
 ExclusiveArch: x86_64 aarch64
 

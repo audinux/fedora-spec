@@ -12,7 +12,7 @@ Name: ladspa-wasp
 Summary: LADSPA Wave Sculpting Plugins
 Version: 0.1.5
 Release: 1%{?dist}
-License: GPL-2.0
+License: GPL-2.0-or-later
 URL: http://artemiolabs.com/software/wasp/
 
 Vendor:       Audinux

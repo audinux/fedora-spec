@@ -6,7 +6,7 @@ Name: kernel-rt-tests
 Version: 2.10
 Release: 2%{?dist}
 Summary: Various programs that test various rt-linux features
-License: GPL2
+License: GPL-2.0-or-later
 URL: https://git.kernel.org/pub/scm/utils/rt-tests/rt-tests
 ExclusiveArch: x86_64 aarch64
 

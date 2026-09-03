@@ -7,7 +7,7 @@ Name: SN76489
 Version: 1.1.10
 Release: 4%{?dist}
 Summary: Sega Master System Sound Chip VST
-License: LGPLv2+
+License: LGPL-2.1-or-later
 URL: https://github.com/FigBug/SN76489
 ExclusiveArch: x86_64 aarch64
 

@@ -9,7 +9,7 @@ Release: 1%{?dist}
 Summary: This is the community version of Element, a modular LV2/VST/VST3/LADSPA audio plugin host.
 URL: https://github.com/kushview/Element
 ExclusiveArch: x86_64 aarch64
-License: GPL3
+License: GPL-3.0-or-later
 
 Vendor:       Audinux
 Distribution: Audinux

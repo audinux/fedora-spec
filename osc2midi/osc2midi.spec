@@ -12,7 +12,7 @@ Name: osc2midi
 Version: 0.2.5
 Release: 1%{?dist}
 Summary: OSC2MIDI is a highly configurable OSC to jack MIDI (and back).
-License: GPLv2+ and GPLv2 and (GPLv2+ or MIT) and GPLv3+ and MIT and LGPLv2+ and (LGPLv2+ with exceptions) and Copyright only
+License: GPL-3.0-or-later
 URL: https://github.com/ssj71/OSC2MIDI
 ExclusiveArch: x86_64 aarch64
 

@@ -12,7 +12,7 @@ Name: ladspa-foo-plugins
 Summary: Foo plugins - a limiter and a special dynamics processor
 Version: 1.2.1
 Release: 1%{?dist}
-License: GPL-2.0
+License: GPL-2.0-or-later
 URL: http://www.studionumbersix.com/foo/
 ExclusiveArch: x86_64 aarch64
 

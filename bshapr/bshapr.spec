@@ -7,7 +7,7 @@ Summary: Beat / envelope shaper LV2 plugin
 Name: lv2-BShapr
 Version: 0.13
 Release: 2%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: https://github.com/sjaehn/BShapr
 ExclusiveArch: x86_64 aarch64
 

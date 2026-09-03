@@ -7,7 +7,7 @@ Name: ladspa-pvoc
 Version: 0.1.12
 Release: 1%{?dist}
 Summary: LADSPA plugins for time compression/expansion of sound data making use of the phase-vocoding technique
-License: GPL-3.0+
+License: GPL-3.0-or-later
 URL: http://quitte.de/dsp/pvoc.html
 ExclusiveArch: x86_64 aarch64
 

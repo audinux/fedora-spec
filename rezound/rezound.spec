@@ -12,7 +12,7 @@ Summary: Audio Editing Package
 Name: rezound
 Version: 0.13.1.%{shortcommit0}
 Release: 5%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://rezound.sourceforge.net/
 ExclusiveArch: x86_64 aarch64
 

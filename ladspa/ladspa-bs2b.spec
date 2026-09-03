@@ -13,7 +13,7 @@ Name: ladspa-bs2b
 Summary: Bauer stereophonic-to-binaural DSP LADSPA plugins
 Version: 0.9.1
 Release: 1%{?dist}
-License: GPL-2.0
+License: GPL-2.0-or-later
 URL: https://bs2b.sourceforge.net/
 ExclusiveArch: x86_64 aarch64
 

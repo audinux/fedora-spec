@@ -7,7 +7,7 @@ Summary: Small app designed to measure audio test signals and in particular nois
 Name: jnoisemeter
 Version: 0.4.1
 Release: 1%{?dist}
-License: GPL
+License: GPL-2.0-or-later
 URL: http://kokkinizita.linuxaudio.org/linuxaudio/
 ExclusiveArch: x86_64 aarch64
 

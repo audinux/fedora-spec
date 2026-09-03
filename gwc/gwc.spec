@@ -10,7 +10,7 @@ Name: gtk-wave-cleaner
 Version: %{gwc_version}.%{gwc_subversion}
 Release: 1%{?dist}
 Summary: Gtk Wave Cleaner -- audio restoration application
-License: GPL
+License: GPL-2.0-or-later
 URL: https://gwc.sourceforge.net/
 ExclusiveArch: x86_64 aarch64
 
