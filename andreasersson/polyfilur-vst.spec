@@ -9,7 +9,7 @@ Name: polyfilur
 Version: 0.2.0
 Release: 1%{?dist}
 Summary: Virtual analog synthesizer VST3 plug-in
-License: GPL-3.0-or-Later
+License: GPL-3.0-or-later
 URL: https://gitlab.com/andreasersson/polyfilur-vst
 ExclusiveArch: x86_64 aarch64
 

@@ -77,7 +77,7 @@ URL: https://www.python.org/
 Version: %{general_version}%{?prerel:~%{prerel}}
 Release: 43%{?dist}
 %if %{with rpmwheels}
-License: Python
+License: PSF-2.0
 %else
 # Python is Python
 # setuptools is MIT and bundles:
@@ -108,7 +108,7 @@ License: Python
 #   certifi: MPLv2.0
 #   setuptools: MIT
 #   webencodings: BSD
-License: Python and MIT and Apache-2.0 and BSD and ISC and LGPL-2.0-only and MPL-2.0 and (Apache-2.0 or BSD)
+License: PSF-2.0 AND MIT AND Apache-2.0 AND BSD-3-Clause AND ISC AND LGPL-2.0-only AND MPL-2.0 AND (Apache-2.0 OR BSD-3-Clause)
 %endif
 
 # Python 2 is deprecated in Fedora 30+, see:

@@ -9,7 +9,7 @@ Release: 1%{?dist}
 Summary: Realtime DDSP Neural Synthesizer and Effect
 URL: https://github.com/tank-trax/ddsp-vst
 ExclusiveArch: x86_64
-License: Apache-v2
+License: Apache-2.0
 
 Vendor:       Audinux
 Distribution: Audinux

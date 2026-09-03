@@ -9,7 +9,7 @@ Name: drumelidrum
 Version: 0.2.0
 Release: 1%{?dist}
 Summary: Drum machine VST3 plug-in
-License: GPL-3.0-or-Later
+License: GPL-3.0-or-later
 URL: https://gitlab.com/andreasersson/drumelidrum-vst
 ExclusiveArch: x86_64 aarch64
 

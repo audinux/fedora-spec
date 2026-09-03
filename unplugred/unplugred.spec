@@ -9,7 +9,7 @@ Name: unplugred
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: A collection of VST plugins
-License: AGPLv3-or-later
+License: AGPL-3.0-or-later
 URL: https://github.com/unplugred/vsts
 ExclusiveArch: x86_64 aarch64
 
@@ -150,7 +150,7 @@ A collection of VST plugins:
 
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
-License: AGPLv3-or-later
+License: AGPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n vst3-%{name}
@@ -158,7 +158,7 @@ VST3 version of %{name}
 
 %package -n clap-%{name}
 Summary: CLAP version of %{name}
-License: AGPLv3-or-later
+License: AGPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n clap-%{name}
@@ -166,7 +166,7 @@ CLAP version of %{name}
 
 %package -n license-%{name}
 Summary: License and documentation for %{name}
-License: AGPLv3-or-later
+License: AGPL-3.0-or-later
 
 %description -n license-%{name}
 License and documentation for %{name}

@@ -9,7 +9,7 @@ Name: spicefx
 Version: 0.0.1
 Release: 1%{?dist}
 Summary: A analog modeling DSP plugin with a lot of saturation models and cab simulation
-License: BSD-3-Claude
+License: BSD-3-Clause
 URL: https://github.com/DatanoiseTV/spice-oss
 ExclusiveArch: x86_64 aarch64
 

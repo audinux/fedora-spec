@@ -14,7 +14,7 @@ Version: 4.5.6
 Release: 3%{?dist}
 Summary: Processing Development Environment (PDE)
 # Core is LGPL, others are GPL
-License: GPL-2.0-or-later and GPL-2.0-or-later
+License: GPL-2.0-or-later
 URL: https://processing.org/
 ExclusiveArch: x86_64 aarch64
 

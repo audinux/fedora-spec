@@ -7,7 +7,7 @@ Name: loopino
 Version: 0.9.6
 Release: 2%{?dist}
 Summary: A Minimalist Sampler for Linux
-License: BSD
+License: BSD-3-Clause
 URL: https://github.com/brummer10/Loopino
 ExclusiveArch: x86_64 aarch64
 
@@ -46,14 +46,14 @@ design, live performance, or creative sampling experiments
 
 %package -n license-%{name}
 Summary: License and documentation for %{name}
-License: BSD
+License: BSD-3-Clause
 
 %description -n license-%{name}
 License and documentation for %{name}
 
 %package -n clap-%{name}
 Summary: CLAP version of %{name}
-License: BSD
+License: BSD-3-Clause
 Requires: license-%{name}
 
 %description -n clap-%{name}

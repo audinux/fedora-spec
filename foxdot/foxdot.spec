@@ -13,7 +13,7 @@ Version: 0.8.11
 Release: 2%{?dist}
 Epoch: 1
 Summary: Python3 programming environment providing a fast and user-friendly abstraction to SuperCollider.
-License: Creative Commons Attribution-ShareAlike 4.0 International Public License
+License: CC-BY-SA-4.0
 URL: https://github.com/Qirky/FoxDot
 ExclusiveArch: x86_64 aarch64
 

@@ -7,7 +7,7 @@ Name: virtual-playing-orchestra
 Version: 3.2.4
 Release: 1%{?dist}
 Summary: Orchestral sample library
-License: Freely Available and CC-BY-SA Creative Commons Sampling Plus 1.0 and CC0 and CC-BY-NC and Public Domain
+License: LicenseRef-Freely-Available AND LicenseRef-Creative-Commons-Sampling-Plus-1.0 AND CC0-1.0 AND LicenseRef-CC-BY-NC AND LicenseRef-Callaway-Public-Domain
 URL: http://virtualplaying.com/virtual-playing-orchestra/
 
 # For a breakdown of the licensing, see http://virtualplaying.com/virtual-playing-orchestra/#licensing
@@ -55,7 +55,7 @@ instruments for woodwinds, brass, strings and percussion.
 
 %package iowa
 Summary: Iowa sound library
-License: Freely Available
+License: LicenseRef-Freely-Available
 URL: http://theremin.music.uiowa.edu/
 Requires: virtual-playing-orchestra
 
@@ -66,7 +66,7 @@ University of Iowa Electronic Music sound library.
 Summary: Mattias Westlund additional samples
 # Horns/license.txt
 # ViolaSect/readme.txt
-License: CC-BY-SA and Public Domain
+License: CC-BY-SA-4.0-4.0 AND LicenseRef-Callaway-Public-Domain
 URL: https://mattiaswestlund.net/samples/
 Requires: virtual-playing-orchestra
 
@@ -75,7 +75,7 @@ Additional samples from Mattias Westlund.
 
 %package nbo
 Summary: NBO sound library
-License: CC-BY-SA
+License: CC-BY-SA-4.0
 URL: https://www.bandshed.net/sounds/sfz/
 Requires: virtual-playing-orchestra
 
@@ -88,7 +88,7 @@ Summary: NBO sound library 2
 # Violin/ViolinSect/license.txt
 # Trumpet/license.txt
 # Cello/CelloSect/license.txt
-License: CC-BY-SA and Creative Commons Sampling Plus 1.0 and CC0 and CC-BY and CC-BY-NC
+License: CC-BY-SA-4.0-4.0 AND LicenseRef-Creative-Commons-Sampling-Plus-1.0 AND CC0-1.0 AND CC-BY-4.0 AND LicenseRef-CC-BY-NC
 URL: https://www.bandshed.net/sounds/sfz/
 Requires: virtual-playing-orchestra
 
@@ -99,7 +99,7 @@ No Budget Orchestra 2 sound library.
 Summary: Philharmonia sound library
 # License from the Wayback Machine:
 # https://web.archive.org/web/20161206161554/http://www.philharmonia.co.uk/explore/sound_samples/viola
-License: CC-BY-SA
+License: CC-BY-SA-4.0
 URL: https://www.philharmonia.co.uk/explore/make_music
 Requires: virtual-playing-orchestra
 
@@ -108,7 +108,7 @@ Philharmonia Orchestra sound library.
 
 %package sso
 Summary: SSO sound library
-License: Creative Commons Sampling Plus 1.0
+License: LicenseRef-Creative-Commons-Sampling-Plus-1.0
 URL: https://sso.mattiaswestlund.net/
 Requires: virtual-playing-orchestra
 
@@ -117,7 +117,7 @@ Sonatina Symphonic Orchestra sound library.
 
 %package stamperadam
 Summary: Stamperadam sound library
-License: CC0
+License: CC0-1.0
 URL: https://freesound.org/people/stamperadam/
 Requires: virtual-playing-orchestra
 
@@ -126,7 +126,7 @@ Stamperadam sound library.
 
 %package vsco-2-ce
 Summary: VSCO 2 CE sound library
-License: CC0
+License: CC0-1.0
 URL: https://vis.versilstudios.com/vsco-community.html
 Requires: virtual-playing-orchestra
 

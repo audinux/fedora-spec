@@ -7,7 +7,7 @@ Name: vst3sdk
 Version: 3.8.1
 Release: 1%{?dist}
 Summary: VST 3 Plug-In SDK
-License: GPL-3.0-or-Later
+License: GPL-3.0-or-later
 URL: https://github.com/steinbergmedia/vst3sdk
 ExclusiveArch: x86_64 aarch64
 

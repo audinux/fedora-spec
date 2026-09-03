@@ -9,7 +9,7 @@ Release: 29%{?dist}
 Summary: A collection of LV2 plugins from Invada Records
 
 # The file plugingui/lv2_ui.h is LGPLv2+. The rest are GPLv2+.
-License: GPL-2.0-or-later and LGPL-2.0-or-later
+License: GPL-2.0-or-later AND LGPL-2.0-or-later
 URL: http://www.invadarecords.com/Downloads.php?ID=00000264
 ExclusiveArch: x86_64 aarch64
 

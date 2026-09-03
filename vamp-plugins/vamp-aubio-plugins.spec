@@ -7,7 +7,7 @@ Name: vamp-aubio-plugins
 Version: 0.5.1
 Release: 2%{?dist}
 Summary: aubio plugins for Vamp
-License: GLPv2
+License: GPL-2.0-only
 URL: https://github.com/aubio/vamp-aubio-plugins
 ExclusiveArch: x86_64 aarch64
 

@@ -9,7 +9,7 @@ Name: xsimd8
 Version: 8.1.0
 Release: 2%{?dist}
 Summary: C++ wrappers for SIMD intrinsics
-License: BSD
+License: BSD-3-Clause
 URL: https://xsimd.readthedocs.io/
 ExclusiveArch: x86_64 aarch64
 

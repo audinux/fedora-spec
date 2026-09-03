@@ -8,7 +8,7 @@ Version: 0.991
 Release: 1%{?dist}
 Summary: Some JSFX effects from Cockos
 URL: https://www.cockos.com/jsfx/
-License: JESUSONIC-SOFTWARE-LICENSE-AGREEMENT
+License: LicenseRef-JESUSONIC-SOFTWARE-LICENSE-AGREEMENT
 
 BuildArch: noarch
 

@@ -9,7 +9,7 @@ Summary: Game and tools oriented refactored version of GLU tesselator.
 Name: libtess2
 Version: 1.0.2
 Release: 1%{?dist}
-License: BSD
+License: BSD-3-Clause
 URL: https://github.com/memononen/libtess2
 ExclusiveArch: x86_64 aarch64
 

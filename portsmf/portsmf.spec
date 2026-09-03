@@ -7,7 +7,7 @@ Summary: Port Standard MIDI File - portable library for reading/writing Standard
 Name: portsmf
 Version: 0.1
 Release: 2%{?dist}
-License: MIT-like
+License: LicenseRef-MIT-like
 URL: http://sourceforge.net/p/portmedia/wiki/portsmf/
 ExclusiveArch: x86_64 aarch64
 

@@ -13,7 +13,7 @@ Version: 2.5.10
 Release: 7%{?dist}
 Summary: Audio plugin host
 Epoch: 1
-License: GPL-2.0-or-later and BSD and Boost and ISC and MIT and zlib
+License: GPL-2.0-or-later AND BSD-3-Clause AND BSL-1.0 AND ISC AND MIT AND Zlib
 URL: https://github.com/falkTX/Carla
 ExclusiveArch: x86_64
 

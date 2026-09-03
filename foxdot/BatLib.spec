@@ -13,7 +13,7 @@ Version: 0.1
 Release: 2%{?dist}
 Epoch: 1
 Summary: Various helper classes I use, and external methods my other Quarks use.
-License: Creative Commons Attribution-ShareAlike 4.0 International Public License
+License: CC-BY-SA-4.0
 URL: https://github.com/supercollider-quarks/%{name}
 ExclusiveArch: x86_64 aarch64
 

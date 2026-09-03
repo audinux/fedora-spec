@@ -7,7 +7,7 @@ Name: azi
 Version: 1.0
 Release: 2%{?dist}
 Summary: Experimental azimuth-based stereo plan plugin
-License: GLPv2
+License: GPL-2.0-only
 URL: https://code.soundsoftware.ac.uk/projects/azi
 ExclusiveArch: x86_64 aarch64
 

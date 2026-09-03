@@ -7,7 +7,7 @@ Summary: Multimachine jam sessions over the internet
 Name: jacktrip
 Version: 3.0.1
 Release: 2%{?dist}
-License: STK
+License: LicenseRef-STK
 URL: https://ccrma.stanford.edu/software/jacktrip/
 ExclusiveArch: x86_64 aarch64
 

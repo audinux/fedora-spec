@@ -8,7 +8,7 @@ Name: pymarshal
 Version: 2.2.0
 Release: 1%{?dist}
 Summary: Python data serialization library
-License: BSD-2
+License: BSD-2-Clause
 URL: https://github.com/stargateaudio/pymarshal
 ExclusiveArch: x86_64 aarch64
 

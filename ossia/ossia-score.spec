@@ -18,7 +18,7 @@ Release: 3%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL: https://github.com/OSSIA/score
 ExclusiveArch: x86_64
-License: CeCILL License v2
+License: CECILL-2.0
 
 Vendor:       Audinux
 Distribution: Audinux

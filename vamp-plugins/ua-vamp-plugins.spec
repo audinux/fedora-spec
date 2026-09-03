@@ -7,7 +7,7 @@ Name: ua-vamp-plugins
 Version: 2.0
 Release: 2%{?dist}
 Summary: UAPlugins are a set of VAMP plugins developed by the Computer Music Laboratory team
-License: GLPv2
+License: GPL-2.0-only
 URL: https://github.com/pertusa/UAVampPlugins
 ExclusiveArch: x86_64 aarch64
 

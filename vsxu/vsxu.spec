@@ -24,7 +24,7 @@ Name: vsxu
 Version: 0.6.3
 Release: 2%{?dist}
 Summary: Visual programming language animation tool
-License: GPL-3.0-or-later and LGPL-3.0-or-later
+License: GPL-3.0-or-later AND LGPL-3.0-or-later
 URL: http://www.vsxu.com/
 ExclusiveArch: x86_64 aarch64
 

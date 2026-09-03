@@ -7,7 +7,7 @@ Name: tipic
 Version: 1.0
 Release: 2%{?dist}
 Summary: Tipic - Tibre-Invariant Pitch Chroma
-License: GLPv2
+License: GPL-2.0-only
 URL: https://code.soundsoftware.ac.uk/projects/tipic
 ExclusiveArch: x86_64 aarch64
 

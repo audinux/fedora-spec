@@ -119,7 +119,7 @@ PortAudio plugin for Csound
 
 %package manual
 Summary: Csound manual
-License: GFDL
+License: GFDL-1.3-only
 Requires: %{name} = %{version}-%{release}
 BuildArch: noarch
 

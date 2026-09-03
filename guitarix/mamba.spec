@@ -7,7 +7,7 @@ Name: mamba
 Version: 2.6
 Release: 4%{?dist}
 Summary: Virtual Midi Keyboard for Jack Audio Connection Kit
-License: BSD
+License: BSD-3-Clause
 URL: https://github.com/brummer10/Mamba
 ExclusiveArch: x86_64 aarch64
 

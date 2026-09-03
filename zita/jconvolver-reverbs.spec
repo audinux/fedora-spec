@@ -7,7 +7,7 @@ Summary: Impulse Responses for Jconvolver
 Name: jconvolver-reverbs
 Version: 0.8.7
 Release: 1%{?dist}
-License: Unknown
+License: LicenseRef-unknown
 URL: http://kokkinizita.linuxaudio.org/
 ExclusiveArch: x86_64 aarch64
 

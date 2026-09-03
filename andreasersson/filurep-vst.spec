@@ -9,7 +9,7 @@ Name: filurep
 Version: 0.2.0
 Release: 1%{?dist}
 Summary: Electric piano VST3 plug-in
-License: GPL-3.0-or-Later
+License: GPL-3.0-or-later
 URL: https://gitlab.com/andreasersson/filurep-vst
 ExclusiveArch: x86_64 aarch64
 

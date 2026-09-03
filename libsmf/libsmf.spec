@@ -9,7 +9,7 @@ Summary: LibSMF is a BSD-licensed C library for handling SMF ("*.mid") files
 Name: libsmf
 Version: 1.4
 Release: 8%{?dist}
-License: BSD
+License: BSD-3-Clause
 URL: https://github.com/stump/%{name}
 ExclusiveArch: x86_64 aarch64
 

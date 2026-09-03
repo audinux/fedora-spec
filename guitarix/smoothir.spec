@@ -7,7 +7,7 @@ Name: smoothir
 Version: 0.3
 Release: 1%{?dist}
 Summary: Creating impulse responses (IRs) through spectral matching of two audio files
-License: BSD
+License: BSD-3-Clause
 URL: https://github.com/brummer10/SmoothIR
 ExclusiveArch: x86_64 aarch64
 
@@ -46,14 +46,14 @@ The result is an IR that works very well for creative applications (e.g. guitars
 
 %package -n license-%{name}
 Summary: License and documentation for %{name}
-License: BSD
+License: BSD-3-Clause
 
 %description -n license-%{name}
 License and documentation for %{name}
 
 %package -n clap-%{name}
 Summary: CLAP version of %{name}
-License: BSD
+License: BSD-3-Clause
 Requires: license-%{name}
 
 %description -n clap-%{name}

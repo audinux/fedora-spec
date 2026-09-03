@@ -9,7 +9,7 @@ Name: improviz
 Summary: A live-coded visual performance tool
 Version: 1.1
 Release: 3%{?dist}
-License: BSD
+License: BSD-3-Clause
 URL: https://codeberg.org/rumblesan/improviz
 ExclusiveArch: x86_64 aarch64
 

@@ -7,7 +7,7 @@ Name: midimonster
 Version: 0.6
 Release: 2%{?dist}
 Summary: Multi-protocol translation software (ArtNet, MIDI, OSC, JACK MIDI/CV ...)
-License: BSD
+License: BSD-3-Clause
 URL: https://github.com/cbdevnet/midimonster
 ExclusiveArch: x86_64 aarch64
 

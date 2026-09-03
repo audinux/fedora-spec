@@ -7,7 +7,7 @@ Name: miredu
 Version: 1.0
 Release: 2%{?dist}
 Summary: A Vamp plugin implementing basic audio descriptors for educational purposes
-License: GLPv2
+License: GPL-2.0-only
 URL: https://github.com/MTG/miredu
 ExclusiveArch: x86_64 aarch64
 

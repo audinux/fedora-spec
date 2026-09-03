@@ -8,7 +8,7 @@ Name: hivelytracker
 Version: 1.9
 Release: 1%{?dist}
 Summary: Chip music tracker based on AHX
-License: BSD3
+License: BSD-3-Clause
 URL: https://github.com/pete-gordon/hivelytracker
 ExclusiveArch: x86_64 aarch64
 

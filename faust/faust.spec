@@ -9,7 +9,7 @@ Release: 39%{?dist}
 Summary: Compiled language for real-time audio signal processing
 # Examples are BSD
 # The rest is GPLv2+
-License: GPL-2.0-or-later and BSD
+License: GPL-2.0-or-later AND BSD-3-Clause
 URL: https://faust.grame.fr
 ExclusiveArch: x86_64 aarch64
 
@@ -68,7 +68,7 @@ writing programs with faust.
 
 %package osclib
 Summary: OSCLib Library
-License: GPL-2.0-or-later and MIT
+License: GPL-2.0-or-later AND MIT
 Requires: %{name} = %{version}-%{release}
 
 %description osclib
@@ -77,7 +77,7 @@ signal processing. This package provides osclib.
 
 %package osclib-devel
 Summary: Headers for the OSCLib Library
-License: GPL-2.0-or-later and MIT
+License: GPL-2.0-or-later AND MIT
 Requires: %{name}-osclib = %{version}-%{release}
 
 %description osclib-devel
@@ -120,7 +120,7 @@ signal processing. These libraries are part of the standard Faust libraries.
 
 %package devel
 Summary: Headers for FAUST
-License: GPL-2.0-or-later and MIT
+License: GPL-2.0-or-later AND MIT
 Requires: %{name} = %{version}-%{release}
 
 %description devel

@@ -7,7 +7,7 @@ Name: fluida
 Version: 0.9.5
 Release: 1%{?dist}
 Summary: Fluidsynth as LV2 plugin
-License: BSD
+License: BSD-3-Clause
 URL: https://github.com/brummer10/Fluida.lv2
 ExclusiveArch: x86_64 aarch64
 

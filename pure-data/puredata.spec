@@ -14,7 +14,7 @@ Summary: Pure Data
 Name: puredata
 Version: %{pkgver}
 Release: 4%{?dist}
-License: BSD
+License: BSD-3-Clause
 URL: https://puredata.info/
 ExclusiveArch: x86_64 aarch64
 
