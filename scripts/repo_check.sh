@@ -9,7 +9,7 @@
 #    exit
 #fi
 
-TIMEOUT=60
+TIMEOUT=30
 
 REPO_LIST="https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git
 git://gabe.is-a-geek.org/git/inconcert
