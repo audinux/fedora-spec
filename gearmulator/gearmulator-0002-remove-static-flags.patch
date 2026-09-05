@@ -1,105 +1,40 @@
-From 2a9da306cc5739ac7ed5775b9b450e97511b51b3 Mon Sep 17 00:00:00 2001
+From b362eca449af13bf513112d9dafe2cac89fdd1a1 Mon Sep 17 00:00:00 2001
 From: Yann Collette <yc@example.com>
-Date: Thu, 30 Jul 2026 08:35:29 +0200
-Subject: [PATCH] remove static
+Date: Sat, 5 Sep 2026 14:54:38 +0200
+Subject: [PATCH] remove static flag
 
 ---
- source/dsp56300/source/wxWidgets/build/cmake/init.cmake | 3 ---
- source/juce.cmake                                       | 4 ----
- source/mqPerformanceTest/CMakeLists.txt                 | 4 ----
- source/mqTestConsole/CMakeLists.txt                     | 4 ----
- source/ronaldo/je8086/jeTestConsole/CMakeLists.txt      | 4 ----
- source/virusTestConsole/CMakeLists.txt                  | 4 ----
- 6 files changed, 23 deletions(-)
+ source/cmake/base.cmake                                     | 3 +--
+ source/cpu/dsp56300/source/wxWidgets/build/cmake/init.cmake | 2 --
+ 2 files changed, 1 insertion(+), 4 deletions(-)
 
-diff --git a/source/dsp56300/source/wxWidgets/build/cmake/init.cmake b/source/dsp56300/source/wxWidgets/build/cmake/init.cmake
-index ef28c996..3632c9f6 100644
---- a/source/dsp56300/source/wxWidgets/build/cmake/init.cmake
-+++ b/source/dsp56300/source/wxWidgets/build/cmake/init.cmake
-@@ -86,9 +86,6 @@ elseif(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU") OR ("${CMAKE_CXX_COMPILER_ID}
+diff --git a/source/cmake/base.cmake b/source/cmake/base.cmake
+index 00d20803..29a1cc37 100644
+--- a/source/cmake/base.cmake
++++ b/source/cmake/base.cmake
+@@ -111,8 +111,7 @@ else()
+ 	# fails on Ubuntu 22.04.
+ 	# Set globally on purpose: this used to be repeated per target and had already
+ 	# been forgotten for xtTestConsole, n2xTestConsole and the DSP bridge.
+-	add_link_options(-static-libgcc -static-libstdc++)
+-
++	
+ 	execute_process(COMMAND uname -m COMMAND tr -d '\n' OUTPUT_VARIABLE ARCHITECTURE)
+ 
+ 	# Good atomics are important on aarch64, they exist on ARMv8.1a or higher
+diff --git a/source/cpu/dsp56300/source/wxWidgets/build/cmake/init.cmake b/source/cpu/dsp56300/source/wxWidgets/build/cmake/init.cmake
+index ef28c996..ef64ea07 100644
+--- a/source/cpu/dsp56300/source/wxWidgets/build/cmake/init.cmake
++++ b/source/cpu/dsp56300/source/wxWidgets/build/cmake/init.cmake
+@@ -86,8 +86,6 @@ elseif(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU") OR ("${CMAKE_CXX_COMPILER_ID}
      if(wxBUILD_USE_STATIC_RUNTIME AND NOT APPLE)
          if(MINGW)
              set(STATIC_LINKER_FLAGS " -static")
 -        else()
 -            set(STATIC_LINKER_FLAGS " -static-libgcc -static-libstdc++")
--        endif()
+         endif()
          wx_string_append(CMAKE_EXE_LINKER_FLAGS "${STATIC_LINKER_FLAGS}")
          wx_string_append(CMAKE_SHARED_LINKER_FLAGS "${STATIC_LINKER_FLAGS}")
-     endif()
-diff --git a/source/juce.cmake b/source/juce.cmake
-index 89daf2d8..61aaa94d 100644
---- a/source/juce.cmake
-+++ b/source/juce.cmake
-@@ -197,10 +197,6 @@ macro(createJucePlugin targetName productName isSynth plugin4CC binaryDataProjec
- 		add_dependencies(PluginFormat_CLAP ${targetName}_CLAP)
- 	endif()
- 
--	if(UNIX AND NOT APPLE)
--		target_link_libraries(${targetName} PUBLIC -static-libgcc -static-libstdc++)
--	endif()
--
- 	# On Linux, JUCE clears the default "lib" prefix for VST3/AAX but not for the
- 	# VST2 shared object, leaving it named libXxx.so. Hosts derive the friendly
- 	# plugin name from the filename, so it shows up as "libXxx". Clear the prefix
-diff --git a/source/mqPerformanceTest/CMakeLists.txt b/source/mqPerformanceTest/CMakeLists.txt
-index 903185e1..a9f280c1 100644
---- a/source/mqPerformanceTest/CMakeLists.txt
-+++ b/source/mqPerformanceTest/CMakeLists.txt
-@@ -15,10 +15,6 @@ createMacSetupScript("mqPerformanceTest")
- 
- target_link_libraries(mqPerformanceTest PUBLIC mqConsoleLib)
- 
--if(UNIX AND NOT APPLE)
--	target_link_libraries(mqPerformanceTest PUBLIC -static-libgcc -static-libstdc++)
--endif()
--
- install(TARGETS mqPerformanceTest DESTINATION . COMPONENT VavraPerformanceTest)
- 
- if(APPLE)
-diff --git a/source/mqTestConsole/CMakeLists.txt b/source/mqTestConsole/CMakeLists.txt
-index 4d3b3b18..2b37ef8b 100644
---- a/source/mqTestConsole/CMakeLists.txt
-+++ b/source/mqTestConsole/CMakeLists.txt
-@@ -22,9 +22,5 @@ else()
- 	target_link_libraries(mqTestConsole PUBLIC portmidi-static)
- endif()
- 
--if(UNIX AND NOT APPLE)
--	target_link_libraries(mqTestConsole PUBLIC -static-libgcc -static-libstdc++)
--endif()
--
- #install(TARGETS mqTestConsole DESTINATION . COMPONENT STANDALONE)
- set_property(TARGET mqTestConsole PROPERTY FOLDER "Vavra")
-diff --git a/source/ronaldo/je8086/jeTestConsole/CMakeLists.txt b/source/ronaldo/je8086/jeTestConsole/CMakeLists.txt
-index cdefec28..22aeda17 100644
---- a/source/ronaldo/je8086/jeTestConsole/CMakeLists.txt
-+++ b/source/ronaldo/je8086/jeTestConsole/CMakeLists.txt
-@@ -15,10 +15,6 @@ createMacSetupScript("JE8086TestConsole")
- 
- target_link_libraries(JE8086TestConsole PUBLIC jeLib)
- 
--if(UNIX AND NOT APPLE)
--	target_link_libraries(JE8086TestConsole PUBLIC -static-libgcc -static-libstdc++)
--endif()
--
- install(TARGETS JE8086TestConsole DESTINATION . COMPONENT JE8086TestConsole)
- 
- if(APPLE)
-diff --git a/source/virusTestConsole/CMakeLists.txt b/source/virusTestConsole/CMakeLists.txt
-index 440095b4..667caafc 100644
---- a/source/virusTestConsole/CMakeLists.txt
-+++ b/source/virusTestConsole/CMakeLists.txt
-@@ -13,10 +13,6 @@ source_group("source" FILES ${SOURCES})
- 
- target_link_libraries(virusTestConsole PUBLIC virusConsoleLib)
- 
--if(UNIX AND NOT APPLE)
--	target_link_libraries(virusTestConsole PUBLIC -static-libgcc -static-libstdc++)
--endif()
--
- createMacSetupScript("virusTestConsole")
- 
- if(${gearmulator_SYNTH_OSIRUS})
 -- 
 2.55.0
 

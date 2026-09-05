@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: gearmulator
-Version: 2.2.9
+Version: 2.2.16
 Release: 1%{?dist}
 Summary: Emulation of classic VA synths of the late 90s/2000s that are based on Motorola 56300 family DSPs 
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./gearmulator-source.sh <TAG>
-#        ./gearmulator-source.sh 2.2.9
+#        ./gearmulator-source.sh 2.2.16
 
 Source0: gearmulator.tar.gz
 Source1: gearmulator-source.sh
@@ -51,6 +51,7 @@ At the moment, the following synthesizers are supported:
 - Vavra: Waldorf microQ
 - Xenia: Waldorf Microwave II/XT
 - Nodal Red 2x: Clavia Nord Lead/Rack 2x
+- JE-8086: Roland JP-8000
 
 %package -n license-%{name}
 Summary: License and documentation for %{name}
@@ -121,6 +122,9 @@ cp -ra bin/plugins/Release/CLAP/* %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Sat Sep 05 2026 Yann Collette <ycollette.nospam@free.fr> - 2.2.16-1
+- update to 2.2.16-1
+
 * Wed Jul 29 2026 Yann Collette <ycollette.nospam@free.fr> - 2.2.9-1
 - update to 2.2.9-1
 
