@@ -3,8 +3,7 @@
 # Type: Standalone
 # Category: Audio, Effect
 
-# Global variables for github repository
-%global commit0 9e17878aff58ef2e3aecc74fc94a817d96b92d1f
+%global commit0 f14a230bf48b42035406d2b2dca038efa4d2abca
 %global gittag0 master
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
@@ -27,7 +26,7 @@
 
 Name: mod-host
 Version: 0.10.6.%{shortcommit0}
-Release: 1%{?dist}
+Release: 3%{?dist}
 License: GPL-3.0-or-later
 Summary: LV2 host for Jack controllable via socket or command line
 URL: https://github.com/moddevices/mod-host
@@ -38,8 +37,8 @@ Distribution: Audinux
 
 Source0: https://github.com/moddevices/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: %{name}.service
+Patch0: mod-host-100.patch
 
-%{?systemd_requires}
 BuildRequires: gcc
 BuildRequires: make
 BuildRequires: python3
@@ -50,13 +49,13 @@ BuildRequires: pkgconfig(lv2)
 BuildRequires: pkgconfig(lilv-0)
 BuildRequires: systemd-rpm-macros
 
+%{?systemd_requires}
 Requires: lilv
 
 %description
 mod-host is an LV2 host for JACK, controllable via socket or command line
 
 Currently the host supports the following LV2 features:
-
 * lv2core
 * atom
 * event
@@ -71,19 +70,20 @@ Currently the host supports the following LV2 features:
 mod-host is part of the MOD project (http://moddevices.com).
 
 %prep
-%autosetup -n %{name}-%{commit0}
+%autosetup -p1 -n %{name}-%{commit0}
 
 sed -i 's,PREFIX =.*$,PREFIX = %{_prefix},g' Makefile
 sed -i 's,MANDIR =.*$,MANDIR = %{_mandir}/man1,g' Makefile
 sed -i 's,LDFLAGS += -s,LDFLAGS +=,g' Makefile
-sed -i 's,python,python3,g' utils/txt2cvar.py
 
 %build
 
 %set_build_flags
+
 %make_build
 
 %install
+
 %make_install
 
 install -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
@@ -98,5 +98,11 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 %{_userunitdir}/%{name}.service
 
 %changelog
+* Sat Sep 05 2026 Yann Collette <ycollette.nospam@free.fr> - 0.10.6-3
+- update to 0.10.6-3 - apply a patch
+
+* Sat Sep 05 2026 Yann Collette <ycollette.nospam@free.fr> - 0.10.6-2
+- update to 0.10.6-2 - update to last master
+
 * Tue Jul 27 2021 Yann Collette <ycollette.nospam@free.fr> - 0.10.6-1
 - initial spec
