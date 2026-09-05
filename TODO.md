@@ -457,6 +457,12 @@
 | AudioABComparator                        | https://github.com/KarmaGame33/AudioABComparator                                                                                                            |
 | default_eq                               | https://github.com/lsooxlla8/default_eq                                                                                                                     |
 | default_distortion                       | https://github.com/lsooxlla8/default_distortion                                                                                                             |
+| Simple606                                | https://github.com/Fadedlimes/Simple606                                                                                                                     |
+| WetDelay                                 | https://github.com/yonie/WetDelay                                                                                                                           |
+| WetReverb                                | https://github.com/yonie/WetReverb                                                                                                                          |
+| NoAmp-Low-Rider-DI                       | https://github.com/tehguitarist/NoAmp-Low-Rider-DI                                                                                                          |
+| pitch-detector-tuner                     | https://github.com/mainstaudiolabs/pitch-detector-tuner                                                                                                     |
+| adlibtracker                             | https://adlibtracker.net                                                                                                                                    |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
