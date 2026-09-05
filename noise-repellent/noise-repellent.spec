@@ -6,7 +6,7 @@
 
 Name: noise-repellent
 Version: 0.3.2
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: A lv2 plug-in for broadband noise reduction.
 License: GPL-2.0-or-later
 URL: https://github.com/lucianodato/noise-repellent
@@ -16,6 +16,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/lucianodato/noise-repellent/archive/refs/tags/v%{version}.tar.gz#/noise-repellent-%{version}.tar.gz
+Patch0: noise-repellent-0001-disable-shared-libs.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -81,13 +82,12 @@ Requires: license-%{name}
 LV2 version of %{name}
 
 %prep
-%autosetup -n noise-repellent-%{version}
+%autosetup -p1 -n noise-repellent-%{version}
 
-sed -i -e "s|PRODUCT_NAME \"Noise Repellent\"|PRODUCT_NAME \"Noise_Repellent\"|g" CMakeLists.txt
 %build
 
-%cmake -DUSE_SYSTEM_FFTW=ON \
-       -DUSE_SYSTEM_FREETYPE=ON \
+%cmake -DUSE_SYSTEM_FFTW:BOOL=ON \
+       -DUSE_SYSTEM_FREETYPE:BOOL=ON \
        -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
@@ -98,10 +98,6 @@ cp -ra %{__cmake_builddir}/NoiseRepellent_artefacts/VST3/*  %{buildroot}/%{_libd
 
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
 cp -ra %{__cmake_builddir}/NoiseRepellent_artefacts/LV2/*  %{buildroot}/%{_libdir}/lv2/
-
-# Cleanup rpath
-chrpath --delete `find %{buildroot}/usr/%{_lib}/vst3/ -name "*.so"`
-chrpath --delete `find %{buildroot}/usr/%{_lib}/lv2/ -name "*.so"`
 
 %files -n license-%{name}
 %doc README.md
@@ -114,6 +110,9 @@ chrpath --delete `find %{buildroot}/usr/%{_lib}/lv2/ -name "*.so"`
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Sep 04 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.2-6
+- update to 0.3.2-6 - fix dependencies
+
 * Sun Aug 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.2-5
 - update to 0.3.2-5
 
