@@ -3,13 +3,11 @@
 # Type: Standalone
 # Category: Tool
 
-# Global variables for github repository
-%global commit0 8a6e66ed4ac1fce43725e66afc4aaf5b649c73ce
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
+# Disable production of debug package.
+%global debug_package %{nil}
 
 Name: veejay-gui
-Version: 1.5.57
+Version: 1.6.0
 Release: 4%{?dist}
 Summary: A 'visual' instrument and realtime video sampler (for live video improvisation)
 URL: https://github.com/c0ntrol/veejay
@@ -19,33 +17,29 @@ License: GPL-2.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/c0ntrol/veejay/archive/%{commit0}.tar.gz#/veejay-%{shortcommit0}.tar.gz
+Source0: https://github.com/game-stop/veejay/archive/refs/tags/%{version}.tar.gz#/veejay-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: automake
 BuildRequires: autoconf
 BuildRequires: libtool
-BuildRequires: alsa-lib-devel
-BuildRequires: pkgconfig(jack)
-BuildRequires: libjpeg-devel
-%if 0%{?fedora} >= 37
-Buildrequires: compat-ffmpeg4-devel
-%else
-BuildRequires: ffmpeg-devel
-%endif
-BuildRequires: libX11-devel
-BuildRequires: libxml2-devel
+BuildRequires: (ffmpeg or ffmpeg-free)
 BuildRequires: SDL-devel
-BuildRequires: qrencode-devel
-BuildRequires: gdk-pixbuf2-devel
+BuildRequires: alsa-lib-devel
 BuildRequires: freetype-devel
+BuildRequires: gdk-pixbuf2-devel
+BuildRequires: gmic-devel
+BuildRequires: gtk3-devel
+BuildRequires: libX11-devel
+BuildRequires: libglade2-devel
+BuildRequires: libjpeg-devel
 BuildRequires: liblo-devel
 BuildRequires: libv4l-devel
-BuildRequires: libglade2-devel
-BuildRequires: gmic-devel
-BuildRequires: chrpath
+BuildRequires: libxml2-devel
+BuildRequires: pkgconfig(jack)
+BuildRequires: qrencode-devel
 BuildRequires: veejay-server
-BuildRequires: gtk3-devel
+BuildRequires: chrpath
 BuildRequires: desktop-file-utils
 
 %description
@@ -65,116 +59,53 @@ in YUV planar It performs at its best, currently with MJPEG AVI (through ffmpeg/
 or one of veejay's internal formats. Veejay is built upon a servent architecture.
 
 %prep
-%autosetup -n veejay-%{commit0}
-
-find . -name "*.c" ! -name vj-vloopback.c ! -name v4l2utils.c -exec sed -i -e "s/PIX_FMT/AV_PIX_FMT/g" {} \;
-
-sed -i -e "0,/AC_CONFIG_MACRO_DIR/{/AC_CONFIG_MACRO_DIR/d;}" veejay-current/veejay-client/configure.ac
-sed -i -e "0,/AC_CONFIG_MACRO_DIR/{/AC_CONFIG_MACRO_DIR/d;}" veejay-current/veejay-utils/configure.ac
-sed -i -e "0,/AC_CONFIG_MACRO_DIR/{/AC_CONFIG_MACRO_DIR/d;}" veejay-current/plugin-packs/lvdgmic/configure.ac
-
-%ifarch aarch64
-sed -i -e "/Architecture/d" veejay-current/plugin-packs/lvdcrop/configure.ac
-sed -i -e "/Architecture/d" veejay-current/plugin-packs/lvdshared/configure.ac
-sed -i -e "/Architecture/d" veejay-current/plugin-packs/lvdasciiart/configure.ac
-sed -i -e "/Architecture/d" veejay-current/plugin-packs/lvdgmic/configure.ac
-sed -i -e "/Architecture/d" veejay-current/veejay-client/configure.ac
-sed -i -e "/Architecture/d" veejay-current/veejay-server/configure.ac
-sed -i -e "/Architecture/d" veejay-current/veejay-utils/configure.ac
-sed -i -e "/Architecture/d" veejay-current/veejay-core/configure.ac
-%endif
+%autosetup -n veejay-%{version}
 
 %build
 
 %set_build_flags
 
-export LIBAVUTIL_CFLAGS=-I/usr/include/compat-ffmpeg4
-export LIBAVCODEC_CFLAGS=-I/usr/include/compat-ffmpeg4
-export LIBAVFORMAT_CFLAGS=-I/usr/include/compat-ffmpeg4
-export LIBSWSCALE_CFLAGS=-I/usr/include/compat-ffmpeg4
-export PKG_CONFIG_PATH=%{buildroot}%{_libdir}/pkgconfig
-
-export CFLAGS="-fPIC $CFLAGS"
-export CFLAGS=`echo $CFLAGS | sed -e "s/-Werror=format-security//g"`
-export CXXFLAGS="-fPIC $CXXFLAGS"
-export LDFLAGS="-fPIC $LDFLAGS"
-
 cd veejay-current
 cd veejay-client
 ./autogen.sh
 %configure --prefix=%{_prefix} --libdir=%{_libdir}
-
-sed -i -e "s/libpng16/freetype/g" config.h
-
-find . -name "Makefile" -exec sed -i -e "s/-march=native//g" {} \; -print
-find . -name "Makefile" -exec sed -i -e "s/-O3/-O2/g" {} \; -print
-find . -name "Makefile" -exec sed -i -e "s/-msse2//g" {} \; -print
-find . -name "Makefile" -exec sed -i -e "s/-msse//g" {} \; -print
-find . -name "Makefile" -exec sed -i -e "s/-mfpmath=sse//g" {} \; -print
-find . -name "Makefile" -exec sed -i -e "s/-m64//g" {} \; -print
-
-%make_build CFLAGS="$CFLAGS -I/usr/include/compat-ffmpeg3" LDFLAGS="$LDFLAGS -L/usr/lib64/compat-ffmpeg3"
+%make_build
 
 cd ..
 
 cd veejay-utils
 ./autogen.sh
 %configure --prefix=%{_prefix} --libdir=%{_libdir}
-
-sed -i -e "s/libpng16/freetype/g" config.h
-
-find . -name "Makefile" -exec sed -i -e "s/-march=native//g" {} \; -print
-find . -name "Makefile" -exec sed -i -e "s/-O3/-O2/g" {} \; -print
-find . -name "Makefile" -exec sed -i -e "s/-msse2//g" {} \; -print
-find . -name "Makefile" -exec sed -i -e "s/-msse//g" {} \; -print
-find . -name "Makefile" -exec sed -i -e "s/-mfpmath=sse//g" {} \; -print
-find . -name "Makefile" -exec sed -i -e "s/-m64//g" {} \; -print
-
-%make_build CFLAGS="$CFLAGS -I/usr/include/compat-ffmpeg4" LDFLAGS="$LDFLAGS -L/usr/lib64/compat-ffmpeg4"
+%make_build
 
 cd ..
 
 cd plugin-packs/lvdgmic/
 ./autogen.sh
 %configure --prefix=%{_prefix} --libdir=%{_libdir}
-
-sed -i -e "s/libpng16/freetype/g" config.h
-
-find . -name "Makefile" -exec sed -i -e "s/-march=native//g" {} \; -print
-find . -name "Makefile" -exec sed -i -e "s/-O3/-O2/g" {} \; -print
-find . -name "Makefile" -exec sed -i -e "s/-msse2//g" {} \; -print
-find . -name "Makefile" -exec sed -i -e "s/-msse//g" {} \; -print
-find . -name "Makefile" -exec sed -i -e "s/-mfpmath=sse//g" {} \; -print
-find . -name "Makefile" -exec sed -i -e "s/-m64//g" {} \; -print
-
-%make_build CFLAGS="$CFLAGS -I/usr/include/compat-ffmpeg4" LDFLAGS="$LDFLAGS -L/usr/lib64/compat-ffmpeg4"
+%make_build
 
 %install
 
 cd veejay-current
 cd veejay-client
-%make_install CFLAGS="$CFLAGS -I/usr/include/compat-ffmpeg4" LDFLAGS="$LDFLAGS -L/usr/lib64/compat-ffmpeg4"
+%make_install
 cd ..
 
 cd veejay-utils
-%make_install CFLAGS="$CFLAGS -I/usr/include/compat-ffmpeg4" LDFLAGS="$LDFLAGS -L/usr/lib64/compat-ffmpeg4"
+%make_install
 cd ..
 
-cd plugin-packs/lvdgmic/
-%make_install CFLAGS="$CFLAGS -I/usr/include/compat-ffmpeg4" LDFLAGS="$LDFLAGS -L/usr/lib64/compat-ffmpeg4"
-cd ../..
-
-chrpath --delete $RPM_BUILD_ROOT/usr/bin/reloaded
-chrpath --delete $RPM_BUILD_ROOT/usr/bin/sayVIMS
-
 %files
-%doc veejay-current/veejay-server/README veejay-current/veejay-server/AUTHORS veejay-current/veejay-server/ChangeLog
+%doc veejay-current/veejay-server/README.md veejay-current/veejay-server/AUTHORS veejay-current/veejay-server/ChangeLog
 %license veejay-current/veejay-server/COPYING
 %{_bindir}/*
 %{_datadir}/*
-%{_libdir}/*
 
 %changelog
+* Fri Sep 04 2026 Yann Collette <ycollette.nospam@free.fr> - 1.6.0-1
+- update to 1.6.0-1
+
 * Mon Mar 29 2021 Yann Collette <ycollette.nospam@free.fr> - 1.5.57-4
 - update to last master
 
