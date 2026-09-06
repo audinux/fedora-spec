@@ -9,7 +9,7 @@
 #    exit
 #fi
 
-TIMEOUT=30
+TIMEOUT=40
 
 REPO_LIST="https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git
 git://gabe.is-a-geek.org/git/inconcert
@@ -1195,7 +1195,10 @@ https://git.code.sf.net/p/neuralblender/code
 https://github.com/Loursy/AmpForge
 https://github.com/samplaman/owmb
 https://github.com/danylokravchenko/rusty-amp
-https://github.com/maolan/plugins"
+https://github.com/maolan/plugins
+https://github.com/Fadedlimes/Simple606
+https://github.com/Fadedlimes/Simple106
+https://github.com/Fadedlimes/Simple303"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
@@ -1237,6 +1240,10 @@ done
 # Get Zita updates
 wget http://kokkinizita.linuxaudio.org/linuxaudio/downloads/index.html -O /tmp/index.html
 cat /tmp/index.html | grep -oP "(HREF|href)=\"\K.+?(?=\")" | grep tar| sort >> git_tags_new.txt
+
+# Get adlibtracker updates
+wget https://adlibtracker.net/downloads.php -O /tmp/index.html
+cat /tmp/index.html | grep files/at2_sourcecode >> git_tags_new.txt
 
 REPO_LIST="https://sourceforge.net/projects/kmidimon/files/
 https://sourceforge.net/projects/cycloneloop/files/
