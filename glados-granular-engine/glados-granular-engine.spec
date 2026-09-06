@@ -3,10 +3,8 @@
 # Type: Plugin, Standalone, VST3
 # Category: Effect
 
-%global commit0 5bd88d55d9db7976eb5eedcc48b6244a60271586
-
 Name: glados
-Version: 0.0.1
+Version: 1.0
 Release: 1%{?dist}
 Summary: A granular texture engine
 License: GPL-2.0-or-later
@@ -16,7 +14,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/JosueFabian18/glados-granular-engine/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/JosueFabian18/glados-granular-engine/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -62,7 +60,7 @@ Requires: license-%{name}
 VST3 version of %{name}
 
 %prep
-%autosetup -n glados-granular-engine-%{commit0}
+%autosetup -n glados-granular-engine-%{version}
 
 %build
 
@@ -85,11 +83,14 @@ cp -ra %{__cmake_builddir}/Glados_artefacts/Standalone/* %{buildroot}/%{_bindir}
 %{_bindir}/*
 
 %files -n license-%{name}
-%doc README.md
+%doc Glados/README.md Glados/GLaDOS_User_Manual_v2.docx
 
 %files -n vst3-%{name}
 %{_libdir}/vst3/*
 
 %changelog
+* Sat Sep 05 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-1
+- update to 1.0-1
+
 * Tue Jul 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
