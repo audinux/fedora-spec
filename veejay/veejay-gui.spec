@@ -23,7 +23,7 @@ BuildRequires: gcc gcc-c++
 BuildRequires: automake
 BuildRequires: autoconf
 BuildRequires: libtool
-BuildRequires: (ffmpeg or ffmpeg-free)
+BuildRequires: (ffmpeg-devel or ffmpeg-free-devel)
 BuildRequires: SDL-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: freetype-devel

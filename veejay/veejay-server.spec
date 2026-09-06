@@ -24,7 +24,7 @@ BuildRequires: automake
 BuildRequires: autoconf
 BuildRequires: libtool
 BuildRequires: libgomp
-BuildRequires: (ffmpeg or ffmpeg-free)
+BuildRequires: (ffmpeg-devel or ffmpeg-free-devel)
 BuildRequires: SDL2-devel
 BuildRequires: aalib-devel
 BuildRequires: alsa-lib-devel

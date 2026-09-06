@@ -11,7 +11,7 @@ Version: 1.6.0
 Release: 1%{?dist}
 Summary: A 'visual' instrument and realtime video sampler (for live video improvisation) - core part
 URL: https://github.com/c0ntrol/veejay
-ExclusiveArch: x86_64 
+ExclusiveArch: x86_64 aarch64
 License: GPL-2.0-or-later
 
 Vendor:       Audinux
@@ -24,7 +24,7 @@ BuildRequires: automake
 BuildRequires: autoconf
 BuildRequires: libtool
 BuildRequires: alsa-lib-devel
-BuildRequires: (ffmpeg or ffmpeg-free)
+BuildRequires: (ffmpeg-devel or ffmpeg-free-devel)
 BuildRequires: freetype-devel
 BuildRequires: gdk-pixbuf2-devel
 BuildRequires: gmic-devel
