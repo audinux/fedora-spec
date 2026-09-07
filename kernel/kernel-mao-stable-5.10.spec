@@ -71,6 +71,11 @@ BuildRequires: elfutils
 BuildRequires: elfutils-libelf-devel
 BuildRequires: rsync
 BuildRequires: dwarves
+BuildRequires: rust
+BuildRequires: rust-src
+BuildRequires: rustfmt
+BuildRequires: bindgen
+BuildRequires: clippy
 
 Provides: kernel = %{version}
 Provides: kernel-rt-mao = %{version}
