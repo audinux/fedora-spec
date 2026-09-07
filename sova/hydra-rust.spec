@@ -9,7 +9,7 @@
 
 Name: hydra-rust
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Prototype of hydra remade in Rust
 License: AGPL-3.0-or-later
 URL: https://github.com/sova-org/hydra-rust
@@ -19,6 +19,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/sova-org/hydra-rust/archive/%{commit0}.tar.gz#/hydra-rust.tar.gz
+Source1: hydra-examples.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -36,6 +37,11 @@ A Rust port of Hydra — the live-codable video synthesizer created by Olivia Ja
 compiles them to GLSL shaders, and renders them via OpenGL. The core is a library with zero GUI
 dependencies, suitable for embedding. A standalone binary is included for testing and standalone use.
 Originally extracted from Sova, the polyglot live coding sequencer.
+Some shortcuts:
+- CTRL-Enter: run code
+- CTRL-Shift-H: hide or show code
+- CTRL-Shift-S: save
+- CTRL-Shift-O: open
 
 %prep
 %autosetup -n %{name}-%{commit0}
@@ -70,11 +76,19 @@ cargo build --release
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 target/release/hydra %{buildroot}/%{_bindir}/
 
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/
+cd %{buildroot}/%{_datadir}/%{name}/
+tar xvfz %{SOURCE1}
+
 %files
 %doc README.md
 %license LICENSE
 %{_bindir}/*
+%{_datadir}/%{name}/hydra-examples/*
 
 %changelog
+* Sun Sep 06 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2 - add examples
+
 * Mon Jul 20 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
