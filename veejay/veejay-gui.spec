@@ -24,7 +24,7 @@ BuildRequires: automake
 BuildRequires: autoconf
 BuildRequires: libtool
 BuildRequires: (ffmpeg-devel or ffmpeg-free-devel)
-BuildRequires: SDL-devel
+BuildRequires: sdl2-compat-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: freetype-devel
 BuildRequires: gdk-pixbuf2-devel
