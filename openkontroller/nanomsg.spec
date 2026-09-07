@@ -4,7 +4,7 @@
 # Category: Programming
 
 Name: nanomsg
-Version: 1.2.4
+Version: 1.2.5
 Release: 2%{?dist}
 Summary: The nanomsg library is a simple high-performance implementation of several "scalability protocols"
 URL: https://github.com/nanomsg/nanomsg
@@ -54,6 +54,9 @@ The %{name}-devel package contains header files for %{name}.
 %{_includedir}/*
 
 %changelog
+* Mon Sep 07 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.5-2
+- update to 1.2.5-2
+
 * Mon Aug 03 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.4-2
 - update to 1.2.4-2
 
