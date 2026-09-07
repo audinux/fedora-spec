@@ -9,7 +9,7 @@
 
 Name: hydra-rust
 Version: 0.0.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Prototype of hydra remade in Rust
 License: AGPL-3.0-or-later
 URL: https://github.com/sova-org/hydra-rust
@@ -20,9 +20,11 @@ Distribution: Audinux
 
 Source0: https://github.com/sova-org/hydra-rust/archive/%{commit0}.tar.gz#/hydra-rust.tar.gz
 Source1: hydra-examples.tar.gz
+Source2: http://ycollette.free.fr/Guitare/hydra-sketches.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
+BuildRequires: clang-devel
 BuildRequires: xcb-util-wm-devel
 BuildRequires: libXcursor-devel
 BuildRequires: mesa-libGL-devel
@@ -30,6 +32,7 @@ BuildRequires: libX11-devel
 BuildRequires: openssl-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
+BuildRequires: libv4l-devel
 BuildRequires: python3
 
 %description
@@ -69,7 +72,8 @@ rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linu
 %endif
 source cargo/env
 
-cargo build --release
+cargo build --release --features webcam
+# --feature webcam,audio
 
 %install
 
@@ -79,14 +83,19 @@ install -m 755 target/release/hydra %{buildroot}/%{_bindir}/
 install -m 755 -d %{buildroot}/%{_datadir}/%{name}/
 cd %{buildroot}/%{_datadir}/%{name}/
 tar xvfz %{SOURCE1}
+tar xvfz %{SOURCE2}
 
 %files
 %doc README.md
 %license LICENSE
 %{_bindir}/*
 %{_datadir}/%{name}/hydra-examples/*
+%{_datadir}/%{name}/hydra-sketches/*
 
 %changelog
+* Mon Sep 07 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
+- update to 0.0.1-3 - activate webcam
+
 * Sun Sep 06 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
 - update to 0.0.1-2 - add examples
 
