@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 d02f0b6d79e792416c5876e369adf2e69f5513bc
-%global gittag0 2.5.0
+%global commit0 974cac5a37c8d6c6948ed7807732943706b3ab57
+%global gittag0 2.6.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Stoermelder-P1
-Version: 2.5.0
+Version: 2.6.0
 Release: 2%{?dist}
 Summary: Stoermelder-P1 plugin for Rack
 License: GPL-2.0-or-later
@@ -62,8 +62,8 @@ BuildRequires: jq
 
 %description
 Stoermelder-P1 plugin for Rack.
-Sample browser collaboration with Omri Cohen — browse, preview and drag WAV/FLAC/MP3 samples to other modules.
-Streams audio directly from disk with no full-file loading, making it practical for large sample libraries and long recordings. Also does repitching and creates endless loops.
+8x8 matrix patch-bay for creating and removing cables by pressing button pairs.
+Stores up to eight independent scenes per instance, with full MIDI control and feedback for playing your patch from a grid controller.
 
 %prep
 %setup -n Rack
@@ -155,5 +155,5 @@ cp -r Stoermelder-P1_plugin/dist/Stoermelder-P1/* %{buildroot}%{_libexecdir}/Rac
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.0-1
 - initial specfile

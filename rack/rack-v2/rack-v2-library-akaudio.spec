@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 afc068e1a47ed4dd2917a9d834ecce105edd7dfc
-%global gittag0 2.0.7
+%global commit0 a4e46bb4108c2dea40b8022682a35814840e8da2
+%global gittag0 2.0.9
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-akaudio
-Version: 2.0.7
+Version: 2.0.9
 Release: 2%{?dist}
 Summary: akaudio plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 akaudio plugin for Rack.
-NINJAM jam client: listen to a room's public Icecast/HTTP stream, or join the protocol to decode the live multi-user mix and transmit your own audio.
+8x8 looper on the NINJAM jam clock (Ninjam expander): beat-quantized capture/launch/stop, free-running clips of any whole-beat length (tempo changes never touch committed audio), scenes, follow actions, auto-advance chains, overdub; takes persist on disk and in the patch. Beta: young and complex - expect occasional bugs.
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r akaudio_plugin/dist/akaudio/* %{buildroot}%{_libexecdir}/Rack2/plugins/aka
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.7-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.9-1
 - initial specfile

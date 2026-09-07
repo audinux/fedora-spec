@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 566b63b1175f90d6d1a27eaad0a3eda4f548d7ac
-%global gittag0 2.1.1
+%global commit0 c5b74601da61a6a19a53d4bdac2d041d044ced10
+%global gittag0 2.2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-AmbientModules
-Version: 2.1.1
+Version: 2.2.0
 Release: 2%{?dist}
 Summary: AmbientModules plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r AmbientModules_plugin/dist/AmbientModules/* %{buildroot}%{_libexecdir}/Rac
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
 - initial specfile

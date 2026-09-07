@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 2dfab96aebf424406dae9492d525e1bb9641f63c
-%global gittag0 2.0.0
+%global commit0 55f9eb0e916187d125bb5b401c872dcdcf1c4eee
+%global gittag0 2.3.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-thereelpeet-seq
-Version: 2.0.0
+Version: 2.3.0
 Release: 2%{?dist}
 Summary: thereelpeet-seq plugin for Rack
 License: GPL-2.0-or-later
-URL: https://github.com/boocup/MyModule
+URL: https://github.com/boocup/thereelpeet-dyn
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,7 +29,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/boocup/MyModule/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/boocup/thereelpeet-dyn/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: thereelpeet-seq_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 thereelpeet-seq plugin for Rack.
-Dual generative sequencer with per-lane BPM, step length, randomized pitch and trigger outputs, trigger-based randomization, voltage-controlled run state, and hold freeze.
+Dual generative sequencer with probabilistic note holds and drops, per-lane Rise/Fall envelope, and Dynamics knob for evolving melodic motion.
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r thereelpeet-seq_plugin/dist/thereelpeet-seq/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-1
 - initial specfile
