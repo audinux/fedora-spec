@@ -5,7 +5,7 @@
 # LastSourceUpdate: 2020
 
 Name: noise-repellent
-Version: 0.3.2
+Version: 0.4.0
 Release: 6%{?dist}
 Summary: A lv2 plug-in for broadband noise reduction.
 License: GPL-2.0-or-later
@@ -110,6 +110,9 @@ cp -ra %{__cmake_builddir}/NoiseRepellent_artefacts/LV2/*  %{buildroot}/%{_libdi
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Sep 07 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.0-6
+- update to 0.4.0-6
+
 * Fri Sep 04 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.2-6
 - update to 0.3.2-6 - fix dependencies
 
