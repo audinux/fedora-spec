@@ -1,6 +1,6 @@
-# faust-backends.cmake : this file selects all possible backends.
-#
-# Possible configuration values are among: 
+# this file may be used to select different backends
+# it's always read by the default makefile target
+# values are among: 
 #    OFF       don't include the backend
 #    COMPILER  embed the backend in the faust compiler
 #    STATIC    embed the backend in the faust static library
@@ -10,7 +10,9 @@
 
 set ( C_BACKEND      COMPILER STATIC DYNAMIC        CACHE STRING  "Include C backend"         FORCE )
 set ( CPP_BACKEND    COMPILER STATIC DYNAMIC        CACHE STRING  "Include CPP backend"       FORCE )
+set ( CMAJOR_BACKEND COMPILER STATIC DYNAMIC        CACHE STRING  "Include Cmajor backend"    FORCE )
 set ( JAVA_BACKEND   COMPILER STATIC DYNAMIC        CACHE STRING  "Include JAVA backend"      FORCE )
+set ( JSFX_BACKEND   COMPILER STATIC DYNAMIC        CACHE STRING  "Include JSFX backend"      FORCE )
 set ( LLVM_BACKEND   COMPILER STATIC DYNAMIC        CACHE STRING  "Include LLVM backend"      FORCE )
 set ( RUST_BACKEND   COMPILER STATIC DYNAMIC        CACHE STRING  "Include Rust backend"      FORCE )
 set ( WASM_BACKEND   COMPILER STATIC DYNAMIC WASM   CACHE STRING  "Include WASM backend"      FORCE )
