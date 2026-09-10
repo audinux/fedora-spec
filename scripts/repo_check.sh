@@ -1198,7 +1198,8 @@ https://github.com/danylokravchenko/rusty-amp
 https://github.com/maolan/plugins
 https://github.com/Fadedlimes/Simple606
 https://github.com/Fadedlimes/Simple106
-https://github.com/Fadedlimes/Simple303"
+https://github.com/Fadedlimes/Simple303
+URL: https://github.com/sova-org/sova"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)

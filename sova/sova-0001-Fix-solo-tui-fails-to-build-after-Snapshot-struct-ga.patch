@@ -1,0 +1,32 @@
+From 09b99ff2613aca6cef80177f081fb0475e6e1b11 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette@adobe.com>
+Date: Wed, 9 Sep 2026 09:59:17 +0200
+Subject: [PATCH] Fix: solo-tui fails to build after Snapshot struct gained new
+ fields
+
+configure_widget.rs still built a Snapshot with only the original
+fields, so it didn't compile once frame_text_layout,
+frame_doc_snapshots, and presence were added to the struct.
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+---
+ solo-tui/src/widgets/configure_widget.rs | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/solo-tui/src/widgets/configure_widget.rs b/solo-tui/src/widgets/configure_widget.rs
+index 481544d2..e55bdb73 100644
+--- a/solo-tui/src/widgets/configure_widget.rs
++++ b/solo-tui/src/widgets/configure_widget.rs
+@@ -43,6 +43,9 @@ impl ConfigureWidget {
+                             micros,
+                             quantum: state.clock.quantum(),
+                             devices: Vec::new(),
++                            frame_text_layout: Vec::new(),
++                            frame_doc_snapshots: Vec::new(),
++                            presence: Vec::new(),
+                         };
+                         let Ok(snapshot) = serde_json::to_vec(&snapshot) else {
+                             state
+-- 
+2.55.0
+
