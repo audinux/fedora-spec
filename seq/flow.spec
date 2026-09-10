@@ -8,7 +8,7 @@
 
 Name: flow
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Polyphonic Modular Additive Synthesizer
 License: Apache-2.0
 URL: https://github.com/eclab/flow
@@ -20,6 +20,7 @@ Distribution: Audinux
 
 Source0: https://github.com/eclab/flow/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: flow.sh
+Source2: flow.pdf
 
 BuildRequires: gcc
 BuildRequires: make
@@ -65,6 +66,7 @@ install -m644 flow.jar                     %{buildroot}/%{_datadir}/java/flow/
 install -m755 -d    %{buildroot}/%{_datadir}/flow/
 cp -ra docs         %{buildroot}/%{_datadir}/flow/
 cp -ra flow/patches %{buildroot}/%{_datadir}/flow/
+cp %{SOURCE2}       %{buildroot}/%{_datadir}/flow/docs/
 
 %files
 %doc README.md
@@ -75,5 +77,8 @@ cp -ra flow/patches %{buildroot}/%{_datadir}/flow/
 %{_datadir}/flow/patches/*
 
 %changelog
+* Thu Sep 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2 - add a pdf documentation
+
 * Thu Sep 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - initial spec
