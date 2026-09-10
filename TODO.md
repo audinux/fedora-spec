@@ -461,6 +461,8 @@
 | WetReverb                                | https://github.com/yonie/WetReverb                                                                                                                          |
 | NoAmp-Low-Rider-DI                       | https://github.com/tehguitarist/NoAmp-Low-Rider-DI                                                                                                          |
 | pitch-detector-tuner                     | https://github.com/mainstaudiolabs/pitch-detector-tuner                                                                                                     |
+| plugins                                  | https://github.com/samueljustice/plugins                                                                                                                    |
+| aeolian-understory                       | https://github.com/spodzone/aeolian-understory                                                                                                              |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
