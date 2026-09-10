@@ -5,11 +5,11 @@
 
 %global debug_package %{nil}
 
-%global commit0 01e415c55a2c7aed575d8f70c083093f528da924
+%global commit0 342601a4b195b66dc942e9efa261c77b932c9f7f
 
 Name: hydra-rust
 Version: 0.0.1
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Prototype of hydra remade in Rust
 License: AGPL-3.0-or-later
 URL: https://github.com/sova-org/hydra-rust
@@ -18,7 +18,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/sova-org/hydra-rust/archive/%{commit0}.tar.gz#/hydra-rust.tar.gz
+Source0: https://github.com/ycollet/hydra-rust/archive/%{commit0}.tar.gz#/hydra-rust.tar.gz
 Source1: hydra-examples.tar.gz
 Source2: http://ycollette.free.fr/Guitare/hydra-sketches.tar.gz
 
@@ -72,8 +72,7 @@ rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linu
 %endif
 source cargo/env
 
-cargo build --release --features webcam
-# --feature webcam,audio
+cargo build --release --features webcam,audio
 
 %install
 
@@ -93,6 +92,9 @@ tar xvfz %{SOURCE2}
 %{_datadir}/%{name}/hydra-sketches/*
 
 %changelog
+* Thu Sep 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-4
+- update to 0.0.1-4 - activate audio - use fork
+
 * Mon Sep 07 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
 - update to 0.0.1-3 - activate webcam
 
