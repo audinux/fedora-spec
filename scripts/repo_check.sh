@@ -1199,7 +1199,8 @@ https://github.com/maolan/plugins
 https://github.com/Fadedlimes/Simple606
 https://github.com/Fadedlimes/Simple106
 https://github.com/Fadedlimes/Simple303
-URL: https://github.com/sova-org/sova"
+URL: https://github.com/sova-org/sova
+https://github.com/eclab/flow"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
