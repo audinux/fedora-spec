@@ -4,6 +4,7 @@
 # Category: Audio, Effect, MIDI
 
 %global debug_package %{nil}
+%global _cmake_shared_libs %{nil}
 
 Name: guitarmidi
 Version: 3.0
