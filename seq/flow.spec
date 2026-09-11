@@ -8,7 +8,7 @@
 
 Name: flow
 Version: 0.0.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Polyphonic Modular Additive Synthesizer
 License: Apache-2.0
 URL: https://github.com/eclab/flow
@@ -43,7 +43,7 @@ number of voices or partials).
 
 %build
 
-make
+make JAVACFLAGS="--release 25"
 
 cat > MANIFEST.MF <<EOF 
 Manifest-Version: 1.0
@@ -77,6 +77,9 @@ cp %{SOURCE2}       %{buildroot}/%{_datadir}/flow/docs/
 %{_datadir}/flow/patches/*
 
 %changelog
+* Thu Sep 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
+- update to 0.0.1-3 - fix class version
+
 * Thu Sep 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
 - update to 0.0.1-2 - add a pdf documentation
 

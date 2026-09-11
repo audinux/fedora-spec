@@ -3,12 +3,12 @@
 # Type: Standalone
 # Category: Sequencer
 
-%global commit0 9eabbb38891948edfc9625e328cca96a6369f4a5
+%global commit0 e27370cadffc6e4c3e185af9e34718eddfda82d4
 %global debug_package %{nil}
 
 Name: seq
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 3%{?dist}
 Summary: A Unique Modular and Hierarchical MIDI Sequencer
 License: Apache-2.0
 URL: https://github.com/eclab/seq
@@ -35,18 +35,18 @@ Related projects:
 - Flow, a fully-modular, polyphonic, additive software synthesizer.
 - Gizmo, an Arduino-based MIDI Swiss Army knife.
 - Arduino Firmware (oscillators, modulators, etc.) for the AE Modular Grains module. Includes an ultralight but full-featured MIDI library for small microcontrollers.
-- Computational Music Synthesis, an open-content book on building software synthesize
+- Computational Music Synthesis, an open-content book on building software synthesizer.
 
 %prep
 %autosetup -n %{name}-%{commit0}
 
 %build
 
-make
+make JAVACFLAGS="--release 25"
 
 cat > MANIFEST.MF <<EOF 
 Manifest-Version: 1.0
-Main-Class: seq.Seq
+Main-Class: Seq.Seq
 Class-Path: /usr/share/java/seq/coremidi4j-1.6.jar /usr/share/java/seq/flatlaf-3.4.1.jar /usr/share/java/seq/json.jar
 EOF
 
@@ -64,9 +64,9 @@ install -m644 libraries/json.jar           %{buildroot}/%{_datadir}/java/seq/
 install -m644 seq.jar                      %{buildroot}/%{_datadir}/java/seq/
 
 install -m755 -d %{buildroot}/%{_datadir}/seq/
-cp -ra docs     %{buildroot}/%{_datadir}/seq/
-cp -ra drumsets %{buildroot}/%{_datadir}/seq/
-cp -ra songs    %{buildroot}/%{_datadir}/seq/
+cp -ra docs      %{buildroot}/%{_datadir}/seq/
+cp -ra drumsets  %{buildroot}/%{_datadir}/seq/
+cp -ra songs     %{buildroot}/%{_datadir}/seq/
 
 %files
 %doc README.md
@@ -78,5 +78,11 @@ cp -ra songs    %{buildroot}/%{_datadir}/seq/
 %{_datadir}/seq/songs/*
 
 %changelog
+* Thu Sep 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
+- update to 0.0.1-3 - fix class version
+
+* Thu Sep 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2 - update to last master
+
 * Fri Jul 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - initial spec
