@@ -8,7 +8,7 @@
 
 Name: seq
 Version: 0.0.1
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: A Unique Modular and Hierarchical MIDI Sequencer
 License: Apache-2.0
 URL: https://github.com/eclab/seq
@@ -20,6 +20,8 @@ Distribution: Audinux
 
 Source0: https://github.com/eclab/seq/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: seq.sh
+Source2: seq.pdf
+Source3: seq_audiomostly24.pdf
 
 BuildRequires: gcc
 BuildRequires: make
@@ -42,7 +44,7 @@ Related projects:
 
 %build
 
-make JAVACFLAGS="--release 25"
+make JAVACFLAGS='-cp "./libraries/*" -g --release 25'
 
 cat > MANIFEST.MF <<EOF 
 Manifest-Version: 1.0
@@ -67,6 +69,8 @@ install -m755 -d %{buildroot}/%{_datadir}/seq/
 cp -ra docs      %{buildroot}/%{_datadir}/seq/
 cp -ra drumsets  %{buildroot}/%{_datadir}/seq/
 cp -ra songs     %{buildroot}/%{_datadir}/seq/
+cp %{SOURCE2}    %{buildroot}/%{_datadir}/seq/docs/
+cp %{SOURCE3}    %{buildroot}/%{_datadir}/seq/docs/
 
 %files
 %doc README.md
@@ -78,6 +82,9 @@ cp -ra songs     %{buildroot}/%{_datadir}/seq/
 %{_datadir}/seq/songs/*
 
 %changelog
+* Fri Sep 11 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-4
+- update to 0.0.1-4 - add some pdf documentation
+
 * Thu Sep 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
 - update to 0.0.1-3 - fix class version
 
