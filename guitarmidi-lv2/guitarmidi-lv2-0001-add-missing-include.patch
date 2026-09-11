@@ -1,0 +1,24 @@
+From 80c5161a67257c9edd6076f93a704fec47b500f2 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Fri, 11 Sep 2026 17:36:11 +0200
+Subject: [PATCH] add missing include
+
+---
+ core/include/guitarmidi/fretboard_api.hpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/core/include/guitarmidi/fretboard_api.hpp b/core/include/guitarmidi/fretboard_api.hpp
+index 74755a5..c058f3e 100644
+--- a/core/include/guitarmidi/fretboard_api.hpp
++++ b/core/include/guitarmidi/fretboard_api.hpp
+@@ -20,6 +20,7 @@
+ 
+ 
+ #include <string>
++#include <cstdint>
+ 
+ /**
+  * Interface for writing MIDI events produced by the fretboard processor.
+-- 
+2.55.0
+

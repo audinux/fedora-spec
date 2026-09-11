@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: guitarmidi
-Version: 2.2
+Version: 3.0
 Release: 3%{?dist}
 Summary: A concept for guitar to midi as an lv2 plugin
 URL: https://github.com/geraldmwangi/GuitarMidi-LV2
@@ -17,10 +17,11 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./guitarmidi-lv2-source.sh <TAG>
-#        ./guitarmidi-lv2-source.sh v2.2
+#        ./guitarmidi-lv2-source.sh v3.0
 
 Source0: GuitarMidi-LV2.tar.gz
 Source1: guitarmidi-lv2-source.sh
+Patch0: guitarmidi-lv2-0001-add-missing-include.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -28,6 +29,8 @@ BuildRequires: git
 BuildRequires: lv2-devel
 BuildRequires: aubio-devel
 BuildRequires: zita-resampler-devel
+BuildRequires: cairo-devel
+BuildRequires: libX11-devel
 
 %description
 A concept for guitar to midi as an LV2 plugin. GuitarMidi-LV2 analyses the
@@ -37,30 +40,27 @@ polyphonic audio into monophonic frequency segments, which are then
 analysed by monophonic pitch detectors.
 
 %prep
-%autosetup -n GuitarMidi-LV2
+%autosetup -p1 -n GuitarMidi-LV2
 
 sed -i -e "s/Git_FOUND/0/g" cmake/setversionfromgit.cmake
 
 %build
 
 export CFLAGS="-fPIC"
-export CXXFLAGS="-fPIC"
+export CXXFLAGS="-fPIC -include cstdint"
 export LDFLAGS="-fPIC"
 
-mkdir build
-cd build
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+       -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
+       -DCMAKE_INSTALL_PREFIX=%{_libdir}/lv2 \
+       -DCMAKE_CXX_FLAGS="-fPIC -include cstdint" \
+       -DCMAKE_C_FLAGS="-fPIC" ..
 
-cmake -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
-      -DCMAKE_INSTALL_PREFIX=%{buildroot}/%{_libdir}/lv2 \
-      -DCMAKE_CXX_FLAGS="-fPIC" \
-      -DCMAKE_C_FLAGS="-fPIC" ..
-
-make VERBOSE=1
+%cmake_build
 
 %install
 
-cd build
-make install
+%cmake_install
 
 %files
 %doc README.md
@@ -68,6 +68,9 @@ make install
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Sep 11 2026 Yann Collette <ycollette.nospam@free.fr> - 3.0-3
+- update to 3.0-3
+
 * Sun Jun 21 2026 Yann Collette <ycollette.nospam@free.fr> - 2.2-3
 - update to 2.2-3
 
