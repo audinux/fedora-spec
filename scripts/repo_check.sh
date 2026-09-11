@@ -9,7 +9,8 @@
 #    exit
 #fi
 
-TIMEOUT=40
+TIMEOUT=20
+LONG_TIMEOUT=120
 
 REPO_LIST="https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git
 git://gabe.is-a-geek.org/git/inconcert
@@ -783,7 +784,6 @@ https://github.com/rncbc/jack_link
 https://github.com/saugns/saugns
 https://github.com/tank-trax/ddsp-vst
 https://github.com/mikerodd/june-21
-https://github.com/zen-kernel/zen-kernel
 https://github.com/xanmod/linux
 https://github.com/GModal/vSwell
 https://github.com/pierreguillot/Camomile
@@ -1199,7 +1199,7 @@ https://github.com/maolan/plugins
 https://github.com/Fadedlimes/Simple606
 https://github.com/Fadedlimes/Simple106
 https://github.com/Fadedlimes/Simple303
-URL: https://github.com/sova-org/sova
+https://github.com/sova-org/sova
 https://github.com/eclab/flow"
 
 # Missing repositories:
@@ -1229,6 +1229,23 @@ do
     echo "Processing $File"
     sleep 1
     ALL_TAGS="`timeout --signal=TERM ${TIMEOUT}s git ls-remote --tags $File`"
+    if [ ! -z "$ALL_TAGS" ];
+    then
+	for Tag in $ALL_TAGS
+	do
+	    echo "$File $Tag"
+	    echo "$File $Tag" >> git_tags_new.txt
+	done
+    fi
+done
+
+REPO_LIST_LONG_TIMEOUT="https://github.com/zen-kernel/zen-kernel"
+
+for File in $REPO_LIST_LONG_TIMEOUT
+do
+    echo "Processing $File"
+    sleep 1
+    ALL_TAGS="`timeout --signal=TERM ${LONG_TIMEOUT}s git ls-remote --tags $File`"
     if [ ! -z "$ALL_TAGS" ];
     then
 	for Tag in $ALL_TAGS
