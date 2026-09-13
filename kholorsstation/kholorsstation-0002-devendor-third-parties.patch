@@ -1,26 +1,25 @@
-From 61e234b979e4f964eeb53fda76dfd3ca8bf1becf Mon Sep 17 00:00:00 2001
-From: Yann Collette <ycollette.nospam@free.fr>
-Date: Thu, 2 Oct 2025 22:23:20 +0200
-Subject: [PATCH] devendor third parties
+From c90cc239faaa100a618e60c0ae70984eea0cd7f8 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Sun, 13 Sep 2026 12:16:49 +0200
+Subject: [PATCH] devendor
 
 ---
- CMakeLists.txt | 22 ++++------------------
- 1 file changed, 4 insertions(+), 18 deletions(-)
+ CMakeLists.txt | 22 +++++-----------------
+ 1 file changed, 5 insertions(+), 17 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 8a8c2d9..ca8223a 100644
+index 5ae8fd7..04f6b95 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -60,24 +60,10 @@ FetchContent_Declare(
- 
- FetchContent_MakeAvailable(juce)
- 
--# gRPC lib download and setup
--set(ABSL_ENABLE_INSTALL ON)
+@@ -90,23 +90,11 @@ if(APPLE)
+       -DSECOND_PATCH_FILE=${CMAKE_CURRENT_SOURCE_DIR}/cmake/patches/grpc-1.50.2-macos-apple-clang.patch
+       -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/apply_patch_if_needed.cmake)
+ endif()
 -FetchContent_Declare(
 -  gRPC
 -  GIT_REPOSITORY https://github.com/grpc/grpc
 -  GIT_TAG v1.50.2
+-  PATCH_COMMAND ${GRPC_PATCH_COMMAND}
 -  EXCLUDE_FROM_ALL)
 -FetchContent_MakeAvailable(gRPC)
 -set(protobuf_MSVC_STATIC_RUNTIME ON)
@@ -33,13 +32,14 @@ index 8a8c2d9..ca8223a 100644
 -  GIT_TAG v1.14.1)
 -FetchContent_MakeAvailable(spdlog)
 -set_target_properties(spdlog PROPERTIES POSITION_INDEPENDENT_CODE ON)
++
 +find_package(PkgConfig REQUIRED)
 +find_package(gRPC REQUIRED CONFIG)
 +find_package(Protobuf REQUIRED)
 +find_package(spdlog REQUIRED CONFIG)
  
  # Fetchcontent for muFFT
- set(MUFFT_ENABLE_FFTW OFF)
+ set(MUFFT_ENABLE_FFTW OFF CACHE BOOL "Build muFFT with FFTW support" FORCE)
 -- 
-2.51.0
+2.55.0
 
