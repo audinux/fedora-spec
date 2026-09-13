@@ -11,6 +11,7 @@
 
 TIMEOUT=20
 LONG_TIMEOUT=120
+SLEEP=0.3
 
 REPO_LIST="https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git
 git://gabe.is-a-geek.org/git/inconcert
@@ -1227,7 +1228,7 @@ fi
 for File in $REPO_LIST
 do
     echo "Processing $File"
-    sleep 1
+    sleep $SLEEP
     ALL_TAGS="`timeout --signal=TERM ${TIMEOUT}s git ls-remote --tags $File`"
     if [ ! -z "$ALL_TAGS" ];
     then
@@ -1244,7 +1245,7 @@ REPO_LIST_LONG_TIMEOUT="https://github.com/zen-kernel/zen-kernel"
 for File in $REPO_LIST_LONG_TIMEOUT
 do
     echo "Processing $File"
-    sleep 1
+    sleep $SLEEP
     ALL_TAGS="`timeout --signal=TERM ${LONG_TIMEOUT}s git ls-remote --tags $File`"
     if [ ! -z "$ALL_TAGS" ];
     then
