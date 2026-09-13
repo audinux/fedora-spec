@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 55f9eb0e916187d125bb5b401c872dcdcf1c4eee
-%global gittag0 2.3.0
+%global commit0 d7c51b7b92e6f5a33d839c08ecd033a3afcde6d6
+%global gittag0 2.3.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-thereelpeet-seq
-Version: 2.3.0
+Version: 2.3.1
 Release: 2%{?dist}
 Summary: thereelpeet-seq plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r thereelpeet-seq_plugin/dist/thereelpeet-seq/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-1
 - initial specfile
