@@ -464,6 +464,8 @@
 | plugins                                  | https://github.com/samueljustice/plugins                                                                                                                    |
 | aeolian-understory                       | https://github.com/spodzone/aeolian-understory                                                                                                              |
 | nota                                     | https://github.com/nota-daw/nota                                                                                                                            |
+| namplifier                               | https://github.com/geobissell/namplifier                                                                                                                    |
+| Luppolo                                  | https://codeberg.org/n_malo/Luppolo                                                                                                                         |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
