@@ -463,6 +463,7 @@
 | pitch-detector-tuner                     | https://github.com/mainstaudiolabs/pitch-detector-tuner                                                                                                     |
 | plugins                                  | https://github.com/samueljustice/plugins                                                                                                                    |
 | aeolian-understory                       | https://github.com/spodzone/aeolian-understory                                                                                                              |
+| nota                                     | https://github.com/nota-daw/nota                                                                                                                            |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -510,6 +511,26 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 Add Xenomai real time kernel:
 https://doc.fedora-fr.org/wiki/Mise_en_%C5%93uvre_de_Xenomai_pour_cr%C3%A9er_un_noyau_Temps_R%C3%A9el_dur
+
+## Generate plugin tables
+
+# Generate both formats in current directory
+```
+$ python3 scripts/generate-plugin-tables.py .
+
+# Custom filenames
+$ python3 scripts/generate-plugin-tables.py . \
+          --output-md catalogue.md \
+         --output-odt catalogue.odt
+
+ # Only markdown (skip ODT)
+$ python3 scripts/generate-plugin-tables.py . --no-odt
+
+# Only ODT (skip markdown)
+$ python3 scripts/generate-plugin-tables.py . --no-md
+```
+
+The ODT is generated natively with odfpy — package names are clickable hyperlinks in LibreOffice, and column widths are set to 5 cm (package name) + 12 cm (description/formats).
 
 ## Fixes
 
