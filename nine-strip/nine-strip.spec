@@ -1,10 +1,10 @@
 # Status: active
 # Tag: Effect, Gain, Filter
-# Type: Plugin, Standalone, VST3, LV2
+# Type: Plugin, Standalone, VST3, LV2, CLAP
 # Category: Effect
 
 Name: nine-strip
-Version: 0.1.3
+Version: 0.1.5
 Release: 1%{?dist}
 Summary: A channel strip plugin built with JUCE, incorporating classic Airwindows processing algorithms into a comprehensive mixing tool
 License: AGPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./nine-strip-source.sh <TAG>
-#        ./nine-strip-source.sh v0.1.3
+#        ./nine-strip-source.sh v0.1.5
 
 Source0: nine-strip.tar.gz
 Source1: nine-strip.svg
@@ -69,6 +69,14 @@ Requires: license-%{name}
 %description -n lv2-%{name}
 LV2 version of %{name}
 
+%package -n clap-%{name}
+Summary: CLAP version of %{name}
+License: AGPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n clap-%{name}
+CLAP version of %{name}
+
 %prep
 %autosetup -n nine-strip
 
@@ -84,6 +92,9 @@ cp -ra %{__cmake_builddir}/src/NineStrip_artefacts/VST3/* %{buildroot}/%{_libdir
 
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
 cp -ra %{__cmake_builddir}/src/NineStrip_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
+
+install -m 755 -d %{buildroot}%{_libdir}/clap/
+cp -ra %{__cmake_builddir}/src/NineStrip_artefacts/CLAP/* %{buildroot}/%{_libdir}/clap/
 
 install -m 755 -d %{buildroot}%{_bindir}/
 cp -ra %{__cmake_builddir}/src/NineStrip_artefacts/Standalone/* %{buildroot}/%{_bindir}/
@@ -128,7 +139,13 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
 
+%files -n clap-%{name}
+%{_libdir}/clap/*
+
 %changelog
+* Mon Sep 14 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.5-1
+- update to 0.1.5-1
+
 * Sat Aug 22 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.3-1
 - update to 0.1.3-1
 
