@@ -5,7 +5,7 @@
 
 Name: faustlive
 Version: 2.5.19
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: The swiss knife for Faust development
 License: GPL-2.0-or-later
 URL: https://github.com/grame-cncm/faustlive
@@ -16,6 +16,7 @@ Distribution: Audinux
 
 # to get source:
 # ./faustlive-source.sh 2.5.19
+# ./faustlive-source.sh master
 
 Source0: faustlive.tar.gz
 Source1: faustlive-source.sh
@@ -35,8 +36,10 @@ BuildRequires: libcurl-devel
 BuildRequires: llvm-devel
 %elif 0%{?fedora} == 40
 BuildRequires: llvm16-devel
-%else
+%elif 0%{?fedora} <= 45
 BuildRequires: llvm17-devel
+%else
+BuildRequires: llvm19-devel
 %endif
 BuildRequires: desktop-file-utils
 
@@ -76,7 +79,7 @@ export PATH=$PATH:/usr/lib64/llvm17/bin
 export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 cd Build
-%cmake
+%cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install
@@ -104,6 +107,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/FaustLive.desktop
 %{_datadir}/pixmaps/Faustlive.xpm
 
 %changelog
+* Sun Sep 13 2026 Yann Collette <ycollette.nospam@free.fr> - 2.5.19-2
+- update to 2.5.19-2 - update to last master
+
 * Sat Sep 21 2024 Yann Collette <ycollette.nospam@free.fr> - 2.5.19-1
 - update to 2.5.19-1
 
