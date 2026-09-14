@@ -5,11 +5,11 @@
 
 %global debug_package %{nil}
 
-%global commit0 994dda0e7f9f1a4b5ff581df3a0f9487d9eb3fe4
+%global commit0 f4e11418786b7787161d2d923b71d2ba51e8674d
 
 Name: hydra-rust
 Version: 0.0.1
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: Prototype of hydra remade in Rust
 License: AGPL-3.0-or-later
 URL: https://github.com/sova-org/hydra-rust
@@ -41,10 +41,16 @@ compiles them to GLSL shaders, and renders them via OpenGL. The core is a librar
 dependencies, suitable for embedding. A standalone binary is included for testing and standalone use.
 Originally extracted from Sova, the polyglot live coding sequencer.
 Some shortcuts:
-- CTRL-Enter: run code
-- CTRL-Shift-H: hide or show code
-- CTRL-Shift-S: save
-- CTRL-Shift-O: open
+- Ctrl/Cmd + Enter         Evaluate the current sketch
+- Ctrl/Cmd + S             Save the current sketch to a .hydra file
+- Ctrl/Cmd + O             Open a .hydra file
+- Ctrl/Cmd + Shift + H     Toggle editor visibility (hide the code overlay, keep the visuals running)
+- Tab                      Toggle the options sidebar — tempo/font/text-opacity, camera status, and the scene-bank grid (see below)
+- Alt + 0-9 / A-F          Recall slot 0-F (hex) in the active bank — loads and immediately evaluates its saved code
+- Alt + Shift + 0-9 / A-F  Save the editor's current code into that slot
+- Alt + -> / <-            Cycle to the previous/next scene bank
+- Alt + X                  Export the active bank (16 slots) as a .bhr file
+- Alt + I                  Import a .bhr file into the active bank, replacing its 16 slots
 
 %prep
 %autosetup -n %{name}-%{commit0}
@@ -72,7 +78,7 @@ rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linu
 %endif
 source cargo/env
 
-cargo build --release --features webcam,audio
+cargo build --release --features webcam,audio,image_url,midi
 
 %install
 
@@ -92,6 +98,9 @@ tar xvfz %{SOURCE2}
 %{_datadir}/%{name}/hydra-sketches/*
 
 %changelog
+* Mon Sep 14 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-6
+- update to 0.0.1-6 - update to last master - add midi + image_url
+
 * Sun Sep 13 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-5
 - update to 0.0.1-5 - update to last master
 
