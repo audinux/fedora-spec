@@ -16,7 +16,19 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://git.raphaelforment.fr/BuboBubo/Cagire/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+# To build the source archive:
+# $ wget https://git.raphaelforment.fr/BuboBubo/Cagire/archive/v0.2.2.tar.gz#/cagire-0.2.2.tar.gz
+# $ tar xvfz cagire-0.2.2.tar.gz
+# $ cd cagire
+# $ ./vendor-cargo.sh
+# $ echo "" >> .cargo/config.toml
+# $ cargo vendor >> .cargo/config.toml
+# $ cd ..
+# $ tar cvfz cagire-0.2.2.tar.gz cagire
+# $ rm -rf cagire
+
+Source0: cagire-%{version}.tar.gz
+Source1: vendor-cargo.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -67,8 +79,7 @@ rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linu
 %endif
 source cargo/env
 
-# Build jack standalone
-cargo build --release
+cargo build --offline --locked --release
 
 %install
 
