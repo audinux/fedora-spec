@@ -5,7 +5,7 @@
 
 Name: cabbage
 Version: 2.10.0
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: Framework for developing audio plugins with the Csound programming language.
 URL: https://github.com/rorywalsh/cabbage
 ExclusiveArch: x86_64 aarch64
@@ -115,12 +115,14 @@ cp build_CabbagePluginEffect/CabbagePluginEffect_artefacts/Debug/VST/libCabbageP
 
 # Install some directories
 install -m 755 -d %{buildroot}%{_datadir}/cabbage/docs/
-install -m 755 -d %{buildroot}%{_datadir}/cabbage/examples/
 install -m 755 -d %{buildroot}%{_datadir}/cabbage/themes/
 
 cp -rav Docs/* %{buildroot}%{_datadir}/cabbage/docs/
-cp -rav Examples/* %{buildroot}%{_datadir}/cabbage/examples/
 cp -rav Themes/* %{buildroot}%{_datadir}/cabbage/themes/
+
+# Install examples
+install -m 755 -d %{buildroot}%{_datadir}/doc/cabbage/
+cp -rav Examples %{buildroot}%{_datadir}/doc/cabbage/
 
 # Create some desktop files
 install -m 755 -d %{buildroot}%{_datadir}/applications/
@@ -153,8 +155,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Cabbage.desktop
 %{_datadir}/icons/hicolor/apps/512x512/*
 %{_datadir}/cabbage/
 %{_datadir}/cabbage/docs/*
-%{_datadir}/cabbage/examples/*
 %{_datadir}/cabbage/themes/*
+%{_datadir}/doc/cabbage/Examples/*
 
 %files -n vst-%{name}
 %{_libdir}/vst/*
@@ -163,6 +165,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/Cabbage.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Sep 13 2026 Yann Collette <ycollette.nospam@free.fr> - 2.10.0-5
+- update to 2.10.0-5 - update examples path
+
 * Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 2.10.0-4
 - update to 2.10.0-4 - remove unused dep
 
