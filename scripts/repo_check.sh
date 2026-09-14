@@ -1201,7 +1201,8 @@ https://github.com/Fadedlimes/Simple606
 https://github.com/Fadedlimes/Simple106
 https://github.com/Fadedlimes/Simple303
 https://github.com/sova-org/sova
-https://github.com/eclab/flow"
+https://github.com/eclab/flow
+https://codeberg.org/n_malo/Luppolo"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
