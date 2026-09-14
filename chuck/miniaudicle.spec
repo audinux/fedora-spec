@@ -9,7 +9,7 @@
 Name: miniaudicle
 Summary: Light weight ChucK development environment
 Version: 1.5.5.8
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: GPL-2.0-or-later
 URL: https://audicle.cs.princeton.edu/mini/
 ExclusiveArch: x86_64 aarch64
@@ -26,6 +26,7 @@ Source1: source-miniaudicle.sh
 BuildRequires: gcc gcc-c++
 BuildRequires: bison
 BuildRequires: flex
+BuildRequires: make
 BuildRequires: qt6-qtbase-devel
 BuildRequires: qscintilla-qt6-devel
 BuildRequires: qt6-rpm-macros
@@ -91,7 +92,7 @@ install -m 755 miniAudicle-alsa %{buildroot}%{_bindir}/miniAudicle-alsa
 # install pulse version
 install -m 755 miniAudicle-pulse %{buildroot}%{_bindir}/miniAudicle-pulse
 
-mkdir -p %{buildroot}%{_datadir}/%{name}/examples/
+install -m 755 -d %{buildroot}%{_datadir}/%{name}/examples/
 cp -rav ../examples/* %{buildroot}%{_datadir}/%{name}/examples/
 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/
@@ -158,7 +159,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-pulse.desktop
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 
 %files
-%doc BUGS README.md VERSIONS ABOUT
+%doc BUGS README.md VERSIONS ABOUT docs/*
 %license LICENSE
 %{_bindir}/*
 %{_datadir}/%{name}/examples/*
@@ -166,6 +167,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 %{_datadir}/icons/*
 
 %changelog
+* Sun Sep 13 2026 Yann Collette <ycollette.nospam@free.fr> - 1.5.5.8-3
+- update to 1.5.5.8-3 - update documentation
+
 * Mon Apr 20 2026 Yann Collette <ycollette.nospam@free.fr> - 1.5.5.8-2
 - update to 1.5.5.8-2
 
