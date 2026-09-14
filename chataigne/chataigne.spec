@@ -4,7 +4,7 @@
 # Category: Audio, DAW, Sequencer
 
 Name: chataigne
-Version: 1.10.3
+Version: 1.10.4
 Release: 1%{?dist}
 Summary: Artist-friendly Modular Machine for Art and Technology
 License: GPL-3.0-only
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources, use:
-# $ ./source-chataigne.sh 1.10.3
+# $ ./source-chataigne.sh 1.10.4
 
 Source0: Chataigne.tar.gz
 Source1: JUCE.tar.gz
@@ -52,7 +52,6 @@ BuildRequires: SDL2-devel
 BuildRequires: libusb1-devel
 BuildRequires: webkit2gtk4.1-devel
 BuildRequires: chrpath
-BuildRequires: JUCE7
 BuildRequires: desktop-file-utils
 
 %description
@@ -116,6 +115,9 @@ chrpath --delete %{buildroot}%{_bindir}/Chataigne
 %{_datadir}/applications/*
 
 %changelog
+* Sun Sep 13 2026 Yann Collette <ycollette.nospam@free.fr> - 1.10.4-1
+- Update to 1.10.4-1
+
 * Mon Mar 09 2026 Yann Collette <ycollette.nospam@free.fr> - 1.10.3-1
 - Update to 1.10.3-1
 
