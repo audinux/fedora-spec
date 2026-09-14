@@ -5,11 +5,11 @@
 
 %global debug_package %{nil}
 
-%global commit0 342601a4b195b66dc942e9efa261c77b932c9f7f
+%global commit0 994dda0e7f9f1a4b5ff581df3a0f9487d9eb3fe4
 
 Name: hydra-rust
 Version: 0.0.1
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: Prototype of hydra remade in Rust
 License: AGPL-3.0-or-later
 URL: https://github.com/sova-org/hydra-rust
@@ -92,6 +92,9 @@ tar xvfz %{SOURCE2}
 %{_datadir}/%{name}/hydra-sketches/*
 
 %changelog
+* Sun Sep 13 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-5
+- update to 0.0.1-5 - update to last master
+
 * Thu Sep 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-4
 - update to 0.0.1-4 - activate audio - use fork
 
