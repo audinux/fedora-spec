@@ -465,6 +465,8 @@
 | aeolian-understory                       | https://github.com/spodzone/aeolian-understory                                                                                                              |
 | nota                                     | https://github.com/nota-daw/nota                                                                                                                            |
 | namplifier                               | https://github.com/geobissell/namplifier                                                                                                                    |
+| PitchNet                                 | https://github.com/SessionLoops/PitchNet                                                                                                                    |
+| tone3000-plugin                          | https://github.com/tone-3000/tone3000-plugin                                                                                                                |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
