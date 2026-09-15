@@ -5,11 +5,11 @@
 
 %global debug_package %{nil}
 
-%global commit0 f4e11418786b7787161d2d923b71d2ba51e8674d
+%global commit0 a34a2cc8a47e404ed3dc94b573d157309e9a0f1e
 
 Name: hydra-rust
 Version: 0.0.1
-Release: 6%{?dist}
+Release: 7%{?dist}
 Summary: Prototype of hydra remade in Rust
 License: AGPL-3.0-or-later
 URL: https://github.com/sova-org/hydra-rust
@@ -34,6 +34,8 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: libv4l-devel
 BuildRequires: python3
+
+Requires: (ffmpeg or ffmpeg-free)
 
 %description
 A Rust port of Hydra — the live-codable video synthesizer created by Olivia Jack. Takes Rhai scripts,
@@ -78,7 +80,7 @@ rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linu
 %endif
 source cargo/env
 
-cargo build --release --features webcam,audio,image_url,midi
+cargo build --release --features webcam,audio,image_url,midi,video
 
 %install
 
@@ -98,6 +100,9 @@ tar xvfz %{SOURCE2}
 %{_datadir}/%{name}/hydra-sketches/*
 
 %changelog
+* Tue Sep 15 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-7
+- update to 0.0.1-7 - update to last master - add video + fixes
+
 * Mon Sep 14 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-6
 - update to 0.0.1-6 - update to last master - add midi + image_url
 
