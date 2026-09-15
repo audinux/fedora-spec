@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=44
+VERSION=45
 # To get the API key required to use copr-cli, go to:
 # https://copr.fedorainfracloud.org/api/
 
