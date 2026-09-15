@@ -6,7 +6,7 @@
 
 Summary: Old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.
 Name: padthv1
-Version: 1.4.3
+Version: 1.5.0
 Release: 4%{?dist}
 URL: https://sourceforge.net/projects/%{name}
 ExclusiveArch: x86_64 aarch64
@@ -18,6 +18,7 @@ Distribution: Audinux
 Source0: https://github.com/rncbc/padthv1/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: https://www.linuxsynths.com/Padthv1PatchesDemos/67Padthv1Patches.tar.gz
 Patch0: padthv1-0001-disable-strip.patch
+# TODO: add https://github.com/rncbc/padthv1-preset
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -100,6 +101,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.des
 %{_libdir}/lv2/%{name}.lv2/
 
 %changelog
+* Tue Sep 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.5.0-4
+- update to 1.5.0-4
+
 * Tue Sep 01 2026 Yann Collette <ycollette.nospam@free.fr> - 1.4.3-4
 - update to 1.4.3-4
 
