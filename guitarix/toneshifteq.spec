@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: ToneShiftEQ
-Version: 1.0.0
+Version: 1.1.0
 Release: 1%{?dist}
 Summary: ToneShiftEQ is a modern 12-band equalizer designed for precise spectral shaping, mixing, mastering, and corrective audio processing.
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the sources:
-# ./brummer10-source.sh ToneShiftEQ v1.0.0
+# ./brummer10-source.sh ToneShiftEQ v1.1.0
 
 Source0: ToneShiftEQ.tar.gz
 Source1: brummer10-source.sh
@@ -99,6 +99,9 @@ cp -ra bin/*.clap %{buildroot}%{_libdir}/clap/
 %{_libdir}/lv2/*
 
 %changelog
+* Tue Sep 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+- update to 1.1.0-1
+
 * Mon Sep 14 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - update to 1.0.0-1
 
