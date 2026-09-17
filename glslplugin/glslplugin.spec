@@ -5,7 +5,7 @@
 
 Name: glslplugin
 Version: 1.2
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: GLSL Editor for Audio Plugin
 License: MIT
 URL: https://github.com/COx2/glslEditor_AudioPlugin
@@ -40,15 +40,24 @@ BuildRequires: mesa-libGL-devel
 BuildRequires: libXcursor-devel
 BuildRequires: gtk3-devel
 
+Requires: license-%{name}
+
 %description
 GLSL Editor running on VST host Applications Cubase, StudioOne, Ableton Live, Logic, and more...
 This Editor already defined uniform variables, and GLSL code compatible for "GLSL Sandbox".
 http://glslsandbox.com/
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: MIT
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
 License: MIT
-Requires: license-%{name}}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
@@ -60,14 +69,6 @@ Requires: license-%{name}
 
 %description -n clap-%{name}
 CLAP version of %{name}
-
-%package -n license-%{name}
-Summary: License and documentation for %{name}
-License: MIT
-Requires: license-%{name}
-
-%description -n license-%{name}
-License and documentation for %{name}
 
 %prep
 %autosetup -n glslEditor_AudioPlugin
@@ -102,6 +103,9 @@ cp -ra %{__cmake_builddir}/GLSLPlugIn/GLSLPlugIn_artefacts/Standalone/*  %{build
 %{_libdir}/clap/*
 
 %changelog
+* Wed Sep 16 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2-3
+- update to 1.2-3 - fix license package
+
 * Fri Aug 29 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2-2
 - update to 1.2-2 - remove unused dep - update to ec8d5662
 
