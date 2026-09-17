@@ -2,8 +2,9 @@
 # Tag: Tool, Monitoring
 # Type: Standalone
 # Category: Tool
+
 Name: kernel-rt-tests
-Version: 2.10
+Version: 2.11
 Release: 2%{?dist}
 Summary: Various programs that test various rt-linux features
 License: GPL-2.0-or-later
@@ -43,6 +44,9 @@ Suite of real-time tests
 %{python3_sitelib}/*
 
 %changelog
+* Wed Sep 16 2026 Yann Collette <ycollette.nospam@free.fr> - 2.11-2
+- update to 2.11-2
+
 * Sun Mar 01 2026 Yann Collette <ycollette.nospam@free.fr> - 2.10-2
 - update to 2.10-2
 
