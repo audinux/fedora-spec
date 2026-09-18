@@ -1,11 +1,13 @@
 # Status: active
 # Tag: Graphic
-# Type: Plugin, Standalone, VST3, CLAP
+# Type: Plugin, Standalone, VST3
 # Category: Graphic
+
+%global commit0 a2a5de5000279d84112537e11982d04e1d725a88
 
 Name: glslplugin
 Version: 1.2
-Release: 3%{?dist}
+Release: 5%{?dist}
 Summary: GLSL Editor for Audio Plugin
 License: MIT
 URL: https://github.com/COx2/glslEditor_AudioPlugin
@@ -15,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./glslplugin-source.sh <TAG>
-#        ./glslplugin-source.sh next
+#        ./glslplugin-source.sh ycollette/claude
 
 Source0: glslEditor_AudioPlugin.tar.gz
 Source1: glslplugin-source.sh
@@ -81,13 +83,13 @@ CLAP version of %{name}
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/GLSLPlugIn/GLSLPlugIn_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/GLSLPlugIn/GLSLPlugIn_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 
 install -m 755 -d %{buildroot}%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/GLSLPlugIn/GLSLPlugIn_artefacts/CLAP/*  %{buildroot}/%{_libdir}/clap/
+cp -ra %{__cmake_builddir}/GLSLPlugIn/GLSLPlugIn_artefacts/CLAP/* %{buildroot}/%{_libdir}/clap/
 
 install -m 755 -d %{buildroot}%{_bindir}/
-cp -ra %{__cmake_builddir}/GLSLPlugIn/GLSLPlugIn_artefacts/Standalone/*  %{buildroot}/%{_bindir}/
+cp -ra %{__cmake_builddir}/GLSLPlugIn/GLSLPlugIn_artefacts/Standalone/* %{buildroot}/%{_bindir}/
 
 %files -n license-%{name}
 %doc README.md
@@ -103,6 +105,12 @@ cp -ra %{__cmake_builddir}/GLSLPlugIn/GLSLPlugIn_artefacts/Standalone/*  %{build
 %{_libdir}/clap/*
 
 %changelog
+* Fri Sep 18 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2-5
+- update to 1.2-5 - re-enable CLAP
+
+* Thu Sep 17 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2-4
+- update to 1.2-4 - switching to ycollet version - remove clap for now
+
 * Wed Sep 16 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2-3
 - update to 1.2-3 - fix license package
 
