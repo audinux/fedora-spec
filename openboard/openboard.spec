@@ -2,7 +2,6 @@
 # Tag: Graphic, Tool
 # Type: Standalone
 # Category: Graphic, Tool
-# GUIToolkit: Qt5
 
 %global debug_package %{nil}
 
@@ -10,7 +9,7 @@
 
 Name: openboard
 Version: 1.7.7
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Interactive whiteboard for schools and universities
 License: GPL-3.0-or-later
 URL: https://openboard.ch
@@ -21,6 +20,7 @@ Distribution: Audinux
 
 Source0: https://github.com/OpenBoard-org/OpenBoard/archive/v%{version}/%{uname}-%{version}.tar.gz
 Source1: %{name}.desktop
+Patch0: openboard-0001-fix-access.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -29,7 +29,6 @@ BuildRequires: flex
 BuildRequires: (ffmpeg-devel or ffmpeg-free-devel)
 BuildRequires: libpaper-devel
 BuildRequires: qtsingleapplication-qt6-devel
-BuildRequires: quazip-devel
 BuildRequires: t1lib-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(Qt6Core)
@@ -54,6 +53,7 @@ BuildRequires: libogg-devel
 BuildRequires: libtheora-devel
 BuildRequires: opus-devel
 BuildRequires: lame-devel
+BuildRequires: cups-devel
 BuildRequires: quazip-qt6-devel
 BuildRequires: libsndfile-devel
 BuildRequires: desktop-file-utils
@@ -64,7 +64,7 @@ application designed primarily for use in schools. It was originally
 forked from Open-Sankor, which was itself based on Uniboard.
 
 %prep
-%autosetup -n %{uname}-%{version}
+%autosetup -p1 -n %{uname}-%{version}
 
 cp -pr %{SOURCE1} .
 
@@ -78,7 +78,8 @@ export LDFLAGS="-L/usr/lib64/ffmpeg $LDFLAGS"
 export CFLAGS="-I/usr/include/ffmpeg -I/usr/include/quazip $CFLAGS"
 export CXXFLAGS="-I/usr/include/ffmpeg -I/usr/include/quazip $CXXFLAGS"
 
-%cmake -DCMAKE_CXX_STANDARD=20
+%cmake -DCMAKE_CXX_STANDARD=20 \
+       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install
@@ -104,6 +105,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/ch.openboard.OpenBoar
 %{_sysconfdir}/%{name}/*
 
 %changelog
+* Fri Sep 18 2026 Yann Collette <ycollette.nospam@free.fr> - 1.7.7-4
+- update to 1.7.7-4 - remove quazip dependency
+
 * Mon Mar 30 2026 Yann Collette <ycollette.nospam@free.fr> - 1.7.7-3
 - update to 1.7.7-3
 

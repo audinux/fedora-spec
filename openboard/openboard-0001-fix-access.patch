@@ -1,0 +1,25 @@
+From f4eb4a113d1fbd49b574cd7f51a2f9ef63df7c1c Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Fri, 18 Sep 2026 07:22:37 +0200
+Subject: [PATCH] fix access
+
+---
+ src/pdf/XPDFRenderer.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/pdf/XPDFRenderer.cpp b/src/pdf/XPDFRenderer.cpp
+index 8e36143..a7bcf2d 100644
+--- a/src/pdf/XPDFRenderer.cpp
++++ b/src/pdf/XPDFRenderer.cpp
+@@ -179,7 +179,7 @@ QString XPDFRenderer::title() const
+             if (title.isString())
+             {
+ #if POPPLER_VERSION_MAJOR > 0 || POPPLER_VERSION_MINOR >= 72
+-                return QString(title.getString()->c_str());
++                return QString(title.getString().c_str());
+ #else
+                 return QString(title.getString()->getCString());
+ #endif
+-- 
+2.55.0
+
