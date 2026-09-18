@@ -1,4 +1,4 @@
-# Status: active
+# Status: inactive
 # Tag: Synthesizer, Modular
 # Type: Plugin, VST3, CLAP
 # Category: Synthesizer
