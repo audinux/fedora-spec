@@ -468,6 +468,7 @@
 | PitchNet                                 | https://github.com/SessionLoops/PitchNet                                                                                                                    |
 | tone3000-plugin                          | https://github.com/tone-3000/tone3000-plugin                                                                                                                |
 | ovni                                     | https://github.com/ovniaudio/ovni                                                                                                                           |
+| midijitter                               | https://github.com/martinsolberg/midijitter                                                                                                                 |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
