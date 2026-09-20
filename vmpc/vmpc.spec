@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: vmpc
-Version: 0.9.17
+Version: 0.9.18
 Release: 1%{?dist}
 Summary: JUCE implementation of VMPC2000XL
 License: GPL-3.0-only
@@ -15,7 +15,6 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/izzyreal/vmpc-juce/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0: vmpc-0001-force-shared.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: git
@@ -84,6 +83,9 @@ cp -ra %{__cmake_builddir}/vmpc2000xl_artefacts/Standalone/* %{buildroot}/%{_bin
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Sep 20 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.18-1
+- update to 0.9.18-1
+
 * Fri Aug 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.17-1
 - update to 0.9.17-1
 
