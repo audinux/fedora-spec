@@ -38,6 +38,9 @@ BuildRequires: fftw-devel
 BuildRequires: libmad-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: lilv-devel
+BuildRequires: pipewire-devel
+BuildRequires: faad2-devel
+BuildRequires: faac-devel
 BuildRequires: desktop-file-utils
 
 %description
