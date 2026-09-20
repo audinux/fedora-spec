@@ -43,7 +43,11 @@ BuildRequires: lv2-devel
 # openssl-devel-engine existed only in OpenSSL 3.x (Fedora 41-44)
 BuildRequires: openssl-devel-engine
 %endif
+%if 0%{?fedora} <= 44
 BuildRequires: openssl-devel
+%else
+BuildRequires: openssl3-devel
+%endif
 BuildRequires: hidapi-devel
 BuildRequires: gtk3-devel
 BuildRequires: libglvnd-devel
