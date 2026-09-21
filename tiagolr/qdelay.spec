@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: qdelay
-Version: 1.1.2
+Version: 1.2.3
 Release: 1%{?dist}
 Summary: A Dual Delay with more features than it should
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./ripplerx-source.sh <PROJECT> <TAG>
-#        ./ripplerx-source.sh qdelay v1.1.2
+#        ./ripplerx-source.sh qdelay v1.2.3
 
 Source0: qdelay.tar.gz
 Source1: ripplerx-source.sh
@@ -84,13 +84,13 @@ LV2 version of %{name}
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/QDelay_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/QDelay_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
-cp -ra %{__cmake_builddir}/QDelay_artefacts/LV2/*  %{buildroot}/%{_libdir}/lv2/
+cp -ra %{__cmake_builddir}/QDelay_artefacts/LV2/* %{buildroot}/%{_libdir}/lv2/
 
 install -m 755 -d %{buildroot}%{_bindir}/
-cp -ra %{__cmake_builddir}/QDelay_artefacts/Standalone/*  %{buildroot}/%{_bindir}/
+cp -ra %{__cmake_builddir}/QDelay_artefacts/Standalone/* %{buildroot}/%{_bindir}/
 
 %files
 %{_bindir}/*
@@ -106,6 +106,9 @@ cp -ra %{__cmake_builddir}/QDelay_artefacts/Standalone/*  %{buildroot}/%{_bindir
 %{_libdir}/lv2/*
 
 %changelog
+* Mon Sep 21 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.3-1
+- update to 1.2.3-1
+
 * Sun Mar 22 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.2-1
 - update to 1.1.2-1
 
