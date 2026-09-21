@@ -1,12 +1,10 @@
 # Status: active
 # Tag: Reverb
-# Type: Plugin, VST3, VST, LV2, CLAP
+# Type: Plugin, VST3, VST, CLAP
 # Category: Effect
 
-%global commit0 bb33adc11dc7d97c1ed8273c9244ee0bf33357e1
-
 Name: classicreverb-re02
-Version: 0.0.1
+Version: 1.1.1
 Release: 1%{?dist}
 Summary: Reversed engineering of Kjaerhus Audio Classic Reverb, with different timbre of sound
 URL: https://github.com/AnClark/ClassicReverb-RE02
@@ -16,7 +14,7 @@ License: GPL-3.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./cetone-source.sh ClassicReverb-RE02 develop
+# ./cetone-source.sh ClassicReverb-RE02 v1.1.1
 
 Source0: ClassicReverb-RE02.tar.gz
 Source1: cetone-source.sh
@@ -94,14 +92,6 @@ Requires: license-%{name}
 %description -n clap-%{name}
 CLAP version of %{name}
 
-%package -n lv2-%{name}
-Summary: LV2 version of %{name}
-License: GPL-3.0-or-later
-Requires: license-%{name}
-
-%description -n lv2-%{name}
-LV2 version of %{name}
-
 %prep
 
 %autosetup -n ClassicReverb-RE02
@@ -116,10 +106,8 @@ LV2 version of %{name}
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_libdir}/vst/
 install -m 755 -d %{buildroot}%{_libdir}/clap/
-install -m 755 -d %{buildroot}%{_libdir}/lv2/
 
 cp %{__cmake_builddir}/bin/ClassicReverb-RE02.clap %{buildroot}%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/bin/ClassicReverb-RE02.lv2 %{buildroot}%{_libdir}/lv2/
 cp %{__cmake_builddir}/bin/ClassicReverb-RE02-vst2.so %{buildroot}%{_libdir}/vst/
 cp -ra %{__cmake_builddir}/bin/ClassicReverb-RE02.vst3 %{buildroot}%{_libdir}/vst3/
 
@@ -133,12 +121,12 @@ cp -ra %{__cmake_builddir}/bin/ClassicReverb-RE02.vst3 %{buildroot}%{_libdir}/vs
 %files -n vst-%{name}
 %{_libdir}/vst/*
 
-%files -n lv2-%{name}
-%{_libdir}/lv2/*
-
 %files -n clap-%{name}
 %{_libdir}/clap/*
 
 %changelog
+* Mon Sep 21 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
+- update to 1.1.1-1
+
 * Wed May 13 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file

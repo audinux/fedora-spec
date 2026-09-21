@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: classicreverb-re04
-Version: 1.1.0
+Version: 1.1.1
 Release: 1%{?dist}
 Summary: Reversed engineering of Kjaerhus Audio Classic Reverb, with enhancements
 URL: https://github.com/AnClark/ClassicReverb-RE04
@@ -14,7 +14,7 @@ License: GPL-3.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./cetone-source.sh ClassicReverb-RE04 v1.1.0
+# ./cetone-source.sh ClassicReverb-RE04 v1.1.1
 
 Source0: ClassicReverb-RE04.tar.gz
 Source1: cetone-source.sh
@@ -58,7 +58,7 @@ Features
 - High-quality reverb algorithm that captures the essence of the original Classic Reverb.
 - Bring back the original panel design and controls with modern technology.
 - Multi-platform support, including Windows, macOS, and Linux.
-- Multiple plugin formats, including VST 2.4, VST3, CLAP, LV2 and JACK standalone (optional).
+- Multiple plugin formats, including VST 2.4, VST3, CLAP.
 - Advanced preset management system, allowing users to save and load their favorite reverb settings.
 - Shipped with a collection of factory presets that cover common reverb styles.
 
@@ -108,9 +108,9 @@ install -m 755 -d %{buildroot}%{_libdir}/vst3/
 install -m 755 -d %{buildroot}%{_libdir}/vst/
 install -m 755 -d %{buildroot}%{_libdir}/clap/
 
-cp %{__cmake_builddir}/bin/ClassicReverb.clap %{buildroot}%{_libdir}/clap/
-cp %{__cmake_builddir}/bin/ClassicReverb-vst2.so %{buildroot}%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/bin/ClassicReverb.vst3 %{buildroot}%{_libdir}/vst3/
+cp %{__cmake_builddir}/bin/ClassicReverb-RE04.clap %{buildroot}%{_libdir}/clap/
+cp %{__cmake_builddir}/bin/ClassicReverb-RE04-vst2.so %{buildroot}%{_libdir}/vst/
+cp -ra %{__cmake_builddir}/bin/ClassicReverb-RE04.vst3 %{buildroot}%{_libdir}/vst3/
 
 %files -n license-%{name}
 %license LICENSE
@@ -126,6 +126,9 @@ cp -ra %{__cmake_builddir}/bin/ClassicReverb.vst3 %{buildroot}%{_libdir}/vst3/
 %{_libdir}/clap/*
 
 %changelog
+* Mon Sep 21 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
+- update to 1.1.1-1
+
 * Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
 - update to 1.1.0-1
 
