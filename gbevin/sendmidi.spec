@@ -4,7 +4,7 @@
 # Category: MIDI, Tool
 
 Name: sendmidi
-Version: 1.4.3
+Version: 1.4.4
 Release: 3%{?dist}
 Summary: A command line tool to send MIDI event
 License: GPL-3.0-only
@@ -56,6 +56,9 @@ install -m 755 -p build/sendmidi %{buildroot}/%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Mon Sep 21 2026 Yann Collette <ycollette.nospam@free.fr> - 1.4.4-3
+- update to 1.4.4-3
+
 * Sun Jul 19 2026 Yann Collette <ycollette.nospam@free.fr> - 1.4.3-3
 - update to 1.4.3-3
 
