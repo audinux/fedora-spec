@@ -8,7 +8,7 @@
 # contain GNU build IDs.
 %global _missing_build_ids_terminate_build %{nil}
 %global debug_package %{nil}
-%global godot_version 4.6.2
+%global godot_version 4.7.1
 
 Name: SoundThread
 Version: 0.4.0b
@@ -19,6 +19,9 @@ URL: https://github.com/j-p-higgins/SoundThread
 
 Vendor:       Audinux
 Distribution: Audinux
+
+# Usage: ./prepare_godot.sh <VERSION>
+#        ./prepare_godot.sh 4.7.1
 
 Source0: %{url}/archive/refs/tags/v%{real_version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: godot_templates.zip
@@ -97,6 +100,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/*
 
 %changelog
+* Sun Sep 20 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.0b-3
+- update to 0.4.0b-3 - update to godot 4.7.1
+
 * Tue May 19 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.0b-2
 - update to 0.4.0b-2 - use cdp-compat
 

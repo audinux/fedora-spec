@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Usage: ./prepare_godot.sh <VERSION>
-#        ./prepare_godot.sh 4.6.2
+#        ./prepare_godot.sh 4.7.2
 
 VERSION=$1
 wget https://godot-releases.nbg1.your-objectstorage.com/$VERSION-stable/Godot_v$VERSION-stable_export_templates.tpz
