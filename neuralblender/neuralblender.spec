@@ -4,7 +4,7 @@
 # Category: Audio, Tool
 
 Name: neuralblender
-Version: 1.3.5
+Version: 1.3.7
 Release: 1%{?dist}
 Summary: Guitar amp modeling plugin based on RTNeural and NeuralAmp
 License: GPL-3.0-or-later
@@ -28,6 +28,7 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: xxd
 BuildRequires: libcurl-devel
 BuildRequires: openssl-devel
+BuildRequires: fftw-devel
 BuildRequires: desktop-file-utils
 
 Requires: license-%{name}
@@ -103,6 +104,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Sep 20 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.7-1
+- update to 1.3.7-1
+
 * Mon Sep 14 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.5-1
 - update to 1.3.5-1
 
