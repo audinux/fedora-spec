@@ -1,36 +1,36 @@
-From 14c07989fa78db703fc95f670b0c4cf3654cdd01 Mon Sep 17 00:00:00 2001
+From d3dc7d81e79c7e3a622ec5266025cdfc58b93127 Mon Sep 17 00:00:00 2001
 From: Yann Collette <yc@example.com>
-Date: Mon, 7 Sep 2026 21:42:27 +0200
-Subject: [PATCH] fix avx flags
+Date: Mon, 21 Sep 2026 07:56:39 +0200
+Subject: [PATCH] fix
 
 ---
  CMakeLists.txt | 12 +++++-------
  1 file changed, 5 insertions(+), 7 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 9a0de3d..e541c2f 100644
+index d85c1f3..13a9972 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -164,7 +164,7 @@ juce_add_plugin(NoiseRepellent
+@@ -165,7 +165,7 @@ juce_add_plugin(NoiseRepellent
      PLUGIN_MANUFACTURER_CODE LdNR
      PLUGIN_CODE Nrep
-     FORMATS VST3 AU LV2
+     FORMATS ${NOISE_REPELLENT_FORMATS}
 -    PRODUCT_NAME "Noise Repellent"
 +    PRODUCT_NAME "Noise_Repellent"
  )
  
  if(APPLE)
-@@ -231,6 +231,9 @@ else()
+@@ -232,6 +232,9 @@ else()
          add_subdirectory("${SPECBLEACH_SRC}" "${CMAKE_CURRENT_BINARY_DIR}/libspecbleach_build")
      else()
          message(STATUS "Fetching libspecbleach remotely (pinned revision)...")
 +        set(_save_build_shared_libs "${BUILD_SHARED_LIBS}")
-+	set(ENABLE_AVX OFF)
++        set(ENABLE_AVX OFF)
 +        set(BUILD_SHARED_LIBS OFF)
          FetchContent_Declare(
              libspecbleach
              GIT_REPOSITORY https://github.com/lucianodato/libspecbleach.git
-@@ -239,6 +242,7 @@ else()
+@@ -240,6 +243,7 @@ else()
          )
          FetchContent_MakeAvailable(libspecbleach)
          set(SPECBLEACH_SRC "${libspecbleach_SOURCE_DIR}")
@@ -38,7 +38,7 @@ index 9a0de3d..e541c2f 100644
      endif()
  
      if(TARGET libspecbleach AND NOT TARGET specbleach_avx)
-@@ -246,12 +250,6 @@ else()
+@@ -247,12 +251,6 @@ else()
          if(EXISTS "${AVX_C_FILE}")
              if(CMAKE_SYSTEM_PROCESSOR MATCHES "(x86_64|amd64|AMD64|x86-64)" OR "x86_64" IN_LIST CMAKE_OSX_ARCHITECTURES)
                  target_sources(libspecbleach PRIVATE "${AVX_C_FILE}")

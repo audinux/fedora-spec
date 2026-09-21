@@ -2,10 +2,9 @@
 # Tag: Gate
 # Type: Plugin, LV2, VST3
 # Category: Audio, Effect
-# LastSourceUpdate: 2020
 
 Name: noise-repellent
-Version: 0.4.0
+Version: 0.4.1
 Release: 6%{?dist}
 Summary: A lv2 plug-in for broadband noise reduction.
 License: GPL-2.0-or-later
@@ -110,6 +109,9 @@ cp -ra %{__cmake_builddir}/NoiseRepellent_artefacts/LV2/*  %{buildroot}/%{_libdi
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Sep 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.1-6
+- update to 0.4.1-6
+
 * Mon Sep 07 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.0-6
 - update to 0.4.0-6
 
