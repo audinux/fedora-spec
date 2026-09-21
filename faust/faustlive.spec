@@ -36,7 +36,7 @@ BuildRequires: libcurl-devel
 BuildRequires: llvm-devel
 %elif 0%{?fedora} == 40
 BuildRequires: llvm16-devel
-%elif 0%{?fedora} <= 45
+%elif 0%{?fedora} <= 44
 BuildRequires: llvm17-devel
 %else
 BuildRequires: llvm19-devel
