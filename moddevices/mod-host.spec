@@ -26,7 +26,7 @@
 
 Name: mod-host
 Version: 0.10.6.%{shortcommit0}
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: GPL-3.0-or-later
 Summary: LV2 host for Jack controllable via socket or command line
 URL: https://github.com/moddevices/mod-host
@@ -38,6 +38,8 @@ Distribution: Audinux
 Source0: https://github.com/moddevices/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: %{name}.service
 Patch0: mod-host-100.patch
+# https://github.com/mod-audio/mod-host/pull/101 - let "add" name its jack client
+Patch1: mod-host-101.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -98,6 +100,9 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 %{_userunitdir}/%{name}.service
 
 %changelog
+* Tue Sep 22 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-4
+- apply upstream PR 101: an optional jack client name on the add command
+
 * Sat Sep 05 2026 Yann Collette <ycollette.nospam@free.fr> - 0.10.6-3
 - update to 0.10.6-3 - apply a patch
 
