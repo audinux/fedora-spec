@@ -5,9 +5,13 @@
 
 %global debug_package %{nil}
 
+# Bump this when the distro moves to a new .NET SDK generation
+%global dotnet_version 10.0
+%global dotnet_tfm     net%{dotnet_version}
+
 Name: stompboxui
 Version: 0.2.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Remote GUI and VST3 plugin for Stompbox guitar simulation
 License: GPL-3.0-or-later
 URL: https://github.com/mikeoliphant/StompboxUI
@@ -21,7 +25,7 @@ Source1: mikeoliphant-source.sh
 
 BuildRequires: gcc-c++
 BuildRequires: dotnet-host
-BuildRequires: dotnet-sdk-8.0
+BuildRequires: dotnet-sdk-%{dotnet_version}
 BuildRequires: mono-devel
 BuildRequires: libgdiplus
 BuildRequires: cmake
@@ -30,6 +34,7 @@ BuildRequires: libappstream-glib
 BuildRequires: desktop-file-utils
 
 Requires: license-%{name}
+Requires: dotnet-runtime-%{dotnet_version}
 
 %description
 Stompbox is a guitar amplification and effects application, arranged as a digital version of a guitar pedalboard.
@@ -46,6 +51,10 @@ License and documentation for %{name}
 
 %prep
 %autosetup -n StompboxUI
+# Retarget all subprojects to the installed SDK's TFM
+find . -name "*.csproj" -exec sed -i \
+    's|<TargetFramework>net8\.0</TargetFramework>|<TargetFramework>%{dotnet_tfm}</TargetFramework>|g' \
+    {} +
 
 %build
 
@@ -64,7 +73,7 @@ dotnet build -c Release StompboxRemoteGL.csproj
 %install
 
 mkdir -p %{buildroot}/%{_bindir}/
-cp StompboxUI/StompboxRemoteGL/bin/Release/net8.0/StompboxRemoteGL  %{buildroot}/%{_bindir}/
+cp StompboxUI/StompboxRemoteGL/bin/Release/%{dotnet_tfm}/StompboxRemoteGL  %{buildroot}/%{_bindir}/
 
 %files
 %{_bindir}/StompboxRemoteGL
@@ -74,6 +83,11 @@ cp StompboxUI/StompboxRemoteGL/bin/Release/net8.0/StompboxRemoteGL  %{buildroot}
 %license LICENSE.md
 
 %changelog
+* Mon Sep 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.2-2
+- Port to dotnet-sdk-10.0: add dotnet_version/dotnet_tfm globals, patch
+  .csproj TargetFramework net8.0→net10.0 in %%prep, update install path,
+  add Requires: dotnet-runtime-10.0 (dotnet-sdk-8.0 removed in Fedora 45)
+
 * Wed May 27 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.2-1
 - update to 0.2.2-1
 
