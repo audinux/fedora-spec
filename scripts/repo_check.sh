@@ -189,7 +189,6 @@ https://github.com/dblanchemain/metaSurface
 https://github.com/DCubix/Twist
 https://github.com/deezer/spleeter
 https://github.com/Delexander/Volume1
-https://github.com/denischevalier/StalysVCVPlugin
 https://github.com/desbma/r128gain
 https://github.com/dfranx/SHADERed
 https://github.com/dhemery/DHE-Modules/
@@ -1216,6 +1215,7 @@ https://github.com/coignard/o2"
 # https://github.com/mididings/pyliblo
 # https://github.com/aiobofh/midi-utils
 # https://github.com/Stubs42/OrangeLine
+# https://github.com/denischevalier/StalysVCVPlugin
 
 # Copy everything in case of problems
 cp git_tags_* /tmp
