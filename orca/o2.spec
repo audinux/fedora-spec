@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: o2
-Version: 0.3.6
+Version: 0.3.7
 Release: 1%{?dist}
 Summary: Rust port of the ORCΛ esoteric programming language and terminal livecoding environment
 License: GPL-3.0-or-later
@@ -104,5 +104,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/orca.png
 
 %changelog
+* Thu Sep 24 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.7-1
+- update to 0.3.7-1
+
 * Tue Sep 15 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.4-1
 - Initial spec file
