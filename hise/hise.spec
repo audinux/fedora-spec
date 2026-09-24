@@ -7,7 +7,7 @@
 %global toolchain clang
 
 Name: HISE
-Version: 4.9.3
+Version: 4.9.7
 Release: 5%{?dist}
 Summary: The open source framework for sample based instrument
 License: GPL-3.0-or-later OR LicenseRef-www-hise-audio
@@ -18,7 +18,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./hise-source.sh <TAG>
-#        ./hise-source.sh v4.9.3
+#        ./hise-source.sh v4.9.7
 
 Source0: HISE.tar.gz
 # Source1: https://web.archive.org/web/20181016150224/https://download.steinberg.net/sdk_downloads/vstsdk3610_11_06_2018_build_37.zip
@@ -157,6 +157,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Thu Sep 24 2026 Yann Collette <ycollette.nospam@free.fr> - 4.9.7-5
+- update to 4.9.7-5
+
 * Wed Jul 15 2026 Yann Collette <ycollette.nospam@free.fr> - 4.9.3-5
 - update to 4.9.3-5
 
