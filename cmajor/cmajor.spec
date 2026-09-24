@@ -6,7 +6,7 @@
 %global toolchain clang
 
 Name: cmajor
-Version: 1.0.3188
+Version: 1.0.3209
 Release: 1%{?dist}
 Summary: Cmajor is a programming language for writing fast, portable audio software.
 License: GPL-3.0-or-later
@@ -19,7 +19,7 @@ Distribution: Audinux
 # Check JUCE version in source-cmake.sh
 #
 # To get the sources, use:
-# $ ./source-cmajor.sh 1.0.3188
+# $ ./source-cmajor.sh 1.0.3209
 
 Source0: cmajor.tar.gz
 Source1: source-cmajor.sh
@@ -162,6 +162,9 @@ chrpath --delete %{buildroot}/%{_bindir}/cmaj
 %{_datadir}/cmajor/examples/*
 
 %changelog
+* Thu Sep 24 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.3209-1
+- Update to 1.0.3209-1
+
 * Tue Sep 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.3188-1
 - Update to 1.0.3188-1
 
