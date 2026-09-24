@@ -8,7 +8,7 @@
 %global srcname2 jack_client
 
 Name: python-jack-client
-Version: 0.5.5
+Version: 0.5.7
 Release: 17%{?dist}
 Summary: JACK Audio Connection Kit (JACK) Client for Python
 URL: http://jackclient-python.rtfd.org
@@ -16,7 +16,6 @@ License: MIT
 BuildArch: noarch
 
 Source0: https://github.com/spatialaudio/jackclient-python/archive/%{version}/%{srcname0}-%{version}.tar.gz
-Patch0: jackclient-python-add-unknown-port.patch
 
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
@@ -37,7 +36,7 @@ also provides the functionality to manage MIDI ports.
 This package installs the library for Python.
 
 %prep
-%autosetup -p1 -n %{srcname1}-%{version}
+%autosetup -n %{srcname1}-%{version}
 
 %build
 %pyproject_wheel
@@ -54,6 +53,9 @@ This package installs the library for Python.
 %doc CONTRIBUTING.rst
 
 %changelog
+* Thu Sep 24 2026 Yann Collette <ycollette.nospam@free.fr> - 0.5.7-17
+- update to 0.5.7-17
+
 * Tue Mar 03 2026 Yann Collette <ycollette.nospam@free.fr> - 0.5.5-17
 - update to 0.5.5-17 - apply patch for unknown port
 
