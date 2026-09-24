@@ -1,0 +1,266 @@
+diff --git a/README.md b/README.md
+index 0003243..647a1f8 100644
+--- a/README.md
++++ b/README.md
+@@ -106,10 +106,22 @@ Commands (or Protocol)
+ 
+ The commands supported by mod-host are:
+ 
+-    add <lv2_uri> <instance_number>
++    add <lv2_uri> <instance_number> [client_name]
+         * add an LV2 plugin encapsulated as a jack client
+         e.g.: add "http://lv2plug.in/plugins/eg-amp" 0
+         instance_number must be any value between 0 ~ 9990, inclusively
++        client_name is optional; when omitted the jack client (and so the graph node) is
++        named "effect_<instance_number>", same as always. When given, mod-host tries to
++        open the jack client under that name instead -- so a host running many plugins
++        shows a graph with a name per plugin instead of an undifferentiated effect_0,
++        effect_1, effect_2... The name is sanitised for jack (':' is replaced with '_',
++        since jack uses ':' as the client:port separator, and it is truncated to the
++        running jack backend's client name limit) and, on a collision with an existing
++        jack client, disambiguated by appending "_<instance_number>". If the sanitised
++        name is empty, or the name still collides after the instance number is appended,
++        mod-host falls back to the default "effect_<instance_number>" rather than fail
++        the add.
++        e.g.: add "http://lv2plug.in/plugins/eg-amp" 0 "channel1-eg-amp"
+ 
+     remove <instance_number>
+         * remove an LV2 plugin instance (and also the jack client)
+diff --git a/src/effects.c b/src/effects.c
+index fc6a484..4bf139b 100644
+--- a/src/effects.c
++++ b/src/effects.c
+@@ -4548,10 +4548,31 @@ int effects_finish(int close_client)
+     return SUCCESS;
+ }
+ 
+-int effects_add(const char *uri, int instance)
++/* jack_client_name_size() includes the final NUL, and JACK backends vary it (33 on plain
++   JACK1, up to 256 seen on some PipeWire builds) -- 256 is comfortably above every backend
++   observed, and requested_name is truncated to whatever the live backend actually reports. */
++#define REQUESTED_CLIENT_NAME_BUF_SIZE 256
++
++/* Copy `src` into `dst` (size `dst_size`), replacing JACK's port-separator ':' with '_' (a
++   client name carrying one would make every one of its own ports unparseable as
++   "client:port"), and truncating to at most `max_len` characters. Never NUL if `src` sanitises
++   to nothing -- the caller falls back to the default name in that case. */
++static void sanitize_client_name(char *dst, size_t dst_size, const char *src, size_t max_len)
++{
++    if (max_len >= dst_size) max_len = dst_size - 1;
++    size_t di = 0;
++    for (size_t si = 0; src[si] != '\0' && di < max_len; si++)
++    {
++        dst[di++] = (src[si] == ':') ? '_' : src[si];
++    }
++    dst[di] = '\0';
++}
++
++int effects_add(const char *uri, int instance, const char *client_name)
+ {
+     unsigned int ports_count;
+     char effect_name[32], port_name[MAX_CHAR_BUF_SIZE+1];
++    char requested_name[REQUESTED_CLIENT_NAME_BUF_SIZE];
+     float *audio_buffer, *cv_buffer, *control_buffer;
+     jack_port_t *jack_port;
+     uint32_t audio_ports_count, input_audio_ports_count, output_audio_ports_count;
+@@ -4596,7 +4617,61 @@ int effects_add(const char *uri, int instance)
+ 
+     /* Create a client to Jack */
+     snprintf(effect_name, 31, "effect_%i", instance);
+-    jack_client = jack_client_open(effect_name, JackNoStartServer, &jack_status);
++
++    if (client_name && client_name[0] != '\0')
++    {
++        /* jack_client_name_size() needs a live client/server connection on some backends
++           to report the real limit; g_jack_global_client (opened once at startup for
++           metadata/monitoring) is already up by the time any `add` can run. */
++        size_t name_limit = (size_t)jack_client_name_size() - 1;
++        sanitize_client_name(requested_name, sizeof(requested_name), client_name, name_limit);
++
++        if (requested_name[0] == '\0')
++        {
++            /* Sanitised to nothing (e.g. all-colon input) -- fall through to the default. */
++            jack_client = jack_client_open(effect_name, JackNoStartServer, &jack_status);
++        }
++        else
++        {
++            /* JackUseExactName so a name collision is REPORTED (JackNameNotUnique) rather
++               than silently mangled by JACK's own "-01"/"-02" suffixing, which would leave
++               the caller unable to predict the client it just created. */
++            jack_client = jack_client_open(requested_name, JackNoStartServer | JackUseExactName,
++                                            &jack_status);
++
++            if (!jack_client && (jack_status & JackNameNotUnique))
++            {
++                /* Deterministic disambiguation: append this (already-unique) instance
++                   number rather than trusting JACK's own mangling. */
++                char suffixed_name[REQUESTED_CLIENT_NAME_BUF_SIZE];
++                char id_suffix[16];
++                snprintf(id_suffix, sizeof(id_suffix), "_%i", instance);
++                size_t base_len = strlen(requested_name);
++                size_t suffix_len = strlen(id_suffix);
++                size_t keep = (base_len + suffix_len <= name_limit)
++                                  ? base_len
++                                  : (name_limit > suffix_len ? name_limit - suffix_len : 0);
++                memcpy(suffixed_name, requested_name, keep);
++                memcpy(suffixed_name + keep, id_suffix, suffix_len + 1);
++
++                jack_client = jack_client_open(suffixed_name, JackNoStartServer | JackUseExactName,
++                                                &jack_status);
++            }
++
++            if (!jack_client)
++            {
++                /* Still no client (a collision even the id-suffixed name couldn't clear, or
++                   any other reason JackUseExactName might refuse) -- an `add` must never fail
++                   just because the caller's requested name didn't stick, so fall back to the
++                   default, unnamed path exactly as an unpatched host would behave. */
++                jack_client = jack_client_open(effect_name, JackNoStartServer, &jack_status);
++            }
++        }
++    }
++    else
++    {
++        jack_client = jack_client_open(effect_name, JackNoStartServer, &jack_status);
++    }
+ 
+     if (!jack_client)
+     {
+diff --git a/src/effects.h b/src/effects.h
+index c0adebe..f547bec 100644
+--- a/src/effects.h
++++ b/src/effects.h
+@@ -135,7 +135,7 @@ typedef struct {
+ 
+ int effects_init(void* client);
+ int effects_finish(int close_client);
+-int effects_add(const char *uri, int instance);
++int effects_add(const char *uri, int instance, const char *client_name);
+ int effects_remove(int effect_id);
+ int effects_preset_load(int effect_id, const char *uri);
+ int effects_preset_save(int effect_id, const char *dir, const char *file_name, const char *label);
+diff --git a/src/mod-host.c b/src/mod-host.c
+index e340a74..91f8f77 100644
+--- a/src/mod-host.c
++++ b/src/mod-host.c
+@@ -131,7 +131,10 @@ static pthread_t intclient_socket_thread;
+ static void effects_add_cb(proto_t *proto)
+ {
+     int resp;
+-    resp = effects_add(proto->list[1], atoi(proto->list[2]));
++    /* proto->list[3] is the optional client-name argument the "..." tail in EFFECT_ADD
++       lets through; a caller that sent only 3 tokens leaves it unset. */
++    const char *client_name = (proto->list_count > 3) ? proto->list[3] : NULL;
++    resp = effects_add(proto->list[1], atoi(proto->list[2]), client_name);
+     protocol_response_int(resp, proto);
+ }
+ 
+diff --git a/src/mod-host.h b/src/mod-host.h
+index 3ded3d2..6794701 100644
+--- a/src/mod-host.h
++++ b/src/mod-host.h
+@@ -51,7 +51,12 @@
+ #define SOCKET_MSG_BUFFER_SIZE  1024
+ 
+ /* Protocol commands definition */
+-#define EFFECT_ADD           "add %s %i"
++/* The trailing "..." makes the client-name argument OPTIONAL: a 3-token "add <uri> <id>"
++   still matches (protocol_parse() treats a shorter-than-template message ending exactly
++   where "..." starts as satisfied), so a caller that never sends a 4th token is unaffected.
++   A caller that does send one gets it forwarded to effects_add() as the requested JACK
++   client name. */
++#define EFFECT_ADD           "add %s %i ..."
+ #define EFFECT_REMOVE        "remove %i"
+ #define EFFECT_PRESET_LOAD   "preset_load %i %s"
+ #define EFFECT_PRESET_SAVE   "preset_save %i %s %s %s"
+diff --git a/tests/effectlib_test.c b/tests/effectlib_test.c
+index ce136f1..a7a9b3a 100644
+--- a/tests/effectlib_test.c
++++ b/tests/effectlib_test.c
+@@ -14,7 +14,7 @@ int main (void)
+     if (effects_init(NULL) == 0)
+     {
+         action = "add: http://lv2plug.in/plugins/eg-amp";
+-        ret = effects_add("http://lv2plug.in/plugins/eg-amp", 0);
++        ret = effects_add("http://lv2plug.in/plugins/eg-amp", 0, NULL);
+         printf("%s, ret: %i\n", action, ret);
+ 
+         if (ret != 0)
+diff --git a/tests/hosttest.py b/tests/hosttest.py
+index e8f59d6..b2b360b 100644
+--- a/tests/hosttest.py
++++ b/tests/hosttest.py
+@@ -110,3 +110,14 @@ def s(msg):
+ 
+ def load_egamp(instance=0):
+     return s("add http://lv2plug.in/plugins/eg-amp %d" % instance)
++
++def jack_client_names():
++    # One "client:port" per line; the client name is everything before the last ':'.
++    out = subprocess.check_output(["jack_lsp"], env=env).decode()
++    names = set()
++    for line in out.splitlines():
++        line = line.strip()
++        if not line:
++            continue
++        names.add(line.rsplit(":", 1)[0])
++    return names
+diff --git a/tests/test_host.py b/tests/test_host.py
+index 0dd2a61..55c16e6 100644
+--- a/tests/test_host.py
++++ b/tests/test_host.py
+@@ -63,4 +63,54 @@ def test_preset_save():
+     assert int(r[0]) == 0
+     assert float(r[1]) == 5.0
+ 
++def test_add_without_name_uses_effect_prefix():
++    r = s('add http://lv2plug.in/plugins/eg-amp 0')
++    assert int(r[0]) == 0
++    names = jack_client_names()
++    assert 'effect_0' in names
++    r = s('remove 0')
++    assert int(r[0]) == 0
++
++def test_add_with_name_uses_the_requested_jack_client_name():
++    r = s('add http://lv2plug.in/plugins/eg-amp 0 channel1-eg-amp')
++    assert int(r[0]) == 0
++    names = jack_client_names()
++    assert 'channel1-eg-amp' in names
++    assert 'effect_0' not in names
++    r = s('remove 0')
++    assert int(r[0]) == 0
++
++def test_add_with_name_sanitises_colon():
++    # ':' is jack's client:port separator; a name carrying one must be replaced, not
++    # passed straight through (it would make every one of the client's own ports
++    # unparseable as "client:port").
++    r = s('add http://lv2plug.in/plugins/eg-amp 0 bad:name')
++    assert int(r[0]) == 0
++    names = jack_client_names()
++    assert 'bad_name' in names
++    assert 'bad:name' not in names
++    r = s('remove 0')
++    assert int(r[0]) == 0
++
++def test_add_with_colliding_name_appends_the_instance_number():
++    r = s('add http://lv2plug.in/plugins/eg-amp 0 shared-name')
++    assert int(r[0]) == 0
++    r = s('add http://lv2plug.in/plugins/eg-amp 1 shared-name')
++    assert int(r[0]) == 1
++    names = jack_client_names()
++    assert 'shared-name' in names
++    assert 'shared-name_1' in names
++    r = s('remove 0')
++    assert int(r[0]) == 0
++    r = s('remove 1')
++    assert int(r[0]) == 0
++
++def test_add_still_accepts_the_old_three_token_form():
++    # Protocol backwards-compatibility: a caller that never learned about the optional
++    # 4th token must keep working exactly as before.
++    r = s('add http://lv2plug.in/plugins/eg-amp 0')
++    assert int(r[0]) == 0
++    r = s('remove 0')
++    assert int(r[0]) == 0
++
+ 
