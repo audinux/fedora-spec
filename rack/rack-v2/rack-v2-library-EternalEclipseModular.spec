@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 919b33777b41e34a1154e9bd8818e243674516fa
-%global gittag0 2.9.2
+%global commit0 0c08cec9c6d0757ecef7ac3f214a430813864556
+%global gittag0 2.10.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-EternalEclipseModular
-Version: 2.9.2
+Version: 2.10.0
 Release: 2%{?dist}
 Summary: EternalEclipseModular plugin for Rack
 License: GPL-2.0-or-later
-URL: https://github.com/7337Productions/eternaleclipsemodular
+URL: https://github.com/7337-Productions/eternaleclipsemodular
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,7 +29,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/7337Productions/eternaleclipsemodular/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/7337-Productions/eternaleclipsemodular/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: EternalEclipseModular_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -154,5 +154,5 @@ cp -r EternalEclipseModular_plugin/dist/EternalEclipseModular/* %{buildroot}%{_l
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.9.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.10.0-1
 - initial specfile

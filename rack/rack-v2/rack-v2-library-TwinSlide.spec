@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 7b9868ce79ee3fd0f9c4ff0090fe088d7bbd4a44
-%global gittag0 2.1.6
+%global commit0 21d72eef9649a6c379afbe2c3160f0e9efb42735
+%global gittag0 2.1.7
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-TwinSlide
-Version: 2.1.6
+Version: 2.1.7
 Release: 2%{?dist}
 Summary: TwinSlide plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r TwinSlide_plugin/dist/TwinSlide/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.6-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.7-1
 - initial specfile

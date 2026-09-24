@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 5f47965697774c41e29d9b4139a38743c79b0fca
-%global gittag0 2.0.3
+%global commit0 43c4d7aab6c83909f41fa1e346a8bca643281c7e
+%global gittag0 2.0.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-InfiniteNoise
-Version: 2.0.3
+Version: 2.0.4
 Release: 2%{?dist}
 Summary: InfiniteNoise plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 InfiniteNoise plugin for Rack.
-Simple knob-controlled Quad-LFO, with internal sync (Saw and Sine).
+4HP quad LFO: four independent knob-set rates, Saw and Sine per LFO, internal hard/soft sync, Rate Chaos, and uni/bipolar range.
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r InfiniteNoise_plugin/dist/InfiniteNoise/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-1
 - initial specfile

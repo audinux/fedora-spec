@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 a4e46bb4108c2dea40b8022682a35814840e8da2
-%global gittag0 2.0.9
+%global commit0 d0ea09834c9109ce42bae582988c7d8905a385ca
+%global gittag0 2.0.10
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-akaudio
-Version: 2.0.9
+Version: 2.0.10
 Release: 2%{?dist}
 Summary: akaudio plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r akaudio_plugin/dist/akaudio/* %{buildroot}%{_libexecdir}/Rack2/plugins/aka
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.9-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.10-1
 - initial specfile

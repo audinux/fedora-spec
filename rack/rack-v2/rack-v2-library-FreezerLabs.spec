@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 903f513dae418783c85185af56cf423ba08fee69
-%global gittag0 2.0.0
+%global commit0 8885b2c43330f51907fa3fcbef655935d698ed0e
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-FreezerLabs
-Version: 2.0.0
+Version: 2.0.1
 Release: 2%{?dist}
 Summary: FreezerLabs plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 FreezerLabs plugin for Rack.
-6 row drum sequencer with per-row rush/drag controls
+6 row drum sequencer with interactive style pattern generator, per-row shift and rush/drag controls and step probability.
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r FreezerLabs_plugin/dist/FreezerLabs/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile

@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 521bdc751940f7de50ab31e0b1d03111420cf791
-%global gittag0 2.16.2
+%global commit0 46191cc14d493fa78e01bb86c2d1a7ff1b15ef1b
+%global gittag0 2.17.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Venom
-Version: 2.16.2
+Version: 2.17.6
 Release: 2%{?dist}
 Summary: Venom plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Venom_plugin/dist/Venom/* %{buildroot}%{_libexecdir}/Rack2/plugins/Venom/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.16.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.17.6-1
 - initial specfile
