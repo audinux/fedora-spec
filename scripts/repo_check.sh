@@ -1203,7 +1203,8 @@ https://github.com/sova-org/sova
 https://github.com/eclab/flow
 https://codeberg.org/n_malo/Luppolo
 https://github.com/OpenSauce/rustortion
-https://github.com/coignard/o2"
+https://github.com/coignard/o2
+https://github.com/n1m21n/Infinite"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)

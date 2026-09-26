@@ -1,0 +1,40 @@
+From 59f9cdad92dfbe7fcc4135dd827d89125489e8ad Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Fri, 25 Sep 2026 13:55:07 +0200
+Subject: [PATCH] fix font
+
+---
+ src/main.cpp | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+
+diff --git a/src/main.cpp b/src/main.cpp
+index 0231a6d..ca3259a 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -64220,13 +64220,9 @@ int main(int argc, char** argv)
+       const float displayScale = 1.0f / xscale;
+       styleScale = manualScale;
+ #endif
+-      const std::string bundledInter = BundledResourcePath("fonts/Inter-Regular.ttf");
++      const std::string bundledInter = "/usr/share/fonts/Inter-Regular.ttf";
+       const char* candidates[] = {
+          bundledInter.c_str(),
+-         "/System/Library/Fonts/SFNS.ttf",
+-         "/System/Library/Fonts/HelveticaNeue.ttc",
+-         "/System/Library/Fonts/Helvetica.ttc",
+-         "/System/Library/Fonts/Supplemental/Arial.ttf",
+       };
+       ImGuiIO& io = ImGui::GetIO();
+       ImFont* uiFont = nullptr;
+@@ -64253,7 +64249,7 @@ int main(int argc, char** argv)
+       // pays texture memory for glyphs actually in use.
+       if (uiFont != nullptr)
+       {
+-         const std::string bundledLucide = BundledResourcePath("icons/lucide.ttf");
++         const std::string bundledLucide = "/usr/share/fonts/lucide.ttf";
+          if (!bundledLucide.empty())
+          {
+             static const ImWchar iconRanges[] = { 0xE151, 0xE151, 0 };
+-- 
+2.55.0
+

@@ -1,0 +1,107 @@
+From 4308ec913a26d06b97c04427478a7cb5d5d42359 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Fri, 25 Sep 2026 13:15:23 +0200
+Subject: [PATCH] devendor
+
+---
+ CMakeLists.txt | 69 ++++++++++----------------------------------------
+ 1 file changed, 13 insertions(+), 56 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ddcacf0..8951c4a 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -95,19 +95,8 @@ FetchContent_MakeAvailable(glfw)
+ # the real libFLAC instead (static, no Ogg). macOS keeps CoreAudio's
+ # ExtAudioFile and never compiles this in.
+ if(WIN32 OR CMAKE_SYSTEM_NAME STREQUAL "Linux")
+-    set(BUILD_PROGRAMS OFF CACHE BOOL "" FORCE)
+-    set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+-    set(BUILD_TESTS OFF CACHE BOOL "" FORCE)
+-    set(BUILD_DOCS OFF CACHE BOOL "" FORCE)
+-    set(INSTALL_MANPAGES OFF CACHE BOOL "" FORCE)
+-    set(WITH_OGG OFF CACHE BOOL "" FORCE)
+-    FetchContent_Declare(
+-        flac
+-        GIT_REPOSITORY https://github.com/xiph/flac.git
+-        GIT_TAG 1.5.0
+-        GIT_SHALLOW TRUE
+-    )
+-    FetchContent_MakeAvailable(flac)
++    find_package(PkgConfig REQUIRED)
++    pkg_check_modules(FLAC REQUIRED flac)
+ 
+     # ONNX Runtime + DirectML EP, for Platform::SubjectMask's Windows
+     # implementation (src/platform/win/PlatformWin.cpp) - on-device background
+@@ -261,56 +249,25 @@ endif()
+ #   3. Update FFMPEG_RELEASE_TAG, FFMPEG_ARCHIVE_VERSION, and all four
+ #      SHA256 pins below together, so they describe one consistent release.
+ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+-    option(INFINITE_ENABLE_GPL_CODECS "Link GPL FFmpeg + libx264 for H.264 recording on Linux (OFF = LGPL FFmpeg, no H.264 encode)" ON)
+-
+-    # Immutable BtbN/FFmpeg-Builds release tag and the version string its
+-    # asset filenames embed - see "How to re-pin" above. Verified 2026-09-16.
+-    set(FFMPEG_RELEASE_TAG "autobuild-2026-09-15-13-18")
+-    set(FFMPEG_ARCHIVE_VERSION "n8.1.2-53-g1005b294ff")
+-    set(FFMPEG_LINUX_ARCH "linux64")
+-    set(FFMPEG_GPL_SHA256 "cdd23dda4552a11babd04b1e352736339d50cb2bca29f9fd2014e246a3924062")
+-    set(FFMPEG_LGPL_SHA256 "c8fb071899337b16680ea1848c87fac27c3f31ff2c88e3c3b6c813f2625e9af1")
+-    if(CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64|arm64")
+-        set(FFMPEG_LINUX_ARCH "linuxarm64")
+-        set(FFMPEG_GPL_SHA256 "9b1d14ac6ce89d35ae2511f150477680931a482ea53fd033850f3d5d27af0141")
+-        set(FFMPEG_LGPL_SHA256 "aac9ed865431ce338688d657ece3345712107a891dee77d6cad5f6d2fcf58ec5")
+-    endif()
+-
+-    if(INFINITE_ENABLE_GPL_CODECS)
+-        set(FFMPEG_LICENCE_TAG "gpl")
+-        set(FFMPEG_SHA256 "${FFMPEG_GPL_SHA256}")
+-    else()
+-        set(FFMPEG_LICENCE_TAG "lgpl")
+-        set(FFMPEG_SHA256 "${FFMPEG_LGPL_SHA256}")
+-    endif()
+-    set(FFMPEG_ARCHIVE_NAME "ffmpeg-${FFMPEG_ARCHIVE_VERSION}-${FFMPEG_LINUX_ARCH}-${FFMPEG_LICENCE_TAG}-shared-8.1")
+-
+-    FetchContent_Declare(
+-        ffmpeg_linux
+-        URL "https://github.com/BtbN/FFmpeg-Builds/releases/download/${FFMPEG_RELEASE_TAG}/${FFMPEG_ARCHIVE_NAME}.tar.xz"
+-        URL_HASH SHA256=${FFMPEG_SHA256}
+-    )
+-    FetchContent_MakeAvailable(ffmpeg_linux)
+-
+-    set(FFMPEG_INCLUDE_DIR "${ffmpeg_linux_SOURCE_DIR}/include")
+-    set(FFMPEG_LIB_DIR "${ffmpeg_linux_SOURCE_DIR}/lib")
++    set(FFMPEG_INCLUDE_DIR "/usr/include/ffmpeg")
++    set(FFMPEG_LIB_DIR "/usr/lib64")
+     set(FFMPEG_LIBS
+-        "${FFMPEG_LIB_DIR}/libavformat.so"
+-        "${FFMPEG_LIB_DIR}/libavcodec.so"
+-        "${FFMPEG_LIB_DIR}/libavutil.so"
+-        "${FFMPEG_LIB_DIR}/libswscale.so"
+-        "${FFMPEG_LIB_DIR}/libswresample.so"
++        "/usr/lib64/libavformat.so"
++        "/usr/lib64/libavcodec.so"
++        "/usr/lib64/libavutil.so"
++        "/usr/lib64/libswscale.so"
++        "/usr/lib64/libswresample.so"
+     )
+     # Every libav*.so.N / libsw*.so.N.M.P file, so the actual runtime .so's
+     # (not just the unversioned dev symlinks CMake links against) ship next to
+     # the binary - dlopen/ld.so at runtime resolves by soname, not by the
+     # unversioned name.
+     file(GLOB FFMPEG_SO_FILES
+-        "${FFMPEG_LIB_DIR}/libavformat.so*"
+-        "${FFMPEG_LIB_DIR}/libavcodec.so*"
+-        "${FFMPEG_LIB_DIR}/libavutil.so*"
+-        "${FFMPEG_LIB_DIR}/libswscale.so*"
+-        "${FFMPEG_LIB_DIR}/libswresample.so*"
++        "/usr/lib64/libavformat.so*"
++        "/usr/lib64/libavcodec.so*"
++        "/usr/lib64/libavutil.so*"
++        "/usr/lib64/libswscale.so*"
++        "/usr/lib64/libswresample.so*"
+     )
+     message(STATUS "Linux FFmpeg: ${FFMPEG_ARCHIVE_NAME} (INFINITE_ENABLE_GPL_CODECS=${INFINITE_ENABLE_GPL_CODECS})")
+ endif()
+-- 
+2.55.0
+
