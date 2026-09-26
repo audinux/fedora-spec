@@ -77,7 +77,7 @@ Currently the host supports the following LV2 features:
 * worker
 * presets
 
-mod-host is part of the MOD project (http://moddevices.com).
+mod-host is part of the MOD project (https://mod.audio/).
 
 %prep
 %autosetup -p1 -n %{name}-%{commit0}
