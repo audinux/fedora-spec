@@ -5,11 +5,11 @@
 
 %global debug_package %{nil}
 
-%global commit0 beafc79a070aa84cec785423ed41dda247dbd1e6
+%global commit0 914c1b7af5123aa87209a8675a9e6d6c6804dc35
 
 Name: hydra-rust
 Version: 0.0.1
-Release: 8%{?dist}
+Release: 11%{?dist}
 Summary: Prototype of hydra remade in Rust
 License: AGPL-3.0-or-later
 URL: https://github.com/sova-org/hydra-rust
@@ -80,7 +80,7 @@ rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linu
 %endif
 source cargo/env
 
-cargo build --release --features webcam,audio,image_url,midi,video
+cargo build --release --features webcam,audio,image_url,midi,video,stream
 
 %install
 
@@ -100,6 +100,15 @@ tar xvfz %{SOURCE2}
 %{_datadir}/%{name}/hydra-sketches/*
 
 %changelog
+* Sat Sep 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-11
+- update to 0.0.1-11 - update to last master
+
+* Fri Sep 25 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-10
+- update to 0.0.1-10 - update to last master
+
+* Thu Sep 24 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-9
+- update to 0.0.1-9 - update to last master - add webrtc functions
+
 * Wed Sep 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-8
 - update to 0.0.1-8 - update to last master - add documentation
 
