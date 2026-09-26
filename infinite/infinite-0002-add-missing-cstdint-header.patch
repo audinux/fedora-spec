@@ -1,0 +1,37 @@
+From fb47f78cc25687933d8c4be8a16104989ccc7506 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sat, 26 Sep 2026 11:04:27 +0200
+Subject: [PATCH] add missing cstdint header
+
+---
+ src/nodes/PredictiveQuantizeNode.h | 1 +
+ src/nodes/PredictiveVelocityNode.h | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/src/nodes/PredictiveQuantizeNode.h b/src/nodes/PredictiveQuantizeNode.h
+index 5c74819..514d055 100644
+--- a/src/nodes/PredictiveQuantizeNode.h
++++ b/src/nodes/PredictiveQuantizeNode.h
+@@ -3,6 +3,7 @@
+ #include <memory>
+ #include <string>
+ #include <vector>
++#include <cstdint>
+ 
+ #include "core/INode.h"
+ #include "core/NoteCable.h"
+diff --git a/src/nodes/PredictiveVelocityNode.h b/src/nodes/PredictiveVelocityNode.h
+index c19029b..0cbb42b 100644
+--- a/src/nodes/PredictiveVelocityNode.h
++++ b/src/nodes/PredictiveVelocityNode.h
+@@ -3,6 +3,7 @@
+ #include <memory>
+ #include <string>
+ #include <vector>
++#include <cstdint>
+ 
+ #include "core/INode.h"
+ #include "core/NoteCable.h"
+-- 
+2.55.0
+

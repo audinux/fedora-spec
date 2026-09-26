@@ -1,17 +1,17 @@
-From 4308ec913a26d06b97c04427478a7cb5d5d42359 Mon Sep 17 00:00:00 2001
-From: Yann Collette <yc@example.com>
-Date: Fri, 25 Sep 2026 13:15:23 +0200
+From eb00909037d6ab9aad81267c78d97b3bf3975944 Mon Sep 17 00:00:00 2001
+From: Yann Collette <ycollette.nospam@free.fr>
+Date: Sat, 26 Sep 2026 11:17:42 +0200
 Subject: [PATCH] devendor
 
 ---
- CMakeLists.txt | 69 ++++++++++----------------------------------------
- 1 file changed, 13 insertions(+), 56 deletions(-)
+ CMakeLists.txt | 74 ++++----------------------------------------------
+ 1 file changed, 5 insertions(+), 69 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index ddcacf0..8951c4a 100644
+index 9a6c819..c24cd0b 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -95,19 +95,8 @@ FetchContent_MakeAvailable(glfw)
+@@ -95,19 +95,9 @@ FetchContent_MakeAvailable(glfw)
  # the real libFLAC instead (static, no Ogg). macOS keeps CoreAudio's
  # ExtAudioFile and never compiles this in.
  if(WIN32 OR CMAKE_SYSTEM_NAME STREQUAL "Linux")
@@ -29,11 +29,12 @@ index ddcacf0..8951c4a 100644
 -    )
 -    FetchContent_MakeAvailable(flac)
 +    find_package(PkgConfig REQUIRED)
-+    pkg_check_modules(FLAC REQUIRED flac)
++    pkg_check_modules(FLAC REQUIRED IMPORTED_TARGET flac)
++    add_library(FLAC::FLAC ALIAS PkgConfig::FLAC)
  
      # ONNX Runtime + DirectML EP, for Platform::SubjectMask's Windows
      # implementation (src/platform/win/PlatformWin.cpp) - on-device background
-@@ -261,56 +249,25 @@ endif()
+@@ -261,39 +251,8 @@ endif()
  #   3. Update FFMPEG_RELEASE_TAG, FFMPEG_ARCHIVE_VERSION, and all four
  #      SHA256 pins below together, so they describe one consistent release.
  if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
@@ -73,35 +74,38 @@ index ddcacf0..8951c4a 100644
 +    set(FFMPEG_INCLUDE_DIR "/usr/include/ffmpeg")
 +    set(FFMPEG_LIB_DIR "/usr/lib64")
      set(FFMPEG_LIBS
--        "${FFMPEG_LIB_DIR}/libavformat.so"
--        "${FFMPEG_LIB_DIR}/libavcodec.so"
--        "${FFMPEG_LIB_DIR}/libavutil.so"
--        "${FFMPEG_LIB_DIR}/libswscale.so"
--        "${FFMPEG_LIB_DIR}/libswresample.so"
-+        "/usr/lib64/libavformat.so"
-+        "/usr/lib64/libavcodec.so"
-+        "/usr/lib64/libavutil.so"
-+        "/usr/lib64/libswscale.so"
-+        "/usr/lib64/libswresample.so"
-     )
-     # Every libav*.so.N / libsw*.so.N.M.P file, so the actual runtime .so's
-     # (not just the unversioned dev symlinks CMake links against) ship next to
-     # the binary - dlopen/ld.so at runtime resolves by soname, not by the
-     # unversioned name.
-     file(GLOB FFMPEG_SO_FILES
--        "${FFMPEG_LIB_DIR}/libavformat.so*"
--        "${FFMPEG_LIB_DIR}/libavcodec.so*"
--        "${FFMPEG_LIB_DIR}/libavutil.so*"
--        "${FFMPEG_LIB_DIR}/libswscale.so*"
--        "${FFMPEG_LIB_DIR}/libswresample.so*"
-+        "/usr/lib64/libavformat.so*"
-+        "/usr/lib64/libavcodec.so*"
-+        "/usr/lib64/libavutil.so*"
-+        "/usr/lib64/libswscale.so*"
-+        "/usr/lib64/libswresample.so*"
-     )
-     message(STATUS "Linux FFmpeg: ${FFMPEG_ARCHIVE_NAME} (INFINITE_ENABLE_GPL_CODECS=${INFINITE_ENABLE_GPL_CODECS})")
- endif()
+         "${FFMPEG_LIB_DIR}/libavformat.so"
+         "${FFMPEG_LIB_DIR}/libavcodec.so"
+@@ -1014,29 +973,6 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+                 "${CMAKE_CURRENT_SOURCE_DIR}/assets/models/u2netp.onnx"
+                 "$<TARGET_FILE_DIR:Infinite>/assets/models/u2netp.onnx"
+         COMMENT "Copying bundled fonts, icon, ONNX Runtime libraries and model next to Infinite")
+-    # THIRD_PARTY_NOTICES condition 3 / GPL source-offer condition 2: the
+-    # FFmpeg and x264 licence texts ship inside the bundle wherever the
+-    # Linux distributable carries licences, next to the .so files they cover
+-    # (see ${FFMPEG_ARCHIVE_NAME}/LICENSE.txt for the build's own declared
+-    # licence, and THIRD_PARTY_NOTICES at the repo root for the full pin).
+-    add_custom_command(TARGET Infinite POST_BUILD
+-        COMMAND ${CMAKE_COMMAND} -E make_directory
+-                "$<TARGET_FILE_DIR:Infinite>/licenses/ffmpeg"
+-        COMMAND ${CMAKE_COMMAND} -E make_directory
+-                "$<TARGET_FILE_DIR:Infinite>/licenses/x264"
+-        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+-                "${CMAKE_CURRENT_SOURCE_DIR}/third_party/ffmpeg/COPYING.GPLv3"
+-                "${CMAKE_CURRENT_SOURCE_DIR}/third_party/ffmpeg/COPYING.GPLv2"
+-                "${CMAKE_CURRENT_SOURCE_DIR}/third_party/ffmpeg/COPYING.LGPLv2.1"
+-                "${ffmpeg_linux_SOURCE_DIR}/LICENSE.txt"
+-                "$<TARGET_FILE_DIR:Infinite>/licenses/ffmpeg/"
+-        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+-                "${CMAKE_CURRENT_SOURCE_DIR}/third_party/x264/COPYING"
+-                "$<TARGET_FILE_DIR:Infinite>/licenses/x264/"
+-        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+-                "${CMAKE_CURRENT_SOURCE_DIR}/THIRD_PARTY_NOTICES"
+-                "$<TARGET_FILE_DIR:Infinite>/licenses/"
+-        COMMENT "Copying FFmpeg/x264 third-party licence texts next to Infinite")
+ 
+     if(INFINITE_ENABLE_VST3)
+         # Linux VST3 hosting: src/platform/linux/PluginVST3Linux.cpp mirrors
 -- 
 2.55.0
 

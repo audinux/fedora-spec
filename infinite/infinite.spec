@@ -20,7 +20,8 @@ Distribution: Audinux
 Source0: Infinite.tar.gz
 Source1: infinite-source.sh
 Patch0: infinite-0001-devendor.patch
-Patch1: infinite-0002-fix-font.patch
+Patch1: infinite-0002-add-missing-cstdint-header.patch
+Patch2: infinite-0003-put-resources-in-share-directory.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -63,12 +64,31 @@ export CXXFLAGS="-include cstdint $CXXFLAGS"
 
 %install
 
+# /usr/share/infinite
+# + icons/icon_1024.png
+# + fonts/Inter-Regular.ttf
+# + icons/lucide.ttf
+
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 %{__cmake_builddir}/Infinite %{buildroot}/%{_bindir}/
 install -m 755 %{__cmake_builddir}/infinite-vst3-scanner %{buildroot}/%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_libdir}/Infinite/
 install -m 755 %{__cmake_builddir}/_deps/onnxruntime_linux-src/lib/libonnxruntime.so.1 %{buildroot}/%{_libdir}/Infinite/
+
+# Install bundle
+install -m 755 -d %{buildroot}/%{_datadir}/infinite/fonts/
+install -m 644 ./external/fonts/Inter/*.ttf %{buildroot}/%{_datadir}/infinite/fonts/
+
+install -m 755 -d %{buildroot}/%{_datadir}/infinite/icons/
+install -m 644 ./external/icons/Lucide/lucide.ttf %{buildroot}/%{_datadir}/infinite/icons/
+install -m 644 ./assets/icon_1024.png %{buildroot}/%{_datadir}/infinite/icons/
+
+install -m 755 -d %{buildroot}/%{_datadir}/infinite/examples/
+install -m 644 ./assets/examples/*.inf %{buildroot}/%{_datadir}/infinite/examples/
+
+install -m 755 -d %{buildroot}/%{_datadir}/infinite/models/
+install -m 644 ./assets/models/*.onnx %{buildroot}/%{_datadir}/infinite/models/
 
 # Install icon
 install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
@@ -92,10 +112,6 @@ desktop-file-install                         \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
-# Install fonts
-install -m 755 -d %{buildroot}/%{_datadir}/fonts/
-install -m 644 ./external/icons/Lucide/lucide.ttf %{buildroot}/%{_datadir}/fonts/
-
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
@@ -106,7 +122,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/Infinite/*
 %{_datadir}/applications/infinite.desktop
 %{_datadir}/pixmaps/Infinite.ico
-%{_datadir}/fonts/*
+%{_datadir}/infinite/icons/icon_1024.png
+%{_datadir}/infinite/icons/lucide.ttf
+%{_datadir}/infinite/fonts/Inter-Medium.ttf
+%{_datadir}/infinite/fonts/Inter-Regular.ttf
+%{_datadir}/infinite/fonts/Inter-SemiBold.ttf
+%{_datadir}/infinite/examples/*
 
 %changelog
 * Sat Sep 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.5-1
