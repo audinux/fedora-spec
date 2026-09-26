@@ -128,6 +128,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/infinite/fonts/Inter-Regular.ttf
 %{_datadir}/infinite/fonts/Inter-SemiBold.ttf
 %{_datadir}/infinite/examples/*
+%{_datadir}/infinite/models/*
 
 %changelog
 * Sat Sep 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.5-1
