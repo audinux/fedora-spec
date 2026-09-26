@@ -4,7 +4,7 @@
 # Category: Audio, Programming
 
 Name: bipscript-ide
-Version: 0.23
+Version: 0.24
 Release: 1%{?dist}
 Summary: An IDEA for bipscript
 URL: https://gitlab.domainepublic.net/bipscript/ide/
@@ -87,6 +87,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/bipscript-ide.desktop
 %{_datadir}/icons/*
 
 %changelog
+* Sat Sep 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.24-1
+- update to 0.24-1
+
 * Thu Feb 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.23-1
 - update to 0.23-1
 
