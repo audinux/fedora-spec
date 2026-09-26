@@ -472,6 +472,14 @@
 | QJams                                    | https://github.com/robw-nl/QJams                                                                                                                            |
 | fosfora                                  | https://github.com/kevinraymond/fosfora                                                                                                                     |
 | WayVes                                   | https://github.com/Roonil/WayVes                                                                                                                            |
+| ModalDish                                | https://github.com/odoare/ModalDish                                                                                                                         |
+| OpenSynth1                               | https://github.com/letsdig/OpenSynth1                                                                                                                       |
+| Verdalis                                 | https://github.com/Ravetracer/Verdalis                                                                                                                      |
+| Fuimadane-DrumCloud                      | https://github.com/Chmod666music/Fuimadane-DrumCloud                                                                                                        |
+| Jali                                     | https://github.com/hergezod/Jali                                                                                                                            |
+| overtonium                               | https://github.com/benjamindehli/overtonium                                                                                                                 |
+| sidstation-asid                          | https://github.com/benjamindehli/sidstation-asid                                                                                                            |
+| Infinite                                 | https://github.com/n1m21n/Infinite                                                                                                                          |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -485,6 +493,7 @@ Check the following URL:
 - https://github.com/hollance
 - https://github.com/sfzinstruments/mappings -> some sfz sound fonts
 - https://github.com/ovniaudio
+- https://github.com/CoconutAudio
 
 Add dead package:
 - gmixer
