@@ -5,7 +5,7 @@
 
 Name: infinite
 Version: 0.4.5
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Infinite is a node-based audiovisual workstation — real-time GPU video compositing, procedural 3D geometry, modular synths, DSP, and VST3 plugin hosting
 License: MIT
 URL: https://n1m21n.github.io/Infinite
@@ -22,6 +22,7 @@ Source1: infinite-source.sh
 Patch0: infinite-0001-devendor.patch
 Patch1: infinite-0002-add-missing-cstdint-header.patch
 Patch2: infinite-0003-put-resources-in-share-directory.patch
+Patch3: infinite-0004-fix-tinyfiledialog.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -41,6 +42,7 @@ BuildRequires: libglvnd-devel
 BuildRequires: desktop-file-utils
 
 Requires: rsms-inter-fonts
+Requires: kdialog
 
 %description
 A unified node-based audiovisual modular workstation for macOS, Windows, and Linux.
@@ -131,6 +133,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/infinite/models/*
 
 %changelog
+* Sat Sep 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.5-2
+- update to 0.4.5-2 - fix tinyfiledialog
+
 * Sat Sep 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.5-1
 - update to 0.4.5-1
 
