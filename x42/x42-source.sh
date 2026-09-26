@@ -23,6 +23,10 @@ fi
 #    git commit -m "add submodule"
 #fi
 git submodule update --depth=1 --init --recursive --progress
+if [ $? -ne 0 ]; then
+    echo "Problem with submodules"
+    exit 1
+fi
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz $1.tar.gz $1/*

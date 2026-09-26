@@ -9,6 +9,10 @@ if [ $? == 1 ]; then
     exit 1
 fi
 git submodule update --depth=1 --init --recursive --progress
+if [ $? -ne 0 ]; then
+    echo "Problem with submodules"
+    exit 1
+fi
 find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz ensemble-chorus.tar.gz ensemble-chorus/*

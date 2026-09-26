@@ -12,6 +12,10 @@ if [ $? == 1 ]; then
 fi
 
 git submodule update --depth=1 --init --recursive --progress
+if [ $? -ne 0 ]; then
+    echo "Problem with submodules"
+    exit 1
+fi
 
 git clone --depth 1 --branch 7.0.12 https://github.com/juce-framework/JUCE.git
 
