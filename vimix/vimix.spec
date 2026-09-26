@@ -3,8 +3,10 @@
 # Type: Standalone
 # Category: Tool
 
+%global _cmake_shared_libs %{nil}
+
 Name: vimix
-Version: 0.9.1a
+Version: 0.9.2
 Release: 1%{?dist}
 Summary: Live Video Mixer
 URL: https://github.com/brunoherbelin/vimix
@@ -15,15 +17,14 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to get the sources:
-# ./vimix-source.sh 0.9.1a
+# ./vimix-source.sh master
 
 Source0: vimix.tar.gz
 Source1: vimix-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
-BuildRequires: patchelf
-BuildRequires: mold
+BuildRequires: git
 BuildRequires: gstreamer1-devel
 BuildRequires: gstreamer1-plugins-base-devel
 BuildRequires: gstreamer1-plugins-bad-free-devel
@@ -36,6 +37,10 @@ BuildRequires: tinyxml2-devel
 BuildRequires: stb-devel
 BuildRequires: gtk3-devel
 BuildRequires: cmrc-devel
+BuildRequires: onnxruntime-devel
+BuildRequires: miniz-devel
+BuildRequires: glslang-devel
+BuildRequires: spirv-headers-devel
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 
@@ -56,22 +61,15 @@ sed -i -e "s/AudioVideo;Video;Graphics;/AudioVideo;/g" share/applications/vimix.
 
 %build
 
-%cmake -DCMAKE_EXE_LINKER_FLAGS="-fuse-ld=mold"
+%cmake -DUSE_NCNN=OFF \
+       -DUSE_ONNX=OFF
+
 %cmake_build
 
 %install
 
 %cmake_install
 install -m755 %{__cmake_builddir}/src/vimix %{buildroot}/%{_bindir}/
-
-mkdir -p %{buildroot}/%{_libdir}/vimix/
-
-install -m755 %{__cmake_builddir}/libGLAD.so %{buildroot}/%{_libdir}/vimix/
-install -m755 %{__cmake_builddir}/libOSCPACK.so %{buildroot}/%{_libdir}/vimix/
-install -m755 %{__cmake_builddir}/libIMGUI.so %{buildroot}/%{_libdir}/vimix/
-install -m755 %{__cmake_builddir}/libIMGUITEXTEDIT.so %{buildroot}/%{_libdir}/vimix/
-
-patchelf --set-rpath '$ORIGIN/../%{_lib}/vimix/' %{buildroot}/%{_bindir}/vimix
 
 mkdir -p %{buildroot}/%{_datadir}/mime/packages/
 mv %{buildroot}/%{_datadir}/applications/io.github.brunoherbelin.Vimix.mime.xml %{buildroot}/%{_datadir}/mime/packages/
@@ -83,6 +81,10 @@ desktop-file-install                         \
   --dir=%{buildroot}%{_datadir}/applications \
   %{buildroot}/%{_datadir}/applications/*.desktop
 
+# cleanup
+
+mv docs/README.md docs/README_docs.md
+
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.metainfo.xml
@@ -91,13 +93,15 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.metainf
 %doc README.md docs/*
 %license LICENSE COPYING.txt
 %{_bindir}/*
-%{_libdir}/vimix/*
 %{_datadir}/icons/hicolor/scalable/apps/*
 %{_datadir}/applications/*
 %{_datadir}/metainfo/*
 %{_datadir}/mime/packages/*
 
 %changelog
+* Sat Sep 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.2-1
+- update to 0.9.2-1
+
 * Wed May 13 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.1a-1
 - update to 0.9.1a-1
 
