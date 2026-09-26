@@ -26,7 +26,7 @@
 
 Name: mod-host
 Version: 0.10.6.%{shortcommit0}
-Release: 4%{?dist}
+Release: 5%{?dist}
 License: GPL-3.0-or-later
 Summary: LV2 host for Jack controllable via socket or command line
 URL: https://github.com/moddevices/mod-host
@@ -40,6 +40,14 @@ Source1: %{name}.service
 Patch0: mod-host-100.patch
 # https://github.com/mod-audio/mod-host/pull/101 - let "add" name its jack client
 Patch1: mod-host-101.patch
+# https://github.com/mod-audio/mod-host/pull/98 - fix a heap overread on an empty path property
+Patch2: mod-host-98.patch
+# https://github.com/mod-audio/mod-host/pull/81 - allow runs of spaces between protocol words
+Patch3: mod-host-81.patch
+# follow-up to https://github.com/mod-audio/mod-host/pull/81 - no leading space on the next word
+Patch4: mod-host-81b.patch
+# https://github.com/mod-audio/mod-host/pull/82 - add the missing -t short option
+Patch5: mod-host-82.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -100,6 +108,12 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 %{_userunitdir}/%{name}.service
 
 %changelog
+* Fri Sep 25 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-5
+- apply the fix from upstream PR 98: a plugin sending an empty path no longer
+  makes mod-host read past its buffer
+- apply upstream PRs 81 and 82 (riban) and a follow-up to 81: runs of spaces
+  between protocol words are accepted, and "-t" runs the self-test
+
 * Tue Sep 22 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-4
 - apply upstream PR 101: an optional jack client name on the add command
 

@@ -1,0 +1,22 @@
+diff --git a/src/utils.c b/src/utils.c
+index 46674e7..60dab74 100644
+--- a/src/utils.c
++++ b/src/utils.c
+@@ -134,6 +134,8 @@ char** strarr_split(char *str)
+         if (*pstr == token && quote == 0)
+         {
+             count++;
++            while (*(pstr + 1) && (*(pstr + 1) == token))
++                pstr++;
+         }
+ #ifdef ENABLE_QUOTATION_MARKS
+         else if (*pstr == '\\' && *(pstr+1) == '"')
+@@ -174,6 +176,8 @@ char** strarr_split(char *str)
+         {
+             *pstr = '\0';
+             list[++count] = pstr + 1;
++            while (*(pstr + 1) && (*(pstr + 1) == token))
++                pstr++;
+         }
+ #ifdef ENABLE_QUOTATION_MARKS
+         else if (*pstr == '\\' && *(pstr+1) == '"')
