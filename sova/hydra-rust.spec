@@ -5,11 +5,11 @@
 
 %global debug_package %{nil}
 
-%global commit0 914c1b7af5123aa87209a8675a9e6d6c6804dc35
+%global commit0 7dcd7aede06b5b85a1cabdf60b702af67ff327b2
 
 Name: hydra-rust
 Version: 0.0.1
-Release: 11%{?dist}
+Release: 12%{?dist}
 Summary: Prototype of hydra remade in Rust
 License: AGPL-3.0-or-later
 URL: https://github.com/sova-org/hydra-rust
@@ -100,6 +100,9 @@ tar xvfz %{SOURCE2}
 %{_datadir}/%{name}/hydra-sketches/*
 
 %changelog
+* Mon Sep 28 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-12
+- update to 0.0.1-12 - update to last master - fix console bugs
+
 * Sat Sep 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-11
 - update to 0.0.1-11 - update to last master
 
