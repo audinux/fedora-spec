@@ -1,0 +1,33 @@
+From 36f1934f0085e4cd2d6b97e3d047b7387c675aa1 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Sun, 27 Sep 2026 20:58:12 +0200
+Subject: [PATCH] fix metainfo file
+
+---
+ others/flathub/io.github.mlm_games.yadaw.metainfo.xml | 10 ----------
+ 1 file changed, 10 deletions(-)
+
+diff --git a/others/flathub/io.github.mlm_games.yadaw.metainfo.xml b/others/flathub/io.github.mlm_games.yadaw.metainfo.xml
+index 9fc1355..48abfff 100644
+--- a/others/flathub/io.github.mlm_games.yadaw.metainfo.xml
++++ b/others/flathub/io.github.mlm_games.yadaw.metainfo.xml
+@@ -62,16 +62,6 @@
+         </ul>
+       </description>
+     </release>
+-    <release version="0.1.1" date="2026-09-26" type="stable">
+-      <description>
+-        <ul>
+-          <li>use rlobkit's immersive sticky flag for #13</li>
+-          <li>ci(aur): take .desktop from flathub file</li>
+-          <li>fix: setup-android packages '' (legacy tools pkg removed)</li>
+-          <li>fix(ci): handle single quotes in pin extraction</li>
+-        </ul>
+-      </description>
+-    </release>
+     <release version="0.10.8" date="2026-08-30" type="stable">
+       <description>
+         <ul>
+-- 
+2.55.0
+
