@@ -5,7 +5,7 @@
 
 Name: kernel-audio-tuned
 Version: 1.0
-Release: 8%{?dist}
+Release: 9%{?dist}
 Summary: Audio tuned kernel boot entries for Fedora
 BuildArch: noarch
 License: GPL-3.0-or-later
@@ -17,6 +17,9 @@ Source2: kernel-audio-tuned-grub.cfg
 %description
 Creates additional kernel boot entries with low-latency tuning
 parameters (preempt, IRQ threading, etc.) using kernel-install hooks.
+kernel-rt-mao gets its own "-rt-tuned" entries (threadirqs, mitigations=off,
+and CPU-specific options, but no preempt=full since the RT kernel is already
+fully preemptible) instead of the standard "-audio" entries.
 
 %install
 
@@ -29,8 +32,8 @@ install -m 0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/sysconfig/kernel-audio-tun
 install -m 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/default/grub.d/50-kernel-audio-tuned.cfg
 
 %post
-# Pre-delete stale audio entries so upgrades regenerate with current options
-for entry in /boot/loader/entries/*-audio.conf; do
+# Pre-delete stale tuned entries so upgrades regenerate with current options
+for entry in /boot/loader/entries/*-audio.conf /boot/loader/entries/*-rt-tuned.conf; do
     rm -f "$entry" || :
 done
 for k in /lib/modules/*; do
@@ -51,7 +54,7 @@ grub2-editenv - unset menu_auto_hide 2>/dev/null || :
 
 %preun
 if [ $1 -eq 0 ]; then
-    for entry in /boot/loader/entries/*-audio.conf; do
+    for entry in /boot/loader/entries/*-audio.conf /boot/loader/entries/*-rt-tuned.conf; do
         rm -f "$entry" || :
     done
     # Restore menu_auto_hide before regenerating so GRUB reverts to its
@@ -71,6 +74,22 @@ fi
 %config(noreplace) %{_sysconfdir}/default/grub.d/50-kernel-audio-tuned.cfg
 
 %changelog
+* Mon Sep 28 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-9
+- 90-audio-tuned.install: kernel-rt-mao (".rt") no longer skipped outright;
+  it now gets its own "-rt-tuned" boot entries with threadirqs/mitigations=off/
+  CPU options but without preempt=full (redundant on an already fully
+  preemptible RT kernel); generalized create_entry/remove_entry/
+  cleanup_entries to work off a TUNED_SUFFIXES list (audio, rt-tuned)
+  instead of hardcoding "-audio"
+- sysconfig: add KERNEL_AUDIO_TUNED_RT_OPTS/RT_ENABLE; drop ".rt" from the
+  default KERNEL_AUDIO_TUNED_SKIP_FLAVORS (lqx/xan are still skipped);
+  replace nopti with mitigations=off in both KERNEL_AUDIO_TUNED_OPTS and
+  KERNEL_AUDIO_TUNED_RT_OPTS - disables all CPU speculative-execution
+  mitigations (Spectre, Meltdown, MDS, ...) instead of just Page Table
+  Isolation, for further syscall/context-switch overhead reduction on a
+  trusted, single-user audio workstation
+- spec: %%post/%%preun also clean up stale *-rt-tuned.conf entries
+
 * Thu Aug 20 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-8
 - fix GRUB menu not appearing: also unset menu_auto_hide in grubenv in %%post;
   Fedora's grub.cfg checks ${menu_auto_hide} after applying timeout_style and

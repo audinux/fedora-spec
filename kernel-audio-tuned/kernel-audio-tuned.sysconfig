@@ -1,15 +1,29 @@
-# nopti: disables Page Table Isolation (Spectre/Meltdown mitigation).
-# Reduces syscall overhead; acceptable trade-off on a dedicated audio workstation.
-# Remove if the machine handles untrusted code or shared data.
-KERNEL_AUDIO_TUNED_OPTS="preempt=full threadirqs nopti"
+# mitigations=off: disables ALL CPU speculative-execution vulnerability
+# mitigations (Spectre, Meltdown, MDS, etc.), not just Page Table Isolation.
+# Reduces syscall/context-switch overhead further than nopti alone; only
+# use this on a trusted, single-user, non-networked-untrusted-code audio
+# workstation. Remove/replace if the machine handles untrusted code,
+# multi-tenant workloads, or is exposed to untrusted network input.
+KERNEL_AUDIO_TUNED_OPTS="preempt=full threadirqs mitigations=off"
 KERNEL_AUDIO_TUNED_INTEL_OPTS="intel_pstate=disable"
 KERNEL_AUDIO_TUNED_AMD_OPTS=""
 KERNEL_AUDIO_TUNED_ENABLE="yes"
 
+# Options for the separate "-rt-tuned" entries created for kernel-rt-mao
+# (see KERNEL_AUDIO_TUNED_RT_ENABLE below). No preempt=full here: the RT
+# kernel is already built fully preemptible, so the option is redundant
+# there (unlike the standard/-audio entries, which need it explicitly).
+# See the mitigations=off note above; CPU-specific options above
+# (INTEL_OPTS/AMD_OPTS) are shared with these.
+KERNEL_AUDIO_TUNED_RT_OPTS="threadirqs mitigations=off"
+KERNEL_AUDIO_TUNED_RT_ENABLE="yes"
+
 # Space-separated substrings: skip audio entries for kernels whose version
 # string contains any of these tokens. Covers the audinux custom kernels:
-#   kernel-rt-mao  → version contains ".rt"
 #   kernel-lqx-mao → version contains "lqx"
 #   kernel-xan-mao → version contains "xan"
-# Set to "" to create audio entries for all installed kernels.
-KERNEL_AUDIO_TUNED_SKIP_FLAVORS=".rt lqx xan"
+# kernel-rt-mao (".rt") is deliberately NOT listed here: it gets its own
+# "-rt-tuned" entries (KERNEL_AUDIO_TUNED_RT_OPTS/RT_ENABLE above) instead
+# of being skipped or given the standard -audio entry.
+# Set to "" to create standard -audio entries for all remaining flavors too.
+KERNEL_AUDIO_TUNED_SKIP_FLAVORS="lqx xan"
