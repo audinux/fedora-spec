@@ -5,7 +5,7 @@
 
 Name: csound7
 Version: 7.0.0b17
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A sound synthesis language and library
 URL: https://csound.com
 License: LGPL-2.1-or-later
@@ -59,15 +59,15 @@ Requires: %{name}%{?_isa} = %{version}-%{release}
 %description devel
 Contains headers and libraries for developing applications that use Csound.
 
-%package -n python3-csound
+%package -n python3-csound7
 %{?python_provide:%python_provide python3-csound}
-Summary: Python Csound development files and libraries
+Summary: Python Csound development files and libraries for CSound7
 Requires: %{name}%{?_isa} = %{version}-%{release}
 Requires: python3
 
-%description -n python3-csound
+%description -n python3-csound7
 Contains Python language bindings for developing Python applications that
-use Csound.
+use Csound7.
 
 %package dssi
 Summary: Disposable Soft Synth Interface (DSSI) plugin for Csound
@@ -154,7 +154,7 @@ cp -ra %{__cmake_builddir}/docs/html %{buildroot}/%{_datadir}/doc/csound7-manual
 
 %ldconfig_scriptlets
 
-%ldconfig_scriptlets -n python3-csound
+%ldconfig_scriptlets -n python3-csound7
 
 %files -f %{name}.lang
 %license COPYING
@@ -205,7 +205,7 @@ cp -ra %{__cmake_builddir}/docs/html %{buildroot}/%{_datadir}/doc/csound7-manual
 %{_libdir}/pkgconfig/csound.pc
 %{_libdir}/csound/*.cmake
 
-%files -n python3-csound
+%files -n python3-csound7
 %{_libdir}/libcsound64.so.7.0
 %{python3_sitelib}/*csound.py*
 %{python3_sitelib}/__pycache__/
@@ -223,5 +223,8 @@ cp -ra %{__cmake_builddir}/docs/html %{buildroot}/%{_datadir}/doc/csound7-manual
 %{_datadir}/doc/csound7-manual/*
 
 %changelog
+* Sun Sep 27 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.0b17-2
+- update to 7.0.0b17-2 - fix the python package
+
 * Sun Sep 27 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.0b17-1
 - Initial version of the spec
