@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: yadaw
-Version: 0.10.9
+Version: 0.11.0
 Release: 1%{?dist}
 Summary: An sfx creation tool and midi player that doesn't crash often
 License: AGPL-3.0-or-later
@@ -17,6 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/mlm-games/yadaw/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Patch0: yadaw-0001-fix-metainfo-file.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -39,7 +40,7 @@ helps refactoring later on, might implement a plugin system like blender if need
 lanes feature could be implemented as a plugin, etc..)
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{version}
 
 %build
 
@@ -104,6 +105,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/io.github
 %{_datadir}/metainfo/*
 
 %changelog
+* Mon Sep 28 2026 Yann Collette <ycollette.nospam@free.fr> - 0.11.0-1
+- update to 0.11.0-1
+
 * Sat Sep 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.10.9-1
 - update to 0.10.9-1
 
