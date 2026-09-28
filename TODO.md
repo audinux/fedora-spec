@@ -480,6 +480,9 @@
 | overtonium                               | https://github.com/benjamindehli/overtonium                                                                                                                 |
 | sidstation-asid                          | https://github.com/benjamindehli/sidstation-asid                                                                                                            |
 | Infinite                                 | https://github.com/n1m21n/Infinite                                                                                                                          |
+| C99Gonio                                 | https://github.com/ihateemoji/C99Gonio                                                                                                                      |
+| monomodule                               | https://github.com/shnolk/monomodule                                                                                                                        |
+| S-MU2000                                 | https://github.com/tarboh/S-MU2000                                                                                                                          |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
