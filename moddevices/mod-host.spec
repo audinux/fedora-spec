@@ -26,7 +26,7 @@
 
 Name: mod-host
 Version: 0.10.6.%{shortcommit0}
-Release: 5%{?dist}
+Release: 6%{?dist}
 License: GPL-3.0-or-later
 Summary: LV2 host for Jack controllable via socket or command line
 URL: https://github.com/moddevices/mod-host
@@ -48,6 +48,8 @@ Patch3: mod-host-81.patch
 Patch4: mod-host-81b.patch
 # https://github.com/mod-audio/mod-host/pull/82 - add the missing -t short option
 Patch5: mod-host-82.patch
+# https://github.com/mod-audio/mod-host/pull/103 - the socket protocol as a shared library for other hosts
+Patch6: mod-host-103.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -79,6 +81,15 @@ Currently the host supports the following LV2 features:
 
 mod-host is part of the MOD project (https://mod.audio/).
 
+%package protocol-devel
+Summary: Headers and pkg-config file for the mod-host socket protocol library
+Requires: %{name}%{?_isa} = %{version}-%{release}
+
+%description protocol-devel
+Headers, pkg-config file and backend scenarios for libmod-host-protocol,
+the socket server, line protocol and command dispatch of mod-host, for
+hosts that answer mod-host's protocol with their own plugin backend.
+
 %prep
 %autosetup -p1 -n %{name}-%{commit0}
 
@@ -94,7 +105,7 @@ sed -i 's,LDFLAGS += -s,LDFLAGS +=,g' Makefile
 
 %install
 
-%make_install
+%make_install LIBDIR=%{_libdir}
 
 install -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
 install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
@@ -106,8 +117,20 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 %{_mandir}/man1/mod-host.*
 %{_unitdir}/%{name}.service
 %{_userunitdir}/%{name}.service
+%{_libdir}/libmod-host-protocol.so.0*
+
+%files protocol-devel
+%{_libdir}/libmod-host-protocol.so
+%{_includedir}/mod-host/
+%{_libdir}/pkgconfig/mod-host-protocol.pc
+%{_datadir}/mod-host/
 
 %changelog
+* Tue Sep 29 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-6
+- build the socket, protocol and command dispatch as a shared library,
+  libmod-host-protocol.so.0, with its headers and pkg-config file in
+  mod-host-protocol-devel
+
 * Fri Sep 25 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-5
 - apply the fix from upstream PR 98: a plugin sending an empty path no longer
   makes mod-host read past its buffer
