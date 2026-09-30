@@ -26,7 +26,7 @@
 
 Name: mod-host
 Version: 0.10.6.%{shortcommit0}
-Release: 8%{?dist}
+Release: 9%{?dist}
 License: GPL-3.0-or-later
 Summary: LV2 host for Jack controllable via socket or command line
 URL: https://github.com/moddevices/mod-host
@@ -37,19 +37,20 @@ Distribution: Audinux
 
 Source0: https://github.com/moddevices/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: %{name}.service
+# https://github.com/mod-audio/mod-host/pull/100
 Patch0: mod-host-100.patch
-# https://github.com/mod-audio/mod-host/pull/101 - let "add" name its jack client
+# https://github.com/mod-audio/mod-host/pull/101
 Patch1: mod-host-101.patch
-# https://github.com/mod-audio/mod-host/pull/98 - fix a heap overread on an empty path property
-Patch2: mod-host-98.patch
-# https://github.com/mod-audio/mod-host/pull/81 - allow runs of spaces between protocol words
-Patch3: mod-host-81.patch
-# follow-up to https://github.com/mod-audio/mod-host/pull/81 - no leading space on the next word
-Patch4: mod-host-81b.patch
-# https://github.com/mod-audio/mod-host/pull/82 - add the missing -t short option
-Patch5: mod-host-82.patch
-# https://github.com/mod-audio/mod-host/pull/103 - the socket protocol as a shared library for other hosts
-Patch6: mod-host-103.patch
+# https://github.com/mod-audio/mod-host/pull/104
+Patch2: mod-host-104.patch
+# https://github.com/mod-audio/mod-host/pull/105
+Patch3: mod-host-105.patch
+# https://github.com/mod-audio/mod-host/pull/106
+Patch4: mod-host-106.patch
+# https://github.com/mod-audio/mod-host/pull/107
+Patch5: mod-host-107.patch
+# https://github.com/mod-audio/mod-host/pull/108
+Patch6: mod-host-108.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -110,10 +111,12 @@ sed -i 's,LDFLAGS += -s,LDFLAGS +=,g' Makefile
 %set_build_flags
 
 %make_build
+%make_build lib
 
 %install
 
 %make_install LIBDIR=%{_libdir}
+%make_install install-lib LIBDIR=%{_libdir}
 
 install -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
 install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
@@ -137,6 +140,11 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 %{_datadir}/mod-host/
 
 %changelog
+* Wed Sep 30 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-9
+- carry exactly upstream PRs 100, 101 and 104 to 108, one patch each;
+  PRs 81, 82 and 98 are no longer carried
+- install the protocol library with make install-lib
+
 * Wed Sep 30 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-8
 - update PR 103: a backend can answer monitor_output and send output_set
 
