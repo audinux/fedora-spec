@@ -3,18 +3,16 @@
 # Type: Language
 # Category: Audio, Synthesizer, Graphic, Programming
 
-%global commit0 65529819fe97473aedf47548b6655cfb4241df08
-
 Summary: Collection of SuperCollider plugins
 Name: supercollider-sc3-plugins
-Version: 3.14.0
+Version: 3.14.1
 Release: 5%{?dist}
 License: GPL-2.0-or-later
 URL: https://github.com/supercollider/sc3-plugins/
 ExclusiveArch: x86_64 aarch64
 
 # Usage: ./supercollider-sc3-source.sh <tag>
-#        ./supercollider-sc3-source.sh Version-3.14.0 
+#        ./supercollider-sc3-source.sh Version-3.14.1
 
 Source0: sc3-plugins.tar.gz
 Source1: supercollider-sc3-source.sh
@@ -66,6 +64,9 @@ export CXXFLAGS="-include cstdint $CXXFLAGS"
 %{_libdir}/SuperCollider/plugins/*
 
 %changelog
+* Tue Sep 29 2026 Yann Collette <ycollette.nospam@free.fr> 3.14.1-5
+- update to 3.14.1-5
+
 * Mon May 18 2026 Yann Collette <ycollette.nospam@free.fr> 3.14.0-5
 - update to 3.14.0-5
 
