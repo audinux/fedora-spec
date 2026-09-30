@@ -1,0 +1,654 @@
+https://github.com/mod-audio/mod-host/pull/105
+Register the effect verbs through a backend interface
+
+diff --git a/src/host-backend.h b/src/host-backend.h
+new file mode 100644
+index 0000000..9f1f9c3
+--- /dev/null
++++ b/src/host-backend.h
+@@ -0,0 +1,57 @@
++/*
++ * This file is part of mod-host.
++ *
++ * mod-host is free software: you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation, either version 3 of the License, or
++ * (at your option) any later version.
++ *
++ * mod-host is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with mod-host.  If not, see <http://www.gnu.org/licenses/>.
++ *
++ */
++
++/*
++************************************************************************************************************************
++*
++************************************************************************************************************************
++*/
++
++#ifndef HOST_BACKEND_H
++#define HOST_BACKEND_H
++
++
++/*
++************************************************************************************************************************
++*           DATA TYPES
++************************************************************************************************************************
++*/
++
++/* The plugin backend behind the socket protocol, or called directly by a host in the same process.
++   A NULL entry answers ERR_INVALID_OPERATION. Fields are only ever appended. */
++typedef struct HOST_BACKEND_T {
++    int (*add)(const char *uri, int instance, const char *client_name);
++    int (*remove)(int instance);
++    int (*bypass)(int instance, int value);
++    int (*param_set)(int instance, const char *symbol, float value);
++    int (*param_get)(int instance, const char *symbol, float *value);
++    int (*preset_load)(int instance, const char *uri);
++    int (*state_save)(const char *dir);
++    int (*state_load)(const char *dir);
++    int (*connect)(const char *port_a, const char *port_b);
++    int (*disconnect)(const char *port_a, const char *port_b);
++} host_backend_t;
++
++
++/*
++************************************************************************************************************************
++*           END HEADER
++************************************************************************************************************************
++*/
++
++#endif
+diff --git a/src/host-dispatch.c b/src/host-dispatch.c
+new file mode 100644
+index 0000000..51b7b9b
+--- /dev/null
++++ b/src/host-dispatch.c
+@@ -0,0 +1,210 @@
++/*
++ * This file is part of mod-host.
++ *
++ * mod-host is free software: you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation, either version 3 of the License, or
++ * (at your option) any later version.
++ *
++ * mod-host is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with mod-host.  If not, see <http://www.gnu.org/licenses/>.
++ *
++ */
++
++/*
++************************************************************************************************************************
++*
++************************************************************************************************************************
++*/
++
++
++/*
++************************************************************************************************************************
++*           INCLUDE FILES
++************************************************************************************************************************
++*/
++
++#include <stdio.h>
++#include <stdlib.h>
++
++#include "host-dispatch.h"
++#include "host-errors.h"
++#include "mod-host.h"
++
++
++/*
++************************************************************************************************************************
++*           LOCAL GLOBAL VARIABLES
++************************************************************************************************************************
++*/
++
++static const host_backend_t *g_backend;
++
++
++/*
++************************************************************************************************************************
++*           LOCAL FUNCTIONS
++************************************************************************************************************************
++*/
++
++static void add_cb(proto_t *proto)
++{
++    int resp;
++    /* proto->list[3] is the optional client-name argument the "..." tail in EFFECT_ADD
++       lets through; a caller that sent only 3 tokens leaves it unset. */
++    const char *client_name = (proto->list_count > 3) ? proto->list[3] : NULL;
++    if (g_backend->add)
++        resp = g_backend->add(proto->list[1], atoi(proto->list[2]), client_name);
++    else
++        resp = ERR_INVALID_OPERATION;
++    protocol_response_int(resp, proto);
++}
++
++static void remove_cb(proto_t *proto)
++{
++    int resp;
++    if (g_backend->remove)
++        resp = g_backend->remove(atoi(proto->list[1]));
++    else
++        resp = ERR_INVALID_OPERATION;
++    protocol_response_int(resp, proto);
++}
++
++static void preset_load_cb(proto_t *proto)
++{
++    int resp;
++    if (g_backend->preset_load)
++        resp = g_backend->preset_load(atoi(proto->list[1]), proto->list[2]);
++    else
++        resp = ERR_INVALID_OPERATION;
++    protocol_response_int(resp, proto);
++}
++
++static void connect_cb(proto_t *proto)
++{
++    int resp;
++    if (g_backend->connect)
++        resp = g_backend->connect(proto->list[1], proto->list[2]);
++    else
++        resp = ERR_INVALID_OPERATION;
++    protocol_response_int(resp, proto);
++}
++
++static void disconnect_cb(proto_t *proto)
++{
++    int resp;
++    if (g_backend->disconnect)
++        resp = g_backend->disconnect(proto->list[1], proto->list[2]);
++    else
++        resp = ERR_INVALID_OPERATION;
++    protocol_response_int(resp, proto);
++}
++
++static void bypass_cb(proto_t *proto)
++{
++    int resp;
++    if (g_backend->bypass)
++        resp = g_backend->bypass(atoi(proto->list[1]), atoi(proto->list[2]));
++    else
++        resp = ERR_INVALID_OPERATION;
++    protocol_response_int(resp, proto);
++}
++
++static void param_set_cb(proto_t *proto)
++{
++    int resp;
++    if (g_backend->param_set)
++        resp = g_backend->param_set(atoi(proto->list[1]), proto->list[2], atof(proto->list[3]));
++    else
++        resp = ERR_INVALID_OPERATION;
++    protocol_response_int(resp, proto);
++}
++
++static void param_get_cb(proto_t *proto)
++{
++    int resp;
++    float value;
++    if (g_backend->param_get)
++        resp = g_backend->param_get(atoi(proto->list[1]), proto->list[2], &value);
++    else
++        resp = ERR_INVALID_OPERATION;
++
++    char buffer[128];
++    if (resp >= 0)
++        sprintf(buffer, "resp %i %.04f", resp, value);
++    else
++        sprintf(buffer, "resp %i", resp);
++
++    protocol_response(buffer, proto);
++}
++
++static void state_load_cb(proto_t *proto)
++{
++    int resp;
++    if (g_backend->state_load)
++        resp = g_backend->state_load(proto->list[1]);
++    else
++        resp = ERR_INVALID_OPERATION;
++    protocol_response_int(resp, proto);
++}
++
++static void state_save_cb(proto_t *proto)
++{
++    int resp;
++    if (g_backend->state_save)
++        resp = g_backend->state_save(proto->list[1]);
++    else
++        resp = ERR_INVALID_OPERATION;
++    protocol_response_int(resp, proto);
++}
++
++
++/*
++************************************************************************************************************************
++*           GLOBAL FUNCTIONS
++************************************************************************************************************************
++*/
++
++void host_dispatch_register(const host_backend_t *backend)
++{
++    g_backend = backend;
++
++    protocol_add_command(EFFECT_ADD, add_cb);
++    protocol_add_command(EFFECT_REMOVE, remove_cb);
++    protocol_add_command(EFFECT_PRESET_LOAD, preset_load_cb);
++    protocol_add_command(EFFECT_CONNECT, connect_cb);
++    protocol_add_command(EFFECT_DISCONNECT, disconnect_cb);
++    protocol_add_command(EFFECT_BYPASS, bypass_cb);
++    protocol_add_command(EFFECT_PARAM_SET, param_set_cb);
++    protocol_add_command(EFFECT_PARAM_GET, param_get_cb);
++    protocol_add_command(STATE_LOAD, state_load_cb);
++    protocol_add_command(STATE_SAVE, state_save_cb);
++}
++
++/* Every other command of mod-host.h answers ERR_INVALID_OPERATION, so a client that speaks the
++   whole protocol to a host with only the backend table behind it never reads a grammar error. */
++void host_dispatch_register_unsupported(void)
++{
++    static const char *const commands[] = {
++        EFFECT_PRESET_SAVE, EFFECT_PRESET_SHOW, EFFECT_PARAM_MON, EFFECT_PATCH_GET, EFFECT_PATCH_SET,
++        EFFECT_LICENSEE, EFFECT_SET_BPM, EFFECT_SET_BPB, MONITOR_ADDR_SET, MONITOR_OUTPUT,
++        MONITOR_MIDI_PROGRAM, MIDI_LEARN, MIDI_MAP, MIDI_UNMAP, CC_MAP, CC_VALUE_SET, CC_UNMAP, CV_MAP,
++        CV_UNMAP, HMI_MAP, HMI_UNMAP, LOAD_COMMANDS, SAVE_COMMANDS, BUNDLE_ADD, BUNDLE_REMOVE,
++        STATE_TMPDIR, FEATURE_ENABLE, TRANSPORT, TRANSPORT_SYNC, SHOW_EXTERNAL_UI, OUTPUT_DATA_READY,
++        NULL
++    };
++    const char *const *command;
++
++    for (command = commands; *command; command++)
++        protocol_add_command(*command, host_dispatch_unsupported_cb);
++}
++
++void host_dispatch_unsupported_cb(proto_t *proto)
++{
++    protocol_response_int(ERR_INVALID_OPERATION, proto);
++}
+diff --git a/src/host-dispatch.h b/src/host-dispatch.h
+new file mode 100644
+index 0000000..d674d9b
+--- /dev/null
++++ b/src/host-dispatch.h
+@@ -0,0 +1,56 @@
++/*
++ * This file is part of mod-host.
++ *
++ * mod-host is free software: you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation, either version 3 of the License, or
++ * (at your option) any later version.
++ *
++ * mod-host is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with mod-host.  If not, see <http://www.gnu.org/licenses/>.
++ *
++ */
++
++/*
++************************************************************************************************************************
++*
++************************************************************************************************************************
++*/
++
++#ifndef HOST_DISPATCH_H
++#define HOST_DISPATCH_H
++
++
++/*
++************************************************************************************************************************
++*           INCLUDE FILES
++************************************************************************************************************************
++*/
++
++#include "protocol.h"
++#include "host-backend.h"
++
++
++/*
++************************************************************************************************************************
++*           FUNCTION PROTOTYPES
++************************************************************************************************************************
++*/
++
++void host_dispatch_register(const host_backend_t *backend);
++void host_dispatch_register_unsupported(void);
++void host_dispatch_unsupported_cb(proto_t *proto);
++
++
++/*
++************************************************************************************************************************
++*           END HEADER
++************************************************************************************************************************
++*/
++
++#endif
+diff --git a/src/host-errors.h b/src/host-errors.h
+index 905efbe..76d8f9f 100644
+--- a/src/host-errors.h
++++ b/src/host-errors.h
+@@ -40,11 +40,18 @@ enum {
+     ERR_INSTANCE_NON_EXISTS = -3,
+     ERR_INSTANCE_UNLICENSED = -4,
+ 
+-    ERR_LV2_INVALID_URI = -101,
+-    ERR_LV2_INSTANTIATION = -102,
+-    ERR_LV2_INVALID_PARAM_SYMBOL = -103,
+-    ERR_LV2_INVALID_PRESET_URI = -104,
+-    ERR_LV2_CANT_LOAD_STATE = -105,
++    ERR_HOST_INVALID_URI = -101,
++    ERR_HOST_INSTANTIATION = -102,
++    ERR_HOST_INVALID_PARAM_SYMBOL = -103,
++    ERR_HOST_INVALID_PRESET_URI = -104,
++    ERR_HOST_CANT_LOAD_STATE = -105,
++
++    /* the names above under the LV2 prefix they were introduced with */
++    ERR_LV2_INVALID_URI = ERR_HOST_INVALID_URI,
++    ERR_LV2_INSTANTIATION = ERR_HOST_INSTANTIATION,
++    ERR_LV2_INVALID_PARAM_SYMBOL = ERR_HOST_INVALID_PARAM_SYMBOL,
++    ERR_LV2_INVALID_PRESET_URI = ERR_HOST_INVALID_PRESET_URI,
++    ERR_LV2_CANT_LOAD_STATE = ERR_HOST_CANT_LOAD_STATE,
+ 
+     ERR_JACK_CLIENT_CREATION = -201,
+     ERR_JACK_CLIENT_ACTIVATION = -202,
+diff --git a/src/mod-host.c b/src/mod-host.c
+index c395bbd..b008a4b 100644
+--- a/src/mod-host.c
++++ b/src/mod-host.c
+@@ -60,6 +60,7 @@
+ 
+ #include "mod-host.h"
+ #include "effects.h"
++#include "host-dispatch.h"
+ #include "socket.h"
+ #include "protocol.h"
+ #include "completer.h"
+@@ -107,6 +108,19 @@ static pthread_t intclient_socket_thread;
+ ************************************************************************************************************************
+ */
+ 
++static const host_backend_t g_lv2_backend = {
++    effects_add,
++    effects_remove,
++    effects_bypass,
++    effects_set_parameter,
++    effects_get_parameter,
++    effects_preset_load,
++    effects_state_save,
++    effects_state_load,
++    effects_connect,
++    effects_disconnect,
++};
++
+ 
+ /*
+ ************************************************************************************************************************
+@@ -128,23 +142,6 @@ static pthread_t intclient_socket_thread;
+ ************************************************************************************************************************
+ */
+ 
+-static void effects_add_cb(proto_t *proto)
+-{
+-    int resp;
+-    /* proto->list[3] is the optional client-name argument the "..." tail in EFFECT_ADD
+-       lets through; a caller that sent only 3 tokens leaves it unset. */
+-    const char *client_name = (proto->list_count > 3) ? proto->list[3] : NULL;
+-    resp = effects_add(proto->list[1], atoi(proto->list[2]), client_name);
+-    protocol_response_int(resp, proto);
+-}
+-
+-static void effects_remove_cb(proto_t *proto)
+-{
+-    int resp;
+-    resp = effects_remove(atoi(proto->list[1]));
+-    protocol_response_int(resp, proto);
+-}
+-
+ static void effects_preset_save_cb(proto_t *proto)
+ {
+     int resp;
+@@ -152,13 +149,6 @@ static void effects_preset_save_cb(proto_t *proto)
+     protocol_response_int(resp, proto);
+ }
+ 
+-static void effects_preset_load_cb(proto_t *proto)
+-{
+-    int resp;
+-    resp = effects_preset_load(atoi(proto->list[1]), proto->list[2]);
+-    protocol_response_int(resp, proto);
+-}
+-
+ static void effects_preset_show_cb(proto_t *proto)
+ {
+     char *state_str = NULL;
+@@ -174,49 +164,6 @@ static void effects_preset_show_cb(proto_t *proto)
+     protocol_response("", proto);
+ }
+ 
+-static void effects_connect_cb(proto_t *proto)
+-{
+-    int resp;
+-    resp = effects_connect(proto->list[1], proto->list[2]);
+-    protocol_response_int(resp, proto);
+-}
+-
+-static void effects_disconnect_cb(proto_t *proto)
+-{
+-    int resp;
+-    resp = effects_disconnect(proto->list[1], proto->list[2]);
+-    protocol_response_int(resp, proto);
+-}
+-
+-static void effects_bypass_cb(proto_t *proto)
+-{
+-    int resp;
+-    resp = effects_bypass(atoi(proto->list[1]), atoi(proto->list[2]));
+-    protocol_response_int(resp, proto);
+-}
+-
+-static void effects_set_param_cb(proto_t *proto)
+-{
+-    int resp;
+-    resp = effects_set_parameter(atoi(proto->list[1]), proto->list[2], atof(proto->list[3]));
+-    protocol_response_int(resp, proto);
+-}
+-
+-static void effects_get_param_cb(proto_t *proto)
+-{
+-    int resp;
+-    float value;
+-    resp = effects_get_parameter(atoi(proto->list[1]), proto->list[2], &value);
+-
+-    char buffer[128];
+-    if (resp >= 0)
+-        sprintf(buffer, "resp %i %.04f", resp, value);
+-    else
+-        sprintf(buffer, "resp %i", resp);
+-
+-    protocol_response(buffer, proto);
+-}
+-
+ static void effects_monitor_param_cb(proto_t *proto)
+ {
+     int resp;
+@@ -515,18 +462,6 @@ static void bundle_remove(proto_t *proto)
+     protocol_response("resp 0", proto);
+ }
+ 
+-static void state_load(proto_t *proto)
+-{
+-    const int resp = effects_state_load(proto->list[1]);
+-    protocol_response_int(resp, proto);
+-}
+-
+-static void state_save(proto_t *proto)
+-{
+-    const int resp = effects_state_save(proto->list[1]);
+-    protocol_response_int(resp, proto);
+-}
+-
+ static void state_tmpdir(proto_t *proto)
+ {
+     const int resp = effects_state_set_tmpdir(proto->list[1]);
+@@ -675,16 +610,9 @@ static int mod_host_init(jack_client_t* client, int socket_port, int feedback_po
+ #endif
+ 
+     /* Setup the protocol */
+-    protocol_add_command(EFFECT_ADD, effects_add_cb);
+-    protocol_add_command(EFFECT_REMOVE, effects_remove_cb);
+-    protocol_add_command(EFFECT_PRESET_LOAD, effects_preset_load_cb);
++    host_dispatch_register(&g_lv2_backend);
+     protocol_add_command(EFFECT_PRESET_SAVE, effects_preset_save_cb);
+     protocol_add_command(EFFECT_PRESET_SHOW, effects_preset_show_cb);
+-    protocol_add_command(EFFECT_CONNECT, effects_connect_cb);
+-    protocol_add_command(EFFECT_DISCONNECT, effects_disconnect_cb);
+-    protocol_add_command(EFFECT_BYPASS, effects_bypass_cb);
+-    protocol_add_command(EFFECT_PARAM_SET, effects_set_param_cb);
+-    protocol_add_command(EFFECT_PARAM_GET, effects_get_param_cb);
+     protocol_add_command(EFFECT_PARAM_MON, effects_monitor_param_cb);
+     protocol_add_command(EFFECT_PATCH_GET, effects_get_property_cb);
+     protocol_add_command(EFFECT_PATCH_SET, effects_set_property_cb);
+@@ -712,8 +640,6 @@ static int mod_host_init(jack_client_t* client, int socket_port, int feedback_po
+     protocol_add_command(BUNDLE_ADD, bundle_add);
+     protocol_add_command(BUNDLE_REMOVE, bundle_remove);
+     protocol_add_command(FEATURE_ENABLE, feature_enable);
+-    protocol_add_command(STATE_LOAD, state_load);
+-    protocol_add_command(STATE_SAVE, state_save);
+     protocol_add_command(STATE_TMPDIR, state_tmpdir);
+     protocol_add_command(TRANSPORT, transport);
+     protocol_add_command(TRANSPORT_SYNC, transport_sync);
+diff --git a/src/protocol.c b/src/protocol.c
+index 8c1cdb8..7842d2a 100644
+--- a/src/protocol.c
++++ b/src/protocol.c
+@@ -39,10 +39,6 @@
+ ************************************************************************************************************************
+ */
+ 
+-#define NOT_FOUND           (-1)
+-#define MANY_ARGUMENTS      (-2)
+-#define FEW_ARGUMENTS       (-3)
+-#define INVALID_ARGUMENT    (-4)
+ 
+ 
+ /*
+@@ -51,7 +47,7 @@
+ ************************************************************************************************************************
+ */
+ 
+-const char *g_error_messages[] = {
++static const char *g_error_messages[] = {
+     MESSAGE_COMMAND_NOT_FOUND,
+     MESSAGE_MANY_ARGUMENTS,
+     MESSAGE_FEW_ARGUMENTS,
+@@ -148,7 +144,7 @@ void protocol_parse(msg_t *msg)
+ 
+     unsigned int match, variable_arguments = 0;
+ 
+-    index = NOT_FOUND;
++    index = PROTOCOL_NOT_FOUND;
+ 
+     // loop all registered commands
+     for (i = 0; i < g_command_count; i++)
+@@ -187,13 +183,13 @@ void protocol_parse(msg_t *msg)
+             // few arguments
+             if (proto.list_count < (g_commands[i].count - variable_arguments))
+             {
+-                index = FEW_ARGUMENTS;
++                index = PROTOCOL_FEW_ARGUMENTS;
+             }
+ 
+             // many arguments
+             else if (proto.list_count > g_commands[i].count && !variable_arguments)
+             {
+-                index = MANY_ARGUMENTS;
++                index = PROTOCOL_MANY_ARGUMENTS;
+             }
+ 
+             // arguments match
+@@ -205,7 +201,7 @@ void protocol_parse(msg_t *msg)
+             // not found
+             else
+             {
+-                index = NOT_FOUND;
++                index = PROTOCOL_NOT_FOUND;
+             }
+ 
+             break;
+@@ -235,13 +231,14 @@ void protocol_parse(msg_t *msg)
+     // Protocol error
+     else
+     {
++        const char *error = protocol_error_message(index);
+ #ifndef SKIP_READLINE
+         if (msg->sender_id == STDOUT_FILENO)
+-            write(msg->sender_id, g_error_messages[-index-1], strlen(g_error_messages[-index-1])+1);
++            write(msg->sender_id, error, strlen(error)+1);
+         else
+ #endif
+-            socket_send(msg->sender_id, g_error_messages[-index-1], strlen(g_error_messages[-index-1])+1);
+-        if (g_verbose) printf("PROTOCOL: error '%s'\n", g_error_messages[-index-1]);
++            socket_send(msg->sender_id, error, strlen(error)+1);
++        if (g_verbose) printf("PROTOCOL: error '%s'\n", error);
+     }
+ 
+     FREE(proto.list);
+@@ -295,6 +292,14 @@ void protocol_remove_commands(void)
+ }
+ 
+ 
++const char *protocol_error_message(int code)
++{
++    if (code >= 0 || -code > (int)(sizeof(g_error_messages) / sizeof(g_error_messages[0])))
++        return NULL;
++
++    return g_error_messages[-code-1];
++}
++
+ void protocol_verbose(int verbose)
+ {
+     g_verbose = verbose;
+diff --git a/src/protocol.h b/src/protocol.h
+index 302472b..2d04b6c 100644
+--- a/src/protocol.h
++++ b/src/protocol.h
+@@ -56,6 +56,12 @@
+ #define MESSAGE_FEW_ARGUMENTS       "few arguments"
+ #define MESSAGE_INVALID_ARGUMENT    "invalid argument"
+ 
++// protocol_parse() errors, answered with protocol_error_message()
++#define PROTOCOL_NOT_FOUND          (-1)
++#define PROTOCOL_MANY_ARGUMENTS     (-2)
++#define PROTOCOL_FEW_ARGUMENTS      (-3)
++#define PROTOCOL_INVALID_ARGUMENT   (-4)
++
+ 
+ /*
+ ************************************************************************************************************************
+@@ -98,6 +104,7 @@ void protocol_response(const char *response, proto_t *proto);
+ void protocol_response_int(int resp, proto_t *proto);
+ void protocol_remove_commands(void);
+ void protocol_verbose(int verbose);
++const char *protocol_error_message(int code);
+ 
+ 
+ /*
