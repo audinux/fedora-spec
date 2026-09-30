@@ -5,7 +5,7 @@
 
 Name: csound7
 Version: 7.0.0b17
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A sound synthesis language and library
 URL: https://csound.com
 License: LGPL-2.1-or-later
@@ -150,6 +150,10 @@ cp -ra %{__cmake_builddir}/docs/man/man3 %{buildroot}/%{_mandir}/
 install -m 766 -d %{buildroot}/%{_datadir}/doc/csound7-manual/
 cp -ra %{__cmake_builddir}/docs/html %{buildroot}/%{_datadir}/doc/csound7-manual/
 
+# Cleanup
+rm -r %{buildroot}/%{_mandir}/man3/README.md.3
+rm -r %{buildroot}/%{_mandir}/man3/*-build_*
+
 %find_lang %{name}
 
 %ldconfig_scriptlets
@@ -223,6 +227,9 @@ cp -ra %{__cmake_builddir}/docs/html %{buildroot}/%{_datadir}/doc/csound7-manual
 %{_datadir}/doc/csound7-manual/*
 
 %changelog
+* Mon Sep 28 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.0b17-3
+- update to 7.0.0b17-3 - fix man pages
+
 * Sun Sep 27 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.0b17-2
 - update to 7.0.0b17-2 - fix the python package
 
