@@ -26,7 +26,7 @@
 
 Name: mod-host
 Version: 0.10.6.%{shortcommit0}
-Release: 6%{?dist}
+Release: 7%{?dist}
 License: GPL-3.0-or-later
 Summary: LV2 host for Jack controllable via socket or command line
 URL: https://github.com/moddevices/mod-host
@@ -63,6 +63,7 @@ BuildRequires: systemd-rpm-macros
 
 %{?systemd_requires}
 Requires: lilv
+Requires: %{name}-protocol%{?_isa} = %{version}-%{release}
 
 %description
 mod-host is an LV2 host for JACK, controllable via socket or command line
@@ -81,9 +82,16 @@ Currently the host supports the following LV2 features:
 
 mod-host is part of the MOD project (https://mod.audio/).
 
+%package protocol
+Summary: mod-host socket protocol library
+
+%description protocol
+libmod-host-protocol, the socket server, line protocol and command
+dispatch of mod-host, shared by mod-host and other hosts.
+
 %package protocol-devel
 Summary: Headers and pkg-config file for the mod-host socket protocol library
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: %{name}-protocol%{?_isa} = %{version}-%{release}
 
 %description protocol-devel
 Headers, pkg-config file and backend scenarios for libmod-host-protocol,
@@ -117,6 +125,9 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 %{_mandir}/man1/mod-host.*
 %{_unitdir}/%{name}.service
 %{_userunitdir}/%{name}.service
+
+%files protocol
+%license COPYING
 %{_libdir}/libmod-host-protocol.so.0*
 
 %files protocol-devel
@@ -126,6 +137,9 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 %{_datadir}/mod-host/
 
 %changelog
+* Wed Sep 30 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-7
+- move libmod-host-protocol.so.0 into its own mod-host-protocol subpackage
+
 * Tue Sep 29 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-6
 - build the socket, protocol and command dispatch as a shared library,
   libmod-host-protocol.so.0, with its headers and pkg-config file in
