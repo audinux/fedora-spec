@@ -41,16 +41,24 @@ Source1: %{name}.service
 Patch0: mod-host-100.patch
 # https://github.com/mod-audio/mod-host/pull/101
 Patch1: mod-host-101.patch
+# https://github.com/mod-audio/mod-host/pull/98 - fix a heap overread on an empty path property
+Patch2: mod-host-98.patch
+# https://github.com/mod-audio/mod-host/pull/81 - allow runs of spaces between protocol words
+Patch3: mod-host-81.patch
+# follow-up to https://github.com/mod-audio/mod-host/pull/81 - no leading space on the next word
+Patch4: mod-host-81b.patch
+# https://github.com/mod-audio/mod-host/pull/82 - add the missing -t short option
+Patch5: mod-host-82.patch
 # https://github.com/mod-audio/mod-host/pull/104
-Patch2: mod-host-104.patch
+Patch6: mod-host-104.patch
 # https://github.com/mod-audio/mod-host/pull/105
-Patch3: mod-host-105.patch
+Patch7: mod-host-105.patch
 # https://github.com/mod-audio/mod-host/pull/106
-Patch4: mod-host-106.patch
+Patch8: mod-host-106.patch
 # https://github.com/mod-audio/mod-host/pull/107
-Patch5: mod-host-107.patch
+Patch9: mod-host-107.patch
 # https://github.com/mod-audio/mod-host/pull/108
-Patch6: mod-host-108.patch
+Patch10: mod-host-108.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -141,8 +149,8 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 
 %changelog
 * Wed Sep 30 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-9
-- carry exactly upstream PRs 100, 101 and 104 to 108, one patch each;
-  PRs 81, 82 and 98 are no longer carried
+- our patches are now the upstream PRs 100, 101 and 104 to 108, one file each;
+  PRs 81, 82 and 98 unchanged
 - install the protocol library with make install-lib
 
 * Wed Sep 30 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-8
