@@ -158,6 +158,23 @@ index 0000000..6603a2f
 +Cflags: -I${includedir}/mod-host
 +Libs: -L${libdir} -lmod-host-protocol
 +Libs.private: -lpthread -lm
+diff --git a/src/effects.c b/src/effects.c
+index 4bf139b..463c535 100644
+--- a/src/effects.c
++++ b/src/effects.c
+@@ -1291,9 +1291,9 @@ static void RunPostPonedEvents(int ignored_effect_id)
+             if (ShouldIgnorePostPonedSymbolEvent(&eventptr->event.parameter, &cached_output_mon))
+                 continue;
+ 
+-            snprintf(buf, FEEDBACK_BUF_SIZE, "output_set %i %s %f", eventptr->event.parameter.effect_id,
+-                                                                    eventptr->event.parameter.symbol,
+-                                                                    eventptr->event.parameter.value);
++            snprintf(buf, FEEDBACK_BUF_SIZE, OUTPUT_SET, eventptr->event.parameter.effect_id,
++                                                        eventptr->event.parameter.symbol,
++                                                        eventptr->event.parameter.value);
+             socket_send_feedback_debug(buf);
+ 
+             // save for fast checkup next time
 diff --git a/src/effects.h b/src/effects.h
 index f547bec..cd109c0 100644
 --- a/src/effects.h
@@ -271,10 +288,10 @@ index 0000000..9f1f9c3
 +#endif
 diff --git a/src/host-dispatch.c b/src/host-dispatch.c
 new file mode 100644
-index 0000000..51b7b9b
+index 0000000..9d2f0ec
 --- /dev/null
 +++ b/src/host-dispatch.c
-@@ -0,0 +1,210 @@
+@@ -0,0 +1,241 @@
 +/*
 + * This file is part of mod-host.
 + *
@@ -312,6 +329,7 @@ index 0000000..51b7b9b
 +#include "host-dispatch.h"
 +#include "host-errors.h"
 +#include "mod-host.h"
++#include "socket.h"
 +
 +
 +/*
@@ -321,6 +339,7 @@ index 0000000..51b7b9b
 +*/
 +
 +static const host_backend_t *g_backend;
++static int (*g_monitor_output)(int instance, const char *symbol);
 +
 +
 +/*
@@ -440,6 +459,17 @@ index 0000000..51b7b9b
 +    protocol_response_int(resp, proto);
 +}
 +
++/* mod-host answers 1 once the output is monitored and 0 when it cannot be */
++static void monitor_output_cb(proto_t *proto)
++{
++    int resp;
++    if (g_monitor_output)
++        resp = !g_monitor_output(atoi(proto->list[1]), proto->list[2]);
++    else
++        resp = ERR_INVALID_OPERATION;
++    protocol_response_int(resp, proto);
++}
++
 +
 +/*
 +************************************************************************************************************************
@@ -461,6 +491,13 @@ index 0000000..51b7b9b
 +    protocol_add_command(EFFECT_PARAM_GET, param_get_cb);
 +    protocol_add_command(STATE_LOAD, state_load_cb);
 +    protocol_add_command(STATE_SAVE, state_save_cb);
++}
++
++void host_dispatch_register_monitor_output(int (*monitor_output)(int instance, const char *symbol))
++{
++    g_monitor_output = monitor_output;
++
++    protocol_add_command(MONITOR_OUTPUT, monitor_output_cb);
 +}
 +
 +/* Every other command of mod-host.h answers ERR_INVALID_OPERATION, so a client that speaks the
@@ -485,12 +522,23 @@ index 0000000..51b7b9b
 +{
 +    protocol_response_int(ERR_INVALID_OPERATION, proto);
 +}
++
++int host_dispatch_output_set(int instance, const char *symbol, float value)
++{
++    char buffer[SOCKET_MSG_BUFFER_SIZE];
++    int len = snprintf(buffer, sizeof(buffer), OUTPUT_SET, instance, symbol, value);
++
++    if (len < 0 || len >= (int)sizeof(buffer))
++        return -1;
++
++    return socket_send_feedback(buffer);
++}
 diff --git a/src/host-dispatch.h b/src/host-dispatch.h
 new file mode 100644
-index 0000000..d674d9b
+index 0000000..6aa1a61
 --- /dev/null
 +++ b/src/host-dispatch.h
-@@ -0,0 +1,56 @@
+@@ -0,0 +1,61 @@
 +/*
 + * This file is part of mod-host.
 + *
@@ -536,8 +584,13 @@ index 0000000..d674d9b
 +*/
 +
 +void host_dispatch_register(const host_backend_t *backend);
++/* Registers monitor_output, answered as mod-host does; NULL answers ERR_INVALID_OPERATION.
++   Call it before host_dispatch_register_unsupported(). */
++void host_dispatch_register_monitor_output(int (*monitor_output)(int instance, const char *symbol));
 +void host_dispatch_register_unsupported(void);
 +void host_dispatch_unsupported_cb(proto_t *proto);
++/* Sends OUTPUT_SET on the feedback socket; -1 without a feedback client or for a symbol too long. */
++int host_dispatch_output_set(int instance, const char *symbol, float value);
 +
 +
 +/*
@@ -1159,7 +1212,7 @@ index 0000000..896a4a0
 +
 +#endif
 diff --git a/src/mod-host.c b/src/mod-host.c
-index 91f8f77..b008a4b 100644
+index 91f8f77..9f8a674 100644
 --- a/src/mod-host.c
 +++ b/src/mod-host.c
 @@ -60,6 +60,7 @@
@@ -1278,7 +1331,21 @@ index 91f8f77..b008a4b 100644
  static void effects_monitor_param_cb(proto_t *proto)
  {
      int resp;
-@@ -515,18 +462,6 @@ static void bundle_remove(proto_t *proto)
+@@ -293,13 +240,6 @@ static void monitor_addr_set_cb(proto_t *proto)
+     protocol_response_int(resp, proto);
+ }
+ 
+-static void monitor_output_cb(proto_t *proto)
+-{
+-    int resp;
+-    resp = !effects_monitor_output_parameter(atoi(proto->list[1]), proto->list[2]);
+-    protocol_response_int(resp, proto);
+-}
+-
+ static void monitor_midi_program_cb(proto_t *proto)
+ {
+     int resp;
+@@ -515,18 +455,6 @@ static void bundle_remove(proto_t *proto)
      protocol_response("resp 0", proto);
  }
  
@@ -1297,7 +1364,7 @@ index 91f8f77..b008a4b 100644
  static void state_tmpdir(proto_t *proto)
  {
      const int resp = effects_state_set_tmpdir(proto->list[1]);
-@@ -675,16 +610,9 @@ static int mod_host_init(jack_client_t* client, int socket_port, int feedback_po
+@@ -675,16 +603,9 @@ static int mod_host_init(jack_client_t* client, int socket_port, int feedback_po
  #endif
  
      /* Setup the protocol */
@@ -1315,7 +1382,16 @@ index 91f8f77..b008a4b 100644
      protocol_add_command(EFFECT_PARAM_MON, effects_monitor_param_cb);
      protocol_add_command(EFFECT_PATCH_GET, effects_get_property_cb);
      protocol_add_command(EFFECT_PATCH_SET, effects_set_property_cb);
-@@ -712,8 +640,6 @@ static int mod_host_init(jack_client_t* client, int socket_port, int feedback_po
+@@ -692,7 +613,7 @@ static int mod_host_init(jack_client_t* client, int socket_port, int feedback_po
+     protocol_add_command(EFFECT_SET_BPM, effects_set_beats_per_minute_cb);
+     protocol_add_command(EFFECT_SET_BPB, effects_set_beats_per_bar_cb);
+     protocol_add_command(MONITOR_ADDR_SET, monitor_addr_set_cb);
+-    protocol_add_command(MONITOR_OUTPUT, monitor_output_cb);
++    host_dispatch_register_monitor_output(effects_monitor_output_parameter);
+     protocol_add_command(MONITOR_MIDI_PROGRAM, monitor_midi_program_cb);
+     protocol_add_command(MIDI_LEARN, midi_learn_cb);
+     protocol_add_command(MIDI_MAP, midi_map_cb);
+@@ -712,8 +633,6 @@ static int mod_host_init(jack_client_t* client, int socket_port, int feedback_po
      protocol_add_command(BUNDLE_ADD, bundle_add);
      protocol_add_command(BUNDLE_REMOVE, bundle_remove);
      protocol_add_command(FEATURE_ENABLE, feature_enable);
@@ -1324,7 +1400,7 @@ index 91f8f77..b008a4b 100644
      protocol_add_command(STATE_TMPDIR, state_tmpdir);
      protocol_add_command(TRANSPORT, transport);
      protocol_add_command(TRANSPORT_SYNC, transport_sync);
-@@ -736,6 +662,7 @@ static int mod_host_init(jack_client_t* client, int socket_port, int feedback_po
+@@ -736,6 +655,7 @@ static int mod_host_init(jack_client_t* client, int socket_port, int feedback_po
          return -1;
  
      socket_set_receive_cb(protocol_parse);
@@ -1332,6 +1408,20 @@ index 91f8f77..b008a4b 100644
  
      return 0;
  }
+diff --git a/src/mod-host.h b/src/mod-host.h
+index 6794701..1aa7361 100644
+--- a/src/mod-host.h
++++ b/src/mod-host.h
+@@ -101,6 +101,9 @@
+ #define HELP                 "help"
+ #define QUIT                 "quit"
+ 
++/* Feedback messages definition */
++#define OUTPUT_SET           "output_set %i %s %f"
++
+ 
+ /*
+ ************************************************************************************************************************
 diff --git a/src/protocol.c b/src/protocol.c
 index 3316d39..7842d2a 100644
 --- a/src/protocol.c
@@ -1697,10 +1787,10 @@ index 0000000..1c22a3f
 +}
 diff --git a/tests/protocol_test.c b/tests/protocol_test.c
 new file mode 100644
-index 0000000..7ab30b3
+index 0000000..5a78c21
 --- /dev/null
 +++ b/tests/protocol_test.c
-@@ -0,0 +1,528 @@
+@@ -0,0 +1,650 @@
 +/*
 + * This file is part of mod-host.
 + *
@@ -1840,6 +1930,17 @@ index 0000000..7ab30b3
 +    return ERR_JACK_PORT_DISCONNECTION;
 +}
 +
++static int fake_monitor_output(int instance, const char *symbol)
++{
++    char buf[128];
++    snprintf(buf, sizeof(buf), "monitor_output(%i,%s) ", instance, symbol);
++    record(buf);
++    if (instance != 3)
++        return ERR_INSTANCE_NON_EXISTS;
++    host_dispatch_output_set(instance, symbol, 0.25f);
++    return SUCCESS;
++}
++
 +static const host_backend_t g_fake_backend = {
 +    fake_add,
 +    fake_remove,
@@ -1864,6 +1965,8 @@ index 0000000..7ab30b3
 +    { "disconnect a:out b:in",      "resp -206" },
 +    { "state_save /tmp/s",          "resp 0" },
 +    { "state_load /tmp/s",          "resp -105" },
++    { "monitor_output 3 level",     "resp 1" },
++    { "monitor_output 9 level",     "resp 0" },
 +    { "remove 3",                   "resp 0" },
 +    { "licensee 3",                 "resp -902" },
 +    { "cpu_load",                   "not found" },
@@ -1874,7 +1977,7 @@ index 0000000..7ab30b3
 +static const char g_fake_calls[] =
 +    "add(http://x/y,3,chan1) add(http://x/y,4,-) bypass(3,1) param_set(3,gain,0.500000) "
 +    "param_get(3,gain) preset_load(3,urn:p) connect(a:out,b:in) disconnect(a:out,b:in) "
-+    "state_save(/tmp/s) state_load(/tmp/s) remove(3) ";
++    "state_save(/tmp/s) state_load(/tmp/s) monitor_output(3,level) monitor_output(9,level) remove(3) ";
 +
 +/* a backend with nothing behind it answers every verb with ERR_INVALID_OPERATION */
 +static const host_backend_t g_empty_backend = {
@@ -1885,6 +1988,7 @@ index 0000000..7ab30b3
 +    { "add http://x/y 3",           "resp -902" },
 +    { "param_get 3 gain",           "resp -902" },
 +    { "state_save /tmp/s",          "resp -902" },
++    { "monitor_output 3 level",     "resp -902" },
 +    { NULL, NULL }
 +};
 +
@@ -2173,7 +2277,112 @@ index 0000000..7ab30b3
 +    return 0;
 +}
 +
-+static int run_session(int port, const host_backend_t *backend, const exchange_t *exchanges, const char *expected_calls)
++static int connect_port(int port)
++{
++    int fd = socket(AF_INET, SOCK_STREAM, 0);
++    struct sockaddr_in addr;
++
++    memset(&addr, 0, sizeof(addr));
++    addr.sin_family = AF_INET;
++    addr.sin_port = htons(port);
++    addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
++
++    if (connect(fd, (struct sockaddr *)&addr, sizeof(addr)) < 0)
++    {
++        perror("connect");
++        close(fd);
++        return -1;
++    }
++    return fd;
++}
++
++/* the line mod-host's effects.c sends for an output port, terminator included */
++static const char g_output_set_line[] = "output_set 3 level 0.250000";
++
++static void *feedback_client_thread(void *arg)
++{
++    const session_t *session = arg;
++    int fd = connect_port(session->port);
++    int fbfd = connect_port(session->port + 1);
++    char reply[TEST_BUFFER_SIZE];
++    char line[TEST_BUFFER_SIZE];
++    size_t got = 0;
++
++    if (fd < 0 || fbfd < 0)
++    {
++        g_failures++;
++        goto out;
++    }
++
++    if (send(fd, "monitor_output 3 level", 22, 0) < 0 || read_reply(fd, reply, sizeof(reply)) != 0
++        || strcmp(reply, "resp 1") != 0)
++    {
++        printf("FAIL 'monitor_output 3 level' with a feedback client\n");
++        g_failures++;
++        goto out;
++    }
++
++    while (got < sizeof(line))
++    {
++        ssize_t n = recv(fbfd, line + got, 1, 0);
++        if (n <= 0)
++            break;
++        if (line[got++] == '\0')
++            break;
++    }
++
++    if (got == sizeof(g_output_set_line) && memcmp(line, g_output_set_line, got) == 0)
++    {
++        printf("ok   feedback '%s'\n", line);
++    }
++    else
++    {
++        printf("FAIL feedback: got %zu bytes '%.*s', want '%s'\n", got, (int)got, line, g_output_set_line);
++        g_failures++;
++    }
++
++out:
++    if (fbfd >= 0)
++        close(fbfd);
++    if (fd >= 0)
++        close(fd);
++    return NULL;
++}
++
++/* monitor_output reaches the backend, which reports the port's value with host_dispatch_output_set() */
++static int run_feedback_session(int port)
++{
++    session_t session = { port, NULL };
++    pthread_t thread;
++
++    if (host_dispatch_output_set(3, "level", 0.25f) != -1)
++    {
++        printf("FAIL output_set without a feedback client\n");
++        g_failures++;
++    }
++
++    if (socket_start(port, port + 1, TEST_BUFFER_SIZE) < 0)
++    {
++        printf("FAIL socket_start on ports %i and %i\n", port, port + 1);
++        return 1;
++    }
++
++    socket_set_receive_cb(protocol_parse);
++    host_dispatch_register(&g_empty_backend);
++    host_dispatch_register_monitor_output(fake_monitor_output);
++
++    pthread_create(&thread, NULL, feedback_client_thread, &session);
++    socket_run(0);
++    pthread_join(thread, NULL);
++
++    socket_finish();
++    protocol_remove_commands();
++
++    return 0;
++}
++
++static int run_session(int port, const host_backend_t *backend, int (*monitor_output)(int, const char *),
++                       const exchange_t *exchanges, const char *expected_calls)
 +{
 +    session_t session = { port, exchanges };
 +    pthread_t thread;
@@ -2188,6 +2397,7 @@ index 0000000..7ab30b3
 +
 +    socket_set_receive_cb(protocol_parse);
 +    host_dispatch_register(backend);
++    host_dispatch_register_monitor_output(monitor_output);
 +    protocol_add_command("licensee %i", host_dispatch_unsupported_cb);
 +
 +    pthread_create(&thread, NULL, client_thread, &session);
@@ -2211,9 +2421,11 @@ index 0000000..7ab30b3
 +    const char *env = getenv("PROTOCOL_TEST_PORT");
 +    int port = env ? atoi(env) : TEST_PORT_DEFAULT;
 +
-+    if (run_session(port, &g_fake_backend, g_fake_exchanges, g_fake_calls) != 0)
++    if (run_session(port, &g_fake_backend, fake_monitor_output, g_fake_exchanges, g_fake_calls) != 0)
 +        return 1;
-+    if (run_session(port, &g_empty_backend, g_empty_exchanges, "") != 0)
++    if (run_session(port, &g_empty_backend, NULL, g_empty_exchanges, "") != 0)
++        return 1;
++    if (run_feedback_session(port) != 0)
 +        return 1;
 +    if (run_idle_session(port) != 0)
 +        return 1;

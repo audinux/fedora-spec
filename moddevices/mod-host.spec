@@ -26,7 +26,7 @@
 
 Name: mod-host
 Version: 0.10.6.%{shortcommit0}
-Release: 7%{?dist}
+Release: 8%{?dist}
 License: GPL-3.0-or-later
 Summary: LV2 host for Jack controllable via socket or command line
 URL: https://github.com/moddevices/mod-host
@@ -137,6 +137,9 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 %{_datadir}/mod-host/
 
 %changelog
+* Wed Sep 30 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-8
+- update PR 103: a backend can answer monitor_output and send output_set
+
 * Wed Sep 30 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-7
 - move libmod-host-protocol.so.0 into its own mod-host-protocol subpackage
 
