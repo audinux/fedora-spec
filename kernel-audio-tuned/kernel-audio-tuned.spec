@@ -5,7 +5,7 @@
 
 Name: kernel-audio-tuned
 Version: 1.0
-Release: 9%{?dist}
+Release: 10%{?dist}
 Summary: Audio tuned kernel boot entries for Fedora
 BuildArch: noarch
 License: GPL-3.0-or-later
@@ -74,6 +74,16 @@ fi
 %config(noreplace) %{_sysconfdir}/default/grub.d/50-kernel-audio-tuned.cfg
 
 %changelog
+* Wed Sep 30 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-10
+- 90-audio-tuned.install: fix RT kernel detection - actual kernel-rt-mao
+  %%{version} strings look like "7.1.9-rt0.19.fc44.x86_64" (dash before
+  "rt", no dot), so the previous `*".rt"*` glob never matched and RT
+  kernels silently fell through to the standard "-audio" path (and were
+  skipped entirely once KERNEL_AUDIO_TUNED_SKIP_FLAVORS lost ".rt"),
+  leaving kernel-rt-mao without any tuned grub entry; now matches
+  `*-rt[0-9]*` instead
+- sysconfig: update comment to match the corrected "-rtN" matching
+
 * Mon Sep 28 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0-9
 - 90-audio-tuned.install: kernel-rt-mao (".rt") no longer skipped outright;
   it now gets its own "-rt-tuned" boot entries with threadirqs/mitigations=off/

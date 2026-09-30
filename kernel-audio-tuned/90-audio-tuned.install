@@ -165,11 +165,11 @@ case "$COMMAND" in
 
         entries=( "${ENTRY_DIR}"/*"${KERNEL_VERSION}"*.conf )
 
-        # kernel-rt-mao (version contains ".rt") gets its own "-rt-tuned"
-        # entries instead of the standard "-audio" ones: same threadirqs/
-        # nopti/CPU tuning, but without preempt=full since the RT kernel
-        # is already built fully preemptible.
-        if [[ "$KERNEL_VERSION" == *".rt"* ]]; then
+        # kernel-rt-mao (version contains "-rtN", e.g. 7.1.9-rt0.19.fc44)
+        # gets its own "-rt-tuned" entries instead of the standard "-audio"
+        # ones: same threadirqs/nopti/CPU tuning, but without preempt=full
+        # since the RT kernel is already built fully preemptible.
+        if [[ "$KERNEL_VERSION" == *-rt[0-9]* ]]; then
             : "${KERNEL_AUDIO_TUNED_RT_ENABLE:=yes}"
             if [[ "$KERNEL_AUDIO_TUNED_RT_ENABLE" != "yes" ]]; then
                 exit 0

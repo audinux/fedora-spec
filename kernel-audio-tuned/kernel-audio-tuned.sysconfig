@@ -22,7 +22,7 @@ KERNEL_AUDIO_TUNED_RT_ENABLE="yes"
 # string contains any of these tokens. Covers the audinux custom kernels:
 #   kernel-lqx-mao → version contains "lqx"
 #   kernel-xan-mao → version contains "xan"
-# kernel-rt-mao (".rt") is deliberately NOT listed here: it gets its own
+# kernel-rt-mao ("-rtN") is deliberately NOT listed here: it gets its own
 # "-rt-tuned" entries (KERNEL_AUDIO_TUNED_RT_OPTS/RT_ENABLE above) instead
 # of being skipped or given the standard -audio entry.
 # Set to "" to create standard -audio entries for all remaining flavors too.
