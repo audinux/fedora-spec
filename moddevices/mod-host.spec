@@ -26,7 +26,7 @@
 
 Name: mod-host
 Version: 0.10.6.%{shortcommit0}
-Release: 9%{?dist}
+Release: 10%{?dist}
 License: GPL-3.0-or-later
 Summary: LV2 host for Jack controllable via socket or command line
 URL: https://github.com/moddevices/mod-host
@@ -148,6 +148,9 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 %{_datadir}/mod-host/
 
 %changelog
+* Thu Oct 01 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-10
+- #101: retry a suffixed client name on any exact-name failure (jack2)
+
 * Wed Sep 30 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-9
 - our patches are now the upstream PRs 100, 101 and 104 to 108, one file each;
   PRs 81, 82 and 98 unchanged
