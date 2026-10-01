@@ -26,7 +26,7 @@
 
 Name: mod-host
 Version: 0.10.6.%{shortcommit0}
-Release: 10%{?dist}
+Release: 11%{?dist}
 License: GPL-3.0-or-later
 Summary: LV2 host for Jack controllable via socket or command line
 URL: https://github.com/moddevices/mod-host
@@ -59,6 +59,8 @@ Patch8: mod-host-106.patch
 Patch9: mod-host-107.patch
 # https://github.com/mod-audio/mod-host/pull/108
 Patch10: mod-host-108.patch
+# https://github.com/mod-audio/mod-host/pull/109
+Patch11: mod-host-109.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -148,6 +150,9 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 %{_datadir}/mod-host/
 
 %changelog
+* Thu Oct 01 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-11
+- #109: param_info, remote_pages and track_info for controllers
+
 * Thu Oct 01 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-10
 - #101: retry a suffixed client name on any exact-name failure (jack2)
 
