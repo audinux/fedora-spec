@@ -5,11 +5,11 @@
 
 %global debug_package %{nil}
 
-%global commit0 7dcd7aede06b5b85a1cabdf60b702af67ff327b2
+%global commit0 9db8feee7583c7125ec9cd6f5ed379b4f85fec6a
 
 Name: hydra-rust
 Version: 0.0.1
-Release: 12%{?dist}
+Release: 13%{?dist}
 Summary: Prototype of hydra remade in Rust
 License: AGPL-3.0-or-later
 URL: https://github.com/sova-org/hydra-rust
@@ -80,7 +80,7 @@ rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linu
 %endif
 source cargo/env
 
-cargo build --release --features webcam,audio,image_url,midi,video,stream
+cargo build --release --features webcam,audio,image_url,midi,video,stream,osc
 
 %install
 
@@ -100,6 +100,9 @@ tar xvfz %{SOURCE2}
 %{_datadir}/%{name}/hydra-sketches/*
 
 %changelog
+* Wed Sep 30 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-13
+- update to 0.0.1-13 - update to last master - add osc
+
 * Mon Sep 28 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-12
 - update to 0.0.1-12 - update to last master - fix console bugs
 
