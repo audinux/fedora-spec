@@ -4,7 +4,7 @@
 # Category: Effect, Plugin
 
 Name: iem-plugins
-Version: 1.15.0
+Version: 1.16.0
 Release: 2%{?dist}
 Summary: The IEM Plug-in Suite is a free and Open-Source audio plug-in suite.
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./iem-plugins-source.sh <TAG>
-#        ./iem-plugins-source.sh v1.15.0
+#        ./iem-plugins-source.sh v1.16.0
 
 Source0: IEMPluginSuite.tar.gz
 Source1: iem-plugins-source.sh
@@ -93,27 +93,27 @@ LV2 version of %{name}
 
 %install
 
-PLUGINS="CoordinateConverter
-	GranularEncoder
-	ToolBox
-	MultiEncoder
-	DistanceCompensator
-	SimpleDecoder
-	DirectivityShaper
-	OmniCompressor
-	BinauralDecoder
-	MultiEQ
-	MultiBandCompressor
-	ProbeDecoder
-	StereoEncoder
-	RoomEncoder
-	SceneRotator
-	AllRADecoder
-	FdnReverb
-	DualDelay
-	MatrixMultiplier
-	DirectionalCompressor
-	EnergyVisualizer"
+PLUGINS="        AllRADecoder
+        BinauralDecoder
+        CoordinateConverter
+        DirectionalCompressor
+        DirectivityShaper
+        DistanceCompensator
+        DualDelay
+        EnergyVisualizer
+        FdnReverb
+        GranularEncoder
+        MatrixMultiplier
+        MultiBandCompressor
+        MultiEncoder
+        MultiEQ
+        OmniCompressor
+        ProbeDecoder
+        RoomEncoder
+        SceneRotator
+        SimpleDecoder
+        StereoEncoder
+        ToolBox"
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 for plugin in $PLUGINS
@@ -147,6 +147,9 @@ done
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Sep 30 2026 Yann Collette <ycollette.nospam@free.fr> - 1.16.0-2
+- update to 1.16.0-2
+
 * Wed Sep 10 2025 Yann Collette <ycollette.nospam@free.fr> - 1.15.0-2
 - update to 1.15.0-2 - remove unused dep
 
