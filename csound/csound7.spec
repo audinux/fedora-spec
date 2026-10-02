@@ -4,14 +4,14 @@
 # Category: Audio, Synthesizer, Graphic, Programming
 
 Name: csound7
-Version: 7.0.0b17
+Version: 7.0.0b18
 Release: 3%{?dist}
 Summary: A sound synthesis language and library
 URL: https://csound.com
 License: LGPL-2.1-or-later
 
 # Usage: ./csound-source.sh <TAG>
-#        ./csound-source.sh 7.0.0-beta.17
+#        ./csound-source.sh 7.0.0-beta.18
 
 Source0: csound.tar.gz
 
@@ -145,10 +145,10 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 %cmake_install
 
 install -m 766 -d %{buildroot}/%{_mandir}/
-cp -ra %{__cmake_builddir}/docs/man/man3 %{buildroot}/%{_mandir}/
+cp -ra %{__cmake_builddir}/docs/doxygen/man/man3 %{buildroot}/%{_mandir}/
 
 install -m 766 -d %{buildroot}/%{_datadir}/doc/csound7-manual/
-cp -ra %{__cmake_builddir}/docs/html %{buildroot}/%{_datadir}/doc/csound7-manual/
+cp -ra %{__cmake_builddir}/docs/doxygen/html %{buildroot}/%{_datadir}/doc/csound7-manual/
 
 # Cleanup
 rm -r %{buildroot}/%{_mandir}/man3/README.md.3
@@ -227,6 +227,9 @@ rm -r %{buildroot}/%{_mandir}/man3/*-build_*
 %{_datadir}/doc/csound7-manual/*
 
 %changelog
+* Thu Oct 01 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.0b18-3
+- update to 7.0.0b18-3
+
 * Mon Sep 28 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.0b17-3
 - update to 7.0.0b17-3 - fix man pages
 
