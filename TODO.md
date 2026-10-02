@@ -483,6 +483,9 @@
 | C99Gonio                                 | https://github.com/ihateemoji/C99Gonio                                                                                                                      |
 | monomodule                               | https://github.com/shnolk/monomodule                                                                                                                        |
 | S-MU2000                                 | https://github.com/tarboh/S-MU2000                                                                                                                          |
+| ovni                                     | https://github.com/ovniaudio/ovni                                                                                                                           |
+| wave                                     | https://github.com/mo0kid/wave                                                                                                                              |
+| oxefmsynth                               | https://github.com/oxesoft/oxefmsynth                                                                                                                       |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
