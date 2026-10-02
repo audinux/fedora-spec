@@ -1,6 +1,6 @@
-From eb00909037d6ab9aad81267c78d97b3bf3975944 Mon Sep 17 00:00:00 2001
-From: Yann Collette <ycollette.nospam@free.fr>
-Date: Sat, 26 Sep 2026 11:17:42 +0200
+From a8fed95dac2af7beca62c464ad476ba438e786b9 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Thu, 1 Oct 2026 21:17:20 +0200
 Subject: [PATCH] devendor
 
 ---
@@ -8,7 +8,7 @@ Subject: [PATCH] devendor
  1 file changed, 5 insertions(+), 69 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 9a6c819..c24cd0b 100644
+index 97fd0f7..ced4e46 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -95,19 +95,9 @@ FetchContent_MakeAvailable(glfw)
@@ -34,23 +34,23 @@ index 9a6c819..c24cd0b 100644
  
      # ONNX Runtime + DirectML EP, for Platform::SubjectMask's Windows
      # implementation (src/platform/win/PlatformWin.cpp) - on-device background
-@@ -261,39 +251,8 @@ endif()
+@@ -262,39 +252,8 @@ endif()
  #   3. Update FFMPEG_RELEASE_TAG, FFMPEG_ARCHIVE_VERSION, and all four
  #      SHA256 pins below together, so they describe one consistent release.
  if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
 -    option(INFINITE_ENABLE_GPL_CODECS "Link GPL FFmpeg + libx264 for H.264 recording on Linux (OFF = LGPL FFmpeg, no H.264 encode)" ON)
 -
 -    # Immutable BtbN/FFmpeg-Builds release tag and the version string its
--    # asset filenames embed - see "How to re-pin" above. Verified 2026-09-16.
--    set(FFMPEG_RELEASE_TAG "autobuild-2026-09-15-13-18")
--    set(FFMPEG_ARCHIVE_VERSION "n8.1.2-53-g1005b294ff")
+-    # asset filenames embed - see "How to re-pin" above. Verified 2026-10-01 (the 2026-09-15 tag was pruned upstream and 404'd in CI).
+-    set(FFMPEG_RELEASE_TAG "autobuild-2026-09-30-13-08")
+-    set(FFMPEG_ARCHIVE_VERSION "n8.1.3-9-g29e619e767")
 -    set(FFMPEG_LINUX_ARCH "linux64")
--    set(FFMPEG_GPL_SHA256 "cdd23dda4552a11babd04b1e352736339d50cb2bca29f9fd2014e246a3924062")
--    set(FFMPEG_LGPL_SHA256 "c8fb071899337b16680ea1848c87fac27c3f31ff2c88e3c3b6c813f2625e9af1")
+-    set(FFMPEG_GPL_SHA256 "76649c19a7a4615b367251ba4a8adc643f65831278a00e7a0c38398f7f06484b")
+-    set(FFMPEG_LGPL_SHA256 "d4d7b6936f492c0b866b1cb4a29a1bbae09d6a064b4ec4eb90c95bed7969535a")
 -    if(CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64|arm64")
 -        set(FFMPEG_LINUX_ARCH "linuxarm64")
--        set(FFMPEG_GPL_SHA256 "9b1d14ac6ce89d35ae2511f150477680931a482ea53fd033850f3d5d27af0141")
--        set(FFMPEG_LGPL_SHA256 "aac9ed865431ce338688d657ece3345712107a891dee77d6cad5f6d2fcf58ec5")
+-        set(FFMPEG_GPL_SHA256 "d5b52fcb4f8d86d997bb75f6c4b383ca0be3f4cd9efd94ab3b4f27b22984f91c")
+-        set(FFMPEG_LGPL_SHA256 "d44838f375c66cf31a8b1473b6f8bad76e5c7dac55870c4d96a75c907a52ba2d")
 -    endif()
 -
 -    if(INFINITE_ENABLE_GPL_CODECS)
@@ -76,7 +76,7 @@ index 9a6c819..c24cd0b 100644
      set(FFMPEG_LIBS
          "${FFMPEG_LIB_DIR}/libavformat.so"
          "${FFMPEG_LIB_DIR}/libavcodec.so"
-@@ -1014,29 +973,6 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+@@ -1036,29 +995,6 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
                  "${CMAKE_CURRENT_SOURCE_DIR}/assets/models/u2netp.onnx"
                  "$<TARGET_FILE_DIR:Infinite>/assets/models/u2netp.onnx"
          COMMENT "Copying bundled fonts, icon, ONNX Runtime libraries and model next to Infinite")

@@ -4,8 +4,8 @@
 # Category: Audio, Video, Synthesizer
 
 Name: infinite
-Version: 0.4.5
-Release: 2%{?dist}
+Version: 0.4.6
+Release: 3%{?dist}
 Summary: Infinite is a node-based audiovisual workstation — real-time GPU video compositing, procedural 3D geometry, modular synths, DSP, and VST3 plugin hosting
 License: MIT
 URL: https://n1m21n.github.io/Infinite
@@ -15,10 +15,13 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./infinite-source.sh <TAG>
-#        ./infinite-source.sh v0.4.5
+#        ./infinite-source.sh v0.4.6
 
 Source0: Infinite.tar.gz
-Source1: infinite-source.sh
+Source1: https://github.com/n1m21n/Infinite/releases/download/v%{version}/Field_Language_Manual.pdf
+Source2: https://github.com/n1m21n/Infinite/releases/download/v%{version}/Infinite_Headless_User_Guide.pdf
+Source3: https://github.com/n1m21n/Infinite/releases/download/v%{version}/Infinite_Node_Reference_Manual.pdf
+Source4: infinite-source.sh
 Patch0: infinite-0001-devendor.patch
 Patch1: infinite-0002-add-missing-cstdint-header.patch
 Patch2: infinite-0003-put-resources-in-share-directory.patch
@@ -92,6 +95,12 @@ install -m 644 ./assets/examples/*.inf %{buildroot}/%{_datadir}/infinite/example
 install -m 755 -d %{buildroot}/%{_datadir}/infinite/models/
 install -m 644 ./assets/models/*.onnx %{buildroot}/%{_datadir}/infinite/models/
 
+# Install PDf
+install -m 755 -d %{buildroot}/%{_datadir}/infinite/docs/
+install -m 644 %{SOURCE1} %{buildroot}/%{_datadir}/infinite/docs/
+install -m 644 %{SOURCE2} %{buildroot}/%{_datadir}/infinite/docs/
+install -m 644 %{SOURCE3} %{buildroot}/%{_datadir}/infinite/docs/
+
 # Install icon
 install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
 cp assets/Infinite.ico %{buildroot}/%{_datadir}/pixmaps/
@@ -131,8 +140,15 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/infinite/fonts/Inter-SemiBold.ttf
 %{_datadir}/infinite/examples/*
 %{_datadir}/infinite/models/*
+%{_datadir}/infinite/docs/*
 
 %changelog
+* Thu Oct 01 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.6-3
+- update to 0.4.6-3 - install pdf
+
+* Thu Oct 01 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.6-2
+- update to 0.4.6-2
+
 * Sat Sep 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.5-2
 - update to 0.4.5-2 - fix tinyfiledialog
 
