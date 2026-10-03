@@ -466,7 +466,6 @@
 | nota                                     | https://github.com/nota-daw/nota                                                                                                                            |
 | namplifier                               | https://github.com/geobissell/namplifier                                                                                                                    |
 | PitchNet                                 | https://github.com/SessionLoops/PitchNet                                                                                                                    |
-| tone3000-plugin                          | https://github.com/tone-3000/tone3000-plugin                                                                                                                |
 | ovni                                     | https://github.com/ovniaudio/ovni                                                                                                                           |
 | midijitter                               | https://github.com/martinsolberg/midijitter                                                                                                                 |
 | QJams                                    | https://github.com/robw-nl/QJams                                                                                                                            |
@@ -486,6 +485,8 @@
 | ovni                                     | https://github.com/ovniaudio/ovni                                                                                                                           |
 | wave                                     | https://github.com/mo0kid/wave                                                                                                                              |
 | oxefmsynth                               | https://github.com/oxesoft/oxefmsynth                                                                                                                       |
+| antitotem                                | https://github.com/lucioaraujo/antitotem                                                                                                                    |
+| navalha2-juce                            | https://github.com/lucioaraujo/navalha2-juce                                                                                                                |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
