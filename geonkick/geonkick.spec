@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: geonkick
-Version: 3.7.0
+Version: 3.8.0
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
 URL: https://github.com/Geonkick-Synthesizer/geonkick
@@ -16,7 +16,7 @@ Distribution: Audinux
 
 Source0: https://github.com/Geonkick-Synthesizer/geonkick/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 # Usage: ./vst3-source.sh <TAG>
-#        ./vst3-source.sh v3.8.0_build_66
+#        ./vst3-source.sh v3.8.1_build_84
 Source1: vst3sdk.tar.gz
 Source2: vst3-source.sh
 
@@ -66,6 +66,7 @@ License and documentation for %{name}
 
 tar xvfz %{SOURCE1}
 sed -i -e "s/Homepage=/X-Homepage=/g" data/geonkick.desktop
+sed -i -e "/ -s/d" CMakeLists.txt
 
 %build
 
@@ -108,6 +109,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Fri Oct 02 2026 Yann Collette <ycollette.nospam@free.fr> - 3.8.0-2
+- Update to 3.8.0-2
+
 * Fri Jan 02 2026 Yann Collette <ycollette.nospam@free.fr> - 3.7.0-2
 - Update to 3.7.0-2
 
