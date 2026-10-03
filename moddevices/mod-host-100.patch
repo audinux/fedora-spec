@@ -1,150 +1,26 @@
-From f04a2d929cae3a01f5e728901206e9a1d5b7fb68 Mon Sep 17 00:00:00 2001
-From: Pau Aliagas <linuxnow@gmail.com>
-Date: Thu, 3 Sep 2026 23:33:02 +0200
-Subject: [PATCH 1/3] Fix worker_finish() joining a thread that was never
- started
-
-worker_init() calls zix_thread_create() but never checks whether it actually
-started a thread. When it fails, worker_finish() still calls
-zix_thread_join(worker->thread, NULL) on an uninitialized pthread_t, which
-segfaults inside glibc.
-
-Reproduced with a debug build and gdb against
-http://lsp-plug.in/plugins/lv2/para_equalizer_x16_stereo: zix_thread_create()
-fails with pthread_create() returning EINVAL for this plugin's worker thread,
-and worker_finish() (called from effects_remove/effects_finish on a graceful
-`remove` or `quit`) then joins the zeroed handle and crashes.
-
-Track whether the thread actually started and only join it if it did. Also
-logs the actual pthread_create()/pthread_attr_setstacksize() failure by name
-via strerror(), so a similar failure isn't silent next time.
----
- src/worker.c     | 14 ++++++++++++--
- src/worker.h     |  2 ++
- src/zix/thread.h | 11 ++++++++++-
- 3 files changed, 24 insertions(+), 3 deletions(-)
-
-diff --git a/src/worker.c b/src/worker.c
-index 6159d6c0..5cdf3b10 100644
---- a/src/worker.c
-+++ b/src/worker.c
-@@ -61,7 +61,13 @@ void worker_init(worker_t *worker, LilvInstance *instance, const LV2_Worker_Inte
-     worker->iface = iface;
-     worker->instance = instance;
-     sem_init(&worker->sem, 0, 0);
--    zix_thread_create(&worker->thread, size + sizeof(void*) * 4, worker_func, worker);
-+    const ZixStatus thread_status =
-+        zix_thread_create(&worker->thread, size + sizeof(void*) * 4, worker_func, worker);
-+    worker->thread_started = (thread_status == ZIX_STATUS_SUCCESS);
-+    if (!worker->thread_started) {
-+        fprintf(stderr, "worker_init: zix_thread_create() failed (status %d) -- "
-+                         "this plugin's LV2 worker extension will not run\n", (int)thread_status);
-+    }
-     worker->requests  = jack_ringbuffer_create(size);
-     worker->responses = jack_ringbuffer_create(size);
-     worker->response  = malloc(size);
-@@ -72,9 +78,13 @@ void worker_init(worker_t *worker, LilvInstance *instance, const LV2_Worker_Inte
- void worker_finish(worker_t *worker)
- {
-     worker->exit = true;
--    if (worker->requests) {
-+    /* Only join a thread zix_thread_create() actually reported starting -- `requests` is
-+       allocated unconditionally above and is not evidence of that (see worker_init()). */
-+    if (worker->thread_started) {
-         sem_post(&worker->sem);
-         zix_thread_join(worker->thread, NULL);
-+    }
-+    if (worker->requests) {
-         jack_ringbuffer_free(worker->requests);
-         jack_ringbuffer_free(worker->responses);
-         free(worker->response);
-diff --git a/src/worker.h b/src/worker.h
-index 65401fa5..de13fbb8 100644
---- a/src/worker.h
-+++ b/src/worker.h
-@@ -27,6 +27,8 @@ typedef struct WORKER_T {
-     void *response;
-     sem_t sem;
-     ZixThread thread;
-+    /* True only once zix_thread_create() reports success for `thread` above. */
-+    bool thread_started;
-     const LV2_Worker_Interface *iface;
-     LilvInstance *instance;
-     bool exit;
-diff --git a/src/zix/thread.h b/src/zix/thread.h
-index 2c5bd143..fe4db201 100644
---- a/src/zix/thread.h
-+++ b/src/zix/thread.h
-@@ -22,6 +22,8 @@
- #else
- #    include <errno.h>
- #    include <pthread.h>
-+#    include <stdio.h>
-+#    include <string.h>
- #endif
- 
- #include "common.h"
-@@ -94,9 +96,16 @@ zix_thread_create(ZixThread* thread,
- {
-     pthread_attr_t attr;
-     pthread_attr_init(&attr);
--    pthread_attr_setstacksize(&attr, stack_size);
-+    const int ss_ret = pthread_attr_setstacksize(&attr, stack_size);
-+    if (ss_ret) {
-+        fprintf(stderr, "zix_thread_create: pthread_attr_setstacksize(%zu) failed: %s\n",
-+                stack_size, strerror(ss_ret));
-+    }
- 
-     const int ret = pthread_create(thread, &attr, function, arg);
-+    if (ret) {
-+        fprintf(stderr, "zix_thread_create: pthread_create() failed: %s\n", strerror(ret));
-+    }
-     pthread_attr_destroy(&attr);
- 
-     if (ret == EAGAIN) {
-
-From cadb380c9a2b670e6402abbc181b232cd1afa930 Mon Sep 17 00:00:00 2001
-From: Pau Aliagas <linuxnow@gmail.com>
-Date: Thu, 3 Sep 2026 23:35:30 +0200
-Subject: [PATCH 2/3] Fix NULL event buffer on an unsized atom input port
-
-AllocatePortBuffers() skips allocating a buffer for any event port it's
-handed a zero size for. effects_add() passes 0 for any atom input port
-that declares neither an lv2:control designation nor rsz:minimumSize --
-the output side already has a default (g_midi_buffer_size * 16), the
-input side didn't. That port then reaches jack_activate() with a NULL
-buffer and unconnected, and the process callback's
-lv2_evbuf_reset(port->evbuf, true) dereferences it.
-
-Intermittent: JACK's buffer-size callback calls AllocatePortBuffers()
-again and does allocate the buffer, and nothing orders it against the
-first process callback, so whether the crash fires depends on which
-callback runs first.
-
-Reproduced with a debug build and gdb against
-http://gareus.org/oss/lv2/midifilter#tonalpedal (crashes at
-src/lv2_evbuf.c:85). Hits a whole class of plugins, not just one: every
-plugin with a bare MIDI/atom input port and no size hint, x42's
-midifilter set (33 plugins) among them.
----
- src/effects.c | 14 ++++++++++++--
- 1 file changed, 12 insertions(+), 2 deletions(-)
+https://github.com/mod-audio/mod-host/pull/100
+Fix three crashes found running a large plugin catalog through mod-host
 
 diff --git a/src/effects.c b/src/effects.c
-index 7786bc81..0ad8b98d 100644
+index 7786bc8..d62b1dd 100644
 --- a/src/effects.c
 +++ b/src/effects.c
-@@ -971,9 +971,19 @@ static void AllocatePortBuffers(effect_t* effect, int in_size, int out_size)
+@@ -488,6 +488,7 @@ typedef struct LILV_NODES_T {
+     LilvNode *mod_minimum;
+     LilvNode *options_interface;
+     LilvNode *output;
++    LilvNode *port;
+     LilvNode *patch_readable;
+     LilvNode *patch_writable;
+     LilvNode *preferMomentaryOff;
+@@ -971,9 +972,16 @@ static void AllocatePortBuffers(effect_t* effect, int in_size, int out_size)
  
      for (i = 0; i < effect->event_ports_count; i++)
      {
 -        const int size = effect->event_ports[i]->flow == FLOW_INPUT ? in_size : out_size;
 +        int size = effect->event_ports[i]->flow == FLOW_INPUT ? in_size : out_size;
 +
-+        /* A zero size means "leave this port's buffer as it already is" -- BufferSize() passes it
-+           that way for ports whose size is pinned to something other than the default. Skipping
-+           is only safe once the port HAS a buffer; a port that never got one needs the same
-+           default the output side already has below. */
++        // zero means keep the current buffer, but a port that has none yet still needs one
          if (size == 0)
 -            continue;
 +        {
@@ -156,57 +32,84 @@ index 7786bc81..0ad8b98d 100644
          lv2_evbuf_free(effect->event_ports[i]->evbuf);
          effect->event_ports[i]->evbuf = lv2_evbuf_new(
              size,
-
-From 447d88becb71b95823bd43214f1c8dcbcdb79b96 Mon Sep 17 00:00:00 2001
-From: Pau Aliagas <linuxnow@gmail.com>
-Date: Thu, 3 Sep 2026 23:36:00 +0200
-Subject: [PATCH 3/3] Refuse a plugin lilv could not fully describe
-
-Some plugin bundles' Turtle reuses one blank node as the lv2:port of
-more than one plugin subject. lilv then reports fewer ports than the
-plugin binary's own compiled LV2 descriptor actually has, so some of
-what jack_activate() wires up is never lilv_instance_connect_port()-ed,
-and the real-time thread calls into the plugin with an unconnected port.
-
-Reproduced with liblilv 0.26.4 independent of mod-host, via the
-standalone lv2info tool, against the ll-plugins.nongnu.org
-math-constant/math-function set (51 catalog URIs). Whether the crash
-manifests is racy (a JACK/PipeWire graph scheduling race against
-`remove`); the underlying port-count mismatch is not.
-
-effects_add() now refuses to activate any plugin whose classified port
-count doesn't match what lilv reported, returning
-ERR_LV2_INSTANTIATION instead of running an effect it knows it failed
-to wire up.
----
- src/effects.c | 17 +++++++++++++++++
- 1 file changed, 17 insertions(+)
-
-diff --git a/src/effects.c b/src/effects.c
-index 0ad8b98d..fc6a484b 100644
---- a/src/effects.c
-+++ b/src/effects.c
-@@ -5108,6 +5108,23 @@ int effects_add(const char *uri, int instance)
-         }
-     }
+@@ -4152,6 +4160,7 @@ int effects_init(void* client)
+     g_lilv_nodes.mod_minimum = lilv_new_uri(g_lv2_data, LILV_NS_MOD "minimum");
+     g_lilv_nodes.options_interface = lilv_new_uri(g_lv2_data, LV2_OPTIONS__interface);
+     g_lilv_nodes.output = lilv_new_uri(g_lv2_data, LILV_URI_OUTPUT_PORT);
++    g_lilv_nodes.port = lilv_new_uri(g_lv2_data, LV2_CORE__port);
+     g_lilv_nodes.patch_writable = lilv_new_uri(g_lv2_data, LV2_PATCH__writable);
+     g_lilv_nodes.patch_readable = lilv_new_uri(g_lv2_data, LV2_PATCH__readable);
+     g_lilv_nodes.preferMomentaryOff = lilv_new_uri(g_lv2_data, LILV_NS_MOD "preferMomentaryOffByDefault");
+@@ -4489,6 +4498,7 @@ int effects_finish(int close_client)
+     lilv_node_free(g_lilv_nodes.mod_maximum);
+     lilv_node_free(g_lilv_nodes.mod_minimum);
+     lilv_node_free(g_lilv_nodes.output);
++    lilv_node_free(g_lilv_nodes.port);
+     lilv_node_free(g_lilv_nodes.patch_readable);
+     lilv_node_free(g_lilv_nodes.patch_writable);
+     lilv_node_free(g_lilv_nodes.preferMomentaryOff);
+@@ -4727,6 +4737,22 @@ int effects_add(const char *uri, int instance)
+     /* Create the URI for identify the ports */
+     ports_count = lilv_plugin_get_num_ports(plugin);
  
-+    /* lilv can undercount a plugin's ports relative to what its compiled LV2 descriptor actually
-+       has (some bundles' Turtle reuses one blank node as the lv2:port of more than one plugin
-+       subject). When that happens, some of what jack_activate() below wires up is never
-+       lilv_instance_connect_port()-ed, and the real-time thread calls into the plugin with an
-+       unconnected port. Refuse rather than activate a plugin lilv could not fully describe. */
-+    if (ports_count == 0 ||
-+        (audio_ports_count + control_ports_count + cv_ports_count + event_ports_count) != ports_count)
++    // lilv drops all of a plugin's ports when it cannot read one of them (it logs
++    // "port symbol is invalid"), and the plugin would then run with none connected
 +    {
-+        fprintf(stderr, "effects_add: lilv reported %u port(s) for %s but only classified "
-+                         "%u (audio) + %u (control) + %u (cv) + %u (event) -- refusing to "
-+                         "activate an effect lilv could not fully describe\n",
-+                ports_count, uri, audio_ports_count, control_ports_count, cv_ports_count,
-+                event_ports_count);
-+        error = ERR_LV2_INSTANTIATION;
-+        goto error;
++        LilvNodes *described_ports = lilv_plugin_get_value(plugin, g_lilv_nodes.port);
++        const uint32_t described_ports_count = described_ports != NULL ? lilv_nodes_size(described_ports) : 0;
++        lilv_nodes_free(described_ports);
++
++        if (described_ports_count != ports_count)
++        {
++            fprintf(stderr, "plugin describes %u ports but lilv loaded %u, refusing it\n",
++                    described_ports_count, ports_count);
++            error = ERR_LV2_INSTANTIATION;
++            goto error;
++        }
 +    }
 +
-     // special ports
-     {
-         const LilvPort* enabled_port = lilv_plugin_get_port_by_designation(plugin, g_lilv_nodes.input, g_lilv_nodes.enabled);
+     /* Allocate memory to ports */
+     audio_ports_count = 0;
+     input_audio_ports_count = 0;
+diff --git a/src/worker.c b/src/worker.c
+index 6159d6c..a939121 100644
+--- a/src/worker.c
++++ b/src/worker.c
+@@ -61,7 +61,11 @@ void worker_init(worker_t *worker, LilvInstance *instance, const LV2_Worker_Inte
+     worker->iface = iface;
+     worker->instance = instance;
+     sem_init(&worker->sem, 0, 0);
+-    zix_thread_create(&worker->thread, size + sizeof(void*) * 4, worker_func, worker);
++    // the thread stack has nothing to do with the ring buffer size below. 4096 is below
++    // PTHREAD_STACK_MIN, so the thread keeps the default stack, as before the buffers were resizable
++    worker->thread_started = zix_thread_create(&worker->thread, 4096, worker_func, worker) == ZIX_STATUS_SUCCESS;
++    if (!worker->thread_started)
++        fprintf(stderr, "worker_init: failed to start the worker thread\n");
+     worker->requests  = jack_ringbuffer_create(size);
+     worker->responses = jack_ringbuffer_create(size);
+     worker->response  = malloc(size);
+@@ -72,9 +76,11 @@ void worker_init(worker_t *worker, LilvInstance *instance, const LV2_Worker_Inte
+ void worker_finish(worker_t *worker)
+ {
+     worker->exit = true;
+-    if (worker->requests) {
++    if (worker->thread_started) {
+         sem_post(&worker->sem);
+         zix_thread_join(worker->thread, NULL);
++    }
++    if (worker->requests) {
+         jack_ringbuffer_free(worker->requests);
+         jack_ringbuffer_free(worker->responses);
+         free(worker->response);
+diff --git a/src/worker.h b/src/worker.h
+index 65401fa..e5b3b73 100644
+--- a/src/worker.h
++++ b/src/worker.h
+@@ -27,6 +27,7 @@ typedef struct WORKER_T {
+     void *response;
+     sem_t sem;
+     ZixThread thread;
++    bool thread_started;
+     const LV2_Worker_Interface *iface;
+     LilvInstance *instance;
+     bool exit;

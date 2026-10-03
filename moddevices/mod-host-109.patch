@@ -1,0 +1,864 @@
+https://github.com/mod-audio/mod-host/pull/109
+Add plugin info commands: param_info, remote_pages, track_info
+
+diff --git a/README.md b/README.md
+index 647a1f8..99c1733 100644
+--- a/README.md
++++ b/README.md
+@@ -280,6 +280,24 @@ The commands supported by mod-host are:
+     output_data_ready
+         * report feedback port ready for more messages
+ 
++    track_info <instance_number> <name> <color> [bus|return|master]
++        * pass the name and color of the mixer track the instance sits on, color as #RRGGBB or - for none
++        * an LV2 plugin has no way to receive them, so mod-host answers -902
++        e.g.: track_info 0 "Kick In" #FF8000
++
++    remote_pages <instance_number>
++        * get the number of remote-control pages of the plugin (8 parameters per page); 0 for an LV2 plugin
++        e.g.: remote_pages 0
++
++    remote_page_get <instance_number> <page_index>
++        * get one remote-control page: resp 0 <page_id> <section_name> <page_name> <symbol> x8, - for an empty slot
++        e.g.: remote_page_get 0 0
++
++    param_info <instance_number> <param_symbol>
++        * get what a control means: resp 0 <unit> <scale> <minimum> <maximum> <default> <step> <stable_symbol>
++        * unit is an LV2 unit name (db, hz, ms, ...) or none, scale is linear, log or stepped, step 0 is continuous
++        e.g.: param_info 0 "gain"
++
+     help
+         * show a help message
+ 
+@@ -327,4 +345,8 @@ If status is a negative number an error has occurred. The table below shows the
+ 
+ A status zero or positive means that the command was executed successfully.
+ In case of the add command, the status returned is the instance number.
+-The value field currently only exists for the param_get command.
++The value field exists for the param_get, remote_page_get and param_info commands.
++
++When the plugin changes its remote-control pages, the feedback port gets:
++
++    remote_pages_changed <instance_number>
+diff --git a/src/completer.c b/src/completer.c
+index b4f378e..edc9318 100644
+--- a/src/completer.c
++++ b/src/completer.c
+@@ -88,6 +88,10 @@ static const char *g_commands[] = {
+     "transport",
+     "transport_sync",
+     "output_data_ready",
++    "track_info",
++    "remote_pages",
++    "remote_page_get",
++    "param_info",
+     "help",
+     "quit",
+     NULL
+diff --git a/src/effects.c b/src/effects.c
+index f993bff..81fe6dc 100644
+--- a/src/effects.c
++++ b/src/effects.c
+@@ -80,6 +80,7 @@ typedef unsigned int uint;
+ #include <lv2/resize-port/resize-port.h>
+ #include <lv2/state/state.h>
+ #include <lv2/time/time.h>
++#include <lv2/units/units.h>
+ #include <lv2/urid/urid.h>
+ #include <lv2/uri-map/uri-map.h>
+ #include <lv2/worker/worker.h>
+@@ -6592,6 +6593,124 @@ int effects_monitor_output_parameter(int effect_id, const char *control_symbol_o
+     return SUCCESS;
+ }
+ 
++int effects_remote_pages(int effect_id)
++{
++    if (!InstanceExist(effect_id))
++        return ERR_INSTANCE_NON_EXISTS;
++
++    // LV2 has no remote-control pages
++    return 0;
++}
++
++int effects_remote_page_get(int effect_id, int page, host_remote_page_t *page_out)
++{
++    (void)page;
++    (void)page_out;
++
++    if (!InstanceExist(effect_id))
++        return ERR_INSTANCE_NON_EXISTS;
++
++    return ERR_INVALID_OPERATION;
++}
++
++// the shortest decimal that reads back to the same float, as a double
++static double FloatAsDecimal(float value)
++{
++    char buf[32];
++
++    for (int precision = 1; precision < 9; precision++)
++    {
++        snprintf(buf, sizeof(buf), "%.*g", precision, value);
++        if (strtof(buf, NULL) == value)
++            return strtod(buf, NULL);
++    }
++    snprintf(buf, sizeof(buf), "%.9g", value);
++    return strtod(buf, NULL);
++}
++
++int effects_param_info(int effect_id, const char *control_symbol, host_param_info_t *info)
++{
++    static const char *const units[] = {
++        LV2_UNITS__bar, LV2_UNITS__beat, LV2_UNITS__bpm, LV2_UNITS__cent, LV2_UNITS__cm, LV2_UNITS__coef,
++        LV2_UNITS__db, LV2_UNITS__degree, LV2_UNITS__frame, LV2_UNITS__hz, LV2_UNITS__inch, LV2_UNITS__khz,
++        LV2_UNITS__km, LV2_UNITS__m, LV2_UNITS__mhz, LV2_UNITS__midiNote, LV2_UNITS__mile, LV2_UNITS__min,
++        LV2_UNITS__mm, LV2_UNITS__ms, LV2_UNITS__oct, LV2_UNITS__pc, LV2_UNITS__s, LV2_UNITS__semitone12TET,
++        NULL
++    };
++    port_t *port = NULL;
++
++    if (!InstanceExist(effect_id))
++        return ERR_INSTANCE_NON_EXISTS;
++
++    effect_t *effect = &g_effects[effect_id];
++
++    // only the plugin's own input controls; the lv2:enabled port is the host's bypass
++    for (uint32_t i = 0; i < effect->input_control_ports_count; i++)
++    {
++        if (strcmp(effect->input_control_ports[i]->symbol, control_symbol) == 0)
++        {
++            port = effect->input_control_ports[i];
++            break;
++        }
++    }
++    if (port == NULL || (effect->enabled_index >= 0 && port == effect->ports[effect->enabled_index]))
++        return ERR_HOST_INVALID_PARAM_SYMBOL;
++
++    const LilvPlugin *plugin = effect->lilv_plugin;
++    const LilvPort *lilv_port = lilv_plugin_get_port_by_index(plugin, port->index);
++
++    info->unit = "none";
++    LilvNode *unit_pred = lilv_new_uri(g_lv2_data, LV2_UNITS__unit);
++    LilvNodes *unit = lilv_port_get_value(plugin, lilv_port, unit_pred);
++    if (unit != NULL && lilv_node_is_uri(lilv_nodes_get_first(unit)))
++    {
++        const char *uri = lilv_node_as_uri(lilv_nodes_get_first(unit));
++        for (int i = 0; units[i] != NULL; i++)
++            if (strcmp(uri, units[i]) == 0)
++                info->unit = strrchr(units[i], '#') + 1;
++    }
++    lilv_nodes_free(unit);
++    lilv_node_free(unit_pred);
++
++    info->min = FloatAsDecimal(port->min_value);
++    info->max = FloatAsDecimal(port->max_value);
++    info->def = FloatAsDecimal(port->def_value);
++    info->step = 0.0;
++    info->stable_symbol = port->symbol;
++
++    if (port->hints & (HINT_INTEGER|HINT_ENUMERATION|HINT_TOGGLE))
++    {
++        info->scale = "stepped";
++        info->step = 1.0;
++        return SUCCESS;
++    }
++
++    if (port->hints & HINT_LOGARITHMIC)
++    {
++        // a log scale needs both bounds positive; never answered as linear
++        if (port->min_value <= 0.0f || port->max_value <= 0.0f)
++            return ERR_INVALID_OPERATION;
++        info->scale = "log";
++    }
++    else
++    {
++        info->scale = "linear";
++    }
++
++    LilvNode *steps_pred = lilv_new_uri(g_lv2_data, LV2_PORT_PROPS__rangeSteps);
++    LilvNodes *steps = lilv_port_get_value(plugin, lilv_port, steps_pred);
++    if (steps != NULL)
++    {
++        int n = lilv_node_as_int(lilv_nodes_get_first(steps));
++        if (n >= 2)
++            info->step = ((double)info->max - info->min) / (n - 1);
++    }
++    lilv_nodes_free(steps);
++    lilv_node_free(steps_pred);
++
++    return SUCCESS;
++}
++
+ int effects_bypass(int effect_id, int value)
+ {
+     if (!InstanceExist(effect_id))
+diff --git a/src/effects.h b/src/effects.h
+index cd109c0..52cce90 100644
+--- a/src/effects.h
++++ b/src/effects.h
+@@ -40,6 +40,7 @@
+ */
+ 
+ #include "host-errors.h"
++#include "host-dispatch.h"
+ 
+ /* Log definitions */
+ typedef enum {
+@@ -113,6 +114,9 @@ int effects_set_property(int effect_id, const char *uri, const char *value);
+ int effects_get_property(int effect_id, const char *uri);
+ int effects_monitor_parameter(int effect_id, const char *control_symbol, const char *op, float value);
+ int effects_monitor_output_parameter(int effect_id, const char *control_symbol);
++int effects_remote_pages(int effect_id);
++int effects_remote_page_get(int effect_id, int page, host_remote_page_t *page_out);
++int effects_param_info(int effect_id, const char *control_symbol, host_param_info_t *info);
+ int effects_bypass(int effect_id, int value);
+ int effects_get_parameter_symbols(int effect_id, int output_ports, const char** symbols);
+ int effects_get_presets_uris(int effect_id, const char **uris);
+diff --git a/src/host-dispatch.c b/src/host-dispatch.c
+index 9d2f0ec..5ef2641 100644
+--- a/src/host-dispatch.c
++++ b/src/host-dispatch.c
+@@ -31,6 +31,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ 
+ #include "host-dispatch.h"
+ #include "host-errors.h"
+@@ -46,6 +47,7 @@
+ 
+ static const host_backend_t *g_backend;
+ static int (*g_monitor_output)(int instance, const char *symbol);
++static const host_plugin_info_t *g_plugin_info;
+ 
+ 
+ /*
+@@ -176,6 +178,211 @@ static void monitor_output_cb(proto_t *proto)
+     protocol_response_int(resp, proto);
+ }
+ 
++/* a name: valid UTF-8, at most 255 bytes, no control character */
++static int valid_name(const char *s)
++{
++    const unsigned char *p = (const unsigned char *)s;
++    size_t len = strlen(s);
++
++    if (len >= HOST_INFO_STRING_SIZE)
++        return 0;
++    while (*p)
++    {
++        int extra;
++        if (*p < 0x20 || *p == 0x7f)
++            return 0;
++        if (*p < 0x80)
++            extra = 0;
++        else if ((*p & 0xe0) == 0xc0 && *p >= 0xc2)
++            extra = 1;
++        else if ((*p & 0xf0) == 0xe0)
++            extra = 2;
++        else if ((*p & 0xf8) == 0xf0 && *p <= 0xf4)
++            extra = 3;
++        else
++            return 0;
++        for (p++; extra > 0; extra--, p++)
++            if ((*p & 0xc0) != 0x80)
++                return 0;
++    }
++    return 1;
++}
++
++static int valid_color(const char *s)
++{
++    int i;
++
++    if (strcmp(s, "-") == 0)
++        return 1;
++    if (s[0] != '#' || strlen(s) != 7)
++        return 0;
++    for (i = 1; i < 7; i++)
++        if (!strchr("0123456789abcdefABCDEF", s[i]))
++            return 0;
++    return 1;
++}
++
++static void track_info_cb(proto_t *proto)
++{
++    const char *kind = proto->list_count > 4 ? proto->list[4] : NULL;
++    int resp;
++
++    if (proto->list_count > 5 || !valid_name(proto->list[2]) || !valid_color(proto->list[3]) ||
++        (kind && strcmp(kind, "bus") != 0 && strcmp(kind, "return") != 0 && strcmp(kind, "master") != 0))
++        resp = ERR_INVALID_OPERATION;
++    else if (g_plugin_info && g_plugin_info->track_info)
++        resp = g_plugin_info->track_info(atoi(proto->list[1]), proto->list[2], proto->list[3], kind);
++    else
++        resp = ERR_INVALID_OPERATION;
++    protocol_response_int(resp, proto);
++}
++
++static void remote_pages_cb(proto_t *proto)
++{
++    int resp;
++    if (g_plugin_info && g_plugin_info->remote_pages)
++        resp = g_plugin_info->remote_pages(atoi(proto->list[1]));
++    else
++        resp = ERR_INVALID_OPERATION;
++    protocol_response_int(resp, proto);
++}
++
++/* appends " \"text\"", a quote inside written as \" */
++static size_t append_quoted(char *buf, size_t pos, size_t size, const char *text)
++{
++    if (pos + 2 < size)
++    {
++        buf[pos++] = ' ';
++        buf[pos++] = '"';
++    }
++    for (; *text && pos + 3 < size; text++)
++    {
++        if (*text == '"')
++            buf[pos++] = '\\';
++        buf[pos++] = *text;
++    }
++    if (pos + 1 < size)
++        buf[pos++] = '"';
++    buf[pos] = '\0';
++    return pos;
++}
++
++static void remote_page_get_cb(proto_t *proto)
++{
++    host_remote_page_t page;
++    char buffer[SOCKET_MSG_BUFFER_SIZE * 4];
++    size_t pos;
++    int resp, i;
++
++    memset(&page, 0, sizeof(page));
++    if (g_plugin_info && g_plugin_info->remote_page_get)
++        resp = g_plugin_info->remote_page_get(atoi(proto->list[1]), atoi(proto->list[2]), &page);
++    else
++        resp = ERR_INVALID_OPERATION;
++
++    if (resp < 0)
++    {
++        protocol_response_int(resp, proto);
++        return;
++    }
++
++    pos = snprintf(buffer, sizeof(buffer), "resp 0 %u", page.id);
++    pos = append_quoted(buffer, pos, sizeof(buffer), page.section);
++    pos = append_quoted(buffer, pos, sizeof(buffer), page.name);
++    for (i = 0; i < HOST_REMOTE_PAGE_SLOTS; i++)
++        pos += snprintf(buffer + pos, sizeof(buffer) - pos, " %s", page.slots[i][0] ? page.slots[i] : "-");
++    protocol_response(buffer, proto);
++}
++
++/* the shortest decimal that reads back to the same double, written as ECMAScript's Number toString does
++   (no exponent from 1e-6 up to 1e21); -0 is written 0 */
++static void format_number(char *buf, size_t size, double value)
++{
++    char tmp[40], digits[20];
++    int precision, exponent, n, i;
++    size_t pos = 0;
++
++    if (value == 0.0)
++    {
++        snprintf(buf, size, "0");
++        return;
++    }
++    for (precision = 0; precision < 17; precision++)
++    {
++        snprintf(tmp, sizeof(tmp), "%.*e", precision, value);
++        if (strtod(tmp, NULL) == value)
++            break;
++    }
++
++    /* tmp is [-]d[.ddd]e<exp>: split the digits and the exponent */
++    n = 0;
++    for (i = (tmp[0] == '-'); tmp[i] != 'e'; i++)
++        if (tmp[i] != '.')
++            digits[n++] = tmp[i];
++    digits[n] = '\0';
++    exponent = atoi(tmp + i + 1);
++    while (n > 1 && digits[n - 1] == '0')
++        digits[--n] = '\0';
++
++    /* at most 26 bytes: a sign, "0.", six zeros and 17 digits */
++    if (value < 0)
++        buf[pos++] = '-';
++    if (exponent >= 21 || exponent < -6)
++    {
++        buf[pos++] = digits[0];
++        if (n > 1)
++            pos += snprintf(buf + pos, size - pos, ".%s", digits + 1);
++        snprintf(buf + pos, size - pos, "e%c%d", exponent < 0 ? '-' : '+', abs(exponent));
++        return;
++    }
++    if (exponent < 0)
++    {
++        buf[pos++] = '0';
++        buf[pos++] = '.';
++        for (i = -1; i > exponent; i--)
++            buf[pos++] = '0';
++        snprintf(buf + pos, size - pos, "%s", digits);
++        return;
++    }
++    for (i = 0; i < n || i <= exponent; i++)
++    {
++        if (i == exponent + 1)
++            buf[pos++] = '.';
++        buf[pos++] = i < n ? digits[i] : '0';
++    }
++    buf[pos] = '\0';
++}
++
++static void param_info_cb(proto_t *proto)
++{
++    host_param_info_t info;
++    char numbers[4][64];
++    char buffer[SOCKET_MSG_BUFFER_SIZE];
++    int resp;
++
++    memset(&info, 0, sizeof(info));
++    if (g_plugin_info && g_plugin_info->param_info)
++        resp = g_plugin_info->param_info(atoi(proto->list[1]), proto->list[2], &info);
++    else
++        resp = ERR_INVALID_OPERATION;
++
++    if (resp < 0)
++    {
++        protocol_response_int(resp, proto);
++        return;
++    }
++
++    format_number(numbers[0], sizeof(numbers[0]), info.min);
++    format_number(numbers[1], sizeof(numbers[1]), info.max);
++    format_number(numbers[2], sizeof(numbers[2]), info.def);
++    format_number(numbers[3], sizeof(numbers[3]), info.step);
++    if (snprintf(buffer, sizeof(buffer), "resp 0 %s %s %s %s %s %s %s", info.unit, info.scale,
++                 numbers[0], numbers[1], numbers[2], numbers[3], info.stable_symbol) >= (int)sizeof(buffer))
++        protocol_response_int(ERR_INVALID_OPERATION, proto);
++    else
++        protocol_response(buffer, proto);
++}
++
+ 
+ /*
+ ************************************************************************************************************************
+@@ -206,6 +413,16 @@ void host_dispatch_register_monitor_output(int (*monitor_output)(int instance, c
+     protocol_add_command(MONITOR_OUTPUT, monitor_output_cb);
+ }
+ 
++void host_dispatch_register_plugin_info(const host_plugin_info_t *info)
++{
++    g_plugin_info = info;
++
++    protocol_add_command(TRACK_INFO, track_info_cb);
++    protocol_add_command(REMOTE_PAGES, remote_pages_cb);
++    protocol_add_command(REMOTE_PAGE_GET, remote_page_get_cb);
++    protocol_add_command(PARAM_INFO, param_info_cb);
++}
++
+ /* Every other command of mod-host.h answers ERR_INVALID_OPERATION, so a client that speaks the
+    whole protocol to a host with only the backend table behind it never reads a grammar error. */
+ void host_dispatch_register_unsupported(void)
+@@ -216,6 +433,7 @@ void host_dispatch_register_unsupported(void)
+         MONITOR_MIDI_PROGRAM, MIDI_LEARN, MIDI_MAP, MIDI_UNMAP, CC_MAP, CC_VALUE_SET, CC_UNMAP, CV_MAP,
+         CV_UNMAP, HMI_MAP, HMI_UNMAP, LOAD_COMMANDS, SAVE_COMMANDS, BUNDLE_ADD, BUNDLE_REMOVE,
+         STATE_TMPDIR, FEATURE_ENABLE, TRANSPORT, TRANSPORT_SYNC, SHOW_EXTERNAL_UI, OUTPUT_DATA_READY,
++        TRACK_INFO, REMOTE_PAGES, REMOTE_PAGE_GET, PARAM_INFO,
+         NULL
+     };
+     const char *const *command;
+@@ -239,3 +457,11 @@ int host_dispatch_output_set(int instance, const char *symbol, float value)
+ 
+     return socket_send_feedback(buffer);
+ }
++
++int host_dispatch_remote_pages_changed(int instance)
++{
++    char buffer[64];
++
++    snprintf(buffer, sizeof(buffer), REMOTE_PAGES_CHANGED, instance);
++    return socket_send_feedback(buffer);
++}
+diff --git a/src/host-dispatch.h b/src/host-dispatch.h
+index 6aa1a61..40cea93 100644
+--- a/src/host-dispatch.h
++++ b/src/host-dispatch.h
+@@ -35,6 +35,45 @@
+ #include "protocol.h"
+ #include "host-backend.h"
+ 
++#include <stdint.h>
++
++
++/*
++************************************************************************************************************************
++*           DATA TYPES
++************************************************************************************************************************
++*/
++
++#define HOST_INFO_STRING_SIZE 256
++#define HOST_REMOTE_PAGE_SLOTS 8
++
++/* what param_info answers: unit an LV2 unit name ("db", "hz", ...) or "none", scale "linear", "log" or
++   "stepped", step 0 for continuous, stable_symbol the name the parameter keeps across hosts */
++typedef struct HOST_PARAM_INFO_T {
++    const char *unit;
++    const char *scale;
++    double min, max, def, step;
++    const char *stable_symbol;
++} host_param_info_t;
++
++/* one page of remote controls: eight parameter symbols, "-" for an empty slot */
++typedef struct HOST_REMOTE_PAGE_T {
++    uint32_t id;
++    char section[HOST_INFO_STRING_SIZE];
++    char name[HOST_INFO_STRING_SIZE];
++    char slots[HOST_REMOTE_PAGE_SLOTS][HOST_INFO_STRING_SIZE];
++} host_remote_page_t;
++
++/* What a host can tell about a plugin. A NULL entry answers ERR_INVALID_OPERATION.
++   track_info gets a checked name (may be ""), a color "#RRGGBB" or "-", and a kind "bus", "return", "master"
++   or NULL for an input channel. remote_pages answers the page count. */
++typedef struct HOST_PLUGIN_INFO_T {
++    int (*track_info)(int instance, const char *name, const char *color, const char *kind);
++    int (*remote_pages)(int instance);
++    int (*remote_page_get)(int instance, int page, host_remote_page_t *page_out);
++    int (*param_info)(int instance, const char *symbol, host_param_info_t *info);
++} host_plugin_info_t;
++
+ 
+ /*
+ ************************************************************************************************************************
+@@ -46,10 +85,15 @@ void host_dispatch_register(const host_backend_t *backend);
+ /* Registers monitor_output, answered as mod-host does; NULL answers ERR_INVALID_OPERATION.
+    Call it before host_dispatch_register_unsupported(). */
+ void host_dispatch_register_monitor_output(int (*monitor_output)(int instance, const char *symbol));
++/* Registers track_info, remote_pages, remote_page_get and param_info.
++   Call it before host_dispatch_register_unsupported(). */
++void host_dispatch_register_plugin_info(const host_plugin_info_t *info);
+ void host_dispatch_register_unsupported(void);
+ void host_dispatch_unsupported_cb(proto_t *proto);
+ /* Sends OUTPUT_SET on the feedback socket; -1 without a feedback client or for a symbol too long. */
+ int host_dispatch_output_set(int instance, const char *symbol, float value);
++/* Sends REMOTE_PAGES_CHANGED on the feedback socket; -1 without a feedback client. */
++int host_dispatch_remote_pages_changed(int instance);
+ 
+ 
+ /*
+diff --git a/src/mod-host.c b/src/mod-host.c
+index 9f8a674..3e1bdd0 100644
+--- a/src/mod-host.c
++++ b/src/mod-host.c
+@@ -121,6 +121,14 @@ static const host_backend_t g_lv2_backend = {
+     effects_disconnect,
+ };
+ 
++/* LV2 has no track info and no remote-control pages; param_info reads the port's TTL */
++static const host_plugin_info_t g_lv2_plugin_info = {
++    NULL,
++    effects_remote_pages,
++    effects_remote_page_get,
++    effects_param_info,
++};
++
+ 
+ /*
+ ************************************************************************************************************************
+@@ -638,6 +646,7 @@ static int mod_host_init(jack_client_t* client, int socket_port, int feedback_po
+     protocol_add_command(TRANSPORT_SYNC, transport_sync);
+     protocol_add_command(SHOW_EXTERNAL_UI, show_external_ui);
+     protocol_add_command(OUTPUT_DATA_READY, output_data_ready);
++    host_dispatch_register_plugin_info(&g_lv2_plugin_info);
+ 
+     /* skip help and quit for internal client */
+     if (client == NULL)
+diff --git a/src/mod-host.h b/src/mod-host.h
+index 1aa7361..deff74a 100644
+--- a/src/mod-host.h
++++ b/src/mod-host.h
+@@ -98,11 +98,16 @@
+ #define TRANSPORT_SYNC       "transport_sync %s"
+ #define SHOW_EXTERNAL_UI     "show_external_ui %i"
+ #define OUTPUT_DATA_READY    "output_data_ready"
++#define TRACK_INFO           "track_info %i %s %s ..."
++#define REMOTE_PAGES         "remote_pages %i"
++#define REMOTE_PAGE_GET      "remote_page_get %i %i"
++#define PARAM_INFO           "param_info %i %s"
+ #define HELP                 "help"
+ #define QUIT                 "quit"
+ 
+ /* Feedback messages definition */
+ #define OUTPUT_SET           "output_set %i %s %f"
++#define REMOTE_PAGES_CHANGED "remote_pages_changed %i"
+ 
+ 
+ /*
+diff --git a/tests/host-scenarios.txt b/tests/host-scenarios.txt
+index 38e9081..7dec007 100644
+--- a/tests/host-scenarios.txt
++++ b/tests/host-scenarios.txt
+@@ -45,6 +45,15 @@ disconnect $PORT_A $PORT_B => resp 0 | resp -206 | resp -902
+ # a verb outside the table is refused or served, never a grammar error
+ patch_set 3 urn:no:such:property 1 => resp -902 | resp 0
+ 
++# plugin info: track, remote-control pages and parameter facts, or -902 from a host without them
++track_info 3 Kick #FF800 => resp -902
++track_info 3 Kick - aux => resp -902
++remote_pages 9 => resp -3 | resp -902
++remote_page_get 9 0 => resp -3 | resp -902
++param_info 9 $PARAM => resp -3 | resp -902
++param_info 3 no_such_symbol => resp -103 | resp -902
++param_info 3 :bypass => resp -103 | resp -902
++
+ # remove
+ remove 3 => resp 0
+ remove 3 => $REMOVE_TWICE
+diff --git a/tests/protocol_test.c b/tests/protocol_test.c
+index 5a78c21..6e54ffa 100644
+--- a/tests/protocol_test.c
++++ b/tests/protocol_test.c
+@@ -145,9 +145,81 @@ static int fake_monitor_output(int instance, const char *symbol)
+     if (instance != 3)
+         return ERR_INSTANCE_NON_EXISTS;
+     host_dispatch_output_set(instance, symbol, 0.25f);
++    host_dispatch_remote_pages_changed(instance);
+     return SUCCESS;
+ }
+ 
++static int fake_track_info(int instance, const char *name, const char *color, const char *kind)
++{
++    char buf[512];
++    snprintf(buf, sizeof(buf), "track_info(%i,%s,%s,%s) ", instance, name, color, kind ? kind : "-");
++    record(buf);
++    return instance == 3 ? SUCCESS : ERR_INSTANCE_NON_EXISTS;
++}
++
++static int fake_remote_pages(int instance)
++{
++    return instance == 3 ? 2 : ERR_INSTANCE_NON_EXISTS;
++}
++
++static int fake_remote_page_get(int instance, int page, host_remote_page_t *page_out)
++{
++    if (instance != 3)
++        return ERR_INSTANCE_NON_EXISTS;
++    if (page != 0)
++        return ERR_INVALID_OPERATION;
++    page_out->id = 7;
++    strcpy(page_out->section, "Main \"A\"");
++    strcpy(page_out->name, "Page 1");
++    strcpy(page_out->slots[0], "gain");
++    strcpy(page_out->slots[1], "level");
++    return SUCCESS;
++}
++
++static int fake_param_info(int instance, const char *symbol, host_param_info_t *info)
++{
++    if (instance != 3)
++        return ERR_INSTANCE_NON_EXISTS;
++    if (strcmp(symbol, "time") == 0)
++    {
++        info->unit = "ms"; info->scale = "linear";
++        info->min = 1; info->max = 2000; info->def = 350; info->step = 1;
++        info->stable_symbol = "time_ms";
++        return SUCCESS;
++    }
++    if (strcmp(symbol, "cutoff") == 0)
++    {
++        info->unit = "hz"; info->scale = "log";
++        info->min = 20; info->max = 20000; info->def = 8000; info->step = 0;
++        info->stable_symbol = "cutoff";
++        return SUCCESS;
++    }
++    if (strcmp(symbol, "mix") == 0)
++    {
++        info->unit = "none"; info->scale = "linear";
++        info->min = -0.0; info->max = 0.1; info->def = 1.0 / 3.0; info->step = 0;
++        info->stable_symbol = "mix";
++        return SUCCESS;
++    }
++    if (strcmp(symbol, "range") == 0)
++    {
++        info->unit = "none"; info->scale = "linear";
++        info->min = -1e-7; info->max = 1e21; info->def = 0.000001; info->step = 1e20;
++        info->stable_symbol = "range";
++        return SUCCESS;
++    }
++    return ERR_HOST_INVALID_PARAM_SYMBOL;
++}
++
++static const host_plugin_info_t g_fake_info = {
++    fake_track_info,
++    fake_remote_pages,
++    fake_remote_page_get,
++    fake_param_info,
++};
++
++static const host_plugin_info_t g_empty_info = { NULL, NULL, NULL, NULL };
++
+ static const host_backend_t g_fake_backend = {
+     fake_add,
+     fake_remove,
+@@ -161,6 +233,11 @@ static const host_backend_t g_fake_backend = {
+     fake_disconnect,
+ };
+ 
++#define NAME_16  "aaaaaaaaaaaaaaaa"
++#define NAME_255 NAME_16 NAME_16 NAME_16 NAME_16 NAME_16 NAME_16 NAME_16 NAME_16 \
++                 NAME_16 NAME_16 NAME_16 NAME_16 NAME_16 NAME_16 NAME_16 "aaaaaaaaaaaaaaa"
++#define NAME_256 NAME_255 "a"
++
+ static const exchange_t g_fake_exchanges[] = {
+     { "add http://x/y 3 chan1",     "resp 3" },
+     { "add http://x/y 4",           "resp 4" },
+@@ -174,6 +251,28 @@ static const exchange_t g_fake_exchanges[] = {
+     { "state_load /tmp/s",          "resp -105" },
+     { "monitor_output 3 level",     "resp 1" },
+     { "monitor_output 9 level",     "resp 0" },
++    { "track_info 3 \"Kick \\\"In\\\" \xc3\xb1\" #FF8000 bus", "resp 0" },
++    { "track_info 3 \"\" -",          "resp 0" },
++    { "track_info 3 Kick #ff8000",  "resp 0" },
++    { "track_info 9 Kick -",        "resp -3" },
++    { "track_info 3 Kick #FF800",   "resp -902" },
++    { "track_info 3 Kick FF8000",   "resp -902" },
++    { "track_info 3 Kick - aux",    "resp -902" },
++    { "track_info 3 Kick - bus x",  "resp -902" },
++    { "track_info 3 \"a\tb\" -",     "resp -902" },
++    { "track_info 3 \xff -",        "resp -902" },
++    { "track_info 3 " NAME_256 " -", "resp -902" },
++    { "track_info 3 " NAME_255 " -", "resp 0" },
++    { "remote_pages 3",             "resp 2" },
++    { "remote_pages 9",             "resp -3" },
++    { "remote_page_get 3 0",        "resp 0 7 \"Main \\\"A\\\"\" \"Page 1\" gain level - - - - - -" },
++    { "remote_page_get 3 2",        "resp -902" },
++    { "param_info 3 time",          "resp 0 ms linear 1 2000 350 1 time_ms" },
++    { "param_info 3 cutoff",        "resp 0 hz log 20 20000 8000 0 cutoff" },
++    { "param_info 3 mix",           "resp 0 none linear 0 0.1 0.3333333333333333 0 mix" },
++    { "param_info 3 range",         "resp 0 none linear -1e-7 1e+21 0.000001 100000000000000000000 range" },
++    { "param_info 3 nope",          "resp -103" },
++    { "param_info 9 time",          "resp -3" },
+     { "remove 3",                   "resp 0" },
+     { "licensee 3",                 "resp -902" },
+     { "cpu_load",                   "not found" },
+@@ -184,7 +283,9 @@ static const exchange_t g_fake_exchanges[] = {
+ static const char g_fake_calls[] =
+     "add(http://x/y,3,chan1) add(http://x/y,4,-) bypass(3,1) param_set(3,gain,0.500000) "
+     "param_get(3,gain) preset_load(3,urn:p) connect(a:out,b:in) disconnect(a:out,b:in) "
+-    "state_save(/tmp/s) state_load(/tmp/s) monitor_output(3,level) monitor_output(9,level) remove(3) ";
++    "state_save(/tmp/s) state_load(/tmp/s) monitor_output(3,level) monitor_output(9,level) "
++    "track_info(3,Kick \"In\" \xc3\xb1,#FF8000,bus) track_info(3,,-,-) track_info(3,Kick,#ff8000,-) "
++    "track_info(9,Kick,-,-) track_info(3," NAME_255 ",-,-) remove(3) ";
+ 
+ /* a backend with nothing behind it answers every verb with ERR_INVALID_OPERATION */
+ static const host_backend_t g_empty_backend = {
+@@ -196,6 +297,10 @@ static const exchange_t g_empty_exchanges[] = {
+     { "param_get 3 gain",           "resp -902" },
+     { "state_save /tmp/s",          "resp -902" },
+     { "monitor_output 3 level",     "resp -902" },
++    { "track_info 3 Kick -",        "resp -902" },
++    { "remote_pages 3",             "resp -902" },
++    { "remote_page_get 3 0",        "resp -902" },
++    { "param_info 3 time",          "resp -902" },
+     { NULL, NULL }
+ };
+ 
+@@ -505,6 +610,7 @@ static int connect_port(int port)
+ 
+ /* the line mod-host's effects.c sends for an output port, terminator included */
+ static const char g_output_set_line[] = "output_set 3 level 0.250000";
++static const char g_remote_pages_changed_line[] = "remote_pages_changed 3";
+ 
+ static void *feedback_client_thread(void *arg)
+ {
+@@ -548,6 +654,27 @@ static void *feedback_client_thread(void *arg)
+         g_failures++;
+     }
+ 
++    got = 0;
++    while (got < sizeof(line))
++    {
++        ssize_t n = recv(fbfd, line + got, 1, 0);
++        if (n <= 0)
++            break;
++        if (line[got++] == '\0')
++            break;
++    }
++
++    if (got == sizeof(g_remote_pages_changed_line) && memcmp(line, g_remote_pages_changed_line, got) == 0)
++    {
++        printf("ok   feedback '%s'\n", line);
++    }
++    else
++    {
++        printf("FAIL feedback: got %zu bytes '%.*s', want '%s'\n", got, (int)got, line,
++               g_remote_pages_changed_line);
++        g_failures++;
++    }
++
+ out:
+     if (fbfd >= 0)
+         close(fbfd);
+@@ -567,6 +694,11 @@ static int run_feedback_session(int port)
+         printf("FAIL output_set without a feedback client\n");
+         g_failures++;
+     }
++    if (host_dispatch_remote_pages_changed(3) != -1)
++    {
++        printf("FAIL remote_pages_changed without a feedback client\n");
++        g_failures++;
++    }
+ 
+     if (socket_start(port, port + 1, TEST_BUFFER_SIZE) < 0)
+     {
+@@ -589,7 +721,7 @@ static int run_feedback_session(int port)
+ }
+ 
+ static int run_session(int port, const host_backend_t *backend, int (*monitor_output)(int, const char *),
+-                       const exchange_t *exchanges, const char *expected_calls)
++                       const host_plugin_info_t *info, const exchange_t *exchanges, const char *expected_calls)
+ {
+     session_t session = { port, exchanges };
+     pthread_t thread;
+@@ -605,6 +737,7 @@ static int run_session(int port, const host_backend_t *backend, int (*monitor_ou
+     socket_set_receive_cb(protocol_parse);
+     host_dispatch_register(backend);
+     host_dispatch_register_monitor_output(monitor_output);
++    host_dispatch_register_plugin_info(info);
+     protocol_add_command("licensee %i", host_dispatch_unsupported_cb);
+ 
+     pthread_create(&thread, NULL, client_thread, &session);
+@@ -628,9 +761,9 @@ int main(void)
+     const char *env = getenv("PROTOCOL_TEST_PORT");
+     int port = env ? atoi(env) : TEST_PORT_DEFAULT;
+ 
+-    if (run_session(port, &g_fake_backend, fake_monitor_output, g_fake_exchanges, g_fake_calls) != 0)
++    if (run_session(port, &g_fake_backend, fake_monitor_output, &g_fake_info, g_fake_exchanges, g_fake_calls) != 0)
+         return 1;
+-    if (run_session(port, &g_empty_backend, NULL, g_empty_exchanges, "") != 0)
++    if (run_session(port, &g_empty_backend, NULL, &g_empty_info, g_empty_exchanges, "") != 0)
+         return 1;
+     if (run_feedback_session(port) != 0)
+         return 1;
+diff --git a/tests/test_host.py b/tests/test_host.py
+index 55c16e6..67c96ed 100644
+--- a/tests/test_host.py
++++ b/tests/test_host.py
+@@ -114,3 +114,14 @@ def test_add_still_accepts_the_old_three_token_form():
+     assert int(r[0]) == 0
+ 
+ 
++
++def test_plugin_info_of_an_lv2_port():
++    r = load_egamp()
++    assert int(r[0]) == 0
++    assert s("param_info 0 gain") == ["0", "db", "linear", "-90", "24", "0", "0", "gain"]
++    assert s("param_info 0 out") == ["-103"]
++    assert s("param_info 0 :bypass") == ["-103"]
++    assert s("param_info 1 gain") == ["-3"]
++    assert s("remote_pages 0") == ["0"]
++    assert s("remote_page_get 0 0") == ["-902"]
++    assert s('track_info 0 "Kick In" #FF8000') == ["-902"]

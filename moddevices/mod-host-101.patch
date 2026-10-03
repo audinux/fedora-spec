@@ -1,3 +1,6 @@
+https://github.com/mod-audio/mod-host/pull/101
+Let 'add' name its jack client, backwards compatible
+
 diff --git a/README.md b/README.md
 index 0003243..647a1f8 100644
 --- a/README.md
@@ -27,10 +30,10 @@ index 0003243..647a1f8 100644
      remove <instance_number>
          * remove an LV2 plugin instance (and also the jack client)
 diff --git a/src/effects.c b/src/effects.c
-index fc6a484..4bf139b 100644
+index 7786bc8..a888803 100644
 --- a/src/effects.c
 +++ b/src/effects.c
-@@ -4548,10 +4548,31 @@ int effects_finish(int close_client)
+@@ -4538,10 +4538,31 @@ int effects_finish(int close_client)
      return SUCCESS;
  }
  
@@ -63,7 +66,7 @@ index fc6a484..4bf139b 100644
      float *audio_buffer, *cv_buffer, *control_buffer;
      jack_port_t *jack_port;
      uint32_t audio_ports_count, input_audio_ports_count, output_audio_ports_count;
-@@ -4596,7 +4617,61 @@ int effects_add(const char *uri, int instance)
+@@ -4586,7 +4607,63 @@ int effects_add(const char *uri, int instance)
  
      /* Create a client to Jack */
      snprintf(effect_name, 31, "effect_%i", instance);
@@ -90,10 +93,12 @@ index fc6a484..4bf139b 100644
 +            jack_client = jack_client_open(requested_name, JackNoStartServer | JackUseExactName,
 +                                            &jack_status);
 +
-+            if (!jack_client && (jack_status & JackNameNotUnique))
++            if (!jack_client)
 +            {
 +                /* Deterministic disambiguation: append this (already-unique) instance
-+                   number rather than trusting JACK's own mangling. */
++                   number rather than trusting JACK's own mangling. Retried on any failure,
++                   not only JackNameNotUnique: jack2 reports a taken exact name as
++                   JackFailure|JackServerError. */
 +                char suffixed_name[REQUESTED_CLIENT_NAME_BUF_SIZE];
 +                char id_suffix[16];
 +                snprintf(id_suffix, sizeof(id_suffix), "_%i", instance);

@@ -26,7 +26,7 @@
 
 Name: mod-host
 Version: 0.10.6.%{shortcommit0}
-Release: 5%{?dist}
+Release: 11%{?dist}
 License: GPL-3.0-or-later
 Summary: LV2 host for Jack controllable via socket or command line
 URL: https://github.com/moddevices/mod-host
@@ -37,8 +37,9 @@ Distribution: Audinux
 
 Source0: https://github.com/moddevices/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: %{name}.service
+# https://github.com/mod-audio/mod-host/pull/100
 Patch0: mod-host-100.patch
-# https://github.com/mod-audio/mod-host/pull/101 - let "add" name its jack client
+# https://github.com/mod-audio/mod-host/pull/101
 Patch1: mod-host-101.patch
 # https://github.com/mod-audio/mod-host/pull/98 - fix a heap overread on an empty path property
 Patch2: mod-host-98.patch
@@ -48,6 +49,18 @@ Patch3: mod-host-81.patch
 Patch4: mod-host-81b.patch
 # https://github.com/mod-audio/mod-host/pull/82 - add the missing -t short option
 Patch5: mod-host-82.patch
+# https://github.com/mod-audio/mod-host/pull/104
+Patch6: mod-host-104.patch
+# https://github.com/mod-audio/mod-host/pull/105
+Patch7: mod-host-105.patch
+# https://github.com/mod-audio/mod-host/pull/106
+Patch8: mod-host-106.patch
+# https://github.com/mod-audio/mod-host/pull/107
+Patch9: mod-host-107.patch
+# https://github.com/mod-audio/mod-host/pull/108
+Patch10: mod-host-108.patch
+# https://github.com/mod-audio/mod-host/pull/109
+Patch11: mod-host-109.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -61,6 +74,7 @@ BuildRequires: systemd-rpm-macros
 
 %{?systemd_requires}
 Requires: lilv
+Requires: %{name}-protocol%{?_isa} = %{version}-%{release}
 
 %description
 mod-host is an LV2 host for JACK, controllable via socket or command line
@@ -79,6 +93,22 @@ Currently the host supports the following LV2 features:
 
 mod-host is part of the MOD project (https://mod.audio/).
 
+%package protocol
+Summary: mod-host socket protocol library
+
+%description protocol
+libmod-host-protocol, the socket server, line protocol and command
+dispatch of mod-host, shared by mod-host and other hosts.
+
+%package protocol-devel
+Summary: Headers and pkg-config file for the mod-host socket protocol library
+Requires: %{name}-protocol%{?_isa} = %{version}-%{release}
+
+%description protocol-devel
+Headers, pkg-config file and backend scenarios for libmod-host-protocol,
+the socket server, line protocol and command dispatch of mod-host, for
+hosts that answer mod-host's protocol with their own plugin backend.
+
 %prep
 %autosetup -p1 -n %{name}-%{commit0}
 
@@ -91,10 +121,12 @@ sed -i 's,LDFLAGS += -s,LDFLAGS +=,g' Makefile
 %set_build_flags
 
 %make_build
+%make_build lib
 
 %install
 
-%make_install
+%make_install LIBDIR=%{_libdir}
+%make_install install-lib LIBDIR=%{_libdir}
 
 install -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
 install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
@@ -107,7 +139,39 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 %{_unitdir}/%{name}.service
 %{_userunitdir}/%{name}.service
 
+%files protocol
+%license COPYING
+%{_libdir}/libmod-host-protocol.so.0*
+
+%files protocol-devel
+%{_libdir}/libmod-host-protocol.so
+%{_includedir}/mod-host/
+%{_libdir}/pkgconfig/mod-host-protocol.pc
+%{_datadir}/mod-host/
+
 %changelog
+* Thu Oct 01 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-11
+- #109: param_info, remote_pages and track_info for controllers
+
+* Thu Oct 01 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-10
+- #101: retry a suffixed client name on any exact-name failure (jack2)
+
+* Wed Sep 30 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-9
+- our patches are now the upstream PRs 100, 101 and 104 to 108, one file each;
+  PRs 81, 82 and 98 unchanged
+- install the protocol library with make install-lib
+
+* Wed Sep 30 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-8
+- update PR 103: a backend can answer monitor_output and send output_set
+
+* Wed Sep 30 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-7
+- move libmod-host-protocol.so.0 into its own mod-host-protocol subpackage
+
+* Tue Sep 29 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-6
+- build the socket, protocol and command dispatch as a shared library,
+  libmod-host-protocol.so.0, with its headers and pkg-config file in
+  mod-host-protocol-devel
+
 * Fri Sep 25 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-5
 - apply the fix from upstream PR 98: a plugin sending an empty path no longer
   makes mod-host read past its buffer
