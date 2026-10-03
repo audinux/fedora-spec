@@ -3,11 +3,12 @@
 # Type: Standalone
 # Category: DAW, MIDI
 
-%global debug_package %{nil}
+%global _find_debuginfo_dwz_opts %{nil}
+%global __brp_mangle_shebangs %{nil}
 
 Name: yadaw
 Version: 0.11.4
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: An sfx creation tool and midi player that doesn't crash often
 License: AGPL-3.0-or-later
 URL: https://github.com/mlm-games/yadaw
@@ -41,14 +42,19 @@ lanes feature could be implemented as a plugin, etc..)
 %prep
 %autosetup -n %{name}-%{version}
 
-%build
-
 # Remove file because it defines an incompatible compiler
 rm .cargo/config.toml
 
-%set_build_flags
+# Manage debug flags via a build section
+mkdir -p .cargo
+cat >> .cargo/config.toml << 'EOF'
+[build]
+rustflags = ["-C", "debuginfo=2", "-C", "dwarf-version=4"]
+EOF
 
-export RUSTFLAGS="-g -O"
+%build
+
+%set_build_flags
 
 export CWD=`pwd`
 export RUSTUP_HOME="$CWD/rustup"
@@ -104,6 +110,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/io.github
 %{_datadir}/metainfo/*
 
 %changelog
+* Sat Oct 03 2026 Yann Collette <ycollette.nospam@free.fr> - 0.11.4-2
+- update to 0.11.4-2 - enable debug symbols
+
 * Sat Oct 03 2026 Yann Collette <ycollette.nospam@free.fr> - 0.11.4-1
 - update to 0.11.4-1
 
