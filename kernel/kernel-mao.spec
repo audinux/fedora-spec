@@ -5,9 +5,9 @@
 # Kernel major version
 %global kmaj  7
 # Kernel minor version
-%global kmin  1
+%global kmin  2
 # Kernel patch version
-%global kpat  9
+%global kpat  8
 # RT patch version
 %global krt   0
 # package version
@@ -214,6 +214,9 @@ fi
 /usr/src/kernels/%{kver}-rt%{krt}.%{krel}%{fcver}
 
 %changelog
+* Sat Oct 03 2026 Yann Collette <ycollette.nospam@free.fr> - 7.2.8-rt0-19
+- update to 7.2.8-lqx1-19
+
 * Wed Aug 26 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-rt0-19
 - fix invalid version string: use '.' instead of '-' before %%{krel} so the
   kernel uname-r has only one '-' (e.g. 7.1.9-rt0.19.fc44.x86_64), matching

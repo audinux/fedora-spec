@@ -5,9 +5,9 @@
 # Kernel major version
 %global kmaj  7
 # Kernel minor version
-%global kmin  1
+%global kmin  2
 # Kernel patch version
-%global kpat  9
+%global kpat  8
 # RT patch version
 %global krt   1
 # package version
@@ -218,6 +218,9 @@ fi
 /usr/src/kernels/%{kver}-lqx%{krt}.%{krel}%{fcver}
 
 %changelog
+* Sat Oct 03 2026 Yann Collette <ycollette.nospam@free.fr> - 7.2.8-lqx1-20
+- update to 7.2.8-lqx1-20
+
 * Wed Aug 26 2026 Yann Collette <ycollette.nospam@free.fr> - 7.1.9-lqx1-20
 - fix invalid version string: use '.' instead of '-' before %%{krel}
 
