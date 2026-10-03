@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 fd2d76a4d51caea4d873758261b9f98b924a8414
-%global gittag0 2.1.0
+%global commit0 04bb9ea7de24e9b1e0a1bfe0787a8122861ae9ad
+%global gittag0 2.2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-VostokInstruments
-Version: 2.1.0
+Version: 2.2.0
 Release: 2%{?dist}
 Summary: VostokInstruments plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r VostokInstruments_plugin/dist/VostokInstruments/* %{buildroot}%{_libexecdi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
 - initial specfile

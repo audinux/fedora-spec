@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 37873c00cb6fc08a853cd937a4b5055ed04fe83a
-%global gittag0 2.1.1
+%global commit0 40c7e8c0fd11737b5e51927d9ab36e153de5ced3
+%global gittag0 2.1.6
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-C1-ChannelStrip
-Version: 2.1.1
+Version: 2.1.6
 Release: 2%{?dist}
 Summary: C1-ChannelStrip plugin for Rack
 License: GPL-2.0-or-later
@@ -29,7 +29,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: C1-ChannelStrip.tar.gz
+Source1: https://github.com/Eurikon/C1-ChannelStrip/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: C1-ChannelStrip_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -154,5 +154,5 @@ cp -r C1-ChannelStrip_plugin/dist/C1-ChannelStrip/* %{buildroot}%{_libexecdir}/R
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.6-1
 - initial specfile
