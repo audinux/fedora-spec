@@ -6,7 +6,7 @@
 %global _cmake_shared_libs %{nil}
 
 Name: vimix
-Version: 0.9.2
+Version: 0.9.2a
 Release: 1%{?dist}
 Summary: Live Video Mixer
 URL: https://github.com/brunoherbelin/vimix
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to get the sources:
-# ./vimix-source.sh master
+# ./vimix-source.sh 0.9.2a
 
 Source0: vimix.tar.gz
 Source1: vimix-source.sh
@@ -99,6 +99,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.metainf
 %{_datadir}/mime/packages/*
 
 %changelog
+* Sat Oct 03 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.2a-1
+- update to 0.9.2a-1
+
 * Sat Sep 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.2-1
 - update to 0.9.2-1
 
