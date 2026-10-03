@@ -5,7 +5,7 @@
 # GUIToolkit: Qt5
 
 Name: hydrogen
-Version: 1.2.6
+Version: 1.2.7
 Release: 12%{?dist}
 Summary: Advanced drum machine for GNU/Linux
 URL: http://www.hydrogen-music.org/
@@ -16,7 +16,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./hydrogen-source.sh <TAG>
-#        ./hydrogen-source.sh 1.2.6
+#        ./hydrogen-source.sh 1.2.7
 
 Source0: hydrogen.tar.gz
 Source1: hydrogen-source.sh
@@ -110,6 +110,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.hydrogenmusic.Hyd
 %exclude %{_includedir}/%{name}
 
 %changelog
+* Fri Oct 02 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.7-12
+- update to 1.2.7-12
+
 * Tue Jul 29 2025 Yann Collette <ycollette.nospam@free.fr> - 1.2.6-12
 - update to 1.2.6-12
 
