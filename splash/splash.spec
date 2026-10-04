@@ -5,7 +5,7 @@
 
 Name: splash
 Version: 0.12.6
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Modular video-mapping software
 License: GPL-3.0-only
 URL: https://gitlab.com/splashmapper/splash
@@ -71,9 +71,10 @@ export CFLAGS="-Wno-error $CFLAGS"
 
 %cmake \
     -DBUILD_SHARED_LIBS=ON \
+    -DBUILD_GENERIC_ARCH=ON \
 %ifarch x86_64
     -DUSE_SSE2=ON \
-    -DUSE_AVX=ON \
+    -DUSE_AVX=OFF \
 %endif
     -DUSE_SYSTEM_LIBS=ON
 %cmake_build
@@ -96,6 +97,9 @@ mv %{buildroot}/%{_datadir}/fonts/*.ttf %{buildroot}/%{_datadir}/fonts/%{name}/
 %{_datadir}/%{name}/*
 
 %changelog
+* Sun Oct 04 2026 Yann Collette <ycollette.nospam@free.fr> - 0.12.6-2
+- update to 0.12.6-2 - disable native build
+
 * Wed Sep 02 2026 Yann Collette <ycollette.nospam@free.fr> - 0.12.6-1
 - update to 0.12.6-1
 
