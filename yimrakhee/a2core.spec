@@ -3,10 +3,10 @@
 # Type: Plugin, LV2, MODGUI
 # Category: Audio, Tool
 
-%global commit0 47b7846c8783738841e2bb0f87474073b3261bcc
+%global commit0 5de2328de48779c7ba10e3ab6b5de1c2f2f3079f
 
 Name: a2core
-Version: 0.0.1
+Version: 0.3.0
 Release: 1%{?dist}
 Summary: A lightweight, minimal LV2 plugin for running Neural Amp Modeler (NAM) models
 License: MIT
@@ -27,6 +27,7 @@ BuildRequires: cmake
 BuildRequires: eigen3-devel
 BuildRequires: json-devel
 BuildRequires: lv2-devel
+BuildRequires: xsimd-devel
 
 %description
 A collection of LV2 plugins including delay, tube distortion, compressor,
@@ -54,5 +55,8 @@ cp -ra .lv2/* %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Oct 04 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.0-1
+- update to 0.3.0-1
+
 * Thu Jun 18 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - first version of the spec
