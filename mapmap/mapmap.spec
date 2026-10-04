@@ -3,9 +3,11 @@
 # Type: Standalone
 # Category: Graphic, Tool
 
+%global commit0 cc29e940385aa85c14a28832b20315dc2378b89d
+
 Name: mapmap
 Version: 0.6.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Open source video mapping software
 URL: https://mapmapteam.github.io
 ExclusiveArch: x86_64 aarch64
@@ -14,14 +16,14 @@ License: GPL-3.0-only
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/mapmapteam/mapmap/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/mapmapteam/mapmap/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
-BuildRequires: qt5-qtbase-devel
-BuildRequires: qt5-qtbase-gui
-BuildRequires: qt5-qtsvg-devel
-BuildRequires: qt5-qtmultimedia-devel
-BuildRequires: qt5-linguist
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-qtbase-gui
+BuildRequires: qt6-qtsvg-devel
+BuildRequires: qt6-qtmultimedia-devel
+BuildRequires: qt6-linguist
 BuildRequires: alsa-lib-devel
 BuildRequires: zlib-devel
 BuildRequires: glib2-devel
@@ -48,13 +50,11 @@ objects. The video is commonly combined with, or triggered by,
 audio to create an audio-visual narrative.
 
 %prep
-%autosetup -n %{name}-%{version}
-
-sed -i -e '/#include "MappingItemDelegate.h"/i #include <QPainterPath>' src/gui/MappingItemDelegate.cpp
+%autosetup -n %{name}-%{commit0}
 
 %build
 
-%qmake_qt5 mapmap.pro
+%qmake_qt6 mapmap.pro
 %make_build
 
 %install
@@ -79,11 +79,14 @@ desktop-file-install --vendor '' \
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%doc HACKING OSC README.md CONTRIBUTING.md
+%doc OSC README.md CONTRIBUTING.md
 %license LICENSE
 %{_bindir}/*
 %{_datadir}/*
 
 %changelog
+* Sun Oct 04 2026 Yann Collette <ycollette.nospam@free.fr> - 0.6.2-2
+- update to 0.6.2-2
+
 * Sat Nov 07 2020 Yann Collette <ycollette.nospam@free.fr> - 0.6.2-1
 - Initial spec file
