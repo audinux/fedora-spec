@@ -64,6 +64,7 @@ BuildRequires: libatomic
 BuildRequires: desktop-file-utils
 
 Requires: faust-stdlib
+Requires: libndi
 
 %description
 ossia score is a sequencer for audio-visual artists, designed to create interactive shows
@@ -85,6 +86,8 @@ unzip %{SOURCE1}
 %set_build_flags
 
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Wp,-D_GLIBCXX_ASSERTIONS||g"`
+export CXXFLAGS="-march=generic $CXXFLAGS"
+export CFLAGS="-march=generic $CFLAGS"
 
 %cmake -DCMAKE_UNITY_BUILD=ON \
        -DCMAKE_BUILD_TYPE=RELEASE \
