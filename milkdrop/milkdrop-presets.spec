@@ -14,10 +14,10 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://sourceforge.net/projects/projectm/files/presets-samples/presets-2.0.0-Source.tar.gz
-Source1: https://sourceforge.net/projects/projectm/files/presets-samples/presets-projectm-2.0.0-Source.tar.gz
-Source2: https://sourceforge.net/projects/projectm/files/presets-samples/presets-milkdrop_200-2.0.0-Source.tar.gz
-Source3: https://sourceforge.net/projects/projectm/files/presets-samples/presets-milkdrop_104-2.0.0-Source.tar.gz
+#Source0: https://sourceforge.net/projects/projectm/files/presets-samples/presets-2.0.0-Source.tar.gz
+#Source1: https://sourceforge.net/projects/projectm/files/presets-samples/presets-projectm-2.0.0-Source.tar.gz
+#Source2: https://sourceforge.net/projects/projectm/files/presets-samples/presets-milkdrop_200-2.0.0-Source.tar.gz
+#Source3: https://sourceforge.net/projects/projectm/files/presets-samples/presets-milkdrop_104-2.0.0-Source.tar.gz
 Source4: http://ycollette.free.fr/Milkdrop/milkdrop-md-presets.zip
 Source5: http://ycollette.free.fr/Milkdrop/milkdrop-megapack.zip
 Source6: http://ycollette.free.fr/Milkdrop/milkdrop-vlc-presets.zip
@@ -79,18 +79,19 @@ install -dm 0755 $RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets
 
 # tar problem on FC44: Cannot open: Invalid cross-device link for some files
 # tar xvfz %{SOURCE0} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
-tar xvfz %{SOURCE1} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
-tar xvfz %{SOURCE2} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
-tar xvfz %{SOURCE3} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
+# tar problem on Rawhide: Cannot open: Invalid cross-device link for some files
+# tar xvfz %{SOURCE1} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
+#tar xvfz %{SOURCE2} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
+#tar xvfz %{SOURCE3} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
 
 pushd .
 
 cd $RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets
 
-# mv presets-2.0.0-Source              presets-2.0.0
-mv presets-projectm-2.0.0-Source     projectm-2.0.0
-mv presets_milkdrop_200-2.0.0-Source milkdrop-2.0.0
-mv presets_milkdrop_104-2.0.0-Source milkdrop-1.0.4
+# mv presets-2.0.0-Source              presets-2.0.0  # From Source0
+# mv presets-projectm-2.0.0-Source     projectm-2.0.0 # From Source1
+# mv presets_milkdrop_200-2.0.0-Source milkdrop-2.0.0 # From Source2
+# mv presets_milkdrop_104-2.0.0-Source milkdrop-1.0.4 # From Source3
 
 popd
 
@@ -168,10 +169,10 @@ find . -name "*.milk" -exec chmod 644 {} \;
 popd
 
 %files
-# {_datadir}/projectM-mao/presets/presets-2.0.0/*
-%{_datadir}/projectM-mao/presets/projectm-2.0.0/*
-%{_datadir}/projectM-mao/presets/milkdrop-2.0.0/*
-%{_datadir}/projectM-mao/presets/milkdrop-1.0.4/*
+# {_datadir}/projectM-mao/presets/presets-2.0.0/*  # From Source0
+# {_datadir}/projectM-mao/presets/projectm-2.0.0/* # From Source1
+# {_datadir}/projectM-mao/presets/milkdrop-2.0.0/* # From Source2
+# {_datadir}/projectM-mao/presets/milkdrop-1.0.4/* # From Source3
 %{_datadir}/projectM-mao/presets/vlc/*
 
 %files md
