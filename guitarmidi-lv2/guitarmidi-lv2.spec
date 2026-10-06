@@ -7,7 +7,7 @@
 %global _cmake_shared_libs %{nil}
 
 Name: guitarmidi
-Version: 3.0
+Version: 3.1
 Release: 3%{?dist}
 Summary: A concept for guitar to midi as an lv2 plugin
 URL: https://github.com/geraldmwangi/GuitarMidi-LV2
@@ -18,11 +18,10 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./guitarmidi-lv2-source.sh <TAG>
-#        ./guitarmidi-lv2-source.sh v3.0
+#        ./guitarmidi-lv2-source.sh v3.1
 
 Source0: GuitarMidi-LV2.tar.gz
 Source1: guitarmidi-lv2-source.sh
-Patch0: guitarmidi-lv2-0001-add-missing-include.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -41,7 +40,7 @@ polyphonic audio into monophonic frequency segments, which are then
 analysed by monophonic pitch detectors.
 
 %prep
-%autosetup -p1 -n GuitarMidi-LV2
+%autosetup -n GuitarMidi-LV2
 
 sed -i -e "s/Git_FOUND/0/g" cmake/setversionfromgit.cmake
 
@@ -69,6 +68,9 @@ export LDFLAGS="-fPIC"
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Oct 04 2026 Yann Collette <ycollette.nospam@free.fr> - 3.1-3
+- update to 3.1-3
+
 * Fri Sep 11 2026 Yann Collette <ycollette.nospam@free.fr> - 3.0-3
 - update to 3.0-3
 
