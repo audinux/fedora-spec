@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 0c08cec9c6d0757ecef7ac3f214a430813864556
-%global gittag0 2.10.0
+%global commit0 103ca3cf2dd2cf66ed31dbb1aa0958ec4a75e071
+%global gittag0 2.10.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-EternalEclipseModular
-Version: 2.10.0
+Version: 2.10.1
 Release: 2%{?dist}
 Summary: EternalEclipseModular plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r EternalEclipseModular_plugin/dist/EternalEclipseModular/* %{buildroot}%{_l
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.10.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.10.1-1
 - initial specfile
