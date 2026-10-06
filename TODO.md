@@ -487,6 +487,7 @@
 | oxefmsynth                               | https://github.com/oxesoft/oxefmsynth                                                                                                                       |
 | antitotem                                | https://github.com/lucioaraujo/antitotem                                                                                                                    |
 | navalha2-juce                            | https://github.com/lucioaraujo/navalha2-juce                                                                                                                |
+| HISE (update current spec)               | https://github.com/davidhealey/HISE                                                                                                                         |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
