@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: cagire
-Version: 0.2.2
+Version: 0.2.3
 Release: 1%{?dist}
 Summary: Forth music sequencer for live coding
 License: GPL-3.0-or-later
@@ -17,14 +17,14 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To build the source archive:
-# $ wget https://git.raphaelforment.fr/BuboBubo/Cagire/archive/v0.2.2.tar.gz#/cagire-0.2.2.tar.gz
-# $ tar xvfz cagire-0.2.2.tar.gz
+# $ wget https://git.raphaelforment.fr/BuboBubo/Cagire/archive/v0.2.3.tar.gz#/cagire-0.2.3.tar.gz
+# $ tar xvfz cagire-0.2.3.tar.gz
 # $ cd cagire
-# $ ./vendor-cargo.sh
+# $ ../vendor-cargo.sh
 # $ echo "" >> .cargo/config.toml
 # $ cargo vendor >> .cargo/config.toml
 # $ cd ..
-# $ tar cvfz cagire-0.2.2.tar.gz cagire
+# $ tar cvfz cagire-0.2.3.tar.gz cagire
 # $ rm -rf cagire
 
 Source0: cagire-%{version}.tar.gz
