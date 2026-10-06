@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: rasgo-modular
-Version: 0.1.3
+Version: 0.1.4
 Release: 1%{?dist}
 Summary: A generative modular environment where the cable is an object with state.
 License: AGPL-3.0-or-later
@@ -101,6 +101,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Tue Oct 06 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.4-1
+- update to 0.1.4-1
+
 * Sun Oct 04 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.3-1
 - update to 0.1.3-1
 
