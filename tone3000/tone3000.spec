@@ -6,7 +6,7 @@
 %global _cmake_shared_libs %{nil}
 
 Name: tone3000
-Version: 0.0.11
+Version: 0.0.12
 Release: 1%{?dist}
 Summary: TONE3000 plugin
 License: MIT
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./tone3000-source.sh <TAG>
-#        ./tone3000-source.sh v0.0.11
+#        ./tone3000-source.sh v0.0.12
 
 Source0: tone3000-plugin.tar.gz
 Source1: tone3000-source.sh
@@ -121,5 +121,8 @@ cp -ra resources/factory-presets/* %{buildroot}/%{_datadir}/%{name}/factory-pres
 %{_libdir}/lv2/*
 
 %changelog
+* Tue Oct 06 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.12-1
+- update to 0.0.12-1
+
 * Fri Oct 02 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.11-1
 - Initial spec file
