@@ -4,7 +4,7 @@
 # Category: Audio, Video, Synthesizer
 
 Name: infinite
-Version: 0.4.6
+Version: 0.4.7
 Release: 3%{?dist}
 Summary: Infinite is a node-based audiovisual workstation — real-time GPU video compositing, procedural 3D geometry, modular synths, DSP, and VST3 plugin hosting
 License: MIT
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./infinite-source.sh <TAG>
-#        ./infinite-source.sh v0.4.6
+#        ./infinite-source.sh v0.4.7
 
 Source0: Infinite.tar.gz
 Source1: https://github.com/n1m21n/Infinite/releases/download/v%{version}/Field_Language_Manual.pdf
@@ -68,11 +68,6 @@ export CXXFLAGS="-include cstdint $CXXFLAGS"
 %cmake_build
 
 %install
-
-# /usr/share/infinite
-# + icons/icon_1024.png
-# + fonts/Inter-Regular.ttf
-# + icons/lucide.ttf
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 %{__cmake_builddir}/Infinite %{buildroot}/%{_bindir}/
@@ -143,6 +138,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/infinite/docs/*
 
 %changelog
+* Wed Oct 07 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.7-3
+- update to 0.4.7-3
+
 * Thu Oct 01 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.6-3
 - update to 0.4.6-3 - install pdf
 

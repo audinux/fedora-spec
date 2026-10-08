@@ -1,6 +1,6 @@
-From a8fed95dac2af7beca62c464ad476ba438e786b9 Mon Sep 17 00:00:00 2001
+From 905b87b2e6d94d1398b75155d3baed4d09ed2ef9 Mon Sep 17 00:00:00 2001
 From: Yann Collette <yc@example.com>
-Date: Thu, 1 Oct 2026 21:17:20 +0200
+Date: Wed, 7 Oct 2026 21:18:03 +0200
 Subject: [PATCH] devendor
 
 ---
@@ -8,10 +8,10 @@ Subject: [PATCH] devendor
  1 file changed, 5 insertions(+), 69 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 97fd0f7..ced4e46 100644
+index 4c426b2..d89ec12 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -95,19 +95,9 @@ FetchContent_MakeAvailable(glfw)
+@@ -106,19 +106,9 @@ FetchContent_MakeAvailable(glfw)
  # the real libFLAC instead (static, no Ogg). macOS keeps CoreAudio's
  # ExtAudioFile and never compiles this in.
  if(WIN32 OR CMAKE_SYSTEM_NAME STREQUAL "Linux")
@@ -34,7 +34,7 @@ index 97fd0f7..ced4e46 100644
  
      # ONNX Runtime + DirectML EP, for Platform::SubjectMask's Windows
      # implementation (src/platform/win/PlatformWin.cpp) - on-device background
-@@ -262,39 +252,8 @@ endif()
+@@ -273,39 +263,8 @@ endif()
  #   3. Update FFMPEG_RELEASE_TAG, FFMPEG_ARCHIVE_VERSION, and all four
  #      SHA256 pins below together, so they describe one consistent release.
  if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
@@ -76,10 +76,10 @@ index 97fd0f7..ced4e46 100644
      set(FFMPEG_LIBS
          "${FFMPEG_LIB_DIR}/libavformat.so"
          "${FFMPEG_LIB_DIR}/libavcodec.so"
-@@ -1036,29 +995,6 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-                 "${CMAKE_CURRENT_SOURCE_DIR}/assets/models/u2netp.onnx"
-                 "$<TARGET_FILE_DIR:Infinite>/assets/models/u2netp.onnx"
-         COMMENT "Copying bundled fonts, icon, ONNX Runtime libraries and model next to Infinite")
+@@ -1154,29 +1113,6 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+                 "${CMAKE_CURRENT_SOURCE_DIR}/assets/drumkits/infinite-basic"
+                 "$<TARGET_FILE_DIR:Infinite>/Resources/drumkits/infinite-basic"
+         COMMENT "Copying bundled fonts, icon, drum kit, ONNX Runtime libraries and model next to Infinite")
 -    # THIRD_PARTY_NOTICES condition 3 / GPL source-offer condition 2: the
 -    # FFmpeg and x264 licence texts ship inside the bundle wherever the
 -    # Linux distributable carries licences, next to the .so files they cover
@@ -107,5 +107,5 @@ index 97fd0f7..ced4e46 100644
      if(INFINITE_ENABLE_VST3)
          # Linux VST3 hosting: src/platform/linux/PluginVST3Linux.cpp mirrors
 -- 
-2.55.0
+2.56.0
 
