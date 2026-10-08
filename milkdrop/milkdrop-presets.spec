@@ -6,7 +6,7 @@
 Summary: Additional presets for ProjectM
 Name: projectM-extra-presets
 Version: 1.0.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: GPL-2.0-or-later AND GPL-3.0-only AND LicenseRef-OpenMusic-green
 URL: http://projectm.sourceforge.net
 ExclusiveArch: x86_64 aarch64
@@ -14,10 +14,10 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-#Source0: https://sourceforge.net/projects/projectm/files/presets-samples/presets-2.0.0-Source.tar.gz
-#Source1: https://sourceforge.net/projects/projectm/files/presets-samples/presets-projectm-2.0.0-Source.tar.gz
-#Source2: https://sourceforge.net/projects/projectm/files/presets-samples/presets-milkdrop_200-2.0.0-Source.tar.gz
-#Source3: https://sourceforge.net/projects/projectm/files/presets-samples/presets-milkdrop_104-2.0.0-Source.tar.gz
+Source0: https://sourceforge.net/projects/projectm/files/presets-samples/presets-2.0.0-Source.tar.gz
+Source1: https://sourceforge.net/projects/projectm/files/presets-samples/presets-projectm-2.0.0-Source.tar.gz
+Source2: https://sourceforge.net/projects/projectm/files/presets-samples/presets-milkdrop_200-2.0.0-Source.tar.gz
+Source3: https://sourceforge.net/projects/projectm/files/presets-samples/presets-milkdrop_104-2.0.0-Source.tar.gz
 Source4: http://ycollette.free.fr/Milkdrop/milkdrop-md-presets.zip
 Source5: http://ycollette.free.fr/Milkdrop/milkdrop-megapack.zip
 Source6: http://ycollette.free.fr/Milkdrop/milkdrop-vlc-presets.zip
@@ -75,36 +75,26 @@ echo "Nothing to build."
 
 %install
 
-install -dm 0755 $RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets
+install -dm 0755 %{buildroot}/%{_datadir}/projectM-mao/presets
 
-# tar problem on FC44: Cannot open: Invalid cross-device link for some files
-# tar xvfz %{SOURCE0} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
-# tar problem on Rawhide: Cannot open: Invalid cross-device link for some files
-# tar xvfz %{SOURCE1} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
-#tar xvfz %{SOURCE2} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
-#tar xvfz %{SOURCE3} --one-top-level=$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
+tar xvfz %{SOURCE0} --hard-dereference --exclude='/CMakeFiles' --exclude='/CMakeFiles/' --exclude='.cmake' --exclude='*~'
+tar xvfz %{SOURCE1} --hard-dereference --exclude='/CMakeFiles' --exclude='/CMakeFiles/' --exclude='.cmake' --exclude='*~'
+tar xvfz %{SOURCE2} --hard-dereference --exclude='/CMakeFiles' --exclude='/CMakeFiles/' --exclude='.cmake' --exclude='*~'
+tar xvfz %{SOURCE3} --hard-dereference --exclude='/CMakeFiles' --exclude='/CMakeFiles/' --exclude='.cmake' --exclude='*~'
 
-pushd .
+mv presets-2.0.0-Source              %{buildroot}/%{_datadir}/projectM-mao/presets/presets-2.0.0
+mv presets-projectm-2.0.0-Source     %{buildroot}/%{_datadir}/projectM-mao/presets/projectm-2.0.0
+mv presets_milkdrop_200-2.0.0-Source %{buildroot}/%{_datadir}/projectM-mao/presets/milkdrop-2.0.0
+mv presets_milkdrop_104-2.0.0-Source %{buildroot}/%{_datadir}/projectM-mao/presets/milkdrop-1.0.4
 
-cd $RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets
+7za x %{SOURCE4} -o%{buildroot}/%{_datadir}/projectM-mao/presets/
+7za x %{SOURCE5} -o%{buildroot}/%{_datadir}/projectM-mao/presets/
+7za x %{SOURCE6} -o%{buildroot}/%{_datadir}/projectM-mao/presets/
+7za x %{SOURCE7} -o%{buildroot}/%{_datadir}/projectM-mao/presets/
+7za x %{SOURCE8} -o%{buildroot}/%{_datadir}/projectM-mao/presets/
 
-# mv presets-2.0.0-Source              presets-2.0.0  # From Source0
-# mv presets-projectm-2.0.0-Source     projectm-2.0.0 # From Source1
-# mv presets_milkdrop_200-2.0.0-Source milkdrop-2.0.0 # From Source2
-# mv presets_milkdrop_104-2.0.0-Source milkdrop-1.0.4 # From Source3
-
-popd
-
-7za x %{SOURCE4} -o$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
-7za x %{SOURCE5} -o$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
-7za x %{SOURCE6} -o$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
-7za x %{SOURCE7} -o$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
-7za x %{SOURCE8} -o$RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets/
-
-pushd .
-
-cd $RPM_BUILD_ROOT%{_datadir}/projectM-mao/presets
-mkdir $RPM_BUILD_ROOT%{_datadir}/projectM-mao/textures
+cd %{buildroot}/%{_datadir}/projectM-mao/presets
+mkdir %{buildroot}/%{_datadir}/projectM-mao/textures
 
 mv milkdrop-md-presets  md
 mv milkdrop-megapack    megapack
@@ -145,11 +135,6 @@ rm -rf presets
 rm md/presets/*.jar
 rm md/presets/*.bat
 
-rm -rf milkdrop-2.0.0/CMakeFiles
-rm -rf milkdrop-1.0.4/CMakeFiles
-rm -rf projectm-2.0.0/CMakeFiles
-# rm -rf presets-2.0.0/CMakeFiles
-
 find . -name "amandio c*" -exec rm {} \;
 find . -name "*.bak" -exec rm {} \;
 
@@ -161,18 +146,16 @@ find . -name "*.mil"  -exec mv {} `basename {} .mil`.milk \;
 
 # Manage permissions
 
-find %{buildroot}%{_datadir}/projectM-mao -type d -exec chmod 755 {} \;
-find %{buildroot}%{_datadir}/projectM-mao -type f -exec chmod a-x {} \;
+find %{buildroot}/%{_datadir}/projectM-mao -type d -exec chmod 755 {} \;
+find %{buildroot}/%{_datadir}/projectM-mao -type f -exec chmod a-x {} \;
 
 find . -name "*.milk" -exec chmod 644 {} \;
 
-popd
-
 %files
-# {_datadir}/projectM-mao/presets/presets-2.0.0/*  # From Source0
-# {_datadir}/projectM-mao/presets/projectm-2.0.0/* # From Source1
-# {_datadir}/projectM-mao/presets/milkdrop-2.0.0/* # From Source2
-# {_datadir}/projectM-mao/presets/milkdrop-1.0.4/* # From Source3
+%{_datadir}/projectM-mao/presets/presets-2.0.0/*
+%{_datadir}/projectM-mao/presets/projectm-2.0.0/*
+%{_datadir}/projectM-mao/presets/milkdrop-2.0.0/*
+%{_datadir}/projectM-mao/presets/milkdrop-1.0.4/*
 %{_datadir}/projectM-mao/presets/vlc/*
 
 %files md
@@ -195,6 +178,9 @@ popd
 %{_datadir}/projectM-mao/textures/*
 
 %changelog
+* Wed Oct 07 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-4
+- update to 1.0.0-4 - fix link problems
+
 * Sun Mar 7 2021 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-3
 - fix permissions
 
