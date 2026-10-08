@@ -7,7 +7,7 @@
 %global __python /usr/bin/python3
 
 Name: python3-glcontext
-Version: 3.0.0
+Version: 3.1.0
 Release: 1%{?dist}
 Summary: Connects moderngl to your window or create headless contexts
 URL: https://github.com/moderngl/glcontext
@@ -43,6 +43,9 @@ glcontext is a library providing OpenGL implementation for ModernGL on multiple 
 %license LICENSE
 
 %changelog
+* Wed Oct 07 2026 Yann Collette <ycollette.nospam@free.fr> - 3.1.0-1
+- update to 3.1.0-1
+
 * Tue Nov 18 2025 Yann Collette <ycollette.nospam@free.fr> - 3.0.0-1
 - Initial spec file 
 
