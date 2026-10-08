@@ -7,7 +7,7 @@
 %global __python /usr/bin/python3
 
 Name: python3-moderngl
-Version: 5.12.0
+Version: 5.13.0
 Release: 1%{?dist}
 Summary: Modern OpenGL binding for Python
 URL: https://github.com/moderngl/moderngl
@@ -50,6 +50,9 @@ with high performance and quality, with less code written.
 %{_libdir}/python%{python3_version}/site-packages/moderngl-stubs/__init__.pyi
 
 %changelog
+* Wed Oct 07 2026 Yann Collette <ycollette.nospam@free.fr> - 5.13.0-1
+- update to 5.13.0-1
+
 * Tue Nov 18 2025 Yann Collette <ycollette.nospam@free.fr> - 5.12.0-1
 - Initial spec file 
 
