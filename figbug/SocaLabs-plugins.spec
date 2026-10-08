@@ -19,7 +19,7 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 
 Name: SocaLabs-plugins
-Version: 20260818
+Version: 20260710
 Release: 6%{?dist}
 Summary: Various VST/VST3 Plugins from SocaLabs.com
 License: BSD-3-Clause
@@ -30,7 +30,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the source code: ./figbug-source.sh <project> <tag>
-#                         ./figbug-source.sh slPlugins c3e8c5ad06b168e94ba2f3244cffe10b36e3d1d6
+#                         ./figbug-source.sh slPlugins 43319db1e25e3898a420cd771c0f67e5b75d2d38
 
 Source0: slPlugins.tar.gz
 Source4: figbug-source.sh
@@ -103,6 +103,8 @@ mkdir -p %{buildroot}%{_libdir}/vst3/
 mkdir -p %{buildroot}%{_libdir}/lv2/
 mkdir -p %{buildroot}%{_libdir}/clap/
 
+# Check ci/pluginlist.txt for the list of plugins
+
 PLUGIN_LIST="ABTester
 AddInvert
 BitCrusher
@@ -121,15 +123,18 @@ MidiLooper
 MidiMonitor
 Oscilloscope
 PitchTrack
-SFX8
 SampleDelay
+SFX8
 SimpleVerb
 SpectrumAnalyzer
 StereoEnhancer
 StereoProcessor
 ToneGenerator
 WaveLooper
-XYScope"
+XYScope
+VU
+Correlation
+Loudness"
 
 for PLUGIN in $PLUGIN_LIST
 do
@@ -154,6 +159,9 @@ done
 %{_libdir}/lv2/
 
 %changelog
+* Wed Oct 07 2026 Yann Collette <ycollette.nospam@free.fr> - 2026100è-6
+- update to 43319db1e25e3898a420cd771c0f67e5b75d2d38
+
 * Tue Aug 18 2026 Yann Collette <ycollette.nospam@free.fr> - 20260818-6
 - update to c3e8c5ad06b168e94ba2f3244cffe10b36e3d1d6
 
