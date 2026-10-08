@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: voc
-Version: 1.1.10
+Version: 1.1.11
 Release: 3%{?dist}
 Summary: wacky vocal synth VST
 License: LGPL-2.1-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # To get the source code: ./figbug-source.sh <project> <tag>
-#                         ./figbug-source.sh Voc v1.1.10
+#                         ./figbug-source.sh Voc v1.1.11
 
 Source0: Voc.tar.gz
 Source1: figbug-source.sh
@@ -135,6 +135,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Oct 07 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.11-3
+- update to 1.1.11-3
+
 * Tue Aug 18 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.10-3
 - update to 1.1.10-3
 
