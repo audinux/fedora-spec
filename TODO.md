@@ -488,6 +488,7 @@
 | antitotem                                | https://github.com/lucioaraujo/antitotem                                                                                                                    |
 | navalha2-juce                            | https://github.com/lucioaraujo/navalha2-juce                                                                                                                |
 | HISE (update current spec)               | https://github.com/davidhealey/HISE                                                                                                                         |
+| C99Euclid                                | https://github.com/ihateemoji/C99Euclid                                                                                                                     |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
