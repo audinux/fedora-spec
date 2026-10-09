@@ -4,7 +4,7 @@
 # Category: Synthesizer, Sequencer
 
 Name: drumrox-kits
-Version: 5.0.0
+Version: 6.0.0
 Release: 7%{?dist}
 Summary: A set of drumrox drum kits
 License: GPL-3.0-or-later
@@ -239,14 +239,6 @@ Requires: license-%{name}
 %description -n %{name}-ASR-XPro
 The ASR-X Pro drumkit for %{name}
 
-%package -n %{name}-FrickeMFB512
-Summary: The Fricke MFB512 Kit drumkit for %{name}
-License: GPL-3.0-or-later
-Requires: license-%{name}
-
-%description -n %{name}-FrickeMFB512
-The Fricke MFB512 Kit drumkit for %{name}
-
 %package -n %{name}-FormantaPolivoks
 Summary: The Formanta Polivoks Kit drumkit for %{name}
 License: GPL-3.0-or-later
@@ -279,42 +271,50 @@ Requires: license-%{name}
 %description -n %{name}-Sopromat
 The Sopromat drumkit for %{name}
 
+%package -n %{name}-Diskach
+Summary: The Diskach drumkit for %{name}
+License: GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-Diskach
+The Diskach drumkit for %{name}
+
 %prep
 %autosetup -n drum_sklad-%{version}
 
 %install
 
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Standard/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Latin/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Electro/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ARP_Axxe/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ASR-XPro/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Avangard/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Afro/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Electro/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Latin/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Standard/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ChoosyHouseKit/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Copyc4tElNacho/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Diskach/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Drumulator/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ELI_CompuRhythm_CR_7030/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ElgamCarousel/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/FormantaPolivoks/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Fricke_MFB512/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/GEM_Drum15/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Jazzkit/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/KloneDualPercussionSynthesiser/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Lel-DR8/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Lel-PSR/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Sixties_Rock/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Sixties_Basic/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/MTI_AO_1/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Rokton-UDS/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Sixties_Basic/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Sixties_Rock/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Sopromat/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/SoundMaster_SR-88/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Tamil/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/TamilMultiLayered/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Technics_PCM_DP50/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Wooden/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ARP_Axxe/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Drumulator/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/WatfordRhythmGenerator/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Copyc4tElNacho/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ChoosyHouseKit/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ElgamCarousel/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ASR-XPro/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/FrickeMFB512/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/FormantaPolivoks/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/KloneDualPercussionSynthesiser/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Avangard/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Sopromat/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Wooden/
 
 cp -ra Cheetah\ SpecDrum\ Standard/* %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Standard/
 cp -ra Cheetah\ SpecDrum\ Latin/* %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Latin/
@@ -342,11 +342,11 @@ cp -ra Copyc4t\ El\ Nacho\ Drumkit/* %{buildroot}/%{_datadir}/drumrox-kits/Copyc
 cp -ra Choosy\ House\ Kit/* %{buildroot}/%{_datadir}/drumrox-kits/ChoosyHouseKit/
 cp -ra Elgam\ Carousel/*  %{buildroot}/%{_datadir}/drumrox-kits/ElgamCarousel/
 cp -ra ASR-X\ Pro/* %{buildroot}/%{_datadir}/drumrox-kits/ASR-XPro/
-cp -ra Fricke\ MFB512/* %{buildroot}/%{_datadir}/drumrox-kits/FrickeMFB512/
 cp -ra Formanta\ Polivoks/* %{buildroot}/%{_datadir}/drumrox-kits/FormantaPolivoks/
 cp -ra Klone\ Dual\ Percussion\ Synthesiser/* %{buildroot}/%{_datadir}/drumrox-kits/KloneDualPercussionSynthesiser/
 cp -ra Avangard/* %{buildroot}/%{_datadir}/drumrox-kits/Avangard/
 cp -ra Sopromat/* %{buildroot}/%{_datadir}/drumrox-kits/Sopromat/
+cp -ra Diskach/* %{buildroot}/%{_datadir}/drumrox-kits/Diskach/
 
 %files -n license-%{name}
 %doc README.md
@@ -430,9 +430,6 @@ cp -ra Sopromat/* %{buildroot}/%{_datadir}/drumrox-kits/Sopromat/
 %files -n %{name}-ASR-XPro
 %{_datadir}/drumrox-kits/ASR-XPro/*
 
-%files -n %{name}-FrickeMFB512
-%{_datadir}/drumrox-kits/FrickeMFB512/*
-
 %files -n %{name}-FormantaPolivoks
 %{_datadir}/drumrox-kits/FormantaPolivoks/*
 
@@ -445,7 +442,13 @@ cp -ra Sopromat/* %{buildroot}/%{_datadir}/drumrox-kits/Sopromat/
 %files -n %{name}-Sopromat
 %{_datadir}/drumrox-kits/Sopromat/*
 
+%files -n %{name}-Diskach
+%{_datadir}/drumrox-kits/Diskach/*
+
 %changelog
+* Thu Oct 08 2026 Yann Collette <ycollette.nospam@free.fr> - 6.0.0-7
+- update to 6.0.0-7
+
 * Tue May 05 2026 Yann Collette <ycollette.nospam@free.fr> - 5.0.0-7
 - update to 5.0.0-7
 
