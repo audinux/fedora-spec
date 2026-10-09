@@ -3,13 +3,11 @@
 # Type: Standalone
 # Category: DAW
 
-#global _dwz_low_mem_die_limit 0
-#global _dwz_max_die_limit 0
 %global _find_debuginfo_dwz_opts %{nil}
 %global __brp_mangle_shebangs %{nil}
 
 Name: maolan
-Version: 0.3.0
+Version: 0.3.1
 Release: 1%{?dist}
 Summary: Maolan is a Rust DAW focused on recording, editing, routing, automation, export, and plugin hosting
 License: BSD-2-Clause
@@ -90,7 +88,7 @@ cp assets/images/%{name}.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps
 
 # Write desktop files
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
-cp assets/desktop/%{name}-linux.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
+cp assets/desktop/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 install -m 755 -d %{buildroot}/%{_datadir}/fonts/%{name}/
 install -m 644 assets/fonts/lucide-metronome.ttf %{buildroot}%{_datadir}/fonts/%{name}/
@@ -112,6 +110,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/fonts/%{name}/*
 
 %changelog
+* Thu Oct 08 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.1-1
+- update to 0.3.1-1
+
 * Wed Sep 09 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.0-1
 - update to 0.3.0-1
 
