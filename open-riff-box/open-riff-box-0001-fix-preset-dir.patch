@@ -1,0 +1,41 @@
+From 9d10fa327582c543c6950e47c9e31733edcde2c9 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Sat, 10 Oct 2026 14:01:53 +0200
+Subject: [PATCH] fix preset dir
+
+---
+ src/ui/MainLayout.cpp | 18 +-----------------
+ 1 file changed, 1 insertion(+), 17 deletions(-)
+
+diff --git a/src/ui/MainLayout.cpp b/src/ui/MainLayout.cpp
+index c589962..2c5157d 100644
+--- a/src/ui/MainLayout.cpp
++++ b/src/ui/MainLayout.cpp
+@@ -186,23 +186,7 @@ MainLayout::MainLayout(OpenRiffBoxProcessor& processor)
+ 
+     if (processorRef.isStandalone())
+     {
+-        auto presetsDir = exeDir.getChildFile("presets");
+-
+-        // If running from a build directory, look for presets at project root
+-        if (!presetsDir.getChildFile("factory").isDirectory())
+-        {
+-            auto projectRoot = exeDir;
+-            for (int i = 0; i < 6; ++i)
+-            {
+-                projectRoot = projectRoot.getParentDirectory();
+-                if (projectRoot.getChildFile("presets").getChildFile("factory").isDirectory())
+-                {
+-                    presetsDir = projectRoot.getChildFile("presets");
+-                    break;
+-                }
+-            }
+-        }
+-
++        juce::File presetsDir = juce::File("/usr/share/open-riff-box/presets");
+         factoryDir = presetsDir.getChildFile("factory");
+         userDir = presetsDir.getChildFile("user");
+     }
+-- 
+2.56.0
+
