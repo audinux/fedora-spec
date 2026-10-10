@@ -489,6 +489,8 @@
 | navalha2-juce                            | https://github.com/lucioaraujo/navalha2-juce                                                                                                                |
 | HISE (update current spec)               | https://github.com/davidhealey/HISE                                                                                                                         |
 | C99Euclid                                | https://github.com/ihateemoji/C99Euclid                                                                                                                     |
+| TugMidiSeq                               | https://github.com/TugrulAkyuz/TugMidiSeq                                                                                                                   |
+| VST-ace                                  | https://github.com/spacestate1/VST-ace                                                                                                                      |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
