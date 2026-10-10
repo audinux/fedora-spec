@@ -4,7 +4,7 @@
 # Category: Audio, Sequencer, MIDI
 
 Name: seq66
-Version: 0.99.27
+Version: 0.99.28
 Release: 1%{?dist}
 Summary: MIDI sequencer
 License: GPL-2.0-or-later
@@ -53,7 +53,6 @@ it with Qt Creator. Provides a comprehensive PDF user-manual.
 
 sed -i -e "s|subdir('nsis')|#subdir('nsis')|g" meson.build
 
-
 %build
 
 %meson -Dgui=true -Dcli=true --wrap-mode=default
@@ -84,6 +83,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_includedir}/*
 
 %changelog
+* Fri Oct 09 2026 Yann Collette <ycollette.nospam@free.fr> - 0.99.28-1
+- update 0.99.28-1
+
 * Mon Aug 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.99.27-1
 - update 0.99.27-1
 
