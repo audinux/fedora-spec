@@ -4,8 +4,8 @@
 # Category: Audio, Video, Synthesizer
 
 Name: infinite
-Version: 0.4.7
-Release: 3%{?dist}
+Version: 0.5.0
+Release: 4%{?dist}
 Summary: Infinite is a node-based audiovisual workstation — real-time GPU video compositing, procedural 3D geometry, modular synths, DSP, and VST3 plugin hosting
 License: MIT
 URL: https://n1m21n.github.io/Infinite
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./infinite-source.sh <TAG>
-#        ./infinite-source.sh v0.4.7
+#        ./infinite-source.sh v0.5.0
 
 Source0: Infinite.tar.gz
 Source1: https://github.com/n1m21n/Infinite/releases/download/v%{version}/Field_Language_Manual.pdf
@@ -82,6 +82,7 @@ install -m 644 ./external/fonts/Inter/*.ttf %{buildroot}/%{_datadir}/infinite/fo
 
 install -m 755 -d %{buildroot}/%{_datadir}/infinite/icons/
 install -m 644 ./external/icons/Lucide/lucide.ttf %{buildroot}/%{_datadir}/infinite/icons/
+install -m 644 ./external/icons/Infinite/infinite-glyphs.ttf %{buildroot}/%{_datadir}/infinite/icons/
 install -m 644 ./assets/icon_1024.png %{buildroot}/%{_datadir}/infinite/icons/
 
 install -m 755 -d %{buildroot}/%{_datadir}/infinite/examples/
@@ -89,6 +90,15 @@ install -m 644 ./assets/examples/*.inf %{buildroot}/%{_datadir}/infinite/example
 
 install -m 755 -d %{buildroot}/%{_datadir}/infinite/models/
 install -m 644 ./assets/models/*.onnx %{buildroot}/%{_datadir}/infinite/models/
+
+install -m 755 -d %{buildroot}/%{_datadir}/infinite/lang/
+cp -ra ./resources/lang/* %{buildroot}/%{_datadir}/infinite/lang/
+
+install -m 755 -d %{buildroot}/%{_datadir}/infinite/drumkits/
+cp -ra ./assets/drumkits/* %{buildroot}/%{_datadir}/infinite/drumkits/
+
+install -m 755 -d %{buildroot}/%{_datadir}/infinite/templates/
+cp -ra ./assets/templates/* %{buildroot}/%{_datadir}/infinite/templates/
 
 # Install PDf
 install -m 755 -d %{buildroot}/%{_datadir}/infinite/docs/
@@ -128,16 +138,23 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/Infinite/*
 %{_datadir}/applications/infinite.desktop
 %{_datadir}/pixmaps/Infinite.ico
-%{_datadir}/infinite/icons/icon_1024.png
-%{_datadir}/infinite/icons/lucide.ttf
-%{_datadir}/infinite/fonts/Inter-Medium.ttf
-%{_datadir}/infinite/fonts/Inter-Regular.ttf
-%{_datadir}/infinite/fonts/Inter-SemiBold.ttf
+%{_datadir}/infinite/icons/*.png
+%{_datadir}/infinite/icons/*.ttf
+%{_datadir}/infinite/fonts/*.ttf
 %{_datadir}/infinite/examples/*
 %{_datadir}/infinite/models/*
 %{_datadir}/infinite/docs/*
+%{_datadir}/infinite/lang/*
+%{_datadir}/infinite/templates/*
+%{_datadir}/infinite/drumkits/*
 
 %changelog
+* Sun Oct 11 2026 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-4
+- update to 0.5.0-4 - fix packaging
+
+* Sun Oct 11 2026 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-3
+- update to 0.5.0-3
+
 * Wed Oct 07 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.7-3
 - update to 0.4.7-3
 
