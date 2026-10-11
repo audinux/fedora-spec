@@ -18,4 +18,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz helio-workstation.tar.gz helio-workstation/
 rm -rf helio-workstation
-md5sum helio-workstation.tar.gz > source.sig
+gpg --armor --detach-sign helio-workstation.tar.gz

@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz SG-323.tar.gz SG-323/*
 rm -rf SG-323
-md5sum SG-323.tar.gz > source.sig
+gpg --armor --detach-sign SG-323.tar.gz

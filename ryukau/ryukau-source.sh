@@ -20,4 +20,4 @@ cd ..
 mv ryukau_LV2Plugins ryukau
 tar cvfz ryukau.tar.gz ryukau/*
 rm -rf ryukau
-md5sum ryukau.tar.gz > source.sig
+gpg --armor --detach-sign ryukau.tar.gz

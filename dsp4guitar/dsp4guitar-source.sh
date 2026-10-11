@@ -20,4 +20,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz DSP4Guitar.tar.gz DSP4Guitar/*
 rm -rf DSP4Guitar
-md5sum DSP4Guitar.tar.gz > source.sig
+gpg --armor --detach-sign DSP4Guitar.tar.gz

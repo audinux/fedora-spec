@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Frequalizer.tar.gz Frequalizer/*
 rm -rf Frequalizer
-md5sum Frequalizer.tar.gz > source.sig
+gpg --armor --detach-sign Frequalizer.tar.gz

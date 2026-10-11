@@ -24,4 +24,4 @@ rm -rf Projucer
 cd ..
 tar cvfz glslEditor_AudioPlugin.tar.gz glslEditor_AudioPlugin/*
 rm -rf glslEditor_AudioPlugin
-md5sum glslEditor_AudioPlugin.tar.gz > source.sig
+gpg --armor --detach-sign glslEditor_AudioPlugin.tar.gz

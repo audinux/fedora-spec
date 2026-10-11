@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz zynayumi.tar.gz zynayumi/*
 rm -rf zynayumi
-md5sum zynayumi.tar.gz > source.sig
+gpg --armor --detach-sign zynayumi.tar.gz

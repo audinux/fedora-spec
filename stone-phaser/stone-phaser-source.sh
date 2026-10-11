@@ -23,4 +23,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz stone-phaser.tar.gz stone-phaser/*
 rm -rf stone-phaser
-md5sum stone-phaser.tar.gz > source.sig
+gpg --armor --detach-sign stone-phaser.tar.gz

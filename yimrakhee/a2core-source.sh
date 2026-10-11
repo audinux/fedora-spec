@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz a2core.lv2.tar.gz a2core.lv2/*
 rm -rf a2core.lv2
-md5sum a2core.lv2.tar.gz > source.sig
+gpg --armor --detach-sign a2core.lv2.tar.gz

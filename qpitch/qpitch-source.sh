@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz qpitch.tar.gz qpitch/*
 rm -rf qpitch
-md5sum qpitch.tar.gz > source.sig
+gpg --armor --detach-sign qpitch.tar.gz

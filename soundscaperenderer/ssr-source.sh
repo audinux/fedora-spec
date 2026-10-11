@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz ssr.tar.gz ssr/*
 rm -rf ssr
-md5sum ssr.tar.gz > source.sig
+gpg --armor --detach-sign ssr.tar.gz

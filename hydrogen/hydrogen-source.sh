@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz hydrogen.tar.gz hydrogen/*
 rm -rf hydrogen
-md5sum hydrogen.tar.gz > source.sig
+gpg --armor --detach-sign hydrogen.tar.gz

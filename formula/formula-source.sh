@@ -28,4 +28,4 @@ fi
 cd ..
 tar cvfz formula.tar.gz formula/*
 rm -rf formula
-md5sum formula.tar.gz > source.sig
+gpg --armor --detach-sign formula.tar.gz

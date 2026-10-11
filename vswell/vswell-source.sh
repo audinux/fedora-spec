@@ -19,4 +19,4 @@ rm -rf .git dpf/.git
 cd ..
 tar cvfz vSwell.tar.gz vSwell/*
 rm -rf vSwell
-md5sum vSwell.tar.gz > source.sig
+gpg --armor --detach-sign vSwell.tar.gz

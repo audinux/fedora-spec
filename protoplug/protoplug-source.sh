@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz protoplug.tar.gz protoplug/*
 rm -rf protoplug
-md5sum protoplug.tar.gz > source.sig
+gpg --armor --detach-sign protoplug.tar.gz

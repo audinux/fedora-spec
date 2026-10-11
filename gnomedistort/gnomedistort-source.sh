@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz GnomeDistort-2.tar.gz GnomeDistort-2/*
 rm -rf GnomeDistort-2
-md5sum GnomeDistort-2.tar.gz > source.sig
+gpg --armor --detach-sign GnomeDistort-2.tar.gz

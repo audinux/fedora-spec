@@ -19,4 +19,4 @@ find . -name ".git" -exec rm -rf {} \;
 cd ..
 tar cvfz AudibleInstruments.tar.gz AudibleInstruments
 rm -rf AudibleInstruments
-md5sum AudibleInstruments.tar.gz > source.sig
+gpg --armor --detach-sign AudibleInstruments.tar.gz

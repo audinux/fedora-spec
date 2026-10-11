@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Audio-Effects.tar.gz Audio-Effects/*
 rm -rf Audio-Effects
-md5sum Audio-Effects.tar.gz > source.sig
+gpg --armor --detach-sign Audio-Effects.tar.gz

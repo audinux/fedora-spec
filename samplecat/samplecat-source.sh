@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz samplecat.tar.gz samplecat/*
 rm -rf samplecat
-md5sum samplecat.tar.gz > source.sig
+gpg --armor --detach-sign samplecat.tar.gz

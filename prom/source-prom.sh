@@ -20,4 +20,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz ProM.tar.gz ProM/*
 rm -rf ProM
-md5sum ProM.tar.gz > source.sig
+gpg --armor --detach-sign ProM.tar.gz

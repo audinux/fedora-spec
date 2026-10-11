@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz GuitarSynth-DPF.tar.gz GuitarSynth-DPF/*
 rm -rf GuitarSynth-DPF
-md5sum GuitarSynth-DPF.tar.gz > source.sig
+gpg --armor --detach-sign GuitarSynth-DPF.tar.gz

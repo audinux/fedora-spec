@@ -20,4 +20,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz klystrack.tar.gz klystrack/*
 rm -rf klystrack
-md5sum klystrack.tar.gz > source.sig
+gpg --armor --detach-sign klystrack.tar.gz

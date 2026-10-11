@@ -19,4 +19,4 @@ rm -rf .git dpf/.git
 cd ..
 tar cvfz VL1-emulator.tar.gz VL1-emulator/*
 rm -rf VL1-emulator
-md5sum VL1-emulator.tar.gz > source.sig
+gpg --armor --detach-sign VL1-emulator.tar.gz

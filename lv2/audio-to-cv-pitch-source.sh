@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz audio-to-cv-pitch-lv2.tar.gz audio-to-cv-pitch-lv2/*
 rm -rf audio-to-cv-pitch-lv2
-md5sum audio-to-cv-pitch-lv2.tar.gz > source.sig
+gpg --armor --detach-sign audio-to-cv-pitch-lv2.tar.gz

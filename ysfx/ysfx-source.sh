@@ -18,4 +18,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz ysfx.tar.gz ysfx/*
 rm -rf ysfx
-md5sum ysfx.tar.gz > source.sig
+gpg --armor --detach-sign ysfx.tar.gz

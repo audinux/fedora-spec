@@ -26,4 +26,4 @@ rm  pffft.zip
 cd ../..
 tar cvfz Rack.tar.gz Rack/*
 rm -rf Rack
-md5sum Rack.tar.gz > source.sig
+gpg --armor --detach-sign Rack.tar.gz

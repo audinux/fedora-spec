@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz vimix.tar.gz vimix/*
 rm -rf vimix
-md5sum vimix.tar.gz > source.sig
+gpg --armor --detach-sign vimix.tar.gz

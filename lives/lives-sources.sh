@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz LiVES.tar.gz LiVES/*
 rm -rf LiVES
-md5sum LiVES.tar.gz > source.sig
+gpg --armor --detach-sign LiVES.tar.gz

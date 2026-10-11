@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz neural-amp-modeler-lv2.tar.gz neural-amp-modeler-lv2/*
 rm -rf neural-amp-modeler-lv2
-md5sum neural-amp-modeler-lv2.tar.gz > source.sig
+gpg --armor --detach-sign neural-amp-modeler-lv2.tar.gz

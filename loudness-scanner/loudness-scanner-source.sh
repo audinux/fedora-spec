@@ -41,4 +41,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz loudness-scanner.tar.gz loudness-scanner/*
 rm -rf loudness-scanner
-md5sum loudness-scanner.tar.gz > source.sig
+gpg --armor --detach-sign loudness-scanner.tar.gz

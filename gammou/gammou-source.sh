@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Gammou.tar.gz Gammou/*
 rm -rf Gammou
-md5sum Gammou.tar.gz > source.sig
+gpg --armor --detach-sign Gammou.tar.gz

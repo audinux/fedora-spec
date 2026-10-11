@@ -21,4 +21,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz SHIRO-Plugins.tar.gz SHIRO-Plugins/*
 rm -rf SHIRO-Plugins
-md5sum SHIRO-Plugins.tar.gz > source.sig
+gpg --armor --detach-sign SHIRO-Plugins.tar.gz

@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz dexed.tar.gz dexed/*
 rm -rf dexed
-md5sum dexed.tar.gz > source.sig
+gpg --armor --detach-sign dexed.tar.gz

@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz OPN2BankEditor.tar.gz OPN2BankEditor/*
 rm -rf OPN2BankEditor
-md5sum OPN2BankEditor.tar.gz > source.sig
+gpg --armor --detach-sign OPN2BankEditor.tar.gz

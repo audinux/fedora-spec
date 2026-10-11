@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz BambooTracker.tar.gz BambooTracker/*
 rm -rf BambooTracker
-md5sum BambooTracker.tar.gz > source.sig
+gpg --armor --detach-sign BambooTracker.tar.gz

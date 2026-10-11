@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz nine-strip.tar.gz nine-strip/*
 rm -rf nine-strip
-md5sum nine-strip.tar.gz > source.sig
+gpg --armor --detach-sign nine-strip.tar.gz

@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz faust.tar.gz faust/*
 rm -rf faust
-md5sum faust.tar.gz > source.sig
+gpg --armor --detach-sign faust.tar.gz

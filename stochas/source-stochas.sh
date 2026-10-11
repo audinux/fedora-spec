@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz stochas.tar.gz stochas/*
 rm -rf stochas
-md5sum stochas.tar.gz > source.sig
+gpg --armor --detach-sign stochas.tar.gz

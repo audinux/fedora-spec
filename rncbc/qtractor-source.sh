@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz qtractor.tar.gz qtractor/
 rm -rf qtractor
-md5sum qtractor.tar.gz > source.sig
+gpg --armor --detach-sign qtractor.tar.gz

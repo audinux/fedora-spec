@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz gRainbow.tar.gz gRainbow/*
 rm -rf gRainbow
-md5sum gRainbow.tar.gz > source.sig
+gpg --armor --detach-sign gRainbow.tar.gz

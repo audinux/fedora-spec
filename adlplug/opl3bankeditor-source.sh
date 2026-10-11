@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz OPL3BankEditor.tar.gz OPL3BankEditor/*
 rm -rf OPL3BankEditor
-md5sum OPL3BankEditor.tar.gz > source.sig
+gpg --armor --detach-sign OPL3BankEditor.tar.gz

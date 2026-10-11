@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Minaton-XT.tar.gz Minaton-XT/*
 rm -rf Minaton-XT
-md5sum Minaton-XT.tar.gz > source.sig
+gpg --armor --detach-sign Minaton-XT.tar.gz

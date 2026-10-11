@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz DelayArchitect.tar.gz DelayArchitect/*
 rm -rf DelayArchitect
-md5sum DelayArchitect.tar.gz > source.sig
+gpg --armor --detach-sign DelayArchitect.tar.gz

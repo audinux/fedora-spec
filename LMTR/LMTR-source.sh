@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz LMTR.tar.gz LMTR/*
 rm -rf LMTR
-md5sum LMTR.tar.gz > source.sig
+gpg --armor --detach-sign LMTR.tar.gz

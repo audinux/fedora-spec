@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz drummock.tar.gz drummock/*
 rm -rf drummock
-md5sum drummock.tar.gz > source.sig
+gpg --armor --detach-sign drummock.tar.gz

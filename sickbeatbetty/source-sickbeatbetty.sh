@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz SickBeatBetty.tar.gz SickBeatBetty/*
 rm -rf SickBeatBetty
-md5sum SickBeatBetty.tar.gz > source.sig
+gpg --armor --detach-sign SickBeatBetty.tar.gz

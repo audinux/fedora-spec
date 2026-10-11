@@ -17,4 +17,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz ADLplug.tar.gz ADLplug/*
 rm -rf ADLplug
-md5sum ADLplug.tar.gz > source.sig
+gpg --armor --detach-sign ADLplug.tar.gz

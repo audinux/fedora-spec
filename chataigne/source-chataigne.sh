@@ -24,4 +24,4 @@ git clone --branch=develop-local http://github.com/benkuper/JUCE
 find JUCE -name .git -exec rm -rf {} \;
 tar cvfz JUCE.tar.gz JUCE/*
 rm -rf JUCE
-md5sum JUCE.tar.gz > source.sig
+gpg --armor --detach-sign JUCE.tar.gz

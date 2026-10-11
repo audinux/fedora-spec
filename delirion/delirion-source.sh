@@ -25,4 +25,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz delirion.tar.gz delirion/*
 rm -rf delirion
-md5sum delirion.tar.gz > source.sig
+gpg --armor --detach-sign delirion.tar.gz

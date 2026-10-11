@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz plugins.tar.gz plugins/*
 rm -rf plugins
-md5sum plugins.tar.gz > source.sig
+gpg --armor --detach-sign plugins.tar.gz

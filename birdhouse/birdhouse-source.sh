@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Birdhouse.tar.gz Birdhouse/*
 rm -rf Birdhouse
-md5sum Birdhouse.tar.gz > source.sig
+gpg --armor --detach-sign Birdhouse.tar.gz

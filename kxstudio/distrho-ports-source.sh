@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz DISTRHO-Ports.tar.gz DISTRHO-Ports/*
 rm -rf DISTRHO-Ports
-md5sum DISTRHO-Ports.tar.gz > source.sig
+gpg --armor --detach-sign DISTRHO-Ports.tar.gz
