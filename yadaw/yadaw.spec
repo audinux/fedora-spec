@@ -7,7 +7,7 @@
 %global __brp_mangle_shebangs %{nil}
 
 Name: yadaw
-Version: 0.11.5
+Version: 0.11.6
 Release: 2%{?dist}
 Summary: An sfx creation tool and midi player that doesn't crash often
 License: AGPL-3.0-or-later
@@ -110,6 +110,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/io.github
 %{_datadir}/metainfo/*
 
 %changelog
+* Sun Oct 11 2026 Yann Collette <ycollette.nospam@free.fr> - 0.11.6-2
+- update to 0.11.6-2
+
 * Thu Oct 08 2026 Yann Collette <ycollette.nospam@free.fr> - 0.11.5-2
 - update to 0.11.5-2
 
