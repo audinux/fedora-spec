@@ -19,4 +19,3 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz LiVES.tar.gz LiVES/*
 rm -rf LiVES
-

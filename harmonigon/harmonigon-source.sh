@@ -19,4 +19,3 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Harmonigon.tar.gz Harmonigon/*
 rm -rf Harmonigon
-

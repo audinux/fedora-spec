@@ -19,4 +19,3 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz BambooTracker.tar.gz BambooTracker/*
 rm -rf BambooTracker
-

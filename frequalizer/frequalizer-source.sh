@@ -19,4 +19,3 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Frequalizer.tar.gz Frequalizer/*
 rm -rf Frequalizer
-

@@ -21,4 +21,3 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz master_me.tar.gz master_me/*
 rm -rf master_me
-
