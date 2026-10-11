@@ -9,3 +9,4 @@ cd ..
 rm segmentino-v1.1.tar.gz
 tar cvfz segmentino-v1.1.tar.gz segmentino-v1.1/
 rm -rf segmentino-v1.1/
+md5sum segmentino-v1.1/.tar.gz > source.sig

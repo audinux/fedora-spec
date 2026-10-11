@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz six-sines.tar.gz six-sines/*
 rm -rf six-sines
+md5sum six-sines.tar.gz > source.sig

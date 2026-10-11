@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz stargate.tar.gz stargate/*
 rm -rf stargate
+md5sum stargate.tar.gz > source.sig

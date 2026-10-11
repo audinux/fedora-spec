@@ -24,3 +24,4 @@ rm -rf plugins/WinVST
 cd ..
 tar cvfz airwindows.tar.gz airwindows/*
 rm -rf airwindows
+md5sum airwindows.tar.gz > source.sig

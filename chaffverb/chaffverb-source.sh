@@ -19,3 +19,4 @@ rm -rf .git dpf/.git
 cd ..
 tar cvfz ChaffVerb.tar.gz ChaffVerb/*
 rm -rf ChaffVerb
+md5sum ChaffVerb.tar.gz > source.sig

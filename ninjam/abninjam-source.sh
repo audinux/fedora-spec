@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz abNinjam.tar.gz abNinjam/*
 rm -rf abNinjam
+md5sum abNinjam.tar.gz > source.sig

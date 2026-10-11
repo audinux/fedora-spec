@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Terrain.tar.gz Terrain/*
 rm -rf Terrain
+md5sum Terrain.tar.gz > source.sig

@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz modEQ.tar.gz modEQ/*
 rm -rf modEQ
+md5sum modEQ.tar.gz > source.sig

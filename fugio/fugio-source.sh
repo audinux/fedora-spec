@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Fugio.tar.gz Fugio/*
 rm -rf Fugio
+md5sum Fugio.tar.gz > source.sig

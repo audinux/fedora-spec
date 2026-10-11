@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz tone3000-plugin.tar.gz tone3000-plugin/*
 rm -rf tone3000-plugin
+md5sum tone3000-plugin.tar.gz > source.sig

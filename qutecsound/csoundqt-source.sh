@@ -15,3 +15,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz CsoundQt.tar.gz CsoundQt/*
 rm -rf CsoundQt
+md5sum CsoundQt.tar.gz > source.sig

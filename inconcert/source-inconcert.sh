@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz inconcert.tar.gz inconcert/*
 rm -rf inconcert
+md5sum inconcert.tar.gz > source.sig

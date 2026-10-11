@@ -18,3 +18,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz RCComp.tar.gz RCComp/*
 rm -rf RCComp
+md5sum RCComp.tar.gz > source.sig

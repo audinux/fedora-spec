@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz shoopdaloop.tar.gz shoopdaloop/*
 rm -rf shoopdaloop
+md5sum shoopdaloop.tar.gz > source.sig

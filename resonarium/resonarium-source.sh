@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz resonarium.tar.gz resonarium/*
 rm -rf resonarium
+md5sum resonarium.tar.gz > source.sig

@@ -21,3 +21,4 @@ rm -rf Csound CLIConverter *.dmg *.dylib
 cd ..
 tar cvfz cabbage.tar.gz cabbage/*
 rm -rf cabbage
+md5sum cabbage.tar.gz > source.sig

@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz furnace.tar.gz furnace/*
 rm -rf furnace
+md5sum furnace.tar.gz > source.sig

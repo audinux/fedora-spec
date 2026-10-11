@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz bombaz.tar.gz bombaz/*
 rm -rf bombaz
+md5sum bombaz.tar.gz > source.sig

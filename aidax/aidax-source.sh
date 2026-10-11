@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz AIDA-X.tar.gz AIDA-X/*
 rm -rf AIDA-X
+md5sum AIDA-X.tar.gz > source.sig

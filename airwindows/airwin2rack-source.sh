@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz airwin2rack.tar.gz airwin2rack/*
 rm -rf airwin2rack
+md5sum airwin2rack.tar.gz > source.sig

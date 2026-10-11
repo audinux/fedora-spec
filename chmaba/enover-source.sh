@@ -18,3 +18,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Enover.tar.gz Enover/*
 rm -rf Enover
+md5sum Enover.tar.gz > source.sig

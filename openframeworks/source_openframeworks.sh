@@ -20,3 +20,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvf openFrameworks.tar.gz openFrameworks/*
 rm -rf openFrameworks
+md5sum openFrameworks.tar.gz > source.sig

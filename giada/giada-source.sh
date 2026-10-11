@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz giada.tar.gz giada/*
 rm -rf giada
+md5sum giada.tar.gz > source.sig

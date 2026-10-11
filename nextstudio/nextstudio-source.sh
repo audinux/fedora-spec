@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz NextStudio.tar.gz NextStudio/*
 rm -rf NextStudio
+md5sum NextStudio.tar.gz > source.sig

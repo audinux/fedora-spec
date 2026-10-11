@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz MXComp.tar.gz MXComp/*
 rm -rf MXComp
+md5sum MXComp.tar.gz > source.sig

@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz aeolus_plugin.tar.gz aeolus_plugin/*
 rm -rf aeolus_plugin
+md5sum aeolus_plugin.tar.gz > source.sig

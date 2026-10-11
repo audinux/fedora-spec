@@ -17,3 +17,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz ensemble-chorus.tar.gz ensemble-chorus/*
 rm -rf ensemble-chorus
+md5sum ensemble-chorus.tar.gz > source.sig

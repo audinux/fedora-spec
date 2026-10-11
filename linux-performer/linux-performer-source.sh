@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz linux-performer.tar.gz linux-performer/*
 rm -rf linux-performer
+md5sum linux-performer.tar.gz > source.sig

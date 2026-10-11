@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Vaporizer2.tar.gz Vaporizer2/*
 rm -rf Vaporizer2
+md5sum Vaporizer2.tar.gz > source.sig

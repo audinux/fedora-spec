@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz amsynth.tar.gz amsynth/*
 rm -rf amsynth
+md5sum amsynth.tar.gz > source.sig

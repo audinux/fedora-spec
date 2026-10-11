@@ -24,3 +24,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz DrumCraker.tar.gz DrumCraker/*
 rm -rf DrumCraker
+md5sum DrumCraker.tar.gz > source.sig

@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz faustlive.tar.gz faustlive/*
 rm -rf faustlive
+md5sum faustlive.tar.gz > source.sig

@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz JDSP4Linux.tar.gz JDSP4Linux
 rm -rf JDSP4Linux
+md5sum JDSP4Linux.tar.gz > source.sig

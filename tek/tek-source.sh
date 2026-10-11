@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz tek.tar.gz tek/*
 rm -rf tek
+md5sum tek.tar.gz > source.sig

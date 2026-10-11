@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz IEMPluginSuite.tar.gz IEMPluginSuite/*
 rm -rf IEMPluginSuite
+md5sum IEMPluginSuite.tar.gz > source.sig

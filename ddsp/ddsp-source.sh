@@ -20,3 +20,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz ddsp-vst.tar.gz ddsp-vst/*
 rm -rf ddsp-vst
+md5sum ddsp-vst.tar.gz > source.sig

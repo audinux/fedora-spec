@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz boris-granular-station.tar.gz boris-granular-station/*
 rm -rf boris-granular-station
+md5sum boris-granular-station.tar.gz > source.sig

@@ -15,3 +15,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz vst3sdk.tar.gz vst3sdk/*
 rm -rf vst3sdk
+md5sum vst3sdk.tar.gz > source.sig

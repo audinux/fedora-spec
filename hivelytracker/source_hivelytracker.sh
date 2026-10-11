@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz hivelytracker.tar.gz hivelytracker/*
 rm -rf hivelytracker
+md5sum hivelytracker.tar.gz > source.sig

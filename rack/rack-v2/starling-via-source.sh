@@ -19,3 +19,4 @@ find . -name ".git" -exec rm -rf {} \;
 cd ..
 tar cvfz Via-for-Rack.tar.gz Via-for-Rack
 rm -rf Via-for-Rack
+md5sum Via-for-Rack.tar.gz > source.sig

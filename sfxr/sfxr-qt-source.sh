@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz sfxr-qt.tar.gz sfxr-qt/*
 rm -rf sfxr-qt
+md5sum sfxr-qt.tar.gz > source.sig

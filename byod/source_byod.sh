@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz BYOD.tar.gz BYOD/*
 rm -rf BYOD
+md5sum BYOD.tar.gz > source.sig

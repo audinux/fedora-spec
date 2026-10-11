@@ -32,3 +32,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz cmajor.tar.gz cmajor/*
 rm -rf cmajor
+md5sum cmajor.tar.gz > source.sig

@@ -31,3 +31,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz $1.tar.gz $1/*
 rm -rf $1
+md5sum $1.tar.gz > source.sig

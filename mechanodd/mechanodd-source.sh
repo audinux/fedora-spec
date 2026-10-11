@@ -22,3 +22,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Mechanodd.tar.gz Mechanodd/*
 rm -rf Mechanodd
+md5sum Mechanodd.tar.gz > source.sig

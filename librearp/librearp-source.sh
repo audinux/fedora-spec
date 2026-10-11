@@ -36,3 +36,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz LibreArpVST3.tar.gz LibreArpVST3/*
 rm -rf LibreArpVST3
+md5sum LibreArpVST3.tar.gz > source.sig

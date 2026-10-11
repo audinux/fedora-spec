@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz AudiblePlanets.tar.gz AudiblePlanets/*
 rm -rf AudiblePlanets
+md5sum AudiblePlanets.tar.gz > source.sig

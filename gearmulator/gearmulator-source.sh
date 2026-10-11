@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz gearmulator.tar.gz gearmulator/*
 rm -rf gearmulator
+md5sum gearmulator.tar.gz > source.sig

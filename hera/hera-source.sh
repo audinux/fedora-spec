@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Hera.tar.gz Hera/*
 rm -rf Hera
+md5sum Hera.tar.gz > source.sig

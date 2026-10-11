@@ -24,3 +24,4 @@ cd ..
 
 tar cvfz Amplitron.tar.gz Amplitron/*
 rm -rf Amplitron
+md5sum Amplitron.tar.gz > source.sig

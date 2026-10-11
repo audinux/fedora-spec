@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz spice-oss.tar.gz spice-oss/*
 rm -rf spice-oss
+md5sum spice-oss.tar.gz > source.sig

@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Camomile.tar.gz Camomile/*
 rm -rf Camomile
+md5sum Camomile.tar.gz > source.sig

@@ -18,3 +18,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz si-plugins.tar.gz si-plugins/*
 rm -rf si-plugins
+md5sum si-plugins.tar.gz > source.sig

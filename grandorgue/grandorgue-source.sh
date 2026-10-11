@@ -19,3 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz grandorgue.tar.gz grandorgue/*
 rm -rf grandorgue
+md5sum grandorgue.tar.gz > source.sig
