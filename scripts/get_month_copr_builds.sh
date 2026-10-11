@@ -12,7 +12,7 @@ BUILDS='[]'
 echo "### News for $(date '+%B %Y')"
 
 # ----------------------------------------------------------------------
-# Récupération des builds COPR du mois pour Fedora $VERSION
+# Retrieving COPR builds of the month for Fedora $VERSION
 # ----------------------------------------------------------------------
 
 while : ; do
@@ -46,7 +46,7 @@ while : ; do
 done
 
 # ----------------------------------------------------------------------
-# Récupération des nouvelles specs dans Git
+# Retrieving the new specs from Git
 # ----------------------------------------------------------------------
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
@@ -71,7 +71,7 @@ NEW_PACKAGES_JSON=$(printf '%s\n' "$NEW_PACKAGES" | jq -R -s '
 ')
 
 # ----------------------------------------------------------------------
-# Déduplication : dernier build de chaque package
+# Deduplication: latest build of each package
 # ----------------------------------------------------------------------
 
 MONTH_BUILDS=$(echo "$BUILDS" | jq -c '
