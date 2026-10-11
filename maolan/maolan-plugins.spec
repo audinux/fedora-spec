@@ -3,13 +3,11 @@
 # Type: Plugins, CLAP
 # Category: Effect, Synthesizer
 
-#global _dwz_low_mem_die_limit 0
-#global _dwz_max_die_limit 0
 %global _find_debuginfo_dwz_opts %{nil}
 %global __brp_mangle_shebangs %{nil}
 
 Name: maolan-plugins
-Version: 0.1.0
+Version: 0.1.1
 Release: 1%{?dist}
 Summary: Maolan plugins
 License: BSD-2-Clause
@@ -107,6 +105,9 @@ install -m 755 target/release/libmaolan_plugins.so %{buildroot}%{_libdir}/clap/M
 %{_libdir}/clap/*
 
 %changelog
+* Sun Oct 11 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.1-1
+- update to 0.1.1-1
+
 * Sat Sep 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
 - update to 0.1.0-1
 
