@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: linux-performer
-Version: 0.1.45
+Version: 0.1.47
 Release: 1%{?dist}
 Summary: A live-performance plugin host for Linux
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./linux-performer-source.sh <TAG>
-#        ./linux-performer-source.sh v0.1.45
+#        ./linux-performer-source.sh v0.1.47
 
 Source0: linux-performer.tar.gz
 Source1: linux-performer-source.sh
@@ -102,6 +102,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/performer.desktop
 %{_datadir}/icons/hicolor/512x512/apps/*
 
 %changelog
+* Mon Oct 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.47-1
+- update to 0.1.47-1
+
 * Fri Oct 09 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.45-1
 - update to 0.1.45-1
 
