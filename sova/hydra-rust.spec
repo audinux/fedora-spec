@@ -5,11 +5,11 @@
 
 %global debug_package %{nil}
 
-%global commit0 003af41255dfd08e6b16c5cfc71d25577b54be02
+%global commit0 9b7a97bed13f9fd9d64758ec87cdcce8583976e7
 
 Name: hydra-rust
 Version: 0.0.1
-Release: 16%{?dist}
+Release: 19%{?dist}
 Summary: Prototype of hydra remade in Rust
 License: AGPL-3.0-or-later
 URL: https://github.com/sova-org/hydra-rust
@@ -23,6 +23,7 @@ Source1: hydra-examples.tar.gz
 Source2: http://ycollette.free.fr/Guitare/hydra-sketches.tar.gz
 
 BuildRequires: gcc gcc-c++
+BuildRequires: git
 BuildRequires: rustup
 BuildRequires: clang-devel
 BuildRequires: xcb-util-wm-devel
@@ -36,6 +37,7 @@ BuildRequires: libv4l-devel
 BuildRequires: python3
 
 Requires: (ffmpeg or ffmpeg-free)
+Requires: license-%{name}
 
 %description
 A Rust port of Hydra — the live-codable video synthesizer created by Olivia Jack. Takes Rhai scripts,
@@ -53,6 +55,29 @@ Some shortcuts:
 - Alt + -> / <-            Cycle to the previous/next scene bank
 - Alt + X                  Export the active bank (16 slots) as a .bhr file
 - Alt + I                  Import a .bhr file into the active bank, replacing its 16 slots
+
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: AGPL-3.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
+%package -n vst3-%{name}
+Summary: VST3 version of %{name}
+License: AGPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n vst3-%{name}
+VST3 version of %{name}
+
+%package -n clap-%{name}
+Summary: CLAP version of %{name}
+License: AGPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n clap-%{name}
+CLAP version of %{name}
 
 %prep
 %autosetup -n %{name}-%{commit0}
@@ -82,24 +107,49 @@ source cargo/env
 
 cargo build --release --features webcam,audio,image_url,midi,video,stream,osc
 
+cargo xtask bundle hydra-plugin --release
+
 %install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 target/release/hydra %{buildroot}/%{_bindir}/
+
+install -m 755 -d %{buildroot}/%{_libdir}/vst3/
+cp -ra target/bundled/Hydra.vst3 %{buildroot}/%{_libdir}/vst3/
+
+install -m 755 -d %{buildroot}/%{_libdir}/clap/
+cp -ra target/bundled/Hydra.clap %{buildroot}/%{_libdir}/clap/
 
 install -m 755 -d %{buildroot}/%{_datadir}/%{name}/
 cd %{buildroot}/%{_datadir}/%{name}/
 tar xvfz %{SOURCE1}
 tar xvfz %{SOURCE2}
 
-%files
+%files -n license-%{name}
 %doc README.md CHANGELOG.md SPEC.md DOCUMENTATION.md
 %license LICENSE
+
+%files
 %{_bindir}/*
 %{_datadir}/%{name}/hydra-examples/*
 %{_datadir}/%{name}/hydra-sketches/*
 
+%files -n vst3-%{name}
+%{_libdir}/vst3/*
+
+%files -n clap-%{name}
+%{_libdir}/clap/*
+
 %changelog
+* Tue Oct 13 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-19
+- update to 0.0.1-19 - update to last master
+
+* Mon Oct 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-18
+- update to 0.0.1-18 - add vst3 and clap plugins
+
+* Mon Oct 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-17
+- update to 0.0.1-17
+
 * Fri Oct 09 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-16
 - update to 0.0.1-16 - update shortcuts
 
