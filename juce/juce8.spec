@@ -3,8 +3,8 @@
 # Type: Standalone, IDE, Language
 # Category: Audio, Programming, Graphic
 
-Name: JUCE
-Version: 8.0.15
+Name: JUCE8
+Version: 8.0.16
 Release: 10%{?dist}
 Summary: JUCE Framework
 URL: https://github.com/juce-framework/JUCE
@@ -14,7 +14,7 @@ License: GPL-2.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/juce-framework/JUCE/archive/%{version}-security.tar.gz#/%{name}-%{version}.tar.gz
 Source1: juce_Projucer.desktop
 Source2: juce_Projucer.1
 
@@ -48,7 +48,7 @@ which supports exporting projects for Xcode (macOS and iOS), Visual Studio, Andr
 Code::Blocks and Linux Makefiles as well as containing a source code editor.
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -p1 -n JUCE-%{version}-security
 
 %build
 
@@ -109,6 +109,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libexecdir}/juce/juceaide
 
 %changelog
+* Tue Oct 13 2026 Yann Collette <ycollette.nospam@free.fr> - 8.0.16-10
+- update to 8.0.16-10 - security release
+
 * Tue Jul 21 2026 Yann Collette <ycollette.nospam@free.fr> - 8.0.15-10
 - update to 8.0.15-10
 
