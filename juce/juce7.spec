@@ -4,7 +4,7 @@
 # Category: Audio, Programming, Graphic
 
 Name: JUCE7
-Version: 7.0.12
+Version: 7.0.13
 Release: 11%{?dist}
 Summary: JUCE Framework
 URL: https://github.com/juce-framework/JUCE
@@ -14,7 +14,7 @@ License: GPL-2.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/juce-framework/JUCE/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/juce-framework/JUCE/archive/%{version}-security.tar.gz#/%{name}-%{version}.tar.gz
 Source1: juce_Projucer7.desktop
 Source2: juce_Projucer7.1
 
@@ -48,7 +48,7 @@ which supports exporting projects for Xcode (macOS and iOS), Visual Studio, Andr
 Code::Blocks and Linux Makefiles as well as containing a source code editor.
 
 %prep
-%autosetup -p1 -n JUCE-%{version}
+%autosetup -p1 -n JUCE-%{version}-security
 
 %build
 
@@ -110,6 +110,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libexecdir}/juce/juceaide
 
 %changelog
+* Tue Oct 13 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.13-11
+- update to 7.0.13-11 - security release
+
 * Mon Sep 15 2025 Yann Collette <ycollette.nospam@free.fr> - 7.0.12-11
 - update to 7.0.12-11 - remove unused dep
 
