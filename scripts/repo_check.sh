@@ -1208,7 +1208,8 @@ https://github.com/n1m21n/Infinite
 https://github.com/lucioaraujo/rasgo-modular
 https://github.com/tone-3000/tone3000-plugin
 https://github.com/dguedry/linux-performer
-https://github.com/dlujic/open-riff-box"
+https://github.com/dlujic/open-riff-box
+https://github.com/sharph/s-rack"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)

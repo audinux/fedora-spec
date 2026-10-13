@@ -436,7 +436,6 @@
 | plugins                                  | https://github.com/samueljustice/plugins                                                                                                                    |
 | pcmg                                     | https://github.com/JohnDowson/pcmg                                                                                                                          |
 | oosc-rs                                  | https://github.com/karasikq/oosc-rs                                                                                                                         |
-| s-rack                                   | https://github.com/sharph/s-rack                                                                                                                            |
 | calfnxt                                  | https://github.com/boomshop/calfnxt                                                                                                                         |
 | jasm-sessions                            | https://codeberg.org/jasm/jasm-sessions                                                                                                                     |
 | jasm-session-manager                     | https://codeberg.org/jasm/jasm-session-manager                                                                                                              |
