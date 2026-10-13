@@ -19,4 +19,4 @@ find . -name ".git" -exec rm -rf {} \;
 cd ..
 tar cvfz VCV-Recorder.tar.gz VCV-Recorder
 rm -rf VCV-Recorder
-gpg --armor --detach-sign VCV-Recorder.tar.gz
+md5sum VCV-Recorder.tar.gz

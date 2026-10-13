@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz jacktrip.tar.gz jacktrip/*
 rm -rf jacktrip
-gpg --armor --detach-sign jacktrip.tar.gz
+md5sum jacktrip.tar.gz

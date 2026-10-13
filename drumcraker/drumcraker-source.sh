@@ -24,4 +24,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz DrumCraker.tar.gz DrumCraker/*
 rm -rf DrumCraker
-gpg --armor --detach-sign DrumCraker.tar.gz
+md5sum DrumCraker.tar.gz

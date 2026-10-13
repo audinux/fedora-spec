@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Infinite.tar.gz Infinite/*
 rm -rf Infinite
-gpg --armor --detach-sign Infinite.tar.gz
+md5sum Infinite.tar.gz

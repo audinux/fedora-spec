@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz OB-Xf.tar.gz OB-Xf/*
 rm -rf OB-Xf
-gpg --armor --detach-sign OB-Xf.tar.gz
+md5sum OB-Xf.tar.gz

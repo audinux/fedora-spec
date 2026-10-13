@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Fire.tar.gz Fire/*
 rm -rf Fire
-gpg --armor --detach-sign Fire.tar.gz
+md5sum Fire.tar.gz

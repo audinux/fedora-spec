@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz gearmulator.tar.gz gearmulator/*
 rm -rf gearmulator
-gpg --armor --detach-sign gearmulator.tar.gz
+md5sum gearmulator.tar.gz

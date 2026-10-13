@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz RoomReverb.tar.gz RoomReverb/*
 rm -rf RoomReverb
-gpg --armor --detach-sign RoomReverb.tar.gz
+md5sum RoomReverb.tar.gz

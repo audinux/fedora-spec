@@ -21,4 +21,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz mruby-zest-build.tar.gz mruby-zest-build/*
 rm -rf mruby-zest-build
-gpg --armor --detach-sign mruby-zest-build.tar.gz
+md5sum mruby-zest-build.tar.gz

@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz amsynth.tar.gz amsynth/*
 rm -rf amsynth
-gpg --armor --detach-sign amsynth.tar.gz
+md5sum amsynth.tar.gz

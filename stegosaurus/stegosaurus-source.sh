@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz stegosaurus.tar.gz stegosaurus/*
 rm -rf stegosaurus
-gpg --armor --detach-sign stegosaurus.tar.gz
+md5sum stegosaurus.tar.gz

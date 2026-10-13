@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz hivelytracker.tar.gz hivelytracker/*
 rm -rf hivelytracker
-gpg --armor --detach-sign hivelytracker.tar.gz
+md5sum hivelytracker.tar.gz

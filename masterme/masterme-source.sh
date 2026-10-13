@@ -21,4 +21,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz master_me.tar.gz master_me/*
 rm -rf master_me
-gpg --armor --detach-sign master_me.tar.gz
+md5sum master_me.tar.gz

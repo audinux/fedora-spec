@@ -24,4 +24,4 @@ cd ..
 
 tar cvfz Amplitron.tar.gz Amplitron/*
 rm -rf Amplitron
-gpg --armor --detach-sign Amplitron.tar.gz
+md5sum Amplitron.tar.gz

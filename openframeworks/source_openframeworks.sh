@@ -20,4 +20,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvf openFrameworks.tar.gz openFrameworks/*
 rm -rf openFrameworks
-gpg --armor --detach-sign openFrameworks.tar.gz
+md5sum openFrameworks.tar.gz

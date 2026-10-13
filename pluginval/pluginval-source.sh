@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz pluginval.tar.gz pluginval/*
 rm -rf pluginval
-gpg --armor --detach-sign pluginval.tar.gz
+md5sum pluginval.tar.gz

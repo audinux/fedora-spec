@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz cStop.tar.gz cStop/*
 rm -rf cStop
-gpg --armor --detach-sign cStop.tar.gz
+md5sum cStop.tar.gz

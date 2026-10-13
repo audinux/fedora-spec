@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Ildaeil.tar.gz Ildaeil/*
 rm -rf Ildaeil
-gpg --armor --detach-sign Ildaeil.tar.gz
+md5sum Ildaeil.tar.gz

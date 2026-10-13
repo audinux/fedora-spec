@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz tek.tar.gz tek/*
 rm -rf tek
-gpg --armor --detach-sign tek.tar.gz
+md5sum tek.tar.gz

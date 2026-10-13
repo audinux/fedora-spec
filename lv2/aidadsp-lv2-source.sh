@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz aidadsp-lv2.tar.gz aidadsp-lv2/*
 rm -rf aidadsp-lv2
-gpg --armor --detach-sign aidadsp-lv2.tar.gz
+md5sum aidadsp-lv2.tar.gz

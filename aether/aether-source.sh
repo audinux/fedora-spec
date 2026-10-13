@@ -20,4 +20,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Aether.tar.gz Aether/*
 rm -rf Aether
-gpg --armor --detach-sign Aether.tar.gz
+md5sum Aether.tar.gz

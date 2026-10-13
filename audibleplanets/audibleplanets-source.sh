@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz AudiblePlanets.tar.gz AudiblePlanets/*
 rm -rf AudiblePlanets
-gpg --armor --detach-sign AudiblePlanets.tar.gz
+md5sum AudiblePlanets.tar.gz

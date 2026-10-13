@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz boris-granular-station.tar.gz boris-granular-station/*
 rm -rf boris-granular-station
-gpg --armor --detach-sign boris-granular-station.tar.gz
+md5sum boris-granular-station.tar.gz

@@ -18,4 +18,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Enover.tar.gz Enover/*
 rm -rf Enover
-gpg --armor --detach-sign Enover.tar.gz
+md5sum Enover.tar.gz

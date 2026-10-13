@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz abNinjam.tar.gz abNinjam/*
 rm -rf abNinjam
-gpg --armor --detach-sign abNinjam.tar.gz
+md5sum abNinjam.tar.gz

@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Hera.tar.gz Hera/*
 rm -rf Hera
-gpg --armor --detach-sign Hera.tar.gz
+md5sum Hera.tar.gz

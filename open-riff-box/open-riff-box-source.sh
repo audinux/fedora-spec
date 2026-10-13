@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz open-riff-box.tar.gz open-riff-box/*
 rm -rf open-riff-box
-gpg --armor --detach-sign open-riff-box.tar.gz
+md5sum open-riff-box.tar.gz

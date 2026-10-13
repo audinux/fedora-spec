@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz vocoder.tar.gz vocoder/*
 rm -rf vocoder
-gpg --armor --detach-sign vocoder.tar.gz
+md5sum vocoder.tar.gz

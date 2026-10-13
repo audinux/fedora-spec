@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz bombaz.tar.gz bombaz/*
 rm -rf bombaz
-gpg --armor --detach-sign bombaz.tar.gz
+md5sum bombaz.tar.gz

@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz solfege.tar.gz solfege/*
 rm -rf solfege
-gpg --armor --detach-sign solfege.tar.gz
+md5sum solfege.tar.gz

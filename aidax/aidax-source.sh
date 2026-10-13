@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz AIDA-X.tar.gz AIDA-X/*
 rm -rf AIDA-X
-gpg --armor --detach-sign AIDA-X.tar.gz
+md5sum AIDA-X.tar.gz

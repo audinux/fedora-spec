@@ -18,4 +18,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz RCVerb.tar.gz RCVerb/*
 rm -rf RCVerb
-gpg --armor --detach-sign RCVerb.tar.gz
+md5sum RCVerb.tar.gz

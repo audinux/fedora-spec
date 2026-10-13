@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Fugio.tar.gz Fugio/*
 rm -rf Fugio
-gpg --armor --detach-sign Fugio.tar.gz
+md5sum Fugio.tar.gz

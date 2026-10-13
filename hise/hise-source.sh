@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz HISE.tar.gz HISE/*
 rm -rf HISE
-gpg --armor --detach-sign HISE.tar.gz
+md5sum HISE.tar.gz

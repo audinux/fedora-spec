@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz miniAudicle.tar.gz miniAudicle/*
 rm -rf miniAudicle
-gpg --armor --detach-sign miniAudicle.tar.gz
+md5sum miniAudicle.tar.gz

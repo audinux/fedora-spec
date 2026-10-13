@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz splash.tar.gz splash/*
 rm -rf splash
-gpg --armor --detach-sign splash.tar.gz
+md5sum splash.tar.gz

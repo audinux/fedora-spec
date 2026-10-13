@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz tenacity.tar.gz tenacity/*
 rm -rf tenacity
-gpg --armor --detach-sign tenacity.tar.gz
+md5sum tenacity.tar.gz

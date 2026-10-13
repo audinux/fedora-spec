@@ -31,4 +31,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz DrumGroovePro.tar.gz DrumGroovePro/*
 rm -rf DrumGroovePro
-gpg --armor --detach-sign DrumGroovePro.tar.gz
+md5sum DrumGroovePro.tar.gz

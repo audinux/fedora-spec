@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz projectm.tar.gz projectm/*
 rm -rf projectm
-gpg --armor --detach-sign projectm.tar.gz
+md5sum projectm.tar.gz

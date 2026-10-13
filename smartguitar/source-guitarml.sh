@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz $1.tar.gz $1/*
 rm -rf $1
-gpg --armor --detach-sign $1.tar.gz
+md5sum $1.tar.gz

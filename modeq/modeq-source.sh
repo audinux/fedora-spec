@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz modEQ.tar.gz modEQ/*
 rm -rf modEQ
-gpg --armor --detach-sign modEQ.tar.gz
+md5sum modEQ.tar.gz

@@ -21,4 +21,4 @@ rm -rf Csound CLIConverter *.dmg *.dylib
 cd ..
 tar cvfz cabbage.tar.gz cabbage/*
 rm -rf cabbage
-gpg --armor --detach-sign cabbage.tar.gz
+md5sum cabbage.tar.gz

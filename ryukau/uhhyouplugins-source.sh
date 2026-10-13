@@ -20,4 +20,4 @@ cd ..
 mv VSTPlugins
 tar cvfz VSTPlugins.tar.gz VSTPlugins/*
 rm -rf VSTPlugins
-gpg --armor --detach-sign VSTPlugins.tar.gz
+md5sum VSTPlugins.tar.gz

@@ -21,4 +21,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz xenos.tar.gz xenos/*
 rm -rf xenos
-gpg --armor --detach-sign xenos.tar.gz
+md5sum xenos.tar.gz

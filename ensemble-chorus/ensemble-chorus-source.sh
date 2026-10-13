@@ -17,4 +17,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz ensemble-chorus.tar.gz ensemble-chorus/*
 rm -rf ensemble-chorus
-gpg --armor --detach-sign ensemble-chorus.tar.gz
+md5sum ensemble-chorus.tar.gz

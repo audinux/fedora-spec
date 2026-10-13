@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz BYOD.tar.gz BYOD/*
 rm -rf BYOD
-gpg --armor --detach-sign BYOD.tar.gz
+md5sum BYOD.tar.gz

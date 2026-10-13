@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Camomile.tar.gz Camomile/*
 rm -rf Camomile
-gpg --armor --detach-sign Camomile.tar.gz
+md5sum Camomile.tar.gz

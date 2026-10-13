@@ -16,4 +16,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz PlugData.tar.gz PlugData/*
 rm -rf PlugData
-gpg --armor --detach-sign PlugData.tar.gz
+md5sum PlugData.tar.gz

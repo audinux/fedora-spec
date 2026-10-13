@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz stargate.tar.gz stargate/*
 rm -rf stargate
-gpg --armor --detach-sign stargate.tar.gz
+md5sum stargate.tar.gz

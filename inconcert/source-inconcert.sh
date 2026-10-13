@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz inconcert.tar.gz inconcert/*
 rm -rf inconcert
-gpg --armor --detach-sign inconcert.tar.gz
+md5sum inconcert.tar.gz

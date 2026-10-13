@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz EmissionControl2.tar.gz EmissionControl2/*
 rm -rf EmissionControl2
-gpg --armor --detach-sign EmissionControl2.tar.gz
+md5sum EmissionControl2.tar.gz

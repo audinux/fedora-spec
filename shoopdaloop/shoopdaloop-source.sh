@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz shoopdaloop.tar.gz shoopdaloop/*
 rm -rf shoopdaloop
-gpg --armor --detach-sign shoopdaloop.tar.gz
+md5sum shoopdaloop.tar.gz

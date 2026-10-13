@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz valentine.tar.gz valentine/*
 rm -rf valentine
-gpg --armor --detach-sign valentine.tar.gz
+md5sum valentine.tar.gz

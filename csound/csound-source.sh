@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz csound.tar.gz csound/*
 rm -rf csound
-gpg --armor --detach-sign csound.tar.gz
+md5sum csound.tar.gz

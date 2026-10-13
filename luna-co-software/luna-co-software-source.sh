@@ -21,4 +21,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz dusk-audio-plugins.tar.gz dusk-audio-plugins/*
 rm -rf dusk-audio-plugins
-gpg --armor --detach-sign dusk-audio-plugins.tar.gz
+md5sum dusk-audio-plugins.tar.gz

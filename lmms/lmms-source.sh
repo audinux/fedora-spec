@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz lmms.tar.gz lmms/
 rm -rf lmms
-gpg --armor --detach-sign lmms.tar.gz
+md5sum lmms.tar.gz

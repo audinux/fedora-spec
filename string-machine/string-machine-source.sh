@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz string-machine.tar.gz string-machine/*
 rm -rf string-machine
-gpg --armor --detach-sign string-machine.tar.gz
+md5sum string-machine.tar.gz

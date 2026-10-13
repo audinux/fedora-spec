@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Maim.tar.gz Maim/*
 rm -rf Maim
-gpg --armor --detach-sign Maim.tar.gz
+md5sum Maim.tar.gz

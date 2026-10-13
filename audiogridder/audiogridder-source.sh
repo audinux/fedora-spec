@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz audiogridder.tar.gz audiogridder/*
 rm -rf audiogridder
-gpg --armor --detach-sign audiogridder.tar.gz
+md5sum audiogridder.tar.gz

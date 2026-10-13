@@ -15,4 +15,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz ATLAS-06-Synthesizer.tar.gz ATLAS-06-Synthesizer/*
 rm -rf ATLAS-06-Synthesizer
-gpg --armor --detach-sign ATLAS-06-Synthesizer.tar.gz
+md5sum ATLAS-06-Synthesizer.tar.gz

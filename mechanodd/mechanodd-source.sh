@@ -22,4 +22,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Mechanodd.tar.gz Mechanodd/*
 rm -rf Mechanodd
-gpg --armor --detach-sign Mechanodd.tar.gz
+md5sum Mechanodd.tar.gz

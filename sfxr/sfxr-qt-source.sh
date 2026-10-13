@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz sfxr-qt.tar.gz sfxr-qt/*
 rm -rf sfxr-qt
-gpg --armor --detach-sign sfxr-qt.tar.gz
+md5sum sfxr-qt.tar.gz

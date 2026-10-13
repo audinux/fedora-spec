@@ -19,4 +19,4 @@ rm -rf .git dpf/.git
 cd ..
 tar cvfz ChaffVerb.tar.gz ChaffVerb/*
 rm -rf ChaffVerb
-gpg --armor --detach-sign ChaffVerb.tar.gz
+md5sum ChaffVerb.tar.gz
