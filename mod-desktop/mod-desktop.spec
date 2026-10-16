@@ -1,5 +1,5 @@
 # Status: active
-# Tag: Rack, Jack
+# Tag: Rack, Jack, Qt
 # Type: Standalone
 # Category: Audio, Effect
 
@@ -44,7 +44,17 @@ Distribution: Audinux
 Source0: %{name}-%{shortcommit0}.tar.gz
 Source1: mod-desktop-source.sh
 
-BuildRequires: gcc gcc-c++
+# mod-host's Makefile infers jack_max_cpu_load() availability purely from
+# jack.pc's reported version, but Fedora's default JACK provider,
+# pipewire-jack-audio-connection-kit, reports a version >= 1.9.23 without
+# actually declaring that function in its jack.h, which fails the build
+# with "implicit declaration of function 'jack_max_cpu_load'". Probe for
+# a real, working declaration instead of trusting the reported version.
+Patch0: mod-desktop-fedora-jack-max-cpu-load.patch
+
+BuildRequires: gcc
+BuildRequires: gcc-c++
+BuildRequires: make
 BuildRequires: cmake
 BuildRequires: pkgconf-pkg-config
 BuildRequires: qt5-qtbase-devel
@@ -56,6 +66,12 @@ BuildRequires: lv2-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: python3-devel
 BuildRequires: desktop-file-utils
+# The build's check-system-python target imports these at build time.
+BuildRequires: python3-pillow
+BuildRequires: python3-tornado
+BuildRequires: python3-pycryptodomex
+# Not in Fedora's own repositories; provided by the Audinux copr.
+BuildRequires: python3-aggdraw
 
 Requires: python3
 Requires: python3-pillow
@@ -80,7 +96,7 @@ it does not bundle, start or stop a JACK server itself, and the bundled
 plugin collection is not built — install LV2 plugins separately.
 
 %prep
-%autosetup -n %{name}-%{shortcommit0}
+%autosetup -n %{name}-%{shortcommit0} -p1
 
 %build
 %set_build_flags
@@ -96,16 +112,16 @@ install -d -m 0755 "$appdir"
 install -d -m 0755 "$appdir/mod" "$appdir/modtools"
 
 # Qt tray launcher, JACK clients and MIDI tools
-install -m 0755 build-system/src/systray/mod-desktop              "$appdir/mod-desktop"
-install -m 0755 build-system/src/mod-host/mod-host                "$appdir/mod-host-native"
+install -m 0755 build-system/src/systray/mod-desktop     "$appdir/mod-desktop"
+install -m 0755 build-system/src/mod-host/mod-host        "$appdir/mod-host-native"
 install -m 0755 build-system/midi/mod-midi-merger-standalone      "$appdir/mod-midi-merger"
 install -m 0755 build-system/midi/mod-midi-broadcaster-standalone "$appdir/mod-midi-broadcaster"
-install -m 0755 build-system/src/mod-utils/libmod_utils.so        "$appdir/modtools/libmod_utils.so"
+install -m 0755 build-system/src/mod-utils/libmod_utils.so "$appdir/modtools/libmod_utils.so"
 
 # Python helpers run as subprocesses by mod-desktop/mod-ui, named without a
 # .py suffix so the sibling-binary lookups in utils/linux/system-host.py,
 # mod/screenshot.py and the Qt launcher (AppProcess) find them by that name.
-install -m 0644 utils/linux/system-host.py             "$appdir/mod-host.py"
+install -m 0644 utils/linux/system-host.py            "$appdir/mod-host.py"
 install -m 0644 utils/cxfreeze/mod-ui-setup.py         "$appdir/mod-ui.py"
 install -m 0644 utils/cxfreeze/mod-pedalboard-setup.py "$appdir/mod-pedalboard.py"
 for helper in mod-host mod-ui mod-pedalboard; do
@@ -120,9 +136,9 @@ done
 # mod-ui's Python package, HTML UI and default pedalboard
 cp -a src/mod-ui/mod/.      "$appdir/mod/"
 cp -a src/mod-ui/modtools/. "$appdir/modtools/"
-install -d -m 0755          "$appdir/html"
+install -d -m 0755 "$appdir/html"
 cp -a src/mod-ui/html/.     "$appdir/html/"
-install -d -m 0755          "$appdir/default.pedalboard"
+install -d -m 0755 "$appdir/default.pedalboard"
 cp -a src/mod-ui/default.pedalboard/. "$appdir/default.pedalboard/"
 
 # Factory pedalboards and misc metadata read relative to the binary
@@ -165,7 +181,8 @@ EOF
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 install -d -m 0755 %{buildroot}%{_datadir}/icons/hicolor/scalable/apps
-install -m 0644 res/mod-logo.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
+install -m 0644 res/mod-logo.svg \
+    %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 %files
 %license LICENSE src/mod-host/COPYING src/mod-ui/LICENSE src/mod-midi-merger/LICENSE
@@ -186,3 +203,12 @@ install -m 0644 res/mod-logo.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/
   as a private, non-PATH bundle under %%{_libexecdir}/mod-desktop since the
   Qt launcher and mod-ui locate their sibling mod-host/mod-ui/pedalboards/
   html files relative to the running binary's own directory
+- BuildRequires python3-pillow/tornado/pycryptodomex/aggdraw: the build's
+  check-system-python target imports them directly, so they must be
+  present in the build root too, not only at install time
+- patch mod-host's Makefile (mod-desktop-fedora-jack-max-cpu-load.patch)
+  to probe for a working jack_max_cpu_load() declaration instead of
+  trusting jack.pc's reported version: Fedora's default JACK provider,
+  pipewire-jack-audio-connection-kit, reports version >= 1.9.23 without
+  declaring that function in its jack.h, which failed the build with an
+  implicit-declaration error

@@ -1,0 +1,15 @@
+--- a/src/mod-host/Makefile	2026-10-16 09:44:40
++++ b/src/mod-host/Makefile	2026-10-16 09:44:40
+@@ -85,7 +85,11 @@
+ INCS += -DHAVE_JACK2
+ endif
+ 
+-ifeq ($(shell pkg-config --atleast-version=1.9.23 jack && echo true), true)
++# PipeWire's JACK compatibility layer (Fedora's default JACK provider)
++# reports a jack.pc version >= 1.9.23 but its jack.h does not declare
++# jack_max_cpu_load(), so probe for an actual working declaration instead
++# of trusting the reported version.
++ifeq ($(shell printf '#include <jack/jack.h>\nint main(void){ jack_client_t *c=0; jack_max_cpu_load(c); return 0; }\n' | $(CC) -xc - -o /dev/null -Werror=implicit-function-declaration $(shell pkg-config --cflags --libs jack) 2>/dev/null && echo true), true)
+ INCS += -DHAVE_JACK2_1_9_23
+ endif
+ 
