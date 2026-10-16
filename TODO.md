@@ -490,6 +490,7 @@
 | C99Euclid                                | https://github.com/ihateemoji/C99Euclid                                                                                                                     |
 | TugMidiSeq                               | https://github.com/TugrulAkyuz/TugMidiSeq                                                                                                                   |
 | VST-ace                                  | https://github.com/spacestate1/VST-ace                                                                                                                      |
+| Frippertron                              | https://github.com/elgaucholoco/Frippertron                                                                                                                 |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
