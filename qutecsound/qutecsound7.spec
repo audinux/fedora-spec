@@ -4,7 +4,7 @@
 # Category: Audio
 
 Name: qutecsound
-Version: 7.2.1
+Version: 7.3.1
 Release: 3%{?dist}
 Summary: A csound file editor
 URL: https://github.com/CsoundQt/CsoundQt
@@ -15,18 +15,17 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./csoundqt-source.sh <TAG>
-#        ./csoundqt-source.sh v7.2.1
+#        ./csoundqt-source.sh v7.3.1
 
 Source0: CsoundQt.tar.gz
-Source1: qutecsound.desktop
-Source2: qutecsound.xml
-Source3: csoundqt-source.sh
+Source1: csoundqt-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: pkgconfig(jack)
 BuildRequires: csound7-devel
 BuildRequires: qt6-qtbase-devel
 BuildRequires: qt6-linguist
+BuildRequires: qt6-qtdeclarative-devel
 BuildRequires: libsndfile-devel
 BuildRequires: desktop-file-utils
 
@@ -56,10 +55,16 @@ tool for experienced users.
 %install
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
-install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/applications/%{name}.desktop
+install -m 644 csoundqt.desktop %{buildroot}%{_datadir}/applications/
 
 install -m 755 -d %{buildroot}/%{_datadir}/mime/packages/
-install -m 644 %{SOURCE2} %{buildroot}%{_datadir}/mime/packages/%{name}.xml
+cp -a mime-types/*.xml %{buildroot}%{_datadir}/mime/packages/
+
+install -m 755 -d %{buildroot}/%{_bindir}/csoundqt
+install -m 755 bin/CsoundQt-d-cs7 %{buildroot}/%{_bindir}/csoundqt
+
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
+install -m 644 images/csoundqt.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
 
 # install qutecsound.desktop properly.
 desktop-file-install --vendor '' \
@@ -67,18 +72,23 @@ desktop-file-install --vendor '' \
         --add-category=Midi \
         --add-category=Sequencer \
         --dir %{buildroot}%{_datadir}/applications \
-        %{buildroot}%{_datadir}/applications/%{name}.desktop
+        %{buildroot}%{_datadir}/applications/csoundqt.desktop
 
 %files
-%doc ChangeLog README.md
+%doc README.md notes/* release_notes/*
 %license COPYING
-%{_bindir}/qutecsound
-%{_datadir}/applications/qutecsound.desktop
-%{_datadir}/mime/packages/qutecsound.xml
-%{_datadir}/icons/hicolor/*
-%{_datadir}/%{name}/
+%{_bindir}/*
+%{_datadir}/applications/csoundqt.desktop
+%{_datadir}/mime/packages/*.xml
+%{_datadir}/icons/hicolor/scalable/apps/*
 
 %changelog
+* Fri Oct 16 2026 Yann Collette <ycollette.nospam@free.fr> - 7.3.1-3
+- update to 7.3.1-3
+
+* Wed Oct 14 2026 Yann Collette <ycollette.nospam@free.fr> - 7.3.0-3
+- update to 7.3.0-3
+
 * Mon Sep 28 2026 Yann Collette <ycollette.nospam@free.fr> - 7.2.1-3
 - update to 7.2.1-3
 
