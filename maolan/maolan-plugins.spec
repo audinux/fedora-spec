@@ -7,7 +7,7 @@
 %global __brp_mangle_shebangs %{nil}
 
 Name: maolan-plugins
-Version: 0.1.1
+Version: 0.1.2
 Release: 1%{?dist}
 Summary: Maolan plugins
 License: BSD-2-Clause
@@ -105,6 +105,9 @@ install -m 755 target/release/libmaolan_plugins.so %{buildroot}%{_libdir}/clap/M
 %{_libdir}/clap/*
 
 %changelog
+* Wed Oct 14 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.2-1
+- update to 0.1.2-1
+
 * Sun Oct 11 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.1-1
 - update to 0.1.1-1
 
