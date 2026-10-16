@@ -6,14 +6,14 @@
 %define _lto_cflags %{nil}
 %global toolchain clang
 
-%define commit0_example 7205f76dda5e91bc7f5292c8af23b66d0f5a1c02
+%define commit0_example ac2f89e2f40e4f99032a94899a5630b26fd55876
 
 # TODO:
 # add https://github.com/ossia/score-addons
 # add https://github.com/ossia/score-user-library
 
 Name: ossia-score
-Version: 3.8.2
+Version: 3.9.0
 Release: 3%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL: https://github.com/OSSIA/score
@@ -44,6 +44,16 @@ BuildRequires: qt6-qtserialport-devel
 BuildRequires: qt6-qtwebsockets-devel
 BuildRequires: qt6-qtbase-private-devel
 BuildRequires: qt6-qtsvg-devel
+BuildRequires: qt6-qtcanvaspainter-devel
+BuildRequires: qt6-qtwebview-devel
+BuildRequires: qt6-qtnetworkauth-devel
+BuildRequires: qt6-qtquick3d-devel
+BuildRequires: qt6-qtquicktimeline-devel
+BuildRequires: sdl2-compat-devel
+BuildRequires: bluez-libs-devel
+BuildRequires: libfreenect-devel
+BuildRequires: turbojpeg-devel
+Buildrequires: openxr-devel
 BuildRequires: libxkbcommon-devel
 BuildRequires: sqlite-devel
 BuildRequires: lame-devel
@@ -133,6 +143,9 @@ cp -r score-examples-%{commit0_example}/* %{buildroot}/%{_datadir}/ossia/example
 %{_datadir}/ossia/examples/*
 
 %changelog
+* Fri Oct 16 2026 Yann Collette <ycollette.nospam@free.fr> - 3.9.0-3
+- update to version 3.9.0-3
+
 * Mon Mar 30 2026 Yann Collette <ycollette.nospam@free.fr> - 3.8.2-3
 - update to version 3.8.2-3 - cleanup
 
