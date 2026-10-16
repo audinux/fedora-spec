@@ -1211,7 +1211,8 @@ https://github.com/dguedry/linux-performer
 https://github.com/dlujic/open-riff-box
 https://github.com/sharph/s-rack
 https://github.com/mod-audio/mod-midi-merger
-https://github.com/elgaucholoco/Frippertron"
+https://github.com/elgaucholoco/Frippertron
+https://github.com/BurningTreeC/faderframe"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
