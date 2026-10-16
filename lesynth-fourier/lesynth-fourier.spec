@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: lesynth-fourier
-Version: 1.3.0
+Version: 1.4.0
 Release: 1%{?dist}
 Summary: A powerful Fourier synthesizer VST3 audio plugin built in Rust using the nih-plug framework
 URL: https://github.com/hlavnjak/lesynth-fourier
@@ -83,6 +83,9 @@ cp target/release/liblesynth_fourier.so %{buildroot}/%{_libdir}/vst3/LeSynthFour
 %{_libdir}/vst3/*
 
 %changelog
+* Wed Oct 14 2026 Yann Collette <ycollette.nospam@free.fr> - 1.4.0-1
+- update to 1.4.0-1
+
 * Mon Oct 12 2026 Yann Collette <ycollette.nospam@free.fr> - 1.3.0-1
 - update to 1.3.0-1
 
