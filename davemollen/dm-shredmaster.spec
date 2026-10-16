@@ -8,7 +8,7 @@
 %global commit0 46a2a0b3091535f7fc2031b7aaecd4e4811a2f45
 
 Name: dm-shredmaster
-Version: 0.1.2
+Version: 0.1.3
 Release: 1%{?dist}
 Summary: A distortion effect written in Rust modeled after the Marshall Shredmaster
 URL: https://github.com/davemollen/dm-Shredmaster
@@ -18,7 +18,7 @@ License: GPL-3.0-only
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/davemollen/dm-Shredmaster/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Source0: https://github.com/davemollen/dm-Shredmaster/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -63,7 +63,7 @@ LV2 version of %{name}
 
 %prep
 
-%autosetup -n dm-Shredmaster-%{commit0}
+%autosetup -n dm-Shredmaster-%{version}
 
 %build
 
@@ -118,6 +118,9 @@ cp -vfr dm-Shredmaster.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Oct 14 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.3-1
+- update to 0.1.3-1
+
 * Mon Mar 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.2-1
 - update to 0.1.2-1
 
