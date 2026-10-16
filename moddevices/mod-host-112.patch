@@ -1,0 +1,124 @@
+https://github.com/mod-audio/mod-host/pull/112
+Do not read before an empty command when trimming spaces
+
+diff --git a/.gitignore b/.gitignore
+index 75d9503..9f2bfdf 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -14,6 +14,7 @@ mod-host.install
+ mod-host.service
+ tests/effectlib_test
+ tests/rtmempool-test
++tests/utils-test
+ tests/self-test-result.json
+ src/info.h
+ PKGBUILD
+diff --git a/src/utils.c b/src/utils.c
+index 46674e7..c79e732 100644
+--- a/src/utils.c
++++ b/src/utils.c
+@@ -96,14 +96,14 @@ static void parse_quote(char *str)
+ 
+ static void trim_spaces(char *str)
+ {
+-    char *pstr = str;
++    char *pstr = str + strlen(str);
+     char c;
+ 
+-    while (*pstr) pstr++;
+-    while (1)
++    /* stop at the start: an empty or all-blank string has nothing before it to look at */
++    while (pstr > str)
+     {
+-        c = *(--pstr);
+-        if (c == ' ' || c == '\t' || c == '\r' || c == '\n') *pstr = 0;
++        c = *(pstr - 1);
++        if (c == ' ' || c == '\t' || c == '\r' || c == '\n') *(--pstr) = 0;
+         else break;
+     }
+ }
+diff --git a/tests/Makefile b/tests/Makefile
+index 4f6ebfd..51fdfc8 100644
+--- a/tests/Makefile
++++ b/tests/Makefile
+@@ -61,10 +61,16 @@ rtmempool-test: rtmempool-test.c ../src/rtmempool/*
+ rtmempool-run: rtmempool-test
+ 	valgrind --leak-check=full --show-reachable=yes ./$<
+ 
++utils-test: utils-test.c ../src/utils.c ../src/utils.h
++	$(CC) $< -std=gnu99 -D_GNU_SOURCE -O1 -g -Wall -Wextra -fsanitize=address -fno-omit-frame-pointer -I../src -lm -o $@
++
++utils-run: utils-test
++	./$<
++
+ # meta-rule to generate the object files
+ %.o: %.$(EXT)
+ 	$(CC) $(CFLAGS) -c $(INCS) -o $@ $<
+ 
+ # clean rule
+ clean:
+-	$(RM) $(SRC_DIR)/*.o $(PROG)
++	$(RM) $(SRC_DIR)/*.o $(PROG) utils-test
+diff --git a/tests/utils-test.c b/tests/utils-test.c
+new file mode 100644
+index 0000000..54ccec2
+--- /dev/null
++++ b/tests/utils-test.c
+@@ -0,0 +1,57 @@
++/*
++ * Checks that strarr_split() stays inside the string it splits, whatever it holds.
++ *
++ * Each string is copied into an allocation of exactly its size, so AddressSanitizer reports any byte read or
++ * written outside it. Build and run with "make utils-run" in this directory.
++ */
++
++#include "../src/utils.c"
++
++#include <stdio.h>
++
++static int g_failures;
++
++static void check(const char *input, const char *first)
++{
++    size_t size = strlen(input) + 1;
++    char *str = malloc(size);
++    char **list;
++
++    memcpy(str, input, size);
++    list = strarr_split(str);
++
++    if (list != NULL && strcmp(list[0], first) == 0)
++    {
++        printf("ok      \"%s\"\n", input);
++    }
++    else
++    {
++        printf("FAILED  \"%s\": expected first token \"%s\", got \"%s\"\n", input, first, list ? list[0] : "(null)");
++        g_failures++;
++    }
++
++    free(list);
++    free(str);
++}
++
++int main(void)
++{
++    /* line by line, so the results are out before a sanitizer report ends the process */
++    setvbuf(stdout, NULL, _IOLBF, 0);
++
++    check("cpu_load", "cpu_load");
++    check("cpu_load   ", "cpu_load");
++    check("param_get 0 gain", "param_get");
++    check("", "");
++    check("   ", "");
++    check(" \t\r\n", "");
++
++    if (g_failures)
++    {
++        printf("%d check(s) failed\n", g_failures);
++        return EXIT_FAILURE;
++    }
++
++    printf("all checks passed\n");
++    return EXIT_SUCCESS;
++}
