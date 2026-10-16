@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: neothesia
-Version: 0.5.0
+Version: 0.5.1
 Release: 1%{?dist}
 Summary: Flashy Synthesia Like Software
 License: GPL-3.0-or-later
@@ -86,6 +86,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/com.githu
 %{_datadir}/metainfo/com.github.polymeilex.neothesia.metainfo.xml
 
 %changelog
+* Fri Oct 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.5.1-1
+- update to 0.5.1-1
+
 * Fri Sep 25 2026 Yann Collette <ycollette.nospam@free.fr> - 0.5.0-1
 - update to 0.5.0-1
 
