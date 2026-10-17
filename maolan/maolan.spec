@@ -7,7 +7,7 @@
 %global __brp_mangle_shebangs %{nil}
 
 Name: maolan
-Version: 0.3.1
+Version: 0.4.0
 Release: 1%{?dist}
 Summary: Maolan is a Rust DAW focused on recording, editing, routing, automation, export, and plugin hosting
 License: BSD-2-Clause
@@ -35,7 +35,6 @@ BuildRequires: rubberband-devel
 BuildRequires: gtk2-devel
 BuildRequires: (ffmpeg-devel or ffmpeg-free-devel)
 BuildRequires: clang-devel
-BuildRequires: cargo-rpm-macros
 BuildRequires: desktop-file-utils
 
 %description
@@ -73,6 +72,7 @@ rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linu
 source cargo/env
 
 export LIBCLANG_PATH=/usr/lib64/
+export AWS_LC_SYS_NO_JITTER_ENTROPY=1
 cargo build --release
 
 %install
@@ -110,6 +110,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/fonts/%{name}/*
 
 %changelog
+* Sat Oct 17 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.0-1
+- update to 0.4.0-1
+
 * Thu Oct 08 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.1-1
 - update to 0.3.1-1
 
