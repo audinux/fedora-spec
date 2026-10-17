@@ -3,22 +3,22 @@
 # Type: Plugin, Standalone, VST3
 # Category: Effect
 
-Name: linux-performer
-Version: 0.1.48
+Name: stagerig
+Version: 0.1.54
 Release: 1%{?dist}
 Summary: A live-performance plugin host for Linux
 License: GPL-2.0-or-later
-URL: https://github.com/dguedry/linux-performer
+URL: https://github.com/dguedry/stagerig
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
 Distribution: Audinux
 
-# Usage: ./linux-performer-source.sh <TAG>
-#        ./linux-performer-source.sh v0.1.48
+# Usage: ./stagerig-source.sh <TAG>
+#        ./stagerig-source.sh v0.1.54
 
-Source0: linux-performer.tar.gz
-Source1: linux-performer-source.sh
+Source0: stagerig.tar.gz
+Source1: stagerig-source.sh
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -66,6 +66,9 @@ bridged with yabridge work like any other plugin.
   and add it to the home screen if you like.
   Performer can serve its own wifi network when the venue has none.
 
+Obsoletes: linux-performer
+Provides: linux-performer = %{version}-%{release}
+
 %prep
 %autosetup -n %{name}
 
@@ -81,10 +84,10 @@ bridged with yabridge work like any other plugin.
 desktop-file-install                         \
   --delete-original                          \
   --dir=%{buildroot}%{_datadir}/applications \
-  %{buildroot}/%{_datadir}/applications/performer.desktop
+  %{buildroot}/%{_datadir}/applications/stagerig.desktop
 
 %check
-desktop-file-validate %{buildroot}%{_datadir}/applications/performer.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/stagerig.desktop
 
 %files
 %doc README.md docs/*
@@ -102,6 +105,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/performer.desktop
 %{_datadir}/icons/hicolor/512x512/apps/*
 
 %changelog
+* Sat Oct 17 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.54-1
+- update to 0.1.54-1
+
 * Fri Oct 16 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.48-1
 - update to 0.1.48-1
 
