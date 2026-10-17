@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: lv2-triceratops
-Version: 0.5.0
+Version: 0.8.5
 Release: 13%{?dist}
 Summary: An LV2 polyphonic synthesizer
 # license specified in headers and in plugin manifest (triceratops.ttl) is ISC
@@ -16,64 +16,107 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://sourceforge.net/projects/triceratops/files/triceratops_v0.5.0_Oct_2022.tar.gz
+Source0: https://sourceforge.net/projects/triceratops/files/triceratops-%{version}.tar.gz
 
 BuildRequires: gcc-c++
 BuildRequires: make
-BuildRequires: python2.7
 BuildRequires: pkgconfig(jack)
 BuildRequires: libsamplerate-devel
 BuildRequires: libsndfile-devel
 BuildRequires: lv2-devel
-BuildRequires: gtkmm24-devel
+BuildRequires: dssi-devel
+BuildRequires: liblo-devel
+BuildRequires: alsa-lib-devel
+BuildRequires: freetype-devel
+BuildRequires: libX11-devel
+BuildRequires: cairo-devel
+BuildRequires: libglvnd-devel
 
 %description
 Triceratops a polyphonic subtractive synthesizer plugin for use with the LV2
 architecture, there is no standalone version and LV2 is required along
 with a suitable host (e.g. Jalv, Zynjacku, Ardour, Qtractor).
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: ISC
+
+%description -n license-%{name}
+License and documentation for %{name}
+
+%package -n vst-%{name}
+Summary: VST2 version of %{name}
+License: ISC
+Requires: license-%{name}
+
+%description -n vst-%{name}
+VST version of %{name}
+
+%package -n lv2-%{name}
+Summary: LV2 version of %{name}
+License: ISC
+Requires: license-%{name}
+
+%description -n lv2-%{name}
+LV2 version of %{name}
+
+%package -n dssi-%{name}
+Summary: DSSI version of %{name}
+License: ISC
+Requires: license-%{name}
+
+%description -n dssi-%{name}
+DSSI version of %{name}
+
 %prep
-%autosetup -c -n triceratops-lv2-v0.0.4
-# this is a bug in the installer script - however -finline-functions is necessary here
-# https://sourceforge.net/p/triceratops/featurerequests/3/
-sed -i -e "s|-lX11'],'-finline-functions'|-lX11','-finline-functions']|" triceratops/wscript
-sed -i -e "s|\['-O3','-std=c++0x'\]|'-std=c++0x %{optflags}'.split(' ')|" triceratops/wscript
-# Force use of python2
-sed -i -e "s|env python|env python2|g" triceratops/waf
-sed -i -e "s|env python|env python2|g" triceratops/wscript
-# set LV2PATH
-sed -i -e "/conf.env.LV2DIR/d" triceratops/wscript
+%autosetup -c -n triceratops-lv2-%{version}
 
 %build
 
 cd triceratops
 
-export CXXFLAGS="%{optflags} -fPIC"
-export LV2_PATH=:%{_libdir}/lv2
-
-./waf configure -vv --prefix=%{_prefix} --libdir=%{_libdir}
-./waf -vv %{?_smp_mflags}
+%make_build SKIP_STRIPPING=true
 
 %install
 
 cd triceratops
 
-./waf install --destdir=%{buildroot}
+install -m 755 -d %{buildroot}/%{_libdir}/lv2/
+cp -ra bin/triceratops.lv2 %{buildroot}/%{_libdir}/lv2/
+cp -ra plugins/triceratops/triceratops_presets.lv2 %{buildroot}/%{_libdir}/lv2/
 
-mkdir -p %{buildroot}%{_libdir}/lv2/
-mv %{buildroot}/triceratops.lv2 %{buildroot}%{_libdir}/lv2/
-mv %{buildroot}/triceratops-presets.lv2 %{buildroot}%{_libdir}/lv2/
-rm  -rf %{buildroot}%{_libdir}/lv2/triceratops-presets.lv2/.directory
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 bin/triceratops %{buildroot}/%{_bindir}/
+
+install -m 755 -d %{buildroot}/%{_libdir}/dssi/
+cp -ra bin/triceratops-dssi %{buildroot}/%{_libdir}/dssi/
+cp -ra bin/triceratops-dssi.so %{buildroot}/%{_libdir}/dssi/
+
+install -m 755 -d %{buildroot}/%{_libdir}/vst/
+install -m 755 bin/triceratops-vst.so %{buildroot}/%{_libdir}/vst/
 
 %files
+%{_bindir}/*
+
+%files -n license-%{name}
 # do not include COPYING - it is GPLV3 where the project is clearly ISC
 # https://sourceforge.net/p/triceratops/featurerequests/4/
-%doc triceratops/README triceratops/AUTHORS
+%doc triceratops/README.md triceratops/AUTHORS
 %license triceratops/COPYING
-%{_libdir}/lv2/triceratops.lv2
-%{_libdir}/lv2/triceratops-presets.lv2
+
+%files -n lv2-%{name}
+%{_libdir}/lv2/*
+
+%files -n vst-%{name}
+%{_libdir}/vst/*
+
+%files -n dssi-%{name}
+%{_libdir}/dssi/*
 
 %changelog
+* Sat Oct 17 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.5-19
+- update to 0.8.5-19
+
 * Mon Oct 25 2021 Yann Collette <ycollette.nospam@free.fr> - 0.5.0.19
 - update to 0.5.0-19
 
