@@ -5,7 +5,7 @@
 
 Name: splash
 Version: 0.12.6
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Modular video-mapping software
 License: GPL-3.0-only
 URL: https://gitlab.com/splashmapper/splash
@@ -59,6 +59,8 @@ Splash, a multi-projector video-mapping software
 %prep
 %autosetup -n %{name}
 
+sed -i -e "s/-march=native/%{__cflags_arch_x86_64}/g" CMakeLists.txt
+
 %build
 
 %set_build_flags
@@ -97,6 +99,9 @@ mv %{buildroot}/%{_datadir}/fonts/*.ttf %{buildroot}/%{_datadir}/fonts/%{name}/
 %{_datadir}/%{name}/*
 
 %changelog
+* Sat Oct 17 2026 Yann Collette <ycollette.nospam@free.fr> - 0.12.6-3
+- update to 0.12.6-3 - disable native build once again
+
 * Sun Oct 04 2026 Yann Collette <ycollette.nospam@free.fr> - 0.12.6-2
 - update to 0.12.6-2 - disable native build
 
