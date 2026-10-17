@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz odin2.tar.gz odin2/*
 rm -rf odin2
-md5sum odin2.tar.gz
+md5sum odin2.tar.gz > odin2-md5sum.txt

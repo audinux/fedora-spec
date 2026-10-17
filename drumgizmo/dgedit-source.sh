@@ -17,4 +17,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz dgedit.tar.gz dgedit/*
 rm -rf dgedit
-md5sum dgedit.tar.gz
+md5sum dgedit.tar.gz > dgedit-md5sum.txt

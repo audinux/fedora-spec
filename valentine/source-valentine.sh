@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz valentine.tar.gz valentine/*
 rm -rf valentine
-md5sum valentine.tar.gz
+md5sum valentine.tar.gz > valentine-md5sum.txt

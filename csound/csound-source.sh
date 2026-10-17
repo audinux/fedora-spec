@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz csound.tar.gz csound/*
 rm -rf csound
-md5sum csound.tar.gz
+md5sum csound.tar.gz > csound-md5sum.txt

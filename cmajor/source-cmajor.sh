@@ -32,4 +32,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz cmajor.tar.gz cmajor/*
 rm -rf cmajor
-md5sum cmajor.tar.gz
+md5sum cmajor.tar.gz > cmajor-md5sum.txt

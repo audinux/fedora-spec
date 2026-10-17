@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Maim.tar.gz Maim/*
 rm -rf Maim
-md5sum Maim.tar.gz
+md5sum Maim.tar.gz > Maim-md5sum.txt

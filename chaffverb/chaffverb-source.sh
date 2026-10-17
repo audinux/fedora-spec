@@ -19,4 +19,4 @@ rm -rf .git dpf/.git
 cd ..
 tar cvfz ChaffVerb.tar.gz ChaffVerb/*
 rm -rf ChaffVerb
-md5sum ChaffVerb.tar.gz
+md5sum ChaffVerb.tar.gz > ChaffVerb-md5sum.txt

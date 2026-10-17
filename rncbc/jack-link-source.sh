@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz jack_link.tar.gz jack_link/*
 rm -rf jack_link
-md5sum jack_link.tar.gz
+md5sum jack_link.tar.gz > jack_link-md5sum.txt

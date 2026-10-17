@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz grandorgue.tar.gz grandorgue/*
 rm -rf grandorgue
-md5sum grandorgue.tar.gz
+md5sum grandorgue.tar.gz > grandorgue-md5sum.txt

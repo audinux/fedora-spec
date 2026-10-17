@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Camomile.tar.gz Camomile/*
 rm -rf Camomile
-md5sum Camomile.tar.gz
+md5sum Camomile.tar.gz > Camomile-md5sum.txt

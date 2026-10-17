@@ -18,4 +18,4 @@ make dist
 mv *.tar.xz ..
 cd ..
 rm -rf zam-plugins
-md5sum zam-plugins.tar.gz
+md5sum zam-plugins.tar.gz > zam-plugins-md5sum.txt

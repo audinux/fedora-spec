@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz sc3-plugins.tar.gz sc3-plugins
 rm -rf sc3-plugins
-md5sum sc3-plugins.tar.gz
+md5sum sc3-plugins.tar.gz > sc3-plugins-md5sum.txt

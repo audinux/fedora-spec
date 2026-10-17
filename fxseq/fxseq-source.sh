@@ -23,4 +23,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz fxseq.tar.gz fxseq/*
 rm -rf fxseq
-md5sum fxseq.tar.gz
+md5sum fxseq.tar.gz > fxseq-md5sum.txt

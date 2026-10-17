@@ -19,4 +19,4 @@ find . -name ".git" -exec rm -rf {} \;
 cd ..
 tar cvfz AudibleInstruments.tar.gz AudibleInstruments
 rm -rf AudibleInstruments
-md5sum AudibleInstruments.tar.gz
+md5sum AudibleInstruments.tar.gz > AudibleInstruments-md5sum.txt

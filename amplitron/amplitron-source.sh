@@ -24,4 +24,4 @@ cd ..
 
 tar cvfz Amplitron.tar.gz Amplitron/*
 rm -rf Amplitron
-md5sum Amplitron.tar.gz
+md5sum Amplitron.tar.gz > Amplitron-md5sum.txt

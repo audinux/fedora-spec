@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz non-mixer-xt.tar.gz non-mixer-xt/*
 rm -rf non-mixer-xt
-md5sum non-mixer-xt.tar.gz
+md5sum non-mixer-xt.tar.gz > non-mixer-xt-md5sum.txt

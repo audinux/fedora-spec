@@ -14,4 +14,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz traverso.tar.gz traverso
 rm -rf traverso
-md5sum traverso.tar.gz
+md5sum traverso.tar.gz > traverso-md5sum.txt

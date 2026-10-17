@@ -28,4 +28,4 @@ fi
 cd ..
 tar cvfz formula.tar.gz formula/*
 rm -rf formula
-md5sum formula.tar.gz
+md5sum formula.tar.gz > formula-md5sum.txt

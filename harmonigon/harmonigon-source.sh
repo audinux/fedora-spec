@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Harmonigon.tar.gz Harmonigon/*
 rm -rf Harmonigon
-md5sum Harmonigon.tar.gz
+md5sum Harmonigon.tar.gz > Harmonigon-md5sum.txt

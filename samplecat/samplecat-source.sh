@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz samplecat.tar.gz samplecat/*
 rm -rf samplecat
-md5sum samplecat.tar.gz
+md5sum samplecat.tar.gz > samplecat-md5sum.txt

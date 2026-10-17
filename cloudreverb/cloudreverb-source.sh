@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz CloudReverb.tar.gz CloudReverb/*
 rm -rf CloudReverb
-md5sum CloudReverb.tar.gz
+md5sum CloudReverb.tar.gz > CloudReverb-md5sum.txt

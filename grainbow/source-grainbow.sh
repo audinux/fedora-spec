@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz gRainbow.tar.gz gRainbow/*
 rm -rf gRainbow
-md5sum gRainbow.tar.gz
+md5sum gRainbow.tar.gz > gRainbow-md5sum.txt

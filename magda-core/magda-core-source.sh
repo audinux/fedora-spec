@@ -20,4 +20,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz magda-core.tar.gz magda-core/*
 rm -rf magda-core
-md5sum magda-core.tar.gz
+md5sum magda-core.tar.gz > magda-core-md5sum.txt

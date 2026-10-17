@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz amsynth.tar.gz amsynth/*
 rm -rf amsynth
-md5sum amsynth.tar.gz
+md5sum amsynth.tar.gz > amsynth-md5sum.txt

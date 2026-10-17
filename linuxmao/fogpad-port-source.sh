@@ -17,4 +17,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz fogpad-port.tar.gz fogpad-port/*
 rm -rf fogpad-port
-md5sum fogpad-port.tar.gz
+md5sum fogpad-port.tar.gz > fogpad-port-md5sum.txt

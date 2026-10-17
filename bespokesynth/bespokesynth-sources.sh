@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz BespokeSynth.tar.gz BespokeSynth/*
 rm -rf BespokeSynth
-md5sum BespokeSynth.tar.gz
+md5sum BespokeSynth.tar.gz > BespokeSynth-md5sum.txt

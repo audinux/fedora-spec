@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz GuitarMidi-LV2.tar.gz GuitarMidi-LV2/*
 rm -rf GuitarMidi-LV2
-md5sum GuitarMidi-LV2.tar.gz
+md5sum GuitarMidi-LV2.tar.gz > GuitarMidi-LV2-md5sum.txt

@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz vimix.tar.gz vimix/*
 rm -rf vimix
-md5sum vimix.tar.gz
+md5sum vimix.tar.gz > vimix-md5sum.txt

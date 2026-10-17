@@ -23,4 +23,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz stone-phaser.tar.gz stone-phaser/*
 rm -rf stone-phaser
-md5sum stone-phaser.tar.gz
+md5sum stone-phaser.tar.gz > stone-phaser-md5sum.txt

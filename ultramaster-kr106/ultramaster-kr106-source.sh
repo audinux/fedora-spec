@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz ultramaster_kr106.tar.gz ultramaster_kr106/*
 rm -rf ultramaster_kr106
-md5sum ultramaster_kr106.tar.gz
+md5sum ultramaster_kr106.tar.gz > ultramaster_kr106-md5sum.txt

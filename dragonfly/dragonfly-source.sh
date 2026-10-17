@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz dragonfly-reverb.tar.gz dragonfly-reverb/*
 rm -rf dragonfly-reverb
-md5sum dragonfly-reverb.tar.gz
+md5sum dragonfly-reverb.tar.gz > dragonfly-reverb-md5sum.txt

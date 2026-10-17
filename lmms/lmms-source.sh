@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz lmms.tar.gz lmms/
 rm -rf lmms
-md5sum lmms.tar.gz
+md5sum lmms.tar.gz > lmms-md5sum.txt

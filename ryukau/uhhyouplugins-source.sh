@@ -20,4 +20,4 @@ cd ..
 mv VSTPlugins
 tar cvfz VSTPlugins.tar.gz VSTPlugins/*
 rm -rf VSTPlugins
-md5sum VSTPlugins.tar.gz
+md5sum VSTPlugins.tar.gz > VSTPlugins-md5sum.txt

@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz purr-data.tar.gz purr-data
 rm -rf purr-data
-md5sum purr-data.tar.gz
+md5sum purr-data.tar.gz > purr-data-md5sum.txt

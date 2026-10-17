@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz splash.tar.gz splash/*
 rm -rf splash
-md5sum splash.tar.gz
+md5sum splash.tar.gz > splash-md5sum.txt

@@ -24,4 +24,4 @@ rm -rf plugins/WinVST
 cd ..
 tar cvfz airwindows.tar.gz airwindows/*
 rm -rf airwindows
-md5sum airwindows.tar.gz
+md5sum airwindows.tar.gz > airwindows-md5sum.txt

@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz Frequalizer.tar.gz Frequalizer/*
 rm -rf Frequalizer
-md5sum Frequalizer.tar.gz
+md5sum Frequalizer.tar.gz > Frequalizer-md5sum.txt

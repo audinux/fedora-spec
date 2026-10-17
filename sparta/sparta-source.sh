@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz SPARTA.tar.gz SPARTA/*
 rm -rf SPARTA
-md5sum SPARTA.tar.gz
+md5sum SPARTA.tar.gz > SPARTA-md5sum.txt

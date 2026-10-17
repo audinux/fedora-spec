@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz hydrogen.tar.gz hydrogen/*
 rm -rf hydrogen
-md5sum hydrogen.tar.gz
+md5sum hydrogen.tar.gz > hydrogen-md5sum.txt

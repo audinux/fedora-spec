@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz midilooper.tar.gz midilooper/
 rm -rf midilooper
-md5sum midilooper.tar.gz
+md5sum midilooper.tar.gz > midilooper-md5sum.txt

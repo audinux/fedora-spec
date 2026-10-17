@@ -19,4 +19,4 @@ find . -name .git -exec rm -rf {} \;
 cd ..
 tar cvfz sfizz-ui.tar.gz sfizz-ui/*
 rm -rf sfizz-ui
-md5sum sfizz-ui.tar.gz
+md5sum sfizz-ui.tar.gz > sfizz-ui-md5sum.txt
