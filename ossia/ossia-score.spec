@@ -14,7 +14,7 @@
 
 Name: ossia-score
 Version: 3.9.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: ossia score is a sequencer for audio-visual artists, designed to create interactive shows
 URL: https://github.com/OSSIA/score
 ExclusiveArch: x86_64
@@ -57,7 +57,7 @@ Buildrequires: openxr-devel
 BuildRequires: libxkbcommon-devel
 BuildRequires: sqlite-devel
 BuildRequires: lame-devel
-BuildRequires: (ffmpeg-devel or ffmpeg-free-devel)
+BuildRequires: (ffmpeg-free-devel or ffmpeg-devel)
 BuildRequires: portmidi-devel
 BuildRequires: portaudio-devel
 BuildRequires: lilv-devel
@@ -91,13 +91,13 @@ Examples for %{name}.
 
 unzip %{SOURCE1}
 
+sed -i -e "s|-march=native|%{__cflags_arch_x86_64}|g" cmake/ScoreConfiguration.cmake
+
 %build
 
 %set_build_flags
 
 export CXXFLAGS=`echo $CXXFLAGS | sed -e "s|-Wp,-D_GLIBCXX_ASSERTIONS||g"`
-export CXXFLAGS="-march=generic $CXXFLAGS"
-export CFLAGS="-march=generic $CFLAGS"
 
 %cmake -DCMAKE_UNITY_BUILD=ON \
        -DCMAKE_BUILD_TYPE=RELEASE \
@@ -143,6 +143,9 @@ cp -r score-examples-%{commit0_example}/* %{buildroot}/%{_datadir}/ossia/example
 %{_datadir}/ossia/examples/*
 
 %changelog
+* Fri Oct 16 2026 Yann Collette <ycollette.nospam@free.fr> - 3.9.0-4
+- update to version 3.9.0-4 - try to remove native flag
+
 * Fri Oct 16 2026 Yann Collette <ycollette.nospam@free.fr> - 3.9.0-3
 - update to version 3.9.0-3
 
