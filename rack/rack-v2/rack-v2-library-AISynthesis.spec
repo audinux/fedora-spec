@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 f974aa9499069d56d96245f129bf99bd8114d962
-%global gittag0 2.0.1
+%global commit0 5f599a8fb58e345d7a81a7b233cf945ab1c2eea6
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-AISynthesis
-Version: 2.0.1
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: AISynthesis plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r AISynthesis_plugin/dist/AISynthesis/* %{buildroot}%{_libexecdir}/Rack2/plu
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
