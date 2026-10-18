@@ -4,7 +4,7 @@
 # Category: DAW, MIDI
 
 Name: noteahead
-Version: 9.0.0
+Version: 10.0.0
 Release: 1%{?dist}
 Summary: A simple MIDI tracker and sequencer
 License: GPL-2.0-or-later
@@ -72,6 +72,9 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/noteahea
 %{_datadir}/pixmaps/*.png
 
 %changelog
+* Sun Oct 18 2026 Yann Collette <ycollette.nospam@free.fr> - 10.0.0-1
+- update to 10.0.0-1
+
 * Fri Oct 02 2026 Yann Collette <ycollette.nospam@free.fr> - 9.0.0-1
 - update to 9.0.0-1
 
