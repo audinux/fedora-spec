@@ -49,9 +49,15 @@ NOTE: Example files are in /usr/share/ams
 %prep
 %autosetup -p1 -n %{name}-%{version}
 
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+
 autoreconf -i
 
 %build
+
+%set_build_flags
+export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
 
 %configure --with-ladspa-path=%{_libdir}/ladspa
 find . -name Makefile -exec sed -i -e "s/qt=qt5/qt=5/g" {} \;
