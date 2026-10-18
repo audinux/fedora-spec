@@ -5,7 +5,7 @@
 
 %define _lto_cflags %{nil}
 
-%define pkgver 26.7
+%define pkgver 26.8
 %define tarname snd-%{pkgver}
 %define snd_date "02/13/2026"
 
@@ -180,6 +180,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_bindir}/snd-info
 
 %changelog
+* Sun Oct 18 2026 Yann Collette <ycollette.nospam@free.fr> - 26.8-4
+- update to 26.8-4
+
 * Thu Sep 10 2026 Yann Collette <ycollette.nospam@free.fr> - 26.7-4
 - update to 26.7-4
 
