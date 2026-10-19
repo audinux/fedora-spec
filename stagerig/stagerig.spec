@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: stagerig
-Version: 0.1.55
+Version: 0.1.75
 Release: 1%{?dist}
 Summary: A live-performance plugin host for Linux
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./stagerig-source.sh <TAG>
-#        ./stagerig-source.sh v0.1.55
+#        ./stagerig-source.sh v0.1.75
 
 Source0: stagerig.tar.gz
 Source1: stagerig-source.sh
@@ -84,16 +84,17 @@ Provides: linux-performer = %{version}-%{release}
 desktop-file-install                         \
   --delete-original                          \
   --dir=%{buildroot}%{_datadir}/applications \
-  %{buildroot}/%{_datadir}/applications/stagerig.desktop
+  %{buildroot}/%{_datadir}/applications/io.github.dguedry.StageRig.desktop
 
 %check
-desktop-file-validate %{buildroot}%{_datadir}/applications/stagerig.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/io.github.dguedry.StageRig.desktop
 
 %files
 %doc README.md docs/*
 %license LICENSE
 %{_bindir}/*
 %{_datadir}/applications/*
+%{_datadir}/metainfo/*
 %{_datadir}/icons/hicolor/scalable/apps/*
 %{_datadir}/icons/hicolor/16x16/apps/*
 %{_datadir}/icons/hicolor/24x24/apps/*
@@ -103,8 +104,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/stagerig.desktop
 %{_datadir}/icons/hicolor/128x128/apps/*
 %{_datadir}/icons/hicolor/256x256/apps/*
 %{_datadir}/icons/hicolor/512x512/apps/*
+%{_mandir}/man1/*
 
 %changelog
+* Mon Oct 19 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.75-1
+- update to 0.1.75-1
+
 * Sun Oct 18 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.55-1
 - update to 0.1.55-1
 
