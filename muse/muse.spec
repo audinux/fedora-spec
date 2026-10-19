@@ -3,7 +3,7 @@
 # Type: Standalone
 # Category: DAW, MIDI
 
-%global majorver 4.2
+%global majorver 4.3
 # No need to provide & require internal libraries
 %global _privatelibs libmuse_.*[.]so.*
 %global __provides_exclude ^(%{_privatelibs})$
@@ -17,7 +17,7 @@ Summary: Midi/Audio Music Sequencer
 # Epoch is set to 1 for PlanetCCRMA compatibility.
 # See: https://fedoraproject.org/wiki/AudioCreation
 Epoch: 1
-Version: %{majorver}.1
+Version: %{majorver}
 Release: 10%{?dist}
 License: LicenseRef-Callaway-Public-Domain AND GPL-2.0-only AND GPL-2.0-or-later AND LicenseRef-Callaway-LGPLv2+
 URL: https://muse-sequencer.github.io/
@@ -27,7 +27,7 @@ URL: https://muse-sequencer.github.io/
 # The rest, including the core of muse is distributed under GPLv2+
 # Automatically converted from old format: Public Domain and GPLv2 and GPLv2+ and LGPLv2+ - review is highly recommended.
 
-Source0: https://github.com/muse-sequencer/%{name}/releases/download/%{version}/%{name}-%{version}.tar.gz
+Source0: https://github.com/muse-sequencer/%{name}/releases/download/%{version}.0/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -100,6 +100,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/io.github
 %{_datadir}/metainfo/io.github.muse_sequencer.Muse.appdata.xml
 
 %changelog
+* Mon Oct 19 2026 Yann Collette <ycollette.nospam@free.fr> - 1:4.3.1-10
+- update to 1:4.3.1-10
+
 * Tue Apr 28 2026 Yann Collette <ycollette.nospam@free.fr> - 1:4.2.1-10
 - update to 1:4.2.1-10 - fix build for Audinux
 
