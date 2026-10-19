@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: ca-72
-Version: 0.2.5
+Version: 0.2.7
 Release: 1%{?dist}
 Summary: A  a synthesizer plug-in modelled from the circuit of a 1970s analogue synthesizer
 License: GPL-3.0-or-later
@@ -29,6 +29,9 @@ BuildRequires: openssl-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: python3
+BuildRequires: desktop-file-utils
+
+Requires: license-%{name}
 
 %description
 A synthesizer by Idle Foundry: monophonic like the instrument it models, or one whole instrument
@@ -88,14 +91,39 @@ rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linu
 source cargo/env
 
 cargo xtask bundle ca72-plugin --profile bundle
+cargo build --locked -p ca72-plugin --bin ca72-standalone --features standalone-production --profile bundle
 
 %install
+
+install -m 755 -d %{buildroot}/%{_bindir}/
+install -m 755 target/bundle/ca72-standalone %{buildroot}/%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
 cp -vfr target/bundled/CA-72.vst3 %{buildroot}/%{_libdir}/vst3/
 
 install -m 755 -d %{buildroot}/%{_libdir}/clap/
 cp -vfr target/bundled/CA-72.clap %{buildroot}/%{_libdir}/clap/
+
+# Install icon
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
+install -m 644 scripts/standalone/icon.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/com.idlefoundry.ca72.svg
+
+# Install desktop files
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+install -m 644 scripts/standalone/CA-72.desktop %{buildroot}/%{_datadir}/applications/
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/CA-72.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/CA-72.desktop
+
+%files
+%{_bindir}/*
+%{_datadir}/applications/*
+%{_datadir}/icons/hicolor/scalable/apps/*
 
 %files -n license-%{name}
 %doc README.md docs/*
@@ -108,6 +136,12 @@ cp -vfr target/bundled/CA-72.clap %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Mon Oct 19 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.7-1
+- update to 0.2.7-1
+
+* Mon Oct 19 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.6-1
+- update to 0.2.6-1
+
 * Sun Oct 18 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.5-1
 - update to 0.2.5-1
 
