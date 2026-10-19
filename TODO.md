@@ -490,6 +490,7 @@
 | C99Euclid                                | https://github.com/ihateemoji/C99Euclid                                                                                                                     |
 | TugMidiSeq                               | https://github.com/TugrulAkyuz/TugMidiSeq                                                                                                                   |
 | VST-ace                                  | https://github.com/spacestate1/VST-ace                                                                                                                      |
+| MzDebirth                                | https://github.com/simozzer/MzDebirth                                                                                                                       |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
