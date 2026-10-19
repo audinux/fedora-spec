@@ -1133,7 +1133,6 @@ https://github.com/brummer10/SmoothIR
 https://github.com/reduz/chibitracker
 https://github.com/pac-dev/protoplug
 https://github.com/ycollet/protoplug
-https://github.com/muse-sequencer/muse
 https://github.com/DatanoiseTV/spice-oss
 https://github.com/AnClark/ClassicReverb-RE02
 https://github.com/AnClark/ClassicReverb-RE03
@@ -1213,7 +1212,8 @@ https://github.com/sharph/s-rack
 https://github.com/mod-audio/mod-midi-merger
 https://github.com/elgaucholoco/Frippertron
 https://github.com/BurningTreeC/faderframe
-https://github.com/idlefoundry/ca-72"
+https://github.com/idlefoundry/ca-72
+https://github.com/storytold/soundcraft"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
