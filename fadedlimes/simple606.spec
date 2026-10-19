@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: simple606
-Version: 1.1.0
+Version: 1.1.1
 Release: 1%{?dist}
 Summary: Basic TR-606 VST
 License: MIT
@@ -86,5 +86,8 @@ cp -vfr %{__cmake_builddir}/Simple606_artefacts/VST3/* %{buildroot}/%{_libdir}/v
 %{_libdir}/vst3/*
 
 %changelog
+* Mon Oct 19 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
+- update to 1.1.1-1
+
 * Sun Sep 06 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
 - Initial spec file
