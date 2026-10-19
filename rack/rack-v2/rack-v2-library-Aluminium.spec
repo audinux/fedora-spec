@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 d6ae25ff934755f1885bb501f98cd5e94b5bddb5
-%global gittag0 2.1.2
+%global commit0 670d5481f0957fd7c2970a70c79be5451883a0e6
+%global gittag0 2.2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Aluminium
-Version: 2.1.2
+Version: 2.2.0
 Release: 2%{?dist}
 Summary: Aluminium plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 Aluminium plugin for Rack.
-Splits a polyphonic MIDI-CV keyboard signal (V/OCT, GATE, VELOCITY, AFTERTOUCH, RETRIGGER) into two note-range zones, each independently configurable as polyphonic passthrough or monophonic with note-priority (last/highest/lowest) and true legato gate behavior
+Keyboard split and mono voice allocator for a polyphonic MIDI-CV signal (V/OCT, GATE, VELOCITY, AFTERTOUCH, RETRIGGER): two note-range zones, each polyphonic passthrough or monophonic with note priority (last/highest/lowest note) and true legato gate. Duo mode reproduces the Moog Subsequent 37 / Sub 37 DUO mode: duophonic/paraphonic two-voice allocation, highest note on B, other held note on A, with per-note velocity and poly aftertouch
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r Aluminium_plugin/dist/Aluminium/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
 - initial specfile

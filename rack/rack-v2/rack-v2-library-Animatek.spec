@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 f6b8afd35c4892450e8206f44c653de48fc326d2
-%global gittag0 2.5.8
+%global commit0 1aac3116e0186631e2646bee7f682e7d75bc5660
+%global gittag0 2.5.10
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Animatek
-Version: 2.5.8
+Version: 2.5.10
 Release: 2%{?dist}
 Summary: Animatek plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Animatek_plugin/dist/Animatek/* %{buildroot}%{_libexecdir}/Rack2/plugins/A
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.8-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.10-1
 - initial specfile

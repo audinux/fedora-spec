@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 19de25db1214cfb8a6eb85d6db08d307a4e2bf70
-%global gittag0 2.1.1
+%global commit0 29561591653dada5a697a53d5a6047dddf9db84c
+%global gittag0 2.2.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-ArhythmeticUnits-Fourier
-Version: 2.1.1
+Version: 2.2.1
 Release: 2%{?dist}
 Summary: ArhythmeticUnits-Fourier plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 ArhythmeticUnits-Fourier plugin for Rack.
-Tune-able spectrum analyzer
+Four-channel spectrum analyzer with configurable FFT, windowing, and smoothing
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r ArhythmeticUnits-Fourier_plugin/dist/ArhythmeticUnits-Fourier/* %{buildroo
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.1-1
 - initial specfile
