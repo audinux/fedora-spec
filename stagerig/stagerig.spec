@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: stagerig
-Version: 0.1.75
+Version: 0.1.78
 Release: 1%{?dist}
 Summary: A live-performance plugin host for Linux
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./stagerig-source.sh <TAG>
-#        ./stagerig-source.sh v0.1.75
+#        ./stagerig-source.sh v0.1.78
 
 Source0: stagerig.tar.gz
 Source1: stagerig-source.sh
@@ -107,6 +107,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/io.github.dguedry.Sta
 %{_mandir}/man1/*
 
 %changelog
+* Tue Oct 20 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.78-1
+- update to 0.1.78-1
+
 * Mon Oct 19 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.75-1
 - update to 0.1.75-1
 
