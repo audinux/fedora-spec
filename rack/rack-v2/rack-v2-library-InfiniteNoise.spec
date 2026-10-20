@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 43c4d7aab6c83909f41fa1e346a8bca643281c7e
-%global gittag0 2.0.4
+%global commit0 e388d3ef392643afd6c55aec7052fe92f5eca586
+%global gittag0 2.0.5
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-InfiniteNoise
-Version: 2.0.4
+Version: 2.0.5
 Release: 2%{?dist}
 Summary: InfiniteNoise plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r InfiniteNoise_plugin/dist/InfiniteNoise/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-1
 - initial specfile
