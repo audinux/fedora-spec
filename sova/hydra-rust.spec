@@ -34,6 +34,7 @@ BuildRequires: openssl-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: libv4l-devel
+BuildRequires: wayland-devel
 BuildRequires: python3
 
 Requires: (ffmpeg or ffmpeg-free)
