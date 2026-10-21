@@ -4,14 +4,14 @@
 # Category: Audio, Synthesizer, Graphic, Programming
 
 Name: csound7
-Version: 7.0.0b18
+Version: 7.0.0
 Release: 3%{?dist}
 Summary: A sound synthesis language and library
 URL: https://csound.com
 License: LGPL-2.1-or-later
 
 # Usage: ./csound-source.sh <TAG>
-#        ./csound-source.sh 7.0.0-beta.18
+#        ./csound-source.sh 7.0.0
 
 Source0: csound.tar.gz
 
@@ -26,7 +26,6 @@ BuildRequires: swig
 BuildRequires: bluez-libs-devel
 BuildRequires: boost-devel
 BuildRequires: CUnit-devel
-BuildRequires: dssi-devel
 BuildRequires: eigen3-devel
 BuildRequires: gettext-devel
 BuildRequires: lame-devel
@@ -69,14 +68,6 @@ Requires: python3
 Contains Python language bindings for developing Python applications that
 use Csound7.
 
-%package dssi
-Summary: Disposable Soft Synth Interface (DSSI) plugin for Csound
-Requires: %{name}%{?_isa} = %{version}-%{release}
-Requires: dssi
-
-%description dssi
-Disposable Soft Synth Interface (DSSI) plugin for Csound
-
 %package osc
 Summary: Open Sound Control (OSC) plugin for Csound
 Requires: %{name}%{?_isa} = %{version}-%{release}
@@ -116,7 +107,6 @@ export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
        -DBUILD_PYTHON_INTERFACE:BOOL=ON \
        -DBUILD_DEPRECATED_OPCODES:BOOL=ON \
        -DBUILD_OSC_OPCODES:BOOL=ON \
-       -DBUILD_DSSI_OPCODES:BOOL=ON \
        -DBUILD_DOCS:BOOL=ON \
        -DBUILD_PLUGINS:BOOL=ON \
        -DBUILD_TOOL:BOOL=ON \
@@ -197,7 +187,6 @@ rm -r %{buildroot}/%{_mandir}/man3/*-build_*
 %{_bindir}/src_conv
 %{_bindir}/srconv
 %{_libdir}/csound/plugins64-7.0/*.so
-%exclude %{_libdir}/csound/plugins64-7.0/libdssi4cs.so
 %exclude %{_libdir}/csound/plugins64-7.0/libosc.so
 %exclude %{_libdir}/csound/plugins64-7.0/librtpa.so
 %{_mandir}/man3/*
@@ -214,9 +203,6 @@ rm -r %{buildroot}/%{_mandir}/man3/*-build_*
 %{python3_sitelib}/*csound.py*
 %{python3_sitelib}/__pycache__/
 
-%files dssi
-%{_libdir}/csound/plugins64-7.0/libdssi4cs.so
-
 %files osc
 %{_libdir}/csound/plugins64-7.0/libosc.so
 
@@ -227,6 +213,9 @@ rm -r %{buildroot}/%{_mandir}/man3/*-build_*
 %{_datadir}/doc/csound7-manual/*
 
 %changelog
+* Wed Oct 21 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.0-3
+- update to 7.0.0-3
+
 * Thu Oct 01 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.0b18-3
 - update to 7.0.0b18-3
 
