@@ -491,6 +491,7 @@
 | TugMidiSeq                               | https://github.com/TugrulAkyuz/TugMidiSeq                                                                                                                   |
 | VST-ace                                  | https://github.com/spacestate1/VST-ace                                                                                                                      |
 | MzDebirth                                | https://github.com/simozzer/MzDebirth                                                                                                                       |
+| FSVR                                     | https://github.com/musicastudio/FSVR                                                                                                                        |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
