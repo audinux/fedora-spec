@@ -26,7 +26,7 @@
 
 Name: mod-host
 Version: 0.10.6.%{shortcommit0}
-Release: 11%{?dist}
+Release: 12%{?dist}
 License: GPL-3.0-or-later
 Summary: LV2 host for Jack controllable via socket or command line
 URL: https://github.com/moddevices/mod-host
@@ -61,6 +61,10 @@ Patch9: mod-host-107.patch
 Patch10: mod-host-108.patch
 # https://github.com/mod-audio/mod-host/pull/109
 Patch11: mod-host-109.patch
+# https://github.com/mod-audio/mod-host/pull/112 - do not read before an empty command when trimming spaces
+Patch12: mod-host-112.patch
+# https://github.com/mod-audio/mod-host/pull/113 - split socket input into NUL-terminated commands
+Patch13: mod-host-113.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -150,6 +154,13 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 %{_datadir}/mod-host/
 
 %changelog
+* Fri Oct 16 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-12
+- #112: trimming spaces no longer reads before the start of an empty command
+- #113: socket input is split into NUL-terminated commands, a command split
+  over several reads or several commands in one read both work; a command over
+  16 MiB closes the connection; socket_send stops on an error and never raises
+  SIGPIPE
+
 * Thu Oct 01 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-11
 - #109: param_info, remote_pages and track_info for controllers
 
