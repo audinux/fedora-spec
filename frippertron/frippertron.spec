@@ -4,10 +4,10 @@
 # Category: Effect
 
 Name: frippertron
-Version: 2.1.0
+Version: 2.2.0
 Release: 1%{?dist}
 Summary: An audio vst plugin simulating a frippertronic
-License: GPL-2.0-or-later
+License: AGPL-3.0-or-later
 URL: https://github.com/elgaucholoco/Frippertron
 ExclusiveArch: x86_64 aarch64
 
@@ -35,6 +35,7 @@ BuildRequires: libcurl-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: gtk3-devel
+BuildRequires: desktop-file-utils
 
 Requires: license-%{name}
 
@@ -51,14 +52,14 @@ setup in stereo.
 
 %package -n license-%{name}
 Summary: License and documentation for %{name}
-License: GPL-2.0-or-later
+License: AGPL-3.0-or-later
 
 %description -n license-%{name}
 License and documentation for %{name}
 
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
-License: GPL-2.0-or-later
+License: AGPL-3.0-or-later
 Requires: license-%{name}
 
 %description -n vst3-%{name}
@@ -80,8 +81,36 @@ cp -ra %{__cmake_builddir}/Frippertron_artefacts/VST3/* %{buildroot}/%{_libdir}/
 install -m 755 -d %{buildroot}%{_bindir}/
 cp -ra %{__cmake_builddir}/Frippertron_artefacts/Standalone/* %{buildroot}/%{_bindir}/
 
+# Install icon
+install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
+cp Resources/icon.png %{buildroot}/%{_datadir}/pixmaps/%{name}.png
+
+# Write desktop files
+install -m 755 -d %{buildroot}/%{_datadir}/applications/
+
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
+[Desktop Entry]
+Name=%{name}
+Exec=%{name}
+Icon=%{name}
+Comment=An audio vst plugin simulating a frippertronic
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Music;
+EOF
+
+desktop-file-install                         \
+  --delete-original                          \
+  --dir=%{buildroot}%{_datadir}/applications \
+  %{buildroot}/%{_datadir}/applications/%{name}.desktop
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+
 %files
 %{_bindir}/*
+%{_datadir}/pixmaps/*
+%{_datadir}/applications/*
 
 %files -n license-%{name}
 %doc README.md CHANGELOG.md
