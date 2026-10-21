@@ -1213,7 +1213,9 @@ https://github.com/mod-audio/mod-midi-merger
 https://github.com/elgaucholoco/Frippertron
 https://github.com/BurningTreeC/faderframe
 https://github.com/idlefoundry/ca-72
-https://github.com/storytold/soundcraft"
+https://github.com/storytold/soundcraft
+https://github.com/musicastudio/FSVR
+https://github.com/awlkak/piper"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)

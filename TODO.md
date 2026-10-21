@@ -477,7 +477,6 @@
 | Jali                                     | https://github.com/hergezod/Jali                                                                                                                            |
 | overtonium                               | https://github.com/benjamindehli/overtonium                                                                                                                 |
 | sidstation-asid                          | https://github.com/benjamindehli/sidstation-asid                                                                                                            |
-| Infinite                                 | https://github.com/n1m21n/Infinite                                                                                                                          |
 | C99Gonio                                 | https://github.com/ihateemoji/C99Gonio                                                                                                                      |
 | monomodule                               | https://github.com/shnolk/monomodule                                                                                                                        |
 | S-MU2000                                 | https://github.com/tarboh/S-MU2000                                                                                                                          |
@@ -491,7 +490,6 @@
 | TugMidiSeq                               | https://github.com/TugrulAkyuz/TugMidiSeq                                                                                                                   |
 | VST-ace                                  | https://github.com/spacestate1/VST-ace                                                                                                                      |
 | MzDebirth                                | https://github.com/simozzer/MzDebirth                                                                                                                       |
-| FSVR                                     | https://github.com/musicastudio/FSVR                                                                                                                        |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
