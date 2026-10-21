@@ -490,6 +490,7 @@
 | TugMidiSeq                               | https://github.com/TugrulAkyuz/TugMidiSeq                                                                                                                   |
 | VST-ace                                  | https://github.com/spacestate1/VST-ace                                                                                                                      |
 | MzDebirth                                | https://github.com/simozzer/MzDebirth                                                                                                                       |
+| Di-111-synth                             | https://github.com/luginf/Di-111-synth                                                                                                                      |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
