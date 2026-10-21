@@ -69,17 +69,13 @@ Requires: license-%{name}
 DSSI version of %{name}
 
 %prep
-%autosetup -c -n triceratops-lv2-%{version}
+%autosetup -n triceratops-lv2-%{version}
 
 %build
-
-cd triceratops
 
 %make_build SKIP_STRIPPING=true
 
 %install
-
-cd triceratops
 
 install -m 755 -d %{buildroot}/%{_libdir}/lv2/
 cp -ra bin/triceratops.lv2 %{buildroot}/%{_libdir}/lv2/
