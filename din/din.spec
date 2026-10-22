@@ -9,7 +9,7 @@
 Summary: DIN is a synth of a 3rd kind
 Name: din
 Version: %din_vers_major.%din_vers_minor.%din_vers_patch
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPL-2.0-or-later
 URL: https://dinisnoise.org/
 ExclusiveArch: x86_64 aarch64
@@ -18,6 +18,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://dinisnoise.org/files/din-%{din_vers_major}.tar.gz
+Patch0: din-0001-Fix-curve-crashes-and-harden-audio-startup.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -131,6 +132,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/din-jack.desktop
 %{_datadir}/applications/din-jack.desktop
 
 %changelog
+* Thu Oct 22 2026 Yann Collette <ycollette dot nospam at free.fr> 65.0.0-2
+- update to 65.0.0-2 - try to fix din
+
 * Sun Aug 23 2026 Yann Collette <ycollette dot nospam at free.fr> 65.0.0-1
 - update to 65.0.0-1
 
