@@ -79,11 +79,11 @@ FORMATS="16x16 24x24 32x32 48x48 64x64 128x128 256x256 512x512"
 for Format in ${FORMATS}
 do
     install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/apps/$Format/apps/
-    install -m 644 assets/app-icon/hicolor/$Format/apps/ai.storyteller.soundcraft.png %{buildroot}/%{_datadir}/icons/hicolor/apps/$Format/apps/
+    install -m 644 assets/app-icon/hicolor/$Format/apps/ai.storyteller.soundcraft.png %{buildroot}/%{_datadir}/icons/hicolor/$Format/apps/
 done
 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/apps/scalable/apps/
-install -m 644 assets/app-icon/hicolor/scalable/apps/ai.storyteller.soundcraft.svg %{buildroot}/%{_datadir}/icons/hicolor/apps/scalable/apps/
+install -m 644 assets/app-icon/hicolor/scalable/apps/ai.storyteller.soundcraft.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
 
 # Write desktop files
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
