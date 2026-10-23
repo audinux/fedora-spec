@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: fsvr
-Version: 0.8.2
+Version: 0.8.3
 Release: 1%{?dist}
 Summary: Software reconstruction of the 1998 Yamaha FS1R synthesizer
 License: GPL-3.0-or-later
@@ -155,5 +155,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Fri Oct 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.3-1
+- update to 0.8.3-1
+
 * Wed Oct 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.2-1
 - Initial spec
