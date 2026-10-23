@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: soundcraft
-Version: 0.11.0
+Version: 0.12.1
 Release: 1%{?dist}
 Summary: An open-source, clean-room reimplementation of Avid Pro Tools in pure Rust
 License: MIT
@@ -78,11 +78,11 @@ install -m 755 target/release/soundcraft %{buildroot}/%{_bindir}/
 FORMATS="16x16 24x24 32x32 48x48 64x64 128x128 256x256 512x512"
 for Format in ${FORMATS}
 do
-    install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/apps/$Format/apps/
+    install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/$Format/apps/
     install -m 644 assets/app-icon/hicolor/$Format/apps/ai.storyteller.soundcraft.png %{buildroot}/%{_datadir}/icons/hicolor/$Format/apps/
 done
 
-install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/apps/scalable/apps/
+install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
 install -m 644 assets/app-icon/hicolor/scalable/apps/ai.storyteller.soundcraft.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
 
 # Write desktop files
@@ -112,18 +112,21 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/ai.storyteller.soundc
 %{_bindir}/*
 %{_datadir}/mime/packages/*
 %{_datadir}/applications/*
-%{_datadir}/icons/hicolor/apps/16x16/apps/*
-%{_datadir}/icons/hicolor/apps/24x24/apps/*
-%{_datadir}/icons/hicolor/apps/32x32/apps/*
-%{_datadir}/icons/hicolor/apps/48x48/apps/*
-%{_datadir}/icons/hicolor/apps/64x64/apps/*
-%{_datadir}/icons/hicolor/apps/128x128/apps/*
-%{_datadir}/icons/hicolor/apps/256x256/apps/*
-%{_datadir}/icons/hicolor/apps/512x512/apps/*
-%{_datadir}/icons/hicolor/apps/scalable/apps/*
+%{_datadir}/icons/hicolor/16x16/apps/*
+%{_datadir}/icons/hicolor/24x24/apps/*
+%{_datadir}/icons/hicolor/32x32/apps/*
+%{_datadir}/icons/hicolor/48x48/apps/*
+%{_datadir}/icons/hicolor/64x64/apps/*
+%{_datadir}/icons/hicolor/128x128/apps/*
+%{_datadir}/icons/hicolor/256x256/apps/*
+%{_datadir}/icons/hicolor/512x512/apps/*
+%{_datadir}/icons/hicolor/scalable/apps/*
 %{_datadir}/metainfo/*
 
 %changelog
+* Fri Oct 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.12.1-1
+- update to 0.12.1-1
+
 * Wed Oct 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.11.0-1
 - update to 0.11.0-1
 
