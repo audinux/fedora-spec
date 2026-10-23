@@ -6,8 +6,9 @@
 %global debug_package %{nil}
 
 Name: luppolo
-Version: 1.2
+Version: 0.1.5
 Release: 1%{?dist}
+Epoch: 1
 Summary: A looper for Linux
 License: MIT
 URL: https://codeberg.org/n_malo/Luppolo
@@ -16,7 +17,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://codeberg.org/n_malo/Luppolo/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://codeberg.org/n_malo/Luppolo/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -99,6 +100,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/page.code
 %{_datadir}/metainfo/*
 
 %changelog
+* Fri Oct 23 2026 Yann Collette <ycollette.nospam@free.fr> - 1:0.1.5-1
+- update to 1:0.1.5-1
+
 * Mon Sep 21 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2-1
 - update to 1.2-1
 
