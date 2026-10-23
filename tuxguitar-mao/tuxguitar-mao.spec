@@ -32,7 +32,7 @@
 %define debug_package %{nil}
 
 Name: tuxguitar
-Version: 2.1.0
+Version: 2.1.1
 Release: 18%{?dist}
 Summary: A multitrack tablature editor and player written in Java-SWT
 License: LGPL-2.1-or-later
@@ -76,6 +76,7 @@ BuildRequires: gcc
 BuildRequires: make
 BuildRequires: javapackages-tools
 BuildRequires: javapackages-compat
+BuildRequires: java-25-openjdk-devel
 BuildRequires: maven
 BuildRequires: maven-antrun-plugin
 BuildRequires: maven-dependency-plugin
@@ -201,7 +202,7 @@ cp -a desktop/build-scripts/common-resources/common-linux/share/man/man1/%{name}
     
 # desktop files
 mkdir -p %{buildroot}/%{_datadir}/applications/
-install -pm 644 desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-2.1.0-linux-swt/share/applications/TuxGuitar.desktop %{buildroot}/%{_datadir}/applications/%{name}.desktop
+install -pm 644 desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-%{version}-linux-swt/share/applications/TuxGuitar.desktop %{buildroot}/%{_datadir}/applications/%{name}.desktop
 desktop-file-install --dir=%{buildroot}/%{_datadir}/applications/ %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 # jar files
@@ -254,7 +255,7 @@ EOF
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
-%license desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-2.1.0-linux-swt/doc/LICENSE
+%license desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-%{version}-linux-swt/doc/LICENSE
 %doc AUTHORS CHANGES README.md
 %{_bindir}/%{name}
 %{_datadir}/%{name}
@@ -267,6 +268,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Fri Oct 23 2026 Yann Collette <ycollette.nospam@free.fr> - 2.1.1-18
+- update to 2.1.1-18
+
 * Sat Jul 25 2026 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-18
 - update to 2.1.0-18
 

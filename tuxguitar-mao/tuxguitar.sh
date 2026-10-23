@@ -1,4 +1,15 @@
 #!/usr/bin/sh
+## try to read light/dark theme from dbus
+getTheme() {
+    tuxguitarTheme="none"
+    # does not work with all desktops, limited to KDE
+    if [ "$XDG_CURRENT_DESKTOP" = 'KDE' ]; then
+        dbusTheme=$(dbus-send --session --print-reply=literal --dest=org.freedesktop.portal.Desktop /org/freedesktop/portal/desktop org.freedesktop.portal.Settings.Read string:org.freedesktop.appearance string:color-scheme 2>/dev/null)
+        [ -n "$( echo $dbusTheme | sed -n '/uint32 2/p')" ] && tuxguitarTheme="light"
+        [ -n "$( echo $dbusTheme | sed -n '/uint32 1/p')" ] && tuxguitarTheme="dark"
+    fi
+    echo $tuxguitarTheme
+}
 
 ##SCRIPT DIR
 TG_DIR=/usr
@@ -79,4 +90,5 @@ ${JAVA} ${VM_ARGS} \
 	-Dtuxguitar.home.path="${TG_DIR}" \
 	-Dtuxguitar.share.path="/usr/share/tuxguitar/" \
 	-Djava.library.path="${LD_LIBRARY_PATH}" \
+	-Dtuxguitar.theme=$(getTheme) \
 	${MAINCLASS} "$@"
