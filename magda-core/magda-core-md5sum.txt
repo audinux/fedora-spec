@@ -1,1 +1,1 @@
-0046ce7fd9a6a7278cfed8d8911bbabd  magda-core.tar.gz
+b7a43dfb7e40c7fe7c93c7c4b565e093  magda-core.tar.gz
