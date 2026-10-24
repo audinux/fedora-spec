@@ -1,0 +1,25 @@
+From 29086196b97615dce81249e6e4e6db3898ad3352 Mon Sep 17 00:00:00 2001
+From: Christian Henz <chrhenz@gmx.de>
+Date: Tue, 6 Dec 2022 12:25:34 +0100
+Subject: [PATCH] Fix copying on X11
+
+Initialize `selection` member when sending `SelectionNotify`
+event.
+
+Without this, the copying was behaving quite eratically.
+---
+ src/clipboard.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/clipboard.c b/src/clipboard.c
+index 5713361..9d1c64d 100644
+--- a/src/clipboard.c
++++ b/src/clipboard.c
+@@ -180,6 +180,7 @@ void clipboard_handlesysreq(SDL_Event*e)
+     res.xselection.type=SelectionNotify;
+     res.xselection.display=clipbrd.swi.info.x11.display;
+     res.xselection.requestor=req->requestor;
++    res.xselection.selection=req->selection;
+     res.xselection.target=req->target;
+     res.xselection.time=req->time;
+     XSendEvent(clipbrd.swi.info.x11.display,req->requestor,0,0,&res);

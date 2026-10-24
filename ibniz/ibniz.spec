@@ -7,9 +7,9 @@
 
 Name: ibniz
 Version: 0.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A virtual machine designed for extremely compact low-level audiovisual programs.
-License: GPL-2.0-or-later
+License: Zlib
 URL: https://viznut.fi/ibniz/
 ExclusiveArch: x86_64 aarch64
 
@@ -17,10 +17,10 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/viznut/IBNIZ/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
-Source1: ibniz.txt
-Source2: ibniz.svg
+Source1: ibniz.svg
 Patch0: ibniz-fixingmakefile.patch
 Patch1: ibniz-manpage.patch
+Patch2: ibniz-20.patch
 Patch3: ibniz-21.patch
 
 BuildRequires: gcc
@@ -53,10 +53,10 @@ cd src
 %make_install
 
 install -m 755 -d %{buildroot}/%{_datadir}/doc/%{name}/
-install -m 644 %{SOURCE1} %{buildroot}/%{_datadir}/doc/%{name}/
+install -m 644 ibniz.txt %{buildroot}/%{_datadir}/doc/%{name}/
 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
-install -m 644 %{SOURCE2} %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
+install -m 644 %{SOURCE1} %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
 
 # Write desktop files
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
@@ -82,11 +82,15 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 %files
 %doc README.md
+%license src/licence.txt
 %{_bindir}/*
 %{_datadir}/icons/hicolor/scalable/apps/*
 %{_datadir}/applications/*
 %{_datadir}/doc/%{name}/%{name}.txt
 
 %changelog
+* Sat Oct 24 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
+- update to 0.0.1-2 - fix packaging
+
 * Sat Oct 24 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - initial version of the spec
