@@ -7,7 +7,7 @@
 
 Name: ibniz
 Version: 0.0.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A virtual machine designed for extremely compact low-level audiovisual programs.
 License: Zlib
 URL: https://viznut.fi/ibniz/
@@ -22,6 +22,7 @@ Patch0: ibniz-fixingmakefile.patch
 Patch1: ibniz-manpage.patch
 Patch2: ibniz-20.patch
 Patch3: ibniz-21.patch
+Patch4: ibniz-fix-ibniz2c.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -46,11 +47,14 @@ principle that a minimal set of rules should yield a maximal diversity.
 
 cd src
 %make_build
+%make_build ibniz2c
 
 %install
 
 cd src
 %make_install
+
+install -m 755 ibniz2c %{buildroot}/%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_datadir}/doc/%{name}/
 install -m 644 ibniz.txt %{buildroot}/%{_datadir}/doc/%{name}/
@@ -89,6 +93,9 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 %{_datadir}/doc/%{name}/%{name}.txt
 
 %changelog
+* Sat Oct 24 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
+- update to 0.0.1-3 - fix ibniz2c
+
 * Sat Oct 24 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-2
 - update to 0.0.1-2 - fix packaging
 
