@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: mx44-rust
-Version: 0.0.1
+Version: 1.0.0
 Release: 1%{?dist}
 Summary: A clone of the old Mx44 synthesizer in Rust.
 License: GPL-3.0-or-later AND GPL-2.0-or-later
@@ -74,8 +74,6 @@ CLAP version of %{name}
 %prep
 %autosetup -n Mx44-rust-%{version}
 
-sed -i -e "s|name = \"Mx44 Rust\"|name = \"Mx44_Rust\"|g" bundler.toml
-
 %build
 
 %set_build_flags
@@ -108,10 +106,10 @@ install -m 755 -d %{buildroot}/%{_bindir}/
 install -m 755 target/release/%{name} %{buildroot}/%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_libdir}/clap/
-cp -ra target/bundled/Mx44_Rust.clap %{buildroot}/%{_libdir}/clap/
+cp -ra target/bundled/mx44-rust.clap %{buildroot}/%{_libdir}/clap/
 
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
-cp -ra target/bundled/Mx44_Rust.vst3 %{buildroot}/%{_libdir}/vst3/
+cp -ra target/bundled/mx44-rust.vst3 %{buildroot}/%{_libdir}/vst3/
 
 install -m 755 -d %{buildroot}/%{_datadir}/%{name}/presets/
 cp -ra presets/* %{buildroot}/%{_datadir}/%{name}/presets/
@@ -151,5 +149,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Sat Oct 24 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
+- update to 1.0.0-1
+
 * Fri Oct 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
