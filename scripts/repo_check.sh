@@ -1217,7 +1217,8 @@ https://github.com/storytold/soundcraft
 https://github.com/musicastudio/FSVR
 https://github.com/awlkak/piper
 https://github.com/ycollet/ByteBeat
-https://github.com/viznut/IBNIZ"
+https://github.com/viznut/IBNIZ
+https://github.com/ycollet/Mx44-rust"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
