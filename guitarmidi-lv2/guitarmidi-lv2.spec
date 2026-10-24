@@ -7,7 +7,7 @@
 %global _cmake_shared_libs %{nil}
 
 Name: guitarmidi
-Version: 3.1
+Version: 3.2
 Release: 3%{?dist}
 Summary: A concept for guitar to midi as an lv2 plugin
 URL: https://github.com/geraldmwangi/GuitarMidi-LV2
@@ -18,7 +18,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./guitarmidi-lv2-source.sh <TAG>
-#        ./guitarmidi-lv2-source.sh v3.1
+#        ./guitarmidi-lv2-source.sh v3.2
 
 Source0: GuitarMidi-LV2.tar.gz
 Source1: guitarmidi-lv2-source.sh
@@ -68,6 +68,9 @@ export LDFLAGS="-fPIC"
 %{_libdir}/lv2/*
 
 %changelog
+* Fri Oct 23 2026 Yann Collette <ycollette.nospam@free.fr> - 3.2-3
+- update to 3.2-3
+
 * Sun Oct 04 2026 Yann Collette <ycollette.nospam@free.fr> - 3.1-3
 - update to 3.1-3
 
