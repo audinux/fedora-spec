@@ -1,0 +1,141 @@
+From c66f90c77a05a4f4562c540ece0699dff247b3da Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Sat, 24 Oct 2026 08:57:49 +0200
+Subject: [PATCH] add manpage
+
+---
+ src/Makefile  |  9 ++++--
+ src/ibniz.rst | 86 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 92 insertions(+), 3 deletions(-)
+ create mode 100644 src/ibniz.rst
+
+diff --git a/src/Makefile b/src/Makefile
+index 3f8b66e..adc4b25 100644
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -3,7 +3,7 @@
+ EXE=ibniz
+ CPPFLAGS=-DX11
+ 
+-all: ibniz
++all: ibniz ibniz.1
+ 
+ # For win32 builds using mingw32 (you'll probably need to modify these)
+ #CC=i586-mingw32msvc-gcc
+@@ -12,7 +12,7 @@ all: ibniz
+ #all: ibniz.exe
+ 
+ clean:
+-	rm -f *.o *~ ibniz vmtest ibniz.exe whole.c
++	rm -f *.o *~ ibniz vmtest ibniz.exe whole.c ibniz.1
+ 
+ package: clean
+ 	cd .. && cp -R src ibniz-1.18 && tar czf ibniz-1.18.tar.gz ibniz-1.18
+@@ -50,8 +50,11 @@ runtest: vmtest
+ vmtest: vm_test.c vm_slow.c
+ 	gcc vm_test.c vm_slow.o -o vmtest -lm
+ 
++ibniz.1: ibniz.rst
++	rst2man ibniz.rst ibniz.1
++
+ ibniz2c: ibniz2c.c compiler.c gen_c.c
+-	gcc -DIBNIZ2C -Os compiler.c ibniz2c.c -o ibniz2c -lm
++	gcc -DIBNIZ2C -Os compiler.c ibniz2c.c $(CFLAGS)  $(LDFLAGS) -o ibniz2c -lm
+ 
+ install: ${EXE}
+ 	install -d ${DESTDIR}/usr/bin
+diff --git a/src/ibniz.rst b/src/ibniz.rst
+new file mode 100644
+index 0000000..43ec032
+--- /dev/null
++++ b/src/ibniz.rst
+@@ -0,0 +1,86 @@
++=========
++ ibniz
++=========
++
++----------------------------------------------------------
++Virtual machine for compact low-level audiovisual programs
++----------------------------------------------------------
++
++:Author: Originally written by Ville-Matias Heikkila <viznut@low.fi>, Man page by maxigas <maxigas@anargeek.net>, based on the original ibniz.txt.
++:Date:   2013-09-23
++:Copyright: zlib
++:Version: 1.18
++:Manual section: 1
++:Manual group: real time audio-video synthesis
++
++SYNOPSIS
++========
++
++  ibniz [OPTION]... [CODE]
++
++DESCRIPTION
++===========
++
++Virtual machine for compact low-level audiovisual programs
++
++IBNIZ is a virtual machine designed for extremely compact low-level
++audiovisual programs. The leading design goal is usefulness as a
++platform for demoscene productions, glitch art and similar projects.
++Mainsteam software engineering aspects are considered totally
++irrelevant.
++
++IBNIZ stands for Ideally Bare Numeric Impression giZmo. The name also
++refers to Gottfried Leibniz, the 17th-century polymath who, among all,
++invented binary arithmetic, built the first four-operation calculating
++machine, and believed that the world was designed with the principle
++that a minimal set of rules should yield a maximal diversity.
++
++The IBNIZ virtual machine is basically a two-stack machine somewhat
++similar to Forth implementations but with the major difference that
++the stack is cyclical and also used as output buffer. The machine runs
++in an endless loop by default, with the loop counter variable(s)
++pushed on top of the stack on every loop cycle.
++
++Each instruction is one character long, with the exception of
++'loadimm' which consists of a string of hexadecimal digits. This also
++gives IBNIZ some flavor of an esoteric programming language.
++
++OPTIONS
++=======
++
++--config=<file>         Read configuration settings from <file>, if it exists.
++--version, -V           Show this program's version number and exit.
++--help, -h              Show this help message and exit.
++
++And a lot more standard docutils options.
++
++COMMAND LINE OPTIONS
++====================
++
++-h       Dump help on command line usage
++-v       Dump version info
++-c CODE  Execute code
++-n       No autorun of loaded code
++
++The following extra options were added for creating the YouTube video:
++
++-e      Dump user keystrokes to stdout
++-p      Playback dumped user keystrokes from stdin
++-M      Dump raw video to stdout and raw audio to stderr, 30 fps, non-realtime, yuv4mpeg2 and pcm_s16
++
++EXAMPLES
++========
++
++Some commands used in this process, for reference:
++
++``./ibniz -e > events``
++
++``./ibniz -M -p < events 2>vid.pcm | ffmpeg -y -i - -r 30 vid.avi``
++
++``ffmpeg -i vid.avi -f s16le -ar 44100 -ac 1 -i vid.pcm -vcodec copy vidav.avi``
++
++SEE ALSO
++========
++
++* `ibniz.txt </usr/share/doc/ibniz/ibniz.txt>`
++
+-- 
+2.56.0
+

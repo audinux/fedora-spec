@@ -1,0 +1,52 @@
+From bd0daea2c75e858f6195f2fd696e078a6a14c644 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Sat, 24 Oct 2026 08:52:07 +0200
+Subject: [PATCH] fix flags
+
+---
+ src/Makefile | 13 +++++--------
+ 1 file changed, 5 insertions(+), 8 deletions(-)
+
+diff --git a/src/Makefile b/src/Makefile
+index e7f45b5..3f8b66e 100644
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -1,10 +1,7 @@
+ # For normal builds; remove -DX11 -lX11 from flags if you don't have X11
+ #CC=gcc
+ EXE=ibniz
+-
+ CPPFLAGS=-DX11
+-LDFLAGS=`sdl-config --libs` -lX11 -s
+-CFLAGS=`sdl-config --cflags`
+ 
+ all: ibniz
+ 
+@@ -30,19 +27,19 @@ winexe: clean
+ #	cat ui_sdl.c vm_slow.c clipboard.c > whole.c
+ 
+ $(EXE): ui_sdl.o vm_slow.o clipboard.o compiler.o
+-	$(CC) -Os ui_sdl.o vm_slow.o clipboard.o compiler.o -o $(EXE) $(LDFLAGS) -lm
++	$(CC) -Os ui_sdl.o vm_slow.o clipboard.o compiler.o -o $(EXE) `sdl-config --libs` -lX11 -lm $(LDFLAGS)
+ 
+ ui_sdl.o: ui_sdl.c ibniz.h font.i vm.h texts.i vm.h
+-	$(CC) -c -Os ui_sdl.c -o ui_sdl.o $(CFLAGS) $(CPPFLAGS)
++	$(CC) -c -Os ui_sdl.c -o ui_sdl.o `sdl-config --cflags` $(CFLAGS) $(CPPFLAGS)
+ 
+ clipboard.o: clipboard.c ibniz.h
+-	$(CC) -c -Os clipboard.c -o clipboard.o $(CFLAGS) $(CPPFLAGS)
++	$(CC) -c -Os clipboard.c -o clipboard.o `sdl-config --cflags` $(CFLAGS) $(CPPFLAGS)
+ 
+ compiler.o: compiler.c ibniz.h vm.h
+-	$(CC) -c -Os compiler.c -o compiler.o $(CFLAGS) $(CPPFLAGS)
++	$(CC) -c -Os compiler.c -o compiler.o `sdl-config --cflags` $(CFLAGS) $(CPPFLAGS)
+ 
+ vm_slow.o: vm_slow.c ibniz.h vm.h
+-	$(CC) -c -O3 vm_slow.c -o vm_slow.o $(CFLAGS) $(CPPFLAGS)
++	$(CC) -c -O3 vm_slow.c -o vm_slow.o `sdl-config --cflags` $(CFLAGS) $(CPPFLAGS)
+ 
+ font.i: font.pl
+ 	perl font.pl > font.i
+-- 
+2.56.0
+

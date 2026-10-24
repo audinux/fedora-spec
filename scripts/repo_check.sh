@@ -1216,7 +1216,8 @@ https://github.com/idlefoundry/ca-72
 https://github.com/storytold/soundcraft
 https://github.com/musicastudio/FSVR
 https://github.com/awlkak/piper
-https://github.com/ycollet/ByteBeat"
+https://github.com/ycollet/ByteBeat
+https://github.com/viznut/IBNIZ"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
