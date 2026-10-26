@@ -492,6 +492,7 @@
 | MzDebirth                                | https://github.com/simozzer/MzDebirth                                                                                                                       |
 | Di-111-synth                             | https://github.com/luginf/Di-111-synth                                                                                                                      |
 | apeCsound                                | https://github.com/alessandropetrolati/apeCsound                                                                                                            |
+| glslViewer                               | https://github.com/patriciogonzalezvivo/glslViewer                                                                                                          |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
