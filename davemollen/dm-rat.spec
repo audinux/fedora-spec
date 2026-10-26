@@ -5,10 +5,8 @@
 
 %global debug_package %{nil}
 
-%global commit0 fa23188be7725f088621031dcbd9682f142c2837
-
 Name: dm-rat
-Version: 0.1.2
+Version: 0.1.3
 Release: 1%{?dist}
 Summary: A distortion effect written in Rust modeled after the ProCo Rat
 URL: https://github.com/davemollen/dm-Rat
@@ -18,7 +16,7 @@ License: GPL-3.0-only
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/davemollen/dm-Rat/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Source0: https://github.com/davemollen/dm-Rat/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -63,7 +61,7 @@ LV2 version of %{name}
 
 %prep
 
-%autosetup -n dm-Rat-%{commit0}
+%autosetup -n dm-Rat-%{version}
 
 %build
 
@@ -118,6 +116,9 @@ cp -vfr dm-Rat.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Oct 25 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.3-1
+- update to 0.1.3-1
+
 * Mon Mar 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.2-1
 - update to 0.1.2-1
 
