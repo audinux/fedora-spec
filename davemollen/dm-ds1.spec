@@ -5,10 +5,8 @@
 
 %global debug_package %{nil}
 
-%global commit0 6b778b75e9d7a4b9efbd3700d4614e34378fddef
-
 Name: dm-ds1
-Version: 0.1.3
+Version: 0.1.4
 Release: 1%{?dist}
 Summary: A distortion effect written in Rust modeled after the Boss DS-1
 URL: https://github.com/davemollen/dm-DS1
@@ -18,7 +16,7 @@ License: GPL-3.0-only
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/davemollen/dm-DS1/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Source0: https://github.com/davemollen/dm-DS1/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -63,7 +61,7 @@ LV2 version of %{name}
 
 %prep
 
-%autosetup -n dm-DS1-%{commit0}
+%autosetup -n dm-DS1-%{version}
 
 %build
 
@@ -118,6 +116,9 @@ cp -vfr dm-DS1.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Oct 25 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.4-1
+- update to 0.1.4-1
+
 * Mon Mar 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.3-1
 - update to 0.1.3-1
 
