@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: noise-suppression-for-voice
-Version: 1.21
+Version: 1.22
 Release: 4%{?dist}
 Summary: Real-time Noise Suppression LADSPA / LV2 Plugin
 License: GPL-2.0-or-later
@@ -103,6 +103,9 @@ mv %{buildroot}/%{_libdir}/lxvst/ %{buildroot}/%{_libdir}/vst/
 %{_libdir}/vst/*
 
 %changelog
+* Sun Oct 25 2026 Yann Collette <ycollette.nospam@free.fr> - 1.22-4
+- update to 1.22-4
+
 * Fri May 29 2026 Yann Collette <ycollette.nospam@free.fr> - 1.21-4
 - update to 1.21-4
 
