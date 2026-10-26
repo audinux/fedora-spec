@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 3541f29430eeca862c3f68d0306fe6c75f43f083
-%global gittag0 2.0.2
+%global commit0 1ea2885aca8e81d2a4378667a2a6474d0aa3c4b5
+%global gittag0 2.2.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-halfagiraf
-Version: 2.0.2
+Version: 2.2.0
 Release: 2%{?dist}
 Summary: halfagiraf plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r halfagiraf_plugin/dist/halfagiraf/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
 - initial specfile
