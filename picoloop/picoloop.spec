@@ -6,13 +6,8 @@
 # Disable production of debug package.
 %global debug_package %{nil}
 
-# Global variables for github repository
-%global commit0 240d970c126d96472a91ccf3f2c3179ba2b15163
-%global gittag0 master
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-
 Name: picoloop
-Version: 0.77e.%{shortcommit0}
+Version: 0.80a
 Release: 3%{?dist}
 Summary: An audio sequencer
 License: GPL-2.0-or-later
@@ -22,7 +17,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/yoyz/audio/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: https://github.com/yoyz/picoloop/archive/refs/tags/picoloop-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: picoloop-SYSTEMLINUX.cpp
 Source2: https://github.com/farvardin/picoloop-manual/files/500912/picoloop_manual_pc.pdf
 
@@ -47,20 +42,33 @@ All parameters are set step-wise, so you can make huge variation of sound on the
 There are four channels, playing simultaneously.
 
 %prep
-%autosetup -n %{name}-%{commit0}
+%autosetup -n %{name}-%{name}-%{version}
 
 sed -i -e "s/\"font.ttf\"/\"\/usr\/share\/picoloop\/font\/font.ttf\"/g" picoloop/SDL_GUI.cpp
 sed -i -e "s/\"font.bmp\"/\"\/usr\/share\/picoloop\/bmp\/font.bmp\"/g" picoloop/SDL_GUI.cpp
 
+sed -i -e "s|CFLAGS=|CFLAGS=-fPIC |g" picoloop/Makefile.RtMidi_debian_sdl20
+sed -i -e "s|CFLAGS=|CFLAGS=-fPIC |g" picoloop/Makefile.RtAudio_debian_sdl20
+sed -i -e "s|CFLAGS=|CFLAGS=-fPIC |g" picoloop/Makefile.PatternPlayer_debian_RtAudio_sdl20
+sed -i -e "s|LDFLAGS+=-lpulse|LDFLAGS+=-lasound -lpulse|g" picoloop/Makefile.PatternPlayer_debian_RtAudio_sdl20
+
 cp %{SOURCE1} picoloop/SYSTEMLINUX.cpp
 
 %build
+
+%set_build_flags
+export CFLAGS="-fPIC $CFLAGS"
+export LDFLAGS="`pkg-config --libs jack` $LDFLAGS"
 
 cd picoloop
 
 #
 # Build PulseAudio version
 #
+
+echo "#"
+echo "# Build PulseAudio version"
+echo "#"
 
 #sed -i -e "s/-D__LINUX_PULSE__/-D__LINUX_PULSE__ -D__UNIX_JACK__ -D__LINUX_ALSA__/g" Makefile.RtMidi_debian_sdl20
 #sed -i -e "s/-D__LINUX_PULSE__/-D__LINUX_PULSE__ -D__UNIX_JACK__ -D__LINUX_ALSA__/g" Makefile.RtAudio_debian_sdl20
@@ -76,11 +84,15 @@ make -f Makefile.RtMidi_debian_sdl20
 make -f Makefile.RtAudio_debian_sdl20
 make -f Makefile.PatternPlayer_debian_RtAudio_sdl20
 
-mv PatternPlayer_debian_RtAudio_sdl20 picoloop-pulse
+mv picoloop_debian_RtAudio_sdl20 picoloop-pulse
 
 #
 # Build Alsa version
 #
+
+echo "#"
+echo "# Build Alsa version"
+echo "#"
 
 sed -i -e "s/-D__LINUX_PULSE__/-D__LINUX_ALSA__/g" Makefile.RtMidi_debian_sdl20
 sed -i -e "s/-D__LINUX_PULSE__/-D__LINUX_ALSA__/g" Makefile.RtAudio_debian_sdl20
@@ -96,11 +108,15 @@ make -f Makefile.RtMidi_debian_sdl20
 make -f Makefile.RtAudio_debian_sdl20
 make -f Makefile.PatternPlayer_debian_RtAudio_sdl20
 
-mv PatternPlayer_debian_RtAudio_sdl20 picoloop-alsa
+mv picoloop_debian_RtAudio_sdl20 picoloop-alsa
 
 #
 # Build Jack version
 #
+
+echo "#"
+echo "# Build Jack version"
+echo "#"
 
 sed -i -e "s/-D__LINUX_ALSA__/-D__UNIX_JACK__/g" Makefile.RtMidi_debian_sdl20
 sed -i -e "s/-D__LINUX_ALSA__/-D__UNIX_JACK__/g" Makefile.RtAudio_debian_sdl20
@@ -116,7 +132,7 @@ make -f Makefile.RtMidi_debian_sdl20
 make -f Makefile.RtAudio_debian_sdl20
 make -f Makefile.PatternPlayer_debian_RtAudio_sdl20
 
-mv PatternPlayer_debian_RtAudio_sdl20 picoloop-jack
+mv picoloop_debian_RtAudio_sdl20 picoloop-jack
 
 %install
 
@@ -239,6 +255,12 @@ install -m 644 picoloop/picoloop-logo.png %{buildroot}%{_datadir}/icons/picoloop
 %{_datadir}/*
 
 %changelog
+* Sun Oct 25 2026 Yann Collette <ycollette.nospam@free.fr> - 0.80a-3
+- update to 0.80a-3
+
+* Tue Sep 29 2026 Yann Collette <ycollette.nospam@free.fr> - 0.79-3
+- update to 0.79-3
+
 * Thu Dec 19 2019 Yann Collette <ycollette.nospam@free.fr> - 0.77e-3
 - update to 0.77e-3. Update to last master. This version builds ...
 
