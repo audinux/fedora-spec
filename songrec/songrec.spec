@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: songrec
-Version: 0.7.6
+Version: 0.8.0
 Release: 1%{?dist}
 Summary: An open-source Shazam client for Linux.
 License: GPL-3.0-or-later
@@ -57,10 +57,10 @@ export CARGO_HOME="$CWD/cargo"
 # cargo build --release --bin hexosynth_jack
 
 %ifarch x86_64
-rustup-init -y --no-modify-path --default-toolchain 1.88-x86_64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain 1.92-x86_64-unknown-linux-gnu
 %endif
 %ifarch aarch64
-rustup-init -y --no-modify-path --default-toolchain 1.88-aarch64-unknown-linux-gnu
+rustup-init -y --no-modify-path --default-toolchain 1.92-aarch64-unknown-linux-gnu
 %endif
 source cargo/env
 
@@ -87,6 +87,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/*
 
 %changelog
+* Tue Oct 27 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.0-1
+- update to 0.8.0-1
+
 * Thu Oct 15 2026 Yann Collette <ycollette.nospam@free.fr> - 0.7.6-1
 - update to 0.7.6-1
 
