@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: stagerig
-Version: 0.1.83
+Version: 0.1.85
 Release: 1%{?dist}
 Summary: A live-performance plugin host for Linux
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./stagerig-source.sh <TAG>
-#        ./stagerig-source.sh v0.1.83
+#        ./stagerig-source.sh v0.1.85
 
 Source0: stagerig.tar.gz
 Source1: stagerig-source.sh
@@ -40,6 +40,7 @@ BuildRequires: alsa-lib-devel
 BuildRequires: pkgconfig(jack)
 BuildRequires: gtk3-devel
 BuildRequires: ladspa-devel
+BuildRequires: libatomic
 BuildRequires: desktop-file-utils
 
 %description
@@ -107,6 +108,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/io.github.dguedry.Sta
 %{_mandir}/man1/*
 
 %changelog
+* Wed Oct 28 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.85-1
+- update to 0.1.85-1
+
 * Sun Oct 25 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.83-1
 - update to 0.1.83-1
 
