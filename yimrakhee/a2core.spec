@@ -3,11 +3,9 @@
 # Type: Plugin, LV2, MODGUI
 # Category: Audio, Tool
 
-%global commit0 5de2328de48779c7ba10e3ab6b5de1c2f2f3079f
-
 Name: a2core
 Version: 0.3.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A lightweight, minimal LV2 plugin for running Neural Amp Modeler (NAM) models
 License: MIT
 URL: https://codeberg.org/yimrakhee/a2core.lv2
@@ -17,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./a2core-source.sh <TAG>
-#        ./a2core-source.sh main
+#        ./a2core-source.sh v0.3.0
 
 Source0: a2core.lv2.tar.gz
 Source1: a2core-source.sh
@@ -55,6 +53,9 @@ cp -ra .lv2/* %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Wed Oct 28 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.0-2
+- update to 0.3.0-2
+
 * Sun Oct 04 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.0-1
 - update to 0.3.0-1
 
