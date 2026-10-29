@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: ibniz-rust
-Version: 1.0.0
+Version: 1.0.1
 Release: 1%{?dist}
 Summary: A virtual machine designed for extremely compact low-level audiovisual programs.
 License: MIT
@@ -101,5 +101,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/ibniz.desktop
 %{_datadir}/ibniz/examples/*
 
 %changelog
+* Wed Oct 28 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
+- update to 1.0.1-1
+
 * Sat Oct 24 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - Initial spec file
