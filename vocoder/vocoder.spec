@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: vocoder
-Version: 1.1.1
+Version: 1.1.2
 Release: 1%{?dist}
 Summary: Simple LADSPA/LV2/CLAP vocoder plugin using DPF
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./vocoder-source.sh <TAG>
-#        ./vocoder-source.sh 1.1.1
+#        ./vocoder-source.sh 1.1.2
 
 Source0: vocoder.tar.gz
 Source1: vocoder-source.sh
@@ -81,6 +81,9 @@ LADSPA version of %{name}
 %{_libdir}/ladspa/*
 
 %changelog
+* Thu Oct 29 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.2-1
+- update to 1.1.2-1
+
 * Sun Jan 04 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
 - update to 1.1.1-1
 
