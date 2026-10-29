@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: bytebeat
-Version: 1.1.0
+Version: 1.2.0
 Release: 1%{?dist}
 Summary: Bytebeat player in Rust with a collection of many formulas from around the internet.
 License: MIT
@@ -107,6 +107,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/bytebeat/data/*
 
 %changelog
+* Wed Oct 28 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
+- update to 1.2.0-1
+
 * Sat Oct 24 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
 - update to 1.1.0-1
 
