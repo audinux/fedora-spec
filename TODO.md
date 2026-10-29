@@ -494,6 +494,14 @@
 | apeCsound                                | https://github.com/alessandropetrolati/apeCsound                                                                                                            |
 | glslViewer                               | https://github.com/patriciogonzalezvivo/glslViewer                                                                                                          |
 | Four-Tracker                             | https://github.com/elcrispo76/Four-Tracker                                                                                                                  |
+| mutadrums                                | https://github.com/mtyas/mutadrums                                                                                                                          |
+| Kings-into-Clowns                        | https://github.com/mtyas/Kings-into-Clowns                                                                                                                  |
+| FORGE64                                  | https://github.com/mtyas/FORGE64                                                                                                                            |
+| NeoOrgan                                 | https://github.com/mtyas/NeoOrgan                                                                                                                           |
+| TopModel                                 | https://github.com/mtyas/TopModel                                                                                                                           |
+| OmniSplit                                | https://github.com/mtyas/OmniSplit                                                                                                                          |
+| MidiFlux                                 | https://github.com/mtyas/MidiFlux                                                                                                                           |
+| CrossMod                                 | https://github.com/mtyas/CrossMod                                                                                                                           |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
