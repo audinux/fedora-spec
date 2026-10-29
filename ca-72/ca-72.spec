@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: ca-72
-Version: 0.2.8
+Version: 0.3.0
 Release: 1%{?dist}
 Summary: A  a synthesizer plug-in modelled from the circuit of a 1970s analogue synthesizer
 License: GPL-3.0-or-later
@@ -136,6 +136,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/CA-72.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Thu Oct 29 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.0-1
+- update to 0.3.0-1
+
 * Tue Oct 20 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.8-1
 - update to 0.2.8-1
 
