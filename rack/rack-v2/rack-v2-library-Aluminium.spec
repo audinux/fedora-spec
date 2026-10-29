@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 670d5481f0957fd7c2970a70c79be5451883a0e6
-%global gittag0 2.2.0
+%global commit0 dfafd02a5b14862b7d5fd531f25f6c0e17cf4e21
+%global gittag0 2.3.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Aluminium
-Version: 2.2.0
+Version: 2.3.1
 Release: 2%{?dist}
 Summary: Aluminium plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Aluminium_plugin/dist/Aluminium/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.1-1
 - initial specfile
