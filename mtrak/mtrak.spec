@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: mtrak
-Version: 0.6.0
+Version: 0.7.0
 Release: 1%{?dist}
 Summary: Lightweight crossplatform terminal midi tracker.
 License: MIT
@@ -75,5 +75,8 @@ install -m 755 target/release/mtrak %{buildroot}/%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Thu Oct 29 2026 Yann Collette <ycollette.nospam@free.fr> - 0.7.0-1
+- update to 0.7.0-1
+
 * Tue Oct 27 2026 Yann Collette <ycollette.nospam@free.fr> - 0.6.0-1
 - Initial spec file
