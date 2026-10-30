@@ -26,7 +26,7 @@
 
 Name: mod-host
 Version: 0.10.6.%{shortcommit0}
-Release: 12%{?dist}
+Release: 13%{?dist}
 License: GPL-3.0-or-later
 Summary: LV2 host for Jack controllable via socket or command line
 URL: https://github.com/moddevices/mod-host
@@ -65,6 +65,8 @@ Patch11: mod-host-109.patch
 Patch12: mod-host-112.patch
 # https://github.com/mod-audio/mod-host/pull/113 - split socket input into NUL-terminated commands
 Patch13: mod-host-113.patch
+# https://github.com/mod-audio/mod-host/pull/116 - room for 128 commands, and report a command that does not fit
+Patch14: mod-host-116.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -154,6 +156,10 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 %{_datadir}/mod-host/
 
 %changelog
+* Fri Oct 30 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-13
+- #116: the protocol's command table holds 128 commands, and one past them is
+  refused with -1 and named on stderr instead of dropped in silence
+
 * Fri Oct 16 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-12
 - #112: trimming spaces no longer reads before the start of an empty command
 - #113: socket input is split into NUL-terminated commands, a command split
