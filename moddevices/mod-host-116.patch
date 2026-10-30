@@ -1,0 +1,55 @@
+https://github.com/mod-audio/mod-host/pull/116
+Protocol: room for 128 commands, and report a command that does not fit
+
+diff --git a/src/protocol.c b/src/protocol.c
+index 7842d2a..d5fac43 100644
+--- a/src/protocol.c
++++ b/src/protocol.c
+@@ -245,12 +245,13 @@ void protocol_parse(msg_t *msg)
+ }
+ 
+ 
+-void protocol_add_command(const char *command, void (*callback)(proto_t *proto))
++int protocol_add_command(const char *command, void (*callback)(proto_t *proto))
+ {
+     if (g_command_count >= PROTOCOL_MAX_COMMANDS)
+     {
+-        printf("error: PROTOCOL_MAX_COMMANDS reached (reconfigure it)\n");
+-        return;
++        fprintf(stderr, "error: PROTOCOL_MAX_COMMANDS (%d) reached, '%s' is not registered\n",
++                PROTOCOL_MAX_COMMANDS, command);
++        return -1;
+     }
+ 
+     char *cmd = str_duplicate(command);
+@@ -259,6 +260,7 @@ void protocol_add_command(const char *command, void (*callback)(proto_t *proto))
+     g_commands[g_command_count].count = strarr_length(g_commands[g_command_count].list);
+     g_commands[g_command_count].callback = callback;
+     g_command_count++;
++    return 0;
+ }
+ 
+ 
+diff --git a/src/protocol.h b/src/protocol.h
+index 2d04b6c..4b268c7 100644
+--- a/src/protocol.h
++++ b/src/protocol.h
+@@ -48,7 +48,7 @@
+ ************************************************************************************************************************
+ */
+ 
+-#define PROTOCOL_MAX_COMMANDS       64
++#define PROTOCOL_MAX_COMMANDS       128
+ 
+ // error messages configuration
+ #define MESSAGE_COMMAND_NOT_FOUND   "not found"
+@@ -99,7 +99,8 @@ typedef struct PROTO_T {
+ */
+ 
+ void protocol_parse(msg_t *msg);
+-void protocol_add_command(const char *command, void (*callback)(proto_t *proto));
++// returns 0, or -1 if the command table is full (the command is not registered)
++int protocol_add_command(const char *command, void (*callback)(proto_t *proto));
+ void protocol_response(const char *response, proto_t *proto);
+ void protocol_response_int(int resp, proto_t *proto);
+ void protocol_remove_commands(void);
