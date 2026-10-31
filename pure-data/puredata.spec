@@ -2,6 +2,7 @@
 # Tag: Editor, Jack, Alsa
 # Type: Standalone
 # Category: Audio, MIDI, Sequencer
+# Screenshot: pure-data.png
 
 #
 # Pure Data vanilla build

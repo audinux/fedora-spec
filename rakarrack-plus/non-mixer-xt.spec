@@ -2,6 +2,7 @@
 # Tag: Audio, Mixer
 # Type: Standalone
 # Category: Audio, Tool
+# Screenshot: nonmixerxt.png
 
 Summary: Reboot of Non Mixer with eXTended LV2 support.
 Name: non-mixer-xt

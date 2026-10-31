@@ -2,6 +2,7 @@
 # Tag: Jack, Alsa, MIDI
 # Type: Standalone
 # Category: Audio, Sequencer
+# Screenshot: helio-workstation.png
 
 Name: helio-workstation
 Version: 3.18.0

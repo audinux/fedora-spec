@@ -2,6 +2,7 @@
 # Tag: Tool
 # Type: Plugin, VST3, VST
 # Category: Audio, Tool, Programming
+# Screenshot: cabbage.png
 
 Name: cabbage
 Version: 2.10.0

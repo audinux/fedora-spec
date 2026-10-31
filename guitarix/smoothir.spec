@@ -2,6 +2,7 @@
 # Tag: MIDI, Sampler
 # Type: Standalone, Plugin, CLAP
 # Category: Audio, Sampler
+# Screenshot: smoothir.png
 
 Name: smoothir
 Version: 0.3

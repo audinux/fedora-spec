@@ -3,6 +3,7 @@
 # Type: IDE
 # Category: Programming
 # GUIToolkit: Qt6
+# Screenshot: miniaudicle.png
 
 %global debug_package %{nil}
 

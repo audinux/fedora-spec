@@ -2,6 +2,7 @@
 # Tag: Modular
 # Type: Standalone, Plugin, LV2, VST, VST3, CLAP
 # Category: Audio, Synthesizer, Effect
+# Screenshot: cardinal.png
 
 %define _lto_cflags %{nil}
 # On some platforms, the debug symbols extraction produces

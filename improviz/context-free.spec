@@ -40,6 +40,8 @@ sed -i -r "/strip $@/d" Makefile
 
 %build
 
+mkdir objs
+
 %set_build_flags
 
 export CXXFLAGS="-I/usr/include/ffmpeg $CXXFLAGS"

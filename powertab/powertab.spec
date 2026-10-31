@@ -2,6 +2,7 @@
 # Tag: DAW, Editor, Player
 # Type: Standalone
 # Category: Audio, DAW
+# Screenshot: powertab.png
 
 Name: powertabeditor
 Version: 2.0.22

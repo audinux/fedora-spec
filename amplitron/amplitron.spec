@@ -2,6 +2,7 @@
 # Tag: Tool, Rack
 # Type: Standalone
 # Category: Audio, Effect, Tool
+# Screenshot: amplitron.png
 
 Name: amplitron
 Version: 0.1.369

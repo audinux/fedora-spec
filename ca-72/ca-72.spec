@@ -2,6 +2,7 @@
 # Tag: Synthesizer
 # Type: Plugin, VST3, CLAP
 # Category: Audio, Synthesizer
+# Screenshot: ca-72.png
 
 %global debug_package %{nil}
 

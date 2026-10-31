@@ -105,6 +105,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/io.github.dguedry.Sta
 %{_datadir}/icons/hicolor/128x128/apps/*
 %{_datadir}/icons/hicolor/256x256/apps/*
 %{_datadir}/icons/hicolor/512x512/apps/*
+%{_datadir}/stagerig/phrases/Comping/*
+%{_datadir}/stagerig/phrases/Drums/*
+%{_datadir}/stagerig/phrases/Licks/*
 %{_mandir}/man1/*
 
 %changelog

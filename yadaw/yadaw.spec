@@ -2,6 +2,7 @@
 # Tag: Editor, Audio, MIDI, Sequencer
 # Type: Standalone
 # Category: DAW, MIDI
+# Screenshot: yadaw.gif
 
 %global _find_debuginfo_dwz_opts %{nil}
 %global __brp_mangle_shebangs %{nil}

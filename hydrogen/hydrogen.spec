@@ -2,7 +2,7 @@
 # Tag:  Drum, Jack, Alsa, MIDI
 # Type: Standalone
 # Category: Audio, Sequencer
-# GUIToolkit: Qt5
+# Screenshot: hydrogen.png
 
 Name: hydrogen
 Version: 1.2.7

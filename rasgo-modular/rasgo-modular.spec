@@ -2,6 +2,7 @@
 # Tag: Modular
 # Type: Standalone
 # Category: Audio, Synthesizer
+# Screenshot: rasgo-modular.png
 
 Name: rasgo-modular
 Version: 0.1.7

@@ -2,6 +2,7 @@
 # Tag: Tool, Rack
 # Type: Plugin, VST, LV2, Standalone
 # Category: Audio, Effect, Synthesizer, Tool
+# Screenshot: carla-mao.png
 
 %define _lto_cflags %{nil}
 %global commit0 97a9e0740baf6df2df942495c02532a624c44682

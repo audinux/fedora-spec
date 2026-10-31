@@ -2,6 +2,7 @@
 # Tag: Jack
 # Type: Standalone
 # Category: Audio, Tool
+# Screenshot: luma.png
 
 %global commit0 30f6c4a0a129e20f7525100cfc12764e4fdff989
 

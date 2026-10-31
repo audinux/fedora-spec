@@ -2,6 +2,8 @@
 # Tag: Editor
 # Type: Standalone
 # Category: Audio, DAW
+# Screenshot: tenacity.png
+
 %global	optflags %{optflags} -fPIC
 
 Summary: An easy-to-use multi-track audio editor and recorder

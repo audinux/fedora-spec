@@ -2,6 +2,7 @@
 # Tag: Effect
 # Type: Plugin, Standalone, VST, VST3, CLAP
 # Category: Effect
+# Screenshot: rusty-amp.png
 
 %global debug_package %{nil}
 

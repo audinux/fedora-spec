@@ -2,6 +2,7 @@
 # Tag: Tool, Rack
 # Type: Plugin, VST3, Standalone
 # Category: Audio, Effect, Tool
+# Screenshot: open_riff_box.png
 
 Name: open-riff-box
 Version: 0.9.1

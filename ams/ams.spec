@@ -2,6 +2,7 @@
 # Tag: Modular, Jack, Alsa
 # Type: Standalone
 # Category: Audio, Synthesizer
+# Screenshot: AMS.png
 
 Summary: Alsa Modular Synth, a realtime modular synthesizer
 Name: ams

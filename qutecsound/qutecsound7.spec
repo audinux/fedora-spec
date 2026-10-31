@@ -2,6 +2,7 @@
 # Tag: Jack, Editor
 # Type: Standalone
 # Category: Audio
+# Screenshot: csoundqt.png
 
 Name: qutecsound
 Version: 7.4.4

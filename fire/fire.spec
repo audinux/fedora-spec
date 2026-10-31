@@ -1,10 +1,10 @@
 # Status: active
 # Tag: Jack, Alsa, Distortion
-# Type: Plugin, Standalone, VST3
+# Type: Plugin, Standalone, VST3, CLAP
 # Category: Effect 
 
 Name: fire
-Version: 1.5.0
+Version: 2.0.0
 Release: 2%{?dist}
 Summary: This is a distortion plugin developed by Wings
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./fire-source.sh <TAG>
-#        ./fire-source.sh v1.5.0
+#        ./fire-source.sh v2.0.0
 
 Source0: Fire.tar.gz
 Source1: fire-source.sh
@@ -45,13 +45,28 @@ This is a multi-band distortion plugin 『Fire』.
 It can be used in DAWs which supports AU and Vst3 plugins such
 as Ableton Live, Fl Studio, etc.
 
+%package -n license-%{name}
+Summary: License and documentation for %{name}
+License: GPL-2.0-or-later
+
+%description -n license-%{name}
+License and documentation for %{name}
+
 %package -n vst3-%{name}
 Summary: VST3 version of %{name}
 License: GPL-2.0-or-later
-Requires: %{name}
+Requires: license-%{name}
 
 %description -n vst3-%{name}
 VST3 version of %{name}
+
+%package -n clap-%{name}
+Summary: CLAP version of %{name}
+License: GPL-2.0-or-later
+Requires: license-%{name}
+
+%description -n clap-%{name}
+CLAP version of %{name}
 
 %prep
 %autosetup -n Fire
@@ -66,12 +81,23 @@ VST3 version of %{name}
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
 cp -ra %{__cmake_builddir}/Fire_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
 
-%files -n vst3-%{name}
+install -m 755 -d %{buildroot}%{_libdir}/clap/
+cp -ra %{__cmake_builddir}/Fire_artefacts/CLAP/*  %{buildroot}/%{_libdir}/clap/
+
+%files -n license-%{name}
 %doc README.md
 %license LICENSE.md
+
+%files -n vst3-%{name}
 %{_libdir}/vst3/*
 
+%files -n clap-%{name}
+%{_libdir}/clap/*
+
 %changelog
+* Tue Oct 06 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-2
+- update to 2.0.0-2
+
 * Sat Oct 18 2025 Yann Collette <ycollette.nospam@free.fr> - 1.5.0-2
 - update to 1.5.0-2
 

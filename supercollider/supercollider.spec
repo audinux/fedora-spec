@@ -2,6 +2,7 @@
 # Tag: Jack, Alsa
 # Type: Language
 # Category: Audio, Synthesizer, Graphic, Programming
+# Screenshot: supercollider.png
 
 Name: supercollider
 Summary: Object oriented programming environment for real-time audio and video processing

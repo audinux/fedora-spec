@@ -2,6 +2,7 @@
 # Tag: Tool
 # Type: Standalone
 # Category: Tool
+# Screenshot: millisecond.png
 
 Name: millisecond
 Version: 0.2.3

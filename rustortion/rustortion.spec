@@ -2,6 +2,7 @@
 # Tag: Tool, Rack
 # Type: Plugin, VST3, CLAP, Standalone
 # Category: Audio, Effect, Tool
+# Screenshot: rustortion.png
 
 %global debug_package %{nil}
 

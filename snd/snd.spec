@@ -2,6 +2,7 @@
 # Tag: Tool, Audio, Editor
 # Type: Standalone
 # Category: Tool, Audio
+# Screenshot: snd.png
 
 %define _lto_cflags %{nil}
 

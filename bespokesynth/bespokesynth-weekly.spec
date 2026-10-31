@@ -2,6 +2,7 @@
 # Tag: Modular
 # Type: Standalone
 # Category: Audio, Synthesizer
+# Screenshot: bespokesynth.png
 
 %global commit0 e4e1342f08f823d7320b9c31cdae488ee8780e7c
 

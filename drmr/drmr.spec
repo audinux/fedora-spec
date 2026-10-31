@@ -2,6 +2,7 @@
 # Tag: Drum
 # Type: Plugin, LV2
 # Category: Synthesizer
+# Screenshot: drmr.png
 
 # Global variables for github repository
 %global commit0 28791215c14d5c5e6fddd11e704238ab4fc51354

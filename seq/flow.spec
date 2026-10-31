@@ -2,6 +2,7 @@
 # Tag: Sequencer, Modular
 # Type: Standalone
 # Category: Sequencer
+# Screenshot: flow.png
 
 %global commit0 460fb1eb1d2c07265a986a7a20c4e040cfc1e916
 %global debug_package %{nil}

@@ -2,6 +2,7 @@
 # Tag: Tool, AI
 # Type: Plugin, VST3, CLAP, LV2, Standalone
 # Category: Audio, Tool
+# Screenshot: tone3000.png
 
 %global _cmake_shared_libs %{nil}
 

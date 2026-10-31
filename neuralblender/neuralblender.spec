@@ -2,6 +2,7 @@
 # Tag: Tool, AI
 # Type: Plugin, LV2, Standalone
 # Category: Audio, Tool
+# Screenshot: neuralblender.png
 
 Name: neuralblender
 Version: 1.3.9

@@ -2,6 +2,7 @@
 # Tag: Video, Tool
 # Type: Standalone
 # Category: Tool
+# Screenshot: vimix.png
 
 %global _cmake_shared_libs %{nil}
 

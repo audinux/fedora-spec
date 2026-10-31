@@ -2,6 +2,7 @@
 # Tag: Analyzer, Audio, Editor
 # Type: Standalone
 # Category: Audio, Tool
+# Screenshot: rezound.png
 
 # Global variables for github repository
 %global commit0 4d2e1d0065b6948462995fe80b952291363097a6

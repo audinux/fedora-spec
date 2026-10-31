@@ -2,6 +2,7 @@
 # Tag: Jack, MIDI
 # Type: Standalone
 # Category: Audio, DAW
+# Screenshot: lmms.png
 
 %global commit0 4fde529fb37115c327daadac8506870e92724f3a
 

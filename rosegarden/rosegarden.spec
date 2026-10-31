@@ -2,6 +2,7 @@
 # Tag: Editor, Audio, Sequencer
 # Type: Standalone
 # Category: Audio, Sequencer, DAW
+# Screenshot: rosegarden.png
 
 %global major 26.06
 

@@ -2,6 +2,7 @@
 # Tag: Effect, Tool, Devel
 # Type: Plugin, Standalone, VST3, CLAP, LV2
 # Category: Effect, Programming
+# Screenshot: protoplug.png
 
 %global commit0 056cea68387f53bc64978581dd3820e85b844fec
 

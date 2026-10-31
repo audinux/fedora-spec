@@ -2,6 +2,7 @@
 # Tag: Modular
 # Type: Standalone
 # Category: Audio, Video, Synthesizer
+# Screenshot: infinite.png
 
 Name: infinite
 Version: 0.6.6

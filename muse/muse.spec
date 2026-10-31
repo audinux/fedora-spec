@@ -2,6 +2,7 @@
 # Tag: Editor, Audio, MIDI, Sequencer
 # Type: Standalone
 # Category: DAW, MIDI
+# Screenshot: muse.png
 
 %global majorver 4.3
 # No need to provide & require internal libraries

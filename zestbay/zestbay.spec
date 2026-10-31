@@ -2,6 +2,7 @@
 # Tag: Session, OSC, Jack
 # Type: Standalone
 # Category: Session Mngmt
+# Screenshot: zestbay.png
 
 %global debug_package %{nil}
 

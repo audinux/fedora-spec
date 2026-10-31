@@ -2,6 +2,7 @@
 # Tag: Editor, Audio, MIDI, Sequencer
 # Type: Standalone
 # Category: DAW, MIDI
+# Screenshot: qtractor.png
 
 Summary: Audio/MIDI multi-track sequencer
 Name: qtractor-mao

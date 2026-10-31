@@ -2,6 +2,7 @@
 # Tag: Tool, Generative, Visualization
 # Type: Standalone
 # Category: Tool
+# Screenshot: nodebox.png
 
 %global debug_package %{nil}
 

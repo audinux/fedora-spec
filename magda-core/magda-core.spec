@@ -2,6 +2,7 @@
 # Tag: Editor, Audio, MIDI, Sequencer
 # Type: Standalone
 # Category: DAW, MIDI
+# Screenshot: magda-core.png
 
 %global onnx_runtime_version 1.26.0
 

@@ -2,6 +2,7 @@
 # Tag: Tool, Rack
 # Type: Plugin, LV2, Standalone
 # Category: Audio, Effect, Tool
+# Screenshot: guitarix.png
 
 # guitarix has merged with gx_head branch and tarball is distributed as guitarix2
 # project name remains guitarix however

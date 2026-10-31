@@ -2,6 +2,7 @@
 # Tag: Jack, MIDI
 # Type: Standalone
 # Category: Audio, DAW
+# Screenshot: lmms.png
 
 Name: lmms-mao
 Version: 1.2.2

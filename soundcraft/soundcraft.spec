@@ -2,6 +2,7 @@
 # Tag: Editor, Audio, MIDI, Sequencer
 # Type: Standalone
 # Category: DAW, MIDI
+# Screenshot: soundcraft.png
 
 %global debug_package %{nil}
 

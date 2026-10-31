@@ -2,6 +2,7 @@
 # Tag: Guitar, Amp Simul
 # Type: Plugin, LV2, Standalone
 # Category: Audio, Effect
+# Screenshot: rakarrack-plus.png
 
 Summary: Guitar Amplifier emulator
 Name: rakarrack-plus

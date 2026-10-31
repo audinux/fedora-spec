@@ -2,6 +2,7 @@
 # Tag: Jack, Alsa
 # Type: Language
 # Category: Audio, Synthesizer, Programming
+# Screenshot: ibniz-rust.png
 
 %global debug_package %{nil}
 

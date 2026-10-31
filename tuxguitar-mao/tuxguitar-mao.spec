@@ -2,6 +2,7 @@
 # Tag: Audio, Sequencer, Editor, MIDI
 # Type: Standalone
 # Category: Audio, Sequencer, MIDI, DAW
+# Screenshot: tuxguitar.png
 
 %ifarch x86_64
 %global bit x86_64

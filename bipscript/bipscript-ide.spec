@@ -2,6 +2,7 @@
 # Tag: Jack, Alsa
 # Type: Standalone, IDE
 # Category: Audio, Programming
+# Screenshot: bipscript-ide.png
 
 Name: bipscript-ide
 Version: 0.24

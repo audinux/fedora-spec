@@ -2,6 +2,7 @@
 # Tag: Looper
 # Type: Plugin, Standalone, VST3
 # Category: Effect
+# Screenshot: frippertron.png
 
 Name: frippertron
 Version: 2.2.0

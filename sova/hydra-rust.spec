@@ -2,6 +2,7 @@
 # Tag: Tool, Video, Audio
 # Type: Standalone
 # Category: Tool
+# Screenshot: hydra.png
 
 %global debug_package %{nil}
 

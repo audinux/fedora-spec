@@ -2,6 +2,7 @@
 # Tag: DWA
 # Type: Standalone
 # Category: DAW
+# Screenshot: maolan.gif
 
 %global _find_debuginfo_dwz_opts %{nil}
 %global __brp_mangle_shebangs %{nil}

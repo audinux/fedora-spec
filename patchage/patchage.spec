@@ -2,6 +2,7 @@
 # Tag: Session, Jack
 # Type: Standalone
 # Category: Session Mngmt
+# Screenshot: patchage.png
 
 Name: patchage
 Version: 1.0.10

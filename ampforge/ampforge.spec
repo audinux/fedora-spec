@@ -2,6 +2,7 @@
 # Tag: Effect, Amp Simul
 # Type: Standalone, Plugin, LV2, CLAP, VST3
 # Category: Effect
+# Screenshot: ampforge.png
 
 Name: ampforge
 Version: 0.5.0

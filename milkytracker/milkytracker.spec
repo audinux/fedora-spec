@@ -2,6 +2,7 @@
 # Tag: Tracker, Jack, Alsa
 # Type: Standalone
 # Category: Audio, Sequencer
+# Screenshot: milkytracker.png
 
 Name: milkytracker
 Version: 1.06

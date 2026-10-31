@@ -2,6 +2,7 @@
 # Tag: Guitar, MIDI
 # Type: Plugin, LV2
 # Category: Audio, Effect, MIDI
+# Screenshot: guitarmidi.png
 
 %global debug_package %{nil}
 %global _cmake_shared_libs %{nil}

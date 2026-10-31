@@ -2,6 +2,7 @@
 # Tag: Drum
 # Type: Plugin, Standalone, LV2, VST3
 # Category: Audio, Sequencer
+# Screenshot: drumlabooh.png
 
 Name: drumlabooh
 Version: 13.0.0

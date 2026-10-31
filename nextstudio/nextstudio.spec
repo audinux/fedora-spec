@@ -1,7 +1,8 @@
 # Status: active
-# Tag: Jack, Alsa, Distortion
-# Type: Plugin, Standalone, VST3
-# Category: Effect
+# Tag: Jack, Alsa
+# Type: Standalone
+# Category: Effect, DAW
+# Screenshot: nextstudio.png
 
 Name: nextstudio
 Version: 0.0.5a

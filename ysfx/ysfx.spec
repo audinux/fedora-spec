@@ -2,6 +2,7 @@
 # Tag: Tool
 # Type: Plugin, VST3, CLAP
 # Category: Audio, Tool, Programming
+# Screenshot: ysfx.png
 
 Name: ysfx
 Version: 0.0.47

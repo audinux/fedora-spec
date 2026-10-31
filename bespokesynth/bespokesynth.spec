@@ -2,6 +2,7 @@
 # Tag: Modular
 # Type: Standalone
 # Category: Audio, Synthesizer
+# Screenshot: bespokesynth.png
 
 Name: BespokeSynth
 Version: 1.3.0

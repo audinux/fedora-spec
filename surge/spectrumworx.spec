@@ -2,6 +2,7 @@
 # Tag: Effect
 # Type: Plugin, CLAP
 # Category: Effect
+# Screenshot: spectrumworx.png
 
 %global _cmake_shared_libs %{nil}
 
