@@ -5,10 +5,8 @@
 
 %global debug_package %{nil}
 
-%global commit0 730be455fb1dc5ce761f2196d22df8280e6d0faa
-
 Name: dm-SD1
-Version: 0.1.0
+Version: 0.1.1
 Release: 1%{?dist}
 Summary: An overdrive effect written in Rust modeled after the Boss SD-1
 URL: https://github.com/davemollen/dm-SD1
@@ -18,7 +16,7 @@ License: GPL-3.0-only
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/davemollen/dm-SD1/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Source0: https://github.com/davemollen/dm-SD1/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -63,7 +61,7 @@ LV2 version of %{name}
 
 %prep
 
-%autosetup -n dm-SD1-%{commit0}
+%autosetup -n dm-SD1-%{version}
 
 %build
 
@@ -118,6 +116,9 @@ cp -vfr dm-SD1.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Oct 31 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.1-1
+- update to 0.1.1-1
+
 * Mon Mar 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
 - update to 0.1.0-1
 
