@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: zestbay
-Version: 0.8.6
+Version: 1.1.2
 Release: 1%{?dist}
 Summary: A PipeWire patchbay for Linux that visualizes your audio graph, hosts LV2 effects plugins inline, and auto-connects ports with persistent routing rules.
 License: MIT
@@ -106,5 +106,14 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/256x256/apps/zestbay-tray.png
 
 %changelog
+* Thu Oct 29 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.2-1
+- update to 1.1.2-1
+
+* Thu Oct 29 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
+- update to 1.1.1-1
+
+* Thu Oct 29 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.8-1
+- update to 0.8.8-1
+
 * Mon Aug 17 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.6-1
 - Initial spec file
