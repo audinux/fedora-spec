@@ -60,7 +60,8 @@ LADSPA version of %{name}
 
 %build
 
-%cmake -DPluginLibDir=%{_lib}
+%cmake -DPluginLibDir=%{_lib} \
+       -DUsePFFFT=ON
 %cmake_build
 
 %install
