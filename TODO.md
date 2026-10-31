@@ -517,6 +517,7 @@ Check the following URL:
 - https://github.com/sfzinstruments/mappings -> some sfz sound fonts
 - https://github.com/ovniaudio
 - https://github.com/CoconutAudio
+- https://github.com/FreeMixer
 
 Add dead package:
 - gmixer
