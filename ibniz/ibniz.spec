@@ -7,7 +7,7 @@
 
 Name: ibniz
 Version: 0.0.1
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: A virtual machine designed for extremely compact low-level audiovisual programs.
 License: Zlib
 URL: https://viznut.fi/ibniz/
@@ -18,17 +18,18 @@ Distribution: Audinux
 
 Source0: https://github.com/viznut/IBNIZ/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: ibniz.svg
-Patch0: ibniz-fixingmakefile.patch
-Patch1: ibniz-manpage.patch
-Patch2: ibniz-20.patch
-Patch3: ibniz-21.patch
-Patch4: ibniz-fix-ibniz2c.patch
+#Patch0: ibniz-20.patch
+Patch1: ibniz-21.patch
+Patch2: ibniz-23.patch
+# Patch3: ibniz-fix-ibniz2c.patch
+# Patch4: ibniz-fixingmakefile.patch
+Patch5: ibniz-manpage.patch
 
 BuildRequires: gcc
 BuildRequires: make
 BuildRequires: perl-interpreter
 BuildRequires: python3-docutils
-BuildRequires: sdl12-compat-devel
+BuildRequires: SDL3-devel
 BuildRequires: desktop-file-utils
 
 %description
@@ -48,6 +49,7 @@ principle that a minimal set of rules should yield a maximal diversity.
 cd src
 %make_build
 %make_build ibniz2c
+%make_build ibniz.1
 
 %install
 
@@ -61,6 +63,9 @@ install -m 644 ibniz.txt %{buildroot}/%{_datadir}/doc/%{name}/
 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
 install -m 644 %{SOURCE1} %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/
+
+install -m 755 -d %{buildroot}/%{_mandir}/man1/
+install -m 644 ibniz.1 %{buildroot}/%{_mandir}/man1/
 
 # Write desktop files
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
@@ -91,8 +96,12 @@ desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/*
 %{_datadir}/applications/*
 %{_datadir}/doc/%{name}/%{name}.txt
+%{_mandir}/man1/*
 
 %changelog
+* Thu Oct 29 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-4
+- update to 0.0.1-4 - use SDL3
+
 * Sat Oct 24 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-3
 - update to 0.0.1-3 - fix ibniz2c
 

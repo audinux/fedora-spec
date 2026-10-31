@@ -1,49 +1,28 @@
-From c66f90c77a05a4f4562c540ece0699dff247b3da Mon Sep 17 00:00:00 2001
+From e97e4eabf61f4524e402c3bf3580d7b3cebb0f27 Mon Sep 17 00:00:00 2001
 From: Yann Collette <yc@example.com>
-Date: Sat, 24 Oct 2026 08:57:49 +0200
-Subject: [PATCH] add manpage
+Date: Thu, 29 Oct 2026 13:20:35 +0100
+Subject: [PATCH] manpage
 
 ---
- src/Makefile  |  9 ++++--
+ src/Makefile  |  3 ++
  src/ibniz.rst | 86 +++++++++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 92 insertions(+), 3 deletions(-)
+ 2 files changed, 89 insertions(+)
  create mode 100644 src/ibniz.rst
 
 diff --git a/src/Makefile b/src/Makefile
-index 3f8b66e..adc4b25 100644
+index ae42ea1..2905aae 100644
 --- a/src/Makefile
 +++ b/src/Makefile
-@@ -3,7 +3,7 @@
- EXE=ibniz
- CPPFLAGS=-DX11
- 
--all: ibniz
-+all: ibniz ibniz.1
- 
- # For win32 builds using mingw32 (you'll probably need to modify these)
- #CC=i586-mingw32msvc-gcc
-@@ -12,7 +12,7 @@ all: ibniz
- #all: ibniz.exe
- 
- clean:
--	rm -f *.o *~ ibniz vmtest ibniz.exe whole.c
-+	rm -f *.o *~ ibniz vmtest ibniz.exe whole.c ibniz.1
- 
- package: clean
- 	cd .. && cp -R src ibniz-1.18 && tar czf ibniz-1.18.tar.gz ibniz-1.18
-@@ -50,8 +50,11 @@ runtest: vmtest
- vmtest: vm_test.c vm_slow.c
- 	gcc vm_test.c vm_slow.o -o vmtest -lm
+@@ -41,6 +41,9 @@ runtest: vmtest
+ vmtest: vm_test.c vm_slow.o compiler.o ibniz.h vm.h
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) vm_test.c vm_slow.o compiler.o -o $@ $(LDFLAGS) $(LDLIBS)
  
 +ibniz.1: ibniz.rst
 +	rst2man ibniz.rst ibniz.1
 +
- ibniz2c: ibniz2c.c compiler.c gen_c.c
--	gcc -DIBNIZ2C -Os compiler.c ibniz2c.c -o ibniz2c -lm
-+	gcc -DIBNIZ2C -Os compiler.c ibniz2c.c $(CFLAGS)  $(LDFLAGS) -o ibniz2c -lm
+ uitest: ui_test.c ui_sdl.c vm_slow.o clipboard.o compiler.o ibniz.h vm.h texts.i font.i
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) $(SDL_CFLAGS) ui_test.c vm_slow.o clipboard.o compiler.o -o $@ $(LDFLAGS) $(SDL_LIBS) $(LDLIBS)
  
- install: ${EXE}
- 	install -d ${DESTDIR}/usr/bin
 diff --git a/src/ibniz.rst b/src/ibniz.rst
 new file mode 100644
 index 0000000..43ec032
