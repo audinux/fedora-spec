@@ -4,7 +4,7 @@
 # Category: Audio, Effect
 
 Name: ysfx-rejj
-Version: 1.2.0
+Version: 2.0.2
 Release: 2%{?dist}
 Summary: Reaper JSFX Plugins
 URL: https://github.com/Justin-Johnson/ReJJ
@@ -37,6 +37,12 @@ cp -ra * %{buildroot}%{_datadir}/%{name}/
 %{_datadir}/%{name}/*
 
 %changelog
+* Fri Oct 30 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-2
+- update to 2.0.2-2
+
+* Fri Oct 30 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-2
+- update to 2.0.1-2
+
 * Tue Feb 17 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-2
 - update to 1.2.0-2 - rename spec
 
