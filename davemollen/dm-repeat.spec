@@ -5,10 +5,8 @@
 
 %global debug_package %{nil}
 
-%global commit0 d783e32fe08c603d1fcb9e4a771167c144596876
-
 Name: dm-repeat
-Version: 0.1.0
+Version: 0.1.1
 Release: 1%{?dist}
 Summary: A multitap delay effect written in Rust
 URL: https://github.com/davemollen/dm-Repeat
@@ -18,7 +16,7 @@ License: GPL-3.0-only
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/davemollen/dm-Repeat/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Source0: https://github.com/davemollen/dm-Repeat/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -63,7 +61,7 @@ LV2 version of %{name}
 
 %prep
 
-%autosetup -n dm-Repeat-%{commit0}
+%autosetup -n dm-Repeat-%{version}
 
 %build
 
@@ -118,6 +116,9 @@ cp -vfr dm-Repeat.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Oct 31 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.1-1
+- update to 0.1.1-1
+
 * Mon Mar 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
 - update to 0.1.0-1
 
