@@ -4,7 +4,7 @@
 # Category: Audio
 
 Name: qutecsound
-Version: 7.4.1
+Version: 7.4.4
 Release: 3%{?dist}
 Summary: A csound file editor
 URL: https://github.com/CsoundQt/CsoundQt
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./csoundqt-source.sh <TAG>
-#        ./csoundqt-source.sh v7.4.1
+#        ./csoundqt-source.sh v7.4.4
 
 Source0: CsoundQt.tar.gz
 Source1: csoundqt-source.sh
@@ -83,6 +83,9 @@ desktop-file-install --vendor '' \
 %{_datadir}/icons/hicolor/scalable/apps/*
 
 %changelog
+* Thu Oct 29 2026 Yann Collette <ycollette.nospam@free.fr> - 7.4.4-3
+- update to 7.4.4-3
+
 * Wed Oct 21 2026 Yann Collette <ycollette.nospam@free.fr> - 7.4.1-3
 - update to 7.4.1-3
 

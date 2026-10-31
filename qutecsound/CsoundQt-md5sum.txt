@@ -1,1 +1,1 @@
-97c12d6772880115429720ea4efb7a3c  CsoundQt.tar.gz
+bf13c35e3f57cf7bdcd06e0503271c78  CsoundQt.tar.gz
