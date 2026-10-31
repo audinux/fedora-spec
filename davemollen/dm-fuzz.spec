@@ -5,10 +5,8 @@
 
 %global debug_package %{nil}
 
-%global commit0 0c91e77c60ca16f86f81128da290767b17df3e71
-
 Name: dm-fuzz
-Version: 0.1.0
+Version: 0.1.1
 Release: 1%{?dist}
 Summary: A mono fuzz effect written in Rust
 URL: https://github.com/davemollen/dm-Fuzz
@@ -18,7 +16,7 @@ License: GPL-3.0-only
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/davemollen/dm-Fuzz/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Source0: https://github.com/davemollen/dm-Fuzz/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -63,7 +61,7 @@ LV2 version of %{name}
 
 %prep
 
-%autosetup -n dm-Fuzz-%{commit0}
+%autosetup -n dm-Fuzz-%{version}
 
 %build
 
@@ -118,6 +116,9 @@ cp -vfr dm-Fuzz.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Oct 31 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.1-1
+- update to 0.1.1-1
+
 * Mon Mar 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
 - update to 0.1.0-1
 
