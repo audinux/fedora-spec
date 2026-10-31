@@ -5,10 +5,8 @@
 
 %global debug_package %{nil}
 
-%global commit0 f965d9881e2d158472c5753061f66a1d96c10457
-
 Name: dm-stutter
-Version: 0.1.4
+Version: 0.1.5
 Release: 1%{?dist}
 Summary: A stereo stutter effect written in Rust
 URL: https://github.com/davemollen/dm-Stutter
@@ -18,7 +16,7 @@ License: GPL-3.0-only
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/davemollen/dm-Stutter/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Source0: https://github.com/davemollen/dm-Stutter/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -63,7 +61,7 @@ LV2 version of %{name}
 
 %prep
 
-%autosetup -n dm-Stutter-%{commit0}
+%autosetup -n dm-Stutter-%{version}
 
 %build
 
@@ -118,6 +116,9 @@ cp -vfr dm-Stutter.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Oct 31 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.5-1
+- update to 0.1.5-1
+
 * Mon Mar 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.4-1
 - update to 0.1.4-1
 
