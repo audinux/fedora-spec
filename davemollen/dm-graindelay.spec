@@ -6,10 +6,8 @@
 
 %global debug_package %{nil}
 
-%global commit0 69a655147823b9ef3083dced5bb1d7a8c49d64be
-
 Name: dm-graindelay
-Version: 0.0.5
+Version: 0.1.0
 Release: 3%{?dist}
 Summary: Granular delay, lv2 & vst audio plugin
 License: MIT
@@ -19,7 +17,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/davemollen/dm-GrainDelay/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Source0: https://github.com/davemollen/dm-GrainDelay/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -41,14 +39,6 @@ License: MIT
 %description -n license-%{name}
 License and documentations for %{name}
 
-%package -n vst-%{name}
-Summary: VST2 version of %{name}
-License: MIT
-Requires: license-%{name}
-
-%description -n vst-%{name}
-VST2 version of %{name}
-
 %package -n lv2-%{name}
 Summary: LV2 version of %{name}
 License: MIT
@@ -58,7 +48,7 @@ Requires: license-%{name}
 LV2 version of %{name}
 
 %prep
-%autosetup -n dm-GrainDelay-%{commit0}
+%autosetup -n dm-GrainDelay-%{version}
 
 %build
 
@@ -80,16 +70,10 @@ source cargo/env
 cd lv2
 cargo build --release
 
-cd ../vst
-cargo build --release
-
 %install
 
 install -m 755 -d %{buildroot}/%{_libdir}/lv2/
 cp -rav lv2/dm-GrainDelay.lv2 %{buildroot}/%{_libdir}/lv2/
-
-install -m 755 -d %{buildroot}/%{_libdir}/vst/
-install -m 755 vst/target/release/libdm_grain_delay.so %{buildroot}/%{_libdir}/vst/
 
 %files -n license-%{name}
 %doc README.md
@@ -98,10 +82,10 @@ install -m 755 vst/target/release/libdm_grain_delay.so %{buildroot}/%{_libdir}/v
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
 
-%files -n vst-%{name}
-%{_libdir}/vst/*
-
 %changelog
+* Sat Oct 31 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-3
+- update to 0.1.0-3
+
 * Fri Jun 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.5-3
 - update to 0.0.5-3 - fix installation
 
