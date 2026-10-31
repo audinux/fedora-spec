@@ -5,10 +5,8 @@
 
 %global debug_package %{nil}
 
-%global commit0 d5bbb8e67f5506b5b529fbd4db2ab56540ddd299
-
 Name: dm-vibrato
-Version: 0.0.9
+Version: 0.1.0
 Release: 1%{?dist}
 Summary: A mono vibrato effect written in Rust
 URL: https://github.com/davemollen/dm-Vibrato
@@ -18,7 +16,7 @@ License: GPL-3.0-only
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/davemollen/dm-Vibrato/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Source0: https://github.com/davemollen/dm-Vibrato/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -63,7 +61,7 @@ LV2 version of %{name}
 
 %prep
 
-%autosetup -n dm-Vibrato-%{commit0}
+%autosetup -n dm-Vibrato-%{version}
 
 %build
 
@@ -118,6 +116,9 @@ cp -vfr dm-Vibrato.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Oct 31 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
+- update to 0.1.0-1
+
 * Mon Mar 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.9-1
 - update to 0.0.9-1
 
