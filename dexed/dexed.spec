@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: dexed
-Version: 1.0.1a
+Version: 1.1.0
 Release: 4%{?dist}
 Summary: DX7 FM multi plaform/multi format plugin
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./dexed-source.sh <TAG>
-#        ./dexed-source.sh v1.0.1a
+#        ./dexed-source.sh v1.1.0
 
 Source0: dexed.tar.gz
 Source1: dexed-icon-250.png
@@ -89,13 +89,13 @@ CLAP version of %{name}
 %install
 
 install -m 755 -d %{buildroot}/%{_bindir}/
-cp -ra %{__cmake_builddir}/Source/Dexed_artefacts/Standalone/* %{buildroot}/%{_bindir}/
+cp -ra %{__cmake_builddir}/source/Dexed_artefacts/Standalone/* %{buildroot}/%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/Source/Dexed_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/source/Dexed_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 
 install -m 755 -d %{buildroot}/%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/Source/Dexed_artefacts/CLAP/* %{buildroot}/%{_libdir}/clap/
+cp -ra %{__cmake_builddir}/source/Dexed_artefacts/CLAP/* %{buildroot}/%{_libdir}/clap/
 
 install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
 install -m 644 %{SOURCE1} %{buildroot}/%{_datadir}/pixmaps/%{name}.png
@@ -142,6 +142,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Sat Oct 31 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-4
+- update to 1.1.0-4
+
 * Mon Jun 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.1a-4
 - update to 1.0.1a-4 - add a svg icon
 
