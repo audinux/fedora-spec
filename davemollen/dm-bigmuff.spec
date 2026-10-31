@@ -5,10 +5,8 @@
 
 %global debug_package %{nil}
 
-%global commit0 9b3cef482261ef0d4f873eeda66e7fa8935ecbd0
-
 Name: dm-bigmuff
-Version: 0.0.8
+Version: 0.0.9
 Release: 1%{?dist}
 Summary: A fuzz effect written in Rust modeled after the Electro-Harmonix Op-Amp Big Muff Pi
 URL: https://github.com/davemollen/dm-BigMuff
@@ -18,7 +16,7 @@ License: GPL-3.0-only
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/davemollen/dm-BigMuff/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Source0: https://github.com/davemollen/dm-BigMuff/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -63,7 +61,7 @@ LV2 version of %{name}
 
 %prep
 
-%autosetup -n dm-BigMuff-%{commit0}
+%autosetup -n dm-BigMuff-%{version}
 
 %build
 
@@ -118,6 +116,9 @@ cp -vfr dm-BigMuff.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Oct 31 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.9-1
+- update to 0.0.9-1
+
 * Mon Mar 23 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.8-1
 - update to 0.0.8-1
 
