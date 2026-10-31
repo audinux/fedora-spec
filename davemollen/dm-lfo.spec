@@ -5,10 +5,8 @@
 
 %global debug_package %{nil}
 
-%global commit0 6592c35e251e0966f5b3d810bbd31f8586ce272e
-
 Name: dm-LFO
-Version: 0.0.5
+Version: 0.1.0
 Release: 1%{?dist}
 Summary: This is a low frequency oscillator plugin written in Rust
 URL: https://github.com/davemollen/dm-LFO
@@ -18,7 +16,7 @@ License: GPL-3.0-only
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/davemollen/dm-LFO/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Source0: https://github.com/davemollen/dm-LFO/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -47,7 +45,7 @@ LV2 version of %{name}
 
 %prep
 
-%autosetup -n dm-LFO-%{commit0}
+%autosetup -n dm-LFO-%{version}
 
 %build
 
@@ -86,6 +84,9 @@ cp -vfr dm-LFO.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Oct 31 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
+- update to 0.1.0-1
+
 * Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.5-1
 - update to 0.0.5-1
 
