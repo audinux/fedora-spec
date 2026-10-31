@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: ibniz-rust
-Version: 1.0.1
+Version: 1.0.2
 Release: 1%{?dist}
 Summary: A virtual machine designed for extremely compact low-level audiovisual programs.
 License: MIT
@@ -56,7 +56,7 @@ export CARGO_HOME="$CWD/cargo"
 # rustup-init -y --no-modify-path --default-toolchain=nightly-x86_64-unknown-linux-gnu
 # source cargo/env
 # rustup target list
-# cargo build --release --bin hexosynth_jack
+# cargo build --release
 
 %ifarch x86_64
 rustup-init -y --no-modify-path --default-toolchain nightly-x86_64-unknown-linux-gnu
@@ -101,6 +101,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/ibniz.desktop
 %{_datadir}/ibniz/examples/*
 
 %changelog
+* Thu Oct 29 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-1
+- update to 1.0.2-1
+
 * Wed Oct 28 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
 - update to 1.0.1-1
 
