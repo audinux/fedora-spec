@@ -5,10 +5,8 @@
 
 %global debug_package %{nil}
 
-%global commit0 08251944166aea5c637c9e6b5f6df17feb36415c
-
 Name: dm-Reverse
-Version: 0.0.6
+Version: 0.0.8
 Release: 1%{?dist}
 Summary: Reverse delay audio plugin
 URL: https://github.com/davemollen/dm-Reverse
@@ -18,7 +16,7 @@ License: GPL-3.0-only
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/davemollen/dm-Reverse/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Source0: https://github.com/davemollen/dm-Reverse/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch0: dm-reverse-0001-fix-cargo-conf.patch
 
 BuildRequires: gcc gcc-c++
@@ -34,14 +32,6 @@ License: GPL-3.0-only
 %description -n license-%{name}
 License and documentations for %{name}
 
-%package -n vst-%{name}
-Summary: VST2 version of %{name}
-License: GPL-3.0-only
-Requires: license-%{name}
-
-%description -n vst-%{name}
-VST2 version of %{name}
-
 %package -n lv2-%{name}
 Summary: LV2 version of %{name}
 License: GPL-3.0-only
@@ -52,7 +42,7 @@ LV2 version of %{name}
 
 %prep
 
-%autosetup -p1 -n dm-Reverse-%{commit0}
+%autosetup -p1 -n dm-Reverse-%{version}
 
 %build
 
@@ -77,9 +67,6 @@ cd lv2
 cargo build --release
 cd ..
 
-cd vst
-cargo build --release
-
 %install
 
 cd lv2
@@ -89,10 +76,6 @@ install -m 755 -d %{buildroot}/%{_libdir}/lv2/
 cp -vfr dm-Reverse.lv2 %{buildroot}/%{_libdir}/lv2/
 cd ..
 
-cd vst
-install -m 755 -d %{buildroot}/%{_libdir}/vst/
-cp -vfr target/release/libdm_reverse.so %{buildroot}/%{_libdir}/vst/
-
 %files -n license-%{name}
 %doc README.md
 %license LICENSE
@@ -100,10 +83,10 @@ cp -vfr target/release/libdm_reverse.so %{buildroot}/%{_libdir}/vst/
 %files -n lv2-%{name}
 %{_libdir}/lv2/*
 
-%files -n vst-%{name}
-%{_libdir}/vst/*
-
 %changelog
+* Sat Oct 31 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.8-1
+- update to 0.0.8-1
+
 * Sun Jul 27 2025 Yann Collette <ycollette.nospam@free.fr> - 0.0.6-1
 - update to 0.0.6-1
 
