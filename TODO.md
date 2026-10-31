@@ -502,6 +502,7 @@
 | OmniSplit                                | https://github.com/mtyas/OmniSplit                                                                                                                          |
 | MidiFlux                                 | https://github.com/mtyas/MidiFlux                                                                                                                           |
 | CrossMod                                 | https://github.com/mtyas/CrossMod                                                                                                                           |
+| octamedic                                | https://github.com/TheExiledCat/octamedic                                                                                                                   |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
