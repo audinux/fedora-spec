@@ -4,9 +4,11 @@
 # Category: Audio, Synthesizer
 # LastSourceUpdate: 2021
 
+%global presets_commit0 b0b15016ba1d123751383629a79c1ee9adaa9c9f
+
 Summary: Old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.
 Name: padthv1
-Version: 1.5.0
+Version: 1.5.1
 Release: 4%{?dist}
 URL: https://sourceforge.net/projects/%{name}
 ExclusiveArch: x86_64 aarch64
@@ -17,6 +19,7 @@ Distribution: Audinux
 
 Source0: https://github.com/rncbc/padthv1/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: https://www.linuxsynths.com/Padthv1PatchesDemos/67Padthv1Patches.tar.gz
+Source2: https://github.com/rncbc/padthv1-preset/archive/%{presets_commit0}.tar.gz#/%{name}-presets-%{version}.tar.gz
 Patch0: padthv1-0001-disable-strip.patch
 # TODO: add https://github.com/rncbc/padthv1-preset
 
@@ -72,6 +75,9 @@ install -m 644 src/appdata/org.rncbc.padthv1.metainfo.xml %{buildroot}%{_datadir
 
 pushd %{buildroot}/%{_datadir}/%{name}/presets
 tar xvfz %{SOURCE1}
+tar xvfz %{SOURCE2}
+mv %{name}-preset-%{presets_commit0}/* .
+rmdir %{name}-preset-%{presets_commit0}
 popd
 
 desktop-file-install                         \
@@ -101,6 +107,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.des
 %{_libdir}/lv2/%{name}.lv2/
 
 %changelog
+* Thu Oct 29 2026 Yann Collette <ycollette.nospam@free.fr> - 1.5.1-4
+- update to 1.5.1-4
+
 * Tue Sep 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.5.0-4
 - update to 1.5.0-4
 
