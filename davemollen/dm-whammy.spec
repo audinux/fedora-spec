@@ -5,10 +5,8 @@
 
 %global debug_package %{nil}
 
-%global commit0 8dae5e22d499f97bcc48bdc4d9354763ce2e12fe
-
 Name: dm-Whammy
-Version: 0.1.0
+Version: 0.1.1
 Release: 1%{?dist}
 Summary: A mono pitchshift effect written in Rust inspired by the DigiTech Whammy
 URL: https://github.com/davemollen/dm-Whammy
@@ -18,7 +16,7 @@ License: GPL-3.0-only
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/davemollen/dm-Whammy/archive/%{commit0}.zip#/%{name}-%{version}.zip
+Source0: https://github.com/davemollen/dm-Whammy/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -63,7 +61,7 @@ LV2 version of %{name}
 
 %prep
 
-%autosetup -n dm-Whammy-%{commit0}
+%autosetup -n dm-Whammy-%{version}
 
 %build
 
@@ -118,6 +116,9 @@ cp -vfr dm-Whammy.lv2 %{buildroot}/%{_libdir}/lv2/
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Oct 31 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.1-1
+- update to 0.1.1-1
+
 * Sun Aug 03 2025 Yann Collette <ycollette.nospam@free.fr> - 0.1.0-1
 - update to 0.1.0-1
 
