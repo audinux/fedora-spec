@@ -15,17 +15,17 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
 
       - name: Check out RPM SPEC files repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v7
         with:
           path: fedora-spec
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v7
         with:
           python-version: 3.12 
 
       - name: Check out Python Scan script repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v7
         with:
           repository: audinux/parse-spec
           path: parse-spec
