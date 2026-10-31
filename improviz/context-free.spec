@@ -5,7 +5,7 @@
 
 Name: context-free
 Summary: Context Free is a program that generates images from written instructions called a grammar.
-Version: 3.4.3
+Version: 3.5.0
 Release: 1%{?dist}
 License: GPL-2.0-or-later
 URL: https://github.com/MtnViewJohn/context-free
@@ -14,7 +14,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/MtnViewJohn/context-free/archive/Version%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/MtnViewJohn/context-free/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: make
@@ -34,7 +34,7 @@ The program follows the instructions in a few seconds to create images that can 
 millions of shapes.
 
 %prep
-%autosetup -n context-free-Version%{version}
+%autosetup -n context-free-%{version}
 
 sed -i -r "/strip $@/d" Makefile
 
@@ -60,6 +60,9 @@ cp -ra input/* %{buildroot}/%{_datadir}/%{name}/examples/
 %{_datadir}/*
 
 %changelog
+* Sat Oct 31 2026 Yann Collette <ycollette dot nospam at free.fr> 3.5.0-1
+- update to 3.5.0-1
+
 * Wed Jul 01 2026 Yann Collette <ycollette dot nospam at free.fr> 3.4.3-1
 - update to 3.4.3-1
 
