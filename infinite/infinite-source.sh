@@ -16,6 +16,12 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 find . -name .git -exec rm -rf {} \;
+rm -rf website
+rm -rf release-assets
+rm -rf art
+rm -rf press_kit/screenshots
+rm -rf press_kit/logos
+
 cd ..
 tar cvfz Infinite.tar.gz Infinite/*
 rm -rf Infinite

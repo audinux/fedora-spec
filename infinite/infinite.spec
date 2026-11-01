@@ -5,7 +5,7 @@
 # Screenshot: infinite.png
 
 Name: infinite
-Version: 0.6.6
+Version: 1.0.0
 Release: 4%{?dist}
 Summary: Infinite is a node-based audiovisual workstation — real-time GPU video compositing, procedural 3D geometry, modular synths, DSP, and VST3 plugin hosting
 License: MIT
@@ -16,7 +16,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./infinite-source.sh <TAG>
-#        ./infinite-source.sh v0.6.6
+#        ./infinite-source.sh v1.0.0
 
 Source0: Infinite.tar.gz
 Source1: https://github.com/n1m21n/Infinite/releases/download/v%{version}/Field_Language_Manual.pdf
@@ -87,7 +87,10 @@ install -m 644 ./external/icons/Infinite/infinite-glyphs.ttf %{buildroot}/%{_dat
 install -m 644 ./assets/icon_1024.png %{buildroot}/%{_datadir}/infinite/icons/
 
 install -m 755 -d %{buildroot}/%{_datadir}/infinite/examples/
-install -m 644 ./assets/examples/*.inf %{buildroot}/%{_datadir}/infinite/examples/
+cp -ra ./assets/examples/* %{buildroot}/%{_datadir}/infinite/examples/
+cp -ra ./tests/render3d    %{buildroot}/%{_datadir}/infinite/examples/
+cp -ra ./tests/render      %{buildroot}/%{_datadir}/infinite/examples/
+cp -ra ./tests/headless    %{buildroot}/%{_datadir}/infinite/examples/
 
 install -m 755 -d %{buildroot}/%{_datadir}/infinite/models/
 install -m 644 ./assets/models/*.onnx %{buildroot}/%{_datadir}/infinite/models/
@@ -133,7 +136,7 @@ desktop-file-install                         \
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
-%doc README.md ARCHITECTURE.md *.pdf docs/*
+%doc README.md ARCHITECTURE.md press_kit/manuals/*.pdf docs/*
 %license LICENSE
 %{_bindir}/*
 %{_libdir}/Infinite/*
@@ -150,6 +153,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/infinite/drumkits/*
 
 %changelog
+* Sun Nov 01 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-4
+- update to 1.0.0-4
+
 * Sat Oct 24 2026 Yann Collette <ycollette.nospam@free.fr> - 0.6.6-4
 - update to 0.6.6-4
 
