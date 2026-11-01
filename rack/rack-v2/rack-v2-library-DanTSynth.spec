@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 bbda6418675cd66f46bd610e2d646d2dfca8deb4
-%global gittag0 2.0.2
+%global commit0 25434dd424bcee22ac654f43accf5f6478ad3b28
+%global gittag0 2.0.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-DanTSynth
-Version: 2.0.2
+Version: 2.0.3
 Release: 2%{?dist}
 Summary: DanTSynth plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r DanTSynth_plugin/dist/DanTSynth/* %{buildroot}%{_libexecdir}/Rack2/plugins
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
 - initial specfile
