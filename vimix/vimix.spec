@@ -7,7 +7,7 @@
 %global _cmake_shared_libs %{nil}
 
 Name: vimix
-Version: 0.9.2a
+Version: 0.9.3
 Release: 1%{?dist}
 Summary: Live Video Mixer
 URL: https://github.com/brunoherbelin/vimix
@@ -18,7 +18,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to get the sources:
-# ./vimix-source.sh 0.9.2a
+# ./vimix-source.sh 0.9.3
 
 Source0: vimix.tar.gz
 Source1: vimix-source.sh
@@ -35,7 +35,7 @@ BuildRequires: libicu-devel
 BuildRequires: glfw-devel
 BuildRequires: glm-devel
 BuildRequires: tinyxml2-devel
-BuildRequires: stb-devel
+BuildRequires: avahi-devel
 BuildRequires: gtk3-devel
 BuildRequires: cmrc-devel
 BuildRequires: onnxruntime-devel
@@ -70,10 +70,6 @@ sed -i -e "s/AudioVideo;Video;Graphics;/AudioVideo;/g" share/applications/vimix.
 %install
 
 %cmake_install
-install -m755 %{__cmake_builddir}/src/vimix %{buildroot}/%{_bindir}/
-
-mkdir -p %{buildroot}/%{_datadir}/mime/packages/
-mv %{buildroot}/%{_datadir}/applications/io.github.brunoherbelin.Vimix.mime.xml %{buildroot}/%{_datadir}/mime/packages/
 
 # Install desktop file
 desktop-file-install                         \
@@ -100,6 +96,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*.metainf
 %{_datadir}/mime/packages/*
 
 %changelog
+* Sun Nov 01 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.3-1
+- update to 0.9.3-1
+
 * Sat Oct 03 2026 Yann Collette <ycollette.nospam@free.fr> - 0.9.2a-1
 - update to 0.9.2a-1
 
