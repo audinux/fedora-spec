@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 04266edba12d999b1a8a8e9e4c0b8480b96ecf92
-%global gittag0 2.22.0
+%global commit0 07950aa569604ea70ff5bedd4ed8b1b6ecff720b
+%global gittag0 2.23.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-SignalFunctionSet
-Version: 2.22.0
+Version: 2.23.1
 Release: 2%{?dist}
 Summary: SignalFunctionSet plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 SignalFunctionSet plugin for Rack.
-Phase-shifted LFO with offset, attenuation and stability controls.
+Four phase-shifted LFOs with offset and Lorenz chaos.
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r SignalFunctionSet_plugin/dist/SignalFunctionSet/* %{buildroot}%{_libexecdi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.22.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.23.1-1
 - initial specfile

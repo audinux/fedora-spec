@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 29561591653dada5a697a53d5a6047dddf9db84c
-%global gittag0 2.2.1
+%global commit0 62349ac7ee4fee1c8f914b68972f4588cbb9ff8b
+%global gittag0 2.3.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-ArhythmeticUnits-Fourier
-Version: 2.2.1
+Version: 2.3.0
 Release: 2%{?dist}
 Summary: ArhythmeticUnits-Fourier plugin for Rack
 License: GPL-2.0-or-later
-URL: https://github.com/Kautenja/ArhythmeticUnits-Fourier
+URL: https://github.com/Arhythmetic-Units/Fourier
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,7 +29,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/Kautenja/ArhythmeticUnits-Fourier/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/Arhythmetic-Units/Fourier/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: ArhythmeticUnits-Fourier_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -154,5 +154,5 @@ cp -r ArhythmeticUnits-Fourier_plugin/dist/ArhythmeticUnits-Fourier/* %{buildroo
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.3.0-1
 - initial specfile

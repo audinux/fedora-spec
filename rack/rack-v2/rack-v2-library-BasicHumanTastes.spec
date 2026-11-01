@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c9a958579c6c7be02d1cd950082c21222b605737
-%global gittag0 2.0.0
+%global commit0 92be1c6d7c1e303f364e7936bf1a3165ff9ad225
+%global gittag0 2.0.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-BasicHumanTastes
-Version: 2.0.0
+Version: 2.0.1
 Release: 2%{?dist}
 Summary: BasicHumanTastes plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r BasicHumanTastes_plugin/dist/BasicHumanTastes/* %{buildroot}%{_libexecdir}
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.1-1
 - initial specfile
