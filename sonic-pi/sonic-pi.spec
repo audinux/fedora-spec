@@ -2,6 +2,7 @@
 # Tag: Editor, Live
 # Type: Standalone, Language
 # Category: Audio, Programming
+# Screenshot: sonic-pi.png
 
 # Have a look at:
 # https://github.com/archlinux/svntogit-community/tree/packages/sonic-pi/trunk
