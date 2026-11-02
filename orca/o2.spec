@@ -10,7 +10,7 @@ Version: 0.3.7
 Release: 1%{?dist}
 Summary: Rust port of the ORCΛ esoteric programming language and terminal livecoding environment
 License: GPL-3.0-or-later
-URL: https://github.com/coignard/o2
+URL: https://codeberg.org/coignard/o2
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
