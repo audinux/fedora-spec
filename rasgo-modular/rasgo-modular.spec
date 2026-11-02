@@ -41,8 +41,8 @@ BuildRequires: desktop-file-utils
 %description
 A generative modular environment with 58 modules in eight families (SOURCE, TRANSFORM,
 MODULATE, TIME, DECISION, ROUTE, SPACE, OUT), written in C++17 with no dependencies in
-the core. Modules are described as data — each declares its own panel in
-millimetres — and one engine drives two front-ends: a cross-platform JUCE app and an X11 test panel.
+the core. Modules are described as data - each declares its own panel in millimetres - 
+and one engine drives two front-ends: a cross-platform JUCE app and an X11 test panel.
 
 %prep
 %autosetup -n %{name}-%{version}
