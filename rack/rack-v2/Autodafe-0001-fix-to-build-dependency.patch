@@ -1,0 +1,36 @@
+From f1fd9197325a528ad94bb800b1b925d7eee7c3ff Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Mon, 2 Nov 2026 21:09:37 +0100
+Subject: [PATCH] fix to build dependency
+
+---
+ Autodafe_plugin/scripts/build-dependencies.sh | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/Autodafe_plugin/scripts/build-dependencies.sh b/Autodafe_plugin/scripts/build-dependencies.sh
+index 6274a00..d140058 100755
+--- a/Autodafe_plugin/scripts/build-dependencies.sh
++++ b/Autodafe_plugin/scripts/build-dependencies.sh
+@@ -117,8 +117,17 @@ case "$ARCH_NAME" in
+ 		platform=Linux
+ 		gamma_platform=linux
+ 		target_flags=""
+-		AR_BIN=$(command -v x86_64-ubuntu16.04-linux-gnu-ar)
+-		RANLIB=$(command -v x86_64-ubuntu16.04-linux-gnu-ranlib)
++		AR_BIN=ar
++		RANLIB=ranlib
++               LDFLAGS=
++		;;
++	lin-arm64)
++		platform=Linux
++		gamma_platform=linux
++		target_flags=""
++		AR_BIN=ar
++		RANLIB=ranlib
++               LDFLAGS=
+ 		;;
+ 	*)
+ 		echo "Unsupported dependency target: $ARCH_NAME" >&2
+-- 
+2.56.0
+
