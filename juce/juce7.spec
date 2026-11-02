@@ -4,7 +4,7 @@
 # Category: Audio, Programming, Graphic
 
 Name: JUCE7
-Version: 7.0.13
+Version: 7.0.14
 Release: 11%{?dist}
 Summary: JUCE Framework
 URL: https://github.com/juce-framework/JUCE
@@ -110,6 +110,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_libexecdir}/juce/juceaide
 
 %changelog
+* Mon Nov 02 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.14-11
+- update to 7.0.14-11 - security release
+
 * Tue Oct 13 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.13-11
 - update to 7.0.13-11 - security release
 

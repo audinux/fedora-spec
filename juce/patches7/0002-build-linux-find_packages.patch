@@ -1,11 +1,20 @@
+From 8edc937579b53ccaf3600a77df6e5322bb3b423b Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Mon, 2 Nov 2026 21:34:01 +0100
+Subject: [PATCH] find package
+
+---
+ extras/Build/CMake/JUCEModuleSupport.cmake | 23 ++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
 diff --git a/extras/Build/CMake/JUCEModuleSupport.cmake b/extras/Build/CMake/JUCEModuleSupport.cmake
-index e18dd5e08..45cc9245f 100644
+index e18dd5e..45cc924 100644
 --- a/extras/Build/CMake/JUCEModuleSupport.cmake
 +++ b/extras/Build/CMake/JUCEModuleSupport.cmake
 @@ -353,6 +353,29 @@ function(_juce_create_pkgconfig_target name)
          return()
      endif()
-
+ 
 +    # The package that can be found via find_package instead of pkg-config
 +    if("${name}" STREQUAL "freetype2")
 +        find_package(Freetype REQUIRED)
@@ -31,6 +40,7 @@ index e18dd5e08..45cc9245f 100644
 +
      find_package(PkgConfig REQUIRED)
      pkg_check_modules(${name} ${ARGN})
+ 
+-- 
+2.56.0
 
---
-2.34.1

@@ -1,5 +1,14 @@
+From 0956b46e8dc9706c81b9126a0b42ddfd8962f343 Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Mon, 2 Nov 2026 21:31:50 +0100
+Subject: [PATCH] enable ladspa
+
+---
+ extras/AudioPluginHost/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
 diff --git a/extras/AudioPluginHost/CMakeLists.txt b/extras/AudioPluginHost/CMakeLists.txt
-index 852796383..37a5306c9 100644
+index 8527963..37a5306 100644
 --- a/extras/AudioPluginHost/CMakeLists.txt
 +++ b/extras/AudioPluginHost/CMakeLists.txt
 @@ -51,7 +51,7 @@ target_compile_definitions(AudioPluginHost PRIVATE
@@ -11,5 +20,6 @@ index 852796383..37a5306c9 100644
      JUCE_PLUGINHOST_LV2=1
      JUCE_PLUGINHOST_VST3=1
      JUCE_PLUGINHOST_VST=0
---
-2.34.1
+-- 
+2.56.0
+
