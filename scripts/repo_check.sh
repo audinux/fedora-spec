@@ -1202,7 +1202,7 @@ https://github.com/sova-org/sova
 https://github.com/eclab/flow
 https://codeberg.org/n_malo/Luppolo
 https://github.com/OpenSauce/rustortion
-https://github.com/coignard/o2
+https://codeberg.org/coignard/o2
 https://github.com/n1m21n/Infinite
 https://github.com/lucioaraujo/rasgo-modular
 https://github.com/tone-3000/tone3000-plugin
