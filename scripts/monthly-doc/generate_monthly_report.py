@@ -130,7 +130,7 @@ def parse_spec(path: Path) -> dict:
     m = re.search(r'%description[^\n]*\n(.*?)(?=\n%|\Z)', text, re.DOTALL)
     if m:
         lines = [l.strip() for l in m.group(1).splitlines() if l.strip()]
-        desc = " ".join(lines[:3])
+        desc = " ".join(lines[:])
 
     return {
         "name":        field("Name"),
