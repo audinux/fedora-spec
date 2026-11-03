@@ -1221,7 +1221,21 @@ https://github.com/viznut/IBNIZ
 https://github.com/ycollet/Mx44-rust
 https://github.com/ycollet/IBNIZ-rust
 https://github.com/TheExiledCat/mTrak
-https://github.com/ycollet/ansiedad-rust"
+https://github.com/ycollet/ansiedad-rust
+https://github.com/FreeMixer/libdiginet
+https://github.com/FreeMixer/libmackie
+https://github.com/FreeREAC/libreac
+https://github.com/FreeMixer/libsurface
+https://github.com/FreeMixer/omx-clap-core
+https://github.com/FreeMixer/omx-contract
+https://github.com/FreeMixer/omx-dsp
+https://github.com/FreeMixer/omx-panel
+https://github.com/FreeMixer/omx-plugins
+https://github.com/FreeMixer/omx-qualification-records
+https://github.com/FreeMixer/plugin-hostd-protocol
+https://github.com/FreeMixer/plugin-hostd
+https://github.com/FreeMixer/plugin-qualify
+https://github.com/FreeREAC/reac-pw"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
