@@ -1220,7 +1220,8 @@ https://github.com/ycollet/ByteBeat
 https://github.com/viznut/IBNIZ
 https://github.com/ycollet/Mx44-rust
 https://github.com/ycollet/IBNIZ-rust
-https://github.com/TheExiledCat/mTrak"
+https://github.com/TheExiledCat/mTrak
+https://github.com/ycollet/ansiedad-rust"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
