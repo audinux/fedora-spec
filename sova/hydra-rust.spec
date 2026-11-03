@@ -6,11 +6,11 @@
 
 %global debug_package %{nil}
 
-%global commit0 db4433faf1a913fb8891597f6b638036aa9f8fd3
+%global commit0 3794990e07a9cc8e45d5fd47d0212862ba229478
 
 Name: hydra-rust
 Version: 0.0.1
-Release: 22%{?dist}
+Release: 23%{?dist}
 Summary: Prototype of hydra remade in Rust
 License: AGPL-3.0-or-later
 URL: https://github.com/sova-org/hydra-rust
@@ -97,7 +97,7 @@ export CARGO_HOME="$CWD/cargo"
 # rustup-init -y --no-modify-path --default-toolchain=nightly-x86_64-unknown-linux-gnu
 # source cargo/env
 # rustup target list
-# cargo build --release --bin hexosynth_jack
+# cargo build --release
 
 %ifarch x86_64
 rustup-init -y --no-modify-path --default-toolchain nightly-x86_64-unknown-linux-gnu
@@ -143,6 +143,9 @@ tar xvfz %{SOURCE2}
 %{_libdir}/clap/*
 
 %changelog
+* Tue Nov 03 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-23
+- update to 0.0.1-23 - update to last master
+
 * Tue Nov 03 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-22
 - update to 0.0.1-22 - update to last master
 
