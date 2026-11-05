@@ -1,12 +1,12 @@
 # Status: active
-# Tag: Jack, Synthesizer, Modular
-# Type: Plugin, Standalone, VST, VST3, CLAP
-# Category: Audio, Synthesizer
+# Tag: Tool
+# Type: Standalone
+# Category: Audio
 
 %global debug_package %{nil}
 
 Name: songrec
-Version: 0.8.0
+Version: 0.8.1
 Release: 1%{?dist}
 Summary: An open-source Shazam client for Linux.
 License: GPL-3.0-or-later
@@ -87,6 +87,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/*
 
 %changelog
+* Wed Nov 04 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.1-1
+- update to 0.8.1-1
+
 * Tue Oct 27 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.0-1
 - update to 0.8.0-1
 
