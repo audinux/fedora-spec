@@ -7,7 +7,7 @@
 %global debug_package %{nil}
 
 Name: faderframe
-Version: 0.36.0
+Version: 0.40.0
 Release: 1%{?dist}
 Summary: A DAW. For Linux
 License: MIT
@@ -122,6 +122,12 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/io.github
 %{_datadir}/mime/packages/*
 
 %changelog
+* Thu Nov 05 2026 Yann Collette <ycollette.nospam@free.fr> - 0.40.0-1
+- update to 0.40.0-1
+
+* Wed Nov 04 2026 Yann Collette <ycollette.nospam@free.fr> - 0.38.0-1
+- update to 0.38.0-1
+
 * Thu Oct 29 2026 Yann Collette <ycollette.nospam@free.fr> - 0.36.0-1
 - update to 0.36.0-1
 
