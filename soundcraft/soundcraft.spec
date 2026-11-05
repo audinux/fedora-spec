@@ -7,7 +7,7 @@
 %global debug_package %{nil}
 
 Name: soundcraft
-Version: 0.17.0
+Version: 0.17.1
 Release: 1%{?dist}
 Summary: An open-source, clean-room reimplementation of Avid Pro Tools in pure Rust
 License: MIT
@@ -125,6 +125,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/ai.storyteller.soundc
 %{_datadir}/metainfo/*
 
 %changelog
+* Thu Nov 05 2026 Yann Collette <ycollette.nospam@free.fr> - 0.17.1-1
+- update to 0.17.1-1
+
 * Tue Nov 03 2026 Yann Collette <ycollette.nospam@free.fr> - 0.17.0-1
 - update to 0.17.0-1
 
