@@ -201,7 +201,7 @@ The main downside is speed — cortex-a57 emulation on x86_64 is slow, and a ful
 
 To check the potential changes from the kickstart file:
 ```
-$ dnf install pykickstart.noarch rpmfusion-free-remix-kickstarts.noarch spin-kickstarts.noarch
+$ dnf install pykickstart rpmfusion-free-remix-kickstarts spin-kickstarts
 $ ksflatten -c /usr/share/spin-kickstarts/fedora-live-xfce.ks -o xfce.ks
 $ meld fedora-44-live-jam-xfce.ks xfce.ks &
 ```
