@@ -504,6 +504,11 @@
 | CrossMod                                 | https://github.com/mtyas/CrossMod                                                                                                                           |
 | octamedic                                | https://github.com/TheExiledCat/octamedic                                                                                                                   |
 | UzeSynth-DPF                             | https://github.com/danboid/UzeSynth-DPF                                                                                                                     |
+| blokkily                                 | https://github.com/andrewfader/blokkily                                                                                                                     |
+| scvb                                     | https://github.com/synchain-oss/scvb                                                                                                                        |
+| null-jsfx                                | https://github.com/koulaxizis/null-jsfx                                                                                                                     |
+| vuo                                      | https://github.com/vuo/vuo                                                                                                                                  |
+| MzPCD                                    | https://github.com/simozzer/MzPCD                                                                                                                           |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
