@@ -1235,7 +1235,8 @@ https://github.com/FreeMixer/omx-qualification-records
 https://github.com/FreeMixer/plugin-hostd-protocol
 https://github.com/FreeMixer/plugin-hostd
 https://github.com/FreeMixer/plugin-qualify
-https://github.com/FreeREAC/reac-pw"
+https://github.com/FreeREAC/reac-pw
+https://github.com/Ka1-S/LYNX-SHARE"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
