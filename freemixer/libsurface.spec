@@ -8,7 +8,7 @@
 %bcond_without diginet
 %bcond_without mackie
 Name:           libsurface
-Version:        0.2.1
+Version:        0.2.3
 # The soname's major. rpm derives this package's provides and every consumer's requires from it.
 # It copies SURFACE_ABI of include/surface/surface.h, and tests/conformance-packaging.sh (in make
 # test) refuses a copy that disagrees.
@@ -23,7 +23,7 @@ Summary:        Motor faders, touch and banks for any motorised control surface
 
 License:        GPL-3.0-or-later
 URL:            https://github.com/FreeMixer/libsurface
-Source0:        %{name}-%{version}.tar.gz
+Source0:        https://github.com/FreeMixer/libsurface/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  make
@@ -169,6 +169,9 @@ make CFLAGS="%{optflags}" %{mkflags} test
 %endif
 
 %changelog
+* Thu Nov 05 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.3-1
+- update to 0.2.3-1
+
 * Sat Oct 31 2026 Pau Aliagas <linuxnow@gmail.com> - 0.2.1-1
 - A desk that returns under another name no longer crashes the host.
 * Fri Oct 30 2026 Pau Aliagas <linuxnow@gmail.com> - 0.2.0-1
