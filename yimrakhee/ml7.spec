@@ -4,10 +4,9 @@
 # Category: Effect
 
 %global debug_package %{nil}
-%global commit0 b454dd433573edca9b7b7484a9db72d3c41d6deb
 
 Name: ml7
-Version: 0.0.1
+Version: 0.6.1
 Release: 1%{?dist}
 Summary: ML7 is a modern, highly optimized mastering limiter audio plugin
 License: GPL-3.0-or-later
@@ -17,7 +16,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://codeberg.org/yimrakhee/ml7/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://codeberg.org/yimrakhee/ml7/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -86,24 +85,24 @@ rustup-init -y --no-modify-path --default-toolchain nightly-aarch64-unknown-linu
 %endif
 source cargo/env
 
-cargo build --release
+cargo xtask bundle ml7 --release --features standalone-bin
 
 %install
 
-install -m 755 -d %{buildroot}%{_libdir}/vst3/ml7.vst3/Contents/%{_target}/
-cp -ra target/release/libml7.so %{buildroot}/%{_libdir}/vst3/ml7.vst3/Contents/%{_target}/
+install -m 755 -d %{buildroot}%{_libdir}/vst3/
+cp -ra target/bundled/ml7.vst3 %{buildroot}/%{_libdir}/vst3/
 
 install -m 755 -d %{buildroot}%{_libdir}/clap/
-cp -ra target/release/libml7.so %{buildroot}/%{_libdir}/clap/ml7.clap
+cp -ra target/bundled/ml7.clap %{buildroot}/%{_libdir}/clap/
 
 install -m 755 -d %{buildroot}%{_bindir}/
-cp -ra target/release/ml7 %{buildroot}/%{_bindir}/
+cp -ra target/bundled/ml7 %{buildroot}/%{_bindir}/
 
 %files
 %{_bindir}/*
 
 %files -n license-%{name}
-%doc README.md
+%doc README.md docs/*
 %license LICENSE
 
 %files -n vst3-%{name}
@@ -113,5 +112,8 @@ cp -ra target/release/ml7 %{buildroot}/%{_bindir}/
 %{_libdir}/clap/*
 
 %changelog
+* Fri Nov 06 2026 Yann Collette <ycollette.nospam@free.fr> - 0.6.1-1
+- update to 0.6.1-1
+
 * Fri Jun 26 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
