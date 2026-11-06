@@ -2,7 +2,7 @@
 # libmackie, the Mackie Control (MCU) protocol of motorised MIDI control surfaces such as the
 # Behringer X-Touch, as a codec with no I/O.
 Name:           libmackie
-Version:        0.1.0
+Version:        0.1.2
 # The soname's major. rpm derives this package's provides and every consumer's requires from
 # it. It copies MACKIE_ABI of include/mackie/mackie.h, and tests/conformance-packaging.sh (in
 # make test) refuses a copy that disagrees.
@@ -12,7 +12,7 @@ Summary:        Encode and decode the Mackie Control protocol of MIDI control su
 
 License:        GPL-3.0-or-later
 URL:            https://github.com/FreeMixer/libmackie
-Source0:        %{name}-%{version}.tar.gz
+Source0:        https://github.com/FreeMixer/libmackie/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  make
@@ -64,6 +64,9 @@ make CFLAGS="%{optflags}" test
 %{_libdir}/pkgconfig/libmackie.pc
 
 %changelog
+* Thu Nov 05 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.2-1
+- update to 0.1.2-1
+
 * Thu Oct 29 2026 Pau Aliagas <linuxnow@gmail.com> - 0.1.0-1
 - First release: the Mackie Control codec ported from the TypeScript X-Touch
   adapter, byte for byte: faders, buttons and lamps, V-Pots and rings, the jog
