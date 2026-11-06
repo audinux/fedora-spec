@@ -5,7 +5,7 @@
 
 Name: chuck
 Summary: Real-time audio synthesis and graphics/multimedia language
-Version: 1.5.5.8
+Version: 1.5.5.9
 Release: 3%{?dist}
 License: GPL-2.0-or-later OR MIT
 URL: https://chuck.cs.princeton.edu/
@@ -62,26 +62,26 @@ mv chuck chuck-jack
 
 %install
 
-mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}/%{_bindir}
 
 # install alsa version
-install -m 755 src/chuck-alsa %{buildroot}%{_bindir}/chuck-alsa
+install -m 755 src/chuck-alsa %{buildroot}/%{_bindir}/chuck-alsa
 
 # install alsa version
-install -m 755 src/chuck-pulse %{buildroot}%{_bindir}/chuck-pulse
+install -m 755 src/chuck-pulse %{buildroot}/%{_bindir}/chuck-pulse
 
 # install jack version
-install -m 755 src/chuck-jack %{buildroot}%{_bindir}/chuck-jack
+install -m 755 src/chuck-jack %{buildroot}/%{_bindir}/chuck-jack
 
 # install emacs mode
-install -m 755 -d %{buildroot}%{_datadir}/emacs/site-lisp/
-cp -a %{SOURCE1} %{buildroot}%{_datadir}/emacs/site-lisp/chuck.el
-install -m 755 -d %{buildroot}%{_libdir}/xemacs/site-packages/lisp/chuck/
-cp -a %{SOURCE1} %{buildroot}%{_libdir}/xemacs/site-packages/lisp/chuck/chuck.el
+install -m 755 -d %{buildroot}/%{_datadir}/emacs/site-lisp/
+cp -a %{SOURCE1} %{buildroot}/%{_datadir}/emacs/site-lisp/chuck.el
+install -m 755 -d %{buildroot}/%{_libdir}/xemacs/site-packages/lisp/chuck/
+cp -a %{SOURCE1} %{buildroot}/%{_libdir}/xemacs/site-packages/lisp/chuck/chuck.el
 
 # install examples
-install -m 755 -d %{buildroot}%{_datadir}/%{name}/
-cp -ra examples %{buildroot}%{_datadir}/%{name}/
+install -m 755 -d %{buildroot}/%{_datadir}/%{name}/
+cp -ra examples %{buildroot}/%{_datadir}/%{name}/
 
 %files
 %doc README.md
@@ -92,6 +92,9 @@ cp -ra examples %{buildroot}%{_datadir}/%{name}/
 %{_datadir}/%{name}/examples/*
 
 %changelog
+* Fri Nov 06 2026 Yann Collette <ycollette.nospam@free.fr> - 1.5.5.9-3
+- update to 1.5.5.9-3
+
 * Sun Sep 13 2026 Yann Collette <ycollette.nospam@free.fr> - 1.5.5.8-3
 - update to 1.5.5.8-3 - add documentation
 
