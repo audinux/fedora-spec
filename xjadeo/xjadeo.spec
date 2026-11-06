@@ -6,7 +6,7 @@
 Summary: Jack Video Monitor
 Name: xjadeo
 Version: 0.8.15
-Release: 5%{?dist}
+Release: 6%{?dist}
 License: GPL-2.0-or-later
 URL: https://xjadeo.sourceforge.net/
 ExclusiveArch: x86_64 aarch64
@@ -30,7 +30,7 @@ BuildRequires: mesa-libGLU-devel
 BuildRequires: libltc-devel
 BuildRequires: liblo-devel
 BuildRequires: freetype-devel
-BuildRequires: ffmpeg-devel
+BuildRequires: (ffmpeg-devel or ffmpeg-free-devel)
 BuildRequires: libXv-devel
 BuildRequires: SDL2-devel
 BuildRequires: libXpm-devel
@@ -39,33 +39,28 @@ BuildRequires: desktop-file-utils
 %description
 xjadeo is a simple video player that gets sync from jack by x42.
 Please refer to the documentation in the doc folder for any details,
-or visit http://xjadeo.sf.net/
+or visit https://xjadeo.sf.net/
 
 %prep
 %autosetup -n %{name}-%{version}
 
 %build
 
-%set_build_flags
-
-LDFLAGS="${LDFLAGS:-%{build_ldflags}} -z muldefs" ; export LDFLAGS
 ./autogen.sh
 %configure --without-portmidi --libdir=%{_libdir}
 
 sed -i -e 's/-lporttime//g' src/Makefile
 sed -i -e 's/-lporttime//g' src/xjadeo/Makefile
 
-cd src/xjadeo
-%make_build PREFIX=/usr paths.h
-cd ../..
-%make_build PREFIX=/usr
+%make_build
 
 %install
 
-%make_install PREFIX=/usr
+%make_install
 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/xjadeo/
 install -m 644 src/xjadeo/icons/xjadeoH128.png %{buildroot}/%{_datadir}/icons/xjadeo/%{name}.png
+
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
 install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/applications/%{name}.desktop
 
@@ -88,6 +83,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/*
 
 %changelog
+* Thu Nov 05 2026 Yann Collette <ycollette dot nospam at free.fr> 0.8.15-6
+- update to 0.8.15-6 - rebuild for ffmpeg update
+
 * Sun Nov 16 2025 Yann Collette <ycollette dot nospam at free.fr> 0.8.15-5
 - update to 0.8.15-5
 

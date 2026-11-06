@@ -2,13 +2,9 @@
 Name=xjadeo
 GenericName=Jack Video Monitor
 Comment=Display video in sync with Jack
-
 Icon=xjadeo
-
 Type=Application
-Categories=AudioVideo;Audio;AudioVideoEditing;
-
 Exec=env UBUNTU_MENUPROXY=0 xjadeo %F
 StartupNotify=false
 Terminal=false
-X-Desktop-File-Install-Version=0.23
+Categories=AudioVideo;Audio;
