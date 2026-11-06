@@ -8,7 +8,7 @@
 
 Name: bytebeat
 Version: 1.2.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Bytebeat player in Rust with a collection of many formulas from around the internet.
 License: MIT
 URL: https://github.com/ycollet/ByteBeat
@@ -30,6 +30,8 @@ BuildRequires: pkgconfig(jack)
 BuildRequires: alsa-lib-devel
 BuildRequires: python3
 BuildRequires: desktop-file-utils
+
+Requires: (ffmpeg or ffmpeg-free)
 
 %description
 A standalone desktop bytebeat studio inspired by the layout and workflow of Dollchan Bytebeat Composer.
@@ -108,6 +110,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/bytebeat/data/*
 
 %changelog
+* Thu Nov 05 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-2
+- update to 1.2.1-2 - add missing dependency
+
 * Thu Oct 29 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-1
 - update to 1.2.1-1
 
