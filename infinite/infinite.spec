@@ -5,7 +5,7 @@
 # Screenshot: infinite.png
 
 Name: infinite
-Version: 1.0.0
+Version: 1.1.0
 Release: 4%{?dist}
 Summary: Infinite is a node-based audiovisual workstation — real-time GPU video compositing, procedural 3D geometry, modular synths, DSP, and VST3 plugin hosting
 License: MIT
@@ -16,7 +16,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./infinite-source.sh <TAG>
-#        ./infinite-source.sh v1.0.0
+#        ./infinite-source.sh v1.1.0
 
 Source0: Infinite.tar.gz
 Source1: https://github.com/n1m21n/Infinite/releases/download/v%{version}/Field_Language_Manual.pdf
@@ -153,6 +153,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/infinite/drumkits/*
 
 %changelog
+* Thu Nov 05 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-4
+- update to 1.1.0-4
+
 * Sun Nov 01 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-4
 - update to 1.0.0-4
 
