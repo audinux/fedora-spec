@@ -18,7 +18,7 @@ Summary:        Roland REAC wire-format core (validate, counter, 24-bit decode/e
 
 License:        GPL-3.0-or-later
 URL:            https://github.com/FreeREAC/libreac
-Source0:        %{name}-%{version}.tar.gz
+Source0:        https://github.com/FreeREAC/libreac/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  make
