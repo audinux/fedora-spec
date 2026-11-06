@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Copyright (C) 2026 Pau Aliagas <linuxnow@gmail.com>
 Name: omx-contract
-Version: 3.8.0
+Version: 3.9.1
 Release: 1%{?dist}
 # the command carries ajv and its dependencies (vendor/): MIT, and BSD-3-Clause for fast-uri
 License: GPL-3.0-or-later AND MIT AND BSD-3-Clause
@@ -111,6 +111,9 @@ lowest release whose declarations it builds against.
 %{_datadir}/pkgconfig/omx-contract.pc
 
 %changelog
+* Fri Nov 06 2026 Yann Collette <ycollette.nospam@free.fr> - 3.9.1-1
+- update to 3.9.1-1
+
 * Tue Nov 03 2026 Pau Aliagas <linuxnow@gmail.com> - 3.8.0-1
 - The example descriptors are published with the package, under
   examples/descriptors/, and exported as
