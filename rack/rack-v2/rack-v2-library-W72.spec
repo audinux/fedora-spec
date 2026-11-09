@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 1c92ebbde234fcb3943630e521473254b235dd7e
-%global gittag0 2.7.0
+%global commit0 d434039507206de3acd47dab50cbe57a17704084
+%global gittag0 2.10.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-W72
-Version: 2.7.0
+Version: 2.10.0
 Release: 2%{?dist}
 Summary: W72 plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 W72 plugin for Rack.
-Bridge that lets Claude read and patch a running Rack
+Lets an AI agent read and patch your running Rack.
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r W72_plugin/dist/W72/* %{buildroot}%{_libexecdir}/Rack2/plugins/W72/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.7.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.10.0-1
 - initial specfile

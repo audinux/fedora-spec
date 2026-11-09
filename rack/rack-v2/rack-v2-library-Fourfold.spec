@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 c5b25a5254b63b032fe8c97d640739af88a0dbce
-%global gittag0 2.6.7
+%global commit0 4f482f25be8dd94af21e5821407cc86d61a66c98
+%global gittag0 2.7.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Fourfold
-Version: 2.6.7
+Version: 2.7.0
 Release: 2%{?dist}
 Summary: Fourfold plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Fourfold_plugin/dist/Fourfold/* %{buildroot}%{_libexecdir}/Rack2/plugins/F
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.7-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.7.0-1
 - initial specfile

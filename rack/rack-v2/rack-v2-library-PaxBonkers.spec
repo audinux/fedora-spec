@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 1c42a32d6a420b3e57e508f9e01cdf25df81dd2d
-%global gittag0 2.0.0
+%global commit0 f7865f9037070a7fe8bebc2b2d518a1c05781b33
+%global gittag0 2.2.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-PaxBonkers
-Version: 2.0.0
+Version: 2.2.1
 Release: 2%{?dist}
 Summary: PaxBonkers plugin for Rack
 License: GPL-2.0-or-later
-URL: https://github.com/paxbonkers/Escarpo
+URL: https://github.com/paxbonkers/PaxBonkersVCV
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,7 +29,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/paxbonkers/Escarpo/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/paxbonkers/PaxBonkersVCV/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: PaxBonkers_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -154,5 +154,5 @@ cp -r PaxBonkers_plugin/dist/PaxBonkers/* %{buildroot}%{_libexecdir}/Rack2/plugi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.2.1-1
 - initial specfile
