@@ -509,6 +509,7 @@
 | null-jsfx                                | https://github.com/koulaxizis/null-jsfx                                                                                                                     |
 | vuo                                      | https://github.com/vuo/vuo                                                                                                                                  |
 | MzPCD                                    | https://github.com/simozzer/MzPCD                                                                                                                           |
+| air-synth                                | https://github.com/Planetary-Records/air-synth                                                                                                              |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
