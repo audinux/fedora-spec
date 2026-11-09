@@ -6,7 +6,7 @@
 %global toolchain clang
 
 Name: zl-split
-Version: 0.3.0
+Version: 0.4.0
 Release: 1%{?dist}
 Summary: Splitter plugin
 License: AGPL-3.0-or-later
@@ -17,7 +17,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./zl-source.sh <project> <tag>
-# ./zl-source.sh ZLSplit 0.3.0
+# ./zl-source.sh ZLSplit 0.4.0
 # ./zl-source.sh ZLSplit main
 
 Source0: ZLSplit.tar.gz
@@ -37,6 +37,7 @@ BuildRequires: libXrandr-devel
 BuildRequires: libXinerama-devel
 BuildRequires: libXcursor-devel
 BuildRequires: libcurl-devel
+BuildRequires: libXi-devel
 BuildRequires: alsa-lib-devel
 BuildRequires: boost-devel
 BuildRequires: libatomic
@@ -74,7 +75,13 @@ sed -i -e "s/ZL Splitte/ZL_Splitte/g" CMakeLists.txt
 
 %build
 
-%cmake -DKFR_ENABLE_DFT=ON
+%cmake -DKFR_ENABLE_DFT=ON \
+%ifarch x86_64
+       -DZL_HWY_STATIC_TARGET=SSE2
+%endif
+%ifarch aarch64
+       -DZL_HWY_STATIC_TARGET=NEON
+%endif
 %cmake_build
 
 %install
@@ -96,6 +103,9 @@ cp -ra %{__cmake_builddir}/ZLSplitter_artefacts/LV2/* %{buildroot}%{_libdir}/lv2
 %{_libdir}/lv2/*
 
 %changelog
+* Sun Nov 08 2026 Yann Collette <ycollette.nospam@free.fr> - 0.4.0-1
+- update to 0.4.0-1
+
 * Sun Mar 15 2026 Yann Collette <ycollette.nospam@free.fr> - 0.3.0-1
 - update to 0.3.0-1
 
