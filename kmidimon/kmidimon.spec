@@ -8,7 +8,7 @@
 
 Summary: ALSA MIDI monitor
 Name: kmidimon
-Version: 0.7.5
+Version: 1.4.2
 Release: 1%{?dist}
 License: GPL-2.0-or-later
 URL: https://kmetronome.sourceforge.net/kmidimon/
@@ -16,8 +16,6 @@ ExclusiveArch: x86_64 aarch64
 
 Source0: https://sourceforge.net/projects/kmidimon/files/%{version}/kmidimon-%{version}.tar.bz2
 Source1: kmidimon.desktop
-Patch0: kmidimon-0001-remove-uninstall-target.patch
-Patch1: kmidimon-0001-use-nullptr.patch
 
 Vendor:       Planet CCRMA
 Distribution: Planet CCRMA
@@ -26,68 +24,58 @@ Requires: hicolor-icon-theme
 
 BuildRequires: gcc gcc-c++
 BuildRequires: desktop-file-utils
-BuildRequires: cmake gettext-devel
-BuildRequires: kdelibs-devel
-%if 0%{?fedora} >= 34
-BuildRequires: drumstick0-devel
-%endif
+BuildRequires: cmake
+BuildRequires: gettext-devel
+BuildRequires: qt6-qtbase-devel
+BuildRequires: qt6-linguist
+BuildRequires: qt6-qttools-devel
+BuildRequires: qt6-qt5compat-devel
+BuildRequires: drumstick-devel
 BuildRequires: alsa-lib-devel
+BuildRequires: desktop-file-utils
 
 %description
 MIDI monitor for Linux using ALSA sequencer and KDE user interface.
 
 %prep
-%autosetup -p1
+%autosetup -n %{name}-%{version}
+
+sed -i -e "s/Drumstick 2.11/Drumstick 2.10/g" CMakeLists.txt
 
 %build
 
-%set_build_flags
-export CXXFLAGS="-fPIC -I/usr/include/drumstick $CXXFLAGS"
-
-%cmake
+%cmake -DQT_DEBUG_FIND_PACKAGE=ON
 %cmake_build
 
 %install
 
 %cmake_install
 
-# absolute symlink: /usr/share/doc/HTML/en/kmidimon/common -> /usr/share/doc/HTML/en/common
-# absolute symlink: /usr/share/doc/HTML/ja/kmidimon/common -> /usr/share/doc/HTML/ja/common
-
-rm %{buildroot}%{_datadir}/doc/HTML/en/kmidimon/common
-rm %{buildroot}%{_datadir}/doc/HTML/ja/kmidimon/common
-
-# desktop file categories
-BASE="Application AudioVideo Audio"
-XTRA="X-MIDI Midi"
-
-mkdir -p %{buildroot}%{_datadir}/applications
-
 desktop-file-install --vendor %{desktop_vendor} \
-  --dir %{buildroot}%{_datadir}/applications    \
-  `for c in ${BASE} ${XTRA} ; do echo "--add-category $c " ; done` \
-  %{SOURCE1}
-
-%{find_lang} kmidimon
+		     --dir %{buildroot}%{_datadir}/applications    \
+		     %{buildroot}/%{_datadir}/applications/net.sourceforge.kmidimon.desktop
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
-%files -f kmidimon.lang
-%defattr(-,root,root,-)
-%doc AUTHORS ChangeLog INSTALL NEWS README TODO
+%files
+%doc AUTHORS ChangeLog INSTALL.md NEWS.md README.md TODO.md
 %license COPYING
 %{_bindir}/kmidimon
-%{_datadir}/doc/HTML/en/kmidimon
-%{_datadir}/doc/HTML/ja/kmidimon
 %{_datadir}/icons/hicolor/*/apps/kmidimon*
-%{_datadir}/applications/%{desktop_vendor}-kmidimon.desktop
-%{_datadir}/applications/kde4/kmidimon.desktop
-%{_datadir}/kde4/apps/kmidimon
 %{_mandir}/man1/kmidimon.1.gz
 %{_mandir}/ja/man1/kmidimon.1.gz
+%{_datadir}/applications/net.sourceforge.kmidimon.desktop
+%{_datadir}/applications/planetccrma-net.sourceforge.kmidimon.desktop
+%{_datadir}/doc/kmidimon/*
+%{_datadir}/kmidimon/standards.ins
+%{_datadir}/kmidimon/translations/*
+%{_datadir}/metainfo/net.sourceforge.kmidimon.metainfo.xml
 
 %changelog
+* Sun Nov 08 2026 Yann Collette <ycollette.nospam@free.fr> - 1.4.2-1
+- update to 1.4.2-1
+
 * Fri May 1 2020 Yann Collette <ycollette.nospam@free.fr> - 0.7.5-1
 - update to 0.7.5-1
 

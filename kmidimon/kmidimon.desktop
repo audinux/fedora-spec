@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Kmidimon
-Comment=ALSA MIDI monitor
-Icon=kmidimon
-Type=Application
-Exec=kmidimon
-Terminal=false
-Encoding=UTF-8
