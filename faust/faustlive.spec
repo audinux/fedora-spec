@@ -4,7 +4,7 @@
 # Category: Tool
 
 Name: faustlive
-Version: 2.5.19
+Version: 2.5.21
 Release: 2%{?dist}
 Summary: The swiss knife for Faust development
 License: GPL-2.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # to get source:
-# ./faustlive-source.sh 2.5.19
+# ./faustlive-source.sh 2.5.21
 # ./faustlive-source.sh master
 
 Source0: faustlive.tar.gz
@@ -26,7 +26,7 @@ BuildRequires: cmake
 BuildRequires: pkgconfig(jack)
 BuildRequires: libsndfile-devel
 BuildRequires: libmicrohttpd-devel
-BuildRequires: qt5-qtbase-devel
+BuildRequires: qt6-qtbase-devel
 BuildRequires: faust
 BuildRequires: faust-devel
 BuildRequires: faust-osclib-devel
@@ -64,27 +64,31 @@ FaustLive is based on the Faust library and on LLVM.
 %prep
 %autosetup -n %{name}
 
-sed -i -e "1 i #include <list>" src/Audio/JA/JA_audioFader.h
-sed -i -e "2 i using std::list;" src/Audio/JA/JA_audioFader.h
-
 %build
 
-%if 0%{?fedora} == 40
+%if 0%{?fedora} <= 39
+export PATH=$PATH:/usr/lib64/llvm/bin
+%elif 0%{?fedora} == 40
 export PATH=$PATH:/usr/lib64/llvm16/bin
-%elif 0%{?fedora} >= 41
+%elif 0%{?fedora} <= 44
 export PATH=$PATH:/usr/lib64/llvm17/bin
+%else
+export PATH=$PATH:/usr/lib64/llvm19/bin
 %endif
 
 %set_build_flags
 export LDFLAGS="`pkg-config --libs-only-L jack` $LDFLAGS"
+export CXXFLAGS="-include iostream $CXXFLAGS"
 
 cd Build
+
 %cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install
 
 cd Build
+
 %cmake_install
 
 desktop-file-install                         \
@@ -107,6 +111,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/FaustLive.desktop
 %{_datadir}/pixmaps/Faustlive.xpm
 
 %changelog
+* Fri Nov 06 2026 Yann Collette <ycollette.nospam@free.fr> - 2.5.21-2
+- update to 2.5.21-2
+
 * Sun Sep 13 2026 Yann Collette <ycollette.nospam@free.fr> - 2.5.19-2
 - update to 2.5.19-2 - update to last master
 
