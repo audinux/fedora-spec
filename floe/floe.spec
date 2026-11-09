@@ -7,7 +7,7 @@
 %global zig_version 0.14.0
 
 Name: floe
-Version: 2.0.4
+Version: 2.0.5
 Release: 2%{?dist}
 Summary: Sample library platform with a simple, powerful interface
 License: GPL-3.0-or-later
@@ -23,6 +23,7 @@ Source1: https://ziglang.org/download/%{zig_version}/zig-linux-x86_64-%{zig_vers
 BuildRequires: gcc gcc-c++
 BuildRequires: wget
 BuildRequires: git
+BuildRequires: llvm-devel
 BuildRequires: xcb-util-wm-devel
 BuildRequires: libXcursor-devel
 BuildRequires: mesa-libGL-devel
@@ -101,6 +102,9 @@ cp -vfr zig-out/.clap/* %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Sun Nov 08 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.5-2
+- update to 2.0.5-2
+
 * Tue Oct 20 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-2
 - update to 2.0.4-2
 
