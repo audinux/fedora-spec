@@ -5,7 +5,7 @@
 # Screenshot: infinite.png
 
 Name: infinite
-Version: 1.1.0
+Version: 1.2.0
 Release: 4%{?dist}
 Summary: Infinite is a node-based audiovisual workstation — real-time GPU video compositing, procedural 3D geometry, modular synths, DSP, and VST3 plugin hosting
 License: MIT
@@ -16,7 +16,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./infinite-source.sh <TAG>
-#        ./infinite-source.sh v1.1.0
+#        ./infinite-source.sh v1.2.0
 
 Source0: Infinite.tar.gz
 Source1: https://github.com/n1m21n/Infinite/releases/download/v%{version}/Field_Language_Manual.pdf
@@ -26,7 +26,6 @@ Source4: infinite-source.sh
 Patch0: infinite-0001-devendor.patch
 Patch1: infinite-0002-add-missing-cstdint-header.patch
 Patch2: infinite-0003-put-resources-in-share-directory.patch
-Patch3: infinite-0004-fix-tinyfiledialog.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: cmake
@@ -75,7 +74,7 @@ install -m 755 %{__cmake_builddir}/Infinite %{buildroot}/%{_bindir}/
 install -m 755 %{__cmake_builddir}/infinite-vst3-scanner %{buildroot}/%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_libdir}/Infinite/
-install -m 755 %{__cmake_builddir}/_deps/onnxruntime_linux-src/lib/libonnxruntime.so.1 %{buildroot}/%{_libdir}/Infinite/
+install -m 755 %{__cmake_builddir}/_deps/onnxruntime_linux-src/runtimes/linux-x64/native/libonnxruntime.so.1 %{buildroot}/%{_libdir}/Infinite/
 
 # Install bundle
 install -m 755 -d %{buildroot}/%{_datadir}/infinite/fonts/
@@ -153,6 +152,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/infinite/drumkits/*
 
 %changelog
+* Mon Nov 09 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-4
+- update to 1.2.0-4
+
 * Thu Nov 05 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-4
 - update to 1.1.0-4
 

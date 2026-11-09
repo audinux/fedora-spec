@@ -1,6 +1,6 @@
-From ae79b93228187541becc10aa400d9174d5ae22da Mon Sep 17 00:00:00 2001
+From ff88a196847e98f42d8ff69fe1352e2633538a93 Mon Sep 17 00:00:00 2001
 From: Yann Collette <yc@example.com>
-Date: Sun, 11 Oct 2026 08:01:51 +0200
+Date: Mon, 9 Nov 2026 07:07:52 +0100
 Subject: [PATCH] devendor
 
 ---
@@ -8,10 +8,10 @@ Subject: [PATCH] devendor
  1 file changed, 5 insertions(+), 69 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index d53c97c..3cf523a 100644
+index 59f9d11..5d8e372 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -106,19 +106,9 @@ FetchContent_MakeAvailable(glfw)
+@@ -138,19 +138,9 @@ FetchContent_MakeAvailable(glfw)
  # the real libFLAC instead (static, no Ogg). macOS keeps CoreAudio's
  # ExtAudioFile and never compiles this in.
  if(WIN32 OR CMAKE_SYSTEM_NAME STREQUAL "Linux")
@@ -34,7 +34,7 @@ index d53c97c..3cf523a 100644
  
      # ONNX Runtime + DirectML EP, for Platform::SubjectMask's Windows
      # implementation (src/platform/win/PlatformWin.cpp) - on-device background
-@@ -287,39 +277,8 @@ endif()
+@@ -329,39 +319,8 @@ endif()
  #   3. Update FFMPEG_RELEASE_TAG, FFMPEG_ARCHIVE_VERSION, and all four
  #      SHA256 pins below together, so they describe one consistent release.
  if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
@@ -76,9 +76,9 @@ index d53c97c..3cf523a 100644
      set(FFMPEG_LIBS
          "${FFMPEG_LIB_DIR}/libavformat.so"
          "${FFMPEG_LIB_DIR}/libavcodec.so"
-@@ -1304,29 +1263,6 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-                 "${CMAKE_CURRENT_SOURCE_DIR}/assets/templates"
-                 "$<TARGET_FILE_DIR:Infinite>/Resources/templates"
+@@ -1632,29 +1591,6 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+                 "${CMAKE_CURRENT_SOURCE_DIR}/assets/plugin"
+                 "$<TARGET_FILE_DIR:Infinite>/Resources/plugin"
          COMMENT "Copying bundled fonts, icon, drum kit, ONNX Runtime libraries and model next to Infinite")
 -    # THIRD_PARTY_NOTICES condition 3 / GPL source-offer condition 2: the
 -    # FFmpeg and x264 licence texts ship inside the bundle wherever the
