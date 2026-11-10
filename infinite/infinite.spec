@@ -74,7 +74,12 @@ install -m 755 %{__cmake_builddir}/Infinite %{buildroot}/%{_bindir}/
 install -m 755 %{__cmake_builddir}/infinite-vst3-scanner %{buildroot}/%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_libdir}/Infinite/
+%ifarch x86_64
 install -m 755 %{__cmake_builddir}/_deps/onnxruntime_linux-src/runtimes/linux-x64/native/libonnxruntime.so.1 %{buildroot}/%{_libdir}/Infinite/
+%endif
+%ifarch aarch64
+install -m 755 %{__cmake_builddir}/_deps/onnxruntime_linux-src/runtimes/linux-arm64/native/libonnxruntime.so.1 %{buildroot}/%{_libdir}/Infinite/
+%endif
 
 # Install bundle
 install -m 755 -d %{buildroot}/%{_datadir}/infinite/fonts/
