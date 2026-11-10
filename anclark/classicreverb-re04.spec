@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: classicreverb-re04
-Version: 1.1.1
+Version: 1.2.1
 Release: 1%{?dist}
 Summary: Reversed engineering of Kjaerhus Audio Classic Reverb, with enhancements
 URL: https://github.com/AnClark/ClassicReverb-RE04
@@ -14,7 +14,7 @@ License: GPL-3.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./cetone-source.sh ClassicReverb-RE04 v1.1.1
+# ./cetone-source.sh ClassicReverb-RE04 v1.2.1
 
 Source0: ClassicReverb-RE04.tar.gz
 Source1: cetone-source.sh
@@ -126,6 +126,9 @@ cp -ra %{__cmake_builddir}/bin/ClassicReverb-RE04.vst3 %{buildroot}%{_libdir}/vs
 %{_libdir}/clap/*
 
 %changelog
+* Tue Nov 10 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.1-1
+- update to 1.2.1-1
+
 * Mon Sep 21 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
 - update to 1.1.1-1
 
