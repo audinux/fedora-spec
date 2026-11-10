@@ -56,6 +56,7 @@ BuildRequires: speexdsp-devel
 BuildRequires: gulrak-filesystem-devel
 BuildRequires: libarchive-devel
 BuildRequires: libzstd-devel
+BuildRequires: simde-devel
 BuildRequires: Rack-v2
 BuildRequires: jq
 

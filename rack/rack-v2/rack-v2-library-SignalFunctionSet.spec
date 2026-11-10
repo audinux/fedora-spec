@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 07950aa569604ea70ff5bedd4ed8b1b6ecff720b
-%global gittag0 2.23.1
+%global commit0 5edc99689168fe9bb548940bb9d3f6641434d4b1
+%global gittag0 2.24.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-SignalFunctionSet
-Version: 2.23.1
+Version: 2.24.4
 Release: 2%{?dist}
 Summary: SignalFunctionSet plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r SignalFunctionSet_plugin/dist/SignalFunctionSet/* %{buildroot}%{_libexecdi
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.23.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.24.4-1
 - initial specfile

@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 2a337ceebec4dd24486e97b7f1c16c0ce1d97b2d
-%global gittag0 2.0.3
+%global commit0 c85a82b653e61c747e2d51133fccf11f7750645c
+%global gittag0 2.0.4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-ChordChemist
-Version: 2.0.3
+Version: 2.0.4
 Release: 2%{?dist}
 Summary: ChordChemist plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r ChordChemist_plugin/dist/ChordChemist/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.3-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.4-1
 - initial specfile

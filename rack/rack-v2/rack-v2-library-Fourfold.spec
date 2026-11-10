@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 4f482f25be8dd94af21e5821407cc86d61a66c98
-%global gittag0 2.7.0
+%global commit0 5a49fcbd3c06718ab4654fff7c938647fafc3f75
+%global gittag0 2.7.1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Fourfold
-Version: 2.7.0
+Version: 2.7.1
 Release: 2%{?dist}
 Summary: Fourfold plugin for Rack
 License: GPL-2.0-or-later
-URL: https://github.com/benjimixvidz/TETRAD-SEQ
+URL: https://github.com/benjimixvidz/Fourfold
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,7 +29,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/benjimixvidz/TETRAD-SEQ/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/benjimixvidz/Fourfold/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: Fourfold_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -154,5 +154,5 @@ cp -r Fourfold_plugin/dist/Fourfold/* %{buildroot}%{_libexecdir}/Rack2/plugins/F
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.7.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.7.1-1
 - initial specfile
