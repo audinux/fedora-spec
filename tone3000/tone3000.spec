@@ -84,6 +84,7 @@ CLAP version of %{name}
 
 %build
 
+# T3K_PUBLISHABLE_KEY=t3k_pub_Ej7NYu-huVjA5TwLPTb_7xTblnD4ghQG
 %cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
