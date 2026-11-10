@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: classicreverb-re03
-Version: 1.1.1
+Version: 1.2.0
 Release: 1%{?dist}
 Summary: Reversed engineering of Kjaerhus Audio Classic Reverb, with shaping controls
 URL: https://github.com/AnClark/ClassicReverb-RE03
@@ -14,7 +14,7 @@ License: GPL-3.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./cetone-source.sh ClassicReverb-RE03 v1.1.1
+# ./cetone-source.sh ClassicReverb-RE03 v1.2.0
 
 Source0: ClassicReverb-RE03.tar.gz
 Source1: cetone-source.sh
@@ -127,6 +127,9 @@ cp -ra %{__cmake_builddir}/bin/ClassicReverb-RE03.vst3 %{buildroot}%{_libdir}/vs
 %{_libdir}/clap/*
 
 %changelog
+* Tue Nov 10 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
+- update to 1.2.0-1
+
 * Mon Sep 21 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.1-1
 - update to 1.1.1-1
 
