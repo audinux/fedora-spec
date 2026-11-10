@@ -510,6 +510,8 @@
 | vuo                                      | https://github.com/vuo/vuo                                                                                                                                  |
 | MzPCD                                    | https://github.com/simozzer/MzPCD                                                                                                                           |
 | air-synth                                | https://github.com/Planetary-Records/air-synth                                                                                                              |
+| DJAP                                     | https://github.com/hghaken/DJAP                                                                                                                             |
+| ToneWerk                                 | https://github.com/Michi71/ToneWerk                                                                                                                         |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
@@ -525,6 +527,7 @@ Check the following URL:
 - https://github.com/ovniaudio
 - https://github.com/CoconutAudio
 - https://github.com/FreeMixer
+- https://github.com/odoare
 
 Add dead package:
 - gmixer
