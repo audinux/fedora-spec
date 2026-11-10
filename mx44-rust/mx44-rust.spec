@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: mx44-rust
-Version: 1.0.0
+Version: 1.0.1
 Release: 1%{?dist}
 Summary: A clone of the old Mx44 synthesizer in Rust.
 License: GPL-3.0-or-later AND GPL-2.0-or-later
@@ -149,6 +149,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/clap/*
 
 %changelog
+* Tue Nov 10 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
+- update to 1.0.1-1
+
 * Sat Oct 24 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - update to 1.0.0-1
 
