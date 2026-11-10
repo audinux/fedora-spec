@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: luppolo
-Version: 0.1.5
+Version: 0.1.6
 Release: 1%{?dist}
 Epoch: 1
 Summary: A looper for Linux
@@ -100,6 +100,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/page.code
 %{_datadir}/metainfo/*
 
 %changelog
+* Mon Nov 09 2026 Yann Collette <ycollette.nospam@free.fr> - 1:0.1.6-1
+- update to 1:0.1.6-1
+
 * Fri Oct 23 2026 Yann Collette <ycollette.nospam@free.fr> - 1:0.1.5-1
 - update to 1:0.1.5-1
 
