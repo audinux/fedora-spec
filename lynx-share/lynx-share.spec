@@ -58,7 +58,7 @@ cp -ra %{__cmake_builddir}/LYNX_artefacts/LYNX %{buildroot}/%{_bindir}/
 
 # Install icon
 install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
-cp resources/LYNX.ico %{buildroot}/%{_datadir}/pixmaps/
+cp resources/LYNX.ico %{buildroot}/%{_datadir}/pixmaps/lynx.ico
 
 # Write appdata file
 install -m 755 -d %{buildroot}/%{_metainfodir}/
