@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 a32fb86f912422e26b536242ae812a56f18ea145
-%global gittag0 2.5.0
+%global commit0 73c7426196f04d016223a521d87b8f9763e2f5ba
+%global gittag0 2.6.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Bidoo
-Version: 2.5.0
+Version: 2.6.0
 Release: 2%{?dist}
 Summary: Bidoo plugin for Rack
 License: GPL-2.0-or-later
@@ -52,7 +52,6 @@ BuildRequires: rtaudio-devel
 %endif
 BuildRequires: speex-devel
 BuildRequires: wget
-BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: gulrak-filesystem-devel
 BuildRequires: libarchive-devel
@@ -92,7 +91,7 @@ NEW_FLAGS="-I/usr/include/GLFW"
 NEW_FLAGS="$NEW_FLAGS -I/usr/include/rtaudio"
 %endif
 
-echo "CXXFLAGS += $NEW_FLAGS -O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/tinyexpr -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
+echo "CXXFLAGS += $NEW_FLAGS -O2 -fPIC -include pmmintrin.h -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/tinyexpr -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
 
 %if %{use_static_glfw}
 echo "Use Static GLFW"
@@ -140,6 +139,8 @@ tar xvfz %{SOURCE1} --directory=Bidoo_plugin --strip-components=1
 
 cp -n %{SOURCE2} Bidoo_plugin/plugin.json || true
 
+sed -i '/^[[:space:]]*#else[[:space:]]*$/a\    #include <immintrin.h>' include/simd/common.hpp
+
 %build
 
 cd Bidoo_plugin
@@ -154,5 +155,5 @@ cp -r Bidoo_plugin/dist/Bidoo/* %{buildroot}%{_libexecdir}/Rack2/plugins/Bidoo/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.0-1
 - initial specfile
