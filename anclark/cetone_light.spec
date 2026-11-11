@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: cetone-synth-light
-Version: 0.0.1
+Version: 1.1.0
 Release: 1%{?dist}
 Summary: Re-implementation of CetoneSynthLight, a light-weight synthesizer by René Jeschke
 URL: https://github.com/AnClark/CetoneSynthLight
@@ -14,7 +14,7 @@ License: GPL-3.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./cetone-source.sh CetoneSynthLight eaffe5f13ae4ae55f1dc1f1aaf285f180bda705c
+# ./cetone-source.sh CetoneSynthLight v1.1.0
 
 Source0: CetoneSynthLight.tar.gz
 Source1: cetone-source.sh
@@ -106,5 +106,8 @@ cp -ra %{__cmake_builddir}/bin/cetone_synth_light.vst3 %{buildroot}%{_libdir}/vs
 %{_libdir}/clap/*
 
 %changelog
+* Wed Nov 11 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+- update to 1.1.0-1
+
 * Mon May 20 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
