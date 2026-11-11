@@ -1225,7 +1225,8 @@ https://github.com/ycollet/ansiedad-rust
 https://github.com/Ka1-S/LYNX-SHARE
 https://github.com/ycollet/sstv-rust
 https://github.com/odoare/Mango
-https://github.com/MrGilfy/leggio"
+https://github.com/MrGilfy/leggio
+https://github.com/robw-nl/QJams"
 
 # Missing repositories:
 # https://github.com/smbolton/stretchplayer (source on ycollet)
