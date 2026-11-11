@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: cetone033-synth
-Version: 0.0.1
+Version: 1.1.0
 Release: 1%{?dist}
 Summary: Re-implementation of Cetone033, a chiptune-style synthesizer by René Jeschke
 URL: https://github.com/AnClark/Cetone033
@@ -14,7 +14,7 @@ License: GPL-3.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./cetone-source.sh Cetone033 bb05f7d73a48bd51b1abcb07e8230b5f5664eef9
+# ./cetone-source.sh Cetone033 v1.1.0
 
 Source0: Cetone033.tar.gz
 Source1: cetone-source.sh
@@ -111,5 +111,8 @@ cp -ra %{__cmake_builddir}/bin/cetone033.vst3 %{buildroot}%{_libdir}/vst3/
 %{_libdir}/clap/*
 
 %changelog
+* Wed Nov 11 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+- update to 1.1.0-1
+
 * Mon May 20 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
