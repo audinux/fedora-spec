@@ -71,8 +71,8 @@ cp -ra App/resources/Samples %{buildroot}/%{_datadir}/%{name}/
 install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/apps/256x256/
 install -m 644 resources/nextstudio.png %{buildroot}/%{_datadir}/icons/hicolor/apps/256x256/
 
-install -m 755 -d %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
-install -m 644 resources/logo.svg %{buildroot}/%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
+install -m 755 -d %{buildroot}%{_datadir}/icons/scalable/apps/
+install -m 644 resources/logo.svg %{buildroot}/%{_datadir}/icons/hicolor/apps/%{name}.svg
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
 install -m 644 resources/nextstudio.desktop %{buildroot}/%{_datadir}/applications/
@@ -92,7 +92,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/Themes/*
 %{_datadir}/%{name}/Samples/*
 %{_datadir}/icons/hicolor/apps/256x256/*
-%{_datadir}/icons/hicolor/scalable/apps/*
+%{_datadir}/icons/scalable/apps/*
 %{_datadir}/applications/*
 
 %changelog

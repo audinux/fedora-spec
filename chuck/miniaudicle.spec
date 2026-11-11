@@ -96,8 +96,8 @@ install -m 755 miniAudicle-pulse %{buildroot}%{_bindir}/miniAudicle-pulse
 install -m 755 -d %{buildroot}%{_datadir}/%{name}/examples/
 cp -rav ../examples/* %{buildroot}%{_datadir}/%{name}/examples/
 
-install -m 755 -d %{buildroot}/%{_datadir}/icons/
-cp -a qt/icon/miniaudicle.ico %{buildroot}/%{_datadir}/icons/
+install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
+cp -a qt/icon/miniaudicle.ico %{buildroot}/%{_datadir}/pixmaps/
 
 # Write desktop files
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
@@ -165,7 +165,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}-alsa.desktop
 %{_bindir}/*
 %{_datadir}/%{name}/examples/*
 %{_datadir}/applications/*.desktop
-%{_datadir}/icons/*
+%{_datadir}/pixmaps/*
 
 %changelog
 * Fri Nov 06 2026 Yann Collette <ycollette.nospam@free.fr> - 1.5.5.9-3

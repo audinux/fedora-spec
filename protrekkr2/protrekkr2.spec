@@ -80,8 +80,8 @@ install -m 644 release/distrib/reverbs/* %{buildroot}%{_datadir}/protrekkr2/reve
 install -m 755 -d %{buildroot}/%{_datadir}/protrekkr2/skins/
 install -m 644 release/distrib/skins/* %{buildroot}%{_datadir}/protrekkr2/skins/
 
-install -m 755 -d %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/
-install -m 644 ./src/support/project.ico %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/protrekkr2.ico
+install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
+install -m 644 ./src/support/project.ico %{buildroot}/%{_datadir}/pixmaps/protrekkr2.ico
 
 desktop-file-install                         \
   --add-category="Audio;AudioVideo"	     \

@@ -114,7 +114,7 @@ cp Plugins/Standalone/* %{buildroot}%{_bindir}/
 
 install -m 755 -d %{buildroot}/%{_datadir}/icons/%{name}/
 install -m 755 -d %{buildroot}/%{_datadir}/icons/%{name}/
-install -m 644 -p Resources/Icons/plugdata_logo.png %{buildroot}/%{_datadir}/icons/%{name}/plugdata.png
+install -m 644 -p Resources/Icons/plugdata_logo.png %{buildroot}/%{_datadir}/pixmaps/plugdata.png
 install -m 644 -p Resources/Fonts/*.ttf %{buildroot}/%{_fontbasedir}/plugdata/
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
@@ -140,7 +140,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/plugdata.desktop
 %files
 %{_bindir}/*
 %{_datadir}/applications/*.desktop
-%{_datadir}/icons/*
+%{_datadir}/pixmaps/*
 
 %files -n license-%{name}
 %doc README.md

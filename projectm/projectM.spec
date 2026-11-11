@@ -153,8 +153,8 @@ EOF
 chmod a+x %{buildroot}/%{_bindir}/%{name}-alsa
 
 # Icon
-install -m 755 -d %{buildroot}/%{_datadir}/icons/
-install -m 644 %{SOURCE5} %{buildroot}/%{_datadir}/icons/%{name}.png
+install -m 755 -d %{buildroot}/%{_datadir}/pixmaps/
+install -m 644 %{SOURCE5} %{buildroot}/%{_datadir}/pixmaps/%{name}.png
 
 #
 # Write desktop files
@@ -165,7 +165,7 @@ Name=projectM Jack Audio Visualization
 GenericName=JACK Audio Stream Visualization
 Comment=A milkdrop based music visualizer visualizing JackAudio streams on a SDL GUI
 Exec=projectM-mao-jack
-Icon=projectM
+Icon=projectM-mao
 Type=Application
 Categories=AudioVideo;Audio;
 Terminal=false
@@ -177,7 +177,7 @@ Name=projectM Pulse Audio Visualization
 GenericName=Pulse Audio Stream Visualization
 Comment=A milkdrop based music visualizer visualizing Pulse Audio streams on a SDL GUI
 Exec=projectM-mao-pulse
-Icon=projectM
+Icon=projectM-mao
 Type=Application
 Categories=AudioVideo;Audio;
 Terminal=false
@@ -189,7 +189,7 @@ Name=projectM SDL Audio Visualization
 GenericName=SDL Audio Stream Visualization
 Comment=A milkdrop based music visualizer visualizing SDL Audio streams on a SDL GUI
 Exec=projectM-mao-sdl
-Icon=projectM
+Icon=projectM-mao
 Type=Application
 Categories=AudioVideo;Audio;
 Terminal=false
@@ -201,7 +201,7 @@ Name=projectM ALSA Audio Visualization
 GenericName=ALSA Audio Stream Visualization
 Comment=A milkdrop based music visualizer visualizing ALSA Audio streams on a SDL GUI
 Exec=projectM-mao-alsa
-Icon=projectM
+Icon=projectM-mao
 Type=Application
 Categories=AudioVideo;Audio;
 Terminal=false
@@ -240,7 +240,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/projectM-mao-alsa.des
 %{_bindir}/*
 %{_libdir}/libproject*.so.*
 %{_datadir}/projectM-mao/
-%{_datadir}/icons/projectM-mao.png
+%{_datadir}/pixmaps/projectM-mao.png
 
 %files devel
 %{_includedir}/*
