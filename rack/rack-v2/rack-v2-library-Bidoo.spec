@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 ff88dc48da4691c93c2c8cc2d766275b221d2f1b
-%global gittag0 2.4.0
+%global commit0 a32fb86f912422e26b536242ae812a56f18ea145
+%global gittag0 2.5.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Bidoo
-Version: 2.4.0
+Version: 2.5.0
 Release: 2%{?dist}
 Summary: Bidoo plugin for Rack
 License: GPL-2.0-or-later
@@ -52,11 +52,11 @@ BuildRequires: rtaudio-devel
 %endif
 BuildRequires: speex-devel
 BuildRequires: wget
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: gulrak-filesystem-devel
 BuildRequires: libarchive-devel
 BuildRequires: libzstd-devel
-BuildRequires: simde-devel
 BuildRequires: Rack-v2
 BuildRequires: jq
 
@@ -154,5 +154,5 @@ cp -r Bidoo_plugin/dist/Bidoo/* %{buildroot}%{_libexecdir}/Rack2/plugins/Bidoo/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.4.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.5.0-1
 - initial specfile
