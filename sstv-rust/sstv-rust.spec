@@ -4,10 +4,9 @@
 # Category: Audio
 
 %global debug_package %{nil}
-%global commit0 6abf9a71b4f92ec312e31789242fc5ac9468e325
 
 Name: sstv-rust
-Version: 0.0.1
+Version: 1.0.0
 Release: 1%{?dist}
 Summary: Some Jack audio modules to manage SSTV transmissions.
 License: MIT
@@ -17,7 +16,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/ycollet/sstv-rust/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: https://github.com/ycollet/sstv-rust/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: gcc gcc-c++
 BuildRequires: rustup
@@ -41,7 +40,7 @@ including its header, followed by two seconds of silence. Images are resized to 
 resolution, which can change their aspect ratio.
 
 %prep
-%autosetup -n sstv-rust-%{commit0}
+%autosetup -n sstv-rust-%{version}
 
 %build
 
@@ -79,5 +78,8 @@ install -m 755 target/release/sstv-encoder %{buildroot}/%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Wed Nov 11 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
+- update to 1.0.0-1
+
 * Tue Nov 10 2026 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
