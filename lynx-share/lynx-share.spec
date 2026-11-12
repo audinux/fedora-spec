@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: lynx-share
-Version: 0.1.25
+Version: 0.1.26
 Release: 1%{?dist}
 Summary: Lightweight open-source DAW with the FL Studio workflow: Channel Rack, Piano Roll, Playlist, Mixer and .flp import
 License: AGPL-3.0-or-later
@@ -90,6 +90,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/lynx.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Thu Nov 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.26-1
+- update to 0.1.26-1
+
 * Mon Nov 09 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.25-1
 - update to 0.1.25-1
 
