@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: sstv-rust
-Version: 1.0.0
+Version: 1.1.0
 Release: 1%{?dist}
 Summary: Some Jack audio modules to manage SSTV transmissions.
 License: MIT
@@ -78,6 +78,9 @@ install -m 755 target/release/sstv-encoder %{buildroot}/%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Thu Nov 12 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+- update to 1.1.0-1
+
 * Wed Nov 11 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.0-1
 - update to 1.0.0-1
 
