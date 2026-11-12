@@ -52,6 +52,7 @@ BuildRequires: rtaudio-devel
 %endif
 BuildRequires: speex-devel
 BuildRequires: wget
+BuildRequires: simde-devel
 BuildRequires: speexdsp-devel
 BuildRequires: gulrak-filesystem-devel
 BuildRequires: libarchive-devel
@@ -91,7 +92,7 @@ NEW_FLAGS="-I/usr/include/GLFW"
 NEW_FLAGS="$NEW_FLAGS -I/usr/include/rtaudio"
 %endif
 
-echo "CXXFLAGS += $NEW_FLAGS -O2 -fPIC -include pmmintrin.h -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/tinyexpr -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
+echo "CXXFLAGS += $NEW_FLAGS -O2 -fPIC -funsafe-math-optimizations -fno-omit-frame-pointer -mtune=generic `pkg-config --cflags gtk+-x11-3.0` -I$CURRENT_PATH/include -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/nanovg/src -I$CURRENT_PATH/dep/nanovg/example -I/usr/include/rtmidi -I$CURRENT_PATH/dep/tinyexpr -I$CURRENT_PATH/dep/nanosvg/src -I$CURRENT_PATH/dep/oui-blendish -I$CURRENT_PATH/dep/osdialog -I$CURRENT_PATH/dep/pffft -I$CURRENT_PATH/dep/include -I$CURRENT_PATH/dep/fuzzysearchdatabase/src" >> compile.mk
 
 %if %{use_static_glfw}
 echo "Use Static GLFW"
@@ -139,7 +140,9 @@ tar xvfz %{SOURCE1} --directory=Bidoo_plugin --strip-components=1
 
 cp -n %{SOURCE2} Bidoo_plugin/plugin.json || true
 
+%ifarch x86_64
 sed -i '/^[[:space:]]*#else[[:space:]]*$/a\    #include <immintrin.h>' include/simd/common.hpp
+%endif
 
 %build
 
