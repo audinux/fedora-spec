@@ -2,13 +2,12 @@
 # Tag: MIDI
 # Type: Plugin, LV2
 # Category: Audio, Synthesizer
-# LastSourceUpdate: 2021
 
 %global presets_commit0 b0b15016ba1d123751383629a79c1ee9adaa9c9f
 
 Summary: Old-school all-digital 4-oscillator subtractive polyphonic synthesizer with stereo fx.
 Name: padthv1
-Version: 1.5.1
+Version: 1.5.2
 Release: 4%{?dist}
 URL: https://sourceforge.net/projects/%{name}
 ExclusiveArch: x86_64 aarch64
@@ -107,6 +106,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.rncbc.padthv1.des
 %{_libdir}/lv2/%{name}.lv2/
 
 %changelog
+* Thu Nov 12 2026 Yann Collette <ycollette.nospam@free.fr> - 1.5.2-4
+- update to 1.5.2-4
+
 * Thu Oct 29 2026 Yann Collette <ycollette.nospam@free.fr> - 1.5.1-4
 - update to 1.5.1-4
 
