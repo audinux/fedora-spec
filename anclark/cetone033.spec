@@ -77,7 +77,7 @@ LV2 version of %{name}
 
 %build
 
-%cmake
+%cmake -DCETONE_BUILD_JACK_STANDALONE=ON
 %cmake_build
 
 %install
