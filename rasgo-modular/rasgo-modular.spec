@@ -5,7 +5,7 @@
 # Screenshot: rasgo-modular.png
 
 Name: rasgo-modular
-Version: 0.1.7
+Version: 0.1.8
 Release: 1%{?dist}
 Summary: A generative modular environment where the cable is an object with state.
 License: AGPL-3.0-or-later
@@ -102,6 +102,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/*
 
 %changelog
+* Thu Nov 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.8-1
+- update to 0.1.8-1
+
 * Sun Oct 18 2026 Yann Collette <ycollette.nospam@free.fr> - 0.1.7-1
 - update to 0.1.7-1
 
