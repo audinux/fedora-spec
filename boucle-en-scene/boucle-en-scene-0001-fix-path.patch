@@ -1,0 +1,99 @@
+From d449dbbe1da033ead134efe0925a53927bb3295c Mon Sep 17 00:00:00 2001
+From: Yann Collette <yc@example.com>
+Date: Thu, 12 Nov 2026 21:28:05 +0100
+Subject: [PATCH] fix path
+
+---
+ src/BoucleEnScene.App/Program.cs                        | 2 +-
+ src/BoucleEnScene.App/ViewModels/LibraryViewModel.cs    | 2 +-
+ src/BoucleEnScene.App/ViewModels/MainWindowViewModel.cs | 2 +-
+ src/BoucleEnScene.App/Views/AboutDialog.cs              | 2 +-
+ src/BoucleEnScene.Core/Audio/SoundFontInstrument.cs     | 4 ----
+ src/BoucleEnScene.Core/Control/ControllerLibrary.cs     | 2 +-
+ 6 files changed, 5 insertions(+), 9 deletions(-)
+
+diff --git a/src/BoucleEnScene.App/Program.cs b/src/BoucleEnScene.App/Program.cs
+index cdf0d07..3bc6219 100644
+--- a/src/BoucleEnScene.App/Program.cs
++++ b/src/BoucleEnScene.App/Program.cs
+@@ -69,7 +69,7 @@ internal static partial class Program
+     /// </summary>
+     private static void ShowIconInFileManager()
+     {
+-        string icon = Path.Combine(AppContext.BaseDirectory, "Images", "icon.ico");
++        string icon = Path.Combine("/usr", "share", "pixmaps", "boucle-en-scene.ico");
+         if (Environment.ProcessPath is not { } exe || !File.Exists(icon)) return;
+         Task.Run(() =>
+         {
+diff --git a/src/BoucleEnScene.App/ViewModels/LibraryViewModel.cs b/src/BoucleEnScene.App/ViewModels/LibraryViewModel.cs
+index 90f371b..eb3806e 100644
+--- a/src/BoucleEnScene.App/ViewModels/LibraryViewModel.cs
++++ b/src/BoucleEnScene.App/ViewModels/LibraryViewModel.cs
+@@ -89,7 +89,7 @@ public sealed partial class LibraryViewModel : ObservableObject
+         if (!settings.TemplatesSeeded)
+         {
+             settings.TemplatesSeeded = true;
+-            string models = System.IO.Path.Combine(AppContext.BaseDirectory, "Loops", "Modeles");
++            string models = System.IO.Path.Combine("/usr", "share", "boucle-en-scene", "Loops", "Modeles");
+             if (Directory.Exists(models) && !settings.LibraryFolders.Contains(models))
+                 settings.LibraryFolders.Insert(0, models);
+             _main.SaveSettings();
+diff --git a/src/BoucleEnScene.App/ViewModels/MainWindowViewModel.cs b/src/BoucleEnScene.App/ViewModels/MainWindowViewModel.cs
+index dde4ff6..edfeecf 100644
+--- a/src/BoucleEnScene.App/ViewModels/MainWindowViewModel.cs
++++ b/src/BoucleEnScene.App/ViewModels/MainWindowViewModel.cs
+@@ -1007,7 +1007,7 @@ public sealed partial class MainWindowViewModel : ObservableObject
+     [RelayCommand]
+     private async Task OpenDocumentation()
+     {
+-        string path = Path.Combine(AppContext.BaseDirectory, "LISEZMOI.txt");
++        string path = Path.Combine("/usr", "share", "doc", "boucle-en-scene", "README.md");
+         if (!File.Exists(path))
+         {
+             Status = $"Documentation introuvable : {path}";
+diff --git a/src/BoucleEnScene.App/Views/AboutDialog.cs b/src/BoucleEnScene.App/Views/AboutDialog.cs
+index 5698e1f..0367b3d 100644
+--- a/src/BoucleEnScene.App/Views/AboutDialog.cs
++++ b/src/BoucleEnScene.App/Views/AboutDialog.cs
+@@ -33,7 +33,7 @@ public static class AboutDialog
+         var close = new Button { Content = "Fermer", IsDefault = true, IsCancel = true, HorizontalAlignment = HorizontalAlignment.Right };
+         close.Classes.Add("accent");
+         close.Click += (_, _) => dialog.Close();
+-        string licenseFile = Path.Combine(AppContext.BaseDirectory, AppInfo.LicenseFile);
++        string licenseFile = Path.Combine("/usr", "share", "licenses", "boucle-en-scene", "LICENSE.txt");
+         var license = new HyperlinkButton { Content = "Lire la licence", Padding = new Thickness(0), IsVisible = File.Exists(licenseFile) };
+         license.Click += async (_, _) => await dialog.Launcher.LaunchFileInfoAsync(new FileInfo(licenseFile));
+         dialog.Content = new StackPanel
+diff --git a/src/BoucleEnScene.Core/Audio/SoundFontInstrument.cs b/src/BoucleEnScene.Core/Audio/SoundFontInstrument.cs
+index c3f3b4f..bf28912 100644
+--- a/src/BoucleEnScene.Core/Audio/SoundFontInstrument.cs
++++ b/src/BoucleEnScene.Core/Audio/SoundFontInstrument.cs
+@@ -70,12 +70,8 @@ public sealed class SoundFontBank
+     {
+         string[] candidates =
+         [
+-            "/usr/share/sounds/sf2/default-GM.sf2",
+-            "/usr/share/sounds/sf2/FluidR3_GM.sf2",
+-            "/usr/share/sounds/sf2/TimGM6mb.sf2",
+             "/usr/share/soundfonts/default.sf2",
+             "/usr/share/soundfonts/FluidR3_GM.sf2",
+-            System.IO.Path.Combine(AppContext.BaseDirectory, "SoundFonts", "default.sf2"),
+         ];
+         var found = candidates.FirstOrDefault(File.Exists);
+         if (found != null) return found;
+diff --git a/src/BoucleEnScene.Core/Control/ControllerLibrary.cs b/src/BoucleEnScene.Core/Control/ControllerLibrary.cs
+index 40c884c..68cf54a 100644
+--- a/src/BoucleEnScene.Core/Control/ControllerLibrary.cs
++++ b/src/BoucleEnScene.Core/Control/ControllerLibrary.cs
+@@ -13,7 +13,7 @@ namespace BoucleEnScene.Core.Control;
+ /// </summary>
+ public static class ControllerLibrary
+ {
+-    public static string BuiltInDirectory => Path.Combine(AppContext.BaseDirectory, "Controllers");
++    public static string BuiltInDirectory => Path.Combine("/usr", "share", "boucle-en-scene", "Controllers");
+ 
+     public static string UserDirectory => Path.Combine(AppInfo.DataDirectory, "controllers");
+ 
+-- 
+2.56.0
+
