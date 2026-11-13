@@ -512,6 +512,9 @@
 | air-synth                                | https://github.com/Planetary-Records/air-synth                                                                                                              |
 | DJAP                                     | https://github.com/hghaken/DJAP                                                                                                                             |
 | ToneWerk                                 | https://github.com/Michi71/ToneWerk                                                                                                                         |
+| openrb-338                               | https://github.com/pingw33n/openrb-338                                                                                                                      |
+| rb-songs                                 | https://github.com/pingw33n/rb-songs                                                                                                                        |
+| rb-mods                                  | https://github.com/pingw33n/rb-mods                                                                                                                         |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
