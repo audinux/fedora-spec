@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 0f3768cbffbad64b973d0073f9a133e4082550b4
-%global gittag0 2.11.1
+%global commit0 6cbc2d0dfe794fec84032530c86599368cc45647
+%global gittag0 2.11.2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-W72
-Version: 2.11.1
+Version: 2.11.2
 Release: 2%{?dist}
 Summary: W72 plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r W72_plugin/dist/W72/* %{buildroot}%{_libexecdir}/Rack2/plugins/W72/
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.11.1-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.11.2-1
 - initial specfile
