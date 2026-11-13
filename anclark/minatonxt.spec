@@ -4,7 +4,7 @@
 # Category: Synthesizer
 
 Name: minaton-xt
-Version: 1.1.0
+Version: 1.2.0
 Release: 1%{?dist}
 Summary: DPF port of Minaton, an analogue style synthesizer
 License: GPL-3.0-or-later
@@ -15,7 +15,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # ./anclark-source.sh <project> <tag>
-# ./anclark-source.sh Minaton-XT v1.1.0
+# ./anclark-source.sh Minaton-XT v1.2.0
 
 Source0: Minaton-XT.tar.gz
 Source1: anclark-source.sh
@@ -124,6 +124,9 @@ cp %{__cmake_builddir}/bin/minaton.clap     %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Fri Nov 13 2026 Yann Collette <ycollette.nospam@free.fr> - 1.2.0-1
+- update to 1.2.0-1
+
 * Thu Nov 12 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
 - update to 1.1.0-1
 
