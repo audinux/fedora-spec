@@ -1,1 +1,1 @@
-cb68dc7e279ca6e65cdf6b380435f13e  qtractor.tar.gz
+bf5bd27445962c0493d27ba3e4ec1610  qtractor.tar.gz
