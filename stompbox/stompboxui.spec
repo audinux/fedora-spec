@@ -4,6 +4,8 @@
 # Category: Audio, Effect
 
 %global debug_package %{nil}
+# .NET single-file bundle: do not strip the executable
+%global __strip /bin/true
 
 # Bump this when the distro moves to a new .NET SDK generation
 %global dotnet_version 10.0
@@ -11,7 +13,7 @@
 
 Name: stompboxui
 Version: 0.2.2
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Remote GUI and VST3 plugin for Stompbox guitar simulation
 License: GPL-3.0-or-later
 URL: https://github.com/mikeoliphant/StompboxUI
@@ -83,6 +85,9 @@ cp StompboxUI/StompboxRemoteGL/bin/Release/%{dotnet_tfm}/StompboxRemoteGL  %{bui
 %license LICENSE.md
 
 %changelog
+* Thu Nov 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.2-3
+- update to 0.2.2-3 - disable strip
+
 * Mon Sep 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.2.2-2
 - Port to dotnet-sdk-10.0: add dotnet_version/dotnet_tfm globals, patch
   .csproj TargetFramework net8.0→net10.0 in %%prep, update install path,
