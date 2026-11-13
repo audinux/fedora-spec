@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 a42dbb004895360713cbc6901630b26c6a8e2d6b
-%global gittag0 2.6.2
+%global commit0 7b4097db57a33ca5631298a55ddb9c9a5baf537c
+%global gittag0 2.8.3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Coal_Dynamics
-Version: 2.6.2
+Version: 2.8.3
 Release: 2%{?dist}
 Summary: Coal_Dynamics plugin for Rack
 License: GPL-2.0-or-later
@@ -62,7 +62,7 @@ BuildRequires: jq
 
 %description
 Coal_Dynamics plugin for Rack.
-Multiband Saturator with 3 bands and drive and pan controls each band
+Stereo 3-band saturator with per-band drive, pan, volume, makeup, CV inputs and attenuators, oversampling and selectable saturation curves
 
 %prep
 %setup -n Rack
@@ -154,5 +154,5 @@ cp -r Coal_Dynamics_plugin/dist/Coal_Dynamics/* %{buildroot}%{_libexecdir}/Rack2
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.6.2-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.8.3-1
 - initial specfile
