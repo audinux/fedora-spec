@@ -1,0 +1,696 @@
+From the mod-host PR prepared at https://github.com/linuxnow/mod-host/tree/hardening (d01be5c):
+both ports listen on 127.0.0.1 unless -b says otherwise; a second daemon on a busy port is refused
+(SO_REUSEADDR, not SO_REUSEPORT); a plugin state path stays inside its instance directory.
+
+diff --git a/README.md b/README.md
+index 5d7dcc1..038734a 100644
+--- a/README.md
++++ b/README.md
+@@ -68,6 +68,12 @@ If you run mod-host without options the process will be forked and it can only
+ be controlled through the socket.
+ The default socket port is 5555, this can be changed by passing the option
+ -p (or --socket-port) to mod-host.
++Both ports listen on the loopback address, 127.0.0.1, so only programs on the same
++machine reach them. To listen on another IPv4 address pass -b (or --bind-address),
++and `-b 0.0.0.0` listens on every address of the machine. The socket has no
++authentication and a client can load plugins from any path, so widen it only on a
++network whose hosts you trust. A JACK internal client reads the same setting from
++the environment variable MOD_DEVICE_HOST_BIND_ADDRESS.
+ Each command sent to the socket ends with a NUL byte, and so does each
+ response. Several commands can be sent in one write; they are answered in
+ order. A command that is not NUL-terminated when the client closes the
+diff --git a/doc/mod-host.1 b/doc/mod-host.1
+index d89896e..f7ebe60 100644
+--- a/doc/mod-host.1
++++ b/doc/mod-host.1
+@@ -63,6 +63,13 @@ be controlled through the socket.
+ The default socket port is 5555, this can be changed by passing the option
+ \-p (or \-\-socket\-port) to mod\-host.
+ .PP
++Both ports listen on the loopback address, 127.0.0.1, so only programs on the same
++machine reach them. To listen on another IPv4 address pass \-b (or
++\-\-bind\-address); \-b 0.0.0.0 listens on every address of the machine. The socket
++has no authentication and a client can load plugins from any path, so widen it only
++on a network whose hosts you trust. A JACK internal client reads the same setting
++from the environment variable MOD_DEVICE_HOST_BIND_ADDRESS.
++.PP
+ The other way to control mod\-host is the interactive mode, in this case the
+ commands must be provided on the shell prompt.
+ The interactive mode has autocomplete, therefore, you can always type \fB\fC[TAB]\fR
+diff --git a/src/mod-host.c b/src/mod-host.c
+index 105a6e4..d89de28 100644
+--- a/src/mod-host.c
++++ b/src/mod-host.c
+@@ -696,6 +696,7 @@ int main(int argc, char **argv)
+         {"verbose", no_argument, 0, 'v'},
+         {"socket-port", required_argument, 0, 'p'},
+         {"feedback-port", required_argument, 0, 'f'},
++        {"bind-address", required_argument, 0, 'b'},
+         {"interactive", no_argument, 0, 'i'},
+         {"self-test", no_argument, 0, 't'},
+         {"version", no_argument, 0, 'V'},
+@@ -708,7 +709,7 @@ int main(int argc, char **argv)
+     /* parse command line options */
+     int nofork = 0, verbose = 0,  interactive = 0, selftest = 0;
+     int socket_port = SOCKET_DEFAULT_PORT, feedback_port = 0;
+-    while ((opt = getopt_long(argc, argv, "nvp:f:itVh", long_options, &opt_index)) != -1)
++    while ((opt = getopt_long(argc, argv, "nvp:f:b:itVh", long_options, &opt_index)) != -1)
+     {
+         switch (opt)
+         {
+@@ -729,6 +730,14 @@ int main(int argc, char **argv)
+                 feedback_port = atoi(optarg);
+                 break;
+ 
++            case 'b':
++                if (socket_set_bind_address(optarg) != 0)
++                {
++                    fprintf(stderr, "--bind-address '%s' is not an IPv4 address\n", optarg);
++                    exit(EXIT_FAILURE);
++                }
++                break;
++
+             case 'i':
+                 interactive = 1;
+                 nofork = 1;
+@@ -749,10 +758,12 @@ int main(int argc, char **argv)
+ 
+             case 'h':
+                 printf(
+-                    "Usage: %s [-vih] [-p <port>]\n"
++                    "Usage: %s [-vih] [-p <port>] [-b <address>]\n"
+                     "  -v, --verbose                  verbose messages\n"
+                     "  -p, --socket-port=<port>       socket port definition\n"
+                     "  -f, --feedback-port=<port>     feedback port definition\n"
++                    "  -b, --bind-address=<address>   IPv4 address both ports listen on (default 127.0.0.1;\n"
++                    "                                 0.0.0.0 is every address of this machine)\n"
+ #ifndef SKIP_READLINE
+                     "  -i, --interactive              interactive mode\n"
+ #endif
+@@ -864,6 +875,7 @@ int jack_initialize(jack_client_t* client, const char* load_init);
+ int jack_initialize(jack_client_t* client, const char* load_init)
+ {
+     const char* const mod_log = getenv("MOD_LOG");
++    const char* const bind_address = getenv("MOD_DEVICE_HOST_BIND_ADDRESS");
+     int socket_port = SOCKET_DEFAULT_PORT;
+     int feedback_port = 0;
+ 
+@@ -879,6 +891,12 @@ int jack_initialize(jack_client_t* client, const char* load_init)
+     if (mod_log != NULL && atoi(mod_log) != 0)
+         protocol_verbose(1);
+ 
++    if (bind_address != NULL && bind_address[0] != '\0' && socket_set_bind_address(bind_address) != 0)
++    {
++        fprintf(stderr, "MOD_DEVICE_HOST_BIND_ADDRESS '%s' is not an IPv4 address\n", bind_address);
++        return 1;
++    }
++
+     if (mod_host_init(client, socket_port, feedback_port) != 0)
+         return 1;
+ 
+diff --git a/src/socket.c b/src/socket.c
+index 4b97f32..6f11c3a 100644
+--- a/src/socket.c
++++ b/src/socket.c
+@@ -33,6 +33,7 @@
+ #include <sys/socket.h>
+ #include <sys/select.h>
+ #include <netinet/in.h>
++#include <arpa/inet.h>
+ #define closesocket close
+ #define INVALID_SOCKET -1
+ typedef int SOCKET;
+@@ -75,6 +76,7 @@ typedef int SOCKET;
+ ************************************************************************************************************************
+ */
+ 
++static unsigned long g_bind_address = INADDR_LOOPBACK;  // in host order
+ static SOCKET g_serverfd = INVALID_SOCKET;
+ static SOCKET g_fbserverfd = INVALID_SOCKET;
+ static SOCKET g_clientfd = INVALID_SOCKET;
+@@ -112,6 +114,28 @@ static int g_idle_interval_ms;
+ ************************************************************************************************************************
+ */
+ 
++int socket_set_bind_address(const char *address)
++{
++    unsigned long parsed;
++
++    if (address == NULL)
++        return -1;
++#ifdef _WIN32
++    parsed = inet_addr(address);
++    if (parsed == INADDR_NONE)
++        return -1;
++#else
++    struct in_addr in;
++
++    if (inet_pton(AF_INET, address, &in) != 1)
++        return -1;
++    parsed = in.s_addr;
++#endif
++    g_bind_address = ntohl(parsed);
++    return 0;
++}
++
++
+ int socket_start(int socket_port, int feedback_port, int buffer_size)
+ {
+ #ifdef _WIN32
+@@ -155,11 +179,13 @@ int socket_start(int socket_port, int feedback_port, int buffer_size)
+     }
+ 
+ #ifndef _WIN32
+-    /* Allow the reuse of the socket address */
++    /* a port the daemon before left in TIME_WAIT is taken again at once; a port another daemon listens on is not:
++     * SO_REUSEADDR, never SO_REUSEPORT, which would let a second daemon listen beside the first and the kernel split
++     * the controllers between them */
+     int value = 1;
+-    setsockopt(g_serverfd, SOL_SOCKET, SO_REUSEPORT, &value, sizeof(value));
++    setsockopt(g_serverfd, SOL_SOCKET, SO_REUSEADDR, &value, sizeof(value));
+     if (feedback_port != 0)
+-        setsockopt(g_fbserverfd, SOL_SOCKET, SO_REUSEPORT, &value, sizeof(value));
++        setsockopt(g_fbserverfd, SOL_SOCKET, SO_REUSEADDR, &value, sizeof(value));
+ 
+     /* increase socket size */
+     value = 131071;
+@@ -172,11 +198,7 @@ int socket_start(int socket_port, int feedback_port, int buffer_size)
+     struct sockaddr_in serv_addr;
+     memset(&serv_addr, 0, sizeof(serv_addr));
+     serv_addr.sin_family = AF_INET;
+-#if defined(__MOD_DEVICES__) || defined(_WIN32)
+-    serv_addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
+-#else
+-    serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+-#endif
++    serv_addr.sin_addr.s_addr = htonl(g_bind_address);
+ 
+     /* Try assign the server address */
+     serv_addr.sin_port = htons(socket_port);
+diff --git a/src/socket.h b/src/socket.h
+index b56d494..fd59332 100644
+--- a/src/socket.h
++++ b/src/socket.h
+@@ -77,6 +77,10 @@
+ ************************************************************************************************************************
+ */
+ 
++// the address the next socket_start binds both ports to, a dotted IPv4 address; until this is called, the loopback
++// address, so only this machine reaches the ports. "0.0.0.0" is every address of the machine. A controller is not
++// authenticated: widen this only on a network whose hosts are trusted. Answers -1, the setting unchanged, for anything else
++int socket_set_bind_address(const char *address);
+ int socket_start(int socket_port, int feedback_port, int buffer_size);
+ void socket_finish(void);
+ void socket_set_receive_cb(void (*receive_cb)(msg_t *msg));
+diff --git a/src/state-paths.c b/src/state-paths.c
+index c9718d1..a8ae5ab 100644
+--- a/src/state-paths.c
++++ b/src/state-paths.c
+@@ -146,9 +146,31 @@ char* GetPluginStateDir(int instance, const char *dir)
+     return newpath;
+ }
+ 
++/* a request a plugin may make: relative, not empty, and no component of it "..", so the path it names stays inside the
++   instance's directory ("." alone names the directory itself) */
++static bool RequestStaysInside(const char *path)
++{
++    if (path[0] == '\0' || path[0] == '/')
++        return false;
++
++    for (const char *c = path; *c != '\0';)
++    {
++        const size_t n = strcspn(c, "/");
++
++        if (n == 2 && c[0] == '.' && c[1] == '.')
++            return false;
++
++        c += n;
++        if (*c == '/')
++            ++c;
++    }
++
++    return true;
++}
++
+ char* MakePluginStatePath(int instance, const char *dir, const char *path)
+ {
+-    if (dir == NULL || path == NULL)
++    if (dir == NULL || path == NULL || ! RequestStaysInside(path))
+         return NULL;
+ 
+     char effidstr[24] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+diff --git a/tests/Makefile b/tests/Makefile
+index e9aba9b..9db31d7 100644
+--- a/tests/Makefile
++++ b/tests/Makefile
+@@ -67,16 +67,33 @@ socket-test: socket-test.c ../src/socket.c ../src/socket.h
+ socket-run: socket-test
+ 	./$<
+ 
++bind-test: bind-test.c ../src/socket.c ../src/socket.h
++	$(CC) $< -std=gnu99 -D_GNU_SOURCE -O1 -g -Wall -Wextra -fsanitize=address -fno-omit-frame-pointer -I../src -lpthread -o $@
++
++bind-run: bind-test
++	./$<
++
++# one daemon on a port: bind-sabotage.sh holds bind-test to failing when the rule is broken
++bind-sabotage:
++	cd .. && sh tests/bind-sabotage.sh "$(CC)" "-std=gnu99 -D_GNU_SOURCE -O1 -g -Wall -Wextra -fsanitize=address -fno-omit-frame-pointer"
++
+ utils-test: utils-test.c ../src/utils.c ../src/utils.h
+ 	$(CC) $< -std=gnu99 -D_GNU_SOURCE -O1 -g -Wall -Wextra -fsanitize=address -fno-omit-frame-pointer -I../src -lm -o $@
+ 
+ utils-run: utils-test
+ 	./$<
+ 
++# a plugin's state paths stay inside its instance's directory: no ".." component, nothing absolute
++state-paths-test: state-paths-test.c ../src/state-paths.c ../src/state-paths.h ../src/utils.c ../src/utils.h
++	$(CC) $< -std=gnu99 -D_GNU_SOURCE -O1 -g -Wall -Wextra -fsanitize=address -fno-omit-frame-pointer -I../src -lm -o $@
++
++state-paths-run: state-paths-test
++	./$<
++
+ # meta-rule to generate the object files
+ %.o: %.$(EXT)
+ 	$(CC) $(CFLAGS) -c $(INCS) -o $@ $<
+ 
+ # clean rule
+ clean:
+-	$(RM) $(SRC_DIR)/*.o $(PROG) socket-test utils-test
++	$(RM) $(SRC_DIR)/*.o $(PROG) socket-test bind-test utils-test state-paths-test
+diff --git a/tests/bind-sabotage.sh b/tests/bind-sabotage.sh
+new file mode 100644
+index 0000000..caefb97
+--- /dev/null
++++ b/tests/bind-sabotage.sh
+@@ -0,0 +1,38 @@
++#!/bin/sh
++# SPDX-License-Identifier: GPL-3.0-or-later
++# one daemon on a port (tests/bind-test.c): each arm breaks the rule in a scratch copy of the sources, and the test built
++# over that copy must fail on each.
++#
++#   bind-sabotage.sh "<cc>" "<cflags>"
++set -eu
++cc=$1
++cflags=$2
++work=$(mktemp -d)
++trap 'rm -rf "$work"' EXIT
++failed=0
++
++# <what> <the code, as sed matches it> <a mutant>
++sabotage() {
++    what=$1 fixed=$2 mutant=$3
++    rm -rf "$work/tree"
++    mkdir -p "$work/tree"
++    cp -r src tests "$work/tree/"
++    grep -qF "$(printf '%s' "$fixed" | sed 's/\\//g')" "$work/tree/src/socket.c" || { echo "FAIL $what: the code is not in src/socket.c"; failed=1; return; }
++    sed -i "s/$fixed/$mutant/" "$work/tree/src/socket.c"
++    # shellcheck disable=SC2086
++    (cd "$work/tree/tests" && $cc $cflags -I../src -o ../bind-test bind-test.c -lpthread) \
++        || { echo "FAIL $what: the sabotaged tree does not build"; failed=1; return; }
++    if (cd "$work/tree" && ./bind-test) >"$work/log" 2>&1; then
++        echo "FAIL $what: bind-test passes"
++        failed=1
++    else
++        echo "ok   $what: bind-test fails ($(grep -m1 '^FAILED' "$work/log" | head -c 120))"
++    fi
++}
++
++sabotage "a second daemon may listen on the port a running one holds" \
++    'setsockopt(g_serverfd, SOL_SOCKET, SO_REUSEADDR' 'setsockopt(g_serverfd, SOL_SOCKET, SO_REUSEPORT'
++sabotage "a port the daemon before left in TIME_WAIT is not taken again" \
++    'setsockopt(g_serverfd, SOL_SOCKET, SO_REUSEADDR, \&value, sizeof(value));' ''
++
++exit $failed
+diff --git a/tests/bind-test.c b/tests/bind-test.c
+new file mode 100644
+index 0000000..48736cb
+--- /dev/null
++++ b/tests/bind-test.c
+@@ -0,0 +1,269 @@
++/*
++ * Checks who reaches the ports socket_start() opens. A port is reached when a connect to it from this machine succeeds:
++ * a listening socket takes the connection whether or not socket_run() is accepting yet.
++ *
++ * By default only 127.0.0.1 reaches them. 127.0.0.2 is also this machine, and a port bound to 127.0.0.1 alone refuses it,
++ * so that arm runs on a host with no network; an address off the loopback, when the machine has one, is the real case.
++ *
++ * Build and run with "make bind-run" in this directory.
++ */
++
++#include "../src/socket.c"
++
++#include <errno.h>
++#include <ifaddrs.h>
++#include <net/if.h>
++#include <sys/wait.h>
++
++void effects_idle_external_uis(void)
++{
++}
++
++static int g_failures;
++
++static int reaches(const char *address, int port)
++{
++    struct sockaddr_in addr;
++    int fd = socket(AF_INET, SOCK_STREAM, 0);
++    int rc;
++
++    memset(&addr, 0, sizeof(addr));
++    addr.sin_family = AF_INET;
++    addr.sin_port = htons(port);
++    inet_pton(AF_INET, address, &addr.sin_addr);
++    rc = connect(fd, (struct sockaddr *)&addr, sizeof(addr));
++    if (rc != 0 && errno != ECONNREFUSED)
++        printf("note    connect %s:%d: %s\n", address, port, strerror(errno));
++    close(fd);
++    return rc == 0;
++}
++
++static void expect(const char *arm, const char *address, int port, int want)
++{
++    const int got = reaches(address, port);
++
++    printf("%s  %s: %s:%d %s\n", got == want ? "ok    " : "FAILED", arm, address, port, got ? "reached" : "refused");
++    if (got != want)
++        g_failures++;
++}
++
++/* an up IPv4 address of this machine off the loopback, or NULL */
++static const char *off_loopback(void)
++{
++    static char text[INET_ADDRSTRLEN];
++    struct ifaddrs *all, *ifa;
++    const char *found = NULL;
++
++    if (getifaddrs(&all) != 0)
++        return NULL;
++    for (ifa = all; ifa && !found; ifa = ifa->ifa_next)
++        if (ifa->ifa_addr && ifa->ifa_addr->sa_family == AF_INET && (ifa->ifa_flags & IFF_UP) && !(ifa->ifa_flags & IFF_LOOPBACK))
++            found = inet_ntop(AF_INET, &((struct sockaddr_in *)ifa->ifa_addr)->sin_addr, text, sizeof(text));
++    freeifaddrs(all);
++    return found;
++}
++
++/* two free ports, one after the other */
++static int free_ports(void)
++{
++    for (int port = 20000 + getpid() % 20000; port < 65000; port += 2)
++    {
++        struct sockaddr_in addr;
++        int a = socket(AF_INET, SOCK_STREAM, 0), b = socket(AF_INET, SOCK_STREAM, 0), ok;
++
++        memset(&addr, 0, sizeof(addr));
++        addr.sin_family = AF_INET;
++        addr.sin_addr.s_addr = htonl(INADDR_ANY);
++        addr.sin_port = htons(port);
++        ok = bind(a, (struct sockaddr *)&addr, sizeof(addr)) == 0;
++        addr.sin_port = htons(port + 1);
++        ok = ok && bind(b, (struct sockaddr *)&addr, sizeof(addr)) == 0;
++        close(a);
++        close(b);
++        if (ok)
++            return port;
++    }
++    printf("FAILED  no free ports\n");
++    exit(EXIT_FAILURE);
++}
++
++/* both ports of one socket_start: each address in `yes` reaches them, each in `no` does not */
++static void arm(const char *name, const char *const *yes, const char *const *no)
++{
++    const int port = free_ports();
++
++    if (socket_start(port, port + 1, 1024) != 0)
++    {
++        printf("FAILED  %s: socket_start\n", name);
++        g_failures++;
++        return;
++    }
++    for (; *yes; yes++)
++    {
++        expect(name, *yes, port, 1);
++        expect(name, *yes, port + 1, 1);
++    }
++    for (; *no; no++)
++    {
++        expect(name, *no, port, 0);
++        expect(name, *no, port + 1, 0);
++    }
++    socket_finish();
++}
++
++/* a child holds both ports with socket_start(): with `serve` it also closes an accepted connection first, so the port
++ * is left in TIME_WAIT on the server's side when the child ends. Answers the child's pid; it ends when told on `go` */
++static pid_t holder(int port, int serve, int go[2], int ready[2])
++{
++    pid_t pid = fork();
++
++    if (pid == 0)
++    {
++        char c = 0;
++
++        if (socket_start(port, port + 1, 1024) != 0)
++            _exit(2);
++        if (serve)
++        {
++            int client = socket(AF_INET, SOCK_STREAM, 0), served;
++            struct sockaddr_in addr;
++
++            memset(&addr, 0, sizeof(addr));
++            addr.sin_family = AF_INET;
++            addr.sin_port = htons(port);
++            addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
++            if (connect(client, (struct sockaddr *)&addr, sizeof(addr)) != 0 || (served = accept(g_serverfd, NULL, NULL)) < 0)
++                _exit(3);
++            close(served);
++            usleep(100000);
++            close(client);
++        }
++        if (write(ready[1], &c, 1) != 1 || read(go[0], &c, 1) != 1)
++            _exit(4);
++        _exit(0);
++    }
++    return pid;
++}
++
++/* one port, one daemon: a port a running daemon listens on is refused to a second socket_start (SO_REUSEPORT would
++ * let both listen, and the kernel would split the controllers between them), and a port the daemon before left in
++ * TIME_WAIT is taken again at once (SO_REUSEADDR) */
++static void one_listener(void)
++{
++    const int port = free_ports();
++    int go[2], ready[2], status;
++    char c = 0;
++    pid_t pid;
++
++    if (pipe(go) != 0 || pipe(ready) != 0)
++        exit(EXIT_FAILURE);
++    pid = holder(port, 0, go, ready);
++    if (read(ready[0], &c, 1) != 1)
++    {
++        printf("FAILED  a live daemon: the holder did not start\n");
++        g_failures++;
++    }
++    else if (socket_start(port, port + 1, 1024) == 0)
++    {
++        printf("FAILED  a second daemon was given the ports %d and %d a running one listens on\n", port, port + 1);
++        g_failures++;
++        socket_finish();
++    }
++    else if (socket_start(port, 0, 1024) == 0)
++    {
++        /* the command port alone, with no feedback port: shared, it is the same fault */
++        printf("FAILED  a second daemon was given the command port %d a running one listens on\n", port);
++        g_failures++;
++        socket_finish();
++    }
++    else
++        printf("ok      a second daemon is refused the ports a running one listens on, the command port alone too\n");
++    if (write(go[1], &c, 1) != 1)
++        exit(EXIT_FAILURE);
++    waitpid(pid, &status, 0);
++
++    pid = holder(port, 1, go, ready);
++    if (read(ready[0], &c, 1) != 1 || write(go[1], &c, 1) != 1)
++    {
++        printf("FAILED  a port in TIME_WAIT: the holder did not serve\n");
++        g_failures++;
++        return;
++    }
++    waitpid(pid, &status, 0);
++    if (!WIFEXITED(status) || WEXITSTATUS(status) != 0)
++    {
++        printf("FAILED  a port in TIME_WAIT: the holder ended %d\n", status);
++        g_failures++;
++    }
++    else if (socket_start(port, port + 1, 1024) != 0)
++    {
++        printf("FAILED  the ports a daemon that ended left in TIME_WAIT are not taken again\n");
++        g_failures++;
++    }
++    else
++    {
++        printf("ok      the ports a daemon that ended left in TIME_WAIT are taken again\n");
++        socket_finish();
++    }
++}
++
++int main(void)
++{
++    const char *const nic = off_loopback();
++    const char *const bad[] = { "", "localhost", "::1", "127.0.0", "127.0.0.1 ", "256.0.0.1", NULL };
++
++    if (nic)
++        printf("off the loopback: %s\n", nic);
++    else
++        printf("NOT RUN: this machine has no address off the loopback; 127.0.0.2 stands for it\n");
++
++    {
++        const char *const yes[] = { "127.0.0.1", NULL };
++        const char *const no[] = { "127.0.0.2", nic, NULL };
++
++        arm("by default", yes, no);
++    }
++    {
++        const char *const yes[] = { "127.0.0.1", "127.0.0.2", nic, NULL };
++        const char *const no[] = { NULL };
++
++        if (socket_set_bind_address("0.0.0.0") != 0)
++            g_failures++;
++        arm("0.0.0.0", yes, no);
++    }
++    if (nic)
++    {
++        const char *const yes[] = { nic, NULL };
++        const char *const no[] = { "127.0.0.1", NULL };
++
++        if (socket_set_bind_address(nic) != 0)
++            g_failures++;
++        arm("one address", yes, no);
++    }
++    if (socket_set_bind_address("127.0.0.1") != 0)
++        g_failures++;
++    if (socket_set_bind_address(NULL) != -1)
++    {
++        printf("FAILED  NULL taken as an address\n");
++        g_failures++;
++    }
++    for (int i = 0; bad[i]; i++)
++        if (socket_set_bind_address(bad[i]) != -1)
++        {
++            printf("FAILED  '%s' taken as an address\n", bad[i]);
++            g_failures++;
++        }
++    {
++        const char *const yes[] = { "127.0.0.1", NULL };
++        const char *const no[] = { "127.0.0.2", nic, NULL };
++
++        arm("after refused addresses", yes, no);
++    }
++    one_listener();
++
++    if (g_failures)
++        printf("%d failed\n", g_failures);
++    else
++        printf("all passed\n");
++    return g_failures ? EXIT_FAILURE : EXIT_SUCCESS;
++}
+diff --git a/tests/state-paths-test.c b/tests/state-paths-test.c
+new file mode 100644
+index 0000000..6c6b6d7
+--- /dev/null
++++ b/tests/state-paths-test.c
+@@ -0,0 +1,91 @@
++/*
++ * Checks that MakePluginStatePath() keeps a plugin's state paths inside its instance's directory: a request with a ".."
++ * component or an absolute one is refused (NULL) and creates nothing; a request below the directory, "." for the
++ * directory itself, and names that only hold dots ("a..b", "..x") are made as before.
++ *
++ * Build and run with "make state-paths-run" in this directory.
++ */
++
++#include "../src/state-paths.c"
++#include "../src/utils.c"
++
++#include <stdio.h>
++#include <stdlib.h>
++#include <sys/stat.h>
++
++static int g_failures;
++static char g_root[64];
++
++static int exists(const char *rel)
++{
++    char path[256];
++    struct stat st;
++
++    snprintf(path, sizeof(path), "%s/%s", g_root, rel);
++    return stat(path, &st) == 0;
++}
++
++static void refused(const char *request, const char *outside)
++{
++    char *path = MakePluginStatePath(1, g_root, request);
++
++    if (path == NULL && (outside == NULL || !exists(outside)))
++        printf("ok      refused \"%s\"\n", request);
++    else
++    {
++        printf("FAILED  \"%s\": expected a refusal, got \"%s\"%s\n", request, path ? path : "(null)",
++               outside && exists(outside) ? ", and it made a directory outside the instance's" : "");
++        g_failures++;
++    }
++    free(path);
++}
++
++static void made(const char *request, const char *want)
++{
++    char expected[256];
++    char *path = MakePluginStatePath(1, g_root, request);
++
++    snprintf(expected, sizeof(expected), "%s/%s", g_root, want);
++    if (path != NULL && strcmp(path, expected) == 0)
++        printf("ok      made \"%s\"\n", request);
++    else
++    {
++        printf("FAILED  \"%s\": expected \"%s\", got \"%s\"\n", request, expected, path ? path : "(null)");
++        g_failures++;
++    }
++    free(path);
++}
++
++int main(void)
++{
++    snprintf(g_root, sizeof(g_root), "/tmp/state-paths-test.%d", (int)getpid());
++    if (mkdir(g_root, 0755) != 0)
++    {
++        perror(g_root);
++        return 2;
++    }
++
++    refused("..", NULL);
++    refused("../escaped", NULL);
++    refused("../escaped-dir/file", "escaped-dir");
++    refused("sub/../../escaped-dir2/file", "escaped-dir2");
++    refused("sub/..", NULL);
++    refused("./../escaped", NULL);
++    refused("/etc/passwd", NULL);
++    refused("/tmp/absolute-dir/file", NULL);
++    refused("", NULL);
++
++    made(".", "effect-1");
++    made("file", "effect-1/file");
++    made("sub/file", "effect-1/sub/file");
++    made("a..b", "effect-1/a..b");
++    made("..hidden", "effect-1/..hidden");
++    made("sub/..x/file", "effect-1/sub/..x/file");
++
++    RecursivelyRemovePluginPath(g_root);
++    if (g_failures)
++        printf("%d FAILED\n", g_failures);
++    else
++        printf("all passed\n");
++    return g_failures ? 1 : 0;
++}

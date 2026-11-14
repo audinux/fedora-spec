@@ -26,7 +26,7 @@
 
 Name: mod-host
 Version: 0.10.6.%{shortcommit0}
-Release: 13%{?dist}
+Release: 14%{?dist}
 License: GPL-3.0-or-later
 Summary: LV2 host for Jack controllable via socket or command line
 URL: https://github.com/moddevices/mod-host
@@ -37,6 +37,8 @@ Distribution: Audinux
 
 Source0: https://github.com/moddevices/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: %{name}.service
+Source2: %{name}.user.service
+Source3: %{name}.sysusers
 # https://github.com/mod-audio/mod-host/pull/100
 Patch0: mod-host-100.patch
 # https://github.com/mod-audio/mod-host/pull/101
@@ -67,6 +69,11 @@ Patch12: mod-host-112.patch
 Patch13: mod-host-113.patch
 # https://github.com/mod-audio/mod-host/pull/116 - room for 128 commands, and report a command that does not fit
 Patch14: mod-host-116.patch
+# https://github.com/linuxnow/mod-host/tree/hardening (upstream PR to come) - listen on 127.0.0.1 unless -b says
+# otherwise, refuse a second daemon on a busy port, keep a plugin's state path inside its instance's directory
+Patch15: mod-host-hardening.patch
+# https://github.com/linuxnow/mod-host/tree/version-from-make (upstream PR to come) - make VERSION= sets what -V prints
+Patch16: mod-host-version-from-make.patch
 
 BuildRequires: gcc
 BuildRequires: make
@@ -126,8 +133,8 @@ sed -i 's,LDFLAGS += -s,LDFLAGS +=,g' Makefile
 
 %set_build_flags
 
-%make_build
-%make_build lib
+%make_build VERSION=%{version}
+%make_build VERSION=%{version} lib
 
 %install
 
@@ -135,7 +142,8 @@ sed -i 's,LDFLAGS += -s,LDFLAGS +=,g' Makefile
 %make_install install-lib LIBDIR=%{_libdir}
 
 install -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
-install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
+install -D -m 644 %{SOURCE2} %{buildroot}%{_userunitdir}/%{name}.service
+install -D -m 644 %{SOURCE3} %{buildroot}%{_sysusersdir}/%{name}.conf
 
 %files
 %doc CHANGELOG README.md COPYING
@@ -144,6 +152,7 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 %{_mandir}/man1/mod-host.*
 %{_unitdir}/%{name}.service
 %{_userunitdir}/%{name}.service
+%{_sysusersdir}/%{name}.conf
 
 %files protocol
 %license COPYING
@@ -156,6 +165,16 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_userunitdir}/%{name}.service
 %{_datadir}/mod-host/
 
 %changelog
+* Sat Nov 14 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-14
+- the socket and feedback ports listen on 127.0.0.1 unless -b (--bind-address)
+  or MOD_DEVICE_HOST_BIND_ADDRESS names another address; -b 0.0.0.0 is every
+  address. A controller on another machine now needs -b
+- a second mod-host on a busy port is refused instead of sharing it
+- a plugin's state path stays inside its instance's directory
+- mod-host -V prints the package version instead of 0.0.0
+- the system unit runs mod-host as the system user mod-host (in audio),
+  hardened; the user unit is its own file
+
 * Fri Oct 30 2026 Pau Aliagas <linuxnow@gmail.com> - 0.10.6-13
 - #116: the protocol's command table holds 128 commands, and one past them is
   refused with -1 and named on stderr instead of dropped in silence

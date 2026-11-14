@@ -3,6 +3,23 @@ Description=MOD Host Daemon
 
 [Service]
 ExecStart=/usr/bin/mod-host -v
+User=mod-host
+Group=mod-host
+SupplementaryGroups=audio
+# the plugins' real-time threads and locked memory, as a JACK client takes them
+LimitRTPRIO=95
+LimitMEMLOCK=infinity
+# its home: where presets and state are saved when a command names no other place
+StateDirectory=mod-host
+Environment=HOME=/var/lib/mod-host
+WorkingDirectory=/var/lib/mod-host
+NoNewPrivileges=yes
+ProtectSystem=strict
+ReadWritePaths=/var/lib/mod-host
+ProtectHome=read-only
+# the scratch directory of plugin state is under /tmp: a private one. JACK's own sockets and shared memory are in
+# /dev/shm, which none of this touches
+PrivateTmp=yes
 
 [Install]
 WantedBy=multi-user.target
