@@ -5,7 +5,7 @@
 
 Name: ams-lv2
 Version: 1.2.2
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Set of Modular Synth plugins (from Alsa Modular Synth)
 License: GPL-2.0-or-later
 URL: https://github.com/blablack/ams-lv2
@@ -15,6 +15,8 @@ Vendor:       Audinux
 Distribution: Audinux
 
 Source0: https://github.com/blablack/ams-lv2/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+# fftvocoder wrote a mirror bin one past the fftw buffer for bin 0 and aborted in free(); upstream is archived
+Patch0: ams-lv2-fftvocoder-mirror-bin.patch
 
 BuildRequires: gcc gcc-c++
 BuildRequires: lv2-devel
@@ -29,7 +31,7 @@ BuildRequires: fftw-devel
 AMS LV2 set of plugins synth (from Alsa Modular Synth)
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{version}
 
 sed -i -e "s/lvtk-plugin-1/lvtk-plugin-2/g" wscript
 sed -i -e "s/lvtk-ui-1/lvtk-ui-2/g" wscript
@@ -64,6 +66,10 @@ sed -i -e "s|'-mfpmath=sse',||g" wscript
 %{_libdir}/lv2/*
 
 %changelog
+* Sat Nov 14 2026 Pau Aliagas <linuxnow@gmail.com> - 1.2.2-4
+- fftvocoder: write no mirror bin for bin 0, which was one past the fftw
+  buffer and aborted in free() when the plugin was freed
+
 * Mon Oct 19 2020 Yann Collette <ycollette.nospam@free.fr> - 1.2.2-3
 - fix debug build
 
