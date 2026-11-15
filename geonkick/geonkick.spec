@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: geonkick
-Version: 3.9.0
+Version: 3.9.1
 Release: 2%{?dist}
 Summary: Drum Software Synthesizer
 URL: https://github.com/Geonkick-Synthesizer/geonkick
@@ -109,6 +109,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Nov 15 2026 Yann Collette <ycollette.nospam@free.fr> - 3.9.1-2
+- Update to 3.9.1-2
+
 * Tue Oct 06 2026 Yann Collette <ycollette.nospam@free.fr> - 3.9.0-2
 - Update to 3.9.0-2
 
