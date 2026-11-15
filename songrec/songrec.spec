@@ -6,7 +6,7 @@
 %global debug_package %{nil}
 
 Name: songrec
-Version: 0.8.1
+Version: 0.8.2
 Release: 1%{?dist}
 Summary: An open-source Shazam client for Linux.
 License: GPL-3.0-or-later
@@ -87,6 +87,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_mandir}/man1/*
 
 %changelog
+* Sat Nov 14 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.2-1
+- update to 0.8.2-1
+
 * Wed Nov 04 2026 Yann Collette <ycollette.nospam@free.fr> - 0.8.1-1
 - update to 0.8.1-1
 
