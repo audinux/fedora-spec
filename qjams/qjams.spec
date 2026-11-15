@@ -4,7 +4,7 @@
 # Category: Effect
 
 Name: qjams
-Version: 1.0.1
+Version: 1.0.2
 Release: 1%{?dist}
 Summary: Musician 12-track audio&video recording&jam DAW
 License: GPL-2.0-or-later
@@ -14,7 +14,7 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
-Source0: https://github.com/robw-nl/QJams/archive/refs/tags/QJams_v1.0.1.tar.gz
+Source0: https://github.com/robw-nl/QJams/archive/refs/tags/QJams_v%{version}.tar.gz
 
 BuildRequires: gcc
 BuildRequires: (ffmpeg-free-devel or ffmpeg-devel)
@@ -56,5 +56,8 @@ install -m 755 qjams %{buildroot}/%{_bindir}/
 %{_bindir}/*
 
 %changelog
+* Sat Nov 14 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.2-1
+- update to 1.0.2-1
+
 * Wed Nov 11 2026 Yann Collette <ycollette.nospam@free.fr> - 1.0.1-1
 - initial version of the spec
