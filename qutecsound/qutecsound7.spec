@@ -5,7 +5,7 @@
 # Screenshot: csoundqt.png
 
 Name: qutecsound
-Version: 7.4.4
+Version: 7.4.6
 Release: 3%{?dist}
 Summary: A csound file editor
 URL: https://github.com/CsoundQt/CsoundQt
@@ -16,7 +16,7 @@ Vendor:       Audinux
 Distribution: Audinux
 
 # Usage: ./csoundqt-source.sh <TAG>
-#        ./csoundqt-source.sh v7.4.4
+#        ./csoundqt-source.sh v7.4.6
 
 Source0: CsoundQt.tar.gz
 Source1: csoundqt-source.sh
@@ -27,6 +27,7 @@ BuildRequires: csound7-devel
 BuildRequires: qt6-qtbase-devel
 BuildRequires: qt6-linguist
 BuildRequires: qt6-qtdeclarative-devel
+BuildRequires: alsa-lib-devel
 BuildRequires: libsndfile-devel
 BuildRequires: desktop-file-utils
 
@@ -56,7 +57,7 @@ tool for experienced users.
 %install
 
 install -m 755 -d %{buildroot}/%{_datadir}/applications/
-install -m 644 csoundqt.desktop %{buildroot}%{_datadir}/applications/
+install -m 644 io.github.CsoundQt.CsoundQt.desktop %{buildroot}%{_datadir}/applications/
 
 install -m 755 -d %{buildroot}/%{_datadir}/mime/packages/
 cp -a mime-types/*.xml %{buildroot}%{_datadir}/mime/packages/
@@ -73,17 +74,20 @@ desktop-file-install --vendor '' \
         --add-category=Midi \
         --add-category=Sequencer \
         --dir %{buildroot}%{_datadir}/applications \
-        %{buildroot}%{_datadir}/applications/csoundqt.desktop
+        %{buildroot}%{_datadir}/applications/io.github.CsoundQt.CsoundQt.desktop
 
 %files
 %doc README.md notes/* release_notes/*
 %license COPYING
 %{_bindir}/*
-%{_datadir}/applications/csoundqt.desktop
+%{_datadir}/applications/io.github.CsoundQt.CsoundQt.desktop
 %{_datadir}/mime/packages/*.xml
 %{_datadir}/icons/hicolor/scalable/apps/*
 
 %changelog
+* Sat Nov 14 2026 Yann Collette <ycollette.nospam@free.fr> - 7.4.6-3
+- update to 7.4.6-3
+
 * Thu Oct 29 2026 Yann Collette <ycollette.nospam@free.fr> - 7.4.4-3
 - update to 7.4.4-3
 
