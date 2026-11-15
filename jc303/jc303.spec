@@ -4,7 +4,7 @@
 # Category: Sequencer, Sampler, Plugin
 
 Name: jc303
-Version: 0.13.0
+Version: 0.14.0
 Release: 3%{?dist}
 Summary: A Free Roland TB-303 Plugin
 License: GPL-3.0-or-later
@@ -114,6 +114,9 @@ cp -ra %{__cmake_builddir}/JC303_artefacts/Release/CLAP/* %{buildroot}/%{_libdir
 %{_libdir}/clap/*
 
 %changelog
+* Sat Nov 14 2026 Yann Collette <ycollette.nospam@free.fr> - 0.14.0-3
+- update to 0.14.0-3
+
 * Mon Sep 21 2026 Yann Collette <ycollette.nospam@free.fr> - 0.13.0-3
 - update to 0.13.0-3
 
