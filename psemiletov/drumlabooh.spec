@@ -5,7 +5,7 @@
 # Screenshot: drumlabooh.png
 
 Name: drumlabooh
-Version: 13.0.0
+Version: 14.0.0
 Release: 2%{?dist}
 Summary: LV2/VSTi drum machine that can use Hydrogen, SFZ, and other drumkit formats
 License: GPL-3.0-only
@@ -86,6 +86,9 @@ cp %{__cmake_builddir}/drumlabooh_artefacts/Standalone/* %{buildroot}/%{_bindir}
 %{_libdir}/vst3/*
 
 %changelog
+* Sun Nov 15 2026 Yann Collette <ycollette.nospam@free.fr> - 14.0.0-2
+- update to 14.0.0-2
+
 * Thu Oct 08 2026 Yann Collette <ycollette.nospam@free.fr> - 13.0.0-2
 - update to 13.0.0-2
 
