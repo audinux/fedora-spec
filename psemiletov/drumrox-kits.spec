@@ -4,7 +4,7 @@
 # Category: Synthesizer, Sequencer
 
 Name: drumrox-kits
-Version: 6.0.0
+Version: 7.0.0
 Release: 7%{?dist}
 Summary: A set of drumrox drum kits
 License: GPL-3.0-or-later
@@ -207,14 +207,6 @@ Requires: license-%{name}
 %description -n %{name}-WatfordRhythmGenerator
 The Watford Rhythm Generator drumkit for %{name}
 
-%package -n %{name}-Copyc4tElNacho
-Summary: The Copyc4t El Nacho drumkit for %{name}
-License: GPL-3.0-or-later
-Requires: license-%{name}
-
-%description -n %{name}-Copyc4tElNacho
-The Copyc4t El Nacho Kit drumkit for %{name}
-
 %package -n %{name}-ChoosyHouseKit
 Summary: The Choosy House Kit drumkit for %{name}
 License: GPL-3.0-or-later
@@ -279,6 +271,30 @@ Requires: license-%{name}
 %description -n %{name}-Diskach
 The Diskach drumkit for %{name}
 
+%package -n %{name}-GoldenFarthing
+Summary: The Golden Farthing drumkit for %{name}
+License: GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-GoldenFarthing
+The Golden Farthing drumkit for %{name}
+
+%package -n %{name}-OMKit
+Summary: The OM Kit drumkit for %{name}
+License: GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-OMKit
+The OM Kit drumkit for %{name}
+
+%package -n %{name}-RITM
+Summary: The RITM drumkit for %{name}
+License: GPL-3.0-or-later
+Requires: license-%{name}
+
+%description -n %{name}-RITM
+The RITM drumkit for %{name}
+
 %prep
 %autosetup -n drum_sklad-%{version}
 
@@ -292,7 +308,6 @@ install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Electro
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Latin/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Cheetah_SpecDrum_Standard/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ChoosyHouseKit/
-install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Copyc4tElNacho/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Diskach/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Drumulator/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ELI_CompuRhythm_CR_7030/
@@ -300,11 +315,14 @@ install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/ElgamCarousel/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/FormantaPolivoks/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Fricke_MFB512/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/GEM_Drum15/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/GoldenFarthing
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Jazzkit/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/KloneDualPercussionSynthesiser/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Lel-DR8/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Lel-PSR/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/MTI_AO_1/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/OMKit/
+install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/RITM/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Rokton-UDS/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Sixties_Basic/
 install -m 755 -d %{buildroot}/%{_datadir}/drumrox-kits/Sixties_Rock/
@@ -338,7 +356,6 @@ cp -ra Wooden/* %{buildroot}/%{_datadir}/drumrox-kits/Wooden/
 cp -ra ARP\ Axxe/* %{buildroot}/%{_datadir}/drumrox-kits/ARP_Axxe/
 cp -ra Drumulator/* %{buildroot}/%{_datadir}/drumrox-kits/Drumulator/
 cp -ra Watford\ Rhythm\ Generator/* %{buildroot}/%{_datadir}/drumrox-kits/WatfordRhythmGenerator/
-cp -ra Copyc4t\ El\ Nacho\ Drumkit/* %{buildroot}/%{_datadir}/drumrox-kits/Copyc4tElNacho/
 cp -ra Choosy\ House\ Kit/* %{buildroot}/%{_datadir}/drumrox-kits/ChoosyHouseKit/
 cp -ra Elgam\ Carousel/*  %{buildroot}/%{_datadir}/drumrox-kits/ElgamCarousel/
 cp -ra ASR-X\ Pro/* %{buildroot}/%{_datadir}/drumrox-kits/ASR-XPro/
@@ -347,6 +364,9 @@ cp -ra Klone\ Dual\ Percussion\ Synthesiser/* %{buildroot}/%{_datadir}/drumrox-k
 cp -ra Avangard/* %{buildroot}/%{_datadir}/drumrox-kits/Avangard/
 cp -ra Sopromat/* %{buildroot}/%{_datadir}/drumrox-kits/Sopromat/
 cp -ra Diskach/* %{buildroot}/%{_datadir}/drumrox-kits/Diskach/
+cp -ra Golden\ Farthing/* %{buildroot}/%{_datadir}/drumrox-kits/GoldenFarthing/
+cp -ra OM\ Kit/* %{buildroot}/%{_datadir}/drumrox-kits/OMKit/
+cp -ra RITM/* %{buildroot}/%{_datadir}/drumrox-kits/RITM/
 
 %files -n license-%{name}
 %doc README.md
@@ -418,9 +438,6 @@ cp -ra Diskach/* %{buildroot}/%{_datadir}/drumrox-kits/Diskach/
 %files -n %{name}-WatfordRhythmGenerator
 %{_datadir}/drumrox-kits/WatfordRhythmGenerator/*
 
-%files -n %{name}-Copyc4tElNacho
-%{_datadir}/drumrox-kits/Copyc4tElNacho/*
-
 %files -n %{name}-ChoosyHouseKit
 %{_datadir}/drumrox-kits/ChoosyHouseKit/*
 
@@ -445,7 +462,19 @@ cp -ra Diskach/* %{buildroot}/%{_datadir}/drumrox-kits/Diskach/
 %files -n %{name}-Diskach
 %{_datadir}/drumrox-kits/Diskach/*
 
+%files -n %{name}-GoldenFarthing
+%{_datadir}/drumrox-kits/GoldenFarthing/*
+
+%files -n %{name}-OMKit
+%{_datadir}/drumrox-kits/OMKit/*
+
+%files -n %{name}-RITM
+%{_datadir}/drumrox-kits/RITM/*
+
 %changelog
+* Sun Nov 15 2026 Yann Collette <ycollette.nospam@free.fr> - 7.0.0-7
+- update to 7.0.0-7
+
 * Thu Oct 08 2026 Yann Collette <ycollette.nospam@free.fr> - 6.0.0-7
 - update to 6.0.0-7
 
