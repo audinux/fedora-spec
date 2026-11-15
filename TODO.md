@@ -515,6 +515,9 @@
 | openrb-338                               | https://github.com/pingw33n/openrb-338                                                                                                                      |
 | rb-songs                                 | https://github.com/pingw33n/rb-songs                                                                                                                        |
 | rb-mods                                  | https://github.com/pingw33n/rb-mods                                                                                                                         |
+| pluguzu                                  | https://codeberg.org/TristanCacqueray/pluguzu                                                                                                               |
+| oxo_synth2                               | https://github.com/chab/oxo_synth2                                                                                                                          |
+| Betong-VSTi                              | https://github.com/phunkshunz/Betong-VSTi                                                                                                                   |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
