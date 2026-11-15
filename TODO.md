@@ -518,6 +518,7 @@
 | pluguzu                                  | https://codeberg.org/TristanCacqueray/pluguzu                                                                                                               |
 | oxo_synth2                               | https://github.com/chab/oxo_synth2                                                                                                                          |
 | Betong-VSTi                              | https://github.com/phunkshunz/Betong-VSTi                                                                                                                   |
+| Maermel                                  | https://github.com/bjoernbojahr/Maermel                                                                                                                     |
 
 Check the following URL:
 - https://github.com/jmantra/LogicalArdour
