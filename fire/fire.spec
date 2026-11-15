@@ -4,7 +4,7 @@
 # Category: Effect 
 
 Name: fire
-Version: 2.0.0
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: This is a distortion plugin developed by Wings
 License: GPL-2.0-or-later
@@ -14,8 +14,16 @@ ExclusiveArch: x86_64 aarch64
 Vendor:       Audinux
 Distribution: Audinux
 
+#CMake Error at cmake-overrides/JuceCallbackSafety.cmake:13 (message):
+#  Fire's JUCE safety patch requires pinned revision
+#  be29c81492b6151c8ea8d14c840e1311963b3a83; initialise submodules or review
+#  the patch before upgrading JUCE.
+#Call Stack (most recent call first):
+#  cmake-overrides/JuceCallbackSafety.cmake:34 (fire_apply_juce_callback_safety)
+#  CMakeLists.txt:53 (include)
+  
 # Usage: ./fire-source.sh <TAG>
-#        ./fire-source.sh v2.0.0
+#        ./fire-source.sh v2.1.0
 
 Source0: Fire.tar.gz
 Source1: fire-source.sh
@@ -79,10 +87,10 @@ CLAP version of %{name}
 %install
 
 install -m 755 -d %{buildroot}%{_libdir}/vst3/
-cp -ra %{__cmake_builddir}/Fire_artefacts/VST3/*  %{buildroot}/%{_libdir}/vst3/
+cp -ra %{__cmake_builddir}/Fire_artefacts/VST3/* %{buildroot}/%{_libdir}/vst3/
 
 install -m 755 -d %{buildroot}%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/Fire_artefacts/CLAP/*  %{buildroot}/%{_libdir}/clap/
+cp -ra %{__cmake_builddir}/Fire_artefacts/CLAP/* %{buildroot}/%{_libdir}/clap/
 
 %files -n license-%{name}
 %doc README.md
@@ -95,6 +103,9 @@ cp -ra %{__cmake_builddir}/Fire_artefacts/CLAP/*  %{buildroot}/%{_libdir}/clap/
 %{_libdir}/clap/*
 
 %changelog
+* Sun Nov 15 2026 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-2
+- update to 2.1.0-2
+
 * Tue Oct 06 2026 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-2
 - update to 2.0.0-2
 
