@@ -13,13 +13,13 @@
 
 Name: boucle-en-scene
 Version: 0.6
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A MIDI and audio loop launcher, for live performance or practice
 License: GPL-3.0-or-later
 URL: https://boucle-en-scene.fr
 ExclusiveArch: x86_64 aarch64
 
-Source0: https://boucle-en-scene.fr/telechargements/BoucleEnScene-%{version}.DEV-2026-11-11-source.tar.gz
+Source0: https://boucle-en-scene.fr/telechargements/BoucleEnScene-%{version}.DEV-2026-11-14-source.tar.gz
 Patch0: boucle-en-scene-0001-fix-path.patch
 
 BuildRequires: gcc-c++
@@ -42,7 +42,7 @@ keyboard-based recording, a note editor, and a built-in synthesizer.
 It can be controlled via mouse, MIDI controller, computer keyboard, or a mobile phone app.
 
 %prep
-%autosetup -p1 -n BoucleEnScene-%{version}.DEV-2026-11-11-source
+%autosetup -p1 -n BoucleEnScene-%{version}.DEV-2026-11-14-source
 
 %build
 
@@ -101,5 +101,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/boucle-en-scene.ico
 
 %changelog
+* Sun Nov 15 2026 Yann Collette <ycollette.nospam@free.fr> - 0.6-2
+- update to 0.6-2
+
 * Thu Nov 12 2026 Yann Collette <ycollette.nospam@free.fr> - 0.6-1
 - Initial build
