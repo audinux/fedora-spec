@@ -4,7 +4,7 @@
 # Category: Audio, Synthesizer
 
 Name: cetone-synth
-Version: 0.0.1
+Version: 1.1.0
 Release: 1%{?dist}
 Summary: Re-implementation of Cetone Synth, a multifunction synth from Neotec Software
 URL: https://github.com/AnClark/CetoneSynth
@@ -14,7 +14,7 @@ License: GPL-3.0-or-later
 Vendor:       Audinux
 Distribution: Audinux
 
-# ./cetone-source.sh CetoneSynth 7f89941771fc01f90adfe1ed47a21e543a8c3c0d
+# ./cetone-source.sh CetoneSynth v1.1.0
 
 Source0: CetoneSynth.tar.gz
 Source1: cetone-source.sh
@@ -72,7 +72,7 @@ LV2 version of %{name}
 
 %build
 
-%cmake
+%cmake -DCETONE_BUILD_JACK_STANDALONE=ON
 %cmake_build
 
 %install
@@ -83,11 +83,11 @@ install -m 755 -d %{buildroot}%{_libdir}/clap/
 install -m 755 -d %{buildroot}%{_libdir}/lv2/
 install -m 755 -d %{buildroot}%{_bindir}/
 
-cp %{__cmake_builddir}/bin/cetone_synth %{buildroot}%{_bindir}/
-cp %{__cmake_builddir}/bin/cetone_synth.clap %{buildroot}%{_libdir}/clap/
-cp -ra %{__cmake_builddir}/bin/cetone_synth.lv2 %{buildroot}%{_libdir}/lv2/
-cp %{__cmake_builddir}/bin/cetone_synth-vst2.so %{buildroot}%{_libdir}/vst/
-cp -ra %{__cmake_builddir}/bin/cetone_synth.vst3 %{buildroot}%{_libdir}/vst3/
+cp %{__cmake_builddir}/bin/CetoneSynth %{buildroot}%{_bindir}/
+cp %{__cmake_builddir}/bin/CetoneSynth.clap %{buildroot}%{_libdir}/clap/
+cp -ra %{__cmake_builddir}/bin/CetoneSynth.lv2 %{buildroot}%{_libdir}/lv2/
+cp %{__cmake_builddir}/bin/CetoneSynth-vst2.so %{buildroot}%{_libdir}/vst/
+cp -ra %{__cmake_builddir}/bin/CetoneSynth.vst3 %{buildroot}%{_libdir}/vst3/
 
 %files
 %license LICENSE
@@ -106,5 +106,8 @@ cp -ra %{__cmake_builddir}/bin/cetone_synth.vst3 %{buildroot}%{_libdir}/vst3/
 %{_libdir}/clap/*
 
 %changelog
+* Sun Nov 15 2026 Yann Collette <ycollette.nospam@free.fr> - 1.1.0-1
+- update to 1.1.0-1
+
 * Mon May 20 2024 Yann Collette <ycollette.nospam@free.fr> - 0.0.1-1
 - Initial spec file
