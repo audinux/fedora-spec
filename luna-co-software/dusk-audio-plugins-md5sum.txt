@@ -1,1 +1,1 @@
-3c65150eb2dba1a1c5a36196d9cd0dba  dusk-audio-plugins.tar.gz
+4385c2cebb08a475baaefdc7216cc60d  dusk-audio-plugins.tar.gz
