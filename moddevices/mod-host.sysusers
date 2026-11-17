@@ -1,0 +1,3 @@
+# The user the system unit runs mod-host as, in the audio group for the sound devices and real-time limits.
+u mod-host - "mod-host LV2 plugin host" /var/lib/mod-host
+m mod-host audio
