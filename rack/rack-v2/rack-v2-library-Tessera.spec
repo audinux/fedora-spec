@@ -7,15 +7,15 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 2b7c39ae68fd6b3b339a67cc7029fe879f801e6d
-%global gittag0 2.0.9
+%global commit0 9bd5438cb9010460ac9282e8827d8501c273731b
+%global gittag0 2.0.10
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Tessera
-Version: 2.0.9
+Version: 2.0.10
 Release: 2%{?dist}
 Summary: Tessera plugin for Rack
 License: GPL-2.0-or-later
@@ -154,5 +154,5 @@ cp -r Tessera_plugin/dist/Tessera/* %{buildroot}%{_libexecdir}/Rack2/plugins/Tes
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.9-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.10-1
 - initial specfile

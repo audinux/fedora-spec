@@ -7,19 +7,19 @@
 %define use_static_rtaudio 0
 
 # Global variables for github repository
-%global commit0 4b0bb0fcbd0bcfe4e8ab5ba595716064ccd13613
-%global gittag0 2.0.0
+%global commit0 5766bd63feae0af08458543617c768a79f592d38
+%global gittag0 2.1.0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # Disable production of debug package.
 %global debug_package %{nil}
 
 Name: rack-v2-Vulcanometry
-Version: 2.0.0
+Version: 2.1.0
 Release: 2%{?dist}
 Summary: Vulcanometry plugin for Rack
 License: GPL-2.0-or-later
-URL: https://github.com/vulcanometry/Rack-Sequencer
+URL: https://github.com/vulcanometry/Rack-Plugins
 ExclusiveArch: x86_64 aarch64
 
 Vendor:       Audinux
@@ -29,7 +29,7 @@ Distribution: Audinux
 # ./rack-source.sh v2.1.3
 
 Source0: Rack.tar.gz
-Source1: https://github.com/vulcanometry/Rack-Sequencer/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/vulcanometry/Rack-Plugins/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source2: Vulcanometry_plugin.json
 Patch0: rack-v2-aarch64.patch
 
@@ -154,5 +154,5 @@ cp -r Vulcanometry_plugin/dist/Vulcanometry/* %{buildroot}%{_libexecdir}/Rack2/p
 %{_libexecdir}/*
 
 %changelog
-* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.0.0-1
+* Tue Nov 30 2021 Yann Collette <ycollette.nospam@free.fr> - 2.1.0-1
 - initial specfile
