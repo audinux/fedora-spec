@@ -1,0 +1,50 @@
+ams-lv2 fftvocoder: write no mirror bin for bin 0
+
+The frequency and pitch shifts write the negative-frequency mirror of each
+bin at fftsize - lclfrq; for bin 0, or a shift that clamps to 0, that is
+index fftsize, one complex past the end of the fftw buffer, which damages the
+next heap chunk and aborts in free() when the plugin is destroyed. Bin 0 (DC)
+has no mirror, so it is skipped.
+
+diff --git a/src/fftvocoder.cpp b/src/fftvocoder.cpp
+index bc44f9a..efcfd23 100644
+--- a/src/fftvocoder.cpp
++++ b/src/fftvocoder.cpp
+@@ -143,8 +143,9 @@ void FFTVocoder::run(uint32_t nframes)
+ 		lclfrq = lclfrq > 0 ? lclfrq : 0;
+ 		lclfrq = lclfrq < ((fftsize/2)-1) ? lclfrq : (fftsize/2)-1;
+ 		modinbackward[ lclfrq ] = modoutforward [l2];
+-		//   Negative frequencies (second half of the fft result)
+-		modinbackward[fftsize - lclfrq] = modoutforward [ fftsize - l2];
++		//   Negative frequencies (second half of the fft result); bin 0 has no mirror inside the buffer
++		if (l2 > 0 && lclfrq > 0)
++			modinbackward[fftsize - lclfrq] = modoutforward [ fftsize - l2];
+ 	}
+ 
+ 	//    Pitchshifting (multiplicative, harmonic-retaining) shifting.
+@@ -168,7 +169,8 @@ void FFTVocoder::run(uint32_t nframes)
+ 		//   a 180 degree phase difference.
+ 		if (*p(p_rthetamodulator) == 0) {
+ 			modinbackward[lclfrq] += modoutforward [l2];
+-			modinbackward[fftsize - lclfrq] += modoutforward [ fftsize - l2];
++			if (l2 > 0 && lclfrq > 0)
++				modinbackward[fftsize - lclfrq] += modoutforward [ fftsize - l2];
+ 		}
+ 		else
+ 		{
+@@ -179,10 +181,11 @@ void FFTVocoder::run(uint32_t nframes)
+ 					cabs (modoutforward [l2])
+ 					* cexp (I * ( carg (modoutforward [l2])
+ 								  + (l2 * *p(p_phaseshift) * psfactor)));
+-			modinbackward[fftsize - lclfrq] +=
+-					cabs (modoutforward [ fftsize - l2])
+-					* cexp (I * ( carg (modoutforward [ fftsize - l2])
+-							+ (l2 * *p(p_phaseshift) * psfactor)));
++			if (l2 > 0 && lclfrq > 0)
++				modinbackward[fftsize - lclfrq] +=
++						cabs (modoutforward [ fftsize - l2])
++						* cexp (I * ( carg (modoutforward [ fftsize - l2])
++								+ (l2 * *p(p_phaseshift) * psfactor)));
+ 		};
+ 	}
+ 	//     The munged modulator is now in "inbackward"
